@@ -288,3 +288,48 @@ Stack trace:
 REQUEST_URI=/sihcig/sihcig/index.php/prueba/admin
 HTTP_REFERER=http://localhost/sihcig/sihcig/index.php/prueba/create
 ---
+2015/01/30 23:14:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "gii".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('gii')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('gii')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/gii')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/gii
+---
+2015/01/30 23:14:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "gii" was not found.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('gii')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('page')
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/page?view=gii
+---
+2015/01/30 23:22:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('informacionDeDi...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/informacionDeDireccionGeneral/index.php
+---
+2015/01/30 23:23:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "URL".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('URL')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('URL')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('unidadHospitala...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/unidadHospitalariaJimComiteDeEtica/URL
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/unidadHospitalariaJimComiteDeEtica/
+---
