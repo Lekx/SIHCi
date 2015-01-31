@@ -333,3 +333,167 @@ Stack trace:
 REQUEST_URI=/SIHCiG/sihcig/index.php/unidadHospitalariaJimComiteDeEtica/URL
 HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/unidadHospitalariaJimComiteDeEtica/
 ---
+2015/01/31 00:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "gii".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('gii')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('gii')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/gii')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/gii
+---
+2015/01/31 00:39:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "organigrama".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('organigrama')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('organigrama')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/organigram...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/organigrama
+---
+2015/01/31 00:40:02 [error] [exception.CException] exception 'CException' with message 'InformacionDeSubdireccionGeneralDeEnsenanzaEInvestigacionController cannot find the requested view "index".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#1 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\InformacionDeSubdireccionGeneralDeEnsenanzaEInvestigacionController.php(7): CController->render('index')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): InformacionDeSubdireccionGeneralDeEnsenanzaEInvestigacionController->actionIndex()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('informacionDeSu...')
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/informacionDeSubdireccionGeneralDeEnsenanzaEInvestigacion
+---
+2015/01/31 00:40:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "camino hacia el archivo".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('camino hacia el...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/camino%20hacia%20el%20archivo
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:41:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org1".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org1')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org1
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:41:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org2".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org2')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org2
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:41:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org2".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org2')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org2
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:41:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org1".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org1')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org1
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:41:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org1".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org1')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org1
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:41:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org2".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org2')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org2
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:42:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org1.png".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org1.png')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org1.png
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:42:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org2.png".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org2.png')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org2.png
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:43:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org1.png".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org1.png')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org1.png
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:43:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/org2.png".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('img/org2.png')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/img/org2.png
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/01/31 00:43:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('img')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('img')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama/img')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama/img
+---
+2015/01/31 00:52:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('img')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('img')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama/img')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama/img
+---
+2015/01/31 00:52:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('img')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('img')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama/img')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama/img
+---

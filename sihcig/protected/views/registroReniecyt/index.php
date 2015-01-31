@@ -1,4 +1,4 @@
-
+<H1>OP05-Desplegar Registro RENIECYT <H1>
 
 <section>
 	<h1>Iconos!</h1>
