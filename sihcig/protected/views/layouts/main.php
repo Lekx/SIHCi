@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap-3.0.0/css/bootstrap.min.css" media="screen, projection" >
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
-
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -24,57 +24,57 @@
 
 <?php Yii::app()->bootstrap->register(); ?>
 
-<div class="container" id="page">
+	<section class="logosection">
+		<div class="logo"></div>
+		<div class="logosub"></div>
+		<div class="logoinfo"></div>
+		<div class="logonum"></div>
+	</section>
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+	<section class="logsection">
+		<div class="login"></div><div class="singin"></div><div class="searchbar"></div>
+	</section>	
+
+	<section>
+		<div class="carrusel"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
+	</section>
+
+	<section class="carruselinfo">
+		<div id="uno"></div><div id="dos"></div><div id="tres"></div>
+	</section>
+
+	<section>
+
+		<div class="content"></div>
+
+	</section>
+
+	<section class="contentboxs"> 
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
+		<div id="box4"></div>
+		<div id="box5"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
+		<div id="box6"></div>
+	</section>
+
+	<section class="contentboxs2"> 
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
+		<div id="box4"></div>	
+	</section>
+
+	<section>
+		<div class="content"></div>
+	</section>
+
+	<section>
+		<div class="carrusel"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
+	</section>
 
 
-	<ul class="nav nav-tabs">
-		  <li role="presentation" class="active"><a href="#">Home</a></li>
-		  <li role="presentation"><a href="#">Profile</a></li>
-		  <li role="presentation"><a href="#">Messages</a></li>
-	</ul>
 
-	<div id="mainmenu" class="container">
-
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div>
-		<!-- mainmenu -->
-
-
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
-
-
-
-
-	<?php echo $content; ?>
-
-
-
- 
-		<div class="clear"></div>
-
-		<div id="footer">
-			Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-			All Rights Reserved.<br/>
-			<?php echo Yii::powered(); ?>
-		</div><!-- footer -->
-
-</div><!-- page -->
 
 </body>
 </html>
