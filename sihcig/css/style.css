@@ -12,8 +12,14 @@ body
 	border:0;
 	padding: 0;
 	margin: 0;
-}
+	color: white;
 
+}
+.logosection span
+{	
+	margin: 30px;
+	color: white;
+}
 .logosection
 {
 
@@ -52,6 +58,13 @@ body
 	height: 50px;
 	width: 100%;
 }
+.logonum h4
+{
+	margin-left: 50px;
+	margin-right: 50px;
+	color: white;
+	display: inline-block;
+}
 .logsection
 {
 	background: #ffffff;
@@ -66,27 +79,58 @@ body
 	width: 50%;
 	height: 100px;
 	background-color: #798C9D;
-	display: inline-block;
+	float: left;
 }
 .singin
 {
 	width: 50%;
 	height: 100px;
 	background-color: #798C9D;
-	display: inline-block;
+	float: right;
 }
 .searchbar
 {
 	width: 100%;
-	height: 95px;
+	height: 100px;
 	background-color: #1EB9C0;
+	float: left;
+}
+.searchbar #menuimg
+{
+	width: 30px;
+	height: 30px;
+	margin-left: 25px;
+	margin-top: 25px;
+	float: left;
+
+}
+.searchbar span
+{
+
+
+}
+.searchbar input[type="text"]
+{
+	height: 50px;
+	width: 80%;
+	margin-left: 75px;
+	margin-top: 25px;
+	background-color: #80DCE0;
+	color: white;
+	background-image:url(../img/empty.svg);
+	background-repeat:no-repeat;
+	background-position: 460px;
+
+}
+.searchbar::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #ffffff;
 }
 .carrusel img
 {
-
 	background-color: #BD314D;
 	width: 100%;
 	height: 525px;
+
 }
 .carruselinfo #uno
 {
@@ -214,6 +258,47 @@ body
 	height: 350px;
 	display: inline-block;
 
+}
+.menu 
+{
+	background-color: #0A3250;
+	height: auto;
+	width: 100%;
+	
+}
+.menu span, ul, li, a, a:hover
+{
+	color: #00B9C0 !important;
+}
+.cbp-hsmenu li
+{
+	list-style: none;
+	margin-left: 26px;
+	margin-top: 26px;
+	margin-bottom: 40px;
+	
+	
+}
+.cbp-hsmenu div
+{	
+	display: inline-block;
+	width: 302px;
+	margin: 0;
+}
+.cbp-hssubmenu li
+{
+	list-style: circle;
+	margin: 0;
+}
+ul.cbp-hssubmenu 
+{
+	 
+	margin-top: 20px;
+	padding-left: 43px;
+}
+.menu ul, li
+{	
+	margin: 0px; 
 }
 
 
