@@ -272,14 +272,13 @@ body
 }
 .cbp-hsmenu li
 {
-	list-style: none;
 	margin-left: 26px;
 	margin-top: 26px;
 	margin-bottom: 40px;
 	
 	
 }
-.cbp-hsmenu div
+.menu div
 {	
 	display: inline-block;
 	width: 302px;
