@@ -18,12 +18,12 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
 
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
-    <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
+	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
-    <?php
-    	$baseUrl = Yii::app()->baseUrl; 
-		$cs = Yii::app()->getClientScript();
-		$cs->registerScriptFile($baseUrl.'/js/list.js');
+	<?php
+	$baseUrl = Yii::app()->baseUrl; 
+	$cs = Yii::app()->getClientScript();
+	$cs->registerScriptFile($baseUrl.'/js/list.js');
 	?>
 
 	<?php Yii::app()->bootstrap->register(); ?>
@@ -93,100 +93,103 @@
 
 		<div class="menu">
 			<div>
-				<ul class="cbp-hsmenu">
-						<li><a>OPD HCG</a>
-							<ul class="cbp-hssubmenu">
-								<li><a><span>Delicate Wine</span></a></li>
-								<li><a><span>Dirección general</span></a></li>
-								<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
-								<li><a><span>Organigrama</span></a></li>
-								<li><a><span>Normatividad de investigación</span></a></li>
-								<li><a><span>Registro RENIECYT</span></a></li>
-								<li><a><span>Tramites y servicios</span></a></li>
-								<li><a><span>Transparencia</span></a></li>
-								<li><a><span>FInEHC</span></a></li>
-								<li><a><span>Plano de ubicación</span></a></li>
-							</ul>
-						</li>
-						<li>
-							<a>Programas de coopreación internacional en investigación</a>
-							<ul class="cbp-hssubmenu">
-							</ul>
-						</li>
+				<ul class="cbp-hsmenu1">
+					<li><a>OPD HCG</a>
+						<ul class="cbp-hssubmenu1">
+							<li><a><span>Delicate Wine</span></a></li>
+							<li><a><span>Dirección general</span></a></li>
+							<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
+							<li><a><span>Organigrama</span></a></li>
+							<li><a><span>Normatividad de investigación</span></a></li>
+							<li><a><span>Registro RENIECYT</span></a></li>
+							<li><a><span>Tramites y servicios</span></a></li>
+							<li><a><span>Transparencia</span></a></li>
+							<li><a><span>FInEHC</span></a></li>
+							<li><a><span>Plano de ubicación</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<a>Programas de coopreación internacional en investigación</a>
+						<ul class="cbp-hssubmenu1">
+						</ul>
+					</li>
 
-						<li>
-							<a>Vinculación con universidades, institutos y hospitales</a>
-							<ul class="cbp-hssubmenu">
-							</ul>
-						</li>
-
-						<li>
-							<a>Unidad Editorial</a>
-							<ul class="cbp-hssubmenu">
-							</ul>
-						</li>
-				<ul>
+					<li>
+						<a>Vinculación con universidades, institutos y hospitales</a>
+						<ul class="cbp-hssubmenu1">
+						</ul>
+					</li>
+					<ul>
 			</div>
 
-			<div>
-				<ul class="cbp-hsmenu">
-					<li>
-						<a>Programas de generación de conocmiento cientifico</a>
-						<ul class="cbp-hssubmenu">
-						<li><a><span>Redacción científica</span></a></li>
-						<li><a><span>Asesoría Metodológica</span></a></li>
-						<li><a><span>Asesoría de corrección de estilo de redacción en español u otros idiomas</span></a></li>
-						<li><a><span>Desplegar lineas de generación de conocimiento científico<span><a></li>
+					<div>
+						<ul class="cbp-hsmenu2">
+							<li>
+								<a>Unidad Editorial</a>
+								<ul class="cbp-hssubmenu2">
+								</ul>
+							</li>
+							<li>
+								<a>Programas de generación de conocmiento cientifico</a>
+								<ul class="cbp-hssubmenu2">
+									<li><a><span>Redacción científica</span></a></li>
+									<li><a><span>Asesoría Metodológica</span></a></li>
+									<li><a><span>Asesoría de corrección de estilo de redacción en español u otros idiomas</span></a></li>
+									<li><a><span>Desplegar lineas de generación de conocimiento científico<span><a></li>
+								</ul>
+							</li>
+							<li>
+								<a>Programas de desarrollo tecnológico e innovación</a>
+								<ul class="cbp-hssubmenu2">
+									<li><a><span>proINVENCI</span></a></li>
+								</ul>
+							</li>
 						</ul>
-					</li>
-					<li>
-						<a>Programas de desarrollo tecnológico e innovación</a>
-						<ul class="cbp-hssubmenu">
-						<li><a><span>proINVENCI</span></a></li>
-						</ul>
-					</li>
-					<li>
-						<a>Centro de investigación clinica medicina traslacional</a>
-						<ul class="cbp-hssubmenu">
-						</ul>
-					</li>
+					</div>
 
-			
-					<li>
-						<a>Unidades de investigación</a>
-						<ul class="cbp-hssubmenu">
+					<div>
+						<ul class="cbp-hsmenu3">
+							<li>
+								<a>Centro de investigación clinica medicina traslacional</a>
+								<ul class="cbp-hssubmenu3">
+								</ul>
+							</li>
+							<li>
+								<a>Unidades de investigación</a>
+								<ul class="cbp-hssubmenu3">
+								</ul>
+							</li>
+							<li>
+								<a>Formación de recursos en investigación</a>
+								<ul class="cbp-hssubmenu3">
+									<li><a><span>Delicate Wine</span></a></li>
+									<li><a><span>Programas PNCP</span></a></li>
+									<li><a><span>Programas NO PNCP</span></a></li>
+									<li><a><span>Programas no medicos</span></a></li>
+								</ul>
+							</li>
 						</ul>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<ul class="cbp-hsmenu">
-					<li>
-						<a>Formación de recursos en investigación</a>
-						<ul class="cbp-hssubmenu">
-							<li><a href="#"><span>Delicate Wine</span></a></li>
-							<li><a><span>Programas PNCP</span><a></li>
-							<li><a><span>Programas NO PNCP</span><a></li>
-							<li><a><span>Programas no medicos</span><a></li>
+					</div>
+					<div>
+						<ul class="cbp-hsmenu3">
+							<li>
+								<a>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</a>
+								<ul class="cbp-hssubmenu4">
+								</ul>
+							</li>
+							
+							<li>
+								<a>Unidad Editorial</a>
+								<ul class="cbp-hssubmenu4">
+								</ul>
+							</li>
+						
 						</ul>
-					</li>
-
-					<li>
-						<a>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</a>
-						<ul class="cbp-hssubmenu">
-						</ul>
-					</li>
-
-					<li><a>Unidad Editorial</a>
-						<ul class="cbp-hssubmenu">
-						</ul>
-					</li>
+					</div>
 				
-			</ul>
-		</div>
-		</div>
+			</div>
 
 
-		</section>
-</body>
-</html>
+			</section>
+		</body>
+		</html>
