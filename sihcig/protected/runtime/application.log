@@ -497,3 +497,13 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama/img
 ---
+2015/01/31 19:10:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "organigrama".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('organigrama')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('organigrama')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/organigram...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/organigrama
+---
