@@ -12,7 +12,7 @@ return array(
 
 	'aliases' => array(
         'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change this if necessary
-       'yiiwheels' => realpath(__DIR__ . '/../extensions/yiiwheels'), // change if necessary
+       'yiiwheels' => realpath(__DIR__ . '/../extensions/Yiiwheels'), // change if necessary
     ),
 
 	// preloading 'log' component
@@ -56,8 +56,7 @@ return array(
            'yiiwheels' => array(
             'class' => 'yiiwheels.YiiWheels',   
         ),
-
-		
+      	
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(

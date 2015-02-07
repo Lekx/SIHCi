@@ -17,6 +17,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
 
+
+
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
@@ -31,6 +33,8 @@
 	<?php Yii::app()->bootstrap->register(); ?>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+
 
 </head>
 
@@ -148,7 +152,6 @@
 		<div class="searchbar">
 			<form>
 
-
 				<button id="show_hidemenu" type="button" class="btn btn-default btn-lg">
 				<span class="glyphicon glyphicon-align-justify"></span>
 				</button>
@@ -190,12 +193,51 @@
 	</section>
 
 	<section class="carruselinfo">
-		<div id="uno"></div><div id="dos"></div><div id="tres"></div>
+	<div>
+		<div id="uno"><span>Enlace con mucho trafico</span></div><div id="dos"><span>Enlace de importancia</span></div>
+		<div id="tres"><span>Enlace con mayor trafico de la pagina web</span></div>
+	</div>
 	</section>
 
-	<section>
+	<section class="main-content">
 
-		<div class="content"></div>
+		<div class="content">
+			<div class="title"><h3>Center Curabitur ullamcorper ultricies nisi nam eget <br>
+				dui etiam rhoncus</h3></div>
+				<i class="fa fa-minus"></i>
+				<div class="subtitle">
+					<span>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet 
+					adipiscing <br> sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</span>
+				</div>	
+				<div class="contenido1">
+					<div>
+						<h5>At solmen va esser:</h5>
+							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+					</div>
+					<div>
+						<h5>At solmen va esser:</h5>
+							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+					</div>
+					<div>
+						<h5>At solmen va esser:</h5>
+							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+					</div>
+				</div>
+				<div class="contenido2">
+					<div>
+						<h5>At solmen va esser:</h5>
+							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+					</div>
+					<div>
+						<h5>At solmen va esser:</h5>
+							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+					</div>
+					<div>
+						<h5>At solmen va esser:</h5>
+							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+					</div>
+				</div>
+
 
 	</section>
 
@@ -216,10 +258,10 @@
 	</section>
 
 	<section>
-		<div class="content"></div>
+		<div class="content2">
+		</div>
 	</section>
-
-	<section>
+	<section class"imagefoot">
 		<div class="carrusel"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
 	</section>
 
@@ -325,6 +367,7 @@
 				<div class="loginfot"></div>
 				<div class="singinfot"></div>
 			</section>
+
 
 
 		</body>
