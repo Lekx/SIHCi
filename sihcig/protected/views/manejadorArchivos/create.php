@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create ManejadorArchivos</h1>
+<h1>Manejador de archivos (Nuevo)</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
