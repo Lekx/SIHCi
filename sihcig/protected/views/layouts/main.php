@@ -6,7 +6,8 @@
 	<meta name="language" content="en">
 
 	<!-- blueprint CSS framework -->
-	
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
 	<!--[if lt IE 8]>
@@ -211,54 +212,100 @@
 				</div>	
 				<div class="contenido1">
 					<div>
+						<i class="fa fa-compass fa-5x"></i>
 						<h5>At solmen va esser:</h5>
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 					<div>
+						<i class="fa fa-compass fa-5x"></i>
 						<h5>At solmen va esser:</h5>
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 					<div>
+						<i class="fa fa-compass fa-5x"></i>
 						<h5>At solmen va esser:</h5>
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 				</div>
 				<div class="contenido2">
 					<div>
+						<i class="fa fa-compass fa-5x"></i>
 						<h5>At solmen va esser:</h5>
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 					<div>
+					<i class="fa fa-compass fa-5x"></i>
 						<h5>At solmen va esser:</h5>
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 					<div>
+					<i class="fa fa-compass fa-5x"></i>
 						<h5>At solmen va esser:</h5>
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 				</div>
 
-
 	</section>
 
 	<section class="contentboxs"> 
-		<div id="box1"></div>
-		<div id="box2"></div>
-		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
-		<div id="box4"></div>
-		<div id="box5"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
-		<div id="box6"></div>
+		<div id="box1">
+			<div id="title"><h3>Nemo enim ipsam voluptatem</h3></div>
+			<div id="content"><span><p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni do- lores eos qui ratione voluptatem sequi nesciunt.</p>
+									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, ad- ipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labori- osam, nisi ut aliquid ex ea commodi consequatur</p></span>
+			</div>
+		</div>
+		<div id="box2">
+			<div>
+				<p><span>Omnicos directe: </span>al desirabilite de un nov lingua franca On refusa continuar payar custosi traductores.</p>
+				<p><span>At solmen va esser: </span>necessi far uniform grammatica, grammatica del resultant pronunciation e plu sommun paroles.</p>
+				<p><span>Ma quande: </span>lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
+			</div>
+		</div>
+		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner4.jpg"></div>
+		<div id="box4">
+			<i class="fa fa-heartbeat fa-5x"></i>
+		</div>
+		<div id="box5"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner2.jpg"></div>
+		<div id="box6">
+			<div>
+			<p><span>Omnicos directe: </span>al desirabilite de un nov lingua franca On refusa continuar payar custosi traductores.</p>
+			</div>
+		</div>
 	</section>
 
 	<section class="contentboxs2"> 
-		<div id="box1"></div>
-		<div id="box2"></div>
-		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
-		<div id="box4"></div>	
+		<div id="box1">
+			<div>
+				<i class="fa fa-medkit fa-5x"></i>
+			</div>
+		</div>
+		<div id="box2">
+			<div><p><span>Omnicos directe: </span>al desirabilite de un nov lingua franca On refusa continuar payar custosi traductores.</p></div>
+		</div>
+		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner3.jpg"></div>
+		<div id="box4">
+				<div id="title"><h3>Nemo enim ipsam voluptatem</h3></div>
+			<div id="content"><span><p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni do- lores eos qui ratione voluptatem sequi nesciunt.</p>
+									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, ad- ipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labori- osam, nisi ut aliquid ex ea commodi consequatur</p>
+									</span>
+			</div>
+		</div>	
 	</section>
 
 	<section>
 		<div class="content2">
+			<div class="conteninfo">
+				<h3>Curabitur ullamcorper ultricies ninam eget dui etiam rhoncus.</h3>
+				<p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.<p>
+				<p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni doloes eos qui ratione voluptatem sequi nesciunt.Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+				Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+				At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia dese- runt mollitia animi, id est laborum et dolorum fuga.Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+				Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit</p>
+			</div>
+
+			<div class="slidebar"></div>
 		</div>
 	</section>
 	<section class"imagefoot">

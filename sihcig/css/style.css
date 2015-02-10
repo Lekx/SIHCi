@@ -203,17 +203,13 @@ span
 	display: inline-block;
 	text-align: center;
 }
-.content2
-{
-	background-color: #ffffff;
-	width: 100%;
-	height: 500px;
-	display: inline-block;
-	text-align: center;
-}
 .content .title
 {
 	margin-top: 60px;
+}
+.main-content i
+{
+	color: #0A3250;
 }
 .content .subtitle
 {
@@ -254,12 +250,6 @@ span
 
 
 
-
-
-
-
-
-
 .contentboxs
 {
 	width: 50%;
@@ -271,6 +261,24 @@ span
 	background-color: #1EB9C0;
 	width: 100%;
 	height: 350px;
+	float: left;
+
+}
+.contentboxs #box1 #title
+{
+
+	margin-top: 50px;
+	margin-left: 50px;
+	color: white;
+
+
+}
+.contentboxs #box1 #content
+{
+	width: 575px;
+	margin-left: 30px;
+	color: #084A64;
+	text-align: justify;
 
 }
 .contentboxs #box2
@@ -280,8 +288,26 @@ span
 	width: 50%;
 	height: 350px;
 	float: right;
-	
 
+}
+.contentboxs #box2 div
+{
+
+	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	width: 235px;
+	color: white;
+	text-align: justify;
+	font-family: 'Caviar_Dreams'
+
+}
+.contentboxs #box2 span
+{
+
+	color: #0A3250;
+	font-family: 'Caviar_Dreams_Bold';
 
 }
 .contentboxs #box3 img
@@ -304,12 +330,20 @@ span
 
 
 }
+.contentboxs #box4 i
+{
+	color: white;
+	margin-top: 50px;
+	margin-left: 120px;
+
+}
 .contentboxs #box6
 {
 
 	background-color: #1EB9C0;
 	width: 50%;
 	height: 175px;
+	float: left;
 
 }
 .contentboxs #box5 img
@@ -319,6 +353,26 @@ span
 	width: 50%;
 	height: 175px;
 	float: right;
+
+}
+.contentboxs #box6 div
+{
+
+	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	width: 235px;
+	color: white ;
+	text-align: justify;
+	font-family: 'Caviar_Dreams';
+
+}
+.contentboxs #box6 span
+{
+
+	color: #0A3250;
+	font-family: 'Caviar_Dreams_Bold';
 
 }
 .contentboxs2
@@ -333,14 +387,39 @@ span
 	padding: 15px;
 	width: 50%;
 	height: 175px;
-	float: right;
+	float: left;
+}
+.contentboxs2 #box1 i
+{
+	color: white;
+	margin-top: 40px;
+	margin-left: 110px;
 }
 .contentboxs2 #box2
 {
 	background-color: #798C9D;
 	width: 50%;
 	height: 175px;
-	float: left;
+	float: right;
+	color: white;
+	font-family: 'Caviar_Dreams';
+}
+.contentboxs2 #box2 div
+{
+	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	width: 235px;
+	color: white ;
+	text-align: justify;
+
+}
+.contentboxs2 #box2 span
+{
+	
+	color: #0A3350;
+	font-family: 'Caviar_Dreams';
 }
 .contentboxs2 #box3 img
 {
@@ -357,6 +436,53 @@ span
 	height: 350px;
 	float: right;
 }
+.contentboxs2 #box4 #title
+{
+
+	margin-top: 50px;
+	margin-left: 50px;
+	color: white;
+
+}
+.contentboxs2 #box4 #content
+{
+	width: 575px;
+	margin-left: 30px;
+	color: #084A64;
+	text-align: justify;
+
+}
+.content2
+{
+	background-color: #ffffff;
+	width: 100%;
+	height: auto;
+	display: inline-block;
+
+}
+.content2 .conteninfo
+{
+	width: 850px;
+	margin-top: 115px;
+	margin-left: 26px;
+	margin-right: auto;
+	float: left;
+	text-align: center;
+}
+.content2 .slidebar
+{
+	width: 235px;
+	margin-top: 125px;
+	float: right;
+	margin-right: auto;
+}
+
+
+
+/* MENU DESPLEGABLE HOME*/
+
+/* ------------------------------------------- */
+
 .menu 
 {
 	background-color: #0A3250;
@@ -470,6 +596,11 @@ ul.cbp-hssubmenu
 	float: left;
 
 }
+
+
+/* SLIDESHOW */
+/* -------------------------*/
+
 .slideshow 
 {
 
@@ -477,7 +608,6 @@ ul.cbp-hssubmenu
   height: 420px;
 
 }
-
 .inner {
  
   display: block;
