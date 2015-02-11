@@ -567,7 +567,18 @@ span
 
 
 
+#header-container {height:80px;width:100%;}
+#header-content-container  {height:60px;width:100%;background:red;z-index:3;}
 
+
+#header-content-container {
+    height:50px;
+    background:#F0F0F0;
+    border:1px solid #CCC;
+    width:100%;
+    position: fixed;
+    display: none;
+}
 
 
 /* MENU DESPLEGABLE HOME*/
@@ -721,3 +732,6 @@ ul.cbp-hssubmenu
 {
 	color: #00B9C0;
 }
+/*------------------------------*/
+
+

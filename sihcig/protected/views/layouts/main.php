@@ -29,6 +29,7 @@
 	$cs->registerScriptFile($baseUrl.'/js/list.js');
 	$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
 	$cs->registerScriptFile($baseUrl.'/js/slideshow.js');
+	$cs->registerScriptFile($baseUrl.'/js/scroll.js');
 	?>
 
 	<?php Yii::app()->bootstrap->register(); ?>
@@ -40,6 +41,8 @@
 </head>
 
 <body>
+<script type="text/javascript">
+</script>
 
 	<section>
 		<div class="slidingDiv">
@@ -139,6 +142,13 @@
 				</div>
 		</div>
 	</section>
+
+	   <header>
+             <div id="header-content-container">
+                      <div id="header-content">The header</div>
+            </div>
+
+       </header>
 
 	<section class="logosection">
 		<div class="logo"></div>
@@ -442,9 +452,7 @@
 				</div>
 				<div class="loginfot"></div>
 				<div class="singinfot"></div>
-			</section>
-
-
+			</section>	
 
 		</body>
 		</html>
