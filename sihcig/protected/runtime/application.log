@@ -1315,3 +1315,831 @@ Stack trace:
 REQUEST_URI=/SIHCiG/sihcig/index.php/site/prueba?fine=1&qquuid=8eae206a-a716-445b-a644-9b24f1c9ac10&qqtotalfilesize=279843&ManejadorArchivos%5Bruta%5D=BD+-+DiagramaERconceptual.png
 HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
 ---
+2015/02/10 04:55:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "manejador de archivos".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejador de ar...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejador%20de%20archivos
+---
+2015/02/10 04:55:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'sihcig'' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(458): CModule->getComponent('db')
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(670): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(1601): CActiveRecord->getCommandBuilder()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(147): CListView->init()
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#20 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(128): CController->render('index', Array)
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionIndex()
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#29 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#31 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#32 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#33 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos
+---
+2015/02/10 05:10:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "prueba".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('prueba')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('prueba')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/prueba')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/prueba?fine=1&qquuid=9fccab55-8d84-4474-82dc-a15aab107d7d&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/10 05:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "prueba".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('prueba')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('prueba')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/prueba')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/prueba?fine=1&qquuid=c6b329ec-f44e-4929-9d30-49c1d30aaf19&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/10 05:24:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "prueba".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('prueba')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('prueba')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/prueba')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/prueba?fine=1&qquuid=844871c8-32e1-49c9-af5e-6503dbed3fad&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/10 05:25:01 [error] [exception.CException] exception 'CException' with message 'Property "WhFineUploader.params" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('params', Array)
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(125): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(79): CController->render('create', Array)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/site/login
+---
+2015/02/10 05:25:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "prueba".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('prueba')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('prueba')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/prueba')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/prueba?fine=1&qquuid=3087990b-00c3-4252-8bb9-560668a65925&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/10 05:27:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "prueba".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('prueba')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('prueba')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/prueba')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/prueba?fine=1&qquuid=8a3b6678-635d-489f-b614-625247e9f123&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/10 05:28:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "prueba".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('prueba')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('prueba')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/prueba')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/prueba?fine=1&qquuid=724aea6d-04dc-4879-8144-3601f4a99bed&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/10 05:28:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "prueba".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('prueba')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('prueba')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/prueba')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/site/prueba?fine=1&qquuid=c8e1ff78-4ca5-4db5-9d31-14fc14215d4d&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/10 05:36:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sihcig/manejador_archivos".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('sihcig/manejado...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/sihcig/manejador_archivos?fine=1&qquuid=3d252fdf-f5d5-44d7-9e4e-7681c83145c9&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/10 06:06:06 [error] [exception.CException] exception 'CException' with message 'Property "ManejadorArchivos.ManejadorArchivos" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('ManejadorArchiv...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('ManejadorArchiv...')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(ManejadorArchivos), 'ManejadorArchiv...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(112): CActiveForm->textField(Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(79): CController->render('create', Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/site/login
+---
+2015/02/10 06:06:23 [error] [exception.CException] exception 'CException' with message 'Property "ManejadorArchivos.manejador_archivos" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('manejador_archi...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('manejador_archi...')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(ManejadorArchivos), 'manejador_archi...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(ManejadorArchivos), 'manejador_archi...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(ManejadorArchivos), 'manejador_archi...', Array)
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(112): CActiveForm->textField(Object(ManejadorArchivos), 'manejador_archi...', Array)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(79): CController->render('create', Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/site/login
+---
+2015/02/10 06:06:42 [error] [exception.CException] exception 'CException' with message 'Property "ManejadorArchivos.ManejadorArchivos" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('ManejadorArchiv...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('ManejadorArchiv...')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(ManejadorArchivos), 'ManejadorArchiv...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(112): CActiveForm->textField(Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(79): CController->render('create', Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/site/login
+---
+2015/02/10 06:07:15 [error] [exception.CException] exception 'CException' with message 'Property "ManejadorArchivos.ManejadorArchivos" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('ManejadorArchiv...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('ManejadorArchiv...')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(ManejadorArchivos), 'ManejadorArchiv...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(112): CActiveForm->textField(Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(79): CController->render('create', Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/site/login
+---
+2015/02/10 06:08:02 [error] [exception.CException] exception 'CException' with message 'Property "ManejadorArchivos.ManejadorArchivos" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('ManejadorArchiv...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2717): CActiveRecord->__get('ManejadorArchiv...')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(ManejadorArchivos), 'ManejadorArchiv...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(112): CActiveForm->textField(Object(ManejadorArchivos), 'ManejadorArchiv...', Array)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(79): CController->render('create', Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/site/login
+---
+2015/02/11 03:51:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sihcig/manejador_archivos".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('sihcig/manejado...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/sihcig/manejador_archivos?fine=1&qquuid=acbb8a47-40d0-4845-9f53-a75cf9cdbacd&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/11 03:51:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sihcig/manejador_archivos".' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('sihcig/manejado...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/sihcig/manejador_archivos?fine=1&qquuid=5f37bf2b-3ec6-4e34-8c07-c39275483941&qqtotalfilesize=483027&ManejadorArchivos%5Bruta%5D=Manual+Comunidades+para+la+Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/11 05:01:46 [error] [php] Use of undefined constant fecha_fin - assumed 'fecha_fin' (C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php:156)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): ManejadorArchivosController->renderFile()
+#1 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): ManejadorArchivosController->renderPartial()
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): ManejadorArchivosController->renderInternal()
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): ManejadorArchivosController->renderFile()
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): ManejadorArchivosController->renderPartial()
+#6 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(116): ManejadorArchivosController->render()
+#7 unknown(0): ManejadorArchivosController->actionUpdate()
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): ManejadorArchivosController->runAction()
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): ManejadorArchivosController->filterAccessControl()
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): ManejadorArchivosController->runActionWithFilters()
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): ManejadorArchivosController->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CWebApplication->run()
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/7
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php (156)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php (21)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php (116)
+2015/02/11 05:05:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php:170
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(102): ManejadorArchivosController->loadModel('7')
+#1 [internal function]: ManejadorArchivosController->actionUpdate('7')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/7
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/7
+---
+2015/02/11 07:17:40 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.format" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('format', 'd/m/y')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(143): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(90): CController->render('create', Array)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/11 07:34:37 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.setStartDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('setStartDate', '')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(146): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(90): CController->render('create', Array)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/11 07:34:50 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.StartDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('StartDate', '')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(146): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\create.php(18): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(90): CController->render('create', Array)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ManejadorArchivosController->actionCreate()
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/11 07:43:45 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.setDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('setDate', '20/05/2015')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(148): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/10
+---
+2015/02/11 07:48:18 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.defaultDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('defaultDate', '20/05/2015')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---
+2015/02/11 07:48:30 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.setDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('setDate', '20/05/2015')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---
+2015/02/11 07:48:31 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.setDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('setDate', '20/05/2015')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---
+2015/02/11 07:48:37 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.date" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('date', '20/05/2015')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---
+2015/02/11 07:57:05 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.defaultDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('defaultDate', '31/12/2020')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---
+2015/02/11 07:57:15 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.setDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('setDate', '31/12/2020')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---
+2015/02/11 07:57:16 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.setDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('setDate', '31/12/2020')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---
+2015/02/11 07:57:22 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.setDefaultDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('setDefaultDate', '31/12/2020')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---
+2015/02/11 07:57:28 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePickerHelper.pickDate" is not defined.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWidgetFactory.php(161): CComponent->__set('pickDate', '31/12/2020')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ManejadorArchivosController), 'yiiwheels.widge...', Array)
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\_form.php(147): CBaseController->widget('yiiwheels.widge...', Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(113): CController->render('update', Array)
+#13 [internal function]: ManejadorArchivosController->actionUpdate('10')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/update/10
+---

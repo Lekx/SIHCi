@@ -14,6 +14,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -28,13 +29,13 @@
         $this->widget(
             'yiiwheels.widgets.formhelpers.WhSelectBox',
             array(
-                'name' => 'ManejadorArchivos  ',
-                'value' => ' ',
+                'name' => 'ManejadorArchivos[seccion]',
+                'value' => 'quepedo',
                 'htmlOptions' => array(
             	'placeholder' => 'Seleccione una seccion.'),
                 'data' => array(
-                	' ',
-				   '<optgroup label="OPD HCG">',
+                	isset($model->seccion) ? $model->seccion : '',
+				   "OPD HCG",
 					   '<option value="Direccion general">Dirección general</option>',
 					   '<option value="Subdireccion general de ensenanza e investigacion">Subdirección general de enseñanza e investigación</option>',
 					   '<option value="Organigrama">Organigrama</option>',
@@ -107,20 +108,18 @@
 		<?php echo $form->error($model,'nombre_archivo'); ?>
 	</div>
 
+	<!--<div class="row">
+		<?php /* echo $form->labelEx($model,'ruta'); ?>
+		<?php echo $form->textField($model,'ruta',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($model,'ruta'); */ ?>
+	</div>-->
 
-	<div class="row">
-		<?php
-		$this->widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
-		        'name'          => 'ManejadorArchivos[ruta]',
-		        'uploadAction'  => $this->createUrl('/site/prueba', array('fine' => 1)),
-		        'pluginOptions' => array(
-		            'validation'=>array(
-		                'allowedExtensions' => array('png','PNG')
-		            )
-		        )
-		    ));
-		?>
-	</div>	
+
+<div class="row">
+    <?php echo $form->labelEx($model,'ruta'); ?>
+    <?php echo $form->fileField($model,'ruta'); ?>
+    <?php echo $form->error($model,'ruta'); ?>
+  </div>
 
 
 	
@@ -135,11 +134,19 @@
         $this->widget(
             'yiiwheels.widgets.formhelpers.WhDatePickerHelper',
             array(
-                'htmlOptions' => array('class' => 'input-medium'),
+                'htmlOptions' => array('class' => 'input-medium',),
                 'name' => 'ManejadorArchivos[fecha_inicio]',
-                'value' => ''
-            )
+               	'pluginOptions' => array(
+               		'format' => 'd/m/y',
+               		'language' => 'en',
+               		'date' => isset($model->fecha_inicio) ? $model->fecha_inicio : '',
+               	),
+                
+          	)
+
+            
         );
+        //echo isset($model->fecha_inicio) ? $model->fecha_inicio : '';
         ?>
     </div>
 </div><br>
@@ -154,9 +161,14 @@
             array(
                 'htmlOptions' => array('class' => 'input-medium'),
                 'name' => 'ManejadorArchivos[fecha_fin]',
-                'value' => ''
-            )
-        );
+                'pluginOptions' => array(
+	                'format' => 'd/m/y',
+	           		'language' => 'en',
+	           		'date' => isset($model->fecha_fin) ? $model->fecha_fin : '',
+                ),
+  
+			)
+		);
         ?>
     
         </div>

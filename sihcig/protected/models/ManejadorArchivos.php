@@ -104,4 +104,27 @@ class ManejadorArchivos extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	protected function beforeSave()
+    {
+
+    	//var_dump($this->fechaAutorizacion);
+		// convert to display format
+		
+	        $this->fecha_inicio = DateTime::createFromFormat('d/m/Y', $this->fecha_inicio)->format('Y-m-d H:i:s');
+	        $this->fecha_fin = DateTime::createFromFormat('d/m/Y', $this->fecha_fin)->format('Y-m-d H:i:s');
+        	return parent::beforeSave();
+    }
+
+    	protected function afterFind()
+    {
+        // convert to display format
+
+       
+       
+        	$this->fecha_inicio = DateTime::createFromFormat('Y-m-d H:i:s', $this->fecha_inicio)->format('d/m/Y');
+        	$this->fecha_fin = DateTime::createFromFormat('Y-m-d H:i:s', $this->fecha_fin)->format('d/m/Y');
+     		return parent::afterFind();
+    }
+
+
 }
