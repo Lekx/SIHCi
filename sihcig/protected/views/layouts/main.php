@@ -297,15 +297,39 @@
 	<section>
 		<div class="content2">
 			<div class="conteninfo">
-				<h3>Curabitur ullamcorper ultricies ninam eget dui etiam rhoncus.</h3>
-				<p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.<p>
+				<div id="imagetitle">
+					<i class="fa fa-medkit fa-5x"></i>
+				</div>
+				<div id="title">
+					<h3>Curabitur ullamcorper ultricies ninam eget dui etiam rhoncus.</h3>
+					<p><a>Maecenas tempus</a>, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, <a>luctus pulvinar</a>, hendrerit id, lorem.<p>
+				</div>
+				<div id="contentbody">
 				<p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni doloes eos qui ratione voluptatem sequi nesciunt.Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+				<br>
+				<br>
 				Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+				<br>
+				<br>
 				At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia dese- runt mollitia animi, id est laborum et dolorum fuga.Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+				<br>
+				<br>
 				Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit</p>
+				</div>
+				
 			</div>
 
-			<div class="slidebar"></div>
+			<div class="slidebar">
+				<p>
+				Omnicos directe:
+					<p>
+					<a>Al desirabilite de un nov lingua franca On refusa continuar payar custosis.</a>
+					</p>
+					<p>
+					<a>Al desirabilite de un nov lingua franca.</a>
+					</p>
+				</p>
+			</div>
 		</div>
 	</section>
 	<section class"imagefoot">
@@ -410,7 +434,12 @@
 				</div>
 			</section>
 			<section class="footersection">
-				<div class="copyrigths"></div>
+				<div class="copyrigths">
+					<div id="copy">
+					<p> © 2015 Todos los derechos reservados Sistema de Gestión y Administración de Protocolos de Investigación Médica en el Hospital Civil.</p>
+					<p><a>Condiciones de uso</a> / <a>Aviso de privacidad</a></p>
+					</div>
+				</div>
 				<div class="loginfot"></div>
 				<div class="singinfot"></div>
 			</section>

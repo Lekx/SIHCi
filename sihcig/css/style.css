@@ -458,24 +458,115 @@ span
 	width: 100%;
 	height: auto;
 	display: inline-block;
+	font-family: 'Caviar_Dreams';
+	font-size: 13px;
+	color: #0A3250;
 
+}
+.content2 a
+{
+	color: #00B9C0;
 }
 .content2 .conteninfo
 {
 	width: 850px;
+	margin-right: auto;
+	text-align: justify;
+}
+.content2 #title
+{
+	width: 510px;
 	margin-top: 115px;
-	margin-left: 26px;
+	margin-left: 45px;
 	margin-right: auto;
 	float: left;
-	text-align: center;
+	text-align: justify;
+	display: inline-block;
+}
+.content2 #imagetitle
+{
+	width: 70px;
+	margin-top: 115px;
+	margin-left: 45px;
+	float: left;
+
+}
+.content2 i
+{
+	color: #0A3250;
+}
+
+.content2 #contentbody
+{
+	width: 100%;
+	float: left;
+	margin-left: 160px;
+	margin-bottom: 115px;
 }
 .content2 .slidebar
 {
-	width: 235px;
-	margin-top: 125px;
+	width: 220px;
+	margin-top: -150px;
+	margin-left: 10px;
 	float: right;
 	margin-right: auto;
+
+}	
+
+.footersection
+{
+	width: 100%;
+	display: inline-block;
+
 }
+.loginfot
+{
+
+	width: 25%;
+	height: 100px;
+	background-color: #798C9D;
+	float: left;
+
+}
+.singinfot
+{
+	width: 25%;
+	height: 100px;
+	background-color: #798C9D;
+	float: right;
+
+}
+.copyrigths
+{
+
+	background: #00B9C0;
+	border: 0;
+	height: 100px;
+	width: 50%;
+	display: inline-block;
+	float: left;
+
+}
+.copyrigths #copy
+{
+	margin-left: 50px;
+	margin-top: 20px;
+	margin-right: 55px;
+	font-family: 'Caviar_Dreams';
+}
+.copyrigths a
+{
+	color: black !important;
+	font-family: 'Caviar_Dreams_Bold';
+}
+.copyrigths a:hover
+{
+	color: black !important;
+	font-family: 'Caviar_Dreams_Bold';
+}
+
+
+
 
 
 
@@ -560,40 +651,6 @@ ul.cbp-hssubmenu
    	width: 40px;
    	height: 50px;
    	display: inline-block;
-
-}
-.footersection
-{
-	width: 100%;
-	display: inline-block;
-
-}
-.loginfot
-{
-
-	width: 25%;
-	height: 100px;
-	background-color: #798C9D;
-	float: left;
-
-}
-.singinfot
-{
-	width: 25%;
-	height: 100px;
-	background-color: #798C9D;
-	float: right;
-
-}
-.copyrigths
-{
-
-	background: #00B9C0;
-	border: 0;
-	height: 100px;
-	width: 50%;
-	display: inline-block;
-	float: left;
 
 }
 
