@@ -24,7 +24,7 @@
 	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
 	<?php
-	$baseUrl = Yii::app()->baseUrl; 
+	$baseUrl = Yii::app()->baseUrl;
 	$cs = Yii::app()->getClientScript();
 	$cs->registerScriptFile($baseUrl.'/js/list.js');
 	$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
@@ -130,7 +130,7 @@
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
-							
+
 							<li>
 								<a>Unidad Editorial</a>
 								<ul class="cbp-hssubmenu1">
@@ -138,17 +138,128 @@
 							</li>
 
 						</ul>
-					</div>	
+					</div>
 				</div>
 		</div>
 	</section>
 
-	   <header>
-             <div id="header-content-container">
-                      <div id="header-content">The header</div>
-            </div>
+<section>
+	<div class="slidingDiv2">
+			<div class="menu">
+			<div>
+				<ul class="cbp-hsmenu1">
+					<li><a>OPD HCG</a>
+						<ul class="cbp-hssubmenu1">
+							<li><a><span>Delicate Wine</span></a></li>
+							<li><a><span>Dirección general</span></a></li>
+							<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
+							<li><a><span>Organigrama</span></a></li>
+							<li><a><span>Normatividad de investigación</span></a></li>
+							<li><a><span>Registro RENIECYT</span></a></li>
+							<li><a><span>Tramites y servicios</span></a></li>
+							<li><a><span>Transparencia</span></a></li>
+							<li><a><span>FInEHC</span></a></li>
+							<li><a><span>Plano de ubicación</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<a>Programas de coopreación internacional en investigación</a>
+						<ul class="cbp-hssubmenu1">
+						</ul>
+					</li>
 
-       </header>
+					<li>
+						<a>Vinculación con universidades, institutos y hospitales</a>
+						<ul class="cbp-hssubmenu1">
+						</ul>
+					</li>
+					<ul>
+					</div>
+					<div>
+						<ul class="cbp-hsmenu1">
+							<li>
+								<a>Unidad Editorial</a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<a>Programas de generación de conocmiento cientifico</a>
+								<ul class="cbp-hssubmenu1">
+									<li><a><span>Redacción científica</span></a></li>
+									<li><a><span>Asesoría Metodológica</span></a></li>
+									<li><a><span>Asesoría de corrección de estilo de redacción en español u otros idiomas</span></a></li>
+									<li><a><span>Desplegar lineas de generación de conocimiento científico<span><a></li>
+								</ul>
+							</li>
+							<li>
+								<a>Programas de desarrollo tecnológico e innovación</a>
+								<ul class="cbp-hssubmenu1">
+									<li><a><span>proINVENCI</span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul class="cbp-hsmenu1">
+							<li>
+								<a>Centro de investigación clinica medicina traslacional</a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<a>Unidades de investigación</a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<a>Formación de recursos en investigación</a>
+								<ul class="cbp-hssubmenu1">
+									<li><a><span>Delicate Wine</span></a></li>
+									<li><a><span>Programas PNCP</span></a></li>
+									<li><a><span>Programas NO PNCP</span></a></li>
+									<li><a><span>Programas no medicos</span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul class="cbp-hsmenu1">
+							<li>
+								<a>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+
+							<li>
+								<a>Unidad Editorial</a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+		</div>
+             <div id="header-content-container">
+                 <div id="header-content">
+                 	<div id="headerlogo"></div>
+
+	                 	<div id="hsearch">
+		                 	<div id="headermenu">
+		                 		<button id="show_hidemenu2" type="button" class="btn btn-default btn-lg">
+		                 			<span class="glyphicon glyphicon-align-justify"></span>
+		                 		</button>
+		                 	 </div>
+		                 	<div id="headersearch"><input id="searchbartop"type="search" placeholder="Buscar"></div>
+		                 	<div id="hsearchbutton">
+		                 		<button id="" type="button" class="btn btn-default btn-lg">
+		                 			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		                 		</button>
+		                 	 </div>
+	                 	</div>
+                 </div>
+            </div>
+    </section>
 
 	<section class="logosection">
 		<div class="logo"></div>
@@ -166,14 +277,14 @@
 				<button id="show_hidemenu" type="button" class="btn btn-default btn-lg">
 				<span class="glyphicon glyphicon-align-justify"></span>
 				</button>
-				
-				
+
+
 				<input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
 				<button id="search" type="button" class="btn btn-default btn-lg">
 					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				</button>
 		</div>
-	</section>	
+	</section>
 
 	<section>
 		<div class="slideshow">
@@ -217,9 +328,9 @@
 				dui etiam rhoncus</h3></div>
 				<i class="fa fa-minus"></i>
 				<div class="subtitle">
-					<span>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet 
+					<span>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
 					adipiscing <br> sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</span>
-				</div>	
+				</div>
 				<div class="contenido1">
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
@@ -254,10 +365,9 @@
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 				</div>
-
 	</section>
 
-	<section class="contentboxs"> 
+	<section class="contentboxs">
 		<div id="box1">
 			<div id="title"><h3>Nemo enim ipsam voluptatem</h3></div>
 			<div id="content"><span><p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni do- lores eos qui ratione voluptatem sequi nesciunt.</p>
@@ -284,7 +394,7 @@
 		</div>
 	</section>
 
-	<section class="contentboxs2"> 
+	<section class="contentboxs2">
 		<div id="box1">
 			<div>
 				<i class="fa fa-medkit fa-5x"></i>
@@ -301,7 +411,7 @@
 									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labori- osam, nisi ut aliquid ex ea commodi consequatur</p>
 									</span>
 			</div>
-		</div>	
+		</div>
 	</section>
 
 	<section>
@@ -326,7 +436,7 @@
 				<br>
 				Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit</p>
 				</div>
-				
+
 			</div>
 
 			<div class="slidebar">
@@ -342,6 +452,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class"imagefoot">
 		<div class="carrusel"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
 	</section>
@@ -432,17 +543,16 @@
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
-							
 							<li>
 								<a>Unidad Editorial</a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
-
 						</ul>
-					</div>	
+					</div>
 				</div>
 			</section>
+
 			<section class="footersection">
 				<div class="copyrigths">
 					<div id="copy">
@@ -452,7 +562,7 @@
 				</div>
 				<div class="loginfot"></div>
 				<div class="singinfot"></div>
-			</section>	
+			</section>
 
-		</body>
-		</html>
+	</body>
+	</html>
