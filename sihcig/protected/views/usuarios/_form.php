@@ -19,10 +19,20 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+
 	<div class="row">
-		<?php echo $form->labelEx($model,'id_rol'); ?>
-		<?php echo $form->textField($model,'id_rol'); ?>
-		<?php echo $form->error($model,'id_rol'); ?>
+		<label>Roles</label>
+		<select name="Usuarios[id_rol]" id="Usuarios_id_rol">
+		<option></option>
+		<?php
+			foreach($Roles as $Roles)
+			{
+		?>
+		<option value="<?php echo $Roles->id;?>"><?php echo $Roles->rol;?></option>
+		<?php
+			}
+		?>
+		</select>
 	</div>
 
 	<div class="row">

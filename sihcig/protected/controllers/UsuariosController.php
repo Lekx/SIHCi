@@ -70,12 +70,13 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
+			$model->fecha_registro = new CDbExpression('NOW()');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
+		$Roles= Roles::model()->findAll();
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model,'Roles'=>$Roles
 		));
 	}
 
