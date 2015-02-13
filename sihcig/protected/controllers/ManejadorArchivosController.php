@@ -68,17 +68,16 @@
 		$model->attributes=$_POST['ManejadorArchivos'];
 
 		$model->ruta = CUploadedFile::getInstanceByName('ManejadorArchivos[ruta]');
-		echo $model->ruta->size;
+		//echo $model->ruta->size;
 		echo $model->ruta->type;
 			if($model->ruta->type == 'application/pdf' || $model->ruta->type == 'application/PDF' )
-			if($model->ruta->size <= 5000000)
+			//if($model->ruta->size <= 5000000)
 			{
 				$model->ruta->saveAs(YiiBase::getPathOfAlias("webroot").'/manejador_archivos/'.$model->nombre_archivo.'.pdf');
 	   				if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 
-			} else 
-			 	echo "Archivo mayor a 5MB, seleccione uno menor o igual a 5 MB." .$model->ruta->size;
+			} 
 			 else 
 			 	echo "Tipo de archivo no valido, solo se admiten .PDF" .$model->ruta->type ;
 
