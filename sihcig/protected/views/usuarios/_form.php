@@ -48,7 +48,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'contrasena'); ?>
-		<?php echo $form->passwordField($model,'contrasena',array('min'=>5,'maxlength'=>10)); ?>
+		<?php echo $form->textField($model,'contrasena',array('maxlength'=>30)); ?>
 		<?php echo $form->error($model,'contrasena'); ?>
 	</div>
 

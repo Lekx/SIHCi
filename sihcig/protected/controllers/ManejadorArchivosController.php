@@ -24,7 +24,7 @@
 		 * This method is used by the 'accessControl' filter.
 		 * @return array access control rules
 		 */
-		public function accessRules()
+		/*public function accessRules()
 		{
 			return array(
 				array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -43,7 +43,7 @@
 					'users'=>array('*'),
 				),
 			);
-		}
+		}*/
 
 		/**
 		 * Displays a particular model.
@@ -178,5 +178,20 @@
 				echo CActiveForm::validate($model);
 				Yii::app()->end();
 			}
+		}
+
+
+		public function actionDisplayFiles()
+		{
+			
+		//	$files = ManejadorArchivos::model()->findAllByAttributes("seccion","Direccion general");
+
+$files = $model=ManejadorArchivos::model()->findAll(array(
+    'condition'=>'seccion="Direccion general" '
+));
+
+				$this->render('desplegar',array(
+				'files'=>$files,
+			));
 		}
 	}

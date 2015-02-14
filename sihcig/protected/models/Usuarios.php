@@ -44,7 +44,8 @@ class Usuarios extends CActiveRecord
 			array('id_rol, email, contrasena, fecha_registro, fecha_activacion, llave_act_rec, estatus', 'required'),
 			array('id_rol, estatus', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>100),
-			array('contrasena', 'length', 'min'=>5, 'max'=>15),
+			array('email', 'email'),
+			array('contrasena', 'length', 'min'=>6),
 			array('llave_act_rec', 'length', 'max'=>200),
 			array('id, id_rol, email, contrasena, fecha_registro, fecha_activacion, llave_act_rec, estatus', 'safe', 'on'=>'search'),
 		);
@@ -79,7 +80,7 @@ class Usuarios extends CActiveRecord
 			'contrasena' => 'Contrasena',
 			'fecha_registro' => 'Fecha Registro',
 			'fecha_activacion' => 'Fecha Activacion',
-			'llave_act_rec' => 'Llave Act Rec',
+			'llave_act_rec' => 'Llave de comprobacion',
 			'estatus' => 'Estatus',
 		);
 	}

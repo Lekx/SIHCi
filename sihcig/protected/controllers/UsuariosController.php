@@ -85,15 +85,15 @@ class UsuariosController extends Controller
 
 		if(isset($_POST['Usuarios']))
 		{	$this->checkEmail($_POST['Usuarios']['email'], $_POST['Usuarios']['email2']);
-			$this->checkPassword($_POST['Usuarios']['email'], $_POST['Usuarios']['email2']);
+			$this->checkPassword($_POST['Usuarios']['contrasena'], $_POST['Usuarios']['contrasena2']);
 			$model->attributes=$_POST['Usuarios'];
 			$model->fecha_registro = new CDbExpression('NOW()');
 			$model->fecha_activacion = new CDbExpression('0000-00-00');
 			$model->estatus = 0;
-			$model->llave_act_rec = sha1(md5(sha1(date('d/m/y H:i:s').$model->email.rand(1000, 5000))));
-			$model->validate();
+			$model->llave_act_rec = sha1 (md5(sha1(date('d/m/y H:i:s').$model->email.rand(1000, 5000))));
+			$model->contrasena = $model->contrasena;
+			if($model->validate())
 			$model->contrasena = sha1(md5($model->contrasena));
-		
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
