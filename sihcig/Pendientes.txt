@@ -1,0 +1,4 @@
+1-.Desplegar archivo en seccion
+2.-error en subir archivo ("size no lo acepta")
+3.-minimo de caracteres de la validacion.
+4-.terminar pre registro de investigador. 

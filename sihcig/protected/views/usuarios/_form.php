@@ -37,39 +37,59 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'email'); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 	<div class="row">
+		<p>Verificacion de Email</p>
+		 <input type="text" name="Usuarios[email2]" id="Usuarios_email2"></input>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'contrasena'); ?>
-		<?php echo $form->textField($model,'contrasena',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->passwordField($model,'contrasena',array('min'=>5,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'contrasena'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_registro'); ?>
+		<p>Verificacion de contraseña</p>
+		 <input type="password" name="Usuarios[contrasena2]" id="Usuarios_contrasena2"></input>
+	</div>
+
+<!--
+	<div class="row">
+		<?php /*echo $form->labelEx($model,'fecha_registro'); ?>
 		<?php echo $form->textField($model,'fecha_registro'); ?>
-		<?php echo $form->error($model,'fecha_registro'); ?>
+		<?php echo $form->error($model,'fecha_registro') */; ?>
 	</div>
+-->
 
+<!--
 	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_activacion'); ?>
+		<?php /*echo $form->labelEx($model,'fecha_activacion'); ?>
 		<?php echo $form->textField($model,'fecha_activacion'); ?>
-		<?php echo $form->error($model,'fecha_activacion'); ?>
+		<?php echo $form->error($model,'fecha_activacion'); */?>
 	</div>
+-->
 
+<!--
 	<div class="row">
-		<?php echo $form->labelEx($model,'llave_act_rec'); ?>
+		<?php /*echo $form->labelEx($model,'llave_act_rec'); ?>
 		<?php echo $form->textField($model,'llave_act_rec',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'llave_act_rec'); ?>
+		<?php echo $form->error($model,'llave_act_rec'); */?>
 	</div>
+-->
 
+<!--
 	<div class="row">
-		<?php echo $form->labelEx($model,'estatus'); ?>
+		<?php /*echo $form->labelEx($model,'estatus'); ?>
 		<?php echo $form->textField($model,'estatus'); ?>
-		<?php echo $form->error($model,'estatus'); ?>
+		<?php echo $form->error($model,'estatus'); */?>
 	</div>
+-->
+
+	
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

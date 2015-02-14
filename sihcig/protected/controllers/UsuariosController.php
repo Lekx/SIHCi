@@ -2,6 +2,22 @@
 
 class UsuariosController extends Controller
 {
+
+		function checkEmail($email, $email2){
+		 
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !filter_var($email2, FILTER_VALIDATE_EMAIL) && $email != $email2){
+		echo "<script> alert(\"Las dos correos son distintos.\")</script>";
+		return false;
+      } 
+} 
+	function checkPassword($contrasena, $contrasena2){
+
+		if ($contrasena != $contrasena2){
+		echo "<script> alert(\"Las dos claves son distintas.\")</script>";
+		return false;
+      } 
+} 
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -68,9 +84,16 @@ class UsuariosController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Usuarios']))
-		{
+		{	$this->checkEmail($_POST['Usuarios']['email'], $_POST['Usuarios']['email2']);
+			$this->checkPassword($_POST['Usuarios']['email'], $_POST['Usuarios']['email2']);
 			$model->attributes=$_POST['Usuarios'];
 			$model->fecha_registro = new CDbExpression('NOW()');
+			$model->fecha_activacion = new CDbExpression('0000-00-00');
+			$model->estatus = 0;
+			$model->llave_act_rec = sha1(md5(sha1(date('d/m/y H:i:s').$model->email.rand(1000, 5000))));
+			$model->validate();
+			$model->contrasena = sha1(md5($model->contrasena));
+		
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

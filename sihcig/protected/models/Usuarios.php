@@ -21,6 +21,8 @@
  * @property Personas[] $personases
  * @property Roles $idRol
  */
+
+//EL MINIMO DEL  LA CONTRASEÑA
 class Usuarios extends CActiveRecord
 {
 	/**
@@ -42,9 +44,8 @@ class Usuarios extends CActiveRecord
 			array('id_rol, email, contrasena, fecha_registro, fecha_activacion, llave_act_rec, estatus', 'required'),
 			array('id_rol, estatus', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>100),
-			array('contrasena, llave_act_rec', 'length', 'max'=>200),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
+			array('contrasena', 'length', 'min'=>5, 'max'=>15),
+			array('llave_act_rec', 'length', 'max'=>200),
 			array('id, id_rol, email, contrasena, fecha_registro, fecha_activacion, llave_act_rec, estatus', 'safe', 'on'=>'search'),
 		);
 	}
