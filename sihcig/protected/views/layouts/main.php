@@ -17,19 +17,20 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
-
-
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/demo.css">
 
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
-	<?php
+	<?php 
 	$baseUrl = Yii::app()->baseUrl;
 	$cs = Yii::app()->getClientScript();
 	$cs->registerScriptFile($baseUrl.'/js/list.js');
 	$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
 	$cs->registerScriptFile($baseUrl.'/js/slideshow.js');
 	$cs->registerScriptFile($baseUrl.'/js/scroll.js');
+	$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
+	$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
 	?>
 
 	<?php Yii::app()->bootstrap->register(); ?>
@@ -40,10 +41,7 @@
 
 </head>
 
-<body>
-<script type="text/javascript">
-</script>
-
+<body>	
 	<section>
 		<div class="slidingDiv">
 			<div class="menu">
@@ -287,37 +285,26 @@
 	</section>
 
 	<section>
-		<div class="slideshow">
-			<div class="inner">
-				<div class="img-block on">
-					<div class="img-wrap">
-						<div><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
-					</div>
-				</div>
-				<div class="img-block">
-					<div class="img-wrap">
-						<div><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner2.jpg"></div>
-					</div>
-				</div>
-				<div class="img-block">
-					<div class="img-wrap">
-						<div><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner3.jpg"></div>
-					</div>
-				</div>
-				<div class="img-block">
-					<div class="img-wrap">
-						<div><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner4.jpg"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="carrusel"></div>
+	 <div id="wrapper">
+    <div class="callbacks_container">
+      <ul class="rslides" id="slider4">
+        <li>
+        <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg">
+        </li>
+        <li>
+          <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner2.jpg"> 
+        </li>
+        <li>
+         <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner3.jpg">>
+        </li>
+      </ul>
+    </div>
 	</section>
 
 	<section class="carruselinfo">
 	<div>
-		<div id="uno"><span>Enlace con mucho trafico</span></div><div id="dos"><span>Enlace de importancia</span></div>
-		<div id="tres"><span>Enlace con mayor trafico de la pagina web</span></div>
+		<div id="one"><span>Enlace con mucho trafico</span></div><div id="two"><span>Enlace de importancia</span></div>
+		<div id="tree"><span>Enlace con mayor trafico de la pagina web</span></div>
 	</div>
 	</section>
 
@@ -331,7 +318,7 @@
 					<span>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
 					adipiscing <br> sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</span>
 				</div>
-				<div class="contenido1">
+				<div class="content1">
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
 						<h5>At solmen va esser:</h5>
@@ -348,7 +335,7 @@
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 				</div>
-				<div class="contenido2">
+				<div class="content2">
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
 						<h5>At solmen va esser:</h5>
@@ -365,6 +352,7 @@
 							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
 					</div>
 				</div>
+			</div>
 	</section>
 
 	<section class="contentboxs">
@@ -415,7 +403,7 @@
 	</section>
 
 	<section>
-		<div class="content2">
+		<div class="contenttwo">
 			<div class="conteninfo">
 				<div id="imagetitle">
 					<i class="fa fa-medkit fa-5x"></i>

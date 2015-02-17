@@ -1,5 +1,6 @@
-@font-face {
-  font-family: 'Caviar_Dreams_Bold';
+*{
+ 
+ font-family: 'Caviar_Dreams_Bold';
   src: url('../fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf');
 }
 @font-face {
@@ -222,7 +223,7 @@ span
 {
 	width: 100%;
 }
-.carruselinfo #uno
+.carruselinfo #one
 {
 
 	background-color: #103251;
@@ -234,7 +235,7 @@ span
 
 
 }
-.carruselinfo #dos
+.carruselinfo #two
 {
 	background-color: #1EB9C0;
 	width: 25%;
@@ -243,7 +244,7 @@ span
 	display: inline-block;
 	text-align: center;
 }
-.carruselinfo #tres
+.carruselinfo #tree
 {
 	background-color: #103251;
 	width: 50%;
@@ -281,19 +282,19 @@ span
 {
 	margin-top: 40px;
 }
-.contenido1
+.content1
 {
 	width: 75%;
 	margin-left: calc(25%/2);
 	margin-right: calc(25%/2);
 }
-.contenido2
+.content2
 {
 	width: 75%;
 	margin-left: calc(25%/2);
 	margin-right: calc(25%/2);
 }
-.contenido1 div
+.content1 div
 {
 	margin-top: 70px;
 	margin-left: auto;
@@ -303,7 +304,7 @@ span
 	width: 25%;
 	height: auto;
 }
-.contenido2 div
+.content2 div
 {
 	margin-bottom: 70px;
 	width: 25%;
@@ -312,10 +313,6 @@ span
 	margin-right: 5%;
 	display: inline-block;
 }
-
-
-
-
 .contentboxs
 {
 	width: 50%;
@@ -516,7 +513,7 @@ span
 	text-align: justify;
 
 }
-.content2
+.contenttwo
 {
 	background-color: #ffffff;
 	width: 100%;
@@ -527,17 +524,17 @@ span
 	color: #0A3250;
 
 }
-.content2 a
+.contenttwo a
 {
 	color: #00B9C0;
 }
-.content2 .conteninfo
+.contenttwo .conteninfo
 {
 	width: 850px;
 	margin-right: auto;
 	text-align: justify;
 }
-.content2 #title
+.contenttwo #title
 {
 	width: 510px;
 	margin-top: 115px;
@@ -547,7 +544,7 @@ span
 	text-align: justify;
 	display: inline-block;
 }
-.content2 #imagetitle
+.contenttwo #imagetitle
 {
 	width: 70px;
 	margin-top: 115px;
@@ -555,19 +552,19 @@ span
 	float: left;
 
 }
-.content2 i
+.contenttwo i
 {
 	color: #0A3250;
 }
 
-.content2 #contentbody
+.contenttwo #contentbody
 {
 	width: 100%;
 	float: left;
 	margin-left: 160px;
 	margin-bottom: 115px;
 }
-.content2 .slidebar
+.contenttwo .slidebar
 {
 	width: 220px;
 	margin-top: -150px;
@@ -729,71 +726,3 @@ ul.cbp-hssubmenu
    	display: inline-block;
 
 }
-
-
-/* SLIDESHOW */
-/* -------------------------*/
-
-.slideshow
-{
-
-  margin: 0 auto;
-  height: 420px;
-
-}
-.inner {
-
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  height: 420px;
-}
-.inner .img-block {
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 420px;
-  -moz-transition: opacity 2s;
-  -webkit-transition: opacity 2s;
-  transition: opacity 2s;
-}
-.inner .img-block.on {
-  opacity: 1;
-}
-.inner .img-wrap {
-  background: #aaa;
-  position: relative;
-  width: 100%;
-  height: 420px;
-}
-.inner .img-wrap div {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  white-space: nowrap;
-  height: 420px;
-}
-.inner .img-wrap div:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 420px;
-}
-.inner img {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  height: 420px;
-}
-.fa
-{
-	color: #00B9C0;
-}
-/*------------------------------*/
