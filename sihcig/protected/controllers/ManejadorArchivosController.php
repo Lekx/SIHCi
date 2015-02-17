@@ -69,12 +69,14 @@
 
 		$model->ruta = CUploadedFile::getInstanceByName('ManejadorArchivos[ruta]');
 		//echo $model->ruta->size;
-		echo $model->ruta->type;
+		//echo $model->ruta->type;
 			if($model->ruta->type == 'application/pdf' || $model->ruta->type == 'application/PDF' )
 			//if($model->ruta->size <= 5000000)
 			{
 				$model->ruta->saveAs(YiiBase::getPathOfAlias("webroot").'/manejador_archivos/'.$model->nombre_archivo.'.pdf');
-	   				if($model->save())
+				$model->ruta ='/SIHCiG/sihcig/manejador_archivos/'.$model->nombre_archivo.'.pdf';
+	   		
+				if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 
 			} 
@@ -181,17 +183,18 @@
 		}
 
 
-		public function actionDisplayFiles()
+		public function actionDisplayFiles($section)
 		{
 			
-		//	$files = ManejadorArchivos::model()->findAllByAttributes("seccion","Direccion general");
-
-$files = $model=ManejadorArchivos::model()->findAll(array(
-    'condition'=>'seccion="Direccion general" '
-));
-
-				$this->render('desplegar',array(
-				'files'=>$files,
+			$result = $model=ManejadorArchivos::model()->findAll(array(
+			    'condition'=>'seccion="'.$section.'" AND NOW() BETWEEN fecha_inicio AND fecha_fin'
 			));
+
+
+			foreach($result as $files => $newArray){
+				echo"<a href='".$newArray["ruta"]."' target='_blank'>".$newArray["nombre_archivo"]."</a>";
+				echo"<br>";
+			}
+
 		}
 	}

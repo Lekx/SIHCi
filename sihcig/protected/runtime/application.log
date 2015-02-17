@@ -3642,3 +3642,357 @@ REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/DisplayFiles
 in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\desplegar.php (8)
 in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php (195)
 in C:\xampp\htdocs\SIHCiG\sihcig\index.php (13)
+2015/02/16 23:21:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php:166
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(55): ManejadorArchivosController->loadModel('11')
+#1 [internal function]: ManejadorArchivosController->actionView('11')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejadorArchiv...')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejadorArchivos/11
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/manejadorArchivos/create
+---
+2015/02/16 23:25:04 [error] [php] Undefined variable: files (C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\desplegar.php:8)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(39): OrganigramaController->renderFile()
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): OrganigramaController->renderInternal()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): OrganigramaController->renderFile()
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): OrganigramaController->renderPartial()
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): OrganigramaController->render()
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): OrganigramaController->runAction()
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): OrganigramaController->runActionWithFilters()
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): OrganigramaController->run()
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CWebApplication->run()
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\manejadorArchivos\desplegar.php (8)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php (39)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php (7)
+2015/02/16 23:32:28 [error] [php] include(C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\back\manejadorArchivos.php): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCiG\YiiFramework\framework\YiiBase.php:404)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(41): spl_autoload_call()
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): OrganigramaController->renderInternal()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): OrganigramaController->renderFile()
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): OrganigramaController->renderPartial()
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): OrganigramaController->render()
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): OrganigramaController->runAction()
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): OrganigramaController->runActionWithFilters()
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): OrganigramaController->run()
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CWebApplication->run()
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php (41)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php (7)
+in C:\xampp\htdocs\SIHCiG\sihcig\index.php (13)
+2015/02/16 23:32:43 [error] [php] include(C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\manejadorArchivos.php): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCiG\YiiFramework\framework\YiiBase.php:404)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(41): spl_autoload_call()
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): OrganigramaController->renderInternal()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): OrganigramaController->renderFile()
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): OrganigramaController->renderPartial()
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): OrganigramaController->render()
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): OrganigramaController->runAction()
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): OrganigramaController->runActionWithFilters()
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): OrganigramaController->run()
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CWebApplication->run()
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php (41)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php (7)
+in C:\xampp\htdocs\SIHCiG\sihcig\index.php (13)
+2015/02/16 23:34:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "catagory/view/id/1"' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(42): CWebApplication->runController('catagory/view/i...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#5 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): CController->render('index')
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama')
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/16 23:35:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "DisplayFiles" solicitada.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(270): CController->missingAction('DisplayFiles')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('DisplayFiles')
+#2 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(42): CWebApplication->runController('manejadorArchiv...')
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#7 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): CController->render('index')
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama')
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/16 23:47:16 [error] [php] Undefined variable: value (C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php:203)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): ManejadorArchivosController->runAction()
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): ManejadorArchivosController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): ManejadorArchivosController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): ManejadorArchivosController->run()
+#8 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(42): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require()
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): OrganigramaController->renderInternal()
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): OrganigramaController->renderFile()
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): OrganigramaController->renderPartial()
+#13 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): OrganigramaController->render()
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): OrganigramaController->runAction()
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): OrganigramaController->runActionWithFilters()
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): OrganigramaController->run()
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CWebApplication->run()
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php (203)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php (42)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php (7)
+2015/02/16 23:48:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Manual Comunidades para la Esperanza.pdf"' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('Manual Comunida...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/Manual%20Comunidades%20para%20la%20Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/16 23:50:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Manual Comunidades para la Esperanza.pdf"' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('Manual Comunida...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/Manual%20Comunidades%20para%20la%20Esperanza.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/17 00:07:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "localhost/SIHCiG/sihcig/manejador_archivos/ya quedo.pdf"' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('localhost/SIHCi...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/localhost/SIHCiG/sihcig/manejador_archivos/ya%20quedo.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/17 00:08:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "manejador_archivos/aver que ped .pdf"' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejador_archi...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejador_archivos/aver%20que%20ped%20.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/17 00:09:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "manejador_archivos/aver que ped .pdf"' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('manejador_archi...')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/manejador_archivos/aver%20que%20ped%20.pdf
+HTTP_REFERER=http://localhost/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/17 00:17:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('DisplayFiles')
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(42): CWebApplication->runController('manejadorArchiv...')
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): CController->render('index')
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama')
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/17 00:17:55 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('DisplayFiles')
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(42): CWebApplication->runController('manejadorArchiv...')
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): CController->render('index')
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama')
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/17 00:17:55 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('DisplayFiles')
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(42): CWebApplication->runController('manejadorArchiv...')
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): CController->render('index')
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama')
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/17 00:17:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('DisplayFiles')
+#9 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\organigrama\index.php(42): CWebApplication->runController('manejadorArchiv...')
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#14 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\OrganigramaController.php(7): CController->render('index')
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): OrganigramaController->actionIndex()
+#16 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('organigrama')
+#21 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/organigrama
+---
+2015/02/17 00:24:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Programas PNCP"' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('Programas PNCP')
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/Programas%20PNCP
+---
+2015/02/17 00:31:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha_final' in 'where clause'. La sentencia SQL ejecutada fue: SELECT * FROM `manejador_archivos` `t` WHERE seccion="Programas PNCP" AND CURDATE() BETWEEN fecha_inicio AND fecha_final.
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php (191)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\views\programasPNCP\index.php (28)
+in C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ProgramasPNCPController.php (7)
+2015/02/17 00:31:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha_final' in 'where clause'. The SQL statement executed was: SELECT * FROM `manejador_archivos` `t` WHERE seccion="Programas PNCP" AND CURDATE() BETWEEN fecha_inicio AND fecha_final' in C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ManejadorArchivosController.php(191): CActiveRecord->findAll(Array)
+#4 [internal function]: ManejadorArchivosController->actionDisplayFiles('Programas PNCP')
+#5 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ManejadorArchivosController), Array)
+#6 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ManejadorArchivosController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('DisplayFiles')
+#16 C:\xampp\htdocs\SIHCiG\sihcig\protected\views\programasPNCP\index.php(28): CWebApplication->runController('manejadorArchiv...')
+#17 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#18 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#19 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#20 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#21 C:\xampp\htdocs\SIHCiG\sihcig\protected\controllers\ProgramasPNCPController.php(7): CController->render('index')
+#22 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\actions\CInlineAction.php(49): ProgramasPNCPController->actionIndex()
+#23 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#24 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#25 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#27 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('ProgramasPNCP')
+#28 C:\xampp\htdocs\SIHCiG\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\SIHCiG\sihcig\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/SIHCiG/sihcig/index.php/ProgramasPNCP
+---

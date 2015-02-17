@@ -25,5 +25,5 @@
 </section>
 
 <section>
-	<H1>Documentos descargables.</H1>
-<section>
+	<?php Yii::app()->runController('manejadorArchivos/DisplayFiles/section/Programas PNCP'); ?>
+</section>

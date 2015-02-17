@@ -31,7 +31,8 @@ class ManejadorArchivos extends CActiveRecord
 		return array(
 			array('seccion, nombre_archivo, ruta, fecha_inicio, fecha_fin', 'required'),
 			array('seccion', 'length', 'max'=>100),
-			array('nombre_archivo, ruta', 'length', 'max'=>50),
+			array('nombre_archivo', 'length', 'max'=>50),
+			array('ruta', 'length', 'max'=>150),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, seccion, nombre_archivo, ruta, fecha_inicio, fecha_fin', 'safe', 'on'=>'search'),
