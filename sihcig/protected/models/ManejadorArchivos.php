@@ -58,10 +58,10 @@ class ManejadorArchivos extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'seccion' => 'Seccion',
-			'nombre_archivo' => 'Nombre Archivo',
+			'nombre_archivo' => 'Nombre',
 			'ruta' => 'Selecionar Archivo',
 			'fecha_inicio' => 'Fecha Inicio',
-			'fecha_fin' => 'Fecha Fin',
+			'fecha_fin' => 'Fecha Final',
 		);
 	}
 

@@ -33,7 +33,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
     
        
 			<label for="files">Seccion</label>
-			<select name="ManejadorArchivos[seccion]" id="ManejadorArchivos_seccion">
+			<select name="ManejadorArchivos[seccion]" id="ManejadorArchivos_seccion" >
 				  	<optgroup label="OPD HCG"> 
 				  		<option value=""> </option>
 					   <option value="Direccion general">Dirección general</option>
@@ -95,7 +95,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nombre_archivo'); ?>
-		<?php echo $form->textField($model,'nombre_archivo',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'nombre_archivo',array('size'=>50,'maxlength'=>50, 'placeholder'=>"Nombre del documento")); ?>
 		<?php echo $form->error($model,'nombre_archivo'); ?>
 	</div>
 
@@ -118,8 +118,9 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
     'language'=> 'es',
     'attribute' => 'fecha_inicio',
     'htmlOptions' => array(
-    			'size' => '10',         // textField size
-        		'maxlength' => '10',    // textField maxlength
+    			'size' => '10',         
+        		'maxlength' => '10', 
+        		'placeholder'=>"Inicio de publicacion"   
     ),
 ));
 ?>
@@ -134,8 +135,9 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
     'language'=> 'es',
     'attribute' => 'fecha_fin',
     'htmlOptions' => array(
-    			'size' => '10',         // textField size
-        		'maxlength' => '10',    // textField maxlength
+    			'size' => '10',         
+        		'maxlength' => '10',  
+        		'placeholder'=>"Final de publicacion"  
     ),
 ));
 ?>

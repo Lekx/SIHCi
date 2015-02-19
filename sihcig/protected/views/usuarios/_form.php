@@ -21,8 +21,8 @@
 
 
 	<div class="row">
-		<label>Roles</label>
-		<select name="Usuarios[id_rol]" id="Usuarios_id_rol">
+		<label>Rol</label>
+		<select name="Usuarios[id_rol]" id="Usuarios_id_rol" placeholder="ROLES">
 		<option></option>
 		<?php
 			foreach($Roles as $Roles)
@@ -37,24 +37,24 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('placeholder'=>"Email")); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 	<div class="row">
 		<p>Verificacion de Email</p>
-		 <input type="text" name="Usuarios[email2]" id="Usuarios_email2"></input>
+		 <input type="text" name="Usuarios[email2]" id="Usuarios_email2" placeholder="Verificacion de Email" ></input>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'contrasena'); ?>
-		<?php echo $form->textField($model,'contrasena',array('maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'contrasena',array('maxlength'=>30,'placeholder'=>"Minimo 6 maximo 15 caracteres")); ?>
 		<?php echo $form->error($model,'contrasena'); ?>
 	</div>
 
 	<div class="row">
 		<p>Verificacion de contraseña</p>
-		 <input type="password" name="Usuarios[contrasena2]" id="Usuarios_contrasena2"></input>
+		 <input type="password" name="Usuarios[contrasena2]" id="Usuarios_contrasena2" placeholder="Verificacion de Contraseña"></input>
 	</div>
 
 <!--
