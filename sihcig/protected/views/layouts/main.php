@@ -66,7 +66,6 @@
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
-
 					<li>
 						<a>Vinculación con universidades, institutos y hospitales</a>
 						<ul class="cbp-hssubmenu1">

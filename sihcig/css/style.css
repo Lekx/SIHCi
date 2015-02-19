@@ -1,8 +1,9 @@
-*{
- 
- font-family: 'Caviar_Dreams_Bold';
-  src: url('../fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf');
+*
+{
+  	font-family: 'Caviar_Dreams_Bold';
+	 src: url('../fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf');
 }
+
 @font-face {
   font-family: 'Caviar_Dreams';
   src: url('../fonts/Caviar-Dreams/CaviarDreams.ttf');
