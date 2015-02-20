@@ -1,4 +1,0 @@
-1-.terminar pre registro de investigador. 
-2-.Poner place holder a todos los campos.
-3-.poner radiobotones enves de select
-4.- agregar campos de pais ,documento oficial.
