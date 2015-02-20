@@ -47,9 +47,8 @@
 			<div class="menu">
 			<div>
 				<ul class="cbp-hsmenu1">
-					<li><a>OPD HCG</a>
+					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu1">
-							<li><a><span>Delicate Wine</span></a></li>
 							<li><a><span>Dirección general</span></a></li>
 							<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
 							<li><a><span>Organigrama</span></a></li>
@@ -62,12 +61,12 @@
 						</ul>
 					</li>
 					<li>
-						<a>Programas de coopreación internacional en investigación</a>
+						<a><h6>Programas de coopreación internacional en investigación</h6></a>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
 					<li>
-						<a>Vinculación con universidades, institutos y hospitales</a>
+						<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -76,12 +75,12 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a>Unidad Editorial</a>
+								<a><h6>Unidad Editorial</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a>Programas de generación de conocmiento cientifico</a>
+								<a><h6>Programas de generación de conocmiento cientifico</h6></a>
 								<ul class="cbp-hssubmenu1">
 									<li><a><span>Redacción científica</span></a></li>
 									<li><a><span>Asesoría Metodológica</span></a></li>
@@ -90,7 +89,7 @@
 								</ul>
 							</li>
 							<li>
-								<a>Programas de desarrollo tecnológico e innovación</a>
+								<a><h6>Programas de desarrollo tecnológico e innovación</h6></a>
 								<ul class="cbp-hssubmenu1">
 									<li><a><span>proINVENCI</span></a></li>
 								</ul>
@@ -100,19 +99,18 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a>Centro de investigación clinica medicina traslacional</a>
+								<a><h6>Centro de investigación clinica medicina traslacional</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a>Unidades de investigación</a>
+								<a><h6>Unidades de investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a>Formación de recursos en investigación</a>
+								<a><h6>Formación de recursos en investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
-									<li><a><span>Delicate Wine</span></a></li>
 									<li><a><span>Programas PNCP</span></a></li>
 									<li><a><span>Programas NO PNCP</span></a></li>
 									<li><a><span>Programas no medicos</span></a></li>
@@ -123,13 +121,13 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</a>
+								<a><h6>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 
 							<li>
-								<a>Unidad Editorial</a>
+								<a><h6>Unidad Editorial</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -142,12 +140,11 @@
 
 <section>
 	<div class="slidingDiv2">
-			<div class="menu">
+		<div class="menu">
 			<div>
 				<ul class="cbp-hsmenu1">
-					<li><a>OPD HCG</a>
+					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu1">
-							<li><a><span>Delicate Wine</span></a></li>
 							<li><a><span>Dirección general</span></a></li>
 							<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
 							<li><a><span>Organigrama</span></a></li>
@@ -160,13 +157,13 @@
 						</ul>
 					</li>
 					<li>
-						<a>Programas de coopreación internacional en investigación</a>
+						<a><h6>Programas de coopreación internacional en investigación</h6></a>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
 
 					<li>
-						<a>Vinculación con universidades, institutos y hospitales</a>
+						<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -175,12 +172,12 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a>Unidad Editorial</a>
+								<a><h6>Unidad Editorial</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a>Programas de generación de conocmiento cientifico</a>
+								<a><h6>Programas de generación de conocmiento cientifico</h6></a>
 								<ul class="cbp-hssubmenu1">
 									<li><a><span>Redacción científica</span></a></li>
 									<li><a><span>Asesoría Metodológica</span></a></li>
@@ -189,7 +186,7 @@
 								</ul>
 							</li>
 							<li>
-								<a>Programas de desarrollo tecnológico e innovación</a>
+								<a><h6>Programas de desarrollo tecnológico e innovación</h6></a>
 								<ul class="cbp-hssubmenu1">
 									<li><a><span>proINVENCI</span></a></li>
 								</ul>
@@ -199,19 +196,18 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a>Centro de investigación clinica medicina traslacional</a>
+								<a><h6>Centro de investigación clinica medicina traslacional</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a>Unidades de investigación</a>
+								<a><h6>Unidades de investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a>Formación de recursos en investigación</a>
+								<a><h6>Formación de recursos en investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
-									<li><a><span>Delicate Wine</span></a></li>
 									<li><a><span>Programas PNCP</span></a></li>
 									<li><a><span>Programas NO PNCP</span></a></li>
 									<li><a><span>Programas no medicos</span></a></li>
@@ -222,13 +218,13 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</a>
+								<a><h6>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 
 							<li>
-								<a>Unidad Editorial</a>
+								<a><h6>Unidad Editorial</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -356,7 +352,9 @@
 
 	<section class="contentboxs">
 		<div id="box1">
-			<div id="title"><h3>Nemo enim ipsam voluptatem</h3></div>
+			<div id="title">
+			<h3>Nemo enim ipsam voluptatem</h3>
+			</div>
 			<div id="content"><span><p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni do- lores eos qui ratione voluptatem sequi nesciunt.</p>
 									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, ad- ipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
 									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labori- osam, nisi ut aliquid ex ea commodi consequatur</p></span>
@@ -449,9 +447,8 @@
 		<div class="menu">
 			<div>
 				<ul class="cbp-hsmenu">
-					<li><a>OPD HCG</a>
+					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu">
-							<li><a><span>Delicate Wine</span></a></li>
 							<li><a><span>Dirección general</span></a></li>
 							<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
 							<li><a><span>Organigrama</span></a></li>
@@ -464,13 +461,13 @@
 						</ul>
 					</li>
 					<li>
-						<a>Programas de coopreación internacional en investigación</a>
+						<a><h6>Programas de coopreación internacional en investigación<h6></a>
 						<ul class="cbp-hssubmenu">
 						</ul>
 					</li>
 
 					<li>
-						<a>Vinculación con universidades, institutos y hospitales</a>
+						<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
 						<ul class="cbp-hssubmenu">
 						</ul>
 					</li>
@@ -479,12 +476,12 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<a>Unidad Editorial</a>
+								<a><h6>Unidad Editorial</h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a>Programas de generación de conocmiento cientifico</a>
+								<a><h6>Programas de generación de conocmiento cientifico</h6></a>
 								<ul class="cbp-hssubmenu">
 									<li><a><span>Redacción científica</span></a></li>
 									<li><a><span>Asesoría Metodológica</span></a></li>
@@ -493,7 +490,7 @@
 								</ul>
 							</li>
 							<li>
-								<a>Programas de desarrollo tecnológico e innovación</a>
+								<a><h6>Programas de desarrollo tecnológico e innovación</h6></a>
 								<ul class="cbp-hssubmenu">
 									<li><a><span>proINVENCI</span></a></li>
 								</ul>
@@ -503,19 +500,18 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<a>Centro de investigación clinica medicina traslacional</a>
+								<a><h6>Centro de investigación clinica medicina traslacional</h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a>Unidades de investigación</a>
+								<a><h6>Unidades de investigación<h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a>Formación de recursos en investigación</a>
+								<a><h6>Formación de recursos en investigación</h6></a>
 								<ul class="cbp-hssubmenu">
-									<li><a><span>Delicate Wine</span></a></li>
 									<li><a><span>Programas PNCP</span></a></li>
 									<li><a><span>Programas NO PNCP</span></a></li>
 									<li><a><span>Programas no medicos</span></a></li>
@@ -526,12 +522,12 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<a>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</a>
+								<a><h6>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a>Unidad Editorial</a>
+								<a><h6>Unidad Editorial</h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -539,7 +535,6 @@
 					</div>
 				</div>
 			</section>
-
 			<section class="footersection">
 				<div class="copyrigths">
 					<div id="copy">

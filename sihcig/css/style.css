@@ -1,5 +1,4 @@
-*
-{
+@font-face{
   	font-family: 'Caviar_Dreams_Bold';
 	 src: url('../fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf');
 }
@@ -8,8 +7,7 @@
   font-family: 'Caviar_Dreams';
   src: url('../fonts/Caviar-Dreams/CaviarDreams.ttf');
 }
-*
-{
+*{
 	border:0;
 	padding: 0;
 	margin: 0;
@@ -30,6 +28,11 @@ body
 li , h1 ,h2, h3
 {
 	font-family: 'Caviar_Dreams' !important;
+}
+h6
+{
+	font-family: 'Caviar_Dreams' !important;
+	font-size: 12.5px !important;
 }
 span
 {
@@ -371,7 +374,7 @@ span
 {
 
 	color: #0A3250;
-	font-family: 'Caviar_Dreams_Bold';
+	font-family: 'Caviar_Dreams';
 
 }
 .contentboxs #box3 img
@@ -434,7 +437,9 @@ span
 {
 
 	color: #0A3250;
-	font-family: 'Caviar_Dreams_Bold';
+	font-family: 'Caviar_Dreams';
+	font-style: bold;
+
 
 }
 .contentboxs2
@@ -502,7 +507,7 @@ span
 {
 
 	margin-top: 50px;
-	margin-left: 50px;
+ 	margin-left:  50px;
 	color: white;
 
 }
@@ -684,6 +689,7 @@ ul.cbp-hssubmenu1
 	display: none;
 
 }
+
 .slidingDiv2
 {
 

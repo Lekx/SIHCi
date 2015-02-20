@@ -7,7 +7,7 @@ $(window).scroll(function(event){
    	 $('#header-content-container').fadeOut("slow");
    }
 
-   if (scroll > lastScrollTop ){
+   if (scroll > 200 ){
       $('#header-content-container').show();
    }
    
