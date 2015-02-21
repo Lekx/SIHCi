@@ -63,7 +63,7 @@ class UsersController extends Controller
 	public function actionCreate()
 	{
 		$model=new Users;
-
+		$modelAddresses = new Addresses;
 		
 
 		if(isset($_POST['Users']))
@@ -79,12 +79,21 @@ class UsersController extends Controller
   			if($model->validate())
 			$model->password = sha1(md5($model->password));
 			$model->attributes=$_POST['Users'];
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+		
+		if(isset($_POST['Addresses']))
+		{
+			$modelAddresses->town=($_POST['Addresses']['town']);
+
+		}
+
+		
 
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model,'modelAddresses'=>$modelAddresses
 		));
 	}
 

@@ -89,6 +89,12 @@
 	</div>
 	-->
 
+	<div class="row">
+		<?php echo $form->labelEx($modelAddresses,'town'); ?>
+		<?php echo $form->textField($modelAddresses,'town',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($modelAddresses,'town'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
