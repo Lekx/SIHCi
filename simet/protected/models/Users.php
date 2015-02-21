@@ -46,8 +46,6 @@ class Users extends CActiveRecord
 			array('email, password, registration_date, activation_date, act_react_key', 'required'),
 			array('id_roles', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>100),
-			array('email', 'email'),
-			array('password', 'length', 'min'=>6),
 			array('password, act_react_key', 'length', 'max'=>200),
 			array('status', 'length', 'max'=>15),
 			// The following rule is used by search().
@@ -84,13 +82,13 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_roles' => 'Rol',
+			'id_roles' => 'Id Roles',
 			'email' => 'Email',
-			'password' => 'Contraseña',
-			'registration_date' => 'fecha de registro',
-			'activation_date' => 'Fecha de activacion',
-			'act_react_key' => 'Llave de activacion',
-			'status' => 'Estado',
+			'password' => 'Password',
+			'registration_date' => 'Registration Date',
+			'activation_date' => 'Activation Date',
+			'act_react_key' => 'Act React Key',
+			'status' => 'Status',
 		);
 	}
 

@@ -22,6 +22,12 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'nombre',
+		'id_roles',
+		'email',
+		'password',
+		'registration_date',
+		'activation_date',
+		'act_react_key',
+		'status',
 	),
 )); ?>

@@ -19,11 +19,75 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+	
+	<!--<div class="row">
+		<label>Rol</label>
+		<select name="Usuarios[id_rol]" id="Usuarios_id_rol" placeholder="ROLES">
+		<option></option>
+		<?php
+			//foreach($Roles as $Roles)
+			{
+		?>
+		<option value="<?php //echo $Roles->id;?>"><?php //echo $Roles->rol;?></option>
+		<?php
+			}
+		?>
+		</select>
+	</div>-->
+
 	<div class="row">
-		<?php echo $form->labelEx($model,'nombre'); ?>
-		<?php echo $form->textField($model,'nombre',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'nombre'); ?>
+		<?php echo $form->labelEx($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('placeholder'=>"Email")); ?>
+		<?php echo $form->error($model,'email'); ?>
 	</div>
+
+	<div class="row">
+		<p>Verificacion de Email</p>
+		 <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificacion de Email" ></input>
+	</div>
+
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'password'); ?>
+		<?php echo $form->textField($model,'password',array('maxlength'=>30,'placeholder'=>"Minimo 6 maximo 15 caracteres")); ?>
+		<?php echo $form->error($model,'password'); ?>
+	</div>
+
+	<div class="row">
+		<p>Verificacion de contraseña</p>
+		<input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificacion de Contraseña"></input>
+	</div>
+
+<!--
+	<div class="row">
+		<?php /* echo $form->labelEx($model,'registration_date'); ?>
+		<?php echo $form->textField($model,'registration_date'); ?>
+		<?php echo $form->error($model,'registration_date'); */ ?>
+	</div>
+-->
+<!--
+	<div class="row">
+		<?php /* echo $form->labelEx($model,'activation_date'); ?>
+		<?php echo $form->textField($model,'activation_date'); ?>
+		<?php echo $form->error($model,'activation_date'); */ ?>
+	</div>
+	-->
+
+<!--
+	<div class="row">
+		<?php /* echo $form->labelEx($model,'act_react_key'); ?>
+		<?php echo $form->textField($model,'act_react_key',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->error($model,'act_react_key'); */ ?>
+	</div>
+	-->
+
+<!--
+	<div class="row">
+		<?php /* echo $form->labelEx($model,'status'); ?>
+		<?php echo $form->textField($model,'status',array('size'=>15,'maxlength'=>15)); ?>
+		<?php echo $form->error($model,'status');  */ ?>
+	</div>
+	-->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
