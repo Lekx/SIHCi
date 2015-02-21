@@ -18,6 +18,7 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($modelPersons); ?>
 
 	
 	<!--<div class="row">
@@ -90,9 +91,29 @@
 	-->
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses,'town'); ?>
-		<?php echo $form->textField($modelAddresses,'town',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->error($modelAddresses,'town'); ?>
+		<?php echo $form->labelEx($modelPersons,'country'); ?>
+		<?php echo $form->textField($modelPersons,'country',array('placeholder'=>"Seleccione su pais.")); ?>
+		<?php echo $form->error($modelPersons,'country'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($modelPersons,'names'); ?>
+		<?php echo $form->textField($modelPersons,'names',array('placeholder'=>"Nombre/s completos.")); ?>
+		<?php echo $form->error($modelPersons,'names'); ?>	
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($modelPersons,'last_name1'); ?>
+		<?php echo $form->textField($modelPersons,'last_name1',array('placeholder'=>"Apellido Paterno")); ?>
+		<?php echo $form->error($modelPersons,'last_name1'); ?>
+	</div>
+		<div class="row">
+		<?php echo $form->labelEx($modelPersons,'last_name2'); ?>
+		<?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apelido Materno")); ?>
+		<?php echo $form->error($modelPersons,'last_name2'); ?>
+	</div>
+		<div class="row">	
+		<?php echo $form->labelEx($modelPersons,'rfc_rud'); ?>
+		<?php echo $form->textField($modelPersons,'rfc_rud',array('placeholder'=>"Pasaporte/Curp")); ?>
+		<?php echo $form->error($modelPersons,'rfc_rud'); ?>
 	</div>
 
 	<div class="row buttons">

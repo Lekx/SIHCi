@@ -13,6 +13,7 @@
  * @property string $genre
  * @property string $birth_date
  * @property string $rfc_rud
+ * @property string $country
  *
  * The followings are the available model relations:
  * @property Users $idUser
@@ -36,7 +37,7 @@ class Persons extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_user, names, last_name1, marital_status, genre, birth_date, rfc_rud', 'required'),
+			array('id_user, names, last_name1, marital_status, genre, birth_date, rfc_rud, country', 'required'),
 			array('id_user', 'numerical', 'integerOnly'=>true),
 			array('names', 'length', 'max'=>30),
 			array('last_name1, last_name2, marital_status', 'length', 'max'=>20),
@@ -44,7 +45,7 @@ class Persons extends CActiveRecord
 			array('rfc_rud', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_user, names, last_name1, last_name2, marital_status, genre, birth_date, rfc_rud', 'safe', 'on'=>'search'),
+			array('id, id_user, names, last_name1, last_name2, marital_status, genre, birth_date, rfc_rud,country', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,14 +69,15 @@ class Persons extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_user' => 'Id User',
-			'names' => 'Names',
-			'last_name1' => 'Last Name1',
-			'last_name2' => 'Last Name2',
-			'marital_status' => 'Marital Status',
-			'genre' => 'Genre',
-			'birth_date' => 'Birth Date',
-			'rfc_rud' => 'Rfc Rud',
+			'id_user' => 'Id de usuario',
+			'names' => 'Nombres',
+			'last_name1' => 'Apellido Paterno',
+			'last_name2' => 'Apellido Materno',
+			'marital_status' => 'Estado civil',
+			'genre' => 'Genero',
+			'birth_date' => 'Fecha de Nacimiento',
+			'rfc_rud' => 'Curp / Pasaporte',
+			'country' => 'Pais'
 		);
 	}
 
@@ -106,6 +108,7 @@ class Persons extends CActiveRecord
 		$criteria->compare('genre',$this->genre,true);
 		$criteria->compare('birth_date',$this->birth_date,true);
 		$criteria->compare('rfc_rud',$this->rfc_rud,true);
+		$criteria->compare('country',$this->country,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

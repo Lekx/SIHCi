@@ -5,7 +5,7 @@ class UsersController extends Controller
 	function checkEmail($email, $email2){
 		 
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !filter_var($email2, FILTER_VALIDATE_EMAIL) && $email != $email2){
+    if (!filter_var($email,  ) && !filter_var($email2, FILTER_VALIDATE_EMAIL) && $email != $email2){
 		echo "<script> alert(\"Las dos correos son distintos.\")</script>";
 		return false;
       } 
@@ -63,7 +63,7 @@ class UsersController extends Controller
 	public function actionCreate()
 	{
 		$model=new Users;
-		$modelAddresses = new Addresses;
+		$modelPersons = new Persons;
 		
 
 		if(isset($_POST['Users']))
@@ -72,6 +72,11 @@ class UsersController extends Controller
 			$this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2']);
 			$this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2']);
 			$model->attributes=$_POST['Users'];
+			$result = $model()->findAll(array(
+			    'condition'=>'email="'.$model->email.'"'
+			));
+			if (!empty($result))
+				return 0;
 			$model->registration_date = new CDbExpression('NOW()');
 			$model->activation_date = new CDbExpression('0000-00-00');
 			$model->status = 0;
@@ -79,21 +84,32 @@ class UsersController extends Controller
   			if($model->validate())
 			$model->password = sha1(md5($model->password));
 			$model->attributes=$_POST['Users'];
-			
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-		
-		if(isset($_POST['Addresses']))
-		{
-			$modelAddresses->town=($_POST['Addresses']['town']);
 
+			if($model->validate())
+			if(isset($_POST['Persons']))
+			{
+				$modelPersons->attributes = $_POST['Persons'];
+				$modelPersons->id_user = 0;
+				$modelPersons->marital_status = -1;
+				$modelPersons->genre = -1;
+				$modelPersons->birth_date = '0000-00-00 00:00:00';
+
+				if($modelPersons->validate()){
+				$model->save();
+				$modelPersons->id_user = $model->id;
+				$modelPersons->save();
+					$this->redirect(array('view','id'=>$model->id));
+				}
+			}
+
+			
+			
 		}
 
 		
 
 		$this->render('create',array(
-			'model'=>$model,'modelAddresses'=>$modelAddresses
+			'model'=>$model,'modelPersons'=>$modelPersons
 		));
 	}
 
