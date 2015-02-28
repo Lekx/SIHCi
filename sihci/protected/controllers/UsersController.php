@@ -37,27 +37,8 @@ class UsersController extends Controller
 	}
 
 	
-	public function accessRules()
-	{
-		return array(
-			array('allow',  
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow',
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', 
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  
-				'users'=>array('*'),
-			),
-		);
-	}
-
+	
+ 
 
 	public function actionView($id)
 	{
@@ -76,8 +57,6 @@ class UsersController extends Controller
 		if(isset($_POST['Users']))
 		{
 			$model->id_roles = '1';
-			//$this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2']);
-			//$this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2']);
 			$model->attributes=$_POST['Users'];
 			$result = $model->findAll(array('condition'=>'email="'.$model->email.'"'));
 			if($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2']))
@@ -90,11 +69,11 @@ class UsersController extends Controller
 			$model->activation_date = new CDbExpression('0000-00-00');
 			$model->status = 0;
 			$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s').$model->email.rand(1000, 5000))));
-  			if($model->validate())
-			$model->password = sha1(md5($model->password));
-			$model->attributes=$_POST['Users'];
+  				if($model->validate())
+					$model->password = sha1(md5($model->password));
+					$model->attributes=$_POST['Users'];
 
-			if($model->validate())
+			if($model->validate())  
 			if(isset($_POST['Persons']))
 			{
 				$modelPersons->attributes = $_POST['Persons'];
@@ -108,11 +87,11 @@ class UsersController extends Controller
 				$modelPersons->marital_status = -1;
 				$modelPersons->genre = -1;
 				$modelPersons->birth_date = '0000-00-00 00:00:00';
-				if($modelPersons->validate()){
-				$model->save();
-				$modelPersons->id_user = $model->id;
-				$modelPersons->save();
-					$this->redirect(array('view','id'=>$model->id));
+					if($modelPersons->validate()){
+						$model->save();
+						$modelPersons->id_user = $model->id;
+						$modelPersons->save();
+						$this->redirect(array('view','id'=>$model->id));
 				}
 				}
 				}
@@ -172,7 +151,7 @@ class UsersController extends Controller
 		if(isset($_GET['Users']))
 			$model->attributes=$_GET['Users'];
 
-		$this->render('admin',array(
+		$this->render('admin',array( 
 			'model'=>$model,
 		));
 	}
