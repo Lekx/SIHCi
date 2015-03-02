@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/informativa.css">
+
 <H1>OP01-Desplegar información de Dirección general</H1>	
 <section>
 	<h1>Icono!</h1>
