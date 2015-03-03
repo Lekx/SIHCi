@@ -46,8 +46,8 @@ class Users extends CActiveRecord
 			array('email, password, registration_date, activation_date, act_react_key', 'required'),
 			array('id_roles', 'numerical', 'integerOnly'=>true),
 			array('email', 'email'),
-			array('email', 'length', 'max'=>150),
-			array('password','length', 'max'=>300),
+			array('email', 'length', 'max'=>100),
+			array('password','length', 'min'=>6, 'max'=>15),
 			array('act_react_key', 'length', 'max'=>200),
 			array('status', 'length', 'max'=>15),
 			// The following rule is used by search().
