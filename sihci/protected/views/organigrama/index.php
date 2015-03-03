@@ -28,10 +28,13 @@ OP03-Desplegar Organigrama
 		<p>Objetivo, Funciones y Atribuciones</p> <br>
 		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/organigrama/img/org2.png"; ?>">
 		
+
+
+	
 </section>
 
 
 
 <section>
-	<?php Yii::app()->runController('FilesManager/DisplayFiles/section/Organigrama'); ?>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/Organigrama'); ?>
 </section>
