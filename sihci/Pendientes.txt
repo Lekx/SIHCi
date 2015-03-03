@@ -1,4 +1,0 @@
-1-.terminar pre registro de investigador->agregar campos de pais ,documento oficial.
-2-.Cambiar los controladores a ingles junto con los cruds ya echos.
-3.- se cambiaron los modelos de idioma de todos los documentos.
-4.-Revisar el select de paises.

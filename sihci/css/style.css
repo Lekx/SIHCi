@@ -646,7 +646,7 @@ span
 	float: left;
 
 }
-.menu span, a, a:hover
+.menu span, ul, li, a, a:hover
 {
 	color: #00B9C0 !important;
 }
