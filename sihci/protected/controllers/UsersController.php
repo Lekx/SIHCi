@@ -37,6 +37,7 @@ class UsersController extends Controller
 	}
 
 	
+<<<<<<< HEAD
 	public function accessRules()
 	{
 		return array(
@@ -58,6 +59,10 @@ class UsersController extends Controller
 		);
 	}
 
+=======
+	
+ 
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
 
 	public function actionView($id)
 	{
@@ -76,8 +81,11 @@ class UsersController extends Controller
 		if(isset($_POST['Users']))
 		{
 			$model->id_roles = '1';
+<<<<<<< HEAD
 			//$this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2']);
 			//$this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2']);
+=======
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
 			$model->attributes=$_POST['Users'];
 			$result = $model->findAll(array('condition'=>'email="'.$model->email.'"'));
 			if($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2']))
@@ -90,11 +98,19 @@ class UsersController extends Controller
 			$model->activation_date = new CDbExpression('0000-00-00');
 			$model->status = 0;
 			$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s').$model->email.rand(1000, 5000))));
+<<<<<<< HEAD
   			if($model->validate())
 			$model->password = sha1(md5($model->password));
 			$model->attributes=$_POST['Users'];
 
 			if($model->validate())
+=======
+  				if($model->validate())
+					$model->password = sha1(md5($model->password));
+					$model->attributes=$_POST['Users'];
+
+			if($model->validate())  
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
 			if(isset($_POST['Persons']))
 			{
 				$modelPersons->attributes = $_POST['Persons'];
@@ -108,11 +124,19 @@ class UsersController extends Controller
 				$modelPersons->marital_status = -1;
 				$modelPersons->genre = -1;
 				$modelPersons->birth_date = '0000-00-00 00:00:00';
+<<<<<<< HEAD
 				if($modelPersons->validate()){
 				$model->save();
 				$modelPersons->id_user = $model->id;
 				$modelPersons->save();
 					$this->redirect(array('view','id'=>$model->id));
+=======
+					if($modelPersons->validate()){
+						$model->save();
+						$modelPersons->id_user = $model->id;
+						$modelPersons->save();
+						$this->redirect(array('view','id'=>$model->id));
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
 				}
 				}
 				}
@@ -172,7 +196,11 @@ class UsersController extends Controller
 		if(isset($_GET['Users']))
 			$model->attributes=$_GET['Users'];
 
+<<<<<<< HEAD
 		$this->render('admin',array(
+=======
+		$this->render('admin',array( 
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
 			'model'=>$model,
 		));
 	}

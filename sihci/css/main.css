@@ -47,6 +47,12 @@ body
 	font-size: 200%;
 }
 
+.secction
+{
+	border: 1px solid red;
+}
+
+
 #mainmenu
 {
 	background:white url(bg.gif) repeat-x left top;

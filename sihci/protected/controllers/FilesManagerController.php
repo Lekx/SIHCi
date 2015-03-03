@@ -17,6 +17,7 @@ class FilesManagerController extends Controller
 	}
 
 	
+<<<<<<< HEAD
 	public function accessRules()
 	{
 		return array(
@@ -38,6 +39,9 @@ class FilesManagerController extends Controller
 		);
 	}
 
+=======
+	
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
 	
 	 
 	public function actionView($id)
@@ -65,7 +69,11 @@ class FilesManagerController extends Controller
 			
 			{
 				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/files_manager/'.$model->file_name.'.pdf');
+<<<<<<< HEAD
 				$model->path ='/simet/simet/files_manager/'.$model->file_name.'.pdf';
+=======
+				$model->path ='/sihci/sihci/files_manager/'.$model->file_name.'.pdf';
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
 	   		
 				if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -156,7 +164,11 @@ class FilesManagerController extends Controller
 		{
 			
 			$result = $model=FilesManager::model()->findAll(array(
+<<<<<<< HEAD
 			    'condition'=>'seccion="'.$section.'" AND NOW() BETWEEN start_date AND end_date'
+=======
+			    'condition'=>'section="'.$section.'" AND NOW() BETWEEN start_date AND end_date'
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
 			));
 
 
