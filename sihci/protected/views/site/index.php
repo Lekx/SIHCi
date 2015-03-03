@@ -23,14 +23,16 @@
 	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
 	<?php 
-	$baseUrl = Yii::app()->baseUrl;
-	$cs = Yii::app()->getClientScript();
-	$cs->registerScriptFile($baseUrl.'/js/list.js');
-	$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
-	$cs->registerScriptFile($baseUrl.'/js/slideshow.js');
-	$cs->registerScriptFile($baseUrl.'/js/scroll.js');
-	$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
-	$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
+
+		$baseUrl = Yii::app()->baseUrl;
+		$cs = Yii::app()->getClientScript();
+		$cs->registerScriptFile($baseUrl.'/js/list.js');
+		$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
+		$cs->registerScriptFile($baseUrl.'/js/slideshow.js');
+		$cs->registerScriptFile($baseUrl.'/js/scroll.js');
+		$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
+		$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
+		
 	?>
 
 	<?php Yii::app()->bootstrap->register(); ?>

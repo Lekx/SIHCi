@@ -18,6 +18,7 @@
 
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
 </head>
 
 <body>

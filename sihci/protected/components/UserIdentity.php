@@ -15,17 +15,31 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+
 	public function authenticate()
 	{
-		$users=array(
+		$user=Users::model()->find("LOWER(email)=?",array(strtolower($this->username)));
+		/*$users=array(
 			// username => password
 			'demo'=>'demo',
 			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
+		);*/
+
+/*		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		elseif($users[$this->username]!==$this->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+		else
+			$this->errorCode=self::ERROR_NONE;
+		return !$this->errorCode;*/
+
+		if($user==null)
+			$this->errorCode=self::ERROR_USERNAME_INVALID;
+		else if($this->password!==$user->password)
+			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+		else if($user->status=="inactivo")
+			 echo"<script>alert('debe ser activo, porfavor revisa tu correo')</script>";
+			 // throw new Exception("su sesion ha caducado.");
 		else
 			$this->errorCode=self::ERROR_NONE;
 		return !$this->errorCode;

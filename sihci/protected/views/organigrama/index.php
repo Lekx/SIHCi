@@ -36,5 +36,5 @@ OP03-Desplegar Organigrama
 
 
 <section>
-	<?php Yii::app()->runController('manejadorArchivos/DisplayFiles/section/Organigrama'); ?>
+	<?php Yii::app()->runController('FilesManager/DisplayFiles/section/Organigrama'); ?>
 </section>
