@@ -36,5 +36,13 @@ OP03-Desplegar Organigrama
 
 
 <section>
+<<<<<<< HEAD
 	<?php Yii::app()->runController('manejadorArchivos/DisplayFiles/section/Organigrama'); ?>
+=======
+<<<<<<< HEAD
+	<?php Yii::app()->runController('manejadorArchivos/DisplayFiles/section/Organigrama'); ?>
+=======
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/Organigrama'); ?>
+>>>>>>> 8715bd3b9543d34eee3f8cc524647f054be7d6a8
+>>>>>>> parent of de2889c... desmadres2
 </section>
