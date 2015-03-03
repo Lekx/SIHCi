@@ -49,7 +49,6 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 
-
 		'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',   
         ),
