@@ -5879,3 +5879,359 @@ in C:\xampp\htdocs\SIHCi\sihci\index.php (13)
 2015/02/24 13:20:15 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
 in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\UsersController.php (95)
 in C:\xampp\htdocs\SIHCi\sihci\index.php (13)
+2015/03/02 11:40:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "login"' in /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('login')
+#1 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/login
+---
+2015/03/02 11:55:14 [error] [exception.CException] exception 'CException' with message 'La propiedad "LoginForm"."Usuario" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CComponent->__get('Usuario')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(LoginForm), 'Usuario')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(LoginForm), 'Usuario', Array)
+#3 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(LoginForm), 'Usuario', Array)
+#4 /var/www/SIHCi/sihci/protected/views/site/login.php(29): CActiveForm->textField(Object(LoginForm), 'Usuario')
+#5 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#9 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(100): CController->render('login', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/contact
+---
+2015/03/02 12:32:17 [error] [php] Use of undefined constant php - assumed 'php' (/var/www/SIHCi/sihci/protected/views/site/login.php:41)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(100): SiteController->render()
+#3 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(14): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+in /var/www/SIHCi/sihci/protected/views/site/login.php (41)
+in /var/www/SIHCi/sihci/protected/controllers/SiteController.php (100)
+in /var/www/SIHCi/sihci/index.php (14)
+2015/03/02 12:35:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "gii" solicitada.' in /var/www/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('gii')
+#1 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('gii')
+#2 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/gii')
+#3 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/gii
+---
+2015/03/02 12:35:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La vista solicitada "gii" no fue encontrada.' in /var/www/SIHCi/YiiFramework/framework/web/actions/CViewAction.php:112
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/actions/CViewAction.php(123): CViewAction->resolveView('gii')
+#1 /var/www/SIHCi/YiiFramework/framework/web/actions/CAction.php(76): CViewAction->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('page')
+#6 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/page?view=gii
+---
+2015/03/02 12:35:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La vista solicitada "gii" no fue encontrada.' in /var/www/SIHCi/YiiFramework/framework/web/actions/CViewAction.php:112
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/actions/CViewAction.php(123): CViewAction->resolveView('gii')
+#1 /var/www/SIHCi/YiiFramework/framework/web/actions/CAction.php(76): CViewAction->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('page')
+#6 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/page?view=gii
+---
+2015/03/02 12:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "login"' in /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('login')
+#1 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/login
+---
+2015/03/02 12:39:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "login"' in /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('login')
+#1 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/login
+---
+2015/03/03 09:34:38 [error] [php] include(Usuarios.php): failed to open stream: No such file or directory (/var/www/SIHCi/YiiFramework/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/components/UserIdentity.php(20): spl_autoload_call()
+#1 /var/www/SIHCi/sihci/protected/models/LoginForm.php(54): UserIdentity->authenticate()
+#2 /var/www/SIHCi/YiiFramework/framework/validators/CInlineValidator.php(42): LoginForm->authenticate()
+#3 /var/www/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
+#4 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(159): CInlineValidator->validate()
+#5 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(96): LoginForm->validate()
+#6 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): SiteController->runAction()
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /var/www/SIHCi/sihci/index.php(14): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+in /var/www/SIHCi/sihci/protected/components/UserIdentity.php (20)
+in /var/www/SIHCi/sihci/protected/models/LoginForm.php (54)
+in /var/www/SIHCi/sihci/protected/controllers/SiteController.php (96)
+2015/03/03 09:35:36 [error] [exception.CException] exception 'CException' with message 'La propiedad "UserIdentity"."email" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/components/UserIdentity.php(20): CComponent->__get('email')
+#1 /var/www/SIHCi/sihci/protected/models/LoginForm.php(54): UserIdentity->authenticate()
+#2 /var/www/SIHCi/YiiFramework/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 /var/www/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(96): CModel->validate()
+#6 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/03 10:36:28 [error] [exception.CException] exception 'CException' with message 'UserIdentity y sus behaviors no tienen un método o closure llamado "addError".' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/components/UserIdentity.php(41): CComponent->__call('addError', Array)
+#1 /var/www/SIHCi/sihci/protected/components/UserIdentity.php(41): UserIdentity->addError('username', 'Usuario inactiv...')
+#2 /var/www/SIHCi/sihci/protected/models/LoginForm.php(55): UserIdentity->authenticate()
+#3 /var/www/SIHCi/YiiFramework/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(96): CModel->validate()
+#7 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/03 10:37:50 [error] [exception.CException] exception 'CException' with message 'UserIdentity y sus behaviors no tienen un método o closure llamado "addError".' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/components/UserIdentity.php(42): CComponent->__call('addError', Array)
+#1 /var/www/SIHCi/sihci/protected/components/UserIdentity.php(42): UserIdentity->addError('password', 'Usuario o Contr...')
+#2 /var/www/SIHCi/sihci/protected/models/LoginForm.php(55): UserIdentity->authenticate()
+#3 /var/www/SIHCi/YiiFramework/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(96): CModel->validate()
+#7 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/03 10:48:17 [error] [exception.CException] exception 'CException' with message 'CActiveForm y sus behaviors no tienen un método o closure llamado "link".' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/views/site/login.php(49): CComponent->__call('link', Array)
+#1 /var/www/SIHCi/sihci/protected/views/site/login.php(49): CActiveForm->link(Object(LoginForm), 'recoverPassword')
+#2 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#3 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#6 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(100): CController->render('login', Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+---
+2015/03/03 10:55:51 [error] [exception.CException] exception 'CException' with message 'UserIdentity y sus behaviors no tienen un método o closure llamado "redirect".' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/components/UserIdentity.php(42): CComponent->__call('redirect', Array)
+#1 /var/www/SIHCi/sihci/protected/components/UserIdentity.php(42): UserIdentity->redirect('/SIHCi/sihci/in...')
+#2 /var/www/SIHCi/sihci/protected/models/LoginForm.php(55): UserIdentity->authenticate()
+#3 /var/www/SIHCi/YiiFramework/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(96): CModel->validate()
+#7 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/03 11:56:09 [error] [exception.Exception] exception 'Exception' with message 'su sesion ha caducado.' in /var/www/SIHCi/sihci/protected/components/UserIdentity.php:42
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/models/LoginForm.php(55): UserIdentity->authenticate()
+#1 /var/www/SIHCi/YiiFramework/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#2 /var/www/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#3 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#4 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(96): CModel->validate()
+#5 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#10 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#11 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/03 12:18:13 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sihci.tblsession' doesn't exist. La sentencia SQL ejecutada fue: DELETE FROM `tblsession` WHERE expire<:expire.
+in /var/www/SIHCi/sihci/protected/views/layouts/main.php (48)
+in /var/www/SIHCi/sihci/protected/views/layouts/column1.php (6)
+in /var/www/SIHCi/sihci/protected/controllers/SiteController.php (100)
+2015/03/03 12:21:39 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'expire' in 'where clause'. La sentencia SQL ejecutada fue: DELETE FROM `users` WHERE expire<:expire.
+in /var/www/SIHCi/sihci/protected/views/layouts/main.php (48)
+in /var/www/SIHCi/sihci/protected/views/layouts/column1.php (6)
+in /var/www/SIHCi/sihci/index.php (14)
+2015/03/03 12:21:39 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists. La sentencia SQL ejecutada fue: CREATE TABLE `users` (
+	`id` CHAR(32) PRIMARY KEY,
+	`expire` int(11),
+	`data` LONGBLOB
+).
+in /var/www/SIHCi/sihci/protected/views/layouts/main.php (48)
+in /var/www/SIHCi/sihci/protected/views/layouts/column1.php (6)
+in /var/www/SIHCi/sihci/index.php (14)
+2015/03/03 12:21:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists. The SQL statement executed was: CREATE TABLE `users` (
+	`id` CHAR(32) PRIMARY KEY,
+	`expire` int(11),
+	`data` LONGBLOB
+)' in /var/www/SIHCi/YiiFramework/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/CDbCommand.php(1352): CDbCommand->execute()
+#1 /var/www/SIHCi/YiiFramework/framework/web/CDbHttpSession.php(162): CDbCommand->createTable('users', Array)
+#2 /var/www/SIHCi/YiiFramework/framework/web/CDbHttpSession.php(207): CDbHttpSession->createSessionTable(Object(CDbConnection), 'users')
+#3 [internal function]: CDbHttpSession->openSession('/var/lib/php5', 'PHPSESSID')
+#4 /var/www/SIHCi/YiiFramework/framework/web/CHttpSession.php(114): session_start()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CHttpSession.php(88): CHttpSession->open()
+#6 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(394): CHttpSession->init()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(201): CModule->getComponent('session')
+#8 /var/www/SIHCi/YiiFramework/framework/web/auth/CWebUser.php(199): CWebApplication->getSession()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(394): CWebUser->init()
+#10 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(103): CModule->getComponent('user')
+#11 /var/www/SIHCi/sihci/protected/views/layouts/main.php(48): CModule->__get('user')
+#12 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#13 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#14 /var/www/SIHCi/YiiFramework/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#15 /var/www/SIHCi/YiiFramework/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#16 /var/www/SIHCi/YiiFramework/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#17 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(214): COutputProcessor->run()
+#18 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#19 /var/www/SIHCi/sihci/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#20 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#21 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(784): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#23 /var/www/SIHCi/YiiFramework/framework/web/actions/CViewAction.php(140): CController->render('pages/about')
+#24 /var/www/SIHCi/YiiFramework/framework/web/actions/CAction.php(76): CViewAction->run()
+#25 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CAction->runWithParams(Array)
+#26 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#27 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#28 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('page')
+#29 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#30 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#31 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/page?view=about
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/contact
+---
+2015/03/03 12:21:48 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'expire' in 'where clause'. La sentencia SQL ejecutada fue: DELETE FROM `users` WHERE expire<:expire.
+in /var/www/SIHCi/sihci/protected/views/layouts/main.php (48)
+in /var/www/SIHCi/sihci/protected/views/layouts/column1.php (6)
+in /var/www/SIHCi/sihci/protected/controllers/SiteController.php (100)
+2015/03/03 12:21:48 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists. La sentencia SQL ejecutada fue: CREATE TABLE `users` (
+	`id` CHAR(32) PRIMARY KEY,
+	`expire` int(11),
+	`data` LONGBLOB
+).
+in /var/www/SIHCi/sihci/protected/views/layouts/main.php (48)
+in /var/www/SIHCi/sihci/protected/views/layouts/column1.php (6)
+in /var/www/SIHCi/sihci/protected/controllers/SiteController.php (100)
+2015/03/03 12:21:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists. The SQL statement executed was: CREATE TABLE `users` (
+	`id` CHAR(32) PRIMARY KEY,
+	`expire` int(11),
+	`data` LONGBLOB
+)' in /var/www/SIHCi/YiiFramework/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/CDbCommand.php(1352): CDbCommand->execute()
+#1 /var/www/SIHCi/YiiFramework/framework/web/CDbHttpSession.php(162): CDbCommand->createTable('users', Array)
+#2 /var/www/SIHCi/YiiFramework/framework/web/CDbHttpSession.php(207): CDbHttpSession->createSessionTable(Object(CDbConnection), 'users')
+#3 [internal function]: CDbHttpSession->openSession('/var/lib/php5', 'PHPSESSID')
+#4 /var/www/SIHCi/YiiFramework/framework/web/CHttpSession.php(114): session_start()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CHttpSession.php(88): CHttpSession->open()
+#6 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(394): CHttpSession->init()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(201): CModule->getComponent('session')
+#8 /var/www/SIHCi/YiiFramework/framework/web/auth/CWebUser.php(199): CWebApplication->getSession()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(394): CWebUser->init()
+#10 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(103): CModule->getComponent('user')
+#11 /var/www/SIHCi/sihci/protected/views/layouts/main.php(48): CModule->__get('user')
+#12 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#13 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#14 /var/www/SIHCi/YiiFramework/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#15 /var/www/SIHCi/YiiFramework/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#16 /var/www/SIHCi/YiiFramework/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#17 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(214): COutputProcessor->run()
+#18 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#19 /var/www/SIHCi/sihci/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#20 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#21 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(784): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#23 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(100): CController->render('login', Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#25 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#26 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#27 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#29 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#30 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#31 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+---
