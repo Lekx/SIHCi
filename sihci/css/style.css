@@ -239,6 +239,10 @@ span
 
 
 }
+.carruselinfo a
+{
+	color: #ffffff !important;
+}
 .carruselinfo #two
 {
 	background-color: #1EB9C0;
@@ -247,6 +251,10 @@ span
 	color: #ffffff;
 	display: inline-block;
 	text-align: center;
+}
+#two a:hover
+{
+	color: #103251 !important;
 }
 .carruselinfo #tree
 {
@@ -402,6 +410,7 @@ span
 	margin-left: 120px;
 
 }
+.contentboxs #box4 h6 { color: white !important; text-align: center;}
 .contentboxs #box6
 {
 
@@ -458,10 +467,12 @@ span
 }
 .contentboxs2 #box1 i
 {
-	color: white;
-	margin-top: 40px;
+	color: white !important;
+	text-align: center;
+	margin-top: 25px;
 	margin-left: 110px;
 }
+.contentboxs2 h6 { color: white !important; text-align: center;}
 .contentboxs2 #box2
 {
 	background-color: #798C9D;
@@ -646,7 +657,7 @@ span
 	float: left;
 
 }
-.menu span, ul, li, a, a:hover
+.menu span, a, a:hover
 {
 	color: #00B9C0 !important;
 }

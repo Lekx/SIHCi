@@ -23,14 +23,16 @@
 	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
 	<?php 
-	$baseUrl = Yii::app()->baseUrl;
-	$cs = Yii::app()->getClientScript();
-	$cs->registerScriptFile($baseUrl.'/js/list.js');
-	$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
-	$cs->registerScriptFile($baseUrl.'/js/slideshow.js');
-	$cs->registerScriptFile($baseUrl.'/js/scroll.js');
-	$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
-	$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
+
+		$baseUrl = Yii::app()->baseUrl;
+		$cs = Yii::app()->getClientScript();
+		$cs->registerScriptFile($baseUrl.'/js/list.js');
+		$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
+		$cs->registerScriptFile($baseUrl.'/js/slideshow.js');
+		$cs->registerScriptFile($baseUrl.'/js/scroll.js');
+		$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
+		$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
+		
 	?>
 
 	<?php Yii::app()->bootstrap->register(); ?>
@@ -50,23 +52,30 @@
 					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu1">
 							<li><a><span>Dirección general</span></a></li>
-							<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
 							<li><a><span>Organigrama</span></a></li>
 							<li><a><span>Normatividad de investigación</span></a></li>
 							<li><a><span>Registro RENIECYT</span></a></li>
-							<li><a><span>Tramites y servicios</span></a></li>
 							<li><a><span>Transparencia</span></a></li>
-							<li><a><span>FInEHC</span></a></li>
-							<li><a><span>Plano de ubicación</span></a></li>
+							<li><a><span>Comitès</span></a></li>
+							<li><a><span>Plano de ubicación SGEI OPD</span></a></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>Programas de coopreación internacional en investigación</h6></a>
+						<a><h6>CVE-HC</h6></a>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
 					<li>
-						<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+						<a><h6>Centro de Investigación Clínica</h6></a>
+						<ul class="cbp-hssubmenu1">
+						<li><a><span>Lineas de investigación</span></a></li>
+						<li><a><span>Protocolos patrocinados por la industrias</span></a></li>
+						<li><a><span>Farmacéutica</span></a></li>
+						<li><a><span>Living Labs-Salud</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<a><h6>FInEHC</h6></a>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -75,23 +84,23 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Unidad Editorial</h6></a>
+								<a><h6>Sub-Dirección General de enseñanza e investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de generación de conocmiento cientifico</h6></a>
+								<a><h6>Publicaciones Científicas</h6></a>
 								<ul class="cbp-hssubmenu1">
-									<li><a><span>Redacción científica</span></a></li>
-									<li><a><span>Asesoría Metodológica</span></a></li>
-									<li><a><span>Asesoría de corrección de estilo de redacción en español u otros idiomas</span></a></li>
-									<li><a><span>Desplegar lineas de generación de conocimiento científico<span><a></li>
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de desarrollo tecnológico e innovación</h6></a>
+								<a><h6>HCG Fray Antonio Alcalde</h6></a>
 								<ul class="cbp-hssubmenu1">
-									<li><a><span>proINVENCI</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>HCG DR. Juan I. Menchaca</h6></a>
+								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 						</ul>
@@ -99,21 +108,25 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Centro de investigación clinica medicina traslacional</h6></a>
+								<a><h6>Programa de formación de recursos humanos en investigación</h6></a>
+								<ul class="cbp-hssubmenu1">
+								<li><a><span>Programas PNCP</span></a></li>
+								<li><a><span>Programas NO PNCP</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>Convocatorias y apoyos en investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Unidades de investigación</h6></a>
+								<a><h6>ProInvenhci</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Formación de recursos en investigación</h6></a>
+								<a><h6>ProDIME</h6></a>
 								<ul class="cbp-hssubmenu1">
-									<li><a><span>Programas PNCP</span></a></li>
-									<li><a><span>Programas NO PNCP</span></a></li>
-									<li><a><span>Programas no medicos</span></a></li>
 								</ul>
 							</li>
 						</ul>
@@ -121,11 +134,27 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</h6></a>
+								<a><h6>Programas de generación de conocimiento</h6></a>
+								<ul class="cbp-hssubmenu1">
+								<li><a><span>Redacción Científicas</span></a></li>
+								<li><a><span>Lineas de generación de conmiento científico</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>Programas de coperación internacional en investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
-
+							<li>
+								<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<a><h6>Revistas científicas</h6></a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
 							<li>
 								<a><h6>Unidad Editorial</h6></a>
 								<ul class="cbp-hssubmenu1">
@@ -146,24 +175,30 @@
 					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu1">
 							<li><a><span>Dirección general</span></a></li>
-							<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
 							<li><a><span>Organigrama</span></a></li>
 							<li><a><span>Normatividad de investigación</span></a></li>
 							<li><a><span>Registro RENIECYT</span></a></li>
-							<li><a><span>Tramites y servicios</span></a></li>
 							<li><a><span>Transparencia</span></a></li>
-							<li><a><span>FInEHC</span></a></li>
-							<li><a><span>Plano de ubicación</span></a></li>
+							<li><a><span>Comitès</span></a></li>
+							<li><a><span>Plano de ubicación SGEI OPD</span></a></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>Programas de coopreación internacional en investigación</h6></a>
+						<a><h6>CVE-HC</h6></a>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
-
 					<li>
-						<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+						<a><h6>Centro de Investigación Clínica</h6></a>
+						<ul class="cbp-hssubmenu1">
+						<li><a><span>Lineas de investigación</span></a></li>
+						<li><a><span>Protocolos patrocinados por la industrias</span></a></li>
+						<li><a><span>Farmacéutica</span></a></li>
+						<li><a><span>Living Labs-Salud</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<a><h6>FInEHC</h6></a>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -172,23 +207,23 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Unidad Editorial</h6></a>
+								<a><h6>Sub-Dirección General de enseñanza e investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de generación de conocmiento cientifico</h6></a>
+								<a><h6>Publicaciones Científicas</h6></a>
 								<ul class="cbp-hssubmenu1">
-									<li><a><span>Redacción científica</span></a></li>
-									<li><a><span>Asesoría Metodológica</span></a></li>
-									<li><a><span>Asesoría de corrección de estilo de redacción en español u otros idiomas</span></a></li>
-									<li><a><span>Desplegar lineas de generación de conocimiento científico<span><a></li>
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de desarrollo tecnológico e innovación</h6></a>
+								<a><h6>HCG Fray Antonio Alcalde</h6></a>
 								<ul class="cbp-hssubmenu1">
-									<li><a><span>proINVENCI</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>HCG DR. Juan I. Menchaca</h6></a>
+								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 						</ul>
@@ -196,21 +231,25 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Centro de investigación clinica medicina traslacional</h6></a>
+								<a><h6>Programa de formación de recursos humanos en investigación</h6></a>
+								<ul class="cbp-hssubmenu1">
+								<li><a><span>Programas PNCP</span></a></li>
+								<li><a><span>Programas NO PNCP</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>Convocatorias y apoyos en investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Unidades de investigación</h6></a>
+								<a><h6>ProInvenhci</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Formación de recursos en investigación</h6></a>
+								<a><h6>ProDIME</h6></a>
 								<ul class="cbp-hssubmenu1">
-									<li><a><span>Programas PNCP</span></a></li>
-									<li><a><span>Programas NO PNCP</span></a></li>
-									<li><a><span>Programas no medicos</span></a></li>
 								</ul>
 							</li>
 						</ul>
@@ -218,11 +257,27 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</h6></a>
+								<a><h6>Programas de generación de conocimiento</h6></a>
+								<ul class="cbp-hssubmenu1">
+								<li><a><span>Redacción Científicas</span></a></li>
+								<li><a><span>Lineas de generación de conmiento científico</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>Programas de coperación internacional en investigación</h6></a>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
-
+							<li>
+								<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<a><h6>Revistas científicas</h6></a>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
 							<li>
 								<a><h6>Unidad Editorial</h6></a>
 								<ul class="cbp-hssubmenu1">
@@ -298,8 +353,8 @@
 
 	<section class="carruselinfo">
 	<div>
-		<div id="one"><span>Enlace con mucho trafico</span></div><div id="two"><span>Enlace de importancia</span></div>
-		<div id="tree"><span>Enlace con mayor trafico de la pagina web</span></div>
+		<div id="one"><span><a href="">Unidades de investigación</a></span></div><div id="two"><span><a href="">Laboratorios de investigación</a></span></div>
+		<div id="tree"><span><a href="">Vinculación con universidades, institutos y hospitales</a></span></div>
 	</div>
 	</section>
 
@@ -316,35 +371,37 @@
 				<div class="content1">
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
-						<h5>At solmen va esser:</h5>
-							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+						<br>
+						<br>
+						<h5>Cómites:<br><br></h5>
+							<span>Comites de las unidades hospitalarias.</span>
 					</div>
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
-						<h5>At solmen va esser:</h5>
-							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+						<h5>Programas de desarrollo tecnológico e innovación:<br></h5>
+							<span>Identificar los resultados de investigación o invenciones patentables.</span>
 					</div>
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
-						<h5>At solmen va esser:</h5>
-							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+						<h5>Centro de investigación clinica y medicina traslacional:<br><br></h5>
+							<span>Las lineas de invetsigacion con las que cuenta la clinica.</span>
 					</div>
 				</div>
 				<div class="content2">
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
-						<h5>At solmen va esser:</h5>
-							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+						<h5>Revistas cientificas:<br><br></h5>
+							<span>El principal vehículo de comunicación de la ciencia es el artículo científico original.</span>
 					</div>
 					<div>
 					<i class="fa fa-compass fa-5x"></i>
-						<h5>At solmen va esser:</h5>
-							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+						<h5>Unidad editorial:<br><br></h5>
+							<span>Unidad Editorial, es una figura orgánica perteneciente al OPD Hospital Civil de Guadalajara.</span>
 					</div>
 					<div>
 					<i class="fa fa-compass fa-5x"></i>
-						<h5>At solmen va esser:</h5>
-							<span>l desirabilite de un nov lingua franca On refusa continuar payar custosi.</span>
+						<h5>Vinculación con Universidades, Institutos y Hospitales:</h5>
+							<span>Las actividades de vinculación constituyen el puente entre los procesos de formación de recursos..</span>
 					</div>
 				</div>
 			</div>
@@ -353,7 +410,7 @@
 	<section class="contentboxs">
 		<div id="box1">
 			<div id="title">
-			<h3>Nemo enim ipsam voluptatem</h3>
+			<h3>CVE-HC</h3>
 			</div>
 			<div id="content"><span><p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni do- lores eos qui ratione voluptatem sequi nesciunt.</p>
 									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, ad- ipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
@@ -362,19 +419,21 @@
 		</div>
 		<div id="box2">
 			<div>
-				<p><span>Omnicos directe: </span>al desirabilite de un nov lingua franca On refusa continuar payar custosi traductores.</p>
-				<p><span>At solmen va esser: </span>necessi far uniform grammatica, grammatica del resultant pronunciation e plu sommun paroles.</p>
-				<p><span>Ma quande: </span>lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
+				<h5>Publicaciones cientificas:</h5>
+				<p><span>Hipócrates Revista Médica:</span> Revista médica de divulgación académica con orientación clínica.</p>
+				<p><span>Archivos en Pediatría: </span>Forma parte de las 5 mejores revistas editadas en México.</p>
+				<p><span>Tracto Genital Inferior: </span>Revista científica que pretende difundir información consistente, multidisciplinaria y de vanguardia.</p>
 			</div>
 		</div>
 		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner4.jpg"></div>
 		<div id="box4">
-			<i class="fa fa-heartbeat fa-5x"></i>
+			<a href=""><i class="fa fa-heartbeat fa-5x"></i></a>
+			<h6>Programas de generación de conocimento</h6>
 		</div>
 		<div id="box5"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner2.jpg"></div>
 		<div id="box6">
 			<div>
-			<p><span>Omnicos directe: </span>al desirabilite de un nov lingua franca On refusa continuar payar custosi traductores.</p>
+			<p><span><h6>Estadisticas</h6> </span>Información estadistica relacionada con el sitio.</p>
 			</div>
 		</div>
 	</section>
@@ -382,19 +441,17 @@
 	<section class="contentboxs2">
 		<div id="box1">
 			<div>
-				<i class="fa fa-medkit fa-5x"></i>
+				<a href=""><i class="fa fa-medkit fa-5x"></i></a>
+				<h6>Registro de proyectos de investigación del OPD HCG</h6>
 			</div>
 		</div>
 		<div id="box2">
-			<div><p><span>Omnicos directe: </span>al desirabilite de un nov lingua franca On refusa continuar payar custosi traductores.</p></div>
+			<div><p><span><h6>SIHCi</h6></span>Sistema de investigación del hospital Civil de Guadalajara. </p></div>
 		</div>
 		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner3.jpg"></div>
 		<div id="box4">
-				<div id="title"><h3>Nemo enim ipsam voluptatem</h3></div>
-			<div id="content"><span><p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni do- lores eos qui ratione voluptatem sequi nesciunt.</p>
-									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, ad- ipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labori- osam, nisi ut aliquid ex ea commodi consequatur</p>
-									</span>
+				<div id="title"><h3>Programas de generacion de conocimiento cientifico:</h3></div>
+			<div id="content"><span>La generación de conocimiento es un bien en sí mismo: las sociedades más desarrolladas del mundo reconocen la importancia del conocimiento científico y dedican recursos humanos y financieros para impulsar esta actividad. Tradicionalmente, los investigadores realizan estudios que generan conocimiento científico nuevo; éste es comunicado a través presentaciones en congresos y reuniones científicas, y es difundido, en una proporción variable, en publicaciones científicas que usualmente “leen” otros investigadores para realizar más estudios y generar más conocimiento, y así sucesivamente </span>
 			</div>
 		</div>
 	</section>
@@ -406,34 +463,44 @@
 					<i class="fa fa-medkit fa-5x"></i>
 				</div>
 				<div id="title">
-					<h3>Curabitur ullamcorper ultricies ninam eget dui etiam rhoncus.</h3>
-					<p><a>Maecenas tempus</a>, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, <a>luctus pulvinar</a>, hendrerit id, lorem.<p>
+					<h3>¿Qué es el Hospital Civil de Guadalajara?</h3>
+					<p><a>¿Quiénes somos?</a>, Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y patrimonio propios; conformado por dos Unidades Hospitalarias: <p>
 				</div>
 				<div id="contentbody">
-				<p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni doloes eos qui ratione voluptatem sequi nesciunt.Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-				<br>
-				<br>
-				Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-				<br>
-				<br>
-				At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia dese- runt mollitia animi, id est laborum et dolorum fuga.Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
-				<br>
-				<br>
-				Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit</p>
+				<ul>
+					<li>Antiguo Hospital Civil de Guadalajara “Fray Antonio Alcalde” </li>
+					<li>Nuevo Hospital Civil de Guadalajara “Dr. Juan I. Menchaca” </li>
+				</ul>
+				<p>Líneas estrégicas:</p>
+				<ul>
+					<li>Transformar la administración hospitalaria basada en procesos.</li>
+					<li>Alcanzar un pleno desarrollo profesional y humano de profesionales en salud.</li>
+					<li>Establecer una Cultura enfocada hacia la Calidad y Seguridad Institucional.</li>
+					<li>Desarrollar la investigación operativa en procesos de salud.</li>
+					<li>Establecer sistema único e integral de información</li>
+					<li>Lograr más y mejor comunicación.</li>
+					<li>Implementar un sistema de financiamiento efectivo.</li>
+					<li>Modernización, hacia un Hospital de Vanguardia.</li>
+					<li>Internacionalización Institucional a través de Convenios e intercambios de capacitación, investigación y programas de alto impacto social con Instituciones nacionales e Internacionales reconocidas. </li>
+					<li>Implementación de un sistema de participación activa del usuario externo en los programas asistenciales.</li>
+				</ul>
+
+				<p>Misión</p>
+				<p>Brindar servicios integrales de salud hospitalaria de segundo y tercer nivel, fundamentalmente a la población que no pertenece a ningún régimen de seguridad social, buscando en la prestación de servicios la generación de conocimientos y la formación de recursos humanos de excelencia en las ciencias de la salud.</p>
+				<p>Visión:</p>
+				<p>Conformarse en un centro asistencial de referencia hospitalaria de segundo y tercer nivel, otorgando servicios de salud oportunos, con calidad y eficiencia. Ser Hospital-Escuela líder y de vanguardia en la Enseñanza e Investigación que impulse en nuestro Estado una nueva cultura para la salud. </p>
 				</div>
 
 			</div>
 
 			<div class="slidebar">
-				<p>
-				Omnicos directe:
-					<p>
-					<a>Al desirabilite de un nov lingua franca On refusa continuar payar custosis.</a>
-					</p>
-					<p>
-					<a>Al desirabilite de un nov lingua franca.</a>
-					</p>
-				</p>
+			
+			<p>Principales objetivos: </p>
+				<ul>
+					<a href=""><li>Prestar servicios de salud a la población sin protección de seguridad social.</li></a>
+					<br>
+					<a href=""><li>Fungir como Hospital-Escuela de la Universidad de Guadalajara para las funciones de docencia, investigación y extensión en el área de Salud. </li></a>
+				</ul>
 			</div>
 		</div>
 	</section>
@@ -450,24 +517,30 @@
 					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu">
 							<li><a><span>Dirección general</span></a></li>
-							<li><a><span>Sudirección general de enseñanza e investigación</span></a></li>
 							<li><a><span>Organigrama</span></a></li>
 							<li><a><span>Normatividad de investigación</span></a></li>
 							<li><a><span>Registro RENIECYT</span></a></li>
-							<li><a><span>Tramites y servicios</span></a></li>
 							<li><a><span>Transparencia</span></a></li>
-							<li><a><span>FInEHC</span></a></li>
-							<li><a><span>Plano de ubicación</span></a></li>
+							<li><a><span>Comitès</span></a></li>
+							<li><a><span>Plano de ubicación SGEI OPD</span></a></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>Programas de coopreación internacional en investigación<h6></a>
+						<a><h6>CVE-HC</h6></a>
 						<ul class="cbp-hssubmenu">
 						</ul>
 					</li>
-
 					<li>
-						<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+						<a><h6>Centro de Investigación Clínica</h6></a>
+						<ul class="cbp-hssubmenu">
+						<li><a><span>Lineas de investigación</span></a></li>
+						<li><a><span>Protocolos patrocinados por la industrias</span></a></li>
+						<li><a><span>Farmacéutica</span></a></li>
+						<li><a><span>Living Labs-Salud</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<a><h6>FInEHC</h6></a>
 						<ul class="cbp-hssubmenu">
 						</ul>
 					</li>
@@ -476,23 +549,23 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<a><h6>Unidad Editorial</h6></a>
+								<a><h6>Sub-Dirección General de enseñanza e investigación</h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de generación de conocmiento cientifico</h6></a>
+								<a><h6>Publicaciones Científicas</h6></a>
 								<ul class="cbp-hssubmenu">
-									<li><a><span>Redacción científica</span></a></li>
-									<li><a><span>Asesoría Metodológica</span></a></li>
-									<li><a><span>Asesoría de corrección de estilo de redacción en español u otros idiomas</span></a></li>
-									<li><a><span>Desplegar lineas de generación de conocimiento científico<span><a></li>
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de desarrollo tecnológico e innovación</h6></a>
+								<a><h6>HCG Fray Antonio Alcalde</h6></a>
 								<ul class="cbp-hssubmenu">
-									<li><a><span>proINVENCI</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>HCG DR. Juan I. Menchaca</h6></a>
+								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 						</ul>
@@ -500,21 +573,25 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<a><h6>Centro de investigación clinica medicina traslacional</h6></a>
+								<a><h6>Programa de formación de recursos humanos en investigación</h6></a>
+								<ul class="cbp-hssubmenu">
+								<li><a><span>Programas PNCP</span></a></li>
+								<li><a><span>Programas NO PNCP</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>Convocatorias y apoyos en investigación</h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Unidades de investigación<h6></a>
+								<a><h6>ProInvenhci</h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Formación de recursos en investigación</h6></a>
+								<a><h6>ProDIME</h6></a>
 								<ul class="cbp-hssubmenu">
-									<li><a><span>Programas PNCP</span></a></li>
-									<li><a><span>Programas NO PNCP</span></a></li>
-									<li><a><span>Programas no medicos</span></a></li>
 								</ul>
 							</li>
 						</ul>
@@ -522,7 +599,24 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<a><h6>Convocatoria y Becas para Formar Recursos Humanos en invesitigación</h6></a>
+								<a><h6>Programas de generación de conocimiento</h6></a>
+								<ul class="cbp-hssubmenu">
+								<li><a><span>Redacción Científicas</span></a></li>
+								<li><a><span>Lineas de generación de conmiento científico</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<a><h6>Programas de coperación internacional en investigación</h6></a>
+								<ul class="cbp-hssubmenu">
+								</ul>
+							</li>
+							<li>
+								<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+								<ul class="cbp-hssubmenu">
+								</ul>
+							</li>
+							<li>
+								<a><h6>Revistas científicas</h6></a>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -531,6 +625,7 @@
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
+
 						</ul>
 					</div>
 				</div>

@@ -114,6 +114,7 @@ class FilesManagerController extends Controller
 	
 	public function actionIndex()
 	{
+	
 		$dataProvider=new CActiveDataProvider('FilesManager');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
