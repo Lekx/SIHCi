@@ -361,48 +361,42 @@
 	<section class="main-content">
 
 		<div class="content">
-			<div class="title"><h3>Center Curabitur ullamcorper ultricies nisi nam eget <br>
-				dui etiam rhoncus</h3></div>
+			<div class="title"><h3>Sistema de Gestión y Administración de Protocolos de Investigación Médica en el Hospital Civil</h3></div>
 				<i class="fa fa-minus"></i>
 				<div class="subtitle">
-					<span>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
-					adipiscing <br> sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</span>
+					<span>El SIHCi es un proyecto institucional que busca modernizar los procesos de registro, evaluación y seguimiento de proyectos de investigación
+					<br>, con el fin de establecer mejoras importantes en la calidad que el OPD Hospital Civil de Guadalajara ofrece a su comunidad y al público en general.</span>
 				</div>
 				<div class="content1">
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
 						<br>
 						<br>
-						<h5>Cómites:<br><br></h5>
-							<span>Comites de las unidades hospitalarias.</span>
+						<h5>Cómites</h5>
+							
 					</div>
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
-						<h5>Programas de desarrollo tecnológico e innovación:<br></h5>
-							<span>Identificar los resultados de investigación o invenciones patentables.</span>
+						<h5>Programas de desarrollo tecnológico e innovación<br></h5>
+							
 					</div>
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
-						<h5>Centro de investigación clinica y medicina traslacional:<br><br></h5>
-							<span>Las lineas de invetsigacion con las que cuenta la clinica.</span>
+						<h5>Centro de investigación clinica y medicina traslacional</h5>
 					</div>
 				</div>
 				<div class="content2">
 					<div>
 						<i class="fa fa-compass fa-5x"></i>
-						<h5>Revistas cientificas:<br><br></h5>
-							<span>El principal vehículo de comunicación de la ciencia es el artículo científico original.</span>
+						<h5>Revistas cientificas<br><br></h5>
 					</div>
 					<div>
 					<i class="fa fa-compass fa-5x"></i>
-						<h5>Unidad editorial:<br><br></h5>
-							<span>Unidad Editorial, es una figura orgánica perteneciente al OPD Hospital Civil de Guadalajara.</span>
+						<h5>Unidad editorial<br><br></h5>
 					</div>
 					<div>
 					<i class="fa fa-compass fa-5x"></i>
-						<h5>Vinculación con Universidades, Institutos y Hospitales:</h5>
-							<span>Las actividades de vinculación constituyen el puente entre los procesos de formación de recursos..</span>
-					</div>
+						<h5>Vinculación con Universidades, Institutos y Hospitales</h5>
 				</div>
 			</div>
 	</section>
