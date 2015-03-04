@@ -7,6 +7,7 @@ OP03-Desplegar Organigrama
 
 
 <section>
+	
 		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/organigrama/img/org1.png"; ?>">
 	
 		<p>Organigrama Dando clic en subdirección general e investigación

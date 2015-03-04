@@ -25,5 +25,5 @@
 </section>
 
 <section>
-	<?php Yii::app()->runController('manejadorArchivos/DisplayFiles/section/Programas PNCP'); ?>
+	<?php Yii::app()->runController('manejadorArchivos/DisplayFiles/section/ProgramasPNCP'); ?>
 </section>

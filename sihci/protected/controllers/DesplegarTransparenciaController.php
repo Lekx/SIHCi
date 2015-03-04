@@ -5,6 +5,7 @@ class DesplegarTransparenciaController extends Controller
 	public function actionIndex()
 	{
 		$this->render('index');
+		$this->layout = 'informativas';
 	}
 
 	// Uncomment the following methods and override them if needed

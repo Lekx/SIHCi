@@ -68,5 +68,5 @@
 </section>
 
 <section>
-	<h1>Documentos descargables!</h1>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/informacionDeDireccionGeneral'); ?>
 </section>

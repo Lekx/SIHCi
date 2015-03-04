@@ -71,5 +71,5 @@ Tracto Genital Inferior
 </section>
 
 <section>
-	<h1>Documentos Descargables!</h1>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/revistasCientificas'); ?>
 </section>

@@ -12,5 +12,5 @@ OP11-Desplegar Plano de ubicación de mapa de oficina SGEI OPD
 
 
 <section>
-<h1> Documentos Descargables</h1>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/planoDeUbicacionDeMapaDeOficinaSGEIOPD'); ?>
 </section>

@@ -113,7 +113,6 @@ OP07-Desplegar Transparencia
 </section>
 
 
-
 <section>
-<h1>Documentos Descargables.</h1>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/desplegarTransparencia'); ?>
 </section>
