@@ -204,5 +204,5 @@ Correo electrónico: barrios.vero2@gmail.com</P>
 
 
 <section>
-	<h1>Documentos Descargables!</h1>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/informacionDeSubdireccionGeneralDeEnsenansaEInvestigacion'); ?>
 </section>

@@ -4,7 +4,9 @@ class OrganigramaController extends Controller
 {
 	public function actionIndex()
 	{
+		$this->layout = 'informativas';
 		$this->render('index');
+
 	}
 
 	// Uncomment the following methods and override them if needed

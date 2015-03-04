@@ -223,5 +223,5 @@ OP12-Desplegar Unidad Hospitalaria FAA: Subdirección de enseñanza e investigac
 
 
 <section>
-<h1> Icono! </h1>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/sibdireccionDeEnsenanzaEInvestigacion'); ?>
 </section>

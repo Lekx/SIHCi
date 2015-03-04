@@ -123,5 +123,5 @@ OP08-Desplegar Unidad Hospitalaria JIM: Subdirección de enseñanza e investigac
 
 
 <section>
-	<h1> Documentos Descargables</h1>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/unidadHospitalariaJIMSubdireccionDeEnsenanzaEInvestigacion'); ?>
 </section>
