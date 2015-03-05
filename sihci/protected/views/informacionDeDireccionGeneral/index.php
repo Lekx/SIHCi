@@ -1,3 +1,14 @@
+<?php
+/* @var $this SiteController */
+/* @var $error array */
+
+$this->pageTitle=Yii::app()->name . ' - Información de Dirección general';
+$this->breadcrumbs=array(
+	'OPD / Información de Dirección general',
+);
+?>
+
+
 <H1>OP01-Desplegar información de Dirección general</H1>	
 <section>
 	<h1>Icono!</h1>
@@ -7,7 +18,7 @@
 	¿Quiénes somos?
 	¿Qué es el Hospital Civil de Guadalajara?
 	<p>Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y
-	patrimonio propios; conformado por dos Unidades Hospitalarias:</<p>p>
+	patrimonio propios; conformado por dos Unidades Hospitalarias:<p><p>
 	<UL TYPE=disc>
 		<li> Antiguo Hospital Civil de Guadalajara “Fray Antonio Alcalde”</li>
 		<li> Nuevo Hospital Civil de Guadalajara “Dr. Juan I. Menchaca”</li>
