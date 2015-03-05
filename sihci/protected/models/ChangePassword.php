@@ -7,8 +7,9 @@
 		public $password2;
 		public function rules(){
 			return array(
-				array('password', 'compare', 'compareAttribute' => 'password2'),
-				
+				array('password2', 'compare', 'compareAttribute' => 'password'),
+				array('password', 'required'),
+				array('password2', 'required'),
 				);
 		}
 

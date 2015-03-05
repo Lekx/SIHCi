@@ -3,13 +3,13 @@
 	
 	$this->pageTitle = 'Recuperar Contraseña';
 	$this->breadcrumbs = array('Recuperar Contraseña');
-
+	echo $msg;
 ?>
 <div class="form">
 <?php $form = $this->beginWidget('CActiveForm',
 	array(
 		'method' => 'POST',
-		'action' => Yii::app()->createUrl('site/changePassword'),
+		'action' => Yii::app()->createUrl("site/changePassword?key=".$key.""),
 		'enableClientValidation' => true,
 		'clientOptions' => array(
 			'validateOnSubmit' => true,
@@ -20,12 +20,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->textField($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'password2'); ?>
-		<?php echo $form->textField($model,'password2'); ?>
+		<?php echo $form->passwordField($model,'password2'); ?>
 		<?php echo $form->error($model,'password2'); ?>
 	</div>
 
