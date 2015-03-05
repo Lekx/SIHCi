@@ -1,6 +1,6 @@
 <?php
 
-class DesplegarInformacionController extends Controller
+class GeneracionDeConocimientoCientificoController extends Controller
 {
 	public function actionIndex()
 	{
