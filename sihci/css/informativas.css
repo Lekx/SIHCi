@@ -1,0 +1,29 @@
+.informativa
+{
+	margin-top: 80px;
+	margin-left: auto;
+	margin-bottom: 80px;
+	font-family: 'Caviar_Dreams'; 
+}
+.column-left
+{
+	float: left;
+	width: 115px;
+	margin-left: 45px;
+
+}
+.column-right
+{
+	float: right;
+	width: 270px;
+	margin-left: 10px;
+}
+.column-center
+{
+	display: inline-block;
+	width: 830px;
+	
+}
+.column-center h2{ color: #0A3250;  }
+.generalinformation{text-align: justify;}
+.subtitle{ color: #00B9C0;}
