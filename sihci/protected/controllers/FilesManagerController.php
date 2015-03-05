@@ -39,6 +39,7 @@ class FilesManagerController extends Controller
 
 		$model->attributes=$_POST['FilesManager'];
 		$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
+		//$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
 		$model->path = CUploadedFile::getInstanceByName('FilesManager[path]');
 		
 			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF' )
