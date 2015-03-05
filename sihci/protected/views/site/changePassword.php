@@ -1,5 +1,5 @@
 <?php
-
+///LO04-Recuperar Contraseña
 	
 	$this->pageTitle = 'Recuperar Contraseña';
 	$this->breadcrumbs = array('Recuperar Contraseña');

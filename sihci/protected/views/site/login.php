@@ -39,7 +39,6 @@ $this->breadcrumbs=array(
 		</p> -->
 	</div>
 
-<?php echo sha1(md5(sha1("123456")));?>
 
 	<div class="row rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
@@ -47,7 +46,7 @@ $this->breadcrumbs=array(
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div> 
 	<div class="row">
-	<a href="#">Recuperar contraseña</a>
+	<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>">Recuperar contraseña</a>
 	</div>
 
 	<div class="row buttons">

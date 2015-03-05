@@ -99,7 +99,6 @@ class SiteController extends Controller
 		// display the login form
 		$this->render('login',array('model'=>$model));
 	}
-
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
@@ -107,5 +106,83 @@ class SiteController extends Controller
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+
+	public function actionRecoveryPassword()
+	{
+		$model = new RecoveryPassword;
+   		$msg = '';
+        $random = rand(1000,5000);
+	    $date = date("d/m/y H:i:s");
+
+   		if (isset($_POST["RecoveryPassword"])) {
+   			$model->attributes = $_POST['RecoveryPassword'];
+
+   			if (!$model->validate()) {
+   				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
+   			}else{
+   				//enviar email y consulta
+   				$conexion = Yii::app()->db;
+
+   				$consulta = "SELECT email from users WHERE ";
+   				$consulta .= "email='".$model->email."'";
+
+   				$resultado = $conexion->createCommand($consulta);
+   				$filas = $resultado->query();
+   				$existe = false;
+
+   				foreach ($filas as $fila) {
+   				   $existe=true;
+   				}
+   				if ($existe === true) {
+
+   					$llave = sha1(md5(sha1($date."".$model->email."".$random)));
+   					$insertar = "UPDATE users SET act_react_key='$llave' where";
+   					$insertar .=" email='".$model->email."'";
+   					$llaveBD = $conexion->createCommand($insertar)->query();
+
+   					// $consulta = "SELECT password from users WHERE ";
+   					// $consulta .= "email='".$model->email."'";
+
+   					// $resultado = $conexion->createCommand($consulta)->query();
+
+   					// $resultado->bindColumn(1, $password);
+   					// while($resultado->read()!==false){
+   					// 	$password = $password;
+   					// }
+   					$email = new SendEmail;
+
+   					$subject = "Has solicitado recuperar tu password en";
+   					$subject .= Yii::app()->name;
+   					$message = "<a href='http://localhost/sihci/index.php/site/changePassword?key=".$llave.">";
+   					$message .= "Haz click en ésta liga para cambiar tu contraseña";
+   					$message .= "</a><br /><br />";
+   					// $message .= "<a href='http://localhost/'>Regresar a la web</a>";
+					$email->Send_Email
+					(
+						array(Yii::app()->params['emailAdmin'], Yii::app()->name),
+						array($model->email, 'joel'),
+						$subject,
+						$message
+						);  
+					$model->email="";
+						$msg = "<strong class='text-success'>se ha enviado el password</strong>"; 					
+   				}else{
+   					$msg = "<strong class='text-error'>Error, el usuario no existe</strong>";
+   				}
+   			}
+   		}
+		$this->render('recoveryPassword', array('model' => $model, 'msg' => $msg));
+	}
+	public function actionChangePassword(){
+            $model = new ChangePassword;
+   		
+   		if (isset($_POST["ChangePassword"])) {
+   			$model->attributes = $_POST['ChangePassword'];
+
+   			
+   			}
+   		
+		$this->render('changePassword', array('model' => $model));
 	}
 }
