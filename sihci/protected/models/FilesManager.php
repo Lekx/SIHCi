@@ -1,4 +1,16 @@
+
 <?php
+/**
+ * This is the model class for table "files_manager".
+ *
+ * The followings are the available columns in table 'files_manager':
+ * @property integer $id
+ * @property string $section
+ * @property string $file_name
+ * @property string $path
+ * @property string $start_date
+ * @property string $end_date
+ */
 
 class FilesManager extends CActiveRecord
 {
@@ -66,7 +78,7 @@ class FilesManager extends CActiveRecord
     {
 
 			$this->start_date = DateTime::createFromFormat('d/m/Y', $this->start_date)->format('Y-m-d H:i:s');
-	        $this->end_date = DateTime::createFromFormat('d/m/Y', $this->end_date)->format('Y-m-d H:i:s');
+	        $this->end_date = DateTime::createFromFormat('d/m/Y H:i:s', $this->end_date)->format('Y-m-d H:i:s');
         	return parent::beforeSave();
     }
 

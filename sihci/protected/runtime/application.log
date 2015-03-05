@@ -6355,3 +6355,55 @@ Stack trace:
 #9 {main}
 REQUEST_URI=/SIHCi/sihci/index.php/organigrama
 ---
+2015/03/04 13:07:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sites"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('sites')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/sites
+---
+2015/03/05 12:10:34 [error] [php] move_uploaded_file(C:/xampp/htdocs/SIHCi/sihci/files_manager/pruebaismael.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): FilesManagerController->actionCreate()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): FilesManagerController->runAction()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): FilesManagerController->filterAccessControl()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): FilesManagerController->runActionWithFilters()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): FilesManagerController->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\SIHCi\sihci\index.php(14): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/filesManager/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\FilesManagerController.php (47)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (14)
+2015/03/05 12:15:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "gii" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('gii')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('gii')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/gii')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/gii
+---
+2015/03/05 12:18:05 [error] [php] Undefined variable: end_date (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\FilesManagerController.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): FilesManagerController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): FilesManagerController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): FilesManagerController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): FilesManagerController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(14): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/filesManager/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\FilesManagerController.php (42)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (14)
