@@ -6796,3 +6796,53 @@ Stack trace:
 #7 {main}
 REQUEST_URI=/SIHCi/sihci/index.php/site/changePassword
 ---
+2015/03/06 10:33:59 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/var/www/SIHCi/sihci/assets" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php:138
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/var/www/SIHCi/...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
+#2 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(216): CAssetManager->publish('/var/www/SIHCi/...', false, -1, false)
+#3 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(52): TbApi->getAssetsUrl()
+#4 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(93): TbApi->registerCoreCss()
+#5 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(138): TbApi->registerAllCss()
+#6 /var/www/SIHCi/sihci/protected/views/site/index.php(38): TbApi->register()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', NULL, true)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', NULL, true)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#11 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(33): CController->render('index')
+#12 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#17 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#18 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/SIHCi/sihci/index.php
+---
+2015/03/06 10:34:14 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/var/www/SIHCi/sihci/assets" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php:138
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/var/www/SIHCi/...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
+#2 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(216): CAssetManager->publish('/var/www/SIHCi/...', false, -1, false)
+#3 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(52): TbApi->getAssetsUrl()
+#4 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(93): TbApi->registerCoreCss()
+#5 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(138): TbApi->registerAllCss()
+#6 /var/www/SIHCi/sihci/protected/views/site/index.php(38): TbApi->register()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', NULL, true)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', NULL, true)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#11 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(33): CController->render('index')
+#12 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#17 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#18 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /var/www/SIHCi/sihci/index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/SIHCi/sihci/index.php
+---
