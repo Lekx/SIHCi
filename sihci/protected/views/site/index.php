@@ -39,8 +39,6 @@
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-
-
 </head>
 
 <body>	
@@ -290,7 +288,7 @@
 		</div>
              <div id="header-content-container">
                  <div id="header-content">
-                 	<div id="headerlogo"></div>
+                 	<div id="headerlogo"><a href=""><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHch.png" alt=""></a></div>
 
 	                 	<div id="hsearch">
 		                 	<div id="headermenu">
@@ -310,15 +308,17 @@
     </section>
 
 	<section class="logosection">
-		<div class="logo"></div>
+		<div class="logo"><a href=""><img id="logohme"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHme.png" alt="home"></a></div>
 		<div class="logosub"></div>
 		<div class="logoinfo"><span>Ivestigadores:</span><span>Vidas Cambiadas</span><span>Ivestigaciones</span><span>Libros y Revistas</span></div>
 		<div class="logonum"><h4>1,456</h4><h4>1,923,456</h4><h4>17,296</h4><h4>3,163</h4></div>
 	</section>
 
 	<section class="logsection">
-		<div class="login"></div>
-		<div class="singin"></div>
+		<div class="login"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt="home"></a>
+		Ingresar a tu cuenta</div>
+		<div class="singin"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt="home"></a>
+		Crear una cuenta</div>
 		<div class="searchbar">
 			<form>
 
@@ -458,7 +458,7 @@
 				</div>
 				<div id="title">
 					<h3>¿Qué es el Hospital Civil de Guadalajara?</h3>
-					<p><a>¿Quiénes somos?</a>, Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y patrimonio propios; conformado por dos Unidades Hospitalarias: <p>
+					<p><a href="">¿Quiénes somos?</a>, Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y patrimonio propios; conformado por dos Unidades Hospitalarias: <p>
 				</div>
 				<div id="contentbody">
 				<ul>
