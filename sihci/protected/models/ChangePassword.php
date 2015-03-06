@@ -10,6 +10,8 @@
 				array('password2', 'compare', 'compareAttribute' => 'password'),
 				array('password', 'required'),
 				array('password2', 'required'),
+				array('password','length', 'min'=>6, 'max'=>300),
+				array('password2','length', 'min'=>6, 'max'=>300),
 				);
 		}
 

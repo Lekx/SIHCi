@@ -164,7 +164,7 @@ class SiteController extends Controller
 									$email->Send_Email
 									(
 										array(Yii::app()->params['emailAdmin'], Yii::app()->name),
-										array($model->email, 'joel'),
+										array($model->email, ''),
 										$subject,
 										$message
 										);  
@@ -186,14 +186,7 @@ class SiteController extends Controller
             $model = new ChangePassword;
    		  	$msg = '';
 
-   		if (isset($_POST["ChangePassword"])) {
-   			$model->attributes = $_POST['ChangePassword'];
-
-   			if (!$model->validate()) {
-   				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
-   				}else{
-
-   					$conexion = Yii::app()->db;
+   		  	$conexion = Yii::app()->db;
 
    					$consulta = "SELECT act_react_key from users WHERE ";
    					$consulta .= "act_react_key='".$key."'";
@@ -207,19 +200,50 @@ class SiteController extends Controller
    					}
    					if ($existe === true) {
 
-   					$insertar = "UPDATE users SET password='$model->password' where ";
-   					$insertar .= "act_react_key='".$key."'";
-   					$llaveBD = $conexion->createCommand($insertar)->query();
+					   		if (isset($_POST["ChangePassword"])) {
+					   			$model->attributes = $_POST['ChangePassword'];
 
-					$model->password="";
-					$model->password2="";
-						$msg = "<strong class='text-success'>su contraseña ha cambiado con éxito</strong>"; 					
+					   			if (!$model->validate()) {
+					   				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
+					   				}else{
+
+					   					$conexion = Yii::app()->db;
+
+					   					$consulta = "SELECT act_react_key from users WHERE ";
+					   					$consulta .= "act_react_key='".$key."'";
+
+					   					$resultado = $conexion->createCommand($consulta);
+					   					$filas = $resultado->query();
+					   					$existe = false;
+
+					   					foreach ($filas as $fila) {
+					   					   $existe=true;
+					   					}
+					   					if ($existe === true) {
+
+					   					$insertar = "UPDATE users SET password='$model->password' where ";
+					   					$insertar .= "act_react_key='".$key."'";
+					   					$llaveBD = $conexion->createCommand($insertar)->query();
+
+												
+
+										$delete = "UPDATE users SET act_react_key='' where ";
+					   					$delete .= "act_react_key='".$key."'";
+					   					$deleteDB = $conexion->createCommand($delete)->query();
+
+					   					$model->password="";
+										$model->password2="";
+										$msg = "<strong class='text-success'>su contraseña ha cambiado con éxito</strong>"; 
+					   					}else{
+					   					$msg = "<strong class='text-error'>Esta página ya no existe</strong>";
+					   					$this->redirect(Yii::app()->homeUrl);
+					   					}
+					   				}
+					   			
+					   		}
    					}else{
-   					$msg = "<strong class='text-error'>Esta página ya no existe</strong>";
+   					$this->redirect(Yii::app()->homeUrl);
    					}
-   				}
-   			
-   		}
    		
 		$this->render('changePassword', array('model' => $model, 'msg' => $msg, 'key' => $key));
 	}
