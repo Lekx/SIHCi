@@ -39,8 +39,6 @@
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-
-
 </head>
 
 <body>	
@@ -290,7 +288,7 @@
 		</div>
              <div id="header-content-container">
                  <div id="header-content">
-                 	<div id="headerlogo"></div>
+                 	<div id="headerlogo"><a href=""><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHch.png" alt=""></a></div>
 
 	                 	<div id="hsearch">
 		                 	<div id="headermenu">
@@ -310,26 +308,30 @@
     </section>
 
 	<section class="logosection">
-		<div class="logo"></div>
+		<div class="logo"><a href=""><img id="logohme"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHme.png" alt="home"></a></div>
 		<div class="logosub"></div>
 		<div class="logoinfo"><span>Ivestigadores:</span><span>Vidas Cambiadas</span><span>Ivestigaciones</span><span>Libros y Revistas</span></div>
 		<div class="logonum"><h4>1,456</h4><h4>1,923,456</h4><h4>17,296</h4><h4>3,163</h4></div>
 	</section>
 
 	<section class="logsection">
-		<div class="login"></div>
-		<div class="singin"></div>
+		<div class="login"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
+		Ingresar a tu cuenta</div>
+		<div class="singin"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
+		Crear una cuenta</div>
 		<div class="searchbar">
 			<form>
 
-				<button id="show_hidemenu" type="button" class="btn btn-default btn-lg">
-				<span class="glyphicon glyphicon-align-justify"></span>
+				<button id="show_hidemenu" type="button">
+				<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuGr.png" alt="">
+					Menu
 				</button>
 
-
 				<input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
-				<button id="search" type="button" class="btn btn-default btn-lg">
-					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+				<button id="search" type="button">
+					<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuBuscarGr.png" alt="">
+					Buscar
 				</button>
 		</div>
 	</section>
@@ -369,33 +371,31 @@
 				</div>
 				<div class="content1">
 					<div>
-						<i class="fa fa-compass fa-5x"></i>
+				<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comités.png" alt="">
 						<br>
 						<br>
-						<h5>Cómites</h5>
-							
+						<h5>Cómites</h5>	
 					</div>
 					<div>
-						<i class="fa fa-compass fa-5x"></i>
-						<h5>Programas de desarrollo tecnológico e innovación<br></h5>
-							
+							<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
+						<h5>Programas de desarrollo tecnológico e innovación<br></h5>	
 					</div>
 					<div>
-						<i class="fa fa-compass fa-5x"></i>
+							<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/CentroIInvestigacionClinica.png" alt="">
 						<h5>Centro de investigación clinica y medicina traslacional</h5>
 					</div>
 				</div>
 				<div class="content2">
 					<div>
-						<i class="fa fa-compass fa-5x"></i>
+							<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/RedaccionCientifica.png" alt="">
 						<h5>Revistas cientificas<br><br></h5>
 					</div>
 					<div>
-					<i class="fa fa-compass fa-5x"></i>
+					<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/TramitesServicios.png" alt="">
 						<h5>Unidad editorial<br><br></h5>
 					</div>
 					<div>
-					<i class="fa fa-compass fa-5x"></i>
+						<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculaciónUniversidadesInstitutosHospitales.png" alt="">
 						<h5>Vinculación con Universidades, Institutos y Hospitales</h5>
 				</div>
 			</div>
@@ -421,7 +421,8 @@
 		</div>
 		<div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner4.jpg"></div>
 		<div id="box4">
-			<a href=""><i class="fa fa-heartbeat fa-5x"></i></a>
+		<br>
+			<a href=""><img id="contentimg1"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconBlanco/01.png" alt=""></a>
 			<h6>Programas de generación de conocimento</h6>
 		</div>
 		<div id="box5"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner2.jpg"></div>
@@ -435,7 +436,7 @@
 	<section class="contentboxs2">
 		<div id="box1">
 			<div>
-				<a href=""><i class="fa fa-medkit fa-5x"></i></a>
+				<a href=""><img id="contentimg"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconBlanco/02.png" alt=""></a>
 				<h6>Registro de proyectos de investigación del OPD HCG</h6>
 			</div>
 		</div>
@@ -454,11 +455,11 @@
 		<div class="contenttwo">
 			<div class="conteninfo">
 				<div id="imagetitle">
-					<i class="fa fa-medkit fa-5x"></i>
+					<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
 				</div>
 				<div id="title">
 					<h3>¿Qué es el Hospital Civil de Guadalajara?</h3>
-					<p><a>¿Quiénes somos?</a>, Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y patrimonio propios; conformado por dos Unidades Hospitalarias: <p>
+					<p><a href="">¿Quiénes somos?</a>, Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y patrimonio propios; conformado por dos Unidades Hospitalarias: <p>
 				</div>
 				<div id="contentbody">
 				<ul>
@@ -489,7 +490,7 @@
 
 			<div class="slidebar">
 			
-			<p>Principales objetivos: </p>
+			<p>Principales objetivos:</p>
 				<ul>
 					<a href=""><li>Prestar servicios de salud a la población sin protección de seguridad social.</li></a>
 					<br>
@@ -500,7 +501,14 @@
 	</section>
 
 	<section class"imagefoot">
-		<div class="carrusel"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg"></div>
+		<div class="carrusel">
+			<img  id="back" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg">
+			<div class="opcity"></div>
+			<a href=""><img id="logohmeb"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHmeBlanco.png" alt="home"></a>
+			<div class="textfont">
+			<h2 id="textfont">Sistema de Gestión y administración de Protocolos de Inestigación Médica en el Hospital Civil.</h2>
+			</div>
+			</div>
 	</section>
 
 
@@ -631,8 +639,10 @@
 					<p><a>Condiciones de uso</a> / <a>Aviso de privacidad</a></p>
 					</div>
 				</div>
-				<div class="loginfot"></div>
-				<div class="singinfot"></div>
+				<div class="loginfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
+				Ingresar a tu cuenta</div>
+				<div class="singinfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
+				Crear una cuenta</div>
 			</section>
 
 	</body>

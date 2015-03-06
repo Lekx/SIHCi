@@ -288,7 +288,7 @@
 		</div>
              <div id="header-content-container">
                  <div id="header-content">
-                 	<div id="headerlogo"></div>
+                 	<div id="headerlogo"><a href=""><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHch.png" alt=""></a></div>
 
 	                 	<div id="hsearch">
 		                 	<div id="headermenu">
@@ -308,26 +308,30 @@
     </section>
 
 	<section class="logosection">
-		<div class="logo"></div>
+		<div class="logo"><a href=""><img id="logohme"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHme.png" alt="home"></a></div>
 		<div class="logosub"></div>
 		<div class="logoinfo"><span>Ivestigadores:</span><span>Vidas Cambiadas</span><span>Ivestigaciones</span><span>Libros y Revistas</span></div>
 		<div class="logonum"><h4>1,456</h4><h4>1,923,456</h4><h4>17,296</h4><h4>3,163</h4></div>
 	</section>
 
 	<section class="logsection">
-		<div class="login"></div>
-		<div class="singin"></div>
+		<div class="login"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
+		Ingresar a tu cuenta</div>
+		<div class="singin"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
+		Crear una cuenta</div>
 		<div class="searchbar">
 			<form>
 
-				<button id="show_hidemenu" type="button" class="btn btn-default btn-lg">
-				<span class="glyphicon glyphicon-align-justify"></span>
+				<button id="show_hidemenu" type="button">
+				<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuGr.png" alt="">
+					Menu
 				</button>
 
-
 				<input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
-				<button id="search" type="button" class="btn btn-default btn-lg">
-					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+				<button id="search" type="button">
+					<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuBuscarGr.png" alt="">
+					Buscar
 				</button>
 		</div>
 	</section>
@@ -467,15 +471,17 @@
 					</div>
 				</div>
 			</section>
-			<section class="footersection">
+		<section class="footersection">
 				<div class="copyrigths">
 					<div id="copy">
 					<p> © 2015 Todos los derechos reservados Sistema de Gestión y Administración de Protocolos de Investigación Médica en el Hospital Civil.</p>
 					<p><a>Condiciones de uso</a> / <a>Aviso de privacidad</a></p>
 					</div>
 				</div>
-				<div class="loginfot"></div>
-				<div class="singinfot"></div>
+				<div class="loginfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
+				Ingresar a tu cuenta</div>
+				<div class="singinfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
+				Crear una cuenta</div>
 			</section>
 
 </body>
