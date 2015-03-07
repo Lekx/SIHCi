@@ -1,4 +1,4 @@
-PD01- Desplegar ProINVENHCi
+ProINVENHCi
 
 <section>
 	<h1>Icono</h1>
@@ -7,8 +7,7 @@ PD01- Desplegar ProINVENHCi
 <section>
 	<h4>PROGRAMA DE DETECCIÓN DE INVENCIONES CLÍNICAS Y TECNOLÓGICAS PARA EL REGISTRO DE PATENTES DEL HOSPITAL CIVIL DE GUADALAJARA: proINVENHCi</h4>
       
-      <p>TODAS LAS PATENTES SON INVENCIONES,<br>
-		      AUNQUE NO TODAS LAS INVENCIONES SON PATENTABLES </p> <!--centrado y letra cursiva--> 
+      <p>TODAS LAS PATENTES SON INVENCIONES,AUNQUE NO TODAS LAS INVENCIONES SON PATENTABLES </p> <!--centrado y letra cursiva--> 
 	  <p>
 		La comunidad científica de México produce anualment
 		e alrededor de 10 mil artículos en revistas
@@ -40,17 +39,17 @@ PD01- Desplegar ProINVENHCi
 		<h5>DEFINICIONES</h5>
 		<ul>
 			<li>
-				NVENTAR: la creación de algo nuevo o no conocido,
+				INVENTAR: la creación de algo nuevo o no conocido,
 				que a través de la aplicación de tecnología, resuel
 				veun problema específico.
 			</li>
 
 			<li>
-				NNOVAR: la mejora de procesos, productos o servicios.
+				INNOVAR: la mejora de procesos, productos o servicios.
 			</li>
 			
 			<li>
-				NVENCIONES PROTEGIBLES: las distintas modalidades
+				INVENCIONES PROTEGIBLES: las distintas modalidades
 				de protección de las invenciones son: Patente
 				de Invención, Modelos de Utilidad y Diseños Industr
 				iales; estas modalidades se enmarcan dentro de la
