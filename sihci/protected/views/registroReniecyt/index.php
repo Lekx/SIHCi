@@ -1,4 +1,4 @@
-<H1>OP05-Desplegar Registro RENIECYT <H1>
+<h1>OP05-Desplegar Registro RENIECYT </h1>
 
 <section>
 	<h1>Iconos!</h1>
@@ -15,13 +15,13 @@
 		<p>Existen una gran cantidad de proyectos de investigación en ciencias de la salud que ofrecen conocimiento científico novedoso, que tradicionalmente es presentado en congresos nacionales e internacionales, pero no se transfieren para su aplicación en programas de salud, programas educativos, registros de propiedad intelectual o políticas públicas. </p>
 
 		<p>“Llevar un conocimiento nuevo a la práctica clínica, es tan importante como el descubrimiento mismo”; por lo que, para lograr el desarrollo de la investigación en el OPD Hospital Civil de Guadalajara y formar profesionales de las ciencias de la salud que transformen el conocimiento científico con una visión ética y humanista para la innovación en México, se proponen 4 ejes temáticos:</p>
-	<UL>
+	<ul>
 		<li>Regulación de los Procesos de la Investigación</li>
 	    <li>Gestión de Recursos para la Investigación</li>
 		<li>Generación de Conocimiento Científico</li>
 		<li>Aplicación de Conocimiento Científico para la Innovación</li>
 		
-	</UL>
+	</ul>
 		
 </section>
 
