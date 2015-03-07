@@ -49,31 +49,31 @@
 				<ul class="cbp-hsmenu1">
 					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu1">
-							<li><a><span>Dirección general</span></a></li>
-							<li><a><span>Organigrama</span></a></li>
-							<li><a><span>Normatividad de investigación</span></a></li>
-							<li><a><span>Registro RENIECYT</span></a></li>
-							<li><a><span>Transparencia</span></a></li>
-							<li><a><span>Comitès</span></a></li>
-							<li><a><span>Plano de ubicación SGEI OPD</span></a></li>
+							<li><?php echo CHtml::link('Direccion General',array('InformacionDeDireccionGeneral/index')); ?></li>
+							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
+							<li><?php echo CHtml::link('Normatividad de investigación',array('NormatividadDeInvestigacion/index')); ?></li>
+							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
+							<li><?php echo CHtml::link('Transparencia',array('Transparencia/index')); ?></li>
+							<li><?php echo CHtml::link('Comites',array('Comites/index')); ?></li>
+							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('PlanodeubicacionSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>CVE-HC</h6></a>
+					<h6><?php echo CHtml::link('CVE-HC',array('site/index')); ?></h6>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
 					<li>
 						<a><h6>Centro de Investigación Clínica</h6></a>
 						<ul class="cbp-hssubmenu1">
-						<li><a><span>Lineas de investigación</span></a></li>
-						<li><a><span>Protocolos patrocinados por la industrias</span></a></li>
-						<li><a><span>Farmacéutica</span></a></li>
-						<li><a><span>Living Labs-Salud</span></a></li>
+						<li><?php echo CHtml::link('Lineas de investigación',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Protocolos patrocinados por la industrias',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Farmacéutica',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Living Labs-Salud',array('Site/index')); ?></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>FInEHC</h6></a>
+					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -82,48 +82,22 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Sub-Dirección General de enseñanza e investigación</h6></a>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Publicaciones Científicas</h6></a>
+							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>HCG Fray Antonio Alcalde</h6></a>
+								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>HCG DR. Juan I. Menchaca</h6></a>
-								<ul class="cbp-hssubmenu1">
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<ul class="cbp-hsmenu1">
-							<li>
-								<a><h6>Programa de formación de recursos humanos en investigación</h6></a>
-								<ul class="cbp-hssubmenu1">
-								<li><a><span>Programas PNCP</span></a></li>
-								<li><a><span>Programas NO PNCP</span></a></li>
-								</ul>
-							</li>
-							<li>
-								<a><h6>Convocatorias y apoyos en investigación</h6></a>
-								<ul class="cbp-hssubmenu1">
-								</ul>
-							</li>
-							<li>
-								<a><h6>ProInvenhci</h6></a>
-								<ul class="cbp-hssubmenu1">
-								</ul>
-							</li>
-							<li>
-								<a><h6>ProDIME</h6></a>
+								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -132,29 +106,55 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Programas de generación de conocimiento</h6></a>
+							<h6><?php echo CHtml::link('Programa de formación de recursos humanos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
-								<li><a><span>Redacción Científicas</span></a></li>
-								<li><a><span>Lineas de generación de conmiento científico</span></a></li>
+									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
+									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de coperación internacional en investigación</h6></a>
-								<ul class="cbp-hssubmenu1">
-								</ul>
-							</li>
-							<li>
-								<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Revistas científicas</h6></a>
+							<h6><?php echo CHtml::link('ProInvenhci',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Unidad Editorial</h6></a>
+							<h6><?php echo CHtml::link('ProDIME',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul class="cbp-hsmenu1">
+							<li>
+								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Revistas científicas',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Unidad Editorial',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -172,31 +172,31 @@
 				<ul class="cbp-hsmenu1">
 					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu1">
-							<li><a><span>Dirección general</span></a></li>
-							<li><a><span>Organigrama</span></a></li>
-							<li><a><span>Normatividad de investigación</span></a></li>
-							<li><a><span>Registro RENIECYT</span></a></li>
-							<li><a><span>Transparencia</span></a></li>
-							<li><a><span>Comitès</span></a></li>
-							<li><a><span>Plano de ubicación SGEI OPD</span></a></li>
+							<li><?php echo CHtml::link('Direccion General',array('InformacionDeDireccionGeneral/index')); ?></li>
+							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
+							<li><?php echo CHtml::link('Normatividad de investigación',array('NormatividadDeInvestigacion/index')); ?></li>
+							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
+							<li><?php echo CHtml::link('Transparencia',array('Transparencia/index')); ?></li>
+							<li><?php echo CHtml::link('Comites',array('Comites/index')); ?></li>
+							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('PlanodeubicacionSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>CVE-HC</h6></a>
+					<h6><?php echo CHtml::link('CVE-HC',array('site/index')); ?></h6>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
 					<li>
 						<a><h6>Centro de Investigación Clínica</h6></a>
 						<ul class="cbp-hssubmenu1">
-						<li><a><span>Lineas de investigación</span></a></li>
-						<li><a><span>Protocolos patrocinados por la industrias</span></a></li>
-						<li><a><span>Farmacéutica</span></a></li>
-						<li><a><span>Living Labs-Salud</span></a></li>
+						<li><?php echo CHtml::link('Lineas de investigación',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Protocolos patrocinados por la industrias',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Farmacéutica',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Living Labs-Salud',array('Site/index')); ?></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>FInEHC</h6></a>
+					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -205,48 +205,22 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Sub-Dirección General de enseñanza e investigación</h6></a>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Publicaciones Científicas</h6></a>
+							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>HCG Fray Antonio Alcalde</h6></a>
+								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>HCG DR. Juan I. Menchaca</h6></a>
-								<ul class="cbp-hssubmenu1">
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<ul class="cbp-hsmenu1">
-							<li>
-								<a><h6>Programa de formación de recursos humanos en investigación</h6></a>
-								<ul class="cbp-hssubmenu1">
-								<li><a><span>Programas PNCP</span></a></li>
-								<li><a><span>Programas NO PNCP</span></a></li>
-								</ul>
-							</li>
-							<li>
-								<a><h6>Convocatorias y apoyos en investigación</h6></a>
-								<ul class="cbp-hssubmenu1">
-								</ul>
-							</li>
-							<li>
-								<a><h6>ProInvenhci</h6></a>
-								<ul class="cbp-hssubmenu1">
-								</ul>
-							</li>
-							<li>
-								<a><h6>ProDIME</h6></a>
+								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -255,29 +229,55 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<a><h6>Programas de generación de conocimiento</h6></a>
+							<h6><?php echo CHtml::link('Programa de formación de recursos humanos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
-								<li><a><span>Redacción Científicas</span></a></li>
-								<li><a><span>Lineas de generación de conmiento científico</span></a></li>
+									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
+									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de coperación internacional en investigación</h6></a>
-								<ul class="cbp-hssubmenu1">
-								</ul>
-							</li>
-							<li>
-								<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Revistas científicas</h6></a>
+							<h6><?php echo CHtml::link('ProInvenhci',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Unidad Editorial</h6></a>
+							<h6><?php echo CHtml::link('ProDIME',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul class="cbp-hsmenu1">
+							<li>
+								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Revistas científicas',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu1">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Unidad Editorial',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -357,31 +357,31 @@
 				<ul class="cbp-hsmenu">
 					<li><a><h6>OPD HCG</h6></a>
 						<ul class="cbp-hssubmenu">
-							<li><a><span>Dirección general</span></a></li>
-							<li><a><span>Organigrama</span></a></li>
-							<li><a><span>Normatividad de investigación</span></a></li>
-							<li><a><span>Registro RENIECYT</span></a></li>
-							<li><a><span>Transparencia</span></a></li>
-							<li><a><span>Comitès</span></a></li>
-							<li><a><span>Plano de ubicación SGEI OPD</span></a></li>
+							<li><?php echo CHtml::link('Direccion General',array('InformacionDeDireccionGeneral/index')); ?></li>
+							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
+							<li><?php echo CHtml::link('Normatividad de investigación',array('NormatividadDeInvestigacion/index')); ?></li>
+							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
+							<li><?php echo CHtml::link('Transparencia',array('Transparencia/index')); ?></li>
+							<li><?php echo CHtml::link('Comites',array('Comites/index')); ?></li>
+							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('PlanodeubicacionSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>CVE-HC</h6></a>
+					<h6><?php echo CHtml::link('CVE-HC',array('site/index')); ?></h6>
 						<ul class="cbp-hssubmenu">
 						</ul>
 					</li>
 					<li>
 						<a><h6>Centro de Investigación Clínica</h6></a>
 						<ul class="cbp-hssubmenu">
-						<li><a><span>Lineas de investigación</span></a></li>
-						<li><a><span>Protocolos patrocinados por la industrias</span></a></li>
-						<li><a><span>Farmacéutica</span></a></li>
-						<li><a><span>Living Labs-Salud</span></a></li>
+						<li><?php echo CHtml::link('Lineas de investigación',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Protocolos patrocinados por la industrias',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Farmacéutica',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Living Labs-Salud',array('Site/index')); ?></li>
 						</ul>
 					</li>
 					<li>
-						<a><h6>FInEHC</h6></a>
+					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
 						<ul class="cbp-hssubmenu">
 						</ul>
 					</li>
@@ -390,48 +390,22 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<a><h6>Sub-Dirección General de enseñanza e investigación</h6></a>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Publicaciones Científicas</h6></a>
+							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a><h6>HCG Fray Antonio Alcalde</h6></a>
+								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a><h6>HCG DR. Juan I. Menchaca</h6></a>
-								<ul class="cbp-hssubmenu">
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<ul class="cbp-hsmenu">
-							<li>
-								<a><h6>Programa de formación de recursos humanos en investigación</h6></a>
-								<ul class="cbp-hssubmenu">
-								<li><a><span>Programas PNCP</span></a></li>
-								<li><a><span>Programas NO PNCP</span></a></li>
-								</ul>
-							</li>
-							<li>
-								<a><h6>Convocatorias y apoyos en investigación</h6></a>
-								<ul class="cbp-hssubmenu">
-								</ul>
-							</li>
-							<li>
-								<a><h6>ProInvenhci</h6></a>
-								<ul class="cbp-hssubmenu">
-								</ul>
-							</li>
-							<li>
-								<a><h6>ProDIME</h6></a>
+								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -440,29 +414,55 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<a><h6>Programas de generación de conocimiento</h6></a>
+							<h6><?php echo CHtml::link('Programa de formación de recursos humanos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
-								<li><a><span>Redacción Científicas</span></a></li>
-								<li><a><span>Lineas de generación de conmiento científico</span></a></li>
+									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
+									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-								<a><h6>Programas de coperación internacional en investigación</h6></a>
-								<ul class="cbp-hssubmenu">
-								</ul>
-							</li>
-							<li>
-								<a><h6>Vinculación con universidades, institutos y hospitales</h6></a>
+							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Revistas científicas</h6></a>
+							<h6><?php echo CHtml::link('ProInvenhci',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<a><h6>Unidad Editorial</h6></a>
+							<h6><?php echo CHtml::link('ProDIME',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu">
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul class="cbp-hsmenu">
+							<li>
+								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu">
+								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Revistas científicas',array('site/index')); ?></h6>
+								<ul class="cbp-hssubmenu">
+								</ul>
+							</li>
+							<li>
+								<h6><?php echo CHtml::link('Unidad Editorial',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
