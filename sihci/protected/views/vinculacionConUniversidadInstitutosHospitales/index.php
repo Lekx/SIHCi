@@ -29,11 +29,7 @@ VI01-Vinculacion Con Universidad Institutos Y Hospitales
 </section>
 
 <section class="column-right">
-	<h5>Programas y apoyos internacionales –Diciembre 2014</h5>
-	<h5>Convenios vigentes agosto 2014</h5>
-	<h5>Requisitos para la elaboración de convenios</h5>
-	<h5>Convenios internacionales junio 2014 </h5>	
-     	<?php Yii::app()->runController('filesManager/DisplayFiles/section/vinculacionConUniversidadInstitutosHospitales'); ?>
+	     	<?php Yii::app()->runController('filesManager/DisplayFiles/section/Vinculacion con universidades, institutos y hospitales'); ?>
  </section>
 
 

@@ -30,26 +30,9 @@
 
 	<br>
 	
-	<table>
-	
-		<th COLSPAN=5 BGCOLOR="#6D8FFF">Oportunidades de Internacionalización: INVESTIGACIÓN</th>
-		<tr>
-			<td>Pais</td>
-			<td>Nobre del programa </td>
-			<td>Area de especialización</td>
-			<td>Diregido a </td>
-			<td>Beneficios</td>
-		</tr>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-
-
-	</table>
+	<img src="Img1.jpg">
+	<br>
+	<img src="Img2.jpg">
 
 </section>
 
