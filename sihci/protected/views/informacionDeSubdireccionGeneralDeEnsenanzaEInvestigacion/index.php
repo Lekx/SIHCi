@@ -1,208 +1,127 @@
-OP02-Desplegar información de  Subdirección General de enseñanza e investigación
+<!-- OP02-Desplegar información de  Subdirección General de enseñanza e investigación -->
+<?php
+$this->pageTitle=Yii::app()->name . 'Informacion De Subdireccion General De Ensenanza e Investigacion';
+$this->breadcrumbs=array(
+	'OPD / Informacion De Subdireccion General De Ensenanza e Investigacion',
+);
+?>
 
-<section>
-	<h1>Icono!</h1>
-</section>
+<section class="informativa">
 
-<section>
-    Enseñanza
+	<section class="column-left">
+		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/SudireccionEnseñanzaInvestigacion.png" alt="">
+	</section>
 
-Convocatoria Residencias Médicas 2015
+	<section class="column-center">
 
+	<div class="generalinformation">
 
-¡FELICIDADES, ESTÁS A UN PASO DE FORMAR PARTE DE UNA GRAN INSTITUCIÓN! 
+	<h3>Subdirecciòn General de Enseñanza e Investigación.</h3>
 
-<p>El OPD Hospital Civil de Guadalajara, Hospital Escuela de la Universidad de Guadalajara, CONVOCA a los médicos egresados de Escuelas, Facultades y Centros Universitarios Nacionales y Extranjeros que ofrecen la carrera de medicina y que aspiran a cursar un programa educativo de especialidad, subespecialidad médica y adiestramiento, a participar e inscribirse en el PROCESO DE SELECCIÓN A RESIDENCIAS MÉDICAS 2014 - 2015 en nuestra Institución. </p>
+		<div class="subtitle">
+		</div>
 
-<p>El OPD-Hospital Civil de Guadalajara cuenta con campos clínicos que servirán de base para la adquisición de conocimientos teórico-prácticos indispensables en el proceso de formación de Recursos Humanos para la Salud, manteniendo una estrecha interrelación con la Universidad de Guadalajara a través de su Centro Universitario de Ciencias de la Salud. En sus campos clínicos, los alumnos participan en forma dinámica con los especialistas de cada Servicio en las diferentes actividades académico-asistenciales y de investigación, en un proceso de actualización continua y de formación de Calidad. </p>
+		<p>
+		El Organismo Público Descentralizado Hospital Civil de Guadalajara es el hospital- escuela de la Universidad de Guadalajara 
+		que forma el mayor número de médicos especialistas en México, un promedio de 220 especialistas por año. Nuestros médicos son 
+		reconocidos por el número de enfermos que diagnostican y curan; queremos que también lo sean, por la calidad del conocimiento 
+		científico que producen para la innovación en medicina, con beneficios evidentes, al ofrecer soluciones para los pacientes y 
+		la comunidad en general. Innovar significa utilizar el conocimiento de las investigaciones para mejorar los servicios de salud 
+		y las tecnologías. 
+		</p>
 
-<p>Las Residencias Médicas que este Hospital ofrece, con sede en sus dos Unidades Hospitalarias: el Antiguo Hospital Civil de Guadalajara “Fray Antonio Alcalde” y el Hospital Civil de Guadalajara “Dr. Juan I. Menchaca”, son regidas por la NOM 001-SSA-1 2012, la Ley Federal del Trabajo y la Legislación Federal de Trabajo Burocrático y son reconocidas y avaladas por la Secretaría de Salud y la Universidad de Guadalajara. </p>
+		<p>
+		El conocimiento científico, en todas las disciplinas de las ciencias de la salud, solamente tiene impacto social y económico 
+		cuando es aplicado para el beneficio de los enfermos y las comunidades, sin embargo, en México, el conocimiento científico útil 
+		de las investigaciones locales y nacionales frecuentemente es ignorado por años o décadas; según la Organización Mundial de la Salud 
+		“desestimar el conocimiento científico es nocivo para los individuos y las poblaciones, y representa un desperdicio de recursos”.
+		</p>
+		<p>
+		Existen una gran cantidad de proyectos de investigación en ciencias de la salud que ofrecen conocimiento científico novedoso, que tradicionalmente 
+		es presentado en congresos nacionales e internacionales, pero no se transfieren para su aplicación en programas de salud, programas educativos, 
+		registros de propiedad intelectual o políticas públicas.
+		</p>
+	
+		<p>
+		“Llevar un conocimiento nuevo a la práctica clínica, es tan importante como el descubrimiento mismo”; por lo que, para lograr el desarrollo de la investigación 
+		en el OPD Hospital Civil de Guadalajara y formar profesionales de las ciencias de la salud que transformen el conocimiento científico con una visión ética y humanista para 
+		la innovación en México, se proponen 4 ejes temáticos:
+		</p>
 
-<p>Las dos sedes hospitalarias tienen un amplio reconocimiento local, nacional e internacional en la asistencia de los problemas de salud-enfermedad, en la investigación médica y la formación de recursos humanos en salud. Ambas sedes atienden a una importante cantidad de población y cumplen con las normas oficiales mexicanas relacionadas con la infraestructura y equipamiento para la atención médica especializada y para el aprendizaje y el entrenamiento especializado que requiere la profesión médica actual. </p>
+		<ul>
+			<li>Regulación de los Procesos de la Investigación</li>
+			<li>Gestión de Recursos para la Investigación</li>
+			<li>Generación de Conocimiento Científico</li>
+			<li>Aplicación de Conocimiento Científico para la Innovación</li>
+		</ul>
 
-<p>Las actividades del ciclo académico iniciaran el 1°de marzo de 2015.
+		<p>
+			De acuerdo al decreto 16527, publicado en el Diario Oficial del Gobierno del Estado de Jalisco, se establece la ley del Organismo Público Descentralizado
+			Hospital Civil de Guadalajara, “… el cual tendrá por objeto prestar servicios de salud a la población en los términos que se establecen en el presente ordenamiento, 
+			en las Leyes General y Estatal de Salud, y se sujetará a lo establecido en el Acuerdo de Coordinación para la Descentralización Integral de los Servicios de Salud,
+			entre los Ejecutivos Federal y el de esta Entidad Federativa. Así también, fungirá como hospital-escuela de la Universidad de Guadalajara para las funciones de docencia, 
+			investigación y extensión en el área de salud, cuyos programas académicos se desarrollarán de conformidad con la normatividad de esta Casa de Estudios.” En su artículo 4, 
+			fracciones I a XIV se establecen las funciones del organismo señalando aquellas que identifican los procesos básicos que realizamos.
+		</p>
 
-<p>Los interesados en participar en la selección de residencias médicas 2015 deberán registrarse en línea dirección sgei.hcg.gob.mx/residentes; y entregar los documentos en electrónico tanto en la plataforma como una copia en un cd al momento de su cotejo.</p>
-Unidad Hospitalaria “Fray Antonio Alcalde”
-	 *Programas Educativos con sede en ambas Unidades Hospitalarias
-	 *En proceso de reevaluación
-(PNPC) = Programa Nacional de Posgrados de Calidad 
-Especialidades
- Subespecialidades
- <UL>
-	<LI>Alergia e Inmunología Clínica</LI>
-	<LI>Anestesiología Pediátrica </LI>
-	<LI>Angiología y Cirugía Vascular </LI>
-	<LI>Cardiología </LI>
-	<LI>Cirugía Cardiotorácica </LI>
-	<LI>Cirugía Oncológica </LI>
-	<LI>Cirugía Pediátrica (PNPC) </LI>
-	<LI>Cirugía Plástica y Reconstructiva </LI>
-	<LI>Coloproctología </LI>
-	<LI>Dermatología </LI>
-	<LI>Dermatología Pediátrica </LI>
-	<LI>Endocrinología </LI>
-	<LI>Gastroenterología </LI>
-	<LI>Hematología </LI>
-	<LI>Infectología </LI>
-	<LI>Infectología Pediátrica (PNPC) </LI>
-	<LI>Medicina del Enfermo en Estado Crítico (PNPC) </LI>
-	<LI>Nefrología (PNPC) </LI>
-	<LI>Neonatología* </LI>
-	<LI>Neurocirugía* </LI>
-	<LI>Oncología médica </LI>
-	<LI>Retina Médico Quirúrgica (PNPC) </LI>
-	<LI>Reumatología * (PNPC) </LI>
-	<LI>Urología </LI>
-	<LI>Urología Ginecológica (PNPC) </LI>
-<UL>
- Adiestramientos
-	<LI>Artroscopia </LI>
-	<LI>Audiología, Foniatría y Otoneurología </LI>
-	<LI>Clínica de Mama </LI>
-	<LI>Clínica del Dolor </LI>
-	<LI>Endoscopia Diagnóstica y Terapéutica </LI>
-	<LI>Endoscopia Ginecológica 	</LI>
-	<LI>Estrabismo </LI>
-	<LI>Fisiología Obstétrica </LI>
-	<LI>Glaucoma </LI>
-	<LI>Oncología Ginecológica </LI>
-	<LI>Segmento Anterior </LI>
-	<LI>Urgencias Pediatría </LI>
-</UL>
+		<p>
+		El Plan Institucional de Desarrollo 2014-2018 es el documento de trabajo que rige las actividades institucionales y es congruente con el Plan Nacional de Desarrollo 2013- 2018, 
+		el Plan Estatal de Desarrollo 2013-2033, el Plan Sectorial de Salud 2013-2018 y el Programa Presupuestal.
+		</p>
 
-Unidad Hospitalaria “Dr. Juan I. Menchaca”
-* Programas Educativos con sede en ambas Unidades Hospitalarias
-** En proceso de reevaluación
-(PNPC) = Programa Nacional de Posgrados de Calidad 
- Especialidades
- <UL>
-	<LI>Anatomía Patológica * </LI>
-	<LI>Anestesiología * </LI>
-	<LI>Cirugía General * </LI>
-	<LI>Cirugía Maxilofacial </LI>
-	<LI>Epidemiologia </LI>
-	<LI>Genética Médica * </LI>
-	<LI>Ginecología y Obstetricia * </LI>
-	<LI>Medicina Interna * (PNPC) </LI>
-	<LI>Pediatría Médica * (PNPC) </LI>
-	<LI>Radiología e Imagen* </LI>
-</UL>
- Subespecialidades
- <UL>
-	<LI>Cirugía Laparoscópica (PNPC) </LI>
-	<LI>Gastroenterología y Nutrición Pediátrica </LI>
-	<LI>Hemato-Oncología Pediátrica </LI>
-	<LI>Hemodinamia </LI>
-	<LI>Medicina Materno Fetal </LI>
-	<LI>Neonatología </LI>
-	<LI>Neurocirugía </LI>
-	<LI>Reumatología </LI>
- </UL>
+		<h5>Misión Institucional</h5>
 
-Mayores Iinformes
-<P>Unidad Hospitalaria Antiguo Hospital Civil de Guadalajara “Fray Antonio Alcalde”
-Domicilio: Hospital 278 Col. El Retiro Guadalajara, Jalisco, MX.</P>
+		<p>
+		Somos un Complejo Médico Hospitalario que brinda servicios integrales de segundo y tercer nivel, con universalidad, calidad, humanismo, ética, eficacia, eficiencia, transparencia y rendición de cuentas. 
+		Hospital escuela formador de recursos humanos de excelencia a nivel nacional e internacional. Realizamos investigación científica que aporta conocimientos para la innovación en ciencias de la salud
+		</p>
 
-<P>Dr. Carlos Alfonso Limón Tello
-Coordinador de Posgrado</P>
+		<h5>Visión de futuro</h5>
 
-<P>Dra. Claudia Margarita Ascencio Tene
-Subdirector de Enseñanza e Investigación
-Tel y Fax: (01 33) 39424400
-Ext. 44413
-Correo Electrónico: cmascencio@hcg.gob.mx</P>
+		<p>
+		Para el 2018, somos el mejor hospital público del occidente del país, referente nacional e internacional como líder en el desarrollo de modelos de atención médica, en docencia y aprendizaje de profesionales de salud e innovador en proyectos de investigación científica, que genera un impacto social positivo, para la solución de los problemas de salud en la región Occidente del país y en las políticas nacionales de salud.
+		</p>
 
+		<h6>Valores y principios que caracterizan nuestra institución</h6>
 
-<P>Unidad Hospitalaria Hospital Civil de Guadalajara “Dr. Juan I. Menchaca”
-Domicilio: Salvador de Quevedo y Zubieta No. 750 Guadalajara, Jalisco, MX.</P>
+		<h6>Universalidad</h6>
+		Dirigida a la población en general sin hacer distinciones del estado socioeconómico, religioso, afinidad política, con respeto al derecho a la protección de la salud de todo ciudadano mexicano.
 
-<P>Dr. David Medina Preciado
-Coordinador de Posgrado</P>
+		<h6>Calidad</h6>
+		Un atributo de la atención médica integral que consiste en lograr los mayores beneficios posibles, con los menores riesgos para el paciente, su familia y el equipo de salud y de forma inherente la satisfacción de sus expectativas.
 
-<P>Dr. José Víctor Orozco Monroy
-Subdirector de Enseñanza e Investigación 
-Tel: 36 18 15 80
-Correo Electrónico: jvorozco@hcg.gob.mx</P>
+		<h6>Humanismo</h6>
+		Valorar al ser humano, está relacionado con la generosidad, la compasión y preocupación por la atención a los pacientes y su familia con sensibilidad, calidez y respeto.
 
+		<h6>Ética</h6>
+		Atención del paciente bajo los principios morales y de confidencialidad que no atenten contra su dignidad, integridad y pudor.
 
-________________________________________
+		<h6>Eficacia y Eficiencia</h6>
+		Cumplir con los objetivos de nuestro trabajo optimizando los recursos humanos, financieros y tecnológicos que tenemos disponibles.
 
-DIPLOMADOS
+		<h6>Transparencia y rendición de cuentas</h6>
+		<p>Mostrar quienes somos con honestidad, responsabilidad y respeto, donde se integre de forma clara las acciones que realizamos y los recursos que utilizamos y rendir cuentas con información fundamental conforme a la ley y normativa para la administración de los recursos públicos.</p>
 
+		<ul>
+			<li>Artículo 4. El Hospital Civil de Guadalajara tendrá las siguientes funciones:</li>
+		</ul>
 
-Oftalmología: 
- <UL>
-	<LI>Retinopatía del recién nacido prematuro. </LI>
- <UL>
-CURSOS
+		<ol>
+			<li>Organizar y operar servicios de atención médica, fundamentalmente a población abierta.</li>
+			<li>Realizar todas aquellas acciones tendientes a garantizar el derecho a la protección de la salud de los habitantes del Estado.</li>
+			<li>Conocer y aplicar la normatividad general en materia de salud, tanto nacional como internacional, así como, proponer adecuaciones a la normatividad estatal y esquemas que logren su correcto funcionamiento.</li>
+			<li>Establecer las políticas específicas que en materia de salud deberán llevar a cabo las unidades hospitalarias que lo integran, para dar cumplimiento a los programas que se deriven de la Secretaría de Salud Jalisco y del Acuerdo de Coordinación.</li>
+			<li>Proponer las medidas, procedimientos y condiciones que se estime necesario para mejorar la calidad en la prestación de la atención médica de las unidades hospitalarias a su cargo, y para un cumplimiento pleno de las funciones asistenciales y docentes.</li>
+			<li>Apoyar los programas en materia de salud, que para tal efecto determine la Secretaría de Salud Jalisco</li>
+			<li>Impulsar, apoyar y capacitar en materia de salud a los profesionales, especialistas y técnicos que desempeñen sus labores en el organismo;</li>
+			<li>Llevar a cabo actividades de investigación científica y docencia en el área de la salud, de conformidad  con la normatividad de la Universidad de Guadalajara y los convenios que esta Casa de Estudios tenga celebrados;</li>
+		</ol>
 
+	</section>
 
-Enfermería: 
-<UL>
-	<LI>Enfermería en nefrología </LI>
-</UL>
-Terapia intensiva: 
-<UL>
-	<LI>Doppler Transcraneal </LI>
-	<LI>Hemodinamia </LI>
-</UL>
-Patología clínica: 
-<UL>
-	<LI>Enfermedad hemolítica del feto y recién nacido </LI>
-	<LI>Cambios y evolución en el laboratorio clínico /venopunción </LI>
-	<LI>Actualidades en citología y procedimientos en patología - procedimientos microbiológicos de las infecciones vaginales. </LI>
-	<LI>Síndrome urémico – Síndrome hemolítico urémico “Esquistocitos” </LI>
-	<LI>Mieloma múltiple y obtención, cultivo e identificación de células madre </LI>
-	<LI>Principios y fundamentos del equilibrio ácido – base y mecanismos de regulación ácido base y casos clínicos </LI>
-	<LI>Curso de parasitología </LI>
-	<LI>Alergias y coagulación </LI>
-	<LI>Interpretación clínica del sedimento urinario </LI>
-</UL>
-Electrofisiología clínica: 
-<UL>
-	<LI>Fundamentos para la utilidad y práctica en la obtención de los estudios de electroencefalografía </LI>
-	<LI>Curso interactivo de electroencefalografía sobre tópicos comunes en la práctica clínica </LI>
-	<LI>Trastornos cardio metabólicos y respiratorios y el sueño. </LI>
-</UL>	
-Investigación
-
-<P>El Organismo Público Descentralizado Hospital Civil de Guadalajara es el hospital- escuela de la Universidad de Guadalajara que forma el mayor número de médicos especialistas en México, un promedio de 220 especialistas por año. Nuestros médicos son reconocidos por el número de enfermos que diagnostican y curan; queremos que también lo sean, por la calidad del conocimiento científico que producen para la innovación en medicina, con beneficios evidentes, al ofrecer soluciones para los pacientes y la comunidad en general. Innovar significa utilizar el conocimiento de las investigaciones para mejorar los servicios de salud y las tecnologías. </P>
-
-<P>El conocimiento científico, en todas las disciplinas de las ciencias de la salud, solamente tiene impacto social y económico cuando es aplicado para el beneficio de los enfermos y las comunidades, sin embargo, en México, el conocimiento científico útil de las investigaciones locales y nacionales frecuentemente es ignorado por años o décadas; según la Organización Mundial de la Salud “desestimar el conocimiento científico es nocivo para los individuos y las poblaciones, y representa un desperdicio de recursos”. </P>
-
-<P>Existen una gran cantidad de proyectos de investigación en ciencias de la salud que ofrecen conocimiento científico novedoso, que tradicionalmente es presentado en congresos nacionales e internacionales, pero no se transfieren para su aplicación en programas de salud, programas educativos, registros de propiedad intelectual o políticas públicas. </P>
-
-<P>“Llevar un conocimiento nuevo a la práctica clínica, es tan importante como el descubrimiento mismo”; por lo que, para lograr el desarrollo de la investigación en el OPD Hospital Civil de Guadalajara y formar profesionales de las ciencias de la salud que transformen el conocimiento científico con una visión ética y humanista para la innovación en México, se proponen 4 ejes temáticos: </P>
-<UL>
-	<LI>Regulación de los Procesos de la Investigación </LI>
-	<LI>Gestión de Recursos para la Investigación </LI>
-	<LI>Generación de Conocimiento Científico </LI>
-	<LI>Aplicación de Conocimiento Científico para la Innovación</LI>
-</UL>
-
-Extensión y Vinculación
-
-
-<P>Las actividades de vinculación constituyen el puente entre los procesos de formación de recursos humanos especializados y las instituciones de servicio y de educación que potencialmente representan una fortaleza para mejorar y coadyuvar en la educación de internos y especialistas en las unidades hospitalarias del OPD-Hospital Civil de Guadalajara. De igual manera, es la extensión el mecanismo por el cual se puede realizar un acercamiento entre los procesos de enseñanza, investigación y servicio, pero también entre estas y la comunidad hospitalaria y la sociedad local y regional en la cual se enclava el Organismo Público Descentralizado.</P>
-
-<P>Unidad de Apoyo Psicológico para Personal en Formación de Pregrado y Posgrado</P>
-
-
-PRESENTACIÓN
-<P>Debido a la situación cotidiana de los ambientes hospitalarios, los profesionales de la salud en formación se encuentran frente a exigencias de asistencia médica, responsabilidades escolares y de índole personal, aunado a las condiciones de alimentación y descanso inadecuadas pueden desencadenar síntomas y manifestaciones a nivel emocional que a su vez repercuten en su salud, en su rendimiento profesional-académico y en su vida personal. Es por ello que se crea esta Unidad para realizar acciones dirigidas a la mejora de la salud mental del personal en formación en los programas educativos con sede en las unidades hospitalarias del OPD Hospital Civil de Guadalajara. Esta unidad cuenta con programas de evaluación, prevención, orientación y asesoría, difusión e investigación; todos ellos encaminados a la mejora al bienestar emocional, la calidad de vida y la salud mental del personal en formación del OPD-HCG para propiciar condiciones que favorezcan el buen desempeño académico y asistencial de los estudiantes.</P>
-
-CONTACTO:
-<P>Mtra. Verónica Adriana Barrios Villalobos
-Responsable de la Unidad de Apoyo Psicológico para Personal en Formación del OPD- HCG
-Subdirección de General de Enseñanza e Investigación
-Hospital No. 278 CP. 44280, Guadalajara, Jalisco.
-Tel. (33)36586351 conm. (33) 36147501 ext. 282 y 41009
-Correo electrónico: barrios.vero2@gmail.com</P>
-
-</section>
-
-
-<section>
-	<?php Yii::app()->runController('filesManager/DisplayFiles/section/informacionDeSubdireccionGeneralDeEnsenansaEInvestigacion'); ?>
+	<section class="column-right">
+		<h5>DOCUMENTOS</h5>
+		<h5>DESCARGABLES:</h5>
+			<?php Yii::app()->runController('filesManager/DisplayFiles/section/informacionDeSubdireccionGeneralDeEnsenansaEInvestigacion'); ?>
+		</section>
 </section>
