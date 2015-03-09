@@ -1,13 +1,13 @@
-OP03-Desplegar Organigrama
+<!-- OP03-Desplegar Organigrama -->
 
-<section>
-	<h1>Icono!</h1>
-</section>
+<section class="informativa">
 
+	<section class="column-left">
+		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/organigrama.png" alt="">
+	</section>
 
+	<section class="column-center">
 
-<section>
-	
 		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/organigrama/img/org1.png"; ?>">
 	
 		<p>Organigrama Dando clic en subdirección general e investigación
@@ -29,13 +29,15 @@ OP03-Desplegar Organigrama
 		<p>Objetivo, Funciones y Atribuciones</p> <br>
 		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/organigrama/img/org2.png"; ?>">
 		
+	</section>
 
 
-	
+
+	<section class="column-right">
+		<h5>DOCUMENTOS</h5>
+		<h5>DESCARGABLES:</h5>
+			<?php Yii::app()->runController('filesManager/DisplayFiles/section/Organigrama'); ?>
+	</section>
 </section>
 
 
-
-<section>
-	<?php Yii::app()->runController('filesManager/DisplayFiles/section/Organigrama'); ?>
-</section>

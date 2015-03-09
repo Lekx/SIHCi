@@ -82,7 +82,7 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('informacionDeSubdireccionGeneralDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -205,7 +205,7 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('informacionDeSubdireccionGeneralDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -551,7 +551,7 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('informacionDeSubdireccionGeneralDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>

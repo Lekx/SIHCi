@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 <section class="informativa">
 
 	<section class="column-left">
-		<i class="fa fa-compass fa-5x"></i>
+		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
 	</section>
 
 	<section class="column-center">
