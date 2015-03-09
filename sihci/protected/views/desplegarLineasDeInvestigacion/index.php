@@ -41,7 +41,7 @@
         </tr>
 		<tr>
 			<td>Medicina Interna</td>
-			<td>MEnfermedad Pulmonar Obstructiva Crónica y Asma</td>
+			<td>Enfermedad Pulmonar Obstructiva Crónica y Asma</td>
 		</tr>
 		<tr>
 			<td>Oftalmología </td>
@@ -140,11 +140,11 @@
 			<td>Cateter Venoso Central compuesto, Cancer de  Estroma Gastrointestinal</td>
 		</tr>
 		<tr>
-			<td>nfectología </td>
+			<td>Infectología </td>
 			<td>Nuevos esquemas terapéuticos en Infección por el VIH/SIDA, Infeccion de tejidos Blandos, Neumonia hospitalaria, tratamiento de  Hepatitis B y C, Tuberculosis, Infecciones bacterianas agudas de piel</td>
 		</tr>
 		<tr>
-			<td>nfectología Pediátrica</td>
+			<td>Infectología Pediátrica</td>
 			<td>Enfemedades virales y bacterianas pulmonares y gastrointestinales; resistencia bateriana a antibioticos</td>
 		</tr>
 		<tr>
