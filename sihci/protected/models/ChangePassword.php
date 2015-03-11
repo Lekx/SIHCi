@@ -17,11 +17,12 @@
 
 		public function attributeLabels(){
 			return array(
-				'password' => 'New Password',
-				'password2' => 'New Password again'
+				'password' => 'Contraseña Nueva',
+				'password2' => 'Confirme Contraseña'
 				);
 		}
 	}
 	
 
 ?>
+
