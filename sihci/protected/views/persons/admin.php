@@ -54,7 +54,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		/*
 		'genre',
 		'birth_date',
-		'rfc_rud',
+		'country',
+		'state_of_birth',
+		'curp_passport',
+		'photo_url',
+		'person_rfc',
 		*/
 		array(
 			'class'=>'CButtonColumn',

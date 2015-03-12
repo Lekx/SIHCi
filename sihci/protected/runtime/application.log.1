@@ -9380,6 +9380,7 @@ in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (63
 in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (17)
 in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
 >>>>>>> 14c043ecaa9e1e57c8d33f31a2f395d8af705693
+<<<<<<< HEAD
 2015/03/06 18:12:40 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\xampp\htdocs\SIHCi\sihci\assets" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CAssetManager.php:138
 Stack trace:
 #0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\\xampp\\htdocs...')
@@ -11265,4 +11266,1127 @@ Stack trace:
 #6 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
 #7 {main}
 REQUEST_URI=/SIHCi/sihci/index.php/searchBar/searchResults
+=======
+2015/03/06 10:52:53 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/var/www/SIHCi/sihci/assets" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php:138
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/var/www/SIHCi/...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
+#2 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(216): CAssetManager->publish('/var/www/SIHCi/...', false, -1, false)
+#3 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(52): TbApi->getAssetsUrl()
+#4 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(93): TbApi->registerCoreCss()
+#5 /var/www/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(138): TbApi->registerAllCss()
+#6 /var/www/SIHCi/sihci/protected/views/layouts/main.php(26): TbApi->register()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/YiiFramework/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#10 /var/www/SIHCi/YiiFramework/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#12 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(214): COutputProcessor->run()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#14 /var/www/SIHCi/sihci/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#16 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#17 /var/www/SIHCi/YiiFramework/framework/web/CController.php(784): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#18 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(100): CController->render('login', Array)
+#19 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#20 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#21 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#25 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#26 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#27 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+---
+2015/03/06 11:07:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php(325): CDbConnection->setActive(true)
+#2 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(125): CModule->__get('db')
+#5 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionRecoveryPassword()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('recoveryPasswor...')
+#10 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/recoveryPa...')
+#11 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#13 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/recoveryPassword
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/recoverypassword
+---
+2015/03/06 11:27:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php(325): CDbConnection->setActive(true)
+#2 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(189): CModule->__get('db')
+#5 [internal function]: SiteController->actionChangePassword('')
+#6 /var/www/SIHCi/YiiFramework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('changePassword')
+#12 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/changePass...')
+#13 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/changePassword?key=
+---
+2015/03/06 11:28:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /var/www/SIHCi/YiiFramework/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('changePassword')
+#4 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/changePass...')
+#5 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#7 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/changePassword
+---
+2015/03/06 11:34:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /var/www/SIHCi/YiiFramework/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('changepassword')
+#4 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/changepass...')
+#5 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#7 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/changepassword
+---
+2015/03/06 13:06:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "gii" solicitada.' in /var/www/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('gii')
+#1 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('gii')
+#2 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/gii')
+#3 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/gii
+---
+2015/03/07 11:16:23 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/07 13:49:19 [error] [exception.CException] exception 'CException' with message 'La propiedad "LoginForm"."email" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(101): CComponent->__get('email')
+#1 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#6 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#7 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#9 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/07 13:49:56 [error] [exception.CException] exception 'CException' with message 'La propiedad "LoginForm"."user" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(101): CComponent->__get('user')
+#1 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('login')
+#6 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#7 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#9 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/09 11:55:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "persons" solicitada.' in /var/www/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('persons')
+#1 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('persons')
+#2 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/persons/in...')
+#3 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/site/persons/index.php
+---
+2015/03/09 12:00:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/09 12:00:49 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/09 12:04:48 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/users/_form.php(104): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/users/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/UsersController.php(106): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): UsersController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('users/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/users/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/users
+---
+2015/03/09 12:05:03 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/users/_form.php(104): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/users/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/UsersController.php(106): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): UsersController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('users/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/users/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/users/index
+---
+2015/03/09 12:05:29 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/09 12:06:57 [error] [php] Undefined variable: modelPersons (/var/www/SIHCi/sihci/protected/views/users/_form.php:21)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): UsersController->renderFile()
+#1 /var/www/SIHCi/sihci/protected/views/users/update.php(21): UsersController->renderPartial()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#3 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): UsersController->renderInternal()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): UsersController->renderFile()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): UsersController->renderPartial()
+#6 /var/www/SIHCi/sihci/protected/controllers/UsersController.php(125): UsersController->render()
+#7 unknown(0): UsersController->actionUpdate()
+#8 /var/www/SIHCi/YiiFramework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#9 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#12 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#15 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#18 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): UsersController->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/users/update/1
+in /var/www/SIHCi/sihci/protected/views/users/_form.php (21)
+in /var/www/SIHCi/sihci/protected/views/users/update.php (21)
+in /var/www/SIHCi/sihci/protected/controllers/UsersController.php (125)
+2015/03/09 12:08:23 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/09 12:09:35 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/09 12:10:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/09 12:17:51 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/09 12:34:09 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:34:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:34:52 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:34:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:36:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:36:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:36:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:36:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:37:20 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:37:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:37:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:37:58 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:38:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:38:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:38:33 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:48:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:49:00 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:53:48 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:55:51 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 12:56:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons/create
+---
+2015/03/09 13:00:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons/index
+---
+2015/03/09 13:00:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons/1
+---
+2015/03/09 13:03:16 [error] [php] Use of undefined constant php - assumed 'php' (/var/www/SIHCi/sihci/protected/views/persons/_form.php:25)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): PersonsController->renderFile()
+#1 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): PersonsController->renderPartial()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#3 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): PersonsController->renderInternal()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): PersonsController->renderFile()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): PersonsController->renderPartial()
+#6 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): PersonsController->render()
+#7 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): PersonsController->runAction()
+#10 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): PersonsController->filterAccessControl()
+#13 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): PersonsController->runActionWithFilters()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): PersonsController->run()
+#17 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+in /var/www/SIHCi/sihci/protected/views/persons/_form.php (25)
+in /var/www/SIHCi/sihci/protected/views/persons/create.php (18)
+in /var/www/SIHCi/sihci/protected/controllers/PersonsController.php (79)
+2015/03/09 13:03:25 [error] [php] Use of undefined constant php - assumed 'php' (/var/www/SIHCi/sihci/protected/views/persons/_form.php:25)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): PersonsController->renderFile()
+#1 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): PersonsController->renderPartial()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#3 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): PersonsController->renderInternal()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): PersonsController->renderFile()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): PersonsController->renderPartial()
+#6 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): PersonsController->render()
+#7 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): PersonsController->runAction()
+#10 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): PersonsController->filterAccessControl()
+#13 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): PersonsController->runActionWithFilters()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): PersonsController->run()
+#17 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+in /var/www/SIHCi/sihci/protected/views/persons/_form.php (25)
+in /var/www/SIHCi/sihci/protected/views/persons/create.php (18)
+in /var/www/SIHCi/sihci/protected/controllers/PersonsController.php (79)
+2015/03/09 13:03:41 [error] [exception.CException] exception 'CException' with message 'La propiedad "Persons"."rfc_rud" no se encuentra definida.' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rfc_rud')
+#1 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2728): CActiveRecord->__get('rfc_rud')
+#2 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Persons), 'rfc_rud')
+#3 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Persons), 'rfc_rud', Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Persons), 'rfc_rud', Array)
+#5 /var/www/SIHCi/sihci/protected/views/persons/_form.php(66): CActiveForm->textField(Object(Persons), 'rfc_rud', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#11 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#15 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#26 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#27 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+---
+2015/03/09 13:04:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons/create
+---
+2015/03/09 13:20:31 [error] [exception.CException] exception 'CException' with message 'CActiveForm y sus behaviors no tienen un método o closure llamado "dataField".' in /var/www/SIHCi/YiiFramework/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/views/persons/_form.php(60): CComponent->__call('dataField', Array)
+#1 /var/www/SIHCi/sihci/protected/views/persons/_form.php(60): CActiveForm->dataField(Object(Persons), 'birth_date')
+#2 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#3 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#5 /var/www/SIHCi/sihci/protected/views/persons/create.php(18): CController->renderPartial('_form', Array)
+#6 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#7 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#9 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#10 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(79): CController->render('create', Array)
+#11 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionCreate()
+#12 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#21 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/create')
+#22 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#23 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#24 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/persons
+>>>>>>> 944c5173aaa1c3dc25c543931063f5c6ea433b91
 ---

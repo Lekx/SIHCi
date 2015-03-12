@@ -38,8 +38,24 @@
 	<?php echo CHtml::encode($data->birth_date); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('rfc_rud')); ?>:</b>
-	<?php echo CHtml::encode($data->rfc_rud); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('country')); ?>:</b>
+	<?php echo CHtml::encode($data->country); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('state_of_birth')); ?>:</b>
+	<?php echo CHtml::encode($data->state_of_birth); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('curp_passport')); ?>:</b>
+	<?php echo CHtml::encode($data->curp_passport); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('photo_url')); ?>:</b>
+	<?php echo CHtml::encode($data->photo_url); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('person_rfc')); ?>:</b>
+	<?php echo CHtml::encode($data->person_rfc); ?>
 	<br />
 
 	*/ ?>

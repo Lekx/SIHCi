@@ -31,6 +31,6 @@ $this->menu=array(
 		'colony',
 		'street',
 		'external_number',
-		'numero_int',
+		'internal_number',
 	),
 )); ?>

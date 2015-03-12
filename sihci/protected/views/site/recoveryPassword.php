@@ -23,7 +23,7 @@
 		<?php echo $form->textField($model,'email'); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
-	<?php  ?>
+	<?php echo "Porfavor digite su dirección de email";  ?>
 
 	<div class="row">
 		<?php echo CHtml::submitButton('Recuperar Contraseña', array('class' => 'btn btn-primary')) ; ?>

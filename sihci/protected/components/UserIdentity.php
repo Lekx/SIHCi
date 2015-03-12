@@ -7,6 +7,7 @@
  */
 class UserIdentity extends CUserIdentity
 {
+	private $_id;
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -37,11 +38,20 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if($this->password!==$user->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else if($user->status=="inactivo")
-			 echo"<script>alert('debe ser activo, porfavor revisa tu correo')</script>";
+		// else if($user->status=="inactivo")
+		// 	 echo"<script>alert('debe ser activo, porfavor revisa tu correo')</script>";
 			 // throw new Exception("su sesion ha caducado.");
-		else
+		else{
+			$this->_id=$user->id;
+			$this->setState("email",$user->email);
+			// Yii::app()->user->email;
+			// Yii::app()->user->
+			// Yii::app()->user->getState("email");
 			$this->errorCode=self::ERROR_NONE;
+		}
 		return !$this->errorCode;
+	}
+	public function getId(){
+		return $this->_id;
 	}
 }
