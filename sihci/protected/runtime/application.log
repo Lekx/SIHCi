@@ -10466,3 +10466,518 @@ REQUEST_URI=/sihci/sihci/index.php/URL
 HTTP_REFERER=http://localhost/sihci/sihci/index.php/unidadHospitalariaJimComiteDeEtica
 >>>>>>> 9dce55f73e0b5a110fa4b485cbac43546958d179
 ---
+2015/03/12 12:20:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses
+---
+2015/03/12 13:19:06 [error] [php] Missing argument 3 for CActiveForm::radioButtonList(), called in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php on line 55 and defined (C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php:960)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CongressesController->renderInternal()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php(18): CongressesController->renderPartial()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CongressesController->renderInternal()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CongressesController->renderPartial()
+#7 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(79): CongressesController->render()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CongressesController->runAction()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CongressesController->filterAccessControl()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CongressesController->runActionWithFilters()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CongressesController->run()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php (55)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (79)
+2015/03/12 13:28:28 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:28:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:29:29 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:29:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:29:48 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:29:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:29:56 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:29:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:36:08 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:36:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:36:56 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:36:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:37:14 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:37:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:38:03 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:38:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:38:28 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:38:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:38:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:38:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:39:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses
+---
+2015/03/12 13:39:54 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/12 13:39:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`sihci`.`congresses`, CONSTRAINT `id_curriculum_congresos` FOREIGN KEY (`id_curriculum`) REFERENCES `curriculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `congresses` (`id_curriculum`, `work_title`, `year`, `congress`, `type`, `country`, `work_type`, `keywords`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:40:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/update/22
+---
+2015/03/12 13:41:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses
+---
+2015/03/12 13:41:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
+2015/03/12 13:42:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:42:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/index
+---
+2015/03/12 13:42:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/admi...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/create
+---
+2015/03/12 13:45:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/index
+---
+2015/03/12 13:46:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/index
+---
+2015/03/12 13:46:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/congresses/index
+---
+2015/03/12 13:47:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/crea...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/congresses/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/site/login
+---
