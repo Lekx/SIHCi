@@ -11,6 +11,7 @@ class PersonsController extends Controller
 	/**
 	 * @return array action filters
 	 */
+
 	public function filters()
 	{
 		return array(
@@ -24,26 +25,26 @@ class PersonsController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+	// public function accessRules()
+	// {
+	// 	return array(
+	// 		array('allow',  // allow all users to perform 'index' and 'view' actions
+	// 			'actions'=>array('index','view'),
+	// 			'users'=>array('*'),
+	// 		),
+	// 		array('allow', // allow authenticated user to perform 'create' and 'update' actions
+	// 			'actions'=>array('create','update'),
+	// 			'users'=>array('@'),
+	// 		),
+	// 		array('allow', // allow admin user to perform 'admin' and 'delete' actions
+	// 			'actions'=>array('admin','delete'),
+	// 			'users'=>array('admin'),
+	// 		),
+	// 		array('deny',  // deny all users
+	// 			'users'=>array('*'),
+	// 		),
+	// 	);
+	// }
 
 	/**
 	 * Displays a particular model.
@@ -51,6 +52,7 @@ class PersonsController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$id = Yii::app()->user->id;
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -70,8 +72,19 @@ class PersonsController extends Controller
 		if(isset($_POST['Persons']))
 		{
 			$model->attributes=$_POST['Persons'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
+
+			if($model->photo_url->type == 'application/png' || $model->photo_url->type == 'application/PNG' ){
+
+				$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
+				$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
+	   		
+					if($model->save())
+						$this->redirect(array('view','id'=>$model->id));
+
+			}else {
+			 	echo "Tipo de archivo no valido, solo se admiten .PNG" .$model->photo_url->type;
+			 }
 		}
 
 		$this->render('create',array(
@@ -87,15 +100,35 @@ class PersonsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+        
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Persons']))
 		{
 			$model->attributes=$_POST['Persons'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
+
+				
+				
+               if ($model->photo_url == "") {
+               		if($model->save()){
+						$this->redirect(array('view','id'=>$model->id));
+					}
+               }else{
+				if (!file_exists('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/')) {
+   						 mkdir('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/', 0777);
+
+   						$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/perfil.png');
+						$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/perfil.png';
+					}
+	   		
+					if($model->save()){
+						$this->redirect(array('view','id'=>$model->id));
+					}
+				}
+
+			
 		}
 
 		$this->render('update',array(

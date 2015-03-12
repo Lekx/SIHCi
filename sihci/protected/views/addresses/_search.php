@@ -62,8 +62,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'numero_int'); ?>
-		<?php echo $form->textField($model,'numero_int',array('size'=>8,'maxlength'=>8)); ?>
+		<?php echo $form->label($model,'internal_number'); ?>
+		<?php echo $form->textField($model,'internal_number',array('size'=>8,'maxlength'=>8)); ?>
 	</div>
 
 	<div class="row buttons">
