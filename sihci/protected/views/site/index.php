@@ -39,6 +39,42 @@
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		var searchKey = "";
+	    $(".searchBarMain").keypress(function() {
+	       // var imgId = String($(this).parent().attr('id)).split('_')[1]; //obtain img ID
+	       searchKey = $(this).val();
+	       
+	       if(searchKey.length > 1){
+
+
+
+		        $.ajax({
+		           url: "<?php echo Yii::app()->createUrl('searchBar/autoSearch?keyword='); ?>"+searchKey,
+		           type : 'POST',
+		       	 /*data: {
+		               keyword: searchKey
+		           },*/
+		           success: function(data) {
+		                $("#searchBarResults").show();
+		                $('#searchBarResults').html(data);
+		            },
+		        }).done({
+		            //alert('Success!');
+		        }).fail({
+		            //alert('fail :(');
+		        });
+			}
+		});
+
+   		$(".searchButton").click(function() {
+			window.location = "http://localhost/SIHCi/sihci/index.php/searchBar/searchResults?keyword=" + searchKey;
+		});
+
+	});
+
+</script>
 </head>
 
 <body>	
@@ -296,12 +332,15 @@
 		                 			<span class="glyphicon glyphicon-align-justify"></span>
 		                 		</button>
 		                 	 </div>
-		                 	<div id="headersearch"><input id="searchbartop"type="search" placeholder="Buscar"></div>
+		                 	<div id="headersearch"><input type="search" id="searchbartop" class="searchBarMain" placeholder="Buscar"></div>
 		                 	<div id="hsearchbutton">
-		                 		<button id="" type="button" class="btn btn-default btn-lg">
+		                 		<button id="" type="button" class="btn btn-default btn-lg searchButton">
+
 		                 			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 		                 		</button>
-		                 	 </div>
+		                 	</div>
+		                 	
+
 	                 	</div>
                  </div>
             </div>
@@ -320,20 +359,22 @@
 		<div class="singin"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
 		Crear una cuenta</div>
 		<div class="searchbar">
-			<form>
+			
 
-				<button id="show_hidemenu" type="button">
+				<button type="button" id="show_hidemenu">
 				<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuGr.png" alt="">
 					Menu
 				</button>
 
-				<input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+				<input type="text" class="form-control searchBarMain" placeholder="Search" aria-describedby="basic-addon1">
 
-				<button id="search" type="button">
+				<button id="search" type="button" class="searchButton">
+
 					<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuBuscarGr.png" alt="">
 					Buscar
 				</button>
 		</div>
+		<div id="searchBarResults" style="display:none;position:absolute;left:900px;background-color:#798C9D;top:200px;z-index:10000;padding:5px;width:500px;">estoy bien escondido</div>
 	</section>
 
 	<section>
