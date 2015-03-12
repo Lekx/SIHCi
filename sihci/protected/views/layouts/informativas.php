@@ -323,7 +323,7 @@
 		</div>
              <div id="header-content-container">
                  <div id="header-content">
-                 	<div id="headerlogo"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHch.png" alt=""></div>
+                 	<div id="headerlogo"><?php echo CHtml::link('<img id="" src='.Yii::app()->request->baseUrl.'/img/icons/logoHme.png alt="home">',array('site/index')); ?></div>
 	                 	<div id="hsearch">
 		                 	<div id="headermenu">
 		                 		<button id="show_hidemenu2" type="button" class="">
