@@ -41,6 +41,7 @@ class FilesManagerController extends Controller
 		$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
 		//$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
 		$model->path = CUploadedFile::getInstanceByName('FilesManager[path]');
+	
 		
 			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF' )
 			
@@ -136,16 +137,16 @@ class FilesManagerController extends Controller
 	public function actionDisplayFiles($section)
 		{
 			
-			$result = $model=FilesManager::model()->findAll(array(
-			    'condition'=>'section="'.$section.'" AND NOW() BETWEEN start_date AND end_date'
+		$result = $model=FilesManager::model()->findAll(array(
+			'condition'=>'section="'.$section.'" AND NOW() BETWEEN start_date AND end_date'
 			));
 
 
 
-			foreach($result as $files => $newArray){
-				echo"<a href='".$newArray["path"]."' target='_blank'>".$newArray["file_name"]."</a>";
-				echo"<br>";
-			}
-
+		foreach($result as $files => $newArray){
+			echo"<a href='".$newArray["path"]."' target='_blank'>".$newArray["file_name"]."</a>";
+			echo"<br>";
 		}
+
+	}
 }

@@ -1,3 +1,4 @@
+
 .informativa
 {
 	margin-top: 80px;
@@ -24,6 +25,7 @@
 	width: 830px;
 	
 }
+.column-center span{ color: #00B9C0};
 .column-center h2{ color: #0A3250;  }
 .generalinformation{text-align: justify;}
 .subtitle{ color: #00B9C0;}

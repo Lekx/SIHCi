@@ -1,16 +1,35 @@
-OP11-Desplegar Plano de ubicación de mapa de oficina SGEI OPD 
-
-<section>
-<h1> Icono! </h1>
-</section>
+<!-- OP11-Desplegar Plano de ubicación de mapa de oficina SGEI OPD -->
 
 
-<section>
-	<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/planoDeUbicacionDeMapaDeOficinaSGEIOPD/img/ubicacion.png"; ?>">
-</section>
+<?php
+/* @var $this SiteController */
+/* @var $error array */
+
+$this->pageTitle=Yii::app()->name . ' -Plano de Ubicación.';
+$this->breadcrumbs=array(
+	'ODP / Plano de Ubicación.',
+);
+?>
+<section class="informativa">
+
+	<section class="column-left">
+		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Transparencia.png" alt="">
+	</section>
 
 
+	<section class="column-center">
+		<h2>Plano de Ubicación.</h2>
+		<div class="subtitle">
+					________________________<br>
+					<br>
+				</div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3732.551253938506!2d-103.34289899999996!3d20.687828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1426179858034" width="600" height="450" frameborder="0" style="border:0"></iframe>
+	</section>
 
-<section>
-	<?php Yii::app()->runController('filesManager/DisplayFiles/section/planoDeUbicacionDeMapaDeOficinaSGEIOPD'); ?>
+	<section class="column-right">
+		<h5>DOCUMENTOS</h5>
+		<h5>DESCARGABLES:</h5>
+		<?php Yii::app()->runController('filesManager/DisplayFiles/section/planoDeUbicacionDeMapaDeOficinaSGEIOPD'); ?>
+	</section>
+
 </section>

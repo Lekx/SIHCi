@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 <section class="informativa">
 
 	<section class="column-left">
-		<i class="fa fa-compass fa-5x"></i>
+		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
 	</section>
 
 	<section class="column-center">
@@ -25,8 +25,8 @@ $this->breadcrumbs=array(
 		<div class="subtitle">
 		________________________<br>
 		<br>
-			<a href="">¿Quiénes somos?</a><br>
-			<a href="">¿Qué es el Hospital Civil de Guadalajara?</a><br><br>
+			<span>¿Quiénes somos?</span><br>
+			<span>¿Qué es el Hospital Civil de Guadalajara?</span><br><br>
 		</div>
 
 		<p>Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y
