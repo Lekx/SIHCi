@@ -320,19 +320,12 @@
 		<div class="singin"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
 		Crear una cuenta</div>
 		<div class="searchbar">
-			<form>
-
+			
 				<button id="show_hidemenu" type="button">
 				<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuGr.png" alt="">
 					Menu
 				</button>
-
-				<input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
-
-				<button id="search" type="button">
-					<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuBuscarGr.png" alt="">
-					Buscar
-				</button>
+				
 		</div>
 	</section>
 
