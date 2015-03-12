@@ -1,6 +1,6 @@
 <?php
 
-class PersonsController extends Controller
+class DocsIdentityController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -11,7 +11,6 @@ class PersonsController extends Controller
 	/**
 	 * @return array action filters
 	 */
-
 	public function filters()
 	{
 		return array(
@@ -25,26 +24,26 @@ class PersonsController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	// public function accessRules()
-	// {
-	// 	return array(
-	// 		array('allow',  // allow all users to perform 'index' and 'view' actions
-	// 			'actions'=>array('index','view'),
-	// 			'users'=>array('*'),
-	// 		),
-	// 		array('allow', // allow authenticated user to perform 'create' and 'update' actions
-	// 			'actions'=>array('create','update'),
-	// 			'users'=>array('@'),
-	// 		),
-	// 		array('allow', // allow admin user to perform 'admin' and 'delete' actions
-	// 			'actions'=>array('admin','delete'),
-	// 			'users'=>array('admin'),
-	// 		),
-	// 		array('deny',  // deny all users
-	// 			'users'=>array('*'),
-	// 		),
-	// 	);
-	// }
+	public function accessRules()
+	{
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Displays a particular model.
@@ -52,7 +51,6 @@ class PersonsController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$id = Yii::app()->user->id;
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -64,27 +62,16 @@ class PersonsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Persons;
+		$model=new DocsIdentity;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Persons']))
+		if(isset($_POST['DocsIdentity']))
 		{
-			$model->attributes=$_POST['Persons'];
-			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
-
-			if($model->photo_url->type == 'application/png' || $model->photo_url->type == 'application/PNG' ){
-
-				$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
-				$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
-	   		
-					if($model->save())
-						$this->redirect(array('view','id'=>$model->id));
-
-			}else {
-			 	echo "Tipo de archivo no valido, solo se admiten .PNG" .$model->photo_url->type;
-			 }
+			$model->attributes=$_POST['DocsIdentity'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -100,35 +87,15 @@ class PersonsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-        
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Persons']))
+		if(isset($_POST['DocsIdentity']))
 		{
-			$model->attributes=$_POST['Persons'];
-			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
-
-				
-				
-               if ($model->photo_url == "") {
-               		if($model->save()){
-						$this->redirect(array('view','id'=>$model->id));
-					}
-               }else{
-				if (!file_exists('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/')) {
-   						 mkdir('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/', 0777);
-
-   						$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/perfil.png');
-						$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/perfil.png';
-					}
-	   		
-					if($model->save()){
-						$this->redirect(array('view','id'=>$model->id));
-					}
-				}
-
-			
+			$model->attributes=$_POST['DocsIdentity'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -155,7 +122,7 @@ class PersonsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Persons');
+		$dataProvider=new CActiveDataProvider('DocsIdentity');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -166,10 +133,10 @@ class PersonsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Persons('search');
+		$model=new DocsIdentity('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Persons']))
-			$model->attributes=$_GET['Persons'];
+		if(isset($_GET['DocsIdentity']))
+			$model->attributes=$_GET['DocsIdentity'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -180,12 +147,12 @@ class PersonsController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Persons the loaded model
+	 * @return DocsIdentity the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Persons::model()->findByPk($id);
+		$model=DocsIdentity::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -193,11 +160,11 @@ class PersonsController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Persons $model the model to be validated
+	 * @param DocsIdentity $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='persons-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='docs-identity-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
