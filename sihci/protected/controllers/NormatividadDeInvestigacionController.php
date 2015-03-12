@@ -4,6 +4,7 @@ class NormatividadDeInvestigacionController extends Controller
 {
 	public function actionIndex()
 	{
+		$this->layout = 'informativas';
 		$this->render('index');
 	}
 

@@ -53,9 +53,10 @@
 							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
 							<li><?php echo CHtml::link('Normatividad de investigación',array('NormatividadDeInvestigacion/index')); ?></li>
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
-							<li><?php echo CHtml::link('Transparencia',array('Transparencia/index')); ?></li>
-							<li><?php echo CHtml::link('Comites',array('Comites/index')); ?></li>
-							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('PlanodeubicacionSGEIOPD/index')); ?></li>
+							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
+							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
+							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
+							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
 					<li>
@@ -92,12 +93,12 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('subdireccionDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('unidadHospitalariaJIMSubdireccionDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -161,10 +162,9 @@
 
 						</ul>
 					</div>
-				</div>
+			</div>
 		</div>
 	</section>
-
 <section>
 	<div class="slidingDiv2">
 		<div class="menu">
@@ -288,18 +288,17 @@
 		</div>
              <div id="header-content-container">
                  <div id="header-content">
-                 	<div id="headerlogo"><a href=""><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHch.png" alt=""></a></div>
-
+                 	<div id="headerlogo"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHch.png" alt=""></div>
 	                 	<div id="hsearch">
 		                 	<div id="headermenu">
-		                 		<button id="show_hidemenu2" type="button" class="btn btn-default btn-lg">
-		                 			<span class="glyphicon glyphicon-align-justify"></span>
+		                 		<button id="show_hidemenu2" type="button" class="">
+		                 			<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuCh.png" alt="">
 		                 		</button>
 		                 	 </div>
 		                 	<div id="headersearch"><input id="searchbartop"type="search" placeholder="Buscar"></div>
 		                 	<div id="hsearchbutton">
-		                 		<button id="" type="button" class="btn btn-default btn-lg">
-		                 			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		                 		<button id="" type="button">
+		                 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuBuscarCh.png" alt="">
 		                 		</button>
 		                 	 </div>
 	                 	</div>
@@ -371,31 +370,31 @@
 				</div>
 				<div class="content1">
 					<div>
-				<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comités.png" alt="">
+						<a href=""><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comités.png" alt=""></a>
 						<br>
 						<br>
 						<h5>Cómites</h5>	
 					</div>
 					<div>
-							<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
+							<a href=""><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt=""></a>
 						<h5>Programas de desarrollo tecnológico e innovación<br></h5>	
 					</div>
 					<div>
-							<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/CentroIInvestigacionClinica.png" alt="">
+							<a href=""><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/CentroIInvestigacionClinica.png" alt=""></a>
 						<h5>Centro de investigación clinica y medicina traslacional</h5>
 					</div>
 				</div>
 				<div class="content2">
 					<div>
-							<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/RedaccionCientifica.png" alt="">
+							<a href=""><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/RedaccionCientifica.png" alt=""></a>
 						<h5>Revistas cientificas<br><br></h5>
 					</div>
 					<div>
-					<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/TramitesServicios.png" alt="">
+					<a href=""><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/TramitesServicios.png" alt=""></a>
 						<h5>Unidad editorial<br><br></h5>
 					</div>
 					<div>
-						<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculaciónUniversidadesInstitutosHospitales.png" alt="">
+						<a href=""><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculaciónUniversidadesInstitutosHospitales.png" alt=""></a>
 						<h5>Vinculación con Universidades, Institutos y Hospitales</h5>
 				</div>
 			</div>

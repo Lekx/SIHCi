@@ -1,5 +1,15 @@
 <!-- OP03-Desplegar Organigrama -->
 
+<?php
+/* @var $this SiteController */
+/* @var $error array */
+
+$this->pageTitle=Yii::app()->name . ' - Organigrama';
+$this->breadcrumbs=array(
+	'OPD / Organigrama',
+);
+?>
+
 <section class="informativa">
 
 	<section class="column-left">
@@ -8,8 +18,17 @@
 
 	<section class="column-center">
 
+		<h2>Organigrama</h2>
+
+
+		<div class="subtitle">
+		________________________<br>
+		<br>
+		</div>
+		
 		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/organigrama/img/org1.png"; ?>">
 	
+
 		<p>Organigrama Dando clic en subdirección general e investigación
 		Titular
 		M.S.P. Víctor Manuel Ramírez Anguiano
