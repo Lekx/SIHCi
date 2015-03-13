@@ -89,7 +89,6 @@
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
 							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
 							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
-							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
 							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
@@ -108,7 +107,7 @@
 						</ul>
 					</li>
 					<li>
-					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
+					<h6><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></h6>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -169,8 +168,8 @@
 							<li>
 								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
-								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
-								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
 								</ul>
 							</li>
 							<li>
@@ -212,7 +211,6 @@
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
 							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
 							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
-							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
 							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
@@ -231,7 +229,7 @@
 						</ul>
 					</li>
 					<li>
-					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
+					<h6><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></h6>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -292,8 +290,8 @@
 							<li>
 								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
-								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
-								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
 								</ul>
 							</li>
 							<li>
@@ -371,7 +369,7 @@
 					Buscar
 				</button>
 		</div>
-		<div id="searchBarResults" style="display:none;position:absolute;left:900px;background-color:#798C9D;top:200px;z-index:10000;padding:5px;width:500px;">estoy bien escondido</div>
+		<div id="searchBarResults">estoy bien escondido</div>
 	</section>
 
 
@@ -400,7 +398,6 @@
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
 							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
 							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
-							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
 							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
@@ -419,7 +416,7 @@
 						</ul>
 					</li>
 					<li>
-					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
+					<h6><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></h6>
 						<ul class="cbp-hssubmenu">
 						</ul>
 					</li>
@@ -480,8 +477,8 @@
 							<li>
 								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
-								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
-								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
 								</ul>
 							</li>
 							<li>
