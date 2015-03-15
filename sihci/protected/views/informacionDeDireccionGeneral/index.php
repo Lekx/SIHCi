@@ -25,8 +25,8 @@ $this->breadcrumbs=array(
 		<div class="subtitle">
 		________________________<br>
 		<br>
-			<a href="">¿Quiénes somos?</a><br>
-			<a href="">¿Qué es el Hospital Civil de Guadalajara?</a><br><br>
+			<span>¿Quiénes somos?</span><br>
+			<span>¿Qué es el Hospital Civil de Guadalajara?</span><br><br>
 		</div>
 
 		<p>Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y

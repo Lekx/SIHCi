@@ -19,13 +19,11 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
+	<div class="row">
 		<?php echo $form->labelEx($model,'country'); ?>
 		<?php echo $form->textField($model,'country',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
-
-	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'zip_code'); ?>
@@ -51,7 +49,11 @@
 		<?php echo $form->error($model,'city'); ?>
 	</div>
 
-	
+	<div class="row">
+		<?php echo $form->labelEx($model,'town'); ?>
+		<?php echo $form->textField($model,'town',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($model,'town'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'colony'); ?>
@@ -72,9 +74,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'numero_int'); ?>
-		<?php echo $form->textField($model,'numero_int',array('size'=>8,'maxlength'=>8)); ?>
-		<?php echo $form->error($model,'numero_int'); ?>
+		<?php echo $form->labelEx($model,'internal_number'); ?>
+		<?php echo $form->textField($model,'internal_number',array('size'=>8,'maxlength'=>8)); ?>
+		<?php echo $form->error($model,'internal_number'); ?>
 	</div>
 
 	<div class="row buttons">

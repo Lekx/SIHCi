@@ -51,6 +51,7 @@
   float: left;
   width: 100%;
   height: 420px;
+  margin-top: -50px;
   }
 
 .callbacks {
@@ -109,7 +110,7 @@
   text-decoration: none;
   height: 61px;
   width: 38px;
-  background: transparent url("themes/themes.gif") no-repeat left top;
+  background: transparent url("themes/Flachas.png") no-repeat left top;
   margin-top: -45px;
   }
 

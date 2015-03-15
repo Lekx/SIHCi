@@ -29,6 +29,10 @@ $this->menu=array(
 		'marital_status',
 		'genre',
 		'birth_date',
-		'rfc_rud',
+		'country',
+		'state_of_birth',
+		'curp_passport',
+		'photo_url',
+		'person_rfc',
 	),
 )); ?>

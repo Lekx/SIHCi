@@ -84,11 +84,20 @@ span
 	height: 30px;
 	margin-right: 16px;
 	display: inline-block;
+
+}
+#headermenu button
+{
+	background: transparent;
 }
 #headersearch
 {
-
 	display: inline-block;
+}
+#hsearchbutton button
+{
+	margin-left: 10px;
+	background: transparent;
 }
 #headersearch input
 {
@@ -101,6 +110,7 @@ span
 {
 	width: 30px;
 	height: 30px;
+	margin-top: -5px;
 	display: inline-block;
 }
 #hsearchbutton button,
@@ -270,8 +280,7 @@ span
 	margin-top: 80px;
 	left: 0;
 	right: 0;
-   	
-    
+   	 
 }
 .textfont
 {
@@ -451,7 +460,6 @@ span
 	margin-bottom: auto;
 	width: 235px;
 	color: white;
-	text-align: justify;
 	font-family: 'Caviar_Dreams'
 
 }
@@ -515,7 +523,7 @@ span
 	margin-bottom: auto;
 	width: 235px;
 	color: white ;
-	text-align: justify;
+	text-align: center;
 	font-family: 'Caviar_Dreams';
 
 }
@@ -567,7 +575,7 @@ span
 	margin-bottom: auto;
 	width: 235px;
 	color: white ;
-	text-align: justify;
+	text-align: center;
 
 }
 .contentboxs2 #box2 span
