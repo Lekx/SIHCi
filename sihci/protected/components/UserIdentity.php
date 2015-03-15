@@ -15,6 +15,7 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+	private $_id;
 
 	public function authenticate()
 	{
@@ -40,8 +41,17 @@ class UserIdentity extends CUserIdentity
 		else if($user->status=="inactivo")
 			 echo"<script>alert('debe ser activo, porfavor revisa tu correo')</script>";
 			 // throw new Exception("su sesion ha caducado.");
-		else
+		else{
+			$this->_id=$user->id;
+			$this->setState('email',$user->email);
 			$this->errorCode=self::ERROR_NONE;
+
+		}
 		return !$this->errorCode;
+
+	}
+	public function getId()
+	{
+		return $this->_id;
 	}
 }
