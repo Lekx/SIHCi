@@ -15,7 +15,14 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
+<<<<<<< HEAD
+	<p class="note">Los Campos <span class="required">*</span> Son requeridos.</p>
+	<?php Yii::app()->bootstrap->register(); ?>
+	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($modelPersons); ?>
+=======
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
+>>>>>>> 88f31065013796caa9bf790623c7b19e7c661413
 
 	<?php echo $form->errorSummary($model); ?>
 
