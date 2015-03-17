@@ -18,6 +18,7 @@ $this->breadcrumbs=array(
 	<section class="column-center">
 
 	<h2>Redacción Cientifica</h2>
+	<hr>
 		<p>
 		   La generación de conocimiento es un bien en sí	 mismo: las sociedades más desarrolladas del
 		   mundo reconocen la importancia del conocimiento científico y dedican recursos humanos y

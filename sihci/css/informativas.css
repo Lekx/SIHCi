@@ -17,7 +17,7 @@
 {
 	float: right;
 	width: 270px;
-	margin-left: 10px;
+	margin-left: 20px;
 }
 .column-center
 {
@@ -38,6 +38,7 @@
 {
 
 	position: absolute;
+	display: none;
 	top: 225px;
 	background-color: #788C9B;
 	z-index: 900;

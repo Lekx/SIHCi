@@ -18,12 +18,7 @@ $this->breadcrumbs=array(
 
 	<section class="column-center">
 		<h3>Organismo Público Descentralizado Hospital Civil de Guadalajara.</h3>
-		
-			<div class="subtitle">
-			________________________<br>
-			<br>
-		</div>
-
+		<hr>
 			<span><h4>AVISO DE PRIVACIDAD</h4></span>
 			<span><h5>PROTECCIÓN DE DATOS PERSONALES</h5></span>
 			

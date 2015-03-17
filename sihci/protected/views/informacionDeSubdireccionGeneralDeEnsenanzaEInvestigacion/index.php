@@ -17,11 +17,8 @@ $this->breadcrumbs=array(
 		<div class="generalinformation">
 
 			<h3>Subdirecciòn General de Enseñanza e Investigación.</h3>
-
-				<div class="subtitle">
-					________________________<br>
-					<br>
-				</div>
+			<hr>
+				
 
 			<p>
 			El Organismo Público Descentralizado Hospital Civil de Guadalajara es el hospital- escuela de la Universidad de Guadalajara 

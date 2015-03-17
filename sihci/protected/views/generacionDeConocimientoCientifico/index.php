@@ -17,6 +17,9 @@ $this->breadcrumbs=array(
 
 	<section class="column-center">
 
+	<h2>LÍNEAS DE INVESTIGACIÓN </h2>
+	<hr>
+	
 	<div class="panel panel-default">
 	  <!-- Default panel contents -->
 	  <div class="panel-heading">OPD HCG: LÍNEAS DE INVESTIGACIÓN (vs. 26 enero 2015)</div>
