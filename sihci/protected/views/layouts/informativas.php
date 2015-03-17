@@ -37,6 +37,40 @@
 	<?php Yii::app()->bootstrap->register(); ?>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		var searchKey = "";
+	    $(".searchBarMain").keypress(function() {
+	       // var imgId = String($(this).parent().attr('id)).split('_')[1]; //obtain img ID
+	       searchKey = $(this).val();
+	       
+	       if(searchKey.length > 1){
+		        $.ajax({
+		           url: "<?php echo Yii::app()->createUrl('searchBar/autoSearch?keyword='); ?>"+searchKey,
+		           type : 'POST',
+		       	 /*data: {
+		               keyword: searchKey
+		           },*/
+		           success: function(data) {
+		                $("#searchBarResults").show();
+		                $('#searchBarResults').html(data);
+		            },
+		        }).done({
+		            //alert('Success!');
+		        }).fail({
+		            //alert('fail :(');
+		        });
+			}
+		});
+   		$(".searchButton").click(function() {
+			window.location = "http://localhost/SIHCi/sihci/index.php/searchBar/searchResults?keyword=" + searchKey;
+		});
+	});
+</script>
+
+
+
 
 
 </head>
@@ -53,9 +87,10 @@
 							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
 							<li><?php echo CHtml::link('Normatividad de investigación',array('NormatividadDeInvestigacion/index')); ?></li>
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
-							<li><?php echo CHtml::link('Transparencia',array('Transparencia/index')); ?></li>
-							<li><?php echo CHtml::link('Comites',array('Comites/index')); ?></li>
-							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('PlanodeubicacionSGEIOPD/index')); ?></li>
+							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
+							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
+							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
+							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
 					<li>
@@ -82,7 +117,7 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('informacionDeSubdireccionGeneralDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -92,12 +127,12 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('subdireccionDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('unidadHospitalariaJIMSubdireccionDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -161,10 +196,9 @@
 
 						</ul>
 					</div>
-				</div>
+			</div>
 		</div>
 	</section>
-
 <section>
 	<div class="slidingDiv2">
 		<div class="menu">
@@ -176,9 +210,10 @@
 							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
 							<li><?php echo CHtml::link('Normatividad de investigación',array('NormatividadDeInvestigacion/index')); ?></li>
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
-							<li><?php echo CHtml::link('Transparencia',array('Transparencia/index')); ?></li>
-							<li><?php echo CHtml::link('Comites',array('Comites/index')); ?></li>
-							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('PlanodeubicacionSGEIOPD/index')); ?></li>
+							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
+							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
+							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
+							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
 					<li>
@@ -205,7 +240,7 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('informacionDeSubdireccionGeneralDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -215,12 +250,12 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('subdireccionDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('unidadHospitalariaJIMSubdireccionDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -284,31 +319,32 @@
 
 						</ul>
 					</div>
-				</div>
+			</div>
 		</div>
              <div id="header-content-container">
                  <div id="header-content">
-                 	<div id="headerlogo"><a href=""><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHch.png" alt=""></a></div>
-
+                 	<div id="headerlogo"><?php echo CHtml::link('<img id="" src='.Yii::app()->request->baseUrl.'/img/icons/logoHme.png alt="home">',array('site/index')); ?></div>
 	                 	<div id="hsearch">
 		                 	<div id="headermenu">
-		                 		<button id="show_hidemenu2" type="button" class="btn btn-default btn-lg">
-		                 			<span class="glyphicon glyphicon-align-justify"></span>
+		                 		<button id="show_hidemenu2" type="button" class="">
+		                 			<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuCh.png" alt="">
 		                 		</button>
 		                 	 </div>
-		                 	<div id="headersearch"><input id="searchbartop"type="search" placeholder="Buscar"></div>
+		                 	<div id="headersearch"><input type="search" id="searchbartop" class="searchBarMain" placeholder="Buscar"></div>
 		                 	<div id="hsearchbutton">
-		                 		<button id="" type="button" class="btn btn-default btn-lg">
-		                 			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		                 		<button id="" type="button">
+		                 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuBuscarCh.png" alt="">
 		                 		</button>
-		                 	 </div>
+		                 	</div>
+		                 	
+
 	                 	</div>
                  </div>
             </div>
     </section>
 
 	<section class="logosection">
-		<div class="logo"><a href=""><img id="logohme"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHme.png" alt="home"></a></div>
+		<div class="logo"><?php echo CHtml::link('<img id="logohme" src='.Yii::app()->request->baseUrl.'/img/icons/logoHme.png alt="home">',array('site/index')); ?></a></div>
 		<div class="logosub"></div>
 		<div class="logoinfo"><span>Ivestigadores:</span><span>Vidas Cambiadas</span><span>Ivestigaciones</span><span>Libros y Revistas</span></div>
 		<div class="logonum"><h4>1,456</h4><h4>1,923,456</h4><h4>17,296</h4><h4>3,163</h4></div>
@@ -320,20 +356,22 @@
 		<div class="singin"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
 		Crear una cuenta</div>
 		<div class="searchbar">
-			<form>
+			
 
-				<button id="show_hidemenu" type="button">
+				<button type="button" id="show_hidemenu">
 				<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuGr.png" alt="">
 					Menu
 				</button>
 
-				<input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+				<input type="text" class="form-control searchBarMain" placeholder="Search" aria-describedby="basic-addon1">
 
-				<button id="search" type="button">
+				<button id="search" type="button" class="searchButton">
+
 					<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuBuscarGr.png" alt="">
 					Buscar
 				</button>
 		</div>
+		<div id="searchBarResults" style="display:none;position:absolute;left:900px;background-color:#798C9D;top:200px;z-index:10000;padding:5px;width:500px;">estoy bien escondido</div>
 	</section>
 
 
@@ -350,7 +388,6 @@
 
 
 
-
 	<section class="mapaSitio">
 		<div class="menu">
 			<div>
@@ -361,9 +398,10 @@
 							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
 							<li><?php echo CHtml::link('Normatividad de investigación',array('NormatividadDeInvestigacion/index')); ?></li>
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
-							<li><?php echo CHtml::link('Transparencia',array('Transparencia/index')); ?></li>
-							<li><?php echo CHtml::link('Comites',array('Comites/index')); ?></li>
-							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('PlanodeubicacionSGEIOPD/index')); ?></li>
+							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
+							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
+							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
+							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
 					<li>
@@ -390,7 +428,7 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('Sub-Dirección General de enseñanza e investigación',array('informacionDeSubdireccionGeneralDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -400,12 +438,12 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('HCG Fray Antonio Alcalde',array('subdireccionDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('HCG DR. Juan I. Menchaca',array('unidadHospitalariaJIMSubdireccionDeEnsenanzaEInvestigacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -469,9 +507,9 @@
 
 						</ul>
 					</div>
-				</div>
+			</div>
 			</section>
-		<section class="footersection">
+			<section class="footersection">
 				<div class="copyrigths">
 					<div id="copy">
 					<p> © 2015 Todos los derechos reservados Sistema de Gestión y Administración de Protocolos de Investigación Médica en el Hospital Civil.</p>
@@ -483,6 +521,8 @@
 				<div class="singinfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
 				Crear una cuenta</div>
 			</section>
+
+	
 
 </body>
 </html>

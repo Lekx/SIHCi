@@ -29,7 +29,7 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->layout="index";
+		$this->layout = 'informativas';
 		$this->render('index');
 	}
 
@@ -76,11 +76,12 @@ class SiteController extends Controller
 	/**
 	 * Displays the login page
 	 */
+	//LO01-Inicio de sesión. 
 	public function actionLogin()
 	{
 		
 		$model=new LoginForm;
-
+		$msg = '';
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
@@ -92,22 +93,45 @@ class SiteController extends Controller
 		if(isset($_POST['LoginForm']))
 		{
 			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+			if (!$model->validate()) {
+   				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
+   			}else{
+   				
+	   				$conexion = Yii::app()->db;
+
+	   				$consulta = "SELECT status FROM users where email='$model->username' and";
+	   				$consulta .=" status='activo'";
+
+	   				$resultado = $conexion->createCommand($consulta);
+	   				$filas = $resultado->query();
+	   				$existe = false;
+         
+	   				foreach ($filas as $fila) {
+	   				   $existe=true;
+	   				}
+		   				if ($existe === true) {
+								if($model->validate() && $model->login()){
+									$this->redirect(Yii::app()->user->returnUrl);
+								}
+							}else{
+			   				$msg = "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
+			   			}
 		}
+	}
 		// display the login form
-		$this->render('login',array('model'=>$model));
+		$this->render('login',array('model'=>$model, 'msg' => $msg));
 	}
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
+
+	// LO02 – Cerrar sesión 
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-
+    //LO03 – Recuperar contraseña 
 	public function actionRecoveryPassword()
 	{
 		$model = new RecoveryPassword;
@@ -181,6 +205,7 @@ class SiteController extends Controller
    		}
 		$this->render('recoveryPassword', array('model' => $model, 'msg' => $msg));
 	}
+	//LO03 – Recuperar contraseña 
 	public function actionChangePassword($key){
 
             $model = new ChangePassword;
@@ -235,7 +260,7 @@ class SiteController extends Controller
 										$model->password2="";
 										$msg = "<strong class='text-success'>su contraseña ha cambiado con éxito</strong>"; 
 					   					}else{
-					   					$msg = "<strong class='text-error'>Esta página ya no existe</strong>";
+					   					
 					   					$this->redirect(Yii::app()->homeUrl);
 					   					}
 					   				}

@@ -3,6 +3,7 @@
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
 
+//LO01-Inicio de sesión. 
 $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
 	'Login',
@@ -22,31 +23,23 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note">Los campos con <span class="required">*</span> son requeridos</p>
-
+<<<<<<< HEAD
+=======
+<?php echo sha1(md5(sha1("123456"))); ?>
+>>>>>>> 9f71fc758f8fa1d8e08062ce7c4356da9e5c3776
+<?php echo $msg; ?>
 	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
+		<?php echo $form->textField($model,'username', array('placeholder'=>"Email")); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password', array('placeholder'=>"Contraseña")); ?>
 		<?php echo $form->error($model,'password'); ?>
-		<!-- <p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p> -->
 	</div>
 
-
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div> 
 	<div class="row">
-	<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>">Recuperar contraseña</a>
+	<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>">¿Olvidó su Contraseña?</a>
 	</div>
 
 	<div class="row buttons">

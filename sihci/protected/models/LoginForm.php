@@ -5,6 +5,8 @@
  * LoginForm is the data structure for keeping
  * user login form data. It is used by the 'login' action of 'SiteController'.
  */
+
+//LO01-Inicio de sesión. 
 class LoginForm extends CFormModel
 {
 	public $username;
@@ -72,6 +74,7 @@ class LoginForm extends CFormModel
 		{
 			$duration=$this->rememberMe ? 60 : 0; // 30 days
 			Yii::app()->user->login($this->_identity,$duration);
+
 			return true;
 		}
 		else

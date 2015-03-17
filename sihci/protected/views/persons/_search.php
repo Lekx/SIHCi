@@ -52,8 +52,28 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'rfc_rud'); ?>
-		<?php echo $form->textField($model,'rfc_rud',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'country'); ?>
+		<?php echo $form->textField($model,'country',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'state_of_birth'); ?>
+		<?php echo $form->textField($model,'state_of_birth',array('size'=>45,'maxlength'=>45)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'curp_passport'); ?>
+		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'photo_url'); ?>
+		<?php echo $form->textField($model,'photo_url',array('size'=>60,'maxlength'=>100)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'person_rfc'); ?>
+		<?php echo $form->textField($model,'person_rfc',array('size'=>13,'maxlength'=>13)); ?>
 	</div>
 
 	<div class="row buttons">

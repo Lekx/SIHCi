@@ -7,6 +7,7 @@
  */
 class UserIdentity extends CUserIdentity
 {
+	private $_id;
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -15,33 +16,41 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+<<<<<<< HEAD
+	
+   //LO01 – Inicio de Sesión 
+=======
+	private $_id;
 
+>>>>>>> 9f71fc758f8fa1d8e08062ce7c4356da9e5c3776
 	public function authenticate()
 	{
 		$user=Users::model()->find("LOWER(email)=?",array(strtolower($this->username)));
-		/*$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);*/
-
-/*		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;*/
+		
 
 		if($user==null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if($this->password!==$user->password)
+		else if(sha1(md5(sha1($this->password)))!==$user->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else if($user->status=="inactivo")
-			 echo"<script>alert('debe ser activo, porfavor revisa tu correo')</script>";
-			 // throw new Exception("su sesion ha caducado.");
-		else
+		else{
+			$this->_id=$user->id;
+<<<<<<< HEAD
+			$this->setState('email',$user->email);
 			$this->errorCode=self::ERROR_NONE;
+
+=======
+			$this->setState("email",$user->email);
+			$this->errorCode=self::ERROR_NONE;
+>>>>>>> 88f31065013796caa9bf790623c7b19e7c661413
+		}
 		return !$this->errorCode;
+
+	}
+	public function getId()
+	{
+		return $this->_id;
+	}
+	public function getId(){
+		return $this->_id;
 	}
 }

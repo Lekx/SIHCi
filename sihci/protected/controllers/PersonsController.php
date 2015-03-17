@@ -11,6 +11,7 @@ class PersonsController extends Controller
 	/**
 	 * @return array action filters
 	 */
+
 	public function filters()
 	{
 		return array(
@@ -29,15 +30,15 @@ class PersonsController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'users'=>array('admin', '@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'=>array('admin', '@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('admin', '@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -45,12 +46,15 @@ class PersonsController extends Controller
 		);
 	}
 
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
+	//CV04-Desplegar datos. 
 	public function actionView($id)
 	{
+		//$id = Yii::app()->user->id;
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -60,23 +64,41 @@ class PersonsController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
+	//CV01-Registro de datos 
 	public function actionCreate()
 	{
 		$model=new Persons;
-
+		$curriculum = new Curriculum;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		if(isset($_POST['clear']))
+				$this->redirect(array('index'));
 
 		if(isset($_POST['Persons']))
 		{
 			$model->attributes=$_POST['Persons'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+			$model->birth_date = substr($model->birth_date, 0, 10)." "."23:59:59";
+			$model->id_user = Yii::app()->user->id;
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
+		
+			if ($model->validate()) {
+				
+				if($model->photo_url != ''){
+
+					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
+					if($model->save()){
+
+			   			$this->redirect(array('view','id'=>$model->id));
+
+			   		}
+
+				}
+
+			}//end if validate
+		}
+	$this->render('create',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
 
 	/**
@@ -84,23 +106,39 @@ class PersonsController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+
+	//CV02-Modificar registro 
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+        $curriculum = new Curriculum;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Persons']))
 		{
 			$model->attributes=$_POST['Persons'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
+			if ($model->validate()) {
+				//if (!file_exists('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/')) {
+   					//	 mkdir('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/', 0777);
+
+   					//	$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/perfil.png');
+					// 	$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/perfil.png';
+					// }
+					if($model->save()){
+						if($model->photo_url != ''){
+						$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
+				//		$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
+			   		}
+						$this->redirect(array('view','id'=>$model->id));
+					}
+				
+			}
+			
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		$this->render('update',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
 
 	/**
@@ -157,6 +195,7 @@ class PersonsController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
 
 	/**
 	 * Performs the AJAX validation.

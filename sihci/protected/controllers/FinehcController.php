@@ -1,9 +1,10 @@
 <?php
 
-class FilnehcController extends Controller
+class FinehcController extends Controller
 {
 	public function actionIndex()
 	{
+		$this->layout = 'informativas';
 		$this->render('index');
 	}
 

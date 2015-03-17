@@ -9,17 +9,38 @@ class SearchBarController extends Controller
 		$this->render('index');
 	}
 
+	public function actionSearchBar(){
+
+		$this->render('searchBar');
+	}
+
+	public function jsonResults($keyword){
+		$results = $this->search($keyword, $this->tags());
+
+		$result = "";
+
+		if(empty($results))
+			$result.= "<h2> No se encontraron resultados para su busqueda:<b> \"".$keyword."\"</b> </h3>";
+		else
+			$result.=  "<h2> El resultado de la busqueda para <b>\"".$keyword."\"</b> fue:</h3><hr>";
+			
+		foreach($results as $index => $subarray)
+			$result.= "<h2><a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["title"]."</a></h2>"."<a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["desc"]."</a><br><hr>";
+		
+		return $result;
+	}
+
+	public function actionAutoSearch($keyword){
+		echo $this->jsonResults($keyword);
+		//print_r(json_encode($results));
+	}
 
 	public function actionSearchResults($keyword)
 	{
 		$this->layout = 'informativas';
 		$results = $this->search($keyword, $this->tags());
 
-		/*$results = array(
-			"section"=>$indice, 	
-			"keyword"=>$keyword,
-			"desc"=> $this->tags()[$indice]["desc"]
-				);*/
+
 $this->render('searchResults',array(
 			'results'=>$results,'keyword'=>$keyword
 		));
@@ -30,6 +51,7 @@ $this->render('searchResults',array(
 	public function tags(){
 		return array (
 			"informacionDeDireccionGeneral" => array(
+				"title"=>"Informacion de direccion general",
 				"desc"=>"Descripcion breve",
 				"NULL",
 				"Quienes somos",
@@ -42,6 +64,7 @@ $this->render('searchResults',array(
 				"Valores",
 				"PLAN INSTITUCIONAL",
 			),"desplegarLineasDeInvestigacion" => array(
+				"title"=>"Lineas de Investigacion",
 				"desc"=>"Descripcion breve",
 				"NULL",
 				"OPD HCG",
@@ -134,8 +157,10 @@ $this->render('searchResults',array(
 				"Urología Ginecológica",
 				"Terapéutica en incontinencia femenina",
 			),"desplegarProINVENHCi" => array(
+				"title"=>"proINVENHCi",
 				"desc"=>"Descripcion breve",
 				"NULL",
+				"Quienes somos",
 				"PROGRAMA DE DETECCIÓN DE INVENCIONES CLÍNICAS Y TECNOLÓGICAS PARA EL REGISTRO DE PATENTES DEL HOSPITAL CIVIL DE GUADALAJARA: proINVENHCi",
 				"TODAS LAS PATENTES SON INVENCIONES,AUNQUE NO TODAS LAS INVENCIONES SON PATENTABLES", 
 				"OBJETIVO DEL proINVENCHCi",
@@ -149,9 +174,7 @@ $this->render('searchResults',array(
 				"REQUISITOS DEL PATENTAMIENTO",
 				"PROTECCIÓN INTERNACIONAL",
 				"NO SON PATENTABLES",
-				"",
-				
-
+				""
 			),"verdurotas" => array(
 				"desc"=>"Descripcion breve",
 				"NULL",
@@ -178,10 +201,10 @@ $this->render('searchResults',array(
 			foreach($subarray as $subindex => $subvalue){
 				if($subindex != "desc"){
 				    	if(strpos(strtolower($subvalue), strtolower($value)) !== false){
-				    		$resultado[$index] = $array[$index]["desc"];
-				    				    		    echo"<pre>";
-				    	print_r($subvalue);
-				    	echo"</pre>";
+				    		$resultado[$index] = array("title"=>$array[$index]["title"], "desc"=>$array[$index]["desc"]);
+				    	//  echo"<pre>";
+				    	//print_r($subvalue);
+				    	//echo"</pre>";
 				    		}
 			    	}
 			    }
