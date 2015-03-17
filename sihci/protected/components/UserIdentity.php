@@ -16,16 +16,12 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 	
    //LO01 – Inicio de Sesión 
-=======
-	private $_id;
->>>>>>> eda862dd923b1f7b479a44c95f30fc197a5dbfaf
 
->>>>>>> 9f71fc758f8fa1d8e08062ce7c4356da9e5c3776
+
+
 	public function authenticate()
 	{
 		$user=Users::model()->find("LOWER(email)=?",array(strtolower($this->username)));

@@ -6,7 +6,6 @@
  * The followings are the available columns in table 'press_notes':
  * @property integer $id
  * @property integer $id_curriculum
- * @property string $url_doc
  * @property string $type
  * @property string $directed_to
  * @property string $date
@@ -14,6 +13,7 @@
  * @property string $responsible_agency
  * @property string $notas_periodisticas
  * @property string $is_national
+ * @property string $key_words
  */
 class PressNotes extends CActiveRecord
 {
@@ -33,13 +33,14 @@ class PressNotes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, title, is_national', 'required'),
+			array('id_curriculum, title, is_national, key_words', 'required'),
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
-			array('url_doc, type, directed_to, title, responsible_agency, notas_periodisticas, is_national', 'length', 'max'=>45),
+			array('type, directed_to, title, responsible_agency, notas_periodisticas, is_national', 'length', 'max'=>45),
+			array('key_words', 'length', 'max'=>250),
 			array('date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, url_doc, type, directed_to, date, title, responsible_agency, notas_periodisticas, is_national', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, type, directed_to, date, title, responsible_agency, notas_periodisticas, is_national, key_words', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,15 +62,15 @@ class PressNotes extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_curriculum' => 'Id Curriculum',
-			'url_doc' => 'Url Doc',
-			'type' => 'Type',
-			'directed_to' => 'Directed To',
-			'date' => 'Date',
-			'title' => 'Title',
-			'responsible_agency' => 'Responsible Agency',
-			'notas_periodisticas' => 'Notas Periodisticas',
-			'is_national' => 'Is National',
+			'id_curriculum' => 'Id curriculum',
+			'type' => 'Tipo de participación',
+			'directed_to' => 'Dirigido a ',
+			'date' => 'Fecha de publicación',
+			'title' => 'Título de la publicación',
+			'responsible_agency' => 'Dependencia responsable',
+			'notas_periodisticas' => 'Nota periodistica',
+			'is_national' => 'Tipo de publicación',
+			'key_words' => 'Palabras claves',
 		);
 	}
 
@@ -93,7 +94,6 @@ class PressNotes extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('url_doc',$this->url_doc,true);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('directed_to',$this->directed_to,true);
 		$criteria->compare('date',$this->date,true);
@@ -101,6 +101,7 @@ class PressNotes extends CActiveRecord
 		$criteria->compare('responsible_agency',$this->responsible_agency,true);
 		$criteria->compare('notas_periodisticas',$this->notas_periodisticas,true);
 		$criteria->compare('is_national',$this->is_national,true);
+		$criteria->compare('key_words',$this->key_words,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
