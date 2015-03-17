@@ -17,12 +17,7 @@ $this->breadcrumbs=array(
 	<section class="column-center">
 
 	<h3>Normatividad de Investigaciòn</h3>
-
-	<div class="subtitle">
-			________________________<br>
-			<br>
-	</div>
-
+	<hr>
 		<p>El OPD Hospital Civil de Guadalajara cuenta con un marco normativo con el cual se rigen todos sus integrantes. 
 		En este espacio usted podrá consultar las normas más recientes.</p>
 	</section>
