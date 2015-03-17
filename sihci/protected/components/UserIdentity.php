@@ -16,7 +16,6 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-	private $_id;
 
 	public function authenticate()
 	{
@@ -44,17 +43,14 @@ class UserIdentity extends CUserIdentity
 			 // throw new Exception("su sesion ha caducado.");
 		else{
 			$this->_id=$user->id;
-<<<<<<< HEAD
 			$this->setState('email',$user->email);
 			$this->errorCode=self::ERROR_NONE;
 
-=======
 			$this->setState("email",$user->email);
 			// Yii::app()->user->email;
 			// Yii::app()->user->
 			// Yii::app()->user->getState("email");
 			$this->errorCode=self::ERROR_NONE;
->>>>>>> 88f31065013796caa9bf790623c7b19e7c661413
 		}
 		return !$this->errorCode;
 
@@ -63,7 +59,5 @@ class UserIdentity extends CUserIdentity
 	{
 		return $this->_id;
 	}
-	public function getId(){
-		return $this->_id;
-	}
+	
 }

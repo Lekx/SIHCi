@@ -2,6 +2,9 @@
 /* @var $this PostdegreeGraduatesController */
 /* @var $model PostdegreeGraduates */
 /* @var $form CActiveForm */
+echo '<pre>';
+print_r(Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id);
+echo '</pre>';
 ?>
 
 <div class="form">
@@ -26,14 +29,6 @@
 	</div>
 
 	<div class="row buttons">
-		<?php
-			$this->widget('zii.widgets.jui.CJuiButton',array(
-				'buttonType'=>'button',
-			    'name'=>'Borrar',
-			    'caption'=>'Borrar',
-			    'onclick'=>new CJavaScriptExpression('function(){alert("¿Esta usted seguro de borrar estos datos?"); this.blur(); return false;}'),
-			));
-		?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar': 'Guardar'); ?>
 		<?php echo CHtml::resetButton($model->isNewRecord ?  'Borrar' : 'Borrar'); ?>	
     </div>
@@ -42,4 +37,4 @@
   
 
 </div><!-- form -->
-
+	
