@@ -24,15 +24,15 @@ class CongressesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+     public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','admin','delete'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -60,20 +60,21 @@ class CongressesController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+	/*<!--PC01-Registrar datos  Participacion en congresos-->*/
 	public function actionCreate()
 	{
 		$model=new Congresses;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Congresses']))
 		{
 			$model->attributes=$_POST['Congresses'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-		}
-
+				
+		
+	}
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -84,6 +85,7 @@ class CongressesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+	/*<!--PC02-Modificar datos  Participacion en congresos-->*/
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -93,7 +95,7 @@ class CongressesController extends Controller
 
 		if(isset($_POST['Congresses']))
 		{
-			$model->attributes=$_POST['Congresses'];
+			$model->attributes=$_POST['Congresses'];	
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -108,6 +110,7 @@ class CongressesController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+	/*<!--PC03-Eliminar datos  Participacion en congresos-->*/
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -170,4 +173,5 @@ class CongressesController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }

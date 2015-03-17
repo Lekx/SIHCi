@@ -12,7 +12,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Los campos marcados con <span class="required">*</span> son necesarios.</p>
@@ -44,9 +44,7 @@
                 $status = array('Nacional' => 'Nacional','Internacional'=>'Internacional'); 
                 echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
          <?php echo $form->error($model,'type');?>
-
-
-		 
+	 
 	</div>
 
 	<div class="row">
@@ -70,13 +68,12 @@
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
-	<div class="row buttons">
+	<div class="row button">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-		<?php echo CHtml::Button($model->isNewRecord ? 'Gestionar' : 'Gestionar'); ?>
-
+		 <?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Cancelar' : 'Cancelar'); ?>
+		
 	</div>
-
+	
 <?php $this->endWidget(); ?>
-
 </div><!-- form -->
