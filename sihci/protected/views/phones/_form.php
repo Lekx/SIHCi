@@ -15,7 +15,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -27,31 +27,31 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->textField($model,'type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo')); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'country_code'); ?>
-		<?php echo $form->textField($model,'country_code'); ?>
+		<?php echo $form->textField($model,'country_code',array('placeholder'=>'Lada País')); ?>
 		<?php echo $form->error($model,'country_code'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'local_area_code'); ?>
-		<?php echo $form->textField($model,'local_area_code'); ?>
+		<?php echo $form->textField($model,'local_area_code',array('placeholder'=>'Lada Estado')); ?>
 		<?php echo $form->error($model,'local_area_code'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'phone_number'); ?>
-		<?php echo $form->textField($model,'phone_number'); ?>
+		<?php echo $form->textField($model,'phone_number',array('placeholder'=>'Número Telefónico')); ?>
 		<?php echo $form->error($model,'phone_number'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'extension'); ?>
-		<?php echo $form->textField($model,'extension'); ?>
+		<?php echo $form->textField($model,'extension',array('placeholder'=>'Extensión')); ?>
 		<?php echo $form->error($model,'extension'); ?>
 	</div>
 
@@ -63,6 +63,7 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Clear'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

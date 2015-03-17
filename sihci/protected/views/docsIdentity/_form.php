@@ -15,7 +15,6 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -24,22 +23,25 @@
 		<?php echo $form->textField($model,'id_curriculum'); ?>
 		<?php echo $form->error($model,'id_curriculum'); ?>
 	</div>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->dropDownList($model,'type',array('acta'=>'Acta de Nacimiento','pasaporte'=>'Pasaporte',
+															'curp'=>'CURP', 'ife' => 'IFE'), 
+		                                              array('options' => array('1'=>array('selected'=>true))), 
+		                                              array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>250)); ?>
+		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>250, 'placeholder'=>'descripción')); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'doc_id'); ?>
-		<?php echo $form->textField($model,'doc_id',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'doc_id',array('size'=>50,'maxlength'=>50, 'placeholder'=>'documento')); ?>
 		<?php echo $form->error($model,'doc_id'); ?>
 	</div>
 
@@ -50,7 +52,8 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Save'); ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Clear'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

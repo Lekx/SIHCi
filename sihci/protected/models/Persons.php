@@ -25,6 +25,7 @@
  * @property Sponsors[] $sponsors
  * @property SponsorsContacts[] $sponsorsContacts
  */
+
 class Persons extends CActiveRecord
 {
 	/**
@@ -50,7 +51,10 @@ class Persons extends CActiveRecord
 			array('genre', 'length', 'max'=>10),
 			array('country', 'length', 'max'=>50),
 			array('state_of_birth', 'length', 'max'=>45),
-			array('photo_url', 'length', 'max'=>100),
+			array('photo_url','file', 'allowEmpty'=>true,
+			                  'types'=>'png, jpg, jpeg, gif',
+			                  'maxSize'=>array(1024 * 2000),
+			                  'message'=>'Solo se admiten archivos PNG'),
 			array('person_rfc', 'length', 'max'=>13),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -143,4 +147,15 @@ class Persons extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	// protected function beforeSave()
+ //    {
+	// 		$this->birth_date = DateTime::createFromFormat('d/m/Y', $this->birth_date)->format('Y-m-d H:i:s');
+ //        	return parent::beforeSave();
+ //    }
+ //     	protected function afterFind()
+ //    {
+ //       		$this->birth_date = DateTime::createFromFormat('Y-m-d H:i:s', $this->birth_date)->format('d/m/Y');
+ //     		return parent::afterFind();
+ //    }
 }

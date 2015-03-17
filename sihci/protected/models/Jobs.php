@@ -68,15 +68,15 @@ class Jobs extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'organization' => 'Organization',
-			'area' => 'Area',
-			'title' => 'Title',
-			'start_day' => 'Start Day',
-			'start_month' => 'Start Month',
-			'start_year' => 'Start Year',
-			'hospital_unit' => 'Hospital Unit',
-			'rud' => 'Rud',
-			'schedule' => 'Schedule',
+			'organization' => 'Organización',
+			'area' => 'Área',
+			'title' => 'Título o Puesto',
+			'start_day' => 'Día de Inicio',
+			'start_month' => 'Mes de Inicio',
+			'start_year' => 'Año de inicio',
+			'hospital_unit' => 'HU',
+			'rud' => 'RUD',
+			'schedule' => 'Horario de trabajo',
 		);
 	}
 

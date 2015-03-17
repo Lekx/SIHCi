@@ -63,11 +63,11 @@ class Phones extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_person' => 'Id Person',
-			'type' => 'Type',
-			'country_code' => 'Country Code',
-			'local_area_code' => 'Local Area Code',
-			'phone_number' => 'Phone Number',
-			'extension' => 'Extension',
+			'type' => 'Tipo',
+			'country_code' => 'Lada País',
+			'local_area_code' => 'Lada Estado',
+			'phone_number' => 'Número Telefónico',
+			'extension' => 'Extensión',
 			'is_primary' => 'Is Primary',
 		);
 	}

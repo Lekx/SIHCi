@@ -5,32 +5,31 @@
 ?>
 
 <div class="form">
-
+	<?php 
+	Yii::app()->bootstrap->register(); 
+	Yii::app()->clientScript->registerCssFile(
+	Yii::app()->clientScript->getCoreScriptUrl().
+	'/jui/css/base/jquery-ui.css'
+);
+Yii::app()->getClientScript()->registerCoreScript( 'jquery' );
+Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
+?>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'persons-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 	
-	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
-	</div>
+	
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_user'); ?>
-		<?php echo $form->textField($model,'id_user'); ?>
-		<?php echo $form->error($model,'id_user'); ?>
-	</div>
+	
 
 	<div class="row">
 		
@@ -91,6 +90,12 @@
 		                                              array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
+  
+	<div class="row">
+	<!-- Nacionalidad es renderizado de Curriculum.php-->
+		<?php echo $form->textField($curriculum,'native_country',array('size'=>45,'maxlength'=>45, 'placeholder'=>"Nacionalidad")); ?>
+		<?php echo $form->error($curriculum,'native_country'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->textField($model,'state_of_birth',array('size'=>45,'maxlength'=>45, 'placeholder'=>"Estado")); ?>
@@ -106,7 +111,7 @@
 	<div class="row">
 
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
-		<?php echo $form->error($model,'photo_url'); ?>
+		<?php echo $form->error($model,'photo_url'); ?>     
 	</div>
 
 	<div class="row">
@@ -116,8 +121,10 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Save'); ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Limpiar' : 'clear'); ?>
 	</div>
+
 
 <?php $this->endWidget(); ?>
 

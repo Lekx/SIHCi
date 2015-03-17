@@ -3,7 +3,7 @@
 /* @var $model Phones */
 
 $this->breadcrumbs=array(
-	'Phones'=>array('index'),
+	'Datos de Contacto'=>array('index'),
 	'Create',
 );
 
@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Phones</h1>
+<h1>Datos de Contacto</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

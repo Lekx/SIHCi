@@ -48,6 +48,7 @@ class Curriculum extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+	
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that

@@ -43,6 +43,7 @@ class DocsIdentity extends CActiveRecord
 		);
 	}
 
+
 	/**
 	 * @return array relational rules.
 	 */
@@ -63,9 +64,9 @@ class DocsIdentity extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'type' => 'Type',
-			'description' => 'Description',
-			'doc_id' => 'Doc',
+			'type' => 'Nombre del Documento',
+			'description' => 'Descripción',
+			'doc_id' => 'Documento',
 			'is_Primary' => 'Is Primary',
 		);
 	}

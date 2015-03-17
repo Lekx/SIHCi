@@ -5,6 +5,8 @@
  * LoginForm is the data structure for keeping
  * user login form data. It is used by the 'login' action of 'SiteController'.
  */
+
+//LO01-Inicio de sesión. 
 class LoginForm extends CFormModel
 {
 	public $username;

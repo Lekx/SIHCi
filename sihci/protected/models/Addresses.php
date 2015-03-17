@@ -40,6 +40,7 @@ class Addresses extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('country, zip_code, state, delegation, city, town, colony, external_number', 'required'),
+			array('zip_code', 'length', 'max' => 6),
 			array('zip_code', 'numerical', 'integerOnly'=>true),
 			array('country, city, street', 'length', 'max'=>50),
 			array('state', 'length', 'max'=>20),
@@ -73,16 +74,16 @@ class Addresses extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'country' => 'Country',
-			'zip_code' => 'Zip Code',
-			'state' => 'State',
-			'delegation' => 'Delegation',
-			'city' => 'City',
-			'town' => 'Town',
-			'colony' => 'Colony',
-			'street' => 'Street',
-			'external_number' => 'External Number',
-			'internal_number' => 'Internal Number',
+			'country' => 'País',
+			'zip_code' => 'Código Postal',
+			'state' => 'Estado',
+			'delegation' => 'Delegación',
+			'city' => 'Municipio',
+			'town' => 'Ciudad',
+			'colony' => 'Colonia',
+			'street' => 'Calle',
+			'external_number' => 'Numero Exterior',
+			'internal_number' => 'Numero Interior',
 		);
 	}
 
