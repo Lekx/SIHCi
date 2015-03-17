@@ -76,6 +76,7 @@ class SiteController extends Controller
 	/**
 	 * Displays the login page
 	 */
+	//LO01-Inicio de sesión. 
 	public function actionLogin()
 	{
 		
@@ -109,20 +110,10 @@ class SiteController extends Controller
 	   				   $existe=true;
 	   				}
 		   				if ($existe === true) {
-								// validate user input and redirect to the previous page if valid
 								if($model->validate() && $model->login()){
-									// $conexionDB=Yii::app()->db;
-									// $query = "SELECT id from users where email='$model->username'";
-
-									// $session = new CHttpSession;
-									// $session->open();
-									// $session['id']=$conexionDB->createCommand($query);
-									// Yii::app()->user->id = $session['id'];
-
 									$this->redirect(Yii::app()->user->returnUrl);
 								}
 							}else{
-
 			   				$msg = "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
 			   			}
 		}
@@ -133,12 +124,14 @@ class SiteController extends Controller
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
+
+	// LO02 – Cerrar sesión 
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-
+    //LO03 – Recuperar contraseña 
 	public function actionRecoveryPassword()
 	{
 		$model = new RecoveryPassword;
@@ -212,6 +205,7 @@ class SiteController extends Controller
    		}
 		$this->render('recoveryPassword', array('model' => $model, 'msg' => $msg));
 	}
+	//LO03 – Recuperar contraseña 
 	public function actionChangePassword($key){
 
             $model = new ChangePassword;

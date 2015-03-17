@@ -60,7 +60,7 @@ class ResearchAreas extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'name' => 'Name',
+			'name' => 'Nombre de investigación',
 		);
 	}
 

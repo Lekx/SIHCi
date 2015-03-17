@@ -3,8 +3,8 @@
 /* @var $model Jobs */
 
 $this->breadcrumbs=array(
-	'Jobs'=>array('index'),
-	'Create',
+	'Datos Laborales'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Jobs</h1>
+<h1>Datos laborales</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

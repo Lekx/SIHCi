@@ -49,6 +49,8 @@ class GradesController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
+
+	 //CV04-Desplegar datos.  
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -60,6 +62,8 @@ class GradesController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
+	//CV01-Registro de datos  
 	public function actionCreate()
 	{
 		$model=new Grades;
@@ -84,6 +88,7 @@ class GradesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+	//CV02-Modificar registro 
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);

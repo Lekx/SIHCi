@@ -51,13 +51,14 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'last_name1',
 		'last_name2',
 		'marital_status',
+		'photo_url',
 		/*
 		'genre',
 		'birth_date',
 		'country',
 		'state_of_birth',
 		'curp_passport',
-		'photo_url',
+		
 		'person_rfc',
 		*/
 		array(

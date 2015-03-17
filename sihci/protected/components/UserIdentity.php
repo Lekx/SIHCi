@@ -16,37 +16,20 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-
+	
+   //LO01 – Inicio de Sesión 
 	public function authenticate()
 	{
 		$user=Users::model()->find("LOWER(email)=?",array(strtolower($this->username)));
-		/*$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);*/
-
-/*		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;*/
+		
 
 		if($user==null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if($this->password!==$user->password)
+		else if(sha1(md5(sha1($this->password)))!==$user->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		// else if($user->status=="inactivo")
-		// 	 echo"<script>alert('debe ser activo, porfavor revisa tu correo')</script>";
-			 // throw new Exception("su sesion ha caducado.");
 		else{
 			$this->_id=$user->id;
 			$this->setState("email",$user->email);
-			// Yii::app()->user->email;
-			// Yii::app()->user->
-			// Yii::app()->user->getState("email");
 			$this->errorCode=self::ERROR_NONE;
 		}
 		return !$this->errorCode;
