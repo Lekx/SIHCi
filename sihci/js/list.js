@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
 	// body...
 $('.cbp-hssubmenu1 > li').hide();
 

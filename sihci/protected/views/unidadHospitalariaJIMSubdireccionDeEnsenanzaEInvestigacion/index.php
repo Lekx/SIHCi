@@ -20,11 +20,8 @@ $this->breadcrumbs=array(
 
 
 	<section class="column-center">
-			<p><h2>Subdirección de Enseñanza e Investigación.</h2></p><br>
-				<div class="subtitle">
-					________________________<br>
-					<br>
-				</div>
+			<p><h2>Subdirección de Enseñanza e Investigación.</h2></p>
+							<hr>
 				<p>El 31 de marzo 1997 se aprueba la Ley de Creación d
 				e OPD Hospital Civil de Guadalajara donde se define
 				su conformación, facultades, atribuciones. Es un Or

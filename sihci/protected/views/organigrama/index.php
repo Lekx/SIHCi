@@ -19,13 +19,8 @@ $this->breadcrumbs=array(
 	<section class="column-center">
 
 		<h2>Organigrama</h2>
+		<hr>
 
-
-		<div class="subtitle">
-		________________________<br>
-		<br>
-		</div>
-		
 		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/organigrama/img/org1.png"; ?>">
 	
 
