@@ -38,9 +38,11 @@ class PressNotes extends CActiveRecord
 			array('type, directed_to, title, responsible_agency, notas_periodisticas, is_national', 'length', 'max'=>45),
 			array('key_words', 'length', 'max'=>250),
 			array('date', 'safe'),
-			// The following rule is used by search().
+            array('date','compare','compareValue'=>date('Y-m-d'),'operator'=>'<='),	
+            // The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, type, directed_to, date, title, responsible_agency, notas_periodisticas, is_national, key_words', 'safe', 'on'=>'search'),
+			array('date','compare','compareValue'=>date('Y-m-d'),'operator'=>'<='),	
 		);
 	}
 
@@ -118,4 +120,17 @@ class PressNotes extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	protected function beforeSave()
+    {
+			$this->date = DateTime::createFromFormat('d/m/Y', $this->date)->format('Y-m-d');
+        	return parent::beforeSave();
+    }
+
+   	protected function afterFind()
+    {
+  
+       		$this->date = DateTime::createFromFormat('Y-m-d', $this->date)->format('d/m/Y');
+     		return parent::afterFind();
+    }
 }

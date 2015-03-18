@@ -12,7 +12,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -20,24 +20,30 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'id_curriculum'); ?>
-		<?php echo $form->error($model,'id_curriculum'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->dropDownList($model,'type',array('placeholder'=>'Tipo de participación')); ?>
+		<?php echo $form->dropDownList($model,'type',array('Tipo de participación ','Demostraciones','Ferias Cientificas y Tecnologi',
+		'Ferias Empresariales','Medios Impresos','Radio','Revistas de Divulgacion','Seminarios','Simposius','Talleres','Teatro','Televisión','Videos')); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->dropDownList($model,'directed_to',array('Dirigido a','Empresarios','Estudiantes','Funcionarios',
-		'Público en general'));
-	    ?>
+		'Público en general','Sector Académico','Sector Privado','Sector Público','Sector Social')); ?>
 		<?php echo $form->error($model,'directed_to'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'date'); ?>
+		<?php
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		    'model' => $model,
+		    'language'=> 'es',
+		    'attribute' => 'date',
+		    'htmlOptions' => array(
+		    		'size' => '10',         
+		        	'maxlength' => '10', 
+		        	'placeholder'=>"Fecha de la publicación"   
+		    ),
+		));
+		?>
 		<?php echo $form->error($model,'date'); ?>
 	</div>
 
@@ -57,8 +63,9 @@
 	</div>
 
 	<div class="row">
-		<?php $status = array('Nacional' => 'Nacional','Extranjero'=>'Extranjero'); echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));
-        ?>
+		<?php $status = array('Nacional' => 'Nacional','Extranjero'=>'Extranjero'); 
+		    echo $form-> RadioButtonList($model,'is_national' ,$status, array ('separador' => '')); 
+		 ?>
 		<?php echo $form->error($model,'is_national'); ?>
 	</div>
 
@@ -68,7 +75,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
 		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
 
 	</div>
