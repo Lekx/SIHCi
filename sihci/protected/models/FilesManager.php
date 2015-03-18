@@ -74,6 +74,7 @@ class FilesManager extends CActiveRecord
 		return parent::model($className);
 	}
 
+
 	protected function beforeSave()
     {
 

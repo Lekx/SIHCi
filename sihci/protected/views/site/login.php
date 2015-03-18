@@ -11,8 +11,6 @@ $this->breadcrumbs=array(
 ?>
 
 <h1>Iniciar Sesión</h1>
-<!-- 
-<p>Please fill out the following form with your login credentials:</p> -->
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -23,10 +21,6 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-<<<<<<< HEAD
-=======
-<?php echo sha1(md5(sha1("123456"))); ?>
->>>>>>> 9f71fc758f8fa1d8e08062ce7c4356da9e5c3776
 <?php echo $msg; ?>
 	<div class="row">
 		<?php echo $form->textField($model,'username', array('placeholder'=>"Email")); ?>

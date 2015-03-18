@@ -74,6 +74,7 @@ class ResearchAreasController extends Controller
 		if(isset($_POST['ResearchAreas']))
 		{
 			$model->attributes=$_POST['ResearchAreas'];
+			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

@@ -15,61 +15,85 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-<<<<<<< HEAD
+
 	<p class="note">Los Campos <span class="required">*</span> Son requeridos.</p>
 	<?php Yii::app()->bootstrap->register(); ?>
 	<?php echo $form->errorSummary($model); ?>
 	<?php echo $form->errorSummary($modelPersons); ?>
-=======
+
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
->>>>>>> 88f31065013796caa9bf790623c7b19e7c661413
+
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id_roles'); ?>
-		<?php echo $form->textField($model,'id_roles'); ?>
-		<?php echo $form->error($model,'id_roles'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'email',array('placeholder'=>"Email")); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 	<div class="row">
+		<p>Verificacion de Email</p>
+		 <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificacion de Email" ></input>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'password',array('placeholder'=>"Minimo 6 maximo 15 caracteres")); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'registration_date'); ?>
-		<?php echo $form->textField($model,'registration_date'); ?>
-		<?php echo $form->error($model,'registration_date'); ?>
+		<p>Verificacion de contraseña</p>
+		<input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificacion de Contraseña"></input>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'activation_date'); ?>
-		<?php echo $form->textField($model,'activation_date'); ?>
-		<?php echo $form->error($model,'activation_date'); ?>
+	        <p>Pais</p>
+	        <?php
+	        $this->widget(
+	            'yiiwheels.widgets.formhelpers.WhCountries',
+	            array(
+	                'name' => 'Persons[country]',
+	                'id' => 'Persons_country',
+	                'value' => 'MX',
+	                'useHelperSelectBox' => true,
+	                'pluginOptions' => array(
+	                    'country' => '',
+	                    'language' => 'es_ES',
+	                    'flags' => true
+	                )
+	            )
+	        );
+	        ?>
+    </div>
+
+	<div class="row">
+		<?php echo $form->labelEx($modelPersons,'names'); ?>
+		<?php echo $form->textField($modelPersons,'names',array('placeholder'=>"Nombre/s completos.")); ?>
+		<?php echo $form->error($modelPersons,'names'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'act_react_key'); ?>
-		<?php echo $form->textField($model,'act_react_key',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'act_react_key'); ?>
+		<?php echo $form->labelEx($modelPersons,'last_name1'); ?>
+		<?php echo $form->textField($modelPersons,'last_name1',array('placeholder'=>"Apellido Paterno")); ?>
+		<?php echo $form->error($modelPersons,'last_name1'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>15,'maxlength'=>15)); ?>
-		<?php echo $form->error($model,'status'); ?>
+		<?php echo $form->labelEx($modelPersons,'last_name2'); ?>
+		<?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apelido Materno")); ?>
+		<?php echo $form->error($modelPersons,'last_name2'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($modelPersons,'person_rfc'); ?>
+		<?php echo $form->textField($modelPersons,'person_rfc',array('placeholder'=>"Pasaporte/Curp")); ?>
+		<?php echo $form->error($modelPersons,'person_rfc'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

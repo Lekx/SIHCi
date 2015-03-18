@@ -20,17 +20,12 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
-
-
+	
 	<?php echo $form->errorSummary($model); ?>
 	
-	
-
-	
-
 	<div class="row">
 		
 		<?php echo $form->textField($model,'names',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
@@ -58,19 +53,30 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-		<?php echo $form->error($model,'birth_date'); ?>
-	    <?php
-			$this->widget('zii.widgets.jui.CJuiDatePicker', 
-				array(
-					    'model' => $model,
-					    'language'=> 'es',
-					    'attribute' => 'birth_date',
-					    'htmlOptions' => array(
-					    			'size' => '10',         
-					        		'maxlength' => '10', 
-					        		'placeholder'=>"Fecha de Nacimiento"),
-					));
-		?>
+    <?php
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		    'language'=> 'es',
+		    'attribute' => 'birth_date',
+		    'name' => 'birth_date',
+		    'value' =>$model->birth_date,
+		    'model' => $model,
+		    'flat'=>true,
+		    'options' => array(
+			    		'showAnim' => 'drop', 
+			    		'showButtonPanel' => true,
+			    		'dateFormat' => 'yy-m-d',
+			    		'changeMonth'=>true, //cambiar por Mes
+			    		'changeYear'=>true, //cambiar por Año
+			    		'yearRange'=>'1920:2099', //minimo año
+			    		'minDate' => '1920-01-01', //minima fecha
+			   			'maxDate' => 'now-5475',
+		    	),
+		    'htmlOptions' => array(
+		    			'style'=>'', 
+		        		'placeholder'=>"Fecha de Nacimiento"),
+				));
+	?>
+	<?php echo $form->error($model,'birth_date'); ?>
 	</div>
 
 	<div class="row">
@@ -83,11 +89,24 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'country'); ?>
-		<?php echo $form->dropDownList($model,'country',array('Mexico'=>'México','2'=>'Estados Unidos','3'=>'Italia',
-			                                                '4'=>'España','5'=>'Rusia','6'=>'Costa Rica',
-			                                                '7'=>'Panamá'), 
-		                                              array('options' => array('1'=>array('selected'=>true))), 
-		                                              array('size'=>10,'maxlength'=>10)); ?>
+		<?php
+		$this->widget(
+            'yiiwheels.widgets.formhelpers.WhCountries',
+            array(
+                'name' => 'country',
+                'value' => 'US',
+                'useHelperSelectBox' => true,
+                'pluginOptions' => array(
+                    'country' => 'US',
+                    'language' => 'es_ES',
+                    'flags' => true
+                ),
+                'htmlOptions' => array(
+						   'data-available' => 'DE,MX'
+						),
+            )
+        );
+        ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
   
@@ -121,8 +140,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Save'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Limpiar' : 'clear'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
 	</div>
 
 

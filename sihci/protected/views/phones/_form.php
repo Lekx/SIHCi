@@ -62,8 +62,8 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Clear'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
