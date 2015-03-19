@@ -19,10 +19,6 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->textField($model,'id_curriculum', array('placeholder'=>'id curriculum')); ?>
-		<?php echo $form->error($model,'id_curriculum'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto')); ?>
@@ -48,19 +44,27 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'country',array('size'=>50,'maxlength'=>50,'placeholder'=>'Pais')); ?>
-		<?php echo $form->error($model,'country'); ?>
+		 <?php
+	        $this->widget(
+	            'yiiwheels.widgets.formhelpers.WhCountries',
+	            array(
+	                'name' => 'Congresses[country]',
+	                'id' => 'Congresses_country',
+	                'value' => '',
+	                'useHelperSelectBox' => true,
+	                'pluginOptions' => array(
+	                    'country' => '',
+	                    'language' => 'es_ES',
+	                    'flags' => true
+	                )
+	            )
+	        );
+	        ?>
 	</div>
 
 	<div class="row">
-        <label for="tipo">Tipo de Trabajo</label>
-		<select name="Congresses[work_type]" id="congresses">
-			<option values= " "></option>
-			<option values= "Conferencia Magistral">Conferencia Magistral</option>
-			<option values="Articulo in Extenso">Articulo in Extenso</option>
-			<option values="Ponencia">Ponencia</option>
-			<option values="Poster">Poster</option>
-		</select>
+        <?php echo $form->dropDownList($model,'work_type',array('','Conferencia Magistral','Articulo in Extenso','Ponencia','Poster'));
+     ?>
 	</div>
 
 	<div class="row">

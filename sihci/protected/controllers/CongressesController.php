@@ -70,6 +70,7 @@ class CongressesController extends Controller
 		if(isset($_POST['Congresses']))
 		{
 			$model->attributes=$_POST['Congresses'];
+			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 				
