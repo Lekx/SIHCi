@@ -51,6 +51,7 @@ class PostdegreeGraduatesController extends Controller
 		if(isset($_POST['PostdegreeGraduates']))
 		{
 				$model->attributes=$_POST['PostdegreeGraduates'];
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 							
 				if($model->save())
 				{
@@ -74,10 +75,11 @@ class PostdegreeGraduatesController extends Controller
 		if(isset($_POST['PostdegreeGraduates']))
 		{
 			$model->attributes=$_POST['PostdegreeGraduates'];
-				if($model->save())
-				{
-				   	$this->redirect(array('view','id'=>$model->id));
-				}
+
+			if($model->save())
+			{
+			   	$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(

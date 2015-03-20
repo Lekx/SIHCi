@@ -23,10 +23,8 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-<<<<<<< HEAD
-=======
 <?php echo sha1(md5(sha1("123456"))); ?>
->>>>>>> 9f71fc758f8fa1d8e08062ce7c4356da9e5c3776
+
 <?php echo $msg; ?>
 	<div class="row">
 		<?php echo $form->textField($model,'username', array('placeholder'=>"Email")); ?>
