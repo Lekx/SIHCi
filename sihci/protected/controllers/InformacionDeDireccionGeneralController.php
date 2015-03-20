@@ -4,7 +4,7 @@ class InformacionDeDireccionGeneralController extends Controller
 {
 	public function actionIndex()
 	{	
-		$this->layout = 'informativas';
+		$this->layout = 'system';
 		$this->render('index');
 	}
 
