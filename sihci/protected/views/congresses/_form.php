@@ -12,17 +12,13 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Los campos marcados con <span class="required">*</span> son necesarios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->textField($model,'id_curriculum', array('placeholder'=>'id curriculum')); ?>
-		<?php echo $form->error($model,'id_curriculum'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto')); ?>
@@ -48,19 +44,28 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'country',array('size'=>50,'maxlength'=>50,'placeholder'=>'Pais')); ?>
-		<?php echo $form->error($model,'country'); ?>
+		  <p>Pais</p>
+	        <?php
+	        $this->widget(
+	            'yiiwheels.widgets.formhelpers.WhCountries',
+	            array(
+	                'name' => 'Congresses[country]',
+	                'id' => 'Congresses_country',
+	                'value' => 'MX',
+	                'useHelperSelectBox' => true,
+	                'pluginOptions' => array(
+	                    'country' => '',
+	                    'language' => 'es_ES',
+	                    'flags' => true
+	                )
+	            )
+	        );
+	        ?>	
 	</div>
 
 	<div class="row">
-        <label for="tipo">Tipo de Trabajo</label>
-		<select name="Congresses[work_type]" id="congresses">
-			<option values= " "></option>
-			<option values= "Conferencia Magistral">Conferencia Magistral</option>
-			<option values="Articulo in Extenso">Articulo in Extenso</option>
-			<option values="Ponencia">Ponencia</option>
-			<option values="Poster">Poster</option>
-		</select>
+        <?php echo $form->dropDownList($model,'work_type',array(''=>'','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));
+     ?>
 	</div>
 
 	<div class="row">
@@ -68,12 +73,25 @@
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
+   
 	<div class="row button">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-		 <?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Cancelar' : 'Cancelar'); ?>
-		
-	</div>
+
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+        <input type="button" onClick="cleanUp()" value="Borrar">
 	
+		 <script>
+    function cleanUp()
+     {
+        var text;
+        var result = confirm("¿Esta usted seguro de limpiar estos datos?");
+        if (result == true) 
+          $('[type^=text]').val('');
+        else s
+        document.getElementById("demo").innerHTML = txt;
+            }
+        </script>
+	</div>	
+	
+
 <?php $this->endWidget(); ?>
 </div><!-- form -->
