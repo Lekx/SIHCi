@@ -19,12 +19,6 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id_user'); ?>
-		<?php echo $form->textField($model,'id_user'); ?>
-		<?php echo $form->error($model,'id_user'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'id_actual_address'); ?>
 		<?php echo $form->textField($model,'id_actual_address'); ?>
 		<?php echo $form->error($model,'id_actual_address'); ?>

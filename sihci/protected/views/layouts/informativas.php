@@ -24,14 +24,14 @@
 	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
 	<?php 
-	$baseUrl = Yii::app()->baseUrl;
-	$cs = Yii::app()->getClientScript();
-	$cs->registerScriptFile($baseUrl.'/js/list.js');
-	$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
-	$cs->registerScriptFile($baseUrl.'/js/slideshow.js');
-	$cs->registerScriptFile($baseUrl.'/js/scroll.js');
-	$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
-	$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
+		$baseUrl = Yii::app()->baseUrl;
+		$cs = Yii::app()->getClientScript();
+		$cs->registerScriptFile($baseUrl.'/js/list.js');
+		$cs->registerScriptFile($baseUrl.'/js/prefixfree.min');
+		$cs->registerScriptFile($baseUrl.'/js/slideshow.js');
+		$cs->registerScriptFile($baseUrl.'/js/scroll.js');
+		$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
+		$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
 	?>
 
 	<?php Yii::app()->bootstrap->register(); ?>
@@ -70,11 +70,7 @@
 </script>
 
 
-
-
-
 </head>
-
 <body>
 	<section>
 		<div class="slidingDiv">
@@ -89,7 +85,6 @@
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
 							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
 							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
-							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
 							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
@@ -108,7 +103,7 @@
 						</ul>
 					</li>
 					<li>
-					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
+					<h6><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></h6>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -153,7 +148,7 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('ProInvenhci',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('ProInvenhci',array('desplegarProINVENHCI/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -169,12 +164,12 @@
 							<li>
 								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
-								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
-								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('desplegarInformacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -212,7 +207,6 @@
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
 							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
 							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
-							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
 							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
@@ -231,7 +225,7 @@
 						</ul>
 					</li>
 					<li>
-					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
+					<h6><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></h6>
 						<ul class="cbp-hssubmenu1">
 						</ul>
 					</li>
@@ -276,7 +270,7 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('ProInvenhci',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('ProInvenhci',array('desplegarProINVENHCI/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -292,12 +286,12 @@
 							<li>
 								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
-								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
-								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('desplegarInformacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -363,7 +357,7 @@
 					Menu
 				</button>
 
-				<input type="text" class="form-control searchBarMain" placeholder="Search" aria-describedby="basic-addon1">
+				<input type="text" id="searchBarMain1" class="form-control searchBarMain" placeholder="Search" aria-describedby="basic-addon1">
 
 				<button id="search" type="button" class="searchButton">
 
@@ -371,7 +365,7 @@
 					Buscar
 				</button>
 		</div>
-		<div id="searchBarResults" style="display:none;position:absolute;left:900px;background-color:#798C9D;top:200px;z-index:10000;padding:5px;width:500px;">estoy bien escondido</div>
+		<div id="searchBarResults">estoy bien escondido</div>
 	</section>
 
 
@@ -400,7 +394,6 @@
 							<li><?php echo CHtml::link('Registro RENIECYT',array('RegistroReniecyt/index')); ?></li>
 							<li><?php echo CHtml::link('Transparencia',array('desplegarTransparencia/index')); ?></li>
 							<li><?php echo CHtml::link('Comités',array('unidadHospitalariaJimComiteDeEtica/index')); ?></li>
-							<li><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></li>
 							<li><?php echo CHtml::link('Plano de ubicación SGEI OPD',array('planoDeUbicacionDeMapaDeOficinaSGEIOPD/index')); ?></li>
 						</ul>
 					</li>
@@ -419,7 +412,7 @@
 						</ul>
 					</li>
 					<li>
-					<h6><?php echo CHtml::link('FInEHC',array('site/index')); ?></h6>
+					<h6><?php echo CHtml::link('FInEHC',array('finehc/index')); ?></h6>
 						<ul class="cbp-hssubmenu">
 						</ul>
 					</li>
@@ -464,7 +457,7 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('ProInvenhci',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('ProInvenhci',array('desplegarProINVENHCI/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -480,12 +473,12 @@
 							<li>
 								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
-								<li><?php echo CHtml::link('Redacción Científicas',array('Site/index')); ?></li>
-								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('Site/index')); ?></li>
+								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
+								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Programas de coperación internacional en investigación',array('desplegarInformacion/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -509,20 +502,18 @@
 					</div>
 			</div>
 			</section>
-			<section class="footersection">
-				<div class="copyrigths">
-					<div id="copy">
-					<p> © 2015 Todos los derechos reservados Sistema de Gestión y Administración de Protocolos de Investigación Médica en el Hospital Civil.</p>
-					<p><a>Condiciones de uso</a> / <a>Aviso de privacidad</a></p>
-					</div>
-				</div>
-				<div class="loginfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
-				Ingresar a tu cuenta</div>
-				<div class="singinfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
-				Crear una cuenta</div>
-			</section>
-
-	
+	<section class="footersection">
+		<div class="copyrigths">
+			<div id="copy">
+			<p> © 2015 Todos los derechos reservados Sistema de Gestión y Administración de Protocolos de Investigación Médica en el Hospital Civil.</p>
+			<p><a>Condiciones de uso</a> / <a>Aviso de privacidad</a></p>
+			</div>
+		</div>
+		<div class="loginfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
+		Ingresar a tu cuenta</div>
+		<div class="singinfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
+		Crear una cuenta</div>
+	</section>
 
 </body>
 </html>

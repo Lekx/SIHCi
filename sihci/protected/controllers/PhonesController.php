@@ -74,6 +74,7 @@ class PhonesController extends Controller
 		if(isset($_POST['Phones']))
 		{
 			$model->attributes=$_POST['Phones'];
+			$model->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

@@ -1,9 +1,9 @@
 <?php 
 	if(empty($results))
-		echo "<h3> No se encontraron resultados para su busqueda:<b> \"".$keyword."\"</b> </h3>";
+		echo "No se encontraron resultados para su busqueda:\"".$keyword."\"";
 	else
-		echo  "<h3> El resultado de la busqueda para <b>\"".$keyword."\"</b> fue:</h3><hr>";
+		echo  "El resultado de la busqueda para <b>\"".$keyword."\" fue:";
 		
 	foreach($results as $index => $subarray)
-		echo "<h2><a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["title"]."</a></h2>"."<a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["desc"]."</a><br><hr>";
+		echo "<a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["title"]."</a>"."<a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["desc"]."</a><hr>";
  ?>

@@ -67,9 +67,12 @@ class CurriculumController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+
 		if(isset($_POST['Curriculum']))
 		{
 			$model->attributes=$_POST['Curriculum'];
+			$model->id_user = Yii::app()->user->id;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

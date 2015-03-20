@@ -20,21 +20,22 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($details,'password'); ?>
-		<?php echo $form->passwordField($details,'password'); ?>
+		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off')); ?>
 		<?php echo $form->error($details,'password'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($details,'password1'); ?>
-		<?php echo $form->passwordField($details,'password1'); ?>
-		<?php echo $form->error($details,'password1'); ?>
+
+
+	<div>
+		Nueva Contraseña:</br>
+		<input type="password" name="Account[password2]" id="Account_password2">
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($details,'password2'); ?>
-		<?php echo $form->passwordField($details,'password2'); ?>
-		<?php echo $form->error($details,'password2'); ?>
+	<div>
+		Repetir Nueva Contraseña:</br>
+		<input type="password" name="Account[password22]" id="Account_password22">
 	</div>
+	
 
 	<div class="row buttons">
 			<?php echo CHtml::submitButton("guardar"); ?>
@@ -43,3 +44,6 @@
 	<?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+
+

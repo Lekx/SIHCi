@@ -7,7 +7,7 @@
  */
 class UserIdentity extends CUserIdentity
 {
-	private $_id;
+	
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -17,9 +17,9 @@ class UserIdentity extends CUserIdentity
 	 * @return boolean whether authentication succeeds.
 	 */
 
-	
    //LO01 – Inicio de Sesión 
 
+	private $_id;
 
 
 	public function authenticate()
@@ -36,8 +36,9 @@ class UserIdentity extends CUserIdentity
 			$this->setState('email',$user->email);
 			$this->errorCode=self::ERROR_NONE;
 
-			$this->setState("email",$user->email);
-			$this->errorCode=self::ERROR_NONE;
+
+			
+
 		}
 		return !$this->errorCode;
 
@@ -47,4 +48,8 @@ class UserIdentity extends CUserIdentity
 		return $this->_id;
 	}
 	
+
 }
+
+}
+

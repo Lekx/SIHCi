@@ -47,6 +47,7 @@ class PersonsController extends Controller
 	}
 
 
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -54,7 +55,6 @@ class PersonsController extends Controller
 	//CV04-Desplegar datos. 
 	public function actionView($id)
 	{
-		//$id = Yii::app()->user->id;
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -72,9 +72,7 @@ class PersonsController extends Controller
 		$curriculum = new Curriculum;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		if(isset($_POST['clear']))
-				$this->redirect(array('index'));
-
+		
 		if(isset($_POST['Persons']))
 		{
 			$model->attributes=$_POST['Persons'];
@@ -86,14 +84,21 @@ class PersonsController extends Controller
 			if ($model->validate()) {
 				
 				if($model->photo_url != ''){
-
+					//mkdir(__DIR__ .'SIHCi/sihci/users/'.$model->id_user.'/', 0777);
 					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
+					//$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
 					if($model->save()){
 
 			   			$this->redirect(array('view','id'=>$model->id));
 
 			   		}
 
+				}else{
+					if($model->save()){
+
+			   			$this->redirect(array('view','id'=>$model->id));
+
+			   		}
 				}
 
 			}//end if validate
@@ -126,19 +131,29 @@ class PersonsController extends Controller
    					//	$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/perfil.png');
 					// 	$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/perfil.png';
 					// }
-					if($model->save()){
-						if($model->photo_url != ''){
-						$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
+				if($model->photo_url != ''){
+					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
 				//		$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
-			   		}
+					if($model->save()){
 						$this->redirect(array('view','id'=>$model->id));
+			   		}
+						
+					
+				}else{
+					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png';
+					if($model->save()){
+						$this->redirect(array('view','id'=>$model->id));
+
 					}
-<<<<<<< HEAD
+
 				}
-=======
+
+			   		}
+				}
+
 				
 			}
->>>>>>> eda862dd923b1f7b479a44c95f30fc197a5dbfaf
+
 			
 		}
 

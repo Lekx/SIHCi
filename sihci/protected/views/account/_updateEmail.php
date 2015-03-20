@@ -17,25 +17,23 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($details,'email'); ?>
-		<?php echo $form->textField($details,'email'); ?>
+		<?php echo $form->textField($details,'email',array('value' => '')); ?>
 		<?php echo $form->error($details,'email'); ?>
 	</div>
-		<div class="row">
-		<?php echo $form->labelEx($details,'email'); ?>
-		<?php echo $form->textField($details,'email'); ?>
-		<?php echo $form->error($details,'email'); ?>
+	<div>
+		Nuevo Correo:</br>
+	<input type="text" name="Account[email2]" id="Account_email2">
 	</div>
 
+	<div>
+		Repetir Nuevo Correo:</br>
+		<input type="text" name="Account[email22]" id="Account_email22">
+	</div>
 
-	
-<input type="text">
-<input type="text">
-<select><option></option><option>1</option><option>2</option></select>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton("GUARDAR"); ?>
-
 		<input type="reset" value="BORRAR" >
-			<?php echo CHtml::link("CANCELAR",array('account/infoAccount')); ?>
+		<?php echo CHtml::link("CANCELAR",array('account/infoAccount')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

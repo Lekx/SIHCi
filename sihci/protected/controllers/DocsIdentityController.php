@@ -37,7 +37,7 @@ class DocsIdentityController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -74,6 +74,7 @@ class DocsIdentityController extends Controller
 		if(isset($_POST['DocsIdentity']))
 		{
 			$model->attributes=$_POST['DocsIdentity'];
+			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

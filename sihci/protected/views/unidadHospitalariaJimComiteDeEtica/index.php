@@ -20,10 +20,7 @@ $this->breadcrumbs=array(
 
 	<section class="column-center">
 		<h1>Informacion de Documentos !</h1>
-			<div class="subtitle">
-				________________________<br>
-				<br>
-			</div>
+	 	<hr>
 	</section>
 
 		<section class="column-right">
