@@ -42,7 +42,6 @@ class PressNotes extends CActiveRecord
             // The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, type, directed_to, date, title, responsible_agency, notas_periodisticas, is_national, key_words', 'safe', 'on'=>'search'),
-			array('date','compare','compareValue'=>date('Y-m-d'),'operator'=>'<='),	
 		);
 	}
 
@@ -129,7 +128,6 @@ class PressNotes extends CActiveRecord
 
    	protected function afterFind()
     {
-  
        		$this->date = DateTime::createFromFormat('Y-m-d', $this->date)->format('d/m/Y');
      		return parent::afterFind();
     }

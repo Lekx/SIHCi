@@ -20,14 +20,27 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->dropDownList($model,'type',array('Tipo de participación ','Demostraciones','Ferias Cientificas y Tecnologi',
-		'Ferias Empresariales','Medios Impresos','Radio','Revistas de Divulgacion','Seminarios','Simposius','Talleres','Teatro','Televisión','Videos')); ?>
+		<?php echo $form->dropDownList($model,'type',array(
+				'Demostraciones'=>'Demostraciones','Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologi',
+				'Ferias Empresariales'=>'Ferias Empresariales','Medios Impresos'=>'Medios Impresos','Radio'=>'Radio',
+				'Revistas de Divulgacion'=>'Revistas de Divulgacion','Seminarios'=>'Simposius','Talleres'=>'Talleres',
+				'Teatro'=>'Teatro','Televisión'=>'Televisión','Vidos'=>'Vidos'
+			),
+			array('empty'=>('Tipo de participación '))	
+		  ); 
+		?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->dropDownList($model,'directed_to',array('Dirigido a','Empresarios','Estudiantes','Funcionarios',
-		'Público en general','Sector Académico','Sector Privado','Sector Público','Sector Social')); ?>
+		<?php echo $form->dropDownList($model,'directed_to',
+		    array(
+				'Empresarios'=>'Empresarios','Estudiantes'=>'Estudiantes','Funcionarios'=>'Funcionarios',
+				'Público en general'=>'Público en general','Sector Académico'=>'Sector Académico','Sector Privado'=>'Sector Privado',
+				'Sector Público'=>'Sector Público','Sector Social'=>'Sector Social'
+			),
+		    array('empty'=>'Dirigido a')); 
+		?>
 		<?php echo $form->error($model,'directed_to'); ?>
 	</div>
 
@@ -76,7 +89,20 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+        <input type='button' onclick='cleanUp()' value="Limpiar"> 
+      	
+      	<script>
+			function cleanUp()
+			{
+			    var text;
+			    var result = confirm("¿Esta usted seguro de limpiar estos datos?");
+			    if (result == true) 
+			    	 $('[id^=PressNotes_]').val('');
+			    else 
+
+			    document.getElementById("demo").innerHTML = text;
+			}
+		</script>
 
 	</div>
 

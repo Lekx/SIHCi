@@ -56,24 +56,27 @@ class PressNotesController extends Controller
 		));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
+	//DP01-Registro de datos
 	public function actionCreate()
 	{
 		$model=new PressNotes;
-
-		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['PressNotes']))
 		{
 			$model->attributes=$_POST['PressNotes'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-					 
-			 if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			 
+			if($model->validate())		 
+			{
+	     	    if($model->save())
+	     	    	echo "<script> alert(\"Registro realizado con éxito.\")</script>";
+    		 	    return true;
+				    
+				    if(save())
+				    	$this->redirect(array('view','id'=>$model->id));
+			}	
+				 	
 		}
 
 		$this->render('create',array(
@@ -86,18 +89,23 @@ class PressNotesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+	//DP02-Modificar registro
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['PressNotes']))
 		{
 			$model->attributes=$_POST['PressNotes'];
 			if($model->save())
+			{
+				echo "<script> alert(\"Cambios realizados con éxito.\")</script>";
+				return true;
 				$this->redirect(array('view','id'=>$model->id));
+			}	
 		}
 
 		$this->render('update',array(
@@ -110,7 +118,8 @@ class PressNotesController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	//DP03-Eliminar registro 
+    public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
 
