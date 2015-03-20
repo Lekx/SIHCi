@@ -44,7 +44,7 @@ class CongressesController extends Controller
 			),
 		);
 	}
-
+	
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -73,8 +73,6 @@ class CongressesController extends Controller
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-				
-		
 	}
 		$this->render('create',array(
 			'model'=>$model,

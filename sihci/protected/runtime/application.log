@@ -8217,3 +8217,338 @@ Stack trace:
 REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
 HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/230
 ---
+2015/03/20 09:24:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/232
+---
+2015/03/20 09:26:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/234
+---
+2015/03/20 09:34:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/236
+---
+2015/03/20 09:36:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/238
+---
+2015/03/20 09:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/240
+---
+2015/03/20 10:02:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/242
+---
+2015/03/20 10:03:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/244
+---
+2015/03/20 10:06:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/246
+---
+2015/03/20 10:09:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/248
+---
+2015/03/20 10:09:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/250
+---
+2015/03/20 10:29:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/253
+---
+2015/03/20 10:29:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/255
+---
+2015/03/20 10:34:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/258
+---
+2015/03/20 10:50:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/260
+---
+2015/03/20 10:52:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/262
+---
+2015/03/20 10:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/263
+---
+2015/03/20 10:54:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/263
+---
+2015/03/20 10:54:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/266
+---
+2015/03/20 10:57:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/268
+---
+2015/03/20 10:58:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/269
+---
+2015/03/20 10:59:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CongressesController.php" solicitada.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(270): CController->missingAction('CongressesContr...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('CongressesContr...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses/Cong...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/CongressesController.php
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/congresses/270
+---
+2015/03/20 11:49:48 [error] [php] Undefined variable: msg (C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php(18): CongressesController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CongressesController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CongressesController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(85): CongressesController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CongressesController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CongressesController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CongressesController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CongressesController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (85)
+2015/03/20 11:50:01 [error] [php] Undefined variable: msg (C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php(18): CongressesController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CongressesController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CongressesController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(85): CongressesController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CongressesController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CongressesController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CongressesController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CongressesController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (85)
+2015/03/20 11:51:15 [error] [php] Undefined variable: msg (C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php:80)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php(18): CongressesController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CongressesController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CongressesController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(85): CongressesController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CongressesController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CongressesController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CongressesController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CongressesController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php (80)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (85)
+2015/03/20 11:54:40 [error] [php] Undefined variable: msg (C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php:80)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php(18): CongressesController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CongressesController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CongressesController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CongressesController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(81): CongressesController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CongressesController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CongressesController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CongressesController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CongressesController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/congresses/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\_form.php (80)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php (81)

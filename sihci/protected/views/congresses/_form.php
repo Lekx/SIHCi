@@ -12,7 +12,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Los campos marcados con <span class="required">*</span> son necesarios.</p>
@@ -44,13 +44,14 @@
 	</div>
 
 	<div class="row">
-		 <?php
+		  <p>Pais</p>
+	        <?php
 	        $this->widget(
 	            'yiiwheels.widgets.formhelpers.WhCountries',
 	            array(
 	                'name' => 'Congresses[country]',
 	                'id' => 'Congresses_country',
-	                'value' => '',
+	                'value' => 'MX',
 	                'useHelperSelectBox' => true,
 	                'pluginOptions' => array(
 	                    'country' => '',
@@ -59,11 +60,11 @@
 	                )
 	            )
 	        );
-	        ?>
+	        ?>	
 	</div>
 
 	<div class="row">
-        <?php echo $form->dropDownList($model,'work_type',array('','Conferencia Magistral','Articulo in Extenso','Ponencia','Poster'));
+        <?php echo $form->dropDownList($model,'work_type',array(''=>'','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));
      ?>
 	</div>
 
@@ -72,12 +73,25 @@
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
+   
 	<div class="row button">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-		 <?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Cancelar' : 'Cancelar'); ?>
-		
-	</div>
+
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+        <input type="button" onClick="cleanUp()" value="Borrar">
 	
+		 <script>
+    function cleanUp()
+     {
+        var text;
+        var result = confirm("¿Esta usted seguro de limpiar estos datos?");
+        if (result == true) 
+          $('[type^=text]').val('');
+        else s
+        document.getElementById("demo").innerHTML = txt;
+            }
+        </script>
+	</div>	
+	
+
 <?php $this->endWidget(); ?>
 </div><!-- form -->
