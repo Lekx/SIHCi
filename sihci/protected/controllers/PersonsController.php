@@ -143,10 +143,17 @@ class PersonsController extends Controller
 					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png';
 					if($model->save()){
 						$this->redirect(array('view','id'=>$model->id));
+
+					}
+
+				}
+
 			   		}
 				}
+
 				
 			}
+
 			
 		}
 

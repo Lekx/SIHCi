@@ -21,6 +21,11 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
+
+<?php echo sha1(md5(sha1("123456"))); ?>
+
+
+
 <?php echo $msg; ?>
 	<div class="row">
 		<?php echo $form->textField($model,'username', array('placeholder'=>"Email")); ?>

@@ -16,10 +16,11 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-	
+
    //LO01 – Inicio de Sesión 
 
 	private $_id;
+
 
 	public function authenticate()
 	{
@@ -34,6 +35,10 @@ class UserIdentity extends CUserIdentity
 			$this->_id=$user->id;
 			$this->setState('email',$user->email);
 			$this->errorCode=self::ERROR_NONE;
+
+
+			
+
 		}
 		return !$this->errorCode;
 
@@ -43,4 +48,8 @@ class UserIdentity extends CUserIdentity
 		return $this->_id;
 	}
 	
+
 }
+
+}
+
