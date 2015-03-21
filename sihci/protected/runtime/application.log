@@ -1,0 +1,193 @@
+2015/03/20 12:50:35 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /var/www/html/SIHCi/YiiFramework/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('pressNotes/upda...')
+#10 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/SIHCi/sihci/index.php(19): CApplication->run()
+#12 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/update/
+---
+2015/03/21 10:30:32 [error] [exception.CException] exception 'CException' with message 'Operador inválido "=<".' in /var/www/html/SIHCi/YiiFramework/framework/validators/CCompareValidator.php:124
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CCompareValidator->validateAttribute(Object(PressNotes), 'date')
+#1 /var/www/html/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(PressNotes), NULL)
+#2 /var/www/html/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(987): CModel->validate(NULL)
+#3 /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php(180): CActiveForm::validate(Object(PressNotes))
+#4 /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php(63): PressNotesController->performAjaxValidation(Object(PressNotes))
+#5 /var/www/html/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PressNotesController->actionCreate()
+#6 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#15 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('pressNotes/crea...')
+#16 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /var/www/html/SIHCi/sihci/index.php(19): CApplication->run()
+#18 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/pressNotes/create
+---
+2015/03/21 10:30:36 [error] [exception.CException] exception 'CException' with message 'Operador inválido "=<".' in /var/www/html/SIHCi/YiiFramework/framework/validators/CCompareValidator.php:124
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CCompareValidator->validateAttribute(Object(PressNotes), 'date')
+#1 /var/www/html/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(PressNotes), NULL)
+#2 /var/www/html/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(987): CModel->validate(NULL)
+#3 /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php(180): CActiveForm::validate(Object(PressNotes))
+#4 /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php(63): PressNotesController->performAjaxValidation(Object(PressNotes))
+#5 /var/www/html/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PressNotesController->actionCreate()
+#6 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#15 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('pressNotes/crea...')
+#16 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /var/www/html/SIHCi/sihci/index.php(19): CApplication->run()
+#18 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/pressNotes/create
+---
+2015/03/21 10:32:59 [error] [exception.CException] exception 'CException' with message 'Operador inválido "=<".' in /var/www/html/SIHCi/YiiFramework/framework/validators/CCompareValidator.php:124
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CCompareValidator->validateAttribute(Object(PressNotes), 'date')
+#1 /var/www/html/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(PressNotes), NULL)
+#2 /var/www/html/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(987): CModel->validate(NULL)
+#3 /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php(180): CActiveForm::validate(Object(PressNotes))
+#4 /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php(63): PressNotesController->performAjaxValidation(Object(PressNotes))
+#5 /var/www/html/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PressNotesController->actionCreate()
+#6 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#15 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('pressNotes/crea...')
+#16 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /var/www/html/SIHCi/sihci/index.php(19): CApplication->run()
+#18 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/pressNotes/create
+---
+2015/03/21 10:33:01 [error] [exception.CException] exception 'CException' with message 'Operador inválido "=<".' in /var/www/html/SIHCi/YiiFramework/framework/validators/CCompareValidator.php:124
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/validators/CValidator.php(201): CCompareValidator->validateAttribute(Object(PressNotes), 'date')
+#1 /var/www/html/SIHCi/YiiFramework/framework/base/CModel.php(159): CValidator->validate(Object(PressNotes), NULL)
+#2 /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php(70): CModel->validate()
+#3 /var/www/html/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PressNotesController->actionCreate()
+#4 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('pressNotes/crea...')
+#14 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/html/SIHCi/sihci/index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/create
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/pressNotes/create
+---
+2015/03/21 10:47:55 [error] [php] Use of undefined constant flase - assumed 'flase' (/var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php:77)
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): PressNotesController->runAction()
+#1 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): PressNotesController->filterAccessControl()
+#4 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(265): PressNotesController->runActionWithFilters()
+#7 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): PressNotesController->run()
+#8 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/html/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/create
+in /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php (77)
+in /var/www/html/SIHCi/sihci/index.php (19)
+2015/03/21 11:02:20 [error] [php] Missing argument 2 for CClientScript::registerScript(), called in /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php on line 72 and defined (/var/www/html/SIHCi/YiiFramework/framework/web/CClientScript.php:682)
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): PressNotesController->runAction()
+#2 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): PressNotesController->filterAccessControl()
+#5 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(265): PressNotesController->runActionWithFilters()
+#8 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): PressNotesController->run()
+#9 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/create
+in /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php (72)
+in /var/www/html/SIHCi/sihci/index.php (19)
+2015/03/21 12:28:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "congresses" solicitada.' in /var/www/html/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('congresses')
+#1 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('congresses')
+#2 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('pressNotes/cong...')
+#3 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/congresses
+---
+2015/03/21 13:03:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sihci.Difusion de prensa' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `Difusion de prensa`.
+in /var/www/html/SIHCi/sihci/protected/views/pressNotes/index.php (20)
+in /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php (132)
+in /var/www/html/SIHCi/sihci/index.php (19)
+2015/03/21 13:03:22 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "Difusion de prensa" definida en la clase active record "PressNotes" no se ha podido encontrar en la base de datos.' in /var/www/html/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /var/www/html/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(PressNotes))
+#1 /var/www/html/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(661): CActiveRecord->getMetaData()
+#2 /var/www/html/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(1606): CActiveRecord->getTableSchema()
+#3 /var/www/html/SIHCi/YiiFramework/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#4 /var/www/html/SIHCi/YiiFramework/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#5 /var/www/html/SIHCi/YiiFramework/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#6 /var/www/html/SIHCi/YiiFramework/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#7 /var/www/html/SIHCi/YiiFramework/framework/zii/widgets/CBaseListView.php(125): CDataProvider->getData()
+#8 /var/www/html/SIHCi/YiiFramework/framework/zii/widgets/CListView.php(211): CBaseListView->init()
+#9 /var/www/html/SIHCi/YiiFramework/framework/web/CBaseController.php(147): CListView->init()
+#10 /var/www/html/SIHCi/YiiFramework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#11 /var/www/html/SIHCi/sihci/protected/views/pressNotes/index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 /var/www/html/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/html/S...')
+#13 /var/www/html/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/S...', Array, true)
+#14 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/S...', Array, true)
+#15 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#16 /var/www/html/SIHCi/sihci/protected/controllers/PressNotesController.php(132): CController->render('index', Array)
+#17 /var/www/html/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PressNotesController->actionIndex()
+#18 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 /var/www/html/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#25 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#27 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('pressNotes')
+#28 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#29 /var/www/html/SIHCi/sihci/index.php(19): CApplication->run()
+#30 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/pressNotes/
+---
