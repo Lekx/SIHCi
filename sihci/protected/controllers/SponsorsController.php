@@ -1,6 +1,6 @@
 <?php
 
-class CongressesController extends Controller
+class SponsorsController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -24,15 +24,15 @@ class CongressesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-     public function accessRules()
+	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','admin','delete'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -44,7 +44,7 @@ class CongressesController extends Controller
 			),
 		);
 	}
-	
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -56,27 +56,29 @@ class CongressesController extends Controller
 		));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	/*<!--PC01-Registrar datos  Participacion en congresos-->*/
+	
 	public function actionCreate()
 	{
-		$model=new Congresses;
+		$model=new Sponsors;
+		$modelAddresses = new Addresses;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-		if(isset($_POST['Congresses']))
-		{
-			$model->attributes=$_POST['Congresses'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+
+		
+
+		if(isset($_POST['Sponsors']))
+		{  
+			$model->attributes=$_POST['Sponsors'];
+			$modelAddresses->attributes = $_POST['Addresses'];
+			$model->id_user = Yii::app()->user->id;
+			
+
+
 			if($model->save())
-				Yii::app()->user->setFlash('success',"El proceso fue realizado correctamente.");
 				$this->redirect(array('view','id'=>$model->id));
-	}
+		}
+
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model, 'modelAddresses'=>$modelAddresses
 		));
 	}
 
@@ -85,7 +87,6 @@ class CongressesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	/*<!--PC02-Modificar datos  Participacion en congresos-->*/
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -93,9 +94,9 @@ class CongressesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Congresses']))
+		if(isset($_POST['Sponsors']))
 		{
-			$model->attributes=$_POST['Congresses'];	
+			$model->attributes=$_POST['Sponsors'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -110,7 +111,6 @@ class CongressesController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	/*<!--PC03-Eliminar datos  Participacion en congresos-->*/
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -125,7 +125,7 @@ class CongressesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Congresses');
+		$dataProvider=new CActiveDataProvider('Sponsors');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -136,10 +136,10 @@ class CongressesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Congresses('search');
+		$model=new Sponsors('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Congresses']))
-			$model->attributes=$_GET['Congresses'];
+		if(isset($_GET['Sponsors']))
+			$model->attributes=$_GET['Sponsors'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,12 +150,12 @@ class CongressesController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Congresses the loaded model
+	 * @return Sponsors the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Congresses::model()->findByPk($id);
+		$model=Sponsors::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -163,15 +163,14 @@ class CongressesController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Congresses $model the model to be validated
+	 * @param Sponsors $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='congresses-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='sponsors-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-
 }

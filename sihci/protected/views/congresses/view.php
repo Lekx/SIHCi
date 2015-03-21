@@ -17,15 +17,7 @@ $this->menu=array(
 ?>
 
 <h1>Congreso #<?php echo $model->id; ?></h1>
-<script>
-	$.ajax({
-		type: "POST",
-		url: "CongressesController.php",    	
-		complete: function(Create){
-		alert( "Registro realizado con éxito.");
-	}
-	});
-</script>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

@@ -17,8 +17,8 @@ $this->breadcrumbs=array(
 
 	<section class="column-center">
 
-	<h2>LÍNEAS DE INVESTIGACIÓN </h2>
-	<hr>
+<h2>Lineas de Investigación</h2>
+<hr>
 	
 	<div class="panel panel-default">
 	  <!-- Default panel contents -->
