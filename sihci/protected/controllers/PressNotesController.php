@@ -65,18 +65,13 @@ class PressNotesController extends Controller
 		if(isset($_POST['PressNotes']))
 		{
 			$model->attributes=$_POST['PressNotes'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			 
-			if($model->validate())		 
-			{
-	     	    if($model->save())
-	     	    	echo "<script> alert(\"Registro realizado con éxito.\")</script>";
-    		 	    return true;
-				    
-				    if(save())
-				    	$this->redirect(array('view','id'=>$model->id));
-			}	
-				 	
+			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
+	     	
+	     	if($model->save())
+	     	{    
+				$this->redirect(array('view','id'=>$model->id));
+			}			
+ 	
 		}
 
 		$this->render('create',array(
@@ -102,8 +97,6 @@ class PressNotesController extends Controller
 			$model->attributes=$_POST['PressNotes'];
 			if($model->save())
 			{
-				echo "<script> alert(\"Cambios realizados con éxito.\")</script>";
-				return true;
 				$this->redirect(array('view','id'=>$model->id));
 			}	
 		}
@@ -181,6 +174,5 @@ class PressNotesController extends Controller
 			Yii::app()->end();
 		}
 	}
-
 
 }

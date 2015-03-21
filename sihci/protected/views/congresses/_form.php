@@ -76,7 +76,9 @@
    
 	<div class="row button">
 
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>      
+    
+
         <input type="button" onClick="cleanUp()" value="Borrar">
 	
 		 <script>
@@ -91,7 +93,9 @@
             }
         </script>
 	</div>	
-	
+	<?php if(Yii::app()->user->hasFlash('success')):?>
+    <script>alert(‘<?php echo Yii::app()->user->getFlash('success'); ?>’);</script>
+    <?php endif; ?>
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
