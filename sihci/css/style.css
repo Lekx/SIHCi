@@ -778,12 +778,12 @@ span
 }
 .cbp-hsmenu1
 {
-	list-style: none;
+	list-style: none !important;
 
 }
 .cbp-hssubmenu1 li
 {
-	list-style: circle;
+	list-style: none !important;
 
 }
 ul.cbp-hssubmenu1
@@ -819,12 +819,12 @@ ul.cbp-hssubmenu1
 }
 .cbp-hsmenu1
 {
-	list-style: none;
+	list-style: none !important;
 
 }
 .cbp-hssubmenu li
 {
-	list-style: circle;
+	list-style: none !important;
 
 }
 ul.cbp-hssubmenu
@@ -833,6 +833,10 @@ ul.cbp-hssubmenu
 	margin-bottom: 10px;
 	padding-left: 26px;
 
+}
+ul.cbp-hsmenu
+{
+	list-style: none;
 }
 #show_hidemenu
 {

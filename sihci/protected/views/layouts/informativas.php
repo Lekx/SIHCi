@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/demo.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/informativas.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/login.css">
 	
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
@@ -136,8 +137,8 @@
 							<li>
 								<span><h6>Programa de formación de recursos humanos en investigación</h6></span>
 								<ul class="cbp-hssubmenu1">
-									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
-									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
+									<li><?php echo CHtml::link('Programas PNCP',array('ProgramasPNCP/index')); ?></li>
+									<li><?php echo CHtml::link('Programas NO PNCP',array('programasNoPNCP/index')); ?></li>
 								</ul>
 							</li>
 							<li>
@@ -176,12 +177,12 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Revistas científicas',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Revistas científicas',array('revistasCientificas/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Unidad Editorial',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Unidad Editorial',array('UnidadEditorial/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -255,8 +256,8 @@
 							<li>
 								<span><h6>Programa de formación de recursos humanos en investigación</h6></span>
 								<ul class="cbp-hssubmenu1">
-									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
-									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
+									<li><?php echo CHtml::link('Programas PNCP',array('ProgramasPNCP/index')); ?></li>
+									<li><?php echo CHtml::link('Programas NO PNCP',array('programasNoPNCP/index')); ?></li>
 								</ul>
 							</li>
 							<li>
@@ -295,12 +296,12 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Revistas científicas',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Revistas científicas',array('revistasCientificas/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Unidad Editorial',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Unidad Editorial',array('UnidadEditorial/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -439,12 +440,8 @@
 							<li>
 							<span><h6>Programa de formación de recursos humanos en investigación</h6></span>
 								<ul class="cbp-hssubmenu">
-									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
-									<li><?phttp://localhost/~dan/SIHCi/sihci/index.php/site/indexhp echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
-								</ul>
-							</li>
-							<li>
-								<ul class="cbp-hssubmenu">
+									<li><?php echo CHtml::link('Programas PNCP',array('ProgramasPNCP/index')); ?></li>
+									<li><?php echo CHtml::link('Programas NO PNCP',array('programasNoPNCP/index')); ?></li>
 								</ul>
 							</li>
 							<li>
@@ -479,12 +476,12 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Revistas científicas',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Revistas científicas',array('revistasCientificas/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Unidad Editorial',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Unidad Editorial',array('UnidadEditorial/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>

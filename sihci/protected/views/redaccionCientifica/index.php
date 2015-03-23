@@ -30,7 +30,7 @@ $this->breadcrumbs=array(
 		
 		<p>
 			<br>
-			<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/redaccionCientifica/img/img1.jpg"; ?>">
+			<img id="redaccion" src="<?php echo Yii::app()->request->baseUrl."/protected/views/redaccionCientifica/img/img1.jpg"; ?>">
 			<br>
 		</p>	
 		 
@@ -58,7 +58,7 @@ $this->breadcrumbs=array(
 		</P>
 			
 			<br>
-			<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/redaccionCientifica/img/img3.jpg"; ?>">
+			<img id="redaccion" src="<?php echo Yii::app()->request->baseUrl."/protected/views/redaccionCientifica/img/img3.jpg"; ?>">
 			<br>
 		<p>Figura 1.2 Portada del libro “Guía de Redacción de Artículos Científicos Originales en Ciencias de la Salud” autores:
 			Contreras AM y Ochoa-Jiménez RJ
@@ -121,7 +121,7 @@ $this->breadcrumbs=array(
 		
 		<p>	
 		<br>
-		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/redaccionCientifica/img/img2.jpg"; ?>">	
+		<img  id="redaccion" src="<?php echo Yii::app()->request->baseUrl."/protected/views/redaccionCientifica/img/img2.jpg"; ?>">	
 		</p>	
 		<p>Figura 1.3: Registro de marca No. 1301430 del
 			InstitutoMexicano de la Propiedad Industrial

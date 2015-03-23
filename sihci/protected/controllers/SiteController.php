@@ -79,7 +79,7 @@ class SiteController extends Controller
 	//LO01-Inicio de sesión. 
 	public function actionLogin()
 	{
-		
+		$this->layout = 'informativas';
 		$model=new LoginForm;
 		$msg = '';
 		// if it is ajax validation request

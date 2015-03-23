@@ -45,13 +45,10 @@ $this->breadcrumbs=array(
 				(Fullerton) (ver cuadros). 
 			</p>
 
-			<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/desplegarInformacion/img1.jpg"; ?>">
-			<br>
-			<br>
-			<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/desplegarInformacion/img2.jpg"; ?>">
-			
-
-
+			<img id="redaccion"src="<?php echo Yii::app()->request->baseUrl."/protected/views/desplegarInformacion/img1.png"; ?>">
+			<img id="redaccion"src="<?php echo Yii::app()->request->baseUrl."/protected/views/desplegarInformacion/img2.png"; ?>">
+		
+		
 		</section>
 
 	<section class="column-right">
