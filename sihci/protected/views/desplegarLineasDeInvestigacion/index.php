@@ -29,8 +29,8 @@ $this->breadcrumbs=array(
 		<table class="table">
 			<tr>
 
-				<td BGCOLOR="F1FFFD">Especialidad (se ignora)</td>
-				<td BGCOLOR="F1FFFD">Linea de investigación (atendemos)</td>
+				<td BGCOLOR="F1FFFD"><h5>Especialidad (se ignora)</h5></td>
+				<td BGCOLOR="F1FFFD"><h5>Linea de investigación (atendemos)</h5></td>
 			</tr>		
 			<tr>
 				<td>Anestesiología</td>

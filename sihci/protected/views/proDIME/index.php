@@ -25,7 +25,7 @@ $this->breadcrumbs=array(
 		<h2>proDIME</h2>
 		<hr>
 		<img id="udg" src="<?php echo Yii::app()->request->baseUrl."/protected/views/proDIME/img1.jpg"; ?>">	
-	
+		<br>
 		<p>
 			“El OPD Hospital Civil de Guadalajara
 			cuenta con un programa de difusión de los resultad

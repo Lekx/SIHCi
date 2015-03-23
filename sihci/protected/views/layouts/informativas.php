@@ -116,7 +116,6 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -142,7 +141,6 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -237,7 +235,6 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -263,7 +260,6 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -423,7 +419,6 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -445,11 +440,10 @@
 							<span><h6>Programa de formación de recursos humanos en investigación</h6></span>
 								<ul class="cbp-hssubmenu">
 									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
-									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
+									<li><?phttp://localhost/~dan/SIHCi/sihci/index.php/site/indexhp echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
