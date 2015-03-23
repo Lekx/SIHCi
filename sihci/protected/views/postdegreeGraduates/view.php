@@ -18,19 +18,6 @@ $this->menu=array(
 
 <h1>Registro. #<?php echo $model->id; ?></h1>
 
-
-<script type="text/javascript">
-	 $.ajax({
-		  type:"POST",
-		  url: "PostdegreeGraduatesController.php/actionCreate",     		 
-		  complete: function(actionCreate){
-		  	alert( "Registro realizado con éxito.");
-		  }
-		  
-	  });
-</script>
-
-
 <?php $this->widget('zii.widgets.CDetailView', 
 
 	array(

@@ -3,7 +3,7 @@ class UsersController extends Controller
 {
 	function checkEmail($email, $email2){
 		 
-    //if (!filter_var($email,FILTER_VALIDATE_EMAIL) && !filter_var($email2, FILTER_VALIDATE_EMAIL) && $email != $email2){
+    
     	if ($email != $email2){
 		echo "<script> alert(\"Las dos correos son distintos.\")</script>";
 		return false;
@@ -83,8 +83,8 @@ class UsersController extends Controller
 						$modelPersons->save();
 						$this->redirect(array('view','id'=>$model->id));
 				}
-				}
-				}
+			}
+		}
 			
 			
 			} 
