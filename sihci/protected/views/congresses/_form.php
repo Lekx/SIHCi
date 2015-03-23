@@ -76,21 +76,29 @@
    
 	<div class="row button">
 
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>      
+         
     
-
+        <input type="submit" onClick="validationFrom()" value="Guardar">
         <input type="button" onClick="cleanUp()" value="Borrar">
 	
 		 <script>
-    function cleanUp()
-     {
-        var text;
-        var result = confirm("¿Esta usted seguro de limpiar estos datos?");
-        if (result == true) 
-          $('[type^=text]').val('');
-        else s
-        document.getElementById("demo").innerHTML = txt;
-            }
+		    function cleanUp()
+		     {
+		        var text;
+		        var result = confirm("¿Esta usted seguro de limpiar estos datos?");
+		        if (result == true) 
+		          $('[type^=text]').val('');
+		        else s
+		        document.getElementById("demo").innerHTML = txt;
+		            }
+			function validationFrom()
+			   {
+			    alert("Registro realizado con éxito");
+			    return false;
+			   } 
+
+        
+
         </script>
 	</div>	
 	<?php if(Yii::app()->user->hasFlash('success')):?>

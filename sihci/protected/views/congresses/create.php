@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Congresses', 'url'=>array('index')),
-	array('label'=>'Manage Congresses', 'url'=>array('admin')),
+	array('label'=>'Listar Congreso', 'url'=>array('index')),
+	array('label'=>'Administrar Congreso', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Congresses</h1>
+<h1>Crear Congreso</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
