@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PressNotes', 'url'=>array('index')),
+	array('label'=>'Listar PressNotes', 'url'=>array('index')),
 	array('label'=>'Manage PressNotes', 'url'=>array('admin')),
 );
 ?>
