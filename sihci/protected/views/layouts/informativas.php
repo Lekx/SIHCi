@@ -77,7 +77,7 @@
 			<div class="menu">
 			<div>
 				<ul class="cbp-hsmenu1">
-					<li><a><h6>OPD HCG</h6></a>
+					<li><span><h6>OPD HCG</h6></span>
 						<ul class="cbp-hssubmenu1">
 							<li><?php echo CHtml::link('Direccion General',array('InformacionDeDireccionGeneral/index')); ?></li>
 							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
@@ -94,12 +94,11 @@
 						</ul>
 					</li>
 					<li>
-						<a><h6>Centro de Investigación Clínica</h6></a>
+					<span><h6>Centro de Investigación Clínica</h6></span>
 						<ul class="cbp-hssubmenu1">
-						<li><?php echo CHtml::link('Lineas de investigación',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Protocolos patrocinados por la industrias',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Farmacéutica',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Living Labs-Salud',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Lineas de investigación',array('desplegarLineasDeInvestigacion/index')); ?></li>
+						<li><?php echo CHtml::link('Protocolos patrocinados por la industria Farmacéutica',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Living Labs-Salud',array('livinglabssalud/index')); ?></li>
 						</ul>
 					</li>
 					<li>
@@ -117,7 +116,6 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -136,14 +134,13 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-							<h6><?php echo CHtml::link('Programa de formación de recursos humanos en investigación',array('site/index')); ?></h6>
+								<span><h6>Programa de formación de recursos humanos en investigación</h6></span>
 								<ul class="cbp-hssubmenu1">
 									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
 									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -153,7 +150,7 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('ProDIME',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('ProDIME',array('proDIME/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -162,7 +159,7 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
+								<h6><span>Programas de generación de conocimiento</span></h6>
 								<ul class="cbp-hssubmenu1">
 								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
 								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
@@ -174,7 +171,7 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('vinculacionConUniversidadInstitutosHospitales/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -199,7 +196,7 @@
 		<div class="menu">
 			<div>
 				<ul class="cbp-hsmenu1">
-					<li><a><h6>OPD HCG</h6></a>
+					<li><span><h6>OPD HCG</h6></span>
 						<ul class="cbp-hssubmenu1">
 							<li><?php echo CHtml::link('Direccion General',array('InformacionDeDireccionGeneral/index')); ?></li>
 							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
@@ -216,12 +213,11 @@
 						</ul>
 					</li>
 					<li>
-						<a><h6>Centro de Investigación Clínica</h6></a>
+					<span><h6>Centro de Investigación Clínica</h6></span>
 						<ul class="cbp-hssubmenu1">
-						<li><?php echo CHtml::link('Lineas de investigación',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Protocolos patrocinados por la industrias',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Farmacéutica',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Living Labs-Salud',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Lineas de investigación',array('desplegarLineasDeInvestigacion/index')); ?></li>
+						<li><?php echo CHtml::link('Protocolos patrocinados por la industria Farmacéutica',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Living Labs-Salud',array('livinglabssalud/index')); ?></li>
 						</ul>
 					</li>
 					<li>
@@ -239,7 +235,6 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -258,14 +253,13 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-							<h6><?php echo CHtml::link('Programa de formación de recursos humanos en investigación',array('site/index')); ?></h6>
+								<span><h6>Programa de formación de recursos humanos en investigación</h6></span>
 								<ul class="cbp-hssubmenu1">
 									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
 									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -275,7 +269,7 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('ProDIME',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('ProDIME',array('proDIME/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -284,7 +278,7 @@
 					<div>
 						<ul class="cbp-hsmenu1">
 							<li>
-								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
+								<h6><span>Programas de generación de conocimiento</span></h6>
 								<ul class="cbp-hssubmenu1">
 								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
 								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
@@ -296,7 +290,7 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('vinculacionConUniversidadInstitutosHospitales/index')); ?></h6>
 								<ul class="cbp-hssubmenu1">
 								</ul>
 							</li>
@@ -386,7 +380,7 @@
 		<div class="menu">
 			<div>
 				<ul class="cbp-hsmenu">
-					<li><a><h6>OPD HCG</h6></a>
+					<li><span><h6>OPD HCG</h6></span>
 						<ul class="cbp-hssubmenu">
 							<li><?php echo CHtml::link('Direccion General',array('InformacionDeDireccionGeneral/index')); ?></li>
 							<li><?php echo CHtml::link('Organigrama',array('Organigrama/index')); ?></li>
@@ -403,12 +397,11 @@
 						</ul>
 					</li>
 					<li>
-						<a><h6>Centro de Investigación Clínica</h6></a>
+						<span><h6>Centro de Investigación Clínica</h6></span>
 						<ul class="cbp-hssubmenu">
-						<li><?php echo CHtml::link('Lineas de investigación',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Protocolos patrocinados por la industrias',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Farmacéutica',array('Site/index')); ?></li>
-						<li><?php echo CHtml::link('Living Labs-Salud',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Lineas de investigación',array('desplegarLineasDeInvestigacion/index')); ?></li>
+						<li><?php echo CHtml::link('Protocolos patrocinados por la industrias Farmacéutica',array('Site/index')); ?></li>
+						<li><?php echo CHtml::link('Living Labs-Salud',array('livinglabssalud/index')); ?></li>
 						</ul>
 					</li>
 					<li>
@@ -426,7 +419,6 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Publicaciones Científicas',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -445,14 +437,13 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-							<h6><?php echo CHtml::link('Programa de formación de recursos humanos en investigación',array('site/index')); ?></h6>
+							<span><h6>Programa de formación de recursos humanos en investigación</h6></span>
 								<ul class="cbp-hssubmenu">
 									<li><?php echo CHtml::link('Programas PNCP',array('Site/index')); ?></li>
-									<li><?php echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
+									<li><?phttp://localhost/~dan/SIHCi/sihci/index.php/site/indexhp echo CHtml::link('Programas NO PNCP',array('Site/index')); ?></li>
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('Convocatorias y apoyos en investigación',array('site/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -462,7 +453,7 @@
 								</ul>
 							</li>
 							<li>
-							<h6><?php echo CHtml::link('ProDIME',array('site/index')); ?></h6>
+							<h6><?php echo CHtml::link('ProDIME',array('proDIME/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>
@@ -471,7 +462,7 @@
 					<div>
 						<ul class="cbp-hsmenu">
 							<li>
-								<h6><?php echo CHtml::link('Programas de generación de conocimiento',array('site/index')); ?></h6>
+								<h6><span>Programas de generación de conocimiento</span></h6>
 								<ul class="cbp-hssubmenu">
 								<li><?php echo CHtml::link('Redacción Científicas',array('redaccionCientifica/index')); ?></li>
 								<li><?php echo CHtml::link('Lineas de generación de conmiento científico',array('generacionDeConocimientoCientifico/index')); ?></li>
@@ -483,7 +474,7 @@
 								</ul>
 							</li>
 							<li>
-								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('site/index')); ?></h6>
+								<h6><?php echo CHtml::link('Vinculación con universidades, institutos y hospitales',array('vinculacionConUniversidadInstitutosHospitales/index')); ?></h6>
 								<ul class="cbp-hssubmenu">
 								</ul>
 							</li>

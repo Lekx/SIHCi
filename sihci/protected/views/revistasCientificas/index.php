@@ -1,4 +1,4 @@
-RC01-Desplegar Revistas Cientificas
+<!-- RC01-Desplegar Revistas Cientificas -->
 <section>
 <h1> Icono! </h1>
 </section>

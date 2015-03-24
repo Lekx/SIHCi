@@ -8,24 +8,16 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Congresses', 'url'=>array('index')),
-	array('label'=>'Create Congresses', 'url'=>array('create')),
-	array('label'=>'Update Congresses', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Congresses', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Congresses', 'url'=>array('admin')),
+	array('label'=>'Listar Congreso', 'url'=>array('index')),
+	array('label'=>'Crear Congreso', 'url'=>array('create')),
+	array('label'=>'Actualizar Congreso', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Congreso', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Congreso', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Congreso #<?php echo $model->id; ?></h1>
-<script>
-	$.ajax({
-		type: "POST",
-		url: "CongressesController.php",    	
-		complete: function(Create){
-		alert( "Registro realizado con éxito.");
-	}
-	});
-</script>
+<h1>Congreso <?php echo $model->id; ?></h1>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

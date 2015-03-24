@@ -143,10 +143,17 @@ class PersonsController extends Controller
 					if($model->save()){
 						echo "<script>alert('Registro almecenado correctamente')</script>";
 						$this->redirect(array('view','id'=>$model->id));
+
+					}
+
+				}
+
 			   		}
 				}
+
 				
 			}
+
 			
 		}
 

@@ -24,8 +24,6 @@ class PostdegreeGraduatesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	
-
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -53,6 +51,7 @@ class PostdegreeGraduatesController extends Controller
 		if(isset($_POST['PostdegreeGraduates']))
 		{
 				$model->attributes=$_POST['PostdegreeGraduates'];
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 							
 				if($model->save())
 				{
@@ -60,7 +59,6 @@ class PostdegreeGraduatesController extends Controller
 				}
 					   
 		}
-
 
 		$this->render('create',array(
 			'model'=>$model,
@@ -72,15 +70,16 @@ class PostdegreeGraduatesController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['PostdegreeGraduates']))
 		{
 			$model->attributes=$_POST['PostdegreeGraduates'];
-				if($model->save())
-				{
-				   	$this->redirect(array('view','id'=>$model->id));
-				}
+
+			if($model->save())
+			{
+			   	$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
@@ -135,7 +134,6 @@ class PostdegreeGraduatesController extends Controller
 		return $model;
 	}
 
-	
 	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='postdegree-graduates-form')

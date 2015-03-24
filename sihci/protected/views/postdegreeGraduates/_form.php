@@ -16,30 +16,37 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'id_curriculum', array( 'placeholder' => 'id_curriculum')); ?>
-		<?php echo $form->error($model,'id_curriculum'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado"));?>
 		<?php echo $form->error($model,'fullname'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php
-			$this->widget('zii.widgets.jui.CJuiButton',array(
-				'buttonType'=>'button',
-			    'name'=>'Borrar',
-			    'caption'=>'Borrar',
-			    'onclick'=>new CJavaScriptExpression('function(){alert("¿Esta usted seguro de borrar estos datos?"); this.blur(); return false;}'),
-			));
-		?>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar': 'Guardar'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ?  'Borrar' : 'Borrar'); ?>	
+		<input type="submit" onclick='validationFrom()' value="Guardar"> 	
+        <input type='button' onclick='cleanUp()' value="Limpiar"> 
+      	
+      	<script>
+			
+			function cleanUp()
+			{
+			    var text;
+			    var result = confirm("¿Está usted seguro de limpiar estos datos?");
+			    if (result == true) 
+			    	 $('[id^=PostdegreeGraduates_]').val('');
+			     
+			    document.getElementById("demo").innerHTML = text;
+			}
+	
+			function validationFrom()
+			{
+				alert("Registro realizado con éxito");
+				return false;
+			}	
+
+		</script>	
     </div>
 	
 <?php $this->endWidget(); ?>
   
 
 </div><!-- form -->
-
+	

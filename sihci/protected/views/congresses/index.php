@@ -7,12 +7,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Congresses', 'url'=>array('create')),
-	array('label'=>'Manage Congresses', 'url'=>array('admin')),
+	array('label'=>'Crear Congreso', 'url'=>array('create')),
+	array('label'=>'Administrar Congreso', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Congresses</h1>
+
+<h1>Congreso</h1>
+
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
