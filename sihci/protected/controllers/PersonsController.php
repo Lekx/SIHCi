@@ -70,15 +70,12 @@ class PersonsController extends Controller
 	{
 		$model=new Persons;
 		$curriculum = new Curriculum;
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 		
 		if(isset($_POST['Persons']))
 		{
 			$model->attributes=$_POST['Persons'];
-			$model->birth_date = substr($model->birth_date, 0, 10)." "."23:59:59";
 			$model->id_user = Yii::app()->user->id;
-
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
 		
 			if ($model->validate()) {
@@ -88,9 +85,7 @@ class PersonsController extends Controller
 					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
 					//$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
 					if($model->save()){
-
 			   			$this->redirect(array('view','id'=>$model->id));
-
 			   		}
 
 				}else{
@@ -118,12 +113,13 @@ class PersonsController extends Controller
 		$model=$this->loadModel($id);
         $curriculum = new Curriculum;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 
 
 		if(isset($_POST['Persons']))
 		{
 			$model->attributes=$_POST['Persons'];
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
+
 			if ($model->validate()) {
 				//if (!file_exists('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/')) {
    					//	 mkdir('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/', 0777);
@@ -134,14 +130,18 @@ class PersonsController extends Controller
 				if($model->photo_url != ''){
 					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
 				//		$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
+					$this->performAjaxValidation($model);
 					if($model->save()){
+						echo "<script>alert('Registro almecenado correctamente')</script>";
 						$this->redirect(array('view','id'=>$model->id));
 			   		}
 						
+		
 					
 				}else{
 					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png';
 					if($model->save()){
+						echo "<script>alert('Registro almecenado correctamente')</script>";
 						$this->redirect(array('view','id'=>$model->id));
 			   		}
 				}
@@ -221,4 +221,6 @@ class PersonsController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+
 }

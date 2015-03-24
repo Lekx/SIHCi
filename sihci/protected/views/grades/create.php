@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Formación Academica</h1>
+<h1>Formación Académica</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

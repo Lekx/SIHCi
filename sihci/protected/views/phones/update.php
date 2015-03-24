@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Phones <?php echo $model->id; ?></h1>
+<h1>Datos de Contacto</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'emails' =>$emails)); ?>

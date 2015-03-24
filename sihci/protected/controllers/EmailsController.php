@@ -1,6 +1,6 @@
 <?php
 
-class PhonesController extends Controller
+class EmailsController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -24,7 +24,7 @@ class PhonesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-/*	public function accessRules()
+	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -43,14 +43,12 @@ class PhonesController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}*/
+	}
 
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-
-	//CV04-Desplegar datos.
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -62,34 +60,22 @@ class PhonesController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-
-	//CV01-Registro de datos  
 	public function actionCreate()
 	{
-		$model=new Phones;
-		$emails = new Emails;
+		$model=new Emails;
+
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Phones']))
+		if(isset($_POST['Emails']))
 		{
-			$email = $_POST['Emails']['email'];
-			$type = $_POST['Emails']['type'];
-
-			$model->attributes=$_POST['Phones'];
-			$model->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$emails->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$emails->email = $email;
-			$emails->type = $type;
-			
+			$model->attributes=$_POST['Emails'];
 			if($model->save())
-				
 				$this->redirect(array('view','id'=>$model->id));
-			
 		}
 
 		$this->render('create',array(
-			'model'=>$model, 'emails' =>$emails,
+			'model'=>$model,
 		));
 	}
 
@@ -98,26 +84,22 @@ class PhonesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-
-     //CV02-Modificar registro 
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$emails = new Emails;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
-		if(isset($_POST['Phones']))
+
+		if(isset($_POST['Emails']))
 		{
-			$model->attributes=$_POST['Phones'];
-			$emails->email = $emails->email;
-			$emails->type = $emails->type;
+			$model->attributes=$_POST['Emails'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
-			'model'=>$model, 'emails' =>$emails,
+			'model'=>$model,
 		));
 	}
 
@@ -140,7 +122,7 @@ class PhonesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Phones');
+		$dataProvider=new CActiveDataProvider('Emails');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -151,10 +133,10 @@ class PhonesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Phones('search');
+		$model=new Emails('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Phones']))
-			$model->attributes=$_GET['Phones'];
+		if(isset($_GET['Emails']))
+			$model->attributes=$_GET['Emails'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -165,12 +147,12 @@ class PhonesController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Phones the loaded model
+	 * @return Emails the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Phones::model()->findByPk($id);
+		$model=Emails::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -178,11 +160,11 @@ class PhonesController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Phones $model the model to be validated
+	 * @param Emails $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='phones-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='emails-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

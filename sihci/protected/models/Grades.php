@@ -141,4 +141,13 @@ class Grades extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	protected function beforeSave(){
+		$this->obtention_date = DateTime::createFromFormat('d/m/Y', $this->obtention_date)->format('Y-m-d');
+		return parent::beforeSave();
+	}	
+
+	protected function afterFind(){
+		$this->obtention_date = DateTime::createFromFormat('Y-m-d', $this->obtention_date)->format('d/m/Y');
+		return parent::beforeSave();
+	}
 }

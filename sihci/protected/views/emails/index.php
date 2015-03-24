@@ -1,18 +1,18 @@
 <?php
-/* @var $this DocsIdentityController */
+/* @var $this EmailsController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Docs Identities',
+	'Emails',
 );
 
 $this->menu=array(
-	array('label'=>'Create DocsIdentity', 'url'=>array('create')),
-	array('label'=>'Manage DocsIdentity', 'url'=>array('admin')),
+	array('label'=>'Create Emails', 'url'=>array('create')),
+	array('label'=>'Manage Emails', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Documentos Oficiales</h1>
+<h1>Emails</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

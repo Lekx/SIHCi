@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List Grades', 'url'=>array('index')),
 	array('label'=>'Create Grades', 'url'=>array('create')),
 	array('label'=>'Update Grades', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Grades', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete Grades', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?')),
 	array('label'=>'Manage Grades', 'url'=>array('admin')),
 );
 ?>

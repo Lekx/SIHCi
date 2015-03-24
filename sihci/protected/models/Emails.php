@@ -1,29 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "phones".
+ * This is the model class for table "emails".
  *
- * The followings are the available columns in table 'phones':
+ * The followings are the available columns in table 'emails':
  * @property integer $id
  * @property integer $id_person
+ * @property string $email
  * @property string $type
- * @property integer $country_code
- * @property integer $local_area_code
- * @property integer $phone_number
- * @property integer $extension
- * @property integer $is_primary
  *
  * The followings are the available model relations:
  * @property Persons $idPerson
  */
-class Phones extends CActiveRecord
+class Emails extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'phones';
+		return 'emails';
 	}
 
 	/**
@@ -34,15 +30,13 @@ class Phones extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_person, type, country_code, local_area_code, phone_number, is_primary', 'required'),
-			array('id_person, country_code, local_area_code, phone_number, extension, is_primary', 'numerical', 'integerOnly'=>true),
+			array('id_person, email, type', 'required'),
+			array('id_person', 'numerical', 'integerOnly'=>true),
+			array('email', 'length', 'max'=>100),
 			array('type', 'length', 'max'=>20),
-			array('country_code', 'length', 'max'=>2, 'min'=>2),
-			array('local_area_code', 'length', 'max'=>3, 'min'=>2),
-			array('phone_number', 'length', 'max'=>10, 'min'=>8),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_person, type, country_code, local_area_code, phone_number, extension, is_primary', 'safe', 'on'=>'search'),
+			array('id, id_person, email, type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,12 +60,8 @@ class Phones extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_person' => 'Id Person',
-			'type' => 'Tipo',
-			'country_code' => 'Lada País',
-			'local_area_code' => 'Lada Estado',
-			'phone_number' => 'Número Telefónico',
-			'extension' => 'Extensión',
-			'is_primary' => 'Is Primary',
+			'email' => 'Email',
+			'type' => 'Type',
 		);
 	}
 
@@ -95,12 +85,8 @@ class Phones extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_person',$this->id_person);
+		$criteria->compare('email',$this->email,true);
 		$criteria->compare('type',$this->type,true);
-		$criteria->compare('country_code',$this->country_code);
-		$criteria->compare('local_area_code',$this->local_area_code);
-		$criteria->compare('phone_number',$this->phone_number);
-		$criteria->compare('extension',$this->extension);
-		$criteria->compare('is_primary',$this->is_primary);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -111,7 +97,7 @@ class Phones extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Phones the static model class
+	 * @return Emails the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
