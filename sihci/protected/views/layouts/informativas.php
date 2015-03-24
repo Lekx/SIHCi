@@ -33,6 +33,8 @@
 		$cs->registerScriptFile($baseUrl.'/js/scroll.js');
 		$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
 		$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
+		$cs->registerScriptFile($baseUrl.'/js/render.js');
+
 	?>
 
 	<?php Yii::app()->bootstrap->register(); ?>
@@ -340,9 +342,9 @@
 	</section>
 
 	<section class="logsection">
-		<div class="login"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
+		<div class="login"><img id="logocuentas2" src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""> <!-- <?php echo CHtml::link('<img id="logocuentas" src='.Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png alt="home">',array('site/login')); ?> -->
 		Ingresar a tu cuenta</div>
-		<div class="singin"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
+		<div class="singin"><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt="">
 		Crear una cuenta</div>
 		<div class="searchbar">
 			
@@ -370,11 +372,13 @@
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 
-
 	<section class="informativa">
 	<?php echo $content; ?>
 	</section>
-
+	
+	<div class="loginHome">
+	<?php Yii::app()->runController('/site/login'); ?>
+	</div>
 
 
 	<section class="mapaSitio">
