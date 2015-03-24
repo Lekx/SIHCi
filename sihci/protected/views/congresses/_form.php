@@ -6,6 +6,8 @@
 <!--PC01-Registrar datos  Participacion en congresos-->
 <div class="form">
 
+
+
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'congresses-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -13,7 +15,9 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-)); ?>
+)); 
+
+?>
 
 	<p class="note">Los campos marcados con <span class="required">*</span> son necesarios.</p>
 
@@ -76,21 +80,29 @@
    
 	<div class="row button">
 
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>      
+         
     
-
+        <input type="submit" onClick="validationFrom()" value="Guardar">
         <input type="button" onClick="cleanUp()" value="Borrar">
 	
 		 <script>
-    function cleanUp()
-     {
-        var text;
-        var result = confirm("¿Esta usted seguro de limpiar estos datos?");
-        if (result == true) 
-          $('[type^=text]').val('');
-        else s
-        document.getElementById("demo").innerHTML = txt;
-            }
+		    function cleanUp()
+		     {
+		        var text;
+		        var result = confirm("¿Esta usted seguro de limpiar estos datos?");
+		        if (result == true) 
+		          $('[type^=text]').val('');
+		        else s
+		        document.getElementById("demo").innerHTML = txt;
+		            }
+			function validationFrom()
+			   {
+			    alert("Registro realizado con éxito");
+			    return false;
+			   } 
+
+        
+
         </script>
 	</div>	
 	<?php if(Yii::app()->user->hasFlash('success')):?>
