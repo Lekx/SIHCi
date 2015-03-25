@@ -19,7 +19,7 @@
 
 ?>
 
-	<p class="note">Los campos marcados con <span class="required">*</span> son necesarios.</p>
+
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -68,8 +68,9 @@
 	</div>
 
 	<div class="row">
-        <?php echo $form->dropDownList($model,'work_type',array(''=>'','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));
-     ?>
+        <?php echo $form->dropDownList($model,'work_type',array(''=>'','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));?>
+        <?php echo $form->error($model,'work_type'); ?>
+     
 	</div>
 
 	<div class="row">
@@ -84,6 +85,7 @@
     
         <input type="submit" onClick="validationFrom()" value="Guardar">
         <input type="button" onClick="cleanUp()" value="Borrar">
+        <input type="button" value="Cancelar">
 	
 		 <script>
 		    function cleanUp()
@@ -98,7 +100,7 @@
 			function validationFrom()
 			   {
 			    alert("Registro realizado con éxito");
-			    return false;
+			    return true;
 			   } 
 
         
