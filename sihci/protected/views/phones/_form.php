@@ -2,7 +2,33 @@
 /* @var $this PhonesController */
 /* @var $model Phones */
 /* @var $form CActiveForm */
+
+$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+     'targetClass'=>'emails',
+     'addButtonLabel'=>'Agregar nuevo',
+  )); 
+
+
 ?>
+	<script>
+		function cleanUp(){
+			var text;
+			var result = confirm("¿Está usted seguro de limpiar estos datos?");
+			if (result==true) {
+				$('[id^=Phones_]').val('');
+			}else{
+
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+		function validationFrom(){
+			alert("Registro Realizado con éxito");
+			return false;
+		}
+
+</script>
+
+
 
 <div class="form">
 
@@ -12,22 +38,44 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_person'); ?>
-		<?php echo $form->textField($model,'id_person'); ?>
-		<?php echo $form->error($model,'id_person'); ?>
+	<div class="emails">
+			<div class="row">
+			<!-- email viene de PhonesController.php-->
+			<?php echo $form->textField($emails,'email',array('size'=>45,'maxlength'=>45, 'placeholder'=>"email")); ?>
+			<?php echo $form->error($emails,'email'); ?>
+		</div>
+			<div class="row">
+		<!-- tipo de email viene de PhonesController.php-->
+		<?php echo $form->labelEx($emails,'type'); ?>
+			<?php echo $form->dropDownList($emails,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+																'Particular'=>'Particular',
+				                                                'Campus'=>'Campus', 'otro'=>'otro'), 
+			                                                       array('options' => array(''=>array('selected'=>true)))); ?>
+			<?php echo $form->error($emails,'type'); ?>
+		</div>
+			
 	</div>
-
+	
+<div class="phone">
+<?php 
+$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+     'targetClass'=>'phone',
+     'addButtonLabel'=>'Agregar nuevo',
+  )); 
+?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo')); ?>
+		<?php echo $form->dropDownList($model,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+															'Particular'=>'Particular',
+			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
+		                                                       array('options' => array(''=>array('selected'=>true)))); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
@@ -57,15 +105,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'is_primary'); ?>
-		<?php echo $form->textField($model,'is_primary'); ?>
+		<?php echo $form->checkBox($model,'is_primary'); ?>
 		<?php echo $form->error($model,'is_primary'); ?>
 	</div>
+</div><!--Phones -->
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+		<input type="submit" onclick="validationFrom()" value="Guardar">
+		<input type="button" onclick="cleanUp()" value="Limpiar">
 	</div>
 
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+

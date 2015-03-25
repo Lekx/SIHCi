@@ -2,7 +2,9 @@
 /* @var $this PersonsController */
 /* @var $model Persons */
 /* @var $form CActiveForm */
+
 ?>
+
 
 <div class="form">
 	<?php 
@@ -20,7 +22,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 	
@@ -45,70 +47,60 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'marital_status'); ?>
-		<?php echo $form->dropDownList($model,'marital_status',array('soltero'=>'Soltero','viudo'=>'Viudo', 'casado'=>'Casado',
+		<?php echo $form->dropDownList($model,'marital_status',array(''=>'','soltero'=>'Soltero','viudo'=>'Viudo', 'casado'=>'Casado',
 			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'), 
-		                                                       array('options' => array('soltero'=>array('selected'=>true))), 
+		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'marital_status'); ?>
 	</div>
 
 	<div class="row">
-    <?php
+
+		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'language'=> 'es',
 		    'attribute' => 'birth_date',
-		    'name' => 'birth_date',
-		    'value' =>$model->birth_date,
 		    'model' => $model,
-		    'flat'=>true,
-		    'options' => array(
-			    		'showAnim' => 'drop', 
-			    		'showButtonPanel' => true,
-			    		'dateFormat' => 'yy-m-d',
-			    		'changeMonth'=>true, //cambiar por Mes
-			    		'changeYear'=>true, //cambiar por Año
-			    		'yearRange'=>'1920:2099', //minimo año
-			    		'minDate' => '1920-01-01', //minima fecha
-			   			'maxDate' => 'now-5475',
-		    	),
+		   // 'flat'=>false,
+		     'options' => array(
+			     		'changeMonth'=>true, //cambiar por Mes
+			     		'changeYear'=>true, //cambiar por Año
+			    			'maxDate' => 'now-5475',
+		     	),
 		    'htmlOptions' => array(
-		    			'style'=>'', 
+		    			'size'=>'10',
+		    			'maxlength'=>'10', 
 		        		'placeholder'=>"Fecha de Nacimiento"),
 				));
 	?>
 	<?php echo $form->error($model,'birth_date'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'genre'); ?>
-		<?php echo $form->dropDownList($model,'genre',array('Hombre'=>'Hombre','Mujer'=>'Mujer'), 
-		                                              array('options' => array('1'=>array('selected'=>true))), 
-		                                              array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'genre'); ?>
+
+		<div class="row">
+		<?php $status = array('Hombre' => 'Hombre','Mujer'=>'Mujer'); 
+		    echo $form-> RadioButtonList($model,'genre' ,$status, array ('separador' => '')); 
+		 ?>
+		<?php echo $form->error($model,'is_national'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'country'); ?>
-		<?php
-		$this->widget(
-            'yiiwheels.widgets.formhelpers.WhCountries',
-            array(
-                'name' => 'country',
-                'value' => 'US',
-                'useHelperSelectBox' => true,
-                'pluginOptions' => array(
-                    'country' => 'US',
-                    'language' => 'es_ES',
-                    'flags' => true
-                ),
-                'htmlOptions' => array(
-						   'data-available' => 'DE,MX'
-						),
-            )
-        );
-        ?>
-		<?php echo $form->error($model,'country'); ?>
-	</div>
+	<p>Pais</p>
+         <?php
+         $this->widget(
+             'yiiwheels.widgets.formhelpers.WhCountries',
+             array(
+                 'name' => 'Persons[country]',
+                 'id' => 'Persons_country',
+              
+                 'useHelperSelectBox' => true,
+                 'pluginOptions' => array(
+                     'country' => '',
+                     'language' => 'es_ES',
+                     'flags' => true
+                 )
+             )
+         );
+         ?>
   
 	<div class="row">
 	<!-- Nacionalidad es renderizado de Curriculum.php-->
@@ -117,13 +109,19 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'state_of_birth',array('size'=>45,'maxlength'=>45, 'placeholder'=>"Estado")); ?>
+		<?php echo $form->textField($model,'state_of_birth',array('size'=>45,'maxlength'=>45, 'placeholder'=>"Estado de Nacimiento")); ?>
 		<?php echo $form->error($model,'state_of_birth'); ?>
 	</div>
 
 	<div class="row">
 		
-		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Curp o Pasaporte")); ?>
+		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Curp")); ?>
+		<?php echo $form->error($model,'curp_passport'); ?>
+	</div>
+
+	<div class="row">
+		
+		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Pasaporte")); ?>
 		<?php echo $form->error($model,'curp_passport'); ?>
 	</div>
 
@@ -140,9 +138,25 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+		<input type="submit" onclick="validationFrom()" value="Guardar">
+		<input type="button" onclick="cleanUp()" value="Limpiar">
 	</div>
+	<script>
+		function cleanUp(){
+			var text;
+			var result = confirm("¿Está usted seguro de limpiar estos datos?");
+			if (result==true) {
+				$('[id^=Persons_]').val('');
+			}else{
+
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+		function validationFrom(){
+			alert("Registro Realizado con éxito");
+			return false;
+		}
+</script>
 
 
 <?php $this->endWidget(); ?>

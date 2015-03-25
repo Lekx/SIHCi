@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Addresses <?php echo $model->id; ?></h1>
+<h1>Datos de dirección actual</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -79,9 +79,25 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+		<input type="submit" onclick="validationFrom()" value="Guardar">
+		<input type="button" onclick="cleanUp()" value="Limpiar">
 	</div>
+	<script>
+		function cleanUp(){
+			var text;
+			var result = confirm("¿Está usted seguro de limpiar estos datos?");
+			if (result==true) {
+				$('[id^=Addresses_]').val('');
+			}else{
+
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+		function validationFrom(){
+			alert("Registro Realizado con éxito");
+			return false;
+		}
+</script>
 
 <?php $this->endWidget(); ?>
 

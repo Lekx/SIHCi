@@ -55,7 +55,7 @@ class Persons extends CActiveRecord
 			                  'types'=>'png, jpg, jpeg, gif',
 			                  'maxSize'=>array(1024 * 2000),
 			                  'message'=>'Solo se admiten archivos PNG'),
-			array('person_rfc', 'length', 'max'=>13),
+			array('person_rfc', 'length', 'min'=>13, 'max'=>13),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_user, names, last_name1, last_name2, marital_status, genre, birth_date, country, state_of_birth, curp_passport, photo_url, person_rfc', 'safe', 'on'=>'search'),
@@ -147,5 +147,14 @@ class Persons extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	protected function beforeSave(){
+		$this->birth_date = DateTime::createFromFormat('d/m/Y', $this->birth_date)->format('Y-m-d');
+		return parent::beforeSave();
+	}	
+
+	protected function afterFind(){
+		$this->birth_date = DateTime::createFromFormat('Y-m-d', $this->birth_date)->format('d/m/Y');
+		return parent::beforeSave();
 	}
 }

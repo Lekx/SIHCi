@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List DocsIdentity', 'url'=>array('index')),
 	array('label'=>'Create DocsIdentity', 'url'=>array('create')),
 	array('label'=>'Update DocsIdentity', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete DocsIdentity', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete DocsIdentity', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?')),
 	array('label'=>'Manage DocsIdentity', 'url'=>array('admin')),
 );
 ?>

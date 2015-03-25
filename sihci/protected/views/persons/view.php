@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List Persons', 'url'=>array('index')),
 	array('label'=>'Create Persons', 'url'=>array('create')),
 	array('label'=>'Update Persons', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Persons', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete Persons', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?')),
 	array('label'=>'Manage Persons', 'url'=>array('admin')),
 );
 ?>

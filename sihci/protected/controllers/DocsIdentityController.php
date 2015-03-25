@@ -75,8 +75,20 @@ class DocsIdentityController extends Controller
 		{
 			$model->attributes=$_POST['DocsIdentity'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->doc_id = CUploadedFile::getInstanceByName('DocsIdentity[doc_id]');
+
+			if ($model->validate()) {
+				
+				if($model->doc_id != ''){
+					//esta ruta debe cambiarse a 
+					//$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/Documento.pdf')
+					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/cve-hc/'.$model->type.'.pdf');
+						if($model->save()){
+							$this->redirect(array('view','id'=>$model->id));
+			   			}
+				}
+				
+			}
 		}
 
 		$this->render('create',array(
@@ -97,12 +109,25 @@ class DocsIdentityController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+////////////////////////////////////////////////////
 		if(isset($_POST['DocsIdentity']))
 		{
 			$model->attributes=$_POST['DocsIdentity'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->doc_id = CUploadedFile::getInstanceByName('DocsIdentity[doc_id]');
+
+			if ($model->validate()) {
+				
+				if($model->doc_id != ''){
+					//esta ruta debe cambiarse a 
+					//$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/Documento.pdf')
+					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/cve-hc/'.$model->type.'.pdf');
+						if($model->save()){
+							$this->redirect(array('view','id'=>$model->id));
+			   			}
+				}
+				
+			}
+			
 		}
 
 		$this->render('update',array(

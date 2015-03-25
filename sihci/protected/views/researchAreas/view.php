@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List ResearchAreas', 'url'=>array('index')),
 	array('label'=>'Create ResearchAreas', 'url'=>array('create')),
 	array('label'=>'Update ResearchAreas', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ResearchAreas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete ResearchAreas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?')),
 	array('label'=>'Manage ResearchAreas', 'url'=>array('admin')),
 );
 ?>

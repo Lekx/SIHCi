@@ -24,7 +24,7 @@ class PhonesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+/*	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -43,7 +43,7 @@ class PhonesController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}
+	}*/
 
 	/**
 	 * Displays a particular model.
@@ -67,20 +67,29 @@ class PhonesController extends Controller
 	public function actionCreate()
 	{
 		$model=new Phones;
-
+		$emails = new Emails;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['Phones']))
 		{
+			$email = $_POST['Emails']['email'];
+			$type = $_POST['Emails']['type'];
+
 			$model->attributes=$_POST['Phones'];
 			$model->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			$emails->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			$emails->email = $email;
+			$emails->type = $type;
+			
 			if($model->save())
+				
 				$this->redirect(array('view','id'=>$model->id));
+			
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model, 'emails' =>$emails,
 		));
 	}
 
@@ -94,19 +103,21 @@ class PhonesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$emails = new Emails;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['Phones']))
 		{
 			$model->attributes=$_POST['Phones'];
+			$emails->email = $emails->email;
+			$emails->type = $emails->type;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
+			'model'=>$model, 'emails' =>$emails,
 		));
 	}
 

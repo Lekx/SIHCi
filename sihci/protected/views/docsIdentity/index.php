@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Docs Identities</h1>
+<h1>Documentos Oficiales</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
