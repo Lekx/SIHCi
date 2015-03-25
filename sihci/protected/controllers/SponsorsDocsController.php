@@ -1,6 +1,6 @@
 <?php
 
-class SponsorsController extends Controller
+class SponsorsDocsController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -24,7 +24,7 @@ class SponsorsController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/*public function accessRules()
+	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -43,7 +43,7 @@ class SponsorsController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}*/
+	}
 
 	/**
 	 * Displays a particular model.
@@ -56,103 +56,11 @@ class SponsorsController extends Controller
 		));
 	}
 
-	
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
 	public function actionCreate()
-	{
-		$model=new Sponsors;
-		$modelAddresses = new Addresses;
-		$modelPersons = new Persons;
-
-		
-
-		if(isset($_POST['Sponsors']))
-		{  
-			$model->attributes=$_POST['Sponsors'];
-			$modelAddresses->attributes = $_POST['Addresses'];
-			$model->id_user = Yii::app()->user->id;
-			
-
-
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model, 'modelAddresses'=>$modelAddresses, 'modelPersons'=>$modelPersons
-		));
-	}
-
-	public function actionCreate_persons()
-	{
-		$model=new Persons;
-		
-
-		
-
-		if(isset($_POST['Persons']))
-		{  
-			$model->attributes=$_POST['Persons'];
-			$model->id_user = Yii::app()->user->id;
-			
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create_persons',array(
-			'model'=>$model,
-		));
-	}
-
-	public function actionCreate_contact()
-	{
-		$model=new Phones;
-		$emails = new Emails;
-		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
-
-		if(isset($_POST['Phones']))
-		{
-			$email = $_POST['Emails']['email'];
-			$type = $_POST['Emails']['type'];
-
-			$model->attributes=$_POST['Phones'];
-			$model->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$emails->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$emails->email = $email;
-			$emails->type = $type;
-			
-			if($model->save())
-				
-				$this->redirect(array('view','id'=>$model->id));
-			
-		}
-
-		$this->render('create_contact',array(
-			'model'=>$model, 'emails' =>$emails,
-		));
-	}
-
-	public function actionCreate_addresses()
-	{
-		$model=new Addresses;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Addresses']))
-		{
-			$model->attributes=$_POST['Addresses'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create_addresses',array(
-			'model'=>$model,
-		));
-	}
-
-
-	public function actionCreate_docs()
 	{
 		$model=new SponsorsDocs;
 
@@ -162,26 +70,14 @@ class SponsorsController extends Controller
 		if(isset($_POST['SponsorsDocs']))
 		{
 			$model->attributes=$_POST['SponsorsDocs'];
-			$model->id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id));
-			$model->path = CUploadedFile::getInstanceByName('sponsors[path]');
-	
-			//terminar las comparaciones de tipo de archivo a subir.
-			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF' )
-			
-			{
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/files_manager/'.$model->file_name.'.pdf');
-				$model->path ='/sihci/sihci/files_manager/'.$model->file_name.'.pdf';
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('create_docs',array(
+		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
-
-
-
 
 	/**
 	 * Updates a particular model.
@@ -195,9 +91,9 @@ class SponsorsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Sponsors']))
+		if(isset($_POST['SponsorsDocs']))
 		{
-			$model->attributes=$_POST['Sponsors'];
+			$model->attributes=$_POST['SponsorsDocs'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -226,7 +122,7 @@ class SponsorsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Sponsors');
+		$dataProvider=new CActiveDataProvider('SponsorsDocs');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -237,10 +133,10 @@ class SponsorsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Sponsors('search');
+		$model=new SponsorsDocs('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Sponsors']))
-			$model->attributes=$_GET['Sponsors'];
+		if(isset($_GET['SponsorsDocs']))
+			$model->attributes=$_GET['SponsorsDocs'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -251,12 +147,12 @@ class SponsorsController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Sponsors the loaded model
+	 * @return SponsorsDocs the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Sponsors::model()->findByPk($id);
+		$model=SponsorsDocs::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -264,11 +160,11 @@ class SponsorsController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Sponsors $model the model to be validated
+	 * @param SponsorsDocs $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='sponsors-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='sponsors-docs-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
