@@ -1,0 +1,120 @@
+@font-face{
+  	font-family: 'Caviar_Dreams_Bold';
+	 src: url('../fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Caviar_Dreams';
+  src: url('../fonts/Caviar-Dreams/CaviarDreams.ttf');
+}
+.loginHome
+{
+   display:none;
+}
+.loginback
+{
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+ 	background: rgba(40, 50, 90, .70);
+ 	z-index: 900;
+	
+
+}
+#login-form
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	width: 400px;
+	height: 225px;
+	background: white;
+	font-family: 'Caviar_Dreams';
+	z-index: 999;
+}
+#login-form input[type="text"] ,
+input[type="password"] 
+{
+
+	background-color: #CDF1F3 !important;
+	opacity: .80;
+	height: 50px !important;
+	width: 350px !important;
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	margin-top: 26px;
+	font-family: 'Caviar_Dreams_Bold' !important; 
+	font-size: 20px !important; 
+	padding-left: 20px !important;
+	color: #1EB9C0 !important;
+	opacity: .60 !important;
+
+}
+#login-form input[type="submit"], input[type="button"]
+{
+	width: 400px !important;
+	height: 50px !important;
+	background-color: #0E3152;
+	color: white;
+	font-family: 'Caviar_Dreams_Bold';
+	font-size: 25px;
+
+
+}
+#login-form input::-webkit-input-placeholder
+{
+	font-family: 'Caviar_Dreams_Bold'; 
+	font-size: 20px; 
+	padding-left: 20px; 
+	color: #1EB9C0;
+	opacity: .60;
+} 
+.inner-addon { 
+    position: relative; 
+	height: 50px !important;
+	width: 350px !important;
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	margin-bottom: 15px;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  color: #1EB9C0;
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 23px;
+  border-left: 2px solid #1EB9C0;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  10px;}
+.right-addon .glyphicon { right: 10px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  12px; }
+.right-addon input { padding-right: 12px; }
+
+.closelogin 
+{
+	position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-bottom: 15px;
+	color: #AFB6C7;
+}
+.closelogin .glyphicon
+{
+	font-size: 23px;	
+}

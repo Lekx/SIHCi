@@ -7,7 +7,6 @@
 		'enableClientValidation'=>true,
 		'clientOptions'=>array(
 			'validateOnSubmit'=>true,
-
 		),
 	)); ?>
 
@@ -35,6 +34,17 @@
 		<div class="row buttons">
 			<?php echo CHtml::submitButton('Ingresar a mi cuenta'); ?>
 		</div>
+
+		<div class="">
+			<?php echo CHtml::Button('Recuperar Contraseña'); ?>
+		</div>
 	<?php $this->endWidget(); ?>
+		
+		<div class="closelogin">
+			No deseo Ingresar <i class="glyphicon glyphicon-remove"></i>
+		</div>
 	</div><!-- form -->
+
+
+
 </div>
