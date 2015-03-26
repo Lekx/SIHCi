@@ -24,7 +24,7 @@ class SponsorsController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+	/*public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -43,7 +43,7 @@ class SponsorsController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}
+	}*/
 
 	/**
 	 * Displays a particular model.
@@ -61,7 +61,7 @@ class SponsorsController extends Controller
 	{
 		$model=new Sponsors;
 		$modelAddresses = new Addresses;
-
+		$modelPersons = new Persons;
 
 		
 
@@ -78,9 +78,110 @@ class SponsorsController extends Controller
 		}
 
 		$this->render('create',array(
-			'model'=>$model, 'modelAddresses'=>$modelAddresses
+			'model'=>$model, 'modelAddresses'=>$modelAddresses, 'modelPersons'=>$modelPersons
 		));
 	}
+
+	public function actionCreate_persons()
+	{
+		$model=new Persons;
+		
+
+		
+
+		if(isset($_POST['Persons']))
+		{  
+			$model->attributes=$_POST['Persons'];
+			$model->id_user = Yii::app()->user->id;
+			
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('create_persons',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionCreate_contact()
+	{
+		$model=new Phones;
+		$emails = new Emails;
+		// Uncomment the following line if AJAX validation is needed
+		 $this->performAjaxValidation($model);
+
+		if(isset($_POST['Phones']))
+		{
+			$email = $_POST['Emails']['email'];
+			$type = $_POST['Emails']['type'];
+
+			$model->attributes=$_POST['Phones'];
+			$model->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			$emails->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			$emails->email = $email;
+			$emails->type = $type;
+			
+			if($model->save())
+				
+				$this->redirect(array('view','id'=>$model->id));
+			
+		}
+
+		$this->render('create_contact',array(
+			'model'=>$model, 'emails' =>$emails,
+		));
+	}
+
+	public function actionCreate_addresses()
+	{
+		$model=new Addresses;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Addresses']))
+		{
+			$model->attributes=$_POST['Addresses'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('create_addresses',array(
+			'model'=>$model,
+		));
+	}
+
+
+	public function actionCreate_docs()
+	{
+		$model=new SponsorsDocs;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['SponsorsDocs']))
+		{
+			$model->attributes=$_POST['SponsorsDocs'];
+			$model->id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id));
+			$model->path = CUploadedFile::getInstanceByName('sponsors[path]');
+	
+			//terminar las comparaciones de tipo de archivo a subir.
+			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF' )
+			
+			{
+				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/files_manager/'.$model->file_name.'.pdf');
+				$model->path ='/sihci/sihci/files_manager/'.$model->file_name.'.pdf';
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('create_docs',array(
+			'model'=>$model,
+		));
+	}
+
+
+
 
 	/**
 	 * Updates a particular model.

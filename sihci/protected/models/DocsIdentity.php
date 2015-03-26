@@ -34,9 +34,13 @@ class DocsIdentity extends CActiveRecord
 		return array(
 			array('id_curriculum', 'required'),
 			array('id_curriculum, is_Primary', 'numerical', 'integerOnly'=>true),
-			array('type', 'length', 'max'=>20),
+			array('type', 'required'),
+			array('doc_id', 'required'),
 			array('description', 'length', 'max'=>250),
-			array('doc_id', 'length', 'max'=>50),
+			array('doc_id','file', 'allowEmpty'=>true,
+			                  'types'=>'pdf',
+			                  'maxSize'=>array(1024 * 2000),
+			                  'message'=>'Solo se admiten archivos PDF'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, type, description, doc_id, is_Primary', 'safe', 'on'=>'search'),

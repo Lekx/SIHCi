@@ -37,6 +37,9 @@ class Phones extends CActiveRecord
 			array('id_person, type, country_code, local_area_code, phone_number, is_primary', 'required'),
 			array('id_person, country_code, local_area_code, phone_number, extension, is_primary', 'numerical', 'integerOnly'=>true),
 			array('type', 'length', 'max'=>20),
+			array('country_code', 'length', 'max'=>2, 'min'=>2),
+			array('local_area_code', 'length', 'max'=>3, 'min'=>2),
+			array('phone_number', 'length', 'max'=>10, 'min'=>8),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_person, type, country_code, local_area_code, phone_number, extension, is_primary', 'safe', 'on'=>'search'),

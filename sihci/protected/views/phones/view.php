@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List Phones', 'url'=>array('index')),
 	array('label'=>'Create Phones', 'url'=>array('create')),
 	array('label'=>'Update Phones', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Phones', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete Phones', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?')),
 	array('label'=>'Manage Phones', 'url'=>array('admin')),
 );
 ?>
