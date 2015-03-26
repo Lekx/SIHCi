@@ -60,6 +60,8 @@ class KnowledgeApplicationController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
+	//AC02-Registrar-datos
 	public function actionCreate()
 	{
 		$model=new KnowledgeApplication;
@@ -71,7 +73,6 @@ class KnowledgeApplicationController extends Controller
 		{
 			$model->attributes=$_POST['KnowledgeApplication'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
-
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -86,6 +87,7 @@ class KnowledgeApplicationController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+	//AC02-Modificar-datos
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);

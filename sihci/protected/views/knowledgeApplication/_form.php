@@ -14,9 +14,9 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
-
+	
 	<?php echo $form->errorSummary($model); ?>
-
+	
 	<div class="row">
         <?php echo $form->labelEx($model,'Pregunta 1 <br> Trabajo libre o publicación(es) Autor(es) título, revista, año, volumen, páginas'); ?>
         <?php echo $form->textArea($model,'term1',array('rows'=>10, 'cols'=>109,'maxlength' => 500, 'style'=>'width: 720px; height: 70px;')); ?>
@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="row">
-        <?php echo $form->labelEx($model,'Pregunta 3 <br> Conocimiento científico ÚTIL generado en la investigación con potencial de aplicación para la innovación en  salud'); ?>
+        <?php echo $form->labelEx($model,'Pregunta 3 <br> Conocimiento científico útil generado en la investigación con potencial de aplicación para la innovación en  salud'); ?>
 		<?php echo $form->textArea($model,'term3',array('rows'=>10, 'cols'=>150,'maxlength' => 500,'style'=>'width: 720px; height: 70px;')); ?>
 		<?php echo $form->error($model,'term3'); ?>
 	</div>
@@ -50,11 +50,11 @@
 	<div class="row buttons">
 
         <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='button' onclick='cleanUp()' value="Limpiar"> 
+        <input type='button' onclick='cleanUp()' value="Borrar"> 
         <input type='button' onclick="location.href='http://localhost/SIHCi/sihci/index.php/knowledgeApplication/admin'" value="Cancelar"> 
 		    	
       	<script>
-			
+		
 			function cleanUp()
 			{
 			    var text;
@@ -64,13 +64,16 @@
 			     
 			    document.getElementById("demo").innerHTML = text;
 			}
-	
+			
 			function validationFrom()
-			{
-				alert("Registro realizado con éxito");
-				return false;
+			{		
+				if ()
+				{
+					alert("Registro realizado con éxito");
+					return false;
+				}
 			}	
-
+		
 		</script>
 	</div>
 
