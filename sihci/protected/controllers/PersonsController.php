@@ -151,12 +151,6 @@ class PersonsController extends Controller
 			   		}
 				}
 
-<<<<<<< HEAD
-=======
-			
-
-
->>>>>>> 2a958dace69a4674f18a6b8c5846b7d2d3536a90
 		$this->render('update',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
 
