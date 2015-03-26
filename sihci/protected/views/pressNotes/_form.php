@@ -21,13 +21,12 @@
 
 	<div class="row">
 		<?php echo $form->dropDownList($model,'type',array(
-				'Demostraciones'=>'Demostraciones','Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologi',
+				''=>'','Demostraciones'=>'Demostraciones','Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologi',
 				'Ferias Empresariales'=>'Ferias Empresariales','Medios Impresos'=>'Medios Impresos','Radio'=>'Radio',
 				'Revistas de Divulgacion'=>'Revistas de Divulgacion','Seminarios'=>'Simposius','Talleres'=>'Talleres',
 				'Teatro'=>'Teatro','Televisión'=>'Televisión','Vidos'=>'Vidos'
 			),
-			array('empty'=>('Tipo de participación '))	
-		  ); 
+			array('setOnEmpty'=>'true', 'value'=>'null'));		  
 		?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
@@ -35,11 +34,11 @@
 	<div class="row">
 		<?php echo $form->dropDownList($model,'directed_to',
 		    array(
-				'Empresarios'=>'Empresarios','Estudiantes'=>'Estudiantes','Funcionarios'=>'Funcionarios',
+				''=>'','Empresarios'=>'Empresarios','Estudiantes'=>'Estudiantes','Funcionarios'=>'Funcionarios',
 				'Público en general'=>'Público en general','Sector Académico'=>'Sector Académico','Sector Privado'=>'Sector Privado',
 				'Sector Público'=>'Sector Público','Sector Social'=>'Sector Social'
 			),
-		    array('empty'=>'Dirigido a')); 
+		    array('setOnEmpty'=>'true', 'key'=>'null')); 
 		?>
 		<?php echo $form->error($model,'directed_to'); ?>
 	</div>
@@ -51,9 +50,10 @@
 		    'language'=> 'es',
 		    'attribute' => 'date',
 		    'htmlOptions' => array(
+		    	    'dateFormat'=>'d/m/Y',
 		    		'size' => '10',         
 		        	'maxlength' => '10', 
-		        	'placeholder'=>"Fecha de la publicación"   
+		        	'placeholder'=>"Fecha de la publicación",
 		    ),
 		));
 		?>
