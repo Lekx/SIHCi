@@ -114,13 +114,17 @@ class SiteController extends Controller
 									$this->redirect(Yii::app()->user->returnUrl);
 								}
 							}else{
+							return false;
 			   				$msg = "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
 			   			}
 		}
 	}
-		// display the login form
+
+	// display the login form 
+
 		$this->renderPartial('login',array('model'=>$model));
 	}
+
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */

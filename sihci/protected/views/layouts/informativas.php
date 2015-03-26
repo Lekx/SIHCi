@@ -501,7 +501,7 @@
 			<p><a>Condiciones de uso</a> / <a>Aviso de privacidad</a></p>
 			</div>
 		</div>
-		<div class="loginfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
+		<div class="loginfot"><a href=""><img id="logocuentas2"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaIngresar.png" alt=""></a>
 		Ingresar a tu cuenta</div>
 		<div class="singinfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""></a>
 		Crear una cuenta</div>

@@ -3,40 +3,49 @@
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'login-form',
+		'enableAjaxValidation'=>true,
 		'action' => $this->createUrl('site/login'),
 		'enableClientValidation'=>true,
 		'clientOptions'=>array(
-			'validateOnSubmit'=>true,
 		),
 	)); ?>
 
 		<div class="row">
-		<div class="inner-addon right-addon">
-			 <i class="glyphicon glyphicon-envelope"></i>
-			<?php echo $form->textField($model,'username', array('placeholder'=>"Email..")); ?>
-					
-		</div>
-			<!--  <?php echo $form->error($model,'username'); ?> -->
-		</div>
+			<div class="inputlog">
+				<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-envelope"></i>
+					<?php echo $form->textField($model,'username', array('placeholder'=>"Email..")); ?>
 
-		<div class="row">
-			<div class="inner-addon right-addon">
-				<i class="glyphicon glyphicon-lock"></i>
-				<?php echo $form->passwordField($model,'password', array('placeholder'=>"Contraseña..")); ?>
+				</div>
 			</div>
-		<!-- 	<?php echo $form->error($model,'password'); ?> -->
+				<div class="infodialog">
+				<p>Favor de ingresar su correo de registro.</p>
+				</div>
+		</div>
+	
+		<div class="row">
+			<div class="inputlog">
+				<div class="inner-addon right-addon">
+					<i class="glyphicon glyphicon-lock"></i>
+					<?php echo $form->passwordField($model,'password', array('placeholder'=>"Contraseña..")); ?>
+				</div>
+			</div>
+				<div class="infodialog1">
+				<p>Favor de ingresar su contraseña.</p>
+				</div>
 		</div>
 
 		<!-- <div class="row">
 		<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>">¿Olvidó su Contraseña?</a>
 		</div> -->
-
+	
 		<div class="row buttons">
 			<?php echo CHtml::submitButton('Ingresar a mi cuenta'); ?>
 		</div>
-
+ 	
 		<div class="">
-			<?php echo CHtml::Button('Recuperar Contraseña'); ?>
+			<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>"><?php echo CHtml::Button('Recuperar Contraseña'); ?></a>
+
 		</div>
 	<?php $this->endWidget(); ?>
 		
