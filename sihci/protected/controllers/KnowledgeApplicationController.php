@@ -61,7 +61,7 @@ class KnowledgeApplicationController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 
-	//AC02-Registrar-datos
+	//AC01-Registrar-datos
 	public function actionCreate()
 	{
 		$model=new KnowledgeApplication;
@@ -174,4 +174,6 @@ class KnowledgeApplicationController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	
 }
