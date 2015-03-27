@@ -1,60 +1,77 @@
-<p>FO02-Desplegar Programas NO PNCP </p>
-<section>
-	<H1>Iconos</H1>
-<section>
+<!-- FO02-Desplegar Programas NO PNCP -->
+
+<?php
+/* @var $this SiteController */
+/* @var $error array */
+
+$this->pageTitle=Yii::app()->name . ' - Programas NO PNCP ';
+$this->breadcrumbs=array(
+	'Programa de formación de recursos humanos en investigación / Programas NO PNCP ',
+);
+?>
 
 
-<section>
-	<OL TYPE=A>
-		<LI>Medicina Interna (PNPC)</LI>
-		<LI>Pediatría Médica (PNPC)</LI>
-		<LI>Radiología e Imagen</LI>
-		<LI>PNPC Padrón Nacional de Posgrados de Calidad</LI>
-		<LI>SUBESPECIALIDADES</LI>
-		<LI>Hospital Civil Fray Antonio Alcalde</LI>
-		<LI>Alergia e Inmunología Clínica</LI>
-		<LI>Anestesiología Pediátrica</LI>
-		<LI>Angiología y Cirugía Vascular</LI>
-		<LI>Cardiología</LI>
-		<LI>Cirugía Cardiotorácica</LI>
-		<LI>Cirugía Oncológica</LI>
-		<LI>Cirugía Pediátrica (PNPC)</LI>
-		<LI>Cirugía Plástica y Reconstructiva</LI>
-		<LI>Coloproctología (PNPC)</LI>
-		<LI>Dermatología</LI>
-		<LI>Dermatología Pediátrica</LI>
-		<LI>Endocrinología</LI>
-		<LI>Gastroenterología</LI>
-		<LI>Hematología</LI>
-		<LI>Hemodinamia y Cardiología Intervencionista</LI>
-		<LI>Infectología</LI>
-		<LI>Infectología Pediátrica (PNPC)</LI>
-		<LI>Medicina del Enfermo en Estado Crítico (PNPC)</LI>
-		<LI>Medicina de Rehabilitación</LI>
-		<LI>Nefrología (PNPC)</LI>
-		<LI>Neonatología (PNPC)</LI>
-		<LI>Neurocirugía</LI>
-		<LI>Oncología médica</LI>
-		<LI>Retina Médico Quirúrgica (PNPC)</LI>
-		<LI>Reumatología (PNPC)</LI>
-		<LI>Urología</LI>
-		<LI>Urología Ginecológica (PNPC)</LI>
-		<LI>Hospital Civil Dr. Juan I. Menchaca</LI>
-		<LI>Cirugía Laparoscópica (PNPC)</LI>
-		<LI>Gastroenterología y Nutrición Pediátrica</LI>
-		<LI>Hemato-Oncología Pediátrica</LI>
-		<LI>Medicina Materno Fetal</LI>
-		<LI>Neonatología</LI>
-		<LI>Neurocirugía</LI>
-		<LI>Reumatología (PNPC)</LI>
-		<LI>PNPC Padrón Nacional de Posgrados de calidad</LI>
-	</OL>
-<section>
+<section class="informativa">
 
 
+	
+	<section class="column-left">
+		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comités.png" alt="">
+	</section>
 
 
+	<section class="column-center">
+	<h2>Programas NO PNCP</h2>
+	<hr>
+		<ol TYPE=A>
+			<li>Medicina Interna (PNPC)</li>
+			<li>Pediatría Médica (PNPC)</li>
+			<li>Radiología e Imagen</li>
+			<li>PNPC Padrón Nacional de Posgrados de Calidad</li>
+			<li>SUBESPECIAliDADES</li>
+			<li>Hospital Civil Fray Antonio Alcalde</li>
+			<li>Alergia e Inmunología Clínica</li>
+			<li>Anestesiología Pediátrica</li>
+			<li>Angiología y Cirugía Vascular</li>
+			<li>Cardiología</li>
+			<li>Cirugía Cardiotorácica</li>
+			<li>Cirugía Oncológica</li>
+			<li>Cirugía Pediátrica (PNPC)</li>
+			<li>Cirugía Plástica y Reconstructiva</li>
+			<li>Coloproctología (PNPC)</li>
+			<li>Dermatología</li>
+			<li>Dermatología Pediátrica</li>
+			<li>Endocrinología</li>
+			<li>Gastroenterología</li>
+			<li>Hematología</li>
+			<li>Hemodinamia y Cardiología Intervencionista</li>
+			<li>Infectología</li>
+			<li>Infectología Pediátrica (PNPC)</li>
+			<li>Medicina del Enfermo en Estado Crítico (PNPC)</li>
+			<li>Medicina de Rehabilitación</li>
+			<li>Nefrología (PNPC)</li>
+			<li>Neonatología (PNPC)</li>
+			<li>Neurocirugía</li>
+			<li>Oncología médica</li>
+			<li>Retina Médico Quirúrgica (PNPC)</li>
+			<li>Reumatología (PNPC)</li>
+			<li>Urología</li>
+			<li>Urología Ginecológica (PNPC)</li>
+			<li>Hospital Civil Dr. Juan I. Menchaca</li>
+			<li>Cirugía Laparoscópica (PNPC)</li>
+			<li>Gastroenterología y Nutrición Pediátrica</li>
+			<li>Hemato-Oncología Pediátrica</li>
+			<li>Medicina Materno Fetal</li>
+			<li>Neonatología</li>
+			<li>Neurocirugía</li>
+			<li>Reumatología (PNPC)</li>
+			<li>PNPC Padrón Nacional de Posgrados de calidad</li>
+		</ol>
+	</section>
 
-<section>
-	<?php Yii::app()->runController('manejadorArchivos/DisplayFiles/section/ProgramasNoPNCP'); ?>
+	<section class="column-right">
+	<h5>DOCUMENTOS</h5>
+	<h5>DESCARGABLES:</h5>
+		<?php Yii::app()->runController('filesManager/DisplayFiles/section/ProgramasNoPNCP'); ?>
+	</section>
 </section>

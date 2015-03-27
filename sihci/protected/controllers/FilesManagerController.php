@@ -17,9 +17,6 @@ class FilesManagerController extends Controller
 	}
 
 	
-	
-	
-	 
 	public function actionView($id)
 	{
 		$this->render('view',array(
