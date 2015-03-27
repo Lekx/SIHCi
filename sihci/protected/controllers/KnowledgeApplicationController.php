@@ -127,7 +127,7 @@ class KnowledgeApplicationController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	//AC04-Listar-datos
+	//AC05-Listar-datos
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('KnowledgeApplication');
@@ -139,7 +139,7 @@ class KnowledgeApplicationController extends Controller
 	/**
 	 * Manages all models.
 	 */
-
+	//AC04-Desplagar-datos
 	public function actionAdmin()
 	{
 		$model=new KnowledgeApplication('search');
