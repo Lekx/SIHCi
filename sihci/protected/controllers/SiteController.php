@@ -116,7 +116,7 @@ class SiteController extends Controller
                $this->redirect(Yii::app()->user->returnUrl);
             }
 
-		/*
+
 			if (!$model->validate()) {
    				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
    			}else{
@@ -141,7 +141,7 @@ class SiteController extends Controller
 							return false;
 			   				$msg = "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
 			   			}
-		}*/
+		}
 	}
 
 	// display the login form 
