@@ -1,14 +1,40 @@
 
 <div class="loginback">
+
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'login-form',
-		'enableAjaxValidation'=>true,
-		'action' => $this->createUrl('site/login'),
-		'enableClientValidation'=>true,
-		'clientOptions'=>array(
-		),
-	)); ?>
+		'enableClientValidation' => true,
+				'clientOptions' => array(
+		            'validateOnSubmit' => true,
+		            'afterValidate' => 'js:function(form, data, hasError) {
+		                if (!hasError){ 
+		                    str = $("#login-form").serialize() + "&ajax=login-form";
+		                    $.ajax({
+		                        type: "POST",
+		                        url: "' .Yii::app()->createUrl('site/login').'",
+		                        data: str,
+		                        dataType: "json",
+		                        beforeSend : function(){
+		                           
+		                        },
+		                        success: function(data, status) {
+		                            if(data.authenticated)
+		                            {
+		                 
+		                            }
+		                            {
+		                       
+		                              
+		                            }
+		                        },
+		                    });
+		                    return false;
+		                }
+		            }',
+		        ),
+			)); 
+		?>
 
 		<div class="row">
 			<div class="inputlog">

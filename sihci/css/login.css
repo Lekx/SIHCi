@@ -11,7 +11,7 @@
 {
    display:none;
 }
-.loginback
+.loginback ,.recoverypass
 {
 	position: absolute;
 	position: fixed;
@@ -24,7 +24,18 @@
  	background: rgba(40, 50, 90, .70);
  	z-index: 900;
 }
-#login-form
+.revoverytitle { padding-top: 10px;}
+.revoverytitle h2{ color: #1EB9C0; text-align: center; }
+.recoverypass hr{ color: black !important; text-align: center; margin-left: 150px;}
+
+.recoverypass #recoveryinfo
+{
+	width: 400px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#login-form , #recovery-form
 {
 	display: block;
 	margin-right: auto;
@@ -37,8 +48,8 @@
 	font-family: 'Caviar_Dreams';
 	z-index: 999;
 }
-#login-form input[type="text"] ,
-input[type="password"] 
+#login-form  input[type="text"] , input[type="password"],
+#recovery-form  input[type="text"] , input[type="password"] 
 {
 
 	background-color: #CDF1F3 !important;
@@ -57,7 +68,8 @@ input[type="password"]
 	opacity: .60 !important;
 
 }
-#login-form input[type="submit"], input[type="button"]
+#login-form input[type="submit"],input[type="button"],
+#recovery-form input[type="submit"]
 {
 	width: 400px !important;
 	height: 50px !important;
@@ -66,8 +78,9 @@ input[type="password"]
 	font-family: 'Caviar_Dreams_Bold';
 	font-size: 25px;
 
-
 }
+#recovery-form input[type="submit"]{  margin-top: -5px; }
+
 #login-form input::-webkit-input-placeholder
 {
 	font-family: 'Caviar_Dreams_Bold'; 
@@ -144,7 +157,7 @@ input[type="password"]
 {
 	padding: 9px;
 }
-.closelogin 
+.closelogin , .closerecovery
 {
 	position: fixed;
     bottom: 0;

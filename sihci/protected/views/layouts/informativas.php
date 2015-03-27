@@ -40,7 +40,7 @@
 	<?php Yii::app()->bootstrap->register(); ?>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		var searchKey = "";
@@ -342,10 +342,23 @@
 	</section>
 
 	<section class="logsection">
-		<div class="login"><img id="logocuentas2" src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt=""> <!-- <?php echo CHtml::link('<img id="logocuentas" src='.Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png alt="home">',array('site/login')); ?> -->
-		Ingresar a tu cuenta</div>
-		<div class="singin"><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt="">
-		Crear una cuenta</div>
+		<div class="login">
+		<?php 
+			if(Yii::app()->user->isGuest){
+			 echo CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id'=> 'logocuentas2'));
+		     echo 'Ingresar a tu cuenta.';
+		    }else{
+		     $image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
+		     echo CHtml::link($image,array('site/logout'));
+		     echo Yii::app()->user->email;
+		    } 
+	    ?>
+		
+		</div>
+		<div class="singin">
+			<img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/cuentaCrear.png" alt="">
+			Crear una cuenta
+			</div>
 		<div class="searchbar">
 			
 
@@ -377,7 +390,7 @@
 	</section>
 	
 	<div class="loginHome">
-	<?php Yii::app()->runController('/site/login'); ?>
+	<?php  Yii::app()->runController('/site/login');?>
 	</div>
 
 

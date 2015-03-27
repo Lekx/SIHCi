@@ -80,19 +80,43 @@ class SiteController extends Controller
 	public function actionLogin()
 	{
 		$this->layout = 'informativas';
-		$model=new LoginForm;
-		$msg = '';
+		$model = new LoginForm;
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
+			$errors = CActiveForm::validate($model);
+			if ($errors != '[]')
+            {
+                echo $errors;
+                Yii::app()->end();
+            }
+			/*
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+			*/
 		}
-
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
+
 			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if ($model->validate() && $model->login())
+            {
+                if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form')
+                {
+                    echo CJSON::encode(array(
+                        'authenticated' => true,
+                        'redirectUrl' => Yii::app()->user->returnUrl,
+                        "param" => "",
+                    ));
+                    Yii::app()->end();
+                }
+              
+               $this->redirect(Yii::app()->user->returnUrl);
+            }
+
+		/*
 			if (!$model->validate()) {
    				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
    			}else{
@@ -117,7 +141,7 @@ class SiteController extends Controller
 							return false;
 			   				$msg = "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
 			   			}
-		}
+		}*/
 	}
 
 	// display the login form 
@@ -138,6 +162,7 @@ class SiteController extends Controller
     //LO03 – Recuperar contraseña 
 	public function actionRecoveryPassword()
 	{
+		$this->layout = 'informativas';
 		$model = new RecoveryPassword;
    		$msg = '';
         $random = rand(1000,5000);

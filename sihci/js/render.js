@@ -1,9 +1,13 @@
 $(document).ready(function() {
+
     $("img#logocuentas2").click(function() {
         $(".loginHome").show();
     });
     $(".closelogin").click(function() {
         $(".loginHome").hide();
+    });
+    $(".closerecovery").click(function() {
+        $(".recoverypass").hide();
     });
     $("#LoginForm_username").focus(function() {
         $(".infodialog").css("visibility", "visible");

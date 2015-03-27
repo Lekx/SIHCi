@@ -92,6 +92,15 @@ span
     margin-bottom: 5px;
     z-index: 999;
 }
+#logout
+{
+	margin-top: 22px;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;	
+    margin-bottom: 5px;
+    z-index: 999;
+}
 #headermenu
 {
 	width: 30px;
