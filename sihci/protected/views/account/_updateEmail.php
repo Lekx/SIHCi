@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($details,'email'); ?>
-		<?php echo $form->textField($details,'email',array('value' => '')); ?>
+		<?php echo $form->textField($details,'email'); ?>
 		<?php echo $form->error($details,'email'); ?>
 	</div>
 	<div>
@@ -32,7 +32,7 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton("GUARDAR"); ?>
-		<input type="reset" value="BORRAR" >
+		<input type="reset" value="BORRAR">
 		<?php echo CHtml::link("CANCELAR",array('account/infoAccount')); ?>
 	</div>
 
