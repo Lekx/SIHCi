@@ -2,39 +2,13 @@
 <div class="loginback">
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
-		'id'=>'login-form',
-		'enableClientValidation' => true,
-				'clientOptions' => array(
-		            'validateOnSubmit' => true,
-		            'afterValidate' => 'js:function(form, data, hasError) {
-		                if (!hasError){ 
-		                    str = $("#login-form").serialize() + "&ajax=login-form";
-		                    $.ajax({
-		                        type: "POST",
-		                        url: "' .Yii::app()->createUrl('site/login').'",
-		                        data: str,
-		                        dataType: "json",
-		                        beforeSend : function(){
-		                           
-		                        },
-		                        success: function(data, status) {
-		                            if(data.authenticated)
-		                            {
-		                 
-		                            }
-		                            else
-		                            {
-		                       
-		                              
-		                            }
-		                        },
-		                    });
-		                    return false;
-		                }
-		            }',
-		        ),
-			)); 
-		?>
+			'id'=>'login-form',
+		'enableClientValidation'=>true,
+		'clientOptions'=>array(
+			'validateOnSubmit'=>true,
+		),
+		));
+	?>
 
 		<div class="row">
 			<div class="inputlog">
@@ -65,15 +39,20 @@
 		<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>">¿Olvidó su Contraseña?</a>
 		</div> -->
 	
-		<div class="row buttons">
-			<?php echo CHtml::submitButton('Ingresar a mi cuenta'); ?>
-		</div>
- 	
+		<?php echo CHtml::ajaxButton ("Ingresar a su Cuenta", CController::createUrl('site/login'), array(
+						'type'=>'POST',
+                        'data'=> 'js:$("#login-form").serialize()+ "&ajax=login-form"',                  
+                        'success'=>'js:function(){
+                        				window.open("'.Yii::app()->createUrl('/informacionDeDireccionGeneral/index').'","_blank ");
+                        			}'
+                        			)); ?>
 		<div class="">
 			<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>"><?php echo CHtml::Button('Recuperar Contraseña'); ?></a>
 
 
 		</div>
+
+		<div class="hola"></div>
 	<?php $this->endWidget(); ?>
 		
 		<div class="closelogin">
