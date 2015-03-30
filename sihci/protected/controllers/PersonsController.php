@@ -161,8 +161,11 @@ class PersonsController extends Controller
 							}
 
 				}else{
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 5cc80df75dedb18c06950757cd35817f0b841d39
 					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
 						if($model->save()){
 							$curriculum->native_country = $curriculum->native_country;
