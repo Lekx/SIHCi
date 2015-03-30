@@ -72,7 +72,6 @@ class CongressesController extends Controller
 			$model->attributes=$_POST['Congresses'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			if($model->save())
-				Yii::app()->user->setFlash('success',"El proceso fue realizado correctamente.");
 				$this->redirect(array('view','id'=>$model->id));
 	}
 		$this->render('create',array(

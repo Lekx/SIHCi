@@ -106,4 +106,6 @@ class KnowledgeApplication extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+   
 }

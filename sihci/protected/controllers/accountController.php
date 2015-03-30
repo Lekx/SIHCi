@@ -9,11 +9,11 @@
 	function checkEmail($email2, $email22){
 
 		if ($email2 != $email22){
-			echo "<script> alert(\"Las dos correos son distintos.\")</script>";
+			echo "<script> alert(\"comprobacion de email incorrecto.\")</script>";
 			return false;
 		}
-		else if($email2 || $email22 == ''){
-			echo "<script> alert(\"Algun campo esta en blanco.\")</script>";
+		else if($email2 == '' || $email22 == ''){
+			echo "<script> alert(\"aqui valio madre.\")</script>";
 			return false;
 		}else
 			return true;
@@ -24,7 +24,7 @@
 			echo "<script> alert(\"Las dos contraseñas son distintas.\")</script>";
 			return false;
 		}
-		else if($password2 || $password22 == ''){
+		else if($password2 == '' || $password22 == ''){
 			echo "<script> alert(\"Algun campo esta en blanco.\")</script>";
 			return false;
 		}else
@@ -41,7 +41,7 @@
 
 	public function checkEmailExist($email){
 		if ($this->currentemail != $email){
-			echo "<script> alert(\"Las dos correos son distintos.\")</script>";
+			echo "<script> alert(\"no es el email de la cuenta.\")</script>";
 			return false;
 		}
 		else{
@@ -50,7 +50,7 @@
 	}
 		public function checkPasswordExist($password){
 		if ($this->currentpassword != sha1(md5(sha1($password)))){
-			echo "<script> alert(\"Las dos contraseñas son distintas.\")</script>";
+			echo "<script> alert(\"el password no es el de la cuenta.\")</script>";
 			return false;
 		}
 		else{
@@ -71,8 +71,7 @@
 			
 			if($this->checkEmailExist($_POST['Users']['email']) && $this->checkEmail($_POST['Account']['email2'], $_POST['Account']['email22']))
 			{
-				$details->email=$_POST['Account']['email2'];
-				if($details->save())
+				if($details->updateByPk(Yii::app()->user->id,array('email'=>$_POST['Account']['email2'])))
 					$this->redirect(array('InfoAccount'));
 			}
 		}
@@ -89,25 +88,32 @@
 		{
 			if($this->checkPasswordExist($_POST['Users']['password']) && $this->checkPassword($_POST['Account']['password2'],$_POST['Account']['password22']));
 			{
+
 				$details->password=sha1(md5(sha1($_POST['Account']['password2'])));
-				if($details->save())
+				if($details->updateByPk(Yii::app()->user->id,array('password'=>sha1(md5(sha1($_POST['Account']['password2']))))));
 					$this->redirect(array('InfoAccount'));
 			}					
 		}
 		$this->renderPartial('_updatePassword',array(
 			'details'=>$details,
 		));
-	
+
 
 
 
 	}
 		
-	
+	public function actionSystemLog()
+		{
+			$model = new SystemLog('search');
+			$model->unsetAttributes(); 
+			if(isset($_GET['SystemLog']))
+				$model->attributes=$_GET['SystemLog'];
 
-
-
-
+			$this->render('SystemLog',array(
+				'model'=>$model,
+			));
+		}
 
 
 

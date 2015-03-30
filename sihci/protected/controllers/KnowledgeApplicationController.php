@@ -49,6 +49,7 @@ class KnowledgeApplicationController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
+
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -60,6 +61,8 @@ class KnowledgeApplicationController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
+	//AC01-Registrar-datos
 	public function actionCreate()
 	{
 		$model=new KnowledgeApplication;
@@ -71,14 +74,14 @@ class KnowledgeApplicationController extends Controller
 		{
 			$model->attributes=$_POST['KnowledgeApplication'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
-
-			if($model->save())
+ 			
+ 			if($model->save())
+			{	
 				$this->redirect(array('view','id'=>$model->id));
+			}
+				
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array( 'model'=>$model,));
 	}
 
 	/**
@@ -86,6 +89,8 @@ class KnowledgeApplicationController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+
+	//AC02-Modificar-datos
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -96,8 +101,12 @@ class KnowledgeApplicationController extends Controller
 		if(isset($_POST['KnowledgeApplication']))
 		{
 			$model->attributes=$_POST['KnowledgeApplication'];
+
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				$this->redirect(array('view','id'=>$model->id));	
+			}	
+
 		}
 
 		$this->render('update',array(
@@ -110,6 +119,7 @@ class KnowledgeApplicationController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+	//AC03-Eliminar-datos
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -119,9 +129,8 @@ class KnowledgeApplicationController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	/**
-	 * Lists all models.
-	 */
+	
+	//AC04-Desplagar-datos
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('KnowledgeApplication');
@@ -133,6 +142,8 @@ class KnowledgeApplicationController extends Controller
 	/**
 	 * Manages all models.
 	 */
+
+	//AC05-Listar-datos
 	public function actionAdmin()
 	{
 		$model=new KnowledgeApplication('search');
@@ -172,4 +183,5 @@ class KnowledgeApplicationController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
 }

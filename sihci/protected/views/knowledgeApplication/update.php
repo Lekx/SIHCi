@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar', 'url'=>array('index')),
 	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Ver', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage KnowledgeApplication', 'url'=>array('admin')),
+	array('label'=>'Desplegar', 'url'=>array('index')),
+	array('label'=>'Listar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update KnowledgeApplication <?php echo $model->id; ?></h1>
+<h1>Editar <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

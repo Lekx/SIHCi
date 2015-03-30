@@ -48,8 +48,7 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
-
+	</div> 
 <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->
