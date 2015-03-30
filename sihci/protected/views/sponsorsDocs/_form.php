@@ -19,11 +19,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_sponsor'); ?>
-		<?php echo $form->textField($model,'id_sponsor'); ?>
-		<?php echo $form->error($model,'id_sponsor'); ?>
-	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'file_name'); ?>

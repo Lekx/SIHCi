@@ -32,7 +32,7 @@ class SponsorsDocs extends CActiveRecord
 		return array(
 			array('id_sponsor, file_name, path', 'required'),
 			array('id_sponsor', 'numerical', 'integerOnly'=>true),
-			array('file_name, path', 'length', 'max'=>45),
+			array('file_name, path', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_sponsor, file_name, path', 'safe', 'on'=>'search'),

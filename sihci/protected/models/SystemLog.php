@@ -1,25 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "emails".
+ * This is the model class for table "system_log".
  *
- * The followings are the available columns in table 'emails':
+ * The followings are the available columns in table 'system_log':
  * @property integer $id
- * @property integer $id_person
- * @property string $email
- * @property string $type
+ * @property integer $id_user
+ * @property string $section
+ * @property string $details
+ * @property string $action
+ * @property string $datetime
  *
  * The followings are the available model relations:
- * @property Persons $idPerson
+ * @property Users $idUser
  */
-class Emails extends CActiveRecord
+class SystemLog extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'emails';
+		return 'system_log';
 	}
 
 	/**
@@ -30,13 +32,14 @@ class Emails extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_person, email, type', 'required'),
-			array('id_person', 'numerical', 'integerOnly'=>true),
-			array('email', 'length', 'max'=>100),
-			array('type', 'length', 'max'=>20),
+			array('id_user, section, details, action, datetime', 'required'),
+			array('id_user', 'numerical', 'integerOnly'=>true),
+			array('section', 'length', 'max'=>60),
+			array('details', 'length', 'max'=>150),
+			array('action', 'length', 'max'=>250),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_person, email, type', 'safe', 'on'=>'search'),
+			array('id, id_user, section, details, action, datetime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,7 +51,7 @@ class Emails extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idPerson' => array(self::BELONGS_TO, 'Persons', 'id_person'),
+			'idUser' => array(self::BELONGS_TO, 'Users', 'id_user'),
 		);
 	}
 
@@ -59,9 +62,11 @@ class Emails extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_person' => 'Id Person',
-			'email' => 'Email',
-			'type' => 'Type',
+			'id_user' => 'Id User',
+			'section' => 'Section',
+			'details' => 'Details',
+			'action' => 'Action',
+			'datetime' => 'Datetime',
 		);
 	}
 
@@ -84,9 +89,11 @@ class Emails extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('id_person',$this->id_person);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('type',$this->type,true);
+		$criteria->compare('id_user',$this->id_user);
+		$criteria->compare('section',$this->section,true);
+		$criteria->compare('details',$this->details,true);
+		$criteria->compare('action',$this->action,true);
+		$criteria->compare('datetime',$this->datetime,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -97,7 +104,7 @@ class Emails extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Emails the static model class
+	 * @return SystemLog the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

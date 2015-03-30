@@ -83,6 +83,24 @@ span
     margin-bottom: 5px;
     z-index: 999;
 }
+#logocuentas2
+{
+	margin-top: 22px;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;	
+    margin-bottom: 5px;
+    z-index: 999;
+}
+#logout
+{
+	margin-top: 22px;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;	
+    margin-bottom: 5px;
+    z-index: 999;
+}
 #headermenu
 {
 	width: 30px;
@@ -778,12 +796,12 @@ span
 }
 .cbp-hsmenu1
 {
-	list-style: none;
+	list-style: none !important;
 
 }
 .cbp-hssubmenu1 li
 {
-	list-style: circle;
+	list-style: none !important;
 
 }
 ul.cbp-hssubmenu1
@@ -819,12 +837,12 @@ ul.cbp-hssubmenu1
 }
 .cbp-hsmenu1
 {
-	list-style: none;
+	list-style: none !important;
 
 }
 .cbp-hssubmenu li
 {
-	list-style: circle;
+	list-style: none !important;
 
 }
 ul.cbp-hssubmenu
@@ -833,6 +851,10 @@ ul.cbp-hssubmenu
 	margin-bottom: 10px;
 	padding-left: 26px;
 
+}
+ul.cbp-hsmenu
+{
+	list-style: none;
 }
 #show_hidemenu
 {
