@@ -1,25 +1,5 @@
 
 <div class="loginback">
-
-<<<<<<< HEAD
-<h1>Iniciar Sesión</h1>
-<?php echo sha1(md5(sha1("1234"))); ?>
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
-
-
-<?php echo $msg; ?>
-	<div class="row">
-		<?php echo $form->textField($model,'username', array('placeholder'=>"Email")); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
-=======
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'login-form',
