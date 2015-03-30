@@ -162,7 +162,7 @@ class PersonsController extends Controller
 
 				}else{
 
-<<<<<<< HEAD
+
 					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
 						if($model->save()){
 							$curriculum->native_country = $curriculum->native_country;
@@ -173,9 +173,6 @@ class PersonsController extends Controller
 			}// end if validate
 		}// end isset $_POST
 
-
-=======
->>>>>>> 64f892da4da3c1d29a30c75085d7a7e4589e2591
 		$this->render('update',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
 
@@ -250,11 +247,7 @@ class PersonsController extends Controller
 			Yii::app()->end();
 		}
 	}
-	// public function actionConsulta($id) {
- //   	$curriculum=Curriculum::model()->find('id=:idProfesor',array(':idProfesor'=>$id));
- //   	$result = $model->findAll(array('condition'=>'email="'.$model->email.'"'));
- //  	 $this->render('profesorDetalle',array('prof'=>$prof,));
- // }
+
 
 
 }
