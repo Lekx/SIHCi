@@ -28,7 +28,7 @@ body
 hr
 {
 	border-top: 1px solid #1EB9C0 !important;
-	width: 80px;
+	width: 80px !important;
 }
 li , h1 ,h2, h3
 {

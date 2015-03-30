@@ -43,7 +43,10 @@
 		<?php echo CHtml::ajaxButton ("Ingresar a su Cuenta", CController::createUrl('site/login'), array(
 						'type'=>'POST',
                         'data'=> 'js:$("#login-form").serialize()+ "&ajax=login-form"',                  
-                        'success'=>'js:function(){window.open("'.Yii::app()->createUrl('/informacionDeDireccionGeneral/index').'","_blank ");}')); ?>
+                        'success'=>'js:function(){
+                        				window.open("'.Yii::app()->createUrl('/informacionDeDireccionGeneral/index').'","_blank ");
+                        			}'
+                        			)); ?>
 		<div class="">
 			<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>"><?php echo CHtml::Button('Recuperar Contraseña'); ?></a>
 
