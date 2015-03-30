@@ -205,6 +205,7 @@ class SiteController extends Controller
    		}
 		$this->render('recoveryPassword', array('model' => $model, 'msg' => $msg));
 	}
+
 	//LO03 – Recuperar contraseña 
 	public function actionChangePassword($key){
 

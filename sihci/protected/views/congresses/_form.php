@@ -25,16 +25,19 @@
 
 
 	<div class="row">
+		 <?php echo $form->labelEx($model,'work_title'); ?>
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto')); ?>
 		<?php echo $form->error($model,'work_title'); ?>
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'year'); ?>
 		<?php echo $form->textField($model,'year', array('placeholder'=>'Año')); ?>
 		<?php echo $form->error($model,'year'); ?>
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'congress'); ?>
 		<?php echo $form->textField($model,'congress',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Congreso')); ?>
 		<?php echo $form->error($model,'congress'); ?>
 	</div>
@@ -68,12 +71,14 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'work_type'); ?>
         <?php echo $form->dropDownList($model,'work_type',array(''=>'','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));?>
         <?php echo $form->error($model,'work_type'); ?>
      
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'keywords'); ?>
 		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250,'placeholder'=>'Palabras Clave')); ?>
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>

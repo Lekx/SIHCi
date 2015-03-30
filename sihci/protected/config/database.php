@@ -9,7 +9,7 @@ return array(
 
 	// uncomment the following lines to use a MySQL database
 
-	'connectionString' => 'mysql:host=localhost;dbname=sihci',
+	//'connectionString' => 'mysql:host=localhost;dbname=sihci',
 
 	'emulatePrepare' => true,
 	'username' => 'root',

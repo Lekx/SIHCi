@@ -59,9 +59,6 @@
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 
-
-
-
 	<?php echo $content; ?>
 
 
