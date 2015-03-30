@@ -52,9 +52,10 @@ class Persons extends CActiveRecord
 			array('country', 'length', 'max'=>50),
 			array('state_of_birth', 'length', 'max'=>45),
 			array('photo_url','file', 'allowEmpty'=>true,
-			                  'types'=>'png, jpg, jpeg, gif',
+							'on'=>'update',
+			                  'types'=>'png, jpg, jpeg',
 			                  'maxSize'=>array(1024 * 2000),
-			                  'message'=>'Solo se admiten archivos PNG'),
+			                  'message'=>'Solo se admiten archivos PNG, JPG, JPEG'),
 			array('person_rfc', 'length', 'min'=>13, 'max'=>13),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -94,9 +95,10 @@ class Persons extends CActiveRecord
 			'genre' => 'Genero',
 			'birth_date' => 'Fecha de Nacimiento',
 			'country' => 'País',
-			'state_of_birth' => 'Nacionalidad',
+			'native_country'=>'Nacionalidad',
+			'state_of_birth' => 'Estado de Nacimiento',
 			'curp_passport' => 'Curp o Pasaporte',
-			'photo_url' => 'Foto',
+			'photo_url' => 'Foto de Perfil',
 			'person_rfc' => 'RFC',
 		);
 	}
@@ -118,7 +120,7 @@ class Persons extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+	
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_user',$this->id_user);
 		$criteria->compare('names',$this->names,true);
@@ -158,3 +160,4 @@ class Persons extends CActiveRecord
 		return parent::beforeSave();
 	}
 }
+

@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 ?>
 
 <h1>Iniciar Sesión</h1>
-
+<?php echo sha1(md5(sha1("1234"))); ?>
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
@@ -20,10 +20,6 @@ $this->breadcrumbs=array(
 		'validateOnSubmit'=>true,
 	),
 )); ?>
-
-
-<?php echo sha1(md5(sha1("123456"))); ?>
-
 
 
 <?php echo $msg; ?>

@@ -246,7 +246,7 @@ class SiteController extends Controller
 					   					}
 					   					if ($existe === true) {
 
-					   					$insertar = "UPDATE users SET password='$model->password' where ";
+					   					$insertar = "UPDATE users SET password=sha1(md5(sha1('$model->password'))) where ";
 					   					$insertar .= "act_react_key='".$key."'";
 					   					$llaveBD = $conexion->createCommand($insertar)->query();
 

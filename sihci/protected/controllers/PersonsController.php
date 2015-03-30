@@ -25,26 +25,26 @@ class PersonsController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('admin', '@'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('admin', '@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin', '@'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+	// public function accessRules()
+	// {
+	// 	return array(
+	// 		array('allow',  // allow all users to perform 'index' and 'view' actions
+	// 			'actions'=>array('index','view'),
+	// 			'users'=>array('admin', '@'),
+	// 		),
+	// 		array('allow', // allow authenticated user to perform 'create' and 'update' actions
+	// 			'actions'=>array('create','update'),
+	// 			'users'=>array('admin', '@'),
+	// 		),
+	// 		array('allow', // allow admin user to perform 'admin' and 'delete' actions
+	// 			'actions'=>array('admin','delete'),
+	// 			'users'=>array('admin', '@'),
+	// 		),
+	// 		array('deny',  // deny all users
+	// 			'users'=>array('*'),
+	// 		),
+	// 	);
+	// }
 
 
 
@@ -55,9 +55,11 @@ class PersonsController extends Controller
 	//CV04-Desplegar datos. 
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		  
+       // $curriculum = $curriculum->loadModel($model->id_user);
+		$curriculum = new Curriculum;
+		$curriculum->native_country = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->native_country;
+		$this->render('view',array('model'=>$this->loadModel($id), 'curriculum', $curriculum));
 	}
 
 	/**
@@ -81,19 +83,41 @@ class PersonsController extends Controller
 			if ($model->validate()) {
 				
 				if($model->photo_url != ''){
-					//mkdir(__DIR__ .'SIHCi/sihci/users/'.$model->id_user.'/', 0777);
-					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
-					//$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
-					if($model->save()){
-			   			$this->redirect(array('view','id'=>$model->id));
-			   		}
-
+						//	 mkdir('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/', 0777);
+					mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/', 0777, true);
+					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png');
+					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/perfil.png';
+				
+						if(isset($_POST['Curriculum']))
+							{
+								$curriculum->attributes = $_POST['Curriculum'];
+																		
+								$curriculum->id_user = Yii::app()->user->id;
+								$curriculum->id_actual_address = 1;
+								if($curriculum->validate())
+									{	
+										$model->save();
+										$curriculum->save();
+										$this->redirect(array('view','id'=>$model->id));
+										//<?php echo CHtml::link('Link Text',array('controller/action'));
+									}
+								
+							}			   		
 				}else{
-					if($model->save()){
-
-			   			$this->redirect(array('view','id'=>$model->id));
-
-			   		}
+					if(isset($_POST['Curriculum']))
+							{
+								$curriculum->attributes = $_POST['Curriculum'];
+																		
+								$curriculum->id_user = Yii::app()->user->id;
+								$curriculum->id_actual_address = 1;
+								if($curriculum->validate())
+									{
+										$model->save();
+										$curriculum->save();
+										$this->redirect(array('view','id'=>$model->id));
+									}
+								
+							}
 				}
 
 			}//end if validate
@@ -111,51 +135,43 @@ class PersonsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-        $curriculum = new Curriculum;
-		// Uncomment the following line if AJAX validation is needed
-		 
-
-		if(isset($_POST['Persons']))
+		$curriculum = new Curriculum;
+		$curriculum=Curriculum::model()->find('id_user=:id_user',
+                              array(':id_user'=>Yii::app()->user->id));
+      
+      if(isset($_POST['Persons']) && isset($_POST['Curriculum']))
 		{
 			$model->attributes=$_POST['Persons'];
+			$curriculum->attributes = $_POST['Curriculum'];
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
-
-			if ($model->validate()) {
-				//if (!file_exists('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/')) {
-   					//	 mkdir('/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/', 0777);
-
-   					//	$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/perfil.png');
-					// 	$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'/cve-hc/perfil.png';
-					// }
-				if($model->photo_url != ''){
-					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png');
-				//		$model->photo_url ='/SIHCi/sihci/users/'.$model->id_user.'.png';
-					$this->performAjaxValidation($model);
-					if($model->save()){
-						echo "<script>alert('Registro almecenado correctamente')</script>";
-						$this->redirect(array('view','id'=>$model->id));
-			   		}
-						
-		
-					
-				}else{
-					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'.png';
-					if($model->save()){
-						echo "<script>alert('Registro almecenado correctamente')</script>";
-						$this->redirect(array('view','id'=>$model->id));
-
-					}
-
-				}
-
-			   		}
-				}
-
-				
-			}
-
 			
-		}
+			if ($model->validate()) {
+				
+				if($model->photo_url != ''){
+					
+					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png');
+					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
+					
+					$this->performAjaxValidation($model);
+						
+						if($model->save()){
+							$curriculum->native_country = $curriculum->native_country;
+							$curriculum->save();
+							$this->redirect(array('view','id'=>$model->id));
+							}
+
+				}else{
+
+					$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
+						if($model->save()){
+							$curriculum->native_country = $curriculum->native_country;
+							$curriculum->save();
+							$this->redirect(array('view','id'=>$model->id));
+							}
+					}//end if else photo_url == ''
+			}// end if validate
+		}// end isset $_POST
+
 
 		$this->render('update',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
@@ -210,6 +226,9 @@ class PersonsController extends Controller
 	public function loadModel($id)
 	{
 		$model=Persons::model()->findByPk($id);
+		$curriculum=Curriculum::model()->findByPk($id);
+				
+		
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -228,6 +247,11 @@ class PersonsController extends Controller
 			Yii::app()->end();
 		}
 	}
+	// public function actionConsulta($id) {
+ //   	$curriculum=Curriculum::model()->find('id=:idProfesor',array(':idProfesor'=>$id));
+ //   	$result = $model->findAll(array('condition'=>'email="'.$model->email.'"'));
+ //  	 $this->render('profesorDetalle',array('prof'=>$prof,));
+ // }
 
 
 }
