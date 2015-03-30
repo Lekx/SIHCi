@@ -7,8 +7,6 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
      'targetClass'=>'emails',
      'addButtonLabel'=>'Agregar nuevo',
   )); 
-
-
 ?>
 	<script>
 		function cleanUp(){
@@ -16,6 +14,7 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 			var result = confirm("¿Está usted seguro de limpiar estos datos?");
 			if (result==true) {
 				$('[id^=Phones_]').val('');
+				$('[id^=Emails_]').val('');
 			}else{
 
 			}
@@ -28,8 +27,6 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 
 </script>
 
-
-
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -40,8 +37,6 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
-
-
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -108,11 +103,12 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 		<?php echo $form->checkBox($model,'is_primary'); ?>
 		<?php echo $form->error($model,'is_primary'); ?>
 	</div>
-</div><!--Phones -->
+</div><!--FORM Phone -->
 
 	<div class="row buttons">
 		<input type="submit" onclick="validationFrom()" value="Guardar">
 		<input type="button" onclick="cleanUp()" value="Limpiar">
+		<?php echo CHtml::link('Cancelar',array('/phones/admin')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

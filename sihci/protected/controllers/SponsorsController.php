@@ -24,7 +24,7 @@ class SponsorsController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+	/*public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -43,7 +43,7 @@ class SponsorsController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}
+	}*/
 
 	/**
 	 * Displays a particular model.
@@ -61,33 +61,195 @@ class SponsorsController extends Controller
 	{
 		$model=new Sponsors;
 		$modelAddresses = new Addresses;
-
-
+		$modelPersons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+		//echo $modelPersons->names;
 		
 
 		if(isset($_POST['Sponsors']))
 		{  
-			$model->attributes=$_POST['Sponsors'];
-			$modelAddresses->attributes = $_POST['Addresses'];
+				$model->attributes=$_POST['Sponsors'];
+				$modelAddresses->attributes = $_POST['Addresses'];
+				$modelPersons->attributes = $_POST['Persons'];
+				$modelPersons->photo_url = CUploadedFile::getInstanceByName('Sponsors[photo_url]');
+				//echo $modelPersons->photo_url->type;
+				$modelPersons->marital_status = "soltero";
+				$modelPersons->genre = "masculino";
+				$modelPersons->birth_date = '00/00/0000';
+				$modelPersons->country = "";
+				$modelPersons->person_rfc = "";
+				$model->id_user = 1;
+				$model->id_address = 1;
+
+			if($modelAddresses->validate() && $modelPersons->validate() && $model->validate()){
+					if($modelAddresses->save()){
+						$model->id_user = Yii::app()->user->id;
+						$model->id_address = $modelAddresses->id;
+							if($model->save()){
+
+							/*	if($modelPersons->photo_url->type == 'image/jpeg' || $modelPersons->photo_url->type == 'image/JPEG' ||
+							   $modelPersons->photo_url->type == 'image/jpg' || $modelPersons->photo_url->type == 'image/JPG' ||
+							   $modelPersons->photo_url->type == 'image/png' || $modelPersons->photo_url->type == 'image/PNG' 
+							   )
+								{  0*/
+									$id_sponsor = Sponsors::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+									$path = YiiBase::getPathOfAlias("webroot")."/sponsors/".$id_sponsor."/img/";
+									//echo "<br>".$path;
+									if (!file_exists($path)) 
+										mkdir($path, 0775);
+									//queda hasta aqui.
+								// $modelPersons->photo_url->saveAs($path.'img/logo'.$modelPersons->photo_url);
+
+									echo $modelPersons->photo_url;
+									//$modelPersons->photo_url = $path.'img/logo'.$modelPersons->photo_url->getExtensionName(); 
+								
+								
+							//	}
+								if($modelPersons->save()){
+
+							$log = new SystemLog();
+							$log->id_user = Yii::app()->user->id;
+							$log->section = "Empresas";
+							$log->details = "Se creo un nuevo registro";
+							$log->action = "creacion";
+							$log->datetime = new CDbExpression('NOW()');
+							$log->save();
+
+				
+						}
+						}
+						}
+			}
+					
+				
+		}
+
+		$this->render('create',array(
+			'model'=>$model, 'modelAddresses'=>$modelAddresses, 'modelPersons'=>$modelPersons
+		));
+	}
+
+
+	public function actionCreate_persons()
+	{
+		$model=new Persons;
+		
+
+		
+
+		if(isset($_POST['Persons']))
+		{  
+			$model->attributes=$_POST['Persons'];
 			$model->id_user = Yii::app()->user->id;
 			
-
-
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('create',array(
-			'model'=>$model, 'modelAddresses'=>$modelAddresses
+		$this->render('create_persons',array(
+			'model'=>$model,
 		));
 	}
+
+	public function actionCreate_contact()
+	{
+		$model=new Phones;
+		$emails = new Emails;
+		// Uncomment the following line if AJAX validation is needed
+		 $this->performAjaxValidation($model);
+
+		if(isset($_POST['Phones']))
+		{
+			$email = $_POST['Emails']['email'];
+			$type = $_POST['Emails']['type'];
+
+			$model->attributes=$_POST['Phones'];
+			$model->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			$emails->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			$emails->email = $email;
+			$emails->type = $type;
+			
+			if($model->save())
+				
+				$this->redirect(array('view','id'=>$model->id));
+			
+		}
+
+		$this->render('create_contact',array(
+			'model'=>$model, 'emails' =>$emails,
+		));
+	}
+
+	public function actionCreate_addresses()
+	{
+		$model=new Addresses;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Addresses']))
+		{
+			$model->attributes=$_POST['Addresses'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('create_addresses',array(
+			'model'=>$model,
+		));
+	}
+
+
+	public function actionCreate_docs()
+	{
+		$model=new SponsorsDocs;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['SponsorsDocs']))
+		{
+			$model->attributes=$_POST['SponsorsDocs'];
+			/*
+		echo "<pre>";
+print_r($model);
+echo "</pre>";*/
+
+			$model->id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id))->id;
+
+			$model->path = CUploadedFile::getInstanceByName('SponsorsDocs[path]');
+
+		
+			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF' ||
+			   $model->path->type == 'application/doc' || $model->path->type == 'application/DOC' ||
+			   $model->path->type == 'application/docx' || $model->path->type == 'application/DOCX' ||
+			   $model->path->type == 'application/vnd.oasis.opendocument.text' ||
+			   $model->path->type == 'image/jpeg' || $model->path->type == 'image/JPEG' ||
+			   $model->path->type == 'image/jpg' || $model->path->type == 'image/JPG' ||
+			   $model->path->type == 'image/png' || $model->path->type == 'image/PNG' )
+			
+			{  
+
+				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
+				$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName(); 
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+		}
+		}
+		$this->render('create_docs',array(
+			'model'=>$model,
+		));
+	
+
+	}
+
 
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+		
+		public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 

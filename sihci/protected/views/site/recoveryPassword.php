@@ -1,33 +1,41 @@
-<?php
 
-	
-	$this->pageTitle = 'Recuperar Contraseña';
-	$this->breadcrumbs = array('Recuperar Contraseña');
-	echo $msg;
-?>
-<div class="form">
-<?php $form = $this->beginWidget('CActiveForm',
-	array(
-		'method' => 'POST',
-		'action' => Yii::app()->createUrl('site/recoveryPassword'),
-		'enableClientValidation' => true,
-		'clientOptions' => array(
-			'validateOnSubmit' => true,
-			),
-		));
-?>
+<div class="recoverypass">
+		<div class="form">
+		<?php $form = $this->beginWidget('CActiveForm',
+			array(
+				'id'=>'recovery-form',
+				'method' => 'POST',
+				'action' => Yii::app()->createUrl('site/recoveryPassword'),
+				'enableClientValidation' => true,
+				'clientOptions' => array(
+					'validateOnSubmit' => true,
+					),
+				));
+		?>
+			<div class="revoverytitle">
+				<h2>¡No te preocupes!</h2>
+				<hr>
+			</div>
+			<div id="recoveryinfo">
+				Enviaremos un correo electronico, donde podrás cambiar tu contraseña.
+			</div>
+			<div class="inputlog">
+				<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-envelope"></i>
+					<?php echo $form->textField($model,'email', array('placeholder'=>"Email..")); ?>
+					<!-- <?php echo $form->error($model,'email'); ?> -->
 
+				</div>
+			</div>
+			<div class="">
+				<?php echo CHtml::submitButton('Recuperar Contraseña') ; ?>
+			</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
-	<?php echo "Porfavor digite su dirección de email";  ?>
+		<?php $this->endWidget(); ?>
 
-	<div class="row">
-		<?php echo CHtml::submitButton('Recuperar Contraseña', array('class' => 'btn btn-primary')) ; ?>
-	</div>
+			<div class="closerecovery">
+				No Recuperar Contraseña <i class="glyphicon glyphicon-remove"></i>
+			</div>
 
-<?php $this->endWidget(); ?>
+		</div>
 </div>

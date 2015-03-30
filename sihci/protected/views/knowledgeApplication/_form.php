@@ -8,15 +8,18 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'knowledge-application-form',
+	//'enableClientValidation'=>true,
+	//'clientOptions'=>array('validateOnSubmit'=>true,
+	//	)
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
-
+	
 	<?php echo $form->errorSummary($model); ?>
-
+	
 	<div class="row">
         <?php echo $form->labelEx($model,'Pregunta 1 <br> Trabajo libre o publicación(es) Autor(es) título, revista, año, volumen, páginas'); ?>
         <?php echo $form->textArea($model,'term1',array('rows'=>10, 'cols'=>109,'maxlength' => 500, 'style'=>'width: 720px; height: 70px;')); ?>
@@ -30,7 +33,7 @@
 	</div>
 
 	<div class="row">
-        <?php echo $form->labelEx($model,'Pregunta 3 <br> Conocimiento científico ÚTIL generado en la investigación con potencial de aplicación para la innovación en  salud'); ?>
+        <?php echo $form->labelEx($model,'Pregunta 3 <br> Conocimiento científico útil generado en la investigación con potencial de aplicación para la innovación en  salud'); ?>
 		<?php echo $form->textArea($model,'term3',array('rows'=>10, 'cols'=>150,'maxlength' => 500,'style'=>'width: 720px; height: 70px;')); ?>
 		<?php echo $form->error($model,'term3'); ?>
 	</div>
@@ -48,23 +51,13 @@
 	</div>
 
 	<div class="row buttons">
-
+        
         <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='button' onclick='cleanUp()' value="Limpiar"> 
-        <input type='button' onclick="location.href='http://localhost/SIHCi/sihci/index.php/knowledgeApplication/admin'" value="Cancelar"> 
-		    	
-      	<script>
+        <input type="reset" onclick='alert("¿Está usted seguro de limpiar estos datos?")' value="Borrar"> 
+       	<?php echo CHtml::link('Cancelar',array('/knowledgeApplication/admin')); ?>
+
+ 		<script>
 			
-			function cleanUp()
-			{
-			    var text;
-			    var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			    if (result == true) 
-			    	 $('[id^=KnowledgeApplication_]').val('');
-			     
-			    document.getElementById("demo").innerHTML = text;
-			}
-	
 			function validationFrom()
 			{
 				alert("Registro realizado con éxito");
@@ -72,8 +65,9 @@
 			}	
 
 		</script>
+		
 	</div>
-
+				  
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

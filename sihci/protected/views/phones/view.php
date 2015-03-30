@@ -23,6 +23,14 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'id_person',
+		array(
+			'name'=>'email',
+			'value'=>Emails::model()->findByAttributes(array('id_person'=>Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id))->email,
+			),
+		array(
+			'name'=>'tipo email',
+			'value'=>Emails::model()->findByAttributes(array('id_person'=>Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id))->type,
+			),
 		'type',
 		'country_code',
 		'local_area_code',

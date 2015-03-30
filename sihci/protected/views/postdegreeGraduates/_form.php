@@ -22,20 +22,9 @@
 
 	<div class="row buttons">
 		<input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='button' onclick='cleanUp()' value="Limpiar"> 
+        <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
       	
       	<script>
-			
-			function cleanUp()
-			{
-			    var text;
-			    var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			    if (result == true) 
-			    	 $('[id^=PostdegreeGraduates_]').val('');
-			     
-			    document.getElementById("demo").innerHTML = text;
-			}
-	
 			function validationFrom()
 			{
 				alert("Registro realizado con éxito");

@@ -13,12 +13,15 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'htmlOptions' => array('enctype' => 'multipart/form-data')
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
+	<?php echo $form->errorSummary($modelAddresses); ?>
+	<?php echo $form->errorSummary($modelPersons); ?>
 	<?php echo $form->errorSummary($model); ?>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($modelAddresses,'country'); ?>
 		<?php echo $form->textField($modelAddresses,'country',array('size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
@@ -63,7 +66,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($modelAddresses,'street'); ?>
-		<?php echo $form->textField($modelAdmodelAddressesdresses,'street',array('size'=>50,'maxlength'=>50, 'placeholder'=>'Calle')); ?>
+		<?php echo $form->textField($modelAddresses,'street',array('size'=>50,'maxlength'=>50, 'placeholder'=>'Calle')); ?>
 		<?php echo $form->error($modelAddresses,'street'); ?>
 	</div>
 
@@ -145,6 +148,12 @@
 		<?php echo $form->labelEx($model,'employeess_number'); ?>
 		<?php echo $form->textField($model,'employeess_number'); ?>
 		<?php echo $form->error($model,'employeess_number'); ?>
+	</div>
+
+	<div class="row">
+
+		<?php echo $form->fileField($modelPersons,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		<?php echo $form->error($modelPersons,'photo_url'); ?>     
 	</div>
 
 	<div class="row buttons">

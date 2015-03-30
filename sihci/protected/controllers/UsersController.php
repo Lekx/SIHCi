@@ -81,6 +81,14 @@ class UsersController extends Controller
 						$model->save();
 						$modelPersons->id_user = $model->id;
 						$modelPersons->save();
+
+							$log = new SystemLog();
+							$log->id_user = Yii::app()->user->id;
+							$log->section = "Empresas";
+							$log->details = "Se creo un nuevo registro";
+							$log->action = "creacion";
+							$log->datetime = new CDbExpression('NOW()');
+							$log->save();
 						$this->redirect(array('view','id'=>$model->id));
 				}
 			}
