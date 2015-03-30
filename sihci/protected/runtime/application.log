@@ -6597,3 +6597,21 @@ Stack trace:
 REQUEST_URI=/SIHCi/sihci/index.php/persons/1
 in /var/www/SIHCi/sihci/protected/controllers/PersonsController.php (61)
 in /var/www/SIHCi/sihci/index.php (19)
+2015/03/30 13:00:34 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/PersonsController.php:61)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): PersonsController->runAction()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): PersonsController->filterAccessControl()
+#6 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): PersonsController->runActionWithFilters()
+#9 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): PersonsController->run()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/persons/1
+in /var/www/SIHCi/sihci/protected/controllers/PersonsController.php (61)
+in /var/www/SIHCi/sihci/index.php (19)

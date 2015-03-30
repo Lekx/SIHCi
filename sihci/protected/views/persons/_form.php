@@ -42,7 +42,12 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 	
-	<?php echo YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'; ?>
+	<?php echo $form->errorSummary($model); ?>
+	<div class="row">
+			<?php echo $form->labelEx($curriculum,'status'); ?>
+		<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
+		<?php echo $form->error($curriculum,'status'); ?>
+	</div>
 
 	<div class="row">
 		

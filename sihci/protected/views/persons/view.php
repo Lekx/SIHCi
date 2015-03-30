@@ -23,6 +23,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'id_user',
+			array(
+			'name'=>'status',
+			'value'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->status,
+			),
 		'names',
 		'last_name1',
 		'last_name2',
