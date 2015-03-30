@@ -4,7 +4,23 @@
 /* @var $form CActiveForm */
 
 ?>
+	<script>
+		function cleanUp(){
+			var text;
+			var result = confirm("¿Está usted seguro de limpiar estos datos?");
+			if (result==true) {
+				$('[id^=Persons_]').val('');
+				$('[id^=Curriculum_]').val('');
+			}else{
 
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+		function validationFrom(){
+			alert("Registro Realizado con éxito");
+			return false;
+		}
+</script>
 
 <div class="form">
 	<?php 
@@ -26,8 +42,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 	
-	<?php echo $form->errorSummary($model); ?>
-	
+	<?php echo YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'; ?>
+
 	<div class="row">
 		
 		<?php echo $form->textField($model,'names',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
@@ -81,26 +97,17 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		<?php $status = array('Hombre' => 'Hombre','Mujer'=>'Mujer'); 
 		    echo $form-> RadioButtonList($model,'genre' ,$status, array ('separador' => '')); 
 		 ?>
-		<?php echo $form->error($model,'is_national'); ?>
+		<?php echo $form->error($model,'genre'); ?>
 	</div>
 
-	<p>Pais</p>
-         <?php
-         $this->widget(
-             'yiiwheels.widgets.formhelpers.WhCountries',
-             array(
-                 'name' => 'Persons[country]',
-                 'id' => 'Persons_country',
-              
-                 'useHelperSelectBox' => true,
-                 'pluginOptions' => array(
-                     'country' => '',
-                     'language' => 'es_ES',
-                     'flags' => true
-                 )
-             )
-         );
-         ?>
+<div class="row">
+		<?php echo $form->labelEx($model,'country'); ?>
+		<?php echo $form->dropDownList($model,'country',array(''=>'','EUA'=>'EUA',
+																			'Mexico'=>'México',), 
+		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('size'=>10,'maxlength'=>10)); ?>
+	    <?php echo $form->error($model,'country'); ?>
+	</div>
   
 	<div class="row">
 	<!-- Nacionalidad es renderizado de Curriculum.php-->
@@ -109,8 +116,40 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'state_of_birth',array('size'=>45,'maxlength'=>45, 'placeholder'=>"Estado de Nacimiento")); ?>
-		<?php echo $form->error($model,'state_of_birth'); ?>
+		<?php echo $form->labelEx($model,'state_of_birth'); ?>
+		<?php echo $form->dropDownList($model,'state_of_birth',array(''=>'','Aguascalientes'=>'Aguascalientes',
+																			'Baja_California'=>'Baja California', 
+																			'Baja_California_Sur'=>'Baja California Sur',
+			                                                         		'Campeche'=>'Campeche', 
+			                                                         		'Chiapas'=>'Chiapas',
+			                                                         		'Chihuahua'=>'Chihuahua',
+			                                                         		'Coahuila'=>'Coahuila',
+			                                                         		'Distrito_Federal'=>'Distrito Federal',
+			                                                         		'Estado_de_Mexico'=>'Estado de México',
+			                                                         		'Guanajuato'=>'Guanajuato',
+			                                                         		'Guerrero'=>'Guerrero',
+			                                                         		'Hidalgo'=>'Hidalgo',
+			                                                         		'Jalisco'=>'Jalisco',
+			                                                         		'Michoacan'=>'Michoacán',
+			                                                         		'Morelos'=>'Morelos',
+			                                                         		'Nayarit'=>'Nayarit',
+			                                                         		'Nuevo_Leon'=>'Nuevo León',
+			                                                         		'Oaxaca'=>'Oaxaca',
+			                                                         		'Puebla'=>'Puebla',
+			                                                         		'Queretaro'=>'Querétaro',
+			                                                         		'Quintana_Roo'=>'Quintana Roo',
+			                                                         		'San_Luis_Potosi'=>'San Luis Potosí',
+			                                                         		'Sinaloa'=>'Sinaloa',
+			                                                         		'Sonora'=>'Sonora',
+			                                                         		'Tabasco'=>'Tabasco',
+			                                                         		'Tamaulipas'=>'Tamaulipas',
+			                                                         		'Tlaxcala'=>'Tlaxcala',
+			                                                         		'Veracruz'=>'Veracruz',
+			                                                         		'Yucatan'=>'Yucatán',
+			                                                         		'Zacatecas'=>'Zacatecas',), 
+		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('size'=>10,'maxlength'=>10)); ?>
+	    <?php echo $form->error($model,'state_of_birth'); ?>
 	</div>
 
 	<div class="row">
@@ -140,23 +179,9 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	<div class="row buttons">
 		<input type="submit" onclick="validationFrom()" value="Guardar">
 		<input type="button" onclick="cleanUp()" value="Limpiar">
+		<?php echo CHtml::link('Cancelar',array('/persons/admin')); ?>
 	</div>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Persons_]').val('');
-			}else{
 
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-</script>
 
 
 <?php $this->endWidget(); ?>

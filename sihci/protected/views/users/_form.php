@@ -86,9 +86,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelPersons,'person_rfc'); ?>
-		<?php echo $form->textField($modelPersons,'person_rfc',array('placeholder'=>"Pasaporte/Curp")); ?>
-		<?php echo $form->error($modelPersons,'person_rfc'); ?>
+		<?php echo $form->labelEx($modelPersons,'curp_passport'); ?>
+		<?php echo $form->textField($modelPersons,'curp_passport',array('placeholder'=>"Pasaporte/Curp")); ?>
+		<?php echo $form->error($modelPersons,'curp_passport'); ?>
 	</div>
 
 	<div class="row buttons">

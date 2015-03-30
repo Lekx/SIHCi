@@ -53,9 +53,10 @@ class PhonesController extends Controller
 	//CV04-Desplegar datos.
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		$emails = new Emails;
+		$emails->email = Emails::model()->findByAttributes(array('id_person'=>Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id))->email;
+		$emails->type = Emails::model()->findByAttributes(array('id_person'=>Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id))->type;
+		$this->render('view',array('model'=>$this->loadModel($id),	'emails'=>$emails));
 	}
 
 	/**
@@ -73,24 +74,25 @@ class PhonesController extends Controller
 
 		if(isset($_POST['Phones']))
 		{
-			$email = $_POST['Emails']['email'];
-			$type = $_POST['Emails']['type'];
-
 			$model->attributes=$_POST['Phones'];
 			$model->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$emails->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$emails->email = $email;
-			$emails->type = $type;
-			
-			if($model->save())
-				
-				$this->redirect(array('view','id'=>$model->id));
+				if ($model->validate()) {
+					if(isset($_POST['Emails']))
+							{
+								$emails->attributes = $_POST['Emails'];
+								$emails->id_person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+								if($emails->validate()){
+										$model->save();
+										$emails->save();
+										$this->redirect(array('view','id'=>$model->id));
+									}
+								
+							}
+				}	
 			
 		}
 
-		$this->render('create',array(
-			'model'=>$model, 'emails' =>$emails,
-		));
+		$this->render('create',array('model'=>$model, 'emails' =>$emails,));
 	}
 
 	/**
@@ -104,16 +106,23 @@ class PhonesController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$emails = new Emails;
-		// Uncomment the following line if AJAX validation is needed
+		 $emails=Emails::model()->find('id_person=:id_person',
+                              array(':id_person'=>Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
+		
+		
+	// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		
-		if(isset($_POST['Phones']))
+		if(isset($_POST['Phones']) && isset($_POST['Emails']))
 		{
 			$model->attributes=$_POST['Phones'];
-			$emails->email = $emails->email;
-			$emails->type = $emails->type;
-			if($model->save())
+			$emails->attributes = $_POST['Emails'];
+			if($model->save()){
+				$emails->email = $emails->email;
+				$emails->type = $emails->type;
+				$emails->save();
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(

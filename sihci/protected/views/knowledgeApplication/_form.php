@@ -8,6 +8,9 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'knowledge-application-form',
+	//'enableClientValidation'=>true,
+	//'clientOptions'=>array('validateOnSubmit'=>true,
+	//	)
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -48,19 +51,23 @@
 	</div>
 
 	<div class="row buttons">
+        
         <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='reset' onclick='alert("¿Está usted seguro de limpiar estos datos?")' value="Borrar"> 
- 		<input type='button' onclick="location.href='http://localhost/SIHCi/sihci/index.php/knowledgeApplication/admin'" value="Cancelar">       	
-	</div>
-	
-	<script>
-	    	function validationFrom()
-			{		
+        <input type="reset" onclick='alert("¿Está usted seguro de limpiar estos datos?")' value="Borrar"> 
+       	<?php echo CHtml::link('Cancelar',array('/knowledgeApplication/admin')); ?>
+
+ 		<script>
+			
+			function validationFrom()
+			{
 				alert("Registro realizado con éxito");
 				return false;
 			}	
-	</script>
 
+		</script>
+		
+	</div>
+				  
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

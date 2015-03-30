@@ -1,6 +1,5 @@
 
 <div class="loginback">
-
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 			'id'=>'login-form',
@@ -49,6 +48,7 @@
                         			)); ?>
 		<div class="">
 			<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>"><?php echo CHtml::Button('Recuperar Contraseña'); ?></a>
+
 
 		</div>
 

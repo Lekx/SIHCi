@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar', 'url'=>array('index')),
+	array('label'=>'Desplegar', 'url'=>array('index')),
 	array('label'=>'Crear', 'url'=>array('create')),
 );
 
@@ -51,9 +51,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'term2',
 		'term3',
 		'term4',
-		/*
 		'term5',
-		*/
+		
 		array(
 			'class'=>'CButtonColumn',
 		),

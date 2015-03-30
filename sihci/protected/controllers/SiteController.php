@@ -213,6 +213,7 @@ class SiteController extends Controller
    		}
 		$this->render('recoveryPassword', array('model' => $model, 'msg' => $msg));
 	}
+
 	//LO03 – Recuperar contraseña 
 	public function actionChangePassword($key){
 
@@ -254,7 +255,7 @@ class SiteController extends Controller
 					   					}
 					   					if ($existe === true) {
 
-					   					$insertar = "UPDATE users SET password='$model->password' where ";
+					   					$insertar = "UPDATE users SET password=sha1(md5(sha1('$model->password'))) where ";
 					   					$insertar .= "act_react_key='".$key."'";
 					   					$llaveBD = $conexion->createCommand($insertar)->query();
 
