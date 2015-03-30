@@ -1,25 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "sponsors_docs".
+ * This is the model class for table "system_log".
  *
- * The followings are the available columns in table 'sponsors_docs':
+ * The followings are the available columns in table 'system_log':
  * @property integer $id
- * @property integer $id_sponsor
- * @property string $file_name
- * @property string $path
+ * @property integer $id_user
+ * @property string $section
+ * @property string $details
+ * @property string $action
+ * @property string $datetime
  *
  * The followings are the available model relations:
- * @property Sponsors $idSponsor
+ * @property Users $idUser
  */
-class SponsorsDocs extends CActiveRecord
+class SystemLog extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'sponsors_docs';
+		return 'system_log';
 	}
 
 	/**
@@ -30,12 +32,14 @@ class SponsorsDocs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_sponsor, file_name, path', 'required'),
-			array('id_sponsor', 'numerical', 'integerOnly'=>true),
-			array('file_name, path', 'length', 'max'=>100),
+			array('id_user, section, details, action, datetime', 'required'),
+			array('id_user', 'numerical', 'integerOnly'=>true),
+			array('section', 'length', 'max'=>60),
+			array('details', 'length', 'max'=>150),
+			array('action', 'length', 'max'=>250),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_sponsor, file_name, path', 'safe', 'on'=>'search'),
+			array('id, id_user, section, details, action, datetime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,7 +51,7 @@ class SponsorsDocs extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idSponsor' => array(self::BELONGS_TO, 'Sponsors', 'id_sponsor'),
+			'idUser' => array(self::BELONGS_TO, 'Users', 'id_user'),
 		);
 	}
 
@@ -58,9 +62,11 @@ class SponsorsDocs extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_sponsor' => 'Id Sponsor',
-			'file_name' => 'File Name',
-			'path' => 'Path',
+			'id_user' => 'Id User',
+			'section' => 'Section',
+			'details' => 'Details',
+			'action' => 'Action',
+			'datetime' => 'Datetime',
 		);
 	}
 
@@ -83,9 +89,11 @@ class SponsorsDocs extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('id_sponsor',$this->id_sponsor);
-		$criteria->compare('file_name',$this->file_name,true);
-		$criteria->compare('path',$this->path,true);
+		$criteria->compare('id_user',$this->id_user);
+		$criteria->compare('section',$this->section,true);
+		$criteria->compare('details',$this->details,true);
+		$criteria->compare('action',$this->action,true);
+		$criteria->compare('datetime',$this->datetime,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -96,7 +104,7 @@ class SponsorsDocs extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return SponsorsDocs the static model class
+	 * @return SystemLog the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
