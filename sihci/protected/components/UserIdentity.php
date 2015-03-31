@@ -20,7 +20,7 @@ class UserIdentity extends CUserIdentity
    //LO01 – Inicio de Sesión 
 
 	private $_id;
-
+	private $_role;
 
 	public function authenticate()
 	{
@@ -34,6 +34,20 @@ class UserIdentity extends CUserIdentity
 		else{
 			$this->_id=$user->id;
 			$this->setState('email',$user->email);
+			// $permisosObj = permissionRoles::model()->findAllByAttributes(array("id_role"=>$user->id_roles));
+			// $permisosArr = array();
+
+			// foreach($permisosObj as $valor)
+			// 	$permisosArr[Modulos::model()->findByPk($valor["id_modulo"])->nombre] = $valor["permisos"];
+
+			// $this->setState("permisos",$permisosArr);
+
+
+
+
+			// $this->setState("datosPersonales",strtoupper( substr($empleado->nombres,0,6)." ".$empleado->ap_pat." (".Roles::model()->findByPk($user->id_rol)->nombre.")"));
+			// $this->setState("areaPuesto",strtoupper(Puestos::model()->findByPk(AreasPuestos::model()->findByPk($empleado->id_area_puesto)->id_puesto)->nombre." EN EL ÁREA DE ".Areas::model()->findByPk(AreasPuestos::model()->findByPk($empleado->id_area_puesto)->id_area)->nombre));
+	
 			$this->errorCode=self::ERROR_NONE;
 			
 		}
