@@ -43,6 +43,7 @@ class UsersController extends Controller
 	
 	public function actionCreate()
 	{
+		$this->layout = 'informativas';
 		$model=new Users;
 		$modelPersons = new Persons;
 		

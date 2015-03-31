@@ -4,97 +4,151 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div id="crateusers" class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'users-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+	<?php $form=$this->beginWidget('CActiveForm', array(
+		'id'=>'users-form',
+		// Please note: When you enable ajax validation, make sure the corresponding
+		// controller action is handling ajax validation correctly.
+		// There is a call to performAjaxValidation() commented in generated controller code.
+		// See class documentation of CActiveForm for details on this.
+		'enableAjaxValidation'=>true,
+	)); ?>
 
-
-	<p class="note">Los Campos <span class="required">*</span> Son requeridos.</p>
-	<?php Yii::app()->bootstrap->register(); ?>
-	<?php echo $form->errorSummary($model); ?>
-	<?php echo $form->errorSummary($modelPersons); ?>
-
-
-
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('placeholder'=>"Email")); ?>
-		<?php echo $form->error($model,'email'); ?>
+	<div class="progreesbar">
+		<ul id="progressbar">
+			<li class="active">Paso 1</li>
+			<li>Paso 2</li>
+			<li>Paso 3</li>
+		</ul>
 	</div>
 
-	<div class="row">
-		<p>Verificacion de Email</p>
-		 <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificacion de Email" ></input>
+		<?php echo $form->errorSummary($model); ?>
+		<?php echo $form->errorSummary($modelPersons); ?>
+
+
+
+		<?php echo $form->errorSummary($model); ?>
+
+	<fieldset>
+		<div class="row">
+		<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-user"></i>
+			<?php echo $form->textField($modelPersons,'names',array('placeholder'=>"Nombre/s completos.")); ?>
+			<?php echo $form->error($modelPersons,'names'); ?>
+		</div>	
+		</div>
+
+		<div class="row">
+			<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-user"></i>
+				<?php echo $form->textField($modelPersons,'last_name1',array('placeholder'=>"Apellido Paterno")); ?>
+				<?php echo $form->error($modelPersons,'last_name1'); ?>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-user"></i>
+				<?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apelido Materno")); ?>
+				<?php echo $form->error($modelPersons,'last_name2'); ?>
+			</div>
+		</div>
+
+		<input type="button" name="next" class="next action-button" value="Listo.." />
+
+	</fieldset>
+
+	<fieldset>	
+
+		<div class="row">
+			<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-envelope"></i>
+				<?php echo $form->textField($model,'email',array('placeholder'=>"Email")); ?>
+				<?php echo $form->error($model,'email'); ?>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-envelope"></i>
+			 	<input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de Email" ></input>
+			 </div>
+		</div>
+
+		<div class="row">
+			<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-lock"></i>
+				<?php echo $form->passwordField($model,'password',array('placeholder'=>"Contraseña")); ?>
+				<?php echo $form->error($model,'password'); ?>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-lock"></i>
+				<input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
+			</div>
+		</div>
+
+		<input type="button" name="previous" class="previous action-button" value="Regresar.." />
+
+		<input type="button" name="next" class="next action-button" value="Listo.." />
+
+	</fieldset>	
+
+	<fieldset>
+
+		<div class="emptycontent"></div>
+		<div class="row">
+				
+		        <?php
+		        $this->widget(
+		            'yiiwheels.widgets.formhelpers.WhCountries',
+		            array(
+		                'name' => 'Persons[country]',
+		                'id' => 'Persons_country',
+		                'value' => 'MX',
+		                'useHelperSelectBox' => true,
+		                'pluginOptions' => array(
+		                    'country' => 'MX',
+		                    'language' => 'es_ES',
+		                    'flags' => true,
+		                   
+		                )
+		            )
+		        );
+		        ?>
+	    </div>
+	<div class="emptycontent"></div>
+
+		<div class="row">
+				<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-globe"></i>
+			<?php echo $form->textField($modelPersons,'curp_passport',array('placeholder'=>"Pasaporte/Curp")); ?>
+			<?php echo $form->error($modelPersons,'curp_passport'); ?>
+			</div>
+		</div>
+		<div class="emptycontent"></div>
+
+		<input type="button" name="previous" class="previous action-button" value="Regresar.." />
+
+		<div class="row buttons">
+			<?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => 'next')); ?>
+		</div>
+
+		
+	</fieldset>
+
+	
+	<div class="countusers">
+		Gracias a ti ahora somos:<br>
+		<h2>2,456</h2>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->textField($model,'password',array('placeholder'=>"Minimo 6 maximo 15 caracteres")); ?>
-		<?php echo $form->error($model,'password'); ?>
-	</div>
+	
 
-	<div class="row">
-		<p>Verificacion de contraseña</p>
-		<input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificacion de Contraseña"></input>
-	</div>
-
-	<div class="row">
-	        <p>Pais</p>
-	        <?php
-	        $this->widget(
-	            'yiiwheels.widgets.formhelpers.WhCountries',
-	            array(
-	                'name' => 'Persons[country]',
-	                'id' => 'Persons_country',
-	                'value' => 'MX',
-	                'useHelperSelectBox' => true,
-	                'pluginOptions' => array(
-	                    'country' => '',
-	                    'language' => 'es_ES',
-	                    'flags' => true
-	                )
-	            )
-	        );
-	        ?>
-    </div>
-
-	<div class="row">
-		<?php echo $form->labelEx($modelPersons,'names'); ?>
-		<?php echo $form->textField($modelPersons,'names',array('placeholder'=>"Nombre/s completos.")); ?>
-		<?php echo $form->error($modelPersons,'names'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($modelPersons,'last_name1'); ?>
-		<?php echo $form->textField($modelPersons,'last_name1',array('placeholder'=>"Apellido Paterno")); ?>
-		<?php echo $form->error($modelPersons,'last_name1'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($modelPersons,'last_name2'); ?>
-		<?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apelido Materno")); ?>
-		<?php echo $form->error($modelPersons,'last_name2'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($modelPersons,'curp_passport'); ?>
-		<?php echo $form->textField($modelPersons,'curp_passport',array('placeholder'=>"Pasaporte/Curp")); ?>
-		<?php echo $form->error($modelPersons,'curp_passport'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'crear' : 'Guardar'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
+	<?php $this->endWidget(); ?>
 
 </div><!-- form -->
+

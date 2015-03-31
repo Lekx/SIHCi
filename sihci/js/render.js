@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     $("img#logocuentas2").click(function() {
         $(".loginHome").show();
     });
@@ -20,5 +19,11 @@ $(document).ready(function() {
     });
     $("#LoginForm_password").focusout(function() {
         $(".infodialog1").css("visibility", "hidden");
+    });
+    $('#RecoveryPassword_email').focus(function() {
+        $(".infodialog3").css("visibility", "visible");
+    });
+    $('#RecoveryPassword_email').focusout(function() {
+        $(".infodialog3").css("visibility", "hidden");
     });
 });
