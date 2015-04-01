@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Patent', 'url'=>array('index')),
-	array('label'=>'Create Patent', 'url'=>array('create')),
+	array('label'=>'Crear Patent', 'url'=>array('create')),
 	array('label'=>'View Patent', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Patent', 'url'=>array('admin')),
 );

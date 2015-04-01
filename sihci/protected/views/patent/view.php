@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Patent', 'url'=>array('index')),
-	array('label'=>'Create Patent', 'url'=>array('create')),
+	array('label'=>'Crear Patent', 'url'=>array('create')),
 	array('label'=>'Update Patent', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Patent', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Patent', 'url'=>array('admin')),

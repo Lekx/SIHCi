@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Patent', 'url'=>array('create')),
+	array('label'=>'Crear Patent', 'url'=>array('create')),
 	array('label'=>'Manage Patent', 'url'=>array('admin')),
 );
 ?>

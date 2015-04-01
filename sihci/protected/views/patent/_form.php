@@ -15,7 +15,7 @@
 	'enableAjaxValidation'=>true,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Los campos <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -25,15 +25,15 @@
 		<?php
 	        $this->widget(
 	            'yiiwheels.widgets.formhelpers.WhCountries',
-	            array(
-	                'name' => 'Patent[country]',
-	                'attribute'=>'country',
-	                'value' => 'MX',
-	                'useHelperSelectBox' => true,
-	                'pluginOptions' => array(
-	                    'country' => '',
-	                    'language' => 'es_ES',
-	                    'flags' => true
+	               array(
+		                'name' => 'Patent[country]',
+		                'attribute'=>'country',
+		                'value' => 'MX',
+		                'useHelperSelectBox' => true,
+		                'pluginOptions' => array(
+		                    'country' => '',
+		                    'language' => 'es_ES',
+		                    'flags' => true
 	                )
 	            )
 	        );
@@ -45,10 +45,10 @@
 		<?php echo $form->labelEx($model,'participation_type'); ?>
 		<?php echo $form->dropDownList($model,'participation_type',
 			  array(
-			  		''=>'',
-			  		'Inventor'=>'Inventor',
-			  		'Coinventor'=>'Coinventor'
-			  		)
+				  		''=>'',
+				  		'Inventor'=>'Inventor',
+				  		'Coinventor'=>'Coinventor'
+				  	)
 			  );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -79,14 +79,13 @@
 		<?php 
                 $status = array('No.Solicitud'=>'No.Solicitud', 'No.Registro'=>'No.Registro');
                 echo $form->radioButtonList($model,'application_type',$status,array('separator'=>' '));
-
         ?>
 		<?php echo $form->error($model,'application_type'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'application_number'); ?>
-		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud','style'=>'text-transform:uppercase;')); ?>
+		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud')); ?>
 		<?php echo $form->error($model,'application_number'); ?>
 	</div>
 
@@ -187,12 +186,13 @@
         <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
 
 		<script>
+
 			function validationFrom()
 			{
 				alert("Registro realizado con éxito");
 				return false;
 			}	
-
+			
 		</script>        
 	</div>
 
