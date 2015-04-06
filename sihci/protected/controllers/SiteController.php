@@ -94,29 +94,21 @@ class SiteController extends Controller
 		{
 
 			$model->attributes=$_POST['LoginForm'];
-		if (!$model->validate()) {
-   				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
-   			}else{
-   				
-	   				$conexion = Yii::app()->db;
-	   				$consulta = "SELECT status FROM users where email='$model->username' and status='activo'";
-	   				$resultado = $conexion->createCommand($consulta);
-	   				$filas = $resultado->query();
-	   				$existe = false;
-         
-	   				foreach ($filas as $fila) {
-	   				   $existe=true;
-	   				}
-		   				if ($existe === true) {
-								if($model->validate() && $model->login()){
 
-								    $this->redirect(Yii::app()->createUrl('desplegarInformacion/index'));
-								}
-							}else{
-			   				echo "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
-			   			}
-		} 
-		echo "no existes cabron";
+			$is_active = Users::model()->findByAttributes(array("status"=>"activo","email"=>$model->username)); 
+			$not_active = Users::model()->findByAttributes(array("status"=>"inactivo","email"=>$model->username)); 
+
+			if ($model->validate() && $model->login() && $is_active != null){
+	   			
+	   				 echo "200";
+			}
+			if($not_active != null){
+					echo "302";
+			}    				
+   			else{
+					echo "404";
+			} 
+		
 		Yii::app()->end();
 	}
 		// display the login form
@@ -124,7 +116,6 @@ class SiteController extends Controller
 		if(!isset($_POST['ajax']))
 		$this->render('login',array('model'=>$model, 'msg' => $msg));
 	}
-
 
 	//$this->renderPartial('login',array('model'=>$model));
 

@@ -49,8 +49,8 @@
 	font-family: 'Caviar_Dreams';
 	z-index: 999;
 }
-#login-form  input[type="text"] , input[type="password"],
-#recovery-form  input[type="text"] , input[type="password"] 
+#login-form  input[type="text"] ,#login-form input[type="password"],
+#recovery-form  input[type="text"] , #recovery-form input[type="password"] 
 {
 
 	background-color: #CDF1F3 !important;
@@ -60,7 +60,7 @@
 	display: block !important;
 	margin-left: auto !important;
 	margin-right: auto !important;
-	margin-top: 26px;
+	margin-top: 26px !important;
 	padding-right: 55px !important;
 	font-family: 'Caviar_Dreams_Bold' !important; 
 	font-size: 20px !important; 
@@ -69,12 +69,17 @@
 	opacity: .60 !important;
 
 }
-#login-form input[type="submit"],input[type="button"],
+#login-form input[type="password"]
+{
+	margin-top: 0px !important;
+}
+#login-form input[type="submit"], #login-form  input[type="button"],
 #recovery-form input[type="submit"]
 {
 	width: 400px !important;
 	height: 50px !important;
 	background-color: #0E3152;
+	margin-top: 10px;
 	color: white;
 	font-family: 'Caviar_Dreams_Bold';
 	font-size: 25px;
@@ -126,21 +131,90 @@
 .left-addon input  { padding-left:  12px; }
 .right-addon input { padding-right: 12px; }
 
-.infodialog, .infodialog1
+.infodialog
 {
 	visibility: hidden;
-	display: inline-block;
-	position: fixed;
-	z-index: 999;
 	width: 190px;
 	height: 50px;
-	margin-left: 10px;
-	margin-top: 15px;
 	color: white;
 	background-color: #0E3152;
+    color: white;
+    left: 860px;
+    top: 225px;
+    z-index: 1000;
+    position: absolute;
 
 }
-.infodialog:after ,.infodialog1:after
+.infodialogerror
+{
+	visibility: hidden;
+	width: 190px;
+	height: 50px;
+	color: white;
+	background-color: #F20862;
+    color: white;
+    left: 860px;
+    top: 225px;
+    z-index: 1000;
+    position: absolute;
+
+
+}
+.infodialog1error
+{
+	visibility: hidden;
+	width: 190px;
+	height: 50px;
+	color: white;
+	background-color: #F20862;
+    color: white;
+    left: 860px;
+    top: 305px;
+    z-index: 1000;
+    position: absolute;
+
+}
+.infodialogerror:after ,.infodialog1error:after 
+{
+	content:"";
+    border-color: transparent #F20862 transparent transparent;
+    border-style:solid;
+    border-width: 25px;
+    width:0;
+    height:0;
+    position:absolute;
+    top: .5px;
+    left: -40px
+
+}
+.infodialog3
+{
+	
+	width: 190px;
+	height: 50px;
+	color: white;
+	background-color: #0E3152;
+    color: white;
+    left: 860px;
+    top: 370px;
+    z-index: 1000;
+    position: absolute;
+}
+.infodialog1
+{
+	visibility: hidden;
+	width: 190px;
+	height: 50px;
+	color: white;
+	background-color: #0E3152;
+    color: white;
+    left: 860px;
+    top: 305px;
+    z-index: 1000;
+    position: absolute;
+
+}
+.infodialog:after , .infodialog1:after , .infodialog3:after
 {
 	content:"";
     border-color: transparent #0E3152 transparent transparent;
@@ -154,9 +228,15 @@
 }
 .infodialog1{ margin-top: 0; }
 
-.infodialog p , .infodialog1 p
+.infodialog p , .infodialog1 p , .infodialog3 p
 {
 	padding: 9px;
+
+}
+.infodialogerror p, .infodialog1error p
+{
+	padding: 9px;
+	content: "Favor de revisar el si el contendio esta registrado";
 }
 .closelogin , .closerecovery
 {

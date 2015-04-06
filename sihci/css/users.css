@@ -1,0 +1,183 @@
+.usersback
+{
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+ 	background: rgba(40, 50, 90, .70);
+ 	z-index: 900;
+}
+#crateusers fieldset
+{
+	
+	
+	margin: -10px 33.8%;
+	/*stacking fieldsets above each other*/
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+	height: auto;	
+	background: white;
+	font-family: 'Caviar_Dreams';
+	z-index: 999;
+
+}
+.emptycontent
+{
+	height: 20px;
+}
+.countusers
+{
+ 	margin-left: auto;
+ 	margin-right: auto;
+	/*stacking fieldsets above each other*/
+	margin-top: 100px;
+	width: 400px;
+	height: auto;	
+	background: #1EB9C0;
+	color: white;
+	font-family: 'Caviar_Dreams';
+	z-index: 999;
+	text-align: center;
+
+}
+#crateusers fieldset:not(:first-of-type) {
+	 display: none;
+}
+
+
+#crateusers input[type="text"], #crateusers input[type="password"]
+{
+    background-color: #CDF1F3 !important;
+	opacity: .80;
+	height: 50px !important;
+	width: 350px !important;
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	font-family: 'Caviar_Dreams_Bold' !important; 
+	font-size: 20px !important; 
+    padding-top: 10px !important;
+	padding-left: 20px !important;
+	color: #1EB9C0 !important;
+	opacity: .60 !important;
+}
+#crateusers input[type="submit"].previous , #crateusers input[type="button"].previous
+{
+	width: 400px !important;
+	height: 50px !important;
+	background-color: #0E3152;
+	color: white;
+	margin-left: -11px;
+	font-family: 'Caviar_Dreams_Bold';
+	font-size: 25px;
+	margin-top: -12px;
+	margin-bottom: 10px;
+	position: absolute;
+
+}
+
+#crateusers input[type="submit"].next , #crateusers input[type="button"].next,
+#crateusers input[type="submit"].row 
+{
+	width: 400px !important;
+	height: 50px !important;
+	background-color: #0E3152;
+	color: white;
+	margin-left: -11px;
+	font-family: 'Caviar_Dreams_Bold';
+	font-size: 25px;
+	margin-top: 45px;
+	margin-bottom: 0;
+	position: absolute;
+
+
+}
+
+.bfh-selectbox .bfh-selectbox-toggle
+{
+	background-color: #CDF1F3 !important;
+	opacity: .80;
+	height: 50px !important;
+	width: 350px !important;
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	font-family: 'Caviar_Dreams_Bold' !important; 
+	font-size: 20px !important; 
+	padding-left: 15px !important;
+	opacity: .60 !important;
+}
+.bfh-selectbox-options
+{
+	
+	width: 350px !important;
+	
+}
+
+/*progressbar*/
+
+
+.progreesbar
+{
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+	width: 400px;
+}
+
+
+#progressbar {
+	
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 30%;
+	float: left;
+	position: relative;
+	text-align: center;
+
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: #E6E7E8;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #E6E7E8;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: white;
+	color: black;
+}
+
