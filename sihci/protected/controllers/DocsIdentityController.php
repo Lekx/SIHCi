@@ -69,7 +69,7 @@ class DocsIdentityController extends Controller
 		$model=new DocsIdentity;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['DocsIdentity']))
 		{
@@ -80,12 +80,12 @@ class DocsIdentityController extends Controller
 			if ($model->validate()) {
 				
 				if($model->doc_id != ''){
-					//esta ruta debe cambiarse a 
-					//$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/Documento.pdf')
-					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/cve-hc/'.$model->type.'.pdf');
+					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf');
+					$model->doc_id = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf';
 						if($model->save()){
 							$this->redirect(array('view','id'=>$model->id));
 			   			}
+
 				}
 				
 			}
@@ -118,9 +118,8 @@ class DocsIdentityController extends Controller
 			if ($model->validate()) {
 				
 				if($model->doc_id != ''){
-					//esta ruta debe cambiarse a 
-					//$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->id_user.'/cve-hc/Documento.pdf')
-					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/cve-hc/'.$model->type.'.pdf');
+					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf');
+					$model->doc_id = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf';
 						if($model->save()){
 							$this->redirect(array('view','id'=>$model->id));
 			   			}

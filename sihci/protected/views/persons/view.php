@@ -23,6 +23,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'id_user',
+			array(
+			'name'=>'status',
+			'value'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->status,
+			),
 		'names',
 		'last_name1',
 		'last_name2',
@@ -30,9 +34,19 @@ $this->menu=array(
 		'genre',
 		'birth_date',
 		'country',
+		array(
+			'name'=>'native_country',
+			'value'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->native_country,
+			),
 		'state_of_birth',
 		'curp_passport',
-		'photo_url',
+		array(
+			'label'=>'Foto de Perfil',
+			'type'=>'raw',
+			'value'=>CHtml::image(Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'),
+			),
 		'person_rfc',
+
+		
 	),
 )); ?>

@@ -28,7 +28,7 @@ body
 hr
 {
 	border-top: 1px solid #1EB9C0 !important;
-	width: 80px;
+	width: 80px !important;
 }
 li , h1 ,h2, h3
 {
@@ -100,6 +100,19 @@ span
     margin-right: auto;	
     margin-bottom: 5px;
     z-index: 999;
+    content: url('../img/icons/cuentaIngresar.png');
+    width: 45;
+    height: 40px;
+    background: transparent;
+}
+#logout:before, #logout:after
+{
+ 	content: url('../img/icons/cuentaIngresar.png');
+}
+#logout:hover
+{
+	content: url('../img/icons/cuentacrear.png');
+
 }
 #headermenu
 {
@@ -395,6 +408,7 @@ span
 	width: 75%;
 	margin-left: calc(25%/2);
 	margin-right: calc(25%/2);
+
 }
 .content2
 {
