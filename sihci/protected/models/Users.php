@@ -11,6 +11,7 @@
  * @property string $activation_date
  * @property string $act_react_key
  * @property string $status
+ * @property string $type
  *
  * The followings are the available model relations:
  * @property Curriculum[] $curriculums
@@ -45,12 +46,13 @@ class Users extends CActiveRecord
 			array('id_roles', 'numerical', 'integerOnly'=>true),
 			array('email', 'email'),
 			array('email', 'length', 'max'=>100),
-			array('password','length', 'min'=>6, 'max'=>15),
+			array('password','length', 'min'=>6, 'max'=>200),
 			array('act_react_key', 'length', 'max'=>200),
 			array('status', 'length', 'max'=>15),
+			array('type', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_roles, email, password, registration_date, activation_date, act_react_key, status', 'safe', 'on'=>'search'),
+			array('id, id_roles, email, password, registration_date, activation_date, act_react_key, status, type', 'safe', 'on'=>'search'),
 		);
 	}
 	/**
@@ -87,6 +89,7 @@ class Users extends CActiveRecord
 			'activation_date' => 'Activation Date',
 			'act_react_key' => 'Act React Key',
 			'status' => 'Status',
+			'type' => 'Tipo',
 		);
 	}
 	/**
@@ -113,6 +116,7 @@ class Users extends CActiveRecord
 		$criteria->compare('activation_date',$this->activation_date,true);
 		$criteria->compare('act_react_key',$this->act_react_key,true);
 		$criteria->compare('status',$this->status,true);
+		$criteria->compare('type',$this->status,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

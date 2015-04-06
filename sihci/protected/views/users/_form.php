@@ -24,6 +24,9 @@
 	</div>
 
 	<fieldset>
+	
+	<?php echo $form->errorSummary($model); ?>
+
 		<div class="row">
 		<div class="inner-addon right-addon">
 					 <i class="glyphicon glyphicon-user"></i>
@@ -119,7 +122,7 @@
 		</div>
 
 	<div class="row buttons">
-			<?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => 'next')); ?>
+			<?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar'); ?>
 		</div>
 
 
