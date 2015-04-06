@@ -42,8 +42,19 @@
 		<?php echo CHtml::ajaxButton ("Ingresar a su Cuenta", CController::createUrl('site/login'), array(
 						'type'=>'POST',
                         'data'=> 'js:$("#login-form").serialize()+ "&ajax=login-form"',                  
-                        'success'=>'js:function(){
+                        'success'=>'js:function(response){
+                        	
+                        			if(response == "404")
+                        				alert("no existes");
+                        			else if(response == "302")
+                        				alert("no estas activo");
+                        			else
                         				window.open("'.Yii::app()->createUrl('/informacionDeDireccionGeneral/index').'","_blank ");
+
+
+
+
+
                         			}'
                         			)); ?>
 		<div class="">

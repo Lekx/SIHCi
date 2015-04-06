@@ -203,37 +203,96 @@ class SponsorsController extends Controller
 	{
 		$model=new SponsorsDocs;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['SponsorsDocs']))
+
+		if(isset($_POST['Doc1']))
 		{
-			$model->attributes=$_POST['SponsorsDocs'];
+			echo "<br>entramos<br>";
+			//$model->attributes=$_POST['SponsorsDocs'];
+
+			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id))->id;
+
+if(is_object(CUploadedFile::getInstanceByName('Doc1'))){
+			unset($model);
+			$model=new SponsorsDocs;
+			$model->id_sponsor = $id_sponsor;
+			$model->file_name="Documento que acredite la creación de la empresa";
+			$model->path = CUploadedFile::getInstanceByName('Doc1');
+			$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
+			$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName(); 
+			if($model->save())
+				echo "soy Chingon y guarde el 1";
+}
+
+if(is_object(CUploadedFile::getInstanceByName('Doc2'))){
+				unset($model);
+			$model=new SponsorsDocs;
+			$model->id_sponsor = $id_sponsor;
+			$model->file_name="Acreditación de las facultades del representante o apoderado";
+			$model->path = CUploadedFile::getInstanceByName('Doc2');			
+			$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
+			$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName(); 
+			if($model->save())
+				echo "soy Chingon y guarde el 2";
+}
+
+if(is_object(CUploadedFile::getInstanceByName('Doc3'))){
+			unset($model);
+			$model=new SponsorsDocs;
+			$model->id_sponsor = $id_sponsor;			
+			$model->file_name="Permisos de actividades";
+			$model->path = CUploadedFile::getInstanceByName('Doc3');			
+			$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
+			$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName(); 
+			if($model->save())
+				echo "soy Chingon y guarde el 3";
+}
+
+if(is_object(CUploadedFile::getInstanceByName('Doc4'))){	
+			unset($model);
+			$model=new SponsorsDocs;
+			$model->id_sponsor = $id_sponsor;		
+			$model->file_name="RFC o equivalente";
+			$model->path = CUploadedFile::getInstanceByName('Doc4');			
+			$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
+			$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName(); 
+			if($model->save())
+				echo "soy Chingon y guarde el 4";
+
+}
+
+if(is_object(CUploadedFile::getInstanceByName('Doc5'))){
+				unset($model);
+			$model=new SponsorsDocs;
+			$model->id_sponsor = $id_sponsor;
+			$model->file_name="Comprobante de domicilio";
+			$model->path = CUploadedFile::getInstanceByName('Doc5');			
+			$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
+			$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName(); 
+			if($model->save())
+				echo "soy Chingon y guarde el 5";
+}
+
+if(is_object(CUploadedFile::getInstanceByName('Doc6'))){
+				unset($model);
+			$model=new SponsorsDocs;
+			$model->id_sponsor = $id_sponsor;
+			$model->file_name="Identificación Oficial del Representante";
+			$model->path = CUploadedFile::getInstanceByName('Doc6');			
+			$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
+			$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName(); 
+			if($model->save())
+				echo "soy Chingon y guarde el 6";
+}
 			/*
-		echo "<pre>";
-print_r($model);
-echo "</pre>";*/
-
-			$model->id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id))->id;
-
 			$model->path = CUploadedFile::getInstanceByName('SponsorsDocs[path]');
-
-		
-			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF' ||
-			   $model->path->type == 'application/doc' || $model->path->type == 'application/DOC' ||
-			   $model->path->type == 'application/docx' || $model->path->type == 'application/DOCX' ||
-			   $model->path->type == 'application/vnd.oasis.opendocument.text' ||
-			   $model->path->type == 'image/jpeg' || $model->path->type == 'image/JPEG' ||
-			   $model->path->type == 'image/jpg' || $model->path->type == 'image/JPG' ||
-			   $model->path->type == 'image/png' || $model->path->type == 'image/PNG' )
-			
-			{  
+			//echo CUploadedFile::getInstanceByName('field_one')." ".CUploadedFile::getInstanceByName('field_two')." ".CUploadedFile::getInstanceByName('field_three');
 
 				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
 				$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName(); 
 				if($model->save())
-					$this->redirect(array('view','id'=>$model->id));
-		}
+					echo "soy Chingon y guarde";*/
+
 		}
 		$this->render('create_docs',array(
 			'model'=>$model,
