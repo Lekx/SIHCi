@@ -1,6 +1,6 @@
 <?php
 
-class UnidadHospitalariaJimComiteDeEticaController extends Controller
+class DisplayInformationController extends Controller
 {
 	public function actionIndex()
 	{

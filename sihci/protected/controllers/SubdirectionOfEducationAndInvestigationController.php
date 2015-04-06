@@ -1,12 +1,11 @@
 <?php
 
-class OrganigramaController extends Controller
+class SubdirectionOfEducationAndInvestigationController extends Controller
 {
 	public function actionIndex()
 	{
 		$this->layout = 'informativas';
 		$this->render('index');
-
 	}
 
 	// Uncomment the following methods and override them if needed

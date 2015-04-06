@@ -30,7 +30,7 @@
 		                'attribute'=>'country',
 		                'value' => 'MX',
 		                'useHelperSelectBox' => true,
-		                'pluginOptions' => array(
+			                'pluginOptions' => array(
 		                    'country' => '',
 		                    'language' => 'es_ES',
 		                    'flags' => true

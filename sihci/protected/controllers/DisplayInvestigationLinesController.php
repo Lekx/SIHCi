@@ -1,10 +1,10 @@
 <?php
 
-class InformacionDeDireccionGeneralController extends Controller
+class DisplayInvestigationLinesController extends Controller
 {
 	public function actionIndex()
-	{	
-		$this->layout = 'system';
+	{
+		$this->layout = 'informativas';
 		$this->render('index');
 	}
 

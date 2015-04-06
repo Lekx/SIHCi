@@ -1,6 +1,6 @@
 <?php
 
-class GeneracionDeConocimientoCientificoController extends Controller
+class ScientificMagazinesController extends Controller
 {
 	public function actionIndex()
 	{

@@ -1,6 +1,6 @@
 <?php
 
-class ProgramasNoPNCPController extends Controller
+class VinculationWithUniversityInstitutesHospitalsController extends Controller
 {
 	public function actionIndex()
 	{

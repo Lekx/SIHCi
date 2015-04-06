@@ -1,6 +1,6 @@
 <?php
 
-class SubdireccionDeEnsenanzaEInvestigacionController extends Controller
+class InvestigationNormativeController extends Controller
 {
 	public function actionIndex()
 	{

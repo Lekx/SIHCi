@@ -1,6 +1,6 @@
 <?php
 
-class ProgramasPNCPController extends Controller
+class HospitalaUnitJIMSubdirectionOfEducationAndInvestigationController extends Controller
 {
 	public function actionIndex()
 	{

@@ -1,6 +1,6 @@
 <?php
 
-class RevistasCientificasController extends Controller
+class GeneretionOfKnowledgeScientificController extends Controller
 {
 	public function actionIndex()
 	{

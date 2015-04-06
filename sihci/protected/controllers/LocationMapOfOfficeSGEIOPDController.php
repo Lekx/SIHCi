@@ -1,6 +1,6 @@
 <?php
 
-class DesplegarLineasDeInvestigacionController extends Controller
+class LocationMapOfOfficeSGEIOPDController extends Controller
 {
 	public function actionIndex()
 	{

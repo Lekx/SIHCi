@@ -161,7 +161,7 @@ class Patent extends CActiveRecord
     {
    		$this->presentation_date = DateTime::createFromFormat('Y-m-d', $this->presentation_date)->format('d/m/Y');
    		$this->consession_date = DateTime::createFromFormat('Y-m-d', $this->consession_date)->format('d/m/Y');
- 		return parent::afterFind();
+   		return parent::afterFind();
     }
 	
 }
