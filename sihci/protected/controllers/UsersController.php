@@ -63,11 +63,13 @@ class UsersController extends Controller
   				if($model->validate())
 					$model->password = sha1(md5($model->password));
 					$model->attributes=$_POST['Users'];
+					
 			if($model->validate())  
 			if(isset($_POST['Persons']))
 			{
 				$modelPersons->attributes = $_POST['Persons'];
-				$result2 = $modelPersons->findAll(array('condition'=>'person_rfc="'.$modelPersons->person_rfc.'"'));
+				$modelPersons->person_rfc="1234567890123";
+				$result2 = $modelPersons->findAll(array('condition'=>'curp_passport="'.$modelPersons->person_rfc.'"'));
 				if (!empty($result2)){
 					echo "<script> alert(\"Este RFC/Pasaporte ya existe.\")</script>";
 					
@@ -76,7 +78,7 @@ class UsersController extends Controller
 				$modelPersons->id_user = 0;
 				$modelPersons->marital_status = -1;
 				$modelPersons->genre = -1;
-				$modelPersons->birth_date = '0000-00-00 00:00:00';
+				$modelPersons->birth_date = '00/00/0000';
 					if($modelPersons->validate()){
 						$model->save();
 						$modelPersons->id_user = $model->id;
