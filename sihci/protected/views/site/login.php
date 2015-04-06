@@ -81,8 +81,6 @@
 
 
 		</div>
-
-		<div class="hola"></div>
 	<?php $this->endWidget(); ?>
 		
 		<div class="closelogin">
