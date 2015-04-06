@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2015/04/06 12:57:28 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/Saul/Sites/sihci/sihci/assets" es invÃ¡lido. AsegÃºrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /Users/Saul/Sites/sihci/YiiFramework/framework/web/CAssetManager.php:138
 Stack trace:
 #0 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/Users/Saul/Sit...')
@@ -32,6 +33,8 @@ Stack trace:
 #28 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> a32f4e181c0b78b1226c824338d51663c4836846
 2015/04/06 12:54:18 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
 in /Users/Dan/Sites/SIHCi/sihci/protected/controllers/UsersController.php (53)
 in /Users/Dan/Sites/SIHCi/sihci/index.php (19)
@@ -7243,6 +7246,1278 @@ in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
 >>>>>>> 16705496a6e7c93df0d95b78baf1c1a44e7f7386
 <<<<<<< HEAD
 2015/03/30 09:50:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'Jonathan-PC.local' (using password: NO)' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php:399
+<<<<<<< HEAD
+=======
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(458): CModule->getComponent('db')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Certifications))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(67): CActiveRecord->__construct()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#22 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/site/login
+---
+2015/03/30 10:22:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() fallÃ³: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sihci.directedthesis' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `directedthesis`.
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/30 10:24:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "press_notes"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('press_notes')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/press_notes
+---
+2015/03/30 10:25:07 [error] [exception.CException] exception 'CException' with message 'La propiedad "PressNotes"."notas_periodisticas" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('notas_periodist...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('notas_periodist...')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(PressNotes), 'notas_periodist...')
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(PressNotes), 'notas_periodist...', Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(PressNotes), 'notas_periodist...', Array)
+#5 C:\xampp\htdocs\SIHCi\sihci\protected\views\pressNotes\_form.php(74): CActiveForm->textField(Object(PressNotes), 'notas_periodist...', Array)
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\sihci\protected\views\pressNotes\create.php(18): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\PressNotesController.php(79): CController->render('create', Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): PressNotesController->actionCreate()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('pressnotes/crea...')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#28 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/pressnotes/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/Pressnotes
+---
+2015/03/30 10:52:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "directed_thesis"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directed_thesis')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directed_thesis
+---
+2015/03/30 10:54:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "directedtesis"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedtesis')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedtesis
+---
+2015/03/30 11:40:44 [error] [php] Undefined variable: from (C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php(18): DirectedThesisController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): DirectedThesisController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): DirectedThesisController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(79): DirectedThesisController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php (78)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+2015/03/30 11:41:14 [error] [php] Undefined variable: from (C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php(18): DirectedThesisController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): DirectedThesisController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): DirectedThesisController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(79): DirectedThesisController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php (78)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+2015/03/30 11:41:16 [error] [php] Undefined variable: from (C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php(18): DirectedThesisController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): DirectedThesisController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): DirectedThesisController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(79): DirectedThesisController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php (78)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+2015/03/30 11:41:20 [error] [php] Undefined variable: from (C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php(18): DirectedThesisController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): DirectedThesisController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): DirectedThesisController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(79): DirectedThesisController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php (78)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+2015/03/30 11:41:54 [error] [php] Undefined variable: from (C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php(18): DirectedThesisController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): DirectedThesisController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): DirectedThesisController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(79): DirectedThesisController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php (78)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+2015/03/30 11:44:42 [error] [php] Undefined variable: from (C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php:80)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php(18): DirectedThesisController->renderPartial()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): DirectedThesisController->renderInternal()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): DirectedThesisController->renderPartial()
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(79): DirectedThesisController->render()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php (80)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+2015/03/30 15:21:25 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\UsersController.php (52)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/30 15:21:25 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\UsersController.php (52)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/30 15:21:26 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\UsersController.php (65)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/30 15:21:26 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\UsersController.php (65)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/30 15:22:24 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\UsersController.php (52)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/30 15:22:24 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\UsersController.php (52)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/03/31 09:16:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acciÃ³n.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/index
+---
+2015/04/01 09:19:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(458): CModule->getComponent('db')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(670): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1601): CActiveRecord->getCommandBuilder()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(147): CListView->init()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\index.php(22): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#20 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(130): CController->render('index', Array)
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionIndex()
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#29 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#31 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses')
+#32 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#33 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#34 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses
+---
+2015/04/01 09:19:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(458): CModule->getComponent('db')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(670): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1601): CActiveRecord->getCommandBuilder()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(147): CListView->init()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\views\congresses\index.php(22): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#20 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\CongressesController.php(130): CController->render('index', Array)
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CongressesController->actionIndex()
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#29 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#31 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('congresses')
+#32 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#33 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#34 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/congresses
+---
+2015/04/01 09:20:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(458): CModule->getComponent('db')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(670): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1460): CActiveRecord->getCommandBuilder()
+#7 C:\xampp\htdocs\SIHCi\sihci\protected\components\UserIdentity.php(27): CActiveRecord->find('LOWER(email)=?', Array)
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\models\LoginForm.php(57): UserIdentity->authenticate()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(104): CModel->validate()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('login')
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/site/login
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/site/login
+---
+2015/04/01 09:36:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acciÃ³n.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedthesis/...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/01 09:49:17 [error] [exception.CDbException] exception 'CDbException' with message 'Tabla "grades" no contiene la columna con nombre "id_user".' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(73): CActiveRecord->findByAttributes(Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/01 09:50:41 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:73)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 10:00:24 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebApplication"."curriculum" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModule.php(105): CComponent->__get('curriculum')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(73): CModule->__get('curriculum')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/01 10:01:23 [error] [exception.CDbException] exception 'CDbException' with message 'Tabla "grades" no contiene la columna con nombre "0".' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(73): CActiveRecord->findByAttributes(Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/01 10:01:57 [error] [exception.CDbException] exception 'CDbException' with message 'Tabla "grades" no contiene la columna con nombre "id_user".' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(73): CActiveRecord->findByAttributes(Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/01 10:02:08 [error] [exception.CDbException] exception 'CDbException' with message 'Tabla "grades" no contiene la columna con nombre "curriculum".' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(73): CActiveRecord->findByAttributes(Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/01 10:02:14 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:73)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (73)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 12:53:51 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."alloeEmpty" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('alloeEmpty', true)
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(DirectedThesis), 'path', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(DirectedThesis), 'title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php(23): CActiveForm->labelEx(Object(DirectedThesis), 'title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(80): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/4
+---
+2015/04/01 12:54:01 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."type" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('type', 'pdf,PDF')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(DirectedThesis), 'path', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(DirectedThesis), 'title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\_form.php(23): CActiveForm->labelEx(Object(DirectedThesis), 'title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(80): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/4
+---
+2015/04/01 13:31:07 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:33:59 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:34:27 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:36:02 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:39:17 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:40:54 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:42:48 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:42:56 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:43:16 [error] [php] Undefined variable: path (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:79)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (79)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:46:24 [error] [php] move_uploaded_file(C:/xampp/htdocs/SIHCi/sihciusers/.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (80)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/01 13:55:00 [error] [exception.CException] exception 'CException' with message 'La propiedad "DirectedThesis"."start_date" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('start_date')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\models\DirectedThesis.php(153): CActiveRecord->__get('start_date')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1871): DirectedThesis->afterFind()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1892): CActiveRecord->populateRecord(Array, true)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1356): CActiveRecord->populateRecords(Array, true, NULL)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CActiveDataProvider.php(199): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(145): CController->render('index', Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionIndex()
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#28 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis')
+#29 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#31 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/
+---
+2015/04/01 13:56:17 [error] [exception.CException] exception 'CException' with message 'La propiedad "DirectedThesis"."start_date" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('start_date')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\models\DirectedThesis.php(153): CActiveRecord->__get('start_date')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1871): DirectedThesis->afterFind()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1892): CActiveRecord->populateRecord(Array, true)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1356): CActiveRecord->populateRecords(Array, true, NULL)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CActiveDataProvider.php(199): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(145): CController->render('index', Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionIndex()
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#28 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis')
+#29 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#31 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/
+---
+2015/04/01 13:56:18 [error] [exception.CException] exception 'CException' with message 'La propiedad "DirectedThesis"."start_date" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('start_date')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\models\DirectedThesis.php(153): CActiveRecord->__get('start_date')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1871): DirectedThesis->afterFind()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1892): CActiveRecord->populateRecord(Array, true)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1356): CActiveRecord->populateRecords(Array, true, NULL)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CActiveDataProvider.php(199): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(145): CController->render('index', Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionIndex()
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#28 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis')
+#29 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#31 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/
+---
+2015/04/01 13:56:21 [error] [exception.CException] exception 'CException' with message 'La propiedad "DirectedThesis"."start_date" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('start_date')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\models\DirectedThesis.php(153): CActiveRecord->__get('start_date')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1871): DirectedThesis->afterFind()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1892): CActiveRecord->populateRecord(Array, true)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1356): CActiveRecord->populateRecords(Array, true, NULL)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CActiveDataProvider.php(199): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\views\directedThesis\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(145): CController->render('index', Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionIndex()
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#28 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis')
+#29 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#31 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/
+---
+2015/04/01 14:34:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(458): CModule->getComponent('db')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1433): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(1489): CActiveRecord->getTableAlias(true)
+#7 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(195): CActiveRecord->findByPk('9')
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(107): DirectedThesisController->loadModel('9')
+#9 [internal function]: DirectedThesisController->actionUpdate('9')
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(DirectedThesisController), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DirectedThesisController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('update')
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#24 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/update/9
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/9
+---
+2015/04/06 08:50:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acciÃ³n.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedthesis/...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/06 09:32:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acciÃ³n.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedThesis/...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/delete/1?ajax=directed-thesis-grid
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/admin
+---
+2015/04/06 10:03:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acciÃ³n.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedthesis/...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/06 10:03:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acciÃ³n.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedthesis/...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/create
+---
+2015/04/06 12:02:44 [error] [exception.CException] exception 'CException' with message 'La propiedad "DirectedThesis"."DirectedThesis" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('DirectedThesis')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(80): CActiveRecord->__get('DirectedThesis')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedthesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedthesis/create
+---
+2015/04/06 12:06:21 [error] [exception.CException] exception 'CException' with message 'La propiedad "DirectedThesis"."Users" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('Users')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(80): CActiveRecord->__get('Users')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedthesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedthesis/create
+---
+2015/04/06 12:06:42 [error] [exception.CException] exception 'CException' with message 'La propiedad "DirectedThesis"."users" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('users')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(80): CActiveRecord->__get('users')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedthesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedthesis/create
+---
+2015/04/06 12:11:48 [error] [php] Undefined variable: directed_thesis (C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php:81)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (81)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/06 12:44:52 [error] [php] move_uploaded_file(C:/xampp/htdocs/SIHCi/sihci\directed_thesis/directed_thesis/Casa blanca.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (85)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/06 12:51:01 [error] [php] move_uploaded_file(C:/xampp/htdocs/SIHCi/sihci\directed_thesis/directed_thesis/The travels Willivert.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (83)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/06 12:54:07 [error] [php] move_uploaded_file(C:/xampp/htdocs/SIHCi/sihci\directed_thesis/directed_thesis/A.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (82)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/06 12:54:31 [error] [php] move_uploaded_file(C:/xampp/htdocs/SIHCi/sihci/directed_thesis/A.pdf): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (80)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/06 12:58:29 [error] [exception.CException] exception 'CException' with message 'La propiedad "DirectedThesis"."users" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('users')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(81): CActiveRecord->__get('users')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('directedthesis/...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/directedthesis/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedthesis/create
+---
+=======
+>>>>>>> 01c0ccacdf9ea4dbfd8392548e683c078256974c
+>>>>>>> 64f892da4da3c1d29a30c75085d7a7e4589e2591
+2015/03/30 11:40:29 [error] [php] Undefined variable: msg (/var/www/SIHCi/sihci/protected/views/site/login.php:17)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(149): SiteController->renderPartial()
+#2 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#3 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): SiteController->runAction()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /var/www/SIHCi/sihci/protected/views/layouts/informativas.php(393): CWebApplication->runController()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#9 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(784): SiteController->renderFile()
+#11 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(33): SiteController->render()
+#12 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): SiteController->runAction()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SiteController->run()
+#17 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php
+in /var/www/SIHCi/sihci/protected/views/site/login.php (17)
+in /var/www/SIHCi/sihci/protected/controllers/SiteController.php (149)
+in /var/www/SIHCi/sihci/protected/views/layouts/informativas.php (393)
+2015/03/30 11:40:36 [error] [php] Undefined variable: msg (/var/www/SIHCi/sihci/protected/views/site/login.php:17)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(149): SiteController->renderPartial()
+#2 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#3 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): SiteController->runAction()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /var/www/SIHCi/sihci/protected/views/layouts/informativas.php(393): CWebApplication->runController()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#9 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(784): SiteController->renderFile()
+#11 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(33): SiteController->render()
+#12 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): SiteController->runAction()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SiteController->run()
+#17 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php
+in /var/www/SIHCi/sihci/protected/views/site/login.php (17)
+in /var/www/SIHCi/sihci/protected/controllers/SiteController.php (149)
+in /var/www/SIHCi/sihci/protected/views/layouts/informativas.php (393)
+2015/03/30 11:40:40 [error] [php] Undefined variable: msg (/var/www/SIHCi/sihci/protected/views/site/login.php:17)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(149): SiteController->renderPartial()
+#2 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#3 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): SiteController->runAction()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /var/www/SIHCi/sihci/protected/views/layouts/informativas.php(393): CWebApplication->runController()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#9 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(784): SiteController->renderFile()
+#11 /var/www/SIHCi/sihci/protected/controllers/SiteController.php(33): SiteController->render()
+#12 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /var/www/SIHCi/YiiFramework/framework/web/CController.php(286): SiteController->runAction()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SiteController->run()
+#17 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/site/index
+in /var/www/SIHCi/sihci/protected/views/site/login.php (17)
+in /var/www/SIHCi/sihci/protected/controllers/SiteController.php (149)
+in /var/www/SIHCi/sihci/protected/views/layouts/informativas.php (393)
+2015/03/30 11:40:41 [error] [php] Undefined variable: msg (/var/www/SIHCi/sihci/protected/views/site/login.php:17)
+>>>>>>> a32f4e181c0b78b1226c824338d51663c4836846
 Stack trace:
 #0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(347): CDbConnection->open()
 #1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
@@ -11937,4 +13212,7 @@ in /var/www/SIHCi/sihci/index.php (19)
 >>>>>>> 4f2cfc59530924b7604537f37cc82888b7a0cc9e
 >>>>>>> 7d146d843d4cea76921820902f377fdd70d0de4a
 >>>>>>> 7e51d213f765c080db69895b4d49f483de62a217
+<<<<<<< HEAD
+>>>>>>> a32f4e181c0b78b1226c824338d51663c4836846
+=======
 >>>>>>> a32f4e181c0b78b1226c824338d51663c4836846
