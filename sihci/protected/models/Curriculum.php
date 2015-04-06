@@ -107,7 +107,7 @@ class Curriculum extends CActiveRecord
 			'id_actual_address' => 'Id Actual Address',
 			'native_country' => 'Native Country',
 			'native_language' => 'Native Language',
-			'status' => 'Status',
+			'status' => 'Activo',
 			'SNI' => 'Sni',
 			'researcher_title' => 'Researcher Title',
 		);

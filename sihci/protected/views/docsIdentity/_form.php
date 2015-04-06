@@ -33,7 +33,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
@@ -72,6 +72,7 @@
 	<div class="row buttons">
 		<input type="submit" onclick="validationFrom()" value="Guardar">
 		<input type="button" onclick="cleanUp()" value="Limpiar">
+		<?php echo CHtml::link('Cancelar',array('/docsIdentity/admin')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>

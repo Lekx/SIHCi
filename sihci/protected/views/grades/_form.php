@@ -3,6 +3,22 @@
 /* @var $model Grades */
 /* @var $form CActiveForm */
 ?>
+	<script>
+		function cleanUp(){
+			var text;
+			var result = confirm("¿Está usted seguro de limpiar estos datos?");
+			if (result==true) {
+				$('[id^=Grades_]').val('');
+			}else{
+
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+		function validationFrom(){
+			alert("Registro Realizado con éxito");
+			return false;
+		}
+</script>
 
 <div class="form">
 
@@ -138,23 +154,9 @@
 	<div class="row buttons">
 		<input type="submit" onclick="validationFrom()" value="Guardar">
 		<input type="button" onclick="cleanUp()" value="Limpiar">
+		<?php echo CHtml::link('Cancelar',array('/grades/admin')); ?>
 	</div>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Grades_]').val('');
-			}else{
 
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-</script>
 
 <?php $this->endWidget(); ?>
 

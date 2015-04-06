@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 2015/03/25 12:41:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] Permission denied' in /var/www/html/SIHCi/YiiFramework/framework/db/CDbConnection.php:399
 Stack trace:
 #0 /var/www/html/SIHCi/YiiFramework/framework/db/CDbConnection.php(347): CDbConnection->open()
@@ -158,6 +160,7 @@ REQUEST_URI=/SIHCi/sihci/index.php/subdireccionDeEnsenanzaEInvestigacion/index
 ---
 =======
 <<<<<<< HEAD
+>>>>>>> 64f892da4da3c1d29a30c75085d7a7e4589e2591
 2015/03/20 12:50:35 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /var/www/html/SIHCi/YiiFramework/framework/web/CController.php:336
 Stack trace:
 #0 /var/www/html/SIHCi/YiiFramework/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
@@ -10980,6 +10983,8 @@ Stack trace:
 REQUEST_URI=/SIHCi/sihci/index.php/postdegreeGraduates/
 ---
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 2015/03/23 12:14:16 [error] [php] Use of undefined constant Folio - assumed 'Folio' (C:\xampp\htdocs\SIHCi\sihci\protected\views\certifications\_form.php:30)
 Stack trace:
 #0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CertificationsController->renderFile()
@@ -11025,6 +11030,7 @@ HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
 ---
 2015/03/23 12:28:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
 =======
+>>>>>>> 64f892da4da3c1d29a30c75085d7a7e4589e2591
 2015/03/23 09:46:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "konwlegeApplication"' in /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
 Stack trace:
 #0 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('konwlegeApplica...')
@@ -11099,6 +11105,397 @@ REQUEST_URI=/SIHCi/sihci/index.php/knowledgeApplication/create
 in /var/www/html/SIHCi/sihci/protected/controllers/KnowledgeApplicationController.php (73)
 in /var/www/html/SIHCi/sihci/index.php (19)
 >>>>>>> e3e62b9ed5a0f92278cffda9c28c40b213c500d6
+<<<<<<< HEAD
+2015/03/24 12:53:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/SIHCi/YiiFramework/framework/db/CDbConnection.php(325): CDbConnection->setActive(true)
+#2 /var/www/SIHCi/YiiFramework/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(458): CModule->getComponent('db')
+#4 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(637): CApplication->getDb()
+#5 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(670): CActiveRecord->getDbConnection()
+#6 /var/www/SIHCi/YiiFramework/framework/db/ar/CActiveRecord.php(1601): CActiveRecord->getCommandBuilder()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#8 /var/www/SIHCi/YiiFramework/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#9 /var/www/SIHCi/YiiFramework/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#11 /var/www/SIHCi/YiiFramework/framework/zii/widgets/CBaseListView.php(125): CDataProvider->getData()
+#12 /var/www/SIHCi/YiiFramework/framework/zii/widgets/CListView.php(211): CBaseListView->init()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(147): CListView->init()
+#14 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 /var/www/SIHCi/sihci/protected/views/persons/index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/var/www/SIHCi/...')
+#17 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/SIHCi/...', Array, true)
+#18 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/SIHCi/...', Array, true)
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#20 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(180): CController->render('index', Array)
+#21 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): PersonsController->actionIndex()
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#29 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#31 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons')
+#32 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#33 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#34 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons
+---
+2015/03/24 13:01:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "login"' in /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('login')
+#1 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/login
+---
+2015/03/25 12:25:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/SIHCi/sihci/protected/controllers/PersonsController.php:209
+Stack trace:
+#0 /var/www/SIHCi/sihci/protected/controllers/PersonsController.php(59): PersonsController->loadModel('2')
+#1 [internal function]: PersonsController->actionView('2')
+#2 /var/www/SIHCi/YiiFramework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(PersonsController), Array)
+#3 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(PersonsController), Object(ReflectionMethod), Array)
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('persons/view')
+#14 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/persons/2
+---
+2015/03/25 12:30:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "preregistro"' in /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('preregistro')
+#1 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/preregistro
+---
+2015/03/25 12:48:52 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:50:08 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:50:45 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:51:21 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:52:45 [error] [php] include(doc_id.php): failed to open stream: No such file or directory (/var/www/SIHCi/YiiFramework/framework/YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /var/www/SIHCi/YiiFramework/framework/YiiBase.php(303): class_exists()
+#2 /var/www/SIHCi/YiiFramework/framework/validators/CValidator.php(174): import()
+#3 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(287): createValidator()
+#4 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(260): DocsIdentity->createValidators()
+#5 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(304): DocsIdentity->getValidators()
+#6 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1513): DocsIdentity->isAttributeRequired()
+#7 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(600): activeLabelEx()
+#8 /var/www/SIHCi/sihci/protected/views/docsIdentity/_form.php(45): CActiveForm->labelEx()
+#9 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): DocsIdentityController->renderInternal()
+#11 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): DocsIdentityController->renderFile()
+#12 /var/www/SIHCi/sihci/protected/views/docsIdentity/create.php(18): DocsIdentityController->renderPartial()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#14 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): DocsIdentityController->renderInternal()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): DocsIdentityController->renderFile()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): DocsIdentityController->renderPartial()
+#17 /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php(96): DocsIdentityController->render()
+#18 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): DocsIdentityController->actionCreate()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#23 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#24 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#25 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#26 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#27 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#28 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#29 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#30 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/views/docsIdentity/_form.php (45)
+in /var/www/SIHCi/sihci/protected/views/docsIdentity/create.php (18)
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (96)
+2015/03/25 12:52:54 [error] [php] include(doc_id.php): failed to open stream: No such file or directory (/var/www/SIHCi/YiiFramework/framework/YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /var/www/SIHCi/YiiFramework/framework/YiiBase.php(303): class_exists()
+#2 /var/www/SIHCi/YiiFramework/framework/validators/CValidator.php(174): import()
+#3 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(287): createValidator()
+#4 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(260): DocsIdentity->createValidators()
+#5 /var/www/SIHCi/YiiFramework/framework/base/CModel.php(304): DocsIdentity->getValidators()
+#6 /var/www/SIHCi/YiiFramework/framework/web/helpers/CHtml.php(1513): DocsIdentity->isAttributeRequired()
+#7 /var/www/SIHCi/YiiFramework/framework/web/widgets/CActiveForm.php(600): activeLabelEx()
+#8 /var/www/SIHCi/sihci/protected/views/docsIdentity/_form.php(45): CActiveForm->labelEx()
+#9 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): DocsIdentityController->renderInternal()
+#11 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): DocsIdentityController->renderFile()
+#12 /var/www/SIHCi/sihci/protected/views/docsIdentity/create.php(18): DocsIdentityController->renderPartial()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#14 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): DocsIdentityController->renderInternal()
+#15 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): DocsIdentityController->renderFile()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): DocsIdentityController->renderPartial()
+#17 /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php(96): DocsIdentityController->render()
+#18 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): DocsIdentityController->actionCreate()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#20 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#21 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#22 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#23 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#24 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#25 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#26 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#27 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#28 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#29 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#30 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/views/docsIdentity/_form.php (45)
+in /var/www/SIHCi/sihci/protected/views/docsIdentity/create.php (18)
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (96)
+2015/03/25 12:53:12 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:53:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculum/admi...')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/curriculum/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/curriculum
+---
+2015/03/25 12:55:09 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:55:14 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:56:42 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): DocsIdentityController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): DocsIdentityController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): DocsIdentityController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): DocsIdentityController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/docsIdentity/create
+in /var/www/SIHCi/sihci/protected/controllers/DocsIdentityController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:57:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('addresses/admin')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/addresses/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/addresses
+---
+2015/03/25 12:59:10 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/JobsController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): JobsController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): JobsController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): JobsController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): JobsController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/jobs/create
+in /var/www/SIHCi/sihci/protected/controllers/JobsController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 12:59:19 [error] [php] Trying to get property of non-object (/var/www/SIHCi/sihci/protected/controllers/JobsController.php:77)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): JobsController->runAction()
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): JobsController->filterAccessControl()
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): JobsController->runActionWithFilters()
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): JobsController->run()
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/jobs/create
+in /var/www/SIHCi/sihci/protected/controllers/JobsController.php (77)
+in /var/www/SIHCi/sihci/index.php (19)
+2015/03/25 13:10:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculum/admi...')
+#9 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCi/sihci/index.php/curriculum/admin
+HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/curriculum
+---
+2015/03/25 13:28:46 [error] [php] Undefined variable: modelPersons (/var/www/SIHCi/sihci/protected/views/users/_form.php:22)
+Stack trace:
+#0 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): UsersController->renderFile()
+#1 /var/www/SIHCi/sihci/protected/views/users/update.php(21): UsersController->renderPartial()
+#2 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#3 /var/www/SIHCi/YiiFramework/framework/web/CBaseController.php(95): UsersController->renderInternal()
+#4 /var/www/SIHCi/YiiFramework/framework/web/CController.php(869): UsersController->renderFile()
+#5 /var/www/SIHCi/YiiFramework/framework/web/CController.php(782): UsersController->renderPartial()
+#6 /var/www/SIHCi/sihci/protected/controllers/UsersController.php(109): UsersController->render()
+#7 unknown(0): UsersController->actionUpdate()
+#8 /var/www/SIHCi/YiiFramework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#9 /var/www/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#12 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#15 /var/www/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/SIHCi/YiiFramework/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#18 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): UsersController->run()
+#19 /var/www/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /var/www/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCi/sihci/index.php/users/update/2
+in /var/www/SIHCi/sihci/protected/views/users/_form.php (22)
+in /var/www/SIHCi/sihci/protected/views/users/update.php (21)
+in /var/www/SIHCi/sihci/protected/controllers/UsersController.php (109)
+=======
 2015/03/24 21:28:03 [error] [php] Undefined variable: modelAddresses (C:\xampp\htdocs\SIHCi\sihci\protected\views\sponsors\_form.php:23)
 Stack trace:
 #0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): SponsorsController->renderFile()
@@ -14191,3 +14588,4 @@ REQUEST_URI=/SIHCi/sihci/index.php/files_manager/create
 >>>>>>> 4627ed6e5edf92c7b5d051ce3e8c8de13b5899c7
 ---
 >>>>>>> 2a958dace69a4674f18a6b8c5846b7d2d3536a90
+>>>>>>> 64f892da4da3c1d29a30c75085d7a7e4589e2591

@@ -79,53 +79,27 @@ class SiteController extends Controller
 	//LO01-Inicio de sesión. 
 	public function actionLogin()
 	{
-		$this->layout = 'informativas';
-		$model = new LoginForm;
+		
+		$model=new LoginForm;
+		$msg = '';
 		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+	/*	if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
-			$errors = CActiveForm::validate($model);
-			if ($errors != '[]')
-            {
-                echo $errors;
-                Yii::app()->end();
-            }
-			/*
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
-			*/
-		}
+		}*/
+
 		// collect user input data
-		if(isset($_POST['LoginForm']))
+		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
 
 			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if ($model->validate() && $model->login())
-            {
-                if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form')
-                {
-                    echo CJSON::encode(array(
-                        'authenticated' => true,
-                        'redirectUrl' => Yii::app()->user->returnUrl,
-                        "param" => "",
-                    ));
-                    Yii::app()->end();
-                }
-              
-               $this->redirect(Yii::app()->user->returnUrl);
-            }
-
-
-			if (!$model->validate()) {
+		if (!$model->validate()) {
    				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
    			}else{
    				
 	   				$conexion = Yii::app()->db;
-
-	   				$consulta = "SELECT status FROM users where email='$model->username' and";
-	   				$consulta .=" status='activo'";
-
+	   				$consulta = "SELECT status FROM users where email='$model->username' and status='activo'";
 	   				$resultado = $conexion->createCommand($consulta);
 	   				$filas = $resultado->query();
 	   				$existe = false;
@@ -135,19 +109,24 @@ class SiteController extends Controller
 	   				}
 		   				if ($existe === true) {
 								if($model->validate() && $model->login()){
-									$this->redirect(Yii::app()->user->returnUrl);
+
+								    $this->redirect(Yii::app()->createUrl('desplegarInformacion/index'));
 								}
 							}else{
-							return false;
-			   				$msg = "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
+			   				echo "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
 			   			}
-		}
+		} 
+		echo "no existes cabron";
+		Yii::app()->end();
+	}
+		// display the login form
+
+		if(!isset($_POST['ajax']))
+		$this->render('login',array('model'=>$model, 'msg' => $msg));
 	}
 
-	// display the login form 
 
-		$this->renderPartial('login',array('model'=>$model));
-	}
+	//$this->renderPartial('login',array('model'=>$model));
 
 	/**
 	 * Logs out the current user and redirect to homepage.
@@ -276,7 +255,7 @@ class SiteController extends Controller
 					   					}
 					   					if ($existe === true) {
 
-					   					$insertar = "UPDATE users SET password='$model->password' where ";
+					   					$insertar = "UPDATE users SET password=sha1(md5(sha1('$model->password'))) where ";
 					   					$insertar .= "act_react_key='".$key."'";
 					   					$llaveBD = $conexion->createCommand($insertar)->query();
 
