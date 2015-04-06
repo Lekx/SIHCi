@@ -122,7 +122,11 @@
 		</div>
 
 	<div class="row buttons">
+<<<<<<< HEAD
 			<?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar'); ?>
+=======
+			<?php echo CHtml::ajaxSubmitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => 'next')); ?>
+>>>>>>> a32f4e181c0b78b1226c824338d51663c4836846
 		</div>
 
 
