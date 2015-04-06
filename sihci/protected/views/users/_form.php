@@ -119,8 +119,24 @@
 		</div>
 
 	<div class="row buttons">
-			<?php echo CHtml::ajaxSubmitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => 'next')); ?>
-		</div>
+
+	        <?php echo CHtml::ajaxSubmitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar',CHtml::normalizeUrl(array('users/create','render'=>true)),
+                 array(
+                     'dataType'=>'json',
+                     'type'=>'post',
+                     'success'=>'function(data) {
+                         $("#AjaxLoader").hide();  
+                        if(data.status=="success"){
+                     
+                        }
+                         else{
+
+                        }       
+                    }',                    
+                     'beforeSend'=>'function(){                        
+                           $("#AjaxLoader").show();
+                      }'
+                     ),array('id'=>'','class'=>'next')); ?>
 
 
 	</fieldset>
