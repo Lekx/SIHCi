@@ -17,7 +17,7 @@ return array(
 
 	'emulatePrepare' => true,
 	'username' => 'root',
-	'password' => '',
+	'password' => '000',
 	'charset' => 'utf8',
 	
 );
