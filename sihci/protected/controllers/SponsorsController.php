@@ -222,26 +222,31 @@ class SponsorsController extends Controller
 	public function actionCreate_docs()
 	{
 		$model=new SponsorsDocs;
-
+		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id))->id;
 
 
 		if(isset($_POST['Doc1']))
 		{
-			echo "<br>entramos<br>";
-
-			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id))->id;
-
-if(is_object(CUploadedFile::getInstanceByName('Doc1'))){
-			unset($model);
+			$path2 = "/sihci/sihci/sponsors/".$id_sponsor."/docs/";
+			//$id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id))->id;
+			/*if(!file_exists($path2)) 
+				mkdir($path2, 0775,true);
+			$files = glob($path2); 
+			foreach($files as $file){ 
+				if(is_file($file))
+					unlink($file);	
+			}*/
+			if(is_object(CUploadedFile::getInstanceByName('Doc1'))){
+				unset($model);
 			$model=new SponsorsDocs;
 			$model->id_sponsor = $id_sponsor;
-			$model->file_name="Documento que acredite la creación de la empresa";
+			$id_sponsor = Sponsors::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			$model->file_name="Documento que acredite la creacion de la empresa";
 			$model->path = CUploadedFile::getInstanceByName('Doc1');
-			$path2 = YiiBase::getPathOfAlias("webroot")."/sponsors/docs/".$model->file_name.".".$model->path->getExtensionName();
-			$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName());
-			$model->path ='/sihci/sihci/sponsors/docs/'.$model->file_name.".".$model->path->getExtensionName();
-			
+			$model->path->saveAs($path2.$model->file_name.".".$model->path->getExtensionName());
+			$model->path = $path2.$model->file_name.".".$model->path->getExtensionName();
 			$model->save();
+
 }
 
 if(is_object(CUploadedFile::getInstanceByName('Doc2'))){
