@@ -24,31 +24,33 @@ class AddressesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+	// public function accessRules()
+	// {
+	// 	return array(
+	// 		array('allow',  // allow all users to perform 'index' and 'view' actions
+	// 			'actions'=>array('index','view'),
+	// 			'users'=>array('*'),
+	// 		),
+	// 		array('allow', // allow authenticated user to perform 'create' and 'update' actions
+	// 			'actions'=>array('create','update'),
+	// 			'users'=>array('@'),
+	// 		),
+	// 		array('allow', // allow admin user to perform 'admin' and 'delete' actions
+	// 			'actions'=>array('admin','delete'),
+	// 			'users'=>array('admin'),
+	// 		),
+	// 		array('deny',  // deny all users
+	// 			'users'=>array('*'),
+	// 		),
+	// 	);
+	// }
 
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
+
+ 	//CV04-Desplegar datos. 
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -60,6 +62,8 @@ class AddressesController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
+	//CV01-Registro de datos 
 	public function actionCreate()
 	{
 		$model=new Addresses;
@@ -84,6 +88,8 @@ class AddressesController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+
+	//CV02-Modificar registro 
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);

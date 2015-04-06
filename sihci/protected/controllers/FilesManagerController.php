@@ -17,29 +17,6 @@ class FilesManagerController extends Controller
 	}
 
 	
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
-
-	
-	 
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -58,17 +35,19 @@ class FilesManagerController extends Controller
 			{
 
 		$model->attributes=$_POST['FilesManager'];
-
+		$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
+		//$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
 		$model->path = CUploadedFile::getInstanceByName('FilesManager[path]');
+	
 		
 			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF' )
 			
 			{
 				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/files_manager/'.$model->file_name.'.pdf');
-				$model->path ='/simet/simet/files_manager/'.$model->file_name.'.pdf';
+				$model->path ='/sihci/sihci/files_manager/'.$model->file_name.'.pdf';
 	   		
-				if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+					if($model->save())
+						$this->redirect(array('view','id'=>$model->id));
 
 			} 
 			 else 
@@ -155,15 +134,16 @@ class FilesManagerController extends Controller
 	public function actionDisplayFiles($section)
 		{
 			
-			$result = $model=FilesManager::model()->findAll(array(
-			    'condition'=>'seccion="'.$section.'" AND NOW() BETWEEN start_date AND end_date'
+		$result = $model=FilesManager::model()->findAll(array(
+			'condition'=>'section="'.$section.'" AND NOW() BETWEEN start_date AND end_date'
 			));
 
 
-			foreach($result as $files => $newArray){
-				echo"<a href='".$newArray["path"]."' target='_blank'>".$newArray["file_name"]."</a>";
-				echo"<br>";
-			}
 
+		foreach($result as $files => $newArray){
+			echo"<a href='".$newArray["path"]."' target='_blank'>".$newArray["file_name"]."</a>";
+			echo"<br>";
 		}
+
+	}
 }

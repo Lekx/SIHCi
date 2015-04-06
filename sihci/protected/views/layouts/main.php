@@ -18,6 +18,7 @@
 
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
 </head>
 
 <body>
@@ -57,9 +58,6 @@
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
-
-
-
 
 	<?php echo $content; ?>
 

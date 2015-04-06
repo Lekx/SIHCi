@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List Addresses', 'url'=>array('index')),
 	array('label'=>'Create Addresses', 'url'=>array('create')),
 	array('label'=>'Update Addresses', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Addresses', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete Addresses', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?')),
 	array('label'=>'Manage Addresses', 'url'=>array('admin')),
 );
 ?>
@@ -31,6 +31,6 @@ $this->menu=array(
 		'colony',
 		'street',
 		'external_number',
-		'numero_int',
+		'internal_number',
 	),
 )); ?>

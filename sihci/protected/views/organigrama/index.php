@@ -1,14 +1,29 @@
-OP03-Desplegar Organigrama
+<!-- OP03-Desplegar Organigrama -->
 
-<section>
-	<h1>Icono!</h1>
-</section>
+<?php
+/* @var $this SiteController */
+/* @var $error array */
 
+$this->pageTitle=Yii::app()->name . ' - Organigrama';
+$this->breadcrumbs=array(
+	'OPD / Organigrama',
+);
+?>
 
+<section class="informativa">
 
-<section>
+	<section class="column-left">
+		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/organigrama.png" alt="">
+	</section>
+
+	<section class="column-center">
+
+		<h2>Organigrama</h2>
+		<hr>
+
 		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/organigrama/img/org1.png"; ?>">
 	
+
 		<p>Organigrama Dando clic en subdirección general e investigación
 		Titular
 		M.S.P. Víctor Manuel Ramírez Anguiano
@@ -28,13 +43,15 @@ OP03-Desplegar Organigrama
 		<p>Objetivo, Funciones y Atribuciones</p> <br>
 		<img src="<?php echo Yii::app()->request->baseUrl."/protected/views/organigrama/img/org2.png"; ?>">
 		
+	</section>
 
 
-	
+
+	<section class="column-right">
+		<h5>DOCUMENTOS</h5>
+		<h5>DESCARGABLES:</h5>
+			<?php Yii::app()->runController('filesManager/DisplayFiles/section/Organigrama'); ?>
+	</section>
 </section>
 
 
-
-<section>
-	<?php Yii::app()->runController('manejadorArchivos/DisplayFiles/section/Organigrama'); ?>
-</section>

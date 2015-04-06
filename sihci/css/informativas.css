@@ -1,0 +1,66 @@
+.informativa
+{
+	margin-top: 50px;
+	margin-left: auto;
+	margin-bottom: 80px;
+	font-family: 'Caviar_Dreams'; 
+}
+.column-left
+{
+	float: left;
+	width: 115px;
+	margin-left: 45px;
+
+}
+.column-right
+{
+	float: right;
+	width: 270px;
+	margin-left: 20px;
+}
+.column-center
+{
+	display: inline-block;
+	width: 830px;
+	text-align: justify;
+	
+}
+#searchBarMain1
+{
+
+}
+.column-center span{ color: #00B9C0};
+.column-center h2{ color: #0A3250;  }
+.generalinformation{text-align: justify;}
+.subtitle{ color: #00B9C0;}
+
+#searchBarResults
+{
+
+	position: absolute;
+	display: none;
+	top: 225px;
+	background-color: #788C9B;
+	z-index: 900;
+	padding: 5px;
+	width: 445px;
+	margin-top: -45px;
+	margin-left: 90px;
+}
+#udg
+{
+	display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+#redaccion
+{
+	display: block;
+    margin-left: auto;
+    margin-right: auto 
+
+}
+.panel-heading{ text-align:  center;}
+.table td { text-align: center;}
+.table td { width: 50% !important;}
+.table h5 { text-align:  center;}

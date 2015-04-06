@@ -34,9 +34,11 @@ return array(
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'generatorPaths' => array('bootstrap.gii'),
-			'password'=>'root',
+			'password'=>'111',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+			'newFileMode'=>0666,
+			'newDirMode'=>0777,
 		),
 		
 	),
@@ -48,7 +50,6 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-
 
 		'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',   

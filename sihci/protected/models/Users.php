@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "users".
  *
@@ -12,6 +11,7 @@
  * @property string $activation_date
  * @property string $act_react_key
  * @property string $status
+ * @property string $type
  *
  * The followings are the available model relations:
  * @property Curriculum[] $curriculums
@@ -34,7 +34,6 @@ class Users extends CActiveRecord
 	{
 		return 'users';
 	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -47,15 +46,15 @@ class Users extends CActiveRecord
 			array('id_roles', 'numerical', 'integerOnly'=>true),
 			array('email', 'email'),
 			array('email', 'length', 'max'=>100),
-			array('password','length', 'min'=>6, 'max'=>15),
+			array('password','length', 'min'=>6, 'max'=>200),
 			array('act_react_key', 'length', 'max'=>200),
 			array('status', 'length', 'max'=>15),
+			array('type', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_roles, email, password, registration_date, activation_date, act_react_key, status', 'safe', 'on'=>'search'),
+			array('id, id_roles, email, password, registration_date, activation_date, act_react_key, status, type', 'safe', 'on'=>'search'),
 		);
 	}
-
 	/**
 	 * @return array relational rules.
 	 */
@@ -76,7 +75,6 @@ class Users extends CActiveRecord
 			'idRoles' => array(self::BELONGS_TO, 'Roles', 'id_roles'),
 		);
 	}
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -91,9 +89,9 @@ class Users extends CActiveRecord
 			'activation_date' => 'Activation Date',
 			'act_react_key' => 'Act React Key',
 			'status' => 'Status',
+			'type' => 'Tipo',
 		);
 	}
-
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -109,9 +107,7 @@ class Users extends CActiveRecord
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
-
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_roles',$this->id_roles);
 		$criteria->compare('email',$this->email,true);
@@ -120,12 +116,11 @@ class Users extends CActiveRecord
 		$criteria->compare('activation_date',$this->activation_date,true);
 		$criteria->compare('act_react_key',$this->act_react_key,true);
 		$criteria->compare('status',$this->status,true);
-
+		$criteria->compare('type',$this->status,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

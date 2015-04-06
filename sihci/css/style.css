@@ -25,6 +25,11 @@ body
 	font-style: 'Caviar_Dreams';
 
 }
+hr
+{
+	border-top: 1px solid #1EB9C0 !important;
+	width: 80px !important;
+}
 li , h1 ,h2, h3
 {
 	font-family: 'Caviar_Dreams' !important;
@@ -60,8 +65,54 @@ span
 	height: 40px;
 	margin-left: 26px;
 	margin-top: 6px;
-	border: dashed;
 	float: left;
+}
+#logohme
+{
+	margin-top: 12px;
+    margin-left: 180px;
+    margin-right: auto;	
+    z-index: 999;
+}
+#logocuentas
+{
+	margin-top: 22px;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;	
+    margin-bottom: 5px;
+    z-index: 999;
+}
+#logocuentas2
+{
+	margin-top: 22px;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;	
+    margin-bottom: 5px;
+    z-index: 999;
+}
+#logout
+{
+	margin-top: 22px;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;	
+    margin-bottom: 5px;
+    z-index: 999;
+    content: url('../img/icons/cuentaIngresar.png');
+    width: 45;
+    height: 40px;
+    background: transparent;
+}
+#logout:before, #logout:after
+{
+ 	content: url('../img/icons/cuentaIngresar.png');
+}
+#logout:hover
+{
+	content: url('../img/icons/cuentacrear.png');
+
 }
 #headermenu
 {
@@ -69,11 +120,20 @@ span
 	height: 30px;
 	margin-right: 16px;
 	display: inline-block;
+
+}
+#headermenu button
+{
+	background: transparent;
 }
 #headersearch
 {
-
 	display: inline-block;
+}
+#hsearchbutton button
+{
+	margin-left: 10px;
+	background: transparent;
 }
 #headersearch input
 {
@@ -86,6 +146,7 @@ span
 {
 	width: 30px;
 	height: 30px;
+	margin-top: -5px;
 	display: inline-block;
 }
 #hsearchbutton button,
@@ -163,7 +224,9 @@ span
 	border: 0;
 	width: 50%;
 	display: inline-block;
+	color: white;
 	float: right;
+	font-family: 'Caviar_Dreams';
 
 }
 .login
@@ -172,6 +235,7 @@ span
 	height: 100px;
 	background-color: #798C9D;
 	float: left;
+	text-align: center;
 }
 .singin
 {
@@ -179,6 +243,9 @@ span
 	height: 100px;
 	background-color: #798C9D;
 	float: right;
+	text-align: center;
+	border-left: 1px solid #fff;
+
 }
 .searchbar
 {
@@ -212,16 +279,58 @@ span
 {
 	height: 50px;
 	width: 10%;
+	margin-right: 30px;
+	margin-top: 5px;
+	background: transparent;
 }
 .searchbar::-webkit-input-placeholder { /* WebKit browsers */
     color:    #ffffff;
 }
 .carrusel img
 {
-	background-color: #BD314D;
 	width: 100%;
 	height: 420px;
 	float: left;
+}
+.carrusel
+{
+	position:relative;
+}
+.opcity
+{
+	position: absolute;
+	background: #0A3350;
+	opacity: .60;
+	width: 100%;
+	height: 420px;
+}
+
+#logohmeb
+{
+	position: absolute;
+	width: 255px !important;
+	height: 102px !important;
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top: 80px;
+	left: 0;
+	right: 0;
+   	 
+}
+.textfont
+{
+	position: absolute;
+	width: 850px;
+	display: block;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	color: white;
+	text-align: center;
+	left: 0;
+	right: 0;
+
 }
 .carruselinfo
 {
@@ -239,6 +348,10 @@ span
 
 
 }
+.carruselinfo a
+{
+	color: #ffffff !important;
+}
 .carruselinfo #two
 {
 	background-color: #1EB9C0;
@@ -247,6 +360,10 @@ span
 	color: #ffffff;
 	display: inline-block;
 	text-align: center;
+}
+#two a:hover
+{
+	color: #103251 !important;
 }
 .carruselinfo #tree
 {
@@ -291,6 +408,7 @@ span
 	width: 75%;
 	margin-left: calc(25%/2);
 	margin-right: calc(25%/2);
+
 }
 .content2
 {
@@ -331,6 +449,19 @@ span
 	float: left;
 
 }
+#contentimg
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+}
+#contentimg1
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 .contentboxs #box1 #title
 {
 
@@ -366,7 +497,6 @@ span
 	margin-bottom: auto;
 	width: 235px;
 	color: white;
-	text-align: justify;
 	font-family: 'Caviar_Dreams'
 
 }
@@ -402,6 +532,7 @@ span
 	margin-left: 120px;
 
 }
+.contentboxs #box4 h6 { color: white !important; text-align: center;}
 .contentboxs #box6
 {
 
@@ -429,7 +560,7 @@ span
 	margin-bottom: auto;
 	width: 235px;
 	color: white ;
-	text-align: justify;
+	text-align: center;
 	font-family: 'Caviar_Dreams';
 
 }
@@ -458,10 +589,12 @@ span
 }
 .contentboxs2 #box1 i
 {
-	color: white;
-	margin-top: 40px;
+	color: white !important;
+	text-align: center;
+	margin-top: 25px;
 	margin-left: 110px;
 }
+.contentboxs2 h6 { color: white !important; text-align: center;}
 .contentboxs2 #box2
 {
 	background-color: #798C9D;
@@ -479,7 +612,7 @@ span
 	margin-bottom: auto;
 	width: 235px;
 	color: white ;
-	text-align: justify;
+	text-align: center;
 
 }
 .contentboxs2 #box2 span
@@ -540,6 +673,7 @@ span
 	margin-right: auto;
 	text-align: justify;
 }
+.contenttwo h3{ text-align: left;}
 .contenttwo #title
 {
 	width: 510px;
@@ -572,12 +706,16 @@ span
 }
 .contenttwo .slidebar
 {
-	width: 220px;
+	width: 200px;
 	margin-top: -150px;
 	margin-left: 10px;
+	margin-right: 45px;
 	float: right;
-	margin-right: auto;
 
+}
+#logofot
+{
+	z-index: 900;
 }
 
 .footersection
@@ -593,6 +731,9 @@ span
 	height: 100px;
 	background-color: #798C9D;
 	float: left;
+	font-family: 'Caviar_Dreams';
+	text-align: center;
+	color:white;
 
 }
 .singinfot
@@ -601,6 +742,10 @@ span
 	height: 100px;
 	background-color: #798C9D;
 	float: right;
+	font-family: 'Caviar_Dreams';
+	color:white;
+	text-align: center;
+	border-left: 1px solid #fff;
 
 }
 .copyrigths
@@ -646,7 +791,7 @@ span
 	float: left;
 
 }
-.menu span, ul, li, a, a:hover
+.menu span, a, a:hover
 {
 	color: #00B9C0 !important;
 }
@@ -665,12 +810,12 @@ span
 }
 .cbp-hsmenu1
 {
-	list-style: none;
+	list-style: none !important;
 
 }
 .cbp-hssubmenu1 li
 {
-	list-style: circle;
+	list-style: none !important;
 
 }
 ul.cbp-hssubmenu1
@@ -706,12 +851,12 @@ ul.cbp-hssubmenu1
 }
 .cbp-hsmenu1
 {
-	list-style: none;
+	list-style: none !important;
 
 }
 .cbp-hssubmenu li
 {
-	list-style: circle;
+	list-style: none !important;
 
 }
 ul.cbp-hssubmenu
@@ -721,15 +866,21 @@ ul.cbp-hssubmenu
 	padding-left: 26px;
 
 }
+ul.cbp-hsmenu
+{
+	list-style: none;
+}
 #show_hidemenu
 {
 
    	margin-left: 25px;
    	margin-right: 10px;
-   	margin-top: 25px;
+   	margin-top: 30px;
    	margin-bottom: 25px;
    	width: 40px;
    	height: 50px;
    	display: inline-block;
+   	font-family: 'Caviar_Dreams';
+   	background-color: transparent;
 
 }
