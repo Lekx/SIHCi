@@ -26,6 +26,9 @@
 					<!-- <?php echo $form->error($model,'email'); ?> -->
 
 				</div>
+				<div class="infodialog3">
+					<p>Favor de ingresar su correo de registro.</p>
+				</div>
 			</div>
 			<div class="">
 				<?php echo CHtml::submitButton('Recuperar Contraseña') ; ?>
