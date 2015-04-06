@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2015/03/25 13:29:14 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
 in /var/www/SIHCi/sihci/protected/controllers/UsersController.php (52)
 in /var/www/SIHCi/sihci/index.php (19)
@@ -8660,3 +8661,53 @@ Stack trace:
 REQUEST_URI=/~mayelgonzalez/sihci/sihci/index.php/sponsors/create_docs
 in /Users/mayelgonzalez/Sites/sihci/sihci/protected/controllers/SponsorsController.php (230)
 in /Users/mayelgonzalez/Sites/sihci/sihci/index.php (19)
+=======
+2015/04/06 15:31:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "user"' in /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('user')
+#1 /Users/Dan/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Dan/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~dan/SIHCi/sihci/index.php/user
+---
+2015/04/06 15:40:15 [error] [php] Array to string conversion (/Users/Dan/Sites/SIHCi/sihci/protected/views/users/_form.php:118)
+Stack trace:
+#0 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CController.php(869): UsersController->renderFile()
+#1 /Users/Dan/Sites/SIHCi/sihci/protected/views/users/create.php(4): UsersController->renderPartial()
+#2 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require()
+#3 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(95): UsersController->renderInternal()
+#4 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CController.php(869): UsersController->renderFile()
+#5 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CController.php(782): UsersController->renderPartial()
+#6 /Users/Dan/Sites/SIHCi/sihci/protected/controllers/UsersController.php(97): UsersController->render()
+#7 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): UsersController->actionCreate()
+#8 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#10 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#13 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#15 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#16 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): UsersController->run()
+#17 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /Users/Dan/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /Users/Dan/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~dan/SIHCi/sihci/index.php/users/create
+in /Users/Dan/Sites/SIHCi/sihci/protected/views/users/_form.php (118)
+in /Users/Dan/Sites/SIHCi/sihci/protected/views/users/create.php (4)
+in /Users/Dan/Sites/SIHCi/sihci/protected/controllers/UsersController.php (97)
+2015/04/06 15:48:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "user"' in /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Dan/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('user')
+#1 /Users/Dan/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Dan/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~dan/SIHCi/sihci/index.php/user
+---
+2015/04/06 15:49:00 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/Dan/Sites/SIHCi/sihci/protected/controllers/UsersController.php (43)
+in /Users/Dan/Sites/SIHCi/sihci/index.php (19)
+2015/04/06 15:49:00 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/Dan/Sites/SIHCi/sihci/protected/controllers/UsersController.php (43)
+in /Users/Dan/Sites/SIHCi/sihci/index.php (19)
+>>>>>>> a02863060bbd77c7353694328c663ee325407abd

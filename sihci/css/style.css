@@ -100,6 +100,19 @@ span
     margin-right: auto;	
     margin-bottom: 5px;
     z-index: 999;
+    content: url('../img/icons/cuentaIngresar.png');
+    width: 45;
+    height: 40px;
+    background: transparent;
+}
+#logout:before, #logout:after
+{
+ 	content: url('../img/icons/cuentaIngresar.png');
+}
+#logout:hover
+{
+	content: url('../img/icons/cuentacrear.png');
+
 }
 #headermenu
 {

@@ -19,7 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/demo.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/informativas.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/login.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/login.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/users.css">
 	
 	<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
@@ -34,6 +35,7 @@
 		$cs->registerScriptFile($baseUrl.'/js/responsiveslides.js');
 		$cs->registerScriptFile($baseUrl.'/js/slideshowres.js');
 		$cs->registerScriptFile($baseUrl.'/js/render.js');
+		$cs->registerScriptFile($baseUrl.'/js/progressUser.js');
 
 	?>
 
@@ -327,8 +329,6 @@
 		                 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/menuBuscarCh.png" alt="">
 		                 		</button>
 		                 	</div>
-		                 	
-
 	                 	</div>
                  </div>
             </div>
@@ -346,11 +346,14 @@
 		<?php 
 			if(Yii::app()->user->isGuest){
 			 echo CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id'=> 'logocuentas2'));
-		     echo 'Ingresar a tu cuenta.';
+		     echo 'Ingresar a tu cuenta.</p>';
 		    }else{
-		     $image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-		     echo CHtml::link($image,array('site/logout'));
+		     $img = '<img id="logout">';
+		     //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
+		     echo CHtml::link($img,array('site/logout'));
+		     echo '<p id="logoutext">';
 		     echo Yii::app()->user->email;
+		     echo '</p>';
 		    } 
 	    ?>
 		
