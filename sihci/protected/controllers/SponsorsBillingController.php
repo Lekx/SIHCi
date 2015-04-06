@@ -1,6 +1,6 @@
 <?php
 
-class SponsorsDocsController extends Controller
+class SponsorsBillingController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class SponsorsDocsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new SponsorsDocs;
+		$model=new SponsorsBilling;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['SponsorsDocs']))
+		if(isset($_POST['SponsorsBilling']))
 		{
-			$model->attributes=$_POST['SponsorsDocs'];
+			$model->attributes=$_POST['SponsorsBilling'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class SponsorsDocsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['SponsorsDocs']))
+		if(isset($_POST['SponsorsBilling']))
 		{
-			$model->attributes=$_POST['SponsorsDocs'];
+			$model->attributes=$_POST['SponsorsBilling'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class SponsorsDocsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('SponsorsDocs');
+		$dataProvider=new CActiveDataProvider('SponsorsBilling');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class SponsorsDocsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new SponsorsDocs('search');
+		$model=new SponsorsBilling('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['SponsorsDocs']))
-			$model->attributes=$_GET['SponsorsDocs'];
+		if(isset($_GET['SponsorsBilling']))
+			$model->attributes=$_GET['SponsorsBilling'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class SponsorsDocsController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return SponsorsDocs the loaded model
+	 * @return SponsorsBilling the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=SponsorsDocs::model()->findByPk($id);
+		$model=SponsorsBilling::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +160,11 @@ class SponsorsDocsController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param SponsorsDocs $model the model to be validated
+	 * @param SponsorsBilling $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='sponsors-docs-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='sponsors-billing-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
