@@ -40,6 +40,7 @@ class UsersController extends Controller {
 
 		if (isset($_POST['Users'])) {
 			$model->id_roles = '1';
+<<<<<<< HEAD
 			$model->attributes = $_POST['Users'];
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
 			if ($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2'])) {
@@ -90,6 +91,51 @@ class UsersController extends Controller {
 						}
 
 					}
+=======
+			$model->attributes=$_POST['Users'];
+			$result = $model->findAll(array('condition'=>'email="'.$model->email.'"'));
+			if($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2']))
+			if($this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2']))
+			if (!empty($result)){
+					echo "<script> alert(\"Este correo ya existe.\")</script>";
+      		}else{
+			$model->registration_date = new CDbExpression('NOW()');
+			$model->activation_date = new CDbExpression('0000-00-00');
+			$model->status = 0;
+			$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s').$model->email.rand(1000, 5000))));
+  				//if($model->validate())
+					$model->password = sha1(md5($model->password));
+					//$model->attributes=$_POST['Users'];
+					
+			if($model->validate())  
+			if(isset($_POST['Persons']))
+			{
+				$modelPersons->attributes = $_POST['Persons'];
+				$modelPersons->person_rfc="1234567890123";
+				$result2 = $modelPersons->findAll(array('condition'=>'curp_passport="'.$modelPersons->curp_passport.'"'));
+				if (!empty($result2)){
+					echo "<script> alert(\"Este RFC/Pasaporte ya existe.\")</script>";
+					
+      			}else{
+				
+				$modelPersons->id_user = 0;
+				$modelPersons->marital_status = -1;
+				$modelPersons->genre = -1;
+				$modelPersons->birth_date = '00/00/0000';
+					if($modelPersons->validate()){
+						$model->save();
+						$modelPersons->id_user = $model->id;
+						$modelPersons->save();
+
+							$log = new SystemLog();
+							$log->id_user = Yii::app()->user->id;
+							$log->section = "Empresas";
+							$log->details = "Se creo un nuevo registro";
+							$log->action = "creacion";
+							$log->datetime = new CDbExpression('NOW()');
+							$log->save();
+						$this->redirect(array('view','id'=>$model->id));
+>>>>>>> d0cc0e0d3dbefa592fab162514721fdbac6e14c1
 				}
 			}
 

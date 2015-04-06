@@ -24,6 +24,9 @@
 	</div>
 
 	<fieldset>
+	
+	<?php echo $form->errorSummary($model); ?>
+
 		<div class="row">
 		<div class="inner-addon right-addon">
 					 <i class="glyphicon glyphicon-user"></i>
@@ -119,6 +122,7 @@
 		</div>
 
 	<div class="row buttons">
+<<<<<<< HEAD
 
 	        <?php echo CHtml::ajaxSubmitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar',CHtml::normalizeUrl(array('users/create','render'=>true)),
                  array(
@@ -137,6 +141,18 @@
                            $("#AjaxLoader").show();
                       }'
                      ),array('id'=>'','class'=>'next')); ?>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+			<?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar'); ?>
+=======
+			<?php echo CHtml::ajaxSubmitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => 'next')); ?>
+>>>>>>> a32f4e181c0b78b1226c824338d51663c4836846
+=======
+			<?php echo CHtml::ajaxSubmitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => 'next')); ?>
+>>>>>>> a32f4e181c0b78b1226c824338d51663c4836846
+		</div>
+>>>>>>> d0cc0e0d3dbefa592fab162514721fdbac6e14c1
 
 
 	</fieldset>
