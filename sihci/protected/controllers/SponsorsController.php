@@ -76,44 +76,47 @@ class SponsorsController extends Controller {
 				echo "entre 1";
 			}
 
-			if ($modelAddresses->validate() && $model->validate()) {
+			if ($modelAddresses->validate()) {
 				if ($modelAddresses->save()) {
 					$model->id_user = Yii::app()->user->id;
 					$model->id_address = $modelAddresses->id;
-					if ($model->save()) {
+					if ($model->validate()) {
+						if ($model->save()) {
 
-						if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
-							echo "entre 2";
-							$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
-							$path = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/img/";
-							if (!file_exists($path)) {
-								mkdir($path, 0775, true);
-							}
-
-							$files = glob($path); // get all file names
-							foreach ($files as $file) {
-								// iterate files
-								if (is_file($file)) {
-									unlink($file);
+							if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
+								echo "entre 2";
+								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+								$path = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/img/";
+								if (!file_exists($path)) {
+									mkdir($path, 0775, true);
 								}
-								// delete file
-							}
-							$logo->saveAs($path . 'logo.' . $logo->getExtensionName());
-							$logo = $path . 'logo.' . $logo->getExtensionName();
 
-							if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id, array('photo_url' => $logo))) {
+								$files = glob($path); // get all file names
+								foreach ($files as $file) {
+									// iterate files
+									if (is_file($file)) {
+										unlink($file);
+									}
+									// delete file
+								}
+								$logo->saveAs($path . 'logo.' . $logo->getExtensionName());
+								$logo = $path . 'logo.' . $logo->getExtensionName();
 
-								$log = new SystemLog();
-								$log->id_user = Yii::app()->user->id;
-								$log->section = "Empresas";
-								$log->details = "Se creo un nuevo registro";
-								$log->action = "creacion";
-								$log->datetime = new CDbExpression('NOW()');
-								$log->save();
+								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id, array('photo_url' => $logo))) {
 
+									$log = new SystemLog();
+									$log->id_user = Yii::app()->user->id;
+									$log->section = "Empresas";
+									$log->details = "Se creo un nuevo registro";
+									$log->action = "creacion";
+									$log->datetime = new CDbExpression('NOW()');
+									$log->save();
+
+								}
 							}
 						}
 					}
+
 				}
 			}
 
@@ -189,10 +192,12 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_billing() {
-		$model = new SponsorsBilling;
+		$model = new SponsorBilling;
 
-		if (isset($_POST['Billing'])) {
-			$model->attributes = $_POST['Billing'];
+		if (isset($_POST['SponsorsBilling'])) {
+			$model->attributes = $_POST['SponsorsBilling'];
+			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+			$model->id_address = $modelAddresses->id;
 			if ($model->save()) {
 				$this->redirect(array('view', 'id' => $model->id));
 			}
@@ -206,37 +211,33 @@ class SponsorsController extends Controller {
 
 	public function actionCreate_docs() {
 		$model = new SponsorsDocs;
+		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+		if (isset($_POST['Doc1'])) {
+			$path2 = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/docs/";
+			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+			if (!file_exists($path2)) {
+				mkdir($path2, 0777, true);
 
+			}
+			$files = glob($path2);
+			foreach ($files as $file) {
+				if (is_file($file)) {
+					unlink($file);
+				}
 
-	public function actionCreate_docs()
-	{
-		$model=new SponsorsDocs;
-		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id))->id;
-
-
-		if(isset($_POST['Doc1']))
-		{
-			$path2 = "/sihci/sihci/sponsors/".$id_sponsor."/docs/";
-			//$id_sponsor = Sponsors::model()->findByAttributes(array("id_user"=>Yii::app()->user->id))->id;
-			/*if(!file_exists($path2)) 
-				mkdir($path2, 0775,true);
-			$files = glob($path2); 
-			foreach($files as $file){ 
-				if(is_file($file))
-					unlink($file);	
-			}*/
-			if(is_object(CUploadedFile::getInstanceByName('Doc1'))){
+			}
+			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
-			$model=new SponsorsDocs;
-			$model->id_sponsor = $id_sponsor;
-			$id_sponsor = Sponsors::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$model->file_name="Documento que acredite la creacion de la empresa";
-			$model->path = CUploadedFile::getInstanceByName('Doc1');
-			$model->path->saveAs($path2.$model->file_name.".".$model->path->getExtensionName());
-			$model->path = $path2.$model->file_name.".".$model->path->getExtensionName();
-			$model->save();
+				$model = new SponsorsDocs;
+				$model->id_sponsor = $id_sponsor;
+				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+				$model->file_name = "Documento que acredite la creacion de la empresa";
+				$model->path = CUploadedFile::getInstanceByName('Doc1');
+				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
+				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
+				$model->save();
 
-}
+			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc2'))) {
 				unset($model);
@@ -244,8 +245,8 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Acreditación de las facultades del representante o apoderado";
 				$model->path = CUploadedFile::getInstanceByName('Doc2');
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot") . '/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = '/sihci/sihci/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName();
+				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
+				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
 				$model->save();
 			}
 
@@ -255,8 +256,8 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Permisos de actividades";
 				$model->path = CUploadedFile::getInstanceByName('Doc3');
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot") . '/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = '/sihci/sihci/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName();
+				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
+				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
 				$model->save();
 			}
 
@@ -266,8 +267,8 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "RFC o equivalente";
 				$model->path = CUploadedFile::getInstanceByName('Doc4');
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot") . '/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = '/sihci/sihci/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName();
+				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
+				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
 				$model->save();
 
 			}
@@ -278,8 +279,8 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Comprobante de domicilio";
 				$model->path = CUploadedFile::getInstanceByName('Doc5');
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot") . '/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = '/sihci/sihci/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName();
+				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
+				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
 				$model->save();
 			}
 
@@ -289,8 +290,8 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Identificación Oficial del Representante";
 				$model->path = CUploadedFile::getInstanceByName('Doc6');
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot") . '/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = '/sihci/sihci/sponsors/docs/' . $model->file_name . "." . $model->path->getExtensionName();
+				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
+				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
 				$model->save();
 			}
 
