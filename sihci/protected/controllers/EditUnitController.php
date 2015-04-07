@@ -1,6 +1,6 @@
 <?php
 
-class UnidadHospitalariaJIMSubdireccionDeEnsenanzaEInvestigacionController extends Controller
+class EditUnitController extends Controller
 {
 	public function actionIndex()
 	{

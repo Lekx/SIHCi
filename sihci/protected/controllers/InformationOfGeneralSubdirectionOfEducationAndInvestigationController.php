@@ -1,6 +1,6 @@
 <?php
 
-class PlanoDeUbicacionDeMapaDeOficinaSGEIOPDController extends Controller
+class InformationOfGeneralSubdirectionOfEducationAndInvestigationController extends Controller
 {
 	public function actionIndex()
 	{

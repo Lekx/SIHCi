@@ -1,9 +1,10 @@
 <?php
 
-class DesplegarRevistaCientificaController extends Controller
+class InformationGeneralDirectionController extends Controller
 {
 	public function actionIndex()
-	{
+	{	
+		$this->layout = 'informativas';
 		$this->render('index');
 	}
 

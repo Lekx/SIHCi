@@ -1,10 +1,9 @@
 <?php
 
-class NormatividadDeInvestigacionController extends Controller
+class DiplayScientificMagazinesController extends Controller
 {
 	public function actionIndex()
 	{
-		$this->layout = 'informativas';
 		$this->render('index');
 	}
 

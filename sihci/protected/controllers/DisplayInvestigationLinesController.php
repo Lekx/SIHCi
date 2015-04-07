@@ -1,6 +1,6 @@
 <?php
 
-class VinculacionConUniversidadInstitutosHospitalesController extends Controller
+class DisplayInvestigationLinesController extends Controller
 {
 	public function actionIndex()
 	{

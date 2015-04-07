@@ -1,6 +1,6 @@
 <?php
 
-class ProgramasPNCPController extends Controller
+class ScientificWritingController extends Controller
 {
 	public function actionIndex()
 	{

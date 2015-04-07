@@ -1,6 +1,6 @@
 <?php
 
-class DesplegarProINVENHCiController extends Controller
+class HospitalUnitJimEthicsCommitteeController extends Controller
 {
 	public function actionIndex()
 	{

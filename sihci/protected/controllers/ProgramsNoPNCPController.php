@@ -1,6 +1,6 @@
 <?php
 
-class RegistroReniecytController extends Controller
+class ProgramsNoPNCPController extends Controller
 {
 	public function actionIndex()
 	{

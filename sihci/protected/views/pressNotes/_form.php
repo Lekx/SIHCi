@@ -77,7 +77,7 @@
 
 	<div class="row">
 		<?php $status = array('Nacional' => 'Nacional','Extranjero'=>'Extranjero'); 
-		    echo $form-> RadioButtonList($model,'is_national' ,$status, array ('separador' => '')); 
+		    echo $form-> RadioButtonList($model,'is_national' ,$status, array('separador' => '')); 
 		 ?>
 		<?php echo $form->error($model,'is_national'); ?>
 	</div>

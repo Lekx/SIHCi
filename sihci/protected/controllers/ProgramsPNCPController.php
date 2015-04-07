@@ -1,6 +1,6 @@
 <?php
 
-class UnidadEditorialController extends Controller
+class ProgramsPNCPController extends Controller
 {
 	public function actionIndex()
 	{
