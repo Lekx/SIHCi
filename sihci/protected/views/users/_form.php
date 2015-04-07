@@ -39,7 +39,7 @@
                 <?php echo $form->textField($modelPersons, 'last_name2', array('placeholder' => "Apelido Materno"));?>
             </div>
         </div>
-        <input type="button" name="next" class="next action-button" value="Listo.." />
+        <input type="button" name="nextform" class="nextform action-button" value="Listo.." />
     </fieldset>
     <fieldset>
         <div class="emptycontent"></div>
@@ -69,8 +69,8 @@ $this->widget(
             </div>
         </div>
         <div class="emptycontent"></div>
-        <input type="button" name="previous" class="previous action-button" value="Regresar.." />
-        <input type="button" name="next" class="next action-button" value="Listo.." />
+        <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
+        <input type="button" name="nextform" class="nextform action-button" value="Listo.." />
     </fieldset>
     <fieldset>
         <div class="row">
@@ -98,24 +98,7 @@ $this->widget(
             </div>
         </div>
         <div class="row buttons">
-            <!--
-            <?php echo CHtml::ajaxSubmitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', CHtml::normalizeUrl(array('users/create', 'render' => true)),
-	array(
-		'dataType' => 'json',
-		'type' => 'post',
-		'success' => 'function(data) {
-                                $("#AjaxLoader").hide();
-                                if(data.status=="success"){
-                                }
-                                else{
-                                }
-                            }',
-		'beforeSend' => 'function(){
-                                $("#AjaxLoader").show();
-                            }',
-	), array('id' => '', 'class' => 'next'));?>
-            -->
-            <?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => 'next'));?>
+            <?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => ''));?>
 
         </fieldset>
         <div class="countusers">

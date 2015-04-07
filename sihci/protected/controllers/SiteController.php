@@ -117,18 +117,20 @@ class SiteController extends Controller {
 
 	// LO02 – Cerrar sesión
 	public function actionLogout() {
+
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
 	//LO03 – Recuperar contraseña
 	public function actionRecoveryPassword() {
-		$this->layout = 'informativas';
+
 		$model = new RecoveryPassword;
 		$msg = '';
 		$random = rand(1000, 5000);
 		$date = date("d/m/y H:i:s");
 
-		if (isset($_POST["RecoveryPassword"])) {
+		if (isset($_POST['ajax']) && $_POST['ajax'] === 'recovery-form') {
+			
 			$model->attributes = $_POST['RecoveryPassword'];
 
 			if (!$model->validate()) {

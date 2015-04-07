@@ -3,6 +3,7 @@
 	margin-top: 50px;
 	margin-left: auto;
 	margin-bottom: 80px;
+	min-height: calc(100vh - 330px); 
 	font-family: 'Caviar_Dreams'; 
 }
 .column-left
@@ -15,8 +16,8 @@
 .column-right
 {
 	float: right;
-	width: 270px;
-	margin-left: 20px;
+	width: 250px;
+	margin-left: 15px;
 }
 .column-center
 {

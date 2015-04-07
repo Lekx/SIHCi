@@ -66,7 +66,7 @@
 	color: #1EB9C0 !important;
 	opacity: .60 !important;
 }
-#crateusers input[type="submit"].previous , #crateusers input[type="button"].previous
+#crateusers input[type="submit"].previousform , #crateusers input[type="button"].previousform
 {
 	width: 400px !important;
 	height: 50px !important;
@@ -81,8 +81,8 @@
 
 }
 
-#crateusers input[type="submit"].next , #crateusers input[type="button"].next,
-#crateusers input[type="submit"].row 
+#crateusers input[type="submit"].nextform , #crateusers input[type="button"].nextform,
+#crateusers input[type="submit"].row , #crateusers input[type="submit"]
 {
 	width: 400px !important;
 	height: 50px !important;

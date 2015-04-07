@@ -12,6 +12,10 @@
 {
    display:none;
 }
+.recoveryHome
+{
+   display:none;
+}
 .loginback ,.recoverypass
 {
 	position: absolute;
@@ -74,7 +78,7 @@
 	margin-top: 0px !important;
 }
 #login-form input[type="submit"], #login-form  input[type="button"],
-#recovery-form input[type="submit"]
+#recovery-form input[type="submit"], #recovery-form input[type="button"]
 {
 	width: 400px !important;
 	height: 50px !important;

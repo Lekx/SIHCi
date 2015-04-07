@@ -5,8 +5,12 @@ $(document).ready(function() {
     $(".closelogin").click(function() {
         $(".loginHome").hide();
     });
+    $("#recoveryHome").click(function() {
+        $(".loginHome").hide();
+        $(".recoveryHome").show();
+    });
     $(".closerecovery").click(function() {
-        $(".recoverypass").hide();
+        $(".recoveryHome").hide();
     });
     $("#LoginForm_username").focus(function() {
         $(".infodialog").css("visibility", "visible");
