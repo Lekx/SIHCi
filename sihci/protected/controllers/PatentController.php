@@ -72,9 +72,10 @@ class PatentController extends Controller
 		{
 			$model->attributes=$_POST['Patent'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
-
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+		
+		    if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+			
 		}
 
 		$this->render('create',array(
@@ -87,6 +88,7 @@ class PatentController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+	//RP02-Modificar-datos
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -111,6 +113,7 @@ class PatentController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+	//RP03-Eliminar-datos
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();

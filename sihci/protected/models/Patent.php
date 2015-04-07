@@ -50,11 +50,9 @@ class Patent extends CActiveRecord
 			array('international_clasification', 'length', 'max'=>100),
 			array('owner, resource_operator', 'length', 'max'=>70),
 			array('consession_date, resumen', 'safe'),
-            //array('date','compare','compareValue'=> date('d/m/Y'),'operator'=>'<='),	
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('participation_type,state,application_type,patent_type','filter','filter'=>'strtoupper'),
-			array('name,record,international_clasification,title,owner,resumen,resource_operator','CRegularExpressionValidator', 'pattern'=>'/^([A-Z 0-9Ñ . , ; ]+)$/','message' => 'No se aceptan acentos/Todo en mayusculas.'),
+			array('name','filter','filter'=>'strtoupper'),
 			array('id, id_curriculum, country, participation_type, name, state, application_type, application_number, patent_type, consession_date, record, presentation_date, international_clasification, title, owner, resumen, industrial_exploitation, resource_operator', 'safe', 'on'=>'search'),
 		);
 	}

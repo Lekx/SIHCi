@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Patent', 'url'=>array('index')),
+	array('label'=>'Desplegar', 'url'=>array('index')),
 	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Modificar', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Patent', 'url'=>array('admin')),
+	array('label'=>'Eliminar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta usted seguro de desactivar/eliminar este registro?')),
+	array('label'=>'Listar', 'url'=>array('admin')),
 );
 ?>
 

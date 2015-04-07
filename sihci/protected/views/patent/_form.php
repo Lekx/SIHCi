@@ -182,8 +182,8 @@
 	</div>
 
 	<div class="row buttons">
-        <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
+ 	   <input type="submit" onclick='validationFrom()' value="Guardar"> 	
+       <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
 
 		<script>
 
@@ -193,8 +193,9 @@
 				return false;
 			}	
 			
-		</script>        
-	</div>
+		</script> 
+		
+ 	</div>
 
 <?php $this->endWidget(); ?>
 

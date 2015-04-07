@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Patent', 'url'=>array('create')),
-	array('label'=>'Manage Patent', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Listar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Patents</h1>
+<h1>Registro de propiedad intelectual: Patentes </h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

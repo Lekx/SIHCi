@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Patent', 'url'=>array('index')),
+	array('label'=>'Desplegar', 'url'=>array('index')),
 	array('label'=>'Crear', 'url'=>array('create')),
 );
 
