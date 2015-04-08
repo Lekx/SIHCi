@@ -104,7 +104,7 @@ class SiteController extends Controller {
 		// display the login form
 
 		if (!isset($_POST['ajax'])) {
-			$this->render('login', array('model' => $model, 'msg' => $msg));
+			$this->render('login', array('model' => $model));
 		}
 
 	}

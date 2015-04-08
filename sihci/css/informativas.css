@@ -26,8 +26,17 @@
 	text-align: justify;
 	
 }
+.subhr
+{
+	text-align: center;
+}
 #searchBarMain1
 {
+	font-size: 25px;
+}
+#searchbartop
+{
+	font-size: 18px;
 
 }
 .column-center span{ color: #00B9C0};
@@ -41,12 +50,43 @@
 	position: absolute;
 	display: none;
 	top: 225px;
-	background-color: #788C9B;
+	background-color: #00B9C0;
+	color: white;
 	z-index: 900;
-	padding: 5px;
-	width: 445px;
+	width: 448px;
+	height: auto;
 	margin-top: -45px;
-	margin-left: 90px;
+	margin-left: 95px;
+
+}
+#searchBarResultstop
+{
+	position: fixed;
+	display: none;
+	top: 40px;
+	left: 937px;
+	background-color: #00B9C0;
+	color: white;
+	z-index: 900;
+	width: 292px;
+	height: auto;
+}
+#searchBarResults a, #searchBarResults a:hover, #searchBarResults a:after, #searchBarResults a:before { color: white !important; }
+#searchBarResultstop a, #searchBarResultstop a:hover, #searchBarResultstop a:after, #searchBarResultstop a:before { color: white !important; }
+.resul
+{
+	margin-left: 18px;
+}
+.resultbars
+{
+
+	min-height: 80px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.resultbars:hover
+{
+	background-color: #0E3152;
 }
 #udg
 {

@@ -19,6 +19,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/informativas.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/login.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/users.css">
+
+
         <?php Yii::app()->clientScript->registerCoreScript('jquery');?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <?php
@@ -32,47 +34,23 @@
                 $cs->registerScriptFile($baseUrl . '/js/slideshowres.js');
                 $cs->registerScriptFile($baseUrl . '/js/render.js');
                 $cs->registerScriptFile($baseUrl . '/js/progressUser.js');
+                $cs->registerScriptFile($baseUrl . '/js/searchbar.js');
         ?>
         <?php
                 Yii::app()->clientScript->registerScript('helpers', '
                 yii = {
                 urls: {
-                saveEdits: ' . CJSON::encode(Yii::app()->createUrl('edit/save')) . ',
-                base: ' . CJSON::encode(Yii::app()->baseUrl) . '
-                }
+                        searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
+                        searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
+                        base: ' . CJSON::encode(Yii::app()->baseUrl) . '
+                       }
                 };
                 ');
         ?>
         <?php Yii::app()->bootstrap->register();?>
         <title><?php echo CHtml::encode($this->pageTitle);?></title>
-        <script type="text/javascript">
-                $(document).ready(function(){
-                var searchKey = "";
-                $(".searchBarMain").keypress(function() {
-                searchKey = $(this).val();
-                if(searchKey.length > 1){
-                $.ajax({
-        url: "<?php echo Yii::app()->createUrl('searchBar/autoSearch?keyword=');?>"+searchKey+ yii.urls.base,
-        type : 'POST',
-        /*data: {
-        keyword: searchKey
-        },*/
-        success: function(data) {
-        $("#searchBarResults").show();
-        $('#searchBarResults').html(data);
-        },
-        }).done({
-        //alert('Success!');
-        }).fail({
-        //alert('fail :(');
-        });
-        }
-        });
-        $(".searchButton").click(function() {
-        window.location = "<?php echo Yii::app()->createUrl('searchBar/searchResults?keyword=');?>"+ searchKey;
-        });
-        });
-        </script>
+
+
     </head>
     <body>
         <section>
@@ -320,6 +298,7 @@
                                             </button>
                                         </div>
                                         <div id="headersearch"><input type="search" id="searchbartop" class="searchBarMain" placeholder="Buscar"></div>
+                                         <div id="searchBarResultstop">estoy bien escondido</div>
                                         <div id="hsearchbutton">
                                             <button id="" type="button">
                                             <img src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarCh.png" alt="">
@@ -338,17 +317,17 @@
                         <section class="logsection">
                             <div class="login">
                                 <?php
-                                                        if (Yii::app()->user->isGuest) {
-                                                        echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
-                                                        echo 'Ingresar a tu cuenta.</p>';
-                                                        } else {
-                                                        $img = '<img id="logout">';
+                                if (Yii::app()->user->isGuest) {
+                                    echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
+                                    echo 'Ingresar a tu cuenta.</p>';
+                                } else {
+                                    $img = '<img id="logout">';
                                 //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-                                                        echo CHtml::link($img, array('site/logout'));
-                                                        echo '<p id="logoutext">';
-                                                        echo Yii::app()->user->email;
-                                                        echo '</p>';
-                                                        }
+                                    echo CHtml::link($img, array('site/logout'));
+                                    echo '<p id="logoutext">';
+                                    echo Yii::app()->user->email;
+                                    echo '</p>';
+                                }
                                 ?>
                             </div>
                             <div class="singin">
@@ -360,7 +339,7 @@
                                 <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuGr.png" alt="">
                                 Menu
                                 </button>
-                                <input type="text" id="searchBarMain1" class="form-control searchBarMain" placeholder="Search" aria-describedby="basic-addon1">
+                                <input type="text" id="searchBarMain1" class="form-control searchBarMain" placeholder="Buscar" aria-describedby="basic-addon1">
                                 <button id="search" type="button" class="searchButton">
                                 <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarGr.png" alt="">
                                 Buscar
@@ -368,17 +347,23 @@
                             </div>
                             <div id="searchBarResults">estoy bien escondido</div>
                         </section>
+
                         <?php if (isset($this->breadcrumbs)): ?>
                         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
                                             'links' => $this->breadcrumbs,
                         ));?><!-- breadcrumbs -->
                         <?php endif?>
+
                         <section class="informativa">
                             <?php echo $content;?>
                         </section>
-                    
-                         <div class="me">
-                            <?php Yii::app()->runController('/users/create');?>
+
+                        <div class="loginHome">
+                            <?php  Yii::app()->runController('/site/login');?>
+                        </div>
+
+                         <div class="recoveryHome">
+                            <?php  Yii::app()->runController('/site/recoveryPassword');?>
                         </div>
                     
                         <section class="mapaSitio">
@@ -500,9 +485,9 @@
                                             <p><a>Condiciones de uso</a> / <a>Aviso de privacidad</a></p>
                                         </div>
                                     </div>
-                                    <div class="loginfot"><a href=""><img id="logocuentas2"src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/cuentaIngresar.png" alt=""></a>
+                                    <div class="loginfot"><img id="logocuentas2"src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/cuentaIngresar.png" alt="">
                                     Ingresar a tu cuenta</div>
-                                    <div class="singinfot"><a href=""><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/cuentaCrear.png" alt=""></a>
+                                    <div class="singinfot"><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/cuentaCrear.png" alt="">
                                     Crear una cuenta</div>
                                 </section>
                             </body>
