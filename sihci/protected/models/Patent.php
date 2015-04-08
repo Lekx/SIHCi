@@ -89,7 +89,7 @@ class Patent extends CActiveRecord
 			'record' => 'Expediente',
 			'presentation_date' => 'Fecha de presentación',
 			'international_clasification' => 'Clasificación internacional',
-			'title' => 'Titulo',
+			'title' => 'Titular',
 			'owner' => 'Propietario',
 			'resumen' => 'Resumen',
 			'industrial_exploitation' => 'Explotación industrial',
