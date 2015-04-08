@@ -126,6 +126,8 @@ class PatentController extends Controller
 	/**
 	 * Lists all models.
 	 */
+
+    //RP04-Desplegar-datos
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Patent');
@@ -137,6 +139,8 @@ class PatentController extends Controller
 	/**
 	 * Manages all models.
 	 */
+	
+    //RP05-Listar-datos
 	public function actionAdmin()
 	{
 		$model=new Patent('search');
@@ -148,7 +152,7 @@ class PatentController extends Controller
 			'model'=>$model,
 		));
 	}
-
+	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
