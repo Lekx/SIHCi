@@ -126,6 +126,8 @@ class PatentController extends Controller
 	/**
 	 * Lists all models.
 	 */
+
+    //RP04-Desplegar-datos
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Patent');
@@ -137,6 +139,8 @@ class PatentController extends Controller
 	/**
 	 * Manages all models.
 	 */
+	
+    //RP05-Listar-datos
 	public function actionAdmin()
 	{
 		$model=new Patent('search');
