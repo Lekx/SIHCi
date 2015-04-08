@@ -20,11 +20,21 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->dropDownList($model,'type',array(
-				''=>'','Demostraciones'=>'Demostraciones','Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologi',
-				'Ferias Empresariales'=>'Ferias Empresariales','Medios Impresos'=>'Medios Impresos','Radio'=>'Radio',
-				'Revistas de Divulgacion'=>'Revistas de Divulgacion','Seminarios'=>'Simposius','Talleres'=>'Talleres',
-				'Teatro'=>'Teatro','Televisión'=>'Televisión','Vidos'=>'Vidos'
+		<?php echo $form->labelEx($model,'type'); ?>
+		<?php echo $form->dropDownList($model,'type',
+			array(
+				''=>'', 
+				'Demostraciones'=>'Demostraciones',
+				'Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologi',
+				'Ferias Empresariales'=>'Ferias Empresariales',
+				'Medios Impresos'=>'Medios Impresos',
+				'Radio'=>'Radio',
+				'Revistas de Divulgacion'=>'Revistas de Divulgacion',
+				'Seminarios'=>'Simposius',
+				'Talleres'=>'Talleres',
+				'Teatro'=>'Teatro',
+				'Televisión'=>'Televisión',
+				'Vidos'=>'Vidos'
 			),
 			array('setOnEmpty'=>'true', 'value'=>'null'));		  
 		?>
@@ -32,11 +42,18 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'directed_to'); ?>
 		<?php echo $form->dropDownList($model,'directed_to',
 		    array(
-				''=>'','Empresarios'=>'Empresarios','Estudiantes'=>'Estudiantes','Funcionarios'=>'Funcionarios',
-				'Público en general'=>'Público en general','Sector Académico'=>'Sector Académico','Sector Privado'=>'Sector Privado',
-				'Sector Público'=>'Sector Público','Sector Social'=>'Sector Social'
+				''=>'',
+				'Empresarios'=>'Empresarios',
+				'Estudiantes'=>'Estudiantes',
+				'Funcionarios'=>'Funcionarios',
+				'Público en general'=>'Público en general',
+				'Sector Académico'=>'Sector Académico',
+				'Sector Privado'=>'Sector Privado',
+				'Sector Público'=>'Sector Público',
+				'Sector Social'=>'Sector Social'
 			),
 		    array('setOnEmpty'=>'true', 'key'=>'null')); 
 		?>
@@ -71,21 +88,19 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'notas_periodisticas',array('size'=>45,'maxlength'=>45,'placeholder'=>'Nota periodistica')); ?>
-		<?php echo $form->error($model,'notas_periodisticas'); ?>
+		<?php echo $form->textField($model,'note',array('size'=>45,'maxlength'=>45,'placeholder'=>'Nota periodistica')); ?>
+		<?php echo $form->error($model,'note'); ?>
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'is_national'); ?>
 		<?php $status = array('Nacional' => 'Nacional','Extranjero'=>'Extranjero'); 
 		    echo $form-> RadioButtonList($model,'is_national' ,$status, array('separador' => '')); 
 		 ?>
 		<?php echo $form->error($model,'is_national'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'key_words',array('size'=>60,'maxlength'=>250,'placeholder'=>'Palabras claves')); ?>
-		<?php echo $form->error($model,'key_words'); ?>
-	</div>
+		
+	
 
 	<div class="row buttons">
         <input type="submit" onclick='validationFrom()' value="Guardar"> 	
