@@ -365,6 +365,10 @@
                          <div class="recoveryHome">
                             <?php  Yii::app()->runController('/site/recoveryPassword');?>
                         </div>
+                          <div class="createHome">
+                            <?php  Yii::app()->runController('/users/create');?>
+                        </div>
+                    
                     
                         <section class="mapaSitio">
                             <div class="menu">

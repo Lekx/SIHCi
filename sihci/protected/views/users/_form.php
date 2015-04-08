@@ -3,6 +3,7 @@
 /* @var $model Users */
 /* @var $form CActiveForm */
 ?>
+
 <div id="crateusers" class="form">
     <?php $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'users-form',
@@ -12,6 +13,7 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation' => true,
 ));?>
+
     <div class="progreesbar">
         <ul id="progressbar">
             <li class="active">Paso 1</li>
@@ -41,25 +43,26 @@
         </div>
         <input type="button" name="nextform" class="nextform action-button" value="Listo.." />
     </fieldset>
-    <fieldset>
+   <fieldset>
         <div class="emptycontent"></div>
         <div class="row">
-            <?php
-$this->widget(
-	'yiiwheels.widgets.formhelpers.WhCountries',
-	array(
-		'name' => 'Persons[country]',
-		'id' => 'Persons_country',
-		'value' => 'MX',
-		'useHelperSelectBox' => true,
-		'pluginOptions' => array(
-			'country' => 'MX',
-			'language' => 'es_ES',
-			'flags' => true,
-		),
-	)
-);
-?>
+
+          <?php
+        $this->widget(
+            'yiiwheels.widgets.formhelpers.WhCountries',
+            array(
+                'name' => 'Persons[country]',
+                'id' => 'Persons_country',
+                'value' => 'US',
+                'useHelperSelectBox' => true,
+                'pluginOptions' => array(
+                    'country' => 'US',
+                    'language' => 'es_ES',
+                    'flags' => true
+                )
+            )
+        );
+        ?>
         </div>
         <div class="emptycontent"></div>
         <div class="row">
@@ -71,7 +74,7 @@ $this->widget(
         <div class="emptycontent"></div>
         <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
         <input type="button" name="nextform" class="nextform action-button" value="Listo.." />
-    </fieldset>
+    </fieldset> 
     <fieldset>
         <div class="row">
             <div class="inner-addon right-addon">
@@ -97,13 +100,19 @@ $this->widget(
                 <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
             </div>
         </div>
+        <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
+
         <div class="row buttons">
             <?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => ''));?>
-
+            
         </fieldset>
         <div class="countusers">
             Gracias a ti ahora somos:<br>
             <h2>2,456</h2>
         </div>
         <?php $this->endWidget();?>
+
+         <div class="closecreate">
+            No deseo Ingresar <i class="glyphicon glyphicon-remove"></i>
+        </div>
         </div><!-- form -->

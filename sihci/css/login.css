@@ -242,7 +242,7 @@
 	padding: 9px;
 	content: "Favor de revisar el si el contendio esta registrado";
 }
-.closelogin , .closerecovery
+.closelogin , .closerecovery, .closecreate 
 {
 	position: fixed;
     bottom: 0;
@@ -251,7 +251,7 @@
     margin-bottom: 15px;
 	color: #AFB6C7;
 }
-.closelogin .glyphicon
+.closelogin .glyphicon ,.closerecovery .glyphicon ,.closecreate .glyphicon
 {
 	font-size: 23px;	
 }

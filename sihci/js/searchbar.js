@@ -1,7 +1,6 @@
  $(document).ready(function() {
      var searchKey = "";
 
-
       $("#searchbartop").keypress(function() {
          searchKey = $(this).val();
          if (searchKey.length > 1) {
