@@ -209,6 +209,7 @@ class SponsorsController extends Controller {
 		));
 	}
 
+
 	public function actionCreate_docs() {
 		$model = new SponsorsDocs;
 		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
@@ -217,7 +218,6 @@ class SponsorsController extends Controller {
 			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 			if (!file_exists($path2)) {
 				mkdir($path2, 0777, true);
-
 			}
 			$files = glob($path2);
 			foreach ($files as $file) {

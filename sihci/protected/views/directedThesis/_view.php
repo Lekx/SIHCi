@@ -5,13 +5,13 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+	<!-- <b><?php /* echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); */ ?>
+	<br /> -->
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id_grade')); ?>:</b>
-	<?php echo CHtml::encode($data->id_grade); ?>
-	<br />
+	<!-- <b><?php /* echo CHtml::encode($data->getAttributeLabel('id_curriculum')); ?>:</b>
+    <?php echo CHtml::encode($data->id_curriculum); */ ?>
+    <br /> -->
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
 	<?php echo CHtml::encode($data->title); ?>
@@ -25,15 +25,15 @@
 	<?php echo CHtml::encode($data->author); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('path')); ?>:</b>
-	<?php echo CHtml::encode($data->path); ?>
-	<br />
+	<!-- <b><?php /* echo CHtml::encode($data->getAttributeLabel('path')); ?>:</b>
+	<?php echo CHtml::encode($data->path); */ ?>
+	<br /> -->
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('grade')); ?>:</b>
-	<?php echo CHtml::encode($data->grade); ?>
+	<?php echo CHtml::encode($data->grade);  ?>
 	<br />
 
-	<?php /*
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('sector')); ?>:</b>
 	<?php echo CHtml::encode($data->sector); ?>
 	<br />
@@ -42,8 +42,8 @@
 	<?php echo CHtml::encode($data->organization); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Second_level')); ?>:</b>
-	<?php echo CHtml::encode($data->Second_level); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('second_level')); ?>:</b>
+	<?php echo CHtml::encode($data->second_level); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('area')); ?>:</b>
@@ -54,10 +54,10 @@
 	<?php echo CHtml::encode($data->discipline); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('subdisciplina')); ?>:</b>
-	<?php echo CHtml::encode($data->subdisciplina); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('subdiscipline')); ?>:</b>
+	<?php echo CHtml::encode($data->subdiscipline); ?>
 	<br />
 
-	*/ ?>
+	
 
 </div>
