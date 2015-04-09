@@ -34,16 +34,16 @@
 	<br />
 
 	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('notas_periodisticas')); ?>:</b>
-	<?php echo CHtml::encode($data->notas_periodisticas); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('note')); ?>:</b>
+	<?php echo CHtml::encode($data->note); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('is_national')); ?>:</b>
 	<?php echo CHtml::encode($data->is_national); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('key_words')); ?>:</b>
-	<?php echo CHtml::encode($data->key_words); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('creation_date')); ?>:</b>
+	<?php echo CHtml::encode($data->creation_date); ?>
 	<br />
 
 	*/ ?>

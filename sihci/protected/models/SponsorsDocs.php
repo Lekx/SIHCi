@@ -12,43 +12,38 @@
  * The followings are the available model relations:
  * @property Sponsors $idSponsor
  */
-class SponsorsDocs extends CActiveRecord
-{
+class SponsorsDocs extends CActiveRecord {
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName()
-	{
+	public function tableName() {
 		return 'sponsors_docs';
 	}
 
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules()
-	{
+	public function rules() {
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
 			array('id_sponsor, file_name, path', 'required'),
-			array('id_sponsor', 'numerical', 'integerOnly'=>true),
-			array('file_name, path', 'length', 'max'=>150),
-			array('photo_url','file', 'allowEmpty'=>true,
-							'on'=>'update',
-			                  'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
-			                  'maxSize'=>'5000000',
-			                  'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
+			array('id_sponsor', 'numerical', 'integerOnly' => true),
+			array('file_name, path', 'length', 'max' => 150),
+			/*array('path', 'file', 'on' => 'update', 'allowEmpty' => false,
+			'types' => 'pdf, doc, docx, odt, jpg, jpeg, png',
+			'maxSize' => array(1024 * 2000),
+			'message' => 'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),*/
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_sponsor, file_name, path', 'safe', 'on'=>'search'),
-		);
+			array('id, id_sponsor, file_name, path', 'safe', 'on' => 'search'))
+		;
 	}
 
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations()
-	{
+	public function relations() {
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
@@ -59,8 +54,7 @@ class SponsorsDocs extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
+	public function attributeLabels() {
 		return array(
 			'id' => 'ID',
 			'id_sponsor' => 'Id Sponsor',
@@ -81,19 +75,18 @@ class SponsorsDocs extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search()
-	{
+	public function search() {
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_sponsor',$this->id_sponsor);
-		$criteria->compare('file_name',$this->file_name,true);
-		$criteria->compare('path',$this->path,true);
+		$criteria->compare('id', $this->id);
+		$criteria->compare('id_sponsor', $this->id_sponsor);
+		$criteria->compare('file_name', $this->file_name, true);
+		$criteria->compare('path', $this->path, true);
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria' => $criteria,
 		));
 	}
 
@@ -103,8 +96,7 @@ class SponsorsDocs extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return SponsorsDocs the static model class
 	 */
-	public static function model($className=__CLASS__)
-	{
+	public static function model($className = __CLASS__) {
 		return parent::model($className);
 	}
 }

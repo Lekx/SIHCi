@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'directed_thesis':
  * @property integer $id
- * @property integer $id_grade
+ * @property integer $id_curriculum
  * @property string $title
  * @property string $conclusion_date
  * @property string $author
@@ -13,13 +13,14 @@
  * @property string $grade
  * @property string $sector
  * @property string $organization
- * @property string $Second_level
+ * @property string $second_level
  * @property string $area
  * @property string $discipline
- * @property string $subdisciplina
+ * @property string $subdiscipline
+ * @property string $creation_date
  *
  * The followings are the available model relations:
- * @property Grades $idGrade
+ * @property Curriculum $idCurriculum
  */
 class DirectedThesis extends CActiveRecord
 {
@@ -39,20 +40,20 @@ class DirectedThesis extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_grade, title, author, sector, organization', 'required'),
-			array('id_grade', 'numerical', 'integerOnly'=>true),
+			array('id_curriculum, title, author, sector, organization', 'required'),
+			array('id_curriculum', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>250),
 			array('author, grade', 'length', 'max'=>45),
-			array('path, sector, organization, Second_level', 'length', 'max'=>100),
-			array('area, discipline, subdisciplina', 'length', 'max'=>60),
-			array('conclusion_date', 'safe'),
+			array('path, sector, organization, second_level', 'length', 'max'=>100),
+			array('area, discipline, subdiscipline', 'length', 'max'=>60),
+			array('conclusion_date, creation_date', 'safe'),
 			array('path','file','allowEmpty'=>true,
 				   'types'=>'pdf',
 			       'maxSize'=>array(1204 * 2000),
 			       'message'=>'Solo se admiten archivos pdf'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_grade, title, conclusion_date, author, path, grade, sector, organization, Second_level, area, discipline, subdisciplina', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, title, conclusion_date, author, path, grade, sector, organization, second_level, area, discipline, subdiscipline, creation_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,7 +65,7 @@ class DirectedThesis extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idGrade' => array(self::BELONGS_TO, 'Grades', 'id_grade'),
+			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),
 		);
 	}
 
@@ -75,18 +76,19 @@ class DirectedThesis extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_grade' => 'Id Grade',
-			'title' => 'Titulo',
-			'conclusion_date' => 'Fecha de Conclusión',
+			'id_curriculum' => 'Id Curriculum',
+			'title' => 'Título',
+			'conclusion_date' => 'Fecha de conclusión',
 			'author' => 'Autor',
-			'path' => 'Url',
+			'path' => 'Archivo',
 			'grade' => 'Grado',
 			'sector' => 'Sector',
 			'organization' => 'Organización',
-			'Second_level' => 'Segundo nivel',
+			'second_level' => 'Segundo nivel',
 			'area' => 'Área',
 			'discipline' => 'Disciplina',
-			'subdisciplina' => 'Subdisciplina',
+			'subdiscipline' => 'Subdisciplina',
+			'creation_date' => 'Creation Date',
 		);
 	}
 
@@ -109,18 +111,19 @@ class DirectedThesis extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('id_grade',$this->id_grade);
+		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('conclusion_date',$this->conclusion_date,true);
 		$criteria->compare('author',$this->author,true);
-		$criteria->compare('path',$this->path,true);
+		$criteria->compare('path',$this->path);
 		$criteria->compare('grade',$this->grade,true);
 		$criteria->compare('sector',$this->sector,true);
 		$criteria->compare('organization',$this->organization,true);
-		$criteria->compare('Second_level',$this->Second_level,true);
+		$criteria->compare('second_level',$this->second_level,true);
 		$criteria->compare('area',$this->area,true);
 		$criteria->compare('discipline',$this->discipline,true);
-		$criteria->compare('subdisciplina',$this->subdisciplina,true);
+		$criteria->compare('subdiscipline',$this->subdiscipline,true);
+		$criteria->compare('creation_date',$this->creation_date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -136,19 +139,17 @@ class DirectedThesis extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-
 	}
-
-	protected function beforeSave()
+		protected function beforeSave()
     {
 
-			$this->conclusion_date = DateTime::createFromFormat('d/m/Y', $this->conclusion_date)->format('Y-m-d H:i:s');
+			$this->conclusion_date = DateTime::createFromFormat('d/m/Y', $this->conclusion_date)->format('Y-m-d');
 	        return parent::beforeSave();
     }
 
     	protected function afterFind()
     {
-       		$this->conclusion_date = DateTime::createFromFormat('Y-m-d H:i:s', $this->conclusion_date)->format('d/m/Y');
+       		$this->conclusion_date = DateTime::createFromFormat('Y-m-d', $this->conclusion_date)->format('d/m/Y');
      		return parent::afterFind();
     }
 }

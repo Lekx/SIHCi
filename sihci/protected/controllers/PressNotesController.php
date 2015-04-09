@@ -124,7 +124,7 @@ class PressNotesController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	//DP05-Listar datos
+	//DP04-Desplegar registro
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('PressNotes');
@@ -136,7 +136,7 @@ class PressNotesController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	//DP04-Desplegar registro
+	//DP05-Listar datos
 	public function actionAdmin()
 	{
 		$model=new PressNotes('search');
