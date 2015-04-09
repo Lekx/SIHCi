@@ -41,8 +41,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
-	
-	<?php echo $form->errorSummary($model); ?>
+
 	<div class="row">
 			<?php echo $form->labelEx($curriculum,'status'); ?>
 		<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
@@ -170,7 +169,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-
+		
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
 		<?php echo $form->error($model,'photo_url'); ?>     
 	</div>
@@ -184,7 +183,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	<div class="row buttons">
 		<input type="submit" onclick="validationFrom()" value="Guardar">
 		<input type="button" onclick="cleanUp()" value="Limpiar">
-		<?php echo CHtml::link('Cancelar',array('/persons/admin')); ?>
+		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
 	</div>
 
 

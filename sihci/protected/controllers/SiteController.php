@@ -91,7 +91,7 @@ class SiteController extends Controller {
 			$not_active = Users::model()->findByAttributes(array("status" => "inactivo", "email" => $model->username));
 
 			if ($model->validate() && $model->login() && $is_active != null) {
-
+			
 				echo "200";
 			} else if ($not_active != null) {
 				echo "302";
