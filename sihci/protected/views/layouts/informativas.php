@@ -311,19 +311,21 @@
                         <section class="logosection">
                             <div class="logo"><?php echo CHtml::link('<img id="logohme" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHme.png alt="home">', array('site/index'));?></a></div>
                             <div class="logosub"></div>
-                            <div class="logoinfo"><span>Ivestigadores:</span><span>Vidas Cambiadas</span><span>Ivestigaciones</span><span>Libros y Revistas</span></div>
+                            <div class="logoinfo"><span>Investigadores:</span><span>Vidas Cambiadas</span><span>Investigaciones</span><span>Libros y Revistas</span></div>
                             <div class="logonum"><h4>1,456</h4><h4>1,923,456</h4><h4>17,296</h4><h4>3,163</h4></div>
                         </section>
                         <section class="logsection">
                             <div class="login">
                                 <?php
                                 if (Yii::app()->user->isGuest) {
+
                                     echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
                                     echo 'Ingresar a tu cuenta.</p>';
+
                                 } else {
-                                    $img = '<img id="logout">';
+                                    $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
                                 //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-                                    echo CHtml::link($img, array('site/logout'));
+                                    echo CHtml::link($img, array('site/index'));
                                     echo '<p id="logoutext">';
                                     echo Yii::app()->user->email;
                                     echo '</p>';
@@ -331,9 +333,26 @@
                                 ?>
                             </div>
                             <div class="singin">
-                                <img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/cuentaCrear.png" alt="">
-                                Crear una cuenta
-                            </div>
+                            <?php
+                               if (Yii::app()->user->isGuest){
+
+                                echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaCrear.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas'));
+                                echo 'Ingresar a tu cuenta.</p>';
+
+                               }
+                               else{
+
+                                    $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas'));
+                                //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
+                                    echo CHtml::link($img, array('site/logout'));
+                                    echo '<p id="logoutext">';
+                                    echo 'Cerrar Sesion';
+                                    echo '</p>';
+                               }
+                               
+                             ?>
+                             </div>
+    
                             <div class="searchbar">
                                 <button type="button" id="show_hidemenu">
                                 <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuGr.png" alt="">

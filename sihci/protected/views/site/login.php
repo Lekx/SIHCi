@@ -1,3 +1,4 @@
+
 <div class="loginback">
     <div class="form">
     	<?php $form=$this->beginWidget('CActiveForm', array(
@@ -40,9 +41,11 @@
         	'data'=> 'js:$("#login-form").serialize()+ "&ajax=login-form"',
         	'success'=>'js:function(response){
         		if(response == "302"){
+
         			$(".infodialog").removeClass("infodialog").addClass("infodialogerror");
         			$(".infodialogerror").css("visibility", "visible");
         			$(".infodialogerror").find("p").text("No has activado tu cuenta");
+                    $(".infodialogerror1").css("visibility", "hidden");
         		}
         		else if(response == "200"){
 
@@ -52,7 +55,7 @@
         			$(".infodialog").css("visibility", "hidden");
         			$(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
         			$(".infodialog").css("visibility", "hidden");
-        			window.open("'.Yii::app()->createUrl('/informacionDeDireccionGeneral/index').'","_blank ");
+        			window.open("'.Yii::app()->createUrl('/informationGeneralDirection/index').'","_blank ");
 
         		}
         		else

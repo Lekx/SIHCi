@@ -87,16 +87,18 @@ class SiteController extends Controller {
 
 			$model->attributes = $_POST['LoginForm'];
 
-			$is_active = Users::model()->findByAttributes(array("status" => "activo", "email" => $model->username));
-			$not_active = Users::model()->findByAttributes(array("status" => "inactivo", "email" => $model->username));
+			$is_active = Users::model()->findByAttributes(array("status" => "1", "email" => $model->username));
+			$not_active = Users::model()->findByAttributes(array("status" => "0", "email" => $model->username));
 
 			if ($model->validate() && $model->login() && $is_active != null) {
 
 				echo "200";
 			} else if ($not_active != null) {
 				echo "302";
+				Yii::app()->user->logout();
 			} else {
 				echo "404";
+				Yii::app()->user->logout();
 			}
 
 			Yii::app()->end();

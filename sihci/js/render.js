@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".login").click(function() {
+    $("img#logocuentas2").click(function() {
         $(".loginHome").show();
     });
     $(".closelogin").click(function() {
@@ -33,7 +33,7 @@ $(document).ready(function() {
     $('#RecoveryPassword_email').focusout(function() {
         $(".infodialog3").css("visibility", "hidden");
     });
-    $(".singin").click(function() {
+    $("img#logocuentas").click(function() {
         $(".createHome").show();
     });
 });
