@@ -100,21 +100,9 @@ class SiteController extends Controller {
 				echo "404";
 				Yii::app()->user->logout();
 			}
-<<<<<<< HEAD
-			else if($not_active != null){
-					echo "302";
-			}    				
-   			else{
-					echo "404";
-			} 
-		
-		Yii::app()->end();
-	}
-=======
 
 			Yii::app()->end();
 		}
->>>>>>> f8576a894573b176edaab8cd76dafcb74c7ee82e
 		// display the login form
 
 		if (!isset($_POST['ajax'])) {
