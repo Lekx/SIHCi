@@ -4,8 +4,6 @@
 		<?php $form = $this->beginWidget('CActiveForm',
 			array(
 				'id'=>'recovery-form',
-				'method' => 'POST',
-				'action' => Yii::app()->createUrl('site/recoveryPassword'),
 				'enableClientValidation' => true,
 				'clientOptions' => array(
 					'validateOnSubmit' => true,
@@ -31,7 +29,15 @@
 				</div>
 			</div>
 			<div class="">
-				<?php echo CHtml::submitButton('Recuperar Contraseña') ; ?>
+			<?php echo CHtml::ajaxButton ("Recuperar Contraseña", CController::createUrl('site/recoveryPassword'), array(
+        	'type'=>'POST',
+        	'class' => '',
+        	'data'=> 'js:$("#recovery-form").serialize()+ "&ajax=recovery-form"',
+        	'success'=>'js:function(response){
+        
+
+        	}'
+        	)); ?>
 			</div>
 
 		<?php $this->endWidget(); ?>
