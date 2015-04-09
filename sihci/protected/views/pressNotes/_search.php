@@ -19,8 +19,6 @@
 		<?php echo CHtml::submitButton('Buscar'); ?>
 
 	</fieldset>
-		
-
 
 <?php $this->endWidget(); ?>
 
