@@ -25,6 +25,20 @@ class CurriculumVitaeController extends Controller
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
+	public function accessRules()
+	{
+		return array(
+		
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('personalData',),
+				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1")',
+				 'users'=>array('@'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 		//CV02-Modificar registro 
 	public function actionPersonalData(){
 		$personExist = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
