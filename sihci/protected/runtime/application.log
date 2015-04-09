@@ -15181,3 +15181,992 @@ Stack trace:
 REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/admin
 HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/directedThesis/update/29
 ---
+2015/04/09 11:22:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "books_chapters"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('books_chapters')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/books_chapters
+---
+2015/04/09 11:25:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "books_chapters"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('books_chapters')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/books_chapters
+---
+2015/04/09 12:50:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "book_title/admin"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('book_title/admi...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/book_title/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:51:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:51:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:52:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:53:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:53:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:54:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:55:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:55:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:57:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:57:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:57:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:57:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 12:58:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/a...')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/admin
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 13:21:45 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(111): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/admin
+---
+2015/04/09 13:23:30 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(111): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/admin
+---
+2015/04/09 13:23:33 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(111): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 13:23:36 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(111): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 13:25:57 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(111): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 13:27:07 [error] [php] include(CUploadFile.php): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCi\YiiFramework\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(77): spl_autoload_call()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): BooksChaptersController->runAction()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): BooksChaptersController->filterAccessControl()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): BooksChaptersController->runActionWithFilters()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): BooksChaptersController->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (77)
+in C:\xampp\htdocs\SIHCi\sihci\index.php (19)
+2015/04/09 13:36:15 [error] [exception.CException] exception 'CException' with message 'SiteController contiene etiquetas de widget en la vista "C:\xampp\htdocs\SIHCi\sihci\protected\views\site\login.php" anidadas incorrectamente. CActiveForm widget no contiene la llamada a endWidget().' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(109): CController->render('login', Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('login')
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\views\layouts\informativas.php(362): CWebApplication->runController('/site/login')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/
+---
+2015/04/09 13:36:25 [error] [exception.CException] exception 'CException' with message 'SiteController contiene etiquetas de widget en la vista "C:\xampp\htdocs\SIHCi\sihci\protected\views\site\login.php" anidadas incorrectamente. CActiveForm widget no contiene la llamada a endWidget().' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(109): CController->render('login', Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('login')
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\views\layouts\informativas.php(362): CWebApplication->runController('/site/login')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/
+---
+2015/04/09 13:36:39 [error] [exception.CException] exception 'CException' with message 'SiteController contiene etiquetas de widget en la vista "C:\xampp\htdocs\SIHCi\sihci\protected\views\site\login.php" anidadas incorrectamente. CActiveForm widget no contiene la llamada a endWidget().' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(109): CController->render('login', Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('login')
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\views\layouts\informativas.php(362): CWebApplication->runController('/site/login')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/
+---
+2015/04/09 13:36:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "conge"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('conge')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/conge
+---
+2015/04/09 13:37:25 [error] [exception.CException] exception 'CException' with message 'SiteController contiene etiquetas de widget en la vista "C:\xampp\htdocs\SIHCi\sihci\protected\views\site\login.php" anidadas incorrectamente. CActiveForm widget no contiene la llamada a endWidget().' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(109): CController->render('login', Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('login')
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\views\layouts\informativas.php(362): CWebApplication->runController('/site/login')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/
+---
+2015/04/09 13:38:52 [error] [exception.CException] exception 'CException' with message 'SiteController contiene etiquetas de widget en la vista "C:\xampp\htdocs\SIHCi\sihci\protected\views\site\login.php" anidadas incorrectamente. CActiveForm widget no contiene la llamada a endWidget().' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(109): CController->render('login', Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('login')
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\views\layouts\informativas.php(362): CWebApplication->runController('/site/login')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/
+---
+2015/04/09 13:39:04 [error] [exception.CException] exception 'CException' with message 'SiteController contiene etiquetas de widget en la vista "C:\xampp\htdocs\SIHCi\sihci\protected\views\site\login.php" anidadas incorrectamente. CActiveForm widget no contiene la llamada a endWidget().' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(109): CController->render('login', Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('login')
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\views\layouts\informativas.php(362): CWebApplication->runController('/site/login')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/
+---
+2015/04/09 13:41:42 [error] [exception.CException] exception 'CException' with message 'SiteController contiene etiquetas de widget en la vista "C:\xampp\htdocs\SIHCi\sihci\protected\views\site\login.php" anidadas incorrectamente. CActiveForm widget no contiene la llamada a endWidget().' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(109): CController->render('login', Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('login')
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\views\layouts\informativas.php(362): CWebApplication->runController('/site/login')
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/
+---
+2015/04/09 14:16:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sites/logout"' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('sites/logout')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/sites/logout
+---
+2015/04/09 14:21:58 [error] [exception.CException] exception 'CException' with message 'La propiedad "BooksChapters"."path" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('path')
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(77): CActiveRecord->__get('path')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#15 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 14:22:35 [error] [exception.CException] exception 'CException' with message 'BooksChapters y sus behaviors no tienen un método o closure llamado "book_title".' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(227): CComponent->__call('book_title', Array)
+#1 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(99): CActiveRecord->__call('book_title', Array)
+#2 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(99): BooksChapters->book_title()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 14:41:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php:187
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(143): BooksChaptersController->loadModel('9')
+#1 [internal function]: BooksChaptersController->actionDelete('9')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(BooksChaptersController), Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BooksChaptersController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1116): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('delete')
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/d...')
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/delete/9?ajax=books-chapters-grid
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/admin
+---
+2015/04/09 14:41:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php:187
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(143): BooksChaptersController->loadModel('9')
+#1 [internal function]: BooksChaptersController->actionDelete('9')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(BooksChaptersController), Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BooksChaptersController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1116): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('delete')
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/d...')
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/delete/9?ajax=books-chapters-grid
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/admin
+---
+2015/04/09 14:41:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php:187
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(143): BooksChaptersController->loadModel('9')
+#1 [internal function]: BooksChaptersController->actionDelete('9')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(BooksChaptersController), Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BooksChaptersController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1116): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('delete')
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/d...')
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/delete/9?ajax=books-chapters-grid
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/admin
+---
+2015/04/09 14:41:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php:187
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(143): BooksChaptersController->loadModel('9')
+#1 [internal function]: BooksChaptersController->actionDelete('9')
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(BooksChaptersController), Array)
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BooksChaptersController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1116): CFilterChain->run()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('delete')
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/d...')
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/delete/9?ajax=books-chapters-grid
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/admin
+---
+2015/04/09 15:31:06 [error] [php] include(publishing_year.php): failed to open stream: No such file or directory (C:\xampp\htdocs\SIHCi\YiiFramework\framework\YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\YiiBase.php(303): class_exists()
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(174): import()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): createValidator()
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): BooksChapters->createValidators()
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): BooksChapters->getValidators()
+#6 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): BooksChapters->isAttributeRequired()
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): activeLabelEx()
+#8 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx()
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#10 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): BooksChaptersController->renderInternal()
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): BooksChaptersController->renderFile()
+#12 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): BooksChaptersController->renderPartial()
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): BooksChaptersController->renderInternal()
+#15 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): BooksChaptersController->renderFile()
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): BooksChaptersController->renderPartial()
+#17 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(110): BooksChaptersController->render()
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): BooksChaptersController->runAction()
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): BooksChaptersController->filterAccessControl()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): BooksChaptersController->runActionWithFilters()
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): BooksChaptersController->run()
+#28 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#29 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php (23)
+in C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php (18)
+in C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (110)
+2015/04/09 15:31:27 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(110): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/21
+---
+2015/04/09 15:31:51 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(110): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/21
+---
+2015/04/09 15:32:08 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(110): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/21
+---
+2015/04/09 15:32:10 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(110): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+---
+2015/04/09 15:32:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "CFileValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'docx')
+#1 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('file', Object(BooksChapters), 'url_doc', Array)
+#2 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(304): CModel->getValidators('chapter_title')
+#4 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('chapter_title')
+#5 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(BooksChapters), 'chapter_title', Array)
+#6 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\_form.php(23): CActiveForm->labelEx(Object(BooksChapters), 'chapter_title')
+#7 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\SIHCi\sihci\protected\views\booksChapters\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(110): CController->render('create', Array)
+#16 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): BooksChaptersController->actionCreate()
+#17 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/c...')
+#27 C:\xampp\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#29 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/
+---
