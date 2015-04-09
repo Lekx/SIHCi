@@ -204,8 +204,6 @@ class SponsorsController extends Controller {
 		));
 	}
 
-	public function actionCreate_docs() {
-		$model = new SponsorsDocs;
 
 
 	public function actionCreate_docs()
