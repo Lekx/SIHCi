@@ -26,6 +26,7 @@ return array(
 		'application.components.*',
 		'bootstrap.helpers.TbArray',
 		'bootstrap.widgets.*',
+		 'application.extensions.coco.*',
 	),
 
 	'modules'=>array(
