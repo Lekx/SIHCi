@@ -25,7 +25,6 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		$user=Users::model()->find("LOWER(email)=?",array(strtolower($this->username)));
-		
 
 		if($user==null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
@@ -34,6 +33,9 @@ class UserIdentity extends CUserIdentity
 		else{
 			$this->_id=$user->id;
 			$this->setState('email',$user->email);
+			$this->setState('id_roles',$user->id_roles); //obtiene id del rol del usuario
+
+		
 			// $permisosObj = permissionRoles::model()->findAllByAttributes(array("id_role"=>$user->id_roles));
 			// $permisosArr = array();
 
