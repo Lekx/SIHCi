@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Registro #<?php echo $model->id; ?></h1>
+<h1>Registro <?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -28,8 +28,8 @@ $this->menu=array(
 		'date',
 		'title',
 		'responsible_agency',
-		'notas_periodisticas',
+		'note',
 		'is_national',
-		'key_words',
+		'creation_date',
 	),
 )); ?>
