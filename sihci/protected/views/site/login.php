@@ -43,20 +43,6 @@
 						'type'=>'POST',
                         'data'=> 'js:$("#login-form").serialize()+ "&ajax=login-form"',                  
                         'success'=>'js:function(response){
-<<<<<<< HEAD
-                        	
-                        			if(response == "404")
-                        				alert("no existes");
-                        			else if(response == "302")
-                        				alert("no estas activo");
-                        			else
-                        				window.open("'.Yii::app()->createUrl('/informacionDeDireccionGeneral/index').'","_blank ");
-
-
-
-
-
-=======
 		                        		if(response == "302"){
 		                        			$(".infodialog").removeClass("infodialog").addClass("infodialogerror");
 		                        			$(".infodialogerror").css("visibility", "visible");
@@ -88,7 +74,6 @@
 									    
 		                        		}
                         				
->>>>>>> 4f2cfc59530924b7604537f37cc82888b7a0cc9e
                         			}'
                         			)); ?>
 		<div class="">

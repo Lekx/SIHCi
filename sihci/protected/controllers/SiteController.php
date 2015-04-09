@@ -102,7 +102,7 @@ class SiteController extends Controller
 	   			
 	   				 echo "200";
 			}
-			if($not_active != null){
+			else if($not_active != null){
 					echo "302";
 			}    				
    			else{
