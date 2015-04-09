@@ -3,8 +3,7 @@
 /* @var $model Persons */
 
 $this->breadcrumbs=array(
-	'Persons'=>array('index'),
-	'Create',
+	'Datos Personales'=>array('personal_data'),
 );
 
 $this->menu=array(
@@ -15,4 +14,4 @@ $this->menu=array(
 
 <h1>Datos Personales</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model, 'curriculum'=>$curriculum)); ?>
+<?php $this->renderPartial('_form_personal_data', array('model'=>$model, 'curriculum'=>$curriculum)); ?>
