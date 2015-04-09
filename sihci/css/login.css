@@ -12,6 +12,10 @@
 {
    display:none;
 }
+.recoveryHome
+{
+   display:none;
+}
 .loginback ,.recoverypass
 {
 	position: absolute;
@@ -74,7 +78,7 @@
 	margin-top: 0px !important;
 }
 #login-form input[type="submit"], #login-form  input[type="button"],
-#recovery-form input[type="submit"]
+#recovery-form input[type="submit"], #recovery-form input[type="button"]
 {
 	width: 400px !important;
 	height: 50px !important;
@@ -238,7 +242,7 @@
 	padding: 9px;
 	content: "Favor de revisar el si el contendio esta registrado";
 }
-.closelogin , .closerecovery
+.closelogin , .closerecovery, .closecreate 
 {
 	position: fixed;
     bottom: 0;
@@ -247,7 +251,7 @@
     margin-bottom: 15px;
 	color: #AFB6C7;
 }
-.closelogin .glyphicon
+.closelogin .glyphicon ,.closerecovery .glyphicon ,.closecreate .glyphicon
 {
 	font-size: 23px;	
 }

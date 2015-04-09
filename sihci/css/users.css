@@ -34,7 +34,6 @@
 {
  	margin-left: auto;
  	margin-right: auto;
-	/*stacking fieldsets above each other*/
 	margin-top: 100px;
 	width: 400px;
 	height: auto;	
@@ -44,6 +43,10 @@
 	z-index: 999;
 	text-align: center;
 
+}
+.createHome
+{
+	display: none;
 }
 #crateusers fieldset:not(:first-of-type) {
 	 display: none;
@@ -66,7 +69,7 @@
 	color: #1EB9C0 !important;
 	opacity: .60 !important;
 }
-#crateusers input[type="submit"].previous , #crateusers input[type="button"].previous
+#crateusers input[type="submit"].previousform , #crateusers input[type="button"].previousform
 {
 	width: 400px !important;
 	height: 50px !important;
@@ -81,8 +84,8 @@
 
 }
 
-#crateusers input[type="submit"].next , #crateusers input[type="button"].next,
-#crateusers input[type="submit"].row 
+#crateusers input[type="submit"].nextform , #crateusers input[type="button"].nextform,
+#crateusers input[type="submit"].row , #crateusers input[type="submit"]
 {
 	width: 400px !important;
 	height: 50px !important;

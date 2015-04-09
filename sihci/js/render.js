@@ -1,12 +1,19 @@
 $(document).ready(function() {
-    $("img#logocuentas2").click(function() {
+    $(".login").click(function() {
         $(".loginHome").show();
     });
     $(".closelogin").click(function() {
         $(".loginHome").hide();
     });
+    $("#recoveryHome").click(function() {
+        $(".loginHome").hide();
+        $(".recoveryHome").show();
+    });
     $(".closerecovery").click(function() {
-        $(".recoverypass").hide();
+        $(".recoveryHome").hide();
+    });
+    $(".closecreate").click(function() {
+        $(".createHome").hide();
     });
     $("#LoginForm_username").focus(function() {
         $(".infodialog").css("visibility", "visible");
@@ -25,5 +32,8 @@ $(document).ready(function() {
     });
     $('#RecoveryPassword_email').focusout(function() {
         $(".infodialog3").css("visibility", "hidden");
+    });
+    $(".singin").click(function() {
+        $(".createHome").show();
     });
 });
