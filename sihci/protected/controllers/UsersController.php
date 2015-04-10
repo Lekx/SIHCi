@@ -92,7 +92,7 @@ class UsersController extends Controller {
 			}
 
 		}
-		$this->render('create', array(
+		$this->renderPartial('create', array(
 			'model' => $model, 'modelPersons' => $modelPersons,
 		));
 	}

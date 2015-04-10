@@ -65,6 +65,7 @@ class SiteController extends Controller {
 			}
 		}
 		$this->render('contact', array('model' => $model));
+
 	}
 
 	/**
@@ -106,7 +107,7 @@ class SiteController extends Controller {
 		// display the login form
 
 		if (!isset($_POST['ajax'])) {
-			$this->render('login', array('model' => $model));
+			$this->renderPartial('login', array('model' => $model));
 		}
 
 	}
@@ -173,7 +174,7 @@ class SiteController extends Controller {
 		}
 
 		if (!isset($_POST['ajax'])) {
-			$this->render('recoveryPassword', array('model' => $model, 'msg' => $msg));
+			$this->renderPartial('recoveryPassword', array('model' => $model, 'msg' => $msg));
 		}
 	
 	}

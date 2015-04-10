@@ -54,7 +54,7 @@
         			$(".infodialog").css("visibility", "hidden");
         			$(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
         			$(".infodialog").css("visibility", "hidden");
-                    location.reload();
+                    //location.reload();
                     window.open("'.Yii::app()->createUrl('/informationGeneralDirection/index').'", "_blank");
         		   
 
@@ -64,7 +64,6 @@
         			$("#yt0").css("background-color", "#F20862 !important")
         			$("#yt0").val("Listo... Ingresar a mi cuenta");
         			$(".infodialog").removeClass("infodialog").addClass("infodialogerror");
-        			$(".glyphicon").css("color","#F20862 ");
         			$(".infodialogerror").css("visibility", "visible");
         			$(".infodialog1").removeClass("infodialog1").addClass("infodialog1error");
         			$(".infodialog1error").css("visibility", "visible");
