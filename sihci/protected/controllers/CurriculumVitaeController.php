@@ -30,7 +30,8 @@ class CurriculumVitaeController extends Controller
 		return array(
 		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('personalData',),
+				'actions'=>array('personalData', 'DocsIdentity', 'Addresses',
+								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission'),
 				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1")',
 				 'users'=>array('@'),
 			),
@@ -178,6 +179,13 @@ class CurriculumVitaeController extends Controller
 			$model->attributes=$_POST['ResearchAreas'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			$model->save();
+				$log = new SystemLog();
+				$log->id_user = Yii::app()->user->id;
+				$log->section = "Lineas de Investigacion";
+				$log->details = "Se modifico su Linea de investigacion";
+				$log->action = "Modificacion";
+				$log->datetime = date ('d/m/Y H:i:s');
+				$log->save();
 		}
 
 		$this->render('research_areas',array('model'=>$model,));
@@ -228,6 +236,13 @@ class CurriculumVitaeController extends Controller
 		{
 			$model->attributes=$_POST['Grades'];
 			$model->save();
+				$log = new SystemLog();
+				$log->id_user = Yii::app()->user->id;
+				$log->section = "Formacion academica";
+				$log->details = "Se modifico su formacion academica";
+				$log->action = "Modificacion";
+				$log->datetime = date ('d/m/Y H:i:s');
+				$log->save();
 		}
 
 		$this->render('grades',array('model'=>$model,));
@@ -249,6 +264,13 @@ class CurriculumVitaeController extends Controller
 			$model->attributes=$_POST['Curriculum'];
 				if ($model->validate()) {
 						$model->save();
+							// $log = new SystemLog();
+							// $log->id_user = Yii::app()->user->id;
+							// $log->section = "Nombramientos";
+							// $log->details = "Se modifico Nombramientos";
+							// $log->action = "Modificacion";
+							// $log->datetime = date ('d/m/Y H:i:s');
+							// $log->save();
 				}	
 			
 		}
