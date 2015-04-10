@@ -128,7 +128,7 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_persons() {
-		$model = new Persons;
+		$model = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
 
 		if (isset($_POST['Persons'])) {
 			$model->attributes = $_POST['Persons'];
@@ -146,29 +146,37 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_contact() {
-		$model = new Phones;
-		$emails = new Emails;
+		$model = new SponsorsContact;
+
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if (isset($_POST['Phones'])) {
-			$email = $_POST['Emails']['email'];
-			$type = $_POST['Emails']['type'];
+		if (isset($_POST['SponsorsContact'])) {
+			$model->id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 
-			$model->attributes = $_POST['Phones'];
-			$model->id_person = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
-			$emails->id_person = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
-			$emails->email = $email;
-			$emails->type = $type;
+			echo "<pre>";
+			print_r($_POST['SponsorsContact']);
+			echo "</pre>";
+/*
 
-			if ($model->save()) {
-				$this->redirect(array('view', 'id' => $model->id));
-			}
+foreach ($_POST['SponsorsContact'] as $values) {
+$model->type = $values["type"];
+$model->value = $values["type"];
+$model->save();
+}
+ */
+			//$model->attributes = $_POST['SponsorsContact'];
+			//$model->id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+			/*
+		if ($model->save()) {
+		echo "guarde todo el business";
+		//$this->redirect(array('view', 'id' => $model->id));
+		}*/
 
 		}
 
 		$this->render('create_contact', array(
-			'model' => $model, 'emails' => $emails,
+			'model' => $model,
 		));
 	}
 
@@ -192,20 +200,59 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_billing() {
-		$model = new SponsorBilling;
 
-		if (isset($_POST['SponsorsBilling'])) {
-			$model->attributes = $_POST['SponsorsBilling'];
-			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
-			$model->id_address = $modelAddresses->id;
-			if ($model->save()) {
-				$this->redirect(array('view', 'id' => $model->id));
+		$billingExist = SponsorBilling::model()->findByAttributes(array('id_sponsor' => Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id));
+		$sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id));
+
+		if ($billingExist != null) {
+			$model = $billingExist;
+			$modelAddresses = Addresses::model()->findByPk($model->id_address_billing);
+			$sameAd = $modelAddresses->id == $sponsor->id_address ? true : false;
+
+		} else {
+			$model = new SponsorBilling;
+			$modelAddresses = new Addresses;
+			$sameAd = false;
+		}
+
+		if (isset($_POST['SponsorBilling'])) {
+
+			$model->attributes = $_POST['SponsorBilling'];
+
+			$model->id_sponsor = $sponsor->id;
+
+			if (isset($_POST['sameAddress'])) {
+				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id_address;
+
+				//var_dump($modelAddresses->id);
+
+				if ($model->save()) {
+					if ($modelAddresses->id != null) {
+						if ($modelAddresses->delete());
+						$this->redirect(array('create_billing'));
+
+					}
+
+				} else {
+
+					$modelAddresses = new Addresses;
+
+					$modelAddresses->attributes = $_POST['Addresses'];
+
+					if ($modelAddresses->save()) {
+						$model->id_address_billing = $modelAddresses->id;
+						if ($model->save()) {
+							$this->redirect(array('create_billing'));
+						}
+					}
+
+				}
 			}
 
 		}
 
 		$this->render('create_billing', array(
-			'model' => $model,
+			'model' => $model, 'modelAddresses' => $modelAddresses, 'sameAd' => $sameAd,
 		));
 	}
 
