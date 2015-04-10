@@ -25,7 +25,6 @@
 		<?php echo $form->textField($model, 'type', array('name' => 'type'), array('size' => 20, 'maxlength' => 20));?>
 		<?php echo $form->error($model, 'type');?>
 	</div>
-<input type="text" name="puta[]" class="input">
 	<div class="row">
 		<?php echo $form->labelEx($model, 'value');?>
 		<?php echo $form->textField($model, 'value', array('size' => 20, 'maxlength' => 20));?>
