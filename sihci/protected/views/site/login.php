@@ -49,13 +49,14 @@
         		}
         		else if(response == "200"){
 
-        			location.reload();
         			$(".loginHome").hide();
         			$(".infodialogerror").removeClass("infodialogerror").addClass("infodialog");
         			$(".infodialog").css("visibility", "hidden");
         			$(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
         			$(".infodialog").css("visibility", "hidden");
-        			window.open("'.Yii::app()->createUrl('/informationGeneralDirection/index').'","_blank ");
+                    location.reload();
+                    window.open("'.Yii::app()->createUrl('/informationGeneralDirection/index').'", "_blank");
+        		   
 
         		}
         		else
