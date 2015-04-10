@@ -48,9 +48,9 @@ class DirectedThesis extends CActiveRecord
 			array('area, discipline, subdiscipline', 'length', 'max'=>60),
 			array('conclusion_date, creation_date', 'safe'),
 			array('path','file','allowEmpty'=>true,
-				   'types'=>'pdf',
+				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
 			       'maxSize'=>array(1204 * 2000),
-			       'message'=>'Solo se admiten archivos pdf'),
+			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, title, conclusion_date, author, path, grade, sector, organization, second_level, area, discipline, subdiscipline, creation_date', 'safe', 'on'=>'search'),

@@ -35,5 +35,6 @@ $this->menu=array(
 		'discipline',
 		'subdisciplina',
 	),
+	 
 	
 )); ?>

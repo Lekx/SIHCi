@@ -49,9 +49,9 @@ class BooksChapters extends CActiveRecord
 			array('publishers', 'length', 'max'=>255),
 			array('publishing_year, creation_date', 'safe'),
 			array('url_doc','file','allowEmpty'=>true,
-				   'types'=>'pdf, docx, doc',
+				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
 			       'maxSize'=>array(1204 * 2000),
-			       'message'=>'Solo se admiten archivos pdf,docx, doc'),
+			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, chapter_title, book_title, publishing_year, publishers, editorial, volume, pages, citations, total_of_authors, area, discipline, subdiscipline, creation_date, url_doc', 'safe', 'on'=>'search'),
