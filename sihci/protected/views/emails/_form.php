@@ -1,46 +1,58 @@
+
+
+<div class="form wide">
+ 
+    <?php $form=$this->beginWidget('CActiveForm', array(
+            'id'=>'group-form',
+            'enableAjaxValidation'=>false,
+    )); ?>
+ 
+    <p class="note">Fields with <span class="required">*</span> are required.</p>
+ 
+    <?php
+        //show errorsummary at the top for all models
+        //build an array of all models to check
+        echo $form->errorSummary(array_merge(array($model),$validatedEmail));
+    ?>
+ 
 <?php
-/* @var $this EmailsController */
-/* @var $model Emails */
-/* @var $form CActiveForm */
-?>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'emails-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_person'); ?>
-		<?php echo $form->textField($model,'id_person'); ?>
-		<?php echo $form->error($model,'id_person'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'type'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
+ 
+    // see http://www.yiiframework.com/doc/guide/1.1/en/form.table
+    // Note: Can be a route to a config file too,
+    //       or create a method 'getMultiModelForm()' in the member model
+ 
+    $emailFormConfig = array(
+          'elements'=>array(
+            'email'=>array(
+                'type'=>'text',
+                'maxlength'=>40,
+            ),
+            'type'=>array(
+                'type'=>'text',
+                'maxlength'=>40,
+            ),
+        ));
+ 
+    $this->widget('ext.multimodelform.MultiModelForm',array(
+            'id' => 'id_emails', //the unique widget id
+              'tableView' => true,
+            'formConfig' => $emailFormConfig, //the form configuration array
+            'model' => $emails, //instance of the form model
+ 
+            //if submitted not empty from the controller,
+            //the form will be rendered with validation errors
+            'validatedItems' => $validatedEmail,
+ 
+            //array of member instances loaded from db
+            'data' => $emails->findAll('id_person=:id_person', array(':id_person'=>$model->id)),
+        ));
+    ?>
+  
+         
+    <div class="row buttons">
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+    </div>
+ 
+    <?php $this->endWidget(); ?>
+ 
+    </div><!-- form -->

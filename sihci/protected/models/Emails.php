@@ -33,6 +33,7 @@ class Emails extends CActiveRecord
 			array('id_person, email, type', 'required'),
 			array('id_person', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>100),
+			array('email', 'email'),
 			array('type', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -61,7 +62,7 @@ class Emails extends CActiveRecord
 			'id' => 'ID',
 			'id_person' => 'Id Person',
 			'email' => 'Email',
-			'type' => 'Type',
+			'type' => 'Tipo de email',
 		);
 	}
 

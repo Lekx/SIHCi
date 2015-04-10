@@ -25,6 +25,7 @@
  */
 class Patent extends CActiveRecord
 {
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -50,6 +51,7 @@ class Patent extends CActiveRecord
 			array('international_clasification', 'length', 'max'=>100),
 			array('owner, resource_operator', 'length', 'max'=>70),
 			array('consession_date, resumen', 'safe'),
+			//array('presentation_date','compare','compareAttribute'=>'consession_date','operator'=>'>='),	
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('name','filter','filter'=>'strtoupper'),
@@ -87,7 +89,7 @@ class Patent extends CActiveRecord
 			'record' => 'Expediente',
 			'presentation_date' => 'Fecha de presentación',
 			'international_clasification' => 'Clasificación internacional',
-			'title' => 'Titulo',
+			'title' => 'Titular',
 			'owner' => 'Propietario',
 			'resumen' => 'Resumen',
 			'industrial_exploitation' => 'Explotación industrial',
@@ -112,6 +114,8 @@ class Patent extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$sort= new CSort();
+		$sort->defaultOrder='presentation_date ASC';
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
@@ -134,6 +138,8 @@ class Patent extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>$sort,
+
 		));
 	}
 

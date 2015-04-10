@@ -22,7 +22,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'id_grade',
+		'id_curriculum',
 		'title',
 		'conclusion_date',
 		'author',
@@ -30,9 +30,10 @@ $this->menu=array(
 		'grade',
 		'sector',
 		'organization',
-		'Second_level',
+		'second_level',
 		'area',
 		'discipline',
 		'subdisciplina',
 	),
+	
 )); ?>

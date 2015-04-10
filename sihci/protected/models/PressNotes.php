@@ -11,9 +11,12 @@
  * @property string $date
  * @property string $title
  * @property string $responsible_agency
- * @property string $notas_periodisticas
+ * @property string $note
  * @property string $is_national
- * @property string $key_words
+ * @property string $creation_date
+ *
+ * The followings are the available model relations:
+ * @property Curriculum $idCurriculum
  */
 class PressNotes extends CActiveRecord
 {
@@ -33,15 +36,14 @@ class PressNotes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, title, is_national, key_words', 'required'),
+			array('id_curriculum, title, is_national', 'required'),
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
-			array('type, directed_to, title, responsible_agency, notas_periodisticas, is_national', 'length', 'max'=>45),
-			array('key_words', 'length', 'max'=>250),
-			array('date', 'safe'),
-            array('date','compare','compareValue'=> date('d/m/Y'),'operator'=>'<='),	
-            // The following rule is used by search().
+			array('type, directed_to, title, responsible_agency, is_national', 'length', 'max'=>45),
+			array('date, note, creation_date', 'safe'),
+			array('date','compare','compareValue'=> date('d/m/Y'),'operator'=>'<='),	
+			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, type, directed_to, date, title, responsible_agency, notas_periodisticas, is_national, key_words', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, type, directed_to, date, title, responsible_agency, note, is_national, creation_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,6 +55,7 @@ class PressNotes extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),
 		);
 	}
 
@@ -69,9 +72,9 @@ class PressNotes extends CActiveRecord
 			'date' => 'Fecha de publicación',
 			'title' => 'Título de la publicación',
 			'responsible_agency' => 'Dependencia responsable',
-			'notas_periodisticas' => 'Nota periodistica',
+			'note' => 'Nota periodistica',
 			'is_national' => 'Tipo de publicación',
-			'key_words' => 'Palabras claves',
+			'creation_date' => 'Creation Date',
 		);
 	}
 
@@ -100,9 +103,9 @@ class PressNotes extends CActiveRecord
 		$criteria->compare('date',$this->date,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('responsible_agency',$this->responsible_agency,true);
-		$criteria->compare('notas_periodisticas',$this->notas_periodisticas,true);
+		$criteria->compare('note',$this->note,true);
 		$criteria->compare('is_national',$this->is_national,true);
-		$criteria->compare('key_words',$this->key_words,true);
+		$criteria->compare('creation_date',$this->creation_date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -119,7 +122,7 @@ class PressNotes extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
+	
 	protected function beforeSave()
     {
 			$this->date = DateTime::createFromFormat('d/m/Y', $this->date)->format('Y-m-d');

@@ -26,6 +26,7 @@ return array(
 		'application.components.*',
 		'bootstrap.helpers.TbArray',
 		'bootstrap.widgets.*',
+		 'application.extensions.coco.*',
 	),
 
 	'modules'=>array(
@@ -45,7 +46,10 @@ return array(
 
 	// application components
 	'components'=>array(
-
+		'authManager'=>array(
+				'class'=>'CDbAuthManager',
+				'connectionID'=>'db',
+			),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

@@ -25,19 +25,19 @@
 		<?php
 	        $this->widget(
 	            'yiiwheels.widgets.formhelpers.WhCountries',
-	               array(
-		                'name' => 'Patent[country]',
-		                'attribute'=>'country',
-		                'value' => 'MX',
-		                'useHelperSelectBox' => true,
-			                'pluginOptions' => array(
-		                    'country' => '',
-		                    'language' => 'es_ES',
-		                    'flags' => true
+	            array(
+					'name' => 'Patent[country]',
+	                'id' => 'Patent_country',
+	                'value' => 'MX',
+	                'useHelperSelectBox' => true,
+	                'pluginOptions' => array(
+	                    'country' => '',
+	                    'language' => 'es_ES',
+	                    'flags' => true
 	                )
 	            )
 	        );
-	    ?>	
+	    ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
