@@ -112,8 +112,8 @@ class CurriculumVitaeController extends Controller
 			if ($model->validate()) {
 				
 				if($model->doc_id != ''){
-					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf');
-					$model->doc_id = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf';
+					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName());
+					$model->doc_id = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName();
 					$model->save();
 				}
 				
@@ -155,6 +155,7 @@ class CurriculumVitaeController extends Controller
 					$model->attributes=$_POST['Jobs'];
 					$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 					$model->save();
+
 				}
 
 				$this->render('jobs',array(
@@ -179,6 +180,7 @@ class CurriculumVitaeController extends Controller
 			$model->attributes=$_POST['ResearchAreas'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			$model->save();
+			
 				$log = new SystemLog();
 				$log->id_user = Yii::app()->user->id;
 				$log->section = "Lineas de Investigacion";
