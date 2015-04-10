@@ -95,6 +95,11 @@ class SystemLog extends CActiveRecord
 		$criteria->compare('action',$this->action,true);
 		$criteria->compare('datetime',$this->datetime,true);
 
+		$_SESSION['filteredData'] = new CActiveDataProvider($this, array(
+ 		'criteria'=>$criteria,
+		
+		 'pagination'=>false,
+ 			));
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
