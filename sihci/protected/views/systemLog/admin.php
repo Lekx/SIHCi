@@ -3,13 +3,14 @@
 /* @var $model SystemLog */
 
 $this->breadcrumbs=array(
-	'System Logs'=>array('index'),
-	'Manage',
+	'Bitácora'=>array('admin'),
+	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'List SystemLog', 'url'=>array('index')),
-	array('label'=>'Create SystemLog', 'url'=>array('create')),
+	//array('label'=>'List SystemLog', 'url'=>array('index')),
+	//array('label'=>'Create SystemLog', 'url'=>array('create')),
+	array('label'=>'Descargar en PDF', 'url'=>array('pdf')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
