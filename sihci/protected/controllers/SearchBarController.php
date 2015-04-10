@@ -20,12 +20,12 @@ class SearchBarController extends Controller
 		$result = "";
 
 		if(empty($results))
-			$result.= "<h2> No se encontraron resultados para su busqueda:<b> \"".$keyword."\"</b> </h3>";
+			$result.= "No se encontraron resultados para su busqueda:<b> \"".$keyword."\"</b>";
 		else
-			$result.=  "<h2> El resultado de la busqueda para <b>\"".$keyword."\"</b> fue:</h3><hr>";
+			$result.=  "El resultado de la busqueda para <b>\"".$keyword."\"</b> fue:";
 			
 		foreach($results as $index => $subarray)
-			$result.= "<h2><a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["title"]."</a></h2>"."<a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["desc"]."</a><br><hr>";
+			$result.= "<div class='resultbars'> <div class='resul'><h5><a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["title"]."</a></h5>"."<a href='http://localhost/SIHCi/sihci/index.php/".$index."'>".$subarray["desc"]."</a> </div></div> ";
 		
 		return $result;
 	}

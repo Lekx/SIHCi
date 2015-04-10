@@ -60,6 +60,7 @@ class DirectedThesisController extends Controller
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
+    //TE01-Registrar datos
     public function actionCreate()
     {
         $model=new DirectedThesis;
@@ -72,19 +73,33 @@ class DirectedThesisController extends Controller
             $model->attributes=$_POST['DirectedThesis'];
 
 
-            $model->id_grade = Grades::model()->findByAttributes(array('id_curriculum'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id))->id;
+            $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
              
             if($model->validate()){
                 if($model->path != ''){
-                    
-                           $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->title.'.pdf');
-                             $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.$model->title.'.pdf';           
-                    if($model->save()){
-                            $this->redirect(array('view','id'=>$model->id));
-                    }
-                }else{
+                if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/')){
+                   mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/', 0777, true);
+                   $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.pdf');
+                   $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.pdf';   
+                  if($model->save())
+                  $this->redirect(array('view','id'=>$model->id));
+                } else {
 
+                    
+                    
+                    $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.pdf');
+                $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.pdf'; 
+                    
+                  if($model->save()){  
+                     $this->redirect(array('view','id'=>$model->id));
+                        }
+                   
+                         }
+
+                }else{
+                   
+                    $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title().'.pdf';
                     if($model->save()){
                         $this->redirect(array('view','id'=>$model->id));
                    }
@@ -102,10 +117,10 @@ class DirectedThesisController extends Controller
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
+    //TE02-Modificar datos
     public function actionUpdate($id)
     {
         $model=$this->loadModel($id);
-        
 
         // Uncomment the following line if AJAX validation is needed
         //$this->performAjaxValidation($model); 
@@ -118,17 +133,20 @@ class DirectedThesisController extends Controller
 
             if($model->validate()){
             
-            if($model->path != ''){
 
-                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.$model->title.'.pdf');
-                $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.$model->title.'.pdf';
+            if($model->path != ''){
+                
+                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.pdf');
+               $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.pdf'; 
+                
+                
                 
                 if($model->save()){
                     $this->redirect(array('view','id'=>$model->id));
                 }
             }else{
 
-                $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.$model->title.'.pdf';
+                  $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.pdf';
                 if($model->save()){
                 $this->redirect(array('view','id'=>$model->id));
              }
@@ -146,7 +164,7 @@ class DirectedThesisController extends Controller
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
      */
-
+    //TE03-Eliminar datos
     public function actionDelete($id)
     {
         $this->loadModel($id)->delete();
@@ -159,6 +177,8 @@ class DirectedThesisController extends Controller
     /**
      * Lists all models.
      */
+
+    //TE04-Eliminar datos
     public function actionIndex()
     {
         $dataProvider=new CActiveDataProvider('DirectedThesis');
@@ -170,6 +190,8 @@ class DirectedThesisController extends Controller
     /**
      * Manages all models.
      */
+
+    //TE05-Listar registros
     public function actionAdmin()
     {
         $model=new DirectedThesis('search');
@@ -182,6 +204,19 @@ class DirectedThesisController extends Controller
         ));
     }
 
+    public function actionSearch()
+    {
+        $model=new Peticiones('search');
+        $model->unsetAttributes();  // clear any default values
+        if(isset($_GET['DirectedThesis']))
+            $model->attributes=$_GET['DirectedThesis'];
+
+        $this->render('search',array(
+            'model'=>$model,
+        ));
+    }
+
+  
     /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.

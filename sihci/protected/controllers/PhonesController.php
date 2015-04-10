@@ -67,6 +67,8 @@ class PhonesController extends Controller
 	//CV01-Registro de datos  
 	public function actionCreate()
 	{
+	
+        
 		$model=new Phones;
 		$emails = new Emails;
 		// Uncomment the following line if AJAX validation is needed
@@ -128,6 +130,7 @@ class PhonesController extends Controller
 		$this->render('update',array(
 			'model'=>$model, 'emails' =>$emails,
 		));
+
 	}
 
 	/**
