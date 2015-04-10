@@ -61,12 +61,12 @@ class SystemLog extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'id_user' => 'Id User',
-			'section' => 'Section',
-			'details' => 'Details',
-			'action' => 'Action',
-			'datetime' => 'Datetime',
+			'id' => 'Numero de Accion',
+			'id_user' => 'Numero de Usuario',
+			'section' => 'Seccion',
+			'details' => 'Detalles',
+			'action' => 'Accion',
+			'datetime' => 'Fecha',
 		);
 	}
 
@@ -109,5 +109,14 @@ class SystemLog extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+		protected function beforeSave(){
+		$this->datetime = DateTime::createFromFormat('d/m/Y H:i:s', $this->datetime)->format('Y-m-d H:i:s');
+		return parent::beforeSave();
+	}	
+
+	protected function afterFind(){
+		$this->datetime = DateTime::createFromFormat('Y-m-d H:i:s', $this->datetime)->format('d/m/Y H:i:s');
+		return parent::beforeSave();
 	}
 }
