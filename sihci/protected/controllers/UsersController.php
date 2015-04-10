@@ -34,19 +34,26 @@ class UsersController extends Controller {
 	}
 
 	public function actionCreate() {
-		
+
 		$model = new Users;
 		$modelPersons = new Persons;
 
-		if (isset($_POST['Users'])) {
+		if (isset($_POST['User'])) {
+
 			$model->id_roles = '1';
 			$model->attributes = $_POST['Users'];
+
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
+
 			if ($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2'])) {
+
 				if ($this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2'])) {
+
 					if (!empty($result)) {
-						echo "<script> alert(\"Este correo ya existe.\")</script>";
+
+
 					} else {
+
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
 						$model->status = 0;
@@ -56,12 +63,15 @@ class UsersController extends Controller {
 						//$model->attributes=$_POST['Users'];
 
 						if ($model->validate()) {
+
 							if (isset($_POST['Persons'])) {
+
 								$modelPersons->attributes = $_POST['Persons'];
 								$modelPersons->person_rfc = "1234567890123";
+
 								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
 								if (!empty($result2)) {
-									echo "<script> alert(\"Este RFC/Pasaporte ya existe.\")</script>";
+
 
 								} else {
 
@@ -69,6 +79,7 @@ class UsersController extends Controller {
 									$modelPersons->marital_status = -1;
 									$modelPersons->genre = -1;
 									$modelPersons->birth_date = '00/00/0000';
+
 									if ($modelPersons->validate()) {
 										$model->save();
 										$modelPersons->id_user = $model->id;
@@ -81,7 +92,7 @@ class UsersController extends Controller {
 										$log->action = "creacion";
 										$log->datetime = new CDbExpression('NOW()');
 										$log->save();
-										$this->redirect(array('view', 'id' => $model->id));
+	
 									}
 								}
 							}
@@ -92,9 +103,11 @@ class UsersController extends Controller {
 			}
 
 		}
-		$this->renderPartial('create', array(
-			'model' => $model, 'modelPersons' => $modelPersons,
-		));
+
+		
+			$this->renderPartial('create', array(
+				'model' => $model, 'modelPersons' => $modelPersons,
+			));
 	}
 
 	public function actionUpdate($id) {

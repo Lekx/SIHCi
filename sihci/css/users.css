@@ -121,6 +121,14 @@
 	width: 350px !important;
 	
 }
+.bfh-selectbox .bfh-selectbox-toggle .bfh-selectbox-option {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: 60px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /*progressbar*/
 

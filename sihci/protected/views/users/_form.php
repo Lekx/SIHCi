@@ -7,11 +7,9 @@
 <div id="crateusers" class="form">
     <?php $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'users-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation' => true,
+	'enableAjaxValidation'=>true,
+    'action'=>$this->createUrl('users/create'),
+    'enableClientValidation'=>true,
 ));?>
 
     <div class="progreesbar">
@@ -103,7 +101,24 @@
         <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
 
         <div class="row buttons">
-            <?php echo CHtml::submitButton($model->isNewRecord ? 'Generar Registro' : 'Guardar', array('class' => ''));?>
+
+             <?php echo CHtml::ajaxSubmitButton('Generar Registro',CHtml::normalizeUrl(array('users/create')),
+                 array(
+                     'dataType'=>'json',
+                     'type'=>'post',
+                     'success'=>'function(data) { 
+                        if(data.status=="success"){
+                            alert("Bien");
+                        }
+                        else{
+                      
+                        }       
+                    }',                    
+                     'beforeSend'=>'function(){                        
+                           $("#AjaxLoader").show();
+                      }'
+                     )); ?>
+         </div>            
             
         </fieldset>
         <div class="countusers">

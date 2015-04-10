@@ -169,7 +169,7 @@
                 <div class="opcity"></div>
                 <a href="<?php echo Yii::app()->request->baseUrl; ?>"><img id="logohmeb"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHmeBlanco.png" alt="home"></a>
                 <div class="textfont">
-                    <h2 id="textfont">Sistema de Gestión y administración de Protocolos de Inestigación Médica en el Hospital Civil.</h2>
+                    <h2 id="textfont">Sistema de Gestión y administración de Protocolos de Investigación Médica en el Hospital Civil.</h2>
                 </div>
             </div>
         </section>
