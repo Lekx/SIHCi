@@ -3,7 +3,7 @@ class UsersController extends Controller {
 	function checkEmail($email, $email2) {
 
 		if ($email != $email2) {
-			echo "<script> alert(\"Las dos correos son distintos.\")</script>";
+			echo "email";
 			return false;
 		} else {
 			return true;
@@ -11,7 +11,7 @@ class UsersController extends Controller {
 	}
 	function checkPassword($password, $password2) {
 		if ($password != $password2) {
-			echo "<script> alert(\"Las dos claves son distintas.\")</script>";
+			echo "pass";
 			return false;
 		} else {
 			return true;
@@ -37,8 +37,10 @@ class UsersController extends Controller {
 
 		$model = new Users;
 		$modelPersons = new Persons;
+		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelPersons);
 
-		if (isset($_POST['User'])) {
+		if (isset($_POST['ajax']) && $_POST['ajax'] === 'users-form') {
 
 			$model->id_roles = '1';
 			$model->attributes = $_POST['Users'];
@@ -47,7 +49,9 @@ class UsersController extends Controller {
 
 			if ($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2'])) {
 
+
 				if ($this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2'])) {
+
 
 					if (!empty($result)) {
 
@@ -56,7 +60,7 @@ class UsersController extends Controller {
 
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
-						$model->status = 0;
+						$model->status = 'inactivo';
 						$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s') . $model->email . rand(1000, 5000))));
 						//if($model->validate())
 						$model->password = sha1(md5(sha1($model->password)));
@@ -72,13 +76,13 @@ class UsersController extends Controller {
 								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
 								if (!empty($result2)) {
 
-
+											echo "curp";
 								} else {
 
 									$modelPersons->id_user = 0;
 									$modelPersons->marital_status = -1;
 									$modelPersons->genre = -1;
-									$modelPersons->birth_date = '00/00/0000';
+									$modelPersons->birth_date = '00-00-0000';
 
 									if ($modelPersons->validate()) {
 										$model->save();
@@ -92,6 +96,7 @@ class UsersController extends Controller {
 										$log->action = "creacion";
 										$log->datetime = new CDbExpression('NOW()');
 										$log->save();
+
 	
 									}
 								}
@@ -104,10 +109,9 @@ class UsersController extends Controller {
 
 		}
 
-		
-			$this->renderPartial('create', array(
-				'model' => $model, 'modelPersons' => $modelPersons,
-			));
+		if (!isset($_POST['ajax'])) {
+			$this->renderPartial('create', array('model' => $model, 'modelPersons' => $modelPersons));
+		}
 	}
 
 	public function actionUpdate($id) {

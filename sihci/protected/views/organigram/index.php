@@ -24,7 +24,7 @@ $this->breadcrumbs = array(
 		<img src="<?php echo Yii::app()->request->baseUrl . "/protected/views/organigram/img/org1.png";?>">
 
 
-		<p>Organigrama Dando clic en subdirección general e investigación
+		<p>
 		Titular
 		M.S.P. Víctor Manuel Ramírez Anguiano
 		Subdirector General de Enseñanza e Investigación</p>

@@ -4,7 +4,7 @@
 
 $this->pageTitle=Yii::app()->name . ' -FInEHC';
 $this->breadcrumbs=array(
-	'OPD / FInEHC',
+	'/ FInEHC',
 );
 ?>
 
