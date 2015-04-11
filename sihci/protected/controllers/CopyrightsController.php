@@ -1,12 +1,12 @@
 <?php
 
-class PatentController extends Controller
+class CopyrightsController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/system';
+	public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -60,27 +60,33 @@ class PatentController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	//RP01-Registrar-datos
 	public function actionCreate()
 	{
-		$model=new Patent;
+		$model=new Copyrights;
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		//$this->performAjaxValidation($model);
 
-		if(isset($_POST['Patent']))
+		if(isset($_POST['ajax']) && $_POST['ajax']==='copyrights-form')
 		{
-			$model->attributes=$_POST['Patent'];
+			$model->attributes=$_POST['Copyrights'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
-		
-		    if($model->save())
-					$this->redirect(array('view','id'=>$model->id));
-			
-		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+			if(!$model->validate())
+			{
+				echo "404";
+			}	
+			else
+			{
+				echo "200";
+			}	
+					
+		}
+				
+		else
+		{
+			$this->render('create',array('model'=>$model));
+		}	
 	}
 
 	/**
@@ -88,7 +94,6 @@ class PatentController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	//RP02-Modificar-datos
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -96,9 +101,11 @@ class PatentController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Patent']))
+		if(isset($_POST['Copyrights']))
 		{
-			$model->attributes=$_POST['Patent'];
+			$model->attributes=$_POST['Copyrights'];
+			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -113,7 +120,6 @@ class PatentController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	//RP03-Eliminar-datos
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -126,11 +132,9 @@ class PatentController extends Controller
 	/**
 	 * Lists all models.
 	 */
-
-    //RP04-Desplegar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Patent');
+		$dataProvider=new CActiveDataProvider('Copyrights');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -139,30 +143,28 @@ class PatentController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	
-    //RP05-Listar-datos
 	public function actionAdmin()
 	{
-		$model=new Patent('search');
+		$model=new Copyrights('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Patent']))
-			$model->attributes=$_GET['Patent'];
+		if(isset($_GET['Copyrights']))
+			$model->attributes=$_GET['Copyrights'];
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
-	
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Patent the loaded model
+	 * @return Copyrights the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Patent::model()->findByPk($id);
+		$model=Copyrights::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -170,11 +172,11 @@ class PatentController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Patent $model the model to be validated
+	 * @param Copyrights $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='patent-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='copyrights-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

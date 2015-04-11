@@ -1,17 +1,14 @@
 <?php
 /* @var $this PatentController */
 /* @var $model Patent */
-
 $this->breadcrumbs=array(
 	'Patents'=>array('index'),
 	'Manage',
 );
-
 $this->menu=array(
 	array('label'=>'Desplegar', 'url'=>array('index')),
 	array('label'=>'Crear', 'url'=>array('create')),
 ); 
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
     $('.search-form').toggle();
@@ -41,15 +38,15 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'name',
-		'application_type',
-		'country',
 		'presentation_date',
 		'owner',
+		'application_number',
 		'state',
+		'application_type',
 		/*
+		'country',
 		'participation_type',
 		'id_curriculum',
-		'application_number',
 		'patent_type',
 		'consession_date',
 		'record',

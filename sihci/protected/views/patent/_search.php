@@ -1,7 +1,5 @@
-
 <?php
 //RP06-Barra de Busqueda 
-
 /* @var $this PatentController */
 /* @var $model Patent */
 /* @var $form CActiveForm */
@@ -16,8 +14,8 @@
 	
 	<fieldset>
 		
-		<legend> Nombre a buscar </legend>
-		
+		<legend>Búsqueda por:</legend>		
+
 		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Ejemplo: cosa')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
 
