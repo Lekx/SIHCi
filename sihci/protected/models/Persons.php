@@ -53,7 +53,7 @@ class Persons extends CActiveRecord
 			array('state_of_birth', 'length', 'max'=>45),
 			array('photo_url','file', 'allowEmpty'=>true,
 							'on'=>'update',
-			                  'types'=>'png, jpg, jpeg',
+			                  'types'=>'png, jpg, jpeg, doc, docx, odt,pdf',
 			                  'maxSize'=>array(1024 * 2000),
 			                  'message'=>'Solo se admiten archivos PNG, JPG, JPEG'),
 			array('person_rfc', 'length', 'min'=>13, 'max'=>13),
