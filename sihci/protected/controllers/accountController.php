@@ -2,7 +2,7 @@
   	class accountController extends controller{
 
 
-	public $layout='//layouts/informativas';
+	public $layout='//layouts/system';
 	private $currentemail ='';
 	private $currentpassword ='';
 	

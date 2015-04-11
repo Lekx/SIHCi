@@ -55,7 +55,7 @@
         			$(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
         			$(".infodialog").css("visibility", "hidden");
                     //location.reload();
-                    window.open("'.Yii::app()->createUrl('/informationGeneralDirection/index').'", "_blank");
+                    window.open("'.Yii::app()->createUrl('/account/infoAccount').'", "_blank");
         		   
 
         		}
