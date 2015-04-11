@@ -66,12 +66,12 @@ class Phones extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_person' => 'Id Person',
-			'type' => 'Tipo',
+			'type' => 'Tipo de Teléfono',
 			'country_code' => 'Lada País',
 			'local_area_code' => 'Lada Estado',
 			'phone_number' => 'Número Telefónico',
 			'extension' => 'Extensión',
-			'is_primary' => 'Is Primary',
+			'is_primary' => 'Es primario',
 		);
 	}
 

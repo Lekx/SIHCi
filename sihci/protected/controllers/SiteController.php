@@ -65,6 +65,7 @@ class SiteController extends Controller {
 			}
 		}
 		$this->render('contact', array('model' => $model));
+
 	}
 
 	/**
@@ -87,16 +88,18 @@ class SiteController extends Controller {
 
 			$model->attributes = $_POST['LoginForm'];
 
-			$is_active = Users::model()->findByAttributes(array("status" => "activo", "email" => $model->username));
-			$not_active = Users::model()->findByAttributes(array("status" => "inactivo", "email" => $model->username));
+			$is_active = Users::model()->findByAttributes(array("status" => "1", "email" => $model->username));
+			$not_active = Users::model()->findByAttributes(array("status" => "0", "email" => $model->username));
 
 			if ($model->validate() && $model->login() && $is_active != null) {
-
+			
 				echo "200";
 			} else if ($not_active != null) {
 				echo "302";
+				Yii::app()->user->logout();
 			} else {
 				echo "404";
+				Yii::app()->user->logout();
 			}
 
 			Yii::app()->end();
@@ -104,7 +107,7 @@ class SiteController extends Controller {
 		// display the login form
 
 		if (!isset($_POST['ajax'])) {
-			$this->render('login', array('model' => $model));
+			$this->renderPartial('login', array('model' => $model));
 		}
 
 	}
@@ -126,6 +129,7 @@ class SiteController extends Controller {
 
 		$model = new RecoveryPassword;
 		$msg = '';
+		$conexion= Yii::app()->db;
 		$random = rand(1000, 5000);
 		$date = date("d/m/y H:i:s");
 
@@ -133,68 +137,46 @@ class SiteController extends Controller {
 			
 			$model->attributes = $_POST['RecoveryPassword'];
 
-			if (!$model->validate()) {
-				$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
-			} else {
+			$is_active = Users::model()->findByAttributes(array("status" => "1", "email" => $model->email));
 
-				$conexion = Yii::app()->db;
+			if ($model->validate() && $is_active != null) {
+				
+				$llave = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
+				$insertar = "UPDATE users SET act_react_key='$llave' where";
+				$insertar .= " email='" . $model->email . "'";
+				$llaveBD = $conexion->createCommand($insertar)->query();
+				$email = new SendEmail;
+				$subject = "Has solicitado recuperar tu password en";
+				$subject .= Yii::app()->name;
+				$message = "<a href='http://localhost/sihci/index.php/site/changePassword?key=" . $llave . ">";
+				$message .= "Haz click en ésta liga para cambiar tu contraseña";
+				$message .= "</a><br /><br />";
+				// $message .= "<a href='http://localhost/'>Regresar a la web</a>";
+				$email->Send_Email
+				(
+					array(Yii::app()->params['emailAdmin'], Yii::app()->name),
+					array($model->email, ''),
+					$subject,
+					$message
+				);
 
-				$consulta = "SELECT status FROM users where email='$model->email' and";
-				$consulta .= " status='activo'";
-
-				$resultado = $conexion->createCommand($consulta);
-				$filas = $resultado->query();
-				$existe = false;
-
-				foreach ($filas as $fila) {
-					$existe = true;
-				}
-				if ($existe === true) {
-					$conexion = Yii::app()->db;
-
-					$consulta = "SELECT email from users WHERE ";
-					$consulta .= "email='" . $model->email . "'";
-
-					$resultado = $conexion->createCommand($consulta);
-					$filas = $resultado->query();
-					$existe = false;
-
-					foreach ($filas as $fila) {
-						$existe = true;
-					}
-					if ($existe === true) {
-
-						$llave = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
-						$insertar = "UPDATE users SET act_react_key='$llave' where";
-						$insertar .= " email='" . $model->email . "'";
-						$llaveBD = $conexion->createCommand($insertar)->query();
-
-						$email = new SendEmail;
-						$subject = "Has solicitado recuperar tu password en";
-						$subject .= Yii::app()->name;
-						$message = "<a href='http://localhost/sihci/index.php/site/changePassword?key=" . $llave . ">";
-						$message .= "Haz click en ésta liga para cambiar tu contraseña";
-						$message .= "</a><br /><br />";
-						// $message .= "<a href='http://localhost/'>Regresar a la web</a>";
-						$email->Send_Email
-						(
-							array(Yii::app()->params['emailAdmin'], Yii::app()->name),
-							array($model->email, ''),
-							$subject,
-							$message
-						);
-						$model->email = "";
-						$msg = "<strong class='text-success'>se ha enviado el password</strong>";
-					} else {
-						$msg = "<strong class='text-error'>Error, el usuario no existe</strong>";
-					}
-				} else {
-
-					$msg = "<strong class='text-error'>Su cuenta no ha sido activada favor de revisar su correo para activar la cuenta.</strong>";
-				}
+				$model->email = "";
+				echo '200';
+				
 			}
+			else
+			{
+
+				echo '404';
+
+			}
+
 		}
-		$this->render('recoveryPassword', array('model' => $model, 'msg' => $msg));
+
+		if (!isset($_POST['ajax'])) {
+			$this->renderPartial('recoveryPassword', array('model' => $model, 'msg' => $msg));
+		}
+	
 	}
 
 	//LO03 – Recuperar contraseña

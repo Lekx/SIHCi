@@ -1,3 +1,4 @@
+
 <div class="loginback">
     <div class="form">
     	<?php $form=$this->beginWidget('CActiveForm', array(
@@ -40,19 +41,22 @@
         	'data'=> 'js:$("#login-form").serialize()+ "&ajax=login-form"',
         	'success'=>'js:function(response){
         		if(response == "302"){
+
         			$(".infodialog").removeClass("infodialog").addClass("infodialogerror");
         			$(".infodialogerror").css("visibility", "visible");
         			$(".infodialogerror").find("p").text("No has activado tu cuenta");
+                    $(".infodialogerror1").css("visibility", "hidden");
         		}
         		else if(response == "200"){
 
-        			location.reload();
         			$(".loginHome").hide();
         			$(".infodialogerror").removeClass("infodialogerror").addClass("infodialog");
         			$(".infodialog").css("visibility", "hidden");
         			$(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
         			$(".infodialog").css("visibility", "hidden");
-        			window.open("'.Yii::app()->createUrl('/informacionDeDireccionGeneral/index').'","_blank ");
+                    //location.reload();
+                    window.open("'.Yii::app()->createUrl('/account/infoAccount').'", "_blank");
+        		   
 
         		}
         		else
@@ -60,7 +64,6 @@
         			$("#yt0").css("background-color", "#F20862 !important")
         			$("#yt0").val("Listo... Ingresar a mi cuenta");
         			$(".infodialog").removeClass("infodialog").addClass("infodialogerror");
-        			$(".glyphicon").css("color","#F20862 ");
         			$(".infodialogerror").css("visibility", "visible");
         			$(".infodialog1").removeClass("infodialog1").addClass("infodialog1error");
         			$(".infodialog1error").css("visibility", "visible");

@@ -4,6 +4,7 @@
 		<?php $form = $this->beginWidget('CActiveForm',
 			array(
 				'id'=>'recovery-form',
+				'enableAjaxValidation'=>true,
 				'enableClientValidation' => true,
 				'clientOptions' => array(
 					'validateOnSubmit' => true,
@@ -29,15 +30,30 @@
 				</div>
 			</div>
 			<div class="">
-			<?php echo CHtml::ajaxButton ("Recuperar Contraseña", CController::createUrl('site/recoveryPassword'), array(
-        	'type'=>'POST',
-        	'class' => '',
-        	'data'=> 'js:$("#recovery-form").serialize()+ "&ajax=recovery-form"',
-        	'success'=>'js:function(response){
-        
+				<?php echo CHtml::ajaxButton ("Recuperar Contraseña", CController::createUrl('site/recoveryPassword'), array(
+					'type'=>'POST',
+					'class' => uniqid(),
+					'id'=> 'ajax-button'.uniqid(),
+					'data'=> 'js:$("#recovery-form").serialize()+ "&ajax=recovery-form"',
+					'success'=>'js:function(response){
+								if(response == "404"){
+											
+										$(".infodialog3").removeClass("infodialog3").addClass("infodialog3error");
+					        			$(".infodialog3error").css("visibility", "visible");
+					        			$(".infodialog3error").find("p").text("No exite registro con ese email");
+					         
+								}
+								else{
 
-        	}'
-        	)); ?>
+								
+								alert("Email enviado con exito");
+								location.reload();
+								$(".infodialog3error").removeClass("infodialog3error").addClass("infodialog3");
+
+								}
+
+					}',
+					)); ?>
 			</div>
 
 		<?php $this->endWidget(); ?>
