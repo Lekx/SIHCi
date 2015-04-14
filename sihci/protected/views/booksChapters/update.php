@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List BooksChapters', 'url'=>array('index')),
-	array('label'=>'Create BooksChapters', 'url'=>array('create')),
-	array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage BooksChapters', 'url'=>array('admin')),
+	array('label'=>'Listar Capitulos', 'url'=>array('index')),
+	array('label'=>'Crear Capitulos', 'url'=>array('create')),
+	array('label'=>'Ver Capitulos', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administar Capitulos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update BooksChapters <?php echo $model->id; ?></h1>
+<h1>Actualizar Capitulos <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'modelAuthors'=>$modelAuthors)); ?>

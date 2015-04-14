@@ -76,23 +76,22 @@ class DirectedThesisController extends Controller
             $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
              
-            if($model->validate())
-            {
-                if($model->path != '')
-                {
+            if($model->validate()){
+
+                if($model->path != ''){
                     
-                    if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/'))
-                    {
+                    if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/')){
+
                             mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/', 0777, true);
                             $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-                            $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();   
+                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();   
                             
                             if($model->save())
                                 $this->redirect(array('view','id'=>$model->id));
                 } else {
 
                             $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-                            $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
+                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
                     
                             if($model->save()){  
                                 $this->redirect(array('view','id'=>$model->id));
@@ -100,9 +99,9 @@ class DirectedThesisController extends Controller
                    
                         }
 
-                }else{
+                } else {
                    
-                            $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
+                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
                     
                             if($model->save()){
                                  $this->redirect(array('view','id'=>$model->id));
@@ -139,7 +138,7 @@ class DirectedThesisController extends Controller
             if($model->path != ''){
                 
                 $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-               $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
+               $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
                 
                 
                 
@@ -148,7 +147,7 @@ class DirectedThesisController extends Controller
                 }
             }else{
 
-                  $model->path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
+                  $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
                 if($model->save()){
                 $this->redirect(array('view','id'=>$model->id));
              }

@@ -63,6 +63,7 @@ class BooksChaptersController extends Controller
 	public function actionCreate()
     {
         $model=new BooksChapters;
+        $modelAuthors=new BooksChaptersAuthors;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -82,29 +83,49 @@ class BooksChaptersController extends Controller
 	                if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/'))
 	                {
 	                  	 mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
-	                   
-	               
+	                   	               
 		                   $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
-		                   $model->url_doc = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();   
+		                   $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();    
 	                 
-			               if($model->save())
-			                  	$this->redirect(array('view','id'=>$model->id));
-	   
+			               if($model->save()){
+			               	$modelAuthors->id_books_chapters = $model->id;
+			               	$modelAuthors->names = $modelAuthors->names;
+			               	$modelAuthors->last_name1 = $modelAuthors->last_name1;
+			               	$modelAuthors->last_name2 = $modelAuthors->last_name2;
+			               	$modelAuthors->position = $modelAuthors->position;
+                            $modelAuthors->save();
+			               	$this->redirect(array('view','id'=>$model->id));
+			               }
+			   
                 } else {
 
 		                   	$model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
-		                    $model->url_doc = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();   
-                			if($model->save())
-                  				  $this->redirect(array('view','id'=>$model->id));                   
+		                    $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();    
+                			if($model->save()){
+                			$modelAuthors->id_books_chapters = $model->id;
+			               	$modelAuthors->names = $modelAuthors->names;
+			               	$modelAuthors->last_name1 = $modelAuthors->last_name1;
+			               	$modelAuthors->last_name2 = $modelAuthors->last_name2;
+			               	$modelAuthors->position = $modelAuthors->position;
+                            $modelAuthors->save();
+                			$this->redirect(array('view','id'=>$model->id)); 
+                			}
+                  				                    
                          }
                    
                 }else{
                                    
-                   	$model->url_doc = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();
+                   	$model->$model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
            
 
                     if($model->save()){
-                        $this->redirect(array('view','id'=>$model->id));
+                    		$modelAuthors->id_books_chapters = $model->id;
+			               	$modelAuthors->names = $modelAuthors->names;
+			               	$modelAuthors->last_name1 = $modelAuthors->last_name1;
+			               	$modelAuthors->last_name2 = $modelAuthors->last_name2;
+			               	$modelAuthors->position = $modelAuthors->position;
+                            $modelAuthors->save();
+                        	$this->redirect(array('view','id'=>$model->id));
                    }
                 }
 
@@ -112,7 +133,7 @@ class BooksChaptersController extends Controller
         }
 
         $this->render('create',array(
-            'model'=>$model,
+            'model'=>$model,'modelAuthors'=>$modelAuthors,
         ));
     }
 	/**
@@ -120,25 +141,53 @@ class BooksChaptersController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
+	 public function actionUpdate($id)
+    {
+        $model=$this->loadModel($id);
+        $modelAuthors=BooksChaptersAuthors::model()->findByPk($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['BooksChapters']))
-		{
-			$model->attributes=$_POST['BooksChapters'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+        // Uncomment the following line if AJAX validation is needed
+        //$this->performAjaxValidation($model); 
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
+        if(isset($_POST['BooksChapters']))
+        {
+	            $model->attributes=$_POST['BooksChapters'];
+	            $modelAuthors->id_books_chapters = $model->id;
+	            $model->path = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
 
+            if($model->validate()){
+            
+
+           	if($model->url_doc != ''){
+                
+	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->title.'.'.$model->url_doc->getExtensionName());
+	               $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
+                
+                
+                
+            if($model->save()){
+            		
+                	$modelAuthors->save();
+                    $this->redirect(array('view','id'=>$model->id));
+                }
+            }else{
+
+                  	$model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();
+             	if($model->save()){
+             			
+                		$modelAuthors->save();
+                		$this->redirect(array('view','id'=>$model->id));
+            		 }
+          		 }
+              
+            }//End validate 
+        }
+
+        $this->render('update',array(
+            'model'=>$model,'modelAuthors'=>$modelAuthors,
+        ));
+    }
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -147,6 +196,7 @@ class BooksChaptersController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -189,6 +239,7 @@ class BooksChaptersController extends Controller
 	public function loadModel($id)
 	{
 		$model=BooksChapters::model()->findByPk($id);
+
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

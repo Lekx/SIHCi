@@ -18,7 +18,7 @@
     
    
 	<p class="note">Los campos con<span class="required">*</span> son necesarios.</p>
-
+    
 	<?php echo $form->errorSummary($model); ?>
     
 	<div class="row">
@@ -35,6 +35,11 @@
 		    'model' => $model,
 		    'language'=> 'es',
 		    'attribute' => 'conclusion_date',
+		    'options' => array(
+			     		'changeMonth'=>false, //cambiar por Mes
+			     		'changeYear'=>false, //cambiar por Año
+			    			'maxDate' => 'now',
+		     	),
 		    'htmlOptions' => array(
 		    		'size' => '10',         
 		        	'maxlength' => '10', 
@@ -54,11 +59,6 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'path'); ?>
 		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100)); ?>
-
-
-	 <a href= "http://www.google.com"target="_blank" >
-		<img src="C:\xampp\htdocs\SIHCi\sihci\users">
-	</a> 
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
@@ -388,9 +388,18 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+		<input type="submit" onClick="validationFrom()" value="Guardar">
         <input type='reset' onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
         <?php echo CHtml::link('Cancelar', array('directedthesis/admin'))?>
+
+        <script>
+		   
+			function validationFrom()
+			 {
+			    alert("Registro realizado con éxito");
+			    return true;
+			 } 
+        </script>
 
 	</div>
 

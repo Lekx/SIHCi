@@ -38,6 +38,11 @@
 		    'model' => $model,
 		    'language'=> 'es',
 		    'attribute' => 'publishing_year',
+		    'options' => array(
+			     		'changeMonth'=>true, //cambiar por Mes
+			     		'changeYear'=>true, //cambiar por Año
+			     		'maxDate' => 'now',
+			     		),
 		    'htmlOptions' => array(
 		    		'size' => '10',         
 		        	'maxlength' => '10', 
@@ -346,8 +351,32 @@
         <?php echo $form->error($model,'url_doc'); ?>
     </div>
 
+    <div class="row">
+		<?php echo $form->labelEx($modelAuthors,'names'); ?>
+		<?php echo $form->textField($modelAuthors,'names',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
+		<?php echo $form->error($modelAuthors,'names'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($modelAuthors,'last_name1'); ?>
+		<?php echo $form->textField($modelAuthors,'last_name1',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
+		<?php echo $form->error($modelAuthors,'last_name1'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($modelAuthors,'last_name2'); ?>
+		<?php echo $form->textField($modelAuthors,'last_name2',array('size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
+		<?php echo $form->error($modelAuthors,'last_name2'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($modelAuthors,'position'); ?>
+		<?php echo $form->textField($modelAuthors,'position',array('placeholder'=>'posición')); ?>
+		<?php echo $form->error($modelAuthors,'position'); ?>
+	</div>
+
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar' && $modelAuthors->isNewRecord ? 'Guardar' : 'Guardar'); ?>
 		<input type="reset" onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
 		 <?php echo CHtml::link('Cancelar',array('booksChapters/admin'))?>
 	</div>

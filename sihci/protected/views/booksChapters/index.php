@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create BooksChapters', 'url'=>array('create')),
-	array('label'=>'Manage BooksChapters', 'url'=>array('admin')),
+	array('label'=>'Crear Capitulo', 'url'=>array('create')),
+	array('label'=>'Administrar Capitulo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Books Chapters</h1>
+<h1>Capitulos de Libros</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

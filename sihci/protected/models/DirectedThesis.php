@@ -51,6 +51,7 @@ class DirectedThesis extends CActiveRecord
 				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
 			       'maxSize'=>array(1204 * 2000),
 			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
+			array('conclusion_date','compare','compareValue' => date('d/m/Y'),'operator'=>'<='),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, title, conclusion_date, author, path, grade, sector, organization, second_level, area, discipline, subdiscipline, creation_date', 'safe', 'on'=>'search'),
@@ -130,6 +131,9 @@ class DirectedThesis extends CActiveRecord
 		));
 	}
 
+	public function direccionArchivos(){
+                return $model->path;
+    }
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

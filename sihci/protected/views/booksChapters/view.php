@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List BooksChapters', 'url'=>array('index')),
-	array('label'=>'Create BooksChapters', 'url'=>array('create')),
-	array('label'=>'Update BooksChapters', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete BooksChapters', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage BooksChapters', 'url'=>array('admin')),
+	array('label'=>'Listar Capitulo', 'url'=>array('index')),
+	array('label'=>'Crear Capitulo', 'url'=>array('create')),
+	array('label'=>'Actualizar Capitulo', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Capitulo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Estas seguro de eliminar este registro?')),
+	array('label'=>'Administrar Capitulo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View BooksChapters #<?php echo $model->id; ?></h1>
+<h1>Ver Capitulos<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -36,6 +36,15 @@ $this->menu=array(
 		'discipline',
 		'subdiscipline',
 		//'creation_date',
-		'url_doc',
+		array(
+			'label'=>'Archivo',
+			'type'=>'raw',
+			'value'=>CHtml::link('Ver archivo',Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro_'.$model->chapter_title, array("target"=>"_blank")),
+			),
+		'names',
+		'last_name1',
+		'last_name2',
+		'position',
+		//'url_doc',
 	),
 )); ?>
