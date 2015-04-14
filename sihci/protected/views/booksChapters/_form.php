@@ -1,13 +1,13 @@
 <?php
-/* @var $this DirectedThesisController */
-/* @var $model DirectedThesis */
+/* @var $this BooksChaptersController */
+/* @var $model BooksChapters */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'directed-thesis-form',
+	'id'=>'books-chapters-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -15,120 +15,78 @@
 	'enableAjaxValidation'=>false,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
-    
-   
-	<p class="note">Los campos con<span class="required">*</span> son necesarios.</p>
-    
+
+	<p class="note">Los campos con <span class="required">*</span> son necesarios.</p>
 	<?php echo $form->errorSummary($model); ?>
-    
+
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Título')); ?>
-		<?php echo $form->error($model,'title'); ?>
+		<?php echo $form->labelEx($model,'chapter_title'); ?>
+		<?php echo $form->textField($model,'chapter_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Capítulo de libro')); ?>
+		<?php echo $form->error($model,'chapter_title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'conclusion_date'); ?>
-		 
+		<?php echo $form->labelEx($model,'book_title'); ?>
+		<?php echo $form->textField($model,'book_title',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Titulo de libro')); ?>
+		<?php echo $form->error($model,'book_title'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'publishing_year'); ?>
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
 		    'language'=> 'es',
-		    'attribute' => 'conclusion_date',
+		    'attribute' => 'publishing_year',
 		    'options' => array(
-			     		'changeMonth'=>false, //cambiar por Mes
-			     		'changeYear'=>false, //cambiar por Año
-			    			'maxDate' => 'now',
-		     	),
+			     		'changeMonth'=>true, //cambiar por Mes
+			     		'changeYear'=>true, //cambiar por Año
+			     		'maxDate' => 'now',
+			     		),
 		    'htmlOptions' => array(
 		    		'size' => '10',         
 		        	'maxlength' => '10', 
-		        	'placeholder'=>"Fecha de Conclusion"   
+		        	'placeholder'=>"Año de publicación"   
 		    ),
 		));
 		?>
-		<?php echo $form->error($model,'conclusion_date'); ?>
+		<?php echo $form->error($model,'publishing_year'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'author'); ?>
-		<?php echo $form->textField($model,'author',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Autor')); ?>
-		<?php echo $form->error($model,'author'); ?>
+		<?php echo $form->labelEx($model,'publishers'); ?>
+		<?php echo $form->textField($model,'publishers',array('size'=>60,'maxlength'=>255, 'placeholder'=>'Editores')); ?>
+		<?php echo $form->error($model,'publishers'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'path'); ?>
-		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'path'); ?>
+		<?php echo $form->labelEx($model,'editorial'); ?>
+		<?php echo $form->textField($model,'editorial',array('size'=>45,'maxlength'=>45,'placeholder'=>'Editorial')); ?>
+		<?php echo $form->error($model,'editorial'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'grade'); ?>
-		<?php echo $form->textField($model,'grade',array('size'=>45,'maxlength'=>45,'placeholder'=>'Grado academico')); ?>
-		<?php echo $form->error($model,'grade'); ?>
+		<?php echo $form->labelEx($model,'volume'); ?>
+		<?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45,'placeholder'=>'No. Volumen')); ?>
+		<?php echo $form->error($model,'volume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sector'); ?>
-		<?php echo $form->dropDownList($model,'sector',array(''=>'','No especificado'=>'No especificado','Instituciones del sector gobierno federal centralizado'=>'Instituciones del sector gobierno federal centralizado',
-			                                                 'Instituciones del sector entidades paraestatales'=>'Instituciones del sector entidades paraestatales','Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
-			                                                 'Instituciones del sector de educacion superior publicas'=>'Instituciones del sector de educacion superior publicas','Instituciones del sector de educacion superior privadas'=>'Instituciones del sector de educacion superior privadas',
-			                                                 'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)','Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
-			                                                 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras','consultoras'=>'consultoras','Gobierno municipal'=>'Gobierno municipal','Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
-			                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación')); ?>
-		<?php echo $form->error($model,'sector'); ?>
+		<?php echo $form->labelEx($model,'pages'); ?>
+		<?php echo $form->textField($model,'pages',array('placeholder'=>'No. paginas')); ?>
+		<?php echo $form->error($model,'pages'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'organization'); ?>
-		<?php echo $form->dropDownList($model,'organization',array(''=>'','BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA'=>'BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA','UNIVERSIDAD ESTATAL DE SONORA'=>'UNIVERSIDAD ESTATAL DE SONORA','CENTRO DE INVESTIGACIONES BIOLOGICAS'=>'CENTRO DE INVESTIGACIONES BIOLOGICAS',
-			                                                       'CENTRO DE BIOTECNOLOGIA GENOMICA IPN'=>'CENTRO DE BIOTECNOLOGIA GENOMICA IPN','CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN'=>'CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN','TECNOLOGICO NACIONAL DE MEXICO'=>'TECNOLOGICO NACIONAL DE MEXICO',
-			                                                       'ESCUELA NORMAL DE SINALOA'=>'ESCUELA NORMAL DE SINALOA','INSTITUTO POLITECNICO NACIONAL'=>'INSTITUTO POLITECNICO NACIONAL','INSTITUTO TECNOLOGICO AGROPECUARIO'=>'INSTITUTO TECNOLOGICO AGROPECUARIO','INSTITUTO TECNOLOGICO DE SONORA'=>'INSTITUTO TECNOLOGICO DE SONORA',
-			                                                       'INSTITUTO TECNOLOGICO DEL MAR'=>'INSTITUTO TECNOLOGICO DEL MAR','TECNOLOGICO DE ESTUDIOS SUPERIORES DE ECATEPEC'=>'TECNOLOGICO DE ESTUDIOS SUPERIORES DE ECATEPEC','UNIVERSIDAD AUTONOMA AGRARIA ANTONIO NARRO'=>'UNIVERSIDAD AUTONOMA AGRARIA ANTONIO NARRO',
-			                                                       'UNIVERSIDAD AUTONOMA BENITO JUAREZ DE OAXACA'=>'UNIVERSIDAD AUTONOMA BENITO JUAREZ DE OAXACA','UNIVERSIDAD AUTONOMA DE AGUASCALIENTES'=>'UNIVERSIDAD AUTONOMA DE AGUASCALIENTES','UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA'=>'UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA',
-			                                                       'UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA SUR'=>'UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA SUR','UNIVERSIDAD AUTONOMA DE CAMPECHE'=>'UNIVERSIDAD AUTONOMA DE CAMPECHE','UNIVERSIDAD AUTONOMA DE CHAPINGO'=>'UNIVERSIDAD AUTONOMA DE CHAPINGO',
-			                                                       'UNIVERSIDAD AUTONOMA DE CHIAPAS'=>'UNIVERSIDAD AUTONOMA DE CHIAPAS','UNIVERSIDAD AUTONOMA DE CHIHUAHUA'=>'UNIVERSIDAD AUTONOMA DE CHIHUAHUA','UNIVERSIDAD AUTONOMA DE COAHUILA'=>'UNIVERSIDAD AUTONOMA DE COAHUILA','UNIVERSIDAD AUTONOMA DEL ESTADO DE HIDALGO'=>'UNIVERSIDAD AUTONOMA DEL ESTADO DE HIDALGO',
-			                                                       'UNIVERSIDAD AUTONOMA DE NAYARIT'=>'UNIVERSIDAD AUTONOMA DE NAYARIT','UNIVERSIDAD AUTONOMA DE NUEVO LEON'=>'UNIVERSIDAD AUTONOMA DE NUEVO LEON','UNIVERSIDAD AUTONOMA DE QUERETARO'=>'UNIVERSIDAD AUTONOMA DE QUERETARO','UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI'=>'UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI',
-			                                                       'UNIVERSIDAD AUTONOMA DE SINALOA'=>'UNIVERSIDAD AUTONOMA DE SINALOA','UNIVERSIDAD AUTONOMA DE TAMAULIPAS'=>'UNIVERSIDAD AUTONOMA DE TAMAULIPAS','UNIVERSIDAD AUTONOMA DE TLAXCALA'=>'UNIVERSIDAD AUTONOMA DE TLAXCALA','UNIVERSIDAD AUTONOMA DE YUCATAN'=>'UNIVERSIDAD AUTONOMA DE YUCATAN',
-			                                                       'UNIVERSIDAD AUTONOMA DE ZACATECAS'=>'UNIVERSIDAD AUTONOMA DE ZACATECAS','UNIVERSIDAD AUTONOMA DEL CARMEN'=>'UNIVERSIDAD AUTONOMA DEL CARMEN','UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO'=>'UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO','UNIVERSIDAD AUTONOMA DEL ESTADO DE MORELOS'=>'UNIVERSIDAD AUTONOMA DEL ESTADO DE MORELOS',
-			                                                       'UNIVERSIDAD AUTONOMA METROPOLITANA'=>'UNIVERSIDAD AUTONOMA METROPOLITANA','UNIVERSIDAD DE COLIMA'=>'UNIVERSIDAD DE COLIMA','UNIVERSIDAD DE GUADALAJARA'=>'UNIVERSIDAD DE GUADALAJARA','UNIVERSIDAD DE GUANAJUATO'=>'UNIVERSIDAD DE GUANAJUATO','UNIVERSIDAD DE QUINTANA ROO'=>'UNIVERSIDAD DE QUINTANA ROO',
-			                                                       'UNIVERSIDAD DE SONORA'=>'UNIVERSIDAD DE SONORA','UNIVERSIDAD JUAREZ DEL ESTADO DE DURANGO'=>'UNIVERSIDAD JUAREZ DEL ESTADO DE DURANGO','UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO'=>'UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO','UNIVERSIDAD MADERO'=>'UNIVERSIDAD MADERO',
-			                                                       'UNIVERSIDAD MICHOACANA DE SAN NICOLAS DE HIDALGO'=>'UNIVERSIDAD MICHOACANA DE SAN NICOLAS DE HIDALGO','UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO'=>'UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO','UNIVERSIDAD PEDAGOGICA NACIONAL'=>'UNIVERSIDAD PEDAGOGICA NACIONAL','UNIVERSIDAD VERACRUZANA'=>'UNIVERSIDAD VERACRUZANA',
-			                                                       'UNIVERSIDAD AUTONOMA DE CIUDAD JUAREZ'=>'UNIVERSIDAD AUTONOMA DE CIUDAD JUAREZ','UNIVERSIDAD AUTONOMA DE GUERRERO'=>'UNIVERSIDAD AUTONOMA DE GUERRERO','UNIVERSIDAD TECNOLOGICA DE AGUASCALIENTES'=>'UNIVERSIDAD TECNOLOGICA DE AGUASCALIENTES','UNIVERSIDAD TECNOLOGICA DE IZUCAR DE MATAMOROS'=>'UNIVERSIDAD TECNOLOGICA DE IZUCAR DE MATAMOROS',
-			                                                       'UNIVERSIDAD TECNOLOGICA DE PUEBLA'=>'UNIVERSIDAD TECNOLOGICA DE PUEBLA','UNIVERSIDAD TECNOLOGICA DE TABASCO'=>'UNIVERSIDAD TECNOLOGICA DE TABASCO','UNIVERSIDAD TECNOLOGICA DE TECAMACHALCO'=>'UNIVERSIDAD TECNOLOGICA DE TECAMACHALCO','UNIVERSIDAD TECNOLOGICA DE TULA'=>'UNIVERSIDAD TECNOLOGICA DE TULA',
-			                                                       'UNIVERSIDAD TECNOLOGICA DE TULANCINGO'=>'UNIVERSIDAD TECNOLOGICA DE TULANCINGO','UNIVERSIDAD TECNOLOGICA DE LA HUASTECA HIDALGUENSE'=>'UNIVERSIDAD TECNOLOGICA DE LA HUASTECA HIDALGUENSE','UNIVERSIDAD TECNOLOGICA DE LA MIXTECA'=>'UNIVERSIDAD TECNOLOGICA DE LA MIXTECA',
-			                                                       'UNIVERSIDAD TECNOLOGICA DEL VALLE DEL MEZQUITAL'=>'UNIVERSIDAD TECNOLOGICA DEL VALLE DEL MEZQUITAL','UNIVERSIDAD DE CIENCIAS Y ARTES DE CHIAPAS'=>'UNIVERSIDAD DE CIENCIAS Y ARTES DE CHIAPAS','UNIVERSIDAD DE OCCIDENTE'=>'UNIVERSIDAD DE OCCIDENTE','UNIVERSIDAD DEL MAR'=>'UNIVERSIDAD DEL MAR',
-			                                                       'CENTRO DE ENSENANZA TECNICA Y SUPERIOR UNIVERSIDAD'=>'CENTRO DE ENSENANZA TECNICA Y SUPERIOR UNIVERSIDAD','ESCUELA NORMAL SUPERIOR DEL ESTADO DE QUERETARO'=>'ESCUELA NORMAL SUPERIOR DEL ESTADO DE QUERETARO','UNIVERSIDAD TECNOLOGICA DE LA SIERRA HIDALGUENSE'=>'UNIVERSIDAD TECNOLOGICA DE LA SIERRA HIDALGUENSE',
-			                                                       'DIRECCION GENERAL DE EDUCACION EN CIENCIA Y TECNOLOGIA DEL MAR'=>'DIRECCION GENERAL DE EDUCACION EN CIENCIA Y TECNOLOGIA DEL MAR','UNIVERSIDAD TECNOLOGICA DE TULATEPEJI'=>'UNIVERSIDAD TECNOLOGICA DE TULATEPEJI','UNIVERSIDAD AUTONOMA DE HIDALGO'=>'UNIVERSIDAD AUTONOMA DE HIDALGO',
-			                                                       'ATENEO FILOSOFICO AC'=>'ATENEO FILOSOFICO AC','CENTRO DE ENSENANZA TECNICA INDUSTRIAL'=>'CENTRO DE ENSENANZA TECNICA INDUSTRIAL','UNIVERSIDAD POPULAR DE LA CHONTALPA'=>'UNIVERSIDAD POPULAR DE LA CHONTALPA','UNIVERSIDAD TECNOLOGICA FIDEL VELAZQUEZ'=>'UNIVERSIDAD TECNOLOGICA FIDEL VELAZQUEZ',
-			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 16'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 16','INSTITUTO TECNOLOGICO AGROPECUARIO DE OAXACA NO 23'=>'INSTITUTO TECNOLOGICO AGROPECUARIO DE OAXACA NO 23','INSTITUTO TECNOLOGICO AGROPECUARIO NO 2 CONKAL YUCATAN'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 2 CONKAL YUCATAN',
-			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 1'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 1','INSTITUTO TECNOLOGICO DEL MAR NO 2 MAZATLAN'=>'INSTITUTO TECNOLOGICO DEL MAR NO 2 MAZATLAN','UNIVERSIDAD TECNOLOGICA DE TORREON'=>'UNIVERSIDAD TECNOLOGICA DE TORREON','UNIVERSIDAD TECNOLOGICA DE COAHUILA'=>'UNIVERSIDAD TECNOLOGICA DE COAHUILA',
-			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 28'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 28','INSTITUTO TECNOLOGICO SUPERIOR DE XALAPA'=>'INSTITUTO TECNOLOGICO SUPERIOR DE XALAPA','INSTITUTO TECNOLOGICO AGROPECUARIO NO 19'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 19','INSTITUTO TECNOLOGICO AGROPECUARIO NO 21'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 21',
-			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 4'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 4','INSTITUTO TECNOLOGICO AGROPECUARIO NO 5 DE CAMPECHE'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 5 DE CAMPECHE','INSTITUTO TECNOLOGICO FORESTAL'=>'INSTITUTO TECNOLOGICO FORESTAL','UNIVERSIDAD DE LA SIERRA'=>'UNIVERSIDAD DE LA SIERRA',
-			                                                       'UNIVERSIDAD MARISTA'=>'UNIVERSIDAD MARISTA','UNIVERSIDAD TECNOLOGICA DE JALISCO'=>'UNIVERSIDAD TECNOLOGICA DE JALISCO','CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NO 8 "RAFAEL DONDE"'=>'CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NO 8 "RAFAEL DONDE"',
-			                                                       'CENTRO DE GRADUADOS E INNVESTIGACION DEL INSTITUTO TECNOLOGICO DE MORELIA'=>'CENTRO DE GRADUADOS E INNVESTIGACION DEL INSTITUTO TECNOLOGICO DE MORELIA','CENTRO DE GRADUADOS E INVESTIGACION DEL INSTITUTO TECNOLOGICO DE LA LAGUNA'=>'CENTRO DE GRADUADOS E INVESTIGACION DEL INSTITUTO TECNOLOGICO DE LA LAGUNA',
-			                                                       'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM'=>'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM','COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN'=>'COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN','UNIVERSIDAD DEL ISTMO'=>'UNIVERSIDAD DEL ISTMO',
-			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN','INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX','INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA',
-			                                                       'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'=>'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX')); ?>
-		<?php echo $form->error($model,'organization'); ?>
+		<?php echo $form->labelEx($model,'citations'); ?>
+		<?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas')); ?>
+		<?php echo $form->error($model,'citations'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'second_level'); ?>
-		<?php echo $form->dropDownList($model,'second_level',array(''=>'','CENTRO UNIVERSITARIO DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS'=>'CENTRO UNIVERSITARIO DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS','CENTRO UNIVERSITARIO DE CIENCIAS DE LA SALUD'=>'CENTRO UNIVERSITARIO DE CIENCIAS DE LA SALUD','CENTRO UNIVERSITARIO DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS'=>'CENTRO UNIVERSITARIO DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS',
-			                                                    'CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS E INGENIERIA'=>'CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS E INGENIERIA','CENTRO UNIVERSITARIO DE LA COSTA SUR'=>'CENTRO UNIVERSITARIO DE LA COSTA SUR','CENTRO UNIVERSITARIO DE ARTE, ARQUITECTURA Y DISEÑO'=>'CENTRO UNIVERSITARIO DE ARTE, ARQUITECTURA Y DISEÑO','CENTRO UNIVERSITARIO DE CIENCIAS SOCIALES Y HUMANIDADES.'=>'CENTRO UNIVERSITARIO DE CIENCIAS SOCIALES Y HUMANIDADES.',
-			                                                    'CENTRO UNIVERSITARIO DE LA CIENEGA'=>'CENTRO UNIVERSITARIO DE LA CIENEGA','CENTRO UNIVERSITARIO DE LA COSTA.'=>'CENTRO UNIVERSITARIO DE LA COSTA.','CENTRO UNIVERSITARIO DEL SUR.'=>'CENTRO UNIVERSITARIO DEL SUR.','EL COLEGIO DE JALISCO'=>'EL COLEGIO DE JALISCO','DEPARTAMENTO DE GEOGRAFIA'=>'DEPARTAMENTO DE GEOGRAFIA','COORDINACION DE EDUCACION CONTINUA, ABIERTA Y A DISTANCIA'=>'COORDINACION DE EDUCACION CONTINUA, ABIERTA Y A DISTANCIA',
-			                                                    'CENTRO UNIVERSITARIO DE LOS ALTOS'=>'CENTRO UNIVERSITARIO DE LOS ALTOS','CENTRO DE INVESTIGACIONES EDUCATIVAS'=>'CENTRO DE INVESTIGACIONES EDUCATIVAS','FACULTAD DE INGENIERIA'=>'FACULTAD DE INGENIERIA','FACULTAD DE MEDICINA'=>'FACULTAD DE MEDICINA','INSTITUTO MANANTLAN DE ECOLOGIA Y CONSERVACION'=>'INSTITUTO MANANTLAN DE ECOLOGIA Y CONSERVACION','LABORATORIO NATURAL LAS JOYAS DE LA SIERRA'=>'LABORATORIO NATURAL LAS JOYAS DE LA SIERRA',
-			                                                    'CENTRO DE INVESTIGACIONES SOBRE LOS MOVIMIENTOS SOCIALES'=>'CENTRO DE INVESTIGACIONES SOBRE LOS MOVIMIENTOS SOCIALES','COORDINACION GENERAL DE SISTEMAS PARA LA INOVACION DEL APRENDIZAJE'=>'COORDINACION GENERAL DE SISTEMAS PARA LA INOVACION DEL APRENDIZAJE','FACULTAD DE CIENCIAS BIOLOGICAS'=>'FACULTAD DE CIENCIAS BIOLOGICAS','ESCUELA PREPARATORIA # 2'=>'ESCUELA PREPARATORIA # 2',
-			                                                    'CENTRO UNIVERSITARIO DE LOS LAGOS'=>'CENTRO UNIVERSITARIO DE LOS LAGOS','FACULTAD DE DERECHO'=>'FACULTAD DE DERECHO','INSTITUTO EN MADERA CELULOSA Y PAPEL ING. KARL A. GRELLMANN'=>'INSTITUTO EN MADERA CELULOSA Y PAPEL ING. KARL A. GRELLMANN','ESCUELA DE GRADUADOS'=>'ESCUELA DE GRADUADOS','FACULTAD DE MEDICINA, VETERINARIA Y ZOOTECNIA'=>'FACULTAD DE MEDICINA, VETERINARIA Y ZOOTECNIA',
-			                                                    'INSTITUTO DE BOTANICA'=>'INSTITUTO DE BOTANICA','INSTITUTO DE PATOLOGIA INFECCIOSA Y EXPERIMENTAL'=>'INSTITUTO DE PATOLOGIA INFECCIOSA Y EXPERIMENTAL','INSTITUTO REGIONAL DE INVESTIGACION EN SALUD PUBLICA'=>'INSTITUTO REGIONAL DE INVESTIGACION EN SALUD PUBLICA','FACULTAD DE AGRONOMIA'=>'FACULTAD DE AGRONOMIA','FACULTAD DE CIENCIAS'=>'FACULTAD DE CIENCIAS','FACULTAD DE FILOSOFIA Y LETRAS'=>'FACULTAD DE FILOSOFIA Y LETRAS',
-			                                                    'FACULTAD DE GEOGRAFIA'=>'FACULTAD DE GEOGRAFIA','FACULTAD DE CIENCIAS QUIMICAS'=>'FACULTAD DE CIENCIAS QUIMICAS','FACULTAD DE ECONOMIA'=>'FACULTAD DE ECONOMIA','CENTRO DE ESTUDIOS DEL PACIFICO'=>'CENTRO DE ESTUDIOS DEL PACIFICO','INSTITUTO DE ESTUDIOS SOCIALES'=>'INSTITUTO DE ESTUDIOS SOCIALES','FACULTAD DE PSICOLOGIA'=>'FACULTAD DE PSICOLOGIA','INSTITUTO DE INVESTIGACIONES JURIDICAS'=>'INSTITUTO DE INVESTIGACIONES JURIDICAS',
-			                                                    'CENTRO DE ESTUDIOS E INVESTIGACIONES EN PSICOLOGIA'=>'CENTRO DE ESTUDIOS E INVESTIGACIONES EN PSICOLOGIA','CENTRO DE ESTUDIOS ESTRATEGICOS PARA EL DESARROLLO'=>'CENTRO DE ESTUDIOS ESTRATEGICOS PARA EL DESARROLLO','CENTRO DE INVESTIGACIONES JURIDICAS'=>'CENTRO DE INVESTIGACIONES JURIDICAS','FACULTAD DE ARQUITECTURA'=>'FACULTAD DE ARQUITECTURA','COORDINACION DE VINCULACION Y TRANSFERENCIA TECNOLOGICA'=>'COORDINACION DE VINCULACION Y TRANSFERENCIA TECNOLOGICA',
-			                                                    'CENTRO DE ESTUDIOS PARA EXTRANJEROS'=>'CENTRO DE ESTUDIOS PARA EXTRANJEROS','FACULTAD DE ODONTOLOGIA'=>'FACULTAD DE ODONTOLOGIA','CENTRO DE ESTUDIOS E INVESTIGACION EN COMPORTAMIENTO'=>'CENTRO DE ESTUDIOS E INVESTIGACION EN COMPORTAMIENTO','FACULTAD DE ODONTOLOGIA'=>'FACULTAD DE ODONTOLOGIA','CENTRO UNIVERSITARIO DE LOS VALLES'=>'CENTRO UNIVERSITARIO DE LOS VALLES','CENTRO UNIVERSITARIO DEL NORTE'=>'CENTRO UNIVERSITARIO DEL NORTE',
-			                                                    'CENTRO UNIVERSITARIO DE LA COSTA'=>'CENTRO UNIVERSITARIO DE LA COSTA','ESCUELA PREPARATORIA DE JALISCO'=>'ESCUELA PREPARATORIA DE JALISCO','CENTRO UNIVERSITARIO DE LA COSTA SUR'=>'CENTRO UNIVERSITARIO DE LA COSTA SUR','PREPARATORIA 4'=>'PREPARATORIA 4','PREPARATORIA # 7'=>'PREPARATORIA # 7','CENTRO VOCACIONAL DE ACTIVIDADES PARA EL DESARROLLO DE LA COMUNIDAD'=>'CENTRO VOCACIONAL DE ACTIVIDADES PARA EL DESARROLLO DE LA COMUNIDAD',
-			                                                    'SISTEMA DE UNIVERSIDAD VIRTUAL'=>'SISTEMA DE UNIVERSIDAD VIRTUAL','SIISTEMA DE EDUCACION MEDIA SUPERIOR'=>'SIISTEMA DE EDUCACION MEDIA SUPERIOR','PROGRAMA UNIVERSITARIO DE LENGUAS EXTRANJERAS'=>'PROGRAMA UNIVERSITARIO DE LENGUAS EXTRANJERAS','COORDINACIÓN GENERAL DE SERVICIOS A UNIVERSITARIOS'=>'COORDINACIÓN GENERAL DE SERVICIOS A UNIVERSITARIOS','ESCUELA PREPARATORIA REGIONAL DE ATOTONILCO'=>'ESCUELA PREPARATORIA REGIONAL DE ATOTONILCO',
-			                                                    'DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA'=>'DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA','UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'=>'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG','COORDINACION DE COOPERACION ACADEMICA UDG'=>'COORDINACION DE COOPERACION ACADEMICA UDG','CENTRO UNIVERSITARIO DE TONALA'=>'CENTRO UNIVERSITARIO DE TONALA','ESCUELA PREPARATORIA DE TONALA NORTE'=>'ESCUELA PREPARATORIA DE TONALA NORTE')); ?>
-		<?php echo $form->error($model,'second_level'); ?>
+		<?php echo $form->labelEx($model,'total_of_authors'); ?>
+		<?php echo $form->textField($model,'total_of_authors',array('placeholder'=>'Total de autores')); ?>
+		<?php echo $form->error($model,'total_of_authors'); ?>
 	</div>
 
 	<div class="row">
@@ -387,20 +345,40 @@
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
 
+	<div class="row">
+        <?php echo $form->labelEx($model,'url_doc'); ?>
+        <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100)); ?>
+        <?php echo $form->error($model,'url_doc'); ?>
+    </div>
+
+    <div class="row">
+		<?php echo $form->labelEx($modelAuthors,'names'); ?>
+		<?php echo $form->textField($modelAuthors,'names',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
+		<?php echo $form->error($modelAuthors,'names'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($modelAuthors,'last_name1'); ?>
+		<?php echo $form->textField($modelAuthors,'last_name1',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
+		<?php echo $form->error($modelAuthors,'last_name1'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($modelAuthors,'last_name2'); ?>
+		<?php echo $form->textField($modelAuthors,'last_name2',array('size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
+		<?php echo $form->error($modelAuthors,'last_name2'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($modelAuthors,'position'); ?>
+		<?php echo $form->textField($modelAuthors,'position',array('placeholder'=>'posición')); ?>
+		<?php echo $form->error($modelAuthors,'position'); ?>
+	</div>
+
 	<div class="row buttons">
-		<input type="submit" onClick="validationFrom()" value="Guardar">
-        <input type='reset' onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
-        <?php echo CHtml::link('Cancelar', array('directedthesis/admin'))?>
-
-        <script>
-		   
-			function validationFrom()
-			 {
-			    alert("Registro realizado con éxito");
-			    return true;
-			 } 
-        </script>
-
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar' && $modelAuthors->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+		<input type="reset" onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
+		 <?php echo CHtml::link('Cancelar',array('booksChapters/admin'))?>
 	</div>
 
 <?php $this->endWidget(); ?>

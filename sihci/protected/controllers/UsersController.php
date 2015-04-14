@@ -49,7 +49,7 @@ class UsersController extends Controller {
 					} else {
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
-						$model->status = 0;
+						$model->status = 'inactivo';
 						$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s') . $model->email . rand(1000, 5000))));
 						//if($model->validate())
 						$model->password = sha1(md5(sha1($model->password)));
