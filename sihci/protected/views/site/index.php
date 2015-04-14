@@ -30,7 +30,7 @@
             </div>
             <div class="content1">
                 <div>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/hospitalUnitJimEthicsCommittee/index"><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comités.png" alt=""></a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/hospitalUnitJimEthicsCommittee/index"><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comites.png" alt=""></a>
                     <br>
                     <br>
                     <h5>Cómites</h5>
@@ -54,7 +54,7 @@
                     <h5>Unidad editorial<br><br></h5>
                 </div>
                 <div>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/vinculationWithUniversityInstitutesHospitals/index"><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculaciónUniversidadesInstitutosHospitales.png" alt=""></a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/vinculationWithUniversityInstitutesHospitals/index"><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculacionUniversidadesInstitutosHospitales.png" alt=""></a>
                     <h5>Vinculación con Universidades, Institutos y Hospitales</h5>
                 </div>
             </div>
@@ -169,7 +169,7 @@
                 <div class="opcity"></div>
                 <a href="<?php echo Yii::app()->request->baseUrl; ?>"><img id="logohmeb"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHmeBlanco.png" alt="home"></a>
                 <div class="textfont">
-                    <h2 id="textfont">Sistema de Gestión y administración de Protocolos de Inestigación Médica en el Hospital Civil.</h2>
+                    <h2 id="textfont">Sistema de Gestión y administración de Protocolos de Investigación Médica en el Hospital Civil.</h2>
                 </div>
             </div>
         </section>

@@ -35,6 +35,26 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+
+          <?php
+        $this->widget(
+            'yiiwheels.widgets.formhelpers.WhCountries',
+            array(
+                'name' => 'Addresses[country]',
+                
+                'value' => 'US',
+                'useHelperSelectBox' => true,
+                'pluginOptions' => array(
+                    'country' => 'US',
+                    'language' => 'es_ES',
+                    'flags' => true
+                )
+            )
+        );
+        ?>
+        </div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'zip_code'); ?>
 		<?php echo $form->textField($model,'zip_code',array('placeholder'=>'Código Postal')); ?>
 		<?php echo $form->error($model,'zip_code'); ?>

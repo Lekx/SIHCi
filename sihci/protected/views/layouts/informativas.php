@@ -35,6 +35,7 @@
                 $cs->registerScriptFile($baseUrl . '/js/render.js');
                 $cs->registerScriptFile($baseUrl . '/js/progressUser.js');
                 $cs->registerScriptFile($baseUrl . '/js/searchbar.js');
+                $cs->registerScriptFile($baseUrl . '/js/users.js');
         ?>
         <?php
                 Yii::app()->clientScript->registerScript('helpers', '
@@ -84,8 +85,7 @@
                             </li>
                             <li>
                                 <h6><?php echo CHtml::link('FInEHC', array('finehc/index'));?></h6>
-                                <ul class="cbp-hssubmenu1">
-                                </ul>
+                    
                             </li>
                             <ul>
                             </div>
@@ -140,7 +140,7 @@
                             <div>
                                 <ul class="cbp-hsmenu1">
                                     <li>
-                                        <h6><span>Programas de generación de conocimiento</span></h6>
+                                        <span><h6>Programas de generación de conocimiento</h6></span>
                                         <ul class="cbp-hssubmenu1">
                                             <li><?php echo CHtml::link('Redacción Científicas', array('scientificWriting/index'));?></li>
                                             <li><?php echo CHtml::link('Lineas de generación de conmiento científico', array('generetionOfKnowledgeScientific/index'));?></li>
@@ -179,7 +179,7 @@
                                     <li><span><h6>OPD HCG</h6></span>
                                         <ul class="cbp-hssubmenu1">
                                             <li><?php echo CHtml::link('Direccion General', array('informationGeneralDirection/index'));?></li>
-                                            <li><?php echo CHtml::link('Organigrama', array('Organigrama/index'));?></li>
+                                            <li><?php echo CHtml::link('Organigrama', array('Organigram/index'));?></li>
                                             <li><?php echo CHtml::link('Normatividad de investigación', array('investigationNormative/index'));?></li>
                                             <li><?php echo CHtml::link('Registro RENIECYT', array('registerReniecyt/index'));?></li>
                                             <li><?php echo CHtml::link('Transparencia', array('displayTransparencia/index'));?></li>
@@ -197,13 +197,12 @@
                                         <ul class="cbp-hssubmenu1">
                                             <li><?php echo CHtml::link('Lineas de investigación', array('displayInvestigationLines/index'));?></li>
                                             <li><?php echo CHtml::link('Protocolos patrocinados por la industria Farmacéutica', array('Site/index'));?></li>
-                                            <li><?php echo CHtml::link('Living Labs-Salud', array('livinglabssalud/index'));?></li>
+                                            <li><?php echo CHtml::link('Living Labs-Salud', array('livingLabsSalud/index'));?></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <h6><?php echo CHtml::link('FInEHC', array('finehc/index'));?></h6>
-                                        <ul class="cbp-hssubmenu1">
-                                        </ul>
+                                   
                                     </li>
                                     <ul>
                                     </div>
@@ -258,7 +257,7 @@
                                     <div>
                                         <ul class="cbp-hsmenu1">
                                             <li>
-                                                <h6><span>Programas de generación de conocimiento</span></h6>
+                                              <span><h6>Programas de generación de conocimiento</h6></span>
                                                 <ul class="cbp-hssubmenu1">
                                                     <li><?php echo CHtml::link('Redacción Científicas', array('scientificWriting/index'));?></li>
                                                     <li><?php echo CHtml::link('Lineas de generación de conmiento científico', array('generetionOfKnowledgeScientific/index'));?></li>
@@ -298,7 +297,7 @@
                                             </button>
                                         </div>
                                         <div id="headersearch"><input type="search" id="searchbartop" class="searchBarMain" placeholder="Buscar"></div>
-                                         <div id="searchBarResultstop">estoy bien escondido</div>
+                                         <div id="searchBarResultstop" style="border:1px solid white;padding:5px;">estoy bien escondido</div>
                                         <div id="hsearchbutton">
                                             <button id="" type="button">
                                             <img src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarCh.png" alt="">
@@ -311,19 +310,21 @@
                         <section class="logosection">
                             <div class="logo"><?php echo CHtml::link('<img id="logohme" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHme.png alt="home">', array('site/index'));?></a></div>
                             <div class="logosub"></div>
-                            <div class="logoinfo"><span>Ivestigadores:</span><span>Vidas Cambiadas</span><span>Ivestigaciones</span><span>Libros y Revistas</span></div>
+                            <div class="logoinfo"><span>Investigadores:</span><span>Vidas Cambiadas</span><span>Investigaciones</span><span>Libros y Revistas</span></div>
                             <div class="logonum"><h4>1,456</h4><h4>1,923,456</h4><h4>17,296</h4><h4>3,163</h4></div>
                         </section>
                         <section class="logsection">
                             <div class="login">
                                 <?php
                                 if (Yii::app()->user->isGuest) {
+
                                     echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
-                                    echo 'Ingresar a tu cuenta.</p>';
+                                    echo '<p>Ingresar a tu cuenta.</p>';
+
                                 } else {
-                                    $img = '<img id="logout">';
+                                    $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
                                 //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-                                    echo CHtml::link($img, array('site/logout'));
+                                    echo CHtml::link($img, array('site/index'));
                                     echo '<p id="logoutext">';
                                     echo Yii::app()->user->email;
                                     echo '</p>';
@@ -331,9 +332,26 @@
                                 ?>
                             </div>
                             <div class="singin">
-                                <img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/cuentaCrear.png" alt="">
-                                Crear una cuenta
-                            </div>
+                            <?php
+                               if (Yii::app()->user->isGuest){
+
+                                echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaCrear.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas'));
+                                echo '<p>Crea una cuenta.</p>';
+
+                               }
+                               else{
+
+                                    $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas'));
+                                //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
+                                    echo CHtml::link($img, array('site/logout'));
+                                    echo '<p id="logoutext">';
+                                    echo 'Cerrar Sesion';
+                                    echo '</p>';
+                               }
+                               
+                             ?>
+                             </div>
+    
                             <div class="searchbar">
                                 <button type="button" id="show_hidemenu">
                                 <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuGr.png" alt="">
@@ -345,7 +363,7 @@
                                 Buscar
                                 </button>
                             </div>
-                            <div id="searchBarResults">estoy bien escondido</div>
+                            <div id="searchBarResults" style="border:1px solid white;border-top:0px;padding:5px;">estoy bien escondido</div>
                         </section>
 
                         <?php if (isset($this->breadcrumbs)): ?>
@@ -395,13 +413,12 @@
                                             <ul class="cbp-hssubmenu">
                                                 <li><?php echo CHtml::link('Lineas de investigación', array('displayInvestigationLines/index'));?></li>
                                                 <li><?php echo CHtml::link('Protocolos patrocinados por la industrias Farmacéutica', array('Site/index'));?></li>
-                                                <li><?php echo CHtml::link('Living Labs-Salud', array('livinglabssalud/index'));?></li>
+                                                <li><?php echo CHtml::link('Living Labs-Salud', array('livingLabsSalud/index'));?></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <h6><?php echo CHtml::link('FInEHC', array('finehc/index'));?></h6>
-                                            <ul class="cbp-hssubmenu">
-                                            </ul>
+                              
                                         </li>
                                         <ul>
                                         </div>
@@ -452,7 +469,7 @@
                                         <div>
                                             <ul class="cbp-hsmenu">
                                                 <li>
-                                                    <h6><span>Programas de generación de conocimiento</span></h6>
+                        		                <span><h6>Programas de generación de conocimiento</h6></span>
                                                     <ul class="cbp-hssubmenu">
                                                         <li><?php echo CHtml::link('Redacción Científicas', array('scientificWriting/index'));?></li>
                                                         <li><?php echo CHtml::link('Lineas de generación de conmiento científico', array('generetionOfKnowledgeScientific/index'));?></li>
@@ -489,10 +506,43 @@
                                             <p><a>Condiciones de uso</a> / <a>Aviso de privacidad</a></p>
                                         </div>
                                     </div>
-                                    <div class="loginfot"><img id="logocuentas2"src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/cuentaIngresar.png" alt="">
-                                    Ingresar a tu cuenta</div>
-                                    <div class="singinfot"><img id="logocuentas"src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/cuentaCrear.png" alt="">
-                                    Crear una cuenta</div>
+                                    <div class="loginfot">
+                                       <?php
+                                       if (Yii::app()->user->isGuest) {
+
+                                        echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
+                                        echo 'Ingresar a tu cuenta.</p>';
+
+                                    } else {
+                                        $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
+                                //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
+                                        echo CHtml::link($img, array('site/index'));
+                                        echo '<p id="logoutext">';
+                                        echo Yii::app()->user->email;
+                                        echo '</p>';
+                                    }
+                                    ?>
+                                    </div>
+                                    <div class="singinfot">
+                                        <?php
+                                        if (Yii::app()->user->isGuest){
+
+                                            echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaCrear.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas'));
+                                            echo 'Ingresar a tu cuenta.</p>';
+
+                                        }
+                                        else{
+
+                                            $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas4'));
+                                            //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
+                                            echo CHtml::link($img, array('site/logout'));
+                                            echo '<p id="logoutext">';
+                                            echo 'Cerrar Sesion';
+                                            echo '</p>';
+                                        }
+
+                                        ?>
+                                    </div>
                                 </section>
                             </body>
                         </html>

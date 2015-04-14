@@ -1,4 +1,5 @@
 <div class="loginback">
+<<<<<<< HEAD
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 			'id'=>'login-form',
@@ -75,7 +76,7 @@
                         				
                         			}'
                         			)); ?>
-		
+	
         <div class="">
           <?php echo CHtml::Button('Recuperar Contraseña', array('id'=>'recoveryHome')); ?>
         </div>

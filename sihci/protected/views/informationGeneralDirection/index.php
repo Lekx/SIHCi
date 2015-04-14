@@ -25,7 +25,7 @@ $this->breadcrumbs=array(
 	
 	
 			<span>¿Quiénes somos?</span><br>
-			<span>¿Qué es el Hospital Civil de Guadalajara?</span><br><br>
+			<!--<span>¿Qué es el Hospital Civil de Guadalajara?</span><br><br>-->
 
 		<p>Es un Organismo Público Descentralizado de la administración pública estatal, con personalidad jurídica y
 		patrimonio propios; conformado por dos Unidades Hospitalarias:<p><p>
@@ -53,7 +53,7 @@ $this->breadcrumbs=array(
 			   programas de alto impacto social con Instituciones nacionales e Internacionales reconocidas.</li> 
 			 <li>  Implementación de un sistema de participación activa del usuario externo en los programas asistenciales.</li> 
 		</OL>
-		Ideología Institucional
+		Ideología Institucional<br>
 		Misión
 			<p>Brindar servicios integrales de salud hospitalaria de segundo y tercer nivel, fundamentalmente a la población que
 			no pertenece a ningún régimen de seguridad social, buscando en la prestación de servicios la generación de

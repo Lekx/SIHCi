@@ -127,15 +127,14 @@ div.form .errorSummary
 
 div.form .errorMessage
 {
-	color: red;
-	font-size: 0.9em;
-	margin-left: 120px;
-}
+	padding-left: 9px;
+	font-size: 75%;
 
+}
 div.form .errorSummary p
 {
-	margin: 0;
-	padding: 5px;
+	padding-left: 9px;
+
 }
 
 div.form .errorSummary ul

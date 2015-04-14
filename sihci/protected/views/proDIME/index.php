@@ -24,7 +24,7 @@ $this->breadcrumbs=array(
 	
 		<h2>proDIME</h2>
 		<hr>
-		<img id="udg" src="<?php echo Yii::app()->request->baseUrl."/protected/views/proDIME/img1.jpg"; ?>">	
+		<img id="udg" src="<?php echo Yii::app()->request->baseUrl."/protected/views/proDIME/Img1.jpg"; ?>">	
 		<br>
 		<p>
 			“El OPD Hospital Civil de Guadalajara
@@ -397,6 +397,6 @@ $this->breadcrumbs=array(
 <section class="column-right">
 	<h5>DOCUMENTOS</h5>
 	<h5>DESCARGABLES:</h5>
-		<?php Yii::app()->runController('filesManager/DisplayFiles/section/proDIME'); ?>
+		<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
 </section>

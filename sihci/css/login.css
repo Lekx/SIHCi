@@ -164,6 +164,20 @@
 
 
 }
+.infodialog3error
+{
+    visibility: hidden;
+	width: 190px;
+	height: 50px;
+	color: white;
+	background-color: #F20862;
+    color: white;
+    left: 860px;
+    top: 370px;
+    z-index: 1000;
+    position: absolute;
+
+}
 .infodialog1error
 {
 	visibility: hidden;
@@ -178,7 +192,7 @@
     position: absolute;
 
 }
-.infodialogerror:after ,.infodialog1error:after 
+.infodialogerror:after ,.infodialog1error:after , .infodialog3error:after
 {
 	content:"";
     border-color: transparent #F20862 transparent transparent;
@@ -193,7 +207,6 @@
 }
 .infodialog3
 {
-	
 	width: 190px;
 	height: 50px;
 	color: white;
@@ -234,12 +247,18 @@
 
 .infodialog p , .infodialog1 p , .infodialog3 p
 {
-	padding: 9px;
+	padding-top: 3px;
+	padding-left: 9px;
+	padding-bottom: 3px;
+	padding-right: 5px;
 
 }
-.infodialogerror p, .infodialog1error p
+.infodialogerror p, .infodialog1error p, .infodialog3error p
 {
-	padding: 9px;
+	padding-top: 3px;
+	padding-left: 9px;
+	padding-bottom: 3px;
+	padding-right: 5px;
 	content: "Favor de revisar el si el contendio esta registrado";
 }
 .closelogin , .closerecovery, .closecreate 
