@@ -109,7 +109,7 @@ class Curriculum extends CActiveRecord
 			'native_language' => 'Native Language',
 			'status' => 'Activo',
 			'SNI' => 'Sni',
-			'researcher_title' => 'Researcher Title',
+			'researcher_title' => 'Título de Investigador',
 		);
 	}
 
