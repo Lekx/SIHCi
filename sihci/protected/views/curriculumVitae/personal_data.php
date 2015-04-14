@@ -12,6 +12,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Datos Personales</h1>
+<h4>Datos Personales</h4>
 
 <?php $this->renderPartial('_form_personal_data', array('model'=>$model, 'curriculum'=>$curriculum)); ?>

@@ -19,9 +19,8 @@
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <!-- Load JS -->
         <?php
-        $baseUrl = Yii::app()->baseUrl;
-        $cs = Yii::app()->getClientScript();
-
+                                                                $baseUrl = Yii::app()->baseUrl;
+                                                                $cs = Yii::app()->getClientScript();
         ?>
         <?php Yii::app()->bootstrap->register(); ?>
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
@@ -29,36 +28,89 @@
     <body>
         <div class="main">
             <div class="sysheader">
-                <div class="headerconteiner1"></div>
-                <div class="headerconteinerC"></div>
-                <div class="headerconteinerC"></div>
-                <div class="headerconteinerC"></div>
-                <div class="headerconteinerC"></div>
+                <div class="headerconteiner1">
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHme.png alt="home">', array('site/index'));?>
+                </div>
+                <div class="headerconteinerC">
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/Pcuenta.png alt="home">', array('site/index'));?>
+                    <span>Cuenta</span>
+                </div>
+                <div class="headerconteinerC">
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCV-HC.png alt="home">', array('site/index'));?>
+                    <span>CV-HC</span>
+                </div>
+                <div class="headerconteinerC">
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('site/index'));?>
+                    <span>Evalucación CV</span>
+                </div>
+                <div class="headerconteinerC">
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array('site/index'));?>
+                    <span>Proyectos</span>
+                </div>
                 <div class="headerconteinerF"></div>
                 <div class="headerconteiner2"></div>
-                <div class="headerconteiner3"></div>
-                <div class="headerconteiner4"></div>
-                <div class="headerconteiner5"></div>
+                <div class="headerconteiner3">
+                    <span> Curriculum Vitae / Datos Personales</span>
+                </div>
+                <div class="headerconteiner4">
+                    <h4>Ménu CV-HC</h4>
+                </div>
+                <div class="headerconteiner5">
+                    <h4>Dr. Daniel Ulises García Verdín </h4>
+                    <h5>Investigador</h5>
+                </div>
             </div>
             <div class="syscontent">
                 <div class="sysmenu">
-                <?php echo CHtml::link('Datos Personales',array('/curriculumVitae/personalData')); ?><br>
-        <?php echo CHtml::link('Documentos Oficiales',array('/curriculumVitae/docsIdentity')); ?><br>
-        <?php echo CHtml::link('Datos de Direccion Actual',array('/curriculumVitae/addresses')); ?><br>
-        <?php echo CHtml::link('Datos Laborales',array('/curriculumVitae/jobs')); ?><br>
-        <?php echo CHtml::link('Líneas de Investigación',array('/curriculumVitae/researchAreas')); ?><br>
-        <?php echo CHtml::link('Datos de Contacto',array('/curriculumVitae/phones')); ?><br>
-        <?php echo CHtml::link('Formacion Académica',array('/curriculumVitae/grades')); ?><br>
-        <?php echo CHtml::link('Nombramientos',array('/curriculumVitae/commission')); ?><br>
+                    <ul class="cvmenuitems">
+                        <li><?php echo CHtml::link('Datos Personales',array('/curriculumVitae/personalData')); ?><hr></li>
+                        <li><?php echo CHtml::link('Documentos Oficiales',array('/curriculumVitae/docsIdentity')); ?><hr></li>
+                        <li><?php echo CHtml::link('Datos de Direccion Actual',array('/curriculumVitae/addresses')); ?><hr></li>
+                        <li><?php echo CHtml::link('Datos Laborales',array('/curriculumVitae/jobs')); ?><hr></li>
+                        <li><?php echo CHtml::link('Líneas de Investigación',array('/curriculumVitae/researchAreas')); ?><hr></li>
+                        <li><?php echo CHtml::link('Datos de Contacto',array('/curriculumVitae/phones')); ?><hr></li>
+                        <li><?php echo CHtml::link('Formacion Académica',array('/curriculumVitae/grades')); ?><hr></li>
+                        <li><?php echo CHtml::link('Nombramientos',array('/curriculumVitae/commission')); ?></li>
+                    </ul>
                 </div>
                 <div class="sysmaincontent">
                     <div class="syscont">
-                        <?php echo $content; ?>
+                        <div class="cvtitle">
+                            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+                            <h1>Curriculum vitae electronico</h1>
+                            <hr>
+
+                        </div>
+                        <div class="cvforms">
+                            <?php echo $content; ?>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
+        <div class="footer">
+            <div class="footermenu1">
+                <h4>¿Podemos Ayudarte?</h4>
+                <span> asistencia@sihci.com.mx / (52) 32.34.67.32</span>
+            </div>
+            <div class="footermenuI">
+            </div>
+            <div class="footermenuI">
+                <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEstadisticas.png alt="home">', array('site/index'));?>
+                <span>Estadisticas</span>
+            </div>
+            <div class="footermenuI">
+                <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PadministracionSistema.png alt="home">', array('site/index'));?>
+                <span>Adminstración del sistema</span>
+            </div>
+            <div class="footermenuI">
+                <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PBitacora.png alt="home">', array('site/index'));?>
+                <span>Bitacora</span>
+            </div>
+            <div class="footermenuI logout">
+                <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCerrarCuenta.png alt="home">', array('site/logout'));?>
+                <span> Cerrar sesión</span>
+            </div>
+        </div>
     </body>
 </html>
