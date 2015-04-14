@@ -247,12 +247,18 @@
 
 .infodialog p , .infodialog1 p , .infodialog3 p
 {
-	padding: 9px;
+	padding-top: 3px;
+	padding-left: 9px;
+	padding-bottom: 3px;
+	padding-right: 5px;
 
 }
 .infodialogerror p, .infodialog1error p, .infodialog3error p
 {
-	padding: 9px;
+	padding-top: 3px;
+	padding-left: 9px;
+	padding-bottom: 3px;
+	padding-right: 5px;
 	content: "Favor de revisar el si el contendio esta registrado";
 }
 .closelogin , .closerecovery, .closecreate 

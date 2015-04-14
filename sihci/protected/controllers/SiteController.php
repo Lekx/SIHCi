@@ -65,6 +65,7 @@ class SiteController extends Controller {
 			}
 		}
 		$this->render('contact', array('model' => $model));
+
 	}
 
 	/**
@@ -88,6 +89,7 @@ class SiteController extends Controller {
 			$model->attributes = $_POST['LoginForm'];
 
 			$is_active = Users::model()->findByAttributes(array("status" => "activo", "email" => $model->username));
+
 			$not_active = Users::model()->findByAttributes(array("status" => "inactivo", "email" => $model->username));
 
 			if ($model->validate() && $model->login() && $is_active != null) {
@@ -100,13 +102,12 @@ class SiteController extends Controller {
 				echo "404";
 				Yii::app()->user->logout();
 			}
-
 			Yii::app()->end();
 		}
 		// display the login form
 
 		if (!isset($_POST['ajax'])) {
-			$this->render('login', array('model' => $model));
+			$this->renderPartial('login', array('model' => $model));
 		}
 
 	}
@@ -173,7 +174,7 @@ class SiteController extends Controller {
 		}
 
 		if (!isset($_POST['ajax'])) {
-			$this->render('recoveryPassword', array('model' => $model, 'msg' => $msg));
+			$this->renderPartial('recoveryPassword', array('model' => $model, 'msg' => $msg));
 		}
 	
 	}

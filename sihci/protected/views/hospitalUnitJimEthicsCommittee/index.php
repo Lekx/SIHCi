@@ -14,7 +14,7 @@ $this->breadcrumbs = array(
 <section class="informativa">
 
 			<section class="column-left">
-				<img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/IconCirculo/Comités.png" alt="">
+				<img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/IconCirculo/Comites.png" alt="">
 			</section>
 
 
@@ -32,6 +32,6 @@ $this->breadcrumbs = array(
 			 <a href= "URL" >FAA: Comité de ética.</a>
 			 <a href= "URL" >FAA: Comité de ética en investigación.</a>
 			 <a href= "URL" >FAA: Comité de Bioseguridad.</a>-->
-			 <?php Yii::app()->runController('filesManager/DisplayFiles/section/unidadHospitalariaJimComiteDeEtica');?>
+		<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
 </section>

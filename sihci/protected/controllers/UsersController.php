@@ -3,7 +3,7 @@ class UsersController extends Controller {
 	function checkEmail($email, $email2) {
 
 		if ($email != $email2) {
-			echo "<script> alert(\"Las dos correos son distintos.\")</script>";
+			echo "email";
 			return false;
 		} else {
 			return true;
@@ -11,7 +11,7 @@ class UsersController extends Controller {
 	}
 	function checkPassword($password, $password2) {
 		if ($password != $password2) {
-			echo "<script> alert(\"Las dos claves son distintas.\")</script>";
+			echo "pass";
 			return false;
 		} else {
 			return true;
@@ -34,19 +34,23 @@ class UsersController extends Controller {
 	}
 
 	public function actionCreate() {
-		
+
 		$model = new Users;
 		$modelPersons = new Persons;
 
-		if (isset($_POST['Users'])) {
+		//$this->performAjaxValidation($model);
+		//$this->performAjaxValidation($modelPersons);
+		if(isset($_POST['Users'])) {
 			$model->id_roles = '1';
 			$model->attributes = $_POST['Users'];
+
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
+			if (empty($result)){
 			if ($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2'])) {
 				if ($this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2'])) {
-					if (!empty($result)) {
-						echo "<script> alert(\"Este correo ya existe.\")</script>";
-					} else {
+
+
+
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
 						$model->status = 'inactivo';
@@ -56,23 +60,29 @@ class UsersController extends Controller {
 						//$model->attributes=$_POST['Users'];
 
 						if ($model->validate()) {
+
 							if (isset($_POST['Persons'])) {
+
 								$modelPersons->attributes = $_POST['Persons'];
 								$modelPersons->person_rfc = "1234567890123";
-								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
-								if (!empty($result2)) {
-									echo "<script> alert(\"Este RFC/Pasaporte ya existe.\")</script>";
 
-								} else {
+								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
+								if (empty($result2)) {
 
 									$modelPersons->id_user = 0;
 									$modelPersons->marital_status = -1;
 									$modelPersons->genre = -1;
 									$modelPersons->birth_date = '00/00/0000';
+
 									if ($modelPersons->validate()) {
-										$model->save();
-										$modelPersons->id_user = $model->id;
-										$modelPersons->save();
+										if($model->save()){
+											$modelPersons->id_user = $model->id;
+											if($modelPersons->save())
+												echo "202";
+											else
+												echo "Ha ocurrido un error al crear el registro (CU03)";	
+										}else
+											echo "Ha ocurrido un error al crear el registro (CU02)";
 
 										$log = new SystemLog();
 										$log->id_user = Yii::app()->user->id;
@@ -81,20 +91,26 @@ class UsersController extends Controller {
 										$log->action = "creacion";
 										$log->datetime = new CDbExpression('NOW()');
 										$log->save();
-										$this->redirect(array('view', 'id' => $model->id));
-									}
-								}
-							}
+
+	
+									}else
+										echo "Ha ocurrido un error al crear el registro (CU01)";
+								
+							}else
+								echo "Ya hay una cuenta registrada con este CURP.";
 						}
-
-					}
-				}
-			}
-
+						}
+				}else
+					echo "Las contraseñas no concuerdan";
+			}else
+				echo "Los correos electronicos no concuerdan";
+			}else
+			echo "Ya existe una cuenta registrada con este correo.";
 		}
-		$this->render('create', array(
-			'model' => $model, 'modelPersons' => $modelPersons,
-		));
+
+		if (!isset($_POST['ajax'])) {
+			$this->renderPartial('create', array('model' => $model, 'modelPersons' => $modelPersons));
+		}
 	}
 
 	public function actionUpdate($id) {
@@ -154,4 +170,5 @@ class UsersController extends Controller {
 			Yii::app()->end();
 		}
 	}
+
 }
