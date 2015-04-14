@@ -143,6 +143,16 @@ class SystemLogController extends Controller
 		));
 	}
 
+	public function actionSaveLog($section, $details, $action){
+			$log = new SystemLog();
+			$log->id_user = Yii::app()->user->id;
+			$log->section = $section;
+			$log->details = $details;
+			$log->action = $action;
+			$log->datetime = date ('d/m/Y H:i:s');
+			$log->save();
+	}
+
 	public function actionPdf()
  	{
  		$this->render('pdf');

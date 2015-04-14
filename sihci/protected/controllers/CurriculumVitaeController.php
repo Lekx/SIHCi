@@ -1,5 +1,4 @@
 <?php
-
 class CurriculumVitaeController extends Controller
 {
 	/**
@@ -76,6 +75,12 @@ class CurriculumVitaeController extends Controller
 								if($model->save()){
 									$curriculum->native_country = $curriculum->native_country;
 									$curriculum->save();
+									//manda parametros al controlador SystemLog
+										$section = "Datos Personales";
+										$details = "Se han modificado datos personales con nueva foto de perfil";
+										$action = "Modificacion";
+										Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+										$this->redirect('personalData');
 									}
 
 						}else{
@@ -84,6 +89,12 @@ class CurriculumVitaeController extends Controller
 								if($model->save()){
 									$curriculum->native_country = $curriculum->native_country;
 									$curriculum->save();
+									//manda parametros al controlador SystemLog
+										$section = "Datos Personales";
+										$details = "Se han modificado datos personales";
+										$action = "Modificacion";
+										Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+										$this->redirect('personalData');
 									}
 							}//end if else photo_url == ''
 					}// end if validate
@@ -114,7 +125,13 @@ class CurriculumVitaeController extends Controller
 				if($model->doc_id != ''){
 					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName());
 					$model->doc_id = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName();
-					$model->save();
+						if($model->save()){
+						//manda parametros al controlador SystemLog
+						$section = "Documentos Oficiales";
+						$details = "Se han modificado Documentos Oficiales";
+						$action = "Modificacion";
+						Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					}
 				}
 				
 			}
@@ -135,7 +152,13 @@ class CurriculumVitaeController extends Controller
 		if(isset($_POST['Addresses']))
 		{
 			$model->attributes=$_POST['Addresses'];
-			$model->save();
+				if($model->save()){
+				//manda parametros al controlador SystemLog
+				$section = "Datos de Dirección actual";
+				$details = "Se han modificado datos de Dirección Actual";
+				$action = "Modificacion";
+				Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+			}
 		}
 
 		$this->render('addresses',array('model'=>$model,));
@@ -153,8 +176,14 @@ class CurriculumVitaeController extends Controller
 				if(isset($_POST['Jobs']))
 				{
 					$model->attributes=$_POST['Jobs'];
-					$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-					$model->save();
+					$model->id_curriculum = $curriculum->id;
+					if ($model->save()) {
+					//manda parametros al controlador SystemLog
+						$section = "Datos Laborales";
+						$details = "Se han modificado datos laborales";
+						$action = "Modificacion";
+						Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					}
 
 				}
 
@@ -178,49 +207,130 @@ class CurriculumVitaeController extends Controller
 		if(isset($_POST['ResearchAreas']))
 		{
 			$model->attributes=$_POST['ResearchAreas'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$model->save();
-			
-				$log = new SystemLog();
-				$log->id_user = Yii::app()->user->id;
-				$log->section = "Lineas de Investigacion";
-				$log->details = "Se modifico su Linea de investigacion";
-				$log->action = "Modificacion";
-				$log->datetime = date ('d/m/Y H:i:s');
-				$log->save();
+			$model->id_curriculum = $curriculum->id;
+			if ($model->save()) {
+			//manda parametros al controlador SystemLog
+				$section = "Lineas de Investigacion";
+				$details = "Se modifico su Linea de investigacion";
+				$action = "Modificacion";
+				Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+			}
 		}
 
 		$this->render('research_areas',array('model'=>$model,));
 	}
 
 	public function actionPhones(){
-		  Yii::import('ext.multimodelform.MultiModelForm');
+		//   Yii::import('ext.multimodelform.MultiModelForm');
 
-		$person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
-		$phones = Phones::model()->findByAttributes(array('id_person' => $person->id));
+		// if(isset($_POST['Phones']) && isset($_POST['Emails']))
+		// {
+		// 	$model->attributes=$_POST['Phones'];
+		// 	$emails->attributes = $_POST['Emails'];
+		// 	if($model->save()){
+		// 		$emails->email = $emails->email;
+		// 		$emails->type = $emails->type;
+		// 		$emails->save();
+		// 		//manda parametros al controlador SystemLog
+		// 				$section = "Datos de Contacto";
+		// 				$details = "Se han modificado datos de contacto";
+		// 				$action = "Modificacion";
+		// 				Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		// 	}
+		// }
+
+		$idPerson = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		$phones = Phones::model()->findByAttributes(array('id_person' => $idPerson));
 
 		if ($phones != null) {
 			$model = Phones::model()->findByPk($phones->id);
-			$emails=Emails::model()->find('id_person=:id_person',
-                              array(':id_person'=>Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
-		$validatedEmails = array();
+			$emails = Emails::model()->find('id_person=:id_person',array(':id_person'=>$idPerson));
+			$getEmails = Emails::model()->findAll('id_person=:id_person',array(':id_person'=>$idPerson));
+			$getPhones = Phones::model()->findAll('id_person=:id_person',array(':id_person'=>$idPerson));
 		}else{
 			$model=new Phones;
 			$emails = new Emails;
-			$validatedEmails = array();
+			$getEmails = Emails::model()->findAll('id_person=:id_person',array(':id_person'=>$idPerson));
+			$getPhones = Phones::model()->findAll('id_person=:id_person',array(':id_person'=>$idPerson));
 		}
-
-		if(isset($_POST['Phones']) && isset($_POST['Emails']))
+		
+		if(isset($_POST['phoneNumber']) && isset($_POST['emails']))
 		{
-			$model->attributes=$_POST['Phones'];
-			$emails->attributes = $_POST['Emails'];
-			if($model->save()){
-				$emails->email = $emails->email;
-				$emails->type = $emails->type;
-				$emails->save();
+			/////////// EMAILS ///////////
+			$emailNew = $_POST["emails"];
+			$typeEmailNew = $_POST["typesEmails"];
+			//$emails->attributes = $_POST['emails'];
+			
+
+				foreach($emailNew as $key => $values){
+					$emailsNew = new Emails();
+					$emailsNew->id_person = $idPerson;
+					$emailsNew->email = $values;
+					$emailsNew->type = $typeEmailNew[$key];
+					$emailsNew->save();
+				}
+				if ($getEmails != null) {
+					//// update emails /////////
+					$getEmail = $_POST['getEmail'];
+					$getTypeEmail = $_POST['getTypeEmail'];
+					if ($emails->validate()) {
+						foreach($getEmail as $key => $value) {
+				 			$emails = Emails::model()->findByPk($getEmails[$key]->id);
+							$emails->email = $getEmail[$key];
+							$emails->type = $getTypeEmail[$key];
+							$emails->save();
+						}
+					}
+				}
+			
+			
+			/////////////// phones /////////////
+			$typesPhonesNew = $_POST["typesPhones"];
+			$countryCodeNew = $_POST["countryCode"];
+			$localAreaCodeNew = $_POST["localAreaCode"];
+			$phoneNumberNew = $_POST["phoneNumber"];
+			$extensionNew = $_POST["extension"];
+			$isPrimaryNew = $_POST["isPrimary"];
+
+			foreach($phoneNumberNew as $key => $values){
+			 $phoneNew = new Phones();
+			 $phoneNew->id_person = $idPerson;
+			 $phoneNew->type = $typesPhonesNew[$key];
+			 $phoneNew->country_code = $countryCodeNew[$key];
+			 $phoneNew->local_area_code = $localAreaCodeNew[$key];
+			 $phoneNew->phone_number = $values;
+			 $phoneNew->extension = $extensionNew[$key];
+			 $phoneNew->is_primary = $isPrimaryNew[$key];
+			 $phoneNew->save();
 			}
+			if ($phones != null) {
+				/////////////// update phones /////////////
+			$getTypesPhones = $_POST["getTypesPhones"];
+			$getCountryCode = $_POST["getCountryCode"];
+			$getLocalAreaCode = $_POST["getLocalAreaCode"];
+			$getPhoneNumber = $_POST["getPhoneNumber"];
+			$getExtension = $_POST["getExtension"];
+			$getIsPrimary = $_POST["getIsPrimary"];
+
+				foreach($getPhoneNumber as $key => $values){
+				$phones = Phones::model()->findByPk($getPhones[$key]->id);
+				//echo $getPhones[$key]->id;
+				 // $phoneNew = new Phones();
+				
+				  $phones->type = $getTypesPhones[$key];
+				  $phones->country_code = $getCountryCode[$key];
+				  $phones->local_area_code = $getLocalAreaCode[$key];
+				  $phones->phone_number = $getPhoneNumber[$key];
+				  $phones->extension = $getExtension[$key];
+				  $phones->is_primary = $getIsPrimary[$key];
+				  $phones->save();
+				}
+			}			
+
+			$this->redirect('phones');
+			
 		}
-		$this->render('phones',array('model'=>$model, 'emails' =>$emails, 'validatedEmails' => $validatedEmails,));
+		$this->render('phones',array('model'=>$model, 'emails' =>$emails, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,));
 	}
 
 	public function actionGrades(){
@@ -238,13 +348,11 @@ class CurriculumVitaeController extends Controller
 		{
 			$model->attributes=$_POST['Grades'];
 			$model->save();
-				$log = new SystemLog();
-				$log->id_user = Yii::app()->user->id;
-				$log->section = "Formacion academica";
-				$log->details = "Se modifico su formacion academica";
-				$log->action = "Modificacion";
-				$log->datetime = date ('d/m/Y H:i:s');
-				$log->save();
+			//manda parametros al controlador SystemLog
+					$section = "Formación Académica";
+					$details = "Se han modificado datos de Formación Académica";
+					$action = "Modificacion";
+					Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		}
 
 		$this->render('grades',array('model'=>$model,));
@@ -259,23 +367,17 @@ class CurriculumVitaeController extends Controller
 		}else{
 			$model=new Curriculum;
 		}
-	
 
-		if(isset($_POST['Curriculum']))
-		{
-			$model->attributes=$_POST['Curriculum'];
-				if ($model->validate()) {
-						$model->save();
-							// $log = new SystemLog();
-							// $log->id_user = Yii::app()->user->id;
-							// $log->section = "Nombramientos";
-							// $log->details = "Se modifico Nombramientos";
-							// $log->action = "Modificacion";
-							// $log->datetime = date ('d/m/Y H:i:s');
-							// $log->save();
-				}	
-			
-		}
+			if(isset($_POST['Curriculum']))
+			{
+				$model->attributes=$_POST['Curriculum'];
+							$model->save();
+							//manda parametros al controlador SystemLog
+							$section = "Nombramientos";
+							$details = "Se han modificado datos de Nombramientos";
+							$action = "Modificacion";
+							Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+			}
 
 		$this->render('commission',array('model'=>$model,));
 	}

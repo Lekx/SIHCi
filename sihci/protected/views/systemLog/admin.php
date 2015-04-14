@@ -39,10 +39,10 @@ $('.search-form form').submit(function(){
 	//'filter'=>$model,
 	'summaryText'=>"Mostrando {end} de {count}",
 	'columns'=>array(
-		//'id',
-		//'id_user',
+		'id',
+		'id_user',
 		'section',
-		//'details',
+		'details',
 		'action',
 		'datetime',
 		array(

@@ -11,7 +11,7 @@
 	'method'=>'get',
 )); ?>
 	<fieldset>
-	<legend>Escriba el nombre de alguna Seccion o numero de usuario para realizar la busqueda:</legend>
+	
 		<?php echo $form->textField($model,'id_user',array('size'=>60,'maxlength'=>60, 'placeholder'=>'Numero de Usuario')); ?>
 		<?php echo $form->textField($model,'section',array('size'=>60,'maxlength'=>60, 'placeholder'=>'Seccion')); ?>
 
