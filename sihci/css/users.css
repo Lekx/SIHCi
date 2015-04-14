@@ -238,4 +238,17 @@
 	background: white;
 	color: black;
 }
+#RegistroSus
+{
+	color: #1EB9C0 !important;
+	text-align: center;
+}
+#resgistrohr
+{
+	margin-left: 140px;
 
+}
+#LogInUsers
+{
+	margin-top: 0px !important;
+}

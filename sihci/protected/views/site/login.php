@@ -1,4 +1,3 @@
-
 <div class="loginback">
     <div class="form">
     	<?php $form=$this->beginWidget('CActiveForm', array(
@@ -33,7 +32,7 @@
             </div>
         </div>
         <!-- <div class="row">
-            <a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>">¿Olvidó su Contraseña?</a>
+            <a href="<?php //echo Yii::app()->createUrl('/site/recoverypassword');?>">¿Olvidó su Contraseña?</a>
         </div> -->
 
         <?php echo CHtml::ajaxButton ("Ingresar a su Cuenta", CController::createUrl('site/login'), array(
@@ -54,9 +53,9 @@
         			$(".infodialog").css("visibility", "hidden");
         			$(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
         			$(".infodialog").css("visibility", "hidden");
-                    //location.reload();
+                    
                     window.open("'.Yii::app()->createUrl('/account/infoAccount').'", "_blank");
-        		   
+        	location.reload();	   
 
         		}
         		else

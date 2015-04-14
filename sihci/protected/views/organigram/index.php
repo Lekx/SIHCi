@@ -13,19 +13,19 @@ $this->breadcrumbs = array(
 <section class="informativa">
 
 	<section class="column-left">
-		<img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/IconCirculo/organigrama.png" alt="">
+		<img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/IconCirculo/Organigrama.png" alt="">
 	</section>
 
 	<section class="column-center">
 
 		<h2>Organigrama</h2>
 		<hr>
-
+<center>
 		<img src="<?php echo Yii::app()->request->baseUrl . "/protected/views/organigram/img/org1.png";?>">
-
-
+<br><br>
+<!--
 		<p>
-		Titular
+		Titular 
 		M.S.P. Víctor Manuel Ramírez Anguiano
 		Subdirector General de Enseñanza e Investigación</p>
 
@@ -40,8 +40,8 @@ $this->breadcrumbs = array(
 		vmramirez@hcg.gob.mx</p>
 
 
-		<p>Objetivo, Funciones y Atribuciones</p> <br>
-		<img src="<?php echo Yii::app()->request->baseUrl . "/protected/views/organigram/img/org2.png";?>">
+		<p>Objetivo, Funciones y Atribuciones</p> <br>-->
+	<img src="<?php echo Yii::app()->request->baseUrl . "/protected/views/organigram/img/org2.png";?>"></center>
 
 	</section>
 
@@ -50,7 +50,7 @@ $this->breadcrumbs = array(
 	<section class="column-right">
 		<h5>DOCUMENTOS</h5>
 		<h5>DESCARGABLES:</h5>
-			<?php Yii::app()->runController('filesManager/DisplayFiles/section/Organigrama');?>
+		<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
 </section>
 

@@ -37,26 +37,19 @@ class UsersController extends Controller {
 
 		$model = new Users;
 		$modelPersons = new Persons;
-		$this->performAjaxValidation($model);
-		$this->performAjaxValidation($modelPersons);
 
-		if (isset($_POST['ajax']) && $_POST['ajax'] === 'users-form') {
-
+		//$this->performAjaxValidation($model);
+		//$this->performAjaxValidation($modelPersons);
+		if(isset($_POST['Users'])) {
 			$model->id_roles = '1';
 			$model->attributes = $_POST['Users'];
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
-
+			if (empty($result)){
 			if ($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2'])) {
-
-
 				if ($this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2'])) {
 
 
-					if (!empty($result)) {
-
-
-					} else {
 
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
@@ -74,20 +67,22 @@ class UsersController extends Controller {
 								$modelPersons->person_rfc = "1234567890123";
 
 								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
-								if (!empty($result2)) {
-
-											echo "curp";
-								} else {
+								if (empty($result2)) {
 
 									$modelPersons->id_user = 0;
 									$modelPersons->marital_status = -1;
 									$modelPersons->genre = -1;
-									$modelPersons->birth_date = '00-00-0000';
+									$modelPersons->birth_date = '00/00/0000';
 
 									if ($modelPersons->validate()) {
-										$model->save();
-										$modelPersons->id_user = $model->id;
-										$modelPersons->save();
+										if($model->save()){
+											$modelPersons->id_user = $model->id;
+											if($modelPersons->save())
+												echo "202";
+											else
+												echo "Ha ocurrido un error al crear el registro (CU03)";	
+										}else
+											echo "Ha ocurrido un error al crear el registro (CU02)";
 
 										$log = new SystemLog();
 										$log->id_user = Yii::app()->user->id;
@@ -98,15 +93,19 @@ class UsersController extends Controller {
 										$log->save();
 
 	
-									}
-								}
-							}
+									}else
+										echo "Ha ocurrido un error al crear el registro (CU01)";
+								
+							}else
+								echo "Ya hay una cuenta registrada con este CURP.";
 						}
-
-					}
-				}
-			}
-
+						}
+				}else
+					echo "Las contraseñas no concuerdan";
+			}else
+				echo "Los correos electronicos no concuerdan";
+			}else
+			echo "Ya existe una cuenta registrada con este correo.";
 		}
 
 		if (!isset($_POST['ajax'])) {
@@ -171,4 +170,5 @@ class UsersController extends Controller {
 			Yii::app()->end();
 		}
 	}
+
 }

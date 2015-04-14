@@ -18,7 +18,7 @@ $('.cbp-hssubmenu1 > li').hide();
 $(document).ready(function () {
 
  $('#show_hidemenu').click(function(){
-
+     $('#searchBarResults').hide();
         $('.cbp-hssubmenu1 > li').hide();
         $(".slidingDiv").slideDown();
         return false;

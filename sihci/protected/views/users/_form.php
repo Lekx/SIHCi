@@ -20,11 +20,12 @@
         </ul>
     </div>
     <fieldset>
-        <?php echo $form->errorSummary($model);?>
+        <?php echo $form->errorSummary($modelPersons);?>
+          <?php echo $form->errorSummary($model);?>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'names', array('placeholder' => "Nombre/s completos."));?>
+                <?php echo $form->textField($modelPersons, 'names', array('placeholder' => "Nombre(s)."));?>
             </div>
             <div class="infoboxes name">
 
@@ -62,10 +63,10 @@
             array(
                 'name' => 'Persons[country]',
                 'id' => 'Persons_country',
-                'value' => 'US',
+                'value' => 'MX',
                 'useHelperSelectBox' => true,
                 'pluginOptions' => array(
-                    'country' => 'US',
+                    'country' => 'MX',
                     'language' => 'es_ES',
                     'flags' => true
                 )
@@ -91,7 +92,7 @@
         <input type="button" name="nextform" class="nextform action-button 2" value="Listo.." />
     </fieldset> 
 
-    <fieldset>
+    <fieldset id="preregisterForm">
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
@@ -129,6 +130,11 @@
             </div>
         </div>
 
+        <input type="hidden" name="Users[registration_date]" id="Users_registration_date" value="0000-00-00 00:00:00">
+        <input type="hidden" name="Users[activation_date]" id="activation_registration_date" value="0000-00-00 00:00:00">
+        <input type="hidden" name="Users[act_react_key]" id="Users_act_react_key" value="0000-00-00 00:00:00">
+
+
         <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
 
         <div class="row buttons">
@@ -138,12 +144,13 @@
                     'type'=>'POST',
                     'data'=> 'js:$("#users-form").serialize()+ "&ajax=users-form"',
                     'success'=>'function(response) { 
-                        if(response == "200"){
-                            alert("Bien");
-                        }
-                        else{
-                      
-                        }       
+                        if(response == "202"){ 
+
+                            $("#preregisterForm").hide();
+                            $("#SuccesSignin").show();
+                        
+                    }else
+                        alert(response);
                     }',                    
                      'beforeSend'=>'function(){                        
                            $("#AjaxLoader").show();
@@ -151,6 +158,15 @@
                      )); ?>
          </div>            
             
+        </fieldset>
+        <fieldset id="SuccesSignin">
+            
+            <h1 id="RegistroSus">¡Registro Exitoso!</h1>
+           
+            <hr id="resgistrohr">
+		<p>Se ha enviado un correo electrónico a su dirección, por favor siga las indicaciones ahi descritas para activar su cuenta.</p>
+             <input type="button" id="LogInUsers" name="nextform" class="nextform action-button 4" value="Regresar al sitio" />
+
         </fieldset>
         <div class="countusers">
             Gracias a ti ahora somos:<br>

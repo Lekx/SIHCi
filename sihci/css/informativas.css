@@ -105,3 +105,8 @@
 .table td { text-align: center;}
 .table td { width: 50% !important;}
 .table h5 { text-align:  center;}
+
+#description a
+{
+	color: black !important;
+}

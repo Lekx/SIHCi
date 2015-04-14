@@ -1,7 +1,15 @@
 $(document).ready(function() {
+
+$("#LogInUsers").click(function(){
+location.reload();
+});
+
+
+
+    $('input').attr('autocomplete','off');
     var $submit = $(".nextform.action-button.1"),
         $inputs = $('#Persons_names, #Persons_last_name1, #Persons_last_name2');
-
+/*
     function checkEmpty() {
         return $inputs.filter(function() {
             return !$.trim(this.value);
@@ -20,8 +28,6 @@ $(document).ready(function() {
         }).length === 0;
     }
     $inputs2.on('blur', function() {
-        $(".infoboxes.country").css("visibility", "visible");
-        $(".infoboxes.curp").css("visibility", "visible");
         $submit2.prop("disabled", !checkEmpty2());
     }).blur();
 
@@ -29,11 +35,42 @@ $(document).ready(function() {
         $inputs3 = $('#Users_email, #Users_email2, #Users_password, #Users_password2');
 
  
- 	$(".nextform").hover(function(){
+    $(".nextform").hover(function(){
 
- 		$('.nextform').focus();
+        $('.nextform').focus();
 
- 	});
+    });
+*/
+if($("input[name*='country']").val() == 'MX' ){
+     $('#Persons_curp_passport').prop("placeholder", "CURP");
+ }else{
+    $('#Persons_curp_passport').prop("placeholder", "Pasaporte");
+
+ }
+
+
+$('.nextform.action-button.1').prop("disabled", true); 
+
+   $('#Persons_names, #Persons_last_name1, #Persons_last_name2').keyup(function() {
+    if($('#Persons_names').val() != "" && $('#Persons_last_name1').val() != "" &&  $('#Persons_last_name2').val() != "" ) {
+         $('.nextform.action-button.1').prop("disabled", false);
+    } else {
+        $('.nextform.action-button.1').prop("disabled", true); 
+    }
+
+
+});
+
+    $('.nextform.action-button.2').prop("disabled", true); 
+
+    $('#Persons_country , #Persons_curp_passport').keyup(function() {
+
+    if($('#Persons_curp_passport').val() != "" && $('#Persons_country').val() != "") {
+         $('.nextform.action-button.2').prop("disabled", false);
+    } else {
+        $('.nextform.action-button.2').prop("disabled", true); 
+    }
+});
 
     function checkFocusInInputs() {
         //fieldset 1
@@ -50,7 +87,7 @@ $(document).ready(function() {
         $("#Persons_country").focus(function() {
             $(".infoboxes.country").css("visibility", "visible");
         });
-        $("#Persons_last_name1").focus(function() {
+        $("#Persons_curp_passport").focus(function() {
             $(".infoboxes.curp").css("visibility", "visible");
         });
         //fieldset 3
@@ -83,8 +120,8 @@ $(document).ready(function() {
         $("#Persons_country").focusout(function() {
             $(".infoboxes.country").css("visibility", "hidden");
         });
-        $("#Persons_last_name1").focusout(function() {
-            $(".infoboxes.lastname").css("visibility", "hidden");
+        $("#Persons_curp_passport").focusout(function() {
+            $(".infoboxes.curp").css("visibility", "hidden");
         });
         //fieldset 3
         $("#Users_email").focusout(function() {

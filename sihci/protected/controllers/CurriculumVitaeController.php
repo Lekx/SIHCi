@@ -30,7 +30,7 @@ class CurriculumVitaeController extends Controller
 		return array(
 		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('personalData',),
+				'actions'=>array('personalData', 'addresses'),
 				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1")',
 				 'users'=>array('@'),
 			),
