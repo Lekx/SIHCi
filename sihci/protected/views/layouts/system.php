@@ -19,8 +19,10 @@
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <!-- Load JS -->
         <?php
-                                                                $baseUrl = Yii::app()->baseUrl;
-                                                                $cs = Yii::app()->getClientScript();
+        $baseUrl = Yii::app()->baseUrl;
+        $cs = Yii::app()->getClientScript();
+        $cs->registerScriptFile($baseUrl . '/js/infoboxes.js');
+
         ?>
         <?php Yii::app()->bootstrap->register(); ?>
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>

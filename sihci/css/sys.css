@@ -23,7 +23,7 @@ body
 	padding: 0;
 	margin: 0;
 	color: white;
-	font-style: 'Caviar_Dreams' !important;
+	font-family: 'Caviar_Dreams' !important;
 
 }
 .sysheader
@@ -307,6 +307,90 @@ body
 	border-bottom: 2px solid #1EB9C0; 
 }
 
+/* All Inputs Style */
+
+.cvforms input[type="text"], 
+.cvforms select ,.cvforms input[type="file"]
+{
+	height: 25px;
+	width: 450px;
+	padding-left: 13px;
+	background-color: #CDF1F3;
+	font-family: 'Caviar_Dreams_Bold';
+	color: #0E3152;
+	border: 0px;
+	border-color: none;
+	box-shadow: none;
+	-webkit-appearance:none;
+	-moz-appearance: none;
+	padding-top: 0px;
+	
+}
+.cvforms input[type="file"]
+{
+	display: inline-block;
+}
+.cvforms input[type="file"]::before
+{
+	content: 'Foto';
+	
+}
+.cvforms input[type="file"]::-webkit-file-upload-button {
+	visibility:  hidden;
+	padding-top: 10px;
+	
+}
+.savebutton
+{
+	width: 335px !important;
+	height: 40px;
+	background-color: #0E3152;
+	color: white;
+	font-size: 20px;
+}
+.cleanbutton
+{
+	width: 120px !important;
+	height: 40px;
+	background-color: #1EB9C0;
+	color: white;
+	font-size: 20px;
+	margin-left: -10px !important;
+
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #1EB9C0 !important;
+}
+.ui-datepicker 
+{
+	width: 450px !important;
+}
+.ui-widget-content
+{
+	border: 1px solid #aaa;
+	background: #0E3152 url("") 50% 50% repeat-x !important;
+	color: #222;
+}
+.ui-state-default a
+{
+	background: #0E3152 url("") 50% 50% repeat-x !important;
+}
+thead th
+{
+	background: #0E3152 !important;
+	color: white;
+}
+.infobox
+{
+	visibility: hidden;
+	width: 190px;
+	height: 35px;
+	color: white;
+	background-color: #0E3152;
+    color: white;
+	padding: 7px;
+	display: inline-block;
+}
 
 
 
