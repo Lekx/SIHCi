@@ -171,7 +171,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	<div class="row">
 		
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
-		<?php echo $form->error($model,'photo_url'); ?>     
+		<?php echo $form->error($model,'photo_url'); ?>
+		     
 	</div>
 
 	<div class="row">

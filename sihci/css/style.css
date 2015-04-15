@@ -43,7 +43,12 @@ span
 {
 	font-family: 'Caviar_Dreams';
 }
+ol li
+{
+   list-style-type: none;
+   margin-left: 30px;
 
+}
 
 /* MINI MENU DESPLEGABLE AL DAR SCROLL */
 #header-container {height:50px;width:100%;}
@@ -82,8 +87,12 @@ span
     margin-right: auto;	
     margin-bottom: 5px;
     z-index: 999;
+
 }
-#logocuentas2
+.login:hover, .singin{
+cursor: pointer; 
+}
+#logocuentas2, #logocuentas4
 {
 	margin-top: 22px;
     margin-left: auto;
@@ -91,9 +100,11 @@ span
     margin-right: auto;	
     margin-bottom: 5px;
     z-index: 999;
+
 }
 #logout
 {
+ 
 	margin-top: 22px;
     margin-left: auto;
     display: block;
@@ -797,10 +808,10 @@ span
 .menu div
 {
 	float: left;
-	width: 290px;
-	margin-left: 26px;
-	margin-top: 26px;
-	margin-bottom: 26px;
+	width: 25%;
+padding:15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 
 }
 .menu ul, li
@@ -810,18 +821,20 @@ span
 .cbp-hsmenu1
 {
 	list-style: none !important;
+	
 
 }
 .cbp-hssubmenu1 li
 {
 	list-style: none !important;
 
+
 }
 ul.cbp-hssubmenu1
 {
-	margin-top: 20px;
-	margin-bottom: 10px;
-	padding-left: 26px;
+	margin-top: -8px;
+	margin-bottom: 25px;
+	padding-left: 20px;
 
 }
 .slidingDiv
@@ -860,9 +873,9 @@ ul.cbp-hssubmenu1
 }
 ul.cbp-hssubmenu
 {
-	margin-top: 20px;
-	margin-bottom: 10px;
-	padding-left: 26px;
+	margin-top: -8px;
+	margin-bottom: 26px;
+	padding-left: 20px;
 
 }
 ul.cbp-hsmenu
@@ -882,4 +895,21 @@ ul.cbp-hsmenu
    	font-family: 'Caviar_Dreams';
    	background-color: transparent;
 
+}
+
+.menu h6, h6 a{
+	font-weight:bold !important;
+	color:#00F6FF !important;
+}
+
+
+
+
+
+.menu a:hover{
+	padding-left:5px;
+	border-left:2px solid white !important;
+	text-decoration:none !important;
+	color:white !important;
+	
 }
