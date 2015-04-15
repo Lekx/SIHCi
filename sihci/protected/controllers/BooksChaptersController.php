@@ -71,6 +71,7 @@ class BooksChaptersController extends Controller
         if(isset($_POST['BooksChapters']))
         {
             $model->attributes=$_POST['BooksChapters'];
+            $modelAuthors->attributes=$_POST['BooksChaptersAuthors'];
 
 
             $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
@@ -115,7 +116,7 @@ class BooksChaptersController extends Controller
                    
                 }else{
                                    
-                   	$model->$model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
+                   //	$model->$model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
            
 
                     if($model->save()){
@@ -144,7 +145,8 @@ class BooksChaptersController extends Controller
 	 public function actionUpdate($id)
     {
         $model=$this->loadModel($id);
-        $modelAuthors=BooksChaptersAuthors::model()->findByPk($id);
+        $modelAuthors=BooksChaptersAuthors::model()->find('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$id));
+       
 
 
         // Uncomment the following line if AJAX validation is needed
@@ -153,29 +155,40 @@ class BooksChaptersController extends Controller
         if(isset($_POST['BooksChapters']))
         {
 	            $model->attributes=$_POST['BooksChapters'];
-	            $modelAuthors->id_books_chapters = $model->id;
-	            $model->path = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
+	            $modelAuthors->attributes=$_POST['BooksChaptersAuthors'];
+	           
+	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
 
             if($model->validate()){
             
 
            	if($model->url_doc != ''){
                 
-	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->title.'.'.$model->url_doc->getExtensionName());
+	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
 	               $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
                 
                 
                 
             if($model->save()){
-            		
+            		$modelAuthors->id_books_chapters = $model->id;
+			        $modelAuthors->names = $modelAuthors->names;
+			        $modelAuthors->last_name1 = $modelAuthors->last_name1;
+			        $modelAuthors->last_name2 = $modelAuthors->last_name2;
+			        $modelAuthors->position = $modelAuthors->position;
+                    $modelAuthors->save();
                 	$modelAuthors->save();
                     $this->redirect(array('view','id'=>$model->id));
                 }
             }else{
 
-                  	$model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();
+                  	 //$model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
              	if($model->save()){
-             			
+             			$modelAuthors->id_books_chapters = $model->id;
+			            $modelAuthors->names = $modelAuthors->names;
+			            $modelAuthors->last_name1 = $modelAuthors->last_name1;
+			            $modelAuthors->last_name2 = $modelAuthors->last_name2;
+			            $modelAuthors->position = $modelAuthors->position;
+                        $modelAuthors->save();
                 		$modelAuthors->save();
                 		$this->redirect(array('view','id'=>$model->id));
             		 }
@@ -196,7 +209,7 @@ class BooksChaptersController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-
+       
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
