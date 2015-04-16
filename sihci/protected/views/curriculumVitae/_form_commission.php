@@ -43,22 +43,27 @@
 <div class="docs">
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'SNI'); ?>
 		<?php echo $form->textField($model,'SNI',array('size'=>60,'maxlength'=>250, 'placeholder'=>'SNI')); ?>
+		 <div class="infobox">
+                SNI
+          </div>
 		<?php echo $form->error($model,'SNI'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'researcher_title'); ?>
 			<?php echo $form->textField($model,'researcher_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento")); ?>
+		 <div class="infobox">
+                Nombramiento
+          </div>
 		<?php echo $form->error($model,'researcher_title'); ?>  
 	</div>
 
 </div>
 
 	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
+		<input  class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
+		
 		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
 	</div>
 	

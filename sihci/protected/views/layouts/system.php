@@ -47,7 +47,7 @@
                 </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array('site/index'));?>
-                    <span>Proyectos</span>
+                    <span>Protocolos</span>
                 </div>
                 <div class="headerconteinerF"></div>
                 <div class="headerconteiner2"></div>

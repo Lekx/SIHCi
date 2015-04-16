@@ -125,6 +125,7 @@ body
 {
 	width: 74%;
 	height: 100%;
+	min-height: 380px;
 	background: #fff;
 	
    
@@ -382,14 +383,28 @@ thead th
 }
 .infobox
 {
-	visibility: hidden;
+	
 	width: 190px;
 	height: 35px;
 	color: white;
 	background-color: #0E3152;
     color: white;
+    display: inline-block;
 	padding: 7px;
+
+}
+.errorMessage
+{
 	display: inline-block;
+}
+.row.buttons button
+{
+	color: white;
+	font-size: 20px;
+ 	width: 120px !important;
+	height: 40px;
+	background-color: #1EB9C0;
+
 }
 
 

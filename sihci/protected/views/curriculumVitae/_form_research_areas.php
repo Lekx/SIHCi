@@ -31,17 +31,18 @@
 )); ?>
 
 
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); ?>
+		<div class="infobox ">
+                Nombre de Investigación
+          </div>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
+		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
 		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
 	</div>
 	

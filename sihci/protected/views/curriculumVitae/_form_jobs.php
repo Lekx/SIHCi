@@ -29,31 +29,37 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
-
-
-	<?php echo $form->errorSummary($model); ?>
-
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'organization'); ?>
+		
 		<?php echo $form->textField($model,'organization',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Organización')); ?>
+		<div class="infobox ">
+			Organización
+          </div>
 		<?php echo $form->error($model,'organization'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'area'); ?>
+	
+		
 		<?php echo $form->textField($model,'area',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Área')); ?>
+		<div class="infobox ">
+                Área
+          </div>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
+	
 		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Título o Puesto')); ?>
+		<div class="infobox ">
+                Título o Puesto
+          </div>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'start_day'); ?>
+
 		<?php echo $form->dropDownList($model,'start_day',array(''=>'','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5',
 																'6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11',
 																'12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16',
@@ -63,52 +69,66 @@
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10),
 		                                                         array('placeholder'=>'Día de Inicio')); ?>
+		<div class="infobox ">
+                Día de Inicio
+          </div>
 		<?php echo $form->error($model,'start_day'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'start_month'); ?>
+
 		<?php echo $form->dropDownList($model,'start_month',array(''=>'','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5',
 																'6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11',
 																'12'=>'12'), 
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10),
 		                                                       array('placeholder'=>'Mes de Inicio')); ?>
+		<div class="infobox ">
+                Mes de Inicio
+          </div>
 		<?php echo $form->error($model,'start_month'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'start_year'); ?>
 		<?php echo $form->dropDownList($model,'start_year',array(''=>'','1980'=>'1980','2'=>'2','3'=>'3','4'=>'4','5'=>'5',
 																'6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11',
 																'2015'=>'2015'), 
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10),
-		                                                       array('placeholder'=>'Mes de Inicio')); ?>
+		                                                       array('placeholder'=>'Año de Inicio')); ?>
+		<div class="infobox ">
+               Año de Inicio
+          </div>
 		<?php echo $form->error($model,'start_year'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'hospital_unit'); ?>
-		<?php echo $form->textField($model,'hospital_unit',array('size'=>50,'maxlength'=>50, 'placeholder'=>'HU')); ?>
+		<?php echo $form->textField($model,'hospital_unit',array('size'=>50,'maxlength'=>50, 'placeholder'=>'Unidad Hospitalaria')); ?>
+		<div class="infobox ">
+             Unidad Hospitalaria 
+          </div>
 		<?php echo $form->error($model,'hospital_unit'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'rud'); ?>
 		<?php echo $form->textField($model,'rud',array('size'=>50,'maxlength'=>50, 'placeholder'=>'RUD')); ?>
+		<div class="infobox ">
+                RUD
+          </div>
 		<?php echo $form->error($model,'rud'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'schedule'); ?>
 		<?php echo $form->textField($model,'schedule',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Horario de Trabajo')); ?>
+		<div class="infobox ">
+              Horario de Trabajo
+          </div>
 		<?php echo $form->error($model,'schedule'); ?>
 	</div>
 
 	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
+		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
 		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
 	</div>
 

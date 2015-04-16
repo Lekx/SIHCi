@@ -32,42 +32,47 @@
 )); ?>
 
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'country'); ?>
 		<?php echo $form->textField($model,'country',array('size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
-		<?php echo $form->error($model,'country'); ?>
+		<div class="infobox">
+                Nombres
+          </div> 
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'grade'); ?>
 		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
 															'Particular'=>'Particular',
 			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'writ_number'); ?>
 		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
 															'Particular'=>'Particular',
 			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'writ_number'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título')); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'obtention_date'); ?>
+
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'language'=> 'es',
@@ -85,36 +90,45 @@
 		        		'placeholder'=>"Fecha de Obtención"),
 				));
 	?>
+		
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'obtention_date'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
 		<?php echo $form->dropDownList($model,'status',array(''=>'','Creditos_Terminados'=>'Creditos Terminados',
 															'Grado_Obtenido'=>'Grado Obtenido', 
 															'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'thesis_title'); ?>
 		<?php echo $form->textField($model,'thesis_title',array('size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'thesis_title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'state'); ?>
 		<?php echo $form->dropDownList($model,'state',array(''=>'','en_Proceso'=>'En Proceso',
 															'Terminado'=>'Terminado'), 
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sector'); ?>
 		<?php echo $form->dropDownList($model,'sector',array(''=>'','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5',
 																'6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11',
 																'12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16',
@@ -124,36 +138,47 @@
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10),
 		                                                         array('placeholder'=>'Día de Inicio')); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'sector'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'institution'); ?>
 		<?php echo $form->textField($model,'institution',array('size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'institution'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'area'); ?>
 		<?php echo $form->textField($model,'area',array('size'=>45,'maxlength'=>45,'placeholder'=>'Área')); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'discipline'); ?>
 		<?php echo $form->textField($model,'discipline',array('size'=>45,'maxlength'=>45,'placeholder'=>'Disciplina')); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'subdiscipline'); ?>
 		<?php echo $form->textField($model,'subdiscipline',array('size'=>45,'maxlength'=>45,'placeholder'=>'Subdisciplina')); ?>
+		<div class="infobox">
+                Nombres
+          </div>
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
 
 	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
+		<input class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
 		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
 	</div>
 

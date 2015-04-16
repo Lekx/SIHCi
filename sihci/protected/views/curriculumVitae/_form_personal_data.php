@@ -34,7 +34,7 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-	<div class="row">
+	<div class="row ">
 			<?php //echo $form->labelEx($curriculum,'status'); ?>
 		<?php //echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
 		<?php echo $form->error($curriculum,'status'); ?>
@@ -42,27 +42,27 @@
 
 	<div class="row 1">
 		<?php echo $form->textField($model,'names',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
-		<?php echo $form->error($model,'names'); ?>
-		 <div class="infobox">
+		 <div class="infobox 1">
                 Nombres
           </div>
+          <?php echo $form->error($model,'names'); ?>
 	</div>
 
 	<div class="row">
 	
 		<?php echo $form->textField($model,'last_name1',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Apellido Paterno")); ?>
-		<?php echo $form->error($model,'last_name1'); ?>
 		 <div class="infobox">
                 Apellido Paterno
           </div>
+          	<?php echo $form->error($model,'last_name1'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->textField($model,'last_name2',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Apellido Materno")); ?>
-		<?php echo $form->error($model,'last_name2'); ?>
 		 <div class="infobox">
                 Apellido Materno
           </div>
+          	<?php echo $form->error($model,'last_name2'); ?>
 	</div>
 
 	<div class="row">
@@ -70,10 +70,10 @@
 			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'), 
 		                                                       array('prompt'=> 'Estado Civil','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'marital_status'); ?>
 		 <div class="infobox">
                 Estado Civil
           </div>
+          	<?php echo $form->error($model,'marital_status'); ?>
 	</div>
 
 	<div class="row">
@@ -95,11 +95,12 @@
 		        		'placeholder'=>"Fecha de Nacimiento"),
 				));
 	?>
-	<?php echo $form->error($model,'birth_date'); ?>
 	 <div class="infobox">
                 Fecha de Nacimiento
           </div>
+          <?php echo $form->error($model,'birth_date'); ?>
 	</div>
+		
 
 
 		<div class="row">
@@ -107,10 +108,11 @@
 															'Mujer'=>'Mujer',), 
 		                                                       array('prompt'=>'Sexo','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'genre'); ?>
+	
 		 <div class="infobox">
                 Sexo
           </div>
+          <?php echo $form->error($model,'genre'); ?>
 	</div>
 
 <div class="row">
@@ -124,19 +126,20 @@
 		'firstText' => 'Pais',
 		)); ?>
 
-	    <?php echo $form->error($model,'country'); ?>
+	   
 	     <div class="infobox">
                 Pais
           </div>
+          <?php echo $form->error($model,'country'); ?>
 	</div>
   
 	<div class="row">
 	<!-- Nacionalidad es renderizado de Curriculum.php-->
 		<?php echo $form->textField($curriculum,'native_country',array('size'=>45,'maxlength'=>45, 'placeholder'=>"Nacionalidad")); ?>
-		<?php echo $form->error($curriculum,'native_country'); ?>
 		 <div class="infobox">
                 Nacionalidad
           </div>
+          <?php echo $form->error($curriculum,'native_country'); ?>
 	</div>
 
 	<div class="row">
@@ -172,52 +175,45 @@
 			                                                         		'Zacatecas'=>'Zacatecas',), 
 		                                                       array('prompt'=>'Estado','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-	    <?php echo $form->error($model,'state_of_birth'); ?>
+	  
 	     <div class="infobox">
                 Estado</p>
           </div>
+            <?php echo $form->error($model,'state_of_birth'); ?>
 	</div>
 
 	<div class="row">
 		
 		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Curp")); ?>
-		<?php echo $form->error($model,'curp_passport'); ?>
+		
 		 <div class="infobox">
                 CURP</p>
           </div>
-	</div>
-
-	<div class="row">
-		
-		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Pasaporte")); ?>
-		<?php echo $form->error($model,'curp_passport'); ?>
-		 <div class="infobox">
-                Pasaporte</p>
-          </div>
+          <?php echo $form->error($model,'curp_passport'); ?>
 	</div>
 
 	<div class="row">
 	
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'photo_url'); ?>  
 		 <div class="infobox">
                 Foto de Peril</p>
-          </div>   
+          </div>  
+          <?php echo $form->error($model,'photo_url'); ?>   
 	</div>
 
 	<div class="row">
 
 		<?php echo $form->textField($model,'person_rfc',array('size'=>13,'maxlength'=>13, 'placeholder'=>"RFC")); ?>
-		<?php echo $form->error($model,'person_rfc'); ?>
 		 <div class="infobox">
                 RFC
           </div>
+          	<?php echo $form->error($model,'person_rfc'); ?>
 	</div>
 
 	<div class="row buttons">
 		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
+		<button type=""><?php echo CHtml::link('Cancelar',array('/site/index')); ?></button>
 	</div>
 
 
