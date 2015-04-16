@@ -197,7 +197,7 @@
 	</div>
 
 	<div class="row">
-		
+	
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'photo_url'); ?>  
 		 <div class="infobox">

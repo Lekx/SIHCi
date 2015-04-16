@@ -20,20 +20,27 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'attributes'=>array(
 		'id',
 		'id_curriculum',
 		'title',
 		'conclusion_date',
 		'author',
-		'path',
+		array(               
+                  'label'=>'Archivo',
+                  'type'=>'raw',
+                  'value'=>CHtml::link('Ver archivo',Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title, array("target"=>"_blank")),
+                ),
+		//'path',
 		'grade',
 		'sector',
-		'organization',
+		'organization',	
 		'second_level',
 		'area',
 		'discipline',
 		'subdisciplina',
 	),
+	 
 	
 )); ?>

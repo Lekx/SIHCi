@@ -47,7 +47,12 @@ $('.search-form form').submit(function(){
 		'conclusion_date',
 		'author',
 		//'path',
-		
+		//array(
+		//'class'=>'CLinkColumn',
+        //'header'=>'path',
+        //'labelExpression'=>'$data->path',
+        //'urlExpression'=>'$data->direccionArchivos()',
+		//),
 		'grade',
 		'sector',
 		'organization',
