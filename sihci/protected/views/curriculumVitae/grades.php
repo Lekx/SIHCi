@@ -12,6 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Formación Académica</h1>
+<h4>Formación Académica:</h4>
 
 <?php $this->renderPartial('_form_grades', array('model'=>$model)); ?>
+

@@ -353,11 +353,10 @@ body
 {
 	width: 120px !important;
 	height: 40px;
-	background-color: #1EB9C0;
+	background-color: #1EB9C0 !important;
 	color: white;
 	font-size: 20px;
 	margin-left: -10px !important;
-
 }
 input::-webkit-input-placeholder { /* WebKit browsers */
     color: #1EB9C0 !important;
@@ -397,16 +396,35 @@ thead th
 {
 	display: inline-block;
 }
-.row.buttons button
+.row.buttons input[type="button"]
 {
 	color: white;
 	font-size: 20px;
- 	width: 120px !important;
+ 	width: 190px ;
 	height: 40px;
-	background-color: #1EB9C0;
+	background-color: #CDF1F3;
+}
+.phones
+{
+	display:  inline-block;
+}
+.phones.country
+{
+	width: 65px !important;
+}
+.phones.state
+{
+	width: 65px !important;
 
 }
-
+.phones.phonew
+{
+	width: 240px !important;
+}
+.extension
+{
+	width: 65px !important;
+} 
 
 
 

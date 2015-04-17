@@ -35,30 +35,30 @@
 	<div class="row">
 		<?php echo $form->textField($model,'country',array('size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
 		<div class="infobox">
-                Nombres
+                Pais
           </div> 
 	</div>
 
 	<div class="row">
-		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
-			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
+			                                                          'Campus'=>'Campus', 'otro'=>'Otro'), 
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<div class="infobox">
-                Nombres
+                Grado
           </div>
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<div class="infobox">
-                Nombres
+                Numero de Cedula
           </div>
 		<?php echo $form->error($model,'writ_number'); ?>
 	</div>
@@ -66,7 +66,7 @@
 	<div class="row">
 		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título')); ?>
 		<div class="infobox">
-                Nombres
+                Titulo
           </div>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
@@ -92,7 +92,7 @@
 	?>
 		
 		<div class="infobox">
-                Nombres
+                Fecha de Obtención
           </div>
 		<?php echo $form->error($model,'obtention_date'); ?>
 	</div>
@@ -104,7 +104,7 @@
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<div class="infobox">
-                Nombres
+                Estado
           </div>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
@@ -112,7 +112,7 @@
 	<div class="row">
 		<?php echo $form->textField($model,'thesis_title',array('size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); ?>
 		<div class="infobox">
-                Nombres
+                Título Tésis
           </div>
 		<?php echo $form->error($model,'thesis_title'); ?>
 	</div>
@@ -123,7 +123,7 @@
 		                                                       array('options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<div class="infobox">
-                Nombres
+               Estado
           </div>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
@@ -139,7 +139,7 @@
 		                                                       array('size'=>10,'maxlength'=>10),
 		                                                         array('placeholder'=>'Día de Inicio')); ?>
 		<div class="infobox">
-                Nombres
+                Día de Inicio
           </div>
 		<?php echo $form->error($model,'sector'); ?>
 	</div>
@@ -147,7 +147,7 @@
 	<div class="row">
 		<?php echo $form->textField($model,'institution',array('size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); ?>
 		<div class="infobox">
-                Nombres
+              Institución
           </div>
 		<?php echo $form->error($model,'institution'); ?>
 	</div>
@@ -155,7 +155,7 @@
 	<div class="row">
 		<?php echo $form->textField($model,'area',array('size'=>45,'maxlength'=>45,'placeholder'=>'Área')); ?>
 		<div class="infobox">
-                Nombres
+              Área
           </div>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
@@ -163,7 +163,7 @@
 	<div class="row">
 		<?php echo $form->textField($model,'discipline',array('size'=>45,'maxlength'=>45,'placeholder'=>'Disciplina')); ?>
 		<div class="infobox">
-                Nombres
+                Disciplina
           </div>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
@@ -171,15 +171,15 @@
 	<div class="row">
 		<?php echo $form->textField($model,'subdiscipline',array('size'=>45,'maxlength'=>45,'placeholder'=>'Subdisciplina')); ?>
 		<div class="infobox">
-                Nombres
+                Subdisciplina
           </div>
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
 
 	<div class="row buttons">
 		<input class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
-		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
 	</div>
 
 

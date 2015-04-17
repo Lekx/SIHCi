@@ -42,8 +42,8 @@
 
 	<div class="row buttons">
 		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
-		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>
