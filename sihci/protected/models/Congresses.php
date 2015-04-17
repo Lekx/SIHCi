@@ -13,6 +13,7 @@
  * @property string $country
  * @property string $work_type
  * @property string $keywords
+ * @property string $creation_date
  *
  * The followings are the available model relations:
  * @property Curriculum $idCurriculum
@@ -43,6 +44,7 @@ class Congresses extends CActiveRecord
 			array('country', 'length', 'max'=>50),
 			array('work_type', 'length', 'max'=>25),
 			array('keywords', 'length', 'max'=>250),
+			array('creation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, work_title, year, congress, type, country, work_type, keywords', 'safe', 'on'=>'search'),
@@ -77,6 +79,7 @@ class Congresses extends CActiveRecord
 			'country' => 'Pais',
 			'work_type' => 'Tipo de Trabajo',
 			'keywords' => 'Palabras Claves',
+			'creation_date' => 'Creation Date',
 		);
 	}
 
@@ -107,6 +110,7 @@ class Congresses extends CActiveRecord
 		$criteria->compare('country',$this->country,true);
 		$criteria->compare('work_type',$this->work_type,true);
 		$criteria->compare('keywords',$this->keywords,true);
+		$criteria->compare('creation_date',$this->creation_date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

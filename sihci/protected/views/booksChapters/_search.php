@@ -81,16 +81,18 @@
 		<?php echo $form->textField($model,'subdiscipline',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
+ <?php/*
 	<div class="row">
 		<?php echo $form->label($model,'creation_date'); ?>
 		<?php echo $form->textField($model,'creation_date'); ?>
 	</div>
-
+    
+   
 	  <div class="row">
         <?php echo $form->label($model,'url_doc'); ?>
         <?php echo $form->textField($model,'url_doc',array('size'=>60,'maxlength'=>100)); ?>
     </div>
-
+      */ ?> 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
