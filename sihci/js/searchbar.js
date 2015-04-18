@@ -1,7 +1,7 @@
- $(document).ready(function() {
+$(document).ready(function() {
      var searchKey = "";
 
-      $("#searchbartop").keypress(function() {
+      $("#searchbartop").keyup(function() {
          searchKey = $(this).val();
          if (searchKey.length > 1) {
              $.ajax({
@@ -17,13 +17,15 @@
              }).done({
                  //alert('Success!');
              }).fail({
-                 //alert('fail :(');
+                 //alert('fail ');
              });
+			 			 if(e.keyCode == 13)
+				  window.location = yii.urls.searchBarResults + searchKey;
          }
 
       });
 
-     $("#searchBarMain1").keypress(function() {
+     $("#searchBarMain1").keyup(function(e) {
          searchKey = $(this).val();
          if (searchKey.length > 1) {
              $.ajax({
@@ -39,24 +41,29 @@
              }).done({
                  //alert('Success!');
              }).fail({
-                 //alert('fail :(');
+                 //alert('fail ');
              });
+			 if(e.keyCode == 13)
+				  window.location = yii.urls.searchBarResults + searchKey;
          }
      });
+  $(document).click(function(e) {
+    var target = e.target;
 
-     $("#searchBarMain1").focusout(function(){
+    if (!$(target).is('#searchBarResults') && !$(target).parents().is('#searchBarResults')) {
+        $('#searchBarResults').hide();
+    }
+});
 
-         $("#searchBarResults").hide();
-         $('#searchBarResults').html('');
-         $('#searchBarMain1').val('');
-     });
+      $(document).click(function(e) {
+    var target = e.target;
 
-      $("#searchbartop").focusout(function(){
+    if (!$(target).is('#searchBarResultstop') && !$(target).parents().is('#searchBarResultstop')) {
+        $('#searchBarResultstop').hide();
+    }
+});
 
-         $("#searchBarResultstop").hide();
-         $('#searchBarResultstop').html('');
-         $('#searchbartop').val('');
-     });
+
 
      $("#search").click(function() {
          window.location = yii.urls.searchBarResults + searchKey;

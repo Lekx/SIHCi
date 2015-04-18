@@ -1,5 +1,5 @@
 <?php 
-  	class accountController extends controller{
+  	class AccountController extends Controller{
 
 
 	public $layout='//layouts/system';
@@ -34,7 +34,7 @@
 	public function actionInfoAccount(){
 		
 			$details = Users::model()->findByPk(Yii::app()->user->id);
-			$this->render('InfoAccount',array(
+			$this->render('infoAccount',array(
 			'details'=>$details,
 			));
 	}

@@ -17,9 +17,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+    <?php echo YiiBase::getPathOfAlias("webroot")?>
 	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
     
        

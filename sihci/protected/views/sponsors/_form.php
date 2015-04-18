@@ -2,7 +2,22 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 /* @var $form CActiveForm */
+
 ?>
+<script>
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
+</script>
 
 <div class="form">
 
@@ -13,7 +28,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-	'htmlOptions' => array('enctype' => 'multipart/form-data')
+	'htmlOptions' => array('enctype'=>'multipart/form-data')
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -22,19 +37,35 @@
 	<?php echo $form->errorSummary($modelPersons); ?>
 	<?php echo $form->errorSummary($model); ?>
 	
+   
+       
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses,'country'); ?>
-		<?php echo $form->textField($modelAddresses,'country',array('size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
-		<?php echo $form->error($modelAddresses,'country'); ?>
-	</div>
+
+          <?php
+        $this->widget(
+            'yiiwheels.widgets.formhelpers.WhCountries',
+            array(
+                'name' => 'Addresses[country]',
+                'id' => 'Addresses_country',
+                'value' => 'US',
+                'useHelperSelectBox' => true,
+                'pluginOptions' => array(
+                    'country' => 'US',
+                    'language' => 'es_ES',
+                    'flags' => true
+                )
+            )
+        );
+        ?>
+        </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($modelAddresses,'zip_code'); ?>
-		<?php echo $form->textField($modelAddresses,'zip_code',array('placeholder'=>'Código Postal')); ?>
+		<?php echo $form->textField($modelAddresses,'zip_code',array('placeholder'=>'Código Postal','class'=>'numericOnly')); ?>
 		<?php echo $form->error($modelAddresses,'zip_code'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row" class="">
 		<?php echo $form->labelEx($modelAddresses,'state'); ?>
 		<?php echo $form->textField($modelAddresses,'state',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Estado')); ?>
 		<?php echo $form->error($modelAddresses,'state'); ?>
@@ -72,13 +103,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($modelAddresses,'external_number'); ?>
-		<?php echo $form->textField($modelAddresses,'external_number',array('size'=>8,'maxlength'=>8, 'placeholder'=>'Número Externo')); ?>
+		<?php echo $form->textField($modelAddresses,'external_number',array('size'=>8,'maxlength'=>8, 'placeholder'=>'Número Externo','class'=>'numericOnly')); ?>
 		<?php echo $form->error($modelAddresses,'external_number'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($modelAddresses,'internal_number'); ?>
-		<?php echo $form->textField($modelAddresses,'internal_number',array('size'=>8,'maxlength'=>8, 'placeholder'=>'Número Interno')); ?>
+		<?php echo $form->textField($modelAddresses,'internal_number',array('size'=>8,'maxlength'=>8, 'placeholder'=>'Número Interno','class'=>'numericOnly')); ?>
 		<?php echo $form->error($modelAddresses,'internal_number'); ?>
 	</div>
 	
@@ -146,14 +177,16 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'employeess_number'); ?>
-		<?php echo $form->textField($model,'employeess_number'); ?>
+		<?php echo $form->textField($model,'employeess_number',array('class'=>'numericOnly')); ?>
 		<?php echo $form->error($model,'employeess_number'); ?>
 	</div>
 
 	<div class="row">
 
 		<?php echo $form->fileField($modelPersons,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
-		<?php echo $form->error($modelPersons,'photo_url'); ?>     
+		<?php echo $form->error($modelPersons,'photo_url'); ?> 
+		<img src="<?php echo Yii::app()->request->baseUrl."/".$modelPersons->photo_url; ?>">
+ 
 	</div>
 
 	<div class="row buttons">

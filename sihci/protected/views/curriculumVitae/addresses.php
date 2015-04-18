@@ -12,6 +12,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Datos de dirección actual</h1>
+<h4>Datos de dirección actual:</h4>
 
 <?php $this->renderPartial('_form_addresses', array('model'=>$model)); ?>

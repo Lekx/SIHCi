@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 <section class="informativa">
 
 	<section class="column-left">
-			<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculaciónUniversidadesInstitutosHospitales.png" alt="">
+			<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculacionUniversidadesInstitutosHospitales.png" alt="">
 	</section>
 
 	
@@ -46,7 +46,7 @@ $this->breadcrumbs=array(
 	<section class="column-right">
 	<h5>DOCUMENTOS</h5>
 	<h5>DESCARGABLES:</h5>
-		     	<?php Yii::app()->runController('filesManager/DisplayFiles/section/Vinculacion con universidades, institutos y hospitales'); ?>
+		<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	 </section>
 
 </section>

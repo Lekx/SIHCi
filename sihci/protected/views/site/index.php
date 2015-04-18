@@ -30,7 +30,7 @@
             </div>
             <div class="content1">
                 <div>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/hospitalUnitJimEthicsCommittee/index"><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comités.png" alt=""></a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/hospitalUnitJimEthicsCommittee/index"><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comites.png" alt=""></a>
                     <br>
                     <br>
                     <h5>Cómites</h5>
@@ -54,7 +54,7 @@
                     <h5>Unidad editorial<br><br></h5>
                 </div>
                 <div>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/vinculationWithUniversityInstitutesHospitals/index"><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculaciónUniversidadesInstitutosHospitales.png" alt=""></a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/vinculationWithUniversityInstitutesHospitals/index"><img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculacionUniversidadesInstitutosHospitales.png" alt=""></a>
                     <h5>Vinculación con Universidades, Institutos y Hospitales</h5>
                 </div>
             </div>

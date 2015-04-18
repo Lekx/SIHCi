@@ -84,7 +84,7 @@ class Users extends CActiveRecord
 			'id' => 'ID',
 			'id_roles' => 'Id Roles',
 			'email' => 'Email',
-			'password' => 'Password',
+			'password' => 'Contraseña',
 			'registration_date' => 'Registration Date',
 			'activation_date' => 'Activation Date',
 			'act_react_key' => 'Act React Key',

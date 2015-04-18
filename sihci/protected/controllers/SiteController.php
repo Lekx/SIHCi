@@ -101,7 +101,6 @@ class SiteController extends Controller {
 				echo "404";
 				Yii::app()->user->logout();
 			}
-
 			Yii::app()->end();
 		}
 		// display the login form

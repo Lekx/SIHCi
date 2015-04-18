@@ -100,7 +100,7 @@ class SponsorsController extends Controller {
 									// delete file
 								}
 								$logo->saveAs($path . 'logo.' . $logo->getExtensionName());
-								$logo = $path . 'logo.' . $logo->getExtensionName();
+								$logo =  "sponsors/" . $id_sponsor . "/img/".'logo.' . $logo->getExtensionName();
 
 								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id, array('photo_url' => $logo))) {
 
@@ -151,20 +151,28 @@ class SponsorsController extends Controller {
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if (isset($_POST['SponsorsContact'])) {
+		if (isset($_POST['types'])) {
 			$model->id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 
 			echo "<pre>";
-			print_r($_POST['SponsorsContact']);
+			print_r($_POST['types']);
+			print_r($_POST['values']);
 			echo "</pre>";
-/*
 
-foreach ($_POST['SponsorsContact'] as $values) {
-$model->type = $values["type"];
-$model->value = $values["type"];
-$model->save();
-}
- */
+		$values = $_POST['values'];
+		$types = $_POST['types'];
+
+		foreach ($_POST['values'] as $key => $values) {
+			$model->type = $values;
+			$model->value = $types[$key];
+			$model->save();
+			
+			
+
+			
+        
+		}
+
 			//$model->attributes = $_POST['SponsorsContact'];
 			//$model->id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 			/*

@@ -22,12 +22,13 @@
 <div class="recopy">
 	<div class="row">
 		<?php echo $form->labelEx($model, 'type');?>
-		<?php echo $form->textField($model, 'type', array('name' => 'type'), array('size' => 20, 'maxlength' => 20));?>
+		<?php echo $form->dropDownList($model, 'type', array(''=>'','TELEFONO'=>'Telèfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
+		                     						array('options' => array(''=>array('selected'=>true))),array('name'=>'types[]','size' => 20, 'maxlength' => 20));?>
 		<?php echo $form->error($model, 'type');?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model, 'value');?>
-		<?php echo $form->textField($model, 'value', array('size' => 20, 'maxlength' => 20));?>
+		<?php echo $form->textField($model, 'value', array('name'=>'values[]','size' => 20, 'maxlength' => 20));?>
 		<?php echo $form->error($model, 'value');?>
 	</div>
 </div>

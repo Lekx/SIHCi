@@ -10,8 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
 
 
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	
+	<title>SIHCi</title>
+	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>favicon.ico">
 </head>
 
 <body>
