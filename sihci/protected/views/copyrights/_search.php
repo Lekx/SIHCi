@@ -10,9 +10,15 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
+	<fieldset>
+		
+		<legend>Búsqueda por:</legend>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Ejemplo: Ricardo')); ?>	
+		<?php echo CHtml::submitButton('Buscar'); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
+	</fieldset>
+	  <!--  <div class="row">
+		<?php /* echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
@@ -63,13 +69,13 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'creation_date'); ?>
-		<?php echo $form->textField($model,'creation_date'); ?>
-	</div>
+		<?php echo $form->textField($model,'creation_date');  ?>
+	</div> 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+		<?php echo CHtml::submitButton('Buscar'); */ ?>
+	</div>  -->
 
-<?php $this->endWidget(); ?>
+<?php $this->endWidget(); ?> 
 
 </div><!-- search-form -->

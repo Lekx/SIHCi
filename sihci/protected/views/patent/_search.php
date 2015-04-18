@@ -15,8 +15,8 @@
 	<fieldset>
 		
 		<legend>Búsqueda por:</legend>		
-
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Ejemplo: cosa')); ?>	
+		<?php echo $form->textField($model,'owner',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Ejemplo: Ricardo')); ?>	
+		
 		<?php echo CHtml::submitButton('Buscar'); ?>
 
 	</fieldset>

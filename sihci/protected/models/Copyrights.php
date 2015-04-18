@@ -24,6 +24,8 @@ class Copyrights extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $searchValue;
+	
 	public function tableName()
 	{
 		return 'copyrights';
@@ -45,7 +47,7 @@ class Copyrights extends CActiveRecord
 			array('application_date, resume, impact_value, creation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, participation_type, title, application_date, step_number, resume, beneficiary, entity, impact_value, creation_date', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, participation_type, title, application_date, step_number, resume, beneficiary, entity, impact_value, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +60,7 @@ class Copyrights extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),
+			'id' => array(self::BELONGS_TO, 'Copyrights', 'id'),
 		);
 	}
 
@@ -98,8 +101,8 @@ class Copyrights extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
+		
+		$criteria->compare('searchValue.id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('participation_type',$this->participation_type,true);
 		$criteria->compare('title',$this->title,true);
@@ -110,7 +113,7 @@ class Copyrights extends CActiveRecord
 		$criteria->compare('entity',$this->entity,true);
 		$criteria->compare('impact_value',$this->impact_value,true);
 		$criteria->compare('creation_date',$this->creation_date,true);
-
+			
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
