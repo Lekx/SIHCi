@@ -23,7 +23,8 @@ class CurriculumVitaeController extends Controller
 		return array(
 		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'Delete',
+				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
+								'DeletePhone', 'DeleteResearch',
 								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission'),
 				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1")',
 				 'users'=>array('@'),
@@ -42,6 +43,7 @@ class CurriculumVitaeController extends Controller
 
 		$model = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
+		$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/';
 
 		if($curriculum == null){
 			$curriculum = new Curriculum;
@@ -65,8 +67,8 @@ class CurriculumVitaeController extends Controller
 			$curriculum->save();
 		}
 
-		if (!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/')) {
-			mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/', 0777, true);
+		if (!is_dir($path)) {
+			mkdir($path, 0775, true);
 		}
 
 		$this->performAjaxValidation($model);
@@ -80,10 +82,11 @@ class CurriculumVitaeController extends Controller
 			if ($model->validate()) {
 
 				if($model->photo_url != ''){
-					$model->photo_url->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png');
+					$model->photo_url->saveAs($path.'/perfil.png');
 				}
 
-				$model->photo_url = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
+				$model->photo_url = $path.'/perfil.png';
+
 				if($model->save()){
 					$curriculum->native_country = $curriculum->native_country;
 					$curriculum->save();
@@ -100,13 +103,10 @@ class CurriculumVitaeController extends Controller
 	}
 
 	public function actionDocsIdentity(){
-			
+		$model=new DocsIdentity;
 		$curriculum=Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 		$docs = DocsIdentity::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
-	
-		$model=new DocsIdentity;
 		$getDocs = DocsIdentity::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
-		
 		
 		$this->performAjaxValidation($model);
 
@@ -115,13 +115,24 @@ class CurriculumVitaeController extends Controller
 			$model->attributes=$_POST['DocsIdentity'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			$model->doc_id = CUploadedFile::getInstanceByName('DocsIdentity[doc_id]');
+			$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/';
+			$path2 = '/users/'.Yii::app()->user->id.'/cve-hc/';
+			if (!is_dir($path)) {
+				mkdir($path, 0775, true);
+			}
+			$files = glob($path);
 
+			foreach ($files as $file) {
+				if (is_file($file)) {
+					unlink($file);
+				}
+
+			}
 			//$docExist = DocsIdentity::model()->find(array('condition'=>'id_curriculum='.$curriculum->id.' AND type="'.$model->type.'"'));
 			if ($model->validate()) {
-				
 				//if ($docExist != null) {
-					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName());
-					$model->doc_id = '/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName();
+					$model->doc_id->saveAs($path.$model->type.'.'.$model->doc_id->getExtensionName());
+					$model->doc_id = $path2.$model->type.'.'.$model->doc_id->getExtensionName();
 						if($model->save()){
 						// $section = "Documentos Oficiales"; //manda parametros al controlador SystemLog
 						// $details = "Se han modificado Documentos Oficiales";
@@ -189,23 +200,34 @@ class CurriculumVitaeController extends Controller
 		$getResearch = ResearchAreas::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
 		$model=new ResearchAreas;
 		
-
-	
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['ResearchAreas']))
+		if(isset($_POST['nameResearch']) || isset($_POST['getResearch']))
 		{
-			$model->attributes=$_POST['ResearchAreas'];
-			$model->id_curriculum = $curriculum->id;
-			if ($model->save()) {
-				// $section = "Lineas de Investigacion"; //manda parametros al controlador SystemLog
-				// $details = "Se modifico su Linea de investigacion";
-				// $action = "Modificacion";
-				// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				$this->redirect('researchAreas');
-			}
-		}
+			$researchNew = $_POST["nameResearch"];
 
+			foreach ($researchNew as $key => $value) {
+				$researchNew = new ResearchAreas();
+				$researchNew->id_curriculum = $curriculum->id;
+				$researchNew->name = $value;
+				$researchNew->save();
+			}
+
+			if ($getResearch != null) {
+				$getResearchs = $_POST['getResearch'];
+				foreach ($getResearchs as $key => $value) {
+					$research = ResearchAreas::model()->findByPk($getResearch[$key]->id);
+					$research->id_curriculum = $curriculum->id;
+					$research->name = $value;
+					$research->save();
+				}
+				$section = "Lineas de Investigacion"; //manda parametros al controlador SystemLog
+				$details = "Se modifico su Linea de investigacion";
+				$action = "Modificacion";
+				Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+			}
+			$this->redirect('researchAreas');
+		}
 		$this->render('research_areas',array('model'=>$model, 'getResearch'=>$getResearch,));
 	}
 
@@ -249,10 +271,6 @@ class CurriculumVitaeController extends Controller
 						$emails->email = $getEmail[$key];
 						$emails->type = $getTypeEmail[$key];
 						$emails->save();
-							// $section = "Datos de Contacto";
-							// $details = "Se han modificado el Email: ".$getEmails[$key]->email." a ".$getEmail[$key];
-							// $action = "Modificacion";
-							// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 					}	
 			}
 			
@@ -303,11 +321,14 @@ class CurriculumVitaeController extends Controller
 	public function actionGrades(){
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 		$grade = Grades::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
+		$getGrades = Grades::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
 		$model=new Grades;
 
-		if ($grade != null) {
-			$model = Grades::model()->findByPk($grade->id);
-		}
+		$this->performAjaxValidation($model);
+
+		// if ($grade != null) {
+		// 	$model = Grades::model()->findByPk($grade->id);
+		// }
 			
 		$model->id_curriculum = $curriculum->id;
 
@@ -323,7 +344,36 @@ class CurriculumVitaeController extends Controller
 				// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				$this->redirect('grades');
 		}
-		$this->render('grades',array('model'=>$model,));
+		$this->render('grades',array('model'=>$model, 'getGrades'=>$getGrades));
+		/////////////////////////////////////////////////////////////////
+
+		// if(isset($_POST['nameResearch']) || isset($_POST['getResearch']))
+		// {
+		// 	$researchNew = $_POST["nameResearch"];
+
+		// 	foreach ($researchNew as $key => $value) {
+		// 		$researchNew = new ResearchAreas();
+		// 		$researchNew->id_curriculum = $curriculum->id;
+		// 		$researchNew->name = $value;
+		// 		$researchNew->save();
+		// 	}
+
+		// 	if ($getResearch != null) {
+		// 		$getResearchs = $_POST['getResearch'];
+		// 		foreach ($getResearchs as $key => $value) {
+		// 			$research = ResearchAreas::model()->findByPk($getResearch[$key]->id);
+		// 			$research->id_curriculum = $curriculum->id;
+		// 			$research->name = $value;
+		// 			$research->save();
+		// 		}
+		// 		$section = "Lineas de Investigacion"; //manda parametros al controlador SystemLog
+		// 		$details = "Se modifico su Linea de investigacion";
+		// 		$action = "Modificacion";
+		// 		Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		// 	}
+		// 	$this->redirect('researchAreas');
+		// }
+		// $this->render('research_areas',array('model'=>$model, 'getResearch'=>$getResearch,));
 	}
 
 
@@ -349,11 +399,28 @@ class CurriculumVitaeController extends Controller
 		$this->render('commission',array('model'=>$model,));
 	}
 
-	public function actionDelete($id){
-		if (isset($_POST['ajax']) && $_POST['ajax'] === 'phones-form') {
-			echo "string";
-		}
+
+
+	public function actionDeleteEmail($id){
+		$model=Emails::model()->findByPk($id)->delete();
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('phones'));
 	}
+
+	public function actionDeletePhone($id){
+		$model=Phones::model()->findByPk($id)->delete();
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('phones'));
+	}
+
+	public function actionDeleteResearch($id){
+		$model=ResearchAreas::model()->findByPk($id)->delete();
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('researchAreas'));
+	}
+
+
+
 
 	/**
 	 * Performs the AJAX validation.
