@@ -14,6 +14,10 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+	)
+
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
@@ -96,26 +100,29 @@
 	</div>
 
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxSubmitButton ($model->isNewRecord ? 'Guardar' : 'Modificar', CController::createUrl('copyrights/create'), 
+	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('copyrights/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
-							'type'=>'post',
-	                        'data'=> 'js:$("#copyrights-form").serialize()+ "&ajax=copyrights-form"',                        
-	                        'success'=>'js:function(response)
-	                        { 
-	                        	alert(response);
-	                        	if(response == "[]")
-	                        	{
-	                        		alert("Registro realizado con éxito");	                        		
-	                        	}
-	                            else
-	                            {	
-	                        		alert("Complete los campos marcados con *");
-	                        	}	
-	                        }'
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#copyrights-form")[0].reset();
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
                         )); 
         ?>
 		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-	
+       	<?php echo CHtml::link('Cancelar',array('/copyrights/admin')); ?>
+
 		<div class="200">
 		
 		</div>
@@ -128,5 +135,4 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
 

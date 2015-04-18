@@ -60,6 +60,7 @@ class CopyrightsController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+//DA01-Registro de datos
 	public function actionCreate()
 	{
 		$model=new Copyrights;
@@ -67,22 +68,24 @@ class CopyrightsController extends Controller
 		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
 		$model->id_curriculum = $id_curriculum->id;   
 		$this->performAjaxValidation($model);
-		var_dump($_POST);
+		//var_dump($_POST);
 
 		if(isset($_POST['Copyrights']))
 		{
-			echo "noobs";
 			$model->attributes=$_POST['Copyrights'];
 			$model->id_curriculum = $id_curriculum->id;  
-  		
+
 			if($model->save())
      		{
-     			//echo "[]";
-     			$this->redirect(array('view','id'=>$model->id));
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
      		}	
      		else 
      		{
-     			echo "response";
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
      		}
 
      		//Yii::app()->end();
@@ -92,12 +95,12 @@ class CopyrightsController extends Controller
 			$this->render('create',array('model'=>$model));
 	}
 
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -108,14 +111,22 @@ class CopyrightsController extends Controller
 		if(isset($_POST['Copyrights']))
 		{
 			$model->attributes=$_POST['Copyrights'];
-
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+     		{
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**
@@ -181,13 +192,8 @@ class CopyrightsController extends Controller
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='copyrights-form')
 		{
-
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
-			
 		}
 	}
 }
-
-
-

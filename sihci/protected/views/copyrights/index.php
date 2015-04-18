@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
-	array('label'=>'Listar', 'url'=>array('admin')),
+	array('label'=>'Create Copyrights', 'url'=>array('create')),
+	array('label'=>'Manage Copyrights', 'url'=>array('admin')),
 );
 ?>
 

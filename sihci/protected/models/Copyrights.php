@@ -47,6 +47,7 @@ class Copyrights extends CActiveRecord
 			array('application_date, resume, impact_value, creation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
+			array('searchValue','length', 'max'=>70),
 			array('id, id_curriculum, participation_type, title, application_date, step_number, resume, beneficiary, entity, impact_value, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
@@ -102,7 +103,12 @@ class Copyrights extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 		
-		$criteria->compare('searchValue.id',$this->id);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id CONCAT('%', :searchValue , '%')");
+			$crietria->params = array(':searchValue' => $this->searchValue);
+		}
+		/* $criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('participation_type',$this->participation_type,true);
 		$criteria->compare('title',$this->title,true);
@@ -112,7 +118,7 @@ class Copyrights extends CActiveRecord
 		$criteria->compare('beneficiary',$this->beneficiary,true);
 		$criteria->compare('entity',$this->entity,true);
 		$criteria->compare('impact_value',$this->impact_value,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
+		$criteria->compare('creation_date',$this->creation_date,true); */
 			
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

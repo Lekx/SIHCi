@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Desplegar', 'url'=>array('index')),
-	array('label'=>'Crear', 'url'=>array('create')),
-	array('label'=>'Modificar', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Listar', 'url'=>array('admin')),
+	array('label'=>'List Copyrights', 'url'=>array('index')),
+	array('label'=>'Create Copyrights', 'url'=>array('create')),
+	array('label'=>'Update Copyrights', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Copyrights', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Copyrights', 'url'=>array('admin')),
 );
 ?>
 

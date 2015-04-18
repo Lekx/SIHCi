@@ -194,7 +194,8 @@
 			}	
 			
 		</script> 
-		
+       	<?php echo CHtml::link('Cancelar',array('/copyrights/admin')); ?>
+
  	</div>
 
 <?php $this->endWidget(); ?>
