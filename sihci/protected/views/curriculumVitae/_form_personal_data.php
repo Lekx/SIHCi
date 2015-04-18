@@ -33,7 +33,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery' );
 Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 ?>
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'persons-form',
+	'id'=>'personal-data-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -42,8 +42,10 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
+<?php echo $form->errorSummary($model); ?>
+<?php echo $form->errorSummary($curriculum); ?>
 	<div class="row">
-			<?php echo $form->labelEx($curriculum,'status'); ?>
+		<?php echo $form->labelEx($curriculum,'status'); ?>
 		<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
 		<?php echo $form->error($curriculum,'status'); ?>
 	</div>
@@ -172,13 +174,20 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
 		<?php echo $form->error($model,'photo_url'); ?>
-		     
+		<?php 
+
+		echo "<img src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' width='100' height='100'>";
+
+		?>
+		    
 	</div>
 
 	<div class="row">
 
 		<?php echo $form->textField($model,'person_rfc',array('size'=>13,'maxlength'=>13, 'placeholder'=>"RFC")); ?>
+
 		<?php echo $form->error($model,'person_rfc'); ?>
+
 	</div>
 
 	<div class="row buttons">

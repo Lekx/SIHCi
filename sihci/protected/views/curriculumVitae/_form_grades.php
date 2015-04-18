@@ -28,7 +28,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 
@@ -42,21 +42,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'grade'); ?>
-		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+		<?php echo $form->dropDownList($model,'grade',array('Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
 															'Particular'=>'Particular',
 			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('prompt'=>'Grado','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'writ_number'); ?>
-		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
-															'Particular'=>'Particular',
-			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->textField($model,'writ_number',array('size'=>50,'maxlength'=>50, 'placeholder'=>'Número de Cédula')); ?>
 		<?php echo $form->error($model,'writ_number'); ?>
 	</div>
 
@@ -90,10 +86,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',array(''=>'','Creditos_Terminados'=>'Creditos Terminados',
+		<?php echo $form->dropDownList($model,'status',array('Creditos_Terminados'=>'Creditos Terminados',
 															'Grado_Obtenido'=>'Grado Obtenido', 
 															'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('prompt'=>'Estatus','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
@@ -106,24 +102,22 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'state'); ?>
-		<?php echo $form->dropDownList($model,'state',array(''=>'','en_Proceso'=>'En Proceso',
+		<?php echo $form->dropDownList($model,'state',array('en_Proceso'=>'En Proceso',
 															'Terminado'=>'Terminado'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('prompt'=>'Estado','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'sector'); ?>
-		<?php echo $form->dropDownList($model,'sector',array(''=>'','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5',
-																'6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11',
-																'12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16',
-																'17'=>'17','18'=>'18','19'=>'19','20'=>'20','21'=>'21',
-																'22'=>'22','23'=>'23','24'=>'24','25'=>'25','26'=>'26',
-																'27'=>'27','28'=>'28','29'=>'29','30'=>'30','31'=>'31'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10),
-		                                                         array('placeholder'=>'Día de Inicio')); ?>
+		<?php echo $form->dropDownList($model,'sector',array('No especificado'=>'No especificado','Instituciones del sector gobierno federal centralizado'=>'Instituciones del sector gobierno federal centralizado',
+			                                                 'Instituciones del sector entidades paraestatales'=>'Instituciones del sector entidades paraestatales','Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
+			                                                 'Instituciones del sector de educacion superior publicas'=>'Instituciones del sector de educacion superior publicas','Instituciones del sector de educacion superior privadas'=>'Instituciones del sector de educacion superior privadas',
+			                                                 'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)','Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
+			                                                 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras','consultoras'=>'consultoras','Gobierno municipal'=>'Gobierno municipal','Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
+			                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),
+			                                                 array('prompt'=>'Sector','options' => array(''=>array('selected'=>true)))); ?>
 		<?php echo $form->error($model,'sector'); ?>
 	</div>
 

@@ -43,9 +43,10 @@ class Grades extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_curriculum, grade, title, obtention_date, thesis_title, institution', 'required'),
-			array('id_curriculum, sector', 'numerical', 'integerOnly'=>true),
+			array('id_curriculum, writ_number', 'numerical', 'integerOnly'=>true),
 			array('country', 'length', 'max'=>50),
-			array('grade, writ_number, title, state, area, discipline, subdiscipline', 'length', 'max'=>45),
+			array('grade, title, state, area, discipline, subdiscipline', 'length', 'max'=>45),
+			array('sector', 'length', 'max'=>100),
 			array('status', 'length', 'max'=>25),
 			array('thesis_title', 'length', 'max'=>250),
 			array('institution', 'length', 'max'=>150),

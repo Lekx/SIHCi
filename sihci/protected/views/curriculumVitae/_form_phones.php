@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
     <style type="text/css">  
-        .errores{
+        .errors{
             -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -23,7 +23,6 @@
 	 var validateEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 	 var validateNum = /^[0-9]+$/;
         $(document).ready(function(){
-            //función click
             $("#btnCreate").click(function(){
                 
                 var type = $("#typeEmail").val();
@@ -33,9 +32,7 @@
                 if(type == ""){
                     $("#errorType").fadeIn("slow");
                     return false;
-                }
-                //en otro caso, el mensaje no se muestra
-                else{
+                }else{
                     $("#errorType").fadeOut();
 
                     if(mail == "" || !validateEmail.test(mail)){
@@ -60,16 +57,13 @@
                 if(typePhone == ""){
                     $("#errorTypePhone").fadeIn("slow");
                     return false;
-                }
-                //en otro caso, el mensaje no se muestra
-                else{
+                }else{
                     $("#errorType").fadeOut();
 
                     if(countryCode == "" || !validateNum.test(countryCode)){
                         $("#errorCountry").fadeIn("slow");
                         return false;
-                    }
-                    else{
+                    }else{
                         $("#errorCountry").fadeOut();
                         if (localCode == "" || !validateNum.test(localCode)) {
                         	$('#errorLocal').fadeIn("slow");
@@ -128,37 +122,42 @@
 	<div class="emails">
 		Tipo de email
 		<select id="typeEmail" name="typesEmails[]">
-  			<option value="" selected=""></option> 
+  			<option value="" selected="">Tipo de email</option> 
   			<option value="Trabajo">Trabajo</option>
   			<option value="Residencial">Residencial</option>
   			<option value="Particular">Particular</option>
   			<option value="Campus">Campus</option>
   			<option value="otro">otro</option>
 		</select>
-		<div id="errorType" class="errores"> Debe seleccionar Tipo de Email</div>
+		<div id="errorType" class="errors"> Debe seleccionar Tipo de Email</div>
 		<br>
 		Email
 		<input id="mail" type="text" name="emails[]">
-		<div id="errorMail" class="errores"> Debe ser un correo existente ejemplo@mail.com</div><br>
+		<div id="errorMail" class="errors"> Debe ser un correo existente ejemplo@mail.com</div><br>
 		</div>
 		<input type="submit" id="btnCreate" value="Agregar email(s)">
 		<br>
 		<?php 
 		//print_r($getEmails);
 		$countEmail = 1;
-		foreach($getEmails as $key){
+		foreach($getEmails as $key => $value){
 
 				echo $countEmail;
 				echo $form->labelEx($emails,'type'); 
-				echo $form->dropDownList($emails,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
+				echo $form->dropDownList($emails,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('required'=>'true','name'=>'getTypeEmail[]','options' => array(''.$key['type'].''=>array('selected'=>true))));
+		                                                       array('prompt'=>'Tipo de Email','required'=>'true','name'=>'getTypeEmail[]','options' => array(''.$getEmails[$key]->type.''=>array('selected'=>true))));
 				echo $form->error($emails,'type');
 
 				echo $form->labelEx($emails,'email');
-			 	echo $form->textField($emails,'email',array('required'=>'true','name'=>'getEmail[]','value'=>''.$key['email'].'','placeholder'=>'Email'));
+			 	echo $form->textField($emails,'email',array('required'=>'true','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
 			 	echo $form->error($emails, 'email');
+			 //	array('label'=>'Delete Emails', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+			 //	echo " <a href='id=".$getEmails[$key]->id."'/>Eliminar</a>";
+			 //	Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				echo CHtml::link('Eliminar',array('curriculumVitae/delete',
+                                     'id'=>''.$getEmails[$key]->id.'')); 
 			 	$countEmail ++;
 			 	echo "<br>";
 		}
@@ -174,25 +173,25 @@
 <div class="phone">
 		Tipo de Teléfono
 		<select id="typePhone" name="typesPhones[]">
-  			<option value="" selected=""></option> 
+  			<option value="" selected="">Tipo de Teléfono</option> 
   			<option value="Trabajo">Trabajo</option>
   			<option value="Residencial">Residencial</option>
   			<option value="Particular">Particular</option>
   			<option value="Campus">Campus</option>
   			<option value="otro">otro</option>
 		</select>
-		<div id="errorTypePhone" class="errores"> Debe seleccionar tipo de Teléfono</div><br>
+		<div id="errorTypePhone" class="errors"> Debe seleccionar tipo de Teléfono</div><br>
 		<br>
 
 		Lada País
 		<input id="countryCode" type="text" name="countryCode[]" maxlength="2"><br>
-		<div id="errorCountry" class="errores"> Debe ser Numero con 2 dígitos</div><br>
+		<div id="errorCountry" class="errors"> Debe ser Numero con 2 dígitos</div><br>
 		Lada Estado
 		<input id="localCode" type="text" name="localAreaCode[]" maxlength="3"><br>
-		<div id="errorLocal" class="errores"> Debe ser Número con 2 o 3 dígitos</div><br>
+		<div id="errorLocal" class="errors"> Debe ser Número con 2 o 3 dígitos</div><br>
 		Número de Teléfono
 		<input id="phoneNum" type="text" name="phoneNumber[]" maxlength="10"><br>
-		<div id="errorPhone" class="errores"> Debe ser Número con 8 o 10 dígitos</div><br>
+		<div id="errorPhone" class="errors"> Debe ser Número con 8 o 10 dígitos</div><br>
 		Extensión
 		<input type="text" name="extension[]" maxlength="8"><br>
 		Es primario
@@ -202,13 +201,14 @@
 	<br>
 		<?php 		
 		$countPhone=1;
+
 		foreach ($getPhones as $key) {
 		echo $countPhone;
 		echo $form->labelEx($model,'type');
-		echo $form->dropDownList($model,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
+		echo $form->dropDownList($model,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('required'=>'true','name'=>'getTypesPhones[]','options' => array(''.$key['type'].''=>array('selected'=>true)))); 
+		                                                       array('prompt'=>'Tipo de Teléfono','required'=>'true','name'=>'getTypesPhones[]','options' => array(''.$key['type'].''=>array('selected'=>true)))); 
 		 echo $form->error($model,'type');
 
 		 echo $form->labelEx($model,'country_code');
