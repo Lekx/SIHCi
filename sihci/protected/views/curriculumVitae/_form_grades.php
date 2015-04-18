@@ -33,21 +33,16 @@
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'country',array('size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
-		<div class="infobox">
-                Pais
-          </div> 
+		<?php echo $form->textField($model,'country',array('title'=>'País','size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                          'Campus'=>'Campus', 'otro'=>'Otro'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Grado','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<div class="infobox">
-                Grado
-          </div>
+		
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
 
@@ -55,19 +50,14 @@
 		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Numero de Cedula','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<div class="infobox">
-                Numero de Cedula
-          </div>
+		
 		<?php echo $form->error($model,'writ_number'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título')); ?>
-		<div class="infobox">
-                Titulo
-          </div>
+		<?php echo $form->textField($model,'title',array('title'=>'Titulo','size'=>45,'maxlength'=>45,'placeholder'=>'Título')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
@@ -86,14 +76,12 @@
 		     	),
 		    'htmlOptions' => array(
 		    			'size'=>'10',
+		    			'title'=>'Fecha de Obtención',
 		    			'maxlength'=>'10', 
 		        		'placeholder'=>"Fecha de Obtención"),
 				));
 	?>
-		
-		<div class="infobox">
-                Fecha de Obtención
-          </div>
+	
 		<?php echo $form->error($model,'obtention_date'); ?>
 	</div>
 
@@ -101,30 +89,23 @@
 		<?php echo $form->dropDownList($model,'status',array(''=>'','Creditos_Terminados'=>'Creditos Terminados',
 															'Grado_Obtenido'=>'Grado Obtenido', 
 															'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Estado','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<div class="infobox">
-                Estado
-          </div>
+	
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'thesis_title',array('size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); ?>
-		<div class="infobox">
-                Título Tésis
-          </div>
+		<?php echo $form->textField($model,'thesis_title',array('title'=>'Titulo Tésis','size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); ?>
 		<?php echo $form->error($model,'thesis_title'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->dropDownList($model,'state',array(''=>'','en_Proceso'=>'En Proceso',
 															'Terminado'=>'Terminado'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Estado','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<div class="infobox">
-               Estado
-          </div>
+		
 		<?php echo $form->error($model,'state'); ?>
 	</div>
 
@@ -135,44 +116,30 @@
 																'17'=>'17','18'=>'18','19'=>'19','20'=>'20','21'=>'21',
 																'22'=>'22','23'=>'23','24'=>'24','25'=>'25','26'=>'26',
 																'27'=>'27','28'=>'28','29'=>'29','30'=>'30','31'=>'31'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Día de Inicio','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10),
 		                                                         array('placeholder'=>'Día de Inicio')); ?>
-		<div class="infobox">
-                Día de Inicio
-          </div>
+	
 		<?php echo $form->error($model,'sector'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'institution',array('size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); ?>
-		<div class="infobox">
-              Institución
-          </div>
+		<?php echo $form->textField($model,'institution',array('title'=>'Institución','size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); ?>
 		<?php echo $form->error($model,'institution'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'area',array('size'=>45,'maxlength'=>45,'placeholder'=>'Área')); ?>
-		<div class="infobox">
-              Área
-          </div>
+		<?php echo $form->textField($model,'area',array('title'=>'Área','size'=>45,'maxlength'=>45,'placeholder'=>'Área')); ?>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'discipline',array('size'=>45,'maxlength'=>45,'placeholder'=>'Disciplina')); ?>
-		<div class="infobox">
-                Disciplina
-          </div>
+		<?php echo $form->textField($model,'discipline',array('title'=>'Disciplina','size'=>45,'maxlength'=>45,'placeholder'=>'Disciplina')); ?>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'subdiscipline',array('size'=>45,'maxlength'=>45,'placeholder'=>'Subdisciplina')); ?>
-		<div class="infobox">
-                Subdisciplina
-          </div>
+		<?php echo $form->textField($model,'subdiscipline',array('title'=>'Subdisciplina','size'=>45,'maxlength'=>45,'placeholder'=>'Subdisciplina')); ?>
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
 

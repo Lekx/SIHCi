@@ -42,7 +42,6 @@
 
 <div class="docs">
 	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->dropDownList($model,'type',array(''=>'','acta'=>'Acta de Nacimiento','pasaporte'=>'Pasaporte',
 															'curp'=>'CURP', 'ife' => 'IFE'), 
 		                                              array('options' => array(''=>array('selected'=>true))), 
@@ -51,14 +50,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>250, 'placeholder'=>'descripción')); ?>
+		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Descripción')); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'doc_id'); ?>
-			<?php echo $form->fileField($model,'doc_id',array('size'=>60,'maxlength'=>100, 'placeholder'=>"documento oficial a subir")); ?>
+			<?php echo $form->fileField($model,'doc_id',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Documento oficial a subir")); ?>
 		<?php echo $form->error($model,'doc_id'); ?>  
 	</div>
 
@@ -70,9 +67,9 @@
 </div>
 
 	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
-		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
+		<input class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
+		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>

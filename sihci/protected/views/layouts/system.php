@@ -15,17 +15,28 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sys.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <!-- Load JS -->
         <?php
         $baseUrl = Yii::app()->baseUrl;
         $cs = Yii::app()->getClientScript();
-        $cs->registerScriptFile($baseUrl . '/js/infoboxes.js');
+        $cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
+        $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
 
         ?>
         <?php Yii::app()->bootstrap->register(); ?>
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+        <script>
+            $(document).ready(function() {
+                $('input, select').tooltipster({
+                    position: 'right',
+                    
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="main">

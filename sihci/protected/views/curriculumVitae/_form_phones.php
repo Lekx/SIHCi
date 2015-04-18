@@ -34,17 +34,18 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
+	<button class="newaddres">
 		<?php 
 		$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 			'targetClass'=>'emails',
-			'addButtonLabel'=>'Agregar nuevo',
+			'addButtonLabel'=>'Agregar Email Extra',
 			)); 
 			?>
+	</button>
 
 	<div class="emails">
 	<h5>Email:</h5>
-		<select name="typesEmails[]">
+		<select title="Tipo de Email" name="typesEmails[]">
   			<option value="" selected="">Tipo Email</option> 
   			<option value="Trabajo">Trabajo</option>
   			<option value="Residencial">Residencial</option>
@@ -52,7 +53,7 @@
   			<option value="Campus">Campus</option>
   			<option value="otro">otro</option>
 		</select>
-		<input type="text" name="emails[]" placeholder="Email">
+		<input  title="Email" type="text" name="emails[]" placeholder="Email">
 		<br>
 	</div>
 
@@ -66,10 +67,10 @@
 					echo $form->dropDownList($emails,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 						'Particular'=>'Particular',
 						'Campus'=>'Campus', 'otro'=>'otro'), 
-					array('name'=>'getTypeEmail[]','options' => array(''.$key['type'].''=>array('selected'=>true))));
+					array( 'title'=>'Tipo de Email','name'=>'getTypeEmail[]','options' => array(''.$key['type'].''=>array('selected'=>true))));
 					echo $form->error($emails,'type');
 
-					echo $form->textField($emails,'email',array('name'=>'getEmail[]','value'=>''.$key['email'].'','placeholder'=>'Email'));
+					echo $form->textField($emails,'email',array('name'=>'getEmail[]','value'=>''.$key['email'].'','placeholder'=>'Email', 'title'=>'Email'));
 					echo $form->error($emails, 'email');
 					$countEmail ++;
 					echo "<hr>";
@@ -77,18 +78,18 @@
 				?>
 			</div>
 		
-
+<button class="newaddres">
 	<?php 
 		$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 			'targetClass'=>'phone',
-			'addButtonLabel'=>'Agregar nuevo',
+			'addButtonLabel'=>'Agregar Telefono Extra',
 			)); 
 			?>
-
+</button>
 
 <div class="phone">
 <h5>Telefono:</h5>
-		<select name="typesPhones[]">
+		<select title="Tipo de Teléfono" name="typesPhones[]">
   			<option value="" selected="">Tipo de Teléfono</option> 
   			<option value="Trabajo">Trabajo</option>
   			<option value="Residencial">Residencial</option>
@@ -115,7 +116,7 @@
 		echo $form->dropDownList($model,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('name'=>'getTypesPhones[]','options' => array(''.$key['type'].''=>array('selected'=>true)))); 
+		                                                       array('title'=>'Tipo de Telefono','name'=>'getTypesPhones[]','options' => array(''.$key['type'].''=>array('selected'=>true)))); 
 		 echo $form->error($model,'type');
 
 		 echo $form->textField($model,'country_code',array('name'=>'getCountryCode[]','value'=>''.$key['country_code'].'','placeholder'=>'País'));

@@ -33,10 +33,7 @@
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); ?>
-		<div class="infobox ">
-                Nombre de Investigación
-          </div>
+		<?php echo $form->textField($model,'name',array( 'title'=>'Nombre de Investigación','size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 

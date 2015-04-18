@@ -43,18 +43,12 @@
 <div class="docs">
 	
 	<div class="row">
-		<?php echo $form->textField($model,'SNI',array('size'=>60,'maxlength'=>250, 'placeholder'=>'SNI')); ?>
-		 <div class="infobox">
-                SNI
-          </div>
+		<?php echo $form->textField($model,'SNI',array('title'=>'SNI','size'=>60,'maxlength'=>250, 'placeholder'=>'SNI')); ?>
 		<?php echo $form->error($model,'SNI'); ?>
 	</div>
 
 	<div class="row">
-			<?php echo $form->textField($model,'researcher_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento")); ?>
-		 <div class="infobox">
-                Nombramiento
-          </div>
+			<?php echo $form->textField($model,'researcher_title',array('title'=>'Nombramiento','size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento")); ?>
 		<?php echo $form->error($model,'researcher_title'); ?>  
 	</div>
 
