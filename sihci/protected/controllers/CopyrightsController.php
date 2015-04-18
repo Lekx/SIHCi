@@ -64,21 +64,28 @@ class CopyrightsController extends Controller
 	{
 		$model=new Copyrights;
 		// Uncomment the following line if AJAX validation is needed
-		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;   
-		$model->id_curriculum = $id_curriculum;   
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		$model->id_curriculum = $id_curriculum->id;   
 		$this->performAjaxValidation($model);
+		var_dump($_POST);
 
-		if(isset($_POST['ajax']) && $_POST['ajax'] === 'copyrights-form')
+		if(isset($_POST['Copyrights']))
 		{
+			echo "noobs";
 			$model->attributes=$_POST['Copyrights'];
-			$model->id_curriculum = $id_curriculum;  
-  			
-     		if($model->save())
-     			echo "200";
+			$model->id_curriculum = $id_curriculum->id;  
+  		
+			if($model->save())
+     		{
+     			//echo "[]";
+     			$this->redirect(array('view','id'=>$model->id));
+     		}	
      		else 
-     			echo "404";
+     		{
+     			echo "response";
+     		}
 
-     		Yii::app()->end();
+     		//Yii::app()->end();
 		}
 
 		if(!isset($_POST['ajax']))
@@ -174,8 +181,10 @@ class CopyrightsController extends Controller
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='copyrights-form')
 		{
+
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+			
 		}
 	}
 }

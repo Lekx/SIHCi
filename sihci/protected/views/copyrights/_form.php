@@ -13,6 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
@@ -23,10 +24,10 @@
 		<?php echo $form->labelEx($model,'participation_type'); ?>
 			<?php echo $form->dropDownList($model,'participation_type',
 				array(
-						''=>'',
 						'Autor'=>'Autor',
 						'Coautor'=>'Coautor'
-					)
+					),
+					array('prompt'=>'Tipo de participación')
 				); 
 		?>
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -78,11 +79,11 @@
 		<?php echo $form->labelEx($model,'entity'); ?>
 		<?php echo $form->dropDownList($model,'entity',
 				array(
-						''=>'',
 						'Publica'=>'Publica',
 						'Privada'=>'Privada',
 						'Sector social'=>'Sector social'
-					)
+					),
+					array('prompt'=>'Entidad')
 				); 
 		?>
 		<?php echo $form->error($model,'entity'); ?>
@@ -95,21 +96,21 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::ajaxButton ("Guardar", CController::createUrl('copyrights/create'), 
+	    <?php echo CHtml::ajaxSubmitButton ($model->isNewRecord ? 'Guardar' : 'Modificar', CController::createUrl('copyrights/create'), 
         				array(
-							'type'=>'POST',
+							'type'=>'post',
 	                        'data'=> 'js:$("#copyrights-form").serialize()+ "&ajax=copyrights-form"',                        
 	                        'success'=>'js:function(response)
 	                        { 
-	                        	if(response == "200")
+	                        	alert(response);
+	                        	if(response == "[]")
 	                        	{
 	                        		alert("Registro realizado con éxito");	                        		
 	                        	}
-	                        	else if(response == "404")
-	                        	{	                        		
-	                        		$("#404").html("error"); 
-	                        	}else
-	                        		alert(response);
+	                            else
+	                            {	
+	                        		alert("Complete los campos marcados con *");
+	                        	}	
 	                        }'
                         )); 
         ?>
