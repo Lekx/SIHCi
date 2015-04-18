@@ -9,6 +9,7 @@
  //  )); 
 ?>
 <script>
+
 		function cleanUp(){
 			var text;
 			var result = confirm("¿Está usted seguro de limpiar estos datos?");
@@ -23,6 +24,7 @@
 			alert("Registro Realizado con éxito");
 			return false;
 		}
+
 </script>
 
 <div class="form">
@@ -39,7 +41,28 @@
 
 
 	<?php echo $form->errorSummary($model); ?>
+	<?php //print_r($getDocs) 
+	foreach ($getDocs as $key => $value) {
 
+		echo $form->labelEx($getDocs[$key],'type');
+		echo $form->dropDownList($getDocs[$key],'type',array(''=>'','acta'=>'Acta de Nacimiento','pasaporte'=>'Pasaporte',
+															'curp'=>'CURP', 'ife' => 'IFE'), 
+		                                              array('name'=>'getType[]','options' => array(''=>array('selected'=>true))), 
+		                                              array('size'=>10,'maxlength'=>10)); 
+	    echo $form->error($getDocs[$key],'type');
+
+	    echo $form->labelEx($getDocs[$key],'description');
+		echo $form->textField($getDocs[$key],'description',array('name'=>'getDescription[]','size'=>60,'maxlength'=>250, 'placeholder'=>'descripción')); 
+		echo "<br>";
+		echo "<a href='/SIHCi/sihci".$getDocs[$key]->doc_id."'>Archivo ".$getDocs[$key]->type."</a>";
+
+		echo $form->labelEx($getDocs[$key],'is_Primary');
+		echo $form->checkBox($getDocs[$key],'is_Primary',array('name'=>'getIsPrimary[]'));
+
+		echo "<br>";
+		echo "------------------------------------------------------------";
+	}
+	?>
 <div class="docs">
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>

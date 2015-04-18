@@ -102,44 +102,45 @@ class CurriculumVitaeController extends Controller
 					}// end if validate
 				}// end isset $_POST
 					$this->render('personal_data',array('model'=>$model, 'curriculum'=>$curriculum));
-	//	}//valida si el usuario ya existe entra a Actualizar
-	
 	}
 
 	public function actionDocsIdentity(){
 		$curriculum=Curriculum::model()->find('id_user=:id_user',array(':id_user'=>Yii::app()->user->id));
 		$docs = DocsIdentity::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
-
-		if ($docs != null) {
-			$model = DocsIdentity::model()->findByPk($docs->id);
-		}else{
+		
 			$model=new DocsIdentity;
-		}
+			$getDocs = DocsIdentity::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
+		
 
 			if(isset($_POST['DocsIdentity']))
 			{
-			$model->attributes=$_POST['DocsIdentity'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$model->doc_id = CUploadedFile::getInstanceByName('DocsIdentity[doc_id]');
+				$getDocs->attributes=$_POST['DocsIdentity'];
 
-			if ($model->validate()) {
-				
-				if($model->doc_id != ''){
-					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName());
-					$model->doc_id = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName();
-						if($model->save()){
-						//manda parametros al controlador SystemLog
-						$section = "Documentos Oficiales";
-						$details = "Se han modificado Documentos Oficiales";
-						$action = "Modificacion";
-						Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				foreach($getDocs as $key => $values){
+						print_r($getDocs[$key]->id);
 					}
-				}
+			// $model->attributes=$_POST['DocsIdentity'];
+			// $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			// $model->doc_id = CUploadedFile::getInstanceByName('DocsIdentity[doc_id]');
+
+			// if ($model->validate()) {
 				
-			}
+			// 	if($model->doc_id != ''){
+			// 		$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName());
+			// 		$model->doc_id = '/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.'.$model->doc_id->getExtensionName();
+			// 			if($model->save()){
+			// 			//manda parametros al controlador SystemLog
+			// 			// $section = "Documentos Oficiales";
+			// 			// $details = "Se han modificado Documentos Oficiales";
+			// 			// $action = "Modificacion";
+			// 			// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+			// 		}
+			// 	}
+				
+			// }
 		}
 
-		$this->render('docs_Identity',array('model'=>$model,));
+		$this->render('docs_Identity',array('model'=>$model, 'getDocs'=>$getDocs,));
 	}
 
 	public function actionAddresses(){
@@ -223,30 +224,13 @@ class CurriculumVitaeController extends Controller
 	}
 
 	public function actionPhones(){
-		//   Yii::import('ext.multimodelform.MultiModelForm');
-
-		// if(isset($_POST['Phones']) && isset($_POST['Emails']))
-		// {
-		// 	$model->attributes=$_POST['Phones'];
-		// 	$emails->attributes = $_POST['Emails'];
-		// 	if($model->save()){
-		// 		$emails->email = $emails->email;
-		// 		$emails->type = $emails->type;
-		// 		$emails->save();
-		// 		//manda parametros al controlador SystemLog
-		// 				$section = "Datos de Contacto";
-		// 				$details = "Se han modificado datos de contacto";
-		// 				$action = "Modificacion";
-		// 				Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		// 	}
-		// }
 
 		$idPerson = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		$phones = Phones::model()->findByAttributes(array('id_person' => $idPerson));
 
 		if ($phones != null) {
-			$model = Phones::model()->findByPk($phones->id);
-			$emails = Emails::model()->find('id_person=:id_person',array(':id_person'=>$idPerson));
+			$model=new Phones;
+			$emails = new Emails;
 			$getEmails = Emails::model()->findAll('id_person=:id_person',array(':id_person'=>$idPerson));
 			$getPhones = Phones::model()->findAll('id_person=:id_person',array(':id_person'=>$idPerson));
 		}else{
@@ -261,30 +245,35 @@ class CurriculumVitaeController extends Controller
 			/////////// EMAILS ///////////
 			$emailNew = $_POST["emails"];
 			$typeEmailNew = $_POST["typesEmails"];
-			//$emails->attributes = $_POST['emails'];
 			
-
-				foreach($emailNew as $key => $values){
-					$emailsNew = new Emails();
-					$emailsNew->id_person = $idPerson;
-					$emailsNew->email = $values;
-					$emailsNew->type = $typeEmailNew[$key];
-					$emailsNew->save();
-				}
-				if ($getEmails != null) {
-					//// update emails /////////
-					$getEmail = $_POST['getEmail'];
-					$getTypeEmail = $_POST['getTypeEmail'];
-					if ($emails->validate()) {
-						foreach($getEmail as $key => $value) {
-				 			$emails = Emails::model()->findByPk($getEmails[$key]->id);
-							$emails->email = $getEmail[$key];
-							$emails->type = $getTypeEmail[$key];
-							$emails->save();
-						}
+			foreach($emailNew as $key => $values){
+				$emailsNew = new Emails();
+				$emailsNew->id_person = $idPerson;
+				$emailsNew->email = $values;
+				$emailsNew->type = $typeEmailNew[$key];
+				if($emailsNew->save()){
+						$section = "Datos de Contacto";
+						$details = "Se ha creado el email: '".$values."'' con el tipo: '".$typeEmailNew[$key]."'' del usuario: '".Yii::app()->user->name."'";
+						$action = "Creación";
+						Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 					}
-				}
-			
+			}
+			if ($getEmails != null) {
+				//// update emails /////////
+				$getEmail = $_POST['getEmail'];
+				$getTypeEmail = $_POST['getTypeEmail'];
+					foreach($getEmail as $key => $value) {
+			 			$emails = Emails::model()->findByPk($getEmails[$key]->id);
+						$emails->email = $getEmail[$key];
+						$emails->type = $getTypeEmail[$key];
+						$emails->save();
+							// $section = "Datos de Contacto";
+							// $details = "Se han modificado el Email: ".$getEmails[$key]->email." a ".$getEmail[$key];
+							// $action = "Modificacion";
+							// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					}
+						
+			}
 			
 			/////////////// phones /////////////
 			$typesPhonesNew = $_POST["typesPhones"];
@@ -307,18 +296,15 @@ class CurriculumVitaeController extends Controller
 			}
 			if ($phones != null) {
 				/////////////// update phones /////////////
-			$getTypesPhones = $_POST["getTypesPhones"];
-			$getCountryCode = $_POST["getCountryCode"];
-			$getLocalAreaCode = $_POST["getLocalAreaCode"];
-			$getPhoneNumber = $_POST["getPhoneNumber"];
-			$getExtension = $_POST["getExtension"];
-			$getIsPrimary = $_POST["getIsPrimary"];
+				$getTypesPhones = $_POST["getTypesPhones"];
+				$getCountryCode = $_POST["getCountryCode"];
+				$getLocalAreaCode = $_POST["getLocalAreaCode"];
+				$getPhoneNumber = $_POST["getPhoneNumber"];
+				$getExtension = $_POST["getExtension"];
+				$getIsPrimary = $_POST["getIsPrimary"];
 
 				foreach($getPhoneNumber as $key => $values){
-				$phones = Phones::model()->findByPk($getPhones[$key]->id);
-				//echo $getPhones[$key]->id;
-				 // $phoneNew = new Phones();
-				
+				  $phones = Phones::model()->findByPk($getPhones[$key]->id);
 				  $phones->type = $getTypesPhones[$key];
 				  $phones->country_code = $getCountryCode[$key];
 				  $phones->local_area_code = $getLocalAreaCode[$key];
@@ -327,11 +313,9 @@ class CurriculumVitaeController extends Controller
 				  $phones->is_primary = $getIsPrimary[$key];
 				  $phones->save();
 				}
-			}			
-
-			$this->redirect('phones');
-			
-		}
+			}	
+				$this->redirect('phones');
+		}///if isset
 		$this->render('phones',array('model'=>$model, 'emails' =>$emails, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,));
 	}
 
