@@ -1,4 +1,5 @@
 <div class="loginback">
+
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 			'id'=>'login-form',

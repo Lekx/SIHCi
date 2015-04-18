@@ -5,7 +5,7 @@ class CurriculumVitaeController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/layoutDataPersons';
+	public $layout='//layouts/system';
 	/**
 	 * @return array action filters
 	 */
@@ -40,7 +40,6 @@ class CurriculumVitaeController extends Controller
 	}
 		//CV02-Modificar registro 
 	public function actionPersonalData(){
-
 		$model = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
 		$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/';

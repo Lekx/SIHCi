@@ -48,7 +48,7 @@ class CountrySelectorWidget extends CWidget
             $this->value = $this->defaultValue;
         }
 
-        $this->firstText = Yii::t('application', '(please select a country)');
+        $this->firstText = Yii::t('application', 'Pais');
     }
 
     public function run()

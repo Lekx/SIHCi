@@ -33,7 +33,7 @@
 	<?php echo CHtml::encode($data->editorial); ?>
 	<br />
 
-	<?php /*
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('volume')); ?>:</b>
 	<?php echo CHtml::encode($data->volume); ?>
 	<br />
@@ -62,6 +62,8 @@
 	<?php echo CHtml::encode($data->subdiscipline); ?>
 	<br />
 
+
+    <?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('creation_date')); ?>:</b>
 	<?php echo CHtml::encode($data->creation_date); ?>
 	<br />
