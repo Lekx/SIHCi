@@ -14,4 +14,4 @@ $this->menu=array(
 
 <h1>Documentos Oficiales</h1>
 
-<?php $this->renderPartial('_form_docs', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form_docs', array('model'=>$model, 'getDocs'=>$getDocs, )); ?>

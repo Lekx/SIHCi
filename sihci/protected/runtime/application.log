@@ -1,9 +1,0 @@
-2015/04/15 09:05:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "informacionDeDireccionGeneral/index"' in /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
-Stack trace:
-#0 /var/www/html/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('informacionDeDi...')
-#1 /var/www/html/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
-#2 /var/www/html/SIHCi/sihci/index.php(19): CApplication->run()
-#3 {main}
-REQUEST_URI=/SIHCi/sihci/index.php/informacionDeDireccionGeneral/index
-HTTP_REFERER=http://localhost/SIHCi/sihci/index.php/
----

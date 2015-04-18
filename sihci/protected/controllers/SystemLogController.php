@@ -65,7 +65,7 @@ class SystemLogController extends Controller
 		$model=new SystemLog;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['SystemLog']))
 		{
@@ -89,7 +89,7 @@ class SystemLogController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['SystemLog']))
 		{
