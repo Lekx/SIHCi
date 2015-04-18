@@ -63,30 +63,33 @@ class CopyrightsController extends Controller
 	public function actionCreate()
 	{
 		$model=new Copyrights;
-
 		// Uncomment the following line if AJAX validation is needed
-		//$this->performAjaxValidation($model);
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		$model->id_curriculum = $id_curriculum->id;   
+		$this->performAjaxValidation($model);
+		var_dump($_POST);
 
-		if(isset($_POST['ajax']) && $_POST['ajax']==='copyrights-form')
+		if(isset($_POST['Copyrights']))
 		{
+			echo "noobs";
 			$model->attributes=$_POST['Copyrights'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
+			$model->id_curriculum = $id_curriculum->id;  
+  		
+			if($model->save())
+     		{
+     			//echo "[]";
+     			$this->redirect(array('view','id'=>$model->id));
+     		}	
+     		else 
+     		{
+     			echo "response";
+     		}
 
-			if(!$model->validate())
-			{
-				echo "404";
-			}	
-			else
-			{
-				echo "200";
-			}	
-					
+     		//Yii::app()->end();
 		}
-				
-		else
-		{
+
+		if(!isset($_POST['ajax']))
 			$this->render('create',array('model'=>$model));
-		}	
 	}
 
 	/**
@@ -94,6 +97,7 @@ class CopyrightsController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -104,7 +108,6 @@ class CopyrightsController extends Controller
 		if(isset($_POST['Copyrights']))
 		{
 			$model->attributes=$_POST['Copyrights'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
 
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -178,8 +181,13 @@ class CopyrightsController extends Controller
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='copyrights-form')
 		{
+
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+			
 		}
 	}
 }
+
+
+

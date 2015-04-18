@@ -18,34 +18,27 @@
  * ========================================================== */
  
 var BFHCountriesList = {
-<<<<<<< HEAD
   'Afganistan': 'Afganistán',
-=======
   'Afganistán':'Afganistán',
->>>>>>> e3e62b9ed5a0f92278cffda9c28c40b213c500d6
   'Albania': 'Albania',
   'Alemania': 'Alemania',
   'Algeria': 'Algeria',
   'Andorra': 'Andorra',
   'Angola': 'Angola',
   'Anguilla': 'Anguilla',
-<<<<<<< HEAD
   'Antartida': 'Antártida'  ,
   'Antigua_y_Barbuda': 'Antigua y Barbuda' ,
   'Antillas_Neerlandesas': 'Antillas Neerlandesas',
   'Arabia_Saudita': 'Arabia Saudita',
-=======
   'Antártida': 'Antártida'  ,
   'Antigua y Barbuda': 'Antigua y Barbuda' ,
   'Antillas Neerlandesas': 'Antillas Neerlandesas',
   'Arabia Saudita': 'Arabia Saudita',
->>>>>>> e3e62b9ed5a0f92278cffda9c28c40b213c500d6
   'Argentina': 'Argentina' ,
   'Armenia': 'Armenia' ,
   'Aruba': 'Aruba' ,
   'Australia': 'Australia' ,
   'Austria': 'Austria' ,
-<<<<<<< HEAD
   'Azerbaiyan': 'Azerbaiyán'  ,
   'Bahamas': 'Bahamas',
   'Barein': 'Baréin' ,
@@ -56,7 +49,6 @@ var BFHCountriesList = {
   'Benin': 'Benín',
   'Bermudas': 'Bermudas',
   'Butan': 'Bután',
-=======
   'Azerbaiyán': 'Azerbaiyán'  ,
   'Bahamas': 'Bahamas',
   'Baréin': 'Baréin' ,
@@ -67,7 +59,6 @@ var BFHCountriesList = {
   'Benín': 'Benín',
   'Bermudas': 'Bermudas',
   'Bután': 'Bután',
->>>>>>> e3e62b9ed5a0f92278cffda9c28c40b213c500d6
   'Bielorrusia': 'Bielorrusia',
   'Bolivia': 'Bolivia',
   'Bosnia-Herzegovina': 'Bosnia-Herzegovina',
@@ -75,26 +66,22 @@ var BFHCountriesList = {
   'Brasil': 'Brasil',
   'Brunei': 'Brunei',
   'Bulgaria': 'Bulgaria',
-<<<<<<< HEAD
   'Burkina_faso': 'Burkina Faso',
   'Burundi': 'Burundi',
   'Camboya': 'Camboya',
   'Camerun': 'Camerún',
   'Canada': 'Canadá',
   'Cabo_verde': 'Cabo Verde',
-=======
   'Burkina Faso': 'Burkina Faso',
   'Burundi': 'Burundi',
   'Camboya': 'Camboya',
   'Camerún': 'Camerún',
   'Canadá': 'Canadá',
   'Cabo Verde': 'Cabo Verde',
->>>>>>> e3e62b9ed5a0f92278cffda9c28c40b213c500d6
   'Chad': 'Chad',
   'Chile': 'Chile',
   'China': 'China',
   'Chipre': 'Chipre',
-<<<<<<< HEAD
   'Ciudad_del_Vaticano': 'Ciudad del Vaticano',
   'Colombia': 'Colombia',
   'Comoras': 'Comoras',
@@ -484,7 +471,6 @@ var BFHCountriesList = {
   'Venezuela': 'Venezuela',
   'Vietnam': 'Vietnam',
   'Wallis y Futuna': 'Wallis y Futuna',
->>>>>>> e3e62b9ed5a0f92278cffda9c28c40b213c500d6
   'Yemen': 'Yemen',
   'Yibuti': 'Yibuti',
   'Zambia': 'Zambia',

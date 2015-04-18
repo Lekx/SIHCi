@@ -9,10 +9,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Copyrights', 'url'=>array('index')),
-	array('label'=>'Create Copyrights', 'url'=>array('create')),
-	array('label'=>'View Copyrights', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Copyrights', 'url'=>array('admin')),
+	array('label'=>'Desplegar', 'url'=>array('index')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Listar', 'url'=>array('admin')),
 );
 ?>
 
