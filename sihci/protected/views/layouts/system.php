@@ -18,24 +18,34 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
+        <?php Yii::app()->bootstrap->register(); ?>
         <!-- Load JS -->
         <?php
-        $baseUrl = Yii::app()->baseUrl;
-        $cs = Yii::app()->getClientScript();
-        $cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
-        $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
-
+            $baseUrl = Yii::app()->baseUrl;
+            $cs = Yii::app()->getClientScript();
+            $cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
+            $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
         ?>
-        <?php Yii::app()->bootstrap->register(); ?>
+         <?php
+            Yii::app()->clientScript->registerScript('helpers', '
+            yii = {
+            urls: {
+                    searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
+                    searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
+                    base: ' . CJSON::encode(Yii::app()->baseUrl) . '
+                }
+            };
+            ');
+        ?>
+        
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-
         <script>
-            $(document).ready(function() {
-                $('input, select').tooltipster({
-                    position: 'right',
-                    
-                });
-            });
+                            $(document).ready(function() {
+                                $('input, select').tooltipster({
+                                    position: 'right',
+                                    
+                                });
+                            });
         </script>
     </head>
     <body>
@@ -92,7 +102,6 @@
                             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
                             <h1>Curriculum vitae electronico</h1>
                             <hr>
-
                         </div>
                         <div class="cvforms">
                             <?php echo $content; ?>
@@ -101,6 +110,8 @@
                 </div>
             </div>
         </div>
+        <div class="successdiv"></div>
+        <div class="errordiv"></div>
         <div class="footer">
             <div class="footermenu1">
                 <h4>¿Podemos Ayudarte?</h4>

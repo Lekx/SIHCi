@@ -430,6 +430,80 @@ thead th
 	color: white;
 }
 
+/* Error and Success Messege */
+
+.backcontainer
+{
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+ 	background: rgba(40, 50, 90, .70);
+ 	z-index: 900;
+ 	font-family: 'Caviar_Dreams_Bold';
+	
+}
+.backcontainer h2{ color: #1EB9C0; }
+
+.maincontainer
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	background: #ffffff;
+	height: 270px;
+	width: 400px;
+
+}
+.susses{ padding-top: 50px; text-align: center; }
+
+.susses hr
+{
+
+	border-bottom: 2px solid black;
+	width: 80px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+	margin-bottom: 35px;
+}
+.susbut
+{
+	height: 50px;
+	width: 400px;
+	margin-top: 20px;
+	background-color: #1EB9C0;
+	color: white;
+	font-family: 'Caviar_Dreams';
+}
+.remainder
+{
+	width: 260px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.backgrnd
+{
+	background-image: url('http://www.hdwallpaperscool.com/wp-content/uploads/2014/07/river-bridge-san-francisco-desktop-wallpapers.jpeg') !important;
+	width: 100%;
+	height: 100%;
+}
+.errorbut
+{
+	height: 50px;
+	width: 400px;
+	margin-top: 20px;
+	background-color: #F20862;
+	color: white;
+	font-family: 'Caviar_Dreams';
+}
+/* ---------- */
+
 
 
 

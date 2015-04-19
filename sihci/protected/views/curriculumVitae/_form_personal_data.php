@@ -17,7 +17,7 @@
 			document.getElementById("demo").innerHTML = text;
 		}
 		function validationFrom(){
-			alert("Registro Realizado con éxito");
+			$('.successdiv').load('../../error.html');
 			return false;
 		}
 
