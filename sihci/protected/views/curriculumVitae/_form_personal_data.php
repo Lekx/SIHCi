@@ -4,25 +4,6 @@
 /* @var $form CActiveForm */
 
 ?>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Persons_]').val('');
-				$('[id^=Curriculum_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			$('.successdiv').load('../../error.html');
-			return false;
-		}
-
-
-</script>
 
 <div class="form">
 	
@@ -188,9 +169,9 @@
 	</div>
 
 	<div class="row buttons">
-		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
+		<input class="savebutton" type="submit" value="Guardar">
+		<input class="cleanbutton" type="button" value="Borrar">
+		<?php echo CHtml::button('Cancelar',array('/site/index', 'id'=>'cancelar')); ?>
 	</div>
 
 
