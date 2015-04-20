@@ -134,7 +134,7 @@
 		Email
 		<input id="mail" type="text" name="emails[]">
 		<div id="errorMail" class="errors"> Debe ser un correo existente ejemplo@mail.com</div><br>
-		</div>
+	</div>
 		<input type="submit" id="btnCreate" value="Agregar email(s)">
 		<br>
 		<?php 
@@ -153,10 +153,7 @@
 				echo $form->labelEx($emails,'email');
 			 	echo $form->textField($emails,'email',array('required'=>'true','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
 			 	echo $form->error($emails, 'email');
-			 //	array('label'=>'Delete Emails', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-			 //	echo " <a href='id=".$getEmails[$key]->id."'/>Eliminar</a>";
-			 //	Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				//echo CHtml::link('Eliminar',array('curriculumVitae/deleteEmail','id'=>''.$getEmails[$key]->id.'')); 
+			 	
 				echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteEmail', 'id'=>$getEmails[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
 			 	$countEmail ++;
 			 	echo "<br>";

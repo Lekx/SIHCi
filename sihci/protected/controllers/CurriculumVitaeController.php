@@ -24,7 +24,7 @@ class CurriculumVitaeController extends Controller
 		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
-								'DeletePhone', 'DeleteResearch',
+								'DeletePhone', 'DeleteResearch', 'DeleteGrade',
 								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission'),
 				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1")',
 				 'users'=>array('@'),
@@ -324,55 +324,69 @@ class CurriculumVitaeController extends Controller
 		$model=new Grades;
 
 		$this->performAjaxValidation($model);
-
-		// if ($grade != null) {
-		// 	$model = Grades::model()->findByPk($grade->id);
-		// }
 			
-		$model->id_curriculum = $curriculum->id;
-
-		$this->performAjaxValidation($model);
-			
-		if(isset($_POST['Grades']))
+		if(isset($_POST['grade']))
 		{
-			$model->attributes=$_POST['Grades'];
-			$model->save();
+			$gradeNew = new Grades();
+			$gradeNew->id_curriculum = $curriculum->id;
+			$gradeNew->country = $_POST['country'];
+			$gradeNew->grade = $_POST['grade'];
+			$gradeNew->writ_number = $_POST['writNumber'];
+			$gradeNew->title = $_POST['title'];
+			$gradeNew->obtention_date = $_POST['obtentionDate'];
+			$gradeNew->thesis_title = $_POST['thesisTitle'];
+			$gradeNew->state = $_POST['state'];
+			$gradeNew->sector = "sector";
+			$gradeNew->institution = $_POST['institution'];
+			$gradeNew->area = $_POST['area'];
+			$gradeNew->discipline = $_POST['discipline'];
+			$gradeNew->subdiscipline = $_POST['subdiscipline'];
+			$gradeNew->save();
+
+			if ($getGrades != null) {
+				$getCountry = $_POST['getCountry'];
+				$getGrade = $_POST['getGrade'];
+				$getWritNumber = $_POST['getWritNumber'];
+				$getTitle = $_POST['getTitle'];
+				$getObtentionDate = $_POST['getObtentionDate'];
+				$getThesisTitle = $_POST['getThesisTitle'];
+				$getState = $_POST['getState'];
+				$getSector = $_POST['getSector'];
+				$getInstitution = $_POST['getInstitution'];
+				$getArea = $_POST['getArea'];
+				$getDiscipline = $_POST['getDiscipline'];
+				$getSubdiscipline = $_POST['getSubdiscipline'];
+
+				foreach ($getGrade as $key => $value) {
+					$gradeUp = Grades::model()->findByPk($getGrades[$key]->id);
+					$gradeUp->id_curriculum = $curriculum->id;
+					$gradeUp->country = $getCountry[$key];
+					$gradeUp->grade = $getGrade[$key];
+					$gradeUp->writ_number = $getWritNumber[$key];
+					$gradeUp->title = $getTitle[$key];
+					$gradeUp->obtention_date = $getObtentionDate[$key];
+					$gradeUp->thesis_title = $getThesisTitle[$key];
+					$gradeUp->state = $getState[$key];
+					$gradeUp->sector = $getSector[$key];
+					$gradeUp->institution = $getInstitution[$key];
+					$gradeUp->area = $getArea[$key];
+					$gradeUp->discipline = $getDiscipline[$key];
+					$gradeUp->subdiscipline = $getSubdiscipline[$key];
+
+					$gradeUp->save();
+				}
+			}
+			//$model->attributes=$_POST['Grades'];
+			//$model->save();
 				// $section = "Formación Académica"; //manda parametros al controlador SystemLog
 				// $details = "Se han modificado datos de Formación Académica";
 				// $action = "Modificacion";
 				// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				$this->redirect('grades');
+
 		}
+
 		$this->render('grades',array('model'=>$model, 'getGrades'=>$getGrades));
-		/////////////////////////////////////////////////////////////////
-
-		// if(isset($_POST['nameResearch']) || isset($_POST['getResearch']))
-		// {
-		// 	$researchNew = $_POST["nameResearch"];
-
-		// 	foreach ($researchNew as $key => $value) {
-		// 		$researchNew = new ResearchAreas();
-		// 		$researchNew->id_curriculum = $curriculum->id;
-		// 		$researchNew->name = $value;
-		// 		$researchNew->save();
-		// 	}
-
-		// 	if ($getResearch != null) {
-		// 		$getResearchs = $_POST['getResearch'];
-		// 		foreach ($getResearchs as $key => $value) {
-		// 			$research = ResearchAreas::model()->findByPk($getResearch[$key]->id);
-		// 			$research->id_curriculum = $curriculum->id;
-		// 			$research->name = $value;
-		// 			$research->save();
-		// 		}
-		// 		$section = "Lineas de Investigacion"; //manda parametros al controlador SystemLog
-		// 		$details = "Se modifico su Linea de investigacion";
-		// 		$action = "Modificacion";
-		// 		Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		// 	}
-		// 	$this->redirect('researchAreas');
-		// }
-		// $this->render('research_areas',array('model'=>$model, 'getResearch'=>$getResearch,));
 	}
 
 
@@ -416,6 +430,12 @@ class CurriculumVitaeController extends Controller
 		$model=ResearchAreas::model()->findByPk($id)->delete();
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('researchAreas'));
+	}
+
+	public function actionDeleteGrade($id){
+		$model=Grades::model()->findByPk($id)->delete();
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('grades'));
 	}
 
 
