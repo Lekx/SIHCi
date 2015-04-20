@@ -203,15 +203,13 @@ class CurriculumVitaeController extends Controller
 
 		if(isset($_POST['nameResearch']) || isset($_POST['getResearch']))
 		{
-			$researchNew = $_POST["nameResearch"];
+			$nameResearch = $_POST["nameResearch"];
 
-			foreach ($researchNew as $key => $value) {
-				$researchNew = new ResearchAreas();
-				$researchNew->id_curriculum = $curriculum->id;
-				$researchNew->name = $value;
-				$researchNew->save();
-			}
-
+			$researchNew = new ResearchAreas();
+			$researchNew->id_curriculum = $curriculum->id;
+			$researchNew->name = $nameResearch;
+			$researchNew->save();
+			
 			if ($getResearch != null) {
 				$getResearchs = $_POST['getResearch'];
 				foreach ($getResearchs as $key => $value) {
