@@ -134,7 +134,7 @@
 		Email
 		<input id="mail" type="text" name="emails[]">
 		<div id="errorMail" class="errors"> Debe ser un correo existente ejemplo@mail.com</div><br>
-		</div>
+	</div>
 		<input type="submit" id="btnCreate" value="Agregar email(s)">
 		<br>
 		<?php 
@@ -153,10 +153,7 @@
 				echo $form->labelEx($emails,'email');
 			 	echo $form->textField($emails,'email',array('required'=>'true','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
 			 	echo $form->error($emails, 'email');
-			 //	array('label'=>'Delete Emails', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-			 //	echo " <a href='id=".$getEmails[$key]->id."'/>Eliminar</a>";
-			 //	Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				//echo CHtml::link('Eliminar',array('curriculumVitae/deleteEmail','id'=>''.$getEmails[$key]->id.'')); 
+			 	
 				echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteEmail', 'id'=>$getEmails[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
 			 	$countEmail ++;
 			 	echo "<br>";
@@ -208,27 +205,27 @@
 		echo $form->dropDownList($model,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('prompt'=>'Tipo de Teléfono','required'=>'true','name'=>'getTypesPhones[]','options' => array(''.$getPhones[$key]->type.''=>array('selected'=>true)))); 
+		                                                       array('prompt'=>'Tipo de Teléfono','required'=>'true','name'=>'getTypesPhones[]','options' => array($getPhones[$key]->type=>array('selected'=>true)))); 
 		 echo $form->error($model,'type');
 
 		 echo $form->labelEx($model,'country_code');
-		 echo $form->textField($model,'country_code',array('required'=>true,'name'=>'getCountryCode[]','value'=>''.$getPhones[$key]->country_code.'','placeholder'=>'Lada País'));
+		 echo $form->textField($model,'country_code',array('required'=>true,'name'=>'getCountryCode[]','value'=>$getPhones[$key]->country_code,'placeholder'=>'Lada País'));
 		 echo $form->error($model,'country_code');
 
 		 echo $form->labelEx($model,'local_area_code');
-		 echo $form->textField($model,'local_area_code',array('required'=>'true','name'=>'getLocalAreaCode[]','value'=>''.$getPhones[$key]->local_area_code.'','placeholder'=>'Lada Estado'));
+		 echo $form->textField($model,'local_area_code',array('required'=>'true','name'=>'getLocalAreaCode[]','value'=>$getPhones[$key]->local_area_code,'placeholder'=>'Lada Estado'));
 		 echo $form->error($model,'local_area_code'); 
 
 		 echo $form->labelEx($model,'phone_number'); 
-		 echo $form->textField($model,'phone_number',array('required'=>'true','name'=>'getPhoneNumber[]','value'=>''.$getPhones[$key]->phone_number.'','placeholder'=>'Número Telefónico'));
+		 echo $form->textField($model,'phone_number',array('required'=>'true','name'=>'getPhoneNumber[]','value'=>$getPhones[$key]->phone_number,'placeholder'=>'Número Telefónico'));
 		 echo $form->error($model,'phone_number'); 
 
 		 echo $form->labelEx($model,'extension'); 
-		 echo $form->textField($model,'extension',array('name'=>'getExtension[]','value'=>''.$getPhones[$key]->extension.'','placeholder'=>'Extensión')); 
+		 echo $form->textField($model,'extension',array('name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'Extensión')); 
 		 echo $form->error($model,'extension'); 
 
 		 echo $form->labelEx($model,'is_primary'); 
-		 echo $form->checkBox($model,'is_primary',array('name'=>'getIsPrimary[]','value'=>''.$getPhones[$key]->is_primary.'')); 
+		 echo $form->checkBox($model,'is_primary',array('name'=>'getIsPrimary[]','value'=>$getPhones[$key]->is_primary)); 
 		 echo $form->error($model,'is_primary'); 
 		 echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deletePhone', 'id'=>$getPhones[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
 		 $countPhone++;

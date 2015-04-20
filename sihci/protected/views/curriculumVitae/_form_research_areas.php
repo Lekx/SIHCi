@@ -78,7 +78,7 @@
 
 <div class="research">
 		Nombre de Investigación
-		<input id="research" type="text" name="nameResearch[]">
+		<input id="research" type="text" name="nameResearch">
 		<div id="errorResearch" class="errors"> No debe ser nulo</div><br>
 		<input type="submit" id="btnCreate" value="Crear Línea de Investigación">
 </div><!-- form -->

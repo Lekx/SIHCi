@@ -116,7 +116,7 @@
 	</div>
 
 <div class="row">
-	<?php $this->widget('ext.countrySelectorWidget', array(
+	<?php $this->widget('ext.CountrySelectorWidget', array(
 		'value' => $model->country,
 		'name' => Chtml::activeName($model, 'country'),
 		'id' => Chtml::activeId($model, 'country'),
@@ -199,7 +199,6 @@
 	</div>
 
 	<div class="row">
-<<<<<<< HEAD
 		
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
 		<?php echo $form->error($model,'photo_url'); ?>
@@ -208,15 +207,10 @@
 		echo "<img src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' width='100' height='100'>";
 
 		?>
-		    
-=======
-	
-		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'photo_url'); ?>  
 		 <div class="infobox">
                 Foto de Peril</p>
           </div>   
->>>>>>> 7e84071268cec08828db97b17e9ad6a3522e43c2
+
 	</div>
 
 	<div class="row">
@@ -224,13 +218,10 @@
 		<?php echo $form->textField($model,'person_rfc',array('size'=>13,'maxlength'=>13, 'placeholder'=>"RFC")); ?>
 
 		<?php echo $form->error($model,'person_rfc'); ?>
-<<<<<<< HEAD
 
-=======
 		 <div class="infobox">
                 RFC
           </div>
->>>>>>> 7e84071268cec08828db97b17e9ad6a3522e43c2
 	</div>
 
 	<div class="row buttons">
