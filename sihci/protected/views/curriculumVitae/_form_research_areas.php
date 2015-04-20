@@ -99,10 +99,18 @@
 		$countDocs ++;
 	}
 	?>
-<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
-		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
+
+
+	<div class="row">
+		<?php echo $form->textField($model,'name',array( 'title'=>'Nombre de Investigación','size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); ?>
+		<?php echo $form->error($model,'name'); ?>
+	</div>
+
+	<div class="row buttons">
+		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
+
 	</div>
 	
 	

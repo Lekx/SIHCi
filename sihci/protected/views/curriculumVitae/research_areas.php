@@ -12,6 +12,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Líneas de Investigación</h1>
+<h4>Líneas de Investigación:</h4>
 
 <?php $this->renderPartial('_form_research_areas', array('model'=>$model, 'getResearch'=>$getResearch)); ?>

@@ -60,12 +60,28 @@ $(document).ready(function(){
 
 
 	<?php echo $form->errorSummary($model); ?>
+	<?php //print_r($getDocs) ;
+	$countDocs = 1;
+	foreach ($getDocs as $key => $value) {
+	
+		echo $form->dropDownList($getDocs[$key],'type',array('acta'=>'Acta de Nacimiento','pasaporte'=>'Pasaporte',
+															'curp'=>'CURP','ife' => 'IFE'), 
+		                                              array('prompt'=>'Tipo de Documento','options' => array(''=>array('selected'=>true))), 
+		                                              array('size'=>10,'maxlength'=>10)); 
+	    echo $form->error($getDocs[$key],'type');
 
-	<input type="button" id="showForm" value="Agregar Documento"><br>
-	<input class="docs" type="button" id="hideForm" value="Ocultar"><br>
+
+	 echo $form->errorSummary($model); 
+
+		$countDocs ++;
+	}
+	?>
+	<input type="button" id="showForm" value="Agregar Documento">
+	<input class="docs" type="button" id="hideForm" value="Ocultar">
+
 <div class="docs">
 	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
+
 		<?php echo $form->dropDownList($model,'type',array('acta'=>'Acta de Nacimiento','pasaporte'=>'Pasaporte',
 															'curp'=>'CURP', 'ife' => 'IFE'), 
 		                                              array('id'=>'typeDoc','prompt'=>'Tipo de Documento','options' => array(''=>array('selected'=>true))), 
@@ -74,14 +90,13 @@ $(document).ready(function(){
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
+
 		<?php echo $form->textField($model,'description',array('id'=>'descriptionDoc','size'=>60,'maxlength'=>250, 'placeholder'=>'descripción')); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'doc_id'); ?>
-			<?php echo $form->fileField($model,'doc_id',array('id'=>'pathDoc','size'=>60,'maxlength'=>100, 'placeholder'=>"documento oficial a subir")); ?>
+		<?php echo $form->fileField($model,'doc_id',array('id'=>'pathDoc','size'=>60,'maxlength'=>100, 'placeholder'=>"documento oficial a subir")); ?>
 		<?php echo $form->error($model,'doc_id'); ?>  
 	</div>
 
@@ -89,6 +104,8 @@ $(document).ready(function(){
 		<?php echo $form->labelEx($model,'is_Primary'); ?>
 		<?php echo $form->checkBox($model,'is_Primary',array('id'=>'isPrimary')); ?>
 		<?php echo $form->error($model,'is_Primary'); ?>
+
+	<hr>
 	</div>
 
 	
@@ -140,9 +157,9 @@ $(document).ready(function(){
 	?>
 
 	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
-		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
+		<input class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
+		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
 	</div>
 	
 	
