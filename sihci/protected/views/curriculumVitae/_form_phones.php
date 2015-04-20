@@ -113,44 +113,48 @@
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
-<?php 
-	$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
- 	'targetClass'=>'emails',
- 	'addButtonLabel'=>'Agregar nuevo',
-		 )); 
-?>
+
+	<button class="newaddres">
+		<?php 
+		$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+			'targetClass'=>'emails',
+			'addButtonLabel'=>'Agregar Email Extra',
+			)); 
+			?>
+	</button>
+
 	<div class="emails">
-		Tipo de email
-		<select id="typeEmail" name="typesEmails[]">
-  			<option value="" selected="">Tipo de email</option> 
-  			<option value="Trabajo">Trabajo</option>
-  			<option value="Residencial">Residencial</option>
-  			<option value="Particular">Particular</option>
-  			<option value="Campus">Campus</option>
-  			<option value="otro">otro</option>
+		<h5>Email:</h5>
+			<select title="Tipo de Email" name="typesEmails[]">
+	  			<option value="" selected="">Tipo Email</option> 
+	  			<option value="Trabajo">Trabajo</option>
+	  			<option value="Residencial">Residencial</option>
+	  			<option value="Particular">Particular</option>
+	  			<option value="Campus">Campus</option>
+	  			<option value="otro">otro</option>
 		</select>
 		<div id="errorType" class="errors"> Debe seleccionar Tipo de Email</div>
 		<br>
-		Email
-		<input id="mail" type="text" name="emails[]">
+		
 		<div id="errorMail" class="errors"> Debe ser un correo existente ejemplo@mail.com</div><br>
-		</div>
-		<input type="submit" id="btnCreate" value="Agregar email(s)">
+		<input  title="Email" type="text" name="emails[]" placeholder="Email">
 		<br>
+	</div>
+		
+
 		<?php 
 		//print_r($getEmails);
 		$countEmail = 1;
 		foreach($getEmails as $key => $value){
 
-				echo $countEmail;
-				echo $form->labelEx($emails,'type'); 
+			
+	
 				echo $form->dropDownList($emails,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
 		                                                       array('prompt'=>'Tipo de Email','required'=>'true','name'=>'getTypeEmail[]','options' => array(''.$getEmails[$key]->type.''=>array('selected'=>true))));
 				echo $form->error($emails,'type');
 
-				echo $form->labelEx($emails,'email');
 			 	echo $form->textField($emails,'email',array('required'=>'true','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
 			 	echo $form->error($emails, 'email');
 			 //	array('label'=>'Delete Emails', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
@@ -162,17 +166,41 @@
 			 	echo "<br>";
 		}
 		?>
+
+			<div class="row">
+				<?php 
+		//print_r($getEmails);
+				$countEmail = 1;
+				foreach($getEmails as $key){
+
+					echo "<h5>Email:</h5>";
+					echo $form->dropDownList($emails,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
+						'Particular'=>'Particular',
+						'Campus'=>'Campus', 'otro'=>'otro'), 
+					array( 'title'=>'Tipo de Email','name'=>'getTypeEmail[]','options' => array(''.$key['type'].''=>array('selected'=>true))));
+					echo $form->error($emails,'type');
+
+					echo $form->textField($emails,'email',array('name'=>'getEmail[]','value'=>''.$key['email'].'','placeholder'=>'Email', 'title'=>'Email'));
+					echo $form->error($emails, 'email');
+					$countEmail ++;
+					echo "<hr>";
+				}
+				?>
+			</div>
 		
-	
-<?php 
-	$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
- 	'targetClass'=>'phone',
- 	'addButtonLabel'=>'Agregar nuevo',
-		 )); 
-?>
+<button class="newaddres">
+	<?php 
+		$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+			'targetClass'=>'phone',
+			'addButtonLabel'=>'Agregar Telefono Extra',
+			)); 
+			?>
+</button>
+
 <div class="phone">
-		Tipo de Teléfono
-		<select id="typePhone" name="typesPhones[]">
+
+<h5>Telefono:</h5>
+		<select title="Tipo de Teléfono" name="typesPhones[]">
   			<option value="" selected="">Tipo de Teléfono</option> 
   			<option value="Trabajo">Trabajo</option>
   			<option value="Residencial">Residencial</option>
@@ -181,54 +209,42 @@
   			<option value="otro">otro</option>
 		</select>
 		<div id="errorTypePhone" class="errors"> Debe seleccionar tipo de Teléfono</div><br>
-		<br>
-
-		Lada País
-		<input id="countryCode" type="text" name="countryCode[]" maxlength="2"><br>
-		<div id="errorCountry" class="errors"> Debe ser Numero con 2 dígitos</div><br>
-		Lada Estado
-		<input id="localCode" type="text" name="localAreaCode[]" maxlength="3"><br>
-		<div id="errorLocal" class="errors"> Debe ser Número con 2 o 3 dígitos</div><br>
-		Número de Teléfono
-		<input id="phoneNum" type="text" name="phoneNumber[]" maxlength="10"><br>
-		<div id="errorPhone" class="errors"> Debe ser Número con 8 o 10 dígitos</div><br>
-		Extensión
-		<input type="text" name="extension[]" maxlength="8"><br>
-		Es primario
+		
 		<?php echo $form->checkBox($model,'is_primary',array('name'=>'isPrimary[]')); ?>
-</div><!--FORM Phone -->
-	<input type="submit" id="btnCreatePhone" value="Agregar Teléfono(s)">
-	<br>
-		<?php 		
-		$countPhone=1;
 
-		foreach ($getPhones as $key => $value) {
-		echo $countPhone;
-		echo $form->labelEx($model,'type');
-		echo $form->dropDownList($model,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
+			<div class="phoneinput">
+			<input type="text"  class="phones country" name="countryCode[]" maxlength="2" placeholder="[52]">
+			<input type="text" class="phones state" name="localAreaCode[]" maxlength="3" placeholder="[33]">
+			<input type="text" class="phones phonew" name="phoneNumber[]" maxlength="10" placeholder="[000-000-00]">
+			<input type="text" class="phones extension" name="extension[]" maxlength="8" placeholder="[Ext]"> 
+			</div>
+		
+</div><!--FORM Phone -->
+
+	
+		<?php 		
+		foreach ($getPhones as $key) {
+	
+		echo "<h5>Telefono:</h5>";
+		echo $form->dropDownList($model,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('prompt'=>'Tipo de Teléfono','required'=>'true','name'=>'getTypesPhones[]','options' => array(''.$getPhones[$key]->type.''=>array('selected'=>true)))); 
+		                                                       array('title'=>'Tipo de Telefono','name'=>'getTypesPhones[]','options' => array(''.$key['type'].''=>array('selected'=>true)))); 
 		 echo $form->error($model,'type');
 
-		 echo $form->labelEx($model,'country_code');
-		 echo $form->textField($model,'country_code',array('required'=>true,'name'=>'getCountryCode[]','value'=>''.$getPhones[$key]->country_code.'','placeholder'=>'Lada País'));
+		 echo $form->textField($model,'country_code',array('name'=>'getCountryCode[]','value'=>''.$key['country_code'].'','placeholder'=>'País'));
 		 echo $form->error($model,'country_code');
 
-		 echo $form->labelEx($model,'local_area_code');
-		 echo $form->textField($model,'local_area_code',array('required'=>'true','name'=>'getLocalAreaCode[]','value'=>''.$getPhones[$key]->local_area_code.'','placeholder'=>'Lada Estado'));
+		 echo $form->textField($model,'local_area_code',array('name'=>'getLocalAreaCode[]','value'=>''.$key['local_area_code'].'','placeholder'=>'Estado'));
 		 echo $form->error($model,'local_area_code'); 
 
-		 echo $form->labelEx($model,'phone_number'); 
-		 echo $form->textField($model,'phone_number',array('required'=>'true','name'=>'getPhoneNumber[]','value'=>''.$getPhones[$key]->phone_number.'','placeholder'=>'Número Telefónico'));
+		 echo $form->textField($model,'phone_number',array('name'=>'getPhoneNumber[]','value'=>''.$key['phone_number'].'','placeholder'=>'Número Telefónico'));
 		 echo $form->error($model,'phone_number'); 
 
-		 echo $form->labelEx($model,'extension'); 
-		 echo $form->textField($model,'extension',array('name'=>'getExtension[]','value'=>''.$getPhones[$key]->extension.'','placeholder'=>'Extensión')); 
+		 echo $form->textField($model,'extension',array('name'=>'getExtension[]','value'=>''.$key['extension'].'','placeholder'=>'Ext')); 
 		 echo $form->error($model,'extension'); 
 
-		 echo $form->labelEx($model,'is_primary'); 
-		 echo $form->checkBox($model,'is_primary',array('name'=>'getIsPrimary[]','value'=>''.$getPhones[$key]->is_primary.'')); 
+		 echo $form->checkBox($model,'is_primary',array('name'=>'getIsPrimary[]','value'=>''.$key['is_primary'].'')); 
 		 echo $form->error($model,'is_primary'); 
 		 echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deletePhone', 'id'=>$getPhones[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
 		 $countPhone++;
@@ -236,11 +252,10 @@
 		 ?>
 	
 
-
 	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
-		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
+		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

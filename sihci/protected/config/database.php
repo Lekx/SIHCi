@@ -8,6 +8,8 @@ return array(
 	'connectionString' => 'mysql:host=192.168.1.26;dbname=sihci',
 
 	//'connectionString' => 'mysql:host=127.0.0.1;dbname=sihci',
+	//'connectionString' => 'mysql:host=127.0.0.1;dbname=sihci',
+	'connectionString' => 'mysql:host=192.168.1.26;dbname=sihci',
 	//'connectionString' => 'mysql:host=127.0.0.1;dbname=sgeiadmi_sihci',
 
 	'emulatePrepare' => true,
