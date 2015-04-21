@@ -82,7 +82,7 @@ class BooksChaptersController extends Controller
 	                	 mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
 	                
  					$model->url_doc->saveAs($path.'Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
-		            $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/DCapitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();    
+		            $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();    
 	                 
 			               if($model->save()){			              
 					 			$names = $_POST['names'];
@@ -172,11 +172,13 @@ class BooksChaptersController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-       
-		
-        BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$id))->delete();
+        
+		BooksChaptersAuthors::model()->deleteAll("id_books_chapters =".$id );
+		//$model = $this->loadModel($id);
+		//$file = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();
+        //unlink(Yii::app()->basePath.$file);
         $this->loadModel($id)->delete();
-	    
+
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -223,15 +225,6 @@ class BooksChaptersController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
-	}
-
-	public function loadModelAuthors($id)
-	{
-		$modelAuthors=BooksChaptersAuthors::model()->findByPk($id);
-	
-		if($modelAuthors===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $modelAuthors;
 	}
 	/**
 	 * Performs the AJAX validation.
