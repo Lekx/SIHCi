@@ -1,18 +1,18 @@
 <?php
-/* @var $this CopyrightsController */
+/* @var $this SoftwareController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Copyrights',
+	'Softwares',
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
-	array('label'=>'Gestinar', 'url'=>array('admin')),
+	array('label'=>'Create Software', 'url'=>array('create')),
+	array('label'=>'Manage Software', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Propiedad intelectual: Derecho de Autor</h1>
+<h1>Softwares</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

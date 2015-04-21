@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Copyrights', 'url'=>array('index')),
-	array('label'=>'Create Copyrights', 'url'=>array('create')),
-	array('label'=>'View Copyrights', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Copyrights', 'url'=>array('admin')),
+	//array('label'=>'Desplegar', 'url'=>array('index')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Copyrights <?php echo $model->id; ?></h1>
+<h1>Modificar registro #<?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

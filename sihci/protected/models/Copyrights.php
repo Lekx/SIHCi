@@ -21,10 +21,10 @@
  */
 class Copyrights extends CActiveRecord
 {
+	public $searchValue;
 	/**
 	 * @return string the associated database table name
 	 */
-	public $searchValue;
 	
 	public function tableName()
 	{
@@ -61,7 +61,7 @@ class Copyrights extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),
-			'id' => array(self::BELONGS_TO, 'Copyrights', 'id'),
+			
 		);
 	}
 
@@ -105,10 +105,10 @@ class Copyrights extends CActiveRecord
 		
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id CONCAT('%', :searchValue , '%')");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%')");
 			$crietria->params = array(':searchValue' => $this->searchValue);
 		}
-		/* $criteria->compare('id',$this->id);
+	/*	$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('participation_type',$this->participation_type,true);
 		$criteria->compare('title',$this->title,true);
@@ -118,11 +118,9 @@ class Copyrights extends CActiveRecord
 		$criteria->compare('beneficiary',$this->beneficiary,true);
 		$criteria->compare('entity',$this->entity,true);
 		$criteria->compare('impact_value',$this->impact_value,true);
-		$criteria->compare('creation_date',$this->creation_date,true); */
-			
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+		$criteria->compare('creation_date',$this->creation_date,true); 
+	*/		
+		return new CActiveDataProvider($this, array('criteria'=>$criteria));
 	}
 
 	/**
