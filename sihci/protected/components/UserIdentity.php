@@ -22,6 +22,7 @@ class UserIdentity extends CUserIdentity
 	private $_id;
 	private $_role;
 
+
 	public function authenticate()
 	{
 		$user=Users::model()->find("LOWER(email)=?",array(strtolower($this->username)));
@@ -34,8 +35,9 @@ class UserIdentity extends CUserIdentity
 			$this->_id=$user->id;
 			$this->setState('email',$user->email);
 			$this->setState('id_roles',$user->id_roles); //obtiene id del rol del usuario
+			$this->setState('fullname', $user->persons[0]['names'].' '.$user->persons[0]['last_name1'].' '.$user->persons[0]['last_name2']);
+			$this->setState('role',$user->idRoles[0]['rol']);
 
-		
 			// $permisosObj = permissionRoles::model()->findAllByAttributes(array("id_role"=>$user->id_roles));
 			// $permisosArr = array();
 

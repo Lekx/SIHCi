@@ -70,17 +70,17 @@
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array('site/index'));?>
                     <span>Protocolos</span>
                 </div>
-                <div class="headerconteinerF"></div>
+                <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' >";  ?></div> 
                 <div class="headerconteiner2"></div>
                 <div class="headerconteiner3">
-                    <span> Curriculum Vitae / Datos Personales</span>
+                    <span> Cuenta / Datos de Cuenta</span>
                 </div>
                 <div class="headerconteiner4">
-                    <h4>Ménu CV-HC</h4>
+                    <h4>Ménu </h4>
                 </div>
                 <div class="headerconteiner5">
-                    <h4>Dr. Daniel Ulises García Verdín </h4>
-                    <h5>Investigador</h5>
+                    <h4> <?php echo Yii::app()->user->fullname; ?></h4>
+                    <h5><?php echo Yii::app()->user->id_roles; ?> </h5>
                 </div>
             </div>
             <div class="syscontent">
