@@ -19,7 +19,7 @@
  * @property string $resumen
  * @property string $objective
  * @property string $contribution
- * @property string $valor_impacto
+ * @property string $impact_value
  * @property string $innovation_trascen
  * @property string $transfer_mechanism
  * @property string $hr_formation
@@ -61,7 +61,7 @@ class Software extends CActiveRecord
 			       'maxSize'=>array(1204 * 5000),
 			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
 		    array('end_date','compare','compareValue'=> date('d/m/Y'),'operator'=>'>='),	
-			array('end_date, resumen, objective, contribution, valor_impacto, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
+			array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, country, participation_type, title, beneficiary, entity, manwork_hours, end_date, sector, organization, second_level, resumen, objective, contribution, valor_impacto, innovation_trascen, transfer_mechanism, hr_formation, economic_support, path, creation_date', 'safe', 'on'=>'search'),
@@ -100,7 +100,7 @@ class Software extends CActiveRecord
 			'resumen' => 'Resumen',
 			'objective' => 'Objetivo',
 			'contribution' => 'Contribución',
-			'valor_impacto' => 'Valor de impacto',
+			'impact_value' => 'Valor de impacto',
 			'innovation_trascen' => 'Innovacón',
 			'transfer_mechanism' => 'Mecanismo de transferencia.',
 			'hr_formation' => 'Formación HR',
@@ -143,7 +143,7 @@ class Software extends CActiveRecord
 		$criteria->compare('resumen',$this->resumen,true);
 		$criteria->compare('objective',$this->objective,true);
 		$criteria->compare('contribution',$this->contribution,true);
-		$criteria->compare('valor_impacto',$this->valor_impacto,true);
+		$criteria->compare('impact_value',$this->valor_impacto,true);
 		$criteria->compare('innovation_trascen',$this->innovation_trascen,true);
 		$criteria->compare('transfer_mechanism',$this->transfer_mechanism,true);
 		$criteria->compare('hr_formation',$this->hr_formation,true);

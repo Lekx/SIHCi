@@ -36,7 +36,7 @@ $this->menu=array(
 		'resumen',
 		'objective',
 		'contribution',
-		'valor_impacto',
+		'impact_value',
 		'innovation_trascen',
 		'transfer_mechanism',
 		'hr_formation',

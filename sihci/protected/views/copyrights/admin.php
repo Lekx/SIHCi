@@ -40,25 +40,28 @@ $('.search-form form').submit(function(){
     'filterPosition'=>'header',
     'selectableRows'=>1,
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
-	'columns'=>array(
-		array('type'=>'html','id' => 'id','value'=>'CHtml::encode($data->id)'),
-		array('type'=>'html','id' => 'participation_type','value'=>'CHtml::encode($data->participation_type)'),
-		array('type'=>'html','id' => 'title','value'=>'CHtml::encode($data->title)'),
-		array('type'=>'html','id' => 'step_number','value'=>'CHtml::encode($data->step_number)'),
-		array('type'=>'html','id' => 'beneficiary','value'=>'CHtml::encode($data->beneficiary)'),
+	'columns'=>array(		
 		
+		array('type'=>'html','id'=>'id','value'=>'CHtml::encode($data->id)'),
+		array('type'=>'html','id'=>'participation_type','value'=>'CHtml::encode($data->participation_type)'),
+		array('type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('type'=>'html','id'=>'step_number','value'=>'CHtml::encode($data->step_number)'),
+		array('type'=>'html','id'=>'beneficiary','value'=>'CHtml::encode($data->beneficiary)'),
 		/*
 		'id',
 		'participation_type',
 		'title',
-		'application_date',
 		'step_number',
+		'entity',
 		'beneficiary',
+		'application_date',
 		'id_curriculum',
 		'resume',
-		'entity',
 		'impact_value',
 		'creation_date',
+	
+
+
 		*/
 		array(
 			'class'=>'CButtonColumn',

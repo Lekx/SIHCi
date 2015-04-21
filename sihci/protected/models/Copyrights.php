@@ -60,8 +60,7 @@ class Copyrights extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),
-			
+			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),			
 		);
 	}
 
@@ -105,9 +104,8 @@ class Copyrights extends CActiveRecord
 		
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%')");
-			$crietria->params = array(':searchValue' => $this->searchValue);
-		}
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR participation_type LIKE CONCAT('%', :searchValue , '%') OR beneficiary LIKE CONCAT('%', :searchValue , '%') OR step_number LIKE CONCAT('%', :searchValue , '%') OR  entity LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
 	/*	$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('participation_type',$this->participation_type,true);
@@ -120,6 +118,7 @@ class Copyrights extends CActiveRecord
 		$criteria->compare('impact_value',$this->impact_value,true);
 		$criteria->compare('creation_date',$this->creation_date,true); 
 	*/		
+		}
 		return new CActiveDataProvider($this, array('criteria'=>$criteria));
 	}
 

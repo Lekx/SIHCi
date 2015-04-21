@@ -66,7 +66,7 @@
 	<?php echo CHtml::encode($data->contribution); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('valor_impacto')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('impact_value')); ?>:</b>
 	<?php echo CHtml::encode($data->valor_impacto); ?>
 	<br />
 

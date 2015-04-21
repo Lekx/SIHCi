@@ -61,7 +61,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'resumen',
 		'objective',
 		'contribution',
-		'valor_impacto',
+		'impact_value',
 		'innovation_trascen',
 		'transfer_mechanism',
 		'hr_formation',
