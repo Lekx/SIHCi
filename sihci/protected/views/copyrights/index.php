@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Crear', 'url'=>array('create')),
-	array('label'=>'Listar', 'url'=>array('admin')),
+	array('label'=>'Gestinar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Copyrights</h1>
+<h1>Propiedad intelectual: Derecho de Autor</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

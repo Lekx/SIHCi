@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar', 'url'=>array('index')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 	array('label'=>'Crear', 'url'=>array('create')),
 );
 
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Propiedad intelectual: Derechos de autor</h1>
+<h1>Gestionar Registro de propiedad intelectual-Derecho de Autor:</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
@@ -36,21 +36,32 @@ $('.search-form form').submit(function(){
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'copyrights-grid',
-	'dataProvider'=>$model->search(),
-	//'filter'=>$model,
-	'columns'=>array(
+    'dataProvider'=>$model->search(),
+    'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
+	'columns'=>array(		
+		
+		array('type'=>'html','id'=>'id','value'=>'CHtml::encode($data->id)'),
+		array('type'=>'html','id'=>'participation_type','value'=>'CHtml::encode($data->participation_type)'),
+		array('type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('type'=>'html','id'=>'step_number','value'=>'CHtml::encode($data->step_number)'),
+		array('type'=>'html','id'=>'beneficiary','value'=>'CHtml::encode($data->beneficiary)'),
+		/*
 		'id',
 		'participation_type',
 		'title',
-		'application_date',
 		'step_number',
+		'entity',
 		'beneficiary',
-		/*
+		'application_date',
 		'id_curriculum',
 		'resume',
-		'entity',
 		'impact_value',
 		'creation_date',
+	
+
+
 		*/
 		array(
 			'class'=>'CButtonColumn',

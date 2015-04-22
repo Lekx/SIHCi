@@ -1,6 +1,6 @@
 <?php
 
-class CopyrightsController extends Controller
+class SoftwareController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -37,7 +37,7 @@ class CopyrightsController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -60,49 +60,58 @@ class CopyrightsController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	
-	//DA01-Registro de datos
+	//SO01-Registro de datos
 	public function actionCreate()
 	{
-		$model=new Copyrights;
-		// Uncomment the following line if AJAX validation is needed
+		$model=new Software;
 		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
-		$model->id_curriculum = $id_curriculum->id;   
+		$model->id_curriculum = $id_curriculum->id; 
+		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
-		//var_dump($_POST);
 
-		if(isset($_POST['Copyrights']))
+		if(isset($_POST['Software']))
 		{
-			$model->attributes=$_POST['Copyrights'];
+			$model->attributes=$_POST['Software'];
 			$model->id_curriculum = $id_curriculum->id;  
+			$model->path = CUploadedFile::getInstanceByName('Software[path]');
 
 			if($model->save())
-     		{
-     			echo CJSON::encode(array('status'=>'success'));
-     			Yii::app()->end();
-     		}	
-     		else 
-     		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
-     		}
+			{
 
-     		//Yii::app()->end();
+	        	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+	           
+	            if(!is_dir($urlFile))          
+	              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+
+	            if(isset($path) && $urlFile != null)
+	            {    
+					$model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
+		        	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+		  		}     	
+
+		    	echo CJSON::encode(array('status'=>'success'));
+		    	Yii::app()->end();
+		    }	
+		    else 
+	    	{
+     			$error = CActiveForm::validate($model);
+                if($error!='[]')
+                   echo $error;
+                Yii::app()->end();
+	        }
 		}
 
 		if(!isset($_POST['ajax']))
 			$this->render('create',array('model'=>$model));
 	}
 
-
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	//DA02-Modificar-registro 
+
+	//SO02-Modificar-registro
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -110,9 +119,17 @@ class CopyrightsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Copyrights']))
+		if(isset($_POST['Software']))
 		{
-			$model->attributes=$_POST['Copyrights'];
+			$model->attributes=$_POST['Software'];
+    		$model->path = CUploadedFile::getInstanceByName('Software[path]');
+
+    		if($model->url_doc != '')
+    		{                
+	            $model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
+	         	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+	        }
+
 			if($model->save())
      		{
      			echo CJSON::encode(array('status'=>'success'));
@@ -137,7 +154,7 @@ class CopyrightsController extends Controller
 	 * @param integer $id the ID of the model to be deleted
 	 */
 
-	//DA03-Desactivar-registro
+	//SO03-Desactivar-registro
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -151,10 +168,10 @@ class CopyrightsController extends Controller
 	 * Lists all models.
 	 */
 
-	//DA04-Desplegar-datos
+	//SO04-Desplegar- registro
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Copyrights');
+		$dataProvider=new CActiveDataProvider('Software');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -164,28 +181,29 @@ class CopyrightsController extends Controller
 	 * Manages all models.
 	 */
 
-	//DA05-Listar-Registros
+	//SO06-Listar registro
 	public function actionAdmin()
 	{
-		$model=new Copyrights('search');
+		$model=new Software('search');
 		$model->unsetAttributes();  // clear any default values
-		
-		if(isset($_GET['Copyrights']))
-			$model->attributes=$_GET['Copyrights'];
+		if(isset($_GET['Software']))
+			$model->attributes=$_GET['Software'];
 
-		$this->render('admin',array('model'=>$model));
+		$this->render('admin',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Copyrights the loaded model
+	 * @return Software the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Copyrights::model()->findByPk($id);
+		$model=Software::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -193,11 +211,11 @@ class CopyrightsController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Copyrights $model the model to be validated
+	 * @param Software $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='copyrights-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='software-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
