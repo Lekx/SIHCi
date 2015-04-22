@@ -10,7 +10,8 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
-
+     
+     <?php /*
 	<div class="row">
 		<?php echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id'); ?>
@@ -21,6 +22,7 @@
 		<?php echo $form->textField($model,'id_curriculum'); ?>
 	</div>
 
+     */?>
 	<div class="row">
 		<?php echo $form->label($model,'work_title'); ?>
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200)); ?>

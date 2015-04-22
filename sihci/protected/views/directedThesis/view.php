@@ -22,8 +22,8 @@ $this->menu=array(
 	'data'=>$model,
      'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'attributes'=>array(
-		'id',
-		'id_curriculum',
+		//'id',
+		//'id_curriculum',
 		'title',
 		'conclusion_date',
 		'author',

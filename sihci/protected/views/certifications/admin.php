@@ -45,8 +45,8 @@ or <b>=</b>) al inicio de cada uno de los valores de búsqueda para especificar 
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'id_curriculum',
+		//'id',
+		//'id_curriculum',
 		'folio',
 		'reference',
 		'reference_type',

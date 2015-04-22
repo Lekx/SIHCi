@@ -63,9 +63,10 @@ class BooksChaptersController extends Controller
     {
         $model=new BooksChapters;
         $modelAuthors = new BooksChaptersAuthors;
+      
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
 
         if(isset($_POST['BooksChapters']))
         {
@@ -119,7 +120,7 @@ class BooksChaptersController extends Controller
 	 public function actionUpdate($id)
     {
         $model=$this->loadModel($id);
-        $modelAuthors=BooksChaptersAuthors::model()->find('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$id));
+        $modelAuthors=BooksChaptersAuthors::model()->findAll('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$id));
        
         // Uncomment the following line if AJAX validation is needed
         //$this->performAjaxValidation($model); 
@@ -172,11 +173,7 @@ class BooksChaptersController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-        
 		BooksChaptersAuthors::model()->deleteAll("id_books_chapters =".$id );
-		//$model = $this->loadModel($id);
-		//$file = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();
-        //unlink(Yii::app()->basePath.$file);
         $this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -226,6 +223,7 @@ class BooksChaptersController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
 	/**
 	 * Performs the AJAX validation.
 	 * @param BooksChapters $model the model to be validated

@@ -41,12 +41,12 @@ class Certifications extends CActiveRecord
 			array('folio, reference', 'length', 'max'=>30),
 			array('reference_type', 'length', 'max'=>15),
 			array('specialty, type', 'length', 'max'=>45),
-			array('validity_date_start','creation_date', 'safe'),
+			array('validity_date_end, creation_date', 'safe'),
 			array('validity_date_end', 'safe'),
 			array('validity_date_end','compare','compareAttribute'=>'validity_date_start','operator'=>'>='),	
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, folio, reference, reference_type, specialty, validity_date_start, validity_date_end, type','safe', 'on'=>'search'),
+			array('id, id_curriculum, folio, reference, reference_type, specialty, validity_date_start, validity_date_end, type, creation_date', 'safe', 'on'=>'search'),
 		);
 	}
 
