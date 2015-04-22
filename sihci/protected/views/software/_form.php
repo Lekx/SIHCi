@@ -14,10 +14,9 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-	'htmlOptions' => array('enctype'=>'multipart/form-data')
+	'htmlOptions' => array('enctype'=>'multipart/form-data'),
+	'clientOptions'=>array('validateOnSubmit'=>true),
+	
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>

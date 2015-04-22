@@ -73,22 +73,21 @@ class SoftwareController extends Controller
 		{
 			$model->attributes=$_POST['Software'];
 			$model->id_curriculum = $id_curriculum->id;  
-			$model->path = CUploadedFile::getInstanceByName('Software[path]');
+            $model->path = CUploadedFile::getInstanceByName('Software[path]');
+
+		   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+           	
+            if(!is_dir($urlFile))          
+              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+
+			if(isset($path))
+			{
+				$model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
+			    $model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+			}
 
 			if($model->save())
 			{
-
-	        	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
-	           
-	            if(!is_dir($urlFile))          
-	              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
-
-	            if(isset($path) && $urlFile != null)
-	            {    
-					$model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
-		        	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
-		  		}     	
-
 		    	echo CJSON::encode(array('status'=>'success'));
 		    	Yii::app()->end();
 		    }	
@@ -99,8 +98,9 @@ class SoftwareController extends Controller
                    echo $error;
                 Yii::app()->end();
 	        }
+					    
 		}
-
+			
 		if(!isset($_POST['ajax']))
 			$this->render('create',array('model'=>$model));
 	}
@@ -124,7 +124,7 @@ class SoftwareController extends Controller
 			$model->attributes=$_POST['Software'];
     		$model->path = CUploadedFile::getInstanceByName('Software[path]');
 
-    		if($model->url_doc != '')
+    		if($model->path)
     		{                
 	            $model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
 	         	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
