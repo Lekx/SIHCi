@@ -3,7 +3,75 @@
 /* @var $model Grades */
 /* @var $form CActiveForm */
 ?>
+	<style type="text/css">  
+        .errors{
+            -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background: red;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            display: none;
+            font-size: 10px;
+            margin-top: -50px;
+            margin-left: 315px;
+            padding: 10px;
+            position: absolute;
+        }
+         .grades{
+            display: none;
+        }
+    </style>
 	<script>
+	 $(document).ready(function(){
+            $("#btnCreate").click(function(){
+                
+             	var grade = $("#grade").val(); 
+             	var title = $("#title").val(); 
+             	var obtentionDate = $("#obtentionDate").val(); 
+             	var thesisTitle = $("#thesisTitle").val();
+             	var institution = $("#institution").val(); 
+
+                if(grade == ""){
+                    $("#errorGrade").fadeIn("slow");
+                    return false;
+                }else{
+                    $("#errorGrade").fadeOut();
+                    if (title == "") {
+                    	$("#errorTitle").fadeIn("slow");
+                    	return false;
+                    }else{
+                    	$("#errorTitle").fadeOut();
+                    	if (obtentionDate == "") {
+                    		$("#errorObtentionDate").fadeIn("slow");
+                    		return false;
+                    	}else{
+                    		$("#errorObtentionDate").fadeOut();
+                    		if (thesisTitle == "") {
+                    			$("#errorThesisTitle").fadeIn("slow");
+                    			return false;
+                    		}else{
+                    			$("#errorThesisTitle").fadeOut();
+                    			if (institution == "") {
+                    				$("#errorInstitution").fadeIn("slow");
+                    				return false;
+                    			}else{
+                    				$("#errorInstitution").fadeOut();
+                    			}
+                    		}
+                    	}
+                    }
+                 }
+ 
+            });//click
+            $("#showForm").on( "click", function() {
+				$('.grades').show(); 
+				$('#hideForm').show();
+			 });
+			$("#hideForm").on( "click", function() {
+				$('.grades').hide(); 
+			});
+        });//ready
 		function cleanUp(){
 			var text;
 			var result = confirm("¿Está usted seguro de limpiar estos datos?");
@@ -28,135 +96,236 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
+<input type="button" id="showForm" value="Agregar Formación Académica">
+<input class="grades" type="button" id="hideForm" value="Cancelar">
 
+	<div class="grades">
+		<input id="country" type="text" name="country" placeholder="País">
+		<div id="errorCountry" class="errors"> Debe seleccionar País </div>
+		<br>
 
-	<?php echo $form->errorSummary($model); ?>
+		<select id="grade" name="grade">
+  			<option value="" selected="">Grado</option> 
+  			<option value="Trabajo">Trabajo</option>
+  			<option value="Residencial">Residencial</option>
+  			<option value="Particular">Particular</option>
+  			<option value="Campus">Campus</option>
+  			<option value="otro">otro</option>
+		</select>
+		<div id="errorGrade" class="errors"> Debe seleccionar su Grado</div>
+		<br>
+		
+		
+		<input id="writNumber" type="text" name="writNumber" placeholder="Número de Cédula">
+		<div id="errorWriteNumber" class="errors"> Debe seleccionar Numero de Cédula </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'country'); ?>
-		<?php echo $form->textField($model,'country',array('size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
-		<?php echo $form->error($model,'country'); ?>
-	</div>
+		<input id="title" type="text" name="title" placeholder="Tútulo">
+		<div id="errorTitle" class="errors"> Debe seleccionar Título </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'grade'); ?>
-		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
-															'Particular'=>'Particular',
-			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'grade'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'writ_number'); ?>
-		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
-															'Particular'=>'Particular',
-			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'writ_number'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título')); ?>
-		<?php echo $form->error($model,'title'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'obtention_date'); ?>
-		<?php
+		<?php 
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'language'=> 'es',
-		    'attribute' => 'obtention_date',
-		    'model' => $model,
-		   // 'flat'=>false,
-		     'options' => array(
-			     		'changeMonth'=>true, //cambiar por Mes
-			     		'changeYear'=>true, //cambiar por Año
-			    			'maxDate' => 'now',
-		     	),
-		    'htmlOptions' => array(
-		    			'size'=>'10',
-		    			'maxlength'=>'10', 
-		        		'placeholder'=>"Fecha de Obtención"),
-				));
-	?>
-		<?php echo $form->error($model,'obtention_date'); ?>
-	</div>
+			    'language'=> 'es',
+			    'id'=> 'obtentionDate',
+			    'name'=>'obtentionDate',
+			     'options' => array(
+				     		'changeMonth'=>true, //cambiar por Mes
+				     		'changeYear'=>true, //cambiar por Año
+				    			'maxDate' => 'now',
+			     	),
+			    'htmlOptions' => array(
+			    			'size'=>'10',
+			    			'maxlength'=>'10', 
+			        		'placeholder'=>"Fecha de Obtención"),
+					));
+		?>
+		<div id="errorObtentionDate" class="errors"> Debe seleccionar una Fecha </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',array(''=>'','Creditos_Terminados'=>'Creditos Terminados',
-															'Grado_Obtenido'=>'Grado Obtenido', 
-															'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'status'); ?>
-	</div>
+		<select id="status" name="status">
+  			<option value="" selected="">Estatus</option> 
+  			<option value="Creditos Terminados">Creditos Terminados</option>
+  			<option value="Grado Obtenido">Grado Obtenido</option>
+  			<option value="Proceso">Proceso</option>
+  			<option value="Truncado">Truncado</option>
+		</select>
+		<div id="errorStatus" class="errors"> Debe seleccionar su Estatus </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'thesis_title'); ?>
-		<?php echo $form->textField($model,'thesis_title',array('size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); ?>
-		<?php echo $form->error($model,'thesis_title'); ?>
-	</div>
+		<input id="thesisTitle" type="text" name="thesisTitle" placeholder="Título de Tesis">
+		<div id="errorThesisTitle" class="errors"> Debe seleccionar el Título de Tesis </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'state'); ?>
-		<?php echo $form->dropDownList($model,'state',array(''=>'','en_Proceso'=>'En Proceso',
-															'Terminado'=>'Terminado'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'state'); ?>
-	</div>
+		<select id="state" name="state">
+  			<option value="" selected="">Estado</option> 
+  			<option value="En proceso">En proceso</option>
+  			<option value="Terminado">Terminado</option>
+		</select>
+		<div id="errorState" class="errors"> Debe seleccionar su Estado </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'sector'); ?>
-		<?php echo $form->dropDownList($model,'sector',array(''=>'','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5',
-																'6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11',
-																'12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16',
-																'17'=>'17','18'=>'18','19'=>'19','20'=>'20','21'=>'21',
-																'22'=>'22','23'=>'23','24'=>'24','25'=>'25','26'=>'26',
-																'27'=>'27','28'=>'28','29'=>'29','30'=>'30','31'=>'31'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10),
-		                                                         array('placeholder'=>'Día de Inicio')); ?>
-		<?php echo $form->error($model,'sector'); ?>
-	</div>
+		<select id="sector" name="sector">
+  			<option value="" selected="">Sector</option> 
+  			<option value="No especificado">No especificado</option> 
+		</select>
+		<div id="errorSector" class="errors"> Debe seleccionar su Sector </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'institution'); ?>
-		<?php echo $form->textField($model,'institution',array('size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); ?>
-		<?php echo $form->error($model,'institution'); ?>
-	</div>
+		<input id="institution" type="text" name="institution" placeholder="Institución">
+		<div id="errorInstitution" class="errors"> Debe seleccionar Institución </div>
+		<br>	
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'area'); ?>
-		<?php echo $form->textField($model,'area',array('size'=>45,'maxlength'=>45,'placeholder'=>'Área')); ?>
-		<?php echo $form->error($model,'area'); ?>
-	</div>
+		<input id="area" type="text" name="area" placeholder="Área">
+		<div id="errorArea" class="errors"> Debe seleccionar Área </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'discipline'); ?>
-		<?php echo $form->textField($model,'discipline',array('size'=>45,'maxlength'=>45,'placeholder'=>'Disciplina')); ?>
-		<?php echo $form->error($model,'discipline'); ?>
-	</div>
+		<input id="discipline" type="text" name="discipline" placeholder="Disciplina">
+		<div id="errorDiscipline" class="errors"> Debe seleccionar Disciplina </div>
+		<br>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'subdiscipline'); ?>
-		<?php echo $form->textField($model,'subdiscipline',array('size'=>45,'maxlength'=>45,'placeholder'=>'Subdisciplina')); ?>
-		<?php echo $form->error($model,'subdiscipline'); ?>
-	</div>
+		<input id="subdiscipline" type="text" name="subdiscipline" placeholder="Subdisciplina">
+		<div id="errorSubdiscipline" class="errors"> Debe seleccionar Subdisciplina </div>
+		<br>
+		
+		<input type="submit" id="btnCreate" value="Crear Formación Académica">
+		<br>
 
-	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
-		<?php echo CHtml::link('Cancelar',array('/site/index')); ?>
 	</div>
+		<br>
 
+	<?php 
+	$count = 1;
+	echo $form->errorSummary($model); 
+	//print_r($getGrades);
+	foreach ($getGrades as $key => $value) {
+		echo $count;
+		echo	'<div class="row">';
+			echo $form->labelEx($model,'country'); 
+			echo $form->textField($model,'country',array('name'=>'getCountry[]','value'=>$getGrades[$key]->country,'size'=>50,'maxlength'=>50, 'placeholder'=>'País')); 
+			echo $form->error($model,'country'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			echo $form->labelEx($model,'grade'); 
+			echo $form->dropDownList($model,'grade',array('Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+																'Particular'=>'Particular',
+				                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
+			                                                       array('required'=>'true','name'=>'getGrade[]','prompt'=>'Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))), 
+			                                                       array('size'=>10,'maxlength'=>10)); 
+			echo $form->error($model,'grade');
+		echo '</div>';
+
+		echo	'<div class="row">';
+			echo $form->labelEx($model,'writ_number');
+			 echo $form->textField($model,'writ_number',array('name'=>'getWritNumber[]','value'=>$getGrades[$key]->writ_number,'title'=>'Número de Cédula','size'=>50,'maxlength'=>50, 'placeholder'=>'Número de Cédula')); 
+			echo $form->error($model,'writ_number');
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'title'); 
+			 echo $form->textField($model,'title',array('required'=>'true','name'=>'getTitle[]','value'=>$getGrades[$key]->title,'size'=>45,'maxlength'=>45,'placeholder'=>'Título')); 
+			 echo $form->error($model,'title'); 
+		echo '</div>';
+
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'obtention_date'); 
+			
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'language'=> 'es',
+			    'name'=> 'getObtentionDate[]',
+			    'value'=> $getGrades[$key]->obtention_date,
+			    //'attribute' => 'obtention_date',
+			   // 'model' => $model,
+			   // 'flat'=>false,
+			     'options' => array(
+				     		'changeMonth'=>true, //cambiar por Mes
+				     		'changeYear'=>true, //cambiar por Año
+				    			'maxDate' => 'now',
+			     	),
+			    'htmlOptions' => array(
+			    			'size'=>'10',
+			    			'maxlength'=>'10', 
+			        		'placeholder'=>"Fecha de Obtención"),
+					));
+				 echo $form->error($model,'obtention_date'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'status'); 
+			 echo $form->dropDownList($model,'status',array('Creditos_Terminados'=>'Creditos Terminados',
+																'Grado_Obtenido'=>'Grado Obtenido', 
+																'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
+			                                                       array('name'=>'getStatus[]','prompt'=>'Estatus','options' => array($getGrades[$key]->status=>array('selected'=>true))), 
+			                                                       array('size'=>10,'maxlength'=>10)); 
+			 echo $form->error($model,'status'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'thesis_title'); 
+			 echo $form->textField($model,'thesis_title',array('required'=>'true','name'=>'getThesisTitle[]','value'=>$getGrades[$key]->thesis_title,'size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); 
+			echo $form->error($model,'thesis_title'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'state');
+			 echo $form->dropDownList($model,'state',array('en_Proceso'=>'En Proceso',
+																'Terminado'=>'Terminado'), 
+			                                                       array('name'=>'getState[]','prompt'=>'Estado','options' => array($getGrades[$key]->state=>array('selected'=>true))), 
+			                                                       array('size'=>10,'maxlength'=>10)); 
+			 echo $form->error($model,'state'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'sector'); 
+			 echo $form->dropDownList($model,'sector',array('No especificado'=>'No especificado','Instituciones del sector gobierno federal centralizado'=>'Instituciones del sector gobierno federal centralizado',
+				                                                 'Instituciones del sector entidades paraestatales'=>'Instituciones del sector entidades paraestatales','Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
+				                                                 'Instituciones del sector de educacion superior publicas'=>'Instituciones del sector de educacion superior publicas','Instituciones del sector de educacion superior privadas'=>'Instituciones del sector de educacion superior privadas',
+				                                                 'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)','Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
+				                                                 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras','consultoras'=>'consultoras','Gobierno municipal'=>'Gobierno municipal','Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
+				                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),
+				                                                 array('name'=>'getSector[]','prompt'=>'Sector','options' => array($getGrades[$key]->sector=>array('selected'=>true)))); 
+			 echo $form->error($model,'sector'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'institution'); 
+			 echo $form->textField($model,'institution',array('required'=>'true','name'=>'getInstitution[]','value'=>$getGrades[$key]->institution,'size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); 
+			 echo $form->error($model,'institution'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'area'); 
+			 echo $form->textField($model,'area',array('name'=>'getArea[]','value'=>$getGrades[$key]->area,'size'=>45,'maxlength'=>45,'placeholder'=>'Área')); 
+			 echo $form->error($model,'area'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'discipline'); 
+			 echo $form->textField($model,'discipline',array('name'=>'getDiscipline[]','value'=>$getGrades[$key]->discipline,'size'=>45,'maxlength'=>45,'placeholder'=>'Disciplina')); 
+			 echo $form->error($model,'discipline'); 
+		echo '</div>';
+
+		echo	'<div class="row">';
+			 echo $form->labelEx($model,'subdiscipline'); 
+			 echo $form->textField($model,'subdiscipline',array('name'=>'getSubdiscipline[]','value'=>$getGrades[$key]->subdiscipline,'size'=>45,'maxlength'=>45,'placeholder'=>'Subdisciplina')); 
+			 echo $form->error($model,'subdiscipline'); 
+		echo '</div>';
+		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteGrade', 'id'=>$getGrades[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
+		echo "<br>";
+		echo "------------------------------------------------------------";
+		echo "<br>";
+		$count ++;
+	}
+	echo	'<div class="row buttons">';
+		echo '<input class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">';
+		echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';
+		echo CHtml::button('Cancelar',array('/site/index')); 
+	echo '</div>';
+?>
 
 <?php $this->endWidget(); ?>
 

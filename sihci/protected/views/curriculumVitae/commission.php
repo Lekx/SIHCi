@@ -12,6 +12,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Nombramientos</h1>
+<h4>Nombramientos:</h4>
 
 <?php $this->renderPartial('_form_commission', array('model'=>$model)); ?>
