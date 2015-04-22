@@ -73,20 +73,32 @@ class SoftwareController extends Controller
 		{
 			$model->attributes=$_POST['Software'];
 			$model->id_curriculum = $id_curriculum->id;  
+			$model->path = CUploadedFile::getInstanceByName('Software[path]');
 
 			if($model->save())
-     		{
-     			echo CJSON::encode(array('status'=>'success'));
-     			Yii::app()->end();
-     		}	
-     		else 
-     		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
-     		}
+			{
 
+	        	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+	           
+	            if(!is_dir($urlFile))          
+	              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+
+	            if(isset($path) && $urlFile != null)
+	            {    
+					$model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
+		        	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+		  		}     	
+
+		    	echo CJSON::encode(array('status'=>'success'));
+		    	Yii::app()->end();
+		    }	
+		    else 
+	    	{
+     			$error = CActiveForm::validate($model);
+                if($error!='[]')
+                   echo $error;
+                Yii::app()->end();
+	        }
 		}
 
 		if(!isset($_POST['ajax']))
@@ -110,6 +122,14 @@ class SoftwareController extends Controller
 		if(isset($_POST['Software']))
 		{
 			$model->attributes=$_POST['Software'];
+    		$model->path = CUploadedFile::getInstanceByName('Software[path]');
+
+    		if($model->url_doc != '')
+    		{                
+	            $model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
+	         	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+	        }
+
 			if($model->save())
      		{
      			echo CJSON::encode(array('status'=>'success'));
@@ -147,6 +167,7 @@ class SoftwareController extends Controller
 	/**
 	 * Lists all models.
 	 */
+
 	//SO04-Desplegar- registro
 	public function actionIndex()
 	{
@@ -159,6 +180,7 @@ class SoftwareController extends Controller
 	/**
 	 * Manages all models.
 	 */
+
 	//SO06-Listar registro
 	public function actionAdmin()
 	{

@@ -87,8 +87,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'valor_impacto'); ?>
-		<?php echo $form->textArea($model,'valor_impacto',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->label($model,'impact_value'); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">
