@@ -202,8 +202,8 @@
 </div><!--FORM Phone -->
 
 	
-		<?php 		
-		foreach ($getPhones as $key) {
+		<?php
+		foreach ($getPhones as $key => $value) {
 	
 		echo "<h5>Telefono:</h5>";
 		echo $form->dropDownList($model,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
@@ -233,7 +233,7 @@
 
 		 echo $form->error($model,'is_primary'); 
 		 echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deletePhone', 'id'=>$getPhones[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
-		 $countPhone++;
+		
 		}
 		 ?>
 	

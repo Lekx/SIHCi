@@ -1,18 +1,18 @@
 <?php
-/* @var $this PatentController */
+/* @var $this SoftwareController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Patents',
+	'Softwares',
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
-	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Create Software', 'url'=>array('create')),
+	array('label'=>'Manage Software', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Registro de propiedad intelectual: Patentes </h1>
+<h1>Softwares</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
