@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 						
-<!-- <h1>Ver Capitulos<?php/* echo $model->id; */?></h1> -->
+ <h1>Ver Capítulos</h1> 
 
 <?php 
 $Authors = BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id));

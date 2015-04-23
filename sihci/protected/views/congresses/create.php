@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Crear Congreso</h1>
+<h1>Participación en Congresos</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
