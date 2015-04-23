@@ -12,7 +12,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
     
@@ -386,21 +386,29 @@
 		                                                            'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),array('prompt'=>'Subdiscipliba'));?>
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
-
 	<div class="row buttons">
-		<input type="submit" onClick="validationFrom()" value="Guardar">
-        <input type='reset' onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
-        <?php echo CHtml::link('Cancelar', array('directedthesis/admin'))?>
-
-        <script>
-		   
-			function validationFrom()
-			 {
-			    alert("Registro realizado con éxito");
-			    return true;
-			 } 
-        </script>
-
+	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('directedThesis/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#directedThesis-form")[0].reset();
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+       	<?php echo CHtml::link('Cancelar',array('/directedThesis/admin')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

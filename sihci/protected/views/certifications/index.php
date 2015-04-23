@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Certificaciones</h1>
+<h1>Certificaciones por Concejos  Médicos</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

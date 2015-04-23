@@ -28,8 +28,7 @@ $('.search-form form').submit(function(){
 
 <h1>Administar Capítulos de Libros</h1>
 
-<?php echo CHtml::link('Búsqueda avanzada','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -38,15 +37,16 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-chapters-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		//'id',
 		//'id_curriculum',
-		'chapter_title',
-		'book_title',
+		array('name'=>'Capítulo de Libro','type'=>'html','id'=>'chapter_title','value'=>'CHtml::encode($data->chapter_title)'),
+		array('name'=>'Título de Libro','type'=>'html','id'=>'book_title','value'=>'CHtml::encode($data->book_title)'),
 		'publishing_year',
-		'publishers',
-		/*
+		array('name'=>'Editores','type'=>'html','id'=>'publishers','value'=>'CHtml::encode($data->publishers)'),
 		'editorial',
 		'volume',
 		'pages',
@@ -55,9 +55,9 @@ $('.search-form form').submit(function(){
 		'area',
 		'discipline',
 		'subdiscipline',
-		'creation_date',
-		'url_doc',
-		*/
+		//'creation_date',
+		//'url_doc',
+		
 		array(
 			'class'=>'CButtonColumn',
 		),

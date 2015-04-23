@@ -26,10 +26,9 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar Certificaciones</h1>
+<h1>Gestionar Certificaciones por Concejos  Médicos</h1>
 
-<?php echo CHtml::link('Búsqueda Avanzada',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -38,14 +37,17 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'certifications-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
+	'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
+	'dataProvider'=>$model->search(),
+	'columns'=>array(					
 		//'id',
 		//'id_curriculum',
-		'folio',
-		'reference',
-		'reference_type',
-		'specialty',
+		array('name'=>'Folio','type'=>'html','id'=>'folio','value'=>'CHtml::encode($data->folio)'),
+		array('name'=>'Referencia','type'=>'html','id'=>'reference','value'=>'CHtml::encode($data->reference)'),
+		array('name'=>'Tipo de Referencia','type'=>'html','id'=>'reference_type','value'=>'CHtml::encode($data->reference_type)'),
+		array('name'=>'Especialidad','type'=>'html','id'=>'specialty','value'=>'CHtml::encode($data->specialty)'),
 		/*
 		'validity_date_start',
 		'validity_date_end',

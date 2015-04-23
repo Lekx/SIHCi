@@ -12,12 +12,13 @@
 )); ?>
 
 
-	<fieldset>
-       <?php echo $form->textField($model,'title',array('placeholder'=>'Nombre de la tesis')); ?>
-       o
-       <?php echo $form->textField($model,'author',array('placeholder'=>'Nombre del autor')); ?>
-       <?php echo CHtml::submitButton('Buscar');?>   
-	</fieldset>
+	<div class="row">
+		
+		<legend>Búsqueda por:</legend>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo o Autor')); ?>	
+		<?php echo CHtml::submitButton('Buscar'); ?>
+
+	</div>
 
 <?php $this->endWidget(); ?>
 

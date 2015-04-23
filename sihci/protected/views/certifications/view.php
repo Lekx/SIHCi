@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Ver Certificaciones </h1>
+<h1>Ver Certificaciones por Concejos  Médicos </h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

@@ -101,23 +101,29 @@
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
-	<div class="row button">
-   
-        <input type="submit" onClick="validationFrom()" value="Guardar">
-        <input type="button" onClick="cleanUp()" value="Borrar">
-        <input type="button" value="Cancelar">
-	
-		 <script>
-		    function cleanUp()
-		     {
-		        var text;
-		        var result = confirm("¿Esta usted seguro de limpiar estos datos?");
-		        if (result == true) 
-		          $('[type^=text]').val('');
-		        else s
-		        document.getElementById("demo").innerHTML = txt;
-		            }
-        </script>
+	<div class="row buttons">
+	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#congresses-form")[0].reset();
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+       	<?php echo CHtml::link('Cancelar',array('/congresses/admin')); ?>
 	</div>	
 
 <?php $this->endWidget(); ?>

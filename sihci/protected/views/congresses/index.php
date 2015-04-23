@@ -13,7 +13,7 @@ $this->menu=array(
 ?>
 
 
-<h1>Congreso</h1>
+<h1>Participación en Congresos</h1>
 
 
 <?php $this->widget('zii.widgets.CListView', array(

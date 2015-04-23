@@ -26,10 +26,9 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar Congreso</h1>
+<h1>Administrar Participación en Congresos</h1>
 
-<?php echo CHtml::link('Búsqueda Avanzada','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -38,14 +37,21 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'congresses-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
+
+		array('name'=>'Título de trabajo','type'=>'html','id'=>'work_title','value'=>'CHtml::encode($data->work_title)'),
+		array('name'=>'Congreso','type'=>'html','id'=>'congress','value'=>'CHtml::encode($data->congress)'),
+		array('name'=>'Tipo','type'=>'html','id'=>'keywords','value'=>'CHtml::encode($data->keywords)'),
+		
 		//'id',
 		//'id_curriculum',
-		'work_title',
-		'year',
-		'congress',
-		'type',
+		//'work_title',
+		//'year',
+		//'congress',
+		//'type',
 		/*
 		'country',
 		'work_type',

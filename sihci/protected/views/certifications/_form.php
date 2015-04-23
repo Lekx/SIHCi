@@ -107,13 +107,30 @@
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
-	<div class="row buttons">    
-
-		<input type="submit" onClick="validationFrom()" value="Guardar">
-        <?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-        <?php echo CHtml::link('Cancelar', array('certifications/admin'));?>
-	
-	</div>
+	<div class="row buttons">
+	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('certifications/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#certifications-form")[0].reset();
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+       	<?php echo CHtml::link('Cancelar',array('/certifications/admin')); ?>
+	</div>	
 
 <?php $this->endWidget(); ?>
 
