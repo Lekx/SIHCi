@@ -23,6 +23,7 @@
         <?php
             $baseUrl = Yii::app()->baseUrl;
             $cs = Yii::app()->getClientScript();
+            $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
             $cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
             $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
         ?>
@@ -43,8 +44,8 @@
                             $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
-                                    
                                 });
+
                             });
         </script>
     </head>
@@ -110,8 +111,38 @@
                 </div>
             </div>
         </div>
-        <div class="successdiv"></div>
-        <div class="errordiv"></div>
+        <div class="successdiv">
+            
+        </div>
+        <div class="errordiv">
+            <div class="backcontainer">
+                <div class="maincontainer">
+                    <div class="errorh2">
+                        <h2>¡Ocurio un Error!</h2>
+                        <hr>
+                        <div class="remainder">
+                            <span>Mensaje de lo que sucedió, favor de intentar de nuevo.</span>
+                        </div>
+                        <button class="errorbut"><h3>Volver a intentar</h3></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cleandiv">
+            <div class="backcontainer">
+                <div class="maincontainer">
+                    <div class="errorh2">
+                        <h2>¡Borrar Formulario!</h2>
+                        <hr>
+                        <div class="remainder">
+                            <span>¿Esta usted seguro de borrar los datos del formulario?</span>
+                        </div>
+                        <button class="cleanbut"><h3>Si.. Borrar ahora </h3></button>
+                        <button class="backbut"><h3>No.. Dejarlo como esta </h3></button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="footer">
             <div class="footermenu1">
                 <h4>¿Podemos Ayudarte?</h4>

@@ -15,7 +15,9 @@
 			document.getElementById("demo").innerHTML = text;
 		}
 		function validationFrom(){
-			alert("Registro Realizado con éxito");
+
+		 	$('.successdiv').show();
+		 	setTimeout(validationFrom, 3000);
 			return false;
 		}
 </script>
