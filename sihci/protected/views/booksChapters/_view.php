@@ -5,14 +5,6 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id_curriculum')); ?>:</b>
-	<?php echo CHtml::encode($data->id_curriculum); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('chapter_title')); ?>:</b>
 	<?php echo CHtml::encode($data->chapter_title); ?>
 	<br />
@@ -33,7 +25,7 @@
 	<?php echo CHtml::encode($data->editorial); ?>
 	<br />
 
-	<?php /*
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('volume')); ?>:</b>
 	<?php echo CHtml::encode($data->volume); ?>
 	<br />
@@ -62,14 +54,5 @@
 	<?php echo CHtml::encode($data->subdiscipline); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('creation_date')); ?>:</b>
-	<?php echo CHtml::encode($data->creation_date); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('url_doc')); ?>:</b>
-    <?php echo CHtml::encode($data->url_doc); ?>
-    <br />
-
-	*/ ?>
 
 </div>

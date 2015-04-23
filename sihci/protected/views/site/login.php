@@ -1,5 +1,4 @@
 <div class="loginback">
-<<<<<<< HEAD
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 			'id'=>'login-form',
@@ -56,7 +55,7 @@
 		                        			 $(".infodialog").css("visibility", "hidden");
 		                        			 $(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
 		                        			 $(".infodialog").css("visibility", "hidden");
-											 window.open("'.Yii::app()->createUrl('/informacionDeDireccionGeneral/index').'","_blank ");
+											 window.open("'.Yii::app()->createUrl('/account/infoAccount').'","_blank ");
 		                        		
 		                        		}
 		                        		else

@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Copyrights', 'url'=>array('index')),
-	array('label'=>'Manage Copyrights', 'url'=>array('admin')),
+	array('label'=>'Desplegar', 'url'=>array('index')),
+	array('label'=>'Gestinar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Copyrights</h1>
+<h1>Crear registro de propiedad intelectual-Derechos de autor</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

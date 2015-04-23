@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Copyrights', 'url'=>array('index')),
-	array('label'=>'Create Copyrights', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,15 +26,9 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Copyrights</h1>
+<h1>Gestionar Registro de propiedad intelectual-Derecho de Autor:</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -42,21 +36,32 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'copyrights-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
+    'dataProvider'=>$model->search(),
+    'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
+	'columns'=>array(		
+		
+		array('type'=>'html','id'=>'id','value'=>'CHtml::encode($data->id)'),
+		array('type'=>'html','id'=>'participation_type','value'=>'CHtml::encode($data->participation_type)'),
+		array('type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('type'=>'html','id'=>'step_number','value'=>'CHtml::encode($data->step_number)'),
+		array('type'=>'html','id'=>'beneficiary','value'=>'CHtml::encode($data->beneficiary)'),
+		/*
 		'id',
-		'id_curriculum',
 		'participation_type',
 		'title',
-		'application_date',
 		'step_number',
-		/*
-		'resume',
-		'beneficiary',
 		'entity',
+		'beneficiary',
+		'application_date',
+		'id_curriculum',
+		'resume',
 		'impact_value',
 		'creation_date',
+	
+
+
 		*/
 		array(
 			'class'=>'CButtonColumn',

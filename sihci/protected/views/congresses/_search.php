@@ -12,16 +12,6 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'id_curriculum'); ?>
-		<?php echo $form->textField($model,'id_curriculum'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'work_title'); ?>
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200)); ?>
 	</div>

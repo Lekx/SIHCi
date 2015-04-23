@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Crear Certificaciones</h1>
+<h1>Certificaciones por Concejos  Médicos</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

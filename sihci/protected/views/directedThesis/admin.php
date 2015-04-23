@@ -41,7 +41,7 @@ $('.search-form form').submit(function(){
 	//'filter'=>$model,
 	//'summaryText'=>"Mostrando {end} de {count}",
 	'columns'=>array(
-		'id',
+		//'id',
 		//'id_curriculum',
 		'title',
 		'conclusion_date',

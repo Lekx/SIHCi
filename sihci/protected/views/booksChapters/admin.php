@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administar Capitulos de Libros</h1>
+<h1>Administar Capítulos de Libros</h1>
 
 <?php echo CHtml::link('Búsqueda avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
@@ -40,8 +40,8 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'id_curriculum',
+		//'id',
+		//'id_curriculum',
 		'chapter_title',
 		'book_title',
 		'publishing_year',

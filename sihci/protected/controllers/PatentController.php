@@ -6,7 +6,7 @@ class PatentController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/system';
+	public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -66,13 +66,15 @@ class PatentController extends Controller
 		$model=new Patent;
 
 		// Uncomment the following line if AJAX validation is needed
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
+		$model->id_curriculum = $id_curriculum;
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Patent']))
 		{
 			$model->attributes=$_POST['Patent'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
-		
+			$model->id_curriculum =$id_curriculum;
+
 		    if($model->save())
 					$this->redirect(array('view','id'=>$model->id));
 			

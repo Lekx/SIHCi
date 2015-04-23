@@ -83,28 +83,28 @@ class DirectedThesisController extends Controller
                     if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/')){
 
                             mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/', 0777, true);
-                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();   
+                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
+                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();   
                             
                             if($model->save())
-                                $this->redirect(array('view','id'=>$model->id));
+                                $this->redirect(array('admin','id'=>$model->id));
                 } else {
 
-                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
+                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
+                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName(); 
                     
                             if($model->save()){  
-                                $this->redirect(array('view','id'=>$model->id));
+                                $this->redirect(array('admin','id'=>$model->id));
                             }
                    
                         }
 
                 } else {
                    
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
+                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
                     
                             if($model->save()){
-                                 $this->redirect(array('view','id'=>$model->id));
+                                 $this->redirect(array('admin','id'=>$model->id));
                             }
                         }
 
@@ -137,19 +137,19 @@ class DirectedThesisController extends Controller
 
             if($model->path != ''){
                 
-                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-               $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
+                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
+               $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName(); 
                 
                 
                 
                 if($model->save()){
-                    $this->redirect(array('view','id'=>$model->id));
+                    $this->redirect(array('admin','id'=>$model->id));
                 }
             }else{
 
-                  $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
+                  $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
                 if($model->save()){
-                $this->redirect(array('view','id'=>$model->id));
+                $this->redirect(array('admin','id'=>$model->id));
              }
            }
               

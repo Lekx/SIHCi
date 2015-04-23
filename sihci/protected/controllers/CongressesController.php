@@ -72,7 +72,7 @@ class CongressesController extends Controller
 			$model->attributes=$_POST['Congresses'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin','id'=>$model->id));
 	}
 		$this->render('create',array(
 			'model'=>$model,
@@ -96,7 +96,7 @@ class CongressesController extends Controller
 		{
 			$model->attributes=$_POST['Congresses'];	
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin','id'=>$model->id));
 		}
 
 		$this->render('update',array(

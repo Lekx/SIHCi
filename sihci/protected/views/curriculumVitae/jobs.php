@@ -12,6 +12,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Datos laborales</h1>
+<h4>Datos laborales:</h4>
 
 <?php $this->renderPartial('_form_jobs', array('model'=>$model)); ?>

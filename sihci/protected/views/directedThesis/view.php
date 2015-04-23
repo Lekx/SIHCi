@@ -16,21 +16,21 @@ $this->menu=array(
 );
 ?>
 
-<h1>Ver Tesis #<?php echo $model->id; ?></h1>
+<h1>Ver Tesis </h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
      'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'attributes'=>array(
-		'id',
-		'id_curriculum',
+		//'id',
+		//'id_curriculum',
 		'title',
 		'conclusion_date',
 		'author',
 		array(               
                   'label'=>'Archivo',
                   'type'=>'raw',
-                  'value'=>CHtml::link('Ver archivo',Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title, array("target"=>"_blank")),
+                  'value'=>CHtml::link('Ver archivo',Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio', array("target"=>"_blank")),
                 ),
 		//'path',
 		'grade',

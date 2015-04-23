@@ -13,6 +13,7 @@
  * @property string $validity_date_start
  * @property string $validity_date_end
  * @property string $type
+ * @property string $creation_date
  *
  * The followings are the available model relations:
  * @property Curriculum $idCurriculum
@@ -40,12 +41,12 @@ class Certifications extends CActiveRecord
 			array('folio, reference', 'length', 'max'=>30),
 			array('reference_type', 'length', 'max'=>15),
 			array('specialty, type', 'length', 'max'=>45),
-			array('validity_date_start', 'safe'),
+			array('validity_date_end, creation_date', 'safe'),
 			array('validity_date_end', 'safe'),
 			array('validity_date_end','compare','compareAttribute'=>'validity_date_start','operator'=>'>='),	
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, folio, reference, reference_type, specialty, validity_date_start, validity_date_end, type','safe', 'on'=>'search'),
+			array('id, id_curriculum, folio, reference, reference_type, specialty, validity_date_start, validity_date_end, type, creation_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,6 +77,7 @@ class Certifications extends CActiveRecord
 			'validity_date_start' => 'Fecha de Inicio',
 			'validity_date_end' => 'Fecha final',
 			'type' => 'Tipo',
+			'creation_date' => 'Creation Date',
 		);
 	}
 
@@ -106,6 +108,7 @@ class Certifications extends CActiveRecord
 		$criteria->compare('validity_date_start',$this->validity_date_start,true);
 		$criteria->compare('validity_date_end',$this->validity_date_end,true);
 		$criteria->compare('type',$this->type,true);
+		$criteria->compare('creation_date',$this->creation_date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

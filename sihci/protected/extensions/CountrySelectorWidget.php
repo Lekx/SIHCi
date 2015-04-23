@@ -48,12 +48,12 @@ class CountrySelectorWidget extends CWidget
             $this->value = $this->defaultValue;
         }
 
-        $this->firstText = Yii::t('application', '(please select a country)');
+        $this->firstText = Yii::t('application', 'Pais');
     }
 
     public function run()
     {
-        $content = "<select name=\"{$this->name}\" id=\"{$this->id}\">";
+        $content = "<select title='Pais' name=\"{$this->name}\" id=\"{$this->id}\">";
 
         if ($this->firstEmpty) {
             $content .= "<option value=\"\">{$this->firstText}</option>";

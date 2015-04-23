@@ -43,9 +43,10 @@ class BooksChapters extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_curriculum, chapter_title, book_title,publishing_year', 'required'),
-			array('id_curriculum, pages, citations, total_of_authors', 'numerical', 'integerOnly'=>true),
+			array('id_curriculum, pages, citations, total_of_authors', 'numerical','integerOnly'=>true),
 			array('chapter_title, url_doc', 'length', 'max'=>100),
-			array('book_title, editorial, volume, area, discipline, subdiscipline', 'length', 'max'=>45),
+			array('discipline, subdiscipline','length', 'max'=>200),
+			array('book_title, editorial, volume, area' , 'length', 'max'=>45),
 			array('publishers', 'length', 'max'=>255),
 			array('publishing_year, creation_date', 'safe'),
 			array('url_doc','file','allowEmpty'=>true,
