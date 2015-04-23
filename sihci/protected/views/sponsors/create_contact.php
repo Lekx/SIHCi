@@ -15,4 +15,4 @@ $this->menu = array(
 
 <h1>Datos de Contacto</h1>
 
-<?php $this->renderPartial('_form_contact', array('model' => $model));?>
+<?php $this->renderPartial('_form_contact', array('model' => $model,'modelPull' => $modelPull));?>
