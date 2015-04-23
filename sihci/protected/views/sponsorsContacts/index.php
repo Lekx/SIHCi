@@ -1,20 +1,13 @@
 <?php
 /* @var $this SponsorsContactsController */
-/* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
 	'Sponsors Contacts',
 );
-
-$this->menu=array(
-	array('label'=>'Create SponsorsContacts', 'url'=>array('create')),
-	array('label'=>'Manage SponsorsContacts', 'url'=>array('admin')),
-);
 ?>
+<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 
-<h1>Sponsors Contacts</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<p>
+	You may change the content of this page by modifying
+	the file <tt><?php echo __FILE__; ?></tt>.
+</p>
