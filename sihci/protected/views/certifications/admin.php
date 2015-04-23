@@ -28,12 +28,7 @@ $('.search-form form').submit(function(){
 
 <h1>Gestionar Certificaciones</h1>
 
-<p>
-También puede escribir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) al inicio de cada uno de los valores de búsqueda para especificar cómo se debe hacer la comparación.
-</p>
-
-<?php echo CHtml::link('Búsqueda Avanzada','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Búsqueda Avanzada',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -45,8 +40,8 @@ or <b>=</b>) al inicio de cada uno de los valores de búsqueda para especificar 
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'id_curriculum',
+		//'id',
+		//'id_curriculum',
 		'folio',
 		'reference',
 		'reference_type',

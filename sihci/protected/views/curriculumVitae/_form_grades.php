@@ -3,7 +3,75 @@
 /* @var $model Grades */
 /* @var $form CActiveForm */
 ?>
+	<style type="text/css">  
+        .errors{
+            -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background: red;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            display: none;
+            font-size: 10px;
+            margin-top: -50px;
+            margin-left: 315px;
+            padding: 10px;
+            position: absolute;
+        }
+         .grades{
+            display: none;
+        }
+    </style>
 	<script>
+	 $(document).ready(function(){
+            $("#btnCreate").click(function(){
+                
+             	var grade = $("#grade").val(); 
+             	var title = $("#title").val(); 
+             	var obtentionDate = $("#obtentionDate").val(); 
+             	var thesisTitle = $("#thesisTitle").val();
+             	var institution = $("#institution").val(); 
+
+                if(grade == ""){
+                    $("#errorGrade").fadeIn("slow");
+                    return false;
+                }else{
+                    $("#errorGrade").fadeOut();
+                    if (title == "") {
+                    	$("#errorTitle").fadeIn("slow");
+                    	return false;
+                    }else{
+                    	$("#errorTitle").fadeOut();
+                    	if (obtentionDate == "") {
+                    		$("#errorObtentionDate").fadeIn("slow");
+                    		return false;
+                    	}else{
+                    		$("#errorObtentionDate").fadeOut();
+                    		if (thesisTitle == "") {
+                    			$("#errorThesisTitle").fadeIn("slow");
+                    			return false;
+                    		}else{
+                    			$("#errorThesisTitle").fadeOut();
+                    			if (institution == "") {
+                    				$("#errorInstitution").fadeIn("slow");
+                    				return false;
+                    			}else{
+                    				$("#errorInstitution").fadeOut();
+                    			}
+                    		}
+                    	}
+                    }
+                 }
+ 
+            });//click
+            $("#showForm").on( "click", function() {
+				$('.grades').show(); 
+				$('#hideForm').show();
+			 });
+			$("#hideForm").on( "click", function() {
+				$('.grades').hide(); 
+			});
+        });//ready
 		function cleanUp(){
 			var text;
 			var result = confirm("¿Está usted seguro de limpiar estos datos?");
@@ -30,13 +98,110 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
+<input type="button" id="showForm" value="Agregar Formación Académica">
+<input class="grades" type="button" id="hideForm" value="Cancelar">
 
+	<div class="grades">
+		<input id="country" type="text" name="country" placeholder="País">
+		<div id="errorCountry" class="errors"> Debe seleccionar País </div>
+		<br>
+
+		<select id="grade" name="grade">
+  			<option value="" selected="">Grado</option> 
+  			<option value="Trabajo">Trabajo</option>
+  			<option value="Residencial">Residencial</option>
+  			<option value="Particular">Particular</option>
+  			<option value="Campus">Campus</option>
+  			<option value="otro">otro</option>
+		</select>
+		<div id="errorGrade" class="errors"> Debe seleccionar su Grado</div>
+		<br>
+		
+		
+		<input id="writNumber" type="text" name="writNumber" placeholder="Número de Cédula">
+		<div id="errorWriteNumber" class="errors"> Debe seleccionar Numero de Cédula </div>
+		<br>
+
+		<input id="title" type="text" name="title" placeholder="Tútulo">
+		<div id="errorTitle" class="errors"> Debe seleccionar Título </div>
+		<br>
+
+		<?php 
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'language'=> 'es',
+			    'id'=> 'obtentionDate',
+			    'name'=>'obtentionDate',
+			     'options' => array(
+				     		'changeMonth'=>true, //cambiar por Mes
+				     		'changeYear'=>true, //cambiar por Año
+				    			'maxDate' => 'now',
+			     	),
+			    'htmlOptions' => array(
+			    			'size'=>'10',
+			    			'maxlength'=>'10', 
+			        		'placeholder'=>"Fecha de Obtención"),
+					));
+		?>
+		<div id="errorObtentionDate" class="errors"> Debe seleccionar una Fecha </div>
+		<br>
+
+		<select id="status" name="status">
+  			<option value="" selected="">Estatus</option> 
+  			<option value="Creditos Terminados">Creditos Terminados</option>
+  			<option value="Grado Obtenido">Grado Obtenido</option>
+  			<option value="Proceso">Proceso</option>
+  			<option value="Truncado">Truncado</option>
+		</select>
+		<div id="errorStatus" class="errors"> Debe seleccionar su Estatus </div>
+		<br>
+
+		<input id="thesisTitle" type="text" name="thesisTitle" placeholder="Título de Tesis">
+		<div id="errorThesisTitle" class="errors"> Debe seleccionar el Título de Tesis </div>
+		<br>
+
+		<select id="state" name="state">
+  			<option value="" selected="">Estado</option> 
+  			<option value="En proceso">En proceso</option>
+  			<option value="Terminado">Terminado</option>
+		</select>
+		<div id="errorState" class="errors"> Debe seleccionar su Estado </div>
+		<br>
+
+		<select id="sector" name="sector">
+  			<option value="" selected="">Sector</option> 
+  			<option value="No especificado">No especificado</option> 
+		</select>
+		<div id="errorSector" class="errors"> Debe seleccionar su Sector </div>
+		<br>
+
+		<input id="institution" type="text" name="institution" placeholder="Institución">
+		<div id="errorInstitution" class="errors"> Debe seleccionar Institución </div>
+		<br>	
+
+		<input id="area" type="text" name="area" placeholder="Área">
+		<div id="errorArea" class="errors"> Debe seleccionar Área </div>
+		<br>
+
+		<input id="discipline" type="text" name="discipline" placeholder="Disciplina">
+		<div id="errorDiscipline" class="errors"> Debe seleccionar Disciplina </div>
+		<br>
+
+		<input id="subdiscipline" type="text" name="subdiscipline" placeholder="Subdisciplina">
+		<div id="errorSubdiscipline" class="errors"> Debe seleccionar Subdisciplina </div>
+		<br>
+		
+		<input type="submit" id="btnCreate" value="Crear Formación Académica">
+		<br>
+
+	</div>
+		<br>
 
 	<?php 
-
+	$count = 1;
 	echo $form->errorSummary($model); 
+	//print_r($getGrades);
 	foreach ($getGrades as $key => $value) {
-		
+		echo $count;
 		echo	'<div class="row">';
 			echo $form->labelEx($model,'country'); 
 			echo $form->textField($model,'country',array('name'=>'getCountry[]','value'=>$getGrades[$key]->country,'size'=>50,'maxlength'=>50, 'placeholder'=>'País')); 
@@ -48,7 +213,7 @@
 			echo $form->dropDownList($model,'grade',array('Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
 																'Particular'=>'Particular',
 				                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-			                                                       array('name'=>'getGrade[]','prompt'=>'Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))), 
+			                                                       array('required'=>'true','name'=>'getGrade[]','prompt'=>'Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))), 
 			                                                       array('size'=>10,'maxlength'=>10)); 
 			echo $form->error($model,'grade');
 		echo '</div>';
@@ -61,7 +226,7 @@
 
 		echo	'<div class="row">';
 			 echo $form->labelEx($model,'title'); 
-			 echo $form->textField($model,'title',array('name'=>'getTitle[]','value'=>$getGrades[$key]->title,'size'=>45,'maxlength'=>45,'placeholder'=>'Título')); 
+			 echo $form->textField($model,'title',array('required'=>'true','name'=>'getTitle[]','value'=>$getGrades[$key]->title,'size'=>45,'maxlength'=>45,'placeholder'=>'Título')); 
 			 echo $form->error($model,'title'); 
 		echo '</div>';
 
@@ -71,9 +236,10 @@
 			
 			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'language'=> 'es',
-			    'attribute' => 'obtention_date',
-			    'model' => $model,
-			    'value'=>$getGrades[$key]->obtention_date,
+			    'name'=> 'getObtentionDate[]',
+			    'value'=> $getGrades[$key]->obtention_date,
+			    //'attribute' => 'obtention_date',
+			   // 'model' => $model,
 			   // 'flat'=>false,
 			     'options' => array(
 				     		'changeMonth'=>true, //cambiar por Mes
@@ -100,7 +266,7 @@
 
 		echo	'<div class="row">';
 			 echo $form->labelEx($model,'thesis_title'); 
-			 echo $form->textField($model,'thesis_title',array('name'=>'getThesisTitle[]','value'=>$getGrades[$key]->thesis_title,'size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); 
+			 echo $form->textField($model,'thesis_title',array('required'=>'true','name'=>'getThesisTitle[]','value'=>$getGrades[$key]->thesis_title,'size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); 
 			echo $form->error($model,'thesis_title'); 
 		echo '</div>';
 
@@ -127,7 +293,7 @@
 
 		echo	'<div class="row">';
 			 echo $form->labelEx($model,'institution'); 
-			 echo $form->textField($model,'institution',array('name'=>'getInstitution[]','value'=>$getGrades[$key]->institution,'size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); 
+			 echo $form->textField($model,'institution',array('required'=>'true','name'=>'getInstitution[]','value'=>$getGrades[$key]->institution,'size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); 
 			 echo $form->error($model,'institution'); 
 		echo '</div>';
 
@@ -148,130 +314,18 @@
 			 echo $form->textField($model,'subdiscipline',array('name'=>'getSubdiscipline[]','value'=>$getGrades[$key]->subdiscipline,'size'=>45,'maxlength'=>45,'placeholder'=>'Subdisciplina')); 
 			 echo $form->error($model,'subdiscipline'); 
 		echo '</div>';
+		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteGrade', 'id'=>$getGrades[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
+		echo "<br>";
+		echo "------------------------------------------------------------";
+		echo "<br>";
+		$count ++;
 	}
 	echo	'<div class="row buttons">';
-		echo '<input type="submit" onclick="validationFrom()" value="Guardar">';
-		echo '<input type="button" onclick="cleanUp()" value="Limpiar">';
-		echo CHtml::link('Cancelar',array('/site/index')); 
+		echo '<input class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">';
+		echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';
+		echo CHtml::button('Cancelar',array('/site/index')); 
 	echo '</div>';
 ?>
-
-	<div class="row">
-		<?php echo $form->textField($model,'country',array('title'=>'País','size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
-															'Particular'=>'Particular',
-			                                                          'Campus'=>'Campus', 'otro'=>'Otro'), 
-		                                                       array('title'=>'Grado','options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		
-		<?php echo $form->error($model,'grade'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
-															'Particular'=>'Particular',
-			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('title'=>'Numero de Cedula','options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		
-		<?php echo $form->error($model,'writ_number'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'title',array('title'=>'Titulo','size'=>45,'maxlength'=>45,'placeholder'=>'Título')); ?>
-		<?php echo $form->error($model,'title'); ?>
-	</div>
-
-	<div class="row">
-
-		<?php
-		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'language'=> 'es',
-		    'attribute' => 'obtention_date',
-		    'model' => $model,
-		   // 'flat'=>false,
-		     'options' => array(
-			     		'changeMonth'=>true, //cambiar por Mes
-			     		'changeYear'=>true, //cambiar por Año
-			    			'maxDate' => 'now',
-		     	),
-		    'htmlOptions' => array(
-		    			'size'=>'10',
-		    			'title'=>'Fecha de Obtención',
-		    			'maxlength'=>'10', 
-		        		'placeholder'=>"Fecha de Obtención"),
-				));
-	?>
-	
-		<?php echo $form->error($model,'obtention_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->dropDownList($model,'status',array(''=>'','Creditos_Terminados'=>'Creditos Terminados',
-															'Grado_Obtenido'=>'Grado Obtenido', 
-															'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
-		                                                       array('title'=>'Estado','options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
-	
-		<?php echo $form->error($model,'status'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'thesis_title',array('title'=>'Titulo Tésis','size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); ?>
-		<?php echo $form->error($model,'thesis_title'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->dropDownList($model,'state',array(''=>'','en_Proceso'=>'En Proceso',
-															'Terminado'=>'Terminado'), 
-		                                                       array('title'=>'Estado','options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		
-		<?php echo $form->error($model,'state'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->dropDownList($model,'sector',array(''=>'','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5',
-																'6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11',
-																'12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16',
-																'17'=>'17','18'=>'18','19'=>'19','20'=>'20','21'=>'21',
-																'22'=>'22','23'=>'23','24'=>'24','25'=>'25','26'=>'26',
-																'27'=>'27','28'=>'28','29'=>'29','30'=>'30','31'=>'31'), 
-		                                                       array('title'=>'Día de Inicio','options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10),
-		                                                         array('placeholder'=>'Día de Inicio')); ?>
-	
-		<?php echo $form->error($model,'sector'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'institution',array('title'=>'Institución','size'=>60,'maxlength'=>150,'placeholder'=>'Institución')); ?>
-		<?php echo $form->error($model,'institution'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'area',array('title'=>'Área','size'=>45,'maxlength'=>45,'placeholder'=>'Área')); ?>
-		<?php echo $form->error($model,'area'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'discipline',array('title'=>'Disciplina','size'=>45,'maxlength'=>45,'placeholder'=>'Disciplina')); ?>
-		<?php echo $form->error($model,'discipline'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'subdiscipline',array('title'=>'Subdisciplina','size'=>45,'maxlength'=>45,'placeholder'=>'Subdisciplina')); ?>
-		<?php echo $form->error($model,'subdiscipline'); ?>
-	</div>
-
-	<div class="row buttons">
-		<input class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
-	</div>
 
 <?php $this->endWidget(); ?>
 

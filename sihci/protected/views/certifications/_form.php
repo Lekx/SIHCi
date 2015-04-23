@@ -101,8 +101,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Tipo'); ?>
-		<?php echo $form->dropDownList($model,'type',array(''=>'','certificación'=>'certificación','recertificación'=>'recertificación')); ?>
+		<?php 
+		$status = array('certificación' => 'certificación','Recertificación'=>'Recertificación'); 
+                echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
@@ -110,17 +111,8 @@
 
 		<input type="submit" onClick="validationFrom()" value="Guardar">
         <?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-        <!--<input type="button" value="Cancelar">-->
         <?php echo CHtml::link('Cancelar', array('certifications/admin'));?>
 	
-		<script>
-		   
-			function validationFrom()
-			 {
-			    alert("Registro realizado con éxito");
-			    return true;
-			 } 
-        </script>
 	</div>
 
 <?php $this->endWidget(); ?>

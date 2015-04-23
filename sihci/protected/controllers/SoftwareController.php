@@ -1,6 +1,6 @@
 <?php
 
-class CertificationsController extends Controller
+class SoftwareController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,16 +28,16 @@ class CertificationsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','admin','delete'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -60,29 +60,49 @@ class CertificationsController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	//<!--CM01-Registrar datos-->
+	//SO01-Registro de datos
 	public function actionCreate()
 	{
-
-		$model=new Certifications;
+		$model=new Software;
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		$model->id_curriculum = $id_curriculum->id; 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Certifications']))
+		if(isset($_POST['Software']))
 		{
-			$model->attributes=$_POST['Certifications'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			$model->attributes=$_POST['Software'];
+			$model->id_curriculum = $id_curriculum->id;  
+			$model->path = CUploadedFile::getInstanceByName('Software[path]');
 
 			if($model->save())
-                
-                	$this->redirect(array('admin','id'=>$model->id)); 
-			}
-				
+			{
 
-        $this->render('create',array(
-			'model'=>$model,
-		));
-		
+	        	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+	           
+	            if(!is_dir($urlFile))          
+	              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+
+	            if(isset($path) && $urlFile != null)
+	            {    
+					$model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
+		        	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+		  		}     	
+
+		    	echo CJSON::encode(array('status'=>'success'));
+		    	Yii::app()->end();
+		    }	
+		    else 
+	    	{
+     			$error = CActiveForm::validate($model);
+                if($error!='[]')
+                   echo $error;
+                Yii::app()->end();
+	        }
+		}
+
+		if(!isset($_POST['ajax']))
+			$this->render('create',array('model'=>$model));
 	}
 
 	/**
@@ -90,24 +110,42 @@ class CertificationsController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	//<!--CM02-Modificar datos-->
+
+	//SO02-Modificar-registro
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Certifications']))
+		if(isset($_POST['Software']))
 		{
-			$model->attributes=$_POST['Certifications'];
+			$model->attributes=$_POST['Software'];
+    		$model->path = CUploadedFile::getInstanceByName('Software[path]');
+
+    		if($model->url_doc != '')
+    		{                
+	            $model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
+	         	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+	        }
+
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+     		{
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**
@@ -115,7 +153,8 @@ class CertificationsController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	//<!--CM03-Registrar datos-->
+
+	//SO03-Desactivar-registro
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -128,9 +167,11 @@ class CertificationsController extends Controller
 	/**
 	 * Lists all models.
 	 */
+
+	//SO04-Desplegar- registro
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Certifications');
+		$dataProvider=new CActiveDataProvider('Software');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -139,12 +180,14 @@ class CertificationsController extends Controller
 	/**
 	 * Manages all models.
 	 */
+
+	//SO06-Listar registro
 	public function actionAdmin()
 	{
-		$model=new Certifications('search');
+		$model=new Software('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Certifications']))
-			$model->attributes=$_GET['Certifications'];
+		if(isset($_GET['Software']))
+			$model->attributes=$_GET['Software'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -155,12 +198,12 @@ class CertificationsController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Certifications the loaded model
+	 * @return Software the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Certifications::model()->findByPk($id);
+		$model=Software::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -168,27 +211,14 @@ class CertificationsController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Certifications $model the model to be validated
+	 * @param Software $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='certifications-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='software-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-
-
-	public function success($view, $data=array())
-    {
-
-    if($view[0]!=='/')  // relative to current controller
-        $view = '/' . $this->id . '/' . $view;
-    $data['_view_'] = $view;
-    Yii::app()->user->setFlash('_success_', $data);
-    $this->redirect(array('site/success'));
-
-    }
-
 }

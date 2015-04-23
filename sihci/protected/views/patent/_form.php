@@ -49,6 +49,7 @@
 				  		'Inventor'=>'Inventor',
 				  		'Coinventor'=>'Coinventor'
 				  	)
+			  array('prompt'=>'Tipo de participación')
 			  );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -194,7 +195,8 @@
 			}	
 			
 		</script> 
-		
+       	<?php echo CHtml::link('Cancelar',array('/copyrights/admin')); ?>
+
  	</div>
 
 <?php $this->endWidget(); ?>
