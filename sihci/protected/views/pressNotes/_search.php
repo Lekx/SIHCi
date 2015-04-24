@@ -1,5 +1,5 @@
 <?php
-//RD06-Barra de Busqueda 
+//DP06-Barra de Busqueda 
 
 /* @var $this PressNotesController */
 /* @var $model PressNotes */
@@ -14,8 +14,8 @@
 )); ?>
 	<fieldset>
 		
-		<legend> Publicacion a buscar  </legend>
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion')); ?>
+		<legend> Búsqueda por</legend>
+		<?php echo $form->textField($model,'searchValue',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion')); ?>
 		<?php echo CHtml::submitButton('Buscar'); ?>
 
 	</fieldset>

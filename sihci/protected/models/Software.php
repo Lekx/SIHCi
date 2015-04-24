@@ -62,6 +62,7 @@ class Software extends CActiveRecord
 				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
 			       'maxSize'=>array(1024 * 5000),
 			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
+		  
 		    array('end_date','compare','compareValue'=> date('d/m/Y'),'operator'=>'>='),	
 			array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
 			array('searchValue','length', 'max'=>70),

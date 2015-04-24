@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Crear', 'url'=>array('create')),
-	array('label'=>'Listar', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Aplicación de conocimiento</h1>
+<h1>Gestionar Aplicación del Conocimiento:</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -13,6 +13,8 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array('validateOnSubmit'=>true)
 )); ?>
 
 	<p class="note">Los campos <span class="required">*</span> son requeridos.</p>
@@ -44,13 +46,12 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'participation_type'); ?>
 		<?php echo $form->dropDownList($model,'participation_type',
-			  array(
-				  		''=>'',
-				  		'Inventor'=>'Inventor',
-				  		'Coinventor'=>'Coinventor'
-				  	)
-			  array('prompt'=>'Tipo de participación')
-			  );
+			  	  array(
+					  		'Inventor'=>'Inventor',
+					  		'Coinventor'=>'Coinventor'	  	
+				  ),				  
+				  array('prompt'=>'Tipo de participación')			  
+			 );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
@@ -65,12 +66,12 @@
 		<?php echo $form->labelEx($model,'state'); ?>
 		<?php echo $form->dropDownList($model,'state',
 				array(
-						''=>'',
 						'En explotación comercial'=>'En explotación comercial',
 						'En trámite'=>'En trámite',
 						'Registrada'=>'Registrada'
-					 )
-				 ); 
+					 ),
+				array('prompt'=>'Estado de la patente')
+			); 
 		?>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
@@ -94,11 +95,11 @@
 		<?php echo $form->labelEx($model,'patent_type'); ?>
 		<?php echo $form->dropDownList($model,'patent_type',
 			   array(
-						''=>'',
 						'Diseño industrial'=>'Diseño industrial',
 						'Modelo de utilidad'=>'Modelo de utilidad',
 						'Patente'=>'Patente'
-					)
+					),
+			   	array('prompt'=>'Tipo de patente')
 				); 
 		?>
 		<?php echo $form->error($model,'patent_type'); ?>
@@ -182,22 +183,29 @@
 		<?php echo $form->error($model,'resource_operator'); ?>
 	</div>
 
-	<div class="row buttons">
- 	   <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-       <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
-
-		<script>
-
-			function validationFrom()
-			{
-				alert("Registro realizado con éxito");
-				return false;
-			}	
-			
-		</script> 
-       	<?php echo CHtml::link('Cancelar',array('/copyrights/admin')); ?>
-
- 	</div>
+	<?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#patent-form")[0].reset();
+   									 window.location.href ="'.Yii::app()->createUrl('patent/admin').'";
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+       	<?php echo CHtml::link('Cancelar',array('/patent/admin')); ?>
 
 <?php $this->endWidget(); ?>
 

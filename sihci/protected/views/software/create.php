@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Software', 'url'=>array('index')),
-	array('label'=>'Manage Software', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Software</h1>
+<h1>Crear Registro de propiedad intelectual: Software</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

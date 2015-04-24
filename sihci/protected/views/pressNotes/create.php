@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar PressNotes', 'url'=>array('index')),
-	array('label'=>'Manage PressNotes', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create PressNotes</h1>
+<h1>Crear Difusíon de Prensa</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

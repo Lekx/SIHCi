@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PostdegreeGraduates', 'url'=>array('index')),
-	array('label'=>'Create PostdegreeGraduates', 'url'=>array('create')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,15 +26,10 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Postdegree Graduates</h1>
+<h1>Gestionar Graduados de posgrado:</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -43,11 +38,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'postdegree-graduates-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	
 	'columns'=>array(
-		'id',
-		'id_curriculum',
 		'fullname',
+		/*'id',
+		'id_curriculum',*/
 		array(
 			'class'=>'CButtonColumn',
 		),

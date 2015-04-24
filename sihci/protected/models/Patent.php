@@ -29,6 +29,7 @@ class Patent extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $searchValue;
 	public function tableName()
 	{
 		return 'patent';
@@ -54,8 +55,9 @@ class Patent extends CActiveRecord
 			//array('presentation_date','compare','compareAttribute'=>'consession_date','operator'=>'>='),	
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
+			array('searchValue','length', 'max'=>70),
 			array('name','filter','filter'=>'strtoupper'),
-			array('id, id_curriculum, country, participation_type, name, state, application_type, application_number, patent_type, consession_date, record, presentation_date, international_clasification, title, owner, resumen, industrial_exploitation, resource_operator', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, country, participation_type, name, state, application_type, application_number, patent_type, consession_date, record, presentation_date, international_clasification, title, owner, resumen, industrial_exploitation, resource_operator, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +69,8 @@ class Patent extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+   			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),			
+
 		);
 	}
 
@@ -117,6 +121,12 @@ class Patent extends CActiveRecord
 		$sort= new CSort();
 		$sort->defaultOrder='presentation_date ASC';
 
+		if($this->searchValue)
+		{
+			$criteria->addCondition("name LIKE CONCAT('%', :searchValue , '%') OR owner LIKE CONCAT('%', :searchValue ,'%') OR application_number LIKE CONCAT('%', :searchValue , '%') OR state LIKE CONCAT('%', :searchValue , '%') OR application_type LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+	  /*	
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('country',$this->country,true);
@@ -135,12 +145,8 @@ class Patent extends CActiveRecord
 		$criteria->compare('resumen',$this->resumen,true);
 		$criteria->compare('industrial_exploitation',$this->industrial_exploitation);
 		$criteria->compare('resource_operator',$this->resource_operator,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-			'sort'=>$sort,
-
-		));
+	   */
+		return new CActiveDataProvider($this, array('criteria'=>$criteria,'sort'=>$sort));
 	}
 
 	/**

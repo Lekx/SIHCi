@@ -16,13 +16,14 @@ $this->menu=array(
 );
 ?>
 
-<h1>Registro #<?php echo $model->id; ?></h1>
+<h1>Registro con fecha 	<?php echo var_export(substr($model->creation_date, 0, 10), true).PHP_EOL;?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'id_curriculum',
+		
+		/*'id',
+		'id_curriculum',*/
 		'term1',
 		'term2',
 		'term3',

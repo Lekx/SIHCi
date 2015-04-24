@@ -8,6 +8,9 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'knowledge-application-form',
+	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array('validateOnSubmit'=>true)	
 	//'enableClientValidation'=>true,
 	//'clientOptions'=>array('validateOnSubmit'=>true,
 	//	)
@@ -15,7 +18,6 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
 )); ?>
 	
 	<?php echo $form->errorSummary($model); ?>
@@ -51,21 +53,28 @@
 	</div>
 
 	<div class="row buttons">
-        
-        <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type="reset" onclick='alert("¿Está usted seguro de limpiar estos datos?")' value="Borrar"> 
+	 <?php echo CHtml::ajaxSubmitButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('knowledgeApplication/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#knowledge-application-form")[0].reset();
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
        	<?php echo CHtml::link('Cancelar',array('/knowledgeApplication/admin')); ?>
-
- 		<script>
-			
-			function validationFrom()
-			{
-				alert("Registro realizado con éxito");
-				return false;
-			}	
-
-		</script>
-		
 	</div>
 				  
 <?php $this->endWidget(); ?>

@@ -66,23 +66,36 @@ class KnowledgeApplicationController extends Controller
 	public function actionCreate()
 	{
 		$model=new KnowledgeApplication;
-
 		// Uncomment the following line if AJAX validation is needed
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		$model->id_curriculum = $id_curriculum->id;   
 		$this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['KnowledgeApplication']))
 		{
 			$model->attributes=$_POST['KnowledgeApplication'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
- 			
- 			if($model->save())
-			{	
-				$this->redirect(array('view','id'=>$model->id));
-			}
-				
+			$model->id_curriculum = $id_curriculum->id;  
+
+			if($model->save())
+     		{
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
+
+     		//Yii::app()->end();
 		}
-		$this->render('create',array( 'model'=>$model,));
+
+		if(!isset($_POST['ajax']))
+			$this->render('create',array('model'=>$model));
 	}
+
 
 	/**
 	 * Updates a particular model.
@@ -101,17 +114,22 @@ class KnowledgeApplicationController extends Controller
 		if(isset($_POST['KnowledgeApplication']))
 		{
 			$model->attributes=$_POST['KnowledgeApplication'];
-
 			if($model->save())
-			{
-				$this->redirect(array('view','id'=>$model->id));	
-			}	
-
+     		{
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**

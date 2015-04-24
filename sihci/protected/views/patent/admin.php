@@ -6,8 +6,8 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 $this->menu=array(
-	array('label'=>'Desplegar', 'url'=>array('index')),
 	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 ); 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Propiedad intelectual: Patentes</h1>
+<h1>Gestionar Registro de propiedad intelectual: Patentes</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
@@ -34,16 +34,24 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'patent-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+    'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
-		'id',
+		
+		array('name'=>'Nombre','type'=>'html','id'=>'name','value'=>'CHtml::encode($data->name)'),
+		array('name'=>'Propietario ','type'=>'html','id'=>'owner','value'=>'CHtml::encode($data->owner)'),
+		array('name'=>'Número de registro o Número de solicitud','type'=>'html','id'=>'application_number','value'=>'CHtml::encode($data->application_number)'),
+		array('name'=>'Estado de la patente','type'=>'html','id'=>'state','value'=>'CHtml::encode($data->state)'),
+		array('name'=>'Tipo de aplicación','type'=>'html','id'=>'application_type','value'=>'CHtml::encode($data->application_type)'),
+		
+		/*'id',
 		'name',
 		'presentation_date',
 		'owner',
 		'application_number',
 		'state',
 		'application_type',
-		/*
 		'country',
 		'participation_type',
 		'id_curriculum',

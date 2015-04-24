@@ -13,6 +13,9 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
+	'htmlOptions' => array('enctype'=>'multipart/form-data'),
+	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
 	<!-- <p class="note">Fields with <span class="required">*</span> are required.</p> -->
@@ -100,20 +103,29 @@
 		<?php echo $form->error($model,'is_national'); ?>
 	</div>
 		
-	
-
 	<div class="row buttons">
-        <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
-      	
-      	<script>
-			function validationFrom()
-			{
-				alert("Registro realizado con éxito");
-				return false;
-			}	
-
-		</script>
+        <?php echo CHtml::ajaxSubmitButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('pressNotes/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#software-form")[0].reset();
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+       	<?php echo CHtml::link('Cancelar',array('/pressNotes/admin')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>

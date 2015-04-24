@@ -19,20 +19,31 @@
 		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado"));?>
 		<?php echo $form->error($model,'fullname'); ?>
 	</div>
-
+	
 	<div class="row buttons">
-		<input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
-      	
-      	<script>
-			function validationFrom()
-			{
-				alert("Registro realizado con éxito");
-				return false;
-			}	
-
-		</script>	
-    </div>
+	 <?php echo CHtml::ajaxSubmitButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('postdegreeGraduates/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#postdegree-graduates-form")[0].reset();
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
+       	<?php echo CHtml::link('Cancelar',array('/postdegreeGraduates/admin')); ?>
+	</div>
 	
 <?php $this->endWidget(); ?>
   

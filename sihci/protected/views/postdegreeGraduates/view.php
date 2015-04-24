@@ -8,15 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PostdegreeGraduates', 'url'=>array('index')),
-	array('label'=>'Create PostdegreeGraduates', 'url'=>array('create')),
-	array('label'=>'Update PostdegreeGraduates', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete PostdegreeGraduates', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta usted seguro de desactivar/eliminar este registro?')),
-	array('label'=>'Manage PostdegreeGraduates', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Registro. #<?php echo $model->id; ?></h1>
+<h1>Registro con fecha 	<?php echo var_export(substr($model->creation_date, 0, 10), true).PHP_EOL; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', 
 

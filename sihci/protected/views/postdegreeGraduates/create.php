@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PostdegreeGraduates', 'url'=>array('index')),
-	array('label'=>'Manage PostdegreeGraduates', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create PostdegreeGraduates</h1>
+<h1>Crear Graduado de Posgrado:</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

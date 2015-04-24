@@ -7,48 +7,19 @@
 <div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'searchValue',
 	'action'=>Yii::app()->createUrl($this->route),
+	'enableAjaxValidation'=>true,
 	'method'=>'get',
 )); ?>
-
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+		
+		<legend>Búsqueda por:</legend>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo')); ?>	
+		<?php echo CHtml::submitButton('Buscar'); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id_curriculum'); ?>
-		<?php echo $form->textField($model,'id_curriculum'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'term1'); ?>
-		<?php echo $form->textArea($model,'term1',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'term2'); ?>
-		<?php echo $form->textArea($model,'term2',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'term3'); ?>
-		<?php echo $form->textArea($model,'term3',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'term4'); ?>
-		<?php echo $form->textArea($model,'term4',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'term5'); ?>
-		<?php echo $form->textArea($model,'term5',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div> 
+	
 <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

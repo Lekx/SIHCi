@@ -44,22 +44,12 @@ class SoftwareController extends Controller
 			),
 		);
 	}
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-
+	
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
 	//SO01-Registro de datos
 	public function actionCreate()
 	{
@@ -75,29 +65,30 @@ class SoftwareController extends Controller
 			$model->id_curriculum = $id_curriculum->id;  
             $model->path = CUploadedFile::getInstanceByName('Software[path]');
 
-		   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
-           	
-            if(!is_dir($urlFile))          
-              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+            
+			   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+	           	
+	            if(!is_dir($urlFile))          
+	              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
 
-			if(isset($path))
-			{
-				$model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
-			    $model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
-			}
+	            if(isset($path))
+	            {  
+					$model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
+					$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();
+				}
 
-			if($model->save())
-			{
-		    	echo CJSON::encode(array('status'=>'success'));
-		    	Yii::app()->end();
-		    }	
-		    else 
-	    	{
-     			$error = CActiveForm::validate($model);
-                if($error!='[]')
-                   echo $error;
-                Yii::app()->end();
-	        }
+				if($model->save())
+				{
+				   	echo CJSON::encode(array('status'=>'success'));
+			    	Yii::app()->end();
+			    }	
+			    else 
+		    	{
+	     			$error = CActiveForm::validate($model);
+	                if($error!='[]')
+	                   echo $error;
+	                Yii::app()->end();
+		        }
 					    
 		}
 			
@@ -115,7 +106,6 @@ class SoftwareController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -124,14 +114,13 @@ class SoftwareController extends Controller
 			$model->attributes=$_POST['Software'];
     		$model->path = CUploadedFile::getInstanceByName('Software[path]');
 
-    		if($model->path)
-    		{                
+    		    		                
 	            $model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
-	         	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
-	        }
+	         	$path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+	        
 
 			if($model->save())
-     		{
+     		{	         	
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
@@ -180,6 +169,18 @@ class SoftwareController extends Controller
 	/**
 	 * Manages all models.
 	 */
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	
+	public function actionView($id)
+	{
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
 
 	//SO06-Listar registro
 	public function actionAdmin()

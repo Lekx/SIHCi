@@ -13,13 +13,13 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
-	'enableClientValidation'=>true,
-	'htmlOptions' => array('enctype'=>'multipart/form-data'),
+	//'enableClientValidation'=>true,
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'clientOptions'=>array('validateOnSubmit'=>true),
 	
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -297,24 +297,24 @@
 
 
 	<div class="row buttons">
-	 <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('software/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	 <?php echo CHtml::ajaxSubmitButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('software/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
                      		'success'=>'function(data) 
                      		 {
 		                                      
-		                         if(data.status=="success")
-		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#software-form")[0].reset();
-		                         }		                         
-		                         else
-		                         {
-			                     	alert("Complete los campos con *");   
-			                     }       
-		                  	}',                    
-		                    
+		                        if(data.status=="success")
+		                        {
+		                           	alert("Registro realizado con éxito");
+				                    $("#software-form")[0].reset();
+									window.location.href ="'.Yii::app()->createUrl('software/admin').'";		                         
+								}		                         
+		                        else
+		                        {
+			                    	alert("Complete los campos con *");   
+			                    }       
+		                  	}',                            
                         )); 
         ?>
 		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>

@@ -10,9 +10,7 @@
 	'id'=>'copyrights-form',
 	'enableAjaxValidation'=>true,
 	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	)
+	'clientOptions'=>array('validateOnSubmit'=>true)
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -82,7 +80,7 @@
 		<?php echo $form->labelEx($model,'entity'); ?>
 		<?php echo $form->dropDownList($model,'entity',
 				array(
-						'Publica'=>'Publica',
+						'Pública'=>'Pública',
 						'Privada'=>'Privada',
 						'Sector social'=>'Sector social'
 					),
@@ -110,6 +108,7 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#copyrights-form")[0].reset();
+				                     window.location.href ="'.Yii::app()->createUrl('copyrights/admin').'";
 		                         }		                         
 		                         else
 		                         {

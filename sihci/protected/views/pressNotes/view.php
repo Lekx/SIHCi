@@ -8,11 +8,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PressNotes', 'url'=>array('index')),
-	array('label'=>'Create PressNotes', 'url'=>array('create')),
-	array('label'=>'Update PressNotes', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete PressNotes', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta usted seguro de eliminar este registro?')),
-	array('label'=>'Manage PressNotes', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	
 );
 ?>
 

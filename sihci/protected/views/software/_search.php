@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 
 ?>
-<!-- DO06- Barra de búsqueda -->
+<!-- SO06- Barra de búsqueda -->
 
 <div class="wide form">
 
