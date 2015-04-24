@@ -53,6 +53,7 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('subdiscipline')); ?>:</b>
 	<?php echo CHtml::encode($data->subdiscipline); ?>
 	<br />
-
+	
+	
 
 </div>

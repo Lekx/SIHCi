@@ -85,7 +85,8 @@
 	</div>
 
 	<div class="row">
-		<?php
+		<?php echo $form->labelEx($model,'validity_date_end'); ?>
+		<?php 
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
 		    'language'=> 'es',
@@ -119,6 +120,7 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#certifications-form")[0].reset();
+				                     window.location.href ="'.Yii::app()->createUrl('certifications/admin').'";
 		                         }		                         
 		                         else
 		                         {
