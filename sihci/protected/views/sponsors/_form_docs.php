@@ -23,43 +23,78 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 
 
 
-	<?php echo $form->errorSummary($model);?>
 
+<?php
+/*
+echo "<pre>";
+print_r($modelDocs);
+echo "</pre>";
+*/
+
+//echo $modelDocs[0]->path . " " . $modelDocs[0]->file_name;?>
+
+	<?php echo $form->errorSummary($model);?>
+	<!--<?php //print_r($modelDocs); ?>-->
 
 	<div class="row">
 	Decreto de creación, acta constitutiva o documento que acredite la creación de la empresa:
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc1'));?>
-		<img style="width:75px;height:auto;" src="<?php echo Yii::app()->request->baseUrl . "/" . "Sponsors" . "/" . "1" . "/" . "docs" . "/" . "Acreditacion de las facultades del representante o apoderado.jpg";?>">
+
+		<?php 
+		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
+			if(array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs))
+				echo "<a href='".Yii::app()->request->baseUrl."/".$modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][1]."' style='width:75px;height:auto;'></a>";
+		?>
 	</div>
 	<div class="row">
 	Documento con el que se acreditan las facultades del representante o apoderado (poder, acta de asamblea, nombramiento, etc.)
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc2'));?>
-		<img style="width:75px;height:auto;" src="<?php echo Yii::app()->request->baseUrl . "/" . "Sponsors" . "/" . "1" . "/" . "docs" . "/" . "Documento que acredite la creacion de la empresa.jpg";?>">
+		<?php 
+		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
+			if(array_key_exists('Acreditacion_de_las_facultades_del_representante_o_apoderado', $modelDocs))
+				echo "<a href='".Yii::app()->request->baseUrl."/".$modelDocs['Acreditacion_de_las_facultades_del_representante_o_apoderado'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelDocs['Acreditacion_de_las_facultades_del_representante_o_apoderado'][1]."' style='width:75px;height:auto;'></a>";
+		?>		
 	</div>
 	<div class="row">
 	Licencias, autorizaciones, permisos para las actividades, etc.
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc3'));?>
-		<img style="width:75px;height:auto;" src="<?php echo Yii::app()->request->baseUrl . "/" . "Sponsors" . "/" . "1" . "/" . "docs" . "/" . "Permisos de actividades.jpg";?>">
+		<?php 
+		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
+			if(array_key_exists('Permisos_de_actividades', $modelDocs))
+				echo "<a href='".Yii::app()->request->baseUrl."/".$modelDocs['Permisos_de_actividades'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelDocs['Permisos_de_actividades'][1]."' style='width:75px;height:auto;'></a>";
+		?>		
 	</div>
 	<div class="row">
 	RFC o equivalente (empresa)
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc4'));?>
-		<img style="width:75px;height:auto;" src="<?php echo Yii::app()->request->baseUrl . "/" . "Sponsors" . "/" . "1" . "/" . "docs" . "/" . "RFC o equivalente.jpg";?>">
+		<?php 
+		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
+			if(array_key_exists('RFC_o_equivalente', $modelDocs))
+				echo "<a href='".Yii::app()->request->baseUrl."/".$modelDocs['RFC_o_equivalente'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelDocs['RFC_o_equivalente'][1]."' style='width:75px;height:auto;'></a>";
+		?>	
 	</div>
 	<div class="row">
 	Comprobante de domicilio (opcional para extranjeras)
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc5'));?>
-		<img style="width:75px;height:auto;" src="<?php echo Yii::app()->request->baseUrl . "/" . "Sponsors" . "/" . "1" . "/" . "docs" . "/" . "Comprobante de domicilio.jpg";?>">
+		<?php 
+		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
+			if(array_key_exists('Comprobante_de_domicilio', $modelDocs))
+				echo "<a href='".Yii::app()->request->baseUrl."/".$modelDocs['Comprobante_de_domicilio'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelDocs['Comprobante_de_domicilio'][1]."' style='width:75px;height:auto;'></a>";
+		?>	
 	</div>
 	<div class="row">
 	Identificación Oficial del Representante
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc6'));?>
-		<img style="width:75px;height:auto;" src="<?php echo Yii::app()->request->baseUrl . "/" . "Sponsors" . "/" . "1" . "/" . "docs" . "/" . "Identificacion Oficial del Representante.jpg";?>">
+		<?php 
+		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
+			if(array_key_exists('Identificacion_Oficial_del_Representante', $modelDocs))
+				echo "<a href='".Yii::app()->request->baseUrl."/".$modelDocs['Identificacion_Oficial_del_Representante'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelDocs['Identificacion_Oficial_del_Representante'][1]."' style='width:75px;height:auto;'></a>";
+		?>	
 	</div>
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');?>
+		<?php echo CHtml::submitButton('Guardar');?>
 	</div>
 
 <?php $this->endWidget();?>

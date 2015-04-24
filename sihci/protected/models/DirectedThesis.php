@@ -27,6 +27,8 @@ class DirectedThesis extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	public $searchValue;
 	public function tableName()
 	{
 		return 'directed_thesis';
@@ -54,7 +56,8 @@ class DirectedThesis extends CActiveRecord
 			array('conclusion_date','compare','compareValue' => date('d/m/Y'),'operator'=>'<='),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, title, conclusion_date, author, path, grade, sector, organization, second_level, area, discipline, subdiscipline, creation_date', 'safe', 'on'=>'search'),
+			array('searchValue','length', 'max'=>70),
+			array('id, id_curriculum, title, conclusion_date, author, path, grade, sector, organization, second_level, area, discipline, subdiscipline, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -111,7 +114,12 @@ class DirectedThesis extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR author LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+		/*$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('conclusion_date',$this->conclusion_date,true);
@@ -125,7 +133,7 @@ class DirectedThesis extends CActiveRecord
 		$criteria->compare('discipline',$this->discipline,true);
 		$criteria->compare('subdiscipline',$this->subdiscipline,true);
 		$criteria->compare('creation_date',$this->creation_date,true);
-
+		*/
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

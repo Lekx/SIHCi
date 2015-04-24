@@ -9,6 +9,7 @@
 		<?php echo CHtml::link('Datos de Representante',array('/sponsors/create_persons')); ?><br>
 		<?php echo CHtml::link('Datos de Facturacion',array('/sponsors/create_billing')); ?><br>
 		<?php echo CHtml::link('Datos de Contacto',array('/sponsors/create_contact')); ?><br>
+		<?php echo CHtml::link('Datos de Contactos',array('/sponsors/create_contacts')); ?><br>
 </div>
 <div style="float:left; width: 80%;">
 

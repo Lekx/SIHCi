@@ -65,17 +65,26 @@ class CertificationsController extends Controller
 	{
 
 		$model=new Certifications;
+		$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+
 		// Uncomment the following line if AJAX validation is needed
 		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['Certifications']))
 		{
 			$model->attributes=$_POST['Certifications'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 
-			if($model->save())
-                
-                	$this->redirect(array('view','id'=>$model->id)); 
+			if($model->save()){
+				echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		
+			}else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     			}      	
 			}
 				
 
@@ -101,7 +110,18 @@ class CertificationsController extends Controller
 		if(isset($_POST['Certifications']))
 		{
 			$model->attributes=$_POST['Certifications'];
-			if($model->save())
+			if($model->save()){
+				echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     			
+
+			}else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 				$this->redirect(array('view','id'=>$model->id));
 		}
 

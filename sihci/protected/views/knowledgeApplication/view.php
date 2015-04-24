@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Crear', 'url'=>array('create')),
-	array('label'=>'Editar', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está usted seguro de eliminar este registro?')),
-	array('label'=>'Desplagar', 'url'=>array('index')),
-	array('label'=>'Listar', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	//array('label'=>'Editar', 'url'=>array('update', 'id'=>$model->id)),
+	//array('label'=>'Eliminar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está usted seguro de eliminar este registro?')),
+	//array('label'=>'Desplagar', 'url'=>array('index')),
 );
 ?>
 

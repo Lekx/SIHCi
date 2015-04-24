@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Actualizar Certificaciones <?php echo $model->id; ?></h1>
+<h1>Actualizar Certificaciones por Concejos  Médicos <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

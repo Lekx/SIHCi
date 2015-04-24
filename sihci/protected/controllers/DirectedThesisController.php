@@ -64,52 +64,73 @@ class DirectedThesisController extends Controller
     public function actionCreate()
     {
         $model=new DirectedThesis;
+        $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
 
         if(isset($_POST['DirectedThesis']))
         {
             $model->attributes=$_POST['DirectedThesis'];
 
 
-            $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
              
             if($model->validate()){
 
                 if($model->path != ''){
                     
-                    if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/')){
+                    if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/')){ 
 
                             mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/', 0777, true);
-                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();   
+                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
+                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();   
                             
-                            if($model->save())
-                                $this->redirect(array('view','id'=>$model->id));
-                } else {
+                            if($model->save()){
+                                echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
 
-                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
-                    
-                            if($model->save()){  
-                                $this->redirect(array('view','id'=>$model->id));
-                            }
-                   
-                        }
+                            }else{
+                                $error = CActiveForm::validate($model);
+                                if($error!='[]')
+                                    echo $error;
+                                    Yii::app()->end();
+                                }
+                             
+                     } else {
 
-                } else {
-                   
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
+                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
+                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName(); 
                     
                             if($model->save()){
-                                 $this->redirect(array('view','id'=>$model->id));
-                            }
+                                echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
+                            }else{
+                                $error = CActiveForm::validate($model);
+                                if($error!='[]')
+                                    echo $error;
+                                    Yii::app()->end();
+                                }
+                   
                         }
 
-                    } //end if validate
-                }
+                    } else {
+                   
+                           // $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
+                    
+                            if($model->save()){
+                                echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
+                            }else{
+                                $error = CActiveForm::validate($model);
+                                if($error!='[]')
+                                    echo $error;
+                                    Yii::app()->end();
+                                }
+                        }
+
+            } //end if validate
+        }   
 
                     $this->render('create',array('model'=>$model,));
     }
@@ -137,19 +158,19 @@ class DirectedThesisController extends Controller
 
             if($model->path != ''){
                 
-                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-               $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
+                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
+               $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName(); 
                 
                 
                 
                 if($model->save()){
-                    $this->redirect(array('view','id'=>$model->id));
+                    $this->redirect(array('admin','id'=>$model->id));
                 }
             }else{
 
-                  $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
+                  $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
                 if($model->save()){
-                $this->redirect(array('view','id'=>$model->id));
+                $this->redirect(array('admin','id'=>$model->id));
              }
            }
               
