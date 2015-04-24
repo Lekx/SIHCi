@@ -24,7 +24,7 @@ class CurriculumVitaeController extends Controller
 		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
-								'DeletePhone', 'DeleteResearch', 'DeleteGrade',
+								'DeletePhone', 'DeleteResearch', 'DeleteGrade', 'DeleteDocs',
 								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission'),
 				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1")',
 				 'users'=>array('@'),
@@ -70,11 +70,16 @@ class CurriculumVitaeController extends Controller
 			mkdir($path, 0775, true);
 		}
 
+		if($model->birth_date == "30/11/-0001" || $model->birth_date == "00/00/0000"){
+				$model->birth_date = "";
+			}
+
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Persons']) && isset($_POST['Curriculum']))
 		{
 			$model->attributes=$_POST['Persons'];
+
 			$curriculum->attributes = $_POST['Curriculum'];
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
 			
@@ -102,60 +107,183 @@ class CurriculumVitaeController extends Controller
 	}
 
 	public function actionDocsIdentity(){
-		$model=new DocsIdentity;
+		
 		$curriculum=Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
-		$docs = DocsIdentity::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
 		$getDocs = DocsIdentity::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
 		
+		$DocExist = DocsIdentity::model()->findAllByAttributes(array('id_curriculum' => $curriculum->id));
+		
+		$modelDocs = array();
+		if ($DocExist != null) {
+			foreach ($DocExist as $key => $value) {
+				$modelDocs[$value->type] = array($value->id, $value->doc_id);
+			}
+
+		}
+
+		$model=new DocsIdentity;
+		$reload = false;
+
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['DocsIdentity']))
+		if(isset($_POST['Acta']))
 		{
-			$model->attributes=$_POST['DocsIdentity'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$model->doc_id = CUploadedFile::getInstanceByName('DocsIdentity[doc_id]');
+
 			$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/';
 			$path2 = '/users/'.Yii::app()->user->id.'/cve-hc/';
+			
 			if (!is_dir($path)) {
-				mkdir($path, 0775, true);
+				mkdir($path, 0777, true);
 			}
-			$files = glob($path);
 
-			foreach ($files as $file) {
-				if (is_file($file)) {
-					unlink($file);
+			if (is_object(CUploadedFile::getInstanceByName('Acta'))) {
+				unset($model);
+
+				if (!array_key_exists('Acta', $modelDocs)) {
+					var_dump($modelDocs);
+					$model = new DocsIdentity;
+				} else {
+					$model = DocsIdentity::model()->findByPk($modelDocs['Acta'][0]);
+					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
+				}
+
+				$model->id_curriculum = $curriculum->id;
+				$model->type = "Acta";
+				$model->description = "Acta";
+				$model->doc_id = CUploadedFile::getInstanceByName('Acta');
+				if ($model->validate()) {
+					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
+					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
+					if($model->save()){
+						$reload = true;
+					}
+				}
+			}
+			
+			if (is_object(CUploadedFile::getInstanceByName('Pasaporte'))) {
+				unset($model);
+
+				if (!array_key_exists('Pasaporte', $modelDocs)) {
+					$model = new DocsIdentity;
+				} else {
+					$model = DocsIdentity::model()->findByPk($modelDocs['Pasaporte'][0]);
+					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
+				}
+
+				$model->id_curriculum = $curriculum->id;
+				$model->type = "Pasaporte";
+				$model->description = "Pasaporte";
+				$model->doc_id = CUploadedFile::getInstanceByName('Pasaporte');
+				if ($model->validate()) {
+					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
+					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
+					if($model->save()){
+						$reload = true;
+					}
 				}
 
 			}
-			//$docExist = DocsIdentity::model()->find(array('condition'=>'id_curriculum='.$curriculum->id.' AND type="'.$model->type.'"'));
-			if ($model->validate()) {
-				//if ($docExist != null) {
-					$model->doc_id->saveAs($path.$model->type.'.'.$model->doc_id->getExtensionName());
-					$model->doc_id = $path2.$model->type.'.'.$model->doc_id->getExtensionName();
-						if($model->save()){
-						// $section = "Documentos Oficiales"; //manda parametros al controlador SystemLog
-						// $details = "Se han modificado Documentos Oficiales";
-						// $action = "Modificacion";
-						// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-							$this->redirect('docsIdentity');
-						}
-				//}
+			
+			if (is_object(CUploadedFile::getInstanceByName('CURP'))) {
+				unset($model);
+
+				if (!array_key_exists('CURP', $modelDocs)) {
+					$model = new DocsIdentity;
+				} else {
+					$model = DocsIdentity::model()->findByPk($modelDocs['CURP'][0]);
+					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
+				}
+
+				$model->id_curriculum = $curriculum->id;
+				$model->type = "CURP";
+				$model->description = "CURP";
+				$model->doc_id = CUploadedFile::getInstanceByName('CURP');
+				if ($model->validate()) {
+					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
+					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
+					if($model->save()){
+						$reload = true;
+					}
+				}
+
 			}
+			
+			if (is_object(CUploadedFile::getInstanceByName('IFE'))) {
+				unset($model);
+
+				if (!array_key_exists('IFE', $modelDocs)) {
+					$model = new DocsIdentity;
+				} else {
+					$model = DocsIdentity::model()->findByPk($modelDocs['IFE'][0]);
+					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
+				}
+
+				$model->id_curriculum = $curriculum->id;
+				$model->type = "IFE";
+				$model->description = "IFE";
+				$model->doc_id = CUploadedFile::getInstanceByName('IFE');
+				if ($model->validate()) {
+					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
+					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
+					if($model->save()){
+						$reload = true;
+					}
+				}
+
+			}
+
+			if ($reload == true) {
+				$this->redirect(array('docsIdentity'));
+ 			}		 			
+			//$this->redirect('docsIdentity');
 		}
 
-	$this->render('docs_Identity',array('model'=>$model, 'getDocs'=>$getDocs, ));
+	$this->render('docs_Identity',array('model'=>$model, 'getDocs'=>$getDocs, 'modelDocs' => $modelDocs,));
 	}
 
 	public function actionAddresses(){
 
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 		$model = $curriculum->idActualAddress;
+		if ($model->country=="null") {
+				$model->country="";
+			}
+			if ($model->zip_code=="0") {
+				$model->zip_code="";
+			}
+			if ($model->state=="null") {
+				$model->state="";
+			}
+				if ($model->delegation=="null") {
+				$model->delegation="";
+			}
+				if ($model->city=="null") {
+				$model->city="";
+			}
+				if ($model->town=="null") {
+				$model->town="";
+			}
+				if ($model->colony=="null") {
+				$model->colony="";
+			}
+				if ($model->street=="null") {
+				$model->street="";
+			}
+			if ($model->external_number=="null") {
+				$model->external_number="";
+			}
+			if ($model->internal_number=="null") {
+				$model->internal_number="";
+			}
 
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Addresses']))
 		{
 			$model->attributes=$_POST['Addresses'];
+			
+
+
 				if($model->save()){
 					$section = "Datos de Dirección actual"; //manda parametros al controlador SystemLog
 					$details = "Se han modificado datos de Dirección Actual";
@@ -434,6 +562,14 @@ class CurriculumVitaeController extends Controller
 		$model=Grades::model()->findByPk($id)->delete();
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('grades'));
+	}
+
+	public function actionDeleteDocs($id, $pathDoc){
+		$model=DocsIdentity::model()->findByPk($id)->delete();
+		$path = YiiBase::getPathOfAlias("webroot").''.$pathDoc;
+		unlink($path);
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('docsIdentity'));
 	}
 
 
