@@ -113,6 +113,7 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#congresses-form")[0].reset();
+				                     window.location.href ="'.Yii::app()->createUrl('congresses/admin').'";
 		                         }		                         
 		                         else
 		                         {

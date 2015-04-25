@@ -111,6 +111,7 @@ class CertificationsController extends Controller
 		{
 			$model->attributes=$_POST['Certifications'];
 			if($model->save()){
+				
 				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      			

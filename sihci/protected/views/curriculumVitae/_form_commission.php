@@ -57,8 +57,7 @@
 	<div class="row buttons">
 		<input  class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		
-	<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
+		<?php echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>

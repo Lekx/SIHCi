@@ -57,7 +57,6 @@ $('.search-form form').submit(function(){
 		'subdiscipline',
 		//'creation_date',
 		//'url_doc',
-		
 		array(
 			'class'=>'CButtonColumn',
 		),

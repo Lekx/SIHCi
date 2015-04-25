@@ -32,10 +32,21 @@
 	'enableAjaxValidation'=>true,
 )); ?>
 
+
 	<div class="row">
-		
-		<?php echo $form->textField($model,'country',array( 'title'=>'Paises','size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
-		<?php echo $form->error($model,'country'); ?>
+	<?php $this->widget('ext.CountrySelectorWidget', array(
+
+		'value' => $model->country,
+		'name' => Chtml::activeName($model, 'country'),
+		'id' => Chtml::activeId($model, 'country'),
+		'useCountryCode' => false,
+		'defaultValue' => 'Mexico',
+		'firstEmpty' => true,
+		'firstText' => 'Pais',
+
+		)); ?>
+
+          <?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row">
@@ -87,7 +98,7 @@
 	<div class="row buttons">
 		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
+		<?php echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 		</div>
 
 <?php $this->endWidget(); ?>
