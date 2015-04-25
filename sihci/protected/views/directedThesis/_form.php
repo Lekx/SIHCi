@@ -16,7 +16,7 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
     
-   
+    
 	<p class="note">Los campos con<span class="required">*</span> son necesarios.</p>
     
 	<?php echo $form->errorSummary($model); ?>

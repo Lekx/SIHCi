@@ -75,11 +75,10 @@ class DirectedThesisController extends Controller
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
              
-                    
+                  
                     if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/'))
                             mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/', 0777, true);
                              
-                            
                             if($model->save()){
                                 if($model->path != ''){
                                     $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
@@ -88,13 +87,13 @@ class DirectedThesisController extends Controller
                                 echo CJSON::encode(array('status'=>'success'));
                                 Yii::app()->end();
 
-                            }else{
-                                $error = CActiveForm::validate($model);
-                                if($error!='[]')
-                                    echo $error;
-                                    Yii::app()->end();
+                                }else{
+                                    $error = CActiveForm::validate($model);
+                                    if($error!='[]')
+                                         echo $error;
+                                        Yii::app()->end();
                                 }
-        }   
+                 }   
 
                     $this->render('create',array('model'=>$model));
     }
@@ -103,6 +102,7 @@ class DirectedThesisController extends Controller
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
+    
     //TE02-Modificar datos
     public function actionUpdate($id)
     {
@@ -116,9 +116,6 @@ class DirectedThesisController extends Controller
 
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
-
-            if($model->validate()){
-            
 
             if($model->path != ''){
                 
@@ -137,7 +134,7 @@ class DirectedThesisController extends Controller
                                 }
             }else{
 
-                  $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
+                  //$model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
                 if($model->save()){
                                 echo CJSON::encode(array('status'=>'success'));
                                 Yii::app()->end();
@@ -150,7 +147,6 @@ class DirectedThesisController extends Controller
                                 }
            }
               
-            }//End validate 
         }
 
         $this->render('update',array(

@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Certificaciones', 'url'=>array('index')),
-	array('label'=>'Administrar Certificaciones', 'url'=>array('admin')),
+	//array('label'=>'Listar Certificaciones', 'url'=>array('index')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
