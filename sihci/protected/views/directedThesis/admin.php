@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tesis', 'url'=>array('index')),
-	array('label'=>'Crear Tesis', 'url'=>array('create')),
+	//array('label'=>'Listar Tesis', 'url'=>array('index')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar</h1>
+<h1>Tesis Dirigidas</h1>
 
 <!-- <?php /* echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); */ ?> -->
 <div class="search-form" style="display:block">
