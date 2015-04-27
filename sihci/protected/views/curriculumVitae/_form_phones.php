@@ -233,8 +233,27 @@
 		<div id="errorMail" class="errors"> Debe ser un correo válido: ejemplo@mail.com</div><br>
 
 	
-		<input type="submit" id="btnCreate" value="Agregar email">
-
+         <?php echo CHtml::ajaxButton ('Agregar email',CController::createUrl('curriculumVitae/phones'), 
+                        array(
+                            'dataType'=>'json',
+                            'type'=>'post',
+                            'success'=>'function(data) 
+                             {
+                                              
+                                 if(data.status=="success")
+                                 {
+                                     alert("Su nuevo Email se ha creado con éxito");
+                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";
+                                 }                               
+                                 else
+                                 {
+                                      alert("Su nuevo Email se ha creado con éxito");
+                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";  
+                                 }       
+                            }',                    
+                            
+                        ), array('id'=>'btnCreate')); 
+            ?>
 		
 	</div>
 		
@@ -290,7 +309,27 @@
 				<input type="text" class="phones extension" name="extension" maxlength="8" placeholder="[Ext]"> 
 			</div>
 
-		<input type="submit" id="btnCreatePhone" value="Agregar Teléfono">
+          <?php echo CHtml::ajaxButton ('Agregar Teléfono',CController::createUrl('curriculumVitae/phones'), 
+                        array(
+                            'dataType'=>'json',
+                            'type'=>'post',
+                            'success'=>'function(data) 
+                             {
+                                              
+                                 if(data.status=="success")
+                                 {
+                                     alert("Su nuevo Teléfono se ha creado con éxito");
+                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";
+                                 }                               
+                                 else
+                                 {
+                                      alert("Su nuevo Teléfono se ha creado con éxito");
+                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";  
+                                 }       
+                            }',                    
+                            
+                        ), array('id'=>'btnCreatePhone')); 
+            ?>
 
 </div><!--FORM Phone -->
 <hr>
@@ -329,7 +368,25 @@
 	
 
 	<div class="row buttons">
-		<input class="savebutton" type="submit" value="Guardar">
+         <?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/phones'), 
+                        array(
+                            'dataType'=>'json',
+                            'type'=>'post',
+                            'success'=>'function(data) 
+                             {
+                                              
+                                 if(data.status=="success")
+                                 {
+                                     alert("Registro realizado con éxito");
+                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";
+                                 }                               
+                                  else
+                                 {
+                                    alert("No existe ninguna linea de investigación");   
+                                 }        
+                            }',                    
+                            
+                        ), array('class'=>'savebutton')); ?>
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
 		<?php echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
