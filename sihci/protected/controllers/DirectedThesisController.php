@@ -60,71 +60,56 @@ class DirectedThesisController extends Controller
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
+
     //TE01-Registrar datos
     public function actionCreate()
     {
         $model=new DirectedThesis;
+        $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
 
         if(isset($_POST['DirectedThesis']))
         {
             $model->attributes=$_POST['DirectedThesis'];
-
-
-            $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
              
-            if($model->validate()){
-
-                if($model->path != ''){
-                    
-                    if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/')){
-
+                  
+                    if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/'))
                             mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/', 0777, true);
-                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();   
-                            
-                            if($model->save())
-                                $this->redirect(array('view','id'=>$model->id));
-                } else {
-
-                            $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
-                    
-                            if($model->save()){  
-                                $this->redirect(array('view','id'=>$model->id));
-                            }
-                   
-                        }
-
-                } else {
-                   
-                            $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
-                    
+                             
                             if($model->save()){
-                                 $this->redirect(array('view','id'=>$model->id));
-                            }
-                        }
+                                if($model->path != ''){
+                                    $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
+                                    $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();  
+                                }
+                                echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
 
-                    } //end if validate
-                }
+                                }else{
+                                    $error = CActiveForm::validate($model);
+                                    if($error!='[]')
+                                         echo $error;
+                                        Yii::app()->end();
+                                }
+                 }   
 
-                    $this->render('create',array('model'=>$model,));
+                    $this->render('create',array('model'=>$model));
     }
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
+    
     //TE02-Modificar datos
     public function actionUpdate($id)
     {
         $model=$this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-        //$this->performAjaxValidation($model); 
+        $this->performAjaxValidation($model); 
 
         if(isset($_POST['DirectedThesis']))
         {
@@ -132,28 +117,36 @@ class DirectedThesisController extends Controller
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
-            if($model->validate()){
-            
-
             if($model->path != ''){
                 
-                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName());
-               $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName(); 
-                
-                
+                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
+               $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName(); 
                 
                 if($model->save()){
-                    $this->redirect(array('view','id'=>$model->id));
-                }
+                                echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
+
+                            }else{
+                                $error = CActiveForm::validate($model);
+                                if($error!='[]')
+                                    echo $error;
+                                    Yii::app()->end();
+                                }
             }else{
 
-                  $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Documento_tesis_'.$model->title.'.'.$model->path->getExtensionName();
+                  //$model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
                 if($model->save()){
-                $this->redirect(array('view','id'=>$model->id));
-             }
+                                echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
+
+                            }else{
+                                $error = CActiveForm::validate($model);
+                                if($error!='[]')
+                                    echo $error;
+                                    Yii::app()->end();
+                                }
            }
               
-            }//End validate 
         }
 
         $this->render('update',array(

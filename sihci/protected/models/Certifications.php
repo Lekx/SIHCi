@@ -23,6 +23,8 @@ class Certifications extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+ 	public $searchValue;
+
 	public function tableName()
 	{
 		return 'certifications';
@@ -40,13 +42,14 @@ class Certifications extends CActiveRecord
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
 			array('folio, reference', 'length', 'max'=>30),
 			array('reference_type', 'length', 'max'=>15),
-			array('specialty, type', 'length', 'max'=>45),
-			array('validity_date_start','creation_date', 'safe'),
+			array('specialty, type', 'length', 'max'=>60),
+			array('validity_date_end, creation_date', 'safe'),
 			array('validity_date_end', 'safe'),
 			array('validity_date_end','compare','compareAttribute'=>'validity_date_start','operator'=>'>='),	
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, folio, reference, reference_type, specialty, validity_date_start, validity_date_end, type','safe', 'on'=>'search'),
+			array('searchValue','length', 'max'=>70),
+			array('id, id_curriculum, folio, reference, reference_type, specialty, validity_date_start, validity_date_end, type, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,8 +101,12 @@ class Certifications extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR folio LIKE CONCAT('%', :searchValue ,'%') OR specialty LIKE CONCAT('%', :searchValue , '%') OR reference LIKE CONCAT('%', :searchValue , '%') OR reference_type LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+		/*$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('folio',$this->folio,true);
 		$criteria->compare('reference',$this->reference,true);
@@ -109,7 +116,7 @@ class Certifications extends CActiveRecord
 		$criteria->compare('validity_date_end',$this->validity_date_end,true);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('creation_date',$this->creation_date,true);
-
+	*/
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

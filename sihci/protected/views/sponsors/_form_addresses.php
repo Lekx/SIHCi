@@ -42,10 +42,10 @@
             array(
                 'name' => 'Addresses[country]',
                 
-                'value' => 'US',
+                //'value' => 'US',
                 'useHelperSelectBox' => true,
                 'pluginOptions' => array(
-                    'country' => 'US',
+                    'country' => 'MX',
                     'language' => 'es_ES',
                     'flags' => true
                 )

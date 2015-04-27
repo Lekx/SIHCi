@@ -29,6 +29,9 @@ class BooksChapters extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	public $searchValue;
+
 	public function tableName()
 	{
 		return 'books_chapters';
@@ -55,7 +58,8 @@ class BooksChapters extends CActiveRecord
 			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, chapter_title, book_title, publishing_year, publishers, editorial, volume, pages, citations, total_of_authors, area, discipline, subdiscipline, creation_date, url_doc', 'safe', 'on'=>'search'),
+			array('searchValue','length', 'max'=>70),
+			array('id, id_curriculum, chapter_title, book_title, publishing_year, publishers, editorial, volume, pages, citations, total_of_authors, area, discipline, subdiscipline, creation_date, url_doc, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -114,7 +118,12 @@ class BooksChapters extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+		/*$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('chapter_title',$this->chapter_title,true);
 		$criteria->compare('book_title',$this->book_title,true);
@@ -130,7 +139,7 @@ class BooksChapters extends CActiveRecord
 		$criteria->compare('subdiscipline',$this->subdiscipline,true);
 		$criteria->compare('creation_date',$this->creation_date,true);
 		$criteria->compare('url_doc',$this->url_doc,true);
-
+		*/
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

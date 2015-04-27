@@ -15,15 +15,14 @@ $this->menu=array(
 	array('label'=>'Administrar Capitulo', 'url'=>array('admin')),
 );
 ?>
-							
-
-<!-- <h1>Ver Capitulos<?php/* echo $model->id; */?></h1> -->
+						
+ <h1>Ver Capítulos</h1> 
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'id_curriculum',
+		//'id',
+		//'id_curriculum',
 		'chapter_title',
 		'book_title',
 		'publishing_year',
@@ -38,17 +37,15 @@ $this->menu=array(
 		'subdiscipline',
 		//'creation_date',
 		array(
-
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo',Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro_'.$model->chapter_title, array("target"=>"_blank")),
-			),
+			'value'=>CHtml::link('Ver archivo', Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro_'.$model->chapter_title, array("target"=>"_blank")),
+			),	
 		array(
 			'label'=>'Nombre(s)',
 			'name'=>'names',
 			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->names,
 			),
-
 		array(
 			'label'=>'Apellido Paterno',
 			'name'=>'last_names1',
@@ -64,7 +61,8 @@ $this->menu=array(
 			'name'=>'positions',
 			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->position,
 			),
-		
+	
 		//'url_doc',
 	),
+
 )); ?>
