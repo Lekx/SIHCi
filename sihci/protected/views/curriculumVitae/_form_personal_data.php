@@ -19,6 +19,7 @@
 
 <?php echo $form->errorSummary($model); ?>
 <?php echo $form->errorSummary($curriculum); ?>
+
 	<div class="row">
 		<?php echo $form->labelEx($curriculum,'status'); ?>
 		<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
@@ -90,7 +91,6 @@
 
 <div class="row">
 	<?php $this->widget('ext.CountrySelectorWidget', array(
-
 		'value' => $model->country,
 		'name' => Chtml::activeName($model, 'country'),
 		'id' => Chtml::activeId($model, 'country'),
@@ -98,7 +98,7 @@
 		'defaultValue' => 'Mexico',
 		'firstEmpty' => true,
 		'firstText' => 'Pais',
-
+			
 		)); ?>
 
           <?php echo $form->error($model,'country'); ?>
