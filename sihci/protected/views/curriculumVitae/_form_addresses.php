@@ -23,6 +23,7 @@
 </script>
 <div class="form">
 
+
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'addresses-form',
 	// Please note: When you enable ajax validation, make sure the corresponding

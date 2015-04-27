@@ -160,14 +160,7 @@
 		
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
 		<?php echo $form->error($model,'photo_url'); ?>
-		<?php 
-
-		echo "<img src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' width='100' height='100'>";
-
-		?>
-		 <div class="infobox">
-                Foto de Peril</p>
-          </div>   
+		
 	</div>
 
 	<div class="row">
@@ -176,9 +169,6 @@
 		<?php echo $form->textField($model,'person_rfc',array('title'=>'RFC','size'=>13,'maxlength'=>13, 'placeholder'=>"RFC")); ?>
 		<?php echo $form->error($model,'person_rfc'); ?>
 
-		 <div class="infobox">
-                RFC
-          </div>
 
 	</div>
 

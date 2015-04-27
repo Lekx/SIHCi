@@ -14,13 +14,21 @@ $this->breadcrumbs = array(
 <section class="informativa">
 
 			<section class="column-left">
-				<img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/IconCirculo/Comites.png" alt="">
+				
 			</section>
 
 
 	<section class="column-center">
+
+	<div class="titleinfo">
+	<img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/IconCirculo/Comites.png" alt="">
 	<h1>Comites</h1>
+	<hr>
+	</div>
+	<div class="generalinformation">
+		
 		“El OPD Hospital Civil de Guadalajara cuenta con comités científicos con el cual se rigen todos sus integrantes. En este espacio usted podrá consultar los miembros de estos comités científicos más recientes.”
+		</div>
 	</section>
 
 		<section class="column-right">

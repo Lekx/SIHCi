@@ -12,6 +12,13 @@ $this->menu=array(
 );
 ?>
 
+	<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Currículum vitae electrónico</h1>
+            <hr>
+        </div>
+
+
 <h4>Datos de dirección actual:</h4>
 
 <?php $this->renderPartial('_form_addresses', array('model'=>$model)); ?>

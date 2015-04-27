@@ -99,11 +99,6 @@
                 </div>
                 <div class="sysmaincontent">
                     <div class="syscont">
-                        <div class="cvtitle">
-                            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
-                            <h1>Curriculum vitae electronico</h1>
-                            <hr>
-                        </div>
                         <div class="cvforms">
                             <?php echo $content; ?>
                         </div>
@@ -112,7 +107,6 @@
             </div>
         </div>
         <div class="successdiv">
-            
         </div>
         <div class="errordiv">
             <div class="backcontainer">

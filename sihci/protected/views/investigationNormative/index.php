@@ -10,18 +10,20 @@ $this->breadcrumbs=array(
 
 <section class="informativa">
 
-	<section class="column-left">
-		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/NormatividadInvestigacion.png" alt="">
-	</section>
 
 	<section class="column-center">
 
-	<h3>Normatividad de Investigaciòn</h3>
-	<hr>
-		<p>El OPD Hospital Civil de Guadalajara cuenta con un marco normativo con el cual se rigen todos sus integrantes. 
-		En este espacio usted podrá consultar las normas más recientes.</p>
-	</section>
+		<div class="titleinfo">
+			<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/NormatividadInvestigacion.png" alt="">
+			<h3>Normatividad de Investigaciòn</h3>
+			<hr>
+		</div>
 
+		<div class="generalinformation">
+			<p>El OPD Hospital Civil de Guadalajara cuenta con un marco normativo con el cual se rigen todos sus integrantes. 
+			En este espacio usted podrá consultar las normas más recientes.</p>
+		</div>
+	</section>
 
 	<section class="column-right">
 	<h5>DOCUMENTOS</h5>

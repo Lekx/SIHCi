@@ -1,16 +1,21 @@
+	<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Cuenta</h1>
+            <hr>
+        </div>
 
-	<h3>Cuenta</h3>
+<div class="infoAccount">
+	<h4>Datos de Cuenta:</h4>
 
-	<h4><p>Datos de Cuenta:</p></h4>
-
-	<p>Correo:</p>
+<h5>Correo:</h5>
 <?php
-	echo $details->email."</br>";
+	echo "<p>".$details->email."</p>";
 	echo CHtml::link('Modificar',array('account/updateEmail'));
 ?>
 
-	<p>Contraseña:</p>
+	<h5>Contraseña:</h5>
 <?php
-	echo "**************</br>";
+	echo "<p> ************** <p> ";
 	echo CHtml::link('Modificar',array('account/updatePassword'));
 ?>
+</div>

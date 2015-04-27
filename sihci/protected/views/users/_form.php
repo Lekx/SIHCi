@@ -50,7 +50,7 @@
                 <p><?php echo "<span>Ingresa tu Apellido Materno.</span>".$form->error($modelPersons,'last_name2'); ?> </p>
             </div>
         </div>
-        <input type="button" name="nextform" class="nextform action-button 1" value="Listo.." />
+        <input type="button" name="nextform" class="nextform action-button 1" value="Listo..." />
     </fieldset>
 
    <fieldset>
@@ -88,8 +88,10 @@
             </div>
         </div>
         <div class="emptycontent"></div>
-        <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
-        <input type="button" name="nextform" class="nextform action-button 2" value="Listo.." />
+       <input type="button" name="nextform" class="nextform action-button 2" value="Listo..." /> 
+       
+       <input type="button" name="previousform" class="previousform action-button" value="Regresar..." />
+        
     </fieldset> 
 
     <fieldset id="preregisterForm">
@@ -135,7 +137,7 @@
         <input type="hidden" name="Users[act_react_key]" id="Users_act_react_key" value="0000-00-00 00:00:00">
 
 
-        <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
+        <input type="button" name="previousform" class="previousform action-button" value="Regresar..." />
 
         <div class="row buttons">
 

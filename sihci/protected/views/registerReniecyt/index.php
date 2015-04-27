@@ -13,18 +13,17 @@ $this->breadcrumbs=array(
 
 <section class="informativa">
 
-	<section class="column-left">
-		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/RegistroRENIECYT.png" alt="">
-	</section>
 
 		<section class="column-center">
+			<div class="titleinfo">
+			<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/RegistroRENIECYT.png" alt="">
+			<h3>Investigación</h3>
+			<hr>
+			</div>
 
 		<div class="generalinformation">
 
 
-			<h3>Investigación</h3>
-			<hr>
-			
 				<p>El Organismo Público Descentralizado Hospital Civil de Guadalajara es el hospital- escuela de la Universidad de Guadalajara que forma el mayor número de médicos especialistas en México, un promedio de 220 especialistas por año. Nuestros médicos son reconocidos por el número de enfermos que diagnostican y curan; queremos que también lo sean, por la calidad del conocimiento científico que producen para la innovación en medicina, con beneficios evidentes, al ofrecer soluciones para los pacientes y la comunidad en general. Innovar significa utilizar el conocimiento de las investigaciones para mejorar los servicios de salud y las tecnologías. </p>
 
 				<p>El conocimiento científico, en todas las disciplinas de las ciencias de la salud, solamente tiene impacto social y económico cuando es aplicado para el beneficio de los enfermos y las comunidades, sin embargo, en México, el conocimiento científico útil de las investigaciones locales y nacionales frecuentemente es ignorado por años o décadas; según la Organización Mundial de la Salud “desestimar el conocimiento científico es nocivo para los individuos y las poblaciones, y representa un desperdicio de recursos”. </p>
