@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Capitulo', 'url'=>array('index')),
-	array('label'=>'Crear Capitulo', 'url'=>array('create')),
-	array('label'=>'Actualizar Capitulo', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Capitulo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Estas seguro de eliminar este registro?')),
-	array('label'=>'Administrar Capitulo', 'url'=>array('admin')),
+	//array('label'=>'Listar Capitulo', 'url'=>array('index')),
+	array('label'=>'Crear ', 'url'=>array('create')),
+	array('label'=>'Modificar', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Estas seguro de eliminar este registro?')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 						
- <h1>Ver Capítulos</h1> 
+ <h1>Capítulos de libros</h1> 
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -28,10 +28,10 @@ $this->menu=array(
 		'publishing_year',
 		'publishers',
 		'editorial',
-		'volume',
-		'pages',
-		'citations',
-		'total_of_authors',
+		//'volume',
+		//'pages',
+		//'citations',
+		//'total_of_authors',
 		'area',
 		'discipline',
 		'subdiscipline',

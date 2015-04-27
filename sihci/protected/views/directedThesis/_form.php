@@ -43,6 +43,7 @@
 		    'htmlOptions' => array(
 		    		'size' => '10',         
 		        	'maxlength' => '10', 
+		        	'readOnly'=>true,
 		        	'placeholder'=>"Fecha de Conclusion"   
 		    ),
 		));
