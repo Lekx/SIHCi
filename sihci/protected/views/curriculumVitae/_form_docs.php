@@ -55,7 +55,25 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?'));?>
-
+		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/docsIdentity'), 
+				array(
+					'dataType'=>'json',
+             		'type'=>'post',
+             		'success'=>'function(data) 
+             		 {
+                                      
+                         if(data.status=="success")
+                         {
+		                     alert("Registro realizado con éxito");
+		                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/docsIdentity').'";
+                         }		                         
+                         else
+                         {
+	                     	alert("favor de completar campos en rojo");   
+	                     }       
+                  	}',                    
+                ), array('class'=>'savebutton'));
+                ?>
 		<?php echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 

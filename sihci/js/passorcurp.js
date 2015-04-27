@@ -1,8 +1,6 @@
 $(document).ready(function() {
   
-    $('.errordiv').hide();
-    $('.cleandiv').hide();
-    $('.successdiv').hide();
+
 
     if ($('#Persons_country').val() == 'Mexico') {
         $('#Persons_curp_passport').attr('placeholder', 'CURP');
@@ -21,11 +19,5 @@ $(document).ready(function() {
         }
     });
 
-    $('.cleanbutton').click(function() {
-        $('.cleandiv').show();
-    });
-     $('.savebutton').click(function() {
-        $('.successdiv').show();
-    });
   
 });
