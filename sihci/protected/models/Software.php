@@ -35,6 +35,9 @@ class Software extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $searchValue;
+	public $urlFile;
+
 	public function tableName()
 	{
 		return 'software';
@@ -55,16 +58,15 @@ class Software extends CActiveRecord
 			array('participation_type, entity', 'length', 'max'=>20),
 			array('title', 'length', 'max'=>150),
 			array('beneficiary', 'length', 'max'=>70),
-			array('sector, organization, second_level, path', 'length', 'max'=>100),
-		    array('path','file','allowEmpty'=>true,
-				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
-			       'maxSize'=>array(1024 * 5000),
-			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
-		    array('end_date','compare','compareValue'=> date('d/m/Y'),'operator'=>'>='),	
+			array('sector, organization, second_level, path', 'length', 'max'=>100),    
+		    array('end_date','compare','compareValue'=> date('d/m/Y'),'operator'=>'>='),
+		    array('path','file','allowEmpty'=>true,'on'=>'update','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','maxSize'=>array(1024 * 5000),'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),		    
+			array('searchValue','length', 'max'=>70),
 			array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, country, participation_type, title, beneficiary, entity, manwork_hours, end_date, sector, organization, second_level, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, economic_support, path, creation_date', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, country, participation_type, title, beneficiary, entity, manwork_hours, end_date, sector, organization, second_level, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, economic_support, path, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -128,29 +130,12 @@ class Software extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('country',$this->country,true);
-		$criteria->compare('participation_type',$this->participation_type,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('beneficiary',$this->beneficiary,true);
-		$criteria->compare('entity',$this->entity,true);
-		$criteria->compare('manwork_hours',$this->manwork_hours);
-		$criteria->compare('end_date',$this->end_date,true);
-		$criteria->compare('sector',$this->sector,true);
-		$criteria->compare('organization',$this->organization,true);
-		$criteria->compare('second_level',$this->second_level,true);
-		$criteria->compare('resumen',$this->resumen,true);
-		$criteria->compare('objective',$this->objective,true);
-		$criteria->compare('contribution',$this->contribution,true);
-		$criteria->compare('impact_value',$this->impact_value,true);
-		$criteria->compare('innovation_trascen',$this->innovation_trascen,true);
-		$criteria->compare('transfer_mechanism',$this->transfer_mechanism,true);
-		$criteria->compare('hr_formation',$this->hr_formation,true);
-		$criteria->compare('economic_support',$this->economic_support);
-		$criteria->compare('path',$this->path,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR participation_type LIKE CONCAT('%', :searchValue , '%') OR beneficiary LIKE CONCAT('%', :searchValue , '%') OR organization LIKE CONCAT('%', :searchValue , '%') OR  entity LIKE CONCAT('%', :searchValue , '%') OR sector LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}		
+	
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -166,15 +151,16 @@ class Software extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	protected  function beforeSave()
-	{
-		$this->end_date = DateTime::createFromFormat('d/m/Y',$this->end_date)->format('Y-m-d');
-		return parent::beforeSave();
-	}
 
-	protected function afterFind()
-	{
-		$this->end_date = DateTime::createFromFormat('Y-m-d', $this->end_date)->format('d/m/Y');
-		return parent::afterFind();
-	}
+	protected function beforeSave()
+    {
+			$this->end_date = DateTime::createFromFormat('d/m/Y', $this->end_date)->format('Y-m-d');
+        	return parent::beforeSave();
+    }
+
+   	protected function afterFind()
+    {
+       		$this->end_date = DateTime::createFromFormat('Y-m-d', $this->end_date)->format('d/m/Y');
+     		return parent::afterFind();
+    }
 }

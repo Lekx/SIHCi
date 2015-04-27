@@ -1,4 +1,19 @@
+
+
 <?php
+
+/**
+ * This is the model class for table "postdegree_graduates".
+ *
+ * The followings are the available columns in table 'postdegree_graduates':
+ * @property integer $id
+ * @property integer $id_curriculum
+ * @property string $fullname
+ * @property string $creation_date
+ *
+ * The followings are the available model relations:
+ * @property Curriculum $idCurriculum
+ */
 
 class PostdegreeGraduates extends CActiveRecord
 {
@@ -17,11 +32,14 @@ class PostdegreeGraduates extends CActiveRecord
 	
 	public function rules()
 	{
-		
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+
 		return array(
 			array('id_curriculum, fullname', 'required'),
 			array('id_curriculum', 'numerical','integerOnly'=>true),
 			array('fullname', 'length', 'max'=>70),
+			array('creation_date', 'safe'),
 		    array('id, id_curriculum, fullname', 'safe', 'on'=>'search'),
 		);
 	}
@@ -30,7 +48,7 @@ class PostdegreeGraduates extends CActiveRecord
 	{
 		
 		return array(
-					
+			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),			
 		);
 	}
 
@@ -40,6 +58,7 @@ class PostdegreeGraduates extends CActiveRecord
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
 			'fullname' => 'Nombre Completo del graduado',
+			'creation_date' => 'Creation Date',
 		);
 	}
 

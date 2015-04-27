@@ -3,24 +3,26 @@
 /* @var $model Jobs */
 /* @var $form CActiveForm */
 ?>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Jobs_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-</script>
 <div class="form">
+<script >
+	
+	$(document).ready(function() {
+    $('#rud').show(); 
+    $('#unitHospital').change(function(){
 
+        if($('#unitHospital').val() == 'NA') {
+            $('#rud').hide(); 
+        } else {
+            $('#rud').show(); 
+        } 
+         if($('#unitHospital').val() == 'Hospital Civil Dr. Juan I. Menchaca' || $('#unitHospital').val() == 'Hospital Civil Fray Antonio Alcalde') {
+         	   $('#organization').hide();             
+        } else {
+            $('#organization').show(); 
+        } 
+    });
+});
+</script>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'jobs-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -29,11 +31,27 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
+
+	<div class="row">
+		<?php echo $form->dropDownList($model,'hospital_unit',array('NA'=>'NA','Hospital Civil Dr. Juan I. Menchaca'=>'Hospital Civil Dr. Juan I. Menchaca',
+																	'Hospital Civil Fray Antonio Alcalde'=>'Hospital Civil Fray Antonio Alcalde'), 
+		                                                       array('id'=>'unitHospital', 'prompt'=>'Unidad Hospitalaria','title'=>'Unidad Hospitalaria','options' => array(''=>array('selected'=>true))), 
+		                                                       array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->error($model,'hospital_unit'); ?>
+
+	</div>
 	
 	<div class="row">
 		
-		<?php echo $form->textField($model,'organization',array( 'title'=>'Organización','size'=>60,'maxlength'=>100, 'placeholder'=>'Organización')); ?>
-		<?php echo $form->error($model,'organization'); ?>
+		<?php 
+		if ($model->hospital_unit == "NA") {
+
+			echo $form->textField($model,'organization',array('id'=>'organization', 'title'=>'Organización','size'=>60,'maxlength'=>100, 'placeholder'=>'Organización')); 
+			 echo $form->error($model,'organization'); 
+		}
+
+		?>
+
 	</div>
 
 	<div class="row">
@@ -104,18 +122,13 @@
 		<?php echo $form->error($model,'start_year'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->dropDownList($model,'hospital_unit',array('NA'=>'NA','Hospital Civil Dr. Juan I. Menchaca'=>'Hospital Civil Dr. Juan I. Menchaca',
-																	'Hospital Civil Fray Antonio Alcalde'=>'Hospital Civil Fray Antonio Alcalde'), 
-		                                                       array( 'prompt'=>'Unidad Hospitalaria','title'=>'Mes de Inicio','options' => array(''=>array('selected'=>true))), 
-		                                                       array('size'=>10,'maxlength'=>10),
-		                                                       array('placeholder'=>'Mes de Inicio')); ?>
-		<?php echo $form->error($model,'hospital_unit'); ?>
-
-	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'rud',array( 'title'=>'RUD', 'size'=>50,'maxlength'=>50, 'placeholder'=>'RUD')); ?>
+
+		<?php if ($model->hospital_unit!="NA") {
+			echo $form->textField($model,'rud',array('id'=>'rud', 'title'=>'RUD', 'size'=>50,'maxlength'=>50, 'placeholder'=>'RUD'));
+			}
+		  ?>
 		<?php echo $form->error($model,'rud'); ?>
 	</div>
 

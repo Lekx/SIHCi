@@ -60,23 +60,35 @@ class PressNotesController extends Controller
 	public function actionCreate()
 	{
 		$model=new PressNotes;
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		$model->id_curriculum = $id_curriculum->id; 
+
+		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['PressNotes']))
 		{
 			$model->attributes=$_POST['PressNotes'];
+			$model->id_curriculum = $id_curriculum->id;
+			  
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
 	     	
 	     	if($model->save())
-	     	{    
-				$this->redirect(array('view','id'=>$model->id));
-			}			
+			{
+		    	echo CJSON::encode(array('status'=>'success'));
+		    	Yii::app()->end();
+		    }	
+		    else 
+	    	{
+     			$error = CActiveForm::validate($model);
+                if($error!='[]')
+                   echo $error;
+                Yii::app()->end();
+	        }		
  	
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model));
 	}
 
 	/**
@@ -96,14 +108,21 @@ class PressNotesController extends Controller
 		{
 			$model->attributes=$_POST['PressNotes'];
 			if($model->save())
-			{
-				$this->redirect(array('view','id'=>$model->id));
-			}	
+     		{
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**
@@ -112,7 +131,7 @@ class PressNotesController extends Controller
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	//DP03-Eliminar registro 
-    public function actionDelete($id)
+  	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
 
@@ -127,10 +146,7 @@ class PressNotesController extends Controller
 	//DP04-Desplegar registro
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PressNotes');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

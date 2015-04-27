@@ -8,18 +8,19 @@
 <div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'searchValue',
 	'action'=>Yii::app()->createUrl($this->route),
+	'enableAjaxValidation'=>true,
 	'method'=>'get',
 )); ?>
 	
-	<fieldset>
+	<div class="row">
 		
-		<legend>Búsqueda por:</legend>		
-		<?php echo $form->textField($model,'owner',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Ejemplo: Ricardo')); ?>	
-		
+		<legend>Búsqueda por:</legend>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
 
-	</fieldset>
+	</div>
 		
 
 <?php $this->endWidget(); ?>
