@@ -75,7 +75,8 @@
 		    'attribute' => 'validity_date_start',
 		    'htmlOptions' => array(
 		    		'size' => '10',         
-		        	'maxlength' => '10', 
+		        	'maxlength' => '10',
+		        	'readOnly'=>true, 
 		        	'placeholder'=>"Fecha de Inicio"   
 		    ),
 		));
@@ -92,7 +93,8 @@
 		    'attribute' => 'validity_date_end',
 		    'htmlOptions' => array(
 		    		'size' => '10',         
-		        	'maxlength' => '10', 
+		        	'maxlength' => '10',
+		        	'readOnly'=>true, 
 		        	'placeholder'=>"Fecha Final"   
 		    ),
 		));

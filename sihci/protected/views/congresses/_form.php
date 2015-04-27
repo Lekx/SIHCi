@@ -81,7 +81,8 @@
 	                'pluginOptions' => array(
 	                    'country' => '',
 	                    'language' => 'es_ES',
-	                    'flags' => true
+	                    'flags' => true,
+	                
 	                )
 	            )
 	        );

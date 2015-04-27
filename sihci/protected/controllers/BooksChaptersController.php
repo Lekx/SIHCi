@@ -17,7 +17,8 @@ class BooksChaptersController extends Controller
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
-	}	
+	}
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -85,7 +86,8 @@ class BooksChaptersController extends Controller
  					$model->url_doc->saveAs($path.'Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
 		            $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();    
 	                 
-			               if($model->save()){			              
+			               if($model->save()){
+			               		              
 					 			$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
@@ -102,28 +104,28 @@ class BooksChaptersController extends Controller
 		                    		$modelAuthors->save();
 			              	 }	
 			               	$this->redirect(array('admin','id'=>$model->id));
-			              	
 
 			               }		   
-        }
+        		}
         }
 
         $this->render('create',array(
             'model'=>$model,'modelAuthors'=>$modelAuthors,
         ));
     }
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	 public function actionUpdate($id)
-    {
-        $model=$this->loadModel($id);
-        $modelAuthors=BooksChaptersAuthors::model()->findAll('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$id));
-       
-        // Uncomment the following line if AJAX validation is needed
-        $this->performAjaxValidation($model); 
+	public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+        $modelAuthors=BooksChaptersAuthors::model()->find('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$id));
+      
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model); 
 
         if(isset($_POST['BooksChapters']))
         {
@@ -138,15 +140,14 @@ class BooksChaptersController extends Controller
 	               $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
                         
             if($model->save()){
-
-            					$names = $_POST['names'];
+            					/*$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];
+					            $position = $_POST['positions'];*/
 					            
              					 foreach($_POST['names'] as $key => $names){
-					               	unset($modelAuthors);
-					               	$modelAuthors = new BooksChaptersAuthors;
+					               //	unset($modelAuthors);
+					              // 	$modelAuthors = new BooksChaptersAuthors;
 					               	$modelAuthors->id_books_chapters = $model->id;
 					       			$modelAuthors->names = $names;
 					        		$modelAuthors->last_name1 = $last_name1[$key];
@@ -161,7 +162,7 @@ class BooksChaptersController extends Controller
         }
 
         $this->render('update',array(
-            'model'=>$model,'modelAuthors'=>$modelAuthors,
+            'model'=>$model,'modelAuthors'=>$modelAuthors
         ));
     }
 	/**
@@ -172,7 +173,7 @@ class BooksChaptersController extends Controller
 	public function actionDelete($id)
 	{
 		BooksChaptersAuthors::model()->deleteAll("id_books_chapters =".$id );
-        $this->loadModel($id)->delete();
+		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -194,7 +195,7 @@ class BooksChaptersController extends Controller
 	 * Manages all models.
 	 */
 	public function actionAdmin()
-	{ 
+	{
 		$model=new BooksChapters('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['BooksChapters']))
@@ -215,8 +216,6 @@ class BooksChaptersController extends Controller
 	public function loadModel($id)
 	{
 		$model=BooksChapters::model()->findByPk($id);
-	
-
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -231,6 +230,14 @@ class BooksChaptersController extends Controller
 		if(isset($_POST['ajax']) && $_POST['ajax']==='books-chapters-form')
 		{
 			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+	}
+	protected function performAjaxValidationAuthors($modelAuthors)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='books-chapters-form')
+		{
+			echo CActiveForm::validate($modelAuthors);
 			Yii::app()->end();
 		}
 	}

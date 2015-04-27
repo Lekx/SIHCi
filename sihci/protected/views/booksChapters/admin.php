@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Capitulo', 'url'=>array('index')),
-	array('label'=>'Crear Capitulo', 'url'=>array('create')),
+	//array('label'=>'List BooksChapters', 'url'=>array('index')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,13 +26,14 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administar Capítulos de Libros</h1>
+<h1>Capítulos de libros</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
+
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-chapters-grid',
@@ -45,13 +46,13 @@ $('.search-form form').submit(function(){
 		//'id_curriculum',
 		array('name'=>'Capítulo de Libro','type'=>'html','id'=>'chapter_title','value'=>'CHtml::encode($data->chapter_title)'),
 		array('name'=>'Título de Libro','type'=>'html','id'=>'book_title','value'=>'CHtml::encode($data->book_title)'),
-		'publishing_year',
+		array('name'=>'Año de publicación','type'=>'html','id'=>'publishing_year','value'=>'CHtml::encode($data->publishing_year)'),
 		array('name'=>'Editores','type'=>'html','id'=>'publishers','value'=>'CHtml::encode($data->publishers)'),
 		'editorial',
-		'volume',
-		'pages',
-		'citations',
-		'total_of_authors',
+		//'volume',
+		//'pages',
+		//'citations',
+		//'total_of_authors',
 		'area',
 		'discipline',
 		'subdiscipline',

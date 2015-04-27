@@ -8,7 +8,7 @@
  * @property integer $id_curriculum
  * @property string $chapter_title
  * @property string $book_title
- * @property string $publishing_year
+ * @property integer $publishing_year
  * @property string $publishers
  * @property string $editorial
  * @property string $volume
@@ -120,7 +120,7 @@ class BooksChapters extends CActiveRecord
 
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%')OR publishing_year LIKE CONCAT('%', :searchValue , '%') ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
 		/*$criteria->compare('id',$this->id);
@@ -156,16 +156,5 @@ class BooksChapters extends CActiveRecord
 		return parent::model($className);
 	}
 
-		protected function beforeSave()
-    {
-
-			$this->publishing_year = DateTime::createFromFormat('d/m/Y', $this->publishing_year)->format('Y-m-d');
-	        return parent::beforeSave();
-    }
-
-    	protected function afterFind()
-    {
-       		$this->publishing_year = DateTime::createFromFormat('Y-m-d', $this->publishing_year)->format('d/m/Y');
-     		return parent::afterFind();
-    }
+	
 }

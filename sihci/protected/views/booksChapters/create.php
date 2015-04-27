@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Capitulos', 'url'=>array('index')),
-	array('label'=>'Administrar Capitulos', 'url'=>array('admin')),
+	//array('label'=>'List BooksChapters', 'url'=>array('index')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Crear Capítulos</h1>
+<h1>Capítulos de libros</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model,'modelAuthors'=>$modelAuthors)); ?>
