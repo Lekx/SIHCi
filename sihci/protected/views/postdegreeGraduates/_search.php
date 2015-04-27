@@ -15,10 +15,7 @@
 
 		<legend> Búsqueda por</legend>
 			<?php echo $form->textField($model,'fullname',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion')); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Buscar'); ?>
+			<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

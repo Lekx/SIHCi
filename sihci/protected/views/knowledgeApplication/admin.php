@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar Aplicación del Conocimiento:</h1>
+<h1>Aplicación del Conocimiento</h1>
 
 
 <div class="search-form" style="display:block">

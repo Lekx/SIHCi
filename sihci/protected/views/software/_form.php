@@ -13,7 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
-	//'enableClientValidation'=>true,
+	'enableClientValidation'=>true,
 	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'clientOptions'=>array('validateOnSubmit'=>true),
 	
@@ -27,21 +27,17 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'country'); ?>
 		<?php
-	        $this->widget(
-	            'yiiwheels.widgets.formhelpers.WhCountries',
-	            array(
-					'name' =>'Software[country]',
-	                'id' => 'Software_country',
-	                'value' => 'Mexico',
-	                'useHelperSelectBox' => true,
-	                'pluginOptions' => array(
-	                    'country' => '',
-	                    'language' => 'es_ES',
-	                    'flags' =>true
-	                )
-	            )
-	        );
-	    ?>
+			$this->widget('ext.CountrySelectorWidget', 
+				array(
+				    'value' => $model->country,
+				    'name' => Chtml::activeName($model, 'country'),
+				    'id' => Chtml::activeId($model, 'country'),
+				    'useCountryCode' => false,
+				    'defaultValue' => 'Mexico',
+				    'firstEmpty' => false,
+			    )
+			);
+		?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
@@ -92,18 +88,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'end_date'); ?>
-		<?php
-			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model' => $model,
-			    'language'=> 'es',
-			    'attribute' => 'end_date',
-			    'htmlOptions' => array(
-			    	    'dateFormat'=>'d/m/Y',
-			    		'size' => '10',         
-			        	'maxlength' => '10', 
-			        	'placeholder'=>'Fecha de termino',
-			    ),
-			));
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		    'model' => $model,
+		    'language'=> 'es',
+		    'attribute' => 'end_date',
+		    'htmlOptions' => array(
+		    	    'dateFormat'=>'d/m/Y',
+		    		'size' => '10',         
+		    		'readOnly'=>true,
+		        	'placeholder'=>"Fecha de termino",
+		    ),
+		));
 		?>
 		<?php echo $form->error($model,'end_date'); ?>
 	</div>
@@ -291,19 +286,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'path'); ?>
-		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->FileField($model,'path'); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
 
 	<div class="row buttons">
-	 <?php echo CHtml::ajaxSubmitButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('software/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	<?php  echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('software/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
-							'dataType'=>'json',
+        					'dataType'=>'json',
                      		'type'=>'post',
                      		'success'=>'function(data) 
                      		 {
-		                                      
+		                        
 		                        if(data.status=="success")
 		                        {
 		                           	alert("Registro realizado con éxito");
@@ -315,12 +310,14 @@
 			                    	alert("Complete los campos con *");   
 			                    }       
 		                  	}',                            
-                        )); 
-        ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/software/admin')); ?>
+                        ));  
+       ?>  
+		 <?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';?>
+       	<?php echo CHtml::link('Cancelar', array('/software/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+

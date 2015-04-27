@@ -117,10 +117,7 @@ class PostdegreeGraduatesController extends Controller
 	//GP04-Listar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PostdegreeGraduates');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	//GP05-Desplegar-datos GP06-Barra-de-Busqueda

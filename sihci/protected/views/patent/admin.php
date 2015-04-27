@@ -6,8 +6,8 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 ); 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar Registro de propiedad intelectual: Patentes</h1>
+<h1>Propiedad intelectual: Patentes</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(

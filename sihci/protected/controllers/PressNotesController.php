@@ -131,7 +131,7 @@ class PressNotesController extends Controller
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	//DP03-Eliminar registro 
-    public function actionDelete($id)
+  	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
 
@@ -146,10 +146,7 @@ class PressNotesController extends Controller
 	//DP04-Desplegar registro
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PressNotes');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

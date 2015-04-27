@@ -8,20 +8,20 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 	//array('label'=>'Desplegar', 'url'=>array('index')),
 	//array('label'=>'Modificar', 'url'=>array('update', 'id'=>$model->id)),
 	//array('label'=>'Eliminar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta usted seguro de eliminar este registro?')),
 );
 ?>
 
-<h1>Registro con fecha 	<?php echo var_export(substr($model->creation_date, 0, 10), true).PHP_EOL;?></h1>
+<h1>Registro <?php echo $model->title ?></h1>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'id_curriculum',
+		/*'id',
+		'id_curriculum',*/
 		'country',
 		'participation_type',
 		'name',

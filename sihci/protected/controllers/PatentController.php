@@ -152,10 +152,7 @@ class PatentController extends Controller
     //RP04-Desplegar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Patent');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

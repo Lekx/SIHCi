@@ -151,10 +151,7 @@ class KnowledgeApplicationController extends Controller
 	//AC04-Desplagar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('KnowledgeApplication');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

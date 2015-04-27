@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar Graduados de posgrado:</h1>
+<h1>Graduados de posgrado</h1>
 
 
 <div class="search-form" style="display:block">
@@ -41,6 +41,7 @@ $('.search-form form').submit(function(){
 	
 	'columns'=>array(
 		'fullname',
+		'creation_date',		
 		/*'id',
 		'id_curriculum',*/
 		array(

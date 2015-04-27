@@ -106,12 +106,33 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'presentation_date'); ?>
+			<?php
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'model' => $model,
+			    'language'=> 'es',
+			    'attribute' => 'presentation_date',
+			    'htmlOptions' => array(
+			    	    'dateFormat'=>'d/m/Y',
+			    		'size' => '10',         
+			   			 'readOnly'=>true,
+			        	'maxlength' => '10', 
+			        	
+			        	'placeholder'=>"Fecha de presentación",
+			    ),
+			));
+		?>
+		<?php echo $form->error($model,'presentation_date'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'consession_date'); ?>
 		<?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'model' => $model,
 			    'language'=> 'es',
 			    'attribute' => 'consession_date',
+			    'readOnly'=>true,
 			    'htmlOptions' => array(
 			    	    'dateFormat'=>'d/m/Y',
 			    		'size' => '10',         
@@ -122,30 +143,13 @@
 		?>
 		<?php echo $form->error($model,'consession_date'); ?>
 	</div>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'record'); ?>
 		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>250,'placeholder'=>'Expediente')); ?>
 		<?php echo $form->error($model,'record'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'presentation_date'); ?>
-			<?php
-			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model' => $model,
-			    'language'=> 'es',
-			    'attribute' => 'presentation_date',
-			    'htmlOptions' => array(
-			    	    'dateFormat'=>'d/m/Y',
-			    		'size' => '10',         
-			        	'maxlength' => '10', 
-			        	'placeholder'=>"Fecha de presentación",
-			    ),
-			));
-		?>
-		<?php echo $form->error($model,'presentation_date'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'international_clasification'); ?>
@@ -182,31 +186,36 @@
 		<?php echo $form->textField($model,'resource_operator',array('size'=>60,'maxlength'=>70,'placeholder'=>'Quién lo explota')); ?>
 		<?php echo $form->error($model,'resource_operator'); ?>
 	</div>
+	
+	<div class="row buttons">
+		<?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	        				array(
+								'dataType'=>'json',
+	                     		'type'=>'post',
+	                     		'success'=>'function(data) 
+	                     		 {
+			                                      
+			                         if(data.status=="success")
+			                         {
+					                     alert("Registro realizado con éxito");
+					                     $("#patent-form")[0].reset();
+	   									 window.location.href ="'.Yii::app()->createUrl('patent/admin').'";
+			                         }		                         
+			                         else
+			                         {
+				                     	alert("Complete los campos con *");   
+				                     }       
+			                  	}',                    
+			                    
+	                        )); 
+	        ?>
+			<?php 
+				if($model->isNewRecord)
+				   echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+			?>
+	       	<?php echo CHtml::link('Cancelar',array('/patent/admin')); ?>
 
-	<?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="success")
-		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#patent-form")[0].reset();
-   									 window.location.href ="'.Yii::app()->createUrl('patent/admin').'";
-		                         }		                         
-		                         else
-		                         {
-			                     	alert("Complete los campos con *");   
-			                     }       
-		                  	}',                    
-		                    
-                        )); 
-        ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/patent/admin')); ?>
-
+       	</div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

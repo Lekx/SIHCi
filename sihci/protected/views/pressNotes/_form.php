@@ -26,7 +26,6 @@
 		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->dropDownList($model,'type',
 			array(
-				''=>'', 
 				'Demostraciones'=>'Demostraciones',
 				'Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologi',
 				'Ferias Empresariales'=>'Ferias Empresariales',
@@ -39,7 +38,7 @@
 				'Televisión'=>'Televisión',
 				'Vidos'=>'Vidos'
 			),
-			array('setOnEmpty'=>'true', 'value'=>'null'));		  
+			array('prompt'=>'Tipo de participación'));
 		?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
@@ -48,7 +47,6 @@
 		<?php echo $form->labelEx($model,'directed_to'); ?>
 		<?php echo $form->dropDownList($model,'directed_to',
 		    array(
-				''=>'',
 				'Empresarios'=>'Empresarios',
 				'Estudiantes'=>'Estudiantes',
 				'Funcionarios'=>'Funcionarios',
@@ -58,7 +56,7 @@
 				'Sector Público'=>'Sector Público',
 				'Sector Social'=>'Sector Social'
 			),
-		    array('setOnEmpty'=>'true', 'key'=>'null')); 
+		    array('prompt'=>'Dirigido a'));
 		?>
 		<?php echo $form->error($model,'directed_to'); ?>
 	</div>
@@ -72,6 +70,7 @@
 		    'htmlOptions' => array(
 		    	    'dateFormat'=>'d/m/Y',
 		    		'size' => '10',         
+		    		'readOnly'=>true,
 		        	'maxlength' => '10', 
 		        	'placeholder'=>"Fecha de la publicación",
 		    ),
@@ -102,31 +101,34 @@
 		 ?>
 		<?php echo $form->error($model,'is_national'); ?>
 	</div>
-		
+	
 	<div class="row buttons">
-        <?php echo CHtml::ajaxSubmitButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('pressNotes/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('pressNotes/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
-							'dataType'=>'json',
+        					'dataType'=>'json',
                      		'type'=>'post',
                      		'success'=>'function(data) 
                      		 {
-		                                      
-		                         if(data.status=="success")
-		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#software-form")[0].reset();
-		                         }		                         
-		                         else
-		                         {
-			                     	alert("Complete los campos con *");   
-			                     }       
-		                  	}',                    
-		                    
+		                       
+		                        if(data.status=="success")
+		                        {
+		                           	alert("Registro realizado con éxito");
+				                    $("#press-notes-form")[0].reset();
+									window.location.href ="'.Yii::app()->createUrl('pressNotes/admin').'";		                         
+								}		                         
+		                        else
+		                        {
+			                    	alert("Complete los campos con *");   
+			                    }       
+		                  	}',                            
                         )); 
         ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/pressNotes/admin')); ?>
-	</div>
+		<?php  if($model->isNewRecord) 
+			    	echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">'; ?>	
+       	<?php echo CHtml::link('Cancelar', array('/pressNotes/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	
+	</div>	
+
 	
 <?php $this->endWidget(); ?>
 

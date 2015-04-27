@@ -11,6 +11,10 @@
  * @property string $term3
  * @property string $term4
  * @property string $term5
+ * @property string $creation_date
+ *
+ * The followings are the available model relations:
+ * @property Curriculum $idCurriculum
  */
 class KnowledgeApplication extends CActiveRecord
 {
@@ -35,6 +39,7 @@ class KnowledgeApplication extends CActiveRecord
 			array('id_curriculum, term1, term2, term3, term4, term5', 'required'),
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
 			array('searchValue','length', 'max'=>70),
+			array('creation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, term1, term2, term3, term4, term5 , searchValue', 'safe', 'on'=>'search'),
@@ -49,6 +54,7 @@ class KnowledgeApplication extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),
 		);
 	}
 
@@ -65,6 +71,7 @@ class KnowledgeApplication extends CActiveRecord
 			'term3' => 'Pregunta 3',
 			'term4' => 'Pregunta 4',
 			'term5' => 'Pregunta 5',
+			'creation_date' => 'Creation Date'
 		);
 	}
 
@@ -117,5 +124,10 @@ class KnowledgeApplication extends CActiveRecord
 		return parent::model($className);
 	}
 
+	protected function afterFind()
+    {
+   		$this->creation_date = DateTime::createFromFormat('Y-m-d H:i:s', $this->creation_date)->format('d/m/Y');
+   		return parent::afterFind();
+    }
    
 }

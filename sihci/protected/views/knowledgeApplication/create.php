@@ -8,12 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>Crear Aplicación del Conocimiento</h1>
+<h1>Crear registro</h1>
 
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -9,11 +9,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	//array('label'=>'Desplegar', 'url'=>array('index')),
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+
 );
 ?>
-<h1>Registro con fecha 	<?php echo var_export(substr($model->creation_date, 0, 10), true).PHP_EOL;?></h1>
+<h1>Modificar registro <?php echo $model->title ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

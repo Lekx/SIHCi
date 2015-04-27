@@ -52,11 +52,12 @@ class Patent extends CActiveRecord
 			array('international_clasification', 'length', 'max'=>100),
 			array('owner, resource_operator', 'length', 'max'=>70),
 			array('consession_date, resumen', 'safe'),
-			//array('presentation_date','compare','compareAttribute'=>'consession_date','operator'=>'>='),	
+			//array('consession_date','compare','compareValue'=>'presentation_date','operator'=>'>=','message'=>"La fecha de presentación no puede ser mayor a la fecha de concesión"),	
+			//array('consession_date','compare','compareAttribute'=>'presentation_date','operator'=>'>=','message'=>"La fecha de presentación no puede ser mayor a la fecha de concesión"),	
+			array('presentation_date','compareDate','type'=>'date','dateFormat'=>'d/m/Y'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),
-			array('name','filter','filter'=>'strtoupper'),
 			array('id, id_curriculum, country, participation_type, name, state, application_type, application_number, patent_type, consession_date, record, presentation_date, international_clasification, title, owner, resumen, industrial_exploitation, resource_operator, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
@@ -89,7 +90,7 @@ class Patent extends CActiveRecord
 			'application_type' => 'Tipo de aplicación',
 			'application_number' => 'Número de registro o Número de solicitud',
 			'patent_type' => 'Tipo de patente',
-			'consession_date' => 'Fecha de concesión ',
+			'consession_date' => 'Fecha de concesión',
 			'record' => 'Expediente',
 			'presentation_date' => 'Fecha de presentación',
 			'international_clasification' => 'Clasificación internacional',
@@ -173,5 +174,16 @@ class Patent extends CActiveRecord
    		$this->consession_date = DateTime::createFromFormat('Y-m-d', $this->consession_date)->format('d/m/Y');
    		return parent::afterFind();
     }
+
+    public function compareDate($attribute,$params) 
+    {	
+		if(!empty($this->attributes['presentation_date'])) 
+		{
+			if(strtotime($this->attributes['presentation_date']) < strtotime($this->attributes['consession_date'])) 
+			{
+				$this->addError($attribute,'La fecha de presentación no puede ser mayor a la fecha de concesión');
+			}
+		}
+	}
 	
 }

@@ -44,6 +44,7 @@ class SoftwareController extends Controller
 			),
 		);
 	}
+
 	
 	/**
 	 * Creates a new model.
@@ -64,24 +65,21 @@ class SoftwareController extends Controller
 			$model->attributes=$_POST['Software'];
 			$model->id_curriculum = $id_curriculum->id;  
             $model->path = CUploadedFile::getInstanceByName('Software[path]');
-
-            
+			  
 			   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
-	           	
+	          
 	            if(!is_dir($urlFile))          
 	              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
-
-	            if(isset($path))
-	            {  
-					$model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
-					$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();
-				}
-
+				
+								
+					$model->path->saveAs($urlFile.'fileSowtfware'.$model->title.'.'.$model->path->getExtensionName());
+					$model->path='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.$model->title.'.'.$model->path->getExtensionName();    
+				
 				if($model->save())
 				{
 				   	echo CJSON::encode(array('status'=>'success'));
 			    	Yii::app()->end();
-			    }	
+			    }			    	
 			    else 
 		    	{
 	     			$error = CActiveForm::validate($model);
@@ -114,13 +112,14 @@ class SoftwareController extends Controller
 			$model->attributes=$_POST['Software'];
     		$model->path = CUploadedFile::getInstanceByName('Software[path]');
 
-    		    		                
+    		if($model->path)
+    		{                
 	            $model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
-	         	$path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
-	        
+	         	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
+	        }
 
 			if($model->save())
-     		{	         	
+     		{
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
@@ -160,16 +159,10 @@ class SoftwareController extends Controller
 	//SO04-Desplegar- registro
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Software');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
-	/**
-	 * Manages all models.
-	 */
-
+	
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed

@@ -50,6 +50,7 @@
 			    'htmlOptions' => array(
 			    	    'dateFormat'=>'d/m/Y',
 			    		'size' => '10',         
+			    		'readOnly'=>true,
 			        	'maxlength' => '10', 
 			        	'placeholder'=>"Fecha de solicitud",
 			    ),
@@ -97,7 +98,7 @@
 	</div>
 
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('copyrights/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('copyrights/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
@@ -108,7 +109,8 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#copyrights-form")[0].reset();
-				                     window.location.href ="'.Yii::app()->createUrl('copyrights/admin').'";
+   				                     window.location.href ="'.Yii::app()->createUrl('copyrights/admin').'";		                         
+
 		                         }		                         
 		                         else
 		                         {
@@ -118,8 +120,10 @@
 		                    
                         )); 
         ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/copyrights/admin')); ?>
+        <?php  if($model->isNewRecord) 
+			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+		?>
+       	<?php echo CHtml::link('Cancelar', array('/copyrights/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 		<div class="200">
 		

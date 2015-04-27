@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -20,13 +20,12 @@ $('.search-button').click(function(){
 $('.search-form form').submit(function(){
 	$('#press-notes-grid').yiiGridView('update', {
 		data: $(this).serialize()
-	});()
+	});
 	return false;
 });
 ");
 ?>
-
-<h1>Gestionar Difusión de Prensa:</h1>
+<h1>Difusión de Prensa</h1>
 
 <div class="search-form" style="display:block" >
 <?php $this->renderPartial('_search',array(

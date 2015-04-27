@@ -8,19 +8,19 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 	
 );
 ?>
 
-<h1>Registro <?php echo $model->id; ?></h1>
+<h1>Registro <?php echo $model->title ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'id_curriculum',
+		/*'id',
+		'id_curriculum',*/
 		'type',
 		'directed_to',
 		'date',
