@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Software', 'url'=>array('index')),
-	array('label'=>'Create Software', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,15 +26,9 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Softwares</h1>
+<h1>Propiedad intelectual: Software</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -42,16 +36,25 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'software-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	 'dataProvider'=>$model->search(),
+    'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
+		
+		array('name'=>'Tipo de participación','type'=>'html','id'=>'participation_type','value'=>'CHtml::encode($data->participation_type)'),
+		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('name'=>'Organización','type'=>'html','id'=>'organization','value'=>'CHtml::encode($data->organization)'),
+		array('name'=>'Beneficiario','type'=>'html','id'=>'beneficiary','value'=>'CHtml::encode($data->beneficiary)'),
+		array('name'=>'Sector','type'=>'html','id'=>'sector','value'=>'CHtml::encode($data->sector)'),
+
+		/*
 		'id',
 		'id_curriculum',
 		'country',
 		'participation_type',
 		'title',
 		'beneficiary',
-		/*
 		'entity',
 		'manwork_hours',
 		'end_date',

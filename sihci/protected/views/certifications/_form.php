@@ -13,7 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
-	//'clientOptions'=>array('validateOnSubmit'=>true,)
+	'clientOptions'=>array('validateOnSubmit'=>true,)
 	
 )); ?>
 
@@ -21,29 +21,28 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	
 
 	<div class="row">
-		
+		<?php echo $form->labelEx($model,'folio'); ?>
 		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Folio')); ?>
 		<?php echo $form->error($model,'folio'); ?>
 	</div>
 
 	<div class="row">
-		
+		<?php echo $form->labelEx($model,'Referencia'); ?>
 		<?php echo $form->textField($model,'reference',array('size'=>30,'maxlength'=>30,'placeholder'=>'Referencia')); ?>
 		<?php echo $form->error($model,'reference'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Tipo de Referencia'); ?>
-		<?php echo $form->dropDownList($model, 'reference_type',array(''=>'','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'));?>
+		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'));?>
 		<?php echo $form->error($model,'reference_type'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Especialidad'); ?>
-		<?php echo $form->dropDownList($model,'specialty', array(''=>'','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
+		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
          'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
@@ -85,7 +84,8 @@
 	</div>
 
 	<div class="row">
-		<?php
+		<?php echo $form->labelEx($model,'validity_date_end'); ?>
+		<?php 
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
 		    'language'=> 'es',
@@ -119,6 +119,7 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#certifications-form")[0].reset();
+				                     window.location.href ="'.Yii::app()->createUrl('certifications/admin').'";
 		                         }		                         
 		                         else
 		                         {

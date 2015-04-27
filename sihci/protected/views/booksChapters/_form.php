@@ -373,7 +373,6 @@
 		 <?php echo $form->error($modelAuthors,'position');?>
 			
 	</div>
-
      
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar' && $modelAuthors->isNewRecord ? 'Guardar' : 'Guardar'); ?>

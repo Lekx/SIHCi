@@ -11,23 +11,11 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+  	<div class="row">
 
-	<div class="row">
-		<?php echo $form->label($model,'id_curriculum'); ?>
-		<?php echo $form->textField($model,'id_curriculum'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'fullname'); ?>
-		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70)); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<legend> Búsqueda por</legend>
+			<?php echo $form->textField($model,'fullname',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion')); ?>
+			<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

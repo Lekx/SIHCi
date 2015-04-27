@@ -19,20 +19,36 @@
 		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado"));?>
 		<?php echo $form->error($model,'fullname'); ?>
 	</div>
-
+	
 	<div class="row buttons">
-		<input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
-      	
-      	<script>
-			function validationFrom()
-			{
-				alert("Registro realizado con éxito");
-				return false;
-			}	
+	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('postdegreeGraduates/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito.");
+				                     $("#postdegree-graduates-form")[0].reset();
+				                     window.location.href ="'.Yii::app()->createUrl('postdegreeGraduates/admin').'";		                         
 
-		</script>	
-    </div>
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+		<?php 
+			 if($model->isNewRecord) 
+				 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+		?>	
+       	<?php echo CHtml::link('Cancelar', array('/postdegreeGraduates/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	</div>
 	
 <?php $this->endWidget(); ?>
   

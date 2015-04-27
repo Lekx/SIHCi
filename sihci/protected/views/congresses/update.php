@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Congreso', 'url'=>array('index')),
-	array('label'=>'Crear Congreso', 'url'=>array('create')),
-	array('label'=>'Ver Congreso', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar Congreso', 'url'=>array('admin')),
+	//array('label'=>'Listar Congreso', 'url'=>array('index')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	//array('label'=>'Ver Congreso', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Actualizar Participación en Congresos <?php echo $model->id; ?></h1>
+<h1>Participación en Congresos <?php echo $model->congress; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

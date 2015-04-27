@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PressNotes', 'url'=>array('index')),
-	array('label'=>'Create PressNotes', 'url'=>array('create')),
-	array('label'=>'View PressNotes', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage PressNotes', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	
 );
 ?>
 
-<h1>Update PressNotes <?php echo $model->id; ?></h1>
+<h1>Modificar registro <?php echo $model->title ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

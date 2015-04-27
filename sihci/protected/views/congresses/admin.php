@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Congreso', 'url'=>array('index')),
-	array('label'=>'Crear Congreso', 'url'=>array('create')),
+	//array('label'=>'Listar Congreso', 'url'=>array('index')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar Participación en Congresos</h1>
+<h1>Participación en Congresos</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
@@ -45,6 +45,7 @@ $('.search-form form').submit(function(){
 		array('name'=>'Título de trabajo','type'=>'html','id'=>'work_title','value'=>'CHtml::encode($data->work_title)'),
 		array('name'=>'Congreso','type'=>'html','id'=>'congress','value'=>'CHtml::encode($data->congress)'),
 		array('name'=>'Tipo','type'=>'html','id'=>'keywords','value'=>'CHtml::encode($data->keywords)'),
+		array('name'=>'Año','type'=>'html','id'=>'year','value'=>'CHtml::encode($data->year)'),
 		
 		//'id',
 		//'id_curriculum',

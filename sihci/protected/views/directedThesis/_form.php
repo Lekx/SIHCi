@@ -16,7 +16,7 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
     
-   
+    
 	<p class="note">Los campos con<span class="required">*</span> son necesarios.</p>
     
 	<?php echo $form->errorSummary($model); ?>
@@ -390,14 +390,15 @@
 	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('directedThesis/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
-                     		'type'=>'post',
+                     		'type'=>'POST',
                      		'success'=>'function(data) 
                      		 {
 		                                      
 		                         if(data.status=="success")
 		                         {
 				                     alert("Registro realizado con éxito");
-				                     $("#directedThesis-form")[0].reset();
+				                     $("#directed-thesis-form")[0].reset();
+				                     window.location.href ="'.Yii::app()->createUrl('directedThesis/admin').'";
 		                         }		                         
 		                         else
 		                         {

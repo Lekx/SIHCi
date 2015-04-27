@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Congreso', 'url'=>array('create')),
-	array('label'=>'Administrar Congreso', 'url'=>array('admin')),
+	array('label'=>'Crear ', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
