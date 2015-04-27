@@ -82,8 +82,7 @@ class CurriculumVitaeController extends Controller
 
 			$curriculum->attributes = $_POST['Curriculum'];
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
-			
-			if ($model->validate()) {
+				
 
 				if($model->photo_url != ''){
 					$model->photo_url->saveAs($path.'/perfil.png');
@@ -94,14 +93,22 @@ class CurriculumVitaeController extends Controller
 				if($model->save()){
 					$curriculum->native_country = $curriculum->native_country;
 					$curriculum->save();
-						$section = "Datos Personales"; //manda parametros al controlador SystemLog
-						$details = "Se han modificado datos personales";
-						$action = "Modificacion";
-						Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-						$this->redirect('personalData');
-				}
+						// $section = "Datos Personales"; //manda parametros al controlador SystemLog
+						// $details = "Se han modificado datos personales";
+						// $action = "Modificacion";
+						// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+						//$this->redirect('personalData');
 				
-			}
+					echo CJSON::encode(array('status'=>'success'));
+	     			Yii::app()->end();
+	     		}else {
+	     			 $error = CActiveForm::validate($model);
+	                 if($error!='[]')
+	                    echo $error;
+	                 Yii::app()->end();
+	     		}
+				
+			
 		}
 		$this->render('personal_data',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
@@ -319,15 +326,24 @@ class CurriculumVitaeController extends Controller
 		{
 			$model->attributes=$_POST['Jobs'];
 			$model->id_curriculum = $curriculum->id;
-			if ($model->hospital_unit=="Hospital Civil Dr. Juan I. Menchaca" || $model->hospital_unit=="Hospital Civil Fray Antonio Alcalde" ) {
+			if ($model->hospital_unit!="NA" ) {
 				$model->organization="OPD Hospital Civil de Guadalajara";
 			}
 			if ($model->save()) {
-				$section = "Datos Laborales"; //manda parametros al controlador SystemLog
-				$details = "Se han modificado datos laborales";
-				$action = "Modificacion";
-				Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-			}
+				// $section = "Datos Laborales"; //manda parametros al controlador SystemLog
+				// $details = "Se han modificado datos laborales";
+				// $action = "Modificacion";
+				// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 
 		}
 		$this->render('jobs',array('model'=>$model,));
@@ -411,6 +427,7 @@ class CurriculumVitaeController extends Controller
 						$emails->type = $getTypeEmail[$key];
 						$emails->save();
 					}	
+			
 			}
 			
 			$typesPhonesNew = $_POST["typesPhones"];
@@ -449,7 +466,14 @@ class CurriculumVitaeController extends Controller
 					$phones->is_primary = $getIsPrimary[$key];
 					$phones->save();
 				}	
-			}	
+				echo CJSON::encode(array('status'=>'success'));
+		    	Yii::app()->end();
+			}else{
+				$error = CActiveForm::validate($model);
+                if($error!='[]')
+                   echo $error;
+                Yii::app()->end();
+			}
 			$this->redirect('phones');
 		}
 		$this->render('phones',array('model'=>$model, 'emails' =>$emails, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,));
