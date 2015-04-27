@@ -13,6 +13,8 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array('validateOnSubmit'=>true)
 )); ?>
 
 	<p class="note">Los campos <span class="required">*</span> son requeridos.</p>
@@ -44,13 +46,12 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'participation_type'); ?>
 		<?php echo $form->dropDownList($model,'participation_type',
-			  array(
-				  		''=>'',
-				  		'Inventor'=>'Inventor',
-				  		'Coinventor'=>'Coinventor'
-				  	)
-			  array('prompt'=>'Tipo de participación')
-			  );
+			  	  array(
+					  		'Inventor'=>'Inventor',
+					  		'Coinventor'=>'Coinventor'	  	
+				  ),				  
+				  array('prompt'=>'Tipo de participación')			  
+			 );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
@@ -65,12 +66,12 @@
 		<?php echo $form->labelEx($model,'state'); ?>
 		<?php echo $form->dropDownList($model,'state',
 				array(
-						''=>'',
 						'En explotación comercial'=>'En explotación comercial',
 						'En trámite'=>'En trámite',
 						'Registrada'=>'Registrada'
-					 )
-				 ); 
+					 ),
+				array('prompt'=>'Estado de la patente')
+			); 
 		?>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
@@ -94,38 +95,14 @@
 		<?php echo $form->labelEx($model,'patent_type'); ?>
 		<?php echo $form->dropDownList($model,'patent_type',
 			   array(
-						''=>'',
 						'Diseño industrial'=>'Diseño industrial',
 						'Modelo de utilidad'=>'Modelo de utilidad',
 						'Patente'=>'Patente'
-					)
+					),
+			   	array('prompt'=>'Tipo de patente')
 				); 
 		?>
 		<?php echo $form->error($model,'patent_type'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'consession_date'); ?>
-		<?php
-			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model' => $model,
-			    'language'=> 'es',
-			    'attribute' => 'consession_date',
-			    'htmlOptions' => array(
-			    	    'dateFormat'=>'d/m/Y',
-			    		'size' => '10',         
-			        	'maxlength' => '10', 
-			        	'placeholder'=>"Fecha de concesión",
-			    ),
-			));
-		?>
-		<?php echo $form->error($model,'consession_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'record'); ?>
-		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>250,'placeholder'=>'Expediente')); ?>
-		<?php echo $form->error($model,'record'); ?>
 	</div>
 
 	<div class="row">
@@ -138,13 +115,41 @@
 			    'htmlOptions' => array(
 			    	    'dateFormat'=>'d/m/Y',
 			    		'size' => '10',         
+			   			 'readOnly'=>true,
 			        	'maxlength' => '10', 
+			        	
 			        	'placeholder'=>"Fecha de presentación",
 			    ),
 			));
 		?>
 		<?php echo $form->error($model,'presentation_date'); ?>
 	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'consession_date'); ?>
+		<?php
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'model' => $model,
+			    'language'=> 'es',
+			    'attribute' => 'consession_date',
+			    'readOnly'=>true,
+			    'htmlOptions' => array(
+			    	    'dateFormat'=>'d/m/Y',
+			    		'size' => '10',         
+			        	'maxlength' => '10', 
+			        	'placeholder'=>"Fecha de concesión",
+			    ),
+			));
+		?>
+		<?php echo $form->error($model,'consession_date'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'record'); ?>
+		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>250,'placeholder'=>'Expediente')); ?>
+		<?php echo $form->error($model,'record'); ?>
+	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'international_clasification'); ?>
@@ -181,24 +186,36 @@
 		<?php echo $form->textField($model,'resource_operator',array('size'=>60,'maxlength'=>70,'placeholder'=>'Quién lo explota')); ?>
 		<?php echo $form->error($model,'resource_operator'); ?>
 	</div>
-
+	
 	<div class="row buttons">
- 	   <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-       <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
+		<?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	        				array(
+								'dataType'=>'json',
+	                     		'type'=>'post',
+	                     		'success'=>'function(data) 
+	                     		 {
+			                                      
+			                         if(data.status=="success")
+			                         {
+					                     alert("Registro realizado con éxito");
+					                     $("#patent-form")[0].reset();
+	   									 window.location.href ="'.Yii::app()->createUrl('patent/admin').'";
+			                         }		                         
+			                         else
+			                         {
+				                     	alert("Complete los campos con *");   
+				                     }       
+			                  	}',                    
+			                    
+	                        )); 
+	        ?>
+			<?php 
+				if($model->isNewRecord)
+				   echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+			?>
+	       	<?php echo CHtml::link('Cancelar',array('/patent/admin')); ?>
 
-		<script>
-
-			function validationFrom()
-			{
-				alert("Registro realizado con éxito");
-				return false;
-			}	
-			
-		</script> 
-       	<?php echo CHtml::link('Cancelar',array('/copyrights/admin')); ?>
-
- 	</div>
-
+       	</div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

@@ -9,11 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear', 'url'=>array('create')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>Modificar Registro #<?php echo $model->id; ?></h1>
-
+<h1>Modificar registro <?php echo $model->title ?></h1>
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
