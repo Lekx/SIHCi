@@ -473,7 +473,7 @@ class CurriculumVitaeController extends Controller
 					$phones->local_area_code = $getLocalAreaCode[$key];
 					$phones->phone_number = $getPhoneNumber[$key];
 					$phones->extension = $getExtension[$key];
-					$phones->is_primary = $getIsPrimary[$key];
+					$phones->is_primary = $getIsPrimary[$key+1];
 					$phones->save();
 				}	
 				echo CJSON::encode(array('status'=>'success'));
