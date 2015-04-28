@@ -151,20 +151,24 @@ class CurriculumVitaeController extends Controller
 					$model = new DocsIdentity;
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['Acta'][0]);
-					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
+					
 				}
 
 				$model->id_curriculum = $curriculum->id;
 				$model->type = "Acta";
 				$model->description = "Acta";
 				$model->doc_id = CUploadedFile::getInstanceByName('Acta');
-				if ($model->validate()) {
+				
+				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['Acta'][1]);
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
 						$reload = true;
 			     		}
-				}
+				}else {
+			 echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 	}     							
 			}
 			
 			if (is_object(CUploadedFile::getInstanceByName('Pasaporte'))) {
@@ -174,20 +178,22 @@ class CurriculumVitaeController extends Controller
 					$model = new DocsIdentity;
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['Pasaporte'][0]);
-					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
 				}
 
 				$model->id_curriculum = $curriculum->id;
 				$model->type = "Pasaporte";
 				$model->description = "Pasaporte";
 				$model->doc_id = CUploadedFile::getInstanceByName('Pasaporte');
-				if ($model->validate()) {
+				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['Pasaporte'][1]);
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
 						$reload = true;
-					}
-				}
+			     		}
+				}else {
+			 	echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 	}
 
 			}
 			
@@ -198,20 +204,22 @@ class CurriculumVitaeController extends Controller
 					$model = new DocsIdentity;
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['CURP'][0]);
-					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
 				}
 
 				$model->id_curriculum = $curriculum->id;
 				$model->type = "CURP";
 				$model->description = "CURP";
 				$model->doc_id = CUploadedFile::getInstanceByName('CURP');
-				if ($model->validate()) {
+				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['CURP'][1]);
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
 						$reload = true;
-					}
-				}
+			     		}
+				}else {
+			 	echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 	}
 
 			}
 			
@@ -222,20 +230,22 @@ class CurriculumVitaeController extends Controller
 					$model = new DocsIdentity;
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['IFE'][0]);
-					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
 				}
 
 				$model->id_curriculum = $curriculum->id;
 				$model->type = "IFE";
 				$model->description = "IFE";
 				$model->doc_id = CUploadedFile::getInstanceByName('IFE');
-				if ($model->validate()) {
+				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['IFE'][1]);
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
 						$reload = true;
-					}
-				}
+			     		}
+				}else {
+			 	echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 	}
 
 			}
 
@@ -463,7 +473,7 @@ class CurriculumVitaeController extends Controller
 					$phones->local_area_code = $getLocalAreaCode[$key];
 					$phones->phone_number = $getPhoneNumber[$key];
 					$phones->extension = $getExtension[$key];
-					$phones->is_primary = $getIsPrimary[$key];
+					$phones->is_primary = $getIsPrimary[$key+1];
 					$phones->save();
 				}	
 				echo CJSON::encode(array('status'=>'success'));

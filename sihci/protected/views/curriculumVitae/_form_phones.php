@@ -336,7 +336,7 @@
 	
 		<?php
 		foreach ($getPhones as $key => $value) {
-
+      echo "<h5>Teléfono:</h5>";
 		echo $form->dropDownList($model,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
@@ -355,14 +355,16 @@
 
 		 echo $form->textField($model,'extension',array('class'=>'phones extension','name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'[Ext]')); 
 		 echo $form->error($model,'extension'); 
-
-		// echo $form->checkBox($model,'is_primary',array('name'=>'getIsPrimary[]','value'=>$getPhones[$key]->is_primary)); 
-		 echo $form->error($model,'is_primary'); 
-         echo $form->radioButton($model,'is_primary' ,array('name'=>'getIsPrimary[]','value'=>$getPhones[$key]->is_primary));
-
+ echo "<br>";
+		echo "Marcar como primario ";
+     echo $form->radioButton($model,'is_primary',array('name'=>'getIsPrimary[]', 'uncheckValue'=>'0', 'checked'=>$getPhones[$key]->is_primary)); 
+      echo $form->error($model,'is_primary'); 
+      echo "<br>";
 		 echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deletePhone', 'id'=>$getPhones[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
 		 echo "</div>";
 		  echo "<hr>";
+
+     
 		}
 		 ?>
 	
