@@ -3,27 +3,11 @@
 /* @var $model Jobs */
 /* @var $form CActiveForm */
 ?>
-<div class="form">
-<script >
-	
-	$(document).ready(function() {
-    $('#rud').show(); 
-     $('#organization').show(); 
-    $('#unitHospital').change(function(){
 
-        if($('#unitHospital').val() == 'NA') {
-            $('#rud').hide(); 
-        } else {
-            $('#rud').show(); 
-        } 
-         if($('#unitHospital').val() != 'NA') {
-         	   $('#organization').hide();             
-        } else {
-            $('#organization').show(); 
-        } 
-    });
-});
-</script>
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
+
+<div class="form">
+
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'jobs-form',
 	// Please note: When you enable ajax validation, make sure the corresponding

@@ -3,18 +3,15 @@
 /* @var $model Addresses */
 /* @var $form CActiveForm */
 ?>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Addresses_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-	
+<script >
+	  function cleanUp(){
+            var text;
+            var result = confirm("¿Está usted seguro de limpiar estos datos?");
+            if (result==true) {
+                $('[id^=Addresses_]').val('');
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
 </script>
 <div class="form">
 

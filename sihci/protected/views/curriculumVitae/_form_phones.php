@@ -1,91 +1,4 @@
-<?php
-/* @var $this PhonesController */
-/* @var $model Phones */
-/* @var $form CActiveForm */
-?>
-    <style type="text/css">  
-        .errors{
-            -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            background: red;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            color: #fff;
-            display: none;
-            font-size: 10px;
-            margin-top: -50px;
-            margin-left: 315px;
-            padding: 10px;
-            position: absolute;
-        }
-    </style>
-	<script>
-	 var validateEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-	 var validateNum = /^[0-9]+$/;
-        $(document).ready(function(){
-            $("#btnCreate").click(function(){
-                
-                var type = $("#typeEmail").val();
-                var mail = $("#mail").val();
- 
-             
-                if(type == ""){
-                    $("#errorType").fadeIn("slow");
-                    return false;
-                }else{
-                    $("#errorType").fadeOut();
 
-                    if(mail == "" || !validateEmail.test(mail)){
-                        $("#errorMail").fadeIn("slow");
-                        return false;
-                    }
-                    else{
-                        $("#errorMail").fadeOut();
-                    }
-                }
- 
-            });//click
-
-             $("#btnCreatePhone").click(function(){
-                
-                var typePhone = $("#typePhone").val();
-                var countryCode = $("#countryCode").val();
- 				var localCode = $('#localCode').val();
- 				var phoneNum = $('#phoneNum').val();
- 
-             
-                if(typePhone == ""){
-                    $("#errorTypePhone").fadeIn("slow");
-                    return false;
-                }else{
-                    $("#errorTypePhone").fadeOut();
-
-                    if(countryCode == "" || !validateNum.test(countryCode)){
-                        $("#errorCountry").fadeIn("slow");
-                        return false;
-                    }else{
-                        $("#errorCountry").fadeOut();
-                        if (localCode == "" || !validateNum.test(localCode)) {
-                        	$('#errorLocal').fadeIn("slow");
-                        	return false;
-                        }else{
-                        	$('#errorLocal').fadeOut();
-                        	if (phoneNum == "" || !validateNum.test(phoneNum)) {
-                        		$('#errorPhone').fadeIn("slow");
-                        		return false;
-                        	}else{
-                        		$('#errorPhone').fadeOut();
-                        	}
-                        }
-                    }
-                }
- 
-            });//click
-
-
-        });//ready
-
-</script>
 <?php
 /* @var $this PhonesController */
 /* @var $model Phones */
@@ -114,91 +27,7 @@
         }
     </style>
 	
-<script>
- var validateEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-	 var validateNum = /^[0-9]+$/;
-        $(document).ready(function(){
-        	 //Emails
-            $("#btnCreate").click(function(){
-                
-                var type = $("#typeEmail").val();
-                var mail = $("#mail").val();
- 
-             
-                if(type == ""){
-                    $("#errorType").fadeIn("slow");
-                    return false;
-                }else{
-                    $("#errorType").fadeOut();
-
-                    if(mail == "" || !validateEmail.test(mail)){
-                        $("#errorMail").fadeIn("slow");
-                        return false;
-                    }
-                    else{
-                        $("#errorMail").fadeOut();
-                    }
-                }
- 
-            });//click
-
-             $("#showForm").on( "click", function() {
-				$('.emails').show(); 
-				$('#hideForm').show();
-				$('#showForm').hide();
-			 });
-			$("#hideForm").on( "click", function() {
-				$('.emails').hide(); 
-				$('#showForm').show();
-			});
-
-			//Phoenes
-			     $("#btnCreatePhone").click(function(){
-                
-                var typePhone = $("#typePhone").val();
-                var countryCode = $("#countryCode").val();
- 				var localCode = $('#localCode').val();
- 				var phoneNum = $('#phoneNum').val();
- 
-             
-                if(typePhone == ""){
-                    $("#errorTypePhone").fadeIn("slow");
-                    return false;
-                }else{
-                    $("#errorTypePhone").fadeOut();
-
-                    if(countryCode == "" || !validateNum.test(countryCode)){
-                        $("#errorCountry").fadeIn("slow");
-                        return false;
-                    }else{
-                        $("#errorCountry").fadeOut();
-                        if (localCode == "" || !validateNum.test(localCode)) {
-                        	$('#errorLocal').fadeIn("slow");
-                        	return false;
-                        }else{
-                        	$('#errorLocal').fadeOut();
-                        	if (phoneNum == "" || !validateNum.test(phoneNum)) {
-                        		$('#errorPhone').fadeIn("slow");
-                        		return false;
-                        	}else{
-                        		$('#errorPhone').fadeOut();
-                        	}
-                        }
-                    }
-                }
- 
-            });//click
-			 $("#showFormPhone").on( "click", function() {
-				$('.phone').show(); 
-				$('#hideFormPhone').show();
-				$('#showFormPhone').hide();
-			 });
-			$("#hideFormPhone").on( "click", function() {
-				$('.phone').hide(); 
-				$('#showFormPhone').show();
-			});
-        });//ready
-</script>
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -213,8 +42,8 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-<input type="button" id="showForm" value="Agregar Email">
-<input class="emails"  type="button" id="hideForm" value="Cancelar">
+<input id="showFormEmail" type="button" value="Agregar Email">
+<input id="hideFormEmail" class="emails"  type="button" value="Cancelar">
 
 
 	<div class="emails">
@@ -227,7 +56,7 @@
 	  			<option value="Campus">Campus</option>
 	  			<option value="otro">otro</option>
 		</select>
-		<div id="errorType" class="errors"> Debe seleccionar Tipo de Email</div>
+		<div id="errorTypeEmail" class="errors"> Debe seleccionar Tipo de Email</div>
 		<br>
 		<input id="mail" title="Email" type="text" name="emails" placeholder="Email">
 		<div id="errorMail" class="errors"> Debe ser un correo válido: ejemplo@mail.com</div><br>
@@ -252,7 +81,7 @@
                                  }       
                             }',                    
                             
-                        ), array('id'=>'btnCreate')); 
+                        ), array('id'=>'btnCreateEmail')); 
             ?>
 		
 	</div>

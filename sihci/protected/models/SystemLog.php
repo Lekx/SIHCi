@@ -108,7 +108,7 @@ class SystemLog extends CActiveRecord {
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
 	}
-	/*protected function beforeSave(){
+	protected function beforeSave(){
 $this->datetime = DateTime::createFromFormat('d/m/Y H:i:s', $this->datetime)->format('Y-m-d H:i:s');
 return parent::beforeSave();
 }
@@ -116,5 +116,5 @@ return parent::beforeSave();
 protected function afterFind(){
 $this->datetime = DateTime::createFromFormat('Y-m-d H:i:s', $this->datetime)->format('d/m/Y H:i:s');
 return parent::beforeSave();
-}*/
+}
 }
