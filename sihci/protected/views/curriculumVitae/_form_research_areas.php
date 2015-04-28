@@ -23,31 +23,7 @@
         }
     </style>
 	
-<script>
-   $(document).ready(function(){
-            $("#btnCreate").click(function(){
-                
-                var research = $("#research").val(); 
-             
-                if(research == ""){
-                    $("#errorResearch").fadeIn("slow");
-                    return false;
-                }else{
-                    $("#errorResearch").fadeOut();
-                 }
- 
-            });//click
-            $("#showForm").on( "click", function() {
-				$('.research').show(); 
-				$('#hideForm').show();
-				$('#showForm').hide();
-			 });
-			$("#hideForm").on( "click", function() {
-				$('.research').hide(); 
-				$('#showForm').show();
-			});
-        });//ready
-</script>
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
 
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -61,8 +37,8 @@
 	
 
 	<?php echo $form->errorSummary($model); ?>
-<input type="button" id="showForm" value="Agregar Línea de Investigación">
-<input class="research" type="button" id="hideForm" value="Cancelar">
+<input id="showFormResearch" type="button"  value="Agregar Línea de Investigación">
+<input id="hideFormResearch" class="research" type="button"  value="Cancelar">
 
 <div class="research">
 	<div class='row'>
@@ -88,7 +64,7 @@
 			                     }       
 		                  	}',                    
 		                    
-                        ), array('id'=>'btnCreate')); 
+                        ), array('id'=>'btnCreateResearch')); 
         ?>
 	</div>
 </div><!-- form -->

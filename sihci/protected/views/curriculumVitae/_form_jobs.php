@@ -3,26 +3,11 @@
 /* @var $model Jobs */
 /* @var $form CActiveForm */
 ?>
-<div class="form">
-<script >
-	
-	$(document).ready(function() {
-    $('#rud').show(); 
-    $('#unitHospital').change(function(){
 
-        if($('#unitHospital').val() == 'NA') {
-            $('#rud').hide(); 
-        } else {
-            $('#rud').show(); 
-        } 
-         if($('#unitHospital').val() == 'Hospital Civil Dr. Juan I. Menchaca' || $('#unitHospital').val() == 'Hospital Civil Fray Antonio Alcalde') {
-         	   $('#organization').hide();             
-        } else {
-            $('#organization').show(); 
-        } 
-    });
-});
-</script>
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
+
+<div class="form">
+
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'jobs-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -44,7 +29,7 @@
 	<div class="row">
 		
 		<?php 
-		if ($model->hospital_unit == "NA") {
+		if ($model->hospital_unit == "NA" || $model->hospital_unit == "" ) {
 
 			echo $form->textField($model,'organization',array('id'=>'organization', 'title'=>'Organización','size'=>60,'maxlength'=>100, 'placeholder'=>'Organización')); 
 			 echo $form->error($model,'organization'); 
@@ -138,7 +123,26 @@
 	</div>
 
 	<div class="row buttons">
-		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
+		 <?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/jobs'), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/jobs').'";
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Debe registrar sus datos");   
+			                     }       
+		                  	}',                    
+		                    
+                      ), array('class'=>'savebutton'));  
+        ?>
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
 		<?php echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>

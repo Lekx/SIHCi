@@ -82,8 +82,7 @@ class CurriculumVitaeController extends Controller
 
 			$curriculum->attributes = $_POST['Curriculum'];
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
-			
-			if ($model->validate()) {
+				
 
 				if($model->photo_url != ''){
 					$model->photo_url->saveAs($path.'/perfil.png');
@@ -94,14 +93,22 @@ class CurriculumVitaeController extends Controller
 				if($model->save()){
 					$curriculum->native_country = $curriculum->native_country;
 					$curriculum->save();
-						$section = "Datos Personales"; //manda parametros al controlador SystemLog
-						$details = "Se han modificado datos personales";
-						$action = "Modificacion";
-						Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-						$this->redirect('personalData');
-				}
+						// $section = "Datos Personales"; //manda parametros al controlador SystemLog
+						// $details = "Se han modificado datos personales";
+						// $action = "Modificacion";
+						// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+						//$this->redirect('personalData');
 				
-			}
+					echo CJSON::encode(array('status'=>'success'));
+	     			Yii::app()->end();
+	     		}else {
+	     			 $error = CActiveForm::validate($model);
+	                 if($error!='[]')
+	                    echo $error;
+	                 Yii::app()->end();
+	     		}
+				
+			
 		}
 		$this->render('personal_data',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
@@ -144,20 +151,24 @@ class CurriculumVitaeController extends Controller
 					$model = new DocsIdentity;
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['Acta'][0]);
-					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
+					
 				}
 
 				$model->id_curriculum = $curriculum->id;
 				$model->type = "Acta";
 				$model->description = "Acta";
 				$model->doc_id = CUploadedFile::getInstanceByName('Acta');
-				if ($model->validate()) {
+				
+				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['Acta'][1]);
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
 						$reload = true;
 			     		}
-				}
+				}else {
+			 echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 	}     							
 			}
 			
 			if (is_object(CUploadedFile::getInstanceByName('Pasaporte'))) {
@@ -167,20 +178,22 @@ class CurriculumVitaeController extends Controller
 					$model = new DocsIdentity;
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['Pasaporte'][0]);
-					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
 				}
 
 				$model->id_curriculum = $curriculum->id;
 				$model->type = "Pasaporte";
 				$model->description = "Pasaporte";
 				$model->doc_id = CUploadedFile::getInstanceByName('Pasaporte');
-				if ($model->validate()) {
+				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['Pasaporte'][1]);
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
 						$reload = true;
-					}
-				}
+			     		}
+				}else {
+			 	echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 	}
 
 			}
 			
@@ -191,20 +204,22 @@ class CurriculumVitaeController extends Controller
 					$model = new DocsIdentity;
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['CURP'][0]);
-					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
 				}
 
 				$model->id_curriculum = $curriculum->id;
 				$model->type = "CURP";
 				$model->description = "CURP";
 				$model->doc_id = CUploadedFile::getInstanceByName('CURP');
-				if ($model->validate()) {
+				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['CURP'][1]);
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
 						$reload = true;
-					}
-				}
+			     		}
+				}else {
+			 	echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 	}
 
 			}
 			
@@ -215,20 +230,22 @@ class CurriculumVitaeController extends Controller
 					$model = new DocsIdentity;
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['IFE'][0]);
-					unlink(YiiBase::getPathOfAlias("webroot").''.$model->doc_id);
 				}
 
 				$model->id_curriculum = $curriculum->id;
 				$model->type = "IFE";
 				$model->description = "IFE";
 				$model->doc_id = CUploadedFile::getInstanceByName('IFE');
-				if ($model->validate()) {
+				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['IFE'][1]);
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
 						$reload = true;
-					}
-				}
+			     		}
+				}else {
+			 	echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 	}
 
 			}
 
@@ -319,15 +336,24 @@ class CurriculumVitaeController extends Controller
 		{
 			$model->attributes=$_POST['Jobs'];
 			$model->id_curriculum = $curriculum->id;
-			if ($model->hospital_unit=="Hospital Civil Dr. Juan I. Menchaca" || $model->hospital_unit=="Hospital Civil Fray Antonio Alcalde" ) {
+			if ($model->hospital_unit!="NA" ) {
 				$model->organization="OPD Hospital Civil de Guadalajara";
 			}
 			if ($model->save()) {
-				$section = "Datos Laborales"; //manda parametros al controlador SystemLog
-				$details = "Se han modificado datos laborales";
-				$action = "Modificacion";
-				Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-			}
+				// $section = "Datos Laborales"; //manda parametros al controlador SystemLog
+				// $details = "Se han modificado datos laborales";
+				// $action = "Modificacion";
+				// Yii::app()->runController('systemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 
 		}
 		$this->render('jobs',array('model'=>$model,));
@@ -411,6 +437,7 @@ class CurriculumVitaeController extends Controller
 						$emails->type = $getTypeEmail[$key];
 						$emails->save();
 					}	
+			
 			}
 			
 			$typesPhonesNew = $_POST["typesPhones"];
@@ -446,10 +473,17 @@ class CurriculumVitaeController extends Controller
 					$phones->local_area_code = $getLocalAreaCode[$key];
 					$phones->phone_number = $getPhoneNumber[$key];
 					$phones->extension = $getExtension[$key];
-					$phones->is_primary = $getIsPrimary[$key];
+					$phones->is_primary = $getIsPrimary[$key+1];
 					$phones->save();
 				}	
-			}	
+				echo CJSON::encode(array('status'=>'success'));
+		    	Yii::app()->end();
+			}else{
+				$error = CActiveForm::validate($model);
+                if($error!='[]')
+                   echo $error;
+                Yii::app()->end();
+			}
 			$this->redirect('phones');
 		}
 		$this->render('phones',array('model'=>$model, 'emails' =>$emails, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,));

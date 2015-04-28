@@ -22,57 +22,7 @@
             display: none;
         }
     </style>
-	<script>
-	 $(document).ready(function(){
-            $("#btnCreate").click(function(){
-                
-             	var grade = $("#grade").val(); 
-             	var title = $("#title").val(); 
-             	var obtentionDate = $("#obtentionDate").val(); 
-             	var thesisTitle = $("#thesisTitle").val();
-             	var institution = $("#institution").val(); 
-
-                if(grade == ""){
-                    $("#errorGrade").fadeIn("slow");
-                    return false;
-                }else{
-                    $("#errorGrade").fadeOut();
-                    if (title == "") {
-                    	$("#errorTitle").fadeIn("slow");
-                    	return false;
-                    }else{
-                    	$("#errorTitle").fadeOut();
-                    	if (obtentionDate == "") {
-                    		$("#errorObtentionDate").fadeIn("slow");
-                    		return false;
-                    	}else{
-                    		$("#errorObtentionDate").fadeOut();
-                    		if (thesisTitle == "") {
-                    			$("#errorThesisTitle").fadeIn("slow");
-                    			return false;
-                    		}else{
-                    			$("#errorThesisTitle").fadeOut();
-                    			if (institution == "") {
-                    				$("#errorInstitution").fadeIn("slow");
-                    				return false;
-                    			}else{
-                    				$("#errorInstitution").fadeOut();
-                    			}
-                    		}
-                    	}
-                    }
-                 }
- 
-            });//click
-            $("#showForm").on( "click", function() {
-				$('.grades').show(); 
-				$('#hideForm').show();
-			 });
-			$("#hideForm").on( "click", function() {
-				$('.grades').hide(); 
-			});
-        });//ready
-</script>
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
 
 <div class="form">
 
@@ -84,8 +34,8 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
-<input type="button" id="showForm" value="Agregar Formación Académica">
-<input class="grades" type="button" id="hideForm" value="Cancelar">
+<input id="showFormGrade" type="button"  value="Agregar Formación Académica">
+<input id="hideFormGrade" class="grades" type="button"  value="Cancelar">
 
 	<div class="grades">
 		<?php
@@ -98,7 +48,6 @@
 					'firstText' => 'Pais',
 
 					)); ?>
-		<div id="errorCountry" class="errors"> Debe seleccionar País </div>
 		<br>
 
 		<select id="grade" name="grade">
@@ -112,7 +61,6 @@
 		
 		
 		<input id="writNumber" type="text" name="writNumber" placeholder="Número de Cédula">
-		<div id="errorWriteNumber" class="errors"> Debe seleccionar Numero de Cédula </div>
 		<br>
 
 		<input id="title" type="text" name="title" placeholder="Tútulo">
@@ -146,7 +94,6 @@
   			<option value="Proceso">Proceso</option>
   			<option value="Truncado">Truncado</option>
 		</select>
-		<div id="errorStatus" class="errors"> Debe seleccionar su Estatus </div>
 		<br>
 
 		<input id="thesisTitle" type="text" name="thesisTitle" placeholder="Título de Tesis">
@@ -168,7 +115,6 @@
 				                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),
 				                                                 array('name'=>'sector','prompt'=>'Sector','options' => array(''=>array('selected'=>true)))); ?>
 
-		<div id="errorSector" class="errors"> Debe seleccionar su Sector </div>
 		<br>
 	<?php echo $form->dropDownList($model,'institution',array('BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA'=>'BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA','UNIVERSIDAD ESTATAL DE SONORA'=>'UNIVERSIDAD ESTATAL DE SONORA','CENTRO DE INVESTIGACIONES BIOLOGICAS'=>'CENTRO DE INVESTIGACIONES BIOLOGICAS',
 			                                                       'CENTRO DE BIOTECNOLOGIA GENOMICA IPN'=>'CENTRO DE BIOTECNOLOGIA GENOMICA IPN','CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN'=>'CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN','TECNOLOGICO NACIONAL DE MEXICO'=>'TECNOLOGICO NACIONAL DE MEXICO',
@@ -214,7 +160,6 @@
 			                                                'ARTES Y LETRAS'=>'ARTES Y LETRAS','SOCIOLOGIA'=>'SOCIOLOGIA','CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION','ETICA'=>'ETICA',
 			                                                'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'), 
 													array('name'=>'area','prompt'=>'Área','options' => array(''=>array('selected'=>true))));?>
-		<div id="errorArea" class="errors"> Debe seleccionar Área </div>
 		<br>
 
 		<?php echo $form->dropDownList($model,'discipline',array('APLICACIONES DE LA LOGICA'=>'APLICACIONES DE LA LOGICA','LOGICA DEDUCTIVA'=>'LOGICA DEDUCTIVA','LOGICA GENERAL'=>'LOGICA GENERAL','LOGICA INDUCTIVA METODOLOGIA
@@ -268,7 +213,6 @@
 	                                                             'PREVISION'=>'PREVISION','ANALISIS DE TENDENCIAS'=>'ANALISIS DE TENDENCIAS','PLANEACION Y DISEÑO DE ESTRATEGIAS'=>'PLANEACION Y DISEÑO DE ESTRATEGIAS','DISEÑO DE PRIORIDADES A LARGO PLAZO'=>'DISEÑO DE PRIORIDADES A LARGO PLAZO','CONSTRUCCION DE ESCENARIOS'=>'CONSTRUCCION DE ESCENARIOS','ETICA DEL FUTURO'=>'ETICA DEL FUTURO','TENDENCIAS DEMOGRAFICAS Y POBLACIONALES'=>'TENDENCIAS DEMOGRAFICAS Y POBLACIONALES',
 	                                                             'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS'=>'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS',' ANALISIS DE RIESGOS'=>' ANALISIS DE RIESGOS','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','NUEVAS FUERTES DE ENERGIA'=>'NUEVAS FUERTES DE ENERGIA','NUEVOS SISTEMAS ORGANIZACIONALES'=>'NUEVOS SISTEMAS ORGANIZACIONALES','OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'=>'OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'),
 												array('name'=>'discipline','prompt'=>'Disciplina','options' => array(''=>array('selected'=>true)))); ?>
-		<div id="errorDiscipline" class="errors"> Debe seleccionar Disciplina </div>
 		<br>
 
 		<?php echo $form->dropDownList($model,'subdiscipline',array('ANALOGIA'=>'ANALOGIA','ALGEBRA DE BOOLE'=>'ALGEBRA DE BOOLE','LOGICA FORMAL'=>'LOGICA FORMAL','LENGUAJES FORMALIZADOS'=>'LENGUAJES FORMALIZADOS','SISTEMAS FORMALES'=>'SISTEMAS FORMALES','FUNDAMENTOS DE LAS MATEMATICAS'=>'FUNDAMENTOS DE LAS MATEMATICAS',
@@ -454,7 +398,6 @@
 		                                                            'SOCIOLOGIA DE LA RELIGION'=>'SOCIOLOGIA DE LA RELIGION','OTROS'=>'OTROS','ACOPIO DE DATOS SOBRE EL TERRENO'=>'ACOPIO DE DATOS SOBRE EL TERRENO','PSICOLOGIA SOCIAL'=>'PSICOLOGIA SOCIAL','DISEÑO DE ENCUESTAS SOCIOLOGICAS'=>'DISEÑO DE ENCUESTAS SOCIOLOGICAS','METODOS DE LAS ENCUESTAS SOCIOLOGICAS'=>'METODOS DE LAS ENCUESTAS SOCIOLOGICAS','OTROS'=>'OTROS','SOCIOLOGIA COMPARADA'=>'SOCIOLOGIA COMPARADA','SOCIOLOGIA HISTORICA'=>'SOCIOLOGIA HISTORICA','METODOLOGIA'=>'METODOLOGIA','SOCIOGRAFIA'=>'SOCIOGRAFIA','TEORIA'=>'TEORIA','OTROS'=>'OTROS','CONFLICTOS'=>'CONFLICTOS','SOLUCION DE CONFLICTOS'=>'SOLUCION DE CONFLICTOS','GUERRA Y PAZ'=>'GUERRA Y PAZ','OTROS'=>'OTROS','MEDICION Y CONSTRUCCION DE INDICES'=>'MEDICION Y CONSTRUCCION DE INDICES','CONSTRUCCION DE MODELOS'=>'CONSTRUCCION DE MODELOS',', ANALISIS ESTADISTICO'=>', ANALISIS ESTADISTICO','OTROS'=>'OTROS','BUROCRACIA'=>'BUROCRACIA','SOCIOLOGIA DE LA ENSEÑANZA'=>'SOCIOLOGIA DE LA ENSEÑANZA',
 		                                                            'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),
 												array('name'=>'subdiscipline','prompt'=>'Subdisciplina','options' => array(''=>array('selected'=>true)))); ?>
-		<div id="errorSubdiscipline" class="errors"> Debe seleccionar Subdisciplina </div>
 		<br>
 		
 		 <?php echo CHtml::ajaxButton ('Crear Formación Académica',CController::createUrl('curriculumVitae/grades'), 
@@ -476,7 +419,7 @@
 			                     }       
 		                  	}',                    
 		                    
-                        ), array('id'=>'btnCreate')); 
+                        ), array('id'=>'btnCreateGrade')); 
         ?>
 		<br>
 
