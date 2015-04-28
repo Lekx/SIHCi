@@ -91,6 +91,7 @@
 
 <div class="row">
 	<?php $this->widget('ext.CountrySelectorWidget', array(
+
 		'value' => $model->country,
 		'name' => Chtml::activeName($model, 'country'),
 		'id' => Chtml::activeId($model, 'country'),
@@ -98,7 +99,7 @@
 		'defaultValue' => 'Mexico',
 		'firstEmpty' => true,
 		'firstText' => 'Pais',
-			
+
 		)); ?>
 
           <?php echo $form->error($model,'country'); ?>
