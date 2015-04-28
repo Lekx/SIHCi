@@ -49,6 +49,12 @@
 {
 	margin-left: 50px;
 }
+.generalinformation ol
+{
+	margin-left: 50px;
+	list-style-type: circle;
+}
+
 #searchBarResults
 {
 	border:1px solid white;

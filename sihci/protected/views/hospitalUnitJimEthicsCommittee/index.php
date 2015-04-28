@@ -26,7 +26,6 @@ $this->breadcrumbs = array(
 	<hr>
 	</div>
 	<div class="generalinformation">
-		
 		“El OPD Hospital Civil de Guadalajara cuenta con comités científicos con el cual se rigen todos sus integrantes. En este espacio usted podrá consultar los miembros de estos comités científicos más recientes.”
 		</div>
 	</section>
