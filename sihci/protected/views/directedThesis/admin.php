@@ -47,7 +47,7 @@ $('.search-form form').submit(function(){
 		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
 		array('name'=>'Autor','type'=>'html','id'=>'author','value'=>'CHtml::encode($data->author)'),
 		'conclusion_date',
-		'author',
+		//'author',
 		//'path',
 		'grade',
 		'sector',

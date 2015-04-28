@@ -15,4 +15,4 @@ $this->menu=array(
 
 <h1>Capítulos de libros</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model,'modelAuthors'=>$modelAuthors)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'modelAuthors'=>$modelAuthors)); ?>

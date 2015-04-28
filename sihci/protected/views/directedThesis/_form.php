@@ -404,7 +404,8 @@
 		                         else
 		                         {
 			                     	alert("Complete los campos con *");   
-			                     }       
+			                     } 
+			                         
 		                  	}',                    
 		                    
                         )); 

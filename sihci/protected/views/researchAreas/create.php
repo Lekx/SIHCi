@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ResearchAreas', 'url'=>array('index')),
-	array('label'=>'Manage ResearchAreas', 'url'=>array('admin')),
+	//array('label'=>'List ResearchAreas', 'url'=>array('index')),
+	array('label'=>'Gestionar ', 'url'=>array('admin')),
 );
 ?>
 

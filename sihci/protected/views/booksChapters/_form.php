@@ -380,7 +380,7 @@
 	</div>
 
 		<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar' && $modelAuthors->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
 		<input type="reset" onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
 		 <?php echo CHtml::link('Cancelar',array('booksChapters/admin'))?>
 	</div>

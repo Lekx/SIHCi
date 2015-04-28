@@ -79,7 +79,7 @@ class BooksChaptersController extends Controller
             {
 
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/';
-               
+               		if($model->url_doc != ''){
 	                if(!is_dir($path))
 	                	 mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
 	                
@@ -104,6 +104,30 @@ class BooksChaptersController extends Controller
 		                    		$modelAuthors->save();
 			              	 }	
 			               	$this->redirect(array('admin','id'=>$model->id));
+
+			               }
+			               }
+			               else {
+			               	if($model->save()){
+			               		              
+					 			$names = $_POST['names'];
+					            $last_name1 = $_POST['last_names1'];
+					            $last_name2 = $_POST['last_names2'];
+					            $position = $_POST['positions'];
+					            
+             					 foreach($_POST['names'] as $key => $names){
+					               	unset($modelAuthors);
+					               	$modelAuthors = new BooksChaptersAuthors;
+					               	$modelAuthors->id_books_chapters = $model->id;
+					       			$modelAuthors->names = $names;
+					        		$modelAuthors->last_name1 = $last_name1[$key];
+					       			$modelAuthors->last_name2 = $last_name2[$key];
+					        		$modelAuthors->position = $position[$key];
+		                    		$modelAuthors->save();
+			              	 }	
+			               	$this->redirect(array('admin','id'=>$model->id));
+
+			               }
 
 			               }		   
         		}
@@ -140,14 +164,14 @@ class BooksChaptersController extends Controller
 	               $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
                         
             if($model->save()){
-            					/*$names = $_POST['names'];
+            					$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];*/
+					            $position = $_POST['positions'];
 					            
              					 foreach($_POST['names'] as $key => $names){
-					               //	unset($modelAuthors);
-					              // 	$modelAuthors = new BooksChaptersAuthors;
+					               	unset($modelAuthors);
+					              	$modelAuthors = new BooksChaptersAuthors;
 					               	$modelAuthors->id_books_chapters = $model->id;
 					       			$modelAuthors->names = $names;
 					        		$modelAuthors->last_name1 = $last_name1[$key];
@@ -158,6 +182,9 @@ class BooksChaptersController extends Controller
                     $this->redirect(array('admin','id'=>$model->id));
                 }
             }
+
+
+            
             }//End validate 
         }
 

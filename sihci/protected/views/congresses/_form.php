@@ -69,24 +69,20 @@
 	</div>
 
 	<div class="row">
-		  <?php echo $form->labelEx($model,'pais'); ?>
-	        <?php
-	        $this->widget(
-	            'yiiwheels.widgets.formhelpers.WhCountries',
-	            array(
-	                'name' => 'Congresses[country]',
-	                'id' => 'Congresses_country',
-	                'value' => 'MX',
-	                'useHelperSelectBox' => true,
-	                'pluginOptions' => array(
-	                    'country' => '',
-	                    'language' => 'es_ES',
-	                    'flags' => true,
-	                
-	                )
-	            )
-	        );
-	        ?>	
+		<?php echo $form->labelEx($model,'country'); ?>
+		<?php
+			$this->widget('ext.CountrySelectorWidget', 
+				array(
+				    'value' => $model->country,
+				    'name' => Chtml::activeName($model, 'country'),
+				    'id' => Chtml::activeId($model, 'country'),
+				    'useCountryCode' => false,
+				    'defaultValue' => 'Mexico',
+				    'firstEmpty' => false,
+			    )
+			);
+		?>
+		<?php echo $form->error($model,'country'); ?>
 	</div>
      
 	<div class="row">
