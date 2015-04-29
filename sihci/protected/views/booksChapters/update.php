@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Capítulos de libros  <?php echo $model->id; ?></h1>
+<h1>Modificar:  <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model,'modelAuthors'=>$modelAuthors)); ?>

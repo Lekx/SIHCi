@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 						
- <h1>Capítulos de libros</h1> 
+ <h1>Cap&iacutetulos de libros</h1> 
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "system_log".
  *
@@ -21,7 +20,6 @@ class SystemLog extends CActiveRecord {
 	public function tableName() {
 		return 'system_log';
 	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -39,7 +37,6 @@ class SystemLog extends CActiveRecord {
 			array('id, id_user, section, details, action, datetime', 'safe', 'on' => 'search'),
 		);
 	}
-
 	/**
 	 * @return array relational rules.
 	 */
@@ -50,7 +47,6 @@ class SystemLog extends CActiveRecord {
 			'idUser' => array(self::BELONGS_TO, 'Users', 'id_user'),
 		);
 	}
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -64,7 +60,6 @@ class SystemLog extends CActiveRecord {
 			'datetime' => 'Fecha',
 		);
 	}
-
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -79,26 +74,21 @@ class SystemLog extends CActiveRecord {
 	 */
 	public function search() {
 		// @todo Please modify the following code to remove attributes that should not be searched.
-
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('id', $this->id);
 		$criteria->compare('id_user', $this->id_user);
 		$criteria->compare('section', $this->section, true);
 		$criteria->compare('details', $this->details, true);
 		$criteria->compare('action', $this->action, true);
 		$criteria->compare('datetime', $this->datetime, true);
-
 		$_SESSION['filteredData'] = new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
-
 			'pagination' => false,
 		));
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
 		));
 	}
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -109,12 +99,11 @@ class SystemLog extends CActiveRecord {
 		return parent::model($className);
 	}
 	protected function beforeSave(){
-$this->datetime = DateTime::createFromFormat('d/m/Y H:i:s', $this->datetime)->format('Y-m-d H:i:s');
-return parent::beforeSave();
-}
-
-protected function afterFind(){
-$this->datetime = DateTime::createFromFormat('Y-m-d H:i:s', $this->datetime)->format('d/m/Y H:i:s');
-return parent::beforeSave();
-}
+	$this->datetime = DateTime::createFromFormat('d/m/Y H:i:s', $this->datetime)->format('Y-m-d H:i:s');
+	return parent::beforeSave();
+	}
+	protected function afterFind(){
+	$this->datetime = DateTime::createFromFormat('Y-m-d H:i:s', $this->datetime)->format('d/m/Y H:i:s');
+	return parent::beforeSave();
+	}
 }
