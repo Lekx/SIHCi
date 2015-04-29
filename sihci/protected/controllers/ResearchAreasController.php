@@ -75,8 +75,16 @@ class ResearchAreasController extends Controller
 		{
 			$model->attributes=$_POST['ResearchAreas'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+				echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
+			}
+			else {
+				 $error = CActiveForm::validate($model);
+                                    if($error!='[]')
+                                         echo $error;
+                                        Yii::app()->end();
+			}
 		}
 
 		$this->render('create',array(
@@ -101,8 +109,17 @@ class ResearchAreasController extends Controller
 		if(isset($_POST['ResearchAreas']))
 		{
 			$model->attributes=$_POST['ResearchAreas'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+				echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
+			}
+			else {
+				 $error = CActiveForm::validate($model);
+                                    if($error!='[]')
+                                         echo $error;
+                                        Yii::app()->end();
+			}
+				//$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(

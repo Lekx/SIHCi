@@ -364,18 +364,19 @@
 		 )); 
     	?><div class="authorsRegistry">  	
     	
-		 <?php echo $form->labelEx($modelAuthors,'names'); ?>
-		 <?php echo $form->textField($modelAuthors,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
-		 <?php echo $form->error($modelAuthors,'names');?> 
-		 <?php echo $form->labelEx($modelAuthors,'last_name1'); ?>
-		 <?php echo $form->textField($modelAuthors,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
-		 <?php echo $form->error($modelAuthors,'last_name1'); ?>
-		 <?php echo $form->labelEx($modelAuthors,'last_name2'); ?>
-		 <?php echo $form->textField($modelAuthors,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
-		 <?php echo $form->error($modelAuthors,'last_name2'); ?>
-		 <?php echo $form->labelEx($modelAuthors,'position'); ?>
-		 <?php echo $form->textField($modelAuthors,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
-		 <?php echo $form->error($modelAuthors,'position');?>
+    	
+		  <?php echo $form->labelEx($modelAuthors,'names'); ?>
+		  <?php echo $form->textField($modelAuthors,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
+		  <?php echo $form->error($modelAuthors,'names');?>
+		  <?php echo $form->labelEx($modelAuthors,'last_name1'); ?>
+		  <?php echo $form->textField($modelAuthors,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
+		  <?php echo $form->error($modelAuthors,'last_name1'); ?>
+		  <?php echo $form->labelEx($modelAuthors,'last_name2'); ?>
+		  <?php echo $form->textField($modelAuthors,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
+		  <?php echo $form->error($modelAuthors,'last_name2'); ?>
+		  <?php echo $form->labelEx($modelAuthors,'position'); ?>
+		  <?php echo $form->textField($modelAuthors,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
+		  <?php echo $form->error($modelAuthors,'position');?>
 			
 	</div>
 

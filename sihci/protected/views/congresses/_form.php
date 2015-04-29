@@ -99,7 +99,7 @@
 	</div>
 
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
@@ -110,7 +110,8 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#congresses-form")[0].reset();
-				                     window.location.href ="'.Yii::app()->createUrl('congresses/admin').'";
+   				                     window.location.href ="'.Yii::app()->createUrl('congresses/admin').'";		                         
+
 		                         }		                         
 		                         else
 		                         {
@@ -120,9 +121,19 @@
 		                    
                         )); 
         ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/congresses/admin')); ?>
-	</div>	
+        <?php  if($model->isNewRecord) 
+			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+		?>
+       	<?php echo CHtml::link('Cancelar', array('/congresses/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+
+		<div class="200">
+		
+		</div>
+		
+		<div class="404">
+		</div>
+		
+	</div>
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
