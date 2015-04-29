@@ -411,7 +411,7 @@
                         )); 
         ?>
 		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/directedThesis/admin')); ?>
+       	<?php echo CHtml::Button('Cancelar',array('/directedThesis/admin')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
