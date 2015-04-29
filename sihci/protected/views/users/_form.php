@@ -25,29 +25,19 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'names', array('placeholder' => "Nombre(s)."));?>
-            </div>
-            <div class="infoboxes name">
-
-               <?php echo "<span>Ingresa tu nombre.</span>".$form->error($modelPersons,'names'); ?>
+                <?php echo $form->textField($modelPersons, 'names', array('placeholder' => "Nombre(s).", 'title'=> "Ingresa tu nombre"));?>
             </div>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'last_name1', array('placeholder' => "Apellido Paterno"));?>
-            </div>
-             <div class="infoboxes lastname">
-                <?php echo "<span>Ingresa tu Apellido Paterno.</span>".$form->error($modelPersons,'last_name1'); ?>
+                <?php echo $form->textField($modelPersons, 'last_name1', array('placeholder' => "Apellido Paterno",'title'=> "Ingresa tu Apellido Paterno"));?>
             </div>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'last_name2', array('placeholder' => "Apelido Materno"));?>
-            </div>
-             <div class="infoboxes lastname2">
-                <p><?php echo "<span>Ingresa tu Apellido Materno.</span>".$form->error($modelPersons,'last_name2'); ?> </p>
+                <?php echo $form->textField($modelPersons, 'last_name2', array('placeholder' => "Apelido Materno", 'title'=> "Ingresa tu Apellido Materno"));?>
             </div>
         </div>
         <input type="button" name="nextform" class="nextform action-button 1" value="Listo..." />
@@ -81,11 +71,7 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-globe"></i>
-                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "Pasaporte/Curp"));?>
-            </div>
-               <div class="infoboxes curp">
-               <?php echo "<span>Ingresa curp.</span>".$form->error($modelPersons,'curp_passport'); ?>
-            </div>
+                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "Pasaporte/Curp",'title'=> "Ingersa Curp/Pasaporte"));?>
         </div>
         <div class="emptycontent"></div>
        <input type="button" name="nextform" class="nextform action-button 2" value="Listo..." /> 
@@ -98,37 +84,24 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <?php echo $form->textField($model, 'email', array('placeholder' => "Email"));?>
-            </div>
-                 <div class="infoboxes email">
-                <?php echo "<span>Ingresa tu email.</span>".$form->error($model,'email'); ?>
-            </div>
+                <?php echo $form->textField($model, 'email', array('placeholder' => "Email",'title'=> "Ingresa tu Email"));?>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de Email" ></input>
-            </div>
-               <div class="infoboxes email2">
-               <span>Verifica tu email.</span>
+                <input title="Comprueba tu Email" type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de Email" ></input>
             </div>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-lock"></i>
-                <?php echo $form->passwordField($model, 'password', array('placeholder' => "Contraseña"));?>
-            </div>
-               <div class="infoboxes pass">
-                  <?php echo "<span>Ingresa tu contraseña.</span>".$form->error($model,'password'); ?>
+                <?php echo $form->passwordField($model, 'password', array('placeholder' => "Contraseña",'title'=> "Ingresa tu Contraseña"));?>
             </div>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-lock"></i>
-                <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
-            </div>
-               <div class="infoboxes pass2">
-             <span>Confirma tu contraseña</span>
+                <input  title="Comprueba tu Contraseña" type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
             </div>
         </div>
 

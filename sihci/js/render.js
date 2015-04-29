@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    $('body').keypress(function(e) {
-        if (e.which == 0) {
+    $('body').keyup(function(e) {
+        if (e.which == 27) {
             $(".loginHome").hide();
             $(".recoveryHome").hide();
             $(".createHome").hide();

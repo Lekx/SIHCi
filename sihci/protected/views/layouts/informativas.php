@@ -306,7 +306,7 @@
                                             </button>
                                         </div>
                                             <div id="headersearch"><input type="search" id="searchbartop" class="searchBarMain" placeholder="Buscar"></div>
-                                             <div id="searchBarResultstop" style="border:1px solid white;padding:5px;">estoy bien escondido</div>
+                                             <div id="searchBarResultstop">estoy bien escondido</div>
                                             <div id="hsearchbutton">
                                             <button id="" type="button">
                                             <img src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarCh.png" alt="">
@@ -378,10 +378,9 @@
                                 <input type="text" id="searchBarMain1" class="form-control searchBarMain" placeholder="Buscar" aria-describedby="basic-addon1">
                                 <button id="search" type="button" class="searchButton">
                                 <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarGr.png" alt="">
-                                Buscar
                                 </button>
+                                <div id="searchBarResults">estoy bien escondido</div>
                             </div>
-                            <div id="searchBarResults">estoy bien escondido</div>
                         </section>
 
                         <?php if (isset($this->breadcrumbs)): ?>
@@ -515,7 +514,11 @@
                                                 </li>
                                             </ul>
                                         </div>
+                                            <a href="#top" class="up-btn">
+                                    <i class="fa fa-chevron-up"></i>
+                                    </a>
                                     </div>
+
                                 </section>
                                 <section class="footersection">
                                     <div class="copyrigths">
