@@ -857,7 +857,7 @@
                       ), array('class'=>'savebutton'));  
         
 		echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';
-		echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?'));
+		echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); 
 	echo '</div>';
 ?>
 
