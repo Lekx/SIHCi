@@ -15,7 +15,7 @@
      
 	<div class="row">
 		
-		<legend>Búsqueda por:</legend>
+		<legend>B&uacute;squeda por:</legend>
 	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Folio, Especialidad, Referencia o Tipo de referencia')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
 

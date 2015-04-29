@@ -21,7 +21,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'folio'); ?>
 		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Folio')); ?>

@@ -71,9 +71,16 @@ class CongressesController extends Controller
 		if(isset($_POST['Congresses']))
 		{
 			$model->attributes=$_POST['Congresses'];
+			if($model->country == 'Mexico'){
+					$model->type = 'Nacional';
+
+				}
+				else {
+					$model->type = 'Internacional';
+				}
 			
 			if($model->save()){
-
+				
 				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      			$this->render(array('admin','id'=>$model->id));	
