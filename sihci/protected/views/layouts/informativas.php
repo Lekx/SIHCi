@@ -371,15 +371,17 @@
                              </div>
     
                             <div class="searchbar">
-                                <button type="button" id="show_hidemenu">
-                                <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuGr.png" alt="">
-                                Menu
-                                </button>
-                                <input type="text" id="searchBarMain1" class="form-control searchBarMain" placeholder="Buscar" aria-describedby="basic-addon1">
-                                <button id="search" type="button" class="searchButton">
-                                <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarGr.png" alt="">
-                                </button>
-                                <div id="searchBarResults">estoy bien escondido</div>
+                                <div class="searchbarconteiner">
+                                    <button type="button" id="show_hidemenu">
+                                    <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuGr.png" alt="">
+                                  
+                                    </button>
+                                        <input type="text" id="searchBarMain1" class="form-control searchBarMain" placeholder="Buscar" aria-describedby="basic-addon1">
+                                    <button id="search" type="button" class="searchButton">
+                                     <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarGr.png" alt="">
+                                    </button>
+                                        <div id="searchBarResults">estoy bien escondido</div>
+                                </div>
                             </div>
                         </section>
 

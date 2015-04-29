@@ -281,9 +281,6 @@ cursor: pointer;
 	background-color: #1EB9C0;
 	float: left;
 	position: relative;
-	padding-top: 12px;
-	padding-bottom: 10px;
-	padding-left: 55px;
 }
 .searchbar #menuimg
 {
@@ -297,9 +294,7 @@ cursor: pointer;
 .searchbar input[type="text"]
 {
 	height: 35px;
-	width: 70%;
-	margin-left: 10px;
-	margin-bottom: 25px;
+	width: 75%;
 	background-color: #80DCE0;
 	display: inline-block;
 	color: white;
@@ -309,8 +304,10 @@ cursor: pointer;
 {
 	height: 35px;
 	width: 35px;
-	margin-bottom: 22px;
 	background: transparent;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 12px;
 }
 .allsearch
 {
@@ -518,7 +515,7 @@ cursor: pointer;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 15px;
+	margin-top: 5px;
 }
 #contentimg1
 {
@@ -537,8 +534,12 @@ cursor: pointer;
 }
 .contentboxs #box1 #content
 {
-	width: 575px;
-	margin-left: 30px;
+	
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+    padding-right: 50px;
+    padding-left: 50px;
 	color: #084A64;
 	text-align: justify;
  	font-family: 'Caviar_Dreams_Bold';
@@ -560,7 +561,8 @@ cursor: pointer;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: auto;
-	width: 235px;
+	padding-left: 50px;
+	padding-right:50px;
 	color: white;
 	font-family: 'Caviar_Dreams';
 	text-align:justify;
@@ -590,7 +592,6 @@ cursor: pointer;
 	height: 175px;
 
 }
-
 .contentboxs #box4
 {
 
@@ -607,7 +608,7 @@ cursor: pointer;
 	margin-left: 120px;
 
 }
-.contentboxs #box4 h5 { color: white !important; text-align: center;}
+.contentboxs #box4 h5 { color: white !important; text-align: center; padding-left: 50px; padding-right: 50px;}
 .contentboxs #box6
 {
 
@@ -633,7 +634,8 @@ cursor: pointer;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: auto;
-	width: 235px;
+	padding-right: 50px;
+	padding-left: 50px;
 	color: white ;
 	text-align: center;
 	font-family: 'Caviar_Dreams';
@@ -669,7 +671,7 @@ cursor: pointer;
 	margin-top: 25px;
 	margin-left: 110px;
 }
-.contentboxs2 h5 { color: white !important; text-align: center;}
+.contentboxs2 h5 { color: white !important; text-align: center; padding-left: 50px; padding-right: 50px;}
 .contentboxs2 #box2
 {
 	background-color: #798C9D;
@@ -685,7 +687,8 @@ cursor: pointer;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: auto;
-	width: 235px;
+    padding-right: 50px;
+    padding-left: 50px;
 	color: white ;
 	text-align: center;
 
@@ -721,7 +724,8 @@ cursor: pointer;
 }
 .contentboxs2 #box4 #content
 {
-	width: 575px;
+	padding-left: 50px;
+	padding-right: 50px;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -971,13 +975,13 @@ ul.cbp-hsmenu
 #show_hidemenu
 {
 
-   	margin-right: 10px;
-   	margin-bottom: 25px;
    	width: 35px;
    	height: 35px;
    	display: inline-block;
    	font-family: 'Caviar_Dreams';
    	background-color: transparent;
+   	vertical-align: top;
+   	margin-right: 12px;
 
 }
 
@@ -1056,7 +1060,7 @@ ul.cbp-hsmenu
 }
 .maininfohc
 {
-	width: 850px;
+	width: 900px;
 	display: inline-block;
 	margin-left: 80px;
 	margin-right: 0px;
@@ -1085,6 +1089,14 @@ ul.cbp-hsmenu
 	display: inline-block;
 	vertical-align: top;
 	margin-left: 40px;
+}
+.searchbarconteiner
+{
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-left: 60px;
+
+
 }
 
 

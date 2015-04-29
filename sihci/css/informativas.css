@@ -62,15 +62,14 @@
 
 #searchBarResults
 {
-	border:1px solid white;
 	position: absolute;
-	top: 50px;
+	top: 55px;
 	left: 115px;
 	display: none;
 	background-color: #00B9C0;
 	color: white;
 	z-index: 900;
-	width: 430px;
+	width: 68%;
 	height: auto;
 	-webkit-box-shadow: -19px 2px 19px -4px rgba(0,0,0,0.75);
 	-moz-box-shadow: -19px 2px 19px -4px rgba(0,0,0,0.75);

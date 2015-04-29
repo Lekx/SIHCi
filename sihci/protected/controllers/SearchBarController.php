@@ -25,7 +25,7 @@ class SearchBarController extends Controller
 			$result.=  "El resultado de la búsqueda para <b>\"".$keyword."\"</b> fue:";
 			
 		foreach($results as $index => $subarray)
-			$result.= "<a href=".Yii::app()->baseUrl."/index.php"."/".$index." style='text-decoration:none;'><div class='resultbars' style='padding:5px;cursor:pointer;'> <h5>".$subarray["title"]."</h5>".$subarray["desc"]."</div></a>";
+			$result.= "<a href=".Yii::app()->baseUrl."/index.php"."/".$index." style='text-decoration:none;'><div class='resultbars' style='padding:10px;cursor:pointer;'> <h5>".$subarray["title"]."</h5>".$subarray["desc"]."</div></a>";
 		
 		return $result;
 	}

@@ -6,8 +6,8 @@
 
 <div id="crateusers" class="form">
     <?php $form = $this->beginWidget('CActiveForm', array(
-	'id' => 'users-form',
-	'enableAjaxValidation'=>true,
+    'id' => 'users-form',
+    'enableAjaxValidation'=>true,
     'action'=>$this->createUrl('users/create'),
     'enableClientValidation'=>true,
 ));?>
@@ -25,29 +25,43 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'names', array('placeholder' => "Nombre(s).", 'title'=> "Ingresa tu nombre"));?>
+                <?php echo $form->textField($modelPersons, 'names', array('placeholder' => "Nombre(s).", 'title'=>'Ingresa tu nombre'));?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="inner-addon right-addon">
+                <i class="glyphicon glyphicon-user"></i>
+                <?php echo $form->textField($modelPersons, 'last_name1', array('placeholder' => "Apellido Paterno",'title'=>'Ingresa tu Apellido Paterno'));?>
             </div>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'last_name1', array('placeholder' => "Apellido Paterno",'title'=> "Ingresa tu Apellido Paterno"));?>
+                <?php echo $form->textField($modelPersons, 'last_name2', array('placeholder' => "Apelido Materno" ,'title'=>'Ingresa tu Apellido Materno'));?>
             </div>
         </div>
-        <div class="row">
-            <div class="inner-addon right-addon">
-                <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'last_name2', array('placeholder' => "Apelido Materno", 'title'=> "Ingresa tu Apellido Materno"));?>
-            </div>
-        </div>
-        <input type="button" name="nextform" class="nextform action-button 1" value="Listo..." />
+        <input type="button" name="nextform" class="nextform action-button 1" value="Listo.." />
     </fieldset>
 
    <fieldset>
         <div class="emptycontent"></div>
         <div class="row">
 
-          <?php
+        <?php $this->widget('ext.CountrySelectorWidget', array(
+
+        'value' =>  'Persons_country',
+        'name' => 'Persons[country]',
+        'id' =>  'Persons_country',
+        'useCountryCode' => false,
+        'defaultValue' => 'Mexico',
+        'firstEmpty' => true,
+        'firstText' => 'Pais',
+
+        )); ?>
+
+          <?php echo $form->error($model,'country'); ?>
+          <?php /*
         $this->widget(
             'yiiwheels.widgets.formhelpers.WhCountries',
             array(
@@ -59,50 +73,64 @@
                     'country' => 'MX',
                     'language' => 'es_ES',
                     'flags' => true
+                ),
+                'htmlOptions'=> array(
+                    'title'=> 'Pais'
                 )
             )
-        );
+        );*/
         ?>
-         <div class="infoboxes country">
-                <span>Ingresa tu pais.</span>
-            </div>
         </div>
         <div class="emptycontent"></div>
         <div class="row">
+
+     
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-globe"></i>
-                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "Pasaporte/Curp",'title'=> "Ingersa Curp/Pasaporte"));?>
+                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "CURP", 'title'=>'CURP'));?>
+            </div>
+    
+        <div id="pasaporte">
+               <div class="inner-addon right-addon">
+                <i class="glyphicon glyphicon-globe"></i>
+                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "Pasaporte", 'title'=> 'Pasaporte'));?>
+                </div>
+        </div>
+
         </div>
         <div class="emptycontent"></div>
-       <input type="button" name="nextform" class="nextform action-button 2" value="Listo..." /> 
-       
-       <input type="button" name="previousform" class="previousform action-button" value="Regresar..." />
-        
+        <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
+        <input type="button" name="nextform" class="nextform action-button 2" value="Listo.." />
     </fieldset> 
 
     <fieldset id="preregisterForm">
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <?php echo $form->textField($model, 'email', array('placeholder' => "Email",'title'=> "Ingresa tu Email"));?>
+                <?php echo $form->textField($model, 'email', array('placeholder' => "Email"));?>
+            </div>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <input title="Comprueba tu Email" type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de Email" ></input>
+                <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de Email" ></input>
             </div>
+
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-lock"></i>
-                <?php echo $form->passwordField($model, 'password', array('placeholder' => "Contraseña",'title'=> "Ingresa tu Contraseña"));?>
+                <?php echo $form->passwordField($model, 'password', array('placeholder' => "Contraseña"));?>
             </div>
+              
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-lock"></i>
-                <input  title="Comprueba tu Contraseña" type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
+                <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
             </div>
+       
+             
         </div>
 
         <input type="hidden" name="Users[registration_date]" id="Users_registration_date" value="0000-00-00 00:00:00">
@@ -110,7 +138,7 @@
         <input type="hidden" name="Users[act_react_key]" id="Users_act_react_key" value="0000-00-00 00:00:00">
 
 
-        <input type="button" name="previousform" class="previousform action-button" value="Regresar..." />
+        <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
 
         <div class="row buttons">
 
@@ -120,7 +148,6 @@
                     'data'=> 'js:$("#users-form").serialize()+ "&ajax=users-form"',
                     'success'=>'function(response) { 
                         if(response == "202"){ 
-
                             $("#preregisterForm").hide();
                             $("#SuccesSignin").show();
                         
@@ -139,7 +166,7 @@
             <h1 id="RegistroSus">¡Registro Exitoso!</h1>
            
             <hr id="resgistrohr">
-		<p>Se ha enviado un correo electrónico a su dirección, por favor siga las indicaciones ahi descritas para activar su cuenta.</p>
+        <p>Se ha enviado un correo electrónico a su dirección, por favor siga las indicaciones ahi descritas para activar su cuenta.</p>
              <input type="button" id="LogInUsers" name="nextform" class="nextform action-button 4" value="Regresar al sitio" />
 
         </fieldset>

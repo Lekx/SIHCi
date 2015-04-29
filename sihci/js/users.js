@@ -1,108 +1,47 @@
 $(document).ready(function() {
+    $("#LogInUsers").click(function() {
+        location.reload();
+    });
 
-$("#LogInUsers").click(function(){
-location.reload();
-});
+    if ($('#Persons_country').val() == 'Mexico') {
+        $('#curp').css('display', 'block;');
+     
+    } else {
+       $('#curp').css('display', 'block;');
+    }
 
-    $('input').attr('autocomplete','off');
+    $('#Persons_country').on('change', function() {
+        if ($('#Persons_country').val() == 'Mexico') {
+            $('#pasaporte').css('display', 'none');
+            $('#curp').css('display', 'block;');
+        } else {
+            $('#pasaporte').css('display', 'block;');
+              $('#curp').css('display', 'none;');
+        }
+    });
+
+    $('input').attr('autocomplete', 'off');
     var $submit = $(".nextform.action-button.1"),
         $inputs = $('#Persons_names, #Persons_last_name1, #Persons_last_name2');
-
-if($("input[name*='country']").val() == 'MX' ){
-     $('#Persons_curp_passport').prop("placeholder", "CURP");
- }else{
-    $('#Persons_curp_passport').prop("placeholder", "Pasaporte");
-
- }
-
-$('.nextform.action-button.1').prop("disabled", true); 
-
-   $('#Persons_names, #Persons_last_name1, #Persons_last_name2').keyup(function() {
-    if($('#Persons_names').val() != "" && $('#Persons_last_name1').val() != "" &&  $('#Persons_last_name2').val() != "" ) {
-         $('.nextform.action-button.1').prop("disabled", false);
+    if ($("input[name*='country']").val() == 'MX') {
+        $('#Persons_curp_passport').prop("placeholder", "CURP");
     } else {
-        $('.nextform.action-button.1').prop("disabled", true); 
+        $('#Persons_curp_passport').prop("placeholder", "Pasaporte");
     }
-
-
-});
-
-    $('.nextform.action-button.2').prop("disabled", true); 
-
+    $('.nextform.action-button.1').prop("disabled", true);
+    $('#Persons_names, #Persons_last_name1, #Persons_last_name2').keyup(function() {
+        if ($('#Persons_names').val() != "" && $('#Persons_last_name1').val() != "" && $('#Persons_last_name2').val() != "") {
+            $('.nextform.action-button.1').prop("disabled", false);
+        } else {
+            $('.nextform.action-button.1').prop("disabled", true);
+        }
+    });
+    $('.nextform.action-button.2').prop("disabled", true);
     $('#Persons_country , #Persons_curp_passport').keyup(function() {
-
-    if($('#Persons_curp_passport').val() != "" && $('#Persons_country').val() != "") {
-         $('.nextform.action-button.2').prop("disabled", false);
-    } else {
-        $('.nextform.action-button.2').prop("disabled", true); 
-    }
-});
-
-    function checkFocusInInputs() {
-        //fieldset 1
-        $("#Persons_names").focus(function() {
-            $(".infoboxes.name").css("visibility", "visible");
-        });
-        $("#Persons_last_name1").focus(function() {
-            $(".infoboxes.lastname").css("visibility", "visible");
-        });
-        $("#Persons_last_name2").focus(function() {
-            $(".infoboxes.lastname2").css("visibility", "visible");
-        });
-        //fieldset 2
-        $("#Persons_country").focus(function() {
-            $(".infoboxes.country").css("visibility", "visible");
-        });
-        $("#Persons_curp_passport").focus(function() {
-            $(".infoboxes.curp").css("visibility", "visible");
-        });
-        //fieldset 3
-        $("#Users_email").focus(function() {
-            $(".infoboxes.email").css("visibility", "visible");
-        });
-        $("#Users_email2").focus(function() {
-            $(".infoboxes.email2").css("visibility", "visible");
-        });
-        $("#Users_password").focus(function() {
-            $(".infoboxes.pass").css("visibility", "visible");
-        });
-        $("#Users_password2").focus(function() {
-            $(".infoboxes.pass2").css("visibility", "visible");
-        });
-    }
-
-    function checkFocusOutInputs() {
-        //fieldset 1
-        $("#Persons_names").focusout(function() {
-            $(".infoboxes.name").css("visibility", "hidden");
-        });
-        $("#Persons_last_name1").focusout(function() {
-            $(".infoboxes.lastname").css("visibility", "hidden");
-        });
-        $("#Persons_last_name2").focusout(function() {
-            $(".infoboxes.lastname2").css("visibility", "hidden");
-        });
-        //fieldset 2
-        $("#Persons_country").focusout(function() {
-            $(".infoboxes.country").css("visibility", "hidden");
-        });
-        $("#Persons_curp_passport").focusout(function() {
-            $(".infoboxes.curp").css("visibility", "hidden");
-        });
-        //fieldset 3
-        $("#Users_email").focusout(function() {
-            $(".infoboxes.email").css("visibility", "hidden");
-        });
-        $("#Users_email2").focusout(function() {
-            $(".infoboxes.email2").css("visibility", "hidden");
-        });
-        $("#Users_password").focusout(function() {
-            $(".infoboxes.pass").css("visibility", "hidden");
-        });
-        $("#Users_password2").focusout(function() {
-            $(".infoboxes.pass2").css("visibility", "hidden");
-        });
-    }
-    checkFocusInInputs();
-    checkFocusOutInputs();
+        if ($('#Persons_curp_passport').val() != "" && $('#Persons_country').val() != "") {
+            $('.nextform.action-button.2').prop("disabled", false);
+        } else {
+            $('.nextform.action-button.2').prop("disabled", true);
+        }
+    });
 });
