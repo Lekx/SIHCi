@@ -16,7 +16,7 @@
 	
 	<div class="row">
 		
-		<legend>Búsqueda por:</legend>
+		<legend>B&uacutesqueda por:</legend>
 	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo de trabajo, Congreso o Palabras claves')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
 

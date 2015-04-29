@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Tesis Dirigidas <?php echo $model->title; ?></h1>
+<h1>Modificar: <?php echo $model->title; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

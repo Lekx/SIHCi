@@ -61,10 +61,10 @@
 	</div>
 
 	<div class="row">
-         <?php 
+         <!-- <?php /*
                 $status = array('Nacional' => 'Nacional','Internacional'=>'Internacional'); 
                 echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
-         <?php echo $form->error($model,'type');?>
+         <?php echo $form->error($model,'type'); */ ?> -->
 	 
 	</div>
 

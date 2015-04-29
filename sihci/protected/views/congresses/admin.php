@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Participación en Congresos</h1>
+<h1>Participaci&oacuten en Congresos</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(

@@ -10,9 +10,10 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	//array('label'=>'Listar Certificaciones', 'url'=>array('index')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>Certificaciones por Concejos  Médicos</h1>
+<h1>Crear Usuario</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

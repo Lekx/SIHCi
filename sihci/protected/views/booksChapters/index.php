@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Books Chapters</h1>
+<h1>Cap&iacute;tulos de libros</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
