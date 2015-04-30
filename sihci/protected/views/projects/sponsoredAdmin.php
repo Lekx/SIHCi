@@ -19,22 +19,25 @@ echo "</pre>"; */
 
 <h1>Gestión de proyectos patrocinados</h1>
 
-
+<?php
+$mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id))->search();
+//var_dump($mod->idUserSponsorer);
+?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'sponsorship-grid',
-	'dataProvider'=>$model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id))->search(),
+	'dataProvider'=>$mod,
 	//'filter'=>$model,
 	'columns'=>array(
 		//'id',
 		//'id_user_sponsorer',
-		array(
+	/*	array(
 			'name'=>'id_user_sponsorer',
 			'value'=>'$data->idUserSponsorer->sponsors[0]["sponsor_name"]',
-			),
-		/*array(
+			),*/
+		array(
 			'name'=>'id_user_researcher',
-			'value'=>'$data->idUserResearcher->persons[0]["last_name1"]." ".$data->idUserResearcher->persons[0]["last_name2"].", ".$data->idUserResearcher->persons[0]["names"]',
-			), */
+			'value'=>'$data->idUserSponsorer->persons[0]["last_name1"]." ".$data->idUserSponsorer->persons[0]["last_name2"].", ".$data->idUserSponsorer->persons[0]["names"]',
+			), 
 
 		'project_name',
 		//'description',

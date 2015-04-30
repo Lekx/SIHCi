@@ -2,16 +2,50 @@
 /* @var $this ProjectsController */
 /* @var $model Projects */
 /* @var $form CActiveForm */
+$this->menu=array(
+	array('label'=>'List Jobs', 'url'=>array('index')),
+	array('label'=>'Manage Jobs', 'url'=>array('admin')),
+);
 ?>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript">
+function accionCancelar(){
+$('<div></div>').appendTo('form')
+    .html('<div><h6>Esta seguro de cancelar la accion actual? todo su trabajo no guardado sera borrado.</h6></div>')
+    .dialog({
+        modal: true,
+        title: 'Cancelar',
+        zIndex: 10000,
+        autoOpen: true,
+        width: 'auto',
+        resizable: false,
+        buttons: {
+            Continuar: function () {
+                window.location = yii.urls.cancelProject;
+                $(this).dialog("close");
+            },
+            "Quedarme donde estoy": function () {
+                $(this).dialog("close");
+            }
+        },
+        close: function (event, ui) {
+            $(this).remove();
+        }
+    });
+}
 	var section = 1;
 	function changeSection(value){
 				section += value;
 		$(".sections").hide();
-		if(section == 3)
+		if(section == 3){
 			$("#next").hide();
-		else
+			$("#send").show();
+		}
+		else{
 			$("#next").show();
+			$("#send").hide();
+		}
 
 		if(section == 1)
 			$("#back").hide();
@@ -19,7 +53,7 @@
 			$("#back").show();
 
 
-		alert("ouch, you fucked me bby! "+section);
+		//alert("ouch, you fucked me bby! "+section);
 		$("#section"+section).show();
 	}
 </script>>
@@ -214,10 +248,10 @@
 		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
 		
 		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft"));
-		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send"));
-		echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
-		echo " ".Chtml::button('Cancelar',array("id"=>"x",));
 
+		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
+		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()"));
+		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","style"=>"display:none;float:right;"));
 		echo " ".Chtml::button('Siguiente >',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;"));
 		echo " ".Chtml::button('< Anterior',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;"));
 		
