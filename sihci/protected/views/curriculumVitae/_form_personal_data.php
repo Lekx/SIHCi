@@ -163,8 +163,7 @@
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
 		<?php echo $form->error($model,'photo_url'); ?>
 		<?php 
-		$urlPhoto = Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
-		echo "<a href='".$urlPhoto."' target='_blank'><img src='".$urlPhoto."' alt='No ha seleccionado foto de Perfíl' width='100' height='100'></a>";
+	
 
 		?>
 	</div>
@@ -188,12 +187,12 @@
 		                                      
 		                         if(data.status=="success")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/personalData').'";
+				                     $(".successdiv").show();
+				               
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("Debe registrar sus datos");   
+			                     	$(".errordiv").show();
 			                     }       
 		                  	}',                    
 		                    

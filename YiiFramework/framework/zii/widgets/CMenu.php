@@ -231,7 +231,7 @@ class CMenu extends CWidget
 				echo CHtml::closeTag('ul')."\n";
 			}
 
-			echo CHtml::closeTag('li')."\n";
+			echo CHtml::closeTag('li')."<hr>"."\n";
 		}
 	}
 

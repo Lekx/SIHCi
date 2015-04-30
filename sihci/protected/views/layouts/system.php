@@ -60,7 +60,7 @@
                     <span>Cuenta</span>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCV-HC.png alt="home">', array('site/index'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCV-HC.png alt="home">', array('curriculumVitae/personalData'));?>
                     <span>CV-HC</span>
                 </div>
                 <div class="headerconteinerC">
@@ -110,6 +110,18 @@
             </div>
         </div>
         <div class="successdiv">
+        <div class="backcontainer">
+                <div class="maincontainer">
+                    <div class="successh2">
+                        <h2>Registro con Extio</h2>
+                        <hr>
+                        <div class="remainder">
+                            <span>El registro a sido realizado con extio.</span>
+                        </div>
+                        <button class="backbut"><h3>Regresar</h3></button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="errordiv">
             <div class="backcontainer">

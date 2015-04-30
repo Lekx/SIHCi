@@ -93,7 +93,7 @@ body
 	background: #00B9C0;
 	height: 45px;
 	margin-top: -45px;
-	width: 26%;
+	width: 20%;
 	
 }
 .headerconteiner5
@@ -102,7 +102,7 @@ body
 	background: #798B9D;
 	height: 45px;
 	margin-top: -45px;
-	width: 62%;
+	width: 68%;
 	
 }
 .syscontent
@@ -121,7 +121,7 @@ body
 }
 .sysmenu
 {
-	width: 26%;
+	width: 20%;
 	height: auto;
 	background: #CDF1F3 ;
 
@@ -176,7 +176,7 @@ body
     width:0;
     height:10px;
     position: absolute;
-    left:20%;
+    left:15%;
     
 }
 .headerconteiner5 h4
@@ -475,9 +475,9 @@ thead th
 	width: 400px;
 
 }
-.susses , .errorh2{ padding-top: 50px; text-align: center; }
+.susses , .errorh2 , .successh2{ padding-top: 50px; text-align: center; }
 
-.susses hr , .errorh2 hr
+.susses hr , .errorh2 hr , .successh2 hr 
 {
 
 	border-bottom: 2px solid black;
@@ -492,7 +492,7 @@ thead th
 {
 	height: 50px;
 	width: 400px;
-	margin-top: 20px;
+	margin-top: 30px;
 	background-color: #0E3152;
 	color: white;
 	font-family: 'Caviar_Dreams';
@@ -519,18 +519,7 @@ thead th
 	font-family: 'Caviar_Dreams';
 }
 .errorh2 h2 , .errorh2 h2 {color: #F20862 !important;}
-.errordiv
-{
-	display: none;
-}
-.cleandiv
-{
-	display: none;
-}
-.successdiv
-{
-	display: none;
-}
+.successh2 h2 { color: #0E3152;}
 /* ---------- */
 
 .errordiv
@@ -549,7 +538,33 @@ thead th
 {
  	color: #00B9C0; 
 }
-
+.portlet 
+{
+	width: 300px;
+	padding: 0px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+.portlet ul li a
+{
+	font-size: 15px !important;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.portlet ul li a:hover
+{
+	font-size: 15px !important;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	width: 200px;
+	background: 0;
+}
+.portlet hr
+{
+	margin-left: 8px;
+}
 
 
 
