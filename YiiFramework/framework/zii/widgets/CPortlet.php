@@ -83,7 +83,7 @@ class CPortlet extends CWidget
 			$this->htmlOptions['id']=$this->id;
 		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
 		$this->renderDecoration();
-		echo "<div class=\"{$this->contentCssClass}\">\n";
+		//echo "<div class=\"{$this->contentCssClass}\">\n";
 
 		$this->_openTag=ob_get_contents();
 		ob_clean();
@@ -100,7 +100,7 @@ class CPortlet extends CWidget
 			return;
 		echo $this->_openTag;
 		echo $content;
-		echo "</div>\n";
+		//echo "</div>\n";
 		echo CHtml::closeTag($this->tagName);
 	}
 
@@ -110,12 +110,12 @@ class CPortlet extends CWidget
 	 */
 	protected function renderDecoration()
 	{
-		if($this->title!==null)
+		/*if($this->title!==null)
 		{
 			echo "<div class=\"{$this->decorationCssClass}\">\n";
 			echo "<div class=\"{$this->titleCssClass}\">{$this->title}</div>\n";
 			echo "</div>\n";
-		}
+		}*/
 	}
 
 	/**

@@ -44,7 +44,8 @@
                 urls: {
                         searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
                         searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
-                        base: ' . CJSON::encode(Yii::app()->baseUrl) . '
+                        base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
+                        cancelProject: ' . CJSON::encode(Yii::app()->createUrl('projects/admin')) . ',
                        }
                 };
                 ');
