@@ -8,8 +8,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Certificaciones', 'url'=>array('index')),
-	array('label'=>'Crear Certificaciones', 'url'=>array('create')),
+	//array('label'=>'Listar Certificaciones', 'url'=>array('index')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar Certificaciones por Concejos  Médicos</h1>
+<h1>Certificaciones por Concejos  M&eacute;dicos</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(

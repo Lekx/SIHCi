@@ -42,7 +42,7 @@ class Certifications extends CActiveRecord
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
 			array('folio, reference', 'length', 'max'=>30),
 			array('reference_type', 'length', 'max'=>15),
-			array('specialty, type', 'length', 'max'=>45),
+			array('specialty, type', 'length', 'max'=>60),
 			array('validity_date_end, creation_date', 'safe'),
 			array('validity_date_end', 'safe'),
 			array('validity_date_end','compare','compareAttribute'=>'validity_date_start','operator'=>'>='),	

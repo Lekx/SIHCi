@@ -76,7 +76,17 @@ class PatentController extends Controller
 			$model->id_curriculum =$id_curriculum;
 
 		    if($model->save())
-					$this->redirect(array('view','id'=>$model->id));
+     		{
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 			
 		}
 
@@ -101,13 +111,23 @@ class PatentController extends Controller
 		if(isset($_POST['Patent']))
 		{
 			$model->attributes=$_POST['Patent'];
+			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+     		{
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**
@@ -132,10 +152,7 @@ class PatentController extends Controller
     //RP04-Desplegar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Patent');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

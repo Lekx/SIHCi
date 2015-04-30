@@ -106,7 +106,7 @@ class Congresses extends CActiveRecord
 
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR work_title LIKE CONCAT('%', :searchValue ,'%') OR congress LIKE CONCAT('%', :searchValue , '%') OR keywords LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR work_title LIKE CONCAT('%', :searchValue ,'%') OR congress LIKE CONCAT('%', :searchValue , '%') OR keywords LIKE CONCAT('%', :searchValue , '%') OR year LIKE CONCAT('%', :searchValue , '%') ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
 		/*$criteria->compare('id',$this->id);

@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tesis', 'url'=>array('index')),
-	array('label'=>'Crear Tesis', 'url'=>array('create')),
-	array('label'=>'Ver Tesis', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar Tesis', 'url'=>array('admin')),
+	//array('label'=>'Listar Tesis', 'url'=>array('index')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	//array('label'=>'Ver Tesis', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Actualizar Tesis <?php echo $model->id; ?></h1>
+<h1>Modificar: <?php echo $model->title; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

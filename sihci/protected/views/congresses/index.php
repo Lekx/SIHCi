@@ -7,13 +7,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Congreso', 'url'=>array('create')),
-	array('label'=>'Administrar Congreso', 'url'=>array('admin')),
+	array('label'=>'Crear ', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
 
-<h1>Participación en Congresos</h1>
+<h1>Participaci&oacuten en Congresos</h1>
 
 
 <?php $this->widget('zii.widgets.CListView', array(

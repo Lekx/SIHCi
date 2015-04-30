@@ -41,7 +41,7 @@ class Persons extends CActiveRecord {
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_user, names, last_name1, marital_status, genre, birth_date, curp_passport', 'required'),
+			array('id_user, names, last_name1, marital_status, country, genre, birth_date, curp_passport', 'required'),
 			array('id_user', 'numerical', 'integerOnly' => true),
 			array('names', 'length', 'max' => 30),
 			array('curp_passport', 'length', 'min' => 11, 'max' => 18),
@@ -150,6 +150,6 @@ class Persons extends CActiveRecord {
 
 	protected function afterFind() {
 		$this->birth_date = DateTime::createFromFormat('Y-m-d', $this->birth_date)->format('d/m/Y');
-		return parent::beforeSave();
+		return parent::afterSave();
 	}
 }

@@ -8,8 +8,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tesis', 'url'=>array('index')),
-	array('label'=>'Crear Tesis', 'url'=>array('create')),
+	//array('label'=>'Listar Tesis', 'url'=>array('index')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar</h1>
+<h1>Tesis Dirigidas</h1>
 
 <!-- <?php /* echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); */ ?> -->
 <div class="search-form" style="display:block">
@@ -44,10 +45,10 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		//'id',
 		//'id_curriculum',
-		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('name'=>'T&iacute;tulo','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
 		array('name'=>'Autor','type'=>'html','id'=>'author','value'=>'CHtml::encode($data->author)'),
 		'conclusion_date',
-		'author',
+		//'author',
 		//'path',
 		'grade',
 		'sector',

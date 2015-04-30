@@ -518,7 +518,18 @@ thead th
 	font-family: 'Caviar_Dreams';
 }
 .errorh2 h2 , .errorh2 h2 {color: #F20862 !important;}
-
+.errordiv
+{
+	display: none;
+}
+.cleandiv
+{
+	display: none;
+}
+.successdiv
+{
+	display: none;
+}
 /* ---------- */
 
 

@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar Registro de propiedad intelectual-Derecho de Autor:</h1>
+<h1>Propiedad intelectual: Derecho de Autor</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
@@ -42,11 +42,11 @@ $('.search-form form').submit(function(){
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(		
 		
-		array('type'=>'html','id'=>'id','value'=>'CHtml::encode($data->id)'),
-		array('type'=>'html','id'=>'participation_type','value'=>'CHtml::encode($data->participation_type)'),
-		array('type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
-		array('type'=>'html','id'=>'step_number','value'=>'CHtml::encode($data->step_number)'),
-		array('type'=>'html','id'=>'beneficiary','value'=>'CHtml::encode($data->beneficiary)'),
+		array('name' =>'Beneficiario', 'type'=>'html','id'=>'beneficiary','value'=>'CHtml::encode($data->beneficiary)'),
+		array('name' => 'Tipo de participación','type'=>'html','id'=>'participation_type','value'=>'CHtml::encode($data->participation_type)'),
+		array('name' => 'Título','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('name' => 'Número de tramite','type'=>'html','id'=>'step_number','value'=>'CHtml::encode($data->step_number)'),
+		
 		/*
 		'id',
 		'participation_type',
@@ -59,12 +59,7 @@ $('.search-form form').submit(function(){
 		'resume',
 		'impact_value',
 		'creation_date',
-	
-
-
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
+		array('class'=>'CButtonColumn'),
 	),
 )); ?>
