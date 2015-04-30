@@ -36,7 +36,6 @@
                 $cs->registerScriptFile($baseUrl . '/js/render.js');
                 $cs->registerScriptFile($baseUrl . '/js/progressUser.js');
                 $cs->registerScriptFile($baseUrl . '/js/searchbar.js');
-                $cs->registerScriptFile($baseUrl . '/js/users.js');
                 $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
         ?>
         <?php

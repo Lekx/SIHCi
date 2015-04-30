@@ -84,20 +84,12 @@
         <div class="emptycontent"></div>
         <div class="row">
 
-     
+
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-globe"></i>
-                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "CURP", 'title'=>'CURP'));?>
+                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "CURP / Pasaporte", 'title'=>'CURP / Pasaporte' ));?>
             </div>
-    
-        <div id="pasaporte">
-               <div class="inner-addon right-addon">
-                <i class="glyphicon glyphicon-globe"></i>
-                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "Pasaporte", 'title'=> 'Pasaporte'));?>
-                </div>
-        </div>
-
-        </div>
+           </div> 
         <div class="emptycontent"></div>
         <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
         <input type="button" name="nextform" class="nextform action-button 2" value="Listo.." />
@@ -107,27 +99,27 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <?php echo $form->textField($model, 'email', array('placeholder' => "Email"));?>
+                <?php echo $form->textField($model, 'email', array('placeholder' => "Email", 'title'=>'Ingresa tu dirección de email'));?>
             </div>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de Email" ></input>
+                <input type="text" title="Confirma tu dirección de email" name="Users[email2]" id="Users_email2" placeholder="Verificación de Email" ></input>
             </div>
 
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-lock"></i>
-                <?php echo $form->passwordField($model, 'password', array('placeholder' => "Contraseña"));?>
+                <?php echo $form->passwordField($model, 'password', array('placeholder' => "Contraseña",'title'=>'Ingresa tu Contraseña'));?>
             </div>
               
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-lock"></i>
-                <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
+                <input type="password" title="Confirma tu Contraseña" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
             </div>
        
              
