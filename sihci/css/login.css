@@ -124,7 +124,7 @@
   pointer-events: none;
   font-size: 23px;
   border-left: 2px solid #1EB9C0;
-  z-index: auto;
+  z-index: 999;
 }
 
 /* align icon */

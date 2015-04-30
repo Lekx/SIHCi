@@ -84,17 +84,6 @@
 
 
         });//ready
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Phones_]').val('');
-				$('[id^=Emails_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
 		function validationFrom(){
 			alert("Registro Realizado con éxito");
 			return false;
@@ -114,7 +103,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<button class="newaddres">
+
 		<?php 
 		$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 			'targetClass'=>'emails',
@@ -142,8 +131,6 @@
 		<input type="submit" id="btnCreate" value="Agregar email(s)">
 
 		<br>
-	</div>
-		
 
 		<?php 
 		//print_r($getEmails);
@@ -168,14 +155,12 @@
 		?>
 
 		
-<button class="newaddres">
 	<?php 
 		$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 			'targetClass'=>'phone',
 			'addButtonLabel'=>'Agregar Telefono Extra',
 			)); 
 			?>
-</button>
 
 <div class="phone">
 
@@ -189,15 +174,15 @@
   			<option value="otro">otro</option>
 		</select>
 		<div id="errorTypePhone" class="errors"> Debe seleccionar tipo de Teléfono</div><br>
-		
-		<?php echo $form->checkBox($model,'is_primary',array('name'=>'isPrimary[]')); ?>
-
+		<div>
+		Es primario <?php echo $form->checkBox($model,'is_primary',array('name'=>'isPrimary[]')); ?>
+		</div>
 			<div class="phoneinput">
 			<input type="text"  class="phones country" name="countryCode[]" maxlength="2" placeholder="[52]">
 			<input type="text" class="phones state" name="localAreaCode[]" maxlength="3" placeholder="[33]">
 			<input type="text" class="phones phonew" name="phoneNumber[]" maxlength="10" placeholder="[000-000-00]">
 			<input type="text" class="phones extension" name="extension[]" maxlength="8" placeholder="[Ext]"> 
-			</div>
+		</div>
 		
 </div><!--FORM Phone -->
 
@@ -241,10 +226,11 @@
 	<div class="row buttons">
 		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
+		<?php echo CHtml::button('Cancelar',array('/site/index', 'id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>
+
 

@@ -139,11 +139,13 @@ class FilesManagerController extends Controller
 			));
 
 
-
+		echo "<ul>";
 		foreach($result as $files => $newArray){
-			echo"<a href='../../".$newArray["path"]."' target='_blank'>".$newArray["file_name"]."</a>";
-			echo"<br>";
+			echo"<li><a href='../../".$newArray["path"]."' target='_blank'>".$newArray["file_name"]."</a></li>";
+			
+
 		}
+		echo "</ul>";
 
 	}
 }

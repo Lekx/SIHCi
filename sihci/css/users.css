@@ -78,7 +78,7 @@
 {
  	margin-left: auto;
  	margin-right: auto;
-	margin-top: 100px;
+	margin-top: 110px;
 	width: 400px;
 	height: auto;	
 	background: #1EB9C0;
@@ -122,7 +122,7 @@
 	margin-left: -11px;
 	font-family: 'Caviar_Dreams_Bold';
 	font-size: 25px;
-	margin-top: -5px;
+	margin-top: 55px;
 	margin-bottom: 10px;
 	position: absolute;
 
@@ -138,11 +138,27 @@
 	margin-left: -11px;
 	font-family: 'Caviar_Dreams_Bold';
 	font-size: 25px;
-	margin-top: 48px;
+	margin-top: 0px;
 	margin-bottom: 0;
 	position: absolute;
 
 
+}
+#Persons_country
+{
+	background-color: #CDF1F3 !important;
+	opacity: .80;
+	height: 50px !important;
+	width: 350px !important;
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	font-family: 'Caviar_Dreams_Bold' !important; 
+	font-size: 20px !important; 
+    padding-top: 10px !important;
+	padding-left: 20px !important;
+	color: #1EB9C0 !important;
+	opacity: .60 !important;
 }
 #crateusers input[type="button"].row:disabled , #crateusers input[type="button"]:disabled
 {
@@ -251,4 +267,8 @@
 #LogInUsers
 {
 	margin-top: 0px !important;
+}
+#pasaporte , #curp
+{
+	display: none;
 }

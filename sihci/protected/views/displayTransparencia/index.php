@@ -11,16 +11,18 @@ $this->breadcrumbs=array(
 
 <section class="informativa">
 
-	<section class="column-left">
-		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Transparencia.png" alt="">
-	</section>
-
-
 	<section class="column-center">
+	
+		<div class="titleinfo">
+		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Transparencia.png" alt="">
 		<h3>Organismo Público Descentralizado Hospital Civil de Guadalajara.</h3>
 		<hr>
 			<span><h4>AVISO DE PRIVACIDAD</h4></span>
 			<span><h5>PROTECCIÓN DE DATOS PERSONALES</h5></span>
+			<br>
+		</div>
+				<div class="generalinformation">
+		
 			
 			<p>El Organismo Público Descentralizado Hospital Civil
 			de Guadalajara, con domicilio
@@ -122,6 +124,7 @@ $this->breadcrumbs=array(
 			<p>Nos comprometemos a mantenerlo informado sobre los
 			cambios que pueda sufrir la
 			constancia de privacidad que nos ocupa.</p>
+			</div>
 	</section>
 
 

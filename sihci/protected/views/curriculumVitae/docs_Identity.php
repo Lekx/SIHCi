@@ -11,6 +11,11 @@ $this->menu=array(
 	array('label'=>'Manage DocsIdentity', 'url'=>array('admin')),
 );
 ?>
+	<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Currículum vitae electrónico</h1>
+            <hr>
+        </div>
 
 <h4>Documentos Oficiales:</h4>
 
