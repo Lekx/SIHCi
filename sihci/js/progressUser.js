@@ -1,6 +1,31 @@
 $(document).ready(function() {
   $('input').attr('autocomplete', 'off');
 
+
+ $('#Persons_curp_passport').tooltipster({ // <-  USE THE PROPER SELECTOR FOR YOUR INPUTs // default is 'hover' which is no good here
+        onlyOne: false, // allow multiple tips to be open at a time
+        position: 'right' // display the tips to the right of the element
+    });
+
+ 
+      if ($('#Persons_country').val() == 'Mexico') {
+        $('#Persons_curp_passport').attr('placeholder', 'CURP');
+        $('#Persons_curp_passport').tooltipster('content', 'CURP');
+    } else {
+        $('#Persons_curp_passport').attr("placeholder", "Pasaporte");
+        $('#Persons_state_of_birth').css('display', 'none');
+        $('#Persons_curp_passport').tooltipster('content', 'Pasaporte');
+    }
+    $('#Persons_country').on('change', function() {
+        if ($('#Persons_country').val() == 'Mexico') {
+            $('#Persons_curp_passport').attr('placeholder', 'CURP');
+            $('#Persons_curp_passport').tooltipster('content', 'CURP');
+        } else {
+            $('#Persons_curp_passport').attr('placeholder', 'Pasaporte');
+            $('#Persons_curp_passport').tooltipster('content', 'Pasaporte');
+        }
+    });
+
      var current_fs, next_fs, previous_fs; //fieldsets
      var left, opacity, scale; //fieldset properties which we will animate
      var animating; //flag to prevent quick multi-click glitches
