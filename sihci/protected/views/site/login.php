@@ -13,39 +13,44 @@
 			<div class="inputlog">
 				<div class="inner-addon right-addon">
 					 <i class="glyphicon glyphicon-envelope"></i>
-					<?php echo $form->textField($model,'username', array('placeholder'=>"Email..")); ?>
+					<?php echo $form->textField($model,'username', array('placeholder'=>"Email..",'title'=>'Favor de ingresar su correo de registro')); ?>
 
 				</div>
 			</div>
-				<div class="infodialog">
-				<p>Favor de ingresar su correo de registro.</p>
-				</div>
 		</div>
 	
 		<div class="row">
 			<div class="inputlog">
 				<div class="inner-addon right-addon">
 					<i class="glyphicon glyphicon-lock"></i>
-					<?php echo $form->passwordField($model,'password', array('placeholder'=>"Contraseña..")); ?>
+					<?php echo $form->passwordField($model,'password', array('placeholder'=>"Contraseña..",'title'=>'Favor de ingresar su contraseña.')); ?>
 				</div>
 			</div>
-				<div class="infodialog1">
-				<p>Favor de ingresar su contraseña.</p>
-				</div>
 		</div>
 
 		<!-- <div class="row">
 		<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>">¿Olvidó su Contraseña?</a>
 		</div> -->
 	
-		<?php echo CHtml::ajaxButton ("Ingresar a su Cuenta", CController::createUrl('site/login'), array(
+		<?php echo CHtml::ajaxButton ("Ingresar a mi Cuenta", CController::createUrl('site/login'), array(
 						'type'=>'POST',
                         'data'=> 'js:$("#login-form").serialize()+ "&ajax=login-form"',                  
                         'success'=>'js:function(response){
 		                        		if(response == "302"){
-		                        			$(".infodialog").removeClass("infodialog").addClass("infodialogerror");
-		                        			$(".infodialogerror").css("visibility", "visible");
-		                        			$(".infodialogerror").find("p").text("No has activado tu cuenta");
+
+		                        			 $(".tooltipster-base").css("background-color","#F20862 !important");
+		                        			 $("#yt0").css("background-color", "#F20862 !important");
+		                        			 $("#yt0").val("Listo... Ingresar a mi cuenta");		              
+		                        			 $(".infodialog").removeClass("infodialog").addClass("infodialogerror");
+		                        			 $(".glyphicon").css("color","#F20862 ");
+		                        			 $(".infodialogerror").css("visibility", "visible");		            		                       
+		                        			 $(".infodialog1").removeClass("infodialog1").addClass("infodialog1error");
+		                        			 $(".infodialog1error").css("visibility", "visible");
+		                        			 $("#LoginForm_username").css("background-color", "#F20862 !important");	
+		                        			 $("#LoginForm_username").css("background-color", "#F20862 !important");		                    
+		                        		     $(".inner-addon").effect( "shake" , {times:3}, 20);
+									    
+
 		                        		}		               
 		                        		else if(response == "200"){
 											
@@ -60,7 +65,8 @@
 		                        		}
 		                        		else
 		                        		{
-		                        			 $("#yt0").css("background-color", "#F20862 !important")
+		                        			 $(".tooltipster-base").css("background-color","#F20862 !important");
+		                        			 $("#yt0").css("background-color", "#F20862 !important");
 		                        			 $("#yt0").val("Listo... Ingresar a mi cuenta");		              
 		                        			 $(".infodialog").removeClass("infodialog").addClass("infodialogerror");
 		                        			 $(".glyphicon").css("color","#F20862 ");

@@ -27,6 +27,6 @@ $this->menu=array(
 		'project_name',
 		'description',
 		'keywords',
-		'state',
+		'status',
 	),
 )); ?>

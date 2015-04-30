@@ -1,3 +1,4 @@
+
 <!-- OP03-Desplegar Organigrama -->
 
 <?php
@@ -12,14 +13,14 @@ $this->breadcrumbs = array(
 
 <section class="informativa">
 
-	<section class="column-left">
-		<img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/IconCirculo/Organigrama.png" alt="">
-	</section>
-
 	<section class="column-center">
-
+		<div class="titleinfo">
+		<img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/IconCirculo/Organigrama.png" alt="">
 		<h2>Organigrama</h2>
 		<hr>
+		</div>
+
+		<div class="generalinformation">
 <center>
 		<img src="<?php echo Yii::app()->request->baseUrl . "/protected/views/organigram/img/org1.png";?>">
 <br><br>
@@ -43,6 +44,7 @@ $this->breadcrumbs = array(
 		<p>Objetivo, Funciones y Atribuciones</p> <br>-->
 	<img src="<?php echo Yii::app()->request->baseUrl . "/protected/views/organigram/img/org2.png";?>"></center>
 
+</div>
 	</section>
 
 

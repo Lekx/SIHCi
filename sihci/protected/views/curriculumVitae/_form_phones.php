@@ -1,4 +1,3 @@
-
 <?php
 /* @var $this PhonesController */
 /* @var $model Phones */
@@ -130,11 +129,11 @@
 
 			<div class="phoneinput">
 				<input id="countryCode" type="text"  class="phones country" name="countryCode" maxlength="2" placeholder="[52]">
-				<div id="errorCountry" class="errors"> Debe escribir Lada Nacional</div>
+				<div id="errorCountry" class="errors"> Debe escribir Lada Nacional y tiene que ser número</div>
 				<input id="localCode" type="text" class="phones state" name="localAreaCode" maxlength="3" placeholder="[33]">
-				<div id="errorLocal" class="errors"> Debe escribir Lada Estatal</div>
+				<div id="errorLocal" class="errors"> Debe escribir Lada Estatal y tiene que ser número</div>
 				<input id="phoneNum" type="text" class="phones phonew" name="phoneNumber" maxlength="10" placeholder="[000-000-00]">
-				<div id="errorPhone" class="errors"> Debe escribir número de Teléfono</div>
+				<div id="errorPhone" class="errors"> Debe escribir número de Teléfono y tiene que ser número</div>
 				<input type="text" class="phones extension" name="extension" maxlength="8" placeholder="[Ext]"> 
 			</div>
 
@@ -213,7 +212,7 @@
                                  }                               
                                   else
                                  {
-                                    alert("No existe ninguna linea de investigación");   
+                                    alert("No existe ningun registro");   
                                  }        
                             }',                    
                             
@@ -226,4 +225,5 @@
 
 
 </div><!-- form -->
+
 

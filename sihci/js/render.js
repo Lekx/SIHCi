@@ -1,19 +1,44 @@
 $(document).ready(function() {
+    $('body').keyup(function(e) {
+        if (e.which == 27) {
+            $(".loginHome").hide();
+            $(".recoveryHome").hide();
+            $(".createHome").hide();
+            $(".glyphicon").css("color", "#1EB9C0");
+            $("#yt0").css("background-color", "#0E3152 !important");
+            $("#yt0").val("Ingresar a mi cuenta");
+        }
+    });
     $("img#logocuentas2").click(function() {
         $(".loginHome").show();
+        $(".glyphicon").css("color", "#1EB9C0");
+        $("#yt0").css("background-color", "#0E3152 !important");
+        $("#yt0").val("Ingresar a mi cuenta");
     });
     $(".closelogin").click(function() {
         $(".loginHome").hide();
+        $(".glyphicon").css("color", "#1EB9C0");
+        $("#yt0").css("background-color", "#0E3152 !important");
+        $("#yt0").val("Ingresar a mi cuenta");
     });
     $("#recoveryHome").click(function() {
         $(".loginHome").hide();
         $(".recoveryHome").show();
+        $(".glyphicon").css("color", "#1EB9C0");
+        $("#yt0").css("background-color", "#0E3152 !important");
+        $("#yt0").val("Ingresar a mi cuenta");
     });
     $(".closerecovery").click(function() {
         $(".recoveryHome").hide();
+        $(".glyphicon").css("color", "#1EB9C0");
+        $("#yt0").css("background-color", "#0E3152 !important");
+        $("#yt0").val("Ingresar a mi cuenta");
     });
     $(".closecreate").click(function() {
         $(".createHome").hide();
+        $(".glyphicon").css("color", "#1EB9C0");
+        $("#yt0").css("background-color", "#0E3152 !important");
+        $("#yt0").val("Ingresar a mi cuenta");
     });
     $("#LoginForm_username").focus(function() {
         $(".infodialog").css("visibility", "visible");
@@ -35,5 +60,8 @@ $(document).ready(function() {
     });
     $("img#logocuentas").click(function() {
         $(".createHome").show();
+        $(".glyphicon").css("color", "#1EB9C0");
+        $("#yt0").css("background-color", "#0E3152 !important");
+        $("#yt0").val("Ingresar a mi cuenta");
     });
 });
