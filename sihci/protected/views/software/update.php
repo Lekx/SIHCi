@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Software', 'url'=>array('index')),
-	array('label'=>'Create Software', 'url'=>array('create')),
-	array('label'=>'View Software', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Software', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	
 );
 ?>
 
-<h1>Update Software <?php echo $model->id; ?></h1>
+<h1>Modificar registro <?php echo $model->title ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

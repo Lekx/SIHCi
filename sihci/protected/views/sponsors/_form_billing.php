@@ -5,6 +5,18 @@
 ?>
 
 <script>
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
 $(document).ready(function(){
 	if($("#sponsorsBillingCheck").is(":checked"))
 		$("#sponsorsBillingForm").hide();
@@ -36,14 +48,26 @@ $(document).ready(function(){
 	</div>
 
 	<div id="sponsorsBillingForm" id="sponsorsBillingForm">
-		<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'country');?>
-		<?php echo $form->textField($modelAddresses, 'country', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'País'));?>
-		<?php echo $form->error($modelAddresses, 'country');?>
-		</div>
 
+
+		          <?php
+$this->widget(
+	'yiiwheels.widgets.formhelpers.WhCountries',
+	array(
+		'name' => 'Addresses[country]',
+		'id' => 'Addresses_country',
+		//'value' => 'MX',
+		'useHelperSelectBox' => true,
+		'pluginOptions' => array(
+			'country' => 'MX',
+			'language' => 'es_ES',
+			'flags' => true,
+		),
+	)
+);
+?>
 		<?php echo $form->labelEx($modelAddresses, 'zip_code');?>
-		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal'));?>
+		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal', 'class' => 'numericOnly'));?>
 		<?php echo $form->error($modelAddresses, 'zip_code');?>
 
 		<?php echo $form->labelEx($modelAddresses, 'state');?>
@@ -71,11 +95,11 @@ $(document).ready(function(){
 		<?php echo $form->error($modelAddresses, 'street');?>
 
 		<?php echo $form->labelEx($modelAddresses, 'external_number');?>
-		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo'));?>
+		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo', 'class' => 'numericOnly'));?>
 		<?php echo $form->error($modelAddresses, 'external_number');?>
 
 		<?php echo $form->labelEx($modelAddresses, 'internal_number');?>
-		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno'));?>
+		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno', 'class' => 'numericOnly'));?>
 		<?php echo $form->error($modelAddresses, 'internal_number');?>
 	</div>
 
@@ -86,11 +110,11 @@ $(document).ready(function(){
 		<?php echo $form->error($model, 'name');?>
 
 		<?php echo $form->labelEx($model, 'rfc');?>
-		<?php echo $form->textField($model, 'rfc', array('size' => 20, 'maxlength' => 20));?>
+		<?php echo $form->textField($model, 'rfc', array('size' => 20, 'maxlength' => 20, 'class' => 'numericOnly'));?>
 		<?php echo $form->error($model, 'rfc');?>
 
 		<?php echo $form->labelEx($model, 'email');?>
-		<?php echo $form->textField($model, 'email', array('size' => 60, 'maxlength' => 70));?>
+		<?php echo $form->textField($model, 'email', array('size' => 60, 'maxlength' => 70, 'email' => 'email'));?>
 		<?php echo $form->error($model, 'email');?>
 	</div>
 

@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PressNotes', 'url'=>array('index')),
-	array('label'=>'Create PressNotes', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -20,13 +20,12 @@ $('.search-button').click(function(){
 $('.search-form form').submit(function(){
 	$('#press-notes-grid').yiiGridView('update', {
 		data: $(this).serialize()
-	});()
+	});
 	return false;
 });
 ");
 ?>
-
-<h1>Manage Press Notes</h1>
+<h1>Difusión de Prensa</h1>
 
 <div class="search-form" style="display:block" >
 <?php $this->renderPartial('_search',array(
@@ -38,13 +37,20 @@ $('.search-form form').submit(function(){
 	'id'=>'press-notes-grid',
 	'dataProvider'=>$model->search(),
 	'columns'=>array(
+
+		array('name'=>'Tipo de participación','type'=>'html','id'=>'type','value'=>'CHtml::encode($data->type)'),
+		array('name'=>'Dirigido a ','type'=>'html','id'=>'directed_to','value'=>'CHtml::encode($data->directed_to)'),
+		array('name'=>'Título de la publicación','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('name'=>'Dependencia responsable','type'=>'html','id'=>'responsible_agency','value'=>'CHtml::encode($data->responsible_agency)'),
+		array('name'=>'Nota periodistica','type'=>'html','id'=>'note','value'=>'CHtml::encode($data->note)'),
+		
+		/*
 		'id',
 		'id_curriculum',
 		'type',
 		'directed_to',
 		'date',
 		'title',
-		/*
 		'responsible_agency',
 		'note',
 		'is_national',

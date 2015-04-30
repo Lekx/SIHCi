@@ -12,11 +12,11 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
     
-   
+    
 	<p class="note">Los campos con<span class="required">*</span> son necesarios.</p>
     
 	<?php echo $form->errorSummary($model); ?>
@@ -43,7 +43,8 @@
 		    'htmlOptions' => array(
 		    		'size' => '10',         
 		        	'maxlength' => '10', 
-		        	'placeholder'=>"Fecha de Conclusion"   
+		        	'readOnly'=>true,
+		        	'placeholder'=>"Fecha de Conclusión"   
 		    ),
 		));
 		?>
@@ -109,7 +110,7 @@
 			                                                       'CENTRO DE GRADUADOS E INNVESTIGACION DEL INSTITUTO TECNOLOGICO DE MORELIA'=>'CENTRO DE GRADUADOS E INNVESTIGACION DEL INSTITUTO TECNOLOGICO DE MORELIA','CENTRO DE GRADUADOS E INVESTIGACION DEL INSTITUTO TECNOLOGICO DE LA LAGUNA'=>'CENTRO DE GRADUADOS E INVESTIGACION DEL INSTITUTO TECNOLOGICO DE LA LAGUNA',
 			                                                       'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM'=>'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM','COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN'=>'COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN','UNIVERSIDAD DEL ISTMO'=>'UNIVERSIDAD DEL ISTMO',
 			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN','INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX','INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA',
-			                                                       'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'=>'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'),array('prompt'=>'Organización')); ?>
+			                                                       'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'=>'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'),array('prompt'=>'Organizaci&oacute;n')); ?>
 		<?php echo $form->error($model,'organization'); ?>
 	</div>
 
@@ -141,7 +142,7 @@
 			                                                'GEOGRAFIA'=>'GEOGRAFIA','HISTORIA'=>'HISTORIA','CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
 			                                                'LINGÜISTICA'=>'LINGÜISTICA','PEDAGOGIA'=>'PEDAGOGIA','CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS','PSICOLOGIA'=>'PSICOLOGIA',
 			                                                'ARTES Y LETRAS'=>'ARTES Y LETRAS','SOCIOLOGIA'=>'SOCIOLOGIA','CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION','ETICA'=>'ETICA',
-			                                                'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'),array('prompt'=>'Área'));?>
+			                                                'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'),array('prompt'=>'&Aacute;rea'));?>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
@@ -386,21 +387,41 @@
 		                                                            'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),array('prompt'=>'Subdiscipliba'));?>
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
-
 	<div class="row buttons">
-		<input type="submit" onClick="validationFrom()" value="Guardar">
-        <input type='reset' onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
-        <?php echo CHtml::link('Cancelar', array('directedthesis/admin'))?>
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('directedThesis/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#directed-thesis-form")[0].reset();
+   				                     window.location.href ="'.Yii::app()->createUrl('directedThesis/admin').'";		                         
 
-        <script>
-		   
-			function validationFrom()
-			 {
-			    alert("Registro realizado con éxito");
-			    return true;
-			 } 
-        </script>
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+        <?php  if($model->isNewRecord) 
+			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+		?>
+       	<?php echo CHtml::link('Cancelar', array('/directedThesis/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
+		<div class="200">
+		
+		</div>
+		
+		<div class="404">
+		</div>
+		
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -26,15 +26,5 @@
 	<?php echo CHtml::encode($data->country); ?>
 	<br />
 
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('work_type')); ?>:</b>
-	<?php echo CHtml::encode($data->work_type); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('keywords')); ?>:</b>
-	<?php echo CHtml::encode($data->keywords); ?>
-	<br />
-
-	 */?>
 
 </div>

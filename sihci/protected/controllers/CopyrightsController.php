@@ -154,10 +154,7 @@ class CopyrightsController extends Controller
 	//DA04-Desplegar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Copyrights');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

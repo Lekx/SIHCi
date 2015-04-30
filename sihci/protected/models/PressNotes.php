@@ -23,6 +23,9 @@ class PressNotes extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	public $searchValue;
+
 	public function tableName()
 	{
 		return 'press_notes';
@@ -41,9 +44,10 @@ class PressNotes extends CActiveRecord
 			array('type, directed_to, title, responsible_agency, is_national', 'length', 'max'=>45),
 			array('date, note, creation_date', 'safe'),
 			array('date','compare','compareValue'=> date('d/m/Y'),'operator'=>'<='),	
+			array('searchValue','length', 'max'=>70),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, type, directed_to, date, title, responsible_agency, note, is_national, creation_date', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, type, directed_to, date, title, responsible_agency, note, is_national, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -96,6 +100,12 @@ class PressNotes extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR type LIKE CONCAT('%', :searchValue , '%') OR responsible_agency LIKE CONCAT('%', :searchValue , '%') OR note LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}	
+	/*	
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('type',$this->type,true);
@@ -106,7 +116,7 @@ class PressNotes extends CActiveRecord
 		$criteria->compare('note',$this->note,true);
 		$criteria->compare('is_national',$this->is_national,true);
 		$criteria->compare('creation_date',$this->creation_date,true);
-
+	*/
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PostdegreeGraduates', 'url'=>array('index')),
-	array('label'=>'Create PostdegreeGraduates', 'url'=>array('create')),
-	array('label'=>'View PostdegreeGraduates', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage PostdegreeGraduates', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>Update PostdegreeGraduates <?php echo $model->id; ?></h1>
+
+<h1>Modificar regitro de <?php echo $model->fullname ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

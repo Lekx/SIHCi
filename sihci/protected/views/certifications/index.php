@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Certificaciones', 'url'=>array('create')),
-	array('label'=>'Administrar Certificaciones', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Certificaciones</h1>
+<h1>Certificaciones por Concejos  Médicos</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

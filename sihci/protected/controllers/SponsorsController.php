@@ -63,17 +63,20 @@ class SponsorsController extends Controller {
 		} else {
 			$model = new Sponsors;
 			$modelAddresses = new Addresses;
+			
 		}
 
 		$modelPersons = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
-
+		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelAddresses);
+		$this->performAjaxValidation($modelPersons);
 		if (isset($_POST['Sponsors'])) {
 			$model->attributes = $_POST['Sponsors'];
 			$modelAddresses->attributes = $_POST['Addresses'];
 
 			if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
 				$logo = CUploadedFile::getInstanceByName('Persons[photo_url]');
-				echo "entre 1";
+				
 			}
 
 			if ($modelAddresses->validate()) {
@@ -84,23 +87,23 @@ class SponsorsController extends Controller {
 						if ($model->save()) {
 
 							if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
-								echo "entre 2";
+								
 								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 								$path = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/img/";
 								if (!file_exists($path)) {
 									mkdir($path, 0775, true);
 								}
 
-								$files = glob($path); // get all file names
+								$files = glob($path);
 								foreach ($files as $file) {
-									// iterate files
+
 									if (is_file($file)) {
 										unlink($file);
 									}
-									// delete file
+
 								}
 								$logo->saveAs($path . 'logo.' . $logo->getExtensionName());
-								$logo =  "sponsors/" . $id_sponsor . "/img/".'logo.' . $logo->getExtensionName();
+								$logo = "sponsors/" . $id_sponsor . "/img/" . 'logo.' . $logo->getExtensionName();
 
 								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id, array('photo_url' => $logo))) {
 
@@ -146,45 +149,89 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_contact() {
+		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 		$model = new SponsorsContact;
-
+		$modelPull = SponsorsContact::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if (isset($_POST['types'])) {
-			$model->id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 
-			echo "<pre>";
-			print_r($_POST['types']);
-			print_r($_POST['values']);
-			echo "</pre>";
+		if (isset($_POST['valuesUpdate1'])) {
+			
+			$modelPullIds = $_POST['modelPullIds'];
+			$types = $_POST['modelPullTypes'];
+			$values1 = $_POST['valuesUpdate1'];
+			$values2 = $_POST['valuesUpdate2'];
+			$values3 = $_POST['valuesUpdate3'];
 
-		$values = $_POST['values'];
-		$types = $_POST['types'];
-
-		foreach ($_POST['values'] as $key => $values) {
-			$model->type = $values;
-			$model->value = $types[$key];
-			$model->save();
+			foreach ($_POST['modelPullTypes'] as $key => $type) 
+				$model->updateByPk($modelPullIds[$key],array('type' => $type,'value' => $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key]));
 			
 			
-
-			
-        
 		}
 
-			//$model->attributes = $_POST['SponsorsContact'];
-			//$model->id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
-			/*
-		if ($model->save()) {
-		echo "guarde todo el business";
-		//$this->redirect(array('view', 'id' => $model->id));
-		}*/
+
+
+
+		if (isset($_POST['values1'])) {
+			echo "entre 1";
+			$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+			$types = $_POST['types'];
+			$values1 = $_POST['values1'];
+			$values2 = $_POST['values2'];
+			$values3 = $_POST['values3'];
+			
+			foreach ($_POST['types'] as $key => $type) {
+				unset($model);
+
+				$model = new SponsorsContact;
+				$model->id_sponsor = $id_sponsor;
+				$model->type = $type;
+				$model->value = $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key];
+				$model->save();
+
+			}
 
 		}
 
+		
 		$this->render('create_contact', array(
-			'model' => $model,
+			'model' => $model,'modelPull' => $modelPull
+		));
+	}
+
+	public function actionCreate_contacts() {
+		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+		$model = new SponsorsContacts;
+		$fullname = SponsorsContacts::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+		
+		if (isset($_POST['fullnamesUpdate'])) {
+			$fullnames = $_POST['fullnamesUpdate'];
+			$fullnamesUpdateId = $_POST['fullnamesUpdateId'];
+			foreach ($_POST['fullnamesUpdate'] as $key => $names) 
+				$model->updateByPk($fullnamesUpdateId[$key],array('fullname' => $names));
+
+			$this->redirect(array('view', 'id' => $model->id));
+		}
+
+		if (isset($_POST['fullnames'])) {
+			$fullnames = $_POST['fullnames'];
+			foreach ($_POST['fullnames'] as $key => $names) {
+				unset($model);
+				$model = new SponsorsContacts;
+				$model->id_sponsor = $id_sponsor;
+				$model->fullname = $names;
+				$model->save();
+				
+			}
+		}
+
+
+
+		$this->render('create_contacts', array(
+			'model' => $model, 'fullname' => $fullname,
 		));
 	}
 
@@ -192,7 +239,7 @@ class SponsorsController extends Controller {
 		$model = new Addresses;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if (isset($_POST['Addresses'])) {
 			$model->attributes = $_POST['Addresses'];
@@ -230,31 +277,29 @@ class SponsorsController extends Controller {
 			$model->id_sponsor = $sponsor->id;
 
 			if (isset($_POST['sameAddress'])) {
+				echo "es la misma direccion";
 				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id_address;
-
-				//var_dump($modelAddresses->id);
-
 				if ($model->save()) {
-					if ($modelAddresses->id != null) {
+					if ($modelAddresses->id != $model->id_address_billing) {
 						if ($modelAddresses->delete());
 						$this->redirect(array('create_billing'));
+					} else {
+						echo "no es la misma direccion";
+						$modelAddresses = new Addresses;
 
-					}
+						$modelAddresses->attributes = $_POST['Addresses'];
 
-				} else {
+						if ($modelAddresses->save()) {
+							$model->id_address_billing = $modelAddresses->id;
 
-					$modelAddresses = new Addresses;
+							if ($model->save()) {
+								$this->redirect(array('create_billing'));
+							}
 
-					$modelAddresses->attributes = $_POST['Addresses'];
-
-					if ($modelAddresses->save()) {
-						$model->id_address_billing = $modelAddresses->id;
-						if ($model->save()) {
-							$this->redirect(array('create_billing'));
 						}
 					}
-
 				}
+
 			}
 
 		}
@@ -264,95 +309,160 @@ class SponsorsController extends Controller {
 		));
 	}
 
-
 	public function actionCreate_docs() {
-		$model = new SponsorsDocs;
 		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+
+		$DocExist = SponsorsDocs::model()->findAllByAttributes(array('id_sponsor' => $id_sponsor));
+		$modelDocs = array();
+		if ($DocExist != null) {
+			foreach ($DocExist as $key => $value) {
+				$modelDocs[$value->file_name] = array($value->id, $value->path);
+			}
+
+		}
+
+		$model = new SponsorsDocs;
+		$reload = false;
+
 		if (isset($_POST['Doc1'])) {
+
 			$path2 = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/docs/";
 			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 			if (!file_exists($path2)) {
 				mkdir($path2, 0777, true);
 			}
-			$files = glob($path2);
-			foreach ($files as $file) {
-				if (is_file($file)) {
-					unlink($file);
-				}
-
-			}
+		
 			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
-				$model = new SponsorsDocs;
+				if (!array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs)) {
+					var_dump($modelDocs);
+					$model = new SponsorsDocs;
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
+
+				}
+
 				$model->id_sponsor = $id_sponsor;
 				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
-				$model->file_name = "Documento que acredite la creacion de la empresa";
+				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
+				unlink($model->path);
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
-				$model->save();
-
+				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+				
+				if($model->save())
+					$reload = true;
+				
+				
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc2'))) {
 				unset($model);
-				$model = new SponsorsDocs;
+				if (!array_key_exists('Acreditacion_de_las_facultades_del_representante_o_apoderado', $modelDocs)) {
+					$model = new SponsorsDocs;
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['Acreditacion_de_las_facultades_del_representante_o_apoderado'][0]);
+				}
+
 				$model->id_sponsor = $id_sponsor;
-				$model->file_name = "Acreditación de las facultades del representante o apoderado";
+				$model->file_name = "Acreditacion_de_las_facultades_del_representante_o_apoderado";
 				$model->path = CUploadedFile::getInstanceByName('Doc2');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
-				$model->save();
+				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+				
+					if ($model->save()) 
+						$reload = true;
+					
+				
+
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc3'))) {
 				unset($model);
-				$model = new SponsorsDocs;
+				if (!array_key_exists('Permisos_de_actividades', $modelDocs)) {
+					$model = new SponsorsDocs;
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['Permisos_de_actividades'][0]);
+				}
+
 				$model->id_sponsor = $id_sponsor;
-				$model->file_name = "Permisos de actividades";
+				$model->file_name = "Permisos_de_actividades";
 				$model->path = CUploadedFile::getInstanceByName('Doc3');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
-				$model->save();
+				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+					if ($model->save()) 
+						$reload = true;
+					
+				
+
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc4'))) {
 				unset($model);
-				$model = new SponsorsDocs;
+				if (!array_key_exists('RFC_o_equivalente', $modelDocs)) {
+					$model = new SponsorsDocs;
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['RFC_o_equivalente'][0]);
+				}
+
 				$model->id_sponsor = $id_sponsor;
-				$model->file_name = "RFC o equivalente";
+				$model->file_name = "RFC_o_equivalente";
 				$model->path = CUploadedFile::getInstanceByName('Doc4');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
-				$model->save();
+				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+					if ($model->save()) 
+						$reload = true;
+					
+				
 
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc5'))) {
 				unset($model);
-				$model = new SponsorsDocs;
+				if (!array_key_exists('Comprobante_de_domicilio', $modelDocs)) {
+					$model = new SponsorsDocs;
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['Comprobante_de_domicilio'][0]);
+				}
+
 				$model->id_sponsor = $id_sponsor;
-				$model->file_name = "Comprobante de domicilio";
+				$model->file_name = "Comprobante_de_domicilio";
 				$model->path = CUploadedFile::getInstanceByName('Doc5');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
-				$model->save();
+				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+					if ($model->save()) 
+						$reload = true;
+					
+				
+
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc6'))) {
 				unset($model);
-				$model = new SponsorsDocs;
+				if (!array_key_exists('Identificacion_Oficial_del_Representante', $modelDocs)) {
+					$model = new SponsorsDocs;
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['Identificacion_Oficial_del_Representante'][0]);
+				}
+
 				$model->id_sponsor = $id_sponsor;
-				$model->file_name = "Identificación Oficial del Representante";
+				$model->file_name = "Identificacion_Oficial_del_Representante";
 				$model->path = CUploadedFile::getInstanceByName('Doc6');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
-				$model->path = $path2 . $model->file_name . "." . $model->path->getExtensionName();
-				$model->save();
+				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+				if ($model->save()) 
+					$reload = true;
+				
+
+			}
+
+			if ($reload == true) {
+				$this->redirect(array('create_docs'));
 			}
 
 		}
 		$this->render('create_docs', array(
-			'model' => $model,
+			'model' => $model, 'modelDocs' => $modelDocs,
 		));
 
 	}
@@ -367,7 +477,7 @@ class SponsorsController extends Controller {
 		$model = $this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		//$this->performAjaxValidation($model);
 
 		if (isset($_POST['Sponsors'])) {
 			$model->attributes = $_POST['Sponsors'];
@@ -397,6 +507,27 @@ class SponsorsController extends Controller {
 
 	}
 
+	public function actionDeleteContacts($id) {
+		
+		SponsorsContacts::model()->findByPk($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if (!isset($_GET['ajax'])) {
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+
+	}
+
+	public function actionDeleteContact($id) {
+		
+		SponsorsContact::model()->findByPk($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if (!isset($_GET['ajax'])) {
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+
+	}
 	/**
 	 * Lists all models.
 	 */
@@ -412,7 +543,7 @@ class SponsorsController extends Controller {
 	 */
 	public function actionAdmin() {
 		$model = new Sponsors('search');
-		$model->unsetAttributes(); // clear any default values
+		$model->unsetAttributes();
 		if (isset($_GET['Sponsors'])) {
 			$model->attributes = $_GET['Sponsors'];
 		}
@@ -443,7 +574,7 @@ class SponsorsController extends Controller {
 	 * @param Sponsors $model the model to be validated
 	 */
 	protected function performAjaxValidation($model) {
-		if (isset($_POST['ajax']) && $_POST['ajax'] === 'sponsors-form') {
+		if (isset($_POST['ajax'])) {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

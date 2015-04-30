@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ResearchAreas', 'url'=>array('index')),
-	array('label'=>'Create ResearchAreas', 'url'=>array('create')),
-	array('label'=>'View ResearchAreas', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage ResearchAreas', 'url'=>array('admin')),
+	//array('label'=>'List ResearchAreas', 'url'=>array('index')),
+	array('label'=>'Crear', 'url'=>array('create')),
+	//array('label'=>'View ResearchAreas', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 

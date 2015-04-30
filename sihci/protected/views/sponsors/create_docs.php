@@ -2,17 +2,17 @@
 /* @var $this SponsorsDocsController */
 /* @var $model SponsorsDocs */
 
-$this->breadcrumbs=array(
-	'Sponsors Docs'=>array('index'),
+$this->breadcrumbs = array(
+	'Sponsors Docs' => array('index'),
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List SponsorsDocs', 'url'=>array('index')),
-	array('label'=>'Manage SponsorsDocs', 'url'=>array('admin')),
+$this->menu = array(
+	array('label' => 'List SponsorsDocs', 'url' => array('index')),
+	array('label' => 'Manage SponsorsDocs', 'url' => array('admin')),
 );
 ?>
 
 <h1>Create SponsorsDocs</h1>
 
-<?php $this->renderPartial('_form_docs', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form_docs', array('model' => $model, 'modelDocs' => $modelDocs));?>

@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tesis', 'url'=>array('index')),
-	array('label'=>'Administrar tesis', 'url'=>array('admin')),
+	//array('label'=>'Listar Tesis', 'url'=>array('index')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>Tesis Dirigidas</h1>
+<h1>Crear Registro</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
