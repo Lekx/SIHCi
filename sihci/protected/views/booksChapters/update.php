@@ -10,9 +10,10 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('index')),
+	array('label'=>'Gestionar ', 'url'=>array('admin')),
 	array('label'=>'Crear', 'url'=>array('create')),
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Gestionar ', 'url'=>array('admin')),
+	
 );
 ?>
 

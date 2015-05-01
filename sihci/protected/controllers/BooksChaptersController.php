@@ -67,7 +67,7 @@ class BooksChaptersController extends Controller
       
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+         $this->performAjaxValidation(array($model, $modelAuthors));
 
         if(isset($_POST['BooksChapters']))
         {
@@ -83,8 +83,8 @@ class BooksChaptersController extends Controller
 	                if(!is_dir($path))
 	                	 mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
 	                
- 					$model->url_doc->saveAs($path.'Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
-		            $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();    
+ 					$model->url_doc->saveAs($path.'Capitulo_libro'.'.'.$model->url_doc->getExtensionName());
+		            $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.'.'.$model->url_doc->getExtensionName();    
 	                	 $this->performAjaxValidation($modelAuthors);
 			               if($model->save()){
 			               		              
@@ -108,8 +108,7 @@ class BooksChaptersController extends Controller
 			               }
 			               }
 			               else {
-			               	if($model->save()){
-			               		              
+			               	if($model->save()){             
 					 			$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
@@ -127,9 +126,9 @@ class BooksChaptersController extends Controller
 			              	 }	
 			               	$this->redirect(array('admin','id'=>$model->id));
 
-			               }
+			            }
 
-			               }		   
+			         }		   
         		}
         }
 
@@ -146,25 +145,38 @@ class BooksChaptersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+<<<<<<< HEAD
         //$getAuthors=BooksChaptersAuthors::model()->find('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$id));
         $modelAuthors = BooksChaptersAuthors::model()->find('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$model->id));
       
+=======
+		$modelAuthors = BooksChaptersAuthors::model()->find('id_books_chapters=:id_books_chapters',array('id_books_chapters'=>$model->id));
+       //$modelAuthors = BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$id), array('select'=>'id_books_chapters, names,last_name1,last_name2,position'));
+>>>>>>> d9ed14ee53d6733ed314eec7f8300be4090b5233
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model); 
+		$this->performAjaxValidation($model, $modelAuthors); 
 
         if(isset($_POST['BooksChapters']))
         {
 	            $model->attributes=$_POST['BooksChapters'];
+
 	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
 
             if($model->validate()){
            
-           	if($model->url_doc != ''){
+           		if($model->url_doc != ''){
                 
+<<<<<<< HEAD
 	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
 	               $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
                        
             if($model->save()){
+=======
+	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.'.'.$model->url_doc->getExtensionName());
+	               $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.'.'.$model->url_doc->getExtensionName(); 
+                 
+            		if($model->save()){
+>>>>>>> d9ed14ee53d6733ed314eec7f8300be4090b5233
 
             					$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
@@ -172,19 +184,54 @@ class BooksChaptersController extends Controller
 					            $position = $_POST['positions'];
 					            
              					 foreach($_POST['names'] as $key => $names){
+<<<<<<< HEAD
 					               	unset($modelAuthors);
 					              	$modelAuthors = new BooksChaptersAuthors;
 					               	$modelAuthors->id_books_chapters = $model->id;
 					       			$modelAuthors->names = $names[$key];
+=======
+					                //unset($modelAuthors);
+					              	//$modelAuthors = new BooksChaptersAuthors;
+					               	$modelAuthors->id_books_chapters = $model->id;
+					       			$modelAuthors->names = $names;
+>>>>>>> d9ed14ee53d6733ed314eec7f8300be4090b5233
 					        		$modelAuthors->last_name1 = $last_name1[$key];
 					       			$modelAuthors->last_name2 = $last_name2[$key];
 					        		$modelAuthors->position = $position[$key];
 		                    		$modelAuthors->save();
+<<<<<<< HEAD
                 	}
+=======
+                		}
+>>>>>>> d9ed14ee53d6733ed314eec7f8300be4090b5233
                     $this->redirect(array('admin','id'=>$model->id));
-                }
-            }
+                	}
+            	}  else{
 
+            		if($model->save()){
+
+<<<<<<< HEAD
+=======
+            					$names = $_POST['names'];
+					            $last_name1 = $_POST['last_names1'];
+					            $last_name2 = $_POST['last_names2'];
+					            $position = $_POST['positions'];
+					            
+             					 foreach($_POST['names'] as $key => $names){
+					                //unset($modelAuthors);
+					              	//$modelAuthors = new BooksChaptersAuthors;
+					               	$modelAuthors->id_books_chapters = $model->id;
+					       			$modelAuthors->names = $names;
+					        		$modelAuthors->last_name1 = $last_name1[$key];
+					       			$modelAuthors->last_name2 = $last_name2[$key];
+					        		$modelAuthors->position = $position[$key];
+		                    		$modelAuthors->save();
+                		}
+                    $this->redirect(array('admin','id'=>$model->id));
+
+            	} 
+            }
+>>>>>>> d9ed14ee53d6733ed314eec7f8300be4090b5233
             }//End validate 
         }
 

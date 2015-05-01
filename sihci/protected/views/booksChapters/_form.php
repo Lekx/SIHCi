@@ -364,7 +364,11 @@
 		 )); 
     	?><div class="authorsRegistry">  	
     	
+<<<<<<< HEAD
     		<?php print_r($modelAuthors); ?>
+=======
+    	<?php print_r($modelAuthors); ?>
+>>>>>>> d9ed14ee53d6733ed314eec7f8300be4090b5233
 		  <?php echo $form->labelEx($modelAuthors,'names'); ?>
 		  <?php echo $form->textField($modelAuthors,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
 		  <?php echo $form->error($modelAuthors,'names');?>
