@@ -40,7 +40,7 @@
 	</div>
 
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('ResearchAreas/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('AdminResearchAreas/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
@@ -51,7 +51,7 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#research-areas-form")[0].reset();
-   				                     window.location.href ="'.Yii::app()->createUrl('ResearchAreas/admin').'";		                         
+   				                     window.location.href ="'.Yii::app()->createUrl('AdminResearchAreas/admin').'";		                         
 
 		                         }		                         
 		                         else
@@ -65,7 +65,7 @@
         <?php  if($model->isNewRecord) 
 			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
 		?>
-       	<?php echo CHtml::link('Cancelar', array('/ResearchAreas/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+       	<?php echo CHtml::link('Cancelar', array('/AdminResearchAreas/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 		<div class="200">
 		
