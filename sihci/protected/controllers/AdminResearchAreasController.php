@@ -1,6 +1,6 @@
 <?php
 
-class ResearchAreasController extends Controller
+class AdminResearchAreasController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning

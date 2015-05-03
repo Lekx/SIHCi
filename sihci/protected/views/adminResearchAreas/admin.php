@@ -8,8 +8,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ResearchAreas', 'url'=>array('index')),
-	array('label'=>'Create ResearchAreas', 'url'=>array('create')),
+	//array('label'=>'List ResearchAreas', 'url'=>array('index')),
+	array('label'=>'Gestionar ', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,12 +27,12 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar</h1>
+<h1>Líneas de Investigación</h1>
 
 
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -40,7 +41,9 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'research-areas-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		//'id',
 		//'id_curriculum',
