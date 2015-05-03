@@ -25,21 +25,17 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'country'); ?>
 		<?php
-	        $this->widget(
-	            'yiiwheels.widgets.formhelpers.WhCountries',
-	            array(
-					'name' => 'Patent[country]',
-	                'id' => 'Patent_country',
-	                'value' => 'MX',
-	                'useHelperSelectBox' => true,
-	                'pluginOptions' => array(
-	                    'country' => '',
-	                    'language' => 'es_ES',
-	                    'flags' =>true
-	                )
-	            )
-	        );
-	    ?>
+			$this->widget('ext.CountrySelectorWidget', 
+				array(
+				    'value' => $model->country,
+				    'name' => Chtml::activeName($model, 'country'),
+				    'id' => Chtml::activeId($model, 'country'),
+				    'useCountryCode' => false,
+				    'defaultValue' => 'Mexico',
+				    'firstEmpty' => false,
+			    )
+			);
+		?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
@@ -132,10 +128,10 @@
 			    'model' => $model,
 			    'language'=> 'es',
 			    'attribute' => 'consession_date',
-			    'readOnly'=>true,
 			    'htmlOptions' => array(
 			    	    'dateFormat'=>'d/m/Y',
 			    		'size' => '10',         
+			    		'readOnly'=>true,
 			        	'maxlength' => '10', 
 			        	'placeholder'=>"Fecha de concesión",
 			    ),
@@ -213,7 +209,8 @@
 				if($model->isNewRecord)
 				   echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
 			?>
-	       	<?php echo CHtml::link('Cancelar',array('/patent/admin')); ?>
+           	<?php echo CHtml::link('Cancelar', array('/patent/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+
 
        	</div>
 <?php $this->endWidget(); ?>

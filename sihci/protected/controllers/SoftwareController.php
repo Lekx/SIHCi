@@ -33,7 +33,7 @@ class SoftwareController extends Controller
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -55,6 +55,7 @@ class SoftwareController extends Controller
 	public function actionCreate()
 	{
 		$model=new Software;
+
 		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
 		$model->id_curriculum = $id_curriculum->id; 
 		// Uncomment the following line if AJAX validation is needed
@@ -63,30 +64,38 @@ class SoftwareController extends Controller
 		if(isset($_POST['Software']))
 		{
 			$model->attributes=$_POST['Software'];
-			$model->id_curriculum = $id_curriculum->id;  
-            $model->path = CUploadedFile::getInstanceByName('Software[path]');
-			  
-			   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
-	          
-	            if(!is_dir($urlFile))          
-	              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+			$model->id_curriculum = $id_curriculum->id;                  
+            
+			
 				
-								
-					$model->path->saveAs($urlFile.'fileSowtfware'.$model->title.'.'.$model->path->getExtensionName());
-					$model->path='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.$model->title.'.'.$model->path->getExtensionName();    
-				
-				if($model->save())
+				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
-				   	echo CJSON::encode(array('status'=>'success'));
-			    	Yii::app()->end();
-			    }			    	
-			    else 
-		    	{
-	     			$error = CActiveForm::validate($model);
-	                if($error!='[]')
-	                   echo $error;
-	                Yii::app()->end();
-		        }
+	           		 $model->path = CUploadedFile::getInstanceByName('Software[path]');
+				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+		          
+		            if(!is_dir($urlFile))          
+		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+
+					    $model->path->saveAs($urlFile.'fileSowtfware');
+					    $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware';    			 			   	
+					
+			    }
+				else 
+				{
+					$model->path = "";
+				}	
+
+					if($model->save())
+					{	   			   
+					    echo CJSON::encode(array('status'=>'200'));
+					   	//$this->redirect(array('admin','id'=>$model->id));
+				    	Yii::app()->end();
+				    }			    	
+				    else 
+			    	{
+			    		  echo CJSON::encode(array('status'=>'404'));
+		                Yii::app()->end();
+			        }
 					    
 		}
 			
@@ -111,24 +120,24 @@ class SoftwareController extends Controller
 		{
 			$model->attributes=$_POST['Software'];
     		$model->path = CUploadedFile::getInstanceByName('Software[path]');
+			
+			if($model->url_doc != ''){
+                
+	                $model->path->saveAs($urlFile.'fileSowtfware'.$model->title.'.'.$model->path->getExtensionName());
+					$model->path='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.$model->title.'.'.$model->path->getExtensionName();    
 
-    		if($model->path)
-    		{                
-	            $model->path->saveAs($urlFile.'fileSoftware'.$model->title.'.'.$model->path->getExtensionName());
-	         	$model->path ='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.$model->title.'.'.$model->path->getExtensionName();    
-	        }
-
-			if($model->save())
-     		{
-     			echo CJSON::encode(array('status'=>'success'));
-     			Yii::app()->end();
-     		}	
-     		else 
-     		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+				if($model->save())
+	     		{
+	     			echo CJSON::encode(array('status'=>'success'));
+	     			Yii::app()->end();
+	     		}	
+	     		else 
+	     		{
+	     			 $error = CActiveForm::validate($model);
+	                 if($error!='[]')
+	                    echo $error;
+	                 Yii::app()->end();
+	     		}
      		}
 		}
 
@@ -177,6 +186,7 @@ class SoftwareController extends Controller
 
 	//SO06-Listar registro
 	public function actionAdmin()
+
 	{
 		$model=new Software('search');
 		$model->unsetAttributes();  // clear any default values
@@ -216,3 +226,4 @@ class SoftwareController extends Controller
 		}
 	}
 }
+

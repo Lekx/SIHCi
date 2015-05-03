@@ -2,6 +2,8 @@
 /* @var $this SoftwareController */
 /* @var $model Software */
 /* @var $form CActiveForm */
+   $cs = Yii::app()->getClientScript();
+   $cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/software/js/script.js');
 ?>
 
 <div class="form">
@@ -14,7 +16,7 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 	'enableClientValidation'=>true,
-	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
+	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
 	'clientOptions'=>array('validateOnSubmit'=>true),
 	
 )); ?>
@@ -26,18 +28,15 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'country'); ?>
-		<?php
-			$this->widget('ext.CountrySelectorWidget', 
-				array(
-				    'value' => $model->country,
-				    'name' => Chtml::activeName($model, 'country'),
-				    'id' => Chtml::activeId($model, 'country'),
-				    'useCountryCode' => false,
-				    'defaultValue' => 'Mexico',
-				    'firstEmpty' => false,
-			    )
-			);
-		?>
+		<?php $this->widget('ext.CountrySelectorWidget', 
+			array(
+				'value' => $model->country,
+				'name' => Chtml::activeName($model, 'country'),
+				'id' => Chtml::activeId($model, 'country'),
+				'useCountryCode' => false,
+				'firstEmpty' => true,
+				'firstText' => 'País',
+		)); ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
@@ -286,38 +285,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'path'); ?>
-		<?php echo $form->FileField($model,'path'); ?>
+		<?php echo $form->FileField($model,'path',array('id'=>'path')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
 
-	<div class="row buttons">
-	<?php  echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('software/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-        					'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                        
-		                        if(data.status=="success")
-		                        {
-		                           	alert("Registro realizado con éxito");
-				                    $("#software-form")[0].reset();
-									window.location.href ="'.Yii::app()->createUrl('software/admin').'";		                         
-								}		                         
-		                        else
-		                        {
-			                    	alert("Complete los campos con *");   
-			                    }       
-		                  	}',                            
-                        ));  
-       ?>  
-		 <?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';?>
+	<div class="row buttons">		
+		 <!-- <?php /* echo CHtml::ajaxButton($model->isNewRecord ? 'Guardar' : 'Modificar'); */ ?> -->
+		<?php echo CHtml::SubmitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('onClick'=>'send()')); ?>
+		<?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';?>
        	<?php echo CHtml::link('Cancelar', array('/software/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 
+
 </div><!-- form -->
-
-

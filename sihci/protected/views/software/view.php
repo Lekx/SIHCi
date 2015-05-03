@@ -43,5 +43,10 @@ $this->menu=array(
 		'economic_support',
 		'path',
 		'creation_date',
+		/*array(
+			'label'=>'Archivo',
+			'type'=>'raw',
+			'value'=>CHtml::link('Ver archivo', Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'Folder_Software/fileSowtfware'.$model->title. array("target"=>"_blank")),
+			),*/
 	),
 )); ?>

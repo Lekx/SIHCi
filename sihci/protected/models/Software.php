@@ -36,7 +36,8 @@ class Software extends CActiveRecord
 	 * @return string the associated database table name
 	 */
 	public $searchValue;
-	public $urlFile;
+	
+
 
 	public function tableName()
 	{
