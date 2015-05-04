@@ -9,10 +9,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	//array('label'=>'Listar Congreso', 'url'=>array('index')),
-	array('label'=>'Crear', 'url'=>array('create')),
-	//array('label'=>'Ver Congreso', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 

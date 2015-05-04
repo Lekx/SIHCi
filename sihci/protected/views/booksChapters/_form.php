@@ -363,8 +363,12 @@
  			'addButtonLabel'=>'Agregar nuevo',
 		 )); 
     	?><div class="authorsRegistry">  	
+<<<<<<< HEAD
     	
     
+=======
+    	  <?php print_r($modelAuthors)?>
+>>>>>>> ef7b23a71abd5481877245af0de1affa25968a48
 		  <?php echo $form->labelEx($modelAuthors,'names'); ?>
 		  <?php echo $form->textField($modelAuthors,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
 		  <?php echo $form->error($modelAuthors,'names');?>
@@ -383,7 +387,8 @@
 		<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
 		<input type="reset" onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
-		 <?php echo CHtml::link('Cancelar',array('booksChapters/admin'))?>
+		  <?php  echo CHtml::link('Cancelar',array('booksChapters/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?'))?>
+		
 	</div>
 
 <?php $this->endWidget(); ?>

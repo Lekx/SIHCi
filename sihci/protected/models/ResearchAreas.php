@@ -17,6 +17,9 @@ class ResearchAreas extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	public $searchValue;
+
 	public function tableName()
 	{
 		return 'research_areas';
@@ -35,7 +38,8 @@ class ResearchAreas extends CActiveRecord
 			array('name', 'length', 'max'=>150),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, name', 'safe', 'on'=>'search'),
+			array('searchValue','length', 'max'=>70),
+			array('id, id_curriculum, name, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -82,9 +86,15 @@ class ResearchAreas extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR name LIKE CONCAT('%', :searchValue ,'%')  ");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+
+		/*$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('name',$this->name,true);*/
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -146,23 +146,23 @@ class BooksChaptersController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$modelAuthors = BooksChaptersAuthors::model()->find('id_books_chapters=:id_books_chapters',array('id_books_chapters'=>$model->id));
-       //$modelAuthors = BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$id), array('select'=>'id_books_chapters, names,last_name1,last_name2,position'));
+      
+
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model, $modelAuthors); 
+		$this->performAjaxValidation($model); 
 
         if(isset($_POST['BooksChapters']))
         {
 	            $model->attributes=$_POST['BooksChapters'];
-
 	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
 
             if($model->validate()){
            
            		if($model->url_doc != ''){
-                
+
 	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.'.'.$model->url_doc->getExtensionName());
 	               $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.'.'.$model->url_doc->getExtensionName(); 
-                 
+                       
             		if($model->save()){
 
             					$names = $_POST['names'];
@@ -171,20 +171,22 @@ class BooksChaptersController extends Controller
 					            $position = $_POST['positions'];
 					            
              					 foreach($_POST['names'] as $key => $names){
-					                //unset($modelAuthors);
-					              	//$modelAuthors = new BooksChaptersAuthors;
+					                unset($modelAuthors);
+					              	$modelAuthors = new BooksChaptersAuthors;
 					               	$modelAuthors->id_books_chapters = $model->id;
 					       			$modelAuthors->names = $names;
 					        		$modelAuthors->last_name1 = $last_name1[$key];
 					       			$modelAuthors->last_name2 = $last_name2[$key];
 					        		$modelAuthors->position = $position[$key];
 		                    		$modelAuthors->save();
-                		}
-                    $this->redirect(array('admin','id'=>$model->id));
-                	}
-            	}  else{
 
-            		if($model->save()){
+                					}
+                					$this->redirect(array('admin','id'=>$model->id));
+                				}
+
+            			}else{
+
+            				if($model->save()){
 
             					$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
@@ -192,8 +194,8 @@ class BooksChaptersController extends Controller
 					            $position = $_POST['positions'];
 					            
              					 foreach($_POST['names'] as $key => $names){
-					                //unset($modelAuthors);
-					              	//$modelAuthors = new BooksChaptersAuthors;
+					                unset($modelAuthors);
+					              	$modelAuthors = new BooksChaptersAuthors;
 					               	$modelAuthors->id_books_chapters = $model->id;
 					       			$modelAuthors->names = $names;
 					        		$modelAuthors->last_name1 = $last_name1[$key];
@@ -205,6 +207,7 @@ class BooksChaptersController extends Controller
 
             	} 
             }
+
             }//End validate 
         }
 
@@ -212,6 +215,7 @@ class BooksChaptersController extends Controller
             'model'=>$model,'modelAuthors'=>$modelAuthors
         ));
     }
+
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -230,6 +234,7 @@ class BooksChaptersController extends Controller
 	/**
 	 * Lists all models.
 	 */
+
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('BooksChapters');
@@ -288,4 +293,14 @@ class BooksChaptersController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	 public function getAuthors(){
+
+	        $this->getAuthors=$this->connection->createCommand()
+
+	                ->select("*")->from('books_chapters_authors')->queryAll('id_books_chapters'.$id);
+
+	        return $this->getAuthors;
+
+	    }
 }
