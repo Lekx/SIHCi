@@ -17,6 +17,7 @@ class SystemLog extends CActiveRecord {
 	/**
 	 * @return string the associated database table name
 	 */
+	public $searchValue;
 	public function tableName() {
 		return 'system_log';
 	}
@@ -32,9 +33,10 @@ class SystemLog extends CActiveRecord {
 			array('section', 'length', 'max' => 60),
 			array('details', 'length', 'max' => 150),
 			array('action', 'length', 'max' => 250),
+			array('searchValue','length', 'max'=>70),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_user, section, details, action, datetime', 'safe', 'on' => 'search'),
+			array('id, id_user, section, details, action, datetime, searchValue', 'safe', 'on' => 'search'),
 		);
 	}
 	/**
@@ -52,11 +54,11 @@ class SystemLog extends CActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array(
-			'id' => 'Numero de Accion',
-			'id_user' => 'Numero de Usuario',
-			'section' => 'Seccion',
+			'id' => 'Número de Acción',
+			'id_user' => 'Número de Usuario',
+			'section' => 'Sección',
 			'details' => 'Detalles',
-			'action' => 'Accion',
+			'action' => 'Acción',
 			'datetime' => 'Fecha',
 		);
 	}
@@ -75,12 +77,17 @@ class SystemLog extends CActiveRecord {
 	public function search() {
 		// @todo Please modify the following code to remove attributes that should not be searched.
 		$criteria = new CDbCriteria;
-		$criteria->compare('id', $this->id);
-		$criteria->compare('id_user', $this->id_user);
-		$criteria->compare('section', $this->section, true);
-		$criteria->compare('details', $this->details, true);
-		$criteria->compare('action', $this->action, true);
-		$criteria->compare('datetime', $this->datetime, true);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR id_user LIKE CONCAT('%', :searchValue ,'%') OR section LIKE CONCAT('%', :searchValue , '%') OR details LIKE CONCAT('%', :searchValue , '%')OR action LIKE CONCAT('%', :searchValue , '%')OR datetime LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+		// $criteria->compare('id', $this->id);
+		// $criteria->compare('id_user', $this->id_user);
+		// $criteria->compare('section', $this->section, true);
+		// $criteria->compare('details', $this->details, true);
+		// $criteria->compare('action', $this->action, true);
+		// $criteria->compare('datetime', $this->datetime, true);
 		$_SESSION['filteredData'] = new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
 			'pagination' => false,
