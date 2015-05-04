@@ -77,6 +77,10 @@ class PatentController extends Controller
 
 		    if($model->save())
      		{
+     			$section = "Propiedad Intelectual"; 
+     			$action = "Creación";
+				$details = "Subsección Patentes";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
@@ -114,6 +118,10 @@ class PatentController extends Controller
 			
 			if($model->save())
      		{
+     			$section = "Propiedad Intelectual"; 
+     			$action = "Modificación";
+				$details = "Subsección Patentes. Registro Número: ".$model->id;
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
@@ -138,7 +146,12 @@ class PatentController extends Controller
 	//RP03-Eliminar-datos
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Propiedad Intelectual";  
+		$action = "Eliminación";
+		$details = "Subsección Patentes. Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->participation_type.". Estado de Patente: ".$model->state;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
