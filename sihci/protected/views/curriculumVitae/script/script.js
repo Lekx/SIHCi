@@ -1,10 +1,12 @@
     
     $(document).ready(function(){
-
+         var validateEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+         var validateNum = /^[0-9]+$/;
         /////FORM GRADES
             $("#btnCreateGrade").click(function(){
 
              	var grade = $("#grade").val(); 
+                var writNumber = $("#writNumber").val();
              	var title = $("#title").val(); 
              	var obtentionDate = $("#obtentionDate").val(); 
              	var thesisTitle = $("#thesisTitle").val();
@@ -14,31 +16,40 @@
                     $("#errorGrade").fadeIn("slow");
                     return false;
                 }else{
+
                     $("#errorGrade").fadeOut();
-                    if (title == "") {
-                    	$("#errorTitle").fadeIn("slow");
-                    	return false;
+                    if (writNumber == "" || !validateNum.test(writNumber)) {
+                          $("#errorNumber").fadeIn("slow");
+                          return false;
                     }else{
-                    	$("#errorTitle").fadeOut();
-                    	if (obtentionDate == "") {
-                    		$("#errorObtentionDate").fadeIn("slow");
-                    		return false;
-                    	}else{
-                    		$("#errorObtentionDate").fadeOut();
-                    		if (thesisTitle == "") {
-                    			$("#errorThesisTitle").fadeIn("slow");
-                    			return false;
-                    		}else{
-                    			$("#errorThesisTitle").fadeOut();
-                    			if (institution == "") {
-                    				$("#errorInstitution").fadeIn("slow");
-                    				return false;
-                    			}else{
-                    				$("#errorInstitution").fadeOut();
-                    			}
-                    		}
-                    	}
+                        
+                        $("#errorNumber").fadeOut();
+                        if (title == "") {
+                            $("#errorTitle").fadeIn("slow");
+                            return false;
+                        }else{
+                             $("#errorTitle").fadeOut();
+                             if (obtentionDate == "") {
+                               $("#errorObtentionDate").fadeIn("slow");
+                               return false;
+                              }else{
+                                 $("#errorObtentionDate").fadeOut();
+                                if (thesisTitle == "") {
+                                        $("#errorThesisTitle").fadeIn("slow");
+                                        return false;
+                                }else{
+                                     $("#errorThesisTitle").fadeOut();
+                                    if (institution == "") {
+                                         $("#errorInstitution").fadeIn("slow");
+                                         return false;
+                                    }else{
+                                         $("#errorInstitution").fadeOut();
+                                    }
+                                }
+                            }
+                        }
                     }
+                    
                  }
  
             });//click
@@ -55,8 +66,7 @@
 
 
 ///FORM PHONES
-    var validateEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-    var validateNum = /^[0-9]+$/;
+   
              //Emails
             $("#btnCreateEmail").click(function(){
                 

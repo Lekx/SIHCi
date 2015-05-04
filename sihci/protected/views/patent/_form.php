@@ -115,7 +115,7 @@
 			    'htmlOptions' => array(
 			    	    'dateFormat'=>'d/m/Y',
 			    		'size' => '10',         
-			   			 'readOnly'=>true,
+			   			'readonly'=>true,
 			        	'maxlength' => '10', 
 			        	
 			        	'placeholder'=>"Fecha de presentación",
@@ -132,11 +132,12 @@
 			    'model' => $model,
 			    'language'=> 'es',
 			    'attribute' => 'consession_date',
-			    'readOnly'=>true,
+			    
 			    'htmlOptions' => array(
 			    	    'dateFormat'=>'d/m/Y',
 			    		'size' => '10',         
 			        	'maxlength' => '10', 
+			        	'readonly'=>true,
 			        	'placeholder'=>"Fecha de concesión",
 			    ),
 			));
