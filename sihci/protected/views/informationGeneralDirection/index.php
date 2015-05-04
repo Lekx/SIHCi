@@ -11,14 +11,13 @@ $this->breadcrumbs=array(
 
 <section class="informativa">
 
-	<section class="column-left">
-		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
-	</section>
-
 	<section class="column-center">
 
+	<div class="titleinfo">
+	<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
 	<h2>Información General</h2>
 	<hr>
+	</div>
 
 <div class="generalinformation">
 
@@ -40,8 +39,8 @@ $this->breadcrumbs=array(
 			investigación y extensión en el área de Salud.</li>
 		</ul>
 		Líneas estratégicas:
-		<OL>
-			 <li>  Transformar la administración hospitalaria basada en procesos.</li> 
+		<ul>
+			 <li> Transformar la administración hospitalaria basada en procesos.</li> 
 			 <li> Alcanzar un pleno desarrollo profesional y humano de profesionales en salud.</li> 
 			 <li>  Establecer una Cultura enfocada hacia la Calidad y Seguridad Institucional.</li> 
 			 <li> Desarrollar la investigación operativa en procesos de salud.</li> 
@@ -52,7 +51,7 @@ $this->breadcrumbs=array(
 			 <li> Internacionalización Institucional a través de Convenios e intercambios de capacitación, investigación y
 			   programas de alto impacto social con Instituciones nacionales e Internacionales reconocidas.</li> 
 			 <li>  Implementación de un sistema de participación activa del usuario externo en los programas asistenciales.</li> 
-		</OL>
+		</ul>
 		Ideología Institucional<br>
 		Misión
 			<p>Brindar servicios integrales de salud hospitalaria de segundo y tercer nivel, fundamentalmente a la población que

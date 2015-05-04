@@ -73,7 +73,7 @@ class SponsorshipController extends Controller
 		{
 			$model->attributes=$_POST['Sponsorship'];
 			$model->id_user_sponsorer = Yii::app()->user->id;
-			$model->state = "pendiente";
+			$model->status = "pendiente";
 			if($model->save())
 				$this->redirect(array('admin','id'=>$model->id));
 		}

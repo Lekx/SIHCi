@@ -10,12 +10,13 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('index')),
+	array('label'=>'Gestionar ', 'url'=>array('admin')),
 	array('label'=>'Crear', 'url'=>array('create')),
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Gestionar ', 'url'=>array('admin')),
+	
 );
 ?>
 
-<h1>Modificar:  <?php echo $model->id; ?></h1>
+<h1>Modificar:  <?php echo $model->chapter_title; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model,'modelAuthors'=>$modelAuthors)); ?>

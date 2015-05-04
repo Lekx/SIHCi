@@ -1,4 +1,3 @@
-
 <?php
 /* @var $this PhonesController */
 /* @var $model Phones */
@@ -226,4 +225,5 @@
 
 
 </div><!-- form -->
+
 

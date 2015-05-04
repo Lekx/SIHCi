@@ -290,6 +290,7 @@ body
 .cvtitle
 {
 	margin-top: 50px;
+	margin-left: -140px;
 	font-family: 'Caviar_Dreams_Bold';	
 }
 .cvtitle h1 
@@ -532,9 +533,22 @@ thead th
 }
 /* ---------- */
 
-
-
-
+.errordiv
+{
+	display: none;
+}
+.cleandiv
+{
+	display: none;
+}
+.successdiv
+{
+	display: none;
+}
+.infoAccount h5
+{
+ 	color: #00B9C0; 
+}
 
 
 

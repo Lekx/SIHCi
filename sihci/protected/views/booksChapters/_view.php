@@ -27,23 +27,6 @@
 	<?php echo CHtml::encode($data->editorial); ?>
 	<br />
 
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('volume')); ?>:</b>
-	<?php echo CHtml::encode($data->volume); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('pages')); ?>:</b>
-	<?php echo CHtml::encode($data->pages); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('citations')); ?>:</b>
-	<?php echo CHtml::encode($data->citations); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('total_of_authors')); ?>:</b>
-	<?php echo CHtml::encode($data->total_of_authors); ?>
-	<br />
-   */ ?>
 	<b><?php echo CHtml::encode($data->getAttributeLabel('area')); ?>:</b>
 	<?php echo CHtml::encode($data->area); ?>
 	<br />

@@ -86,33 +86,30 @@
             </div>
             <div class="syscontent">
                 <div class="sysmenu">
-                    <ul class="cvmenuitems">
-                        <li><?php echo CHtml::link('Datos Personales',array('/curriculumVitae/personalData')); ?><hr></li>
-                        <li><?php echo CHtml::link('Documentos Oficiales',array('/curriculumVitae/docsIdentity')); ?><hr></li>
-                        <li><?php echo CHtml::link('Datos de Direccion Actual',array('/curriculumVitae/addresses')); ?><hr></li>
-                        <li><?php echo CHtml::link('Datos Laborales',array('/curriculumVitae/jobs')); ?><hr></li>
-                        <li><?php echo CHtml::link('Líneas de Investigación',array('/curriculumVitae/researchAreas')); ?><hr></li>
-                        <li><?php echo CHtml::link('Datos de Contacto',array('/curriculumVitae/phones')); ?><hr></li>
-                        <li><?php echo CHtml::link('Formacion Académica',array('/curriculumVitae/grades')); ?><hr></li>
-                        <li><?php echo CHtml::link('Nombramientos',array('/curriculumVitae/commission')); ?></li>
-                    </ul>
+                <ul class="cvmenuitems">
+                   <?php
+        $this->beginWidget('zii.widgets.CPortlet', array(
+            'title'=>'Operations',
+        ));
+        $this->widget('zii.widgets.CMenu', array(
+            'items'=>$this->menu,
+            'htmlOptions'=>array('class'=>'operations'),
+        ));
+        $this->endWidget();
+    ?>
+    </ul>
                 </div>
                 <div class="sysmaincontent">
                     <div class="syscont">
-                        <div class="cvtitle">
-                            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
-                            <h1>Curriculum vitae electronico</h1>
-                            <hr>
-                        </div>
                         <div class="cvforms">
                             <?php echo $content; ?>
                         </div>
                     </div>
-                </div>
+       
+
             </div>
         </div>
         <div class="successdiv">
-            
         </div>
         <div class="errordiv">
             <div class="backcontainer">

@@ -388,10 +388,10 @@
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('directedThesis/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('directedThesis/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
-                     		'type'=>'POST',
+                     		'type'=>'post',
                      		'success'=>'function(data) 
                      		 {
 		                                      
@@ -399,19 +399,29 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#directed-thesis-form")[0].reset();
-				                     window.location.href ="'.Yii::app()->createUrl('directedThesis/admin').'";
+   				                     window.location.href ="'.Yii::app()->createUrl('directedThesis/admin').'";		                         
+
 		                         }		                         
 		                         else
 		                         {
 			                     	alert("Complete los campos con *");   
-			                     } 
-			                         
+			                     }       
 		                  	}',                    
 		                    
                         )); 
         ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/directedThesis/admin')); ?>
+        <?php  if($model->isNewRecord) 
+			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+		?>
+       	<?php echo CHtml::link('Cancelar', array('/directedThesis/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+
+		<div class="200">
+		
+		</div>
+		
+		<div class="404">
+		</div>
+		
 	</div>
 
 <?php $this->endWidget(); ?>

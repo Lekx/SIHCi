@@ -363,26 +363,27 @@
  			'addButtonLabel'=>'Agregar nuevo',
 		 )); 
     	?><div class="authorsRegistry">  	
-    	
-		 <?php echo $form->labelEx($modelAuthors,'names'); ?>
-		 <?php echo $form->textField($modelAuthors,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
-		 <?php echo $form->error($modelAuthors,'names');?> 
-		 <?php echo $form->labelEx($modelAuthors,'last_name1'); ?>
-		 <?php echo $form->textField($modelAuthors,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
-		 <?php echo $form->error($modelAuthors,'last_name1'); ?>
-		 <?php echo $form->labelEx($modelAuthors,'last_name2'); ?>
-		 <?php echo $form->textField($modelAuthors,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
-		 <?php echo $form->error($modelAuthors,'last_name2'); ?>
-		 <?php echo $form->labelEx($modelAuthors,'position'); ?>
-		 <?php echo $form->textField($modelAuthors,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
-		 <?php echo $form->error($modelAuthors,'position');?>
+    	  <?php print_r($modelAuthors)?>
+		  <?php echo $form->labelEx($modelAuthors,'names'); ?>
+		  <?php echo $form->textField($modelAuthors,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
+		  <?php echo $form->error($modelAuthors,'names');?>
+		  <?php echo $form->labelEx($modelAuthors,'last_name1'); ?>
+		  <?php echo $form->textField($modelAuthors,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
+		  <?php echo $form->error($modelAuthors,'last_name1'); ?>
+		  <?php echo $form->labelEx($modelAuthors,'last_name2'); ?>
+		  <?php echo $form->textField($modelAuthors,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
+		  <?php echo $form->error($modelAuthors,'last_name2'); ?>
+		  <?php echo $form->labelEx($modelAuthors,'position'); ?>
+		  <?php echo $form->textField($modelAuthors,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
+		  <?php echo $form->error($modelAuthors,'position');?>
 			
 	</div>
 
 		<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
 		<input type="reset" onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
-		 <?php echo CHtml::link('Cancelar',array('booksChapters/admin'))?>
+		  <?php  echo CHtml::link('Cancelar',array('booksChapters/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?'))?>
+		
 	</div>
 
 <?php $this->endWidget(); ?>
