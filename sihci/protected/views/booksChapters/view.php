@@ -39,7 +39,7 @@ $this->menu=array(
 		array(
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo', Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro_'.$model->chapter_title, array("target"=>"_blank")),
+			'value'=>CHtml::link('Ver archivo', Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro', array("target"=>"_blank")),
 			),	
 		array(
 			'label'=>'Nombre(s)',
