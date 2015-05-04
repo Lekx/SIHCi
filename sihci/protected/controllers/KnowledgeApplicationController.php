@@ -78,6 +78,10 @@ class KnowledgeApplicationController extends Controller
 
 			if($model->save())
      		{
+     			$section = "Aplicación del Conocimiento"; 
+     			$action = "Creación";
+				$details = ": ";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
@@ -116,6 +120,10 @@ class KnowledgeApplicationController extends Controller
 			$model->attributes=$_POST['KnowledgeApplication'];
 			if($model->save())
      		{
+     			$section = "Aplicación del Conocimiento"; 
+     			$action = "Modificación";
+				$details = "Registro Número: ".$model->id.".";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
@@ -140,7 +148,12 @@ class KnowledgeApplicationController extends Controller
 	//AC03-Eliminar-datos
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Aplicación del Conocimiento"; 
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.".";
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
