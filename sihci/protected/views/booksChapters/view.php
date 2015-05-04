@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Books Chapters'=>array('index'),
-	$model->id,
+	$model->id, 
 );
 
 $this->menu=array(
@@ -36,10 +36,11 @@ $this->menu=array(
 		'discipline',
 		'subdiscipline',
 		//'creation_date',
-		array(
+		'url_doc',
+		 array(
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo', Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro', array("target"=>"_blank")),
+			'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->url_doc), array("target"=>"_blank")),
 			),	
 		array(
 			'label'=>'Nombre(s)',
@@ -62,7 +63,7 @@ $this->menu=array(
 			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->position,
 			),
 	
-		//'url_doc',
+		
 	),
 
 )); ?>

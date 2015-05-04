@@ -16,4 +16,4 @@ $this->menu=array(
 
 <h1>Crear Registro</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model, 'modelAuthors'=>$modelAuthors)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'modelAuthor'=>$modelAuthor)); ?>

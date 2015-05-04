@@ -362,25 +362,51 @@
  			'targetClass'=>'authorsRegistry',
  			'addButtonLabel'=>'Agregar nuevo',
 		 )); 
-    	?><div class="authorsRegistry">  	
-<<<<<<< HEAD
-    	
+    	?>
+    	<div class="authorsRegistry row"> 
+    		 
+		  
+		  <?php 
+		  		echo "<input type='hidden' name='idsBooksChapters[]'>";
+		  		echo $form->labelEx($modelAuthor,'names'); ?>
+		  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
+		  <?php echo $form->error($modelAuthor,'names');?>
+		  <?php echo $form->labelEx($modelAuthor,'last_name1'); ?>
+		  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
+		  <?php echo $form->error($modelAuthor,'last_name1'); ?>
+		  <?php echo $form->labelEx($modelAuthor,'last_name2'); ?>
+		  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
+		  <?php echo $form->error($modelAuthor,'last_name2'); ?>
+		  <?php echo $form->labelEx($modelAuthor,'position'); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
+		  <?php echo $form->error($modelAuthor,'position'); 
+		  ?>
+    	</div> 	
     
-=======
-    	  <?php print_r($modelAuthors)?>
->>>>>>> ef7b23a71abd5481877245af0de1affa25968a48
-		  <?php echo $form->labelEx($modelAuthors,'names'); ?>
-		  <?php echo $form->textField($modelAuthors,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
-		  <?php echo $form->error($modelAuthors,'names');?>
-		  <?php echo $form->labelEx($modelAuthors,'last_name1'); ?>
-		  <?php echo $form->textField($modelAuthors,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
-		  <?php echo $form->error($modelAuthors,'last_name1'); ?>
-		  <?php echo $form->labelEx($modelAuthors,'last_name2'); ?>
-		  <?php echo $form->textField($modelAuthors,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
-		  <?php echo $form->error($modelAuthors,'last_name2'); ?>
-		  <?php echo $form->labelEx($modelAuthors,'position'); ?>
-		  <?php echo $form->textField($modelAuthors,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
-		  <?php echo $form->error($modelAuthors,'position');?>
+		    
+		  <?php 
+		  if(!$model->isNewRecord)
+		  foreach ($modelAuthors as $key => $value) {
+		  	?>
+		  	<div class="row">
+		  
+		  <?php 
+		  echo "<input type='hidden' value='".$value->id."' name='idsBooksChapters[]'>";
+		  echo $form->labelEx($value,'names'); ?>
+		  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
+		  <?php echo $form->error($value,'names');?>
+		  <?php echo $form->labelEx($value,'last_name1'); ?>
+		  <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
+		  <?php echo $form->error($value,'last_name1'); ?>
+		  <?php echo $form->labelEx($value,'last_name2'); ?>
+		  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
+		  <?php echo $form->error($value,'last_name2'); ?>
+		  <?php echo $form->labelEx($value,'position'); ?>
+		  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición')); ?>
+		  <?php echo $form->error($value,'position'); 
+		?>
+		</div>	 
+		<?php } ?>
 			
 	</div>
 
