@@ -57,6 +57,8 @@ class SoftwareController extends Controller
 		$model=new Software;
 
 		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		
+		$end_date = Software::model()->findByAttributes(array('end_date'=>$model->end_date));
 		$model->id_curriculum = $id_curriculum->id; 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
@@ -66,7 +68,8 @@ class SoftwareController extends Controller
 			$model->attributes=$_POST['Software'];
 			$model->id_curriculum = $id_curriculum->id;                  
             
-			
+    		if($model->end_date =="")
+    			$model->end_date =date('00/00/0000');		
 				
 				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
@@ -76,8 +79,8 @@ class SoftwareController extends Controller
 		            if(!is_dir($urlFile))          
 		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
 
-					    $model->path->saveAs($urlFile.'fileSowtfware');
-					    $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware';    			 			   	
+					    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
 					
 			    }
 				else 
@@ -88,12 +91,12 @@ class SoftwareController extends Controller
 					if($model->save())
 					{	   			   
 					    echo CJSON::encode(array('status'=>'200'));
-					   	//$this->redirect(array('admin','id'=>$model->id));
+					   	$this->redirect(array('admin','id'=>$model->id));
 				    	Yii::app()->end();
 				    }			    	
 				    else 
 			    	{
-			    		  echo CJSON::encode(array('status'=>'404'));
+			    		echo CJSON::encode(array('status'=>'404'));
 		                Yii::app()->end();
 			        }
 					    
@@ -154,8 +157,10 @@ class SoftwareController extends Controller
 	//SO03-Desactivar-registro
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=new Software;
 
+		$this->loadModel($id)->delete();       
+        unlink($model->path);
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

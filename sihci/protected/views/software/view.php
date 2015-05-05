@@ -41,12 +41,12 @@ $this->menu=array(
 		'transfer_mechanism',
 		'hr_formation',
 		'economic_support',
-		'path',
-		'creation_date',
-		/*array(
+		array(
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo', Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'Folder_Software/fileSowtfware'.$model->title. array("target"=>"_blank")),
-			),*/
+			'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->path),array("target"=>"_blank")),
+		),
+		/*'creation_date',
+		'path',*/
 	),
 )); ?>

@@ -18,10 +18,10 @@ function send()
                     alert("Registro realizado con éxito");
                     $("#software-form")[0].reset();                
             }
-            else
+            /*else
             {
                 alert(data);
-            }    
+            } */   
 
         },
      /*   error: function () {
