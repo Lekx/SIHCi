@@ -36,7 +36,9 @@ class Software extends CActiveRecord
 	 * @return string the associated database table name
 	 */
 	public $searchValue;
-	public $urlFile;
+	
+	
+
 
 	public function tableName()
 	{
@@ -59,7 +61,6 @@ class Software extends CActiveRecord
 			array('title', 'length', 'max'=>150),
 			array('beneficiary', 'length', 'max'=>70),
 			array('sector, organization, second_level, path', 'length', 'max'=>100),    
-		    array('end_date','compare','compareValue'=> date('d/m/Y'),'operator'=>'>='),
 		    array('path','file','allowEmpty'=>true,'on'=>'update','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','maxSize'=>array(1024 * 5000),'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),		    
 			array('searchValue','length', 'max'=>70),
 			array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
@@ -107,7 +108,7 @@ class Software extends CActiveRecord
 			'transfer_mechanism' => 'Mecanismo de transferencia.',
 			'hr_formation' => 'Formación HR',
 			'economic_support' => 'Apoyo económico',
-			'path' => 'URL',
+			'path' => 'Archivo',
 			'creation_date' => 'Creation Date',
 		);
 	}

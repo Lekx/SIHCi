@@ -78,15 +78,17 @@ class CopyrightsController extends Controller
 
 			if($model->save())
      		{
+     			$section = "Propiedad Intelectual"; 
+     			$action = "Creación";
+				$details = "Subsección Derechos de Autor";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
      		else 
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+     			echo CJSON::encode(array('status'=>'404'));
+                Yii::app()->end();
      		}
 
      		//Yii::app()->end();
@@ -115,15 +117,17 @@ class CopyrightsController extends Controller
 			$model->attributes=$_POST['Copyrights'];
 			if($model->save())
      		{
+     			$section = "Propiedad Intelectual"; 
+     			$action = "Modificación";
+				$details = "Subsección Derechos de Autor. Registro Número: ".$model->id;
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
      		else 
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+     			echo CJSON::encode(array('status'=>'404'));
+                Yii::app()->end();
      		}
 		}
 
@@ -140,7 +144,12 @@ class CopyrightsController extends Controller
 	//DA03-Desactivar-registro
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Propiedad Intelectual";  
+		$action = "Eliminación";
+		$details = "Subsección Derechos de Autor. Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->participation_type.". Título : ".$model->title;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

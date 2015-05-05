@@ -68,6 +68,7 @@
 		
 		
 		<input id="writNumber" type="text" name="writNumber" placeholder="Número de Cédula">
+		<div id="errorNumber" class="errors"> Debe ser Número </div>
 		<br>
 
 		<input id="title" type="text" name="title" placeholder="Tútulo">
@@ -441,7 +442,6 @@
 		echo $count;
 		echo	'<div class="row">';
 
-			echo $form->labelEx($model,'country'); 
 					$this->widget('ext.CountrySelectorWidget', array(
 					'value' => $getGrades[$key]->country,
 					'name' => 'getCountry[]',
@@ -456,7 +456,6 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-			echo $form->labelEx($model,'grade'); 
 			echo $form->dropDownList($model,'grade',array('Licenciatura'=>'Licenciatura','Maestria'=>'Maestria', 
 																'Doctorado'=>'Doctorado'), 
 			                                                       array('required'=>'true','name'=>'getGrade[]','prompt'=>'Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))), 
@@ -465,20 +464,17 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-			echo $form->labelEx($model,'writ_number');
 			 echo $form->textField($model,'writ_number',array('name'=>'getWritNumber[]','value'=>$getGrades[$key]->writ_number,'title'=>'Número de Cédula','size'=>50,'maxlength'=>50, 'placeholder'=>'Número de Cédula')); 
 			echo $form->error($model,'writ_number');
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->labelEx($model,'title'); 
 			 echo $form->textField($model,'title',array('required'=>'true','name'=>'getTitle[]','value'=>$getGrades[$key]->title,'size'=>45,'maxlength'=>45,'placeholder'=>'Título')); 
 			 echo $form->error($model,'title'); 
 		echo '</div>';
 
 
 		echo	'<div class="row">';
-			 echo $form->labelEx($model,'obtention_date'); 
 			
 			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'language'=> 'es',
@@ -502,7 +498,6 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->labelEx($model,'status'); 
 			 echo $form->dropDownList($model,'status',array('Creditos_Terminados'=>'Creditos Terminados',
 																'Grado_Obtenido'=>'Grado Obtenido', 
 																'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
@@ -512,13 +507,11 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->labelEx($model,'thesis_title'); 
 			 echo $form->textField($model,'thesis_title',array('required'=>'true','name'=>'getThesisTitle[]','value'=>$getGrades[$key]->thesis_title,'size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); 
 			echo $form->error($model,'thesis_title'); 
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->labelEx($model,'state');
 			 echo $form->dropDownList($model,'state',array('en_Proceso'=>'En Proceso',
 																'Terminado'=>'Terminado'), 
 			                                                       array('name'=>'getState[]','prompt'=>'Estado','options' => array($getGrades[$key]->state=>array('selected'=>true))), 
@@ -527,7 +520,6 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->labelEx($model,'sector'); 
 			 echo $form->dropDownList($model,'sector',array('No especificado'=>'No especificado','Instituciones del sector gobierno federal centralizado'=>'Instituciones del sector gobierno federal centralizado',
 				                                                 'Instituciones del sector entidades paraestatales'=>'Instituciones del sector entidades paraestatales','Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
 				                                                 'Instituciones del sector de educacion superior publicas'=>'Instituciones del sector de educacion superior publicas','Instituciones del sector de educacion superior privadas'=>'Instituciones del sector de educacion superior privadas',
@@ -539,7 +531,6 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->labelEx($model,'institution'); 
 			echo $form->dropDownList($model,'institution',array('BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA'=>'BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA','UNIVERSIDAD ESTATAL DE SONORA'=>'UNIVERSIDAD ESTATAL DE SONORA','CENTRO DE INVESTIGACIONES BIOLOGICAS'=>'CENTRO DE INVESTIGACIONES BIOLOGICAS',
 			                                                       'CENTRO DE BIOTECNOLOGIA GENOMICA IPN'=>'CENTRO DE BIOTECNOLOGIA GENOMICA IPN','CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN'=>'CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN','TECNOLOGICO NACIONAL DE MEXICO'=>'TECNOLOGICO NACIONAL DE MEXICO',
 			                                                       'ESCUELA NORMAL DE SINALOA'=>'ESCUELA NORMAL DE SINALOA','INSTITUTO POLITECNICO NACIONAL'=>'INSTITUTO POLITECNICO NACIONAL','INSTITUTO TECNOLOGICO AGROPECUARIO'=>'INSTITUTO TECNOLOGICO AGROPECUARIO','INSTITUTO TECNOLOGICO DE SONORA'=>'INSTITUTO TECNOLOGICO DE SONORA',
@@ -576,8 +567,6 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-
-			 echo $form->labelEx($model,'area'); 
 		     echo $form->dropDownList($model,'area',array('LOGICA'=>'LOGICA','MATEMATICAS'=>'MATEMATICAS','ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
 			                                                'FISICA'=>'FISICA','QUIMICA'=>'QUIMICA','CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA','CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
 			                                                'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD','CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
@@ -592,8 +581,6 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-
-			  echo $form->labelEx($model,'discipline');
 		 echo $form->dropDownList($model,'discipline',array('APLICACIONES DE LA LOGICA'=>'APLICACIONES DE LA LOGICA','LOGICA DEDUCTIVA'=>'LOGICA DEDUCTIVA','LOGICA GENERAL'=>'LOGICA GENERAL','LOGICA INDUCTIVA METODOLOGIA
                                                                  '=>'LOGICA INDUCTIVA METODOLOGIA','OTRAS ESPECIALIDADES EN MATERIA DE LOGICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE LOGICA','ÁLGEBRA'=>'ÁLGEBRA','ANALISIS Y ANALISIS FUNCIONAL
 	                                                             INFORMATICA MATEMATICA'=>'ANALISIS Y ANALISIS FUNCIONAL INFORMATICA MATEMATICA','GEOMETRIA TEORIA DE LOS NUMEROS'=>'GEOMETRIA TEORIA DE LOS NUMEROS',
@@ -649,8 +636,6 @@
 		echo '</div>';
 
 		echo	'<div class="row">';
-
-			  echo $form->labelEx($model,'subdiscipline'); 
 		 echo $form->dropDownList($model,'subdiscipline',array('ANALOGIA'=>'ANALOGIA','ALGEBRA DE BOOLE'=>'ALGEBRA DE BOOLE','LOGICA FORMAL'=>'LOGICA FORMAL','LENGUAJES FORMALIZADOS'=>'LENGUAJES FORMALIZADOS','SISTEMAS FORMALES'=>'SISTEMAS FORMALES','FUNDAMENTOS DE LAS MATEMATICAS'=>'FUNDAMENTOS DE LAS MATEMATICAS',
 		                                                            'GENERALIZACION'=>'GENERALIZACION','LOGICA MATEMATICA'=>'LOGICA MATEMATICA','LOGICA MODAL'=>'LOGICA MODAL','TEORIA DE LOS MODELOS'=>'TEORIA DE LOS MODELOS','TEORIA DE LAS PRUEBAS'=>'TEORIA DE LAS PRUEBAS','CALCULO DE PROPOSICIONES'=>'CALCULO DE PROPOSICIONES',
 		                                                            'FUNCIONES RECURSIVAS'=>'FUNCIONES RECURSIVAS','LOGICA SIMBOLICA'=>'LOGICA SIMBOLICA','TEORIA DE LOS LENGUAJES FORMALES'=>'TEORIA DE LOS LENGUAJES FORMALES','TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS'=>'TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS','OTROS'=>'OTROS',

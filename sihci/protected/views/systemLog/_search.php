@@ -1,5 +1,5 @@
 <?php
-/* @var $this SystemLogController */
+/* @var $this AdminSystemLogController */
 /* @var $model SystemLog */
 /* @var $form CActiveForm */
 ?>
@@ -10,13 +10,40 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
-	<fieldset>
-	
-		<?php echo $form->textField($model,'id_user',array('size'=>60,'maxlength'=>60, 'placeholder'=>'Numero de Usuario')); ?>
-		<?php echo $form->textField($model,'section',array('size'=>60,'maxlength'=>60, 'placeholder'=>'Seccion')); ?>
 
-		<?php echo CHtml::submitButton('Buscar'); ?>
-	</fieldset>
+	<div class="row">
+		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'id_user'); ?>
+		<?php echo $form->textField($model,'id_user'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'section'); ?>
+		<?php echo $form->textField($model,'section',array('size'=>60,'maxlength'=>60)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'details'); ?>
+		<?php echo $form->textField($model,'details',array('size'=>60,'maxlength'=>150)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'action'); ?>
+		<?php echo $form->textField($model,'action',array('size'=>60,'maxlength'=>250)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'datetime'); ?>
+		<?php echo $form->textField($model,'datetime'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton('Search'); ?>
+	</div>
 
 <?php $this->endWidget(); ?>
 

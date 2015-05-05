@@ -63,11 +63,11 @@ class BooksChaptersController extends Controller
 	public function actionCreate()
     {
         $model=new BooksChapters;
-        $modelAuthors = new BooksChaptersAuthors;
+        $modelAuthor = new BooksChaptersAuthors;
       
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+         $this->performAjaxValidation(array($model, $modelAuthor));
 
         if(isset($_POST['BooksChapters']))
         {
@@ -83,9 +83,9 @@ class BooksChaptersController extends Controller
 	                if(!is_dir($path))
 	                	 mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
 	                
- 					$model->url_doc->saveAs($path.'Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
-		            $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName();    
-	                	 $this->performAjaxValidation($modelAuthors);
+ 					$model->url_doc->saveAs($path.'Capitulo_libro'.'.'.$model->url_doc->getExtensionName());
+		            $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.'.'.$model->url_doc->getExtensionName();    
+	                	 $this->performAjaxValidation($modelAuthor);
 			               if($model->save()){
 			               		              
 					 			$names = $_POST['names'];
@@ -94,47 +94,47 @@ class BooksChaptersController extends Controller
 					            $position = $_POST['positions'];
 					            
              					 foreach($_POST['names'] as $key => $names){
-					               	unset($modelAuthors);
-					               	$modelAuthors = new BooksChaptersAuthors;
-					               	$modelAuthors->id_books_chapters = $model->id;
-					       			$modelAuthors->names = $names;
-					        		$modelAuthors->last_name1 = $last_name1[$key];
-					       			$modelAuthors->last_name2 = $last_name2[$key];
-					        		$modelAuthors->position = $position[$key];
-		                    		$modelAuthors->save();
+					               	unset($modelAuthor);
+					               	$modelAuthor = new BooksChaptersAuthors;
+					               	$modelAuthor->id_books_chapters = $model->id;
+					       			$modelAuthor->names = $names;
+					        		$modelAuthor->last_name1 = $last_name1[$key];
+					       			$modelAuthor->last_name2 = $last_name2[$key];
+					        		$modelAuthor->position = $position[$key];
+		                    		$modelAuthor->save();
 			              	 }	
 			               	$this->redirect(array('admin','id'=>$model->id));
 
 			               }
 			               }
 			               else {
-			               	if($model->save()){
-			               		              
+
+			               	if($model->save()){             
 					 			$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
 					            $position = $_POST['positions'];
 					            
              					 foreach($_POST['names'] as $key => $names){
-					               	unset($modelAuthors);
-					               	$modelAuthors = new BooksChaptersAuthors;
-					               	$modelAuthors->id_books_chapters = $model->id;
-					       			$modelAuthors->names = $names;
-					        		$modelAuthors->last_name1 = $last_name1[$key];
-					       			$modelAuthors->last_name2 = $last_name2[$key];
-					        		$modelAuthors->position = $position[$key];
-		                    		$modelAuthors->save();
+					               	unset($modelAuthor);
+					               	$modelAuthor = new BooksChaptersAuthors;
+					               	$modelAuthor->id_books_chapters = $model->id;
+					       			$modelAuthor->names = $names;
+					        		$modelAuthor->last_name1 = $last_name1[$key];
+					       			$modelAuthor->last_name2 = $last_name2[$key];
+					        		$modelAuthor->position = $position[$key];
+		                    		$modelAuthor->save();
 			              	 }	
 			               	$this->redirect(array('admin','id'=>$model->id));
 
-			               }
+			            }
 
-			               }		   
+			         }		   
         		}
         }
 
         $this->render('create',array(
-            'model'=>$model,'modelAuthors'=>$modelAuthors,
+            'model'=>$model,'modelAuthor'=>$modelAuthor,
         ));
     }
 
@@ -146,12 +146,12 @@ class BooksChaptersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-        //$getAuthors=BooksChaptersAuthors::model()->find('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$id));
-        $getAuthors = BooksChaptersAuthors::model()->findAll('id_books_chapters=:id_books_chapters',array(':id_books_chapters'=>$model->id));
-      
+		$modelAuthors = BooksChaptersAuthors::model()->findAllByAttributes(array('id_books_chapters'=>$model->id));
+		$modelAuthor = new BooksChaptersAuthors;
+       
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model); 
-
+		$this->performAjaxValidation($model, $modelAuthor); 
+		$actual_url = $model->url_doc;
         if(isset($_POST['BooksChapters']))
         {
 	            $model->attributes=$_POST['BooksChapters'];
@@ -159,39 +159,47 @@ class BooksChaptersController extends Controller
 
             if($model->validate()){
            
-           	if($model->url_doc != ''){
+           		if($model->url_doc != ''){
                 
-	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName());
-	               $model->url_doc = 'sihci/sihci/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro_'.$model->chapter_title.'.'.$model->url_doc->getExtensionName(); 
-             $this->performAjaxValidation($getAuthors);            
-            if($model->save()){
+	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.'.'.$model->url_doc->getExtensionName());
+	               $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.'.'.$model->url_doc->getExtensionName(); 
+                 }
+                 else {
+                 	$model->url_doc = $actual_url;
+                 }
+            		if($model->save()){
 
+            					$idsBooksChapters = $_POST['idsBooksChapters'];
             					$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
 					            $position = $_POST['positions'];
-					            
-             					 foreach($_POST['names'] as $key => $names){
-					               	unset($getAuthors);
-					              	$getAuthors = new BooksChaptersAuthors;
-					               	$getAuthors->id_books_chapters = $model->id;
-					       			$getAuthors->names = $names[$key];
-					        		$getAuthors->last_name1 = $last_name1[$key];
-					       			$getAuthors->last_name2 = $last_name2[$key];
-					        		$getAuthors->position = $position[$key];
-		                    		$getAuthors->save();
+					                 
+     					 foreach($_POST['names'] as $key => $value){
+     					 	var_dump($idsBooksChapters[$key]);
+     					 	echo "<br>";
+			        		if($idsBooksChapters[$key] != ""){
+			        				unset($modelAuthor);
+								$modelAuthor = new BooksChaptersAuthors;
+			        			$modelAuthor->id_books_chapters = $model->id;
+			        			$modelAuthor->names = $names[$key];
+								$modelAuthor->last_name1 = $last_name1[$key];
+								$modelAuthor->last_name2 = $last_name2[$key];
+								$modelAuthor->position = $position[$key];
+								$modelAuthor->save();
+                    		}else
+								$modelAuthor->updateByPk($idsBooksChapters[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
+                		}
+
+                   	// $this->redirect(array('admin','id'=>$model->id));
                 	}
-                    $this->redirect(array('admin','id'=>$model->id));
-                }
-            }
-
-
+ 
             
             }//End validate 
         }
 
         $this->render('update',array(
-            'model'=>$model,'getAuthors'=>$getAuthors
+            'model'=>$model,'modelAuthor'=>$modelAuthor, 'modelAuthors'=>$modelAuthors
         ));
     }
 	/**
@@ -212,6 +220,7 @@ class BooksChaptersController extends Controller
 	/**
 	 * Lists all models.
 	 */
+
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('BooksChapters');
@@ -270,4 +279,14 @@ class BooksChaptersController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	 public function getAuthors(){
+
+	        $this->getAuthors=$this->connection->createCommand()
+
+	                ->select("*")->from('books_chapters_authors')->queryAll('id_books_chapters'.$id);
+
+	        return $this->getAuthors;
+
+	    }
 }

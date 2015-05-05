@@ -1,23 +1,86 @@
-    $(document).ready(function() {
+ $(document).ready(function(){
+         var validateEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+         var validateNum = /^[0-9]+$/;
         /////FORM GRADES
-        $("#btnCreateGrade").click(function() {
-            var grade = $("#grade").val();
-            var title = $("#title").val();
-            var obtentionDate = $("#obtentionDate").val();
-            var thesisTitle = $("#thesisTitle").val();
-            var institution = $("#institution").val();
-            if (grade == "") {
-                $("#errorGrade").fadeIn("slow");
-                return false;
-            } else {
-                $("#errorGrade").fadeOut();
-                if (title == "") {
-                    $("#errorTitle").fadeIn("slow");
+            $("#btnCreateGrade").click(function(){
+
+             	var grade = $("#grade").val(); 
+                var writNumber = $("#writNumber").val();
+             	var title = $("#title").val(); 
+             	var obtentionDate = $("#obtentionDate").val(); 
+             	var thesisTitle = $("#thesisTitle").val();
+             	var institution = $("#institution").val(); 
+
+                if(grade == ""){
+                    $("#errorGrade").fadeIn("slow");
                     return false;
-                } else {
-                    $("#errorTitle").fadeOut();
-                    if (obtentionDate == "") {
-                        $("#errorObtentionDate").fadeIn("slow");
+                }else{
+
+                    $("#errorGrade").fadeOut();
+                    if (writNumber == "" || !validateNum.test(writNumber)) {
+                          $("#errorNumber").fadeIn("slow");
+                          return false;
+                    }else{
+                        
+                        $("#errorNumber").fadeOut();
+                        if (title == "") {
+                            $("#errorTitle").fadeIn("slow");
+                            return false;
+                        }else{
+                             $("#errorTitle").fadeOut();
+                             if (obtentionDate == "") {
+                               $("#errorObtentionDate").fadeIn("slow");
+                               return false;
+                              }else{
+                                 $("#errorObtentionDate").fadeOut();
+                                if (thesisTitle == "") {
+                                        $("#errorThesisTitle").fadeIn("slow");
+                                        return false;
+                                }else{
+                                     $("#errorThesisTitle").fadeOut();
+                                    if (institution == "") {
+                                         $("#errorInstitution").fadeIn("slow");
+                                         return false;
+                                    }else{
+                                         $("#errorInstitution").fadeOut();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                 }
+ 
+            });//click
+
+           $("#showFormGrade").on( "click", function() {
+                $('.grades').show(); 
+                $('#hideFormGrade').show();
+                 $('#showFormGrade').hide();
+             });
+            $("#hideFormGrade").on( "click", function() {
+                $('.grades').hide(); 
+                  $('#showFormGrade').show();
+            });
+
+
+///FORM PHONES
+   
+             //Emails
+            $("#btnCreateEmail").click(function(){
+                
+                var type = $("#typeEmail").val();
+                var mail = $("#mail").val();
+ 
+             
+                if(type == ""){
+                    $("#errorTypeEmail").fadeIn("slow");
+                    return false;
+                }else{
+                    $("#errorTypeEmail").fadeOut();
+
+                    if(mail == "" || !validateEmail.test(mail)){
+                        $("#errorMail").fadeIn("slow");
                         return false;
                     } else {
                         $("#errorObtentionDate").fadeOut();

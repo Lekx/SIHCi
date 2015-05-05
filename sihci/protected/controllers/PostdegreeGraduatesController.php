@@ -58,6 +58,10 @@ class PostdegreeGraduatesController extends Controller
 
 			if($model->save())
      		{
+     			$section = "Graduados de Posgrado"; 
+     			$action = "Creación";
+				$details = "Nombre del Graduado: ".$model->fullname;
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
@@ -88,6 +92,10 @@ class PostdegreeGraduatesController extends Controller
 
 			if($model->save())
      		{
+     			$section = "Graduados de Posgrado"; 
+     			$action = "Modificación";
+				$details = "Registro Número: ".$model->id.".";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
      			echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      		}	
@@ -108,7 +116,12 @@ class PostdegreeGraduatesController extends Controller
 	//GP03-Eliminar-datos
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Graduados de Posgrado"; 
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->fullname;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
      	if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
