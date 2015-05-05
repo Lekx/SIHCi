@@ -23,7 +23,6 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->dropDownList($model,'type',
 			array(
 				'Demostraciones'=>'Demostraciones',
@@ -44,7 +43,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'directed_to'); ?>
 		<?php echo $form->dropDownList($model,'directed_to',
 		    array(
 				'Empresarios'=>'Empresarios',
@@ -62,8 +60,7 @@
 	</div>
 
 	<div class="row">
-		<?php
-		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
 		    'language'=> 'es',
 		    'attribute' => 'date',
@@ -80,17 +77,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>150,'placeholder'=>'Título de la publicacion')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>45,'placeholder'=>'Dependencia responsable')); ?>
+		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>150,'placeholder'=>'Dependencia responsable')); ?>
 		<?php echo $form->error($model,'responsible_agency'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'note',array('size'=>45,'maxlength'=>45,'placeholder'=>'Nota periodistica')); ?>
+		<?php echo $form->textField($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica')); ?>
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 

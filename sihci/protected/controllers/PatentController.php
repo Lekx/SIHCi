@@ -77,15 +77,13 @@ class PatentController extends Controller
 
 		    if($model->save())
      		{
-     			echo CJSON::encode(array('status'=>'success'));
+     			echo CJSON::encode(array('status'=>'200'));
      			Yii::app()->end();
      		}	
      		else 
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+     			echo CJSON::encode(array('status'=>'404'));
+                Yii::app()->end();
      		}
 			
 		}
