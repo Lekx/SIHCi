@@ -8,19 +8,6 @@
  //     'limit'=>4,
  //  )); 
 ?>
-<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Curriculum_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-
-</script>
 
 <div class="form">
 
@@ -61,16 +48,13 @@
                                       
                          if(data.status=="success")
                          {
-		                     alert("Registro realizado con éxito");
-		                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/commission').'";
+		                      $(".successdiv").show();
                          }		                         
                          else
                          {
-	                     	alert("Guardo campos vacios");   
+	                     	  	$(".errordiv").show(); 
 	                     }       
-                  	}',                    
-                    
-                )); 
+                  	}'),array('class'=>'savebutton'));   
 		?>
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>

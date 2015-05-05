@@ -41,75 +41,68 @@ $(document).ready(function() {
 
 	<div class="row">
 
-          <?php
-$this->widget(
-	'yiiwheels.widgets.formhelpers.WhCountries',
-	array(
-		'name' => 'Addresses[country]',
-		'id' => 'Addresses_country',
-		//'value' => 'US',
-		'useHelperSelectBox' => true,
-		'pluginOptions' => array(
-			'country' => 'MX',
-			'language' => 'es_ES',
-			'flags' => true,
-		),
-	)
-);
-?>
+<div class="row">
+	<?php $this->widget('ext.CountrySelectorWidget', array(
+
+		'value' => $modelAddresses->country,
+		'name' => Chtml::activeName($model, 'country'),
+		'id' => Chtml::activeId($model, 'country'),
+		'useCountryCode' => false,
+		'defaultValue' => 'Mexico',
+		'firstEmpty' => true,
+		'firstText' => 'Pais',
+
+		)); ?>
+
         </div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'zip_code');?>
-		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal', 'class' => 'numericOnly'));?>
+		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal', 'class' => 'numericOnly','title'=>'Código Postal'));?>
 		<?php echo $form->error($modelAddresses, 'zip_code');?>
 	</div>
 
 	<div class="row" class="">
-		<?php echo $form->labelEx($modelAddresses, 'state');?>
-		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado'));?>
+		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','title'=>'Estado'));?>
 		<?php echo $form->error($modelAddresses, 'state');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'delegation');?>
-		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación'));?>
+
+		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','title'=>'Delegación'));?>
 		<?php echo $form->error($modelAddresses, 'delegation');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'city');?>
-		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad'));?>
+
+		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','title'=>'Ciudad'));?>
 		<?php echo $form->error($modelAddresses, 'city');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'town');?>
-		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio'));?>
+
+		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','title'=>'Municipio'));?>
 		<?php echo $form->error($modelAddresses, 'town');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'colony');?>
-		<?php echo $form->textField($modelAddresses, 'colony', array('size' => 45, 'maxlength' => 45, 'placeholder' => 'Colonia'));?>
+
+		<?php echo $form->textField($modelAddresses, 'colony', array('size' => 45, 'maxlength' => 45, 'placeholder' => 'Colonia','title'=>'Colonia'));?>
 		<?php echo $form->error($modelAddresses, 'colony');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'street');?>
-		<?php echo $form->textField($modelAddresses, 'street', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Calle'));?>
+		<?php echo $form->textField($modelAddresses, 'street', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Calle','title'=>'Calle'));?>
 		<?php echo $form->error($modelAddresses, 'street');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'external_number');?>
-		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo', 'class' => 'numericOnly'));?>
+
+		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo', 'class' => 'numericOnly','title'=>'Número Externo'));?>
 		<?php echo $form->error($modelAddresses, 'external_number');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($modelAddresses, 'internal_number');?>
-		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno', 'class' => 'numericOnly'));?>
+		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno', 'class' => 'numericOnly','title'=>'Número Interno'));?>
 		<?php echo $form->error($modelAddresses, 'internal_number');?>
 	</div>
 
@@ -128,56 +121,48 @@ $this->widget(
 	</div>-->
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'sponsor_name');?>
-		<?php echo $form->textField($model, 'sponsor_name', array('size' => 50, 'maxlength' => 50));?>
+		<?php echo $form->textField($model, 'sponsor_name', array('size' => 50, 'maxlength' => 50, 'placeholder'=>'Nombre de la empersa','title'=>'Nombre de la empersa'));?>
 		<?php echo $form->error($model, 'sponsor_name');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'type');?>
-		<?php echo $form->textField($model, 'type', array('size' => 60, 'maxlength' => 150));?>
+		<?php echo $form->textField($model, 'type', array('size' => 60, 'maxlength' => 150,'placeholder'=>'Tipo de Empresa','title'=>'Tipo de Empresa'));?>
 		<?php echo $form->error($model, 'type');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'website');?>
-		<?php echo $form->textField($model, 'website', array('size' => 60, 'maxlength' => 100));?>
+		<?php echo $form->textField($model, 'website', array('size' => 60, 'maxlength' => 100, 'placeholder'=>'Pagina Web','title'=>'Pagina Web'));?>
 		<?php echo $form->error($model, 'website');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'sector');?>
-		<?php echo $form->textField($model, 'sector', array('size' => 60, 'maxlength' => 100));?>
+	
+		<?php echo $form->textField($model, 'sector', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Sector','title'=>'Sector'));?>
 		<?php echo $form->error($model, 'sector');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'class');?>
-		<?php echo $form->textField($model, 'class', array('size' => 60, 'maxlength' => 100));?>
+		<?php echo $form->textField($model, 'class', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Clase','title'=>'Clase'));?>
 		<?php echo $form->error($model, 'class');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'branch');?>
-		<?php echo $form->textField($model, 'branch', array('size' => 60, 'maxlength' => 100));?>
+		<?php echo $form->textField($model, 'branch', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Rama','title'=>'Rama'));?>
 		<?php echo $form->error($model, 'branch');?>
     </div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'main_activity');?>
-		<?php echo $form->textField($model, 'main_activity', array('size' => 60, 'maxlength' => 100));?>
+		<?php echo $form->textField($model, 'main_activity', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Actividad Principal','title'=>'Actividad Principal'));?>
 		<?php echo $form->error($model, 'main_activity');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'legal_structure');?>
-		<?php echo $form->textField($model, 'legal_structure', array('size' => 60, 'maxlength' => 100));?>
+		<?php echo $form->textField($model, 'legal_structure', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Estructura Legal','title'=>'Estructura Legal'));?>
 		<?php echo $form->error($model, 'legal_structure');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'employeess_number');?>
-		<?php echo $form->textField($model, 'employeess_number', array('class' => 'numericOnly'));?>
+		<?php echo $form->textField($model, 'employeess_number', array('class' => 'numericOnly','placeholder'=>'Numero de empleados','title'=>'Numero de empleados'));?>
 		<?php echo $form->error($model, 'employeess_number');?>
 	</div>
 
@@ -185,13 +170,16 @@ $this->widget(
 
 		<?php echo $form->fileField($modelPersons, 'photo_url', array('size' => 60, 'maxlength' => 100, 'placeholder' => "Foto"));?>
 		<?php echo $form->error($modelPersons, 'photo_url');?>
+		<br>
 		<img  style="width:75px;height:auto"; src="<?php echo Yii::app()->request->baseUrl . "/" . $modelPersons->photo_url;?>">
 		<?php echo Yii::app()->request->baseUrl . "/" . $modelPersons->photo_url;?>
 	</div>
 
 	<div class="row buttons">
 		<!-- cambiar todo a español y este boton-->
-		<?php echo CHtml::submitButton('Guardar');?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
+		<input class="cleanbutton" type="button" value="Borrar">
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget();?>

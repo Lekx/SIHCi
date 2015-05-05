@@ -7,12 +7,23 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List Sponsors', 'url'=>array('index')),
-	array('label'=>'Manage Sponsors', 'url'=>array('admin')),
+
+$this->menu = array(
+	array('label' => 'Datos Empresa', 'url' => array('sponsors/sponsorsInfo')),
+	array('label' => 'Documentos Probatorios', 'url' => array('sponsors/create_docs')),
+	array('label' => 'Datos de Representante', 'url' => array('sponsors/create_persons')),
+	array('label' => 'Datos de Facturacion', 'url' => array('sponsors/create_billing')),
+	array('label' => 'Datos de Contacto', 'url' => array('sponsors/create_contact')),
+	array('label' => 'Datos de Contactos', 'url' => array('sponsors/create_contacts')),
 );
 ?>
 
-<h1>Create Sponsors</h1>
+	<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Perfil Empresa</h1>
+            <hr>
+        </div>
+
+<h4>Datos de Representante:</h4>
 
 <?php $this->renderPartial('_form_Persons', array('model'=>$model)); ?>
