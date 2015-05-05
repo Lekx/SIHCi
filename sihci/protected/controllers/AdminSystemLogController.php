@@ -1,6 +1,6 @@
 <?php
 
-class EmailsController extends Controller
+class AdminSystemLogController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -24,60 +24,42 @@ class EmailsController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/*public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
-*/
+	// public function accessRules()
+	// {
+	// 	return array(
+	// 		array('allow',  // allow all users to perform 'index' and 'view' actions
+	// 			'actions'=>array('index','view'),
+	// 			'users'=>array('*'),
+	// 		),
+	// 		array('allow', // allow authenticated user to perform 'create' and 'update' actions
+	// 			'actions'=>array('create','update'),
+	// 			'users'=>array('@'),
+	// 		),
+	// 		array('allow', // allow admin user to perform 'admin' and 'delete' actions
+	// 			'actions'=>array('admin','delete'),
+	// 			'users'=>array('admin'),
+	// 		),
+	// 		array('deny',  // deny all users
+	// 			'users'=>array('*'),
+	// 		),
+	// 	);
+	// }
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+
+		//$model = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
+		$model=$this->loadModel($id);
+		$person	= Persons::model()->findByAttributes(array('id_user' => $model->id_user));
+		$user	= Users::model()->findByAttributes(array('id' => $model->id_user));
+
+		$this->render('view',array('model'=>$model, 'person'=> $person, 'user'=>$user));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new Emails;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Emails']))
-		{
-			$model->attributes=$_POST['Emails'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
 
 	/**
 	 * Updates a particular model.
@@ -87,20 +69,20 @@ class EmailsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$person	= Persons::model()->findByAttributes(array('id_user' => $model->id_user));
+		$user	= Users::model()->findByAttributes(array('id' => $model->id_user));
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
-		if(isset($_POST['Emails']))
+		if(isset($_POST['SystemLog']))
 		{
-			$model->attributes=$_POST['Emails'];
+			$model->attributes=$_POST['SystemLog'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		$this->render('update',array('model'=>$model, 'person'=> $person, 'user'=>$user));
 	}
 
 	/**
@@ -122,10 +104,7 @@ class EmailsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Emails');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->redirect('admin');
 	}
 
 	/**
@@ -133,26 +112,36 @@ class EmailsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Emails('search');
+		$model=new SystemLog('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Emails']))
-			$model->attributes=$_GET['Emails'];
+		if(isset($_GET['SystemLog']))
+			$model->attributes=$_GET['SystemLog'];
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
 
+	public function actionSaveLog($section, $details, $action){
+			$log = new SystemLog();
+			$log->id_user = Yii::app()->user->id;
+			$log->section = $section;
+			$log->details = $details;
+			$log->action = $action;
+			$log->datetime = date ('d/m/Y H:i:s');
+			$log->save();
+	}
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Emails the loaded model
+	 * @return SystemLog the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Emails::model()->findByPk($id);
+		$model=SystemLog::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +149,11 @@ class EmailsController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Emails $model the model to be validated
+	 * @param SystemLog $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='emails-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='system-log-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

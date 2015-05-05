@@ -9,6 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	//array('label'=>'Listar Tesis', 'url'=>array('index')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 	array('label'=>'Crear', 'url'=>array('create')),
 );
 
@@ -44,10 +45,10 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		//'id',
 		//'id_curriculum',
-		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('name'=>'T&iacute;tulo','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
 		array('name'=>'Autor','type'=>'html','id'=>'author','value'=>'CHtml::encode($data->author)'),
 		'conclusion_date',
-		'author',
+		//'author',
 		//'path',
 		'grade',
 		'sector',

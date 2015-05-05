@@ -11,15 +11,14 @@ $this->breadcrumbs=array(
 ?>
 <section class="informativa">
 
-	<section class="column-left">
-			<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculacionUniversidadesInstitutosHospitales.png" alt="">
-	</section>
-
 	
 	<section class="column-center">
-
+	 <div class="titleinfo">
+	<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/VinculacionUniversidadesInstitutosHospitales.png" alt="">
 	<h2>Vinculacion Con Universidad Institutos Y Hospitales</h2>
 	<hr>
+	</div>
+	      <div class="generalinformation">
 	<p>
 		<h6>Extensión y Vinculación</h6>
 		Las actividades de vinculación constituyen el puent
@@ -41,6 +40,7 @@ $this->breadcrumbs=array(
 		Organismo Público Descentralizad
 
 	</p>
+	</div>
 	</section>
 
 	<section class="column-right">

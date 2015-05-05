@@ -21,7 +21,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'folio'); ?>
 		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Folio')); ?>
@@ -75,7 +75,8 @@
 		    'attribute' => 'validity_date_start',
 		    'htmlOptions' => array(
 		    		'size' => '10',         
-		        	'maxlength' => '10', 
+		        	'maxlength' => '10',
+		        	'readOnly'=>true, 
 		        	'placeholder'=>"Fecha de Inicio"   
 		    ),
 		));
@@ -92,7 +93,8 @@
 		    'attribute' => 'validity_date_end',
 		    'htmlOptions' => array(
 		    		'size' => '10',         
-		        	'maxlength' => '10', 
+		        	'maxlength' => '10',
+		        	'readOnly'=>true, 
 		        	'placeholder'=>"Fecha Final"   
 		    ),
 		));
@@ -108,7 +110,7 @@
 	</div>
 
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('certifications/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('certifications/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
@@ -119,7 +121,8 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#certifications-form")[0].reset();
-				                     window.location.href ="'.Yii::app()->createUrl('certifications/admin').'";
+   				                     window.location.href ="'.Yii::app()->createUrl('certifications/admin').'";		                         
+
 		                         }		                         
 		                         else
 		                         {
@@ -129,9 +132,20 @@
 		                    
                         )); 
         ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/certifications/admin')); ?>
-	</div>	
+        <?php  if($model->isNewRecord) 
+			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+		?>
+       	<?php echo CHtml::link('Cancelar', array('/certifications/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+       	
+		<div class="200">
+		
+		</div>
+		
+		<div class="404">
+		</div>
+		
+	</div>
+
 
 <?php $this->endWidget(); ?>
 

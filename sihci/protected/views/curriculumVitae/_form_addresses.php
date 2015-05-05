@@ -3,23 +3,15 @@
 /* @var $model Addresses */
 /* @var $form CActiveForm */
 ?>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Addresses_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-
-		 	$('.successdiv').show();
-		 	setTimeout(validationFrom, 3000);
-			return false;
-		}
+<script >
+	  function cleanUp(){
+            var text;
+            var result = confirm("¿Está usted seguro de limpiar estos datos?");
+            if (result==true) {
+                $('[id^=Addresses_]').val('');
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
 </script>
 <div class="form">
 
@@ -96,9 +88,27 @@
 	</div>
 
 	<div class="row buttons">
-		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
+			<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/addresses'), 
+				array(
+					'dataType'=>'json',
+             		'type'=>'post',
+             		'success'=>'function(data) 
+             		 {
+                                      
+                         if(data.status=="success")
+                         {
+		                     alert("Registro realizado con éxito");
+		                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/addresses').'";
+                         }		                         
+                         else
+                         {
+	                     	alert("favor de completar campos en rojo");   
+	                     }       
+                  	}',                    
+                ), array('class'=>'savebutton'));  
+		?>
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 		</div>
 
 <?php $this->endWidget(); ?>

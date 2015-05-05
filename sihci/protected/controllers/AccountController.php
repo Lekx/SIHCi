@@ -110,7 +110,7 @@
 			if(isset($_GET['SystemLog']))
 				$model->attributes=$_GET['SystemLog'];
 
-			$this->render('SystemLog',array(
+			$this->render('systemLog',array(
 				'model'=>$model,
 			));
 		}

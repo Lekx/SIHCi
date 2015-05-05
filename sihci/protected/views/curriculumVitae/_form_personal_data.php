@@ -19,6 +19,7 @@
 
 <?php echo $form->errorSummary($model); ?>
 <?php echo $form->errorSummary($curriculum); ?>
+
 	<div class="row">
 		<?php echo $form->labelEx($curriculum,'status'); ?>
 		<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
@@ -178,9 +179,28 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?')); ?>
+		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/personalData'), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/personalData').'";
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Debe registrar sus datos");   
+			                     }       
+		                  	}',                    
+		                    
+                      ), array('class'=>'savebutton'));  
+        ?>
 		<input class="cleanbutton" type="button" value="Borrar">
-		<?php echo CHtml::button('Button Text', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 
 

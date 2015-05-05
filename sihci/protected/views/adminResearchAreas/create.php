@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ResearchAreas', 'url'=>array('index')),
-	array('label'=>'Manage ResearchAreas', 'url'=>array('admin')),
+	//array('label'=>'List ResearchAreas', 'url'=>array('index')),
+	array('label'=>'Gestionar ', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>Líneas de Investigación</h1>
+<h1>Crear Registro</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

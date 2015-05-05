@@ -33,13 +33,7 @@
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta'));?>
 		
 	</div>
-
-	<div class="row">
-	Pasaporte
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte'));?>
 	
-	</div>
-
 	<div class="row">
 	CURP
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'CURP'));?>
@@ -52,11 +46,20 @@
 
 	</div>
 
+	<div class="row">
+	Pasaporte
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte'));?>
+	
+	</div>
+
+<hr>
+
+	
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?'));?>
-
-		<?php echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget();?>

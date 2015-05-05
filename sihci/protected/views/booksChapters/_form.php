@@ -19,6 +19,7 @@
 	<p class="note">Los campos con <span class="required">*</span> son necesarios.</p>
 	<?php echo $form->errorSummary($model); ?>
 
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'chapter_title'); ?>
 		<?php echo $form->textField($model,'chapter_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Capítulo de libro')); ?>
@@ -33,23 +34,25 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'publishing_year'); ?>
-		<?php
-		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model' => $model,
-		    'language'=> 'es',
-		    'attribute' => 'publishing_year',
-		    'options' => array(
-			     		'changeMonth'=>true, //cambiar por Mes
-			     		'changeYear'=>true, //cambiar por Año
-			     		'maxDate' => 'now',
-			     		),
-		    'htmlOptions' => array(
-		    		'size' => '10',         
-		        	'maxlength' => '10', 
-		        	'placeholder'=>"Año de publicación"   
-		    ),
-		));
-		?>
+		<?php echo $form->dropDownList($model,'publishing_year', array('promt'=>'Año de publicación','1980'=>'1980','1981'=>'1981','1982'=>'1982','1983'=>'1983',
+															'1984'=>'1984','1985'=>'1985','1986'=>'1986','1987'=>'1987',
+															'1988'=>'1988','1989'=>'1989','1990'=>'1990','1991'=>'1992',
+															'1993'=>'1993','1994'=>'1994','1995'=>'1995','1996'=>'1996',
+															'1997'=>'1997','1998'=>'1998','1999'=>'1999','2000'=>'2000',
+															'2001'=>'2001','2002'=>'2002','2003'=>'2003','2004'=>'2004',
+															'2005'=>'2005','2006'=>'2006','2007'=>'2007','2008'=>'2008',
+															'2009'=>'2009','2010'=>'2010','2011'=>'2011','2012'=>'2012',
+															'2013'=>'2013','2014'=>'2014','2015'=>'2015','2016'=>'2016',
+															'2017'=>'2017','2017'=>'2017','2018'=>'2018','2019'=>'2020',
+															'2021'=>'2021','2022'=>'2022','2023'=>'2023','2024'=>'2024',
+															'2025'=>'2025','2026'=>'2026','2027'=>'2027','2028'=>'2028',
+															'2029'=>'2029','2030'=>'2030','2030'=>'2031','2031'=>'2031',
+															'2032'=>'2032','2033'=>'2033','2034'=>'2034','2035'=>'2035',
+															'2036'=>'2036','2037'=>'2037','2038'=>'2038','2039'=>'2039',
+															'2040'=>'2040','2041'=>'2041','2042'=>'2042','2043'=>'2043',
+															'2044'=>'2044','2045'=>'2045','2046'=>'2046','2047'=>'2047',
+															'2048'=>'2048','2049'=>'2049','2050'=>'2050'
+															)); ?>
 		<?php echo $form->error($model,'publishing_year'); ?>
 	</div>
 
@@ -61,13 +64,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'editorial'); ?>
-		<?php echo $form->textField($model,'editorial',array('size'=>45,'maxlength'=>45,'placeholder'=>'Editorial')); ?>
+		<?php echo $form->textField($model,'editorial',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Editorial')); ?>
 		<?php echo $form->error($model,'editorial'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'volume'); ?>
-		<?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45,'placeholder'=>'No. Volumen')); ?>
+		<?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45, 'placeholder'=>'No. Volumen')); ?>
 		<?php echo $form->error($model,'volume'); ?>
 	</div>
 
@@ -157,6 +160,7 @@
 	                                                             'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS'=>'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS',' ANALISIS DE RIESGOS'=>' ANALISIS DE RIESGOS','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','NUEVAS FUERTES DE ENERGIA'=>'NUEVAS FUERTES DE ENERGIA','NUEVOS SISTEMAS ORGANIZACIONALES'=>'NUEVOS SISTEMAS ORGANIZACIONALES','OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'=>'OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'),array('prompt'=>'Disciplina'));?>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'subdiscipline'); ?>
@@ -346,38 +350,71 @@
 	</div>
 
 	<div class="row">
-        <?php echo $form->labelEx($model,'url_doc'); ?>
-        <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100)); ?>
-        <?php echo $form->error($model,'url_doc'); ?>
-    </div>
+		<?php echo $form->labelEx($model,'url_doc'); ?>
+		<?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'url_doc'); ?>
+	</div>
 
-    	<?php 
+	
+
+	<?php 
 			$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
  			'addButtonLabel'=>'Agregar nuevo',
 		 )); 
     	?>
-    <div class="authorsRegistry">  	
-
-		 <?php echo $form->labelEx($modelAuthors,'names'); ?>
-		 <?php echo $form->textField($modelAuthors,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
-		 <?php echo $form->error($modelAuthors,'names');?> 
-		 <?php echo $form->labelEx($modelAuthors,'last_name1'); ?>
-		 <?php echo $form->textField($modelAuthors,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
-		 <?php echo $form->error($modelAuthors,'last_name1'); ?>
-		 <?php echo $form->labelEx($modelAuthors,'last_name2'); ?>
-		 <?php echo $form->textField($modelAuthors,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
-		 <?php echo $form->error($modelAuthors,'last_name2'); ?>
-		 <?php echo $form->labelEx($modelAuthors,'position'); ?>
-		 <?php echo $form->textField($modelAuthors,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
-		 <?php echo $form->error($modelAuthors,'position');?>
+    	<div class="authorsRegistry row"> 
+    		 
+		  
+		  <?php 
+		  		echo "<input type='hidden' name='idsBooksChapters[]'>";
+		  		echo $form->labelEx($modelAuthor,'names'); ?>
+		  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
+		  <?php echo $form->error($modelAuthor,'names');?>
+		  <?php echo $form->labelEx($modelAuthor,'last_name1'); ?>
+		  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
+		  <?php echo $form->error($modelAuthor,'last_name1'); ?>
+		  <?php echo $form->labelEx($modelAuthor,'last_name2'); ?>
+		  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
+		  <?php echo $form->error($modelAuthor,'last_name2'); ?>
+		  <?php echo $form->labelEx($modelAuthor,'position'); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
+		  <?php echo $form->error($modelAuthor,'position'); 
+		  ?>
+    	</div> 	
+    
+		    
+		  <?php 
+		  if(!$model->isNewRecord)
+		  foreach ($modelAuthors as $key => $value) {
+		  	?>
+		  	<div class="row">
+		  
+		  <?php 
+		  echo "<input type='hidden' value='".$value->id."' name='idsBooksChapters[]'>";
+		  echo $form->labelEx($value,'names'); ?>
+		  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
+		  <?php echo $form->error($value,'names');?>
+		  <?php echo $form->labelEx($value,'last_name1'); ?>
+		  <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno')); ?>
+		  <?php echo $form->error($value,'last_name1'); ?>
+		  <?php echo $form->labelEx($value,'last_name2'); ?>
+		  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
+		  <?php echo $form->error($value,'last_name2'); ?>
+		  <?php echo $form->labelEx($value,'position'); ?>
+		  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición')); ?>
+		  <?php echo $form->error($value,'position'); 
+		?>
+		</div>	 
+		<?php } ?>
 			
 	</div>
-     
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar' && $modelAuthors->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+
+		<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
 		<input type="reset" onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
-		 <?php echo CHtml::link('Cancelar',array('booksChapters/admin'))?>
+		  <?php  echo CHtml::link('Cancelar',array('booksChapters/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?'))?>
+		
 	</div>
 
 <?php $this->endWidget(); ?>

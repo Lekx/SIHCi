@@ -102,7 +102,7 @@
 			    'htmlOptions' => array(
 			    	    'dateFormat'=>'d/m/Y',
 			    		'size' => '10',         
-			   			 'readOnly'=>true,
+			   			'readonly'=>true,
 			        	'maxlength' => '10', 
 			        	
 			        	'placeholder'=>"Fecha de presentación",
@@ -123,6 +123,7 @@
 			    		'size' => '10',         
 			    		'readOnly'=>true,
 			        	'maxlength' => '10', 
+			        	'readonly'=>true,
 			        	'placeholder'=>"Fecha de concesión",
 			    ),
 			));

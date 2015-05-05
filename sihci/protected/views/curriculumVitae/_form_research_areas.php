@@ -23,43 +23,7 @@
         }
     </style>
 	
-<script>
-   $(document).ready(function(){
-            $("#btnCreate").click(function(){
-                
-                var research = $("#research").val(); 
-             
-                if(research == ""){
-                    $("#errorResearch").fadeIn("slow");
-                    return false;
-                }else{
-                    $("#errorResearch").fadeOut();
-                 }
- 
-            });//click
-            $("#showForm").on( "click", function() {
-				$('.research').show(); 
-				$('#hideForm').show();
-			 });
-			$("#hideForm").on( "click", function() {
-				$('.research').hide(); 
-			});
-        });//ready
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=DocsIdentity_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-</script>
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
 
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -73,15 +37,35 @@
 	
 
 	<?php echo $form->errorSummary($model); ?>
-<input type="button" id="showForm" value="Agregar Línea de Investigación">
-<input class="research"  type="button" id="hideForm" value="Cancelar">
+<input id="showFormResearch" type="button"  value="Agregar Línea de Investigación">
+<input id="hideFormResearch" class="research" type="button"  value="Cancelar">
 
 <div class="research">
 	<div class='row'>
 		Nombre de Investigación
 		<input id="research" type="text" name="nameResearch" title="Nombre de Investigación" placeholder="Nombre de Investigación">
-		<div id="errorResearch" class="errors"> No debe ser nulo</div><br>
-		<input class="savebutton" type="submit" id="btnCreate" value="Crear Línea de Investigación">
+		<div id="errorResearch" class="errors"> No debe estar vacío</div><br>
+		 <?php echo CHtml::ajaxButton ('Crear Línea de Investigación',CController::createUrl('curriculumVitae/researchAreas'), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Linea de investigación se ha creado con éxito");
+				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
+		                         }		                         
+		                         else
+		                         {
+			                     	  alert("Linea de investigación se ha creado con éxito");
+				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";  
+			                     }       
+		                  	}',                    
+		                    
+                        ), array('id'=>'btnCreateResearch')); 
+        ?>
 	</div>
 </div><!-- form -->
 <br>
@@ -103,9 +87,28 @@
 	?>
 
 	<div class="row buttons">
-		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
+		 <?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/researchAreas'), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("No existe ninguna linea de investigación");   
+			                     }       
+		                  	}',                    
+		                    
+                      ), array('class'=>'savebutton'));  
+        ?>
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::button('Cancelar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 
 	</div>
 	

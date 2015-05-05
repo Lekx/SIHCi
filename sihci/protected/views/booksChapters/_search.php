@@ -11,14 +11,15 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
+<div class="row">
 		
-		<legend>Búsqueda por:</legend>
+		<legend>B&uacute;squeda por:</legend>
 	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo de libro, Título de Capítulo, Editores')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
 
 	</div>
 
+	
 <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

@@ -1,6 +1,6 @@
 <?php
 
-class DocsIdentityController extends Controller
+class AdminResearchAreasController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -24,33 +24,33 @@ class DocsIdentityController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('@'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+	// public function accessRules()
+	// {
+	// 	return array(
+	// 		array('allow',  // allow all users to perform 'index' and 'view' actions
+	// 			'actions'=>array('index','view'),
+	// 			'users'=>array('*'),
+	// 		),
+	// 		array('allow', // allow authenticated user to perform 'create' and 'update' actions
+	// 			'actions'=>array('create','update'),
+	// 			'users'=>array('@'),
+	// 		),
+	// 		array('allow', // allow admin user to perform 'admin' and 'delete' actions
+	// 			'actions'=>array('admin','delete'),
+	// 			'users'=>array('admin'),
+	// 		),
+	// 		array('deny',  // deny all users
+	// 			'users'=>array('*'),
+	// 		),
+	// 	);
+	// }
 
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
 
-	//CV04-Desplegar datos. 
+	//CV04-Desplegar datos.
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -63,31 +63,27 @@ class DocsIdentityController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 
-	//CV01-Registro de datos   
+	//CV01-Registro de datos  
 	public function actionCreate()
 	{
-		$model=new DocsIdentity;
+		$model=new ResearchAreas;
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['DocsIdentity']))
+		if(isset($_POST['ResearchAreas']))
 		{
-			$model->attributes=$_POST['DocsIdentity'];
+			$model->attributes=$_POST['ResearchAreas'];
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$model->doc_id = CUploadedFile::getInstanceByName('DocsIdentity[doc_id]');
-
-			if ($model->validate()) {
-				
-				if($model->doc_id != ''){
-					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf');
-					$model->doc_id = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf';
-						if($model->save()){
-							$this->redirect(array('view','id'=>$model->id));
-			   			}
-
-				}
-				
+			if($model->save()){
+				echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
+			}
+			else {
+				 $error = CActiveForm::validate($model);
+                                    if($error!='[]')
+                                         echo $error;
+                                        Yii::app()->end();
 			}
 		}
 
@@ -101,7 +97,7 @@ class DocsIdentityController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	
+
 	//CV02-Modificar registro 
 	public function actionUpdate($id)
 	{
@@ -109,24 +105,21 @@ class DocsIdentityController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-////////////////////////////////////////////////////
-		if(isset($_POST['DocsIdentity']))
-		{
-			$model->attributes=$_POST['DocsIdentity'];
-			$model->doc_id = CUploadedFile::getInstanceByName('DocsIdentity[doc_id]');
 
-			if ($model->validate()) {
-				
-				if($model->doc_id != ''){
-					$model->doc_id->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf');
-					$model->doc_id = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/'.$model->type.'.pdf';
-						if($model->save()){
-							$this->redirect(array('view','id'=>$model->id));
-			   			}
-				}
-				
+		if(isset($_POST['ResearchAreas']))
+		{
+			$model->attributes=$_POST['ResearchAreas'];
+			if($model->save()){
+				echo CJSON::encode(array('status'=>'success'));
+                                Yii::app()->end();
 			}
-			
+			else {
+				 $error = CActiveForm::validate($model);
+                                    if($error!='[]')
+                                         echo $error;
+                                        Yii::app()->end();
+			}
+				//$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -153,7 +146,7 @@ class DocsIdentityController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('DocsIdentity');
+		$dataProvider=new CActiveDataProvider('ResearchAreas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -164,10 +157,10 @@ class DocsIdentityController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new DocsIdentity('search');
+		$model=new ResearchAreas('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['DocsIdentity']))
-			$model->attributes=$_GET['DocsIdentity'];
+		if(isset($_GET['ResearchAreas']))
+			$model->attributes=$_GET['ResearchAreas'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -178,12 +171,12 @@ class DocsIdentityController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return DocsIdentity the loaded model
+	 * @return ResearchAreas the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=DocsIdentity::model()->findByPk($id);
+		$model=ResearchAreas::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -191,11 +184,11 @@ class DocsIdentityController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param DocsIdentity $model the model to be validated
+	 * @param ResearchAreas $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='docs-identity-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='research-areas-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
