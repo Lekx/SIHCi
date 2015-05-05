@@ -115,37 +115,57 @@ class SoftwareController extends Controller
 	//SO02-Modificar-registro
 	public function actionUpdate($id)
 	{
+		$model=new Software;
+
 		$model=$this->loadModel($id);
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		
+		$end_date = Software::model()->findByAttributes(array('end_date'=>$model->end_date));
+		$model->id_curriculum = $id_curriculum->id; 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Software']))
 		{
 			$model->attributes=$_POST['Software'];
-    		$model->path = CUploadedFile::getInstanceByName('Software[path]');
-			
-			if($model->url_doc != ''){
-                
-	                $model->path->saveAs($urlFile.'fileSowtfware'.$model->title.'.'.$model->path->getExtensionName());
-					$model->path='sihci/sihci/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.$model->title.'.'.$model->path->getExtensionName();    
+			$model->id_curriculum = $id_curriculum->id;                  
+            
+    		if($model->end_date =="")
+    			$model->end_date =date('00/00/0000');		
+				
+				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
+				{
+	           		 $model->path = CUploadedFile::getInstanceByName('Software[path]');
+				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+		          
+		            if(!is_dir($urlFile))          
+		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
 
-				if($model->save())
-	     		{
-	     			echo CJSON::encode(array('status'=>'success'));
-	     			Yii::app()->end();
-	     		}	
-	     		else 
-	     		{
-	     			 $error = CActiveForm::validate($model);
-	                 if($error!='[]')
-	                    echo $error;
-	                 Yii::app()->end();
-	     		}
-     		}
+					    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+					
+			    }
+				else 
+				{
+					$model->path = "";
+				}	
+
+					if($model->save())
+					{	   			   
+					    echo CJSON::encode(array('status'=>'200'));
+					   	$this->redirect(array('admin','id'=>$model->id));
+				    	Yii::app()->end();
+				    }			    	
+				    else 
+			    	{
+			    		echo CJSON::encode(array('status'=>'404'));
+		                Yii::app()->end();
+			        }
+					    
 		}
-
+			
 		if(!isset($_POST['ajax']))
-			$this->render('update',array('model'=>$model));
+			$this->render('create',array('model'=>$model));
 	}
 
 	/**
@@ -159,8 +179,8 @@ class SoftwareController extends Controller
 	{
 		$model=new Software;
 
-		$this->loadModel($id)->delete();       
         unlink($model->path);
+		$this->loadModel($id)->delete();       
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
