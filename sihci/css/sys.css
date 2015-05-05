@@ -1,3 +1,5 @@
+
+
 /* CSS System */
 @font-face{
   	font-family: 'Caviar_Dreams_Bold';
@@ -334,6 +336,10 @@ body
 }
 .cvforms input[type="file"]
 {
+
+}
+.cvforms input[type="file"]
+{
 	display: inline-block;
 }
 .cvforms input[type="file"]::before
@@ -350,9 +356,10 @@ body
 {
 	width: 335px !important;
 	height: 40px;
-	background-color: #0E3152;
+	background-color: #0E3152 !important;
 	color: white;
 	font-size: 20px;
+	opacity: 1!important;
 }
 .cleanbutton
 {
@@ -564,6 +571,30 @@ thead th
 .portlet hr
 {
 	margin-left: 8px;
+}
+.addSomething , .deleteSomething, 
+#showFormPhone, #showFormEmail , 
+#btnCreateEmail , #btnCreatePhone
+,#hideFormEmail , #hideFormPhone 
+,#showFormGrade , #hideFormGrade,
+#btnCreateGrade
+{
+	width: 450px !important;
+	text-align: center;
+	color: white;
+	height: 25px;
+	background-color: #00B9C0;
+}
+.cancelSomething 
+{
+	display: none;
+	width: 450px !important;
+	text-align: center;
+	color: white;
+	height: 25px;
+	background-color: #00B9C0;
+	margin-bottom: 10px;
+	margin-right: 10px;
 }
 
 

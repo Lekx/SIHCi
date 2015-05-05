@@ -44,6 +44,7 @@
                             $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
+                                    trigger: 'click',
                                 });
 
                             });
@@ -56,7 +57,7 @@
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHme.png alt="home">', array('site/index'));?>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/Pcuenta.png alt="home">', array('site/index'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/Pcuenta.png alt="home">', array('account/infoAccount'));?>
                     <span>Cuenta</span>
                 </div>
                 <div class="headerconteinerC">

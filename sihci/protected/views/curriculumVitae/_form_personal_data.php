@@ -160,7 +160,8 @@
 
 	<div class="row">
 		
-		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		  
 		<?php echo $form->error($model,'photo_url'); ?>
 		<?php 
 	
@@ -199,7 +200,7 @@
                       ), array('class'=>'savebutton'));  
         ?>
 		<input class="cleanbutton" type="button" value="Borrar">
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 
