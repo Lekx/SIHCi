@@ -138,7 +138,7 @@ class SiteController extends Controller {
 			
 			$model->attributes = $_POST['RecoveryPassword'];
 
-			$is_active = Users::model()->findByAttributes(array("status" => "1", "email" => $model->email));
+			$is_active = Users::model()->findByAttributes(array("status" => "activo", "email" => $model->email));
 
 			if ($model->validate() && $is_active != null) {
 				
