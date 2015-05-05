@@ -20,7 +20,7 @@ $this->menu=array(
 
 <?php 
 		
-	$modelAuthor = BooksChaptersAuthors::model()->findAllByAttributes(array('id_books_chapters'=>$model->id));	
+	$modelAuthor = BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id));	
 		
 	$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

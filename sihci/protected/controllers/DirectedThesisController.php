@@ -74,33 +74,45 @@ class DirectedThesisController extends Controller
         {
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
+
+            if (!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]')))
+                {
+                     $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
+                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/';
+                  
+                    if(!is_dir($urlFile))          
+                        mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/', 0777, true);
+
+                        $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+                        $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                
+                    
+                }
+                else 
+                {
+                    $model->path = "";
+                }   
+
+                    if($model->save())
+                    {                  
+                        echo CJSON::encode(array('status'=>'200'));
+                        $this->redirect(array('admin','id'=>$model->id));
+                        Yii::app()->end();
+                    }                   
+                    else 
+                    {
+                        echo CJSON::encode(array('status'=>'404'));
+                        Yii::app()->end();
+                    }
+                        
+        }
+            
+        if(!isset($_POST['ajax']))
+            $this->render('create',array('model'=>$model));
+    }
+
              
                  
-                    if(!is_dir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/'))
-                            mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/', 0777, true);
-                         
-                             
-                            if($model->save()){
-                                if($model->path != ''){
-                                    $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-                                    $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();  
-                                
-                               }
-                                echo CJSON::encode(array('status'=>'200'));
-                                $this->redirect(array('admin','id'=>$model->id));
-                                Yii::app()->end();
-
-                                }else{
-
-                                    echo CJSON::encode(array('status'=>'404'));
-                                    Yii::app()->end();
-                                }
-
-                   
-             }
-                    if(!isset($_POST['ajax']))
-                    $this->render('create',array('model'=>$model));
-    }
+                    
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -121,42 +133,38 @@ class DirectedThesisController extends Controller
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
-            if($model->path != ''){
-               
-                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-                $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName(); 
-                
-                if($model->save()){
+            if (!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]')))
+                {
+                     $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
+                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/';
+                  
+                    if(!is_dir($urlFile))          
+                        mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/', 0777, true);
 
-                               echo CJSON::encode(array('status'=>'200'));
-                               $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();
+                        $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+                        $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                                   
+                }
+                else 
+                {
+                    $model->path = "";
+                }   
 
-                            }else{
-
-                                echo CJSON::encode(array('status'=>'404'));
-                                Yii::app()->end();
-
-                                }
-            }else{
-
-                  //$model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
-                if($model->save()){
-                               echo CJSON::encode(array('status'=>'200'));
-                               $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();
-
-                            }else{
-
-                                echo CJSON::encode(array('status'=>'404'));
-                                Yii::app()->end();
-                                }
-           }
-              
+                    if($model->save())
+                    {                  
+                        echo CJSON::encode(array('status'=>'200'));
+                        $this->redirect(array('admin','id'=>$model->id));
+                        Yii::app()->end();
+                    }                   
+                    else 
+                    {
+                        echo CJSON::encode(array('status'=>'404'));
+                        Yii::app()->end();
+                    }
+                        
         }
-
+            
         if(!isset($_POST['ajax']))
-        $this->render('update',array('model'=>$model));
+            $this->render('update',array('model'=>$model));
     }
     /**
      * Deletes a particular model.
@@ -167,7 +175,11 @@ class DirectedThesisController extends Controller
     public function actionDelete($id)
     {   
         
-        $this->loadModel($id)->delete();
+        $model= DirectedThesis::model()->findByPk($id);
+        unlink(YiiBase::getPathOfAlias("webroot").$model->path);
+        $model->delete();
+
+        //$this->loadModel($id)->delete();
         
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if(!isset($_GET['ajax']))
