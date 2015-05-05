@@ -2,8 +2,8 @@ function send()
 {
 
     var fd = new FormData();
-    var data=$("#directed-thesis-form").serialize();
-    fd.append("DirectedThesis[path]",$('#path')[0].files[0]);
+    var data=$("#books-chapters-form").serialize();
+    fd.append("DirectedThesis[url_doc]",$('#url_doc')[0].files[0]);
 
     $.ajax({
         url: 'create',
@@ -16,7 +16,7 @@ function send()
         {            
             if(data.status=="200"){                         
                     alert("Registro realizado con éxito");
-                    $("#directed-thesis-form")[0].reset();                
+                    $("#books-chapters-form")[0].reset();                
             }
             /*else
             {

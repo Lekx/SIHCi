@@ -18,7 +18,11 @@ $this->menu=array(
 						
  <h1>Cap&iacutetulos de libros</h1> 
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php 
+		
+	$modelAuthor = BooksChaptersAuthors::model()->findAllByAttributes(array('id_books_chapters'=>$model->id));	
+		
+	$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'id',
@@ -36,7 +40,7 @@ $this->menu=array(
 		'discipline',
 		'subdiscipline',
 		//'creation_date',
-		'url_doc',
+		//'url_doc',
 		 array(
 			'label'=>'Archivo',
 			'type'=>'raw',
@@ -45,25 +49,25 @@ $this->menu=array(
 		array(
 			'label'=>'Nombre(s)',
 			'name'=>'names',
-			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->names,
+			'value'=>$modelAuthor->names,
 			),
 		array(
 			'label'=>'Apellido Paterno',
 			'name'=>'last_names1',
-			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->last_name1,
+			'value'=>$modelAuthor->last_name1,
 			),
 		array(
 			'label'=>'Apellido Materno',
 			'name'=>'last_names2',
-			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->last_name2,
+			'value'=>$modelAuthor->last_name2,
 			),
 		array(
 			'label'=>'Posición',
 			'name'=>'positions',
-			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->position,
+			'value'=>$modelAuthor->position,
 			),
 	
 		
 	),
 
-)); ?>
+));  ?>

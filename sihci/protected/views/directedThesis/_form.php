@@ -13,7 +13,9 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
+	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
     
     
@@ -387,41 +389,10 @@
 		                                                            'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),array('prompt'=>'Subdiscipliba'));?>
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
-	<div class="row buttons">
-	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('directedThesis/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="success")
-		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#directed-thesis-form")[0].reset();
-   				                     window.location.href ="'.Yii::app()->createUrl('directedThesis/admin').'";		                         
-
-		                         }		                         
-		                         else
-		                         {
-			                     	alert("Complete los campos con *");   
-			                     }       
-		                  	}',                    
-		                    
-                        )); 
-        ?>
-        <?php  if($model->isNewRecord) 
-			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-		?>
-       	<?php echo CHtml::link('Cancelar', array('/directedThesis/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
-
-		<div class="200">
-		
-		</div>
-		
-		<div class="404">
-		</div>
-		
+	<div class="row buttons">		
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('onClick'=>'send()')); ?>
+		<?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';?>
+       	<?php echo CHtml::link('Cancelar', array('/DirectedThesis/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

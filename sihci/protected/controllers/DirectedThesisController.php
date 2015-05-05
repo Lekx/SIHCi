@@ -82,23 +82,23 @@ class DirectedThesisController extends Controller
                              
                             if($model->save()){
                                 if($model->path != ''){
-                                    $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
-                                    $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();  
+                                    $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+                                    $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();  
                                 
                                }
-                                echo CJSON::encode(array('status'=>'success'));
+                                echo CJSON::encode(array('status'=>'200'));
+                                $this->redirect(array('admin','id'=>$model->id));
                                 Yii::app()->end();
 
                                 }else{
-                                    $error = CActiveForm::validate($model);
-                                    if($error!='[]')
-                                         echo $error;
-                                        Yii::app()->end();
+
+                                    echo CJSON::encode(array('status'=>'404'));
+                                    Yii::app()->end();
                                 }
 
                    
              }
-
+                    if(!isset($_POST['ajax']))
                     $this->render('create',array('model'=>$model));
     }
     /**
@@ -122,40 +122,41 @@ class DirectedThesisController extends Controller
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
             if($model->path != ''){
-                
-                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName());
-               $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName(); 
+               
+                $model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+                $model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName(); 
                 
                 if($model->save()){
-                                echo CJSON::encode(array('status'=>'success'));
-                                Yii::app()->end();
+
+                               echo CJSON::encode(array('status'=>'200'));
+                               $this->redirect(array('admin','id'=>$model->id));
+                               Yii::app()->end();
 
                             }else{
-                                $error = CActiveForm::validate($model);
-                                if($error!='[]')
-                                    echo $error;
-                                    Yii::app()->end();
+
+                                echo CJSON::encode(array('status'=>'404'));
+                                Yii::app()->end();
+
                                 }
             }else{
 
                   //$model->path = 'sihci/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio'.'.'.$model->path->getExtensionName();
                 if($model->save()){
-                                echo CJSON::encode(array('status'=>'success'));
-                                Yii::app()->end();
+                               echo CJSON::encode(array('status'=>'200'));
+                               $this->redirect(array('admin','id'=>$model->id));
+                               Yii::app()->end();
 
                             }else{
-                                $error = CActiveForm::validate($model);
-                                if($error!='[]')
-                                    echo $error;
-                                    Yii::app()->end();
+
+                                echo CJSON::encode(array('status'=>'404'));
+                                Yii::app()->end();
                                 }
            }
               
         }
 
-        $this->render('update',array(
-            'model'=>$model,
-        ));
+        if(!isset($_POST['ajax']))
+        $this->render('update',array('model'=>$model));
     }
     /**
      * Deletes a particular model.
@@ -164,9 +165,10 @@ class DirectedThesisController extends Controller
      */
     //TE03-Eliminar datos
     public function actionDelete($id)
-    {
+    {   
+        
         $this->loadModel($id)->delete();
-
+        
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if(!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
