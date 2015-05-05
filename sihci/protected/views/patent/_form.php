@@ -23,18 +23,15 @@
 
 	
 	<div class="row">
-		<?php
-			$this->widget('ext.CountrySelectorWidget', 
-				array(
-				    'value' => $model->country,
-				    'name' => Chtml::activeName($model, 'country'),
-				    'id' => Chtml::activeId($model, 'country'),
-				    'useCountryCode' => false,
-				    'defaultValue' => 'Mexico',
-				    'firstEmpty' => false,
-			    )
-			);
-		?>
+		<?php $this->widget('ext.CountrySelectorWidget', 
+			array(
+				'value' => $model->country,
+				'name' => Chtml::activeName($model, 'country'),
+				'id' => Chtml::activeId($model, 'country'),
+				'useCountryCode' => false,
+				'firstEmpty' => true,
+				'firstText' => 'País',
+		)); ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 

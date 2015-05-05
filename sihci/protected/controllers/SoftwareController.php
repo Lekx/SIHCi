@@ -135,7 +135,7 @@ class SoftwareController extends Controller
 				
 				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
-	           		 $model->path = CUploadedFile::getInstanceByName('Software[path]');
+	           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
 				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
 		          
 		            if(!is_dir($urlFile))          
@@ -165,7 +165,7 @@ class SoftwareController extends Controller
 		}
 			
 		if(!isset($_POST['ajax']))
-			$this->render('create',array('model'=>$model));
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**
@@ -177,10 +177,10 @@ class SoftwareController extends Controller
 	//SO03-Desactivar-registro
 	public function actionDelete($id)
 	{
-		$model=new Software;
+		$model= Software::model()->findByPk($id);
 
-        unlink($model->path);
-		$this->loadModel($id)->delete();       
+		unlink(YiiBase::getPathOfAlias("webroot").$model->path);
+		$model->delete();       
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

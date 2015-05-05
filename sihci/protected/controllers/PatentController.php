@@ -78,13 +78,11 @@ class PatentController extends Controller
 		    if($model->save())
      		{
 
-     			echo CJSON::encode(array('status'=>'200'));
-
      			$section = "Propiedad Intelectual"; 
      			$action = "Creación";
 				$details = "Subsección Patentes";
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-     			echo CJSON::encode(array('status'=>'success'));
+     			echo CJSON::encode(array('status'=>'200'));
 
      			Yii::app()->end();
      		}	
@@ -124,7 +122,7 @@ class PatentController extends Controller
      			$action = "Modificación";
 				$details = "Subsección Patentes. Registro Número: ".$model->id;
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-     			echo CJSON::encode(array('status'=>'success'));
+     			echo CJSON::encode(array('status'=>'200'));
      			Yii::app()->end();
      		}	
      		else 
