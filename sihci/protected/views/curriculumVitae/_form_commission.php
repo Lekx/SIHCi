@@ -59,7 +59,7 @@
              		'success'=>'function(data) 
              		 {
                                       
-                         if(data.status=="success")
+                         if(data.status=="200")
                          {
 		                     alert("Registro realizado con éxito");
 		                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/commission').'";
