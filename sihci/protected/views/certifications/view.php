@@ -8,11 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	//array('label'=>'Listar Certificaciones', 'url'=>array('index')),
-	array('label'=>'Crear', 'url'=>array('create')),
-	array('label'=>'Actualizar', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar ', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Seguro que quieres borrar este elemento?')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 

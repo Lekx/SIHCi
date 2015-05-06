@@ -230,6 +230,11 @@ class BooksChaptersController extends Controller
 	public function actionDelete($id)
 	{
 		BooksChaptersAuthors::model()->deleteAll("id_books_chapters =".$id );
+		$model= BooksChapters::model()->findByPk($id);
+		if($model->url_doc != null){
+		unlink(YiiBase::getPathOfAlias("webroot").$model->url_doc);
+		$model->delete();
+		}else
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -299,14 +304,4 @@ class BooksChaptersController extends Controller
 			Yii::app()->end();
 		}
 	}
-
-	 public function getAuthors(){
-
-	        $this->getAuthors=$this->connection->createCommand()
-
-	                ->select("*")->from('books_chapters_authors')->queryAll('id_books_chapters'.$id);
-
-	        return $this->getAuthors;
-
-	    }
 }
