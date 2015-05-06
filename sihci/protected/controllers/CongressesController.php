@@ -33,11 +33,11 @@ class CongressesController extends Controller
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','admin','delete'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -80,7 +80,10 @@ class CongressesController extends Controller
 				}
 			
 			if($model->save()){
-				
+				$section = "Participación en Congresos"; 
+     			$action = "Creación";
+				$details = ":";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      			$this->render(array('admin','id'=>$model->id));	
@@ -121,6 +124,10 @@ class CongressesController extends Controller
 					$model->type = 'Internacional';
 				}	
 			if($model->save()){
+				$section = "Participación en Congresos"; 
+     			$action = "Modificación";
+				$details = "Registro Número: ".$model->id;
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
 			}else 
@@ -146,7 +153,12 @@ class CongressesController extends Controller
 	/*<!--PC03-Eliminar datos  Participacion en congresos-->*/
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Participación en Congresos";   
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->work_title.". Congreso: ".$model->congress;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
