@@ -41,7 +41,12 @@ $this->menu=array(
 		'transfer_mechanism',
 		'hr_formation',
 		'economic_support',
-		'path',
-		'creation_date',
+		array(
+			'label'=>'Archivo',
+			'type'=>'raw',
+			'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->path),array("target"=>"_blank")),
+		),
+		/*'creation_date',
+		'path',*/
 	),
 )); ?>

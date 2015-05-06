@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Books Chapters'=>array('index'),
-	$model->id,
+	$model->id, 
 );
 
 $this->menu=array(
@@ -18,7 +18,11 @@ $this->menu=array(
 						
  <h1>Cap&iacutetulos de libros</h1> 
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php 
+		
+	$modelAuthor = BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id));	
+		
+	$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'id',
@@ -36,33 +40,34 @@ $this->menu=array(
 		'discipline',
 		'subdiscipline',
 		//'creation_date',
-		array(
+		//'url_doc',
+		 array(
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo', Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro', array("target"=>"_blank")),
+			'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->url_doc), array("target"=>"_blank")),
 			),	
 		array(
 			'label'=>'Nombre(s)',
 			'name'=>'names',
-			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->names,
+			'value'=>$modelAuthor->names,
 			),
 		array(
 			'label'=>'Apellido Paterno',
 			'name'=>'last_names1',
-			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->last_name1,
+			'value'=>$modelAuthor->last_name1,
 			),
 		array(
 			'label'=>'Apellido Materno',
 			'name'=>'last_names2',
-			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->last_name2,
+			'value'=>$modelAuthor->last_name2,
 			),
 		array(
 			'label'=>'Posición',
 			'name'=>'positions',
-			'value'=>BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id))->position,
+			'value'=>$modelAuthor->position,
 			),
 	
-		//'url_doc',
+		
 	),
 
-)); ?>
+));  ?>

@@ -132,18 +132,17 @@
 		                                      
 		                         if(data.status=="200")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/jobs').'";
+				                       $(".successdiv").show();
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("Debe registrar sus datos");   
+			                     	$(".errordiv").show(); 
 			                     }       
 		                  	}',                    
 		                    
                       ), array('class'=>'savebutton'));  
         ?>
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Limpiar">
+		<input class="cleanbutton" type="button" value="Borrar">
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 

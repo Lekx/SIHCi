@@ -87,10 +87,8 @@ class CopyrightsController extends Controller
      		}	
      		else 
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+     			echo CJSON::encode(array('status'=>'404'));
+                Yii::app()->end();
      		}
 
      		//Yii::app()->end();
@@ -128,10 +126,8 @@ class CopyrightsController extends Controller
      		}	
      		else 
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+     			echo CJSON::encode(array('status'=>'404'));
+                Yii::app()->end();
      		}
 		}
 

@@ -2,7 +2,6 @@
   	class AccountController extends Controller{
 
 
-	public $layout='//layouts/system';
 	private $currentemail ='';
 	private $currentpassword ='';
 	
@@ -32,7 +31,7 @@
 	}
 
 	public function actionInfoAccount(){
-		
+			$this->layout = 'system';
 			$details = Users::model()->findByPk(Yii::app()->user->id);
 			$this->render('infoAccount',array(
 			'details'=>$details,
@@ -63,7 +62,7 @@
 	}
 
 	public function actionUpdateEmail(){
-		
+		$this->layout = 'system';
 		$details = Users::model()->findByPk(Yii::app()->user->id);
 		$this->currentemail = $details->email; 
 		if(isset($_POST['Users']))
@@ -81,7 +80,8 @@
 	}
 
 	public function actionUpdatePassword(){
-		
+
+		$this->layout = 'system';
 		$details = Users::model()->findByPk(Yii::app()->user->id);
 		$this->currentpassword = $details->password;
 		if(isset($_POST['Users']))

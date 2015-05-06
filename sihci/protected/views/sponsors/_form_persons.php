@@ -45,10 +45,9 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'marital_status'); ?>
-		<?php echo $form->dropDownList($model,'marital_status',array(''=>'','soltero'=>'Soltero','viudo'=>'Viudo', 'casado'=>'Casado',
+		<?php echo $form->dropDownList($model,'marital_status',array('soltero'=>'Soltero','viudo'=>'Viudo', 'casado'=>'Casado',
 			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Estado Civil','prompt'=>'Estado Civil','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'marital_status'); ?>
 	</div>
@@ -83,23 +82,19 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		<?php echo $form->error($model,'is_national'); ?>
 	</div>
 
-	<p>Pais</p>
-         <?php
-         $this->widget(
-             'yiiwheels.widgets.formhelpers.WhCountries',
-             array(
-                 'name' => 'Persons[country]',
-                 'id' => 'Persons_country',
-              
-                 'useHelperSelectBox' => true,
-                 'pluginOptions' => array(
-                     'country' => '',
-                     'language' => 'es_ES',
-                     'flags' => true
-                 )
-             )
-         );
-         ?>
+
+       <?php $this->widget('ext.CountrySelectorWidget', array(
+
+		'value' => $model->country,
+		'name' => Chtml::activeName($model, 'country'),
+		'id' => Chtml::activeId($model, 'country'),
+		'useCountryCode' => false,
+		'defaultValue' => 'Mexico',
+		'firstEmpty' => true,
+		'firstText' => 'Pais',
+
+		)); ?>
+
   
 	
 
@@ -115,20 +110,16 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-		
-		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Pasaporte")); ?>
-		<?php echo $form->error($model,'curp_passport'); ?>
-	</div>
-
-	<div class="row">
 
 		<?php echo $form->textField($model,'person_rfc',array('size'=>13,'maxlength'=>13, 'placeholder'=>"RFC")); ?>
 		<?php echo $form->error($model,'person_rfc'); ?>
 	</div>
 
 	<div class="row buttons">
-		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
+
+		<input type="submit"  class="savebutton" onclick="validationFrom()" value="Guardar">
+		<input class="cleanbutton" type="button" value="Borrar">
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 	<script>
 		function cleanUp(){

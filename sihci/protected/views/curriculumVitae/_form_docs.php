@@ -29,36 +29,33 @@
 	
 	<?php echo $form->error($model,'doc_id'); ?>
 	<div class="row">
-	Acta de Nacimiento
+	<h5>Acta de Nacimiento</h5>
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta'));?>
 		
 	</div>
 	
 	<div class="row">
-	CURP
+		<h5>CURP</h5>
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'CURP'));?>
 		
 	</div>
 
 	<div class="row">
-	IFE
+		<h5>IFE</h5>
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'IFE'));?>
 
 	</div>
 
 	<div class="row">
-	Pasaporte
+		<h5>Pasaporte</h5>
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte'));?>
 	
 	</div>
 
 <hr>
 
-	
-
-
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?'));?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 

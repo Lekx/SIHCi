@@ -21,8 +21,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'participation_type'); ?>
+	<div class="row">		
 			<?php echo $form->dropDownList($model,'participation_type',
 				array(
 						'Autor'=>'Autor',
@@ -34,14 +33,12 @@
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
+	<div class="row">		
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'application_date'); ?>
 		<?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'model' => $model,
@@ -60,25 +57,21 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'step_number'); ?>
 		<?php echo $form->textField($model,'step_number',array('placeholder'=>'Número de tramite')); ?>
 		<?php echo $form->error($model,'step_number'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'resume'); ?>
-		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'beneficiary'); ?>
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>70,'placeholder'=>'Beneficiario')); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'entity'); ?>
 		<?php echo $form->dropDownList($model,'entity',
 				array(
 						'Pública'=>'Pública',
@@ -92,8 +85,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'impact_value'); ?>
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'placeholder'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 

@@ -19,4 +19,4 @@ $this->menu=array(
 
 <h1>Modificar:  <?php echo $model->chapter_title; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model,'modelAuthors'=>$modelAuthors)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'modelAuthor'=>$modelAuthor, 'modelAuthors'=>$modelAuthors)); ?>
