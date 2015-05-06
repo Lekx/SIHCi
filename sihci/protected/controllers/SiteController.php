@@ -94,10 +94,6 @@ class SiteController extends Controller {
 			$not_active = Users::model()->findByAttributes(array("status" => "inactivo", "email" => $model->username));
 
 			if ($model->validate() && $model->login() && $is_active != null) {
-				$section = "Login";
-				$details = "Subsección Dirección Actual";
-				$action = "Inició Sesión";
-				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				echo "200";
 			} else if ($not_active != null) {
 				echo "302";
