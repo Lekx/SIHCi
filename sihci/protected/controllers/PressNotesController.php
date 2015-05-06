@@ -73,6 +73,9 @@ class PressNotesController extends Controller
 			  
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
 	     	
+	     	if($model->date == null)
+    			$model->date ='00/00/0000';		
+	     	
 	     	if($model->save())
 			{
 				$section = "Difusión de Prensa"; 
@@ -108,6 +111,9 @@ class PressNotesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
+		if($model->date == "30/11/-0001" || $model->date == "00/00/0000"){
+			$model->date = "";
+		}	
 		if(isset($_POST['PressNotes']))
 		{
 			$model->attributes=$_POST['PressNotes'];
