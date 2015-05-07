@@ -107,6 +107,11 @@ class AdminSystemLogController extends Controller
 		$this->redirect('admin');
 	}
 
+	public function actionPdf()
+ 	{
+ 		$this->render('pdf');
+ 	}
+
 	/**
 	 * Manages all models.
 	 */

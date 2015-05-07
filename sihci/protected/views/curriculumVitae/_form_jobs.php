@@ -130,7 +130,7 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
 				                       $(".successdiv").show();
 		                         }		                         

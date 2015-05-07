@@ -106,12 +106,10 @@ class CurriculumVitaeController extends Controller
 					
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				
-					echo CJSON::encode(array('status'=>'success'));
+					echo CJSON::encode(array('status'=>'200'));
 	     			Yii::app()->end();
 	     		}else {
-	     			 $error = CActiveForm::validate($model);
-	                 if($error!='[]')
-	                    echo $error;
+	     			echo CJSON::encode(array('status'=>'404'));
 	                 Yii::app()->end();
 	     		}
 				
@@ -336,14 +334,12 @@ class CurriculumVitaeController extends Controller
 					$action = "Modificación";
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
-     			echo CJSON::encode(array('status'=>'success'));
+     			echo CJSON::encode(array('status'=>'200'));
      			Yii::app()->end();
      		}	
      		else 
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
+     			echo CJSON::encode(array('status'=>'404'));
                  Yii::app()->end();
      		}
 		}
@@ -378,14 +374,12 @@ class CurriculumVitaeController extends Controller
 			if ($model->save()) {
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
-				echo CJSON::encode(array('status'=>'success'));
+				echo CJSON::encode(array('status'=>'200'));
      			Yii::app()->end();
      		}	
      		else 
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
+     			echo CJSON::encode(array('status'=>'404'));
                  Yii::app()->end();
      		}
 
@@ -424,12 +418,10 @@ class CurriculumVitaeController extends Controller
 					$research->save();
 				}
 
-				echo CJSON::encode(array('status'=>'success'));
+				echo CJSON::encode(array('status'=>'200'));
 		    	Yii::app()->end();
 			}else{
-				$error = CActiveForm::validate($model);
-                if($error!='[]')
-                   echo $error;
+				echo CJSON::encode(array('status'=>'404'));
                 Yii::app()->end();
 			}
 
