@@ -91,7 +91,7 @@ class SoftwareController extends Controller
 					if($model->save())
 					{	   			   
 					    echo CJSON::encode(array('status'=>'200'));
-					   	$this->redirect(array('admin','id'=>$model->id));
+					   	//$this->redirect(array('admin','id'=>$model->id));
 				    	Yii::app()->end();
 				    }			    	
 				    else 
@@ -122,12 +122,12 @@ class SoftwareController extends Controller
 		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
 		$end_date = Software::model()->findByAttributes(array('end_date'=>$model->end_date));
 		$oldPath = $model->path;
+
 		$model->id_curriculum = $id_curriculum->id; 
 				
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
-		print_r($oldPath);
-
+		
 		if($model->end_date == "30/11/-0001" || $model->end_date == "00/00/0000"){
 			$model->end_date = "";
 		}	
@@ -140,26 +140,31 @@ class SoftwareController extends Controller
 			if($model->end_date == null)
     			$model->end_date ='00/00/0000';		
 
+							
 				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
-				{
-	           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
-				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
-		          
-		            if(!is_dir($urlFile))          
-		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+				{			
+					if(!empty($oldPath))
+						unlink(YiiBase::getPathOfAlias("webroot").$oldPath);
+					
+		           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
+					   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+			          
+			            if(!is_dir($urlFile))          
+			              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
 
-					    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+						    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+
 			    }
-				else 
-				{
-					$model->path = $oldPath;
+				else if(empty(CUploadedFile::getInstanceByName('Software[path]'))) {
+					echo "que hay loco".$oldPath;
+					echo ($model->path);
 				}	
 
 						if($model->save())
 						{	   			   
 						    echo CJSON::encode(array('status'=>'200'));
-						   	$this->redirect(array('admin','id'=>$model->id));
+						   	//$this->redirect(array('admin','id'=>$model->id));
 					    	Yii::app()->end();
 					    }			    	
 					    else 
@@ -193,9 +198,6 @@ class SoftwareController extends Controller
 		else 
  			$this->loadModel($id)->delete();
 		
-
-
-
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

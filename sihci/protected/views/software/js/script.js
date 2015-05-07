@@ -56,7 +56,7 @@ function upDate()
             } */   
 
         },
-     /*   error: function () {
+       /*error: function () {
             alert("Ha ocurrido un error al guardar sus datos en el servidor. Por favor vuelva intente en unos minitus asegurese que este conectado a internet");   
         }*/
     });
