@@ -136,6 +136,8 @@ class DirectedThesisController extends Controller
             if (!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]')))
                 {
                     echo $model->path."Entre al if ";
+                    if(!empty($actual_path))
+                    unlink(YiiBase::getPathOfAlias("webroot").$actual_path);
                     $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/';
                   
@@ -155,14 +157,14 @@ class DirectedThesisController extends Controller
                     if($model->save())
                     {   
                                      
-                        //echo CJSON::encode(array('status'=>'200'));
-                        //$this->redirect(array('admin','id'=>$model->id));
-                        //Yii::app()->end();
+                        echo CJSON::encode(array('status'=>'200'));
+                        $this->redirect(array('admin','id'=>$model->id));
+                        Yii::app()->end();
                     }                   
                     else 
                     {
-                        //echo CJSON::encode(array('status'=>'404'));
-                        //Yii::app()->end();
+                        echo CJSON::encode(array('status'=>'404'));
+                        Yii::app()->end();
                     }                
         }
             

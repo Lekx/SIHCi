@@ -13,15 +13,11 @@ $this->menu=array(
 );
 ?>
 						
- <h1>Cap&iacutetulos de libros</h1> 
-	
-<?php 	
-		
-	$modelAuthor = BooksChaptersAuthors::model()->findAllByAttributes(array('id_books_chapters'=>$model->id));
-
-	foreach ($modelAuthor as $key => $value) {
-
-	$this->widget('zii.widgets.CDetailView', array(
+ <h1>Capítulos de libros</h1> 
+<?php $modelAuthor = BooksChaptersAuthors::model()->findAllByAttributes(array('id_books_chapters'=>$model->id));
+	foreach ($modelAuthor as $key => $value){  ?>	
+<?php 
+	 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'id',
@@ -44,28 +40,28 @@ $this->menu=array(
 			'label'=>'Archivo',
 			'type'=>'raw',
 			'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->url_doc), array("target"=>"_blank")),
-			),	
+			),
 		array(
 			'label'=>'Nombre(s)',
-			'name'=>'names[]',
+			'name'=>'names',
 			'value'=>$value->names,
 			),
 		array(
 			'label'=>'Apellido Paterno',
-			'name'=>'last_names1[]',
+			'name'=>'last_names1',
 			'value'=>$value->last_name1,
 			),
 		array(
 			'label'=>'Apellido Materno',
-			'name'=>'last_names2[]',
+			'name'=>'last_names2',
 			'value'=>$value->last_name2,
 			),
 		array(
 			'label'=>'Posición',
-			'name'=>'positions[]',
+			'name'=>'positions',
 			'value'=>$value->position,
-			),
-	
+			),  
 	),
 
-));  }?>
+));  ?>
+<?php }?>
