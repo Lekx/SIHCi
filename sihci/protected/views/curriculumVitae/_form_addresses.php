@@ -3,16 +3,7 @@
 /* @var $model Addresses */
 /* @var $form CActiveForm */
 ?>
-<script >
-	  function cleanUp(){
-            var text;
-            var result = confirm("¿Está usted seguro de limpiar estos datos?");
-            if (result==true) {
-                $('[id^=Addresses_]').val('');
-            }
-            document.getElementById("demo").innerHTML = text;
-        }
-</script>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -92,23 +83,24 @@
 				array(
 					'dataType'=>'json',
              		'type'=>'post',
+             		'class'=>'savebutton',
              		'success'=>'function(data) 
              		 {
                                       
-                         if(data.status=="success")
+                         if(data.status=="200")
                          {
-		                     alert("Registro realizado con éxito");
-		                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/addresses').'";
+		                     $(".successdiv").show();
+		                    
                          }		                         
                          else
                          {
-	                     	alert("favor de completar campos en rojo");   
+	                     	  $(".errordiv").show(); 
 	                     }       
                   	}',                    
                 ), array('class'=>'savebutton'));  
 		?>
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 		</div>
 
 <?php $this->endWidget(); ?>

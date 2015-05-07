@@ -3,6 +3,7 @@ $(document).ready(function() {
     $('.errordiv').hide();
     $('.cleandiv').hide();
     $('.successdiv').hide();
+
     $('#Persons_curp_passport').tooltipster({ // <-  USE THE PROPER SELECTOR FOR YOUR INPUTs // default is 'hover' which is no good here
         onlyOne: false, // allow multiple tips to be open at a time
         position: 'right' // display the tips to the right of the element
@@ -32,8 +33,9 @@ $(document).ready(function() {
     $('.cleanbutton').click(function() {
         $('.cleandiv').show();
     });
-    $('.savebutton').click(function() {
+
+ /*   $('.savebutton').click(function() {
         $('.successdiv').show();
-    });
+    }); */
 
 });

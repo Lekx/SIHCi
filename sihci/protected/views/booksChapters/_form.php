@@ -16,10 +16,8 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-	<p class="note">Los campos con <span class="required">*</span> son necesarios.</p>
 	<?php echo $form->errorSummary($model); ?>
 
-	
 	<div class="row">
 		<?php echo $form->labelEx($model,'chapter_title'); ?>
 		<?php echo $form->textField($model,'chapter_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Capítulo de libro')); ?>
@@ -391,8 +389,8 @@
 		  	<div class="row">
 		  
 		  <?php 
-		  echo "<input type='hidden' value='".$value->id."' name='idsBooksChapters[]'>";
-		  echo $form->labelEx($value,'names'); ?>
+		  		echo "<input type='hidden' value='".$value->id."' name='idsBooksChapters[]'>";
+		  		echo $form->labelEx($value,'names'); ?>
 		  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)')); ?>
 		  <?php echo $form->error($value,'names');?>
 		  <?php echo $form->labelEx($value,'last_name1'); ?>
@@ -410,11 +408,12 @@
 			
 	</div>
 
-		<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-		<input type="reset" onclick='alert("Esta usted seguro de limpiar estos datos")' value="Borrar">
-		  <?php  echo CHtml::link('Cancelar',array('booksChapters/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?'))?>
-		
+	<div class="row buttons">	
+
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('onClick'=>'send()')); ?>
+		<?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';?>
+       	<?php echo CHtml::link('Cancelar', array('/booksChapters/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	
 	</div>
 
 <?php $this->endWidget(); ?>

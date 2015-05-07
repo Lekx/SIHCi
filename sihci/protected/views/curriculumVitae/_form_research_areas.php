@@ -21,6 +21,10 @@
         .research{
             display: none;
         }
+        .row
+        {
+        	margin-left: 0px !important; 
+        }
     </style>
 	
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
@@ -37,12 +41,12 @@
 	
 
 	<?php echo $form->errorSummary($model); ?>
-<input id="showFormResearch" type="button"  value="Agregar Línea de Investigación">
-<input id="hideFormResearch" class="research" type="button"  value="Cancelar">
+<input id="showFormResearch" type="button"  value="Agregar Línea de Investigación" class="addSomething">
+<input id="hideFormResearch" type="button"  value="Cancelar" class="cancelSomething">
 
 <div class="research">
 	<div class='row'>
-		Nombre de Investigación
+		<h5>Nombre de Investigación</h5>
 		<input id="research" type="text" name="nameResearch" title="Nombre de Investigación" placeholder="Nombre de Investigación">
 		<div id="errorResearch" class="errors"> No debe estar vacío</div><br>
 		 <?php echo CHtml::ajaxButton ('Crear Línea de Investigación',CController::createUrl('curriculumVitae/researchAreas'), 
@@ -52,7 +56,7 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
 				                     alert("Linea de investigación se ha creado con éxito");
 				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
@@ -64,21 +68,21 @@
 			                     }       
 		                  	}',                    
 		                    
-                        ), array('id'=>'btnCreateResearch')); 
+                        ), array('id'=>'btnCreateResearch','class'=>'addSomething')); 
         ?>
 	</div>
 </div><!-- form -->
-<br>
-<br>
+
 	<?php 
 	$countDocs = 1;
 	foreach ($getResearch as $key => $value) {
 		echo "<hr>";
 		echo "<div class='row'>";
-		echo "Linea de Investigacion ".$countDocs." ";
+		echo "<h5>Linea de Investigacion".$countDocs.":</h5>";
 		echo $form->textField($model,'name',array('title'=>'Nombre de Investigación','name'=>'getResearch[]','value'=>$getResearch[$key]->name,'size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); 
 		echo $form->error($model,'name'); 
-		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteResearch', 'id'=>$getResearch[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
+		echo "<br>";
+		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteResearch', 'id'=>$getResearch[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		echo "</div>";
 		echo "<hr>";
 		
@@ -94,14 +98,13 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
+				                     	$(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("No existe ninguna linea de investigación");   
+			                     	$(".errordiv").show();    
 			                     }       
 		                  	}',                    
 		                    

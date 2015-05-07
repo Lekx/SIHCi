@@ -160,11 +160,11 @@
 
 	<div class="row">
 		
-		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		  
 		<?php echo $form->error($model,'photo_url'); ?>
 		<?php 
-		$urlPhoto = Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
-		echo "<a href='".$urlPhoto."' target='_blank'><img src='".$urlPhoto."' alt='No ha seleccionado foto de Perfíl' width='100' height='100'></a>";
+	
 
 		?>
 	</div>
@@ -186,21 +186,21 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/personalData').'";
+				                     $(".successdiv").show();
+				               
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("Debe registrar sus datos");   
+			                     	$(".errordiv").show();
 			                     }       
 		                  	}',                    
 		                    
                       ), array('class'=>'savebutton'));  
         ?>
 		<input class="cleanbutton" type="button" value="Borrar">
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 

@@ -8,7 +8,9 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	//array('label'=>'List SystemLog', 'url'=>array('index')),
 	//array('label'=>'Create SystemLog', 'url'=>array('create')),
+	array('label'=>'Exportar Bitácora a PDF', 'url'=>array('pdf')),
 );
+
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();

@@ -97,7 +97,9 @@ cursor: pointer;
     display: block;
     margin-right: auto;	
     margin-bottom: 5px;
-    z-index: 999;
+    z-index: 999
+
+
 
 }
 #logout
@@ -990,11 +992,16 @@ ul.cbp-hsmenu
 	color:#00F6FF !important;
 }
 .menu a:hover{
+
 	padding-left:5px;
 	border-left:2px solid white !important;
 	text-decoration:none !important;
 	color:white !important;
 	
+}
+.menu .up-btn:hover
+{
+	border-left:0px !important;
 }
 .iconscontent 
 {
@@ -1054,6 +1061,10 @@ ul.cbp-hsmenu
 	bottom: -25px;
     z-index: 999;
 }
+.up-btn:hover
+{
+	border-left:2px solid black !important;
+}
 .up-btn i
 {
 	/*padding-top: 12px;*/
@@ -1098,5 +1109,56 @@ ul.cbp-hsmenu
 
 
 }
+
+/* First Log in*/
+
+.selecttype
+{
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+ 	background: rgba(40, 50, 90, .70);
+ 	z-index: 900;
+
+}
+.typecontent
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	width: 800px;
+	height: 525px;
+	font-family: 'Caviar_Dreams';
+	z-index: 999;
+	
+}
+.typeicons h3 , .typeicons h4
+{
+	color: white;
+	text-align: center;
+}
+.typeicons .type1
+{	
+  margin-top: 50px;
+  padding-left: 200px;
+  display: inline-block;
+  text-align: center;
+
+}
+.typeicons .type2
+{
+  margin-top: 50px;
+  display: inline-block;
+  padding-left: 90px;
+  text-align: center;
+}
+
 
 
