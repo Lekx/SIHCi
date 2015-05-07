@@ -91,7 +91,7 @@ class SoftwareController extends Controller
 					if($model->save())
 					{	   			   
 					    echo CJSON::encode(array('status'=>'200'));
-					   	//$this->redirect(array('admin','id'=>$model->id));
+					   	$this->redirect(array('admin','id'=>$model->id));
 				    	Yii::app()->end();
 				    }			    	
 				    else 
@@ -140,9 +140,9 @@ class SoftwareController extends Controller
 			if($model->end_date == null)
     			$model->end_date ='00/00/0000';		
 
-							
 				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
-				{			
+				{
+							
 					if(!empty($oldPath))
 						unlink(YiiBase::getPathOfAlias("webroot").$oldPath);
 					
@@ -154,24 +154,28 @@ class SoftwareController extends Controller
 
 						    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
 						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
-
+							echo ("La Cambie".$model->path);    
 			    }
-				else if(empty(CUploadedFile::getInstanceByName('Software[path]'))) {
-					echo "que hay loco".$oldPath;
-					echo ($model->path);
+				
+				else
+				{				
+									   
+				   $model->path=$oldPath;    			 			   		
+				    
+
 				}	
 
-						if($model->save())
-						{	   			   
-						    echo CJSON::encode(array('status'=>'200'));
-						   	//$this->redirect(array('admin','id'=>$model->id));
-					    	Yii::app()->end();
-					    }			    	
-					    else 
-				    	{
-				    		echo CJSON::encode(array('status'=>'404'));
-			                Yii::app()->end();
-				        }
+					if($model->save())
+					{	   			   
+					    echo CJSON::encode(array('status'=>'200'));
+					   	$this->redirect(array('admin','id'=>$model->id));
+				    	Yii::app()->end();
+				    }			    	
+				    else 
+			    	{
+			    		echo CJSON::encode(array('status'=>'404'));
+		                Yii::app()->end();
+			        }
 					    
 		}
 			
@@ -191,7 +195,7 @@ class SoftwareController extends Controller
 		
 		$model= Software::model()->findByPk($id);
 			
-		if ($model->path != null ){
+		if ($model->path != null ){			
 			 unlink(YiiBase::getPathOfAlias("webroot").$model->path);
 		     $model->delete();
 		}
