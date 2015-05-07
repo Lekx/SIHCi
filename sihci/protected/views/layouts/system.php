@@ -54,11 +54,11 @@
     <?php
 
                 if(Yii::app()->user->type == 'moral')
-                        $infoUser = array("label"=>"Moral","icon"=>"PerfilEmpresa","controller"=>"sponsors/sponsorsInfo");
+                        $infoUser = array("label"=>"Moral","icon"=>"PerfilEmpresa","cuentaicon"=>"CuentaEmpresa","controller"=>"sponsors/sponsorsInfo","MenuEmpresa"=>"Perfil Empresa", "proyectos"=>"Proyectos","Evaluacion"=>"Evaluación");
                 else if(Yii::app()->user->type == 'fisico')
-                         $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","controller"=>"curriculumVitae/personalData");
+                         $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","cuentaicon"=>"Pcuenta","controller"=>"curriculumVitae/personalData","MenuEmpresa"=>"CV-HC","proyectos"=>"Proyectos","Evaluacion"=>"Evaluación CV");
                 else
-                        $infoUser = array("label"=>"Administrador","icon"=>"admin_icon","controller"=>"admin/users");
+                        $infoUser = array("label"=>"Administrador","icon"=>"admin_icon","controller"=>"admin/users","MenuEmpresa"=>"Cuenta");
     ?>
         <div class="main">
             <div class="sysheader">
@@ -66,20 +66,20 @@
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHme.png alt="home">', array('site/index'));?>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/Pcuenta.png alt="home">', array('account/infoAccount'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['cuentaicon'].'.png alt="home">', array('account/infoAccount'));?>
                     <span>Cuenta</span>
                 </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['icon'].'.png alt="home">', array($infoUser['controller']) );?>
-                    <span>CV-HC</span>
+                    <span><?php echo $infoUser['MenuEmpresa']; ?></span>
                 </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('site/index'));?>
-                    <span>Evalucación CV</span>
+                <span><?php echo $infoUser['Evaluacion']; ?></span>
                 </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array('site/index'));?>
-                    <span>Protocolos</span>
+                   <span><?php echo $infoUser['proyectos']; ?></span>
                 </div>
                 <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' >";  ?></div> 
                 <div class="headerconteiner2"></div>

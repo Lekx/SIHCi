@@ -15,40 +15,20 @@
 	'enableAjaxValidation' => true,
 ));?>
 
-	<?php echo $form->errorSummary($model);?>
 <div class="recopy">
 	<div class="row">
+	<hr>
 		<?php
 		
-	echo $form->labelEx($model, 'fullname');
-	echo $form->textField($model, 'fullname', array('name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
+	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
 	echo $form->error($model, 'fullname');
 ?>
+
 
 	</div>
 </div>
 
-
-
-	<div class="row">
-		<?php
-foreach ($fullname as $value) {
-	echo "<input type='hidden' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
-	echo $form->labelEx($model, 'fullname');
-	echo $form->textField($model, 'fullname', array('name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 70));
-	echo $form->error($model, 'fullname');
-	echo CHtml::link('Eliminar',array('Sponsors/deleteContacts','id'=>$value['id']));
-}
-?>
-
-	</div>
-
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');?>
-	</div>
-
-
+<hr>
 	<?php
 
 $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
@@ -56,6 +36,33 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 	'addButtonLabel' => 'Agregar nuevo',
 ));
 ?>
+
+
+
+	<div class="row">
+		<?php
+foreach ($fullname as $value) {
+	echo "<input type='hidden' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
+
+	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 70));
+	echo $form->error($model, 'fullname');
+	echo CHtml::link('Eliminar',array('Sponsors/deleteContacts','id'=>$value['id']));
+	echo '<hr>';
+}
+?>
+
+	</div>
+
+
+
+
+
+<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
+		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+	</div>
+
 
 <?php $this->endWidget();?>
 

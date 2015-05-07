@@ -74,7 +74,7 @@
 					$this->redirect(array('InfoAccount'));
 			}
 		}
-		$this->renderPartial('_updateEmail',array(
+		$this->render('_updateEmail',array(
 			'details'=>$details,
 		));
 	}
@@ -91,10 +91,11 @@
 
 				$details->password=sha1(md5(sha1($_POST['Account']['password2'])));
 				if($details->updateByPk(Yii::app()->user->id,array('password'=>sha1(md5(sha1($_POST['Account']['password2']))))));
-					$this->redirect(array('InfoAccount'));
+						Yii::app()->user->logout();
+						$this->redirect(Yii::app()->homeUrl);
 			}					
 		}
-		$this->renderPartial('_updatePassword',array(
+		$this->render('_updatePassword',array(
 			'details'=>$details,
 		));
 

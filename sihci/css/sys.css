@@ -333,7 +333,7 @@ label {
 {
 	display: inline-block;
 }
-.cvforms input[type="text"], 
+.cvforms input[type="text"], .cvforms input[type="password"], 
 .cvforms select ,.cvforms input[type="file"]
 {
 	height: 25px;

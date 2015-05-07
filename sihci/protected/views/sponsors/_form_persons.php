@@ -76,6 +76,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 
 		<div class="row">
+		Sexo
 		<div class="radio" >
 		<?php $status = array('Hombre' => 'Hombre','Mujer'=>'Mujer'); echo $form-> RadioButtonList($model,'genre' ,$status);  ?>
 		<?php echo $form->error($model,'is_national'); ?>

@@ -1,5 +1,4 @@
 <?php
-$controller = "";
 
 $this->menu = array(
 	array('label' => 'Datos de Cuenta', 'url' => array('account/infoAccount')),
