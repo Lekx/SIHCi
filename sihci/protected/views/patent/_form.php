@@ -23,18 +23,15 @@
 
 	
 	<div class="row">
-		<?php
-			$this->widget('ext.CountrySelectorWidget', 
-				array(
-				    'value' => $model->country,
-				    'name' => Chtml::activeName($model, 'country'),
-				    'id' => Chtml::activeId($model, 'country'),
-				    'useCountryCode' => false,
-				    'defaultValue' => 'Mexico',
-				    'firstEmpty' => false,
-			    )
-			);
-		?>
+		<?php $this->widget('ext.CountrySelectorWidget', 
+			array(
+				'value' => $model->country,
+				'name' => Chtml::activeName($model, 'country'),
+				'id' => Chtml::activeId($model, 'country'),
+				'useCountryCode' => false,
+				'firstEmpty' => true,
+				'firstText' => 'País',
+		)); ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
@@ -95,24 +92,6 @@
 	</div>
 
 	<div class="row">
-        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model' => $model,
-			    'language'=> 'es',
-			    'attribute' => 'presentation_date',
-			    'htmlOptions' => array(
-			    	    'dateFormat'=>'d/m/Y',
-			    		'size' => '10',         
-			   			'readonly'=>true,
-			        	'maxlength' => '10', 
-			        	
-			        	'placeholder'=>"Fecha de presentación",
-			    ),
-			));
-		?>
-		<?php echo $form->error($model,'presentation_date'); ?>
-	</div>
-
-	<div class="row">
 		<?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'model' => $model,
@@ -129,6 +108,24 @@
 			));
 		?>
 		<?php echo $form->error($model,'consession_date'); ?>
+	</div>
+	
+	<div class="row">
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'model' => $model,
+			    'language'=> 'es',
+			    'attribute' => 'presentation_date',
+			    'htmlOptions' => array(
+			    	    'dateFormat'=>'d/m/Y',
+			    		'size' => '10',         
+			   			'readonly'=>true,
+			        	'maxlength' => '10', 
+			        	
+			        	'placeholder'=>"Fecha de presentación",
+			    ),
+			));
+		?>
+		<?php echo $form->error($model,'presentation_date'); ?>
 	</div>
 	
 	<div class="row">
@@ -168,7 +165,7 @@
 	</div>
 	
 	<div class="row buttons">
-		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
 	        				array(
 								'dataType'=>'json',
 	                     		'type'=>'post',
