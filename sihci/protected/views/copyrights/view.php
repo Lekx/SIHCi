@@ -26,8 +26,8 @@ $this->menu=array(
 		'beneficiary',
 		'entity',
 		'impact_value',
-		'creation_date',
-		/*'id',
+		/*'creation_date',
+		'id',
 		'id_curriculum',*/
 	),
 )); ?>

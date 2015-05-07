@@ -76,6 +76,9 @@ class CopyrightsController extends Controller
 			$model->attributes=$_POST['Copyrights'];
 			$model->id_curriculum = $id_curriculum->id;  
 
+			if($model->application_date == null)
+    			$model->application_date ='00/00/0000';	
+
 			if($model->save())
      		{
      			$section = "Propiedad Intelectual"; 
@@ -112,9 +115,17 @@ class CopyrightsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
+		if($model->application_date == "30/11/-0001" || $model->application_date == "00/00/0000"){
+			$model->application_date = "";
+		}	
+
 		if(isset($_POST['Copyrights']))
 		{
 			$model->attributes=$_POST['Copyrights'];
+
+			if($model->application_date == null)
+    			$model->application_date ='00/00/0000';	
+    		
 			if($model->save())
      		{
      			$section = "Propiedad Intelectual"; 

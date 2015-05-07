@@ -16,10 +16,8 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-	<p class="note">Los campos con <span class="required">*</span> son necesarios.</p>
 	<?php echo $form->errorSummary($model); ?>
 
-	
 	<div class="row">
 		<?php echo $form->labelEx($model,'chapter_title'); ?>
 		<?php echo $form->textField($model,'chapter_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Capítulo de libro')); ?>
