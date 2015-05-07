@@ -51,6 +51,15 @@
         </script>
     </head>
     <body>
+    <?php
+
+                if(Yii::app()->user->type == 'moral')
+                        $infoUser = array("label"=>"Moral","icon"=>"PerfilEmpresa","controller"=>"sponsors/sponsorsInfo");
+                else if(Yii::app()->user->type == 'fisico')
+                         $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","controller"=>"curriculumVitae/personalData");
+                else
+                        $infoUser = array("label"=>"Administrador","icon"=>"admin_icon","controller"=>"admin/users");
+    ?>
         <div class="main">
             <div class="sysheader">
                 <div class="headerconteiner1">
@@ -61,7 +70,7 @@
                     <span>Cuenta</span>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCV-HC.png alt="home">', array('curriculumVitae/personalData'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['icon'].'.png alt="home">', array($infoUser['controller']) );?>
                     <span>CV-HC</span>
                 </div>
                 <div class="headerconteinerC">
@@ -75,14 +84,17 @@
                 <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' >";  ?></div> 
                 <div class="headerconteiner2"></div>
                 <div class="headerconteiner3">
-                    <span> Cuenta / Datos de Cuenta</span>
+                    <span> Cuenta / Datos de Cuenta </span>
                 </div>
                 <div class="headerconteiner4">
                     <h4>Ménu </h4>
                 </div>
                 <div class="headerconteiner5">
                     <h4> <?php echo Yii::app()->user->fullname; ?></h4>
-                    <h5><?php echo Yii::app()->user->id_roles; ?> </h5>
+                    <?php 
+                    echo "<h5>".$infoUser['label']."</h5>";
+                    ?>
+
                 </div>
             </div>
             <div class="syscontent">
@@ -129,6 +141,20 @@
                 <div class="maincontainer">
                     <div class="errorh2">
                         <h2>¡Ocurio un Error!</h2>
+                        <hr>
+                        <div class="remainder">
+                            <span>Corrija el error y favor de intentar de nuevo.</span>
+                        </div>
+                        <button class="errorbut"><h3>Volver a intentar</h3></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="abortdiv">
+            <div class="backcontainer">
+                <div class="maincontainer">
+                    <div class="errorh2">
+                        <h2>¿Seguro que quieres cancelar?</h2>
                         <hr>
                         <div class="remainder">
                             <span>Mensaje de lo que sucedió, favor de intentar de nuevo.</span>

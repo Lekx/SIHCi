@@ -138,7 +138,7 @@ class SponsorsController extends Controller {
 			$model->id_user = Yii::app()->user->id;
 
 			if ($model->save()) {
-				$this->redirect(array('view', 'id' => $model->id));
+				//$this->redirect(array('view', 'id' => $model->id));
 			}
 
 		}
@@ -204,7 +204,7 @@ class SponsorsController extends Controller {
 		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 		$model = new SponsorsContacts;
 		$fullname = SponsorsContacts::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
-		// Uncomment the following line if AJAX validation is needed
+			// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 		
 		if (isset($_POST['fullnamesUpdate'])) {
@@ -307,6 +307,10 @@ class SponsorsController extends Controller {
 		$this->render('create_billing', array(
 			'model' => $model, 'modelAddresses' => $modelAddresses, 'sameAd' => $sameAd,
 		));
+	}
+
+	public function actionFillFirst(){
+		$this->render('fillFirst');
 	}
 
 	public function actionCreate_docs() {

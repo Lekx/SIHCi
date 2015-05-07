@@ -15,12 +15,11 @@
 	'enableAjaxValidation' => true,
 ));?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model);?>
 <div class="recopy">
 	<div class="row">
 		<?php
+		
 	echo $form->labelEx($model, 'fullname');
 	echo $form->textField($model, 'fullname', array('name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
 	echo $form->error($model, 'fullname');
@@ -38,7 +37,6 @@ foreach ($fullname as $value) {
 	echo $form->labelEx($model, 'fullname');
 	echo $form->textField($model, 'fullname', array('name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 70));
 	echo $form->error($model, 'fullname');
-	//echo "<input type='button' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
 	echo CHtml::link('Eliminar',array('Sponsors/deleteContacts','id'=>$value['id']));
 }
 ?>

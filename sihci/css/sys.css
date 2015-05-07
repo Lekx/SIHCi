@@ -165,7 +165,7 @@ body
 {
 	font-family: 'Caviar_Dreams';
 	color: white;
-	padding-left: 40%;
+	padding-left: 29%;
 }
 .headerconteiner4 h4 { color :white; font-family: 'Caviar_Dreams'; padding-left: 5%;}
 
@@ -317,6 +317,22 @@ body
 
 /* All Inputs Style */
 
+.radio label:before {
+	border-radius: 8px;
+}
+label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 15px;
+	font-size: 13px;
+	width: 10px;
+}
+.radio input[type="radio"]
+{
+	display: inline-block;
+}
 .cvforms input[type="text"], 
 .cvforms select ,.cvforms input[type="file"]
 {
@@ -344,7 +360,8 @@ body
 }
 .cvforms input[type="file"]::before
 {
-	content: 'Foto';
+	content: 'Selecionar Archivo';
+	font-size: 12px;
 	
 }
 .cvforms input[type="file"]::-webkit-file-upload-button {
@@ -541,13 +558,17 @@ thead th
 {
 	display: none;
 }
+.abortdiv
+{
+	display: none;
+}
 .infoAccount h5
 {
  	color: #00B9C0; 
 }
 .portlet 
 {
-	width: 300px;
+	width: 200px;
 	padding: 0px;
 	display: block;
 	margin-left: auto;
@@ -557,6 +578,7 @@ thead th
 .portlet ul li a
 {
 	font-size: 15px !important;
+	padding-left: 0px !important;
 	padding-bottom: 5px;
 	padding-top: 5px;
 }
@@ -584,6 +606,7 @@ thead th
 	color: white;
 	height: 25px;
 	background-color: #00B9C0;
+	margin-bottom: 10px;
 }
 .cancelSomething 
 {
@@ -596,6 +619,47 @@ thead th
 	margin-bottom: 10px;
 	margin-right: 10px;
 }
+.acountcont
+{
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+.acoutmail
+{
+	margin-bottom: 30px;
+}
+.acountcont a 
+{
+	color: white;
+	margin-top: 25px;
+	background-color: #0A3250;
+	padding: 5px;
 
+}
+.acountcont a:hover
+{
+	color: white;
+	text-decoration: none;
+}
+.acountcont h5 , .acountcont p
+{
+	margin-bottom: 25px;
+}
+.portlet ul 
+{
+	width: 200px;
+}
+.sysmenu ul , .sysmenu ol 
+{
+  padding: 0;
+}
+.fillfirst
+{
+	margin-top: 110px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
 
 

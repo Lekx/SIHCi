@@ -3,11 +3,14 @@ $(document).ready(function() {
         $('.cleandiv').hide();
         $('.successdiv').hide();
         $('.errordiv').hide();
+        $('.abortdiv').hide();
+    
     });
     $('.errorbut').click(function() {
         $('.cleandiv').hide();
         $('.successdiv').hide();
         $('.errordiv').hide();
+        $('.abortdiv').hide();
     });
     $('.cleanbut').click(function() {
         $('.cleandiv').hide();
@@ -22,6 +25,7 @@ $(document).ready(function() {
         $('.savebutton').val('Guardar');
         $('.cleanbutton').val('Borrar');
         $('#cancelar').val('Cancelar');
+        $('[id^= SponsorBilling]').val('');
     
     });
 });

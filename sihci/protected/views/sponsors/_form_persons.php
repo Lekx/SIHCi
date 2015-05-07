@@ -76,10 +76,10 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 
 		<div class="row">
-		<?php $status = array('Hombre' => 'Hombre','Mujer'=>'Mujer'); 
-		    echo $form-> RadioButtonList($model,'genre' ,$status, array ('separador' => '')); 
-		 ?>
+		<div class="radio" >
+		<?php $status = array('Hombre' => 'Hombre','Mujer'=>'Mujer'); echo $form-> RadioButtonList($model,'genre' ,$status);  ?>
 		<?php echo $form->error($model,'is_national'); ?>
+		</div>
 	</div>
 
 
@@ -119,7 +119,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 		<input type="submit"  class="savebutton" onclick="validationFrom()" value="Guardar">
 		<input class="cleanbutton" type="button" value="Borrar">
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 	<script>
 		function cleanUp(){

@@ -115,6 +115,20 @@
 			));
 		}
 
+		public function actionFirstLogin(){
+			$this->layout = 'informativas';
+			$this->render('firstLogin',array(
+				's'=>'s',
+			));
+		}
+
+		public function actionSelectType($type){
+			$details = Users::model()->findByPk(Yii::app()->user->id);
+			if($details->updateByPk(Yii::app()->user->id,array('type'=>$type))){
+   				Yii::app()->user->setState('type', $type);
+   				$this->redirect(array('account/InfoAccount'));
+   			}
+		}
 
 
   	}
