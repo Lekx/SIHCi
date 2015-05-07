@@ -32,12 +32,6 @@ $(document).ready(function() {
 	'enableClientValidation' => true,
 ));?>
 
-	
-	<?php echo $form->errorSummary($modelAddresses);?>
-	<?php echo $form->errorSummary($modelPersons);?>
-	<?php echo $form->errorSummary($model);?>
-
-
 
 	<div class="row">
 
@@ -45,8 +39,8 @@ $(document).ready(function() {
 	<?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $modelAddresses->country,
-		'name' => Chtml::activeName($model, 'country'),
-		'id' => Chtml::activeId($model, 'country'),
+		'name' => Chtml::activeName($modelAddresses, 'country'),
+		'id' => Chtml::activeId($modelAddresses, 'country'),
 		'useCountryCode' => false,
 		'defaultValue' => 'Mexico',
 		'firstEmpty' => true,
@@ -168,18 +162,16 @@ $(document).ready(function() {
 
 	<div class="row">
 
-		<?php echo $form->fileField($modelPersons, 'photo_url', array('size' => 60, 'maxlength' => 100, 'placeholder' => "Foto"));?>
+		<?php echo $form->fileField($modelPersons, 'photo_url', array('size' => 60, 'maxlength' => 100, 'placeholder' => "Foto",'title'=>'Foto de Perfil'));?>
 		<?php echo $form->error($modelPersons, 'photo_url');?>
 		<br>
-		<img  style="width:75px;height:auto"; src="<?php echo Yii::app()->request->baseUrl . "/" . $modelPersons->photo_url;?>">
-		<?php echo Yii::app()->request->baseUrl . "/" . $modelPersons->photo_url;?>
 	</div>
 
 	<div class="row buttons">
 		<!-- cambiar todo a español y este boton-->
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
 		<input class="cleanbutton" type="button" value="Borrar">
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget();?>

@@ -21,13 +21,9 @@ $this->menu = array(
 	array('label' => 'Datos de Contactos', 'url' => array($controller==""?'sponsors/create_contacts':$controller)),
 );
 ?>
-<div class="cvtitle">
-            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
-            <h1>Perfil Empresa</h1>
-            <hr>
-        </div>
 
-
-<h4>Contactos</h4>
-
-<?php $this->renderPartial('_form_contacts', array('model' => $model, 'fullname' => $fullname));?>
+<div class="fillfirst">
+      <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+      <h1>Por favor llene primero los datos de cuenta</h1>
+      <hr>
+</div>
