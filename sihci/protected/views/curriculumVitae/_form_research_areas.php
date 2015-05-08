@@ -41,6 +41,7 @@
 	
 
 	<?php echo $form->errorSummary($model); ?>
+	
 <input id="showFormResearch" type="button"  value="Agregar Línea de Investigación" class="addSomething">
 <input id="hideFormResearch" type="button"  value="Cancelar" class="cancelSomething">
 
@@ -100,7 +101,7 @@
 		                                      
 		                         if(data.status=="200")
 		                         {
-				                     	$(".successdiv").show(); 
+				                     $(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {

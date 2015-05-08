@@ -32,7 +32,7 @@ class BooksChaptersAuthors extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_books_chapters', 'required'),
+			array('id_books_chapters, names, last_name1, last_name2, position', 'required'),
 			array('id_books_chapters, position', 'numerical', 'integerOnly'=>true),
 			array('names', 'length', 'max'=>30),
 			array('last_name1, last_name2', 'length', 'max'=>20),

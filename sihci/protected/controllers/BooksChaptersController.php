@@ -60,6 +60,7 @@ class BooksChaptersController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+	//CA01-Registrar datos
 	public function actionCreate()
     {
         $model=new BooksChapters;
@@ -158,6 +159,8 @@ class BooksChaptersController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+
+	//CA02-Modificar datos
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -170,9 +173,10 @@ class BooksChaptersController extends Controller
         if(isset($_POST['BooksChapters']))
         {
 	            $model->attributes=$_POST['BooksChapters'];
+
 	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
-	
-           		if (!empty(CUploadedFile::getInstanceByName('BooksChapters[url_doc]')))
+				
+           		if ($model->url_doc != ''/*!empty(CUploadedFile::getInstanceByName('BooksChapters[url_doc]'))*/)
                 {
                     //if(!empty($actual_url))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_url);
@@ -199,8 +203,7 @@ class BooksChaptersController extends Controller
 					            $position = $_POST['positions'];
 					                 
      					 foreach($_POST['names'] as $key => $value){
-     					 	//var_dump($idsBooksChapters[$key]);
-     					 	//echo "<br>";
+
 			        		if($idsBooksChapters[$key] == ''){
 			        			unset($modelAuthor);
 								$modelAuthor = new BooksChaptersAuthors;
@@ -214,7 +217,6 @@ class BooksChaptersController extends Controller
 								$modelAuthor->updateByPk($idsBooksChapters[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
                 		}
                 	}
-
                    	 		   echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
                                Yii::app()->end();
@@ -236,6 +238,8 @@ class BooksChaptersController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+
+	//CA03-Eliminar datos
 	public function actionDelete($id)
 	{
 		BooksChaptersAuthors::model()->deleteAll("id_books_chapters =".$id );
@@ -255,17 +259,17 @@ class BooksChaptersController extends Controller
 	 * Lists all models.
 	 */
 
+
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('BooksChapters');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**
 	 * Manages all models.
 	 */
+
+	//CA06-Barra de busqueda
 	public function actionAdmin()
 	{
 		$model=new BooksChapters('search');

@@ -20,8 +20,8 @@
 
 	<?php
 	foreach ($getDocs as $key => $value) {
-		echo "<a href='/SIHCi/sihci".$getDocs[$key]->doc_id."' target='_blank'>  Archivo ".$getDocs[$key]->type."</a> <br>";
-		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteDocs', 'id'=>$getDocs[$key]->id, 'pathDoc'=>$getDocs[$key]->doc_id),'confirm'=>'¿Seguro que desea eliminarlo?'));
+		echo "<a href='".Yii::app()->baseUrl."".$getDocs[$key]->doc_id."' target='_blank'>  Archivo ".$getDocs[$key]->type."</a> <br>";
+		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteDocs','id'=>$getDocs[$key]->id, 'pathDoc'=>$getDocs[$key]->doc_id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		echo "<hr>";
 	}
 

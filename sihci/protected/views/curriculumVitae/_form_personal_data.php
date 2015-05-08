@@ -23,6 +23,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($curriculum,'status'); ?>
 		<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
+
 	</div>
 
 	<div class="row">

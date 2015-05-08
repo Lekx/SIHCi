@@ -170,10 +170,7 @@ class CongressesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Congresses');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

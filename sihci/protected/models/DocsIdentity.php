@@ -43,11 +43,6 @@ class DocsIdentity extends CActiveRecord
 		// 	array('doc_id', 'length', 'max'=>50),
 			array('description', 'length', 'max'=>250),
 
-			array('doc_id','file', 'allowEmpty'=>true,
-			                  'types'=>'pdf, doc, docx, odt',
-			                  'maxSize'=>array(1024 * 2000),
-			                  'message'=>'Solo se admiten  archivos PDF, ODT, DOC o DOCX'),
-
 			// array('doc_id','file', 'allowEmpty'=>true,
 			//                   'types'=>'pdf, doc, docx, odt',
 			//                   'on' => 'update',

@@ -25,6 +25,7 @@
             $cs = Yii::app()->getClientScript();
             $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
             $cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
+            $cs->registerScriptFile($baseUrl . '/js/reCopy.js');
             $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
         ?>
          <?php
@@ -35,7 +36,7 @@
                     searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
                     base: ' . CJSON::encode(Yii::app()->baseUrl) . '
                 }
-            };
+            
             ');
         ?>
         
@@ -44,7 +45,6 @@
                             $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
-                                    trigger: 'click',
                                 });
 
                             });
@@ -126,7 +126,7 @@
         <div class="backcontainer">
                 <div class="maincontainer">
                     <div class="successh2">
-                        <h2>Registro con Extio</h2>
+                        <h2>Registro con Exito</h2>
                         <hr>
                         <div class="remainder">
                             <span>El registro a sido realizado con extio.</span>

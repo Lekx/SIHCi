@@ -163,10 +163,7 @@ class CertificationsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Certifications');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

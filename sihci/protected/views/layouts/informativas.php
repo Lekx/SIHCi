@@ -342,7 +342,7 @@
                                 } else {
                                     $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas4'));
                                 //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-                                    echo CHtml::link($img, array('account/infoAccount'));
+                                    echo CHtml::link($img, array('account/firstLogin'));
                                     echo '<p id="logoutext">';
                                     echo Yii::app()->user->email;
                                     echo '</p>';

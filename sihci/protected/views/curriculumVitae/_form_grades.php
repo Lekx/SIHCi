@@ -833,9 +833,9 @@
 							'dataType'=>'json',
                      		'type'=>'post',
                      		'success'=>'function(data) 
-                     		 {
+                
 		                                      
-		                         if(data.status=="200")
+		                         if(data.status=="success")
 		                         {
 				                     $(".successdiv").show();
 		                         }		                         

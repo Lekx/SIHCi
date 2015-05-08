@@ -19,19 +19,15 @@
 )); ?>
     
     
-	<p class="note">Los campos con<span class="required">*</span> son necesarios.</p>
-    
 	<?php echo $form->errorSummary($model); ?>
     
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
+		
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Título')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'conclusion_date'); ?>
-		 
+	<div class="row"> 
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
@@ -54,25 +50,24 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'author'); ?>
 		<?php echo $form->textField($model,'author',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Autor')); ?>
 		<?php echo $form->error($model,'author'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'path'); ?>
+		
 		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'grade'); ?>
+		
 		<?php echo $form->dropDownList($model,'grade',array('Maestria'=>'Maestria','Licenciatura'=>'Licenciatura','Preparatoria'=>'Preparatoria'),array('prompt'=>'Grado')); ?>
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sector'); ?>
+		
 		<?php echo $form->dropDownList($model,'sector',array('No especificado'=>'No especificado','Instituciones del sector gobierno federal centralizado'=>'Instituciones del sector gobierno federal centralizado',
 			                                                 'Instituciones del sector entidades paraestatales'=>'Instituciones del sector entidades paraestatales','Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
 			                                                 'Instituciones del sector de educacion superior publicas'=>'Instituciones del sector de educacion superior publicas','Instituciones del sector de educacion superior privadas'=>'Instituciones del sector de educacion superior privadas',
@@ -83,7 +78,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'organization'); ?>
+		
 		<?php echo $form->dropDownList($model,'organization',array('BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA'=>'BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA','UNIVERSIDAD ESTATAL DE SONORA'=>'UNIVERSIDAD ESTATAL DE SONORA','CENTRO DE INVESTIGACIONES BIOLOGICAS'=>'CENTRO DE INVESTIGACIONES BIOLOGICAS',
 			                                                       'CENTRO DE BIOTECNOLOGIA GENOMICA IPN'=>'CENTRO DE BIOTECNOLOGIA GENOMICA IPN','CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN'=>'CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN','TECNOLOGICO NACIONAL DE MEXICO'=>'TECNOLOGICO NACIONAL DE MEXICO',
 			                                                       'ESCUELA NORMAL DE SINALOA'=>'ESCUELA NORMAL DE SINALOA','INSTITUTO POLITECNICO NACIONAL'=>'INSTITUTO POLITECNICO NACIONAL','INSTITUTO TECNOLOGICO AGROPECUARIO'=>'INSTITUTO TECNOLOGICO AGROPECUARIO','INSTITUTO TECNOLOGICO DE SONORA'=>'INSTITUTO TECNOLOGICO DE SONORA',
@@ -117,7 +112,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'second_level'); ?>
+		
 		<?php echo $form->dropDownList($model,'second_level',array('CENTRO UNIVERSITARIO DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS'=>'CENTRO UNIVERSITARIO DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS','CENTRO UNIVERSITARIO DE CIENCIAS DE LA SALUD'=>'CENTRO UNIVERSITARIO DE CIENCIAS DE LA SALUD','CENTRO UNIVERSITARIO DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS'=>'CENTRO UNIVERSITARIO DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS',
 			                                                    'CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS E INGENIERIA'=>'CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS E INGENIERIA','CENTRO UNIVERSITARIO DE LA COSTA SUR'=>'CENTRO UNIVERSITARIO DE LA COSTA SUR','CENTRO UNIVERSITARIO DE ARTE, ARQUITECTURA Y DISEÑO'=>'CENTRO UNIVERSITARIO DE ARTE, ARQUITECTURA Y DISEÑO','CENTRO UNIVERSITARIO DE CIENCIAS SOCIALES Y HUMANIDADES.'=>'CENTRO UNIVERSITARIO DE CIENCIAS SOCIALES Y HUMANIDADES.',
 			                                                    'CENTRO UNIVERSITARIO DE LA CIENEGA'=>'CENTRO UNIVERSITARIO DE LA CIENEGA','CENTRO UNIVERSITARIO DE LA COSTA.'=>'CENTRO UNIVERSITARIO DE LA COSTA.','CENTRO UNIVERSITARIO DEL SUR.'=>'CENTRO UNIVERSITARIO DEL SUR.','EL COLEGIO DE JALISCO'=>'EL COLEGIO DE JALISCO','DEPARTAMENTO DE GEOGRAFIA'=>'DEPARTAMENTO DE GEOGRAFIA','COORDINACION DE EDUCACION CONTINUA, ABIERTA Y A DISTANCIA'=>'COORDINACION DE EDUCACION CONTINUA, ABIERTA Y A DISTANCIA',
@@ -135,7 +130,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'area'); ?>
+		
 		<?php echo $form->dropDownList($model,'area',array('LOGICA'=>'LOGICA','MATEMATICAS'=>'MATEMATICAS','ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
 			                                                'FISICA'=>'FISICA','QUIMICA'=>'QUIMICA','CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA','CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
 			                                                'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD','CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
@@ -149,7 +144,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'discipline'); ?>
+		
 		<?php echo $form->dropDownList($model,'discipline',array('APLICACIONES DE LA LOGICA'=>'APLICACIONES DE LA LOGICA','LOGICA DEDUCTIVA'=>'LOGICA DEDUCTIVA','LOGICA GENERAL'=>'LOGICA GENERAL','LOGICA INDUCTIVA METODOLOGIA
                                                                  '=>'LOGICA INDUCTIVA METODOLOGIA','OTRAS ESPECIALIDADES EN MATERIA DE LOGICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE LOGICA','ÁLGEBRA'=>'ÁLGEBRA','ANALISIS Y ANALISIS FUNCIONAL
 	                                                             INFORMATICA MATEMATICA'=>'ANALISIS Y ANALISIS FUNCIONAL INFORMATICA MATEMATICA','GEOMETRIA TEORIA DE LOS NUMEROS'=>'GEOMETRIA TEORIA DE LOS NUMEROS',
@@ -204,7 +199,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'subdiscipline'); ?>
+		
 		<?php echo $form->dropDownList($model,'subdiscipline',array('ANALOGIA'=>'ANALOGIA','ALGEBRA DE BOOLE'=>'ALGEBRA DE BOOLE','LOGICA FORMAL'=>'LOGICA FORMAL','LENGUAJES FORMALIZADOS'=>'LENGUAJES FORMALIZADOS','SISTEMAS FORMALES'=>'SISTEMAS FORMALES','FUNDAMENTOS DE LAS MATEMATICAS'=>'FUNDAMENTOS DE LAS MATEMATICAS',
 		                                                            'GENERALIZACION'=>'GENERALIZACION','LOGICA MATEMATICA'=>'LOGICA MATEMATICA','LOGICA MODAL'=>'LOGICA MODAL','TEORIA DE LOS MODELOS'=>'TEORIA DE LOS MODELOS','TEORIA DE LAS PRUEBAS'=>'TEORIA DE LAS PRUEBAS','CALCULO DE PROPOSICIONES'=>'CALCULO DE PROPOSICIONES',
 		                                                            'FUNCIONES RECURSIVAS'=>'FUNCIONES RECURSIVAS','LOGICA SIMBOLICA'=>'LOGICA SIMBOLICA','TEORIA DE LOS LENGUAJES FORMALES'=>'TEORIA DE LOS LENGUAJES FORMALES','TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS'=>'TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS','OTROS'=>'OTROS',
