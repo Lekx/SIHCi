@@ -1,6 +1,8 @@
  $(document).ready(function(){
+         
          var validateEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
          var validateNum = /^[0-9]+$/;
+       
         /////FORM GRADES
             $("#btnCreateGrade").click(function(){
 
@@ -98,7 +100,7 @@
                         }
                     }
                 }
-            }
+            
         }); //click
         $("#showFormGrade").on("click", function() {
             $('.grades').show();

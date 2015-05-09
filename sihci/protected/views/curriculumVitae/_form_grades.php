@@ -415,7 +415,7 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-		                         if(data.status=="200")
+		                         if(data.status=="success")
 		                         {
 				                     alert("Formación Académica se ha creado con éxito");
 				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";
@@ -835,7 +835,7 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-		                         if(data.status=="200")
+		                         if(data.status=="success")
 		                         {
 				                     $(".successdiv").show();
 		                         }		                         
