@@ -111,8 +111,8 @@ class ArticlesGuidesController extends Controller
 	                    		$modelAuthor->save();
 		              	    }	
 
-		                    echo CJSON::encode(array('status'=>'200'));
-                          //  $this->redirect(array('admin','id'=>$model->id));
+		                    echo CJSON::encode(array('status'=>'success'));
+                            //$this->redirect(array('admin','id'=>$model->id));
                             Yii::app()->end();
 
 		               }
@@ -168,21 +168,80 @@ class ArticlesGuidesController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
-
+		$modelAuthors = ArtGuidesAuthor::model()->findAllByAttributes(array('id_art_guides'=>$model->id));
+		$modelAuthor = new ArtGuidesAuthor;
+       
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model); 
+		$oldUrlDocument = $model->url_document;
+        if(isset($_POST['ArticlesGuides']))
+        {
+	            $model->attributes=$_POST['ArticlesGuides'];
+	            $model->url_document = CUploadedFile::getInstanceByName('ArticlesGuides[url_document]');
+	
+           		if (!empty(CUploadedFile::getInstanceByName('ArticlesGuides[url_document]')))
+                {
 
-		if(isset($_POST['ArticlesGuides']))
-		{
-			$model->attributes=$_POST['ArticlesGuides'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+                    if(!empty($oldUrlDocument))
+                    	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
+                    
+                    $model->url_document = CUploadedFile::getInstanceByName('ArticlesGuides[url_document]');
+                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/';
+                  
+                    if(!is_dir($urlFile))          
+                        mkdir($urlFile, 0777, true);
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                       $model->url_document->saveAs($urlFile.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
+		               $model->url_document= '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();                                                    
+                }
+                
+                else                  
+                   $model->url_document = $oldUrlDocument;       
+                    
+            		if($model->save())
+            		{
+            					$idsArticlesGuides = $_POST['idsArticlesGuides'];
+            					$names = $_POST['names'];
+					            $last_name1 = $_POST['last_names1'];
+					            $last_name2 = $_POST['last_names2'];
+					            $position = $_POST['positions'];
+					                 
+     					 foreach($_POST['names'] as $key => $value)
+     					 {
+     					 
+			        		if($idsArticlesGuides[$key] == '')
+			        		{
+			        			unset($modelAuthor);
+								$modelAuthor = new ArtGuidesAuthor;
+			        			$modelAuthor->id_art_guides = $model->id;
+			        			$modelAuthor->names = $names[$key];
+								$modelAuthor->last_name1 = $last_name1[$key];
+								$modelAuthor->last_name2 = $last_name2[$key];
+								$modelAuthor->position = $position[$key];
+								$modelAuthor->save();
+                    		}
+                    		else
+                    		{
+								$modelAuthor->updateByPk($idsArticlesGuides[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
+                		    }
+                	    }
+
+           	 		   echo CJSON::encode(array('status'=>'200'));
+                       $this->redirect(array('admin','id'=>$model->id));
+                       Yii::app()->end();
+                	} 
+                	else 
+                	{
+                		echo CJSON::encode(array('status'=>'404'));
+                        Yii::app()->end();
+                	}           
+            
+        }
+        	
+   		if(!isset($_POST['ajax']))
+				$this->render('update',array('model'=>$model,'modelAuthor'=>$modelAuthor, 'modelAuthors'=>$modelAuthors));
 	}
 
 	/**
@@ -201,11 +260,11 @@ class ArticlesGuidesController extends Controller
 			$model->delete();
 		}
 		else
-		$this->loadModel($id)->delete();
+			$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**

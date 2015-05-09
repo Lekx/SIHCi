@@ -2,6 +2,8 @@
 /* @var $this ArticlesGuidesController */
 /* @var $model ArticlesGuides */
 /* @var $form CActiveForm */
+ $cs = Yii::app()->getClientScript();
+   $cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/articlesGuides/js/script.js');
 ?>
 
 <div class="form">
@@ -100,7 +102,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Copies Issued')); ?>
+		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 

@@ -42,7 +42,7 @@
 		<?php echo $form->dropDownList($model,'participation_type',
 			    array(
 				  		'Inventor'=>'Inventor',
-				  		'Coinventor'=>'Coinventor'
+				  		'Co-inventor'=>'Co-inventor'
 			    ),
 			    array('prompt'=>'Tipo de participación')
 			);
@@ -74,7 +74,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas hombre')); ?>
+		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas invertidas en el proyecto')); ?>
 		<?php echo $form->error($model,'manwork_hours'); ?>
 	</div>
 

@@ -13,7 +13,7 @@ $this->menu=array(
 	);
 ?>
 
-<h1><?php echo $model->id; ?></h1>
+<h1>Registro  <?php echo $model->isbn; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -32,11 +32,49 @@ $this->menu=array(
 		'area',
 		'discipline',
 		'subdiscipline',
-		'url_document',
 		'keywords',
 		'type',
-		/*'id',
+		array(
+			'label'=>'Archivo',
+			'type'=>'raw',
+			'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->url_document,array("target"=>"_blank")),
+		),
+		/*'url_document',
+		'id',
 		'id_resume',
 		'creation_date',*/
 	),
 )); ?>
+<?php $modelAuthor = ArtGuidesAuthor::model()->findAllByAttributes(array('id_art_guides'=>$model->id));
+	 foreach ($modelAuthor as $key => $value)
+	 {  ?> 
+		<?php 
+			  $this->widget('zii.widgets.CDetailView', array(
+			 'data'=>$model,
+			 'attributes'=>array(
+			  
+			  array(
+			   'label'=>'Nombre(s)',
+			   'name'=>'names',
+			   'value'=>$value->names,
+			   ),
+			  array(
+			   'label'=>'Apellido Paterno',
+			   'name'=>'last_names1',
+			   'value'=>$value->last_name1,
+			   ),
+			  array(
+			   'label'=>'Apellido Materno',
+			   'name'=>'last_names2',
+			   'value'=>$value->last_name2,
+			   ),
+			  array(
+			   'label'=>'Posición',
+			   'name'=>'positions',
+			   'value'=>$value->position,
+			   ),  
+			 ),
+
+			));  
+		?>
+	<?php } ?>

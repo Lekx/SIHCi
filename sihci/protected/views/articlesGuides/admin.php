@@ -30,7 +30,7 @@ $('.search-form form').submit(function(){
 
 
 
-<div class="search-form" style="display:none">
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -39,7 +39,20 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'articles-guides-grid',
 	'dataProvider'=>$model->search(),
-	'columns'=>array(
+	'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
+	'columns'=>array(	
+		
+		array('name' =>'Edición', 'type'=>'html','id'=>'edicion','value'=>'CHtml::encode($data->edicion)'),
+		array('name' => 'Editorial','type'=>'html','id'=>'editorial','value'=>'CHtml::encode($data->editorial)'),
+		array('name' => 'ISBN','type'=>'html','id'=>'isbn','value'=>'CHtml::encode($data->isbn)'),
+		array('name' => 'Volumen','type'=>'html','id'=>'volumen','value'=>'CHtml::encode($data->volumen)'),
+		array('name' => 'Número de volumen','type'=>'html','id'=>'volumen_no','value'=>'CHtml::encode($data->volumen_no)'),
+		array('name' => 'Tipo de articulo','type'=>'html','id'=>'article_type','value'=>'CHtml::encode($data->article_type)'),
+		array('name' => 'Año de publicación','type'=>'html','id'=>'publishing_year','value'=>'CHtml::encode($data->publishing_year)'),
+
+		/*
 		'edicion',
 		'editorial',
 		'isbn',
@@ -47,9 +60,6 @@ $('.search-form form').submit(function(){
 		'volumen_no',
 		'article_type',
 		'publishing_year',
-		/*
-		'id',
-		'id_resume',
 		'start_page',
 		'end_page',
 		'copies_issued',
@@ -61,9 +71,8 @@ $('.search-form form').submit(function(){
 		'keywords',
 		'type',
 		'creation_date',
+		'id',
+		'id_resume',
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
+		array('class'=>'CButtonColumn')),
 )); ?>

@@ -35,6 +35,8 @@ class ArticlesGuides extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $searchValue;
+
 	public function tableName()
 	{
 		return 'articles_guides';
@@ -48,7 +50,7 @@ class ArticlesGuides extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_resume, start_page, end_page, article_type, magazine, area, discipline, subdiscipline, keywords', 'required'),
+			array('id_resume, start_page, end_page, article_type, magazine, area, discipline,subdiscipline, keywords', 'required'),
 			array('id_resume, isbn, edicion, publishing_year, volumen, volumen_no, start_page, end_page, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('editorial', 'length', 'max'=>80),
 			array('article_type', 'length', 'max'=>20),
@@ -57,10 +59,12 @@ class ArticlesGuides extends CActiveRecord
 			array('keywords', 'length', 'max'=>250),
 			array('type', 'length', 'max'=>15),
 			array('url_document', 'length', 'max'=>100),
+			array('searchValue','length','max'=>70),
     	    array('url_document','file','allowEmpty'=>true,'on'=>'update','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),		    
+			array('end_page','compare', 'compareAttribute'=>'start_page','operator'=>'>=','message'=>'Página final no puede ser menor a la página inicial'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_resume, isbn, editorial, edicion, publishing_year, volumen, volumen_no, start_page, end_page, article_type, copies_issued, magazine, area, discipline, subdiscipline, url_document, keywords, type, creation_date', 'safe', 'on'=>'search'),
+			array('id, id_resume, isbn, editorial, edicion, publishing_year, volumen, volumen_no, start_page, end_page, article_type, copies_issued, magazine, area, discipline, subdiscipline, url_document, keywords, type, creation_date,searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -94,7 +98,7 @@ class ArticlesGuides extends CActiveRecord
 			'start_page' => 'Página inicial ',
 			'end_page' => 'Página final',
 			'article_type' => 'Tipo de articulo',
-			'copies_issued' => 'Copies Issued',
+			'copies_issued' => 'Tiraje',
 			'magazine' => 'Revita',
 			'area' => 'Área',
 			'discipline' => 'Disciplina',
@@ -124,6 +128,13 @@ class ArticlesGuides extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		if($this->searchValue)
+		{
+			$criteria->addCondition("edicion LIKE CONCAT('%', :searchValue , '%') OR editorial LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR volumen LIKE CONCAT('%', :searchValue , '%') OR volumen_no LIKE CONCAT('%', :searchValue , '%') OR article_type LIKE CONCAT('%', :searchValue , '%') OR publishing_year LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}	
+
+	/*
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_resume',$this->id_resume);
 		$criteria->compare('isbn',$this->isbn);
@@ -144,10 +155,8 @@ class ArticlesGuides extends CActiveRecord
 		$criteria->compare('keywords',$this->keywords,true);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('creation_date',$this->creation_date,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+	*/
+		return new CActiveDataProvider($this, array('criteria'=>$criteria));
 	}
 
 	/**

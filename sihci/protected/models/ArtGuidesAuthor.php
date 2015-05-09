@@ -32,7 +32,7 @@ class ArtGuidesAuthor extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_art_guides', 'required'),
+			array('id_art_guides, names, last_name1, last_name2 , position', 'required'),
 			array('id_art_guides, position', 'numerical', 'integerOnly'=>true),
 			array('names', 'length', 'max'=>30),
 			array('last_name1, last_name2', 'length', 'max'=>20),
