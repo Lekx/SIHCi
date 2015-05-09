@@ -53,6 +53,7 @@ $this->menu = array(
 		<input type="password" name="Account[password22]" id="Account_password22">
 	</div>
 	
+	<hr>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton("Guardar", array('class'=>'savebutton') ); ?>

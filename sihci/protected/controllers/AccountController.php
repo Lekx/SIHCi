@@ -71,7 +71,8 @@
 			if($this->checkEmailExist($_POST['Users']['email']) && $this->checkEmail($_POST['Account']['email2'], $_POST['Account']['email22']))
 			{
 				if($details->updateByPk(Yii::app()->user->id,array('email'=>$_POST['Account']['email2'])))
-					$this->redirect(array('InfoAccount'));
+						Yii::app()->user->logout();
+						$this->redirect(Yii::app()->homeUrl);
 			}
 		}
 		$this->render('_updateEmail',array(

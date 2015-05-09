@@ -6,7 +6,7 @@ class AdminResearchAreasController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters
@@ -69,7 +69,7 @@ class AdminResearchAreasController extends Controller
 		$model=new ResearchAreas;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['ResearchAreas']))
 		{
@@ -104,7 +104,7 @@ class AdminResearchAreasController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['ResearchAreas']))
 		{
@@ -146,10 +146,7 @@ class AdminResearchAreasController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ResearchAreas');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

@@ -52,7 +52,7 @@ $('.fType').on('change', function(e) {
 	<hr>
 	<?php 
 		echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
-		                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20));
+		                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20 ,'title'=>'Tipo de Contacto'));
 		echo $form->error($model, 'type');
 	
 	?>
@@ -61,13 +61,21 @@ $('.fType').on('change', function(e) {
 <hr>
 
 
+	<?php
+
+$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+	'targetClass' => 'recopy',
+	'addButtonLabel' => 'Agregar nuevo',
+));
+?>
+
 	<div class="row">
 	<?php
 	foreach ($modelPull as $valuePull) {
 		echo "<input type='hidden' value='".$valuePull['id']."' name ='modelPullIds[]'>";  //array('prompt'=> $valuePull['type'])
 		echo $form->labelEx($model, 'type');
 		echo $form->dropDownList($model, 'type', array('telefono'=>'Teléfono','celular'=>'Celular','fax'=>'Fax','email'=>'Email'), array('prompt'=> $valuePull['type']),
-		                     						array('name' => 'modelPullTypes[]','class'=>'fType','options' => array($valuePull['type']=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20));
+		                     						array('name' => 'modelPullTypes[]','class'=>'fType','options' => array($valuePull['type']=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20,'title'=>'Tipo de Contacto'));
 		echo $form->error($model, 'type');
 		$valueArray= explode("-", $valuePull['value']);
 		echo '<input type="'.($valuePull['type'] == 'email' ||  $valuePull['type'] == 'celular' ? 'hidden' : 'text').'"  name="valuesUpdate1[]" value="'.$valueArray[0].'" >';
@@ -83,13 +91,7 @@ $('.fType').on('change', function(e) {
 
 
 
-	<?php
 
-$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
-	'targetClass' => 'recopy',
-	'addButtonLabel' => 'Agregar nuevo',
-));
-?>
 
 	<div class="row buttons">
 			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>

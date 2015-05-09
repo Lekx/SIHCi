@@ -10,13 +10,20 @@
             -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             background: red;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            color: #fff;
             display: none;
-            font-size: 10px;
             margin-top: -50px;
-            margin-left: 315px;
-            padding: 10px;
+            margin-left: 455px;
             position: absolute;
+			border-radius: 5px; 
+			border: 2px solid #F20862;
+			background: #F20862;
+			color: #fff;
+			width: 190px !important;
+			font-family: 'Caviar_Dreams_Bold' !important;
+			font-size: 12px;
+			line-height: 16px;
+			padding: 8px 10px;
+			text-align:  center;
         }
         .emails{
             display: none;

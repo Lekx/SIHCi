@@ -33,6 +33,8 @@
 
 <div class="form">
 
+
+
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'grades-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -415,14 +417,14 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-		                         if(data.status=="200")
+		                         if(data.status=="succes")
 		                         {
-				                     alert("Formación Académica se ha creado con éxito");
+				                     $(".successdiv").show();
 				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";
 		                         }		                         
 		                         else
 		                         {
-			                     	  alert("Formación Académica se ha creado con éxito");
+			                     	 $(".errordiv").show();   
 				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";  
 			                     }       
 		                  	}',                    
@@ -439,7 +441,7 @@
 	echo $form->errorSummary($model); 
 	//print_r($getGrades);
 	foreach ($getGrades as $key => $value) {
-		echo $count;
+		
 		echo	'<div class="row">';
 
 					$this->widget('ext.CountrySelectorWidget', array(
@@ -821,9 +823,9 @@
 												array('name'=>'getSubdiscipline[]','prompt'=>'Subdisciplina','options' => array($getGrades[$key]->subdiscipline=>array('selected'=>true))));
 		 echo $form->error($model,'subdiscipline'); 
 		echo '</div>';
-		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteGrade', 'id'=>$getGrades[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?'));
+		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteGrade','id'=>$getGrades[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		echo "<br>";
-		echo "------------------------------------------------------------";
+		echo "<hr>";
 		echo "<br>";
 		$count ++;
 	}
@@ -832,10 +834,9 @@
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
+                     		'success'=>'function(data){
 		                                      
-		                         if(data.status=="200")
+		                         if(data.status=="success")
 		                         {
 				                     $(".successdiv").show();
 		                         }		                         
