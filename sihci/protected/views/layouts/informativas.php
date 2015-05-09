@@ -26,7 +26,7 @@
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <?php
                 $baseUrl = Yii::app()->baseUrl;
-                $cs = Yii::app()->getClientScript();
+               $cs = Yii::app()->getClientScript();
                 $cs->registerScriptFile($baseUrl . '/js/list.js');
                 $cs->registerScriptFile($baseUrl . '/js/prefixfree.min');
                 $cs->registerScriptFile($baseUrl . '/js/slideshow.js');
@@ -52,8 +52,9 @@
         ?>
         <?php Yii::app()->bootstrap->register();?>
         <title><?php echo CHtml::encode($this->pageTitle);?></title>
+
        <script>
-                            $(document).ready(function() {
+                           $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
                                 });

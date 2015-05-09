@@ -153,6 +153,5 @@ class Persons extends CActiveRecord {
 		return parent::beforeSave();
 	}*/
 
-		return parent::afterSave();
-	}
+
 }
