@@ -89,7 +89,12 @@ class SoftwareController extends Controller
 				}	
 
 					if($model->save())
-					{	   			   
+					{	   		
+						$section = "Propiedad Intelectual"; 
+		     			$action = "Creación";
+						$details = "Subsección: Software";
+		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		     				   
 					    echo CJSON::encode(array('status'=>'200'));
 					   	$this->redirect(array('admin','id'=>$model->id));
 				    	Yii::app()->end();
@@ -166,7 +171,12 @@ class SoftwareController extends Controller
 				}	
 
 					if($model->save())
-					{	   			   
+					{	   		
+						$section = "Propiedad Intelectual"; 
+		     			$action = "Modificación";
+						$details = "Subsección: Software. Número Registro: ".$model->id;
+		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		     				   
 					    echo CJSON::encode(array('status'=>'200'));
 					   	$this->redirect(array('admin','id'=>$model->id));
 				    	Yii::app()->end();
@@ -193,14 +203,21 @@ class SoftwareController extends Controller
 	public function actionDelete($id)
 	{
 		
-		$model= Software::model()->findByPk($id);
-			
+		$model= $this->loadModel($id);
+		$section = "Propiedad Intelectual";  
+		$action = "Eliminación";
+		$details = "Subsección: Software. Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.".";
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		
 		if ($model->path != null ){			
 			 unlink(YiiBase::getPathOfAlias("webroot").$model->path);
 		     $model->delete();
 		}
-		else 
- 			$this->loadModel($id)->delete();
+		else {
+ 			$model->delete();
+		}
+
+
 		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
