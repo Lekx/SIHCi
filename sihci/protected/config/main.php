@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'SIHCi',
 	'timeZone' => 'America/Mexico_City',
 	'language' => 'es',
 
@@ -26,6 +26,8 @@ return array(
 		'application.components.*',
 		'bootstrap.helpers.TbArray',
 		'bootstrap.widgets.*',
+		'application.extensions.coco.*',
+		'application.controllers.SystemLogController'
 	),
 
 	'modules'=>array(
@@ -34,21 +36,25 @@ return array(
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'generatorPaths' => array('bootstrap.gii'),
-			'password'=>'root',
+			'password'=>'111',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+			'newFileMode'=>0666,
+			'newDirMode'=>0777,
 		),
 		
 	),
 
 	// application components
 	'components'=>array(
-
+		'authManager'=>array(
+				'class'=>'CDbAuthManager',
+				'connectionID'=>'db',
+			),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-
 
 		'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',   

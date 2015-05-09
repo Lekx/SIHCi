@@ -14,11 +14,12 @@
  * @property string $colony
  * @property string $street
  * @property string $external_number
- * @property string $numero_int
+ * @property string $internal_number
  *
  * The followings are the available model relations:
  * @property Curriculum[] $curriculums
  * @property SponsorBilling[] $sponsorBillings
+ * @property Sponsors[] $sponsors
  */
 class Addresses extends CActiveRecord
 {
@@ -39,15 +40,16 @@ class Addresses extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('country, zip_code, state, delegation, city, town, colony, external_number', 'required'),
+			array('zip_code', 'length', 'max' => 6),
 			array('zip_code', 'numerical', 'integerOnly'=>true),
 			array('country, city, street', 'length', 'max'=>50),
 			array('state', 'length', 'max'=>20),
 			array('delegation, town', 'length', 'max'=>30),
 			array('colony', 'length', 'max'=>45),
-			array('external_number, numero_int', 'length', 'max'=>8),
+			array('external_number, internal_number', 'length', 'max'=>8),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, country, zip_code, state, delegation, city, town, colony, street, external_number, numero_int', 'safe', 'on'=>'search'),
+			array('id, country, zip_code, state, delegation, city, town, colony, street, external_number, internal_number', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,6 +63,7 @@ class Addresses extends CActiveRecord
 		return array(
 			'curriculums' => array(self::HAS_MANY, 'Curriculum', 'id_actual_address'),
 			'sponsorBillings' => array(self::HAS_MANY, 'SponsorBilling', 'id_address_billing'),
+			'sponsors' => array(self::HAS_MANY, 'Sponsors', 'id_address'),
 		);
 	}
 
@@ -71,16 +74,16 @@ class Addresses extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'country' => 'Country',
-			'zip_code' => 'Zip Code',
-			'state' => 'State',
-			'delegation' => 'Delegation',
-			'city' => 'City',
-			'town' => 'Town',
-			'colony' => 'Colony',
-			'street' => 'Street',
-			'external_number' => 'External Number',
-			'numero_int' => 'Numero Int',
+			'country' => 'País',
+			'zip_code' => 'Código Postal',
+			'state' => 'Estado',
+			'delegation' => 'Delegación',
+			'city' => 'Municipio',
+			'town' => 'Ciudad',
+			'colony' => 'Colonia',
+			'street' => 'Calle',
+			'external_number' => 'Numero Exterior',
+			'internal_number' => 'Numero Interior',
 		);
 	}
 
@@ -112,7 +115,7 @@ class Addresses extends CActiveRecord
 		$criteria->compare('colony',$this->colony,true);
 		$criteria->compare('street',$this->street,true);
 		$criteria->compare('external_number',$this->external_number,true);
-		$criteria->compare('numero_int',$this->numero_int,true);
+		$criteria->compare('internal_number',$this->internal_number,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -1,0 +1,667 @@
+
+
+/* CSS System */
+@font-face{
+  	font-family: 'Caviar_Dreams_Bold';
+	 src: url('../fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Caviar_Dreams';
+  src: url('../fonts/Caviar-Dreams/CaviarDreams.ttf');
+}
+*{
+	border:0;
+	padding: 0;
+	margin: 0;
+	font-style: 'Caviar_Dreams' !important;
+
+}
+body
+{
+
+	background: #ffffff;
+	border:0;
+	padding: 0;
+	margin: 0;
+	color: white;
+	font-family: 'Caviar_Dreams' !important;
+
+}
+.sysheader
+{
+	width: 100%;
+	height: 195px;
+	border: 1px solid #000;
+
+	display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-flow: wrap;
+
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+
+     -webkit-flex: 1 1 auto;
+   
+
+}
+.headerconteiner1
+{
+	background: #ffffff; 
+	width: 38%;
+	height: 100px;
+}
+
+.headerconteinerC
+{
+	background: #00B9C0;
+	width: 12.5%;
+	height: 100px;
+	border-left: 1px solid #fff;
+}
+.headerconteinerF
+{
+	background: #000000;
+	width: 12%;
+	height: 195px;
+}
+.headerconteinerF #perfil 
+{
+	width: 100%;
+	height: 100%;
+}
+.headerconteiner2
+{
+	
+	background: #F1F2F2;
+	height: 25px;
+	margin-top: -95px;
+	width: 88%;
+	
+}
+.headerconteiner3
+{
+	
+	background: #0E3152;
+	height: 25px;
+	margin-top: -70px;
+	width: 88%;
+	
+}
+.headerconteiner4
+{
+	
+	background: #00B9C0;
+	height: 45px;
+	margin-top: -45px;
+	width: 20%;
+	
+}
+.headerconteiner5
+{
+	
+	background: #798B9D;
+	height: 45px;
+	margin-top: -45px;
+	width: 68%;
+	
+}
+.syscontent
+{
+	width: 100%;
+
+	display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-flow: wrap;
+
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+
+
+}
+.sysmenu
+{
+	width: 20%;
+	height: auto;
+	background: #CDF1F3 ;
+
+}
+.sysmaincontent
+{
+	width: 74%;
+	height: 100%;
+	min-height: 380px;
+	background: #fff;
+	
+   
+}
+.headerconteiner1 img
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	z-index: 999;
+}
+.headerconteinerC img
+{
+	display: block;
+	margin-top: 22px;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+.headerconteinerC span
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	font-family: 'Caviar_Dreams_Bold';
+	color: white;
+}
+.headerconteiner3 span
+{
+	font-family: 'Caviar_Dreams';
+	color: white;
+	padding-left: 29%;
+}
+.headerconteiner4 h4 { color :white; font-family: 'Caviar_Dreams'; padding-left: 5%;}
+
+.headerconteiner4:after
+{
+	content:"";
+    border-color:  #00B9C0 transparent transparent transparent;
+    border-style:solid;
+    border-width: 25px;
+    width:0;
+    height:10px;
+    position: absolute;
+    left:15%;
+    
+}
+.headerconteiner5 h4
+{ 
+	 display: inline-block;
+	 color :white;
+	 font-family: 'Caviar_Dreams'; 
+	 padding-left: 8%;
+}
+.headerconteiner5 h5
+{ 
+	 display: inline-block;
+	 color :white;
+	 font-family: 'Caviar_Dreams'; 
+	 margin-left: 40%;
+}
+.cvmenuitems
+{
+	margin-top: 35px;
+}
+.cvmenuitems li
+{
+	list-style: none;
+	font-family: 'Caviar_Dreams_Bold';
+}
+.cvmenuitems a
+{
+	color: #1EB9C0;
+}
+.cvmenuitems a:hover
+{
+	color: #0E3152;
+	text-decoration: none;
+}
+.cvmenuitems hr
+{
+	width: 35px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #000000;
+}
+.footer
+{
+	width: 100%;
+	height: 100px;
+
+	display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-flow: wrap;
+
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+
+     -webkit-flex: 1 1 auto;
+
+}
+.footermenu1
+{
+	width: 38.5%;
+	height: 100%;
+	background-color: #798B9D;
+
+}
+.footermenu1 span, .footermenu1 h4
+{
+	color: white;
+	padding-left: 25px;
+	padding-top:  20px;
+	font-family: 'Caviar_Dreams_Bold';
+}
+.footermenuI
+{
+	width: 12.3%;
+	height: 100%;
+	background-color: #1EB9C0;
+	border-right: 1px solid #ffffff;
+	
+}
+.footermenuI.logout
+{
+	border-right: 0;
+	background-color: #0E3152;
+}
+.footermenuI img
+{
+	display: block;
+	margin-top: 22px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.footermenuI span
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	margin-bottom: 5px;
+	font-family: 'Caviar_Dreams_Bold';
+	color: white;
+}
+.cvforms
+{
+	padding-left: 145px;
+	font-family: 'Caviar_Dreams_Bold';
+}
+.cvforms h4
+{
+  margin-top: 20px;	
+}
+.cvtitle
+{
+	margin-top: 50px;
+	margin-left: -140px;
+	font-family: 'Caviar_Dreams_Bold';	
+}
+.cvtitle h1 
+{
+	margin-left: 30px;
+	display: inline-block;
+	font-family: 'Caviar_Dreams_Bold';
+}
+.cvtitle img
+{
+	margin-left: 30px;
+	padding-bottom: 30px;
+}
+.cvtitle hr 
+{ 
+	margin-left:  140px;
+	margin-top: -20px;
+	margin-bottom: 0;
+	width:  90px; 
+	border-bottom: 2px solid #1EB9C0; 
+}
+
+/* All Inputs Style */
+
+.radio label:before {
+	border-radius: 8px;
+}
+label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	margin-right: 15px;
+	font-size: 13px;
+	width: 10px;
+}
+.radio input[type="radio"]
+{
+
+	display: inline-block;
+}
+
+.cvforms input[type="text"], .cvforms input[type="password"], 
+.cvforms select ,.cvforms input[type="file"]
+{
+	height: 25px;
+	width: 450px;
+	padding-left: 13px;
+	background-color: #CDF1F3;
+	font-family: 'Caviar_Dreams_Bold';
+	color: #0E3152;
+	border: 0px;
+	border-color: none;
+	box-shadow: none;
+	-webkit-appearance:none;
+	-moz-appearance: none;
+	padding-top: 0px;
+	
+}
+.cvforms input[type="file"]
+{
+
+}
+.cvforms input[type="file"]
+{
+	display: inline-block;
+}
+.cvforms input[type="file"]::before
+{
+	content: 'Selecionar Archivo';
+	font-size: 12px;
+	
+}
+.cvforms input[type="file"]::-webkit-file-upload-button {
+	visibility:  hidden;
+	padding-top: 10px;
+	
+}
+.savebutton
+{
+	width: 335px !important;
+	height: 40px;
+	background-color: #0E3152 !important;
+	color: white;
+	font-size: 20px;
+	opacity: 1!important;
+}
+.cleanbutton
+{
+	width: 120px !important;
+	height: 40px;
+	background-color: #1EB9C0 !important;
+	color: white;
+	font-size: 20px;
+	margin-left: -10px !important;
+	opacity: 1!important;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #1EB9C0 !important;
+}
+.ui-datepicker 
+{
+	width: 450px !important;
+}
+.ui-widget-content
+{
+	border: 1px solid #aaa;
+	background: #0E3152 url("") 50% 50% repeat-x !important;
+	color: #222;
+}
+.ui-state-default a
+{
+	background: #0E3152 url("") 50% 50% repeat-x !important;
+}
+thead th
+{
+	background: #0E3152 !important;
+	color: white;
+}
+.infobox
+{
+	
+	width: 190px;
+	height: 35px;
+	color: white;
+	background-color: #0E3152;
+    color: white;
+    display: inline-block;
+	padding: 7px;
+
+}
+.errorMessage
+{
+	display: inline-block;
+	border-radius: 5px; 
+	border: 2px solid #F20862;
+	background: #F20862;
+	color: #fff;
+	width: 190px !important;
+	margin-left: 8px;
+	font-family: 'Caviar_Dreams_Bold' !important;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 8px 10px;
+	text-align:  center;
+}
+.row.buttons input[type="button"]
+{
+	color: white;
+	font-size: 20px;
+ 	width: 190px ;
+	height: 40px;
+	background-color: #1EB9C0;
+	opacity: .6;
+}
+.phones{ display:  inline-block; }
+.phones.country{ width: 65px !important; }
+.phones.state{ width: 65px !important; }
+.phones.phonew{ width: 240px !important; }
+.extension { width: 65px !important; }
+
+.newaddres
+{
+	width: 450px;
+	background-color: #1EB9C0;
+
+
+}
+.newaddres a
+{
+	text-decoration: none;
+	color: white;
+}
+.newaddres a:hover
+{
+	text-decoration: none;
+	color: white;
+}
+
+/* Error and Success Messege */
+
+.backcontainer
+{
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+ 	background: rgba(40, 50, 90, .70);
+ 	z-index: 900;
+ 	font-family: 'Caviar_Dreams_Bold';
+	
+}
+.backcontainer h2{ color: #1EB9C0; }
+
+.maincontainer
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	background: #ffffff;
+	height: 270px;
+	width: 400px;
+
+}
+.susses , .errorh2 , .successh2{ padding-top: 50px; text-align: center; }
+
+.susses hr , .errorh2 hr , .successh2 hr 
+{
+
+	border-bottom: 2px solid black;
+	width: 80px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+	margin-bottom: 35px;
+}
+.susbut , .backbut
+{
+	height: 50px;
+	width: 400px;
+	margin-top: 30px;
+	background-color: #0E3152;
+	color: white;
+	font-family: 'Caviar_Dreams';
+}
+.remainder
+{
+	width: 260px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.backgrnd
+{
+	background-image: url('http://www.hdwallpaperscool.com/wp-content/uploads/2014/07/river-bridge-san-francisco-desktop-wallpapers.jpeg') !important;
+	width: 100%;
+	height: 100%;
+}
+.errorbut , .cleanbut
+{
+	height: 50px;
+	width: 400px;
+	margin-top: 20px;
+	background-color: #F20862;
+	color: white;
+	font-family: 'Caviar_Dreams';
+}
+.errorh2 h2 , .errorh2 h2 {color: #F20862 !important;}
+.successh2 h2 { color: #0E3152;}
+/* ---------- */
+
+.errordiv
+{
+	display: none;
+}
+.cleandiv
+{
+	display: none;
+}
+.successdiv
+{
+	display: none;
+}
+.abortdiv
+{
+	display: none;
+}
+.infoAccount h5
+{
+ 	color: #00B9C0; 
+}
+.portlet 
+{
+	width: 200px;
+	padding: 0px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+.portlet ul li a
+{
+	font-size: 15px !important;
+	padding-left: 0px !important;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.portlet ul li a:hover
+{
+	font-size: 15px !important;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	width: 200px;
+	background: 0;
+}
+.portlet hr
+{
+	margin-left: 8px;
+}
+.addSomething , .deleteSomething, 
+#showFormPhone, #showFormEmail , 
+#btnCreateEmail , #btnCreatePhone
+,#hideFormEmail , #hideFormPhone 
+,#showFormGrade , #hideFormGrade,
+#btnCreateGrade
+{
+	width: 450px !important;
+	margin-top:10px !important; 
+	text-align: center;
+	color: white;
+	height: 25px;
+	background-color: #00B9C0;
+	margin-bottom: 10px;
+}
+.cancelSomething 
+{
+	display: none;
+	width: 450px !important;
+	text-align: center;
+	color: white;
+	height: 25px;
+	background-color: #00B9C0;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.acountcont
+{
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+.acoutmail
+{
+	margin-bottom: 30px;
+}
+.acountcont a 
+{
+	color: white;
+	margin-top: 25px;
+	background-color: #0A3250;
+	padding: 5px;
+
+}
+.acountcont a:hover
+{
+	color: white;
+	text-decoration: none;
+}
+.acountcont h5 , .acountcont p
+{
+	margin-bottom: 25px;
+}
+.portlet ul 
+{
+	width: 200px;
+}
+.sysmenu ul , .sysmenu ol 
+{
+  padding: 0;
+}
+.fillfirst
+{
+	margin-top: 110px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+

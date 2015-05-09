@@ -46,8 +46,8 @@
 	<?php echo CHtml::encode($data->external_number); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('numero_int')); ?>:</b>
-	<?php echo CHtml::encode($data->numero_int); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('internal_number')); ?>:</b>
+	<?php echo CHtml::encode($data->internal_number); ?>
 	<br />
 
 	*/ ?>
