@@ -441,7 +441,7 @@
 	echo $form->errorSummary($model); 
 	//print_r($getGrades);
 	foreach ($getGrades as $key => $value) {
-		echo $count;
+		
 		echo	'<div class="row">';
 
 					$this->widget('ext.CountrySelectorWidget', array(
