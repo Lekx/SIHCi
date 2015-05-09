@@ -54,7 +54,7 @@ $('.fType').on('change', function(e) {
 	<div class="row">
 	<?php 
 		echo $form->labelEx($model, 'type');
-		echo $form->dropDownList($model, 'type', array(''=>'','TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
+		echo $form->dropDownList($model, 'type',array(''=>'','TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
 		                     						array('name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20));
 		echo $form->error($model, 'type');
 	
@@ -69,7 +69,7 @@ $('.fType').on('change', function(e) {
 	foreach ($modelPull as $valuePull) {
 		echo "<input type='hidden' value='".$valuePull['id']."' name ='modelPullIds[]'>";  //array('prompt'=> $valuePull['type'])
 		echo $form->labelEx($model, 'type');
-		echo $form->dropDownList($model, 'type', array(''=>'','telefono'=>'Teléfono','celular'=>'Celular','fax'=>'Fax','email'=>'Email'), 
+		echo $form->dropDownList($model, 'type', array('telefono'=>'Teléfono','celular'=>'Celular','fax'=>'Fax','email'=>'Email'), array('prompt'=> $valuePull['type']),
 		                     						array('name' => 'modelPullTypes[]','class'=>'fType','options' => array($valuePull['type']=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20));
 		echo $form->error($model, 'type');
 		$valueArray= explode("-", $valuePull['value']);

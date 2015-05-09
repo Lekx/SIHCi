@@ -62,7 +62,7 @@ class SponsorBilling extends CActiveRecord {
 			'id' => 'ID',
 			'id_sponsor' => 'Id Sponsor',
 			'id_address_billing' => 'Id Address Billing',
-			'name' => 'Name',
+			'name' => 'Nombre',
 			'rfc' => 'Rfc',
 			'email' => 'Email',
 		);

@@ -80,15 +80,15 @@ class Sponsors extends CActiveRecord
 			'id' => 'ID',
 			'id_user' => 'Id User',
 			'id_address' => 'Id Address',
-			'sponsor_name' => 'Sponsor Name',
-			'type' => 'Type',
-			'website' => 'Website',
+			'sponsor_name' => 'Nombre del Patrocinador',
+			'type' => 'Tipo',
+			'website' => 'Sitio Web',
 			'sector' => 'Sector',
-			'class' => 'Class',
-			'branch' => 'Branch',
-			'main_activity' => 'Main Activity',
-			'legal_structure' => 'Legal Structure',
-			'employeess_number' => 'Employeess Number',
+			'class' => 'Clase',
+			'branch' => 'Rama',
+			'main_activity' => 'Actividad Principal',
+			'legal_structure' => 'Estructura Legal',
+			'employeess_number' => 'Numero de Trabajadores',
 		);
 	}
 

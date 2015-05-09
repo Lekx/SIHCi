@@ -48,8 +48,8 @@
 				  		''=>'',
 				  		'Inventor'=>'Inventor',
 				  		'Coinventor'=>'Coinventor'
-				  	)
-			  array('prompt'=>'Tipo de participación')
+				  	)			  array('prompt'=>'Tipo de participación')
+
 			  );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>

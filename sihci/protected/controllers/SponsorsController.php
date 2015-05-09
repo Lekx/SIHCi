@@ -56,7 +56,7 @@ class SponsorsController extends Controller {
 
 	public function actionSponsorsInfo() {
 		$sponsorExist = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
-
+		echo "que pedo";
 		if ($sponsorExist != null) {
 			$model = $this->loadModel($sponsorExist->id);
 			$modelAddresses = Addresses::model()->findByPk($model->id_address);
@@ -86,6 +86,7 @@ class SponsorsController extends Controller {
 					if ($model->validate()) {
 						if ($model->save()) {
 
+
 							if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
 								
 								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
@@ -105,7 +106,10 @@ class SponsorsController extends Controller {
 								$logo->saveAs($path . 'logo.' . $logo->getExtensionName());
 								$logo = "sponsors/" . $id_sponsor . "/img/" . 'logo.' . $logo->getExtensionName();
 
+
 								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id, array('photo_url' => $logo))) {
+									echo CJSON::encode(array('status'=>'200'));
+									Yii::app()->end();
 
 									$log = new SystemLog();
 									$log->id_user = Yii::app()->user->id;
@@ -115,11 +119,20 @@ class SponsorsController extends Controller {
 									$log->datetime = new CDbExpression('NOW()');
 									$log->save();
 
+								}else{
+									echo CJSON::encode(array('status'=>'400'));
+									Yii::app()->end();
 								}
 							}
+						}else {
+							echo CJSON::encode(array('status'=>'400'));
+							Yii::app()->end();
 						}
 					}
 
+				}else{
+					echo CJSON::encode(array('status'=>'400'));
+					Yii::app()->end();
 				}
 			}
 
@@ -174,7 +187,7 @@ class SponsorsController extends Controller {
 
 
 		if (isset($_POST['values1'])) {
-			echo "entre 1";
+			
 			$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 			$types = $_POST['types'];
 			$values1 = $_POST['values1'];
@@ -277,14 +290,16 @@ class SponsorsController extends Controller {
 			$model->id_sponsor = $sponsor->id;
 
 			if (isset($_POST['sameAddress'])) {
-				echo "es la misma direccion";
+				
 				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id_address;
-				if ($model->save()) {
-					if ($modelAddresses->id != $model->id_address_billing) {
-						if ($modelAddresses->delete());
+				if ($model->save())
+					if ($modelAddresses->id != $model->id_address_billing && $modelAddresses->id > 0) {
+						if ($modelAddresses->delete())
+							$this->redirect(array('create_billing'));
+					}else
 						$this->redirect(array('create_billing'));
-					} else {
-						echo "no es la misma direccion";
+				} else {
+
 						$modelAddresses = new Addresses;
 
 						$modelAddresses->attributes = $_POST['Addresses'];
@@ -292,17 +307,17 @@ class SponsorsController extends Controller {
 						if ($modelAddresses->save()) {
 							$model->id_address_billing = $modelAddresses->id;
 
-							if ($model->save()) {
+							if ($model->save()) 
 								$this->redirect(array('create_billing'));
-							}
+							
 
 						}
 					}
 				}
 
-			}
+			
 
-		}
+		
 
 		$this->render('create_billing', array(
 			'model' => $model, 'modelAddresses' => $modelAddresses, 'sameAd' => $sameAd,
@@ -335,7 +350,7 @@ class SponsorsController extends Controller {
 			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
 				if (!array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs)) {
-					var_dump($modelDocs);
+					//var_dump($modelDocs);
 					$model = new SponsorsDocs;
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
@@ -502,6 +517,7 @@ class SponsorsController extends Controller {
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
+
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 
@@ -513,7 +529,8 @@ class SponsorsController extends Controller {
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(array('create_contacts'));
+			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 
 	}
@@ -524,7 +541,8 @@ class SponsorsController extends Controller {
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(array('create_contact'));
+			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 
 	}
