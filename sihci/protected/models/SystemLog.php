@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "system_log".
  *
@@ -18,10 +17,10 @@ class SystemLog extends CActiveRecord {
 	/**
 	 * @return string the associated database table name
 	 */
+	public $searchValue;
 	public function tableName() {
 		return 'system_log';
 	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -34,12 +33,12 @@ class SystemLog extends CActiveRecord {
 			array('section', 'length', 'max' => 60),
 			array('details', 'length', 'max' => 150),
 			array('action', 'length', 'max' => 250),
+			array('searchValue','length', 'max'=>70),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_user, section, details, action, datetime', 'safe', 'on' => 'search'),
+			array('id, id_user, section, details, action, datetime, searchValue', 'safe', 'on' => 'search'),
 		);
 	}
-
 	/**
 	 * @return array relational rules.
 	 */
@@ -50,21 +49,19 @@ class SystemLog extends CActiveRecord {
 			'idUser' => array(self::BELONGS_TO, 'Users', 'id_user'),
 		);
 	}
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels() {
 		return array(
-			'id' => 'Numero de Accion',
-			'id_user' => 'Numero de Usuario',
-			'section' => 'Seccion',
+			'id' => 'Número de Acción',
+			'id_user' => 'Número de Usuario',
+			'section' => 'Sección',
 			'details' => 'Detalles',
-			'action' => 'Accion',
+			'action' => 'Acción',
 			'datetime' => 'Fecha',
 		);
 	}
-
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -79,26 +76,26 @@ class SystemLog extends CActiveRecord {
 	 */
 	public function search() {
 		// @todo Please modify the following code to remove attributes that should not be searched.
-
 		$criteria = new CDbCriteria;
-
-		$criteria->compare('id', $this->id);
-		$criteria->compare('id_user', $this->id_user);
-		$criteria->compare('section', $this->section, true);
-		$criteria->compare('details', $this->details, true);
-		$criteria->compare('action', $this->action, true);
-		$criteria->compare('datetime', $this->datetime, true);
-
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR id_user LIKE CONCAT('%', :searchValue ,'%') OR section LIKE CONCAT('%', :searchValue , '%') OR details LIKE CONCAT('%', :searchValue , '%')OR action LIKE CONCAT('%', :searchValue , '%')OR datetime LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+		// $criteria->compare('id', $this->id);
+		// $criteria->compare('id_user', $this->id_user);
+		// $criteria->compare('section', $this->section, true);
+		// $criteria->compare('details', $this->details, true);
+		// $criteria->compare('action', $this->action, true);
+		// $criteria->compare('datetime', $this->datetime, true);
 		$_SESSION['filteredData'] = new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
-
 			'pagination' => false,
 		));
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
 		));
 	}
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -108,13 +105,12 @@ class SystemLog extends CActiveRecord {
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
 	}
-	/*protected function beforeSave(){
-$this->datetime = DateTime::createFromFormat('d/m/Y H:i:s', $this->datetime)->format('Y-m-d H:i:s');
-return parent::beforeSave();
-}
-
-protected function afterFind(){
-$this->datetime = DateTime::createFromFormat('Y-m-d H:i:s', $this->datetime)->format('d/m/Y H:i:s');
-return parent::beforeSave();
-}*/
+	protected function beforeSave(){
+	$this->datetime = DateTime::createFromFormat('d/m/Y H:i:s', $this->datetime)->format('Y-m-d H:i:s');
+	return parent::beforeSave();
+	}
+	protected function afterFind(){
+	$this->datetime = DateTime::createFromFormat('Y-m-d H:i:s', $this->datetime)->format('d/m/Y H:i:s');
+	return parent::beforeSave();
+	}
 }

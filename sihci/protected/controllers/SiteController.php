@@ -34,6 +34,7 @@ class SiteController extends Controller {
 	 * This is the action to handle external exceptions.
 	 */
 	public function actionError() {
+
 		if ($error = Yii::app()->errorHandler->error) {
 			if (Yii::app()->request->isAjaxRequest) {
 				echo $error['message'];
@@ -48,6 +49,7 @@ class SiteController extends Controller {
 	 * Displays the contact page
 	 */
 	public function actionContact() {
+		$this->layout = 'informativas';
 		$model = new ContactForm;
 		if (isset($_POST['ContactForm'])) {
 			$model->attributes = $_POST['ContactForm'];
@@ -93,7 +95,6 @@ class SiteController extends Controller {
 			$not_active = Users::model()->findByAttributes(array("status" => "inactivo", "email" => $model->username));
 
 			if ($model->validate() && $model->login() && $is_active != null) {
-			
 				echo "200";
 			} else if ($not_active != null) {
 				echo "302";
@@ -137,7 +138,7 @@ class SiteController extends Controller {
 			
 			$model->attributes = $_POST['RecoveryPassword'];
 
-			$is_active = Users::model()->findByAttributes(array("status" => "1", "email" => $model->email));
+			$is_active = Users::model()->findByAttributes(array("status" => "activo", "email" => $model->email));
 
 			if ($model->validate() && $is_active != null) {
 				

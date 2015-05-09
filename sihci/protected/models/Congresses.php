@@ -24,6 +24,8 @@ class Congresses extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $searchValue;
+
 	public function tableName()
 	{
 		return 'congresses';
@@ -47,7 +49,8 @@ class Congresses extends CActiveRecord
 			array('creation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, work_title, year, congress, type, country, work_type, keywords', 'safe', 'on'=>'search'),
+			array('searchValue','length', 'max'=>70),
+			array('id, id_curriculum, work_title, year, congress, type, country, work_type, keywords, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -101,7 +104,12 @@ class Congresses extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR work_title LIKE CONCAT('%', :searchValue ,'%') OR congress LIKE CONCAT('%', :searchValue , '%') OR keywords LIKE CONCAT('%', :searchValue , '%') OR year LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+		/*$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('work_title',$this->work_title,true);
 		$criteria->compare('year',$this->year);
@@ -110,7 +118,7 @@ class Congresses extends CActiveRecord
 		$criteria->compare('country',$this->country,true);
 		$criteria->compare('work_type',$this->work_type,true);
 		$criteria->compare('keywords',$this->keywords,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
+		$criteria->compare('creation_date',$this->creation_date,true);*/
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -19,6 +19,9 @@ class DocsIdentity extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+
+
 	public function tableName()
 	{
 		return 'docs_identity';
@@ -31,18 +34,12 @@ class DocsIdentity extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
+
 		return array(
 			array('id_curriculum', 'required'),
 			array('id_curriculum, is_Primary', 'numerical', 'integerOnly'=>true),
 			array('type', 'required'),
-			array('doc_id', 'required'),
 			array('description', 'length', 'max'=>250),
-			array('doc_id','file', 'allowEmpty'=>true,
-			                  'types'=>'pdf, doc, docx, odt',
-			                  'maxSize'=>array(1024 * 2000),
-			                  'message'=>'Solo se admiten archivos PDF, ODT, DOC o DOCX'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, type, description, doc_id, is_Primary', 'safe', 'on'=>'search'),
 		);
 	}

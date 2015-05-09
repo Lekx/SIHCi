@@ -45,7 +45,7 @@ $('.search-form form').submit(function(){
 		'description',
 		'keywords',
 		
-		'state',
+		'status',
 		
 		array(
 			'class'=>'CButtonColumn',

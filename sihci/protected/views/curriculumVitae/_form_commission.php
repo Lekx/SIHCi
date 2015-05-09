@@ -8,22 +8,6 @@
  //     'limit'=>4,
  //  )); 
 ?>
-<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Curriculum_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-</script>
 
 <div class="form">
 
@@ -55,10 +39,25 @@
 </div>
 
 	<div class="row buttons">
-		<input  class="savebutton"  type="submit" onclick="validationFrom()" value="Guardar">
+		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/commission'), 
+				array(
+					'dataType'=>'json',
+             		'type'=>'post',
+             		'success'=>'function(data) 
+             		 {
+                                      
+                         if(data.status=="200")
+                         {
+		                      $(".successdiv").show();
+                         }		                         
+                         else
+                         {
+	                     	  	$(".errordiv").show(); 
+	                     }       
+                  	}'),array('class'=>'savebutton'));   
+		?>
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		
-	<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>

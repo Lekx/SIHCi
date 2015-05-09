@@ -75,8 +75,25 @@ class PatentController extends Controller
 			$model->attributes=$_POST['Patent'];
 			$model->id_curriculum =$id_curriculum;
 
+			if($model->consession_date == null)
+    			$model->consession_date ='00/00/0000';	
+
 		    if($model->save())
-					$this->redirect(array('view','id'=>$model->id));
+     		{
+
+     			$section = "Propiedad Intelectual"; 
+     			$action = "Creación";
+				$details = "Subsección Patentes";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+     			echo CJSON::encode(array('status'=>'200'));
+
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			echo CJSON::encode(array('status'=>'404'));
+                Yii::app()->end();
+     		}
 			
 		}
 
@@ -98,16 +115,35 @@ class PatentController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
+		if($model->consession_date == "30/11/-0001" || $model->consession_date == "00/00/0000"){
+			$model->consession_date = "";
+		}	
+
 		if(isset($_POST['Patent']))
 		{
 			$model->attributes=$_POST['Patent'];
+
+			if($model->consession_date == null)
+    			$model->consession_date ='00/00/0000';	
+    		
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+     		{
+     			$section = "Propiedad Intelectual"; 
+     			$action = "Modificación";
+				$details = "Subsección Patentes. Registro Número: ".$model->id;
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+     			echo CJSON::encode(array('status'=>'200'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			echo CJSON::encode(array('status'=>'404'));
+     			Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**
@@ -118,7 +154,12 @@ class PatentController extends Controller
 	//RP03-Eliminar-datos
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Propiedad Intelectual";  
+		$action = "Eliminación";
+		$details = "Subsección Patentes. Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->participation_type.". Estado de Patente: ".$model->state;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -132,10 +173,7 @@ class PatentController extends Controller
     //RP04-Desplegar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Patent');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

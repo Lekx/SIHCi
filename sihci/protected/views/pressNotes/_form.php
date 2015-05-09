@@ -13,6 +13,9 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
+	'htmlOptions' => array('enctype'=>'multipart/form-data'),
+	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
 	<!-- <p class="note">Fields with <span class="required">*</span> are required.</p> -->
@@ -20,10 +23,8 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->dropDownList($model,'type',
 			array(
-				''=>'', 
 				'Demostraciones'=>'Demostraciones',
 				'Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologi',
 				'Ferias Empresariales'=>'Ferias Empresariales',
@@ -36,16 +37,14 @@
 				'Televisión'=>'Televisión',
 				'Vidos'=>'Vidos'
 			),
-			array('setOnEmpty'=>'true', 'value'=>'null'));		  
+			array('prompt'=>'Tipo de participación'));
 		?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'directed_to'); ?>
 		<?php echo $form->dropDownList($model,'directed_to',
 		    array(
-				''=>'',
 				'Empresarios'=>'Empresarios',
 				'Estudiantes'=>'Estudiantes',
 				'Funcionarios'=>'Funcionarios',
@@ -55,20 +54,20 @@
 				'Sector Público'=>'Sector Público',
 				'Sector Social'=>'Sector Social'
 			),
-		    array('setOnEmpty'=>'true', 'key'=>'null')); 
+		    array('prompt'=>'Dirigido a'));
 		?>
 		<?php echo $form->error($model,'directed_to'); ?>
 	</div>
 
 	<div class="row">
-		<?php
-		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
 		    'language'=> 'es',
 		    'attribute' => 'date',
 		    'htmlOptions' => array(
 		    	    'dateFormat'=>'d/m/Y',
 		    		'size' => '10',         
+		    		'readOnly'=>true,
 		        	'maxlength' => '10', 
 		        	'placeholder'=>"Fecha de la publicación",
 		    ),
@@ -78,17 +77,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>150,'placeholder'=>'Título de la publicacion')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>45,'placeholder'=>'Dependencia responsable')); ?>
+		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>150,'placeholder'=>'Dependencia responsable')); ?>
 		<?php echo $form->error($model,'responsible_agency'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'note',array('size'=>45,'maxlength'=>45,'placeholder'=>'Nota periodistica')); ?>
+		<?php echo $form->textField($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica')); ?>
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 
@@ -99,22 +98,34 @@
 		 ?>
 		<?php echo $form->error($model,'is_national'); ?>
 	</div>
-		
 	
-
 	<div class="row buttons">
-        <input type="submit" onclick='validationFrom()' value="Guardar"> 	
-        <input type='reset' onclick='alert("Está usted seguro de limpiar estos datos")' value="Borrar"> 
-      	
-      	<script>
-			function validationFrom()
-			{
-				alert("Registro realizado con éxito");
-				return false;
-			}	
+	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('pressNotes/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+        					'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                       
+		                        if(data.status=="success")
+		                        {
+		                           	alert("Registro realizado con éxito");
+				                    $("#press-notes-form")[0].reset();
+									window.location.href ="'.Yii::app()->createUrl('pressNotes/admin').'";		                         
+								}		                         
+		                        else
+		                        {
+			                    	alert("Complete los campos con *");   
+			                    }       
+		                  	}',                            
+                        )); 
+        ?>
+		<?php  if($model->isNewRecord) 
+			    	echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">'; ?>	
+       	<?php echo CHtml::link('Cancelar', array('/pressNotes/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	
+	</div>	
 
-		</script>
-	</div>
 	
 <?php $this->endWidget(); ?>
 

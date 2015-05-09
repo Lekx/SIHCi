@@ -3,24 +3,7 @@
 /* @var $model Addresses */
 /* @var $form CActiveForm */
 ?>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Addresses_]').val('');
-			}else{
 
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-
-		 	$('.successdiv').show();
-		 	setTimeout(validationFrom, 3000);
-			return false;
-		}
-</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -32,10 +15,21 @@
 	'enableAjaxValidation'=>true,
 )); ?>
 
+
 	<div class="row">
-		
-		<?php echo $form->textField($model,'country',array( 'title'=>'Paises','size'=>50,'maxlength'=>50, 'placeholder'=>'País')); ?>
-		<?php echo $form->error($model,'country'); ?>
+	<?php $this->widget('ext.CountrySelectorWidget', array(
+
+		'value' => $model->country,
+		'name' => Chtml::activeName($model, 'country'),
+		'id' => Chtml::activeId($model, 'country'),
+		'useCountryCode' => false,
+		'defaultValue' => 'Mexico',
+		'firstEmpty' => true,
+		'firstText' => 'Pais',
+
+		)); ?>
+
+          <?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row">
@@ -85,9 +79,28 @@
 	</div>
 
 	<div class="row buttons">
-		<input class="savebutton" type="submit" onclick="validationFrom()" value="Guardar">
+			<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/addresses'), 
+				array(
+					'dataType'=>'json',
+             		'type'=>'post',
+             		'class'=>'savebutton',
+             		'success'=>'function(data) 
+             		 {
+                                      
+                         if(data.status=="200")
+                         {
+		                     $(".successdiv").show();
+		                    
+                         }		                         
+                         else
+                         {
+	                     	  $(".errordiv").show(); 
+	                     }       
+                  	}',                    
+                ), array('class'=>'savebutton'));  
+		?>
 		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
-		<?php echo CHtml::button('Cancelar',array('/site/index')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 		</div>
 
 <?php $this->endWidget(); ?>

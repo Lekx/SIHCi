@@ -8,8 +8,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tesis', 'url'=>array('index')),
-	array('label'=>'Crear Tesis', 'url'=>array('create')),
+	//array('label'=>'Listar Tesis', 'url'=>array('index')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar</h1>
+<h1>Tesis Dirigidas</h1>
 
 <!-- <?php /* echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); */ ?> -->
 <div class="search-form" style="display:block">
@@ -38,21 +39,17 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'directed-thesis-grid',
 	'dataProvider'=>$model->search(),
-	//'filter'=>$model,
-	//'summaryText'=>"Mostrando {end} de {count}",
+	'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		//'id',
 		//'id_curriculum',
-		'title',
+		array('name'=>'T&iacute;tulo','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
+		array('name'=>'Autor','type'=>'html','id'=>'author','value'=>'CHtml::encode($data->author)'),
 		'conclusion_date',
-		'author',
+		//'author',
 		//'path',
-		//array(
-		//'class'=>'CLinkColumn',
-        //'header'=>'path',
-        //'labelExpression'=>'$data->path',
-        //'urlExpression'=>'$data->direccionArchivos()',
-		//),
 		'grade',
 		'sector',
 		'organization',
@@ -60,7 +57,6 @@ $('.search-form form').submit(function(){
 		'area',
 		'discipline',
 		'subdiscipline',
-		
 		array(
 			'class'=>'CButtonColumn',
 		),

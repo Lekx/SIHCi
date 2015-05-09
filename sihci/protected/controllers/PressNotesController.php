@@ -60,23 +60,42 @@ class PressNotesController extends Controller
 	public function actionCreate()
 	{
 		$model=new PressNotes;
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		$model->id_curriculum = $id_curriculum->id; 
+
+		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['PressNotes']))
 		{
 			$model->attributes=$_POST['PressNotes'];
+			$model->id_curriculum = $id_curriculum->id;
+			  
 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
 	     	
+	     	if($model->date == null)
+    			$model->date ='00/00/0000';		
+	     	
 	     	if($model->save())
-	     	{    
-				$this->redirect(array('view','id'=>$model->id));
-			}			
+			{
+				$section = "Difusión de Prensa"; 
+     			$action = "Creación";
+				$details = "Datos: ".$model->type;
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		    	echo CJSON::encode(array('status'=>'success'));
+		    	Yii::app()->end();
+		    }	
+		    else 
+	    	{
+     			$error = CActiveForm::validate($model);
+                if($error!='[]')
+                   echo $error;
+                Yii::app()->end();
+	        }		
  	
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model));
 	}
 
 	/**
@@ -92,18 +111,32 @@ class PressNotesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
+		if($model->date == "30/11/-0001" || $model->date == "00/00/0000"){
+			$model->date = "";
+		}	
 		if(isset($_POST['PressNotes']))
 		{
 			$model->attributes=$_POST['PressNotes'];
 			if($model->save())
-			{
-				$this->redirect(array('view','id'=>$model->id));
-			}	
+     		{
+     			$section = "Difusión de Prensa";  
+     			$action = "Modificación";
+				$details = "Registro Número: ".$model->id.".";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**
@@ -112,9 +145,14 @@ class PressNotesController extends Controller
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	//DP03-Eliminar registro 
-    public function actionDelete($id)
+  	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Difusión de Prensa";  
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->type." dirigido a: ".$model->directed_to;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -127,10 +165,7 @@ class PressNotesController extends Controller
 	//DP04-Desplegar registro
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PressNotes');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

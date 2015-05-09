@@ -46,22 +46,20 @@ $('.fType').on('change', function(e) {
 	'enableAjaxValidation' => false,
 ));?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model);?>
 
 <div class="recopy">
 	<div class="row">
+	<hr>
 	<?php 
-		echo $form->labelEx($model, 'type');
-		echo $form->dropDownList($model, 'type',array(''=>'','TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
-		                     						array('name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20));
+	
+		echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
+		                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20));
 		echo $form->error($model, 'type');
 	
 	?>
 	</div>
 </div>
-
+<hr>
 
 
 	<div class="row">
@@ -95,7 +93,9 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');?>
+			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
+			<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget();?>

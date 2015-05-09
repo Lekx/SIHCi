@@ -8,15 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tesis', 'url'=>array('index')),
-	array('label'=>'Crear Tesis', 'url'=>array('create')),
-	array('label'=>'Actualizar Tesis', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Tesis', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Estas seguro de eliminar este elemento?')),
-	array('label'=>'Administrar Tesis', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear ', 'url'=>array('create')),
 );
 ?>
 
-<h1>Ver Tesis </h1>
+<h1>Tesis Dirigidas</h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -28,10 +25,10 @@ $this->menu=array(
 		'conclusion_date',
 		'author',
 		array(               
-                  'label'=>'Archivo',
-                  'type'=>'raw',
-                  'value'=>CHtml::link('Ver archivo',Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/directed_thesis/Doc_aprobatorio', array("target"=>"_blank")),
-                ),
+                'label'=>'Archivo',
+                'type'=>'raw',
+                'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->path),array("target"=>"_blank")),
+             ),
 		//'path',
 		'grade',
 		'sector',

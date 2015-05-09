@@ -14,7 +14,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); 
 
 ?>
@@ -34,7 +34,7 @@
 		<?php echo $form->labelEx($model,'year'); ?>
 		<?php echo $form->dropDownList($model,'year', array('promt'=>'Año','1980'=>'1980','1981'=>'1981','1982'=>'1982','1983'=>'1983',
 															'1984'=>'1984','1985'=>'1985','1986'=>'1986','1987'=>'1987',
-															'1988'=>'1988','1989'=>'1989','1990'=>'1990','1991'=>'1992',
+															'1988'=>'1988','1989'=>'1989','1990'=>'1990','1991'=>'1992','1993'=>'1993',
 															'1993'=>'1993','1994'=>'1994','1995'=>'1995','1996'=>'1996',
 															'1997'=>'1997','1998'=>'1998','1999'=>'1999','2000'=>'2000',
 															'2001'=>'2001','2002'=>'2002','2003'=>'2003','2004'=>'2004',
@@ -61,31 +61,28 @@
 	</div>
 
 	<div class="row">
-         <?php 
+         <!-- <?php /*
                 $status = array('Nacional' => 'Nacional','Internacional'=>'Internacional'); 
                 echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
-         <?php echo $form->error($model,'type');?>
+         <?php echo $form->error($model,'type'); */ ?> -->
 	 
 	</div>
 
 	<div class="row">
-		  <?php echo $form->labelEx($model,'pais'); ?>
-	        <?php
-	        $this->widget(
-	            'yiiwheels.widgets.formhelpers.WhCountries',
-	            array(
-	                'name' => 'Congresses[country]',
-	                'id' => 'Congresses_country',
-	                'value' => 'MX',
-	                'useHelperSelectBox' => true,
-	                'pluginOptions' => array(
-	                    'country' => '',
-	                    'language' => 'es_ES',
-	                    'flags' => true
-	                )
-	            )
-	        );
-	        ?>	
+		<?php echo $form->labelEx($model,'country'); ?>
+		<?php
+			$this->widget('ext.CountrySelectorWidget', 
+				array(
+				    'value' => $model->country,
+				    'name' => Chtml::activeName($model, 'country'),
+				    'id' => Chtml::activeId($model, 'country'),
+				    'useCountryCode' => false,
+				    'defaultValue' => 'Mexico',
+				    'firstEmpty' => false,
+			    )
+			);
+		?>
+		<?php echo $form->error($model,'country'); ?>
 	</div>
      
 	<div class="row">
@@ -101,24 +98,42 @@
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
-	<div class="row button">
-   
-        <input type="submit" onClick="validationFrom()" value="Guardar">
-        <input type="button" onClick="cleanUp()" value="Borrar">
-        <input type="button" value="Cancelar">
-	
-		 <script>
-		    function cleanUp()
-		     {
-		        var text;
-		        var result = confirm("¿Esta usted seguro de limpiar estos datos?");
-		        if (result == true) 
-		          $('[type^=text]').val('');
-		        else s
-		        document.getElementById("demo").innerHTML = txt;
-		            }
-        </script>
-	</div>	
+	<div class="row buttons">
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="success")
+		                         {
+				                     alert("Registro realizado con éxito");
+				                     $("#congresses-form")[0].reset();
+   				                     window.location.href ="'.Yii::app()->createUrl('congresses/admin').'";		                         
+
+		                         }		                         
+		                         else
+		                         {
+			                     	alert("Complete los campos con *");   
+			                     }       
+		                  	}',                    
+		                    
+                        )); 
+        ?>
+        <?php  if($model->isNewRecord) 
+			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+		?>
+       	<?php echo CHtml::link('Cancelar', array('/congresses/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+
+		<div class="200">
+		
+		</div>
+		
+		<div class="404">
+		</div>
+		
+	</div>
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->

@@ -66,23 +66,40 @@ class KnowledgeApplicationController extends Controller
 	public function actionCreate()
 	{
 		$model=new KnowledgeApplication;
-
 		// Uncomment the following line if AJAX validation is needed
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		$model->id_curriculum = $id_curriculum->id;   
 		$this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['KnowledgeApplication']))
 		{
 			$model->attributes=$_POST['KnowledgeApplication'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;    
- 			
- 			if($model->save())
-			{	
-				$this->redirect(array('view','id'=>$model->id));
-			}
-				
+			$model->id_curriculum = $id_curriculum->id;  
+
+			if($model->save())
+     		{
+     			$section = "Aplicación del Conocimiento"; 
+     			$action = "Creación";
+				$details = ": ";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
+
+     		//Yii::app()->end();
 		}
-		$this->render('create',array( 'model'=>$model,));
+
+		if(!isset($_POST['ajax']))
+			$this->render('create',array('model'=>$model));
 	}
+
 
 	/**
 	 * Updates a particular model.
@@ -101,17 +118,24 @@ class KnowledgeApplicationController extends Controller
 		if(isset($_POST['KnowledgeApplication']))
 		{
 			$model->attributes=$_POST['KnowledgeApplication'];
-
 			if($model->save())
-			{
-				$this->redirect(array('view','id'=>$model->id));	
-			}	
-
+     		{
+     			$section = "Aplicación del Conocimiento"; 
+     			$action = "Modificación";
+				$details = "Registro Número: ".$model->id.".";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 echo CJSON::encode(array('status'=>'404'));
+     			Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 	}
 
 	/**
@@ -122,7 +146,12 @@ class KnowledgeApplicationController extends Controller
 	//AC03-Eliminar-datos
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Aplicación del Conocimiento"; 
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.".";
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -133,10 +162,7 @@ class KnowledgeApplicationController extends Controller
 	//AC04-Desplagar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('KnowledgeApplication');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

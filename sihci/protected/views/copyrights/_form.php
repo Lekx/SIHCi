@@ -10,9 +10,7 @@
 	'id'=>'copyrights-form',
 	'enableAjaxValidation'=>true,
 	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	)
+	'clientOptions'=>array('validateOnSubmit'=>true)
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -23,8 +21,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'participation_type'); ?>
+	<div class="row">		
 			<?php echo $form->dropDownList($model,'participation_type',
 				array(
 						'Autor'=>'Autor',
@@ -36,14 +33,12 @@
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
+	<div class="row">		
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'application_date'); ?>
 		<?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'model' => $model,
@@ -52,6 +47,7 @@
 			    'htmlOptions' => array(
 			    	    'dateFormat'=>'d/m/Y',
 			    		'size' => '10',         
+			    		'readOnly'=>true,
 			        	'maxlength' => '10', 
 			        	'placeholder'=>"Fecha de solicitud",
 			    ),
@@ -61,28 +57,24 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'step_number'); ?>
 		<?php echo $form->textField($model,'step_number',array('placeholder'=>'Número de tramite')); ?>
 		<?php echo $form->error($model,'step_number'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'resume'); ?>
-		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'beneficiary'); ?>
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>70,'placeholder'=>'Beneficiario')); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'entity'); ?>
 		<?php echo $form->dropDownList($model,'entity',
 				array(
-						'Publica'=>'Publica',
+						'Pública'=>'Pública',
 						'Privada'=>'Privada',
 						'Sector social'=>'Sector social'
 					),
@@ -93,13 +85,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'impact_value'); ?>
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'placeholder'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('copyrights/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('copyrights/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
@@ -110,6 +101,8 @@
 		                         {
 				                     alert("Registro realizado con éxito");
 				                     $("#copyrights-form")[0].reset();
+   				                     window.location.href ="'.Yii::app()->createUrl('copyrights/admin').'";		                         
+
 		                         }		                         
 		                         else
 		                         {
@@ -119,8 +112,10 @@
 		                    
                         )); 
         ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/copyrights/admin')); ?>
+        <?php  if($model->isNewRecord) 
+			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
+		?>
+       	<?php echo CHtml::link('Cancelar', array('/copyrights/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 		<div class="200">
 		

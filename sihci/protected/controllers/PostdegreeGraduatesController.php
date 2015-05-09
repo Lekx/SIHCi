@@ -44,32 +44,46 @@ class PostdegreeGraduatesController extends Controller
 	public function actionCreate()
 	{
 		$model=new PostdegreeGraduates;
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		$model->id_curriculum = $id_curriculum->id; 
+		// Uncomment the following line if AJAX validation is needed
 
 		$this->performAjaxValidation($model);
 
 
 		if(isset($_POST['PostdegreeGraduates']))
 		{
-				$model->attributes=$_POST['PostdegreeGraduates'];
-				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-							
-				if($model->save())
-				{
-					$this->redirect(array('view','id'=>$model->id));
-				}
-					   
+			$model->attributes=$_POST['PostdegreeGraduates'];
+			$model->id_curriculum = $id_curriculum->id;  
+
+			if($model->save())
+     		{
+     			$section = "Graduados de Posgrado"; 
+     			$action = "Creación";
+				$details = "Nombre del Graduado: ".$model->fullname;
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
+		     
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('create',array('model'=>$model));
     }
 
     //GP02-Modificar-datos
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['PostdegreeGraduates']))
@@ -77,21 +91,37 @@ class PostdegreeGraduatesController extends Controller
 			$model->attributes=$_POST['PostdegreeGraduates'];
 
 			if($model->save())
-			{
-			   	$this->redirect(array('view','id'=>$model->id));
-			}
+     		{
+     			$section = "Graduados de Posgrado"; 
+     			$action = "Modificación";
+				$details = "Registro Número: ".$model->id.".";
+     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+     		}	
+     		else 
+     		{
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
+     		}
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(!isset($_POST['ajax']))
+			$this->render('update',array('model'=>$model));
 
 	}
 	
 	//GP03-Eliminar-datos
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+		$section = "Graduados de Posgrado"; 
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->fullname;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
      	if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -100,10 +130,7 @@ class PostdegreeGraduatesController extends Controller
 	//GP04-Listar-datos
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PostdegreeGraduates');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	//GP05-Desplegar-datos GP06-Barra-de-Busqueda

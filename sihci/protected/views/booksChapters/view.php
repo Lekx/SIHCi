@@ -4,25 +4,20 @@
 
 $this->breadcrumbs=array(
 	'Books Chapters'=>array('index'),
-	$model->id,
+	$model->id, 
 );
 
 $this->menu=array(
-	array('label'=>'Listar Capitulo', 'url'=>array('index')),
-	array('label'=>'Crear Capitulo', 'url'=>array('create')),
-	array('label'=>'Actualizar Capitulo', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Capitulo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Estas seguro de eliminar este registro?')),
-	array('label'=>'Administrar Capitulo', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear ', 'url'=>array('create')),
 );
 ?>
 						
- <h1>Ver Capítulos</h1> 
-
+ <h1>Capítulos de libros</h1> 
+<?php $modelAuthor = BooksChaptersAuthors::model()->findAllByAttributes(array('id_books_chapters'=>$model->id));
+	foreach ($modelAuthor as $key => $value){  ?>	
 <?php 
-$Authors = BooksChaptersAuthors::model()->findByAttributes(array('id_books_chapters'=>$model->id));
-$file = Yii::app()->request->hostInfo.'/SIHCI/sihci/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro_'.$model->chapter_title;
-
-$this->widget('zii.widgets.CDetailView', array(
+	 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'id',
@@ -32,41 +27,41 @@ $this->widget('zii.widgets.CDetailView', array(
 		'publishing_year',
 		'publishers',
 		'editorial',
-		'volume',
-		'pages',
-		'citations',
-		'total_of_authors',
+		//'volume',
+		//'pages',
+		//'citations',
+		//'total_of_authors',
 		'area',
 		'discipline',
 		'subdiscipline',
 		//'creation_date',
-		array(
+		//'url_doc',
+		 array(
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo', $file, array("target"=>"_blank")),
-			),	
+			'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->url_doc), array("target"=>"_blank")),
+			),
 		array(
 			'label'=>'Nombre(s)',
 			'name'=>'names',
-			'value'=>$Authors->names,
+			'value'=>$value->names,
 			),
 		array(
 			'label'=>'Apellido Paterno',
 			'name'=>'last_names1',
-			'value'=>$Authors->last_name1,
+			'value'=>$value->last_name1,
 			),
 		array(
 			'label'=>'Apellido Materno',
 			'name'=>'last_names2',
-			'value'=>$Authors->last_name2,
+			'value'=>$value->last_name2,
 			),
 		array(
 			'label'=>'Posición',
 			'name'=>'positions',
-			'value'=>$Authors->position,
-			),
-	
-		//'url_doc',
+			'value'=>$value->position,
+			),  
 	),
 
-)); ?>
+));  ?>
+<?php }?>

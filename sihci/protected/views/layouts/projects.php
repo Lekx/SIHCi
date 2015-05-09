@@ -18,6 +18,15 @@
 
 	}
 
+                Yii::app()->clientScript->registerScript('helpers', '
+                yii = {
+                urls: {
+
+                        cancelProject: ' . CJSON::encode(Yii::app()->createUrl('projects/admin')) . ',
+                       }
+                };
+                ');
+       
 
 	/*
 		$this->beg

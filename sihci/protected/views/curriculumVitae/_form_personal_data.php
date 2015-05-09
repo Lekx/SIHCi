@@ -19,6 +19,7 @@
 
 <?php echo $form->errorSummary($model); ?>
 <?php echo $form->errorSummary($curriculum); ?>
+
 	<div class="row">
 		<?php echo $form->labelEx($curriculum,'status'); ?>
 		<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
@@ -67,6 +68,7 @@
 		    'htmlOptions' => array(
 		    			'size'=>'10',
 		    			'maxlength'=>'10', 
+		    			'readonly'=>true,
 		    			'title'=>'Fecha de Nacimiento',
 		        		'placeholder'=>"Fecha de Nacimiento"),
 				));
@@ -158,16 +160,13 @@
 
 	<div class="row">
 		
-		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		  
 		<?php echo $form->error($model,'photo_url'); ?>
 		<?php 
-
-		echo "<img src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' width='100' height='100'>";
+	
 
 		?>
-		 <div class="infobox">
-                Foto de Peril</p>
-          </div>   
 	</div>
 
 	<div class="row">
@@ -176,16 +175,32 @@
 		<?php echo $form->textField($model,'person_rfc',array('title'=>'RFC','size'=>13,'maxlength'=>13, 'placeholder'=>"RFC")); ?>
 		<?php echo $form->error($model,'person_rfc'); ?>
 
-		 <div class="infobox">
-                RFC
-          </div>
 
 	</div>
 
 	<div class="row buttons">
-		<input class="savebutton" type="submit" value="Guardar">
+		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/personalData'), 
+        				array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="200")
+		                         {
+				                     $(".successdiv").show();
+				               
+		                         }		                         
+		                         else
+		                         {
+			                     	$(".errordiv").show();
+			                     }       
+		                  	}',                    
+		                    
+                      ), array('class'=>'savebutton'));  
+        ?>
 		<input class="cleanbutton" type="button" value="Borrar">
-		<?php echo CHtml::button('Cancelar',array('/site/index', 'id'=>'cancelar')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 

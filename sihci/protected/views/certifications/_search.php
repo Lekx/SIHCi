@@ -7,48 +7,18 @@
 <div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'searchValue',
 	'action'=>Yii::app()->createUrl($this->route),
+	'enableAjaxValidation'=>true,
 	'method'=>'get',
 )); ?>
      
-
 	<div class="row">
-		<?php echo $form->label($model,'folio'); ?>
-		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'reference'); ?>
-		<?php echo $form->textField($model,'reference',array('size'=>30,'maxlength'=>30)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'reference_type'); ?>
-		<?php echo $form->textField($model,'reference_type',array('size'=>15,'maxlength'=>15)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'specialty'); ?>
-		<?php echo $form->textField($model,'specialty',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'validity_date_start'); ?>
-		<?php echo $form->textField($model,'validity_date_start'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'validity_date_end'); ?>
-		<?php echo $form->textField($model,'validity_date_end'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row buttons">
+		
+		<legend>B&uacute;squeda por:</legend>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Folio, Especialidad, Referencia o Tipo de referencia')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
+
 	</div>
 
 <?php $this->endWidget(); ?>

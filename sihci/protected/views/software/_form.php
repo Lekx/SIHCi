@@ -2,6 +2,8 @@
 /* @var $this SoftwareController */
 /* @var $model Software */
 /* @var $form CActiveForm */
+   $cs = Yii::app()->getClientScript();
+   $cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/software/js/script.js');
 ?>
 
 <div class="form">
@@ -14,40 +16,29 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-	'htmlOptions' => array('enctype'=>'multipart/form-data')
+	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
+	'clientOptions'=>array('validateOnSubmit'=>true),
+	
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'country'); ?>
-		<?php
-	        $this->widget(
-	            'yiiwheels.widgets.formhelpers.WhCountries',
-	            array(
-					'name' =>'Software[country]',
-	                'id' => 'Software_country',
-	                'value' => 'Mexico',
-	                'useHelperSelectBox' => true,
-	                'pluginOptions' => array(
-	                    'country' => '',
-	                    'language' => 'es_ES',
-	                    'flags' =>true
-	                )
-	            )
-	        );
-	    ?>
+		<?php $this->widget('ext.CountrySelectorWidget', 
+			array(
+				'value' => $model->country,
+				'name' => Chtml::activeName($model, 'country'),
+				'id' => Chtml::activeId($model, 'country'),
+				'useCountryCode' => false,
+				'firstEmpty' => true,
+				'firstText' => 'País',
+		)); ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'participation_type'); ?>
 		<?php echo $form->dropDownList($model,'participation_type',
 			    array(
 				  		'Inventor'=>'Inventor',
@@ -60,19 +51,16 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'beneficiary'); ?>
 		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>70,'placeholder'=>'Beneficiario')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'entity'); ?>
 		<?php echo $form->dropDownList($model,'entity',
 				 array(
 				 		'Pública'=>'Pública',
@@ -86,31 +74,27 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'manwork_hours'); ?>
 		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas hombre')); ?>
 		<?php echo $form->error($model,'manwork_hours'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'end_date'); ?>
-		<?php
-			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model' => $model,
-			    'language'=> 'es',
-			    'attribute' => 'end_date',
-			    'htmlOptions' => array(
-			    	    'dateFormat'=>'d/m/Y',
-			    		'size' => '10',         
-			        	'maxlength' => '10', 
-			        	'placeholder'=>'Fecha de termino',
-			    ),
-			));
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		    'model' => $model,
+		    'language'=> 'es',
+		    'attribute' => 'end_date',
+		    'htmlOptions' => array(
+		    	    'dateFormat'=>'d/m/Y',
+		    		'size' => '10',         
+		    		'readOnly'=>true,
+		        	'placeholder'=>"Fecha de termino",
+		    ),
+		));
 		?>
 		<?php echo $form->error($model,'end_date'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sector'); ?>
 			<?php echo $form->dropDownList($model,'sector',
 				    array(
 				  	     'Centros privados de investigación'=>'Centros privados de investigación',
@@ -136,7 +120,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'organization'); ?>
 		<?php echo $form->dropDownList($model,'organization',
 					array(
 							'ADMINISTRACION CENTRO COMERCIAL ANDARES SC'=>'ADMINISTRACION CENTRO COMERCIAL ANDARES SC',
@@ -157,7 +140,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'second_level'); ?>
 			<?php echo $form->dropDownList($model,'second_level',
 				        array(
                             'CENTRO DE ESTUDIOS DEL PACIFICO'=>'CENTRO DE ESTUDIOS DEL PACIFICO',
@@ -236,92 +218,62 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'resumen'); ?>
-		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resumen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'objective'); ?>
-		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'placeholder'=>'Objetivo')); ?>
+		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Objetivo')); ?>
 		<?php echo $form->error($model,'objective'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'contribution'); ?>
-		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'placeholder'=>'Contribución')); ?>
+		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Contribución')); ?>
 		<?php echo $form->error($model,'contribution'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'impact_value'); ?>
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'placeholder'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'innovation_trascen'); ?>
-		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'placeholder'=>'Inovación')); ?>
+		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Inovación')); ?>
 		<?php echo $form->error($model,'innovation_trascen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'transfer_mechanism'); ?>
-		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'placeholder'=>'Mecanismo de transferencia')); ?>
+		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Mecanismo de transferencia')); ?>
 		<?php echo $form->error($model,'transfer_mechanism'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'hr_formation'); ?>
-		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'placeholder'=>'Formación de recursos humanos')); ?>
+		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Formación de recursos humanos')); ?>
 		<?php echo $form->error($model,'hr_formation'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'economic_support'); ?>
-		<?php echo $form->dropDownList($model,'economic_support',
-					array(
-						"1"=>"Si",
-						"0"=>"No"
-					),
-					array('prompt'=>'Apoyo económico')
-				); 
-		?>
+		<?php $status = array('1' => 'Si','0'=>'No'); 
+		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separador' => '')); ?>
 		<?php echo $form->error($model,'economic_support'); ?>
+
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'path'); ?>
-		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->FileField($model,'path',array('id'=>'path')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
 
-	<div class="row buttons">
-	 <?php echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('software/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="success")
-		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#software-form")[0].reset();
-		                         }		                         
-		                         else
-		                         {
-			                     	alert("Complete los campos con *");   
-			                     }       
-		                  	}',                    
-		                    
-                        )); 
-        ?>
-		<?php echo CHtml::resetButton($model->isNewRecord ? 'Borrar' : 'Borrar'); ?>
-       	<?php echo CHtml::link('Cancelar',array('/software/admin')); ?>
+	<div class="row buttons">		
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
+		<?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';?>
+       	<?php echo CHtml::link('Cancelar', array('/software/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
+
 
 </div><!-- form -->

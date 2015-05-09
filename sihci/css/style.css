@@ -74,9 +74,7 @@ ol li
 }
 #logohme
 {
-	margin-top: 12px;
-    margin-left: 180px;
-    margin-right: auto;	
+	padding-left: 25px;
     z-index: 999;
 }
 #logocuentas
@@ -99,7 +97,9 @@ cursor: pointer;
     display: block;
     margin-right: auto;	
     margin-bottom: 5px;
-    z-index: 999;
+    z-index: 999
+
+
 
 }
 #logout
@@ -171,8 +171,13 @@ cursor: pointer;
 	margin-top: 10px;
 	margin-right: 16px;
  	float: right;
+ 	font-family: 'Caviar_Dreams' !important;
 }
+.searchbar button 
+{
+	font-family: 'Caviar_Dreams' !important;
 
+}
 /* --------------------------------------- */
 
 .logosection span
@@ -211,6 +216,15 @@ cursor: pointer;
 	width: 100%;
 
 }
+.logoinfo div
+{
+	width: 24%;
+	color: white;
+	text-align: center;
+	display: inline-block;
+	font-family: 'Caviar_Dreams';
+	padding: 2px;
+}
 .logonum
 {
 	background: #798C9D;
@@ -220,13 +234,18 @@ cursor: pointer;
 }
 .logonum h4
 {
-	margin-left: 25px;
-	margin-right: 25px;
-	margin-top: 10px;
+	width: 22%;
+}
+.logonum h4
+{
+	margin-left: 10px;
 	color: white;
 	display: inline-block;
 	font-family: 'Caviar_Dreams';
-	font-size: 30px;
+	font-size: 27px;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
 }
 .logsection
 {
@@ -260,9 +279,10 @@ cursor: pointer;
 .searchbar
 {
 	width: 100%;
-	height: 100px;
+	height: 75px;
 	background-color: #1EB9C0;
 	float: left;
+	position: relative;
 }
 .searchbar #menuimg
 {
@@ -275,11 +295,8 @@ cursor: pointer;
 }
 .searchbar input[type="text"]
 {
-	height: 50px;
-	width: 70%;
-	margin-left: 10px;
-	margin-top: 25px;
-	margin-bottom: 25px;
+	height: 35px;
+	width: 75%;
 	background-color: #80DCE0;
 	display: inline-block;
 	color: white;
@@ -287,11 +304,16 @@ cursor: pointer;
 }
 #search
 {
-	height: 50px;
-	width: 10%;
-	margin-right: 30px;
-	margin-top: 5px;
+	height: 35px;
+	width: 35px;
 	background: transparent;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 12px;
+}
+.allsearch
+{
+	padding-top: 10px;
 }
 .searchbar::-webkit-input-placeholder { /* WebKit browsers */
     color:    #ffffff;
@@ -350,22 +372,37 @@ cursor: pointer;
 {
 
 	background-color: #103251;
-	width: 25%;
 	height: 50px;
 	color: #ffffff;
 	display: inline-block;
 	text-align: center;
 
 
+
+}
+.carruselinfo div
+{
+	width: 33.333333%;
 }
 .carruselinfo a
 {
 	color: #ffffff !important;
+	text-decoration: none;
+
+}
+.carruselinfo a:hover
+{
+
+	text-decoration: none;
+
+}
+.carruselinfo span
+{
+	padding-top: 4px;
 }
 .carruselinfo #two
 {
 	background-color: #1EB9C0;
-	width: 25%;
 	height: 50px;
 	color: #ffffff;
 	display: inline-block;
@@ -374,11 +411,11 @@ cursor: pointer;
 #two a:hover
 {
 	color: #103251 !important;
+	text-decoration: none;
 }
 .carruselinfo #tree
 {
 	background-color: #103251;
-	width: 50%;
 	height: 50px;
 	color: #ffffff;
 	float: right;
@@ -388,6 +425,7 @@ cursor: pointer;
 {
 	display: inline-block;
 	margin-top: 10px;
+	text-decoration: none;
 	font-size: 15px;
 }
 
@@ -404,6 +442,17 @@ cursor: pointer;
 .content .title
 {
 	margin-top: 60px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.content hr
+{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 .main-content i
 {
@@ -412,6 +461,10 @@ cursor: pointer;
 .content .subtitle
 {
 	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 65%;
 }
 .content1
 {
@@ -434,13 +487,13 @@ cursor: pointer;
 	margin-bottom: 40px;
 	display: inline-block;
 	width: 25%;
-	height: auto;
+	height:100px;
 }
 .content2 div
 {
 	margin-bottom: 70px;
 	width: 25%;
-	height: auto;
+	height: 100px;
 	margin-left: auto;
 	margin-right: 5%;
 	display: inline-block;
@@ -464,7 +517,7 @@ cursor: pointer;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 15px;
+	margin-top: 5px;
 }
 #contentimg1
 {
@@ -476,17 +529,22 @@ cursor: pointer;
 {
 
 	margin-top: 50px;
-	margin-left: 50px;
 	color: white;
+	text-align: center;
 
 
 }
 .contentboxs #box1 #content
 {
-	width: 575px;
-	margin-left: 30px;
+	
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+    padding-right: 50px;
+    padding-left: 50px;
 	color: #084A64;
 	text-align: justify;
+ 	font-family: 'Caviar_Dreams_Bold';
 
 }
 .contentboxs #box2
@@ -505,9 +563,11 @@ cursor: pointer;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: auto;
-	width: 235px;
+	padding-left: 50px;
+	padding-right:50px;
 	color: white;
-	font-family: 'Caviar_Dreams'
+	font-family: 'Caviar_Dreams';
+	text-align:justify;
 
 }
 .contentboxs #box2 span
@@ -517,6 +577,15 @@ cursor: pointer;
 	font-family: 'Caviar_Dreams';
 
 }
+..contentboxs #box2 p
+{
+	margin-bottom: 10px;
+	text-align: center;
+}
+.contentboxs #box2  h4
+{
+	text-align: center;
+}
 .contentboxs #box3 img
 {
 
@@ -525,7 +594,6 @@ cursor: pointer;
 	height: 175px;
 
 }
-
 .contentboxs #box4
 {
 
@@ -542,7 +610,7 @@ cursor: pointer;
 	margin-left: 120px;
 
 }
-.contentboxs #box4 h6 { color: white !important; text-align: center;}
+.contentboxs #box4 h5 { color: white !important; text-align: center; padding-left: 50px; padding-right: 50px;}
 .contentboxs #box6
 {
 
@@ -568,7 +636,8 @@ cursor: pointer;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: auto;
-	width: 235px;
+	padding-right: 50px;
+	padding-left: 50px;
 	color: white ;
 	text-align: center;
 	font-family: 'Caviar_Dreams';
@@ -604,7 +673,7 @@ cursor: pointer;
 	margin-top: 25px;
 	margin-left: 110px;
 }
-.contentboxs2 h6 { color: white !important; text-align: center;}
+.contentboxs2 h5 { color: white !important; text-align: center; padding-left: 50px; padding-right: 50px;}
 .contentboxs2 #box2
 {
 	background-color: #798C9D;
@@ -620,7 +689,8 @@ cursor: pointer;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: auto;
-	width: 235px;
+    padding-right: 50px;
+    padding-left: 50px;
 	color: white ;
 	text-align: center;
 
@@ -650,18 +720,23 @@ cursor: pointer;
 {
 
 	margin-top: 50px;
- 	margin-left:  50px;
+	text-align: center;
 	color: white;
 
 }
 .contentboxs2 #box4 #content
 {
-	width: 575px;
-	margin-left: 30px;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 	color: #084A64;
 	text-align: justify;
+	font-family: 'Caviar_Dreams_Bold';
 
 }
+.contentboxs2 #box4  h3 {color:  white; text-align: center;}
 .contenttwo
 {
 	background-color: #ffffff;
@@ -686,43 +761,55 @@ cursor: pointer;
 .contenttwo h3{ text-align: left;}
 .contenttwo #title
 {
-	width: 510px;
-	margin-top: 115px;
-	margin-left: 45px;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
 	margin-right: auto;
-	float: left;
-	text-align: justify;
-	display: inline-block;
+	text-align: center;
+	padding-left: 290px;
+	display: block;
 }
-.contenttwo #imagetitle
+.contenttwo img
 {
-	width: 70px;
-	margin-top: 115px;
-	margin-left: 45px;
-	float: left;
+	margin-bottom: 10px;
 
 }
 .contenttwo i
 {
 	color: #0A3250;
 }
-
+.conteninfo h3
+{
+	text-align: center;
+}
 .contenttwo #contentbody
 {
 	width: 100%;
 	float: left;
 	margin-left: 160px;
 	margin-bottom: 115px;
+	padding-right: 30px;
+	margin-top: 10px;
+	border-right: 1px solid #00B9C0;
+}
+#contentbody li
+{
+  margin-left: 20px;
 }
 .contenttwo .slidebar
 {
-	width: 200px;
-	margin-top: -150px;
+	width: 300px;
+	margin-top: 0px;
 	margin-left: 10px;
-	margin-right: 45px;
+	margin-right: 100px;
+	word-spacing: -2px;
 	float: right;
 
 }
+.slidebar h5{ text-align: center;}
+.slidebar a{ text-align: justify;}
+.slidebar a:hover{ text-decoration: none;}
 #logofot
 {
 	z-index: 900;
@@ -732,6 +819,7 @@ cursor: pointer;
 {
 	width: 100%;
 	display: inline-block;
+	position: relative;
 
 }
 .loginfot
@@ -761,12 +849,15 @@ cursor: pointer;
 .copyrigths
 {
 
-	background: #00B9C0;
+	background: #02243A;
 	border: 0;
 	height: 100px;
-	width: 50%;
+	width: 100%;
 	display: inline-block;
-	float: left;
+	text-align: center;
+	color: white;
+	padding-top: 10px;
+	
 
 }
 .copyrigths #copy
@@ -778,12 +869,12 @@ cursor: pointer;
 }
 .copyrigths a
 {
-	color: black !important;
+	color: white !important;
 	font-family: 'Caviar_Dreams_Bold';
 }
 .copyrigths a:hover
 {
-	color: black !important;
+	color: white !important;
 	font-family: 'Caviar_Dreams_Bold';
 }
 
@@ -799,6 +890,7 @@ cursor: pointer;
 	height: auto;
 	width: 100%;
 	float: left;
+	position: relative;
 
 }
 .menu span, a, a:hover
@@ -885,15 +977,13 @@ ul.cbp-hsmenu
 #show_hidemenu
 {
 
-   	margin-left: 25px;
-   	margin-right: 10px;
-   	margin-top: 30px;
-   	margin-bottom: 25px;
-   	width: 40px;
-   	height: 50px;
+   	width: 35px;
+   	height: 35px;
    	display: inline-block;
    	font-family: 'Caviar_Dreams';
    	background-color: transparent;
+   	vertical-align: top;
+   	margin-right: 12px;
 
 }
 
@@ -901,15 +991,174 @@ ul.cbp-hsmenu
 	font-weight:bold !important;
 	color:#00F6FF !important;
 }
-
-
-
-
-
 .menu a:hover{
+
 	padding-left:5px;
 	border-left:2px solid white !important;
 	text-decoration:none !important;
 	color:white !important;
 	
 }
+.menu .up-btn:hover
+{
+	border-left:0px !important;
+}
+.iconscontent 
+{
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  height: auto;
+  width: 80%;
+  padding-top: 70px;
+}
+.iconscontent2
+{
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  height: auto;
+  width: 80%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.iconscontent div  ,.iconscontent2 div
+{ 
+
+	width: 33%;
+	height: 100%;
+	display:  inline-block;
+	vertical-align: top;
+
+}
+.iconscontent div img ,.iconscontent2 div img
+{
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+
+}
+.iconscontent div h5 , .iconscontent2 div h5
+{
+   text-align: center;
+   padding: 10px;
+}
+.up-btn
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: none repeat scroll 0% 0% rgba(61, 201, 179, 0.5);
+	display: block;
+	margin: 0px auto;
+	color: #FFF !important;
+	font-size: 18px;
+	line-height: 46px;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: -25px;
+    z-index: 999;
+}
+.up-btn:hover
+{
+	border-left:2px solid black !important;
+}
+.up-btn i
+{
+	/*padding-top: 12px;*/
+}
+.maininfohc
+{
+	width: 900px;
+	display: inline-block;
+	margin-left: 80px;
+	margin-right: 0px;
+	margin-bottom: 100px;
+}
+.titleHCG ,.titleHCG h3 ,.titleHCG hr
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.titleHCG { margin-top: 100px;}
+.descriptionhc
+{
+	text-align: justify;
+	border-right: 1px solid #1EB9C0;
+	padding-right: 40px;
+}
+.infoslidebar
+{
+	margin-top: 250px;
+	text-align: justify;
+	word-spacing: -1px;
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 40px;
+}
+.searchbarconteiner
+{
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-left: 60px;
+
+
+}
+
+/* First Log in*/
+
+.selecttype
+{
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+ 	background: rgba(40, 50, 90, .70);
+ 	z-index: 900;
+
+}
+.typecontent
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	width: 800px;
+	height: 525px;
+	font-family: 'Caviar_Dreams';
+	z-index: 999;
+	
+}
+.typeicons h3 , .typeicons h4
+{
+	color: white;
+	text-align: center;
+}
+.typeicons .type1
+{	
+  margin-top: 50px;
+  padding-left: 200px;
+  display: inline-block;
+  text-align: center;
+
+}
+.typeicons .type2
+{
+  margin-top: 50px;
+  display: inline-block;
+  padding-left: 90px;
+  text-align: center;
+}
+
+
+

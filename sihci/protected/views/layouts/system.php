@@ -44,81 +44,117 @@
                             $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
+                                    trigger: 'click',
                                 });
 
                             });
         </script>
     </head>
     <body>
+    <?php
+
+                if(Yii::app()->user->type == 'moral')
+                        $infoUser = array("label"=>"Moral","icon"=>"PerfilEmpresa","cuentaicon"=>"CuentaEmpresa","controller"=>"sponsors/sponsorsInfo","MenuEmpresa"=>"Perfil Empresa", "proyectos"=>"Proyectos","Evaluacion"=>"Evaluación");
+                else if(Yii::app()->user->type == 'fisico')
+                         $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","cuentaicon"=>"Pcuenta","controller"=>"curriculumVitae/personalData","MenuEmpresa"=>"CV-HC","proyectos"=>"Proyectos","Evaluacion"=>"Evaluación CV");
+                else
+                        $infoUser = array("label"=>"Administrador","icon"=>"admin_icon","controller"=>"admin/users","MenuEmpresa"=>"Cuenta");
+    ?>
         <div class="main">
             <div class="sysheader">
                 <div class="headerconteiner1">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHme.png alt="home">', array('site/index'));?>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/Pcuenta.png alt="home">', array('site/index'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['cuentaicon'].'.png alt="home">', array('account/infoAccount'));?>
                     <span>Cuenta</span>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCV-HC.png alt="home">', array('site/index'));?>
-                    <span>CV-HC</span>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['icon'].'.png alt="home">', array($infoUser['controller']) );?>
+                    <span><?php echo $infoUser['MenuEmpresa']; ?></span>
                 </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('site/index'));?>
-                    <span>Evalucación CV</span>
+                <span><?php echo $infoUser['Evaluacion']; ?></span>
                 </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array('site/index'));?>
-                    <span>Protocolos</span>
+                   <span><?php echo $infoUser['proyectos']; ?></span>
                 </div>
                 <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' >";  ?></div> 
                 <div class="headerconteiner2"></div>
                 <div class="headerconteiner3">
-                    <span> Cuenta / Datos de Cuenta</span>
+                    <span> Cuenta / Datos de Cuenta </span>
                 </div>
                 <div class="headerconteiner4">
                     <h4>Ménu </h4>
                 </div>
                 <div class="headerconteiner5">
                     <h4> <?php echo Yii::app()->user->fullname; ?></h4>
-                    <h5><?php echo Yii::app()->user->id_roles; ?> </h5>
+                    <?php 
+                    echo "<h5>".$infoUser['label']."</h5>";
+                    ?>
+
                 </div>
             </div>
             <div class="syscontent">
                 <div class="sysmenu">
-                    <ul class="cvmenuitems">
-                        <li><?php echo CHtml::link('Datos Personales',array('/curriculumVitae/personalData')); ?><hr></li>
-                        <li><?php echo CHtml::link('Documentos Oficiales',array('/curriculumVitae/docsIdentity')); ?><hr></li>
-                        <li><?php echo CHtml::link('Datos de Direccion Actual',array('/curriculumVitae/addresses')); ?><hr></li>
-                        <li><?php echo CHtml::link('Datos Laborales',array('/curriculumVitae/jobs')); ?><hr></li>
-                        <li><?php echo CHtml::link('Líneas de Investigación',array('/curriculumVitae/researchAreas')); ?><hr></li>
-                        <li><?php echo CHtml::link('Datos de Contacto',array('/curriculumVitae/phones')); ?><hr></li>
-                        <li><?php echo CHtml::link('Formacion Académica',array('/curriculumVitae/grades')); ?><hr></li>
-                        <li><?php echo CHtml::link('Nombramientos',array('/curriculumVitae/commission')); ?></li>
-                    </ul>
+                <ul class="cvmenuitems">
+                   <?php
+        $this->beginWidget('zii.widgets.CPortlet', array(
+            'title'=>'Operations',
+        ));
+        $this->widget('zii.widgets.CMenu', array(
+            'items'=>$this->menu,
+            'htmlOptions'=>array('class'=>'operations'),
+        ));
+        $this->endWidget();
+    ?>
+    </ul>
                 </div>
                 <div class="sysmaincontent">
                     <div class="syscont">
-                        <div class="cvtitle">
-                            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
-                            <h1>Curriculum vitae electronico</h1>
-                            <hr>
-                        </div>
                         <div class="cvforms">
                             <?php echo $content; ?>
                         </div>
                     </div>
-                </div>
+       
+
             </div>
         </div>
         <div class="successdiv">
-            
+        <div class="backcontainer">
+                <div class="maincontainer">
+                    <div class="successh2">
+                        <h2>Registro con Extio</h2>
+                        <hr>
+                        <div class="remainder">
+                            <span>El registro a sido realizado con extio.</span>
+                        </div>
+                        <button class="backbut"><h3>Regresar</h3></button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="errordiv">
             <div class="backcontainer">
                 <div class="maincontainer">
                     <div class="errorh2">
                         <h2>¡Ocurio un Error!</h2>
+                        <hr>
+                        <div class="remainder">
+                            <span>Corrija el error y favor de intentar de nuevo.</span>
+                        </div>
+                        <button class="errorbut"><h3>Volver a intentar</h3></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="abortdiv">
+            <div class="backcontainer">
+                <div class="maincontainer">
+                    <div class="errorh2">
+                        <h2>¿Seguro que quieres cancelar?</h2>
                         <hr>
                         <div class="remainder">
                             <span>Mensaje de lo que sucedió, favor de intentar de nuevo.</span>

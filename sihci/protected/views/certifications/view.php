@@ -8,15 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Certificaciones', 'url'=>array('index')),
-	array('label'=>'Crear Certificaciones', 'url'=>array('create')),
-	array('label'=>'Actualizar Certificaciones', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Certificaciones', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Seguro que quieres borrar este elemento?')),
-	array('label'=>'Administrar Certificaciones', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>Ver Certificaciones </h1>
+<h1>Certificaciones por Concejos  Médicos </h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
