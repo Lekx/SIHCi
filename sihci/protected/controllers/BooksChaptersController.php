@@ -6,7 +6,7 @@ class BooksChaptersController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters
@@ -178,7 +178,7 @@ class BooksChaptersController extends Controller
 				
            		if ($model->url_doc != ''/*!empty(CUploadedFile::getInstanceByName('BooksChapters[url_doc]'))*/)
                 {
-                    //if(!empty($actual_url))
+                    if(!empty($actual_url))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_url);
                     $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/';

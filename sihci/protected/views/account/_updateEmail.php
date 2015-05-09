@@ -42,6 +42,7 @@ $this->menu = array(
 	<div>
 		<input placeholder="Repetir Nuevo Correo" type="text" name="Account[email22]" id="Account_email22">
 	</div>
+	<hr>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton("Guardar", array('class'=>'savebutton') ); ?>

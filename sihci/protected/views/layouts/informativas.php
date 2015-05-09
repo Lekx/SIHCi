@@ -56,6 +56,7 @@
                             $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
+                                    trigger:  'click', 
                                 });
 
                             });
@@ -349,6 +350,7 @@
                                 }
                                 ?>
                             </div>
+                
                             <div class="singin">
                             <?php
                                if (Yii::app()->user->isGuest){
@@ -369,7 +371,6 @@
                                
                              ?>
                              </div>
-    
                             <div class="searchbar">
                                 <div class="searchbarconteiner">
                                     <button type="button" id="show_hidemenu">
