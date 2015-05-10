@@ -60,8 +60,8 @@ class SponsorsContact extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_sponsor' => 'Id Sponsor',
-			'type' => 'Type',
-			'value' => 'Value',
+			'type' => 'Tipo',
+			'value' => 'Valor',
 		);
 	}
 

@@ -39,8 +39,6 @@ class DocsIdentity extends CActiveRecord
 			array('id_curriculum', 'required'),
 			array('id_curriculum, is_Primary', 'numerical', 'integerOnly'=>true),
 			array('type', 'required'),
-		// //	array('doc_id', 'required'),
-		// 	array('doc_id', 'length', 'max'=>50),
 			array('description', 'length', 'max'=>250),
 
 			// array('doc_id','file', 'allowEmpty'=>true,

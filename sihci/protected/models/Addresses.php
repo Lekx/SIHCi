@@ -74,10 +74,10 @@ class Addresses extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'country' => 'País',
-			'zip_code' => 'Código Postal',
+			'country' => 'Pais',
+			'zip_code' => 'Codigo Postal',
 			'state' => 'Estado',
-			'delegation' => 'Delegación',
+			'delegation' => 'Delegacion',
 			'city' => 'Municipio',
 			'town' => 'Ciudad',
 			'colony' => 'Colonia',

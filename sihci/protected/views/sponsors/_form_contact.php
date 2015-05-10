@@ -51,6 +51,7 @@ $('.fType').on('change', function(e) {
 	<div class="row">
 	<hr>
 	<?php 
+	
 		echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
 		                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20 ,'title'=>'Tipo de Contacto'));
 		echo $form->error($model, 'type');
