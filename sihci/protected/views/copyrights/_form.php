@@ -25,7 +25,7 @@
 						'Autor'=>'Autor',
 						'Coautor'=>'Coautor'
 					),
-					array('prompt'=>'Tipo de participación')
+					array('prompt'=>'Seleccionar participación')
 				); 
 		?>
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -76,7 +76,7 @@
 						'Privada'=>'Privada',
 						'Sector social'=>'Sector social'
 					),
-					array('prompt'=>'Entidad')
+					array('prompt'=>'Seleccionar entidad')
 				); 
 		?>
 		<?php echo $form->error($model,'entity'); ?>

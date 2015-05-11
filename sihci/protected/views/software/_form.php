@@ -33,7 +33,7 @@
 				'id' => Chtml::activeId($model, 'country'),
 				'useCountryCode' => false,
 				'firstEmpty' => true,
-				'firstText' => 'País',
+    			'firstText' => 'Seleccionar país',
 		)); ?>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
@@ -44,7 +44,7 @@
 				  		'Inventor'=>'Inventor',
 				  		'Co-inventor'=>'Co-inventor'
 			    ),
-			    array('prompt'=>'Tipo de participación')
+			    array('prompt'=>'Seleccionar participación')
 			);
 	    ?>		
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -56,7 +56,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>70,'placeholder'=>'Beneficiario')); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
@@ -67,7 +67,7 @@
 				 		'Privada'=>'Privada',
 				 		'Sector social'=>'Sector social'
 				 ),
-				 array('prompt'=>'Entidad')
+				 array('prompt'=>'Seleccionar entidad')
 			);
 		 ?>
 		<?php echo $form->error($model,'entity'); ?>
@@ -133,7 +133,7 @@
 							'SIXSIGMA NETWORKS MEXICO'=>'SIXSIGMA NETWORKS MEXICO',
 							'TL EFFICIENCY SA DE CV'=>'TL EFFICIENCY SA DE CV'
 					),
-					array('prompt'=>'Organización')
+					array('prompt'=>'Seleccionar organización')
 				);
 		?>
 		<?php echo $form->error($model,'organization'); ?>
@@ -211,51 +211,51 @@
                             'SISTEMA DE UNIVERSIDAD VIRTUAL'=>'SISTEMA DE UNIVERSIDAD VIRTUAL',
                             'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'=>'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'
 			            ),
-						array('prompt'=>'Segundo nivel')
+						array('prompt'=>' Seleccionar segundo nivel')
 			    ); 
 	    ?>
 		<?php echo $form->error($model,'second_level'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>10000,'placeholder'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resumen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Objetivo')); ?>
+		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Objetivo')); ?>
 		<?php echo $form->error($model,'objective'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Contribución')); ?>
+		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Contribución')); ?>
 		<?php echo $form->error($model,'contribution'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Valor de impacto')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Inovación')); ?>
+		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Inovación')); ?>
 		<?php echo $form->error($model,'innovation_trascen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Mecanismo de transferencia')); ?>
+		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Mecanismo de transferencia')); ?>
 		<?php echo $form->error($model,'transfer_mechanism'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Formación de recursos humanos')); ?>
+		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Formación de recursos humanos')); ?>
 		<?php echo $form->error($model,'hr_formation'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'economic_support'); ?>
 		<?php $status = array('1' => 'Si','0'=>'No'); 
-		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separador' => '')); ?>
+		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'economic_support'); ?>
 
 	</div>
