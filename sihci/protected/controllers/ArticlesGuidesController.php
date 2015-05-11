@@ -70,8 +70,7 @@ class ArticlesGuidesController extends Controller
 		$model->id_resume = $id_resume->id; 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
-		print_r($model->id_resume);
-
+		
 		if(isset($_POST['ArticlesGuides']))
 		{
 			$model->attributes=$_POST['ArticlesGuides'];
@@ -83,7 +82,7 @@ class ArticlesGuidesController extends Controller
             {
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticulesAndGuides/';
 
-               	if($model->url_document != '')
+               	if (!empty(CUploadedFile::getInstanceByName('ArticlesGuides[url_document]')))
                	{
 	                if(!is_dir($path))
 	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticulesAndGuides/', 0777, true);

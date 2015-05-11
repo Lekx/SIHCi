@@ -44,6 +44,7 @@ $('.search-form form').submit(function(){
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(	
 		
+		array('name' =>'Título', 'type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
 		array('name' =>'Edición', 'type'=>'html','id'=>'edicion','value'=>'CHtml::encode($data->edicion)'),
 		array('name' => 'Editorial','type'=>'html','id'=>'editorial','value'=>'CHtml::encode($data->editorial)'),
 		array('name' => 'ISBN','type'=>'html','id'=>'isbn','value'=>'CHtml::encode($data->isbn)'),
@@ -56,6 +57,7 @@ $('.search-form form').submit(function(){
 		'edicion',
 		'editorial',
 		'isbn',
+		'title',
 		'volumen',
 		'volumen_no',
 		'article_type',

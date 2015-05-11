@@ -19,6 +19,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'isbn',
+		'title',
 		'editorial',
 		'edicion',
 		'publishing_year',

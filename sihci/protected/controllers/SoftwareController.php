@@ -140,6 +140,7 @@ class SoftwareController extends Controller
 			if($model->end_date == null)
     			$model->end_date ='00/00/0000';		
 
+    		
 				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
 							
@@ -154,15 +155,12 @@ class SoftwareController extends Controller
 
 						    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
 						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
-							echo ("La Cambie".$model->path);    
+							
 			    }
 				
 				else
-				{				
-									   
-				   $model->path=$oldPath;    			 			   		
-				    
-
+				{						   
+				   $model->path=$oldPath;  
 				}	
 
 					if($model->save())
