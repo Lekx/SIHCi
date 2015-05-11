@@ -17,6 +17,7 @@
 
 
 	<div class="row">
+	 <span class="plain-select">
 	<?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $model->country,
@@ -30,6 +31,7 @@
 		)); ?>
 
           <?php echo $form->error($model,'country'); ?>
+          </span>
 	</div>
 
 	<div class="row">

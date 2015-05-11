@@ -26,6 +26,7 @@
             $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
             $cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
             $cs->registerScriptFile($baseUrl . '/js/reCopy.js');
+            $cs->registerScriptFile($baseUrl . '/js/file.js');
             $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
         ?>
          <?php

@@ -29,25 +29,25 @@
 	
 	<?php echo $form->error($model,'doc_id'); ?>
 	<div class="row">
-	<h5>Acta de Nacimiento</h5>
+	<h5>Acta de Nacimiento:</h5>
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta'));?>
 		
 	</div>
 	
 	<div class="row">
-		<h5>CURP</h5>
+		<h5>CURP:</h5>
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'CURP'));?>
 		
 	</div>
 
 	<div class="row">
-		<h5>IFE</h5>
+		<h5>IFE:</h5>
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'IFE'));?>
 
 	</div>
 
 	<div class="row">
-		<h5>Pasaporte</h5>
+		<h5>Pasaporte:</h5>
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte'));?>
 	
 	</div>
