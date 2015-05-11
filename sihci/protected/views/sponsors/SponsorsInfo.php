@@ -2,8 +2,8 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 
-$this->breadcrumbs=array(
-	'Sponsors'=>array('index'),
+$this->breadcrumbs = array(
+	'Sponsors' => array('index'),
 	'Create',
 );
 
@@ -30,4 +30,4 @@ $this->menu = array(
 
 <h4>Datos Empresa:</h4>
 
-<?php $this->renderPartial('_form', array('model'=>$model,'modelAddresses'=>$modelAddresses,'modelPersons'=>$modelPersons)); ?>
+<?php $this->renderPartial('_form', array('model' => $model, 'modelAddresses' => $modelAddresses, 'modelPersons' => $modelPersons));?>

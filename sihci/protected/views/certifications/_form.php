@@ -23,25 +23,25 @@
 
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'folio'); ?>
+		
 		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Folio')); ?>
 		<?php echo $form->error($model,'folio'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Referencia'); ?>
+		
 		<?php echo $form->textField($model,'reference',array('size'=>30,'maxlength'=>30,'placeholder'=>'Referencia')); ?>
 		<?php echo $form->error($model,'reference'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Tipo de Referencia'); ?>
+		
 		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'));?>
 		<?php echo $form->error($model,'reference_type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Especialidad'); ?>
+		
 		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
          'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
@@ -67,7 +67,7 @@
 	</div>
 
 	<div class="row">
-		 <?php echo $form->labelEx($model,'validity_date_start'); ?>
+		 
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
@@ -85,7 +85,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'validity_date_end'); ?>
+		
 		<?php 
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,

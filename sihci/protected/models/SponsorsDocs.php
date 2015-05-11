@@ -58,8 +58,8 @@ class SponsorsDocs extends CActiveRecord {
 		return array(
 			'id' => 'ID',
 			'id_sponsor' => 'Id Sponsor',
-			'file_name' => 'File Name',
-			'path' => 'Path',
+			'file_name' => 'Nombre del archivo',
+			'path' => 'Ruta',
 		);
 	}
 
