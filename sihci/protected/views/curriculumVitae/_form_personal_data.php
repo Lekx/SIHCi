@@ -58,16 +58,16 @@
 		    'language'=> 'es',
 		    'attribute' => 'birth_date',
 		    'model' => $model,
-		   // 'flat'=>false,
+		   	//'flat'=>true,
 		     'options' => array(
 			     		'changeMonth'=>true, //cambiar por Mes
 			     		'changeYear'=>true, //cambiar por Año
-			    			'maxDate' => 'now-5475',
+			    		'maxDate' => 'now-5475',
+				        'yearRange'=>'1930:now',
+				       
 
 		     	),
 		    'htmlOptions' => array(
-		    			'size'=>'10',
-		    			'maxlength'=>'10', 
 		    			'readonly'=>true,
 		    			'title'=>'Fecha de Nacimiento',
 		        		'placeholder'=>"Fecha de Nacimiento"),

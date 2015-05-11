@@ -22,7 +22,7 @@
 				<div class="inner-addon right-addon">
 					 <i class="glyphicon glyphicon-envelope"></i>
 					<?php echo $form->textField($model,'email', array('placeholder'=>"Email..",'title'=>'Favor de ingresar su correo de registro.')); ?>
-					<!-- <?php echo $form->error($model,'email'); ?> -->
+					<?php echo $form->error($model,'email'); ?>
 
 				</div>
 			</div>

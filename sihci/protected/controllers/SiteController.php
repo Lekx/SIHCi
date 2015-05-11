@@ -134,7 +134,6 @@ class SiteController extends Controller {
 
 		$model = new RecoveryPassword;
 		$msg = '';
-		$conexion= Yii::app()->db;
 		$random = rand(1000, 5000);
 		$date = date("d/m/y H:i:s");
 
@@ -146,31 +145,29 @@ class SiteController extends Controller {
 
 			if ($model->validate() && $is_active != null) {
 				
-				$llave = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
-				$insertar = "UPDATE users SET act_react_key='$llave' where";
-				$insertar .= " email='" . $model->email . "'";
-				$llaveBD = $conexion->createCommand($insertar)->query();
+				$key = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
+				$is_active->act_react_key = $key;
+				$is_active->save();
+				echo "se guardo";
 				$email = new SendEmail;
 				$subject = "Has solicitado recuperar tu password en";
 				$subject .= Yii::app()->name;
-				$message = "<a href='http://localhost/sihci/index.php/site/changePassword?key=" . $llave . ">";
+				$message = "<a href='http://localhost/sihci/index.php/site/changePassword?key=" . $key . ">";
 				$message .= "Haz click en ésta liga para cambiar tu contraseña";
 				$message .= "</a><br /><br />";
 				// $message .= "<a href='http://localhost/'>Regresar a la web</a>";
-				$email->Send_Email
-				(
-					array(Yii::app()->params['emailAdmin'], Yii::app()->name),
-					array($model->email, ''),
-					$subject,
-					$message
-				);
+				// $email->Send_Email
+				// (
+				// 	array(Yii::app()->params['emailAdmin'], Yii::app()->name),
+				// 	array($model->email, ''),
+				// 	$subject,
+				// 	$message
+				// );
 
 				$model->email = "";
 				echo '200';
 				
-			}
-			else
-			{
+			}else{
 
 				echo '404';
 
@@ -189,58 +186,22 @@ class SiteController extends Controller {
 
 		$model = new ChangePassword;
 		$msg = '';
-
-		$conexion = Yii::app()->db;
-
-		$consulta = "SELECT act_react_key from users WHERE ";
-		$consulta .= "act_react_key='" . $key . "'";
-
-		$resultado = $conexion->createCommand($consulta);
-		$filas = $resultado->query();
-		$existe = false;
-
-		foreach ($filas as $fila) {
-			$existe = true;
-		}
-		if ($existe === true) {
+		
+		$user = Users::model()->findByAttributes(array('act_react_key'=>$key));
+	
+		if ($user != null) {
 
 			if (isset($_POST["ChangePassword"])) {
 				$model->attributes = $_POST['ChangePassword'];
 
-				if (!$model->validate()) {
-					$msg = "<strong class='text-error'>Error al enviar el formulario</strong>";
-				} else {
+				$user->password = sha1(md5(sha1($model->password)));
+				$user->act_react_key = 'null';
+				$user->save();
+			
 
-					$conexion = Yii::app()->db;
-
-					$consulta = "SELECT act_react_key from users WHERE ";
-					$consulta .= "act_react_key='" . $key . "'";
-
-					$resultado = $conexion->createCommand($consulta);
-					$filas = $resultado->query();
-					$existe = false;
-
-					foreach ($filas as $fila) {
-						$existe = true;
-					}
-					if ($existe === true) {
-
-						$insertar = "UPDATE users SET password=sha1(md5(sha1('$model->password'))) where ";
-						$insertar .= "act_react_key='" . $key . "'";
-						$llaveBD = $conexion->createCommand($insertar)->query();
-
-						$delete = "UPDATE users SET act_react_key='' where ";
-						$delete .= "act_react_key='" . $key . "'";
-						$deleteDB = $conexion->createCommand($delete)->query();
-
-						$model->password = "";
-						$model->password2 = "";
-						$msg = "<strong class='text-success'>su contraseña ha cambiado con éxito</strong>";
-					} else {
-
-						$this->redirect(Yii::app()->homeUrl);
-					}
-				}
+				$model->password = "";
+				$model->password2 = "";
+				$msg = "<strong class='text-success'>su contraseña ha cambiado con éxito</strong>";
 
 			}
 		} else {

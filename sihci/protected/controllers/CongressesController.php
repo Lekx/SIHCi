@@ -82,7 +82,7 @@ class CongressesController extends Controller
 			if($model->save()){
 				$section = "Participación en Congresos"; 
      			$action = "Creación";
-				$details = ":";
+				$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Puesto: ".$model->work_title.". Congreso: ".$model->congress.".";
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();

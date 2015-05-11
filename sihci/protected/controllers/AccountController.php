@@ -70,8 +70,14 @@
 			
 			if($this->checkEmailExist($_POST['Users']['email']) && $this->checkEmail($_POST['Account']['email2'], $_POST['Account']['email22']))
 			{
-				if($details->updateByPk(Yii::app()->user->id,array('email'=>$_POST['Account']['email2'])))
+				if($details->updateByPk(Yii::app()->user->id,array('email'=>$_POST['Account']['email2']))){
+					$section = "Cuenta";
+					$details = "Subsección: Cambio Email.";
+					$action = "Modificación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					
 					$this->redirect(array('InfoAccount'));
+				}
 			}
 		}
 		$this->render('_updateEmail',array(
@@ -90,7 +96,13 @@
 			{
 
 				$details->password=sha1(md5(sha1($_POST['Account']['password2'])));
-				if($details->updateByPk(Yii::app()->user->id,array('password'=>sha1(md5(sha1($_POST['Account']['password2']))))));
+				if($details->updateByPk(Yii::app()->user->id,array('password'=>sha1(md5(sha1($_POST['Account']['password2'])))))){
+						$section = "Cuenta";
+						$details = "Subsección: Cambio contraseña.";
+						$action = "Modificación";
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					
+				}
 						Yii::app()->user->logout();
 						$this->redirect(Yii::app()->homeUrl);
 			}					

@@ -77,7 +77,7 @@ class CertificationsController extends Controller
 			if($model->save()){
 				$section = "Certificaciones por Concejos Médicos"; 
      			$action = "Creación";
-				$details = ":";
+				$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Día de Inicio: ".$model->validity_date_start.".";
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();

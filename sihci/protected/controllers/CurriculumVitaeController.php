@@ -158,8 +158,7 @@ class CurriculumVitaeController extends Controller
 					$details = "Subsección Documentos Oficiales. Se subió Acta";
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['Acta'][0]);
-					echo $modelDocs['Acta'][1];
-					//unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['Acta'][1]);
+					unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['Acta'][1]);
 					$action = "Modificación";
 					$details = "Subsección Documentos Oficiales. Se subió Acta. Número Registro: ".$model->id;
 				}
@@ -281,7 +280,6 @@ class CurriculumVitaeController extends Controller
 			if ($reload == true) {
 				$this->redirect(array('docsIdentity'));
  			}		 			
-			//$this->redirect('docsIdentity');
 		}
 
 	$this->render('docs_Identity',array('model'=>$model, 'getDocs'=>$getDocs, 'modelDocs' => $modelDocs,));
