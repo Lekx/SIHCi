@@ -37,6 +37,7 @@ $(document).ready(function() {
 	<div class="row">
 
 <div class="row">
+  <span class="plain-select">
 	<?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $modelAddresses->country,
@@ -48,7 +49,7 @@ $(document).ready(function() {
 		'firstText' => 'Pais',
 
 		)); ?>
-
+</span>
         </div>
 
 	<div class="row">

@@ -5,7 +5,7 @@
 <div class="selecttype">
     <div class="typecontent">
         <div class="typeicons">
-        <h3>¿A qué grupo Perteneces?</h3> s
+        <h3>¿A qué grupo Perteneces?</h3>
         	<div class="type1">
         		   	<?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/types/Fisica.png alt="home">', array('account/selectType','type'=>'fisico'));?>
         		   	<h4>Fisico</h4>
