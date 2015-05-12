@@ -1,6 +1,6 @@
 <?php
     if(isset(Yii::app()->user->type))
-    $this->redirect('infoAccount');
+        $this->redirect('infoAccount');
 ?>
 <div class="selecttype">
     <div class="typecontent">

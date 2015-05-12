@@ -69,16 +69,16 @@
 		    'language'=> 'es',
 		    'attribute' => 'birth_date',
 		    'model' => $model,
-		   // 'flat'=>false,
+		   	//'flat'=>true,
 		     'options' => array(
 			     		'changeMonth'=>true, //cambiar por Mes
 			     		'changeYear'=>true, //cambiar por Año
-			    			'maxDate' => 'now-5475',
+			    		'maxDate' => 'now-5475',
+				        'yearRange'=>'1930:now',
+				       
 
 		     	),
 		    'htmlOptions' => array(
-		    			'size'=>'10',
-		    			'maxlength'=>'10', 
 		    			'readonly'=>true,
 		    			'title'=>'Fecha de Nacimiento',
 		        		'placeholder'=>"Fecha de Nacimiento"),
@@ -195,25 +195,28 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/personalData'), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
+	<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?')); ?>
+		
+		<?php 
+		// echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('curriculumVitae/personalData'), 
+  //       				array(
+		// 					'dataType'=>'json',
+  //                    		'type'=>'post',
+  //                    		'success'=>'function(data) 
+  //                    		 {
 		                                      
-		                         if(data.status=="200")
-		                         {
-				                     $(".successdiv").show();
+		//                          if(data.status=="200")
+		//                          {
+		// 		                     $(".successdiv").show();
 				               
-		                         }		                         
-		                         else
-		                         {
-			                     	$(".errordiv").show();
-			                     }       
-		                  	}',                    
+		//                          }		                         
+		//                          else
+		//                          {
+		// 	                     	$(".errordiv").show();
+		// 	                     }       
+		//                   	}',                    
 		                    
-                      ), array('class'=>'savebutton'));  
+  //                     ), array('class'=>'savebutton'));  
         ?>
 	
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
