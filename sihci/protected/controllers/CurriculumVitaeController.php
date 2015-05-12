@@ -106,11 +106,11 @@ class CurriculumVitaeController extends Controller
 					
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				
-					echo CJSON::encode(array('status'=>'200'));
-	     			Yii::app()->end();
-	     		}else {
-	     			echo CJSON::encode(array('status'=>'404'));
-	                 Yii::app()->end();
+					// echo CJSON::encode(array('status'=>'200'));
+	    //  			Yii::app()->end();
+	     		// }else {
+	     		// 	// echo CJSON::encode(array('status'=>'404'));
+	       //  //          Yii::app()->end();
 	     		}
 				
 			
