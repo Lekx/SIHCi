@@ -493,11 +493,15 @@ thead th
 	background-color: #1EB9C0;
 	opacity: .6;
 }
-.phones{ display:  inline-block; }
-.phones.country{ width: 65px !important; }
-.phones.state{ width: 65px !important; }
-.phones.phonew{ width: 240px !important; }
-.extension { width: 65px !important; }
+.phones
+{ 
+	display: inline-block !important;
+
+}
+.phones.country{ width: 65px !important; margin-right: 6px !important; }
+.phones.state{ width: 65px !important; margin-right: 6px !important; }
+.phones.phonew{ width: 240px !important; margin-right: 6px !important; }
+.extension { width: 65px !important; margin-right: 6px !important; }
 
 .newaddres
 {
