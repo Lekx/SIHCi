@@ -6,7 +6,7 @@ class BooksChaptersController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters
@@ -60,6 +60,7 @@ class BooksChaptersController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+	//CA01-Registrar datos
 	public function actionCreate()
     {
         $model=new BooksChapters;
@@ -67,7 +68,7 @@ class BooksChaptersController extends Controller
       
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation(array($model, $modelAuthor));
+         $this->performAjaxValidation($model);
 
         if(isset($_POST['BooksChapters']))
         {
@@ -85,7 +86,7 @@ class BooksChaptersController extends Controller
 	                
  					$model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
 		            $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
-	                	 $this->performAjaxValidation($modelAuthor);
+	                	
 			               if($model->save()){
 			               		              
 					 			$names = $_POST['names'];
@@ -158,6 +159,8 @@ class BooksChaptersController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+
+	//CA02-Modificar datos
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -170,18 +173,27 @@ class BooksChaptersController extends Controller
         if(isset($_POST['BooksChapters']))
         {
 	            $model->attributes=$_POST['BooksChapters'];
-	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
 
-            if($model->validate()){
-           
-           		if($model->url_doc != ''){
+	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
+				
+           		if ($model->url_doc != ''/*!empty(CUploadedFile::getInstanceByName('BooksChapters[url_doc]'))*/)
+                {
+                    if(!empty($actual_url))
+                    unlink(YiiBase::getPathOfAlias("webroot").$actual_url);
+                    $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
+                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/';
+                  
+                    if(!is_dir($urlFile))          
+                        mkdir($urlFile, 0777, true);
+
+                       $model->url_doc->saveAs($urlFile.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
+		               $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();                                                    
+                }
                 
-	               $model->url_doc->saveAs(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
-	               $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName(); 
-                 }
-                 else {
-                 	$model->url_doc = $actual_url;
-                 }
+                else {
+                  
+                    $model->url_doc = $actual_url;       
+                 }   
             		if($model->save()){
 
             					$idsBooksChapters = $_POST['idsBooksChapters'];
@@ -191,9 +203,8 @@ class BooksChaptersController extends Controller
 					            $position = $_POST['positions'];
 					                 
      					 foreach($_POST['names'] as $key => $value){
-     					 	var_dump($idsBooksChapters[$key]);
-     					 	echo "<br>";
-			        		if($idsBooksChapters[$key] == ""){
+
+			        		if($idsBooksChapters[$key] == ''){
 			        			unset($modelAuthor);
 								$modelAuthor = new BooksChaptersAuthors;
 			        			$modelAuthor->id_books_chapters = $model->id;
@@ -202,11 +213,11 @@ class BooksChaptersController extends Controller
 								$modelAuthor->last_name2 = $last_name2[$key];
 								$modelAuthor->position = $position[$key];
 								$modelAuthor->save();
-                    		}else
+                    		}else{
 								$modelAuthor->updateByPk($idsBooksChapters[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
                 		}
-
-                   	 		  echo CJSON::encode(array('status'=>'200'));
+                	}
+                   	 		   echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
                                Yii::app()->end();
                 	} else {
@@ -215,7 +226,7 @@ class BooksChaptersController extends Controller
                         Yii::app()->end();
                 	}
             
-            }//End validate 
+            
         }
 
         $this->render('update',array(
@@ -227,9 +238,16 @@ class BooksChaptersController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+
+	//CA03-Eliminar datos
 	public function actionDelete($id)
 	{
 		BooksChaptersAuthors::model()->deleteAll("id_books_chapters =".$id );
+		$model= BooksChapters::model()->findByPk($id);
+		if($model->url_doc != null){
+		unlink(YiiBase::getPathOfAlias("webroot").$model->url_doc);
+		$model->delete();
+		}else
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -241,17 +259,17 @@ class BooksChaptersController extends Controller
 	 * Lists all models.
 	 */
 
+
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('BooksChapters');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**
 	 * Manages all models.
 	 */
+
+	//CA06-Barra de busqueda
 	public function actionAdmin()
 	{
 		$model=new BooksChapters('search');
@@ -291,22 +309,4 @@ class BooksChaptersController extends Controller
 			Yii::app()->end();
 		}
 	}
-	protected function performAjaxValidationAuthors($modelAuthors)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='books-chapters-form')
-		{
-			echo CActiveForm::validate($modelAuthors);
-			Yii::app()->end();
-		}
-	}
-
-	 public function getAuthors(){
-
-	        $this->getAuthors=$this->connection->createCommand()
-
-	                ->select("*")->from('books_chapters_authors')->queryAll('id_books_chapters'.$id);
-
-	        return $this->getAuthors;
-
-	    }
 }

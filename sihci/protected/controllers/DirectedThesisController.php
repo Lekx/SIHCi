@@ -6,7 +6,7 @@ class DirectedThesisController extends Controller
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout='//layouts/column2';
+    public $layout='//layouts/system';
 
     /**
      * @return array action filters
@@ -75,7 +75,7 @@ class DirectedThesisController extends Controller
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
-            if (!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]')))
+            if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]'))*/)
                 {
                      $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/';
@@ -126,16 +126,19 @@ class DirectedThesisController extends Controller
 
         // Uncomment the following line if AJAX validation is needed
         $this->performAjaxValidation($model); 
-
+        $actual_path = $model->path;
         if(isset($_POST['DirectedThesis']))
         {
 
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
-            if (!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]')))
+            if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]'))*/)
                 {
-                     $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
+                    echo $model->path."Entre al if ";
+                    if(!empty($actual_path))
+                    unlink(YiiBase::getPathOfAlias("webroot").$actual_path);
+                    $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/';
                   
                     if(!is_dir($urlFile))          
@@ -144,13 +147,16 @@ class DirectedThesisController extends Controller
                         $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
                         $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                                   
                 }
-                else 
+                else
                 {
-                    $model->path = "";
-                }   
-
+                    echo $actual_path."Entro al else";
+                    $model->path = $actual_path;    
+                
+                 }   
+                    echo $model->path;
                     if($model->save())
-                    {                  
+                    {   
+                                     
                         echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();
@@ -159,8 +165,7 @@ class DirectedThesisController extends Controller
                     {
                         echo CJSON::encode(array('status'=>'404'));
                         Yii::app()->end();
-                    }
-                        
+                    }                
         }
             
         if(!isset($_POST['ajax']))
@@ -176,11 +181,13 @@ class DirectedThesisController extends Controller
     {   
         
         $model= DirectedThesis::model()->findByPk($id);
-        unlink(YiiBase::getPathOfAlias("webroot").$model->path);
-        $model->delete();
 
-        //$this->loadModel($id)->delete();
-        
+        if($model->path != null){
+          unlink(YiiBase::getPathOfAlias("webroot").$model->path);
+          $model->delete();  
+        } else
+             $this->loadModel($id)->delete();
+            
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if(!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -193,10 +200,7 @@ class DirectedThesisController extends Controller
     //TE04-Eliminar datos
     public function actionIndex()
     {
-        $dataProvider=new CActiveDataProvider('DirectedThesis');
-        $this->render('index',array(
-            'dataProvider'=>$dataProvider,
-        ));
+        $this->actionAdmin();
     }
 
     /**

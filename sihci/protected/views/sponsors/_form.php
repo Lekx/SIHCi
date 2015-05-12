@@ -2,7 +2,8 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 /* @var $form CActiveForm */
-
+	$cs = Yii::app()->getClientScript();
+   $cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/sponsors/js/script.js');
 ?>
 <script>
 $(document).ready(function() {
@@ -18,7 +19,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -32,28 +32,23 @@ $(document).ready(function() {
 	'enableClientValidation' => true,
 ));?>
 
-	
-	<?php echo $form->errorSummary($modelAddresses);?>
-	<?php echo $form->errorSummary($modelPersons);?>
-	<?php echo $form->errorSummary($model);?>
-
-
 
 	<div class="row">
 
 <div class="row">
+  <span class="plain-select">
 	<?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $modelAddresses->country,
-		'name' => Chtml::activeName($model, 'country'),
-		'id' => Chtml::activeId($model, 'country'),
+		'name' => Chtml::activeName($modelAddresses, 'country'),
+		'id' => Chtml::activeId($modelAddresses, 'country'),
 		'useCountryCode' => false,
 		'defaultValue' => 'Mexico',
 		'firstEmpty' => true,
 		'firstText' => 'Pais',
 
 		)); ?>
-
+</span>
         </div>
 
 	<div class="row">
@@ -139,16 +134,59 @@ $(document).ready(function() {
 	
 		<?php echo $form->textField($model, 'sector', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Sector','title'=>'Sector'));?>
 		<?php echo $form->error($model, 'sector');?>
+<!--
+00 	No especificado
+01 	Instituciones del sector gobierno federal centralizado
+02 	Instituciones del sector entidades paraestatales
+03 	Instituciones del sector gobierno de las entidades federativas
+04 	Instituciones del sector de educacion superior publicas
+05 	Instituciones del sector de educacion superior privadas
+06 	Instituciones del sector privado de empresas productivas (adiat)
+07 	Instituciones / organizaciones no lucrativas
+08 	Instituciones / organizaciones extranjeras
+09 	consultoras
+10 	Gobierno municipal
+11 	Gobierno federal descentralizado
+18 	Gobierno Federal Desconcentrado
+19 	Centros Públicos de Investigación
+20 	Centros Privados de Investigación
+-->
 	</div>
 
 	<div class="row">
 		<?php echo $form->textField($model, 'class', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Clase','title'=>'Clase'));?>
 		<?php echo $form->error($model, 'class');?>
+
+<!--
+621211 	CONSULTORIOS DENTALES DEL SECTOR PRIVADO
+621212 	CONSULTORIOS DENTALES DEL SECTOR PUBLICO -->
 	</div>
 
 	<div class="row">
 		<?php echo $form->textField($model, 'branch', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Rama','title'=>'Rama'));?>
 		<?php echo $form->error($model, 'branch');?>
+
+<!--
+6211 	CONSULTORIOS MEDICOS
+6212 	CONSULTORIOS DENTALES
+6213 	OTROS CONSULTORIOS PARA EL CUIDADO DE LA SALUD
+6214 	CENTROS PARA LA ATENCION DE PACIENTES QUE NO REQUIEREN HOSPITALIZACION
+6215 	LABORATORIOS MEDICOS Y DE DIAGNOSTICO
+6216 	SERVICIOS DE ENFERMERIA A DOMICILIO
+6219 	SERVICIOS DE AMBULANCIAS DE BANCOS DE ORGANOS Y OTROS SERVICIOS AUXILIARES AL TRATAMIENTO MEDICO
+6221 	HOSPITALES GENERALES
+6222 	HOSPITALES PSIQUIATRICOS Y PARA EL TRATAMIENTO POR ABUSO DE SUBSTANCIAS
+6223 	HOSPITALES DE OTRAS ESPECIALIDADES MEDICAS
+6231 	RESIDENCIAS CON CUIDADOS DE ENFERMERAS PARA ENFERMOS CONVALECIENTES EN REHABILITACION INCURABLES Y
+6232 	RESIDENCIAS PARA EL CUIDADO DE PERSONAS CON PROBLEMAS DE RETARDO MENTAL SALUD MENTAL Y ABUSO DE SUB
+6233 	ASILOS Y OTRAS RESIDENCIAS PARA EL CUIDADO DE ANCIANOS Y DISCAPACITADOS
+6239 	ORFANATOS Y OTRAS RESIDENCIAS DE ASISTENCIA SOCIAL
+6241 	SERVICIOS DE ORIENTACION Y TRABAJO SOCIAL
+6242 	SERVICIOS COMUNITARIOS DE ALIMENTACION REFUGIO Y DE EMERGENCIA
+6243 	SERVICIOS DE CAPACITACION PARA EL TRABAJO PARA PERSONAS DESEMPLEADAS SUBEMPLEADAS O DISCAPACITADAS
+6244 	GUARDERIAS -->
+
+
     </div>
 
 	<div class="row">
@@ -168,18 +206,18 @@ $(document).ready(function() {
 
 	<div class="row">
 
-		<?php echo $form->fileField($modelPersons, 'photo_url', array('size' => 60, 'maxlength' => 100, 'placeholder' => "Foto"));?>
+
+		<?php echo $form->fileField($modelPersons, 'photo_url', array('size' => 60, 'maxlength' => 100, 'placeholder' => "Foto",'title'=>'Foto de Perfil'));?>
 		<?php echo $form->error($modelPersons, 'photo_url');?>
 		<br>
-		<img  style="width:75px;height:auto"; src="<?php echo Yii::app()->request->baseUrl . "/" . $modelPersons->photo_url;?>">
-		<?php echo Yii::app()->request->baseUrl . "/" . $modelPersons->photo_url;?>
 	</div>
 
 	<div class="row buttons">
 		<!-- cambiar todo a español y este boton-->
+
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
-		<input class="cleanbutton" type="button" value="Borrar">
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+	
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget();?>

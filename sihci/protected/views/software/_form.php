@@ -21,7 +21,6 @@
 	
 )); ?>
 
-	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -269,7 +268,7 @@
 
 
 	<div class="row buttons">		
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('onClick'=>'send()')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
 		<?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';?>
        	<?php echo CHtml::link('Cancelar', array('/software/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>

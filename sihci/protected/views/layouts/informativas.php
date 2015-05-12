@@ -26,7 +26,7 @@
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <?php
                 $baseUrl = Yii::app()->baseUrl;
-                $cs = Yii::app()->getClientScript();
+               $cs = Yii::app()->getClientScript();
                 $cs->registerScriptFile($baseUrl . '/js/list.js');
                 $cs->registerScriptFile($baseUrl . '/js/prefixfree.min');
                 $cs->registerScriptFile($baseUrl . '/js/slideshow.js');
@@ -52,10 +52,12 @@
         ?>
         <?php Yii::app()->bootstrap->register();?>
         <title><?php echo CHtml::encode($this->pageTitle);?></title>
+
        <script>
-                            $(document).ready(function() {
+                           $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
+                                    trigger:  'click', 
                                 });
 
                             });
@@ -298,7 +300,7 @@
                             </div>
                             <div id="header-content-container">
                                 <div id="header-content">
-                                    <div id="headerlogo"><?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHme.png alt="home">', array('site/index'));?></div>
+                                    <div id="headerlogo"><?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHch.png alt="home">', array('site/index'));?></div>
                                     <div id="hsearch">
                                         <div id="headermenu">
                                             <button id="show_hidemenu2" type="button" class="">
@@ -342,13 +344,14 @@
                                 } else {
                                     $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas4'));
                                 //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-                                    echo CHtml::link($img, array('account/infoAccount'));
+                                    echo CHtml::link($img, array('account/firstLogin'));
                                     echo '<p id="logoutext">';
                                     echo Yii::app()->user->email;
                                     echo '</p>';
                                 }
                                 ?>
                             </div>
+                
                             <div class="singin">
                             <?php
                                if (Yii::app()->user->isGuest){
@@ -369,7 +372,6 @@
                                
                              ?>
                              </div>
-    
                             <div class="searchbar">
                                 <div class="searchbarconteiner">
                                     <button type="button" id="show_hidemenu">

@@ -8,11 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	//array('label'=>'Listar Tesis', 'url'=>array('index')),
-	array('label'=>'Crear ', 'url'=>array('create')),
-	array('label'=>'Modificar', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar ', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Estas seguro de eliminar este elemento?')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear ', 'url'=>array('create')),
 );
 ?>
 
@@ -30,7 +27,7 @@ $this->menu=array(
 		array(               
                 'label'=>'Archivo',
                 'type'=>'raw',
-                'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->path),array("target"=>"_blank")),
+                'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")),
              ),
 		//'path',
 		'grade',

@@ -12,16 +12,13 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 ?>
 
 
-<div class="form">
+<div class="form"
 
 <?php $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'sponsors-docs-form',
 	'enableAjaxValidation' => false,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 ));?>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-
 
 
 <?php
@@ -37,7 +34,7 @@ echo "</pre>";
 	<!--<?php //print_r($modelDocs); ?>-->
 
 	<div class="row">
-	Decreto de creación, acta constitutiva o documento que acredite la creación de la empresa:
+	<h5>Decreto de creación, acta constitutiva o documento que acredite la creación de la empresa:</h5>
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc1'));?>
 
 		<?php 
@@ -47,7 +44,7 @@ echo "</pre>";
 		?>
 	</div>
 	<div class="row">
-	Documento con el que se acreditan las facultades del representante o apoderado (poder, acta de asamblea, nombramiento, etc.)
+	<h5>Documento con el que se acreditan las facultades del representante o apoderado (poder, acta de asamblea, nombramiento, etc.):</h5>
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc2'));?>
 		<?php 
 		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
@@ -56,7 +53,7 @@ echo "</pre>";
 		?>		
 	</div>
 	<div class="row">
-	Licencias, autorizaciones, permisos para las actividades, etc.
+	<h5>Licencias, autorizaciones, permisos para las actividades, etc:</h5>
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc3'));?>
 		<?php 
 		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
@@ -65,7 +62,7 @@ echo "</pre>";
 		?>		
 	</div>
 	<div class="row">
-	RFC o equivalente (empresa)
+	<h5>RFC o equivalente (empresa):</h5>
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc4'));?>
 		<?php 
 		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
@@ -74,7 +71,7 @@ echo "</pre>";
 		?>	
 	</div>
 	<div class="row">
-	Comprobante de domicilio (opcional para extranjeras)
+	<h5>Comprobante de domicilio (opcional para extranjeras):</h5>
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc5'));?>
 		<?php 
 		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
@@ -83,18 +80,21 @@ echo "</pre>";
 		?>	
 	</div>
 	<div class="row">
-	Identificación Oficial del Representante
+	<h5>Identificación Oficial del Representante:</h5>
 		<?php echo $form->fileField($model, 'path', array('name' => 'Doc6'));?>
 		<?php 
 		//var_dump(array_key_exists('Documento que acredite la creacion de la empresa', $modelDocs));
 			if(array_key_exists('Identificacion_Oficial_del_Representante', $modelDocs))
 				echo "<a href='".Yii::app()->request->baseUrl."/".$modelDocs['Identificacion_Oficial_del_Representante'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelDocs['Identificacion_Oficial_del_Representante'][1]."' style='width:75px;height:auto;'></a>";
 		?>	
+		<br>
+		<br>
 	</div>
 
-
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Guardar');?>
+		<!-- cambiar todo a español y este boton-->
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget();?>

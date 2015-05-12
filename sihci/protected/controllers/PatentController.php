@@ -75,16 +75,17 @@ class PatentController extends Controller
 			$model->attributes=$_POST['Patent'];
 			$model->id_curriculum =$id_curriculum;
 
+			if($model->consession_date == null)
+    			$model->consession_date ='00/00/0000';	
+
 		    if($model->save())
      		{
-
-     			echo CJSON::encode(array('status'=>'200'));
 
      			$section = "Propiedad Intelectual"; 
      			$action = "Creación";
 				$details = "Subsección Patentes";
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-     			echo CJSON::encode(array('status'=>'success'));
+     			echo CJSON::encode(array('status'=>'200'));
 
      			Yii::app()->end();
      		}	
@@ -114,25 +115,30 @@ class PatentController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
+		if($model->consession_date == "30/11/-0001" || $model->consession_date == "00/00/0000"){
+			$model->consession_date = "";
+		}	
+
 		if(isset($_POST['Patent']))
 		{
 			$model->attributes=$_POST['Patent'];
-			
+
+			if($model->consession_date == null)
+    			$model->consession_date ='00/00/0000';	
+    		
 			if($model->save())
      		{
      			$section = "Propiedad Intelectual"; 
      			$action = "Modificación";
 				$details = "Subsección Patentes. Registro Número: ".$model->id;
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-     			echo CJSON::encode(array('status'=>'success'));
+     			echo CJSON::encode(array('status'=>'200'));
      			Yii::app()->end();
      		}	
      		else 
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+     			echo CJSON::encode(array('status'=>'404'));
+     			Yii::app()->end();
      		}
 		}
 

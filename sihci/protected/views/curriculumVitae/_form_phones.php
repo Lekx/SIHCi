@@ -10,13 +10,20 @@
             -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             background: red;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            color: #fff;
             display: none;
-            font-size: 10px;
             margin-top: -50px;
-            margin-left: 315px;
-            padding: 10px;
+            margin-left: 455px;
             position: absolute;
+			border-radius: 5px; 
+			border: 2px solid #F20862;
+			background: #F20862;
+			color: #fff;
+			width: 190px !important;
+			font-family: 'Caviar_Dreams_Bold' !important;
+			font-size: 12px;
+			line-height: 16px;
+			padding: 8px 10px;
+			text-align:  center;
         }
         .emails{
             display: none;
@@ -47,6 +54,7 @@
 
 	<div class="emails">
 		<h5>Email:</h5>
+		 <span class="plain-select">
 			<select id="typeEmail" title="Tipo de Email" name="typesEmails">
 	  			<option value="" selected="">Tipo Email</option> 
 	  			<option value="Trabajo">Trabajo</option>
@@ -54,9 +62,10 @@
 	  			<option value="Particular">Particular</option>
 	  			<option value="Campus">Campus</option>
 	  			<option value="otro">otro</option>
-		</select>
-		<div id="errorTypeEmail" class="errors"> Debe seleccionar Tipo de Email</div>
+			</select>
+		</span>
 		<br>
+		<div id="errorTypeEmail" class="errors"> Debe seleccionar Tipo de Email</div>
 		<input id="mail" title="Email" type="text" name="emails" placeholder="Email">
 		<div id="errorMail" class="errors"> Debe ser un correo válido: ejemplo@mail.com</div><br>
 
@@ -93,12 +102,14 @@
 
 			
 				echo "<h5>Email:</h5>";
+				echo " <span class='plain-select'>";
 				echo $form->dropDownList($emails,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
 		                                                       array('title'=>'Tipo de Email','prompt'=>'Tipo de Email','required'=>'true','name'=>'getTypeEmail[]','options' => array(''.$getEmails[$key]->type.''=>array('selected'=>true))));
+				echo "</span>";
 				echo $form->error($emails,'type');
-
+				echo "<br>";
 			 	echo $form->textField($emails,'email',array('title'=>'Email','required'=>'true','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
 			 	echo $form->error($emails, 'email');
 			 	echo "<br>";
@@ -165,11 +176,13 @@
 	
 		<?php
 		foreach ($getPhones as $key => $value) {
-      echo "<h5>Teléfono:</h5>";
+      	echo "<h5>Teléfono:</h5>";
+     	echo " <span class='plain-select'>";
 		echo $form->dropDownList($model,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
 		                                                       array('title'=>'Tipo de Teléfono','prompt'=>'Tipo de Teléfono','required'=>'true','name'=>'getTypesPhones[]','options' => array($getPhones[$key]->type=>array('selected'=>true)))); 
+		 echo "</span>";
 		 echo $form->error($model,'type');
 		 echo "<div class='phoneinput'>";
 
@@ -218,7 +231,7 @@
                             }',                    
                             
                         ), array('class'=>'savebutton')); ?>
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 <hr>
