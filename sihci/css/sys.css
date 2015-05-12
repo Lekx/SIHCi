@@ -366,6 +366,7 @@ label {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
+    display: block;
 	
 }
 .cvforms select 
@@ -394,6 +395,7 @@ label {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
+    display: block;
 	
 }
 .cvforms input[type="file"]
@@ -650,10 +652,27 @@ thead th
 	height: 25px;
 	background-color: #00B9C0;
 	margin-bottom: 10px;
+	display: block;
+}
+.deleteSomething:hover , .addSomething:hover , .cancelSomething:hover ,.deletecontact:hover
+{
+	color: white;
+	text-decoration: none;
 }
 .cancelSomething 
 {
 	display: none;
+	width: 450px !important;
+	text-align: center;
+	color: white;
+	height: 25px;
+	background-color: #00B9C0;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.deletecontact
+{
+	display: block;
 	width: 450px !important;
 	text-align: center;
 	color: white;

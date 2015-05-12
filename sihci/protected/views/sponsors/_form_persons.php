@@ -45,15 +45,18 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
+	  <span class="plain-select">
 		<?php echo $form->dropDownList($model,'marital_status',array('soltero'=>'Soltero','viudo'=>'Viudo', 'casado'=>'Casado',
 			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'), 
-		                                                       array('title'=>'Estado Civil','prompt'=>'Estado Civil','options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Estado Civil','prompt'=>'Selecionar Estado Civil','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'marital_status'); ?>
+		</span>
 	</div>
 
 	<div class="row">
 
+  <span class="plain-select">
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'language'=> 'es',
@@ -72,19 +75,22 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		        		'placeholder'=>"Fecha de Nacimiento"),
 				));
 	?>
+	</span>
 	<?php echo $form->error($model,'birth_date'); ?>
 	</div>
 
 
 		<div class="row">
-		Sexo
-		<div class="radio" >
-		<?php $status = array('Hombre' => 'Hombre','Mujer'=>'Mujer'); echo $form-> RadioButtonList($model,'genre' ,$status);  ?>
-		<?php echo $form->error($model,'is_national'); ?>
-		</div>
+		  <span class="plain-select">
+		<?php echo $form->dropDownList($model,'genre',array('Hombre'=>'Hombre',
+															'Mujer'=>'Mujer',), 
+		                                                       array('title'=>'Sexo','prompt'=>' Seleccionar Sexo','options' => array(''=>array('selected'=>true))), 
+		                                                       array('size'=>10,'maxlength'=>10)); ?>
+	
+		</span>
 	</div>
 
-
+  <span class="plain-select">
        <?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $model->country,
@@ -97,7 +103,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 		)); ?>
 
-  
+  </span>
 	
 
 	<div class="row">
@@ -120,7 +126,6 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	<div class="row buttons">
 
 		<input type="submit"  class="savebutton" onclick="validationFrom()" value="Guardar">
-		<input class="cleanbutton" type="button" value="Borrar">
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 	<script>

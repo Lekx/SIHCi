@@ -19,7 +19,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -186,6 +185,8 @@ $(document).ready(function() {
 6242 	SERVICIOS COMUNITARIOS DE ALIMENTACION REFUGIO Y DE EMERGENCIA
 6243 	SERVICIOS DE CAPACITACION PARA EL TRABAJO PARA PERSONAS DESEMPLEADAS SUBEMPLEADAS O DISCAPACITADAS
 6244 	GUARDERIAS -->
+
+
     </div>
 
 	<div class="row">
@@ -215,7 +216,7 @@ $(document).ready(function() {
 		<!-- cambiar todo a español y este boton-->
 
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
-		<input class="cleanbutton" type="button" value="Borrar">
+	
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

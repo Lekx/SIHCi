@@ -882,7 +882,7 @@ echo "</span>";
 		                    
                       ), array('class'=>'savebutton'));  
         
-		echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';
+		
 		echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); 
 	echo '</div>';
 ?>
