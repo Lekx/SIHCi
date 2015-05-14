@@ -22,7 +22,7 @@
 				<div class="inner-addon right-addon">
 					 <i class="glyphicon glyphicon-envelope"></i>
 					<?php echo $form->textField($model,'email', array('placeholder'=>"Email..",'title'=>'Favor de ingresar su correo de registro.')); ?>
-					<?php echo $form->error($model,'email'); ?>
+					<?php //echo $form->error($model,'email'); ?>
 
 				</div>
 			</div>
@@ -35,9 +35,7 @@
 					'success'=>'js:function(response){
 								if(response == "404"){
 											
-										$(".infodialog3").removeClass("infodialog3").addClass("infodialog3error");
-					        			$(".infodialog3error").css("visibility", "visible");
-					        			$(".infodialog3error").find("p").text("No exite registro con ese email");
+										alert("Verifique que su email sea correcto");
 					         
 								}
 								else{
