@@ -3,8 +3,8 @@ function send()
 
     var fd = new FormData();
     var data=$("#articles-guides-form").serialize();
-    //fd.append("ArticlesGuides[url_document]",$('#url_document')[0].files[0]);
-    fd.append( "ModelName[image]", $("#articles-guides-form")[0].files[0]);
+    fd.append("ArticlesGuides[url_document]",$('#url_document')[0].files[0]);
+    
 
 
     $.ajax({

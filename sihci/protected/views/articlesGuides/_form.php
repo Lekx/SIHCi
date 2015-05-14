@@ -43,9 +43,9 @@
 	</div>
 
 	<div class="row">
-		<?php  for($i=1930;$i<=date('Y');$i++) {
-			 	echo $form->dropDownList($model,'publishing_year', array('promt'=>'Año de publicación','i'=>$i)
-		); }  
+		<?php 
+		 echo $form->dropDownList($model,'publishing_year',array('promt'=>'Año de publicación','i'=>$i));   
+		
 		?>
 		<?php echo $form->error($model,'publishing_year'); ?>
 	</div>
