@@ -140,6 +140,7 @@ class SoftwareController extends Controller
 			if($model->end_date == null)
     			$model->end_date ='00/00/0000';		
 
+    		
 				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
 							
@@ -150,19 +151,16 @@ class SoftwareController extends Controller
 					   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
 			          
 			            if(!is_dir($urlFile))          
-			              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+			              	mkdir($urlFile, 0777, true);
 
 						    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
 						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
-							echo ("La Cambie".$model->path);    
+							
 			    }
 				
 				else
-				{				
-									   
-				   $model->path=$oldPath;    			 			   		
-				    
-
+				{						   
+				   $model->path=$oldPath;  
 				}	
 
 					if($model->save())
