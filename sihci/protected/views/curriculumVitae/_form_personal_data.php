@@ -181,7 +181,6 @@
 
 	<div class="row buttons">
 	<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?')); ?>
-		
 		<?php 
 		// echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('curriculumVitae/personalData'), 
   //       				array(
