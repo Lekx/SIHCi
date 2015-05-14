@@ -110,7 +110,6 @@
 
 	<div class="row buttons">
 		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
 	</div>
 	<script>
 		function cleanUp(){

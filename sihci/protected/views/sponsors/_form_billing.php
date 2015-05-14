@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 	<div id="sponsorsBillingForm" id="sponsorsBillingForm">
 
-
+  <span class="plain-select">
       <?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $modelAddresses->country,
@@ -57,6 +57,7 @@ $(document).ready(function(){
 		'firstText' => 'Pais',
 
 		)); ?>
+		  <span class="plain-select">
 
 
 
@@ -125,7 +126,6 @@ $this->widget(
 	<div class="row buttons">
 		<?php /* echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); */?>
 		<input type="submit"  class="savebutton" onclick="validationFrom()" value="Guardar">
-		<input class="cleanbutton" type="button" value="Borrar">
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

@@ -59,7 +59,6 @@ foreach ($fullname as $value) {
 
 <div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 
