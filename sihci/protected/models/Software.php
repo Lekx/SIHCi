@@ -61,7 +61,7 @@ class Software extends CActiveRecord
 			array('title', 'length', 'max'=>150),
 			array('beneficiary', 'length', 'max'=>70),
 			array('sector, organization, second_level, path', 'length', 'max'=>100),    
-		    array('path','file','allowEmpty'=>true,'on'=>'update','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','maxSize'=>array(1024 * 5000),'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),		    
+		    array('path','file','allowEmpty'=>true,'maxSize'=>array(1024 * 5000), 'types' => 'pdf, doc, docx, odt, jpg, jpeg, png','message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
 			array('searchValue','length', 'max'=>70),
 			array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
 

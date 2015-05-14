@@ -17,8 +17,6 @@
 	// See class documentation of CActiveForm for details on this.
 )); ?>
 
-	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">		
@@ -27,7 +25,7 @@
 						'Autor'=>'Autor',
 						'Coautor'=>'Coautor'
 					),
-					array('prompt'=>'Tipo de participación')
+					array('prompt'=>'Seleccionar participación')
 				); 
 		?>
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -78,7 +76,7 @@
 						'Privada'=>'Privada',
 						'Sector social'=>'Sector social'
 					),
-					array('prompt'=>'Entidad')
+					array('prompt'=>'Seleccionar entidad')
 				); 
 		?>
 		<?php echo $form->error($model,'entity'); ?>

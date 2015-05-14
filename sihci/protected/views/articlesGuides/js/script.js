@@ -2,8 +2,10 @@ function send()
 {
 
     var fd = new FormData();
-    var data=$("#software-form").serialize();
-    fd.append("Software[path]",$('#path')[0].files[0]);
+    var data=$("#articles-guides-form").serialize();
+    fd.append("ArticlesGuides[url_document]",$('#url_document')[0].files[0]);
+    
+
 
     $.ajax({
         url: 'create',
@@ -16,7 +18,7 @@ function send()
         {            
             if(data.status=="200"){                         
                     alert("Registro realizado con éxito");
-                    $("#software-form")[0].reset();                
+                    $("#articles-guides-form")[0].reset();                
             }
             else
             {
@@ -34,8 +36,8 @@ function upDate()
 {
 
     var fd = new FormData();
-    var data=$("#software-form").serialize();
-    fd.append("Software[path]",$('#path')[0].files[0]);
+    var data=$("#articles-guides-form").serialize();
+    fd.append("ArticlesGuides[url_document]",$('#url_document')[0].files[0]);
 
     $.ajax({
         url: 'update',
@@ -48,7 +50,7 @@ function upDate()
         {            
             if(data.status=="200"){                         
                     alert("Registro realizado con éxito");
-                    $("#software-form")[0].reset();                
+                    $("#articles-guides-form")[0].reset();                
             }
             /*else
             {

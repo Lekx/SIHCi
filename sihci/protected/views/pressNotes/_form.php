@@ -37,7 +37,7 @@
 				'Televisión'=>'Televisión',
 				'Vidos'=>'Vidos'
 			),
-			array('prompt'=>'Tipo de participación'));
+			array('prompt'=>'Seleccionar participación'));
 		?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
@@ -94,7 +94,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'is_national'); ?>
 		<?php $status = array('Nacional' => 'Nacional','Extranjero'=>'Extranjero'); 
-		    echo $form-> RadioButtonList($model,'is_national' ,$status, array('separador' => '')); 
+		    echo $form-> RadioButtonList($model,'is_national' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); 
 		 ?>
 		<?php echo $form->error($model,'is_national'); ?>
 	</div>

@@ -1,16 +1,14 @@
 <?php
 /* @var $this CertificationsController */
-/* @var $model Certifications */
+/* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Certifications'=>array('index'),
-	'Create',
+	'Certifications',
 );
 
 $this->menu=array(
-	//array('label'=>'Listar Certificaciones', 'url'=>array('index')),
-	array('label'=>'Gestionar', 'url'=>array('admin')),
 	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 ?>
 
@@ -20,6 +18,9 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Crear Certificaciones por Consejos Medicos:</h4>
+<h4>Datos Personales:</h4>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+)); ?>
