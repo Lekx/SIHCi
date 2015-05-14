@@ -12,14 +12,9 @@
 	'enableAjaxValidation'=>true,
 	'method'=>'get',
 )); ?>
-     
-	<div class="row">
-		
-		<legend>B&uacute;squeda por:</legend>
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Folio, Especialidad, Referencia o Tipo de referencia')); ?>	
-		<?php echo CHtml::submitButton('Buscar'); ?>
-
-	</div>
+   
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Folio, Especialidad, Referencia o Tipo de referencia', 'class'=>'searchcrud')); ?>	
+		<?php echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
 
 <?php $this->endWidget(); ?>
 
