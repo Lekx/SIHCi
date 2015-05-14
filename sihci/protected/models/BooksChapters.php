@@ -11,7 +11,7 @@
  * @property integer $publishing_year
  * @property string $publishers
  * @property string $editorial
- * @property string $volume
+ * @property integer $volume
  * @property integer $pages
  * @property integer $citations
  * @property integer $total_of_authors
@@ -46,13 +46,13 @@ class BooksChapters extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_curriculum, chapter_title, book_title,publishing_year', 'required'),
-			array('id_curriculum, pages, citations, total_of_authors', 'numerical','integerOnly'=>true),
+			array('id_curriculum, pages, citations,volume , total_of_authors', 'numerical','integerOnly'=>true),
 			array('chapter_title, url_doc', 'length', 'max'=>100),
 			array('discipline, subdiscipline','length', 'max'=>200),
-			array('book_title, editorial, volume, area' , 'length', 'max'=>45),
+			array('book_title, editorial, area' , 'length', 'max'=>45),
 			array('publishers', 'length', 'max'=>255),
 			array('publishing_year, creation_date', 'safe'),
-			array('url_doc','file','allowEmpty'=>true,
+			array('url_doc, safe','file','allowEmpty'=>true, 'on'=>'create',
 				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
 			       'maxSize'=>array(1204 * 2000),
 			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
@@ -60,6 +60,7 @@ class BooksChapters extends CActiveRecord
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),
 			array('id, id_curriculum, chapter_title, book_title, publishing_year, publishers, editorial, volume, pages, citations, total_of_authors, area, discipline, subdiscipline, creation_date, url_doc, searchValue', 'safe', 'on'=>'search'),
+			array('url_doc, safe','safe', 'on'=>'update'),
 		);
 	}
 
