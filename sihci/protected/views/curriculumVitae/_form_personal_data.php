@@ -195,27 +195,6 @@
 	<div class="row buttons">
 	<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton')); ?>
 		
-		<?php 
-		// echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('curriculumVitae/personalData'), 
-  //       				array(
-		// 					'dataType'=>'json',
-  //                    		'type'=>'post',
-  //                    		'success'=>'function(data) 
-  //                    		 {
-		                                      
-		//                          if(data.status=="200")
-		//                          {
-		// 		                     $(".successdiv").show();
-				               
-		//                          }		                         
-		//                          else
-		//                          {
-		// 	                     	$(".errordiv").show();
-		// 	                     }       
-		//                   	}',                    
-		                    
-  //                     ), array('class'=>'savebutton'));  
-        ?>
 	
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
