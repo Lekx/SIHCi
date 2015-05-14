@@ -14,15 +14,17 @@
  * @property integer $volume
  * @property integer $pages
  * @property integer $citations
- * @property integer $total_of_authors
  * @property string $area
  * @property string $discipline
  * @property string $subdiscipline
  * @property string $creation_date
  * @property string $url_doc
+ * @property integer $isbn
+ * @property string $keywords
  *
  * The followings are the available model relations:
  * @property Curriculum $idCurriculum
+ * @property BooksChaptersAuthors[] $booksChaptersAuthors
  */
 class BooksChapters extends CActiveRecord
 {
@@ -46,12 +48,14 @@ class BooksChapters extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_curriculum, chapter_title, book_title,publishing_year', 'required'),
-			array('id_curriculum, pages, citations,volume , total_of_authors', 'numerical','integerOnly'=>true),
+			array('id_curriculum, pages, citations,volume , citations, isbn', 'numerical', 'integerOnly'=>true),
 			array('chapter_title, url_doc', 'length', 'max'=>100),
 			array('discipline, subdiscipline','length', 'max'=>200),
 			array('book_title, editorial, area' , 'length', 'max'=>45),
 			array('publishers', 'length', 'max'=>255),
 			array('publishing_year, creation_date', 'safe'),
+			array('keywords', 'length', 'max'=>250),
+			array('creation_date', 'safe'),
 			array('url_doc, safe','file','allowEmpty'=>true, 'on'=>'create',
 				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
 			       'maxSize'=>array(1204 * 2000),
@@ -59,7 +63,7 @@ class BooksChapters extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),
-			array('id, id_curriculum, chapter_title, book_title, publishing_year, publishers, editorial, volume, pages, citations, total_of_authors, area, discipline, subdiscipline, creation_date, url_doc, searchValue', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, chapter_title, book_title, publishing_year, publishers, editorial, volume, pages, citations, total_of_authors, area, discipline, subdiscipline, creation_date, url_doc, isbn, keywords, searchValue', 'safe', 'on'=>'search'),
 			array('url_doc, safe','safe', 'on'=>'update'),
 		);
 	}
@@ -73,6 +77,7 @@ class BooksChapters extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),
+			'booksChaptersAuthors' => array(self::HAS_MANY, 'BooksChaptersAuthors', 'id_books_chapters'),
 		);
 	}
 
@@ -98,6 +103,8 @@ class BooksChapters extends CActiveRecord
 			'subdiscipline' => 'Subdisciplina',
 			'creation_date' => 'Creation Date',
 			'url_doc' => 'Documento aprobatorio',
+			'isbn' => 'ISBN',
+			'keywords' => 'Palabras Claves',
 		);
 	}
 
