@@ -149,7 +149,6 @@ class SiteController extends Controller {
 				$key = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
 				$is_active->act_react_key = $key;
 				$is_active->save();
-				echo "se guardo";
 				$email = new SendEmail;
 				$subject = "Has solicitado recuperar tu password en";
 				$subject .= Yii::app()->name;

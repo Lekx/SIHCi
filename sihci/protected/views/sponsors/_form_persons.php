@@ -89,7 +89,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	
 		</span>
 	</div>
-
+<div class="row">
   <span class="plain-select">
        <?php $this->widget('ext.CountrySelectorWidget', array(
 
@@ -104,7 +104,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		)); ?>
 
   </span>
-	
+	</div>
 
 	<div class="row">
 		<?php echo $form->textField($model,'state_of_birth',array('size'=>45,'maxlength'=>45, 'placeholder'=>"Estado de Nacimiento" ,'title'=>"Estado de Nacimiento ")); ?>

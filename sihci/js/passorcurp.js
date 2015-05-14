@@ -11,21 +11,21 @@ $(document).ready(function() {
 
     if ($('#Persons_country').val() == 'Mexico') {
         $('#Persons_curp_passport').attr('placeholder', 'CURP');
-        $('#Persons_state_of_birth').css('display', '');
+        $('.row1').css('display', '');
         $('#Persons_curp_passport').tooltipster('content', 'CURP');
     } else {
         $('#Persons_curp_passport').attr("placeholder", "Pasaporte");
-        $('#Persons_state_of_birth').css('display', 'none');
+        $('.row1').css('display', 'none');
         $('#Persons_curp_passport').tooltipster('content', 'Pasaporte');
     }
     $('#Persons_country').on('change', function() {
         if ($('#Persons_country').val() == 'Mexico') {
             $('#Persons_curp_passport').attr('placeholder', 'CURP');
-            $('#Persons_state_of_birth').css('display', '');
+            $('.row1').css('display', '');
             $('#Persons_curp_passport').tooltipster('content', 'CURP');
         } else {
             $('#Persons_curp_passport').attr('placeholder', 'Pasaporte');
-            $('#Persons_state_of_birth').css('display', 'none');
+            $('.row1').css('display', 'none');
             $('#Persons_curp_passport').tooltipster('content', 'Pasaporte');
         }
     });
