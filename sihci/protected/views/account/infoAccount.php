@@ -1,5 +1,4 @@
 <?php
-$controller = "";
 
 $this->menu = array(
 	array('label' => 'Datos de Cuenta', 'url' => array('account/infoAccount')),
@@ -17,17 +16,18 @@ $this->menu = array(
     <h4>Datos de Cuenta:</h4>
     <div class="acountcont">
         <div class="acoutmail">
-            <h5>Correo:</h5>
+            <h5>Correo:</h5> 
             <?php
-            echo "<p>".$details->email."</p>";
-            echo CHtml::link('Modificar',array('account/updateEmail'));
-            ?>
+            echo "<input type='text' value='".$details->email."' disabled> <br><br>";
+            echo CHtml::Button('Modificar',array('submit' => array('account/updateEmail'),'class'=>'addSomething'));
+             ?>
+          
         </div>
         <div class="acountpass">
             <h5>Contraseña:</h5>
             <?php
-                echo "<p> ************** <p> ";
-                echo CHtml::link('Modificar',array('account/updatePassword'));
+                echo "<input type='text' value='************' disabled> <br><br>";
+                echo CHtml::Button('Modificar',array('submit' => array('account/updatePassword'),'class'=>'addSomething'));
             ?>
         </div>
     </div>

@@ -112,6 +112,7 @@
 	padding-left: 20px !important;
 	color: #1EB9C0 !important;
 	opacity: .60 !important;
+	padding-right: 55px !important;
 }
 #crateusers input[type="submit"].previousform , #crateusers input[type="button"].previousform
 {

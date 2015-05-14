@@ -68,7 +68,7 @@ class UsersController extends Controller {
 							if (isset($_POST['Persons'])) {
 
 								$modelPersons->attributes = $_POST['Persons'];
-								$modelPersons->person_rfc = "1234567890123";
+								//$modelPersons->person_rfc = "1234567890123";
 
 								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
 								if (empty($result2)) {

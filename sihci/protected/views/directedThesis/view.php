@@ -27,7 +27,7 @@ $this->menu=array(
 		array(               
                 'label'=>'Archivo',
                 'type'=>'raw',
-                'value'=>CHtml::link('Ver archivo', Yii::app()->createUrl($model->path),array("target"=>"_blank")),
+                'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")),
              ),
 		//'path',
 		'grade',

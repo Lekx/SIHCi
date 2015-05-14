@@ -39,14 +39,7 @@ class DocsIdentity extends CActiveRecord
 			array('id_curriculum', 'required'),
 			array('id_curriculum, is_Primary', 'numerical', 'integerOnly'=>true),
 			array('type', 'required'),
-		// //	array('doc_id', 'required'),
-		// 	array('doc_id', 'length', 'max'=>50),
 			array('description', 'length', 'max'=>250),
-
-			array('doc_id','file', 'allowEmpty'=>true,
-			                  'types'=>'pdf, doc, docx, odt',
-			                  'maxSize'=>array(1024 * 2000),
-			                  'message'=>'Solo se admiten  archivos PDF, ODT, DOC o DOCX'),
 
 			// array('doc_id','file', 'allowEmpty'=>true,
 			//                   'types'=>'pdf, doc, docx, odt',
