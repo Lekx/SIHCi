@@ -54,6 +54,7 @@
 
 	<div class="emails">
 		<h5>Email:</h5>
+		 <span class="plain-select">
 			<select id="typeEmail" title="Tipo de Email" name="typesEmails">
 	  			<option value="" selected="">Tipo Email</option> 
 	  			<option value="Trabajo">Trabajo</option>
@@ -61,9 +62,10 @@
 	  			<option value="Particular">Particular</option>
 	  			<option value="Campus">Campus</option>
 	  			<option value="otro">otro</option>
-		</select>
-		<div id="errorTypeEmail" class="errors"> Debe seleccionar Tipo de Email</div>
+			</select>
+		</span>
 		<br>
+		<div id="errorTypeEmail" class="errors"> Debe seleccionar Tipo de Email</div>
 		<input id="mail" title="Email" type="text" name="emails" placeholder="Email">
 		<div id="errorMail" class="errors"> Debe ser un correo válido: ejemplo@mail.com</div><br>
 
@@ -100,15 +102,15 @@
 
 			
 				echo "<h5>Email:</h5>";
+				echo " <span class='plain-select'>";
 				echo $form->dropDownList($emails,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
 		                                                       array('title'=>'Tipo de Email','prompt'=>'Tipo de Email','required'=>'true','name'=>'getTypeEmail[]','options' => array(''.$getEmails[$key]->type.''=>array('selected'=>true))));
+				echo "</span>";
 				echo $form->error($emails,'type');
-
 			 	echo $form->textField($emails,'email',array('title'=>'Email','required'=>'true','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
 			 	echo $form->error($emails, 'email');
-			 	echo "<br>";
 			 	
 				echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteEmail', 'id'=>$getEmails[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?' , 'class'=>'deleteSomething'));
 			 	$countEmail ++;
@@ -123,7 +125,7 @@
 	<input class="phone"  type="button" id="hideFormPhone" value="Cancelar">
 
 <div class="phone">
-	<br>
+ <span class="plain-select">
 	<select id="typePhone" title="Tipo de Teléfono" name="typesPhones">
 			<option value="" selected="">Tipo de Teléfono</option> 
 			<option value="Trabajo">Trabajo</option>
@@ -132,8 +134,8 @@
 			<option value="Campus">Campus</option>
 			<option value="otro">otro</option>
 	</select>
-		<br>
-		<div id="errorTypePhone" class="errors"> Debe seleccionar tipo de Teléfono</div><br>
+	</span>
+		<div id="errorTypePhone" class="errors"> Debe seleccionar tipo de Teléfono</div>
 
 			<div class="phoneinput">
 				<input id="countryCode" type="text"  class="phones country" name="countryCode" maxlength="2" placeholder="[52]">
@@ -172,11 +174,13 @@
 	
 		<?php
 		foreach ($getPhones as $key => $value) {
-      echo "<h5>Teléfono:</h5>";
+      	echo "<h5>Teléfono:</h5>";
+     	echo " <span class='plain-select'>";
 		echo $form->dropDownList($model,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial', 
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
 		                                                       array('title'=>'Tipo de Teléfono','prompt'=>'Tipo de Teléfono','required'=>'true','name'=>'getTypesPhones[]','options' => array($getPhones[$key]->type=>array('selected'=>true)))); 
+		 echo "</span>";
 		 echo $form->error($model,'type');
 		 echo "<div class='phoneinput'>";
 
@@ -191,11 +195,10 @@
 
 		 echo $form->textField($model,'extension',array('class'=>'phones extension','name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'[Ext]')); 
 		 echo $form->error($model,'extension'); 
- echo "<br>";
+		 echo "<br>";
 		echo "Marcar como primario ";
      echo $form->radioButton($model,'is_primary',array('name'=>'getIsPrimary[]', 'uncheckValue'=>'0', 'checked'=>$getPhones[$key]->is_primary)); 
       echo $form->error($model,'is_primary'); 
-      echo "<br>";
 		 echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deletePhone', 'id'=>$getPhones[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		 echo "</div>";
 		  echo "<hr>";
@@ -225,7 +228,7 @@
                             }',                    
                             
                         ), array('class'=>'savebutton')); ?>
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 <hr>

@@ -50,13 +50,15 @@ $('.fType').on('change', function(e) {
 <div class="recopy">
 	<div class="row">
 	<hr>
-	<?php 
+		<?php 
+		    echo "<span class='plain-select'>";
+			echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
+			                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20 ,'title'=>'Tipo de Contacto'));
+			echo "</span>";
+			echo $form->error($model, 'type');
+
+		?>
 	
-		echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
-		                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20 ,'title'=>'Tipo de Contacto'));
-		echo $form->error($model, 'type');
-	
-	?>
 	</div>
 </div>
 <hr>
@@ -71,12 +73,18 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 ?>
 
 	<div class="row">
+	
 	<?php
 	foreach ($modelPull as $valuePull) {
+		echo "<hr>";
 		echo "<input type='hidden' value='".$valuePull['id']."' name ='modelPullIds[]'>";  //array('prompt'=> $valuePull['type'])
-		echo $form->labelEx($model, 'type');
+	
+
+		echo "  <span class='plain-select'>";
 		echo $form->dropDownList($model, 'type', array('telefono'=>'Teléfono','celular'=>'Celular','fax'=>'Fax','email'=>'Email'), array('prompt'=> $valuePull['type']),
 		                     						array('name' => 'modelPullTypes[]','class'=>'fType','options' => array($valuePull['type']=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20,'title'=>'Tipo de Contacto'));
+		echo "</span>";
+
 		echo $form->error($model, 'type');
 		$valueArray= explode("-", $valuePull['value']);
 		echo '<input type="'.($valuePull['type'] == 'email' ||  $valuePull['type'] == 'celular' ? 'hidden' : 'text').'"  name="valuesUpdate1[]" value="'.$valueArray[0].'" >';
@@ -85,7 +93,8 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 
 		echo '<input type="text" name="valuesUpdate3[]" placeholder="'.$valuePull['type'].'" value="'.$valueArray[2].'" >';
 
-		echo CHtml::link('Eliminar',array('Sponsors/deleteContact','id'=>$valuePull['id']));
+		echo "<hr>";
+		echo CHtml::link('Eliminar',array('Sponsors/deleteContact','id'=>$valuePull['id']), array('class'=>'deleteSomething'));
 }
 ?>
 	</div>
@@ -96,7 +105,7 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 
 	<div class="row buttons">
 			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
-			<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+			
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 
