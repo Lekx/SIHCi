@@ -41,7 +41,7 @@
 					  		'Inventor'=>'Inventor',
 					  		'Coinventor'=>'Coinventor'	  	
 				  ),				  
-				  array('prompt'=>'Tipo de participación')			  
+				  array('prompt'=>'Seleccionar participación')			  
 			 );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -59,7 +59,7 @@
 						'En trámite'=>'En trámite',
 						'Registrada'=>'Registrada'
 					 ),
-				array('prompt'=>'Estado de la patente')
+				array('prompt'=>'Seleccionar estado de la patente')
 			); 
 		?>
 		<?php echo $form->error($model,'state'); ?>
@@ -85,7 +85,7 @@
 						'Modelo de utilidad'=>'Modelo de utilidad',
 						'Patente'=>'Patente'
 					),
-			   	array('prompt'=>'Tipo de patente')
+			   	array('prompt'=>'Seleccionar tipo de patente')
 				); 
 		?>
 		<?php echo $form->error($model,'patent_type'); ?>

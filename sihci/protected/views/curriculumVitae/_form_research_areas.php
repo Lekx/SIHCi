@@ -53,10 +53,11 @@
 <input id="hideFormResearch" type="button"  value="Cancelar" class="cancelSomething">
 
 <div class="research">
-	<div class='row'>
+<div class="research2">
 		<h5>Nombre de Investigación</h5>
 		<input id="research" type="text" name="nameResearch" title="Nombre de Investigación" placeholder="Nombre de Investigación">
-		<div id="errorResearch" class="errors"> No debe estar vacío</div><br>
+		<div id="errorResearch" class="errors"> No debe estar vacío</div>
+		</div>
 		 <?php echo CHtml::ajaxButton ('Crear Línea de Investigación',CController::createUrl('curriculumVitae/researchAreas'), 
         				array(
 							'dataType'=>'json',
@@ -67,7 +68,7 @@
 		                         if(data.status=="200")
 		                         {
 				                     alert("Linea de investigación se ha creado con éxito");
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
+				                 ndow.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
 		                         }		                         
 		                         else
 		                         {
@@ -78,7 +79,6 @@
 		                    
                         ), array('id'=>'btnCreateResearch','class'=>'addSomething')); 
         ?>
-	</div>
 </div><!-- form -->
 
 	<?php 
@@ -86,10 +86,11 @@
 	foreach ($getResearch as $key => $value) {
 		echo "<hr>";
 		echo "<div class='row'>";
-		echo "<h5>Linea de Investigacion".$countDocs.":</h5>";
+		echo "<div class='research2'>";
+		echo "<h5>Linea de Investigacion ".$countDocs.":</h5>";
 		echo $form->textField($model,'name',array('title'=>'Nombre de Investigación','name'=>'getResearch[]','value'=>$getResearch[$key]->name,'size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); 
 		echo $form->error($model,'name'); 
-		echo "<br>";
+		echo "</div>";
 		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteResearch', 'id'=>$getResearch[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		echo "</div>";
 		echo "<hr>";

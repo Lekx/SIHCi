@@ -126,9 +126,7 @@
           <?php echo $form->error($curriculum,'native_country'); ?>
 	</div>
 
-	<div class="row">
-
-
+	<div class="row1">
 		<?php echo $form->dropDownList($model,'state_of_birth',array(       'Aguascalientes'=>'Aguascalientes',
 																			'Baja_California'=>'Baja California', 
 																			'Baja_California_Sur'=>'Baja California Sur',
@@ -162,7 +160,7 @@
 		                                                       array('title'=>'Estado','prompt'=>'Seleccionar Estado','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 	  
-	    
+
             <?php echo $form->error($model,'state_of_birth'); ?>
 	</div>
 
@@ -176,7 +174,7 @@
 
 	<div class="row">
 		
-		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto", "title"=>"Foto de Perfil")); ?>
 		  
 		<?php echo $form->error($model,'photo_url'); ?>
 		<?php 
@@ -195,28 +193,8 @@
 	</div>
 
 	<div class="row buttons">
-	<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?')); ?>
-		<?php 
-		// echo CHtml::ajaxSubmitButton ('Guardar',CController::createUrl('curriculumVitae/personalData'), 
-  //       				array(
-		// 					'dataType'=>'json',
-  //                    		'type'=>'post',
-  //                    		'success'=>'function(data) 
-  //                    		 {
-		                                      
-		//                          if(data.status=="200")
-		//                          {
-		// 		                     $(".successdiv").show();
-				               
-		//                          }		                         
-		//                          else
-		//                          {
-		// 	                     	$(".errordiv").show();
-		// 	                     }       
-		//                   	}',                    
-		                    
-  //                     ), array('class'=>'savebutton'));  
-        ?>
+	<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton')); ?>
+		
 	
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>

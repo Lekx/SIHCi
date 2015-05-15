@@ -213,7 +213,6 @@ class SponsorsController extends Controller {
 			foreach ($_POST['fullnamesUpdate'] as $key => $names) 
 				$model->updateByPk($fullnamesUpdateId[$key],array('fullname' => $names));
 
-			$this->redirect(array('view', 'id' => $model->id));
 		}
 
 		if (isset($_POST['fullnames'])) {

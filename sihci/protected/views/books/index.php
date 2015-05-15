@@ -1,18 +1,18 @@
 <?php
-/* @var $this BooksChaptersController */
+/* @var $this BooksController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Books Chapters',
+	'Books',
 );
 
 $this->menu=array(
-	array('label'=>'Gestionar', 'url'=>array('admin')),
-	array('label'=>'Crear', 'url'=>array('create')),
+	array('label'=>'Create Books', 'url'=>array('create')),
+	array('label'=>'Manage Books', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Cap&iacute;tulos de libros</h1>
+<h1>Books</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -16,16 +16,15 @@
 ));?>
 
 <div class="recopy">
-	<div class="row">
 	<hr>
 		<?php
-		
-	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
-	echo $form->error($model, 'fullname');
+		echo "<div class='row'>";
+		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
+		echo $form->error($model, 'fullname');
+		echo "</div>";
 ?>
 
 
-	</div>
 </div>
 
 <hr>
@@ -37,21 +36,21 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 ));
 ?>
 
-
-
-	<div class="row">
+<hr>
+<h4>Contactos Creados:</h4>
+<hr>
 		<?php
 foreach ($fullname as $value) {
 	echo "<input type='hidden' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
-
+	echo "<div class='row'>";
 	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 70));
 	echo $form->error($model, 'fullname');
-	echo CHtml::link('Eliminar',array('Sponsors/deleteContacts','id'=>$value['id']));
+	echo "</div>";
+	echo CHtml::link('Eliminar',array('Sponsors/deleteContacts','id'=>$value['id']),array('class'=>'deleteSomething'));
 	echo '<hr>';
 }
 ?>
 
-	</div>
 
 
 

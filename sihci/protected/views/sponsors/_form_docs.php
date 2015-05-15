@@ -12,7 +12,7 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 ?>
 
 
-<div class="form"
+<div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'sponsors-docs-form',
@@ -31,7 +31,7 @@ echo "</pre>";
 //echo $modelDocs[0]->path . " " . $modelDocs[0]->file_name;?>
 
 	<?php echo $form->errorSummary($model);?>
-	<!--<?php //print_r($modelDocs); ?>-->
+	<?php //print_r($modelDocs); ?>
 
 	<div class="row">
 	<h5>Decreto de creación, acta constitutiva o documento que acredite la creación de la empresa:</h5>
@@ -87,8 +87,6 @@ echo "</pre>";
 			if(array_key_exists('Identificacion_Oficial_del_Representante', $modelDocs))
 				echo "<a href='".Yii::app()->request->baseUrl."/".$modelDocs['Identificacion_Oficial_del_Representante'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelDocs['Identificacion_Oficial_del_Representante'][1]."' style='width:75px;height:auto;'></a>";
 		?>	
-		<br>
-		<br>
 	</div>
 
 	<div class="row buttons">
