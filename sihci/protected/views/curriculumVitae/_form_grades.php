@@ -47,6 +47,7 @@
 <input id="hideFormGrade" class="grades" type="button"  value="Cancelar">
 
 	<div class="grades">
+	<div class="row">
 	 <span class="plain-select">
 		<?php
 		$this->widget('ext.CountrySelectorWidget', array(
@@ -59,7 +60,8 @@
 
 					)); ?>
 					</span>
-		<br>
+					</div>
+	<div class="row">
  <span class="plain-select">
 		<select id="grade" name="grade">
   			<option value="" selected="">Grado</option> 
@@ -68,17 +70,17 @@
   			<option value="Doctorado">Doctorado</option>
 		</select>
 		</span>
+		</div>
 		<div id="errorGrade" class="errors"> Debe seleccionar su Grado</div>
-		<br>
-		
-		
+	<div class="row">		
 		<input id="writNumber" type="text" name="writNumber" placeholder="Número de Cédula">
 		<div id="errorNumber" class="errors"> Debe ser Número </div>
-		<br>
-
+	</div>
+	<div class="row">
 		<input id="title" type="text" name="title" placeholder="Tútulo">
 		<div id="errorTitle" class="errors"> Debe seleccionar Título </div>
-		<br>
+	</div>
+	<div class="row">
  <span class="plain-select">
 		<?php 
 
@@ -100,7 +102,8 @@
 		?>
 		</span>
 		<div id="errorObtentionDate" class="errors"> Debe seleccionar una Fecha </div>
-		<br>
+		</div>
+	<div class="row">
  <span class="plain-select">
 		<select id="status" name="status">
   			<option value="" selected="">Estatus</option> 
@@ -110,11 +113,14 @@
   			<option value="Truncado">Truncado</option>
 		</select>
 		</span>
-		<br>
+	</div>
+	<div class="row">
 
 		<input id="thesisTitle" type="text" name="thesisTitle" placeholder="Título de Tesis">
 		<div id="errorThesisTitle" class="errors"> Debe seleccionar el Título de Tesis </div>
-		<br>
+		</div>
+	<div class="row">
+
  <span class="plain-select">
 		<select id="state" name="state">
   			<option value="" selected="">Estado</option> 
@@ -123,7 +129,9 @@
 		</select>
 		</span>
 		<div id="errorState" class="errors"> Debe seleccionar su Estado </div>
-		<br>
+		</div>
+	<div class="row">
+
 	<?php 
    echo " <span class='plain-select'>";
 	echo $form->dropDownList($model,'sector',array('No especificado'=>'No especificado','Instituciones del sector gobierno federal centralizado'=>'Instituciones del sector gobierno federal centralizado',
@@ -140,7 +148,9 @@
 				                                                 
 
 
-		<br>
+		</div>
+	<div class="row">
+
 	<?php 
 	echo " <span class='plain-select'>";
 	echo $form->dropDownList($model,'institution',array('BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA'=>'BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA','UNIVERSIDAD ESTATAL DE SONORA'=>'UNIVERSIDAD ESTATAL DE SONORA','CENTRO DE INVESTIGACIONES BIOLOGICAS'=>'CENTRO DE INVESTIGACIONES BIOLOGICAS',
@@ -181,7 +191,9 @@
 
 
 		<div id="errorInstitution" class="errors"> Debe seleccionar Institución </div>
-		<br>	
+		</div>
+	<div class="row">
+
 
 		<?php 
 			echo " <span class='plain-select'>";
@@ -199,7 +211,8 @@
 
 											
 
-		<br>
+</div>
+	<div class="row">
 
 		<?php 
 			echo " <span class='plain-select'>";
@@ -259,7 +272,9 @@
 
 												 
 
-		<br>
+		</div>
+
+	<div class="row">
 
 		<?php
 		echo " <span class='plain-select'>";
@@ -451,8 +466,7 @@
 
 											
 
-		<br>
-		
+	</div>
 		 <?php echo CHtml::ajaxButton ('Crear Formación Académica',CController::createUrl('curriculumVitae/grades'), 
         				array(
 							'dataType'=>'json',
@@ -475,10 +489,9 @@
 		                    
                         ), array('id'=>'btnCreateGrade')); 
         ?>
+		
 		<br>
-
-	</div>
-		<br>
+		</div>
 
 	<?php 
 	$count = 1;

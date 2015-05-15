@@ -15,15 +15,15 @@ $('.fType').on('change', function(e) {
 
 	if(option == 'EMAIL'){
 		
-		$(this).parent().append('<div class="row"><input type="hidden" class="removable dFieldT" name="values1[]" ></div> <div class="row"><input type="hidden" class="removable dFieldT" name="values2[]" ></div><div class="row"><input type="text" name="values3[]" class="removable dFieldE" placeholder="email"></div>');
+		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="hidden" class="removable dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldE" placeholder="Email">');
 
 	}else if(option == 'CELULAR'){
 		
-		$(this).parent().append('<div class="row"><input type="hidden" class="removable dFieldT" name="values1[]" ></div> <div class="row"><input type="text" class="removable dFieldT" name="values2[]" ></div><div class="row"><input type="text" name="values3[]" class="removable dFieldC" placeholder="celular"></div>');
+		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="text" class="hidden dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldC" placeholder="Celular">');
 
 	}else{
 		
-		$(this).parent().append('<div class="row"><input type="text" class="removable dFieldT" name="values1[]" placeholder="Lada 1"></div> <div class="row"><input type="text" class="removable dFieldT" name="values2[]" placeholder="Lada 2"></div><div class="row"><input type="text" class="removable dFieldT" name="values3[]" placeholder="Telefono"></div>');
+		$(this).parent().append('<input type="text" class="removable dFieldT" name="values1[]" placeholder="Lada 1"><input type="text" class="removable dFieldT" name="values2[]" placeholder="Lada 2"><input type="text" class="removable dFieldT" name="values3[]" placeholder="Telefono">');
 
 	}
 
@@ -48,28 +48,29 @@ $('.fType').on('change', function(e) {
 
 <div class="recopy">
 	<hr>
+	<div class="row">
+	  <span class="plain-select1">
 		<?php 
 			
-			echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
+			echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','EMAIL'=>'Email'), 
 			                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20 ,'title'=>'Tipo de Contacto'));
 			echo $form->error($model, 'type');;
 		?>
-	
+		</span>
+	</div>
 	</div>
 </div>
 <hr>
 
-<div class="row">
 
 	<?php
-
 $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 	'targetClass' => 'recopy',
 	'addButtonLabel' => 'Agregar nuevo',
 ));
 ?>
-</div>
-	<div class="row">
+
+
 	
 	<?php
 	foreach ($modelPull as $valuePull) {
@@ -99,7 +100,6 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 		echo CHtml::link('Eliminar',array('Sponsors/deleteContact','id'=>$valuePull['id']), array('class'=>'deleteSomething'));
 }
 ?>
-	</div>
 
 
 
