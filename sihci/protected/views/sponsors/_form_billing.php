@@ -123,7 +123,7 @@ $this->widget(
 		<?php echo $form->error($model, 'name');?>
 </div>
 <div class="row">
-		<?php echo $form->textField($model, 'rfc', array('size' => 20, 'placeholder' => 'RFC', 'title' => 'RFC','maxlength' => 20, 'class' => 'numericOnly'));?>
+		<?php echo $form->textField($model, 'rfc', array('size' => 20, 'placeholder' => 'RFC', 'title' => 'RFC','maxlength' => 20, 'class' => ''));?>
 		<?php echo $form->error($model, 'rfc');?>
 		</div>
 <div class="row">

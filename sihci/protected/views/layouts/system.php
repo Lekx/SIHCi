@@ -47,7 +47,7 @@
                             $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
-                                    trigger: 'click',
+                                
                                 });
 
                             });

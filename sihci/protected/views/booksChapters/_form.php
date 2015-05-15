@@ -13,10 +13,23 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
+
+	 <div class="row">
+     
+        <?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Palabras claves')); ?>
+        <?php echo $form->error($model,'keywords'); ?>
+    </div>
+
+    <div class="row">
+        
+        <?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN')); ?>
+        <?php echo $form->error($model,'isbn'); ?>
+    </div>
 
 	<div class="row">
 		
@@ -96,12 +109,6 @@
 		
 		<?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas')); ?>
 		<?php echo $form->error($model,'citations'); ?>
-	</div>
-
-	<div class="row">
-		
-		<?php echo $form->textField($model,'total_of_authors',array('placeholder'=>'Total de autores')); ?>
-		<?php echo $form->error($model,'total_of_authors'); ?>
 	</div>
 
 	<div class="row">
@@ -362,10 +369,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'url_doc'); ?>
+	
 		<?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'url_doc'); ?>
 	</div>
+
+	
+
 
 	
 
@@ -433,7 +443,7 @@
 		</div>
 		 
 		 <div class="row">
-		  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'numerical', 'integerOnly'=>true,'placeholder'=>'posición')); ?>
+		  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'numerical', 'integerOnly'=>true,'placeholder'=>'Posición')); ?>
 		  <?php echo $form->error($value,'position'); 
 		?>
 	</div>

@@ -506,13 +506,12 @@ thead th
 .phones.country{ width: 65px !important; margin-right: 6px !important; }
 .phones.state{ width: 65px !important; margin-right: 6px !important; }
 .phones.phonew{ width: 240px !important; margin-right: 6px !important; }
-.extension { width: 65px !important; margin-right: 6px !important; }
+.extension { width: 57px !important; margin-right: 0px !important; }
 
 .newaddres
 {
 	width: 450px;
 	background-color: #1EB9C0;
-
 
 }
 .newaddres a
@@ -665,6 +664,7 @@ thead th
 	background-color: #00B9C0 !important;
 	display: block !important;
 	margin: 15px !important;
+	padding: 3px;
 }
 .deleteSomething:hover , .addSomething:hover , .cancelSomething:hover ,.deletecontact:hover
 {
@@ -737,14 +737,14 @@ thead th
 /* Select Option */
 
 
-.plain-select  {
+.plain-select  , .plain-select1{
     display:inline-block;
     vertical-align:middle;
     position:relative;
     width: 450px;
 
 }
-.plain-select select {
+.plain-select select , .plain-select1 select{
     line-height:normal;
     background-color: #CDF1F3;
 	font-family: 'Caviar_Dreams_Bold';
@@ -945,4 +945,12 @@ table.detail-view th
 .row , .row1
 {
 	margin: 15px !important;
+}
+.dFieldT , .dFieldC , .dFieldE 
+{
+	margin-top: 10px !important;
+}
+.research2
+{
+	margin-left: 15px;
 }

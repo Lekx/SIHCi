@@ -84,26 +84,18 @@ class DirectedThesisController extends Controller
                         mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/', 0777, true);
 
                         $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-                        $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                
-                    
-                }
-                else 
-                {
-                    $model->path = "";
-                }   
-
-                    if($model->save())
-                    {                  
+                        $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                  
+                     
+                     if($model->save()){                  
                         echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();
                     }                   
-                    else 
-                    {
+                    else{
                         echo CJSON::encode(array('status'=>'404'));
                         Yii::app()->end();
                     }
-                        
+                }      
         }
             
         if(!isset($_POST['ajax']))
@@ -133,9 +125,8 @@ class DirectedThesisController extends Controller
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
-            if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]'))*/)
-                {
-                    echo $model->path."Entre al if ";
+            if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]'))*/){
+
                     if(!empty($actual_path))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_path);
                     $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
@@ -147,11 +138,9 @@ class DirectedThesisController extends Controller
                         $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
                         $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                                   
                 }
-                else
-                {
-                    echo $actual_path."Entro al else";
+                else{
+                    
                     $model->path = $actual_path;    
-                
                  }   
                     echo $model->path;
                     if($model->save())
