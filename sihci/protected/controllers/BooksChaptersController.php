@@ -115,37 +115,7 @@ class BooksChaptersController extends Controller
                                 Yii::app()->end();
 			               }
 
-			               }
-			               else {
-
-			               	if($model->save()){             
-					 			$names = $_POST['names'];
-					            $last_name1 = $_POST['last_names1'];
-					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];
-					            
-             					 foreach($_POST['names'] as $key => $names){
-					               	unset($modelAuthor);
-					               	$modelAuthor = new BooksChaptersAuthors;
-					               	$modelAuthor->id_books_chapters = $model->id;
-					       			$modelAuthor->names = $names;
-					        		$modelAuthor->last_name1 = $last_name1[$key];
-					       			$modelAuthor->last_name2 = $last_name2[$key];
-					        		$modelAuthor->position = $position[$key];
-		                    		$modelAuthor->save();
-			              	 }	
-			               	   echo CJSON::encode(array('status'=>'200'));
-                               $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();
-
-			            }
-			            else {
-
-			            	echo CJSON::encode(array('status'=>'404'));
-                            Yii::app()->end();
-			            }
-
-			         }		   
+			               }		   
         		}
         }
 

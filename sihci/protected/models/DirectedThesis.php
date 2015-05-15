@@ -51,7 +51,7 @@ class DirectedThesis extends CActiveRecord
 			array('discipline', 'length', 'max'=>75),
 			array('subdiscipline', 'length', 'max'=>100),
 			array('conclusion_date, creation_date', 'safe'),
-			array('path','file','allowEmpty'=>true, 'on'=>'update',
+			array('path, safe','file','allowEmpty'=>true, 'on'=>'create',
 				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
 			       'maxSize'=>array(1204 * 2000),
 			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
@@ -60,6 +60,7 @@ class DirectedThesis extends CActiveRecord
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),
 			array('id, id_curriculum, title, conclusion_date, author, path, grade, sector, organization, second_level, area, discipline, subdiscipline, creation_date, searchValue', 'safe', 'on'=>'search'),
+			array('path, safe','safe','on'=>'update'),
 		);
 	}
 
@@ -118,7 +119,7 @@ class DirectedThesis extends CActiveRecord
 
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR author LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR author LIKE CONCAT('%', :searchValue , '%') OR sector LIKE CONCAT('%', :searchValue , '%') OR grade LIKE CONCAT('%', :searchValue , '%') OR organization LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
 		/*$criteria->compare('id',$this->id);
