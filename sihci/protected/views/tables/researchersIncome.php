@@ -18,11 +18,22 @@ $this->breadcrumbs=array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$researchersIncome,
 	'columns'=>array(
-		'id',
-		'names',
-		'name',
-		'hospital_unit',
-		'SNI',
+		 array('header'=>'Numero de Usuario',
+		 		'name'=>'id',
+                ),
+		  array('header'=>'Nombre de Usuario',
+		 		'name'=>'names',
+                ),
+		   array('header'=>'Línea de Investigación',
+		 		'name'=>'name',
+                ),
+		    array('header'=>'Undad Hospitalaria',
+		 		'name'=>'hospital_unit',
+                ),
+		     array('header'=>'Sistema NI',
+		 		'name'=>'SNI',
+                ),
+
    	),
 )); ?>
 
