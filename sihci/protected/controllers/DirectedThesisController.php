@@ -75,8 +75,9 @@ class DirectedThesisController extends Controller
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
-            if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]'))*/)
-                {
+        
+
+            if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]'))*/) {
                      $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/';
                   
@@ -95,7 +96,8 @@ class DirectedThesisController extends Controller
                         echo CJSON::encode(array('status'=>'404'));
                         Yii::app()->end();
                     }
-                }      
+                } 
+                 
         }
             
         if(!isset($_POST['ajax']))

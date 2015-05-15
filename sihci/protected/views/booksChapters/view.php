@@ -17,6 +17,7 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
+		'isbn',
 		'chapter_title',
 		'book_title',
 		'publishing_year',
@@ -25,11 +26,14 @@ $this->menu=array(
 		'area',
 		'discipline',
 		'subdiscipline',
+		'keywords', 
 		 array(
 			'label'=>'Archivo',
 			'type'=>'raw',
 			'value'=>CHtml::link('Ver archivo',Yii::app()->baseUrl.$model->url_doc, array("target"=>"_blank")),
-			),  
+			), 
+
+        
 	),
 
 ));  ?>

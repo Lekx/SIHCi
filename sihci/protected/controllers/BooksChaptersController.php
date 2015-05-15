@@ -66,7 +66,6 @@ class BooksChaptersController extends Controller
         $model=new BooksChapters;
         $modelAuthor = new BooksChaptersAuthors;
       
-
         // Uncomment the following line if AJAX validation is needed
          $this->performAjaxValidation($model);
 
@@ -81,11 +80,11 @@ class BooksChaptersController extends Controller
 
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/';
                		if($model->url_doc != ''){
-	                if(!is_dir($path))
-	                	 mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
+	                	if(!is_dir($path))
+	                	 	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
 	                
- 					$model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
-		            $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
+ 							 $model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
+		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
 	                	
 			               if($model->save()){
 			               		              
@@ -115,7 +114,7 @@ class BooksChaptersController extends Controller
                                 Yii::app()->end();
 			               }
 
-			               }		   
+			            }		   
         		}
         }
 
@@ -146,6 +145,7 @@ class BooksChaptersController extends Controller
 
 	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
 				
+				if($model->validate()){
            		if ($model->url_doc != ''/*!empty(CUploadedFile::getInstanceByName('BooksChapters[url_doc]'))*/)
                 {
                     if(!empty($actual_url))
@@ -195,6 +195,8 @@ class BooksChaptersController extends Controller
                 		echo CJSON::encode(array('status'=>'404'));
                         Yii::app()->end();
                 	}
+
+            }
             
             
         }

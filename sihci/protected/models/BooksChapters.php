@@ -56,7 +56,7 @@ class BooksChapters extends CActiveRecord
 			array('publishing_year, creation_date', 'safe'),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
-			array('url_doc, safe','file','allowEmpty'=>true, 'on'=>'create',
+			array('url_doc, safe','file','allowEmpty'=>true,'on'=>'create', 
 				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
 			       'maxSize'=>array(1204 * 2000),
 			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
@@ -128,7 +128,7 @@ class BooksChapters extends CActiveRecord
 
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%') OR publishing_year LIKE CONCAT('%', :searchValue , '%') OR editorial LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%') OR publishing_year LIKE CONCAT('%', :searchValue , '%') OR editorial LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR isbn LIKE CONCAT('%', :searchValue , '%') ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
 		/*$criteria->compare('id',$this->id);

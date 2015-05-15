@@ -32,14 +32,14 @@
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'));?>
+		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Seleccionar tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'));?>
 		</span>
 		<?php echo $form->error($model,'reference_type'); ?>
 	</div>
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
+		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Seleccionar especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
          'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
