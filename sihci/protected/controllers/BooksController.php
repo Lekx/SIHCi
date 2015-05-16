@@ -33,11 +33,11 @@ class BooksController extends Controller
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -63,20 +63,101 @@ class BooksController extends Controller
 	public function actionCreate()
 	{
 		$model=new Books;
-
+		$modelAuthor = new BooksAuthors;
+		   
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
+		
+		$model->id_curriculum = $id_curriculum->id; 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
+		$this->performAjaxValidation($model);
+		
 		if(isset($_POST['Books']))
 		{
 			$model->attributes=$_POST['Books'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+			$model->id_curriculum = $id_curriculum->id;   
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+	        $model->path = CUploadedFile::getInstanceByName('Books[path]');
+
+			if($model->validate())
+            {
+            	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
+
+               	if (!empty(CUploadedFile::getInstanceByName('Books[path]')))
+               	{
+	                if(!is_dir($urlFile))
+	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/', 0777, true);
+	                
+	 					$model->path->saveAs($urlFile.'file'.$model->book_title.'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->book_title.'.'.$model->path->getExtensionName();    			 			   	
+		                if($model->save())
+		                {
+		               		              
+				 			$names = $_POST['names'];
+				            $last_name1 = $_POST['last_names1'];
+				            $last_name2 = $_POST['last_names2'];
+				            $position = $_POST['positions'];
+				            
+         					foreach($_POST['names'] as $key => $names)
+         					{
+				               	unset($modelAuthor);
+				               	$modelAuthor = new BooksAuthors;
+
+				               	$modelAuthor->id_book = $model->id;
+				       			$modelAuthor->names = $names;
+				        		$modelAuthor->last_name1 = $last_name1[$key];
+				       			$modelAuthor->last_name2 = $last_name2[$key];
+				        		$modelAuthor->position = $position[$key];
+	                    		$modelAuthor->save();
+		              	    }	
+
+		                    echo CJSON::encode(array('status'=>'success'));
+                            //$this->redirect(array('admin','id'=>$model->id));
+                            Yii::app()->end();
+
+		               }
+		               else
+		               {
+		               		echo CJSON::encode(array('status'=>'404'));
+                            Yii::app()->end();
+		               }
+			    }
+			    else 
+			    {
+	               	if($model->save())
+	               	{             
+			 			$names = $_POST['names'];
+			            $last_name1 = $_POST['last_names1'];
+			            $last_name2 = $_POST['last_names2'];
+			            $position = $_POST['positions'];
+			            
+     					foreach($_POST['names'] as $key => $names)
+     					{
+			               	unset($modelAuthor);
+			               	$modelAuthor = new BooksAuthors;
+			               	$modelAuthor->id_book  = $model->id;
+			       			$modelAuthor->names = $names;
+			        		$modelAuthor->last_name1 = $last_name1[$key];
+			       			$modelAuthor->last_name2 = $last_name2[$key];
+			        		$modelAuthor->position = $position[$key];
+                    		$modelAuthor->save();
+	              	    }	
+              	 
+	               	  	echo CJSON::encode(array('status'=>'200'));
+                        $this->redirect(array('admin','id'=>$model->id));
+                        Yii::app()->end();
+
+                    } 		                      
+		            else 
+		            {
+		            	echo CJSON::encode(array('status'=>'404'));
+	                    Yii::app()->end();
+		            }
+		        }    
+	        }// if validate
+	    }//	Books	   
+        	
+   		if(!isset($_POST['ajax']))
+				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
 	}
 
 	/**
@@ -87,20 +168,79 @@ class BooksController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$modelAuthors = BooksAuthors::model()->findAllByAttributes(array('id_book'=>$model->id));
+		$modelAuthor = new BooksAuthors;
+       
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model); 
+		$oldUrlDocument = $model->path;
 
-		if(isset($_POST['Books']))
-		{
-			$model->attributes=$_POST['Books'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+        if(isset($_POST['Books']))
+        {
+	            $model->attributes=$_POST['Books'];
+	            $model->path = CUploadedFile::getInstanceByName('Books[path]');
+	
+           		if (!empty(CUploadedFile::getInstanceByName('Books[path]')))
+                {
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                    if(!empty($oldUrlDocument))
+                    	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
+                    
+                    $model->path = CUploadedFile::getInstanceByName('Books[path]');
+                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books/';
+                  
+                    if(!is_dir($urlFile))          
+                        mkdir($urlFile, 0777, true);
+
+                       $model->path->saveAs($urlFile.'file'.$model->book_title.'.'.$model->path->getExtensionName());
+		               $model->path= '/users/'.Yii::app()->user->id.'/books/file'.$model->book_title.'.'.$model->path->getExtensionName();                                                    
+                }
+                
+                else                  
+                   $model->path = $oldUrlDocument;       
+                    
+            		if($model->save())
+            		{
+            					$idsBooks = $_POST['idsBooks'];
+            					$names = $_POST['names'];
+					            $last_name1 = $_POST['last_names1'];
+					            $last_name2 = $_POST['last_names2'];
+					            $position = $_POST['positions'];
+					                 
+     					 foreach($_POST['names'] as $key => $value)
+     					 {
+     					 
+			        		if($idsBooks[$key] == '')
+			        		{
+			        			unset($modelAuthor);
+								$modelAuthor = new BooksAuthors;
+			        			$modelAuthor->id_book = $model->id;
+			        			$modelAuthor->names = $names[$key];
+								$modelAuthor->last_name1 = $last_name1[$key];
+								$modelAuthor->last_name2 = $last_name2[$key];
+								$modelAuthor->position = $position[$key];
+								$modelAuthor->save();
+                    		}
+                    		else
+                    		{
+								$modelAuthor->updateByPk($idsBooks[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
+                		    }
+                	    }
+
+           	 		   echo CJSON::encode(array('status'=>'200'));
+                       $this->redirect(array('admin','id'=>$model->id));
+                       Yii::app()->end();
+                	} 
+                	else 
+                	{
+                		echo CJSON::encode(array('status'=>'404'));
+                        Yii::app()->end();
+                	}           
+            
+        }
+        	
+   		if(!isset($_POST['ajax']))
+				$this->render('update',array('model'=>$model,'modelAuthor'=>$modelAuthor, 'modelAuthors'=>$modelAuthors));
 	}
 
 	/**
@@ -110,11 +250,20 @@ class BooksController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		BooksAuthors::model()->deleteAll("id_book=".$id );
+		$model= Books::model()->findByPk($id);
+		
+		if($model->path != null)
+		{
+			unlink(YiiBase::getPathOfAlias("webroot").$model->path);
+			$model->delete();
+		}
+		else
+			$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**
@@ -123,9 +272,7 @@ class BooksController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Books');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**
