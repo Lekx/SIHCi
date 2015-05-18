@@ -1,7 +1,7 @@
 <?php
 /* @var $this BooksController */
 /* @var $model Books */
-
+	//LI05-Listar registros
 $this->breadcrumbs=array(
 	'Books'=>array('index'),
 	'Manage',

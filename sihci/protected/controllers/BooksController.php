@@ -60,6 +60,7 @@ class BooksController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+	//LI01-Registrar datos
 	public function actionCreate()
 	{
 		$model=new Books;
@@ -87,8 +88,8 @@ class BooksController extends Controller
 	                if(!is_dir($urlFile))
 	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/', 0777, true);
 	                
-	 					$model->path->saveAs($urlFile.'file'.$model->book_title.'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->book_title.'.'.$model->path->getExtensionName();    			 			   	
+	 					$model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();    			 			   	
 		                if($model->save())
 		                {
 		               		              
@@ -111,7 +112,7 @@ class BooksController extends Controller
 		              	    }	
 
 		                    echo CJSON::encode(array('status'=>'success'));
-                            //$this->redirect(array('admin','id'=>$model->id));
+                            $this->redirect(array('admin','id'=>$model->id));
                             Yii::app()->end();
 
 		               }
@@ -165,6 +166,7 @@ class BooksController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+	//LI02-Modificar datos
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -174,7 +176,6 @@ class BooksController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model); 
 		$oldUrlDocument = $model->path;
-
         if(isset($_POST['Books']))
         {
 	            $model->attributes=$_POST['Books'];
@@ -187,13 +188,13 @@ class BooksController extends Controller
                     	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
                     
                     $model->path = CUploadedFile::getInstanceByName('Books[path]');
-                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books/';
+                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
                   
                     if(!is_dir($urlFile))          
                         mkdir($urlFile, 0777, true);
 
-                       $model->path->saveAs($urlFile.'file'.$model->book_title.'.'.$model->path->getExtensionName());
-		               $model->path= '/users/'.Yii::app()->user->id.'/books/file'.$model->book_title.'.'.$model->path->getExtensionName();                                                    
+                       $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+		               $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();                                                    
                 }
                 
                 else                  
@@ -248,6 +249,7 @@ class BooksController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+	//LI03-Eliminar datos
 	public function actionDelete($id)
 	{
 		BooksAuthors::model()->deleteAll("id_book=".$id );
@@ -269,6 +271,7 @@ class BooksController extends Controller
 	/**
 	 * Lists all models.
 	 */
+	//LI04-Desplegar datos
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Books');
@@ -278,6 +281,7 @@ class BooksController extends Controller
 	/**
 	 * Manages all models.
 	 */
+	//LI05-Listar registros
 	public function actionAdmin()
 	{
 		$model=new Books('search');

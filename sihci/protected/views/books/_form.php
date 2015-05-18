@@ -5,7 +5,20 @@
 $cs = Yii::app()->getClientScript();
  $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
 ?>
-
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
+</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -26,7 +39,7 @@ $cs = Yii::app()->getClientScript();
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">		
-		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN')); ?>
+		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
@@ -41,7 +54,7 @@ $cs = Yii::app()->getClientScript();
 	</div>
 
 	<div class="row">		
-		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición')); ?>
+		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'edition'); ?>
 	</div>
 
@@ -77,17 +90,17 @@ $cs = Yii::app()->getClientScript();
 
 	
 	<div class="row">		
-		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen') ); ?>
+		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','class' => 'numericOnly') ); ?>
 		<?php echo $form->error($model,'volume'); ?>
 	</div>
 
 	<div class="row">		
-		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas')); ?>
+		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'pages'); ?>
 	</div>
 
 	<div class="row">		
-		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje')); ?>
+		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 
@@ -215,7 +228,7 @@ $cs = Yii::app()->getClientScript();
 	</div>
 
 <div class="row">
-		<?php echo $form->dropDownList($model,'discipline',array('APLICACIONES DE LA LOGICA'=>'APLICACIONES DE LA LOGICA','LOGICA DEDUCTIVA'=>'LOGICA DEDUCTIVA','LOGICA GENERAL'=>'LOGICA GENERAL','LOGICA INDUCTIVA METODOLOGIA
+				<?php echo $form->dropDownList($model,'discipline',array('APLICACIONES DE LA LOGICA'=>'APLICACIONES DE LA LOGICA','LOGICA DEDUCTIVA'=>'LOGICA DEDUCTIVA','LOGICA GENERAL'=>'LOGICA GENERAL','LOGICA INDUCTIVA METODOLOGIA
 			         '=>'LOGICA INDUCTIVA METODOLOGIA','OTRAS ESPECIALIDADES EN MATERIA DE LOGICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE LOGICA','ÁLGEBRA'=>'ÁLGEBRA','ANALISIS Y ANALISIS FUNCIONAL
 			         INFORMATICA MATEMATICA'=>'ANALISIS Y ANALISIS FUNCIONAL INFORMATICA MATEMATICA','GEOMETRIA TEORIA DE LOS NUMEROS'=>'GEOMETRIA TEORIA DE LOS NUMEROS',
 			         'ANALISIS NUMERICO INVESTIGACION OPERATIVA'=>'ANALISIS NUMERICO INVESTIGACION OPERATIVA','CALCULO DE PROBABILIDADES ESTADISTICA'=>'CALCULO DE PROBABILIDADES ESTADISTICA',

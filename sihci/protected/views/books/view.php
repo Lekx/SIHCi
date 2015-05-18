@@ -1,7 +1,7 @@
 <?php
 /* @var $this BooksController */
 /* @var $model Books */
-
+	//LI04-Desplegar datos
 $this->breadcrumbs=array(
 	'Books'=>array('index'),
 	$model->id,
@@ -21,9 +21,7 @@ $this->menu=array(
 		'isbn',
 		'book_title',
 		'publisher',
-		'editorial',
 		'edition',
-		'publishing_year',
 		'release_date',
 		'volume',
 		'pages',

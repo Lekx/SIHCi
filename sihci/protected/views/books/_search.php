@@ -2,7 +2,7 @@
 /* @var $this BooksController */
 /* @var $model Books */
 /* @var $form CActiveForm */
-
+//LI06-Barra de busqueda
 ?>
 
 <div class="wide form">
