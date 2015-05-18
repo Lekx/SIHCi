@@ -50,7 +50,7 @@ class ChartsController extends Controller
 	 * @param integer $id the ID of the model to be displayed
 	 */
 
-	//GR01-
+	//GR01-Total Ingreso de Investigadores y GR02-Total Baja de Investigadores 
 	public function actionTotalRegisteredResearchesIo()
 	{
 
@@ -66,10 +66,9 @@ class ChartsController extends Controller
 		$results = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
-		
+		WHERE type = 'fisico'
 		GROUP BY MONTH(creation_date)
 		")->queryAll();
-
 
 		$this->render('index',array(
 			'results'=>$results, 'action'=>'totalRegisteredResearchesIo'

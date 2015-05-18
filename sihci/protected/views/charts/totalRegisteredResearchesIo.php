@@ -12,11 +12,8 @@ $results2[1] = array("total"=>3,"month"=>12);
 $results2[2] = array("total"=>4,"month"=>11);
 $results2[3] = array("total"=>5,"month"=>10);
 
-
-
-for($i = 0; $i < 12; $i++){
-	
-	
+/*for($i = 0; $i < 12; $i++){
+		
 		foreach ($results as $key => $value)
 			$res1 = intval($value["month"]) === ($i+1) ? true : false;
 	
@@ -35,7 +32,7 @@ for($i = 0; $i < 12; $i++){
 
 print_r($results);
 echo "<hr>";
-print_r($results2);
+print_r($results2);*/
 /*
 		foreach ($results as $key => $value) {
 			if($value["month"] == $i)
@@ -45,8 +42,6 @@ print_r($results2);
 		 	$value["total"]=0;
 		}
 	*/
-
-
 
 foreach($results2 as $key => $values){
 	$data2[$months[$values["month"]]] = intval($values["total"]);
@@ -64,9 +59,7 @@ print_r($data2);
 //$cats = array_keys($data);
 //$cats = array_merge(array_keys($data),array_keys($data2));
 
-
-
-
+ 
 
  $this->widget(
     'yiiwheels.widgets.highcharts.WhHighCharts',
@@ -89,8 +82,4 @@ print_r($data2);
     )
     )
     );
-       
-
-
-
  ?>
