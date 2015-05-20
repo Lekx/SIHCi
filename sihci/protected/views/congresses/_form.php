@@ -29,7 +29,7 @@
 
 	<div class="row">
 		
-		<?php echo $form->dropDownList($model,'year', array('promt'=>'Año',
+		<?php echo $form->dropDownList($model,'year', array('promt'=>'Seleccionar año',
 															'1930'=>'1930','1931'=>'1931',
 															'1932'=>'1932','1933'=>'1933','1934'=>'1934','1935'=>'1935',
 															'1936'=>'1936','1937'=>'1937','1938'=>'1938','1939'=>'1939',
@@ -99,7 +99,7 @@
      
 	<div class="row">
 		
-        <?php echo $form->dropDownList($model,'work_type',array('promt'=>'Tipo de trabajo','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));?>
+        <?php echo $form->dropDownList($model,'work_type',array('promt'=>'Seleccionar tipo de trabajo','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));?>
         <?php echo $form->error($model,'work_type'); ?>
      
 	</div>
