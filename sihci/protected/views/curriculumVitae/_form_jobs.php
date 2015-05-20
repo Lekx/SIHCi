@@ -26,9 +26,7 @@
 		<?php echo $form->error($model,'hospital_unit'); ?>
 </span>
 	</div>
-	
-	<div class="row">
-		
+			
 		<?php 
 		if ($model->hospital_unit == "NA" || $model->hospital_unit == "" ) {
 
@@ -38,11 +36,7 @@
 
 		?>
 
-	</div>
-
-	<div class="row">
-	
-		
+	<div class="row">	
 		<?php echo $form->textField($model,'area',array( 'title'=>'Área','size'=>45,'maxlength'=>45, 'placeholder'=>'Área')); ?>
 		<?php echo $form->error($model,'area'); ?>
 	</div>

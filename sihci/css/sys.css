@@ -374,6 +374,39 @@ input[type="radio"]
     display: inline-block;
 	
 }
+.cvforms textarea
+{
+	box-sizing: border-box;
+	height: 105px;
+	width: 450px;
+	background-color: #CDF1F3;
+	font-family: 'Caviar_Dreams_Bold';
+	color: #0E3152;
+	border: 0px;
+	border-color: none;
+	box-shadow: none;
+	-webkit-appearance:none;
+	-moz-appearance: none;
+	padding:2px 18px 2px 9px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+	
+}
+.cvforms textarea
+{
+
+}
 .cvforms select 
 {
 	box-sizing: border-box;
@@ -441,6 +474,18 @@ input[type="radio"]
 }
 input::-webkit-input-placeholder { /* WebKit browsers */
     color: #1EB9C0 !important;
+}
+::-webkit-input-placeholder { /* navegadores Webkit */
+    color:   #1EB9C0 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 hasta 18 */
+    color:    #1EB9C0 !important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #1EB9C0 !important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #1EB9C0 !important;
 }
 .ui-datepicker 
 {
@@ -863,7 +908,6 @@ thead th
 
 }
 .slideThree input[type=checkbox] {
-  visibility: ;
   margin-right: 10px;
 }
 .slideThree input[type=checkbox]:checked + label {
@@ -881,7 +925,7 @@ thead th
 .searchcrud
 {
 	font-family: 'Caviar_Dreams' !important;
-	width: 850px !important;
+	width: 92% !important;
 	height: 50px !important;
 }
 .items table tr
@@ -953,4 +997,13 @@ table.detail-view th
 .research2
 {
 	margin-left: 15px;
+}
+.odd td
+{
+	background: #ffffff !important;
+	width: 250px;
+}
+.odd th
+{
+	width: 250px;
 }

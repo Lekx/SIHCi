@@ -127,6 +127,7 @@
 	</div>
 
 	<div class="row1">
+	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'state_of_birth',array(       'Aguascalientes'=>'Aguascalientes',
 																			'Baja_California'=>'Baja California', 
 																			'Baja_California_Sur'=>'Baja California Sur',
@@ -162,6 +163,7 @@
 	  
 
             <?php echo $form->error($model,'state_of_birth'); ?>
+            </span>
 	</div>
 
 	<div class="row">

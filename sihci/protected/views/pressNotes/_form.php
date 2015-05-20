@@ -20,9 +20,8 @@
 
 	<!-- <p class="note">Fields with <span class="required">*</span> are required.</p> -->
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
+	    <span class="plain-select">
 		<?php echo $form->dropDownList($model,'type',
 			array(
 				'Demostraciones'=>'Demostraciones',
@@ -39,10 +38,12 @@
 			),
 			array('prompt'=>'Seleccionar participación'));
 		?>
+		</span>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
+	    <span class="plain-select">
 		<?php echo $form->dropDownList($model,'directed_to',
 		    array(
 				'Empresarios'=>'Empresarios',
@@ -54,8 +55,9 @@
 				'Sector Público'=>'Sector Público',
 				'Sector Social'=>'Sector Social'
 			),
-		    array('prompt'=>'Dirigido a'));
+		    array('prompt'=>'Dirigido A..'));
 		?>
+		</span>
 		<?php echo $form->error($model,'directed_to'); ?>
 	</div>
 
@@ -87,12 +89,11 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica')); ?>
+		<?php echo $form->textArea($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica')); ?>
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'is_national'); ?>
 		<?php $status = array('Nacional' => 'Nacional','Extranjero'=>'Extranjero'); 
 		    echo $form-> RadioButtonList($model,'is_national' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); 
 		 ?>
@@ -118,11 +119,9 @@
 			                    	alert("Complete los campos con *");   
 			                    }       
 		                  	}',                            
-                        )); 
-        ?>
-		<?php  if($model->isNewRecord) 
-			    	echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">'; ?>	
-       	<?php echo CHtml::link('Cancelar', array('/pressNotes/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+                        ),array('class'=>'savebutton')); 
+        ?>	
+       	 	<?php echo CHtml::Button('Cancelar',array('submit' => array('pressnotes/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	
 	</div>	
 
