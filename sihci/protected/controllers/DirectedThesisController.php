@@ -76,7 +76,7 @@ class DirectedThesisController extends Controller
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
            
-                if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]'))*/) {
+                if ($model->path != '') {
 
                                                                                        //.doc                                         .docx                                                                                              .odt                                        .jpg y .jpeg                          .png                        
                    if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png'){
@@ -145,26 +145,27 @@ class DirectedThesisController extends Controller
             $model->attributes=$_POST['DirectedThesis'];
             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
 
-
-              if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('DirectedThesis[path]'))*/){
+              if ($model->path != ''){
                     
                     if(!empty($actual_path))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_path);
 
-                    $->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
+                    $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/';
                   
                     if(!is_dir($urlFile))          
                         mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/', 0777, true);
 
+                   
                         $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
                         $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                                   
-
+                   
                 }
                 else{
                     
                     $model->path = $actual_path;    
-                 }   
+                 } 
+
                     if($model->save())
                     {                
                         echo CJSON::encode(array('status'=>'200'));
@@ -175,7 +176,7 @@ class DirectedThesisController extends Controller
                         echo CJSON::encode(array('status'=>'404'));
                         Yii::app()->end();
                     }
-                                   
+                  
         }
             
         if(!isset($_POST['ajax']))
