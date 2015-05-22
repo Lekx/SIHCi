@@ -9,13 +9,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Books', 'url'=>array('index')),
-	array('label'=>'Create Books', 'url'=>array('create')),
-	array('label'=>'View Books', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Books', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>Update Books <?php echo $model->id; ?></h1>
+<h1>Modificar <?php echo $model->book_title; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'modelAuthor'=>$modelAuthor,'modelAuthors'=>$modelAuthors)); ?>

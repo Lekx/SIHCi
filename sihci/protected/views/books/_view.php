@@ -25,23 +25,15 @@
 	<?php echo CHtml::encode($data->publisher); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('editorial')); ?>:</b>
-	<?php echo CHtml::encode($data->editorial); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('edition')); ?>:</b>
 	<?php echo CHtml::encode($data->edition); ?>
-	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('publishing_year')); ?>:</b>
-	<?php echo CHtml::encode($data->publishing_year); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('release_date')); ?>:</b>
 	<?php echo CHtml::encode($data->release_date); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('volume')); ?>:</b>
 	<?php echo CHtml::encode($data->volume); ?>
 	<br />

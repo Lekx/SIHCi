@@ -9,9 +9,7 @@
  * @property integer $isbn
  * @property string $book_title
  * @property string $publisher
- * @property string $editorial
  * @property integer $edition
- * @property integer $publishing_year
  * @property integer $release_date
  * @property integer $volume
  * @property integer $pages
@@ -36,6 +34,8 @@ class Books extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $searchValue;
+
 	public function tableName()
 	{
 		return 'books';
@@ -49,21 +49,25 @@ class Books extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, isbn, publisher, release_date, pages, area, discipline, path, keywords', 'required'),
-			array('id_curriculum, isbn, edition, publishing_year, release_date, volume, pages, copies_issued', 'numerical', 'integerOnly'=>true),
+			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords', 'required'),
+			array('id_curriculum, isbn, edition, release_date, volume, pages, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('book_title, path', 'length', 'max'=>100),
 			array('publisher, traductor', 'length', 'max'=>80),
-			array('editorial, subdiscipline', 'length', 'max'=>45),
 			array('work_type', 'length', 'max'=>30),
 			array('idioma', 'length', 'max'=>15),
 			array('traductor_type', 'length', 'max'=>20),
 			array('area', 'length', 'max'=>40),
 			array('discipline', 'length', 'max'=>60),
+			array('subdiscipline', 'length', 'max'=>45),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
+			array('path , safe','file','on'=> 'create',
+    	                'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
+    	                'maxSize'=>array(1204 * 5000)),
+			array('path ,safe', 'safe', 'on'=>'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, isbn, book_title, publisher, editorial, edition, publishing_year, release_date, volume, pages, copies_issued, work_type, idioma, traductor_type, traductor, area, discipline, subdiscipline, path, keywords, creation_date', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, isbn, book_title, publisher, edition, release_date, volume, pages, copies_issued, work_type, idioma, traductor_type, traductor, area, discipline, subdiscipline, path, keywords, searchValue ,creation_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -88,25 +92,23 @@ class Books extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'isbn' => 'Isbn',
-			'book_title' => 'Book Title',
-			'publisher' => 'Publisher',
-			'editorial' => 'Editorial',
-			'edition' => 'Edition',
-			'publishing_year' => 'Publishing Year',
-			'release_date' => 'Release Date',
+			'isbn' => 'ISBN',
+			'book_title' => 'Título del libro',
+			'publisher' => 'Editorial',
+			'edition' => 'Edición',
+			'release_date' => 'Año de publicación',
 			'volume' => 'Volume',
-			'pages' => 'Pages',
-			'copies_issued' => 'Copies Issued',
-			'work_type' => 'Work Type',
+			'pages' => 'Número de paginas',
+			'copies_issued' => 'Tiraje',
+			'work_type' => 'Tipo de trabajo',
 			'idioma' => 'Idioma',
-			'traductor_type' => 'Traductor Type',
-			'traductor' => 'Traductor',
-			'area' => 'Area',
-			'discipline' => 'Discipline',
-			'subdiscipline' => 'Subdiscipline',
-			'path' => 'Path',
-			'keywords' => 'Keywords',
+			'traductor_type' => 'Tipo de traductor',
+			'traductor' => 'Nombre del traductor',
+			'area' => 'Área',
+			'discipline' => 'Disciplina',
+			'subdiscipline' => 'Subdisciplina',
+			'path' => 'Archivo',
+			'keywords' => 'Palabras claves',
 			'creation_date' => 'Creation Date',
 		);
 	}
@@ -128,30 +130,11 @@ class Books extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('isbn',$this->isbn);
-		$criteria->compare('book_title',$this->book_title,true);
-		$criteria->compare('publisher',$this->publisher,true);
-		$criteria->compare('editorial',$this->editorial,true);
-		$criteria->compare('edition',$this->edition);
-		$criteria->compare('publishing_year',$this->publishing_year);
-		$criteria->compare('release_date',$this->release_date);
-		$criteria->compare('volume',$this->volume);
-		$criteria->compare('pages',$this->pages);
-		$criteria->compare('copies_issued',$this->copies_issued);
-		$criteria->compare('work_type',$this->work_type,true);
-		$criteria->compare('idioma',$this->idioma,true);
-		$criteria->compare('traductor_type',$this->traductor_type,true);
-		$criteria->compare('traductor',$this->traductor,true);
-		$criteria->compare('area',$this->area,true);
-		$criteria->compare('discipline',$this->discipline,true);
-		$criteria->compare('subdiscipline',$this->subdiscipline,true);
-		$criteria->compare('path',$this->path,true);
-		$criteria->compare('keywords',$this->keywords,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-
+		if($this->searchValue)
+		{
+			$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}	
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
