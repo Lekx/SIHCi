@@ -51,7 +51,7 @@ class ArticlesGuides extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_resume,title, start_page, end_page, article_type, magazine, area, discipline,subdiscipline, keywords, url_document', 'required'),
+			array('id_resume,title, start_page, end_page, article_type, magazine, area, discipline,subdiscipline, keywords', 'required'),
 			array('id_resume, isbn, edicion, publishing_year, volumen, volumen_no, start_page, end_page, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('editorial', 'length', 'max'=>80),
 			array('article_type', 'length', 'max'=>20),
@@ -61,11 +61,15 @@ class ArticlesGuides extends CActiveRecord
 			array('type', 'length', 'max'=>15),
 			array('url_document', 'length', 'max'=>100),
 			array('searchValue','length','max'=>70),
-    	    array('path','file','allowEmpty'=>true, 'types'=>'pdf, doc, docx, odt, jpg, jpeg, png','maxSize'=>array(1204 * 5000),'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
+    	    array('path , safe','file','allowEmpty'=>true,'on'=> 'create',
+    	                'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
+    	                'maxSize'=>array(1204 * 5000),
+    	                'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
 			array('end_page','compare', 'compareAttribute'=>'start_page','operator'=>'>=','message'=>'Página final no puede ser menor a la página inicial'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_resume, isbn,title, editorial, edicion, publishing_year, volumen, volumen_no, start_page, end_page, article_type, copies_issued, magazine, area, discipline, subdiscipline, url_document, keywords, type, creation_date,searchValue', 'safe', 'on'=>'search'),
+			array('path ,safe', 'safe', 'on'=>'update')
 		);
 	}
 
