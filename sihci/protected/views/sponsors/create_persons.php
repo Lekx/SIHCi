@@ -30,4 +30,4 @@ $this->menu = array(
 
 <h4>Datos de Representante:</h4>
 
-<?php $this->renderPartial('_form_Persons', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form_persons', array('model'=>$model)); ?>

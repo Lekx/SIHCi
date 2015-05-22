@@ -66,7 +66,6 @@ class BooksChaptersController extends Controller
         $model=new BooksChapters;
         $modelAuthor = new BooksChaptersAuthors;
       
-
         // Uncomment the following line if AJAX validation is needed
          $this->performAjaxValidation($model);
 
@@ -76,16 +75,18 @@ class BooksChaptersController extends Controller
             $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
             $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
         
-            if($model->validate())
-            {
 
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/';
                		if($model->url_doc != ''){
-	                if(!is_dir($path))
-	                	 mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
-	                
- 					$model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
-		            $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
+	                	if(!is_dir($path))
+	                	 	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
+	                		
+	                	 	                                                                               //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
+            				if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
+
+
+ 							 $model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
+		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
 	                	
 			               if($model->save()){
 			               		              
@@ -115,10 +116,16 @@ class BooksChaptersController extends Controller
                                 Yii::app()->end();
 			               }
 
-			               }
-			               else {
+			               }  else{
 
-			               	if($model->save()){             
+					//Esta parte va en el campo de filefield como mensaje
+              		echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
+			            }	
+			        }
+			        else
+			        {
+			        	if($model->save()){
+			               		              
 					 			$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
@@ -138,15 +145,16 @@ class BooksChaptersController extends Controller
                                $this->redirect(array('admin','id'=>$model->id));
                                Yii::app()->end();
 
-			            }
-			            else {
+			               }
+			               else{
 
-			            	echo CJSON::encode(array('status'=>'404'));
-                            Yii::app()->end();
-			            }
+			               		echo CJSON::encode(array('status'=>'404'));
+                                Yii::app()->end();
+			               }
+			        }
 
-			         }		   
-        		}
+				   
+        		
         }
 
         $this->render('create',array(
@@ -176,8 +184,10 @@ class BooksChaptersController extends Controller
 
 	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
 				
-           		if ($model->url_doc != ''/*!empty(CUploadedFile::getInstanceByName('BooksChapters[url_doc]'))*/)
-                {
+				                                                                   //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
+            if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
+           		if ($model->url_doc != ''/*!empty(CUploadedFile::getInstanceByName('BooksChapters[url_doc]'))*/){
+
                     if(!empty($actual_url))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_url);
                     $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
@@ -225,6 +235,13 @@ class BooksChaptersController extends Controller
                 		echo CJSON::encode(array('status'=>'404'));
                         Yii::app()->end();
                 	}
+                } else {
+                	//Esta parte va en el campo de filefield como mensaje
+              		echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png";
+
+                }
+
+            
             
             
         }

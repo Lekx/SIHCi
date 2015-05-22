@@ -12,10 +12,8 @@
 )); ?>
 
   	<div class="row">
-
-		<legend> Búsqueda por</legend>
-			<?php echo $form->textField($model,'fullname',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion')); ?>
-			<?php echo CHtml::submitButton('Buscar'); ?>
+			<?php echo $form->textField($model,'fullname',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion','class'=>'searchcrud')); ?>
+			<?php echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

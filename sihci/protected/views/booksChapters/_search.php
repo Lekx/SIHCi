@@ -14,7 +14,7 @@
 <div class="row">
 		
 		<legend>B&uacute;squeda por:</legend>
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo de libro, Título de Capítulo, Editores')); ?>	
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'ISBN, Titulo de libro, Título de Capítulo, Editores, Año de publicación')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
 
 	</div>

@@ -16,17 +16,20 @@ $this->menu = array(
     <h4>Datos de Cuenta:</h4>
     <div class="acountcont">
         <div class="acoutmail">
-            <h5>Correo:</h5> 
             <?php
-            echo "<input type='text' value='".$details->email."' disabled> <br><br>";
+            echo "<div class='row'>";
+            echo "<h5>Correo:</h5>";
+            echo "<input type='text' value='".$details->email."' disabled>";
+            echo "</div>";
             echo CHtml::Button('Modificar',array('submit' => array('account/updateEmail'),'class'=>'addSomething'));
              ?>
-          
         </div>
         <div class="acountpass">
-            <h5>Contraseña:</h5>
             <?php
-                echo "<input type='text' value='************' disabled> <br><br>";
+                echo "<div class='row'>";
+                echo "<h5>Contraseña:</h5>";
+                echo "<input type='text' value='************' disabled>";
+                echo "</div>";
                 echo CHtml::Button('Modificar',array('submit' => array('account/updatePassword'),'class'=>'addSomething'));
             ?>
         </div>

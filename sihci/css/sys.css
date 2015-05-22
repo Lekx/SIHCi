@@ -28,6 +28,12 @@ body
 	font-family: 'Caviar_Dreams' !important;
 
 }
+input, select
+{
+		font-family: 'Caviar_Dreams_Bold' !important;
+		margin: 0 !important;
+
+}
 .sysheader
 {
 	width: 100%;
@@ -333,10 +339,9 @@ label {
 	font-size: 13px;
 	width: 10px;
 }
-.radio input[type="radio"]
+input[type="radio"]
 {
-
-	display: inline-block;
+	display: inline-block !important;
 }
 
 .cvforms input[type="text"], .cvforms input[type="password"], 
@@ -366,13 +371,46 @@ label {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
-    display: block;
+    display: inline-block;
 	
+}
+.cvforms textarea
+{
+	box-sizing: border-box;
+	height: 105px;
+	width: 450px;
+	background-color: #CDF1F3;
+	font-family: 'Caviar_Dreams_Bold';
+	color: #0E3152;
+	border: 0px;
+	border-color: none;
+	box-shadow: none;
+	-webkit-appearance:none;
+	-moz-appearance: none;
+	padding:2px 18px 2px 9px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+	
+}
+.cvforms textarea
+{
+
 }
 .cvforms select 
 {
 	box-sizing: border-box;
-	height: 25px;
+	height: 25px !important;
 	width: 450px;
 	background-color: #CDF1F3;
 	font-family: 'Caviar_Dreams_Bold';
@@ -436,6 +474,18 @@ label {
 }
 input::-webkit-input-placeholder { /* WebKit browsers */
     color: #1EB9C0 !important;
+}
+::-webkit-input-placeholder { /* navegadores Webkit */
+    color:   #1EB9C0 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 hasta 18 */
+    color:    #1EB9C0 !important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #1EB9C0 !important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #1EB9C0 !important;
 }
 .ui-datepicker 
 {
@@ -501,13 +551,12 @@ thead th
 .phones.country{ width: 65px !important; margin-right: 6px !important; }
 .phones.state{ width: 65px !important; margin-right: 6px !important; }
 .phones.phonew{ width: 240px !important; margin-right: 6px !important; }
-.extension { width: 65px !important; margin-right: 6px !important; }
+.extension { width: 57px !important; margin-right: 0px !important; }
 
 .newaddres
 {
 	width: 450px;
 	background-color: #1EB9C0;
-
 
 }
 .newaddres a
@@ -620,10 +669,12 @@ thead th
 .portlet 
 {
   width: 100% !important;
+  font-family: 'Caviar_Dreams' !important;
 	
 }
 .portlet ul li a
 {
+	font-family: 'Caviar_Dreams' !important;
 	font-size: 15px !important;
 	padding-left: 0px !important;
 	padding-bottom: 5px;
@@ -631,6 +682,7 @@ thead th
 }
 .portlet ul li a:hover
 {
+	font-family: 'Caviar_Dreams' !important;
 	font-size: 15px !important;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -638,6 +690,7 @@ thead th
 }
 .portlet hr
 {
+	font-family: 'Caviar_Dreams' !important;
     border-bottom: 1px solid #0A3250;
 	width: 100%;
 	
@@ -647,16 +700,16 @@ thead th
 #btnCreateEmail , #btnCreatePhone
 ,#hideFormEmail , #hideFormPhone 
 ,#showFormGrade , #hideFormGrade,
-#btnCreateGrade
+#btnCreateGrade , .deleteSomething
 {
 	width: 450px !important;
-	margin-top:10px !important; 
-	text-align: center;
-	color: white;
-	height: 25px;
-	background-color: #00B9C0;
-	margin-bottom: 10px;
-	display: block;
+	text-align: center !important;
+	color: white !important;
+	height: 25px !important;
+	background-color: #00B9C0 !important;
+	display: block !important;
+	margin: 15px !important;
+	padding: 3px;
 }
 .deleteSomething:hover , .addSomething:hover , .cancelSomething:hover ,.deletecontact:hover
 {
@@ -671,19 +724,17 @@ thead th
 	color: white;
 	height: 25px;
 	background-color: #00B9C0;
-	margin-bottom: 10px;
-	margin-right: 10px;
+	margin: 15px !important;
 }
 .deletecontact
 {
-	display: block;
+	display: block !important;
 	width: 450px !important;
 	text-align: center;
 	color: white;
 	height: 25px;
 	background-color: #00B9C0;
-	margin-bottom: 10px;
-	margin-right: 10px;
+	margin: 15px !important;
 }
 .acountcont
 {
@@ -731,13 +782,14 @@ thead th
 /* Select Option */
 
 
-.plain-select  {
+.plain-select  , .plain-select1{
     display:inline-block;
     vertical-align:middle;
     position:relative;
     width: 450px;
+
 }
-.plain-select select {
+.plain-select select , .plain-select1 select{
     line-height:normal;
     background-color: #CDF1F3;
 	font-family: 'Caviar_Dreams_Bold';
@@ -748,7 +800,7 @@ thead th
     -moz-appearance:none;
     -ms-appearance:none;
     appearance:none;
-    border-radius:6px;
+    border-radius:4px;
     display:block;
     width:100%;
     padding:3px 18px 4px 6px;
@@ -759,7 +811,7 @@ thead th
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
-    border-radius:2px;
+    border-radius:4px;
 }
 .ie8 .plain-select select{padding-right:3px}
 .plain-select ::-ms-expand {
@@ -769,7 +821,7 @@ thead th
     content:"";
     position:absolute;
     z-index:2;
-    right:8px;
+    right:9px;
     top:50%;
     margin-top:-3px;
     height:0;
@@ -790,7 +842,6 @@ thead th
   border:none;
   border-radius:3px;
   padding:3px 18px 4px 9px;
-  margin: 0;
   text-align: left;
 }
 .filepicker.selected {
@@ -818,6 +869,8 @@ thead th
     -o-border-radius: 4px;
     border-radius: 4px;
     border-radius:4px;
+    padding:2px 18px 2px 9px;
+
  
 }
 .slideThree:after {
@@ -826,7 +879,6 @@ thead th
   position: absolute;
   right: 10px;
   z-index: 0;
-
 
 }
 .slideThree:before {
@@ -856,16 +908,102 @@ thead th
 
 }
 .slideThree input[type=checkbox] {
-  visibility: ;
   margin-right: 10px;
 }
 .slideThree input[type=checkbox]:checked + label {
   left: 378px;
 }
+.search-form
+{
 
+	margin: 0 !important;
+	padding: 0 !important;
+	background-color: white !important;
 
+}
 /* end .slideThree */
+.searchcrud
+{
+	font-family: 'Caviar_Dreams' !important;
+	width: 92% !important;
+	height: 50px !important;
+}
+.items table tr
+{
+	margin: 10px !important;
+}
+.items thead th
+{
+	background-color: #798B9D !important;
+	text-align: left !important;
+	padding: 4px !important;
+	border: none !important;
+	padding-left: 5px !important;
 
+}
+.items table td
+{
+	background-color: white !important;
+	text-align: left !important;
+	padding: 3px !important;
+	border: none !important;
+	height: 30px !important;
+	font-size: 1.1em !important; 
+	min-width: 100px !important;
+	margin-left: 30px !important;
+}
+.items table
+{
+	font-family: 'Caviar_Dreams' !important;
+	border:none !important;
 
+}
+.button-column
+{
+	width: 80px !important;
+}
+.grid-view
+{
+	padding: 0px 0px !important;
+}
+.searchcrudbut
+{
+	width: 50px !important;
+	height: 50px !important;
+	border-radius: 4px;
+	-moz-border-radius: 4px; 
+    -webkit-border-radius:4px; 
+	background-color: #CDF1F3;
+}
+table.detail-view
+{
+	margin-top: 50px !important;
+	margin-bottom: 50px !important;
 
-
+}
+table.detail-view th
+{
+	text-align: left !important;
+	background-color: white;
+}
+.row , .row1
+{
+	margin: 15px !important;
+}
+.dFieldT , .dFieldC , .dFieldE 
+{
+	margin-top: 10px !important;
+}
+.research2
+{
+	margin-left: 15px;
+}
+.odd td
+{
+	background: #ffffff !important;
+	width: 250px;
+}
+.odd th
+{
+	width: 250px;
+}

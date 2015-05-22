@@ -213,7 +213,6 @@ class SponsorsController extends Controller {
 			foreach ($_POST['fullnamesUpdate'] as $key => $names) 
 				$model->updateByPk($fullnamesUpdateId[$key],array('fullname' => $names));
 
-			$this->redirect(array('view', 'id' => $model->id));
 		}
 
 		if (isset($_POST['fullnames'])) {
@@ -344,7 +343,7 @@ class SponsorsController extends Controller {
 			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
 				if (!array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs)) {
-					//var_dump($modelDocs);
+					
 					$model = new SponsorsDocs;
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
@@ -354,7 +353,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
-				unlink($model->path);
+				//unlink($model->path);
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();

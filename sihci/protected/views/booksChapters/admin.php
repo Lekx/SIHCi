@@ -45,6 +45,7 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		//'id',
 		//'id_curriculum',
+		array('name'=>'ISBN','type'=>'html','id'=>'isbn','value'=>'CHtml::encode($data->isbn)'),
 		array('name'=>'Cap&iacute;tulo de Libro','type'=>'html','id'=>'chapter_title','value'=>'CHtml::encode($data->chapter_title)'),
 		array('name'=>'T&iacute;tulo de Libro','type'=>'html','id'=>'book_title','value'=>'CHtml::encode($data->book_title)'),
 		array('name'=>'Año de publicaci&oacute;n','type'=>'html','id'=>'publishing_year','value'=>'CHtml::encode($data->publishing_year)'),
@@ -59,6 +60,7 @@ $('.search-form form').submit(function(){
 		//'area',
 		'discipline',
 		'subdiscipline',
+		'keywords', 
 		//'creation_date',
 		//'url_doc',
 		array(

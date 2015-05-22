@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="en">
+        <meta charset="utf-8">
         <!-- blueprint CSS framework -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
@@ -46,7 +47,7 @@
                             $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
-                                    trigger: 'click',
+                                
                                 });
 
                             });

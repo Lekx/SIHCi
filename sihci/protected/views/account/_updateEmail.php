@@ -35,18 +35,17 @@ $this->menu = array(
 		<?php echo $form->error($details,'email'); ?>
 		<hr>
 	</div>
-	<div>
+	<div class="row">
 	<input placeholder="Nuevo Correo" type="text" name="Account[email2]" id="Account_email2">
 	</div>
 
-	<div>
+	<div class="row">
 		<input placeholder="Repetir Nuevo Correo" type="text" name="Account[email22]" id="Account_email22">
 	</div>
 	<hr>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton("Guardar", array('class'=>'savebutton') ); ?>
-		<input class="cleanbutton" type="button" value="Borrar">
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
