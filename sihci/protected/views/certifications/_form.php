@@ -104,7 +104,7 @@
 
 	<div class="row">
 		<?php 
-		$status = array('certificación' => 'certificación','Recertificación'=>'Recertificación'); 
+		$status = array('certificación' => 'Certificación','Recertificación'=>'Recertificación'); 
         echo $form-> RadioButtonList($model,'type' ,$status ,array('separator' => ' ', 'labelOptions'=>array('style'=>'display:inline')));?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>

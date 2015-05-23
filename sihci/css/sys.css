@@ -138,10 +138,10 @@ input, select
 {
 	width: 74%;
 	height: 100%;
-	min-height: 380px;
+	min-height: 350px;
 	background: #fff;
-	
-   
+	padding-bottom: 50px;
+
 }
 .headerconteiner1 img
 {
@@ -379,6 +379,8 @@ input[type="radio"]
 	box-sizing: border-box;
 	height: 105px;
 	width: 450px;
+	max-height: 105px;
+	max-width: 450px;
 	background-color: #CDF1F3;
 	font-family: 'Caviar_Dreams_Bold';
 	color: #0E3152;
@@ -403,9 +405,10 @@ input[type="radio"]
     display: inline-block;
 	
 }
-.cvforms textarea
+.question p
 {
-
+	width: 450px;
+	margin: 5px;
 }
 .cvforms select 
 {
@@ -869,7 +872,7 @@ thead th
     -o-border-radius: 4px;
     border-radius: 4px;
     border-radius:4px;
-    padding:2px 18px 2px 9px;
+    padding:2px 18px 2px 3px;
 
  
 }
@@ -1006,4 +1009,8 @@ table.detail-view th
 .odd th
 {
 	width: 250px;
+}
+.grid-view .button-column 
+{
+   width: 10% !important;
 }

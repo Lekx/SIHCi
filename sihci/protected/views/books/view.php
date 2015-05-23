@@ -1,34 +1,27 @@
 <?php
 /* @var $this BooksController */
 /* @var $model Books */
-
+	//LI04-Desplegar datos
 $this->breadcrumbs=array(
 	'Books'=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List Books', 'url'=>array('index')),
-	array('label'=>'Create Books', 'url'=>array('create')),
-	array('label'=>'Update Books', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Books', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Books', 'url'=>array('admin')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
 
-<h1>View Books #<?php echo $model->id; ?></h1>
+<h1>Registro <?php echo $model->book_title; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'id_curriculum',
 		'isbn',
 		'book_title',
 		'publisher',
-		'editorial',
 		'edition',
-		'publishing_year',
 		'release_date',
 		'volume',
 		'pages',
@@ -40,8 +33,50 @@ $this->menu=array(
 		'area',
 		'discipline',
 		'subdiscipline',
-		'path',
 		'keywords',
+		array(
+			'label'=>'Archivo',
+			'type'=>'raw',
+			'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")),
+		),
+		/*
+		'id',
+		'id_curriculum',
 		'creation_date',
+		*/
 	),
 )); ?>
+
+	<?php $modelAuthor = BooksAuthors::model()->findAllByAttributes(array('id_book'=>$model->id));
+	 foreach ($modelAuthor as $key => $value)
+	 {  ?> 
+		<?php 
+			  $this->widget('zii.widgets.CDetailView', array(
+			 'data'=>$model,
+			 'attributes'=>array(
+			  
+			  array(
+			   'label'=>'Nombre(s)',
+			   'name'=>'names',
+			   'value'=>$value->names,
+			   ),
+			  array(
+			   'label'=>'Apellido Paterno',
+			   'name'=>'last_names1',
+			   'value'=>$value->last_name1,
+			   ),
+			  array(
+			   'label'=>'Apellido Materno',
+			   'name'=>'last_names2',
+			   'value'=>$value->last_name2,
+			   ),
+			  array(
+			   'label'=>'Posición',
+			   'name'=>'positions',
+			   'value'=>$value->position,
+			   ),  
+			 ),
+
+			));  
+		?>
+	<?php } ?>
