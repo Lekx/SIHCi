@@ -27,7 +27,7 @@
 		<?php echo $form->textArea($model,'subspecialty',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Subespecialida')); ?>
 		<?php echo $form->error($model,'subspecialty'); ?>
 	</div>
-	
+
 	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'subspecialtyRegistry',
  			'addButtonLabel'=>'Agregar nueva subespecialida',
@@ -44,7 +44,7 @@
 
    	<?php 
 	if(!$model->isNewRecord)		  
-		  foreach ($modelSpecialtyAreas  as $key => $value) 
+		  foreach ($modelSpecialtyArea  as $key => $value) 
 		  { ?>
 		  
 			  <div class="row">		  
