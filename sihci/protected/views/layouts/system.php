@@ -37,6 +37,7 @@
                     searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
                     searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
                     base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
+                    back: ' . CJSON::encode(Yii::app()->request->urlReferrer) . ',
                 }
             
             }');

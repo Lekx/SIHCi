@@ -159,7 +159,7 @@
            
             <hr id="resgistrohr">
         <p>Se ha enviado un correo electrónico a su dirección, por favor siga las indicaciones ahi descritas para activar su cuenta.</p>
-             <input type="button" id="LogInUsers" name="nextform" class="nextform action-button 4" value="Regresar al sitio" />
+             <input type="button" id="LogInUsers" name="" class="indexbut action-button 4" value="Regresar al sitio" />
 
         </fieldset>
         <div class="countusers">
