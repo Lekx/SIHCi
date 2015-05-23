@@ -412,9 +412,7 @@
 		<div class="row">
 		  
 		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','numerical', 'integerOnly'=>true,'placeholder'=>'posición')); ?>
-		  <?php echo $form->error($modelAuthor,'position'); 
-		  
-		  ?>
+		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
     	</div> 	
     
