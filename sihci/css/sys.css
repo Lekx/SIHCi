@@ -341,7 +341,7 @@ label {
 }
 input[type="radio"]
 {
-	display: inline-block !important;
+	display: inline !important;
 }
 
 .cvforms input[type="text"], .cvforms input[type="password"], 
@@ -939,9 +939,14 @@ thead th
 {
 	background-color: #798B9D !important;
 	text-align: left !important;
-	padding: 4px !important;
-	border: none !important;
+	padding-top: 3px !important;
+	padding-right: 5px !important;
 	padding-left: 5px !important;
+	padding-bottom: 3px !important;
+	border: none !important;
+	font-size: .9em !important;
+	font-style: normal !important;
+	font-family: 'Caviar_Dreams' !important;
 
 }
 .items table td
@@ -982,12 +987,14 @@ table.detail-view
 {
 	margin-top: 50px !important;
 	margin-bottom: 50px !important;
+	font-family: 'Caviar_Dreams' !important;
 
 }
 table.detail-view th
 {
 	text-align: left !important;
 	background-color: white;
+	font-family: 'Caviar_Dreams' !important;
 }
 .row , .row1
 {
@@ -1001,16 +1008,30 @@ table.detail-view th
 {
 	margin-left: 15px;
 }
-.odd td
+.odd td , .even td
 {
 	background: #ffffff !important;
+	font-family: 'Caviar_Dreams' !important;
 	width: 250px;
 }
-.odd th
-{
+.odd th, .even td
+{	font-family: 'Caviar_Dreams' !important;
 	width: 250px;
 }
 .grid-view .button-column 
 {
    width: 10% !important;
+}
+.detail-view th
+{
+	color: #37B9BF;
+	font-family: 'Caviar_Dreams';
+}
+.detail-view td
+{
+	font-family: 'Caviar_Dreams';
+}
+.items td th 
+{
+	font-family: 'Caviar_Dreams';
 }
