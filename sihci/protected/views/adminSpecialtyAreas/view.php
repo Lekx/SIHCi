@@ -19,8 +19,27 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'id',
-		
 		'specialty',
 		'subspecialty',
 	),
 )); ?>
+
+
+	<?php $modelSpecialtyAreas = AdSpecialtyAreas::model()->findAllByAttributes(array('id_specialty_areas'=>$model->id));
+	 foreach ($modelSpecialtyAreas as $key => $value)
+	 {  ?> 
+		<?php 
+			  $this->widget('zii.widgets.CDetailView', array(
+			 'data'=>$model,
+			 'attributes'=>array(
+			  
+			  array(
+			   'label'=>'Subespecialidad',
+			   'name'=>'names',
+			   'value'=>$value->ext_subspecialty,
+			   ),			  
+			  ),
+
+			 ));  
+		?>
+	<?php } ?>

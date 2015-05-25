@@ -51,7 +51,7 @@
 				  <?php echo "<input type='hidden' value='".$value->id."' name='idsAdminSpecialtyAreas[]'>"; ?>
 				  
 				  <div class="row">	
-					  <?php echo $form->textArea($value,'ext_subspecialty',array('name'=>'ext_subspecialtys[]','value'=>$value->ext_subspecialty,'size'=>30,'maxlength'=>30, 'placeholder'=>'Subespecialida')); ?>
+					  <?php echo $form->textArea($value,'ext_subspecialty',array('name'=>'ext_subspecialty[]','value'=>$value->ehxt_subspecialty,'size'=>30,'maxlength'=>30, 'placeholder'=>'Subespecialida')); ?>
 					  <?php echo $form->error($value,'ext_subspecialty');?>
 				  </div>
 			 </div>	 
