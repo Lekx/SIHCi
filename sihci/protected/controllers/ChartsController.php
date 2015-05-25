@@ -74,4 +74,21 @@ class ChartsController extends Controller
 			'results'=>$results, 'action'=>'totalRegisteredResearchesIo'
 		));
 	}
+
+	//GR02-Cantidad de Investigadores
+	public function actionNumberofResearchers(){
+
+		$conexion = Yii::app()->db;
+
+		$resultst = $conexion->createCommand("
+		SELECT count(id) as total, MONTH(creation_date) as month 
+		FROM users
+		WHERE type = 'fisico'
+		GROUP BY MONTH(creation_date)
+		")->queryAll();
+
+		$this->render('index',array(
+			'resultst'=>$resultst, 'action'=>'numberofResearchers'
+		));
+	}
 }
