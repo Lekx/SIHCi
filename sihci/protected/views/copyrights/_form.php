@@ -19,7 +19,8 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">		
+	<div class="row">
+	 <span class="plain-select">		
 			<?php echo $form->dropDownList($model,'participation_type',
 				array(
 						'Autor'=>'Autor',
@@ -28,6 +29,7 @@
 					array('prompt'=>'Seleccionar participación')
 				); 
 		?>
+		</span>
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
 
@@ -70,6 +72,7 @@
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'entity',
 				array(
 						'Pública'=>'Pública',
@@ -79,6 +82,7 @@
 					array('prompt'=>'Seleccionar entidad')
 				); 
 		?>
+		</span>
 		<?php echo $form->error($model,'entity'); ?>
 	</div>
 
@@ -97,23 +101,19 @@
 		                                      
 		                         if(data.status=="success")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#copyrights-form")[0].reset();
-   				                     window.location.href ="'.Yii::app()->createUrl('copyrights/admin').'";		                         
+										$(".successdiv").show();
 
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("Complete los campos con *");   
+			                     	$(".errordiv").show();   
 			                     }       
 		                  	}',                    
 		                    
-                        )); 
+                        ),array('class'=>'savebutton')); 
         ?>
-        <?php  if($model->isNewRecord) 
-			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-		?>
-       	<?php echo CHtml::link('Cancelar', array('/copyrights/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+        <?php echo CHtml::Button('Cancelar',array('submit' => array('copyrights/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+      
 
 		<div class="200">
 		
