@@ -70,8 +70,15 @@ class ChartsController extends Controller
 		GROUP BY MONTH(creation_date)
 		")->queryAll();
 
+		$resultsResearchersdown = $conexion->createCommand("
+		SELECT  u.id, COUNT(c.status) as total, MONTH(u.creation_date) AS month FROM curriculum AS c 
+		LEFT JOIN users AS u ON c.id_user = u.id
+		WHERE c.status = 0 
+		GROUP BY u.creation_date;
+		")->queryAll();
+
 		$this->render('index',array(
-			'results'=>$results, 'action'=>'totalRegisteredResearchesIo'
+			'results'=>$results,'resultsResearchersdown'=>$resultsResearchersdown, 'action'=>'totalRegisteredResearchesIo'
 		));
 	}
 
@@ -80,15 +87,29 @@ class ChartsController extends Controller
 
 		$conexion = Yii::app()->db;
 
-		$resultst = $conexion->createCommand("
+		$resultsTotalReasearches = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
 		WHERE type = 'fisico'
 		GROUP BY MONTH(creation_date)
 		")->queryAll();
 
+		$resultResearchesSNI = $conexion->createCommand("
+		SELECT DISTINCT u.type, COUNT(c.sni) as total, MONTH(u.creation_date) AS month FROM curriculum AS c 
+		INNER JOIN users AS u ON c.id_user = u.id
+		WHERE c.sni != 0 AND u.type = 'fisico'
+		GROUP BY u.creation_date;
+		")->queryAll();
+
+		$resultResearchesnoSNI = $conexion->createCommand("
+		SELECT DISTINCT u.type, COUNT(c.sni) as total, MONTH(u.creation_date) AS month FROM curriculum AS c 
+		INNER JOIN users AS u ON c.id_user = u.id
+		WHERE c.sni = 0 AND u.type = 'fisico'
+		GROUP BY u.creation_date;
+		")->queryAll();
+
 		$this->render('index',array(
-			'resultst'=>$resultst, 'action'=>'numberofResearchers'
+			'resultsTotalReasearches'=>$resultsTotalReasearches,'resultResearchesSNI'=>$resultResearchesSNI,'resultResearchesnoSNI'=>$resultResearchesnoSNI, 'action'=>'numberofResearchers'
 		));
 	}
 }
