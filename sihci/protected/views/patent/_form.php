@@ -17,12 +17,12 @@
 	'clientOptions'=>array('validateOnSubmit'=>true)
 )); ?>
 
-	<p class="note">Los campos <span class="required">*</span> son requeridos.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php // echo $form->errorSummary($model); ?>
 
 	
 	<div class="row">
+	 <span class="plain-select">
 		<?php $this->widget('ext.CountrySelectorWidget', 
 			array(
 				'value' => $model->country,
@@ -32,10 +32,12 @@
 				'firstEmpty' => true,
 				'firstText' => 'País',
 		)); ?>
+		</span>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'participation_type',
 			  	  array(
 					  		'Inventor'=>'Inventor',
@@ -45,6 +47,7 @@
 			 );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
+		</span>
 	</div>
 
 	<div class="row">
@@ -53,6 +56,7 @@
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'state',
 				array(
 						'En explotación comercial'=>'En explotación comercial',
@@ -62,13 +66,14 @@
 				array('prompt'=>'Seleccionar estado de la patente')
 			); 
 		?>
+		</span>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
 
 	<div class="row">
 		<?php 
                 $status = array('No.Solicitud'=>'No.Solicitud', 'No.Registro'=>'No.Registro');
-                echo $form->radioButtonList($model,'application_type',$status,array('separator'=>' '));
+                echo $form->radioButtonList($model,'application_type',$status,array('separator'=>' ','labelOptions'=>array('style'=>'display:inline')));
         ?>
 		<?php echo $form->error($model,'application_type'); ?>
 	</div>
@@ -79,6 +84,7 @@
 	</div>
 
 	<div class="row">
+	<span class="plain-select">
 		<?php echo $form->dropDownList($model,'patent_type',
 			   array(
 						'Diseño industrial'=>'Diseño industrial',
@@ -88,6 +94,7 @@
 			   	array('prompt'=>'Seleccionar tipo de patente')
 				); 
 		?>
+		</span>
 		<?php echo $form->error($model,'patent_type'); ?>
 	</div>
 
@@ -174,23 +181,18 @@
 			                                      
 			                         if(data.status=="200")
 			                         {
-					                     alert("Registro realizado con éxito");
-					                     $("#patent-form")[0].reset();
-	   									 window.location.href ="'.Yii::app()->createUrl('patent/admin').'";
+					                     $(".successdiv").show();
+					           
 			                         }		                         
 			                         else
 			                         {
-				                     	alert("Complete los campos con *");   
+				                     	$(".errordiv").show();
 				                     }       
 			                  	}',                    
 			                    
-	                        )); 
+	                        ),array('class'=>'savebutton')); 
 	        ?>
-			<?php 
-				if($model->isNewRecord)
-				   echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-			?>
-           	<?php echo CHtml::link('Cancelar', array('/patent/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	        <?php echo CHtml::Button('Cancelar',array('submit' => array('patent/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 
        	</div>

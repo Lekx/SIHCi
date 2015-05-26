@@ -26,6 +26,7 @@
 
 	
 	<div class="row">
+	 <span class="plain-select">	
 		<?php $this->widget('ext.CountrySelectorWidget', 
 			array(
 				'value' => $model->country,
@@ -35,10 +36,12 @@
 				'firstEmpty' => true,
     			'firstText' => 'Seleccionar país',
 		)); ?>
+		</span>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'participation_type',
 			    array(
 				  		'Inventor'=>'Inventor',
@@ -47,6 +50,7 @@
 			    array('prompt'=>'Seleccionar participación')
 			);
 	    ?>		
+	    </span>
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
 
@@ -61,6 +65,7 @@
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'entity',
 				 array(
 				 		'Pública'=>'Pública',
@@ -70,6 +75,7 @@
 				 array('prompt'=>'Seleccionar entidad')
 			);
 		 ?>
+		 </span>
 		<?php echo $form->error($model,'entity'); ?>
 	</div>
 
@@ -95,6 +101,7 @@
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 			<?php echo $form->dropDownList($model,'sector',
 				    array(
 				  	     'Centros privados de investigación'=>'Centros privados de investigación',
@@ -116,10 +123,12 @@
 					array('prompt'=>'Sector')			  
 			    ); 
 		?>
+		</span>
 		<?php echo $form->error($model,'sector'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'organization',
 					array(
 							'ADMINISTRACION CENTRO COMERCIAL ANDARES SC'=>'ADMINISTRACION CENTRO COMERCIAL ANDARES SC',
@@ -136,10 +145,12 @@
 					array('prompt'=>'Seleccionar organización')
 				);
 		?>
+		</span>
 		<?php echo $form->error($model,'organization'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 			<?php echo $form->dropDownList($model,'second_level',
 				        array(
                             'CENTRO DE ESTUDIOS DEL PACIFICO'=>'CENTRO DE ESTUDIOS DEL PACIFICO',
@@ -214,6 +225,7 @@
 						array('prompt'=>' Seleccionar segundo nivel')
 			    ); 
 	    ?>
+	    </span>
 		<?php echo $form->error($model,'second_level'); ?>
 	</div>
 
@@ -253,7 +265,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'economic_support'); ?>
+		<p>Apoyo economico</p>
 		<?php $status = array('1' => 'Si','0'=>'No'); 
 		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'economic_support'); ?>

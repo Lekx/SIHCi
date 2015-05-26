@@ -7,10 +7,10 @@ echo "</pre>";*/
 
 $months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-/*$results2[0] = array("total"=>1,"month"=>9);
-$results2[1] = array("total"=>3,"month"=>12);
-$results2[2] = array("total"=>4,"month"=>11);
-$results2[3] = array("total"=>5,"month"=>10);*/
+/*$resultst2[0] = array("total"=>1,"month"=>9);
+$resultst2[1] = array("total"=>3,"month"=>12);
+$resultst2[2] = array("total"=>4,"month"=>11);
+$resultst2[3] = array("total"=>5,"month"=>10);*/
 
 /*for($i = 0; $i < 12; $i++){
 		
@@ -42,14 +42,17 @@ print_r($results2);*/
 		 	$value["total"]=0;
 		}
 	*/
-
-foreach($results as $key => $values){
+foreach($resultsTotalReasearches as $key => $values){
 	$data[$months[$values["month"]]] = intval($values["total"]);
+}
+
+foreach($resultResearchesSNI as $key => $values){
+	$data2[$months[$values["month"]]] = intval($values["total"]);
 	//echo $values["month"]." - ".$values["total"]."<br>";
 }
 
-foreach($resultsResearchersdown as $key => $values){
-	$data2[$values["month"]] = intval($values["total"]);
+foreach($resultResearchesnoSNI as $key => $values){
+	$data3[$months[$values["month"]]] = intval($values["total"]);
 }
 
 
@@ -76,9 +79,9 @@ print_r($data2);*/
     'title' => array('text' => 'Usuarios')
     ),
     'series' => array(
-	    array("name"=>"Entradas", "data"=>array_values($data)),
-	    array("name"=>"Salidas", "data"=>array_values($data2))
-	 
+	    array("name"=>"Total de investigadores", "data"=>array_values($data)),
+	    array("name"=>"Investigadores SNI", "data"=>array_values($data2)),
+	    array("name"=>"Investigadores no SNI", "data"=>array_values($data3)),
     )
     )
     )
