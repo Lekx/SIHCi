@@ -86,7 +86,6 @@ class DirectedThesisController extends Controller
 
                         $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
                         $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                    
-                
 
                         if($model->save()){                  
                             echo CJSON::encode(array('status'=>'200'));
