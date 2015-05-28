@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sys.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">     
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
@@ -37,6 +38,7 @@
                     searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
                     searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
                     base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
+                    back: ' . CJSON::encode(Yii::app()->request->urlReferrer) . ',
                 }
             
             }');
@@ -90,7 +92,7 @@
                     <span> Cuenta / Datos de Cuenta </span>
                 </div>
                 <div class="headerconteiner4">
-                    <h4>Ménu </h4>
+                    <h4>Menú </h4>
                 </div>
                 <div class="headerconteiner5">
                     <h4> <?php echo Yii::app()->user->fullname; ?></h4>

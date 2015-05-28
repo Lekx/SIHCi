@@ -138,10 +138,10 @@ input, select
 {
 	width: 74%;
 	height: 100%;
-	min-height: 380px;
+	min-height: 350px;
 	background: #fff;
-	
-   
+	padding-bottom: 50px;
+
 }
 .headerconteiner1 img
 {
@@ -341,7 +341,7 @@ label {
 }
 input[type="radio"]
 {
-	display: inline-block !important;
+	display: inline !important;
 }
 
 .cvforms input[type="text"], .cvforms input[type="password"], 
@@ -379,6 +379,8 @@ input[type="radio"]
 	box-sizing: border-box;
 	height: 105px;
 	width: 450px;
+	max-height: 105px;
+	max-width: 450px;
 	background-color: #CDF1F3;
 	font-family: 'Caviar_Dreams_Bold';
 	color: #0E3152;
@@ -403,9 +405,10 @@ input[type="radio"]
     display: inline-block;
 	
 }
-.cvforms textarea
+.question p
 {
-
+	width: 450px;
+	margin: 5px;
 }
 .cvforms select 
 {
@@ -869,7 +872,7 @@ thead th
     -o-border-radius: 4px;
     border-radius: 4px;
     border-radius:4px;
-    padding:2px 18px 2px 9px;
+    padding:2px 18px 2px 3px;
 
  
 }
@@ -936,9 +939,14 @@ thead th
 {
 	background-color: #798B9D !important;
 	text-align: left !important;
-	padding: 4px !important;
-	border: none !important;
+	padding-top: 3px !important;
+	padding-right: 5px !important;
 	padding-left: 5px !important;
+	padding-bottom: 3px !important;
+	border: none !important;
+	font-size: .9em !important;
+	font-style: normal !important;
+	font-family: 'Caviar_Dreams' !important;
 
 }
 .items table td
@@ -979,12 +987,14 @@ table.detail-view
 {
 	margin-top: 50px !important;
 	margin-bottom: 50px !important;
+	font-family: 'Caviar_Dreams' !important;
 
 }
 table.detail-view th
 {
 	text-align: left !important;
 	background-color: white;
+	font-family: 'Caviar_Dreams' !important;
 }
 .row , .row1
 {
@@ -998,12 +1008,30 @@ table.detail-view th
 {
 	margin-left: 15px;
 }
-.odd td
+.odd td , .even td
 {
 	background: #ffffff !important;
+	font-family: 'Caviar_Dreams' !important;
 	width: 250px;
 }
-.odd th
-{
+.odd th, .even td
+{	font-family: 'Caviar_Dreams' !important;
 	width: 250px;
+}
+.grid-view .button-column 
+{
+   width: 10% !important;
+}
+.detail-view th
+{
+	color: #37B9BF;
+	font-family: 'Caviar_Dreams';
+}
+.detail-view td
+{
+	font-family: 'Caviar_Dreams';
+}
+.items td th 
+{
+	font-family: 'Caviar_Dreams';
 }
