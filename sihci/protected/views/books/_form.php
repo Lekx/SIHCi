@@ -547,7 +547,7 @@ $(document).ready(function() {
 	
 	<div class="row buttons">		
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
-				<?php echo CHtml::Button('Cancelar',array('submit' => array('books/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('books/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 	</div>
 

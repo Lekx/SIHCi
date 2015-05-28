@@ -12,8 +12,14 @@ $this->menu=array(
 	array('label'=>'Crear ', 'url'=>array('create')),
 );
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
+
 						
- <h1>Capítulos de libros</h1> 
+ <h3>Gestionar Registro de Capítulos de libros:</h3> 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
