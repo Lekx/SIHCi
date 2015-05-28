@@ -60,6 +60,7 @@ class AdminSpecialtyAreasController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+	//AE01-Registrar datos
 	public function actionCreate()
 	{
 		$model=new AdminSpecialtyAreas;
@@ -106,62 +107,71 @@ class AdminSpecialtyAreasController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+	//AE02-Modificar datos
 	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
+    {
+        $model=$this->loadModel($id);
 		$modelSpecialtyArea = AdSpecialtyAreas::model()->findAllByAttributes(array('id_specialty_areas'=>$model->id));
-		$modelSpecialtyAreas = new AdSpecialtyAreas;
+      	$modelSpecialtyAreas = new AdSpecialtyAreas;
 
-		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+        // Uncomment the following line if AJAX validation is needed
+        $this->performAjaxValidation($model);
 
-		if(isset($_POST['AdminSpecialtyAreas']))
-		{
-			if($model->save())
-            {           		              
-            	$idsAdminSpecialtyAreas = $_POST['idsAdminSpecialtyAreas'];
-	 			$ext_subspecialty = $_POST['ext_subspecialtys'];	          
+        if(isset($_POST['AdminSpecialtyAreas']))
+        {
+            $model->attributes=$_POST['AdminSpecialtyAreas'];
             
-				foreach($_POST['ext_subspecialtys'] as $key => $value)
-				{
-	               	if($idsAdminSpecialtyAreas[$key] == '')
-	        		{
-		        		unset($modelSpecialtyAreas);
-		               	$modelSpecialtyAreas = new AdSpecialtyAreas;
+        	if($model->save())
+        		{
+        					$idsAdminSpecialtyAreas = $_POST['idsAdminSpecialtyAreas'];
+        					$ext_subspecialty = $_POST['ext_subspecialtys'];
+				          				                 
+ 					 foreach($_POST['ext_subspecialty'] as $key => $value)
+ 					 {
+ 					 
+		        		if($idsAdminSpecialtyAreas[$key] = '')
+		        		{
+		        			unset($modelSpecialtyAreas);
+							$modelSpecialtyAreas = new AdSpecialtyAreas;
 
-		               	$modelSpecialtyAreas->id_specialty_areas = $model->id;
-		       			$modelSpecialtyAreas->ext_subspecialty = $ext_subspecialty[$key];
-		        		
-	            		$modelSpecialtyAreas->save();
-            		}
-                   	else
-                   	{
-						$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialty' => $ext_subspecialty[$key])); 		
-                	}
-          	    }	
+		        			$modelSpecialtyAreas->id_specialty_areas= $model->id;
+		        			$modelSpecialtyAreas->ext_subspecialty= $ext_subspecialty[$key];
+							
+							$modelSpecialtyAreas->save();
+                		}
+                		else
+                		{
+							$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialty' => $value)); 		
+            		    }
+            	    }
 
-                echo CJSON::encode(array('status'=>'200'));
-                Yii::app()->end();
-	        }
-	        else
-           	{
-           		echo CJSON::encode(array('status'=>'404'));
-                Yii::app()->end();
-            }				               
-		}	
-         
-  		$this->render('update',array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas,'modelSpecialtyArea'=>$modelSpecialtyArea));
-	}
+       	 		   echo CJSON::encode(array('status'=>'200'));
+                   $this->redirect(array('admin','id'=>$model->id));
+                   Yii::app()->end();
+            	} 
+            	else 
+            	{
+            		echo CJSON::encode(array('status'=>'404'));
+                    Yii::app()->end();
+            	}   
+    }
+        if(!isset($_POST['ajax']))
+        	$this->render('update',array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas,'modelSpecialtyArea'=>$modelSpecialtyAreas));
+    }
 
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+	//AE03-Eliminar Datos
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
-
+		AdSpecialtyAreas::model()->deleteAll("id_specialty_areas=".$id );
+		$model= AdminSpecialtyAreas::model()->findByPk($id);
+		
+		$model->delete();
+		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -170,6 +180,7 @@ class AdminSpecialtyAreasController extends Controller
 	/**
 	 * Lists all models.
 	 */
+	//AE05-Desplegar datos
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('AdminSpecialtyAreas');

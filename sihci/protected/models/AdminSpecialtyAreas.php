@@ -34,9 +34,10 @@ class AdminSpecialtyAreas extends CActiveRecord
 		return array(
 			array('specialty, subspecialty', 'required'),
 			array('specialty, subspecialty', 'length', 'max'=>200),
+			array('searchValue','length', 'max'=>60),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, specialty, subspecialty', 'safe', 'on'=>'search'),
+			array('id, specialty, subspecialty ,searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 

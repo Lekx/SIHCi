@@ -2,6 +2,7 @@
 /* @var $this AdminSpecialtyAreasController */
 /* @var $model AdminSpecialtyAreas */
 /* @var $form CActiveForm */
+//AE06-Barra de búsqueda
 ?>
 
 <div class="wide form">

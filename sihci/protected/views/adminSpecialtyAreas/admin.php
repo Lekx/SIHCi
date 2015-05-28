@@ -2,6 +2,8 @@
 /* @var $this AdminSpecialtyAreasController */
 /* @var $model AdminSpecialtyAreas */
 
+//AE05-Desplegar datos
+
 $this->breadcrumbs=array(
 	'Admin Specialty Areases'=>array('index'),
 	'Manage',
