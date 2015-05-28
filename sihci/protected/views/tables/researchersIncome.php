@@ -6,15 +6,49 @@ $this->breadcrumbs=array(
 	'Tablas'=>array('index'),
 	'Ingreso de Investigadores',
 );
+$this->menu=array(
+	//array('label'=>'Anual Total Ingreso de Investigadores', 'url'=>array('index')),
+	//array('label'=>'Anual Total Baja de Investigadores', 'url'=>array('researchersLow')),
+	array('label'=>'Anual Total Cantidad de Investigadores', 'url'=>array('NumberOfResearchers')),
+);
+
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#system-log-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 
 ?>
 
 <h2>
-	Total Ingreso de Investigadores
+	<?php echo $titlePage ?>
 </h2>
 
+<div class="search-form" style="display:block">
+<?php $this->renderPartial('_search_researchers_income',array(
+	'model'=>$researchersIncome,
+)); ?>
+</div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+
+ echo CHtml::link('Ingreso de Investigadores',array('tables/researchersIncome'));
+echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+ echo CHtml::link('Baja de Investigadores',array('tables/researchersLow'));
+ echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+ echo CHtml::link('Investigadores con SNI',array('tables/NumberOfResearchersSNI'));
+ echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+ echo CHtml::link('Investigadores sin SNI',array('tables/NumberOfResearchersNoSNI'));
+
+
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$researchersIncome,
 	'columns'=>array(
@@ -33,7 +67,6 @@ $this->breadcrumbs=array(
 		     array('header'=>'Sistema NI',
 		 		'name'=>'SNI',
                 ),
-
    	),
 )); ?>
 
