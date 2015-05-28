@@ -112,8 +112,8 @@
 		                    
                         ),array('class'=>'savebutton')); 
         ?>
+        
         <?php echo CHtml::Button('Cancelar',array('submit' => array('copyrights/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
-      
 
 		<div class="200">
 		

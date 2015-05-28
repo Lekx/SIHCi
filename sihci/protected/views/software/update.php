@@ -14,7 +14,12 @@ $this->menu=array(
 	
 );
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
 
-<h1>Modificar registro <?php echo $model->title ?></h1>
+<h4>Modificar registro de propiedad intelectual-Software: <?php echo $model->title ?></h4>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
