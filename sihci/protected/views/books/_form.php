@@ -36,8 +36,6 @@ $(document).ready(function() {
 
 
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">		
 		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
@@ -58,7 +56,8 @@ $(document).ready(function() {
 		<?php echo $form->error($model,'edition'); ?>
 	</div>
 
-<div class="row">		
+<div class="row">	
+<span class="plain-select">	
 		<?php echo $form->dropDownList($model,'release_date',array('prompt'=>'Seleccionar año de publicación',
 		  		    '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
 					'1934'=>'1934','1935'=>'1935','1936'=>'1936','1937'=>'1937',
@@ -84,7 +83,7 @@ $(document).ready(function() {
 					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
 					'2015'=>'2015'));  
 		?>
-
+</span>
 		<?php echo $form->error($model,'release_date'); ?>
 	</div>
 
@@ -105,6 +104,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">	
+	<span class="plain-select">
 		<?php echo $form->dropDownList($model,'work_type',array(
 						'Publicado'=>'Publicado',
 						'Autorizado'=>'Autorizado',
@@ -113,10 +113,12 @@ $(document).ready(function() {
 						'Traducido'=>'Traducido'),
 						array('prompt'=>'Seleccionar tipo de trabajo')
 		); ?>
+		</span>
 		<?php echo $form->error($model,'work_type'); ?>
 	</div>
 
-<div class="row">		
+<div class="row">
+<span class="plain-select">		
 		<?php echo $form->dropDownList($model,'idioma',array(
 					'Albanés'=>'Albanés',
 					'Alemán'=>'Alemán',
@@ -196,11 +198,12 @@ $(document).ready(function() {
 					array('prompt'=>'Seleccionar idioma del libro')
                 ); 
 		?>
+		</span>
 		<?php echo $form->error($model,'idioma'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'traductor_type',array('placeholder'=>'Traductor')); ?>
+	Tipo de traductor 
 		<?php $status = array('Traductor'=>'Traductor', 'Co-Traductor'=>'Co-Traductor'); 
 		      echo $form->RadioButtonList($model,'traductor_type' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'traductor_type'); ?>
@@ -213,6 +216,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
+	<span class="plain-select">
 		<?php echo $form->dropDownList($model,'area',array('LOGICA'=>'LOGICA','MATEMATICAS'=>'MATEMATICAS','ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
                     'FISICA'=>'FISICA','QUIMICA'=>'QUIMICA','CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA','CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
                     'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD','CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
@@ -224,10 +228,12 @@ $(document).ready(function() {
                     'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'),
                     array('prompt'=>'Seleccionar área'
 		));?>
+		</span>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
 <div class="row">
+<span class="plain-select">
 				<?php echo $form->dropDownList($model,'discipline',array('APLICACIONES DE LA LOGICA'=>'APLICACIONES DE LA LOGICA','LOGICA DEDUCTIVA'=>'LOGICA DEDUCTIVA','LOGICA GENERAL'=>'LOGICA GENERAL','LOGICA INDUCTIVA METODOLOGIA
 			         '=>'LOGICA INDUCTIVA METODOLOGIA','OTRAS ESPECIALIDADES EN MATERIA DE LOGICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE LOGICA','ÁLGEBRA'=>'ÁLGEBRA','ANALISIS Y ANALISIS FUNCIONAL
 			         INFORMATICA MATEMATICA'=>'ANALISIS Y ANALISIS FUNCIONAL INFORMATICA MATEMATICA','GEOMETRIA TEORIA DE LOS NUMEROS'=>'GEOMETRIA TEORIA DE LOS NUMEROS',
@@ -280,9 +286,11 @@ $(document).ready(function() {
 			         'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS'=>'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS',' ANALISIS DE RIESGOS'=>' ANALISIS DE RIESGOS','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','NUEVAS FUERTES DE ENERGIA'=>'NUEVAS FUERTES DE ENERGIA','NUEVOS SISTEMAS ORGANIZACIONALES'=>'NUEVOS SISTEMAS ORGANIZACIONALES','OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'=>'OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'),
 			    	 array('prompt'=>'Seleccionar disciplina'));
 	    ?>
+	    </span>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
 <div class="row">
+<span class="plain-select">
 		<?php echo $form->dropDownList($model,'subdiscipline',array('ANALOGIA'=>'ANALOGIA','ALGEBRA DE BOOLE'=>'ALGEBRA DE BOOLE','LOGICA FORMAL'=>'LOGICA FORMAL','LENGUAJES FORMALIZADOS'=>'LENGUAJES FORMALIZADOS','SISTEMAS FORMALES'=>'SISTEMAS FORMALES','FUNDAMENTOS DE LAS MATEMATICAS'=>'FUNDAMENTOS DE LAS MATEMATICAS',
                     'GENERALIZACION'=>'GENERALIZACION','LOGICA MATEMATICA'=>'LOGICA MATEMATICA','LOGICA MODAL'=>'LOGICA MODAL','TEORIA DE LOS MODELOS'=>'TEORIA DE LOS MODELOS','TEORIA DE LAS PRUEBAS'=>'TEORIA DE LAS PRUEBAS','CALCULO DE PROPOSICIONES'=>'CALCULO DE PROPOSICIONES',
                     'FUNCIONES RECURSIVAS'=>'FUNCIONES RECURSIVAS','LOGICA SIMBOLICA'=>'LOGICA SIMBOLICA','TEORIA DE LOS LENGUAJES FORMALES'=>'TEORIA DE LOS LENGUAJES FORMALES','TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS'=>'TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS','OTROS'=>'OTROS',
@@ -467,6 +475,7 @@ $(document).ready(function() {
                     'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'), 
                      array('prompt'=>'Seleccionar subdisciplina'));
 		?>
+		</span>
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
 
@@ -485,7 +494,7 @@ $(document).ready(function() {
  			'addButtonLabel'=>'Agregar nuevo autor',
 		 )); 
     ?>
-    <div class="authorsRegistry row">    		 
+    <div class="authorsRegistry ">    		 
 	   <?php  echo "<input type='hidden' name='idsBooks[]'>"; ?>
 		   
 		   <div class="row">
@@ -502,17 +511,17 @@ $(document).ready(function() {
 			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
 	       </div>
-		  
+		  <div class="row">
 		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
+		  </div>
    	</div> 	
     	    
 	<?php 
 		if(!$model->isNewRecord)		  
 		  foreach ($modelAuthors as $key => $value) 
 		  { ?>
-		  
-			  <div class="row">		  
+		  	  
 				  <?php echo "<input type='hidden' value='".$value->id."' name='idsBooks[]'>"; ?>
 				  
 				  <div class="row">	
@@ -534,14 +543,12 @@ $(document).ready(function() {
 					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
-
-			 </div>	 
 	<?php } ?>
 	
 	<div class="row buttons">		
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
-		<?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';?>
-       	<?php echo CHtml::link('Cancelar', array('/books/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
+				<?php echo CHtml::Button('Cancelar',array('submit' => array('books/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+
 	</div>
 
 <?php $this->endWidget(); ?>
