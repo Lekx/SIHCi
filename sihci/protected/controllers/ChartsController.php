@@ -62,6 +62,11 @@ class ChartsController extends Controller
 		RIGHT JOIN personal AS pel ON pel.id = per.id 
 		GROUP BY MONTH(per.fechaRegistro)
 		")->queryAll();*/
+
+		$year = $conexion->createCommand("
+		SELECT DISTINCT YEAR(creation_date) FROM users; 
+		")->queryAll();
+	
 		
 		$results = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
@@ -71,14 +76,17 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$resultsResearchersdown = $conexion->createCommand("
-		SELECT  u.id, COUNT(c.status) as total, MONTH(u.creation_date) AS month FROM curriculum AS c 
+		SELECT  u.id, COUNT(c.status) as total, MONTH(u.creation_date) AS month 
+		FROM curriculum AS c 
 		LEFT JOIN users AS u ON c.id_user = u.id
 		WHERE c.status = 0 
 		GROUP BY u.creation_date;
 		")->queryAll();
 
 		$this->render('index',array(
-			'results'=>$results,'resultsResearchersdown'=>$resultsResearchersdown, 'action'=>'totalRegisteredResearchesIo'
+			'results'=>$results,'resultsResearchersdown'=>$resultsResearchersdown,
+			'year'=>$year, 
+			'action'=>'totalRegisteredResearchesIo'
 		));
 	}
 
@@ -86,6 +94,10 @@ class ChartsController extends Controller
 	public function actionNumberofResearchers(){
 
 		$conexion = Yii::app()->db;
+
+		$year = $conexion->createCommand("
+		SELECT DISTINCT YEAR(creation_date) FROM users; 
+		")->queryAll();
 
 		$resultsTotalReasearches = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
@@ -95,21 +107,27 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$resultResearchesSNI = $conexion->createCommand("
-		SELECT DISTINCT u.type, COUNT(c.sni) as total, MONTH(u.creation_date) AS month FROM curriculum AS c 
+		SELECT COUNT(c.sni) as total, MONTH(u.creation_date) AS month 
+		FROM curriculum AS c 
 		INNER JOIN users AS u ON c.id_user = u.id
 		WHERE c.sni != 0 AND u.type = 'fisico'
 		GROUP BY u.creation_date;
 		")->queryAll();
 
 		$resultResearchesnoSNI = $conexion->createCommand("
-		SELECT DISTINCT u.type, COUNT(c.sni) as total, MONTH(u.creation_date) AS month FROM curriculum AS c 
+		SELECT COUNT(c.sni) as total, MONTH(u.creation_date) AS month 
+		FROM curriculum AS c 
 		INNER JOIN users AS u ON c.id_user = u.id
 		WHERE c.sni = 0 AND u.type = 'fisico'
 		GROUP BY u.creation_date;
 		")->queryAll();
 
 		$this->render('index',array(
-			'resultsTotalReasearches'=>$resultsTotalReasearches,'resultResearchesSNI'=>$resultResearchesSNI,'resultResearchesnoSNI'=>$resultResearchesnoSNI, 'action'=>'numberofResearchers'
+			'resultsTotalReasearches'=>$resultsTotalReasearches,
+			'resultResearchesSNI'=>$resultResearchesSNI,
+			'resultResearchesnoSNI'=>$resultResearchesnoSNI,
+			'year'=>$year,	
+			 'action'=>'numberofResearchers'
 		));
 	}
 }
