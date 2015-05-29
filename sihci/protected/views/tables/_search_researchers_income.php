@@ -11,7 +11,7 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
-	
+		
 		<?php echo CHtml::submitButton('Buscar'); ?>
 	
 
