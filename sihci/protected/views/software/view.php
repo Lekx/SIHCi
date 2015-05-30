@@ -13,8 +13,13 @@ $this->menu=array(
 	
 );
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
 
-<h1>Registro de <?php echo $model->title; ?></h1>
+<h3>Gestionar Registro de propiedad intelectual-Software: <?php echo $model->title; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

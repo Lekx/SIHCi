@@ -265,7 +265,7 @@
 	</div>
 
 	<div class="row">
-		<p>Apoyo economico</p>
+		Apoyo economico
 		<?php $status = array('1' => 'Si','0'=>'No'); 
 		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'economic_support'); ?>
@@ -273,16 +273,14 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'path'); ?>
 		<?php echo $form->FileField($model,'path',array('id'=>'path')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
 
 	<div class="row buttons">		
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
-		<?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';?>
-       	<?php echo CHtml::link('Cancelar', array('/software/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('software/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
