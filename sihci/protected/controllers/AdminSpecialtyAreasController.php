@@ -120,32 +120,34 @@ class AdminSpecialtyAreasController extends Controller
 		{
 			$model->attributes=$_POST['AdminSpecialtyAreas'];
 
+
 			if($model->save())
-    		{
-				    $idsAdminSpecialtyAreas = $_POST['idsAdminSpecialtyAreas'];
-	 				$ext_subspecialty = $_POST['ext_subspecialtys'];	     
-			
-				foreach($_POST['ext_subspecialty'] as $key => $value)
+            {           		              
+	        	$idsAdminSpecialtyAreas = $_POST['idsAdminSpecialtyAreas'];
+	 			$ext_subspecialty = $_POST['ext_subspecialtys'];	          
+            	
+            	foreach($_POST['ext_subspecialty'] as $key => $value)
 				{
 	               	if($idsAdminSpecialtyAreas[$key] == '')
-	        		{
-	        			echo "Pase por aqui";
-		        		unset($modelSpecialtyAreas);
+	               	{
+	               		echo "Pase por aqui";
+		               	unset($modelSpecialtyAreas);
 		               	$modelSpecialtyAreas = new AdSpecialtyAreas;
+
 		               	$modelSpecialtyAreas->id_specialty_areas = $model->id;
 		       			$modelSpecialtyAreas->ext_subspecialty = $ext_subspecialty[$key];
-		        		
 	            		$modelSpecialtyAreas->save();
-            		}
+		        		
+          	   	    }	
                    	else
                    	{
-                   		echo "Por aqui estube";
-						$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialty' => $value)); 		
+                   		echo "No se que hago aqui";
+                   		$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialty'=>$value)); 								
                 	}
+	            	
           	    }	
                 echo CJSON::encode(array('status'=>'200'));
                 Yii::app()->end();
-	
 	        }
 	        else
            	{
@@ -153,7 +155,6 @@ class AdminSpecialtyAreasController extends Controller
                 Yii::app()->end();
             }				               
 		}	
-         
   		$this->render('update',array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas,'modelSpecialtyArea'=>$modelSpecialtyArea));
 	}
 
