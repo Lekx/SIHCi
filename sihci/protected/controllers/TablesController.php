@@ -29,7 +29,7 @@ class TablesController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('ResearchersIncome', 'index', 'ResearchersLow', 'NumberOfResearchers',
-					'NumberOfResearchersSNI', 'NumberOfResearchersNoSNI'),
+					'NumberOfResearchersSNI', 'NumberOfResearchersNoSNI', 'search'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -49,10 +49,10 @@ class TablesController extends Controller
 		$this->redirect('NumberOfResearchers');
 	}
 
-
 	public function actionResearchersIncome()
 	{
 		$titlePage = "Anual Total Ingreso de Investigadores";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
 
 		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
 		 	INNER JOIN users u ON curri.id_user=u.id
@@ -75,13 +75,13 @@ class TablesController extends Controller
                                 ),
                 ));
 
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage));
+		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
 	}
 
 	public function actionResearchersLow()
 	{
 		$titlePage = "Anual Total Baja de Investigadores";
-
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
 		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
 		 	INNER JOIN users u ON curri.id_user=u.id
 		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
@@ -102,14 +102,15 @@ class TablesController extends Controller
                                 ),
                 ));
 
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage));
+		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
 		
 	}
 
 	public function actionNumberOfResearchers()
 	{
 		$titlePage = "Anual Total Cantidad de Investigadores";
-
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
+		
 		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
 		 	INNER JOIN users u ON curri.id_user=u.id
 		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
@@ -129,14 +130,14 @@ class TablesController extends Controller
                                 ),
                 ));
 
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage));
+		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
 		
 	}
 
 	public function actionNumberOfResearchersSNI()
 	{
 		$titlePage = "Anual Total Cantidad de Investigadores con SNI";
-
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
 		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
 		 	INNER JOIN users u ON curri.id_user=u.id
 		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
@@ -157,14 +158,14 @@ class TablesController extends Controller
                                 ),
                 ));
 
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage));
+		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
 		
 	}
 
 	public function actionNumberOfResearchersNoSNI()
 	{
 		$titlePage = "Anual Total Cantidad de Investigadores sin SNI";
-
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
 		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
 		 	INNER JOIN users u ON curri.id_user=u.id
 		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
@@ -185,7 +186,7 @@ class TablesController extends Controller
                                 ),
                 ));
 
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage));
+		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
 		
 	}
 
