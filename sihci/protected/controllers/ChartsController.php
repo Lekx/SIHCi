@@ -50,7 +50,7 @@ class ChartsController extends Controller
 	 * @param integer $id the ID of the model to be displayed
 	 */
 
-	//GR01-Total Ingreso de Investigadores y GR02-Total Baja de Investigadores 
+	//GR01-Total Ingreso de Investigadores 
 	public function actionTotalRegisteredResearchesIo()
 	{
 
@@ -64,10 +64,9 @@ class ChartsController extends Controller
 		")->queryAll();*/
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM users; 
+		SELECT DISTINCT YEAR(creation_date) FROM users
 		")->queryAll();
 	
-		
 		$results = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
@@ -96,7 +95,7 @@ class ChartsController extends Controller
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM users; 
+		SELECT DISTINCT YEAR(creation_date) FROM users 
 		")->queryAll();
 
 		$resultsTotalReasearches = $conexion->createCommand("
@@ -129,5 +128,22 @@ class ChartsController extends Controller
 			'year'=>$year,	
 			 'action'=>'numberofResearchers'
 		));
+	}
+
+	//GR03-Total de Proyectos de Investigacion
+	public function actionTotalResearchProjects(){
+
+		$conexion = Yii::app()->db;
+
+		$year = $conexion->createCommand("
+		SELECT DISTINCT YEAR(creation_date) FROM projects 
+		")->queryAll();
+
+		$this->render('index',array(
+			
+			'year'=>$year,	
+			 'action'=>'totalResearchProjects'
+		));
+
 	}
 }

@@ -6,17 +6,16 @@ $months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
 
 //foreach($year as $key => $values){
 	 echo print_r($year);
-	 echo CHtml::dropDownList('year', '',);
-//	 echo CHtml::dropDownList('year',$year, array($values));
+	 echo CHtml::dropDownList('year', '', $year);
+	 //echo CHtml::dropDownList('year',$year, array($values));
 //}
-
 
 foreach($results as $key => $values){
 	$data[$months[$values["month"]]] = intval($values["total"]);
 }
 
 foreach($resultsResearchersdown as $key => $values){
-	$data2[$values["month"]] = intval($values["total"]);
+	$data2[$months[$values["month"]]] = intval($values["total"]);
 }
 
  $this->widget(
@@ -32,8 +31,8 @@ foreach($resultsResearchersdown as $key => $values){
     'title' => array('text' => 'Total de Investigadores')
     ),
     'series' => array(
-	    array("name"=>"Entradas", "data"=>array_values($data)),
-	    array("name"=>"Salidas", "data"=>array_values($data2))
+	    array("name"=>"Ingreso de Investigadores", "data"=>array_values($data)),
+	    array("name"=>"Bajas de Investigadores", "data"=>array_values($data2))
 	 
     )
     )
