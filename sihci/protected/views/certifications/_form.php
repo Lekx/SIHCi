@@ -18,31 +18,28 @@
 )); ?>
 
 	
-
-	<?php echo $form->errorSummary($model); ?>
-
-	
 	<div class="row">
-		<?php echo $form->labelEx($model,'folio'); ?>
+		
 		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Folio')); ?>
 		<?php echo $form->error($model,'folio'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Referencia'); ?>
+		
 		<?php echo $form->textField($model,'reference',array('size'=>30,'maxlength'=>30,'placeholder'=>'Referencia')); ?>
 		<?php echo $form->error($model,'reference'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Tipo de Referencia'); ?>
-		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'));?>
+		 <span class="plain-select">
+		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Seleccionar tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'));?>
+		</span>
 		<?php echo $form->error($model,'reference_type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Especialidad'); ?>
-		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
+		 <span class="plain-select">
+		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Seleccionar especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
          'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
@@ -63,11 +60,12 @@
          'Radiooncología'=>'Radiooncología','Radiología e imagen'=>'Radiología e imagen','Reumatología'=>'Reumatología','Reumatología pediátrica'=>'Reumatología pediátrica','Terapia endovascular neurológica'=>'Terapia endovascular neurológica',
          'Urgencias pediátricas'=>'Urgencias pediátricas','Urología'=>'Urología','Urología ginecológica'=>'Urología ginecológica','Cirugía Maxilofacial'=>'Cirugía Maxilofacial','Ortodoncia y Ortopedia Maxilofacial'=>'Ortodoncia y Ortopedia Maxilofacial',
          'Periodoncia'=>'Periodoncia'));?>
+         </span>
 		<?php echo $form->error($model,'specialty'); ?>
 	</div>
 
 	<div class="row">
-		 <?php echo $form->labelEx($model,'validity_date_start'); ?>
+		  <span class="plain-select">
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
@@ -81,11 +79,12 @@
 		    ),
 		));
 		?>
+		</span>
 		<?php echo $form->error($model,'validity_date_start'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'validity_date_end'); ?>
+		 <span class="plain-select">
 		<?php 
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
@@ -99,13 +98,14 @@
 		    ),
 		));
 		?>
+		</span>
 		<?php echo $form->error($model,'validity_date_end'); ?>
 	</div>
 
 	<div class="row">
 		<?php 
-		$status = array('certificación' => 'certificación','Recertificación'=>'Recertificación'); 
-                echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
+		$status = array('certificación' => 'Certificación','Recertificación'=>'Recertificación'); 
+        echo $form-> RadioButtonList($model,'type' ,$status ,array('separator' => ' ', 'labelOptions'=>array('style'=>'display:inline')));?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
@@ -130,13 +130,9 @@
 			                     }       
 		                  	}',                    
 		                    
-                        )); 
+                        ),array('class'=>'savebutton')); 
         ?>
-        <?php  if($model->isNewRecord) 
-			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-		?>
-       	<?php echo CHtml::link('Cancelar', array('/certifications/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
-       	
+       	<?php echo CHtml::Button('Cancelar',array('submit' => array('certifications/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 		<div class="200">
 		
 		</div>

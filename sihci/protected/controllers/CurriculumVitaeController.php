@@ -106,11 +106,11 @@ class CurriculumVitaeController extends Controller
 					
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				
-					echo CJSON::encode(array('status'=>'200'));
-	     			Yii::app()->end();
-	     		}else {
-	     			echo CJSON::encode(array('status'=>'404'));
-	                 Yii::app()->end();
+					// echo CJSON::encode(array('status'=>'200'));
+	    //  			Yii::app()->end();
+	     		// }else {
+	     		// 	// echo CJSON::encode(array('status'=>'404'));
+	       //  //          Yii::app()->end();
 	     		}
 				
 			
@@ -128,7 +128,7 @@ class CurriculumVitaeController extends Controller
 		$modelDocs = array();
 		if ($DocExist != null) {
 			foreach ($DocExist as $key => $value) {
-				$modelDocs[$value->type] = array($value->id, $value->doc_id);
+				$modelDocs[$value->type] = array($value->id, $value->doc_id, $value->type);
 			}
 
 		}
@@ -280,7 +280,6 @@ class CurriculumVitaeController extends Controller
 			if ($reload == true) {
 				$this->redirect(array('docsIdentity'));
  			}		 			
-			//$this->redirect('docsIdentity');
 		}
 
 	$this->render('docs_Identity',array('model'=>$model, 'getDocs'=>$getDocs, 'modelDocs' => $modelDocs,));

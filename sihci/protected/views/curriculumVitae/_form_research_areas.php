@@ -5,18 +5,25 @@
 ?>
 <style type="text/css">  
          .errors{
-            -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
+           -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             background: red;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            color: #fff;
             display: none;
-            font-size: 10px;
             margin-top: -50px;
-            margin-left: 315px;
-            padding: 10px;
+            margin-left: 455px;
             position: absolute;
+			border-radius: 5px; 
+			border: 2px solid #F20862;
+			background: #F20862;
+			color: #fff;
+			width: 190px !important;
+			font-family: 'Caviar_Dreams_Bold' !important;
+			font-size: 12px;
+			line-height: 16px;
+			padding: 8px 10px;
+			text-align:  center;
         }
         .research{
             display: none;
@@ -41,14 +48,16 @@
 	
 
 	<?php echo $form->errorSummary($model); ?>
+	
 <input id="showFormResearch" type="button"  value="Agregar Línea de Investigación" class="addSomething">
 <input id="hideFormResearch" type="button"  value="Cancelar" class="cancelSomething">
 
 <div class="research">
-	<div class='row'>
+<div class="research2">
 		<h5>Nombre de Investigación</h5>
 		<input id="research" type="text" name="nameResearch" title="Nombre de Investigación" placeholder="Nombre de Investigación">
-		<div id="errorResearch" class="errors"> No debe estar vacío</div><br>
+		<div id="errorResearch" class="errors"> No debe estar vacío</div>
+		</div>
 		 <?php echo CHtml::ajaxButton ('Crear Línea de Investigación',CController::createUrl('curriculumVitae/researchAreas'), 
         				array(
 							'dataType'=>'json',
@@ -59,7 +68,7 @@
 		                         if(data.status=="200")
 		                         {
 				                     alert("Linea de investigación se ha creado con éxito");
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
+				                 ndow.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
 		                         }		                         
 		                         else
 		                         {
@@ -70,7 +79,6 @@
 		                    
                         ), array('id'=>'btnCreateResearch','class'=>'addSomething')); 
         ?>
-	</div>
 </div><!-- form -->
 
 	<?php 
@@ -78,10 +86,11 @@
 	foreach ($getResearch as $key => $value) {
 		echo "<hr>";
 		echo "<div class='row'>";
-		echo "<h5>Linea de Investigacion".$countDocs.":</h5>";
+		echo "<div class='research2'>";
+		echo "<h5>Linea de Investigacion ".$countDocs.":</h5>";
 		echo $form->textField($model,'name',array('title'=>'Nombre de Investigación','name'=>'getResearch[]','value'=>$getResearch[$key]->name,'size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); 
 		echo $form->error($model,'name'); 
-		echo "<br>";
+		echo "</div>";
 		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteResearch', 'id'=>$getResearch[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		echo "</div>";
 		echo "<hr>";
@@ -100,7 +109,7 @@
 		                                      
 		                         if(data.status=="200")
 		                         {
-				                     	$(".successdiv").show(); 
+				                     $(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {
@@ -110,7 +119,7 @@
 		                    
                       ), array('class'=>'savebutton'));  
         ?>
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 
 	</div>
