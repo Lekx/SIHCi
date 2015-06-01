@@ -25,7 +25,14 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-<h1>Difusión de Prensa</h1>
+
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
+
+<h4>Gestionar Difusiones de Prensa:</h4>
 
 <div class="search-form" style="display:block" >
 <?php $this->renderPartial('_search',array(

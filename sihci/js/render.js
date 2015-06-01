@@ -7,6 +7,8 @@ $(document).ready(function() {
             $(".glyphicon").css("color", "#1EB9C0");
             $("#yt0").css("background-color", "#0E3152 !important");
             $("#yt0").val("Ingresar a mi cuenta");
+            $('[id^=LoginForm_]').val('');
+          
         }
     });
     $("img#logocuentas2").click(function() {
@@ -20,6 +22,7 @@ $(document).ready(function() {
         $(".glyphicon").css("color", "#1EB9C0");
         $("#yt0").css("background-color", "#0E3152 !important");
         $("#yt0").val("Ingresar a mi cuenta");
+        $('[id^=LoginForm_]').val('');
     });
     $("#recoveryHome").click(function() {
         $(".loginHome").hide();

@@ -9,7 +9,7 @@
  */
 class PostdegreeGraduatesController extends Controller
 {
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	public function filters()
 	{

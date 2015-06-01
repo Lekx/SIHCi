@@ -6,7 +6,7 @@ class CertificationsController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters
@@ -77,7 +77,7 @@ class CertificationsController extends Controller
 			if($model->save()){
 				$section = "Certificaciones por Concejos Médicos"; 
      			$action = "Creación";
-				$details = ":";
+				$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Día de Inicio: ".$model->validity_date_start.".";
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
@@ -163,10 +163,7 @@ class CertificationsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Certifications');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**

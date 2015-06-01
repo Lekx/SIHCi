@@ -39,13 +39,14 @@ $(document).ready(function(){
 
 
 	Utlizar la misma Direccion.
-	<div>
+	<div class="row">
 		<input type="checkbox" id="sponsorsBillingCheck" name="sameAddress"  <?php echo $sameAd == true ? "CHECKED" : "";?>/>
 	</div>
-
+	</div>
 	<div id="sponsorsBillingForm" id="sponsorsBillingForm">
 
-
+<div class="row">
+  <span class="plain-select">
       <?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $modelAddresses->country,
@@ -57,7 +58,8 @@ $(document).ready(function(){
 		'firstText' => 'Pais',
 
 		)); ?>
-
+</span>
+</div>
 
 
 		          <?php /*
@@ -76,47 +78,58 @@ $this->widget(
 	)
 );*/
 ?>
-		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal', 'class' => 'numericOnly'));?>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal','title' => 'Código Postal', 'class' => 'numericOnly'));?>
 		<?php echo $form->error($modelAddresses, 'zip_code');?>
-
-		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado'));?>
+</div>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','title' => 'Estado'));?>
 		<?php echo $form->error($modelAddresses, 'state');?>
-
-		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación'));?>
+		</div>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','title' => 'Delegación'));?>
 		<?php echo $form->error($modelAddresses, 'delegation');?>
-
-		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad'));?>
+		</div>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','title' => 'Ciudad'));?>
 		<?php echo $form->error($modelAddresses, 'city');?>
-
-		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio'));?>
+		</div>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','title' => 'Municipio'));?>
 		<?php echo $form->error($modelAddresses, 'town');?>
-
-		<?php echo $form->textField($modelAddresses, 'colony', array('size' => 45, 'maxlength' => 45, 'placeholder' => 'Colonia'));?>
+		</div>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'colony', array('size' => 45, 'maxlength' => 45, 'placeholder' => 'Colonia','title' => 'Colonia'));?>
 		<?php echo $form->error($modelAddresses, 'colony');?>
-
-
-		<?php echo $form->textField($modelAddresses, 'street', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Calle'));?>
+		</div>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'street', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Calle', 'title' => 'Calle'));?>
 		<?php echo $form->error($modelAddresses, 'street');?>
-
-		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo', 'class' => 'numericOnly'));?>
+		</div>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo', 'title' => 'Número Externo','class' => 'numericOnly'));?>
 		<?php echo $form->error($modelAddresses, 'external_number');?>
-
-		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno', 'class' => 'numericOnly'));?>
+		</div>
+<div class="row">
+		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno','title' => 'Número Externo' ,'class' => 'numericOnly'));?>
 		<?php echo $form->error($modelAddresses, 'internal_number');?>
+		</div>
 	</div>
 
 
 	<div id="billing" name="billing">
-	
-		<?php echo $form->textField($model, 'name', array('size' => 45, 'placeholder' => 'Nombre', 'maxlength' => 45));?>
+	<div class="row">
+		<?php echo $form->textField($model, 'name', array('size' => 45, 'placeholder' => 'Nombre', 'maxlength' => 45,'title' => 'Nombre'));?>
 		<?php echo $form->error($model, 'name');?>
-
-
-		<?php echo $form->textField($model, 'rfc', array('size' => 20, 'placeholder' => 'RFC', 'maxlength' => 20, 'class' => 'numericOnly'));?>
+</div>
+<div class="row">
+		<?php echo $form->textField($model, 'rfc', array('size' => 20, 'placeholder' => 'RFC', 'title' => 'RFC','maxlength' => 20, 'class' => ''));?>
 		<?php echo $form->error($model, 'rfc');?>
-
-		<?php echo $form->textField($model, 'email', array('size' => 60, 'placeholder' => 'Email', 'maxlength' => 70, 'email' => 'email'));?>
+		</div>
+<div class="row">
+		<?php echo $form->textField($model, 'email', array('size' => 60, 'placeholder' => 'Email', 'title' => 'Email','maxlength' => 70, 'email' => 'email'));?>
 		<?php echo $form->error($model, 'email');?>
+		</div>
 	</div>
 
 
@@ -125,7 +138,6 @@ $this->widget(
 	<div class="row buttons">
 		<?php /* echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); */?>
 		<input type="submit"  class="savebutton" onclick="validationFrom()" value="Guardar">
-		<input class="cleanbutton" type="button" value="Borrar">
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

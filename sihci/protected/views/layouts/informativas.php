@@ -19,6 +19,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/informativas.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/login.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/users.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css"> 
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
 
 
@@ -57,6 +58,7 @@
                            $(document).ready(function() {
                                 $('input, select').tooltipster({
                                     position: 'right',
+                                    trigger:  'click', 
                                 });
 
                             });
@@ -343,13 +345,14 @@
                                 } else {
                                     $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas4'));
                                 //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-                                    echo CHtml::link($img, array('account/infoAccount'));
+                                    echo CHtml::link($img, array('account/firstLogin'));
                                     echo '<p id="logoutext">';
                                     echo Yii::app()->user->email;
                                     echo '</p>';
                                 }
                                 ?>
                             </div>
+                
                             <div class="singin">
                             <?php
                                if (Yii::app()->user->isGuest){
@@ -370,7 +373,6 @@
                                
                              ?>
                              </div>
-    
                             <div class="searchbar">
                                 <div class="searchbarconteiner">
                                     <button type="button" id="show_hidemenu">

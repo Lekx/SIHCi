@@ -35,28 +35,23 @@ $this->menu = array(
 
 
 	<div class="row">
-		<h5>Contraseña Actual:</h5>
-		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off')); ?>
+		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off', "placeholder"=>"Contraseña Actual")); ?>
 		<?php echo $form->error($details,'password'); ?>
 		<hr>
 	</div>
 
-
-
-	<div>
-		Nueva Contraseña:</br>
-		<input type="password" name="Account[password2]" id="Account_password2">
+	<div class="row">
+		<input type="password" name="Account[password2]" id="Account_password2" placeholder="Nueva Contraseña">
 	</div>
 
-	<div>
-		Repetir Nueva Contraseña:</br>
-		<input type="password" name="Account[password22]" id="Account_password22">
+	<div class="row">
+		<input type="password" name="Account[password22]" id="Account_password22" placeholder="Repetir Nueva Contraseña">
 	</div>
 	
+	<hr>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton("Guardar", array('class'=>'savebutton') ); ?>
-		<input class="cleanbutton" type="button" value="Borrar">
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

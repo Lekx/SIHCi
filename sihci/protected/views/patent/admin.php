@@ -22,8 +22,13 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
 
-<h1>Propiedad intelectual: Patentes</h1>
+<h3>Gestionar Registro de propiedad intelectual-Patentes:</h3>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
@@ -41,7 +46,7 @@ $('.search-form form').submit(function(){
 		
 		array('name'=>'Nombre','type'=>'html','id'=>'name','value'=>'CHtml::encode($data->name)'),
 		array('name'=>'Propietario ','type'=>'html','id'=>'owner','value'=>'CHtml::encode($data->owner)'),
-		array('name'=>'Número de registro o Número de solicitud','type'=>'html','id'=>'application_number','value'=>'CHtml::encode($data->application_number)'),
+		array('name'=>'Número de registro o de solicitud','type'=>'html','id'=>'application_number','value'=>'CHtml::encode($data->application_number)'),
 		array('name'=>'Estado de la patente','type'=>'html','id'=>'state','value'=>'CHtml::encode($data->state)'),
 		array('name'=>'Tipo de aplicación','type'=>'html','id'=>'application_type','value'=>'CHtml::encode($data->application_type)'),
 		

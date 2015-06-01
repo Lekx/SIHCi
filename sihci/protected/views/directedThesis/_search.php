@@ -15,7 +15,7 @@
 	<div class="row">
 		
 		<legend>B&uacutesqueda por:</legend>
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo o Autor')); ?>	
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo, Autor, Grado, Organización y Sector')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
 
 	</div>

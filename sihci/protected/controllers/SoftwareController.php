@@ -6,7 +6,7 @@ class SoftwareController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters
@@ -89,7 +89,12 @@ class SoftwareController extends Controller
 				}	
 
 					if($model->save())
-					{	   			   
+					{	   		
+						$section = "Propiedad Intelectual"; 
+		     			$action = "Creación";
+						$details = "Subsección: Software";
+		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		     				   
 					    echo CJSON::encode(array('status'=>'200'));
 					   	$this->redirect(array('admin','id'=>$model->id));
 				    	Yii::app()->end();
@@ -140,6 +145,7 @@ class SoftwareController extends Controller
 			if($model->end_date == null)
     			$model->end_date ='00/00/0000';		
 
+    		
 				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
 							
@@ -150,23 +156,25 @@ class SoftwareController extends Controller
 					   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
 			          
 			            if(!is_dir($urlFile))          
-			              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
+			              	mkdir($urlFile, 0777, true);
 
 						    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
 						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
-							echo ("La Cambie".$model->path);    
+							
 			    }
 				
 				else
-				{				
-									   
-				   $model->path=$oldPath;    			 			   		
-				    
-
+				{						   
+				   $model->path=$oldPath;  
 				}	
 
 					if($model->save())
-					{	   			   
+					{	   		
+						$section = "Propiedad Intelectual"; 
+		     			$action = "Modificación";
+						$details = "Subsección: Software. Número Registro: ".$model->id;
+		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		     				   
 					    echo CJSON::encode(array('status'=>'200'));
 					   	$this->redirect(array('admin','id'=>$model->id));
 				    	Yii::app()->end();
@@ -193,14 +201,21 @@ class SoftwareController extends Controller
 	public function actionDelete($id)
 	{
 		
-		$model= Software::model()->findByPk($id);
-			
+		$model= $this->loadModel($id);
+		$section = "Propiedad Intelectual";  
+		$action = "Eliminación";
+		$details = "Subsección: Software. Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.".";
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		
 		if ($model->path != null ){			
 			 unlink(YiiBase::getPathOfAlias("webroot").$model->path);
 		     $model->delete();
 		}
-		else 
- 			$this->loadModel($id)->delete();
+		else {
+ 			$model->delete();
+		}
+
+
 		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

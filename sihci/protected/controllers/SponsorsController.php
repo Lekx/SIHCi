@@ -87,7 +87,9 @@ class SponsorsController extends Controller {
 						if ($model->save()) {
 
 							if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
+
 								if($model->photo_url->type == 'application/pdf' || $model->photo_url->type == 'application/msword' || $model->photo_url->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->photo_url->type == 'application/vnd.oasis.opendocument.text' )
+								
 								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 								$path = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/img/";
 								if (!file_exists($path)) {
@@ -295,7 +297,6 @@ class SponsorsController extends Controller {
 				} else {
 
 						$modelAddresses = new Addresses;
-
 						$modelAddresses->attributes = $_POST['Addresses'];
 
 						if ($modelAddresses->save()) {
@@ -334,6 +335,7 @@ class SponsorsController extends Controller {
 		$reload = false;
 
 		if (isset($_POST['Doc1'])) {
+
 			$path2 = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/docs/";
 			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 			if (!file_exists($path2)) {
@@ -353,11 +355,22 @@ class SponsorsController extends Controller {
 				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
 				echo "puse nombre a file name";
+					
+					$model = new SponsorsDocs;
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
+
+				}
+
+				$model->id_sponsor = $id_sponsor;
+				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
 				//unlink($model->path);
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				echo "antes de guardar";
+				
 				if($model->save())
 					$reload = true;
 				
