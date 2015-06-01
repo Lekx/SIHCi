@@ -56,7 +56,7 @@
                 if(Yii::app()->user->type == 'moral')
                         $infoUser = array("label"=>"Moral","icon"=>"PerfilEmpresa","cuentaicon"=>"CuentaEmpresa","controller"=>"sponsors/sponsorsInfo","MenuEmpresa"=>"Perfil Empresa", "proyectos"=>"Proyectos","Evaluacion"=>"Evaluación");
                 else if(Yii::app()->user->type == 'fisico')
-                         $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","cuentaicon"=>"Pcuenta","controller"=>"curriculumVitae/personalData","MenuEmpresa"=>"CV-HC","proyectos"=>"Proyectos","Evaluacion"=>"Evaluación CV");
+                        $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","cuentaicon"=>"Pcuenta","controller"=>"curriculumVitae/personalData","MenuEmpresa"=>"CV-HC","proyectos"=>"Proyectos","Evaluacion"=>"Evaluación CV");
                 else
                         $infoUser = array("label"=>"Administrador","icon"=>"admin_icon","controller"=>"admin/users","MenuEmpresa"=>"Cuenta");
     ?>
