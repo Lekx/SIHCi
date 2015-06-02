@@ -128,9 +128,9 @@ class AdminSpecialtyAreasController extends Controller
             	
             	foreach($_POST['ext_subspecialty'] as $key => $value)
 				{
-	               	if($idsAdminSpecialtyAreas[$key] == '')
+	               	if($idsAdminSpecialtyAreas[$key] != '')
 	               	{
-	               		echo "Pase por aqui";
+	               		echo 'Pase por aqui'.$value;      		
 		               	unset($modelSpecialtyAreas);
 		               	$modelSpecialtyAreas = new AdSpecialtyAreas;
 
@@ -141,8 +141,9 @@ class AdminSpecialtyAreasController extends Controller
           	   	    }	
                    	else
                    	{
-                   		echo "No se que hago aqui";
-                   		$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialty'=>$value)); 								
+                   		echo "No se que hago aqui ".$value;
+                   		$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialtys' => $value)); 		
+
                 	}
 	            	
           	    }	
