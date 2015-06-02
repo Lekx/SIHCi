@@ -139,8 +139,16 @@ class ChartsController extends Controller
 		SELECT DISTINCT YEAR(creation_date) FROM projects 
 		")->queryAll();
 
+		$totalPrjects = $conexion->createCommand("
+		SELECT count(id) as total, MONTH(creation_date) as month 
+		FROM projects
+		GROUP BY MONTH(creation_date);
+		")->queryAll();
+
+
 		$this->render('index',array(
 			
+			'totalPrjects'=>$totalPrjects,
 			'year'=>$year,	
 			 'action'=>'totalResearchProjects'
 		));
