@@ -1,17 +1,17 @@
 
 <?php
-/* @var $this SystemLogController */
-/* @var $model SystemLog */
 /* @var $form CActiveForm */
 ?>
 
 <div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
+	'action'=>'search',
 	'method'=>'get',
 )); ?>
-		
+		<?php 
+		//echo $form->textField($model,array('size'=>60,'maxlength'=>70, 'placeholder'=>'Buscar')); ?>	
+		<input type="text" name="text" placeholder="Buscar">
 		<?php echo CHtml::submitButton('Buscar'); ?>
 	
 

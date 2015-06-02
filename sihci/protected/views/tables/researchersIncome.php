@@ -39,6 +39,10 @@ $('.search-form form').submit(function(){
 
 <?php 
 
+ 
+
+ echo CHtml::dropDownList('listYear', 'listYear', $year);
+
  echo CHtml::link('Ingreso de Investigadores',array('tables/researchersIncome'));
 echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
  echo CHtml::link('Baja de Investigadores',array('tables/researchersLow'));
@@ -51,6 +55,8 @@ echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$researchersIncome,
+	 'ajaxUpdate' => true,
+	'filter' => null,
 	'columns'=>array(
 		 array('header'=>'Numero de Usuario',
 		 		'name'=>'id',

@@ -1,47 +1,13 @@
+
+<div class="form">
 <?php 
-
-/*echo "<pre>";
-
-//print_r($results);
-echo "</pre>";*/
 
 $months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-/*$resultst2[0] = array("total"=>1,"month"=>9);
-$resultst2[1] = array("total"=>3,"month"=>12);
-$resultst2[2] = array("total"=>4,"month"=>11);
-$resultst2[3] = array("total"=>5,"month"=>10);*/
 
-/*for($i = 0; $i < 12; $i++){
-		
-		foreach ($results as $key => $value)
-			$res1 = intval($value["month"]) === ($i+1) ? true : false;
-	
-	var_dump($res1);
-		if($res1)
-			array_push($results,array("total"=>0,"month"=>$i+1));
+echo print_r($year);
+	 echo CHtml::dropDownList('year', '',$year);
 
-		foreach ($results2 as $keyx => $valuex)
-			$res = intval($valuex["month"]) === ($i+1) ? true : false;
-	
-	var_dump($res);
-		if($res)
-			array_push($results2,array("total"=>0,"month"=>$i+1));
-
-}
-
-print_r($results);
-echo "<hr>";
-print_r($results2);*/
-/*
-		foreach ($results as $key => $value) {
-			if($value["month"] == $i)
-				break;
-			
-		 	$value["month"]=$i;
-		 	$value["total"]=0;
-		}
-	*/
 foreach($resultsTotalReasearches as $key => $values){
 	$data[$months[$values["month"]]] = intval($values["total"]);
 }
@@ -87,3 +53,4 @@ print_r($data2);*/
     )
     );
  ?>
+</div>
