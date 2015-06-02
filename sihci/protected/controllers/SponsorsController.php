@@ -87,6 +87,8 @@ class SponsorsController extends Controller {
 						if ($model->save()) {
 
 							if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
+
+								if($model->photo_url->type == 'application/pdf' || $model->photo_url->type == 'application/msword' || $model->photo_url->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->photo_url->type == 'application/vnd.oasis.opendocument.text' )
 								
 								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 								$path = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/img/";
@@ -115,6 +117,8 @@ class SponsorsController extends Controller {
 									$log->datetime = new CDbExpression('NOW()');
 									$log->save();
 
+								}else {
+									echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 								}
 							}
 						}
@@ -213,6 +217,7 @@ class SponsorsController extends Controller {
 			foreach ($_POST['fullnamesUpdate'] as $key => $names) 
 				$model->updateByPk($fullnamesUpdateId[$key],array('fullname' => $names));
 
+			$this->redirect(array('view', 'id' => $model->id));
 		}
 
 		if (isset($_POST['fullnames'])) {
@@ -285,16 +290,13 @@ class SponsorsController extends Controller {
 				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id_address;
 				if ($model->save())
 					if ($modelAddresses->id != $model->id_address_billing && $modelAddresses->id > 0) {
-						///echo "if  after model save and same address";
 						if ($modelAddresses->delete())
 							$this->redirect(array('create_billing'));
 					}else
 						$this->redirect(array('create_billing'));
 				} else {
-						//echo "else no same addreres";
 
 						$modelAddresses = new Addresses;
-
 						$modelAddresses->attributes = $_POST['Addresses'];
 
 						if ($modelAddresses->save()) {
@@ -338,11 +340,21 @@ class SponsorsController extends Controller {
 			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 			if (!file_exists($path2)) {
 				mkdir($path2, 0777, true);
+				echo "cree carpetas";
 			}
 		
 			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
 				if (!array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs)) {
+					$model = new SponsorsDocs;
+					echo "cree molde nuevo";
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
+				}
+				$model->id_sponsor = $id_sponsor;
+				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
+				echo "puse nombre a file name";
 					
 					$model = new SponsorsDocs;
 				} else {
@@ -357,6 +369,7 @@ class SponsorsController extends Controller {
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+				echo "antes de guardar";
 				
 				if($model->save())
 					$reload = true;
@@ -375,6 +388,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Acreditacion_de_las_facultades_del_representante_o_apoderado";
 				$model->path = CUploadedFile::getInstanceByName('Doc2');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				
@@ -383,6 +397,8 @@ class SponsorsController extends Controller {
 					
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc3'))) {
@@ -396,6 +412,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Permisos_de_actividades";
 				$model->path = CUploadedFile::getInstanceByName('Doc3');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 					if ($model->save()) 
@@ -403,6 +420,8 @@ class SponsorsController extends Controller {
 					
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc4'))) {
@@ -416,6 +435,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "RFC_o_equivalente";
 				$model->path = CUploadedFile::getInstanceByName('Doc4');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 					if ($model->save()) 
@@ -423,6 +443,8 @@ class SponsorsController extends Controller {
 					
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc5'))) {
@@ -436,6 +458,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Comprobante_de_domicilio";
 				$model->path = CUploadedFile::getInstanceByName('Doc5');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 					if ($model->save()) 
@@ -443,6 +466,8 @@ class SponsorsController extends Controller {
 					
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc6'))) {
@@ -456,12 +481,15 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Identificacion_Oficial_del_Representante";
 				$model->path = CUploadedFile::getInstanceByName('Doc6');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				if ($model->save()) 
 					$reload = true;
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if ($reload == true) {
