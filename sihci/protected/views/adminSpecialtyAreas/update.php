@@ -16,4 +16,4 @@ $this->menu=array(
 
 <h1>Modificar <?php echo $model->specialty; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model, 'modelSpecialtyAreas'=>$modelSpecialtyAreas,'modelSpecialtyArea'=>$modelSpecialtyArea)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas,'modelSpecialtyArea'=>$modelSpecialtyArea)); ?>
