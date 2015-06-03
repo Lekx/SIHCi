@@ -1,9 +1,4 @@
-<style>
-	canvas{
-		width: 100% !important;
-		height: auto !important;
-	}
-</style>
+
 <?php 
 
 $this->menu=array(
