@@ -61,6 +61,26 @@
 
 	}
 
+
+	public function actionActivateAccount($key){
+
+		$query = Users::model()->findByAttributes(array('act_react_key'=>$key));		
+
+		var_dump($query);
+
+		if(!is_null($query)){
+			
+			if(Users::model()->updateByPk($query->id,array('status'=>'activo')))
+				$result = "success";	
+			else
+				$result = "failure";
+
+		}else
+			$result = "failure";
+
+		$this->render('activateAccount',array('result'=>$result));
+	}
+
 	public function actionUpdateEmail(){
 		$this->layout = 'system';
 		$details = Users::model()->findByPk(Yii::app()->user->id);

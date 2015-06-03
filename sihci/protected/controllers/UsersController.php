@@ -33,8 +33,28 @@ class UsersController extends Controller {
 		));
 	}
 
-	public function actionCreate() {
 
+	public function activateAccount($to,$activationKey){
+		$sihci = "From: SIHCI";
+		
+
+ 		$subject = "Activación de cuenta.";
+ 		$body = ' 
+		 Activación de Cuenta.
+		  
+		    Le damos la cordial bienvenida a el sistema SIHCi, para activar su cuenta solo debe dar clic en el siguiente enlace. http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.$activationKey.'
+		 
+		   Si usted no se ha registrado en nuestro sitio, por favor hacer caso omiso de éste correo.
+		
+		 '; 
+
+		if(!mail($to,$subject,$body)){
+		  echo"Error al enviar el mensaje.";
+		}
+	}
+
+	public function actionCreate() {
+		
 		$model = new Users;
 		$modelPersons = new Persons;
 
@@ -53,11 +73,8 @@ class UsersController extends Controller {
 
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
-
 						$model->status = 'activo';
-
 						$model->status = 'inactivo';
-
 						$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s') . $model->email . rand(1000, 5000))));
 						//if($model->validate())
 						$model->password = sha1(md5(sha1($model->password)));
@@ -81,29 +98,30 @@ class UsersController extends Controller {
 									if ($modelPersons->validate()) {
 										if($model->save()){
 											$modelPersons->id_user = $model->id;
-											if($modelPersons->save())
+											if($modelPersons->save()){
+												echo "antes de mandar email";
+												$this->activateAccount($model->email,$model->act_react_key);
+												echo "despues de mandar email";
+												$log = new SystemLog();
+												$log->id_user = Yii::app()->user->id;
+												$log->section = "Empresas";
+												$log->details = "Se creo un nuevo registro";
+												$log->action = "creacion";
+												$log->datetime = new CDbExpression('NOW()');
+												$log->save();
 												echo "202";
-											else
+											}else
 												echo "Ha ocurrido un error al crear el registro (CU03)";	
 										}else
 											echo "Ha ocurrido un error al crear el registro (CU02)";
 
-										$log = new SystemLog();
-										$log->id_user = Yii::app()->user->id;
-										$log->section = "Empresas";
-										$log->details = "Se creo un nuevo registro";
-										$log->action = "creacion";
-										$log->datetime = new CDbExpression('NOW()');
-										$log->save();
-
-	
 									}else
 										echo "Ha ocurrido un error al crear el registro (CU01)";
 								
 							}else
 								echo "Ya hay una cuenta registrada con este CURP.";
 						}
-						}
+					}
 				}else
 					echo "Las contraseñas no concuerdan";
 			}else
