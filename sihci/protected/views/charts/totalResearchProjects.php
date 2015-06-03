@@ -10,13 +10,13 @@ $months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
 	 //echo CHtml::dropDownList('year',$year, array($values));
 //}
 
-foreach($totalPrjects as $key => $values){
+foreach($totalProjects as $key => $values){
 	$data[$months[$values["month"]]] = intval($values["total"]);
 }
 
-/*foreach($resultsResearchersdown as $key => $values){
+foreach($resultsResearchersdown as $key => $values){
 	$data2[$values["month"]] = intval($values["total"]);
-}*/
+}
 
  $this->widget(
     'yiiwheels.widgets.highcharts.WhHighCharts',
@@ -32,7 +32,7 @@ foreach($totalPrjects as $key => $values){
     ),
     'series' => array(
 	    array("name"=>"Total proyectos de investigación ", "data"=>array_values($data)),
-	    //array("name"=>"Proyectos Investigación concluidos", "data"=>array_values($data2))
+	    array("name"=>"Proyectos Investigación concluidos", "data"=>array_values($data2)),
 	 
     )
     )

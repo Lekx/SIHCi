@@ -64,14 +64,14 @@ class ChartsController extends Controller
 		")->queryAll();*/
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM users
+		SELECT DISTINCT YEAR(creation_date) FROM users;
 		")->queryAll();
 	
 		$results = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
 		WHERE type = 'fisico'
-		GROUP BY MONTH(creation_date)
+		GROUP BY MONTH(creation_date);
 		")->queryAll();
 
 		$resultsResearchersdown = $conexion->createCommand("
@@ -110,7 +110,7 @@ class ChartsController extends Controller
 		FROM curriculum AS c 
 		INNER JOIN users AS u ON c.id_user = u.id
 		WHERE c.sni != 0 AND u.type = 'fisico'
-		GROUP BY u.creation_date;
+		GROUP BY u.creation_date
 		")->queryAll();
 
 		$resultResearchesnoSNI = $conexion->createCommand("
@@ -118,7 +118,7 @@ class ChartsController extends Controller
 		FROM curriculum AS c 
 		INNER JOIN users AS u ON c.id_user = u.id
 		WHERE c.sni = 0 AND u.type = 'fisico'
-		GROUP BY u.creation_date;
+		GROUP BY u.creation_date
 		")->queryAll();
 
 		$this->render('index',array(
@@ -139,16 +139,16 @@ class ChartsController extends Controller
 		SELECT DISTINCT YEAR(creation_date) FROM projects 
 		")->queryAll();
 
-		$totalPrjects = $conexion->createCommand("
+		$totalProjects = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM projects
-		GROUP BY MONTH(creation_date);
+		GROUP BY MONTH(creation_date)
 		")->queryAll();
 
 
 		$this->render('index',array(
 			
-			'totalPrjects'=>$totalPrjects,
+			'totalProjects'=>$totalProjects,
 			'year'=>$year,	
 			 'action'=>'totalResearchProjects'
 		));
