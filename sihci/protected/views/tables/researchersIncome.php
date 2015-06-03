@@ -8,8 +8,9 @@ $this->breadcrumbs=array(
 );
 $this->menu=array(
 	//array('label'=>'Anual Total Ingreso de Investigadores', 'url'=>array('index')),
-	//array('label'=>'Anual Total Baja de Investigadores', 'url'=>array('researchersLow')),
+	
 	array('label'=>'Anual Total Cantidad de Investigadores', 'url'=>array('NumberOfResearchers')),
+	array('label'=>'Proyectos de Investigación', 'url'=>array('Projects')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
