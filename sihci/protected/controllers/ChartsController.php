@@ -63,14 +63,15 @@ class ChartsController extends Controller
 		GROUP BY MONTH(per.fechaRegistro)
 		")->queryAll();*/
 
-<<<<<<< HEAD
+
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM users;
-=======
-		$years = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM users
->>>>>>> d775319e18eaa53b6004d80941faf5c43b732b4e
+		SELECT DISTINCT YEAR(creation_date) AS year FROM users 
 		")->queryAll();
+
+		$years = array();
+
+		foreach($year AS $index => $value)
+            $years[$value["year"]] = $value["year"];
 
 	
 		$results = $conexion->createCommand("
@@ -88,17 +89,32 @@ class ChartsController extends Controller
 		GROUP BY u.creation_date;
 		")->queryAll();
 
+		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+		foreach($results as $key => $values){
+    		$data[$months[$values["month"]]] = intval($values["total"]);
+		}
+
+		foreach($resultsResearchersdown as $key => $values){
+    		$data2[$months[$values["month"]]] = intval($values["total"]);
+		}
+
 		$this->render('index',array(
-			'results'=>$results,'resultsResearchersdown'=>$resultsResearchersdown,
-			'year'=>$year, 
+			'results'=>$data,
+			'resultsResearchersdown'=>$data2,
+			'years'=>$years,
 			'action'=>'totalRegisteredResearchesIo'
 		));
+
+
 	}
 
+	//Pertenece actionNumberofResearchers
 	public function actionCaca(){
+
 		$selYear  = $_POST['selectedYear'];
-$conexion = Yii::app()->db;
-$resultsTotalReasearches = $conexion->createCommand("
+		$conexion = Yii::app()->db;
+		$resultsTotalReasearches = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
 		WHERE type = 'fisico' AND YEAR(creation_date) = '".$selYear."'
@@ -121,27 +137,27 @@ $resultsTotalReasearches = $conexion->createCommand("
 		GROUP BY u.creation_date;
 		")->queryAll();
 
-$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-if(!empty($resultsTotalReasearches))
+		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+	if(!empty($resultsTotalReasearches))
 		foreach($resultsTotalReasearches as $key => $values){
 			$data[$months[$values["month"]]] = intval($values["total"]);
 		}
-if(!empty($resultResearchesSNI))
+	if(!empty($resultResearchesSNI))
 		foreach($resultResearchesSNI as $key => $values){
 			$data2[$months[$values["month"]]] = intval($values["total"]);
-			//echo $values["month"]." - ".$values["total"]."<br>";
+			
 		}
-if(!empty($resultResearchesnoSNI))
+	if(!empty($resultResearchesnoSNI))
 		foreach($resultResearchesnoSNI as $key => $values){
 			$data3[$months[$values["month"]]] = intval($values["total"]);
 		}
-/*
+
 		 echo json_encode(array(
 		 	'resultsTotalReasearches'=>$resultsTotalReasearches,
 			'resultResearchesSNI'=>$resultResearchesSNI,
 			'resultResearchesnoSNI'=>$resultResearchesnoSNI,
 			));
-*/
+
 		 		$this->renderPartial('_numberofResearchers',array(
 			'resultsTotalReasearches'=>$data,
 			'resultResearchesSNI'=>$data2,
@@ -189,7 +205,7 @@ if(!empty($resultResearchesnoSNI))
 		GROUP BY u.creation_date
 		")->queryAll();
 
-$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
 		foreach($resultsTotalReasearches as $key => $values){
 			$data[$months[$values["month"]]] = intval($values["total"]);
@@ -231,8 +247,13 @@ $months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM projects 
+		SELECT DISTINCT YEAR(creation_date) AS year FROM projects 
 		")->queryAll();
+
+		$years = array();
+
+		foreach($year AS $index => $value)
+            $years[$value["year"]] = $value["year"];
 
 		$totalProjects = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
@@ -240,13 +261,44 @@ $months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
 		GROUP BY MONTH(creation_date)
 		")->queryAll();
 
+		$TotalOpenProjects = $conexion->createCommand("
+		SELECT count(id) as total, MONTH(creation_date) as month 
+		FROM projects
+		WHERE status != 'dictaminado'
+		GROUP BY MONTH(creation_date);
+		")->queryAll();
+
+		$CompletedProjectsTotals = $conexion->createCommand("
+		SELECT count(id) as total, MONTH(creation_date) as month 
+		FROM projects
+		WHERE status = 'dictaminado'
+		GROUP BY MONTH(creation_date);
+		")->queryAll();
+
+		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+		foreach($totalProjects as $key => $values){
+			$data[$months[$values["month"]]] = intval($values["total"]);
+		}
+
+		foreach($TotalOpenProjects as $key => $values){
+			$data2[$values["month"]] = intval($values["total"]);
+		}
+
+		foreach($CompletedProjectsTotals as $key => $values){
+    		$data3[$values["month"]] = intval($values["total"]);
+		}
+
 
 		$this->render('index',array(
 			
-			'totalProjects'=>$totalProjects,
-			'year'=>$year,	
+			'totalProjects'=>$data,
+			'CompletedProjectsTotals'=>$data2,
+			'TotalOpenProjects'=>$data3,
+			'years'=>$years,	
 			 'action'=>'totalResearchProjects'
 		));
 
 	}
 }
+?>

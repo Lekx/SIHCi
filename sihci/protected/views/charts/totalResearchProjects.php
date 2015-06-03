@@ -2,21 +2,10 @@
 <div class="form">
 <?php 
 
-$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-//foreach($year as $key => $values){
-	 echo print_r($year);
-	 echo CHtml::dropDownList('year', '', $year);
-	 //echo CHtml::dropDownList('year',$year, array($values));
-//}
+	// echo print_r($year);
+	 echo CHtml::dropDownList('years', '', $years);
 
-foreach($totalProjects as $key => $values){
-	$data[$months[$values["month"]]] = intval($values["total"]);
-}
-
-foreach($resultsResearchersdown as $key => $values){
-	$data2[$values["month"]] = intval($values["total"]);
-}
 
  $this->widget(
     'yiiwheels.widgets.highcharts.WhHighCharts',
@@ -25,14 +14,15 @@ foreach($resultsResearchersdown as $key => $values){
     'chart' => array('type' => 'column'),
     'title' => array('text' => 'Registro de Investigadores por mes'),
     'xAxis' => array(
-    	'categories' =>array_keys($data)
+    	'categories' =>array_keys($totalProjects)
     ),
     'yAxis' => array(
     'title' => array('text' => 'Total de Investigadores')
     ),
     'series' => array(
-	    array("name"=>"Total proyectos de investigación ", "data"=>array_values($data)),
-	    array("name"=>"Proyectos Investigación concluidos", "data"=>array_values($data2)),
+	    array("name"=>"Total proyectos de investigación ", "data"=>array_values($totalProjects)),
+	    array("name"=>"Proyectos Investigación abiertos", "data"=>array_values($TotalOpenProjects)),
+        array("name"=>"Proyectos Investigación concluidos", "data"=>array_values($CompletedProjectsTotals)),
 	 
     )
     )
