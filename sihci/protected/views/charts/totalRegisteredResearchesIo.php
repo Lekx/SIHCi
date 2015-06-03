@@ -2,10 +2,13 @@
 <div class="form">
 <?php 
 
+        foreach($years AS $index => $value)
+            echo $value."<br>";
+
 $months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
 
-	 echo print_r($year);
+	 echo print_r($years);
 	 echo CHtml::dropDownList('year', '', $year);
 
 
