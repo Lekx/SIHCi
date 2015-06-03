@@ -138,6 +138,13 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+
+
+//	$data = array();
+//	$data2 = array();
+//	$data3 = array();
+
 	if(!empty($resultsTotalReasearches))
 		foreach($resultsTotalReasearches as $key => $values){
 			$data[$months[$values["month"]]] = intval($values["total"]);
@@ -151,17 +158,19 @@ class ChartsController extends Controller
 		foreach($resultResearchesnoSNI as $key => $values){
 			$data3[$months[$values["month"]]] = intval($values["total"]);
 		}
+		/*s
 
 		 echo json_encode(array(
 		 	'resultsTotalReasearches'=>$resultsTotalReasearches,
 			'resultResearchesSNI'=>$resultResearchesSNI,
 			'resultResearchesnoSNI'=>$resultResearchesnoSNI,
-			));
+			));*/
 
 		 		$this->renderPartial('_numberofResearchers',array(
 			'resultsTotalReasearches'=>$data,
 			'resultResearchesSNI'=>$data2,
 			'resultResearchesnoSNI'=>$data3,
+			//'id'=>$selYear
 			//'years'=>$years,	
 			//'action'=>'numberofResearchers'
 		),false, true);
@@ -300,5 +309,10 @@ class ChartsController extends Controller
 		));
 
 	}
+
+
+		public function actionTotalRegisteredResearchers(){
+			$this->render('totalRegisteredResearchers');
+		}
 }
 ?>
