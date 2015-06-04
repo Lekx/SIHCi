@@ -9,8 +9,8 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	//array('label'=>'Anual Total Ingreso de Investigadores', 'url'=>array('index')),
 	
-	array('label'=>'Anual Total Cantidad de Investigadores', 'url'=>array('NumberOfResearchers')),
-	array('label'=>'Proyectos de Investigación', 'url'=>array('Projects')),
+	array('label'=>'Anual Total Cantidad de Investigadores', 'url'=>array('researchers')),
+	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -68,7 +68,7 @@ function change(){
 </script>
 <select id="valueProjects" onchange="change()">
   <option value="total" selected="">Total de Proyectos</option>	
-  <option value="borrador">Proyectos Abiertos</option>
+  <option value="abierto">Proyectos Abiertos</option>
   <option value="dictaminado">Proyectos Concluidos</option>
   <option value="rechazado">Proyectos Rechazados</option>
 
