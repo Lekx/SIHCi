@@ -47,10 +47,16 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <script>
                             $(document).ready(function() {
-                                $('input, select').tooltipster({
+                                $('input, select,textarea,filepicker').tooltipster({
                                     position: 'right',
-                                
-                                });
+                                    trigger: 'custom',
+                                })
+                                .on( 'focus', function() {
+                                  $( this ).tooltipster( 'show' );
+                              })
+                                .on( 'blur', function() {
+                                  $( this ).tooltipster( 'hide' );
+                              });
 
                             });
         </script>

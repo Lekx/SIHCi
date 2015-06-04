@@ -12,7 +12,7 @@
 	)); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado"));?>
+		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado", 'title'=>'Nombre del graduado'));?>
 		<?php echo $form->error($model,'fullname'); ?>
 	</div>
 	
@@ -27,9 +27,7 @@
 		                         if(data.status=="success")
 		                         {
 				                    
-									 alert("Registro realizado con éxito.");
-				                     $("#postdegree-graduates-form")[0].reset();
-				                     window.location.href ="'.Yii::app()->createUrl('postdegreeGraduates/admin').'";
+							
 				                     $(".successdiv").show();		                         
 
 	

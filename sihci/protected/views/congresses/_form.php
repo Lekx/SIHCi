@@ -22,13 +22,12 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto')); ?>
 		<?php echo $form->error($model,'work_title'); ?>
 	</div>
 
 	<div class="row">
-		
+			<span class="plain-select">	
 		<?php echo $form->dropDownList($model,'year', array('promt'=>'Seleccionar año',
 															'1930'=>'1930','1931'=>'1931',
 															'1932'=>'1932','1933'=>'1933','1934'=>'1934','1935'=>'1935',
@@ -63,6 +62,7 @@
 															'2048'=>'2048','2049'=>'2049','2050'=>'2050'
 															
 															)); ?>
+															</span>
 		<?php echo $form->error($model,'year'); ?>
 	</div>
 
@@ -81,7 +81,7 @@
 	</div>
 
 	<div class="row">
-		
+			<span class="plain-select">	
 		<?php
 			$this->widget('ext.CountrySelectorWidget', 
 				array(
@@ -94,12 +94,14 @@
 			    )
 			);
 		?>
+		</span>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
      
 	<div class="row">
-		
+			<span class="plain-select">	
         <?php echo $form->dropDownList($model,'work_type',array('promt'=>'Seleccionar tipo de trabajo','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));?>
+        </span>
         <?php echo $form->error($model,'work_type'); ?>
      
 	</div>
@@ -120,23 +122,20 @@
 		                                      
 		                         if(data.status=="success")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#congresses-form")[0].reset();
-   				                     window.location.href ="'.Yii::app()->createUrl('congresses/admin').'";		                         
-
+				                                        
+									$(".successdiv").show();
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("Complete los campos con *");   
+			                     	 $(".errordiv").show();
 			                     }       
 		                  	}',                    
 		                    
-                        )); 
+                        ),array('class'=>'savebutton')); 
         ?>
-        <?php  if($model->isNewRecord) 
-			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-		?>
-       	<?php echo CHtml::link('Cancelar', array('/congresses/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('congresses/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+
+
 
 		<div class="200">
 		

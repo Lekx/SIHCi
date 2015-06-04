@@ -17,8 +17,6 @@
 	// See class documentation of CActiveForm for details on this.
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
 	 <span class="plain-select">		
 			<?php echo $form->dropDownList($model,'participation_type',
@@ -26,7 +24,7 @@
 						'Autor'=>'Autor',
 						'Coautor'=>'Coautor'
 					),
-					array('prompt'=>'Seleccionar participación')
+					array('prompt'=>'Seleccionar participación', 'title'=>'Seleccionar participación')
 				); 
 		?>
 		</span>
@@ -34,7 +32,7 @@
 	</div>
 
 	<div class="row">		
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título','title'=>'Título')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
@@ -50,6 +48,7 @@
 			    		'readOnly'=>true,
 			        	'maxlength' => '10', 
 			        	'placeholder'=>"Fecha de solicitud",
+			        	'title'=>'Fecha de solicitud',
 			    ),
 			));
 		?>
@@ -57,17 +56,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'step_number',array('placeholder'=>'Número de tramite')); ?>
+		<?php echo $form->textField($model,'step_number',array('placeholder'=>'Número de tramite','title'=>'Número de tramite')); ?>
 		<?php echo $form->error($model,'step_number'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen', 'title'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario')); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario','title'=>'Beneficiario')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
@@ -79,7 +78,7 @@
 						'Privada'=>'Privada',
 						'Sector social'=>'Sector social'
 					),
-					array('prompt'=>'Seleccionar entidad')
+					array('prompt'=>'Seleccionar entidad', 'title'=>'Entidad')
 				); 
 		?>
 		</span>
@@ -87,7 +86,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto', 'title'=>'Valor de impacto')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
@@ -101,7 +100,7 @@
 		                                      
 		                         if(data.status=="success")
 		                         {
-										$(".successdiv").show();
+									$(".successdiv").show();
 
 		                         }		                         
 		                         else
