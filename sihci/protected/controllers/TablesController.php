@@ -28,9 +28,7 @@ class TablesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('ResearchersIncome', 'index', 'ResearchersLow', 'NumberOfResearchers',
-					'NumberOfResearchersSNI', 'NumberOfResearchersNoSNI', 'search', 'Projects', 'RejectedProjects', 'OpenProjects',
-					'CompletedProjects'),
+				'actions'=>array('researchers', 'projects', 'books'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -47,150 +45,26 @@ class TablesController extends Controller
 
 	public function actionIndex()
 	{
-		$this->redirect('NumberOfResearchers');
+		$this->redirect('researchers');
 	}
-
-	public function actionResearchersIncome()
+	
+	public function actionResearchers()
 	{
-		$titlePage = "Anual Total Ingreso de Investigadores";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
+		$titlePage = "Cantidad de Investigadores";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM users')->queryAll();
 
-		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
-		 	INNER JOIN users u ON curri.id_user=u.id
-		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
-			INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  			INNER JOIN persons p ON u.id=p.id_user')->queryScalar();	
+		 $query='SELECT DISTINCT u.id,p.names,rese.name,j.hospital_unit,curri.SNI, curri.status, u.creation_date from users u 
+ 				JOIN curriculum curri ON curri.id_user=u.id
+ 				JOIN jobs j ON curri.id=j.id_curriculum
+ 				JOIN research_areas rese ON curri.id=rese.id_curriculum
+  				JOIN persons p ON u.id=p.id_user';
 
+	     $researchersIncome=new CSqlDataProvider($query);
 
-		 $query='SELECT u.id,p.names,rese.name,j.hospital_unit,curri.SNI from curriculum curri 
- 				INNER JOIN users u ON curri.id_user=u.id
- 				INNER JOIN jobs j ON curri.id=j.id_curriculum
- 				INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  				INNER JOIN persons p ON u.id=p.id_user
-  				WHERE curri.status=1';
-
-	     $researchersIncome=new CSqlDataProvider($query,array(
-                                'totalItemCount'=>$count,
-                                'pagination'=>array(
-                                                'pageSize'=>10,
-                                ),
-                ));
-
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
-	}
-
-	public function actionResearchersLow()
-	{
-		$titlePage = "Anual Total Baja de Investigadores";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
-		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
-		 	INNER JOIN users u ON curri.id_user=u.id
-		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
-			INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  			INNER JOIN persons p ON u.id=p.id_user')->queryScalar();	
-
-		 $query='SELECT u.id,p.names,rese.name,j.hospital_unit,curri.SNI from curriculum curri 
- 				INNER JOIN users u ON curri.id_user=u.id
- 				INNER JOIN jobs j ON curri.id=j.id_curriculum
- 				INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  				INNER JOIN persons p ON u.id=p.id_user
-  				WHERE curri.status=0';
-
-	     $researchersIncome=new CSqlDataProvider($query,array(
-                                'totalItemCount'=>$count,
-                                'pagination'=>array(
-                                                'pageSize'=>10,
-                                ),
-                ));
-
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
+		$this->render('researchers',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
 		
 	}
-
-	public function actionNumberOfResearchers()
-	{
-		$titlePage = "Anual Total Cantidad de Investigadores";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
-		
-		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
-		 	INNER JOIN users u ON curri.id_user=u.id
-		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
-			INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  			INNER JOIN persons p ON u.id=p.id_user')->queryScalar();	
-
-		 $query='SELECT u.id,p.names,rese.name,j.hospital_unit,curri.SNI from curriculum curri 
- 				INNER JOIN users u ON curri.id_user=u.id
- 				INNER JOIN jobs j ON curri.id=j.id_curriculum
- 				INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  				INNER JOIN persons p ON u.id=p.id_user';
-
-	     $researchersIncome=new CSqlDataProvider($query,array(
-                                'totalItemCount'=>$count,
-                                'pagination'=>array(
-                                                'pageSize'=>10,
-                                ),
-                ));
-
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
-		
-	}
-
-	public function actionNumberOfResearchersSNI()
-	{
-		$titlePage = "Anual Total Cantidad de Investigadores con SNI";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
-		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
-		 	INNER JOIN users u ON curri.id_user=u.id
-		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
-			INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  			INNER JOIN persons p ON u.id=p.id_user')->queryScalar();	
-
-		 $query='SELECT u.id,p.names,rese.name,j.hospital_unit,curri.SNI from curriculum curri 
- 				INNER JOIN users u ON curri.id_user=u.id
- 				INNER JOIN jobs j ON curri.id=j.id_curriculum
- 				INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  				INNER JOIN persons p ON u.id=p.id_user
-  				WHERE curri.SNI!=0';
-
-	     $researchersIncome=new CSqlDataProvider($query,array(
-                                'totalItemCount'=>$count,
-                                'pagination'=>array(
-                                                'pageSize'=>10,
-                                ),
-                ));
-
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
-		
-	}
-
-	public function actionNumberOfResearchersNoSNI()
-	{
-		$titlePage = "Anual Total Cantidad de Investigadores sin SNI";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) FROM users')->queryAll();
-		 $count=Yii::app()->db->createCommand('SELECT COUNT(curri.id) FROM curriculum curri 
-		 	INNER JOIN users u ON curri.id_user=u.id
-		 	INNER JOIN jobs j ON curri.id=j.id_curriculum
-			INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  			INNER JOIN persons p ON u.id=p.id_user')->queryScalar();	
-
-		 $query='SELECT u.id,p.names,rese.name,j.hospital_unit,curri.SNI from curriculum curri 
- 				INNER JOIN users u ON curri.id_user=u.id
- 				INNER JOIN jobs j ON curri.id=j.id_curriculum
- 				INNER JOIN research_areas rese ON curri.id=rese.id_curriculum
-  				INNER JOIN persons p ON u.id=p.id_user
-  				WHERE curri.SNI=0';
-
-	     $researchersIncome=new CSqlDataProvider($query,array(
-                                'totalItemCount'=>$count,
-                                'pagination'=>array(
-                                                'pageSize'=>10,
-                                ),
-                ));
-
-		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
-		
-	}
-////////// PROJECTS /////////////
+	
 	public function actionProjects()
 	{
 		$titlePage = "Proyectos de Investigación";
@@ -206,6 +80,22 @@ class TablesController extends Controller
 
 		$this->render('projects',array('projects'=>$projects, 'titlePage'=>$titlePage, 'year'=>$year));
 	}
+
+	public function actionBooks()
+	{
+		$titlePage = "Libros";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books')->queryAll();
+
+		$query='SELECT u.id,p.names,bo.book_title, bo.publisher, bo.release_date, bo.creation_date 
+		 		FROM books bo
+				 JOIN curriculum curri ON bo.id_curriculum=curri.id
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
+
+	     $books=new CSqlDataProvider($query);
+
+		$this->render('books',array('books'=>$books, 'titlePage'=>$titlePage, 'year'=>$year));
+	}	
 
 	
 }

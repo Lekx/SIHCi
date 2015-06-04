@@ -71,6 +71,7 @@ class CurriculumVitaeController extends Controller
 			$curriculum->id_user= Yii::app()->user->id;
 			$curriculum->id_actual_address= $addresses->id;
 			$curriculum->native_country = $model->country;
+			$curriculum->SNI = -1;
 			$curriculum->save();
 
 			
