@@ -9,7 +9,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'filter' => null,
 	'columns'=>array(
 
-		
 		  /*array('header'=>'Nombre del Investigador',
 		 		'name'=>'title',
                 ),*/

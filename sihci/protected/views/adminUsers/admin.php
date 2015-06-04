@@ -68,19 +68,17 @@
 		 array(
 		 	'type'=>'raw',
 		 	'name' => 'estatus',
-          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array(
+          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo")',array(
             
      ),
 		array(
 			'class' => 'CButtonColumn', 'template' => '{view} {update} {delete} {login}', 'header' => 'Acciones',
-			'buttons' => array
-			(
-				'login' => array
-				(
+			'buttons' => array(
+				'login' => array(
 					'label' => 'Iniciar sesión como éste usuario.',
-					'imageUrl' => Yii::app()->request->baseUrl . '/images/login.png',
+					'imageUrl' => Yii::app()->request->baseUrl.'/images/login.png',
 
 				)),
 		),
 	),
-));?>
+)); ?>

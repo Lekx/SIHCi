@@ -3,10 +3,10 @@
 class SponsoredProjectsController extends Controller
 {
 	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 * @var string the default layout for the views. Defaults to '//layouts/system', meaning
+	 * using two-column layout. See 'protected/views/layouts/system.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters
@@ -44,6 +44,11 @@ class SponsoredProjectsController extends Controller
 			),
 		);
 	}*/
+
+	public function actionIndex(){
+		
+		$this->actionSponsoredProjectsV();
+	}
 
 public function actionSponsoredProjectsV()
 	{
