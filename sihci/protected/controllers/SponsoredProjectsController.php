@@ -45,17 +45,20 @@ class SponsoredProjectsController extends Controller
 		);
 	}*/
 
-public function actionSponsoredProjects()
+public function actionSponsoredProjectsV()
 	{
 
-		$query='SELECT u.id,p.names,pro.title, pro.discipline, pro.develop_uh, pro.is_sponsored, pro.registration_number, pro.status, pro.creation_date 
-     		FROM projects pro
-     		JOIN curriculum curri ON pro.id_curriculum=curri.id
-      		JOIN users u ON curri.id_user=u.id
-       		JOIN persons p ON u.id=p.id_user 
-       		WHERE is_sponsored = 1';
+		$query=	'SELECT u.id, pro.title, pro.discipline, pro.develop_uh, CONCAT(per.last_name1," ",per.last_name2," ",per.names) AS fullname
+				FROM users AS u
+				INNER JOIN persons AS per ON u.id=per.id_user
+				INNER JOIN curriculum AS c ON c.id_user= u.id
+				INNER JOIN projects AS pro ON pro.id_curriculum=c.id
+				INNER JOIN sponsors AS spo ON u.id=spo.id_user
+				INNER JOIN sponsorship AS sph ON sph.id_user_sponsorer=spo.id
+				INNER JOIN sponsored_projects AS sp ON sp.id_project=pro.id
+				WHERE u.type = "fisico"';
 
-		 $cveHcPublics=new CSqlDataProvider($query,array(
+		 $SponsoredProjectsV=new CSqlDataProvider($query,array(
                                 'pagination'=>array(
                                                 'pageSize'=>10,
                                 ),

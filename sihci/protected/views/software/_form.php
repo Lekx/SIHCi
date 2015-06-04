@@ -35,6 +35,7 @@
 				'useCountryCode' => false,
 				'firstEmpty' => true,
     			'firstText' => 'Seleccionar país',
+
 		)); ?>
 		</span>
 		<?php echo $form->error($model,'country'); ?>
@@ -47,7 +48,7 @@
 				  		'Inventor'=>'Inventor',
 				  		'Co-inventor'=>'Co-inventor'
 			    ),
-			    array('prompt'=>'Seleccionar participación')
+			    array('prompt'=>'Seleccionar participación','title'=>'Participacíon')
 			);
 	    ?>		
 	    </span>
@@ -55,12 +56,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título','title'=>'Título',)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario')); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario','title'=>'Beneficiario',)); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
@@ -72,7 +73,7 @@
 				 		'Privada'=>'Privada',
 				 		'Sector social'=>'Sector social'
 				 ),
-				 array('prompt'=>'Seleccionar entidad')
+				 array('prompt'=>'Seleccionar entidad','title'=>'Entidad')
 			);
 		 ?>
 		 </span>
@@ -80,7 +81,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas invertidas en el proyecto')); ?>
+		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas invertidas en el proyecto','title'=>'Horas invertidas en el proyecto')); ?>
 		<?php echo $form->error($model,'manwork_hours'); ?>
 	</div>
 
@@ -94,6 +95,7 @@
 		    		'size' => '10',         
 		    		'readOnly'=>true,
 		        	'placeholder'=>"Fecha de termino",
+		        	'title'=>'Fecha de termino',
 		    ),
 		));
 		?>
@@ -120,7 +122,7 @@
 				  		 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras',
 				  		 'No especificado'=>'No especificado',
 				    ),
-					array('prompt'=>'Sector')			  
+					array('prompt'=>'Sector','title'=>'Sector')			  
 			    ); 
 		?>
 		</span>
@@ -142,7 +144,7 @@
 							'SIXSIGMA NETWORKS MEXICO'=>'SIXSIGMA NETWORKS MEXICO',
 							'TL EFFICIENCY SA DE CV'=>'TL EFFICIENCY SA DE CV'
 					),
-					array('prompt'=>'Seleccionar organización')
+					array('prompt'=>'Seleccionar organización','title'=>'Sector')
 				);
 		?>
 		</span>
@@ -222,7 +224,7 @@
                             'SISTEMA DE UNIVERSIDAD VIRTUAL'=>'SISTEMA DE UNIVERSIDAD VIRTUAL',
                             'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'=>'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'
 			            ),
-						array('prompt'=>' Seleccionar segundo nivel')
+						array('prompt'=>' Seleccionar segundo nivel','title'=>'Seleccionar segundo nivel')
 			    ); 
 	    ?>
 	    </span>
@@ -230,42 +232,42 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>10000,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>10000,'placeholder'=>'Resumen','title'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resumen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Objetivo')); ?>
+		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Objetivo','title'=>'Objetivo')); ?>
 		<?php echo $form->error($model,'objective'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Contribución')); ?>
+		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Contribución','title'=>'Contribución')); ?>
 		<?php echo $form->error($model,'contribution'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Valor de impacto','title'=>'Valor de impacto')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Inovación')); ?>
+		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Inovación','title'=>'Inovación')); ?>
 		<?php echo $form->error($model,'innovation_trascen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Mecanismo de transferencia')); ?>
+		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Mecanismo de transferencia','title'=>'Mecanismo de transferencia')); ?>
 		<?php echo $form->error($model,'transfer_mechanism'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Formación de recursos humanos')); ?>
+		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Formación de recursos humanos','title'=>'Formación de recursos humanos')); ?>
 		<?php echo $form->error($model,'hr_formation'); ?>
 	</div>
 
 	<div class="row">
-		Apoyo economico
+	<span class="radiotext">Apoyo economico:</span>
 		<?php $status = array('1' => 'Si','0'=>'No'); 
 		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'economic_support'); ?>
@@ -273,7 +275,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->FileField($model,'path',array('id'=>'path')); ?>
+		<?php echo $form->FileField($model,'path',array('id'=>'path','title'=>'Documento')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 

@@ -342,6 +342,11 @@ label {
 input[type="radio"]
 {
 	display: inline !important;
+	margin-left: 5% !important;
+}
+.radiotext
+{
+	margin-left: 5px;
 }
 
 .cvforms input[type="text"], .cvforms input[type="password"], 
@@ -918,7 +923,6 @@ thead th
 }
 .search-form
 {
-
 	margin: 0 !important;
 	padding: 0 !important;
 	background-color: white !important;
@@ -927,8 +931,10 @@ thead th
 /* end .slideThree */
 .searchcrud
 {
+	width: 100% !important;
+	height: 50px !important;
 	font-family: 'Caviar_Dreams' !important;
-	width: 92% !important;
+	width: 100% !important;
 	height: 50px !important;
 }
 .items table tr
@@ -1035,3 +1041,29 @@ table.detail-view th
 {
 	font-family: 'Caviar_Dreams';
 }
+
+.inner-addon { 
+
+    position: relative; 
+	width: 100% !important;
+	height: 50px !important;
+	display: block !important;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  color: #1EB9C0;
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 23px;
+
+  z-index: 999;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  5px;}
+.right-addon .glyphicon { right: 5px;}
+
+/* add padding  */
+

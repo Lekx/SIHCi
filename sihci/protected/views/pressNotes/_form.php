@@ -36,7 +36,7 @@
 				'Televisión'=>'Televisión',
 				'Vidos'=>'Vidos'
 			),
-			array('prompt'=>'Seleccionar participación'));
+			array('prompt'=>'Seleccionar participación', 'title'=>'Participación'));
 		?>
 		</span>
 		<?php echo $form->error($model,'type'); ?>
@@ -55,7 +55,7 @@
 				'Sector Público'=>'Sector Público',
 				'Sector Social'=>'Sector Social'
 			),
-		    array('prompt'=>'Dirigido A..'));
+		    array('prompt'=>'Dirigido A..','title'=>'Dirigido'));
 		?>
 		</span>
 		<?php echo $form->error($model,'directed_to'); ?>
@@ -72,6 +72,7 @@
 		    		'readOnly'=>true,
 		        	'maxlength' => '10', 
 		        	'placeholder'=>"Fecha de la publicación",
+		        	'title'=>'Fecha de Publicación',
 		    ),
 		));
 		?>
@@ -79,17 +80,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>150,'placeholder'=>'Título de la publicacion')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>150,'placeholder'=>'Título de la publicación','title'=>'Título de la publicación')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>150,'placeholder'=>'Dependencia responsable')); ?>
+		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>150,'placeholder'=>'Dependencia responsable','title'=>'Dependencia responsable')); ?>
 		<?php echo $form->error($model,'responsible_agency'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica')); ?>
+		<?php echo $form->textArea($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica', 'title'=>'Nota periodistica')); ?>
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 
@@ -110,13 +111,11 @@
 		                       
 		                        if(data.status=="success")
 		                        {
-		                           	alert("Registro realizado con éxito");
-				                    $("#press-notes-form")[0].reset();
-									window.location.href ="'.Yii::app()->createUrl('pressNotes/admin').'";		                         
+		                             $(".successdiv").show();		                         
 								}		                         
 		                        else
 		                        {
-			                    	alert("Complete los campos con *");   
+			                    	$(".errordiv").show(); 
 			                    }       
 		                  	}',                            
                         ),array('class'=>'savebutton')); 
