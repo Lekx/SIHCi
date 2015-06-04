@@ -29,7 +29,8 @@ class TablesController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('ResearchersIncome', 'index', 'ResearchersLow', 'NumberOfResearchers',
-					'NumberOfResearchersSNI', 'NumberOfResearchersNoSNI', 'search'),
+					'NumberOfResearchersSNI', 'NumberOfResearchersNoSNI', 'search', 'Projects', 'RejectedProjects', 'OpenProjects',
+					'CompletedProjects'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -189,5 +190,22 @@ class TablesController extends Controller
 		$this->render('researchersIncome',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
 		
 	}
+////////// PROJECTS /////////////
+	public function actionProjects()
+	{
+		$titlePage = "Proyectos de Investigación";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM projects')->queryAll();
 
+		$query='SELECT u.id,p.names,pro.title, pro.discipline, pro.develop_uh, pro.is_sponsored, pro.registration_number, pro.status, pro.creation_date 
+		 		FROM projects pro
+				 JOIN curriculum curri ON pro.id_curriculum=curri.id
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
+
+	     $projects=new CSqlDataProvider($query);
+
+		$this->render('projects',array('projects'=>$projects, 'titlePage'=>$titlePage, 'year'=>$year));
+	}
+
+	
 }

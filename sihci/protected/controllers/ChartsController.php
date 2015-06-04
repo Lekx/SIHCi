@@ -63,15 +63,22 @@ class ChartsController extends Controller
 		GROUP BY MONTH(per.fechaRegistro)
 		")->queryAll();*/
 
+
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM users
+		SELECT DISTINCT YEAR(creation_date) AS year FROM users 
 		")->queryAll();
+
+		$years = array();
+
+		foreach($year AS $index => $value)
+            $years[$value["year"]] = $value["year"];
+
 	
 		$results = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
 		WHERE type = 'fisico'
-		GROUP BY MONTH(creation_date)
+		GROUP BY MONTH(creation_date);
 		")->queryAll();
 
 		$resultsResearchersdown = $conexion->createCommand("
@@ -82,11 +89,92 @@ class ChartsController extends Controller
 		GROUP BY u.creation_date;
 		")->queryAll();
 
+		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+		foreach($results as $key => $values){
+    		$data[$months[$values["month"]]] = intval($values["total"]);
+		}
+
+		foreach($resultsResearchersdown as $key => $values){
+    		$data2[$months[$values["month"]]] = intval($values["total"]);
+		}
+
 		$this->render('index',array(
-			'results'=>$results,'resultsResearchersdown'=>$resultsResearchersdown,
-			'year'=>$year, 
+			'results'=>$data,
+			'resultsResearchersdown'=>$data2,
+			'years'=>$years,
 			'action'=>'totalRegisteredResearchesIo'
 		));
+
+
+	}
+
+	//Pertenece actionNumberofResearchers
+	public function actionCaca(){
+
+		$selYear  = $_POST['selectedYear'];
+		$conexion = Yii::app()->db;
+		$resultsTotalReasearches = $conexion->createCommand("
+		SELECT count(id) as total, MONTH(creation_date) as month 
+		FROM users
+		WHERE type = 'fisico' AND YEAR(creation_date) = '".$selYear."'
+		GROUP BY MONTH(creation_date)
+		")->queryAll();
+
+		$resultResearchesSNI = $conexion->createCommand("
+		SELECT COUNT(c.sni) as total, MONTH(u.creation_date) AS month 
+		FROM curriculum AS c 
+		INNER JOIN users AS u ON c.id_user = u.id
+		WHERE c.sni != 0 AND u.type = 'fisico' AND YEAR(u.creation_date) = '".$selYear."'
+		GROUP BY u.creation_date;
+		")->queryAll();
+
+		$resultResearchesnoSNI = $conexion->createCommand("
+		SELECT COUNT(c.sni) as total, MONTH(u.creation_date) AS month 
+		FROM curriculum AS c 
+		INNER JOIN users AS u ON c.id_user = u.id
+		WHERE c.sni = 0 AND u.type = 'fisico' AND YEAR(u.creation_date) = '".$selYear."'
+		GROUP BY u.creation_date;
+		")->queryAll();
+
+		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+
+
+//	$data = array();
+//	$data2 = array();
+//	$data3 = array();
+
+	if(!empty($resultsTotalReasearches))
+		foreach($resultsTotalReasearches as $key => $values){
+			$data[$months[$values["month"]]] = intval($values["total"]);
+		}
+	if(!empty($resultResearchesSNI))
+		foreach($resultResearchesSNI as $key => $values){
+			$data2[$months[$values["month"]]] = intval($values["total"]);
+			
+		}
+	if(!empty($resultResearchesnoSNI))
+		foreach($resultResearchesnoSNI as $key => $values){
+			$data3[$months[$values["month"]]] = intval($values["total"]);
+		}
+		/*s
+
+		 echo json_encode(array(
+		 	'resultsTotalReasearches'=>$resultsTotalReasearches,
+			'resultResearchesSNI'=>$resultResearchesSNI,
+			'resultResearchesnoSNI'=>$resultResearchesnoSNI,
+			));*/
+
+		 		$this->renderPartial('_numberofResearchers',array(
+			'resultsTotalReasearches'=>$data,
+			'resultResearchesSNI'=>$data2,
+			'resultResearchesnoSNI'=>$data3,
+			//'id'=>$selYear
+			//'years'=>$years,	
+			//'action'=>'numberofResearchers'
+		),false, true);
+		 		//Yii::app()->end();
 	}
 
 	//GR02-Cantidad de Investigadores
@@ -95,13 +183,18 @@ class ChartsController extends Controller
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM users 
+		SELECT DISTINCT YEAR(creation_date) AS year FROM users 
 		")->queryAll();
+
+		$years = array();
+
+		foreach($year AS $index => $value)
+            $years[$value["year"]] = $value["year"];
 
 		$resultsTotalReasearches = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
-		WHERE type = 'fisico'
+		WHERE type = 'fisico' 
 		GROUP BY MONTH(creation_date)
 		")->queryAll();
 
@@ -110,7 +203,7 @@ class ChartsController extends Controller
 		FROM curriculum AS c 
 		INNER JOIN users AS u ON c.id_user = u.id
 		WHERE c.sni != 0 AND u.type = 'fisico'
-		GROUP BY u.creation_date;
+		GROUP BY u.creation_date
 		")->queryAll();
 
 		$resultResearchesnoSNI = $conexion->createCommand("
@@ -118,16 +211,43 @@ class ChartsController extends Controller
 		FROM curriculum AS c 
 		INNER JOIN users AS u ON c.id_user = u.id
 		WHERE c.sni = 0 AND u.type = 'fisico'
-		GROUP BY u.creation_date;
+		GROUP BY u.creation_date
 		")->queryAll();
 
+		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+		foreach($resultsTotalReasearches as $key => $values){
+			$data[$months[$values["month"]]] = intval($values["total"]);
+		}
+
+		foreach($resultResearchesSNI as $key => $values){
+			$data2[$months[$values["month"]]] = intval($values["total"]);
+			//echo $values["month"]." - ".$values["total"]."<br>";
+		}
+
+		foreach($resultResearchesnoSNI as $key => $values){
+			$data3[$months[$values["month"]]] = intval($values["total"]);
+		}
+
+
+
 		$this->render('index',array(
-			'resultsTotalReasearches'=>$resultsTotalReasearches,
-			'resultResearchesSNI'=>$resultResearchesSNI,
-			'resultResearchesnoSNI'=>$resultResearchesnoSNI,
-			'year'=>$year,	
-			 'action'=>'numberofResearchers'
+			'resultsTotalReasearches'=>$data,
+			'resultResearchesSNI'=>$data2,
+			'resultResearchesnoSNI'=>$data3,
+			'years'=>$years,	
+			'action'=>'numberofResearchers'
 		));
+
+/*$this->renderPartial('_numberofResearchers',array(
+			'resultsTotalReasearches'=>$data,
+			'resultResearchesSNI'=>$data2,
+			'resultResearchesnoSNI'=>$data3,
+			//'years'=>$years,	
+			//'action'=>'numberofResearchers'
+		),false, true);*/
+
+
 	}
 
 	//GR03-Total de Proyectos de Investigacion
@@ -136,22 +256,63 @@ class ChartsController extends Controller
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) FROM projects 
+		SELECT DISTINCT YEAR(creation_date) AS year FROM projects 
 		")->queryAll();
 
-		$totalPrjects = $conexion->createCommand("
+		$years = array();
+
+		foreach($year AS $index => $value)
+            $years[$value["year"]] = $value["year"];
+
+		$totalProjects = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM projects
+		GROUP BY MONTH(creation_date)
+		")->queryAll();
+
+		$TotalOpenProjects = $conexion->createCommand("
+		SELECT count(id) as total, MONTH(creation_date) as month 
+		FROM projects
+		WHERE status != 'dictaminado'
 		GROUP BY MONTH(creation_date);
 		")->queryAll();
+
+		$CompletedProjectsTotals = $conexion->createCommand("
+		SELECT count(id) as total, MONTH(creation_date) as month 
+		FROM projects
+		WHERE status = 'dictaminado'
+		GROUP BY MONTH(creation_date);
+		")->queryAll();
+
+		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+		foreach($totalProjects as $key => $values){
+			$data[$months[$values["month"]]] = intval($values["total"]);
+		}
+
+		foreach($TotalOpenProjects as $key => $values){
+			$data2[$values["month"]] = intval($values["total"]);
+		}
+
+		foreach($CompletedProjectsTotals as $key => $values){
+    		$data3[$values["month"]] = intval($values["total"]);
+		}
 
 
 		$this->render('index',array(
 			
-			'totalPrjects'=>$totalPrjects,
-			'year'=>$year,	
+			'totalProjects'=>$data,
+			'CompletedProjectsTotals'=>$data2,
+			'TotalOpenProjects'=>$data3,
+			'years'=>$years,	
 			 'action'=>'totalResearchProjects'
 		));
 
 	}
+
+
+		public function actionTotalRegisteredResearchers(){
+			$this->render('totalRegisteredResearchers');
+		}
 }
+?>
