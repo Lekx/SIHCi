@@ -1,13 +1,17 @@
 $(document).ready(function() {
     $('.backbut').click(function() {
-        $('.cleandiv').hide();
+        /*$('.cleandiv').hide();
         $('.successdiv').hide();
         $('.errordiv').hide();
+        $('.abortdiv').hide();*/
+        window.location = yii.urls.back;
+    
     });
     $('.errorbut').click(function() {
         $('.cleandiv').hide();
         $('.successdiv').hide();
         $('.errordiv').hide();
+        $('.abortdiv').hide();
     });
     $('.cleanbut').click(function() {
         $('.cleandiv').hide();
@@ -22,6 +26,7 @@ $(document).ready(function() {
         $('.savebutton').val('Guardar');
         $('.cleanbutton').val('Borrar');
         $('#cancelar').val('Cancelar');
+        $('[id^= SponsorBilling]').val('');
     
     });
 });

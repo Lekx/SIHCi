@@ -17,37 +17,37 @@
 	'clientOptions'=>array('validateOnSubmit'=>true)
 )); ?>
 
-	<p class="note">Los campos <span class="required">*</span> son requeridos.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php // echo $form->errorSummary($model); ?>
 
 	
 	<div class="row">
-		<?php
-			$this->widget('ext.CountrySelectorWidget', 
-				array(
-				    'value' => $model->country,
-				    'name' => Chtml::activeName($model, 'country'),
-				    'id' => Chtml::activeId($model, 'country'),
-				    'useCountryCode' => false,
-				    'defaultValue' => 'Mexico',
-				    'firstEmpty' => false,
-			    )
-			);
-		?>
+	 <span class="plain-select">
+		<?php $this->widget('ext.CountrySelectorWidget', 
+			array(
+				'value' => $model->country,
+				'name' => Chtml::activeName($model, 'country'),
+				'id' => Chtml::activeId($model, 'country'),
+				'useCountryCode' => false,
+				'firstEmpty' => true,
+				'firstText' => 'País',
+		)); ?>
+		</span>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'participation_type',
 			  	  array(
 					  		'Inventor'=>'Inventor',
 					  		'Coinventor'=>'Coinventor'	  	
 				  ),				  
-				  array('prompt'=>'Tipo de participación')			  
+				  array('prompt'=>'Seleccionar participación')			  
 			 );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
+		</span>
 	</div>
 
 	<div class="row">
@@ -56,22 +56,24 @@
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'state',
 				array(
 						'En explotación comercial'=>'En explotación comercial',
 						'En trámite'=>'En trámite',
 						'Registrada'=>'Registrada'
 					 ),
-				array('prompt'=>'Estado de la patente')
+				array('prompt'=>'Seleccionar estado de la patente')
 			); 
 		?>
+		</span>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
 
 	<div class="row">
 		<?php 
                 $status = array('No.Solicitud'=>'No.Solicitud', 'No.Registro'=>'No.Registro');
-                echo $form->radioButtonList($model,'application_type',$status,array('separator'=>' '));
+                echo $form->radioButtonList($model,'application_type',$status,array('separator'=>' ','labelOptions'=>array('style'=>'display:inline')));
         ?>
 		<?php echo $form->error($model,'application_type'); ?>
 	</div>
@@ -82,34 +84,18 @@
 	</div>
 
 	<div class="row">
+	<span class="plain-select">
 		<?php echo $form->dropDownList($model,'patent_type',
 			   array(
 						'Diseño industrial'=>'Diseño industrial',
 						'Modelo de utilidad'=>'Modelo de utilidad',
 						'Patente'=>'Patente'
 					),
-			   	array('prompt'=>'Tipo de patente')
+			   	array('prompt'=>'Seleccionar tipo de patente')
 				); 
 		?>
+		</span>
 		<?php echo $form->error($model,'patent_type'); ?>
-	</div>
-
-	<div class="row">
-        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model' => $model,
-			    'language'=> 'es',
-			    'attribute' => 'presentation_date',
-			    'htmlOptions' => array(
-			    	    'dateFormat'=>'d/m/Y',
-			    		'size' => '10',         
-			   			'readonly'=>true,
-			        	'maxlength' => '10', 
-			        	
-			        	'placeholder'=>"Fecha de presentación",
-			    ),
-			));
-		?>
-		<?php echo $form->error($model,'presentation_date'); ?>
 	</div>
 
 	<div class="row">
@@ -129,6 +115,24 @@
 			));
 		?>
 		<?php echo $form->error($model,'consession_date'); ?>
+	</div>
+	
+	<div class="row">
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'model' => $model,
+			    'language'=> 'es',
+			    'attribute' => 'presentation_date',
+			    'htmlOptions' => array(
+			    	    'dateFormat'=>'d/m/Y',
+			    		'size' => '10',         
+			   			'readonly'=>true,
+			        	'maxlength' => '10', 
+			        	
+			        	'placeholder'=>"Fecha de presentación",
+			    ),
+			));
+		?>
+		<?php echo $form->error($model,'presentation_date'); ?>
 	</div>
 	
 	<div class="row">
@@ -168,7 +172,7 @@
 	</div>
 	
 	<div class="row buttons">
-		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
 	        				array(
 								'dataType'=>'json',
 	                     		'type'=>'post',
@@ -177,23 +181,18 @@
 			                                      
 			                         if(data.status=="200")
 			                         {
-					                     alert("Registro realizado con éxito");
-					                     $("#patent-form")[0].reset();
-	   									 window.location.href ="'.Yii::app()->createUrl('patent/admin').'";
+					                     $(".successdiv").show();
+					           
 			                         }		                         
 			                         else
 			                         {
-				                     	alert("Complete los campos con *");   
+				                     	$(".errordiv").show();
 				                     }       
 			                  	}',                    
 			                    
-	                        )); 
+	                        ),array('class'=>'savebutton')); 
 	        ?>
-			<?php 
-				if($model->isNewRecord)
-				   echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-			?>
-           	<?php echo CHtml::link('Cancelar', array('/patent/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	        <?php echo CHtml::Button('Cancelar',array('submit' => array('patent/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 
        	</div>

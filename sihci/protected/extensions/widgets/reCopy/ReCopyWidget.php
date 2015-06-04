@@ -5,9 +5,9 @@ class ReCopyWidget extends CWidget {
     public $limit=0; //The number of allowed copies. Default: 0 is unlimited
     public $addButtonId; // Add button id. Set id differently if this widget is called multiple times per page.
     public $addButtonLabel='Add more'; //Add button text.
-    public $addButtonCssClass=''; //Add button CSS class.
-    public $removeButtonLabel='Remove'; //Remove button text
-    public $removeButtonCssClass='recopy-remove'; //Remove button CSS class.
+    public $addButtonCssClass='addSomething'; //Add button CSS class.
+    public $removeButtonLabel='Eliminar'; //Remove button text
+    public $removeButtonCssClass='deletecontact'; //Remove button CSS class.
     
     public $excludeSelector; //A jQuery selector used to exclude an element and its children
     public $copyClass; //A class to attach to each copy

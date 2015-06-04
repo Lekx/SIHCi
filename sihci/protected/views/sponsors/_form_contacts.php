@@ -15,42 +15,19 @@
 	'enableAjaxValidation' => true,
 ));?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model);?>
 <div class="recopy">
-	<div class="row">
+	<hr>
 		<?php
-	echo $form->labelEx($model, 'fullname');
-	echo $form->textField($model, 'fullname', array('name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
-	echo $form->error($model, 'fullname');
+		echo "<div class='row'>";
+		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
+		echo $form->error($model, 'fullname');
+		echo "</div>";
 ?>
 
-	</div>
+
 </div>
 
-
-
-	<div class="row">
-		<?php
-foreach ($fullname as $value) {
-	echo "<input type='hidden' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
-	echo $form->labelEx($model, 'fullname');
-	echo $form->textField($model, 'fullname', array('name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 70));
-	echo $form->error($model, 'fullname');
-	//echo "<input type='button' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
-	echo CHtml::link('Eliminar',array('Sponsors/deleteContacts','id'=>$value['id']));
-}
-?>
-
-	</div>
-
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');?>
-	</div>
-
-
+<hr>
 	<?php
 
 $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
@@ -58,6 +35,32 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 	'addButtonLabel' => 'Agregar nuevo',
 ));
 ?>
+
+<hr>
+<h4>Contactos Creados:</h4>
+<hr>
+		<?php
+foreach ($fullname as $value) {
+	echo "<input type='hidden' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
+	echo "<div class='row'>";
+	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 70));
+	echo $form->error($model, 'fullname');
+	echo "</div>";
+	echo CHtml::link('Eliminar',array('Sponsors/deleteContacts','id'=>$value['id']),array('class'=>'deleteSomething'));
+	echo '<hr>';
+}
+?>
+
+
+
+
+
+
+<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+	</div>
+
 
 <?php $this->endWidget();?>
 

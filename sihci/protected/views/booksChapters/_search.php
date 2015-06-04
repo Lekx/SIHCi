@@ -13,9 +13,8 @@
 
 <div class="row">
 		
-		<legend>B&uacute;squeda por:</legend>
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo de libro, Título de Capítulo, Editores')); ?>	
-		<?php echo CHtml::submitButton('Buscar'); ?>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'ISBN, Titulo de libro, Título de Capítulo, Editores, Año de publicación','class'=>'searchcrud')); ?>	
+		<?php echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
 
 	</div>
 

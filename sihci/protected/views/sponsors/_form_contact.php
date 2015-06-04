@@ -15,11 +15,11 @@ $('.fType').on('change', function(e) {
 
 	if(option == 'EMAIL'){
 		
-		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="hidden" class="removable dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldE" placeholder="email">');
+		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="hidden" class="removable dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldE" placeholder="Email">');
 
 	}else if(option == 'CELULAR'){
 		
-		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="text" class="removable dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldC" placeholder="celular">');
+		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="text" class="hidden dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldC" placeholder="Celular">');
 
 	}else{
 		
@@ -32,8 +32,7 @@ $('.fType').on('change', function(e) {
 });
 
 });
-
-
+s
 </script>
 <div class="form">
 
@@ -46,56 +45,68 @@ $('.fType').on('change', function(e) {
 	'enableAjaxValidation' => false,
 ));?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model);?>
-
 <div class="recopy">
+	<hr>
 	<div class="row">
-	<?php 
-		echo $form->labelEx($model, 'type');
-		echo $form->dropDownList($model, 'type', array(''=>'','TELEFONO'=>'Teléfono','CELULAR'=>'Celular','FAX'=>'Fax','EMAIL'=>'Email'), 
-		                     						array('name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20));
-		echo $form->error($model, 'type');
-	
-	?>
+	  <span class="plain-select1">
+		<?php 
+			
+			echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','EMAIL'=>'Email'), 
+			                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20 ,'title'=>'Tipo de Contacto'));
+			echo $form->error($model, 'type');;
+		?>
+		</span>
+	</div>
 	</div>
 </div>
-
-
-
-	<div class="row">
-	<?php
-	foreach ($modelPull as $valuePull) {
-		echo "<input type='hidden' value='".$valuePull['id']."' name ='modelPullIds[]'>";  //array('prompt'=> $valuePull['type'])
-		echo $form->labelEx($model, 'type');
-		echo $form->dropDownList($model, 'type', array(''=>'','telefono'=>'Teléfono','celular'=>'Celular','fax'=>'Fax','email'=>'Email'), 
-		                     						array('name' => 'modelPullTypes[]','class'=>'fType','options' => array($valuePull['type']=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20));
-		echo $form->error($model, 'type');
-		$valueArray= explode("-", $valuePull['value']);
-		echo '<input type="'.($valuePull['type'] == 'email' ||  $valuePull['type'] == 'celular' ? 'hidden' : 'text').'"  name="valuesUpdate1[]" value="'.$valueArray[0].'" >';
-
-		echo '<input type="'.($valuePull['type'] == 'email'  ? 'hidden' : 'text').'"  name="valuesUpdate2[]" value="'.$valueArray[1].'" >';
-
-		echo '<input type="text" name="valuesUpdate3[]" placeholder="'.$valuePull['type'].'" value="'.$valueArray[2].'" >';
-
-		echo CHtml::link('Eliminar',array('Sponsors/deleteContact','id'=>$valuePull['id']));
-}
-?>
-	</div>
-
+<hr>
 
 
 	<?php
-
 $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 	'targetClass' => 'recopy',
 	'addButtonLabel' => 'Agregar nuevo',
 ));
 ?>
 
+
+	
+	<?php
+	foreach ($modelPull as $valuePull) {
+		echo "<hr>";
+		echo "<input type='hidden' value='".$valuePull['id']."' name ='modelPullIds[]'>";  //array('prompt'=> $valuePull['type'])
+	
+		echo "<div class='row'>";
+		echo "  <span class='plain-select'>";
+		echo $form->dropDownList($model, 'type', array('telefono'=>'Teléfono','celular'=>'Celular','fax'=>'Fax','email'=>'Email'), array('prompt'=> $valuePull['type']),
+		                     						array('name' => 'modelPullTypes[]','class'=>'fType','options' => array($valuePull['type']=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20,'title'=>'Tipo de Contacto'));
+		echo "</span>";
+		echo $form->error($model, 'type');
+		echo "</div>";
+
+	
+		$valueArray= explode("-", $valuePull['value']);
+				echo "<div class='row'>";
+		echo '<input type="'.($valuePull['type'] == 'email' ||  $valuePull['type'] == 'celular' ? 'hidden' : 'text').'"  name="valuesUpdate1[]" value="'.$valueArray[0].'" >';
+		echo "</div>";
+		echo "<div class='row'>";
+		echo '<input type="'.($valuePull['type'] == 'email'  ? 'hidden' : 'text').'"  name="valuesUpdate2[]" value="'.$valueArray[1].'" >';
+		echo "</div>";
+		echo "<div class='row'>";
+		echo '<input type="text" name="valuesUpdate3[]" placeholder="'.$valuePull['type'].'" value="'.$valueArray[2].'" >';
+		echo "</div>";
+		echo "<hr>";
+		echo CHtml::link('Eliminar',array('Sponsors/deleteContact','id'=>$valuePull['id']), array('class'=>'deleteSomething'));
+}
+?>
+
+
+
+
+
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');?>
+			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget();?>

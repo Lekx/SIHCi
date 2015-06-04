@@ -15,8 +15,13 @@ $this->menu=array(
 	//array('label'=>'Desplagar', 'url'=>array('index')),
 );
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
 
-<h1>Registro con fecha <?php echo '"'.substr($model->creation_date, 0, 10).'"'; ?></h1>
+<h4>Registro de aplicación del conocimiento con fecha <?php echo '"'.substr($model->creation_date, 0, 10).'"'; ?></h4>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

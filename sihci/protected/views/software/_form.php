@@ -21,12 +21,12 @@
 	
 )); ?>
 
-	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	
 	<div class="row">
+	 <span class="plain-select">	
 		<?php $this->widget('ext.CountrySelectorWidget', 
 			array(
 				'value' => $model->country,
@@ -34,20 +34,23 @@
 				'id' => Chtml::activeId($model, 'country'),
 				'useCountryCode' => false,
 				'firstEmpty' => true,
-				'firstText' => 'País',
+    			'firstText' => 'Seleccionar país',
 		)); ?>
+		</span>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'participation_type',
 			    array(
 				  		'Inventor'=>'Inventor',
-				  		'Coinventor'=>'Coinventor'
+				  		'Co-inventor'=>'Co-inventor'
 			    ),
-			    array('prompt'=>'Tipo de participación')
+			    array('prompt'=>'Seleccionar participación')
 			);
 	    ?>		
+	    </span>
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
 
@@ -57,25 +60,27 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>70,'placeholder'=>'Beneficiario')); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'entity',
 				 array(
 				 		'Pública'=>'Pública',
 				 		'Privada'=>'Privada',
 				 		'Sector social'=>'Sector social'
 				 ),
-				 array('prompt'=>'Entidad')
+				 array('prompt'=>'Seleccionar entidad')
 			);
 		 ?>
+		 </span>
 		<?php echo $form->error($model,'entity'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas hombre')); ?>
+		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas invertidas en el proyecto')); ?>
 		<?php echo $form->error($model,'manwork_hours'); ?>
 	</div>
 
@@ -96,6 +101,7 @@
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 			<?php echo $form->dropDownList($model,'sector',
 				    array(
 				  	     'Centros privados de investigación'=>'Centros privados de investigación',
@@ -117,10 +123,12 @@
 					array('prompt'=>'Sector')			  
 			    ); 
 		?>
+		</span>
 		<?php echo $form->error($model,'sector'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'organization',
 					array(
 							'ADMINISTRACION CENTRO COMERCIAL ANDARES SC'=>'ADMINISTRACION CENTRO COMERCIAL ANDARES SC',
@@ -134,13 +142,15 @@
 							'SIXSIGMA NETWORKS MEXICO'=>'SIXSIGMA NETWORKS MEXICO',
 							'TL EFFICIENCY SA DE CV'=>'TL EFFICIENCY SA DE CV'
 					),
-					array('prompt'=>'Organización')
+					array('prompt'=>'Seleccionar organización')
 				);
 		?>
+		</span>
 		<?php echo $form->error($model,'organization'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 			<?php echo $form->dropDownList($model,'second_level',
 				        array(
                             'CENTRO DE ESTUDIOS DEL PACIFICO'=>'CENTRO DE ESTUDIOS DEL PACIFICO',
@@ -212,66 +222,65 @@
                             'SISTEMA DE UNIVERSIDAD VIRTUAL'=>'SISTEMA DE UNIVERSIDAD VIRTUAL',
                             'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'=>'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'
 			            ),
-						array('prompt'=>'Segundo nivel')
+						array('prompt'=>' Seleccionar segundo nivel')
 			    ); 
 	    ?>
+	    </span>
 		<?php echo $form->error($model,'second_level'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>10000,'placeholder'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resumen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Objetivo')); ?>
+		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Objetivo')); ?>
 		<?php echo $form->error($model,'objective'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Contribución')); ?>
+		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Contribución')); ?>
 		<?php echo $form->error($model,'contribution'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Valor de impacto')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Inovación')); ?>
+		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Inovación')); ?>
 		<?php echo $form->error($model,'innovation_trascen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Mecanismo de transferencia')); ?>
+		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Mecanismo de transferencia')); ?>
 		<?php echo $form->error($model,'transfer_mechanism'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Formación de recursos humanos')); ?>
+		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Formación de recursos humanos')); ?>
 		<?php echo $form->error($model,'hr_formation'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'economic_support'); ?>
+		Apoyo economico
 		<?php $status = array('1' => 'Si','0'=>'No'); 
-		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separador' => '')); ?>
+		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'economic_support'); ?>
 
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'path'); ?>
 		<?php echo $form->FileField($model,'path',array('id'=>'path')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
 
 	<div class="row buttons">		
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('onClick'=>'send()')); ?>
-		<?php  if($model->isNewRecord) echo '<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">';?>
-       	<?php echo CHtml::link('Cancelar', array('/software/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('software/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

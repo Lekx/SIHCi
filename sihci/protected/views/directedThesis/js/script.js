@@ -16,7 +16,8 @@ function send()
         {            
             if(data.status=="200"){                         
                     alert("Registro realizado con éxito");
-                    $("#directed-thesis-form")[0].reset();                
+                    $("#directed-thesis-form")[0].reset();
+                   // localtion.href='DirectedThesis/admin';                
             }
             /*else
             {

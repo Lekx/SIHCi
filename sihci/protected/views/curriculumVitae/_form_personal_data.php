@@ -21,8 +21,14 @@
 <?php echo $form->errorSummary($curriculum); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($curriculum,'status'); ?>
-		<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
+		<section title=".slideThree">
+	    <!-- .slideThree -->
+	    <div class="slideThree">
+			<?php echo $form->checkbox($curriculum,'status',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres", 'id'=>'slideThree', 'name'=>'check')); ?>
+	 		<label for="slideOne"></label>
+	    </div>
+	    <!-- end .slideThree -->
+	  </section>
 	</div>
 
 	<div class="row">
@@ -43,53 +49,60 @@
 	</div>
 
 	<div class="row">
+
+        
+    <span class="plain-select">
 		<?php echo $form->dropDownList($model,'marital_status',array('soltero'=>'Soltero','viudo'=>'Viudo', 'casado'=>'Casado',
 			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'), 
-		                                                       array('prompt'=> 'Estado Civil','title'=>'Estado Civil','options' => array(''=>array('selected'=>true))), 
+		                                                       array('prompt'=> 'Seleccionar Estado Civil','title'=>'Estado Civil','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-		 
-          	<?php echo $form->error($model,'marital_status'); ?>
+		
+          	
+          	 </span> 
+          	 <?php echo $form->error($model,'marital_status'); ?>
 	</div>
 
 	<div class="row">
-
+    <span class="plain-select">
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'language'=> 'es',
 		    'attribute' => 'birth_date',
 		    'model' => $model,
-		   // 'flat'=>false,
+		   	//'flat'=>true,
 		     'options' => array(
 			     		'changeMonth'=>true, //cambiar por Mes
 			     		'changeYear'=>true, //cambiar por Año
-			    			'maxDate' => 'now-5475',
+			    		'maxDate' => 'now-5475',
+				        'yearRange'=>'1930:now',
+				       
 
 		     	),
 		    'htmlOptions' => array(
-		    			'size'=>'10',
-		    			'maxlength'=>'10', 
 		    			'readonly'=>true,
 		    			'title'=>'Fecha de Nacimiento',
 		        		'placeholder'=>"Fecha de Nacimiento"),
 				));
 	?>
-	 
+	 </span>
           <?php echo $form->error($model,'birth_date'); ?>
 	</div>
 		
 
 
 		<div class="row">
+		    <span class="plain-select">
 		<?php echo $form->dropDownList($model,'genre',array('Hombre'=>'Hombre',
 															'Mujer'=>'Mujer',), 
-		                                                       array('title'=>'Sexo','prompt'=>'Sexo','options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Sexo','prompt'=>' Seleccionar Sexo','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 	
-		
+		</span>
           <?php echo $form->error($model,'genre'); ?>
 	</div>
 
 <div class="row">
+    <span class="plain-select">
 	<?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $model->country,
@@ -98,11 +111,12 @@
 		'useCountryCode' => false,
 		'defaultValue' => 'Mexico',
 		'firstEmpty' => true,
-		'firstText' => 'Pais',
+		'firstText' => 'Seleccionar Pais',
 
 		)); ?>
 
           <?php echo $form->error($model,'country'); ?>
+          </span>
 	</div>
   
 	<div class="row">
@@ -112,7 +126,8 @@
           <?php echo $form->error($curriculum,'native_country'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row1">
+	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'state_of_birth',array(       'Aguascalientes'=>'Aguascalientes',
 																			'Baja_California'=>'Baja California', 
 																			'Baja_California_Sur'=>'Baja California Sur',
@@ -143,11 +158,12 @@
 			                                                         		'Veracruz'=>'Veracruz',
 			                                                         		'Yucatan'=>'Yucatán',
 			                                                         		'Zacatecas'=>'Zacatecas',), 
-		                                                       array('title'=>'Estado','prompt'=>'Estado','options' => array(''=>array('selected'=>true))), 
+		                                                       array('title'=>'Estado','prompt'=>'Seleccionar Estado','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 	  
-	    
+
             <?php echo $form->error($model,'state_of_birth'); ?>
+            </span>
 	</div>
 
 	<div class="row">
@@ -160,7 +176,7 @@
 
 	<div class="row">
 		
-		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
+		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto", "title"=>"Foto de Perfil")); ?>
 		  
 		<?php echo $form->error($model,'photo_url'); ?>
 		<?php 
@@ -179,27 +195,9 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/personalData'), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="200")
-		                         {
-				                     $(".successdiv").show();
-				               
-		                         }		                         
-		                         else
-		                         {
-			                     	$(".errordiv").show();
-			                     }       
-		                  	}',                    
-		                    
-                      ), array('class'=>'savebutton'));  
-        ?>
-		<input class="cleanbutton" type="button" value="Borrar">
+	<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton')); ?>
+		
+	
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

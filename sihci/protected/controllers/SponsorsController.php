@@ -87,6 +87,8 @@ class SponsorsController extends Controller {
 						if ($model->save()) {
 
 							if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
+
+								if($model->photo_url->type == 'application/pdf' || $model->photo_url->type == 'application/msword' || $model->photo_url->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->photo_url->type == 'application/vnd.oasis.opendocument.text' )
 								
 								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 								$path = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/img/";
@@ -115,6 +117,8 @@ class SponsorsController extends Controller {
 									$log->datetime = new CDbExpression('NOW()');
 									$log->save();
 
+								}else {
+									echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 								}
 							}
 						}
@@ -138,7 +142,7 @@ class SponsorsController extends Controller {
 			$model->id_user = Yii::app()->user->id;
 
 			if ($model->save()) {
-				$this->redirect(array('view', 'id' => $model->id));
+				//$this->redirect(array('view', 'id' => $model->id));
 			}
 
 		}
@@ -174,7 +178,7 @@ class SponsorsController extends Controller {
 
 
 		if (isset($_POST['values1'])) {
-			echo "entre 1";
+			
 			$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 			$types = $_POST['types'];
 			$values1 = $_POST['values1'];
@@ -254,6 +258,11 @@ class SponsorsController extends Controller {
 		));
 	}
 
+		public function actionfillFirst() {
+		
+		$this->render('fillFirst');
+	}
+
 	public function actionCreate_billing() {
 
 		$billingExist = SponsorBilling::model()->findByAttributes(array('id_sponsor' => Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id));
@@ -277,32 +286,33 @@ class SponsorsController extends Controller {
 			$model->id_sponsor = $sponsor->id;
 
 			if (isset($_POST['sameAddress'])) {
-				echo "es la misma direccion";
+				
 				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id_address;
-				if ($model->save()) {
-					if ($modelAddresses->id != $model->id_address_billing) {
-						if ($modelAddresses->delete());
+				if ($model->save())
+					if ($modelAddresses->id != $model->id_address_billing && $modelAddresses->id > 0) {
+						if ($modelAddresses->delete())
+							$this->redirect(array('create_billing'));
+					}else
 						$this->redirect(array('create_billing'));
-					} else {
-						echo "no es la misma direccion";
-						$modelAddresses = new Addresses;
+				} else {
 
+						$modelAddresses = new Addresses;
 						$modelAddresses->attributes = $_POST['Addresses'];
 
 						if ($modelAddresses->save()) {
 							$model->id_address_billing = $modelAddresses->id;
 
-							if ($model->save()) {
+							if ($model->save()) 
 								$this->redirect(array('create_billing'));
-							}
+							
 
 						}
 					}
 				}
 
-			}
+			
 
-		}
+		
 
 		$this->render('create_billing', array(
 			'model' => $model, 'modelAddresses' => $modelAddresses, 'sameAd' => $sameAd,
@@ -330,12 +340,22 @@ class SponsorsController extends Controller {
 			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 			if (!file_exists($path2)) {
 				mkdir($path2, 0777, true);
+				echo "cree carpetas";
 			}
 		
 			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
 				if (!array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs)) {
-					var_dump($modelDocs);
+					$model = new SponsorsDocs;
+					echo "cree molde nuevo";
+				} else {
+					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
+				}
+				$model->id_sponsor = $id_sponsor;
+				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
+				echo "puse nombre a file name";
+					
 					$model = new SponsorsDocs;
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
@@ -345,10 +365,11 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
-				unlink($model->path);
+				//unlink($model->path);
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+				echo "antes de guardar";
 				
 				if($model->save())
 					$reload = true;
@@ -367,6 +388,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Acreditacion_de_las_facultades_del_representante_o_apoderado";
 				$model->path = CUploadedFile::getInstanceByName('Doc2');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				
@@ -375,6 +397,8 @@ class SponsorsController extends Controller {
 					
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc3'))) {
@@ -388,6 +412,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Permisos_de_actividades";
 				$model->path = CUploadedFile::getInstanceByName('Doc3');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 					if ($model->save()) 
@@ -395,6 +420,8 @@ class SponsorsController extends Controller {
 					
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc4'))) {
@@ -408,6 +435,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "RFC_o_equivalente";
 				$model->path = CUploadedFile::getInstanceByName('Doc4');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 					if ($model->save()) 
@@ -415,6 +443,8 @@ class SponsorsController extends Controller {
 					
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc5'))) {
@@ -428,6 +458,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Comprobante_de_domicilio";
 				$model->path = CUploadedFile::getInstanceByName('Doc5');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 					if ($model->save()) 
@@ -435,6 +466,8 @@ class SponsorsController extends Controller {
 					
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc6'))) {
@@ -448,12 +481,15 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Identificacion_Oficial_del_Representante";
 				$model->path = CUploadedFile::getInstanceByName('Doc6');
+				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				if ($model->save()) 
 					$reload = true;
 				
 
+			}else {													
+				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if ($reload == true) {
@@ -502,6 +538,7 @@ class SponsorsController extends Controller {
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
+
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 
@@ -513,7 +550,8 @@ class SponsorsController extends Controller {
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(array('create_contacts'));
+			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 
 	}
@@ -524,7 +562,8 @@ class SponsorsController extends Controller {
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(array('create_contact'));
+			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 
 	}

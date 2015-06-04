@@ -17,6 +17,7 @@
 
 
 	<div class="row">
+	 <span class="plain-select">
 	<?php $this->widget('ext.CountrySelectorWidget', array(
 
 		'value' => $model->country,
@@ -30,6 +31,7 @@
 		)); ?>
 
           <?php echo $form->error($model,'country'); ?>
+          </span>
 	</div>
 
 	<div class="row">
@@ -99,7 +101,7 @@
                   	}',                    
                 ), array('class'=>'savebutton'));  
 		?>
-		<input class="cleanbutton" type="button" onclick="cleanUp()" value="Borrar">
+		
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 		</div>
 
