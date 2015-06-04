@@ -9,8 +9,9 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	//array('label'=>'Anual Total Ingreso de Investigadores', 'url'=>array('index')),
 	
-	array('label'=>'Anual Total Cantidad de Investigadores', 'url'=>array('researchers')),
+	array('label'=>'Cantidad de Investigadores', 'url'=>array('researchers')),
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
+	array('label'=>'Libros', 'url'=>array('books')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -33,44 +34,44 @@ $('.search-form form').submit(function(){
 </h2>
 
 <div class="search-form" style="display:block">
-<?php $this->renderPartial('_search_projects',array(
-	'model'=>$projects,
+<?php $this->renderPartial('_search_researchers_income',array(
+	'model'=>$books,
 )); ?>
 </div><!-- search-form -->
-
 <script type="text/javascript">
 	
 function change(){
-	valueProjects = $("#valueProjects").val();
+	valueResearchers = $("#valueResearchers").val();
 	valueHospital = $("#valueHospital").val();
 	valueYear = $("#valueYear").val();
 
 	$('tbody > tr').show();
 
-	if( valueHospital == 'total' && valueProjects == 'total' && valueYear=='total')
+	if( valueHospital == 'total' && valueResearchers == 'total' && valueYear=='total')
 		$('tbody > tr').show();
-	else if(valueProjects == 'total' && valueHospital == 'total'){
+	else if(valueResearchers == 'total' && valueHospital == 'total'){
 		$('tbody > tr:not(:contains('+valueYear+'))').hide();
-	}else if(valueProjects == 'total' && valueYear == 'total'){
+	}else if(valueResearchers == 'total' && valueYear == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'))').hide();
 	}else if(valueHospital == 'total' && valueYear == 'total'){
-		$('tbody > tr:not(:contains('+valueProjects+'))').hide();
-	}else if( valueProjects == 'total'){
+		$('tbody > tr:not(:contains('+valueResearchers+'))').hide();
+	}else if( valueResearchers == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').hide();
 	}else if( valueHospital == 'total'){
-		$('tbody > tr:not(:contains('+valueProjects+'):contains('+valueYear+'))').hide();
+		$('tbody > tr:not(:contains('+valueResearchers+'):contains('+valueYear+'))').hide();
 	}else if( valueYear == 'total'){
-		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueProjects+'))').hide();
+		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueResearchers+'))').hide();
 	}else
-		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueProjects+'))').hide();
+		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueResearchers+'))').hide();
 
 }//function
 </script>
-<select id="valueProjects" onchange="change()">
-  <option value="total" selected="">Total de Proyectos</option>	
-  <option value="abierto">Proyectos Abiertos</option>
-  <option value="dictaminado">Proyectos Concluidos</option>
-  <option value="rechazado">Proyectos Rechazados</option>
+<select id="valueResearchers" onchange="change()">
+  <option value="total" selected="">Total de Investigadores</option>	
+  <option value="1">Ingreso Investigadores</option>
+  <option value="0">Baja Investigadores</option>
+  <option value="">Investigadores con SNI</option>
+  <option value="-1">Investigadores sin SNI</option>
 
 </select>
 <br><br>
@@ -82,6 +83,7 @@ function change(){
 
 </select>
   <br><br>
+
 
   <select id="valueYear" onchange="change()">
   <option value="total" selected="">Total de Años</option>	
@@ -96,32 +98,29 @@ function change(){
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
-	'dataProvider'=>$projects,
+	'dataProvider'=>$books,
 	 'ajaxUpdate' => true,
 	'filter' => null,
 	'columns'=>array(
+		 array('header'=>'Numero de Usuario',
+		 		'name'=>'id',
+                ),
 		  array('header'=>'Nombre de Usuario',
 		 		'name'=>'names',
                 ),
-		   array('header'=>'Título',
-		 		'name'=>'title',
+		   array('header'=>'Título del Libro',
+		 		'name'=>'book_title',
                 ),
-		    array('header'=>'Disciplina',
-		 		'name'=>'discipline',
+		    array('header'=>'Publicación',
+		 		'name'=>'publisher',
                 ),
-		     array('header'=>'Es empresa',
-		 		'name'=>'is_sponsored',
+		     array('header'=>'Sistema NI',
+		 		'name'=>'SNI',
                 ),
-		     array('header'=>'Número de Registro',
-		 		'name'=>'registration_number',
-                ),
-		      array('header'=>'Estatus',
+		     array('header'=>'Estatus',
 		 		'name'=>'status',
                 ),
-		       array('header'=>'Unidad Hospitalaria',
-		 		'name'=>'develop_uh',
-                ),
-                array('header'=>'Fecha de Inicio',
+		     array('header'=>'Fecha de Creación',
 		 		'name'=>'creation_date',
                 ),
    	),

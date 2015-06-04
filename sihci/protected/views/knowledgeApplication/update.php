@@ -19,8 +19,7 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Crear registro de aplicación del conocimiento:</h4>
 
-<h1>Modificar registro de aplicación del conocimiento con fecha <?php echo '"'.substr($model->creation_date, 0, 10).'"'; ?></h1>
+<h4>Modificar registro de aplicación del conocimiento con fecha <?php echo '"'.substr($model->creation_date, 0, 10).'"'; ?>:</h4>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

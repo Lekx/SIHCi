@@ -19,6 +19,6 @@ $this->menu=array(
         </div>
         
 
-<h4>Crear registro de propiedad intelectual-Software<h4>
+<h4>Crear registro de propiedad intelectual-Software</h4>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
