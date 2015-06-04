@@ -43,7 +43,7 @@
 					  		'Inventor'=>'Inventor',
 					  		'Coinventor'=>'Coinventor'	  	
 				  ),				  
-				  array('prompt'=>'Seleccionar participación')			  
+				  array('prompt'=>'Seleccionar participación', 'title'=>'Pariticipacíon')			  
 			 );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -51,7 +51,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150,'placeholder'=>'Nombre')); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150,'placeholder'=>'Nombre','title'=>'Nombre')); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
@@ -63,7 +63,7 @@
 						'En trámite'=>'En trámite',
 						'Registrada'=>'Registrada'
 					 ),
-				array('prompt'=>'Seleccionar estado de la patente')
+				array('prompt'=>'Seleccionar estado de la patente','title'=>'Estado de Patente')
 			); 
 		?>
 		</span>
@@ -79,7 +79,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud')); ?>
+		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud', 'title'=>'Numero de registro o de solicitud')); ?>
 		<?php echo $form->error($model,'application_number'); ?>
 	</div>
 
@@ -91,7 +91,7 @@
 						'Modelo de utilidad'=>'Modelo de utilidad',
 						'Patente'=>'Patente'
 					),
-			   	array('prompt'=>'Seleccionar tipo de patente')
+			   	array('prompt'=>'Seleccionar tipo de patente','title'=>'Tipo de Patente')
 				); 
 		?>
 		</span>
@@ -111,6 +111,7 @@
 			        	'maxlength' => '10', 
 			        	'readonly'=>true,
 			        	'placeholder'=>"Fecha de concesión",
+			        	'title'=>'Fecha de concesión',
 			    ),
 			));
 		?>
@@ -129,6 +130,7 @@
 			        	'maxlength' => '10', 
 			        	
 			        	'placeholder'=>"Fecha de presentación",
+			        	'title'=>'Fecha de presentación',
 			    ),
 			));
 		?>
@@ -136,38 +138,38 @@
 	</div>
 	
 	<div class="row">
-		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>150,'placeholder'=>'Expediente')); ?>
+		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>150,'placeholder'=>'Expediente', 'title'=>'Expediente')); ?>
 		<?php echo $form->error($model,'record'); ?>
 	</div>
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'international_clasification',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Clasificación internacional')); ?>
+		<?php echo $form->textField($model,'international_clasification',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Clasificación internacional','title'=>'Clasificación internacional')); ?>
 		<?php echo $form->error($model,'international_clasification'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Titulo')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Titulo','title'=>'Titulo')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'owner',array('size'=>60,'maxlength'=>150,'placeholder'=>'Propietario')); ?>
+		<?php echo $form->textField($model,'owner',array('size'=>60,'maxlength'=>150,'placeholder'=>'Propietario','title'=>'Propietario')); ?>
 		<?php echo $form->error($model,'owner'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen','title'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resumen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'industrial_exploitation',array('placeholder'=>'Explatación industrial')); ?>
+		<?php echo $form->textField($model,'industrial_exploitation',array('placeholder'=>'Explatación industrial','title'=>'Explatación industrial')); ?>
 		<?php echo $form->error($model,'industrial_exploitation'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'resource_operator',array('size'=>60,'maxlength'=>150,'placeholder'=>'Quién lo explota')); ?>
+		<?php echo $form->textField($model,'resource_operator',array('size'=>60,'maxlength'=>150,'placeholder'=>'Quién lo explota', 'title'=>'Quién lo explota')); ?>
 		<?php echo $form->error($model,'resource_operator'); ?>
 	</div>
 	
