@@ -147,7 +147,7 @@ class TablesController extends Controller
 		$titlePage = "Software";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM software')->queryAll();
 
-		$query='SELECT u.id,p.names, so.country, so.title, j.hospital_unit, so.creation_date 
+		$query='SELECT u.id,p.names, so.country, so.title, so.sector, so.organization, so.objective, j.hospital_unit, so.creation_date 
 				FROM software so
 				 JOIN curriculum curri ON so.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
