@@ -8,8 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $controller="";
+if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
 
-if(is_null(Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))))
+if(is_null(Sponsors::model()->findByAttributes(array("id_user" => $iduser))))
 	$controller = "sponsors/fillFirst";
 
 $this->menu = array(

@@ -168,8 +168,8 @@ class AdminUsersController extends Controller {
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id) {
-		$model = $this->loadModel($id);
+	public function actionUpdate($ide) {
+		$model = $this->loadModel($ide);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -182,7 +182,7 @@ class AdminUsersController extends Controller {
 
 		}
 
-		$this->render('update', array(
+		$this->render('update_user', array(
 			'model' => $model,
 		));
 	}
@@ -246,6 +246,7 @@ class AdminUsersController extends Controller {
 	 * Lists all models.
 	 */
 	public function actionIndex() {
+		
 		$this->actionAdminUsers();
 	}
 
@@ -294,19 +295,15 @@ class AdminUsersController extends Controller {
 	public function usersFullNames($data, $row) {
 
 		$id = $data->id;
-		//for eg.
-		$info = Persons::model()->findAllBySql("SELECT concat(last_name1,' ',last_name2,', ',names) AS names from persons WHERE id_user=$id");
+		$info = Persons::model()->findAllBySql("SELECT concat(last_name1,' ',last_name2,', ',names) AS names from persons WHERE id_user=".$id);
 
-		//var_dump($info);
-		return $info[0]["names"];
+			return $info[0]["names"];
 	}
 	public function usersCurpPassport($data, $row) {
 
 		$id = $data->id;
-		//for eg.
 		$info = Persons::model()->findAllBySql("SELECT curp_passport  from persons WHERE id_user=$id");
 
-		//var_dump($info);
-		return $info[0]["curp_passport"];
+			return $info[0]["curp_passport"];
 	}
 }
