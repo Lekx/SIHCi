@@ -55,7 +55,13 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionSponsorsInfo() {
-		$sponsorExist = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$sponsorExist = Sponsors::model()->findByAttributes(array('id_user' => $iduser));
 
 		if ($sponsorExist != null) {
 			$model = $this->loadModel($sponsorExist->id);
@@ -66,7 +72,7 @@ class SponsorsController extends Controller {
 			
 		}
 
-		$modelPersons = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
+		$modelPersons = Persons::model()->findByAttributes(array('id_user' => $iduser));
 		$this->performAjaxValidation($model);
 		$this->performAjaxValidation($modelAddresses);
 		$this->performAjaxValidation($modelPersons);
@@ -81,7 +87,7 @@ class SponsorsController extends Controller {
 
 			if ($modelAddresses->validate()) {
 				if ($modelAddresses->save()) {
-					$model->id_user = Yii::app()->user->id;
+					$model->id_user = $iduser;
 					$model->id_address = $modelAddresses->id;
 					if ($model->validate()) {
 						if ($model->save()) {
@@ -90,7 +96,7 @@ class SponsorsController extends Controller {
 
 								if($model->photo_url->type == 'application/pdf' || $model->photo_url->type == 'application/msword' || $model->photo_url->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->photo_url->type == 'application/vnd.oasis.opendocument.text' )
 								
-								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id;
 								$path = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/img/";
 								if (!file_exists($path)) {
 									mkdir($path, 0775, true);
@@ -107,10 +113,10 @@ class SponsorsController extends Controller {
 								$logo->saveAs($path . 'logo.' . $logo->getExtensionName());
 								$logo = "sponsors/" . $id_sponsor . "/img/" . 'logo.' . $logo->getExtensionName();
 
-								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id, array('photo_url' => $logo))) {
+								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo))) {
 
 									$log = new SystemLog();
-									$log->id_user = Yii::app()->user->id;
+									$log->id_user = $iduser;
 									$log->section = "Empresas";
 									$log->details = "Se creo un nuevo registro";
 									$log->action = "creacion";
@@ -135,11 +141,17 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_persons() {
-		$model = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$model = Persons::model()->findByAttributes(array('id_user' => $iduser));
 
 		if (isset($_POST['Persons'])) {
 			$model->attributes = $_POST['Persons'];
-			$model->id_user = Yii::app()->user->id;
+			$model->id_user = $iduser;
 
 			if ($model->save()) {
 				//$this->redirect(array('view', 'id' => $model->id));
@@ -153,7 +165,13 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_contact() {
-		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id;
 		$model = new SponsorsContact;
 		$modelPull = SponsorsContact::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
 		// Uncomment the following line if AJAX validation is needed
@@ -179,7 +197,7 @@ class SponsorsController extends Controller {
 
 		if (isset($_POST['values1'])) {
 			
-			$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+			$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id;
 			$types = $_POST['types'];
 			$values1 = $_POST['values1'];
 			$values2 = $_POST['values2'];
@@ -205,7 +223,13 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_contacts() {
-		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id;
 		$model = new SponsorsContacts;
 		$fullname = SponsorsContacts::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
 		// Uncomment the following line if AJAX validation is needed
@@ -240,6 +264,11 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_addresses() {
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
 		$model = new Addresses;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -265,8 +294,13 @@ class SponsorsController extends Controller {
 
 	public function actionCreate_billing() {
 
-		$billingExist = SponsorBilling::model()->findByAttributes(array('id_sponsor' => Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id));
-		$sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id));
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$billingExist = SponsorBilling::model()->findByAttributes(array('id_sponsor' => Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id));
+		$sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser));
 
 		if ($billingExist != null) {
 			$model = $billingExist;
@@ -287,7 +321,7 @@ class SponsorsController extends Controller {
 
 			if (isset($_POST['sameAddress'])) {
 				
-				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id_address;
+				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id_address;
 				if ($model->save())
 					if ($modelAddresses->id != $model->id_address_billing && $modelAddresses->id > 0) {
 						if ($modelAddresses->delete())
@@ -320,7 +354,13 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_docs() {
-		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id;
 
 		$DocExist = SponsorsDocs::model()->findAllByAttributes(array('id_sponsor' => $id_sponsor));
 		$modelDocs = array();
@@ -337,24 +377,21 @@ class SponsorsController extends Controller {
 		if (isset($_POST['Doc1'])) {
 
 			$path2 = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/docs/";
-			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id;
 			if (!file_exists($path2)) {
 				mkdir($path2, 0777, true);
-				echo "cree carpetas";
 			}
 		
 			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
 				if (!array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs)) {
 					$model = new SponsorsDocs;
-					echo "cree molde nuevo";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
 				}
 				$model->id_sponsor = $id_sponsor;
-				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id;
 				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
-				echo "puse nombre a file name";
 					
 					$model = new SponsorsDocs;
 				} else {
@@ -363,13 +400,12 @@ class SponsorsController extends Controller {
 				}
 
 				$model->id_sponsor = $id_sponsor;
-				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id;
 				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
 				//unlink($model->path);
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				echo "antes de guardar";
 				
 				if($model->save())
 					$reload = true;
@@ -398,7 +434,7 @@ class SponsorsController extends Controller {
 				
 
 			}else {													
-				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc3'))) {
@@ -421,7 +457,7 @@ class SponsorsController extends Controller {
 				
 
 			}else {													
-				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc4'))) {
@@ -444,7 +480,7 @@ class SponsorsController extends Controller {
 				
 
 			}else {													
-				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc5'))) {
@@ -467,7 +503,7 @@ class SponsorsController extends Controller {
 				
 
 			}else {													
-				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc6'))) {
@@ -489,14 +525,14 @@ class SponsorsController extends Controller {
 				
 
 			}else {													
-				echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
 
 			if ($reload == true) {
 				$this->redirect(array('create_docs'));
 			}
 
-		}
+		
 		$this->render('create_docs', array(
 			'model' => $model, 'modelDocs' => $modelDocs,
 		));
