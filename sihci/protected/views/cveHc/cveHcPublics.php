@@ -20,7 +20,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'value'=>array($this,'usersFullNames'),'type' => 'raw',
                 ),*/
 		   array('header'=>'Línea de Investigación',
-		 		//'name'=>'name',
 		   		'value'=>array($this,'researchAreas'),'type' => 'raw',
                 ),
 		    array('header'=>'Unidad Hospitalaria',
