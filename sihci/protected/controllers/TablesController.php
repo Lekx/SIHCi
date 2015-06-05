@@ -164,7 +164,12 @@ class TablesController extends Controller
 		$titlePage = "Derechos de Autor";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM copyrights')->queryAll();
 
-		$query='';
+		$query='SELECT u.id,p.names, copy.participation_type, copy.title, copy.step_number, copy.application_date, j.hospital_unit, copy.creation_date 
+				FROM copyrights copy
+				 JOIN curriculum curri ON copy.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
 
 	     $copyrights=new CSqlDataProvider($query);
 
