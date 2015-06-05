@@ -1,11 +1,11 @@
-
+<h2>CVE-HC</h2>
 
 <?php 
-
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	//'id'=>'cveHcPublics',
 	'dataProvider'=>$cveHcPublics,
+	'summaryText'=>'', 
 	'ajaxUpdate' => true,
 	'filter' => null,
 	'columns'=>array(

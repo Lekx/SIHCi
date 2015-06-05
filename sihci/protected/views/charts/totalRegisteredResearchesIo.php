@@ -5,6 +5,8 @@
      //echo print_r($year);
      echo CHtml::dropDownList('years', '',$years);
 
+     
+
  $this->widget(
     'yiiwheels.widgets.highcharts.WhHighCharts',
     array(
@@ -25,5 +27,6 @@
     )
     )
     );
+
  ?>
 </div>
