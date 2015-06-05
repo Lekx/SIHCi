@@ -26,13 +26,13 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
             <h1>Evaluación Curricular</h1>
             <hr>
         </div>
-
-<h3>Gestionar Registro de Cap&iacute;tulos de libros</h3>
+<h3>Gestionar Registro de Cap&iacute;tulos de libros:</h3>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(

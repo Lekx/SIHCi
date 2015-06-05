@@ -9,10 +9,15 @@ echo CHtml::dropDownList('years', '',$years,array(
     'data'=>array('selectedYear'=>'js:this.value'),
     
     'success' => 'function(data){
-        $("#chale").html(data);
+      //   document.getElementById("initialChart").remove();
+     //   $("#chale").html("asdf");
+       $("#chale").html(data);
+        //$("#initialChart").xAxis[0].setCategories([2,4,5,6,7], false);
+
+
     }',
     //'update' => '#chale',
-    )
+    )å
 ));
 
 ?>
@@ -24,7 +29,7 @@ echo CHtml::dropDownList('years', '',$years,array(
         'yiiwheels.widgets.highcharts.WhHighCharts',
 
         array(
-            'id'=>'grapxgrid',
+            'id'=>'initialChart',
             'pluginOptions' => array(
             'chart' => array('type' => 'column'),
             'title' => array('text' => 'Registro de usuarios por mes'),

@@ -246,6 +246,7 @@ class AdminUsersController extends Controller {
 	 * Lists all models.
 	 */
 	public function actionIndex() {
+		
 		$this->actionAdminUsers();
 	}
 
