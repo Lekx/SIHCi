@@ -128,9 +128,9 @@ class TablesController extends Controller
 	public function actionPatents()
 	{
 		$titlePage = "Patentes";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM patent')->queryAll();
 
-		$query='SELECT u.id,p.names,pa.country, pa.name, pa.application_type, pa.application_number,j.hospital_unit, pa.creation_date 
+		$query='SELECT u.id,p.names,pa.country, pa.name, pa.application_type, pa.application_number, pa.patent_type, j.hospital_unit, pa.creation_date 
 				FROM patent pa
 				 JOIN curriculum curri ON pa.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
@@ -145,9 +145,14 @@ class TablesController extends Controller
 	public function actionSoftware()
 	{
 		$titlePage = "Software";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM software')->queryAll();
 
-		$query='';
+		$query='SELECT u.id,p.names, so.country, so.title, j.hospital_unit, so.creation_date 
+				FROM software so
+				 JOIN curriculum curri ON so.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
 
 	     $softwares=new CSqlDataProvider($query);
 
@@ -157,7 +162,7 @@ class TablesController extends Controller
 	public function actionCopyrights()
 	{
 		$titlePage = "Derechos de Autor";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM copyrights')->queryAll();
 
 		$query='';
 
@@ -169,7 +174,7 @@ class TablesController extends Controller
 	public function actionArticlesGuides()
 	{
 		$titlePage = "Artículos y Guías";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM articles_guides')->queryAll();
 
 		$query='';
 
