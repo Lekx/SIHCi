@@ -678,12 +678,20 @@ thead th
 {
   width: 100% !important;
   font-family: 'Caviar_Dreams' !important;
+  color: #1EB9C0 !important;
+
 	
+}
+font-size: 1px !important;
+}
+.operations li a:visited, .operations li  a:hover
+{
+	  color: #1EB9C0 !important;
 }
 .portlet ul li a
 {
 	font-family: 'Caviar_Dreams' !important;
-	font-size: 15px !important;
+	font-size: 10pt !important;
 	padding-left: 0px !important;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -691,7 +699,7 @@ thead th
 .portlet ul li a:hover
 {
 	font-family: 'Caviar_Dreams' !important;
-	font-size: 15px !important;
+	font-size: 10pt !important;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	background: 0;
@@ -699,7 +707,7 @@ thead th
 .portlet hr
 {
 	font-family: 'Caviar_Dreams' !important;
-    border-bottom: 1px solid #0A3250;
+    border-bottom: 1px solid #1EB9C0;
 	width: 100%;
 	
 }
@@ -929,13 +937,37 @@ thead th
 
 }
 /* end .slideThree */
+
 .searchcrud
 {
 	width: 100% !important;
 	height: 50px !important;
-	font-family: 'Caviar_Dreams' !important;
+	font-family: 'Caviar_Dreams_Bold' !important;
 	width: 100% !important;
 	height: 50px !important;
+	padding:5px 18px 2px 9px !important;
+	font-size:  24.5px !important;
+}
+
+.searchcrud::-webkit-input-placeholder { /* WebKit browsers */
+    color: #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+}
+.searchcrud::-webkit-input-placeholder { /* navegadores Webkit */
+    color:   #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+}
+.searchcrud:-moz-placeholder { /* Mozilla Firefox 4 hasta 18 */
+    color:    #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+}
+.searchcrud::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+}
+.searchcrud:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
 }
 .items table tr
 {
@@ -994,13 +1026,15 @@ table.detail-view
 	margin-top: 50px !important;
 	margin-bottom: 50px !important;
 	font-family: 'Caviar_Dreams' !important;
+	text-align: justify !important;
 
 }
-table.detail-view th
+table.detail-view th , table.detail-view  td
 {
 	text-align: left !important;
 	background-color: white;
 	font-family: 'Caviar_Dreams' !important;
+		text-align: justify !important;
 }
 .row , .row1
 {
@@ -1066,4 +1100,3 @@ table.detail-view th
 .right-addon .glyphicon { right: 5px;}
 
 /* add padding  */
-
