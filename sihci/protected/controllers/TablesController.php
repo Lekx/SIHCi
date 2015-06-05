@@ -115,14 +115,10 @@ class TablesController extends Controller
 	
 	public function actionScientistMagazines()
 	{
-		$titlePage = "Capítulos";
+		$titlePage = "Revístas Científicas";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
-				 JOIN jobs j ON curri.id=j.id_curriculum
- 				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+		$query='';
 
 	     $scientistMagazines=new CSqlDataProvider($query);
 
@@ -131,11 +127,12 @@ class TablesController extends Controller
 
 	public function actionPatents()
 	{
-		$titlePage = "Capítulos";
+		$titlePage = "Patentes";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+		$query='SELECT u.id,p.names,pa.country, pa.name, pa.application_type, pa.application_number,j.hospital_unit, pa.creation_date 
+				FROM patent pa
+				 JOIN curriculum curri ON pa.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user';
@@ -147,14 +144,10 @@ class TablesController extends Controller
 
 	public function actionSoftware()
 	{
-		$titlePage = "Capítulos";
+		$titlePage = "Software";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
-				 JOIN jobs j ON curri.id=j.id_curriculum
- 				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+		$query='';
 
 	     $softwares=new CSqlDataProvider($query);
 
@@ -163,14 +156,10 @@ class TablesController extends Controller
 
 	public function actionCopyrights()
 	{
-		$titlePage = "Capítulos";
+		$titlePage = "Derechos de Autor";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
-				 JOIN jobs j ON curri.id=j.id_curriculum
- 				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+		$query='';
 
 	     $copyrights=new CSqlDataProvider($query);
 
@@ -179,14 +168,10 @@ class TablesController extends Controller
 
 	public function actionArticlesGuides()
 	{
-		$titlePage = "Capítulos";
+		$titlePage = "Artículos y Guías";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
-				 JOIN jobs j ON curri.id=j.id_curriculum
- 				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+		$query='';
 
 	     $articlesGuides=new CSqlDataProvider($query);
 
