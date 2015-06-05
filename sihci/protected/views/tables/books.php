@@ -7,11 +7,14 @@ $this->breadcrumbs=array(
 	'Ingreso de Investigadores',
 );
 $this->menu=array(
-	//array('label'=>'Anual Total Ingreso de Investigadores', 'url'=>array('index')),
-	
 	array('label'=>'Cantidad de Investigadores', 'url'=>array('researchers')),
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
+	array('label'=>'Capítulos', 'url'=>array('chapters')),
+	array('label'=>'Revistas Científicas', 'url'=>array('scientistMagazines')),
+	array('label'=>'Patentes', 'url'=>array('patents')),
+	array('label'=>'Software', 'url'=>array('software')),
+	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -32,41 +35,39 @@ $('.search-form form').submit(function(){
 <h2>
 	<?php echo $titlePage ?>
 </h2>
-
-<div class="search-form" style="display:block">
-<?php $this->renderPartial('_search_researchers_income',array(
-	'model'=>$books,
-)); ?>
-</div><!-- search-form -->
 <script type="text/javascript">
 	
 function change(){
-	valueResearchers = $("#valueResearchers").val();
+	// valueResearchers = $("#valueResearchers").val();
 	valueHospital = $("#valueHospital").val();
 	valueYear = $("#valueYear").val();
 
 	$('tbody > tr').show();
 
-	if( valueHospital == 'total' && valueResearchers == 'total' && valueYear=='total')
+	if( valueHospital == 'total' && valueYear=='total')
 		$('tbody > tr').show();
-	else if(valueResearchers == 'total' && valueHospital == 'total'){
+	else if(valueHospital == 'total'){
 		$('tbody > tr:not(:contains('+valueYear+'))').hide();
-	}else if(valueResearchers == 'total' && valueYear == 'total'){
+	}else if(valueYear == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'))').hide();
-	}else if(valueHospital == 'total' && valueYear == 'total'){
-		$('tbody > tr:not(:contains('+valueResearchers+'))').hide();
-	}else if( valueResearchers == 'total'){
-		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').hide();
-	}else if( valueHospital == 'total'){
-		$('tbody > tr:not(:contains('+valueResearchers+'):contains('+valueYear+'))').hide();
-	}else if( valueYear == 'total'){
-		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueResearchers+'))').hide();
 	}else
-		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueResearchers+'))').hide();
+		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').hide();
 
 }//function
+ function search(){
+ 	valueSearch = $("#search").val();
+ 	$('tbody > tr').show();
+
+ 	if (valueSearch == '') {
+ 		$('tbody > tr').show();
+ 	}else{
+ 		$('tbody > tr:not(:contains('+valueSearch+'))').hide();
+ 	}
+ }
+
 </script>
-<select id="valueResearchers" onchange="change()">
+<input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
+<!-- <select id="valueResearchers" onchange="change()">
   <option value="total" selected="">Total de Investigadores</option>	
   <option value="1">Ingreso Investigadores</option>
   <option value="0">Baja Investigadores</option>
@@ -74,12 +75,13 @@ function change(){
   <option value="-1">Investigadores sin SNI</option>
 
 </select>
-<br><br>
+<br><br> -->
 
 <select id="valueHospital" onchange="change()">
   <option value="total" selected="">Total de Hospitales</option>	
   <option >Hospital Civil Fray Antonio Alcalde</option>
   <option >Hospital Civil Dr. Juan I. Menchaca</option>
+  <option>NA</option>
 
 </select>
   <br><br>
@@ -97,7 +99,7 @@ function change(){
 <?php 
 
 $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'curriculum-grid',
+	'id'=>'books-grid',
 	'dataProvider'=>$books,
 	 'ajaxUpdate' => true,
 	'filter' => null,
@@ -108,17 +110,17 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		  array('header'=>'Nombre de Usuario',
 		 		'name'=>'names',
                 ),
-		   array('header'=>'Título del Libro',
+		     array('header'=>'Título del Libro',
 		 		'name'=>'book_title',
                 ),
-		    array('header'=>'Publicación',
+		     array('header'=>'Publicación',
 		 		'name'=>'publisher',
                 ),
-		     array('header'=>'Sistema NI',
-		 		'name'=>'SNI',
+		     array('header'=>'Fecha de Lanzamiento',
+		 		'name'=>'release_date',
                 ),
-		     array('header'=>'Estatus',
-		 		'name'=>'status',
+		     array('header'=>'Unidad Hospitalaria',
+		 		'name'=>'hospital_unit',
                 ),
 		     array('header'=>'Fecha de Creación',
 		 		'name'=>'creation_date',
