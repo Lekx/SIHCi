@@ -14,10 +14,9 @@
 	'enableAjaxValidation'=>true,
 	'method'=>'get',
 )); ?>
-	<div class="row">
-	
+		<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-search"></i>
 	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo','class'=>'searchcrud')); ?>	
-		<?php echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
 
 	</div>
 	 

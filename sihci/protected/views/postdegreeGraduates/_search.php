@@ -10,10 +10,9 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
-
-  	<div class="row">
+	<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-search"></i>
 			<?php echo $form->textField($model,'fullname',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion','class'=>'searchcrud')); ?>
-			<?php echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
