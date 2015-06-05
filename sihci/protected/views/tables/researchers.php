@@ -119,8 +119,6 @@ function change(){
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$researchersIncome,
-	 'ajaxUpdate' => true,
-	'filter' => null,
 	'columns'=>array(
 		 array('header'=>'Numero de Usuario',
 		 		'name'=>'id',
@@ -129,7 +127,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'name'=>'names',
                 ),
 		   array('header'=>'Línea de Investigación',
-		 		'name'=>'name',
+		 		'value'=>array($this,'researchAreas'),'type' => 'raw',
                 ),
 		    array('header'=>'Undad Hospitalaria',
 		 		'name'=>'hospital_unit',

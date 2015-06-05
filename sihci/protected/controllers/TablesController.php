@@ -48,15 +48,33 @@ class TablesController extends Controller
 	{
 		$this->redirect('researchers');
 	}
+
+	public function researchAreas($data, $row) {
+		  $conexion = Yii::app()->db;
+		  // print_r($data);
+		 $id_curriculum = $data["id_curriculum"];
+
+		 $query ='SELECT GROUP_CONCAT(name) AS names from research_areas where id_curriculum ='.$id_curriculum;
+
+		 $results = $conexion->createCommand($query)->queryAll();
+
+		  if(!empty($results))
+		  $rArea = " ";
+		  foreach($results AS $key => $value){
+		   $rArea = $value["names"].", ";
+		  }
+
+		  return $rArea;
+	}
+
 	public function actionResearchers()
 	{
 		$titlePage = "Cantidad de Investigadores";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM users')->queryAll();
 
-		 $query='SELECT DISTINCT u.id,p.names,rese.name,j.hospital_unit,curri.SNI, curri.status, u.creation_date from users u 
+		 $query='SELECT DISTINCT u.id,p.names, j.hospital_unit, j.id_curriculum,curri.SNI, curri.status, u.creation_date from users u 
  				JOIN curriculum curri ON curri.id_user=u.id
  				JOIN jobs j ON curri.id=j.id_curriculum
- 				JOIN research_areas rese ON curri.id=rese.id_curriculum
   				JOIN persons p ON u.id=p.id_user';
 
 	     $researchersIncome=new CSqlDataProvider($query);
