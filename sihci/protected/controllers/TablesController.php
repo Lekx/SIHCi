@@ -181,7 +181,12 @@ class TablesController extends Controller
 		$titlePage = "Artículos y Guías";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM articles_guides')->queryAll();
 
-		$query='';
+		$query='SELECT u.id,p.names, ar.title, ar.article_type, ar.magazine, ar.url_document, j.hospital_unit, ar.creation_date 
+				FROM articles_guides ar
+				 JOIN curriculum curri ON ar.id_resume=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
 
 	     $articlesGuides=new CSqlDataProvider($query);
 
