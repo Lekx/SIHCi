@@ -28,7 +28,8 @@ class TablesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('researchers', 'projects', 'books'),
+				'actions'=>array('index','researchers', 'projects', 'Books','chapters',
+								 'scientistMagazines','patents', 'software', 'copyrights', 'articlesGuides'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -47,7 +48,6 @@ class TablesController extends Controller
 	{
 		$this->redirect('researchers');
 	}
-	
 	public function actionResearchers()
 	{
 		$titlePage = "Cantidad de Investigadores";
@@ -86,16 +86,111 @@ class TablesController extends Controller
 		$titlePage = "Libros";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books')->queryAll();
 
-		$query='SELECT u.id,p.names,bo.book_title, bo.publisher, bo.release_date, bo.creation_date 
-		 		FROM books bo
+		$query='SELECT u.id,p.names,bo.book_title, bo.publisher, bo.release_date,j.hospital_unit, bo.creation_date FROM books bo
 				 JOIN curriculum curri ON bo.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user';
 
 	     $books=new CSqlDataProvider($query);
 
 		$this->render('books',array('books'=>$books, 'titlePage'=>$titlePage, 'year'=>$year));
-	}	
+	}
 
+	public function actionChapters()
+	{
+		$titlePage = "Capítulos";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+
+		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
+				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
+
+	     $chapters=new CSqlDataProvider($query);
+
+		$this->render('chapters',array('chapters'=>$chapters, 'titlePage'=>$titlePage, 'year'=>$year));
+	}
 	
+	public function actionScientistMagazines()
+	{
+		$titlePage = "Capítulos";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+
+		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
+				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
+
+	     $scientistMagazines=new CSqlDataProvider($query);
+
+		$this->render('scientistMagazines',array('scientistMagazines'=>$scientistMagazines, 'titlePage'=>$titlePage, 'year'=>$year));
+	}
+
+	public function actionPatents()
+	{
+		$titlePage = "Capítulos";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+
+		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
+				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
+
+	     $patents=new CSqlDataProvider($query);
+
+		$this->render('patents',array('patents'=>$patents, 'titlePage'=>$titlePage, 'year'=>$year));
+	}
+
+	public function actionSoftware()
+	{
+		$titlePage = "Capítulos";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+
+		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
+				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
+
+	     $softwares=new CSqlDataProvider($query);
+
+		$this->render('software',array('softwares'=>$softwares, 'titlePage'=>$titlePage, 'year'=>$year));
+	}
+
+	public function actionCopyrights()
+	{
+		$titlePage = "Capítulos";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+
+		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
+				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
+
+	     $copyrights=new CSqlDataProvider($query);
+
+		$this->render('copyrights',array('copyrights'=>$copyrights, 'titlePage'=>$titlePage, 'year'=>$year));
+	}
+
+	public function actionArticlesGuides()
+	{
+		$titlePage = "Capítulos";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+
+		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
+				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+				 JOIN jobs j ON curri.id=j.id_curriculum
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user';
+
+	     $articlesGuides=new CSqlDataProvider($query);
+
+		$this->render('articlesGuides',array('articlesGuides'=>$articlesGuides, 'titlePage'=>$titlePage, 'year'=>$year));
+	}
+
 }
