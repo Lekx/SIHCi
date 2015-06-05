@@ -7,11 +7,14 @@ $this->breadcrumbs=array(
 	'Ingreso de Investigadores',
 );
 $this->menu=array(
-	//array('label'=>'Anual Total Ingreso de Investigadores', 'url'=>array('index')),
-	
 	array('label'=>'Cantidad de Investigadores', 'url'=>array('researchers')),
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
+	array('label'=>'Capítulos', 'url'=>array('chapters')),
+	array('label'=>'Revistas Científicas', 'url'=>array('scientistMagazines')),
+	array('label'=>'Patentes', 'url'=>array('patents')),
+	array('label'=>'Software', 'url'=>array('software')),
+	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -33,11 +36,6 @@ $('.search-form form').submit(function(){
 	<?php echo $titlePage ?>
 </h2>
 
-<div class="search-form" style="display:block">
-<?php $this->renderPartial('_search_researchers_income',array(
-	'model'=>$researchersIncome,
-)); ?>
-</div><!-- search-form -->
 <script type="text/javascript">
 	
 function change(){
@@ -82,7 +80,19 @@ function change(){
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueResearchers+'):contains('+valueResearchersSNI+'))').hide();
 
 }//function
+ function search(){
+ 	valueSearch = $("#search").val();
+ 	$('tbody > tr').show();
+
+ 	if (valueSearch == '') {
+ 		$('tbody > tr').show();
+ 	}else{
+ 		$('tbody > tr:not(:contains('+valueSearch+'))').hide();
+ 	}
+ }
+
 </script>
+<input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
 <select id="valueResearchers" onchange="change()">
   <option value="total" selected="">Total de Investigadores</option>	
   <option value="activo">Ingreso Investigadores</option>
