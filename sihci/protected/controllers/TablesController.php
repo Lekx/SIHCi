@@ -130,18 +130,6 @@ class TablesController extends Controller
 
 		$this->render('chapters',array('chapters'=>$chapters, 'titlePage'=>$titlePage, 'year'=>$year));
 	}
-	
-	public function actionScientistMagazines()
-	{
-		$titlePage = "Revístas Científicas";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
-
-		$query='';
-
-	     $scientistMagazines=new CSqlDataProvider($query);
-
-		$this->render('scientistMagazines',array('scientistMagazines'=>$scientistMagazines, 'titlePage'=>$titlePage, 'year'=>$year));
-	}
 
 	public function actionPatents()
 	{

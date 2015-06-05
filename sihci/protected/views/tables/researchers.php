@@ -11,7 +11,6 @@ $this->menu=array(
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
 	array('label'=>'Capítulos', 'url'=>array('chapters')),
-	array('label'=>'Revistas Científicas', 'url'=>array('scientistMagazines')),
 	array('label'=>'Patentes', 'url'=>array('patents')),
 	array('label'=>'Software', 'url'=>array('software')),
 	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
