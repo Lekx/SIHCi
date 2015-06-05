@@ -1,0 +1,1 @@
+scientistMagazines.php

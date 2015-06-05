@@ -15,6 +15,7 @@ $this->menu=array(
 	array('label'=>'Patentes', 'url'=>array('patents')),
 	array('label'=>'Software', 'url'=>array('software')),
 	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
+	
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -100,7 +101,7 @@ function change(){
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-grid',
-	'dataProvider'=>$books,
+	'dataProvider'=>$chapters,
 	 'ajaxUpdate' => true,
 	'filter' => null,
 	'columns'=>array(
@@ -110,14 +111,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		  array('header'=>'Nombre de Usuario',
 		 		'name'=>'names',
                 ),
+		  array('header'=>'Capítulo del Libro',
+		 		'name'=>'chapter_title',
+                ),
 		     array('header'=>'Título del Libro',
 		 		'name'=>'book_title',
                 ),
-		     array('header'=>'Publicación',
-		 		'name'=>'publisher',
-                ),
-		     array('header'=>'Fecha de Lanzamiento',
-		 		'name'=>'release_date',
+		     array('header'=>'Publicaciones',
+		 		'name'=>'publishers',
                 ),
 		     array('header'=>'Unidad Hospitalaria',
 		 		'name'=>'hospital_unit',
