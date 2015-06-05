@@ -95,6 +95,7 @@
 	</div>
 
 	<div class="row">
+	<span class="radiotext">Tipo de Participación</span>
 		<?php $status = array('Nacional' => 'Nacional','Extranjero'=>'Extranjero'); 
 		    echo $form-> RadioButtonList($model,'is_national' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); 
 		 ?>

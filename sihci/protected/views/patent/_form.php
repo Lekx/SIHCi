@@ -71,6 +71,7 @@
 	</div>
 
 	<div class="row">
+	<span class="radiotext">Tipo de Aplicación</span>
 		<?php 
                 $status = array('No.Solicitud'=>'No.Solicitud', 'No.Registro'=>'No.Registro');
                 echo $form->radioButtonList($model,'application_type',$status,array('separator'=>' ','labelOptions'=>array('style'=>'display:inline')));

@@ -19,6 +19,6 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Modificar registro de propiedad intelectual-Patentes: <?php echo $model->title ?></h4> 
+<h3>Modificar registro de propiedad intelectual-Patentes: <?php echo $model->title ?></h3> 
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
