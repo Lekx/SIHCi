@@ -13,7 +13,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	array('header'=>'patrocinador',
 		 		'name'=>'sponsor_name',
                 ),
-	
 		   array('header'=>'Titulo del proyecto',
 		 		'name'=>'title',
                 ),
