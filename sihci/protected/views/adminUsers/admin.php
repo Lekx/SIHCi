@@ -68,19 +68,19 @@
 		 array(
 		 	'type'=>'raw',
 		 	'name' => 'estatus',
-          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array(
-            
-     ),
-		array(
-			'class' => 'CButtonColumn', 'template' => '{view} {update} {delete} {login}', 'header' => 'Acciones',
-			'buttons' => array
-			(
-				'login' => array
-				(
-					'label' => 'Iniciar sesión como éste usuario.',
-					'imageUrl' => Yii::app()->request->baseUrl . '/images/login.png',
+          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"))'),
+			array(
+				'class' => 'CButtonColumn', 'template' => '{view} {edit} {delete} {login}', 'header' => 'Acciones',
+				'buttons' => array(
+				'login' => array(
+				'label' => 'Iniciar sesión como éste usuario.',
+				'imageUrl' => Yii::app()->request->baseUrl . '/images/login.png',
 
-				)),
+				),
+				'edit' => array(
+				'label' => 'Editar.',
+				'url'=> '"AdminUsers/update?ide=".$data->id'),
+				),
 		),
 	),
 ));?>
