@@ -15,6 +15,7 @@ $this->menu=array(
 	array('label'=>'Patentes', 'url'=>array('patents')),
 	array('label'=>'Software', 'url'=>array('software')),
 	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
+	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
