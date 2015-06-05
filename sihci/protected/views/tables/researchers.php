@@ -18,19 +18,6 @@ $this->menu=array(
 	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#system-log-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-
 ?>
 
 <h2>
