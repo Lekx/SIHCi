@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Propiedad intelectual: Patentes </h1>
+<h3>Propiedad intelectual: Patentes </h3>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
