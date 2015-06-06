@@ -17,7 +17,7 @@ echo CHtml::dropDownList('years', '',$years,array(
 
     }',
     //'update' => '#chale',
-    )å
+    )
 ));
 
 ?>
