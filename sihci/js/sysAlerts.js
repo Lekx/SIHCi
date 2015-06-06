@@ -1,9 +1,10 @@
 $(document).ready(function() {
     $('.backbut').click(function() {
-        $('.cleandiv').hide();
+        /*$('.cleandiv').hide();
         $('.successdiv').hide();
         $('.errordiv').hide();
-        $('.abortdiv').hide();
+        $('.abortdiv').hide();*/
+        window.location = yii.urls.back;
     
     });
     $('.errorbut').click(function() {

@@ -20,26 +20,26 @@
 	
 	<div class="row">
 		
-		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Folio')); ?>
+		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Folio','title'=>'Folio')); ?>
 		<?php echo $form->error($model,'folio'); ?>
 	</div>
 
 	<div class="row">
 		
-		<?php echo $form->textField($model,'reference',array('size'=>30,'maxlength'=>30,'placeholder'=>'Referencia')); ?>
+		<?php echo $form->textField($model,'reference',array('size'=>30,'maxlength'=>30,'placeholder'=>'Referencia','title'=>'Referencia')); ?>
 		<?php echo $form->error($model,'reference'); ?>
 	</div>
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'));?>
+		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Seleccionar Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'),array('title'=>'Tipo de Referencia'));?>
 		</span>
 		<?php echo $form->error($model,'reference_type'); ?>
 	</div>
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
+		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Seleccionar especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
          'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
@@ -59,7 +59,7 @@
          'Patología pediátrica'=>'Patología pediátrica','Pediatría'=>'Pediatría','Psiquiatría'=>'Psiquiatría','Psiquiatría infantil y de la adolescencia'=>'Psiquiatría infantil y de la adolescencia',
          'Radiooncología'=>'Radiooncología','Radiología e imagen'=>'Radiología e imagen','Reumatología'=>'Reumatología','Reumatología pediátrica'=>'Reumatología pediátrica','Terapia endovascular neurológica'=>'Terapia endovascular neurológica',
          'Urgencias pediátricas'=>'Urgencias pediátricas','Urología'=>'Urología','Urología ginecológica'=>'Urología ginecológica','Cirugía Maxilofacial'=>'Cirugía Maxilofacial','Ortodoncia y Ortopedia Maxilofacial'=>'Ortodoncia y Ortopedia Maxilofacial',
-         'Periodoncia'=>'Periodoncia'));?>
+         'Periodoncia'=>'Periodoncia'),array('title'=>'Especialidad'));?>
          </span>
 		<?php echo $form->error($model,'specialty'); ?>
 	</div>
@@ -75,7 +75,8 @@
 		    		'size' => '10',         
 		        	'maxlength' => '10',
 		        	'readOnly'=>true, 
-		        	'placeholder'=>"Fecha de Inicio"   
+		        	'placeholder'=>"Fecha de Inicio" , 
+		        	'title'=>'Fecha de Inicio' 
 		    ),
 		));
 		?>
@@ -94,7 +95,8 @@
 		    		'size' => '10',         
 		        	'maxlength' => '10',
 		        	'readOnly'=>true, 
-		        	'placeholder'=>"Fecha Final"   
+		        	'placeholder'=>"Fecha Final" ,
+		        	'title'=>'Fecha de Final'  
 		    ),
 		));
 		?>
@@ -103,8 +105,9 @@
 	</div>
 
 	<div class="row">
+	<span class="radiotext">Tipo:          </span>
 		<?php 
-		$status = array('certificación' => 'certificación','Recertificación'=>'Recertificación'); 
+		$status = array('certificación' => 'Certificación','Recertificación'=>'Recertificación'); 
         echo $form-> RadioButtonList($model,'type' ,$status ,array('separator' => ' ', 'labelOptions'=>array('style'=>'display:inline')));?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
@@ -119,14 +122,12 @@
 		                                      
 		                         if(data.status=="success")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#certifications-form")[0].reset();
-   				                     window.location.href ="'.Yii::app()->createUrl('certifications/admin').'";		                         
+				              			$(".successdiv").show();	                         
 
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("Complete los campos con *");   
+			                     	 $(".errordiv").show();
 			                     }       
 		                  	}',                    
 		                    

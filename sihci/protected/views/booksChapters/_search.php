@@ -11,12 +11,9 @@
 	'method'=>'get',
 )); ?>
 
-<div class="row">
-		
-		<legend>B&uacute;squeda por:</legend>
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo de libro, Título de Capítulo, Editores, Año de publicación')); ?>	
-		<?php echo CHtml::submitButton('Buscar'); ?>
-
+		<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-search"></i>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'ISBN, Titulo de libro, Título de Capítulo, Editores, Año de publicación','class'=>'searchcrud')); ?>	
 	</div>
 
 	

@@ -1,15 +1,15 @@
 <?php
 /* @var $this BooksController */
 /* @var $model Books */
-
+	//LI05-Listar registros
 $this->breadcrumbs=array(
 	'Books'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Books', 'url'=>array('index')),
-	array('label'=>'Create Books', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
+	array('label'=>'Crear', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -25,16 +25,16 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
 
-<h1>Manage Books</h1>
+<h3>Gestionar Registo de Libros</h3>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -43,15 +43,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
+		'columns'=>array(
+
+		array('name' =>'Título del libro', 'type'=>'html','id'=>'book_title','value'=>'CHtml::encode($data->book_title)'),
+		array('name' => 'ISBN','type'=>'html','id'=>'isbn','value'=>'CHtml::encode($data->isbn)'),
+		array('name' => 'Editorial','type'=>'html','id'=>'publisher','value'=>'CHtml::encode($data->publisher)'),
+		array('name' =>'Edición', 'type'=>'html','id'=>'edition','value'=>'CHtml::encode($data->edition)'),
+		array('name' => 'Volumen','type'=>'html','id'=>'volume','value'=>'CHtml::encode($data->volume)'),
+		
+		
+		
+		/*
 		'id',
 		'id_curriculum',
 		'isbn',
 		'book_title',
-		'publisher',
-		'editorial',
-		/*
+		'publisher',		
 		'edition',
 		'publishing_year',
 		'release_date',
@@ -69,8 +76,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'keywords',
 		'creation_date',
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
+		array('class'=>'CButtonColumn'),
 	),
 )); ?>

@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sys.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">     
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
@@ -37,6 +38,7 @@
                     searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
                     searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
                     base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
+                    back: ' . CJSON::encode(Yii::app()->request->urlReferrer) . ',
                 }
             
             }');
@@ -45,10 +47,16 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <script>
                             $(document).ready(function() {
-                                $('input, select').tooltipster({
+                                $('input, select,textarea,filepicker').tooltipster({
                                     position: 'right',
-                                
-                                });
+                                    trigger: 'custom',
+                                })
+                                .on( 'focus', function() {
+                                  $( this ).tooltipster( 'show' );
+                              })
+                                .on( 'blur', function() {
+                                  $( this ).tooltipster( 'hide' );
+                              });
 
                             });
         </script>
@@ -59,7 +67,7 @@
                 if(Yii::app()->user->type == 'moral')
                         $infoUser = array("label"=>"Moral","icon"=>"PerfilEmpresa","cuentaicon"=>"CuentaEmpresa","controller"=>"sponsors/sponsorsInfo","MenuEmpresa"=>"Perfil Empresa", "proyectos"=>"Proyectos","Evaluacion"=>"Evaluación");
                 else if(Yii::app()->user->type == 'fisico')
-                         $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","cuentaicon"=>"Pcuenta","controller"=>"curriculumVitae/personalData","MenuEmpresa"=>"CV-HC","proyectos"=>"Proyectos","Evaluacion"=>"Evaluación CV");
+                        $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","cuentaicon"=>"Pcuenta","controller"=>"curriculumVitae/personalData","MenuEmpresa"=>"CV-HC","proyectos"=>"Proyectos","Evaluacion"=>"Evaluación CV");
                 else
                         $infoUser = array("label"=>"Administrador","icon"=>"admin_icon","controller"=>"admin/users","MenuEmpresa"=>"Cuenta");
     ?>
@@ -90,7 +98,7 @@
                     <span> Cuenta / Datos de Cuenta </span>
                 </div>
                 <div class="headerconteiner4">
-                    <h4>Ménu </h4>
+                    <h4>Menú </h4>
                 </div>
                 <div class="headerconteiner5">
                     <h4> <?php echo Yii::app()->user->fullname; ?></h4>

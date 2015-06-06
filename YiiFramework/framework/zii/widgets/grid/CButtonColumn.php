@@ -221,11 +221,11 @@ class CButtonColumn extends CGridColumn
 		if($this->deleteButtonLabel===null)
 			$this->deleteButtonLabel=Yii::t('zii','Delete');
 		if($this->viewButtonImageUrl===null)
-			$this->viewButtonImageUrl=$this->grid->baseScriptUrl.'/view.png';
+			$this->viewButtonImageUrl=Yii::app()->baseUrl.'/img/Acciones/desplegar.png';
 		if($this->updateButtonImageUrl===null)
-			$this->updateButtonImageUrl=$this->grid->baseScriptUrl.'/update.png';
+			 $this->updateButtonImageUrl=Yii::app()->baseUrl.'/img/Acciones/editar.png';
 		if($this->deleteButtonImageUrl===null)
-			$this->deleteButtonImageUrl=$this->grid->baseScriptUrl.'/delete.png';
+	     	$this->deleteButtonImageUrl=Yii::app()->baseUrl.'/img/Acciones/eliminar.png';
 		if($this->deleteConfirmation===null)
 			$this->deleteConfirmation=Yii::t('zii','Are you sure you want to delete this item?');
 

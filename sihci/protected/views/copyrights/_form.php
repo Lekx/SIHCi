@@ -17,22 +17,22 @@
 	// See class documentation of CActiveForm for details on this.
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">		
+	<div class="row">
+	 <span class="plain-select">		
 			<?php echo $form->dropDownList($model,'participation_type',
 				array(
 						'Autor'=>'Autor',
 						'Coautor'=>'Coautor'
 					),
-					array('prompt'=>'Seleccionar participación')
+					array('prompt'=>'Seleccionar participación', 'title'=>'Seleccionar participación')
 				); 
 		?>
+		</span>
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
 
 	<div class="row">		
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título','title'=>'Título')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
@@ -48,6 +48,7 @@
 			    		'readOnly'=>true,
 			        	'maxlength' => '10', 
 			        	'placeholder'=>"Fecha de solicitud",
+			        	'title'=>'Fecha de solicitud',
 			    ),
 			));
 		?>
@@ -55,35 +56,37 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'step_number',array('placeholder'=>'Número de tramite')); ?>
+		<?php echo $form->textField($model,'step_number',array('placeholder'=>'Número de tramite','title'=>'Número de tramite')); ?>
 		<?php echo $form->error($model,'step_number'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen', 'title'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario')); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario','title'=>'Beneficiario')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'entity',
 				array(
 						'Pública'=>'Pública',
 						'Privada'=>'Privada',
 						'Sector social'=>'Sector social'
 					),
-					array('prompt'=>'Seleccionar entidad')
+					array('prompt'=>'Seleccionar entidad', 'title'=>'Entidad')
 				); 
 		?>
+		</span>
 		<?php echo $form->error($model,'entity'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto', 'title'=>'Valor de impacto')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
@@ -97,23 +100,19 @@
 		                                      
 		                         if(data.status=="success")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#copyrights-form")[0].reset();
-   				                     window.location.href ="'.Yii::app()->createUrl('copyrights/admin').'";		                         
+									$(".successdiv").show();
 
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("Complete los campos con *");   
+			                     	$(".errordiv").show();   
 			                     }       
 		                  	}',                    
 		                    
-                        )); 
+                        ),array('class'=>'savebutton')); 
         ?>
-        <?php  if($model->isNewRecord) 
-			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-		?>
-       	<?php echo CHtml::link('Cancelar', array('/copyrights/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+        
+        <?php echo CHtml::Button('Cancelar',array('submit' => array('copyrights/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 		<div class="200">
 		

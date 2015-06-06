@@ -10,12 +10,9 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
-
-  	<div class="row">
-
-		<legend> Búsqueda por</legend>
-			<?php echo $form->textField($model,'fullname',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion')); ?>
-			<?php echo CHtml::submitButton('Buscar'); ?>
+	<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-search"></i>
+			<?php echo $form->textField($model,'fullname',array('size'=>45,'maxlength'=>45,'placeholder'=>'Título de la publicacion','class'=>'searchcrud')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

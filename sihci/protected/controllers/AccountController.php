@@ -32,7 +32,13 @@
 
 	public function actionInfoAccount(){
 			$this->layout = 'system';
-			$details = Users::model()->findByPk(Yii::app()->user->id);
+			//cambiar y agregar estas lineas en esponsors y curriculum
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+			$details = Users::model()->findByPk($iduser);
 			$this->render('infoAccount',array(
 			'details'=>$details,
 			));
@@ -61,9 +67,35 @@
 
 	}
 
+
+	public function actionActivateAccount($key){
+
+		$query = Users::model()->findByAttributes(array('act_react_key'=>$key));		
+
+		var_dump($query);
+
+		if(!is_null($query)){
+			
+			if(Users::model()->updateByPk($query->id,array('status'=>'activo')))
+				$result = "success";	
+			else
+				$result = "failure";
+
+		}else
+			$result = "failure";
+
+		$this->render('activateAccount',array('result'=>$result));
+	}
+
 	public function actionUpdateEmail(){
 		$this->layout = 'system';
-		$details = Users::model()->findByPk(Yii::app()->user->id);
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$details = Users::model()->findByPk($iduser);
 		$this->currentemail = $details->email; 
 		if(isset($_POST['Users']))
 		{
@@ -71,7 +103,7 @@
 			if($this->checkEmailExist($_POST['Users']['email']) && $this->checkEmail($_POST['Account']['email2'], $_POST['Account']['email22']))
 			{
 
-				if($details->updateByPk(Yii::app()->user->id,array('email'=>$_POST['Account']['email2']))){
+				if($details->updateByPk($iduser,array('email'=>$_POST['Account']['email2']))){
 					$section = "Cuenta";
 					$details = "Subsección: Cambio Email.";
 					$action = "Modificación";
@@ -91,7 +123,14 @@
 	public function actionUpdatePassword(){
 
 		$this->layout = 'system';
-		$details = Users::model()->findByPk(Yii::app()->user->id);
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$details = Users::model()->findByPk($iduser);
+
 		$this->currentpassword = $details->password;
 		if(isset($_POST['Users']))
 		{
@@ -99,7 +138,7 @@
 			{
 
 				$details->password=sha1(md5(sha1($_POST['Account']['password2'])));
-				if($details->updateByPk(Yii::app()->user->id,array('password'=>sha1(md5(sha1($_POST['Account']['password2'])))))){
+				if($details->updateByPk($iduser,array('password'=>sha1(md5(sha1($_POST['Account']['password2'])))))){
 						$section = "Cuenta";
 						$details = "Subsección: Cambio contraseña.";
 						$action = "Modificación";

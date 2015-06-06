@@ -146,11 +146,11 @@ class Persons extends CActiveRecord {
 	/*protected function beforeSave() {
 		$this->birth_date = DateTime::createFromFormat('d/m/Y', $this->birth_date)->format('Y-m-d');
 		return parent::beforeSave();
-	}*/
+	}
 
-	/*protected function afterFind() {
-		$this->birth_date = DateTime::createFromFormat('Y-m-d', $this->birth_date)->format('d/m/Y');
-		return parent::beforeSave();
+	protected function afterFind() {
+		$this->birth_date = DateTime::createFromFormat('Y-m-d H:i:s', $this->birth_date)->format('d/m/Y');
+		return parent::afterFind();
 	}*/
 
 

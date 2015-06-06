@@ -13,7 +13,11 @@ $this->menu=array(
 	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
-
-<h1>Crear Registro</h1>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
+<h3>Crear Registro de Tesis Dirigidas:</h3>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

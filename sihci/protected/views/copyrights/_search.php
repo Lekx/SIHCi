@@ -14,11 +14,9 @@
 	'enableAjaxValidation'=>true,
 	'method'=>'get',
 )); ?>
-	<div class="row">
-		
-		<legend>Búsqueda por:</legend>
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo')); ?>	
-		<?php echo CHtml::submitButton('Buscar'); ?>
+		<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-search"></i>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo','class'=>'searchcrud')); ?>	
 
 	</div>
 	 

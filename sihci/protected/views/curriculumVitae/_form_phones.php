@@ -208,6 +208,8 @@
 		 echo $form->textField($model,'extension',array('class'=>'phones extension','name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'[Ext]')); 
 		 echo $form->error($model,'extension'); 
 		 echo "<br>";
+		 echo "<br>";
+		 
 		echo "Marcar como primario ";
      echo $form->radioButton($model,'is_primary',array('name'=>'getIsPrimary[]', 'uncheckValue'=>'0', 'checked'=>$getPhones[$key]->is_primary)); 
       echo $form->error($model,'is_primary'); 

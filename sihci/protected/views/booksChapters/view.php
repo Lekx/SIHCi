@@ -12,11 +12,18 @@ $this->menu=array(
 	array('label'=>'Crear ', 'url'=>array('create')),
 );
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
+
 						
- <h1>Capítulos de libros</h1> 
+ <h3>Gestionar Registro de Capítulos de libros:</h3> 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
+		'isbn',
 		'chapter_title',
 		'book_title',
 		'publishing_year',
@@ -25,11 +32,14 @@ $this->menu=array(
 		'area',
 		'discipline',
 		'subdiscipline',
+		'keywords', 
 		 array(
 			'label'=>'Archivo',
 			'type'=>'raw',
 			'value'=>CHtml::link('Ver archivo',Yii::app()->baseUrl.$model->url_doc, array("target"=>"_blank")),
-			),  
+			), 
+
+        
 	),
 
 ));  ?>

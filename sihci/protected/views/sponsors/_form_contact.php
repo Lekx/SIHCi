@@ -32,8 +32,7 @@ $('.fType').on('change', function(e) {
 });
 
 });
-
-
+s
 </script>
 <div class="form">
 
@@ -107,7 +106,6 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 
 	<div class="row buttons">
 			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
-			
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 

@@ -17,12 +17,12 @@
 	'clientOptions'=>array('validateOnSubmit'=>true)
 )); ?>
 
-	<p class="note">Los campos <span class="required">*</span> son requeridos.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php // echo $form->errorSummary($model); ?>
 
 	
 	<div class="row">
+	 <span class="plain-select">
 		<?php $this->widget('ext.CountrySelectorWidget', 
 			array(
 				'value' => $model->country,
@@ -32,62 +32,70 @@
 				'firstEmpty' => true,
 				'firstText' => 'País',
 		)); ?>
+		</span>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'participation_type',
 			  	  array(
 					  		'Inventor'=>'Inventor',
 					  		'Coinventor'=>'Coinventor'	  	
 				  ),				  
-				  array('prompt'=>'Seleccionar participación')			  
+				  array('prompt'=>'Seleccionar participación', 'title'=>'Pariticipacíon')			  
 			 );
 	    ?>			
 		<?php echo $form->error($model,'participation_type'); ?>
+		</span>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150,'placeholder'=>'Nombre')); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150,'placeholder'=>'Nombre','title'=>'Nombre')); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row">
+	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'state',
 				array(
 						'En explotación comercial'=>'En explotación comercial',
 						'En trámite'=>'En trámite',
 						'Registrada'=>'Registrada'
 					 ),
-				array('prompt'=>'Seleccionar estado de la patente')
+				array('prompt'=>'Seleccionar estado de la patente','title'=>'Estado de Patente')
 			); 
 		?>
+		</span>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
 
 	<div class="row">
+	<span class="radiotext">Tipo de Aplicación</span>
 		<?php 
                 $status = array('No.Solicitud'=>'No.Solicitud', 'No.Registro'=>'No.Registro');
-                echo $form->radioButtonList($model,'application_type',$status,array('separator'=>' '));
+                echo $form->radioButtonList($model,'application_type',$status,array('separator'=>' ','labelOptions'=>array('style'=>'display:inline')));
         ?>
 		<?php echo $form->error($model,'application_type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud')); ?>
+		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud', 'title'=>'Numero de registro o de solicitud')); ?>
 		<?php echo $form->error($model,'application_number'); ?>
 	</div>
 
 	<div class="row">
+	<span class="plain-select">
 		<?php echo $form->dropDownList($model,'patent_type',
 			   array(
 						'Diseño industrial'=>'Diseño industrial',
 						'Modelo de utilidad'=>'Modelo de utilidad',
 						'Patente'=>'Patente'
 					),
-			   	array('prompt'=>'Seleccionar tipo de patente')
+			   	array('prompt'=>'Seleccionar tipo de patente','title'=>'Tipo de Patente')
 				); 
 		?>
+		</span>
 		<?php echo $form->error($model,'patent_type'); ?>
 	</div>
 
@@ -104,6 +112,7 @@
 			        	'maxlength' => '10', 
 			        	'readonly'=>true,
 			        	'placeholder'=>"Fecha de concesión",
+			        	'title'=>'Fecha de concesión',
 			    ),
 			));
 		?>
@@ -122,6 +131,7 @@
 			        	'maxlength' => '10', 
 			        	
 			        	'placeholder'=>"Fecha de presentación",
+			        	'title'=>'Fecha de presentación',
 			    ),
 			));
 		?>
@@ -129,38 +139,38 @@
 	</div>
 	
 	<div class="row">
-		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>150,'placeholder'=>'Expediente')); ?>
+		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>150,'placeholder'=>'Expediente', 'title'=>'Expediente')); ?>
 		<?php echo $form->error($model,'record'); ?>
 	</div>
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'international_clasification',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Clasificación internacional')); ?>
+		<?php echo $form->textField($model,'international_clasification',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Clasificación internacional','title'=>'Clasificación internacional')); ?>
 		<?php echo $form->error($model,'international_clasification'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Titulo')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Titulo','title'=>'Titulo')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'owner',array('size'=>60,'maxlength'=>150,'placeholder'=>'Propietario')); ?>
+		<?php echo $form->textField($model,'owner',array('size'=>60,'maxlength'=>150,'placeholder'=>'Propietario','title'=>'Propietario')); ?>
 		<?php echo $form->error($model,'owner'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen','title'=>'Resumen')); ?>
 		<?php echo $form->error($model,'resumen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'industrial_exploitation',array('placeholder'=>'Explatación industrial')); ?>
+		<?php echo $form->textField($model,'industrial_exploitation',array('placeholder'=>'Explatación industrial','title'=>'Explatación industrial')); ?>
 		<?php echo $form->error($model,'industrial_exploitation'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'resource_operator',array('size'=>60,'maxlength'=>150,'placeholder'=>'Quién lo explota')); ?>
+		<?php echo $form->textField($model,'resource_operator',array('size'=>60,'maxlength'=>150,'placeholder'=>'Quién lo explota', 'title'=>'Quién lo explota')); ?>
 		<?php echo $form->error($model,'resource_operator'); ?>
 	</div>
 	
@@ -174,23 +184,18 @@
 			                                      
 			                         if(data.status=="200")
 			                         {
-					                     alert("Registro realizado con éxito");
-					                     $("#patent-form")[0].reset();
-	   									 window.location.href ="'.Yii::app()->createUrl('patent/admin').'";
+					                     $(".successdiv").show();
+					           
 			                         }		                         
 			                         else
 			                         {
-				                     	alert("Complete los campos con *");   
+				                     	$(".errordiv").show();
 				                     }       
 			                  	}',                    
 			                    
-	                        )); 
+	                        ),array('class'=>'savebutton')); 
 	        ?>
-			<?php 
-				if($model->isNewRecord)
-				   echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-			?>
-           	<?php echo CHtml::link('Cancelar', array('/patent/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	        <?php echo CHtml::Button('Cancelar',array('submit' => array('patent/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 
        	</div>
