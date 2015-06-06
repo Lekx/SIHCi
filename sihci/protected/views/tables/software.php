@@ -52,7 +52,8 @@ function change(){
  }
 
 </script>
-<input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
+<h3>en construcción . . .</h3>
+<!-- <input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
 
 <select id="valueHospital" onchange="change()">
   <option value="total" selected="">Total de Hospitales</option>	
@@ -72,36 +73,36 @@ function change(){
   ?>
 
 </select>
-  <br><br>
+  <br><br> -->
 <?php 
 
-$this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'books-grid',
-	'dataProvider'=>$books,
-	 'ajaxUpdate' => true,
-	'filter' => null,
-	'columns'=>array(
-		 array('header'=>'Numero de Usuario',
-		 		'name'=>'id',
-                ),
-		  array('header'=>'Nombre de Usuario',
-		 		'name'=>'names',
-                ),
-		     array('header'=>'Título del Libro',
-		 		'name'=>'book_title',
-                ),
-		     array('header'=>'Publicación',
-		 		'name'=>'publisher',
-                ),
-		     array('header'=>'Fecha de Lanzamiento',
-		 		'name'=>'release_date',
-                ),
-		     array('header'=>'Unidad Hospitalaria',
-		 		'name'=>'hospital_unit',
-                ),
-		     array('header'=>'Fecha de Creación',
-		 		'name'=>'creation_date',
-                ),
-   	),
-)); ?>
+// $this->widget('zii.widgets.grid.CGridView', array(
+// 	'id'=>'books-grid',
+// 	'dataProvider'=>$softwares,
+// 	 'ajaxUpdate' => true,
+// 	'filter' => null,
+// 	'columns'=>array(
+// 		 array('header'=>'Numero de Usuario',
+// 		 		'name'=>'id',
+//                 ),
+// 		  array('header'=>'Nombre de Usuario',
+// 		 		'name'=>'names',
+//                 ),
+// 		  array('header'=>'Título',
+// 		 		'name'=>'title',
+//                 ),
+// 		     array('header'=>'País',
+// 		 		'name'=>'country',
+//                 ),
+// 		     array('header'=>'Organización',
+// 		 		'name'=>'organization',
+//                 ),
+// 		     array('header'=>'Unidad Hospitalaria',
+// 		 		'name'=>'hospital_unit',
+//                 ),
+// 		     array('header'=>'Fecha de Creación',
+// 		 		'name'=>'creation_date',
+//                 ),
+//    	),
+// )); ?>
 
