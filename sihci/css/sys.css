@@ -945,21 +945,25 @@ font-size: 1px !important;
 	font-family: 'Caviar_Dreams_Bold' !important;
 	width: 100% !important;
 	height: 50px !important;
-	padding:5px 18px 2px 9px !important;
+	padding:5px 1px 2px 9px !important;
+	padding-right: 50px !important;
 	font-size:  24.5px !important;
 }
 
 .searchcrud::-webkit-input-placeholder { /* WebKit browsers */
     color: #1EB9C0 !important;
     	padding:5px 18px 2px 9px !important;
+    	padding-right: 50px !important;
 }
 .searchcrud::-webkit-input-placeholder { /* navegadores Webkit */
     color:   #1EB9C0 !important;
     	padding:5px 18px 2px 9px !important;
+    	padding-right: 50px !important;
 }
 .searchcrud:-moz-placeholder { /* Mozilla Firefox 4 hasta 18 */
     color:    #1EB9C0 !important;
     	padding:5px 18px 2px 9px !important;
+    	padding-right: 50px !important;
 }
 .searchcrud::-moz-placeholder { /* Mozilla Firefox 19+ */
     color:    #1EB9C0 !important;
@@ -968,6 +972,7 @@ font-size: 1px !important;
 .searchcrud:-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #1EB9C0 !important;
     	padding:5px 18px 2px 9px !important;
+    	padding-right: 50px !important;
 }
 .items table tr
 {

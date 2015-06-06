@@ -111,26 +111,25 @@
             <div class="syscontent">
                 <div class="sysmenu">
                 <ul class="cvmenuitems">
-                   <?php
-        $this->beginWidget('zii.widgets.CPortlet', array(
-            'title'=>'Operations',
-        ));
-        $this->widget('zii.widgets.CMenu', array(
-            'items'=>$this->menu,
-            'htmlOptions'=>array('class'=>'operations'),
-        ));
-        $this->endWidget();
-    ?>
+                 <?php
+                 $this->beginWidget('zii.widgets.CPortlet', array(
+                    'title'=>'Operations',
+                    ));
+                 $this->widget('zii.widgets.CMenu', array(
+                    'items'=>$this->menu,
+                    'htmlOptions'=>array('class'=>'operations'),
+                    ));
+                 $this->endWidget();
+
+                 ?>
     </ul>
-                </div>
+            </div>
                 <div class="sysmaincontent">
                     <div class="syscont">
                         <div class="cvforms">
                             <?php echo $content; ?>
                         </div>
                     </div>
-       
-
             </div>
         </div>
         <div class="successdiv">
