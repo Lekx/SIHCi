@@ -62,15 +62,45 @@
         </script>
     </head>
     <body>
-    <?php
+        <?php
 
-                if(Yii::app()->user->type == 'moral')
-                        $infoUser = array("label"=>"Moral","icon"=>"PerfilEmpresa","cuentaicon"=>"CuentaEmpresa","controller"=>"sponsors/sponsorsInfo","MenuEmpresa"=>"Perfil Empresa", "proyectos"=>"Proyectos","Evaluacion"=>"Evaluación");
-                else if(Yii::app()->user->type == 'fisico')
-                        $infoUser = array("label"=>"Fisico","icon"=>"PCV-HC","cuentaicon"=>"Pcuenta","controller"=>"curriculumVitae/personalData","MenuEmpresa"=>"CV-HC","proyectos"=>"Proyectos","Evaluacion"=>"Evaluación CV");
-                else
-                        $infoUser = array("label"=>"Administrador","icon"=>"admin_icon","controller"=>"admin/users","MenuEmpresa"=>"Cuenta");
-    ?>
+        if(Yii::app()->user->type == 'moral')
+            $infoUser = array(
+                "label"=>"Moral",
+                "icon"=>"PerfilEmpresa",
+                "cuentaicon"=>"CuentaEmpresa",
+                "controller"=>"sponsors/sponsorsInfo",
+                "MenuEmpresa"=>"Perfil Empresa", 
+                "proyectos"=>"Proyectos",
+                "Evaluacion"=>"Evaluación",
+                "proyectosUrl"=>"sponsorShip/admin",
+
+                );
+        else if(Yii::app()->user->type == 'fisico')
+            $infoUser = array(
+                "label"=>"Fisico",
+                "icon"=>"PCV-HC",
+                "cuentaicon"=>"Pcuenta",
+                "controller"=>"curriculumVitae/personalData",
+                "MenuEmpresa"=>"CV-HC",
+                "proyectos"=>"Proyectos",
+                "Evaluacion"=>"Evaluación CV",
+                "proyectosUrl"=>"projects/admin",
+
+                );
+        else
+            $infoUser = array(
+               "label"=>"Administrador",
+               "icon"=>"PCV-HC",
+               "cuentaicon"=>"Pcuenta",
+               "controller"=>"curriculumVitae/personalData",
+               "MenuEmpresa"=>"CV-HC",
+               "proyectos"=>"Proyectos",
+               "Evaluacion"=>"Evaluación CV",
+               "proyectosUrl"=>"projects/admin",
+               
+               );
+               ?>
         <div class="main">
             <div class="sysheader">
                 <div class="headerconteiner1">
@@ -89,7 +119,7 @@
                 <span><?php echo $infoUser['Evaluacion']; ?></span>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array('site/index'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array($infoUser['proyectosUrl']));?>
                    <span><?php echo $infoUser['proyectos']; ?></span>
                 </div>
                 <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' >";  ?></div> 
