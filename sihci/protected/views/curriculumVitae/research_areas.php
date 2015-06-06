@@ -5,6 +5,9 @@
 $this->breadcrumbs=array(
 	'Líneas de Investigación'=>array('research_areas'),
 );
+$editUser = "";
+if(isset($_GET["ide"]))
+	$editUser = "?ide=".(int)$_GET["ide"];
 
 $this->menu=array(
 	array('label'=>'Datos Personales', 'url'=>array('curriculumVitae/personalData')),
