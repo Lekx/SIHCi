@@ -40,9 +40,15 @@ class CurriculumVitaeController extends Controller
 	}
 		//CV02-Modificar registro 
 	public function actionPersonalData(){
-		$model = Persons::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
-		$curriculum = Curriculum::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
-		$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/';
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$model = Persons::model()->findByAttributes(array('id_user' => $iduser));
+		$curriculum = Curriculum::model()->findByAttributes(array('id_user' => $iduser));
+		$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc/';
 			
 			$section = "Curriculum Vitae"; //manda parametros al controlador SystemLog
 			$details = "Subsección Datos Personales. Registro Número ".$model->id;
@@ -68,7 +74,7 @@ class CurriculumVitaeController extends Controller
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 			}
 
-			$curriculum->id_user= Yii::app()->user->id;
+			$curriculum->id_user= $iduser;
 			$curriculum->id_actual_address= $addresses->id;
 			$curriculum->native_country = $model->country;
 			$curriculum->SNI = -1;
@@ -120,8 +126,13 @@ class CurriculumVitaeController extends Controller
 	}
 
 	public function actionDocsIdentity(){
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
 		
-		$curriculum=Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+		$curriculum=Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$getDocs = DocsIdentity::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
 		
 		$DocExist = DocsIdentity::model()->findAllByAttributes(array('id_curriculum' => $curriculum->id));
@@ -142,7 +153,7 @@ class CurriculumVitaeController extends Controller
 		if(isset($_POST['Acta']))
 		{
 
-			$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/cve-hc/';
+			$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc/';
 			$path2 = '/users/'.Yii::app()->user->id.'/cve-hc/';
 			
 			if (!is_dir($path)) {
@@ -288,7 +299,12 @@ class CurriculumVitaeController extends Controller
 
 	public function actionAddresses(){
 
-		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$model = $curriculum->idActualAddress;
 		if ($model->country=="null") {
 				$model->country="";
@@ -348,7 +364,13 @@ class CurriculumVitaeController extends Controller
 	}
 
 	public function actionJobs(){
-		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$jobs = Jobs::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
 		$model=new Jobs;
 
@@ -388,7 +410,13 @@ class CurriculumVitaeController extends Controller
 	}
 
 	public function actionResearchAreas(){
-		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$researchAreas = ResearchAreas::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
 		$getResearch = ResearchAreas::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
 		$model=new ResearchAreas;
@@ -431,7 +459,13 @@ class CurriculumVitaeController extends Controller
 	}
 
 	public function actionPhones(){
-		$person = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$person = Persons::model()->findByAttributes(array('id_user'=>$iduser));
 		$phones = Phones::model()->findByAttributes(array('id_person' => $person->id));
 
 		$model=new Phones;
@@ -527,7 +561,13 @@ class CurriculumVitaeController extends Controller
 	}
 
 	public function actionGrades(){
-		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$grade = Grades::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
 		$getGrades = Grades::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
 		$model=new Grades;
@@ -606,7 +646,13 @@ class CurriculumVitaeController extends Controller
 
 
 	public function actionCommission(){
-		$commission = Curriculum::model()->findByAttributes(array('id_user' => Yii::app()->user->id));
+
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+		$commission = Curriculum::model()->findByAttributes(array('id_user' => $iduser));
 		$model=new Curriculum;
 
      	$section = "Curriculum Vitae."; //manda parametros al controlador SystemLog

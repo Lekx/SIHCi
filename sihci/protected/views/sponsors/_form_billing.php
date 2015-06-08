@@ -61,23 +61,6 @@ $(document).ready(function(){
 </span>
 </div>
 
-
-		          <?php /*
-$this->widget(
-	'yiiwheels.widgets.formhelpers.WhCountries',
-	array(
-		'name' => 'Addresses[country]',
-		'id' => 'Addresses_country',
-		//'value' => 'MX',
-		'useHelperSelectBox' => true,
-		'pluginOptions' => array(
-			'country' => 'MX',
-			'language' => 'es_ES',
-			'flags' => true,
-		),
-	)
-);*/
-?>
 <div class="row">
 		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal','title' => 'Código Postal', 'class' => 'numericOnly'));?>
 		<?php echo $form->error($modelAddresses, 'zip_code');?>

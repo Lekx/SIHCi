@@ -51,14 +51,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'sponsor_name',
 		'type',
 		'website',
-		/*
-		'sector',
-		'class',
-		'branch',
-		'main_activity',
-		'legal_structure',
-		'employeess_number',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),
