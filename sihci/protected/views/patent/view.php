@@ -8,11 +8,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
 	array('label'=>'Crear', 'url'=>array('create')),
-	//array('label'=>'Desplegar', 'url'=>array('index')),
-	//array('label'=>'Modificar', 'url'=>array('update', 'id'=>$model->id)),
-	//array('label'=>'Eliminar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta usted seguro de eliminar este registro?')),
 );
 ?>
 <div class="cvtitle">

@@ -5,7 +5,7 @@ $(document).ready(function() {
         $('.errordiv').hide();
         $('.abortdiv').hide();*/
         window.location = yii.urls.back;
-    
+
     });
     $('.errorbut').click(function() {
         $('.cleandiv').hide();
@@ -27,6 +27,7 @@ $(document).ready(function() {
         $('.cleanbutton').val('Borrar');
         $('#cancelar').val('Cancelar');
         $('[id^= SponsorBilling]').val('');
-    
+
     });
+
 });

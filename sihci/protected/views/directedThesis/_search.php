@@ -12,10 +12,10 @@
 )); ?>
 
 
-	<div class="row">
-		
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo, Autor, Grado, Organización y Sector','class'=>'searchcrud')); ?>	
-		<?php echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
+<div class="inner-addon right-addon">
+                     <i class="glyphicon glyphicon-search"></i>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo, Autor, Grado, Organización y Sector','class'=>'searchcrud')); ?>
+		<?php //echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

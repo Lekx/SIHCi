@@ -3,7 +3,7 @@
 /* @var $model Books */
 /* @var $form CActiveForm */
 $cs = Yii::app()->getClientScript();
- $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -16,6 +16,7 @@ $(document).ready(function() {
         if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
             e.preventDefault();
         }
+
     });
 });
 </script>
@@ -36,28 +37,28 @@ $(document).ready(function() {
 
 
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','class' => 'numericOnly','title'=>'ISBN')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100 , 'placeholder'=>'Título del libro','title'=>'Título del libro')); ?>
 		<?php echo $form->error($model,'book_title'); ?>
 	</div>
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->textField($model,'publisher',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Editorial','title'=>'Editorial')); ?>
 		<?php echo $form->error($model,'publisher'); ?>
 	</div>
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','class' => 'numericOnly','title'=>'Edición')); ?>
 		<?php echo $form->error($model,'edition'); ?>
 	</div>
 
-<div class="row">	
-<span class="plain-select">	
+<div class="row">
+<span class="plain-select">
 		<?php echo $form->dropDownList($model,'release_date',array('prompt'=>'Seleccionar año de publicación',
 		  		    '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
 					'1934'=>'1934','1935'=>'1935','1936'=>'1936','1937'=>'1937',
@@ -81,29 +82,29 @@ $(document).ready(function() {
 					'2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
 					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
 					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
-					'2015'=>'2015'),array('title'=>'ISBN'));  
+					'2015'=>'2015'),array('title'=>'ISBN'));
 		?>
 </span>
 		<?php echo $form->error($model,'release_date'); ?>
 	</div>
 
-	
-	<div class="row">		
+
+	<div class="row">
 		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','class' => 'numericOnly','title'=>'Volumen') ); ?>
 		<?php echo $form->error($model,'volume'); ?>
 	</div>
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','class' => 'numericOnly','title'=>'Número de páginas')); ?>
 		<?php echo $form->error($model,'pages'); ?>
 	</div>
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','class' => 'numericOnly','title'=>'Tiraje')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 
-	<div class="row">	
+	<div class="row">
 	<span class="plain-select">
 		<?php echo $form->dropDownList($model,'work_type',array(
 						'Publicado'=>'Publicado',
@@ -118,7 +119,7 @@ $(document).ready(function() {
 	</div>
 
 <div class="row">
-<span class="plain-select">		
+<span class="plain-select">
 		<?php echo $form->dropDownList($model,'idioma',array(
 					'Albanés'=>'Albanés',
 					'Alemán'=>'Alemán',
@@ -142,7 +143,7 @@ $(document).ready(function() {
 					'Esloveniano'=>'Esloveniano',
 					'Español'=>'Español',
 					'Esperanto'=>'Esperanto',
-					'Estoniano' =>'Estoniano',	
+					'Estoniano' =>'Estoniano',
 					'Faroese'=>'Faroese',
 					'Farsi'=>'Farsi',
 					'Finlandés'=>'Finlandés',
@@ -154,7 +155,7 @@ $(document).ready(function() {
 					'Hebreo'=>'Hebreo',
 					'Hindi'=>'Hindi',
 					'Holandés'=>'Holandés',
-					'Hungaro' =>'Hungaro' ,	
+					'Hungaro' =>'Hungaro' ,
 					'Inglés'=>'Inglés',
 					'Indonesio'=>'Indonesio',
 					'Inuktitut (Eskimo)'=>'Inuktitut (Eskimo)',
@@ -162,7 +163,7 @@ $(document).ready(function() {
 					'Italiano'=>'Italiano',
 					'Japonés'=>'Japonés',
 					'Khmer'=>'Khmer',
-					'Kurdo'=>'Kurdo',	
+					'Kurdo'=>'Kurdo',
 					'Lao'=>'Lao',
 					'Laponico'=>'Laponico',
 					'Latviano'=>'Latviano',
@@ -176,7 +177,7 @@ $(document).ready(function() {
 					'Polaco'=>'Polaco',
 					'Portugués'=>'Portugués',
 					'Rumano'=>'Rumano',
-					'Ruso' =>'Ruso',	
+					'Ruso' =>'Ruso',
 					'Serbio'=>'Serbio',
 					'Somali'=>'Somali',
 					'Suahili'=>'Suahili',
@@ -196,7 +197,7 @@ $(document).ready(function() {
 					'Vasco'=>'Vasco',
 					'Vietnamés'=>'Vietnamés'),
 					array('prompt'=>'Seleccionar idioma del libro','title'=>'Idioma')
-                ); 
+                );
 		?>
 		</span>
 		<?php echo $form->error($model,'idioma'); ?>
@@ -204,13 +205,13 @@ $(document).ready(function() {
 
 	<div class="row">
 	<span class="radiotext">Tipo de traductor: </span>
-		<?php $status = array('Traductor'=>'Traductor', 'Co-Traductor'=>'Co-Traductor'); 
+		<?php $status = array('Traductor'=>'Traductor', 'Co-Traductor'=>'Co-Traductor');
 		      echo $form->RadioButtonList($model,'traductor_type' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'traductor_type'); ?>
 
 	</div>
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->textField($model,'traductor',array('size'=>60,'maxlength'=>80, 'placeholder'=>'Nombre del traducctor','title'=>'Nombre del traductor')); ?>
 		<?php echo $form->error($model,'traductor'); ?>
 	</div>
@@ -472,26 +473,26 @@ $(document).ready(function() {
                     'PSICOLOGIA FORENSE'=>'PSICOLOGIA FORENSE','INTERACCION DE GRUPOS'=>'INTERACCION DE GRUPOS','PROCESOS DE GRUPO'=>'PROCESOS DE GRUPO','LIDERAZGO'=>'LIDERAZGO','MERCADEO'=>'MERCADEO','COMPORTAMIENTO POLITICO'=>'COMPORTAMIENTO POLITICO','OPINION PUBLICA'=>'OPINION PUBLICA','COMPORTAMIENTO SEGUN LA FUNCION'=>'COMPORTAMIENTO SEGUN LA FUNCION','PERCEPCIONES Y MOVIMIENTOS SOCIALES'=>'PERCEPCIONES Y MOVIMIENTOS SOCIALES','COMUNICACION SIMBOLICA'=>'COMUNICACION SIMBOLICA','PSICOLOGIA DE LA INGENIERIA'=>'PSICOLOGIA DE LA INGENIERIA','PSICOLOGIA DEL DEPORTE'=>'PSICOLOGIA DEL DEPORTE','OTROS'=>'OTROS','DISEÑO ARQUITECTONICO'=>'DISEÑO ARQUITECTONICO','PARQUES Y JARDINES'=>'PARQUES Y JARDINES','URBANISMO'=>'URBANISMO','EJECUCION DE LA OBRA'=>'EJECUCION DE LA OBRA','OTROS'=>'OTROS','CRITICA DE TEXTOS'=>'CRITICA DE TEXTOS','ANALISIS LITERARIO'=>'ANALISIS LITERARIO','ESTILO Y ESTETICA LITERARIOS'=>'ESTILO Y ESTETICA LITERARIOS',
                     'VOCABULARIO LITERARIO'=>'VOCABULARIO LITERARIO','RETORICA'=>'RETORICA','OTROS'=>'OTROS','CINEMATOGRAFIA'=>'CINEMATOGRAFIA','DANZA'=>'DANZA','COREOGRAFIA'=>'COREOGRAFIA','ARTES DECORATIVAS'=>'ARTES DECORATIVAS','DIBUJO'=>'DIBUJO','GRABADO'=>'GRABADO','ESTETICA DE LAS BELLAS ARTES'=>'ESTETICA DE LAS BELLAS ARTES','MUSICA'=>'MUSICA','MUSICOLOGIA'=>'MUSICOLOGIA','PINTURA'=>'PINTURA','FOTOGRAFIA'=>'FOTOGRAFIA','ESCULTURA'=>'ESCULTURA','TEATRO'=>'TEATRO','OTROS'=>'OTROS','EVOLUCION CULTURAL'=>'EVOLUCION CULTURAL','RELACIONES CULTURALES'=>'RELACIONES CULTURALES','FOLKLORE'=>'FOLKLORE','RELACIONES INTERETNICAS'=>'RELACIONES INTERETNICAS','IDIOMA Y CULTURA'=>'IDIOMA Y CULTURA','CARACTERISTICAS Y CIVILIZACION NACIONALES'=>'CARACTERISTICAS Y CIVILIZACION NACIONALES','SOCIOLOGIA DEL ARTE'=>'SOCIOLOGIA DEL ARTE','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','SOCIOLOGIA DE LA LITERATURA'=>'SOCIOLOGIA DE LA LITERATURA',
                     'SOCIOLOGIA DE LA RELIGION'=>'SOCIOLOGIA DE LA RELIGION','OTROS'=>'OTROS','ACOPIO DE DATOS SOBRE EL TERRENO'=>'ACOPIO DE DATOS SOBRE EL TERRENO','PSICOLOGIA SOCIAL'=>'PSICOLOGIA SOCIAL','DISEÑO DE ENCUESTAS SOCIOLOGICAS'=>'DISEÑO DE ENCUESTAS SOCIOLOGICAS','METODOS DE LAS ENCUESTAS SOCIOLOGICAS'=>'METODOS DE LAS ENCUESTAS SOCIOLOGICAS','OTROS'=>'OTROS','SOCIOLOGIA COMPARADA'=>'SOCIOLOGIA COMPARADA','SOCIOLOGIA HISTORICA'=>'SOCIOLOGIA HISTORICA','METODOLOGIA'=>'METODOLOGIA','SOCIOGRAFIA'=>'SOCIOGRAFIA','TEORIA'=>'TEORIA','OTROS'=>'OTROS','CONFLICTOS'=>'CONFLICTOS','SOLUCION DE CONFLICTOS'=>'SOLUCION DE CONFLICTOS','GUERRA Y PAZ'=>'GUERRA Y PAZ','OTROS'=>'OTROS','MEDICION Y CONSTRUCCION DE INDICES'=>'MEDICION Y CONSTRUCCION DE INDICES','CONSTRUCCION DE MODELOS'=>'CONSTRUCCION DE MODELOS',', ANALISIS ESTADISTICO'=>', ANALISIS ESTADISTICO','OTROS'=>'OTROS','BUROCRACIA'=>'BUROCRACIA','SOCIOLOGIA DE LA ENSEÑANZA'=>'SOCIOLOGIA DE LA ENSEÑANZA',
-                    'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'), 
+                    'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),
                      array('prompt'=>'Seleccionar subdisciplina','title'=>'Subdisciplina'));
 		?>
 		</span>
 		<?php echo $form->error($model,'subdiscipline'); ?>
 	</div>
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
-	<div class="row">		
+	<div class="row">
 		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Palabras claves','title'=>'Palabras Clave')); ?>
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
-    <div class="authorsRegistry ">    		 
+    <div class="authorsRegistry ">
 	   <?php  echo "<input type='hidden' name='idsBooks[]'>"; ?>
-		   
+
 		   <hr>
 		   <div class="row">
 			  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)')); ?>
@@ -502,35 +503,35 @@ $(document).ready(function() {
 			  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name1'); ?>
 		  </div>
-		  
+
 		   <div class="row">
 			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
 	       </div>
 		  <div class="row">
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición','title'=>'Posición')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'Posición','title'=>'Posición')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
 		  <hr>
-   	</div> 	
-    	   
+   	</div>
+
     	   	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
  			'addButtonLabel'=>'Agregar nuevo autor',
-		 )); 
-    ?> 
-	<?php 
-		if(!$model->isNewRecord)		  
-		  foreach ($modelAuthors as $key => $value) 
+		 ));
+    ?>
+	<?php
+		if(!$model->isNewRecord)
+		  foreach ($modelAuthors as $key => $value)
 		  { ?>
-		  	  
+
 				  <?php echo "<input type='hidden' value='".$value->id."' name='idsBooks[]'>"; ?>
-				  
-				  <div class="row">	
+
+				  <div class="row">
 					  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)')); ?>
 					  <?php echo $form->error($value,'names');?>
 				  </div>
-				  
+
 				  <div class="row">
 					   <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
 					  <?php echo $form->error($value,'last_name1'); ?>
@@ -542,12 +543,12 @@ $(document).ready(function() {
 				  </div>
 
 				  <div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición','title'=>'Posición')); ?>
+					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
 	<?php } ?>
-	
-	<div class="row buttons">		
+
+	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('books/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 

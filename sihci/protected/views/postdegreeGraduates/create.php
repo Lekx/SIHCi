@@ -6,8 +6,8 @@ $this->breadcrumbs=array(
 	'Postdegree Graduates'=>array('index'),
 	'Create',
 );
-
 $this->menu=array(
+	array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
 	array('label'=>'Crear', 'url'=>array('create')),
 );
