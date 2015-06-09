@@ -49,7 +49,6 @@ class ChartsController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-
 	//GR01-Total Ingreso de Investigadores 
 	public function actionTotalRegisteredResearchesIo()
 	{
@@ -74,12 +73,22 @@ class ChartsController extends Controller
             $years[$value["year"]] = $value["year"];
 
 	
-		$results = $conexion->createCommand("
+		/*$results = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
 		WHERE type = 'fisico'
 		GROUP BY MONTH(creation_date);
+		")->queryAll();*/
+
+		$results = $conexion->createCommand("
+		SELECT  MONTH(creation_date) as month, COUNT(IF(hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS JIM,
+		MONTH(creation_date) as months,COUNT(IF(hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS FAA
+		FROM jobs
+		GROUP BY month,months;
 		")->queryAll();
+		echo "<pre>";
+		print_r($results);
+		echo "</pre>";
 
 		$resultsResearchersdown = $conexion->createCommand("
 		SELECT  u.id, COUNT(c.status) as total, MONTH(u.creation_date) AS month 
@@ -91,13 +100,13 @@ class ChartsController extends Controller
 
 		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-		foreach($results as $key => $values){
-    		$data[$months[$values["month"]]] = intval($values["total"]);
-		}
+        foreach($results as $key => $values){
+            $data[$months[$values["month"]]] = intval($values["JIM"]);
+        }
 
-		foreach($resultsResearchersdown as $key => $values){
-    		$data2[$months[$values["month"]]] = intval($values["total"]);
-		}
+        foreach($resultsResearchersdown as $key => $values){
+            $data2[$months[$values["month"]]] = intval($values["total"]);
+        }
 
 		$this->render('index',array(
 			'results'=>$data,
