@@ -83,7 +83,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <h6><?php echo CHtml::link('CVE-HC', array('site/index'));?></h6>
+                                <h6><?php echo CHtml::link('CVE-HC', array('cveHc/cveHcPublics'));?></h6>
                                 <ul class="cbp-hssubmenu1">
                                 </ul>
                             </li>
@@ -108,7 +108,7 @@
                                         <span><h6>Centro de Investigación Clínica</h6></span>
                                         <ul class="cbp-hssubmenu1">
                                             <li><?php echo CHtml::link('Lineas de investigación', array('displayInvestigationLines/index'));?></li>
-                                            <li><?php echo CHtml::link('Protocolos patrocinados por la industria Farmacéutica', array('Site/index'));?></li>
+                                            <li><?php echo CHtml::link('Protocolos patrocinados por la industria Farmacéutica', array('sponsoredProjects/sponsoredProjectsV'));?></li>
                                             <li><?php echo CHtml::link('Living Labs-Salud', array('livingLabsSalud/index'));?></li>
                                         </ul>
                                     </li>
@@ -200,7 +200,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <h6><?php echo CHtml::link('CVE-HC', array('site/index'));?></h6>
+                                        <h6><?php echo CHtml::link('CVE-HC', array('cveHc/cveHcPublics'));?></h6>
                                         <ul class="cbp-hssubmenu1">
                                         </ul>
                                     </li>
@@ -221,7 +221,7 @@
                                                 <span><h6>Centro de Investigación Clínica</h6></span>
                                                 <ul class="cbp-hssubmenu1">
                                                     <li><?php echo CHtml::link('Lineas de investigación', array('displayInvestigationLines/index'));?></li>
-                                                    <li><?php echo CHtml::link('Protocolos patrocinados por la industria Farmacéutica', array('Site/index'));?></li>
+                                                    <li><?php echo CHtml::link('Protocolos patrocinados por la industria Farmacéutica', array('sponsoredProjects/sponsoredProjectsV'));?></li>
                                                     <li><?php echo CHtml::link('Living Labs-Salud', array('livingLabsSalud/index'));?></li>
                                                 </ul>
                                             </li>
@@ -426,7 +426,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <h6><?php echo CHtml::link('CVE-HC', array('site/index'));?></h6>
+                                            <h6><?php echo CHtml::link('CVE-HC', array('cveHc/cveHcPublics'));?></h6>
                                             <ul class="cbp-hssubmenu">
                                             </ul>
                                         </li>
@@ -451,7 +451,7 @@
                                                     <span><h6>Centro de Investigación Clínica</h6></span>
                                                     <ul class="cbp-hssubmenu">
                                                         <li><?php echo CHtml::link('Lineas de investigación', array('displayInvestigationLines/index'));?></li>
-                                                        <li><?php echo CHtml::link('Protocolos patrocinados por la industrias Farmacéutica', array('Site/index'));?></li>
+                                                        <li><?php echo CHtml::link('Protocolos patrocinados por la industrias Farmacéutica', array('sponsoredProjects/sponsoredProjectsV'));?></li>
                                                         <li><?php echo CHtml::link('Living Labs-Salud', array('livingLabsSalud/index'));?></li>
                                                     </ul>
                                                 </li>

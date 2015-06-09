@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	//array('label'=>'Desplear', 'url'=>array('index')),
+	array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
 	array('label'=>'Crear', 'url'=>array('create')),
 );
