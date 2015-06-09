@@ -48,12 +48,12 @@ input, select
     flex-direction: row;
 
      -webkit-flex: 1 1 auto;
-   
+
 
 }
 .headerconteiner1
 {
-	background: #ffffff; 
+	background: #ffffff;
 	width: 38%;
 	height: 100px;
 }
@@ -71,46 +71,46 @@ input, select
 	width: 12%;
 	height: 195px;
 }
-.headerconteinerF #perfil 
+.headerconteinerF #perfil
 {
 	width: 100%;
 	height: 100%;
 }
 .headerconteiner2
 {
-	
+
 	background: #F1F2F2;
 	height: 25px;
 	margin-top: -95px;
 	width: 88%;
-	
+
 }
 .headerconteiner3
 {
-	
+
 	background: #0E3152;
 	height: 25px;
 	margin-top: -70px;
 	width: 88%;
-	
+
 }
 .headerconteiner4
 {
-	
+
 	background: #00B9C0;
 	height: 45px;
 	margin-top: -45px;
 	width: 20%;
-	
+
 }
 .headerconteiner5
 {
-	
+
 	background: #798B9D;
 	height: 45px;
 	margin-top: -45px;
 	width: 68%;
-	
+
 }
 .syscontent
 {
@@ -185,20 +185,20 @@ input, select
     height:10px;
     position: absolute;
     left:15%;
-    
+
 }
 .headerconteiner5 h4
-{ 
+{
 	 display: inline-block;
 	 color :white;
-	 font-family: 'Caviar_Dreams'; 
+	 font-family: 'Caviar_Dreams';
 	 padding-left: 8%;
 }
 .headerconteiner5 h5
-{ 
+{
 	 display: inline-block;
 	 color :white;
-	 font-family: 'Caviar_Dreams'; 
+	 font-family: 'Caviar_Dreams';
 	 margin-left: 40%;
 }
 .cvmenuitems
@@ -263,7 +263,7 @@ input, select
 	height: 100%;
 	background-color: #1EB9C0;
 	border-right: 1px solid #ffffff;
-	
+
 }
 .footermenuI.logout
 {
@@ -294,15 +294,15 @@ input, select
 }
 .cvforms h4
 {
-  margin-top: 20px;	
+  margin-top: 20px;
 }
 .cvtitle
 {
 	margin-top: 50px;
 	margin-left: -140px;
-	font-family: 'Caviar_Dreams_Bold';	
+	font-family: 'Caviar_Dreams_Bold';
 }
-.cvtitle h1 
+.cvtitle h1
 {
 	margin-left: 30px;
 	display: inline-block;
@@ -313,17 +313,17 @@ input, select
 	margin-left: 30px;
 	padding-bottom: 30px;
 }
-.cvtitle hr 
-{ 
+.cvtitle hr
+{
 	margin-left:  140px;
 	margin-top: -20px;
 	margin-bottom: 0;
-	width:  60% !important;  
-	border-bottom: 2px solid #1EB9C0; 
+	width:  60% !important;
+	border-bottom: 2px solid #1EB9C0;
 }
 .cvforms hr
 {
-		width:  71%; 
+		width:  71%;
 }
 
 /* All Inputs Style */
@@ -349,7 +349,7 @@ input[type="radio"]
 	margin-left: 5px;
 }
 
-.cvforms input[type="text"], .cvforms input[type="password"], 
+.cvforms input[type="text"], .cvforms input[type="password"],
 .cvforms input[type="file"]
 {
 	box-sizing: border-box;
@@ -377,7 +377,7 @@ input[type="radio"]
     -o-border-radius: 4px;
     border-radius: 4px;
     display: inline-block;
-	
+
 }
 .cvforms textarea
 {
@@ -408,14 +408,14 @@ input[type="radio"]
     -o-border-radius: 4px;
     border-radius: 4px;
     display: inline-block;
-	
+
 }
 .question p
 {
 	width: 450px;
 	margin: 5px;
 }
-.cvforms select 
+.cvforms select
 {
 	box-sizing: border-box;
 	height: 25px !important;
@@ -442,7 +442,7 @@ input[type="radio"]
     -o-border-radius: 4px;
     border-radius: 4px;
     display: block;
-	
+
 }
 .cvforms input[type="file"]
 {
@@ -454,12 +454,12 @@ input[type="radio"]
 	box-sizing: border-box;
 	content: 'Selecionar Archivo';
 	font-size: 12px;
-	
+
 }
 .cvforms input[type="file"]::-webkit-file-upload-button {
 	visibility:  hidden;
 	padding-top: 10px;
-	
+
 }
 .savebutton
 {
@@ -495,7 +495,7 @@ input::-webkit-input-placeholder { /* WebKit browsers */
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #1EB9C0 !important;
 }
-.ui-datepicker 
+.ui-datepicker
 {
 	width: 450px !important;
 }
@@ -516,7 +516,7 @@ thead th
 }
 .infobox
 {
-	
+
 	width: 190px;
 	height: 35px;
 	color: white;
@@ -529,7 +529,7 @@ thead th
 .errorMessage
 {
 	display: inline-block;
-	border-radius: 5px; 
+	border-radius: 5px;
 	border: 2px solid #F20862;
 	background: #F20862;
 	color: #fff;
@@ -552,7 +552,7 @@ thead th
 	opacity: .6;
 }
 .phones
-{ 
+{
 	display: inline-block !important;
 
 }
@@ -593,7 +593,7 @@ thead th
  	background: rgba(40, 50, 90, .70);
  	z-index: 900;
  	font-family: 'Caviar_Dreams_Bold';
-	
+
 }
 .backcontainer h2{ color: #1EB9C0; }
 
@@ -609,7 +609,7 @@ thead th
 }
 .susses , .errorh2 , .successh2{ padding-top: 50px; text-align: center; }
 
-.susses hr , .errorh2 hr , .successh2 hr 
+.susses hr , .errorh2 hr , .successh2 hr
 {
 
 	border-bottom: 2px solid black;
@@ -672,18 +672,26 @@ thead th
 }
 .infoAccount h5
 {
- 	color: #00B9C0; 
+ 	color: #00B9C0;
 }
-.portlet 
+.portlet
 {
   width: 100% !important;
   font-family: 'Caviar_Dreams' !important;
-	
+  color: #1EB9C0 !important;
+
+
+}
+font-size: 1px !important;
+}
+.operations li a:visited, .operations li  a:hover
+{
+	  color: #1EB9C0 !important;
 }
 .portlet ul li a
 {
 	font-family: 'Caviar_Dreams' !important;
-	font-size: 15px !important;
+	font-size: 10pt !important;
 	padding-left: 0px !important;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -691,7 +699,7 @@ thead th
 .portlet ul li a:hover
 {
 	font-family: 'Caviar_Dreams' !important;
-	font-size: 15px !important;
+	font-size: 10pt !important;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	background: 0;
@@ -699,14 +707,14 @@ thead th
 .portlet hr
 {
 	font-family: 'Caviar_Dreams' !important;
-    border-bottom: 1px solid #0A3250;
+    border-bottom: 1px solid #1EB9C0;
 	width: 100%;
-	
+
 }
-.addSomething , .deleteSomething, 
-#showFormPhone, #showFormEmail , 
+.addSomething , .deleteSomething,
+#showFormPhone, #showFormEmail ,
 #btnCreateEmail , #btnCreatePhone
-,#hideFormEmail , #hideFormPhone 
+,#hideFormEmail , #hideFormPhone
 ,#showFormGrade , #hideFormGrade,
 #btnCreateGrade , .deleteSomething
 {
@@ -724,7 +732,7 @@ thead th
 	color: white;
 	text-decoration: none;
 }
-.cancelSomething 
+.cancelSomething
 {
 	display: none;
 	width: 450px !important;
@@ -753,7 +761,7 @@ thead th
 {
 	margin-bottom: 30px;
 }
-.acountcont a 
+.acountcont a
 {
 	color: white;
 	margin-top: 25px;
@@ -770,11 +778,11 @@ thead th
 {
 	margin-bottom: 25px;
 }
-.portlet ul 
+.portlet ul
 {
 	width: 200px;
 }
-.sysmenu ul , .sysmenu ol 
+.sysmenu ul , .sysmenu ol
 {
   padding: 0;
 }
@@ -854,7 +862,7 @@ thead th
 }
 .filepicker.selected {
   background: #CDF1F3;
-  color: #0E3152; 
+  color: #0E3152;
 }
 .filepicker:hover {
   background:#0E3152;
@@ -879,7 +887,7 @@ thead th
     border-radius:4px;
     padding:2px 18px 2px 3px;
 
- 
+
 }
 .slideThree:after {
   content: 'Inactivo';
@@ -895,7 +903,7 @@ thead th
   position: absolute;
   left: 20px;
   z-index: 0;
-  
+
   }
 .slideThree label {
 
@@ -929,13 +937,42 @@ thead th
 
 }
 /* end .slideThree */
+
 .searchcrud
 {
 	width: 100% !important;
 	height: 50px !important;
-	font-family: 'Caviar_Dreams' !important;
+	font-family: 'Caviar_Dreams_Bold' !important;
 	width: 100% !important;
 	height: 50px !important;
+	padding:5px 1px 2px 9px !important;
+	padding-right: 50px !important;
+	font-size:  24.5px !important;
+}
+
+.searchcrud::-webkit-input-placeholder { /* WebKit browsers */
+    color: #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+    	padding-right: 50px !important;
+}
+.searchcrud::-webkit-input-placeholder { /* navegadores Webkit */
+    color:   #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+    	padding-right: 50px !important;
+}
+.searchcrud:-moz-placeholder { /* Mozilla Firefox 4 hasta 18 */
+    color:    #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+    	padding-right: 50px !important;
+}
+.searchcrud::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+}
+.searchcrud:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #1EB9C0 !important;
+    	padding:5px 18px 2px 9px !important;
+    	padding-right: 50px !important;
 }
 .items table tr
 {
@@ -962,7 +999,7 @@ thead th
 	padding: 3px !important;
 	border: none !important;
 	height: 30px !important;
-	font-size: 1.1em !important; 
+	font-size: 1.1em !important;
 	min-width: 100px !important;
 	margin-left: 30px !important;
 }
@@ -985,8 +1022,8 @@ thead th
 	width: 50px !important;
 	height: 50px !important;
 	border-radius: 4px;
-	-moz-border-radius: 4px; 
-    -webkit-border-radius:4px; 
+	-moz-border-radius: 4px;
+    -webkit-border-radius:4px;
 	background-color: #CDF1F3;
 }
 table.detail-view
@@ -994,19 +1031,21 @@ table.detail-view
 	margin-top: 50px !important;
 	margin-bottom: 50px !important;
 	font-family: 'Caviar_Dreams' !important;
+	text-align: justify !important;
 
 }
-table.detail-view th
+table.detail-view th , table.detail-view  td
 {
 	text-align: left !important;
 	background-color: white;
 	font-family: 'Caviar_Dreams' !important;
+		text-align: justify !important;
 }
 .row , .row1
 {
 	margin: 15px !important;
 }
-.dFieldT , .dFieldC , .dFieldE 
+.dFieldT , .dFieldC , .dFieldE
 {
 	margin-top: 10px !important;
 }
@@ -1024,9 +1063,10 @@ table.detail-view th
 {	font-family: 'Caviar_Dreams' !important;
 	width: 250px;
 }
-.grid-view .button-column 
+.grid-view .button-column
 {
    width: 10% !important;
+   min-width: 100px !important;
 }
 .detail-view th
 {
@@ -1037,14 +1077,14 @@ table.detail-view th
 {
 	font-family: 'Caviar_Dreams';
 }
-.items td th 
+.items td th
 {
 	font-family: 'Caviar_Dreams';
 }
 
-.inner-addon { 
+.inner-addon {
 
-    position: relative; 
+    position: relative;
 	width: 100% !important;
 	height: 50px !important;
 	display: block !important;
@@ -1067,3 +1107,7 @@ table.detail-view th
 
 /* add padding  */
 
+#infojus
+{
+	text-align: justify !important;
+}

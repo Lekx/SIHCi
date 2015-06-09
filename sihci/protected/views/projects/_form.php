@@ -2,10 +2,6 @@
 /* @var $this ProjectsController */
 /* @var $model Projects */
 /* @var $form CActiveForm */
-$this->menu=array(
-	array('label'=>'List Jobs', 'url'=>array('index')),
-	array('label'=>'Manage Jobs', 'url'=>array('admin')),
-);
 ?>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -56,7 +52,7 @@ $('<div></div>').appendTo('form')
 		//alert("ouch, you fucked me bby! "+section);
 		$("#section"+section).show();
 	}
-</script>>
+</script>
 
 <div class="form">
 

@@ -6,7 +6,7 @@ class SponsoredProjectsController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/system', meaning
 	 * using two-column layout. See 'protected/views/layouts/system.php'.
 	 */
-	//public $layout='//layouts/system';
+	public $layout='//layouts/informativas';
 
 	/**
 	 * @return array action filters

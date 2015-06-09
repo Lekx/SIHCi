@@ -33,27 +33,4 @@
 	<?php echo CHtml::encode($data->sector); ?>
 	<br />
 
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('class')); ?>:</b>
-	<?php echo CHtml::encode($data->class); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('branch')); ?>:</b>
-	<?php echo CHtml::encode($data->branch); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('main_activity')); ?>:</b>
-	<?php echo CHtml::encode($data->main_activity); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('legal_structure')); ?>:</b>
-	<?php echo CHtml::encode($data->legal_structure); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('employeess_number')); ?>:</b>
-	<?php echo CHtml::encode($data->employeess_number); ?>
-	<br />
-
-	*/ ?>
-
 </div>

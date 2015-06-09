@@ -5,6 +5,9 @@
 $this->breadcrumbs=array(
 	'Documentos Oficiales'=>array('index'),
 );
+$editUser = "";
+if(isset($_GET["ide"]))
+	$editUser = "?ide=".(int)$_GET["ide"];
 
 $this->menu=array(
 	array('label'=>'Datos Personales', 'url'=>array('curriculumVitae/personalData')),

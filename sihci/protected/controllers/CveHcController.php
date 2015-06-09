@@ -6,7 +6,7 @@ class CveHcController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/informativas', meaning
 	 * using two-column layout. See 'protected/views/layouts/informativas.php'.
 	 */
-	//public $layout='//layouts/informativas';
+	public $layout='//layouts/informativas';
 
 	/**
 	 * @return array action filters
