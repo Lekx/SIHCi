@@ -41,7 +41,7 @@
                     back: ' . CJSON::encode(Yii::app()->request->urlReferrer) . ',
                 }
             
-            }');
+            }',CClientScript::POS_HEAD);
         ?>
         
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
