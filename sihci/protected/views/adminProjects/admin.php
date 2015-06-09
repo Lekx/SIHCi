@@ -20,7 +20,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-grid',
 	'dataProvider'=>$dataProvider,
 	 'ajaxUpdate' => true,
-	// 'filter' => $projects,
+	 // 'filter' => $dataProvider,
+	 'template'=>"{items}",
 	'columns'=>array(
 		array('header'=>'Tipo',
 		 		'value'=>'@$data["id_user_sponsorer"] ? "Patrocinio" : "Proyecto"',
@@ -48,6 +49,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	     	    'type'=>'raw',
 		 		'name'=>'creation_date',
                 ),
+		  array('header'=>'Acciones',
+				'class'=>'CButtonColumn',
+				'viewButtonUrl'=>'Yii::app()->createUrl("/AdminProjectsController/view", array("id" => $data["id"]))',
+				'deleteButtonUrl'=>'Yii::app()->createUrl("/controllername/delete", array("id" => $data["id"]))',
+				'updateButtonUrl'=>'Yii::app()->createUrl("/controllername/update", array("id" => $data["id"]))',
+				),
+
 	     
    	),
 ));

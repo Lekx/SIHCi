@@ -95,6 +95,7 @@ class AdminProjectsController extends Controller {
 	/**
 	 * Manages all models.
 	 */
+	// AP06 
 	public function actionAdminProjects() {
 
 		$queryProjects=Yii::app()->db->createCommand('SELECT u.id, CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.title AS project_name, pro.is_sponsored, pro.status, pro.creation_date, pro.registration_number, pro.folio 
