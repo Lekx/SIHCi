@@ -20,6 +20,10 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/highcharts415/highcharts.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/highcharts415/modules/exporting.js"></script>
+
+
         <?php Yii::app()->bootstrap->register(); ?>
         <!-- Load JS -->
         <?php
