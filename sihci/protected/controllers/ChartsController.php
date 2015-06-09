@@ -49,7 +49,6 @@ class ChartsController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-
 	//GR01-Total Ingreso de Investigadores 
 	public function actionTotalRegisteredResearchesIo()
 	{
@@ -74,12 +73,22 @@ class ChartsController extends Controller
             $years[$value["year"]] = $value["year"];
 
 	
-		$results = $conexion->createCommand("
+		/*$results = $conexion->createCommand("
 		SELECT count(id) as total, MONTH(creation_date) as month 
 		FROM users
 		WHERE type = 'fisico'
 		GROUP BY MONTH(creation_date);
+		")->queryAll();*/
+
+		$results = $conexion->createCommand("
+		SELECT  MONTH(creation_date) as month, COUNT(IF(hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS JIM,
+		MONTH(creation_date) as months,COUNT(IF(hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS FAA
+		FROM jobs
+		GROUP BY month,months;
 		")->queryAll();
+		echo "<pre>";
+		print_r($results);
+		echo "</pre>";
 
 		$resultsResearchersdown = $conexion->createCommand("
 		SELECT  u.id, COUNT(c.status) as total, MONTH(u.creation_date) AS month 
@@ -91,13 +100,13 @@ class ChartsController extends Controller
 
 		$months = array("index", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-		foreach($results as $key => $values){
-    		$data[$months[$values["month"]]] = intval($values["total"]);
-		}
+        foreach($results as $key => $values){
+            $data[$months[$values["month"]]] = intval($values["JIM"]);
+        }
 
-		foreach($resultsResearchersdown as $key => $values){
-    		$data2[$months[$values["month"]]] = intval($values["total"]);
-		}
+        foreach($resultsResearchersdown as $key => $values){
+            $data2[$months[$values["month"]]] = intval($values["total"]);
+        }
 
 		$this->render('index',array(
 			'results'=>$data,
@@ -158,8 +167,7 @@ class ChartsController extends Controller
 		foreach($resultResearchesnoSNI as $key => $values){
 			$data3[$months[$values["month"]]] = intval($values["total"]);
 		}
-		/*s
-
+		/*
 		 echo json_encode(array(
 		 	'resultsTotalReasearches'=>$resultsTotalReasearches,
 			'resultResearchesSNI'=>$resultResearchesSNI,
@@ -311,8 +319,40 @@ class ChartsController extends Controller
 	}
 
 
-		public function actionTotalRegisteredResearchers(){
-			$this->render('totalRegisteredResearchers');
+	public function actionTotalRegisteredResearchers(){
+		$this->render('totalRegisteredResearchers');
+	}
+
+
+	//Ejemplo
+	public function actionTotalRegisteredResearches()
+	{
+		$conexion = Yii::app()->db;
+		$results = $conexion->createCommand('
+			SELECT MONTH(creation_date) as month,COUNT(IF(hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+			MONTH(creation_date) as months ,COUNT(IF(hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa
+			FROM jobs
+			GROUP BY month,months ORDER BY MONTH(creation_date) ASC
+		')->queryAll();
+$months = array();
+$jim = array();
+$faa = array();
+		$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+		foreach($results AS $key => $value){
+			array_push($months, $mos[$value["month"]]);
+			array_push($jim, (int)$value["jim"]);
+			array_push($faa, (int)$value["faa"]);
 		}
+
+		//echo "<pre>";
+		//print_r($results);
+		 //echo '{"months":["ener","feb","mar"]}';
+
+		echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).'}';
+		//echo json_encode($jim);
+		//echo json_encode($faa);
+		//echo "</pre>";
+		//echo "{'ejem':[521,49,81,0,101,0,0,0,21,3071,0,0,0,0,0,1479,6124,2409,2608,0,0,3457,2057,2580,5876,4638,0,0,3337,3479,430]}";
+	}
 }
 ?>

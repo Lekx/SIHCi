@@ -7,10 +7,12 @@ $this->breadcrumbs=array(
 	$model->id,
 );
 
+
 $this->menu=array(
+	array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
 	array('label'=>'Gestionar', 'url'=>array('admin')),
-	array('label'=>'Crear', 'url'=>array('create'))
-	);
+	array('label'=>'Crear', 'url'=>array('create')),
+);
 ?>
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">

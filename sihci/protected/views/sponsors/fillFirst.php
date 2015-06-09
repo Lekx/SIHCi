@@ -32,6 +32,6 @@ $this->menu = array(
 
 <div class="fillfirst">
       <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
-      <h1>Por favor llene primero los datos de cuenta</h1>
+      <h1>Por favor llene primero los datos de empresa</h1>
       <hr>
 </div>

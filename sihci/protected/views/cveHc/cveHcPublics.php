@@ -1,5 +1,16 @@
+
+<section class="informativa">
+
+=======
 <h2>CVE-HC</h2>
 
+
+	<section class="column-center2">
+	  <div class="titleinfo">
+     <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comites.png" alt="">
+       	<h2>CVE-HC</h2>
+        <hr>
+        </div>
 <?php 
 
 $this->widget('zii.widgets.grid.CGridView', array(
@@ -7,7 +18,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$cveHcPublics,
 	'summaryText'=>'', 
 	'ajaxUpdate' => true,
+	'summaryText'=>'',
 	'filter' => null,
+	'htmlOptions'=> array('class'=>'table'),
 	'columns'=>array(
 
 		 /*array('header'=>'Número de Registro',
@@ -27,4 +40,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 ),
    	),
 )); ?>
+</section>
 
+</section>

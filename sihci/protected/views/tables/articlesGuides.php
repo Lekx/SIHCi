@@ -16,7 +16,6 @@ $this->menu=array(
 	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
 	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
-
 ?>
 
 <h2>
@@ -52,8 +51,8 @@ function change(){
  }
 
 </script>
-<h3>en construcción . . .</h3>
-<!-- <input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
+<!-- <h3>en construcción . . .</h3> -->
+<input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
 
 <select id="valueHospital" onchange="change()">
   <option value="total" selected="">Total de Hospitales</option>	
@@ -73,36 +72,36 @@ function change(){
   ?>
 
 </select>
-  <br><br> -->
+  <br><br>
 <?php 
 
-// $this->widget('zii.widgets.grid.CGridView', array(
-// 	'id'=>'books-grid',
-// 	'dataProvider'=>$articlesGuides,
-// 	 'ajaxUpdate' => true,
-// 	'filter' => null,
-// 	'columns'=>array(
-// 		 array('header'=>'Numero de Usuario',
-// 		 		'name'=>'id',
-//                 ),
-// 		  array('header'=>'Nombre de Usuario',
-// 		 		'name'=>'names',
-//                 ),
-// 		     array('header'=>'Título del Artículo o Guía',
-// 		 		'name'=>'title',
-//                 ),
-// 		     array('header'=>'Tipo de Artículo',
-// 		 		'name'=>'article_type',
-//                 ),
-// 		     array('header'=>'Revista',
-// 		 		'name'=>'magazine',
-//                 ),
-// 		     array('header'=>'Unidad Hospitalaria',
-// 		 		'name'=>'hospital_unit',
-//                 ),
-// 		     array('header'=>'Fecha de Creación',
-// 		 		'name'=>'creation_date',
-//                 ),
-//    	),
-// )); ?>
+$this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'books-grid',
+	'dataProvider'=>$articlesGuides,
+	 'ajaxUpdate' => true,
+	'filter' => null,
+	'columns'=>array(
+		 array('header'=>'Numero de Usuario',
+		 		'name'=>'id',
+                ),
+		  array('header'=>'Nombre de Usuario',
+		 		'name'=>'names',
+                ),
+		     array('header'=>'Título del Artículo o Guía',
+		 		'name'=>'title',
+                ),
+		     array('header'=>'Tipo de Artículo',
+		 		'name'=>'article_type',
+                ),
+		     array('header'=>'Revista',
+		 		'name'=>'magazine',
+                ),
+		     array('header'=>'Unidad Hospitalaria',
+		 		'name'=>'hospital_unit',
+                ),
+		     array('header'=>'Fecha de Creación',
+		 		'name'=>'creation_date',
+                ),
+   	),
+)); ?>
 
