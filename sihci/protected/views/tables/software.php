@@ -52,6 +52,7 @@ function change(){
  }
 
 </script>
+<!-- <h3>en construcción . . .</h3> -->
 <input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
 
 <select id="valueHospital" onchange="change()">
@@ -93,17 +94,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		     array('header'=>'País',
 		 		'name'=>'country',
                 ),
-		     array('header'=>'Sector',
-		 		'name'=>'sector',
-                ),
-		     array('header'=>'Sector',
-		 		'name'=>'sector',
-                ),
 		     array('header'=>'Organización',
 		 		'name'=>'organization',
-                ),
-		     array('header'=>'Sector',
-		 		'name'=>'sector',
                 ),
 		     array('header'=>'Unidad Hospitalaria',
 		 		'name'=>'hospital_unit',

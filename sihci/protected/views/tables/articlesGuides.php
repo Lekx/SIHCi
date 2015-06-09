@@ -16,7 +16,6 @@ $this->menu=array(
 	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
 	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
-
 ?>
 
 <h2>
@@ -52,6 +51,7 @@ function change(){
  }
 
 </script>
+<!-- <h3>en construcción . . .</h3> -->
 <input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
 
 <select id="valueHospital" onchange="change()">
@@ -95,9 +95,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 ),
 		     array('header'=>'Revista',
 		 		'name'=>'magazine',
-                ),
-		     array('header'=>'Enlace de Revista',
-		 		'name'=>'url_document',
                 ),
 		     array('header'=>'Unidad Hospitalaria',
 		 		'name'=>'hospital_unit',
