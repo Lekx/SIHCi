@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sys.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">     
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
@@ -40,10 +40,10 @@
                     base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
                     back: ' . CJSON::encode(Yii::app()->request->urlReferrer) . ',
                 }
-            
-            }');
+
+            }',CClientScript::POS_HEAD);
         ?>
-        
+
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <script>
                             $(document).ready(function() {
@@ -70,7 +70,7 @@
                 "icon"=>"PerfilEmpresa",
                 "cuentaicon"=>"CuentaEmpresa",
                 "controller"=>"sponsors/sponsorsInfo",
-                "MenuEmpresa"=>"Perfil Empresa", 
+                "MenuEmpresa"=>"Perfil Empresa",
                 "proyectos"=>"Proyectos",
                 "Evaluacion"=>"Evaluación",
                 "proyectosUrl"=>"sponsorShip/admin",
@@ -98,7 +98,7 @@
                "proyectos"=>"Proyectos",
                "Evaluacion"=>"Evaluación CV",
                "proyectosUrl"=>"projects/admin",
-               
+
                );
                ?>
         <div class="main">
@@ -115,14 +115,14 @@
                     <span><?php echo $infoUser['MenuEmpresa']; ?></span>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('site/index'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('EvaluateCV/index'));?>
                 <span><?php echo $infoUser['Evaluacion']; ?></span>
                 </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array($infoUser['proyectosUrl']));?>
                    <span><?php echo $infoUser['proyectos']; ?></span>
                 </div>
-                <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' >";  ?></div> 
+                <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' >";  ?></div>
                 <div class="headerconteiner2"></div>
                 <div class="headerconteiner3">
                     <span> Cuenta / Datos de Cuenta </span>
@@ -132,7 +132,7 @@
                 </div>
                 <div class="headerconteiner5">
                     <h4> <?php echo Yii::app()->user->fullname; ?></h4>
-                    <?php 
+                    <?php
                     echo "<h5>".$infoUser['label']."</h5>";
                     ?>
 

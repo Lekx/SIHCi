@@ -13,11 +13,12 @@
 	'method'=>'get',
 )); ?>
 
-	
-	<div class="row">
-		
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo de trabajo, Congreso o Palabras claves','class'=>'searchcrud')); ?>	
-		<?php echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
+
+		<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-search"></i>
+
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Titulo de trabajo, Congreso o Palabras claves','class'=>'searchcrud')); ?>
+		<?php //echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
 
 	</div>
 
