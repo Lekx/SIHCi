@@ -31,7 +31,7 @@ $('.search-form form').submit(function(){
             <h1>Evaluación Curricular</h1>
             <hr>
         </div>
-        
+
 <h3>Gestionar Registro de Tesis Dirigidas</h3>
 
 <!-- <?php /* echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); */ ?> -->
@@ -61,7 +61,7 @@ $('.search-form form').submit(function(){
 		//'sector',
 		array('name'=>'Organización','type'=>'html','id'=>'organization','value'=>'CHtml::encode($data->organization)'),
 		//'organization',
-		'second_level',
+
 		'area',
 		'discipline',
 		'subdiscipline',

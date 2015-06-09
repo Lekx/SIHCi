@@ -1071,7 +1071,7 @@ ul.cbp-hsmenu
 }
 .maininfohc
 {
-	width: 900px;
+	width: 930px;
 	display: inline-block;
 	margin-left: 80px;
 	margin-right: 0px;
@@ -1090,16 +1090,18 @@ ul.cbp-hsmenu
 	text-align: justify;
 	border-right: 1px solid #1EB9C0;
 	padding-right: 40px;
+	width: 100%;
 }
 .infoslidebar
 {
 	margin-top: 250px;
 	text-align: justify;
 	word-spacing: -1px;
-	width: 300px;
+	width: 18%;
 	display: inline-block;
 	vertical-align: top;
-	margin-left: 40px;
+	margin-left: 30px;
+	padding-right: 30px;
 }
 .searchbarconteiner
 {
@@ -1160,5 +1162,29 @@ ul.cbp-hsmenu
   text-align: center;
 }
 
+#searchBarMain1::-webkit-input-placeholder { /* WebKit browsers */
+ 
+    	padding:5px 18px 2px 9px !important;
+
+}
+#searchBarMain1::-webkit-input-placeholder { /* navegadores Webkit */
+   
+    	padding:5px 18px 2px 9px !important;
+ 
+}
+#searchBarMain1:-moz-placeholder { /* Mozilla Firefox 4 hasta 18 */
+
+    	padding:5px 18px 2px 9px !important;
+
+}
+#searchBarMain1::-moz-placeholder { /* Mozilla Firefox 19+ */
+  
+    	padding:5px 18px 2px 9px !important;
+}
+#searchBarMain1:-ms-input-placeholder { /* Internet Explorer 10+ */
+
+    	padding:5px 18px 2px 9px !important;
+    	
+}
 
 
