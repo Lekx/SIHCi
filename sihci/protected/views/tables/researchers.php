@@ -11,24 +11,11 @@ $this->menu=array(
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
 	array('label'=>'Capítulos', 'url'=>array('chapters')),
-	array('label'=>'Revistas Científicas', 'url'=>array('scientistMagazines')),
 	array('label'=>'Patentes', 'url'=>array('patents')),
 	array('label'=>'Software', 'url'=>array('software')),
 	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
+	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#system-log-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 
 ?>
 
@@ -131,8 +118,6 @@ function change(){
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$researchersIncome,
-	 'ajaxUpdate' => true,
-	'filter' => null,
 	'columns'=>array(
 		 array('header'=>'Numero de Usuario',
 		 		'name'=>'id',
@@ -141,7 +126,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'name'=>'names',
                 ),
 		   array('header'=>'Línea de Investigación',
-		 		'name'=>'name',
+		 		'value'=>array($this,'researchAreas'),'type' => 'raw',
                 ),
 		    array('header'=>'Undad Hospitalaria',
 		 		'name'=>'hospital_unit',

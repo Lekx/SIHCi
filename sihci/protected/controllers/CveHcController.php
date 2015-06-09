@@ -3,8 +3,8 @@
 class CveHcController extends Controller
 {
 	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/system', meaning
-	 * using two-column layout. See 'protected/views/layouts/system.php'.
+	 * @var string the default layout for the views. Defaults to '//layouts/informativas', meaning
+	 * using two-column layout. See 'protected/views/layouts/informativas.php'.
 	 */
 	public $layout='//layouts/informativas';
 
@@ -49,6 +49,7 @@ class CveHcController extends Controller
 	}
 
 	public function researchAreas($data, $row) {
+		$this->layout = 'informativas';
 		$conexion = Yii::app()->db;
 		//print_r($data);
 		$id_curriculum = $data["id_curriculum"];
@@ -64,22 +65,20 @@ class CveHcController extends Controller
 		}
 
 		return $rArea;
-
 	}
-
 
 	public function actionCveHcPublics()
 		{
 
-		$query='SELECT u.id, CONCAT(p.last_name1," ",p.last_name2,", ",p.names) AS fullname ,j.hospital_unit,r.name, c.id AS id_curriculum
+		$query='SELECT u.id, CONCAT(p.last_name1," ",p.last_name2,", ",p.names) AS fullname ,j.hospital_unit, c.id AS id_curriculum
 				FROM users AS u 
 				INNER JOIN persons AS p ON u.id=p.id_user
 				INNER JOIN curriculum AS c ON u.id = c.id_user
 				INNER JOIN jobs AS j ON j.id_curriculum=c.id
-				INNER JOIN research_areas AS r ON r.id_curriculum=c.id WHERE u.type = "fisico"';
+				WHERE u.type = "fisico"';
 		
 		 $cveHcPublics=new CSqlDataProvider($query,array(
-		 					
+					
                                 'pagination'=>array(
                                                 'pageSize'=>10,
                                 ),
@@ -89,7 +88,4 @@ class CveHcController extends Controller
 		));
 
 		}
-
-
-
 }

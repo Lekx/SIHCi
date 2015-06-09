@@ -48,15 +48,33 @@ class TablesController extends Controller
 	{
 		$this->redirect('researchers');
 	}
+
+	public function researchAreas($data, $row) {
+		  $conexion = Yii::app()->db;
+		  // print_r($data);
+		 $id_curriculum = $data["id_curriculum"];
+
+		 $query ='SELECT GROUP_CONCAT(name) AS names from research_areas where id_curriculum ='.$id_curriculum;
+
+		 $results = $conexion->createCommand($query)->queryAll();
+
+		  if(!empty($results))
+		  $rArea = " ";
+		  foreach($results AS $key => $value){
+		   $rArea = $value["names"].", ";
+		  }
+
+		  return $rArea;
+	}
+
 	public function actionResearchers()
 	{
 		$titlePage = "Cantidad de Investigadores";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM users')->queryAll();
 
-		 $query='SELECT DISTINCT u.id,p.names,rese.name,j.hospital_unit,curri.SNI, curri.status, u.creation_date from users u 
+		 $query='SELECT DISTINCT u.id,p.names, j.hospital_unit, j.id_curriculum,curri.SNI, curri.status, u.creation_date from users u 
  				JOIN curriculum curri ON curri.id_user=u.id
  				JOIN jobs j ON curri.id=j.id_curriculum
- 				JOIN research_areas rese ON curri.id=rese.id_curriculum
   				JOIN persons p ON u.id=p.id_user';
 
 	     $researchersIncome=new CSqlDataProvider($query);
@@ -112,30 +130,15 @@ class TablesController extends Controller
 
 		$this->render('chapters',array('chapters'=>$chapters, 'titlePage'=>$titlePage, 'year'=>$year));
 	}
-	
-	public function actionScientistMagazines()
-	{
-		$titlePage = "Capítulos";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
-
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
-				 JOIN jobs j ON curri.id=j.id_curriculum
- 				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
-
-	     $scientistMagazines=new CSqlDataProvider($query);
-
-		$this->render('scientistMagazines',array('scientistMagazines'=>$scientistMagazines, 'titlePage'=>$titlePage, 'year'=>$year));
-	}
 
 	public function actionPatents()
 	{
-		$titlePage = "Capítulos";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+		$titlePage = "Patentes";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM patent')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+		$query='SELECT u.id,p.names,pa.country, pa.name, pa.application_type, pa.application_number, pa.patent_type, j.hospital_unit, pa.creation_date 
+				FROM patent pa
+				 JOIN curriculum curri ON pa.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user';
@@ -147,11 +150,12 @@ class TablesController extends Controller
 
 	public function actionSoftware()
 	{
-		$titlePage = "Capítulos";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+		$titlePage = "Software";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM software')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+		$query='SELECT u.id,p.names, so.country, so.title, so.sector, so.organization, so.objective, j.hospital_unit, so.creation_date 
+				FROM software so
+				 JOIN curriculum curri ON so.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user';
@@ -163,11 +167,12 @@ class TablesController extends Controller
 
 	public function actionCopyrights()
 	{
-		$titlePage = "Capítulos";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+		$titlePage = "Derechos de Autor";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM copyrights')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+		$query='SELECT u.id,p.names, copy.participation_type, copy.title, copy.step_number, copy.application_date, j.hospital_unit, copy.creation_date 
+				FROM copyrights copy
+				 JOIN curriculum curri ON copy.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user';
@@ -179,11 +184,12 @@ class TablesController extends Controller
 
 	public function actionArticlesGuides()
 	{
-		$titlePage = "Capítulos";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
+		$titlePage = "Artículos y Guías";
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM articles_guides')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
-				 JOIN curriculum curri ON cha.id_curriculum=curri.id
+		$query='SELECT u.id,p.names, ar.title, ar.article_type, ar.magazine, ar.url_document, j.hospital_unit, ar.creation_date 
+				FROM articles_guides ar
+				 JOIN curriculum curri ON ar.id_resume=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user';

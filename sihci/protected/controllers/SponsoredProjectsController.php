@@ -52,8 +52,8 @@ class SponsoredProjectsController extends Controller
 
 public function actionSponsoredProjectsV()
 	{
-
-		$query=	'SELECT p.id,CONCAT(pe.last_name1," ",pe.last_name2," ",pe.names) AS fullname, u.email, sp.sponsor_name, spo.id_user_sponsorer, spo.project_name,
+		$this->layout = 'informativas';
+		$query=	'SELECT p.id,CONCAT(pe.last_name1," ",pe.last_name2," ",pe.names) AS fullname, sp.sponsor_name, spo.id_user_sponsorer,
 				p.title,  p.discipline, p.develop_uh, date(p.creation_date) AS fecha
 				from projects AS p 
 				LEFT JOIN curriculum AS c ON c.id = id_curriculum 

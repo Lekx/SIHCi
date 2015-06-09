@@ -11,36 +11,17 @@ $this->menu=array(
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
 	array('label'=>'Capítulos', 'url'=>array('chapters')),
-	array('label'=>'Revistas Científicas', 'url'=>array('scientistMagazines')),
 	array('label'=>'Patentes', 'url'=>array('patents')),
 	array('label'=>'Software', 'url'=>array('software')),
 	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
+	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#system-log-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 
 ?>
 
 <h2>
 	<?php echo $titlePage ?>
 </h2>
-
-<div class="search-form" style="display:block">
-<?php $this->renderPartial('_search_projects',array(
-	'model'=>$projects,
-)); ?>
-</div><!-- search-form -->
 
 <script type="text/javascript">
 	

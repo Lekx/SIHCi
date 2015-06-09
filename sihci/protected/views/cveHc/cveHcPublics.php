@@ -1,4 +1,8 @@
+
 <section class="informativa">
+
+=======
+<h2>CVE-HC</h2>
 
 
 	<section class="column-center2">
@@ -9,10 +13,10 @@
         </div>
 <?php 
 
-
 $this->widget('zii.widgets.grid.CGridView', array(
 	//'id'=>'cveHcPublics',
 	'dataProvider'=>$cveHcPublics,
+	'summaryText'=>'', 
 	'ajaxUpdate' => true,
 	'summaryText'=>'',
 	'filter' => null,

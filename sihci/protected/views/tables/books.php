@@ -11,24 +11,11 @@ $this->menu=array(
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
 	array('label'=>'Capítulos', 'url'=>array('chapters')),
-	array('label'=>'Revistas Científicas', 'url'=>array('scientistMagazines')),
 	array('label'=>'Patentes', 'url'=>array('patents')),
 	array('label'=>'Software', 'url'=>array('software')),
 	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
+	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#system-log-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 
 ?>
 
@@ -38,7 +25,6 @@ $('.search-form form').submit(function(){
 <script type="text/javascript">
 	
 function change(){
-	// valueResearchers = $("#valueResearchers").val();
 	valueHospital = $("#valueHospital").val();
 	valueYear = $("#valueYear").val();
 
@@ -67,15 +53,6 @@ function change(){
 
 </script>
 <input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
-<!-- <select id="valueResearchers" onchange="change()">
-  <option value="total" selected="">Total de Investigadores</option>	
-  <option value="1">Ingreso Investigadores</option>
-  <option value="0">Baja Investigadores</option>
-  <option value="">Investigadores con SNI</option>
-  <option value="-1">Investigadores sin SNI</option>
-
-</select>
-<br><br> -->
 
 <select id="valueHospital" onchange="change()">
   <option value="total" selected="">Total de Hospitales</option>	
