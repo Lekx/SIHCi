@@ -22,26 +22,20 @@ class AdminProjectsController extends Controller {
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/*public function accessRules()
+	public function accessRules()
 	{
-	return array(
-	array('allow',  // allow all users to perform 'index' and 'view' actions
-	'actions'=>array('index','view'),
-	'users'=>array('*'),
-	),
-	array('allow', // allow authenticated user to perform 'create' and 'update' actions
-	'actions'=>array('create','update'),
-	'users'=>array('@'),
-	),
-	array('allow', // allow admin user to perform 'admin' and 'delete' actions
-	'actions'=>array('admin','delete'),
-	'users'=>array('admin'),
-	),
-	array('deny',  // deny all users
-	'users'=>array('*'),
-	),
-	);
-	}*/
+		return array(
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			'actions'=>array('createProject', 'createSponsorship', 
+							 'update', 'deleteProject', 'view', 'index',
+							 'adminProjects'),
+			'users'=>array('*'),
+			),
+			array('deny',  // deny all users
+			'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Displays a particular model.
@@ -52,9 +46,29 @@ class AdminProjectsController extends Controller {
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-
+	// AP01 Registrar Proyectos
 	public function actionCreateProject() {
 
+	}
+
+	public function actionCreateSponsorship() {
+		$model=new Sponsorship;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+
+
+		if(isset($_POST['Sponsorship']))
+		{
+			$model->attributes=$_POST['Sponsorship'];
+			$model->id_user_sponsorer = Yii::app()->user->id;
+			$model->status = "pendiente";
+			if($model->save())
+				$this->redirect(array('adminProjects'));
+		}
+
+		$this->render('create_sponsorship', array('model' => $model));
 	}
 
 	/**
@@ -62,8 +76,10 @@ class AdminProjectsController extends Controller {
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($ide) {
+	public function actionUpdate($id) {
+			
 
+		$this->render($update, array('id'=>$id,));
 	}
 
 	/**
@@ -71,18 +87,53 @@ class AdminProjectsController extends Controller {
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id) {
-		$this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	// AP03 Listar Proyectos
+	public function actionDeleteProject($id, $folio) {
+
+		if ($folio != null) {
+			$model = Projects::model()->findByPk($id)->delete();
+		}else{
+			$model = Sponsorship::model()->findByPk($id)->delete();
 		}
+		
 
+			if (!isset($_GET['ajax'])) {
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('adminProjects'));
+		}
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 	}
 
-	public function actionView($id) {
+	// AP04 Listar Proyectos
+	public function actionView($id, $folio) {
+		$connection = Yii::app()->db;
+		$query = "";
+		
+		if ($folio != null) {
+			$query .= 'SELECT CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.* 
+			 FROM projects pro
+				 JOIN curriculum curri ON pro.id_curriculum=curri.id
+ 				 JOIN users u ON curri.id_user=u.id
+  				 JOIN persons p ON u.id=p.id_user
+            WHERE pro.id='.$id;
 
+			$view = 'view_project';
+		} else {
+
+			$query .= "SELECT s.sponsor_name, sp.*  
+  	 			FROM sponsorship sp
+ 				 JOIN users u ON u.id=sp.id_user_sponsorer
+  				 JOIN sponsors s ON u.id=s.id_user
+            WHERE sp.id=
+            " . $id;
+			$view = 'view_sponsorship';
+
+		}
+
+		$command = $connection->createCommand($query);
+		$model = $command->queryRow();
+
+		$this->render($view, array('model'=>$model,));
 	}
 	/**
 	 * Lists all models.
@@ -95,16 +146,17 @@ class AdminProjectsController extends Controller {
 	/**
 	 * Manages all models.
 	 */
-	// AP06 
+
+	// AP06 Listar Proyectos
 	public function actionAdminProjects() {
 
-		$queryProjects=Yii::app()->db->createCommand('SELECT u.id, CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.title AS project_name, pro.is_sponsored, pro.status, pro.creation_date, pro.registration_number, pro.folio 
+		$queryProjects=Yii::app()->db->createCommand('SELECT pro.id, CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.title AS project_name, pro.is_sponsored, pro.status, pro.creation_date, pro.registration_number, pro.folio 
 		 		FROM projects pro
 				 JOIN curriculum curri ON pro.id_curriculum=curri.id
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user')->queryAll();
 
-  	 	$querySponsorship=Yii::app()->db->createCommand('SELECT u.id,s.sponsor_name AS names, sp.*  
+  	 	$querySponsorship=Yii::app()->db->createCommand('SELECT sp.id,s.sponsor_name AS names, sp.*  
   	 			FROM sponsorship sp
  				 JOIN users u ON u.id=sp.id_user_sponsorer
   				 JOIN sponsors s ON u.id=s.id_user')->queryAll();

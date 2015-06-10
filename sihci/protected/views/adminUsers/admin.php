@@ -56,15 +56,7 @@
 		array(
 			'header' => '<b>Curp/Pasaporte</b>',
 			'value' => array($this, 'usersCurpPassport'), 'type' => 'raw',
-		),
-		 /*array(  'type'=>'raw',
-
-            'name'=>'Estatus',
-            'value'=> ' CHtml::dropDownList(\'estatus\'.$row,$data->status,
-             array(	class => \'estatusUsers\',	\'Activo\'=>\'Activo\',
-                        \'Inactivo\'=>\'Inactivo\',
-                        )
-              )',*/  //"onChange" => "changeStatus(this)",))'	
+		),	
 		 array(
 		 	'type'=>'raw',
 		 	'name' => 'estatus',
