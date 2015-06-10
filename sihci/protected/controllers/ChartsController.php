@@ -318,41 +318,93 @@ class ChartsController extends Controller
 
 	}
 
-
+/*
 	public function actionTotalRegisteredResearchers(){
 		$this->render('totalRegisteredResearchers');
-	}
+	}*/
 
 
 	//Ejemplo
-	public function actionTotalRegisteredResearches()
+	public function actionTotalRegisteredResearchers()
 	{
+
 		$conexion = Yii::app()->db;
-		$results = $conexion->createCommand('
-			SELECT MONTH(creation_date) as month,COUNT(IF(hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
-			MONTH(creation_date) as months ,COUNT(IF(hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa
-			FROM jobs
-			GROUP BY month,months ORDER BY MONTH(creation_date) ASC
-		')->queryAll();
-$months = array();
-$jim = array();
-$faa = array();
-		$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-		foreach($results AS $key => $value){
-			array_push($months, $mos[$value["month"]]);
-			array_push($jim, (int)$value["jim"]);
-			array_push($faa, (int)$value["faa"]);
+
+		$year = $conexion->createCommand("
+		SELECT DISTINCT YEAR(creation_date) AS year FROM users 
+		")->queryAll();
+
+		$years = array();
+		$years["total"] = "total";
+		foreach($year AS $index => $value)
+	        	$years[$value["year"]] = $value["year"];
+	        	
+
+		if(isset($_POST["years"])){
+			if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
+				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
+			else if($_POST["hu"] == "otro")
+				$condHu = " AND j.hospital_unit IS NULL";
+			else
+				$condHu = "";
+
+
+			if($_POST["sni"] != "total" && $_POST["sni"] == "no")
+				$condSni = " AND c.sni = 0";
+			else if($_POST["sni"] == "yes")
+				$condSni = " AND c.sni > 0";
+			else
+				$condSni = "";
+
+
+			if($_POST["type"] != "total" && $_POST["type"] == "bajas")
+				$condType = " AND u.status ='inactivo'";
+			else
+				$condType = "";
+
+
+			if($_POST["years"] != "total")
+				$condYears = " AND YEAR(u.creation_date) ='".$_POST['years']."'";
+			else
+				$condYears = "";
+
+
+			$query = '
+				SELECT 
+				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(IF((j.hospital_unit IS NULL),1,NULL)) AS other,
+				MONTH(u.creation_date) as months
+				from users as u 
+				left join curriculum as c ON c.id_user = u.id 
+				left join jobs as j on j.id_curriculum = c.id
+				WHERE u.type="fisico"
+				'.$condYears.$condType.$condSni.$condHu.'
+				GROUP BY months ORDER BY MONTH(u.creation_date) ASC
+			';
+			$results = $conexion->createCommand($query)->queryAll();
+
+//print_r($results);
+
+			$months = array();
+			$jim = array();
+			$faa = array();
+			$other = array();
+			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			foreach($results AS $key => $value){
+				array_push($months, $mos[$value["months"]]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, (int)$value["other"]);
+			}
+
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
 		}
 
-		//echo "<pre>";
-		//print_r($results);
-		 //echo '{"months":["ener","feb","mar"]}';
+		if(!isset($_POST["years"])){
+			$this->render('totalRegisteredResearchers',array("years"=>$years));
+		}
 
-		echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).'}';
-		//echo json_encode($jim);
-		//echo json_encode($faa);
-		//echo "</pre>";
-		//echo "{'ejem':[521,49,81,0,101,0,0,0,21,3071,0,0,0,0,0,1479,6124,2409,2608,0,0,3457,2057,2580,5876,4638,0,0,3337,3479,430]}";
 	}
 }
 ?>
