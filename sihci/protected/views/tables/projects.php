@@ -84,6 +84,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$projects,
 	 'ajaxUpdate' => true,
 	'filter' => null,
+	'summaryText'=>'',
 	'columns'=>array(
 		  array('header'=>'Nombre de Usuario',
 		 		'name'=>'names',
