@@ -4,12 +4,10 @@
 /* @var $form CActiveForm */
 
 $researcher = "";
-$sponsor = "";
 if(!$model->isNewRecord){
 	$researcher = $model->idUserResearcher->persons[0];
 	$researcher = $researcher['last_name1']." ".$researcher['last_name2'].", ".$researcher['names'];
-	$sponsor = $model->idUserSponsorer->sponsors[0];
-	$sponsor = $sponsor['sponsor_name'];
+
 }
 
 
@@ -27,17 +25,18 @@ if(!$model->isNewRecord){
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
-<!-- 		<div class="row">
-	<?php echo $form->labelEx($model,'id_user_sponsorer'); ?>
+
+	<div class="row">
+	<?php echo $form->labelEx($model,'id_user_researcher'); ?>
 
 	<?php
 		$this->widget('ext.MyAutoComplete', array(
 		    'model'=>$model,
-		    'attribute'=>'id_user_sponsorer',
-		    'name'=>'Sponsorship[id_user_sponsorer]',
+		    'attribute'=>'id_user_researcher',
+		    'name'=>'Sponsorship[id_user_researcher]',
 		    'id'=>'id',
-		    'value'=>$sponsor,
-		    'source'=>$this->createUrl('/sponsorship/getSponsors'),  
+		    'value'=>$researcher,
+		    'source'=>$this->createUrl('/adminProjects/getSponsors'),  
 		    'options'=>array(
 		        'minLength'=>'0' 
 		    ),
@@ -46,8 +45,8 @@ if(!$model->isNewRecord){
 
 	?>
 
-		<?php echo $form->error($model,'id_user_sponsorer'); ?>
-			</div> -->
+		<?php echo $form->error($model,'id_user_researcher'); ?>
+			</div>
 
 	<div class="row">
 	<?php echo $form->labelEx($model,'id_user_researcher'); ?>

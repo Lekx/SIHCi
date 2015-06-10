@@ -62,7 +62,7 @@ class AdminProjectsController extends Controller {
 		if(isset($_POST['Sponsorship']))
 		{
 			$model->attributes=$_POST['Sponsorship'];
-			$model->id_user_sponsorer = Yii::app()->user->id;
+			// $model->id_user_sponsorer = Yii::app()->user->id;
 			$model->status = "pendiente";
 			if($model->save())
 				$this->redirect(array('adminProjects'));
@@ -189,6 +189,24 @@ class AdminProjectsController extends Controller {
 		if (isset($_POST['ajax']) && $_POST['ajax'] === 'projects-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+
+	public function actionGetSponsors() {
+		if (Yii::app()->request->isAjaxRequest&&!empty($_GET['term'])) {
+			$sql = 'SELECT sp.* , s.sponsor_name 
+			FROM sponsorship sp 
+			JOIN users u ON u.id=sp.id_user_sponsorer
+			JOIN sponsors s ON s.id_user = u.id
+			WHERE u.type="moral" AND u.status"activo" AND s.sponsor_name LIKE :qterm ORDER BY s.sponsor_name ASC';
+			$command = Yii::app()->db->createCommand($sql);
+			$qterm = $_GET['term'].'%';
+			$command->bindParam(":qterm", $qterm, PDO::PARAM_STR);
+			$result = $command->queryAll();
+			echo CJSON::encode($result); 
+			exit;
+		} else {
+			return false;
 		}
 	}
 
