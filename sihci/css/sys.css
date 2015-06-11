@@ -473,7 +473,7 @@ input[type='radio']
     width: 450px;
     height: 25px !important;
     /*-webkit-appearance:none;
-	-moz-appearance: none;*/
+    -moz-appearance: none;*/
     padding: 3px 5px;
 
     color: #0e3152;
@@ -1355,13 +1355,19 @@ table.detail-view  td
 {
     margin-left: 20px;
 }
-.menuitem, .menulis
+.menuitem,
+.menulis
 {
     margin-top: 13px;
     margin-bottom: 13px;
+
     border-bottom: 1px solid ;
 }
-.menuitem a, .menuitem a:hover, .menuitem a:visited
+.menuitem a,
+.menuitem a:hover,
+.menuitem a:visited,
+.operations a:visited,
+.operations a
 {
     color: #1eb9c0 !important;
 }
