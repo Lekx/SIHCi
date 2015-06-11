@@ -46,18 +46,17 @@ class AdminProjectsController extends Controller {
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
 	// AP01 Registrar Proyectos
 	public function actionCreateProject() {
 
 	}
 
+	// AP01 Registrar Proyectos
 	public function actionCreateSponsorship() {
 		$model=new Sponsorship;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Sponsorship']))
 		{
@@ -76,8 +75,9 @@ class AdminProjectsController extends Controller {
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
+	//AP02 Modificar Proyecto o Patrocinio
 	public function actionUpdate($id, $folio) {
-
+		
 		if ($folio != null) {
 			$model = Projects::model()->findByPk($id);
 
@@ -99,7 +99,7 @@ class AdminProjectsController extends Controller {
 			}
 			$update = "form_sponsorship";
 		}
-
+		$this->performAjaxValidation($model);
 		$this->render($update, array('model'=>$model,));
 	}
 
@@ -109,7 +109,7 @@ class AdminProjectsController extends Controller {
 	 * @param integer $id the ID of the model to be deleted
 	 */
 
-	// AP03 Listar Proyectos
+	// AP03 Eliminar Proyectos
 	public function actionDeleteProject($id, $folio) {
 
 		if ($folio != null) {
@@ -131,7 +131,7 @@ class AdminProjectsController extends Controller {
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 	}
 
-	// AP04 Listar Proyectos
+	// AP04 Desplegar Proyectos
 	public function actionView($id, $folio) {
 		$connection = Yii::app()->db;
 		$query = "";
@@ -220,6 +220,10 @@ class AdminProjectsController extends Controller {
 	 */
 	protected function performAjaxValidation($model) {
 		if (isset($_POST['ajax']) && $_POST['ajax'] === 'projects-form') {
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+		if (isset($_POST['ajax']) && $_POST['ajax'] === 'sponsorship-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
