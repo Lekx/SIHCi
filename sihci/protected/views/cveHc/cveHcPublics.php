@@ -1,9 +1,6 @@
 
 <section class="informativa">
 
-=======
-<h2>CVE-HC</h2>
-
 
 	<section class="column-center2">
 	  <div class="titleinfo">

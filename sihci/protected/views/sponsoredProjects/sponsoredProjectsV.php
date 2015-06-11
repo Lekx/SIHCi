@@ -9,8 +9,6 @@
        	<h2>Protocolos patrocinados por la industria Farmacéutica</h2>
         <hr>
         </div>
-
-<h2>Protocolos patrocinados por la industria Farmacéutica</h2>
 <?php 
 
 $this->widget('zii.widgets.grid.CGridView', array(
