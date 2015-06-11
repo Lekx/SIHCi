@@ -1,6 +1,9 @@
 
 <!-- AS02-Listarrespaldos de base de datos-->
+
+
 <div class="row">Respaldos</div>
+
 <script type="text/javascript">
 
 function search(){
@@ -25,26 +28,26 @@ function search(){
 			<td>Descarga</td>
 		</tr>
 		<?php 
-            //$url=Yii::app()->baseUrl."/backups/dataBase/";
-			$url= "../sihci/backups/files";
+			//$zip=Yii::app()->baseUrl."/backups/compressZip.php";
+            $url= "../sihci/backups/files";
 			$files= scandir($url,0);
 			unset($files[0]);
 			unset($files[1]);
 
-
-			foreach ($files as $key => $backupsFiles) 
+		    
+		    foreach ($files as $key => $backupsFiles) 
 			{
 				echo "<tr>";
-					echo "<td>".substr($backupsFiles,0,10)."</td>";
+					echo "<td>".date("Y-m-d")."</td>";
 					echo "<td>".substr($backupsFiles,-5,10)."</td>";
-					echo "<td><a onclick='Zip'  href='backups/files/".$backupsFiles."' target='_blank'>Descargar ZIP</a></td>";
+					echo "<td> <a href='../backups/zip.php' target='_self'> Descargar ZIP </a></td>";
 				echo "</tr>";
+
 			}
 		?>
 
 	</table>	
 </div>
-
 
 <div class="row">
 
@@ -70,7 +73,7 @@ function search(){
 				echo "<tr>";
 					echo "<td>".substr($backupsDataBase,0,10)."</td>";
 					echo "<td>".substr($backupsDataBase,-9,-4)."</td>";
-					echo "<td><a href='backups/database/".$backupsDataBase."' target='_blank'>Descargar SQL</a></td>";
+					echo "<td><a href='../backups/database/".$backupsDataBase."' target='_self'>Descargar SQL</a></td>";
 				echo "</tr>";
 
 			}
