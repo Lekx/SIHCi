@@ -28,7 +28,7 @@ class AdminProjectsController extends Controller {
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 			'actions'=>array('createProject', 'createSponsorship', 
 							 'update', 'deleteProject', 'view', 'index',
-							 'adminProjects'),
+							 'adminProjects', 'getSponsors'),
 			'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -62,13 +62,13 @@ class AdminProjectsController extends Controller {
 		if(isset($_POST['Sponsorship']))
 		{
 			$model->attributes=$_POST['Sponsorship'];
-			$model->id_user_sponsorer = Yii::app()->user->id;
-			$model->status = "pendiente";
+			// $model->id_user_sponsorer = Yii::app()->user->id;
+			// $model->status = "pendiente";
 			if($model->save())
 				$this->redirect(array('adminProjects'));
 		}
 
-		$this->render('create_sponsorship', array('model' => $model));
+		$this->render('form_sponsorship', array('model' => $model));
 	}
 
 	/**
@@ -76,10 +76,31 @@ class AdminProjectsController extends Controller {
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id) {
-			
+	public function actionUpdate($id, $folio) {
 
-		$this->render($update, array('id'=>$id,));
+		if ($folio != null) {
+			$model = Projects::model()->findByPk($id);
+
+			if (isset($_POST['Projects'])) {
+				$model->attributes = $_POST['Projects'];
+				if ($model->save()) {
+					$this->redirect(array('adminProjects'));
+				}
+			}
+			$update="update_projects";
+		}else{
+			$model = Sponsorship::model()->findByPk($id);
+
+			if (isset($_POST['Sponsorship'])) {
+				$model->attributes = $_POST['Sponsorship'];
+				if ($model->save()) {
+					$this->redirect(array('adminProjects'));
+				}
+			}
+			$update = "form_sponsorship";
+		}
+
+		$this->render($update, array('model'=>$model,));
 	}
 
 	/**
@@ -92,6 +113,12 @@ class AdminProjectsController extends Controller {
 	public function actionDeleteProject($id, $folio) {
 
 		if ($folio != null) {
+			$command = Yii::app()->db->createCommand();
+		
+            $command->delete('projects_coworkers', 'id_project=:id_project', array(':id_project'=>$id));
+            $command->delete('projects_docs', 'id_project=:id_project', array(':id_project'=>$id));
+            $command->delete('projects_followups', 'id_project=:id_project', array(':id_project'=>$id));
+           
 			$model = Projects::model()->findByPk($id)->delete();
 		}else{
 			$model = Sponsorship::model()->findByPk($id)->delete();
@@ -110,11 +137,17 @@ class AdminProjectsController extends Controller {
 		$query = "";
 		
 		if ($folio != null) {
-			$query .= 'SELECT CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.* 
+			$query .= 'SELECT CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.*, 
+			pc.id AS id_project_coworkers, pc.id_project, pc.fullname, pd.id AS id_project_docs, pd.id_project,
+			pd.type, pd.path, pd.creation_date AS creation_date_project_docs, pf.id AS id_project_followups,
+			pf.id_project, pf.followup, pf.datetime
 			 FROM projects pro
 				 JOIN curriculum curri ON pro.id_curriculum=curri.id
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user
+  				 LEFT JOIN projects_coworkers pc ON pc.id_project=pro.id
+			     LEFT JOIN projects_docs pd ON pd.id_project=pro.id
+			     LEFT JOIN projects_followups pf ON pf.id_project=pro.id
             WHERE pro.id='.$id;
 
 			$view = 'view_project';
@@ -189,6 +222,23 @@ class AdminProjectsController extends Controller {
 		if (isset($_POST['ajax']) && $_POST['ajax'] === 'projects-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+
+	public function actionGetSponsors() {
+		if (Yii::app()->request->isAjaxRequest&&!empty($_GET['term'])) {
+			$sql = 'SELECT u.id, s.sponsor_name AS label
+			FROM users u 
+			JOIN sponsors s ON s.id_user = u.id
+			WHERE u.type="moral" AND u.status="activo" AND s.sponsor_name LIKE :qterm ORDER BY s.sponsor_name ASC';
+			$command = Yii::app()->db->createCommand($sql);
+			$qterm = $_GET['term'].'%';
+			$command->bindParam(":qterm", $qterm, PDO::PARAM_STR);
+			$result = $command->queryAll();
+			echo CJSON::encode($result); 
+			exit;
+		} else {
+			return false;
 		}
 	}
 

@@ -53,7 +53,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 				'class'=>'CButtonColumn',
 				'viewButtonUrl'=>'Yii::app()->createUrl("/adminProjects/view", array("id" => $data["id"], "folio" => @$data["folio"]))',
 				'deleteButtonUrl'=>'Yii::app()->createUrl("/adminProjects/deleteProject", array("id" => $data["id"], "folio" => @$data["folio"]))',
-				'updateButtonUrl'=>'Yii::app()->createUrl("/adminProjects/update", array("id" => $data["id"]))',
+				'updateButtonUrl'=>'Yii::app()->createUrl("/adminProjects/update", array("id" => $data["id"], "folio" => @$data["folio"]))',
 				),
 
 	     

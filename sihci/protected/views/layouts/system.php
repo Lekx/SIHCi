@@ -32,6 +32,7 @@
             $cs->registerScriptFile($baseUrl . '/js/reCopy.js');
             $cs->registerScriptFile($baseUrl . '/js/file.js');
             $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
+            $cs->registerScriptFile($baseUrl . '/js/evaluateCV.js');
         ?>
          <?php
             Yii::app()->clientScript->registerScript('helpers', '
