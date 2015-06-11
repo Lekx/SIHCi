@@ -113,6 +113,12 @@ class AdminProjectsController extends Controller {
 	public function actionDeleteProject($id, $folio) {
 
 		if ($folio != null) {
+			$command = Yii::app()->db->createCommand();
+		
+            $command->delete('projects_coworkers', 'id_project=:id_project', array(':id_project'=>$id));
+            $command->delete('projects_docs', 'id_project=:id_project', array(':id_project'=>$id));
+            $command->delete('projects_followups', 'id_project=:id_project', array(':id_project'=>$id));
+           
 			$model = Projects::model()->findByPk($id)->delete();
 		}else{
 			$model = Sponsorship::model()->findByPk($id)->delete();
@@ -131,11 +137,17 @@ class AdminProjectsController extends Controller {
 		$query = "";
 		
 		if ($folio != null) {
-			$query .= 'SELECT CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.* 
+			$query .= 'SELECT CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.*, 
+			pc.id AS id_project_coworkers, pc.id_project, pc.fullname, pd.id AS id_project_docs, pd.id_project,
+			pd.type, pd.path, pd.creation_date AS creation_date_project_docs, pf.id AS id_project_followups,
+			pf.id_project, pf.followup, pf.datetime
 			 FROM projects pro
 				 JOIN curriculum curri ON pro.id_curriculum=curri.id
  				 JOIN users u ON curri.id_user=u.id
   				 JOIN persons p ON u.id=p.id_user
+  				 LEFT JOIN projects_coworkers pc ON pc.id_project=pro.id
+			     LEFT JOIN projects_docs pd ON pd.id_project=pro.id
+			     LEFT JOIN projects_followups pf ON pf.id_project=pro.id
             WHERE pro.id='.$id;
 
 			$view = 'view_project';
