@@ -27,7 +27,8 @@ if(!$model->isNewRecord){
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
-<!-- 		<div class="row">
+
+	<div class="row">
 	<?php echo $form->labelEx($model,'id_user_sponsorer'); ?>
 
 	<?php
@@ -35,9 +36,9 @@ if(!$model->isNewRecord){
 		    'model'=>$model,
 		    'attribute'=>'id_user_sponsorer',
 		    'name'=>'Sponsorship[id_user_sponsorer]',
-		    'id'=>'id',
+		    'id'=>'id_user_sponsorer',
 		    'value'=>$sponsor,
-		    'source'=>$this->createUrl('/sponsorship/getSponsors'),  
+		    'source'=>$this->createUrl('/adminProjects/getSponsors'),  
 		    'options'=>array(
 		        'minLength'=>'0' 
 		    ),
@@ -47,7 +48,7 @@ if(!$model->isNewRecord){
 	?>
 
 		<?php echo $form->error($model,'id_user_sponsorer'); ?>
-			</div> -->
+			</div>
 
 	<div class="row">
 	<?php echo $form->labelEx($model,'id_user_researcher'); ?>
