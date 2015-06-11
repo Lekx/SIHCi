@@ -193,7 +193,23 @@ class AdminUsersController extends Controller {
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDelete($id) {
-		$this->loadModel($id)->delete();
+		$users = Users::model()->findByPK($id);
+
+		if($user->type == "fisico"){
+		$curriculum  = Curriculum::model()->findByAttributes(array("id_user"=>$id));
+
+		$books = Books::model()->findByAttributes(array("id_curriculum"=>$curriculum->id));
+
+		Jobs::model()->findByAttributes(array("id_curriculum"=>$curriculum->id))->delete();
+
+		BooksAuthors::model()->findByAttributes(array("id_books"=>$books->id))->delete();
+		$books->delete();
+
+		$curriculum->delete();
+		}else{
+			//hacer todo lo de sponsorship;
+		}
+
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
