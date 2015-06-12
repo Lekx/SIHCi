@@ -1,8 +1,9 @@
 
 <!-- AS02-Listarrespaldos de base de datos-->
+<?php 
 
-
-<div class="row">Respaldos</div>
+?>
+<div class="row"><h3>Respaldos</h3></div>
 
 <script type="text/javascript">
 
@@ -28,7 +29,7 @@ function search(){
 			<td>Descarga</td>
 		</tr>
 		<?php 
-			//$zip=Yii::app()->baseUrl."/backups/compressZip.php";
+			
             $url= "../sihci/backups/files";
 			$files= scandir($url,0);
 			unset($files[0]);
@@ -39,8 +40,8 @@ function search(){
 			{
 				echo "<tr>";
 					echo "<td>".date("Y-m-d")."</td>";
-					echo "<td>".substr($backupsFiles,-5,10)."</td>";
-					echo "<td> <a href='../backups/zip.php' target='_self'> Descargar ZIP </a></td>";
+					echo "<td>".'3-00'."</td>";
+					echo "<td> <a href='../backups/compress_zip.php' target='_self'> Descargar ZIP </a></td>";
 				echo "</tr>";
 
 			}
