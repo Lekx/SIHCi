@@ -1,5 +1,14 @@
 
-<h2>Protocolos patrocinados por la industria Farmacéutica</h2>
+<section class="informativa">
+
+	
+
+	<section class="column-center2">
+	  <div class="titleinfo">
+     <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Comites.png" alt="">
+       	<h2>Protocolos patrocinados por la industria Farmacéutica</h2>
+        <hr>
+        </div>
 <?php 
 
 $this->widget('zii.widgets.grid.CGridView', array(
@@ -8,6 +17,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'summaryText'=>'', 
 	'ajaxUpdate' => true,
 	'filter' => null,
+	'summaryText'=>'',
+	'htmlOptions' => array('class' => 'table'),
 	'columns'=>array(
 
 	array('header'=>'patrocinador',
@@ -30,4 +41,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 ),
    	),
 )); ?>
+</section>
+</section>
 

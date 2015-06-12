@@ -5,16 +5,20 @@
 $this->breadcrumbs=array(
 	'Líneas de Investigación'=>array('research_areas'),
 );
+$controller="";
+$editUser = "";
+if(isset($_GET["ide"]))
+	$editUser = "?ide=".(int)$_GET["ide"];
 
 $this->menu=array(
-	array('label'=>'Datos Personales', 'url'=>array('curriculumVitae/personalData')),
-	array('label'=>'Documentos oficiales', 'url'=>array('curriculumVitae/docsIdentity')),
-	array('label'=>'Datos de dirección actual', 'url'=>array('curriculumVitae/addresses')),
-	array('label'=>'Datos laborales', 'url'=>array('curriculumVitae/jobs')),
-	array('label'=>'Líneas de investigación', 'url'=>array('curriculumVitae/researchAreas')),
-	array('label'=>'Datos de contacto', 'url'=>array('curriculumVitae/phones')),
-	array('label'=>'Formación académica', 'url'=>array('curriculumVitae/grades')),
-	array('label'=>'Nombramientos', 'url'=>array('curriculumVitae/commission')),
+	array('label'=>'Datos Personales', 'url'=>array(($controller==""?'curriculumVitae/personalData':$controller).$editUser)),
+	array('label'=>'Documentos oficiales', 'url'=>array(($controller==""?'curriculumVitae/docsIdentity':$controller).$editUser)),
+	array('label'=>'Datos de dirección actual', 'url'=>array(($controller==""?'curriculumVitae/addresses':$controller).$editUser)),
+	array('label'=>'Datos laborales', 'url'=>array(($controller==""?'curriculumVitae/jobs':$controller).$editUser)),
+	array('label'=>'Líneas de investigación', 'url'=>array(($controller==""?'curriculumVitae/researchAreas':$controller).$editUser)),
+	array('label'=>'Datos de contacto', 'url'=>array(($controller==""?'curriculumVitae/phones':$controller).$editUser)),
+	array('label'=>'Formación académica', 'url'=>array(($controller==""?'curriculumVitae/grades':$controller).$editUser)),
+	array('label'=>'Nombramientos', 'url'=>array(($controller==""?'curriculumVitae/commission':$controller).$editUser)),
 
 );
 ?>

@@ -1,8 +1,5 @@
-
 <?php 
-
 echo CHtml::dropDownList('years', '',$years,array(
-
 'ajax'=> array(
     'type'=>'POST',
     'url'=>$this->createUrl('caca'),
@@ -13,21 +10,16 @@ echo CHtml::dropDownList('years', '',$years,array(
      //   $("#chale").html("asdf");
        $("#chale").html(data);
         //$("#initialChart").xAxis[0].setCategories([2,4,5,6,7], false);
-
-
     }',
     //'update' => '#chale',
     )
 ));
-
 ?>
 <div id="chale" style="overflow:hidden;position:relative;border:1px solid red;"></div>
 
   <?php
-
   $this->widget(
         'yiiwheels.widgets.highcharts.WhHighCharts',
-
         array(
             'id'=>'initialChart',
             'pluginOptions' => array(
@@ -47,5 +39,4 @@ echo CHtml::dropDownList('years', '',$years,array(
         )
         )
         );
-
         ?>

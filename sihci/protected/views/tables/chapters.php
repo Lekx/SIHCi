@@ -80,6 +80,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$chapters,
 	 'ajaxUpdate' => true,
 	'filter' => null,
+	'summaryText'=>'',
 	'columns'=>array(
 		 array('header'=>'Numero de Usuario',
 		 		'name'=>'id',
@@ -93,7 +94,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		     array('header'=>'Título del Libro',
 		 		'name'=>'book_title',
                 ),
-		     array('header'=>'Publicaciones',
+		     array('header'=>'Publicado por:',
 		 		'name'=>'publishers',
                 ),
 		     array('header'=>'Unidad Hospitalaria',

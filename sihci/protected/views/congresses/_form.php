@@ -15,19 +15,19 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
-)); 
+));
 
 ?>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto')); ?>
+		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto','title'=>'Puesto')); ?>
 		<?php echo $form->error($model,'work_title'); ?>
 	</div>
 
 	<div class="row">
-			<span class="plain-select">	
+			<span class="plain-select">
 		<?php echo $form->dropDownList($model,'year', array('promt'=>'Seleccionar año',
 															'1930'=>'1930','1931'=>'1931',
 															'1932'=>'1932','1933'=>'1933','1934'=>'1934','1935'=>'1935',
@@ -36,7 +36,7 @@
 															'1944'=>'1944','1945'=>'1945','1946'=>'1946','1947'=>'1947',
 															'1948'=>'1948','1949'=>'1949','1950'=>'1950','1951'=>'1951',
 															'1952'=>'1952','1953'=>'1953','1954'=>'1954','1955'=>'1955',
-															'1956'=>'1956','1957'=>'1957','1958'=>'1958','1959'=>'1959',		
+															'1956'=>'1956','1957'=>'1957','1958'=>'1958','1959'=>'1959',
 															'1960'=>'1960','1961'=>'1961','1962'=>'1962','1963'=>'1963',
 															'1964'=>'1964','1965'=>'1965','1966'=>'1966','1967'=>'1967',
 															'1968'=>'1968','1969'=>'1969','1970'=>'1970','1971'=>'1971',
@@ -60,30 +60,30 @@
 															'2040'=>'2040','2041'=>'2041','2042'=>'2042','2043'=>'2043',
 															'2044'=>'2044','2045'=>'2045','2046'=>'2046','2047'=>'2047',
 															'2048'=>'2048','2049'=>'2049','2050'=>'2050'
-															
-															)); ?>
+
+															),array('title'=>'Año')); ?>
 															</span>
 		<?php echo $form->error($model,'year'); ?>
 	</div>
 
 	<div class="row">
-		
-		<?php echo $form->textField($model,'congress',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Congreso')); ?>
+
+		<?php echo $form->textField($model,'congress',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Congreso','title'=>'Congreso')); ?>
 		<?php echo $form->error($model,'congress'); ?>
 	</div>
 
 	<div class="row">
          <!-- <?php /*
-                $status = array('Nacional' => 'Nacional','Internacional'=>'Internacional'); 
+                $status = array('Nacional' => 'Nacional','Internacional'=>'Internacional');
                 echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
          <?php echo $form->error($model,'type'); */ ?> -->
-	 
+
 	</div>
 
 	<div class="row">
-			<span class="plain-select">	
+			<span class="plain-select">
 		<?php
-			$this->widget('ext.CountrySelectorWidget', 
+			$this->widget('ext.CountrySelectorWidget',
 				array(
 				    'value' => $model->country,
 				    'name' => Chtml::activeName($model, 'country'),
@@ -97,53 +97,53 @@
 		</span>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
-     
+
 	<div class="row">
-			<span class="plain-select">	
-        <?php echo $form->dropDownList($model,'work_type',array('promt'=>'Seleccionar tipo de trabajo','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'));?>
+			<span class="plain-select">
+        <?php echo $form->dropDownList($model,'work_type',array('promt'=>'Seleccionar tipo de trabajo','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'),array('title'=>'Tipo Trabajo'));?>
         </span>
         <?php echo $form->error($model,'work_type'); ?>
-     
+
 	</div>
 
 	<div class="row">
-		
-		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250,'placeholder'=>'Palabras Clave')); ?>
+
+		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250,'placeholder'=>'Palabras Clave','title'=>'Palabras Clave')); ?>
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)),
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
-                     		'success'=>'function(data) 
+                     		'success'=>'function(data)
                      		 {
-		                                      
+
 		                         if(data.status=="success")
 		                         {
-				                                        
+
 									$(".successdiv").show();
-		                         }		                         
+		                         }
 		                         else
 		                         {
 			                     	 $(".errordiv").show();
-			                     }       
-		                  	}',                    
-		                    
-                        ),array('class'=>'savebutton')); 
+			                     }
+		                  	}',
+
+                        ),array('class'=>'savebutton'));
         ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('congresses/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 
 
 		<div class="200">
-		
+
 		</div>
-		
+
 		<div class="404">
 		</div>
-		
+
 	</div>
 
 <?php $this->endWidget(); ?>
