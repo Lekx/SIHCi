@@ -114,7 +114,7 @@ function change(){
 </select>
   <br><br>
 <?php 
-
+// print_r($researchersIncome);
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$researchersIncome,
