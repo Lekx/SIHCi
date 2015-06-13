@@ -254,14 +254,10 @@ class AdminUsersController extends Controller {
 		$command = Yii::app()->db->createCommand();
 		$command->delete('users', 'id=:id', array(':id'=>$id));
 
+		$this->loadModel($id)->delete();
 
 		
 
-
-
-
-
-		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {

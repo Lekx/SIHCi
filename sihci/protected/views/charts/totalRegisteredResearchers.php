@@ -1,18 +1,26 @@
-<!--
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script> -->
+
+
+<!--Unidad Hospitalaria 
+<?php // echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
+Año de reporte 
+<?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
+¿Perteneciente al SNI?
+<?php echo CHtml::dropDownList('sni', '',array("total"=>"Ambos","no"=>"no","yes"=>"si"),array('onchange'=>'loadChart()')); ?><br/>
+Tipo de reporte 
+<?php echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>
+
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-<input type="button" value="puto" onclick="chingatumadre()">
+<input type="button" value="puto" onclick="loadChart()">
 <script>
 //jQuery.noConflict(); 
 var chart;
-function chingatumadre(){
-    var request = $.ajax({
-  url: yii.urls.base+"/index.php/charts/totalRegisteredResearches",
+function loadChart(){
+var request = $.ajax({
+  url: yii.urls.base+"/index.php/charts/totalRegisteredResearchers",
   method: "POST",
-  data: { id : "2015" },
+  data: { /*hu : $("#hu").val(), */years : $("#years").val(),sni : $("#sni").val(), type : $("#type").val()},
   dataType: "json"
 });
 
@@ -73,6 +81,10 @@ chart = new Highcharts.Chart({
             name: 'Hospital Civil Dr. Juan I. Menchaca',
             data: data.jim
 
+        }, {
+            name: 'Otros',
+            data: data.other
+
         },]
     });
 
@@ -84,7 +96,7 @@ request.fail(function( jqXHR, textStatus ) {
 
 }
 $(document).ready(function(){
-
+    loadChart();
 
 });
 

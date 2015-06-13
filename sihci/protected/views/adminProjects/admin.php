@@ -12,8 +12,8 @@
  }
 </script>
 <input type="text" id="search" onchange="search()" placeholder="Buscar"><br><br>
-<?php echo CHtml::link('<span>Registrar<br>Proyecto</span>', array('AdminUsers/CreateUser'));?><br><br>
-<?php echo CHtml::link('<span>Registrar<br>Patrocinio</span>', array('AdminUsers/CreateUser'));?>
+<?php echo CHtml::link('<span>Registrar<br>Proyecto</span>', array('AdminProjects/CreateProject'));?><br><br>
+<?php echo CHtml::link('<span>Registrar<br>Patrocinio</span>', array('AdminProjects/CreateSponsorship'));?>
 <?php 
 
 $this->widget('zii.widgets.grid.CGridView', array(
@@ -51,9 +51,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 ),
 		  array('header'=>'Acciones',
 				'class'=>'CButtonColumn',
-				'viewButtonUrl'=>'Yii::app()->createUrl("/AdminProjectsController/view", array("id" => $data["id"]))',
-				'deleteButtonUrl'=>'Yii::app()->createUrl("/controllername/delete", array("id" => $data["id"]))',
-				'updateButtonUrl'=>'Yii::app()->createUrl("/controllername/update", array("id" => $data["id"]))',
+				'viewButtonUrl'=>'Yii::app()->createUrl("/adminProjects/view", array("id" => $data["id"], "folio" => @$data["folio"]))',
+				'deleteButtonUrl'=>'Yii::app()->createUrl("/adminProjects/deleteProject", array("id" => $data["id"], "folio" => @$data["folio"]))',
+				'updateButtonUrl'=>'Yii::app()->createUrl("/adminProjects/update", array("id" => $data["id"], "folio" => @$data["folio"]))',
 				),
 
 	     
