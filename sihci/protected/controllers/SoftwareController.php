@@ -80,7 +80,7 @@ class SoftwareController extends Controller
 		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
 
 					    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
 					
 			    }
 				else 

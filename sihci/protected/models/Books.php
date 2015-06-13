@@ -61,10 +61,10 @@ class Books extends CActiveRecord
 			array('subdiscipline', 'length', 'max'=>45),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
-			array('path , safe','file','on'=> 'create',
-    	                'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
-    	                'maxSize'=>array(1204 * 5000)),
 			array('path ,safe', 'safe', 'on'=>'update'),
+
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png'),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, isbn, book_title, publisher, edition, release_date, volume, pages, copies_issued, work_type, idioma, traductor_type, traductor, area, discipline, subdiscipline, path, keywords, searchValue ,creation_date', 'safe', 'on'=>'search'),

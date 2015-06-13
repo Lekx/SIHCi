@@ -88,41 +88,47 @@ class BooksController extends Controller
 	                if(!is_dir($urlFile))
 	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/', 0777, true);
 	                
-	    		 					
-	 					$model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();    			 			   	
-			              
-			                if($model->save())
-			                {
-			               		              
-					 			$names = $_POST['names'];
-					            $last_name1 = $_POST['last_names1'];
-					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];
-					            
-	         					foreach($_POST['names'] as $key => $names)
-	         					{
-					               	unset($modelAuthor);
-					               	$modelAuthor = new BooksAuthors;
+		    		 	                                                	                       //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
+            		    if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png')
+            		    {				
+		 					$model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+						    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();    			 			   	
+				              
+				                if($model->save())
+				                {
+				               		              
+						 			$names = $_POST['names'];
+						            $last_name1 = $_POST['last_names1'];
+						            $last_name2 = $_POST['last_names2'];
+						            $position = $_POST['positions'];
+						            
+		         					foreach($_POST['names'] as $key => $names)
+		         					{
+						               	unset($modelAuthor);
+						               	$modelAuthor = new BooksAuthors;
 
-					               	$modelAuthor->id_book = $model->id;
-					       			$modelAuthor->names = $names;
-					        		$modelAuthor->last_name1 = $last_name1[$key];
-					       			$modelAuthor->last_name2 = $last_name2[$key];
-					        		$modelAuthor->position = $position[$key];
-		                    		$modelAuthor->save();
-			              	    }	
+						               	$modelAuthor->id_book = $model->id;
+						       			$modelAuthor->names = $names;
+						        		$modelAuthor->last_name1 = $last_name1[$key];
+						       			$modelAuthor->last_name2 = $last_name2[$key];
+						        		$modelAuthor->position = $position[$key];
+			                    		$modelAuthor->save();
+				              	    }	
 
-			                    echo CJSON::encode(array('status'=>'success'));
-	                            $this->redirect(array('admin','id'=>$model->id));
-	                            Yii::app()->end();
+				                    echo CJSON::encode(array('status'=>'success'));
+		                            $this->redirect(array('admin','id'=>$model->id));
+		                            Yii::app()->end();
 
-			               }					               
-			               else
-			               {
-			               		echo CJSON::encode(array('status'=>'404'));
-	                            Yii::app()->end();
-			               }
+				               }					               
+				               else
+				               {
+				               		echo CJSON::encode(array('status'=>'404'));
+		                            Yii::app()->end();
+				               }
+				        }
+				        else
+			               echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
+			                  
 			    }
 			    else
 			    {

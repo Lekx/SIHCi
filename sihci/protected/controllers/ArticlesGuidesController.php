@@ -80,15 +80,15 @@ class ArticlesGuidesController extends Controller
 
 			if($model->validate())
             {
-            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticulesAndGuides/';
+            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/';
 
                	if (!empty(CUploadedFile::getInstanceByName('ArticlesGuides[url_document]')))
                	{
 	                if(!is_dir($path))
-	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticulesAndGuides/', 0777, true);
+	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/', 0777, true);
 	                
 	 					$model->url_document->saveAs($path.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
-					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticulesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();    			 			   	
+					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();    			 			   	
 		                if($model->save())
 		                {
 		               		              
