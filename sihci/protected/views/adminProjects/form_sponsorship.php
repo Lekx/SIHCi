@@ -23,7 +23,7 @@ if(!$model->isNewRecord){
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -43,8 +43,6 @@ if(!$model->isNewRecord){
 		        'minLength'=>'0' 
 		    ),
 		));
-
-
 	?>
 
 		<?php echo $form->error($model,'id_user_sponsorer'); ?>
@@ -65,10 +63,7 @@ if(!$model->isNewRecord){
 		        'minLength'=>'0' 
 		    ),
 		));
-
-
 	?>
-
 		<?php echo $form->error($model,'id_user_researcher'); ?>
 			</div>
 	<div class="row">

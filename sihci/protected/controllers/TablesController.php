@@ -70,7 +70,10 @@ class TablesController extends Controller
 	public function actionResearchers()
 	{
 		$titlePage = "Cantidad de Investigadores";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM users')->queryAll();
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(u.creation_date) as year from users u 
+ 				JOIN curriculum curri ON curri.id_user=u.id
+ 				JOIN jobs j ON curri.id=j.id_curriculum
+  				JOIN persons p ON u.id=p.id_user')->queryAll();
 
 		 $query='SELECT DISTINCT u.id,p.names, j.hospital_unit, j.id_curriculum,curri.SNI, curri.status, u.creation_date from users u 
  				JOIN curriculum curri ON curri.id_user=u.id
