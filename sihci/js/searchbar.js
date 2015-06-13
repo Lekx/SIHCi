@@ -7,17 +7,14 @@ $(document).ready(function() {
              $.ajax({
                  url: yii.urls.searchbar + searchKey,
                  type: 'POST',
-                        /*data: {
-                        keyword: searchKey
-                        },*/
+                        
                  success: function(data) {
                      $("#searchBarResultstop").show();
                      $('#searchBarResultstop').html(data);
                  },
              }).done({
-                 //alert('Success!');
              }).fail({
-                 //alert('fail ');
+                
              });
 			 			 if(e.keyCode == 13)
 				  window.location = yii.urls.searchBarResults + searchKey;
@@ -31,17 +28,13 @@ $(document).ready(function() {
              $.ajax({
                  url: yii.urls.searchbar + searchKey,
                  type: 'POST',
-                        /*data: {
-                        keyword: searchKey
-                        },*/
+                        
                  success: function(data) {
                      $("#searchBarResults").show();
                      $('#searchBarResults').html(data);
                  },
              }).done({
-                 //alert('Success!');
              }).fail({
-                 //alert('fail ');
              });
 			 if(e.keyCode == 13)
 				  window.location = yii.urls.searchBarResults + searchKey;
