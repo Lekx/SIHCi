@@ -52,6 +52,9 @@ class Projects extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	public $searchValue;
+
 	public function tableName()
 	{
 		return 'projects';
@@ -75,7 +78,7 @@ class Projects extends CActiveRecord
 			array('participant_institutions, participant_institutions_international, adtl_caracteristics_a, adtl_caracteristics_b, adtl_caracteristics_c, adtl_caracteristics_d, adtl_caracteristics_e, adtl_caracteristics_f, adtl_caracteristics_g', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, title, discipline, research_type, priority_topic, sub_topic, justify, is_sni, develop_uh, institution_colaboration, national_institutions, participant_institutions, international_institutions_, participant_institutions_international, colaboration_type, has_adtl_caracteristics_a, adtl_caracteristics_a, has_adtl_caracteristics_b, adtl_caracteristics_b, has_adtl_caracteristics_c, adtl_caracteristics_c, has_adtl_caracteristics_d, adtl_caracteristics_d, has_adtl_caracteristics_e, adtl_caracteristics_e, has_adtl_caracteristics_f, adtl_caracteristics_f, has_adtl_caracteristics_g, adtl_caracteristics_g, status, folio, is_sponsored, registration_number', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, title, discipline, research_type, priority_topic, sub_topic, justify, is_sni, develop_uh, institution_colaboration, national_institutions, participant_institutions, international_institutions_, participant_institutions_international, colaboration_type, has_adtl_caracteristics_a, adtl_caracteristics_a, has_adtl_caracteristics_b, adtl_caracteristics_b, has_adtl_caracteristics_c, adtl_caracteristics_c, has_adtl_caracteristics_d, adtl_caracteristics_d, has_adtl_caracteristics_e, adtl_caracteristics_e, has_adtl_caracteristics_f, adtl_caracteristics_f, has_adtl_caracteristics_g, adtl_caracteristics_g, status, folio, is_sponsored, registration_number, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -156,8 +159,13 @@ class Projects extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR is_sponsored LIKE CONCAT('%', :searchValue ,'%') OR title LIKE CONCAT('%', :searchValue ,'%')OR discipline LIKE CONCAT('%', :searchValue , '%') OR develop_uh LIKE CONCAT('%', :searchValue , '%') OR folio LIKE CONCAT('%', :searchValue , '%') OR registration_number LIKE CONCAT('%', :searchValue , '%') OR status LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
 
-		$criteria->compare('id',$this->id);
+		/*$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('discipline',$this->discipline,true);
@@ -190,7 +198,7 @@ class Projects extends CActiveRecord
 		$criteria->compare('status',$this->status,true);
 		$criteria->compare('folio',$this->folio,true);
 		$criteria->compare('is_sponsored',$this->is_sponsored);
-		$criteria->compare('registration_number',$this->registration_number,true);
+		$criteria->compare('registration_number',$this->registration_number,true);*/
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
