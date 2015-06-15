@@ -134,7 +134,6 @@ class CurriculumVitaeController extends Controller
 		
 		$curriculum=Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$getDocs = DocsIdentity::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
-		
 		$DocExist = DocsIdentity::model()->findAllByAttributes(array('id_curriculum' => $curriculum->id));
 		
 		$modelDocs = array();
