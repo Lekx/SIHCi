@@ -10,10 +10,10 @@ $this->menu=array(
 	array('label'=>'Cantidad de Investigadores', 'url'=>array('researchers')),
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
-	array('label'=>'Capítulos', 'url'=>array('chapters')),
-	array('label'=>'Patentes', 'url'=>array('patents')),
-	array('label'=>'Software', 'url'=>array('software')),
-	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
+	array('label'=>'Capítulos de Libros', 'url'=>array('chapters')),
+	array('label'=>'Registro de Propiedad Intelectual: Patentes', 'url'=>array('patents')),
+	array('label'=>'Registro de Propiedad Intelectual: Software', 'url'=>array('software')),
+	array('label'=>'Registro de Propiedad Intelectual: Derechos de Autor', 'url'=>array('copyrights')),
 	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
 
@@ -50,10 +50,23 @@ function change(){
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueProjects+'))').hide();
 
 }//function
+
+ function search(){
+ 	valueSearch = $("#search").val();
+ 	$('tbody > tr').show();
+
+ 	if (valueSearch == '') {
+ 		$('tbody > tr').show();
+ 	}else{
+ 		$('tbody > tr:not(:contains('+valueSearch+'))').hide();
+ 	}
+ }
 </script>
+<input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
 <select id="valueProjects" onchange="change()">
   <option value="total" selected="">Total de Proyectos</option>	
-  <option value="abierto">Proyectos Abiertos</option>
+  <option value="En proceso">Proyectos en proceso</option>
+  <option value="borrador">Proyectos en borrador</option>
   <option value="dictaminado">Proyectos Concluidos</option>
   <option value="rechazado">Proyectos Rechazados</option>
 
@@ -64,7 +77,6 @@ function change(){
   <option value="total" selected="">Total de Hospitales</option>	
   <option >Hospital Civil Fray Antonio Alcalde</option>
   <option >Hospital Civil Dr. Juan I. Menchaca</option>
-  <option>NA</option>
 </select>
   <br><br>
 

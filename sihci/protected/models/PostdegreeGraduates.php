@@ -57,8 +57,8 @@ class PostdegreeGraduates extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'fullname' => 'Nombre Completo del graduado',
-			'creation_date' => 'Creation Date',
+			'fullname' => 'Nombre completo del graduado.',
+			'creation_date' => 'Fecha de creación.',
 		);
 	}
 
