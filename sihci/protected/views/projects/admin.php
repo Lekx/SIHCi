@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h1>Gestión de proyectos no patrocinados</h1>
+<h1>Gestión de proyectos</h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'projects-grid',
