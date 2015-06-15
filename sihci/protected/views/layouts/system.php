@@ -18,12 +18,10 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sys.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
+
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/highcharts415/highcharts.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/highcharts415/modules/exporting.js"></script>
-
-
+       
         <?php Yii::app()->bootstrap->register(); ?>
         <!-- Load JS -->
         <?php
@@ -34,6 +32,7 @@
             $cs->registerScriptFile($baseUrl . '/js/reCopy.js');
             $cs->registerScriptFile($baseUrl . '/js/file.js');
             $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
+            $cs->registerScriptFile($baseUrl . '/js/evaluateCV.js');
         ?>
          <?php
             Yii::app()->clientScript->registerScript('helpers', '
@@ -47,6 +46,10 @@
 
             }',CClientScript::POS_HEAD);
         ?>
+        <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/highcharts415/highcharts.js"); ?>
+        <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/highcharts415/modules/exporting.js"); ?>
+
+
 
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <script>

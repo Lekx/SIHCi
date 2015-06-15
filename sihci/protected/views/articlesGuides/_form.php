@@ -22,7 +22,6 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
 	<div class="row">
 		<?php echo $form->textField($model,'isbn',array('size'=>13,'placeholder'=>'ISBN', 'title'=>'ISBN')); ?>
 		<?php echo $form->error($model,'isbn'); ?>

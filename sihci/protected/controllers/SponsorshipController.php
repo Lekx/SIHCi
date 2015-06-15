@@ -177,7 +177,13 @@ class SponsorshipController extends Controller
 
 	public function actionGetResearchers() {
 		if (Yii::app()->request->isAjaxRequest&&!empty($_GET['term'])) {
-			$sql = 'SELECT u.id , CONCAT(p.last_name1, " ", p.last_name2, ", ", p.names) AS label FROM users AS u LEFT JOIN persons AS p ON u.id = p.id_user RIGHT JOIN curriculum AS cv ON u.id = cv.id_user WHERE u.type="fisico" AND u.status="activo" AND (p.last_name1 LIKE :qterm OR p.names LIKE :qterm) ORDER BY p.last_name1 ASC';
+			$sql = 'SELECT u.id , CONCAT(p.last_name1, " ", p.last_name2, ", ", p.names) AS label 
+			FROM users AS u 
+			LEFT JOIN persons AS p ON u.id = p.id_user 
+			RIGHT JOIN curriculum AS cv ON u.id = cv.id_user 
+			WHERE u.type="fisico" 
+			AND u.status="activo" 
+			AND (p.last_name1 LIKE :qterm OR p.names LIKE :qterm) ORDER BY p.last_name1 ASC';
 			$command = Yii::app()->db->createCommand($sql);
 			$qterm = $_GET['term'].'%';
 			$command->bindParam(":qterm", $qterm, PDO::PARAM_STR);

@@ -32,7 +32,6 @@ class SearchBarController extends Controller
 
 	public function actionAutoSearch($keyword){
 		echo $this->jsonResults($keyword);
-		//print_r(json_encode($results));
 	}
 
 	public function actionSearchResults($keyword)
