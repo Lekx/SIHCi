@@ -75,10 +75,11 @@ select
 {
     width: 12%;
     height: 195px;
+
     background-image: url('../img/perfil.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
     background-position: center;
+    background-size: 100% 100%;
 }
 .headerconteinerF #perfil
 {
@@ -1152,7 +1153,6 @@ thead th
     font-family: 'Caviar_Dreams_Bold' !important;
     font-size: 24.5px !important;
 
- 
     width: 92% !important;
     height: 50px !important;
     height: 50px !important;
