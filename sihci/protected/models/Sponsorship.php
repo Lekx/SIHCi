@@ -22,6 +22,9 @@ class Sponsorship extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	public $searchValue;
+
 	public function tableName()
 	{
 		return 'sponsorship';
@@ -42,7 +45,7 @@ class Sponsorship extends CActiveRecord
 			array('description, keywords', 'length', 'max'=>150),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_user_sponsorer, id_user_researcher, project_name, description, keywords, status', 'safe', 'on'=>'search'),
+			array('id, id_user_sponsorer, id_user_researcher, project_name, description, keywords, status, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -94,13 +97,19 @@ class Sponsorship extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR project_name LIKE CONCAT('%', :searchValue ,'%') OR description LIKE CONCAT('%', :searchValue ,'%') OR status LIKE CONCAT('%', :searchValue ,'%') ");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}
+
+		/*$criteria->compare('id',$this->id);
 		$criteria->compare('id_user_sponsorer',$this->id_user_sponsorer);
-		$criteria->compare('id_user_researcher',$this->id_user_researcher);
+		$criteria->compare('id_user_researcher',$this->id_user_rx|esearcher);
 		$criteria->compare('project_name',$this->project_name,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('keywords',$this->keywords,true);
-		$criteria->compare('status',$this->status);
+		$criteria->compare('status',$this->status);*/
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
