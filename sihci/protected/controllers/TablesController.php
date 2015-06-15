@@ -106,7 +106,7 @@ class TablesController extends Controller
 		$titlePage = "Libros";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books')->queryAll();
 
-		$query='SELECT u.id,p.names,bo.book_title, bo.publisher, bo.release_date,j.hospital_unit, bo.creation_date FROM books bo
+		$query='SELECT u.id,p.names,bo.book_title, bo.publisher, bo.release_date,bo.path, j.hospital_unit, bo.creation_date FROM books bo
 				 JOIN curriculum curri ON bo.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
@@ -119,10 +119,10 @@ class TablesController extends Controller
 
 	public function actionChapters()
 	{
-		$titlePage = "Capítulos";
+		$titlePage = "Capítulos de Libros";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters')->queryAll();
 
-		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers,j.hospital_unit, cha.creation_date FROM books_chapters cha
+		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers, cha.url_doc, j.hospital_unit, cha.creation_date FROM books_chapters cha
 				 JOIN curriculum curri ON cha.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
@@ -135,7 +135,7 @@ class TablesController extends Controller
 
 	public function actionPatents()
 	{
-		$titlePage = "Patentes";
+		$titlePage = "Registro de Propiedad Intelectual: Patentes";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM patent')->queryAll();
 
 		$query='SELECT u.id,p.names,pa.country, pa.name, pa.application_type, pa.application_number, pa.patent_type, j.hospital_unit, pa.creation_date 
@@ -152,10 +152,10 @@ class TablesController extends Controller
 
 	public function actionSoftware()
 	{
-		$titlePage = "Software";
+		$titlePage = "Registro de Propiedad Intelectual: Software";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM software')->queryAll();
 
-		$query='SELECT u.id,p.names, so.country, so.title, so.sector, so.organization, so.objective, j.hospital_unit, so.creation_date 
+		$query='SELECT u.id,p.names, so.country, so.title, so.sector, so.organization, so.objective, so.path, j.hospital_unit, so.creation_date 
 				FROM software so
 				 JOIN curriculum curri ON so.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
@@ -169,7 +169,7 @@ class TablesController extends Controller
 
 	public function actionCopyrights()
 	{
-		$titlePage = "Derechos de Autor";
+		$titlePage = "Registro de Propiedad Intelectual: Derechos de Autor";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM copyrights')->queryAll();
 
 		$query='SELECT u.id,p.names, copy.participation_type, copy.title, copy.step_number, copy.application_date, j.hospital_unit, copy.creation_date 
