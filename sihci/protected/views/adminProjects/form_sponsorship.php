@@ -23,11 +23,12 @@ if(!$model->isNewRecord){
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
-<!-- 		<div class="row">
+
+	<div class="row">
 	<?php echo $form->labelEx($model,'id_user_sponsorer'); ?>
 
 	<?php
@@ -35,19 +36,17 @@ if(!$model->isNewRecord){
 		    'model'=>$model,
 		    'attribute'=>'id_user_sponsorer',
 		    'name'=>'Sponsorship[id_user_sponsorer]',
-		    'id'=>'id',
+		    'id'=>'id_user_sponsorer',
 		    'value'=>$sponsor,
-		    'source'=>$this->createUrl('/sponsorship/getSponsors'),  
+		    'source'=>$this->createUrl('/adminProjects/getSponsors'),  
 		    'options'=>array(
 		        'minLength'=>'0' 
 		    ),
 		));
-
-
 	?>
 
 		<?php echo $form->error($model,'id_user_sponsorer'); ?>
-			</div> -->
+			</div>
 
 	<div class="row">
 	<?php echo $form->labelEx($model,'id_user_researcher'); ?>
@@ -64,10 +63,7 @@ if(!$model->isNewRecord){
 		        'minLength'=>'0' 
 		    ),
 		));
-
-
 	?>
-
 		<?php echo $form->error($model,'id_user_researcher'); ?>
 			</div>
 	<div class="row">

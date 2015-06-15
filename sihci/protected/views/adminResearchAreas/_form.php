@@ -35,7 +35,7 @@
 
 	<div class="row">
 		
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación', 'title'=>'Nombre de investigación')); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
@@ -49,22 +49,19 @@
 		                                      
 		                         if(data.status=="success")
 		                         {
-				                     alert("Registro realizado con éxito");
-				                     $("#research-areas-form")[0].reset();
-   				                     window.location.href ="'.Yii::app()->createUrl('AdminResearchAreas/admin').'";		                         
+				                   
+				                     $(".successdiv").show();			                         
 
 		                         }		                         
 		                         else
 		                         {
-			                     	alert("Complete los campos con *");   
+			                     	 $(".errordiv").show(); 
 			                     }       
 		                  	}',                    
 		                    
-                        )); 
+                        ),array('class'=>'savebutton')); 
         ?>
-        <?php  if($model->isNewRecord) 
-			 echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">';
-		?>
+       
        	<?php echo CHtml::link('Cancelar', array('/AdminResearchAreas/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 		<div class="200">

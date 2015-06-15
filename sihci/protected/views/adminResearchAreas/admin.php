@@ -27,10 +27,20 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Líneas de Investigación</h1>
+<?php
+/* @var $this BooksController */
+/* @var $model Books */
+/* @var $form CActiveForm */
+$baseUrl = Yii::app()->baseUrl;
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl. '/js/admin.js');
+?>
 
-
-
+<div class="admintitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Gestión de Lineas de Investigación</h1>
+            <hr>
+        </div>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(

@@ -1,7 +1,7 @@
 
 
-Unidad Hospitalaria 
-<?php echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>
+<!--Unidad Hospitalaria 
+<?php // echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
 Año de reporte 
 <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
 ¿Perteneciente al SNI?
@@ -20,7 +20,7 @@ function loadChart(){
 var request = $.ajax({
   url: yii.urls.base+"/index.php/charts/totalRegisteredResearchers",
   method: "POST",
-  data: { hu : $("#hu").val(),years : $("#years").val(),sni : $("#sni").val(), type : $("#type").val()},
+  data: { /*hu : $("#hu").val(), */years : $("#years").val(),sni : $("#sni").val(), type : $("#type").val()},
   dataType: "json"
 });
 

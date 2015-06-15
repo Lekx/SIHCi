@@ -1,7 +1,7 @@
 <h1>Detalles del proyecto: <?php echo $model["title"];?> </h1>
 
 <?php 
-
+// print_r($model);
 $this->widget('zii.widgets.CDetailView', array(
 	'data' => $model,
 	'attributes' => array(
@@ -61,8 +61,17 @@ $this->widget('zii.widgets.CDetailView', array(
 				"value"=>$model['registration_number']),
 		array(	"name"=>'Fecha de Creación',
 				"value"=>$model['creation_date']),
-				
-
+				/// projects_coworkers
+		array(	"name"=>'Nombre de Compañeros de Trabajo',
+				"value"=>$model['fullname']),
+			//projects_docs
+		array(	"name"=>'Tipo de Documento',
+				"value"=>$model['type']),
+		array(	"name"=>'Path',
+				"value"=>$model['path']),
+		//projects_followups
+		array(	"name"=>'Seguimientos',
+				"value"=>$model['followup']),
 		
 	),
 ));?>

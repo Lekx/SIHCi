@@ -341,16 +341,15 @@ class ChartsController extends Controller
 	        	
 
 		if(isset($_POST["years"])){
-			if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
+			/*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
 				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
 			else if($_POST["hu"] == "otro")
 				$condHu = " AND j.hospital_unit IS NULL";
-			else
+			else*/
 				$condHu = "";
 
-
 			if($_POST["sni"] != "total" && $_POST["sni"] == "no")
-				$condSni = " AND c.sni = 0";
+				$condSni = " AND c.sni = 0 OR c.sni IS NULL";
 			else if($_POST["sni"] == "yes")
 				$condSni = " AND c.sni > 0";
 			else
@@ -373,7 +372,7 @@ class ChartsController extends Controller
 				SELECT 
 				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
 				COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
-				COUNT(IF((j.hospital_unit IS NULL),1,NULL)) AS other,
+				COUNT(u.id) as totalUsers,
 				MONTH(u.creation_date) as months
 				from users as u 
 				left join curriculum as c ON c.id_user = u.id 
@@ -384,7 +383,7 @@ class ChartsController extends Controller
 			';
 			$results = $conexion->createCommand($query)->queryAll();
 
-//print_r($results);
+			//print_r($results);
 
 			$months = array();
 			$jim = array();
@@ -395,10 +394,10 @@ class ChartsController extends Controller
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
-				array_push($other, (int)$value["other"]);
+				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($results).'}';
 		}
 
 		if(!isset($_POST["years"])){
