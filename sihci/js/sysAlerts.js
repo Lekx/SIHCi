@@ -29,5 +29,7 @@ $(document).ready(function() {
         $('[id^= SponsorBilling]').val('');
 
     });
+    $('.adminmenu').hide();
+    $('.summary').remove();
 
 });

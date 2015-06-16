@@ -75,6 +75,6 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Crear Graduados de posgrado:</h4>
+<h4>Crear graduados de posgrado:</h4>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

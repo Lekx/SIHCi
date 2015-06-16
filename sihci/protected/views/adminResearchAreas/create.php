@@ -15,11 +15,11 @@ $this->menu=array(
 ?>
 
 <div class="cvtitle">
-            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
             <h1>Gestión Lineas De Investigación</h1>
             <hr>
         </div>
 
-<h3>Crear registro de libros:</h3>
+<h3>Crear registro de lineas de investigación:</h3>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

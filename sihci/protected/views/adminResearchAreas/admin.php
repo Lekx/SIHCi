@@ -37,7 +37,7 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
 ?>
 
 <div class="admintitle">
-            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
             <h1>Gestión de Lineas de Investigación</h1>
             <hr>
         </div>
