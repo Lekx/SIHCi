@@ -52,6 +52,53 @@ $('<div></div>').appendTo('form')
 		//alert("ouch, you fucked me bby! "+section);
 		$("#section"+section).show();
 	}
+	function ajaxSave(value){
+		var request = $.ajax({
+		  url: yii.urls.base+"/index.php/projects/create",
+		  method: "POST",
+		  data: $("#projects-form").serialize()+"&type="+value,
+		  dataType: "json"
+		});
+
+			request.done(function(data) {
+				alert(data);
+				window.location = yii.urls.cancelProject;
+		});
+			
+	}
+
+	function save(value){
+			if(value=="send"){
+				$('<div></div>').appendTo('form')
+				    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
+				    .dialog({
+				        modal: true,
+				        title: 'Cancelar',
+				        zIndex: 10000,
+				        autoOpen: true,
+				        width: 'auto',
+				        resizable: false,
+				        buttons: {
+				            "Enviar a revisión": function () {
+				            	ajaxSave("send");
+				                $(this).dialog("close");
+
+				            },
+				            "Guardar como borrador": function () {
+				            	ajaxSave("draft");
+				                $(this).dialog("close");
+				            }
+				        },
+				        close: function (event, ui) {
+				            $(this).remove();
+				        }
+				    });
+				
+			}else
+				ajaxSave("draft")
+
+			
+	}
 </script>
 
 <div class="form">
@@ -62,11 +109,34 @@ $('<div></div>').appendTo('form')
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
 <div id="section1" class="sections" style="border:1px solid #ccc;padding:15px; border-radus:3px;margin:10px;">
+	<div class="row">
+		<?php 
+			if(Yii::app()->user->id_roles==2){
+				$researcher = "";
+				if(!$model->isNewRecord){
+					$researcher = $model->idCurriculum->idUser->persons[0];
+					$researcher = $researcher['last_name1']." ".$researcher['last_name2'].", ".$researcher['names'];
+				}
+				echo "Encargado <br>";
+				$this->widget('ext.MyAutoComplete', array(
+				    'model'=>$model,
+				    'attribute'=>'id_curriculum',
+				    'name'=>'Projects[id_curriculum]',
+				    'id'=>'id_curriculum',
+				    'value'=>$researcher,
+				    'source'=>$this->createUrl('/sponsorship/getResearchers'),  
+				    'options'=>array(
+				        'minLength'=>'0' 
+				    ),
+				));
+			}
+		?>
+	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>250)); ?>
@@ -243,11 +313,11 @@ $('<div></div>').appendTo('form')
 		<?php 
 		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
 		
-		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft"));
+		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft')"));
 
 		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
 		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()"));
-		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","style"=>"display:none;float:right;"));
+		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')","style"=>"display:none;float:right;"));
 		echo " ".Chtml::button('Siguiente >',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;"));
 		echo " ".Chtml::button('< Anterior',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;"));
 		

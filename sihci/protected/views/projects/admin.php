@@ -24,7 +24,7 @@ $('.search-form form').submit(function(){
 
 ?>
 
-<h1>Gestión de proyectos no patrocinados</h1>
+<h1>Gestión de proyectos</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
