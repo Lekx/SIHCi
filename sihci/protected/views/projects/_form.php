@@ -121,10 +121,7 @@ $('<div></div>').appendTo('form')
 				if(!$model->isNewRecord){
 					$researcher = $model->idCurriculum->idUser->persons[0];
 					$researcher = $researcher['last_name1']." ".$researcher['last_name2'].", ".$researcher['names'];
-				
 				}
-
-				// echo "<div class='row'>";
 				echo "Encargado <br>";
 				$this->widget('ext.MyAutoComplete', array(
 				    'model'=>$model,
@@ -137,7 +134,6 @@ $('<div></div>').appendTo('form')
 				        'minLength'=>'0' 
 				    ),
 				));
-				// echo "</div'>";
 			}
 		?>
 	</div>
