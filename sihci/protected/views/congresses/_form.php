@@ -112,18 +112,81 @@
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
+	<?php
+			$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+ 			'targetClass'=>'authorsRegistry',
+ 			'addButtonLabel'=>'Agregar nuevo',
+		 ));
+    	?>
+    	<div class="authorsRegistry ">
+
+		  <?php echo "<input type='hidden' name='idsCongresses[]'>"; ?>
+		<div class="row">
+		  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
+		  <?php echo $form->error($modelAuthor,'names');?>
+		</div>
+
+		<div class="row">
+		  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apllido Paterno')); ?>
+		  <?php echo $form->error($modelAuthor,'last_name1'); ?>
+		</div>
+
+		<div class="row">
+
+		  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
+		  <?php echo $form->error($modelAuthor,'last_name2'); ?>
+		</div>
+
+		<div class="row">
+
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','numerical', 'integerOnly'=>true,'placeholder'=>'Posición','title'=>'Posición')); ?>
+		  <?php echo $form->error($modelAuthor,'position'); ?>
+		  </div>
+    	</div>
+
+    	<?php
+		if(!$model->isNewRecord)
+		  foreach ($modelAuthors as $key => $value)
+		  { ?>
+
+				  <?php echo "<input type='hidden' value='".$value->id."' name='idsCongresses[]'>"; ?>
+
+				  <div class="row">
+					  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)')); ?>
+					  <?php echo $form->error($value,'names');?>
+				  </div>
+
+				  <div class="row">
+					   <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
+					  <?php echo $form->error($value,'last_name1'); ?>
+				  </div>
+
+				  <div class="row">
+					  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Materno')); ?>
+					  <?php echo $form->error($value,'last_name2'); ?>
+				  </div>
+
+				  <div class="row">
+					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición')); ?>
+					  <?php echo $form->error($value,'position'); ?>
+				  </div>
+	<?php } ?>
+
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)),
+	   	 
+		
+	   	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)),
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
                      		'success'=>'function(data)
                      		 {
 
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
 
 									$(".successdiv").show();
+									
 		                         }
 		                         else
 		                         {
@@ -132,7 +195,7 @@
 		                  	}',
 
                         ),array('class'=>'savebutton'));
-        ?>
+          ?> 
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('congresses/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 

@@ -79,15 +79,7 @@ class AdminProjectsController extends Controller {
 	public function actionUpdate($id, $folio) {
 		
 		if ($folio != null) {
-			$model = Projects::model()->findByPk($id);
-
-			if (isset($_POST['Projects'])) {
-				$model->attributes = $_POST['Projects'];
-				if ($model->save()) {
-					$this->redirect(array('adminProjects'));
-				}
-			}
-			$update="update_projects";
+			$this->redirect(Yii::app()->request->baseUrl.'/index.php/projects/update/'.$id);
 		}else{
 			$model = Sponsorship::model()->findByPk($id);
 
@@ -233,7 +225,7 @@ class AdminProjectsController extends Controller {
 		if (Yii::app()->request->isAjaxRequest&&!empty($_GET['term'])) {
 			$sql = 'SELECT u.id, s.sponsor_name AS label
 			FROM users u 
-			JOIN sponsors s ON s.id_user = u.id
+			LEFT JOIN sponsors s ON s.id_user = u.id
 			WHERE u.type="moral" AND u.status="activo" AND s.sponsor_name LIKE :qterm ORDER BY s.sponsor_name ASC';
 			$command = Yii::app()->db->createCommand($sql);
 			$qterm = $_GET['term'].'%';

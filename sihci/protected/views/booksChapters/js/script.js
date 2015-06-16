@@ -3,7 +3,7 @@ function send()
 
     var fd = new FormData();
     var data=$("#books-chapters-form").serialize();
-    fd.append("DirectedThesis[url_doc]",$('#url_doc')[0].files[0]);
+    fd.append("BooksChapters[url_doc]",$('#url_doc')[0].files[0]);
 
     $.ajax({
         url: 'create',

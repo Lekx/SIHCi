@@ -64,16 +64,15 @@ class CongressesController extends Controller
 	public function actionCreate()
 	{
 		$model=new Congresses;
- 		$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-
+		$modelAuthor=new CongressesAuthors;
 		// Uncomment the following line if AJAX validation is needed
 		 $this->performAjaxValidation($model);
 		if(isset($_POST['Congresses']))
 		{
 			$model->attributes=$_POST['Congresses'];
+ 			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			if($model->country == 'Mexico'){
 					$model->type = 'Nacional';
-
 				}
 				else {
 					$model->type = 'Internacional';
@@ -84,20 +83,35 @@ class CongressesController extends Controller
      			$action = "Creación";
 				$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Puesto: ".$model->work_title.". Congreso: ".$model->congress.".";
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				echo CJSON::encode(array('status'=>'success'));
+				
+     			$names = $_POST['names'];
+					            $last_name1 = $_POST['last_names1'];
+					            $last_name2 = $_POST['last_names2'];
+					            $position = $_POST['positions'];
+					            
+             					 	foreach($_POST['names'] as $key => $names){
+						               	unset($modelAuthor);
+						               	$modelAuthor = new CongressesAuthors;
+						               	$modelAuthor->id_congresses = $model->id;
+						       			$modelAuthor->names = $names;
+						        		$modelAuthor->last_name1 = $last_name1[$key];
+						       			$modelAuthor->last_name2 = $last_name2[$key];
+						        		$modelAuthor->position = $position[$key];
+			                    		$modelAuthor->save();
+			              	 		}
+
+				echo CJSON::encode(array('status'=>'200'));
      			Yii::app()->end();
-     			$this->render(array('admin','id'=>$model->id));
+     			//$this->render(array('admin','id'=>$model->id));
+     			
+     			
 			}else{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+     			echo CJSON::encode(array('status'=>'404'));
+                        Yii::app()->end();
      		}
 
 	}
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model, 'modelAuthor'=>$modelAuthor));
 	}
 
 	/**
@@ -109,6 +123,8 @@ class CongressesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$modelAuthors = CongressesAuthors::model()->findAllByAttributes(array('id_congresses'=>$model->id));
+		$modelAuthor = new CongressesAuthors;
 
 		//Uncomment the following line if AJAX validation is needed
 		 $this->performAjaxValidation($model);
@@ -118,7 +134,6 @@ class CongressesController extends Controller
 			$model->attributes=$_POST['Congresses'];
 			if($model->country == 'Mexico'){
 					$model->type = 'Nacional';
-
 				}
 				else {
 					$model->type = 'Internacional';
@@ -128,21 +143,43 @@ class CongressesController extends Controller
      			$action = "Modificación";
 				$details = "Registro Número: ".$model->id;
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				echo CJSON::encode(array('status'=>'success'));
+				
+     				$idsCongresses = $_POST['idsCongresses'];
+            					$names = $_POST['names'];
+					            $last_name1 = $_POST['last_names1'];
+					            $last_name2 = $_POST['last_names2'];
+					            $position = $_POST['positions'];
+					                 
+     					 foreach($_POST['names'] as $key => $value){
+
+			        		if($idsCongresses[$key] == ''){
+			        			unset($modelAuthor);
+								$modelAuthor = new CongressesAuthors;
+			        			$modelAuthor->id_congresses = $model->id;
+			        			$modelAuthor->names = $names[$key];
+								$modelAuthor->last_name1 = $last_name1[$key];
+								$modelAuthor->last_name2 = $last_name2[$key];
+								$modelAuthor->position = $position[$key];
+								$modelAuthor->save();
+                    		}else{
+								$modelAuthor->updateByPk($idsCongresses[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
+                		}
+                	}
+
+
+
+				echo CJSON::encode(array('status'=>'200'));
      			Yii::app()->end();
+     			//$this->render(array('admin','id'=>$model->id));
 			}else
      		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
+     			echo CJSON::encode(array('status'=>'404'));
+                        Yii::app()->end();
      		}
 
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		$this->render('update',array('model'=>$model,'modelAuthor'=>$modelAuthor, 'modelAuthors'=>$modelAuthors));
 	}
 
 	/**
@@ -158,6 +195,9 @@ class CongressesController extends Controller
 		$action = "Eliminación";
 		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->work_title.". Congreso: ".$model->congress;
 		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+
+		CongressesAuthors::model()->deleteAll("id_congresses =".$id );
+		$model= Congresses::model()->findByPk($id);
 		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

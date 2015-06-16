@@ -115,6 +115,29 @@ $('<div></div>').appendTo('form')
 	<?php echo $form->errorSummary($model); ?>
 <div id="section1" class="sections" style="border:1px solid #ccc;padding:15px; border-radus:3px;margin:10px;">
 	<div class="row">
+		<?php 
+			if(Yii::app()->user->id_roles==2){
+				$researcher = "";
+				if(!$model->isNewRecord){
+					$researcher = $model->idCurriculum->idUser->persons[0];
+					$researcher = $researcher['last_name1']." ".$researcher['last_name2'].", ".$researcher['names'];
+				}
+				echo "Encargado <br>";
+				$this->widget('ext.MyAutoComplete', array(
+				    'model'=>$model,
+				    'attribute'=>'id_curriculum',
+				    'name'=>'Projects[id_curriculum]',
+				    'id'=>'id_curriculum',
+				    'value'=>$researcher,
+				    'source'=>$this->createUrl('/sponsorship/getResearchers'),  
+				    'options'=>array(
+				        'minLength'=>'0' 
+				    ),
+				));
+			}
+		?>
+	</div>
+	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>250)); ?>
 		<?php echo $form->error($model,'title'); ?>
