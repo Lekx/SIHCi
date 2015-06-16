@@ -126,7 +126,10 @@ class SiteController extends Controller {
 
 	// LO02 – Cerrar sesión
 	public function actionLogout() {
-
+				$section = "Logout";
+				$details = "Usuario: ".Yii::app()->user->fullname;
+				$action = "Cerró Sesión";
+				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
