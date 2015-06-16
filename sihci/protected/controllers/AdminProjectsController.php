@@ -28,7 +28,7 @@ class AdminProjectsController extends Controller {
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 			'actions'=>array('createProject', 'createSponsorship', 
 							 'update', 'deleteProject', 'view', 'index',
-							 'adminProjects', 'getSponsors'),
+							 'adminProjects', 'getSponsors', 'updateStatusSponsorship', 'updateStatusProject'),
 			'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -47,9 +47,25 @@ class AdminProjectsController extends Controller {
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 
-	// AP01 Registrar Proyectos
-	public function actionCreateProject() {
-
+	// AP05 Cambiar Status
+	public function actionUpdateStatusSponsorship() {
+	 $status = $_POST["status"];
+	 $id = $_POST["id"]; 
+	
+		if(Sponsorship::model()->updateByPk($id,array('status'=>$status)))
+			echo "se ha cambiado con éxito";
+		else
+			echo "existe un error vuelva a intentar";
+	}
+	// AP05 Cambiar Status
+	public function actionUpdateStatusProject() {
+	 $status = $_POST["status"];
+	 $id = $_POST["id"]; 
+	
+		if(Projects::model()->updateByPk($id,array('status'=>$status)))
+			echo "se ha cambiado con éxito";
+		else
+			echo "existe un error vuelva a intentar";
 	}
 
 	// AP01 Registrar Proyectos
