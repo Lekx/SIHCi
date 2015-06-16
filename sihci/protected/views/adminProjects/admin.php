@@ -11,8 +11,44 @@
  	}
  }
 </script>
+<!--<script type="text/javascript">
+	function changeStatus(var element){
+		alert ("mierda entramos");
+		$.ajax({
+		   url: '',
+		   data: {
+		      format: 'json'
+		   },
+   error: function() {
+      $('#info').html('<p>An error has occurred</p>');
+   },
+   dataType: 'jsonp',
+   success: function(data) {
+      var $title = $('<h1>').text(data.talks[0].talk_title);
+      var $description = $('<p>').text(data.talks[0].talk_description);
+      $('#info')
+         .append($title)
+         .append($description);
+   },
+   type: 'GET'
+});
+		'ajax' => array(
+        'data-url'=>$this->createUrl('serviceRegistration'),
+        'url' => $this->createUrl('servicePackage'), // it is selected at MyHtml::ajax() which URL to use
+        'type' => 'POST',
+        'dataType' => 'json',
+        'success' => 'function(data){
+            if(data.registration){
+                console.log("answer from registration");
+            }else if(data.package){
+                console.log("answer from package");
+            }
+        }',
+        'data' => array('id' => 'js:this.value'),
+	}
+</script> -->
 <input type="text" id="search" onchange="search()" placeholder="Buscar"><br><br>
-<?php echo CHtml::link('<span>Registrar<br>Proyecto</span>', array('AdminProjects/CreateProject'));?><br><br>
+<?php echo CHtml::link('<span>Registrar<br>Proyecto</span>', array('projects/create'));?><br><br>
 <?php echo CHtml::link('<span>Registrar<br>Patrocinio</span>', array('AdminProjects/CreateSponsorship'));?>
 <?php 
 
