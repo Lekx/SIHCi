@@ -109,7 +109,11 @@ class ArticlesGuidesController extends Controller
 				        		$modelAuthor->position = $position[$key];
 	                    		$modelAuthor->save();
 		              	    }	
-
+		              	    $section = "Artículos y Guías"; 
+		     				$action = "Creación";
+							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
+		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		     			
 		                    echo CJSON::encode(array('status'=>'success'));
                             //$this->redirect(array('admin','id'=>$model->id));
                             Yii::app()->end();
@@ -141,7 +145,11 @@ class ArticlesGuidesController extends Controller
 			        		$modelAuthor->position = $position[$key];
                     		$modelAuthor->save();
 	              	    }	
-              	 
+              	 	 		$section = "Artículos y Guías"; 
+		     				$action = "Creación";
+							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
+		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		     			
 	               	  	echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();
@@ -226,7 +234,11 @@ class ArticlesGuidesController extends Controller
 								$modelAuthor->updateByPk($idsArticlesGuides[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
                 		    }
                 	    }
-
+                	    $section = "Artículos y Guías"; 
+		     			$action = "Modificación";
+						$details = "Número Registro: ".$model->id;
+		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		     			
            	 		   echo CJSON::encode(array('status'=>'200'));
                        $this->redirect(array('admin','id'=>$model->id));
                        Yii::app()->end();
@@ -252,7 +264,10 @@ class ArticlesGuidesController extends Controller
 	{
 		ArtGuidesAuthor::model()->deleteAll("id_art_guides =".$id );
 		$model= ArticlesGuides::model()->findByPk($id);
-		
+		$section = "Artículos y Guías";  
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.".";
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		if($model->url_document != null)
 		{
 			unlink(YiiBase::getPathOfAlias("webroot").$model->url_document);

@@ -79,7 +79,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	            ),
 	     array('type'=>'raw',
 		 		'name' => 'Estatus',
-		 		'value'=>'@$data["id_user_sponsorer"] ?CHtml::dropDownList($data["id"],$data["status"],array("0" => "Patrocinio Status" , "1" => "st")) : CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En proceso" , "dictaminado" => "dictaminado"))'
+		 		'value'=>'@$data["id_user_sponsorer"] 
+		 				? 
+		 				CHtml::dropDownList($data["id"],$data["status"],array("0" => "Patrocinio Status" , "1" => "st")) 
+		 				:
+		 				CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En proceso" , "dictaminado" => "dictaminado", "borrador"=>"borrador", "revisión divuh"=>"revisión divuh"))'
 	            ),
 	     array('header'=>'Fecha de Creación',
 	     	    'type'=>'raw',
