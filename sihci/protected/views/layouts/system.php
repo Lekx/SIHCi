@@ -1,3 +1,4 @@
+
 <?php /* @var $this Controller */ ?>
 <!DOCTYPE html>
 <html>
@@ -129,7 +130,7 @@
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array($infoUser['proyectosUrl']));?>
                    <span><?php echo $infoUser['proyectos']; ?></span>
                 </div>
-                <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' alt='Foto de Perfil' >";  ?></div>
+                <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' >";  ?></div>
                 <div class="headerconteiner2"></div>
                 <div class="headerconteiner3">
                     <span> Cuenta / Datos de Cuenta </span>
@@ -146,6 +147,14 @@
                 </div>
             </div>
             <div class="syscontent">
+            <div class="adminmenu">
+                <div><a href="">Manejador de Archivos</a></div>
+                <div><a href="">Gestión de usuarios</a></div>
+                <div><a href="">Gestión de proyectos</a></div>
+                <div><a href="">Respaldos</a></div>
+                <div><a href="">Areas de especialidad</a></div>
+                <div><a href="">Lineas de Investigación</a></div>
+            </div>
                 <div class="sysmenu">
                 <ul class="cvmenuitems">
                  <?php
@@ -159,7 +168,7 @@
                  $this->endWidget();
 
                  ?>
-    </ul>
+                </ul>
             </div>
                 <div class="sysmaincontent">
                     <div class="syscont">

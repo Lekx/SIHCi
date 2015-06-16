@@ -83,8 +83,8 @@ $('.search-form form').submit(function(){
             <hr>
         </div>
 
-<h3>Gestionar Registo de Libros</h3>
 
+<h3>Gestionar Registo de Libros</h3>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(

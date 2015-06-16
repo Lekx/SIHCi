@@ -76,7 +76,10 @@ select
     width: 12%;
     height: 195px;
 
-    background: #000;
+    background-image: url('../img/perfil.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
 }
 .headerconteinerF #perfil
 {
@@ -352,7 +355,7 @@ select
 }
 .cvtitle hr
 {
-    width: 60% !important;
+    width: 80% !important;
     margin-top: -20px;
     margin-bottom: 0;
     margin-left: 140px;
@@ -622,6 +625,29 @@ thead th
     color: white;
     background-color: #1eb9c0;
 }
+.row.buttons a,
+.row.buttons a:hover,
+.row.buttons a:focus
+{
+    font-size: 20px;
+
+    display: block;
+    display: inline-block;
+
+    width: 190px ;
+    height: 40px;
+    padding-top: 7px;
+    padding-right: 10px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+
+    text-align: center;
+    text-decoration: none;
+
+    opacity: .6;
+    color: white;
+    background-color: #1eb9c0;
+}
 .phones
 {
     display: inline-block !important;
@@ -803,6 +829,10 @@ thead th
 .operations li  a:hover
 {
     color: #1eb9c0 !important;
+}
+.grid-view .button-column
+{
+    text-align: right !important;
 }
 .portlet ul li a
 {
@@ -1123,15 +1153,25 @@ thead th
     font-family: 'Caviar_Dreams_Bold' !important;
     font-size: 24.5px !important;
 
-    width: 100% !important;
-    width: 100% !important;
+    width: 92% !important;
     height: 50px !important;
     height: 50px !important;
     padding: 5px 1px 2px 9px !important;
     padding-right: 50px !important;
 }
 
-.searchcrud::-webkit-input-placeholder
+.searchadmin
+{
+    font-family: 'Caviar_Dreams_Bold' !important;
+    font-size: 24.5px !important;
+
+    width: 80% !important;
+    height: 50px !important;
+    padding: 5px 1px 2px 9px !important;
+    padding-right: 50px !important;
+}
+.searchcrud::-webkit-input-placeholder,
+.searchadmin::-webkit-input-placeholder
 {
     padding: 5px 18px 2px 9px !important;
     padding-right: 50px !important;
@@ -1139,7 +1179,8 @@ thead th
 
     color: #1eb9c0 !important;
 }
-.searchcrud::-webkit-input-placeholder
+.searchcrud::-webkit-input-placeholder,
+.searchadmin::-webkit-input-placeholder
 {
     padding: 5px 18px 2px 9px !important;
     padding-right: 50px !important;
@@ -1147,7 +1188,8 @@ thead th
 
     color: #1eb9c0 !important;
 }
-.searchcrud:-moz-placeholder
+.searchcrud:-moz-placeholder,
+.searchadmin:-moz-placeholder,
 {
     padding: 5px 18px 2px 9px !important;
     padding-right: 50px !important;
@@ -1155,14 +1197,16 @@ thead th
 
     color: #1eb9c0 !important;
 }
-.searchcrud::-moz-placeholder
+.searchcrud::-moz-placeholder,
+.searchadmin::-moz-placeholder
 {
     padding: 5px 18px 2px 9px !important;
     /* Mozilla Firefox 19+ */
 
     color: #1eb9c0 !important;
 }
-.searchcrud:-ms-input-placeholder
+.searchcrud:-ms-input-placeholder,
+.searchadmin:-ms-input-placeholder
 {
     padding: 5px 18px 2px 9px !important;
     padding-right: 50px !important;
@@ -1370,4 +1414,114 @@ table.detail-view  td
 .operations a
 {
     color: #1eb9c0 !important;
+}
+
+/* admin css */
+.adminmenu
+{
+    font-weight: bold;
+
+    display: none;
+
+    width: 100%;
+    height: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    background-color: #cdf1f3;
+}
+.adminmenu div
+{
+    display: inline-block;
+
+    width: calc(100% / 6.2);
+    padding-top: 10px;
+
+    text-align: center;
+
+    color: #1eb9c0 !important;
+}
+.adminmenu a
+{
+    text-decoration: none;
+
+    color: #1eb9c0 !important;
+}
+.adminmenu a:hover
+{
+    text-decoration: none;
+
+    color: #0e3152 !important;
+}
+.admintitle img
+{
+    display: inline-block;
+
+    vertical-align: top;
+}
+.admintitle h1
+{
+    display: inline-block;
+
+    margin: 0;
+    margin-left: 30px;
+    padding-top: 20px;
+
+    vertical-align: top;
+}
+.admintitle hr
+{
+    width: 90% !important;
+    margin-bottom: 0;
+    margin-left: 105px;
+
+    border-bottom: 2px solid #1eb9c0;
+}
+.subtitleadmin h4
+{
+    margin-left: 90px !important;
+}
+.adminbut
+{
+    width: 50px !important;
+    height: 50px !important;
+    padding: 5px;
+
+        border-radius: 4px;
+    background-color: #cdf1f3 !important;
+    background-image: url('../img/icons/menuBuscarGr.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 80%;
+
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
+}
+.admin_create,
+.admin_create:hover
+{
+    font-size: 20px;
+
+    display: block;
+    float: right;
+
+    width: 175px ;
+    height: 50px;
+    margin-left: 5px;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    text-align: center;
+    text-decoration: none;
+    text-decoration: none;
+
+    opacity: .6;
+    color: white;
+        border-radius: 4px;
+    background-color: #1eb9c0;
+
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
 }
