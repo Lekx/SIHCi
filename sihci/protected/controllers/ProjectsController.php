@@ -70,7 +70,13 @@ class ProjectsController extends Controller
 		if(isset($_POST['Projects']))
 		{
 			$model->attributes=$_POST['Projects'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+
+			if(Yii::app()->user->id_roles==13){
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
+			}else{
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			}
+
 			if($_POST['type']== "draft")
 				$model->status = "borrador";
 			else

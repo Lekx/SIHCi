@@ -12,7 +12,12 @@ $this->menu=array(
 	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1>Gestión Areas de especialidad</h1>
+            <hr>
+        </div>
 
-<h1>Crear registro</h1>
+<h3>Crear registro de area:</h3>
 
 <?php $this->renderPartial('_form', array('model'=>$model, 'modelSpecialtyAreas'=>$modelSpecialtyAreas)); ?>

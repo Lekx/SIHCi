@@ -10,10 +10,10 @@ $this->menu=array(
 	array('label'=>'Cantidad de Investigadores', 'url'=>array('researchers')),
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
-	array('label'=>'Capítulos', 'url'=>array('chapters')),
-	array('label'=>'Patentes', 'url'=>array('patents')),
-	array('label'=>'Software', 'url'=>array('software')),
-	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
+	array('label'=>'Capítulos de Libros', 'url'=>array('chapters')),
+	array('label'=>'Registro de Propiedad Intelectual: Patentes', 'url'=>array('patents')),
+	array('label'=>'Registro de Propiedad Intelectual: Software', 'url'=>array('software')),
+	array('label'=>'Registro de Propiedad Intelectual: Derechos de Autor', 'url'=>array('copyrights')),
 	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
 
@@ -58,7 +58,7 @@ function change(){
   <option value="total" selected="">Total de Hospitales</option>	
   <option >Hospital Civil Fray Antonio Alcalde</option>
   <option >Hospital Civil Dr. Juan I. Menchaca</option>
-  <option>NA</option>
+  <option>Otro</option>
 
 </select>
   <br><br>
@@ -82,9 +82,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'filter' => null,
 	'summaryText'=>'',
 	'columns'=>array(
-		 array('header'=>'Numero de Usuario',
-		 		'name'=>'id',
-                ),
 		  array('header'=>'Nombre de Usuario',
 		 		'name'=>'names',
                 ),
@@ -97,8 +94,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		     array('header'=>'Publicado por:',
 		 		'name'=>'publishers',
                 ),
-		     array('header'=>'Unidad Hospitalaria',
-		 		'name'=>'hospital_unit',
+		     array(
+				'header'=>'Descarga de Capítulos de Libros',
+       			 'type'=>'raw',
+      			 'value'=>'CHtml::link("Descargar ".$data["chapter_title"].".", "http://".$_SERVER["SERVER_NAME"].Yii::app()->request->baseUrl."".$data["url_doc"]."", array("target"=>"_blank"))',
+                ),
+		      array('header'=>'Undad Hospitalaria',
+		 		'value'=>'$data["hospital_unit"] == "NA" || $data["hospital_unit"] == null ? "Otro" : $data["hospital_unit"]',
                 ),
 		     array('header'=>'Fecha de Creación',
 		 		'name'=>'creation_date',
