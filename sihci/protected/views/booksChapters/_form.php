@@ -378,10 +378,6 @@
 	</div>
 
 
-
-
-
-p
 	<?php
 			$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',

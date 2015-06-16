@@ -88,3 +88,35 @@ $this->menu=array(
 		'keywords',
 	),
 )); ?>
+
+<?php $modelAuthor = CongressesAuthors::model()->findAllByAttributes(array('id_congresses'=>$model->id));
+	foreach ($modelAuthor as $key => $value){  ?>	
+<?php 
+	 $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		
+		array(
+			'label'=>'Nombre(s)',
+			'name'=>'names',
+			'value'=>$value->names,
+			),
+		array(
+			'label'=>'Apellido Paterno',
+			'name'=>'last_names1',
+			'value'=>$value->last_name1,
+			),
+		array(
+			'label'=>'Apellido Materno',
+			'name'=>'last_names2',
+			'value'=>$value->last_name2,
+			),
+		array(
+			'label'=>'Posición',
+			'name'=>'positions',
+			'value'=>$value->position,
+			),  
+	),
+
+));  ?>
+<?php } ?>
