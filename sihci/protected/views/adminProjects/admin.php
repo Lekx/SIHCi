@@ -10,43 +10,25 @@
  		$('tbody > tr:not(:contains('+valueSearch+'))').hide();
  	}
  }
+
+ function updateStatusSponsorship(id){
+ 	var request = $.ajax({
+	  url: yii.urls.base+"/index.php/adminProjects/updateStatusSponsorship",
+	  method: "POST",
+	  data: { id : id, status : $("#"+id).val()},
+	  dataType: "json"
+	});
+ }
+ function updateStatusProject(id){
+ 	var request = $.ajax({
+	  url: yii.urls.base+"/index.php/adminProjects/updateStatusProject",
+	  method: "POST",
+	  data: { id : id, status : $("#"+id).val()},
+	  dataType: "json"
+	});
+ }
 </script>
-<!--<script type="text/javascript">
-	function changeStatus(var element){
-		alert ("mierda entramos");
-		$.ajax({
-		   url: '',
-		   data: {
-		      format: 'json'
-		   },
-   error: function() {
-      $('#info').html('<p>An error has occurred</p>');
-   },
-   dataType: 'jsonp',
-   success: function(data) {
-      var $title = $('<h1>').text(data.talks[0].talk_title);
-      var $description = $('<p>').text(data.talks[0].talk_description);
-      $('#info')
-         .append($title)
-         .append($description);
-   },
-   type: 'GET'
-});
-		'ajax' => array(
-        'data-url'=>$this->createUrl('serviceRegistration'),
-        'url' => $this->createUrl('servicePackage'), // it is selected at MyHtml::ajax() which URL to use
-        'type' => 'POST',
-        'dataType' => 'json',
-        'success' => 'function(data){
-            if(data.registration){
-                console.log("answer from registration");
-            }else if(data.package){
-                console.log("answer from package");
-            }
-        }',
-        'data' => array('id' => 'js:this.value'),
-	}
-</script> -->
+
 <input type="text" id="search" onchange="search()" placeholder="Buscar"><br><br>
 <?php echo CHtml::link('<span>Registrar<br>Proyecto</span>', array('projects/create'));?><br><br>
 <?php echo CHtml::link('<span>Registrar<br>Patrocinio</span>', array('AdminProjects/CreateSponsorship'));?>
@@ -81,9 +63,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'name' => 'Estatus',
 		 		'value'=>'@$data["id_user_sponsorer"] 
 		 				? 
-		 				CHtml::dropDownList($data["id"],$data["status"],array("0" => "Patrocinio Status" , "1" => "st")) 
+		 				CHtml::dropDownList($data["id"],$data["status"],array("0" => "Patrocinio Status" , "1" => "Otro mas"),array("onchange"=>"updateStatusSponsorship($data[id])"))
 		 				:
-		 				CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En proceso" , "dictaminado" => "dictaminado", "borrador"=>"borrador", "revisión divuh"=>"revisión divuh"))'
+		 				CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En proceso" , "dictaminado" => "dictaminado", "borrador"=>"borrador", "revisión divuh"=>"revisión divuh"),array("onchange"=>"updateStatusProject($data[id])"))'
 	            ),
 	     array('header'=>'Fecha de Creación',
 	     	    'type'=>'raw',
