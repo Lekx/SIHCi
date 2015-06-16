@@ -44,7 +44,7 @@ var Chart = Highcharts.Chart,
 
 	// Add language
 	extend(defaultOptions.lang, {
-		printChart: 'Print chart',
+		printChart: 'Print chart',//'Print chart',
 		downloadPNG: 'Download PNG image',
 		downloadJPEG: 'Download JPEG image',
 		downloadPDF: 'Download PDF document',
