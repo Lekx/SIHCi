@@ -116,7 +116,7 @@ $('<div></div>').appendTo('form')
 <div id="section1" class="sections" style="border:1px solid #ccc;padding:15px; border-radus:3px;margin:10px;">
 	<div class="row">
 		<?php 
-			if(Yii::app()->user->id_roles==2){
+			if(Yii::app()->user->id_roles==13){
 				$researcher = "";
 				if(!$model->isNewRecord){
 					$researcher = $model->idCurriculum->idUser->persons[0];

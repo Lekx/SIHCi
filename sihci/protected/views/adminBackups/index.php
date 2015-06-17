@@ -1,8 +1,7 @@
 
-<!-- AS02-Listarrespaldos de base de datos-->
-<?php 
+<!-- AS02-Listarrespaldos de base de datos <?php //include ("logoutTime.php"); ?>  -->
+<?php include ("logoutTime.php"); ?> 
 
-?>
 <div class="row"><h3>Respaldos</h3></div>
 
 <script type="text/javascript">
@@ -40,8 +39,8 @@ function search(){
 			{
 				echo "<tr>";
 					echo "<td>".date("Y-m-d")."</td>";
-					echo "<td>".'3-00'."</td>";
-					echo "<td> <a href='../backups/compress_zip.php' target='_self'> Descargar ZIP </a></td>";
+					echo "<td>".'3:00'."</td>";
+					echo "<td> <a href='../backups/compressZip.php' target='_self'> Descargar ZIP </a></td>";
 				echo "</tr>";
 
 			}
@@ -66,8 +65,6 @@ function search(){
 			$backUps= scandir("backups/database",0);
 			unset($backUps[0]);
 			unset($backUps[1]);
-
-
 
 			foreach ($backUps as $key => $backupsDataBase) 
 			{
