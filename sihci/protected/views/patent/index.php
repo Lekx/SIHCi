@@ -1,7 +1,7 @@
 <?php
 /* @var $this PatentController */
 /* @var $dataProvider CActiveDataProvider */
-
+//include ("logoutTime.php"); 
 $this->breadcrumbs=array(
 	'Patents',
 );

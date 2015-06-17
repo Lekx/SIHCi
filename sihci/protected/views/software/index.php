@@ -1,3 +1,4 @@
+<? include ("logoutTime.php"); ?>
 <?php
 /* @var $this SoftwareController */
 /* @var $dataProvider CActiveDataProvider */
