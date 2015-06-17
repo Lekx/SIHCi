@@ -73,20 +73,20 @@ class SoftwareController extends Controller
 				
 				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
-	           		 $model->path = CUploadedFile::getInstanceByName('Software[path]');
+	           		
+	           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
 				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+            		
 		          
 		            if(!is_dir($urlFile))          
 		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
 
-					    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+		                $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
 					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
-					
+					   
 			    }
-				else 
-				{
-					$model->path = "";
-				}	
+				else
+					$model->path = "";	
 
 					if($model->save())
 					{	   		
@@ -158,15 +158,13 @@ class SoftwareController extends Controller
 			            if(!is_dir($urlFile))          
 			              	mkdir($urlFile, 0777, true);
 
-						    $model->path->saveAs($urlFile.'fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSowtfware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+						    $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
 							
-			    }
-				
-				else
-				{						   
+			    }				
+				else						   
 				   $model->path=$oldPath;  
-				}	
+					
 
 					if($model->save())
 					{	   		

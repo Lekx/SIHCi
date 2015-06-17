@@ -1,9 +1,9 @@
+
 <?php
 /* @var $this SoftwareController */
 /* @var $model Software */
-
 $this->breadcrumbs=array(
-	'Softwares'=>array('index'),
+	'Softwares'>=array('index'),
 	'Manage',
 );
 $this->menu=array(

@@ -252,7 +252,13 @@ class ArticlesGuidesController extends Controller
 	{
 		ArtGuidesAuthor::model()->deleteAll("id_art_guides =".$id );
 		$model= ArticlesGuides::model()->findByPk($id);
-		
+			
+		$section = "Artículos y Guías";  
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.".";
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+
+
 		if($model->url_document != null)
 		{
 			unlink(YiiBase::getPathOfAlias("webroot").$model->url_document);
