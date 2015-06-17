@@ -12,8 +12,14 @@ $this->menu=array(
 	array('label'=>'Crear', 'url'=>array('create')),
 );
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1>Gestión Lineas De Investigación</h1>
+            <hr>
+        </div>
 
-<h1>Registro de <?php echo $model->specialty; ?></h1>
+ <h3>Áreas de especialidad: <?php echo $model->specialty; ?></h3>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

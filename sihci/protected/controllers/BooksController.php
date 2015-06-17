@@ -107,17 +107,20 @@ class BooksController extends Controller
 						               	unset($modelAuthor);
 						               	$modelAuthor = new BooksAuthors;
 
-						               	$modelAuthor->id_book = $model->id;
-						       			$modelAuthor->names = $names;
-						        		$modelAuthor->last_name1 = $last_name1[$key];
-						       			$modelAuthor->last_name2 = $last_name2[$key];
-						        		$modelAuthor->position = $position[$key];
-			                    		$modelAuthor->save();
-				              	    }	
-
-				                    echo CJSON::encode(array('status'=>'success'));
-		                            $this->redirect(array('admin','id'=>$model->id));
-		                            Yii::app()->end();
+					               	$modelAuthor->id_book = $model->id;
+					       			$modelAuthor->names = $names;
+					        		$modelAuthor->last_name1 = $last_name1[$key];
+					       			$modelAuthor->last_name2 = $last_name2[$key];
+					        		$modelAuthor->position = $position[$key];
+		                    		$modelAuthor->save();
+			              	    }	
+			              	    $section = "Libros";
+     							$action = "Creación";
+								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
+     							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+			                    echo CJSON::encode(array('status'=>'success'));
+	                            $this->redirect(array('admin','id'=>$model->id));
+	                            Yii::app()->end();
 
 				               }					               
 				               else
@@ -150,7 +153,10 @@ class BooksController extends Controller
 			        		$modelAuthor->position = $position[$key];
                     		$modelAuthor->save();
 	              	    }	
-              	 
+              	 		$section = "Libros";
+						$action = "Creación";
+						$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 	               	  	echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();
@@ -235,7 +241,10 @@ class BooksController extends Controller
 								$modelAuthor->updateByPk($idsBooks[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
                 		    }
                 	    }
-
+                	    $section = "Libros";
+						$action = "Modificación";
+						$details = "Registro Número: ".$model->id;
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
            	 		   echo CJSON::encode(array('status'=>'200'));
                        $this->redirect(array('admin','id'=>$model->id));
                        Yii::app()->end();
@@ -262,7 +271,10 @@ class BooksController extends Controller
 	{
 		BooksAuthors::model()->deleteAll("id_book=".$id );
 		$model= Books::model()->findByPk($id);
-		
+		$section = "Libros";
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->book_title;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		if($model->path != null)
 		{
 			unlink(YiiBase::getPathOfAlias("webroot").$model->path);

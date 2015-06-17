@@ -46,7 +46,7 @@ foreach ($fullname as $value) {
 	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 70));
 	echo $form->error($model, 'fullname');
 	echo "</div>";
-	echo CHtml::link('Eliminar',array('Sponsors/deleteContacts','id'=>$value['id']),array('class'=>'deleteSomething'));
+	echo CHtml::link('Eliminar',array('sponsors/deleteContacts','id'=>$value['id']),array('class'=>'deleteSomething'));
 	echo '<hr>';
 }
 ?>

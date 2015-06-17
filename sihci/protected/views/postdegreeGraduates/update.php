@@ -75,5 +75,5 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Modificar Graduados de posgrado: <?php echo $model->fullname ?> </h4>
+<h4>Modificar graduados de posgrado: <?php echo $model->fullname ?> </h4>
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -75,8 +75,6 @@ class AdminUsersController extends Controller {
 		$model = new Users;
 		$modelPersons = new Persons;
 
-		//$this->performAjaxValidation($model);
-		//$this->performAjaxValidation($modelPersons);
 		if (isset($_POST['Users'])) {
 			$model->id_roles = '1';
 			$model->attributes = $_POST['Users'];
@@ -94,9 +92,7 @@ class AdminUsersController extends Controller {
 						$model->status = 'inactivo';
 
 						$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s') . $model->email . rand(1000, 5000))));
-						//if($model->validate())
 						$model->password = sha1(md5(sha1($model->password)));
-						//$model->attributes=$_POST['Users'];
 
 						if ($model->validate()) {
 
@@ -193,22 +189,79 @@ class AdminUsersController extends Controller {
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDelete($id) {
+
 		$users = Users::model()->findByPK($id);
 
-		if($user->type == "fisico"){
-		$curriculum  = Curriculum::model()->findByAttributes(array("id_user"=>$id));
+		if($users->type == "fisico"){
+			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$id));
+			$person = Persons::model()->findByAttributes(array('id_user'=>$id));
+			$artguides = ArticlesGuides::model()->findByAttributes(array('id_resume'=>$curriculum->$id));
+			$books = Books::model()->findByAttributes(array('id_curriculum'=>$curriculum->$id));
+			$congresses = Congresses::model()->findByAttributes(array('id_curriculum'=>$curriculum->$id));
+			$projects = Projects::model()->findByAttributes(array('id_curriculum'=>$curriculum->$id));
+			
 
-		$books = Books::model()->findByAttributes(array("id_curriculum"=>$curriculum->id));
+			$command = Yii::app()->db->createCommand();
 
-		Jobs::model()->findByAttributes(array("id_curriculum"=>$curriculum->id))->delete();
+			$command->delete('art_guides_author', 'id_art_guides=:id_art_guides', array(':id_art_guides'=>$artguides->id));
+			$command->delete('books_authors', 'id_book=:id_book', array(':id_book'=>$books->id));
+			$command->delete('books_chapters_authors', 'id_books_chapters=:id_books_chapters', array(':id_books_chapters'=>$artguides->id));
 
-		BooksAuthors::model()->findByAttributes(array("id_books"=>$books->id))->delete();
-		$books->delete();
+			$command->delete('certifications', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			$command->delete('congresses_authors', 'id_congresses=:id_congresses', array(':id_congresses'=>$congresses->id));
 
-		$curriculum->delete();
+			$command->delete('copyrights', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			$command->delete('directed_thesis', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+
+			$command->delete('docs_identity', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			$command->delete('grades', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			echo"docs_identity";
+
+			$command->delete('jobs', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			$command->delete('knowledge_application', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			echo"jobs";
+
+			$command->delete('lenguages', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			$command->delete('patent', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			echo"lenguages";
+
+			$command->delete('postdegree_graduates', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			$command->delete('press_notes', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			echo"postdegree_graduates";
+
+			$command->delete('projects_coworkers', 'id_project=:id_project', array(':id_project'=>$projects->id));
+			$command->delete('projects_followups', 'id_project=:id_project', array(':id_project'=>$projects->id));
+			echo"projects_coworkers";
+
+			$command->delete('projects_docs', 'id_project=:id_project', array(':id_project'=>$projects->id));
+			$command->delete('research_areas', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			echo"projects_docs";
+
+			$command->delete('software', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			$command->delete('congresses', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+			echo"software";
+
+
+		
 		}else{
-			//hacer todo lo de sponsorship;
+			$sponsor = Sponsors::model()->findByAttributes(array('id_user'=>$id));
+
+			$command = Yii::app()->db->createCommand();
+            $command->delete('sponsors_contact', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
+            $command->delete('sponsors_contacts', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
+            $command->delete('sponsors_docs', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
+            $command->delete('sponsor_billing', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
+            $command->delete('Sponsorship', 'id_user_sponsorer=:id_user_sponsorer', array(':id_user_sponsorer'=>$sponsor->id));
+			$command->delete('sponsors', 'id_user=:id_user', array(':id_user'=>$sponsor->id));
+
+
 		}
+		$command = Yii::app()->db->createCommand();
+		$command->delete('users', 'id=:id', array(':id'=>$id));
+
+		$this->loadModel($id)->delete();
+
+		
 
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -311,15 +364,13 @@ class AdminUsersController extends Controller {
 	public function usersFullNames($data, $row) {
 
 		$id = $data->id;
-		$info = Persons::model()->findAllBySql("SELECT concat(last_name1,' ',last_name2,', ',names) AS names from persons WHERE id_user=".$id);
-
-			return $info[0]["names"];
+		$info = Persons::model()->findBySql("SELECT concat(last_name1,' ',last_name2,', ',names) AS names from persons WHERE id_user=".$id);
+			return $info["names"];
 	}
 	public function usersCurpPassport($data, $row) {
 
 		$id = $data->id;
-		$info = Persons::model()->findAllBySql("SELECT curp_passport  from persons WHERE id_user=$id");
-
-			return $info[0]["curp_passport"];
+		$info = Persons::model()->findBySql("SELECT curp_passport  from persons WHERE id_user=$id");
+			return $info["curp_passport"];
 	}
 }

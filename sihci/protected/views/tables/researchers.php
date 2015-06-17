@@ -10,10 +10,10 @@ $this->menu=array(
 	array('label'=>'Cantidad de Investigadores', 'url'=>array('researchers')),
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
-	array('label'=>'Capítulos', 'url'=>array('chapters')),
-	array('label'=>'Patentes', 'url'=>array('patents')),
-	array('label'=>'Software', 'url'=>array('software')),
-	array('label'=>'Derechos de Autor', 'url'=>array('copyrights')),
+	array('label'=>'Capítulos de Libros', 'url'=>array('chapters')),
+	array('label'=>'Registro de Propiedad Intelectual: Patentes', 'url'=>array('patents')),
+	array('label'=>'Registro de Propiedad Intelectual: Software', 'url'=>array('software')),
+	array('label'=>'Registro de Propiedad Intelectual: Derechos de Autor', 'url'=>array('copyrights')),
 	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
 );
 
@@ -99,7 +99,7 @@ function change(){
   <option value="total" selected="">Total de Hospitales</option>	
   <option >Hospital Civil Fray Antonio Alcalde</option>
   <option >Hospital Civil Dr. Juan I. Menchaca</option>
-  <option >NA</option>
+  <option >Otro</option>
 </select>
   <br><br>
 
@@ -114,15 +114,12 @@ function change(){
 </select>
   <br><br>
 <?php 
-
+// print_r($researchersIncome);
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$researchersIncome,
 	'summaryText'=>'',
 	'columns'=>array(
-		 array('header'=>'Numero de Usuario',
-		 		'name'=>'id',
-                ),
 		  array('header'=>'Nombre de Usuario',
 		 		'name'=>'names',
                 ),
@@ -130,7 +127,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'value'=>array($this,'researchAreas'),'type' => 'raw',
                 ),
 		    array('header'=>'Undad Hospitalaria',
-		 		'name'=>'hospital_unit',
+		 		'value'=>'$data["hospital_unit"] == "NA" || $data["hospital_unit"] == null ? "Otro" : $data["hospital_unit"]',
                 ),
 		     array('header'=>'Sistema NI',
 		 		'value'=>'$data["SNI"] == -1 || $data["SNI"] == 0 ? "N/A" : "SNI: ".$data["SNI"]',

@@ -28,7 +28,7 @@ class AdminProjectsController extends Controller {
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 			'actions'=>array('createProject', 'createSponsorship', 
 							 'update', 'deleteProject', 'view', 'index',
-							 'adminProjects', 'getSponsors'),
+							 'adminProjects', 'getSponsors', 'updateStatusSponsorship', 'updateStatusProject'),
 			'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -47,9 +47,25 @@ class AdminProjectsController extends Controller {
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 
-	// AP01 Registrar Proyectos
-	public function actionCreateProject() {
-
+	// AP05 Cambiar Status
+	public function actionUpdateStatusSponsorship() {
+	 $status = $_POST["status"];
+	 $id = $_POST["id"]; 
+	
+		if(Sponsorship::model()->updateByPk($id,array('status'=>$status)))
+			echo "se ha cambiado con éxito";
+		else
+			echo "existe un error vuelva a intentar";
+	}
+	// AP05 Cambiar Status
+	public function actionUpdateStatusProject() {
+	 $status = $_POST["status"];
+	 $id = $_POST["id"]; 
+	
+		if(Projects::model()->updateByPk($id,array('status'=>$status)))
+			echo "se ha cambiado con éxito";
+		else
+			echo "existe un error vuelva a intentar";
 	}
 
 	// AP01 Registrar Proyectos
@@ -79,15 +95,7 @@ class AdminProjectsController extends Controller {
 	public function actionUpdate($id, $folio) {
 		
 		if ($folio != null) {
-			$model = Projects::model()->findByPk($id);
-
-			if (isset($_POST['Projects'])) {
-				$model->attributes = $_POST['Projects'];
-				if ($model->save()) {
-					$this->redirect(array('adminProjects'));
-				}
-			}
-			$update="update_projects";
+			$this->redirect(Yii::app()->request->baseUrl.'/index.php/projects/update/'.$id);
 		}else{
 			$model = Sponsorship::model()->findByPk($id);
 
@@ -233,7 +241,7 @@ class AdminProjectsController extends Controller {
 		if (Yii::app()->request->isAjaxRequest&&!empty($_GET['term'])) {
 			$sql = 'SELECT u.id, s.sponsor_name AS label
 			FROM users u 
-			JOIN sponsors s ON s.id_user = u.id
+			LEFT JOIN sponsors s ON s.id_user = u.id
 			WHERE u.type="moral" AND u.status="activo" AND s.sponsor_name LIKE :qterm ORDER BY s.sponsor_name ASC';
 			$command = Yii::app()->db->createCommand($sql);
 			$qterm = $_GET['term'].'%';

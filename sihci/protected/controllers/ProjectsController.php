@@ -6,7 +6,7 @@ class ProjectsController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters
@@ -65,24 +65,39 @@ class ProjectsController extends Controller
 		$model=new Projects;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Projects']))
 		{
 			$model->attributes=$_POST['Projects'];
-			$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-			$model->status = "depende";
+
+			if(Yii::app()->user->id_roles==13){
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
+			}else{
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			}
+
+			if($_POST['type']== "draft")
+				$model->status = "borrador";
+			else
+				$model->status = "revisión divuh";
+
 			$model->folio = "-1";
 			$model->is_sponsored = 0; 
 			$model->registration_number = "-1";
 
-			if($model->save())
+			if($model->save()){
+				echo "datos guardados con exito";
 				$this->redirect(array('view','id'=>$model->id));
-		}
+			}else{
+				echo "por favor revise que la información sea correcta";
+			}
+		}else{
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
+		}
 	}
 
 	/**
@@ -203,7 +218,6 @@ class ProjectsController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('sponsoredAdmin'));
 	}
-
 
 	public function actionSponsoredAdmin()
 	{

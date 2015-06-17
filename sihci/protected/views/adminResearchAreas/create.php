@@ -14,6 +14,12 @@ $this->menu=array(
 );
 ?>
 
-<h1>Crear Registro</h1>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1>Gestión Lineas De Investigación</h1>
+            <hr>
+        </div>
+
+<h3>Crear registro de lineas de investigación:</h3>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
