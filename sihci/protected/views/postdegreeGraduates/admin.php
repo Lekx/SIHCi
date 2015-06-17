@@ -88,7 +88,7 @@ $('.search-form form').submit(function(){
             <hr>
         </div>
 
-<h4>Gestionar Graduados de posgrado</h4>
+<h4>Gestionar graduados de posgrado</h4>
 
 
 <div class="search-form" style="display:block">

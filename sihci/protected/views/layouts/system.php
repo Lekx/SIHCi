@@ -42,7 +42,7 @@
                     searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
                     searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
                     base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
-                    back: ' . CJSON::encode(Yii::app()->request->urlReferrer) . ',
+                    back: ' . CJSON::encode(Yii::app()->baseUrl.'/index.php'.'/'.$this->uniqueid.'/admin') . ',
                 }
 
             }',CClientScript::POS_HEAD);
@@ -82,6 +82,9 @@
                 "proyectos"=>"Proyectos",
                 "Evaluacion"=>"Evaluación",
                 "proyectosUrl"=>"sponsorShip/admin",
+                "labelEstadisticas"=>"",
+                "labelAdmin"=>"",
+
 
                 );
         else if(Yii::app()->user->type == 'fisico')
@@ -94,7 +97,8 @@
                 "proyectos"=>"Proyectos",
                 "Evaluacion"=>"Evaluación CV",
                 "proyectosUrl"=>"projects/admin",
-
+                "labelEstadisticas"=>"",
+                "labelAdmin"=>"",
                 );
         else
             $infoUser = array(
@@ -131,18 +135,26 @@
                    <span><?php echo $infoUser['proyectos']; ?></span>
                 </div>
                 <div class="headerconteinerF"><?php echo "<img id='perfil' src='".Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png'."' >";  ?></div>
-                <div class="headerconteiner2"></div>
                 <div class="headerconteiner3">
-                    <span> Cuenta / Datos de Cuenta </span>
+                 <h5> 
+                 <?php echo Yii::app()->user->fullname; ?>
+                 </h5>
+
+                    <?php
+                    echo "<h6>".$infoUser['label']."</h6>";
+                    ?>
+                <?php 
+                echo "<h6>";
+                echo CHtml::link('Cerrar sesión', array('site/logout'));
+                echo "</h6>";
+                ?>
+
                 </div>
                 <div class="headerconteiner4">
                     <h4>Menú </h4>
                 </div>
                 <div class="headerconteiner5">
-                    <h4> <?php echo Yii::app()->user->fullname; ?></h4>
-                    <?php
-                    echo "<h5>".$infoUser['label']."</h5>";
-                    ?>
+                      <span> <?php echo $this->uniqueid; ?> / <?php echo $this->action->Id; ?> </span>
 
                 </div>
             </div>
@@ -243,12 +255,19 @@
             <div class="footermenuI">
             </div>
             <div class="footermenuI">
-                <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEstadisticas.png alt="home">', array('site/index'));?>
-                <span>Estadisticas</span>
+                <?php if($infoUser['labelEstadisticas'] == "")
+                        echo "";
+                    else
+                echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEstadisticas.png alt="home">', array('site/index'));?>
+                <span><?php echo $infoUser['labelEstadisticas'] ?></span>
             </div>
             <div class="footermenuI">
-                <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PadministracionSistema.png alt="home">', array('site/index'));?>
-                <span>Adminstración del sistema</span>
+                <?php 
+                    if($infoUser['labelAdmin'] == "")
+                        echo "";
+                    else 
+                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PadministracionSistema.png alt="home">', array('site/index'));?>
+                <span><?php echo $infoUser['labelAdmin'] ?></span>
             </div>
             <div class="footermenuI">
                 <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PBitacora.png alt="home">', array('site/index'));?>

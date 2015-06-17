@@ -76,7 +76,7 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Registro de <?php echo $model->fullname ?></h4>
+<h4>Registro de: <?php echo $model->fullname ?></h4>
 
 <?php $this->widget('zii.widgets.CDetailView', 
 

@@ -69,7 +69,7 @@ function change(){
   <option value="borrador">Proyectos en borrador</option>
   <option value="dictaminado">Proyectos Concluidos</option>
   <option value="rechazado">Proyectos Rechazados</option>
-
+  <option value="revisión divuh">Proyectos de Revisión DivUH</option>
 </select>
 <br><br>
 
@@ -105,19 +105,19 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'name'=>'title',
                 ),
 		    array('header'=>'Disciplina',
-		 		'name'=>'discipline',
+		 		'value'=>'$data["discipline"] == "-1" ? " " : $data["discipline"]',
                 ),
 		     array('header'=>'Patrocinado',
 		 		'value'=>'$data["is_sponsored"] == 1 ? "Si" : "No"',
                 ),
 		     array('header'=>'Número de Registro',
-		 		'name'=>'registration_number',
+		 		'value'=>'$data["registration_number"] == "-1" ? " " : $data["registration_number"]',
                 ),
 		      array('header'=>'Estatus',
 		 		'name'=>'status',
                 ),
 		       array('header'=>'Unidad Hospitalaria',
-		 		'name'=>'develop_uh',
+		 		'value'=>'$data["develop_uh"] == "-1" ? " " : $data["develop_uh"]',
                 ),
                 array('header'=>'Fecha de Inicio',
 		 		'name'=>'creation_date',

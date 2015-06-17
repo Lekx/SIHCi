@@ -26,9 +26,24 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
+
 ?>
 
-<h1>Administración: Áreas de especialidad</h1>
+<?php
+/* @var $this BooksController */
+/* @var $model Books */
+/* @var $form CActiveForm */
+$baseUrl = Yii::app()->baseUrl;
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl. '/js/admin.js');
+?>
+<div class="admintitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1>Gestión de Áreas de especialidad</h1>
+            <hr>
+        </div>
+
 
 
 <div class="search-form" style="display:block">
