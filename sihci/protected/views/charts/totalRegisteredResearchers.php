@@ -51,6 +51,7 @@ chart = new Highcharts.Chart({
         },
         yAxis: {
             min: 0,
+            allowDecimals: false,
             title: {
                 text: 'Cantidad de usuarios'
             }
@@ -62,6 +63,9 @@ chart = new Highcharts.Chart({
             footerFormat: '</table>',
             shared: true,
             useHTML: true
+        },
+       tooltip: {
+    
         },
         plotOptions: {
             column: {
