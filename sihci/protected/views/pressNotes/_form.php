@@ -25,16 +25,16 @@
 		<?php echo $form->dropDownList($model,'type',
 			array(
 				'Demostraciones'=>'Demostraciones',
-				'Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologi',
+				'Ferias Cientificas y Tecnologi'=>'Ferias Cientificas y Tecnologia',
 				'Ferias Empresariales'=>'Ferias Empresariales',
 				'Medios Impresos'=>'Medios Impresos',
 				'Radio'=>'Radio',
 				'Revistas de Divulgacion'=>'Revistas de Divulgacion',
-				'Seminarios'=>'Simposius',
+				'Seminarios'=>'Simposio',
 				'Talleres'=>'Talleres',
 				'Teatro'=>'Teatro',
 				'Televisión'=>'Televisión',
-				'Vidos'=>'Vidos'
+				'Videos'=>'Videos'
 			),
 			array('prompt'=>'Seleccionar participación', 'title'=>'Participación'));
 		?>
