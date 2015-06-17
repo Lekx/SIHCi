@@ -194,10 +194,10 @@
         <div class="backcontainer">
                 <div class="maincontainer">
                     <div class="successh2">
-                        <h2>Registro con Exito</h2>
+                        <h2>Registro con éxito</h2>
                         <hr>
                         <div class="remainder">
-                            <span>El registro a sido realizado con extio.</span>
+                            <span>El registro a sido realizado con éxtio.</span>
                         </div>
                         <button class="backbut"><h3>Regresar</h3></button>
                     </div>

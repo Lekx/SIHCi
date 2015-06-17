@@ -1422,6 +1422,15 @@ table.detail-view  td
 {
     margin-left: 20px;
 }
+.menuitem  .sub a,
+.menuitem .sub a:hover,
+.menuitem .sub a:visited,
+.operations .sub a:visited,
+.operations .sub a
+{
+    margin-left: 20px;
+    color: #0A324F !important;
+}
 .menuitem,
 .menulis
 {
@@ -1437,6 +1446,19 @@ table.detail-view  td
 .operations a
 {
     color: #1eb9c0 !important;
+}
+.menuitem.now a,
+.menuitem.now a:hover,
+.menuitem.now a:visited,
+.operations a:visited,
+.operations a
+{
+    color: #0A324F !important;
+    border-bottom: 0px solid white;
+}
+li.menuitem.now
+{
+      border-bottom: 1px solid #0A324F;
 }
 
 /* admin css */
@@ -1547,4 +1569,9 @@ table.detail-view  td
 
     -ms-border-radius: 4px;
      -o-border-radius: 4px;
+}
+
+#knowledge-application-grid th
+{
+    text-align: center !important;
 }
