@@ -67,7 +67,7 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$years = array();
-		$years["total"] = "total";
+		$years["total"] = "Total";
 		foreach($year AS $index => $value)
 	        	$years[$value["year"]] = $value["year"];
 	        	
@@ -148,7 +148,7 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$years = array();
-		$years["total"] = "total";
+		$years["total"] = "Total";
 		foreach($year AS $index => $value)
 	        	$years[$value["year"]] = $value["year"];
 	        	
@@ -234,7 +234,7 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$years = array();
-		$years["total"] = "total";
+		$years["total"] = "Total";
 		foreach($year AS $index => $value)
 	        	$years[$value["year"]] = $value["year"];
 	        	
@@ -317,7 +317,7 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$years = array();
-		$years["total"] = "total";
+		$years["total"] = "Total";
 		foreach($year AS $index => $value)
 	        	$years[$value["year"]] = $value["year"];
 	        	
@@ -399,7 +399,7 @@ class ChartsController extends Controller
   ")->queryAll();
 
   $years = array();
-  $years["total"] = "total";
+  $years["total"] = "Total";
   foreach($year AS $index => $value)
           $years[$value["year"]] = $value["year"];
           

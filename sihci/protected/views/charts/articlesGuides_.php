@@ -37,7 +37,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Investigadores Registrados en el Sistema'
+            text: 'Articulos y guías registrados en el sistema'
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
@@ -50,7 +50,7 @@ chart = new Highcharts.Chart({
             min: 0,
             allowDecimals: false,
             title: {
-                text: 'Cantidad de usuarios'
+                text: 'Cantidad de articulos y guías'
             }
         },
         tooltip: {

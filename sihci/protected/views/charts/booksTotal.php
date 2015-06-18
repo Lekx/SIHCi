@@ -37,7 +37,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Libros Registrados en el Sistema'
+            text: 'Libros registrados en el sistema'
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
