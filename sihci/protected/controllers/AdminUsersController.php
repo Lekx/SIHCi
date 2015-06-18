@@ -191,10 +191,12 @@ class AdminUsersController extends Controller {
 	public function actionDeleteUser($id) {
 
 		$users = Users::model()->findByPK($id);
+		
 
 		if($users->type == "fisico"){
 			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$id));
 			$persons = Persons::model()->findByAttributes(array('id_user'=>$id));
+			$address = Addresses::model()->findByAttributes(array('id'=>$curriculum->id_actual_address));
 			$command = Yii::app()->db->createCommand();
 
 			if($curriculum != null){
@@ -290,6 +292,10 @@ class AdminUsersController extends Controller {
 				
 				$curriculum->delete();
 			}
+			
+			if($address != null)
+					$address->delete();
+
 			if($persons != null){
 				$emails = Emails::model()->findAllByAttributes(array('id_person'=>$persons->id));
 				$phones = Phones::model()->findAllByAttributes(array('id_person'=>$persons->id));
@@ -301,7 +307,7 @@ class AdminUsersController extends Controller {
 				if($phones != null){
 					$command->delete('phones', 'id_person=:id_person', array(':id_person'=>$persons->id));
 					$command = Yii::app()->db->createCommand();
-				}
+				}                      
 
 
 				$persons->delete();
@@ -310,23 +316,54 @@ class AdminUsersController extends Controller {
 			$users->delete();
 			
 		}else{
-			$sponsor = Sponsors::model()->findByAttributes(array('id_user'=>$id));
 
 			$command = Yii::app()->db->createCommand();
+			$sponsorship = Sponsorship::model()->findAllByAttributes(array('id_user_sponsorer'=>$id));
+			$sponsors = Sponsors::model()->findByAttributes(array('id_user'=>$id));
+			$persons = Persons::model()->findByAttributes(array('id_user'=>$id));
+			
+			if($sponsors != null){
+				$sponsorsContacts = SponsorsContacts::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
+				$sponsorBilling = SponsorBilling::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
+				$sponsorsContact = SponsorsContact::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
+				$sponsorsDocs = SponsorsDocs::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
 
-            $command->delete('sponsors_contact', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
-            $command->delete('sponsors_contacts', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
-            $command->delete('sponsors_docs', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
-            $command->delete('sponsor_billing', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
-            $command->delete('sponsorship', 'id_user_sponsorer=:id_user_sponsorer', array(':id_user_sponsorer'=>$sponsor->id));
-			$command->delete('sponsors', 'id_user=:id_user', array(':id_user'=>$sponsor->id));
-			$command = Yii::app()->db->createCommand();
+				if($sponsorsDocs != null){
+					$command->delete('sponsors_docs', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
+					$command = Yii::app()->db->createCommand();
+				}  
+				if($sponsorsContact != null){
+					$command->delete('sponsors_contact', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
+					$command = Yii::app()->db->createCommand();
+				}  
+				if($sponsorBilling != null){
+					$command->delete('sponsor_billing', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($sponsorsContacts != null){
+					$command->delete('sponsors_contacts', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
+					$command = Yii::app()->db->createCommand();
+				}   
+
+				$sponsors->delete();
+			}
+			if($sponsorship != null){
+				
+				foreach ($sponsorship as $key => $value) {
+					$sponsoredProjects = SponsoredProjects::model()->findByAttributes(array('id_sponsorship'=>$sponsorship[$key]->id));
+					if($sponsoredProjects != null){
+						$command->delete('sponsored_projects', 'id=:id', array(':id'=>$sponsoredProjects->id));
+						$command = Yii::app()->db->createCommand();
+					}
+
+				}
+				$command->delete('sponsorship', 'id_user_sponsorer=:id_user_sponsorer', array(':id_user_sponsorer'=>$id));
+				$command = Yii::app()->db->createCommand();
+			}
+
+			$persons->delete();
 			$users->delete();
 		}
-
-		// $command = Yii::app()->db->createCommand();
-		// $command->delete('users', 'id=:id', array(':id'=>$id));
-		
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
