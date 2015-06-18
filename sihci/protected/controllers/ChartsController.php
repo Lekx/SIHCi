@@ -390,10 +390,9 @@ class ChartsController extends Controller
 	}
 
 	//GR06-total Articulos-guias
- public function actionArticlesGuides()
- {
+ public function actionArticlesGuides_(){
 
-  $conexion = Yii::app()->db;
+ 	$conexion = Yii::app()->db;
 
   $year = $conexion->createCommand("
   SELECT DISTINCT YEAR(creation_date) AS year FROM articles_guides 
@@ -465,8 +464,9 @@ class ChartsController extends Controller
   }
 
   if(!isset($_POST["years"])){
-   $this->render('index',array('action'=>'articlesGuides',"years"=>$years));
+   $this->render('index',array('action'=>'articlesGuides_',"years"=>$years));
   }
+
  }
 }
 ?>

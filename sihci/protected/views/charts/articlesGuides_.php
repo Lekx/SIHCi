@@ -15,7 +15,7 @@ Tipo de reporte
 var chart;
 function loadChart(){
 var request = $.ajax({
-  url: yii.urls.base+"/index.php/charts/articlesGuides",
+  url: yii.urls.base+"/index.php/charts/articlesGuides_",
   method: "POST",
   data: { hu : $("#hu").val(), years : $("#years").val()/*,sni : $("#sni").val(), type : $("#type").val()*/},
   dataType: "json"
