@@ -443,7 +443,7 @@ class ChartsController extends Controller
     LEFT JOIN users AS u ON u.id=c.id_user 
     LEFT JOIN jobs AS j ON j.id_curriculum=c.id
     WHERE u.type = "fisico" AND u.status = "activo"
-    '.$condYears.$condType.$condSni.$condHu.'
+    '.$condYears./*$condType.$condSni.*/$condHu.'
     GROUP BY months ORDER BY MONTH(ar.creation_date) ASC
    ';
    $results = $conexion->createCommand($query)->queryAll();
