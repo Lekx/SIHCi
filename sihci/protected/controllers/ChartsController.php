@@ -138,6 +138,90 @@ class ChartsController extends Controller
 
 	}
 
+	//GR02-Total-Proyectos
+	public function actionProjectsTotal(){
+
+		$conexion = Yii::app()->db;
+
+		$year = $conexion->createCommand("
+		SELECT DISTINCT YEAR(creation_date) AS year FROM projects
+		")->queryAll();
+
+		$years = array();
+		$years["total"] = "total";
+		foreach($year AS $index => $value)
+	        	$years[$value["year"]] = $value["year"];
+	        	
+
+		if(isset($_POST["years"])){
+			/*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
+				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
+			else if($_POST["hu"] == "otro")
+				$condHu = " AND j.hospital_unit IS NULL";
+			else*/
+				$condHu = "";
+
+			if($_POST["proyecto"] != "total" && $_POST["proyecto"] == "abiertos")
+				$condProyecto = " AND p.status = 'borrador'";
+			else if($_POST["proyecto"] == "concluidos")
+				$condProyecto = " AND p.status = 'dictaminado'";
+			else if($_POST["proyecto"] == "rechazados")
+				$condProyecto = " AND p.status = 'rechazado'";
+			else
+				$condProyecto = "";
+
+
+			/*if($_POST["type"] != "total" && $_POST["type"] == "bajas")
+				$condType = " AND u.status ='inactivo'";
+			else
+				$condType = "";*/
+
+
+			if($_POST["years"] != "total")
+				$condYears = " AND YEAR(u.creation_date) ='".$_POST['years']."'";
+			else
+				$condYears = "";
+
+
+			$query = '
+				SELECT 
+				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(u.id) as totalUsers,
+				MONTH(p.creation_date) as months
+				FROM projects AS p 
+				LEFT JOIN curriculum AS c ON p.id_curriculum=c.id
+				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = "fisico" AND u.status = "activo"
+				'.$condYears./*$condType.*/$condProyecto.$condHu.'
+				GROUP BY months ORDER BY MONTH(p.creation_date) ASC
+			';
+			$results = $conexion->createCommand($query)->queryAll();
+
+			//print_r($results);
+
+			$months = array();
+			$jim = array();
+			$faa = array();
+			$other = array();
+			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			foreach($results AS $key => $value){
+				array_push($months, $mos[$value["months"]]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+			}
+
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+		}
+
+		if(!isset($_POST["years"])){
+			$this->render('index',array('action'=>'projectsTotal',"years"=>$years));
+		}
+
+	}
+
 
 	//GR04-Total-Libros
 	public function actionBooksTotal(){

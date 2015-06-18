@@ -4,22 +4,23 @@
 <?php // echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
 Año de reporte 
 <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
-<!--¿Perteneciente al SNI?
-<?php// echo CHtml::dropDownList('sni', '',array("total"=>"Total","no"=>"no","yes"=>"si"),array('onchange'=>'loadChart()')); ?><br/>
-Tipo de reporte 
-<?php// echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>-->
+Tipo de proyecto
+<?php echo CHtml::dropDownList('proyecto', '',array("total"=>"Total","abiertos"=>"Abiertos","concluidos"=>"Concluidos","rechazados"=>"Rechazados"),array('onchange'=>'loadChart()')); ?><br/>
+<!--Tipo de reporte 
+<?php //echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>-->
 
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
+<!-- <input type="button" value="puto" onclick="loadChart()"> -->
 <script>
 //jQuery.noConflict(); 
 var chart;
 function loadChart(){
 var request = $.ajax({
-  url: yii.urls.base+"/index.php/charts/articlesGuides",
+  url: yii.urls.base+"/index.php/charts/projectsTotal",
   method: "POST",
-  data: { hu : $("#hu").val(), years : $("#years").val()/*,sni : $("#sni").val(), type : $("#type").val()*/},
+  data: { /*hu : $("#hu").val(), */years : $("#years").val(),proyecto : $("#proyecto").val()/*, type : $("#type").val()*/},
   dataType: "json"
 });
 
@@ -39,7 +40,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Investigadores Registrados en el Sistema'
+            text: 'Proyectos Registrados en el Sistema'
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
@@ -52,7 +53,7 @@ chart = new Highcharts.Chart({
             min: 0,
             allowDecimals: false,
             title: {
-                text: 'Cantidad de usuarios'
+                text: 'Cantidad de Proyectos'
             }
         },
         tooltip: {
