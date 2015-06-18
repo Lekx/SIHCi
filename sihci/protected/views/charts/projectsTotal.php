@@ -6,8 +6,8 @@ Año de reporte
 <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
 Tipo de proyecto
 <?php echo CHtml::dropDownList('proyecto', '',array("total"=>"Total","abiertos"=>"Abiertos","concluidos"=>"Concluidos","rechazados"=>"Rechazados"),array('onchange'=>'loadChart()')); ?><br/>
-patrocinados
-<?php echo CHtml::dropDownList('patrocinador', '',array("total"=>"Todos","patrocinado"=>"Patrocinado","No patrocinado"=>"No patrocinado"),array('onchange'=>'loadChart()')); ?><br/>
+Patrocinados
+<?php echo CHtml::dropDownList('patrocinador', '',array("total"=>"Todos","patrocinado"=>"Patrocinado","Nopatrocinado"=>"No patrocinado"),array('onchange'=>'loadChart()')); ?><br/>
 
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -40,7 +40,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Proyectos Registrados en el Sistema'
+            text: 'Proyectos registrados en el sistema'
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
@@ -87,7 +87,7 @@ chart = new Highcharts.Chart({
             data: data.jim
 
         }, {
-            name: 'Otros',
+            name: 'No asignados',
             data: data.other
 
         },]

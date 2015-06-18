@@ -5,9 +5,9 @@
 Año de reporte 
 <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
 ¿Perteneciente al SNI?
-<?php echo CHtml::dropDownList('sni', '',array("total"=>"Total","no"=>"no","yes"=>"si"),array('onchange'=>'loadChart()')); ?><br/>
+<?php echo CHtml::dropDownList('sni', '',array("total"=>"Total","no"=>"No","yes"=>"Si"),array('onchange'=>'loadChart()')); ?><br/>
 Tipo de reporte 
-<?php echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>
+<?php echo CHtml::dropDownList('type', '',array("total"=>"Total registrados","bajas"=>"Bajas","altas"=>"Altas"),array('onchange'=>'loadChart()')); ?><br/>
 
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -40,7 +40,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Investigadores Registrados en el Sistema'
+            text: 'Investigadores registrados en el sistema'
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
@@ -57,6 +57,7 @@ chart = new Highcharts.Chart({
             }
         },
         tooltip: {
+            
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
                 '<td style="padding:0"><b>{point.y} investigadores</b></td></tr>',

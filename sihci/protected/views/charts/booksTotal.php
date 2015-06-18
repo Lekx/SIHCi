@@ -37,7 +37,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Libros Registrados en el Sistema'
+            text: 'Libros registrados en el sistema'
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
@@ -75,12 +75,12 @@ chart = new Highcharts.Chart({
         },
         series: [{
 
-            name: 'Libros de Hospital Civil Fray Antonio Alcalde',
+            name: 'Hospital Civil Fray Antonio Alcalde',
             data: data.faa
 
         }, {
 
-            name: 'Libros de Hospital Civil Dr. Juan I. Menchaca',
+            name: 'Hospital Civil Dr. Juan I. Menchaca',
             data: data.jim
 
         }, {

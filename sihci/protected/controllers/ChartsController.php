@@ -67,7 +67,7 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$years = array();
-		$years["total"] = "total";
+		$years["total"] = "Total";
 		foreach($year AS $index => $value)
 	        	$years[$value["year"]] = $value["year"];
 	        	
@@ -148,7 +148,7 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$years = array();
-		$years["total"] = "total";
+		$years["total"] = "Total";
 		foreach($year AS $index => $value)
 	        	$years[$value["year"]] = $value["year"];
 	        	
@@ -162,7 +162,7 @@ class ChartsController extends Controller
 				$condHu = "";
 
 			if($_POST["proyecto"] != "total" && $_POST["proyecto"] == "abiertos")
-				$condProyecto = " AND p.status = 'borrador'";
+				$condProyecto = " AND p.status != 'dictaminado' AND p.status != 'rechazado'";
 			else if($_POST["proyecto"] == "concluidos")
 				$condProyecto = " AND p.status = 'dictaminado'";
 			else if($_POST["proyecto"] == "rechazados")
@@ -187,13 +187,12 @@ class ChartsController extends Controller
 
 			$query = '
 				SELECT 
-				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
-				COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(IF(p.develop_uh="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(p.develop_uh="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
 				COUNT(u.id) as totalUsers,
 				MONTH(p.creation_date) as months
 				FROM projects AS p 
 				LEFT JOIN curriculum AS c ON p.id_curriculum=c.id
-				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
 				LEFT JOIN users AS u ON u.id=c.id_user
 				WHERE u.type = "fisico" AND u.status = "activo"
 				'.$condYears.$condPatro.$condProyecto.$condHu.'
@@ -235,7 +234,7 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$years = array();
-		$years["total"] = "total";
+		$years["total"] = "Total";
 		foreach($year AS $index => $value)
 	        	$years[$value["year"]] = $value["year"];
 	        	
@@ -318,7 +317,7 @@ class ChartsController extends Controller
 		")->queryAll();
 
 		$years = array();
-		$years["total"] = "total";
+		$years["total"] = "Total";
 		foreach($year AS $index => $value)
 	        	$years[$value["year"]] = $value["year"];
 	        	
@@ -391,17 +390,16 @@ class ChartsController extends Controller
 	}
 
 	//GR06-total Articulos-guias
- public function actionArticlesGuides()
- {
+ public function actionArticlesGuides_(){
 
-  $conexion = Yii::app()->db;
+ 	$conexion = Yii::app()->db;
 
   $year = $conexion->createCommand("
   SELECT DISTINCT YEAR(creation_date) AS year FROM articles_guides 
   ")->queryAll();
 
   $years = array();
-  $years["total"] = "total";
+  $years["total"] = "Total";
   foreach($year AS $index => $value)
           $years[$value["year"]] = $value["year"];
           
@@ -466,8 +464,9 @@ class ChartsController extends Controller
   }
 
   if(!isset($_POST["years"])){
-   $this->render('index',array('action'=>'articlesGuides',"years"=>$years));
+   $this->render('index',array('action'=>'articlesGuides_',"years"=>$years));
   }
+
  }
 }
 ?>
