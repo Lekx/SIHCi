@@ -138,6 +138,92 @@ class ChartsController extends Controller
 
 	}
 
+	//GR02-Total-Proyectos
+	public function actionProjectsTotal(){
+
+		$conexion = Yii::app()->db;
+
+		$year = $conexion->createCommand("
+		SELECT DISTINCT YEAR(creation_date) AS year FROM projects
+		")->queryAll();
+
+		$years = array();
+		$years["total"] = "total";
+		foreach($year AS $index => $value)
+	        	$years[$value["year"]] = $value["year"];
+	        	
+
+		if(isset($_POST["years"])){
+			/*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
+				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
+			else if($_POST["hu"] == "otro")
+				$condHu = " AND j.hospital_unit IS NULL";
+			else*/
+				$condHu = "";
+
+			if($_POST["proyecto"] != "total" && $_POST["proyecto"] == "abiertos")
+				$condProyecto = " AND p.status = 'borrador'";
+			else if($_POST["proyecto"] == "concluidos")
+				$condProyecto = " AND p.status = 'dictaminado'";
+			else if($_POST["proyecto"] == "rechazados")
+				$condProyecto = " AND p.status = 'rechazado'";
+			else
+				$condProyecto = "";
+
+
+			if($_POST["patrocinador"] != "total" && $_POST["patrocinador"] == "patrocinado")
+				$condPatro = " AND p.is_sponsored = 1";
+			else if($_POST["patrocinador"] == "Nopatrocinado")
+				$condPatro = " AND p.is_sponsored != 1";
+			else
+				$condPatro = "";
+
+
+			if($_POST["years"] != "total")
+				$condYears = " AND YEAR(p.creation_date) ='".$_POST['years']."'";
+			else
+				$condYears = "";
+
+
+			$query = '
+				SELECT 
+				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(u.id) as totalUsers,
+				MONTH(p.creation_date) as months
+				FROM projects AS p 
+				LEFT JOIN curriculum AS c ON p.id_curriculum=c.id
+				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = "fisico" AND u.status = "activo"
+				'.$condYears.$condPatro.$condProyecto.$condHu.'
+				GROUP BY months ORDER BY MONTH(p.creation_date) ASC
+			';
+			$results = $conexion->createCommand($query)->queryAll();
+
+			//print_r($results);
+
+			$months = array();
+			$jim = array();
+			$faa = array();
+			$other = array();
+			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			foreach($results AS $key => $value){
+				array_push($months, $mos[$value["months"]]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+			}
+
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+		}
+
+		if(!isset($_POST["years"])){
+			$this->render('index',array('action'=>'projectsTotal',"years"=>$years));
+		}
+
+	}
+
 
 	//GR04-Total-Libros
 	public function actionBooksTotal(){
@@ -145,7 +231,7 @@ class ChartsController extends Controller
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) AS year FROM books 
+		SELECT DISTINCT YEAR(creation_date) AS year FROM books
 		")->queryAll();
 
 		$years = array();
@@ -193,8 +279,8 @@ class ChartsController extends Controller
 					LEFT JOIN users AS u ON u.id=c.id_user
 					LEFT JOIN jobs AS j ON j.id_curriculum=c.id
 					WHERE u.type = "fisico" AND u.status = "activo"
-					'.$condYears./*$condType.$condSni.*/$condHu.'
-					GROUP BY months ORDER BY MONTH(b.creation_date) ASC
+				'.$condYears./*$condType.$condSni.*/$condHu.'
+				GROUP BY months ORDER BY MONTH(b.creation_date) ASC
 			';
 			$results = $conexion->createCommand($query)->queryAll();
 
@@ -305,84 +391,83 @@ class ChartsController extends Controller
 	}
 
 	//GR06-total Articulos-guias
-	public function actionArticlesGuides()
-	{
+ public function actionArticlesGuides()
+ {
 
-		$conexion = Yii::app()->db;
+  $conexion = Yii::app()->db;
 
-		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) AS year FROM articles_guides 
-		")->queryAll();
+  $year = $conexion->createCommand("
+  SELECT DISTINCT YEAR(creation_date) AS year FROM articles_guides 
+  ")->queryAll();
 
-		$years = array();
-		$years["total"] = "total";
-		foreach($year AS $index => $value)
-	        	$years[$value["year"]] = $value["year"];
-	        	
+  $years = array();
+  $years["total"] = "total";
+  foreach($year AS $index => $value)
+          $years[$value["year"]] = $value["year"];
+          
 
-		if(isset($_POST["years"])){
-			/*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
-				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
-			else if($_POST["hu"] == "otro")
-				$condHu = " AND j.hospital_unit IS NULL";
-			else*/
-				$condHu = "";
-			/*
-			if($_POST["sni"] != "total" && $_POST["sni"] == "no")
-				$condSni = " AND c.sni = 0 OR c.sni IS NULL";
-			else if($_POST["sni"] == "yes")
-				$condSni = " AND c.sni > 0";
-			else
-				$condSni = "";
+  if(isset($_POST["years"])){
+   /*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
+    $condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
+   else if($_POST["hu"] == "otro")
+    $condHu = " AND j.hospital_unit IS NULL";
+   else*/
+    $condHu = "";
+   /*
+   if($_POST["sni"] != "total" && $_POST["sni"] == "no")
+    $condSni = " AND c.sni = 0 OR c.sni IS NULL";
+   else if($_POST["sni"] == "yes")
+    $condSni = " AND c.sni > 0";
+   else
+    $condSni = "";
 
-			if($_POST["type"] != "total" && $_POST["type"] == "bajas")
-				$condType = " AND u.status ='inactivo'";
-			else
-				$condType = "";
-			*/
+   if($_POST["type"] != "total" && $_POST["type"] == "bajas")
+    $condType = " AND u.status ='inactivo'";
+   else
+    $condType = "";
+   */
 
-			if($_POST["years"] != "total")
-				$condYears = " AND YEAR(ar.creation_date) ='".$_POST['years']."'";
-			else
-				$condYears = "";
+   if($_POST["years"] != "total")
+    $condYears = " AND YEAR(ar.creation_date) ='".$_POST['years']."'";
+   else
+    $condYears = "";
 
+   $query = '
+    SELECT 
+    COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+    COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+    COUNT(ar.id) AS totalArticles,
+    MONTH(ar.creation_date) as months
+    FROM articles_guides AS ar
+    LEFT JOIN curriculum AS c ON c.id=ar.id_resume
+    LEFT JOIN users AS u ON u.id=c.id_user 
+    LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+    WHERE u.type = "fisico" AND u.status = "activo"
+    '.$condYears./*$condType.$condSni.*/$condHu.'
+    GROUP BY months ORDER BY MONTH(ar.creation_date) ASC
+   ';
+   $results = $conexion->createCommand($query)->queryAll();
 
-			$query = '
-				SELECT 
-				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
-				COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
-				COUNT(ar.id) AS totalArticles,
-				MONTH(ar.creation_date) as months
-				FROM articles_guides AS ar
-				LEFT JOIN curriculum AS c ON c.id=ar.id_resume
-				LEFT JOIN users AS u ON u.id=c.id_user 
-				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
-				WHERE u.type = "fisico" AND u.status = "activo"
-				'.$condYears.$condType.$condSni.$condHu.'
-				GROUP BY months ORDER BY MONTH(ar.creation_date) ASC
-			';
-			$results = $conexion->createCommand($query)->queryAll();
+   //print_r($results);
 
-			//print_r($results);
+   $months = array();
+   $jim = array();
+   $faa = array();
+   $other = array();
+   $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+   foreach($results AS $key => $value){
+    array_push($months, $mos[$value["months"]]);
+    array_push($jim, (int)$value["jim"]);
+    array_push($faa, (int)$value["faa"]);
+    array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
+   }
 
-			$months = array();
-			$jim = array();
-			$faa = array();
-			$other = array();
-			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-			foreach($results AS $key => $value){
-				array_push($months, $mos[$value["months"]]);
-				array_push($jim, (int)$value["jim"]);
-				array_push($faa, (int)$value["faa"]);
-				array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
-			}
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+  }
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
-		}
-
-		if(!isset($_POST["years"])){
-			$this->render('index',array('action'=>'articlesGuides',"years"=>$years));
-		}
-	}
+  if(!isset($_POST["years"])){
+   $this->render('index',array('action'=>'articlesGuides',"years"=>$years));
+  }
+ }
 }
 ?>

@@ -7,7 +7,6 @@ return array(
 	// uncomment the following lines to use a MySQL database
 
 	'connectionString' => 'mysql:host=192.168.1.26;dbname=sihci',
-	 //'connectionString' => 'mysql:host=127.0.0.1;dbname=sihci',
 	'emulatePrepare' => true,
 	'username' => 'root',
 	'password' => '000',
