@@ -7,7 +7,7 @@ Año de reporte
 Tipo de proyecto
 <?php echo CHtml::dropDownList('proyecto', '',array("total"=>"Total","abiertos"=>"Abiertos","concluidos"=>"Concluidos","rechazados"=>"Rechazados"),array('onchange'=>'loadChart()')); ?><br/>
 patrocinados
-<?php echo CHtml::dropDownList('patrocinador', '',array("total"=>"Todos","patrocinado"=>"Patrocinado","No patrocinado"=>"No patrocinado"),array('onchange'=>'loadChart()')); ?><br/>
+<?php echo CHtml::dropDownList('patrocinador', '',array("total"=>"Todos","patrocinado"=>"Patrocinado","Nopatrocinado"=>"No patrocinado"),array('onchange'=>'loadChart()')); ?><br/>
 
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>

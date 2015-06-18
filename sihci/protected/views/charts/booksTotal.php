@@ -75,12 +75,12 @@ chart = new Highcharts.Chart({
         },
         series: [{
 
-            name: 'Libros de Hospital Civil Fray Antonio Alcalde',
+            name: 'Hospital Civil Fray Antonio Alcalde',
             data: data.faa
 
         }, {
 
-            name: 'Libros de Hospital Civil Dr. Juan I. Menchaca',
+            name: 'Hospital Civil Dr. Juan I. Menchaca',
             data: data.jim
 
         }, {
