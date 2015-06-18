@@ -171,14 +171,16 @@ class ChartsController extends Controller
 				$condProyecto = "";
 
 
-			/*if($_POST["type"] != "total" && $_POST["type"] == "bajas")
-				$condType = " AND u.status ='inactivo'";
+			if($_POST["patrocinador"] != "total" && $_POST["patrocinador"] == "patrocinado")
+				$condPatro = " AND p.is_sponsored = 1";
+			else if($_POST["patrocinador"] == "Nopatrocinado")
+				$condPatro = " AND p.is_sponsored != 1";
 			else
-				$condType = "";*/
+				$condPatro = "";
 
 
 			if($_POST["years"] != "total")
-				$condYears = " AND YEAR(u.creation_date) ='".$_POST['years']."'";
+				$condYears = " AND YEAR(p.creation_date) ='".$_POST['years']."'";
 			else
 				$condYears = "";
 
@@ -194,7 +196,7 @@ class ChartsController extends Controller
 				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
 				LEFT JOIN users AS u ON u.id=c.id_user
 				WHERE u.type = "fisico" AND u.status = "activo"
-				'.$condYears./*$condType.*/$condProyecto.$condHu.'
+				'.$condYears.$condPatro.$condProyecto.$condHu.'
 				GROUP BY months ORDER BY MONTH(p.creation_date) ASC
 			';
 			$results = $conexion->createCommand($query)->queryAll();

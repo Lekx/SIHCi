@@ -20,7 +20,7 @@ function loadChart(){
 var request = $.ajax({
   url: yii.urls.base+"/index.php/charts/projectsTotal",
   method: "POST",
-  data: { /*hu : $("#hu").val(), */years : $("#years").val(),proyecto : $("#proyecto").val()/*, type : $("#type").val()*/},
+  data: { /*hu : $("#hu").val(), */years : $("#years").val(),proyecto : $("#proyecto").val(), patrocinador : $("#patrocinador").val()},
   dataType: "json"
 });
 
