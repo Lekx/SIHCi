@@ -6,8 +6,8 @@ Año de reporte
 <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
 Tipo de proyecto
 <?php echo CHtml::dropDownList('proyecto', '',array("total"=>"Total","abiertos"=>"Abiertos","concluidos"=>"Concluidos","rechazados"=>"Rechazados"),array('onchange'=>'loadChart()')); ?><br/>
-<!--Tipo de reporte 
-<?php //echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>-->
+patrocinados
+<?php echo CHtml::dropDownList('patrocinador', '',array("total"=>"Todos","patrocinado"=>"Patrocinado","No patrocinado"=>"No patrocinado"),array('onchange'=>'loadChart()')); ?><br/>
 
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -20,7 +20,7 @@ function loadChart(){
 var request = $.ajax({
   url: yii.urls.base+"/index.php/charts/projectsTotal",
   method: "POST",
-  data: { /*hu : $("#hu").val(), */years : $("#years").val(),proyecto : $("#proyecto").val()/*, type : $("#type").val()*/},
+  data: { /*hu : $("#hu").val(), */years : $("#years").val(),proyecto : $("#proyecto").val(), patrocinador : $("#patrocinador").val()},
   dataType: "json"
 });
 

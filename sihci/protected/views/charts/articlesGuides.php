@@ -1,5 +1,3 @@
-
-
 <!--Unidad Hospitalaria 
 <?php // echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
 Año de reporte 
@@ -106,6 +104,3 @@ $(document).ready(function(){
 
 
 </script>
-
-
-
