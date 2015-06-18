@@ -31,9 +31,9 @@ $this->menu=array(
 			array('label'=>'Gestionar', 'url'=>array('copyrights/admin'),'itemOptions'=>array('class' => 'sub5')),
 			array('label'=>'Crear', 'url'=>array('copyrights/create'),'itemOptions'=>array('class' => 'sub5')),
 //copyrights	
-	array('label'=>'Resgirtro software', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'menuitem 6')),
-			array('label'=>'Gestionar', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'sub6')),
-			array('label'=>'Crear', 'url'=>array('software/create'),'itemOptions'=>array('class' => 'sub6')),
+	array('label'=>'Resgirtro software', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'menuitem 6 now')),
+			array('label'=>'Gestionar', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'sub')),
+			array('label'=>'Crear', 'url'=>array('software/create'),'itemOptions'=>array('class' => 'sub')),
 //articlesGuides				
 	array('label'=>'Articulos y guías', 'url'=>array('articlesGuides/admin'),'itemOptions'=>array('class' => 'menuitem 7')),
 			array('label'=>'Gestionar', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'sub7')),
