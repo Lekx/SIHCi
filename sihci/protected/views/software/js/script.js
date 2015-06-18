@@ -2,7 +2,7 @@ function send()
 {
 
     var fd = new FormData();
-    var data=$("#software-form").serialize();
+    //var data=$("#software-form").serialize();
     fd.append("Software[path]",$('#path')[0].files[0]);
 
     $.ajax({

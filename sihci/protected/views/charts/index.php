@@ -1,9 +1,11 @@
 
 <?php 
 $this->menu=array(
-	array('label'=>'Total ingreso y egreso de investigadores', 'url'=>array('Charts/totalRegisteredResearchesIo')),
-	array('label'=>'Cantidad de Investigadores', 'url'=>array('Charts/numberofResearchers')),
-	array('label'=>'Total de proyectos de Investigación', 'url'=>array('Charts/totalResearchProjects')),
+	array('label'=>'Investigadores Registrados en el Sistema', 'url'=>array('Charts/totalRegisteredResearchers')),
+	array('label'=>'Total de Proyectos Registrados', 'url'=>array('Charts/projectsTotal')),
+	array('label'=>'Total de libros Registrados', 'url'=>array('Charts/booksTotal')),
+	array('label'=>'Total de Capitulos de libros Registrados', 'url'=>array('Charts/chaptersTotal')),
+	array('label'=>'Total de Articulos y guias Registrados', 'url'=>array('Charts/articlesGuides')),
 );
 require_once($action.".php");
  ?>

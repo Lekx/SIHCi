@@ -87,7 +87,12 @@ class DirectedThesisController extends Controller
                         $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
                         $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                    
 
-                        if($model->save()){                  
+                        if($model->save()){      
+                        $section = "Tésis Dirigidas";
+                        $action = "Creación";
+                        $details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Título: ".$model->title.". Autor: ".$model->author.".";
+                        Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);            
+                            
                             echo CJSON::encode(array('status'=>'200'));
                             $this->redirect(array('admin','id'=>$model->id));
                             Yii::app()->end();
@@ -105,7 +110,11 @@ class DirectedThesisController extends Controller
                 } 
                 //path != ''
                 else {
-                    if($model->save()){                  
+                    if($model->save()){
+                    $section = "Tésis Dirigidas";
+                        $action = "Creación";
+                        $details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Título: ".$model->title.". Autor: ".$model->author.".";
+                        Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);                  
                         echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();
@@ -164,6 +173,10 @@ class DirectedThesisController extends Controller
 
                     if($model->save())
                     {                
+                            $section = "Tésis Dirigidas";
+                            $action = "Modificación";
+                            $details = "Registro Número: ".$model->id;
+                            Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
                         echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();
@@ -187,7 +200,10 @@ class DirectedThesisController extends Controller
     {   
         
         $model= DirectedThesis::model()->findByPk($id);
-
+        $section = "Tésis Dirigidas";
+        $action = "Eliminación";
+        $details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: Título: ".$model->title.". Autor: ".$model->author.".";
+        Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
         if($model->path != null){
           unlink(YiiBase::getPathOfAlias("webroot").$model->path);
           $model->delete();  
