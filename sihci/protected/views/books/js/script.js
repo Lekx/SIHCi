@@ -19,9 +19,8 @@ function send()
                     $("#books-form")[0].reset();                
             }
             else
-            {
-                alert(data);
-            }    
+               alert(data);
+            
 
         },
      /*   error: function () {
@@ -30,7 +29,7 @@ function send()
     });
 }
 
-function upDate()
+function update()
 {   
     var fd = new FormData();
     var data=$("#books-form").serialize();
@@ -50,9 +49,8 @@ function upDate()
                     $("#books-form")[0].reset();                
             }
             /*else
-            {
-                alert(data);
-            } */   
+               alert(data);*/
+             
 
         },
      /*   error: function () {

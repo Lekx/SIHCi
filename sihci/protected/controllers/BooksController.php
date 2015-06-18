@@ -88,24 +88,22 @@ class BooksController extends Controller
 	                if(!is_dir($urlFile))
 	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/', 0777, true);
 	                
-		    		 	                                                	                       //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
-            		    if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png')
-            		    {				
-		 					$model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
-						    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();    			 			   	
-				              
-				                if($model->save())
-				                {
-				               		              
-						 			$names = $_POST['names'];
-						            $last_name1 = $_POST['last_names1'];
-						            $last_name2 = $_POST['last_names2'];
-						            $position = $_POST['positions'];
-						            
-		         					foreach($_POST['names'] as $key => $names)
-		         					{
-						               	unset($modelAuthor);
-						               	$modelAuthor = new BooksAuthors;
+	    		 	if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png')
+            		{				
+	 					$model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();    			 			   	
+			              
+			                if($model->save())
+			                {			               		              
+					 			$names = $_POST['names'];
+					            $last_name1 = $_POST['last_names1'];
+					            $last_name2 = $_POST['last_names2'];
+					            $position = $_POST['positions'];
+					            
+	         					foreach($_POST['names'] as $key => $names)
+	         					{
+					               	unset($modelAuthor);
+					               	$modelAuthor = new BooksAuthors;
 
 					               	$modelAuthor->id_book = $model->id;
 					       			$modelAuthor->names = $names;
@@ -113,7 +111,8 @@ class BooksController extends Controller
 					       			$modelAuthor->last_name2 = $last_name2[$key];
 					        		$modelAuthor->position = $position[$key];
 		                    		$modelAuthor->save();
-			              	    }	
+			              	    }
+			              	    	
 			              	    $section = "Libros";
      							$action = "Creación";
 								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
@@ -122,16 +121,15 @@ class BooksController extends Controller
 	                            $this->redirect(array('admin','id'=>$model->id));
 	                            Yii::app()->end();
 
-				               }					               
-				               else
-				               {
-				               		echo CJSON::encode(array('status'=>'404'));
-		                            Yii::app()->end();
-				               }
-				        }
-				        else
-			               echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
-			                  
+			               }					               
+			               else
+			               {
+			               		echo CJSON::encode(array('status'=>'404'));
+	                            Yii::app()->end();
+			               }
+			        }       
+			        else 
+		               echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
 			    }
 			    else
 			    {
@@ -156,6 +154,7 @@ class BooksController extends Controller
               	 		$section = "Libros";
 						$action = "Creación";
 						$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
+						
 						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 	               	  	echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
@@ -190,6 +189,7 @@ class BooksController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model); 
 		$oldUrlDocument = $model->path;
+
         if(isset($_POST['Books']))
         {
 	            $model->attributes=$_POST['Books'];
@@ -197,63 +197,70 @@ class BooksController extends Controller
 	
            		if (!empty(CUploadedFile::getInstanceByName('Books[path]')))
                 {
-
                     if(!empty($oldUrlDocument))
                     	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
                     
-                    $model->path = CUploadedFile::getInstanceByName('Books[path]');
-                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
-                  
-                    if(!is_dir($urlFile))          
-                        mkdir($urlFile, 0777, true);
-
-                       $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
-		               $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();                                                    
-                }
-                
-                else                  
-                   $model->path = $oldUrlDocument;       
-                    
-            		if($model->save())
+                    if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png')
             		{
-            					$idsBooks = $_POST['idsBooks'];
-            					$names = $_POST['names'];
-					            $last_name1 = $_POST['last_names1'];
-					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];
-					                 
-     					 foreach($_POST['names'] as $key => $value)
-     					 {
-     					 
-			        		if($idsBooks[$key] == '')
-			        		{
-			        			unset($modelAuthor);
-								$modelAuthor = new BooksAuthors;
-			        			$modelAuthor->id_book = $model->id;
-			        			$modelAuthor->names = $names[$key];
-								$modelAuthor->last_name1 = $last_name1[$key];
-								$modelAuthor->last_name2 = $last_name2[$key];
-								$modelAuthor->position = $position[$key];
-								$modelAuthor->save();
-                    		}
-                    		else
-                    		{
-								$modelAuthor->updateByPk($idsBooks[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
-                		    }
-                	    }
-                	    $section = "Libros";
-						$action = "Modificación";
-						$details = "Registro Número: ".$model->id;
-						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-           	 		   echo CJSON::encode(array('status'=>'200'));
-                       $this->redirect(array('admin','id'=>$model->id));
-                       Yii::app()->end();
-                	} 
-                	else 
-                	{
-                		echo CJSON::encode(array('status'=>'404'));
-                        Yii::app()->end();
-                	}           
+	                    $model->path = CUploadedFile::getInstanceByName('Books[path]');
+	                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
+	                  
+	                    if(!is_dir($urlFile))          
+	                        mkdir($urlFile, 0777, true);
+
+	                    $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+			            $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();                                                    
+			        }
+			        else  
+			        	echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png";  
+                }                
+                else                  
+                  $model->path = $oldUrlDocument;       
+                    
+        		if($model->save())
+        		{
+					$idsBooks = $_POST['idsBooks'];
+					$names = $_POST['names'];
+		            $last_name1 = $_POST['last_names1'];
+		            $last_name2 = $_POST['last_names2'];
+		            $position = $_POST['positions'];
+		                 
+ 					 foreach($_POST['names'] as $key => $value)
+ 					 {
+ 					 
+		        		if($idsBooks[$key] == '')
+		        		{
+		        			unset($modelAuthor);
+							$modelAuthor = new BooksAuthors;
+		        			$modelAuthor->id_book = $model->id;
+		        			$modelAuthor->names = $names[$key];
+							$modelAuthor->last_name1 = $last_name1[$key];
+							$modelAuthor->last_name2 = $last_name2[$key];
+							$modelAuthor->position = $position[$key];
+							$modelAuthor->save();
+                		}
+                		else
+                		{
+							$modelAuthor->updateByPk($idsBooks[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
+            		    }
+            	    }
+
+            	    $section = "Libros";
+					$action = "Modificación";
+					$details = "Registro Número: ".$model->id;
+					
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+       	 		   
+       	 		    echo CJSON::encode(array('status'=>'200'));
+                    $this->redirect(array('admin','id'=>$model->id));
+                    Yii::app()->end();
+            	} 
+            	
+            	else 
+                {
+    				echo CJSON::encode(array('status'=>'404'));
+                    Yii::app()->end();
+                }           
             
         }
         	

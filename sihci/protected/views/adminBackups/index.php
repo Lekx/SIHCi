@@ -1,6 +1,6 @@
 
-<!-- AS02-Listarrespaldos de base de datos <?php //include ("logoutTime.php"); ?>  -->
-<?php include ("logoutTime.php"); ?> 
+<!-- AS02-Listar respaldos de base de datos <?php //include ("logoutTime.php"); ?>  -->
+
 
 <div class="row"><h3>Respaldos</h3></div>
 

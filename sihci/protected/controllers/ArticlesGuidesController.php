@@ -209,11 +209,11 @@ class ArticlesGuidesController extends Controller
                     
             		if($model->save())
             		{
-            					$idsArticlesGuides = $_POST['idsArticlesGuides'];
-            					$names = $_POST['names'];
-					            $last_name1 = $_POST['last_names1'];
-					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];
+    					$idsArticlesGuides = $_POST['idsArticlesGuides'];
+    					$names = $_POST['names'];
+			            $last_name1 = $_POST['last_names1'];
+			            $last_name2 = $_POST['last_names2'];
+			            $position = $_POST['positions'];
 					                 
      					 foreach($_POST['names'] as $key => $value)
      					 {
