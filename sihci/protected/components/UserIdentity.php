@@ -38,6 +38,7 @@ class UserIdentity extends CUserIdentity
 			$this->setState('id_roles',$user->id_roles); //obtiene id del rol del usuario
 			$this->setState('fullname', $user->persons[0]['names'].' '.$user->persons[0]['last_name1'].' '.$user->persons[0]['last_name2']);
 			$this->setState('type', $user->type);
+			$this->setState('admin',0);
 			
 			$this->errorCode=self::ERROR_NONE;
 			

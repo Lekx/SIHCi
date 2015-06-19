@@ -1,7 +1,8 @@
 <?php
-/* @var $this UsersController */
-/* @var $model Users */
+/* @var $this BooksController */
+/* @var $model Books */
 /* @var $form CActiveForm */
+//LI06-Barra de busqueda
 ?>
 
 <div class="wide form">
@@ -11,44 +12,14 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+	<div class="inner-addon right-addon">
+					 <i class="glyphicon glyphicon-search"></i>
+		
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo','class'=>'searchcrud')); ?>	
+		<?php //echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id_roles'); ?>
-		<?php echo $form->textField($model,'id_roles'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'registration_date'); ?>
-		<?php echo $form->textField($model,'registration_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'activation_date'); ?>
-		<?php echo $form->textField($model,'activation_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'act_react_key'); ?>
-		<?php echo $form->textField($model,'act_react_key',array('size'=>60,'maxlength'=>200)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>15,'maxlength'=>15)); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+	
 
 <?php $this->endWidget(); ?>
 

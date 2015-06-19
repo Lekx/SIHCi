@@ -67,7 +67,7 @@ class BooksChaptersController extends Controller
         $modelAuthor = new BooksChaptersAuthors;
       
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model, $modelAuthor);
 
         if(isset($_POST['BooksChapters']))
         {
@@ -103,6 +103,11 @@ class BooksChaptersController extends Controller
 						        		$modelAuthor->position = $position[$key];
 			                    		$modelAuthor->save();
 			              	 		}	
+			              	    $section = "Capítulos de Libros";
+     							$action = "Creación";
+								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->chapter_title;
+     							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+			                    
 			               	   echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
                                Yii::app()->end();
@@ -138,7 +143,12 @@ class BooksChaptersController extends Controller
 					       			$modelAuthor->last_name2 = $last_name2[$key];
 					        		$modelAuthor->position = $position[$key];
 		                    		$modelAuthor->save();
-			              	 }	
+			              	 }
+			              	 $section = "Capítulos de Libros";
+     							$action = "Creación";
+								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->chapter_title;
+     							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+			                    	
 			               	   echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
                                Yii::app()->end();
@@ -174,7 +184,7 @@ class BooksChaptersController extends Controller
 		$modelAuthor = new BooksChaptersAuthors;
        
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model); 
+		$this->performAjaxValidation($model, $modelAuthors); 
 		$actual_url = $model->url_doc;
         if(isset($_POST['BooksChapters']))
         {
@@ -224,6 +234,11 @@ class BooksChaptersController extends Controller
 								$modelAuthor->updateByPk($idsBooksChapters[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
                 		}
                 	}
+
+                	$section = "Capítulos de Libros";
+					$action = "Modificación";
+					$details = "Registro Número: ".$model->id;
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
                    	 		   echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
                                Yii::app()->end();
@@ -249,6 +264,10 @@ class BooksChaptersController extends Controller
 	{
 		BooksChaptersAuthors::model()->deleteAll("id_books_chapters =".$id );
 		$model= BooksChapters::model()->findByPk($id);
+		$section = "Capítulos de Libros";
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->chapter_title;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		if($model->url_doc != null){
 		unlink(YiiBase::getPathOfAlias("webroot").$model->url_doc);
 		$model->delete();
@@ -304,11 +323,11 @@ class BooksChaptersController extends Controller
 	 * Performs the AJAX validation.
 	 * @param BooksChapters $model the model to be validated
 	 */
-	protected function performAjaxValidation($model)
+	protected function performAjaxValidation($model, $modelAuthors)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='books-chapters-form')
 		{
-			echo CActiveForm::validate($model);
+			echo CActiveForm::validate(array($model, $modelAuthors));
 			Yii::app()->end();
 		}
 	}

@@ -53,7 +53,7 @@ class CountrySelectorWidget extends CWidget
 
     public function run()
     {
-        $content = "<select title='Pais' name=\"{$this->name}\" id=\"{$this->id}\">";
+        $content = "<select title='País' name=\"{$this->name}\" id=\"{$this->id}\">";
 
         if ($this->firstEmpty) {
             $content .= "<option value=\"\">{$this->firstText}</option>";
@@ -218,7 +218,7 @@ class CountrySelectorWidget extends CWidget
         'MR' => "Mauritania",
         'MU' => "Mauritius",
         'YT' => "Mayotte",
-        'MX' => "Mexico",
+        'MX' => "México",
         'FM' => "Micronesia, Federated States of",
         'MD' => "Moldova, Republic of",
         'MC' => "Monaco",

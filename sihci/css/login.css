@@ -58,7 +58,6 @@
 {
 
 	background-color: #CDF1F3 !important;
-	opacity: .80;
 	height: 50px !important;
 	width: 350px !important;
 	display: block !important;
@@ -69,8 +68,9 @@
 	font-family: 'Caviar_Dreams_Bold' !important; 
 	font-size: 20px !important; 
 	padding-left: 20px !important;
-	color: #1EB9C0 !important;
+	color: #0A324F !important;
 	opacity: .60 !important;
+	
 
 }
 #login-form input[type="password"]
@@ -98,7 +98,24 @@
 	padding-left: 20px; 
 	color: #1EB9C0;
 	opacity: .60;
-} 
+}
+#login-form input::-moz-placeholder
+{
+	font-family: 'Caviar_Dreams_Bold'; 
+	font-size: 20px; 
+	padding-left: 20px; 
+	color: #1EB9C0;
+	opacity: .60;
+}
+#login-form input::-ms-input-placeholder
+{
+	font-family: 'Caviar_Dreams_Bold'; 
+	font-size: 20px; 
+	padding-left: 20px; 
+	color: #1EB9C0;
+	opacity: .60;
+}
+
 .inputlog
 {
 	display: inline-block;
@@ -120,7 +137,7 @@
 .inner-addon .glyphicon {
   color: #1EB9C0;
   position: absolute;
-  padding: 10px;
+  padding: 12px 10px 15px 10px ;
   pointer-events: none;
   font-size: 23px;
   border-left: 2px solid #1EB9C0;
@@ -129,7 +146,7 @@
 
 /* align icon */
 .left-addon .glyphicon  { left:  10px;}
-.right-addon .glyphicon { right: 10px;}
+.right-addon .glyphicon { right: 3px;}
 
 /* add padding  */
 .left-addon input  { padding-left:  12px; }
@@ -273,4 +290,16 @@
 .closelogin .glyphicon ,.closerecovery .glyphicon ,.closecreate .glyphicon
 {
 	font-size: 23px;	
+}
+input#RecoveryPassword_email.tooltipstered
+{
+	margin-bottom: 20px;
+}
+.form.recovery
+{
+	background-color: red;
+}
+#recovery-form
+{
+	height: 265px;
 }
