@@ -27,7 +27,7 @@
 				</div>
 			</div>
 			<div class="">
-				<?php echo CHtml::ajaxButton ("Recuperar Contraseña", CController::createUrl('site/recoveryPassword'), array(
+				<?php echo CHtml::ajaxButton ("Enviar Correo", CController::createUrl('site/recoveryPassword'), array(
 					'type'=>'POST',
 					'class' => uniqid(),
 					'id'=> 'ajax-button'.uniqid(),
@@ -35,15 +35,12 @@
 					'success'=>'js:function(response){
 								if(response == "404"){
 											
-										alert("Verifique que su email sea correcto");
-					         
+											$(".errordiv").show();
+					         			
 								}
 								else{
 
-								
-								alert("Email enviado con exito");
-								location.reload();
-								$(".infodialog3error").removeClass("infodialog3error").addClass("infodialog3");
+								$(".successdiv").show();
 
 								}
 
