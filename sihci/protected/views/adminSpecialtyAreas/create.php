@@ -1,6 +1,15 @@
 <?php
+/* @var $this BooksController */
+/* @var $model Books */
+/* @var $form CActiveForm */
+$baseUrl = Yii::app()->baseUrl;
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl. '/js/admin.js');
+?>
+<?php
 /* @var $this AdminSpecialtyAreasController */
 /* @var $model AdminSpecialtyAreas */
+
 
 $this->breadcrumbs=array(
 	'Admin Specialty Areases'=>array('index'),

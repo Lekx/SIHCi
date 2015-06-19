@@ -21,8 +21,8 @@ $this->menu=array(
 		array('label'=>'Crear', 'url'=>array('pressNotes/create'),'itemOptions'=>array('class' => 'sub2')),
 //knowledgeApplication
 	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3 now')),
-		array('label'=>'Gestionar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub')),
-		array('label'=>'Crear', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub')),
+		array('label'=>'Consultar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub')),
+		array('label'=>'Contestar', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub')),
 //patent		
 	array('label'=>'Resgirtro patente ', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'menuitem 4')),
 		array('label'=>'Gestionar', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'sub4')),

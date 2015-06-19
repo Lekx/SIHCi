@@ -58,7 +58,6 @@
 {
 
 	background-color: #CDF1F3 !important;
-	opacity: .80;
 	height: 50px !important;
 	width: 350px !important;
 	display: block !important;
@@ -69,8 +68,9 @@
 	font-family: 'Caviar_Dreams_Bold' !important; 
 	font-size: 20px !important; 
 	padding-left: 20px !important;
-	color: #1EB9C0 !important;
+	color: #0A324F !important;
 	opacity: .60 !important;
+	
 
 }
 #login-form input[type="password"]
@@ -146,7 +146,7 @@
 
 /* align icon */
 .left-addon .glyphicon  { left:  10px;}
-.right-addon .glyphicon { right: 10px;}
+.right-addon .glyphicon { right: 3px;}
 
 /* add padding  */
 .left-addon input  { padding-left:  12px; }
@@ -290,4 +290,16 @@
 .closelogin .glyphicon ,.closerecovery .glyphicon ,.closecreate .glyphicon
 {
 	font-size: 23px;	
+}
+input#RecoveryPassword_email.tooltipstered
+{
+	margin-bottom: 20px;
+}
+.form.recovery
+{
+	background-color: red;
+}
+#recovery-form
+{
+	height: 265px;
 }

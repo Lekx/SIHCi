@@ -11,7 +11,9 @@ $(document).ready(function() {
         $('.cleandiv').hide();
         $('.successdiv').hide();
         $('.errordiv').hide();
+        $('.errordivuser').hide();s
         $('.abortdiv').hide();
+
     });
     $('.cleanbut').click(function() {
         $('.cleandiv').hide();
@@ -29,7 +31,7 @@ $(document).ready(function() {
         $('[id^= SponsorBilling]').val('');
 
     });
-    $('.adminmenu').hide();
+    
     $('.summary').remove();
 
 });

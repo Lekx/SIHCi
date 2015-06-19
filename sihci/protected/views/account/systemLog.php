@@ -5,7 +5,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'users-grid',
 	'dataProvider'=>$model->search(),
 	'columns'=>array(
-		'id_user',
 		'section',
 		'details',
 		'action',
@@ -14,7 +13,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	),
 )); 
 
-	$idlog = Yii::app()->user->id;
+	/* $idlog = Yii::app()->user->id;
 	$rawData=Yii::app()->db->createCommand('SELECT id_user FROM system_log WHERE id_user = 1 ')->queryAll();
 
 	$dataProvider=new CArrayDataProvider($rawData, array(
@@ -28,6 +27,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	        'pageSize'=>10,
 	    ),
 	));
-
+*/
 ?>
 

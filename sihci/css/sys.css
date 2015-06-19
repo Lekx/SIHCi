@@ -80,14 +80,13 @@ select
     background-image: url('../img/user.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: 115% 115%;
 
 }
 .headerconteinerF #perfil
 {
     width: 100%;
     height: 145px;
-    web
 }
 .headerconteiner2
 {
@@ -99,7 +98,7 @@ select
 }
 .headerconteiner3
 {
-    width: 88%;
+    width: calc(88% + 15px);
     height: 20px;
     margin-top: -72px;
 
@@ -107,7 +106,7 @@ select
 }
 .headerconteiner4
 {
-    width: 19%;
+    width: calc(19% - 5px);
     height: 35px;
     margin-top: -68px;
 
@@ -115,7 +114,7 @@ select
 }
 .headerconteiner5
 {
-    width: 69%;
+    width: calc(69% + 15px);
     height: 35px;
     margin-top: -68px;
 
@@ -136,7 +135,7 @@ select
 }
 .sysmenu
 {
-    width: 19%;
+    width: calc(19% - 5px);
     height: auto;
     min-height: 450px;
 
@@ -189,7 +188,6 @@ select
     display: inline-block;
 
     margin: 0;
-    padding-left: 355px;
 
     color: white;
 }
@@ -235,7 +233,16 @@ select
     display: inline-block;
 
     margin: 0;
-    padding-left: 17%;
+
+    color: white;
+}
+.headerconteiner3 #logoutlable
+{
+    font-family: 'Caviar_Dreams';
+
+    display: inline-block;
+
+    margin: 0;
 
     color: white;
 }
@@ -255,7 +262,7 @@ select
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .cvmenuitems li
 {
@@ -850,9 +857,10 @@ thead th
     color: #1eb9c0 !important;
 }
 .operations li a:visited,
-.operations li  a:hover
+.operations li  a:hover,
+.operations li  a
 {
-    color: #1eb9c0 !important;
+    color: #00BABF !important;
 }
 .grid-view .button-column
 {
@@ -1180,7 +1188,7 @@ thead th
     width: 95% !important;
     height: 35px !important;
     padding: 5px 1px 2px 9px !important;
-    padding-right: 50px !important;
+   
 }
 
 .searchadmin
@@ -1442,6 +1450,9 @@ table.detail-view  td
 .menuitem a,
 .menuitem a:hover,
 .menuitem a:visited,
+.menulis a,
+.menulis a:hover,
+.menulis a:visited,
 .operations a:visited,
 .operations a
 {
@@ -1450,13 +1461,16 @@ table.detail-view  td
 .menuitem.now a,
 .menuitem.now a:hover,
 .menuitem.now a:visited,
+.menulis.now a,
+.menulis.now a:hover,
+.menulis.now a:visited,
 .operations a:visited,
 .operations a
 {
     color: #0A324F !important;
     border-bottom: 0px solid white;
 }
-li.menuitem.now
+li.menuitem.now ,li.menulis.now
 {
       border-bottom: 1px solid #0A324F;
 }
@@ -1575,3 +1589,44 @@ li.menuitem.now
 {
     text-align: center !important;
 }
+.fullnamed
+{
+
+ width: 70%;
+ text-align: center;
+ padding-left: 85px;
+ display: inline-block;
+ margin: 0;
+}
+.typelabe ,.logoutbars
+{
+  
+  display: inline-block;
+  width: 14%;
+  text-align: center;
+  margin: 0;
+
+}
+#projects-form p
+{
+    width: 450px;
+    text-align: justify;
+}
+.Rarrow , .Larrow
+{
+    width: 50px !important;
+    margin-left: 20px !important;
+    text-align: center;
+    margin-right: 20px !important;
+
+}
+.cancelb
+{
+    width: 110px !important;
+    margin-left: -40px;
+}
+.savepro
+{
+    background-color: #0A324F !important;
+}
+
