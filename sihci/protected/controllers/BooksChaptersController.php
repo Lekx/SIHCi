@@ -63,14 +63,22 @@ class BooksChaptersController extends Controller
 	//CA01-Registrar datos
 	public function actionCreate()
     {
+
         $model=new BooksChapters;
         $modelAuthor = new BooksChaptersAuthors;
       
         // Uncomment the following line if AJAX validation is needed
+
          $this->performAjaxValidation($model);
+         $this->performAjaxValidation($modelAuthor);
+        
+
+         $this->performAjaxValidation($model, $modelAuthor);
+
 
         if(isset($_POST['BooksChapters']))
         {
+        //	echo "entramos";
             $model->attributes=$_POST['BooksChapters'];
             $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
             $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
@@ -86,6 +94,7 @@ class BooksChaptersController extends Controller
  							 $model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
 		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
 	                	
+		           			 	//echo"antes de guardar";
 			               		if($model->save()){
 			               		              
 					 			$names = $_POST['names'];
@@ -114,7 +123,7 @@ class BooksChaptersController extends Controller
 
 			               		}
 			               		else{	
-
+			               	//	echo "valio verga";
 			               		echo CJSON::encode(array('status'=>'404'));
                                 Yii::app()->end();
 			               		}
@@ -128,7 +137,7 @@ class BooksChaptersController extends Controller
 			        else
 			        {
 			        	if($model->save()){
-			               		              
+
 					 			$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
@@ -154,11 +163,7 @@ class BooksChaptersController extends Controller
                                Yii::app()->end();
 
 			               }
-			               else{
 
-			               		echo CJSON::encode(array('status'=>'404'));
-                                Yii::app()->end();
-			               }
 			        }
 
 				   
@@ -184,7 +189,7 @@ class BooksChaptersController extends Controller
 		$modelAuthor = new BooksChaptersAuthors;
        
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model); 
+		$this->performAjaxValidation($model, $modelAuthors); 
 		$actual_url = $model->url_doc;
         if(isset($_POST['BooksChapters']))
         {
@@ -323,11 +328,11 @@ class BooksChaptersController extends Controller
 	 * Performs the AJAX validation.
 	 * @param BooksChapters $model the model to be validated
 	 */
-	protected function performAjaxValidation($model)
+	protected function performAjaxValidation($model, $modelAuthors)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='books-chapters-form')
 		{
-			echo CActiveForm::validate($model);
+			echo CActiveForm::validate(array($model, $modelAuthors));
 			Yii::app()->end();
 		}
 	}

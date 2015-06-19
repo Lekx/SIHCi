@@ -13,11 +13,8 @@
 	'method'=>'get',
 )); ?>
 
- 		<div class="inner-addon right-addon">
-					 <i class="glyphicon glyphicon-search"></i>
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Patrocinador, Título, Disciplina, Unidad Hospitalaria, Folio, No. Registro Estatus', 'class'=>'searchcrud')); ?>	
-		<?php echo CHtml::submitButton('Buscar',array('class'=>'searchcrudbut')); ?>
-</div>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Patrocinador, Título, Disciplina, Unidad Hospitalaria, Folio, No. Registro', 'class'=>'searchcrud')); ?>	
+		<?php echo CHtml::submitButton('',array('class'=>'adminbut')); ?>
 
 <?php /*
 

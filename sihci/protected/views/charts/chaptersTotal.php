@@ -40,7 +40,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Capítulos de Libros Registrados en el Sistema'
+            text: 'Capítulos de libros registrados en el sistema'
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
@@ -53,7 +53,7 @@ chart = new Highcharts.Chart({
             min: 0,
             allowDecimals: false,
             title: {
-                text: 'Cantidad de Capítulos de Libros'
+                text: 'Cantidad de capítulos de libros'
             }
         },
         tooltip: {

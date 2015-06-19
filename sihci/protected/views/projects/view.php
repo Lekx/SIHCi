@@ -8,15 +8,28 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Projects', 'url'=>array('index')),
-	array('label'=>'Create Projects', 'url'=>array('create')),
-	array('label'=>'Update Projects', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Projects', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Projects', 'url'=>array('admin')),
-);
+	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
+	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
+	array('label'=>'Invitaciones', 'url'=>array('/admin'),'itemOptions'=>array('class' => 'menuitem 2')),
+	array('label'=>'Proyectos de Investigación', 'url'=>array('projects/admin'),'itemOptions'=>array('class' => 'menuitem 1 now')),
+		array('label'=>'Crear', 'url'=>array('projects/create'),'itemOptions'=>array('class' => 'sub')),
+		array('label'=>'Gestionar', 'url'=>array('projects/admin'),'itemOptions'=>array('class' => 'sub')),
+
+
+	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
+	
+	);
 ?>
 
-<h1>View Projects #<?php echo $model->id; ?></h1>
+
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
+            <h1>Proyectos</h1>
+            <hr>
+        </div>
+
+<h3>Gestionar proyectos de invitación: <?php echo $model->id ?></h3>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -37,19 +50,12 @@ $this->menu=array(
 		'international_institutions_',
 		'participant_institutions_international',
 		'colaboration_type',
-		'has_adtl_caracteristics_a',
 		'adtl_caracteristics_a',
-		'has_adtl_caracteristics_b',
 		'adtl_caracteristics_b',
-		'has_adtl_caracteristics_c',
 		'adtl_caracteristics_c',
-		'has_adtl_caracteristics_d',
 		'adtl_caracteristics_d',
-		'has_adtl_caracteristics_e',
 		'adtl_caracteristics_e',
-		'has_adtl_caracteristics_f',
 		'adtl_caracteristics_f',
-		'has_adtl_caracteristics_g',
 		'adtl_caracteristics_g',
 		'status',
 		'folio',

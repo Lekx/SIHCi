@@ -9,7 +9,7 @@
  * @property string $names
  * @property string $last_name1
  * @property string $last_name2
- * @property string $position
+ * @property integer $position
  *
  * The followings are the available model relations:
  * @property Books $idBook
@@ -33,10 +33,13 @@ class BooksAuthors extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_book, names, last_name1, last_name2, position', 'required'),
-			array('id_book', 'numerical', 'integerOnly'=>true),
+			array('id_book', 'numerical','position', 'integerOnly'=>true),
 			array('names', 'length', 'max'=>30),
 			array('last_name1, last_name2', 'length', 'max'=>20),
-			array('position', 'length', 'max'=>45),
+
+
+			array('position', 'length', 'max'=>45, 'integerOnly'=>true),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_book, names, last_name1, last_name2, position', 'safe', 'on'=>'search'),
