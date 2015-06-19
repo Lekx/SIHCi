@@ -5,7 +5,21 @@
  $cs = Yii::app()->getClientScript();
  $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/articlesGuides/js/script.js');
 ?>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
 
+    });
+});
+</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -23,7 +37,7 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn',array('size'=>13,'placeholder'=>'ISBN', 'title'=>'ISBN')); ?>
+		<?php echo $form->textField($model,'isbn',array('size'=>13,'placeholder'=>'ISBN', 'class'=>'numericOnly','title'=>'ISBN')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
@@ -37,7 +51,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'edicion',array('placeholder'=>'Edición', 'title'=>'Edición')); ?>
+		<?php echo $form->textField($model,'edicion',array('placeholder'=>'Edición', 'class'=>'numericOnly','title'=>'Edición')); ?>
 		<?php echo $form->error($model,'edicion'); ?>
 	</div>
 
@@ -73,22 +87,22 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'volumen',array('placeholder'=>'Volumen', 'title'=>'Volumen')); ?>
+		<?php echo $form->textField($model,'volumen',array('placeholder'=>'Volumen','class'=>'numericOnly', 'title'=>'Volumen')); ?>
 		<?php echo $form->error($model,'volumen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'volumen_no',array('placeholder'=>'Número de Volumen', 'title'=>'Número de Volumen')); ?>
+		<?php echo $form->textField($model,'volumen_no',array('placeholder'=>'Número de Volumen','class'=>'numericOnly', 'title'=>'Número de Volumen')); ?>
 		<?php echo $form->error($model,'volumen_no'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'start_page',array('placeholder'=>'Pagina inicial', 'title'=>'Pagina inicial')); ?>
+		<?php echo $form->textField($model,'start_page',array('placeholder'=>'Pagina inicial','class'=>'numericOnly', 'title'=>'Pagina inicial')); ?>
 		<?php echo $form->error($model,'start_page'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'end_page',array('placeholder'=>'Pagina final', 'title'=>'Pagina final')); ?>
+		<?php echo $form->textField($model,'end_page',array('placeholder'=>'Pagina final', 'class'=>'numericOnly','title'=>'Pagina final')); ?>
 		<?php echo $form->error($model,'end_page'); ?>
 	</div>
 
@@ -98,7 +112,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje', 'title'=>'Tiraje')); ?>
+		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje', 'class'=>'numericOnly','title'=>'Tiraje')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 
@@ -445,7 +459,7 @@
 	<?php } ?>
 
 	<div class="row buttons">		
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('articlesGuides/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
