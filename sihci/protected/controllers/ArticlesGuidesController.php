@@ -115,7 +115,7 @@ class ArticlesGuidesController extends Controller
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
 		                    echo CJSON::encode(array('status'=>'success'));
-                            //$this->redirect(array('admin','id'=>$model->id));
+                            $this->redirect(array('admin'));
                             Yii::app()->end();
 
 		               }
@@ -151,7 +151,7 @@ class ArticlesGuidesController extends Controller
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
 	               	  	echo CJSON::encode(array('status'=>'200'));
-                        $this->redirect(array('admin','id'=>$model->id));
+                        $this->redirect(array('admin'));
                         Yii::app()->end();
 
                     } 		                      
@@ -240,7 +240,7 @@ class ArticlesGuidesController extends Controller
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
            	 		   echo CJSON::encode(array('status'=>'200'));
-                       $this->redirect(array('admin','id'=>$model->id));
+                       $this->redirect(array('admin'));
                        Yii::app()->end();
                 	} 
                 	else 

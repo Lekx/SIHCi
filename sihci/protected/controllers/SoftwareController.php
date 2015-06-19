@@ -80,10 +80,10 @@ class SoftwareController extends Controller
 		          
 		            if(!is_dir($urlFile))          
 		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
-
+		            
+		            
 		                $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
-					   
+					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   			         
 			    }
 				else
 					$model->path = "";	
@@ -96,13 +96,13 @@ class SoftwareController extends Controller
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     				   
 					    echo CJSON::encode(array('status'=>'200'));
-					   	$this->redirect(array('admin','id'=>$model->id));
+					    $this->redirect(array('admin'));
 				    	Yii::app()->end();
 				    }			    	
 				    else 
 			    	{
 			    		echo CJSON::encode(array('status'=>'404'));
-		                Yii::app()->end();
+			    	    Yii::app()->end();
 			        }
 					    
 		}
@@ -111,6 +111,11 @@ class SoftwareController extends Controller
 			$this->render('create',array('model'=>$model));
 	}
 
+
+	public function actionUpload()
+	{
+
+	}
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -174,7 +179,7 @@ class SoftwareController extends Controller
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     				   
 					    echo CJSON::encode(array('status'=>'200'));
-					   	$this->redirect(array('admin','id'=>$model->id));
+					   	$this->redirect(array('admin'));
 				    	Yii::app()->end();
 				    }			    	
 				    else 

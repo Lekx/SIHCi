@@ -29,7 +29,7 @@ $(document).ready(function() {
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableClientValidation'=>true,
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
@@ -550,7 +550,8 @@ $(document).ready(function() {
 	<?php } ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'update()'))); ?>
+		 <?php  echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'update()'))); ?> 
+		
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('books/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 	</div>
