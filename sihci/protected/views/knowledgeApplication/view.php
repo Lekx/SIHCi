@@ -19,9 +19,9 @@ $this->menu=array(
 		array('label'=>'Gestionar', 'url'=>array('pressNotes/admin'),'itemOptions'=>array('class' => 'sub2')),
 		array('label'=>'Crear', 'url'=>array('pressNotes/create'),'itemOptions'=>array('class' => 'sub2')),
 //knowledgeApplication
-	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),
-		array('label'=>'Gestionar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub3')),
-		array('label'=>'Crear', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub3')),
+	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3 now')),
+		array('label'=>'Consultar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub')),
+		array('label'=>'Contestar', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub')),
 //patent		
 	array('label'=>'Resgirtro patente ', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'menuitem 4')),
 		array('label'=>'Gestionar', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'sub4')),
@@ -36,8 +36,8 @@ $this->menu=array(
 			array('label'=>'Crear', 'url'=>array('software/create'),'itemOptions'=>array('class' => 'sub6')),
 //articlesGuides				
 	array('label'=>'Articulos y guías', 'url'=>array('articlesGuides/admin'),'itemOptions'=>array('class' => 'menuitem 7')),
-			array('label'=>'Gestionar', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'sub7')),
-			array('label'=>'Crear', 'url'=>array('software/create'),'itemOptions'=>array('class' => 'sub7')),
+			array('label'=>'Gestionar', 'url'=>array('articlesGuides/admin'),'itemOptions'=>array('class' => 'sub7')),
+			array('label'=>'Crear', 'url'=>array('articlesGuides/create'),'itemOptions'=>array('class' => 'sub7')),
 //books			
 	array('label'=>'Libros ', 'url'=>array('books/admin'),'itemOptions'=>array('class' => 'menuitem 8')),
 			array('label'=>'Gestionar', 'url'=>array('books/admin'),'itemOptions'=>array('class' => 'sub8')),
@@ -54,15 +54,15 @@ $this->menu=array(
 	array('label'=>'Tesis Dirigidas ', 'url'=>array('directedThesis/admin'),'itemOptions'=>array('class' => 'menuitem 11')),
 		array('label'=>'Gestionar', 'url'=>array('directedThesis/admin'),'itemOptions'=>array('class' => 'sub11')),
 		array('label'=>'Crear', 'url'=>array('directedThesis/create'),'itemOptions'=>array('class' => 'sub11')),
-//directedThesis			
+//certifications			
 	array('label'=>'Certificaciones por consejos ', 'url'=>array('certifications/admin'),'itemOptions'=>array('class' => 'menulis 12')),
 		array('label'=>'Gestionar', 'url'=>array('certifications/admin'),'itemOptions'=>array('class' => 'sub12')),
 		array('label'=>'Crear', 'url'=>array('certifications/create'),'itemOptions'=>array('class' => 'sub12')),
-
-
-	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	
-	);
+//Languges
+	array('label'=>'Lenguajes ', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'menulis 12')),
+		array('label'=>'Gestionar', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'sub12')),
+		array('label'=>'Crear', 'url'=>array('languages/create'),'itemOptions'=>array('class' => 'sub12')),
+);
 
 ?>
 <div class="cvtitle">
@@ -75,6 +75,7 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	'htmlOptions' => array('class' => 'knowledge')
 	'attributes'=>array(
 		
 		/*'id',

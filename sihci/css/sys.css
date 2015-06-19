@@ -58,7 +58,7 @@ select
 .headerconteiner1
 {
     width: 38%;
-    height: 100px;
+    height: 90px;
 
     background: #fff;
 }
@@ -66,7 +66,7 @@ select
 .headerconteinerC
 {
     width: 12.5%;
-    height: 100px;
+    height: 90px;
 
     border-left: 1px solid #fff;
     background: #00b9c0;
@@ -74,17 +74,19 @@ select
 .headerconteinerF
 {
     width: 12%;
-    height: 195px;
+    height: 145px;
+    z-index: 8;
 
-    background-image: url('../img/perfil.png');
+    background-image: url('../img/user.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: 115% 115%;
+
 }
 .headerconteinerF #perfil
 {
     width: 100%;
-    height: 100%;
+    height: 145px;
 }
 .headerconteiner2
 {
@@ -96,25 +98,25 @@ select
 }
 .headerconteiner3
 {
-    width: 88%;
-    height: 25px;
-    margin-top: -70px;
+    width: calc(88% + 15px);
+    height: 20px;
+    margin-top: -72px;
 
     background: #0e3152;
 }
 .headerconteiner4
 {
-    width: 20%;
-    height: 45px;
-    margin-top: -45px;
+    width: calc(19% - 5px);
+    height: 35px;
+    margin-top: -68px;
 
     background: #00b9c0;
 }
 .headerconteiner5
 {
-    width: 68%;
-    height: 45px;
-    margin-top: -45px;
+    width: calc(69% + 15px);
+    height: 35px;
+    margin-top: -68px;
 
     background: #798b9d;
 }
@@ -125,6 +127,7 @@ select
             flex-direction: row;
 
     width: 100%;
+    margin-top: -50px;
 
     -webkit-flex-direction: row;
     -webkit-flex-flow: wrap;
@@ -132,7 +135,7 @@ select
 }
 .sysmenu
 {
-    width: 20%;
+    width: calc(19% - 5px);
     height: auto;
     min-height: 450px;
 
@@ -155,12 +158,13 @@ select
 
     margin-right: auto;
     margin-left: auto;
+    height: 99%
 }
 .headerconteinerC img
 {
     display: block;
 
-    margin-top: 22px;
+    margin-top: 15px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -177,11 +181,13 @@ select
 
     color: white;
 }
-.headerconteiner3 span
+.headerconteiner3 h5
 {
     font-family: 'Caviar_Dreams';
 
-    padding-left: 29%;
+    display: inline-block;
+
+    margin: 0;
 
     color: white;
 }
@@ -201,6 +207,7 @@ select
 
     width: 0;
     height: 10px;
+    margin-top: -10px;
 
     content: '';
 
@@ -208,30 +215,54 @@ select
     border-style: solid;
     border-color: #00b9c0 transparent transparent transparent;
 }
-.headerconteiner5 h4
+.headerconteiner5 span
 {
     font-family: 'Caviar_Dreams';
 
     display: inline-block;
 
-    padding-left: 8%;
+    padding-left: 97px;
+    padding-top: 5px;
+    margin: 0;
+    color: white;
+}
+.headerconteiner3 h6 
+{
+    font-family: 'Caviar_Dreams';
+
+    display: inline-block;
+
+    margin: 0;
 
     color: white;
 }
-.headerconteiner5 h5
+.headerconteiner3 #logoutlable
 {
     font-family: 'Caviar_Dreams';
 
     display: inline-block;
 
-    margin-left: 40%;
+    margin: 0;
 
     color: white;
+}
+.headerconteiner3 a
+{
+    display: inline-block;
+    color: white;
+}
+.headerconteiner3 a:hover
+{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
 }
 .cvmenuitems
 {
     width: 100%;
-    margin-top: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 .cvmenuitems li
 {
@@ -264,7 +295,7 @@ select
             flex-direction: row;
 
     width: 100%;
-    height: 100px;
+    height: 90px;
 
     -webkit-flex-direction: row;
     -webkit-flex-flow: wrap;
@@ -337,7 +368,7 @@ select
 {
     font-family: 'Caviar_Dreams_Bold';
 
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: -140px;
 }
 .cvtitle h1
@@ -826,9 +857,10 @@ thead th
     color: #1eb9c0 !important;
 }
 .operations li a:visited,
-.operations li  a:hover
+.operations li  a:hover,
+.operations li  a
 {
-    color: #1eb9c0 !important;
+    color: #00BABF !important;
 }
 .grid-view .button-column
 {
@@ -1151,29 +1183,28 @@ thead th
 .searchcrud
 {
     font-family: 'Caviar_Dreams_Bold' !important;
-    font-size: 24.5px !important;
+    font-size: 20px !important;
 
-    width: 92% !important;
-    height: 50px !important;
-    height: 50px !important;
+    width: 95% !important;
+    height: 35px !important;
     padding: 5px 1px 2px 9px !important;
-    padding-right: 50px !important;
+   
 }
 
 .searchadmin
 {
     font-family: 'Caviar_Dreams_Bold' !important;
-    font-size: 24.5px !important;
+    font-size: 20px !important;
 
-    width: 80% !important;
-    height: 50px !important;
-    padding: 5px 1px 2px 9px !important;
+    width: 82% !important;
+    height: 35px !important;
+    padding: 3px 1px 2px 9px !important;
     padding-right: 50px !important;
 }
 .searchcrud::-webkit-input-placeholder,
 .searchadmin::-webkit-input-placeholder
 {
-    padding: 5px 18px 2px 9px !important;
+    padding: 3px 18px 2px 9px !important;
     padding-right: 50px !important;
     /* WebKit browsers */
 
@@ -1182,7 +1213,7 @@ thead th
 .searchcrud::-webkit-input-placeholder,
 .searchadmin::-webkit-input-placeholder
 {
-    padding: 5px 18px 2px 9px !important;
+    padding: 3px 18px 2px 9px !important;
     padding-right: 50px !important;
     /* navegadores Webkit */
 
@@ -1191,7 +1222,7 @@ thead th
 .searchcrud:-moz-placeholder,
 .searchadmin:-moz-placeholder,
 {
-    padding: 5px 18px 2px 9px !important;
+    padding: 3px 18px 2px 9px !important;
     padding-right: 50px !important;
     /* Mozilla Firefox 4 hasta 18 */
 
@@ -1200,7 +1231,7 @@ thead th
 .searchcrud::-moz-placeholder,
 .searchadmin::-moz-placeholder
 {
-    padding: 5px 18px 2px 9px !important;
+    padding: 3px 18px 2px 9px !important;
     /* Mozilla Firefox 19+ */
 
     color: #1eb9c0 !important;
@@ -1208,7 +1239,7 @@ thead th
 .searchcrud:-ms-input-placeholder,
 .searchadmin:-ms-input-placeholder
 {
-    padding: 5px 18px 2px 9px !important;
+    padding: 3px 18px 2px 9px !important;
     padding-right: 50px !important;
     /* Internet Explorer 10+ */
 
@@ -1399,6 +1430,15 @@ table.detail-view  td
 {
     margin-left: 20px;
 }
+.menuitem  .sub a,
+.menuitem .sub a:hover,
+.menuitem .sub a:visited,
+.operations .sub a:visited,
+.operations .sub a
+{
+    margin-left: 20px;
+    color: #0A324F !important;
+}
 .menuitem,
 .menulis
 {
@@ -1410,10 +1450,29 @@ table.detail-view  td
 .menuitem a,
 .menuitem a:hover,
 .menuitem a:visited,
+.menulis a,
+.menulis a:hover,
+.menulis a:visited,
 .operations a:visited,
 .operations a
 {
     color: #1eb9c0 !important;
+}
+.menuitem.now a,
+.menuitem.now a:hover,
+.menuitem.now a:visited,
+.menulis.now a,
+.menulis.now a:hover,
+.menulis.now a:visited,
+.operations a:visited,
+.operations a
+{
+    color: #0A324F !important;
+    border-bottom: 0px solid white;
+}
+li.menuitem.now ,li.menulis.now
+{
+      border-bottom: 1px solid #0A324F;
 }
 
 /* admin css */
@@ -1483,13 +1542,13 @@ table.detail-view  td
 }
 .adminbut
 {
-    width: 50px !important;
-    height: 50px !important;
+    width: 35px !important;
+    height: 35px !important;
     padding: 5px;
 
         border-radius: 4px;
     background-color: #cdf1f3 !important;
-    background-image: url('../img/icons/menuBuscarGr.png');
+    background-image: url('../img/icons/menuBuscar.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80% 80%;
@@ -1506,9 +1565,9 @@ table.detail-view  td
     float: right;
 
     width: 175px ;
-    height: 50px;
+    height: 35px;
     margin-left: 5px;
-    padding-top: 15px;
+    padding-top: 8px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -1525,3 +1584,49 @@ table.detail-view  td
     -ms-border-radius: 4px;
      -o-border-radius: 4px;
 }
+
+#knowledge-application-grid th
+{
+    text-align: center !important;
+}
+.fullnamed
+{
+
+ width: 70%;
+ text-align: center;
+ padding-left: 85px;
+ display: inline-block;
+ margin: 0;
+}
+.typelabe ,.logoutbars
+{
+  
+  display: inline-block;
+  width: 14%;
+  text-align: center;
+  margin: 0;
+
+}
+#projects-form p
+{
+    width: 450px;
+    text-align: justify;
+}
+.Rarrow , .Larrow
+{
+    width: 50px !important;
+    margin-left: 20px !important;
+    text-align: center;
+    margin-right: 20px !important;
+
+}
+.cancelb
+{
+    width: 110px !important;
+    margin-left: -40px;
+}
+.savepro
+{
+    background-color: #0A324F !important;
+}
+

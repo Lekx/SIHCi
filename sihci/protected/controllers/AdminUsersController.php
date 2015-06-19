@@ -188,85 +188,186 @@ class AdminUsersController extends Controller {
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id) {
+	public function actionDeleteUser($id) {
 
 		$users = Users::model()->findByPK($id);
+		
 
 		if($users->type == "fisico"){
 			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$id));
-			$person = Persons::model()->findByAttributes(array('id_user'=>$id));
-			$artguides = ArticlesGuides::model()->findByAttributes(array('id_resume'=>$curriculum->$id));
-			$books = Books::model()->findByAttributes(array('id_curriculum'=>$curriculum->$id));
-			$congresses = Congresses::model()->findByAttributes(array('id_curriculum'=>$curriculum->$id));
-			$projects = Projects::model()->findByAttributes(array('id_curriculum'=>$curriculum->$id));
+			$persons = Persons::model()->findByAttributes(array('id_user'=>$id));
+			$address = Addresses::model()->findByAttributes(array('id'=>$curriculum->id_actual_address));
+			$command = Yii::app()->db->createCommand();
+
+			if($curriculum != null){
+
+				$books = Books::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$booksChapters = BooksChapters::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$certifications = Certifications::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$congresses = Congresses::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$copyrights = Copyrights::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$grades = Grades::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$docs = DocsIdentity::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$patents = Patent::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$pressNotes = PressNotes::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$projects = Projects::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$directedThesis = DirectedThesis::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$software = Software::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$postdegreeGraduates = PostdegreeGraduates::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+				$researchAreas = ResearchAreas::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+
+				$jobs = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+
+				if($jobs != null)
+					$jobs->delete();
+
+				if($researchAreas != null){
+					$command->delete('research_areas', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($postdegreeGraduates != null){
+					$command->delete('postdegree_graduates', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($software != null){
+					$command->delete('software', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($directedThesis != null){
+					$command->delete('directed_thesis', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($projects != null){
+					$command->delete('projects', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($pressNotes != null){
+					$command->delete('press_notes', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($patents != null){
+					$command->delete('patent', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($docs != null){
+					$command->delete('docs_identity', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+
+				if($grades != null){
+					$command->delete('grades', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+
+				if($copyrights != null){
+					$command->delete('copyrights', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+
+				if($congresses != null){
+					$command->delete('congresses', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+
+				if($books != null){
+					$booksAuthors = BooksAuthors::model()->findAllByAttributes(array('id_book'=>$books->id));
+					if($booksAuthors != null){
+						$command->delete('books_authors', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+						$command = Yii::app()->db->createCommand();
+					}
+
+					$command->delete('books', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+
+				if($booksChapters != null){
+					$command->delete('books_chapters', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				
+				if($certifications != null){
+					$command->delete('certifications', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				
+				$curriculum->delete();
+			}
 			
+			if($address != null)
+					$address->delete();
 
-			$command = Yii::app()->db->createCommand();
+			if($persons != null){
+				$emails = Emails::model()->findAllByAttributes(array('id_person'=>$persons->id));
+				$phones = Phones::model()->findAllByAttributes(array('id_person'=>$persons->id));
 
-			$command->delete('art_guides_author', 'id_art_guides=:id_art_guides', array(':id_art_guides'=>$artguides->id));
-			$command->delete('books_authors', 'id_book=:id_book', array(':id_book'=>$books->id));
-			$command->delete('books_chapters_authors', 'id_books_chapters=:id_books_chapters', array(':id_books_chapters'=>$artguides->id));
-
-			$command->delete('certifications', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			$command->delete('congresses_authors', 'id_congresses=:id_congresses', array(':id_congresses'=>$congresses->id));
-
-			$command->delete('copyrights', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			$command->delete('directed_thesis', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-
-			$command->delete('docs_identity', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			$command->delete('grades', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			echo"docs_identity";
-
-			$command->delete('jobs', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			$command->delete('knowledge_application', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			echo"jobs";
-
-			$command->delete('lenguages', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			$command->delete('patent', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			echo"lenguages";
-
-			$command->delete('postdegree_graduates', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			$command->delete('press_notes', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			echo"postdegree_graduates";
-
-			$command->delete('projects_coworkers', 'id_project=:id_project', array(':id_project'=>$projects->id));
-			$command->delete('projects_followups', 'id_project=:id_project', array(':id_project'=>$projects->id));
-			echo"projects_coworkers";
-
-			$command->delete('projects_docs', 'id_project=:id_project', array(':id_project'=>$projects->id));
-			$command->delete('research_areas', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			echo"projects_docs";
-
-			$command->delete('software', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			$command->delete('congresses', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
-			echo"software";
+				if($emails != null){
+					$command->delete('emails', 'id_person=:id_person', array(':id_person'=>$persons->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($phones != null){
+					$command->delete('phones', 'id_person=:id_person', array(':id_person'=>$persons->id));
+					$command = Yii::app()->db->createCommand();
+				}                      
 
 
-		
+				$persons->delete();
+			}
+
+			$users->delete();
+			
 		}else{
-			$sponsor = Sponsors::model()->findByAttributes(array('id_user'=>$id));
 
 			$command = Yii::app()->db->createCommand();
-            $command->delete('sponsors_contact', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
-            $command->delete('sponsors_contacts', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
-            $command->delete('sponsors_docs', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
-            $command->delete('sponsor_billing', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsor->id));
-            $command->delete('Sponsorship', 'id_user_sponsorer=:id_user_sponsorer', array(':id_user_sponsorer'=>$sponsor->id));
-			$command->delete('sponsors', 'id_user=:id_user', array(':id_user'=>$sponsor->id));
+			$sponsorship = Sponsorship::model()->findAllByAttributes(array('id_user_sponsorer'=>$id));
+			$sponsors = Sponsors::model()->findByAttributes(array('id_user'=>$id));
+			$persons = Persons::model()->findByAttributes(array('id_user'=>$id));
+			
+			if($sponsors != null){
+				$sponsorsContacts = SponsorsContacts::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
+				$sponsorBilling = SponsorBilling::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
+				$sponsorsContact = SponsorsContact::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
+				$sponsorsDocs = SponsorsDocs::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
 
+				if($sponsorsDocs != null){
+					$command->delete('sponsors_docs', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
+					$command = Yii::app()->db->createCommand();
+				}  
+				if($sponsorsContact != null){
+					$command->delete('sponsors_contact', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
+					$command = Yii::app()->db->createCommand();
+				}  
+				if($sponsorBilling != null){
+					$command->delete('sponsor_billing', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
+					$command = Yii::app()->db->createCommand();
+				}
+				if($sponsorsContacts != null){
+					$command->delete('sponsors_contacts', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
+					$command = Yii::app()->db->createCommand();
+				}   
 
+				$sponsors->delete();
+			}
+			if($sponsorship != null){
+				
+				foreach ($sponsorship as $key => $value) {
+					$sponsoredProjects = SponsoredProjects::model()->findByAttributes(array('id_sponsorship'=>$sponsorship[$key]->id));
+					if($sponsoredProjects != null){
+						$command->delete('sponsored_projects', 'id=:id', array(':id'=>$sponsoredProjects->id));
+						$command = Yii::app()->db->createCommand();
+					}
+
+				}
+				$command->delete('sponsorship', 'id_user_sponsorer=:id_user_sponsorer', array(':id_user_sponsorer'=>$id));
+				$command = Yii::app()->db->createCommand();
+			}
+
+			$persons->delete();
+			$users->delete();
 		}
-		$command = Yii::app()->db->createCommand();
-		$command->delete('users', 'id=:id', array(':id'=>$id));
-
-		$this->loadModel($id)->delete();
-
-		
-
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('adminUsers'));
 		}
 
 	}

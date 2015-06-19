@@ -82,16 +82,14 @@ $this->renderPartial('_search',array(
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {delete} {login}', 'header' => 'Acciones',
 				'buttons' => array(
-				'login' => array(
-				'label' => 'Iniciar sesión como éste usuario.',
-				'imageUrl' => Yii::app()->request->baseUrl . '/images/login.png',
+				'login' => array('label' => 'Iniciar sesión como éste usuario.','imageUrl' => Yii::app()->request->baseUrl . '/images/login.png',
 				'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id))',
-
-
 				),
 				'edit' => array(
 				'label' => 'Editar.',
 				'url'=> '"AdminUsers/update?ide=".$data->id'),
+
+
 				),
 		),
 	),

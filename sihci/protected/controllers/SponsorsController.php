@@ -66,9 +66,15 @@ class SponsorsController extends Controller {
 		if ($sponsorExist != null) {
 			$model = $this->loadModel($sponsorExist->id);
 			$modelAddresses = Addresses::model()->findByPk($model->id_address);
+			$section = "Empresas"; //manda parametros al controlador SystemLog
+			$details = "Subsección: Datos de Empresa. Registro Número ".$model->id;
+			$action = "Modificación";
 		} else {
 			$model = new Sponsors;
 			$modelAddresses = new Addresses;
+			$section = "Empresas"; //manda parametros al controlador SystemLog
+			$details = "Subsección: Datos de Facturación";
+			$action = "Creación";
 			
 		}
 
@@ -91,6 +97,8 @@ class SponsorsController extends Controller {
 					$model->id_address = $modelAddresses->id;
 					if ($model->validate()) {
 						if ($model->save()) {
+
+							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
 							if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
 
@@ -154,6 +162,10 @@ class SponsorsController extends Controller {
 			$model->id_user = $iduser;
 
 			if ($model->save()) {
+				$section="Empresas";
+				$details="Subsección: Datos de Representante. Registro Número ".$model->id;
+				$action="Modificación";
+				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				//$this->redirect(array('view', 'id' => $model->id));
 			}
 
@@ -208,7 +220,12 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->type = $type;
 				$model->value = $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key];
-				$model->save();
+				if($model->save()){
+					$section = "Empresas"; //manda parametros al controlador AdminSystemLog
+					$details = "Subsección: Datos de Contacto. Datos: ".$model->type;
+					$action = "Creación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				}
 			}
 
 		}
@@ -248,7 +265,12 @@ class SponsorsController extends Controller {
 				$model = new SponsorsContacts;
 				$model->id_sponsor = $id_sponsor;
 				$model->fullname = $names;
-				$model->save();
+				if($model->save()){
+					$section = "Empresas"; //manda parametros al controlador AdminSystemLog
+					$details = "Subsección: Datos de Contactos. Datos: ".$model->fullname;
+					$action = "Creación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				}
 				
 			}
 		}
@@ -274,6 +296,7 @@ class SponsorsController extends Controller {
 		if (isset($_POST['Addresses'])) {
 			$model->attributes = $_POST['Addresses'];
 			if ($model->save()) {
+
 				$this->redirect(array('view', 'id' => $model->id));
 			}
 
@@ -303,11 +326,16 @@ class SponsorsController extends Controller {
 			$model = $billingExist;
 			$modelAddresses = Addresses::model()->findByPk($model->id_address_billing);
 			$sameAd = $modelAddresses->id == $sponsor->id_address ? true : false;
-
+			$section = "Empresas"; //manda parametros al controlador SystemLog
+			$details = "Subsección: Datos de Facturación. Registro Número ".$model->id;
+			$action = "Modificación";
 		} else {
 			$model = new SponsorBilling;
 			$modelAddresses = new Addresses;
 			$sameAd = false;
+			$section = "Empresas"; //manda parametros al controlador SystemLog
+			$details = "Subsección: Datos de Facturación";
+			$action = "Creación";
 		}
 
 		if (isset($_POST['SponsorBilling'])) {
@@ -333,8 +361,10 @@ class SponsorsController extends Controller {
 						if ($modelAddresses->save()) {
 							$model->id_address_billing = $modelAddresses->id;
 
-							if ($model->save()) 
+							if ($model->save()) {
+								Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 								$this->redirect(array('create_billing'));
+							}
 							
 
 						}
@@ -381,10 +411,15 @@ class SponsorsController extends Controller {
 		
 			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
+				$section = "Empresas"; 
 				if (!array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs)) {
 					$model = new SponsorsDocs;
+					$action = "Creación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento decreto de Creación de la Empresa";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
+					$action = "Modificación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento decreto de Creación de la Empresa. Número Registro: ".$model->id;
 				}
 				$model->id_sponsor = $id_sponsor;
 				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id;
@@ -404,18 +439,25 @@ class SponsorsController extends Controller {
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				
-				if($model->save())
+				if($model->save()){
 					$reload = true;
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				}
 				
 				
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc2'))) {
 				unset($model);
+				$section = "Empresas"; 
 				if (!array_key_exists('Acreditacion_de_las_facultades_del_representante_o_apoderado', $modelDocs)) {
 					$model = new SponsorsDocs;
+					$action = "Creación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento que acreditan las facultades del representante.";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Acreditacion_de_las_facultades_del_representante_o_apoderado'][0]);
+					$action = "Modificación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento que acreditan las facultades del representante. Número Registro: ".$model->id;
 				}
 
 				$model->id_sponsor = $id_sponsor;
@@ -425,8 +467,10 @@ class SponsorsController extends Controller {
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				
-					if ($model->save()) 
+					if ($model->save()) {
 						$reload = true;
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					}
 					
 				
 
@@ -436,10 +480,15 @@ class SponsorsController extends Controller {
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc3'))) {
 				unset($model);
+				$section = "Empresas"; 
 				if (!array_key_exists('Permisos_de_actividades', $modelDocs)) {
 					$model = new SponsorsDocs;
+					$action = "Creación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento de Licencias, autorizaciones, permisos para las actividades.";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Permisos_de_actividades'][0]);
+					$action = "Modificación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento de Licencias, autorizaciones, permisos para las actividades. Número Registro: ".$model->id;
 				}
 
 				$model->id_sponsor = $id_sponsor;
@@ -448,8 +497,10 @@ class SponsorsController extends Controller {
 				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-					if ($model->save()) 
+					if ($model->save()) {
 						$reload = true;
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					}
 					
 				
 
@@ -459,10 +510,15 @@ class SponsorsController extends Controller {
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc4'))) {
 				unset($model);
+				$section = "Empresas"; 
 				if (!array_key_exists('RFC_o_equivalente', $modelDocs)) {
 					$model = new SponsorsDocs;
+					$action = "Creación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento RFC o equivalente";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['RFC_o_equivalente'][0]);
+					$action = "Modificación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento RFC o equivalente. Número Registro: ".$model->id;
 				}
 
 				$model->id_sponsor = $id_sponsor;
@@ -471,8 +527,10 @@ class SponsorsController extends Controller {
 				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-					if ($model->save()) 
+					if ($model->save()) {
 						$reload = true;
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					}
 					
 				
 
@@ -482,10 +540,15 @@ class SponsorsController extends Controller {
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc5'))) {
 				unset($model);
+				$section = "Empresas"; 
 				if (!array_key_exists('Comprobante_de_domicilio', $modelDocs)) {
 					$model = new SponsorsDocs;
+					$action = "Creación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento Comprobante de Domicilio";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Comprobante_de_domicilio'][0]);
+					$action = "Modificación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento Comprobante de Domicilio. Número Registro: ".$model->id;
 				}
 
 				$model->id_sponsor = $id_sponsor;
@@ -494,8 +557,10 @@ class SponsorsController extends Controller {
 				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-					if ($model->save()) 
+					if ($model->save()) {
 						$reload = true;
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					}
 					
 				
 
@@ -505,10 +570,15 @@ class SponsorsController extends Controller {
 
 			if (is_object(CUploadedFile::getInstanceByName('Doc6'))) {
 				unset($model);
+				$section = "Empresas"; 
 				if (!array_key_exists('Identificacion_Oficial_del_Representante', $modelDocs)) {
 					$model = new SponsorsDocs;
+					$action = "Creación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento Identificación oficial del Representante.";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Identificacion_Oficial_del_Representante'][0]);
+					$action = "Modificación";
+					$details = "Subsección: Documentos Probatorios. Se subió Documento Identificación oficial del Representante. Número Registro: ".$model->id;
 				}
 
 				$model->id_sponsor = $id_sponsor;
@@ -517,8 +587,10 @@ class SponsorsController extends Controller {
 				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				if ($model->save()) 
+				if ($model->save()) {
 					$reload = true;
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				}
 				
 
 			}else {													
@@ -578,8 +650,12 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionDeleteContacts($id) {
-		
-		SponsorsContacts::model()->findByPk($id)->delete();
+		$model = SponsorsContacts::model()->findByPk($id);
+			$section = "Empresas."; //manda parametros al controlador AdminSystemLog
+			$details = "Subsección: Datos de Contactos. Registro Número: ".$model->id." Nombre: ".$model->fullname;
+			$action = "Eliminación";
+			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
@@ -590,8 +666,12 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionDeleteContact($id) {
-		
-		SponsorsContact::model()->findByPk($id)->delete();
+		$model = SponsorsContact::model()->findByPk($id);
+			$section = "Empresas."; //manda parametros al controlador AdminSystemLog
+			$details = "Subsección: Datos de Contacto. Registro Número: ".$model->id." Tipo: ".$model->type;
+			$action = "Eliminación";
+			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {

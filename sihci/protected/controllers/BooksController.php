@@ -88,22 +88,24 @@ class BooksController extends Controller
 	                if(!is_dir($urlFile))
 	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/', 0777, true);
 	                
-	    		 					
-	 					$model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();    			 			   	
-			              
-			                if($model->save())
-			                {
-			               		              
-					 			$names = $_POST['names'];
-					            $last_name1 = $_POST['last_names1'];
-					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];
-					            
-	         					foreach($_POST['names'] as $key => $names)
-	         					{
-					               	unset($modelAuthor);
-					               	$modelAuthor = new BooksAuthors;
+		    		 	                                                	                       //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
+            		    if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png')
+            		    {				
+		 					$model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+						    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();    			 			   	
+				              
+				                if($model->save())
+				                {
+				               		              
+						 			$names = $_POST['names'];
+						            $last_name1 = $_POST['last_names1'];
+						            $last_name2 = $_POST['last_names2'];
+						            $position = $_POST['positions'];
+						            
+		         					foreach($_POST['names'] as $key => $names)
+		         					{
+						               	unset($modelAuthor);
+						               	$modelAuthor = new BooksAuthors;
 
 					               	$modelAuthor->id_book = $model->id;
 					       			$modelAuthor->names = $names;
@@ -112,17 +114,24 @@ class BooksController extends Controller
 					        		$modelAuthor->position = $position[$key];
 		                    		$modelAuthor->save();
 			              	    }	
-
+			              	    $section = "Libros";
+     							$action = "Creación";
+								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
+     							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 			                    echo CJSON::encode(array('status'=>'success'));
 	                            $this->redirect(array('admin','id'=>$model->id));
 	                            Yii::app()->end();
 
-			               }					               
-			               else
-			               {
-			               		echo CJSON::encode(array('status'=>'404'));
-	                            Yii::app()->end();
-			               }
+				               }					               
+				               else
+				               {
+				               		echo CJSON::encode(array('status'=>'404'));
+		                            Yii::app()->end();
+				               }
+				        }
+				        else
+			               echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
+			                  
 			    }
 			    else
 			    {
@@ -144,7 +153,10 @@ class BooksController extends Controller
 			        		$modelAuthor->position = $position[$key];
                     		$modelAuthor->save();
 	              	    }	
-              	 
+              	 		$section = "Libros";
+						$action = "Creación";
+						$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 	               	  	echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();
@@ -229,7 +241,10 @@ class BooksController extends Controller
 								$modelAuthor->updateByPk($idsBooks[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
                 		    }
                 	    }
-
+                	    $section = "Libros";
+						$action = "Modificación";
+						$details = "Registro Número: ".$model->id;
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
            	 		   echo CJSON::encode(array('status'=>'200'));
                        $this->redirect(array('admin','id'=>$model->id));
                        Yii::app()->end();
@@ -256,7 +271,10 @@ class BooksController extends Controller
 	{
 		BooksAuthors::model()->deleteAll("id_book=".$id );
 		$model= Books::model()->findByPk($id);
-		
+		$section = "Libros";
+		$action = "Eliminación";
+		$details = "Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.". Datos: ".$model->book_title;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		if($model->path != null)
 		{
 			unlink(YiiBase::getPathOfAlias("webroot").$model->path);

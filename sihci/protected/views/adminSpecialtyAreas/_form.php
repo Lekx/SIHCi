@@ -19,12 +19,12 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'specialty',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Especialidad')); ?>
+		<?php echo $form->textArea($model,'specialty',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Especialidad','title'=>'Especialidad')); ?>
 		<?php echo $form->error($model,'specialty'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'subspecialty',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Subespecialida')); ?>
+		<?php echo $form->textArea($model,'subspecialty',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Subespecialida','title'=>'Subespecialida')); ?>
 		<?php echo $form->error($model,'subspecialty'); ?>
 	</div>
 
@@ -33,11 +33,11 @@
  			'addButtonLabel'=>'Agregar nueva subespecialida',
 		 )); 
     ?>
-    <div class="subspecialtyRegistry row">    		 
+    <div class="subspecialtyRegistry ">    		 
 	   <?php  echo "<input type='hidden' name='idsAdminSpecialtyAreas[]'>"; ?>
 		   
 		   <div class="row">
-			  <?php echo $form->textArea($modelSpecialtyAreas ,'ext_subspecialty',array('name'=>'ext_subspecialtys[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Subespecialida')); ?>
+			  <?php echo $form->textArea($modelSpecialtyAreas ,'ext_subspecialty',array('name'=>'ext_subspecialtys[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Subespecialida','title'=>'Subespecialida')); ?>
 			  <?php echo $form->error($modelSpecialtyAreas ,'ext_subspecialty');?>
 		   </div>
    	</div> 	
@@ -45,16 +45,14 @@
    	<?php 
 	if(!$model->isNewRecord)		  
 		  foreach ($modelSpecialtyArea  as $key => $value) 
-		  { ?>
-		  
-			  <div class="row">		  
+		  { ?>	  
 				  <?php echo "<input type='hidden' value='".$value->id."' name='idsAdminSpecialtyAreas[]'>"; ?>
 				  
 				  <div class="row">	
-					  <?php echo $form->textArea($value,'ext_subspecialty',array('name'=>'ext_subspecialty[]','value'=>$value->ext_subspecialty,'size'=>30,'maxlength'=>30, 'placeholder'=>'Subespecialida')); ?>
+					  <?php echo $form->textArea($value,'ext_subspecialty',array('name'=>'ext_subspecialty[]','value'=>$value->ext_subspecialty,'size'=>30,'maxlength'=>30, 'placeholder'=>'Subespecialida','title'=>'Subespecialida')); ?>
 					  <?php echo $form->error($value,'ext_subspecialty');?>
 				  </div>
-			 </div>	 
+			
 	<?php } ?>
 
 	<div class="row buttons">
@@ -66,20 +64,17 @@
                      		 {                                                    
 			                         if(data.status=="200")
 			                         {
-					                     alert("Registro realizado con éxito");
-					                     $("#admin-specialty-areas-form")[0].reset();
-	   									 window.location.href ="'.Yii::app()->createUrl('adminSpecialtyAreas/admin').'";
+					                    $(".successdiv").show();		
 			                         }		                         
 			                         else
 			                         {
-				                     	alert("Complete los campos con *");   
+				                     	$(".errordiv").show();   
 				                     }        
 		                  	}',                    
 		                    
-                        )); 
+                        ),array('class'=>'savebutton')); 
         ?>
-        <?php  if($model->isNewRecord) 
-			   echo '<input class="cleanbutton" type="button" onclick="cleanUp()"" value="Borrar">'; ?>
+      
        	
        	<?php echo CHtml::link('Cancelar', array('/adminSpecialtyAreas/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>

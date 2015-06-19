@@ -44,11 +44,11 @@ var Chart = Highcharts.Chart,
 
 	// Add language
 	extend(defaultOptions.lang, {
-		printChart: 'Print chart',
-		downloadPNG: 'Download PNG image',
-		downloadJPEG: 'Download JPEG image',
-		downloadPDF: 'Download PDF document',
-		downloadSVG: 'Download SVG vector image',
+		printChart: 'Imprimir Gráfica',//'Print chart',
+		downloadPNG: 'Descargar en PNG',//'Download PNG image',
+		downloadJPEG: 'Descargar en JPEG',//'Download JPEG image',
+		downloadPDF: 'Descargar en PDF',//'Download PDF document',
+		downloadSVG: 'Descargar SVG vector image',//'Download SVG vector image',
 		contextButtonTitle: 'Chart context menu'
 	});
 

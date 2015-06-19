@@ -113,174 +113,139 @@ $('<div></div>').appendTo('form')
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
-<div id="section1" class="sections" style="border:1px solid #ccc;padding:15px; border-radus:3px;margin:10px;">
+<div id="section1" class="sections" >
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>250)); ?>
+		<?php 
+			if(Yii::app()->user->id_roles==13){
+				$researcher = "";
+				if(!$model->isNewRecord){
+					$researcher = $model->idCurriculum->idUser->persons[0];
+					$researcher = $researcher['last_name1']." ".$researcher['last_name2'].", ".$researcher['names'];
+				}
+				echo "Encargado <br>";
+				$this->widget('ext.MyAutoComplete', array(
+				    'model'=>$model,
+				    'attribute'=>'id_curriculum',
+				    'name'=>'Projects[id_curriculum]',
+				    'id'=>'id_curriculum',
+				    'value'=>$researcher,
+				    'source'=>$this->createUrl('/sponsorship/getResearchers'),  
+				    'options'=>array(
+				        'minLength'=>'0' 
+				    ),
+				));
+			}
+		?>
+	</div>
+	<div class="row">
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>250,'placeholder'=>'Título','title'=>'Título')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'discipline'); ?>
-		<?php echo $form->textField($model,'discipline',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'discipline',array('size'=>60,'maxlength'=>100,'placeholder'=>'Diciplina','title'=>'Diciplina')); ?>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'research_type'); ?>
-		<?php echo $form->textField($model,'research_type',array('size'=>60,'maxlength'=>250)); ?>
+		<?php echo $form->textField($model,'research_type',array('size'=>60,'maxlength'=>250,'placeholder'=>'Tipo de Investigación','title'=>'Tipo de Investigación')); ?>
 		<?php echo $form->error($model,'research_type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'priority_topic'); ?>
-		<?php echo $form->textField($model,'priority_topic',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'priority_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Tema prioritario','title'=>'Tema prioritario')); ?>
 		<?php echo $form->error($model,'priority_topic'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sub_topic'); ?>
-		<?php echo $form->textField($model,'sub_topic',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'sub_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Subtema prioritario','title'=>'Subtema prioritario')); ?>
 		<?php echo $form->error($model,'sub_topic'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'justify'); ?>
-		<?php echo $form->textArea($model,'justify',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'justify',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación del tema','title'=>'Justificación del tema')); ?>
 		<?php echo $form->error($model,'justify'); ?>
 	</div>
 </div>
-<div id="section2" class="sections" style="display:none;border:1px solid #ccc;padding:15px; border-radus:3px;margin:10px;">
+
+
+
+
+<div id="section2" class="sections" style="display:none;">
 	<div class="row">
-		<?php echo $form->labelEx($model,'is_sni'); ?>
-		<?php echo $form->textField($model,'is_sni'); ?>
+		<?php echo $form->textField($model,'is_sni',array('placeholder'=>'¿Es SNI?','title'=>'¿Es SNI?')); ?>
 		<?php echo $form->error($model,'is_sni'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'develop_uh'); ?>
-		<?php echo $form->textField($model,'develop_uh',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'develop_uh',array('size'=>50,'maxlength'=>50,'placeholder'=>'Unidad hospitalaria','title'=>'Unidad hospitalaria')); ?>
 		<?php echo $form->error($model,'develop_uh'); ?>
 	</div>
 </div>
-<div id="section3" class="sections" style="display:none;border:1px solid #ccc;padding:15px; border-radus:3px;margin:10px;">
+
+<div id="section3" class="sections" style="display:none;">
 	<div class="row">
-		<?php echo $form->labelEx($model,'institution_colaboration'); ?>
-		<?php echo $form->textField($model,'institution_colaboration'); ?>
+		<?php echo $form->textField($model,'institution_colaboration',array('placeholder'=>'Institución que colabora','title'=>'Institución que colabora')); ?>
 		<?php echo $form->error($model,'institution_colaboration'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'national_institutions'); ?>
-		<?php echo $form->textField($model,'national_institutions'); ?>
+		<?php echo $form->textField($model,'national_institutions',array('placeholder'=>'Instituciones nacionales','title'=>'Instituciones nacionales')); ?>
 		<?php echo $form->error($model,'national_institutions'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'participant_institutions'); ?>
-		<?php echo $form->textArea($model,'participant_institutions',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'participant_institutions',array('rows'=>6, 'cols'=>50,'placeholder'=>'Instituciones participantes','title'=>'Instituciones participantes')); ?>
 		<?php echo $form->error($model,'participant_institutions'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'international_institutions_'); ?>
-		<?php echo $form->textField($model,'international_institutions_'); ?>
+		<?php echo $form->textField($model,'international_institutions_',array('placeholder'=>'Instituciones internacionales','title'=>'Instituciones internacionales')); ?>
 		<?php echo $form->error($model,'international_institutions_'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'participant_institutions_international'); ?>
-		<?php echo $form->textArea($model,'participant_institutions_international',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'participant_institutions_international',array('rows'=>6, 'cols'=>50,'placeholder'=>'Instituciones internacionales participantes','title'=>'Instituciones internacionales participantes')); ?>
 		<?php echo $form->error($model,'participant_institutions_international'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'colaboration_type'); ?>
-		<?php echo $form->textField($model,'colaboration_type',array('size'=>60,'maxlength'=>150)); ?>
+		<?php echo $form->textField($model,'colaboration_type',array('size'=>60,'maxlength'=>150,'placeholder'=>'Tipo de colaboracion','title'=>'Tipo de colaboracion')); ?>
 		<?php echo $form->error($model,'colaboration_type'); ?>
 	</div>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'has_adtl_caracteristics_a'); ?>
-		<?php echo $form->textField($model,'has_adtl_caracteristics_a'); ?>
-		<?php echo $form->error($model,'has_adtl_caracteristics_a'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'adtl_caracteristics_a'); ?>
-		<?php echo $form->textArea($model,'adtl_caracteristics_a',array('rows'=>6, 'cols'=>50)); ?>
+	<p>Protocolos en donde se propongan el uso de medicamentos,equipo o material médico no incluido en el cuadro básico institucional</p>
+		<?php echo $form->textArea($model,'adtl_caracteristics_a',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_a'); ?>
 	</div>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'has_adtl_caracteristics_b'); ?>
-		<?php echo $form->textField($model,'has_adtl_caracteristics_b'); ?>
-		<?php echo $form->error($model,'has_adtl_caracteristics_b'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'adtl_caracteristics_b'); ?>
-		<?php echo $form->textArea($model,'adtl_caracteristics_b',array('rows'=>6, 'cols'=>50)); ?>
+	<p>Protocolos que contemplen cambios en la polótica institucional sobre la presentación de servicios de salud</p>
+		<?php echo $form->textArea($model,'adtl_caracteristics_b',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_b'); ?>
 	</div>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'has_adtl_caracteristics_c'); ?>
-		<?php echo $form->textField($model,'has_adtl_caracteristics_c'); ?>
-		<?php echo $form->error($model,'has_adtl_caracteristics_c'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'adtl_caracteristics_c'); ?>
-		<?php echo $form->textArea($model,'adtl_caracteristics_c',array('rows'=>6, 'cols'=>50)); ?>
+	<p>Protocolos planeados para realizarse entre el instituto Mexicano del Seguro Social y otras insituciones nacionales o extrajeras.</p>
+		<?php echo $form->textArea($model,'adtl_caracteristics_c',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_c'); ?>
 	</div>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'has_adtl_caracteristics_d'); ?>
-		<?php echo $form->textField($model,'has_adtl_caracteristics_d'); ?>
-		<?php echo $form->error($model,'has_adtl_caracteristics_d'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'adtl_caracteristics_d'); ?>
-		<?php echo $form->textArea($model,'adtl_caracteristics_d',array('rows'=>6, 'cols'=>50)); ?>
+	<p>Protocoolos que requieren la autorización específica de la Secretaría de Salud según la ley General de Salud</p>
+		<?php echo $form->textArea($model,'adtl_caracteristics_d',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_d'); ?>
 	</div>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'has_adtl_caracteristics_e'); ?>
-		<?php echo $form->textField($model,'has_adtl_caracteristics_e'); ?>
-		<?php echo $form->error($model,'has_adtl_caracteristics_e'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'adtl_caracteristics_e'); ?>
-		<?php echo $form->textArea($model,'adtl_caracteristics_e',array('rows'=>6, 'cols'=>50)); ?>
+	<p>Protocolos que reciban apoyo económico o meterial de la industria farmacéutica o entidades con fines lucrativos</p>
+		<?php echo $form->textArea($model,'adtl_caracteristics_e',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_e'); ?>
 	</div>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'has_adtl_caracteristics_f'); ?>
-		<?php echo $form->textField($model,'has_adtl_caracteristics_f'); ?>
-		<?php echo $form->error($model,'has_adtl_caracteristics_f'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'adtl_caracteristics_f'); ?>
-		<?php echo $form->textArea($model,'adtl_caracteristics_f',array('rows'=>6, 'cols'=>50)); ?>
+	<p>Protocolos que se realicen en más de una unidad del Instituo Mexicano del seguro Social con la participación de pacientes, muestras o datos</p>
+		<?php echo $form->textArea($model,'adtl_caracteristics_f',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_f'); ?>
 	</div>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'has_adtl_caracteristics_g'); ?>
-		<?php echo $form->textField($model,'has_adtl_caracteristics_g'); ?>
-		<?php echo $form->error($model,'has_adtl_caracteristics_g'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'adtl_caracteristics_g'); ?>
-		<?php echo $form->textArea($model,'adtl_caracteristics_g',array('rows'=>6, 'cols'=>50)); ?>
+	<p>Protocolos cuyos autores se inconformen con el dictamen emitido por los Comités Locales de Investigación en Salud</p>
+		<?php echo $form->textArea($model,'adtl_caracteristics_g',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_g'); ?>
 	</div>
 
@@ -290,13 +255,13 @@ $('<div></div>').appendTo('form')
 		<?php 
 		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
 		
-		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft')"));
+		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
 
 		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
-		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()"));
-		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')","style"=>"display:none;float:right;"));
-		echo " ".Chtml::button('Siguiente >',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;"));
-		echo " ".Chtml::button('< Anterior',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;"));
+		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
+		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
+		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
+		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
 		
 
 		?>
