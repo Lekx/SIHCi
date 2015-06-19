@@ -28,7 +28,7 @@ $this->menu = array(
             <?php
                 echo "<div class='row'>";
                 echo "<h5>Contraseña:</h5>";
-                echo "<input type='text' value='************' disabled>";
+                echo "<input type='text' value='********' disabled>";
                 echo "</div>";
                 echo CHtml::Button('Modificar',array('submit' => array('account/updatePassword'),'class'=>'addSomething'));
             ?>
