@@ -3,7 +3,8 @@ function send()
 
     var fd = new FormData();
     //var data=$("#books-form").serialize();
-    fd.append("Books[path]", $("#path")[0].files[0]);
+    var element =document.getElementById("Books_path");
+    fd.append("Books[path]", $(element)[0].files[0]);
     
     $.ajax({
         url: 'create',
@@ -18,7 +19,7 @@ function send()
             if(data.status=="200"){                         
                     alert("Registro realizado con éxito");
                     //alert(JSON.stringify("Registro realizado con éxito"
-                    $("#books-form")[0].reset();                
+                    //$("#books-form")[0].reset();                
             }
             else
                alert(data);
