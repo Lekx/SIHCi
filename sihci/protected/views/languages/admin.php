@@ -1,10 +1,10 @@
 <?php
-/* @var $this DirectedThesisController */
-/* @var $model DirectedThesis */
+/* @var $this LanguagesController */
+/* @var $model Languages */
 
 $this->breadcrumbs=array(
-	'Directed Thesises'=>array('index'),
-	$model->title,
+	'Languages'=>array('index'),
+	'Manage',
 );
 
 $this->menu=array(
@@ -23,15 +23,15 @@ $this->menu=array(
 		array('label'=>'Gestionar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub3')),
 		array('label'=>'Crear', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub3')),
 //patent		
-	array('label'=>'Registro patente ', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'menuitem 4')),
+	array('label'=>'Resgirtro patente ', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'menuitem 4')),
 		array('label'=>'Gestionar', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'sub4')),
 		array('label'=>'Crear', 'url'=>array('patent/create'),'itemOptions'=>array('class' => 'sub4')),
 //copyrights	
-	array('label'=>'Registro derecho de autor', 'url'=>array('copyrights/admin'),'itemOptions'=>array('class' => 'menuitem 5')),
+	array('label'=>'Resgirtro derecho de autor', 'url'=>array('copyrights/admin'),'itemOptions'=>array('class' => 'menuitem 5')),
 			array('label'=>'Gestionar', 'url'=>array('copyrights/admin'),'itemOptions'=>array('class' => 'sub5')),
 			array('label'=>'Crear', 'url'=>array('copyrights/create'),'itemOptions'=>array('class' => 'sub5')),
 //copyrights	
-	array('label'=>'Registro software', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'menuitem 6')),
+	array('label'=>'Resgirtro software', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'menuitem 6')),
 			array('label'=>'Gestionar', 'url'=>array('software/admin'),'itemOptions'=>array('class' => 'sub6')),
 			array('label'=>'Crear', 'url'=>array('software/create'),'itemOptions'=>array('class' => 'sub6')),
 //articlesGuides				
@@ -51,53 +51,63 @@ $this->menu=array(
 		array('label'=>'Gestionar', 'url'=>array('congresses/admin'),'itemOptions'=>array('class' => 'sub10')),
 		array('label'=>'Crear', 'url'=>array('congresses/create'),'itemOptions'=>array('class' => 'sub10')),
 //directedThesis			
-	array('label'=>'Tesis Dirigidas ', 'url'=>array('directedThesis/admin'),'itemOptions'=>array('class' => 'menuitem 11 now')),
-		array('label'=>'Gestionar', 'url'=>array('directedThesis/admin'),'itemOptions'=>array('class' => 'sub')),
-		array('label'=>'Crear', 'url'=>array('directedThesis/create'),'itemOptions'=>array('class' => 'sub')),
-//directedThesis			
+	array('label'=>'Tesis Dirigidas ', 'url'=>array('directedThesis/admin'),'itemOptions'=>array('class' => 'menuitem 11')),
+		array('label'=>'Gestionar', 'url'=>array('directedThesis/admin'),'itemOptions'=>array('class' => 'sub11')),
+		array('label'=>'Crear', 'url'=>array('directedThesis/create'),'itemOptions'=>array('class' => 'sub11')),
+//certifications			
 	array('label'=>'Certificaciones por consejos ', 'url'=>array('certifications/admin'),'itemOptions'=>array('class' => 'menulis 12')),
 		array('label'=>'Gestionar', 'url'=>array('certifications/admin'),'itemOptions'=>array('class' => 'sub12')),
 		array('label'=>'Crear', 'url'=>array('certifications/create'),'itemOptions'=>array('class' => 'sub12')),
-
-
-	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	
-	);
+//Languges
+	array('label'=>'Idiomas ', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'menulis 12 now')),
+		array('label'=>'Gestionar', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'sub')),
+		array('label'=>'Crear', 'url'=>array('languages/create'),'itemOptions'=>array('class' => 'sub')),
+);
 
 ?>
+
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
             <h1>Evaluación Curricular</h1>
             <hr>
         </div>
 
-<h3>Gestionar Registro de Tesis Dirigidas: <?php echo $model->title; ?></h1>
+<h4>Gestionar Idiomas:</h4>
 
+<div class="search-form" style="display:block">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
 
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-     'htmlOptions'=>array('class'=>'detail-view','enctype'=>'multipart/form-data'),
-	'attributes'=>array(
-		//'id',
-		//'id_curriculum',
-		'title',
-		'conclusion_date',
-		'author',
-		array(               
-                'label'=>'Archivo',
-                'type'=>'raw',
-                'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")),
-             ),
-		//'path',
-		'grade',
-		'sector',
-		'organization',	
-		'second_level',
-		'area',
-		'discipline',
-		'subdiscipline',
-	),
-	 
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'languages-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>array(
+		// 'id',
+		// // 'id_curriculum',
+		// 'language',
+		// 'description',
+		// 'native_language',
+		// 'is_traducer',
+		array('header'=>'Idioma Nativo','type'=>'html','id'=>'native_language','value'=>'CHtml::encode($data->native_language)'),
+		array('header'=>'Idiomas','type'=>'html','id'=>'language','value'=>'CHtml::encode($data->language)'),
 	
+		// 'is_teacher',
+		// 'conversational_level',
+		// 'reading_level',
+		// 'writting_level',
+		// 'evaluation_date',
+		// 'document_percentage',
+		// 'path',
+		// 'creation_date',
+	
+		array(
+			'class'=>'CButtonColumn','header' => 'Acciones',
+			'buttons' => array(
+					'delete' => array('label' => 'Editar.','url'=> '"deleteLanguage/".$data->id'),
+				),
+		),
+	),
 )); ?>

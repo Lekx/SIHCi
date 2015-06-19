@@ -36,6 +36,10 @@ class BooksAuthors extends CActiveRecord
 			array('id_book', 'numerical','position', 'integerOnly'=>true),
 			array('names', 'length', 'max'=>30),
 			array('last_name1, last_name2', 'length', 'max'=>20),
+
+
+			array('position', 'length', 'max'=>45, 'integerOnly'=>true),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_book, names, last_name1, last_name2, position', 'safe', 'on'=>'search'),

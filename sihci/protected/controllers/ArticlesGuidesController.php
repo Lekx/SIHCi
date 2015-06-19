@@ -115,7 +115,7 @@ class ArticlesGuidesController extends Controller
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
 		                    echo CJSON::encode(array('status'=>'success'));
-                            //$this->redirect(array('admin','id'=>$model->id));
+                            $this->redirect(array('admin'));
                             Yii::app()->end();
 
 		               }
@@ -151,7 +151,7 @@ class ArticlesGuidesController extends Controller
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
 	               	  	echo CJSON::encode(array('status'=>'200'));
-                        $this->redirect(array('admin','id'=>$model->id));
+                        $this->redirect(array('admin'));
                         Yii::app()->end();
 
                     } 		                      
@@ -209,11 +209,11 @@ class ArticlesGuidesController extends Controller
                     
             		if($model->save())
             		{
-            					$idsArticlesGuides = $_POST['idsArticlesGuides'];
-            					$names = $_POST['names'];
-					            $last_name1 = $_POST['last_names1'];
-					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];
+    					$idsArticlesGuides = $_POST['idsArticlesGuides'];
+    					$names = $_POST['names'];
+			            $last_name1 = $_POST['last_names1'];
+			            $last_name2 = $_POST['last_names2'];
+			            $position = $_POST['positions'];
 					                 
      					 foreach($_POST['names'] as $key => $value)
      					 {
@@ -240,7 +240,7 @@ class ArticlesGuidesController extends Controller
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
            	 		   echo CJSON::encode(array('status'=>'200'));
-                       $this->redirect(array('admin','id'=>$model->id));
+                       $this->redirect(array('admin'));
                        Yii::app()->end();
                 	} 
                 	else 

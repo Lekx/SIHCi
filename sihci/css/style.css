@@ -1187,4 +1187,124 @@ ul.cbp-hsmenu
     	
 }
 
+/* Error and Success Messege */
 
+.backcontainer
+{
+    font-family: 'Caviar_Dreams_Bold';
+
+    position: absolute;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    right: 0;
+    left: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(40, 50, 90, .70);
+}
+.backcontainer h2
+{
+    color: #1eb9c0;
+}
+
+.maincontainer
+{
+    width: 400px;
+    height: 270px;
+    margin-top: 200px;
+    margin-right: auto;
+    margin-left: auto;
+
+    background: #fff;
+}
+.susses,
+.errorh2,
+.successh2
+{
+    padding-top: 50px;
+
+    text-align: center;
+}
+
+.susses hr,
+.errorh2 hr,
+.successh2 hr
+{
+    width: 80px;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-bottom: 35px;
+    margin-left: auto;
+
+    text-align: center;
+
+    border-bottom: 2px solid black;
+}
+.susbut,
+.backbut
+{
+    font-family: 'Caviar_Dreams';
+
+    width: 400px;
+    height: 50px;
+    margin-top: 30px;
+
+    color: white;
+    background-color: #0e3152;
+}
+.remainder
+{
+    width: 260px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.backgrnd
+{
+    width: 100%;
+    height: 100%;
+
+    background-image: url('http://www.hdwallpaperscool.com/wp-content/uploads/2014/07/river-bridge-san-francisco-desktop-wallpapers.jpeg') !important;
+}
+.errorbut,
+.cleanbut
+{
+    font-family: 'Caviar_Dreams';
+
+    width: 400px;
+    height: 50px;
+    margin-top: 20px;
+
+    color: white;
+    background-color: #f20862;
+}
+.errorh2 h2,
+.errorh2 h2
+{
+    color: #f20862 !important;
+}
+.successh2 h2
+{
+    color: #0e3152;
+}
+/* ---------- */
+
+.errordiv , .errordivuser
+{
+    display: none;
+}
+.cleandiv
+{
+    display: none;
+}
+.successdiv
+{
+    display: none;
+}
+.abortdiv
+{
+    display: none;
+}

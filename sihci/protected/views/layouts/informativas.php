@@ -19,51 +19,47 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/informativas.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/login.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/users.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css"> 
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
-
-
         <?php Yii::app()->clientScript->registerCoreScript('jquery');?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <?php
-                $baseUrl = Yii::app()->baseUrl;
-               $cs = Yii::app()->getClientScript();
-                $cs->registerScriptFile($baseUrl . '/js/list.js');
-                $cs->registerScriptFile($baseUrl . '/js/prefixfree.min');
-                $cs->registerScriptFile($baseUrl . '/js/slideshow.js');
-                $cs->registerScriptFile($baseUrl . '/js/scroll.js');
-                $cs->registerScriptFile($baseUrl . '/js/responsiveslides.js');
-                $cs->registerScriptFile($baseUrl . '/js/slideshowres.js');
-                $cs->registerScriptFile($baseUrl . '/js/render.js');
-                $cs->registerScriptFile($baseUrl . '/js/progressUser.js');
-                $cs->registerScriptFile($baseUrl . '/js/searchbar.js');
-                $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
+                                $baseUrl = Yii::app()->baseUrl;
+                            $cs = Yii::app()->getClientScript();
+                                $cs->registerScriptFile($baseUrl . '/js/list.js');
+                                $cs->registerScriptFile($baseUrl . '/js/prefixfree.min');
+                                $cs->registerScriptFile($baseUrl . '/js/slideshow.js');
+                                $cs->registerScriptFile($baseUrl . '/js/scroll.js');
+                                $cs->registerScriptFile($baseUrl . '/js/responsiveslides.js');
+                                $cs->registerScriptFile($baseUrl . '/js/slideshowres.js');
+                                $cs->registerScriptFile($baseUrl . '/js/render.js');
+                                $cs->registerScriptFile($baseUrl . '/js/progressUser.js');
+                                $cs->registerScriptFile($baseUrl . '/js/searchbar.js');
+                                $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
+                                 $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
         ?>
         <?php
-                Yii::app()->clientScript->registerScript('helpers', '
-                yii = {
-                urls: {
-                        searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
-                        searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
-                        base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
-                        cancelProject: ' . CJSON::encode(Yii::app()->createUrl('projects/admin')) . ',
-                       }
-                };
-                ');
+                                Yii::app()->clientScript->registerScript('helpers', '
+                                yii = {
+                                urls: {
+                                        searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
+                                        searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
+                                        base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
+                                        cancelProject: ' . CJSON::encode(Yii::app()->createUrl('projects/admin')) . ',
+                                    }
+                                };
+                                ');
         ?>
         <?php Yii::app()->bootstrap->register();?>
         <title><?php echo CHtml::encode($this->pageTitle);?></title>
-
-       <script>
-                           $(document).ready(function() {
-                                $('input, select').tooltipster({
-                                    position: 'right',
-                                    trigger:  'click', 
-                                });
-
-                            });
+        <script>
+                                        $(document).ready(function() {
+                                                $('input, select').tooltipster({
+                                                    position: 'right',
+                                                    trigger:  'click',
+                                                });
+                                            });
         </script>
-
     </head>
     <body>
         <section>
@@ -89,7 +85,6 @@
                             </li>
                             <li>
                                 <h6><?php echo CHtml::link('FInEHC', array('finehc/index'));?></h6>
-                    
                             </li>
                             <ul>
                             </div>
@@ -112,7 +107,7 @@
                                             <li><?php echo CHtml::link('Living Labs-Salud', array('livingLabsSalud/index'));?></li>
                                         </ul>
                                     </li>
-                                       <li>
+                                    <li>
                                         <h6><?php echo CHtml::link('HCG Fray Antonio Alcalde', array('subdirectionOfEducationAndInvestigation/index'));?></h6>
                                         <ul class="cbp-hssubmenu1">
                                         </ul>
@@ -206,7 +201,6 @@
                                     </li>
                                     <li>
                                         <h6><?php echo CHtml::link('FInEHC', array('finehc/index'));?></h6>
-                                   
                                     </li>
                                     <ul>
                                     </div>
@@ -264,7 +258,7 @@
                                                 <ul class="cbp-hssubmenu1">
                                                 </ul>
                                             </li>
-                                             <li>
+                                            <li>
                                                 <h6><?php echo CHtml::link('Unidad Editorial', array('editUnit/index'));?></h6>
                                                 <ul class="cbp-hssubmenu1">
                                                 </ul>
@@ -274,7 +268,7 @@
                                     <div>
                                         <ul class="cbp-hsmenu1">
                                             <li>
-                                              <span><h6>Programas de generación de conocimiento</h6></span>
+                                                <span><h6>Programas de generación de conocimiento</h6></span>
                                                 <ul class="cbp-hssubmenu1">
                                                     <li><?php echo CHtml::link('Redacción Científicas', array('scientificWriting/index'));?></li>
                                                     <li><?php echo CHtml::link('Lineas de generación de conmiento científico', array('generetionOfKnowledgeScientific/index'));?></li>
@@ -308,9 +302,9 @@
                                             <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuCh.png" alt="">
                                             </button>
                                         </div>
-                                            <div id="headersearch"><input type="search" id="searchbartop" class="searchBarMain" placeholder="Buscar"></div>
-                                             <div id="searchBarResultstop">estoy bien escondido</div>
-                                            <div id="hsearchbutton">
+                                        <div id="headersearch"><input type="search" id="searchbartop" class="searchBarMain" placeholder="Buscar"></div>
+                                        <div id="searchBarResultstop">estoy bien escondido</div>
+                                        <div id="hsearchbutton">
                                             <button id="" type="button">
                                             <img src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarCh.png" alt="">
                                             </button>
@@ -337,79 +331,108 @@
                         <section class="logsection">
                             <div class="login">
                                 <?php
-                                if (Yii::app()->user->isGuest) {
-
-                                    echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
-                                    echo '<p>Ingresar a tu cuenta.</p>';
-
-                                } else {
-                                    $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas4'));
-                                //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-                                    echo CHtml::link($img, array('account/firstLogin'));
-                                    echo '<p id="logoutext">';
-                                    echo Yii::app()->user->email;
-                                    echo '</p>';
-                                }
+                                                                                                if (Yii::app()->user->isGuest) {
+                                                                                                    echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
+                                                                                                    echo '<p>Ingresar a tu cuenta.</p>';
+                                                                                                } else {
+                                                                                                    $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas4'));
+                                                                                                //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
+                                                                                                    echo CHtml::link($img, array('account/firstLogin'));
+                                                                                                    echo '<p id="logoutext">';
+                                                                                                    echo Yii::app()->user->email;
+                                                                                                    echo '</p>';
+                                                                                                }
                                 ?>
                             </div>
-                
                             <div class="singin">
-                            <?php
-                               if (Yii::app()->user->isGuest){
-
-                                echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaCrear.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas'));
-                                echo '<p>Crea una cuenta.</p>';
-
-                               }
-                               else{
-
-                                    $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas4'));
-                                //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
-                                    echo CHtml::link($img, array('site/logout'));
-                                    echo '<p id="logoutext">';
-                                    echo 'Cerrar Sesion';
-                                    echo '</p>';
-                               }
-                               
-                             ?>
-                             </div>
+                                <?php
+                                                                                            if (Yii::app()->user->isGuest){
+                                                                                                echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaCrear.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas'));
+                                                                                                echo '<p>Crea una cuenta.</p>';
+                                                                                            }
+                                                                                            else{
+                                                                                                    $img = CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas4'));
+                                                                                                //$image = CHtml::image(Yii::app()->request->baseUrl.'/img/icons/cuentaIngresar.png','this is alt tag of image', array('title'=>'image title here', 'id' => 'logout'));
+                                                                                                    echo CHtml::link($img, array('site/logout'));
+                                                                                                    echo '<p id="logoutext">';
+                                                                                                    echo 'Cerrar Sesion';
+                                                                                                    echo '</p>';
+                                                                                            }
+                                                                                            
+                                ?>
+                            </div>
                             <div class="searchbar">
                                 <div class="searchbarconteiner">
                                     <button type="button" id="show_hidemenu">
                                     <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuGr.png" alt="">
-                                  
                                     </button>
-                                        <input type="text" id="searchBarMain1" class="form-control searchBarMain" placeholder="Buscar" aria-describedby="basic-addon1">
+                                    <input type="text" id="searchBarMain1" class="form-control searchBarMain" placeholder="Buscar" aria-describedby="basic-addon1">
                                     <button id="search" type="button" class="searchButton">
-                                     <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarGr.png" alt="">
+                                    <img id=""src="<?php echo Yii::app()->request->baseUrl;?>/img/icons/menuBuscarGr.png" alt="">
                                     </button>
-                                        <div id="searchBarResults">estoy bien escondido</div>
+                                    <div id="searchBarResults">estoy bien escondido</div>
                                 </div>
                             </div>
                         </section>
-
                         <?php if (isset($this->breadcrumbs)): ?>
                         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-                                            'links' => $this->breadcrumbs,
+                                                                                            'links' => $this->breadcrumbs,
                         ));?><!-- breadcrumbs -->
                         <?php endif?>
-
                         <section class="informativa">
                             <?php echo $content;?>
                         </section>
-
                         <div class="loginHome">
                             <?php  Yii::app()->runController('/site/login');?>
                         </div>
-
-                         <div class="recoveryHome">
+                        <div class="recoveryHome">
                             <?php  Yii::app()->runController('/site/recoveryPassword');?>
                         </div>
-                          <div class="createHome">
+                        <div class="createHome">
                             <?php  Yii::app()->runController('/users/create');?>
                         </div>
-                    
-                    
+                        <div class="successdiv">
+                            <div class="backcontainer">
+                                <div class="maincontainer">
+                                    <div class="successh2">
+                                        <h2>Registro con éxito</h2>
+                                        <hr>
+                                        <div class="remainder">
+                                            <span>El registro a sido realizado con éxtio.</span>
+                                        </div>
+                                        <button class="backbut"><h3>Regresar</h3></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="errordiv">
+                            <div class="backcontainer">
+                                <div class="maincontainer">
+                                    <div class="errorh2">
+                                        <h2>¡Ocurio un Error!</h2>
+                                        <hr>
+                                        <div class="remainder">
+                                            <span>No existe registro con ese correo electronico, favor de intentar de nuevo.</span>
+                                        </div>
+                                        <button class="errorbut"><h3>Volver a intentar</h3></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="errordivuser">
+                            <div class="backcontainer">
+                                <div class="maincontainer">
+                                    <div class="errorh2">
+                                        <h2>¡Ocurio un Error!</h2>
+                                        <hr>
+                                        <div class="remainder">
+                                            <span>Llene el formulario de la manera correcta, favor de intentar de nuevo.</span>
+                                        </div>
+                                        <button class="errorbut"><h3>Volver a intentar</h3></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <section class="mapaSitio">
                             <div class="menu">
                                 <div>
@@ -432,7 +455,6 @@
                                         </li>
                                         <li>
                                             <h6><?php echo CHtml::link('FInEHC', array('finehc/index'));?></h6>
-                              
                                         </li>
                                         <ul>
                                         </div>
@@ -486,7 +508,7 @@
                                                     <ul class="cbp-hssubmenu">
                                                     </ul>
                                                 </li>
-                                                 <li>
+                                                <li>
                                                     <h6><?php echo CHtml::link('Unidad Editorial', array('editUnit/index'));?></h6>
                                                     <ul class="cbp-hssubmenu">
                                                     </ul>
@@ -496,7 +518,7 @@
                                         <div>
                                             <ul class="cbp-hsmenu">
                                                 <li>
-                        		                <span><h6>Programas de generación de conocimiento</h6></span>
+                                                    <span><h6>Programas de generación de conocimiento</h6></span>
                                                     <ul class="cbp-hssubmenu">
                                                         <li><?php echo CHtml::link('Redacción Científicas', array('scientificWriting/index'));?></li>
                                                         <li><?php echo CHtml::link('Lineas de generación de conmiento científico', array('generetionOfKnowledgeScientific/index'));?></li>
@@ -519,11 +541,10 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                            <a href="#top" class="up-btn">
-                                    <i class="fa fa-chevron-up"></i>
-                                    </a>
+                                        <a href="#top" class="up-btn">
+                                        <i class="fa fa-chevron-up"></i>
+                                        </a>
                                     </div>
-
                                 </section>
                                 <section class="footersection">
                                     <div class="copyrigths">
