@@ -39,6 +39,8 @@
 		                        		if(response == "302"){
 
 		                        			 $(".tooltipster-base").css("background-color","#F20862 !important");
+		                        			 $(".tooltipster-base").css("border","1px solid #F20862");
+		                        			 $("div.tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show").css("border-color","#F20862");
 		                        			 $("#yt0").css("background-color", "#F20862 !important");
 		                        			 $("#yt0").val("Listo... Ingresar a mi cuenta");		              
 		                        			 $(".infodialog").removeClass("infodialog").addClass("infodialogerror");
@@ -61,11 +63,15 @@
 		                        			 $(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
 		                        			 $(".infodialog").css("visibility", "hidden");
 											 window.open("'.Yii::app()->createUrl('/account/firstLogin').'","_blank ");
+											
 		                        		
 		                        		}
 		                        		else
 		                        		{
 		                        			 $(".tooltipster-base").css("background-color","#F20862 !important");
+		                        			 $(".tooltipster-base").css("border","1px solid #F20862");
+		                        			 $(".tooltipster-base").css("border-color","#F20862 !important");
+		                        			 $("div.tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show").css("border-color","#F20862 !important");
 		                        			 $("#yt0").css("background-color", "#F20862 !important");
 		                        			 $("#yt0").val("Listo... Ingresar a mi cuenta");		              
 		                        			 $(".infodialog").removeClass("infodialog").addClass("infodialogerror");

@@ -35,17 +35,17 @@ $this->menu = array(
 
 
 	<div class="row">
-		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off', "placeholder"=>"Contraseña Actual")); ?>
+		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off', "placeholder"=>"Contraseña Actual","title"=>'Contraseña Actual')); ?>
 		<?php echo $form->error($details,'password'); ?>
 		<hr>
 	</div>
 
 	<div class="row">
-		<input type="password" name="Account[password2]" id="Account_password2" placeholder="Nueva Contraseña">
+		<input type="password" name="Account[password2]" id="Account_password2" placeholder="Nueva Contraseña" title="Nueva Contraseña">
 	</div>
 
 	<div class="row">
-		<input type="password" name="Account[password22]" id="Account_password22" placeholder="Repetir Nueva Contraseña">
+		<input type="password" name="Account[password22]" id="Account_password22" placeholder="Repetir Nueva Contraseña" title="Repetir Nueva Contraseña">
 	</div>
 	
 	<hr>

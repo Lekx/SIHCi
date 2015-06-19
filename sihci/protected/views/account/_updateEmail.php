@@ -31,16 +31,16 @@ $this->menu = array(
 	<h4>Modificar Correo:</h4>
 
 	<div class="row">
-		<?php echo $form->textField($details,'email'); ?>
+		<?php echo $form->textField($details,'email',array('title'=>'Email')); ?>
 		<?php echo $form->error($details,'email'); ?>
 		<hr>
 	</div>
 	<div class="row">
-	<input placeholder="Nuevo Correo" type="text" name="Account[email2]" id="Account_email2">
+	<input placeholder="Nuevo Correo" title="Nuevo Correo" type="text" name="Account[email2]" id="Account_email2">
 	</div>
 
 	<div class="row">
-		<input placeholder="Repetir Nuevo Correo" type="text" name="Account[email22]" id="Account_email22">
+		<input placeholder="Repetir Nuevo Correo"  title="Nuevo Correo" type="text" name="Account[email22]" id="Account_email22">
 	</div>
 	<hr>
 
