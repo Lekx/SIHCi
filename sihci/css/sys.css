@@ -1630,3 +1630,9 @@ li.menuitem.now ,li.menulis.now
     background-color: #0A324F !important;
 }
 
+
+table select{
+    width:60px !important;
+    font-size:9px;
+    height:15px !important;
+}
