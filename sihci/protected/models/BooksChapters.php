@@ -25,6 +25,7 @@
  * The followings are the available model relations:
  * @property Curriculum $idCurriculum
  * @property BooksChaptersAuthors[] $booksChaptersAuthors
+ * @property booksChaptersAuthors $position
  */
 class BooksChapters extends CActiveRecord
 {
@@ -56,15 +57,15 @@ class BooksChapters extends CActiveRecord
 			array('publishing_year, creation_date', 'safe'),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
-			array('url_doc, safe','file','allowEmpty'=>true,'on'=>'create', 
-				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
-			       'maxSize'=>array(1204 * 2000),
-			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
+
+			array('url_doc, safe','safe', 'on'=>'update'),
+			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg,j peg, png', 'on'=>'insert'),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),
 			array('id, id_curriculum, chapter_title, book_title, publishing_year, publishers, editorial, volume, pages, citations, total_of_authors, area, discipline, subdiscipline, creation_date, url_doc, isbn, keywords, searchValue', 'safe', 'on'=>'search'),
-			array('url_doc, safe','safe', 'on'=>'update'),
+			
 		);
 	}
 

@@ -96,7 +96,7 @@ $this->menu=array(
 		'second_level',
 		'area',
 		'discipline',
-		'subdisciplina',
+		'subdiscipline',
 	),
 	 
 	

@@ -42,7 +42,7 @@ class DirectedThesis extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, title, author, sector, organization', 'required'),
+			array('id_curriculum, title, author, sector, organization, conclusion_date', 'required'),
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>250),
 			array('author, grade', 'length', 'max'=>45),

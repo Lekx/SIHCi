@@ -2,7 +2,26 @@
 /* @var $this BooksChaptersController */
 /* @var $model BooksChapters */
 /* @var $form CActiveForm */
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/script.js');
 ?>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+
+    });
+});
+</script>
 
 <div class="form">
 
@@ -16,8 +35,6 @@
 	'enableClientValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
-
-	<?php echo $form->errorSummary($model); ?>
 
 
 
@@ -40,40 +57,32 @@
 
 	<div class="row">
 		<span class="plain-select">
-		<?php echo $form->dropDownList($model,'publishing_year', array('promt'=>'Seleccionar año de publicación',
-															'1930'=>'1930','1931'=>'1931',
-															'1932'=>'1932','1933'=>'1933','1934'=>'1934','1935'=>'1935',
-															'1936'=>'1936','1937'=>'1937','1938'=>'1938','1939'=>'1939',
-															'1940'=>'1940','1941'=>'1941','1942'=>'1942','1943'=>'1943',
-															'1944'=>'1944','1945'=>'1945','1946'=>'1946','1947'=>'1947',
-															'1948'=>'1948','1949'=>'1949','1950'=>'1950','1951'=>'1951',
-															'1952'=>'1952','1953'=>'1953','1954'=>'1954','1955'=>'1955',
-															'1956'=>'1956','1957'=>'1957','1958'=>'1958','1959'=>'1959',
-															'1960'=>'1960','1961'=>'1961','1962'=>'1962','1963'=>'1963',
-															'1964'=>'1964','1965'=>'1965','1966'=>'1966','1967'=>'1967',
-															'1968'=>'1968','1969'=>'1969','1970'=>'1970','1971'=>'1971',
-															'1972'=>'1972','1973'=>'1973','1974'=>'1974','1975'=>'1975',
-															'1976'=>'1976','1977'=>'1977','1978'=>'1978','1979'=>'1979',
-															'1980'=>'1980','1981'=>'1981','1982'=>'1982','1983'=>'1983',
-															'1984'=>'1984','1985'=>'1985','1986'=>'1986','1987'=>'1987',
-															'1988'=>'1988','1989'=>'1989','1990'=>'1990','1991'=>'1992',
-															'1993'=>'1993','1994'=>'1994','1995'=>'1995','1996'=>'1996',
-															'1997'=>'1997','1998'=>'1998','1999'=>'1999','2000'=>'2000',
-															'2001'=>'2001','2002'=>'2002','2003'=>'2003','2004'=>'2004',
-															'2005'=>'2005','2006'=>'2006','2007'=>'2007','2008'=>'2008',
-															'2009'=>'2009','2010'=>'2010','2011'=>'2011','2012'=>'2012',
-															'2013'=>'2013','2014'=>'2014','2015'=>'2015','2016'=>'2016',
-															'2017'=>'2017','2017'=>'2017','2018'=>'2018','2019'=>'2020',
-															'2021'=>'2021','2022'=>'2022','2023'=>'2023','2024'=>'2024',
-															'2025'=>'2025','2026'=>'2026','2027'=>'2027','2028'=>'2028',
-															'2029'=>'2029','2030'=>'2030','2030'=>'2031','2031'=>'2031',
-															'2032'=>'2032','2033'=>'2033','2034'=>'2034','2035'=>'2035',
-															'2036'=>'2036','2037'=>'2037','2038'=>'2038','2039'=>'2039',
-															'2040'=>'2040','2041'=>'2041','2042'=>'2042','2043'=>'2043',
-															'2044'=>'2044','2045'=>'2045','2046'=>'2046','2047'=>'2047',
-															'2048'=>'2048','2049'=>'2049','2050'=>'2050'
-															),array('title'=>'Año de publicación')); ?>
-															</span>
+		<?php echo $form->dropDownList($model,'publishing_year',array(
+		  		    '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
+					'1934'=>'1934','1935'=>'1935','1936'=>'1936','1937'=>'1937',
+					'1938'=>'1938','1939'=>'1939','1940'=>'1940','1941'=>'1941',
+					'1942'=>'1942','1943'=>'1943','1944'=>'1944','1945'=>'1945',
+					'1946'=>'1946','1947'=>'1947','1948'=>'1948','1949'=>'1949',
+					'1950'=>'1950','1951'=>'1951','1952'=>'1952','1953'=>'1953',
+					'1954'=>'1954','1955'=>'1956','1956'=>'1956','1957'=>'1957',
+					'1958'=>'1958','1959'=>'1959','1960'=>'1960','1961'=>'1961',
+					'1962'=>'1962','1963'=>'1963','1964'=>'1964','1965'=>'1965',
+					'1962'=>'1962','1963'=>'1963','1964'=>'1964','1965'=>'1965',
+					'1966'=>'1966','1967'=>'1967','1968'=>'1968','1969'=>'1969',
+					'1970'=>'1970','1971'=>'1971','1972'=>'1972','1973'=>'1973',
+					'1974'=>'1974','1975'=>'1975','1976'=>'1976','1977'=>'1977',
+					'1978'=>'1978','1979'=>'1979','1980'=>'1980','1981'=>'1981',
+					'1982'=>'1982','1983'=>'1983','1984'=>'1984','1985'=>'1985',
+					'1986'=>'1986','1987'=>'1987','1988'=>'1988','1989'=>'1989',
+					'1990'=>'1990','1991'=>'1992','1993'=>'1993','1994'=>'1994',
+					'1995'=>'1995','1996'=>'1996','1997'=>'1997','1998'=>'1998',
+					'1999'=>'1999','2000'=>'2000','2001'=>'2001','2002'=>'2002',
+					'2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
+					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
+					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
+
+					'2015'=>'2015'),array('title'=>'Año de publicación','prompt'=>'Seleccionar año de publicación'));?>
+</span>
 		<?php echo $form->error($model,'publishing_year'); ?>
 	</div>
 
@@ -381,7 +390,7 @@
 	<?php
 			$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
- 			'addButtonLabel'=>'Agregar nuevo',
+ 			'addButtonLabel'=>'Agregar nuevo autor',
 		 ));
     	?>
     	<div class="authorsRegistry ">
@@ -408,7 +417,7 @@
 
 		<div class="row">
 
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','numerical', 'integerOnly'=>true,'placeholder'=>'Posición','title'=>'Posición')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
     	</div>
@@ -439,7 +448,7 @@
 		</div>
 
 		 <div class="row">
-		  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'numerical', 'integerOnly'=>true,'placeholder'=>'Posición','title'=>'Posición')); ?>
+		  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
 		  <?php echo $form->error($value,'position');
 		?>
 	</div>
@@ -450,7 +459,7 @@
 
 	<div class="row buttons">
 
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton','onClick'=>'send()')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton')); ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('booksChapters/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 
