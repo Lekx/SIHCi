@@ -68,11 +68,10 @@
             <?php 
 
             echo Yii::app()->user->id."<br>";
-            if((int)Yii::app()->user->admin != 0 ){ 
-                echo "Sesion doble iniciada | ";
-                echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0)));
-}
-
+            if(isset(Yii::app()->user->admin) && (int)Yii::app()->user->admin != 0 ){ 
+                    echo "Sesion doble iniciada | ";
+                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0)));
+                }
             ?>
         </div>
         <?php
