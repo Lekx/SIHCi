@@ -55,15 +55,15 @@ $this->menu=array(
 	array('label'=>'Tesis Dirigidas ', 'url'=>array('directedThesis/admin'),'itemOptions'=>array('class' => 'menuitem 11')),
 		array('label'=>'Gestionar', 'url'=>array('directedThesis/admin'),'itemOptions'=>array('class' => 'sub11')),
 		array('label'=>'Crear', 'url'=>array('directedThesis/create'),'itemOptions'=>array('class' => 'sub11')),
-//directedThesis			
+//certifications			
 	array('label'=>'Certificaciones por consejos ', 'url'=>array('certifications/admin'),'itemOptions'=>array('class' => 'menulis 12')),
 		array('label'=>'Gestionar', 'url'=>array('certifications/admin'),'itemOptions'=>array('class' => 'sub12')),
 		array('label'=>'Crear', 'url'=>array('certifications/create'),'itemOptions'=>array('class' => 'sub12')),
-
-
-	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	
-	);
+//Languges
+	array('label'=>'Lenguajes ', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'menulis 12')),
+		array('label'=>'Gestionar', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'sub12')),
+		array('label'=>'Crear', 'url'=>array('languages/create'),'itemOptions'=>array('class' => 'sub12')),
+);
 
 ?>
 <div class="cvtitle">

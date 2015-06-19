@@ -1,45 +1,57 @@
 <h1>Gestión de Usuarios</h1>
-<!--<script type="text/javascript">
-	function changeStatus(var element){
-		alert ("mierda entramos");
+<script type="text/javascript">
+	function changeStatus(id){
+		//alert("entre mija");
 		$.ajax({
-   url: '',
-   data: {
-      format: 'json'
-   },
-   error: function() {
-      $('#info').html('<p>An error has occurred</p>');
-   },
-   dataType: 'jsonp',
+   url: yii.urls.base+"/index.php/adminUsers/changeStatus",
+     data: {id: id,value: $("#"+id).val()},
+  dataType: 'json',
+   method: "POST",
    success: function(data) {
-      var $title = $('<h1>').text(data.talks[0].talk_title);
-      var $description = $('<p>').text(data.talks[0].talk_description);
-      $('#info')
-         .append($title)
-         .append($description);
+      alert(data);
    },
-   type: 'GET'
+   
 });
-		'ajax' => array(
-        'data-url'=>$this->createUrl('serviceRegistration'),
-        'url' => $this->createUrl('servicePackage'), // it is selected at MyHtml::ajax() which URL to use
-        'type' => 'POST',
-        'dataType' => 'json',
-        'success' => 'function(data){
-            if(data.registration){
-                console.log("answer from registration");
-            }else if(data.package){
-                console.log("answer from package");
-            }
-        }',
-        'data' => array('id' => 'js:this.value'),
 	}
-</script> -->
+
+	function changeStatusCurriculum(id){
+		$.ajax({
+   url: yii.urls.base+"/index.php/adminUsers/changeStatusCurriculum",
+     data: {idc: id,valuec: $("#"+id).val()},
+  dataType: 'json',
+   method: "POST",
+   success: function(data) {
+      alert(data);
+   },
+   
+});
+	}
+</script> 
+
+
+<?php 
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#users-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
+
+$this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
 
 <?php echo CHtml::link('<span>Registrar<br>Usuario</span>', array('AdminUsers/CreateUser'));?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'users-grid',
 	'dataProvider' => $model->search(),
+	'filter'=>$model,
 	'columns' => array(
 		
 		'email',
@@ -47,7 +59,9 @@
 		'status',
 		array(
 			'header' => '<b>Nombre Completo</b>',
+			'name'=>'names',
 			'value' => array($this, 'usersFullNames'), 'type' => 'raw',
+			'filter' => Chtml::activeTextField($model, 'names')
 		),
 		array(
 			'header' => '<b>Rol</b>',
@@ -59,14 +73,23 @@
 		),	
 		 array(
 		 	'type'=>'raw',
-		 	'name' => 'estatus',
-          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"))'),
+		 	'header' => 'Estatus Usuario',
+          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array("onchange"=>"changeStatus($data->id)"))'),
+		 array(
+		 	'type'=>'raw',
+		 	'header' => 'Estatus Curriculum',
+          	'value'=>'!is_null(Curriculum::model()->findByPk($data->id)) ? CHtml::dropDownList(Curriculum::model()->findByPk($data->id)->id,Curriculum::model()->findByPk($data->id)->status,array(1 => "Activo" , 0 => "Inactivo"),array("onchange"=>\'changeStatusCurriculum(1)\')) : ""'),
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {delete} {login}', 'header' => 'Acciones',
 				'buttons' => array(
-					'login' => array('label' => 'Iniciar sesión como éste usuario.','imageUrl' => Yii::app()->request->baseUrl . '/images/login.png',),
-					'edit' => array('label' => 'Editar.','url'=> '"AdminUsers/update?ide=".$data->id'),
-					'delete' => array('label' => 'Editar.','url'=> '"deleteUser/".$data->id'),
+				'login' => array('label' => 'Iniciar sesión como éste usuario.','imageUrl' => Yii::app()->request->baseUrl . '/images/login.png',
+				'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id))',
+				),
+				'edit' => array(
+				'label' => 'Editar.',
+				'url'=> '"AdminUsers/update?ide=".$data->id'),
+
+
 				),
 		),
 	),

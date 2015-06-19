@@ -1,9 +1,9 @@
 <?php
-/* @var $this KnowledgeApplicationController */
-/* @var $model KnowledgeApplication */
+/* @var $this LanguagesController */
+/* @var $model Languages */
 
 $this->breadcrumbs=array(
-	'Knowledge Applications'=>array('index'),
+	'Languages'=>array('index'),
 	$model->id,
 );
 
@@ -19,9 +19,9 @@ $this->menu=array(
 		array('label'=>'Gestionar', 'url'=>array('pressNotes/admin'),'itemOptions'=>array('class' => 'sub2')),
 		array('label'=>'Crear', 'url'=>array('pressNotes/create'),'itemOptions'=>array('class' => 'sub2')),
 //knowledgeApplication
-	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3 now')),
-		array('label'=>'Consultar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub')),
-		array('label'=>'Contestar', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub')),
+	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),
+		array('label'=>'Gestionar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub3')),
+		array('label'=>'Crear', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub3')),
 //patent		
 	array('label'=>'Resgirtro patente ', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'menuitem 4')),
 		array('label'=>'Gestionar', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'sub4')),
@@ -59,31 +59,31 @@ $this->menu=array(
 		array('label'=>'Gestionar', 'url'=>array('certifications/admin'),'itemOptions'=>array('class' => 'sub12')),
 		array('label'=>'Crear', 'url'=>array('certifications/create'),'itemOptions'=>array('class' => 'sub12')),
 //Languges
-	array('label'=>'Lenguajes ', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'menulis 12')),
-		array('label'=>'Gestionar', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'sub12')),
-		array('label'=>'Crear', 'url'=>array('languages/create'),'itemOptions'=>array('class' => 'sub12')),
+	array('label'=>'Idiomas ', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'menulis 12 now')),
+		array('label'=>'Gestionar', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'sub')),
+		array('label'=>'Crear', 'url'=>array('languages/create'),'itemOptions'=>array('class' => 'sub')),
 );
 
 ?>
-<div class="cvtitle">
-            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
-            <h1>Evaluación Curricular</h1>
-            <hr>
-        </div>
 
-<h4>Registro de aplicación del conocimiento con fecha <?php echo '"'.substr($model->creation_date, 0, 10).'"'; ?></h4>
+<h1>View Languages #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
-	'htmlOptions' => array('class' => 'knowledge')
 	'attributes'=>array(
-		
-		/*'id',
-		'id_curriculum',*/
-		'term1',
-		'term2',
-		'term3',
-		'term4',
-		'term5',
+		'id',
+		'id_curriculum',
+		'language',
+		'description',
+		'native_language',
+		'is_traducer',
+		'is_teacher',
+		'conversational_level',
+		'reading_level',
+		'writting_level',
+		'evaluation_date',
+		'document_percentage',
+		'path',
+		'creation_date',
 	),
 )); ?>

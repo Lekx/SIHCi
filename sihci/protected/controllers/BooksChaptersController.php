@@ -67,7 +67,7 @@ class BooksChaptersController extends Controller
         $modelAuthor = new BooksChaptersAuthors;
       
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model, $modelAuthor);
 
         if(isset($_POST['BooksChapters']))
         {
@@ -184,7 +184,7 @@ class BooksChaptersController extends Controller
 		$modelAuthor = new BooksChaptersAuthors;
        
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model); 
+		$this->performAjaxValidation($model, $modelAuthors); 
 		$actual_url = $model->url_doc;
         if(isset($_POST['BooksChapters']))
         {
@@ -323,11 +323,11 @@ class BooksChaptersController extends Controller
 	 * Performs the AJAX validation.
 	 * @param BooksChapters $model the model to be validated
 	 */
-	protected function performAjaxValidation($model)
+	protected function performAjaxValidation($model, $modelAuthors)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='books-chapters-form')
 		{
-			echo CActiveForm::validate($model);
+			echo CActiveForm::validate(array($model, $modelAuthors));
 			Yii::app()->end();
 		}
 	}

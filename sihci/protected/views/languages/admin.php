@@ -1,10 +1,10 @@
 <?php
-/* @var $this KnowledgeApplicationController */
-/* @var $model KnowledgeApplication */
+/* @var $this LanguagesController */
+/* @var $model Languages */
 
 $this->breadcrumbs=array(
-	'Knowledge Applications'=>array('index'),
-	$model->id,
+	'Languages'=>array('index'),
+	'Manage',
 );
 
 $this->menu=array(
@@ -19,9 +19,9 @@ $this->menu=array(
 		array('label'=>'Gestionar', 'url'=>array('pressNotes/admin'),'itemOptions'=>array('class' => 'sub2')),
 		array('label'=>'Crear', 'url'=>array('pressNotes/create'),'itemOptions'=>array('class' => 'sub2')),
 //knowledgeApplication
-	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3 now')),
-		array('label'=>'Consultar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub')),
-		array('label'=>'Contestar', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub')),
+	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),
+		array('label'=>'Gestionar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub3')),
+		array('label'=>'Crear', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub3')),
 //patent		
 	array('label'=>'Resgirtro patente ', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'menuitem 4')),
 		array('label'=>'Gestionar', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'sub4')),
@@ -59,31 +59,55 @@ $this->menu=array(
 		array('label'=>'Gestionar', 'url'=>array('certifications/admin'),'itemOptions'=>array('class' => 'sub12')),
 		array('label'=>'Crear', 'url'=>array('certifications/create'),'itemOptions'=>array('class' => 'sub12')),
 //Languges
-	array('label'=>'Lenguajes ', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'menulis 12')),
-		array('label'=>'Gestionar', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'sub12')),
-		array('label'=>'Crear', 'url'=>array('languages/create'),'itemOptions'=>array('class' => 'sub12')),
+	array('label'=>'Idiomas ', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'menulis 12 now')),
+		array('label'=>'Gestionar', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'sub')),
+		array('label'=>'Crear', 'url'=>array('languages/create'),'itemOptions'=>array('class' => 'sub')),
 );
 
 ?>
+
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
             <h1>Evaluación Curricular</h1>
             <hr>
         </div>
 
-<h4>Registro de aplicación del conocimiento con fecha <?php echo '"'.substr($model->creation_date, 0, 10).'"'; ?></h4>
+<h4>Gestionar Idiomas:</h4>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'htmlOptions' => array('class' => 'knowledge')
-	'attributes'=>array(
-		
-		/*'id',
-		'id_curriculum',*/
-		'term1',
-		'term2',
-		'term3',
-		'term4',
-		'term5',
+<div class="search-form" style="display:block">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'languages-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>array(
+		// 'id',
+		// // 'id_curriculum',
+		// 'language',
+		// 'description',
+		// 'native_language',
+		// 'is_traducer',
+		array('header'=>'Idioma Nativo','type'=>'html','id'=>'native_language','value'=>'CHtml::encode($data->native_language)'),
+		array('header'=>'Idiomas','type'=>'html','id'=>'language','value'=>'CHtml::encode($data->language)'),
+	
+		// 'is_teacher',
+		// 'conversational_level',
+		// 'reading_level',
+		// 'writting_level',
+		// 'evaluation_date',
+		// 'document_percentage',
+		// 'path',
+		// 'creation_date',
+	
+		array(
+			'class'=>'CButtonColumn','header' => 'Acciones',
+			'buttons' => array(
+					'delete' => array('label' => 'Editar.','url'=> '"deleteLanguage/".$data->id'),
+				),
+		),
 	),
 )); ?>
