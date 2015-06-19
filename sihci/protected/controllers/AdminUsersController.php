@@ -361,6 +361,43 @@ class AdminUsersController extends Controller {
 		}
 	}
 
+	public function actionChangeStatus(){
+		$idRef = $_POST["id"];
+		$value = $_POST["value"];
+
+		if(Users::model()->updateByPk($idRef, array('status' => $value)))
+			echo "Actualizacion realizada con exito.";
+		else
+			echo "Error al actualizar el estado del usuario.";
+	}
+
+	public function actionChangeStatusCurriculum(){
+		$idRefc = $_POST["idc"];
+		$valuec = $_POST["valuec"];
+
+		if(Curriculum::model()->updateByPk($idRefc, array('status' => $valuec)))
+			echo "Actualizacion realizada con exito.";
+		else
+			echo "Error al actualizar el estado del usuario.";
+	}
+
+	public function actionDoubleSession($id){
+
+		if((int)$id == 0){
+			Yii::app()->user->setState('id',Yii::app()->user->admin);
+			Yii::app()->user->setState('admin',0);	
+			//echo "vamos a salir";
+			$this->redirect(array('adminUsers/adminUsers'));
+		}else{
+			Yii::app()->user->setState('admin',Yii::app()->user->id);
+			Yii::app()->user->setState('id',(int)$id);
+			//echo "vamos a entrar";
+			$this->redirect(array('account/infoAccount'));
+		}
+		//echo $id;
+		//$this->redirect(array('Account/InfoAccount'));
+	} 
+
 	public function usersFullNames($data, $row) {
 
 		$id = $data->id;
