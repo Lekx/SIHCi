@@ -61,10 +61,12 @@ class Books extends CActiveRecord
 			array('subdiscipline', 'length', 'max'=>45),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
-			array('path ,safe', 'safe', 'on'=>'update'),
-
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png'),
-
+			
+			array('path','required', 'on'=>'create'),
+			array('path', 'safe', 'on'=>'update'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
+			
+			//array('path','file','maxSize'=>array(1024 * 5000), 'message'=>'El Documento excede el peso permitido'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, isbn, book_title, publisher, edition, release_date, volume, pages, copies_issued, work_type, idioma, traductor_type, traductor, area, discipline, subdiscipline, path, keywords, searchValue ,creation_date', 'safe', 'on'=>'search'),
@@ -107,7 +109,7 @@ class Books extends CActiveRecord
 			'area' => 'Área',
 			'discipline' => 'Disciplina',
 			'subdiscipline' => 'Subdisciplina',
-			'path' => 'Archivo',
+			'path' => 'Documento',
 			'keywords' => 'Palabras claves',
 			'creation_date' => 'Creation Date',
 		);

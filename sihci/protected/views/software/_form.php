@@ -2,8 +2,8 @@
 /* @var $this SoftwareController */
 /* @var $model Software */
 /* @var $form CActiveForm */
-   $cs = Yii::app()->getClientScript();
-   $cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/software/js/script.js');
+  // $cs = Yii::app()->getClientScript();
+   //$cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/software/js/script.js');
 ?>
 
 <div class="form">
@@ -14,8 +14,8 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
 	'enableClientValidation'=>true,
+	'enableAjaxValidation'=>true,
 	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
 	'clientOptions'=>array('validateOnSubmit'=>true),
 	
@@ -281,11 +281,13 @@
 
 
 	<div class="row buttons">		
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton','onClick'=>($model->isNewRecord ?  'send()' : 'upDate()'))); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('software/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
-<?php $this->endWidget(); ?>
 
+
+
+<?php $this->endWidget(); ?>
 
 </div><!-- form -->
