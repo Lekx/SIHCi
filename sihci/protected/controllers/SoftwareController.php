@@ -1,5 +1,5 @@
 <?php
-
+//include ("logoutTime.php"); 
 class SoftwareController extends Controller
 {
 	/**

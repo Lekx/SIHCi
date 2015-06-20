@@ -1,5 +1,4 @@
 <?php
-
 class AdminSpecialtyAreasController extends Controller
 {
 	/**

@@ -5,21 +5,7 @@
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
 ?>
-<script type="text/javascript">
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
 
-    });
-});
-</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -29,7 +15,7 @@ $(document).ready(function() {
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableClientValidation'=>true,
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
