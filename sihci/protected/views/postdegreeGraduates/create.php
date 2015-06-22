@@ -3,8 +3,8 @@
 /* @var $model PostdegreeGraduates */
 
 $this->breadcrumbs=array(
-	'Postdegree Graduates'=>array('index'),
-	'Create',
+	'Graduados de posgrado'=>array('index'),
+	'Crear',
 );
  
 
