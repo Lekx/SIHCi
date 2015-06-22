@@ -1,5 +1,4 @@
 <?php
-
 class InformationGeneralDirectionController extends Controller
 {
 	public function actionIndex()

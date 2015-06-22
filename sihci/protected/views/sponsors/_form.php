@@ -19,6 +19,29 @@ $(document).ready(function() {
     });
 });
 </script>
+
+<script>
+    function soloLetras(e){
+ key = e.keyCode || e.which;
+ tecla = String.fromCharCode(key).toLowerCase();
+ letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+ especiales = [8,37,39,46,45,47];
+
+ tecla_especial = false
+ for(var i in especiales){
+     if(key == especiales[i]){
+  tecla_especial = true;
+  break;
+            } 
+ }
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     return false;
+     }
+</script>
+
+
+
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -57,31 +80,31 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row" class="">
-		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','title'=>'Estado'));?>
+		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','onKeypress'=>'return soloLetras(event)','title'=>'Estado'));?>
 		<?php echo $form->error($modelAddresses, 'state');?>
 	</div>
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','title'=>'Delegación'));?>
+		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','onKeypress'=>'return soloLetras(event)','title'=>'Delegación'));?>
 		<?php echo $form->error($modelAddresses, 'delegation');?>
 	</div>
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','title'=>'Ciudad'));?>
+		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','onKeypress'=>'return soloLetras(event)','title'=>'Ciudad'));?>
 		<?php echo $form->error($modelAddresses, 'city');?>
 	</div>
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','title'=>'Municipio'));?>
+		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','onKeypress'=>'return soloLetras(event)','title'=>'Municipio'));?>
 		<?php echo $form->error($modelAddresses, 'town');?>
 	</div>
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'colony', array('size' => 45, 'maxlength' => 45, 'placeholder' => 'Colonia','title'=>'Colonia'));?>
+		<?php echo $form->textField($modelAddresses, 'colony', array('size' => 45, 'maxlength' => 45, 'placeholder' => 'Colonia','class' => 'lettersOnly','title'=>'Colonia'));?>
 		<?php echo $form->error($modelAddresses, 'colony');?>
 	</div>
 
@@ -101,19 +124,7 @@ $(document).ready(function() {
 		<?php echo $form->error($modelAddresses, 'internal_number');?>
 	</div>
 
-	<!--///////////////////////FORM SPONSORS/////////////////////////////////////////////////////////////-->
 
-	<!--<div class="row">
-		<?php /*echo $form->labelEx($model,'id_user'); ?>
-<?php echo $form->textField($model,'id_user'); ?>
-<?php echo $form->error($model,'id_user');*/?>
-	</div>-->
-
-	<!--<div class="row">
-		<?php /*echo $form->labelEx($model,'id_address'); ?>
-<?php echo $form->textField($model,'id_address'); ?>
-<?php echo $form->error($model,'id_address');*/?>
-	</div>-->
 
 	<div class="row">
 		<?php echo $form->textField($model, 'sponsor_name', array('size' => 50, 'maxlength' => 50, 'placeholder'=>'Nombre de la empersa','title'=>'Nombre de la empersa'));?>

@@ -3,7 +3,7 @@
 /* @var $model PostdegreeGraduates */
 
 $this->breadcrumbs=array(
-	'Postdegree Graduates'=>array('index'),
+	'Graduados de posgrado'=>array('index'),
 	'Manage',
 );
 
@@ -66,20 +66,6 @@ $this->menu=array(
 
 
  ?>
-<?php  
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#postdegree-graduates-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-?>
 
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
@@ -99,11 +85,17 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'postdegree-graduates-grid',
 	'dataProvider'=>$model->search(),
-	
+    'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
+		
+		array('name' =>'Nombre completo del graduado.', 'type'=>'html','id'=>'fullname','value'=>'CHtml::encode($data->fullname)'),
+		array('name' =>'Fecha de creación.', 'type'=>'html','id'=>'creation_date','value'=>'CHtml::encode($data->creation_date)'),
+        
+  		/*'id',
 		'fullname',
 		'creation_date',		
-		/*'id',
 		'id_curriculum',*/
 		array(
 			'class'=>'CButtonColumn',

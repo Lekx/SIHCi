@@ -1,4 +1,4 @@
-s<?php
+<?php
 /* @var $this DirectedThesisController */
 /* @var $model DirectedThesis */
 /* @var $form CActiveForm */
@@ -13,9 +13,6 @@ s<?php
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
-
-
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 
@@ -38,7 +35,7 @@ s<?php
 		    		'size' => '10',
 		        	'maxlength' => '10',
 		        	'readOnly'=>true,
-		        	'placeholder'=>" Seleccionar fecha de Conclusión",
+		        	'placeholder'=>" Seleccionar fecha de conclusión",
 		        	'title'=>'Fecha de Conclusión'
 		    ),
 		));
@@ -59,7 +56,7 @@ s<?php
 
 	<div class="row">
 				<span class="plain-select">
-		<?php echo $form->dropDownList($model,'grade',array('Maestria'=>'Maestria','Licenciatura'=>'Licenciatura','Preparatoria'=>'Preparatoria'),array('prompt'=>'Seleccionar Grado','title'=>'Grado')); ?>
+		<?php echo $form->dropDownList($model,'grade',array('Maestria'=>'Maestria','Licenciatura'=>'Licenciatura','Preparatoria'=>'Preparatoria'),array('prompt'=>'Seleccionar grado','title'=>'Grado')); ?>
 		</span>
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
@@ -71,7 +68,7 @@ s<?php
 			                                                 'Instituciones del sector de educacion superior publicas'=>'Instituciones del sector de educacion superior publicas','Instituciones del sector de educacion superior privadas'=>'Instituciones del sector de educacion superior privadas',
 			                                                 'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)','Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
 			                                                 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras','consultoras'=>'consultoras','Gobierno municipal'=>'Gobierno municipal','Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
-			                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),array('prompt'=>'Seleccionar Sector','title'=>'Sector')); ?>
+			                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),array('prompt'=>'Seleccionar sector','title'=>'Sector')); ?>
 			                                                 </span>
 		<?php echo $form->error($model,'sector'); ?>
 	</div>
@@ -106,7 +103,7 @@ s<?php
 			                                                       'CENTRO DE GRADUADOS E INNVESTIGACION DEL INSTITUTO TECNOLOGICO DE MORELIA'=>'CENTRO DE GRADUADOS E INNVESTIGACION DEL INSTITUTO TECNOLOGICO DE MORELIA','CENTRO DE GRADUADOS E INVESTIGACION DEL INSTITUTO TECNOLOGICO DE LA LAGUNA'=>'CENTRO DE GRADUADOS E INVESTIGACION DEL INSTITUTO TECNOLOGICO DE LA LAGUNA',
 			                                                       'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM'=>'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM','COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN'=>'COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN','UNIVERSIDAD DEL ISTMO'=>'UNIVERSIDAD DEL ISTMO',
 			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN','INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX','INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA',
-			                                                       'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'=>'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'),array('prompt'=>'Seleccionar Organizaci&oacute;n','title'=>'Organizacíon')); ?>
+			                                                       'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'=>'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'),array('prompt'=>'Seleccionar organización','title'=>'Organizacíon')); ?>
 			                                                       </span>
 		<?php echo $form->error($model,'organization'); ?>
 	</div>
@@ -125,7 +122,7 @@ s<?php
 			                                                    'CENTRO DE ESTUDIOS PARA EXTRANJEROS'=>'CENTRO DE ESTUDIOS PARA EXTRANJEROS','FACULTAD DE ODONTOLOGIA'=>'FACULTAD DE ODONTOLOGIA','CENTRO DE ESTUDIOS E INVESTIGACION EN COMPORTAMIENTO'=>'CENTRO DE ESTUDIOS E INVESTIGACION EN COMPORTAMIENTO','FACULTAD DE ODONTOLOGIA'=>'FACULTAD DE ODONTOLOGIA','CENTRO UNIVERSITARIO DE LOS VALLES'=>'CENTRO UNIVERSITARIO DE LOS VALLES','CENTRO UNIVERSITARIO DEL NORTE'=>'CENTRO UNIVERSITARIO DEL NORTE',
 			                                                    'CENTRO UNIVERSITARIO DE LA COSTA'=>'CENTRO UNIVERSITARIO DE LA COSTA','ESCUELA PREPARATORIA DE JALISCO'=>'ESCUELA PREPARATORIA DE JALISCO','CENTRO UNIVERSITARIO DE LA COSTA SUR'=>'CENTRO UNIVERSITARIO DE LA COSTA SUR','PREPARATORIA 4'=>'PREPARATORIA 4','PREPARATORIA # 7'=>'PREPARATORIA # 7','CENTRO VOCACIONAL DE ACTIVIDADES PARA EL DESARROLLO DE LA COMUNIDAD'=>'CENTRO VOCACIONAL DE ACTIVIDADES PARA EL DESARROLLO DE LA COMUNIDAD',
 			                                                    'SISTEMA DE UNIVERSIDAD VIRTUAL'=>'SISTEMA DE UNIVERSIDAD VIRTUAL','SIISTEMA DE EDUCACION MEDIA SUPERIOR'=>'SIISTEMA DE EDUCACION MEDIA SUPERIOR','PROGRAMA UNIVERSITARIO DE LENGUAS EXTRANJERAS'=>'PROGRAMA UNIVERSITARIO DE LENGUAS EXTRANJERAS','COORDINACIÓN GENERAL DE SERVICIOS A UNIVERSITARIOS'=>'COORDINACIÓN GENERAL DE SERVICIOS A UNIVERSITARIOS','ESCUELA PREPARATORIA REGIONAL DE ATOTONILCO'=>'ESCUELA PREPARATORIA REGIONAL DE ATOTONILCO',
-			                                                    'DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA'=>'DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA','UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'=>'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG','COORDINACION DE COOPERACION ACADEMICA UDG'=>'COORDINACION DE COOPERACION ACADEMICA UDG','CENTRO UNIVERSITARIO DE TONALA'=>'CENTRO UNIVERSITARIO DE TONALA','ESCUELA PREPARATORIA DE TONALA NORTE'=>'ESCUELA PREPARATORIA DE TONALA NORTE'),array('prompt'=>'Seleccionar Segundo Nivel','title'=>'Segundo Nivel')); ?>
+			                                                    'DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA'=>'DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA','UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG'=>'UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG','COORDINACION DE COOPERACION ACADEMICA UDG'=>'COORDINACION DE COOPERACION ACADEMICA UDG','CENTRO UNIVERSITARIO DE TONALA'=>'CENTRO UNIVERSITARIO DE TONALA','ESCUELA PREPARATORIA DE TONALA NORTE'=>'ESCUELA PREPARATORIA DE TONALA NORTE'),array('prompt'=>'Seleccionar segundo nivel','title'=>'Segundo Nivel')); ?>
 			                                                    </span>
 		<?php echo $form->error($model,'second_level'); ?>
 	</div>
