@@ -96,6 +96,9 @@ $this->renderPartial('_search',array(
 				'edit' => array(
 				'label' => 'Editar.',
 				'url'=> '"AdminUsers/update?ide=".$data->id'),
+				'delete' => array(
+				'label' => 'Eliminar.',
+				'url'=> '"AdminUsers/deleteUser?id=".$data->id'),
 
 
 				),
