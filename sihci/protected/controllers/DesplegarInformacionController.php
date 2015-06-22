@@ -1,5 +1,4 @@
 <?php
-
 class DesplegarInformacionController extends Controller
 {
 	public function actionIndex()

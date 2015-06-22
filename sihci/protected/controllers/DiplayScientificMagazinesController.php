@@ -1,5 +1,4 @@
 <?php
-
 class DiplayScientificMagazinesController extends Controller
 {
 	public function actionIndex()

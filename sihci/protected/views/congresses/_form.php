@@ -2,11 +2,27 @@
 /* @var $this CongressesController */
 /* @var $model Congresses */
 /* @var $form CActiveForm */
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/congresses/js/script.js');
 ?>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+
+    });
+});
+</script>
 <!--PC01-Registrar datos  Participacion en congresos-->
 <div class="form">
-
-
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'congresses-form',
@@ -22,13 +38,13 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto','title'=>'Puesto')); ?>
+		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Tipo de participación','title'=>'Tipo de participación')); ?>
 		<?php echo $form->error($model,'work_title'); ?>
 	</div>
 
 	<div class="row">
 			<span class="plain-select">
-		<?php echo $form->dropDownList($model,'year', array('promt'=>'Seleccionar año',
+		<?php echo $form->dropDownList($model,'year', array(
 															'1930'=>'1930','1931'=>'1931',
 															'1932'=>'1932','1933'=>'1933','1934'=>'1934','1935'=>'1935',
 															'1936'=>'1936','1937'=>'1937','1938'=>'1938','1939'=>'1939',
@@ -61,7 +77,7 @@
 															'2044'=>'2044','2045'=>'2045','2046'=>'2046','2047'=>'2047',
 															'2048'=>'2048','2049'=>'2049','2050'=>'2050'
 
-															),array('title'=>'Año')); ?>
+															),array('title'=>'Año','prompt'=>'Seleccionar año')); ?>
 															</span>
 		<?php echo $form->error($model,'year'); ?>
 	</div>
@@ -72,13 +88,6 @@
 		<?php echo $form->error($model,'congress'); ?>
 	</div>
 
-	<div class="row">
-         <!-- <?php /*
-                $status = array('Nacional' => 'Nacional','Internacional'=>'Internacional');
-                echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
-         <?php echo $form->error($model,'type'); */ ?> -->
-
-	</div>
 
 	<div class="row">
 			<span class="plain-select">
@@ -89,7 +98,7 @@
 				    'name' => Chtml::activeName($model, 'country'),
 				    'id' => Chtml::activeId($model, 'country'),
 				    'useCountryCode' => false,
-				    'defaultValue' => 'Mexico',
+				    'defaultValue' => 'México',
 				    'firstEmpty' => false,
 			    )
 			);
@@ -100,7 +109,7 @@
 
 	<div class="row">
 			<span class="plain-select">
-        <?php echo $form->dropDownList($model,'work_type',array('promt'=>'Seleccionar tipo de trabajo','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'),array('title'=>'Tipo Trabajo'));?>
+        <?php echo $form->dropDownList($model,'work_type',array('Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'),array('title'=>'Tipo Trabajo','prompt'=>'Seleccionar tipo de trabajo'));?>
         </span>
         <?php echo $form->error($model,'work_type'); ?>
 
@@ -115,7 +124,7 @@
 	<?php
 			$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
- 			'addButtonLabel'=>'Agregar nuevo',
+ 			'addButtonLabel'=>'Agregar nuevo autor',
 		 ));
     	?>
     	<div class="authorsRegistry ">
@@ -139,7 +148,7 @@
 
 		<div class="row">
 
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','numerical', 'integerOnly'=>true,'placeholder'=>'Posición','title'=>'Posición')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
     	</div>
@@ -167,7 +176,7 @@
 				  </div>
 
 				  <div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición')); ?>
+					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
 	<?php } ?>

@@ -119,14 +119,21 @@ class Patent extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+
 		$sort= new CSort();
-		$sort->defaultOrder='presentation_date ASC';
+		$sort->defaultOrder='name ASC';
+
+
 
 		if($this->searchValue)
 		{
 			$criteria->addCondition("name LIKE CONCAT('%', :searchValue , '%') OR owner LIKE CONCAT('%', :searchValue ,'%') OR application_number LIKE CONCAT('%', :searchValue , '%') OR state LIKE CONCAT('%', :searchValue , '%') OR application_type LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
+
+
+		return new CActiveDataProvider($this, array('criteria'=>$criteria,'sort'=>$sort));
+
 	  /*	
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
@@ -147,7 +154,14 @@ class Patent extends CActiveRecord
 		$criteria->compare('industrial_exploitation',$this->industrial_exploitation);
 		$criteria->compare('resource_operator',$this->resource_operator,true);
 	   */
-		return new CActiveDataProvider($this, array('criteria'=>$criteria,'sort'=>$sort));
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		return new CActiveDataProvider($this, array(
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'presentation_date ASC',
+		    ),
+		));
+
 	}
 
 	/**

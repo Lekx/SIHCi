@@ -108,7 +108,7 @@ class Software extends CActiveRecord
 			'innovation_trascen' => 'Innovacón',
 			'transfer_mechanism' => 'Mecanismo de transferencia.',
 			'hr_formation' => 'Formación HR',
-			'economic_support' => 'Apoyo económico',
+			'economic_support' => '¿ Recibio apoyo económico ?',
 			'path' => 'Archivo',
 			'creation_date' => 'Creation Date',
 		);
@@ -139,8 +139,12 @@ class Software extends CActiveRecord
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}		
 	
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'title ASC',
+		    ),
 		));
 	}
 

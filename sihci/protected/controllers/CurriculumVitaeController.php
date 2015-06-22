@@ -26,7 +26,7 @@ class CurriculumVitaeController extends Controller
 				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
 								'DeletePhone', 'DeleteResearch', 'DeleteGrade', 'DeleteDocs',
 								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission'),
-				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1")',
+				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1" || $user->id_roles==="13")',
 				 'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -48,7 +48,7 @@ class CurriculumVitaeController extends Controller
 
 		$model = Persons::model()->findByAttributes(array('id_user' => $iduser));
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user' => $iduser));
-		$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc/';
+		$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc';
 			
 			$section = "Curriculum Vitae"; //manda parametros al controlador SystemLog
 			$details = "Subsección Datos Personales. Registro Número ".$model->id;
@@ -663,7 +663,7 @@ class CurriculumVitaeController extends Controller
 			$details = "Subsección Nombramientos. Número Registro: ".$model->id;
 			$action = "Modificación.";
 		}
-
+		
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Curriculum']))

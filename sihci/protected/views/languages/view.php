@@ -65,25 +65,47 @@ $this->menu=array(
 );
 
 ?>
-
-<h1>View Languages #<?php echo $model->id; ?></h1>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div>
+<h3>Detalles del idioma <?php echo $model->language; ?></h3>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'id_curriculum',
+		// 'id',
+		// 'id_curriculum',
 		'language',
 		'description',
-		'native_language',
-		'is_traducer',
-		'is_teacher',
+		// 'native_language',
+		array(
+			'label'=>'Idioma Nativo',
+			'name'=>'native_language',
+			'value'=>$model->native_language == 1 ? "Si" : "No",
+			),
+		array(
+			'label'=>'Traductor',
+			'name'=>'is_traducer',
+			'value'=>$model->is_traducer == 1 ? "Si" : "No",
+			),
+		array(
+			'label'=>'Profesor',
+			'name'=>'is_teacher',
+			'value'=>$model->is_teacher == 1 ? "Si" : "No",
+			),
 		'conversational_level',
 		'reading_level',
 		'writting_level',
 		'evaluation_date',
 		'document_percentage',
-		'path',
-		'creation_date',
+		array(
+			'label'=>'Archivo',
+			'type'=>'raw',
+			'value'=>$model->path != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")) : "No se ha subido el archivo",
+		),	
+		// 'path',
+		// 'creation_date',
 	),
 )); ?>

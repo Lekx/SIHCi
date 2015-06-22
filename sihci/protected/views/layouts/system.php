@@ -277,7 +277,7 @@
                     <span><?php echo $infoUser['labelAdmin'] ?></span>
                 </div>
                 <div class="footermenuI">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PBitacora.png alt="home">', array('site/index'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PBitacora.png alt="home">', array('account/systemLog'));?>
                     <span>Bitacora</span>
                 </div>
                 <div class="footermenuI logout">

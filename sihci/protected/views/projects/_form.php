@@ -57,14 +57,20 @@ $('<div></div>').appendTo('form')
 		  url: yii.urls.base+"/index.php/projects/create",
 		  method: "POST",
 		  data: $("#projects-form").serialize()+"&type="+value,
-		  dataType: "json"
+		  dataType: "json",
+          success: function(data) {
+				alert(data);
+	     },
 		});
 
 			request.done(function(data) {
 				alert(data);
 				window.location = yii.urls.cancelProject;
 		});
-			
+		request.fail(function(data) {
+				alert(data);
+				window.location = yii.urls.cancelProject;
+		});
 	}
 
 	function save(value){

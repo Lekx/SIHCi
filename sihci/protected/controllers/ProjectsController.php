@@ -80,15 +80,30 @@ class ProjectsController extends Controller
 			if($_POST['type']== "draft")
 				$model->status = "borrador";
 			else
-				$model->status = "revisión divuh";
+				$model->status = "divuh";
 
 			$model->folio = "-1";
 			$model->is_sponsored = 0; 
 			$model->registration_number = "-1";
 
 			if($model->save()){
-				echo "datos guardados con exito";
-				$this->redirect(array('view','id'=>$model->id));
+				if($_POST['type'] != "draft"){
+					$followup = new ProjectsFollowups;
+					$followup->id_project = $model->id;
+					$followup->id_user = Yii::app()->user->id;
+					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+
+					if($followup->save()){
+						echo "Proyecto enviado a revisión con éxito";
+						$this->redirect(array('admin'));
+					}else{
+						echo "no se guardo el followup - ".$followup->id_project." - ".$followup->id_user." - ".$followup->followup." - ".$followup->creation_date;
+					}
+				}else{
+					echo "Proyecto guardado con éxito";
+					$this->redirect(array('admin'));
+				}	
+			
 			}else{
 				echo "por favor revise que la información sea correcta";
 			}
@@ -166,9 +181,10 @@ class ProjectsController extends Controller
 
 	public function actionAcceptSponsorship($id)
 	{
-		Sponsorship::model()->updateByPk($id,array("status"=>"aceptado"));
+		
 		$sponsoredProjExist = SponsoredProjects::model()->findByAttributes(array("id_sponsorship"=>$id));
 		if(!is_object($sponsoredProjExist)){
+			//echo "caca";
 			$sponsored = Sponsorship::model()->findByPk($id);
 			$project = new Projects;
 
@@ -202,8 +218,10 @@ class ProjectsController extends Controller
 				if($project->save()){
 					$sponsoredProj->id_project = $project->id;
 					if($sponsoredProj->save())
-						if(!isset($_GET['ajax']))
-							$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('sponsoredAdmin'));
+						if(Sponsorship::model()->updateByPk($id,array("status"=>1)))
+							if(!isset($_GET['ajax']))
+								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('sponsoredAdmin'));
+
 				}
 		}
 		if(!isset($_GET['ajax']))
@@ -221,10 +239,12 @@ class ProjectsController extends Controller
 
 	public function actionSponsoredAdmin()
 	{
-		$model = new Sponsorship('search');
+		//$model = new Sponsorship('search');
+
+		$model = Sponsorship::model()->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id));
 
 
-		$model->unsetAttributes();  // clear any default values
+		//$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Projects']))
 			$model->attributes=$_GET['Projects'];
 

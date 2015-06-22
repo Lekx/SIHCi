@@ -3,9 +3,9 @@
 /* @var $model PostdegreeGraduates */
 
 $this->breadcrumbs=array(
-	'Postdegree Graduates'=>array('index'),
+	'Graduados de posgrado'=>array('admin'),
 	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Actualizar',
 );
 
 
