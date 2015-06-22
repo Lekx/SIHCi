@@ -60,14 +60,18 @@ class BooksChaptersController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
 	//CA01-Registrar datos
 	public function actionCreate()
     {
+
         $model=new BooksChapters;
         $modelAuthor = new BooksChaptersAuthors;
       
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model, $modelAuthor);
+
+         $this->performAjaxValidation($model);
+       
 
         if(isset($_POST['BooksChapters']))
         {
@@ -86,6 +90,7 @@ class BooksChaptersController extends Controller
  							 $model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
 		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
 	                	
+		           			 	//echo"antes de guardar";
 			               		if($model->save()){
 			               		              
 					 			$names = $_POST['names'];
@@ -114,7 +119,7 @@ class BooksChaptersController extends Controller
 
 			               		}
 			               		else{	
-
+			               
 			               		echo CJSON::encode(array('status'=>'404'));
                                 Yii::app()->end();
 			               		}
@@ -128,7 +133,7 @@ class BooksChaptersController extends Controller
 			        else
 			        {
 			        	if($model->save()){
-			               		              
+
 					 			$names = $_POST['names'];
 					            $last_name1 = $_POST['last_names1'];
 					            $last_name2 = $_POST['last_names2'];
@@ -154,11 +159,7 @@ class BooksChaptersController extends Controller
                                Yii::app()->end();
 
 			               }
-			               else{
 
-			               		echo CJSON::encode(array('status'=>'404'));
-                                Yii::app()->end();
-			               }
 			        }
 
 				   
@@ -197,6 +198,8 @@ class BooksChaptersController extends Controller
 
                     if(!empty($actual_url))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_url);
+
+                if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
                     $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/';
                   
@@ -205,9 +208,11 @@ class BooksChaptersController extends Controller
 
                        $model->url_doc->saveAs($urlFile.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
 		               $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();                                                    
-                }
-                
-                else {
+                 }
+			        else  
+			        	echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
+
+                } else {
                   
                     $model->url_doc = $actual_url;       
                  }   
@@ -323,11 +328,11 @@ class BooksChaptersController extends Controller
 	 * Performs the AJAX validation.
 	 * @param BooksChapters $model the model to be validated
 	 */
-	protected function performAjaxValidation($model, $modelAuthors)
+	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='books-chapters-form')
 		{
-			echo CActiveForm::validate(array($model, $modelAuthors));
+			echo CActiveForm::validate(array($model));
 			Yii::app()->end();
 		}
 	}

@@ -96,8 +96,12 @@ class ResearchAreas extends CActiveRecord
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('name',$this->name,true);*/
 
+
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>array(
+				'order'=>'name ASC',
+				),
+
 		));
 	}
 

@@ -3,7 +3,7 @@
 /* @var $model PostdegreeGraduates */
 
 $this->breadcrumbs=array(
-	'Postdegree Graduates'=>array('index'),
+	'Graduados de posgrado'=>array('index'),
 	'Manage',
 );
 
@@ -66,20 +66,6 @@ $this->menu=array(
 
 
  ?>
-<?php  
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#postdegree-graduates-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-?>
 
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">

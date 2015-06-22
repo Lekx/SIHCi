@@ -91,8 +91,20 @@ class PostdegreeGraduates extends CActiveRecord
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
 
+
+		
+		$criteria = new CDbCriteria;	
+		$criteria->compare('id',$this->id);
+		$criteria->compare('id_curriculum',$this->id_curriculum);
+		$criteria->compare('fullname',$this->fullname);
+		
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'fullname ASC',
+		    ),
 		));
 	}
 

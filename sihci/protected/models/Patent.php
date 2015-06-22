@@ -119,8 +119,11 @@ class Patent extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+
 		$sort= new CSort();
 		$sort->defaultOrder='name ASC';
+
+
 
 		if($this->searchValue)
 		{
@@ -128,7 +131,37 @@ class Patent extends CActiveRecord
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
 
+
 		return new CActiveDataProvider($this, array('criteria'=>$criteria,'sort'=>$sort));
+
+	  /*	
+		$criteria->compare('id',$this->id);
+		$criteria->compare('id_curriculum',$this->id_curriculum);
+		$criteria->compare('country',$this->country,true);
+		$criteria->compare('participation_type',$this->participation_type,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('state',$this->state,true);
+		$criteria->compare('application_type',$this->application_type,true);
+		$criteria->compare('application_number',$this->application_number);
+		$criteria->compare('patent_type',$this->patent_type,true);
+		$criteria->compare('consession_date',$this->consession_date,true);
+		$criteria->compare('record',$this->record,true);
+		$criteria->compare('presentation_date',$this->presentation_date,true);
+		$criteria->compare('international_clasification',$this->international_clasification,true);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('owner',$this->owner,true);
+		$criteria->compare('resumen',$this->resumen,true);
+		$criteria->compare('industrial_exploitation',$this->industrial_exploitation);
+		$criteria->compare('resource_operator',$this->resource_operator,true);
+	   */
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		return new CActiveDataProvider($this, array(
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'presentation_date ASC',
+		    ),
+		));
+
 	}
 
 	/**

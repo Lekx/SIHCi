@@ -1,3 +1,11 @@
+<?php
+/* @var $this BooksController */
+/* @var $model Books */
+/* @var $form CActiveForm */
+$baseUrl = Yii::app()->baseUrl;
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl. '/js/admin.js');
+?>
 <h1>Gestión de Usuarios</h1>
 <script type="text/javascript">
 	function changeStatus(id){
@@ -51,7 +59,7 @@ $this->renderPartial('_search',array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'users-grid',
 	'dataProvider' => $model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns' => array(
 		
 		'email',
