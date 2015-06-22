@@ -117,11 +117,9 @@ class BooksController extends Controller
      							$action = "Creación";
 								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
      							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-			                    
-
-				               echo CJSON::encode(array('status'=>'success'));
-     		                   $this->redirect(array('admin'));
-	                           Yii::app()->end();
+			                    echo CJSON::encode(array('status'=>'success'));
+	                            $this->redirect(array('admin','id'=>$model->id));
+	                            Yii::app()->end();
 
 			               }					               
 			               else
@@ -254,7 +252,7 @@ class BooksController extends Controller
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
        	 		   
        	 		    echo CJSON::encode(array('status'=>'200'));
-       	 		    $this->redirect(array('admin','id'=>$model->id));
+                    $this->redirect(array('admin','id'=>$model->id));
                     Yii::app()->end();
             	} 
             	
@@ -262,7 +260,7 @@ class BooksController extends Controller
                 {
     				echo CJSON::encode(array('status'=>'404'));
                     Yii::app()->end();
-                } 
+                }           
             
         }
         	

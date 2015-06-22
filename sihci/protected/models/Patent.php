@@ -120,33 +120,14 @@ class Patent extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 		$sort= new CSort();
-		$sort->defaultOrder='presentation_date ASC';
+		$sort->defaultOrder='name ASC';
 
 		if($this->searchValue)
 		{
 			$criteria->addCondition("name LIKE CONCAT('%', :searchValue , '%') OR owner LIKE CONCAT('%', :searchValue ,'%') OR application_number LIKE CONCAT('%', :searchValue , '%') OR state LIKE CONCAT('%', :searchValue , '%') OR application_type LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
-	  /*	
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('country',$this->country,true);
-		$criteria->compare('participation_type',$this->participation_type,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('state',$this->state,true);
-		$criteria->compare('application_type',$this->application_type,true);
-		$criteria->compare('application_number',$this->application_number);
-		$criteria->compare('patent_type',$this->patent_type,true);
-		$criteria->compare('consession_date',$this->consession_date,true);
-		$criteria->compare('record',$this->record,true);
-		$criteria->compare('presentation_date',$this->presentation_date,true);
-		$criteria->compare('international_clasification',$this->international_clasification,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('owner',$this->owner,true);
-		$criteria->compare('resumen',$this->resumen,true);
-		$criteria->compare('industrial_exploitation',$this->industrial_exploitation);
-		$criteria->compare('resource_operator',$this->resource_operator,true);
-	   */
+
 		return new CActiveDataProvider($this, array('criteria'=>$criteria,'sort'=>$sort));
 	}
 

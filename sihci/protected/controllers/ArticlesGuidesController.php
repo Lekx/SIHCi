@@ -234,6 +234,7 @@ class ArticlesGuidesController extends Controller
 								$modelAuthor->updateByPk($idsArticlesGuides[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
                 		    }
                 	    }
+                	    
                 	    $section = "Artículos y Guías"; 
 		     			$action = "Modificación";
 						$details = "Número Registro: ".$model->id;
