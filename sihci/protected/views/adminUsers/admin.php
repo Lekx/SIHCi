@@ -6,7 +6,8 @@ $baseUrl = Yii::app()->baseUrl;
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile($baseUrl. '/js/admin.js');
 ?>
-<h1>Gestión de Usuarios</h1>
+
+
 <script type="text/javascript">
 	function changeStatus(id){
 		//alert("entre mija");
@@ -36,6 +37,12 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
 	}
 </script> 
 
+<div class="admintitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1>Gestión de usuarios</h1>
+            <hr>
+        </div>
+
 
 <?php 
 Yii::app()->clientScript->registerScript('search', "
@@ -55,7 +62,6 @@ $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 
-<?php echo CHtml::link('<span>Registrar<br>Usuario</span>', array('AdminUsers/CreateUser'));?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'users-grid',
 	'dataProvider' => $model->search(),
@@ -90,11 +96,12 @@ $this->renderPartial('_search',array(
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {delete} {login}', 'header' => 'Acciones',
 				'buttons' => array(
-				'login' => array('label' => 'Iniciar sesión como éste usuario.','imageUrl' => Yii::app()->request->baseUrl . '/images/login.png',
+				'login' => array('label' => '','imageUrl' => Yii::app()->request->baseUrl . '/img/Acciones/sesión.png',
 				'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id))',
 				),
 				'edit' => array(
-				'label' => 'Editar.',
+				'label' => '',
+				'imageUrl'=> Yii::app()->request->baseUrl . '/img/Acciones/editar.png',
 				'url'=> '"AdminUsers/update?ide=".$data->id'),
 
 

@@ -3,7 +3,7 @@
 class FilesManagerController extends Controller
 {
 
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters

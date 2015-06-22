@@ -1,4 +1,11 @@
-<h1>Detalles #</h1>
+
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1><?php echo $model['names'].' '.$model['last_name1'].' '.$model['last_name2']; ?></h1>
+            <hr>
+        </div>
+
+ <h3>Datos del representante:</h3>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data' => $model,

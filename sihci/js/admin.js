@@ -6,4 +6,6 @@ $(document).ready(function() {
 	$('.cvforms').css('padding-right','50px');
 	$('.cvforms').css('padding-top','30px');
 	$('.cvforms').css('padding-bottom','30px');
+
+
 });

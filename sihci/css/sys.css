@@ -73,15 +73,15 @@ select
 }
 .headerconteinerF
 {
+    z-index: 8;
+
     width: 12%;
     height: 145px;
-    z-index: 8;
 
     background-image: url('../img/user.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 115% 115%;
-
 }
 .headerconteinerF #perfil
 {
@@ -156,9 +156,9 @@ select
 
     display: block;
 
+    height: 99%;
     margin-right: auto;
     margin-left: auto;
-    height: 99%
 }
 .headerconteinerC img
 {
@@ -221,12 +221,13 @@ select
 
     display: inline-block;
 
-    padding-left: 97px;
-    padding-top: 5px;
     margin: 0;
+    padding-top: 5px;
+    padding-left: 97px;
+
     color: white;
 }
-.headerconteiner3 h6 
+.headerconteiner3 h6
 {
     font-family: 'Caviar_Dreams';
 
@@ -249,13 +250,16 @@ select
 .headerconteiner3 a
 {
     display: inline-block;
+
     color: white;
 }
 .headerconteiner3 a:hover
 {
     display: inline-block;
-    color: white;
+
     text-decoration: none;
+
+    color: white;
 }
 .cvmenuitems
 {
@@ -471,7 +475,10 @@ input[type='radio']
     max-width: 450px;
     height: 105px;
     max-height: 105px;
+    max-height: 105px;
     padding: 2px 18px 2px 9px;
+
+    resize: none;
 
     color: #0e3152;
     border: 0;
@@ -860,7 +867,7 @@ thead th
 .operations li  a:hover,
 .operations li  a
 {
-    color: #00BABF !important;
+    color: #00babf !important;
 }
 .grid-view .button-column
 {
@@ -1188,7 +1195,6 @@ thead th
     width: 95% !important;
     height: 35px !important;
     padding: 5px 1px 2px 9px !important;
-   
 }
 
 .searchadmin
@@ -1437,7 +1443,8 @@ table.detail-view  td
 .operations .sub a
 {
     margin-left: 20px;
-    color: #0A324F !important;
+
+    color: #0a324f !important;
 }
 .menuitem,
 .menulis
@@ -1467,12 +1474,13 @@ table.detail-view  td
 .operations a:visited,
 .operations a
 {
-    color: #0A324F !important;
-    border-bottom: 0px solid white;
+    color: #0a324f !important;
+    border-bottom: 0 solid white;
 }
-li.menuitem.now ,li.menulis.now
+li.menuitem.now,
+li.menulis.now
 {
-      border-bottom: 1px solid #0A324F;
+    border-bottom: 1px solid #0a324f;
 }
 
 /* admin css */
@@ -1591,34 +1599,38 @@ li.menuitem.now ,li.menulis.now
 }
 .fullnamed
 {
+    display: inline-block;
 
- width: 70%;
- text-align: center;
- padding-left: 85px;
- display: inline-block;
- margin: 0;
+    width: 70%;
+    margin: 0;
+    padding-left: 85px;
+
+    text-align: center;
 }
-.typelabe ,.logoutbars
+.typelabe,
+.logoutbars
 {
-  
-  display: inline-block;
-  width: 14%;
-  text-align: center;
-  margin: 0;
+    display: inline-block;
 
+    width: 14%;
+    margin: 0;
+
+    text-align: center;
 }
 #projects-form p
 {
     width: 450px;
+
     text-align: justify;
 }
-.Rarrow , .Larrow
+.Rarrow,
+.Larrow
 {
     width: 50px !important;
-    margin-left: 20px !important;
-    text-align: center;
     margin-right: 20px !important;
+    margin-left: 20px !important;
 
+    text-align: center;
 }
 .cancelb
 {
@@ -1627,12 +1639,24 @@ li.menuitem.now ,li.menulis.now
 }
 .savepro
 {
-    background-color: #0A324F !important;
+    background-color: #0a324f !important;
 }
 
 
-table select{
-    width:60px !important;
-    font-size:9px;
-    height:15px !important;
+table select
+{
+    font-size: 9px;
+
+    width: 65px !important;
+    height: 15px !important;
+}
+
+ul.yiiPager .selected a
+{
+    background-color: #1EB9C0 !important;
+}
+ul.yiiPager a:hover , .pager li > a:hover
+{
+    background-color: #0E3152 !important;
+    color: white !important;
 }

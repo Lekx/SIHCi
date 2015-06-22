@@ -7,10 +7,7 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List FilesManager', 'url'=>array('index')),
-	array('label'=>'Create FilesManager', 'url'=>array('create')),
-);
+
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -24,6 +21,16 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
+
+?>
+<?php
+/* @var $this BooksController */
+/* @var $model Books */
+/* @var $form CActiveForm */
+$baseUrl = Yii::app()->baseUrl;
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl. '/js/admin.js');
 ?>
 
 <h1>Manage Files Managers</h1>
