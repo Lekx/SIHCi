@@ -44,7 +44,7 @@
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
          'Cirugía pediátrica'=>'Cirugía pediátrica','Cirugía plástica y reconstructiva'=>'Cirugía plástica y reconstructiva','Coloproctología'=>'Coloproctología',
-         'Comunicación'=>'Comunicación','audiología y foniatría'=>'audiología y foniatría','Dermatología'=>'Dermatología','Dermatología pediátrica'=>'Dermatología pediátrica',
+         'Comunicación'=>'Comunicación','Dermatología'=>'Dermatología','Dermatología pediátrica'=>'Dermatología pediátrica',
          'Dermatopatología'=>'Dermatopatología','Endocrinología '=>'Endocrinología','Endocrinología pediátrica'=>'Endocrinología pediátrica','Epidemiología'=>'Epidemiología',
          'Gastroenterología'=>'Gastroenterología','Gastroenterología y nutrición pediátrica'=>'Gastroenterología y nutrición pediátrica','Genética médica'=>'Genética médica','Geriatría'=>'Geriatría',
          'Ginecología oncológica'=>'Ginecología oncológica','Ginecología y obstetricia'=>'Ginecología y obstetricia','Hematología'=>'Hematología','Hematología pediátrica'=>'Hematología pediátrica',

@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 	<div class="row">
 			<span class="plain-select">
-		<?php echo $form->dropDownList($model,'year', array('promt'=>'Seleccionar año',
+		<?php echo $form->dropDownList($model,'year', array(
 															'1930'=>'1930','1931'=>'1931',
 															'1932'=>'1932','1933'=>'1933','1934'=>'1934','1935'=>'1935',
 															'1936'=>'1936','1937'=>'1937','1938'=>'1938','1939'=>'1939',
@@ -77,7 +77,7 @@ $(document).ready(function() {
 															'2044'=>'2044','2045'=>'2045','2046'=>'2046','2047'=>'2047',
 															'2048'=>'2048','2049'=>'2049','2050'=>'2050'
 
-															),array('title'=>'Año')); ?>
+															),array('title'=>'Año','prompt'=>'Seleccionar año')); ?>
 															</span>
 		<?php echo $form->error($model,'year'); ?>
 	</div>
@@ -109,7 +109,7 @@ $(document).ready(function() {
 
 	<div class="row">
 			<span class="plain-select">
-        <?php echo $form->dropDownList($model,'work_type',array('promt'=>'Seleccionar tipo de trabajo','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'),array('title'=>'Tipo Trabajo'));?>
+        <?php echo $form->dropDownList($model,'work_type',array('Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'),array('title'=>'Tipo Trabajo','prompt'=>'Seleccionar tipo de trabajo'));?>
         </span>
         <?php echo $form->error($model,'work_type'); ?>
 

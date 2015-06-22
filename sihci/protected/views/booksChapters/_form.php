@@ -104,7 +104,7 @@ $(document).ready(function() {
 
 	<div class="row">
 
-		<?php echo $form->textField($model,'pages',array('placeholder'=>'No. paginas','title'=>'No. paginas')); ?>
+		<?php echo $form->textField($model,'pages',array('placeholder'=>'No. páginas','title'=>'No. paginas')); ?>
 		<?php echo $form->error($model,'pages'); ?>
 	</div>
 
