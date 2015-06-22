@@ -1,5 +1,4 @@
 <?php
-
 class FilesManagerController extends Controller
 {
 

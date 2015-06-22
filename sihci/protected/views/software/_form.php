@@ -267,7 +267,7 @@
 	</div>
 
 	<div class="row">
-	<span class="radiotext">Apoyo economico:</span>
+	<span class="radiotext">¿Recibio apoyo económico ?</span>
 		<?php $status = array('1' => 'Si','0'=>'No'); 
 		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'economic_support'); ?>

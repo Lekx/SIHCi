@@ -1,5 +1,4 @@
 <?php
-
 class GeneretionOfKnowledgeScientificController extends Controller
 {
 	public function actionIndex()

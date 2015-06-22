@@ -97,9 +97,7 @@ class PatentController extends Controller
 			
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array(	'model'=>$model));
 	}
 
 	/**
