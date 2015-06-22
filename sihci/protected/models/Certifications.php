@@ -117,8 +117,12 @@ class Certifications extends CActiveRecord
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('creation_date',$this->creation_date,true);
 	*/
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'specialty ASC',
+		    ),
 		));
 	}
 

@@ -22,7 +22,10 @@
 )); ?>
 
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model);
+	if($model->SNI == -1)
+		$model->SNI = "";
+	?>
 
 <div class="docs">
 	

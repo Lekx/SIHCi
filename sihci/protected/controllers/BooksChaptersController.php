@@ -60,6 +60,7 @@ class BooksChaptersController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+
 	//CA01-Registrar datos
 	public function actionCreate()
     {
@@ -70,15 +71,10 @@ class BooksChaptersController extends Controller
         // Uncomment the following line if AJAX validation is needed
 
          $this->performAjaxValidation($model);
-         $this->performAjaxValidation($modelAuthor);
-        
-
-         $this->performAjaxValidation($model, $modelAuthor);
-
+       
 
         if(isset($_POST['BooksChapters']))
         {
-        //	echo "entramos";
             $model->attributes=$_POST['BooksChapters'];
             $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
             $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
@@ -123,7 +119,7 @@ class BooksChaptersController extends Controller
 
 			               		}
 			               		else{	
-			               	//	echo "valio verga";
+			               
 			               		echo CJSON::encode(array('status'=>'404'));
                                 Yii::app()->end();
 			               		}
@@ -202,6 +198,8 @@ class BooksChaptersController extends Controller
 
                     if(!empty($actual_url))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_url);
+
+                if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
                     $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/';
                   
@@ -210,9 +208,11 @@ class BooksChaptersController extends Controller
 
                        $model->url_doc->saveAs($urlFile.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
 		               $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();                                                    
-                }
-                
-                else {
+                 }
+			        else  
+			        	echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
+
+                } else {
                   
                     $model->url_doc = $actual_url;       
                  }   
@@ -328,11 +328,11 @@ class BooksChaptersController extends Controller
 	 * Performs the AJAX validation.
 	 * @param BooksChapters $model the model to be validated
 	 */
-	protected function performAjaxValidation($model, $modelAuthors)
+	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='books-chapters-form')
 		{
-			echo CActiveForm::validate(array($model, $modelAuthors));
+			echo CActiveForm::validate(array($model));
 			Yii::app()->end();
 		}
 	}

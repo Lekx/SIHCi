@@ -1,4 +1,4 @@
-<?php
+s<?php
 /* @var $this DirectedThesisController */
 /* @var $model DirectedThesis */
 /* @var $form CActiveForm */
