@@ -663,7 +663,7 @@ class CurriculumVitaeController extends Controller
 			$details = "Subsección Nombramientos. Número Registro: ".$model->id;
 			$action = "Modificación.";
 		}
-
+		
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Curriculum']))
