@@ -1196,7 +1196,7 @@ thead th
     font-family: 'Caviar_Dreams_Bold' !important;
     font-size: 20px !important;
 
-    width: 82% !important;
+    width: 81% !important;
     height: 35px !important;
     padding: 3px 1px 2px 9px !important;
     padding-right: 50px !important;
@@ -1630,3 +1630,9 @@ li.menuitem.now ,li.menulis.now
     background-color: #0A324F !important;
 }
 
+
+table select{
+    width:60px !important;
+    font-size:9px;
+    height:15px !important;
+}

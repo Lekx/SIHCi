@@ -26,7 +26,11 @@
  * @property Roles $idRoles
  */
 class Users extends CActiveRecord
-{
+{	public $names;
+	public $last_name1;
+	public $last_name2;
+	public $curp_passport;
+	public $searchValue;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -52,7 +56,7 @@ class Users extends CActiveRecord
 			array('type', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_roles, email, password, registration_date, activation_date, act_react_key, status, type', 'safe', 'on'=>'search'),
+			array('id, id_roles, email, password, registration_date, activation_date, act_react_key, status, type,searchValue,names,last_name1,last_name1,curp_passport', 'safe', 'on'=>'search'),
 		);
 	}
 	/**
@@ -108,17 +112,44 @@ class Users extends CActiveRecord
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 		$criteria=new CDbCriteria;
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_roles',$this->id_roles);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('registration_date',$this->registration_date,true);
-		$criteria->compare('activation_date',$this->activation_date,true);
-		$criteria->compare('act_react_key',$this->act_react_key,true);
-		$criteria->compare('status',$this->status,true);
-		$criteria->compare('type',$this->status,true);
+		if($this->searchValue)
+		{
+			$criteria->addCondition("email LIKE CONCAT('%', :searchValue, '%')OR status LIKE CONCAT('%', :searchValue, '%') OR type LIKE CONCAT('%', :searchValue, '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+			$criteria->with = array( 'persons' );		
+			$criteria->compare( 'persons.names', $this->names, true );
+			$criteria->compare( 'persons.last_name1', $this->last_name1, true );
+			$criteria->compare( 'persons.last_name2', $this->last_name2, true );
+			$criteria->compare( 'persons.curp_passport', $this->curp_passport, true );
+
+
+		}
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+        	'attributes'=>array(
+            'names'=>array(
+                'asc'=>'persons.names',
+            ),
+            '*',
+        ),
+    ),
+			'sort'=>array(
+        	'attributes'=>array(
+            'last_name1'=>array(
+                'asc'=>'persons.last_name1',
+            ),
+            '*',
+        ),
+    ),
+			'sort'=>array(
+        	'attributes'=>array(
+            'last_name2'=>array(
+                'asc'=>'persons.last_name2',
+            ),
+            '*',
+        ),
+    ),
 		));
 	}
 	/**

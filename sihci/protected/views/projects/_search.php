@@ -13,13 +13,8 @@
 	'method'=>'get',
 )); ?>
 
- 	
 	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Patrocinador, Título, Disciplina, Unidad Hospitalaria, Folio, No. Registro', 'class'=>'searchcrud')); ?>	
 		<?php echo CHtml::submitButton('',array('class'=>'adminbut')); ?>
-
-	 
-
-</div>
 
 <?php /*
 
