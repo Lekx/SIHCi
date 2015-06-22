@@ -149,8 +149,12 @@ class BooksChapters extends CActiveRecord
 		$criteria->compare('creation_date',$this->creation_date,true);
 		$criteria->compare('url_doc',$this->url_doc,true);
 		*/
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'chapter_title ASC',
+		    ),
 		));
 	}
 

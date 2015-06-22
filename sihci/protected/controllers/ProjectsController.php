@@ -80,15 +80,30 @@ class ProjectsController extends Controller
 			if($_POST['type']== "draft")
 				$model->status = "borrador";
 			else
-				$model->status = "revisión divuh";
+				$model->status = "divuh";
 
 			$model->folio = "-1";
 			$model->is_sponsored = 0; 
 			$model->registration_number = "-1";
 
 			if($model->save()){
-				echo "datos guardados con exito";
-				$this->redirect(array('view','id'=>$model->id));
+				if($_POST['type'] != "draft"){
+					$followup = new ProjectsFollowups;
+					$followup->id_project = $model->id;
+					$followup->id_user = Yii::app()->user->id;
+					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+
+					if($followup->save()){
+						echo "Proyecto enviado a revisión con éxito";
+						$this->redirect(array('admin'));
+					}else{
+						echo "no se guardo el followup - ".$followup->id_project." - ".$followup->id_user." - ".$followup->followup." - ".$followup->creation_date;
+					}
+				}else{
+					echo "Proyecto guardado con éxito";
+					$this->redirect(array('admin'));
+				}	
+			
 			}else{
 				echo "por favor revise que la información sea correcta";
 			}

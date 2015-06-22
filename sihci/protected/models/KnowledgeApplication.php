@@ -108,8 +108,12 @@ class KnowledgeApplication extends CActiveRecord
 		$criteria->compare('term4',$this->term4,true);
 		$criteria->compare('term5',$this->term5,true);
 	*/
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'term1 ASC',
+		    ),
 		));
 	}
 
