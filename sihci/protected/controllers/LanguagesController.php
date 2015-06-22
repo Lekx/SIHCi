@@ -113,6 +113,7 @@ class LanguagesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$oldPath = $model->path;
 		$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/UserLanguages/';
 		$path2 = '/users/'.Yii::app()->user->id.'/UserLanguages/';
 		// Uncomment the following line if AJAX validation is needed
@@ -121,30 +122,37 @@ class LanguagesController extends Controller
 		 if($model->evaluation_date == "30/11/-0001" || $model->evaluation_date == "0000-00-00"){
 				$model->evaluation_date = "";
 			}
-		$oldPath = $model->path;
 
+		
+		echo "asdasdasd".$oldPath;
 		if(isset($_POST['Languages']))
 		{
 			$model->attributes=$_POST['Languages'];
-
-			$model->path = CUploadedFile::getInstanceByName('Languages[path]');
-
-			if($model->path != ''){
-					$model->path->saveAs($path.'/documentPercentage'.$model->id.'.'.$model->path->getExtensionName());
-					$model->path = $path2."documentPercentage".$model->id.".".$model->path->getExtensionName();
-			}else{
-				$model->path = $oldPath;
-			}
 			
+			$model->path = CUploadedFile::getInstanceByName('Languages[path]');
+			if (!empty(CUploadedFile::getInstanceByName('Languages[path]'))){
+							
+					if(!empty($oldPath))
+						unlink(YiiBase::getPathOfAlias("webroot").$oldPath);
+					
+		           		$model->path = CUploadedFile::getInstanceByName('Languages[path]');
+			          
+			            if(!is_dir($path))          
+			              	mkdir($path, 0777, true);
 
+						    $model->path->saveAs($path.'/documentPercentage'.$model->id.'.'.$model->path->getExtensionName());
+						    $model->path = $path2."documentPercentage".$model->id.".".$model->path->getExtensionName();  			 			   	
+			}else{		   
+				   $model->path=$oldPath;
+			}
 			if($model->save())
      		{
      			$section = "Idiomas"; 
      			$action = "Creación";
 				$details = "Numero de registro: ".$model->id;
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-     			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+     		echo $model->path;
+				// $this->redirect(array('admin'));
      		}	
 		     
 		}

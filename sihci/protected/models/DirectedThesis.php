@@ -114,7 +114,7 @@ class DirectedThesis extends CActiveRecord
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		$criteria=new CDbCriteria;
 
 		if($this->searchValue)
@@ -138,7 +138,10 @@ class DirectedThesis extends CActiveRecord
 		$criteria->compare('creation_date',$this->creation_date,true);
 		*/
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'title ASC',
+		    ),
 		));
 	}
 
