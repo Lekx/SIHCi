@@ -32,19 +32,19 @@
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Seleccionar Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'),array('title'=>'Tipo de Referencia'));?>
+		<?php echo $form->dropDownList($model, 'reference_type',array('prompt'=>'Seleccionar Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'),array('title'=>'Tipo de Referencia'));?>
 		</span>
 		<?php echo $form->error($model,'reference_type'); ?>
 	</div>
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Seleccionar especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
-         'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
+		<?php echo $form->dropDownList($model,'specialty', array('prompt'=>'Seleccionar especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
+         'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Audiología y foniatría'=>'Audiología y foniatría','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
          'Cirugía pediátrica'=>'Cirugía pediátrica','Cirugía plástica y reconstructiva'=>'Cirugía plástica y reconstructiva','Coloproctología'=>'Coloproctología',
-         'Comunicación'=>'Comunicación','audiología y foniatría'=>'audiología y foniatría','Dermatología'=>'Dermatología','Dermatología pediátrica'=>'Dermatología pediátrica',
+         'Comunicación'=>'Comunicación','Dermatología'=>'Dermatología','Dermatología pediátrica'=>'Dermatología pediátrica',
          'Dermatopatología'=>'Dermatopatología','Endocrinología '=>'Endocrinología','Endocrinología pediátrica'=>'Endocrinología pediátrica','Epidemiología'=>'Epidemiología',
          'Gastroenterología'=>'Gastroenterología','Gastroenterología y nutrición pediátrica'=>'Gastroenterología y nutrición pediátrica','Genética médica'=>'Genética médica','Geriatría'=>'Geriatría',
          'Ginecología oncológica'=>'Ginecología oncológica','Ginecología y obstetricia'=>'Ginecología y obstetricia','Hematología'=>'Hematología','Hematología pediátrica'=>'Hematología pediátrica',
