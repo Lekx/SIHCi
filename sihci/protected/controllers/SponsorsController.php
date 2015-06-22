@@ -186,9 +186,9 @@ class SponsorsController extends Controller {
 		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id;
 				//echo $id_sponsor;
 		$model = new SponsorsContact;
-			echo "cree molde";
+			//echo "cree molde";
 		$modelPull = SponsorsContact::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
-			var_dump($modelPull);
+			//var_dump($modelPull);
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -200,7 +200,7 @@ class SponsorsController extends Controller {
 			$values1 = $_POST['valuesUpdate1'];
 			$values2 = $_POST['valuesUpdate2'];
 			$values3 = $_POST['valuesUpdate3'];
-					echo "asigne primer post";
+					//echo "asigne primer post";
 
 			foreach ($_POST['modelPullTypes'] as $key => $type) 
 				$model->updateByPk($modelPullIds[$key],array('type' => $type,'value' => $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key]));

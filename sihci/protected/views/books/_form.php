@@ -2,10 +2,9 @@
 /* @var $this BooksController */
 /* @var $model Books */
 /* @var $form CActiveForm */
-$cs = Yii::app()->getClientScript();
-$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
+//$cs = Yii::app()->getClientScript();
+//$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
 ?>
-
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -23,14 +22,15 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','class' => 'numericOnly','title'=>'ISBN')); ?>
+		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','title'=>'ISBN')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100 , 'placeholder'=>'Título del libro','title'=>'Título del libro')); ?>
+		<?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100 ,'placeholder'=>'Título del libro','title'=>'Título del libro')); ?>
 		<?php echo $form->error($model,'book_title'); ?>
 	</div>
+
 
 	<div class="row">
 		<?php echo $form->textField($model,'publisher',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Editorial','title'=>'Editorial')); ?>
@@ -38,7 +38,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','class' => 'numericOnly','title'=>'Edición')); ?>
+		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','title'=>'Edición')); ?>
 		<?php echo $form->error($model,'edition'); ?>
 	</div>
 
@@ -77,17 +77,17 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','class' => 'numericOnly','title'=>'Volumen') ); ?>
+		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','title'=>'Volumen') ); ?>
 		<?php echo $form->error($model,'volume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','class' => 'numericOnly','title'=>'Número de páginas')); ?>
+		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','title'=>'Número de páginas')); ?>
 		<?php echo $form->error($model,'pages'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','class' => 'numericOnly','title'=>'Tiraje')); ?>
+		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','title'=>'Tiraje')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 

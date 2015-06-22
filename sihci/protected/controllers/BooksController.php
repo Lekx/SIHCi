@@ -1,4 +1,5 @@
 <?php
+
 class BooksController extends Controller
 {
 	/**
@@ -6,6 +7,7 @@ class BooksController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/system';
+
 	/**
 	 * @return array action filters
 	 */
@@ -16,6 +18,7 @@ class BooksController extends Controller
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -41,6 +44,7 @@ class BooksController extends Controller
 			),
 		);
 	}
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -51,6 +55,7 @@ class BooksController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -71,10 +76,13 @@ class BooksController extends Controller
 		{
 			$model->attributes=$_POST['Books'];
 			$model->id_curriculum = $id_curriculum->id;   
+
 	        $model->path = CUploadedFile::getInstanceByName('Books[path]');
+
 			if($model->validate())
             {
             	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
+
                	if (!empty(CUploadedFile::getInstanceByName('Books[path]')))
                	{
 	                if(!is_dir($urlFile))
@@ -96,6 +104,7 @@ class BooksController extends Controller
 	         					{
 					               	unset($modelAuthor);
 					               	$modelAuthor = new BooksAuthors;
+
 					               	$modelAuthor->id_book = $model->id;
 					       			$modelAuthor->names = $names;
 					        		$modelAuthor->last_name1 = $last_name1[$key];
@@ -111,6 +120,7 @@ class BooksController extends Controller
 			                    echo CJSON::encode(array('status'=>'success'));
 	                            $this->redirect(array('admin','id'=>$model->id));
 	                            Yii::app()->end();
+
 			               }					               
 			               else
 			               {
@@ -149,6 +159,7 @@ class BooksController extends Controller
 	               	  	echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();
+
                     } 		                      
 		            else 
 		            {
@@ -162,6 +173,7 @@ class BooksController extends Controller
    		if(!isset($_POST['ajax']))
 				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
 	}
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -177,6 +189,7 @@ class BooksController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model); 
 		$oldUrlDocument = $model->path;
+
         if(isset($_POST['Books']))
         {
 	            $model->attributes=$_POST['Books'];
@@ -194,6 +207,7 @@ class BooksController extends Controller
 	                  
 	                    if(!is_dir($urlFile))          
 	                        mkdir($urlFile, 0777, true);
+
 	                    $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
 			            $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();                                                    
 			        }
@@ -230,6 +244,7 @@ class BooksController extends Controller
 							$modelAuthor->updateByPk($idsBooks[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
             		    }
             	    }
+
             	    $section = "Libros";
 					$action = "Modificación";
 					$details = "Registro Número: ".$model->id;
@@ -252,6 +267,7 @@ class BooksController extends Controller
    		if(!isset($_POST['ajax']))
 				$this->render('update',array('model'=>$model,'modelAuthor'=>$modelAuthor, 'modelAuthors'=>$modelAuthors));
 	}
+
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -273,10 +289,12 @@ class BooksController extends Controller
 		}
 		else
 			$this->loadModel($id)->delete();
+
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
+
 	/**
 	 * Lists all models.
 	 */
@@ -286,6 +304,7 @@ class BooksController extends Controller
 		$dataProvider=new CActiveDataProvider('Books');
 		$this->actionAdmin();
 	}
+
 	/**
 	 * Manages all models.
 	 */
@@ -296,10 +315,12 @@ class BooksController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Books']))
 			$model->attributes=$_GET['Books'];
+
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -314,6 +335,7 @@ class BooksController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
 	/**
 	 * Performs the AJAX validation.
 	 * @param Books $model the model to be validated

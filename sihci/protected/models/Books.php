@@ -57,13 +57,14 @@ class Books extends CActiveRecord
 			array('idioma', 'length', 'max'=>15),
 			array('traductor_type', 'length', 'max'=>20),
 			array('area', 'length', 'max'=>40),
+			array('searchValue', 'length', 'max'=>60),
 			array('discipline', 'length', 'max'=>60),
 			array('subdiscipline', 'length', 'max'=>45),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
 			
 			array('path','required', 'on'=>'create'),
-			array('path', 'safe', 'on'=>'update'),
+			array('path,safe', 'safe', 'on'=>'update'),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
 			
 			//array('path','file','maxSize'=>array(1024 * 5000), 'message'=>'El Documento excede el peso permitido'),
