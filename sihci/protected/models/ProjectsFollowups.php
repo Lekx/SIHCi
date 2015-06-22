@@ -1,25 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "roles".
+ * This is the model class for table "projects_followups".
  *
- * The followings are the available columns in table 'roles':
+ * The followings are the available columns in table 'projects_followups':
  * @property integer $id
- * @property string $rol
- * @property string $alias
+ * @property integer $id_project
+ * @property integer $id_user
+ * @property string $followup
+ * @property string $url_doc
  *
  * The followings are the available model relations:
- * @property Permisos[] $permisoses
- * @property Usuarios[] $usuarioses
+ * @property Projects $idProject
+ * @property Users $idUser
  */
-class Roles extends CActiveRecord
+class ProjectsFollowups extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'roles';
+		return 'projects_followups';
 	}
 
 	/**
@@ -30,11 +32,12 @@ class Roles extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('alias', 'length', 'max'=>45),
-			array('rol', 'length', 'max'=>45),
+			array('id_project, id_user, followup', 'required'),
+			array('id_project, id_user', 'numerical', 'integerOnly'=>true),
+			array('url_doc', 'length', 'max'=>150),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rol, alias', 'safe', 'on'=>'search'),
+			array('id, id_project, id_user, followup, url_doc', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,8 +49,8 @@ class Roles extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'permisoses' => array(self::HAS_MANY, 'Permisos', 'id_rol'),
-			'usuarioses' => array(self::HAS_MANY, 'Usuarios', 'id_rol'),
+			'idProject' => array(self::BELONGS_TO, 'Projects', 'id_project'),
+			'idUser' => array(self::BELONGS_TO, 'Users', 'id_user'),
 		);
 	}
 
@@ -58,8 +61,10 @@ class Roles extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'rol' => 'Rol',
-			'alias' => 'Alias',
+			'id_project' => 'Id Project',
+			'id_user' => 'Id User',
+			'followup' => 'Followup',
+			'url_doc' => 'Url Doc',
 		);
 	}
 
@@ -82,8 +87,10 @@ class Roles extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('rol',$this->rol,true);
-		$criteria->compare('alias',$this->alias,true);
+		$criteria->compare('id_project',$this->id_project);
+		$criteria->compare('id_user',$this->id_user);
+		$criteria->compare('followup',$this->followup,true);
+		$criteria->compare('url_doc',$this->url_doc,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,7 +101,7 @@ class Roles extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Roles the static model class
+	 * @return ProjectsFollowups the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

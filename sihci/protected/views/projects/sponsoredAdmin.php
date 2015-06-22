@@ -49,14 +49,20 @@ $mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id
 			),*/
 		array(
 			'name'=>'id_user_researcher',
+			'header'=>'Nombre de quien invita',
 			'value'=>'$data->idUserSponsorer->persons[0]["last_name1"]." ".$data->idUserSponsorer->persons[0]["last_name2"].", ".$data->idUserSponsorer->persons[0]["names"]',
 			), 
+		array(
+			'name'=>'id_user_researcher',
+			'header'=>'Empresa que patrocina',
+			'value'=>'Sponsors::model()->findByAttributes(array("id_user"=>$data->id_user_sponsorer))->sponsor_name',
+			), 
+		array(
+			'name'=>'status',
+			'header'=>'Título del proyecto',
+			'value'=>'$data->status == 1 ? "aceptado" : "rechazado"',
+			), 
 
-		'project_name',
-		//'description',
-		//'keywords',
-		
-		'status',
 			array(
 			'class'=>'CButtonColumn','template'=>'{view} {accept} {reject}','header'=>'Acciones','buttons'=>array(
 					'view'=>array(
@@ -68,11 +74,13 @@ $mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id
 							'label'=>'Aceptar',
 							'imageUrl'=>Yii::app()->request->baseUrl.'/img/accept.png',
 							'url'=>'Yii::app()->createUrl("/projects/acceptSponsorship",array("id"=>$data->id))',
+							'visible'=>'true'
 						),
 					'reject'=>array(
 							'label'=>'Rechazar',
 							'imageUrl'=>Yii::app()->request->baseUrl.'/img/reject.png',
 							'url'=>'Yii::app()->createUrl("/projects/rejectSponsorship",array("id"=>$data->id))',
+							'visible'=>'true'
 						)
 				)
 		),

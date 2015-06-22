@@ -77,7 +77,7 @@
 		<div id="errorNumber" class="errors"> Debe ser Número </div>
 	</div>
 	<div class="row">
-		<input id="title" type="text" name="title" placeholder="Tútulo">
+		<input id="title" type="text" name="title" placeholder="Título">
 		<div id="errorTitle" class="errors"> Debe seleccionar Título </div>
 	</div>
 	<div class="row">

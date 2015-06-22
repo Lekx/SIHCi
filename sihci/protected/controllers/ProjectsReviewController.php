@@ -7,9 +7,7 @@ class ProjectsReviewController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/system';
-
-
-	private $role = Roles::model()->findByPk(Yii::app()->user->id_roles)->alias;
+	
 	/**
 	 * @return array action filters
 	 */
@@ -34,7 +32,7 @@ class ProjectsReviewController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','sponsoredAdmin','acceptSponsorship','rejectSponsorship'),
+				'actions'=>array('create','update','admin','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -46,48 +44,74 @@ class ProjectsReviewController extends Controller
 			),
 		);
 	}
+/*
+	private function nextReview($actualStatus){
+		switch($actualStatus){
+			case "divuh": $status = "DIV1"; break;
+			case "": $status = "DIV2"; break;
+			case "": $status = "DIV3"; break;
+			case "": $status = "DIV4"; break;
+			case "": $status = "DIV5"; break;
+			default: $status = "DIV6"; break;
 
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		}
+
+		return $status;
 	}
+*/
+	private function projectsToReview(){
+		$role = Roles::model()->findByPk(4)->alias;
 
-	
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Projects');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+
+		$conection = Yii::app()->db;
+
+		$pProjects = $conection->createCommand("SELECT p.is_sponsored,p.id,p.title,pf.creation_date FROM projects AS p INNER JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".$role."'")->queryAll();
+
+		//$pProjects = Projects::model()->findAllByAttributes(array("status"=>$role));
+		$pendingProjects ="";
+		
+
+		foreach($pProjects AS $key => $value){
+			$element ="";
+			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.85em;">';
+			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
+			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
+			$element .= '</div>';
+			$pendingProjects .= CHtml::link($element,array('projectsReview/review','id'=>$value["id"]));
+			
+		}
+		return $pendingProjects;
 	}
 
 
 	public function actionAdmin()
 	{
 		$model=new Projects('search');
-
-		$pProjects = Projects::model()->findAllByAttributes(array("status"=>$this->role));
-		$pendingProjects ="";
-
-		foreach($pProjects AS $key => $value){
-			$pendingProjects .= '<div class="projectRow">';
-			$pendingProjects .= '<div class = "projectTitle" >'.$value[""].'</div>';
-			$pendingProjects .= '<div class = "projectDetails" >'..'</div>';
-			$pendingProjects .= '</div>';
-			
-		}
+		
 
 		$this->render('admin',array(
-			'model'=>$model, 'pendingProjects'=>$pendingProjects
+			'model'=>$model, 'pendingProjects'=>$this->projectsToReview()
+		));
+	}
+
+		/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$this->actionAdmin();
+	}
+
+		/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionReview($id)
+	{
+
+		$modelfollowup = new ProjectsFollowups;
+		$this->render('review',array(
+			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup
 		));
 	}
 
