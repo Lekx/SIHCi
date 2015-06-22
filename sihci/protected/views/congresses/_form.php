@@ -38,7 +38,7 @@ $(document).ready(function() {
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto','title'=>'Puesto')); ?>
+		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Tipo de participación','title'=>'Tipo de participación')); ?>
 		<?php echo $form->error($model,'work_title'); ?>
 	</div>
 
@@ -88,13 +88,6 @@ $(document).ready(function() {
 		<?php echo $form->error($model,'congress'); ?>
 	</div>
 
-	<div class="row">
-         <!-- <?php /*
-                $status = array('Nacional' => 'Nacional','Internacional'=>'Internacional');
-                echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
-         <?php echo $form->error($model,'type'); */ ?> -->
-
-	</div>
 
 	<div class="row">
 			<span class="plain-select">
@@ -105,7 +98,7 @@ $(document).ready(function() {
 				    'name' => Chtml::activeName($model, 'country'),
 				    'id' => Chtml::activeId($model, 'country'),
 				    'useCountryCode' => false,
-				    'defaultValue' => 'Mexico',
+				    'defaultValue' => 'México',
 				    'firstEmpty' => false,
 			    )
 			);

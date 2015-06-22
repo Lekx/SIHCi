@@ -71,7 +71,7 @@ class SoftwareController extends Controller
     		if($model->end_date == null)
     			$model->end_date ='00/00/0000';		
 				
-				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
+				if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('Software[path]'))*/)
 				{
 	           		
 	           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
@@ -151,7 +151,7 @@ class SoftwareController extends Controller
     			$model->end_date ='00/00/0000';		
 
     		
-				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
+				if ($model->path !=  ''/*!empty(CUploadedFile::getInstanceByName('Software[path]'))*/)
 				{
 							
 					if(!empty($oldPath))
