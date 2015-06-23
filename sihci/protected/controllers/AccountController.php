@@ -1,4 +1,5 @@
 <?php 
+
   	class AccountController extends Controller{
 
   	public $layout = '//layouts/system';

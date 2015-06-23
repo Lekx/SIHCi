@@ -1,5 +1,4 @@
 <?php
-
 class DisplayTransparenciaController extends Controller
 {
 	public function actionIndex()

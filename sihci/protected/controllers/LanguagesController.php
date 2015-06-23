@@ -124,7 +124,6 @@ class LanguagesController extends Controller
 			}
 
 		
-		echo "asdasdasd".$oldPath;
 		if(isset($_POST['Languages']))
 		{
 			$model->attributes=$_POST['Languages'];
@@ -151,9 +150,9 @@ class LanguagesController extends Controller
      			$action = "Creación";
 				$details = "Numero de registro: ".$model->id;
      			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-     		echo $model->path;
-				// $this->redirect(array('admin'));
-     		}	
+     			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+     		}		
 		     
 		}
 

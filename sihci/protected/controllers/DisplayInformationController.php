@@ -1,5 +1,4 @@
 <?php
-
 class DisplayInformationController extends Controller
 {
 	public function actionIndex()

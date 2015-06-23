@@ -1,5 +1,5 @@
 
-
+<div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
 <!--Unidad Hospitalaria 
 <?php // echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
 Año de reporte 
@@ -35,7 +35,25 @@ chart = new Highcharts.Chart({
 
         chart: {
             renderTo: 'container',
-            type: 'column'
+            type: 'column',
+            events: {
+                load: function () {
+                    var chart = this,
+                        legend = chart.legend;
+
+                    for (var i = 0, len = legend.allItems.length; i < len; i++) {
+                        (function(i) {
+                            var item = legend.allItems[i].legendItem;
+                            item.on('mouseover', function (e) {
+                                $(".tooltipchart").show();
+                            }).on('mouseout', function (e) {
+                                $(".tooltipchart").hide();
+                            });
+                        })(i);
+                    }
+
+                }
+            } 
         },  credits: {
       enabled: false
   },
@@ -77,6 +95,7 @@ chart = new Highcharts.Chart({
                 }
             }
         },
+         
         series: [{
 
             name: 'Hospital Civil Fray Antonio Alcalde',
@@ -95,7 +114,7 @@ chart = new Highcharts.Chart({
     });
 
 });
- 
+         
 request.fail(function( jqXHR, textStatus ) {
   alert( "Request failed: " + textStatus );
 });

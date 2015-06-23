@@ -48,7 +48,7 @@ class CurriculumVitaeController extends Controller
 
 		$model = Persons::model()->findByAttributes(array('id_user' => $iduser));
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user' => $iduser));
-		$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc/';
+		$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc';
 			
 			$section = "Curriculum Vitae"; //manda parametros al controlador SystemLog
 			$details = "Subsección Datos Personales. Registro Número ".$model->id;

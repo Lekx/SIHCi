@@ -42,7 +42,7 @@ class Languages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, language, document_percentage', 'required'),
+			array('id_curriculum, language, document_percentage, evaluation_date', 'required'),
 			array('id_curriculum, is_traducer, is_teacher, document_percentage', 'numerical', 'integerOnly'=>true),
 			array('language, native_language, conversational_level, reading_level, writting_level', 'length', 'max'=>45),
 			array('description', 'length', 'max'=>250),
@@ -80,9 +80,9 @@ class Languages extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'language' => 'Lenguaje',
+			'language' => 'Idioma',
 			'description' => 'Descripción',
-			'native_language' => 'Lenguaje Nativo',
+			'native_language' => 'Idioma Nativo',
 			'is_traducer' => 'Traductor',
 			'is_teacher' => 'Profesor',
 			'conversational_level' => 'Nivel de Conversación',

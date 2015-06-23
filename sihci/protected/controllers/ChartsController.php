@@ -1,5 +1,4 @@
 <?php
-
 class ChartsController extends Controller
 {
 	/**

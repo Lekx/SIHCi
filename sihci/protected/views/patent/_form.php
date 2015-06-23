@@ -41,7 +41,7 @@
 		<?php echo $form->dropDownList($model,'participation_type',
 			  	  array(
 					  		'Inventor'=>'Inventor',
-					  		'Coinventor'=>'Coinventor'	  	
+					  	'Co-inventor'=>'Co-inventor'  	
 				  ),				  
 				  array('prompt'=>'Seleccionar participación', 'title'=>'Pariticipacíon')			  
 			 );

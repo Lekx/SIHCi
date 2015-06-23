@@ -1,5 +1,4 @@
 <?php
-
 class InvestigationNormativeController extends Controller
 {
 	public function actionIndex()
