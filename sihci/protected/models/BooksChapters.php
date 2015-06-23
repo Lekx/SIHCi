@@ -136,8 +136,6 @@ class BooksChapters extends CActiveRecord
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
 
-		
-
 		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 
 		/*$criteria->compare('id',$this->id);
