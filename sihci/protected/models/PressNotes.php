@@ -102,30 +102,20 @@ class PressNotes extends CActiveRecord
 
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR type LIKE CONCAT('%', :searchValue , '%') OR responsible_agency LIKE CONCAT('%', :searchValue , '%') OR note LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->addCondition("directed_to LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR type LIKE CONCAT('%', :searchValue , '%') OR responsible_agency LIKE CONCAT('%', :searchValue , '%') OR note LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
-	/*	
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('directed_to',$this->directed_to,true);
-		$criteria->compare('date',$this->date,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('responsible_agency',$this->responsible_agency,true);
-		$criteria->compare('note',$this->note,true);
-		$criteria->compare('is_national',$this->is_national,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-	*/
+
 		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
+			'criteria'=>$criteria,
+		/*	'criteria'=>array(
+		      	'condition'=>$criteria,
 		        'condition'=>'id_curriculum='.$curriculumId,
 		        'order'=>'title ASC',
-		    ),
+		    ),*/
 		));
 	}
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

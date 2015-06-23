@@ -1,5 +1,5 @@
 <?php
-//include ("logoutTime.php"); 
+
 class SoftwareController extends Controller
 {
 	/**
@@ -29,18 +29,18 @@ class SoftwareController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('id_user'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('id_user'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('id_user'),
+				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('id_user'),
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -71,22 +71,23 @@ class SoftwareController extends Controller
     		if($model->end_date == null)
     			$model->end_date ='00/00/0000';		
 				
-				if ($model->path != ''/*!empty(CUploadedFile::getInstanceByName('Software[path]'))*/)
+				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
-	           		
 	           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
-				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
-            		
+				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/folderSoftware/';
 		          
 		            if(!is_dir($urlFile))          
-		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
-		            
-		            
-		                $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   			         
+		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/folderSoftware/', 0777, true);
+
+		          
+					    $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/folderSoftware/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+				
 			    }
-				else
-					$model->path = "";	
+				else 
+				{
+					$model->path = "";
+				}	
 
 					if($model->save())
 					{	   		
@@ -96,13 +97,13 @@ class SoftwareController extends Controller
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     				   
 					    echo CJSON::encode(array('status'=>'200'));
-					    $this->redirect(array('admin'));
+					   	$this->redirect(array('admin'));
 				    	Yii::app()->end();
 				    }			    	
 				    else 
 			    	{
 			    		echo CJSON::encode(array('status'=>'404'));
-			    	    Yii::app()->end();
+		                Yii::app()->end();
 			        }
 					    
 		}
@@ -111,11 +112,6 @@ class SoftwareController extends Controller
 			$this->render('create',array('model'=>$model));
 	}
 
-
-	public function actionUpload()
-	{
-
-	}
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -151,25 +147,31 @@ class SoftwareController extends Controller
     			$model->end_date ='00/00/0000';		
 
     		
-				if ($model->path !=  ''/*!empty(CUploadedFile::getInstanceByName('Software[path]'))*/)
+				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
 				{
 							
 					if(!empty($oldPath))
 						unlink(YiiBase::getPathOfAlias("webroot").$oldPath);
-					
+					else 
+					{
+
 		           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
-					   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
+					   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/folderSoftware/';
+
 			          
 			            if(!is_dir($urlFile))          
 			              	mkdir($urlFile, 0777, true);
 
-						    $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+						$model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/folderSoftware/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+					}
 							
-			    }				
-				else						   
+			    }
+				
+				else
+				{						   
 				   $model->path=$oldPath;  
-					
+				}	
 
 					if($model->save())
 					{	   		
@@ -210,11 +212,13 @@ class SoftwareController extends Controller
 		$details = "Subsección: Software. Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.".";
 		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		
-		if ($model->path != null ){			
+		if ($model->path != null )
+		{			
 			 unlink(YiiBase::getPathOfAlias("webroot").$model->path);
 		     $model->delete();
 		}
-		else {
+		else 
+		{
  			$model->delete();
 		}
 
@@ -290,4 +294,3 @@ class SoftwareController extends Controller
 		}
 	}
 }
-
