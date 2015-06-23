@@ -92,7 +92,11 @@ class KnowledgeApplication extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'term1 ASC';
+		
 		if($this->searchValue)
 		{
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR term1 LIKE CONCAT('%', :searchValue ,'%') OR term2 LIKE CONCAT('%', :searchValue , '%') OR term3 LIKE CONCAT('%', :searchValue , '%') OR term4 LIKE CONCAT('%', :searchValue , '%') OR  term5 LIKE CONCAT('%', :searchValue , '%')");
@@ -108,12 +112,8 @@ class KnowledgeApplication extends CActiveRecord
 		$criteria->compare('term4',$this->term4,true);
 		$criteria->compare('term5',$this->term5,true);
 	*/
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'term1 ASC',
-		    ),
+			'criteria'=>$criteria,
 		));
 	}
 
