@@ -46,6 +46,8 @@ $this->menu=array(
 
         <h4>Gestionar:</h4>
 
+<?php include ("logoutTime.php"); ?>
+
 <script type="text/javascript">
 
 function search(){

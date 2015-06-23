@@ -87,7 +87,7 @@ $this->menu=array(
 		array(               
                 'label'=>'Archivo',
                 'type'=>'raw',
-                'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")),
+                'value'=>$model->path != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")) : "No existe archivo",
              ),
 		//'path',
 		'grade',

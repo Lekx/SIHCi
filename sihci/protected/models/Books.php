@@ -57,13 +57,14 @@ class Books extends CActiveRecord
 			array('idioma', 'length', 'max'=>15),
 			array('traductor_type', 'length', 'max'=>20),
 			array('area', 'length', 'max'=>40),
+			array('searchValue', 'length', 'max'=>60),
 			array('discipline', 'length', 'max'=>60),
 			array('subdiscipline', 'length', 'max'=>45),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
 			
 			array('path','required', 'on'=>'create'),
-			array('path', 'safe', 'on'=>'update'),
+			array('path,safe', 'safe', 'on'=>'update'),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
 			
 			//array('path','file','maxSize'=>array(1024 * 5000), 'message'=>'El Documento excede el peso permitido'),
@@ -132,17 +133,18 @@ class Books extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'book_title ASC';
 		if($this->searchValue)
 		{
 			$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
 		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'book_title ASC',
-		    ),
+			'criteria'=>$criteria,
 		));
 	}
 

@@ -1,5 +1,4 @@
 <?php
-
 class CongressesController extends Controller
 {
 	/**

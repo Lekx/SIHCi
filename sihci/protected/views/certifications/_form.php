@@ -133,7 +133,7 @@
 		                    
                         ),array('class'=>'savebutton')); 
         ?>
-       	<?php echo CHtml::Button('Cancelar',array('submit' => array('certifications/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+       	<?php echo CHtml::link('Cancelar',array('certifications/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 		<div class="200">
 		
 		</div>

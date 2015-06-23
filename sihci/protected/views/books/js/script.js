@@ -3,7 +3,7 @@ function send()
 
     var fd = new FormData();
     //var data=$("#books-form").serialize();
-    var element =document.getElementById("Books_path");
+    //var element =document.getElementById("Books_path");
     fd.append("Books[path]", $(element)[0].files[0]);
     
     $.ajax({

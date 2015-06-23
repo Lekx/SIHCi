@@ -1,5 +1,5 @@
-    <?php
 
+<?php
     class DirectedThesisController extends Controller
     {
         /**

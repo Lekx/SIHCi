@@ -120,11 +120,20 @@ class Patent extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$sort= new CSort();
+		$sort->defaultOrder='name ASC';
+
+
+
 		if($this->searchValue)
 		{
 			$criteria->addCondition("name LIKE CONCAT('%', :searchValue , '%') OR owner LIKE CONCAT('%', :searchValue ,'%') OR application_number LIKE CONCAT('%', :searchValue , '%') OR state LIKE CONCAT('%', :searchValue , '%') OR application_type LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
+
+
+		return new CActiveDataProvider($this, array('criteria'=>$criteria,'sort'=>$sort));
+
 	  /*	
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
@@ -152,6 +161,7 @@ class Patent extends CActiveRecord
 		        'order'=>'presentation_date ASC',
 		    ),
 		));
+
 	}
 
 	/**

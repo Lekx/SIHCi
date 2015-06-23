@@ -103,6 +103,9 @@ $this->renderPartial('_search',array(
 				'label' => '',
 				'imageUrl'=> Yii::app()->request->baseUrl . '/img/Acciones/editar.png',
 				'url'=> '"AdminUsers/update?ide=".$data->id'),
+				'delete' => array(
+				'label' => 'Eliminar.',
+				'url'=> '"AdminUsers/deleteUser?id=".$data->id'),
 
 
 				),

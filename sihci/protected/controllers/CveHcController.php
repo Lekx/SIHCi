@@ -1,5 +1,4 @@
 <?php
-
 class CveHcController extends Controller
 {
 	/**
