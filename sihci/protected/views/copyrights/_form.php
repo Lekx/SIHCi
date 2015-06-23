@@ -3,6 +3,21 @@
 /* @var $model Copyrights */
 /* @var $form CActiveForm */
 ?>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+
+    });
+});
+</script>
 
 <div class="form">
 
@@ -32,7 +47,7 @@
 	</div>
 
 	<div class="row">		
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título','title'=>'Título')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título de la obra','title'=>'Título de la obra')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
@@ -56,7 +71,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'step_number',array('placeholder'=>'Número de tramite','title'=>'Número de tramite')); ?>
+		<?php echo $form->textField($model,'step_number',array('placeholder'=>'Número de tramite','title'=>'Número de tramite','class'=>'numericOnly')); ?>
 		<?php echo $form->error($model,'step_number'); ?>
 	</div>
 

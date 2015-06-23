@@ -73,7 +73,7 @@ class Copyrights extends CActiveRecord
 			'id' => 'ID',
 			'id_curriculum' => 'ID Curriculum',
 			'participation_type' => 'Tipo de participación',
-			'title' => 'Título',
+			'title' => 'Título de la obra',
 			'application_date' => 'Fecha de solicitud',
 			'step_number' => 'Número de tramite',
 			'resume' => 'Resumen',
@@ -109,18 +109,7 @@ class Copyrights extends CActiveRecord
 		{
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR participation_type LIKE CONCAT('%', :searchValue , '%') OR beneficiary LIKE CONCAT('%', :searchValue , '%') OR step_number LIKE CONCAT('%', :searchValue , '%') OR  entity LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
-	/*	$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('participation_type',$this->participation_type,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('application_date',$this->application_date,true);
-		$criteria->compare('step_number',$this->step_number);
-		$criteria->compare('resume',$this->resume,true);
-		$criteria->compare('beneficiary',$this->beneficiary,true);
-		$criteria->compare('entity',$this->entity,true);
-		$criteria->compare('impact_value',$this->impact_value,true);
-		$criteria->compare('creation_date',$this->creation_date,true); 
-	*/		
+	
 		}
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
