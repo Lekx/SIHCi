@@ -113,12 +113,19 @@ class Languages extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'language ASC';
+
 		if($this->searchValue)
 		{
+			// $criteria->condition='id_curriculum = '.$curriculumId;
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR language LIKE CONCAT('%', :searchValue ,'%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 
 		}
+		
 		// $criteria->compare('id',$this->id);
 		// $criteria->compare('id_curriculum',$this->id_curriculum);
 		// $criteria->compare('language',$this->language,true);
@@ -134,12 +141,8 @@ class Languages extends CActiveRecord
 		// $criteria->compare('path',$this->path,true);
 		// $criteria->compare('creation_date',$this->creation_date,true);
 
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'language ASC',
-		    ),
+			'criteria'=>$criteria,
 		));
 	}
 
