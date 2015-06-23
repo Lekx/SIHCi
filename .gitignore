@@ -5,3 +5,4 @@ protected/runtime/*
 protected/data/*.db
 themes/classic/views/
 files_manager/*
+backups/*

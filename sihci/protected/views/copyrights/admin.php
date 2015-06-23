@@ -82,7 +82,7 @@ $('.search-form form').submit(function(){
             <hr>
         </div>
 
-<h3>Gestionar Registro de propiedad intelectual-Derechos de Autor:</h3>
+<h3>Gestionar Registro de propiedad intelectual Derechos de Autor</h3>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
