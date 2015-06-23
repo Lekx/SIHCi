@@ -56,7 +56,11 @@
 
 	<div class="row">
 				<span class="plain-select">
-		<?php echo $form->dropDownList($model,'grade',array('Maestria'=>'Maestria','Licenciatura'=>'Licenciatura','Preparatoria'=>'Preparatoria'),array('prompt'=>'Seleccionar grado','title'=>'Grado')); ?>
+		<?php echo $form->dropDownList($model,'grade',array('Licenciatura'=>'Licenciatura','
+																Maestria'=>'Maestria',
+																'Doctorado'=>'Doctorado',
+																'Especialidad'=>'Especialidad',
+																'Super especialidad'=>'Super especialidad'),array('prompt'=>'Seleccionar grado','title'=>'Grado')); ?>
 		</span>
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
