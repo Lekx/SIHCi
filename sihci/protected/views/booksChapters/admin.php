@@ -93,7 +93,8 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+	$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-chapters-grid',
 	'dataProvider'=>$model->search(),
 	'filterPosition'=>'header',
@@ -108,15 +109,18 @@ $('.search-form form').submit(function(){
 		array('name'=>'Editores','type'=>'html','id'=>'publishers','value'=>'CHtml::encode($data->publishers)'),
 		array('name'=>'Editorial','type'=>'html','id'=>'editorial','value'=>'CHtml::encode($data->editorial)'),
 		array('name'=>'Área','type'=>'html','id'=>'area','value'=>'CHtml::encode($data->area)'),
+		array('name'=>'Disciplina','type'=>'html','id'=>'discipline','value'=>'CHtml::encode($data->discipline)'),
+		array('name'=>'Subdisciplina','type'=>'html','id'=>'subdiscipline','value'=>'CHtml::encode($data->subdiscipline)'),
+		array('name'=>'Palabras clave','type'=>'html','id'=>'keywords','value'=>'CHtml::encode($data->keywords)'),
 		//'editorial',
 		//'volume',
 		//'pages',
 		//'citations',
 		//'total_of_authors',
 		//'area',
-		'discipline',
-		'subdiscipline',
-		'keywords', 
+		//'discipline',
+		//'subdiscipline',
+		//'keywords', 
 		//'creation_date',
 		//'url_doc',
 		array(

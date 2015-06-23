@@ -13,7 +13,7 @@
 
 		<div class="inner-addon right-addon">
 					 
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'ISBN, Titulo de libro, Título de Capítulo, Editores, Año de publicación','class'=>'searchcrud')); ?>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Búsqueda por columna','class'=>'searchcrud')); ?>
 	   	<?php echo CHtml::submitButton('',array('class'=>'adminbut')); ?>
 	</div>
 
