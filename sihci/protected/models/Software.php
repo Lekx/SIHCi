@@ -108,7 +108,7 @@ class Software extends CActiveRecord
 			'innovation_trascen' => 'Innovacón',
 			'transfer_mechanism' => 'Mecanismo de transferencia.',
 			'hr_formation' => 'Formación HR',
-			'economic_support' => 'Apoyo económico',
+			'economic_support' => '¿ Recibio apoyo económico ?',
 			'path' => 'Archivo',
 			'creation_date' => 'Creation Date',
 		);

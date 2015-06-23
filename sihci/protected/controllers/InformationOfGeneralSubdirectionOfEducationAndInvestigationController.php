@@ -1,5 +1,4 @@
 <?php
-
 class InformationOfGeneralSubdirectionOfEducationAndInvestigationController extends Controller
 {
 	public function actionIndex()

@@ -73,7 +73,7 @@ $this->menu=array(
             <hr>
         </div>
 
-<h3>Gestionar Registro de propiedad intelectual-Software: <?php echo $model->title; ?></h1>
+<h3>Gestionar Registro de propiedad intelectual Software <?php echo $model->title; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

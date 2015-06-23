@@ -2,24 +2,9 @@
 /* @var $this BooksController */
 /* @var $model Books */
 /* @var $form CActiveForm */
-$cs = Yii::app()->getClientScript();
-$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
+//$cs = Yii::app()->getClientScript();
+//$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
 ?>
-<script type="text/javascript">
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-
-    });
-});
-</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -29,7 +14,7 @@ $(document).ready(function() {
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableClientValidation'=>true,
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
@@ -37,14 +22,15 @@ $(document).ready(function() {
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','class' => 'numericOnly','title'=>'ISBN')); ?>
+		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','title'=>'ISBN')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100 , 'placeholder'=>'Título del libro','title'=>'Título del libro')); ?>
+		<?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100 ,'placeholder'=>'Título del libro','title'=>'Título del libro')); ?>
 		<?php echo $form->error($model,'book_title'); ?>
 	</div>
+
 
 	<div class="row">
 		<?php echo $form->textField($model,'publisher',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Editorial','title'=>'Editorial')); ?>
@@ -52,7 +38,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','class' => 'numericOnly','title'=>'Edición')); ?>
+		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','title'=>'Edición')); ?>
 		<?php echo $form->error($model,'edition'); ?>
 	</div>
 
@@ -91,17 +77,17 @@ $(document).ready(function() {
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','class' => 'numericOnly','title'=>'Volumen') ); ?>
+		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','title'=>'Volumen') ); ?>
 		<?php echo $form->error($model,'volume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','class' => 'numericOnly','title'=>'Número de páginas')); ?>
+		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','title'=>'Número de páginas')); ?>
 		<?php echo $form->error($model,'pages'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','class' => 'numericOnly','title'=>'Tiraje')); ?>
+		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','title'=>'Tiraje')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 

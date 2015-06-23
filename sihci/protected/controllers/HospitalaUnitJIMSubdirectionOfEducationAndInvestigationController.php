@@ -1,5 +1,4 @@
 <?php
-
 class HospitalaUnitJIMSubdirectionOfEducationAndInvestigationController extends Controller
 {
 	public function actionIndex()

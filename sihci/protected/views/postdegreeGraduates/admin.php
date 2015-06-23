@@ -85,11 +85,17 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'postdegree-graduates-grid',
 	'dataProvider'=>$model->search(),
-	
+    'filterPosition'=>'header',
+    'selectableRows'=>1,
+    'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
+		
+		array('name' =>'Nombre completo del graduado.', 'type'=>'html','id'=>'fullname','value'=>'CHtml::encode($data->fullname)'),
+		array('name' =>'Fecha de creación.', 'type'=>'html','id'=>'creation_date','value'=>'CHtml::encode($data->creation_date)'),
+        
+  		/*'id',
 		'fullname',
 		'creation_date',		
-		/*'id',
 		'id_curriculum',*/
 		array(
 			'class'=>'CButtonColumn',

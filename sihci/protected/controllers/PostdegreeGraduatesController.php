@@ -7,6 +7,7 @@
  * @property integer $id_curriculum
  * @property string $fullname
  */
+
 class PostdegreeGraduatesController extends Controller
 {
 	public $layout='//layouts/system';
