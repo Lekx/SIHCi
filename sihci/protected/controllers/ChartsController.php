@@ -474,17 +474,20 @@ public function actionPatentSoftware(){
 	$conexion = Yii::app()->db;
 
 $table_name = "";
-if(isset($_POST["property"])){
-	if($_POST["property"] != "total" && $_POST["property"] == "software")
+if(isset($_POST["years"])){
+	if($_POST["property"] != "total" && $_POST["property"] == "software"){
 		$table_name = "software";
-	else if ($_POST["property"] == "patent")
-		$table_name = "patent";
-	else if ($_POST["property"] == "copyrights")
-		$table_name = "copyrights";
+	}
+		else if($_POST["property"] == "patent"){
+			$table_name = "patent";
+		}
+		else if($_POST["property"] == "copyrights"){
+			$table_name = "copyrights";
+		}
+
 }
   $year = $conexion->createCommand('
-  SELECT DISTINCT YEAR(creation_date) AS year FROM '.$table_name.'
-  ')->queryAll();
+  	SELECT DISTINCT YEAR(creation_date) AS year FROM software')->queryAll();
 
   $years = array();
   $years["total"] = "Total";
@@ -529,6 +532,7 @@ if(isset($_POST["property"])){
 
 	}
    	else{
+
     	$table = "";
 		$alias = "";
 		$table1 = "";
@@ -539,10 +543,10 @@ if(isset($_POST["property"])){
    if($_POST["years"] != "total" && $_POST["property"] == "patent"){
     $condYears = " AND YEAR(pa.creation_date) ='".$_POST['years']."'";
 	}
-	if($_POST["years"] != "total" && $_POST["property"] == "software"){
+	else if($_POST["years"] != "total" && $_POST["property"] == "software"){
 		$condYears = " AND YEAR(s.creation_date) ='".$_POST['years']."'";
 	}
-	if($_POST["years"] != "total" && $_POST["property"] == "copyrights"){
+	else if($_POST["years"] != "total" && $_POST["property"] == "copyrights"){
 		$condYears = " AND YEAR(co.creation_date) ='".$_POST['years']."'";
 	}
    else
@@ -586,6 +590,7 @@ if(isset($_POST["property"])){
 if(!isset($_POST["years"])){
    $this->render('index',array('action'=>'patentSoftware',"years"=>$years));
 }
+
 
 
 

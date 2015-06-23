@@ -132,23 +132,8 @@ class BooksChapters extends CActiveRecord
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%') OR publishing_year LIKE CONCAT('%', :searchValue , '%') OR editorial LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR isbn LIKE CONCAT('%', :searchValue , '%') ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
-		/*$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('chapter_title',$this->chapter_title,true);
-		$criteria->compare('book_title',$this->book_title,true);
-		$criteria->compare('publishing_year',$this->publishing_year,true);
-		$criteria->compare('publishers',$this->publishers,true);
-		$criteria->compare('editorial',$this->editorial,true);
-		$criteria->compare('volume',$this->volume,true);
-		$criteria->compare('pages',$this->pages);
-		$criteria->compare('citations',$this->citations);
-		$criteria->compare('total_of_authors',$this->total_of_authors);
-		$criteria->compare('area',$this->area,true);
-		$criteria->compare('discipline',$this->discipline,true);
-		$criteria->compare('subdiscipline',$this->subdiscipline,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-		$criteria->compare('url_doc',$this->url_doc,true);
-		*/
+		
+
 		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>array(
