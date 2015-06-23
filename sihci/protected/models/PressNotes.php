@@ -100,20 +100,20 @@ class PressNotes extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'title ASC';
+		
 		if($this->searchValue)
 		{
 			$criteria->addCondition("directed_to LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR type LIKE CONCAT('%', :searchValue , '%') OR responsible_agency LIKE CONCAT('%', :searchValue , '%') OR note LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
 
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-		/*	'criteria'=>array(
-		      	'condition'=>$criteria,
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'title ASC',
-		    ),*/
+
 		));
 	}
 	/**

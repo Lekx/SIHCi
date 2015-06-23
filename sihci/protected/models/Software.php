@@ -154,7 +154,10 @@ class Software extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'title ASC';
 
 		if($this->searchValue)
 		{
@@ -162,13 +165,15 @@ class Software extends CActiveRecord
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}		
 	
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+<<<<<<< HEAD
 			/*'criteria'=>array(
 		        'condition'=>'id_curriculum='.$curriculumId,
 		        'order'=>'title ASC',
 		    ),*/
+=======
+>>>>>>> beb52636a9ce27435b77752a4037e15bbba3be63
 		));
 	}
 

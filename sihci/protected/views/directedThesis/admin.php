@@ -111,11 +111,13 @@ $('.search-form form').submit(function(){
 		//'grade',
 		//'sector',
 		array('name'=>'Organización','type'=>'html','id'=>'organization','value'=>'CHtml::encode($data->organization)'),
+		array('name'=>'Área','type'=>'html','id'=>'area','value'=>'CHtml::encode($data->area)'),
+		array('name'=>'Disciplina','type'=>'html','id'=>'discipline','value'=>'CHtml::encode($data->discipline)'),
+		array('name'=>'Subdisciplina','type'=>'html','id'=>'subdiscipline','value'=>'CHtml::encode($data->subdiscipline)'),
 		//'organization',
-
-		'area',
-		'discipline',
-		'subdiscipline',
+		//'area',
+		//'discipline',
+		//'subdiscipline',
 		array(
 			'class'=>'CButtonColumn',
 		),

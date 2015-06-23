@@ -101,19 +101,18 @@ class Copyrights extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'beneficiary ASC';
 		if($this->searchValue)
 		{
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR participation_type LIKE CONCAT('%', :searchValue , '%') OR beneficiary LIKE CONCAT('%', :searchValue , '%') OR step_number LIKE CONCAT('%', :searchValue , '%') OR  entity LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 	
 		}
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'beneficiary ASC',
-		    ),
+			'criteria'=>$criteria,
 		));
 	}
 

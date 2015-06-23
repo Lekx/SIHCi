@@ -72,6 +72,7 @@ class AdminUsersController extends Controller {
 	}
 	public function actionCreateUser() {
 
+		$layout =  '//layouts/system';
 		$model = new Users;
 		$modelPersons = new Persons;
 
@@ -155,7 +156,7 @@ class AdminUsersController extends Controller {
 		}
 
 		if (!isset($_POST['ajax'])) {
-			$this->renderPartial('create_user', array('model' => $model, 'modelPersons' => $modelPersons));
+			$this->render('create_user', array('model' => $model, 'modelPersons' => $modelPersons));
 		}
 	}
 

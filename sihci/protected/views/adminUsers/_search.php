@@ -12,13 +12,12 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="inner-addon right-addon">
-					 <i class="glyphicon glyphicon-search"></i>
-		
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo','class'=>'searchcrud')); ?>	
-		<?php //echo CHtml::submitButton('',array('class'=>'searchcrudbut')); ?>
-
-	</div>
+		<div class="row subtitleadmin">
+		<h4>Gestionar Area:</h4>
+		</div>
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo','class'=>'searchadmin')); ?>	
+		<?php echo CHtml::submitButton('',array('class'=>'adminbut')); ?>
+	   	<?php echo CHtml::link('Crear',array('AdminUsers/CreateUser'),array('class'=>'admin_create')); ?>
 	
 
 <?php $this->endWidget(); ?>
