@@ -126,7 +126,10 @@ class BooksChapters extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'chapter_title ASC';
 		if($this->searchValue)
 		{
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%') OR publishing_year LIKE CONCAT('%', :searchValue , '%') OR editorial LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR isbn LIKE CONCAT('%', :searchValue , '%') ");
@@ -149,12 +152,8 @@ class BooksChapters extends CActiveRecord
 		$criteria->compare('creation_date',$this->creation_date,true);
 		$criteria->compare('url_doc',$this->url_doc,true);
 		*/
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'chapter_title ASC',
-		    ),
+			'criteria'=>$criteria,
 		));
 	}
 
