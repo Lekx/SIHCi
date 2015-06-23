@@ -43,8 +43,7 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
-<input id="showFormGrade" type="button"  value="Agregar Formación Académica">
-<input id="hideFormGrade" class="grades" type="button"  value="Cancelar">
+<input id="showFormGrade" type="button"  value="Agregar Nueva Formación Académica">
 
 	<div class="grades">
 	<div class="row">
@@ -474,20 +473,17 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
-				                     $(".successdiv").show();
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";
+				                     $(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {
-			                     	 $(".errordiv").show();   
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";  
+			                     	   $(".successdiv").show();  
 			                     }       
 		                  	}',                    
 		                    
-                        ), array('id'=>'btnCreateGrade')); 
+                        ), array('id'=>'btnCreateGrade','class'=>'addSomething')); 
         ?>
 		
 		<br>
@@ -900,19 +896,20 @@
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
-                     		'success'=>'function(data){
+                     		'success'=>'function(data) 
+                     		 {
 		                                      
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
-				                     $(".successdiv").show();
+				                     $(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {
-			                     	$(".errordiv").show();   
+			                     	$(".errordiv").show();    
 			                     }       
 		                  	}',                    
 		                    
-                      ), array('class'=>'savebutton'));  
+                      ), array('class'=>'savebutton')); 
         
 		
 		echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); 
