@@ -170,8 +170,8 @@
                 <div class="adminmenu">
                     <div><?php echo CHtml::link('Manejador de Archivos', array('FilesManager/admin'));?></div>
                     <div><?php echo CHtml::link('Gestión de usuarios', array('adminUsers/'));?></div>
-                    <div><?php echo CHtml::link('Manejador de proyectos', array('site/index'));?></div>
-                    <div><?php echo CHtml::link('Respaldos', array('site/index'));?></div>
+                    <div><?php echo CHtml::link('Manejador de proyectos', array('adminProjects/'));?></div>
+                    <div><?php echo CHtml::link('Respaldos', array('adminBackups/'));?></div>
                     <div><?php echo CHtml::link('Áreas de especialidad', array('adminSpecialtyAreas/admin'));?></div>
                     <div><?php echo CHtml::link('Lineas de Investigación', array('adminResearchAreas/admin'));?></div>
                 </div>

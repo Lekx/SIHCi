@@ -128,6 +128,7 @@ select
 
     width: 100%;
     margin-top: -50px;
+    min-height: 450px;
 
     -webkit-flex-direction: row;
     -webkit-flex-flow: wrap;
@@ -203,7 +204,7 @@ select
 .headerconteiner4:after
 {
     position: absolute;
-    left: 15%;
+    left: 14%;
 
     width: 0;
     height: 10px;
@@ -1351,6 +1352,7 @@ table.detail-view  td
     width: 250px;
 
     background: #fff !important;
+    border-bottom:  2px solid #1EB9C0;
 }
 .odd th,
 .even td
@@ -1660,3 +1662,35 @@ ul.yiiPager a:hover , .pager li > a:hover
     background-color: #0E3152 !important;
     color: white !important;
 }
+.tableheader
+{
+    background-color: #1EB9C0;
+    color: white;
+    height: 35px;
+}
+.tableheader h4
+{
+
+    padding: 8px;
+}
+.table.Backup th
+{
+    height: 15px;
+    color: white;
+    background-color: #798B9D;
+    padding: 2px;
+
+}
+.table a, .table  a:hover
+{
+    text-decoration: none !important;
+}
+
+.grid-view table.items tr.odd ,.grid-view table.items tr.even
+{
+    border-bottom:  2px solid #CDF1F3;
+
+}
+
+
+

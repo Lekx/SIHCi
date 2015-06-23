@@ -1,8 +1,50 @@
 
 <!-- AS02-Listar respaldos de base de datos <?php //include ("logoutTime.php"); ?>  -->
+<?php 
+
+$this->menu=array(
+    //array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
+    //array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
+    array('label'=>'Manejador de Archivos ', 'url'=>array('postdegreeGraduates/admin'),'itemOptions'=>array('class' => 'menuitem 1')),
+        array('label'=>'Gestionar', 'url'=>array('postdegreeGraduates/admin'),'itemOptions'=>array('class' => 'sub1')),
+        array('label'=>'Crear', 'url'=>array('postdegreeGraduates/create'),'itemOptions'=>array('class' => 'sub1')),
+
+//postdegreeGraduates
+    array('label'=>'Gestión de usuarios ', 'url'=>array('AdminUsers/'),'itemOptions'=>array('class' => 'menuitem 2')),
+        array('label'=>'Gestionar', 'url'=>array('AdminUsers/'),'itemOptions'=>array('class' => 'sub2')),
+        array('label'=>'Crear', 'url'=>array('AdminUsers/CreateUser'),'itemOptions'=>array('class' => 'sub2')),
+//knowledgeApplication
+    array('label'=>'Gestión de proyectos', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),
+        array('label'=>'Gestionar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub3')),
+        array('label'=>'Crear', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub3')),
+//patent        
+    array('label'=>'Respaldos', 'url'=>array('adminBackups/'),'itemOptions'=>array('class' => 'menuitem 4 now')),
+//copyrights    
+    array('label'=>'Áreas de especialidad', 'url'=>array('adminSpecialtyAreas/admin'),'itemOptions'=>array('class' => 'menuitem 5')),
+            array('label'=>'Gestionar', 'url'=>array('adminSpecialtyAreas/admin'),'itemOptions'=>array('class' => 'sub5')),
+            array('label'=>'Crear', 'url'=>array('adminSpecialtyAreas/create'),'itemOptions'=>array('class' => 'sub5')),
+//copyrights    
+    array('label'=>'Lineas de investigación', 'url'=>array('adminResearchAreas/admin'),'itemOptions'=>array('class' => 'menuitem 6')),
+            array('label'=>'Gestionar', 'url'=>array('adminResearchAreas/admin'),'itemOptions'=>array('class' => 'sub6')),
+            array('label'=>'Crear', 'url'=>array('adminResearchAreas/create'),'itemOptions'=>array('class' => 'sub6')),
+//articlesGuides                
+
+    //array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
+    
+    ); 
 
 
-<div class="row"><h3>Respaldos</h3></div>
+
+
+    ?>
+
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1>Respaldos</h1>
+            <hr>
+        </div>
+
+        <h4>Gestionar:</h4>
 
 <script type="text/javascript">
 
@@ -17,15 +59,22 @@ function search(){
  	}
  }
 </script>
-<input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
-
 <div class="row">
-	<table>
-		<td>Archivos</td>		
+<input type="text" id="search" onchange="search()" placeholder="Buscar.." class="searchadmin">
+<?php echo CHtml::submitButton('',array('class'=>'adminbut')); ?>
+</div>
+
+
+<div class="col-xs-6">
+	<div class="tableheader">
+		<h4>Archivos</h4>
+	</div>
+	<table class="table Backup">	
 		<tr> 
-			<td>Fecha</td>
-			<td>Hora</td>
-			<td>Descarga</td>
+			<th>Fecha</th>
+			<th>Hora</th>
+			<th>Descarga</th>
+			<th></th>
 		</tr>
 		<?php 
 			
@@ -41,7 +90,10 @@ function search(){
 					echo "<td>".date("Y-m-d")."</td>";
 					echo "<td>".'3:00'."</td>";
 					echo "<td> <a href='../backups/compressZip.php' target='_self'> Descargar ZIP </a></td>";
-				echo "</tr>";
+					echo '<td><a href="../backups/compressZip.php" target="_self"><img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/descargar.png alt="home" ></a>';
+					echo "</td>";
+
+
 
 			}
 		?>
@@ -49,15 +101,16 @@ function search(){
 	</table>	
 </div>
 
-<div class="row">
-
-	<table>
-		
-		<td>Base de datos</td>		
+<div class="col-xs-6">
+	<div class="tableheader">
+		<h4>Base de datos</h4>
+	</div>
+	<table class="table Backup">	
 		<tr> 
-			<td>Fecha</td>
-			<td>Hora</td>
-			<td>Descarga</td>
+			<th>Fecha</th>
+			<th>Hora</th>
+			<th>Descarga</th>
+			<th></th>
 		</tr>
 		<?php 
             //$url=Yii::app()->baseUrl."/backups/dataBase/";
@@ -69,9 +122,13 @@ function search(){
 			foreach ($backUps as $key => $backupsDataBase) 
 			{
 				echo "<tr>";
+				$url = Yii::app()->request->baseUrl."/img/Icons/descargar.png>";
 					echo "<td>".substr($backupsDataBase,0,10)."</td>";
 					echo "<td>".substr($backupsDataBase,-9,-4)."</td>";
 					echo "<td><a href='../backups/database/".$backupsDataBase."' target='_self'>Descargar SQL</a></td>";
+					echo '<td><img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/descargar.png alt="home" >';
+					echo "</td>";
+
 				echo "</tr>";
 
 			}
