@@ -93,7 +93,8 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+	$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-chapters-grid',
 	'dataProvider'=>$model->search(),
 	'filterPosition'=>'header',

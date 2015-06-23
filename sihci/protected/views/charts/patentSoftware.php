@@ -5,12 +5,11 @@
 Año de reporte 
 <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
 Tipo
-<?php echo CHtml::dropDownList('property', '',array("total"=>"Total","patent"=>"Patentes","software"=>"Software","copyrights"=>"Derechos de autor"),array('onchange'=>'loadChart()')); ?><br/>
+<?php echo CHtml::dropDownList('property', '',array("total"=>"Todos","patent"=>"Patentes","software"=>"Software","copyrights"=>"Derechos de autor"),array('onchange'=>'loadChart()')); ?><br/>
 
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-<!-- <input type="button" value="puto" onclick="loadChart()"> -->
 <script>
 //jQuery.noConflict(); 
 var chart;
@@ -38,7 +37,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Investigadores registrados en el sistema'
+            text: 'Registros de propiedad intelectual en el sistema'
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
@@ -51,7 +50,7 @@ chart = new Highcharts.Chart({
             min: 0,
             allowDecimals: false,
             title: {
-                text: 'Cantidad de usuarios'
+                text: 'Propiedad intelectual'
             }
         },
         tooltip: {
