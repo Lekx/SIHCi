@@ -43,8 +43,7 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
-<input id="showFormGrade" type="button"  value="Agregar Formación Académica">
-<input id="hideFormGrade" class="grades" type="button"  value="Cancelar">
+<input id="showFormGrade" type="button"  value="Agregar Nueva Formación Académica">
 
 	<div class="grades">
 	<div class="row">
@@ -68,6 +67,8 @@
   			<option value="Licenciatura">Licenciatura</option>
   			<option value="Maestria">Maestria</option>
   			<option value="Doctorado">Doctorado</option>
+  			<option value="Especialidad">Especialidad</option>
+  			<option value="Super especialidad‏">Super especialidad‏</option>
 		</select>
 		</span>
 		</div>
@@ -197,15 +198,32 @@
 
 		<?php 
 			echo " <span class='plain-select'>";
-			echo $form->dropDownList($model,'area',array('LOGICA'=>'LOGICA','MATEMATICAS'=>'MATEMATICAS','ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
-			                                                'FISICA'=>'FISICA','QUIMICA'=>'QUIMICA','CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA','CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
-			                                                'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD','CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
-			                                                'MEDICINA Y PATOLOGIA HUMANA'=>'MEDICINA Y PATOLOGIA HUMANA','CIENCIAS DE LA TECNOLOGIA'=>'CIENCIAS DE LA TECNOLOGIA',
-			                                                'ANTROPOLOGIA'=>'ANTROPOLOGIA','DEMOGRAFIA'=>'DEMOGRAFIA','CIENCIAS ECONOMICAS'=>'CIENCIAS ECONOMICAS',
-			                                                'GEOGRAFIA'=>'GEOGRAFIA','HISTORIA'=>'HISTORIA','CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
-			                                                'LINGÜISTICA'=>'LINGÜISTICA','PEDAGOGIA'=>'PEDAGOGIA','CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS','PSICOLOGIA'=>'PSICOLOGIA',
-			                                                'ARTES Y LETRAS'=>'ARTES Y LETRAS','SOCIOLOGIA'=>'SOCIOLOGIA','CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION','ETICA'=>'ETICA',
-			                                                'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'), 
+			echo $form->dropDownList($model,'area',array('1'=>'ANTROPOLOGIA',
+															'2'=>'ARTES Y LETRAS',
+															'3'=>'ASTRONOMIA Y ASTROFISICA',
+															'4'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
+															'5'=>'CIENCIAS DE LA OCUPACION',
+															'6'=>'CIENCIAS DE LA TECNOLOGIA',
+															'7'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
+															'8'=>'CIENCIAS DE LA SALUD',
+															'9'=>'CIENCIAS DE LA VIDA',
+															'10'=>'CIENCIAS ECONOMICAS',
+															'11'=>'CIENCIAS JURIDICAS Y DERECHO',
+															'12'=>'CIENCIAS POLITICAS',
+															'13'=>'DEMOGRAFIA',
+															'14'=>'ETICA',
+															'15'=>'FILOSOFIA',
+															'16'=>'FISICA',
+															'17'=>'GEOGRAFIA',
+															'18'=>'HISTORIA',
+															'19'=>'LINGÜISTICA',
+															'20'=>'LOGICA',
+															'21'=>'MATEMATICAS',
+															'22'=>'MEDICINA Y PATOLOGIA HUMANA',
+															'23'=>'PEDAGOGIA',
+															'24'=>'PSICOLOGIA',
+															'25'=>'PROSPECTIVA',
+															'26'=>'QUIMICA', '27'=>'SOCIOLOGIA'), 
 														array('name'=>'area','prompt'=>'Selecciona Área','options' => array(''=>array('selected'=>true))));
 													echo "</span>";?>
 
@@ -474,20 +492,17 @@
                      		'success'=>'function(data) 
                      		 {
 		                                      
-
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
-				                     $(".successdiv").show();
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";
+				                     $(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {
-			                     	 $(".errordiv").show();   
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";  
+			                     	   $(".successdiv").show();  
 			                     }       
 		                  	}',                    
 		                    
-                        ), array('id'=>'btnCreateGrade')); 
+                        ), array('id'=>'btnCreateGrade','class'=>'addSomething')); 
         ?>
 		
 		<br>
@@ -518,7 +533,7 @@
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
 			echo $form->dropDownList($model,'grade',array('Licenciatura'=>'Licenciatura','Maestria'=>'Maestria', 
-																'Doctorado'=>'Doctorado'), 
+																'Doctorado'=>'Doctorado', 'Especialidad'=>'Especialidad‏', 'Super especialidad‏'=>'Super especialidad‏'), 
 			                                                       array('required'=>'true','name'=>'getGrade[]','prompt'=>'Selecciona Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))), 
 			                                                       array('size'=>10,'maxlength'=>10)); 
 			echo $form->error($model,'grade');
@@ -633,15 +648,32 @@
 
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
-		     echo $form->dropDownList($model,'area',array('LOGICA'=>'LOGICA','MATEMATICAS'=>'MATEMATICAS','ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
-			                                                'FISICA'=>'FISICA','QUIMICA'=>'QUIMICA','CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA','CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
-			                                                'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD','CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
-			                                                'MEDICINA Y PATOLOGIA HUMANA'=>'MEDICINA Y PATOLOGIA HUMANA','CIENCIAS DE LA TECNOLOGIA'=>'CIENCIAS DE LA TECNOLOGIA',
-			                                                'ANTROPOLOGIA'=>'ANTROPOLOGIA','DEMOGRAFIA'=>'DEMOGRAFIA','CIENCIAS ECONOMICAS'=>'CIENCIAS ECONOMICAS',
-			                                                'GEOGRAFIA'=>'GEOGRAFIA','HISTORIA'=>'HISTORIA','CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
-			                                                'LINGÜISTICA'=>'LINGÜISTICA','PEDAGOGIA'=>'PEDAGOGIA','CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS','PSICOLOGIA'=>'PSICOLOGIA',
-			                                                'ARTES Y LETRAS'=>'ARTES Y LETRAS','SOCIOLOGIA'=>'SOCIOLOGIA','CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION','ETICA'=>'ETICA',
-			                                                'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'), 
+		     echo $form->dropDownList($model,'area',array('1'=>'ANTROPOLOGIA',
+															'2'=>'ARTES Y LETRAS',
+															'3'=>'ASTRONOMIA Y ASTROFISICA',
+															'4'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
+															'5'=>'CIENCIAS DE LA OCUPACION',
+															'6'=>'CIENCIAS DE LA TECNOLOGIA',
+															'7'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
+															'8'=>'CIENCIAS DE LA SALUD',
+															'9'=>'CIENCIAS DE LA VIDA',
+															'10'=>'CIENCIAS ECONOMICAS',
+															'11'=>'CIENCIAS JURIDICAS Y DERECHO',
+															'12'=>'CIENCIAS POLITICAS',
+															'13'=>'DEMOGRAFIA',
+															'14'=>'ETICA',
+															'15'=>'FILOSOFIA',
+															'16'=>'FISICA',
+															'17'=>'GEOGRAFIA',
+															'18'=>'HISTORIA',
+															'19'=>'LINGÜISTICA',
+															'20'=>'LOGICA',
+															'21'=>'MATEMATICAS',
+															'22'=>'MEDICINA Y PATOLOGIA HUMANA',
+															'23'=>'PEDAGOGIA',
+															'24'=>'PSICOLOGIA',
+															'25'=>'PROSPECTIVA',
+															'26'=>'QUIMICA', '27'=>'SOCIOLOGIA'), 
 													array('name'=>'getArea[]','prompt'=>'Selecciona Área','options' => array($getGrades[$key]->area=>array('selected'=>true))));
 			 echo $form->error($model,'area'); 
 		echo '</div>';
@@ -900,19 +932,20 @@
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
-                     		'success'=>'function(data){
+                     		'success'=>'function(data) 
+                     		 {
 		                                      
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
-				                     $(".successdiv").show();
+				                     $(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {
-			                     	$(".errordiv").show();   
+			                     	$(".errordiv").show();    
 			                     }       
 		                  	}',                    
 		                    
-                      ), array('class'=>'savebutton'));  
+                      ), array('class'=>'savebutton')); 
         
 		
 		echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); 

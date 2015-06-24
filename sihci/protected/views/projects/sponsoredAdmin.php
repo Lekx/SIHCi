@@ -7,6 +7,19 @@ $this->breadcrumbs=array(
 	'Gestión',
 );
 
+$this->menu=array(
+	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
+	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
+	array('label'=>'Invitaciones', 'url'=>array('projects/sponsoredAdmin'),'itemOptions'=>array('class' => 'menuitem 2 now')),
+	array('label'=>'Proyectos de Investigación', 'url'=>array('projects/admin'),'itemOptions'=>array('class' => 'menuitem 1')),
+		array('label'=>'Crear', 'url'=>array('projects/create'),'itemOptions'=>array('class' => 'sub1')),
+		array('label'=>'Gestionar', 'url'=>array('projects/admin'),'itemOptions'=>array('class' => 'sub1')),
+
+
+	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
+	
+	);
+
 /*
 
 echo "<pre>";

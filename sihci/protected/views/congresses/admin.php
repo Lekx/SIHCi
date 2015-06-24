@@ -102,7 +102,7 @@ $('.search-form form').submit(function(){
 
 		array('name'=>'Título de trabajo','type'=>'html','id'=>'work_title','value'=>'CHtml::encode($data->work_title)'),
 		array('name'=>'Congreso','type'=>'html','id'=>'congress','value'=>'CHtml::encode($data->congress)'),
-		array('name'=>'Tipo','type'=>'html','id'=>'keywords','value'=>'CHtml::encode($data->keywords)'),
+		array('name'=>'Palabras claves','type'=>'html','id'=>'keywords','value'=>'CHtml::encode($data->keywords)'),
 		array('name'=>'Año','type'=>'html','id'=>'year','value'=>'CHtml::encode($data->year)'),
 		
 		//'id',
