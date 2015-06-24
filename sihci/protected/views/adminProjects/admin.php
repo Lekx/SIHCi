@@ -42,7 +42,7 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
  }
 </script>
 
-<input type="text" id="search" onchange="search()" placeholder="Buscar"><br><br>
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna"><br><br>
 <?php echo CHtml::link('<span>Registrar<br>Proyecto</span>', array('projects/create'));?><br><br>
 <?php echo CHtml::link('<span>Registrar<br>Patrocinio</span>', array('AdminProjects/CreateSponsorship'));?>
 <?php 
