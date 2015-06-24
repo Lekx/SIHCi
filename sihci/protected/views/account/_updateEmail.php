@@ -31,7 +31,7 @@ $this->menu = array(
 	<h4>Modificar Correo:</h4>
 
 	<div class="row">
-		<?php echo $form->textField($details,'email',array('title'=>'Email')); ?>
+		<?php echo $form->textField($details,'email',array('title'=>'Email','disabled'=>'true')); ?>
 		<?php echo $form->error($details,'email'); ?>
 		<hr>
 	</div>

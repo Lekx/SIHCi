@@ -30,10 +30,7 @@ class SponsorsDocs extends CActiveRecord {
 			array('id_sponsor, file_name, path', 'required'),
 			array('id_sponsor', 'numerical', 'integerOnly' => true),
 			array('file_name, path', 'length', 'max' => 150),
-			array('path', 'file', 'on' => 'update', 'allowEmpty' => false,
-			'types' => 'pdf, doc, docx, odt, jpg, jpeg, png',
-			'maxSize' => array(1024 * 2000),
-			'message' => 'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
+			
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_sponsor, file_name, path', 'safe', 'on' => 'search'))

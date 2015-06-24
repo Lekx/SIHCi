@@ -546,7 +546,7 @@ if(areaValue == "SOCIOLOGIA"){
 
   <div class="row">
 
-    <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'archivo de capítulo de libros')); ?>
+    <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
     <?php echo $form->error($model,'url_doc'); ?>
   </div>
 

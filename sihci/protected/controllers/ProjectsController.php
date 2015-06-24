@@ -80,7 +80,7 @@ class ProjectsController extends Controller
 			if($_POST['type']== "draft")
 				$model->status = "borrador";
 			else
-				$model->status = "divuh";
+				$model->status = "DIVUH";
 
 			$model->folio = "-1";
 			$model->is_sponsored = 0; 

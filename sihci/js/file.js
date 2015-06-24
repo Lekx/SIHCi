@@ -6,7 +6,8 @@ $(document).ready( function() {
                 +'class="filepicker" '
                 +'id="'+id+'" '
                 +'name="'+name+'">'
-                +'<i class="fa fa-upload"></i> Seleccionar Documento'
+                +'<i class="fa fa-upload"></i> Seleccionar '
+                +$(this).attr('title')
             +'</button>');
 			
 		button.on('click',function(e){
