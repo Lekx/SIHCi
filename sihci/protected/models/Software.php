@@ -167,13 +167,6 @@ class Software extends CActiveRecord
 	
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-<<<<<<< HEAD
-			/*'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'title ASC',
-		    ),*/
-=======
->>>>>>> beb52636a9ce27435b77752a4037e15bbba3be63
 		));
 	}
 
