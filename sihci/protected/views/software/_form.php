@@ -275,7 +275,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->FileField($model,'path',array('id'=>'path','title'=>'Documento')); ?>
+		<?php echo $form->FileField($model,'path',array('id'=>'path','title'=>'documento probatorio')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
