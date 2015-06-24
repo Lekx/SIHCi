@@ -52,7 +52,7 @@ function change(){
 
 </script>
 <!-- <h3>en construcción . . .</h3> -->
-<input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna"><br><br>
 
 <select id="valueHospital" onchange="change()">
   <option value="total" selected="">Total de Hospitales</option>	
