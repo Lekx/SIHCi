@@ -3,7 +3,21 @@
 /* @var $model Patent */
 /* @var $form CActiveForm */
 ?>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
 
+    });
+});
+</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -12,9 +26,10 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
 	'enableClientValidation'=>true,
-	'clientOptions'=>array('validateOnSubmit'=>true)
+	'enableAjaxValidation'=>true,
+	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
+	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
 
@@ -51,7 +66,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150,'placeholder'=>'Nombre','title'=>'Nombre')); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150,'placeholder'=>'Nombre de la patente','title'=>'Nombre de la patente')); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
@@ -80,7 +95,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud', 'title'=>'Numero de registro o de solicitud')); ?>
+		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud', 'class'=>'numericOnly','title'=>'Numero de registro o de solicitud')); ?>
 		<?php echo $form->error($model,'application_number'); ?>
 	</div>
 
@@ -150,7 +165,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Titulo','title'=>'Titulo')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Titular de la patente','title'=>'Titular de la patente')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
@@ -165,7 +180,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'industrial_exploitation',array('placeholder'=>'Explatación industrial','title'=>'Explatación industrial')); ?>
+		<?php echo $form->textField($model,'industrial_exploitation',array('placeholder'=>'Explatación industrial','title'=>'Explatación industrial','class'=>'numericOnly')); ?>
 		<?php echo $form->error($model,'industrial_exploitation'); ?>
 	</div>
 

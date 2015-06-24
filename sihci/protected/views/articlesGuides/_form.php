@@ -19,7 +19,29 @@ $(document).ready(function() {
 
     });
 });
+
+function lettersOnly(e)
+{
+ 	key = e.keyCode || e.which;
+ 	tecla = String.fromCharCode(key).toLowerCase();
+ 	letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+ 	especiales = [8,37,39,46,45,47];
+
+	 tecla_especial = false
+ 		for(var i in especiales)
+ 		{
+     		if(key == especiales[i])
+     		{
+  				tecla_especial = true;
+  				break;
+            } 
+ 		}
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     		return false;
+}
 </script>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -410,49 +432,51 @@ $(document).ready(function() {
 	   <?php  echo "<input type='hidden' name='idsArticlesGuides[]'>"; ?>
 		   
 		   <div class="row">
-			  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)')); ?>
+			  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'names');?>
 		   </div>
 
 		  <div class="row">
-			  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno')); ?>
+			  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name1'); ?>
 		  </div>
 		  
 		   <div class="row">
-			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno')); ?>
+			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
 	       </div>
 		  <div class="row">
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición', 'title'=>'posición')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición', 'title'=>'posición','class'=>'numericOnly')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
 		  <hr>
    	</div> 	
     	    
 	<?php 
+
+
 		if(!$model->isNewRecord)		  
 		  foreach ($modelAuthors as $key => $value) 
 		  { ?>
 		 	 		
 				 <?php echo "<input type='hidden' value='".$value->id."' name='idsArticlesGuides[]'>"; ?>
 				  
-							<div class="row">
-					  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)')); ?>
-					  <?php echo $form->error($value,'names');?>
+					   <div class="row">
+					  		<?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
+					  		<?php echo $form->error($value,'names');?>
 					  </div>
-							<div class="row">
-					   <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno')); ?>
-					  <?php echo $form->error($value,'last_name1'); ?>
+					  <div class="row">
+					  		 <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
+					  		<?php echo $form->error($value,'last_name1'); ?>
 					  </div>
-						<div class="row">
-					  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno')); ?>
-					  <?php echo $form->error($value,'last_name2'); ?>
+					  <div class="row">
+					  		<?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
+					  		<?php echo $form->error($value,'last_name2'); ?>
 					  </div>
 				
 						<div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición', 'title'=>'posición')); ?>
-					  <?php echo $form->error($value,'position'); ?>
+					  		<?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición', 'title'=>'posición')); ?>
+					  		<?php echo $form->error($value,'position'); ?>
 					  </div>
 			
 	 

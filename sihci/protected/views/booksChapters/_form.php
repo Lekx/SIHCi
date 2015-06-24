@@ -8,19 +8,23 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
 
 
 <script type="text/javascript">
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
+	$(document).ready(function() {
+	    $(".numericOnly").keydown(function (e) {
+	        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+	            (e.keyCode == 65 && e.ctrlKey === true) ||
+	            (e.keyCode >= 35 && e.keyCode <= 40)) {
+	                return;
+	        }
+	        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+	            e.preventDefault();
+	        }
 
-    });
-});
+	    });
+	});
+
+	function changeArea(){
+		
+	}
 </script>
 
 <div class="form">
@@ -116,15 +120,33 @@ $(document).ready(function() {
 
 	<div class="row">
 		<span class="plain-select">
-		<?php echo $form->dropDownList($model,'area',array('LOGICA'=>'LOGICA','MATEMATICAS'=>'MATEMATICAS','ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
-			                                                'FISICA'=>'FISICA','QUIMICA'=>'QUIMICA','CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA','CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
-			                                                'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD','CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
-			                                                'MEDICINA Y PATOLOGIA HUMANA'=>'MEDICINA Y PATOLOGIA HUMANA','CIENCIAS DE LA TECNOLOGIA'=>'CIENCIAS DE LA TECNOLOGIA',
-			                                                'ANTROPOLOGIA'=>'ANTROPOLOGIA','DEMOGRAFIA'=>'DEMOGRAFIA','CIENCIAS ECONOMICAS'=>'CIENCIAS ECONOMICAS',
-			                                                'GEOGRAFIA'=>'GEOGRAFIA','HISTORIA'=>'HISTORIA','CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
-			                                                'LINGÜISTICA'=>'LINGÜISTICA','PEDAGOGIA'=>'PEDAGOGIA','CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS','PSICOLOGIA'=>'PSICOLOGIA',
-			                                                'ARTES Y LETRAS'=>'ARTES Y LETRAS','SOCIOLOGIA'=>'SOCIOLOGIA','CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION','ETICA'=>'ETICA',
-			                                                'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'),array('prompt'=>'Seleccionar área','title'=>'Area'));?>
+		<?php echo $form->dropDownList($model,'area',array('1'=>'ANTROPOLOGIA',
+
+															'2'=>'ARTES Y LETRAS',
+															'3'=>'ASTRONOMIA Y ASTROFISICA',
+															'4'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
+															'5'=>'CIENCIAS DE LA OCUPACION',
+															'6'=>'CIENCIAS DE LA TECNOLOGIA',
+															'7'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
+															'8'=>'CIENCIAS DE LA SALUD',
+															'9'=>'CIENCIAS DE LA VIDA',
+															'10'=>'CIENCIAS ECONOMICAS',
+															'11'=>'CIENCIAS JURIDICAS Y DERECHO',
+															'12'=>'CIENCIAS POLITICAS',
+															'13'=>'DEMOGRAFIA',
+															'14'=>'ETICA',
+															'15'=>'FILOSOFIA',
+															'16'=>'FISICA',
+															'17'=>'GEOGRAFIA',
+															'18'=>'HISTORIA',
+															'19'=>'LINGÜISTICA',
+															'20'=>'LOGICA',
+															'21'=>'MATEMATICAS',
+															'22'=>'MEDICINA Y PATOLOGIA HUMANA',
+															'23'=>'PEDAGOGIA',
+															'24'=>'PSICOLOGIA',
+															'25'=>'PROSPECTIVA',
+															'26'=>'QUIMICA', '27'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'onchange'=>'changeArea()'));?>
 			                                                </span>
 		<?php echo $form->error($model,'area'); ?>
 	</div>

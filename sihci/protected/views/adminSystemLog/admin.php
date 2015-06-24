@@ -49,12 +49,7 @@ $('.search-form form').submit(function(){
 			array('name'=>'Acción','type'=>'html','id'=>'action','value'=>'CHtml::encode($data->action)'),
 			array('name'=>'Fecha','type'=>'html','id'=>'datetime','value'=>'CHtml::encode($data->datetime)'),
 		
-		// 'id',
-		// 'id_user',
-		// 'section',
-		// 'details',
-		// 'action',
-		// 'datetime',
+		
 		array(
 			'class'=>'CButtonColumn',
 		),
