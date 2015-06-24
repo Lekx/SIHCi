@@ -45,7 +45,8 @@ class Persons extends CActiveRecord {
 			array('id_user', 'numerical', 'integerOnly' => true),
 			array('names', 'length', 'max' => 30),
 			array('curp_passport', 'length', 'min' => 11, 'max' => 18),
-			array('last_name1, last_name2, marital_status, curp_passport', 'length', 'max' => 20),
+			array('person_rfc', 'length', 'min' => 13, 'max' => 13),
+			array('last_name1, last_name2, marital_status', 'length', 'max' => 20),
 			array('genre', 'length', 'max' => 10),
 			array('country', 'length', 'max' => 50),
 			array('state_of_birth', 'length', 'max' => 45),
@@ -54,7 +55,6 @@ class Persons extends CActiveRecord {
 				'types' => 'png, jpg, jpeg',
 				'maxSize' => array(1024 * 2000),
 				'message' => 'Solo se admiten archivos PNG, JPG, JPEG'),
-			array('person_rfc', 'length', 'min' => 13, 'max' => 13),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_user, names, last_name1, last_name2, marital_status, genre, birth_date, country, state_of_birth, curp_passport, photo_url, person_rfc', 'safe', 'on' => 'search'),

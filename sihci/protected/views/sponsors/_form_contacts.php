@@ -3,7 +3,25 @@
 /* @var $model SponsorsContacts */
 /* @var $form CActiveForm */
 ?>
+<script>
+	function lettersOnly(e){
+		key = e.keyCode || e.which;
+		tecla = String.fromCharCode(key).toLowerCase();
+		letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+		especiales = [8,37,39,46,45,47];
 
+		tecla_especial = false
+	 	for(var i in especiales){
+	     	if(key == especiales[i]){
+	  			tecla_especial = true;
+  		break;
+           	} 
+ 	}
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     return false;
+     }
+</script>
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -19,7 +37,7 @@
 	<hr>
 		<?php
 		echo "<div class='row'>";
-		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
+		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','onKeypress'=>'return lettersOnly(event)','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
 		echo $form->error($model, 'fullname');
 		echo "</div>";
 ?>

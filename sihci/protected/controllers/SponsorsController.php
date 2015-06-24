@@ -102,7 +102,7 @@ class SponsorsController extends Controller {
 
 							if (!empty(CUploadedFile::getInstanceByName('Persons[photo_url]'))) {
 
-								if($model->photo_url->type == 'application/pdf' || $model->photo_url->type == 'application/msword' || $model->photo_url->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->photo_url->type == 'application/vnd.oasis.opendocument.text' )
+								//if($model->photo_url->type == 'application/pdf' || $model->photo_url->type == 'application/msword' || $model->photo_url->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->photo_url->type == 'application/vnd.oasis.opendocument.text' )
 								
 								$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id;
 								$path = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/img/";
@@ -380,256 +380,146 @@ class SponsorsController extends Controller {
 		));
 	}
 
-	public function actionCreate_docs() {
 
-		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
-			$iduser = (int)$_GET["ide"];
-		else
-			$iduser = Yii::app()->user->id;
 
-		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id;
 
+
+			public function actionCreate_docs() {
+
+			if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+				$iduser = (int)$_GET["ide"];
+			else
+				$iduser = Yii::app()->user->id;
+
+		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 		$DocExist = SponsorsDocs::model()->findAllByAttributes(array('id_sponsor' => $id_sponsor));
 		$modelDocs = array();
 		if ($DocExist != null) {
 			foreach ($DocExist as $key => $value) {
 				$modelDocs[$value->file_name] = array($value->id, $value->path);
 			}
-
 		}
-
 		$model = new SponsorsDocs;
 		$reload = false;
-
 		if (isset($_POST['Doc1'])) {
-
 			$path2 = YiiBase::getPathOfAlias("webroot") . "/sponsors/" . $id_sponsor . "/docs/";
-			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id;
+			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
 			if (!file_exists($path2)) {
 				mkdir($path2, 0777, true);
 			}
 		
 			if (is_object(CUploadedFile::getInstanceByName('Doc1'))) {
 				unset($model);
-				$section = "Empresas"; 
 				if (!array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelDocs)) {
-					$model = new SponsorsDocs;
-					$action = "Creación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento decreto de Creación de la Empresa";
-				} else {
-					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
-					$action = "Modificación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento decreto de Creación de la Empresa. Número Registro: ".$model->id;
-				}
-				$model->id_sponsor = $id_sponsor;
-				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id;
-				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
-					
+					var_dump($modelDocs);
 					$model = new SponsorsDocs;
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Documento_que_acredite_la_creacion_de_la_empresa'][0]);
-
 				}
-
 				$model->id_sponsor = $id_sponsor;
-				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id;
+				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
 				//unlink($model->path);
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				
-				if($model->save()){
+				if($model->save())
 					$reload = true;
-					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				}
 				
 				
 			}
-
 			if (is_object(CUploadedFile::getInstanceByName('Doc2'))) {
 				unset($model);
-				$section = "Empresas"; 
 				if (!array_key_exists('Acreditacion_de_las_facultades_del_representante_o_apoderado', $modelDocs)) {
 					$model = new SponsorsDocs;
-					$action = "Creación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento que acreditan las facultades del representante.";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Acreditacion_de_las_facultades_del_representante_o_apoderado'][0]);
-					$action = "Modificación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento que acreditan las facultades del representante. Número Registro: ".$model->id;
 				}
-
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Acreditacion_de_las_facultades_del_representante_o_apoderado";
 				$model->path = CUploadedFile::getInstanceByName('Doc2');
-				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 				
-					if ($model->save()) {
+					if ($model->save()) 
 						$reload = true;
-						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-					}
 					
 				
-
-			}else {													
-				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
-
 			if (is_object(CUploadedFile::getInstanceByName('Doc3'))) {
 				unset($model);
-				$section = "Empresas"; 
 				if (!array_key_exists('Permisos_de_actividades', $modelDocs)) {
 					$model = new SponsorsDocs;
-					$action = "Creación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento de Licencias, autorizaciones, permisos para las actividades.";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Permisos_de_actividades'][0]);
-					$action = "Modificación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento de Licencias, autorizaciones, permisos para las actividades. Número Registro: ".$model->id;
 				}
-
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Permisos_de_actividades";
 				$model->path = CUploadedFile::getInstanceByName('Doc3');
-				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-					if ($model->save()) {
+					if ($model->save()) 
 						$reload = true;
-						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-					}
 					
 				
-
-			}else {													
-				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
-
 			if (is_object(CUploadedFile::getInstanceByName('Doc4'))) {
 				unset($model);
-				$section = "Empresas"; 
 				if (!array_key_exists('RFC_o_equivalente', $modelDocs)) {
 					$model = new SponsorsDocs;
-					$action = "Creación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento RFC o equivalente";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['RFC_o_equivalente'][0]);
-					$action = "Modificación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento RFC o equivalente. Número Registro: ".$model->id;
 				}
-
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "RFC_o_equivalente";
 				$model->path = CUploadedFile::getInstanceByName('Doc4');
-				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-					if ($model->save()) {
+					if ($model->save()) 
 						$reload = true;
-						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-					}
 					
 				
-
-			}else {													
-				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
-
 			if (is_object(CUploadedFile::getInstanceByName('Doc5'))) {
 				unset($model);
-				$section = "Empresas"; 
 				if (!array_key_exists('Comprobante_de_domicilio', $modelDocs)) {
 					$model = new SponsorsDocs;
-					$action = "Creación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento Comprobante de Domicilio";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Comprobante_de_domicilio'][0]);
-					$action = "Modificación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento Comprobante de Domicilio. Número Registro: ".$model->id;
 				}
-
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Comprobante_de_domicilio";
 				$model->path = CUploadedFile::getInstanceByName('Doc5');
-				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-					if ($model->save()) {
+					if ($model->save()) 
 						$reload = true;
-						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-					}
 					
 				
-
-			}else {													
-				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
-
 			if (is_object(CUploadedFile::getInstanceByName('Doc6'))) {
 				unset($model);
-				$section = "Empresas"; 
 				if (!array_key_exists('Identificacion_Oficial_del_Representante', $modelDocs)) {
 					$model = new SponsorsDocs;
-					$action = "Creación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento Identificación oficial del Representante.";
 				} else {
 					$model = SponsorsDocs::model()->findByPk($modelDocs['Identificacion_Oficial_del_Representante'][0]);
-					$action = "Modificación";
-					$details = "Subsección: Documentos Probatorios. Se subió Documento Identificación oficial del Representante. Número Registro: ".$model->id;
 				}
-
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Identificacion_Oficial_del_Representante";
 				$model->path = CUploadedFile::getInstanceByName('Doc6');
-				if($model->file_name->type == 'application/pdf' || $model->file_name->type == 'application/msword' || $model->file_name->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->file_name->type == 'application/vnd.oasis.opendocument.text' );
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "sponsors/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				if ($model->save()) {
+				if ($model->save()) 
 					$reload = true;
-					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				}
 				
-
-			}else {													
-				//echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
 			}
-
 			if ($reload == true) {
 				$this->redirect(array('create_docs'));
 			}
-
-		
+		}
 		$this->render('create_docs', array(
 			'model' => $model, 'modelDocs' => $modelDocs,
-		));
-
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-
-	public function actionUpdate($id) {
-		$model = $this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		//$this->performAjaxValidation($model);
-
-		if (isset($_POST['Sponsors'])) {
-			$model->attributes = $_POST['Sponsors'];
-			if ($model->save()) {
-				$this->redirect(array('view', 'id' => $model->id));
-			}
-
-		}
-
-		$this->render('update', array(
-			'model' => $model,
 		));
 	}
 
