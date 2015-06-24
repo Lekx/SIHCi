@@ -90,7 +90,7 @@ $this->menu=array(
 		 array(
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo',Yii::app()->baseUrl.$model->url_doc, array("target"=>"_blank")),
+			'value'=>$model->url_doc != null ? CHtml::link('Ver archivo',Yii::app()->baseUrl.$model->url_doc, array("target"=>"_blank")) : "No existe archivo",
 			), 
 
         

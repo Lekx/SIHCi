@@ -1,4 +1,9 @@
-<h1>Gestión de Proyectos</h1>
+<div class="admintitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1>Manejador de proyectos</h1>
+            <hr>
+        </div>
+         <h4 style="margin-left:100px">Gestionar</h4>
 <script type="text/javascript">
 	function search(){
  	valueSearch = $("#search").val();
@@ -10,6 +15,14 @@
  		$('tbody > tr:not(:contains('+valueSearch+'))').hide();
  	}
  }
+ <?php
+/* @var $this BooksController */
+/* @var $model Books */
+/* @var $form CActiveForm */
+$baseUrl = Yii::app()->baseUrl;
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl. '/js/admin.js');
+?>
 
  function updateStatusSponsorship(id){
  	var request = $.ajax({

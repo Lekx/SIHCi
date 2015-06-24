@@ -3,7 +3,7 @@ class UsersController extends Controller {
 	function checkEmail($email, $email2) {
 
 		if ($email != $email2) {
-			echo "email";
+			echo "Los Emails no coinciden.";
 			return false;
 		} else {
 			return true;
@@ -11,7 +11,7 @@ class UsersController extends Controller {
 	}
 	function checkPassword($password, $password2) {
 		if ($password != $password2) {
-			echo "pass";
+			echo "Las contraseñas no coinciden.";
 			return false;
 		} else {
 			return true;

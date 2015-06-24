@@ -7,10 +7,7 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List FilesManager', 'url'=>array('index')),
-	array('label'=>'Create FilesManager', 'url'=>array('create')),
-);
+
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -24,16 +21,29 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
+
 ?>
+<?php
+/* @var $this BooksController */
+/* @var $model Books */
+/* @var $form CActiveForm */
+$baseUrl = Yii::app()->baseUrl;
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl. '/js/admin.js');
+?>
+<div class="admintitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
+            <h1>Manejador de Archivos</h1>
+            <hr>
+        </div>
 
-<h1>Manage Files Managers</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+       <h4 style="margin-left:105px">Gestionar</h4>
+		<input type="text" id="search" onchange="search()" placeholder="Buscar.." class="searchadmin">
+		<?php echo CHtml::submitButton('',array('class'=>'adminbut')); ?>
+       	<?php echo CHtml::link('Crear',array('FilesManager/create'),array('class'=>'admin_create')); ?>
+       	<br>
+       	<br>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -43,7 +53,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'files-manager-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
 	'columns'=>array(
 		'id',
 		'section',

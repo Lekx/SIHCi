@@ -9,7 +9,7 @@ $(document).ready(function() {
         position: 'right' // display the tips to the right of the element
     });
 
-    if ($('#Persons_country').val() == 'Mexico') {
+    if ($('#Persons_country').val() == 'México') {
         $('#Persons_curp_passport').attr('placeholder', 'CURP');
         $('.row1').css('display', '');
         $('#Persons_curp_passport').tooltipster('content', 'CURP');
@@ -19,7 +19,7 @@ $(document).ready(function() {
         $('#Persons_curp_passport').tooltipster('content', 'Pasaporte');
     }
     $('#Persons_country').on('change', function() {
-        if ($('#Persons_country').val() == 'Mexico') {
+        if ($('#Persons_country').val() == 'México') {
             $('#Persons_curp_passport').attr('placeholder', 'CURP');
             $('.row1').css('display', '');
             $('#Persons_curp_passport').tooltipster('content', 'CURP');
@@ -37,5 +37,7 @@ $(document).ready(function() {
  /*   $('.savebutton').click(function() {
         $('.successdiv').show();
     }); */
+
+$('select').unbind('blur');
 
 });

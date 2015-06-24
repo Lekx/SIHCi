@@ -50,7 +50,7 @@ class Users extends CActiveRecord
 			array('id_roles', 'numerical', 'integerOnly'=>true),
 			array('email', 'email'),
 			array('email', 'length', 'max'=>100),
-			array('password','length', 'min'=>6, 'max'=>200),
+			array('password','length', 'min'=>6, 'max'=>12),
 			array('act_react_key', 'length', 'max'=>200),
 			array('status', 'length', 'max'=>15),
 			array('type', 'length', 'max'=>30),

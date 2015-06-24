@@ -12,7 +12,6 @@ Tipo de reporte
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-<!-- <input type="button" value="puto" onclick="loadChart()"> -->
 <script>
 //jQuery.noConflict(); 
 var chart;
@@ -31,7 +30,6 @@ request.done(function(data) {
             });*/
 
 chart = new Highcharts.Chart({
-
 
         chart: {
             renderTo: 'container',

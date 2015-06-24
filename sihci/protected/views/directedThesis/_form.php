@@ -56,7 +56,11 @@
 
 	<div class="row">
 				<span class="plain-select">
-		<?php echo $form->dropDownList($model,'grade',array('Maestria'=>'Maestria','Licenciatura'=>'Licenciatura','Preparatoria'=>'Preparatoria'),array('prompt'=>'Seleccionar grado','title'=>'Grado')); ?>
+		<?php echo $form->dropDownList($model,'grade',array('Licenciatura'=>'Licenciatura','
+																Maestria'=>'Maestria',
+																'Doctorado'=>'Doctorado',
+																'Especialidad'=>'Especialidad',
+																'Super especialidad'=>'Super especialidad'),array('prompt'=>'Seleccionar grado','title'=>'Grado')); ?>
 		</span>
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
@@ -391,7 +395,7 @@
 
 
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton')); ?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('DirectedThesis/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+		<?php echo CHtml::link('Cancelar',array('DirectedThesis/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 
 	</div>

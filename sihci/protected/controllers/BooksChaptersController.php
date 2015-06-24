@@ -124,11 +124,12 @@ class BooksChaptersController extends Controller
                                 Yii::app()->end();
 			               		}
 
-			               }else{	
+			               }
+			               else{	
 
 								//Esta parte va en el campo de filefield como mensaje
 			              		echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
-			            	}	
+			            	}
 			        }
 			        else
 			        {
@@ -160,10 +161,7 @@ class BooksChaptersController extends Controller
 
 			               }
 
-			        }
-
-				   
-        		
+			        } 
         }
 
         $this->render('create',array(

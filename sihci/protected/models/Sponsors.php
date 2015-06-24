@@ -46,6 +46,8 @@ class Sponsors extends CActiveRecord
 			array('id_user, id_address, sponsor_name, type', 'required'),
 			array('id_user, id_address, employeess_number', 'numerical', 'integerOnly'=>true),
 			array('sponsor_name', 'length', 'max'=>50),
+			array('curp_passport', 'length', 'min' => 11, 'max' => 18),
+			array('person_rfc', 'length', 'min' => 13, 'max' => 13),
 			array('type', 'length', 'max'=>150),
 			array('website, sector, class, branch, main_activity, legal_structure', 'length', 'max'=>100),
 			// The following rule is used by search().

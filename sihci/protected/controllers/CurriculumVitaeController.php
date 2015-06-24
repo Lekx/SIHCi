@@ -25,7 +25,7 @@ class CurriculumVitaeController extends Controller
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
 								'DeletePhone', 'DeleteResearch', 'DeleteGrade', 'DeleteDocs',
-								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission'),
+								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission', 'Admin'),
 				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1" || $user->id_roles==="13")',
 				 'users'=>array('@'),
 			),
@@ -34,7 +34,9 @@ class CurriculumVitaeController extends Controller
 			),
 		);
 	}
-	
+	public function actionAdmin() {
+		$this->redirect("personalData");
+	}
 	public function actionIndex() {
 		$this->redirect("personalData");
 	}
@@ -518,7 +520,7 @@ class CurriculumVitaeController extends Controller
 			$phoneNew->local_area_code = $localAreaCodeNew;
 			$phoneNew->phone_number = $phoneNumberNew;
 			$phoneNew->extension = $extensionNew;
-			$phoneNew->is_primary = "0";
+			$phoneNew->is_primary = "1";
 			if($phoneNew->save()){
 				$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
 				$details = "Subsección Datos de Contacto. Teléfono";
@@ -546,12 +548,10 @@ class CurriculumVitaeController extends Controller
 					$phones->is_primary = $getIsPrimary[$key+1];
 					$phones->save();
 				}	
-				echo CJSON::encode(array('status'=>'success'));
+				echo CJSON::encode(array('status'=>'200'));
 		    	Yii::app()->end();
 			}else{
-				$error = CActiveForm::validate($model);
-                if($error!='[]')
-                   echo $error;
+				echo CJSON::encode(array('status'=>'404'));
                 Yii::app()->end();
 			}
 			$this->redirect('phones');
@@ -582,9 +582,10 @@ class CurriculumVitaeController extends Controller
 			$gradeNew->writ_number = $_POST['writNumber'];
 			$gradeNew->title = $_POST['title'];
 			$gradeNew->obtention_date = $_POST['obtentionDate'];
+			$gradeNew->status = $_POST['status'];
 			$gradeNew->thesis_title = $_POST['thesisTitle'];
 			$gradeNew->state = $_POST['state'];
-			$gradeNew->sector = "sector";
+			$gradeNew->sector = $_POST['sector'];
 			$gradeNew->institution = $_POST['institution'];
 			$gradeNew->area = $_POST['area'];
 			$gradeNew->discipline = $_POST['discipline'];
@@ -602,6 +603,7 @@ class CurriculumVitaeController extends Controller
 				$getWritNumber = $_POST['getWritNumber'];
 				$getTitle = $_POST['getTitle'];
 				$getObtentionDate = $_POST['getObtentionDate'];
+				$getStatus = $_POST['getStatus'];
 				$getThesisTitle = $_POST['getThesisTitle'];
 				$getState = $_POST['getState'];
 				$getSector = $_POST['getSector'];
@@ -618,6 +620,7 @@ class CurriculumVitaeController extends Controller
 					$gradeUp->writ_number = $getWritNumber[$key];
 					$gradeUp->title = $getTitle[$key];
 					$gradeUp->obtention_date = $getObtentionDate[$key];
+					$gradeUp->status = $getStatus[$key];
 					$gradeUp->thesis_title = $getThesisTitle[$key];
 					$gradeUp->state = $getState[$key];
 					$gradeUp->sector = $getSector[$key];
@@ -629,12 +632,10 @@ class CurriculumVitaeController extends Controller
 					$gradeUp->save();
 				}
 			
-				echo CJSON::encode(array('status'=>'success'));
+				echo CJSON::encode(array('status'=>'200'));
 		    	Yii::app()->end();
 			}else{
-				$error = CActiveForm::validate($getTitle);
-                if($error!='[]')
-                   echo $error;
+				echo CJSON::encode(array('status'=>'404'));
                 Yii::app()->end();
 			}
 

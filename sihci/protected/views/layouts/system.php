@@ -168,12 +168,12 @@
             </div>
             <div class="syscontent">
                 <div class="adminmenu">
-                    <div><a href="">Manejador de Archivos</a></div>
-                    <div><a href="">Gestión de usuarios</a></div>
-                    <div><a href="">Gestión de proyectos</a></div>
-                    <div><a href="">Respaldos</a></div>
-                    <div><a href="">Areas de especialidad</a></div>
-                    <div><a href="">Lineas de Investigación</a></div>
+                    <div><?php echo CHtml::link('Manejador de Archivos', array('FilesManager/admin'));?></div>
+                    <div><?php echo CHtml::link('Gestión de usuarios', array('adminUsers/'));?></div>
+                    <div><?php echo CHtml::link('Manejador de proyectos', array('adminProjects/'));?></div>
+                    <div><?php echo CHtml::link('Respaldos', array('adminBackups/'));?></div>
+                    <div><?php echo CHtml::link('Áreas de especialidad', array('adminSpecialtyAreas/admin'));?></div>
+                    <div><?php echo CHtml::link('Lineas de Investigación', array('adminResearchAreas/admin'));?></div>
                 </div>
                 <div class="sysmenu">
                     <ul class="cvmenuitems">

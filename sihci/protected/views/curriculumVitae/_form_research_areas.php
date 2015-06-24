@@ -49,8 +49,8 @@
 
 	<?php echo $form->errorSummary($model); ?>
 	
-<input id="showFormResearch" type="button"  value="Agregar Línea de Investigación" class="addSomething">
-<input id="hideFormResearch" type="button"  value="Cancelar" class="cancelSomething">
+<input id="showFormResearch" type="button"  value="Agregar Nueva Línea de Investigación" class="addSomething">
+<!-- <input id="hideFormResearch" type="button"  value="Cancelar" class="cancelSomething"> -->
 
 <div class="research">
 <div class="research2">
@@ -67,13 +67,11 @@
 		                                      
 		                         if(data.status=="200")
 		                         {
-				                     alert("Linea de investigación se ha creado con éxito");
-				                 ndow.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
+				                     $(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {
-			                     	  alert("Linea de investigación se ha creado con éxito");
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";  
+			                     	   $(".successdiv").show();  
 			                     }       
 		                  	}',                    
 		                    
