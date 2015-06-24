@@ -25,6 +25,24 @@ $(document).ready(function(){
        $("#sponsorsBillingForm").toggle();
     });
 });
+
+function lettersOnly(e){
+	 key = e.keyCode || e.which;
+	 tecla = String.fromCharCode(key).toLowerCase();
+	 letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+	 especiales = [8,37,39,46,45,47];
+
+	 tecla_especial = false
+ 	for(var i in especiales){
+     if(key == especiales[i]){
+  			tecla_especial = true;
+  	break;
+            } 
+ }
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     return false;
+     }
 </script>
 <div class="form">
 
@@ -38,7 +56,7 @@ $(document).ready(function(){
 ));?>
 
 
-	Utlizar la misma Direccion.
+	Utlizar la misma Dirección.
 	<div class="row">
 		<input type="checkbox" id="sponsorsBillingCheck" name="sameAddress"  <?php echo $sameAd == true ? "CHECKED" : "";?>/>
 	</div>
@@ -66,19 +84,19 @@ $(document).ready(function(){
 		<?php echo $form->error($modelAddresses, 'zip_code');?>
 </div>
 <div class="row">
-		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','title' => 'Estado'));?>
+		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','title' => 'Estado','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'state');?>
 		</div>
 <div class="row">
-		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','title' => 'Delegación'));?>
+		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','title' => 'Delegación','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'delegation');?>
 		</div>
 <div class="row">
-		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','title' => 'Ciudad'));?>
+		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','title' => 'Ciudad','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'city');?>
 		</div>
 <div class="row">
-		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','title' => 'Municipio'));?>
+		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','title' => 'Municipio','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'town');?>
 		</div>
 <div class="row">
@@ -102,7 +120,7 @@ $(document).ready(function(){
 
 	<div id="billing" name="billing">
 	<div class="row">
-		<?php echo $form->textField($model, 'name', array('size' => 45, 'placeholder' => 'Nombre', 'maxlength' => 45,'title' => 'Nombre'));?>
+		<?php echo $form->textField($model, 'name', array('size' => 45, 'placeholder' => 'Nombre', 'maxlength' => 45,'title' => 'Nombre','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($model, 'name');?>
 </div>
 <div class="row">

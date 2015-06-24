@@ -487,16 +487,12 @@ class AdminUsersController extends Controller {
 		if((int)$id == 0){
 			Yii::app()->user->setState('id',Yii::app()->user->admin);
 			Yii::app()->user->setState('admin',0);	
-			//echo "vamos a salir";
 			$this->redirect(array('adminUsers/adminUsers'));
 		}else{
 			Yii::app()->user->setState('admin',Yii::app()->user->id);
 			Yii::app()->user->setState('id',(int)$id);
-			//echo "vamos a entrar";
 			$this->redirect(array('account/infoAccount'));
 		}
-		//echo $id;
-		//$this->redirect(array('Account/InfoAccount'));
 	} 
 
 	public function usersFullNames($data, $row) {
