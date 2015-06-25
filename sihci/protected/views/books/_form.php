@@ -68,7 +68,7 @@
 					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
 					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
 
-					'2015'=>'2015'),array('title'=>'Año de publicación'));  
+					'2015'=>'2015'),array('title'=>'Año de publicación'));
 
 		?>
 </span>
@@ -528,7 +528,6 @@
 					  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Materno')); ?>
 					  <?php echo $form->error($value,'last_name2'); ?>
 				  </div>
-
 				  <div class="row">
 					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición')); ?>
 					  <?php echo $form->error($value,'position'); ?>
@@ -536,8 +535,8 @@
 	<?php } ?>
 
 	<div class="row buttons">
-		 <?php  echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?> 
-		
+		 <?php  echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
+
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('books/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 	</div>

@@ -17,7 +17,7 @@ $this->menu=array(
 
 
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	
+
 	);
 
 /*
@@ -29,8 +29,13 @@ echo "<hr><pre>";
 print_r($model->search());
 echo "</pre>"; */
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
+            <h1>Proyectos</h1>
+            <hr>
+        </div>
 
-<h1>Gestión de proyectos patrocinados</h1>
+<h3>Gestionar proyectos de invitación:</h3>
 
 <?php
 $mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id))->search();
@@ -51,17 +56,17 @@ $mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id
 			'name'=>'id_user_researcher',
 			'header'=>'Nombre de quien invita',
 			'value'=>'$data->idUserSponsorer->persons[0]["last_name1"]." ".$data->idUserSponsorer->persons[0]["last_name2"].", ".$data->idUserSponsorer->persons[0]["names"]',
-			), 
+			),
 		array(
 			'name'=>'id_user_researcher',
 			'header'=>'Empresa que patrocina',
 			'value'=>'Sponsors::model()->findByAttributes(array("id_user"=>$data->id_user_sponsorer))->sponsor_name',
-			), 
+			),
 		array(
 			'name'=>'status',
 			'header'=>'Título del proyecto',
 			'value'=>'$data->status == 1 ? "aceptado" : "rechazado"',
-			), 
+			),
 
 			array(
 			'class'=>'CButtonColumn','template'=>'{view} {accept} {reject}','header'=>'Acciones','buttons'=>array(
