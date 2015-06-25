@@ -417,11 +417,7 @@ if(areaValue =="SOCIOLOGIA"){
           "TEORIA DE JUEGOS", ]
       disciplineValue = invetigacionOperativa;
     }
-<<<<<<< HEAD
-    if(disciplineValue =="CALCULO DE PROBABILIDADES"){
-=======
         if(disciplineValue =="CALCULO DE PROBABILIDADES"){
->>>>>>> c3e982f737ac5f89268405146627f13f40166180
       var calculoProbabilidades = [  
               "APLICACION DE LA PROBABILIDAD",
           "CONJUNTOS ALEATORIOS",
@@ -438,11 +434,7 @@ if(areaValue =="SOCIOLOGIA"){
           "TEOREMAS LIMITE"]
       disciplineValue = calculoProbabilidades;
     }
-<<<<<<< HEAD
-    if(disciplineValue =="ESTADISTICA"){
-=======
       if(disciplineValue =="ESTADISTICA"){
->>>>>>> c3e982f737ac5f89268405146627f13f40166180
       var estadistica = [  
               "ANALISIS DE DATOS",
           "ANALISIS MULTIVARIANTE", 
