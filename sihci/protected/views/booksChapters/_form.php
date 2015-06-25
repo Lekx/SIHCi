@@ -2940,7 +2940,7 @@ if(areaValue =="SOCIOLOGIA"){
 		"OTROS"]
 	disciplineValue = politicasSectoriales;
     }
-        if(disciplineValue =="INSTITUCIONES POLITICAS"){
+    if(disciplineValue =="INSTITUCIONES POLITICAS"){
       var institucionesPoliticas = [  
 		"PODER EJECUTIVO",
 		"PODER JUDICIAL",
@@ -2950,6 +2950,54 @@ if(areaValue =="SOCIOLOGIA"){
 	disciplineValue = institucionesPoliticas;
     }
     //------------------------------------------------------//
+
+    if(disciplineValue =="VIDA POLITICA"){
+      var vidaPolitica = [  
+		 "PARTIDOS POLITICOS",
+		"COMPORTAMIENTO POLITICO",
+		"ELECCIONES",
+		"GRUPOS POLITICOS",
+		"LIDERAZGO POLITICO",
+		"MOVIMIENTOS POLITICOS",
+		"OTROS"]
+	disciplineValue = vidaPolitica;
+    }
+    if(disciplineValue =="SOCIOLOGIA DE LA POLITICA"){
+      var sociologiaDeLaPolitica = [  
+		 "CONFLICTOS SOCIALES",
+		"DERECHOS HUMANOS",
+		"IDIOMAS",
+		"MINORIAS",
+		"RAZA",
+		"RELIGION",
+		"OTROS"]
+	disciplineValue = sociologiaDeLaPolitica;
+    }
+    if(disciplineValue =="ADMINISTRACION PUBLICA"){
+      var administracionPublica = [  
+		"GESTION ADMINISTRATIVA",
+		"INSTITUCIONES CENTRALES",
+		"FUNCION PUBLICA",
+		"SERVICIOS PUBLICOS",
+		 "INSTITUCIONES REGIONALES",
+		"COMERCIALIZACION",
+		"FINANZAS",
+		"PROMOCION Y DESARROLLO DE ORGANIZACIONES",
+		 "RECURSOS HUMANOS",
+		"SISTEMAS DE INFORMACION",
+		"OTROS"]
+	disciplineValue = administracionPublica;
+    }
+    if(disciplineValue =="OPINION PUBLICA"){
+      var opinionPublica = [  
+		"INFORMACION",
+		"MEDIOS DE COMUNICACION DE MASAS",
+		"PRENSA",
+		"PROPAGANDA",
+		"OTROS"]
+	disciplineValue = opinionPublica;
+    }
+    
 
   
 
