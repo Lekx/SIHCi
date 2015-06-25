@@ -1651,7 +1651,7 @@ if(areaValue =="SOCIOLOGIA"){
 	disciplineValue = medicinaInterna;
     }
       if(disciplineValue =="NUTRICION"){
-      var nutricion = [  
+      var nutricion = [ 
 			"DEFICIENCIAS ALIMENTARIAS",
 			"DIGESTION",
 			"ELEMENTOS MINERALES DE LOS ALIMENTOS",
@@ -1830,6 +1830,1129 @@ if(areaValue =="SOCIOLOGIA"){
 			"OTROS"]
 	disciplineValue = tecnologiaDeLaInformatica;
     }
+     if(disciplineValue =="TECNOLOGIA DE LA CONSTRUCCION"){
+      var tecnologiaDeLaConstruccion = [  
+			"ABASTECIMIENTO DE AGUA",
+			"ALCANTARILLADO Y PURIFICACION DE AGUA",
+			"CARRETERAS",
+			"CASAS",
+			"CIMIENTOS",
+			"CODIGOS Y ESPECIFICACIONES",
+			"CONSTRUCCION DE AEROPUERTOS",
+			"CONSTRUCCION DE CARRETERAS",
+			"CONSTRUCCION DE FERROCARRILES",
+			"CONSTRUCCION DE MADERA",
+			"CONSTRUCCIONES LIGERAS",
+			"CONSTRUCCIONES METALICAS",
+			"CONSTRUCCIONES PESADAS",
+			"CONSTRUCCIONES PREFABRICADAS",
+			"DISEÑO ARQUITECTONICO",
+			"DRENAJE",
+			"EDIFICIOS GRANDES Y RASCACIELOS",
+			"EDIFICIOS INDUSTRIALES Y COMERCIALES",
+			"EDIFICIOS PUBLICOS",
+			"EXCAVACIONES",
+			"HORMIGON PRETENSADO",
+			"INGENIERIA CIVIL",
+			"INGENIERIA ESTRUCTURAL",
+			"INGENIERIA HIDRAULICA",
+			"MECANICA DEL SUELO (CONSTRUCCION)",
+			"METROLOGIA DE LA CONSTRUCCION",
+			"OBRAS SUBTERRANEAS",
+			"ORGANIZACION DE OBRAS",
+			"OTROS",
+			"PLANIFICACION URBANA",
+			"PRESAS",
+			"PUENTES",
+			"PUERTOS",
+			"REGLAMENTACIONES",
+			"RESISTENCIA ESTRUCTURAL",
+			"RIEGO",
+			"SISTEMAS HIPERESTATICOS",
+			"TECNOLOGIA DEL HORMIGON",
+			"TOPOGRAFIA DE LA CONSTRUCCION",
+			"TUNELES",
+			"VIAS NAVEGABLES INTERIORES"]
+	disciplineValue = tecnologiaDeLaConstruccion;
+    }
+    if(disciplineValue =="TECNOLOGIA E INGENIERIA DE LA ELECTRICIDAD"){
+      var tecnologiaeIngenieriaDeLaElectricidad = [  
+			"APARATO DE CONEXION",
+			"APLICACIONES DE LA ELECTRICIDAD",
+			"CONDUCTORES AISLADOS",
+			"FABRICACION DE EQUIPO ELECTRICO",
+			"ILUMINACION ELECTRICA",
+			"MAQUINARIA ROTATORIA",
+			"MOTORES ELECTRICOS",
+			"OTROS",
+			"TRANSMISION Y DISTRIBUCION",
+			"UTILIZACION DE LA ENERGIA DE LAS CORRIENTES CONTINUAS"]
+	disciplineValue = tecnologiaeIngenieriaDeLaElectricidad;
+    }
+       if(disciplineValue =="TECNOLOGIA ELECTRONICA"){
+      var tecnologiaElectronica = [  
+			"ANTENAS",
+			"AUDIOELECTRONICA",
+			"DISEÑO DE CIRCUITOS",
+			"DISEÑO DE FILTROS",
+			"DISPOSITIVOS DE GRABACION",
+			"DISPOSITIVOS DE LASER",
+			"DISPOSITIVOS DE MICROONDA",
+			"DISPOSITIVOS DE RAYOS X",
+			"DISPOSITIVOS DE SEMICONDUCTORES",
+			"DISPOSITIVOS DE SONAR",
+			"DISPOSITIVOS FOTOELECTRICOS",
+			"DISPOSITIVOS SONICOS",
+			"DISPOSITIVOS TERMOELECTRICOS",
+			"DISPOSITIVOS TERMOIONICOS",
+			"DISPOSITIVOS ULTRASONICOS",
+			"EMISORES DE TELEVISION (TRANSMISORES)",
+			"OTROS",
+			"RADAR",
+			"RECEPTORES DE RADIO",
+			"RECEPTORES DE TELEVISION",
+			"TRADUCTORES ELECTROACUSTICOS",
+			"TRANSISTORES",
+			"TRANSMISORES DE RADIO",
+			"TUBOS ELECTRONICOS"]
+	disciplineValue = tecnologiaElectronica;
+    }
+    if(disciplineValue =="TECNOLOGIA DEL MEDIO AMBIENTE"){
+      var tecnologiaDelMedioAmbiente = [  
+		"AMBIENTAL",
+		"CONTROL DE LA CONTAMINACION DEL AGUA",
+		"DESECHOS INDUSTRIALES",
+		"ECOSISTEMAS RECUPERACION DE",
+		"EDUCACION",
+		"ELIMINACION DE DESECHOS RADIACTIVOS",
+		"MATERIALES",
+		"OTROS",
+		"RECUPERACION DEL AGUA",
+		"REUSO Y RECICLADO",
+		"TECNOLOGIA ANTICONTAMINACION",
+		"TECNOLOGIA DE CONTROL DE INSECTOS",
+		"TECNOLOGIA DE CONTROL DE ROEDORES",
+		"TECNOLOGIA SANITARIA",
+		"CONTROL DE LA CONTAMINACION DEL AIRE",
+		"ELIMINACION DE RESIDUOS",
+		"TECNOLOGIA DE LAS AGUAS CLOACALES",
+		"TECNOLOGIA LIMPIA"]
+	disciplineValue = tecnologiaDelMedioAmbiente;
+    }
+    if(disciplineValue =="TECNOLOGIA DE LA ALIMENTACION"){
+      var tecnologiaDelAlimentacion = [  
+		"ACEITES Y GRASAS VEGETALES",
+		"ADITIVOS ALIMENTARIOS",
+		"ALIMENTOS PARA ANIMALES",
+		"ALIMENTOS PROTEICOS",
+		"ALIMENTOS SINTETICOS",
+		"ALMIDON",
+		"ANTIOXIDANTES EN LOS ALIMENTOS",
+		"AROMATIZANTES",
+		"AZUCAR",
+		"BEBIDAS ALCOHOLICAS",
+		"BEBIDAS NO ALCOHOLICAS",
+		"COLORANTES",
+		"CONSERVACION DE ALIMENTOS",
+		"ELABORACION DE ALIMENTOS",
+		"ESTABILIZADORES",
+		"ESTERILIZACION DE LOS ALIMENTOS",
+		"HIGIENE DE LOS ALIMENTOS",
+		"INDUSTRIA CERVECERA",
+		"LIOFILIZACION",
+		"MOLINERIA",
+		"OTROS",
+		"PANADERIA",
+		"PASTEURIZACION",
+		"PREPARACION DE CONSERVAS",
+		"PRODUCTOS DE CEREALES",
+		"PRODUCTOS LACTEOS",
+		"PROPIEDADES DE LOS ALIMENTOS",
+		"REFRIGERACION",
+		"SECADO POR CONGELACION",
+		"VINO"]
+	disciplineValue = tecnologiaDelAlimentacion;
+    }
+    if(disciplineValue =="TECNOLOGIA INDUSTRIAL"){
+      var tecnologiaIndistrial = [  
+		"DISEÑO",
+		"EQUIPO INDUSTRIAL",
+		"ESPECIFICACIONES DE PROCESOS",
+		"ESTUDIOS DE TIEMPOS Y MOVIMIENTOS",
+		"MAQUINARIA INDUSTRIAL",
+		"OTROS",
+		"PROCESOS INDUSTRIALES",
+		"SISTEMAS",
+		"TECNOLOGIA DE LA ELABORACION",
+		"TECNOLOGIA DEL MANTENIMIENTO"]
+	disciplineValue = tecnologiaIndistrial;
+    }
+    if(disciplineValue =="INSTRUMENTAL TECNOLOGICO"){
+      var instrumentalTecnologico = [  
+		"CONTROL DE MAQUINARIA",
+		"DISPOSITIVOS ELECTROOPTICOS",
+		"EQUIPO DE ENSAYOS ELECTRICOS",
+		"EQUIPO DE LABORATORIO",
+		"EQUIPO DE PRUEBA",
+		"EQUIPO FOTOGRAFICO Y CINEMATOGRAFICO",
+		"INSTRUMENTAL CIENTIFICO",
+		"INSTRUMENTOS DE MEDIDA DEL TIEMPO",
+		"INSTRUMENTOS DE MEDIDAS TERMICAS",
+		"INSTRUMENTOS DENTALES",
+		"INSTRUMENTOS ELECTRICOS",
+		"INSTRUMENTOS ELECTRONICOS",
+		"INSTRUMENTOS MEDICOS",
+		"INSTRUMENTOS OPTICOS",
+		"LENTES",
+		"OTROS",
+		"TECNICAS TELEQUIRICAS",
+		"INSTRUMENTOS TERMOSTATICOS",
+		"SERVOMECANISMOS",
+		"TECNOLOGIA DE LA AUTOMATIZACION"]
+	disciplineValue = instrumentalTecnologico;
+    }
+      if(disciplineValue =="TECNOLOGIA DE LAS MATERIAS"){
+      var tecnologiaDeLasMaterias = [  
+		"CALIZOS",
+		"CEMENTOS",
+		"CERAMETAL (MATERIAL METALOCERAMICO)",
+		"CERAMICA",
+		"COMPOSITOS",
+		"MATERIALES FUNCIONALES",
+		"OTROS",
+		"PLASTICOS",
+		"PRODUCTOS DE LA ARCILLA",
+		"PROPIEDADES DE LOS MATERIALES",
+		"REFRACTARIOS",
+		"RESISTENCIA DE LOS MATERIALES",
+		"TECNOLOGIA DE LA MADERA",
+		"ABRASIVOS",
+		"ENSAYO DE MATERIALES",
+		"VIDRIO"]
+	disciplineValue = tecnologiaDeLasMaterias;
+    }
+     if(disciplineValue =="TECNOLOGIA MECANICA"){
+      var tecnologiaMecanica = [  
+		"APLICACIONES MECANIZADAS",
+		"BOMBAS Y EQUIPO DE MANEJO DE LIQUIDOS",
+		"COJINETES",
+		"COMPRESORES DE AIRE",
+		"DISEÑO DE MAQUINAS",
+		"ENGRANAJES",
+		"EQUIPO DE CALEFACCION",
+		"EQUIPO DE CONSTRUCCION",
+		"EQUIPO DE REFRIGERACION",
+		"EQUIPO DE TRANSMISION DE ENERGIA (MECANICA)",
+		"EQUIPO NEUMATICO",
+		"HERRAMIENTA Y ACCESORIOS",
+		"MAQUINARIA AGRICOLA",
+		"MAQUINARIA DE EXTRACCION DE PETROLEO",
+		"MAQUINARIA DE FABRICACION DE PAPEL",
+		"MAQUINARIA DE IMPRIMIR Y DUPLICAR",
+		"MAQUINARIA DE LA INDUSTRIA ALIMENTARIA",
+		"MAQUINARIA DE MINERIA",
+		"MAQUINARIA HIDRAULICA",
+		"MAQUINARIA INDUSTRIAL ESPECIALIZADA",
+		"MAQUINARIA NUCLEAR",
+		"MAQUINARIA TEXTIL",
+		"MAQUINARIA Y EQUIPO INDUSTRIALES",
+		"MAQUINARIAS PARA MANEJO DE MATERIALES",
+		"MAQUINAS DE VAPOR",
+		"MAQUINAS EXPENDEDORAS AUTOMATICAS Y DE ENTRENAMIENTO",
+		"MAQUINAS",
+		"MATRICES",
+		"MOTORES DE COMBUSTION INTERNA (EN GENERAL)",
+		"MOTORES DE GAS",
+		"OTROS",
+		"PLANTILLAS Y MODELOS",
+		"PRODUCCION Y MANUFACTURA",
+		"TURBINAS",
+		"VENTILADORES"]
+	disciplineValue = tecnologiaMecanica;
+    }
+    if(disciplineValue =="TECNOLOGIA DE LA MEDICINA"){
+      var tecnologiaDeLaMedicina = [  
+		"DISPOSITIVOS DE PROTESIS",
+		"ORGANOS ARTIFICIALES",
+		"OTROS"]
+	disciplineValue = tecnologiaDeLaMedicina;
+    }
+     if(disciplineValue =="TECNOLOGIA DE LA METALURGIA"){
+      var tecnologiaDeLaMetalurgia = [  
+		"AFINADO",
+		"ALUMINIO",
+		"COBRE",
+		"COLADA DE METALES NO FERROSOS",
+		"COLADA DE PRECISION",
+		"FABRICAS FUNDICIONES Y FORJAS SIDERURGICAS",
+		"FUNDICION",
+		"FUNDICIONES (EN GENERAL)",
+		"INCLUIDO EL REFINADO DE ZONA",
+		"METALES PRECIOSOS",
+		"METALES RADIACTIVOS",
+		"METALES RAROS",
+		"METALES REFRACTARIOS",
+		"OTROS",
+		"PLOMO Y ZINC",
+		"PRODUCTOS ELECTROMETALURGICOS",
+		"PRODUCTOS METALURGICOS (ESPECIALES)",
+		"PULVIMETALURGIA",
+		"REFINAMIENTO Y ELABORACION DE METALES NO FERROSOS",
+		"SERVICIOS METALURGICOS"]
+	disciplineValue = tecnologiaDeLaMetalurgia;
+    }
+       if(disciplineValue =="TECNOLOGIA DE LOS PRODUCTOS METALICOS"){
+      var tecnologiaDeLosProductosMetalicos = [  
+		"ALTOS HORNOS",
+		"ARTICULOS DE ALAMBRE",
+		"ENVASES Y RECIPIENTES",
+		"EQUIPO DE DESTILACION",
+		"ESTAMPADOS",
+		"ESTRUCTURAS FABRICADAS POR SOLDEO",
+		"FERRETERIA",
+		"GUARNICIONES Y VALVULAS",
+		"HORNOS Y HORNOS CERAMICOS",
+		"OTROS",
+		"PRODUCTOS DE CHAPA METALICA",
+		"PRODUCTOS ELECTROCHAPADOS Y RECUBIERTOS",
+		"RECIPIENTES DE PRESION",
+		"SERVICIOS DE FABRICACION DE METALES",
+		"TUBERIAS",
+		"AUTOCLAVES Y CALDERAS",
+		"PRODUCTOS DE ACERO PARA CONSTRUCCIONES",
+		"PRODUCTOS ELABORADOS A MAQUINA Y TORNEADOS"]
+	disciplineValue = tecnologiaDeLosProductosMetalicos;
+    }
+      if(disciplineValue =="TECNOLOGIA DE LOS VEHICULOS DE MOTOR"){
+      var tecnologiaDeLosVehiculosDeMotor = [  
+		"AUTOBUSES",
+		"AUTOMOVILES",
+		"CAMIONES Y REMOLQUES",
+		"MOTORES DE PISTON",
+		"MOTORES DIESEL",
+		"MOTORES ROTATORIOS",
+		"OTROS",
+		"PIEZAS DE REPUESTO Y ACCESORIOS",
+		"REGULACION DEL TRAFICO",
+		"SERVICIOS DE TRANSPORTE MOTORIZADO",
+		"MOTOCICLETAS",
+		"VEHICULOS TODO TERRENO"]
+	disciplineValue = tecnologiaDeLosVehiculosDeMotor;
+    }
+     if(disciplineValue =="TECNOLOGIA DE MINAS"){
+      var tecnologiaDeMinas = [  
+		"AZUFRE",
+		"CONCENTRACION DE MINERALES",
+		"MECANICA DE ROCAS",
+		"MINERALES DE HIERRO",
+		"MINERALES DE METALES NO FERROSOS",
+		"MINERALES DE URANIO Y MINERALES RADIACTIVOS",
+		"MINERALES NO METALICOS",
+		"OTROS",
+		"PROSPECCION MINERA",
+		"SIMULACION DE YACIMIENTOS",
+		"TOPOGRAFIA DE MINAS",
+		"MINERALOGIA",
+		"MINERIA DEL CARBON",
+		"PRODUCTOS DE CANTERAS",
+		"SERVICIOS DE MINAS"]
+	disciplineValue = tecnologiaDeMinas;
+    }
+        if(disciplineValue =="TECNOLOGIA NAVAL"){
+      var tecnologiaNaval = [  
+		"BUQUES MERCANTES",
+		"BUQUES",
+		"CONSTRUCCION NAVAL",
+		"EMBARCACIONES DE VIAS NAVEGABLES INTERIORES",
+		"HELICES",
+		"INGENIERIA COSTERA",
+		"LINEA DE EJES (BUQUES)",
+		"MOTORES MARINOS",
+		"OTROS",
+		"SUBMARINOS",
+		"TRANSPORTE MARITIMO",
+		"TRANSPORTE OCEANICO",
+		"ARQUITECTURA NAVAL",
+		"DISPOSITIVOS DE SUSPENSION NEUMATICA",
+		"MAQUINAS AUXILIARES (BUQUES)"]
+	disciplineValue = tecnologiaNaval;
+   }
+       if(disciplineValue =="TECNOLOGIA NUCLEAR"){
+      var tecnologiaNuclear = [  
+		"ENSAYOS NUCLEARES",
+		"EXPLOSIONES NUCLEARES",
+		"INGENIERIA QUIMICA NUCLEAR",
+		"INSTRUMENTACION NUCLEAR",
+		"OTROS",
+		"REACTORES DE FISION NUCLEAR",
+		"REACTORES DE FUSION NUCLEAR",
+		"SEPARACION DE ISOTOPOS",
+		"APLICACIONES DE LOS ISOTOPOS"]
+	disciplineValue = tecnologiaNuclear;
+    }
+    if(disciplineValue =="TECNOLOGIA DEL PETROLEO Y DEL CARBON"){
+      var tecnologiaDelPetroleoYdelCarbon = [  
+		"ACEITES Y GRASAS LUBRICANTES",
+		"ALMACENAMIENTO DE PETROLEO Y GAS",
+		"DISEÑO DE REFINERIAS",
+		"EQUIPO DE CAMPOS PETROLIFEROS",
+		"EXPLORACION",
+		"GAS LICUADO",
+		"GAS NATURAL",
+		"GASODUCTOS",
+		"OLEODUCTOS",
+		"OTROS",
+		"PETROLEO CRUDO",
+		"PRODUCTOS CARBOQUIMICOS",
+		"PRODUCTOS PETROQUIMICOS",
+		"SERVICIOS DE LOS CAMPOS PETROLIFEROS",
+		"MATERIALES ASFALTICOS",
+		"PRODUCTOS DEL PETROLEO: GASOLINA ACEITES CERAS"]
+	disciplineValue = tecnologiaDelPetroleoYdelCarbon;
+    }
+      if(disciplineValue =="TECNOLOGIA DE LA ENERGIA"){
+      var tecnologiaDeLaEnergia = [  
+		"FUENTES DE ENERGIA NO CONVENCIONALES",
+		"GENERACION DE ENERGIA",
+		"GENERADORES DE ENERGIA",
+		"OTROS",
+		"TRANSMISION DE ENERGIA",
+		"DISTRIBUCION DE LA ENERGIA"]
+	disciplineValue = tecnologiaDeLaEnergia;
+    }
+       if(disciplineValue =="TECNOLOGIA DE FERROCARRILES"){
+      var tecnologiaDeFerrocariles = [  
+		"EQUIPO DE FERROCARRILES",
+		"MATERIAL RODANTE (FERROCARRILES)",
+		"OTROS",
+		"SERVICIOS DE FERROCARRIL",
+		"LOCOMOTORAS"]
+	disciplineValue = tecnologiaDeFerrocariles;
+    }
+    if(disciplineValue =="TECNOLOGIA DEL ESPACIO"){
+      var tecnologiaDelEspacio = [  
+		"CONTROL DE VEHICULOS",
+		"INSTALACIONES DE MISILES",
+		"MISILES: LANZAMIENTO Y RECUPERACION",
+		"NAVES ESPACIALES",
+		"OTROS",
+		"SEGUIMIENTO DE NAVES ESPACIALES",
+		"MOTORES COHETE",
+		"SATELITES ARTIFICIALES"]
+	disciplineValue = tecnologiaDelEspacio;
+    }
+     if(disciplineValue =="TECNOLOGIA DE LAS TELECOMUNICACIONES"){
+      var tecnologiasDeLasTelecomunicaciones = [  
+		"CINEMATOGRAFIA",
+		"COMUNICACIONES MEDIANTE SATELITE",
+		"ENLACES DE MICROONDAS",
+		"OTROS",
+		"RADIOCOMUNICACIONES",
+		"RADIODIFUSION SONORA Y TELEVISIVA",
+		"TELEFONO",
+		"TELEGRAFO",
+		"TELEVISION POR CABLE",
+		"TELEVISION"]
+	disciplineValue = tecnologiasDeLasTelecomunicaciones;
+    }
+    if(disciplineValue =="TECNOLOGIA TEXTIL"){
+      var tecnologiaTextil = [  
+		"ACABADOS",
+		"ALGODON",
+		"HILADO",
+		"LANA",
+		"LINO",
+		"OTROS",
+		"PREPARACION PARA EL TEJIDO",
+		"TEJIDO DE PUNTO",
+		"TEJIDO",
+		"TEXTILES SINTETICOS",
+		"YUTE"]
+	disciplineValue = tecnologiaTextil;
+    }
+    if(disciplineValue =="TECNOLOGIA DE LOS SISTEMAS DE TRANSPORTE"){
+      var tecnologiaDeLosSitemasDeTransporte = [  
+		"ANALISIS DEL TRAFICO",
+		"COMBINACIONES DE SISTEMAS",
+		"OPERACIONES DE LINEAS AEREAS CONTROL DEL TRAFICO AEREO",
+		"OTROS",
+		"SISTEMAS DE TRAFICO URBANO"]
+	disciplineValue = tecnologiaDeLosSitemasDeTransporte;
+    }
+     if(disciplineValue =="ANALISIS DE LAS OPERACIONES TECNOLOGICAS"){
+      var analisisDeLasOperacionesTecnologicas = [  
+		"ABSORCION",
+		"AGITACION",
+		"BOMBEO",
+		"CENTRIFUGACION",
+		"COMPRESION",
+		"CRIBADO",
+		"CRISTALIZACION",
+		"DESIONIZACION",
+		"DESTILACION Y CONDENSACION",
+		"EVAPORACION",
+		"EXTRACCION LIQUIDO?LIQUIDO",
+		"EXTRACCION SOLIDO-LIQUIDO",
+		"FILTRACION",
+		"FLOTACION",
+		"FLUIDIZACION DE LOS SOLIDOS",
+		"FLUJO A TRAVES DE MEDIOS POROSOS",
+		"MANEJO DE LOS SOLIDOS",
+		"MEZCLADO",
+		"OTROS",
+		"REFRIGERACION",
+		"SECADO POR CONGELACION",
+		"SECADO",
+		"SEDIMENTACION",
+		"TRANSFERENCIA DE CALOR",
+		"TRANSFERENCIA DE MASA",
+		"TRANSFERENCIA VAPOR-LIQUIDO)",
+		"TRITURACION",
+		"TUBERIAS GUARNICIONES Y VALVULAS"]
+	disciplineValue = analisisDeLasOperacionesTecnologicas;
+    }
+    if(disciplineValue =="TECNOLOGIA DEL URBANISMO"){
+      var tecnologiaDelUrbanismo = [  
+		"COMUNICACIONES",
+		"DESARROLLO REGIONAL",
+		"MEDIO AMBIENTE URBANO",
+		"ORGANIZACION COMUNITARIA",
+		"OTROS",
+		"REGLAMENTO PARA LA CONSTRUCCION DE EDIFICIOS",
+		"RELACIONES URBANO-RURALES",
+		"SERVICIOS SANITARIOS",
+		"TRANSPORTE",
+		"USO DE LAS TIERRAS"]
+	disciplineValue = tecnologiaDelUrbanismo;
+    }
+    if(disciplineValue =="GESTION DE LA CALIDAD"){
+      var gestionDeLaCalidad = [  
+		"COMPARACION REFERENCIAL (BENCHMARKING)",
+		"COMUNICACION",
+		"CONTROL DE CALIDAD",
+		"CONTROL ESTADISTICO DE LA CALIDAD",
+		"CONTROL ESTADISTICO DE PROCESOS",
+		"COSTOS DE CALIDAD",
+		"DISEÑO DE PROCESOS",
+		"DOCUMENTACION DE NORMALIZACION Y CERTIFICACION",
+		"INSPECCION",
+		"MEJORA E INNOVACION DE PROCESOS", 
+		"OTROS",
+		"PROCESOS PRODUCTIVOS",
+		"PRODUCTOS DISEÑO Y MEJORA DE",
+		"PROTECCION DEL ASEGURAMIENTO DE LA CALIDAD",
+		"REINGENIERIA",
+		"SISTEMAS DE CONOCIMIENTO"]
+	disciplineValue = gestionDeLaCalidad;
+    }
+     if(disciplineValue =="CIENCIAS DE LA COMPUTACION"){
+      var cienciasDeLaComputacion = [  
+		"APLICACIONES DE LA INFORMATICA",
+		"ARQUITECTURA DE PROCESADORES",
+		"CIRCUITOS INTEGRADOS",
+		"DESEMPEÑO Y FIABILIDAD",
+		"DISEÑO LOGICO",
+		"DISPOSITIVOS DE ENTRADA / SALIDA Y COMUNICACIONES",
+		"ESTRUCTURAS DE CONTROL Y MICROPROGRAMACION",
+		"ESTRUCTURAS DE MEMORIA",
+		"ESTRUCTURAS LOGICAS Y ARITMETICAS",
+		"IMPLEMENTACION DEL NIVEL DE REGISTRO-TRANSFERENCIA",
+		"ORGANIZACION DE SISTEMAS DE COMPUTO",
+		"OTROS",
+		"PROCESAMIENTO DE IMAGENES Y VISION INFORMATICA",
+		"RECONOCIMIENTO DE PATRONES",
+		"REDES DE COMUNICACIONES INFORMATICAS",
+		"SISTEMAS BASADOS EN LA APLICACION Y EN PROPOSITO",
+		"SOFTWARE"]
+	disciplineValue = cienciasDeLaComputacion;
+    }
+      if(disciplineValue =="TECNOLOGIA DE BIOPROCESOS"){
+      var tecnologiaDeBioprocesos = [  
+		"BIOPROCESOS",
+		"OTROS"]
+	disciplineValue = tecnologiaDeBioprocesos;
+    }
+      if(disciplineValue =="TECNOLOGIA DE BIOMOLECULAS"){
+      var tecnologiaDeBiomoleculas = [  
+		"BIOMOLECULAS",
+		"OTROS"]
+	disciplineValue = tecnologiaDeBiomoleculas;
+    }
+    if(disciplineValue =="OTRAS ESPECIALIDADES EN MATERIA DE TECNOLOGIA"){
+      var otrasEspecialidadesEnMateriaDeTEcnologia = [  
+		"OTROS"]
+	disciplineValue = otrasEspecialidadesEnMateriaDeTEcnologia;
+    }
+     if(disciplineValue =="ANTROPOLOGIA CULTURAL"){
+      var antropologiaCultural = [  
+		"ADORNO",
+		"DANZAS",
+		"ETNOLINGÜISTICA",
+		"ETNOMUSICOLOGIA",
+		"FIESTAS",
+		"HECHICERIA",
+		"MAGIA",
+		"MEDICINA TRADICIONAL",
+		"MITOS",
+		"MUSEOLOGIA",
+		"OTROS",
+		"POEMAS",
+		"RELATOS",
+		"RELIGION",
+		"SIMBOLISMO",
+		"TRADICION",
+		"VESTIMENTA"]
+	disciplineValue = antropologiaCultural;
+    }
+       if(disciplineValue =="ETNOGRAFIA Y ETNOLOGIA"){
+      var EtnografiaYEtnologia = [  
+		"AGRICULTURA",
+		"ARMAS",
+		"ARTESANIA",
+		"CAZA",
+		"CRIA DE GANADO",
+		"FORRAJE",
+		"HABITAT",
+		"INTERCAMBIO",
+		"METALURGIA",
+		"OTROS",
+		"PESCA",
+		"TRUEQUE"]
+	disciplineValue = EtnografiaYEtnologia;
+    }
+     if(disciplineValue =="ANTROPOLOGIA SOCIAL"){
+      var antropologiaSocial = [  
+		"DESCENDENCIA",
+		"ESCLAVITUD",
+		"FAMILIA",
+		"GUERRA",
+		"JEFATURA",
+		"LINAJE",
+		"NOMADISMO",
+		"OTROS",
+		"REALEZA",
+		"SERVIDUMBRE"]
+	disciplineValue = antropologiaSocial;
+    }
+     if(disciplineValue =="FECUNDIDAD"){
+      var fecundidad = [  
+		"ESTERILIDAD Y FECUNDIDAD",
+		"FECUNDIDAD GENERAL",
+		"ILEGITIMIDAD",
+		"NUPCIALIDAD",
+		"OTROS",
+		"TASA DE NATALIDAD"]
+	disciplineValue = fecundidad;
+    }
+     if(disciplineValue =="DEMOGRAFIA GENERAL"){
+      var demografiaGeneral = [  
+		"METODOLOGIA DE ANALISIS",
+		"METODOLOGIA DE LA INVESTIGACION",
+		"OTROS",
+		"TEORIA"]
+	disciplineValue = demografiaGeneral;
+    }
+      if(disciplineValue =="DEMOGRAFIA GEOGRAFICA"){
+      var demografiaGeografica = [  
+		"DEMOGRAFIA LOCAL",
+		"DEMOGRAFIA REGIONAL",
+		"DEMOGRAFIA RURAL",
+		"DEMOGRAFIA URBANA",
+		"MOVILIDAD Y MIGRACIONES INTERNACIONALES",
+		"MOVILIDAD Y MIGRACIONES INTERNAS",
+		"OTROS"]
+	disciplineValue = demografiaGeografica;
+    }
+     if(disciplineValue =="DEMOGRAFIA HISTORICA"){
+      var demografiaHistorica = [  
+		"ASPECTOS METODOLOGICOS",
+		"ASPECTOS TEORICOS",
+		"FUENTES DE OBSERVACION",
+		"MIGRACIONES",
+		"MORTALIDAD",
+		"OTROS",
+		"TASA DE FECUNDIDAD Y NUPCIALIDAD"]
+	disciplineValue = demografiaHistorica;
+    }
+     if(disciplineValue =="MORTALIDAD"){
+      var mortalidad = [  
+		"CAUSAS DE MORTALIDAD",
+		"MORTALIDAD GENERAL",
+		"MORTALIDAD INFANTIL",
+		"MORTALIDAD PRENATAL Y PERINATAL",
+		"OTROS",
+		"VARIABLES RELACIONADAS"]
+	disciplineValue = mortalidad;
+    }
+      if(disciplineValue =="CARACTERISTICAS DE LAS POBLACIONES"){
+      var caracteristicasDeLasPoblaciones = [  
+		"CARACTERISTICAS BIOLOGICAS",
+		"CARACTERISTICAS EPIDEMIOLOGICAS",
+		"CARACTERISTICAS SOCIOECONOMICAS",
+		"DISTRIBUCION POR EDADES",
+		"ENVEJECIMIENTO DE LA POBLACION",
+		"ESTRUCTURAS DEMOGRAFICAS GENERALES",
+		"GENETICA DE POBLACIONES",
+		"MORBILIDAD",
+		"POBLACION ACTIVA",
+		"SEXO",
+		"OTROS"]
+	disciplineValue = caracteristicasDeLasPoblaciones;
+    }
+    if(disciplineValue =="EVOLUCION DEMOGRAFICA"){
+      var evolucionDemografica = [  
+	"CENSOS DEMOGRAFICOS Y OTROS TIPOS DE ACOPIO DE DATOS",
+	"DEMOGRAFIA COMPUTACIONAL",
+	"DEMOGRAFIA DE OBSERVACION",
+	"ESTIMACIONES DEMOGRAFICAS",
+	"TRANSICION DEMOGRAFICA",
+	"PREVISIONES DEMOGRAFICAS",
+	"CRECIMIENTO DE LA POBLACION",
+	"MODELOS DEMOGRAFICOS",
+	 "PROYECCIONES DEMOGRAFICAS",
+	"ESTADISTICA DEMOGRAFICA",
+	"OTROS"]
+	disciplineValue = evolucionDemografica;
+    }
+     if(disciplineValue =="POLITICA FISCAL Y HACIENDA PUBLICA"){
+      var politicaFiscalyHaciendaPublica = [  
+	"POLITICA FISCAL Y DEUDA PUBLICA",
+	"HACIENDA PUBLICA (PRESUPUESTO)",
+	"OTROS"]
+	disciplineValue = politicaFiscalyHaciendaPublica;
+    }
+      if(disciplineValue =="ECONOMETRIA"){
+      var econometria = [  
+	"ESTADISTICA ECONOMICA",
+	"INDICADORES ECONOMICOS",
+	"MODELOS ECONOMETRICOS",
+	"PROYECCION ECONOMICA",
+	"SERIES DE TIEMPO ECONOMICAS",
+	"OTROS"]
+	disciplineValue = econometria;
+    }
+      if(disciplineValue =="CONTABILIDAD PUBLICA"){
+      var contabilidadPublica = [  
+	"CUENTAS FINANCIERAS",
+	"RIQUEZA NACIONAL Y BALANZA DE PAGOS",
+	"CONTABILIDAD DE LA RENTA NACIONAL",
+	"ENTRADA-SALIDA",
+	"CUENTAS SOCIALES",
+	"AUDITORIA",
+	"CONTABILIDAD ADMINISTRATIVA",
+	"CONTABILIDAD FISCAL",
+	"OTRAS"]
+	disciplineValue = contabilidadPublica;
+    }
+    if(disciplineValue =="ACTIVIDADES ECONOMICAS"){
+      var actividadesEconomicas = [  
+	 "DINERO Y BANCA",
+	"AHORRO",
+	"COMERCIO EXTERIOR",
+	"COMERCIO INTERIOR",
+	"CONSUMO",
+	"DISTRIBUCION",
+	"INVERSION",
+	"PRODUCCION",
+	"REDISTRIBUCION",
+	"SEGUROS",
+	"OTROS"]
+	disciplineValue = actividadesEconomicas;
+    }
+     if(disciplineValue =="SISTEMAS ECONOMICOS"){
+      var sistemasEconomicas = [  
+	"SISTEMAS DE ECONOMIA CAPITALISTA",
+	"SISTEMAS DE ECONOMIA COLECTIVISTA",
+	"SISTEMAS DE ECONOMIA COMPARADA",
+	"SISTEMAS DE ECONOMIA SOCIALISTA",
+	"OTROS"]
+	disciplineValue = sistemasEconomicas;
+    }
+     if(disciplineValue =="CAMBIO ECONOMICO O TECNOLOGICO"){
+      var cambioEconomicooTecnologico = [  
+	"ECONOMIA DE LA INVESTIGACION Y EL DESARROLLO EXPERIMENTAL",
+	"INNOVACION TECNOLOGICA",
+	"TRANSFERENCIA DE TECNOLOGIA",
+	"OTROS"]
+	disciplineValue = cambioEconomicooTecnologico;
+    }
+     if(disciplineValue =="TEORIA ECONOMICA"){
+      var teoriaEconomica = [  
+	"FORMACION DE CAPITAL",
+	"TEORIAS DEL CREDITO",
+	"MODELOS Y TEORIAS DE DESARROLLO ECONOMICO",
+	"ESTUDIOS DE DESARROLLO ECONOMICO",
+	"EQUILIBRIO ECONOMICO",
+	"FLUCTUACIONES ECONOMICAS",
+	"PREVISIONES ECONOMICAS",
+	"TEORIA DEL CRECIMIENTO ECONOMICO",
+	"TEORIA DE LA PLANIFICACION ECONOMICA",
+	"TEORIA DEL EMPLEO Y MODELOS DE EMPLEO",
+	"TEORIA FISCAL",
+	"TEORIA DEL COMERCIO INTERNACIONAL",
+	"TEORIA DE LA INVERSION",
+	"TEORIA MACROECONOMICA",
+	"TEORIA MICROECONOMICA",
+	"TEORIA MONETARIA",
+	"TEORIA DEL AHORRO",
+	"TEORIAS DE LA ESTABILIZACION",
+	"TEORIA DEL BIENESTAR",
+	"OTROS"]
+	disciplineValue = teoriaEconomica;
+    }
+     if(disciplineValue =="ECONOMIA GENERAL"){
+      var economiaGeneral = [  
+	"COMPORTAMIENTO DEL CONSUMIDOR",
+	"HISTORIA DEL PENSAMIENTO ECONOMICO",
+	"METODOLOGIA ECONOMICA",
+	"OTROS"]
+	disciplineValue = economiaGeneral;
+    }
+     if(disciplineValue =="ORGANIZACION DE LA INDUSTRIA Y POLITICA ECONOMICA PUBLICA"){
+      var organizacionDeLaIndustriayPoliticaEconomicaPublica = [  
+	"CONCENTRACION ECONOMICA",
+	"EMPRESAS PUBLICAS",
+	"ESTRUCTURA DEL MERCADO",
+	"INTEGRACION ECONOMICA",
+	"MONOPOLIO Y COMPETENCIA",
+	"REGLAMENTACION GUBERNAMENTAL DEL SECTOR PRIVADO",
+	"SERVICIOS PUBLICOS",
+	"OTROS"]
+	disciplineValue = organizacionDeLaIndustriayPoliticaEconomicaPublica;
+    }
+     if(disciplineValue =="ECONOMIA INTERNACIONAL"){
+      var economiaInternacional = [  
+	 "POLITICA ECONOMICA INTERNACIONAL",
+	"ACUERDOS MONETARIOS INTERNACIONALES",
+	"ASUNTOS INTERNACIONALES",
+	"AYUDA EXTERIOR",
+	"AYUDA INTERNACIONAL",
+	"BALANZA DE PAGOS",
+	"FINANZAS INTERNACIONALES",
+	"INVERSIONES INTERNACIONALES",
+	"RELACIONES COMERCIALES INTERNACIONALES",
+	"OTROS"]
+	disciplineValue = economiaInternacional;
+    }
+    if(disciplineValue =="ORGANIZACION Y DIRECCION DE EMPRESAS"){
+      var organizacionyDireccionDeEmpresas = [  
+	"COSTOS",
+	"ESTUDIOS DE MERCADO",
+	"ESTUDIOS INDUSTRIALES",
+	"GESTION DE MANO DE OBRA",
+	"GESTION DE MERCADOS",
+	"GESTION FINANCIERA",
+	"INVESTIGACION OPERATIVA",
+	"MERCADEO",
+	"NEGOCIO",
+	"NIVELES OPTIMOS DE PRODUCCION",
+	"ORGANIZACION DE LA PRODUCCION",
+	"PLANEACION ESTRATEGICA",
+	"PUBLICIDAD",
+	"RESULTADOS Y FACTORES CRITICOS DEL",
+	"OTROS"]
+	disciplineValue = organizacionyDireccionDeEmpresas;
+    }
+     if(disciplineValue =="ECONOMIA SECTORIAL"){
+      var economiaSectorial = [  
+	 "LA INDUSTRIA DE LA COMPUTACION",
+	"AGRICULTURA",
+	"COMERCIO",
+	"CONSTRUCCION",
+	"EDUCACION",
+	"ENERGIA",
+	"HACIENDA Y SEGUROS",
+	"INVESTIGACION Y DESARROLLO",
+	"MINERIA",
+	"PESCA",
+	"SALUD",
+	"SERVICIOS COMUNITARIOS",
+	"SILVICULTURA",
+	"SOCIALES Y PERSONALES",
+	"TECNICAS DE PRODUCCION",
+	"TRANSPORTE Y COMUNICACIONES",
+	"OTROS"]
+	disciplineValue = economiaSectorial;
+    }
+    if(disciplineValue =="GEOGRAFIA ECONOMICA"){
+      var geograficaEconomica = [  
+	 	"DESARROLLO REGIONAL",
+		"DISTRIBUCION DE LOS RECURSOS NATURALES",
+		"GEOGRAFIA DE LAS ACTIVIDADES ECONOMICAS",
+		"USO DE LAS TIERRAS",
+		"OTROS"]
+	disciplineValue = geograficaEconomica;
+    }
+    //--------------------------------------------------------//
+     if(disciplineValue =="GEOGRAFIA HUMANA"){
+      var geograficaHumana = [  
+	 	"DEMOGEOGRAFIA",
+		"GEOGRAFIA CULTURAL",
+		"GEOGRAFIA DE LA RELIGION",
+		"GEOGRAFIA LINGÜISTICA",
+		"GEOGRAFIA POLITICA",
+		"GEOGRAFIA SOCIAL",
+		"OTROS"]
+	disciplineValue = geograficaHumana;
+    }
+     if(disciplineValue =="HISTORIA GENERAL"){
+      var historiaGeneral = [  
+	 	"HISTORIOGRAFIA",
+		"MONOGRAFIAS HISTORICAS",
+		"TEORIA Y METODOS",
+		"HISTORIA COMPARADA",
+		"OTROS"]
+	disciplineValue = historiaGeneral;
+    }
+      if(disciplineValue =="HISTORIA DE LOS PAISES"){
+      var historiaDeLosPaises = [  
+	 	"HISTORIA LOCAL",
+		"HISTORIA REGIONAL",
+		"OTROS"]
+	disciplineValue = historiaDeLosPaises;
+    }
+      if(disciplineValue =="HISTORIA DE LAS EPOCAS"){
+      var historiaDelasEpocas = [  
+	 	"PREHISTORIA",
+		"HISTORIA ANTIGUA",
+		"HISTORIA CONTEMPORANEA",
+		"HISTORIA DE LA EDAD MEDIA",
+		"HISTORIA MODERNA",
+		"OTROS"]
+	disciplineValue = historiaDelasEpocas;
+    }
+     if(disciplineValue =="CIENCIAS AUXILIARES DE LA HISTORIA"){
+      var cienciasAuxiliaresDeLaHistoria = [  
+	 	"ARCHIVISTICA",
+		"ARCHIVOS ECONOMICOS",
+		"ARQUEOLOGIA",
+		"CERAMOLOGIA",
+		"EPIGRAFIA",
+		"ESTRATIGRAFIA",
+		"FILOLOGIA",
+		"HERALDICA",
+		"ICONOGRAFIA",
+		"NUMISMATICA",
+		"ONOMASTICA",
+		"PALEOGRAFIA",
+		"PAPIROLOGIA",
+		"SIGILOGRAFIA",
+		"TEORIA DE DOCUMENTOS",
+		"OTROS"]
+	disciplineValue = cienciasAuxiliaresDeLaHistoria;
+    }
+       if(disciplineValue =="HISTORIA ESPECIALIZADA"){
+      var historiaEspecializada = [  
+		"HISTORIA DE LA ASTRONOMIA",
+		"HISTORIA DE LA BIOLOGIA",
+		"HISTORIA DE LA CIENCIA",
+		"HISTORIA DE LA CULTURA",
+		"HISTORIA DE LA ECONOMIA",
+		"HISTORIA DE LA EDUCACION",
+		"HISTORIA DE LA FILOSOFIA",
+		"HISTORIA DE LA FISICA",
+		"HISTORIA DE LA GEOGRAFIA",
+		"HISTORIA DE LA GEOLOGIA",
+		"HISTORIA DE LA GUERRA",
+		"HISTORIA DE LA LINGÜISTICA",
+		"HISTORIA DE LA LITERATURA",
+		"HISTORIA DE LA LOGICA",
+		"HISTORIA DE LA MAGISTRATURA",
+		"HISTORIA DE LA MEDICINA",
+		"HISTORIA DE LA QUIMICA",
+		"HISTORIA DE LA SOCIOLOGIA",
+		"HISTORIA DE LA TECNOLOGIA",
+		"HISTORIA DE LAS IDEAS POLITICAS",
+		"HISTORIA DE LAS INSTITUCIONES",
+		"HISTORIA DE LAS MENTALIDADES",
+		"HISTORIA DE LAS RELACIONES INTERNACIONALES",
+		"HISTORIA DE LAS RELIGIONES",
+		"HISTORIA DEL ARTE",
+		"HISTORIA DEL DERECHO Y DE LAS INSTITUCIONES JURIDICAS",
+		"HISTORIA DEL PERIODISMO",
+		"HISTORIA SOCIAL",
+	 	"HISTORIA DE LA ARQUITECTURA",
+		"OTROS"]
+	disciplineValue = historiaEspecializada;
+    }
+    if(disciplineValue =="TEORIAS Y METODOS JURIDICOS GENERALES"){
+      var teoriayMetodosJuridicosGenerales = [  
+		"DERECHO COMPARADO",
+		"DERECHO CONSUETUDINARIO",
+		"DERECHO DE LA ANTIGÜEDAD",
+		"DERECHO NATURAL",
+		"JURISPRUDENCIA",
+		"LEGISLACION PROMULGADA",
+		"OTROS"]
+	disciplineValue = teoriayMetodosJuridicosGenerales;
+    }
+     if(disciplineValue =="DERECHO INTERNACIONAL"){
+      var derechoInternacional = [  
+		"DERECHO AERONAUTICO",
+		"DERECHO DEL ESPACIO ULTRATERRESTRE",
+		"DERECHO DEL FONDO DEL MAR",
+		"DERECHO MARITIMO",
+		"OTROS"]
+	disciplineValue = derechoInternacional;
+    }
+    if(disciplineValue =="ORGANIZACION PENAL"){
+      var organizacionPenal = [  
+		"FUNCIONARIOS Y PROCEDIMIENTOS JUDICIALES",
+		"MAGISTRATURA",
+		"TRIBUNALES",
+		"OTROS"]
+	disciplineValue = organizacionPenal;
+    }
+     if(disciplineValue =="DERECHO Y LEGISLACION NACIONALES"){
+      var derechoyLEgislacionNAcionales = [  
+		"DERECHO ADMINISTRATIVO",
+		"DERECHO AGRARIO Y MINERO",
+		"DERECHO CIVIL",
+		"DERECHO COMERCIAL",
+		"DERECHO CONSTITUCIONAL",
+		"DERECHO DEL TRANSPORTE Y TRANSITO",
+		"DERECHO FINANCIERO",
+		"DERECHO FISCAL",
+		"DERECHO LABORAL",
+		"DERECHO NOTARIAL",
+		"DERECHO PENAL",
+		"DERECHO PRIVADO",
+		"DERECHO ROMANO",
+		"DERECHO SOCIAL",
+		"LEGISLACION PUBLICA",
+		"OTROS"]
+	disciplineValue = derechoyLEgislacionNAcionales;
+    }
+    //----------------------------------///
+      if(disciplineValue =="OTRAS ESPECIALIDADES EN MATERIA JURIDICA"){
+      var derechoyLEgislacionNAcionales = [  
+		"OTRAS ESPECIALIDADES EN MATERIA JURIDICA"]
+	disciplineValue = derechoyLEgislacionNAcionales;
+    }
+     if(disciplineValue =="LINGÜISTICA APLICADA"){
+      var linguisticaAplicada = [  
+		"PREPARACION DE RESUMENES ANALITICOS",
+		"DOCUMENTACION AUTOMATIZADA",
+		"BILINGÜISMO",
+		"LINGÜISTICA COMPUTACIONAL",
+		"LENGUAJES DOCUMENTALES",
+		"DOCUMENTACION",
+		"LENGUAJE Y LITERATURA",
+		"LENGUAJE DE LOS NIÑOS",
+		"TRADUCCION A MAQUINA",
+		"PATOLOGIA Y CORRECCION DEL HABLA",
+		"ENSEÑANZA DE IDIOMAS",
+		"TRADUCCION",
+		"ALFABETIZACION Y SISTEMAS DE ESCRITURA",
+		"OTROS"]
+	disciplineValue = linguisticaAplicada;
+    }
+    if(disciplineValue =="LINGÜISTICA DIACRONICA"){
+      var linguisticaDiacronica = [  
+		"ETIMOLOGIA",
+		"LINGÜISTICA HISTORICA",
+		"OTROS"]
+	disciplineValue = linguisticaDiacronica;
+    }
+     if(disciplineValue =="LINGÜISTICA SINCRONICA"){
+      var linguisticaSincronica = [  
+		 "SINTAXIS ANALISIS SINTACTICO",
+		"ESTILISTICA (ESTILO Y RETORICA)",
+		"ETNOLINGÜISTICA",
+		"FONETICA",
+		"FONOLOGIA",
+		"LEXICOGRAFIA",
+		"LEXICOLOGIA",
+		"LINGÜISTICA COMPARADA",
+		"LINGÜISTICA DESCRIPTIVA",
+		"ORTOGRAFIA",
+		"PSICOLINGÜISTICA",
+		"SEMANTICA",
+		"SEMIOLOGIA",
+		"SOCIOLINGÜISTICA",
+		"OTROS"]
+	disciplineValue = linguisticaSincronica;
+    }
+     if(disciplineValue =="TEORIAS Y METODOS PEDAGOGICOS GENERALES"){
+      var teoriasyMetodosPedagogicosGenerales = [  
+		"ELABORACION DE PLANES DE ESTUDIO",
+		"EVALUACION DE ALUMNOS Y MAESTROS",
+		"INSTRUCCION PROGRAMADA",
+		"METODOS AUDIOVISUALES",
+		"METODOS PEDAGOGICOS",
+		"PEDAGOGIA COMPARADA",
+		"PEDAGOGIA EXPERIMENTAL",
+		"TEORIAS DE LA EDUCACION",
+		"OTROS"]
+	disciplineValue = teoriasyMetodosPedagogicosGenerales;
+    }
+     if(disciplineValue =="ORGANIZACION Y PLANIFICACION PEDAGOGICAS"){
+      var organizacionyPlanificacionPedagogicas = [  
+		"EDUCACION DE ADULTOS",
+		"CENTROS DOCENTES",
+		"ORGANIZACION Y ADMINISTRACION",
+		"PLANIFICACION Y FINANCIACION DE LA EDUCACION",
+		"NIVELES Y TEMAS DE LA EDUCACION",
+		"EDUCACION ESPECIAL",
+		"IMPEDIDOS",
+		"RETRASADOS MENTALES",
+		"ANALISIS",
+		"MODELOS Y PROYECCIONES ESTADISTICOS",
+		 "ENSEÑANZA Y FORMACION PROFESIONAL",
+		"OTROS"]
+	disciplineValue = organizacionyPlanificacionPedagogicas;
+    }
+    if(disciplineValue =="FORMACION Y EMPLEO DE LOS EDUCADORES"){
+      var formacionyEmpleoDeLosEducadores = [  
+		"CARRERA Y CONDICION DE LOS EDUCADORES",
+		"FORMACION DE EDUCADORES",
+		"OTROS"]
+	disciplineValue = formacionyEmpleoDeLosEducadores;
+    }
+    if(disciplineValue =="RELACIONES INTERNACIONALES"){
+      var relacionesInternacionales = [  
+		"COOPERACION INTERNACIONAL",
+		"ORGANIZACIONES INTERNACIONALES",
+		"POLITICA INTERNACIONAL",
+		"PROBLEMAS DE LAS RELACIONES INTERNACIONALES",
+		"TRATADOS Y ACUERDOS INTERNACIONALES",
+		"OTROS"]
+	disciplineValue = relacionesInternacionales;
+    }
+    if(disciplineValue =="POLITICAS SECTORIALES"){
+      var politicasSectoriales = [  
+		 "POLITICA EXTERIOR",
+		"PLANIFICACION DE POLITICAS",
+		"POLITICA AGRICOLA",
+		"POLITICA AMBIENTAL",
+		"POLITICA CIENTIFICA Y TECNOLOGICA",
+		"POLITICA COMERCIAL",
+		"POLITICA CULTURAL",
+		"POLITICA DE COMUNICACIONES",
+		"POLITICA DE EDUCACION",
+		"POLITICA DE INFORMACION",
+		"POLITICA DE TRANSPORTES",
+		"POLITICA DEMOGRAFICA",
+		"POLITICA ECONOMICA",
+		"POLITICA INDUSTRIAL",
+		"POLITICA SANITARIA",
+		"POLITICA SOCIAL",
+		"OTROS"]
+	disciplineValue = politicasSectoriales;
+    }
+        if(disciplineValue =="INSTITUCIONES POLITICAS"){
+      var institucionesPoliticas = [  
+		"PODER EJECUTIVO",
+		"PODER JUDICIAL",
+		"PODER LEGISLATIVO",
+		"RELACIONES ENTRE LOS PODERES",
+		"OTROS"]
+	disciplineValue = institucionesPoliticas;
+    }
+    //------------------------------------------------------//
+
+  
+
     var newSubdiscipline ="<span class='plain-select'><select id='BooksChapters_subdiscipline' class='tooltipstered' name='BooksChapters[subdiscipline]'>";
     newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
@@ -2015,7 +3138,7 @@ if(areaValue =="SOCIOLOGIA"){
 
     <div class="row">
 
-      <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
+      <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. Solo se aceptan numeros')); ?>
       <?php echo $form->error($modelAuthor,'position'); ?>
       </div>
       </div>
@@ -2046,7 +3169,7 @@ if(areaValue =="SOCIOLOGIA"){
     </div>
 
      <div class="row">
-      <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
+      <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. Solo se aceptan numeros')); ?>
       <?php echo $form->error($value,'position');
     ?>
   </div>
