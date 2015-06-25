@@ -49,6 +49,10 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 			array('name'=>'Número de Movimiento','type'=>'html','id'=>'id','value'=>'CHtml::encode($data->id)'),
 			array('name'=>'Número de usuario','type'=>'html','id'=>'id_user','value'=>'CHtml::encode($data->id_user)'),
+			array('header'=>'Nombre de usuario',
+				'type'=>'html',
+				'id'=>'id_user',
+				'value'=>'Persons::model()->findByAttributes(array("id_user"=>$data->id_user)) != null ? Persons::model()->findByAttributes(array("id_user"=>$data->id_user))->names : "Usuario eliminado"'),
 			array('name'=>'Sección','type'=>'html','id'=>'section','value'=>'CHtml::encode($data->section)'),
 			array('name'=>'Detalles','type'=>'html','id'=>'details','value'=>'CHtml::encode($data->details)'),
 			array('name'=>'Acción','type'=>'html','id'=>'action','value'=>'CHtml::encode($data->action)'),
@@ -59,4 +63,5 @@ $('.search-form form').submit(function(){
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+));
+ ?>

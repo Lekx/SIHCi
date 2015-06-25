@@ -76,6 +76,6 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Crear Difusiones de Prensa:</h4>
+<h4>Crear Difusion de Prensa:</h4>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

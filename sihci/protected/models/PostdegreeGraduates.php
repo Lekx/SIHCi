@@ -78,33 +78,23 @@ class PostdegreeGraduates extends CActiveRecord
 	 * based on the search/filter conditions.
 	 */
 	public function search()
-	{
-				
-		
+	{		
 		$criteria=new CDbCriteria;
-		$sort= new CSort();
-		$sort->defaultOrder='name ASC';
-
+	
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'fullname ASC';
+		
 		if($this->searchValue)
 		{
 			$criteria->addCondition("fullname LIKE CONCAT('%', :searchValue , '%') OR creation_date LIKE CONCAT('%', :searchValue ,'%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
-
-
 		
-		$criteria = new CDbCriteria;	
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('fullname',$this->fullname);
-		
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-
 		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'fullname ASC',
-		    ),
+			'criteria'=>$criteria,
+
 		));
 	}
 

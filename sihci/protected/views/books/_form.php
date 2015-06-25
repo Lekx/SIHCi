@@ -2,9 +2,46 @@
 /* @var $this BooksController */
 /* @var $model Books */
 /* @var $form CActiveForm */
-//$cs = Yii::app()->getClientScript();
-//$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/books/js/script.js');
 ?>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+
+    });
+});
+
+function lettersOnly(e)
+{
+ 	key = e.keyCode || e.which;
+ 	tecla = String.fromCharCode(key).toLowerCase();
+ 	letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+ 	especiales = [8,37,39,46,45,47];
+
+	 tecla_especial = false
+ 		for(var i in especiales)
+ 		{
+     		if(key == especiales[i])
+     		{
+  				tecla_especial = true;
+  				break;
+            }
+ 		}
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     		return false;
+}
+</script>
+</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -22,15 +59,14 @@
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','title'=>'ISBN')); ?>
+		<?php echo $form->textField($model,'isbn', array('placeholder'=>'Número de ISBN','class' => 'numericOnly','title'=>'Número de ISBN')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100 ,'placeholder'=>'Título del libro','title'=>'Título del libro')); ?>
+		<?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100 , 'placeholder'=>'Título del libro','title'=>'Título del libro')); ?>
 		<?php echo $form->error($model,'book_title'); ?>
 	</div>
-
 
 	<div class="row">
 		<?php echo $form->textField($model,'publisher',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Editorial','title'=>'Editorial')); ?>
@@ -38,7 +74,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','title'=>'Edición')); ?>
+		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','class' => 'numericOnly','title'=>'Edición')); ?>
 		<?php echo $form->error($model,'edition'); ?>
 	</div>
 
@@ -77,17 +113,17 @@
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','title'=>'Volumen') ); ?>
+		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','class' => 'numericOnly','title'=>'Volumen') ); ?>
 		<?php echo $form->error($model,'volume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','title'=>'Número de páginas')); ?>
+		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','class' => 'numericOnly','title'=>'Número de páginas')); ?>
 		<?php echo $form->error($model,'pages'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','title'=>'Tiraje')); ?>
+		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','class' => 'numericOnly','title'=>'Tiraje')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 
@@ -99,7 +135,7 @@
 						'Compilación'=>'Compilación',
 						'Editado'=>'Editado',
 						'Traducido'=>'Traducido'),
-						array('prompt'=>'Seleccionar tipo de trabajo','title'=>'Tipo de trabajo')
+						array('prompt'=>'Seleccionar identificador libro','title'=>'Identificador libro')
 		); ?>
 		</span>
 		<?php echo $form->error($model,'work_type'); ?>
@@ -199,7 +235,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'traductor',array('size'=>60,'maxlength'=>80, 'placeholder'=>'Nombre del traducctor','title'=>'Nombre del traductor')); ?>
+		<?php echo $form->textField($model,'traductor',array('size'=>60,'maxlength'=>80, 'placeholder'=>'Nombre del traducctor','title'=>'Nombre del traductor','onKeyPress'=>'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'traductor'); ?>
 	</div>
 
@@ -477,36 +513,36 @@
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
+ 	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+ 			'targetClass'=>'authorsRegistry',
+ 			'addButtonLabel'=>'Agregar nuevo autor',
+		 ));
+    ?>
     <div class="authorsRegistry ">
 	   <?php  echo "<input type='hidden' name='idsBooks[]'>"; ?>
 
 		   <hr>
 		   <div class="row">
-			  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)')); ?>
+			  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'names');?>
 		   </div>
 
 		  <div class="row">
-			  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
+			  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name1'); ?>
 		  </div>
 
 		   <div class="row">
-			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
+			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
 	       </div>
 		  <div class="row">
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'Posición', 'title'=>'Posición')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'Posición', 'title'=>'Posición','class'=>'numericOnly')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
 		  <hr>
    	</div>
 
-    	   	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
- 			'targetClass'=>'authorsRegistry',
- 			'addButtonLabel'=>'Agregar nuevo autor',
-		 ));
-    ?>
 	<?php
 		if(!$model->isNewRecord)
 		  foreach ($modelAuthors as $key => $value)
@@ -515,21 +551,21 @@
 				  <?php echo "<input type='hidden' value='".$value->id."' name='idsBooks[]'>"; ?>
 
 				  <div class="row">
-					  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)')); ?>
+					  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
 					  <?php echo $form->error($value,'names');?>
 				  </div>
 
 				  <div class="row">
-					   <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
+					   <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
 					  <?php echo $form->error($value,'last_name1'); ?>
 				  </div>
 
 				  <div class="row">
-					  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Materno')); ?>
+					  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
 					  <?php echo $form->error($value,'last_name2'); ?>
 				  </div>
 				  <div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición')); ?>
+					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición','class'=>'numericOnly')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
 	<?php } ?>

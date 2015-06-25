@@ -102,13 +102,18 @@ $this->menu=array(
 		'innovation_trascen',
 		'transfer_mechanism',
 		'hr_formation',
-		'economic_support',
+		array(
+			'label'=>'Profesor',
+			'name'=>'economic_support',
+			'value'=>$model->economic_support == 1 ? "Si" : "No",
+			),
 		array(
 			'label'=>'Archivo',
 			'type'=>'raw',
 			'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")),
 		),
 		/*'creation_date',
+		'economic_support',
 		'path',*/
 	),
 )); ?>

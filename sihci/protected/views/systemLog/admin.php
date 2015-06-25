@@ -17,7 +17,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestión</h1>
+<h1>Gestión de Archivos</h1>
 
 
 

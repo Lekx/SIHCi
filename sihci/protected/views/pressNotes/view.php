@@ -70,8 +70,6 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		/*'id',
-		'id_curriculum',*/
 		'type',
 		'directed_to',
 		'date',
@@ -79,6 +77,9 @@ $this->menu=array(
 		'responsible_agency',
 		'note',
 		'is_national',
+		
+		/*'id',
 		'creation_date',
+		'id_curriculum',*/
 	),
 )); ?>
