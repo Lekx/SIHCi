@@ -49,7 +49,7 @@ class Books extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords, path', 'required'),
+			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords', 'required'),
 			array('id_curriculum, isbn, edition, release_date, volume, pages, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('book_title, path', 'length', 'max'=>100),
 			array('publisher, traductor', 'length', 'max'=>80),
@@ -63,8 +63,9 @@ class Books extends CActiveRecord
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
 			
-			array('path,safe', 'safe', 'on'=>'update'),
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
+			array('path','file','on'=> 'insert'),
+			array('path', 'safe', 'on'=>'update'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png','on'=>'insert'),
 			
 			//array('path','file','maxSize'=>array(1024 * 5000), 'message'=>'El Documento excede el peso permitido'),
 			// The following rule is used by search().

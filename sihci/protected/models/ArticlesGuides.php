@@ -46,12 +46,13 @@ class ArticlesGuides extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_resume,title, start_page, end_page, article_type, magazine, area, discipline,subdiscipline, keywords ', 'required'),
+			array('id_resume,title, start_page, end_page, article_type, magazine, area, discipline,subdiscipline, keywords', 'required'),
 			array('id_resume, isbn, edicion, publishing_year, volumen, volumen_no, start_page, end_page, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('editorial', 'length', 'max'=>80),
 			array('article_type', 'length', 'max'=>20),
@@ -59,15 +60,15 @@ class ArticlesGuides extends CActiveRecord
 			array('area, discipline, subdiscipline', 'length', 'max'=>60),
 			array('keywords', 'length', 'max'=>250),
 			array('type', 'length', 'max'=>15),
-			array('searchValue','length','max'=>70),
+			array('searchValue','length','max'=>70),   		
 			array('url_document', 'length', 'max'=>100),
-    		array('url_document', 'safe', 'on'=>'update'),
-			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
+			array('url_document', 'safe', 'on'=>'update'),
+			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png','on'=>'insert','allowEmpty' => true),
 			array('end_page','compare', 'compareAttribute'=>'start_page','operator'=>'>=','message'=>'Página final no puede ser menor a la página inicial'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_resume, isbn,title, editorial, edicion, publishing_year, volumen, volumen_no, start_page, end_page, article_type, copies_issued, magazine, area, discipline, subdiscipline, url_document, keywords, type, creation_date,searchValue', 'safe', 'on'=>'search'),
-			array('url_document ,safe', 'safe', 'on'=>'update')
+			
 		);
 	}
 
@@ -101,7 +102,7 @@ class ArticlesGuides extends CActiveRecord
 			'volumen_no' => 'Número de volumen',
 			'start_page' => 'Página inicial ',
 			'end_page' => 'Página final',
-			'article_type' => 'Tipo de articulo o guía',
+			'article_type' => 'Tipo',
 			'copies_issued' => 'Tiraje',
 			'magazine' => 'Revista',
 			'area' => 'Área',
@@ -109,7 +110,7 @@ class ArticlesGuides extends CActiveRecord
 			'subdiscipline' => 'Subdiciplina',
 			'url_document' => 'Archivo',
 			'keywords' => 'Palabras claves',
-			'type' => 'Tipo',
+			'type' => 'Clasificación del articulo o guía',
 			'creation_date' => 'Creation Date',
 		);
 	}

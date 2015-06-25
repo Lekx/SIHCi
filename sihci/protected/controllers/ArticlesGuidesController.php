@@ -86,6 +86,7 @@ class ArticlesGuidesController extends Controller
                	{
 	                if(!is_dir($path))
 	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/', 0777, true);
+	              
 	                
 	 					$model->url_document->saveAs($path.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
 					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();    			 			   	
@@ -124,6 +125,8 @@ class ArticlesGuidesController extends Controller
 		               		echo CJSON::encode(array('status'=>'404'));
                             Yii::app()->end();
 		               }
+		                  
+			          
 			    }
 			    else 
 			    {

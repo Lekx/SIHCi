@@ -504,7 +504,7 @@ function lettersOnly(e)
 	</div>
 
 	<div class="row">
-		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
+		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo del libro')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
@@ -572,7 +572,7 @@ function lettersOnly(e)
 	<?php } ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
+		 <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton')); ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('books/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 	</div>

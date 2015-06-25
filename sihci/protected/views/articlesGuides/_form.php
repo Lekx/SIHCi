@@ -59,7 +59,7 @@ function lettersOnly(e)
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn',array('size'=>13,'placeholder'=>'Número de ISBN', 'class'=>'numericOnly','title'=>'Número de ISBN','class' => 'numericOnly')); ?>
+		<?php echo $form->textField($model,'isbn',array('size'=>13,'maxlength'=>11,'placeholder'=>'Número de ISBN', 'class'=>'numericOnly','title'=>'Número de ISBN','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
@@ -73,7 +73,7 @@ function lettersOnly(e)
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'edicion',array('placeholder'=>'Edición', 'class'=>'numericOnly','title'=>'Edición')); ?>
+		<?php echo $form->textField($model,'edicion',array('placeholder'=>'Edición','maxlength'=>11, 'class'=>'numericOnly','title'=>'Edición')); ?>
 		<?php echo $form->error($model,'edicion'); ?>
 	</div>
 
@@ -109,19 +109,23 @@ function lettersOnly(e)
 	</div>
 	
 	<div class="row">
-		<?php echo $form->textField($model,'type',array('size'=>15,'maxlength'=>15,'placeholder'=>'Tipo', 'title'=>'Tipo (maximo 15 caracteres)')); ?>
+		<?php echo $form->textField($model,'article_type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo', 'title'=>'Tipo(maximo 20 caracteres)')); ?>
+		<?php echo $form->error($model,'article_type'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->textField($model,'type',array('size'=>15,'maxlength'=>15,'placeholder'=>'Clasificación del articulo o guía', 'title'=>'Clasificación del articulo o guía(maximo 15 caracteres)')); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'article_type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo de articulo o guía', 'title'=>'Tipo de articulo  o guía (maximo 20 caracteres)')); ?>
-		<?php echo $form->error($model,'article_type'); ?>
+		<?php echo $form->textField($model,'magazine',array('size'=>50,'maxlength'=>50,'placeholder'=>'Revista', 'title'=>'Revista (maximo 50 caracteres)')); ?>
+		<?php echo $form->error($model,'magazine'); ?>
 	</div>
 
 
-
 	<div class="row">
-		<?php echo $form->textField($model,'volumen',array('placeholder'=>'Volumen','class'=>'numericOnly', 'title'=>'Volumen',)); ?>
+		<?php echo $form->textField($model,'volumen',array('placeholder'=>'Volumen','maxlength'=>11,'class'=>'numericOnly', 'title'=>'Volumen',)); ?>
 		<?php echo $form->error($model,'volumen'); ?>
 	</div>
 
@@ -131,12 +135,12 @@ function lettersOnly(e)
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'start_page',array('placeholder'=>'Pagina inicial','class'=>'numericOnly', 'title'=>'Pagina inicial')); ?>
+		<?php echo $form->textField($model,'start_page',array('placeholder'=>'Pagina inicial','maxlength'=>11,'class'=>'numericOnly', 'title'=>'Pagina inicial')); ?>
 		<?php echo $form->error($model,'start_page'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'end_page',array('placeholder'=>'Pagina final', 'class'=>'numericOnly','title'=>'Pagina final')); ?>
+		<?php echo $form->textField($model,'end_page',array('placeholder'=>'Pagina final','maxlength'=>11, 'class'=>'numericOnly','title'=>'Pagina final')); ?>
 		<?php echo $form->error($model,'end_page'); ?>
 	</div>
 
@@ -145,10 +149,6 @@ function lettersOnly(e)
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->textField($model,'magazine',array('size'=>50,'maxlength'=>50,'placeholder'=>'Revista', 'title'=>'Revista (maximo 50 caracteres)')); ?>
-		<?php echo $form->error($model,'magazine'); ?>
-	</div>
 
 	<div class="row">
 	<span class="plain-select">
@@ -416,7 +416,7 @@ function lettersOnly(e)
 	</div>
 
 	<div class="row">
-		<?php echo $form->fileField($model,'url_document',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
+		<?php echo $form->fileField($model,'url_document',array('size'=>60,'maxlength'=>100,'title'=>'archivo del articulo o guía')); ?>
 		<?php echo $form->error($model,'url_document'); ?>
 	</div>
 

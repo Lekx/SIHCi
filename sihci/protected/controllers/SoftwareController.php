@@ -100,18 +100,17 @@ class SoftwareController extends Controller
 					   	$this->redirect(array('admin'));
 				    	Yii::app()->end();
 				    }			    	
-				    else 
+				    /*else 
 			    	{
 			    		echo CJSON::encode(array('status'=>'404'));
 		                Yii::app()->end();
-			        }
+			        }*/
 					    
 		}
 			
 		if(!isset($_POST['ajax']))
 			$this->render('create',array('model'=>$model));
 	}
-
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
