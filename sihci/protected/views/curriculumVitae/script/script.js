@@ -1,18 +1,18 @@
 
  $(document).ready(function(){
-         
+
          var validateEmail = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
          var validateNum = /^[0-9]+$/;
-       
+
         /////FORM GRADES
             $("#btnCreateGrade").click(function(){
 
-                var grade = $("#grade").val(); 
+                var grade = $("#grade").val();
                 var writNumber = $("#writNumber").val();
-                var title = $("#title").val(); 
-                var obtentionDate = $("#obtentionDate").val(); 
+                var title = $("#title").val();
+                var obtentionDate = $("#obtentionDate").val();
                 var thesisTitle = $("#thesisTitle").val();
-                var institution = $("#institution").val(); 
+                var institution = $("#institution").val();
 
                 if(grade == ""){
                     $("#errorGrade").fadeIn("slow");
@@ -24,7 +24,7 @@
                           $("#errorNumber").fadeIn("slow");
                           return false;
                     }else{
-                        
+
                         $("#errorNumber").fadeOut();
                         if (title == "") {
                             $("#errorTitle").fadeIn("slow");
@@ -51,31 +51,31 @@
                             }
                         }
                     }
-                    
+
                  }
- 
+
             });//click
 
            $("#showFormGrade").on( "click", function() {
-                $('.grades').show(); 
+                $('.grades').show();
                 $('#hideFormGrade').show();
                  $('#showFormGrade').hide();
              });
             $("#hideFormGrade").on( "click", function() {
-                $('.grades').hide(); 
+                $('.grades').hide();
                   $('#showFormGrade').show();
             });
 
 
 ///FORM PHONES
-   
+
              //Emails
             $("#btnCreateEmail").click(function(){
-                
+
                 var type = $("#typeEmail").val();
                 var mail = $("#mail").val();
- 
-             
+
+
                 if(type == ""){
                     $("#errorTypeEmail").fadeIn("slow");
                     return false;
@@ -101,7 +101,7 @@
                         }
                     }
                 }
-            
+
         }); //click
         $("#showFormGrade").on("click", function() {
             $('.grades').show();
@@ -183,7 +183,7 @@
         });
         ///// FORM JOBS
         $('#rud').show();
-        $('#organization').show();
+        $('.NA').show();
         $('#unitHospital').change(function() {
             if ($('#unitHospital').val() == 'NA') {
                 $('#rud').hide();
@@ -191,9 +191,9 @@
                 $('#rud').show();
             }
             if ($('#unitHospital').val() != 'NA') {
-                $('#organization').hide();
+                $('.NA').hide();
             } else {
-                $('#organization').show();
+                $('.NA').show();
             }
         });
         /////////// FORM RESEARCH

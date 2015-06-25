@@ -52,9 +52,6 @@ class Patent extends CActiveRecord
 			array('international_clasification', 'length', 'max'=>100),
 			array('owner, resource_operator', 'length', 'max'=>70),
 			array('consession_date, resumen', 'safe'),
-			//array('consession_date','compare','compareValue'=>'presentation_date','operator'=>'>=','message'=>"La fecha de presentación no puede ser mayor a la fecha de concesión"),	
-			//array('consession_date','compare','compareAttribute'=>'presentation_date','operator'=>'>=','message'=>"La fecha de presentación no puede ser mayor a la fecha de concesión"),	
-			array('presentation_date','compareDate','type'=>'date','dateFormat'=>'d/m/Y'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),

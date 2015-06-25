@@ -36,16 +36,16 @@ $this->menu = array(
 		<hr>
 	</div>
 	<div class="row">
-	<input placeholder="Nuevo Correo" title="Nuevo Correo" type="text" name="Account[email2]" id="Account_email2">
+	<input placeholder="Nuevo Correo" title="Nuevo Correo" type="text" name="Account[email2]" id="Account_email2" oncopy="return false;" onpaste="return false;" oncut="return false;">
 	</div>
 
 	<div class="row">
-		<input placeholder="Repetir Nuevo Correo"  title="Nuevo Correo" type="text" name="Account[email22]" id="Account_email22">
+		<input placeholder="Repetir Nuevo Correo"  title="Nuevo Correo" type="text" name="Account[email22]" id="Account_email22" oncopy="return false;" onpaste="return false;" oncut="return false;">
 	</div>
 	<hr>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton("Guardar", array('class'=>'savebutton') ); ?>
+		<?php echo CHtml::submitButton("Guardar", array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton') ); ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

@@ -118,7 +118,7 @@ class BooksController extends Controller
 								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
      							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 			                    echo CJSON::encode(array('status'=>'success'));
-	                            $this->redirect(array('admin','id'=>$model->id));
+	                            $this->redirect(array('admin'));
 	                            Yii::app()->end();
 
 			               }					               
@@ -200,8 +200,8 @@ class BooksController extends Controller
                     if(!empty($oldUrlDocument))
                     	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
                     
-                    if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png')
-            		{
+                   if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png')
+            	   {
 	                    $model->path = CUploadedFile::getInstanceByName('Books[path]');
 	                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
 	                  
@@ -252,7 +252,7 @@ class BooksController extends Controller
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
        	 		   
        	 		    echo CJSON::encode(array('status'=>'200'));
-                    $this->redirect(array('admin','id'=>$model->id));
+                    $this->redirect(array('admin'));
                     Yii::app()->end();
             	} 
             	
@@ -265,7 +265,7 @@ class BooksController extends Controller
         }
         	
    		if(!isset($_POST['ajax']))
-				$this->render('update',array('model'=>$model,'modelAuthor'=>$modelAuthor, 'modelAuthors'=>$modelAuthors));
+				$this->render('update',array('model'=>$model,'modelAuthor'=>$modelAuthor,'modelAuthors'=>$modelAuthors));
 	}
 
 	/**

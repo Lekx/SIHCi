@@ -199,7 +199,7 @@
 
 	<div class="row">
 		
-		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto", "title"=>"Exámen / Documento probatorio")); ?>
+		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100, "title"=>"Exámen / Documento probatorio")); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 

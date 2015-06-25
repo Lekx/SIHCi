@@ -48,7 +48,7 @@ class Software extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	/*public function rules()
+	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
@@ -64,35 +64,13 @@ class Software extends CActiveRecord
 			array('searchValue','length', 'max'=>70),
 			array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
    			array('path', 'safe', 'on'=>'update'),
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png','on'=>'insert','allowEmpty' => true),
 			
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, country, participation_type, title, beneficiary, entity, manwork_hours, end_date, sector, organization, second_level, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, economic_support, path, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
-	}*/
-	public function rules()
-    {
-        // NOTE: you should only define rules for those attributes that
-        // will receive user inputs.
-        return array(
-            array('id_curriculum, country, title, sector, organization', 'required'),
-            array('id_curriculum, economic_support', 'numerical', 'integerOnly'=>true),
-            array('manwork_hours', 'numerical'),
-            array('country', 'length', 'max'=>50),
-            array('participation_type, entity', 'length', 'max'=>20),
-            array('title', 'length', 'max'=>150),
-            array('beneficiary', 'length', 'max'=>70),
-            array('searchValue','length', 'max'=>70),
-            array('sector, organization, second_level, path', 'length', 'max'=>100),
-            array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
-            array('path', 'safe', 'on'=>'update'),
-			//array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png'),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-           array('id, id_curriculum, country, participation_type, title, beneficiary, entity, manwork_hours, end_date, sector, organization, second_level, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, economic_support, path, creation_date, searchValue', 'safe', 'on'=>'search'),
-        );
-    }
+	}
 
 
 	/**
@@ -125,12 +103,12 @@ class Software extends CActiveRecord
 			'organization' => 'Organización',
 			'second_level' => 'Segundo nivel',
 			'resumen' => 'Resumen',
-			'objective' => 'Objetivo',
-			'contribution' => 'Contribución',
-			'impact_value' => 'Valor de impacto',
-			'innovation_trascen' => 'Innovacón',
-			'transfer_mechanism' => 'Mecanismo de transferencia.',
-			'hr_formation' => 'Formación HR',
+			'objective' => 'Objetivo del desarrollo',
+			'contribution' => 'Contribución del solicitante al desarrollo de software',
+			'impact_value' => ' Generación de valor e impacto para el beneficiario ',
+			'innovation_trascen' => 'Grado de innovación y trascendencia',
+			'transfer_mechanism' => 'Mecanismo de transferencia del desarrollo de software .',
+			'hr_formation' => 'Formación de Recursos Humanos',
 			'economic_support' => '¿ Recibio apoyo económico ?',
 			'path' => 'Archivo',
 			'creation_date' => 'Creation Date',
@@ -167,13 +145,7 @@ class Software extends CActiveRecord
 	
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-<<<<<<< HEAD
-			/*'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'title ASC',
-		    ),*/
-=======
->>>>>>> beb52636a9ce27435b77752a4037e15bbba3be63
+
 		));
 	}
 
