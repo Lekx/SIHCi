@@ -396,693 +396,994 @@ if(areaValue == "SOCIOLOGIA"){
                         "OTROS"]
       disciplineValue = analisisNumerico;
     }
-    if(disciplineValue == "INVESTIGACION OPERATIVA"){
+    if(disciplineValue =="INVESTIGACION OPERATIVA"){
       var invetigacionOperativa = [  
-      				"ANALISIS MICROECONOMICO", 
-					"CIBERNETICA",
-					"COLAS", 
-					"DISTRIBUCION Y TRANSPORTE",
-					"FIABILIDAD DE LOS SISTEMAS", 
-					"FLUJO DE RED",
-					"FORMULACION DE SISTEMAS",
-					"INVENTARIO", 
-					"MODELACION", 
-					"ORDENAMIENTO",
-					"OTROS",
-					"PROGRAMACION DINAMICA",
-					"PROGRAMACION ENTERA",
-					"PROGRAMACION LINEAL",
-					"PROGRAMACION NO LINEAL",
-					"SISTEMAS DE CONTROL",
-					"TEORIA DE JUEGOS", ]
+              "ANALISIS MICROECONOMICO", 
+          "CIBERNETICA",
+          "COLAS", 
+          "DISTRIBUCION Y TRANSPORTE",
+          "FIABILIDAD DE LOS SISTEMAS", 
+          "FLUJO DE RED",
+          "FORMULACION DE SISTEMAS",
+          "INVENTARIO", 
+          "MODELACION", 
+          "ORDENAMIENTO",
+          "OTROS",
+          "PROGRAMACION DINAMICA",
+          "PROGRAMACION ENTERA",
+          "PROGRAMACION LINEAL",
+          "PROGRAMACION NO LINEAL",
+          "SISTEMAS DE CONTROL",
+          "TEORIA DE JUEGOS", ]
       disciplineValue = invetigacionOperativa;
     }
-        if(disciplineValue == "CALCULO DE PROBABILIDADES"){
+    if(disciplineValue =="CALCULO DE PROBABILIDADES"){
       var calculoProbabilidades = [  
-      				"APLICACION DE LA PROBABILIDAD",
-					"CONJUNTOS ALEATORIOS",
-					"FUNDAMENTOS DE LA PROBABILIDAD",
-					"GEOMETRIA ESTOCASTICA", 
-					"MATEMATICAS ACTUARIALES", 
-					"PROCESOS DE MARKOV",
-					"PLAUSIBILIDAD", 
-					"PROCESOS ESTOCASTICOS",
-					"PROBABILIDADES SUBJETIVAS",
-					"PROBABILIDAD GEOMETRICA", 
-					"OTROS",
-					"TEORIA ANALITICA DE LA PROBABILIDAD",
-					"TEOREMAS LIMITE"]
+              "APLICACION DE LA PROBABILIDAD",
+          "CONJUNTOS ALEATORIOS",
+          "FUNDAMENTOS DE LA PROBABILIDAD",
+          "GEOMETRIA ESTOCASTICA", 
+          "MATEMATICAS ACTUARIALES", 
+          "PROCESOS DE MARKOV",
+          "PLAUSIBILIDAD", 
+          "PROCESOS ESTOCASTICOS",
+          "PROBABILIDADES SUBJETIVAS",
+          "PROBABILIDAD GEOMETRICA", 
+          "OTROS",
+          "TEORIA ANALITICA DE LA PROBABILIDAD",
+          "TEOREMAS LIMITE"]
       disciplineValue = calculoProbabilidades;
     }
-      if(disciplineValue == "ESTADISTICA"){
+    if(disciplineValue =="ESTADISTICA"){
       var estadistica = [  
-      				"ANALISIS DE DATOS",
-					"ANALISIS MULTIVARIANTE", 
-					"COMPUTACION PARA LA ESTADISTICA", 
-					"DISEÑO Y ANALISIS DE EXPERIMENTOS",
-					"ESTADISTICA ANALITICA",
-					"FUNDAMENTOS DE INFERENCIA ESTADISTICA",
-					"METODOS NO PARAMETRICOS",
-					"OTROS",
-					"PROCEDIMIENTOS DE DECISION Y TEORIA DE DECISION",
-					"TEORIA DE LA DISTRIBUCION Y LA PROBABILIDAD",
-					"TEORIA Y TECNICAS DE MUESTREO",
-					"TEORIA ESTOCASTICA Y ANALISIS DE SERIES TEMPORALES",
-					"TECNICAS DE ASOCIACION ESTADISTICA",
-					"TECNICAS DE INFERENCIA ESTADISTICA",
-					"TECNICAS DE PREDICCION ESTADISTICA",
-					"SERIES TEMPORALES", ]
+              "ANALISIS DE DATOS",
+          "ANALISIS MULTIVARIANTE", 
+          "COMPUTACION PARA LA ESTADISTICA", 
+          "DISEÑO Y ANALISIS DE EXPERIMENTOS",
+          "ESTADISTICA ANALITICA",
+          "FUNDAMENTOS DE INFERENCIA ESTADISTICA",
+          "METODOS NO PARAMETRICOS",
+          "OTROS",
+          "PROCEDIMIENTOS DE DECISION Y TEORIA DE DECISION",
+          "TEORIA DE LA DISTRIBUCION Y LA PROBABILIDAD",
+          "TEORIA Y TECNICAS DE MUESTREO",
+          "TEORIA ESTOCASTICA Y ANALISIS DE SERIES TEMPORALES",
+          "TECNICAS DE ASOCIACION ESTADISTICA",
+          "TECNICAS DE INFERENCIA ESTADISTICA",
+          "TECNICAS DE PREDICCION ESTADISTICA",
+          "SERIES TEMPORALES", ]
       disciplineValue = estadistica;
     }
-        if(disciplineValue == "TOPOLOGIA"){
+        if(disciplineValue =="TOPOLOGIA"){
       var topologia = [  
-      				"COHOMOLOGIA",
-					"ESPACIOS ABSTRACTOS",
-					"DINAMICA TOPOLOGICA",
-					"GRUPOS DE TRANSFORMACION",
-					"GRUPOS DE LIE", 
-					"GRUPOS TOPOLOGICOS", 
-					"HACES Y ESPACIOS DE FIBRAS",
-					"HOMOLOGIA",
-					"HOMOTOPIA", 
-					"INMERSION TOPOLOGICA",
-					"OTROS",
-					"TEORIA K TOPOLOGICA", 
-					"TOPOLOGIA ALGEBRAICA", 
-					"TOPOLOGIA COMBINATORIA",
-					"TOPOLOGIA DE CONJUNTOS DE PUNTOS", 
-					"TOPOLOGIA GENERAL",
-					"TOPOLOGIA TRIDIMENSIONAL",
-					"VARIEDADES DIFERENCIALES", 
-					"VARIEDADES TOPOLOGICAS"]
+              "COHOMOLOGIA",
+          "ESPACIOS ABSTRACTOS",
+          "DINAMICA TOPOLOGICA",
+          "GRUPOS DE TRANSFORMACION",
+          "GRUPOS DE LIE", 
+          "GRUPOS TOPOLOGICOS", 
+          "HACES Y ESPACIOS DE FIBRAS",
+          "HOMOLOGIA",
+          "HOMOTOPIA", 
+          "INMERSION TOPOLOGICA",
+          "OTROS",
+          "TEORIA K TOPOLOGICA", 
+          "TOPOLOGIA ALGEBRAICA", 
+          "TOPOLOGIA COMBINATORIA",
+          "TOPOLOGIA DE CONJUNTOS DE PUNTOS", 
+          "TOPOLOGIA GENERAL",
+          "TOPOLOGIA TRIDIMENSIONAL",
+          "VARIEDADES DIFERENCIALES", 
+          "VARIEDADES TOPOLOGICAS"]
       disciplineValue = topologia;
     }
-           if(disciplineValue == "INFORMATICA"){
+    if(disciplineValue =="INFORMATICA"){
       var informatica = [  
-      				"DISEÑO Y COMPONENTES",
-					"GRAFICAS INFORMATICAS", 
-					"ESTRUCTURA Y MANEJO DE DATOS",
-					"INTELIGENCIA ARTIFICIAL",
-					"LENGUAJES ALGORITMICOS", 
-					"LENGUAJES DE PROGRAMACION",
-					"LOGICA MATEMATICA Y LENGUAJES FORMALES",
-					"MATEMATICAS DISCRETAS", 
-					"MANIPULACION SIMBOLICA Y ALGEBRAICA",
-					"OTROS",
-					"SISTEMAS DE INFORMACION",
-					"PROCESAMIENTO DE TEXTOS Y DOCUMENTOS",
-					"PROGRAMAS MATEMATICOS", 
-					"SIMULACION Y MODELACION",
-					"TEORIA",
-					"TEORIA DE LA CODIFICACION Y DE LA INFORMACION",
-					"TEORIA DE LA INFORMATICA",
-					"TEORIA DE LA PROGRAMACION"]
+              "DISEÑO Y COMPONENTES",
+          "GRAFICAS INFORMATICAS", 
+          "ESTRUCTURA Y MANEJO DE DATOS",
+          "INTELIGENCIA ARTIFICIAL",
+          "LENGUAJES ALGORITMICOS", 
+          "LENGUAJES DE PROGRAMACION",
+          "LOGICA MATEMATICA Y LENGUAJES FORMALES",
+          "MATEMATICAS DISCRETAS", 
+          "MANIPULACION SIMBOLICA Y ALGEBRAICA",
+          "OTROS",
+          "SISTEMAS DE INFORMACION",
+          "PROCESAMIENTO DE TEXTOS Y DOCUMENTOS",
+          "PROGRAMAS MATEMATICOS", 
+          "SIMULACION Y MODELACION",
+          "TEORIA",
+          "TEORIA DE LA CODIFICACION Y DE LA INFORMACION",
+          "TEORIA DE LA INFORMATICA",
+          "TEORIA DE LA PROGRAMACION"]
       disciplineValue = informatica;
     }
-          if(disciplineValue == "SISTEMAS"){
+          if(disciplineValue =="SISTEMAS"){
       var sistemas = [  
-      				"OTROS",
-					"SISTEMAS ALGEBRAICOS TOPOLOGICOS Y DIFERENCIABLES",
-					"SISTEMAS DINAMICOS",
-					"SISTEMAS HAMILTONIANOS",
-					"SISTEMAS LAGRANGIANOS", 
-					"SISTEMAS ESTOCASTICOS Y CONTROL"]
+              "OTROS",
+          "SISTEMAS ALGEBRAICOS TOPOLOGICOS Y DIFERENCIABLES",
+          "SISTEMAS DINAMICOS",
+          "SISTEMAS HAMILTONIANOS",
+          "SISTEMAS LAGRANGIANOS", 
+          "SISTEMAS ESTOCASTICOS Y CONTROL"]
       disciplineValue = sistemas;
     }
-        if(disciplineValue == "COSMOLOGIA Y COSMOGONIA"){
+        if(disciplineValue =="COSMOLOGIA Y COSMOGONIA"){
       var cosmologiyCosmogonia = [  
-      				"ESTRELLAS BINARIAS", 
-					"CONGLOMERADOS", 
-					"RAYOS COSMICOS", 
-					"GALAXIAS", 
-					"GRAVITACION", 
-					"NEBULOSAS", 
-					"NOVAS", 
-					"PULSARS", 
-					"QUASARS", 
-					"ESTRELLAS", 
-					"EVOLUCION ESTELAR Y DIAGRAMAS HR",
-					"COMPOSICION ESTELAR", 
-					"SUPER NOVAS", 
-					"ESTRELLAS",
-					"VARIABLES",
-					"FUENTES DE RAYOS X",
-					"OTROS ESPECIFICAR",]
+              "ESTRELLAS BINARIAS", 
+          "CONGLOMERADOS", 
+          "RAYOS COSMICOS", 
+          "GALAXIAS", 
+          "GRAVITACION", 
+          "NEBULOSAS", 
+          "NOVAS", 
+          "PULSARS", 
+          "QUASARS", 
+          "ESTRELLAS", 
+          "EVOLUCION ESTELAR Y DIAGRAMAS HR",
+          "COMPOSICION ESTELAR", 
+          "SUPER NOVAS", 
+          "ESTRELLAS",
+          "VARIABLES",
+          "FUENTES DE RAYOS X",
+          "OTROS ESPECIFICAR",]
       disciplineValue = cosmologiyCosmogonia;
     }
-        if(disciplineValue == "ESPACIOS Y MATERIA INTERPLANETARIOS"){
+        if(disciplineValue =="ESPACIOS Y MATERIA INTERPLANETARIOS"){
       var espaciosyMateriaInterplanetarios = [  
-      				"CAMPOS INTERPLANETARIOS", 
-					"MATERIAS INTERPLANETARIAS", 
-					"OTROS",
-					"PARTICULAS INTERPLANETARIAS"]
+              "CAMPOS INTERPLANETARIOS", 
+          "MATERIAS INTERPLANETARIAS", 
+          "OTROS",
+          "PARTICULAS INTERPLANETARIAS"]
       disciplineValue = espaciosyMateriaInterplanetarios;
     }
-        if(disciplineValue == "ASTRONOMIA OPTICA"){
+        if(disciplineValue =="ASTRONOMIA OPTICA"){
       var astronomiaOptica = [  
-      				"ASTRONOMIA DE POSICION",
-					" TELESCOPIOS",
-					" ESPECTROSCOPIA",
-					" OTROS",]
+              "ASTRONOMIA DE POSICION",
+          "TELESCOPIOS",
+          "ESPECTROSCOPIA",
+          "OTROS",]
       disciplineValue = astronomiaOptica;
     }
-     if(disciplineValue == "PLANETOLOGIA"){
+     if(disciplineValue =="PLANETOLOGIA"){
       var planetologia = [  
-      				"COMETAS",
-					"METEORITOS",
-					"ATMOSFERAS PLANETARIAS",
-					"GEOLOGIA PLANETARIA",
-					"FISICA PLANETARIA",
-					"CAMPOS MAGNETICOS PLANETARIOS",
-					"PLANETAS",
-					"SATELITES",
-					"TECTITAS",
-					"LA LUNA",
-					"OTROS"]
+              "COMETAS",
+          "METEORITOS",
+          "ATMOSFERAS PLANETARIAS",
+          "GEOLOGIA PLANETARIA",
+          "FISICA PLANETARIA",
+          "CAMPOS MAGNETICOS PLANETARIOS",
+          "PLANETAS",
+          "SATELITES",
+          "TECTITAS",
+          "LA LUNA",
+          "OTROS"]
       disciplineValue = planetologia;
     }
-    if(disciplineValue == "RADIOASTRONOMIA"){
+    if(disciplineValue =="RADIOASTRONOMIA"){
       var radioastronimia = [  
-      				"ANTENAS",
-					"RADIOTELESCOPIOS", 
-					"OTROS"]
+              "ANTENAS",
+          "RADIOTELESCOPIOS", 
+          "OTROS"]
       disciplineValue = radioastronimia;
     }
-     if(disciplineValue == "SISTEMA SOLAR"){
+     if(disciplineValue =="SISTEMA SOLAR"){
       var sistemaSolar = [  
-      				"ENERGIA SOLAR",
-					 " FISICA SOLAR", 
-					 " RADIACION SOLAR",
-					 " EL SOL",
-					 " OTROS"]
+              "ENERGIA SOLAR",
+          "FISICA SOLAR", 
+          "RADIACION SOLAR",
+          "EL SOL",
+          "OTROS"]
       disciplineValue = sistemaSolar;
     }
-    if(disciplineValue == "ACUSTICA"){
+    if(disciplineValue =="ACUSTICA"){
       var acustica = [  
-      				"PROPIEDADES ACUSTICAS DE LOS SOLIDOS",
-					" ACUSTICA ARQUITECTONICA",
-					" FISICA DE LA AUDICION",
-					"FISICA DE LA MUSICA",
-					" RUIDO",
-					" ONDAS DE CHOQUE",
-					" SONAR",
-					" FISICA DEL HABLA",
-					" ULTRASONIDOS",
-					"SONIDOS SUBMARINOS",
-					" VIBRACIONES",
-					" OTROS"]
+              "PROPIEDADES ACUSTICAS DE LOS SOLIDOS",
+          "ACUSTICA ARQUITECTONICA",
+          "FISICA DE LA AUDICION",
+          "FISICA DE LA MUSICA",
+          "RUIDO",
+          "ONDAS DE CHOQUE",
+          "SONAR",
+          "FISICA DEL HABLA",
+          "ULTRASONIDOS",
+          "SONIDOS SUBMARINOS",
+          "VIBRACIONES",
+          "OTROS"]
       disciplineValue = acustica;
     }
-     if(disciplineValue == "ELECTROMAGNETISMO"){
+     if(disciplineValue =="ELECTROMAGNETISMO"){
       var electromagnetismo = [  
-      				"CONDUCTIVIDAD",
-					" CANTIDADES ELECTRICAS Y SU MEDICION",
-					" ELECTRICIDAD",
-					" RADIACION ELECTROMAGNETICA",
-					" RAYOS GAMMA",
-					" RADIACION INFRARROJA",
-					" VISIBLE Y ULTRAVIOLETA,
-					 INTERACCION DE LAS ONDAS ELECTROMAGNETICAS CON LA MATERIA",
-					" MAGNETISMO",
-					 "PROPAGACION DE LAS ONDAS ELECTROMAGNETICAS",
-					" ONDAS DE RADIO Y MICROONDAS",
-					" SUPERCONDUCTIVIDAD",
-					" RAYOS X",
-					" OTROS"]
+              "CONDUCTIVIDAD",
+          "CANTIDADES ELECTRICAS Y SU MEDICION",
+          "ELECTRICIDAD",
+          "RADIACION ELECTROMAGNETICA",
+          "RAYOS GAMMA",
+          "RADIACION INFRARROJA",
+          "VISIBLE Y ULTRAVIOLETA",
+          "INTERACCION DE LAS ONDAS ELECTROMAGNETICAS CON LA MATERIA",
+          "MAGNETISMO",
+          "PROPAGACION DE LAS ONDAS ELECTROMAGNETICAS",
+          "ONDAS DE RADIO Y MICROONDAS",
+          "SUPERCONDUCTIVIDAD",
+          "RAYOS X",
+          "OTROS"]
       disciplineValue = electromagnetismo;
     }
-      if(disciplineValue == "ELECTRONICA"){
+    if(disciplineValue =="ELECTRONICA"){
       var electronica = [  
-      				"CIRCUITOS",
-					" ELEMENTOS DE CIRCUITO",
-					" TUBOS ELECTRONICOS",
-					" MICROSCOPIA ELECTRONICA",
-					 "ESTADOS ELECTRONICOS",
-					" TRANSPORTE DE ELECTRONES",
-					" CIRCUITOS INTEGRADOS",
-					" FOTOELECTRICIDAD",
-					" PIEZOELECTRICIDAD",
-					" OTROS"]
+              "CIRCUITOS",
+          "ELEMENTOS DE CIRCUITO",
+          "TUBOS ELECTRONICOS",
+          "MICROSCOPIA ELECTRONICA",
+          "ESTADOS ELECTRONICOS",
+          "TRANSPORTE DE ELECTRONES",
+          "CIRCUITOS INTEGRADOS",
+          "FOTOELECTRICIDAD",
+          "PIEZOELECTRICIDAD",
+          "OTROS"]
       disciplineValue = electronica;
     }
-     if(disciplineValue == "FISICA DE LOS FLUIDOS"){
+     if(disciplineValue =="FISICA DE LOS FLUIDOS"){
       var fisicadelosFluidos = [  
-      				"COLOIDES",
-					" DISPERSIONES",
-					" CORRIENTE DE FLUIDOS",
-					" MECANICA DE FLUIDOS",
-					" GASES",
-					" FENOMENOS DE ALTA PRESION",
-					" IONIZACION",
-					" LIQUIDOS",
-					" MAGNETO-DINAMICA DE LOS FLUIDOS",
-					" FISICA DEL PLASMA",
-					" FLUIDOS CUANTICOS",
-					" OTROS"]
+              "COLOIDES",
+          "DISPERSIONES",
+          "CORRIENTE DE FLUIDOS",
+          "MECANICA DE FLUIDOS",
+          "GASES",
+          "FENOMENOS DE ALTA PRESION",
+          "IONIZACION",
+          "LIQUIDOS",
+          "MAGNETO-DINAMICA DE LOS FLUIDOS",
+          "FISICA DEL PLASMA",
+          "FLUIDOS CUANTICOS",
+          "OTROS"]
       disciplineValue = fisicadelosFluidos;
     }
-    if(disciplineValue == "MECANICA"){
+    if(disciplineValue =="MECANICA"){
       var mecanica = [  
-      				"MECANICA ESTADISTICA",
-					 "TEORIA DE N CUERPOS",
-					" ELASTICIDAD",
-					" FRICCION",
-					" MECANICA CONTINUA",
-					" MECANICA DE FLUIDOS",
-					" MECANICA DE SOLIDOS",
-					" MEDIDA DE LAS PROPIEDADES MECANICAS",
-					" OTROS",
-					" PLASTICIDAD",
-					"MECANICA ANALITICA",]
+              "MECANICA ESTADISTICA",
+          "TEORIA DE N CUERPOS",
+          "ELASTICIDAD",
+          "FRICCION",
+          "MECANICA CONTINUA",
+          "MECANICA DE FLUIDOS",
+          "MECANICA DE SOLIDOS",
+          "MEDIDA DE LAS PROPIEDADES MECANICAS",
+          "OTROS",
+          "PLASTICIDAD",
+          "MECANICA ANALITICA",]
       disciplineValue = mecanica;
     }
-      if(disciplineValue == "FISICA MOLECULAR"){
+      if(disciplineValue =="FISICA MOLECULAR"){
       var fisicaMolecular = [  
-      				"RADICALES LIBRES",
-					" FISICA DE LAS MOLECULAS INORGANICAS",
-					" FISICA DE LAS MACROMOLECULAS",
-					" MOLECULAS MESIONICAS Y MUONICAS",
-					" HACES MOLECULARES",
-					" IONES MOLECULARES",
-					" ESPECTROSCOPIA MOLECULAR",
-					" ESTRUCTURA MOLECULAR",
-					"FISICA DE LAS MOLECULAS ORGANICAS",
-					 "FISICA DE POLIMEROS",
-					" OTROS"]
+              "RADICALES LIBRES",
+          "FISICA DE LAS MOLECULAS INORGANICAS",
+          "FISICA DE LAS MACROMOLECULAS",
+          "MOLECULAS MESIONICAS Y MUONICAS",
+          "HACES MOLECULARES",
+          "IONES MOLECULARES",
+          "ESPECTROSCOPIA MOLECULAR",
+          "ESTRUCTURA MOLECULAR",
+          "FISICA DE LAS MOLECULAS ORGANICAS",
+          "FISICA DE POLIMEROS",
+          "OTROS"]
       disciplineValue = fisicaMolecular;
     }
 
-     if(disciplineValue == "FISICA NUCLEAR"){
+     if(disciplineValue =="FISICA NUCLEAR"){
       var fisicaNuclear = [  
-      				" ATOMO DE HELIO",
-					" ATOMO DE HIDROGENO",
-					" ATOMOS CON Z>2",
-					" CONVERSION DE LA ENERGIA",
-					" DESINTEGRACION NUCLEAR",
-					" ENERGIA NUCLEAR",
-					" ESTRUCTURA DEL NUCLEO",
-					" FISICA ATOMICA",
-					" FISION NUCLEAR",
-					" FUSION TERMONUCLEAR",
-					" HACES ELECTRONICOS",
-					" IONES ATOMICOS",
-					" ISOTOPOS",
-					" OTROS",
-					" PROCESOS DE COLISION",
-					" RADIOISOTOPOS",
-					" REACTORES NUCLEARES",
-					" RESONANCIA DE ROTACION DEL ELECTRON",
-					" RESONANCIA MAGNETICA NUCLEAR",
-					" RESONANCIA PARAMAGNETICA ELECTRONICA",
-					"REACCIONES Y DISPERSION NUCLEARES",
-					"HACES ATOMICOS"]
+              "ATOMO DE HELIO",
+          "ATOMO DE HIDROGENO",
+          "ATOMOS CON Z>2",
+          "CONVERSION DE LA ENERGIA",
+          "DESINTEGRACION NUCLEAR",
+          "ENERGIA NUCLEAR",
+          "ESTRUCTURA DEL NUCLEO",
+          "FISICA ATOMICA",
+          "FISION NUCLEAR",
+          "FUSION TERMONUCLEAR",
+          "HACES ELECTRONICOS",
+          "IONES ATOMICOS",
+          "ISOTOPOS",
+          "OTROS",
+          "PROCESOS DE COLISION",
+          "RADIOISOTOPOS",
+          "REACTORES NUCLEARES",
+          "RESONANCIA DE ROTACION DEL ELECTRON",
+          "RESONANCIA MAGNETICA NUCLEAR",
+          "RESONANCIA PARAMAGNETICA ELECTRONICA",
+          "REACCIONES Y DISPERSION NUCLEARES",
+          "HACES ATOMICOS"]
       disciplineValue = fisicaNuclear;
     }
 
-    if(disciplineValue == "FISICA DE LAS PARTICULAS NUCLEARES"){
+    if(disciplineValue =="FISICA DE LAS PARTICULAS NUCLEARES"){
       var fisicadelasParticulasNucleares = [  
-      				"ACELERADORES DE PARTICULAS",
-					 "DETECTORES DE RADIACION",
-					 "FISICA DE PARTICULAS",
-					"FUENTES DE HACES",
-					"FUENTES DE PARTICULAS",
-					 "OTROS",
-					"CONFINAMIENTO DEL PLASMA",
-					"NUCLEOS",
-					"REACTORES DE FUSION",
-					"MANEJO DE HACES"]
+              "ACELERADORES DE PARTICULAS",
+          "DETECTORES DE RADIACION",
+          "FISICA DE PARTICULAS",
+          "FUENTES DE HACES",
+          "FUENTES DE PARTICULAS",
+          "OTROS",
+          "CONFINAMIENTO DEL PLASMA",
+          "NUCLEOS",
+          "REACTORES DE FUSION",
+          "MANEJO DE HACES"]
       disciplineValue = fisicadelasParticulasNucleares;
     }
-      if(disciplineValue == "OPTICA"){
+      if(disciplineValue =="OPTICA"){
       var optica = [  
-      				" CINEMATOGRAFIA",
-					" COLORIMETRIA",
-					" ESPECTROSCOPIA DE EMISION",
-					" ESPECTROSCOPIA",
-					" FISICA DE LA VISION",
-					" FOTOGRAFIA",
-					" HOLOGRAFIA",
-					" ILUMINACION",
-					" INSTRUMENTACION FOTOGRAFICA",
-					" LASER",
-					" LUZ",
-					" MICROSCOPIOS",
-					" OPTICA FISICA",
-					" OPTICA GEOMETRICA",
-					" OPTICA NO LINEAL",
-					" OPTOMETRIA",
-					" OTROS",
-					"OPTICA DE FIBRAS FOTOCONDUCTORAS",
-					 "PROPIEDADES OPTICAS DE LOS SOLIDOS",
-					 "RADIACION VISIBLE",
-					" RADIACION INFRARROJA",
-					" RADIACION ULTRAVIOLETA",
-					" RADIOMETRIA",
-					"ESPECTROSCOPIA DE ABSORCION",
-					"FOTOMETRIA"]
+              "CINEMATOGRAFIA",
+          "COLORIMETRIA",
+          "ESPECTROSCOPIA DE EMISION",
+          "ESPECTROSCOPIA",
+          "FISICA DE LA VISION",
+          "FOTOGRAFIA",
+          "HOLOGRAFIA",
+          "ILUMINACION",
+          "INSTRUMENTACION FOTOGRAFICA",
+          "LASER",
+          "LUZ",
+          "MICROSCOPIOS",
+          "OPTICA FISICA",
+          "OPTICA GEOMETRICA",
+          "OPTICA NO LINEAL",
+          "OPTOMETRIA",
+          "OTROS",
+          "OPTICA DE FIBRAS FOTOCONDUCTORAS",
+          "PROPIEDADES OPTICAS DE LOS SOLIDOS",
+          "RADIACION VISIBLE",
+          "RADIACION INFRARROJA",
+          "RADIACION ULTRAVIOLETA",
+          "RADIOMETRIA",
+          "ESPECTROSCOPIA DE ABSORCION",
+          "FOTOMETRIA"]
       disciplineValue = optica;
     }
 
-    if(disciplineValue == "FISICOQUIMICA"){
+    if(disciplineValue =="FISICOQUIMICA"){
       var fisicoquimica = [  
-      				"CATALISIS",
-					 "CINETOQUIMICA",
-					 "ESPECTROSCOPIA ELECTRONICA",
-					 "ESTADOS DE LA MATERIA",
-					 "EXPLOSIVOS",
-					 "FENOMENOS DE MEMBRANA",
-					" ELECTROLITOS",
-					" ELECTROQUIMICA",
-					" EMULSIONES",
-					" EQUILIBRIOS DE FASE",
-					" EQUILIBRIOS QUIMICOS",
-					" ESPECTROSCOPIA MOLECULAR",
-					" FENOMENOS DE DISPERSION",
-					" FENOMENOS DE TRANSPORTE",
-					" FISICA DE ESTADO LIQUIDO",
-					" FISICA DE LA FASE GASEOSA",
-					" FISICA DEL ESTADO SOLIDO",
-					" FOTOQUIMICA",
-					" INTERCAMBIO IONICO",
-					" LLAMAS",
-					" OTROS",
-					" PROCESOS DE RELACION",
-					" QUIMICA COLOIDAL",
-					" QUIMICA DE ALTA TEMPERATURA",
-					" QUIMICA DEL ESTADO SOLIDO",
-					" QUIMICA INTERFACIAL",
-					" RADIOQUIMICA",
-					" REACCIONES RAPIDAS",
-					" SALES FUNDIDAS",
-					" SOLUCIONES",
-					" TEORIA CUANTICA",
-					" TEORIA DE LA VALENCIA",
-					" TEORIA DE PILAS DE COMBUSTIBLE",
-					" TERMODINAMICA",
-					" TERMOQUIMICA",
-					"TRANSFERENCIA DE ENERGIA"]
+              "CATALISIS",
+          "CINETOQUIMICA",
+          "ESPECTROSCOPIA ELECTRONICA",
+          "ESTADOS DE LA MATERIA",
+          "EXPLOSIVOS",
+          "FENOMENOS DE MEMBRANA",
+          "ELECTROLITOS",
+          "ELECTROQUIMICA",
+          "EMULSIONES",
+          "EQUILIBRIOS DE FASE",
+          "EQUILIBRIOS QUIMICOS",
+          "ESPECTROSCOPIA MOLECULAR",
+          "FENOMENOS DE DISPERSION",
+          "FENOMENOS DE TRANSPORTE",
+          "FISICA DE ESTADO LIQUIDO",
+          "FISICA DE LA FASE GASEOSA",
+          "FISICA DEL ESTADO SOLIDO",
+          "FOTOQUIMICA",
+          "INTERCAMBIO IONICO",
+          "LLAMAS",
+          "OTROS",
+          "PROCESOS DE RELACION",
+          "QUIMICA COLOIDAL",
+          "QUIMICA DE ALTA TEMPERATURA",
+          "QUIMICA DEL ESTADO SOLIDO",
+          "QUIMICA INTERFACIAL",
+          "RADIOQUIMICA",
+          "REACCIONES RAPIDAS",
+          "SALES FUNDIDAS",
+          "SOLUCIONES",
+          "TEORIA CUANTICA",
+          "TEORIA DE LA VALENCIA",
+          "TEORIA DE PILAS DE COMBUSTIBLE",
+          "TERMODINAMICA",
+          "TERMOQUIMICA",
+          "TRANSFERENCIA DE ENERGIA"]
       disciplineValue = fisicoquimica;
     }
-    if(disciplineValue == "FISICA DEL ESTADO SOLIDO"){
+    if(disciplineValue =="FISICA DEL ESTADO SOLIDO"){
       var fisicaDelEstadoSolido = [  
-      				"ALEACIONES",
-					"COMPUESTOS",
-					"CONDUCTORES METALICOS",
-					"CRECIMIENTO CRISTALINO",
-					"CRISTALOGRAFIA",
-					"DENDRITAS",
-					"DIELECTRICIDAD",
-					"DIFUSION EN LOS SOLIDOS",
-					"DISPOSITIVOS DE ESTADO SOLIDO",
-					"ESTADOS ELECTRONICOS",
-					"ESTADOS NO CRISTALINOS",
-					"ESTRUCTURA CRISTALINA",
-					"IMPERFECCIONES",
-					"INTERACCION DE LA RADIACION CON LOS SOLIDOS",
-					"INTERFACES",
-					"LUMINOSIDAD",
-					"MECANICA DE RETICULOS",
-					"MECANOGRAFIA",
-					"NANOCIENCIAS Y NANOTECNOLOGIA",
-					"OTROS",
-					"PROPIEDADES DE PORTADORES DE LOS ELECTRONES",
-					"PROPIEDADES DE TRANSPORTE ELECTRONICO",
-					"PROPIEDADES MAGNETICAS",
-					"PROPIEDADES MECANICAS",
-					"PROPIEDADES OPTICAS",
-					"PROPIEDADES TERMODINAMICAS DE LOS SOLIDOS",
-					"RESONANCIA MAGNETICA",
-					"SEMICONDUCTORES",
-					"SUPERCONDUCTORES",
-					"SUPERFICIES",
-					"TECNOLOGIA METALURGICA",
-					"TRIBOLOGIA"]
+              "ALEACIONES",
+          "COMPUESTOS",
+          "CONDUCTORES METALICOS",
+          "CRECIMIENTO CRISTALINO",
+          "CRISTALOGRAFIA",
+          "DENDRITAS",
+          "DIELECTRICIDAD",
+          "DIFUSION EN LOS SOLIDOS",
+          "DISPOSITIVOS DE ESTADO SOLIDO",
+          "ESTADOS ELECTRONICOS",
+          "ESTADOS NO CRISTALINOS",
+          "ESTRUCTURA CRISTALINA",
+          "IMPERFECCIONES",
+          "INTERACCION DE LA RADIACION CON LOS SOLIDOS",
+          "INTERFACES",
+          "LUMINOSIDAD",
+          "MECANICA DE RETICULOS",
+          "MECANOGRAFIA",
+          "NANOCIENCIAS Y NANOTECNOLOGIA",
+          "OTROS",
+          "PROPIEDADES DE PORTADORES DE LOS ELECTRONES",
+          "PROPIEDADES DE TRANSPORTE ELECTRONICO",
+          "PROPIEDADES MAGNETICAS",
+          "PROPIEDADES MECANICAS",
+          "PROPIEDADES OPTICAS",
+          "PROPIEDADES TERMODINAMICAS DE LOS SOLIDOS",
+          "RESONANCIA MAGNETICA",
+          "SEMICONDUCTORES",
+          "SUPERCONDUCTORES",
+          "SUPERFICIES",
+          "TECNOLOGIA METALURGICA",
+          "TRIBOLOGIA"]
       disciplineValue = fisicaDelEstadoSolido;
     }
-    if(disciplineValue == "FISICA TEORICA"){
+    if(disciplineValue =="FISICA TEORICA"){
       var fisicaTeorica = [  
-      				"CAMPOS GRAVITATORIOS", 
-					"CAMPOS ELECTROMAGNETICOS",
-					"CAMPOS",
-					"FISICA DE LA ENERGIA",
-					"FOTONES",
-					"GRAVITACION",
-					"GRAVITONES",
-					"HADRONES",
-					"LEPTONES",
-					"MASA",
-					"OTROS",
-					"PARTICULAS ELEMENTALES",
-					"RADIACION ELECTROMAGNETICA",
-					"TEORIA DE LA RELATIVIDAD",
-					"TEORIA DE LOS CAMPOS CUANTICOS"]
+              "CAMPOS GRAVITATORIOS", 
+          "CAMPOS ELECTROMAGNETICOS",
+          "CAMPOS",
+          "FISICA DE LA ENERGIA",
+          "FOTONES",
+          "GRAVITACION",
+          "GRAVITONES",
+          "HADRONES",
+          "LEPTONES",
+          "MASA",
+          "OTROS",
+          "PARTICULAS ELEMENTALES",
+          "RADIACION ELECTROMAGNETICA",
+          "TEORIA DE LA RELATIVIDAD",
+          "TEORIA DE LOS CAMPOS CUANTICOS"]
       disciplineValue = fisicaTeorica;
     }
-    if(disciplineValue == "TERMODINAMICA"){
+    if(disciplineValue =="TERMODINAMICA"){
       var termodinamica = [  
-      				"ALTA PRESION",
-					"ALTA TEMPERATURA",
-					"BAJAS TEMPERATURAS",
-					"CAMBIOS DE ESTADO",
-					"EQUILIBRIOS TERMODINAMICOS",
-					"FENOMENOS DE TRANSPORTE",
-					"FISICA DE LA TRANSMISION DE CALOR",
-					"OTROS",
-					"RELACIONES TERMODINAMICAS",
-					"TECNICAS DE MEDIDAS TERMICAS",
-					"TEORIA CINETICA",
-					"TRANSICION DE FASE",]
+              "ALTA PRESION",
+          "ALTA TEMPERATURA",
+          "BAJAS TEMPERATURAS",
+          "CAMBIOS DE ESTADO",
+          "EQUILIBRIOS TERMODINAMICOS",
+          "FENOMENOS DE TRANSPORTE",
+          "FISICA DE LA TRANSMISION DE CALOR",
+          "OTROS",
+          "RELACIONES TERMODINAMICAS",
+          "TECNICAS DE MEDIDAS TERMICAS",
+          "TEORIA CINETICA",
+          "TRANSICION DE FASE",]
       disciplineValue = termodinamica;
     }
-    if(disciplineValue == "UNIDADES Y CONSTANTES FISICAS"){
+    if(disciplineValue =="UNIDADES Y CONSTANTES FISICAS"){
       var unidadesyConstantesFisicas = [  
-      				"CONSTANTES (FISICAS)",
-					"CONVERSION DE UNIDADES",
-					" CALIBRACION DE UNIDADES",
-					" METROLOGIA",
-					" OTROS",
-					" UNIDADES ESTANDAR",]
+              "CONSTANTES (FISICAS)",
+          "CONVERSION DE UNIDADES",
+          "CALIBRACION DE UNIDADES",
+          "METROLOGIA",
+          "OTROS",
+          "UNIDADES ESTANDAR",]
       disciplineValue = unidadesyConstantesFisicas;
     }
-      if(disciplineValue == "QUIMICA ANALITICA"){
+      if(disciplineValue =="QUIMICA ANALITICA"){
       var quimicaAnalitica = [  
-      				 "ANALISIS ELECTROQUIMICO",
-					 " ANALISIS BIOQUIMICO",
-					" ANALISIS CROMATOGRAFICO",
-					" ANALISIS DE LOS POLIMEROS",
-					" ANALISIS MICROQUIMICO",
-					" ANALISIS RADIOQUIMICO",
-					 "ESPECTROSCOPIA DE MASAS",
-					 "ESPECTROSCOPIA DE RAMAN",
-					 "ESPECTROSCOPIA INFRARROJA",
-					 "ESPECTROSCOPIA POR MICROONDAS",
-					" ESPECTROSCOPIA DE EMISION",
-					" ESPECTROSCOPIA POR RAYOS X",
-					" ESPECTROSCOPIA POR RESONANCIA MAGNETICA",
-					" FLUORIMETRIA",
-					" FOSFORIMETRIA",
-					" GRAVIMETRIA",
-					" METODOS DE ANALISIS TERMICO",
-					" MICROSCOPIA",
-					" OTROS",
-					" VOLUMETRIA",
-					"ESPECTROSCOPIA DE ABSORCION"]
+              "ANALISIS ELECTROQUIMICO",
+          "ANALISIS BIOQUIMICO",
+          "ANALISIS CROMATOGRAFICO",
+          "ANALISIS DE LOS POLIMEROS",
+          "ANALISIS MICROQUIMICO",
+          "ANALISIS RADIOQUIMICO",
+          "ESPECTROSCOPIA DE MASAS",
+          "ESPECTROSCOPIA DE RAMAN",
+          "ESPECTROSCOPIA INFRARROJA",
+          "ESPECTROSCOPIA POR MICROONDAS",
+          "ESPECTROSCOPIA DE EMISION",
+          "ESPECTROSCOPIA POR RAYOS X",
+          "ESPECTROSCOPIA POR RESONANCIA MAGNETICA",
+          "FLUORIMETRIA",
+          "FOSFORIMETRIA",
+          "GRAVIMETRIA",
+          "METODOS DE ANALISIS TERMICO",
+          "MICROSCOPIA",
+          "OTROS",
+          "VOLUMETRIA",
+          "ESPECTROSCOPIA DE ABSORCION"]
       disciplineValue = quimicaAnalitica;
     }
-     if(disciplineValue == "BIOQUIMICA"){
+     if(disciplineValue =="BIOQUIMICA"){
       var bioquimica = [  
-      				 " ACEITES ESENCIALES",
-					" ACIDOS GRASOS",
-					" ACIDOS NUCLEICOS",
-					" ALMIDON",
-					" AMINOACIDOS",
-					" ANTIMETABOLITOS",
-					 "BIOLOGIA MOLECULAR",
-					 "BIOQUIMICA FISICA",
-					 " BIOSINTESIS",
-					" CERAS",
-					" COENZIMAS",
-					" ELEMENTOS TRAZA",
-					" ENZIMOLOGIA",
-					" ESTEROIDES",
-					" FARMACOLOGIA MOLECULAR",
-					" FERMENTACION",
-					" FOTOSINTESIS",
-					" GENETICA BIOQUIMICA",
-					" GLUCIDOS",
-					" HIDROCARBUROS TERPENICOS",
-					" HORMONAS",
-					" INMUNOQUIMICA",
-					 "METABOLISMO INTERMEDIO",
-					 "QUIMICA CLINICA",
-					 "REGULACION DE LA REALIMENTACION",
-					" LIPIDOS",
-					" OTROS",
-					" PEPTIDOS",
-					" PROCESOS METABOLICOS",
-					" PROTEINAS",
-					" QUIMICA MICROBIOLOGICA",
-					" QUIMIOTERAPIA",
-					"ALCALOIDES",
-					 "VITAMINAS"]
+              "ACEITES ESENCIALES",
+          "ACIDOS GRASOS",
+          "ACIDOS NUCLEICOS",
+          "ALMIDON",
+          "AMINOACIDOS",
+          "ANTIMETABOLITOS",
+          "BIOLOGIA MOLECULAR",
+          "BIOQUIMICA FISICA",
+          "BIOSINTESIS",
+          "CERAS",
+          "COENZIMAS",
+          "ELEMENTOS TRAZA",
+          "ENZIMOLOGIA",
+          "ESTEROIDES",
+          "FARMACOLOGIA MOLECULAR",
+          "FERMENTACION",
+          "FOTOSINTESIS",
+          "GENETICA BIOQUIMICA",
+          "GLUCIDOS",
+          "HIDROCARBUROS TERPENICOS",
+          "HORMONAS",
+          "INMUNOQUIMICA",
+          "METABOLISMO INTERMEDIO",
+          "QUIMICA CLINICA",
+          "REGULACION DE LA REALIMENTACION",
+          "LIPIDOS",
+          "OTROS",
+          "PEPTIDOS",
+          "PROCESOS METABOLICOS",
+          "PROTEINAS",
+          "QUIMICA MICROBIOLOGICA",
+          "QUIMIOTERAPIA",
+          "ALCALOIDES",
+          "VITAMINAS"]
       disciplineValue = bioquimica;
     }
 
-    if(disciplineValue == "QUIMICA INORGANICA "){
+    if(disciplineValue =="QUIMICA INORGANICA"){
       var quimicaInorganica = [  
-      				 "ALQUILOS METALICOS",
-					 "CARBONO",
-					 "COMPUESTOS DEFICIENTES EN ELECTRONES",
-					" COMPUESTOS DE AZUFRE",
-					" COMPUESTOS DE BORO",
-					" COMPUESTOS DE CLORO",
-					" COMPUESTOS DE COORDINACION",
-					" COMPUESTOS DE FLUOR",
-					" COMPUESTOS DE FOSFORO",
-					" COMPUESTOS DE NITROGENO",
-					" COMPUESTOS DE SODIO",
-					" COMPUESTOS ORGANOMETALICOS",
-					" ELEMENTOS ALCALINOS",
-					" ELEMENTOS DE TRANSICION",
-					" ELEMENTOS ELECTROPOSITIVOS",
-					" ELEMENTOS TRANSURANICOS",
-					"ELEMENTOS SINTETICOS",
-					" ESTRUCTURA DE LOS COMPUESTOS INORGANICOS",
-					" GERMANIO",
-					" GRAFITO",
-					" HALOGENOS",
-					" HIDROGENO",
-					" HIDRUROS",
-					" MECANISMOS DE REACCIONES INORGANICAS",
-					" METALES",
-					" OTROS",
-					" QUIMICA DE LOS PIGMENTOS",
-					" QUIMICA DEL AGUA",
-					" TIERRAS ALCALINAS",
-					" TIERRAS RARAS",
-					"COMPUESTOS DE PLOMO",
-					"QUIMICA DE LOS ACTINIDOS"]
+              "ALQUILOS METALICOS",
+          "CARBONO",
+          "COMPUESTOS DEFICIENTES EN ELECTRONES",
+          "COMPUESTOS DE AZUFRE",
+          "COMPUESTOS DE BORO",
+          "COMPUESTOS DE CLORO",
+          "COMPUESTOS DE COORDINACION",
+          "COMPUESTOS DE FLUOR",
+          "COMPUESTOS DE FOSFORO",
+          "COMPUESTOS DE NITROGENO",
+          "COMPUESTOS DE SODIO",
+          "COMPUESTOS ORGANOMETALICOS",
+          "ELEMENTOS ALCALINOS",
+          "ELEMENTOS DE TRANSICION",
+          "ELEMENTOS ELECTROPOSITIVOS",
+          "ELEMENTOS TRANSURANICOS",
+          "ELEMENTOS SINTETICOS",
+          "ESTRUCTURA DE LOS COMPUESTOS INORGANICOS",
+          "GERMANIO",
+          "GRAFITO",
+          "HALOGENOS",
+          "HIDROGENO",
+          "HIDRUROS",
+          "MECANISMOS DE REACCIONES INORGANICAS",
+          "METALES",
+          "OTROS",
+          "QUIMICA DE LOS PIGMENTOS",
+          "QUIMICA DEL AGUA",
+          "TIERRAS ALCALINAS",
+          "TIERRAS RARAS",
+          "COMPUESTOS DE PLOMO",
+          "QUIMICA DE LOS ACTINIDOS"]
       disciplineValue = quimicaInorganica;
     }
-    if(disciplineValue == "QUIMICA DE LAS MACROMOLECULAS"){
+    if(disciplineValue =="QUIMICA DE LAS MACROMOLECULAS"){
       var quimicaDeLasMacromoleculas = [  
-      				 "ANALISIS DE LOS POLIMEROS",
-					 "FIBRAS SINTETICAS",
-					 "POLIESTIRENOS",
-					 "POLIETILENO",
-					 "POLIMEROS INORGANICOS",
-					 "QUIMICA DE LOS MONOMEROS",
-					" CELULOSA",
-					" ELASTOMEROS",
-					" ESTABILIDAD DE LAS MACROMOLECULAS",
-					" FIBRAS NATURALES",
-					" GOMAS",
-					" MACROMOLECULAS",
-					" MODIFICACION DE LAS MACROMOLECULAS",
-					" OTROS",
-					" POLIELECTROLITOS",
-					" POLIESTERES",
-					" POLIMEROS COMPUESTOS",
-					" POLIMEROS DISPERSOS",
-					" POLIMEROS ELEVADOS",
-					" POLIMEROS RETICULADOS",
-					" POLIPEPTIDOS Y PROTEINAS",
-					" POLISACARIDOS",
-					" POLIURETANOS",
-					"PLASTICOS CELULARES",
-					" SINTESIS DE LAS MACROMOLECULAS"]
+              "ANALISIS DE LOS POLIMEROS",
+          "FIBRAS SINTETICAS",
+          "POLIESTIRENOS",
+          "POLIETILENO",
+          "POLIMEROS INORGANICOS",
+          "QUIMICA DE LOS MONOMEROS",
+          "CELULOSA",
+          "ELASTOMEROS",
+          "ESTABILIDAD DE LAS MACROMOLECULAS",
+          "FIBRAS NATURALES",
+          "GOMAS",
+          "MACROMOLECULAS",
+          "MODIFICACION DE LAS MACROMOLECULAS",
+          "OTROS",
+          "POLIELECTROLITOS",
+          "POLIESTERES",
+          "POLIMEROS COMPUESTOS",
+          "POLIMEROS DISPERSOS",
+          "POLIMEROS ELEVADOS",
+          "POLIMEROS RETICULADOS",
+          "POLIPEPTIDOS Y PROTEINAS",
+          "POLISACARIDOS",
+          "POLIURETANOS",
+          "PLASTICOS CELULARES",
+          "SINTESIS DE LAS MACROMOLECULAS"]
       disciplineValue = quimicaDeLasMacromoleculas;
     }
-     if(disciplineValue == "QUIMICA NUCLEAR"){
+     if(disciplineValue =="QUIMICA NUCLEAR"){
       var quimicaNuclear = [  
-      				" MOLECULAS MARCADAS",
-					" OTROS",
-					" RADIOISOTOPOS",
-					" RADIOQUIMICA",
-					" SEPARACION DE ISOTOPOS",
-					" TRAZADORES DE ISOTOPOS",
-					"QUIMICA DE LOS ATOMOS RADIACTIVOS",
-					"QUIMICA DE LAS RADIACIONES"]
+              "MOLECULAS MARCADAS",
+          "OTROS",
+          "RADIOISOTOPOS",
+          "RADIOQUIMICA",
+          "SEPARACION DE ISOTOPOS",
+          "TRAZADORES DE ISOTOPOS",
+          "QUIMICA DE LOS ATOMOS RADIACTIVOS",
+          "QUIMICA DE LAS RADIACIONES"]
       disciplineValue = quimicaNuclear;
     }
-     if(disciplineValue == "QUIMICA ORGANICA"){
+     if(disciplineValue =="QUIMICA ORGANICA"){
       var quimicaOrganica = [  
-      				"PRODUCTOS ORGANOMETALICOS",
-					 "QUIMICA DE LAS MATERIAS TINTOREAS",
-					 "QUIMICA DE LOS ESTEROIDES",
-					 "QUIMICA DEL CARBANION",
-					 "QUIMICA DEL ORGANOAZUFRE",
-					" COMPUESTOS HETEROCICLICOS",
-					" DERIVADOS DEL BENCENO",
-					" ESTEROQUIMICA Y ANALISIS DE CONFIGURACION",
-					" ESTRUCTURA DE LAS MOLECULAS ORGANICAS",
-					" HIDROCARBUROS AROMATICOS",
-					"HIDROCARBUROS ALIFATICOS",
-					" MECANICA DE LAS REACCIONES",
-					" OTROS",
-					" QUIMICA BICICLICA",
-					" QUIMICA DE LOS HIDRATOS DE CARBONO",
-					" QUIMICA DE LOS ORGANOFOSFOROS",
-					" QUIMICA DE LOS ORGANOSILICONES",
-					" QUIMICA DEL CARBONIO",
-					" RADICALES LIBRES"]
+              "PRODUCTOS ORGANOMETALICOS",
+          "QUIMICA DE LAS MATERIAS TINTOREAS",
+          "QUIMICA DE LOS ESTEROIDES",
+          "QUIMICA DEL CARBANION",
+          "QUIMICA DEL ORGANOAZUFRE",
+          "COMPUESTOS HETEROCICLICOS",
+          "DERIVADOS DEL BENCENO",
+          "ESTEROQUIMICA Y ANALISIS DE CONFIGURACION",
+          "ESTRUCTURA DE LAS MOLECULAS ORGANICAS",
+          "HIDROCARBUROS AROMATICOS",
+          "HIDROCARBUROS ALIFATICOS",
+          "MECANICA DE LAS REACCIONES",
+          "OTROS",
+          "QUIMICA BICICLICA",
+          "QUIMICA DE LOS HIDRATOS DE CARBONO",
+          "QUIMICA DE LOS ORGANOFOSFOROS",
+          "QUIMICA DE LOS ORGANOSILICONES",
+          "QUIMICA DEL CARBONIO",
+          "RADICALES LIBRES"]
       disciplineValue = quimicaOrganica;
     }
-    if(disciplineValue == "FARMACOBIOLOGIA"){
+    if(disciplineValue =="FARMACOBIOLOGIA"){
       var farmacobiologia = [  
-      				"QUIMICA BIOMOLECURAR",
-					" QUIMICA MEDICINAL"]
+              "QUIMICA BIOMOLECURAR",
+          "QUIMICA MEDICINAL"]
       disciplineValue = farmacobiologia;
     }
-       if(disciplineValue == "BIOLOGIA ANIMAL Y ZOOLOGIA"){
+       if(disciplineValue =="BIOLOGIA ANIMAL Y ZOOLOGIA"){
       var biologiaAnimalyZoologia = [  
-      				"ANATOMIA ANIMAL",
-					 "CRECIMIENTO DE LOS ANIMALES",
-					 "FISIOLOGIA ANIMAL",
-					" CITOLOGIA ANIMAL",
-					" COMPORTAMIENTO ANIMAL",
-					" COMUNICACION ANIMAL",
-					" DESARROLLO ANIMAL",
-					" ECOLOGIA ANIMAL",
-					" EMBRIOLOGIA ANIMAL",
-					" GENETICA ANIMAL",
-					" HERPETOLOGIA",
-					" HISTOLOGIA ANIMAL",
-					" INVERTEBRADOS",
-					" MAMIFEROS",
-					" ORNITOLOGIA",
-					" OTROS",
-					" PARASITOLOGIA ANIMAL",
-					" PATOLOGIA ANIMAL",
-					" PRIMATOLOGIA",
-					" PROTOZOOLOGIA",
-					" TAXONOMIA ANIMAL",
-					" VERTEBRADOS",
-					" ZOOLOGIA GENERAL",
-					"ZOOLOGIA MARINA"]
+              "ANATOMIA ANIMAL",
+          "CRECIMIENTO DE LOS ANIMALES",
+          "FISIOLOGIA ANIMAL",
+          "CITOLOGIA ANIMAL",
+          "COMPORTAMIENTO ANIMAL",
+          "COMUNICACION ANIMAL",
+          "DESARROLLO ANIMAL",
+          "ECOLOGIA ANIMAL",
+          "EMBRIOLOGIA ANIMAL",
+          "GENETICA ANIMAL",
+          "HERPETOLOGIA",
+          "HISTOLOGIA ANIMAL",
+          "INVERTEBRADOS",
+          "MAMIFEROS",
+          "ORNITOLOGIA",
+          "OTROS",
+          "PARASITOLOGIA ANIMAL",
+          "PATOLOGIA ANIMAL",
+          "PRIMATOLOGIA",
+          "PROTOZOOLOGIA",
+          "TAXONOMIA ANIMAL",
+          "VERTEBRADOS",
+          "ZOOLOGIA GENERAL",
+          "ZOOLOGIA MARINA"]
       disciplineValue = biologiaAnimalyZoologia;
     }
-       if(disciplineValue == "ANTROPOLOGIA FISICA"){
+       if(disciplineValue =="ANTROPOLOGIA FISICA"){
       var antroplogiaFisica = [  
-      				 "ANTROPOLOGIA MEDICA",
-					"ANTROPOMETRIA Y ANTROPOLOGIA FORENSE",
-					"ARCHIVOS ANTROPOLOGICOS",
-					"BIOLOGIA DE LA POBLACION",
-					"BIOLOGIA RACIAL",
-					"COMPORTAMIENTO DE LOS PRIMATES",
-					"CONSTITUCION CORPORAL",
-					"CRECIMIENTO SOMATICO",
-					 "COMPOSICION CORPORAL",
-					 "HABITOS DE NUTRICION",
-					 "SOMATOLOGIA DE LOS PRIMATES",
-					"ENVEJECIMIENTO SOMATICO",
-					"ETNOLOGIA",
-					"GENETICA ANTROPOLOGICA",
-					"OSTEOLOGIA",
-					"OTROS"]
+              "ANTROPOLOGIA MEDICA",
+          "ANTROPOMETRIA Y ANTROPOLOGIA FORENSE",
+          "ARCHIVOS ANTROPOLOGICOS",
+          "BIOLOGIA DE LA POBLACION",
+          "BIOLOGIA RACIAL",
+          "COMPORTAMIENTO DE LOS PRIMATES",
+          "CONSTITUCION CORPORAL",
+          "CRECIMIENTO SOMATICO",
+          "COMPOSICION CORPORAL",
+          "HABITOS DE NUTRICION",
+          "SOMATOLOGIA DE LOS PRIMATES",
+          "ENVEJECIMIENTO SOMATICO",
+          "ETNOLOGIA",
+          "GENETICA ANTROPOLOGICA",
+          "OSTEOLOGIA",
+          "OTROS"]
       disciplineValue = antroplogiaFisica;
     }
-
+     if(disciplineValue =="BIOMATEMATICA"){
+      var biomatematica = [  
+              "BIOESTADISTICA",
+              "OTROS"]
+      disciplineValue = biomatematica;
+    }
+    if(disciplineValue =="BIOMETRIA"){
+      var biometrica = [  
+              "BIOACUSTICA"
+          ,"BIOELECTRICIDAD"
+          ,"BIOENERGETICA"
+          ,"BIOMECANICA"
+          ,"BIOOPTICA"
+          ,"FISICA MEDICA"
+          ,"OTROS"]
+      disciplineValue = biometrica;
+    }
+    if(disciplineValue =="BIOLOGIA CELULAR"){
+      var biologiaCelular = [  
+              "CULTIVO CELULAR"
+          ,"GENETICA CELULAR"
+          ,"MORFOLOGIA CELULAR"
+          ,"CITOLOGIA"
+          ,"CULTIVO DE TEJIDOS"
+          ,"OTROS"]
+  disciplineValue = biologiaCelular;
+    }
+    if(disciplineValue =="ETOLOGIA"){
+      var etopologia = [  
+              "ANIMAL",
+          "DE LOS INSECTOS",
+          "HUMANA",
+          "OTROS",]
+  disciplineValue = etopologia;
+    }
+      if(disciplineValue =="GENETICA"){
+      var genetica = [  
+              "EMBRIOLOGIA",
+          "GENETICA DE POBLACIONES",
+          "INGENIERIA GENETICA",
+          "OTROS"]
+  disciplineValue = genetica;
+    }
+     if(disciplineValue =="BIOLOGIA HUMANA"){
+      var biologiaHumana = [  
+              "EMBRIOLOGIA HUMANA",
+          "FISIOLOGIA HUMANA",
+          "ANATOMIA HUMANA",
+          "ANATOMIA SISTEMATICA",
+          "ANATOMIA TOPOGRAFICA",
+          "CITOLOGIA HUMANA",
+          "DESARROLLO HUMANO",
+          "ECOLOGIA HUMANA,",
+          "GENETICA HUMANA",
+          "GRUPOS SANGUINEOS",
+          "HISTOLOGIA HUMANA",
+          "NEUROANATOMIA HUMANA,",
+          "ORGANOS SENSORIALES",
+          "OTROS"]
+  disciplineValue = biologiaHumana;
+    }
+      if(disciplineValue =="FISIOLOGIA HUMANA"){
+      var fisiologiaHumana = [  
+              "FISIOLOGIA DE LAS ACTITUDES",
+          "ANESTESIOLOGIA",
+          "FISIOLOGIA CARDIOVASCULAR,",
+          "FISIOLOGIA DEL SISTEMA ENDOCRINO",
+          "FISIOLOGIA DEL EJERCICIO",
+          "FISIOLOGIA GASTROINTESTINAL,",
+          "METABOLISMOS HUMANOS",
+          "REGULACION DE LA TEMPERATURA HUMANA",
+          "FISIOLOGIA MUSCULAR",
+          "NEUROFISIOLOGIA",
+          "FISIOLOGIA DEL SISTEMA NERVIOSO CENTRAL",
+          "FISIOLOGIA DE LA AUDICION",
+          "FISIOLOGIA DEL HABLA",
+          "FISIOLOGIA DE LA VISION",
+          "FISIOLOGIA DE LA REPRODUCCION",
+          "FISIOLOGIA DE LA RESPIRACION",
+          "FISIOLOGIA DE LA LOCOMOCION",
+          "OTROS"]
+  disciplineValue = fisiologiaHumana;
+    }
+          if(disciplineValue =="ENTOMOLOGIA GENERAL"){
+      var entomologiaGeneral = [  
+              "ENTOMOLOGIA GENERAL",
+          "DESARROLLO DE LOS INSECTOS",
+          "ECOLOGIA DE LOS INSECTOS",
+          "MORFOLOGIA DE LOS INSECTOS",
+          "FISIOLOGIA DE LOS INSECTOS",
+          "TAXONOMIA DE LOS INSECTOS",
+          "OTROS"]
+  disciplineValue = entomologiaGeneral;
+    }
+         if(disciplineValue =="MICROBIOLOGIA"){
+      var microbiologia = [  
+              "ANTIBIOTICOS",
+          "FISIOLOGIA BACTERIANA",
+          "METABOLISMO BACTERIANO",
+          "BACTERIOLOGIA",
+          "BACTERIOFAGOS",
+          "HONGOS",
+          "METABOLISMO MICROBIANO",
+          "PROCESOS MIROCROBIANOS",
+          "MOHOS",
+          "MICOLOGIA (LEVADURAS)",
+          "OTROS"]
+  disciplineValue = microbiologia;
+    }
+           if(disciplineValue =="PALEONTOLOGIA"){
+      var paleontologia = [  
+              "PALEONTOLOGIA ANIMAL",
+          "PALEONTOLOGIA DE LOS INVERTEBRADOS",
+          "PALINOLOGIA",
+          "PALEONTOLOGIA VEGETAL",
+          "PALEONTOLOGIA DE LOS VERTEBRADOS",
+          "OTROS"]
+  disciplineValue = paleontologia;
+    }
+          if(disciplineValue =="BOTANICA"){
+      var botanica = [  
+              "BRIOLOGIA",
+          "DENDROLOGIA",
+          "BOTANICA GENERAL",
+          "LIMNOLOGIA",
+          "BIOLOGIA MARINA",
+          "MICOLOGIA (HONGOS)",
+          "FICOLOGIA",
+          "FOTOBIOLOGIA",
+          "FITOPATOLOGIA",
+          "PALEOBOTANICA",
+          "ANATOMIA VEGETAL",
+          "CITOLOGIA VEGETAL",
+          "ECOLOGIA VEGETAL",
+          "GENETICA VEGETAL",
+          "CRECIMIENTO DE LAS PLANTAS",
+          "HISTOLOGIA VEGETAL",
+          "NUTRICION DE LAS PLANTAS",
+          "PARASITOLOGIA VEGETAL",
+          "FISIOLOGIA VEGETAL",
+          "TAXONOMIA VEGETAL",
+          "TERIDOLOGIA",
+          "OTROS",]
+  disciplineValue = botanica;
+    }
+           if(disciplineValue =="VIROLOGIA"){
+      var virologia = [  
+              "ARBOVIRUS",
+          "BACTERIOFAGOS",
+          "VIRUS DERMATROPICOS",
+          "VIRUS ENTERICOS",
+          "VIRUS NEUROTROPICOS",
+          "VIRUS PANTROPICOS",
+          "POXVIRUS",
+          "VIRUS DEL SISTEMA RESPIRATORIO",
+          "VIRUS VISCEROTROPICOS",
+          "OTROS"]
+  disciplineValue = virologia;
+    }
+      if(disciplineValue =="MEDIO AMBIENTE"){
+      var medioAmbiente = [  
+            "GESTIÓN AMBIENTAL"]
+  disciplineValue = medioAmbiente;
+    }
+     if(disciplineValue =="CIENCIAS ATMOSFERICAS"){
+      var cienciasAtmosfericas = [  
+            "AERONOMIA",
+        "RESPLANDOR CELESTE",
+        "INTERACCION AIRE-MAR",
+        "ACUSTICA DE LA ATMOSFERA",
+        "QUIMICA DE LA ATMOSFERA",
+        "DINAMICA DE LA ATMOSFERA",
+        "ELECTRICIDAD ATMOSFERICA",
+        "OPTICA DE LA ATMOSFERA",
+        "RADIACTIVIDAD ATMOSFERICA",
+        "ESTRUCTURA DE LA ATMOSFERA",
+        "TERMODINAMICA DE LA ATMOSFERA",
+        "TURBULENCIA ATMOSFERICA",
+        "AURORA",
+        "FISICA DE LAS NUBES",
+        "RAYOS COSMICOS",
+        "DIFUSION ATMOSFERICA",
+        "PULSACIONES GEOMAGNETICAS",
+        "IONOSFERA",
+        "PARTICULAS MAGNETOSFERICAS",
+        "ONDAS MAGNETOSFERICAS",
+        "MODELIZACION NUMERICA",
+        "FISICA DE LAS PRECIPITACIONES",
+        "TRANSFERENCIA RADIACTIVA",
+        "RADIACION SOLAR",
+        "OTROS"]
+  disciplineValue = cienciasAtmosfericas;
+    }
+    if(disciplineValue =="CLIMATOLOGIA"){
+      var climatologia = [  
+        "BIOCLIMATOLOGIA",
+        "CLIMATOLIGOA ANALITICA",
+        "CLIMATOLOGIA APLICADA",
+        "CLIMATOLOGIA FISICA",
+        "CLIMATOLOGIA REGIONAL",
+        "MICROCLIMATOLOGIA",
+        "OTROS",
+        "PALEOCLIMATOLOGIA"]
+  disciplineValue = climatologia;
+    }
+     if(disciplineValue =="GEOQUIMICA"){
+      var geoquimica = [  
+        "COSMOQUIMICA",
+        "DISTRIBUCION DE ELEMENTOS TRAZA",
+        "GEOCRONOLOGIA Y RADIOISOTOPOS",
+        "GEOQUIMICA DE ALTA TEMPERATURA",
+        "GEOQUIMICA DE BAJA TEMPERATURA",
+        "GEOQUIMICA DE EXPLORACION",
+        "GEOQUIMICA ORGANICA",
+        "ISOTOPOS ESTABLES",
+        "PETROLOGIA EXPERIMENTAL",
+        "OTROS"]
+  disciplineValue = geoquimica;
+    }
+   if(disciplineValue =="GEODESIA"){
+      var geodesia = [ "ASTRONOMIA GEODESICA",
+      "CARTOGRAFIA GEODESICA",
+      "NAVEGACION GEODESICA",
+      "FOTOGRAMETRIA GEODESICA",
+      "EXPLORACION"
+   ]
+ disciplineValue = geodesia;
+    }
+    if(disciplineValue =="GEOGRAFIA"){
+      var geografia = [  
+    "BIOGEOGRAFIA",
+    "CARTOGRAFIA GEOGRAFICA",
+    "GEOGRAFIA DE LOS RECURSOS NATURALES",
+    "GEOGRAFIA FISICA",
+    "GEOGRAFIA MEDICA",
+    "GEOGRAFIA TOPOGRAFICA",
+    "TEORIA DE LA SITUACION",
+    "USO DE LAS TIERRAS",
+    "OTROS"]
+ disciplineValue = geografia;
+    }
+    if(disciplineValue =="GEOLOGIA"){
+      var geologia = [  
+    "ANALISIS DE DIAGRAMAS DE POZO",
+    "ECONOMIA DE LOS HIDROCARBUROS",
+    "ESTRATIGRAFIA",
+    "EXPLORACION GEOLOGICA",
+    "FOTOGEOLOGIA",
+    "GEOHIDROLOGIA",
+    "GEOLOGIA DE LAS DIVERSAS AREAS DE LA SUPERFICIE TERRESTRE",
+    "GEOLOGIA DEL CARBON",
+    "GEOLOGIA DEL MEDIO AMBIENTE",
+    "GEOLOGIA DEL PETROLEO",
+    "GEOLOGIA ESTRUCTURAL",
+    "GEOLOGIA GLACIAL",
+    "GEOMORFOLOGIA",
+    "INGENIERIA GEOLOGICA",
+    "MECANICA DE LAS ROCAS",
+    "MINERALOGIA",
+    "PETROLOGIA IGNEA Y METAMORFICA",
+    "PETROLOGIA SEDIMENTARIA",
+    "PROCESOS Y ENERGIA GEOTERMICOS",
+    "SEDIMENTOLOGIA",
+    "TELEDETECCION (GEOLOGIA)",
+    "VULCANOLOGIA",
+    "YACIMIENTOS MINERALES",
+    "OTROS"]
+ disciplineValue = geologia;
+    }
+     if(disciplineValue =="GEOFISICA"){
+      var geofisica = [  
+    "EXPLORACION GEOFISICA",
+    "FLUJO DE CALOR (TERRESTRE)",
+    "GEOFISICA DE LA TIERRA SOLIDA",
+    "GEOMAGNETISMO Y EXPLORACION MAGNETICA",
+    "GRAVEDAD TERRESTRE Y EXPLORACION DE LA GRAVEDAD",
+    "PALEOMAGNETISMO",
+    "SISMOLOGIA Y EXPLORACION SISMICA",
+    "TECTONICA",
+    "OTROS"]
+ disciplineValue = geofisica;
+    }
+     if(disciplineValue =="HIDROLOGIA"){
+      var hidrologia = [  
+    "AGUAS SUBTERRANEAS",
+    "AGUAS SUPERFICIALES",
+    "CALIDAD DEL AGUA",
+    "EROSION DEL AGUA",
+    "EVAPORACION",
+    "GLACIOLOGIA",
+    "HIDROBIOLOGIA",
+    "HIDROGRAFIA",
+    "HIELO",
+    "HUMEDAD DEL SUELO",
+    "LIMNOLOGIA",
+    "NIEVE",
+    "PRECIPITACIONES",
+    "SUELOS HELADOS",
+    "TRANSPIRACION",
+    "OTROS"]
+ disciplineValue = hidrologia;
+    }
 
 
     var newSubdiscipline = "<span class='plain-select'><select id='BooksChapters_subdiscipline' class='tooltipstered' name='BooksChapters[subdiscipline]'>";
