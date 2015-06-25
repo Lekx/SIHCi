@@ -117,55 +117,46 @@ class ProjectsReviewController extends Controller
 
 
         // Uncomment the following line if AJAX validation is needed
-         //$this->performAjaxValidation($modelfollowup);
+         $this->performAjaxValidation($modelfollowup);
+         
+         //var_dump($_POST);
 
         if(isset($_POST['ProjectsFollowups']))
         {
         	//echo "entered";
+			$modelfollowup->unsetAttributes(); 
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
-
-
 
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
-
-
-
-            if($modelfollowup->validate() == 1){
-            if(is_object($modelfollowup->url_doc)){ 
-            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$id;
+			if($modelfollowup->validate() == 1){
+	            if(is_object($modelfollowup->url_doc)){ 
+	            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$id;
 
 	                if(!is_dir($path))
 	                	mkdir($path, 0777, true);
 
-	                	$url_doc = $path.'/'.date('Y-m-d H:i').'ArchivoComentarioPor_'.$modelfollowup->id.'.'.$modelfollowup->url_doc->getExtensionName();
-	 					$modelfollowup->url_doc->saveAs($url_doc);
+	            	$url_doc = $path.'/'.date('Y-m-d H:i').'ArchivoComentarioPor_'.$modelfollowup->id.'.'.$modelfollowup->url_doc->getExtensionName();
+					$modelfollowup->url_doc->saveAs($url_doc);
 
-					    $modelfollowup->url_doc = $url_doc;    			 			   	
-            }
+				    $modelfollowup->url_doc = $url_doc;
+	            }
 
 			
-            if($modelfollowup->save()){
-     			echo CJSON::encode(array('status'=>'success'));
-     			Yii::app()->end();
-			}
-               // $this->redirect(array('admin'));
+	            if($modelfollowup->save()){
+	     			echo CJSON::encode(array('status'=>'success'));
+	     			Yii::app()->end();
+				}
+	        }else{
+				$error = CActiveForm::validate($modelfollowup);
+				if($error!='[]')
+					echo $error;
 
-        }else{
-			$error = CActiveForm::validate($modelfollowup);
-			unset($modelfollowup->url_doc);
-			if($error!='[]')
-				echo $error;
-				
-			Yii::app()->end();
-
+				Yii::app()->end();
+	        }
         }
-        }
-
-
-
 
 		$this->render('review',array(
 			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup

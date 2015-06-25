@@ -4,17 +4,19 @@ $(document).ready( function() {
             name = $(this).attr('name'),
   		button = $('<button type="button" '
                 +'class="filepicker" '
-                +'id="'+id+'" '
-                +'name="'+name+'">'
+                +'id="btn'+id+'" '
+                +'name="btn'+name+'">'
                 +'<i class="fa fa-upload"></i> Seleccionar '
                 +$(this).attr('title')
             +'</button>');
 			
 		button.on('click',function(e){
 				e.preventDefault();
-				var id = $(this).attr('id'), name = $(this).attr('name');
+				//var id = $(this).attr('id'), name = $(this).attr('name');
+        $('#'+id).remove();
 				input = $('<input style="display:none" type="file" '+'id="'+id+'" '+'name="'+name+'">');
       	input.on('change',function(){
+          //  alert("me picaste");
           $(this).prev().html('<i class="fa fa-upload"></i> '+this.value.replace(/.*fakepath./,'')).addClass('selected');
         });
 				$(this).after(input);
