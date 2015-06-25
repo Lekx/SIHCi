@@ -62,7 +62,7 @@ function change(){
  	}
  }
 </script>
-<input type="text" id="search" onchange="search()" placeholder="buscar"><br><br>
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna"><br><br>
 <select id="valueProjects" onchange="change()">
   <option value="total" selected="">Total de Proyectos</option>	
   <option value="En proceso">Proyectos en proceso</option>

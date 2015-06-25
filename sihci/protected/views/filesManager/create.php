@@ -2,14 +2,10 @@
 /* @var $this FilesManagerController */
 /* @var $model FilesManager */
 
-$this->breadcrumbs=array(
-	'Files Managers'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
-    //array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
-    //array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
+    
     array('label'=>'Manejador de Archivos ', 'url'=>array('FilesManager/admin'),'itemOptions'=>array('class' => 'menuitem 1 now')),
         array('label'=>'Gestionar', 'url'=>array('FilesManager/admin'),'itemOptions'=>array('class' => 'sub')),
         array('label'=>'Crear', 'url'=>array('FilesManager/create'),'itemOptions'=>array('class' => 'sub')),
@@ -39,6 +35,6 @@ $this->menu=array(
     );
 ?>
 
-<h1>Create FilesManager</h1>
+<h1>Nuevo Archivo</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -8,36 +8,3024 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
 
 
 <script type="text/javascript">
-	$(document).ready(function() {
-	    $(".numericOnly").keydown(function (e) {
-	        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-	            (e.keyCode == 65 && e.ctrlKey === true) ||
-	            (e.keyCode >= 35 && e.keyCode <= 40)) {
-	                return;
-	        }
-	        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-	            e.preventDefault();
-	        }
+  $(document).ready(function() {
+      $(".numericOnly").keydown(function (e) {
+          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+              (e.keyCode == 65 && e.ctrlKey === true) ||
+              (e.keyCode >= 35 && e.keyCode <= 40)) {
+                  return;
+          }
+          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+              e.preventDefault();
+          }
 
-	    });
-	});
+      });
+  });
+  function changeArea(){
+    
+    var areaValue = $("#area option:selected").val();
 
-	function changeArea(){
-		
-	}
+if(areaValue =="ANTROPOLOGIA"){
+    var ANTROPOLOGIA = ["ANTROPOLOGIA CULTURAL","ANTROPOLOGIA ESTRUCTURAL",
+   "ANTROPOLOGIA SOCIAL","ETNOGRAFIA Y ETNOLOGIA","OTRAS ESPECIALIDADES EN MATERIA DE ANTROPOLOGIA"]
+    areaValue = ANTROPOLOGIA;
+   }
+   if(areaValue =="ARTES Y LETRAS"){
+    var ARTESYLETRAS = ["ARQUITECTURA","TEORIA","ANALISIS Y CRITICA DE LAS BELLAS ARTES",
+   "ANALISIS Y CRITICA LITERARIOS","TEORIA","OTRAS ESPECIALIDADES EN MATERIA DE ARTES Y LETRAS"]
+    areaValue = ARTESYLETRAS;
+  }
+  if(areaValue =="ASTRONOMIA Y ASTROFISICA"){
+    var ASTRONOMIAYASTROFISICA = ["ASTRONOMIA OPTICA","COSMOLOGIA Y COSMOGONIA","ESPACIOS Y MATERIA INTERPLANETARIOS",
+   "PLANETOLOGIA","RADIOASTRONOMIA","SISTEMA SOLAR","OTRAS ESPECIALIDADES EN MATERIA DE ASTRONOMIA"]
+    areaValue = ASTRONOMIAYASTROFISICA;
+  }
+  if(areaValue =="CIENCIAS AGRONOMICAS Y VETERINARIAS"){
+    var CIENCIASAGRONOMICASYVETERINARIAS = ["AGRONOMIA","CIENCIAS VETERINARIAS","CIENCIAS VETERINARIAS",
+   "FITOPATOLOGIA","HIGIENE VETERINARIA Y SALUD PUBLICA","HORTICULTURA","INGENIERIA RURAL",
+   "OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS AGRONOMICAS Y VETERINARIAS","PECES Y ANIMALES SALVAJES",
+   "SILVICULTURA","QUIMICA AGRONOMICA"]
+    areaValue = CIENCIASAGRONOMICASYVETERINARIAS;
+  }
+  if(areaValue =="CIENCIAS DE LA OCUPACION"){
+    var CIENCIASDELAOCUPACION = ["TERAPIA OCUPACIONAL"]
+    areaValue = CIENCIASDELAOCUPACION;
+  }
+  if(areaValue =="CIENCIAS DE LA TECNOLOGIA"){
+    var CIENCIASDELATECNOLOGIA = ["ANALISIS DE LAS OPERACIONES TECNOLOGICAS","CIENCIAS DE LA COMPUTACION","GESTION DE LA CALIDAD","INSTRUMENTAL TECNOLOGICO",
+   "OTRAS ESPECIALIDADES EN MATERIA DE TECNOLOGIA","TECNOLOGIA BIOQUIMICA","TECNOLOGIA DE FERROCARRILES",
+   "TECNOLOGIA DE LA ALIMENTACION","TECNOLOGIA DE BIOMOLECULAS","TECNOLOGIA DE BIOPROCESOS","TECNOLOGIA DE LA CONSTRUCCION",
+   "TECNOLOGIA DE LA ENERGIA","TECNOLOGIA DE LA INFORMATICA","TECNOLOGIA DE LA MEDICINA","TECNOLOGIA DE LA METALURGIA",
+   "TECNOLOGIA DE LAS MATERIAS","TECNOLOGIA DE LAS TELECOMUNICACIONES","TECNOLOGIA DE LOS PRODUCTOS METALICOS",
+   "TECNOLOGIA DE MINAS","TECNOLOGIA ELECTRONICA","TECNOLOGIA DEL ESPACIO","TECNOLOGIA DEL MEDIO AMBIENTE","TECNOLOGIA DEL URBANISMO",
+   "TECNOLOGIA DE LOS VEHICULOS DE MOTOR","TECNOLOGIA E INGENIERIA AERONAUTICA","TECNOLOGIA E INGENIERIA DE LA ELECTRICIDAD",
+   "TECNOLOGIA E INGENIERIA QUIMICA","TECNOLOGIA INDUSTRIAL","TECNOLOGIA MECANICA","TECNOLOGIA NAVAL",
+   "TECNOLOGIA NUCLEAR","TECNOLOGIA TEXTIL","TECNOLOGIA DEL PETROLEO Y DEL CARBON","TECNOLOGIA DE LOS SISTEMAS DE TRANSPORTE"]
+    areaValue = CIENCIASDELATECNOLOGIA;
+  }
+  if(areaValue =="CIENCIAS DE LA TIERRA Y DEL COSMOS"){
+    var CIENCIASDELATIERRAYDELCOSMOS = ["CIENCIAS ATMOSFERICAS","CLIMATOLOGIA","GEOQUIMICA","GEODESIA","GEOGRAFIA","GEOLOGIA","GEOFISICA","HIDROLOGIA","METEOROLOGIA","OCEANOGRAFIA","CIENCIAS DEL SUELO","CIENCIAS DEL COSMOS","OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS DE LA TIERRA","DEL COSMOS Y DEL MEDIO AMBIENTE"]
+    areaValue = CIENCIASDELATIERRAYDELCOSMOS;
+  }
+  if(areaValue =="CIENCIAS DE LA SALUD"){
+    var CIENCIASDELASALUD = ["ENFERMERÍA","INVESTIGACIÓN EN SALUD","SALUD PÚBLICA"]
+    areaValue = CIENCIASDELASALUD;
+  }
+  if(areaValue =="CIENCIAS DE LA VIDA"){
+    var CIENCIASDELAVIDA = ["ANTROPOLOGIA FISICA",
+   "BIOFISICA","BIOLOGIA ANIMAL Y ZOOLOGIA","BIOLOGIA CELULAR","BIOLOGIA HUMANA","BIOLOGIA MOLECULAR",
+   "BOTANICA","BIOQUIMICA","BIOMATEMATICA","BIOMETRIA","ENTOMOLOGIA GENERAL","ETOLOGIA",
+   "EVOLUCION","FISIOLOGIA HUMANA","GENETICA","INMUNOLOGIA","MEDIO AMBIENTE","MICROBIOLOGIA",
+   "OTRAS ESPECIALIDADES EN MATERIA DE BIOLOGIA","PALEONTOLOGIA","RADIOBIOLOGIA","SIMBIOSIS","VIROLOGIA"]
+    areaValue = CIENCIASDELAVIDA;
+  }
+  if(areaValue =="CIENCIAS ECONOMICAS"){
+    var CIENCIASECONOMICAS = ["ACTIVIDADES ECONOMICAS",
+   "CAMBIO ECONOMICO O TECNOLOGICO","CONTABILIDAD PUBLICA","POLITICA FISCAL Y HACIENDA PUBLICA",
+   "ECONOMETRIA","ECONOMIA INTERNACIONAL","ECONOMIA SECTORIAL","GESTION DE LA CALIDAD",
+   "ORGANIZACION DE LA INDUSTRIA Y POLITICA ECONOMICA PUBLICA","ORGANIZACION Y DIRECCION DE EMPRESAS",
+   "OTRAS ESPECIALIDADES EN MATERIA DE ECONOMIA","SISTEMAS ECONOMICOS","TEORIA ECONOMICA","ECONOMIA GENERAL"]
+    areaValue = CIENCIASECONOMICAS;
+  }
+  if(areaValue =="CIENCIAS JURIDICAS Y DERECHO"){
+    var CIENCIASJURIDICASYDERECHO = ["DERECHO CANONICO",
+   "DERECHO INTERNACIONAL","DERECHO Y LEGISLACION NACIONALES",
+   "ORGANIZACION PENAL","OTRAS ESPECIALIDADES EN MATERIA JURIDICA",
+   "TEORIAS Y METODOS JURIDICOS GENERALES"]
+    areaValue = CIENCIASJURIDICASYDERECHO;
+  }
+  if(areaValue =="CIENCIAS POLITICAS"){
+    var CIENCIASPOLITICAS = ["ADMINISTRACION PUBLICA","BIBLIOTECONOMIA Y ARCHIVONOMIA",
+   "IDEOLOGIAS POLITICAS","INSTITUCIONES POLITICAS","RELACIONES INTERNACIONALES","OPINION PUBLICA", 
+   "OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS POLITICAS","POLITICA TEORICA","POLITICAS SECTORIALES",
+   "POLITICA TEORICA","SOCIOLOGIA DE LA POLITICA","SISTEMAS POLITICOS","VIDA POLITICA"]
+    areaValue = CIENCIASPOLITICAS;
+  }
+  if(areaValue =="DEMOGRAFIA"){
+    var DEMOGRAFIA = ["CARACTERISTICAS DE LAS POBLACIONES",
+   "FECUNDIDAD","DEMOGRAFIA GENERAL","DEMOGRAFIA GEOGRAFICA","DEMOGRAFIA HISTORICA",
+   "EVOLUCION DEMOGRAFICA","MORTALIDAD","OTRAS ESPECIALIDADES EN MATERIA DE DEMOGRAFIA"]
+    areaValue = DEMOGRAFIA;
+  }
+  if(areaValue =="ETICA"){
+    var ETICA = ["ETICA CLASICA","ETICA INDIVIDUAL","ETICA DE GRUPO","ETICA PROSPECTIVA","OTRAS ESPECIALIDADES EN MATERIA DE ETICA"]
+    areaValue  = ETICA;
+  }
+  if(areaValue =="FILOSOFIA"){
+  var FILOSOFIA = ["ANTROPOLOGIA FILOSOFICA","DOCTRINAS FILOSOFICAS","FILOSOFIA DE LOS CONOCIMIENTOS",
+ "FILOSOFIA GENERAL","FILOSOFIA DE LA CIENCIA","FILOSOFIA DE LA NATURALEZA",
+ "FILOSOFIA SOCIAL","OTRAS ESPECIALIDADES EN MATERIA DE FILOSOFIA","SISTEMAS FILOSOFICOS"]
+  areaValue = FILOSOFIA;
+  }
+  if(areaValue =="FISICA"){
+  var FISICA = ["ACUSTICA","ELECTROMAGNETISMO","ELECTRONICA","FISICOQUIMICA",
+ "FISICA DE LAS PARTICULAS NUCLEARES","FISICA DE LOS FLUIDOS","FISICA DEL ESPACIO","FISICA MOLECULAR",
+ "FISICA NUCLEAR","FISICA DEL ESTADO SOLIDO","FISICA TEORICA","MECANICA","OPTICA",
+ "OTRAS ESPECIALIDADES EN MATERIA DE FISICA","TERMODINAMICA","UNIDADES Y CONSTANTES FISICAS"]
+  areaValue = FISICA;
+}
+if(areaValue =="GEOGRAFIA"){
+  var GEOGRAFIA = ["GEOGRAFIA ECONOMICA","GEOGRAFIA HISTORICA","GEOGRAFIA HUMANA","GEOGRAFIA REGIONAL","OTRAS ESPECIALIDADES EN MATERIA DE GEOGRAFIA"]
+  areaValue = GEOGRAFIA;
+}
+if(areaValue =="HISTORIA"){
+  var HISTORIA = ["BIOGRAFIA","CIENCIAS AUXILIARES DE LA HISTORIA","HISTORIA GENERAL","HISTORIA DE LOS PAISES",
+ "HISTORIA DE LAS EPOCAS","HISTORIA ESPECIALIZADA","OTRAS ESPECIALIDADES EN MATERIA DE HISTORIA"]
+  areaValue = HISTORIA;
+}
+if(areaValue =="LINGÜISTICA"){
+    var LINGÜISTICA = ["GEOGRAFIA LINGÜISTICA","LINGÜISTICA APLICADA",
+   "LINGÜISTICA DIACRONICA","LINGÜISTICA TEORICA","LINGÜISTICA SINCRONICA",
+   "POLITICAS DEL LENGUAJE","OTRAS ESPECIALIDADES EN MATERIA DE LINGÜÍSTICA"]
+    areaValue = LINGÜISTICA;
+}
+if(areaValue =="LOGICA"){
+  var LOGICA = ["APLICACIONES DE LA LOGICA","LOGICA DEDUCTIVA","LOGICA GENERAL","LOGICA INDUCTIVA","METODOLOGIA","OTRAS ESPECIALIDADES EN MATERIA DE LOGICA"]
+  areaValue = LOGICA;
+}
+if(areaValue =="MATEMATICAS"){
+  var MATEMATICAS = ["ALGEBRA","ANALISIS NUMERICO",
+ "ANALISIS Y ANALISIS FUNCIONAL","CALCULO DE PROBABILIDADES",
+ "ESTADISTICA","GEOMETRIA","INFORMATICA","INFORMATICA MATEMATICA",
+ "INVESTIGACION OPERATIVA","MATEMATICAS","TEORIA DE LOS NUMEROS",
+ "SISTEMAS","OTRAS ESPECIALIDADES EN MATERIA DE MATEMATICAS","TOPOLOGIA"]
+  areaValue = MATEMATICAS;
+}
+if(areaValue =="MEDICINA Y PATOLOGIA HUMANA"){
+  var MEDICINAYPATOLOGIAHUMANA = ["ADMINISTRACION DE HOSPITALES Y DE LA ATENCION MEDICA",
+ "BIOLOGIA DE LA REPRODUCCION HUMANA","CIENCIAS DE LA INFORMACION Y COMUNICACION EN MEDICINA",
+ "CIENCIAS SOCIALES EN MEDICINA","EPIDEMIOLOGIA",
+ "FARMACODINAMICA","FARMACOLOGIA","FISIOLOGIA","MORFOLOGIA",
+ "MEDICINA CLINICA","MEDICINA FORENSE","MEDICINA DEL TRABAJO",
+ "MEDICINA INTERNA","MEDICINA PREVENTIVA","MEDICINA QUIRURGICA","NUTRICION","OBSTETRICIA",
+ "OTRAS ESPECIALIDADES EN MATERIA DE MEDICINA Y PATOLOGIA HUMANAS",
+ "PATOLOGIA","PSIQUIATRIA","SANIDAD PUBLICA","TOXICOLOGIA"]
+  areaValue = MEDICINAYPATOLOGIAHUMANA;
+}
+if(areaValue =="PEDAGOGIA"){
+  var PEDAGOGIA = ["FORMACION Y EMPLEO DE LOS EDUCADORES",
+ "ORGANIZACION Y PLANIFICACION PEDAGOGICAS",
+ "OTRAS ESPECIALIDADES EN MATERIA DE PEDAGOGIA",
+ "TEORIAS Y METODOS PEDAGOGICOS GENERALES"]
+    areaValue = PEDAGOGIA;
+}
+if(areaValue =="PSICOLOGIA"){
+  var PSICOLOGIA = ["ESTUDIO DE LA PERSONALIDAD","ESTUDIO PSICOLOGICO DE FENOMENOS SOCIALES",
+ "EVALUACION Y MEDICION PSICOLOGICAS","ORIENTACION PSICOLOGICA",
+ "OTRAS ESPECIALIDADES EN MATERIA DE PSICOLOGIA","PARAPSICOLOGIA",
+ "PSICOFARMACOLOGIA","PSICOLOGIA PATOLOGICA","PSICOLOGIA DE LA EDUCACION",
+ "PSICOLOGIA DEL NIÑO Y DEL ADOLESCENTE","PSICOLOGIA EXPERIMENTAL","PSICOLOGIA GENERAL",
+ "PSICOLOGIA GERIATRICA","PSICOLOGIA SOCIAL","PSICOLOGIA DEL TRABAJO Y DEL PERSONAL"]
+  areaValue = PSICOLOGIA;
+}
+if(areaValue =="PROSPECTIVA"){
+  var PROSPECTIVA = ["ANALISIS DE RIESGOS","ANALISIS DE TENDENCIAS",
+ "CONSTRUCCION DE ESCENARIOS","DESARROLLO SUSTENTABLE","DISEÑO DE PRIORIDADES A LARGO PLAZO","ETICA DEL FUTURO",
+ "FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS","NUEVAS FUERTES DE ENERGIA","NUEVOS SISTEMAS ORGANIZACIONALES","REVISION",
+ "OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA","PLANEACION Y DISEÑO DE ESTRATEGIAS","TENDENCIAS DEMOGRAFICAS Y POBLACIONALES"]
+  areaValue = PROSPECTIVA;
+}
+if(areaValue =="QUIMICA"){
+  var QUIMICA = ["BIOQUIMICA","FARMACOBIOLOGIA",
+ "OTRAS ESPECIALIDADES EN MATERIA DE QUIMICA",
+ "QUIMICA ANALITICA","QUIMICA DE LAS MACROMOLECULAS",
+ "QUIMICA FISICA","QUIMICA INORGANICA","QUIMICA NUCLEAR","QUIMICA ORGANICA"]
+  areaValue = QUIMICA;
+}
+if(areaValue =="SOCIOLOGIA"){
+  var SOCIOLOGIA = ["CAMBIO Y DESARROLLO SOCIAL","COMUNICACION SOCIAL",
+ "CULTURA FÍSICA","HUMANIDADES","GRUPOS SOCIALES","PROBLEMAS INTERNACIONALES",
+ "PROBLEMAS SOCIALES","ORGANIZACION SOCIAL ESTRUCTURA E INSTITUCIONES",
+ "OTRAS ESPECIALIDADES EN MATERIA DE SOCIOLOGIA","SOCIOLOGIA CULTURAL",
+ "SOCIOLOGIA EXPERIMENTAL","SOCIOLOGIA GENERAL","SOCIOLOGIA MATEMATICA Y ESTADISTICA",
+ "SOCIOLOGIA DE ACTIVIDADES PARTICULARES","SOCIOLOGIA DE LA IMPLANTACION HUMANA"]
+  areaValue = SOCIOLOGIA;
+}
+
+
+    var newDiscipline ="<span class='plain-select'><select id='BooksChapters_discipline' class='tooltipstered' name='BooksChapters[discipline]' onchange='changeDiscipline()'>";
+    newDiscipline+="<option>Seleccionar Disciplina</option>";
+    for (var item in areaValue) {
+        newDiscipline +="<option>"+areaValue[ item ]+"</option>";
+    }
+
+    newDiscipline+="</select></span>";
+
+    $("#comboDiscipline").html(newDiscipline);
+  }
+
+  function changeDiscipline(){
+  var disciplineValue = $("#BooksChapters_discipline option:selected").val();
+
+    if(disciplineValue =="Seleccionar Disciplina"){
+      var seleccionarDisciplina ="";
+      disciplineValue = aplicacionesDeLaLogica;
+    }
+
+    if(disciplineValue =="LOGICA DEDUCTIVA"){
+      var logicaDeductiva = ["ALGEBRA DE BOOLE", 
+                  "ANALOGIA", 
+                  "CALCULO DE PROPOSICIONES", 
+                  "FUNCIONES RECURSIVAS", 
+                  "FUNDAMENTOS DE LAS MATEMATICAS", 
+                  "GENERALIZACION", 
+                  "LENGUAJES FORMALIZADOS", 
+                  "LOGICA FORMAL", 
+                  "LOGICA MATEMATICA", 
+                  "LOGICA MODAL", 
+                  "LOGICA SIMBOLICA", 
+                  "SISTEMAS FORMALES", 
+                  "TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS", 
+                  "TEORIA DE LAS PRUEBAS", 
+                  "TEORIA DE LOS LENGUAJES FORMALES", 
+                  "TEORIA DE LOS MODELOS", 
+                  "OTROS"]
+      disciplineValue = logicaDeductiva;
+    }
+    if(disciplineValue =="LOGICA INDUCTIVA"){
+      var logicaInductiva = ["INDUCCION", 
+                 "INTUICIONISMO", 
+                 "PROBABILIDAD", 
+                 "OTROS"]
+      disciplineValue = logicaInductiva;
+    }
+    if(disciplineValue =="METODOLOGIA"){
+      var metodologia = ["METODO CIENTIFICO", 
+               "OTROS"]
+      disciplineValue = metodologia;
+    }
+    if(disciplineValue =="ALGEBRA"){
+      var algebra = ["ALGEBRA DE LIE","ALGEBRA DIFERENCIAL", 
+              "ALGEBRA HOMOLOGICA", 
+              "ALGEBRA LINEAL", 
+              "ALGEBRAS", 
+              "ALGEBRAS NO ASOCIATIVAS", 
+              "ANILLOS", 
+              "CAMPOS", 
+              "ESTRUCTURAS ALGEBRAICAS", 
+              "GENERALIDADES", 
+              "GEOMETRIA ALGEBRAICA", 
+              "GRUPOS","POLINOMIOS", 
+              "RETICULOS", 
+              "TEORIA AXIOMATICA DE CONJUNTOS", 
+              "TEORIA DE LAS CATEGORIAS", 
+              "TEORIA DE LAS MATRICES", 
+              "TEORIA DE LA REPRESENTACION", 
+              "TEORIA K ALGEBRAICA", 
+              "OTROS"]
+      disciplineValue = algebra;
+    }
+    if(disciplineValue =="ANALISIS Y ANALISIS FUNCIONAL"){
+      var analisisYAnalisisFuncional = [ "ALGEBRA DE OPERADORES LOGICOS",
+                       "ANALISIS ARMONICO", 
+                       "ANALISIS COMBINATORIO", 
+                       "ANALISIS DE FOURIER",
+                         "ANALISIS GLOBAL", 
+                         "AREA",
+                         "CALCULO DE VARIACIONES", 
+                         "CALCULO OPERACIONAL", 
+                         "CONVEXIDAD", 
+                         "DESIGUALDADES", 
+                         "ECUACIONES DIFERENCIALES ORDINARIAS", 
+                         "ECUACIONES DIFERENCIALES PARCIALES", 
+                         "ECUACIONES EN DIFERENCIAS FINITAS", 
+                         "ECUACIONES FUNCIONALES", 
+                         "ECUACIONES INTEGRALES", 
+                         "ESPACIOS ANALITICOS", 
+                         "ESPACIOS DE HILBERT", 
+                         "ESPACIOS LINEALES TOPOLOGICOS",
+                         "ESPACIOS Y ALGEBRAS DE BANACH",
+                         "MEDIDAS", 
+                         "INTEGRACION", 
+                         "FUNCIONES DE UNA VARIABLE COMPLEJA", 
+                         "FUNCIONES DE VARIABLES REALES", 
+                         "FUNCIONES DE VARIAS VARIABLES COMPLEJAS",
+                         "FUNCIONES ESPECIALES",
+                           "FUNCIONES SUBARMONICAS",
+                           "SERIES",
+                           "SERIES E INTEGRALES TRIGONOMETRICAS",
+                           "SUMABILIDAD","TEORIA DE FUNCIONES GENERALIZADA", 
+                           "TEORIA DE GRAFICAS","TEORIA DE LA APROXIMACION", 
+                           "TEORIA DEL POTENCIAL", 
+                           "TEORIA ERGODICA", 
+                           "TRANSFORMACIONES INTEGRALES", 
+                           "OTROS"]
+      disciplineValue = analisisYAnalisisFuncional;
+    }
+    if(disciplineValue =="INFORMATICA MATEMATICA"){
+      var informaticaMatematica = ["BANCOS DE DATOS",
+                       "CODIGOS Y SISTEMAS DE CODIFICACION", 
+                       "COMPUTACION ANALOGICA", 
+                       "COMPUTACION DIGITAL",
+                         "COMPUTACION HIBRIDA", 
+                         "CONTABILIDAD",
+                         "CONTROL DE INVENTARIO", 
+                         "DISEÑO CON AYUDA DE COMPUTADOR", 
+                         "DISEÑO DE SISTEMAS DE SENSORES", 
+                         "DISEÑO Y COMPONENTES", 
+                         "ENSEÑANZA CON AYUDA DE COMPUTADOR", 
+                         "HEURISTICA", 
+                         "LENGUAJES ALGORITMICOS", 
+                         "LENGUAJES DE PROGRAMACION", 
+                         "MODELIZACION CAUSAL", 
+                         "INFORMATICA", 
+                         "INTELIGENCIA ARTIFICIAL", 
+                         "SIMULACION",
+                         "SISTEMAS AUTOMATICOS DE CONTROL DE CALIDAD",
+                         "SISTEMAS DE CONTROL AMBIENTAL", 
+                         "SISTEMAS DE CONTROL MEDICO", 
+                         "SISTEMAS DE CONTROL DE PRODUCCION", 
+                         "SISTEMAS DE INFORMACION", 
+                         "SISTEMAS DE NAVEGACION DE TELEMETRIA Y ESPACIAL",
+                         "SISTEMAS DE PRODUCCION AUTOMATICA",
+                           "SOPORTE LOGICO DE COMPUTADORES",
+                           "TEORIA DE LA PROGRAMACION",
+                           "OTROS"]
+      disciplineValue = informaticaMatematica;
+    }
+    if(disciplineValue =="GEOMETRIA"){
+      var geometria = ["ANALISIS TENSORIAL",
+               "DOMINIOS CONVEXOS", 
+               "ESTRUCTURAS DE ORDEN GEOMETRICO", 
+               "FUNDAMENTOS",
+                 "GEOMETRIA AFIN", 
+                 "GEOMETRIA COMPLEJA Y REAL",
+                 "GEOMETRIA DESCRIPTIVA Y ANALITICA", 
+                 "GEOMETRIA DIFERENCIAL", 
+                 "GEOMETRIA DISCRETA", 
+                 "GEOMETRIA EUCLIDIANA", 
+                 "GEOMETRIA PROYECTIVA", 
+                 "GEOMETRIA TOPOLOGICA", 
+                 "GEOMETRIA RIEMANIANA", 
+                 "GEOMETRIAS INFINITAS", 
+                 "GEOMETRIAS NO EUCLIDIANAS", 
+                 "PROBLEMAS DE EXTREMO", 
+                 "TEORIA DE LA FUNCION GEOMETRICA", 
+                 "TEORIA K",
+                 "VARIEDADES COMPLEJAS",
+                   "OTROS"]
+      disciplineValue = geometria;
+    }
+    if(disciplineValue =="TEORIA DE LOS NUMEROS"){
+      var teoriaDeLosNumeros = [ "GEOMETRIA DE LOS NUMEROS",
+                   "PROBLEMAS DIOFANTINOS", 
+                   "SUCESIONES Y CONJUNTOS", 
+                   "TEORIA DE LOS NUMEROS ALGEBRAICOS",
+                     "TEORIA DE LOS NUMEROS ANALITICOS", 
+                     "TEORIA DE LOS NUMEROS ELEMENTALES",
+                     "TEORIA K", 
+                       "OTROS"]
+      disciplineValue = teoriaDeLosNumeros;
+    }
+    if(disciplineValue =="ANALISIS NUMERICO"){
+      var analisisNumerico = [ "ANALISIS DE ERRORES",
+                   "CONSTRUCCION DE ALGORITMOS", 
+                   "CUADRATURA", 
+                   "DIFERENCIACION NUMERICA",
+                     "ECUACIONES DIFERENCIALES", 
+                     "ECUACIONES DIFERENCIALES ORDINARIAS",
+                     "ECUACIONES DIFERENCIALES PARCIALES", 
+                     "ECUACIONES FUNCIONALES",
+                     "ECUACIONES INTEGRALES",
+                     "ECUACIONES INTEGRODIFERENCIALES",
+                     "ECUACIONES LINEALES",
+                     "INTERPOLACION",
+                     "MATRICES",
+                     "METODOS ITERATIVOS",
+                     "PROXIMACION Y AJUSTE DE CURVAS",
+                       "OTROS"]
+      disciplineValue = analisisNumerico;
+    }
+    if(disciplineValue =="INVESTIGACION OPERATIVA"){
+      var invetigacionOperativa = [  
+              "ANALISIS MICROECONOMICO", 
+          "CIBERNETICA",
+          "COLAS", 
+          "DISTRIBUCION Y TRANSPORTE",
+          "FIABILIDAD DE LOS SISTEMAS", 
+          "FLUJO DE RED",
+          "FORMULACION DE SISTEMAS",
+          "INVENTARIO", 
+          "MODELACION", 
+          "ORDENAMIENTO",
+          "OTROS",
+          "PROGRAMACION DINAMICA",
+          "PROGRAMACION ENTERA",
+          "PROGRAMACION LINEAL",
+          "PROGRAMACION NO LINEAL",
+          "SISTEMAS DE CONTROL",
+          "TEORIA DE JUEGOS", ]
+      disciplineValue = invetigacionOperativa;
+    }
+        if(disciplineValue =="CALCULO DE PROBABILIDADES"){
+      var calculoProbabilidades = [  
+              "APLICACION DE LA PROBABILIDAD",
+          "CONJUNTOS ALEATORIOS",
+          "FUNDAMENTOS DE LA PROBABILIDAD",
+          "GEOMETRIA ESTOCASTICA", 
+          "MATEMATICAS ACTUARIALES", 
+          "PROCESOS DE MARKOV",
+          "PLAUSIBILIDAD", 
+          "PROCESOS ESTOCASTICOS",
+          "PROBABILIDADES SUBJETIVAS",
+          "PROBABILIDAD GEOMETRICA", 
+          "OTROS",
+          "TEORIA ANALITICA DE LA PROBABILIDAD",
+          "TEOREMAS LIMITE"]
+      disciplineValue = calculoProbabilidades;
+    }
+      if(disciplineValue =="ESTADISTICA"){
+      var estadistica = [  
+              "ANALISIS DE DATOS",
+          "ANALISIS MULTIVARIANTE", 
+          "COMPUTACION PARA LA ESTADISTICA", 
+          "DISEÑO Y ANALISIS DE EXPERIMENTOS",
+          "ESTADISTICA ANALITICA",
+          "FUNDAMENTOS DE INFERENCIA ESTADISTICA",
+          "METODOS NO PARAMETRICOS",
+          "OTROS",
+          "PROCEDIMIENTOS DE DECISION Y TEORIA DE DECISION",
+          "TEORIA DE LA DISTRIBUCION Y LA PROBABILIDAD",
+          "TEORIA Y TECNICAS DE MUESTREO",
+          "TEORIA ESTOCASTICA Y ANALISIS DE SERIES TEMPORALES",
+          "TECNICAS DE ASOCIACION ESTADISTICA",
+          "TECNICAS DE INFERENCIA ESTADISTICA",
+          "TECNICAS DE PREDICCION ESTADISTICA",
+          "SERIES TEMPORALES", ]
+      disciplineValue = estadistica;
+    }
+        if(disciplineValue =="TOPOLOGIA"){
+      var topologia = [  
+              "COHOMOLOGIA",
+          "ESPACIOS ABSTRACTOS",
+          "DINAMICA TOPOLOGICA",
+          "GRUPOS DE TRANSFORMACION",
+          "GRUPOS DE LIE", 
+          "GRUPOS TOPOLOGICOS", 
+          "HACES Y ESPACIOS DE FIBRAS",
+          "HOMOLOGIA",
+          "HOMOTOPIA", 
+          "INMERSION TOPOLOGICA",
+          "OTROS",
+          "TEORIA K TOPOLOGICA", 
+          "TOPOLOGIA ALGEBRAICA", 
+          "TOPOLOGIA COMBINATORIA",
+          "TOPOLOGIA DE CONJUNTOS DE PUNTOS", 
+          "TOPOLOGIA GENERAL",
+          "TOPOLOGIA TRIDIMENSIONAL",
+          "VARIEDADES DIFERENCIALES", 
+          "VARIEDADES TOPOLOGICAS"]
+      disciplineValue = topologia;
+    }
+
+           if(disciplineValue =="INFORMATICA"){
+      var informatica = [  
+              "DISEÑO Y COMPONENTES",
+          "GRAFICAS INFORMATICAS", 
+          "ESTRUCTURA Y MANEJO DE DATOS",
+          "INTELIGENCIA ARTIFICIAL",
+          "LENGUAJES ALGORITMICOS", 
+          "LENGUAJES DE PROGRAMACION",
+          "LOGICA MATEMATICA Y LENGUAJES FORMALES",
+          "MATEMATICAS DISCRETAS", 
+          "MANIPULACION SIMBOLICA Y ALGEBRAICA",
+          "OTROS",
+          "SISTEMAS DE INFORMACION",
+          "PROCESAMIENTO DE TEXTOS Y DOCUMENTOS",
+          "PROGRAMAS MATEMATICOS", 
+          "SIMULACION Y MODELACION",
+          "TEORIA",
+          "TEORIA DE LA CODIFICACION Y DE LA INFORMACION",
+          "TEORIA DE LA INFORMATICA",
+          "TEORIA DE LA PROGRAMACION"]
+      disciplineValue = informatica;
+    }
+          if(disciplineValue =="SISTEMAS"){
+      var sistemas = [  
+              "OTROS",
+          "SISTEMAS ALGEBRAICOS TOPOLOGICOS Y DIFERENCIABLES",
+          "SISTEMAS DINAMICOS",
+          "SISTEMAS HAMILTONIANOS",
+          "SISTEMAS LAGRANGIANOS", 
+          "SISTEMAS ESTOCASTICOS Y CONTROL"]
+      disciplineValue = sistemas;
+    }
+        if(disciplineValue =="COSMOLOGIA Y COSMOGONIA"){
+      var cosmologiyCosmogonia = [  
+              "ESTRELLAS BINARIAS", 
+          "CONGLOMERADOS", 
+          "RAYOS COSMICOS", 
+          "GALAXIAS", 
+          "GRAVITACION", 
+          "NEBULOSAS", 
+          "NOVAS", 
+          "PULSARS", 
+          "QUASARS", 
+          "ESTRELLAS", 
+          "EVOLUCION ESTELAR Y DIAGRAMAS HR",
+          "COMPOSICION ESTELAR", 
+          "SUPER NOVAS", 
+          "ESTRELLAS",
+          "VARIABLES",
+          "FUENTES DE RAYOS X",
+          "OTROS ESPECIFICAR",]
+      disciplineValue = cosmologiyCosmogonia;
+    }
+        if(disciplineValue =="ESPACIOS Y MATERIA INTERPLANETARIOS"){
+      var espaciosyMateriaInterplanetarios = [  
+              "CAMPOS INTERPLANETARIOS", 
+          "MATERIAS INTERPLANETARIAS", 
+          "OTROS",
+          "PARTICULAS INTERPLANETARIAS"]
+      disciplineValue = espaciosyMateriaInterplanetarios;
+    }
+        if(disciplineValue =="ASTRONOMIA OPTICA"){
+      var astronomiaOptica = [  
+      				"ASTRONOMIA DE POSICION",
+					"TELESCOPIOS",
+					"ESPECTROSCOPIA",
+					"OTROS",]
+      disciplineValue = astronomiaOptica;
+    }
+     if(disciplineValue =="PLANETOLOGIA"){
+      var planetologia = [  
+              "COMETAS",
+          "METEORITOS",
+          "ATMOSFERAS PLANETARIAS",
+          "GEOLOGIA PLANETARIA",
+          "FISICA PLANETARIA",
+          "CAMPOS MAGNETICOS PLANETARIOS",
+          "PLANETAS",
+          "SATELITES",
+          "TECTITAS",
+          "LA LUNA",
+          "OTROS"]
+      disciplineValue = planetologia;
+    }
+    if(disciplineValue =="RADIOASTRONOMIA"){
+      var radioastronimia = [  
+              "ANTENAS",
+          "RADIOTELESCOPIOS", 
+          "OTROS"]
+      disciplineValue = radioastronimia;
+    }
+     if(disciplineValue =="SISTEMA SOLAR"){
+      var sistemaSolar = [  
+      				"ENERGIA SOLAR",
+					"FISICA SOLAR", 
+					"RADIACION SOLAR",
+					"EL SOL",
+					"OTROS"]
+      disciplineValue = sistemaSolar;
+    }
+    if(disciplineValue =="ACUSTICA"){
+      var acustica = [  
+      				"PROPIEDADES ACUSTICAS DE LOS SOLIDOS",
+					"ACUSTICA ARQUITECTONICA",
+					"FISICA DE LA AUDICION",
+					"FISICA DE LA MUSICA",
+					"RUIDO",
+					"ONDAS DE CHOQUE",
+					"SONAR",
+					"FISICA DEL HABLA",
+					"ULTRASONIDOS",
+					"SONIDOS SUBMARINOS",
+					"VIBRACIONES",
+					"OTROS"]
+      disciplineValue = acustica;
+    }
+     if(disciplineValue =="ELECTROMAGNETISMO"){
+      var electromagnetismo = [  
+      				"CONDUCTIVIDAD",
+					"CANTIDADES ELECTRICAS Y SU MEDICION",
+					"ELECTRICIDAD",
+					"RADIACION ELECTROMAGNETICA",
+					"RAYOS GAMMA",
+					"RADIACION INFRARROJA",
+					"VISIBLE Y ULTRAVIOLETA",
+					 "INTERACCION DE LAS ONDAS ELECTROMAGNETICAS CON LA MATERIA",
+					"MAGNETISMO",
+					"PROPAGACION DE LAS ONDAS ELECTROMAGNETICAS",
+					"ONDAS DE RADIO Y MICROONDAS",
+					"SUPERCONDUCTIVIDAD",
+					"RAYOS X",
+					"OTROS"]
+      disciplineValue = electromagnetismo;
+    }
+      if(disciplineValue =="ELECTRONICA"){
+      var electronica = [  
+      				"CIRCUITOS",
+					"ELEMENTOS DE CIRCUITO",
+					"TUBOS ELECTRONICOS",
+					"MICROSCOPIA ELECTRONICA",
+					"ESTADOS ELECTRONICOS",
+					"TRANSPORTE DE ELECTRONES",
+					"CIRCUITOS INTEGRADOS",
+					"FOTOELECTRICIDAD",
+					"PIEZOELECTRICIDAD",
+					"OTROS"]
+      disciplineValue = electronica;
+    }
+     if(disciplineValue =="FISICA DE LOS FLUIDOS"){
+      var fisicadelosFluidos = [ 
+      				"COLOIDES",
+					"DISPERSIONES",
+					"CORRIENTE DE FLUIDOS",
+					"MECANICA DE FLUIDOS",
+					"GASES",
+					"FENOMENOS DE ALTA PRESION",
+					"IONIZACION",
+					"LIQUIDOS",
+					"MAGNETO-DINAMICA DE LOS FLUIDOS",
+					"FISICA DEL PLASMA",
+					"FLUIDOS CUANTICOS",
+					"OTROS"]
+      disciplineValue = fisicadelosFluidos;
+    }
+    if(disciplineValue =="MECANICA"){
+      var mecanica = [ 
+      				"MECANICA ESTADISTICA",
+					"TEORIA DE N CUERPOS",
+					"ELASTICIDAD",
+					"FRICCION",
+					"MECANICA CONTINUA",
+					"MECANICA DE FLUIDOS",
+					"MECANICA DE SOLIDOS",
+					"MEDIDA DE LAS PROPIEDADES MECANICAS",
+					"OTROS",
+					"PLASTICIDAD",
+					"MECANICA ANALITICA",]
+      disciplineValue = mecanica;
+    }
+      if(disciplineValue =="FISICA MOLECULAR"){
+      var fisicaMolecular = [  
+      				"RADICALES LIBRES",
+					"FISICA DE LAS MOLECULAS INORGANICAS",
+					"FISICA DE LAS MACROMOLECULAS",
+					"MOLECULAS MESIONICAS Y MUONICAS",
+					"HACES MOLECULARES",
+					"IONES MOLECULARES",
+					"ESPECTROSCOPIA MOLECULAR",
+					"ESTRUCTURA MOLECULAR",
+					"FISICA DE LAS MOLECULAS ORGANICAS",
+					"FISICA DE POLIMEROS",
+					"OTROS"]
+      disciplineValue = fisicaMolecular;
+    }
+
+     if(disciplineValue =="FISICA NUCLEAR"){
+      var fisicaNuclear = [  
+      				"ATOMO DE HELIO",
+					"ATOMO DE HIDROGENO",
+					"ATOMOS CON Z>2",
+					"CONVERSION DE LA ENERGIA",
+					"DESINTEGRACION NUCLEAR",
+					"ENERGIA NUCLEAR",
+					"ESTRUCTURA DEL NUCLEO",
+					"FISICA ATOMICA",
+					"FISION NUCLEAR",
+					"FUSION TERMONUCLEAR",
+					"HACES ELECTRONICOS",
+					"IONES ATOMICOS",
+					"ISOTOPOS",
+					"OTROS",
+					"PROCESOS DE COLISION",
+					"RADIOISOTOPOS",
+					"REACTORES NUCLEARES",
+					"RESONANCIA DE ROTACION DEL ELECTRON",
+					"RESONANCIA MAGNETICA NUCLEAR",
+					"RESONANCIA PARAMAGNETICA ELECTRONICA",
+					"REACCIONES Y DISPERSION NUCLEARES",
+					"HACES ATOMICOS"]
+      disciplineValue = fisicaNuclear;
+    }
+
+    if(disciplineValue =="FISICA DE LAS PARTICULAS NUCLEARES"){
+      var fisicadelasParticulasNucleares = [  
+      				"ACELERADORES DE PARTICULAS",
+					"DETECTORES DE RADIACION",
+					"FISICA DE PARTICULAS",
+					"FUENTES DE HACES",
+					"FUENTES DE PARTICULAS",
+					"OTROS",
+					"CONFINAMIENTO DEL PLASMA",
+					"NUCLEOS",
+					"REACTORES DE FUSION",
+					"MANEJO DE HACES"]
+      disciplineValue = fisicadelasParticulasNucleares;
+    }
+      if(disciplineValue =="OPTICA"){
+      var optica = [  
+      				"CINEMATOGRAFIA",
+					"COLORIMETRIA",
+					"ESPECTROSCOPIA DE EMISION",
+					"ESPECTROSCOPIA",
+					"FISICA DE LA VISION",
+					"FOTOGRAFIA",
+					"HOLOGRAFIA",
+					"ILUMINACION",
+					"INSTRUMENTACION FOTOGRAFICA",
+					"LASER",
+					"LUZ",
+					"MICROSCOPIOS",
+					"OPTICA FISICA",
+					"OPTICA GEOMETRICA",
+					"OPTICA NO LINEAL",
+					"OPTOMETRIA",
+					"OTROS",
+					"OPTICA DE FIBRAS FOTOCONDUCTORAS",
+					"PROPIEDADES OPTICAS DE LOS SOLIDOS",
+					"RADIACION VISIBLE",
+					"RADIACION INFRARROJA",
+					"RADIACION ULTRAVIOLETA",
+					"RADIOMETRIA",
+					"ESPECTROSCOPIA DE ABSORCION",
+					"FOTOMETRIA"]
+      disciplineValue = optica;
+    }
+
+    if(disciplineValue =="FISICOQUIMICA"){
+      var fisicoquimica = [  
+      				"CATALISIS",
+					"CINETOQUIMICA",
+					"ESPECTROSCOPIA ELECTRONICA",
+					"ESTADOS DE LA MATERIA",
+					"EXPLOSIVOS",
+					"FENOMENOS DE MEMBRANA",
+					"ELECTROLITOS",
+					"ELECTROQUIMICA",
+					"EMULSIONES",
+					"EQUILIBRIOS DE FASE",
+					"EQUILIBRIOS QUIMICOS",
+					"ESPECTROSCOPIA MOLECULAR",
+					"FENOMENOS DE DISPERSION",
+					"FENOMENOS DE TRANSPORTE",
+					"FISICA DE ESTADO LIQUIDO",
+					"FISICA DE LA FASE GASEOSA",
+					"FISICA DEL ESTADO SOLIDO",
+					"FOTOQUIMICA",
+					"INTERCAMBIO IONICO",
+					"LLAMAS",
+					"OTROS",
+					"PROCESOS DE RELACION",
+					"QUIMICA COLOIDAL",
+					"QUIMICA DE ALTA TEMPERATURA",
+					"QUIMICA DEL ESTADO SOLIDO",
+					"QUIMICA INTERFACIAL",
+					"RADIOQUIMICA",
+					"REACCIONES RAPIDAS",
+					"SALES FUNDIDAS",
+					"SOLUCIONES",
+					"TEORIA CUANTICA",
+					"TEORIA DE LA VALENCIA",
+					"TEORIA DE PILAS DE COMBUSTIBLE",
+					"TERMODINAMICA",
+					"TERMOQUIMICA",
+					"TRANSFERENCIA DE ENERGIA"]
+      disciplineValue = fisicoquimica;
+    }
+    if(disciplineValue =="FISICA DEL ESTADO SOLIDO"){
+      var fisicaDelEstadoSolido = [  
+              "ALEACIONES",
+          "COMPUESTOS",
+          "CONDUCTORES METALICOS",
+          "CRECIMIENTO CRISTALINO",
+          "CRISTALOGRAFIA",
+          "DENDRITAS",
+          "DIELECTRICIDAD",
+          "DIFUSION EN LOS SOLIDOS",
+          "DISPOSITIVOS DE ESTADO SOLIDO",
+          "ESTADOS ELECTRONICOS",
+          "ESTADOS NO CRISTALINOS",
+          "ESTRUCTURA CRISTALINA",
+          "IMPERFECCIONES",
+          "INTERACCION DE LA RADIACION CON LOS SOLIDOS",
+          "INTERFACES",
+          "LUMINOSIDAD",
+          "MECANICA DE RETICULOS",
+          "MECANOGRAFIA",
+          "NANOCIENCIAS Y NANOTECNOLOGIA",
+          "OTROS",
+          "PROPIEDADES DE PORTADORES DE LOS ELECTRONES",
+          "PROPIEDADES DE TRANSPORTE ELECTRONICO",
+          "PROPIEDADES MAGNETICAS",
+          "PROPIEDADES MECANICAS",
+          "PROPIEDADES OPTICAS",
+          "PROPIEDADES TERMODINAMICAS DE LOS SOLIDOS",
+          "RESONANCIA MAGNETICA",
+          "SEMICONDUCTORES",
+          "SUPERCONDUCTORES",
+          "SUPERFICIES",
+          "TECNOLOGIA METALURGICA",
+          "TRIBOLOGIA"]
+      disciplineValue = fisicaDelEstadoSolido;
+    }
+    if(disciplineValue =="FISICA TEORICA"){
+      var fisicaTeorica = [  
+              "CAMPOS GRAVITATORIOS", 
+          "CAMPOS ELECTROMAGNETICOS",
+          "CAMPOS",
+          "FISICA DE LA ENERGIA",
+          "FOTONES",
+          "GRAVITACION",
+          "GRAVITONES",
+          "HADRONES",
+          "LEPTONES",
+          "MASA",
+          "OTROS",
+          "PARTICULAS ELEMENTALES",
+          "RADIACION ELECTROMAGNETICA",
+          "TEORIA DE LA RELATIVIDAD",
+          "TEORIA DE LOS CAMPOS CUANTICOS"]
+      disciplineValue = fisicaTeorica;
+    }
+    if(disciplineValue =="TERMODINAMICA"){
+      var termodinamica = [  
+              "ALTA PRESION",
+          "ALTA TEMPERATURA",
+          "BAJAS TEMPERATURAS",
+          "CAMBIOS DE ESTADO",
+          "EQUILIBRIOS TERMODINAMICOS",
+          "FENOMENOS DE TRANSPORTE",
+          "FISICA DE LA TRANSMISION DE CALOR",
+          "OTROS",
+          "RELACIONES TERMODINAMICAS",
+          "TECNICAS DE MEDIDAS TERMICAS",
+          "TEORIA CINETICA",
+          "TRANSICION DE FASE",]
+      disciplineValue = termodinamica;
+    }
+    if(disciplineValue =="UNIDADES Y CONSTANTES FISICAS"){
+      var unidadesyConstantesFisicas = [  
+      				"CONSTANTES (FISICAS)",
+					"CONVERSION DE UNIDADES",
+					"CALIBRACION DE UNIDADES",
+					"METROLOGIA",
+					"OTROS",
+					"UNIDADES ESTANDAR",]
+      disciplineValue = unidadesyConstantesFisicas;
+    }
+      if(disciplineValue =="QUIMICA ANALITICA"){
+      var quimicaAnalitica = [  
+      				"ANALISIS ELECTROQUIMICO",
+					"ANALISIS BIOQUIMICO",
+					"ANALISIS CROMATOGRAFICO",
+					"ANALISIS DE LOS POLIMEROS",
+					"ANALISIS MICROQUIMICO",
+					"ANALISIS RADIOQUIMICO",
+					"ESPECTROSCOPIA DE MASAS",
+					"ESPECTROSCOPIA DE RAMAN",
+					"ESPECTROSCOPIA INFRARROJA",
+					"ESPECTROSCOPIA POR MICROONDAS",
+					"ESPECTROSCOPIA DE EMISION",
+					"ESPECTROSCOPIA POR RAYOS X",
+					"ESPECTROSCOPIA POR RESONANCIA MAGNETICA",
+					"FLUORIMETRIA",
+					"FOSFORIMETRIA",
+					"GRAVIMETRIA",
+					"METODOS DE ANALISIS TERMICO",
+					"MICROSCOPIA",
+					"OTROS",
+					"VOLUMETRIA",
+					"ESPECTROSCOPIA DE ABSORCION"]
+      disciplineValue = quimicaAnalitica;
+    }
+     if(disciplineValue =="BIOQUIMICA"){
+      var bioquimica = [  
+      				"ACEITES ESENCIALES",
+					"ACIDOS GRASOS",
+					"ACIDOS NUCLEICOS",
+					"ALMIDON",
+					"AMINOACIDOS",
+					"ANTIMETABOLITOS",
+					"BIOLOGIA MOLECULAR",
+					"BIOQUIMICA FISICA",
+					"BIOSINTESIS",
+					"CERAS",
+					"COENZIMAS",
+					"ELEMENTOS TRAZA",
+					"ENZIMOLOGIA",
+					"ESTEROIDES",
+					"FARMACOLOGIA MOLECULAR",
+					"FERMENTACION",
+					"FOTOSINTESIS",
+					"GENETICA BIOQUIMICA",
+					"GLUCIDOS",
+					"HIDROCARBUROS TERPENICOS",
+					"HORMONAS",
+					"INMUNOQUIMICA",
+					"METABOLISMO INTERMEDIO",
+					"QUIMICA CLINICA",
+					"REGULACION DE LA REALIMENTACION",
+					"LIPIDOS",
+					"OTROS",
+					"PEPTIDOS",
+					"PROCESOS METABOLICOS",
+					"PROTEINAS",
+					"QUIMICA MICROBIOLOGICA",
+					"QUIMIOTERAPIA",
+					"ALCALOIDES",
+					"VITAMINAS"]
+      disciplineValue = bioquimica;
+    }
+
+    if(disciplineValue =="QUIMICA INORGANICA"){
+      var quimicaInorganica = [  
+      				"ALQUILOS METALICOS",
+					"CARBONO",
+					"COMPUESTOS DEFICIENTES EN ELECTRONES",
+					"COMPUESTOS DE AZUFRE",
+					"COMPUESTOS DE BORO",
+					"COMPUESTOS DE CLORO",
+					"COMPUESTOS DE COORDINACION",
+					"COMPUESTOS DE FLUOR",
+					"COMPUESTOS DE FOSFORO",
+					"COMPUESTOS DE NITROGENO",
+					"COMPUESTOS DE SODIO",
+					"COMPUESTOS ORGANOMETALICOS",
+					"ELEMENTOS ALCALINOS",
+					"ELEMENTOS DE TRANSICION",
+					"ELEMENTOS ELECTROPOSITIVOS",
+					"ELEMENTOS TRANSURANICOS",
+					"ELEMENTOS SINTETICOS",
+					"ESTRUCTURA DE LOS COMPUESTOS INORGANICOS",
+					"GERMANIO",
+					"GRAFITO",
+					"HALOGENOS",
+					"HIDROGENO",
+					"HIDRUROS",
+					"MECANISMOS DE REACCIONES INORGANICAS",
+					"METALES",
+					"OTROS",
+					"QUIMICA DE LOS PIGMENTOS",
+					"QUIMICA DEL AGUA",
+					"TIERRAS ALCALINAS",
+					"TIERRAS RARAS",
+					"COMPUESTOS DE PLOMO",
+					"QUIMICA DE LOS ACTINIDOS"]
+      disciplineValue = quimicaInorganica;
+    }
+    if(disciplineValue =="QUIMICA DE LAS MACROMOLECULAS"){
+      var quimicaDeLasMacromoleculas = [  
+      				"ANALISIS DE LOS POLIMEROS",
+					"FIBRAS SINTETICAS",
+					"POLIESTIRENOS",
+					"POLIETILENO",
+					"POLIMEROS INORGANICOS",
+					"QUIMICA DE LOS MONOMEROS",
+					"CELULOSA",
+					"ELASTOMEROS",
+					"ESTABILIDAD DE LAS MACROMOLECULAS",
+					"FIBRAS NATURALES",
+					"GOMAS",
+					"MACROMOLECULAS",
+					"MODIFICACION DE LAS MACROMOLECULAS",
+					"OTROS",
+					"POLIELECTROLITOS",
+					"POLIESTERES",
+					"POLIMEROS COMPUESTOS",
+					"POLIMEROS DISPERSOS",
+					"POLIMEROS ELEVADOS",
+					"POLIMEROS RETICULADOS",
+					"POLIPEPTIDOS Y PROTEINAS",
+					"POLISACARIDOS",
+					"POLIURETANOS",
+					"PLASTICOS CELULARES",
+					"SINTESIS DE LAS MACROMOLECULAS"]
+      disciplineValue = quimicaDeLasMacromoleculas;
+    }
+     if(disciplineValue =="QUIMICA NUCLEAR"){
+      var quimicaNuclear = [  
+      				"MOLECULAS MARCADAS",
+					"OTROS",
+					"RADIOISOTOPOS",
+					"RADIOQUIMICA",
+					"SEPARACION DE ISOTOPOS",
+					"TRAZADORES DE ISOTOPOS",
+					"QUIMICA DE LOS ATOMOS RADIACTIVOS",
+					"QUIMICA DE LAS RADIACIONES"]
+      disciplineValue = quimicaNuclear;
+    }
+     if(disciplineValue =="QUIMICA ORGANICA"){
+      var quimicaOrganica = [  
+      				"PRODUCTOS ORGANOMETALICOS",
+					"QUIMICA DE LAS MATERIAS TINTOREAS",
+					"QUIMICA DE LOS ESTEROIDES",
+					"QUIMICA DEL CARBANION",
+					"QUIMICA DEL ORGANOAZUFRE",
+					"COMPUESTOS HETEROCICLICOS",
+					"DERIVADOS DEL BENCENO",
+					"ESTEROQUIMICA Y ANALISIS DE CONFIGURACION",
+					"ESTRUCTURA DE LAS MOLECULAS ORGANICAS",
+					"HIDROCARBUROS AROMATICOS",
+					"HIDROCARBUROS ALIFATICOS",
+					"MECANICA DE LAS REACCIONES",
+					"OTROS",
+					"QUIMICA BICICLICA",
+					"QUIMICA DE LOS HIDRATOS DE CARBONO",
+					"QUIMICA DE LOS ORGANOFOSFOROS",
+					"QUIMICA DE LOS ORGANOSILICONES",
+					"QUIMICA DEL CARBONIO",
+					"RADICALES LIBRES"]
+      disciplineValue = quimicaOrganica;
+    }
+    if(disciplineValue =="FARMACOBIOLOGIA"){
+      var farmacobiologia = [  
+      				"QUIMICA BIOMOLECURAR",
+					"QUIMICA MEDICINAL"]
+      disciplineValue = farmacobiologia;
+    }
+       if(disciplineValue =="BIOLOGIA ANIMAL Y ZOOLOGIA"){
+      var biologiaAnimalyZoologia = [  
+      				"ANATOMIA ANIMAL",
+					"CRECIMIENTO DE LOS ANIMALES",
+					"FISIOLOGIA ANIMAL",
+					"CITOLOGIA ANIMAL",
+					"COMPORTAMIENTO ANIMAL",
+					"COMUNICACION ANIMAL",
+					"DESARROLLO ANIMAL",
+					"ECOLOGIA ANIMAL",
+					"EMBRIOLOGIA ANIMAL",
+					"GENETICA ANIMAL",
+					"HERPETOLOGIA",
+					"HISTOLOGIA ANIMAL",
+					"INVERTEBRADOS",
+					"MAMIFEROS",
+					"ORNITOLOGIA",
+					"OTROS",
+					"PARASITOLOGIA ANIMAL",
+					"PATOLOGIA ANIMAL",
+					"PRIMATOLOGIA",
+					"PROTOZOOLOGIA",
+					"TAXONOMIA ANIMAL",
+					"VERTEBRADOS",
+					"ZOOLOGIA GENERAL",
+					"ZOOLOGIA MARINA"]
+      disciplineValue = biologiaAnimalyZoologia;
+    }
+       if(disciplineValue =="ANTROPOLOGIA FISICA"){
+      var antroplogiaFisica = [  
+      				"ANTROPOLOGIA MEDICA",
+					"ANTROPOMETRIA Y ANTROPOLOGIA FORENSE",
+					"ARCHIVOS ANTROPOLOGICOS",
+					"BIOLOGIA DE LA POBLACION",
+					"BIOLOGIA RACIAL",
+					"COMPORTAMIENTO DE LOS PRIMATES",
+					"CONSTITUCION CORPORAL",
+					"CRECIMIENTO SOMATICO",
+					"COMPOSICION CORPORAL",
+					"HABITOS DE NUTRICION",
+					"SOMATOLOGIA DE LOS PRIMATES",
+					"ENVEJECIMIENTO SOMATICO",
+					"ETNOLOGIA",
+					"GENETICA ANTROPOLOGICA",
+					"OSTEOLOGIA",
+					"OTROS"]
+      disciplineValue = antroplogiaFisica;
+    }
+     if(disciplineValue =="BIOMATEMATICA"){
+      var biomatematica = [  
+      				"BIOESTADISTICA",
+      				"OTROS"]
+      disciplineValue = biomatematica;
+    }
+    if(disciplineValue =="BIOMETRIA"){
+      var biometrica = [  
+      				"BIOACUSTICA"
+					,"BIOELECTRICIDAD"
+					,"BIOENERGETICA"
+					,"BIOMECANICA"
+					,"BIOOPTICA"
+					,"FISICA MEDICA"
+					,"OTROS"]
+      disciplineValue = biometrica;
+    }
+    if(disciplineValue =="BIOLOGIA CELULAR"){
+      var biologiaCelular = [  
+
+      				"CULTIVO CELULAR"
+					,"GENETICA CELULAR"
+					,"MORFOLOGIA CELULAR"
+					,"CITOLOGIA"
+					,"CULTIVO DE TEJIDOS"
+					,"OTROS"]
+	disciplineValue = biologiaCelular;
+    }
+    if(disciplineValue =="ETOLOGIA"){
+      var etopologia = [  
+      				"ANIMAL",
+					"DE LOS INSECTOS",
+					"HUMANA",
+					"OTROS",]
+	disciplineValue = etopologia;
+    }
+      if(disciplineValue =="GENETICA"){
+      var genetica = [  
+      				"EMBRIOLOGIA",
+					"GENETICA DE POBLACIONES",
+					"INGENIERIA GENETICA",
+					"OTROS"]
+	disciplineValue = genetica;
+    }
+      if(disciplineValue =="BIOLOGIA HUMANA"){
+      var biologiaHumana = [  
+      				"EMBRIOLOGIA HUMANA",
+					"FISIOLOGIA HUMANA",
+					"ANATOMIA HUMANA",
+					"ANATOMIA SISTEMATICA",
+					"ANATOMIA TOPOGRAFICA",
+					"CITOLOGIA HUMANA",
+					"DESARROLLO HUMANO",
+					"ECOLOGIA HUMANA,",
+					"GENETICA HUMANA",
+					"GRUPOS SANGUINEOS",
+					"HISTOLOGIA HUMANA",
+					"NEUROANATOMIA HUMANA,",
+					"ORGANOS SENSORIALES",
+					"OTROS"]
+	disciplineValue = biologiaHumana;
+    }
+      if(disciplineValue =="FISIOLOGIA HUMANA"){
+      var fisiologiaHumana = [  
+      				"FISIOLOGIA DE LAS ACTITUDES",
+					"ANESTESIOLOGIA",
+					"FISIOLOGIA CARDIOVASCULAR,",
+					"FISIOLOGIA DEL SISTEMA ENDOCRINO",
+					"FISIOLOGIA DEL EJERCICIO",
+					"FISIOLOGIA GASTROINTESTINAL,",
+					"METABOLISMOS HUMANOS",
+					"REGULACION DE LA TEMPERATURA HUMANA",
+					"FISIOLOGIA MUSCULAR",
+					"NEUROFISIOLOGIA",
+					"FISIOLOGIA DEL SISTEMA NERVIOSO CENTRAL",
+					"FISIOLOGIA DE LA AUDICION",
+					"FISIOLOGIA DEL HABLA",
+					"FISIOLOGIA DE LA VISION",
+					"FISIOLOGIA DE LA REPRODUCCION",
+					"FISIOLOGIA DE LA RESPIRACION",
+					"FISIOLOGIA DE LA LOCOMOCION",
+					"OTROS"]
+	disciplineValue = fisiologiaHumana;
+    }
+          if(disciplineValue =="ENTOMOLOGIA GENERAL"){
+      var entomologiaGeneral = [  
+      				"ENTOMOLOGIA GENERAL",
+					"DESARROLLO DE LOS INSECTOS",
+					"ECOLOGIA DE LOS INSECTOS",
+					"MORFOLOGIA DE LOS INSECTOS",
+					"FISIOLOGIA DE LOS INSECTOS",
+					"TAXONOMIA DE LOS INSECTOS",
+					"OTROS"]
+	disciplineValue = entomologiaGeneral;
+    }
+         if(disciplineValue =="MICROBIOLOGIA"){
+      var microbiologia = [  
+      				"ANTIBIOTICOS",
+					"FISIOLOGIA BACTERIANA",
+					"METABOLISMO BACTERIANO",
+					"BACTERIOLOGIA",
+					"BACTERIOFAGOS",
+					"HONGOS",
+					"METABOLISMO MICROBIANO",
+					"PROCESOS MIROCROBIANOS",
+					"MOHOS",
+					"MICOLOGIA (LEVADURAS)",
+					"OTROS"]
+	disciplineValue = microbiologia;
+    }
+           if(disciplineValue =="PALEONTOLOGIA"){
+      var paleontologia = [  
+      				"PALEONTOLOGIA ANIMAL",
+					"PALEONTOLOGIA DE LOS INVERTEBRADOS",
+					"PALINOLOGIA",
+					"PALEONTOLOGIA VEGETAL",
+					"PALEONTOLOGIA DE LOS VERTEBRADOS",
+					"OTROS"]
+	disciplineValue = paleontologia;
+    }
+          if(disciplineValue =="BOTANICA"){
+      var botanica = [  
+      				"BRIOLOGIA",
+					"DENDROLOGIA",
+					"BOTANICA GENERAL",
+					"LIMNOLOGIA",
+					"BIOLOGIA MARINA",
+					"MICOLOGIA (HONGOS)",
+					"FICOLOGIA",
+					"FOTOBIOLOGIA",
+					"FITOPATOLOGIA",
+					"PALEOBOTANICA",
+					"ANATOMIA VEGETAL",
+					"CITOLOGIA VEGETAL",
+					"ECOLOGIA VEGETAL",
+					"GENETICA VEGETAL",
+					"CRECIMIENTO DE LAS PLANTAS",
+					"HISTOLOGIA VEGETAL",
+					"NUTRICION DE LAS PLANTAS",
+					"PARASITOLOGIA VEGETAL",
+					"FISIOLOGIA VEGETAL",
+					"TAXONOMIA VEGETAL",
+					"TERIDOLOGIA",
+					"OTROS",]
+	disciplineValue = botanica;
+    }
+           if(disciplineValue =="VIROLOGIA"){
+      var virologia = [  
+      				"ARBOVIRUS",
+					"BACTERIOFAGOS",
+					"VIRUS DERMATROPICOS",
+					"VIRUS ENTERICOS",
+					"VIRUS NEUROTROPICOS",
+					"VIRUS PANTROPICOS",
+					"POXVIRUS",
+					"VIRUS DEL SISTEMA RESPIRATORIO",
+					"VIRUS VISCEROTROPICOS",
+					"OTROS"]
+	disciplineValue = virologia;
+    }
+      if(disciplineValue =="MEDIO AMBIENTE"){
+      var medioAmbiente = [  
+      			"GESTIÓN AMBIENTAL"]
+	disciplineValue = medioAmbiente;
+    }
+     if(disciplineValue =="CIENCIAS ATMOSFERICAS"){
+      var cienciasAtmosfericas = [  
+      			"AERONOMIA",
+				"RESPLANDOR CELESTE",
+				"INTERACCION AIRE-MAR",
+				"ACUSTICA DE LA ATMOSFERA",
+				"QUIMICA DE LA ATMOSFERA",
+				"DINAMICA DE LA ATMOSFERA",
+				"ELECTRICIDAD ATMOSFERICA",
+				"OPTICA DE LA ATMOSFERA",
+				"RADIACTIVIDAD ATMOSFERICA",
+				"ESTRUCTURA DE LA ATMOSFERA",
+				"TERMODINAMICA DE LA ATMOSFERA",
+				"TURBULENCIA ATMOSFERICA",
+				"AURORA",
+				"FISICA DE LAS NUBES",
+				"RAYOS COSMICOS",
+				"DIFUSION ATMOSFERICA",
+				"PULSACIONES GEOMAGNETICAS",
+				"IONOSFERA",
+				"PARTICULAS MAGNETOSFERICAS",
+				"ONDAS MAGNETOSFERICAS",
+				"MODELIZACION NUMERICA",
+				"FISICA DE LAS PRECIPITACIONES",
+				"TRANSFERENCIA RADIACTIVA",
+				"RADIACION SOLAR",
+				"OTROS"]
+	disciplineValue = cienciasAtmosfericas;
+    }
+    
+    if(disciplineValue =="CLIMATOLOGIA"){
+      var climatologia = [ "BIOCLIMATOLOGIA",
+      "CLIMATOLOGIA ANALITICA",
+      "CLIMATOLOGIA APLICADA",
+      "CLIMATOLOGIA FISICA",
+      "CLIMATOLOGIA REGIONAL",
+      "MICROCLIMATOLOGIA",
+      "OTROS",
+      "PALEOCLIMATOLOGIA"]
+	disciplineValue = climatologia;
+    }
+
+     if(disciplineValue =="GEOQUIMICA"){
+      var geoquimica = ["COSMOQUIMICA",
+      "PETROLOGIA EXPERIMENTAL",
+      "GEOQUIMICA DE EXPLORACION",
+      "GEOCRONOLOGIA Y RADIOISOTOPOS",
+      "GEOQUIMICA DE ALTA TEMPERATURA",
+      "EOQUIMICA DE BAJA TEMPERATURA",
+      "GEOQUIMICA ORGANICA",
+      "ISOTOPOS ESTABLES",
+      "DISTRIBUCION DE ELEMENTOS TRAZA",
+      "OTROS"]
+	disciplineValue = geoquimica;
+    }
+ 
+     if(disciplineValue =="GEODESIA"){
+      var geodesia = ["ASTRONOMIA GEODESICA",
+      "CARTOGRAFIA GEODESICA",
+      "NAVEGACION GEODESICA",
+      "FOTOGRAMETRIA GEODESICA",
+      "EXPLORACION"]
+	disciplineValue = geodesia;
+    }
+     if(disciplineValue =="GEOGRAFIA"){
+      var geografia = [  
+				"BIOGEOGRAFIA",
+				"CARTOGRAFIA GEOGRAFICA",
+				"GEOGRAFIA DE LOS RECURSOS NATURALES",
+				"GEOGRAFIA FISICA",
+				"GEOGRAFIA MEDICA",
+				"GEOGRAFIA TOPOGRAFICA",
+				"TEORIA DE LA SITUACION",
+				"USO DE LAS TIERRAS",
+				"OTROS"]
+	disciplineValue = geografia;
+    }
+      if(disciplineValue =="GEOLOGIA"){
+      var geologia = [  
+				"ANALISIS DE DIAGRAMAS DE POZO",
+				"ECONOMIA DE LOS HIDROCARBUROS",
+				"ESTRATIGRAFIA",
+				"EXPLORACION GEOLOGICA",
+				"FOTOGEOLOGIA",
+				"GEOHIDROLOGIA",
+				"GEOLOGIA DE LAS DIVERSAS AREAS DE LA SUPERFICIE TERRESTRE",
+				"GEOLOGIA DEL CARBON",
+				"GEOLOGIA DEL MEDIO AMBIENTE",
+				"GEOLOGIA DEL PETROLEO",
+				"GEOLOGIA ESTRUCTURAL",
+				"GEOLOGIA GLACIAL",
+				"GEOMORFOLOGIA",
+				"INGENIERIA GEOLOGICA",
+				"MECANICA DE LAS ROCAS",
+				"MINERALOGIA",
+				"PETROLOGIA IGNEA Y METAMORFICA",
+				"PETROLOGIA SEDIMENTARIA",
+				"PROCESOS Y ENERGIA GEOTERMICOS",
+				"SEDIMENTOLOGIA",
+				"TELEDETECCION (GEOLOGIA)",
+				"VULCANOLOGIA",
+				"YACIMIENTOS MINERALES",
+				"OTROS"]
+	disciplineValue = geologia;
+    }
+     if(disciplineValue =="GEOFISICA"){
+      var geofisica = [  
+				"EXPLORACION GEOFISICA",
+				"FLUJO DE CALOR (TERRESTRE)",
+				"GEOFISICA DE LA TIERRA SOLIDA",
+				"GEOMAGNETISMO Y EXPLORACION MAGNETICA",
+				"GRAVEDAD TERRESTRE Y EXPLORACION DE LA GRAVEDAD",
+				"PALEOMAGNETISMO",
+				"SISMOLOGIA Y EXPLORACION SISMICA",
+				"TECTONICA",
+				"OTROS"]
+	disciplineValue = geofisica;
+    }
+     if(disciplineValue =="HIDROLOGIA"){
+      var hidrologia = [  
+				"AGUAS SUBTERRANEAS",
+				"AGUAS SUPERFICIALES",
+				"CALIDAD DEL AGUA",
+				"EROSION DEL AGUA",
+				"EVAPORACION",
+				"GLACIOLOGIA",
+				"HIDROBIOLOGIA",
+				"HIDROGRAFIA",
+				"HIELO",
+				"HUMEDAD DEL SUELO",
+				"LIMNOLOGIA",
+				"NIEVE",
+				"PRECIPITACIONES",
+				"SUELOS HELADOS",
+				"TRANSPIRACION",
+				"OTROS"]
+	disciplineValue = hidrologia;
+    }
+       if(disciplineValue =="METEOROLOGIA"){
+      var metereologia = [  
+				"ANALISIS METEOROLOGICO",
+				"CONTAMINACION DEL AIRE",
+				"CONTROL DEL TIEMPO (METEOROLOGIA)",
+				"HIDROMETEOROLOGIA",
+				"INSTRUCCIONES DE OBSERVACION (METEOROLOGIA)",
+				"MESOMETEOROLOGIA",
+				"METEOROLOGIA AGRICOLA",
+				"METEOROLOGIA INDUSTRIAL",
+				"METEOROLOGIA MARINA",
+				"METEOROLOGIA MEDIANTE COHETES",
+				"METEOROLOGIA MEDIANTE SATELITES",
+				"METEOROLOGIA POLAR",
+				"METEOROLOGIA POR RADAR",
+				"METEOROLOGIA SINOPTICA",
+				"METEOROLOGIA TROPICAL",
+				"MICROMETEOROLOGIA",
+				"PREDICCION METEOROLOGICA NUMERICA",
+				"PREVISION METEOROLOGICA OPERACIONAL",
+				"PREVISION METEOROLOGICA PROLONGADA",
+				"RADIOMETEOROLOGIA",
+				"OTROS"]
+	disciplineValue = metereologia;
+    }
+     if(disciplineValue =="OCEANOGRAFIA"){
+      var oceonografia = [  
+			"BOTANICA MARINA",
+			"HIELO MARINO",
+			"INTERACCIONES MAR-AIRE",
+			"OCEANOGRAFIA BIOLOGICA",
+			"OCEANOGRAFIA DESCRIPTIVA",
+			"OCEANOGRAFIA FISICA",
+			"OCEANOGRAFIA QUIMICA",
+			"PROCESOS DE LAS COSTAS Y DE LAS AREAS PROXIMAS A LAS COSTAS",
+			"PROCESOS DEL FONDO DEL MAR",
+			"SONIDOS SUBMARINOS",
+			"ZOOLOGIA MARINA",
+			"OTROS"]
+	disciplineValue = oceonografia;
+    }
+      if(disciplineValue =="CIENCIAS DEL SUELO"){
+      var cienciasDelSuelo = [  
+			"BIOLOGICA DE SUELOS",
+			"BIOQUIMICA DEL SUELO",
+			"CARTOGRAFIA DE SUELOS",
+			"CLASIFICACION DE SUELOS",
+			"CONSERVACION DEL SUELO",
+			"FISICA DEL SUELO",
+			"INGENIERIA EDAFOLOGICA",
+			"MECANICA DEL SUELO (AGRICULTURA)",
+			"MICROBIOLOGIA DE LOS SUELOS",
+			"MINERALOGIA DE LOS SUELOS",
+			"MORFOLOGIA Y GENESIS DE LOS SUELOS",
+			"QUIMICA DEL SUELO",
+			"OTROS"]
+	disciplineValue = cienciasDelSuelo;
+    }
+     if(disciplineValue =="CIENCIAS DEL COSMOS"){
+      var cienciasDelCosmos = [  
+			"BIOLOGIA ESPACIAL",
+			"FISIOLOGIA ESPACIAL",
+			"MEDICINA AEROSPACIAL",
+			"OTROS"]
+	disciplineValue = cienciasDelCosmos;
+    }
+      if(disciplineValue =="SALUD PÚBLICA"){
+      var saludPublica = [  
+			"ADMINISTRACIÓN DE LOS SERVICIOS DE SALUD",
+				"ANTROPOLOGÍA MÉDICA",
+				"EPIDEMIOLOGÍA",
+				"OTROS"]
+	disciplineValue = saludPublica;
+    }
+     if(disciplineValue =="INVESTIGACIÓN EN SALUD"){
+      var investigacionEnSalud = [  
+			"BIOMEDICINA",
+			"INVESTIGACION CLÍNICA",
+			"INVESTIGACIÓN EN ADICCIONES",
+			"SISTEMAS DE SALUD",
+			"OTROS"]
+	disciplineValue = investigacionEnSalud;
+    }
+       if(disciplineValue =="ENFERMERÍA"){
+      var enfermeria = [  
+			"SALUD MATERNA"]
+	disciplineValue = enfermeria;
+    }
+       if(disciplineValue =="QUIMICA AGRONOMICA"){
+      var quimicaAgronomica = [  
+			"BIOQUIMICA AGRONOMICA",
+			"FUNGICIDAS",
+			"HERBICIDAS",
+			"INSECTICIDAS",
+			"PLAGUICIDAS",
+			"PRODUCTOS DE CULTIVOS NO COMESTIBLES",
+			"PRODUCTOS DE PESCADO",
+			"PRODUCTOS LACTEOS",
+			"REGULADORES DEL CRECIMIENTO DE LAS PLANTAS",
+			"TECNICAS DE PRODUCCION DE FERTILIZANTES",
+			"USO DE FERTILIZANTES",
+			"OTROS"]
+	disciplineValue = quimicaAgronomica;
+    }
+     if(disciplineValue =="INGENIERIA RURAL"){
+      var ingenieriaRural = [  
+			"CONSTRUCCION RURAL",
+			"DRENAJE",
+			"EQUIPO DE GRANJA",
+			"MECANICA AGRICOLA",
+			"RIEGO",
+			"OTROS"]
+	disciplineValue = ingenieriaRural;
+    }
+       if(disciplineValue =="AGRONOMIA "){
+      var agronomia = [  
+			"AGRICULTURA EN ZONAS ARIDAS",
+			"AGRICULTURA EN ZONAS TEMPLADAS",
+			"AGRICULTURA EN ZONAS TROPICALES",
+			"CESPED",
+			"COMPORTAMIENTO DEL SUELO CON UTILIZACIONES ALTERNADAS",
+			"CONTROL DE MALEZAS",
+			"CULTIVOS DE CAMPO",
+			"CULTIVOS FORRAJEROS",
+			"CULTIVOS ORNAMENTALES",
+			"DIVULGACION Y EXTENSION AGRICOLA",
+			"FERTILIDAD DEL SUELO",
+			"FITOGENETICA",
+			"GESTION DE CULTIVOS",
+			"GESTION DE LA PRODUCCION VEGETAL",
+			"HIBRIDACION DE CULTIVOS",
+			"PASTIZALES",
+			"PROTECCION DE CULTIVOS",
+			"SEMILLAS",
+			"TECNOLOGIA DE CULTIVOS",
+			"OTROS"]
+	disciplineValue = agronomia;
+    }
+        if(disciplineValue =="CIENCIAS VETERINARIAS"){
+      var cienciasVeterinarias = [  
+			"APICULTURA",
+			"ATENCION Y GESTION",
+			"AVES DE CORRAL",
+			"BOVINOS",
+			"CONTROL Y NORMAS",
+			"CUNICULTURA",
+			"EQUINOS",
+			"GENETICA",
+			"INSTRUMENTACION",
+			"NUTRICION",
+			"OVINOS",
+			"PORCINOS",
+			"PRODUCTOS",
+			"REPRODUCCION",
+			"SELECCION",
+			"SERICULTURA",
+			"ZOOTECNIA GENERAL",
+			"OTROS"]
+	disciplineValue = cienciasVeterinarias;
+    }
+        if(disciplineValue =="PECES Y ANIMALES SALVAJES"){
+      var pecesYAnimalesSalvajes = [  
+			"BIOLOGIA PESQUERA",
+			"CAZA (ANIMALES)",
+			"CONSERVACION Y ORDENAMIENTO DE LOS ANIMALES SALVAJES",
+			"CONTROLES",
+			"DINAMICA POBLACIONES",
+			"ELABORACION DEL PESCADO",
+			"HABITOS DE ALIMENTACION",
+			"INFLUENCIAS DEL HABITAT",
+			"LOCALIZACION DE PECES",
+			"MECANICA DE LA PESCA",
+			"PISCICULTURA",
+			"PROPAGACION Y ORDENAMIENTO",
+			"PROTECCION DE PECES",
+			"OTROS"]
+	disciplineValue = pecesYAnimalesSalvajes;
+    }
+      if(disciplineValue =="HORTICULTURA"){
+      var horticultura = [  
+			"FITOGENETICA",
+			"FLORICULTURA",
+			"FRUTAS",
+			"HIBRIDACION",
+			"HORTALIZAS",
+			"TECNICAS DE CULTIVO",
+			"OTROS"]
+	disciplineValue = horticultura;
+    }
+      if(disciplineValue =="FITOPATOLOGIA"){
+      var fitopatologia = [  
+			"BACTERIAS",
+			"CONTROL AMBIENTAL DE ENFERMEDADES",
+			"CONTROL BIOLOGICO DE ENFERMEDADES",
+			"CONTROL QUIMICO DE ENFERMEDADES",
+			"FISIOGENESIS",
+			"HONGOS",
+			"NEMATODOS",
+			"SENSIBILIDAD Y RESISTENCIA DE LAS PLANTAS",
+			"VIRUS",
+			"OTROS"]
+	disciplineValue = fitopatologia;
+    }
+         if(disciplineValue =="CIENCIAS VETERINARIAS"){
+      var cienciasVeterinarias = [  
+			"ANATOMIA",
+			"ANESTESIOLOGIA",
+			"BIOQUIMICA",
+			"CIRUGIA",
+			"FARMACOLOGIA",
+			"FISIOLOGIA",
+			"GENETICA",
+			"HEMATOLOGIA",
+			"INMUNOLOGIA",
+			"MEDICINA INTERNA",
+			"MICROBIOLOGIA",
+			"MORFOLOGIA",
+			"NUTRICION",
+			"OBSTETRICIA",
+			"PATOLOGIA",
+			"RADIOLOGIA",
+			"VIROLOGIA",
+			"OTROS"]
+	disciplineValue = cienciasVeterinarias;
+    }
+        if(disciplineValue =="MEDICINA CLINICA"){
+      var medicinaClinica = [  
+			"CANCEROLOGIA",
+			"DERMATOLOGIA",
+			"GENETICA CLINICA",
+			"GERIATRIA",
+			"GINECOLOGIA",
+			"MICROBIOLOGIA CLINICA",
+			"OFTALMOLOGIA",
+			"PATOLOGIA CLINICA",
+			"PEDIATRIA",
+			"PSICOLOGIA CLINICA",
+			"RADIOLOGIA",
+			"RADIOTERAPIA",
+			"SIFILOGRAFIA",
+			"OTROS"]
+	disciplineValue = medicinaClinica;
+    }
+      if(disciplineValue =="MEDICINA DEL TRABAJO"){
+      var medicinaDelTrabajo = [  
+			"ENFERMEDADES PROFESIONALES",
+			"MEDICINA NUCLEAR",
+			"REHABILITACION MEDICA",
+			"SANIDAD DEL TRABAJO",
+			"OTROS"]
+	disciplineValue = medicinaDelTrabajo;
+    }
+      if(disciplineValue =="MEDICINA INTERNA"){
+      var medicinaInterna = [  
+			"CARDIOLOGIA",
+			"ENDOCRINOLOGIA",
+			"ENFERMEDADES INFECCIOSAS",
+			"ENFERMEDADES PULMONARES",
+			"GASTROENTEROLOGIA",
+			"HEMATOLOGIA",
+			"NEFROLOGIA",
+			"NEUROLOGIA",
+			"REUMATOLOGIA",
+			"OTROS"]
+	disciplineValue = medicinaInterna;
+    }
+      if(disciplineValue =="NUTRICION"){
+      var nutricion = [ 
+			"DEFICIENCIAS ALIMENTARIAS",
+			"DIGESTION",
+			"ELEMENTOS MINERALES DE LOS ALIMENTOS",
+			"ELEMENTOS TRAZA EN LOS ALIMENTOS",
+			"ENFERMEDADES NUTRICIONALES",
+			"INTOXICANTES NATURALES",
+			"METABOLISMO DE LA ENERGIA",
+			"NECESIDADES ALIMENTARIAS",
+			"NUTRIENTES",
+			"PATOGENOS DE LOS ALIMENTOS",
+			"TOXICIDAD DE LOS ALIMENTOS",
+			"VALORES NUTRIENTES",
+			"VITAMINAS",
+			"OTROS"]
+	disciplineValue = nutricion;
+    }
+      if(disciplineValue =="PATOLOGIA"){
+      var patologia = [  
+			"ALERGIAS",
+			"ARTERIOSCLEROSIS",
+			"CARCINOGENESIS",
+			"ENDOTOXINAS",
+			"HEMATOLOGIA",
+			"HISTOPATOLOGIA",
+			"INMUNOPATOLOGIA",
+			"NEUROPATOLOGIA",
+			"ONCOLOGIA",
+			"OSTEOPATOLOGIA",
+			"PARASITOLOGIA",
+			"PATOLOGIA CARDIOVASCULAR",
+			"PATOLOGIA COMPARADA",
+			"PATOLOGIA DE LAS RADIACIONES",
+			"PATOLOGIA EXPERIMENTAL",
+			"STRESS",
+			"TERATOLOGIA",
+			"TROMBOSIS",
+			"OTROS"]
+	disciplineValue = patologia;
+    }
+      if(disciplineValue =="FARMACODINAMICA"){
+      var farmacodinamica = [  
+			"ABSORCION DE LOS MEDICAMENTOS",
+			"ACTIVACION",
+			"AUTOCATALISIS",
+			"CATALISIS",
+			"EFECTO DE LOS MEDICAMENTOS",
+			"INMUNOCATALISIS",
+			"INTERACCION DE ANTIGENOS",
+			"LUGARES RADIACTIVOS",
+			"MECANISMOS DE ACCION DE LOS MEDICAMENTOS",
+			"PROCESOS METABOLICOS DE LOS MEDICAMENTOS",
+			"PROCESOS MULTIPLES",
+			"RECEPTORES",
+			"TERAPIA CON MEDICAMENTOS",
+			"OTROS"]
+	disciplineValue = farmacodinamica;
+    }
+        if(disciplineValue =="FARMACOLOGIA"){
+      var farmacologia = [  
+			"ANALISIS DE LOS PRODUCTOS FARMACEUTICOS",
+			"COMPOSICION DE LOS MEDICAMENTOS",
+			"EVALUACION DE LOS MEDICAMENTOS",
+			"FARMACIA GALENICA",
+			"FARMACOGNOSIA",
+			"FARMACOPEAS",
+			"FITOFARMACOS",
+			"MEDICAMENTOS DE ORIGEN NATURAL",
+			"MEDICAMENTOS SINTETICOS",
+			"NORMALIZACION DE LOS MEDICAMENTOS",
+			"PSICOFARMACOLOGIA",
+			"RADIOFARMACOS",
+			"OTROS"]
+	disciplineValue = farmacologia;
+    }
+       if(disciplineValue =="MEDICINA QUIRURGICA"){
+      var medicinaQuirurgica = [  
+			"ANESTESIOLOGIA",
+			"CIRUGIA ABDOMINAL",
+			"CIRUGIA CARDIACA",
+			"CIRUGIA DE TRANSPLANTES",
+			"CIRUGIA ESTETICA",
+			"CIRUGIA EXPERIMENTAL",
+			"CIRUGIA MAXILO-FACIAL",
+			"CIRUGIA OCULAR",
+			"CIRUGIA ORTOPEDICA",
+			"CIRUGIA OSEA",
+			"CIRUGIA OTORRINOLARINGOLOGICA",
+			"CIRUGIA VASCULAR",
+			"ENDODONCIA",
+			"ESTOMATOLOGIA-ORTODONCIA",
+			"EXODONCIA",
+			"FISIOTERAPIA",
+			"NEUROCIRUGIA",
+			"PARADONCIA",
+			"PROCTOLOGIA",
+			"PROSTODONCIA",
+			"TRAUMATOLOGIA",
+			"UROLOGIA",
+			"OTROS"]
+	disciplineValue = medicinaQuirurgica;
+    }
+      if(disciplineValue =="TECNOLOGIA E INGENIERIA AERONAUTICA"){
+      var tecnologiaeIngenieriaAeronautica = [  
+			"A LA ROTATORIA",
+			"AERODINAMICA",
+			"AERONAVES",
+			"AEROPUERTOS Y TRANSPORTE AEREO",
+			"CARGAS AERODINAMICAS",
+			"CARGAS DE ATERRIZAJE",
+			"COMBUSTIBLE PARA AERONAVES COMBUSTION",
+			"COMPRESORES Y TURBINAS",
+			"DISPOSITIVOS DE SUSPENSION NEUMATICA",
+			"ESTABILIDAD Y CONTROL",
+			"ESTRUCTURAS DE AERONAVES",
+			"HIDRODINAMICA",
+			"INSTRUMENTACION (AVIACION)",
+			"MATERIALES PARA SISTEMAS DE PROPULSION",
+			"SISTEMAS DE PROPULSION",
+			"TEMBLOR Y VIBRACION",
+			"TEORIA AERODINAMICA",
+			"VUELOS: ENSAYO E INVESTIGACION",
+			"OTROS"]
+	disciplineValue = tecnologiaeIngenieriaAeronautica;
+    }
+        if(disciplineValue =="TECNOLOGIA BIOQUIMICA"){
+      var tecnologiaBioquimica = [  
+			"BIOTECNOLOGIA MARINA",
+			"MICROBIOLOGIA INDUSTRIAL",
+			"TECNOLOGIA DE LA FERMENTACION",
+			"TECNOLOGIA DE LOS ANTIBIOTICOS",
+			"OTROS"]
+	disciplineValue = tecnologiaBioquimica;
+    }
+        if(disciplineValue =="TECNOLOGIA E INGENIERIA QUIMICA"){
+      var tecnologiaeIngenieriaQuimica = [  
+			"DESIONIZACION",
+			"ECONOMIA QUIMICA",
+			"GALVANOPLASTIA",
+			"OPERACIONES ELECTROQUIMICAS",
+			"PROCESOS NUCLEOQUIMICOS",
+			"PROCESOS QUIMICOS",
+			"PROYECTOS",
+			"QUIMICA INDUSTRIAL",
+			"RECUBRIMIENTOS IMPERMEABLES",
+			"RECUBRIMIENTOS PROTECTORES",
+			"RECUBRIMIENTOS REFRACTARIOS",
+			"SEPARACION QUIMICA",
+			"SINTESIS QUIMICA",
+			"TECNOLOGIA DE LA CATALISIS",
+			"TECNOLOGIA DE LA COMBUSTION",
+			"TECNOLOGIA DE LA CORROSION",
+			"TECNOLOGIA DE LA PRESERVACION",
+			"OTROS"]
+	disciplineValue = tecnologiaeIngenieriaQuimica;
+    }
+      if(disciplineValue =="TECNOLOGIA DE LA INFORMATICA"){
+      var tecnologiaDeLaInformatica = [  
+			"ARITMETICA E INSTRUCCIONES PARA LA UTILIZACION DE MAQUINAS",
+			"ARQUITECTURA DE COMPUTADORES",
+			"COMPUTADORES ANALOGICOS",
+			"COMPUTADORES DIGITALES",
+			"COMPUTADORES HIBRIDOS",
+			"CONVERTIDORES DE SISTEMA ANALOGICO A SISTEMA NUMERICO",
+			"DISEÑO DE SISTEMAS DE CALCULO NUMERICO",
+			"DISEÑO LOGICO",
+			"DISPOSITIVOS DE ALMACENAMIENTO",
+			"DISPOSITIVOS DE CONTROL",
+			"DISPOSITIVOS DE TRANSMISION DE DATOS",
+			"EQUIPO PERIFERICO DE COMPUTADORES",
+			"FIABILIDAD DE LOS COMPUTADORES",
+			"SISTEMAS DE RECONOCIMIENTO DE CARACTERES",
+			"SISTEMAS DE TIEMPO REAL",
+			"TERMINALES DE COMPUTADOR TERMINALES DE VIDEO Y TRAZADORES DE CURVAS",
+			"UNIDADES CENTRALES DE TRATAMIENTO",
+			"UTILIZABILIDAD DE LOS COMPUTADORES",
+			"OTROS"]
+	disciplineValue = tecnologiaDeLaInformatica;
+    }
+     if(disciplineValue =="TECNOLOGIA DE LA CONSTRUCCION"){
+      var tecnologiaDeLaConstruccion = [  
+			"ABASTECIMIENTO DE AGUA",
+			"ALCANTARILLADO Y PURIFICACION DE AGUA",
+			"CARRETERAS",
+			"CASAS",
+			"CIMIENTOS",
+			"CODIGOS Y ESPECIFICACIONES",
+			"CONSTRUCCION DE AEROPUERTOS",
+			"CONSTRUCCION DE CARRETERAS",
+			"CONSTRUCCION DE FERROCARRILES",
+			"CONSTRUCCION DE MADERA",
+			"CONSTRUCCIONES LIGERAS",
+			"CONSTRUCCIONES METALICAS",
+			"CONSTRUCCIONES PESADAS",
+			"CONSTRUCCIONES PREFABRICADAS",
+			"DISEÑO ARQUITECTONICO",
+			"DRENAJE",
+			"EDIFICIOS GRANDES Y RASCACIELOS",
+			"EDIFICIOS INDUSTRIALES Y COMERCIALES",
+			"EDIFICIOS PUBLICOS",
+			"EXCAVACIONES",
+			"HORMIGON PRETENSADO",
+			"INGENIERIA CIVIL",
+			"INGENIERIA ESTRUCTURAL",
+			"INGENIERIA HIDRAULICA",
+			"MECANICA DEL SUELO (CONSTRUCCION)",
+			"METROLOGIA DE LA CONSTRUCCION",
+			"OBRAS SUBTERRANEAS",
+			"ORGANIZACION DE OBRAS",
+			"OTROS",
+			"PLANIFICACION URBANA",
+			"PRESAS",
+			"PUENTES",
+			"PUERTOS",
+			"REGLAMENTACIONES",
+			"RESISTENCIA ESTRUCTURAL",
+			"RIEGO",
+			"SISTEMAS HIPERESTATICOS",
+			"TECNOLOGIA DEL HORMIGON",
+			"TOPOGRAFIA DE LA CONSTRUCCION",
+			"TUNELES",
+			"VIAS NAVEGABLES INTERIORES"]
+	disciplineValue = tecnologiaDeLaConstruccion;
+    }
+    if(disciplineValue =="TECNOLOGIA E INGENIERIA DE LA ELECTRICIDAD"){
+      var tecnologiaeIngenieriaDeLaElectricidad = [  
+			"APARATO DE CONEXION",
+			"APLICACIONES DE LA ELECTRICIDAD",
+			"CONDUCTORES AISLADOS",
+			"FABRICACION DE EQUIPO ELECTRICO",
+			"ILUMINACION ELECTRICA",
+			"MAQUINARIA ROTATORIA",
+			"MOTORES ELECTRICOS",
+			"OTROS",
+			"TRANSMISION Y DISTRIBUCION",
+			"UTILIZACION DE LA ENERGIA DE LAS CORRIENTES CONTINUAS"]
+	disciplineValue = tecnologiaeIngenieriaDeLaElectricidad;
+    }
+       if(disciplineValue =="TECNOLOGIA ELECTRONICA"){
+      var tecnologiaElectronica = [  
+			"ANTENAS",
+			"AUDIOELECTRONICA",
+			"DISEÑO DE CIRCUITOS",
+			"DISEÑO DE FILTROS",
+			"DISPOSITIVOS DE GRABACION",
+			"DISPOSITIVOS DE LASER",
+			"DISPOSITIVOS DE MICROONDA",
+			"DISPOSITIVOS DE RAYOS X",
+			"DISPOSITIVOS DE SEMICONDUCTORES",
+			"DISPOSITIVOS DE SONAR",
+			"DISPOSITIVOS FOTOELECTRICOS",
+			"DISPOSITIVOS SONICOS",
+			"DISPOSITIVOS TERMOELECTRICOS",
+			"DISPOSITIVOS TERMOIONICOS",
+			"DISPOSITIVOS ULTRASONICOS",
+			"EMISORES DE TELEVISION (TRANSMISORES)",
+			"OTROS",
+			"RADAR",
+			"RECEPTORES DE RADIO",
+			"RECEPTORES DE TELEVISION",
+			"TRADUCTORES ELECTROACUSTICOS",
+			"TRANSISTORES",
+			"TRANSMISORES DE RADIO",
+			"TUBOS ELECTRONICOS"]
+	disciplineValue = tecnologiaElectronica;
+    }
+    if(disciplineValue =="TECNOLOGIA DEL MEDIO AMBIENTE"){
+      var tecnologiaDelMedioAmbiente = [  
+		"AMBIENTAL",
+		"CONTROL DE LA CONTAMINACION DEL AGUA",
+		"DESECHOS INDUSTRIALES",
+		"ECOSISTEMAS RECUPERACION DE",
+		"EDUCACION",
+		"ELIMINACION DE DESECHOS RADIACTIVOS",
+		"MATERIALES",
+		"OTROS",
+		"RECUPERACION DEL AGUA",
+		"REUSO Y RECICLADO",
+		"TECNOLOGIA ANTICONTAMINACION",
+		"TECNOLOGIA DE CONTROL DE INSECTOS",
+		"TECNOLOGIA DE CONTROL DE ROEDORES",
+		"TECNOLOGIA SANITARIA",
+		"CONTROL DE LA CONTAMINACION DEL AIRE",
+		"ELIMINACION DE RESIDUOS",
+		"TECNOLOGIA DE LAS AGUAS CLOACALES",
+		"TECNOLOGIA LIMPIA"]
+	disciplineValue = tecnologiaDelMedioAmbiente;
+    }
+    if(disciplineValue =="TECNOLOGIA DE LA ALIMENTACION"){
+      var tecnologiaDelAlimentacion = [  
+		"ACEITES Y GRASAS VEGETALES",
+		"ADITIVOS ALIMENTARIOS",
+		"ALIMENTOS PARA ANIMALES",
+		"ALIMENTOS PROTEICOS",
+		"ALIMENTOS SINTETICOS",
+		"ALMIDON",
+		"ANTIOXIDANTES EN LOS ALIMENTOS",
+		"AROMATIZANTES",
+		"AZUCAR",
+		"BEBIDAS ALCOHOLICAS",
+		"BEBIDAS NO ALCOHOLICAS",
+		"COLORANTES",
+		"CONSERVACION DE ALIMENTOS",
+		"ELABORACION DE ALIMENTOS",
+		"ESTABILIZADORES",
+		"ESTERILIZACION DE LOS ALIMENTOS",
+		"HIGIENE DE LOS ALIMENTOS",
+		"INDUSTRIA CERVECERA",
+		"LIOFILIZACION",
+		"MOLINERIA",
+		"OTROS",
+		"PANADERIA",
+		"PASTEURIZACION",
+		"PREPARACION DE CONSERVAS",
+		"PRODUCTOS DE CEREALES",
+		"PRODUCTOS LACTEOS",
+		"PROPIEDADES DE LOS ALIMENTOS",
+		"REFRIGERACION",
+		"SECADO POR CONGELACION",
+		"VINO"]
+	disciplineValue = tecnologiaDelAlimentacion;
+    }
+    if(disciplineValue =="TECNOLOGIA INDUSTRIAL"){
+      var tecnologiaIndistrial = [  
+		"DISEÑO",
+		"EQUIPO INDUSTRIAL",
+		"ESPECIFICACIONES DE PROCESOS",
+		"ESTUDIOS DE TIEMPOS Y MOVIMIENTOS",
+		"MAQUINARIA INDUSTRIAL",
+		"OTROS",
+		"PROCESOS INDUSTRIALES",
+		"SISTEMAS",
+		"TECNOLOGIA DE LA ELABORACION",
+		"TECNOLOGIA DEL MANTENIMIENTO"]
+	disciplineValue = tecnologiaIndistrial;
+    }
+    if(disciplineValue =="INSTRUMENTAL TECNOLOGICO"){
+      var instrumentalTecnologico = [  
+		"CONTROL DE MAQUINARIA",
+		"DISPOSITIVOS ELECTROOPTICOS",
+		"EQUIPO DE ENSAYOS ELECTRICOS",
+		"EQUIPO DE LABORATORIO",
+		"EQUIPO DE PRUEBA",
+		"EQUIPO FOTOGRAFICO Y CINEMATOGRAFICO",
+		"INSTRUMENTAL CIENTIFICO",
+		"INSTRUMENTOS DE MEDIDA DEL TIEMPO",
+		"INSTRUMENTOS DE MEDIDAS TERMICAS",
+		"INSTRUMENTOS DENTALES",
+		"INSTRUMENTOS ELECTRICOS",
+		"INSTRUMENTOS ELECTRONICOS",
+		"INSTRUMENTOS MEDICOS",
+		"INSTRUMENTOS OPTICOS",
+		"LENTES",
+		"OTROS",
+		"TECNICAS TELEQUIRICAS",
+		"INSTRUMENTOS TERMOSTATICOS",
+		"SERVOMECANISMOS",
+		"TECNOLOGIA DE LA AUTOMATIZACION"]
+	disciplineValue = instrumentalTecnologico;
+    }
+      if(disciplineValue =="TECNOLOGIA DE LAS MATERIAS"){
+      var tecnologiaDeLasMaterias = [  
+		"CALIZOS",
+		"CEMENTOS",
+		"CERAMETAL (MATERIAL METALOCERAMICO)",
+		"CERAMICA",
+		"COMPOSITOS",
+		"MATERIALES FUNCIONALES",
+		"OTROS",
+		"PLASTICOS",
+		"PRODUCTOS DE LA ARCILLA",
+		"PROPIEDADES DE LOS MATERIALES",
+		"REFRACTARIOS",
+		"RESISTENCIA DE LOS MATERIALES",
+		"TECNOLOGIA DE LA MADERA",
+		"ABRASIVOS",
+		"ENSAYO DE MATERIALES",
+		"VIDRIO"]
+	disciplineValue = tecnologiaDeLasMaterias;
+    }
+     if(disciplineValue =="TECNOLOGIA MECANICA"){
+      var tecnologiaMecanica = [  
+		"APLICACIONES MECANIZADAS",
+		"BOMBAS Y EQUIPO DE MANEJO DE LIQUIDOS",
+		"COJINETES",
+		"COMPRESORES DE AIRE",
+		"DISEÑO DE MAQUINAS",
+		"ENGRANAJES",
+		"EQUIPO DE CALEFACCION",
+		"EQUIPO DE CONSTRUCCION",
+		"EQUIPO DE REFRIGERACION",
+		"EQUIPO DE TRANSMISION DE ENERGIA (MECANICA)",
+		"EQUIPO NEUMATICO",
+		"HERRAMIENTA Y ACCESORIOS",
+		"MAQUINARIA AGRICOLA",
+		"MAQUINARIA DE EXTRACCION DE PETROLEO",
+		"MAQUINARIA DE FABRICACION DE PAPEL",
+		"MAQUINARIA DE IMPRIMIR Y DUPLICAR",
+		"MAQUINARIA DE LA INDUSTRIA ALIMENTARIA",
+		"MAQUINARIA DE MINERIA",
+		"MAQUINARIA HIDRAULICA",
+		"MAQUINARIA INDUSTRIAL ESPECIALIZADA",
+		"MAQUINARIA NUCLEAR",
+		"MAQUINARIA TEXTIL",
+		"MAQUINARIA Y EQUIPO INDUSTRIALES",
+		"MAQUINARIAS PARA MANEJO DE MATERIALES",
+		"MAQUINAS DE VAPOR",
+		"MAQUINAS EXPENDEDORAS AUTOMATICAS Y DE ENTRENAMIENTO",
+		"MAQUINAS",
+		"MATRICES",
+		"MOTORES DE COMBUSTION INTERNA (EN GENERAL)",
+		"MOTORES DE GAS",
+		"OTROS",
+		"PLANTILLAS Y MODELOS",
+		"PRODUCCION Y MANUFACTURA",
+		"TURBINAS",
+		"VENTILADORES"]
+	disciplineValue = tecnologiaMecanica;
+    }
+    if(disciplineValue =="TECNOLOGIA DE LA MEDICINA"){
+      var tecnologiaDeLaMedicina = [  
+		"DISPOSITIVOS DE PROTESIS",
+		"ORGANOS ARTIFICIALES",
+		"OTROS"]
+	disciplineValue = tecnologiaDeLaMedicina;
+    }
+     if(disciplineValue =="TECNOLOGIA DE LA METALURGIA"){
+      var tecnologiaDeLaMetalurgia = [  
+		"AFINADO",
+		"ALUMINIO",
+		"COBRE",
+		"COLADA DE METALES NO FERROSOS",
+		"COLADA DE PRECISION",
+		"FABRICAS FUNDICIONES Y FORJAS SIDERURGICAS",
+		"FUNDICION",
+		"FUNDICIONES (EN GENERAL)",
+		"INCLUIDO EL REFINADO DE ZONA",
+		"METALES PRECIOSOS",
+		"METALES RADIACTIVOS",
+		"METALES RAROS",
+		"METALES REFRACTARIOS",
+		"OTROS",
+		"PLOMO Y ZINC",
+		"PRODUCTOS ELECTROMETALURGICOS",
+		"PRODUCTOS METALURGICOS (ESPECIALES)",
+		"PULVIMETALURGIA",
+		"REFINAMIENTO Y ELABORACION DE METALES NO FERROSOS",
+		"SERVICIOS METALURGICOS"]
+	disciplineValue = tecnologiaDeLaMetalurgia;
+    }
+       if(disciplineValue =="TECNOLOGIA DE LOS PRODUCTOS METALICOS"){
+      var tecnologiaDeLosProductosMetalicos = [  
+		"ALTOS HORNOS",
+		"ARTICULOS DE ALAMBRE",
+		"ENVASES Y RECIPIENTES",
+		"EQUIPO DE DESTILACION",
+		"ESTAMPADOS",
+		"ESTRUCTURAS FABRICADAS POR SOLDEO",
+		"FERRETERIA",
+		"GUARNICIONES Y VALVULAS",
+		"HORNOS Y HORNOS CERAMICOS",
+		"OTROS",
+		"PRODUCTOS DE CHAPA METALICA",
+		"PRODUCTOS ELECTROCHAPADOS Y RECUBIERTOS",
+		"RECIPIENTES DE PRESION",
+		"SERVICIOS DE FABRICACION DE METALES",
+		"TUBERIAS",
+		"AUTOCLAVES Y CALDERAS",
+		"PRODUCTOS DE ACERO PARA CONSTRUCCIONES",
+		"PRODUCTOS ELABORADOS A MAQUINA Y TORNEADOS"]
+	disciplineValue = tecnologiaDeLosProductosMetalicos;
+    }
+      if(disciplineValue =="TECNOLOGIA DE LOS VEHICULOS DE MOTOR"){
+      var tecnologiaDeLosVehiculosDeMotor = [  
+		"AUTOBUSES",
+		"AUTOMOVILES",
+		"CAMIONES Y REMOLQUES",
+		"MOTORES DE PISTON",
+		"MOTORES DIESEL",
+		"MOTORES ROTATORIOS",
+		"OTROS",
+		"PIEZAS DE REPUESTO Y ACCESORIOS",
+		"REGULACION DEL TRAFICO",
+		"SERVICIOS DE TRANSPORTE MOTORIZADO",
+		"MOTOCICLETAS",
+		"VEHICULOS TODO TERRENO"]
+	disciplineValue = tecnologiaDeLosVehiculosDeMotor;
+    }
+     if(disciplineValue =="TECNOLOGIA DE MINAS"){
+      var tecnologiaDeMinas = [  
+		"AZUFRE",
+		"CONCENTRACION DE MINERALES",
+		"MECANICA DE ROCAS",
+		"MINERALES DE HIERRO",
+		"MINERALES DE METALES NO FERROSOS",
+		"MINERALES DE URANIO Y MINERALES RADIACTIVOS",
+		"MINERALES NO METALICOS",
+		"OTROS",
+		"PROSPECCION MINERA",
+		"SIMULACION DE YACIMIENTOS",
+		"TOPOGRAFIA DE MINAS",
+		"MINERALOGIA",
+		"MINERIA DEL CARBON",
+		"PRODUCTOS DE CANTERAS",
+		"SERVICIOS DE MINAS"]
+	disciplineValue = tecnologiaDeMinas;
+    }
+        if(disciplineValue =="TECNOLOGIA NAVAL"){
+      var tecnologiaNaval = [  
+		"BUQUES MERCANTES",
+		"BUQUES",
+		"CONSTRUCCION NAVAL",
+		"EMBARCACIONES DE VIAS NAVEGABLES INTERIORES",
+		"HELICES",
+		"INGENIERIA COSTERA",
+		"LINEA DE EJES (BUQUES)",
+		"MOTORES MARINOS",
+		"OTROS",
+		"SUBMARINOS",
+		"TRANSPORTE MARITIMO",
+		"TRANSPORTE OCEANICO",
+		"ARQUITECTURA NAVAL",
+		"DISPOSITIVOS DE SUSPENSION NEUMATICA",
+		"MAQUINAS AUXILIARES (BUQUES)"]
+	disciplineValue = tecnologiaNaval;
+   }
+       if(disciplineValue =="TECNOLOGIA NUCLEAR"){
+      var tecnologiaNuclear = [  
+		"ENSAYOS NUCLEARES",
+		"EXPLOSIONES NUCLEARES",
+		"INGENIERIA QUIMICA NUCLEAR",
+		"INSTRUMENTACION NUCLEAR",
+		"OTROS",
+		"REACTORES DE FISION NUCLEAR",
+		"REACTORES DE FUSION NUCLEAR",
+		"SEPARACION DE ISOTOPOS",
+		"APLICACIONES DE LOS ISOTOPOS"]
+	disciplineValue = tecnologiaNuclear;
+    }
+    if(disciplineValue =="TECNOLOGIA DEL PETROLEO Y DEL CARBON"){
+      var tecnologiaDelPetroleoYdelCarbon = [  
+		"ACEITES Y GRASAS LUBRICANTES",
+		"ALMACENAMIENTO DE PETROLEO Y GAS",
+		"DISEÑO DE REFINERIAS",
+		"EQUIPO DE CAMPOS PETROLIFEROS",
+		"EXPLORACION",
+		"GAS LICUADO",
+		"GAS NATURAL",
+		"GASODUCTOS",
+		"OLEODUCTOS",
+		"OTROS",
+		"PETROLEO CRUDO",
+		"PRODUCTOS CARBOQUIMICOS",
+		"PRODUCTOS PETROQUIMICOS",
+		"SERVICIOS DE LOS CAMPOS PETROLIFEROS",
+		"MATERIALES ASFALTICOS",
+		"PRODUCTOS DEL PETROLEO: GASOLINA ACEITES CERAS"]
+	disciplineValue = tecnologiaDelPetroleoYdelCarbon;
+    }
+      if(disciplineValue =="TECNOLOGIA DE LA ENERGIA"){
+      var tecnologiaDeLaEnergia = [  
+		"FUENTES DE ENERGIA NO CONVENCIONALES",
+		"GENERACION DE ENERGIA",
+		"GENERADORES DE ENERGIA",
+		"OTROS",
+		"TRANSMISION DE ENERGIA",
+		"DISTRIBUCION DE LA ENERGIA"]
+	disciplineValue = tecnologiaDeLaEnergia;
+    }
+       if(disciplineValue =="TECNOLOGIA DE FERROCARRILES"){
+      var tecnologiaDeFerrocariles = [  
+		"EQUIPO DE FERROCARRILES",
+		"MATERIAL RODANTE (FERROCARRILES)",
+		"OTROS",
+		"SERVICIOS DE FERROCARRIL",
+		"LOCOMOTORAS"]
+	disciplineValue = tecnologiaDeFerrocariles;
+    }
+    if(disciplineValue =="TECNOLOGIA DEL ESPACIO"){
+      var tecnologiaDelEspacio = [  
+		"CONTROL DE VEHICULOS",
+		"INSTALACIONES DE MISILES",
+		"MISILES: LANZAMIENTO Y RECUPERACION",
+		"NAVES ESPACIALES",
+		"OTROS",
+		"SEGUIMIENTO DE NAVES ESPACIALES",
+		"MOTORES COHETE",
+		"SATELITES ARTIFICIALES"]
+	disciplineValue = tecnologiaDelEspacio;
+    }
+     if(disciplineValue =="TECNOLOGIA DE LAS TELECOMUNICACIONES"){
+      var tecnologiasDeLasTelecomunicaciones = [  
+		"CINEMATOGRAFIA",
+		"COMUNICACIONES MEDIANTE SATELITE",
+		"ENLACES DE MICROONDAS",
+		"OTROS",
+		"RADIOCOMUNICACIONES",
+		"RADIODIFUSION SONORA Y TELEVISIVA",
+		"TELEFONO",
+		"TELEGRAFO",
+		"TELEVISION POR CABLE",
+		"TELEVISION"]
+	disciplineValue = tecnologiasDeLasTelecomunicaciones;
+    }
+    if(disciplineValue =="TECNOLOGIA TEXTIL"){
+      var tecnologiaTextil = [  
+		"ACABADOS",
+		"ALGODON",
+		"HILADO",
+		"LANA",
+		"LINO",
+		"OTROS",
+		"PREPARACION PARA EL TEJIDO",
+		"TEJIDO DE PUNTO",
+		"TEJIDO",
+		"TEXTILES SINTETICOS",
+		"YUTE"]
+	disciplineValue = tecnologiaTextil;
+    }
+    if(disciplineValue =="TECNOLOGIA DE LOS SISTEMAS DE TRANSPORTE"){
+      var tecnologiaDeLosSitemasDeTransporte = [  
+		"ANALISIS DEL TRAFICO",
+		"COMBINACIONES DE SISTEMAS",
+		"OPERACIONES DE LINEAS AEREAS CONTROL DEL TRAFICO AEREO",
+		"OTROS",
+		"SISTEMAS DE TRAFICO URBANO"]
+	disciplineValue = tecnologiaDeLosSitemasDeTransporte;
+    }
+     if(disciplineValue =="ANALISIS DE LAS OPERACIONES TECNOLOGICAS"){
+      var analisisDeLasOperacionesTecnologicas = [  
+		"ABSORCION",
+		"AGITACION",
+		"BOMBEO",
+		"CENTRIFUGACION",
+		"COMPRESION",
+		"CRIBADO",
+		"CRISTALIZACION",
+		"DESIONIZACION",
+		"DESTILACION Y CONDENSACION",
+		"EVAPORACION",
+		"EXTRACCION LIQUIDO?LIQUIDO",
+		"EXTRACCION SOLIDO-LIQUIDO",
+		"FILTRACION",
+		"FLOTACION",
+		"FLUIDIZACION DE LOS SOLIDOS",
+		"FLUJO A TRAVES DE MEDIOS POROSOS",
+		"MANEJO DE LOS SOLIDOS",
+		"MEZCLADO",
+		"OTROS",
+		"REFRIGERACION",
+		"SECADO POR CONGELACION",
+		"SECADO",
+		"SEDIMENTACION",
+		"TRANSFERENCIA DE CALOR",
+		"TRANSFERENCIA DE MASA",
+		"TRANSFERENCIA VAPOR-LIQUIDO)",
+		"TRITURACION",
+		"TUBERIAS GUARNICIONES Y VALVULAS"]
+	disciplineValue = analisisDeLasOperacionesTecnologicas;
+    }
+    if(disciplineValue =="TECNOLOGIA DEL URBANISMO"){
+      var tecnologiaDelUrbanismo = [  
+		"COMUNICACIONES",
+		"DESARROLLO REGIONAL",
+		"MEDIO AMBIENTE URBANO",
+		"ORGANIZACION COMUNITARIA",
+		"OTROS",
+		"REGLAMENTO PARA LA CONSTRUCCION DE EDIFICIOS",
+		"RELACIONES URBANO-RURALES",
+		"SERVICIOS SANITARIOS",
+		"TRANSPORTE",
+		"USO DE LAS TIERRAS"]
+	disciplineValue = tecnologiaDelUrbanismo;
+    }
+    if(disciplineValue =="GESTION DE LA CALIDAD"){
+      var gestionDeLaCalidad = [  
+		"COMPARACION REFERENCIAL (BENCHMARKING)",
+		"COMUNICACION",
+		"CONTROL DE CALIDAD",
+		"CONTROL ESTADISTICO DE LA CALIDAD",
+		"CONTROL ESTADISTICO DE PROCESOS",
+		"COSTOS DE CALIDAD",
+		"DISEÑO DE PROCESOS",
+		"DOCUMENTACION DE NORMALIZACION Y CERTIFICACION",
+		"INSPECCION",
+		"MEJORA E INNOVACION DE PROCESOS", 
+		"OTROS",
+		"PROCESOS PRODUCTIVOS",
+		"PRODUCTOS DISEÑO Y MEJORA DE",
+		"PROTECCION DEL ASEGURAMIENTO DE LA CALIDAD",
+		"REINGENIERIA",
+		"SISTEMAS DE CONOCIMIENTO"]
+	disciplineValue = gestionDeLaCalidad;
+    }
+     if(disciplineValue =="CIENCIAS DE LA COMPUTACION"){
+      var cienciasDeLaComputacion = [  
+		"APLICACIONES DE LA INFORMATICA",
+		"ARQUITECTURA DE PROCESADORES",
+		"CIRCUITOS INTEGRADOS",
+		"DESEMPEÑO Y FIABILIDAD",
+		"DISEÑO LOGICO",
+		"DISPOSITIVOS DE ENTRADA / SALIDA Y COMUNICACIONES",
+		"ESTRUCTURAS DE CONTROL Y MICROPROGRAMACION",
+		"ESTRUCTURAS DE MEMORIA",
+		"ESTRUCTURAS LOGICAS Y ARITMETICAS",
+		"IMPLEMENTACION DEL NIVEL DE REGISTRO-TRANSFERENCIA",
+		"ORGANIZACION DE SISTEMAS DE COMPUTO",
+		"OTROS",
+		"PROCESAMIENTO DE IMAGENES Y VISION INFORMATICA",
+		"RECONOCIMIENTO DE PATRONES",
+		"REDES DE COMUNICACIONES INFORMATICAS",
+		"SISTEMAS BASADOS EN LA APLICACION Y EN PROPOSITO",
+		"SOFTWARE"]
+	disciplineValue = cienciasDeLaComputacion;
+    }
+      if(disciplineValue =="TECNOLOGIA DE BIOPROCESOS"){
+      var tecnologiaDeBioprocesos = [  
+		"BIOPROCESOS",
+		"OTROS"]
+	disciplineValue = tecnologiaDeBioprocesos;
+    }
+      if(disciplineValue =="TECNOLOGIA DE BIOMOLECULAS"){
+      var tecnologiaDeBiomoleculas = [  
+		"BIOMOLECULAS",
+		"OTROS"]
+	disciplineValue = tecnologiaDeBiomoleculas;
+    }
+    if(disciplineValue =="OTRAS ESPECIALIDADES EN MATERIA DE TECNOLOGIA"){
+      var otrasEspecialidadesEnMateriaDeTEcnologia = [  
+		"OTROS"]
+	disciplineValue = otrasEspecialidadesEnMateriaDeTEcnologia;
+    }
+     if(disciplineValue =="ANTROPOLOGIA CULTURAL"){
+      var antropologiaCultural = [  
+		"ADORNO",
+		"DANZAS",
+		"ETNOLINGÜISTICA",
+		"ETNOMUSICOLOGIA",
+		"FIESTAS",
+		"HECHICERIA",
+		"MAGIA",
+		"MEDICINA TRADICIONAL",
+		"MITOS",
+		"MUSEOLOGIA",
+		"OTROS",
+		"POEMAS",
+		"RELATOS",
+		"RELIGION",
+		"SIMBOLISMO",
+		"TRADICION",
+		"VESTIMENTA"]
+	disciplineValue = antropologiaCultural;
+    }
+       if(disciplineValue =="ETNOGRAFIA Y ETNOLOGIA"){
+      var EtnografiaYEtnologia = [  
+		"AGRICULTURA",
+		"ARMAS",
+		"ARTESANIA",
+		"CAZA",
+		"CRIA DE GANADO",
+		"FORRAJE",
+		"HABITAT",
+		"INTERCAMBIO",
+		"METALURGIA",
+		"OTROS",
+		"PESCA",
+		"TRUEQUE"]
+	disciplineValue = EtnografiaYEtnologia;
+    }
+     if(disciplineValue =="ANTROPOLOGIA SOCIAL"){
+      var antropologiaSocial = [  
+		"DESCENDENCIA",
+		"ESCLAVITUD",
+		"FAMILIA",
+		"GUERRA",
+		"JEFATURA",
+		"LINAJE",
+		"NOMADISMO",
+		"OTROS",
+		"REALEZA",
+		"SERVIDUMBRE"]
+	disciplineValue = antropologiaSocial;
+    }
+     if(disciplineValue =="FECUNDIDAD"){
+      var fecundidad = [  
+		"ESTERILIDAD Y FECUNDIDAD",
+		"FECUNDIDAD GENERAL",
+		"ILEGITIMIDAD",
+		"NUPCIALIDAD",
+		"OTROS",
+		"TASA DE NATALIDAD"]
+	disciplineValue = fecundidad;
+    }
+     if(disciplineValue =="DEMOGRAFIA GENERAL"){
+      var demografiaGeneral = [  
+		"METODOLOGIA DE ANALISIS",
+		"METODOLOGIA DE LA INVESTIGACION",
+		"OTROS",
+		"TEORIA"]
+	disciplineValue = demografiaGeneral;
+    }
+      if(disciplineValue =="DEMOGRAFIA GEOGRAFICA"){
+      var demografiaGeografica = [  
+		"DEMOGRAFIA LOCAL",
+		"DEMOGRAFIA REGIONAL",
+		"DEMOGRAFIA RURAL",
+		"DEMOGRAFIA URBANA",
+		"MOVILIDAD Y MIGRACIONES INTERNACIONALES",
+		"MOVILIDAD Y MIGRACIONES INTERNAS",
+		"OTROS"]
+	disciplineValue = demografiaGeografica;
+    }
+     if(disciplineValue =="DEMOGRAFIA HISTORICA"){
+      var demografiaHistorica = [  
+		"ASPECTOS METODOLOGICOS",
+		"ASPECTOS TEORICOS",
+		"FUENTES DE OBSERVACION",
+		"MIGRACIONES",
+		"MORTALIDAD",
+		"OTROS",
+		"TASA DE FECUNDIDAD Y NUPCIALIDAD"]
+	disciplineValue = demografiaHistorica;
+    }
+     if(disciplineValue =="MORTALIDAD"){
+      var mortalidad = [  
+		"CAUSAS DE MORTALIDAD",
+		"MORTALIDAD GENERAL",
+		"MORTALIDAD INFANTIL",
+		"MORTALIDAD PRENATAL Y PERINATAL",
+		"OTROS",
+		"VARIABLES RELACIONADAS"]
+	disciplineValue = mortalidad;
+    }
+      if(disciplineValue =="CARACTERISTICAS DE LAS POBLACIONES"){
+      var caracteristicasDeLasPoblaciones = [  
+		"CARACTERISTICAS BIOLOGICAS",
+		"CARACTERISTICAS EPIDEMIOLOGICAS",
+		"CARACTERISTICAS SOCIOECONOMICAS",
+		"DISTRIBUCION POR EDADES",
+		"ENVEJECIMIENTO DE LA POBLACION",
+		"ESTRUCTURAS DEMOGRAFICAS GENERALES",
+		"GENETICA DE POBLACIONES",
+		"MORBILIDAD",
+		"POBLACION ACTIVA",
+		"SEXO",
+		"OTROS"]
+	disciplineValue = caracteristicasDeLasPoblaciones;
+    }
+    if(disciplineValue =="EVOLUCION DEMOGRAFICA"){
+      var evolucionDemografica = [  
+	"CENSOS DEMOGRAFICOS Y OTROS TIPOS DE ACOPIO DE DATOS",
+	"DEMOGRAFIA COMPUTACIONAL",
+	"DEMOGRAFIA DE OBSERVACION",
+	"ESTIMACIONES DEMOGRAFICAS",
+	"TRANSICION DEMOGRAFICA",
+	"PREVISIONES DEMOGRAFICAS",
+	"CRECIMIENTO DE LA POBLACION",
+	"MODELOS DEMOGRAFICOS",
+	 "PROYECCIONES DEMOGRAFICAS",
+	"ESTADISTICA DEMOGRAFICA",
+	"OTROS"]
+	disciplineValue = evolucionDemografica;
+    }
+     if(disciplineValue =="POLITICA FISCAL Y HACIENDA PUBLICA"){
+      var politicaFiscalyHaciendaPublica = [  
+	"POLITICA FISCAL Y DEUDA PUBLICA",
+	"HACIENDA PUBLICA (PRESUPUESTO)",
+	"OTROS"]
+	disciplineValue = politicaFiscalyHaciendaPublica;
+    }
+      if(disciplineValue =="ECONOMETRIA"){
+      var econometria = [  
+	"ESTADISTICA ECONOMICA",
+	"INDICADORES ECONOMICOS",
+	"MODELOS ECONOMETRICOS",
+	"PROYECCION ECONOMICA",
+	"SERIES DE TIEMPO ECONOMICAS",
+	"OTROS"]
+	disciplineValue = econometria;
+    }
+      if(disciplineValue =="CONTABILIDAD PUBLICA"){
+      var contabilidadPublica = [  
+	"CUENTAS FINANCIERAS",
+	"RIQUEZA NACIONAL Y BALANZA DE PAGOS",
+	"CONTABILIDAD DE LA RENTA NACIONAL",
+	"ENTRADA-SALIDA",
+	"CUENTAS SOCIALES",
+	"AUDITORIA",
+	"CONTABILIDAD ADMINISTRATIVA",
+	"CONTABILIDAD FISCAL",
+	"OTRAS"]
+	disciplineValue = contabilidadPublica;
+    }
+    if(disciplineValue =="ACTIVIDADES ECONOMICAS"){
+      var actividadesEconomicas = [  
+	 "DINERO Y BANCA",
+	"AHORRO",
+	"COMERCIO EXTERIOR",
+	"COMERCIO INTERIOR",
+	"CONSUMO",
+	"DISTRIBUCION",
+	"INVERSION",
+	"PRODUCCION",
+	"REDISTRIBUCION",
+	"SEGUROS",
+	"OTROS"]
+	disciplineValue = actividadesEconomicas;
+    }
+     if(disciplineValue =="SISTEMAS ECONOMICOS"){
+      var sistemasEconomicas = [  
+	"SISTEMAS DE ECONOMIA CAPITALISTA",
+	"SISTEMAS DE ECONOMIA COLECTIVISTA",
+	"SISTEMAS DE ECONOMIA COMPARADA",
+	"SISTEMAS DE ECONOMIA SOCIALISTA",
+	"OTROS"]
+	disciplineValue = sistemasEconomicas;
+    }
+     if(disciplineValue =="CAMBIO ECONOMICO O TECNOLOGICO"){
+      var cambioEconomicooTecnologico = [  
+	"ECONOMIA DE LA INVESTIGACION Y EL DESARROLLO EXPERIMENTAL",
+	"INNOVACION TECNOLOGICA",
+	"TRANSFERENCIA DE TECNOLOGIA",
+	"OTROS"]
+	disciplineValue = cambioEconomicooTecnologico;
+    }
+     if(disciplineValue =="TEORIA ECONOMICA"){
+      var teoriaEconomica = [  
+	"FORMACION DE CAPITAL",
+	"TEORIAS DEL CREDITO",
+	"MODELOS Y TEORIAS DE DESARROLLO ECONOMICO",
+	"ESTUDIOS DE DESARROLLO ECONOMICO",
+	"EQUILIBRIO ECONOMICO",
+	"FLUCTUACIONES ECONOMICAS",
+	"PREVISIONES ECONOMICAS",
+	"TEORIA DEL CRECIMIENTO ECONOMICO",
+	"TEORIA DE LA PLANIFICACION ECONOMICA",
+	"TEORIA DEL EMPLEO Y MODELOS DE EMPLEO",
+	"TEORIA FISCAL",
+	"TEORIA DEL COMERCIO INTERNACIONAL",
+	"TEORIA DE LA INVERSION",
+	"TEORIA MACROECONOMICA",
+	"TEORIA MICROECONOMICA",
+	"TEORIA MONETARIA",
+	"TEORIA DEL AHORRO",
+	"TEORIAS DE LA ESTABILIZACION",
+	"TEORIA DEL BIENESTAR",
+	"OTROS"]
+	disciplineValue = teoriaEconomica;
+    }
+     if(disciplineValue =="ECONOMIA GENERAL"){
+      var economiaGeneral = [  
+	"COMPORTAMIENTO DEL CONSUMIDOR",
+	"HISTORIA DEL PENSAMIENTO ECONOMICO",
+	"METODOLOGIA ECONOMICA",
+	"OTROS"]
+	disciplineValue = economiaGeneral;
+    }
+     if(disciplineValue =="ORGANIZACION DE LA INDUSTRIA Y POLITICA ECONOMICA PUBLICA"){
+      var organizacionDeLaIndustriayPoliticaEconomicaPublica = [  
+	"CONCENTRACION ECONOMICA",
+	"EMPRESAS PUBLICAS",
+	"ESTRUCTURA DEL MERCADO",
+	"INTEGRACION ECONOMICA",
+	"MONOPOLIO Y COMPETENCIA",
+	"REGLAMENTACION GUBERNAMENTAL DEL SECTOR PRIVADO",
+	"SERVICIOS PUBLICOS",
+	"OTROS"]
+	disciplineValue = organizacionDeLaIndustriayPoliticaEconomicaPublica;
+    }
+     if(disciplineValue =="ECONOMIA INTERNACIONAL"){
+      var economiaInternacional = [  
+	 "POLITICA ECONOMICA INTERNACIONAL",
+	"ACUERDOS MONETARIOS INTERNACIONALES",
+	"ASUNTOS INTERNACIONALES",
+	"AYUDA EXTERIOR",
+	"AYUDA INTERNACIONAL",
+	"BALANZA DE PAGOS",
+	"FINANZAS INTERNACIONALES",
+	"INVERSIONES INTERNACIONALES",
+	"RELACIONES COMERCIALES INTERNACIONALES",
+	"OTROS"]
+	disciplineValue = economiaInternacional;
+    }
+    if(disciplineValue =="ORGANIZACION Y DIRECCION DE EMPRESAS"){
+      var organizacionyDireccionDeEmpresas = [  
+	"COSTOS",
+	"ESTUDIOS DE MERCADO",
+	"ESTUDIOS INDUSTRIALES",
+	"GESTION DE MANO DE OBRA",
+	"GESTION DE MERCADOS",
+	"GESTION FINANCIERA",
+	"INVESTIGACION OPERATIVA",
+	"MERCADEO",
+	"NEGOCIO",
+	"NIVELES OPTIMOS DE PRODUCCION",
+	"ORGANIZACION DE LA PRODUCCION",
+	"PLANEACION ESTRATEGICA",
+	"PUBLICIDAD",
+	"RESULTADOS Y FACTORES CRITICOS DEL",
+	"OTROS"]
+	disciplineValue = organizacionyDireccionDeEmpresas;
+    }
+     if(disciplineValue =="ECONOMIA SECTORIAL"){
+      var economiaSectorial = [  
+	 "LA INDUSTRIA DE LA COMPUTACION",
+	"AGRICULTURA",
+	"COMERCIO",
+	"CONSTRUCCION",
+	"EDUCACION",
+	"ENERGIA",
+	"HACIENDA Y SEGUROS",
+	"INVESTIGACION Y DESARROLLO",
+	"MINERIA",
+	"PESCA",
+	"SALUD",
+	"SERVICIOS COMUNITARIOS",
+	"SILVICULTURA",
+	"SOCIALES Y PERSONALES",
+	"TECNICAS DE PRODUCCION",
+	"TRANSPORTE Y COMUNICACIONES",
+	"OTROS"]
+	disciplineValue = economiaSectorial;
+    }
+    if(disciplineValue =="GEOGRAFIA ECONOMICA"){
+      var geograficaEconomica = [  
+	 	"DESARROLLO REGIONAL",
+		"DISTRIBUCION DE LOS RECURSOS NATURALES",
+		"GEOGRAFIA DE LAS ACTIVIDADES ECONOMICAS",
+		"USO DE LAS TIERRAS",
+		"OTROS"]
+	disciplineValue = geograficaEconomica;
+    }
+    //--------------------------------------------------------//
+     if(disciplineValue =="GEOGRAFIA HUMANA"){
+      var geograficaHumana = [  
+	 	"DEMOGEOGRAFIA",
+		"GEOGRAFIA CULTURAL",
+		"GEOGRAFIA DE LA RELIGION",
+		"GEOGRAFIA LINGÜISTICA",
+		"GEOGRAFIA POLITICA",
+		"GEOGRAFIA SOCIAL",
+		"OTROS"]
+	disciplineValue = geograficaHumana;
+    }
+     if(disciplineValue =="HISTORIA GENERAL"){
+      var historiaGeneral = [  
+	 	"HISTORIOGRAFIA",
+		"MONOGRAFIAS HISTORICAS",
+		"TEORIA Y METODOS",
+		"HISTORIA COMPARADA",
+		"OTROS"]
+	disciplineValue = historiaGeneral;
+    }
+      if(disciplineValue =="HISTORIA DE LOS PAISES"){
+      var historiaDeLosPaises = [  
+	 	"HISTORIA LOCAL",
+		"HISTORIA REGIONAL",
+		"OTROS"]
+	disciplineValue = historiaDeLosPaises;
+    }
+      if(disciplineValue =="HISTORIA DE LAS EPOCAS"){
+      var historiaDelasEpocas = [  
+	 	"PREHISTORIA",
+		"HISTORIA ANTIGUA",
+		"HISTORIA CONTEMPORANEA",
+		"HISTORIA DE LA EDAD MEDIA",
+		"HISTORIA MODERNA",
+		"OTROS"]
+	disciplineValue = historiaDelasEpocas;
+    }
+     if(disciplineValue =="CIENCIAS AUXILIARES DE LA HISTORIA"){
+      var cienciasAuxiliaresDeLaHistoria = [  
+	 	"ARCHIVISTICA",
+		"ARCHIVOS ECONOMICOS",
+		"ARQUEOLOGIA",
+		"CERAMOLOGIA",
+		"EPIGRAFIA",
+		"ESTRATIGRAFIA",
+		"FILOLOGIA",
+		"HERALDICA",
+		"ICONOGRAFIA",
+		"NUMISMATICA",
+		"ONOMASTICA",
+		"PALEOGRAFIA",
+		"PAPIROLOGIA",
+		"SIGILOGRAFIA",
+		"TEORIA DE DOCUMENTOS",
+		"OTROS"]
+	disciplineValue = cienciasAuxiliaresDeLaHistoria;
+    }
+       if(disciplineValue =="HISTORIA ESPECIALIZADA"){
+      var historiaEspecializada = [  
+		"HISTORIA DE LA ASTRONOMIA",
+		"HISTORIA DE LA BIOLOGIA",
+		"HISTORIA DE LA CIENCIA",
+		"HISTORIA DE LA CULTURA",
+		"HISTORIA DE LA ECONOMIA",
+		"HISTORIA DE LA EDUCACION",
+		"HISTORIA DE LA FILOSOFIA",
+		"HISTORIA DE LA FISICA",
+		"HISTORIA DE LA GEOGRAFIA",
+		"HISTORIA DE LA GEOLOGIA",
+		"HISTORIA DE LA GUERRA",
+		"HISTORIA DE LA LINGÜISTICA",
+		"HISTORIA DE LA LITERATURA",
+		"HISTORIA DE LA LOGICA",
+		"HISTORIA DE LA MAGISTRATURA",
+		"HISTORIA DE LA MEDICINA",
+		"HISTORIA DE LA QUIMICA",
+		"HISTORIA DE LA SOCIOLOGIA",
+		"HISTORIA DE LA TECNOLOGIA",
+		"HISTORIA DE LAS IDEAS POLITICAS",
+		"HISTORIA DE LAS INSTITUCIONES",
+		"HISTORIA DE LAS MENTALIDADES",
+		"HISTORIA DE LAS RELACIONES INTERNACIONALES",
+		"HISTORIA DE LAS RELIGIONES",
+		"HISTORIA DEL ARTE",
+		"HISTORIA DEL DERECHO Y DE LAS INSTITUCIONES JURIDICAS",
+		"HISTORIA DEL PERIODISMO",
+		"HISTORIA SOCIAL",
+	 	"HISTORIA DE LA ARQUITECTURA",
+		"OTROS"]
+	disciplineValue = historiaEspecializada;
+    }
+    if(disciplineValue =="TEORIAS Y METODOS JURIDICOS GENERALES"){
+      var teoriayMetodosJuridicosGenerales = [  
+		"DERECHO COMPARADO",
+		"DERECHO CONSUETUDINARIO",
+		"DERECHO DE LA ANTIGÜEDAD",
+		"DERECHO NATURAL",
+		"JURISPRUDENCIA",
+		"LEGISLACION PROMULGADA",
+		"OTROS"]
+	disciplineValue = teoriayMetodosJuridicosGenerales;
+    }
+     if(disciplineValue =="DERECHO INTERNACIONAL"){
+      var derechoInternacional = [  
+		"DERECHO AERONAUTICO",
+		"DERECHO DEL ESPACIO ULTRATERRESTRE",
+		"DERECHO DEL FONDO DEL MAR",
+		"DERECHO MARITIMO",
+		"OTROS"]
+	disciplineValue = derechoInternacional;
+    }
+    if(disciplineValue =="ORGANIZACION PENAL"){
+      var organizacionPenal = [  
+		"FUNCIONARIOS Y PROCEDIMIENTOS JUDICIALES",
+		"MAGISTRATURA",
+		"TRIBUNALES",
+		"OTROS"]
+	disciplineValue = organizacionPenal;
+    }
+     if(disciplineValue =="DERECHO Y LEGISLACION NACIONALES"){
+      var derechoyLEgislacionNAcionales = [  
+		"DERECHO ADMINISTRATIVO",
+		"DERECHO AGRARIO Y MINERO",
+		"DERECHO CIVIL",
+		"DERECHO COMERCIAL",
+		"DERECHO CONSTITUCIONAL",
+		"DERECHO DEL TRANSPORTE Y TRANSITO",
+		"DERECHO FINANCIERO",
+		"DERECHO FISCAL",
+		"DERECHO LABORAL",
+		"DERECHO NOTARIAL",
+		"DERECHO PENAL",
+		"DERECHO PRIVADO",
+		"DERECHO ROMANO",
+		"DERECHO SOCIAL",
+		"LEGISLACION PUBLICA",
+		"OTROS"]
+	disciplineValue = derechoyLEgislacionNAcionales;
+    }
+    //----------------------------------///
+      if(disciplineValue =="OTRAS ESPECIALIDADES EN MATERIA JURIDICA"){
+      var derechoyLEgislacionNAcionales = [  
+		"OTRAS ESPECIALIDADES EN MATERIA JURIDICA"]
+	disciplineValue = derechoyLEgislacionNAcionales;
+    }
+     if(disciplineValue =="LINGÜISTICA APLICADA"){
+      var linguisticaAplicada = [  
+		"PREPARACION DE RESUMENES ANALITICOS",
+		"DOCUMENTACION AUTOMATIZADA",
+		"BILINGÜISMO",
+		"LINGÜISTICA COMPUTACIONAL",
+		"LENGUAJES DOCUMENTALES",
+		"DOCUMENTACION",
+		"LENGUAJE Y LITERATURA",
+		"LENGUAJE DE LOS NIÑOS",
+		"TRADUCCION A MAQUINA",
+		"PATOLOGIA Y CORRECCION DEL HABLA",
+		"ENSEÑANZA DE IDIOMAS",
+		"TRADUCCION",
+		"ALFABETIZACION Y SISTEMAS DE ESCRITURA",
+		"OTROS"]
+	disciplineValue = linguisticaAplicada;
+    }
+    if(disciplineValue =="LINGÜISTICA DIACRONICA"){
+      var linguisticaDiacronica = [  
+		"ETIMOLOGIA",
+		"LINGÜISTICA HISTORICA",
+		"OTROS"]
+	disciplineValue = linguisticaDiacronica;
+    }
+     if(disciplineValue =="LINGÜISTICA SINCRONICA"){
+      var linguisticaSincronica = [  
+		 "SINTAXIS ANALISIS SINTACTICO",
+		"ESTILISTICA (ESTILO Y RETORICA)",
+		"ETNOLINGÜISTICA",
+		"FONETICA",
+		"FONOLOGIA",
+		"LEXICOGRAFIA",
+		"LEXICOLOGIA",
+		"LINGÜISTICA COMPARADA",
+		"LINGÜISTICA DESCRIPTIVA",
+		"ORTOGRAFIA",
+		"PSICOLINGÜISTICA",
+		"SEMANTICA",
+		"SEMIOLOGIA",
+		"SOCIOLINGÜISTICA",
+		"OTROS"]
+	disciplineValue = linguisticaSincronica;
+    }
+     if(disciplineValue =="TEORIAS Y METODOS PEDAGOGICOS GENERALES"){
+      var teoriasyMetodosPedagogicosGenerales = [  
+		"ELABORACION DE PLANES DE ESTUDIO",
+		"EVALUACION DE ALUMNOS Y MAESTROS",
+		"INSTRUCCION PROGRAMADA",
+		"METODOS AUDIOVISUALES",
+		"METODOS PEDAGOGICOS",
+		"PEDAGOGIA COMPARADA",
+		"PEDAGOGIA EXPERIMENTAL",
+		"TEORIAS DE LA EDUCACION",
+		"OTROS"]
+	disciplineValue = teoriasyMetodosPedagogicosGenerales;
+    }
+     if(disciplineValue =="ORGANIZACION Y PLANIFICACION PEDAGOGICAS"){
+      var organizacionyPlanificacionPedagogicas = [  
+		"EDUCACION DE ADULTOS",
+		"CENTROS DOCENTES",
+		"ORGANIZACION Y ADMINISTRACION",
+		"PLANIFICACION Y FINANCIACION DE LA EDUCACION",
+		"NIVELES Y TEMAS DE LA EDUCACION",
+		"EDUCACION ESPECIAL",
+		"IMPEDIDOS",
+		"RETRASADOS MENTALES",
+		"ANALISIS",
+		"MODELOS Y PROYECCIONES ESTADISTICOS",
+		 "ENSEÑANZA Y FORMACION PROFESIONAL",
+		"OTROS"]
+	disciplineValue = organizacionyPlanificacionPedagogicas;
+    }
+    if(disciplineValue =="FORMACION Y EMPLEO DE LOS EDUCADORES"){
+      var formacionyEmpleoDeLosEducadores = [  
+		"CARRERA Y CONDICION DE LOS EDUCADORES",
+		"FORMACION DE EDUCADORES",
+		"OTROS"]
+	disciplineValue = formacionyEmpleoDeLosEducadores;
+    }
+    if(disciplineValue =="RELACIONES INTERNACIONALES"){
+      var relacionesInternacionales = [  
+		"COOPERACION INTERNACIONAL",
+		"ORGANIZACIONES INTERNACIONALES",
+		"POLITICA INTERNACIONAL",
+		"PROBLEMAS DE LAS RELACIONES INTERNACIONALES",
+		"TRATADOS Y ACUERDOS INTERNACIONALES",
+		"OTROS"]
+	disciplineValue = relacionesInternacionales;
+    }
+    if(disciplineValue =="POLITICAS SECTORIALES"){
+      var politicasSectoriales = [  
+		 "POLITICA EXTERIOR",
+		"PLANIFICACION DE POLITICAS",
+		"POLITICA AGRICOLA",
+		"POLITICA AMBIENTAL",
+		"POLITICA CIENTIFICA Y TECNOLOGICA",
+		"POLITICA COMERCIAL",
+		"POLITICA CULTURAL",
+		"POLITICA DE COMUNICACIONES",
+		"POLITICA DE EDUCACION",
+		"POLITICA DE INFORMACION",
+		"POLITICA DE TRANSPORTES",
+		"POLITICA DEMOGRAFICA",
+		"POLITICA ECONOMICA",
+		"POLITICA INDUSTRIAL",
+		"POLITICA SANITARIA",
+		"POLITICA SOCIAL",
+		"OTROS"]
+	disciplineValue = politicasSectoriales;
+    }
+    if(disciplineValue =="INSTITUCIONES POLITICAS"){
+      var institucionesPoliticas = [  
+		"PODER EJECUTIVO",
+		"PODER JUDICIAL",
+		"PODER LEGISLATIVO",
+		"RELACIONES ENTRE LOS PODERES",
+		"OTROS"]
+	disciplineValue = institucionesPoliticas;
+    }
+    //------------------------------------------------------//
+
+    if(disciplineValue =="VIDA POLITICA"){
+      var vidaPolitica = [  
+		 "PARTIDOS POLITICOS",
+		"COMPORTAMIENTO POLITICO",
+		"ELECCIONES",
+		"GRUPOS POLITICOS",
+		"LIDERAZGO POLITICO",
+		"MOVIMIENTOS POLITICOS",
+		"OTROS"]
+	disciplineValue = vidaPolitica;
+    }
+    if(disciplineValue =="SOCIOLOGIA DE LA POLITICA"){
+      var sociologiaDeLaPolitica = [  
+		 "CONFLICTOS SOCIALES",
+		"DERECHOS HUMANOS",
+		"IDIOMAS",
+		"MINORIAS",
+		"RAZA",
+		"RELIGION",
+		"OTROS"]
+	disciplineValue = sociologiaDeLaPolitica;
+    }
+    if(disciplineValue =="ADMINISTRACION PUBLICA"){
+      var administracionPublica = [  
+		"GESTION ADMINISTRATIVA",
+		"INSTITUCIONES CENTRALES",
+		"FUNCION PUBLICA",
+		"SERVICIOS PUBLICOS",
+		 "INSTITUCIONES REGIONALES",
+		"COMERCIALIZACION",
+		"FINANZAS",
+		"PROMOCION Y DESARROLLO DE ORGANIZACIONES",
+		 "RECURSOS HUMANOS",
+		"SISTEMAS DE INFORMACION",
+		"OTROS"]
+	disciplineValue = administracionPublica;
+    }
+    if(disciplineValue =="OPINION PUBLICA"){
+      var opinionPublica = [  
+		"INFORMACION",
+		"MEDIOS DE COMUNICACION DE MASAS",
+		"PRENSA",
+		"PROPAGANDA",
+		"OTROS"]
+	disciplineValue = opinionPublica;
+    }
+    
+
+  
+
+    var newSubdiscipline ="<span class='plain-select'><select id='BooksChapters_subdiscipline' class='tooltipstered' name='BooksChapters[subdiscipline]'>";
+    newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
+    for (var item in disciplineValue) {
+        newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
+    }
+
+    newSubdiscipline+="</select></span>";
+
+    $("#comboSubdiscipline").html(newSubdiscipline);
+}
 </script>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'books-chapters-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
-	'enableClientValidation'=>true,
-	'htmlOptions' => array('enctype' => 'multipart/form-data'),
+  'id'=>'books-chapters-form',
+  // Please note: When you enable ajax validation, make sure the corresponding
+  // controller action is handling ajax validation correctly.
+  // There is a call to performAjaxValidation() commented in generated controller code.
+  // See class documentation of CActiveForm for details on this.
+  'enableAjaxValidation'=>true,
+  'enableClientValidation'=>true,
+  'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
 
@@ -47,445 +3035,206 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
         <?php echo $form->error($model,'isbn'); ?>
     </div>
 
-	<div class="row">
+  <div class="row">
 
-		<?php echo $form->textField($model,'chapter_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Capítulo de libro','title'=>'Capítulo de libro')); ?>
-		<?php echo $form->error($model,'chapter_title'); ?>
-	</div>
+    <?php echo $form->textField($model,'chapter_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Capítulo de libro','title'=>'Capítulo de libro')); ?>
+    <?php echo $form->error($model,'chapter_title'); ?>
+  </div>
 
-	<div class="row">
+  <div class="row">
 
-		<?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Titulo de libro','title'=>'Titulo de libro')); ?>
-		<?php echo $form->error($model,'book_title'); ?>
-	</div>
+    <?php echo $form->textField($model,'book_title',array('size'=>60,'maxlength'=>100, 'placeholder'=>'Titulo de libro','title'=>'Titulo de libro')); ?>
+    <?php echo $form->error($model,'book_title'); ?>
+  </div>
 
-	<div class="row">
-		<span class="plain-select">
-		<?php echo $form->dropDownList($model,'publishing_year',array(
-		  		    '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
-					'1934'=>'1934','1935'=>'1935','1936'=>'1936','1937'=>'1937',
-					'1938'=>'1938','1939'=>'1939','1940'=>'1940','1941'=>'1941',
-					'1942'=>'1942','1943'=>'1943','1944'=>'1944','1945'=>'1945',
-					'1946'=>'1946','1947'=>'1947','1948'=>'1948','1949'=>'1949',
-					'1950'=>'1950','1951'=>'1951','1952'=>'1952','1953'=>'1953',
-					'1954'=>'1954','1955'=>'1956','1956'=>'1956','1957'=>'1957',
-					'1958'=>'1958','1959'=>'1959','1960'=>'1960','1961'=>'1961',
-					'1962'=>'1962','1963'=>'1963','1964'=>'1964','1965'=>'1965',
-					'1962'=>'1962','1963'=>'1963','1964'=>'1964','1965'=>'1965',
-					'1966'=>'1966','1967'=>'1967','1968'=>'1968','1969'=>'1969',
-					'1970'=>'1970','1971'=>'1971','1972'=>'1972','1973'=>'1973',
-					'1974'=>'1974','1975'=>'1975','1976'=>'1976','1977'=>'1977',
-					'1978'=>'1978','1979'=>'1979','1980'=>'1980','1981'=>'1981',
-					'1982'=>'1982','1983'=>'1983','1984'=>'1984','1985'=>'1985',
-					'1986'=>'1986','1987'=>'1987','1988'=>'1988','1989'=>'1989',
-					'1990'=>'1990','1991'=>'1992','1993'=>'1993','1994'=>'1994',
-					'1995'=>'1995','1996'=>'1996','1997'=>'1997','1998'=>'1998',
-					'1999'=>'1999','2000'=>'2000','2001'=>'2001','2002'=>'2002',
-					'2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
-					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
-					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
+  <div class="row">
+    <span class="plain-select">
+    <?php echo $form->dropDownList($model,'publishing_year',array(
+              '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
+          '1934'=>'1934','1935'=>'1935','1936'=>'1936','1937'=>'1937',
+          '1938'=>'1938','1939'=>'1939','1940'=>'1940','1941'=>'1941',
+          '1942'=>'1942','1943'=>'1943','1944'=>'1944','1945'=>'1945',
+          '1946'=>'1946','1947'=>'1947','1948'=>'1948','1949'=>'1949',
+          '1950'=>'1950','1951'=>'1951','1952'=>'1952','1953'=>'1953',
+          '1954'=>'1954','1955'=>'1956','1956'=>'1956','1957'=>'1957',
+          '1958'=>'1958','1959'=>'1959','1960'=>'1960','1961'=>'1961',
+          '1962'=>'1962','1963'=>'1963','1964'=>'1964','1965'=>'1965',
+          '1962'=>'1962','1963'=>'1963','1964'=>'1964','1965'=>'1965',
+          '1966'=>'1966','1967'=>'1967','1968'=>'1968','1969'=>'1969',
+          '1970'=>'1970','1971'=>'1971','1972'=>'1972','1973'=>'1973',
+          '1974'=>'1974','1975'=>'1975','1976'=>'1976','1977'=>'1977',
+          '1978'=>'1978','1979'=>'1979','1980'=>'1980','1981'=>'1981',
+          '1982'=>'1982','1983'=>'1983','1984'=>'1984','1985'=>'1985',
+          '1986'=>'1986','1987'=>'1987','1988'=>'1988','1989'=>'1989',
+          '1990'=>'1990','1991'=>'1992','1993'=>'1993','1994'=>'1994',
+          '1995'=>'1995','1996'=>'1996','1997'=>'1997','1998'=>'1998',
+          '1999'=>'1999','2000'=>'2000','2001'=>'2001','2002'=>'2002',
+          '2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
+          '2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
+          '2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
 
-					'2015'=>'2015'),array('title'=>'Año de publicación','prompt'=>'Seleccionar año de publicación'));?>
+          '2015'=>'2015'),array('title'=>'Año de publicación','prompt'=>'Seleccionar año de publicación'));?>
 </span>
-		<?php echo $form->error($model,'publishing_year'); ?>
-	</div>
+    <?php echo $form->error($model,'publishing_year'); ?>
+  </div>
 
-	<div class="row">
-		<?php echo $form->textField($model,'publishers',array('size'=>60,'maxlength'=>255, 'placeholder'=>'Editores','title'=>'Editores')); ?>
-		<?php echo $form->error($model,'publishers'); ?>
-	</div>
+  <div class="row">
+    <?php echo $form->textField($model,'publishers',array('size'=>60,'maxlength'=>255, 'placeholder'=>'Editores','title'=>'Editores')); ?>
+    <?php echo $form->error($model,'publishers'); ?>
+  </div>
 
-	<div class="row">
-		<?php echo $form->textField($model,'editorial',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Editorial','title'=>'Editorial')); ?>
-		<?php echo $form->error($model,'editorial'); ?>
-	</div>
+  <div class="row">
+    <?php echo $form->textField($model,'editorial',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Editorial','title'=>'Editorial')); ?>
+    <?php echo $form->error($model,'editorial'); ?>
+  </div>
 
-	<div class="row">
+  <div class="row">
 
-		<?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45, 'placeholder'=>'No. Volumen','title'=>'No. Volumen')); ?>
-		<?php echo $form->error($model,'volume'); ?>
-	</div>
+    <?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45, 'placeholder'=>'No. Volumen','title'=>'No. Volumen')); ?>
+    <?php echo $form->error($model,'volume'); ?>
+  </div>
 
-	<div class="row">
+  <div class="row">
 
-		<?php echo $form->textField($model,'pages',array('placeholder'=>'No. páginas','title'=>'No. paginas')); ?>
-		<?php echo $form->error($model,'pages'); ?>
-	</div>
+    <?php echo $form->textField($model,'pages',array('placeholder'=>'No. páginas','title'=>'No. paginas')); ?>
+    <?php echo $form->error($model,'pages'); ?>
+  </div>
 
-	<div class="row">
+  <div class="row">
 
-		<?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas','title'=>'No. citas')); ?>
-		<?php echo $form->error($model,'citations'); ?>
-	</div>
+    <?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas','title'=>'No. citas')); ?>
+    <?php echo $form->error($model,'citations'); ?>
+  </div>
 
-	<div class="row">
-		<span class="plain-select">
-		<?php echo $form->dropDownList($model,'area',array('1'=>'ANTROPOLOGIA',
+  <div class="row">
+    <span class="plain-select">
+    <?php echo $form->dropDownList($model,'area',array('ANTROPOLOGIA'=>'ANTROPOLOGIA',
+                              'ARTES Y LETRAS'=>'ARTES Y LETRAS',
+                              'ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
+                              'CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
+                              'CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION',
+                              'CIENCIAS DE LA TECNOLOGIA'=>'CIENCIAS DE LA TECNOLOGIA',
+                              'CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
+                              'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD',
+                              'CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA',
+                              'CIENCIAS ECONOMICAS'=>'CIENCIAS ECONOMICAS',
+                              'CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
+                              'CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS',
+                              'DEMOGRAFIA'=>'DEMOGRAFIA',
+                              'ETICA'=>'ETICA',
+                              'FILOSOFIA'=>'FILOSOFIA',
+                              'FISICA'=>'FISICA',
+                              'GEOGRAFIA'=>'GEOGRAFIA',
+                              'HISTORIA'=>'HISTORIA',
+                              'LINGÜISTICA'=>'LINGÜISTICA',
+                              'LOGICA'=>'LOGICA',
+                              'MATEMATICAS'=>'MATEMATICAS',
+                              'MEDICINA Y PATOLOGIA HUMANA'=>'MEDICINA Y PATOLOGIA HUMANA',
+                              'PEDAGOGIA'=>'PEDAGOGIA',
+                              'PSICOLOGIA'=>'PSICOLOGIA',
+                              'PROSPECTIVA'=>'PROSPECTIVA',
+                              'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'onchange'=>'changeArea()'));?>
+                                                      </span>
+    <?php echo $form->error($model,'area'); ?>
+  </div>
+  <div class="row"id="comboDiscipline">
 
-															'2'=>'ARTES Y LETRAS',
-															'3'=>'ASTRONOMIA Y ASTROFISICA',
-															'4'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
-															'5'=>'CIENCIAS DE LA OCUPACION',
-															'6'=>'CIENCIAS DE LA TECNOLOGIA',
-															'7'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
-															'8'=>'CIENCIAS DE LA SALUD',
-															'9'=>'CIENCIAS DE LA VIDA',
-															'10'=>'CIENCIAS ECONOMICAS',
-															'11'=>'CIENCIAS JURIDICAS Y DERECHO',
-															'12'=>'CIENCIAS POLITICAS',
-															'13'=>'DEMOGRAFIA',
-															'14'=>'ETICA',
-															'15'=>'FILOSOFIA',
-															'16'=>'FISICA',
-															'17'=>'GEOGRAFIA',
-															'18'=>'HISTORIA',
-															'19'=>'LINGÜISTICA',
-															'20'=>'LOGICA',
-															'21'=>'MATEMATICAS',
-															'22'=>'MEDICINA Y PATOLOGIA HUMANA',
-															'23'=>'PEDAGOGIA',
-															'24'=>'PSICOLOGIA',
-															'25'=>'PROSPECTIVA',
-															'26'=>'QUIMICA', '27'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'onchange'=>'changeArea()'));?>
-			                                                </span>
-		<?php echo $form->error($model,'area'); ?>
-	</div>
+  </div>
+  <div class="row"id="comboSubdiscipline">
 
-	<div class="row">
-		<span class="plain-select">
-		<?php echo $form->dropDownList($model,'discipline',array('APLICACIONES DE LA LOGICA'=>'APLICACIONES DE LA LOGICA','LOGICA DEDUCTIVA'=>'LOGICA DEDUCTIVA','LOGICA GENERAL'=>'LOGICA GENERAL','LOGICA INDUCTIVA METODOLOGIA
-                                                                 '=>'LOGICA INDUCTIVA METODOLOGIA','OTRAS ESPECIALIDADES EN MATERIA DE LOGICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE LOGICA','ÁLGEBRA'=>'ÁLGEBRA','ANALISIS Y ANALISIS FUNCIONAL
-	                                                             INFORMATICA MATEMATICA'=>'ANALISIS Y ANALISIS FUNCIONAL INFORMATICA MATEMATICA','GEOMETRIA TEORIA DE LOS NUMEROS'=>'GEOMETRIA TEORIA DE LOS NUMEROS',
-	                                                             'ANALISIS NUMERICO INVESTIGACION OPERATIVA'=>'ANALISIS NUMERICO INVESTIGACION OPERATIVA','CALCULO DE PROBABILIDADES ESTADISTICA'=>'CALCULO DE PROBABILIDADES ESTADISTICA',
-	                                                             'TOPOLOGIA'=>'TOPOLOGIA','INFORMATICA SISTEMAS'=>'INFORMATICA SISTEMAS','MATEMATICAS'=>'MATEMATICAS','OTRAS ESPECIALIDADES EN MATERIA DE MATEMATICAS'=>'OTRAS ESPECIALIDADES EN MATERIA DE MATEMATICAS',
-	                                                             'COSMOLOGIA Y COSMOGONIA'=>'COSMOLOGIA Y COSMOGONIA','ESPACIOS Y MATERIA INTERPLANETARIOS ASTRONOMIA OPTICA'=>'ESPACIOS Y MATERIA INTERPLANETARIOS ASTRONOMIA OPTICA',
-	                                                             'PLANETOLOGIA'=>'PLANETOLOGIA','RADIOASTRONOMIA SISTEMA SOLAR'=>'RADIOASTRONOMIA SISTEMA SOLAR','OTRAS ESPECIALIDADES EN MATERIA DE ASTRONOMIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE ASTRONOMIA',
-	                                                             'ACUSTICA'=>'ACUSTICA','ELECTROMAGNETISMO'=>'ELECTROMAGNETISMO','ELECTRONICA'=>'ELECTRONICA','FISICA DE LOS FLUIDOS'=>'FISICA DE LOS FLUIDOS','MECANICA FISICA MOLECULAR'=>'MECANICA FISICA MOLECULAR',
-	                                                             'FISICA NUCLEAR'=>'FISICA NUCLEAR','FISICA DE LAS PARTICULAS NUCLEARES OPTICA'=>'FISICA DE LAS PARTICULAS NUCLEARES OPTICA','FISICOQUIMICA'=>'FISICOQUIMICA','FISICA DEL ESTADO SOLIDO'=>'FISICA DEL ESTADO SOLIDO','FISICA TEORICA'=>'FISICA TEORICA',
-	                                                             'TERMODINAMICA'=>'TERMODINAMICA','UNIDADES Y CONSTANTES FISICAS'=>'UNIDADES Y CONSTANTES FISICAS','FISICA DEL ESPACIO'=>'FISICA DEL ESPACIO','OTRAS ESPECIALIDADES EN MATERIA DE FISICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE FISICA',
-	                                                             'QUIMICA ANALITICA'=>'QUIMICA ANALITICA','BIOQUIMICA'=>'BIOQUIMICA','QUIMICA INORGANICA'=>'QUIMICA INORGANICA','QUIMICA DE LAS MACROMOLECULAS'=>'QUIMICA DE LAS MACROMOLECULAS','QUIMICA NUCLEAR'=>'QUIMICA NUCLEAR',
-	                                                             'QUIMICA ORGANICA'=>'QUIMICA ORGANICA','QUIMICA FISICA'=>'QUIMICA FISICA','FARMACOBIOLOGIA'=>'FARMACOBIOLOGIA','OTRAS ESPECIALIDADES EN MATERIA DE QUIMICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE QUIMICA',
-	                                                             'BIOLOGIA ANIMAL Y ZOOLOGIA'=>'BIOLOGIA ANIMAL Y ZOOLOGIA','ANTROPOLOGIA FISICA'=>'ANTROPOLOGIA FISICA','BIOQUIMICA BIOMATEMATICA'=>'BIOQUIMICA BIOMATEMATICA','BIOMETRIA'=>'BIOMETRIA','BIOFISICA'=>'BIOFISICA','BIOLOGIA CELULAR ETOLOGIA'=>'BIOLOGIA CELULAR ETOLOGIA',
-	                                                             'GENETICA'=>'GENETICA','BIOLOGIA HUMANA'=>'BIOLOGIA HUMANA','FISIOLOGIA HUMANA INMUNOLOGIA'=>'FISIOLOGIA HUMANA INMUNOLOGIA','ENTOMOLOGIA GENERAL'=>'ENTOMOLOGIA GENERAL','MICROBIOLOGIA'=>'MICROBIOLOGIA','BIOLOGIA MOLECULAR'=>'BIOLOGIA MOLECULAR',
-	                                                             'PALEONTOLOGIA'=>'PALEONTOLOGIA','BOTANICA'=>'BOTANICA','RADIOBIOLOGIA'=>'RADIOBIOLOGIA','SIMBIOSIS'=>'SIMBIOSIS','VIROLOGIA'=>'VIROLOGIA','EVOLUCION'=>'EVOLUCION','MEDIO AMBIENTE'=>'MEDIO AMBIENTE','OTRAS ESPECIALIDADES EN MATERIA DE BIOLOGIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE BIOLOGIA',
-	                                                             'CIENCIAS ATMOSFERICAS'=>'CIENCIAS ATMOSFERICAS','CLIMATOLOGIA'=>'CLIMATOLOGIA','GEOQUIMICA GEODESIA'=>'GEOQUIMICA GEODESIA','GEOGRAFIA'=>'GEOGRAFIA','GEOLOGIA'=>'GEOLOGIA','GEOFISICA'=>'GEOFISICA','HIDROLOGIA'=>'HIDROLOGIA','METEOROLOGIA'=>'METEOROLOGIA',
-	                                                             'OCEANOGRAFIA'=>'OCEANOGRAFIA','CIENCIAS DEL SUELO'=>'CIENCIAS DEL SUELO','CIENCIAS DEL COSMOS'=>'CIENCIAS DEL COSMOS','OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS DE LA TIERRA'=>'OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS DE LA TIERRA','DEL COSMOS Y DEL MEDIO AMBIENTE'=>'DEL COSMOS Y DEL MEDIO AMBIENTE',
-	                                                             'SALUD PÚBLICA'=>'SALUD PÚBLICA','INVESTIGACIÓN EN SALUD'=>'INVESTIGACIÓN EN SALUD','ENFERMERÍA'=>'ENFERMERÍA','QUIMICA AGRONOMICA'=>'QUIMICA AGRONOMICA','INGENIERIA RURAL'=>'INGENIERIA RURAL','AGRONOMIA'=>'AGRONOMIA','CIENCIAS VETERINARIAS PECES Y ANIMALES SALVAJES'=>'CIENCIAS VETERINARIAS PECES Y ANIMALES SALVAJES',
-	                                                             'SILVICULTURA'=>'SILVICULTURA','HORTICULTURA'=>'HORTICULTURA','FITOPATOLOGIA'=>'FITOPATOLOGIA','CIENCIAS VETERINARIAS'=>'CIENCIAS VETERINARIAS','HIGIENE VETERINARIA Y SALUD PUBLICA'=>'HIGIENE VETERINARIA Y SALUD PUBLICA',
-	                                                             'OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS AGRONOMICAS Y VETERINARIAS','MEDICINA CLINICA'=>'MEDICINA CLINICA','EPIDEMIOLOGIA'=>'EPIDEMIOLOGIA','MEDICINA FORENSE'=>'MEDICINA FORENSE','MEDICINA DEL TRABAJO'=>'MEDICINA DEL TRABAJO',
-	                                                             'MEDICINA INTERNA'=>'MEDICINA INTERNA','NUTRICION'=>'NUTRICION','PATOLOGIA'=>'PATOLOGIA','FARMACODINAMICA'=>'FARMACODINAMICA','FARMACOLOGIA'=>'FARMACOLOGIA','MEDICINA PREVENTIVA'=>'MEDICINA PREVENTIVA','PSIQUIATRIA'=>'PSIQUIATRIA','SANIDAD PUBLICA'=>'SANIDAD PUBLICA','MEDICINA QUIRURGICA'=>'MEDICINA QUIRURGICA',
-	                                                             'TOXICOLOGIA'=>'TOXICOLOGIA','ADMINISTRACION DE HOSPITALES Y DE LA ATENCION MEDICA'=>'ADMINISTRACION DE HOSPITALES Y DE LA ATENCION MEDICA','BIOLOGIA DE LA REPRODUCCION HUMANA'=>'BIOLOGIA DE LA REPRODUCCION HUMANA',
-	                                                             'FISIOLOGIA'=>'FISIOLOGIA','MORFOLOGIA'=>'MORFOLOGIA','OBSTETRICIA'=>'OBSTETRICIA','CIENCIAS DE LA INFORMACION Y COMUNICACION EN MEDICINA'=>'CIENCIAS DE LA INFORMACION Y COMUNICACION EN MEDICINA','CIENCIAS SOCIALES EN MEDICINA'=>'CIENCIAS SOCIALES EN MEDICINA',
-	                                                             'OTRAS ESPECIALIDADES EN MATERIA DE MEDICINA Y PATOLOGIA HUMANAS'=>'OTRAS ESPECIALIDADES EN MATERIA DE MEDICINA Y PATOLOGIA HUMANAS','TECNOLOGIA E INGENIERIA AERONAUTICA'=>'TECNOLOGIA E INGENIERIA AERONAUTICA','TECNOLOGIA BIOQUIMICA'=>'TECNOLOGIA BIOQUIMICA','TECNOLOGIA E INGENIERIA QUIMICA'=>'TECNOLOGIA E INGENIERIA QUIMICA',
-	                                                             'TECNOLOGIA DE LA INFORMATICA'=>'TECNOLOGIA DE LA INFORMATICA','TECNOLOGIA DE LA CONSTRUCCION'=>'TECNOLOGIA DE LA CONSTRUCCION','TECNOLOGIA E INGENIERIA DE LA ELECTRICIDAD'=>'TECNOLOGIA E INGENIERIA DE LA ELECTRICIDAD','TECNOLOGIA ELECTRONICA'=>'TECNOLOGIA ELECTRONICA','TECNOLOGIA DEL MEDIO AMBIENTE'=>'TECNOLOGIA DEL MEDIO AMBIENTE',
-	                                                             'TECNOLOGIA DE LA ALIMENTACION'=>'TECNOLOGIA DE LA ALIMENTACION','TECNOLOGIA INDUSTRIAL'=>'TECNOLOGIA INDUSTRIAL','INSTRUMENTAL TECNOLOGICO'=>'INSTRUMENTAL TECNOLOGICO','TECNOLOGIA DE LAS MATERIAS'=>'TECNOLOGIA DE LAS MATERIAS','TECNOLOGIA MECANICA'=>'TECNOLOGIA MECANICA','TECNOLOGIA DE LA MEDICINA'=>'TECNOLOGIA DE LA MEDICINA',
-	                                                             'TECNOLOGIA DE LA METALURGIA'=>'TECNOLOGIA DE LA METALURGIA','TECNOLOGIA DE LOS PRODUCTOS METALICOS'=>'TECNOLOGIA DE LOS PRODUCTOS METALICOS','TECNOLOGIA DE LOS VEHICULOS DE MOTOR'=>'TECNOLOGIA DE LOS VEHICULOS DE MOTOR','TECNOLOGIA DE MINAS'=>'TECNOLOGIA DE MINAS','TECNOLOGIA NAVAL'=>'TECNOLOGIA NAVAL','TECNOLOGIA NUCLEAR'=>'TECNOLOGIA NUCLEAR',
-	                                                             'TECNOLOGIA DEL PETROLEO Y DEL CARBON'=>'TECNOLOGIA DEL PETROLEO Y DEL CARBON','TECNOLOGIA DE LA ENERGIA'=>'TECNOLOGIA DE LA ENERGIA','TECNOLOGIA DE FERROCARRILES'=>'TECNOLOGIA DE FERROCARRILES','TECNOLOGIA DEL ESPACIO'=>'TECNOLOGIA DEL ESPACIO','TECNOLOGIA DE LAS TELECOMUNICACIONES'=>'TECNOLOGIA DE LAS TELECOMUNICACIONES',
-	                                                             'TECNOLOGIA TEXTIL'=>'TECNOLOGIA TEXTIL','TECNOLOGIA DE LOS SISTEMAS DE TRANSPORTE'=>'TECNOLOGIA DE LOS SISTEMAS DE TRANSPORTE','ANALISIS DE LAS OPERACIONES TECNOLOGICAS'=>'ANALISIS DE LAS OPERACIONES TECNOLOGICAS','TECNOLOGIA DEL URBANISMO'=>'TECNOLOGIA DEL URBANISMO','GESTION DE LA CALIDAD'=>'GESTION DE LA CALIDAD','CIENCIAS DE LA COMPUTACION'=>'CIENCIAS DE LA COMPUTACION',
-	                                                             'TECNOLOGIA DE BIOPROCESOS'=>'TECNOLOGIA DE BIOPROCESOS','TECNOLOGIA DE BIOMOLECULAS'=>'TECNOLOGIA DE BIOMOLECULAS','OTRAS ESPECIALIDADES EN MATERIA DE TECNOLOGIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE TECNOLOGIA','ANTROPOLOGIA CULTURAL'=>'ANTROPOLOGIA CULTURAL','ETNOGRAFIA Y ETNOLOGIA'=>'ETNOGRAFIA Y ETNOLOGIA','ANTROPOLOGIA ESTRUCTURAL'=>'ANTROPOLOGIA ESTRUCTURAL',
-	                                                             'OTRAS ESPECIALIDADES EN MATERIA DE ANTROPOLOGIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE ANTROPOLOGIA','FECUNDIDAD'=>'FECUNDIDAD','DEMOGRAFIA GENERAL'=>'DEMOGRAFIA GENERAL','DEMOGRAFIA GEOGRAFICA'=>'DEMOGRAFIA GEOGRAFICA','DEMOGRAFIA HISTORICA'=>'DEMOGRAFIA HISTORICA','MORTALIDAD'=>'MORTALIDAD','CARACTERISTICAS DE LAS POBLACIONES'=>'CARACTERISTICAS DE LAS POBLACIONES',
-	                                                             'EVOLUCION DEMOGRAFICA'=>'EVOLUCION DEMOGRAFICA','OTRAS ESPECIALIDADES EN MATERIA DE DEMOGRAFIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE DEMOGRAFIA','POLITICA FISCAL Y HACIENDA PUBLICA'=>'POLITICA FISCAL Y HACIENDA PUBLICA','ECONOMETRIA'=>'ECONOMETRIA','CONTABILIDAD PUBLICA'=>'CONTABILIDAD PUBLICA','ACTIVIDADES ECONOMICAS'=>'ACTIVIDADES ECONOMICAS',
-	                                                             'SISTEMAS ECONOMICOS'=>'SISTEMAS ECONOMICOS','CAMBIO ECONOMICO O TECNOLOGICO'=>'CAMBIO ECONOMICO O TECNOLOGICO','TEORIA ECONOMICA'=>'TEORIA ECONOMICA','ECONOMIA GENERAL'=>'ECONOMIA GENERAL','ORGANIZACION DE LA INDUSTRIA Y POLITICA ECONOMICA PUBLICA'=>'ORGANIZACION DE LA INDUSTRIA Y POLITICA ECONOMICA PUBLICA',
-	                                                             'ECONOMIA INTERNACIONAL'=>'ECONOMIA INTERNACIONAL','ORGANIZACION Y DIRECCION DE EMPRESAS'=>'ORGANIZACION Y DIRECCION DE EMPRESAS','ECONOMIA SECTORIAL'=>'ECONOMIA SECTORIAL','GESTION DE LA CALIDAD'=>'GESTION DE LA CALIDAD','OTRAS ESPECIALIDADES EN MATERIA DE ECONOMIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE ECONOMIA','GEOGRAFIA ECONOMICA'=>'GEOGRAFIA ECONOMICA',
-	                                                             'GEOGRAFIA HISTORICA'=>'GEOGRAFIA HISTORICA','GEOGRAFIA HUMANA'=>'GEOGRAFIA HUMANA','GEOGRAFIA REGIONAL'=>'GEOGRAFIA REGIONAL','OTRAS ESPECIALIDADES EN MATERIA DE GEOGRAFIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE GEOGRAFIA','BIOGRAFIA'=>'BIOGRAFIA','HISTORIA GENERAL'=>'HISTORIA GENERAL','HISTORIA DE LOS PAISES'=>'HISTORIA DE LOS PAISES',
-	                                                             'HISTORIA DE LAS EPOCAS'=>'HISTORIA DE LAS EPOCAS','CIENCIAS AUXILIARES DE LA HISTORIA'=>' CIENCIAS AUXILIARES DE LA HISTORIA','HISTORIA ESPECIALIZADA'=>'HISTORIA ESPECIALIZADA','OTRAS ESPECIALIDADES EN MATERIA DE HISTORIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE HISTORIA','DERECHO CANONICO'=>'DERECHO CANONICO','TEORIAS Y METODOS JURIDICOS GENERALES'=>'TEORIAS Y METODOS JURIDICOS GENERALES',
-	                                                             'DERECHO INTERNACIONAL'=>'DERECHO INTERNACIONAL','ORGANIZACION PENAL'=>'ORGANIZACION PENAL','DERECHO Y LEGISLACION NACIONALES'=>'DERECHO Y LEGISLACION NACIONALES','OTRAS ESPECIALIDADES EN MATERIA JURIDICA'=>'OTRAS ESPECIALIDADES EN MATERIA JURIDICA','LINGÜISTICA APLICADA'=>'LINGÜISTICA APLICADA','LINGÜISTICA DIACRONICA'=>'LINGÜISTICA DIACRONICA','GEOGRAFIA LINGÜISTICA'=>'GEOGRAFIA LINGÜISTICA',
-	                                                             'LINGÜISTICA TEORICA'=>'LINGÜISTICA TEORICA','LINGÜISTICA SINCRONICA'=>'LINGÜISTICA SINCRONICA','POLITICAS DEL LENGUAJE'=>'POLITICAS DEL LENGUAJE','OTRAS ESPECIALIDADES EN MATERIA DE LINGÜÍSTICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE LINGÜÍSTICA','TEORIAS Y METODOS PEDAGOGICOS GENERALES'=>'TEORIAS Y METODOS PEDAGOGICOS GENERALES',
-	                                                             'ORGANIZACION Y PLANIFICACION PEDAGOGICAS'=>'ORGANIZACION Y PLANIFICACION PEDAGOGICAS','FORMACION Y EMPLEO DE LOS EDUCADORES'=>'FORMACION Y EMPLEO DE LOS EDUCADORES','OTRAS ESPECIALIDADES EN MATERIA DE PEDAGOGIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE PEDAGOGIA',
-	                                                             'RELACIONES INTERNACIONALES'=>'RELACIONES INTERNACIONALES','POLITICAS SECTORIALES'=>'POLITICAS SECTORIALES','IDEOLOGIAS POLITICAS'=>'IDEOLOGIAS POLITICAS','INSTITUCIONES POLITICAS'=>'INSTITUCIONES POLITICAS','VIDA POLITICA'=>'VIDA POLITICA','SOCIOLOGIA DE LA POLITICA'=>'SOCIOLOGIA DE LA POLITICA','SISTEMAS POLITICOS'=>'SISTEMAS POLITICOS','POLITICA TEORICA'=>'POLITICA TEORICA',
-	                                                             'ADMINISTRACION PUBLICA'=>'ADMINISTRACION PUBLICA','OPINION PUBLICA'=>'OPINION PUBLICA','BIBLIOTECONOMIA Y ARCHIVONOMIA'=>'BIBLIOTECONOMIA Y ARCHIVONOMIA','OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS POLITICAS'=>'OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS POLITICAS','PSICOLOGIA PATOLOGICA'=>'PSICOLOGIA PATOLOGICA',
-	                                                             'PSICOLOGIA DEL NIÑO Y DEL ADOLESCENTE'=>'PSICOLOGIA DEL NIÑO Y DEL ADOLESCENTE','ORIENTACION PSICOLOGICA'=>'ORIENTACION PSICOLOGICA','PSICOLOGIA DE LA EDUCACION'=>'PSICOLOGIA DE LA EDUCACION','EVALUACION Y MEDICION PSICOLOGICAS'=>'EVALUACION Y MEDICION PSICOLOGICAS','PSICOLOGIA EXPERIMENTAL'=>'PSICOLOGIA EXPERIMENTAL','PSICOLOGIA GENERAL'=>'PSICOLOGIA GENERAL',
-	                                                             'PSICOLOGIA GERIATRICA'=>'PSICOLOGIA GERIATRICA','PSICOLOGIA DEL TRABAJO Y DEL PERSONAL'=>'PSICOLOGIA DEL TRABAJO Y DEL PERSONAL','PARAPSICOLOGIA'=>'PARAPSICOLOGIA','ESTUDIO DE LA PERSONALIDAD'=>'ESTUDIO DE LA PERSONALIDAD','ESTUDIO PSICOLOGICO DE FENOMENOS SOCIALES'=>'ESTUDIO PSICOLOGICO DE FENOMENOS SOCIALES',
-	                                                             'PSICOFARMACOLOGIA'=>'PSICOFARMACOLOGIA','PSICOLOGIA SOCIAL'=>'PSICOLOGIA SOCIAL','OTRAS ESPECIALIDADES EN MATERIA DE PSICOLOGIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE PSICOLOGIA','ARQUITECTURA'=>'ARQUITECTURA','TEORIA'=>'TEORIA','ANALISIS Y CRITICA LITERARIOS'=>'ANALISIS Y CRITICA LITERARIOS','TEORIA'=>'TEORIA','ANALISIS Y CRITICA DE LAS BELLAS ARTES'=>'ANALISIS Y CRITICA DE LAS BELLAS ARTES',
-	                                                             'OTRAS ESPECIALIDADES EN MATERIA DE ARTES Y LETRAS'=>'OTRAS ESPECIALIDADES EN MATERIA DE ARTES Y LETRAS','SOCIOLOGIA CULTURAL'=>'SOCIOLOGIA CULTURAL','SOCIOLOGIA EXPERIMENTAL'=>'SOCIOLOGIA EXPERIMENTAL','SOCIOLOGIA GENERAL'=>'SOCIOLOGIA GENERAL','PROBLEMAS INTERNACIONALES'=>'PROBLEMAS INTERNACIONALES','SOCIOLOGIA MATEMATICA Y ESTADISTICA'=>'SOCIOLOGIA MATEMATICA Y ESTADISTICA',
-	                                                             'SOCIOLOGIA DE ACTIVIDADES PARTICULARES'=>'SOCIOLOGIA DE ACTIVIDADES PARTICULARES','CAMBIO Y DESARROLLO SOCIAL'=>'CAMBIO Y DESARROLLO SOCIAL','COMUNICACION SOCIAL'=>'COMUNICACION SOCIAL','GRUPOS SOCIALES'=>'GRUPOS SOCIALES','PROBLEMAS SOCIALES'=>'PROBLEMAS SOCIALES','SOCIOLOGIA DE LA IMPLANTACION HUMANA'=>'SOCIOLOGIA DE LA IMPLANTACION HUMANA','ORGANIZACION SOCIAL ESTRUCTURA E INSTITUCIONES'=>'ORGANIZACION SOCIAL ESTRUCTURA E INSTITUCIONES',
-	                                                             'CULTURA FÍSICA'=>'CULTURA FÍSICA','HUMANIDADES'=>'HUMANIDADES','OTRAS ESPECIALIDADES EN MATERIA DE SOCIOLOGIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE SOCIOLOGIA','TERAPIA OCUPACIONAL'=>'TERAPIA OCUPACIONAL','ETICA CLASICA'=>'ETICA CLASICA','ETICA INDIVIDUAL'=>'ETICA INDIVIDUAL','ETICA DE GRUPO'=>'ETICA DE GRUPO','ETICA PROSPECTIVA'=>'ETICA PROSPECTIVA','OTRAS ESPECIALIDADES EN MATERIA DE ETICA'=>'OTRAS ESPECIALIDADES EN MATERIA DE ETICA',
-	                                                             'FILOSOFIA DE LOS CONOCIMIENTOS'=>'FILOSOFIA DE LOS CONOCIMIENTOS','ANTROPOLOGIA FILOSOFICA'=>'ANTROPOLOGIA FILOSOFICA','FILOSOFIA GENERAL'=>'FILOSOFIA GENERAL','SISTEMAS FILOSOFICOS'=>'SISTEMAS FILOSOFICOS','FILOSOFIA DE LA CIENCIA'=>'FILOSOFIA DE LA CIENCIA','FILOSOFIA DE LA NATURALEZA'=>'FILOSOFIA DE LA NATURALEZA','FILOSOFIA SOCIAL'=>'FILOSOFIA SOCIAL','DOCTRINAS FILOSOFICAS'=>'DOCTRINAS FILOSOFICAS','OTRAS ESPECIALIDADES EN MATERIA DE FILOSOFIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE FILOSOFIA',
-	                                                             'PREVISION'=>'PREVISION','ANALISIS DE TENDENCIAS'=>'ANALISIS DE TENDENCIAS','PLANEACION Y DISEÑO DE ESTRATEGIAS'=>'PLANEACION Y DISEÑO DE ESTRATEGIAS','DISEÑO DE PRIORIDADES A LARGO PLAZO'=>'DISEÑO DE PRIORIDADES A LARGO PLAZO','CONSTRUCCION DE ESCENARIOS'=>'CONSTRUCCION DE ESCENARIOS','ETICA DEL FUTURO'=>'ETICA DEL FUTURO','TENDENCIAS DEMOGRAFICAS Y POBLACIONALES'=>'TENDENCIAS DEMOGRAFICAS Y POBLACIONALES',
-	                                                             'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS'=>'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS',' ANALISIS DE RIESGOS'=>' ANALISIS DE RIESGOS','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','NUEVAS FUERTES DE ENERGIA'=>'NUEVAS FUERTES DE ENERGIA','NUEVOS SISTEMAS ORGANIZACIONALES'=>'NUEVOS SISTEMAS ORGANIZACIONALES','OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'=>'OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'),array('prompt'=>'Seleccionar disciplina','title'=>'Diciplina'));?>
-	                                                             </span>
-		<?php echo $form->error($model,'discipline'); ?>
-	</div>
+  </div>
+  
 
-
-	<div class="row">
-	<span class="plain-select">
-		<?php echo $form->dropDownList($model,'subdiscipline',array('ANALOGIA'=>'ANALOGIA','ALGEBRA DE BOOLE'=>'ALGEBRA DE BOOLE','LOGICA FORMAL'=>'LOGICA FORMAL','LENGUAJES FORMALIZADOS'=>'LENGUAJES FORMALIZADOS','SISTEMAS FORMALES'=>'SISTEMAS FORMALES','FUNDAMENTOS DE LAS MATEMATICAS'=>'FUNDAMENTOS DE LAS MATEMATICAS',
-		                                                            'GENERALIZACION'=>'GENERALIZACION','LOGICA MATEMATICA'=>'LOGICA MATEMATICA','LOGICA MODAL'=>'LOGICA MODAL','TEORIA DE LOS MODELOS'=>'TEORIA DE LOS MODELOS','TEORIA DE LAS PRUEBAS'=>'TEORIA DE LAS PRUEBAS','CALCULO DE PROPOSICIONES'=>'CALCULO DE PROPOSICIONES',
-		                                                            'FUNCIONES RECURSIVAS'=>'FUNCIONES RECURSIVAS','LOGICA SIMBOLICA'=>'LOGICA SIMBOLICA','TEORIA DE LOS LENGUAJES FORMALES'=>'TEORIA DE LOS LENGUAJES FORMALES','TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS'=>'TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS','OTROS'=>'OTROS',
-		                                                            'INDUCCION'=>'INDUCCION','INTUICIONISMO'=>'INTUICIONISMO','PROBABILIDAD'=>'PROBABILIDAD','OTROS'=>'OTROS','METODO CIENTIFICO'=>'METODO CIENTIFICO','OTROS'=>'OTROS','GEOMETRIA ALGEBRAICA'=>'GEOMETRIA ALGEBRAICA','TEORIA AXIOMATICA DE CONJUNTOS'=>'TEORIA AXIOMATICA DE CONJUNTOS','TEORIA DE LAS CATEGORIAS'=>'TEORIA DE LAS CATEGORIAS',
-		                                                            'ALGEBRA DIFERENCIAL'=>'ALGEBRA DIFERENCIAL','CAMPOS'=>'CAMPOS','ANILLOS'=>'ANILLOS','ALGEBRAS'=>'ALGEBRAS','GRUPOS'=>'GRUPOS','GENERALIDADES'=>'GENERALIDADES','ALGEBRA HOMOLOGICA'=>'ALGEBRA HOMOLOGICA','RETICULOS ALGEBRA DE LIE'=>'RETICULOS ALGEBRA DE LIE','ALGEBRA LINEAL'=>'ALGEBRA LINEAL','TEORIA DE LAS MATRICES'=>'TEORIA DE LAS MATRICES',
-		                                                            'ALGEBRAS NO ASOCIATIVAS'=>'ALGEBRAS NO ASOCIATIVAS','POLINOMIOS'=>'POLINOMIOS','TEORIA DE LA REPRESENTACION'=>'TEORIA DE LA REPRESENTACION','ESTRUCTURAS ALGEBRAICAS'=>'ESTRUCTURAS ALGEBRAICAS','TEORIA K ALGEBRAICA'=>'TEORIA K ALGEBRAICA','OTROS'=>'OTROS','ALGEBRA DE OPERADORES LOGICOS'=>'ALGEBRA DE OPERADORES LOGICOS',
-		                                                            'TEORIA DE LA APROXIMACION'=>'TEORIA DE LA APROXIMACION','ESPACIOS Y ALGEBRAS DE BANACH'=>'ESPACIOS Y ALGEBRAS DE BANACH','CALCULO DE VARIACIONES'=>'CALCULO DE VARIACIONES','ANALISIS COMBINATORIO'=>'ANALISIS COMBINATORIO','CONVEXIDAD'=>'CONVEXIDAD','DESIGUALDADES'=>'DESIGUALDADES',
-		                                                            'ECUACIONES EN DIFERENCIAS FINITAS'=>'ECUACIONES EN DIFERENCIAS FINITAS','ECUACIONES FUNCIONALES'=>'ECUACIONES FUNCIONALES',', FUNCIONES DE UNA VARIABLE COMPLEJA'=>', FUNCIONES DE UNA VARIABLE COMPLEJA','FUNCIONES DE VARIABLES REALES'=>'FUNCIONES DE VARIABLES REALES','FUNCIONES DE VARIAS VARIABLES COMPLEJAS'=>'FUNCIONES DE VARIAS VARIABLES COMPLEJAS',
-		                                                            'ANALISIS GLOBAL'=>'ANALISIS GLOBAL','ANALISIS ARMONICO'=>'ANALISIS ARMONICO','ESPACIOS DE HILBERT'=>'ESPACIOS DE HILBERT','ECUACIONES INTEGRALES'=>'ECUACIONES INTEGRALES','TRANSFORMACIONES INTEGRALES'=>'TRANSFORMACIONES INTEGRALES','MEDIDAS'=>'MEDIDAS','INTEGRACION'=>'INTEGRACION','AREA CALCULO OPERACIONAL'=>'AREA CALCULO OPERACIONAL',
-		                                                            'ECUACIONES DIFERENCIALES ORDINARIAS'=>'ECUACIONES DIFERENCIALES ORDINARIAS','ECUACIONES DIFERENCIALES PARCIALES'=>'ECUACIONES DIFERENCIALES PARCIALES','TEORIA DEL POTENCIAL'=>'TEORIA DEL POTENCIAL','SERIES'=>'SERIES','SUMABILIDAD'=>'SUMABILIDAD','FUNCIONES ESPECIALES'=>'FUNCIONES ESPECIALES','FUNCIONES SUBARMONICAS'=>'FUNCIONES SUBARMONICAS',
-		                                                            'ESPACIOS LINEALES TOPOLOGICOS'=>'ESPACIOS LINEALES TOPOLOGICOS','SERIES E INTEGRALES TRIGONOMETRICAS'=>'SERIES E INTEGRALES TRIGONOMETRICAS','TEORIA DE GRAFICAS'=>'TEORIA DE GRAFICAS','TEORIA ERGODICA'=>'TEORIA ERGODICA','TEORIA DE FUNCIONES GENERALIZADA'=>'TEORIA DE FUNCIONES GENERALIZADA','ESPACIOS ANALITICOS'=>'ESPACIOS ANALITICOS',
-		                                                            'ANALISIS DE FOURIER'=>'ANALISIS DE FOURIER','OTROS'=>'OTROS','CONTABILIDAD'=>'CONTABILIDAD','LENGUAJES ALGORITMICOS'=>'LENGUAJES ALGORITMICOS','COMPUTACION ANALOGICA'=>'COMPUTACION ANALOGICA','INTELIGENCIA ARTIFICIAL'=>'INTELIGENCIA ARTIFICIAL','SISTEMAS DE PRODUCCION AUTOMATICA'=>'SISTEMAS DE PRODUCCION AUTOMATICA','SISTEMAS AUTOMATICOS DE CONTROL DE CALIDAD'=>'SISTEMAS AUTOMATICOS DE CONTROL DE CALIDAD',
-		                                                            'MODELIZACION CAUSAL'=>'MODELIZACION CAUSAL','CODIGOS Y SISTEMAS DE CODIFICACION'=>'CODIGOS Y SISTEMAS DE CODIFICACION','DISEÑO CON AYUDA DE COMPUTADOR'=>'DISEÑO CON AYUDA DE COMPUTADOR','ENSEÑANZA CON AYUDA DE COMPUTADOR'=>'ENSEÑANZA CON AYUDA DE COMPUTADOR','SOPORTE LOGICO DE COMPUTADORES'=>'SOPORTE LOGICO DE COMPUTADORES','BANCOS DE DATOS'=>'BANCOS DE DATOS',
-		                                                            'COMPUTACION DIGITAL'=>'COMPUTACION DIGITAL','SISTEMAS DE CONTROL AMBIENTAL'=>'SISTEMAS DE CONTROL AMBIENTAL','HEURISTICA'=>'HEURISTICA','COMPUTACION HIBRIDA'=>'COMPUTACION HIBRIDA','INFORMATICA'=>'INFORMATICA','SISTEMAS DE INFORMACION'=>'SISTEMAS DE INFORMACION','DISEÑO Y COMPONENTES CONTROL DE INVENTARIO'=>'DISEÑO Y COMPONENTES CONTROL DE INVENTARIO',
-		                                                            'SISTEMAS DE CONTROL MEDICO'=>'SISTEMAS DE CONTROL MEDICO','SISTEMAS DE NAVEGACION DE TELEMETRIA Y ESPACIAL'=>'SISTEMAS DE NAVEGACION DE TELEMETRIA Y ESPACIAL','SISTEMAS DE CONTROL DE PRODUCCION'=>'SISTEMAS DE CONTROL DE PRODUCCION','LENGUAJES DE PROGRAMACION'=>'LENGUAJES DE PROGRAMACION','TEORIA DE LA PROGRAMACION'=>'TEORIA DE LA PROGRAMACION',
-		                                                            'DISEÑO DE SISTEMAS DE SENSORES'=>'DISEÑO DE SISTEMAS DE SENSORES','SIMULACION'=>'SIMULACION','OTROS'=>'OTROS','GEOMETRIA AFIN'=>'GEOMETRIA AFIN','VARIEDADES COMPLEJAS'=>'VARIEDADES COMPLEJAS','DOMINIOS CONVEXOS'=>'DOMINIOS CONVEXOS','GEOMETRIA DIFERENCIAL'=>'GEOMETRIA DIFERENCIAL',
-		                                                            'PROBLEMAS DE EXTREMO'=>'PROBLEMAS DE EXTREMO','GEOMETRIA EUCLIDIANA'=>'GEOMETRIA EUCLIDIANA','GEOMETRIAS INFINITAS FUNDAMENTOS'=>'GEOMETRIAS INFINITAS FUNDAMENTOS','GEOMETRIAS NO EUCLIDIANAS'=>'GEOMETRIAS NO EUCLIDIANAS','GEOMETRIA PROYECTIVA'=>'GEOMETRIA PROYECTIVA','GEOMETRIA RIEMANIANA'=>'GEOMETRIA RIEMANIANA','ANALISIS TENSORIAL'=>'ANALISIS TENSORIAL','TEORIA K'=>'TEORIA K',
-		                                                            'TEORIA DE LA FUNCION GEOMETRICA'=>'TEORIA DE LA FUNCION GEOMETRICA','GEOMETRIA TOPOLOGICA'=>'GEOMETRIA TOPOLOGICA','ESTRUCTURAS DE ORDEN GEOMETRICO'=>'ESTRUCTURAS DE ORDEN GEOMETRICO','GEOMETRIA COMPLEJA Y REAL'=>'GEOMETRIA COMPLEJA Y REAL','GEOMETRIA DESCRIPTIVA Y ANALITICA'=>'GEOMETRIA DESCRIPTIVA Y ANALITICA','GEOMETRIA DISCRETA'=>'GEOMETRIA DISCRETA','OTROS'=>'OTROS',
-		                                                            'TEORIA DE LOS NUMEROS ALGEBRAICOS'=>'TEORIA DE LOS NUMEROS ALGEBRAICOS','TEORIA DE LOS NUMEROS ANALITICOS'=>'TEORIA DE LOS NUMEROS ANALITICOS','PROBLEMAS DIOFANTINOS'=>'PROBLEMAS DIOFANTINOS','TEORIA DE LOS NUMEROS ELEMENTALES'=>'TEORIA DE LOS NUMEROS ELEMENTALES','GEOMETRIA DE LOS NUMEROS SUCESIONES Y CONJUNTOS'=>'GEOMETRIA DE LOS NUMEROS SUCESIONES Y CONJUNTOS',
-		                                                            'TEORIA K'=>'TEORIA K','OTROS'=>'OTROS','CONSTRUCCION DE ALGORITMOS'=>'CONSTRUCCION DE ALGORITMOS','ECUACIONES DIFERENCIALES ANALISIS DE ERRORES'=>'ECUACIONES DIFERENCIALES ANALISIS DE ERRORES','ECUACIONES FUNCIONALES ECUACIONES INTEGRALES'=>'ECUACIONES FUNCIONALES ECUACIONES INTEGRALES','ECUACIONES INTEGRODIFERENCIALES INTERPOLACION'=>'ECUACIONES INTEGRODIFERENCIALES INTERPOLACION',
-		                                                            'PROXIMACION Y AJUSTE DE CURVAS METODOS ITERATIVOS'=>'PROXIMACION Y AJUSTE DE CURVAS METODOS ITERATIVOS','ECUACIONES LINEALES MATRICES'=>'ECUACIONES LINEALES MATRICES','DIFERENCIACION NUMERICA'=>'DIFERENCIACION NUMERICA','ECUACIONES DIFERENCIALES ORDINARIAS'=>'ECUACIONES DIFERENCIALES ORDINARIAS',
-		                                                            'ECUACIONES DIFERENCIALES PARCIALES'=>'ECUACIONES DIFERENCIALES PARCIALES','CUADRATURA'=>'CUADRATURA','OTROS'=>'OTROS','ANALISIS MICROECONOMICO'=>'ANALISIS MICROECONOMICO','SISTEMAS DE CONTROL'=>'SISTEMAS DE CONTROL','CIBERNETICA DISTRIBUCION Y TRANSPORTE'=>'CIBERNETICA DISTRIBUCION Y TRANSPORTE','PROGRAMACION DINAMICA'=>'PROGRAMACION DINAMICA','TEORIA DE JUEGOS'=>'TEORIA DE JUEGOS','PROGRAMACION ENTERA'=>'PROGRAMACION ENTERA',
-		                                                            'INVENTARIO'=>'INVENTARIO','PROGRAMACION LINEAL'=>'PROGRAMACION LINEAL','FLUJO DE RED'=>'FLUJO DE RED','PROGRAMACION NO LINEAL'=>'PROGRAMACION NO LINEAL','COLAS'=>'COLAS','ORDENAMIENTO'=>'ORDENAMIENTO','FORMULACION DE SISTEMAS'=>'FORMULACION DE SISTEMAS','FIABILIDAD DE LOS SISTEMAS'=>'FIABILIDAD DE LOS SISTEMAS','MODELACION'=>'MODELACION','OTROS'=>'OTROS',
-		                                                            'MATEMATICAS ACTUARIALES'=>'MATEMATICAS ACTUARIALES','TEORIA ANALITICA DE LA PROBABILIDAD'=>'TEORIA ANALITICA DE LA PROBABILIDAD','APLICACION DE LA PROBABILIDAD'=>'APLICACION DE LA PROBABILIDAD','FUNDAMENTOS DE LA PROBABILIDAD'=>'FUNDAMENTOS DE LA PROBABILIDAD','TEOREMAS LIMITE'=>'TEOREMAS LIMITE','PROCESOS DE MARKOV'=>'PROCESOS DE MARKOV','PLAUSIBILIDAD'=>'PLAUSIBILIDAD',
-		                                                            'PROCESOS ESTOCASTICOS'=>'PROCESOS ESTOCASTICOS','PROBABILIDADES SUBJETIVAS'=>'PROBABILIDADES SUBJETIVAS','PROBABILIDAD GEOMETRICA'=>'PROBABILIDAD GEOMETRICA','GEOMETRIA ESTOCASTICA'=>'GEOMETRIA ESTOCASTICA','CONJUNTOS ALEATORIOS'=>'CONJUNTOS ALEATORIOS','OTROS'=>'OTROS','ESTADISTICA ANALITICA'=>'ESTADISTICA ANALITICA','COMPUTACION PARA LA ESTADISTICA'=>'COMPUTACION PARA LA ESTADISTICA',
-		                                                            'ANALISIS DE DATOS'=>'ANALISIS DE DATOS','PROCEDIMIENTOS DE DECISION Y TEORIA DE DECISION'=>'PROCEDIMIENTOS DE DECISION Y TEORIA DE DECISION','DISEÑO Y ANALISIS DE EXPERIMENTOS'=>'DISEÑO Y ANALISIS DE EXPERIMENTOS','METODOS NO PARAMETRICOS'=>'METODOS NO PARAMETRICOS','TEORIA DE LA DISTRIBUCION Y LA PROBABILIDAD'=>'TEORIA DE LA DISTRIBUCION Y LA PROBABILIDAD',
-		                                                            'FUNDAMENTOS DE INFERENCIA ESTADISTICA'=>'FUNDAMENTOS DE INFERENCIA ESTADISTICA','ANALISIS MULTIVARIANTE'=>'ANALISIS MULTIVARIANTE','TEORIA Y TECNICAS DE MUESTREO'=>'TEORIA Y TECNICAS DE MUESTREO','TEORIA ESTOCASTICA Y ANALISIS DE SERIES TEMPORALES'=>'TEORIA ESTOCASTICA Y ANALISIS DE SERIES TEMPORALES','TECNICAS DE ASOCIACION ESTADISTICA'=>'TECNICAS DE ASOCIACION ESTADISTICA',
-		                                                            'TECNICAS DE INFERENCIA ESTADISTICA'=>'TECNICAS DE INFERENCIA ESTADISTICA','TECNICAS DE PREDICCION ESTADISTICA'=>'TECNICAS DE PREDICCION ESTADISTICA','SERIES TEMPORALES'=>'SERIES TEMPORALES','OTROS'=>'OTROS','ESPACIOS ABSTRACTOS'=>'ESPACIOS ABSTRACTOS','COHOMOLOGIA'=>'COHOMOLOGIA','VARIEDADES DIFERENCIALES'=>'VARIEDADES DIFERENCIALES',
-		                                                            'HACES Y ESPACIOS DE FIBRAS'=>'HACES Y ESPACIOS DE FIBRAS','TOPOLOGIA GENERAL'=>'TOPOLOGIA GENERAL','HOMOLOGIA'=>'HOMOLOGIA','HOMOTOPIA'=>'HOMOTOPIA','GRUPOS DE LIE'=>'GRUPOS DE LIE','TOPOLOGIA COMBINATORIA'=>'TOPOLOGIA COMBINATORIA','TOPOLOGIA DE CONJUNTOS DE PUNTOS'=>'TOPOLOGIA DE CONJUNTOS DE PUNTOS','TOPOLOGIA TRIDIMENSIONAL'=>'TOPOLOGIA TRIDIMENSIONAL',
-		                                                            'GRUPOS TOPOLOGICOS'=>'GRUPOS TOPOLOGICOS','DINAMICA TOPOLOGICA'=>'DINAMICA TOPOLOGICA','INMERSION TOPOLOGICA'=>'INMERSION TOPOLOGICA','VARIEDADES TOPOLOGICAS'=>'VARIEDADES TOPOLOGICAS','GRUPOS DE TRANSFORMACION'=>'GRUPOS DE TRANSFORMACION','TEORIA K TOPOLOGICA'=>'TEORIA K TOPOLOGICA','TOPOLOGIA ALGEBRAICA'=>'TOPOLOGIA ALGEBRAICA','OTROS'=>'OTROS',
-		                                                            'LOGICA MATEMATICA Y LENGUAJES FORMALES'=>'LOGICA MATEMATICA Y LENGUAJES FORMALES','LENGUAJES ALGORITMICOS'=>'LENGUAJES ALGORITMICOS','LENGUAJES DE PROGRAMACION'=>'LENGUAJES DE PROGRAMACION','TEORIA DE LA PROGRAMACION'=>'TEORIA DE LA PROGRAMACION','INTELIGENCIA ARTIFICIAL'=>'INTELIGENCIA ARTIFICIAL','TEORIA DE LA CODIFICACION Y DE LA INFORMACION'=>'TEORIA DE LA CODIFICACION Y DE LA INFORMACION',
-		                                                            'TEORIA'=>'TEORIA','ESTRUCTURA Y MANEJO DE DATOS, TEORIA DE LA INFORMATICA'=>'ESTRUCTURA Y MANEJO DE DATOS, TEORIA DE LA INFORMATICA','SISTEMAS DE INFORMACION'=>'SISTEMAS DE INFORMACION','DISEÑO Y COMPONENTES'=>'DISEÑO Y COMPONENTES','MATEMATICAS DISCRETAS'=>'MATEMATICAS DISCRETAS',', PROGRAMAS MATEMATICOS'=>', PROGRAMAS MATEMATICOS',
-		                                                            'MANIPULACION SIMBOLICA Y ALGEBRAICA'=>'MANIPULACION SIMBOLICA Y ALGEBRAICA','GRAFICAS INFORMATICAS, SIMULACION Y MODELACION'=>'GRAFICAS INFORMATICAS, SIMULACION Y MODELACION','PROCESAMIENTO DE TEXTOS Y DOCUMENTOS'=>'PROCESAMIENTO DE TEXTOS Y DOCUMENTOS','OTROS'=>'OTROS','SISTEMAS ALGEBRAICOS TOPOLOGICOS Y DIFERENCIABLES'=>'SISTEMAS ALGEBRAICOS TOPOLOGICOS Y DIFERENCIABLES',
-		                                                            'SISTEMAS DINAMICOS'=>'SISTEMAS DINAMICOS','SISTEMAS HAMILTONIANOS'=>'SISTEMAS HAMILTONIANOS','SISTEMAS LAGRANGIANOS'=>'SISTEMAS LAGRANGIANOS','SISTEMAS ESTOCASTICOS Y CONTROL'=>'SISTEMAS ESTOCASTICOS Y CONTROL','OTROS'=>'OTROS','ESTRELLAS BINARIAS'=>'ESTRELLAS BINARIAS','CONGLOMERADOS'=>'CONGLOMERADOS','RAYOS COSMICOS'=>'RAYOS COSMICOS','GALAXIAS'=>'GALAXIAS',
-		                                                            'GRAVITACION'=>'GRAVITACION','NEBULOSAS'=>'NEBULOSAS','NOVAS'=>'NOVAS','PULSARS'=>'PULSARS','QUASARS'=>'QUASARS','ESTRELLAS'=>'ESTRELLAS','EVOLUCION ESTELAR Y DIAGRAMAS HR'=>'EVOLUCION ESTELAR Y DIAGRAMAS HR','COMPOSICION ESTELAR'=>'COMPOSICION ESTELAR','SUPER NOVAS'=>'SUPER NOVAS','ESTRELLAS VARIABLES'=>'ESTRELLAS VARIABLES','FUENTES DE RAYOS X'=>'FUENTES DE RAYOS X',
-		                                                            'CAMPOS INTERPLANETARIOS'=>'CAMPOS INTERPLANETARIOS','MATERIAS INTERPLANETARIAS'=>'MATERIAS INTERPLANETARIAS','PARTICULAS INTERPLANETARIAS'=>'PARTICULAS INTERPLANETARIAS','OTROS'=>'OTROS','ASTRONOMIA DE POSICION'=>'ASTRONOMIA DE POSICION','TELESCOPIOS'=>'TELESCOPIOS','ESPECTROSCOPIA'=>'ESPECTROSCOPIA','OTROS'=>'OTROS','COMETAS'=>'COMETAS','METEORITOS'=>'METEORITOS',
-		                                                            'ATMOSFERAS PLANETARIAS'=>'ATMOSFERAS PLANETARIAS','GEOLOGIA PLANETARIA'=>'GEOLOGIA PLANETARIA','FISICA PLANETARIA'=>'FISICA PLANETARIA','CAMPOS MAGNETICOS PLANETARIOS'=>'CAMPOS MAGNETICOS PLANETARIOS','PLANETAS'=>'PLANETAS','SATELITES'=>'SATELITES','TECTITAS'=>'TECTITAS','LA LUNA'=>'LA LUNA','OTROS'=>'OTROS','ANTENAS'=>'ANTENAS','RADIOTELESCOPIOS'=>'RADIOTELESCOPIOS','OTROS'=>'OTROS',
-		                                                            'ENERGIA SOLAR'=>'ENERGIA SOLAR','FISICA SOLAR'=>'FISICA SOLAR','RADIACION SOLAR'=>'RADIACION SOLAR','EL SOL'=>'EL SOL','OTROS'=>'OTROS','PROPIEDADES ACUSTICAS DE LOS SOLIDOS'=>'PROPIEDADES ACUSTICAS DE LOS SOLIDOS','ACUSTICA ARQUITECTONICA'=>'ACUSTICA ARQUITECTONICA','FISICA DE LA AUDICION'=>'FISICA DE LA AUDICION','FISICA DE LA MUSICA'=>'FISICA DE LA MUSICA',
-		                                                            'RUIDO'=>'RUIDO','ONDAS DE CHOQUE'=>'ONDAS DE CHOQUE','SONAR'=>'SONAR','FISICA DEL HABLA'=>'FISICA DEL HABLA','ULTRASONIDOS'=>'ULTRASONIDOS','SONIDOS SUBMARINOS'=>'SONIDOS SUBMARINOS','VIBRACIONES'=>'VIBRACIONES','OTROS'=>'OTROS','CONDUCTIVIDAD'=>'CONDUCTIVIDAD','CANTIDADES ELECTRICAS Y SU MEDICION'=>'CANTIDADES ELECTRICAS Y SU MEDICION','ELECTRICIDAD'=>'ELECTRICIDAD',
-		                                                            'RADIACION ELECTROMAGNETICA'=>'RADIACION ELECTROMAGNETICA','RAYOS GAMMA'=>'RAYOS GAMMA','RADIACION INFRARROJA'=>'RADIACION INFRARROJA','VISIBLE Y ULTRAVIOLETA'=>'VISIBLE Y ULTRAVIOLETA','INTERACCION DE LAS ONDAS ELECTROMAGNETICAS CON LA MATERIA'=>'INTERACCION DE LAS ONDAS ELECTROMAGNETICAS CON LA MATERIA','MAGNETISMO'=>'MAGNETISMO','PROPAGACION DE LAS ONDAS ELECTROMAGNETICAS'=>'PROPAGACION DE LAS ONDAS ELECTROMAGNETICAS',
-		                                                            'ONDAS DE RADIO Y MICROONDAS'=>'ONDAS DE RADIO Y MICROONDAS','SUPERCONDUCTIVIDAD'=>'SUPERCONDUCTIVIDAD','RAYOS X'=>'RAYOS X','OTROS'=>'OTROS','CIRCUITOS'=>'CIRCUITOS','ELEMENTOS DE CIRCUITO'=>'ELEMENTOS DE CIRCUITO','TUBOS ELECTRONICOS'=>'TUBOS ELECTRONICOS','MICROSCOPIA ELECTRONICA'=>'MICROSCOPIA ELECTRONICA','ESTADOS ELECTRONICOS'=>'ESTADOS ELECTRONICOS','TRANSPORTE DE ELECTRONES'=>'TRANSPORTE DE ELECTRONES','CIRCUITOS INTEGRADOS'=>'CIRCUITOS INTEGRADOS',
-		                                                            'FOTOELECTRICIDAD'=>'FOTOELECTRICIDAD','PIEZOELECTRICIDAD'=>'PIEZOELECTRICIDAD','OTROS'=>'OTROS','COLOIDES'=>'COLOIDES','DISPERSIONES'=>'DISPERSIONES','CORRIENTE DE FLUIDOS'=>'CORRIENTE DE FLUIDOS','MECANICA DE FLUIDOS'=>'MECANICA DE FLUIDOS','GASES'=>'GASES','FENOMENOS DE ALTA PRESION'=>'FENOMENOS DE ALTA PRESION','IONIZACION'=>'IONIZACION','LIQUIDOS'=>'LIQUIDOS','MAGNETO-DINAMICA DE LOS FLUIDOS'=>'MAGNETO-DINAMICA DE LOS FLUIDOS',
-		                                                            'FISICA DEL PLASMA'=>'FISICA DEL PLASMA','FLUIDOS CUANTICOS'=>'FLUIDOS CUANTICOS','OTROS'=>'OTROS','MECANICA ANALITICA'=>'MECANICA ANALITICA','MECANICA CONTINUA'=>'MECANICA CONTINUA','ELASTICIDAD'=>'ELASTICIDAD','MECANICA DE FLUIDOS'=>'MECANICA DE FLUIDOS','FRICCION'=>'FRICCION','TEORIA DE N CUERPOS'=>'TEORIA DE N CUERPOS','MEDIDA DE LAS PROPIEDADES MECANICAS'=>'MEDIDA DE LAS PROPIEDADES MECANICAS',
-		                                                            'PLASTICIDAD'=>'PLASTICIDAD','MECANICA DE SOLIDOS'=>'MECANICA DE SOLIDOS','MECANICA ESTADISTICA'=>'MECANICA ESTADISTICA','OTROS'=>'OTROS','RADICALES LIBRES'=>'RADICALES LIBRES','FISICA DE LAS MOLECULAS INORGANICAS'=>'FISICA DE LAS MOLECULAS INORGANICAS','FISICA DE LAS MACROMOLECULAS'=>'FISICA DE LAS MACROMOLECULAS','MOLECULAS MESIONICAS Y MUONICAS'=>'MOLECULAS MESIONICAS Y MUONICAS','HACES MOLECULARES'=>'HACES MOLECULARES','IONES MOLECULARES'=>'IONES MOLECULARES',
-		                                                            'ESPECTROSCOPIA MOLECULAR'=>'ESPECTROSCOPIA MOLECULAR','ESTRUCTURA MOLECULAR'=>'ESTRUCTURA MOLECULAR','FISICA DE LAS MOLECULAS ORGANICAS'=>'FISICA DE LAS MOLECULAS ORGANICAS','FISICA DE POLIMEROS'=>'FISICA DE POLIMEROS','OTROS'=>'OTROS','HACES ATOMICOS'=>'HACES ATOMICOS','IONES ATOMICOS'=>'IONES ATOMICOS','FISICA ATOMICA'=>'FISICA ATOMICA','ATOMOS CON Z>2'=>'ATOMOS CON Z>2','PROCESOS DE COLISION'=>'PROCESOS DE COLISION','HACES ELECTRONICOS'=>'HACES ELECTRONICOS',
-		                                                            'RESONANCIA PARAMAGNETICA ELECTRONICA'=>'RESONANCIA PARAMAGNETICA ELECTRONICA','RESONANCIA DE ROTACION DEL ELECTRON'=>'RESONANCIA DE ROTACION DEL ELECTRON','CONVERSION DE LA ENERGIA'=>'CONVERSION DE LA ENERGIA','FISION NUCLEAR'=>'FISION NUCLEAR',
-		                                                            'ATOMO DE HELIO'=>'ATOMO DE HELIO','ATOMO DE HIDROGENO'=>'ATOMO DE HIDROGENO','ISOTOPOS'=>'ISOTOPOS','DESINTEGRACION NUCLEAR'=>'DESINTEGRACION NUCLEAR','ENERGIA NUCLEAR'=>'ENERGIA NUCLEAR','RESONANCIA MAGNETICA NUCLEAR'=>'RESONANCIA MAGNETICA NUCLEAR','REACCIONES Y DISPERSION NUCLEARES'=>'REACCIONES Y DISPERSION NUCLEARES',
-		                                                            'REACTORES NUCLEARES'=>'REACTORES NUCLEARES','ESTRUCTURA DEL NUCLEO'=>'ESTRUCTURA DEL NUCLEO','RADIOISOTOPOS'=>'RADIOISOTOPOS','FUSION TERMONUCLEAR'=>'FUSION TERMONUCLEAR','OTROS'=>'OTROS','MANEJO DE HACES'=>'MANEJO DE HACES','FUENTES DE HACES'=>'FUENTES DE HACES','REACTORES DE FUSION'=>'REACTORES DE FUSION','NUCLEOS'=>'NUCLEOS','ACELERADORES DE PARTICULAS'=>'ACELERADORES DE PARTICULAS','DETECTORES DE RADIACION'=>'DETECTORES DE RADIACION',
-		                                                            'FISICA DE PARTICULAS'=>'FISICA DE PARTICULAS','FUENTES DE PARTICULAS'=>'FUENTES DE PARTICULAS','CONFINAMIENTO DEL PLASMA'=>'CONFINAMIENTO DEL PLASMA','OTROS'=>'OTROS','ESPECTROSCOPIA DE ABSORCION'=>'ESPECTROSCOPIA DE ABSORCION','CINEMATOGRAFIA'=>'CINEMATOGRAFIA','COLORIMETRIA'=>'COLORIMETRIA','ESPECTROSCOPIA DE EMISION'=>'ESPECTROSCOPIA DE EMISION',
-		                                                            'OPTICA DE FIBRAS FOTOCONDUCTORAS'=>'OPTICA DE FIBRAS FOTOCONDUCTORAS','OPTICA GEOMETRICA'=>'OPTICA GEOMETRICA','HOLOGRAFIA'=>'HOLOGRAFIA','ILUMINACION'=>'ILUMINACION','RADIACION INFRARROJA'=>'RADIACION INFRARROJA','LASER'=>'LASER','LUZ'=>'LUZ','MICROSCOPIOS'=>'MICROSCOPIOS','OPTICA NO LINEAL'=>'OPTICA NO LINEAL','PROPIEDADES OPTICAS DE LOS SOLIDOS'=>'PROPIEDADES OPTICAS DE LOS SOLIDOS',
-		                                                            'OPTOMETRIA'=>'OPTOMETRIA','INSTRUMENTACION FOTOGRAFICA'=>'INSTRUMENTACION FOTOGRAFICA','FOTOGRAFIA'=>'FOTOGRAFIA','FOTOMETRIA'=>'FOTOMETRIA','OPTICA FISICA'=>'OPTICA FISICA','RADIOMETRIA'=>'RADIOMETRIA','ESPECTROSCOPIA'=>'ESPECTROSCOPIA','RADIACION ULTRAVIOLETA'=>'RADIACION ULTRAVIOLETA','RADIACION VISIBLE'=>'RADIACION VISIBLE','FISICA DE LA VISION'=>'FISICA DE LA VISION','OTROS'=>'OTROS',
-		                                                            'CATALISIS'=>'CATALISIS','EQUILIBRIOS QUIMICOS'=>'EQUILIBRIOS QUIMICOS','CINETOQUIMICA'=>'CINETOQUIMICA','QUIMICA COLOIDAL'=>'QUIMICA COLOIDAL','ELECTROQUIMICA'=>'ELECTROQUIMICA','ELECTROLITOS'=>'ELECTROLITOS','ESPECTROSCOPIA ELECTRONICA'=>'ESPECTROSCOPIA ELECTRONICA','EMULSIONES'=>'EMULSIONES','TRANSFERENCIA DE ENERGIA'=>'TRANSFERENCIA DE ENERGIA','REACCIONES RAPIDAS'=>'REACCIONES RAPIDAS',
-		                                                            'EXPLOSIVOS'=>'EXPLOSIVOS','LLAMAS'=>'LLAMAS','TEORIA DE PILAS DE COMBUSTIBLE'=>'TEORIA DE PILAS DE COMBUSTIBLE','SALES FUNDIDAS'=>'SALES FUNDIDAS','FISICA DE LA FASE GASEOSA'=>'FISICA DE LA FASE GASEOSA','QUIMICA DE ALTA TEMPERATURA'=>'QUIMICA DE ALTA TEMPERATURA','QUIMICA INTERFACIAL'=>'QUIMICA INTERFACIAL','INTERCAMBIO IONICO'=>'INTERCAMBIO IONICO','FISICA DE ESTADO LIQUIDO'=>'FISICA DE ESTADO LIQUIDO','FENOMENOS DE MEMBRANA'=>'FENOMENOS DE MEMBRANA',
-		                                                            'ESPECTROSCOPIA MOLECULAR'=>'ESPECTROSCOPIA MOLECULAR','EQUILIBRIOS DE FASE'=>'EQUILIBRIOS DE FASE','FOTOQUIMICA'=>'FOTOQUIMICA','TEORIA CUANTICA'=>'TEORIA CUANTICA','RADIOQUIMICA'=>'RADIOQUIMICA','PROCESOS DE RELACION'=>'PROCESOS DE RELACION','FENOMENOS DE DISPERSION'=>'FENOMENOS DE DISPERSION','ESTADOS DE LA MATERIA'=>'ESTADOS DE LA MATERIA','QUIMICA DEL ESTADO SOLIDO'=>'QUIMICA DEL ESTADO SOLIDO',
-		                                                            'FISICA DEL ESTADO SOLIDO'=>'FISICA DEL ESTADO SOLIDO','SOLUCIONES'=>'SOLUCIONES','TERMOQUIMICA'=>'TERMOQUIMICA','TERMODINAMICA'=>'TERMODINAMICA','FENOMENOS DE TRANSPORTE'=>'FENOMENOS DE TRANSPORTE','TEORIA DE LA VALENCIA'=>'TEORIA DE LA VALENCIA','OTROS'=>'OTROS','ALEACIONES'=>'ALEACIONES','COMPUESTOS'=>'COMPUESTOS','CRECIMIENTO CRISTALINO'=>'CRECIMIENTO CRISTALINO','CRISTALOGRAFIA'=>'CRISTALOGRAFIA',
-		                                                            'ESTRUCTURA CRISTALINA'=>'ESTRUCTURA CRISTALINA','DENDRITAS'=>'DENDRITAS','DIELECTRICIDAD'=>'DIELECTRICIDAD','DIFUSION EN LOS SOLIDOS'=>'DIFUSION EN LOS SOLIDOS','PROPIEDADES DE PORTADORES DE LOS ELECTRONES'=>'PROPIEDADES DE PORTADORES DE LOS ELECTRONES','ESTADOS ELECTRONICOS'=>'ESTADOS ELECTRONICOS','PROPIEDADES DE TRANSPORTE ELECTRONICO'=>'PROPIEDADES DE TRANSPORTE ELECTRONICO','IMPERFECCIONES'=>'IMPERFECCIONES',
-		                                                            'INTERACCION DE LA RADIACION CON LOS SOLIDOS'=>'INTERACCION DE LA RADIACION CON LOS SOLIDOS','INTERFACES'=>'INTERFACES','MECANICA DE RETICULOS'=>'MECANICA DE RETICULOS','LUMINOSIDAD'=>'LUMINOSIDAD','PROPIEDADES MAGNETICAS'=>'PROPIEDADES MAGNETICAS','RESONANCIA MAGNETICA'=>'RESONANCIA MAGNETICA','PROPIEDADES MECANICAS'=>'PROPIEDADES MECANICAS','CONDUCTORES METALICOS'=>'CONDUCTORES METALICOS',
-		                                                            'TECNOLOGIA METALURGICA'=>'TECNOLOGIA METALURGICA','MECANOGRAFIA'=>'MECANOGRAFIA','ESTADOS NO CRISTALINOS'=>'ESTADOS NO CRISTALINOS','PROPIEDADES OPTICAS'=>'PROPIEDADES OPTICAS','SEMICONDUCTORES'=>'SEMICONDUCTORES','DISPOSITIVOS DE ESTADO SOLIDO'=>'DISPOSITIVOS DE ESTADO SOLIDO','SUPERCONDUCTORES'=>'SUPERCONDUCTORES','SUPERFICIES'=>'SUPERFICIES','PROPIEDADES TERMODINAMICAS DE LOS SOLIDOS'=>'PROPIEDADES TERMODINAMICAS DE LOS SOLIDOS',
-		                                                            'TRIBOLOGIA'=>'TRIBOLOGIA','NANOCIENCIAS Y NANOTECNOLOGIA'=>'NANOCIENCIAS Y NANOTECNOLOGIA','OTROS'=>'OTROS','CAMPOS ELECTROMAGNETICOS'=>'CAMPOS ELECTROMAGNETICOS','PARTICULAS ELEMENTALES'=>'PARTICULAS ELEMENTALES','FISICA DE LA ENERGIA'=>'FISICA DE LA ENERGIA','CAMPOS'=>'CAMPOS','GRAVITACION'=>'GRAVITACION','CAMPOS GRAVITATORIOS'=>'CAMPOS GRAVITATORIOS','GRAVITONES'=>'GRAVITONES','HADRONES'=>'HADRONES','LEPTONES'=>'LEPTONES',
-		                                                            'MASA'=>'MASA','FOTONES'=>'FOTONES','TEORIA DE LOS CAMPOS CUANTICOS'=>'TEORIA DE LOS CAMPOS CUANTICOS','RADIACION ELECTROMAGNETICA'=>'RADIACION ELECTROMAGNETICA','TEORIA DE LA RELATIVIDAD'=>'TEORIA DE LA RELATIVIDAD','OTROS'=>'OTROA','CAMBIOS DE ESTADO'=>'CAMBIOS DE ESTADO','FISICA DE LA TRANSMISION DE CALOR'=>'FISICA DE LA TRANSMISION DE CALOR','ALTA PRESION'=>'ALTA PRESION','ALTA TEMPERATURA'=>'ALTA TEMPERATURA',
-		                                                            'TEORIA CINETICA'=>'TEORIA CINETICA','BAJAS TEMPERATURAS'=>'BAJAS TEMPERATURAS','TRANSICION DE FASE'=>'TRANSICION DE FASE','TECNICAS DE MEDIDAS TERMICAS'=>'TECNICAS DE MEDIDAS TERMICAS','EQUILIBRIOS TERMODINAMICOS'=>'EQUILIBRIOS TERMODINAMICOS','RELACIONES TERMODINAMICAS'=>'RELACIONES TERMODINAMICAS','FENOMENOS DE TRANSPORTE'=>'FENOMENOS DE TRANSPORTE','OTROS'=>'OTROS','CONSTANTES (FISICAS)'=>'CONSTANTES (FISICAS)','METROLOGIA'=>'METROLOGIA',
-		                                                            'UNIDADES ESTANDAR'=>'UNIDADES ESTANDAR','CALIBRACION DE UNIDADES'=>'CALIBRACION DE UNIDADES','CONVERSION DE UNIDADES'=>'CONVERSION DE UNIDADES','OTROS'=>'OTROS','ESPECTROSCOPIA DE ABSORCION'=>'ESPECTROSCOPIA DE ABSORCION','ANALISIS BIOQUIMICO'=>'ANALISIS BIOQUIMICO','ANALISIS CROMATOGRAFICO'=>'ANALISIS CROMATOGRAFICO','ANALISIS ELECTROQUIMICO'=>'ANALISIS ELECTROQUIMICO','ESPECTROSCOPIA DE EMISION'=>'ESPECTROSCOPIA DE EMISION','FLUORIMETRIA'=>'FLUORIMETRIA',
-		                                                            'GRAVIMETRIA'=>'GRAVIMETRIA','ESPECTROSCOPIA INFRARROJA'=>'ESPECTROSCOPIA INFRARROJA','ESPECTROSCOPIA POR RESONANCIA MAGNETICA'=>'ESPECTROSCOPIA POR RESONANCIA MAGNETICA','ESPECTROSCOPIA DE MASAS'=>'ESPECTROSCOPIA DE MASAS','ANALISIS MICROQUIMICO'=>'ANALISIS MICROQUIMICO','MICROSCOPIA'=>'MICROSCOPIA','ESPECTROSCOPIA POR MICROONDAS'=>'ESPECTROSCOPIA POR MICROONDAS','FOSFORIMETRIA'=>'FOSFORIMETRIA','ANALISIS DE LOS POLIMEROS'=>'ANALISIS DE LOS POLIMEROS','ANALISIS RADIOQUIMICO'=>'ANALISIS RADIOQUIMICO',
-		                                                            'ESPECTROSCOPIA DE RAMAN'=>'ESPECTROSCOPIA DE RAMAN','METODOS DE ANALISIS TERMICO'=>'METODOS DE ANALISIS TERMICO','VOLUMETRIA'=>'VOLUMETRIA','ESPECTROSCOPIA POR RAYOS X'=>'ESPECTROSCOPIA POR RAYOS X','OTROS'=>'OTROS','ALCALOIDES'=>'ALCALOIDES','AMINOACIDOS'=>'AMINOACIDOS','ANTIMETABOLITOS'=>'ANTIMETABOLITOS','GENETICA BIOQUIMICA'=>'GENETICA BIOQUIMICA','BIOSINTESIS'=>'BIOSINTESIS','QUIMIOTERAPIA'=>'QUIMIOTERAPIA',' QUIMICA CLINICA'=>' QUIMICA CLINICA','COENZIMAS'=>'COENZIMAS',
-		                                                            'ENZIMOLOGIA'=>'ENZIMOLOGIA','ACEITES ESENCIALES'=>'ACEITES ESENCIALES','ACIDOS GRASOS'=>'ACIDOS GRASOS','FERMENTACION'=>'FERMENTACION','REGULACION DE LA REALIMENTACION'=>'REGULACION DE LA REALIMENTACION','GLUCIDOS'=>'GLUCIDOS','HORMONAS'=>'HORMONAS','INMUNOQUIMICA'=>'INMUNOQUIMICA','METABOLISMO INTERMEDIO'=>'METABOLISMO INTERMEDIO','LIPIDOS'=>'LIPIDOS','PROCESOS METABOLICOS'=>'PROCESOS METABOLICOS','QUIMICA MICROBIOLOGICA'=>'QUIMICA MICROBIOLOGICA',
-		                                                            'BIOLOGIA MOLECULAR'=>'BIOLOGIA MOLECULAR','FARMACOLOGIA MOLECULAR'=>'FARMACOLOGIA MOLECULAR','ACIDOS NUCLEICOS'=>'ACIDOS NUCLEICOS','PEPTIDOS'=>'PEPTIDOS','FOTOSINTESIS'=>'FOTOSINTESIS','BIOQUIMICA FISICA'=>'BIOQUIMICA FISICA','PROTEINAS'=>'PROTEINAS','ALMIDON'=>'ALMIDON','ESTEROIDES'=>'ESTEROIDES','HIDROCARBUROS TERPENICOS'=>'HIDROCARBUROS TERPENICOS','ELEMENTOS TRAZA'=>'ELEMENTOS TRAZA','VITAMINAS'=>'VITAMINAS','CERAS'=>'CERAS','OTROS'=>'OTROS',
-		                                                            'QUIMICA DE LOS ACTINIDOS'=>'QUIMICA DE LOS ACTINIDOS','TIERRAS ALCALINAS'=>'TIERRAS ALCALINAS','ELEMENTOS ALCALINOS'=>'ELEMENTOS ALCALINOS','COMPUESTOS DE BORO'=>'COMPUESTOS DE BORO','CARBONO'=>'CARBONO','COMPUESTOS DE CLORO'=>'COMPUESTOS DE CLORO','COMPUESTOS DE COORDINACION'=>'COMPUESTOS DE COORDINACION','COMPUESTOS DEFICIENTES EN ELECTRONES'=>'COMPUESTOS DEFICIENTES EN ELECTRONES','ELEMENTOS ELECTROPOSITIVOS'=>'ELEMENTOS ELECTROPOSITIVOS',
-		                                                            'COMPUESTOS DE FLUOR'=>'COMPUESTOS DE FLUOR','GERMANIO'=>'GERMANIO','GRAFITO'=>'GRAFITO','HALOGENOS'=>'HALOGENOS','HIDROGENO'=>'HIDROGENO','HIDRUROS'=>'HIDRUROS','MECANISMOS DE REACCIONES INORGANICAS'=>'MECANISMOS DE REACCIONES INORGANICAS','COMPUESTOS DE PLOMO'=>'COMPUESTOS DE PLOMO','METALES'=>'METALES','ALQUILOS METALICOS'=>'ALQUILOS METALICOS','COMPUESTOS DE NITROGENO'=>'COMPUESTOS DE NITROGENO',
-		                                                            'COMPUESTOS ORGANOMETALICOS'=>'COMPUESTOS ORGANOMETALICOS','COMPUESTOS DE FOSFORO'=>'COMPUESTOS DE FOSFORO','QUIMICA DE LOS PIGMENTOS'=>'QUIMICA DE LOS PIGMENTOS','TIERRAS RARAS'=>'TIERRAS RARAS','COMPUESTOS DE SODIO'=>'COMPUESTOS DE SODIO','ESTRUCTURA DE LOS COMPUESTOS INORGANICOS'=>'ESTRUCTURA DE LOS COMPUESTOS INORGANICOS','COMPUESTOS DE AZUFRE'=>'COMPUESTOS DE AZUFRE',
-		                                                            'ELEMENTOS SINTETICOS'=>'ELEMENTOS SINTETICOS','ELEMENTOS DE TRANSICION'=>'ELEMENTOS DE TRANSICION','ELEMENTOS TRANSURANICOS'=>'ELEMENTOS TRANSURANICOS','QUIMICA DEL AGUA'=>'QUIMICA DEL AGUA','OTROS'=>'OTROS','PLASTICOS CELULARES'=>'PLASTICOS CELULARES','CELULOSA'=>'CELULOSA',', POLIMEROS COMPUESTOS'=>', POLIMEROS COMPUESTOS','ELASTOMEROS'=>'ELASTOMEROS','GOMAS'=>'GOMAS','POLIMEROS ELEVADOS'=>'POLIMEROS ELEVADOS',
-		                                                            'POLIMEROS INORGANICOS'=>'POLIMEROS INORGANICOS','MACROMOLECULAS'=>'MACROMOLECULAS','MODIFICACION DE LAS MACROMOLECULAS'=>'MODIFICACION DE LAS MACROMOLECULAS','QUIMICA DE LOS MONOMEROS'=>'QUIMICA DE LOS MONOMEROS','FIBRAS NATURALES'=>'FIBRAS NATURALES','POLIMEROS RETICULADOS'=>'POLIMEROS RETICULADOS','POLIELECTROLITOS'=>'POLIELECTROLITOS','POLIESTERES'=>'POLIESTERES','POLIETILENO'=>'POLIETILENO','ANALISIS DE LOS POLIMEROS'=>'ANALISIS DE LOS POLIMEROS',
-		                                                            'POLIMEROS DISPERSOS'=>'POLIMEROS DISPERSOS','POLIPEPTIDOS Y PROTEINAS'=>'POLIPEPTIDOS Y PROTEINAS','POLISACARIDOS'=>'POLISACARIDOS','POLIESTIRENOS'=>'POLIESTIRENOS','POLIURETANOS'=>'POLIURETANOS','ESTABILIDAD DE LAS MACROMOLECULAS'=>'ESTABILIDAD DE LAS MACROMOLECULAS','SINTESIS DE LAS MACROMOLECULAS'=>'SINTESIS DE LAS MACROMOLECULAS','FIBRAS SINTETICAS'=>'FIBRAS SINTETICAS','OTROS'=>'OTROS','QUIMICA DE LOS ATOMOS RADIACTIVOS'=>'QUIMICA DE LOS ATOMOS RADIACTIVOS',
-		                                                            'TRAZADORES DE ISOTOPOS'=>'TRAZADORES DE ISOTOPOS','MOLECULAS MARCADAS'=>'MOLECULAS MARCADAS','QUIMICA DE LAS RADIACIONES'=>'QUIMICA DE LAS RADIACIONES','RADIOQUIMICA'=>'RADIOQUIMICA','RADIOISOTOPOS'=>'RADIOISOTOPOS','SEPARACION DE ISOTOPOS'=>'SEPARACION DE ISOTOPOS','OTROS'=>'OTROS','HIDROCARBUROS ALIFATICOS'=>'HIDROCARBUROS ALIFATICOS','HIDROCARBUROS AROMATICOS'=>'HIDROCARBUROS AROMATICOS','DERIVADOS DEL BENCENO'=>'DERIVADOS DEL BENCENO','QUIMICA BICICLICA'=>'QUIMICA BICICLICA',
-		                                                            'QUIMICA DEL CARBANION'=>'QUIMICA DEL CARBANION','QUIMICA DE LOS HIDRATOS DE CARBONO'=>'QUIMICA DE LOS HIDRATOS DE CARBONO','QUIMICA DEL CARBONIO'=>'QUIMICA DEL CARBONIO','QUIMICA DE LAS MATERIAS TINTOREAS'=>'QUIMICA DE LAS MATERIAS TINTOREAS','RADICALES LIBRES'=>'RADICALES LIBRES','COMPUESTOS HETEROCICLICOS'=>'COMPUESTOS HETEROCICLICOS','PRODUCTOS ORGANOMETALICOS'=>'PRODUCTOS ORGANOMETALICOS','QUIMICA DE LOS ORGANOFOSFOROS'=>'QUIMICA DE LOS ORGANOFOSFOROS','QUIMICA DE LOS ORGANOSILICONES'=>'QUIMICA DE LOS ORGANOSILICONES',
-		                                                            'QUIMICA DEL ORGANOAZUFRE'=>'QUIMICA DEL ORGANOAZUFRE','MECANICA DE LAS REACCIONES'=>'MECANICA DE LAS REACCIONES','ESTEROQUIMICA Y ANALISIS DE CONFIGURACION'=>'ESTEROQUIMICA Y ANALISIS DE CONFIGURACION','QUIMICA DE LOS ESTEROIDES'=>'QUIMICA DE LOS ESTEROIDES','ESTRUCTURA DE LAS MOLECULAS ORGANICAS'=>'ESTRUCTURA DE LAS MOLECULAS ORGANICAS','OTROS'=>'OTROS','QUIMICA BIOMOLECURAR'=>'QUIMICA BIOMOLECURAR','QUIMICA MEDICINAL'=>'QUIMICA MEDICINAL','ANATOMIA ANIMAL'=>'ANATOMIA ANIMAL',
-		                                                            'COMPORTAMIENTO ANIMAL'=>'COMPORTAMIENTO ANIMAL','COMUNICACION ANIMAL'=>'COMUNICACION ANIMAL','CITOLOGIA ANIMAL'=>'CITOLOGIA ANIMAL','DESARROLLO ANIMAL'=>'DESARROLLO ANIMAL','ECOLOGIA ANIMAL'=>'ECOLOGIA ANIMAL','EMBRIOLOGIA ANIMAL'=>'EMBRIOLOGIA ANIMAL','GENETICA ANIMAL'=>'GENETICA ANIMAL','CRECIMIENTO DE LOS ANIMALES'=>'CRECIMIENTO DE LOS ANIMALES','HISTOLOGIA ANIMAL'=>'HISTOLOGIA ANIMAL','PATOLOGIA ANIMAL'=>'PATOLOGIA ANIMAL','PARASITOLOGIA ANIMAL'=>'PARASITOLOGIA ANIMAL',
-		                                                            'FISIOLOGIA ANIMAL'=>'FISIOLOGIA ANIMAL','TAXONOMIA ANIMAL'=>'TAXONOMIA ANIMAL','ZOOLOGIA GENERAL'=>'ZOOLOGIA GENERAL','HERPETOLOGIA'=>'HERPETOLOGIA','INVERTEBRADOS'=>'INVERTEBRADOS','MAMIFEROS'=>'MAMIFEROS','ZOOLOGIA MARINA'=>'ZOOLOGIA MARINA','ORNITOLOGIA'=>'ORNITOLOGIA','PRIMATOLOGIA'=>'PRIMATOLOGIA','PROTOZOOLOGIA'=>'PROTOZOOLOGIA','VERTEBRADOS'=>'VERTEBRADOS','OTROS'=>'OTROS','ARCHIVOS ANTROPOLOGICOS'=>'ARCHIVOS ANTROPOLOGICOS','GENETICA ANTROPOLOGICA'=>'GENETICA ANTROPOLOGICA',
-		                                                            'ANTROPOMETRIA Y ANTROPOLOGIA FORENSE'=>'ANTROPOMETRIA Y ANTROPOLOGIA FORENSE','COMPOSICION CORPORAL'=>'COMPOSICION CORPORAL','CONSTITUCION CORPORAL'=>'CONSTITUCION CORPORAL','ETNOLOGIA'=>'ETNOLOGIA','ANTROPOLOGIA MEDICA'=>'ANTROPOLOGIA MEDICA','HABITOS DE NUTRICION'=>'HABITOS DE NUTRICION','OSTEOLOGIA'=>'OSTEOLOGIA','BIOLOGIA DE LA POBLACION'=>'BIOLOGIA DE LA POBLACION','COMPORTAMIENTO DE LOS PRIMATES'=>'COMPORTAMIENTO DE LOS PRIMATES','SOMATOLOGIA DE LOS PRIMATES'=>'SOMATOLOGIA DE LOS PRIMATES',
-		                                                            'BIOLOGIA RACIAL'=>'BIOLOGIA RACIAL','CRECIMIENTO SOMATICO'=>'CRECIMIENTO SOMATICO','ENVEJECIMIENTO SOMATICO'=>'ENVEJECIMIENTO SOMATICO','OTROS'=>'OTROS','BIOESTADISTICA'=>'BIOESTADISTICA','OTROS'=>'OTROS','BIOACUSTICA'=>'BIOACUSTICA','BIOELECTRICIDAD'=>'BIOELECTRICIDAD','BIOENERGETICA'=>'BIOENERGETICA','BIOMECANICA'=>'BIOMECANICA','BIOOPTICA'=>'BIOOPTICA','FISICA MEDICA'=>'FISICA MEDICA','OTROS'=>'OTROS','CULTIVO CELULAR'=>'CULTIVO CELULAR','GENETICA CELULAR'=>'GENETICA CELULAR',
-		                                                            'MORFOLOGIA CELULAR'=>'MORFOLOGIA CELULAR','CITOLOGIA'=>'CITOLOGIA','CULTIVO DE TEJIDOS'=>'CULTIVO DE TEJIDOS','OTROS'=>'OTROS','ANIMAL'=>'ANIMAL','HUMANA'=>'HUMANA','DE LOS INSECTOS'=>'DE LOS INSECTOS','OTROS'=>'OTROS','EMBRIOLOGIA'=>'EMBRIOLOGIA','INGENIERIA GENETICA'=>'INGENIERIA GENETICA','GENETICA DE POBLACIONES'=>'GENETICA DE POBLACIONES','OTROS'=>'OTROS','GRUPOS SANGUINEOS'=>'GRUPOS SANGUINEOS','ANATOMIA HUMANA'=>'ANATOMIA HUMANA','CITOLOGIA HUMANA'=>'CITOLOGIA HUMANA',
-		                                                            'DESARROLLO HUMANO'=>'DESARROLLO HUMANO','ECOLOGIA HUMANA'=>'ECOLOGIA HUMANA',' EMBRIOLOGIA HUMANA'=>' EMBRIOLOGIA HUMANA','GENETICA HUMANA'=>'GENETICA HUMANA','HISTOLOGIA HUMANA'=>'HISTOLOGIA HUMANA','NEUROANATOMIA HUMANA'=>'NEUROANATOMIA HUMANA','FISIOLOGIA HUMANA'=>'FISIOLOGIA HUMANA','ORGANOS SENSORIALES'=>'ORGANOS SENSORIALES','ANATOMIA SISTEMATICA'=>'ANATOMIA SISTEMATICA','ANATOMIA TOPOGRAFICA'=>'ANATOMIA TOPOGRAFICA','OTROS'=>'OTROS','FISIOLOGIA DE LAS ACTITUDES'=>'FISIOLOGIA DE LAS ACTITUDES',
-		                                                            'ANESTESIOLOGIA'=>'ANESTESIOLOGIA','FISIOLOGIA CARDIOVASCULAR'=>'FISIOLOGIA CARDIOVASCULAR','FISIOLOGIA DEL SISTEMA ENDOCRINO'=>'FISIOLOGIA DEL SISTEMA ENDOCRINO','FISIOLOGIA DEL EJERCICIO'=>'FISIOLOGIA DEL EJERCICIO','FISIOLOGIA GASTROINTESTINAL'=>'FISIOLOGIA GASTROINTESTINAL','METABOLISMOS HUMANOS'=>'METABOLISMOS HUMANOS','REGULACION DE LA TEMPERATURA HUMANA'=>'REGULACION DE LA TEMPERATURA HUMANA','FISIOLOGIA MUSCULAR'=>'FISIOLOGIA MUSCULAR','NEUROFISIOLOGIA'=>'NEUROFISIOLOGIA',
-		                                                            'FISIOLOGIA DEL SISTEMA NERVIOSO CENTRAL'=>'FISIOLOGIA DEL SISTEMA NERVIOSO CENTRAL','FISIOLOGIA DE LA AUDICION'=>'FISIOLOGIA DE LA AUDICION','FISIOLOGIA DEL HABLA'=>'FISIOLOGIA DEL HABLA','FISIOLOGIA DE LA VISION'=>'FISIOLOGIA DE LA VISION','FISIOLOGIA DE LA REPRODUCCION'=>'FISIOLOGIA DE LA REPRODUCCION','FISIOLOGIA DE LA RESPIRACION'=>'FISIOLOGIA DE LA RESPIRACION','FISIOLOGIA DE LA LOCOMOCION'=>'FISIOLOGIA DE LA LOCOMOCION','OTROS'=>'OTROS','ANTIGENOS'=>'ANTIGENOS','ANTICUERPOS'=>'ANTICUERPOS',
-		                                                            'REACCION ANTIGENO- ANTICUERPO'=>'REACCION ANTIGENO- ANTICUERPO','FORMACION ANTICUERPOS'=>'FORMACION ANTICUERPOS','HIPERSENSIBILIDAD'=>'HIPERSENSIBILIDAD','INMUNIZACION'=>'INMUNIZACION','INMUNOQUIMICA'=>'INMUNOQUIMICA','TRANSPORTE DE ORGANOS'=>'TRANSPORTE DE ORGANOS','ANTICUERPOS DE LOS TEJIDOS'=>'ANTICUERPOS DE LOS TEJIDOS','VACUNAS'=>'VACUNAS','OTROS'=>'OTROS','ENTOMOLOGIA GENERAL'=>'ENTOMOLOGIA GENERAL','DESARROLLO DE LOS INSECTOS'=>'DESARROLLO DE LOS INSECTOS','ECOLOGIA DE LOS INSECTOS'=>'ECOLOGIA DE LOS INSECTOS',
-		                                                            'MORFOLOGIA DE LOS INSECTOS'=>'MORFOLOGIA DE LOS INSECTOS','FISIOLOGIA DE LOS INSECTOS'=>'FISIOLOGIA DE LOS INSECTOS','TAXONOMIA DE LOS INSECTOS'=>'TAXONOMIA DE LOS INSECTOS','OTROS'=>'OTROS','ANTIBIOTICOS'=>'ANTIBIOTICOS','FISIOLOGIA BACTERIANA'=>'FISIOLOGIA BACTERIANA','METABOLISMO BACTERIANO'=>'METABOLISMO BACTERIANO','BACTERIOLOGIA'=>'BACTERIOLOGIA','BACTERIOFAGOS'=>'BACTERIOFAGOS','HONGOS'=>'HONGOS','METABOLISMO MICROBIANO'=>'METABOLISMO MICROBIANO','PROCESOS MIROCROBIANOS'=>'PROCESOS MIROCROBIANOS',
-		                                                            'MOHOS'=>'MOHOS','MICOLOGIA (LEVADURAS)'=>'MICOLOGIA (LEVADURAS)','OTROS'=>'OTROS','PALEONTOLOGIA ANIMAL'=>'PALEONTOLOGIA ANIMAL','PALEONTOLOGIA DE LOS INVERTEBRADOS'=>'PALEONTOLOGIA DE LOS INVERTEBRADOS','PALINOLOGIA'=>'PALINOLOGIA','PALEONTOLOGIA VEGETAL'=>'PALEONTOLOGIA VEGETAL','PALEONTOLOGIA DE LOS VERTEBRADOS'=>'PALEONTOLOGIA DE LOS VERTEBRADOS','OTROS'=>'OTROS','BRIOLOGIA'=>'BRIOLOGIA','DENDROLOGIA'=>'DENDROLOGIA','BOTANICA GENERAL'=>'BOTANICA GENERAL','LIMNOLOGIA'=>'LIMNOLOGIA','BIOLOGIA MARINA'=>'BIOLOGIA MARINA',
-		                                                            'MICOLOGIA (HONGOS)'=>'MICOLOGIA (HONGOS)','FICOLOGIA'=>'FICOLOGIA','FOTOBIOLOGIA'=>'FOTOBIOLOGIA','FITOPATOLOGIA'=>'FITOPATOLOGIA','PALEOBOTANICA'=>'PALEOBOTANICA','ANATOMIA VEGETAL'=>'ANATOMIA VEGETAL','CITOLOGIA VEGETAL'=>'CITOLOGIA VEGETAL','ECOLOGIA VEGETAL'=>'ECOLOGIA VEGETAL','GENETICA VEGETAL'=>'GENETICA VEGETAL','CRECIMIENTO DE LAS PLANTAS'=>'CRECIMIENTO DE LAS PLANTAS','HISTOLOGIA VEGETAL'=>'HISTOLOGIA VEGETAL','NUTRICION DE LAS PLANTAS'=>'NUTRICION DE LAS PLANTAS','PARASITOLOGIA VEGETAL'=>'PARASITOLOGIA VEGETAL',
-		                                                            'FISIOLOGIA VEGETAL'=>'FISIOLOGIA VEGETAL','TAXONOMIA VEGETAL'=>'TAXONOMIA VEGETAL','TERIDOLOGIA'=>'TERIDOLOGIA','OTROS'=>'OTROS','ARBOVIRUS'=>'ARBOVIRUS','BACTERIOFAGOS'=>'BACTERIOFAGOS','VIRUS DERMATROPICOS'=>'VIRUS DERMATROPICOS','VIRUS ENTERICOS'=>'VIRUS ENTERICOS','VIRUS NEUROTROPICOS'=>'VIRUS NEUROTROPICOS','VIRUS PANTROPICOS'=>'VIRUS PANTROPICOS','POXVIRUS'=>'POXVIRUS',', VIRUS DEL SISTEMA RESPIRATORIO'=>', VIRUS DEL SISTEMA RESPIRATORIO','VIRUS VISCEROTROPICOS'=>'VIRUS VISCEROTROPICOS','OTROS'=>'OTROS',
-		                                                            'GESTIÓN AMBIENTAL'=>'GESTIÓN AMBIENTAL','AERONOMIA'=>'AERONOMIA','RESPLANDOR CELESTE'=>'RESPLANDOR CELESTE','INTERACCION AIRE-MAR'=>'INTERACCION AIRE-MAR','ACUSTICA DE LA ATMOSFERA'=>'ACUSTICA DE LA ATMOSFERA','QUIMICA DE LA ATMOSFERA'=>'QUIMICA DE LA ATMOSFERA','DINAMICA DE LA ATMOSFERA'=>'DINAMICA DE LA ATMOSFERA','ELECTRICIDAD ATMOSFERICA'=>'ELECTRICIDAD ATMOSFERICA','OPTICA DE LA ATMOSFERA'=>'OPTICA DE LA ATMOSFERA','RADIACTIVIDAD ATMOSFERICA'=>'RADIACTIVIDAD ATMOSFERICA','ESTRUCTURA DE LA ATMOSFERA'=>'ESTRUCTURA DE LA ATMOSFERA',
-		                                                            'TERMODINAMICA DE LA ATMOSFERA'=>'TERMODINAMICA DE LA ATMOSFERA','TURBULENCIA ATMOSFERICA'=>'TURBULENCIA ATMOSFERICA','AURORA'=>'AURORA','FISICA DE LAS NUBES'=>'FISICA DE LAS NUBES','RAYOS COSMICOS'=>'RAYOS COSMICOS','DIFUSION ATMOSFERICA'=>'DIFUSION ATMOSFERICA','PULSACIONES GEOMAGNETICAS'=>'PULSACIONES GEOMAGNETICAS','IONOSFERA'=>'IONOSFERA','PARTICULAS MAGNETOSFERICAS'=>'PARTICULAS MAGNETOSFERICAS','ONDAS MAGNETOSFERICAS'=>'ONDAS MAGNETOSFERICAS','MODELIZACION NUMERICA'=>'MODELIZACION NUMERICA',
-		                                                            'FISICA DE LAS PRECIPITACIONES'=>'FISICA DE LAS PRECIPITACIONES','TRANSFERENCIA RADIACTIVA'=>'TRANSFERENCIA RADIACTIVA','RADIACION SOLAR'=>'RADIACION SOLAR','OTROS'=>'OTROS','CLIMATOLOGIA ANALITICA'=>'CLIMATOLOGIA ANALITICA','CLIMATOLOGIA APLICADA'=>'CLIMATOLOGIA APLICADA','BIOCLIMATOLOGIA'=>'BIOCLIMATOLOGIA','MICROCLIMATOLOGIA'=>'MICROCLIMATOLOGIA','PALEOCLIMATOLOGIA'=>'PALEOCLIMATOLOGIA','CLIMATOLOGIA FISICA'=>'CLIMATOLOGIA FISICA','CLIMATOLOGIA REGIONAL'=>'CLIMATOLOGIA REGIONAL','OTROS'=>'OTROS',
-		                                                            'COSMOQUIMICA'=>'COSMOQUIMICA','PETROLOGIA EXPERIMENTAL'=>'PETROLOGIA EXPERIMENTAL','GEOQUIMICA DE EXPLORACION'=>'GEOQUIMICA DE EXPLORACION','GEOCRONOLOGIA Y RADIOISOTOPOS'=>'GEOCRONOLOGIA Y RADIOISOTOPOS','GEOQUIMICA DE ALTA TEMPERATURA'=>'GEOQUIMICA DE ALTA TEMPERATURA','GEOQUIMICA DE BAJA TEMPERATURA'=>'GEOQUIMICA DE BAJA TEMPERATURA','GEOQUIMICA ORGANICA'=>'GEOQUIMICA ORGANICA','ISOTOPOS ESTABLES'=>'ISOTOPOS ESTABLES','DISTRIBUCION DE ELEMENTOS TRAZA'=>'DISTRIBUCION DE ELEMENTOS TRAZA','OTROS'=>'OTROS',
-		                                                            'ASTRONOMIA GEODESICA'=>'ASTRONOMIA GEODESICA','CARTOGRAFIA GEODESICA'=>'CARTOGRAFIA GEODESICA','NAVEGACION GEODESICA'=>'NAVEGACION GEODESICA','FOTOGRAMETRIA GEODESICA'=>'FOTOGRAMETRIA GEODESICA','EXPLORACION GEODESICA'=>'EXPLORACION GEODESICA','GEODESIA FISICA'=>'GEODESIA FISICA','GEODESIA MEDIANTE SATELITES'=>'GEODESIA MEDIANTE SATELITES','GEODESIA TEORICA'=>'GEODESIA TEORICA','OTROS'=>'OTROS','BIOGEOGRAFIA'=>'BIOGEOGRAFIA','CARTOGRAFIA GEOGRAFICA'=>'CARTOGRAFIA GEOGRAFICA',', GEOGRAFIA DE LOS RECURSOS NATURALES'=>', GEOGRAFIA DE LOS RECURSOS NATURALES',
-		                                                            'USO DE LAS TIERRAS'=>'USO DE LAS TIERRAS','TEORIA DE LA SITUACION'=>'TEORIA DE LA SITUACION','GEOGRAFIA MEDICA'=>'GEOGRAFIA MEDICA','GEOGRAFIA FISICA'=>'GEOGRAFIA FISICA','GEOGRAFIA TOPOGRAFICA'=>'GEOGRAFIA TOPOGRAFICA','OTROS'=>'OTROS','GEOLOGIA DE LAS DIVERSAS AREAS DE LA SUPERFICIE TERRESTRE'=>'GEOLOGIA DE LAS DIVERSAS AREAS DE LA SUPERFICIE TERRESTRE','GEOLOGIA DEL CARBON'=>'GEOLOGIA DEL CARBON','INGENIERIA GEOLOGICA'=>'INGENIERIA GEOLOGICA','GEOLOGIA DEL MEDIO AMBIENTE'=>'GEOLOGIA DEL MEDIO AMBIENTE','GEOHIDROLOGIA'=>'GEOHIDROLOGIA',
-		                                                            'EXPLORACION GEOLOGICA'=>'EXPLORACION GEOLOGICA','EOMORFOLOGIA'=>'EOMORFOLOGIA','PROCESOS Y ENERGIA GEOTERMICOS'=>'PROCESOS Y ENERGIA GEOTERMICOS','GEOLOGIA GLACIAL'=>'GEOLOGIA GLACIAL','YACIMIENTOS MINERALES'=>'YACIMIENTOS MINERALES','MINERALOGIA'=>'MINERALOGIA','GEOLOGIA DEL PETROLEO'=>'GEOLOGIA DEL PETROLEO','PETROLOGIA IGNEA Y METAMORFICA'=>'PETROLOGIA IGNEA Y METAMORFICA','PETROLOGIA SEDIMENTARIA'=>'PETROLOGIA SEDIMENTARIA','FOTOGEOLOGIA'=>'FOTOGEOLOGIA','TELEDETECCION (GEOLOGIA)'=>'TELEDETECCION (GEOLOGIA)',
-		                                                            'MECANICA DE LAS ROCAS'=>'MECANICA DE LAS ROCAS','SEDIMENTOLOGIA'=>'SEDIMENTOLOGIA','ESTRATIGRAFIA'=>'ESTRATIGRAFIA','GEOLOGIA ESTRUCTURAL'=>'GEOLOGIA ESTRUCTURAL','VULCANOLOGIA'=>'VULCANOLOGIA','ANALISIS DE DIAGRAMAS DE POZO'=>'ANALISIS DE DIAGRAMAS DE POZO','ECONOMIA DE LOS HIDROCARBUROS'=>'ECONOMIA DE LOS HIDROCARBUROS','OTROS'=>'OTROS','GEOMAGNETISMO Y EXPLORACION MAGNETICA'=>'GEOMAGNETISMO Y EXPLORACION MAGNETICA','GRAVEDAD TERRESTRE Y EXPLORACION DE LA GRAVEDAD'=>'GRAVEDAD TERRESTRE Y EXPLORACION DE LA GRAVEDAD',
-		                                                            'FLUJO DE CALOR (TERRESTRE)'=>'FLUJO DE CALOR (TERRESTRE)','PALEOMAGNETISMO'=>'PALEOMAGNETISMO','SISMOLOGIA Y EXPLORACION SISMICA'=>'SISMOLOGIA Y EXPLORACION SISMICA','GEOFISICA DE LA TIERRA SOLIDA'=>'GEOFISICA DE LA TIERRA SOLIDA','TECTONICA'=>'TECTONICA','EXPLORACION GEOFISICA'=>'EXPLORACION GEOFISICA','OTRAS'=>'OTRAS','EROSION DEL AGUA'=>'EROSION DEL AGUA','EVAPORACION'=>'EVAPORACION','GLACIOLOGIA'=>'GLACIOLOGIA','AGUAS SUBTERRANEAS'=>'AGUAS SUBTERRANEAS','HIDROBIOLOGIA'=>'HIDROBIOLOGIA','HIDROGRAFIA'=>'HIDROGRAFIA','HIELO'=>'HIELO',
-		                                                            'LIMNOLOGIA'=>'LIMNOLOGIA','SUELOS HELADOS'=>'SUELOS HELADOS','PRECIPITACIONES'=>'PRECIPITACIONES','CALIDAD DEL AGUA'=>'CALIDAD DEL AGUA','NIEVE'=>'NIEVE','HUMEDAD DEL SUELO'=>'HUMEDAD DEL SUELO','AGUAS SUPERFICIALES'=>'AGUAS SUPERFICIALES','TRANSPIRACION'=>'TRANSPIRACION','OTROS'=>'OTROS','METEOROLOGIA AGRICOLA'=>'METEOROLOGIA AGRICOLA','CONTAMINACION DEL AIRE'=>'CONTAMINACION DEL AIRE','PREVISION METEOROLOGICA PROLONGADA'=>'PREVISION METEOROLOGICA PROLONGADA','HIDROMETEOROLOGIA'=>'HIDROMETEOROLOGIA','METEOROLOGIA INDUSTRIAL'=>'METEOROLOGIA INDUSTRIAL',
-		                                                            'METEOROLOGIA MARINA'=>'METEOROLOGIA MARINA','MESOMETEOROLOGIA'=>'MESOMETEOROLOGIA','MICROMETEOROLOGIA'=>'MICROMETEOROLOGIA','PREDICCION METEOROLOGICA NUMERICA'=>'PREDICCION METEOROLOGICA NUMERICA','INSTRUCCIONES DE OBSERVACION (METEOROLOGIA)'=>'INSTRUCCIONES DE OBSERVACION (METEOROLOGIA)','PREVISION METEOROLOGICA OPERACIONAL'=>'PREVISION METEOROLOGICA OPERACIONAL','METEOROLOGIA POLAR'=>'METEOROLOGIA POLAR','METEOROLOGIA POR RADAR'=>'METEOROLOGIA POR RADAR','RADIOMETEOROLOGIA'=>'RADIOMETEOROLOGIA','METEOROLOGIA MEDIANTE COHETES'=>'METEOROLOGIA MEDIANTE COHETES',
-		                                                            'METEOROLOGIA MEDIANTE SATELITES'=>'METEOROLOGIA MEDIANTE SATELITES','METEOROLOGIA SINOPTICA'=>'METEOROLOGIA SINOPTICA','METEOROLOGIA TROPICAL'=>'METEOROLOGIA TROPICAL','ANALISIS METEOROLOGICO'=>'ANALISIS METEOROLOGICO','CONTROL DEL TIEMPO (METEOROLOGIA)'=>'CONTROL DEL TIEMPO (METEOROLOGIA)','OTROS'=>'OTROS','OCEANOGRAFIA BIOLOGICA'=>'OCEANOGRAFIA BIOLOGICA','OCEANOGRAFIA QUIMICA'=>'OCEANOGRAFIA QUIMICA','OCEANOGRAFIA DESCRIPTIVA'=>'OCEANOGRAFIA DESCRIPTIVA','BOTANICA MARINA'=>'BOTANICA MARINA','ZOOLOGIA MARINA'=>'ZOOLOGIA MARINA','PROCESOS DEL FONDO DEL MAR'=>'PROCESOS DEL FONDO DEL MAR',
-		                                                            'OCEANOGRAFIA FISICA'=>'OCEANOGRAFIA FISICA','INTERACCIONES MAR-AIRE'=>'INTERACCIONES MAR-AIRE','HIELO MARINO'=>'HIELO MARINO','PROCESOS DE LAS COSTAS Y DE LAS AREAS PROXIMAS A LAS COSTAS'=>'PROCESOS DE LAS COSTAS Y DE LAS AREAS PROXIMAS A LAS COSTAS','SONIDOS SUBMARINOS'=>'SONIDOS SUBMARINOS','OTROS'=>'OTROS','BIOQUIMICA DEL SUELO'=>'BIOQUIMICA DEL SUELO','BIOLOGICA DE SUELOS'=>'BIOLOGICA DE SUELOS','CARTOGRAFIA DE SUELOS'=>'CARTOGRAFIA DE SUELOS','QUIMICA DEL SUELO'=>'QUIMICA DEL SUELO','CLASIFICACION DE SUELOS'=>'CLASIFICACION DE SUELOS','CONSERVACION DEL SUELO'=>'CONSERVACION DEL SUELO',
-		                                                            'INGENIERIA EDAFOLOGICA'=>'INGENIERIA EDAFOLOGICA','MECANICA DEL SUELO (AGRICULTURA)'=>'MECANICA DEL SUELO (AGRICULTURA)','MICROBIOLOGIA DE LOS SUELOS'=>'MICROBIOLOGIA DE LOS SUELOS','MINERALOGIA DE LOS SUELOS'=>'MINERALOGIA DE LOS SUELOS','MORFOLOGIA Y GENESIS DE LOS SUELOS'=>'MORFOLOGIA Y GENESIS DE LOS SUELOS','FISICA DEL SUELO'=>'FISICA DEL SUELO','OTROS'=>'OTROS','BIOLOGIA ESPACIAL'=>'BIOLOGIA ESPACIAL','MEDICINA AEROSPACIAL'=>'MEDICINA AEROSPACIAL','FISIOLOGIA ESPACIAL'=>'FISIOLOGIA ESPACIAL','OTROS'=>'OTROS','EPIDEMIOLOGÍA'=>'EPIDEMIOLOGÍA','ANTROPOLOGÍA MÉDICA'=>'ANTROPOLOGÍA MÉDICA',
-		                                                            'ADMINISTRACIÓN DE LOS SERVICIOS DE SALUD'=>'ADMINISTRACIÓN DE LOS SERVICIOS DE SALUD','BIOMEDICINA'=>'BIOMEDICINA','INVESTIGACION CLÍNICA'=>'INVESTIGACION CLÍNICA','SISTEMAS DE SALUD'=>'SISTEMAS DE SALUD','INVESTIGACIÓN EN ADICCIONES'=>'INVESTIGACIÓN EN ADICCIONES','SALUD MATERNA'=>'SALUD MATERNA','PRODUCTOS LACTEOS'=>'PRODUCTOS LACTEOS','TECNICAS DE PRODUCCION DE FERTILIZANTES'=>'TECNICAS DE PRODUCCION DE FERTILIZANTES','USO DE FERTILIZANTES'=>'USO DE FERTILIZANTES','PRODUCTOS DE PESCADO'=>'PRODUCTOS DE PESCADO','FUNGICIDAS'=>'FUNGICIDAS','HERBICIDAS'=>'HERBICIDAS',
-		                                                            'INSECTICIDAS'=>'INSECTICIDAS','PRODUCTOS DE CULTIVOS NO COMESTIBLES'=>'PRODUCTOS DE CULTIVOS NO COMESTIBLES','PLAGUICIDAS'=>'PLAGUICIDAS','REGULADORES DEL CRECIMIENTO DE LAS PLANTAS'=>'REGULADORES DEL CRECIMIENTO DE LAS PLANTAS','BIOQUIMICA AGRONOMICA'=>'BIOQUIMICA AGRONOMICA','OTROS'=>'OTROS','MECANICA AGRICOLA'=>'MECANICA AGRICOLA','DRENAJE'=>'DRENAJE','CONSTRUCCION RURAL'=>'CONSTRUCCION RURAL','EQUIPO DE GRANJA'=>'EQUIPO DE GRANJA','RIEGO'=>'RIEGO','OTROS'=>'OTROS','FITOGENETICA'=>'FITOGENETICA','HIBRIDACION DE CULTIVOS'=>'HIBRIDACION DE CULTIVOS',
-		                                                            'GESTION DE CULTIVOS'=>'GESTION DE CULTIVOS','PROTECCION DE CULTIVOS'=>'PROTECCION DE CULTIVOS','TECNOLOGIA DE CULTIVOS'=>'TECNOLOGIA DE CULTIVOS','CULTIVOS DE CAMPO'=>'CULTIVOS DE CAMPO','CULTIVOS FORRAJEROS'=>'CULTIVOS FORRAJEROS','GESTION DE LA PRODUCCION VEGETAL'=>'GESTION DE LA PRODUCCION VEGETAL','CULTIVOS ORNAMENTALES'=>'CULTIVOS ORNAMENTALES','PASTIZALES, SEMILLAS'=>'PASTIZALES, SEMILLAS','COMPORTAMIENTO DEL SUELO CON UTILIZACIONES ALTERNADAS'=>'COMPORTAMIENTO DEL SUELO CON UTILIZACIONES ALTERNADAS','FERTILIDAD DEL SUELO'=>'FERTILIDAD DEL SUELO','CESPED'=>'CESPED',
-		                                                            'CONTROL DE MALEZAS'=>'CONTROL DE MALEZAS','AGRICULTURA EN ZONAS ARIDAS'=>'AGRICULTURA EN ZONAS ARIDAS','AGRICULTURA EN ZONAS TEMPLADAS'=>'AGRICULTURA EN ZONAS TEMPLADAS','AGRICULTURA EN ZONAS TROPICALES'=>'AGRICULTURA EN ZONAS TROPICALES','DIVULGACION Y EXTENSION AGRICOLA'=>'DIVULGACION Y EXTENSION AGRICOLA','OTROS'=>'OTROS','APICULTURA'=>'APICULTURA','BOVINOS'=>'BOVINOS','GENETICA'=>'GENETICA','ATENCION Y GESTION'=>'ATENCION Y GESTION','EQUINOS'=>'EQUINOS','NUTRICION'=>'NUTRICION','OVINOS'=>'OVINOS','PORCINOS'=>'PORCINOS','AVES DE CORRAL'=>'AVES DE CORRAL','PRODUCTOS'=>'PRODUCTOS',
-		                                                            'REPRODUCCION'=>'REPRODUCCION','SELECCION'=>'SELECCION','SERICULTURA'=>'SERICULTURA','INSTRUMENTACION'=>'INSTRUMENTACION','CONTROL Y NORMAS'=>'CONTROL Y NORMAS','CUNICULTURA'=>'CUNICULTURA','ZOOTECNIA GENERAL'=>'ZOOTECNIA GENERAL','OTROS'=>'OTROS','CONTROLES'=>'CONTROLES','PISCICULTURA'=>'PISCICULTURA','LOCALIZACION DE PECES'=>'LOCALIZACION DE PECES','PROTECCION DE PECES'=>'PROTECCION DE PECES','ELABORACION DEL PESCADO'=>'ELABORACION DEL PESCADO','MECANICA DE LA PESCA'=>'MECANICA DE LA PESCA','HABITOS DE ALIMENTACION'=>'HABITOS DE ALIMENTACION','CAZA (ANIMALES)'=>'CAZA (ANIMALES)',
-		                                                            'INFLUENCIAS DEL HABITAT'=>'INFLUENCIAS DEL HABITAT','DINAMICA POBLACIONES'=>'DINAMICA POBLACIONES','PROPAGACION Y ORDENAMIENTO'=>'PROPAGACION Y ORDENAMIENTO','CONSERVACION Y ORDENAMIENTO DE LOS ANIMALES SALVAJES'=>'CONSERVACION Y ORDENAMIENTO DE LOS ANIMALES SALVAJES','BIOLOGIA PESQUERA'=>'BIOLOGIA PESQUERA','OTROS'=>'OTROS','CONSERVACION'=>'CONSERVACION','TECNICAS DE CULTIVO'=>'TECNICAS DE CULTIVO','CONTROL DE LA EROSION'=>'CONTROL DE LA EROSION','ORDENAMIENTO'=>'ORDENAMIENTO','PRODUCTOS'=>'PRODUCTOS','PROTECCION'=>'PROTECCION','GESTION DE LAS PRADERAS'=>'GESTION DE LAS PRADERAS',
-		                                                            'SILVICULTURA'=>'SILVICULTURA','ORDENAMIENTO DE CUENCAS HIDROGRAFICAS'=>'ORDENAMIENTO DE CUENCAS HIDROGRAFICAS','OTROS'=>'OTROS','FITOGENETICA'=>'FITOGENETICA','TECNICAS DE CULTIVO'=>'TECNICAS DE CULTIVO','FLORICULTURA'=>'FLORICULTURA','FRUTAS'=>'FRUTAS','HIBRIDACION'=>'HIBRIDACION','HORTALIZAS'=>'HORTALIZAS','OTROS'=>'OTROS','BACTERIAS'=>'BACTERIAS','CONTROL BIOLOGICO DE ENFERMEDADES'=>'CONTROL BIOLOGICO DE ENFERMEDADES','CONTROL QUIMICO DE ENFERMEDADES'=>'CONTROL QUIMICO DE ENFERMEDADES','CONTROL AMBIENTAL DE ENFERMEDADES'=>'CONTROL AMBIENTAL DE ENFERMEDADES',
-		                                                            'HONGOS'=>'HONGOS','NEMATODOS'=>'NEMATODOS','FISIOGENESIS'=>'FISIOGENESIS','SENSIBILIDAD Y RESISTENCIA DE LAS PLANTAS'=>'SENSIBILIDAD Y RESISTENCIA DE LAS PLANTAS','VIRUS'=>'VIRUS','OTROS'=>'OTROS','ANATOMIA'=>'ANATOMIA','GENETICA'=>'GENETICA','INMUNOLOGIA'=>'INMUNOLOGIA','MEDICINA INTERNA'=>'MEDICINA INTERNA','MICROBIOLOGIA'=>'MICROBIOLOGIA','NUTRICION'=>'NUTRICION','PATOLOGIA'=>'PATOLOGIA','FARMACOLOGIA'=>'FARMACOLOGIA','FISIOLOGIA'=>'FISIOLOGIA','CIRUGIA'=>'CIRUGIA','VIROLOGIA'=>'VIROLOGIA','ANESTESIOLOGIA'=>'ANESTESIOLOGIA','BIOQUIMICA'=>'BIOQUIMICA','HEMATOLOGIA'=>'HEMATOLOGIA',
-		                                                            'MORFOLOGIA'=>'MORFOLOGIA','OBSTETRICIA'=>'OBSTETRICIA','RADIOLOGIA'=>'RADIOLOGIA','OTROS'=>'OTROS','CANCEROLOGIA'=>'CANCEROLOGIA','GENETICA CLINICA'=>'GENETICA CLINICA','MICROBIOLOGIA CLINICA'=>'MICROBIOLOGIA CLINICA','PATOLOGIA CLINICA'=>'PATOLOGIA CLINICA','PSICOLOGIA CLINICA'=>'PSICOLOGIA CLINICA','DERMATOLOGIA'=>'DERMATOLOGIA','GERIATRIA'=>'GERIATRIA','GINECOLOGIA'=>'GINECOLOGIA','OFTALMOLOGIA'=>'OFTALMOLOGIA','PEDIATRIA'=>'PEDIATRIA','RADIOLOGIA'=>'RADIOLOGIA','RADIOTERAPIA'=>'RADIOTERAPIA','SIFILOGRAFIA'=>'SIFILOGRAFIA','OTROS'=>'OTROS','MEDICINA NUCLEAR'=>'MEDICINA NUCLEAR',
-		                                                            'ENFERMEDADES PROFESIONALES'=>'ENFERMEDADES PROFESIONALES','SANIDAD DEL TRABAJO'=>'SANIDAD DEL TRABAJO','REHABILITACION MEDICA'=>'REHABILITACION MEDICA','OTROS'=>'OTROS','CARDIOLOGIA'=>'CARDIOLOGIA','ENDOCRINOLOGIA'=>'ENDOCRINOLOGIA','GASTROENTEROLOGIA'=>'GASTROENTEROLOGIA','HEMATOLOGIA'=>'HEMATOLOGIA','ENFERMEDADES INFECCIOSAS'=>'ENFERMEDADES INFECCIOSAS','NEFROLOGIA'=>'NEFROLOGIA','NEUROLOGIA'=>'NEUROLOGIA',', ENFERMEDADES PULMONARES'=>', ENFERMEDADES PULMONARES','REUMATOLOGIA'=>'REUMATOLOGIA','OTROS'=>'OTROS','DIGESTION'=>'DIGESTION','METABOLISMO DE LA ENERGIA'=>'METABOLISMO DE LA ENERGIA',
-		                                                            'INTOXICANTES NATURALES'=>'INTOXICANTES NATURALES','DEFICIENCIAS ALIMENTARIAS'=>'DEFICIENCIAS ALIMENTARIAS','PATOGENOS DE LOS ALIMENTOS'=>'PATOGENOS DE LOS ALIMENTOS','NECESIDADES ALIMENTARIAS'=>'NECESIDADES ALIMENTARIAS','ELEMENTOS MINERALES DE LOS ALIMENTOS'=>'ELEMENTOS MINERALES DE LOS ALIMENTOS','NUTRIENTES'=>'NUTRIENTES','VALORES NUTRIENTES'=>'VALORES NUTRIENTES','ENFERMEDADES NUTRICIONALES'=>'ENFERMEDADES NUTRICIONALES','TOXICIDAD DE LOS ALIMENTOS'=>'TOXICIDAD DE LOS ALIMENTOS','ELEMENTOS TRAZA EN LOS ALIMENTOS'=>'ELEMENTOS TRAZA EN LOS ALIMENTOS','VITAMINAS'=>'VITAMINAS','OTROS'=>'OTROS',
-		                                                            'ALERGIAS'=>'ALERGIAS','ARTERIOSCLEROSIS'=>'ARTERIOSCLEROSIS','CARCINOGENESIS'=>'CARCINOGENESIS','PATOLOGIA CARDIOVASCULAR'=>'PATOLOGIA CARDIOVASCULAR','PATOLOGIA COMPARADA'=>'PATOLOGIA COMPARADA','ENDOTOXINAS'=>'ENDOTOXINAS','PATOLOGIA EXPERIMENTAL'=>'PATOLOGIA EXPERIMENTAL','HEMATOLOGIA'=>'HEMATOLOGIA','HISTOPATOLOGIA'=>'HISTOPATOLOGIA','INMUNOPATOLOGIA'=>'INMUNOPATOLOGIA','NEUROPATOLOGIA'=>'NEUROPATOLOGIA','PARASITOLOGIA'=>'PARASITOLOGIA','ONCOLOGIA'=>'ONCOLOGIA','OSTEOPATOLOGIA'=>'OSTEOPATOLOGIA','PATOLOGIA DE LAS RADIACIONES'=>'PATOLOGIA DE LAS RADIACIONES','STRESS'=>'STRESS','TERATOLOGIA'=>'TERATOLOGIA','TROMBOSIS'=>'TROMBOSIS','OTROS'=>'OTROS',
-		                                                            'ABSORCION DE LOS MEDICAMENTOS'=>'ABSORCION DE LOS MEDICAMENTOS','EFECTO DE LOS MEDICAMENTOS'=>'EFECTO DE LOS MEDICAMENTOS','ACTIVACION'=>'ACTIVACION','PROCESOS MULTIPLES'=>'PROCESOS MULTIPLES','LUGARES RADIACTIVOS'=>'LUGARES RADIACTIVOS','RECEPTORES'=>'RECEPTORES','CATALISIS'=>'CATALISIS','AUTOCATALISIS'=>'AUTOCATALISIS','INMUNOCATALISIS'=>'INMUNOCATALISIS','TERAPIA CON MEDICAMENTOS'=>'TERAPIA CON MEDICAMENTOS','INTERACCION DE ANTIGENOS'=>'INTERACCION DE ANTIGENOS','MECANISMOS DE ACCION DE LOS MEDICAMENTOS'=>'MECANISMOS DE ACCION DE LOS MEDICAMENTOS','PROCESOS METABOLICOS DE LOS MEDICAMENTOS'=>'PROCESOS METABOLICOS DE LOS MEDICAMENTOS',
-		                                                            'OTROS'=>'OTROS','ANALISIS DE LOS PRODUCTOS FARMACEUTICOS'=>'ANALISIS DE LOS PRODUCTOS FARMACEUTICOS','COMPOSICION DE LOS MEDICAMENTOS'=>'COMPOSICION DE LOS MEDICAMENTOS','EVALUACION DE LOS MEDICAMENTOS'=>'EVALUACION DE LOS MEDICAMENTOS','MEDICAMENTOS DE ORIGEN NATURAL'=>'MEDICAMENTOS DE ORIGEN NATURAL','FARMACOGNOSIA'=>'FARMACOGNOSIA','FARMACOPEAS'=>'FARMACOPEAS','FITOFARMACOS'=>'FITOFARMACOS','FARMACIA GALENICA'=>'FARMACIA GALENICA','PSICOFARMACOLOGIA'=>'PSICOFARMACOLOGIA','RADIOFARMACOS'=>'RADIOFARMACOS','NORMALIZACION DE LOS MEDICAMENTOS'=>'NORMALIZACION DE LOS MEDICAMENTOS','MEDICAMENTOS SINTETICOS'=>'MEDICAMENTOS SINTETICOS','OTROS'=>'OTROS',
-		                                                            'CIRUGIA ABDOMINAL'=>'CIRUGIA ABDOMINAL','CIRUGIA ESTETICA'=>'CIRUGIA ESTETICA','ANESTESIOLOGIA'=>'ANESTESIOLOGIA','CIRUGIA OSEA'=>'CIRUGIA OSEA','CIRUGIA OTORRINOLARINGOLOGICA'=>'CIRUGIA OTORRINOLARINGOLOGICA','CIRUGIA EXPERIMENTAL'=>'CIRUGIA EXPERIMENTAL','CIRUGIA CARDIACA'=>'CIRUGIA CARDIACA','NEUROCIRUGIA'=>'NEUROCIRUGIA','CIRUGIA OCULAR'=>'CIRUGIA OCULAR','CIRUGIA ORTOPEDICA'=>'CIRUGIA ORTOPEDICA','FISIOTERAPIA, PROCTOLOGIA'=>'FISIOTERAPIA, PROCTOLOGIA','ESTOMATOLOGIA-ORTODONCIA'=>'ESTOMATOLOGIA-ORTODONCIA','CIRUGIA DE TRANSPLANTES'=>'CIRUGIA DE TRANSPLANTES','TRAUMATOLOGIA'=>'TRAUMATOLOGIA',
-		                                                            'UROLOGIA'=>'UROLOGIA','CIRUGIA VASCULAR'=>'CIRUGIA VASCULAR','CIRUGIA VASCULAR'=>'CIRUGIA VASCULAR','CIRUGIA MAXILO-FACIAL'=>'CIRUGIA MAXILO-FACIAL','ENDODONCIA'=>'ENDODONCIA','EXODONCIA'=>'EXODONCIA','PARADONCIA'=>'PARADONCIA','PROSTODONCIA'=>'PROSTODONCIA','OTROS'=>'OTROS','AERODINAMICA'=>'AERODINAMICA','CARGAS AERODINAMICAS'=>'CARGAS AERODINAMICAS','TEORIA AERODINAMICA'=>'TEORIA AERODINAMICA','AERONAVES'=>'AERONAVES','COMBUSTIBLE PARA AERONAVES COMBUSTION'=>'COMBUSTIBLE PARA AERONAVES COMBUSTION','ESTRUCTURAS DE AERONAVES'=>'ESTRUCTURAS DE AERONAVES','DISPOSITIVOS DE SUSPENSION NEUMATICA'=>'DISPOSITIVOS DE SUSPENSION NEUMATICA','AEROPUERTOS Y TRANSPORTE AEREO'=>'AEROPUERTOS Y TRANSPORTE AEREO',
-		                                                            'COMPRESORES Y TURBINAS'=>'COMPRESORES Y TURBINAS','VUELOS: ENSAYO E INVESTIGACION'=>'VUELOS: ENSAYO E INVESTIGACION','TEMBLOR Y VIBRACION'=>'TEMBLOR Y VIBRACION','HIDRODINAMICA'=>'HIDRODINAMICA','INSTRUMENTACION (AVIACION)'=>'INSTRUMENTACION (AVIACION)','CARGAS DE ATERRIZAJE'=>'CARGAS DE ATERRIZAJE','SISTEMAS DE PROPULSION'=>'SISTEMAS DE PROPULSION','MATERIALES PARA SISTEMAS DE PROPULSION'=>'MATERIALES PARA SISTEMAS DE PROPULSION','A LA ROTATORIA, ESTABILIDAD Y CONTROL'=>'A LA ROTATORIA, ESTABILIDAD Y CONTROL','OTROS'=>'OTROS','TECNOLOGIA DE LOS ANTIBIOTICOS'=>'TECNOLOGIA DE LOS ANTIBIOTICOS',
-		                                                            'TECNOLOGIA DE LA FERMENTACION'=>'TECNOLOGIA DE LA FERMENTACION','MICROBIOLOGIA INDUSTRIAL'=>'MICROBIOLOGIA INDUSTRIAL','BIOTECNOLOGIA MARINA'=>'BIOTECNOLOGIA MARINA','OTROS'=>'OTROS','TECNOLOGIA DE LA CATALISIS'=>'TECNOLOGIA DE LA CATALISIS','ECONOMIA QUIMICA'=>'ECONOMIA QUIMICA','PROCESOS QUIMICOS'=>'PROCESOS QUIMICOS','SEPARACION QUIMICA'=>'SEPARACION QUIMICA','SINTESIS QUIMICA'=>'SINTESIS QUIMICA','TECNOLOGIA DE LA COMBUSTION'=>'TECNOLOGIA DE LA COMBUSTION','TECNOLOGIA DE LA CORROSION'=>'TECNOLOGIA DE LA CORROSION','DESIONIZACION'=>'DESIONIZACION','OPERACIONES ELECTROQUIMICAS'=>'OPERACIONES ELECTROQUIMICAS',
-		                                                            'GALVANOPLASTIA'=>'GALVANOPLASTIA','QUIMICA INDUSTRIAL'=>'QUIMICA INDUSTRIAL','PROCESOS NUCLEOQUIMICOS'=>'PROCESOS NUCLEOQUIMICOS','TECNOLOGIA DE LA PRESERVACION'=>'TECNOLOGIA DE LA PRESERVACION','RECUBRIMIENTOS PROTECTORES'=>'RECUBRIMIENTOS PROTECTORES','RECUBRIMIENTOS REFRACTARIOS'=>'RECUBRIMIENTOS REFRACTARIOS','RECUBRIMIENTOS IMPERMEABLES'=>'RECUBRIMIENTOS IMPERMEABLES','PROYECTOS'=>'PROYECTOS','OTROS'=>'OTROS','COMPUTADORES ANALOGICOS'=>'COMPUTADORES ANALOGICOS','CONVERTIDORES DE SISTEMA ANALOGICO A SISTEMA NUMERICO'=>'CONVERTIDORES DE SISTEMA ANALOGICO A SISTEMA NUMERICO','ARITMETICA E INSTRUCCIONES PARA LA UTILIZACION DE MAQUINAS'=>'ARITMETICA E INSTRUCCIONES PARA LA UTILIZACION DE MAQUINAS',
-		                                                            'UNIDADES CENTRALES DE TRATAMIENTO'=>'UNIDADES CENTRALES DE TRATAMIENTO','SISTEMAS DE RECONOCIMIENTO DE CARACTERES'=>'SISTEMAS DE RECONOCIMIENTO DE CARACTERES','ARQUITECTURA DE COMPUTADORES'=>'ARQUITECTURA DE COMPUTADORES','EQUIPO PERIFERICO DE COMPUTADORES'=>'EQUIPO PERIFERICO DE COMPUTADORES',' FIABILIDAD DE LOS COMPUTADORES'=>' FIABILIDAD DE LOS COMPUTADORES','UTILIZABILIDAD DE LOS COMPUTADORES'=>'UTILIZABILIDAD DE LOS COMPUTADORES','TERMINALES DE COMPUTADOR TERMINALES DE VIDEO Y TRAZADORES DE CURVAS'=>'TERMINALES DE COMPUTADOR TERMINALES DE VIDEO Y TRAZADORES DE CURVAS','DISEÑO DE SISTEMAS DE CALCULO NUMERICO'=>'DISEÑO DE SISTEMAS DE CALCULO NUMERICO',
-		                                                            'DISPOSITIVOS DE CONTROL'=>'DISPOSITIVOS DE CONTROL','DISPOSITIVOS DE TRANSMISION DE DATOS'=>'DISPOSITIVOS DE TRANSMISION DE DATOS','COMPUTADORES DIGITALES'=>'OMPUTADORES DIGITALES','COMPUTADORES HIBRIDOS'=>'COMPUTADORES HIBRIDOS','DISEÑO LOGICO'=>'DISEÑO LOGICO','SISTEMAS DE TIEMPO REAL'=>'SISTEMAS DE TIEMPO REAL','DISPOSITIVOS DE ALMACENAMIENTO'=>'DISPOSITIVOS DE ALMACENAMIENTO','OTROS'=>'OTROS','DISEÑO ARQUITECTONICO'=>'DISEÑO ARQUITECTONICO','CONSTRUCCION DE AEROPUERTOS'=>'CONSTRUCCION DE AEROPUERTOS','EDIFICIOS GRANDES Y RASCACIELOS'=>'EDIFICIOS GRANDES Y RASCACIELOS','PUENTES'=>'PUENTES',
-		                                                            'TECNOLOGIA DEL HORMIGON'=>'TECNOLOGIA DEL HORMIGON','INGENIERIA CIVIL'=>'INGENIERIA CIVIL','PRESAS'=>'PRESAS','DRENAJE'=>'DRENAJE','EXCAVACIONES'=>'EXCAVACIONES','CIMIENTOS'=>'CIMIENTOS','PUERTOS'=>'PUERTOS','CONSTRUCCIONES PESADAS'=>'CONSTRUCCIONES PESADAS','CARRETERAS'=>'CARRETERAS','CASAS'=>'CASAS','INGENIERIA HIDRAULICA'=>'INGENIERIA HIDRAULICA','SISTEMAS HIPERESTATICOS'=>'SISTEMAS HIPERESTATICOS','EDIFICIOS INDUSTRIALES Y COMERCIALES'=>'EDIFICIOS INDUSTRIALES Y COMERCIALES','VIAS NAVEGABLES INTERIORES'=>'VIAS NAVEGABLES INTERIORES','RIEGO'=>'RIEGO','CONSTRUCCIONES LIGERAS'=>'CONSTRUCCIONES LIGERAS',
-		                                                            'CONSTRUCCIONES METALICAS'=>'CONSTRUCCIONES METALICAS','METROLOGIA DE LA CONSTRUCCION'=>'METROLOGIA DE LA CONSTRUCCION',', ORGANIZACION DE OBRAS'=>', ORGANIZACION DE OBRAS','CONSTRUCCIONES PREFABRICADAS'=>'CONSTRUCCIONES PREFABRICADAS','HORMIGON PRETENSADO'=>'HORMIGON PRETENSADO','EDIFICIOS PUBLICOS'=>'EDIFICIOS PUBLICOS','CONSTRUCCION DE FERROCARRILES'=>'CONSTRUCCION DE FERROCARRILES','REGLAMENTACIONES'=>'REGLAMENTACIONES','CODIGOS Y ESPECIFICACIONES'=>'CODIGOS Y ESPECIFICACIONES','CONSTRUCCION DE CARRETERAS'=>'CONSTRUCCION DE CARRETERAS','ALCANTARILLADO Y PURIFICACION DE AGUA'=>'ALCANTARILLADO Y PURIFICACION DE AGUA',
-		                                                            'MECANICA DEL SUELO (CONSTRUCCION)'=>'MECANICA DEL SUELO (CONSTRUCCION)','INGENIERIA ESTRUCTURAL'=>'INGENIERIA ESTRUCTURAL','RESISTENCIA ESTRUCTURAL'=>'RESISTENCIA ESTRUCTURAL','TOPOGRAFIA DE LA CONSTRUCCION'=>'TOPOGRAFIA DE LA CONSTRUCCION','TUNELES'=>'TUNELES','OBRAS SUBTERRANEAS'=>'OBRAS SUBTERRANEAS','PLANIFICACION URBANA'=>'PLANIFICACION URBANA','ABASTECIMIENTO DE AGUA'=>'ABASTECIMIENTO DE AGUA','CONSTRUCCION DE MADERA'=>'CONSTRUCCION DE MADERA','OTROS'=>'OTROS','UTILIZACION DE LA ENERGIA DE LAS CORRIENTES CONTINUAS'=>'UTILIZACION DE LA ENERGIA DE LAS CORRIENTES CONTINUAS','APLICACIONES DE LA ELECTRICIDAD'=>'APLICACIONES DE LA ELECTRICIDAD','MOTORES ELECTRICOS'=>'MOTORES ELECTRICOS',
-		                                                            'ILUMINACION ELECTRICA'=>'ILUMINACION ELECTRICA','CONDUCTORES AISLADOS'=>'CONDUCTORES AISLADOS','FABRICACION DE EQUIPO ELECTRICO'=>'FABRICACION DE EQUIPO ELECTRICO','MAQUINARIA ROTATORIA'=>'MAQUINARIA ROTATORIA','APARATO DE CONEXION'=>'APARATO DE CONEXION','TRANSMISION Y DISTRIBUCION'=>'TRANSMISION Y DISTRIBUCION','OTROS'=>'OTROS','ANTENAS'=>'ANTENAS','AUDIOELECTRONICA'=>'AUDIOELECTRONICA','DISEÑO DE CIRCUITOS'=>'DISEÑO DE CIRCUITOS','TRADUCTORES ELECTROACUSTICOS'=>'TRADUCTORES ELECTROACUSTICOS','TUBOS ELECTRONICOS'=>'TUBOS ELECTRONICOS','DISEÑO DE FILTROS'=>'DISEÑO DE FILTROS','DISPOSITIVOS DE LASER'=>'DISPOSITIVOS DE LASER','DISPOSITIVOS DE MICROONDA'=>'DISPOSITIVOS DE MICROONDA','DISPOSITIVOS FOTOELECTRICOS'=>'DISPOSITIVOS FOTOELECTRICOS',
-		                                                            'RADAR'=>'RADAR','RECEPTORES DE RADIO'=>'RECEPTORES DE RADIO','TRANSMISORES DE RADIO'=>'TRANSMISORES DE RADIO','DISPOSITIVOS DE GRABACION'=>'DISPOSITIVOS DE GRABACION','DISPOSITIVOS DE SEMICONDUCTORES'=>'DISPOSITIVOS DE SEMICONDUCTORES','DISPOSITIVOS DE SONAR'=>'DISPOSITIVOS DE SONAR','DISPOSITIVOS SONICOS'=>'DISPOSITIVOS SONICOS','DISPOSITIVOS TERMOELECTRICOS'=>'DISPOSITIVOS TERMOELECTRICOS','DISPOSITIVOS TERMOIONICOS'=>'DISPOSITIVOS TERMOIONICOS','TRANSISTORES'=>'TRANSISTORES','EMISORES DE TELEVISION (TRANSMISORES)'=>'EMISORES DE TELEVISION (TRANSMISORES)','RECEPTORES DE TELEVISION'=>'RECEPTORES DE TELEVISION','DISPOSITIVOS ULTRASONICOS'=>'DISPOSITIVOS ULTRASONICOS',
-		                                                            'DISPOSITIVOS DE RAYOS X'=>'DISPOSITIVOS DE RAYOS X','OTROS'=>'OTROS','CONTROL DE LA CONTAMINACION DEL AIRE'=>'CONTROL DE LA CONTAMINACION DEL AIRE','DESECHOS INDUSTRIALES'=>'DESECHOS INDUSTRIALES','TECNOLOGIA DE CONTROL DE INSECTOS'=>'TECNOLOGIA DE CONTROL DE INSECTOS','TECNOLOGIA ANTICONTAMINACION'=>'TECNOLOGIA ANTICONTAMINACION','ELIMINACION DE DESECHOS RADIACTIVOS'=>'ELIMINACION DE DESECHOS RADIACTIVOS','RECUPERACION DEL AGUA'=>'RECUPERACION DEL AGUA','ELIMINACION DE RESIDUOS'=>'ELIMINACION DE RESIDUOS','TECNOLOGIA DE CONTROL DE ROEDORES'=>'TECNOLOGIA DE CONTROL DE ROEDORES','TECNOLOGIA SANITARIA'=>'TECNOLOGIA SANITARIA','TECNOLOGIA DE LAS AGUAS CLOACALES'=>'TECNOLOGIA DE LAS AGUAS CLOACALES',
-		                                                            'CONTROL DE LA CONTAMINACION DEL AGUA'=>'CONTROL DE LA CONTAMINACION DEL AGUA','AMBIENTAL'=>'AMBIENTAL','EDUCACION'=>'EDUCACION','TECNOLOGIA LIMPIA'=>'TECNOLOGIA LIMPIA','ECOSISTEMAS RECUPERACION DE MATERIALES'=>'ECOSISTEMAS RECUPERACION DE MATERIALES','REUSO Y RECICLADO'=>'REUSO Y RECICLADO','OTROS'=>'OTROS','BEBIDAS ALCOHOLICAS'=>'BEBIDAS ALCOHOLICAS','ALIMENTOS PARA ANIMALES'=>'ALIMENTOS PARA ANIMALES','ANTIOXIDANTES EN LOS ALIMENTOS'=>'ANTIOXIDANTES EN LOS ALIMENTOS','PANADERIA'=>'PANADERIA','INDUSTRIA CERVECERA'=>'INDUSTRIA CERVECERA','PREPARACION DE CONSERVAS'=>'PREPARACION DE CONSERVAS','PRODUCTOS DE CEREALES'=>'PRODUCTOS DE CEREALES','COLORANTES'=>'COLORANTES','PRODUCTOS LACTEOS'=>'PRODUCTOS LACTEOS',
-		                                                            'AROMATIZANTES'=>'AROMATIZANTES','MOLINERIA'=>'MOLINERIA','ADITIVOS ALIMENTARIOS'=>'ADITIVOS ALIMENTARIOS','CONSERVACION DE ALIMENTOS'=>'CONSERVACION DE ALIMENTOS','ELABORACION DE ALIMENTOS'=>'ELABORACION DE ALIMENTOS','HIGIENE DE LOS ALIMENTOS'=>'HIGIENE DE LOS ALIMENTOS','SECADO POR CONGELACION'=>'SECADO POR CONGELACION','LIOFILIZACION'=>'LIOFILIZACION','BEBIDAS NO ALCOHOLICAS'=>'BEBIDAS NO ALCOHOLICAS','PASTEURIZACION'=>'PASTEURIZACION',', PROPIEDADES DE LOS ALIMENTOS'=>', PROPIEDADES DE LOS ALIMENTOS','ALIMENTOS PROTEICOS'=>'ALIMENTOS PROTEICOS','REFRIGERACION'=>'REFRIGERACION','ESTABILIZADORES'=>'ESTABILIZADORES','ALMIDON'=>'ALMIDON','ESTERILIZACION DE LOS ALIMENTOS'=>'ESTERILIZACION DE LOS ALIMENTOS','AZUCAR'=>'AZUCAR','ALIMENTOS SINTETICOS'=>'ALIMENTOS SINTETICOS',
-		                                                            'ACEITES Y GRASAS VEGETALES'=>'ACEITES Y GRASAS VEGETALES','VINO'=>'VINO','OTROS'=>'OTROS','EQUIPO INDUSTRIAL'=>'EQUIPO INDUSTRIAL','MAQUINARIA INDUSTRIAL'=>'MAQUINARIA INDUSTRIAL','PROCESOS INDUSTRIALES'=>'PROCESOS INDUSTRIALES','TECNOLOGIA DEL MANTENIMIENTO'=>'TECNOLOGIA DEL MANTENIMIENTO','TECNOLOGIA DE LA ELABORACION'=>'TECNOLOGIA DE LA ELABORACION','ESPECIFICACIONES DE PROCESOS'=>'ESPECIFICACIONES DE PROCESOS','ESTUDIOS DE TIEMPOS Y MOVIMIENTOS'=>'ESTUDIOS DE TIEMPOS Y MOVIMIENTOS','DISEÑO'=>'DISEÑO','SISTEMAS'=>'SISTEMAS','OTROS'=>'OTROS','TECNOLOGIA DE LA AUTOMATIZACION'=>'TECNOLOGIA DE LA AUTOMATIZACION','CONTROL DE MAQUINARIA'=>'CONTROL DE MAQUINARIA','INSTRUMENTOS DENTALES'=>'INSTRUMENTOS DENTALES','DISPOSITIVOS ELECTROOPTICOS'=>'DISPOSITIVOS ELECTROOPTICOS',
-		                                                            'EQUIPO DE ENSAYOS ELECTRICOS'=>'EQUIPO DE ENSAYOS ELECTRICOS','INSTRUMENTOS ELECTRICOS'=>'INSTRUMENTOS ELECTRICOS','EQUIPO DE LABORATORIO'=>'EQUIPO DE LABORATORIO','LENTES'=>'LENTES','INSTRUMENTOS MEDICOS'=>'INSTRUMENTOS MEDICOS','INSTRUMENTOS OPTICOS'=>'INSTRUMENTOS OPTICOS',', EQUIPO FOTOGRAFICO Y CINEMATOGRAFICO'=>', EQUIPO FOTOGRAFICO Y CINEMATOGRAFICO','INSTRUMENTAL CIENTIFICO'=>'INSTRUMENTAL CIENTIFICO','SERVOMECANISMOS'=>'SERVOMECANISMOS','TECNICAS TELEQUIRICAS'=>'TECNICAS TELEQUIRICAS','INSTRUMENTOS DE MEDIDAS TERMICAS'=>'INSTRUMENTOS DE MEDIDAS TERMICAS','EQUIPO DE PRUEBA'=>'EQUIPO DE PRUEBA','INSTRUMENTOS TERMOSTATICOS'=>'INSTRUMENTOS TERMOSTATICOS',
-		                                                            'INSTRUMENTOS DE MEDIDA DEL TIEMPO'=>'INSTRUMENTOS DE MEDIDA DEL TIEMPO','OTROS'=>'OTROS','ABRASIVOS'=>'ABRASIVOS','CEMENTOS'=>'CEMENTOS','CERAMICA'=>'CERAMICA','CERAMETAL (MATERIAL METALOCERAMICO)'=>'CERAMETAL (MATERIAL METALOCERAMICO)','PRODUCTOS DE LA ARCILLA'=>'PRODUCTOS DE LA ARCILLA','VIDRIO'=>'VIDRIO','CALIZOS'=>'CALIZOS','PROPIEDADES DE LOS MATERIALES'=>'PROPIEDADES DE LOS MATERIALES','RESISTENCIA DE LOS MATERIALES'=>'RESISTENCIA DE LOS MATERIALES','PLASTICOS'=>'PLASTICOS','REFRACTARIOS'=>'REFRACTARIOS','ENSAYO DE MATERIALES'=>'ENSAYO DE MATERIALES','TECNOLOGIA DE LA MADERA'=>'TECNOLOGIA DE LA MADERA','COMPOSITOS'=>'COMPOSITOS','MATERIALES FUNCIONALES'=>'MATERIALES FUNCIONALES','OTROS'=>'OTROS',
-		                                                            'VENTILADORES'=>'VENTILADORES', 'COMPRESORES DE AIRE'=>'COMPRESORES DE AIRE','COJINETES'=>'COJINETES','EQUIPO DE CONSTRUCCION'=>'EQUIPO DE CONSTRUCCION','MATRICES'=>'MATRICES','PLANTILLAS Y MODELOS'=>'PLANTILLAS Y MODELOS','MAQUINARIA AGRICOLA'=>'MAQUINARIA AGRICOLA','MAQUINARIA DE LA INDUSTRIA ALIMENTARIA'=>'MAQUINARIA DE LA INDUSTRIA ALIMENTARIA','MOTORES DE GAS'=>'MOTORES DE GAS','ENGRANAJES'=>'ENGRANAJES','EQUIPO DE CALEFACCION'=>'EQUIPO DE CALEFACCION','MAQUINARIA HIDRAULICA'=>'MAQUINARIA HIDRAULICA','MAQUINARIA Y EQUIPO INDUSTRIALES'=>'MAQUINARIA Y EQUIPO INDUSTRIALES','MOTORES DE COMBUSTION INTERNA (EN GENERAL)'=>'MOTORES DE COMBUSTION INTERNA (EN GENERAL)', 'MAQUINAS'=>'MAQUINAS', 'HERRAMIENTA Y ACCESORIOS'=>'HERRAMIENTA Y ACCESORIOS',
-		                                                            'DISEÑO DE MAQUINAS'=>'DISEÑO DE MAQUINAS','MAQUINARIAS PARA MANEJO DE MATERIALES'=>'MAQUINARIAS PARA MANEJO DE MATERIALES','APLICACIONES MECANIZADAS'=>'APLICACIONES MECANIZADAS','MAQUINARIA DE MINERIA'=>'MAQUINARIA DE MINERIA','MAQUINARIA NUCLEAR'=>'MAQUINARIA NUCLEAR','MAQUINARIA DE FABRICACION DE PAPEL'=>'MAQUINARIA DE FABRICACION DE PAPEL','MAQUINARIA DE EXTRACCION DE PETROLEO'=>'MAQUINARIA DE EXTRACCION DE PETROLEO','EQUIPO NEUMATICO'=>'EQUIPO NEUMATICO','EQUIPO DE TRANSMISION DE ENERGIA (MECANICA)'=>'EQUIPO DE TRANSMISION DE ENERGIA (MECANICA)','MAQUINARIA DE IMPRIMIR Y DUPLICAR'=>'MAQUINARIA DE IMPRIMIR Y DUPLICAR', 'BOMBAS Y EQUIPO DE MANEJO DE LIQUIDOS'=>'BOMBAS Y EQUIPO DE MANEJO DE LIQUIDOS','EQUIPO DE REFRIGERACION'=>'EQUIPO DE REFRIGERACION',
-		                                                            'MAQUINARIA INDUSTRIAL ESPECIALIZADA'=>'MAQUINARIA INDUSTRIAL ESPECIALIZADA','MAQUINAS DE VAPOR'=>'MAQUINAS DE VAPOR','MAQUINARIA TEXTIL'=>'MAQUINARIA TEXTIL','TURBINAS'=>'TURBINAS','MAQUINAS EXPENDEDORAS AUTOMATICAS Y DE ENTRENAMIENTO'=>'MAQUINAS EXPENDEDORAS AUTOMATICAS Y DE ENTRENAMIENTO','PRODUCCION Y MANUFACTURA'=>'PRODUCCION Y MANUFACTURA','OTROS'=>'OTROS','ORGANOS ARTIFICIALES'=>'ORGANOS ARTIFICIALES','DISPOSITIVOS DE PROTESIS'=>'DISPOSITIVOS DE PROTESIS','OTROS'=>'OTROS','ALUMINIO'=>'ALUMINIO','COBRE'=>'COBRE','PRODUCTOS ELECTROMETALURGICOS'=>'PRODUCTOS ELECTROMETALURGICOS','FUNDICIONES (EN GENERAL)'=>'FUNDICIONES (EN GENERAL)','FABRICAS FUNDICIONES Y FORJAS SIDERURGICAS'=>'FABRICAS FUNDICIONES Y FORJAS SIDERURGICAS',
-		                                                            'PLOMO Y ZINC'=>'PLOMO Y ZINC','PRODUCTOS METALURGICOS (ESPECIALES)'=>'PRODUCTOS METALURGICOS (ESPECIALES)','SERVICIOS METALURGICOS'=>'SERVICIOS METALURGICOS','FUNDICION'=>'FUNDICION','REFINAMIENTO Y ELABORACION DE METALES NO FERROSOS'=>'REFINAMIENTO Y ELABORACION DE METALES NO FERROSOS','COLADA DE METALES NO FERROSOS'=>'COLADA DE METALES NO FERROSOS','PULVIMETALURGIA'=>'PULVIMETALURGIA','METALES PRECIOSOS'=>'METALES PRECIOSOS','COLADA DE PRECISION'=>'COLADA DE PRECISION','METALES RADIACTIVOS'=>'METALES RADIACTIVOS','METALES RAROS'=>'METALES RAROS','AFINADO'=>'AFINADO','INCLUIDO EL REFINADO DE ZONA'=>'INCLUIDO EL REFINADO DE ZONA','METALES REFRACTARIOS'=>'METALES REFRACTARIOS','OTROS'=>'OTROS',
-		                                                            'AUTOCLAVES Y CALDERAS'=>'AUTOCLAVES Y CALDERAS','ENVASES Y RECIPIENTES'=>'ENVASES Y RECIPIENTES','EQUIPO DE DESTILACION'=>'EQUIPO DE DESTILACION','PRODUCTOS ELECTROCHAPADOS Y RECUBIERTOS'=>'PRODUCTOS ELECTROCHAPADOS Y RECUBIERTOS','ALTOS HORNOS'=>'ALTOS HORNOS','HORNOS Y HORNOS CERAMICOS'=>'HORNOS Y HORNOS CERAMICOS','FERRETERIA'=>'FERRETERIA','PRODUCTOS ELABORADOS A MAQUINA Y TORNEADOS'=>'PRODUCTOS ELABORADOS A MAQUINA Y TORNEADOS','SERVICIOS DE FABRICACION DE METALES'=>'SERVICIOS DE FABRICACION DE METALES','TUBERIAS'=>'TUBERIAS','GUARNICIONES Y VALVULAS'=>'GUARNICIONES Y VALVULAS','RECIPIENTES DE PRESION'=>'RECIPIENTES DE PRESION','PRODUCTOS DE CHAPA METALICA'=>'PRODUCTOS DE CHAPA METALICA','ESTAMPADOS'=>'ESTAMPADOS','PRODUCTOS DE ACERO PARA CONSTRUCCIONES'=>'PRODUCTOS DE ACERO PARA CONSTRUCCIONES',
-		                                                            'ESTRUCTURAS FABRICADAS POR SOLDEO'=>'ESTRUCTURAS FABRICADAS POR SOLDEO','ARTICULOS DE ALAMBRE'=>'ARTICULOS DE ALAMBRE','OTROS'=>'OTROS','VEHICULOS TODO TERRENO'=>'VEHICULOS TODO TERRENO','AUTOMOVILES'=>'AUTOMOVILES','AUTOBUSES'=>'AUTOBUSES','CAMIONES Y REMOLQUES'=>'CAMIONES Y REMOLQUES','MOTORES DIESEL'=>'MOTORES DIESEL','MOTOCICLETAS'=>'MOTOCICLETAS','SERVICIOS DE TRANSPORTE MOTORIZADO'=>'SERVICIOS DE TRANSPORTE MOTORIZADO','PIEZAS DE REPUESTO Y ACCESORIOS'=>'PIEZAS DE REPUESTO Y ACCESORIOS','MOTORES DE PISTON'=>'MOTORES DE PISTON','MOTORES ROTATORIOS'=>'MOTORES ROTATORIOS','REGULACION DEL TRAFICO'=>'REGULACION DEL TRAFICO','OTROS'=>'OTROS','MINERIA DEL CARBON'=>'MINERIA DEL CARBON','CONCENTRACION DE MINERALES'=>'CONCENTRACION DE MINERALES',
-		                                                            'MINERALES DE HIERRO'=>'MINERALES DE HIERRO','SERVICIOS DE MINAS'=>'SERVICIOS DE MINAS','MINERALES DE METALES NO FERROSOS'=>'MINERALES DE METALES NO FERROSOS','MINERALES NO METALICOS'=>'MINERALES NO METALICOS','PRODUCTOS DE CANTERAS'=>'PRODUCTOS DE CANTERAS','AZUFR'=>'AZUFR','MINERALES DE URANIO Y MINERALES RADIACTIVOS'=>'MINERALES DE URANIO Y MINERALES RADIACTIVOS','MECANICA DE ROCAS'=>'MECANICA DE ROCAS','MINERALOGIA'=>'MINERALOGIA',', PROSPECCION MINERA'=>', PROSPECCION MINERA','SIMULACION DE YACIMIENTOS'=>'SIMULACION DE YACIMIENTOS','TOPOGRAFIA DE MINAS'=>'TOPOGRAFIA DE MINAS','OTROS'=>'OTROS','DISPOSITIVOS DE SUSPENSION NEUMATICA'=>'DISPOSITIVOS DE SUSPENSION NEUMATICA','BUQUES'=>'BUQUES',
-		                                                            'EMBARCACIONES DE VIAS NAVEGABLES INTERIORES'=>'EMBARCACIONES DE VIAS NAVEGABLES INTERIORES','MAQUINAS AUXILIARES (BUQUES)'=>'MAQUINAS AUXILIARES (BUQUES)','MOTORES MARINOS'=>'MOTORES MARINOS','TRANSPORTE MARITIMO'=>'TRANSPORTE MARITIMO','BUQUES MERCANTES'=>'BUQUES MERCANTES','ARQUITECTURA NAVAL'=>'ARQUITECTURA NAVAL','TRANSPORTE OCEANICO'=>'TRANSPORTE OCEANICO','HELICES'=>'HELICES','LINEA DE EJES (BUQUES)'=>'LINEA DE EJES (BUQUES)','CONSTRUCCION NAVAL'=>'CONSTRUCCION NAVAL','SUBMARINOS'=>'SUBMARINOS','INGENIERIA COSTERA'=>'INGENIERIA COSTERA','OTROS'=>'OTROS','APLICACIONES DE LOS ISOTOPOS'=>'APLICACIONES DE LOS ISOTOPOS','SEPARACION DE ISOTOPOS'=>'SEPARACION DE ISOTOPOS','EXPLOSIONES NUCLEARES'=>'EXPLOSIONES NUCLEARES','REACTORES DE FISION NUCLEAR'=>'REACTORES DE FISION NUCLEAR',
-		                                                            'REACTORES DE FUSION NUCLEAR'=>'REACTORES DE FUSION NUCLEAR','ENSAYOS NUCLEARES'=>'ENSAYOS NUCLEARES','INGENIERIA QUIMICA NUCLEAR'=>'INGENIERIA QUIMICA NUCLEAR','INSTRUMENTACION NUCLEAR'=>'INSTRUMENTACION NUCLEAR','OTROS'=>'OTROS','MATERIALES ASFALTICOS'=>'MATERIALES ASFALTICOS','PRODUCTOS CARBOQUIMICOS'=>'PRODUCTOS CARBOQUIMICOS','PETROLEO CRUDO'=>'PETROLEO CRUDO','GASODUCTOS'=>'GASODUCTOS','GAS LICUADO'=>'GAS LICUADO','ACEITES Y GRASAS LUBRICANTES'=>'ACEITES Y GRASAS LUBRICANTES','GAS NATURAL'=>'GAS NATURAL','EQUIPO DE CAMPOS PETROLIFEROS'=>'EQUIPO DE CAMPOS PETROLIFEROS','SERVICIOS DE LOS CAMPOS PETROLIFEROS'=>'SERVICIOS DE LOS CAMPOS PETROLIFEROS','OLEODUCTOS'=>'OLEODUCTOS','PRODUCTOS PETROQUIMICOS'=>'PRODUCTOS PETROQUIMICOS',
-		                                                            'PRODUCTOS DEL PETROLEO: GASOLINA ACEITES CERAS'=>'PRODUCTOS DEL PETROLEO: GASOLINA ACEITES CERAS','DISEÑO DE REFINERIAS'=>'DISEÑO DE REFINERIAS','ALMACENAMIENTO DE PETROLEO Y GAS'=>'ALMACENAMIENTO DE PETROLEO Y GAS','EXPLORACION'=>'EXPLORACION','OTROS'=>'OTROS','DISTRIBUCION DE LA ENERGIA'=>'DISTRIBUCION DE LA ENERGIA','GENERACION DE ENERGIA'=>'GENERACION DE ENERGIA','TRANSMISION DE ENERGIA'=>'TRANSMISION DE ENERGIA','FUENTES DE ENERGIA NO CONVENCIONALES'=>'FUENTES DE ENERGIA NO CONVENCIONALES','OTROS'=>'OTROS','LOCOMOTORAS'=>'LOCOMOTORAS','EQUIPO DE FERROCARRILES'=>'EQUIPO DE FERROCARRILES','SERVICIOS DE FERROCARRIL'=>'SERVICIOS DE FERROCARRIL','MATERIAL RODANTE (FERROCARRILES)'=>'MATERIAL RODANTE (FERROCARRILES)','OTROS'=>'OTROS',
-		                                                            'SATELITES ARTIFICIALES'=>'SATELITES ARTIFICIALES','MISILES: LANZAMIENTO Y RECUPERACION'=>'MISILES: LANZAMIENTO Y RECUPERACION','INSTALACIONES DE MISILES'=>'INSTALACIONES DE MISILES','MOTORES COHETE'=>'MOTORES COHETE','NAVES ESPACIALES'=>'NAVES ESPACIALES','SEGUIMIENTO DE NAVES ESPACIALES'=>'SEGUIMIENTO DE NAVES ESPACIALES','CONTROL DE VEHICULOS'=>'CONTROL DE VEHICULOS','OTROS'=>'OTROS','RADIODIFUSION SONORA Y TELEVISIVA'=>'RADIODIFUSION SONORA Y TELEVISIVA','TELEVISION POR CABLE'=>'TELEVISION POR CABLE','CINEMATOGRAFIA'=>'CINEMATOGRAFIA','ENLACES DE MICROONDAS'=>'ENLACES DE MICROONDAS','RADIOCOMUNICACIONES'=>'RADIOCOMUNICACIONES','COMUNICACIONES MEDIANTE SATELITE'=>'COMUNICACIONES MEDIANTE SATELITE','TELEGRAFO'=>'TELEGRAFO','TELEFONO'=>'TELEFONO',
-		                                                            'TELEVISION'=>'TELEVISION','OTROS'=>'OTROS','ALGODON'=>'ALGODON','LINO'=>'LINO','YUTE'=>'YUTE','HILADO'=>'HILADO','TEXTILES SINTETICOS'=>'TEXTILES SINTETICOS','TEJIDO'=>'TEJIDO','LANA'=>'LANA','ACABADOS'=>'ACABADOS','PREPARACION PARA EL TEJIDO'=>'PREPARACION PARA EL TEJIDO','TEJIDO DE PUNTO'=>'TEJIDO DE PUNTO','OTROS'=>'OTROS','OPERACIONES DE LINEAS AEREAS CONTROL DEL TRAFICO AEREO'=>'OPERACIONES DE LINEAS AEREAS CONTROL DEL TRAFICO AEREO','ANALISIS DEL TRAFICO'=>'ANALISIS DEL TRAFICO',', SISTEMAS DE TRAFICO URBANO'=>', SISTEMAS DE TRAFICO URBANO','COMBINACIONES DE SISTEMAS'=>'COMBINACIONES DE SISTEMAS','OTROS'=>'OTROS','ABSORCION'=>'ABSORCION','AGITACION'=>'AGITACION','CENTRIFUGACION'=>'CENTRIFUGACION','COMPRESION'=>'COMPRESION','CRISTALIZACION'=>'CRISTALIZACION',
-		                                                            'DESIONIZACION'=>'DESIONIZACION',' DESTILACION Y CONDENSACION'=>' DESTILACION Y CONDENSACION','SECADO'=>'SECADO','EVAPORACION'=>'EVAPORACION','FILTRACION'=>'FILTRACION','FLOTACION'=>'FLOTACION','FLUJO A TRAVES DE MEDIOS POROSOS'=>'FLUJO A TRAVES DE MEDIOS POROSOS','FLUIDIZACION DE LOS SOLIDOS'=>'FLUIDIZACION DE LOS SOLIDOS','SECADO POR CONGELACION'=>'SECADO POR CONGELACION','MANEJO DE LOS SOLIDOS'=>'MANEJO DE LOS SOLIDOS','TRANSFERENCIA DE CALOR'=>'TRANSFERENCIA DE CALOR','EXTRACCION LIQUIDO'=>'EXTRACCION LIQUIDO','TRANSFERENCIA DE MASA'=>'TRANSFERENCIA DE MASA','MEZCLADO'=>'MEZCLADO','TUBERIAS GUARNICIONES Y VALVULAS'=>'TUBERIAS GUARNICIONES Y VALVULAS','BOMBEO'=>'BOMBEO','CRIBADO'=>'CRIBADO','SEDIMENTACION'=>'SEDIMENTACION','TRITURACION'=>'TRITURACION','EXTRACCION SOLIDO-LIQUIDO'=>'EXTRACCION SOLIDO-LIQUIDO',
-		                                                            'REFRIGERACION'=>'REFRIGERACION','TRANSFERENCIA VAPOR-LIQUIDO'=>'TRANSFERENCIA VAPOR-LIQUIDO','OTROS'=>'OTROS','REGLAMENTO PARA LA CONSTRUCCION DE EDIFICIOS'=>'REGLAMENTO PARA LA CONSTRUCCION DE EDIFICIOS','COMUNICACIONES'=>'COMUNICACIONES','ORGANIZACION COMUNITARIA'=>'ORGANIZACION COMUNITARIA','USO DE LAS TIERRAS'=>'USO DE LAS TIERRAS','DESARROLLO REGIONAL'=>'DESARROLLO REGIONAL','SERVICIOS SANITARIOS'=>'SERVICIOS SANITARIOS','TRANSPORTE'=>'TRANSPORTE','MEDIO AMBIENTE URBANO'=>'MEDIO AMBIENTE URBANO','RELACIONES URBANO-RURALES'=>'RELACIONES URBANO-RURALES','OTROS'=>'OTROS','PRODUCTOS DISEÑO Y MEJORA DE COMUNICACION'=>'PRODUCTOS DISEÑO Y MEJORA DE COMUNICACION','SISTEMAS DE CONOCIMIENTO'=>'SISTEMAS DE CONOCIMIENTO','PROTECCION DEL ASEGURAMIENTO DE LA CALIDAD'=>'PROTECCION DEL ASEGURAMIENTO DE LA CALIDAD',
-		                                                            'COMPARACION REFERENCIAL (BENCHMARKING)'=>'COMPARACION REFERENCIAL (BENCHMARKING)','CONTROL DE CALIDAD'=>'CONTROL DE CALIDAD','CONTROL ESTADISTICO DE PROCESOS'=>'CONTROL ESTADISTICO DE PROCESOS','CONTROL ESTADISTICO DE LA CALIDAD'=>'CONTROL ESTADISTICO DE LA CALIDAD','INSPECCION'=>'INSPECCION','PROCESOS PRODUCTIVOS'=>'PROCESOS PRODUCTIVOS','DISEÑO DE PROCESOS  MEJORA E INNOVACION DE PROCESOS '=>'DISEÑO DE PROCESOS  MEJORA E INNOVACION DE PROCESOS','DOCUMENTACION DE NORMALIZACION Y CERTIFICACION REINGENIERIA'=>'DOCUMENTACION DE NORMALIZACION Y CERTIFICACION REINGENIERIA','COSTOS DE CALIDAD'=>'COSTOS DE CALIDAD','ESTRUCTURAS DE CONTROL Y MICROPROGRAMACION'=>'ESTRUCTURAS DE CONTROL Y MICROPROGRAMACION','ESTRUCTURAS LOGICAS Y ARITMETICAS'=>'ESTRUCTURAS LOGICAS Y ARITMETICAS',
-		                                                            'ESTRUCTURAS DE MEMORIA'=>'ESTRUCTURAS DE MEMORIA','DISPOSITIVOS DE ENTRADA / SALIDA Y COMUNICACIONES'=>'DISPOSITIVOS DE ENTRADA / SALIDA Y COMUNICACIONES',' IMPLEMENTACION DEL NIVEL DE REGISTRO-TRANSFERENCIA'=>' IMPLEMENTACION DEL NIVEL DE REGISTRO-TRANSFERENCIA','DISEÑO LOGICO'=>'DISEÑO LOGICO','CIRCUITOS INTEGRADOS'=>'CIRCUITOS INTEGRADOS','DESEMPEÑO Y FIABILIDAD'=>'DESEMPEÑO Y FIABILIDAD','ORGANIZACION DE SISTEMAS DE COMPUTO'=>'ORGANIZACION DE SISTEMAS DE COMPUTO','ARQUITECTURA DE PROCESADORES'=>'ARQUITECTURA DE PROCESADORES','REDES DE COMUNICACIONES INFORMATICAS'=>'REDES DE COMUNICACIONES INFORMATICAS','SISTEMAS BASADOS EN LA APLICACION Y EN PROPOSITO'=>'SISTEMAS BASADOS EN LA APLICACION Y EN PROPOSITO','SOFTWARE'=>'SOFTWARE','PROCESAMIENTO DE IMAGENES Y VISION INFORMATICA'=>'PROCESAMIENTO DE IMAGENES Y VISION INFORMATICA',
-		                                                            'RECONOCIMIENTO DE PATRONES'=>'RECONOCIMIENTO DE PATRONES','APLICACIONES DE LA INFORMATICA'=>'APLICACIONES DE LA INFORMATICA','OTROS'=>'OTROS','BIOPROCESOS'=>'BIOPROCESOS','BIOMOLECULAS'=>'BIOMOLECULAS','OTROS'=>'OTROS','ADORNO'=>'ADORNO','VESTIMENTA'=>'VESTIMENTA','DANZAS'=>'DANZAS','FIESTAS'=>'FIESTAS','ETNOMUSICOLOGIA'=>'ETNOMUSICOLOGIA','ETNOLINGÜISTICA'=>'ETNOLINGÜISTICA','MUSEOLOGIA'=>'MUSEOLOGIA','MITOS'=>'MITOS','MAGIA'=>'MAGIA','POEMAS'=>'POEMAS','RELATOS'=>'RELATOS','RELIGION'=>'RELIGION','HECHICERIA'=>'HECHICERIA','SIMBOLISMO'=>'SIMBOLISMO','MEDICINA TRADICIONAL'=>'MEDICINA TRADICIONAL','TRADICION'=>'TRADICION','OTROS'=>'OTROS','AGRICULTURA'=>'AGRICULTURA','ARMAS'=>'ARMAS','TRUEQUE'=>'TRUEQUE','INTERCAMBIO'=>'INTERCAMBIO','HABITAT'=>'HABITAT','ARTESANIA'=>'ARTESANIA','CAZA'=>'CAZA',
-		                                                            'PESCA'=>'PESCA','FORRAJE'=>'FORRAJE','METALURGIA'=>'METALURGIA','CRIA DE GANADO'=>'CRIA DE GANADO','OTROS'=>'OTROS','JEFATURA'=>'JEFATURA','REALEZA'=>'REALEZA','DESCENDENCIA'=>'DESCENDENCIA','FAMILIA'=>'FAMILIA','LINAJE'=>'LINAJE','NOMADISMO'=>'NOMADISMO','ESCLAVITUD'=>'ESCLAVITUD','SERVIDUMBRE'=>'SERVIDUMBRE','GUERRA'=>'GUERRA','OTROS'=>'OTROS','TASA DE NATALIDAD'=>'TASA DE NATALIDAD','FECUNDIDAD GENERAL'=>'FECUNDIDAD GENERAL','ILEGITIMIDAD'=>'ILEGITIMIDAD','NUPCIALIDAD'=>'NUPCIALIDAD','ESTERILIDAD Y FECUNDIDAD '=>'ESTERILIDAD Y FECUNDIDAD','OTROS'=>'OTROS','METODOLOGIA DE LA INVESTIGACION'=>'METODOLOGIA DE LA INVESTIGACION','METODOLOGIA DE ANALISIS'=>'METODOLOGIA DE ANALISIS','TEORIA'=>'TEORIA','OTROS'=>'OTROS','MOVILIDAD Y MIGRACIONES INTERNAS'=>'MOVILIDAD Y MIGRACIONES INTERNAS',
-		                                                            'MOVILIDAD Y MIGRACIONES INTERNACIONALES'=>'MOVILIDAD Y MIGRACIONES INTERNACIONALES','DEMOGRAFIA LOCAL'=>'DEMOGRAFIA LOCAL','DEMOGRAFIA REGIONAL'=>'DEMOGRAFIA REGIONAL','DEMOGRAFIA RURAL'=>'DEMOGRAFIA RURAL','DEMOGRAFIA URBANA'=>'DEMOGRAFIA URBANA','OTROS'=>'OTROS','TASA DE FECUNDIDAD Y NUPCIALIDAD'=>'TASA DE FECUNDIDAD Y NUPCIALIDAD','ASPECTOS METODOLOGICOS'=>'ASPECTOS METODOLOGICOS','MIGRACIONES'=>'MIGRACIONES','MORTALIDAD'=>'MORTALIDAD','FUENTES DE OBSERVACION'=>'FUENTES DE OBSERVACION','ASPECTOS TEORICOS'=>'ASPECTOS TEORICOS','OTROS'=>'OTROS','CAUSAS DE MORTALIDAD'=>'CAUSAS DE MORTALIDAD','MORTALIDAD GENERAL'=>'MORTALIDAD GENERAL','MORTALIDAD INFANTIL'=>'MORTALIDAD INFANTIL','MORTALIDAD PRENATAL Y PERINATAL'=>'MORTALIDAD PRENATAL Y PERINATAL','VARIABLES RELACIONADAS'=>'VARIABLES RELACIONADAS','OTROS'=>'OTROS',
-		                                                            'POBLACION ACTIVA'=>'POBLACION ACTIVA','DISTRIBUCION POR EDADES'=>'DISTRIBUCION POR EDADES','ENVEJECIMIENTO DE LA POBLACION'=>'ENVEJECIMIENTO DE LA POBLACION','CARACTERISTICAS BIOLOGICAS'=>'CARACTERISTICAS BIOLOGICAS','CARACTERISTICAS EPIDEMIOLOGICAS'=>'CARACTERISTICAS EPIDEMIOLOGICAS','ESTRUCTURAS DEMOGRAFICAS GENERALES'=>'ESTRUCTURAS DEMOGRAFICAS GENERALES','MORBILIDAD'=>'MORBILIDAD','GENETICA DE POBLACIONES'=>'GENETICA DE POBLACIONES','SEXO'=>'SEXO','CARACTERISTICAS SOCIOECONOMICAS'=>'CARACTERISTICAS SOCIOECONOMICAS','OTROS'=>'OTROS','DEMOGRAFIA COMPUTACIONAL'=>'DEMOGRAFIA COMPUTACIONAL','TRANSICION DEMOGRAFICA'=>'TRANSICION DEMOGRAFICA','DEMOGRAFIA DE OBSERVACION'=>'DEMOGRAFIA DE OBSERVACION','CENSOS DEMOGRAFICOS Y OTROS TIPOS DE ACOPIO DE DATOS'=>'CENSOS DEMOGRAFICOS Y OTROS TIPOS DE ACOPIO DE DATOS',
-		                                                            'ESTIMACIONES DEMOGRAFICAS'=>'ESTIMACIONES DEMOGRAFICAS','PREVISIONES DEMOGRAFICAS'=>'PREVISIONES DEMOGRAFICAS','CRECIMIENTO DE LA POBLACION'=>'CRECIMIENTO DE LA POBLACION','MODELOS DEMOGRAFICOS'=>'MODELOS DEMOGRAFICOS','PROYECCIONES DEMOGRAFICAS'=>'PROYECCIONES DEMOGRAFICAS','ESTADISTICA DEMOGRAFICA'=>'ESTADISTICA DEMOGRAFICA','OTROS'=>'OTROS','POLITICA FISCAL Y DEUDA PUBLICA'=>'POLITICA FISCAL Y DEUDA PUBLICA','HACIENDA PUBLICA (PRESUPUESTO)'=>'HACIENDA PUBLICA (PRESUPUESTO)','OTROS'=>'OTROS','INDICADORES ECONOMICOS'=>'INDICADORES ECONOMICOS','MODELOS ECONOMETRICOS'=>'MODELOS ECONOMETRICOS','PROYECCION ECONOMICA'=>'PROYECCION ECONOMICA','ESTADISTICA ECONOMICA'=>'ESTADISTICA ECONOMICA','SERIES DE TIEMPO ECONOMICAS'=>'SERIES DE TIEMPO ECONOMICAS','OTROS'=>'OTROS','CUENTAS FINANCIERAS'=>'CUENTAS FINANCIERAS',
-		                                                            'RIQUEZA NACIONAL Y BALANZA DE PAGOS'=>'RIQUEZA NACIONAL Y BALANZA DE PAGOS','CONTABILIDAD DE LA RENTA NACIONAL'=>'CONTABILIDAD DE LA RENTA NACIONAL','ENTRADA-SALIDA'=>'ENTRADA-SALIDA','CUENTAS SOCIALES'=>'CUENTAS SOCIALES','AUDITORIA'=>'AUDITORIA','CONTABILIDAD ADMINISTRATIVA'=>'CONTABILIDAD ADMINISTRATIVA','CONTABILIDAD FISCAL'=>'CONTABILIDAD FISCAL','OTRAS'=>'OTRAS','CONSUMO'=>'CONSUMO','AHORRO'=>'AHORRO','INVERSION'=>'INVERSION','DISTRIBUCION'=>'DISTRIBUCION','COMERCIO INTERIOR'=>'COMERCIO INTERIOR','COMERCIO EXTERIOR'=>'COMERCIO EXTERIOR','SEGUROS'=>'SEGUROS','DINERO Y BANCA'=>'DINERO Y BANCA','PRODUCCION'=>'PRODUCCION','REDISTRIBUCION'=>'REDISTRIBUCION','OTROS'=>'OTROS','SISTEMAS DE ECONOMIA CAPITALISTA'=>'SISTEMAS DE ECONOMIA CAPITALISTA','SISTEMAS DE ECONOMIA COLECTIVISTA'=>'SISTEMAS DE ECONOMIA COLECTIVISTA',
-		                                                            'SISTEMAS DE ECONOMIA COMPARADA'=>'SISTEMAS DE ECONOMIA COMPARADA','SISTEMAS DE ECONOMIA SOCIALISTA'=>'SISTEMAS DE ECONOMIA SOCIALISTA','OTROS'=>'OTROS','ECONOMIA DE LA INVESTIGACION Y EL DESARROLLO EXPERIMENTAL'=>'ECONOMIA DE LA INVESTIGACION Y EL DESARROLLO EXPERIMENTAL','INNOVACION TECNOLOGICA'=>'INNOVACION TECNOLOGICA','TRANSFERENCIA DE TECNOLOGIA'=>'TRANSFERENCIA DE TECNOLOGIA','OTROS'=>'OTROS','FORMACION DE CAPITAL'=>'FORMACION DE CAPITAL','TEORIAS DEL CREDITO'=>'TEORIAS DEL CREDITO','MODELOS Y TEORIAS DE DESARROLLO ECONOMICO'=>'MODELOS Y TEORIAS DE DESARROLLO ECONOMICO','ESTUDIOS DE DESARROLLO ECONOMICO'=>'ESTUDIOS DE DESARROLLO ECONOMICO','EQUILIBRIO ECONOMICO'=>'EQUILIBRIO ECONOMICO','FLUCTUACIONES ECONOMICAS'=>'FLUCTUACIONES ECONOMICAS','PREVISIONES ECONOMICAS'=>'PREVISIONES ECONOMICAS','TEORIA DEL CRECIMIENTO ECONOMICO'=>'TEORIA DEL CRECIMIENTO ECONOMICO',
-		                                                            'TEORIA DE LA PLANIFICACION ECONOMICA'=>'TEORIA DE LA PLANIFICACION ECONOMICA','TEORIA DEL EMPLEO Y MODELOS DE EMPLEO'=>'TEORIA DEL EMPLEO Y MODELOS DE EMPLEO','TEORIA FISCAL'=>'TEORIA FISCAL','TEORIA DEL COMERCIO INTERNACIONAL'=>'TEORIA DEL COMERCIO INTERNACIONAL','TEORIA DE LA INVERSION'=>'TEORIA DE LA INVERSION','TEORIA MACROECONOMICA'=>'TEORIA MACROECONOMICA','TEORIA MICROECONOMICA'=>'TEORIA MICROECONOMICA','TEORIA MONETARIA'=>'TEORIA MONETARIA','TEORIA DEL AHORRO'=>'TEORIA DEL AHORRO','TEORIAS DE LA ESTABILIZACION'=>'TEORIAS DE LA ESTABILIZACION','TEORIA DEL BIENESTAR'=>'TEORIA DEL BIENESTAR','OTROS'=>'OTROS','METODOLOGIA ECONOMICA'=>'METODOLOGIA ECONOMICA','COMPORTAMIENTO DEL CONSUMIDOR'=>'COMPORTAMIENTO DEL CONSUMIDOR','HISTORIA DEL PENSAMIENTO ECONOMICO'=>'HISTORIA DEL PENSAMIENTO ECONOMICO','OTROS'=>'OTROS',
-		                                                            'CONCENTRACION ECONOMICA'=>'CONCENTRACION ECONOMICA','INTEGRACION ECONOMICA'=>'INTEGRACION ECONOMICA','REGLAMENTACION GUBERNAMENTAL DEL SECTOR PRIVADO'=>'REGLAMENTACION GUBERNAMENTAL DEL SECTOR PRIVADO','ESTRUCTURA DEL MERCADO'=>'ESTRUCTURA DEL MERCADO','MONOPOLIO Y COMPETENCIA'=>'MONOPOLIO Y COMPETENCIA','EMPRESAS PUBLICAS'=>'EMPRESAS PUBLICAS','SERVICIOS PUBLICOS'=>'SERVICIOS PUBLICOS','OTROS'=>'OTROS','BALANZA DE PAGOS'=>'BALANZA DE PAGOS','AYUDA EXTERIOR'=>'AYUDA EXTERIOR','AYUDA INTERNACIONAL'=>'AYUDA INTERNACIONAL','ASUNTOS INTERNACIONALES'=>'ASUNTOS INTERNACIONALES','POLITICA ECONOMICA INTERNACIONAL'=>'POLITICA ECONOMICA INTERNACIONAL','FINANZAS INTERNACIONALES'=>'FINANZAS INTERNACIONALES','INVERSIONES INTERNACIONALES'=>'INVERSIONES INTERNACIONALES','ACUERDOS MONETARIOS INTERNACIONALES'=>'ACUERDOS MONETARIOS INTERNACIONALES',
-		                                                            'RELACIONES COMERCIALES INTERNACIONALES'=>'RELACIONES COMERCIALES INTERNACIONALES','OTROS'=>'OTROS','PUBLICIDAD'=>'PUBLICIDAD','GESTION FINANCIERA'=>'GESTION FINANCIERA','ESTUDIOS INDUSTRIALES'=>'ESTUDIOS INDUSTRIALES','GESTION DE MANO DE OBRA'=>'GESTION DE MANO DE OBRA','MERCADEO'=>'MERCADEO','ESTUDIOS DE MERCADO'=>'ESTUDIOS DE MERCADO','INVESTIGACION OPERATIVA'=>'INVESTIGACION OPERATIVA','NIVELES OPTIMOS DE PRODUCCION'=>'NIVELES OPTIMOS DE PRODUCCION','ORGANIZACION DE LA PRODUCCION'=>'ORGANIZACION DE LA PRODUCCION','GESTION DE MERCADOS'=>'GESTION DE MERCADOS','PLANEACION ESTRATEGICA'=>'PLANEACION ESTRATEGICA','NEGOCIO'=>'NEGOCIO','RESULTADOS Y FACTORES CRITICOS DEL COSTO'=>'RESULTADOS Y FACTORES CRITICOS DEL COSTO','OTROS'=>'OTROS','AGRICULTURA'=>'AGRICULTURA','SILVICULTURA'=>'SILVICULTURA','PESCA'=>'PESCA',
-		                                                            'SERVICIOS COMUNITARIOS'=>'SERVICIOS COMUNITARIOS','SOCIALES Y PERSONALES'=>'SOCIALES Y PERSONALES','CONSTRUCCION'=>'CONSTRUCCION','EDUCACION'=>'EDUCACION','ENERGIA'=>'ENERGIA','HACIENDA Y SEGUROS'=>'HACIENDA Y SEGUROS','SALUD'=>'SALUD','TECNICAS DE PRODUCCION'=>'TECNICAS DE PRODUCCION','MINERIA'=>'MINERIA','INVESTIGACION Y DESARROLLO'=>'INVESTIGACION Y DESARROLLO','COMERCIO'=>'COMERCIO','TRANSPORTE Y COMUNICACIONES'=>'TRANSPORTE Y COMUNICACIONES','LA INDUSTRIA DE LA COMPUTACION'=>'LA INDUSTRIA DE LA COMPUTACION','OTROS'=>'OTROS','MERCADOS Y CLIENTES'=>'MERCADOS Y CLIENTES','MEDICION DE LA SATISFACCION DE, SERVICIO, DISEÑO Y MEJORA DE, ADMINISTRACION DE LA CALIDAD TOTAL'=>'MEDICION DE LA SATISFACCION DE, SERVICIO, DISEÑO Y MEJORA DE, ADMINISTRACION DE LA CALIDAD TOTAL','ADMINISTRACION DEL, FACULTAMIENTO (EMPOWERMENT)'=>'ADMINISTRACION DEL, FACULTAMIENTO (EMPOWERMENT)',
-		                                                            'CLIMA ORGANIZACIONAL/LABORAL'=>'CLIMA ORGANIZACIONAL/LABORAL','GRUPOS DE TRABAJO DE ALTO DESEMPEÑO'=>'GRUPOS DE TRABAJO DE ALTO DESEMPEÑO','PERSONAL'=>'PERSONAL','SOLUCION DE PROBLEMAS'=>'SOLUCION DE PROBLEMAS','CAPITAL INTELECTUAL'=>'CAPITAL INTELECTUAL','CONOCIMIENTO'=>'CONOCIMIENTO','ADMINISTRACION DEL, PLANEACION, ESTRATEGICA, MISION, VISION, POLITICAS Y VALORES'=>'ADMINISTRACION DEL, PLANEACION, ESTRATEGICA, MISION, VISION, POLITICAS Y VALORES','PROCESOS ADMINISTRATIVOS'=>'PROCESOS ADMINISTRATIVOS','DISEÑO DE, PROCESOS, ADMINISTRACION DE, EVALUACION Y DIAGNOSTICO'=>'DISEÑO DE, PROCESOS, ADMINISTRACION DE, EVALUACION Y DIAGNOSTICO','ENTORNO SOCIAL'=>'ENTORNO SOCIAL','DISTRIBUCION DE LOS RECURSOS NATURALES'=>'DISTRIBUCION DE LOS RECURSOS NATURALES','GEOGRAFIA DE LAS ACTIVIDADES ECONOMICAS'=>'GEOGRAFIA DE LAS ACTIVIDADES ECONOMICAS','USO DE LAS TIERRAS'=>'USO DE LAS TIERRAS',
-		                                                            'DESARROLLO REGIONAL'=>'DESARROLLO REGIONAL','OTROS'=>'OTROS','GEOGRAFIA CULTURAL'=>'GEOGRAFIA CULTURAL','DEMOGEOGRAFIA'=>'DEMOGEOGRAFIA','GEOGRAFIA LINGÜISTICA'=>'GEOGRAFIA LINGÜISTICA','GEOGRAFIA DE LA RELIGION'=>'GEOGRAFIA DE LA RELIGION','GEOGRAFIA POLITICA'=>'GEOGRAFIA POLITICA','GEOGRAFIA SOCIAL'=>'GEOGRAFIA SOCIAL','OTROS'=>'OTROS','GEOGRAFIA URBANA'=>'GEOGRAFIA URBANA','GEOGRAFIA RURAL'=>'GEOGRAFIA RURAL','OTROS'=>'OTROS','HISTORIA COMPARADA'=>'HISTORIA COMPARADA','HISTORIOGRAFIA'=>'HISTORIOGRAFIA','MONOGRAFIAS HISTORICAS'=>'MONOGRAFIAS HISTORICAS','TEORIA Y METODOS'=>'TEORIA Y METODOS','OTROS'=>'OTROS','HISTORIA LOCAL'=>'HISTORIA LOCAL','HISTORIA REGIONAL'=>'HISTORIA REGIONAL','OTROS'=>'OTROS','HISTORIA ANTIGUA'=>'HISTORIA ANTIGUA','HISTORIA CONTEMPORANEA'=>'HISTORIA CONTEMPORANEA','HISTORIA DE LA EDAD MEDIA'=>'HISTORIA DE LA EDAD MEDIA',
-		                                                            'HISTORIA MODERNA'=>'HISTORIA MODERNA','PREHISTORIA'=>'PREHISTORIA','OTROS'=>'OTROS','ARQUEOLOGIA'=>'ARQUEOLOGIA','CERAMOLOGIA'=>'CERAMOLOGIA','EPIGRAFIA'=>'EPIGRAFIA','HERALDICA'=>'HERALDICA','ICONOGRAFIA'=>'ICONOGRAFIA','NUMISMATICA'=>'NUMISMATICA','ONOMASTICA'=>'ONOMASTICA','PALEOGRAFIA'=>'PALEOGRAFIA','PAPIROLOGIA'=>'PAPIROLOGIA','FILOLOGIA'=>'FILOLOGIA','SIGILOGRAFIA'=>'SIGILOGRAFIA','ESTRATIGRAFIA'=>'ESTRATIGRAFIA','ARCHIVISTICA'=>'ARCHIVISTICA','ARCHIVOS ECONOMICOS'=>'ARCHIVOS ECONOMICOS','TEORIA DE DOCUMENTOS'=>'TEORIA DE DOCUMENTOS','OTROS'=>'OTROS','HISTORIA DE LA ARQUITECTURA'=>'HISTORIA DE LA ARQUITECTURA','HISTORIA DEL ARTE'=>'HISTORIA DEL ARTE','HISTORIA DE LA ASTRONOMIA'=>'HISTORIA DE LA ASTRONOMIA','HISTORIA DE LA BIOLOGIA'=>'HISTORIA DE LA BIOLOGIA','HISTORIA DE LA QUIMICA'=>'HISTORIA DE LA QUIMICA',
-		                                                            'HISTORIA DE LA ECONOMIA'=>'HISTORIA DE LA ECONOMIA','HISTORIA DE LA EDUCACION'=>'HISTORIA DE LA EDUCACION','HISTORIA DE LA GEOGRAFIA'=>'HISTORIA DE LA GEOGRAFIA','HISTORIA DE LA GEOLOGIA'=>'HISTORIA DE LA GEOLOGIA','HISTORIA DE LAS RELACIONES INTERNACIONALES'=>'HISTORIA DE LAS RELACIONES INTERNACIONALES','HISTORIA DEL PERIODISMO'=>'HISTORIA DEL PERIODISMO','HISTORIA DEL DERECHO Y DE LAS INSTITUCIONES JURIDICAS'=>'HISTORIA DEL DERECHO Y DE LAS INSTITUCIONES JURIDICAS','HISTORIA DE LA LITERATURA'=>'HISTORIA DE LA LITERATURA','HISTORIA DE LA LINGÜISTICA'=>'HISTORIA DE LA LINGÜISTICA',', HISTORIA DE LA LOGICA'=>', HISTORIA DE LA LOGICA','HISTORIA DE LA MAGISTRATURA'=>'HISTORIA DE LA MAGISTRATURA','HISTORIA DE LA MEDICINA'=>'HISTORIA DE LA MEDICINA','HISTORIA DE LA FILOSOFIA'=>'HISTORIA DE LA FILOSOFIA',
-		                                                            'HISTORIA DE LA FISICA'=>'HISTORIA DE LA FISICA','HISTORIA DE LAS IDEAS POLITICAS'=>'HISTORIA DE LAS IDEAS POLITICAS','HISTORIA DE LAS RELIGIONES'=>'HISTORIA DE LAS RELIGIONES','HISTORIA DE LA CIENCIA'=>'HISTORIA DE LA CIENCIA','HISTORIA DE LA SOCIOLOGIA'=>'HISTORIA DE LA SOCIOLOGIA','HISTORIA DE LA TECNOLOGIA'=>'HISTORIA DE LA TECNOLOGIA','HISTORIA DE LA GUERRA'=>'HISTORIA DE LA GUERRA','HISTORIA DE LAS INSTITUCIONES'=>'HISTORIA DE LAS INSTITUCIONES',', HISTORIA SOCIAL'=>', HISTORIA SOCIAL','HISTORIA DE LAS MENTALIDADES'=>'HISTORIA DE LAS MENTALIDADES','HISTORIA DE LA CULTURA'=>'HISTORIA DE LA CULTURA','OTROS'=>'OTROS','DERECHO CONSUETUDINARIO'=>'DERECHO CONSUETUDINARIO','DERECHO COMPARADO'=>'DERECHO COMPARADO','JURISPRUDENCIA'=>'JURISPRUDENCIA','DERECHO DE LA ANTIGÜEDAD'=>'DERECHO DE LA ANTIGÜEDAD','DERECHO NATURAL'=>'DERECHO NATURAL',
-		                                                            'LEGISLACION PROMULGADA'=>'LEGISLACION PROMULGADA','0TR0S'=>'OTROS','DERECHO AERONAUTICO'=>'DERECHO AERONAUTICO','DERECHO MARITIMO'=>'DERECHO MARITIMO','DERECHO DEL ESPACIO ULTRATERRESTRE'=>'DERECHO DEL ESPACIO ULTRATERRESTRE','DERECHO DEL FONDO DEL MAR'=>'DERECHO DEL FONDO DEL MAR','OTROS'=>'OTROS','FUNCIONARIOS Y PROCEDIMIENTOS JUDICIALES'=>'FUNCIONARIOS Y PROCEDIMIENTOS JUDICIALES','MAGISTRATURA'=>'MAGISTRATURA', 'TRIBUNALES'=>'TRIBUNALES','OTROS'=>'OTROS','DERECHO ADMINISTRATIVO'=>'DERECHO ADMINISTRATIVO','DERECHO CIVIL'=>'DERECHO CIVIL','DERECHO COMERCIAL'=>'DERECHO COMERCIAL','DERECHO CONSTITUCIONAL'=>'DERECHO CONSTITUCIONAL','DERECHO PENAL'=>'DERECHO PENAL','DERECHO FISCAL'=>'DERECHO FISCAL','LEGISLACION PUBLICA'=>'LEGISLACION PUBLICA','DERECHO PRIVADO'=>'DERECHO PRIVADO','DERECHO AGRARIO Y MINERO'=>'DERECHO AGRARIO Y MINERO','DERECHO DEL TRANSPORTE Y TRANSITO'=>'DERECHO DEL TRANSPORTE Y TRANSITO',
-		                                                            'DERECHO FINANCIERO'=>'DERECHO FINANCIERO','DERECHO LABORAL'=>'DERECHO LABORAL','DERECHO NOTARIAL'=>'DERECHO NOTARIAL','DERECHO ROMANO'=>'DERECHO ROMANO','DERECHO SOCIAL'=>'DERECHO SOCIAL','OTROS'=>'OTROS','OTRAS ESPECIALIDADES EN MATERIA JURIDICA'=>'OTRAS ESPECIALIDADES EN MATERIA JURIDICA','PREPARACION DE RESUMENES ANALITICOS'=>'PREPARACION DE RESUMENES ANALITICOS','DOCUMENTACION AUTOMATIZADA'=>'DOCUMENTACION AUTOMATIZADA','BILINGÜISMO'=>'BILINGÜISMO','LINGÜISTICA COMPUTACIONAL'=>'LINGÜISTICA COMPUTACIONAL','LENGUAJES DOCUMENTALES'=>'LENGUAJES DOCUMENTALES','DOCUMENTACION'=>'DOCUMENTACION','LENGUAJE Y LITERATURA'=>'LENGUAJE Y LITERATURA','LENGUAJE DE LOS NIÑOS'=>'LENGUAJE DE LOS NIÑOS','TRADUCCION A MAQUINA'=>'TRADUCCION A MAQUINA','PATOLOGIA Y CORRECCION DEL HABLA'=>'PATOLOGIA Y CORRECCION DEL HABLA',' ENSEÑANZA DE IDIOMAS'=>' ENSEÑANZA DE IDIOMAS',
-		                                                            'TRADUCCION'=>'TRADUCCION','ALFABETIZACION Y SISTEMAS DE ESCRITURA'=>'ALFABETIZACION Y SISTEMAS DE ESCRITURA','OTROS'=>'OTROS','LINGÜISTICA HISTORICA'=>'LINGÜISTICA HISTORICA','ETIMOLOGIA'=>'ETIMOLOGIA','OTROS'=>'OTROS','LINGÜISTICA COMPARADA'=>'LINGÜISTICA COMPARADA','ETNOLINGÜISTICA'=>'ETNOLINGÜISTICA','LEXICOGRAFIA'=>'LEXICOGRAFIA','LEXICOLOGIA'=>'LEXICOLOGIA','FONETICA'=>'FONETICA','FONOLOGIA'=>'FONOLOGIA','PSICOLINGÜISTICA'=>'PSICOLINGÜISTICA','SEMANTICA'=>'SEMANTICA','SEMIOLOGIA'=>'SEMIOLOGIA','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','ORTOGRAFIA'=>'ORTOGRAFIA','ESTILISTICA (ESTILO Y RETORICA)'=>'ESTILISTICA (ESTILO Y RETORICA)','SINTAXIS ANALISIS SINTACTICO'=>'SINTAXIS ANALISIS SINTACTICO','LINGÜISTICA DESCRIPTIVA'=>'LINGÜISTICA DESCRIPTIVA','OTROS'=>'OTROS','METODOS AUDIOVISUALES'=>'METODOS AUDIOVISUALES','PEDAGOGIA COMPARADA'=>'PEDAGOGIA COMPARADA',
-		                                                            'ELABORACION DE PLANES DE ESTUDIO'=>'ELABORACION DE PLANES DE ESTUDIO','TEORIAS DE LA EDUCACION'=>'TEORIAS DE LA EDUCACION','PEDAGOGIA EXPERIMENTAL'=>'PEDAGOGIA EXPERIMENTAL','EVALUACION DE ALUMNOS Y MAESTROS'=>'EVALUACION DE ALUMNOS Y MAESTROS','METODOS PEDAGOGICOS'=>'METODOS PEDAGOGICOS','INSTRUCCION PROGRAMADA'=>'INSTRUCCION PROGRAMADA','OTROS'=>'OTROS','EDUCACION DE ADULTOS'=>'EDUCACION DE ADULTOS',', CENTROS DOCENTES'=>', CENTROS DOCENTES','ORGANIZACION Y ADMINISTRACION'=>'ORGANIZACION Y ADMINISTRACION','PLANIFICACION Y FINANCIACION DE LA EDUCACION'=>'PLANIFICACION Y FINANCIACION DE LA EDUCACION','NIVELES Y TEMAS DE LA EDUCACION'=>'NIVELES Y TEMAS DE LA EDUCACION','EDUCACION ESPECIAL'=>'EDUCACION ESPECIAL','IMPEDIDOS'=>'IMPEDIDOS','RETRASADOS MENTALES'=>'RETRASADOS MENTALES','ANALISIS, MODELOS Y PROYECCIONES ESTADISTICOS'=>'ANALISIS, MODELOS Y PROYECCIONES ESTADISTICOS',
-		                                                            'ENSEÑANZA Y FORMACION PROFESIONAL'=>'ENSEÑANZA Y FORMACION PROFESIONAL','OTROS'=>'OTROS','CARRERA Y CONDICION DE LOS EDUCADORES'=>'CARRERA Y CONDICION DE LOS EDUCADORES','FORMACION DE EDUCADORES'=>'FORMACION DE EDUCADORES','OTROS'=>'OTROS','COOPERACION INTERNACIONAL'=>'COOPERACION INTERNACIONAL','ORGANIZACIONES INTERNACIONALES'=>'ORGANIZACIONES INTERNACIONALES','POLITICA INTERNACIONAL'=>'POLITICA INTERNACIONAL','TRATADOS Y ACUERDOS INTERNACIONALES'=>'TRATADOS Y ACUERDOS INTERNACIONALES','PROBLEMAS DE LAS RELACIONES INTERNACIONALES'=>'PROBLEMAS DE LAS RELACIONES INTERNACIONALES','OTROS'=>'OTROS','POLITICA AGRICOLA'=>'POLITICA AGRICOLA','POLITICA CULTURAL'=>'POLITICA CULTURAL','POLITICA COMERCIAL'=>'POLITICA COMERCIAL','POLITICA DE COMUNICACIONES'=>'POLITICA DE COMUNICACIONES','POLITICA DEMOGRAFICA'=>'POLITICA DEMOGRAFICA','POLITICA ECONOMICA'=>'POLITICA ECONOMICA',
-		                                                            'POLITICA DE EDUCACION'=>'POLITICA DE EDUCACION','POLITICA AMBIENTAL'=>'POLITICA AMBIENTAL','POLITICA EXTERIOR'=>'POLITICA EXTERIOR','POLITICA SANITARIA'=>'POLITICA SANITARIA','POLITICA INDUSTRIAL'=>'POLITICA INDUSTRIAL','POLITICA DE INFORMACION'=>'POLITICA DE INFORMACION','PLANIFICACION DE POLITICAS'=>'PLANIFICACION DE POLITICAS','POLITICA CIENTIFICA Y TECNOLOGICA'=>'POLITICA CIENTIFICA Y TECNOLOGICA','POLITICA SOCIAL'=>'POLITICA SOCIAL','POLITICA DE TRANSPORTES'=>'POLITICA DE TRANSPORTES','OTROS'=>'OTROS','PODER EJECUTIVO'=>'PODER EJECUTIVO','PODER JUDICIAL'=>'PODER JUDICIAL','PODER LEGISLATIVO'=>'PODER LEGISLATIVO','RELACIONES ENTRE LOS PODERES'=>'RELACIONES ENTRE LOS PODERES','OTROS'=>'OTROS','ELECCIONES'=>'ELECCIONES','COMPORTAMIENTO POLITICO'=>'COMPORTAMIENTO POLITICO','GRUPOS POLITICOS'=>'GRUPOS POLITICOS','LIDERAZGO POLITICO'=>'LIDERAZGO POLITICO','MOVIMIENTOS POLITICOS'=>'MOVIMIENTOS POLITICOS',
-		                                                            'PARTIDOS POLITICOS'=>'PARTIDOS POLITICOS','OTROS'=>'OTROS','DERECHOS HUMANOS'=>'DERECHOS HUMANOS','IDIOMAS'=>'IDIOMAS','MINORIAS'=>'MINORIAS','RAZA'=>'RAZA','RELIGION'=>'RELIGION','CONFLICTOS SOCIALES'=>'CONFLICTOS SOCIALES','OTROS'=>'OTROS','GESTION ADMINISTRATIVA'=>'GESTION ADMINISTRATIVA','INSTITUCIONES CENTRALES'=>'INSTITUCIONES CENTRALES','FUNCION PUBLICA'=>'FUNCION PUBLICA','SERVICIOS PUBLICOS'=>'SERVICIOS PUBLICOS','INSTITUCIONES REGIONALES'=>'INSTITUCIONES REGIONALES','COMERCIALIZACION'=>'COMERCIALIZACION','FINANZAS'=>'FINANZAS','PROMOCION Y DESARROLLO DE ORGANIZACIONES'=>'PROMOCION Y DESARROLLO DE ORGANIZACIONES','RECURSOS HUMANOS'=>'RECURSOS HUMANOS','SISTEMAS DE INFORMACION'=>'SISTEMAS DE INFORMACION','OTROS'=>'OTROS','INFORMACION'=>'INFORMACION','MEDIOS DE COMUNICACION DE MASAS'=>'MEDIOS DE COMUNICACION DE MASAS','PRENSA'=>'PRENSA',
-		                                                            'PROPAGANDA'=>'PROPAGANDA','OTROS'=>'OTROS','ARCHIVONOMIA'=>'ARCHIVONOMIA','BIBLIOLOGIA'=>'BIBLIOLOGIA','BIBLIOTECNIA'=>'BIBLIOTECNIA','BIBLIOTECOLOGIA'=>'BIBLIOTECOLOGIA','BIBLIOTECONOMIA'=>'BIBLIOTECONOMIA','OTROS'=>'OTROS','TRASTORNOS DEL COMPORTAMIENTO'=>'TRASTORNOS DEL COMPORTAMIENTO','COMPORTAMIENTO DESVIADO'=>'COMPORTAMIENTO DESVIADO','DEFICIENCIA MENTAL'=>'DEFICIENCIA MENTAL','PSICOPATOLOGIA'=>'PSICOPATOLOGIA','OTROS'=>'OTROS','PSICOLOGIA DEL DESARROLLO'=>'PSICOLOGIA DEL DESARROLLO','INCAPACIDADES DE APRENDIZAJE'=>'INCAPACIDADES DE APRENDIZAJE','RETRASO MENTAL'=>'RETRASO MENTAL','PSICOLOGIA ESCOLAR'=>'PSICOLOGIA ESCOLAR','PATOLOGIA DEL HABLA'=>'PATOLOGIA DEL HABLA','OTROS'=>'OTROS','TERAPIA DEL COMPORTAMIENTO'=>'TERAPIA DEL COMPORTAMIENTO','PSICOLOGIA DE CONSULTA'=>'PSICOLOGIA DE CONSULTA','ORIENTACION EDUCATIVA'=>'ORIENTACION EDUCATIVA',
-		                                                            'TERAPIA DE GRUPO'=>'TERAPIA DE GRUPO','RETRASO MENTAL'=>'RETRASO MENTAL','PSICOANALISIS'=>'PSICOANALISIS','PSICOTERAPIA'=>'PSICOTERAPIA','REHABILITACION'=>'REHABILITACION','ORIENTACION PROFESIONAL'=>'ORIENTACION PROFESIONAL','OTROS'=>'OTROS','FUNCIONAMIENTO COGNOSCITIVO'=>'FUNCIONAMIENTO COGNOSCITIVO','METODOS EDUCATIVOS'=>'METODOS EDUCATIVOS','LEYES DEL APRENDIZAJE'=>'LEYES DEL APRENDIZAJE','PSICOLINGÜISTICA'=>'PSICOLINGÜISTICA','OTROS'=>'OTROS','PSICOLOGIA DIFERENCIAL'=>'PSICOLOGIA DIFERENCIAL','DISEÑO EXPERIMENTAL'=>'DISEÑO EXPERIMENTAL','TEORIA DE LAS MEDICIONES'=>'TEORIA DE LAS MEDICIONES','ESTADISTICA'=>'ESTADISTICA','PSICOMETRIA'=>'PSICOMETRIA','ANALISIS DE ESCALA'=>'ANALISIS DE ESCALA','CONSTRUCCION DE PRUEBAS'=>'CONSTRUCCION DE PRUEBAS','TEORIA DE LAS PRUEBAS'=>'TEORIA DE LAS PRUEBAS','VALIDACION DE PRUEBAS'=>'VALIDACION DE PRUEBAS','OTROS'=>'OTROS','FUNCION CEREBRAL'=>'FUNCION CEREBRAL',
-		                                                            'PSICOLOGIA COMPARADA'=>'PSICOLOGIA COMPARADA','EMOCION'=>'EMOCION','ANALISIS EXPERIMENTAL DEL COMPORTAMIENTO'=>'ANALISIS EXPERIMENTAL DEL COMPORTAMIENTO','NIVELES DE FUNCION'=>'NIVELES DE FUNCION','PROCESOS DE LA MEMORIA'=>'PROCESOS DE LA MEMORIA','PROCESOS MENTALES'=>'PROCESOS MENTALES','MOTIVACION'=>'MOTIVACION','PROCESOS DE PERCEPCION'=>'PROCESOS DE PERCEPCION','PSICOLOGIA FISIOLOGICA'=>'PSICOLOGIA FISIOLOGICA','REACCION'=>'REACCION','REFLEJOS'=>'REFLEJOS','PROCESOS SENSORIALES'=>'PROCESOS SENSORIALES','OTROS'=>'OTROS','METODOLOGIA'=>'METODOLOGIA','TEORIA Y SISTEMAS'=>'TEORIA Y SISTEMAS','OTROS'=>'OTROS','MUERTE'=>'MUERTE','MADUREZ'=>'MADUREZ','ENVEJECIMIENTO'=>'ENVEJECIMIENTO','OTROS'=>'OTROS','PREVENCION DE ACCIDENTES'=>'PREVENCION DE ACCIDENTES','ACTITUDES Y MORAL'=>'ACTITUDES Y MORAL','DISEÑO Y EVALUACION DEL TRABAJO'=>'DISEÑO Y EVALUACION DEL TRABAJO',
-		                                                            'RELACIONES PERSONAL/ADMINISTRACION'=>'RELACIONES PERSONAL/ADMINISTRACION','COMPORTAMIENTO ORGANIZACIONAL'=>'COMPORTAMIENTO ORGANIZACIONAL','SELECCION DE PERSONAL'=>'SELECCION DE PERSONAL','EVALUACION DEL RENDIMIENTO'=>'EVALUACION DEL RENDIMIENTO','TRABAJO EN EQUIPO'=>'TRABAJO EN EQUIPO','CULTURA ORGANIZACIONAL'=>'CULTURA ORGANIZACIONAL','PERSONAL'=>'PERSONAL','COMPENSACION Y RECONOCIMIENTO'=>'COMPENSACION Y RECONOCIMIENTO','MEDICION DE LA SATISFACCION'=>'MEDICION DE LA SATISFACCION','OTROS'=>'OTROS','PERCEPCION EXTRASENSORIAL'=>'PERCEPCION EXTRASENSORIAL','HIPNOSIS'=>'HIPNOSIS','OTROS'=>'OTROS','CREATIVIDAD'=>'CREATIVIDAD','CULTURA Y PERSONALIDAD'=>'CULTURA Y PERSONALIDAD','DESARROLLO DE LA PERSONALIDAD'=>'DESARROLLO DE LA PERSONALIDAD','MEDICION DE LA PERSONALIDAD'=>'MEDICION DE LA PERSONALIDAD','ESTRUCTURA Y DINAMICA DE LA PERSONALIDAD'=>'ESTRUCTURA Y DINAMICA DE LA PERSONALIDAD',
-		                                                            'TEORIA DE LA PERSONALIDAD'=>'TEORIA DE LA PERSONALIDAD','OTROS'=>'OTROS','DISCRIMINACION'=>'DISCRIMINACION','FENOMENOS DE LOS GRUPOS MINORITARIOS'=>'FENOMENOS DE LOS GRUPOS MINORITARIOS','POLITICA PUBLICA'=>'POLITICA PUBLICA','OTROS'=>'OTROS','ALCOHOLISMO'=>'ALCOHOLISMO','RESPUESTA DEL COMPORTAMIENTO'=>'RESPUESTA DEL COMPORTAMIENTO','USO INDEBIDO DE DROGAS'=>'USO INDEBIDO DE DROGAS','FUNCION DE LOS MEDICAMENTOS'=>'FUNCION DE LOS MEDICAMENTOS','TERAPIA CON MEDICAMENTOS'=>'TERAPIA CON MEDICAMENTOS','OTROS'=>'OTROS','PUBLICIDAD'=>'PUBLICIDAD','ACTITUDES'=>'ACTITUDES','COMPORTAMIENTO COLECTIVO'=>'COMPORTAMIENTO COLECTIVO','PSICOLOGIA DE LA COMUNIDAD'=>'PSICOLOGIA DE LA COMUNIDAD','SOLUCION DE CONFLICTOS'=>'SOLUCION DE CONFLICTOS','COMPORTAMIENTO DEL CONSUMIDOR'=>'COMPORTAMIENTO DEL CONSUMIDOR',', CULTURA Y PERSONALIDAD'=>', CULTURA Y PERSONALIDAD','PROCESOS Y TEORIA DE LAS DECISIONES'=>'PROCESOS Y TEORIA DE LAS DECISIONES',
-		                                                            'PSICOLOGIA FORENSE'=>'PSICOLOGIA FORENSE','INTERACCION DE GRUPOS'=>'INTERACCION DE GRUPOS','PROCESOS DE GRUPO'=>'PROCESOS DE GRUPO','LIDERAZGO'=>'LIDERAZGO','MERCADEO'=>'MERCADEO','COMPORTAMIENTO POLITICO'=>'COMPORTAMIENTO POLITICO','OPINION PUBLICA'=>'OPINION PUBLICA','COMPORTAMIENTO SEGUN LA FUNCION'=>'COMPORTAMIENTO SEGUN LA FUNCION','PERCEPCIONES Y MOVIMIENTOS SOCIALES'=>'PERCEPCIONES Y MOVIMIENTOS SOCIALES','COMUNICACION SIMBOLICA'=>'COMUNICACION SIMBOLICA','PSICOLOGIA DE LA INGENIERIA'=>'PSICOLOGIA DE LA INGENIERIA','PSICOLOGIA DEL DEPORTE'=>'PSICOLOGIA DEL DEPORTE','OTROS'=>'OTROS','DISEÑO ARQUITECTONICO'=>'DISEÑO ARQUITECTONICO','PARQUES Y JARDINES'=>'PARQUES Y JARDINES','URBANISMO'=>'URBANISMO','EJECUCION DE LA OBRA'=>'EJECUCION DE LA OBRA','OTROS'=>'OTROS','CRITICA DE TEXTOS'=>'CRITICA DE TEXTOS','ANALISIS LITERARIO'=>'ANALISIS LITERARIO','ESTILO Y ESTETICA LITERARIOS'=>'ESTILO Y ESTETICA LITERARIOS',
-		                                                            'VOCABULARIO LITERARIO'=>'VOCABULARIO LITERARIO','RETORICA'=>'RETORICA','OTROS'=>'OTROS','CINEMATOGRAFIA'=>'CINEMATOGRAFIA','DANZA'=>'DANZA','COREOGRAFIA'=>'COREOGRAFIA','ARTES DECORATIVAS'=>'ARTES DECORATIVAS','DIBUJO'=>'DIBUJO','GRABADO'=>'GRABADO','ESTETICA DE LAS BELLAS ARTES'=>'ESTETICA DE LAS BELLAS ARTES','MUSICA'=>'MUSICA','MUSICOLOGIA'=>'MUSICOLOGIA','PINTURA'=>'PINTURA','FOTOGRAFIA'=>'FOTOGRAFIA','ESCULTURA'=>'ESCULTURA','TEATRO'=>'TEATRO','OTROS'=>'OTROS','EVOLUCION CULTURAL'=>'EVOLUCION CULTURAL','RELACIONES CULTURALES'=>'RELACIONES CULTURALES','FOLKLORE'=>'FOLKLORE','RELACIONES INTERETNICAS'=>'RELACIONES INTERETNICAS','IDIOMA Y CULTURA'=>'IDIOMA Y CULTURA','CARACTERISTICAS Y CIVILIZACION NACIONALES'=>'CARACTERISTICAS Y CIVILIZACION NACIONALES','SOCIOLOGIA DEL ARTE'=>'SOCIOLOGIA DEL ARTE','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','SOCIOLOGIA DE LA LITERATURA'=>'SOCIOLOGIA DE LA LITERATURA',
-		                                                            'SOCIOLOGIA DE LA RELIGION'=>'SOCIOLOGIA DE LA RELIGION','OTROS'=>'OTROS','ACOPIO DE DATOS SOBRE EL TERRENO'=>'ACOPIO DE DATOS SOBRE EL TERRENO','PSICOLOGIA SOCIAL'=>'PSICOLOGIA SOCIAL','DISEÑO DE ENCUESTAS SOCIOLOGICAS'=>'DISEÑO DE ENCUESTAS SOCIOLOGICAS','METODOS DE LAS ENCUESTAS SOCIOLOGICAS'=>'METODOS DE LAS ENCUESTAS SOCIOLOGICAS','OTROS'=>'OTROS','SOCIOLOGIA COMPARADA'=>'SOCIOLOGIA COMPARADA','SOCIOLOGIA HISTORICA'=>'SOCIOLOGIA HISTORICA','METODOLOGIA'=>'METODOLOGIA','SOCIOGRAFIA'=>'SOCIOGRAFIA','TEORIA'=>'TEORIA','OTROS'=>'OTROS','CONFLICTOS'=>'CONFLICTOS','SOLUCION DE CONFLICTOS'=>'SOLUCION DE CONFLICTOS','GUERRA Y PAZ'=>'GUERRA Y PAZ','OTROS'=>'OTROS','MEDICION Y CONSTRUCCION DE INDICES'=>'MEDICION Y CONSTRUCCION DE INDICES','CONSTRUCCION DE MODELOS'=>'CONSTRUCCION DE MODELOS',', ANALISIS ESTADISTICO'=>', ANALISIS ESTADISTICO','OTROS'=>'OTROS','BUROCRACIA'=>'BUROCRACIA','SOCIOLOGIA DE LA ENSEÑANZA'=>'SOCIOLOGIA DE LA ENSEÑANZA',
-		                                                            'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'), array('prompt'=>'Seleccionar subdisciplina','title'=>'Subdisciplina'));?>
-		                                                            </span>
-		<?php echo $form->error($model,'subdiscipline'); ?>
-	</div>
-
-	 <div class="row">
+   <div class="row">
 
         <?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Palabras claves','title'=>'Palabras Claves')); ?>
         <?php echo $form->error($model,'keywords'); ?>
     </div>
 
-	<div class="row">
+  <div class="row">
 
-		<?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
-		<?php echo $form->error($model,'url_doc'); ?>
-	</div>
-
-
-	<?php
-			$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
- 			'targetClass'=>'authorsRegistry',
- 			'addButtonLabel'=>'Agregar nuevo autor',
-		 ));
-    	?>
-    	<div class="authorsRegistry ">
+    <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
+    <?php echo $form->error($model,'url_doc'); ?>
+  </div>
 
 
-		  <?php
-		  		echo "<input type='hidden' name='idsBooksChapters[]'>";
-		   ?>
-		<div class="row">
-		  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
-		  <?php echo $form->error($modelAuthor,'names');?>
-		</div>
-
-		<div class="row">
-		  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apllido Paterno')); ?>
-		  <?php echo $form->error($modelAuthor,'last_name1'); ?>
-		</div>
-
-		<div class="row">
-
-		  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
-		  <?php echo $form->error($modelAuthor,'last_name2'); ?>
-		</div>
-
-		<div class="row">
-
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
-		  <?php echo $form->error($modelAuthor,'position'); ?>
-		  </div>
-    	</div>
+  <?php
+      $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+      'targetClass'=>'authorsRegistry',
+      'addButtonLabel'=>'Agregar nuevo autor',
+     ));
+      ?>
+      <div class="authorsRegistry">
 
 
-		  <?php
-		  if(!$model->isNewRecord)
-		  foreach ($modelAuthors as $key => $value) {
-		  	?>
+      <?php
+          echo"<input type='hidden' name='idsBooksChapters[]'>";
+       ?>
+    <div class="row">
+      <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
+      <?php echo $form->error($modelAuthor,'names');?>
+    </div>
 
-		  <?php
-		  		echo "<input type='hidden' value='".$value->id."' name='idsBooksChapters[]'>";
-		  	 ?>
-		<div class="row">
-		  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
-		  <?php echo $form->error($value,'names');?>
-		</div>
+    <div class="row">
+      <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apllido Paterno')); ?>
+      <?php echo $form->error($modelAuthor,'last_name1'); ?>
+    </div>
 
-		<div class="row">
-		  <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
-		  <?php echo $form->error($value,'last_name1'); ?>
-		</div>
+    <div class="row">
 
-		<div class="row">
+      <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
+      <?php echo $form->error($modelAuthor,'last_name2'); ?>
+    </div>
 
-		  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
-		  <?php echo $form->error($value,'last_name2'); ?>
-		</div>
+    <div class="row">
 
-		 <div class="row">
-		  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
-		  <?php echo $form->error($value,'position');
-		?>
-	</div>
-	<hr>
-		<?php } ?>
-
-	</div>
-
-	<div class="row buttons">
-
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton')); ?>
-		<?php echo CHtml::link('Cancelar',array('booksChapters/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+      <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. Solo se aceptan numeros')); ?>
+      <?php echo $form->error($modelAuthor,'position'); ?>
+      </div>
+      </div>
 
 
-	</div>
+      <?php
+      if(!$model->isNewRecord)
+      foreach ($modelAuthors as $key => $value) {
+        ?>
+
+      <?php
+          echo"<input type='hidden' value='".$value->id."' name='idsBooksChapters[]'>";
+         ?>
+    <div class="row">
+      <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
+      <?php echo $form->error($value,'names');?>
+    </div>
+
+    <div class="row">
+      <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
+      <?php echo $form->error($value,'last_name1'); ?>
+    </div>
+
+    <div class="row">
+
+      <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
+      <?php echo $form->error($value,'last_name2'); ?>
+    </div>
+
+     <div class="row">
+      <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. Solo se aceptan numeros')); ?>
+      <?php echo $form->error($value,'position');
+    ?>
+  </div>
+  <hr>
+    <?php } ?>
+
+  </div>
+
+  <div class="row buttons">
+
+    <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton')); ?>
+    <?php echo CHtml::link('Cancelar',array('booksChapters/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+
+
+  </div>
 
 <?php $this->endWidget(); ?>
 

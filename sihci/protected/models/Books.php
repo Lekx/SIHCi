@@ -63,9 +63,9 @@ class Books extends CActiveRecord
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
 			
-			array('path','required', 'on'=>'create'),
-			array('path,safe', 'safe', 'on'=>'update'),
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
+			array('path','file','on'=> 'insert'),
+			array('path', 'safe', 'on'=>'update'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png','on'=>'insert'),
 			
 			//array('path','file','maxSize'=>array(1024 * 5000), 'message'=>'El Documento excede el peso permitido'),
 			// The following rule is used by search().
@@ -95,15 +95,15 @@ class Books extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'isbn' => 'ISBN',
+			'isbn' => 'Número de ISBN',
 			'book_title' => 'Título del libro',
-			'publisher' => 'Editorial',
+			'publisher' => 'Editorial',					       		
 			'edition' => 'Edición',
 			'release_date' => 'Año de publicación',
 			'volume' => 'Volume',
 			'pages' => 'Número de paginas',
 			'copies_issued' => 'Tiraje',
-			'work_type' => 'Tipo de trabajo',
+			'work_type' => 'Identificador libro',
 			'idioma' => 'Idioma',
 			'traductor_type' => 'Tipo de traductor',
 			'traductor' => 'Nombre del traductor',
@@ -111,7 +111,7 @@ class Books extends CActiveRecord
 			'discipline' => 'Disciplina',
 			'subdiscipline' => 'Subdisciplina',
 			'path' => 'Documento',
-			'keywords' => 'Palabras claves',
+			'keywords' => 'Palabras claves',					       			
 			'creation_date' => 'Creation Date',
 		);
 	}

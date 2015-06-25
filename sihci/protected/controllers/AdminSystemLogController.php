@@ -132,7 +132,7 @@ class AdminSystemLogController extends Controller
 			$log->section = $section;
 			$log->details = $details;
 			$log->action = $action;
-			$log->datetime = date ('d/m/Y H:i:s');
+			$log->datetime = date ('Y-m-d H:i:s');
 			$log->save();
 	}
 
