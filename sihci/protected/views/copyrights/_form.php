@@ -47,7 +47,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">		
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título de la obra','title'=>'Título de la obra')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título de la obra','title'=>'Título de la obra (maximo 150 caracteres)')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
@@ -76,12 +76,12 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen', 'title'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resume',array('rows'=>6, 'cols'=>50,'maxlength'=>1500,'placeholder'=>'Resumen', 'title'=>'Resumen (maximo 1500 caracteres)')); ?>
 		<?php echo $form->error($model,'resume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario','title'=>'Beneficiario')); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>70,'placeholder'=>'Beneficiario','title'=>'Beneficiario (maximo 70 caracteres)')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
@@ -101,7 +101,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto', 'title'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>1500,'placeholder'=>'Valor de impacto', 'title'=>'Valor de impacto (maximo 1500 caracteres)')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
