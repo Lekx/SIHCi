@@ -66,7 +66,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>150,'placeholder'=>'Nombre de la patente','title'=>'Nombre de la patente')); ?>
+		<?php echo $form->textField($model,'name',array('size'=>150,'maxlength'=>150,'placeholder'=>'Nombre de la patente','title'=>'Nombre de la patente (maximo  150 caracteres)')); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
@@ -154,28 +154,28 @@ $(document).ready(function() {
 	</div>
 	
 	<div class="row">
-		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>150,'placeholder'=>'Expediente', 'title'=>'Expediente')); ?>
+		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>150,'placeholder'=>'Expediente', 'title'=>'Expediente (maximo  150 caracteres)')); ?>
 		<?php echo $form->error($model,'record'); ?>
 	</div>
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'international_clasification',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Clasificación internacional','title'=>'Clasificación internacional')); ?>
+		<?php echo $form->textField($model,'international_clasification',array('size'=>100,'maxlength'=>100, 'placeholder'=>'Clasificación internacional','title'=>'Clasificación internacional (maximo  100 caracteres)')); ?>
 		<?php echo $form->error($model,'international_clasification'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Titular de la patente','title'=>'Titular de la patente')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Titular de la patente','title'=>'Titular de la patente (maximo  150 caracteres)')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'owner',array('size'=>60,'maxlength'=>150,'placeholder'=>'Propietario','title'=>'Propietario')); ?>
+		<?php echo $form->textField($model,'owner',array('size'=>60,'maxlength'=>70,'placeholder'=>'Propietario','title'=>'Propietario (maximo  70 caracteres)' )); ?>
 		<?php echo $form->error($model,'owner'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Resumen','title'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>250,'placeholder'=>'Resumen','title'=>'Resumen (maximo  250 caracteres)')); ?>
 		<?php echo $form->error($model,'resumen'); ?>
 	</div>
 
@@ -185,7 +185,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'resource_operator',array('size'=>60,'maxlength'=>150,'placeholder'=>'Quién lo explota', 'title'=>'Quién lo explota')); ?>
+		<?php echo $form->textField($model,'resource_operator',array('size'=>60,'maxlength'=>150,'placeholder'=>'Quién lo explota', 'title'=>'Quién lo explota (maximo  70 caracteres)' )); ?>
 		<?php echo $form->error($model,'resource_operator'); ?>
 	</div>
 	

@@ -11,7 +11,7 @@ $(document).ready(function() {
         $('.cleandiv').hide();
         $('.successdiv').hide();
         $('.errordiv').hide();
-        $('.errordivuser').hide();s
+        $('.errordivuser').hide();
         $('.abortdiv').hide();
 
     });

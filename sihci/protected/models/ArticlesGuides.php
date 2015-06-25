@@ -51,7 +51,7 @@ class ArticlesGuides extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_resume,title, start_page, end_page, article_type, magazine, area, discipline,subdiscipline, keywords', 'required'),
+			array('id_resume,title, start_page, end_page, article_type, magazine, area, discipline,subdiscipline, keywords ', 'required'),
 			array('id_resume, isbn, edicion, publishing_year, volumen, volumen_no, start_page, end_page, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('editorial', 'length', 'max'=>80),
 			array('article_type', 'length', 'max'=>20),
@@ -59,10 +59,9 @@ class ArticlesGuides extends CActiveRecord
 			array('area, discipline, subdiscipline', 'length', 'max'=>60),
 			array('keywords', 'length', 'max'=>250),
 			array('type', 'length', 'max'=>15),
-			array('url_document', 'length', 'max'=>100),
 			array('searchValue','length','max'=>70),
-    		array('url_document','required', 'on'=>'create'),
-			array('url_document', 'safe', 'on'=>'update'),
+			array('url_document', 'length', 'max'=>100),
+    		array('url_document', 'safe', 'on'=>'update'),
 			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
 			array('end_page','compare', 'compareAttribute'=>'start_page','operator'=>'>=','message'=>'Página final no puede ser menor a la página inicial'),
 			// The following rule is used by search().
@@ -93,7 +92,7 @@ class ArticlesGuides extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_resume' => 'Id Resume',
-			'isbn' => 'ISBN',
+			'isbn' => 'Número de ISBN',
 			'title'=> 'Título',
 			'editorial' => 'Editorial',
 			'edicion' => 'Edición',
@@ -102,9 +101,9 @@ class ArticlesGuides extends CActiveRecord
 			'volumen_no' => 'Número de volumen',
 			'start_page' => 'Página inicial ',
 			'end_page' => 'Página final',
-			'article_type' => 'Tipo de articulo',
+			'article_type' => 'Tipo de articulo o guía',
 			'copies_issued' => 'Tiraje',
-			'magazine' => 'Revita',
+			'magazine' => 'Revista',
 			'area' => 'Área',
 			'discipline' => 'Disciplina',
 			'subdiscipline' => 'Subdiciplina',
@@ -134,7 +133,7 @@ class ArticlesGuides extends CActiveRecord
 		$criteria=new CDbCriteria;
 		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		
-		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->condition='id_resume = '.$curriculumId;
 		$criteria->order = 'title ASC';
 		
 		if($this->searchValue)
@@ -143,28 +142,7 @@ class ArticlesGuides extends CActiveRecord
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
 
-	/*
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_resume',$this->id_resume);
-		$criteria->compare('isbn',$this->isbn);
-		$criteria->compare('editorial',$this->editorial,true);
-		$criteria->compare('edicion',$this->edicion);
-		$criteria->compare('publishing_year',$this->publishing_year);
-		$criteria->compare('volumen',$this->volumen);
-		$criteria->compare('volumen_no',$this->volumen_no);
-		$criteria->compare('start_page',$this->start_page);
-		$criteria->compare('end_page',$this->end_page);
-		$criteria->compare('article_type',$this->article_type,true);
-		$criteria->compare('copies_issued',$this->copies_issued);
-		$criteria->compare('magazine',$this->magazine,true);
-		$criteria->compare('area',$this->area,true);
-		$criteria->compare('discipline',$this->discipline,true);
-		$criteria->compare('subdiscipline',$this->subdiscipline,true);
-		$criteria->compare('url_document',$this->url_document,true);
-		$criteria->compare('keywords',$this->keywords,true);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-	*/
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

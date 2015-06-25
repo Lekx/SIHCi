@@ -60,12 +60,15 @@ class ProjectsReviewController extends Controller
 	}
 */
 	private function projectsToReview(){
-		$role = Roles::model()->findByPk(4)->alias;
+		$id_role = Users::model()->findByPk(Yii::app()->user->id)->id_roles;
+
+
+		$role = Roles::model()->findByPk($id_role)->alias;
 
 
 		$conection = Yii::app()->db;
 
-		$pProjects = $conection->createCommand("SELECT p.is_sponsored,p.id,p.title,pf.creation_date FROM projects AS p INNER JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".$role."'")->queryAll();
+		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".$role."' GROUP BY(p.title)")->queryAll();
 
 		//$pProjects = Projects::model()->findAllByAttributes(array("status"=>$role));
 		$pendingProjects ="";
@@ -110,6 +113,60 @@ class ProjectsReviewController extends Controller
 	{
 
 		$modelfollowup = new ProjectsFollowups;
+
+
+
+        // Uncomment the following line if AJAX validation is needed
+         //$this->performAjaxValidation($modelfollowup);
+
+        if(isset($_POST['ProjectsFollowups']))
+        {
+        	//echo "entered";
+            $modelfollowup->attributes=$_POST['ProjectsFollowups'];
+
+
+
+            $modelfollowup->id_project = $id;
+            $modelfollowup->id_user = Yii::app()->user->id;
+
+            $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
+
+
+
+            if($modelfollowup->validate() == 1){
+            if(is_object($modelfollowup->url_doc)){ 
+            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$id;
+
+	                if(!is_dir($path))
+	                	mkdir($path, 0777, true);
+
+	                	$url_doc = $path.'/'.date('Y-m-d H:i').'ArchivoComentarioPor_'.$modelfollowup->id.'.'.$modelfollowup->url_doc->getExtensionName();
+	 					$modelfollowup->url_doc->saveAs($url_doc);
+
+					    $modelfollowup->url_doc = $url_doc;    			 			   	
+            }
+
+			
+            if($modelfollowup->save()){
+     			echo CJSON::encode(array('status'=>'success'));
+     			Yii::app()->end();
+			}
+               // $this->redirect(array('admin'));
+
+        }else{
+			$error = CActiveForm::validate($modelfollowup);
+			unset($modelfollowup->url_doc);
+			if($error!='[]')
+				echo $error;
+				
+			Yii::app()->end();
+
+        }
+        }
+
+
+
+
 		$this->render('review',array(
 			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup
 		));

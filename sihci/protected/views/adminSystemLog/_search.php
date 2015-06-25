@@ -13,7 +13,7 @@
 	'method'=>'get',
 )); ?>
 	
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Buscar')); ?>	
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Búsqueda por columna')); ?>	
 		<?php echo CHtml::submitButton('Buscar'); ?>
 	
 

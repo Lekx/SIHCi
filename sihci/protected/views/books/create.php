@@ -75,4 +75,5 @@ $this->menu=array(
 <h3>Crear registro de libros:</h3>
 
 
+
 <?php $this->renderPartial('_form', array('model'=>$model,'modelAuthor'=>$modelAuthor)); ?>

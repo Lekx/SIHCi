@@ -12,7 +12,7 @@
 	)); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado", 'title'=>'Nombre del graduado'));?>
+		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado", 'title'=>'Nombre del graduado (maximo 60 caracteres)'));?>
 		<?php echo $form->error($model,'fullname'); ?>
 	</div>
 	
