@@ -34,9 +34,9 @@ function lettersOnly(e)
      		{
   				tecla_especial = true;
   				break;
-            } 
+            }
  		}
- 
+
         if(letras.indexOf(tecla)==-1 && !tecla_especial)
      		return false;
 }
@@ -104,7 +104,7 @@ function lettersOnly(e)
 					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
 					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
 
-					'2015'=>'2015'),array('title'=>'Año de publicación'));  
+					'2015'=>'2015'),array('title'=>'Año de publicación'));
 
 		?>
 </span>
@@ -564,7 +564,6 @@ function lettersOnly(e)
 					  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
 					  <?php echo $form->error($value,'last_name2'); ?>
 				  </div>
-
 				  <div class="row">
 					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición','class'=>'numericOnly')); ?>
 					  <?php echo $form->error($value,'position'); ?>

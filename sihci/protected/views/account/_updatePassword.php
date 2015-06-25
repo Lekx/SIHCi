@@ -41,17 +41,17 @@ $this->menu = array(
 	</div>
 
 	<div class="row">
-		<input type="password" name="Account[password2]" id="Account_password2" placeholder="Nueva Contraseña" title="Nueva Contraseña">
+		<input type="password" name="Account[password2]" id="Account_password2" placeholder="Nueva Contraseña" title="Nueva Contraseña" oncopy="return false;" onpaste="return false;" oncut="return false;" maxlength="12">
 	</div>
 
 	<div class="row">
-		<input type="password" name="Account[password22]" id="Account_password22" placeholder="Repetir Nueva Contraseña" title="Repetir Nueva Contraseña">
+		<input type="password" name="Account[password22]" id="Account_password22" placeholder="Repetir Nueva Contraseña" title="Repetir Nueva Contraseña" oncopy="return false;" onpaste="return false;" oncut="return false;" maxlength="12">
 	</div>
 	
 	<hr>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton("Guardar", array('class'=>'savebutton') ); ?>
+		<?php echo CHtml::submitButton("Guardar", array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton') ); ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

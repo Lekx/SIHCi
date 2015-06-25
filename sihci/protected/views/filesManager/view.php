@@ -38,7 +38,7 @@ $this->menu=array(
     );
 ?>
 
-<h1>View FilesManager #<?php echo $model->id; ?></h1>
+<h1>Manejador de archivos #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

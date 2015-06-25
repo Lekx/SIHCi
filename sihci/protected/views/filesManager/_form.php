@@ -16,8 +16,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-    <?php echo YiiBase::getPathOfAlias("webroot")?>
+	<p class="note">Los siguientes campos  <span class="required">*</span> son requeridos.</p>
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
     
@@ -26,61 +25,89 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 			<select name="FilesManager[section]" id="FilesManager_section" >
 				  	<optgroup label="OPD HCG"> 
 				  		<option value=""> </option>
-					   <option value="Direccion general">Dirección general</option>
-					   <option value="Subdireccion general de ensenanza e investigacion">Subdirección general de enseñanza e investigación</option>
-					   <option value="Organigrama">Organigrama</option>
-					   <option value="Normatividad de investigacion">Normatividad de investigación</option>
-					   <option value="Registro RENIECYT">Registro RENIECYT</option>
-					   <option value="Tramites y servicios">Trámites y servicios</option>
-					   <option value="Transparencia">Transparencia</option>
-					   <option value="FInEHC">FInEHC</option>
-					   <option value="Plano de ubicacion">Plano de ubicación</option>
+					   <option value="informationGeneralDirection">Dirección general</option>
+					   <option value="organigram">Organigrama</option>
+					   <option value="investigationNormative">Normatividad de investigación</option>
+					   <option value="registerReniecyt">Registro RENIECYT</option>
+					   <option value="displayTransparencia">Transparencia</option>
+					   <option value="hospitalUnitJimEthicsCommittee">Comités</option>
+					   <option value="locationMapOfOfficeSGEIOPD">Plano de ubicación SGEI OPD</option>
+
+					   
 				   </optgroup>
 				   <optgroup label="Comités">
-				   		<option value="Comites">Comités</option>
+				   		<option value="hospitalUnitJimEthicsCommittee">Comités</option>
 				   </optgroup>
-				   <optgroup label="Programas de generación de conocimiento científico">
-				   		<option value="Redaccion científica">Redacción científica</option>
-				   		<option value="Asesoría metodológica">Asesoría metodológica</option>
-				   		<option value="Asesoria de correccion de estilo de redaccion en espanol u otros idiomas">Asesoría de corrección de estilo de redacción en español u otros idiomas</option>
-				   		<option value="Lineas de generacion de conocimiento cientifico">Líneas de generación de conocimiento científico</option>
-				   </optgrou
-				   <optgroup label="Programas de desarrollo tecnologico e innovacion">
-				   		<option value="proINVENCI">proINVENCI</option>
+
+				   <optgroup label="CVE-HC">
+				   		<option value="cveHc">CVE-HC</option>
+					</optgroup>
+
+					<optgroup label="FInEHC">
+				   		<option value="finehc">FInEHC</option>
+					</optgroup>
+
+					<optgroup label="FInEHC">
+				   		<option value="informationOfGeneralSubdirectionOfEducationAndInvestigation">Sub-Dirección General de enseñanza e investigación</option>
+					</optgroup>
+
+				   <optgroup label="Centro de Investigación Clínica">
+				   		<option value="displayInvestigationLines">Lineas de investigación</option>
+				   		<option value="sponsoredProjects">Protocolos patrocinados por la industria Farmacéutica</option>
+				   		<option value="livingLabsSalud">Living Labs-Salud</option>
 				   </optgroup>
-				    <optgroup label="Programas de cooperación internacional en investigación">
-				   		<option value="Programas de cooperacion internacional en investigacion">Programas de cooperación internacional en investigación</option>
+					
+					 <optgroup label="HCG Fray Antonio Alcalde">
+				   		<option value="hospitalaUnitJIMSubdirectionOfEducationAndInvestigation">HCG Fray Antonio Alcalde</option>
 				   </optgroup>
-				    <optgroup label="Centro de investigación clínica medicina traslacional">
-				   		<option value="Centro de investigacion clinica medicina traslacional">Centro de investigación clínica medicina traslacional</option>
+
+				     <optgroup label="HCG DR. Juan I. Menchaca">
+				   		<option value="proINVENCI">HCG DR. Juan I. Menchaca</option>
 				   </optgroup>
-				   <optgroup label="Unidades de investigación">
-				   		<option value="Unidades de investigacion">Unidades de investigación</option>
+
+				    <optgroup label="Programa de formación de recursos humanos en investigación">
+				   		<option value="programsPNCP">Programas PNCP</option>
+				   		<option value="programsNoPNCP">Programas no PNCP</option>
 				   </optgroup>
-				   <optgroup label="Laboratorios de investigación">
-				   		<option value="Laboratorios de investigacion">Laboratorios de investigación</option>
+
+				   <optgroup label="proINVENCI">
+				   		<option value="displayProINVENHCi">proINVENCI</option>
 				   </optgroup>
-				   <optgroup label="Vinculación con universidades, institutos y hospitales">
-				   		<option value="Vinculacion con universidades, institutos y hospitales">Vinculación con universidades, institutos y hospitales</option>
+
+				    <optgroup label="ProDIME">
+				   		<option value="proDIME">ProDIME</option>
 				   </optgroup>
-				   <optgroup label="Formación de recursos en investigación">
-				   		<option value="Programas PNCP">Programas PNCP</option>
-				   		<option value="Programas no PNCP">Programas no PNCP</option>
-				   		<option value="Programas no médicos">Programas no médicos</option>
-				   </optgroup>
-				    <optgroup label="Revistas científicas">
-				   		<option value="Revistas científicas">Revistas científicas</option>
-				   </optgroup>
+
 				    <optgroup label="Unidad Editorial">
-				   		<option value="Unidad Editorial">Unidad Editorial</option>
+				   		<option value="editUnit">Unidad Editorial</option>
 				   </optgroup>
+
+
+				   <optgroup label="Programas de generación de conocimiento">
+				   		<option value="scientificWriting">Redacción Científicas</option>
+				   		<option value="generetionOfKnowledgeScientific">Lineas de generación de conmiento científico</option>
+				   </optgroup>
+
+				   <optgroup label="Programas de coperación internacional en investigación">
+				   		<option value="displayInformation">Programas de coperación internacional en investigación</option>
+				   </optgroup>
+
+				   <optgroup label="Vinculación con universidades, institutos y hospitales">
+				   		<option value="vinculationWithUniversityInstitutesHospitals">Vinculación con universidades, institutos y hospitales</option>
+				   </optgroup>
+				
+				  
+				    <optgroup label="Revistas científicas">
+				   		<option value="scientificMagazines">Revistas científicas</option>
+				   </optgroup>
+				 
 			</select>
    	
       </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'file_name'); ?>
-		<?php echo $form->textField($model,'file_name',array('size'=>50,'maxlength'=>50,'placeholder'=>"Nombre del documento")); ?>
+		<?php echo $form->textField($model,'file_name',array('size'=>50,'maxlength'=>50,'placeholder'=>"Nombre del documento",'title'=>'Nombre del documento',)); ?>
 		<?php echo $form->error($model,'file_name'); ?>
 	</div>
 
@@ -91,39 +118,45 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-	  <p>Fecha de Inicio</p>
-<?php
-$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-    'model' => $model,
-    'language'=> 'es',
-    'attribute' => 'start_date',
-    'htmlOptions' => array(
-    			'size' => '10',         
-        		'maxlength' => '10', 
-        		'placeholder'=>"Inicio de publicacion"   
-    ),
-));
-?>
-</div><br>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		    'model' => $model,
+		    'language'=> 'es',
+		    'attribute' => 'start_date',
+		    'htmlOptions' => array(
+		    	    'dateFormat'=>'d/m/Y',
+		    		'size' => '10',         
+		    		'readOnly'=>true,
+		        	'placeholder'=>"Inicio de publicacion",
+		        	'title'=>'Inicio de publicacion',
+		    ),
+		));
+		?>
+		<?php echo $form->error($model,'start_date'); ?>
+	</div>
 
 	<div class="row">
-	  <p>Fecha de Inicio</p>
-<?php
-$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-    'model' => $model,
-    'language'=> 'es',
-    'attribute' => 'end_date',
-    'htmlOptions' => array(
-    			'size' => '10',         
-        		'maxlength' => '10',  
-        		'placeholder'=>"Final de publicacion"  
-    ),
-));
-?>
-</div>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		    'model' => $model,
+		    'language'=> 'es',
+		    'attribute' => 'end_date',
+		    'htmlOptions' => array(
+		    	    'dateFormat'=>'d/m/Y',
+		    		'size' => '10',         
+		    		'readOnly'=>true,
+		        	'placeholder'=>"Final de publicacion",
+		        	'title'=>'Final de publicacion',
+		    ),
+		));
+		?>
+		<?php echo $form->error($model,'end_date'); ?>
+	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<!-- cambiar todo a español y este boton-->
+
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
+	
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
