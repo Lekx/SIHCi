@@ -125,12 +125,12 @@ class Software extends CActiveRecord
 			'organization' => 'Organización',
 			'second_level' => 'Segundo nivel',
 			'resumen' => 'Resumen',
-			'objective' => 'Objetivo',
-			'contribution' => 'Contribución',
-			'impact_value' => 'Valor de impacto',
-			'innovation_trascen' => 'Innovacón',
-			'transfer_mechanism' => 'Mecanismo de transferencia.',
-			'hr_formation' => 'Formación HR',
+			'objective' => 'Objetivo del desarrollo',
+			'contribution' => 'Contribución del solicitante al desarrollo de software',
+			'impact_value' => ' Generación de valor e impacto para el beneficiario ',
+			'innovation_trascen' => 'Grado de innovación y trascendencia',
+			'transfer_mechanism' => 'Mecanismo de transferencia del desarrollo de software .',
+			'hr_formation' => 'Formación de Recursos Humanos',
 			'economic_support' => '¿ Recibio apoyo económico ?',
 			'path' => 'Archivo',
 			'creation_date' => 'Creation Date',
@@ -167,13 +167,7 @@ class Software extends CActiveRecord
 	
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-<<<<<<< HEAD
-			/*'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'title ASC',
-		    ),*/
-=======
->>>>>>> beb52636a9ce27435b77752a4037e15bbba3be63
+
 		));
 	}
 

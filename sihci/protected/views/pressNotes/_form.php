@@ -66,6 +66,11 @@
 		    'model' => $model,
 		    'language'=> 'es',
 		    'attribute' => 'date',
+		     'options' => array(
+			     		'changeMonth'=>true, //cambiar por Mes
+			     		'changeYear'=>true, //cambiar por Año
+			    			'maxDate' => 'now',
+		     	),
 		    'htmlOptions' => array(
 		    	    'dateFormat'=>'d/m/Y',
 		    		'size' => '10',         
@@ -80,17 +85,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>150,'placeholder'=>'Título de la publicación','title'=>'Título de la publicación')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>150,'placeholder'=>'Título de la publicación','title'=>'Título de la publicación (maximo 45 caracteres)')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>150,'placeholder'=>'Dependencia responsable','title'=>'Dependencia responsable')); ?>
+		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>150,'placeholder'=>'Dependencia responsable','title'=>'Dependencia responsable (maximo 45 caracteres)')); ?>
 		<?php echo $form->error($model,'responsible_agency'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica', 'title'=>'Nota periodistica')); ?>
+		<?php echo $form->textArea($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica', 'title'=>'Nota periodistica (maximo 45 caracteres)')); ?>
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 

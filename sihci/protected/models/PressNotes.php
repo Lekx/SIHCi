@@ -43,7 +43,6 @@ class PressNotes extends CActiveRecord
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
 			array('type, directed_to, title, responsible_agency, is_national', 'length', 'max'=>45),
 			array('date, note, creation_date', 'safe'),
-			array('date','compare','compareValue'=> date('d/m/Y'),'operator'=>'<='),	
 			array('searchValue','length', 'max'=>70),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

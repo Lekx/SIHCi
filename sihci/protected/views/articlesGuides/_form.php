@@ -59,16 +59,16 @@ function lettersOnly(e)
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn',array('size'=>13,'placeholder'=>'ISBN', 'class'=>'numericOnly','title'=>'ISBN')); ?>
+		<?php echo $form->textField($model,'isbn',array('size'=>13,'placeholder'=>'Número de ISBN', 'class'=>'numericOnly','title'=>'Número de ISBN','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Título', 'title'=>'Título')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Título', 'title'=>'Título (maximo 150 caracteres)')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 	<div class="row">
-		<?php echo $form->textField($model,'editorial',array('size'=>60,'maxlength'=>80, 'placeholder'=>'Editorial', 'title'=>'Editorial')); ?>
+		<?php echo $form->textField($model,'editorial',array('size'=>60,'maxlength'=>80, 'placeholder'=>'Editorial', 'title'=>'Editorial (maximo 80 caracteres)')); ?>
 		<?php echo $form->error($model,'editorial'); ?>
 	</div>
 
@@ -107,9 +107,21 @@ function lettersOnly(e)
 		</span>
 		<?php echo $form->error($model,'publishing_year'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->textField($model,'type',array('size'=>15,'maxlength'=>15,'placeholder'=>'Tipo', 'title'=>'Tipo (maximo 15 caracteres)')); ?>
+		<?php echo $form->error($model,'type'); ?>
+	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'volumen',array('placeholder'=>'Volumen','class'=>'numericOnly', 'title'=>'Volumen')); ?>
+		<?php echo $form->textField($model,'article_type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo de articulo o guía', 'title'=>'Tipo de articulo  o guía (maximo 20 caracteres)')); ?>
+		<?php echo $form->error($model,'article_type'); ?>
+	</div>
+
+
+
+	<div class="row">
+		<?php echo $form->textField($model,'volumen',array('placeholder'=>'Volumen','class'=>'numericOnly', 'title'=>'Volumen',)); ?>
 		<?php echo $form->error($model,'volumen'); ?>
 	</div>
 
@@ -129,17 +141,12 @@ function lettersOnly(e)
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'article_type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo de articulo', 'title'=>'Tipo de articulo')); ?>
-		<?php echo $form->error($model,'article_type'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje', 'class'=>'numericOnly','title'=>'Tiraje')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'magazine',array('size'=>50,'maxlength'=>50,'placeholder'=>'Revista', 'title'=>'Revista')); ?>
+		<?php echo $form->textField($model,'magazine',array('size'=>50,'maxlength'=>50,'placeholder'=>'Revista', 'title'=>'Revista (maximo 50 caracteres)')); ?>
 		<?php echo $form->error($model,'magazine'); ?>
 	</div>
 
@@ -414,14 +421,10 @@ function lettersOnly(e)
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250,'placeholder'=>'Palabras clave', 'title'=>'Palabras clave')); ?>
+		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250,'placeholder'=>'Palabras clave', 'title'=>'Palabras clave (maximo 250 caracteres)')); ?>
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->textField($model,'type',array('size'=>15,'maxlength'=>15,'placeholder'=>'Tipo', 'title'=>'Tipo')); ?>
-		<?php echo $form->error($model,'type'); ?>
-	</div>
 
 	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
