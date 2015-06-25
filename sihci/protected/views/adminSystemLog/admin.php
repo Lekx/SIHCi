@@ -25,7 +25,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar</h1>
+<h1>Gestionar Bitácora</h1>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
@@ -43,18 +43,16 @@ $('.search-form form').submit(function(){
 
 	'columns'=>array(
 			array('name'=>'Número de Movimiento','type'=>'html','id'=>'id','value'=>'CHtml::encode($data->id)'),
-			array('name'=>'Número de usuario','type'=>'html','id'=>'id_user','value'=>'CHtml::encode($data->id_user)'),
+			array('name'=>'Número de usuario',
+				'type'=>'html',
+				'id'=>'id_user',
+				'value'=>Persons::model()->findByAttributes(array("id_user"=>$data->id_user))->names,
 			array('name'=>'Sección','type'=>'html','id'=>'section','value'=>'CHtml::encode($data->section)'),
 			array('name'=>'Detalles','type'=>'html','id'=>'details','value'=>'CHtml::encode($data->details)'),
 			array('name'=>'Acción','type'=>'html','id'=>'action','value'=>'CHtml::encode($data->action)'),
 			array('name'=>'Fecha','type'=>'html','id'=>'datetime','value'=>'CHtml::encode($data->datetime)'),
 		
-		// 'id',
-		// 'id_user',
-		// 'section',
-		// 'details',
-		// 'action',
-		// 'datetime',
+		
 		array(
 			'class'=>'CButtonColumn',
 		),

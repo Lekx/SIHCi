@@ -42,7 +42,7 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
  }
 </script>
 
-<input type="text" id="search" onchange="search()" placeholder="Buscar"><br><br>
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna"><br><br>
 <?php echo CHtml::link('<span>Registrar<br>Proyecto</span>', array('projects/create'));?><br><br>
 <?php echo CHtml::link('<span>Registrar<br>Patrocinio</span>', array('AdminProjects/CreateSponsorship'));?>
 <?php 
@@ -78,7 +78,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 				? 
 		 				CHtml::dropDownList($data["id"],$data["status"],array("0" => "Patrocinio Status" , "1" => "Otro mas"),array("onchange"=>"updateStatusSponsorship($data[id])"))
 		 				:
-		 				CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En proceso" , "dictaminado" => "dictaminado", "borrador"=>"borrador", "revisión divuh"=>"revisión divuh"),array("onchange"=>"updateStatusProject($data[id])"))'
+		 				CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En proceso" , "dictaminado" => "dictaminado", "borrador"=>"borrador", "DIVUH"=>"revisión divuh", "SEUH"=>"revisión seuh", "COMETI"=>"revisión c. ética", "COMBIO"=>"revisión c. Bio.", "COMINV"=>"revisión c. inv.", "DUH"=>"revisión duh", "SGEI"=>"revisión sgei", "DG"=>"revisión dg", "JIOPD"=>"revisión J.Inv. opd"),array("onchange"=>"updateStatusProject($data[id])"))'
 	            ),
 	     array('header'=>'Fecha de Creación',
 	     	    'type'=>'raw',
