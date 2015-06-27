@@ -101,7 +101,7 @@ $this->menu=array(
 		array(
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->url_document,array("target"=>"_blank")),
+			'value'=>$model->url_document != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->url_document,array("target"=>"_blank")) : "No se ha subido el archivo",
 		),
 		/*'url_document',
 		'id',

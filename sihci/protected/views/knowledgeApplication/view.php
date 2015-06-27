@@ -62,7 +62,7 @@ $this->menu=array(
 	array('label'=>'Idiomas ', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'menuitem 13')),
 		array('label'=>'Gestionar', 'url'=>array('languages/admin'),'itemOptions'=>array('class' => 'sub13')),
 		array('label'=>'Crear', 'url'=>array('languages/create'),'itemOptions'=>array('class' => 'sub13')),
-
+);
 ?>
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
@@ -74,9 +74,8 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
-	'htmlOptions' => array('class' => 'knowledge')
 	'attributes'=>array(
-
+		
 		/*'id',
 		'id_curriculum',*/
 		'term1',

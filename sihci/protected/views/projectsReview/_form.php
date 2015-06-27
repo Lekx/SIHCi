@@ -9,13 +9,12 @@ function send(){
         data: formData,
         datatype:'json',
         // async: false,
-        beforeSend: function() {
-            // do some loading options
-        },
+        beforeSend: function() { },
         success: function (response) {
             var data = JSON.parse(response); 
+            //alert("if");
             if(data['status'] != 'success'){
-                alert("if");
+              // alert("if");
                 $(".errordiv").show();
                 if(typeof data['ProjectsFollowups_followup'] !== "undefined"){
                     $("#ProjectsFollowups_followup_em_").show();
@@ -27,7 +26,7 @@ function send(){
                     $("#ProjectsFollowups_url_doc_em_").show();
                 }
             }else{
-                alert("else");
+              //alert("else");
                 $(".error").hide();
                 $(".successdiv").show();
             }
@@ -54,7 +53,7 @@ $form=$this->beginWidget('CActiveForm', array(
     // There is a call to performAjaxValidation() commented in generated controller code.
     // See class documentation of CActiveForm for details on this.
     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
-    'enableAjaxValidation'=>true,
+   'enableAjaxValidation'=>true,
     //'validateOnChange'=>false,
 
 )); ?>
@@ -80,10 +79,6 @@ $form=$this->beginWidget('CActiveForm', array(
                 'class'=>'post_submit',
             ));
     ?>
-    <div class="row buttons">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Enviar' : 'Save'); ?>
-    </div>
-
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

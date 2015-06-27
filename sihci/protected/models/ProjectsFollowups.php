@@ -35,10 +35,11 @@ class ProjectsFollowups extends CActiveRecord
 			array('id_project, id_user, followup', 'required'),
 			array('id_project, id_user', 'numerical', 'integerOnly'=>true),
 			array('url_doc', 'length', 'max'=>150),
-			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'on'=>'insert','allowEmpty'=>true),
+
+			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_project, id_user, followup, url_doc', 'safe', 'on'=>'search'),
+			array('id, id_project, id_user, followup', 'safe', 'on'=>'search'),
 		);
 	}
 
