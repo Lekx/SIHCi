@@ -181,7 +181,7 @@ class CurriculumVitaeController extends Controller
 				$model->description = "Acta";
 				$model->doc_id = CUploadedFile::getInstanceByName('Acta');
 				
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 				
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -191,6 +191,7 @@ class CurriculumVitaeController extends Controller
 			     		}
 				}else {
 			 echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 echo $model->doc_id->type;
 			 	}     							
 			}
 			
