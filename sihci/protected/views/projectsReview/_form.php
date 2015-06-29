@@ -1,7 +1,10 @@
 
 <script type="text/javascript">
     function send(form, actionUrl){
-        var formData = new FormData($("#"+form)[0]);
+        var formData ="";
+        if(form != "")
+            var formData = new FormData($("#"+form)[0]);
+
         $.ajax({
             url: '<?php echo Yii::app()->createUrl("'+actionUrl+'",array("id"=>$_GET["id"])); ?>',
             type: 'POST',
@@ -19,6 +22,11 @@
                         $("#"+key+"_em_").html(data[key]);
                     }
                 }else{
+                    alert(data['message']);
+                    if(("message" in data)){
+                        $(".successh2 h2").html(data['message']);
+                        $(".successh2 span").html(data['subMessage']);
+                    }
                     $(".error").hide();
                     $(".errorMessage").hide();
                     $(".successdiv").show();
@@ -37,6 +45,11 @@
 
 <div class="form">
 
+    <?php echo CHtml::htmlButton('Enviar',array(
+                'onclick'=>'javascript: send("","projectsReview/sendReview");',
+                'class'=>'savebutton',
+            ));
+    ?>
 <?php 
 
 $form=$this->beginWidget('CActiveForm', array(
@@ -56,10 +69,9 @@ $form=$this->beginWidget('CActiveForm', array(
         <?php echo $form->error($model,'url_doc'); ?>
     </div>
 
-    <?php echo CHtml::htmlButton('Enviar',array(
+    <?php echo CHtml::htmlButton('Crear comentario',array(
                 'onclick'=>'javascript: send("projects-followups-form","projectsReview/review");',
-                'id'=> 'post-submit-btn', 
-                'class'=>'post_submit',
+                'class'=>'savebutton',
             ));
     ?>
 <?php $this->endWidget(); ?>

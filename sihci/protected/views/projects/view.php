@@ -62,4 +62,28 @@ $this->menu=array(
 		'is_sponsored',
 		'registration_number',
 	),
-)); ?>
+)); 
+?>
+<div class="row">
+<?php $this->renderPartial('../projectsReview/_form', array('model'=>$modelfollowup)); ?>
+<?php
+
+foreach($followups AS $key => $value){
+	//print_r($value);
+	$user = Users::model()->findByPk($value->id_user);
+	//var_dump();
+	echo '<p>'.$user->persons[0]->names.' '.$user->persons[0]->last_name1.' '.$user->persons[0]->last_name2.' ('.$user->email.') escribió: <br>';
+	echo $value['followup'].'<br>';
+	echo '<small>Creado el '.$value['creation_date'].' '.(empty($value['url_doc']) ? "" : "<a href=../../".$value['url_doc'].">Ver archivo disponible</a>" ).'</small><hr></p>';
+	
+}
+?>
+</div>
+
+
+
+
+
+
+
+
