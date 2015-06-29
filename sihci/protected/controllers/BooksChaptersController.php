@@ -6,6 +6,7 @@ class BooksChaptersController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
+	
 	public $layout='//layouts/system';
 
 	/**
@@ -87,8 +88,8 @@ class BooksChaptersController extends Controller
 	                	 		                	 	                       //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
             				if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
 
- 							 $model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
-		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
+ 							 $model->url_doc->saveAs($path.'Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName());
+		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName();
 	                	
 		           			 	//echo"antes de guardar";
 			               		if($model->save()){
@@ -209,8 +210,8 @@ class BooksChaptersController extends Controller
                     if(!is_dir($urlFile))          
                         mkdir($urlFile, 0777, true);
 
-                       $model->url_doc->saveAs($urlFile.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
-		               $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();                                                    
+                       $model->url_doc->saveAs($urlFile.'Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName());
+		               $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName();                                                    
                  }
 			        else  
 			        	echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 

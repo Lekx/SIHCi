@@ -472,21 +472,11 @@ public function actionPatentSoftware(){
 
 	$conexion = Yii::app()->db;
 
-$table_name = "";
-if(isset($_POST["years"])){
-	if($_POST["property"] != "total" && $_POST["property"] == "software"){
-		$table_name = "software";
-	}
-		else if($_POST["property"] == "patent"){
-			$table_name = "patent";
-		}
-		else if($_POST["property"] == "copyrights"){
-			$table_name = "copyrights";
-		}
 
-}
-  $year = $conexion->createCommand('
-  	SELECT DISTINCT YEAR(creation_date) AS year FROM software')->queryAll();
+  $query ="
+  SELECT DISTINCT YEAR(creation_date) AS year FROM software";
+
+  $year = $conexion->createCommand($query)->queryAll();
 
   $years = array();
   $years["total"] = "Total";
@@ -563,7 +553,7 @@ if(isset($_POST["years"])){
 		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
 		LEFT JOIN users AS u ON u.id=c.id_user
 		WHERE u.type = "fisico" AND u.status = "activo"
-    	'.$condYears/*.$condpropiedad.$condSni.$condHu*/.'
+    	'.$condYears.'
     	GROUP BY months ORDER BY '.$orderMoth.' ASC';
    $results = $conexion->createCommand($query)->queryAll();
 
@@ -584,6 +574,7 @@ if(isset($_POST["years"])){
 
    echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
   }
+
 
 
 if(!isset($_POST["years"])){
