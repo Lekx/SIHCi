@@ -1,9 +1,8 @@
 <?php
-
 class FilesManagerController extends Controller
 {
 
-	public $layout='//layouts/column2';
+	public $layout='//layouts/system';
 
 	/**
 	 * @return array action filters
@@ -36,26 +35,26 @@ class FilesManagerController extends Controller
 
 		$model->attributes=$_POST['FilesManager'];
 		$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
-		//$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
 		$model->path = CUploadedFile::getInstanceByName('FilesManager[path]');
 	
-		
-			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF' )
+			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF')
 			
-			{
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/files_manager/'.$model->file_name.'.pdf');
-				$model->path ='/sihci/sihci/files_manager/'.$model->file_name.'.pdf';
+			{	
+
+				$folder = "/files_manager/";
+				$path2 = YiiBase::getPathOfAlias("webroot");
+				$model->path->saveAs(YiiBase::getPathOfAlias("webroot")."/files_manager/".$model->file_name.'.pdf');
+				$model->path = $path2."/files_manager/".$model->file_name.'.pdf';
 	   		
 					if($model->save())
-						$this->redirect(array('view','id'=>$model->id));
+						$this->redirect(array('admin'));
 
 			} 
-			 else 
-			 	echo "Tipo de archivo no valido, solo se admiten .PDF" .$model->path->type ;
-
+				 else{
+			 		echo "Tipo de archivo no valido, solo se admiten ";
+			 	}
 	     
 			}
-
 			$this->render('create',array(
 				'model'=>$model,
 			));

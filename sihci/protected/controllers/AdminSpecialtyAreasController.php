@@ -1,5 +1,4 @@
 <?php
-
 class AdminSpecialtyAreasController extends Controller
 {
 	/**
@@ -119,6 +118,8 @@ class AdminSpecialtyAreasController extends Controller
 		if(isset($_POST['AdminSpecialtyAreas']))
 		{
 			$model->attributes=$_POST['AdminSpecialtyAreas'];
+
+
 			if($model->save())
             {           		              
 	        	$idsAdminSpecialtyAreas = $_POST['idsAdminSpecialtyAreas'];
@@ -126,11 +127,12 @@ class AdminSpecialtyAreasController extends Controller
             	
             	foreach($_POST['ext_subspecialty'] as $key => $value)
 				{
-	               	if($idsAdminSpecialtyAreas[$key] == '')
+	               	if($idsAdminSpecialtyAreas[$key] != '')
 	               	{
-	               	
+	               		echo 'Pase por aqui'.$value;      		
 		               	unset($modelSpecialtyAreas);
 		               	$modelSpecialtyAreas = new AdSpecialtyAreas;
+
 		               	$modelSpecialtyAreas->id_specialty_areas = $model->id;
 		       			$modelSpecialtyAreas->ext_subspecialty = $ext_subspecialty[$key];
 	            		$modelSpecialtyAreas->save();
@@ -138,8 +140,9 @@ class AdminSpecialtyAreasController extends Controller
           	   	    }	
                    	else
                    	{
+                   		echo "No se que hago aqui ".$value;
+                   		$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialtys' => $value)); 		
 
-                   		$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialty'=>$value)); 								
                 	}
 	            	
           	    }	
@@ -154,6 +157,7 @@ class AdminSpecialtyAreasController extends Controller
 		}	
   		$this->render('update',array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas,'modelSpecialtyArea'=>$modelSpecialtyArea));
 	}
+
 
 	/**
 	 * Deletes a particular model.

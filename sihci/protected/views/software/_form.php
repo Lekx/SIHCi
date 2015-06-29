@@ -6,6 +6,43 @@
    //$cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/software/js/script.js');
 ?>
 
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+
+    });
+});
+
+function lettersOnly(e)
+{
+ 	key = e.keyCode || e.which;
+ 	tecla = String.fromCharCode(key).toLowerCase();
+ 	letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+ 	especiales = [8,37,39,46,45,47];
+
+	 tecla_especial = false
+ 		for(var i in especiales)
+ 		{
+     		if(key == especiales[i])
+     		{
+  				tecla_especial = true;
+  				break;
+            } 
+ 		}
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     		return false;
+}
+</script>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -22,9 +59,6 @@
 )); ?>
 
 
-	<?php echo $form->errorSummary($model); ?>
-
-	
 	<div class="row">
 	 <span class="plain-select">	
 		<?php $this->widget('ext.CountrySelectorWidget', 
@@ -45,8 +79,8 @@
 	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'participation_type',
 			    array(
-				  		'Inventor'=>'Inventor',
-				  		'Co-inventor'=>'Co-inventor'
+				  		'Autor'=>'Autor',
+				  		'Co-autor'=>'Co-autor'
 			    ),
 			    array('prompt'=>'Seleccionar participación','title'=>'Participacíon')
 			);
@@ -56,12 +90,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título','title'=>'Título',)); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150,'placeholder'=>'Título','title'=>'Título (maximo 150 caracteres)',)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>150,'placeholder'=>'Beneficiario','title'=>'Beneficiario',)); ?>
+		<?php echo $form->textField($model,'beneficiary',array('size'=>60,'maxlength'=>70,'placeholder'=>'Beneficiario','title'=>'Beneficiario (maximo 70 caracteres)', 'onKeyPress'=>'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'beneficiary'); ?>
 	</div>
 
@@ -81,7 +115,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas invertidas en el proyecto','title'=>'Horas invertidas en el proyecto')); ?>
+		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas invertidas en el proyecto','title'=>'Horas invertidas en el proyecto. (Solo se aceptan numeros)', 'class'=>'numericOnly')); ?>
 		<?php echo $form->error($model,'manwork_hours'); ?>
 	</div>
 
@@ -232,42 +266,42 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>10000,'placeholder'=>'Resumen','title'=>'Resumen')); ?>
+		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Resumen','title'=>'Resumen (maximo 1000 caracteres)')); ?>
 		<?php echo $form->error($model,'resumen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Objetivo','title'=>'Objetivo')); ?>
+		<?php echo $form->textArea($model,'objective',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Objetivo del desarrollo','title'=>'Objetivo (maximo 1000 caracteres)')); ?>
 		<?php echo $form->error($model,'objective'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Contribución','title'=>'Contribución')); ?>
+		<?php echo $form->textArea($model,'contribution',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Contribución del solicitante al desarrollo de software','title'=>'Contribución del solicitante al desarrollo de software (maximo 1000 caracteres)')); ?>
 		<?php echo $form->error($model,'contribution'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Valor de impacto','title'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Generación de valor e impacto para el beneficiario ','title'=>' Generación de valor e impacto para el beneficiario (maximo 1000 caracteres)')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Inovación','title'=>'Inovación')); ?>
+		<?php echo $form->textArea($model,'innovation_trascen',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Grado de innovación y trascendencia','title'=>'Grado de innovación y trascendencia (maximo 1000 caracteres)')); ?>
 		<?php echo $form->error($model,'innovation_trascen'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Mecanismo de transferencia','title'=>'Mecanismo de transferencia')); ?>
+		<?php echo $form->textArea($model,'transfer_mechanism',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>' Mecanismo de transferencia del desarrollo de software ','title'=>' Mecanismo de transferencia del desarrollo de software (maximo 1000 caracteres)')); ?>
 		<?php echo $form->error($model,'transfer_mechanism'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Formación de recursos humanos','title'=>'Formación de recursos humanos')); ?>
+		<?php echo $form->textArea($model,'hr_formation',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Formación de recursos humanos','title'=>'Formación de recursos humanos (maximo 1000 caracteres)')); ?>
 		<?php echo $form->error($model,'hr_formation'); ?>
 	</div>
 
 	<div class="row">
-	<span class="radiotext">Apoyo economico:</span>
+	<span class="radiotext">¿Recibio apoyo económico ?</span>
 		<?php $status = array('1' => 'Si','0'=>'No'); 
 		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'economic_support'); ?>
@@ -275,14 +309,14 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->FileField($model,'path',array('id'=>'path','title'=>'Documento')); ?>
+		<?php echo $form->FileField($model,'path',array('id'=>'path','title'=>'archivo probatorio')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
 
 	<div class="row buttons">		
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('software/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+		 <?php echo CHtml::link('Cancelar',array('software/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 

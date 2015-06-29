@@ -32,19 +32,19 @@
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model, 'reference_type',array('promt'=>'Seleccionar Tipo de Referencia','credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'),array('title'=>'Tipo de Referencia'));?>
+		<?php echo $form->dropDownList($model, 'reference_type',array('credencial'=>'Credencial','foja'=>'Foja','libro'=>'Libro','otra'=>'Otra'),array('prompt'=>'Seleccionar Tipo de Referencia','title'=>'Tipo de Referencia'));?>
 		</span>
 		<?php echo $form->error($model,'reference_type'); ?>
 	</div>
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model,'specialty', array('promt'=>'Seleccionar especialidad','Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
+		<?php echo $form->dropDownList($model,'specialty', array('Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
          'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
          'Cirugía pediátrica'=>'Cirugía pediátrica','Cirugía plástica y reconstructiva'=>'Cirugía plástica y reconstructiva','Coloproctología'=>'Coloproctología',
-         'Comunicación'=>'Comunicación','audiología y foniatría'=>'audiología y foniatría','Dermatología'=>'Dermatología','Dermatología pediátrica'=>'Dermatología pediátrica',
+         'Comunicación'=>'Comunicación','Dermatología'=>'Dermatología','Dermatología pediátrica'=>'Dermatología pediátrica',
          'Dermatopatología'=>'Dermatopatología','Endocrinología '=>'Endocrinología','Endocrinología pediátrica'=>'Endocrinología pediátrica','Epidemiología'=>'Epidemiología',
          'Gastroenterología'=>'Gastroenterología','Gastroenterología y nutrición pediátrica'=>'Gastroenterología y nutrición pediátrica','Genética médica'=>'Genética médica','Geriatría'=>'Geriatría',
          'Ginecología oncológica'=>'Ginecología oncológica','Ginecología y obstetricia'=>'Ginecología y obstetricia','Hematología'=>'Hematología','Hematología pediátrica'=>'Hematología pediátrica',
@@ -59,7 +59,7 @@
          'Patología pediátrica'=>'Patología pediátrica','Pediatría'=>'Pediatría','Psiquiatría'=>'Psiquiatría','Psiquiatría infantil y de la adolescencia'=>'Psiquiatría infantil y de la adolescencia',
          'Radiooncología'=>'Radiooncología','Radiología e imagen'=>'Radiología e imagen','Reumatología'=>'Reumatología','Reumatología pediátrica'=>'Reumatología pediátrica','Terapia endovascular neurológica'=>'Terapia endovascular neurológica',
          'Urgencias pediátricas'=>'Urgencias pediátricas','Urología'=>'Urología','Urología ginecológica'=>'Urología ginecológica','Cirugía Maxilofacial'=>'Cirugía Maxilofacial','Ortodoncia y Ortopedia Maxilofacial'=>'Ortodoncia y Ortopedia Maxilofacial',
-         'Periodoncia'=>'Periodoncia'),array('title'=>'Especialidad'));?>
+         'Periodoncia'=>'Periodoncia'),array('prompt'=>'Seleccionar especialidad','title'=>'Especialidad'));?>
          </span>
 		<?php echo $form->error($model,'specialty'); ?>
 	</div>
@@ -133,7 +133,7 @@
 		                    
                         ),array('class'=>'savebutton')); 
         ?>
-       	<?php echo CHtml::Button('Cancelar',array('submit' => array('certifications/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+       	<?php echo CHtml::link('Cancelar',array('certifications/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 		<div class="200">
 		
 		</div>

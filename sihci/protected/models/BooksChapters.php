@@ -48,7 +48,7 @@ class BooksChapters extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, chapter_title, book_title,publishing_year', 'required'),
+			array('id_curriculum, chapter_title, book_title, publishing_year', 'required'),
 			array('id_curriculum, pages, citations,volume , citations, isbn', 'numerical', 'integerOnly'=>true),
 			array('chapter_title, url_doc', 'length', 'max'=>100),
 			array('discipline, subdiscipline','length', 'max'=>200),
@@ -58,8 +58,8 @@ class BooksChapters extends CActiveRecord
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
 
+			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg,j peg, png', 'on'=>'create'),
 			array('url_doc, safe','safe', 'on'=>'update'),
-			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg,j peg, png', 'on'=>'insert'),
 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -90,22 +90,22 @@ class BooksChapters extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'chapter_title' => 'Capítulo de libro',
-			'book_title' => 'Titulo de libro',
-			'publishing_year' => 'Año de publicación',
-			'publishers' => 'Editores',
-			'editorial' => 'Editorial',
-			'volume' => 'No. Volumen',
-			'pages' => 'No. Paginas',
-			'citations' => 'No. Citas',
-			'total_of_authors' => 'Total de autores',
-			'area' => 'Área',
-			'discipline' => 'Disciplina',
-			'subdiscipline' => 'Subdisciplina',
-			'creation_date' => 'Creation Date',
-			'url_doc' => 'Documento aprobatorio',
-			'isbn' => 'ISBN',
-			'keywords' => 'Palabras Claves',
+			'chapter_title' => 'Capítulo de libro:',
+			'book_title' => 'Titulo de libro:',
+			'publishing_year' => 'Año de publicación:',
+			'publishers' => 'Editores:',
+			'editorial' => 'Editorial:',
+			'volume' => 'No. Volumen:',
+			'pages' => 'No. Paginas:',
+			'citations' => 'No. Citas:',
+			'total_of_authors' => 'Total de autores:',
+			'area' => 'Área:',
+			'discipline' => 'Disciplina:',
+			'subdiscipline' => 'Subdisciplina:',
+			'creation_date' => 'Creation Date:',
+			'url_doc' => 'Documento aprobatorio:',
+			'isbn' => 'ISBN:',
+			'keywords' => 'Palabras Claves:',
 		);
 	}
 
@@ -126,12 +126,18 @@ class BooksChapters extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'chapter_title ASC';
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%') OR publishing_year LIKE CONCAT('%', :searchValue , '%') OR editorial LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR isbn LIKE CONCAT('%', :searchValue , '%') ");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR chapter_title LIKE CONCAT('%', :searchValue ,'%') OR book_title LIKE CONCAT('%', :searchValue , '%') OR publishers LIKE CONCAT('%', :searchValue , '%') OR publishing_year LIKE CONCAT('%', :searchValue , '%') OR editorial LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR discipline LIKE CONCAT('%', :searchValue , '%') OR subdiscipline LIKE CONCAT('%', :searchValue , '%') OR keywords LIKE CONCAT('%', :searchValue , '%') ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
+
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+
 		/*$criteria->compare('id',$this->id);
 		$criteria->compare('id_curriculum',$this->id_curriculum);
 		$criteria->compare('chapter_title',$this->chapter_title,true);
@@ -149,6 +155,7 @@ class BooksChapters extends CActiveRecord
 		$criteria->compare('creation_date',$this->creation_date,true);
 		$criteria->compare('url_doc',$this->url_doc,true);
 		*/
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

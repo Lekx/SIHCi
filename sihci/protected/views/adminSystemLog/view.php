@@ -1,3 +1,10 @@
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Bitacora</h1>
+            <hr>
+        </div>
+
+<h3>Detalles de la Acción: <?php echo $model->id; ?></h3>
 <?php
 /* @var $this AdminSystemLogController */
 /* @var $model SystemLog */
@@ -13,9 +20,9 @@ $this->menu=array(
 );
 ?>
 
-<h1>Detalles de la Acción <?php echo $model->id; ?></h1>
 
-<?php 
+
+<?php
 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$person,
 	'attributes'=>array(
@@ -24,7 +31,7 @@ $this->widget('zii.widgets.CDetailView', array(
 		'last_name2',
 
 	),
-)); 
+));
 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$user,
 	'attributes'=>array(
@@ -32,7 +39,7 @@ $this->widget('zii.widgets.CDetailView', array(
 		'email',
 
 	),
-)); 
+));
 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
@@ -43,7 +50,7 @@ $this->widget('zii.widgets.CDetailView', array(
 		'action',
 		'datetime',
 	),
-)); 
+));
 
 
 ?>

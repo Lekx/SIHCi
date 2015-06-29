@@ -63,14 +63,15 @@ class Software extends CActiveRecord
 			array('sector, organization, second_level, path', 'length', 'max'=>100),    
 			array('searchValue','length', 'max'=>70),
 			array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png','allowEmpty' => true),
    			array('path', 'safe', 'on'=>'update'),
-			
 			
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_curriculum, country, participation_type, title, beneficiary, entity, manwork_hours, end_date, sector, organization, second_level, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, economic_support, path, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
+
 
 	/**
 	 * @return array relational rules.
@@ -91,24 +92,24 @@ class Software extends CActiveRecord
 	{
 		return array(
 			'id_curriculum' => 'Id Curriculum',
-			'country' => 'País',
-			'participation_type' => 'Tipo de participación',
-			'title' => 'Título',
-			'beneficiary' => 'Beneficiario',
-			'entity' => 'Entidad',
-			'manwork_hours' => 'Horas hombre',
-			'end_date' => 'Fecha de termino',
-			'sector' => 'Sector',
-			'organization' => 'Organización',
-			'second_level' => 'Segundo nivel',
-			'resumen' => 'Resumen',
-			'objective' => 'Objetivo',
-			'contribution' => 'Contribución',
-			'impact_value' => 'Valor de impacto',
-			'innovation_trascen' => 'Innovacón',
-			'transfer_mechanism' => 'Mecanismo de transferencia.',
-			'hr_formation' => 'Formación HR',
-			'economic_support' => 'Apoyo económico',
+			'country' => 'País:',
+			'participation_type' => 'Tipo de participación:',
+			'title' => 'Título:',
+			'beneficiary' => 'Beneficiario:',
+			'entity' => 'Entidad:',
+			'manwork_hours' => 'Horas hombre:',
+			'end_date' => 'Fecha de termino:',
+			'sector' => 'Sector:',
+			'organization' => 'Organización:',
+			'second_level' => 'Segundo nivel:',
+			'resumen' => 'Resumen:',
+			'objective' => 'Objetivo del desarrollo:',
+			'contribution' => 'Contribución del solicitante al desarrollo de software:',
+			'impact_value' => ' Generación de valor e impacto para el beneficiario:',
+			'innovation_trascen' => 'Grado de innovación y trascendencia:',
+			'transfer_mechanism' => 'Mecanismo de transferencia del desarrollo de software:',
+			'hr_formation' => 'Formación de Recursos Humanos:',
+			'economic_support' => '¿ Recibio apoyo económico ?',
 			'path' => 'Archivo',
 			'creation_date' => 'Creation Date',
 		);
@@ -131,7 +132,10 @@ class Software extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'title ASC';
 
 		if($this->searchValue)
 		{
@@ -141,6 +145,7 @@ class Software extends CActiveRecord
 	
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+
 		));
 	}
 

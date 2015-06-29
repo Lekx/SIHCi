@@ -42,18 +42,18 @@ class Languages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, language, document_percentage', 'required'),
+			array('id_curriculum, language, document_percentage, evaluation_date', 'required'),
 			array('id_curriculum, is_traducer, is_teacher, document_percentage', 'numerical', 'integerOnly'=>true),
 			array('language, native_language, conversational_level, reading_level, writting_level', 'length', 'max'=>45),
 			array('description', 'length', 'max'=>250),
 			array('path', 'length', 'max'=>100),
 			array('searchValue','length', 'max'=>70),
 			array('evaluation_date, creation_date', 'safe'),
-			array('path', 'file', 'allowEmpty' => true,
-				'on' => 'update',
-				'types' => 'pdf, doc, docx',
-				'maxSize' => array(1024 * 2000),
-				'message' => 'Solo se admiten archivos PDF, DOC, DOCX'),
+			array('path, safe','file','allowEmpty'=>true, 'on'=>'create',
+				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
+			       'maxSize'=>array(1204 * 2000),
+			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
+			array('path, safe','safe','on'=>'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue, id, id_curriculum, language, description, native_language, is_traducer, is_teacher, conversational_level, reading_level, writting_level, evaluation_date, document_percentage, path, creation_date', 'safe', 'on'=>'search'),
@@ -80,9 +80,9 @@ class Languages extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'language' => 'Lenguaje',
+			'language' => 'Idioma',
 			'description' => 'Descripción',
-			'native_language' => 'Lenguaje Nativo',
+			'native_language' => 'Idioma Nativo',
 			'is_traducer' => 'Traductor',
 			'is_teacher' => 'Profesor',
 			'conversational_level' => 'Nivel de Conversación',
@@ -113,12 +113,19 @@ class Languages extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'language ASC';
+
 		if($this->searchValue)
 		{
+			// $criteria->condition='id_curriculum = '.$curriculumId;
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR language LIKE CONCAT('%', :searchValue ,'%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 
 		}
+		
 		// $criteria->compare('id',$this->id);
 		// $criteria->compare('id_curriculum',$this->id_curriculum);
 		// $criteria->compare('language',$this->language,true);

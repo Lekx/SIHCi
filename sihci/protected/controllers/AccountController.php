@@ -1,18 +1,19 @@
 <?php 
+
   	class AccountController extends Controller{
 
-  	public $layout = '//layouts/system';
+  	public $layout = '//layouts/informativa';
 	private $currentemail ='';
 	private $currentpassword ='';
 	
 	function checkEmail($email2, $email22){
 
 		if ($email2 != $email22){
-			echo "<script> alert(\"comprobacion de email incorrecto.\")</script>";
+			echo "<script> alert(\"Los correos no coinciden.\")</script>";
 			return false;
 		}
 		else if($email2 == '' || $email22 == ''){
-			echo "<script> alert(\"aqui valio madre.\")</script>";
+			echo "<script> alert(\"Favor de llenar todos los campos.\")</script>";
 			return false;
 		}else
 			return true;
@@ -20,11 +21,11 @@
 
 	function checkPassword($password2, $password22){
 		if ($password2 != $password22){
-			echo "<script> alert(\"Las dos contraseñas son distintas.\")</script>";
+			echo "<script> alert(\"Las contraseñas no.\")</script>";
 			return false;
 		}
 		else if($password2 == '' || $password22 == ''){
-			echo "<script> alert(\"Algun campo esta en blanco.\")</script>";
+			echo "<script> alert(\"Favor de llenar los campos todos los campos.\")</script>";
 			return false;
 		}else
 			return true;
@@ -32,7 +33,6 @@
 
 	public function actionInfoAccount(){
 			$this->layout = 'system';
-			//cambiar y agregar estas lineas en esponsors y curriculum
 		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
 			$iduser = (int)$_GET["ide"];
 		else
@@ -54,29 +54,35 @@
 		}
 	}
 		public function checkPasswordExist($password){
-		if ($this->currentpassword != sha1(md5(sha1($password)))){
-			echo "<script> alert(\"el password no es el de la cuenta.\")</script>";
-			return false;
+			if ($this->currentpassword != sha1(md5(sha1($password)))){
+				echo "<script> alert(\"el password no es el de la cuenta.\")</script>";
+				return false;
 		}
-		else{
-			return true;
+			else{
+				return true;
 		}
+}
 
+		public function checkEmailValid($email){ 
+		  	if (!preg_match("/^([a-zA-Z0-9._]+)@([a-zA-Z0-9.-]+).([a-zA-Z]{2,4})$/",$email)){ 
+		  		echo "<script> alert(\"Correo Invalido.\")</script>";
+		      return false; 
+		  } else { 
 
-
-
-	}
-
+		       return true; 
+		  } 
+} 
 
 	public function actionActivateAccount($key){
 
+		
+	$this->layout='informativas';
 		$query = Users::model()->findByAttributes(array('act_react_key'=>$key));		
 
-		var_dump($query);
-
+		
 		if(!is_null($query)){
-			
-			if(Users::model()->updateByPk($query->id,array('status'=>'activo')))
+
+			if(Users::model()->updateByPk($query->id, array('activation_date'=>new CDbExpression('NOW()'))) && Users::model()->updateByPk($query->id, array('status'=>'activo')))
 				$result = "success";	
 			else
 				$result = "failure";
@@ -97,10 +103,10 @@
 
 		$details = Users::model()->findByPk($iduser);
 		$this->currentemail = $details->email; 
-		if(isset($_POST['Users']))
+		if(isset($_POST['Account']))
 		{
 			
-			if($this->checkEmailExist($_POST['Users']['email']) && $this->checkEmail($_POST['Account']['email2'], $_POST['Account']['email22']))
+			if($this->checkEmail($_POST['Account']['email2'],$this->checkEmailValid($_POST['Account']['email2'], $_POST['Account']['email22'])))
 			{
 
 				if($details->updateByPk($iduser,array('email'=>$_POST['Account']['email2']))){
@@ -130,11 +136,10 @@
 			$iduser = Yii::app()->user->id;
 
 		$details = Users::model()->findByPk($iduser);
-
 		$this->currentpassword = $details->password;
-		if(isset($_POST['Users']))
+		if(isset($_POST['Account']))
 		{
-			if($this->checkPasswordExist($_POST['Users']['password']) && $this->checkPassword($_POST['Account']['password2'],$_POST['Account']['password22']));
+			if($this->checkPasswordExist($_POST['Users']['password']) && $this->checkPassword($_POST['Account']['password2'],$_POST['Account']['password22']))
 			{
 
 				$details->password=sha1(md5(sha1($_POST['Account']['password2'])));
@@ -160,10 +165,13 @@
 		
 	public function actionSystemLog()
 		{
-			$model = new SystemLog('search');
-			$model->unsetAttributes(); 
-			if(isset($_GET['SystemLog']))
-				$model->attributes=$_GET['SystemLog'];
+		
+		
+			$this->layout='//layouts/system';
+			$model = new SystemLogUsers('search');
+			//$model->unsetAttributes(); 
+			//if(isset($_GET['SystemLog']))
+			//	$model->attributes=$_GET['SystemLog'];
 
 			$this->render('systemLog',array(
 				'model'=>$model,

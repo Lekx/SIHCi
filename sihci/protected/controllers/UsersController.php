@@ -3,7 +3,7 @@ class UsersController extends Controller {
 	function checkEmail($email, $email2) {
 
 		if ($email != $email2) {
-			echo "email";
+			echo "Los Emails no coinciden.";
 			return false;
 		} else {
 			return true;
@@ -11,7 +11,7 @@ class UsersController extends Controller {
 	}
 	function checkPassword($password, $password2) {
 		if ($password != $password2) {
-			echo "pass";
+			echo "Las contraseñas no coinciden.";
 			return false;
 		} else {
 			return true;
@@ -99,9 +99,9 @@ class UsersController extends Controller {
 										if($model->save()){
 											$modelPersons->id_user = $model->id;
 											if($modelPersons->save()){
-												echo "antes de mandar email";
+												//echo "antes de mandar email";
 												$this->activateAccount($model->email,$model->act_react_key);
-												echo "despues de mandar email";
+												//echo "despues de mandar email";
 												$log = new SystemLog();
 												$log->id_user = Yii::app()->user->id;
 												$log->section = "Empresas";

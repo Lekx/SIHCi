@@ -43,7 +43,6 @@ class PressNotes extends CActiveRecord
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
 			array('type, directed_to, title, responsible_agency, is_national', 'length', 'max'=>45),
 			array('date, note, creation_date', 'safe'),
-			array('date','compare','compareValue'=> date('d/m/Y'),'operator'=>'<='),	
 			array('searchValue','length', 'max'=>70),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -71,13 +70,13 @@ class PressNotes extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id curriculum',
-			'type' => 'Tipo de participación',
-			'directed_to' => 'Dirigido a ',
-			'date' => 'Fecha de publicación',
-			'title' => 'Título de la publicación',
-			'responsible_agency' => 'Dependencia responsable',
-			'note' => 'Nota periodistica',
-			'is_national' => 'Tipo de publicación',
+			'type' => 'Tipo de participación:',
+			'directed_to' => 'Dirigido a:',
+			'date' => 'Fecha de publicación:',
+			'title' => 'Título de la publicación:',
+			'responsible_agency' => 'Dependencia responsable:',
+			'note' => 'Nota periodistica:',
+			'is_national' => 'Tipo de publicación:',
 			'creation_date' => 'Creation Date',
 		);
 	}
@@ -100,28 +99,22 @@ class PressNotes extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'title ASC';
+		
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR type LIKE CONCAT('%', :searchValue , '%') OR responsible_agency LIKE CONCAT('%', :searchValue , '%') OR note LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->addCondition("directed_to LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR type LIKE CONCAT('%', :searchValue , '%') OR responsible_agency LIKE CONCAT('%', :searchValue , '%') OR note LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
-	/*	
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('directed_to',$this->directed_to,true);
-		$criteria->compare('date',$this->date,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('responsible_agency',$this->responsible_agency,true);
-		$criteria->compare('note',$this->note,true);
-		$criteria->compare('is_national',$this->is_national,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-	*/
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+
 		));
 	}
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

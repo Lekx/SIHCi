@@ -3,7 +3,38 @@
 /* @var $model Phones */
 /* @var $form CActiveForm */
 ?>
+<script>
+$(document).ready(function() {
+      $(".numericOnly").keydown(function (e) {
+          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+              (e.keyCode == 65 && e.ctrlKey === true) ||
+              (e.keyCode >= 35 && e.keyCode <= 40)) {
+                  return;
+          }
+          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+              e.preventDefault();
+          }
+
+      });
+  });</script>
 <style type="text/css">  
+		#btnCreateEmail{
+				background-color: #00b973 !important;
+			}
+		#btnCreatePhone{
+				background-color: #00b973 !important;
+			}
+/* 	.deleteEmail, .deletePhone{
+		background-color: #dd7777 !important;
+    color: white !important;
+    display: block !important;
+    height: 25px !important;
+    margin: 15px !important;
+    padding: 3px;
+    text-align: center !important;
+    width: 450px !important;
+	} */
+	
          .errors{
             -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -31,6 +62,7 @@
         .phone{
             display: none;
         }
+		
     </style>
 	
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
@@ -48,8 +80,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-<input id="showFormEmail" type="button" value="Agregar Email">
-<input id="hideFormEmail" class="emails"  type="button" value="Cancelar">
+<input id="showFormEmail" type="button" value="Agregar Nuevo Email">
 
 
 	<div class="emails">
@@ -73,24 +104,22 @@
 		</div>
 
 	
-         <?php echo CHtml::ajaxButton ('Agregar email',CController::createUrl('curriculumVitae/phones'), 
-                        array(
-                            'dataType'=>'json',
-                            'type'=>'post',
-                            'success'=>'function(data) 
-                             {
-                                              
-                                 if(data.status=="success")
-                                 {
-                                     alert("Su nuevo Email se ha creado con éxito");
-                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";
-                                 }                               
-                                 else
-                                 {
-                                      alert("Su nuevo Email se ha creado con éxito");
-                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";  
-                                 }       
-                            }',                    
+         <?php echo CHtml::ajaxButton ('Crear Nuevo email',CController::createUrl('curriculumVitae/phones'), 
+                         array(
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="200")
+		                         {
+				                     $(".successdiv").show(); 
+		                         }		                         
+		                         else
+		                         {
+			                     	   $(".successdiv").show();  
+			                     }       
+		                  	}',                    
                             
                         ), array('id'=>'btnCreateEmail')); 
             ?>
@@ -127,8 +156,7 @@
 		<br>
 
 
-	<input type="button" id="showFormPhone" value="Agregar Teléfono">
-	<input class="phone"  type="button" id="hideFormPhone" value="Cancelar">
+	<input type="button" id="showFormPhone" value="Agregar Nuevo Teléfono">
 
 <div class="phone">
 <div class="row">
@@ -147,36 +175,35 @@
 
 			<div class="phoneinput">
 			<div class="row">
-				<input id="countryCode" type="text"  class="phones country" name="countryCode" maxlength="2" placeholder="[52]">
+				<?echo $form->textField($model,'country_code',array('id'=>'countryCode','class'=>'phones country numericOnly','required'=>true,'name'=>'countryCode','placeholder'=>'[52]', 'title'=>'Lada Nacional')); ?>
+				
 				<div id="errorCountry" class="errors"> Debe escribir Lada Nacional y tiene que ser número</div>
-				<input id="localCode" type="text" class="phones state" name="localAreaCode" maxlength="3" placeholder="[33]">
+				<input id="localCode" type="text" class="phones state numericOnly" name="localAreaCode" maxlength="3" placeholder="[33]" title="Lada Local">
 				<div id="errorLocal" class="errors"> Debe escribir Lada Estatal y tiene que ser número</div>
-				<input id="phoneNum" type="text" class="phones phonew" name="phoneNumber" maxlength="10" placeholder="[000-000-00]">
+				<input id="phoneNum" type="text" class="phones phonew numericOnly" name="phoneNumber" maxlength="10" placeholder="[000-000-00]" title="Número de Teléfono">
 				<div id="errorPhone" class="errors"> Debe escribir número de Teléfono y tiene que ser número</div>
-				<input type="text" class="phones extension" name="extension" maxlength="8" placeholder="[Ext]"> 
+				<input type="text" class="phones extension numericOnly" name="extension" maxlength="8" placeholder="[Ext]" title="Extensión"> 
 				</div>
 			</div>
 
-          <?php echo CHtml::ajaxButton ('Agregar Teléfono',CController::createUrl('curriculumVitae/phones'), 
+          <?php echo CHtml::ajaxButton ('Crear Nuevo Teléfono',CController::createUrl('curriculumVitae/phones'), 
                         array(
-                            'dataType'=>'json',
-                            'type'=>'post',
-                            'success'=>'function(data) 
-                             {
-                                              
-                                 if(data.status=="success")
-                                 {
-                                     alert("Su nuevo Teléfono se ha creado con éxito");
-                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";
-                                 }                               
-                                 else
-                                 {
-                                      alert("Su nuevo Teléfono se ha creado con éxito");
-                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";  
-                                 }       
-                            }',                    
-                            
-                        ), array('id'=>'btnCreatePhone')); 
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="200")
+		                         {
+				                     $(".successdiv").show(); 
+		                         }		                         
+		                         else
+		                         {
+			                     	   $(".successdiv").show();  
+			                     }       
+		                  	}',                    
+		                    
+                        ), array('id'=>'btnCreatePhone','class'=>'addSomething')); 
             ?>
 
 </div><!--FORM Phone -->
@@ -196,16 +223,16 @@
 		 echo "</div>";
 		 echo "<div class='phoneinput'>";
 		 echo "<div class='row'>";
-		 echo $form->textField($model,'country_code',array('class'=>'phones country','required'=>true,'name'=>'getCountryCode[]','value'=>$getPhones[$key]->country_code,'placeholder'=>'[52]'));
+		 echo $form->textField($model,'country_code',array('class'=>'phones country numericOnly','required'=>true,'name'=>'getCountryCode[]','value'=>$getPhones[$key]->country_code,'placeholder'=>'[52]', 'title'=>'Lada Nacional'));
 		 echo $form->error($model,'country_code');
 
-		 echo $form->textField($model,'local_area_code',array('class'=>'phones state','required'=>'true','name'=>'getLocalAreaCode[]','value'=>$getPhones[$key]->local_area_code,'placeholder'=>'[33]'));
+		 echo $form->textField($model,'local_area_code',array('class'=>'phones state numericOnly','required'=>'true','name'=>'getLocalAreaCode[]','value'=>$getPhones[$key]->local_area_code,'placeholder'=>'[33]', 'title'=>'Lada Local'));
 		 echo $form->error($model,'local_area_code'); 
 
-		 echo $form->textField($model,'phone_number',array('class'=>'phones phonew','required'=>'true','name'=>'getPhoneNumber[]','value'=>$getPhones[$key]->phone_number,'placeholder'=>'[000-000-00]'));
+		 echo $form->textField($model,'phone_number',array('class'=>'phones phonew numericOnly','required'=>'true','name'=>'getPhoneNumber[]','value'=>$getPhones[$key]->phone_number,'placeholder'=>'[000-000-00-00]', 'title'=>'Número de Teléfono'));
 		 echo $form->error($model,'phone_number'); 
 
-		 echo $form->textField($model,'extension',array('class'=>'phones extension','name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'[Ext]')); 
+		 echo $form->textField($model,'extension',array('class'=>'phones extension numericOnly','name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'[Ext]', 'title'=>'Extensión')); 
 		 echo $form->error($model,'extension'); 
 		 echo "<br>";
 		 echo "<br>";
@@ -226,23 +253,25 @@
 	<div class="row buttons">
          <?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/phones'), 
                         array(
-                            'dataType'=>'json',
-                            'type'=>'post',
-                            'success'=>'function(data) 
-                             {
-                                              
-                                 if(data.status=="success")
-                                 {
-                                     alert("Registro realizado con éxito");
-                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";
-                                 }                               
-                                  else
-                                 {
-                                    alert("No existe ningun registro");   
-                                 }        
-                            }',                    
-                            
-                        ), array('class'=>'savebutton')); ?>
+							'dataType'=>'json',
+                     		'type'=>'post',
+                     		'success'=>'function(data) 
+                     		 {
+		                                      
+		                         if(data.status=="200")
+		                         {
+				                     $(".successdiv").show(); 
+		                         }		                         
+		                         else
+		                         {
+		                         	alert("Aún no ha creado un teléfono y/o un email");
+                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";  
+			                     	$(".errordiv").show();   
+
+			                     }       
+		                  	}',                    
+		                    
+                      ), array('class'=>'savebutton'));  ?>
 		
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>

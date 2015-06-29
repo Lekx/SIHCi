@@ -18,7 +18,28 @@ $(document).ready(function() {
         }
     });
 });
+
+ function lettersOnly(e){
+	 key = e.keyCode || e.which;
+	 tecla = String.fromCharCode(key).toLowerCase();
+	 letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+	 especiales = [8,37,39,46,45,47];
+
+	 tecla_especial = false
+ 	for(var i in especiales){
+     if(key == especiales[i]){
+  			tecla_especial = true;
+  	break;
+            } 
+ }
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     return false;
+     }
 </script>
+
+
+
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -57,25 +78,25 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row" class="">
-		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','title'=>'Estado'));?>
+		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','onKeypress'=>'return lettersOnly(event)','title'=>'Estado'));?>
 		<?php echo $form->error($modelAddresses, 'state');?>
 	</div>
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','title'=>'Delegación'));?>
+		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','onKeypress'=>'return lettersOnly(event)','title'=>'Delegación'));?>
 		<?php echo $form->error($modelAddresses, 'delegation');?>
 	</div>
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','title'=>'Ciudad'));?>
+		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','onKeypress'=>'return lettersOnly(event)','title'=>'Ciudad'));?>
 		<?php echo $form->error($modelAddresses, 'city');?>
 	</div>
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','title'=>'Municipio'));?>
+		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','onKeypress'=>'return lettersOnly(event)','title'=>'Municipio'));?>
 		<?php echo $form->error($modelAddresses, 'town');?>
 	</div>
 
@@ -101,28 +122,19 @@ $(document).ready(function() {
 		<?php echo $form->error($modelAddresses, 'internal_number');?>
 	</div>
 
-	<!--///////////////////////FORM SPONSORS/////////////////////////////////////////////////////////////-->
 
-	<!--<div class="row">
-		<?php /*echo $form->labelEx($model,'id_user'); ?>
-<?php echo $form->textField($model,'id_user'); ?>
-<?php echo $form->error($model,'id_user');*/?>
-	</div>-->
-
-	<!--<div class="row">
-		<?php /*echo $form->labelEx($model,'id_address'); ?>
-<?php echo $form->textField($model,'id_address'); ?>
-<?php echo $form->error($model,'id_address');*/?>
-	</div>-->
 
 	<div class="row">
 		<?php echo $form->textField($model, 'sponsor_name', array('size' => 50, 'maxlength' => 50, 'placeholder'=>'Nombre de la empersa','title'=>'Nombre de la empersa'));?>
 		<?php echo $form->error($model, 'sponsor_name');?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model, 'type', array('size' => 60, 'maxlength' => 150,'placeholder'=>'Tipo de Empresa','title'=>'Tipo de Empresa'));?>
-		<?php echo $form->error($model, 'type');?>
+		<div>
+		<span class="plain-select">
+		<?php echo $form->dropDownList($model,'type',array('no lucrativo'=>'No lucrativo','privado'=>'Privado', 'publico'=>'Publico'), 
+		                                                       array('title'=>'Tipo de identidad','prompt'=>'Seleccione el tipo de identidad','options' => array(''=>array('selected'=>true))), 
+		                                                       array('size'=>10)); ?>
+		<?php echo $form->error($model,'type'); ?>
+		</span>
 	</div>
 
 	<div class="row">

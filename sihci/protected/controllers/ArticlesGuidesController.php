@@ -82,10 +82,11 @@ class ArticlesGuidesController extends Controller
             {
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/';
 
-               	if (!empty(CUploadedFile::getInstanceByName('ArticlesGuides[url_document]')))
+               	if ($model->url_document != null)
                	{
 	                if(!is_dir($path))
 	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/', 0777, true);
+	              
 	                
 	 					$model->url_document->saveAs($path.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
 					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();    			 			   	
@@ -114,9 +115,8 @@ class ArticlesGuidesController extends Controller
 							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
-		                    echo CJSON::encode(array('status'=>'success'));
-                            $this->redirect(array('admin'));
-                            Yii::app()->end();
+		              	if(!isset($_GET['ajax']))
+                              $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 
 		               }
 		               else
@@ -124,6 +124,8 @@ class ArticlesGuidesController extends Controller
 		               		echo CJSON::encode(array('status'=>'404'));
                             Yii::app()->end();
 		               }
+		                  
+			          
 			    }
 			    else 
 			    {
@@ -150,9 +152,8 @@ class ArticlesGuidesController extends Controller
 							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
-	               	  	echo CJSON::encode(array('status'=>'200'));
-                        $this->redirect(array('admin'));
-                        Yii::app()->end();
+	               	  	if(!isset($_GET['ajax']))
+                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 
                     } 		                      
 		            else 
@@ -188,7 +189,7 @@ class ArticlesGuidesController extends Controller
 	            $model->attributes=$_POST['ArticlesGuides'];
 	            $model->url_document = CUploadedFile::getInstanceByName('ArticlesGuides[url_document]');
 	
-           		if (!empty(CUploadedFile::getInstanceByName('ArticlesGuides[url_document]')))
+           		if ($model->url_document != null)
                 {
 
                     if(!empty($oldUrlDocument))
@@ -202,8 +203,7 @@ class ArticlesGuidesController extends Controller
 
                        $model->url_document->saveAs($urlFile.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
 		               $model->url_document= '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();                                                    
-                }
-                
+                }                
                 else                  
                    $model->url_document = $oldUrlDocument;       
                     
@@ -234,20 +234,20 @@ class ArticlesGuidesController extends Controller
 								$modelAuthor->updateByPk($idsArticlesGuides[$key], array('names' => $value, 'last_name1' => $last_name1[$key], 'last_name2' => $last_name2[$key], 'position' => $position[$key])); 		
                 		    }
                 	    }
+                	    
                 	    $section = "Artículos y Guías"; 
 		     			$action = "Modificación";
 						$details = "Número Registro: ".$model->id;
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
-           	 		   echo CJSON::encode(array('status'=>'200'));
-                       $this->redirect(array('admin'));
-                       Yii::app()->end();
+           	 		  	if(!isset($_GET['ajax']))
+                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
                 	} 
-                	else 
+                	/*else 
                 	{
                 		echo CJSON::encode(array('status'=>'404'));
                         Yii::app()->end();
-                	}           
+                	} */          
             
         }
         	

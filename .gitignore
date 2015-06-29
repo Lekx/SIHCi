@@ -7,3 +7,5 @@ themes/classic/views/
 files_manager/*
 .DS_Store
 assets/.DS_Store
+backups/*
+users/*

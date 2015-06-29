@@ -2,7 +2,20 @@
 /* @var $this GradesController */
 /* @var $model Grades */
 /* @var $form CActiveForm */
-?>
+?><script>
+$(document).ready(function() {
+      $(".numericOnly").keydown(function (e) {
+          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+              (e.keyCode == 65 && e.ctrlKey === true) ||
+              (e.keyCode >= 35 && e.keyCode <= 40)) {
+                  return;
+          }
+          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+              e.preventDefault();
+          }
+
+      });
+  });</script>
 	<style type="text/css">  
         .errors{
             -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -43,8 +56,7 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 )); ?>
-<input id="showFormGrade" type="button"  value="Agregar Formación Académica">
-<input id="hideFormGrade" class="grades" type="button"  value="Cancelar">
+<input id="showFormGrade" type="button"  value="Agregar Nueva Formación Académica">
 
 	<div class="grades">
 	<div class="row">
@@ -63,21 +75,23 @@
 					</div>
 	<div class="row">
  <span class="plain-select">
-		<select id="grade" name="grade">
+		<select id="grade" name="grade" title="Seleccionar grado">
   			<option value="" selected="">Grado</option> 
   			<option value="Licenciatura">Licenciatura</option>
   			<option value="Maestria">Maestria</option>
   			<option value="Doctorado">Doctorado</option>
+  			<option value="Especialidad">Especialidad</option>
+  			<option value="Super especialidad‏">Super especialidad‏</option>
 		</select>
 		</span>
 		</div>
 		<div id="errorGrade" class="errors"> Debe seleccionar su Grado</div>
 	<div class="row">		
-		<input id="writNumber" type="text" name="writNumber" placeholder="Número de Cédula">
+		<input id="writNumber" type="text" name="writNumber" placeholder="Número de Cédula" title="Número de Cédula">
 		<div id="errorNumber" class="errors"> Debe ser Número </div>
 	</div>
 	<div class="row">
-		<input id="title" type="text" name="title" placeholder="Tútulo">
+		<input id="title" type="text" name="title" placeholder="Título" title="Título">
 		<div id="errorTitle" class="errors"> Debe seleccionar Título </div>
 	</div>
 	<div class="row">
@@ -91,12 +105,13 @@
 			     'options' => array(
 				     		'changeMonth'=>true, //cambiar por Mes
 				     		'changeYear'=>true, //cambiar por Año
-				    			'maxDate' => 'now',
+				    			
 			     	),
 			    'htmlOptions' => array(
 			    			'size'=>'10',
 			    			'readonly'=>true,
 			    			'maxlength'=>'10', 
+							'title'=>'Fecha de Obtencíon',
 			        		'placeholder'=>"Fecha de Obtención"),
 					));
 		?>
@@ -105,7 +120,7 @@
 		</div>
 	<div class="row">
  <span class="plain-select">
-		<select id="status" name="status">
+		<select id="status" name="status" title="Selecionar Estado">
   			<option value="" selected="">Estatus</option> 
   			<option value="Creditos Terminados">Creditos Terminados</option>
   			<option value="Grado Obtenido">Grado Obtenido</option>
@@ -116,14 +131,14 @@
 	</div>
 	<div class="row">
 
-		<input id="thesisTitle" type="text" name="thesisTitle" placeholder="Título de Tesis">
+		<input id="thesisTitle" type="text" name="thesisTitle" placeholder="Título de Tesis" title="Título de Tesis">
 		<div id="errorThesisTitle" class="errors"> Debe seleccionar el Título de Tesis </div>
 		</div>
 	<div class="row">
 
  <span class="plain-select">
-		<select id="state" name="state">
-  			<option value="" selected="">Estado</option> 
+		<select id="state" name="state" title="Estado de la Tesis">
+  			<option value="" selected="">Estado de la Tésis</option> 
   			<option value="En proceso">En proceso</option>
   			<option value="Terminado">Terminado</option>
 		</select>
@@ -141,7 +156,7 @@
 				                                                 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras','consultoras'=>'consultoras','Gobierno municipal'=>'Gobierno municipal','Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
 				                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),
 
-				                                                 array('name'=>'sector','prompt'=>'Selecciona Sector','options' => array(''=>array('selected'=>true)))); 
+				                                                 array('name'=>'sector','prompt'=>'Seleccionar Sector','title'=>'Seleccionae Sector','options' => array(''=>array('selected'=>true)))); 
 				                                                 echo "</span>";?>
 
 	
@@ -183,7 +198,7 @@
 			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN','INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX','INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA',
 			                                                       'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'=>'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'),
 
-														array('required'=>'true','name'=>'institution','prompt'=>'Selecciona Institución','options' => array(''=>array('selected'=>true))));
+														array('required'=>'true','name'=>'institution','prompt'=>'Selecciona Institución','title'=>'Seleccionar Institución','options' => array(''=>array('selected'=>true))));
 
 									echo "</span>";?>
 
@@ -197,16 +212,33 @@
 
 		<?php 
 			echo " <span class='plain-select'>";
-			echo $form->dropDownList($model,'area',array('LOGICA'=>'LOGICA','MATEMATICAS'=>'MATEMATICAS','ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
-			                                                'FISICA'=>'FISICA','QUIMICA'=>'QUIMICA','CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA','CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
-			                                                'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD','CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
-			                                                'MEDICINA Y PATOLOGIA HUMANA'=>'MEDICINA Y PATOLOGIA HUMANA','CIENCIAS DE LA TECNOLOGIA'=>'CIENCIAS DE LA TECNOLOGIA',
-			                                                'ANTROPOLOGIA'=>'ANTROPOLOGIA','DEMOGRAFIA'=>'DEMOGRAFIA','CIENCIAS ECONOMICAS'=>'CIENCIAS ECONOMICAS',
-			                                                'GEOGRAFIA'=>'GEOGRAFIA','HISTORIA'=>'HISTORIA','CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
-			                                                'LINGÜISTICA'=>'LINGÜISTICA','PEDAGOGIA'=>'PEDAGOGIA','CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS','PSICOLOGIA'=>'PSICOLOGIA',
-			                                                'ARTES Y LETRAS'=>'ARTES Y LETRAS','SOCIOLOGIA'=>'SOCIOLOGIA','CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION','ETICA'=>'ETICA',
-			                                                'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'), 
-														array('name'=>'area','prompt'=>'Selecciona Área','options' => array(''=>array('selected'=>true))));
+			echo $form->dropDownList($model,'area',array('1'=>'ANTROPOLOGIA',
+															'2'=>'ARTES Y LETRAS',
+															'3'=>'ASTRONOMIA Y ASTROFISICA',
+															'4'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
+															'5'=>'CIENCIAS DE LA OCUPACION',
+															'6'=>'CIENCIAS DE LA TECNOLOGIA',
+															'7'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
+															'8'=>'CIENCIAS DE LA SALUD',
+															'9'=>'CIENCIAS DE LA VIDA',
+															'10'=>'CIENCIAS ECONOMICAS',
+															'11'=>'CIENCIAS JURIDICAS Y DERECHO',
+															'12'=>'CIENCIAS POLITICAS',
+															'13'=>'DEMOGRAFIA',
+															'14'=>'ETICA',
+															'15'=>'FILOSOFIA',
+															'16'=>'FISICA',
+															'17'=>'GEOGRAFIA',
+															'18'=>'HISTORIA',
+															'19'=>'LINGÜISTICA',
+															'20'=>'LOGICA',
+															'21'=>'MATEMATICAS',
+															'22'=>'MEDICINA Y PATOLOGIA HUMANA',
+															'23'=>'PEDAGOGIA',
+															'24'=>'PSICOLOGIA',
+															'25'=>'PROSPECTIVA',
+															'26'=>'QUIMICA', '27'=>'SOCIOLOGIA'), 
+														array('name'=>'area','prompt'=>'Selecciona Área','title'=>'Seleccionar Área','options' => array(''=>array('selected'=>true))));
 													echo "</span>";?>
 
 											
@@ -267,7 +299,7 @@
 	                                                             'PREVISION'=>'PREVISION','ANALISIS DE TENDENCIAS'=>'ANALISIS DE TENDENCIAS','PLANEACION Y DISEÑO DE ESTRATEGIAS'=>'PLANEACION Y DISEÑO DE ESTRATEGIAS','DISEÑO DE PRIORIDADES A LARGO PLAZO'=>'DISEÑO DE PRIORIDADES A LARGO PLAZO','CONSTRUCCION DE ESCENARIOS'=>'CONSTRUCCION DE ESCENARIOS','ETICA DEL FUTURO'=>'ETICA DEL FUTURO','TENDENCIAS DEMOGRAFICAS Y POBLACIONALES'=>'TENDENCIAS DEMOGRAFICAS Y POBLACIONALES',
 	                                                             'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS'=>'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS',' ANALISIS DE RIESGOS'=>' ANALISIS DE RIESGOS','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','NUEVAS FUERTES DE ENERGIA'=>'NUEVAS FUERTES DE ENERGIA','NUEVOS SISTEMAS ORGANIZACIONALES'=>'NUEVOS SISTEMAS ORGANIZACIONALES','OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'=>'OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'),
 
-												array('name'=>'discipline','prompt'=>'Selecciona Disciplina','options' => array(''=>array('selected'=>true))));
+												array('name'=>'discipline','prompt'=>'Selecciona Disciplina','title'=>'Seleccionar Disciplina','options' => array(''=>array('selected'=>true))));
 												echo "</span>";?>
 
 												 
@@ -461,34 +493,13 @@
 		                                                            'SOCIOLOGIA DE LA RELIGION'=>'SOCIOLOGIA DE LA RELIGION','OTROS'=>'OTROS','ACOPIO DE DATOS SOBRE EL TERRENO'=>'ACOPIO DE DATOS SOBRE EL TERRENO','PSICOLOGIA SOCIAL'=>'PSICOLOGIA SOCIAL','DISEÑO DE ENCUESTAS SOCIOLOGICAS'=>'DISEÑO DE ENCUESTAS SOCIOLOGICAS','METODOS DE LAS ENCUESTAS SOCIOLOGICAS'=>'METODOS DE LAS ENCUESTAS SOCIOLOGICAS','OTROS'=>'OTROS','SOCIOLOGIA COMPARADA'=>'SOCIOLOGIA COMPARADA','SOCIOLOGIA HISTORICA'=>'SOCIOLOGIA HISTORICA','METODOLOGIA'=>'METODOLOGIA','SOCIOGRAFIA'=>'SOCIOGRAFIA','TEORIA'=>'TEORIA','OTROS'=>'OTROS','CONFLICTOS'=>'CONFLICTOS','SOLUCION DE CONFLICTOS'=>'SOLUCION DE CONFLICTOS','GUERRA Y PAZ'=>'GUERRA Y PAZ','OTROS'=>'OTROS','MEDICION Y CONSTRUCCION DE INDICES'=>'MEDICION Y CONSTRUCCION DE INDICES','CONSTRUCCION DE MODELOS'=>'CONSTRUCCION DE MODELOS',', ANALISIS ESTADISTICO'=>', ANALISIS ESTADISTICO','OTROS'=>'OTROS','BUROCRACIA'=>'BUROCRACIA','SOCIOLOGIA DE LA ENSEÑANZA'=>'SOCIOLOGIA DE LA ENSEÑANZA',
 		                                                            'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),
 
-												array('name'=>'subdiscipline','prompt'=>'Selecciona Subdisciplina','options' => array(''=>array('selected'=>true))));
+												array('name'=>'subdiscipline','prompt'=>'Selecciona Subdisciplina','title'=>'Seleccionar Subdiciplina','options' => array(''=>array('selected'=>true))));
 												echo "</span>";?>
 
 											
 
 	</div>
-		 <?php echo CHtml::ajaxButton ('Crear Formación Académica',CController::createUrl('curriculumVitae/grades'), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-
-		                         if(data.status=="success")
-		                         {
-				                     $(".successdiv").show();
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";
-		                         }		                         
-		                         else
-		                         {
-			                     	 $(".errordiv").show();   
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/grades').'";  
-			                     }       
-		                  	}',                    
-		                    
-                        ), array('id'=>'btnCreateGrade')); 
-        ?>
+	
 		
 		<br>
 		</div>
@@ -518,19 +529,19 @@
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
 			echo $form->dropDownList($model,'grade',array('Licenciatura'=>'Licenciatura','Maestria'=>'Maestria', 
-																'Doctorado'=>'Doctorado'), 
-			                                                       array('required'=>'true','name'=>'getGrade[]','prompt'=>'Selecciona Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))), 
+																'Doctorado'=>'Doctorado', 'Especialidad'=>'Especialidad‏', 'Super especialidad‏'=>'Super especialidad‏'), 
+			                                                       array('required'=>'true','name'=>'getGrade[]','prompt'=>'Selecciona Grado','title'=>'Selecciona Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))), 
 			                                                       array('size'=>10,'maxlength'=>10)); 
 			echo $form->error($model,'grade');
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->textField($model,'writ_number',array('name'=>'getWritNumber[]','value'=>$getGrades[$key]->writ_number,'title'=>'Número de Cédula','size'=>50,'maxlength'=>50, 'placeholder'=>'Número de Cédula')); 
+			 echo $form->textField($model,'writ_number',array('name'=>'getWritNumber[]','value'=>$getGrades[$key]->writ_number,'class'=>'numericOnly','title'=>'Número de Cédula','size'=>50,'maxlength'=>50, 'placeholder'=>'Número de Cédula','title'=>'Número de Cédula')); 
 			echo $form->error($model,'writ_number');
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->textField($model,'title',array('required'=>'true','name'=>'getTitle[]','value'=>$getGrades[$key]->title,'size'=>45,'maxlength'=>45,'placeholder'=>'Título')); 
+			 echo $form->textField($model,'title',array('required'=>'true','name'=>'getTitle[]','value'=>$getGrades[$key]->title,'size'=>45,'maxlength'=>45,'placeholder'=>'Título','title'=>'Título')); 
 			 echo $form->error($model,'title'); 
 		echo '</div>';
 
@@ -552,7 +563,8 @@
 			    'htmlOptions' => array(
 			    			'size'=>'10',
 			    			'readonly'=>true,
-			    			'maxlength'=>'10', 
+			    			'maxlength'=>'10',
+							'title'=>'Fecha de Obtención',
 			        		'placeholder'=>"Fecha de Obtención"),
 					));
 				 echo $form->error($model,'obtention_date'); 
@@ -563,13 +575,13 @@
 			 echo $form->dropDownList($model,'status',array('Creditos_Terminados'=>'Creditos Terminados',
 																'Grado_Obtenido'=>'Grado Obtenido', 
 																'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
-			                                                       array('name'=>'getStatus[]','prompt'=>'Selecciona Estatus','options' => array($getGrades[$key]->status=>array('selected'=>true))), 
+			                                                       array('name'=>'getStatus[]','prompt'=>'Selecciona Estatus','title'=>'Seleccionar Estatus','options' => array($getGrades[$key]->status=>array('selected'=>true))), 
 			                                                       array('size'=>10,'maxlength'=>10)); 
 			 echo $form->error($model,'status'); 
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->textField($model,'thesis_title',array('required'=>'true','name'=>'getThesisTitle[]','value'=>$getGrades[$key]->thesis_title,'size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis')); 
+			 echo $form->textField($model,'thesis_title',array('required'=>'true','name'=>'getThesisTitle[]','value'=>$getGrades[$key]->thesis_title,'size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis','title'=>'Título de Tésis')); 
 			echo $form->error($model,'thesis_title'); 
 		echo '</div>';
 
@@ -577,7 +589,7 @@
 		echo " <span class='plain-select'>";
 			 echo $form->dropDownList($model,'state',array('en_Proceso'=>'En Proceso',
 																'Terminado'=>'Terminado'), 
-			                                                       array('name'=>'getState[]','prompt'=>'Selecciona Estado','options' => array($getGrades[$key]->state=>array('selected'=>true))), 
+			                                                       array('name'=>'getState[]','prompt'=>'Selecciona Estado','title'=>'Seleccionar Estado','options' => array($getGrades[$key]->state=>array('selected'=>true))), 
 			                                                       array('size'=>10,'maxlength'=>10)); 
 			 echo $form->error($model,'state'); 
 		echo '</div>';
@@ -590,7 +602,7 @@
 				                                                 'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)','Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
 				                                                 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras','consultoras'=>'consultoras','Gobierno municipal'=>'Gobierno municipal','Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
 				                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),
-				                                                 array('name'=>'getSector[]','prompt'=>'Selecciona Sector','options' => array($getGrades[$key]->sector=>array('selected'=>true)))); 
+				                                                 array('name'=>'getSector[]','prompt'=>'Selecciona Sector','title'=>'Seleccionar Sector','options' => array($getGrades[$key]->sector=>array('selected'=>true)))); 
 			 echo $form->error($model,'sector'); 
 		echo '</div>';
 
@@ -625,7 +637,7 @@
 			                                                       'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM'=>'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM','COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN'=>'COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN','UNIVERSIDAD DEL ISTMO'=>'UNIVERSIDAD DEL ISTMO',
 			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN','INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX','INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA',
 			                                                       'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'=>'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'),
-														array('required'=>'true','name'=>'getInstitution[]','prompt'=>'Selecciona Institución','options' => array($getGrades[$key]->institution=>array('selected'=>true)))); 
+														array('required'=>'true','name'=>'getInstitution[]','prompt'=>'Selecciona Institución','title'=>'Seleccionar institución','options' => array($getGrades[$key]->institution=>array('selected'=>true)))); 
 
 
 			 echo $form->error($model,'institution'); 
@@ -633,16 +645,33 @@
 
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
-		     echo $form->dropDownList($model,'area',array('LOGICA'=>'LOGICA','MATEMATICAS'=>'MATEMATICAS','ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
-			                                                'FISICA'=>'FISICA','QUIMICA'=>'QUIMICA','CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA','CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
-			                                                'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD','CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
-			                                                'MEDICINA Y PATOLOGIA HUMANA'=>'MEDICINA Y PATOLOGIA HUMANA','CIENCIAS DE LA TECNOLOGIA'=>'CIENCIAS DE LA TECNOLOGIA',
-			                                                'ANTROPOLOGIA'=>'ANTROPOLOGIA','DEMOGRAFIA'=>'DEMOGRAFIA','CIENCIAS ECONOMICAS'=>'CIENCIAS ECONOMICAS',
-			                                                'GEOGRAFIA'=>'GEOGRAFIA','HISTORIA'=>'HISTORIA','CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
-			                                                'LINGÜISTICA'=>'LINGÜISTICA','PEDAGOGIA'=>'PEDAGOGIA','CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS','PSICOLOGIA'=>'PSICOLOGIA',
-			                                                'ARTES Y LETRAS'=>'ARTES Y LETRAS','SOCIOLOGIA'=>'SOCIOLOGIA','CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION','ETICA'=>'ETICA',
-			                                                'FILOSOFIA'=>'FILOSOFIA','PROSPECTIVA'=>'PROSPECTIVA'), 
-													array('name'=>'getArea[]','prompt'=>'Selecciona Área','options' => array($getGrades[$key]->area=>array('selected'=>true))));
+		     echo $form->dropDownList($model,'area',array('1'=>'ANTROPOLOGIA',
+															'2'=>'ARTES Y LETRAS',
+															'3'=>'ASTRONOMIA Y ASTROFISICA',
+															'4'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
+															'5'=>'CIENCIAS DE LA OCUPACION',
+															'6'=>'CIENCIAS DE LA TECNOLOGIA',
+															'7'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
+															'8'=>'CIENCIAS DE LA SALUD',
+															'9'=>'CIENCIAS DE LA VIDA',
+															'10'=>'CIENCIAS ECONOMICAS',
+															'11'=>'CIENCIAS JURIDICAS Y DERECHO',
+															'12'=>'CIENCIAS POLITICAS',
+															'13'=>'DEMOGRAFIA',
+															'14'=>'ETICA',
+															'15'=>'FILOSOFIA',
+															'16'=>'FISICA',
+															'17'=>'GEOGRAFIA',
+															'18'=>'HISTORIA',
+															'19'=>'LINGÜISTICA',
+															'20'=>'LOGICA',
+															'21'=>'MATEMATICAS',
+															'22'=>'MEDICINA Y PATOLOGIA HUMANA',
+															'23'=>'PEDAGOGIA',
+															'24'=>'PSICOLOGIA',
+															'25'=>'PROSPECTIVA',
+															'26'=>'QUIMICA', '27'=>'SOCIOLOGIA'), 
+													array('name'=>'getArea[]','prompt'=>'Selecciona Área','title'=>'Seleccionar Área','options' => array($getGrades[$key]->area=>array('selected'=>true))));
 			 echo $form->error($model,'area'); 
 		echo '</div>';
 
@@ -698,7 +727,7 @@
 	                                                             'FILOSOFIA DE LOS CONOCIMIENTOS'=>'FILOSOFIA DE LOS CONOCIMIENTOS','ANTROPOLOGIA FILOSOFICA'=>'ANTROPOLOGIA FILOSOFICA','FILOSOFIA GENERAL'=>'FILOSOFIA GENERAL','SISTEMAS FILOSOFICOS'=>'SISTEMAS FILOSOFICOS','FILOSOFIA DE LA CIENCIA'=>'FILOSOFIA DE LA CIENCIA','FILOSOFIA DE LA NATURALEZA'=>'FILOSOFIA DE LA NATURALEZA','FILOSOFIA SOCIAL'=>'FILOSOFIA SOCIAL','DOCTRINAS FILOSOFICAS'=>'DOCTRINAS FILOSOFICAS','OTRAS ESPECIALIDADES EN MATERIA DE FILOSOFIA'=>'OTRAS ESPECIALIDADES EN MATERIA DE FILOSOFIA',
 	                                                             'PREVISION'=>'PREVISION','ANALISIS DE TENDENCIAS'=>'ANALISIS DE TENDENCIAS','PLANEACION Y DISEÑO DE ESTRATEGIAS'=>'PLANEACION Y DISEÑO DE ESTRATEGIAS','DISEÑO DE PRIORIDADES A LARGO PLAZO'=>'DISEÑO DE PRIORIDADES A LARGO PLAZO','CONSTRUCCION DE ESCENARIOS'=>'CONSTRUCCION DE ESCENARIOS','ETICA DEL FUTURO'=>'ETICA DEL FUTURO','TENDENCIAS DEMOGRAFICAS Y POBLACIONALES'=>'TENDENCIAS DEMOGRAFICAS Y POBLACIONALES',
 	                                                             'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS'=>'FUTURO DE LOS CONOCIMIENTOS Y LAS NUEVAS TECNOLOGIAS',' ANALISIS DE RIESGOS'=>' ANALISIS DE RIESGOS','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','NUEVAS FUERTES DE ENERGIA'=>'NUEVAS FUERTES DE ENERGIA','NUEVOS SISTEMAS ORGANIZACIONALES'=>'NUEVOS SISTEMAS ORGANIZACIONALES','OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'=>'OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA'),
-												array('name'=>'getDiscipline[]','prompt'=>'Selecciona Disciplina','options' => array($getGrades[$key]->discipline=>array('selected'=>true))));
+												array('name'=>'getDiscipline[]','prompt'=>'Selecciona Disciplina','title'=>'Seleccionar Desciplina','options' => array($getGrades[$key]->discipline=>array('selected'=>true))));
 		 echo $form->error($model,'discipline'); 
 		echo '</div>';
 
@@ -886,7 +915,7 @@
 		                                                            'VOCABULARIO LITERARIO'=>'VOCABULARIO LITERARIO','RETORICA'=>'RETORICA','OTROS'=>'OTROS','CINEMATOGRAFIA'=>'CINEMATOGRAFIA','DANZA'=>'DANZA','COREOGRAFIA'=>'COREOGRAFIA','ARTES DECORATIVAS'=>'ARTES DECORATIVAS','DIBUJO'=>'DIBUJO','GRABADO'=>'GRABADO','ESTETICA DE LAS BELLAS ARTES'=>'ESTETICA DE LAS BELLAS ARTES','MUSICA'=>'MUSICA','MUSICOLOGIA'=>'MUSICOLOGIA','PINTURA'=>'PINTURA','FOTOGRAFIA'=>'FOTOGRAFIA','ESCULTURA'=>'ESCULTURA','TEATRO'=>'TEATRO','OTROS'=>'OTROS','EVOLUCION CULTURAL'=>'EVOLUCION CULTURAL','RELACIONES CULTURALES'=>'RELACIONES CULTURALES','FOLKLORE'=>'FOLKLORE','RELACIONES INTERETNICAS'=>'RELACIONES INTERETNICAS','IDIOMA Y CULTURA'=>'IDIOMA Y CULTURA','CARACTERISTICAS Y CIVILIZACION NACIONALES'=>'CARACTERISTICAS Y CIVILIZACION NACIONALES','SOCIOLOGIA DEL ARTE'=>'SOCIOLOGIA DEL ARTE','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','SOCIOLOGIA DE LA LITERATURA'=>'SOCIOLOGIA DE LA LITERATURA',
 		                                                            'SOCIOLOGIA DE LA RELIGION'=>'SOCIOLOGIA DE LA RELIGION','OTROS'=>'OTROS','ACOPIO DE DATOS SOBRE EL TERRENO'=>'ACOPIO DE DATOS SOBRE EL TERRENO','PSICOLOGIA SOCIAL'=>'PSICOLOGIA SOCIAL','DISEÑO DE ENCUESTAS SOCIOLOGICAS'=>'DISEÑO DE ENCUESTAS SOCIOLOGICAS','METODOS DE LAS ENCUESTAS SOCIOLOGICAS'=>'METODOS DE LAS ENCUESTAS SOCIOLOGICAS','OTROS'=>'OTROS','SOCIOLOGIA COMPARADA'=>'SOCIOLOGIA COMPARADA','SOCIOLOGIA HISTORICA'=>'SOCIOLOGIA HISTORICA','METODOLOGIA'=>'METODOLOGIA','SOCIOGRAFIA'=>'SOCIOGRAFIA','TEORIA'=>'TEORIA','OTROS'=>'OTROS','CONFLICTOS'=>'CONFLICTOS','SOLUCION DE CONFLICTOS'=>'SOLUCION DE CONFLICTOS','GUERRA Y PAZ'=>'GUERRA Y PAZ','OTROS'=>'OTROS','MEDICION Y CONSTRUCCION DE INDICES'=>'MEDICION Y CONSTRUCCION DE INDICES','CONSTRUCCION DE MODELOS'=>'CONSTRUCCION DE MODELOS',', ANALISIS ESTADISTICO'=>', ANALISIS ESTADISTICO','OTROS'=>'OTROS','BUROCRACIA'=>'BUROCRACIA','SOCIOLOGIA DE LA ENSEÑANZA'=>'SOCIOLOGIA DE LA ENSEÑANZA',
 		                                                            'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),
-												array('name'=>'getSubdiscipline[]','prompt'=>'Selecciona Subdisciplina','options' => array($getGrades[$key]->subdiscipline=>array('selected'=>true))));
+												array('name'=>'getSubdiscipline[]','prompt'=>'Selecciona Subdisciplina','title'=>'Seleccionar Subdisciplina','options' => array($getGrades[$key]->subdiscipline=>array('selected'=>true))));
 		 echo $form->error($model,'subdiscipline'); 
 		echo '</div>';
 		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteGrade','id'=>$getGrades[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
@@ -900,19 +929,20 @@
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
-                     		'success'=>'function(data){
+                     		'success'=>'function(data) 
+                     		 {
 		                                      
-		                         if(data.status=="success")
+		                         if(data.status=="200")
 		                         {
-				                     $(".successdiv").show();
+				                     $(".successdiv").show(); 
 		                         }		                         
 		                         else
 		                         {
-			                     	$(".errordiv").show();   
+			                     	$(".successdiv").show();    
 			                     }       
 		                  	}',                    
 		                    
-                      ), array('class'=>'savebutton'));  
+                      ), array('id'=>'btnCreateGrade','class'=>'savebutton')); 
         
 		
 		echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); 

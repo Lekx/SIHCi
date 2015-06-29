@@ -55,6 +55,7 @@
                                         })
                                         .on( 'focus', function() {
                                         $( this ).tooltipster( 'show' );
+										$('.errorMessage').hide();
                                     })
                                         .on( 'blur', function() {
                                         $( this ).tooltipster( 'hide' );
@@ -65,8 +66,8 @@
     <body>
 
         <div>
-            <?php 
-                if(isset(Yii::app()->user->admin) && (int)Yii::app()->user->admin != 0 ){ 
+            <?php
+                if(isset(Yii::app()->user->admin) && (int)Yii::app()->user->admin != 0 ){
                     echo "Sesion doble iniciada | ";
                     echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0)));
                 }
@@ -136,13 +137,15 @@
                 </div>
                 <div class="headerconteinerF">
                     <?php
-                                    $filename =  Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
-                                    if (file_exists ( $filename ))
-                                        echo "<img id='perfil' src='".$filename."' >";
+                        $filename =   Yii::app()->baseUrl.'/users/'.Yii::app()->user->id.'/cve-hc/perfil.png';
+
+                            echo "<img id='perfil' src='".$filename."' >";
+
                     ?>
                 </div>
                 <div class="headerconteiner3">
                     <div class="fullnamed"><h5>
+
                         <?php echo Yii::app()->user->fullname; ?>
                     </h5></div>
 
@@ -163,17 +166,125 @@
                     <h4>Menú </h4>
                 </div>
                 <div class="headerconteiner5">
-                    <span> <?php echo $this->uniqueid; ?> / <?php echo $this->action->Id; ?> </span>
+                    <span>
+                      <?php
+                      switch ($this->uniqueid) {
+                        case 'account':
+                        $ControllerB = "Cuenta";
+                        break;
+                        case 'curriculumVitae':
+                        $ControllerB = "Currículum vitae electrónico";
+                        break;
+                        case 'evaluateCV':
+                        $ControllerB = "Evaluación Curricular";
+                        break;
+                        case 'postdegreeGraduates':
+                        $ControllerB = "Gestionar graduados";
+                        break;
+                        case 'pressNotes':
+                        $ControllerB = "Difusión de prensa";
+                        break;
+                        case 'knowledgeApplication':
+                        $ControllerB = "Aplicación del Conocimiento";
+                        break;
+                        case 'patent':
+                        $ControllerB = "Registro Pantente";
+                        break;
+                        case 'copyrights':
+                        $ControllerB = "Registro derecho de autor";
+                        break;
+                        case 'software':
+                        $ControllerB = "Registro software";
+                        break;
+                        case 'postdegreeGraduates':
+                        $ControllerB = "Gestionar graduados";
+                        break;
+                        case 'articlesGuides':
+                        $ControllerB = "Articulos Y Guías";
+                        break;
+                        case 'books':
+                        $ControllerB = "Libros";
+                        break;
+                        case 'booksChapters':
+                        $ControllerB = "Capítulo de Libros";
+                        break;
+                        case 'congresses':
+                        $ControllerB = "Participacíon en congresos";
+                        break;
+                        case 'directedThesis':
+                        $ControllerB = "Tesis Dirigidas";
+                        break;
+                        case 'certifications':
+                        $ControllerB = "Certificaciones por consejos";
+                        break;
+                        case 'languages':
+                        $ControllerB = "Idiomas";
+                        break;
+
+                        default:
+                        $ControllerB = "None";
+                        break;
+                      }
+
+                        switch ($this->action->Id) {
+                          case 'admin':
+                          $action = "Gestionar";
+                          break;
+                          case 'create':
+                          $action = "Crear";
+                          break;
+                          case 'update':
+                          $action = "Modificar";
+                          break;
+                          case 'infoAccount':
+                          $action = "Datos de Cuenta";
+                          break;
+                          case 'systemLog':
+                          $action = "Bitacora";
+                          break;
+                          case 'personalData':
+                          $action = "Datos Personales";
+                          break;
+                          case 'docsIdentity':
+                          $action = "Documentos Oficiales";
+                          break;
+                          case 'addresses':
+                          $action = "Datos de dirección actual";
+                          break;
+                          case 'jobs':
+                          $action = "Datos laborales";
+                          break;
+                          case 'researchAreas':
+                          $action = "Lineas de Investigación";
+                          break;
+                          case 'phones':
+                          $action = "Datos de Contacto";
+                          break;
+                          case 'grades':
+                          $action = "Formación Académica";
+                          break;
+                          case 'commission':
+                          $action = "Nombramientos";
+                          break;
+
+                          default:
+                          $action = " ";
+                          break;
+                        }
+                       echo $ControllerB; ?> / <?php echo $action;
+
+                        ?>
+                      </span>
                 </div>
             </div>
             <div class="syscontent">
                 <div class="adminmenu">
-                    <div><a href="">Manejador de Archivos</a></div>
-                    <div><a href="">Gestión de usuarios</a></div>
-                    <div><a href="">Gestión de proyectos</a></div>
-                    <div><a href="">Respaldos</a></div>
-                    <div><a href="">Areas de especialidad</a></div>
-                    <div><a href="">Lineas de Investigación</a></div>
+                    <div><?php echo CHtml::link('Manejador de Archivos', array('FilesManager/admin'));?></div>
+                    <div><?php echo CHtml::link('Gestión de usuarios', array('adminUsers/'));?></div>
+                    <div><?php echo CHtml::link('Manejador de proyectos', array('adminProjects/'));?></div>
+                    <div><?php echo CHtml::link('Respaldos', array('adminBackups/'));?></div>
+                    <div><?php echo CHtml::link('Áreas de especialidad', array('adminSpecialtyAreas/admin'));?></div>
+                    <div><?php echo CHtml::link('Lineas de Investigación', array('adminResearchAreas/admin'));?></div>
                 </div>
                 <div class="sysmenu">
                     <ul class="cvmenuitems">
@@ -197,6 +308,26 @@
                     </div>
                 </div>
             </div>
+			
+	
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Eliminar <?=$ControllerB ?> </h4>
+      </div>
+      <div class="modal-body">
+		  ¿Estas Seguro de Eliminar Este Registro?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-default deleter">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
             <div class="successdiv">
                 <div class="backcontainer">
                     <div class="maincontainer">
@@ -277,7 +408,7 @@
                     <span><?php echo $infoUser['labelAdmin'] ?></span>
                 </div>
                 <div class="footermenuI">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PBitacora.png alt="home">', array('site/index'));?>
+                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PBitacora.png alt="home">', array('account/systemLog'));?>
                     <span>Bitacora</span>
                 </div>
                 <div class="footermenuI logout">

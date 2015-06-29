@@ -1,5 +1,4 @@
 <?php
-
 class ChartsController extends Controller
 {
 	/**
@@ -169,7 +168,6 @@ class ChartsController extends Controller
 				$condProyecto = " AND p.status = 'rechazado'";
 			else
 				$condProyecto = "";
-
 
 			if($_POST["patrocinador"] != "total" && $_POST["patrocinador"] == "patrocinado")
 				$condPatro = " AND p.is_sponsored = 1";
@@ -468,5 +466,134 @@ class ChartsController extends Controller
   }
 
  }
+
+//GR07-Patentes-Software-Derechos de autor
+public function actionPatentSoftware(){
+
+	$conexion = Yii::app()->db;
+
+$table_name = "";
+if(isset($_POST["years"])){
+	if($_POST["property"] != "total" && $_POST["property"] == "software"){
+		$table_name = "software";
+	}
+		else if($_POST["property"] == "patent"){
+			$table_name = "patent";
+		}
+		else if($_POST["property"] == "copyrights"){
+			$table_name = "copyrights";
+		}
+
+}
+  $year = $conexion->createCommand('
+  	SELECT DISTINCT YEAR(creation_date) AS year FROM software')->queryAll();
+
+  $years = array();
+  $years["total"] = "Total";
+  foreach($year AS $index => $value)
+          $years[$value["year"]] = $value["year"];
+          
+
+  if(isset($_POST["years"])){
+   /*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
+    $condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
+   else if($_POST["hu"] == "otro")
+    $condHu = " AND j.hospital_unit IS NULL";
+   else*/
+    $condHu = "";
+   /*
+   if($_POST["sni"] != "total" && $_POST["sni"] == "no")
+    $condSni = " AND c.sni = 0 OR c.sni IS NULL";
+   else if($_POST["sni"] == "yes")
+    $condSni = " AND c.sni > 0";
+   else
+    $condSni = "";
+    */
+
+   if($_POST["property"] != "total" && $_POST["property"] == "software"){
+    	$table = "software AS s";
+		$alias = "s.id_curriculum";
+		$table1 = "COUNT(s.id)";
+		$orderMoth = "MONTH(s.creation_date)";
+	}
+	else if($_POST["property"] == "patent"){
+		$table = "patent AS pa";
+		$alias = "pa.id_curriculum";
+		$table1 = "COUNT(pa.id)";
+		$orderMoth = "MONTH(pa.creation_date)";
+
+	}
+	else if($_POST["property"] == "copyrights"){
+		$table = "copyrights AS co";
+		$alias = "co.id_curriculum";
+		$table1 = "COUNT(co.id)";
+		$orderMoth = "MONTH(co.creation_date)";
+
+	}
+   	else{
+
+    	$table = "";
+		$alias = "";
+		$table1 = "";
+		$orderMoth = "";
+	}
+   
+
+   if($_POST["years"] != "total" && $_POST["property"] == "patent"){
+    $condYears = " AND YEAR(pa.creation_date) ='".$_POST['years']."'";
+	}
+	else if($_POST["years"] != "total" && $_POST["property"] == "software"){
+		$condYears = " AND YEAR(s.creation_date) ='".$_POST['years']."'";
+	}
+	else if($_POST["years"] != "total" && $_POST["property"] == "copyrights"){
+		$condYears = " AND YEAR(co.creation_date) ='".$_POST['years']."'";
+	}
+   else
+    $condYears = "";
+
+
+   $query = '
+    SELECT  
+		COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+		COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+		'.$table1.' AS totals,
+		'.$orderMoth.' AS months
+		FROM '.$table.' 
+		LEFT JOIN curriculum AS c ON '.$alias.'=c.id
+		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+		LEFT JOIN users AS u ON u.id=c.id_user
+		WHERE u.type = "fisico" AND u.status = "activo"
+    	'.$condYears/*.$condpropiedad.$condSni.$condHu*/.'
+    	GROUP BY months ORDER BY '.$orderMoth.' ASC';
+   $results = $conexion->createCommand($query)->queryAll();
+
+   //print_r($results);
+
+   $months = array();
+   $jim = array();
+   $faa = array();
+   $other = array();
+   $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+  
+   foreach($results AS $key => $value){
+    array_push($months, $mos[$value["months"]]);
+    array_push($jim, (int)$value["jim"]);
+    array_push($faa, (int)$value["faa"]);
+    array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
+   }
+
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+  }
+
+
+if(!isset($_POST["years"])){
+   $this->render('index',array('action'=>'patentSoftware',"years"=>$years));
+}
+
+
+
+
+}
+
 }
 ?>

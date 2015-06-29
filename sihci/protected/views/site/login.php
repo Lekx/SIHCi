@@ -39,10 +39,13 @@
 		                        		if(response == "302"){
 
 		                        			 $(".tooltipster-base").css("background-color","#F20862 !important");
+											  
 		                        			 $(".tooltipster-base").css("border","1px solid #F20862");
 		                        			 $("div.tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show").css("border-color","#F20862");
 		                        			 $("#yt0").css("background-color", "#F20862 !important");
-		                        			 $("#yt0").val("Listo... Ingresar a mi cuenta");		              
+		                        			 $("#yt0").css("font-size", "12px");
+											  $("#yt0").css("text-align", "center");
+		                        			 $("#yt0").val("Su cuenta no ha sido activada aún, revise su correo registrado.");		              
 		                        			 $(".infodialog").removeClass("infodialog").addClass("infodialogerror");
 		                        			 $(".glyphicon").css("color","#F20862 ");
 		                        			 $(".infodialogerror").css("visibility", "visible");		            		                       
@@ -51,7 +54,7 @@
 		                        			 $("#LoginForm_username").css("background-color", "#F20862 !important");	
 		                        			 $("#LoginForm_username").css("background-color", "#F20862 !important");		                    
 		                        		     $(".inner-addon").effect( "shake" , {times:3}, 20);
-									    
+									    	$(".tooltipster-base").remove();
 
 		                        		}		               
 		                        		else if(response == "200"){

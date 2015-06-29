@@ -20,29 +20,29 @@
 	<div class="row">
 	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'hospital_unit',array('NA'=>'NA','Hospital Civil Dr. Juan I. Menchaca'=>'Hospital Civil Dr. Juan I. Menchaca',
-																	'Hospital Civil Fray Antonio Alcalde'=>'Hospital Civil Fray Antonio Alcalde'), 
-		                                                       array('id'=>'unitHospital', 'prompt'=>'Seleccionar Unidad Hospitalaria','title'=>'Unidad Hospitalaria','options' => array(''=>array('selected'=>true))), 
+																	'Hospital Civil Fray Antonio Alcalde'=>'Hospital Civil Fray Antonio Alcalde'),
+		                                                       array('id'=>'unitHospital', 'prompt'=>'Seleccionar Unidad Hospitalaria','title'=>'Unidad Hospitalaria','options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'hospital_unit'); ?>
 </span>
 	</div>
-			
-		<?php 
+	<div class="row NA">
+		<?php
 		if ($model->hospital_unit == "NA" || $model->hospital_unit == "" ) {
 
-			echo $form->textField($model,'organization',array('id'=>'organization', 'title'=>'Organización','size'=>60,'maxlength'=>100, 'placeholder'=>'Organización')); 
-			 echo $form->error($model,'organization'); 
+			echo $form->textField($model,'organization',array('id'=>'organization', 'title'=>'Organización','size'=>60,'maxlength'=>100, 'placeholder'=>'Organización'));
+			 echo $form->error($model,'organization');
 		}
 
 		?>
-
-	<div class="row">	
+</div>
+	<div class="row">
 		<?php echo $form->textField($model,'area',array( 'title'=>'Área','size'=>45,'maxlength'=>45, 'placeholder'=>'Área')); ?>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
 	<div class="row">
-	
+
 		<?php echo $form->textField($model,'title',array( 'title'=>'Título o Puesto','size'=>45,'maxlength'=>45, 'placeholder'=>'Título o Puesto')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
@@ -54,11 +54,11 @@
 																'12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16',
 																'17'=>'17','18'=>'18','19'=>'19','20'=>'20','21'=>'21',
 																'22'=>'22','23'=>'23','24'=>'24','25'=>'25','26'=>'26',
-																'27'=>'27','28'=>'28','29'=>'29','30'=>'30','31'=>'31'), 
-			                                                     array( 'title'=>'Día de Inicio','prompt'=>'Seleccionar Dia de Inicio Laboral','options' => array(''=>array('selected'=>true))), 
+																'27'=>'27','28'=>'28','29'=>'29','30'=>'30','31'=>'31'),
+			                                                     array( 'title'=>'Día de Inicio','prompt'=>'Seleccionar Dia de Inicio Laboral','options' => array(''=>array('selected'=>true))),
 		    	                                                 array('size'=>10,'maxlength'=>10),
 		                                                         array('placeholder'=>'Día de Inicio')); ?>
-		
+
 </span>
 		<?php echo $form->error($model,'start_day'); ?>
 	</div>
@@ -67,8 +67,8 @@
  <span class="plain-select">
 		<?php echo $form->dropDownList($model,'start_month',array('1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5',
 																'6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11',
-																'12'=>'12'), 
-		                                                       array( 'prompt'=>'Mes de Inicio','title'=>'Seleccionar Mes de Inicio Laboral','options' => array(''=>array('selected'=>true))), 
+																'12'=>'12'),
+		                                                       array( 'prompt'=>'Mes de Inicio','title'=>'Seleccionar Mes de Inicio Laboral','options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10),
 		                                                       array('placeholder'=>'Mes de Inicio')); ?>
 	</span>
@@ -94,8 +94,8 @@
 																 '2000'=>'2000','2001'=>'2001','2002'=>'2002','2003'=>'2003','2004'=>'2004',
 																 '2005'=>'2005','2006'=>'2006','2007'=>'2007','2008'=>'2008','2009'=>'2009',
 																 '2010'=>'2010','2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
-																 '2015'=>'2015'), 
-		                                                       array( 'prompt'=>'Seleccionar Año de Inicio','title'=>'Año de Inicio Laboral','options' => array(''=>array('selected'=>true))), 
+																 '2015'=>'2015'),
+		                                                       array( 'prompt'=>'Seleccionar Año de Inicio','title'=>'Año de Inicio Laboral','options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10),
 		                                                       array('placeholder'=>'Año de Inicio')); ?>
 
@@ -104,10 +104,10 @@
 	</div>
 
 
-	<div class="row">
+	<div class="row" id="rud">
 
 		<?php if ($model->hospital_unit!="NA") {
-			echo $form->textField($model,'rud',array('id'=>'rud', 'title'=>'RUD', 'size'=>50,'maxlength'=>50, 'placeholder'=>'RUD'));
+			echo $form->textField($model,'rud',array('title'=>'RUD', 'size'=>50,'maxlength'=>50, 'placeholder'=>'RUD'));
 			}
 		  ?>
 		<?php echo $form->error($model,'rud'); ?>
@@ -119,26 +119,26 @@
 	</div>
 
 	<div class="row buttons">
-		 <?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/jobs'), 
+		 <?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/jobs'),
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
-                     		'success'=>'function(data) 
+                     		'success'=>'function(data)
                      		 {
-		                                      
+
 		                         if(data.status=="200")
 		                         {
 				                       $(".successdiv").show();
-		                         }		                         
+		                         }
 		                         else
 		                         {
-			                     	$(".errordiv").show(); 
-			                     }       
-		                  	}',                    
-		                    
-                      ), array('class'=>'savebutton'));  
+			                     	$(".errordiv").show();
+			                     }
+		                  	}',
+
+                      ), array('class'=>'savebutton'));
         ?>
-		
+
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 

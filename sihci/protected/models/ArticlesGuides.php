@@ -46,6 +46,7 @@ class ArticlesGuides extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
@@ -59,14 +60,17 @@ class ArticlesGuides extends CActiveRecord
 			array('area, discipline, subdiscipline', 'length', 'max'=>60),
 			array('keywords', 'length', 'max'=>250),
 			array('type', 'length', 'max'=>15),
+			array('searchValue','length','max'=>70),   		
 			array('url_document', 'length', 'max'=>100),
-			array('searchValue','length','max'=>70),
-    	    array('url_document','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png'),
+			
+			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png','allowEmpty' => true),
+			array('url_document', 'safe', 'on'=>'update'),
+			
 			array('end_page','compare', 'compareAttribute'=>'start_page','operator'=>'>=','message'=>'Página final no puede ser menor a la página inicial'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_resume, isbn,title, editorial, edicion, publishing_year, volumen, volumen_no, start_page, end_page, article_type, copies_issued, magazine, area, discipline, subdiscipline, url_document, keywords, type, creation_date,searchValue', 'safe', 'on'=>'search'),
-			array('url_document ,safe', 'safe', 'on'=>'update')
+			
 		);
 	}
 
@@ -91,24 +95,24 @@ class ArticlesGuides extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_resume' => 'Id Resume',
-			'isbn' => 'ISBN',
-			'title'=> 'Título',
-			'editorial' => 'Editorial',
-			'edicion' => 'Edición',
-			'publishing_year' => 'Año de publicación',
-			'volumen' =>  'Volumen',
-			'volumen_no' => 'Número de volumen',
-			'start_page' => 'Página inicial ',
-			'end_page' => 'Página final',
-			'article_type' => 'Tipo de articulo',
-			'copies_issued' => 'Tiraje',
-			'magazine' => 'Revita',
-			'area' => 'Área',
-			'discipline' => 'Disciplina',
-			'subdiscipline' => 'Subdiciplina',
-			'url_document' => 'Archivo',
-			'keywords' => 'Palabras claves',
-			'type' => 'Tipo',
+			'isbn' => 'Número de ISBN:',
+			'title'=> 'Título:',
+			'editorial' => 'Editorial:',
+			'edicion' => 'Edición:',
+			'publishing_year' => 'Año de publicación:',
+			'volumen' =>  'Volumen:',
+			'volumen_no' => 'Número de volumen:',
+			'start_page' => 'Página inicial: ',
+			'end_page' => 'Página final:',
+			'article_type' => 'Tipo:',
+			'copies_issued' => 'Tiraje:',
+			'magazine' => 'Revista:',
+			'area' => 'Área:',
+			'discipline' => 'Disciplina:',
+			'subdiscipline' => 'Subdiciplina:',
+			'url_document' => 'Archivo:',
+			'keywords' => 'Palabras claves:',
+			'type' => 'Clasificación del articulo o guía:',
 			'creation_date' => 'Creation Date',
 		);
 	}
@@ -130,36 +134,21 @@ class ArticlesGuides extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_resume = '.$curriculumId;
+		$criteria->order = 'title ASC';
+		
 		if($this->searchValue)
 		{
 			$criteria->addCondition("title LIKE CONCAT('%', :searchValue , '%') OR edicion LIKE CONCAT('%', :searchValue , '%') OR editorial LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR volumen LIKE CONCAT('%', :searchValue , '%') OR volumen_no LIKE CONCAT('%', :searchValue , '%') OR article_type LIKE CONCAT('%', :searchValue , '%') OR publishing_year LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
 
-	/*
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_resume',$this->id_resume);
-		$criteria->compare('isbn',$this->isbn);
-		$criteria->compare('editorial',$this->editorial,true);
-		$criteria->compare('edicion',$this->edicion);
-		$criteria->compare('publishing_year',$this->publishing_year);
-		$criteria->compare('volumen',$this->volumen);
-		$criteria->compare('volumen_no',$this->volumen_no);
-		$criteria->compare('start_page',$this->start_page);
-		$criteria->compare('end_page',$this->end_page);
-		$criteria->compare('article_type',$this->article_type,true);
-		$criteria->compare('copies_issued',$this->copies_issued);
-		$criteria->compare('magazine',$this->magazine,true);
-		$criteria->compare('area',$this->area,true);
-		$criteria->compare('discipline',$this->discipline,true);
-		$criteria->compare('subdiscipline',$this->subdiscipline,true);
-		$criteria->compare('url_document',$this->url_document,true);
-		$criteria->compare('keywords',$this->keywords,true);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-	*/
-		return new CActiveDataProvider($this, array('criteria'=>$criteria));
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
 	}
 
 	/**

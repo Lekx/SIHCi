@@ -25,8 +25,8 @@ class CurriculumVitaeController extends Controller
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
 								'DeletePhone', 'DeleteResearch', 'DeleteGrade', 'DeleteDocs',
-								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission'),
-				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1")',
+								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission', 'Admin'),
+				 'expression'=>'isset($user->id_roles) && ($user->id_roles==="1" || $user->id_roles==="13")',
 				 'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -34,7 +34,9 @@ class CurriculumVitaeController extends Controller
 			),
 		);
 	}
-	
+	public function actionAdmin() {
+		$this->redirect("personalData");
+	}
 	public function actionIndex() {
 		$this->redirect("personalData");
 	}
@@ -48,7 +50,7 @@ class CurriculumVitaeController extends Controller
 
 		$model = Persons::model()->findByAttributes(array('id_user' => $iduser));
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user' => $iduser));
-		$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc/';
+		$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc';
 			
 			$section = "Curriculum Vitae"; //manda parametros al controlador SystemLog
 			$details = "Subsección Datos Personales. Registro Número ".$model->id;
@@ -66,8 +68,8 @@ class CurriculumVitaeController extends Controller
 			$addresses->town = "null";
 			$addresses->colony = "null";
 			$addresses->street = "null";
-			$addresses->external_number = "null";
-			$addresses->internal_number = "null";
+			$addresses->external_number = -1;
+			$addresses->internal_number = -1;
 			if($addresses->save()){
 				$details = "Subsección Dirección Actual";
 				$action = "Creación";
@@ -76,7 +78,7 @@ class CurriculumVitaeController extends Controller
 
 			$curriculum->id_user= $iduser;
 			$curriculum->id_actual_address= $addresses->id;
-			$curriculum->native_country = $model->country;
+			$curriculum->native_country = "null";
 			$curriculum->SNI = -1;
 			$curriculum->save();
 
@@ -89,6 +91,9 @@ class CurriculumVitaeController extends Controller
 
 		if($model->birth_date == "30/11/-0001" || $model->birth_date == "00/00/0000"){
 				$model->birth_date = "";
+			}
+		if($curriculum->native_country == "null"){
+				$curriculum->native_country = "";
 			}
 
 		$this->performAjaxValidation($model);
@@ -112,7 +117,7 @@ class CurriculumVitaeController extends Controller
 					$curriculum->save();
 					
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				
+					$this->redirect('personalData');
 					// echo CJSON::encode(array('status'=>'200'));
 	    //  			Yii::app()->end();
 	     		// }else {
@@ -163,7 +168,7 @@ class CurriculumVitaeController extends Controller
 				unset($model);
 				$section = "Curriculum Vitae"; 
 				if (!array_key_exists('Acta', $modelDocs)) {
-					var_dump($modelDocs);
+/* 					var_dump($modelDocs); */
 					$model = new DocsIdentity;
 					$action = "Creación";
 					$details = "Subsección Documentos Oficiales. Se subió Acta";
@@ -179,7 +184,7 @@ class CurriculumVitaeController extends Controller
 				$model->description = "Acta";
 				$model->doc_id = CUploadedFile::getInstanceByName('Acta');
 				
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 				
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -189,6 +194,7 @@ class CurriculumVitaeController extends Controller
 			     		}
 				}else {
 			 echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 echo $model->doc_id->type;
 			 	}     							
 			}
 			
@@ -210,7 +216,7 @@ class CurriculumVitaeController extends Controller
 				$model->type = "Pasaporte";
 				$model->description = "Pasaporte";
 				$model->doc_id = CUploadedFile::getInstanceByName('Pasaporte');
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 					
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -242,7 +248,7 @@ class CurriculumVitaeController extends Controller
 				$model->type = "CURP";
 				$model->description = "CURP";
 				$model->doc_id = CUploadedFile::getInstanceByName('CURP');
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 					
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -274,7 +280,7 @@ class CurriculumVitaeController extends Controller
 				$model->type = "IFE";
 				$model->description = "IFE";
 				$model->doc_id = CUploadedFile::getInstanceByName('IFE');
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 					
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -329,10 +335,10 @@ class CurriculumVitaeController extends Controller
 				if ($model->street=="null") {
 				$model->street="";
 			}
-			if ($model->external_number=="null") {
+			if ($model->external_number==-1) {
 				$model->external_number="";
 			}
-			if ($model->internal_number=="null") {
+			if ($model->internal_number==-1) {
 				$model->internal_number="";
 			}
 
@@ -518,7 +524,7 @@ class CurriculumVitaeController extends Controller
 			$phoneNew->local_area_code = $localAreaCodeNew;
 			$phoneNew->phone_number = $phoneNumberNew;
 			$phoneNew->extension = $extensionNew;
-			$phoneNew->is_primary = "0";
+			$phoneNew->is_primary = "1";
 			if($phoneNew->save()){
 				$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
 				$details = "Subsección Datos de Contacto. Teléfono";
@@ -546,12 +552,10 @@ class CurriculumVitaeController extends Controller
 					$phones->is_primary = $getIsPrimary[$key+1];
 					$phones->save();
 				}	
-				echo CJSON::encode(array('status'=>'success'));
+				echo CJSON::encode(array('status'=>'200'));
 		    	Yii::app()->end();
 			}else{
-				$error = CActiveForm::validate($model);
-                if($error!='[]')
-                   echo $error;
+				echo CJSON::encode(array('status'=>'404'));
                 Yii::app()->end();
 			}
 			$this->redirect('phones');
@@ -582,9 +586,10 @@ class CurriculumVitaeController extends Controller
 			$gradeNew->writ_number = $_POST['writNumber'];
 			$gradeNew->title = $_POST['title'];
 			$gradeNew->obtention_date = $_POST['obtentionDate'];
+			$gradeNew->status = $_POST['status'];
 			$gradeNew->thesis_title = $_POST['thesisTitle'];
 			$gradeNew->state = $_POST['state'];
-			$gradeNew->sector = "sector";
+			$gradeNew->sector = $_POST['sector'];
 			$gradeNew->institution = $_POST['institution'];
 			$gradeNew->area = $_POST['area'];
 			$gradeNew->discipline = $_POST['discipline'];
@@ -602,6 +607,7 @@ class CurriculumVitaeController extends Controller
 				$getWritNumber = $_POST['getWritNumber'];
 				$getTitle = $_POST['getTitle'];
 				$getObtentionDate = $_POST['getObtentionDate'];
+				$getStatus = $_POST['getStatus'];
 				$getThesisTitle = $_POST['getThesisTitle'];
 				$getState = $_POST['getState'];
 				$getSector = $_POST['getSector'];
@@ -618,6 +624,7 @@ class CurriculumVitaeController extends Controller
 					$gradeUp->writ_number = $getWritNumber[$key];
 					$gradeUp->title = $getTitle[$key];
 					$gradeUp->obtention_date = $getObtentionDate[$key];
+					$gradeUp->status = $getStatus[$key];
 					$gradeUp->thesis_title = $getThesisTitle[$key];
 					$gradeUp->state = $getState[$key];
 					$gradeUp->sector = $getSector[$key];
@@ -629,12 +636,10 @@ class CurriculumVitaeController extends Controller
 					$gradeUp->save();
 				}
 			
-				echo CJSON::encode(array('status'=>'success'));
+				echo CJSON::encode(array('status'=>'200'));
 		    	Yii::app()->end();
 			}else{
-				$error = CActiveForm::validate($getTitle);
-                if($error!='[]')
-                   echo $error;
+				echo CJSON::encode(array('status'=>'404'));
                 Yii::app()->end();
 			}
 
@@ -663,7 +668,7 @@ class CurriculumVitaeController extends Controller
 			$details = "Subsección Nombramientos. Número Registro: ".$model->id;
 			$action = "Modificación.";
 		}
-
+		
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Curriculum']))

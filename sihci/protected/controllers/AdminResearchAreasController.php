@@ -1,5 +1,4 @@
 <?php
-
 class AdminResearchAreasController extends Controller
 {
 	/**

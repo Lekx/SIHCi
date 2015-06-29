@@ -52,9 +52,6 @@ class Patent extends CActiveRecord
 			array('international_clasification', 'length', 'max'=>100),
 			array('owner, resource_operator', 'length', 'max'=>70),
 			array('consession_date, resumen', 'safe'),
-			//array('consession_date','compare','compareValue'=>'presentation_date','operator'=>'>=','message'=>"La fecha de presentación no puede ser mayor a la fecha de concesión"),	
-			//array('consession_date','compare','compareAttribute'=>'presentation_date','operator'=>'>=','message'=>"La fecha de presentación no puede ser mayor a la fecha de concesión"),	
-			array('presentation_date','compareDate','type'=>'date','dateFormat'=>'d/m/Y'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),
@@ -83,22 +80,22 @@ class Patent extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'country' => 'País',
-			'participation_type' => 'Tipo de participación',
-			'name' => 'Nombre',
-			'state' => 'Estado de la patente',
-			'application_type' => 'Tipo de aplicación',
-			'application_number' => 'Número de registro o Número de solicitud',
-			'patent_type' => 'Tipo de patente',
-			'consession_date' => 'Fecha de concesión',
-			'record' => 'Expediente',
-			'presentation_date' => 'Fecha de presentación',
-			'international_clasification' => 'Clasificación internacional',
-			'title' => 'Titular',
-			'owner' => 'Propietario',
-			'resumen' => 'Resumen',
-			'industrial_exploitation' => 'Explotación industrial',
-			'resource_operator' => 'Quién lo explota',
+			'country' => 'País:',
+			'participation_type' => 'Tipo de participación:',
+			'name' => 'Nombre de la patente:',
+			'state' => 'Estado de la patente:',
+			'application_type' => 'Tipo de aplicación:',
+			'application_number' => 'Número de registro o Número de solicitud:',
+			'patent_type' => 'Tipo de patente:',
+			'consession_date' => 'Fecha de concesión:',
+			'record' => 'Expediente:',
+			'presentation_date' => 'Fecha de presentación:',
+			'international_clasification' => 'Clasificación internacional:',
+			'title' => 'Titular de la patente:',
+			'owner' => 'Propietario:',
+			'resumen' => 'Resumen:',
+			'industrial_exploitation' => 'Explotación industrial:',
+			'resource_operator' => 'Quién lo explota:',
 		);
 	}
 
@@ -119,35 +116,30 @@ class Patent extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+
 		$sort= new CSort();
-		$sort->defaultOrder='presentation_date ASC';
+		$sort->defaultOrder='name ASC';
+
+
 
 		if($this->searchValue)
 		{
 			$criteria->addCondition("name LIKE CONCAT('%', :searchValue , '%') OR owner LIKE CONCAT('%', :searchValue ,'%') OR application_number LIKE CONCAT('%', :searchValue , '%') OR state LIKE CONCAT('%', :searchValue , '%') OR application_type LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
-	  /*	
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('country',$this->country,true);
-		$criteria->compare('participation_type',$this->participation_type,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('state',$this->state,true);
-		$criteria->compare('application_type',$this->application_type,true);
-		$criteria->compare('application_number',$this->application_number);
-		$criteria->compare('patent_type',$this->patent_type,true);
-		$criteria->compare('consession_date',$this->consession_date,true);
-		$criteria->compare('record',$this->record,true);
-		$criteria->compare('presentation_date',$this->presentation_date,true);
-		$criteria->compare('international_clasification',$this->international_clasification,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('owner',$this->owner,true);
-		$criteria->compare('resumen',$this->resumen,true);
-		$criteria->compare('industrial_exploitation',$this->industrial_exploitation);
-		$criteria->compare('resource_operator',$this->resource_operator,true);
-	   */
+
+
 		return new CActiveDataProvider($this, array('criteria'=>$criteria,'sort'=>$sort));
+
+
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		return new CActiveDataProvider($this, array(
+			'criteria'=>array(
+		        'condition'=>'id_curriculum='.$curriculumId,
+		        'order'=>'presentation_date ASC',
+		    ),
+		));
+
 	}
 
 	/**
