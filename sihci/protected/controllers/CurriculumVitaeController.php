@@ -194,6 +194,7 @@ class CurriculumVitaeController extends Controller
 			     		}
 				}else {
 			 echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 echo $model->doc_id->type;
 			 	}     							
 			}
 			

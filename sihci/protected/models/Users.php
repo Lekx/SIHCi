@@ -121,8 +121,6 @@ class Users extends CActiveRecord
 			$criteria->compare( 'persons.last_name1', $this->last_name1, true );
 			$criteria->compare( 'persons.last_name2', $this->last_name2, true );
 			$criteria->compare( 'persons.curp_passport', $this->curp_passport, true );
-
-
 		}
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
