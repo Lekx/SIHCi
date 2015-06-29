@@ -37,6 +37,7 @@
                                 $cs->registerScriptFile($baseUrl . '/js/searchbar.js');
                                 $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
                                  $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
+  								$cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
         ?>
         <?php
                                 Yii::app()->clientScript->registerScript('helpers', '

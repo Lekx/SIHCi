@@ -129,7 +129,7 @@ class LanguagesController extends Controller
 			$model->attributes=$_POST['Languages'];
 			
 			$model->path = CUploadedFile::getInstanceByName('Languages[path]');
-			if (!empty(CUploadedFile::getInstanceByName('Languages[path]'))){
+			if ($model->path != null){
 							
 					if(!empty($oldPath))
 						unlink(YiiBase::getPathOfAlias("webroot").$oldPath);

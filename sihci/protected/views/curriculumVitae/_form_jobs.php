@@ -104,10 +104,10 @@
 	</div>
 
 
-	<div class="row">
+	<div class="row" id="rud">
 
 		<?php if ($model->hospital_unit!="NA") {
-			echo $form->textField($model,'rud',array('id'=>'rud', 'title'=>'RUD', 'size'=>50,'maxlength'=>50, 'placeholder'=>'RUD'));
+			echo $form->textField($model,'rud',array('title'=>'RUD', 'size'=>50,'maxlength'=>50, 'placeholder'=>'RUD'));
 			}
 		  ?>
 		<?php echo $form->error($model,'rud'); ?>

@@ -72,14 +72,14 @@ class Copyrights extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'ID Curriculum',
-			'participation_type' => 'Tipo de participación',
-			'title' => 'Título de la obra',
-			'application_date' => 'Fecha de solicitud',
-			'step_number' => 'Número de tramite',
-			'resume' => 'Resumen',
-			'beneficiary' => 'Beneficiario',
-			'entity' => 'Entidad',
-			'impact_value' => 'Valor de impacto',
+			'participation_type' => 'Tipo de participación:',
+			'title' => 'Título de la obra:',
+			'application_date' => 'Fecha de solicitud:',
+			'step_number' => 'Número de tramite:',
+			'resume' => 'Resumen:',
+			'beneficiary' => 'Beneficiario:',
+			'entity' => 'Entidad:',
+			'impact_value' => 'Valor de impacto:',
 			'creation_date' => 'Creation Date',
 		);
 	}

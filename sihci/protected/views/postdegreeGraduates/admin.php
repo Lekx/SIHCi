@@ -93,8 +93,8 @@ $this->menu=array(
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 
-		array('name' =>'Nombre completo del graduado.', 'type'=>'html','id'=>'fullname','value'=>'CHtml::encode($data->fullname)'),
-		array('name' =>'Fecha de creación.', 'type'=>'html','id'=>'creation_date','value'=>'CHtml::encode($data->creation_date)'),
+		array('name'=>'Nombre completo','type'=>'html','id'=>'fullname','value'=>'CHtml::encode($data->fullname)'),
+		array('name'=>'Fecha de creación','type'=>'html','id'=>'creation_date','value'=>'CHtml::encode($data->creation_date)'),
 
   		/*'id',
 		'fullname',

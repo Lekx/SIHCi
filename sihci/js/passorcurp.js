@@ -3,7 +3,9 @@ $(document).ready(function() {
     $('.errordiv').hide();
     $('.cleandiv').hide();
     $('.successdiv').hide();
-
+$('.backhome').click(function(){
+	window.location = yii.urls.base;
+});
     $('#Persons_curp_passport').tooltipster({ // <-  USE THE PROPER SELECTOR FOR YOUR INPUTs // default is 'hover' which is no good here
         onlyOne: false, // allow multiple tips to be open at a time
         position: 'right' // display the tips to the right of the element

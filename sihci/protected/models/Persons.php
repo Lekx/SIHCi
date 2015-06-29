@@ -45,15 +45,16 @@ class Persons extends CActiveRecord {
 			array('id_user', 'numerical', 'integerOnly' => true),
 			array('names', 'length', 'max' => 30),
 			array('curp_passport', 'length', 'min' => 11, 'max' => 18),
+			array('curp_passport', 'match', 'pattern'=>'/^[a-zA-Z1-9]+$/'),
 			array('person_rfc', 'length', 'min' => 13, 'max' => 13),
+			array('person_rfc', 'match', 'pattern'=>'/^[a-zA-Z1-9]+$/'),
 			array('last_name1, last_name2, marital_status', 'length', 'max' => 20),
 			array('genre', 'length', 'max' => 10),
 			array('country', 'length', 'max' => 50),
 			array('state_of_birth', 'length', 'max' => 45),
 			array('photo_url', 'file', 'allowEmpty' => true,
 				'on' => 'update',
-				'types' => 'png, jpg, jpeg',
-				'maxSize' => array(1024 * 2000),
+				'types' => 'png, jpg, jpeg, PNG, JPG, JPEG',
 				'message' => 'Solo se admiten archivos PNG, JPG, JPEG'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -143,14 +144,14 @@ class Persons extends CActiveRecord {
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
 	}
-	// protected function beforeSave() {
-	// 	$this->birth_date = DateTime::createFromFormat('d/m/Y', $this->birth_date)->format('Y-m-d');
-	// 	return parent::beforeSave();
-	// }
+	 protected function beforeSave() {
+	 	$this->birth_date = DateTime::createFromFormat('d/m/Y', $this->birth_date)->format('Y-m-d');
+	 	return parent::beforeSave();
+	 }
 
 
 	protected function afterFind() {
-		//$this->birth_date = DateTime::createFromFormat('Y-m-d', $this->birth_date)->format('d/m/Y');
+		$this->birth_date = DateTime::createFromFormat('Y-m-d', $this->birth_date)->format('d/m/Y');
 		return parent::afterFind();
 
 }

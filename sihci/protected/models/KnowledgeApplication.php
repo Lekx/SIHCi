@@ -66,11 +66,11 @@ class KnowledgeApplication extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'term1' => 'Pregunta 1',
-			'term2' => 'Pregunta 2',
-			'term3' => 'Pregunta 3',
-			'term4' => 'Pregunta 4',
-			'term5' => 'Pregunta 5',
+			'term1' => 'Pregunta 1:',
+			'term2' => 'Pregunta 2:',
+			'term3' => 'Pregunta 3:',
+			'term4' => 'Pregunta 4:',
+			'term5' => 'Pregunta 5:',
 			'creation_date' => 'Creation Date'
 		);
 	}

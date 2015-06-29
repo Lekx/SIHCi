@@ -59,7 +59,7 @@ function lettersOnly(e)
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn', array('placeholder'=>'Número de ISBN','class' => 'numericOnly','title'=>'Número de ISBN')); ?>
+		<?php echo $form->textField($model,'isbn', array('placeholder'=>'Número de ISBN','class' => 'numericOnly','title'=>'Número de ISBN. (Solo se aceptan numeros)')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
@@ -74,7 +74,7 @@ function lettersOnly(e)
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','class' => 'numericOnly','title'=>'Edición')); ?>
+		<?php echo $form->textField($model,'edition',array('placeholder'=>'Edición','class' => 'numericOnly','title'=>'Edición. (Solo se aceptan numeros)')); ?>
 		<?php echo $form->error($model,'edition'); ?>
 	</div>
 
@@ -113,17 +113,17 @@ function lettersOnly(e)
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','class' => 'numericOnly','title'=>'Volumen') ); ?>
+		<?php echo $form->textField($model,'volume',array('placeholder'=>'Volumen','class' => 'numericOnly','title'=>'Volumen. (Solo se aceptan numeros)') ); ?>
 		<?php echo $form->error($model,'volume'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','class' => 'numericOnly','title'=>'Número de páginas')); ?>
+		<?php echo $form->textField($model,'pages', array('placeholder'=>'Número de páginas','class' => 'numericOnly','title'=>'Número de páginas. (Solo se aceptan numeros)')); ?>
 		<?php echo $form->error($model,'pages'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','class' => 'numericOnly','title'=>'Tiraje')); ?>
+		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje','class' => 'numericOnly','title'=>'Tiraje. (Solo se aceptan numeros)')); ?>
 		<?php echo $form->error($model,'copies_issued'); ?>
 	</div>
 
@@ -537,7 +537,7 @@ function lettersOnly(e)
 			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
 	       </div>
 		  <div class="row">
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'Posición', 'title'=>'Posición','class'=>'numericOnly')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'Posición', 'title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
 		  <hr>
@@ -565,15 +565,14 @@ function lettersOnly(e)
 					  <?php echo $form->error($value,'last_name2'); ?>
 				  </div>
 				  <div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición','class'=>'numericOnly')); ?>
+					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
 	<?php } ?>
 
 	<div class="row buttons">
 		 <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton')); ?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('books/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
-
+		 <?php echo CHtml::link('Cancelar',array('books/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -911,7 +911,6 @@ thead th
 #hideFormPhone,
 #showFormGrade,
 #hideFormGrade,
-#btnCreateGrade,
 .deleteSomething
 {
     display: block !important;
@@ -1693,4 +1692,39 @@ ul.yiiPager a:hover,
 .grid-view table.items tr.even
 {
     border-bottom: 2px solid #cdf1f3;
+}
+#myModal
+{
+	border: 0 !important;
+	width: 610px;
+	background-color: transparent !important;
+-webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+div.modal-content
+{
+	text-align: center;
+	width: 400px;
+	margin: auto;
+	display: block;
+	border:0;
+	border-radius: 0;
+}
+div.modal-body
+{
+	height: 100px;
+	border:0;
+	border-radius: 0;
+}
+div.modal-footer
+{
+	background-color: #0A324F;
+	border:0;
+	border-radius: 0;
+}
+#deleteRegis , #deleteRegis:hover
+{
+	color: #0A324F;
+	text-decoration: none;
 }

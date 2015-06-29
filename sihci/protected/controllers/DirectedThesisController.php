@@ -1,4 +1,3 @@
-
 <?php
     class DirectedThesisController extends Controller
     {
@@ -93,9 +92,12 @@
                             $details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Título: ".$model->title.". Autor: ".$model->author.".";
                             Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);            
                                 
-                                echo CJSON::encode(array('status'=>'200'));
+                                
+                                if(!isset($_GET['ajax']))
+                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                                /*echo CJSON::encode(array('status'=>'200'));
                                 $this->redirect(array('admin','id'=>$model->id));
-                                Yii::app()->end();
+                                Yii::app()->end();*/
                             }                   
                             else{
                                 echo CJSON::encode(array('status'=>'404'));
@@ -116,9 +118,11 @@
                             $details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Título: ".$model->title.". Autor: ".$model->author.".";
                             Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);                  
                            
-                            echo CJSON::encode(array('status'=>'200'));
+                            if(!isset($_GET['ajax']))
+                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                            /*echo CJSON::encode(array('status'=>'200'));
                             $this->redirect(array('admin','id'=>$model->id));
-                            Yii::app()->end();
+                            Yii::app()->end();*/
                         }                   
                         else{
                             echo CJSON::encode(array('status'=>'404'));
@@ -185,9 +189,11 @@
                                 $details = "Registro Número: ".$model->id;
                                 Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
-                            echo CJSON::encode(array('status'=>'200'));
+                            if(!isset($_GET['ajax']))
+                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                            /*echo CJSON::encode(array('status'=>'200'));
                             $this->redirect(array('admin','id'=>$model->id));
-                            Yii::app()->end();
+                            Yii::app()->end();*/
                         }                   
                         else {
                             echo CJSON::encode(array('status'=>'404'));

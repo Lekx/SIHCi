@@ -68,8 +68,8 @@ class CurriculumVitaeController extends Controller
 			$addresses->town = "null";
 			$addresses->colony = "null";
 			$addresses->street = "null";
-			$addresses->external_number = "null";
-			$addresses->internal_number = "null";
+			$addresses->external_number = -1;
+			$addresses->internal_number = -1;
 			if($addresses->save()){
 				$details = "Subsección Dirección Actual";
 				$action = "Creación";
@@ -78,7 +78,7 @@ class CurriculumVitaeController extends Controller
 
 			$curriculum->id_user= $iduser;
 			$curriculum->id_actual_address= $addresses->id;
-			$curriculum->native_country = $model->country;
+			$curriculum->native_country = "null";
 			$curriculum->SNI = -1;
 			$curriculum->save();
 
@@ -91,6 +91,9 @@ class CurriculumVitaeController extends Controller
 
 		if($model->birth_date == "30/11/-0001" || $model->birth_date == "00/00/0000"){
 				$model->birth_date = "";
+			}
+		if($curriculum->native_country == "null"){
+				$curriculum->native_country = "";
 			}
 
 		$this->performAjaxValidation($model);
@@ -114,7 +117,7 @@ class CurriculumVitaeController extends Controller
 					$curriculum->save();
 					
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				
+					$this->redirect('personalData');
 					// echo CJSON::encode(array('status'=>'200'));
 	    //  			Yii::app()->end();
 	     		// }else {
@@ -165,7 +168,7 @@ class CurriculumVitaeController extends Controller
 				unset($model);
 				$section = "Curriculum Vitae"; 
 				if (!array_key_exists('Acta', $modelDocs)) {
-					var_dump($modelDocs);
+/* 					var_dump($modelDocs); */
 					$model = new DocsIdentity;
 					$action = "Creación";
 					$details = "Subsección Documentos Oficiales. Se subió Acta";
@@ -181,7 +184,7 @@ class CurriculumVitaeController extends Controller
 				$model->description = "Acta";
 				$model->doc_id = CUploadedFile::getInstanceByName('Acta');
 				
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 				
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -191,6 +194,7 @@ class CurriculumVitaeController extends Controller
 			     		}
 				}else {
 			 echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
+			 echo $model->doc_id->type;
 			 	}     							
 			}
 			
@@ -212,7 +216,7 @@ class CurriculumVitaeController extends Controller
 				$model->type = "Pasaporte";
 				$model->description = "Pasaporte";
 				$model->doc_id = CUploadedFile::getInstanceByName('Pasaporte');
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 					
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -244,7 +248,7 @@ class CurriculumVitaeController extends Controller
 				$model->type = "CURP";
 				$model->description = "CURP";
 				$model->doc_id = CUploadedFile::getInstanceByName('CURP');
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 					
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -276,7 +280,7 @@ class CurriculumVitaeController extends Controller
 				$model->type = "IFE";
 				$model->description = "IFE";
 				$model->doc_id = CUploadedFile::getInstanceByName('IFE');
-				if($model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
+				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 					
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
@@ -331,10 +335,10 @@ class CurriculumVitaeController extends Controller
 				if ($model->street=="null") {
 				$model->street="";
 			}
-			if ($model->external_number=="null") {
+			if ($model->external_number==-1) {
 				$model->external_number="";
 			}
-			if ($model->internal_number=="null") {
+			if ($model->internal_number==-1) {
 				$model->internal_number="";
 			}
 

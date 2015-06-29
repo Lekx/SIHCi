@@ -70,13 +70,13 @@ class PressNotes extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id curriculum',
-			'type' => 'Tipo de participación',
-			'directed_to' => 'Dirigido a ',
-			'date' => 'Fecha de publicación',
-			'title' => 'Título de la publicación',
-			'responsible_agency' => 'Dependencia responsable',
-			'note' => 'Nota periodistica',
-			'is_national' => 'Tipo de publicación',
+			'type' => 'Tipo de participación:',
+			'directed_to' => 'Dirigido a:',
+			'date' => 'Fecha de publicación:',
+			'title' => 'Título de la publicación:',
+			'responsible_agency' => 'Dependencia responsable:',
+			'note' => 'Nota periodistica:',
+			'is_national' => 'Tipo de publicación:',
 			'creation_date' => 'Creation Date',
 		);
 	}

@@ -73,14 +73,14 @@ class Certifications extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'folio' => 'Folio',
-			'reference' => 'Referencia',
-			'reference_type' => 'Tipo de Referencia',
-			'specialty' => 'Especialidad',
-			'validity_date_start' => 'Fecha de Inicio',
-			'validity_date_end' => 'Fecha final',
-			'type' => 'Tipo',
-			'creation_date' => 'Creation Date',
+			'folio' => 'Folio:',
+			'reference' => 'Referencia:',
+			'reference_type' => 'Tipo de Referencia:',
+			'specialty' => 'Especialidad:',
+			'validity_date_start' => 'Fecha de Inicio:',
+			'validity_date_end' => 'Fecha final:',
+			'type' => 'Tipo:',
+			'creation_date' => 'Creation Date:',
 		);
 	}
 

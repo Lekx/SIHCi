@@ -6,6 +6,7 @@ class BooksChaptersController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
+	
 	public $layout='//layouts/system';
 
 	/**
@@ -87,8 +88,8 @@ class BooksChaptersController extends Controller
 	                	 		                	 	                       //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
             				if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
 
- 							 $model->url_doc->saveAs($path.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
-		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();    
+ 							 $model->url_doc->saveAs($path.'Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName());
+		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName();
 	                	
 		           			 	//echo"antes de guardar";
 			               		if($model->save()){
@@ -113,9 +114,12 @@ class BooksChaptersController extends Controller
 								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->chapter_title;
      							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 			                    
-			               	   echo CJSON::encode(array('status'=>'200'));
+     							if(!isset($_GET['ajax']))
+								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+
+			               	   /*echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();
+                               Yii::app()->end();*/
 
 			               		}
 			               		else{	
@@ -155,9 +159,11 @@ class BooksChaptersController extends Controller
 								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->chapter_title;
      							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 			                    	
-			               	   echo CJSON::encode(array('status'=>'200'));
+			               	   /*echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();
+                               Yii::app()->end();*/
+                               if(!isset($_GET['ajax']))
+								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 
 			               }
 
@@ -199,13 +205,13 @@ class BooksChaptersController extends Controller
 
                 if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
                     $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
-                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/books_Chapters/';
+                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/';
                   
                     if(!is_dir($urlFile))          
                         mkdir($urlFile, 0777, true);
 
-                       $model->url_doc->saveAs($urlFile.'Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName());
-		               $model->url_doc = '/users/'.Yii::app()->user->id.'/books_Chapters/Capitulo_libro'.$model->publishing_year.'.'.$model->url_doc->getExtensionName();                                                    
+                       $model->url_doc->saveAs($urlFile.'Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName());
+		               $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName();                                                    
                  }
 			        else  
 			        	echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
@@ -242,9 +248,12 @@ class BooksChaptersController extends Controller
 					$action = "Modificación";
 					$details = "Registro Número: ".$model->id;
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-                   	 		   echo CJSON::encode(array('status'=>'200'));
+                   	 		   
+                   	 		   /*echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();
+                               Yii::app()->end();*/
+                               if(!isset($_GET['ajax']))
+								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
                 	} else {
 
                 		echo CJSON::encode(array('status'=>'404'));
