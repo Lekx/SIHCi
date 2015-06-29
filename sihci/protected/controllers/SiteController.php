@@ -158,14 +158,14 @@ class SiteController extends Controller {
 				$message = "<a href='http://localhost/sihci/index.php/site/changePassword?key=" . $key . ">";
 				$message .= "Haz click en ésta liga para cambiar tu contraseña";
 				$message .= "</a><br /><br />";
-				// $message .= "<a href='http://localhost/'>Regresar a la web</a>";
-				// $email->Send_Email
-				// (
-				// 	array(Yii::app()->params['emailAdmin'], Yii::app()->name),
-				// 	array($model->email, ''),
-				// 	$subject,
-				// 	$message
-				// );
+				$message .= "<a href='http://sgei.hcg.gob.mx/sihci/sihci/index.php'>Regresar a la web</a>";
+				$email->Send_Email
+				(
+					array(Yii::app()->params['emailAdmin'], Yii::app()->name),
+					array($model->email, ''),
+					$subject,
+					$message
+				);
 
 				$model->email = "";
 				echo '200';

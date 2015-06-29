@@ -128,10 +128,13 @@ $(document).ready(function() {
 		<?php echo $form->textField($model, 'sponsor_name', array('size' => 50, 'maxlength' => 50, 'placeholder'=>'Nombre de la empersa','title'=>'Nombre de la empersa'));?>
 		<?php echo $form->error($model, 'sponsor_name');?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model, 'type', array('size' => 60, 'maxlength' => 150,'placeholder'=>'Tipo de Empresa','title'=>'Tipo de Empresa'));?>
-		<?php echo $form->error($model, 'type');?>
+		<div>
+		<span class="plain-select">
+		<?php echo $form->dropDownList($model,'type',array('no lucrativo'=>'No lucrativo','privado'=>'Privado', 'publico'=>'Publico'), 
+		                                                       array('title'=>'Tipo de identidad','prompt'=>'Seleccione el tipo de identidad','options' => array(''=>array('selected'=>true))), 
+		                                                       array('size'=>10)); ?>
+		<?php echo $form->error($model,'type'); ?>
+		</span>
 	</div>
 
 	<div class="row">

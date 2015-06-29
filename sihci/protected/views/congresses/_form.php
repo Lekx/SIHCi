@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 ?>
 
-	<?php echo $form->errorSummary($model); ?>
+	
 
 	<div class="row">
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Tipo de participación','title'=>'Tipo de participación')); ?>
@@ -148,7 +148,7 @@ $(document).ready(function() {
 
 		<div class="row">
 
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. Solo se aceptan numeros')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. (Solo se aceptan numeros)')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
     	</div>
@@ -176,7 +176,7 @@ $(document).ready(function() {
 				  </div>
 
 				  <div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. Solo se aceptan numeros')); ?>
+					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. (Solo se aceptan numeros)')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
 	<?php } ?>

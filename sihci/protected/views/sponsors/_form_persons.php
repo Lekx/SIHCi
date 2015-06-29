@@ -57,7 +57,6 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 	
-	<?php echo $form->errorSummary($model); ?>
 	
 	<div class="row">
 		

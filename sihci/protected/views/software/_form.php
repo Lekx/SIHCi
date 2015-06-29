@@ -59,9 +59,6 @@ function lettersOnly(e)
 )); ?>
 
 
-	<?php echo $form->errorSummary($model); ?>
-
-	
 	<div class="row">
 	 <span class="plain-select">	
 		<?php $this->widget('ext.CountrySelectorWidget', 
@@ -118,7 +115,7 @@ function lettersOnly(e)
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas invertidas en el proyecto','title'=>'Horas invertidas en el proyecto', 'class'=>'numericOnly')); ?>
+		<?php echo $form->textField($model,'manwork_hours',array('placeholder'=>'Horas invertidas en el proyecto','title'=>'Horas invertidas en el proyecto. (Solo se aceptan numeros)', 'class'=>'numericOnly')); ?>
 		<?php echo $form->error($model,'manwork_hours'); ?>
 	</div>
 
@@ -319,7 +316,7 @@ function lettersOnly(e)
 
 	<div class="row buttons">		
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('software/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+		 <?php echo CHtml::link('Cancelar',array('software/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 

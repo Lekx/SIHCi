@@ -99,9 +99,9 @@ class UsersController extends Controller {
 										if($model->save()){
 											$modelPersons->id_user = $model->id;
 											if($modelPersons->save()){
-												echo "antes de mandar email";
+												//echo "antes de mandar email";
 												$this->activateAccount($model->email,$model->act_react_key);
-												echo "despues de mandar email";
+												//echo "despues de mandar email";
 												$log = new SystemLog();
 												$log->id_user = Yii::app()->user->id;
 												$log->section = "Empresas";

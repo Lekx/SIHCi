@@ -1,0 +1,46 @@
+
+-----Jasvascript-----
+var 1 = {
+    foo: 1,
+    bar: 2,
+    car: 3
+}
+
+var 2 = {
+    foo: 1,
+    bar: 2,
+    car: 3
+}
+
+var 3 = {
+    foo: 1,
+    bar: 2,
+    car: 3
+}
+
+function changeCombo(){
+
+var nameObject = $("#idCombo option:selected").val();
+
+var newClases = "<select id="sponsors['class']" name="sponsors['class']">";
+
+for (var item in obj) {
+    newClases += "<option>"+nameObject[ item ]+"</option>";
+}
+
+newClases+="</select>";
+
+$("#clases").html(newClases);
+
+
+}
+
+-----html ----
+<select onchange="changeCombo()">
+<option value="1">sectores 1 asdfasd asdf</option>
+<option value="2">sectores 2 zxcvzxcv asdfasd</option>
+<option value="3">sectores 3 qwerqwerx zxcv zxcv</option>
+</select>
+
+<div class="row" id="clases">
+</div>

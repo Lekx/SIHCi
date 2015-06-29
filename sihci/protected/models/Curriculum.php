@@ -59,6 +59,7 @@ class Curriculum extends CActiveRecord
 			array('native_country', 'length', 'max'=>50),
 			array('native_language', 'length', 'max'=>45),
 			array('researcher_title', 'length', 'max'=>100),
+			array('SNI', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_user, id_actual_address, native_country, native_language, status, SNI, researcher_title', 'safe', 'on'=>'search'),
@@ -105,10 +106,10 @@ class Curriculum extends CActiveRecord
 			'id' => 'ID',
 			'id_user' => 'Id User',
 			'id_actual_address' => 'Id Actual Address',
-			'native_country' => 'Native Country',
-			'native_language' => 'Native Language',
+			'native_country' => 'Nacionalidad',
+			'native_language' => 'Idioma nativo',
 			'status' => 'Activo',
-			'SNI' => 'Sni',
+			'SNI' => 'SNI',
 			'researcher_title' => 'Título de Investigador',
 		);
 	}

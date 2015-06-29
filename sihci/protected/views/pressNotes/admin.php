@@ -105,8 +105,7 @@ $('.search-form form').submit(function(){
 		array('name'=>'Dirigido a ','type'=>'html','id'=>'directed_to','value'=>'CHtml::encode($data->directed_to)'),
 		array('name'=>'Título de la publicación','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
 		array('name'=>'Dependencia responsable','type'=>'html','id'=>'responsible_agency','value'=>'CHtml::encode($data->responsible_agency)'),
-		array('name'=>'Nota periodistica','type'=>'html','id'=>'note','value'=>'CHtml::encode($data->note)'),
-
+		
 		/*
 		'id',
 		'id_curriculum',

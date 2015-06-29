@@ -2,7 +2,7 @@
 
   	class AccountController extends Controller{
 
-  	public $layout = '//layouts/system';
+  	public $layout = '//layouts/informativa';
 	private $currentemail ='';
 	private $currentpassword ='';
 	
@@ -75,12 +75,14 @@
 
 	public function actionActivateAccount($key){
 
+		
+	$this->layout='informativas';
 		$query = Users::model()->findByAttributes(array('act_react_key'=>$key));		
 
-
+		
 		if(!is_null($query)){
-			
-			if(Users::model()->updateByPk($query->id,array('status'=>'activo')))
+
+			if(Users::model()->updateByPk($query->id, array('activation_date'=>new CDbExpression('NOW()'))) && Users::model()->updateByPk($query->id, array('status'=>'activo')))
 				$result = "success";	
 			else
 				$result = "failure";
@@ -163,10 +165,13 @@
 		
 	public function actionSystemLog()
 		{
-			$model = new SystemLog('search');
-			$model->unsetAttributes(); 
-			if(isset($_GET['SystemLog']))
-				$model->attributes=$_GET['SystemLog'];
+		
+		
+			$this->layout='//layouts/system';
+			$model = new SystemLogUsers('search');
+			//$model->unsetAttributes(); 
+			//if(isset($_GET['SystemLog']))
+			//	$model->attributes=$_GET['SystemLog'];
 
 			$this->render('systemLog',array(
 				'model'=>$model,

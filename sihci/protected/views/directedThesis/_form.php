@@ -50,7 +50,7 @@
 
 	<div class="row">
 
-		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo de tesis dirigida')); ?>
+		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo / tesis dirigida')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 

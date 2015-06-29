@@ -15,7 +15,7 @@ $(document).ready(function() {
         $('.abortdiv').hide();
 
     });
-    $('.cleanbut').click(function() {
+    /*$('.cleanbut').click(function() {
         $('.cleandiv').hide();
         $('[id^=Addresses_]').val('');
         $('[id^=Sponsors_]').val('');
@@ -30,8 +30,17 @@ $(document).ready(function() {
         $('#cancelar').val('Cancelar');
         $('[id^= SponsorBilling]').val('');
 
-    });
-    
+    });*/
+/*
     $('.summary').remove();
-
+	$('.delete').click(function(e) {
+		var url = $('.delete').attr('href');
+		$('.deleter').click(function(){
+			window.location= url+'?'+'ajax=postdegree-graduates-grid';
+		});
+        e.preventDefault();
+        $('#myModal').modal('toggle');
+		return false;
+    });
+*/
 });

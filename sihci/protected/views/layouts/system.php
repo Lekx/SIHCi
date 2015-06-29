@@ -55,6 +55,7 @@
                                         })
                                         .on( 'focus', function() {
                                         $( this ).tooltipster( 'show' );
+										$('.errorMessage').hide();
                                     })
                                         .on( 'blur', function() {
                                         $( this ).tooltipster( 'hide' );
@@ -307,6 +308,26 @@
                     </div>
                 </div>
             </div>
+			
+	
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Eliminar <?=$ControllerB ?> </h4>
+      </div>
+      <div class="modal-body">
+		  ¿Estas Seguro de Eliminar Este Registro?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-default deleter">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
             <div class="successdiv">
                 <div class="backcontainer">
                     <div class="maincontainer">

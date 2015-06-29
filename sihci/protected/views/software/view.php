@@ -103,14 +103,14 @@ $this->menu=array(
 		'transfer_mechanism',
 		'hr_formation',
 		array(
-			'label'=>'Profesor',
+			'label'=>'¿Recibio apoyo económico?',
 			'name'=>'economic_support',
 			'value'=>$model->economic_support == 1 ? "Si" : "No",
 			),
 		array(
 			'label'=>'Archivo',
 			'type'=>'raw',
-			'value'=>CHtml::link('Ver archivo', Yii::app()->baseUrl.$model->path,array("target"=>"_blank")),
+			'value'=>$model->path != null ? CHtml::link('Ver archivo',Yii::app()->baseUrl.$model->path,array("target"=>"_blank")) : "No se ha subido el archivo",
 		),
 		/*'creation_date',
 		'economic_support',

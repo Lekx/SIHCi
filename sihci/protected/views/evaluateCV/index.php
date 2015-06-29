@@ -1,6 +1,10 @@
 
 
 <?php
+//var_dump($checkAuth);
+
+
+if($checkAuth){
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
@@ -62,9 +66,7 @@ $this->menu=array(
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
 
 	);
-
-
- ?>
+	?>
 
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
@@ -75,3 +77,18 @@ $this->menu=array(
 <h3>Informativo:</h3>
 <h5>¡FELICIDADES, ESTÁS A UN PASO DE FORMAR PARTE DE UNA GRAN INSTITUCIÓN!</h5>
 <p id="infojus">El OPD Hospital Civil de Guadalajara, Hospital Escuela de la Universidad de Guadalajara, CONVOCA a los médicos egresados de Escuelas, Facultades y Centros Universitarios Nacionales y Extranjeros que ofrecen la carrera de medicina y que aspiran a cursar un programa educativo de especialidad, subespecialidad médica y adiestramiento, a participar e inscribirse en el PROCESO DE SELECCIÓN A RESIDENCIAS MÉDICAS 2014 - 2015 en nuestra Institución.</p>
+
+<?php
+}else{
+	
+	?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div><br><br>
+<h3>Por favor llene primero su curriculum vitae único para poder continuar con el llenado de sus datos.</h3>
+<?php
+}
+
+ ?>

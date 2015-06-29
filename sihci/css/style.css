@@ -1128,7 +1128,7 @@ ul.cbp-hsmenu
  	z-index: 900;
 
 }
-.typecontent
+.typecontent 
 {
 	display: block;
 	margin-right: auto;
@@ -1141,7 +1141,36 @@ ul.cbp-hsmenu
 	z-index: 999;
 	
 }
-.typeicons h3 , .typeicons h4
+.typecontent2
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	width: 900px;
+	height: 525px;
+	font-family: 'Caviar_Dreams';
+	z-index: 999;
+}
+.backhome
+{
+	
+	width:500px;
+	height:50px;
+	background-color:#0E3152;
+	color: white;
+	margin: auto;
+	display: auto;
+	text-align: center;
+	padding-top: 5px;
+	margin-top: 100px;
+}
+.backhome:hover
+{
+	cursor: pointer;
+}
+.typeicons h3 , .typeicons h4 , .typeicons h1 
 {
 	color: white;
 	text-align: center;

@@ -58,25 +58,7 @@
 		<input id="research" type="text" name="nameResearch" title="Nombre de Investigación" placeholder="Nombre de Investigación">
 		<div id="errorResearch" class="errors"> No debe estar vacío</div>
 		</div>
-		 <?php echo CHtml::ajaxButton ('Crear Línea de Investigación',CController::createUrl('curriculumVitae/researchAreas'), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="200")
-		                         {
-				                     $(".successdiv").show(); 
-		                         }		                         
-		                         else
-		                         {
-			                     	   $(".successdiv").show();  
-			                     }       
-		                  	}',                    
-		                    
-                        ), array('id'=>'btnCreateResearch','class'=>'addSomething')); 
-        ?>
+		
 </div><!-- form -->
 
 	<?php 
@@ -111,7 +93,7 @@
 		                         }		                         
 		                         else
 		                         {
-			                     	$(".errordiv").show();    
+			                     	 $(".successdiv").show();   
 			                     }       
 		                  	}',                    
 		                    
