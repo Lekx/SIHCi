@@ -1,7 +1,12 @@
 
 <div class="form">
 
-<?php
+    <?php echo CHtml::htmlButton('Enviar',array(
+                'onclick'=>'javascript: send("","projectsReview/sendReview");',
+                'class'=>'savebutton',
+            ));
+
+
 
 $form=$this->beginWidget('CActiveForm', array(
     'id'=>'projects-followups-form',
@@ -19,10 +24,10 @@ $form=$this->beginWidget('CActiveForm', array(
         <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
         <?php echo $form->error($model,'url_doc'); ?>
     </div>
+
     <?php echo CHtml::htmlButton('Enviar',array(
                 'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'");',
-                'id'=> 'post-submit-btn',
-                'class'=>'post_submit',
+                'class'=>'savebutton',
             ));
     ?>
 <?php $this->endWidget(); ?>
