@@ -223,6 +223,9 @@
                         case 'languages':
                         $ControllerB = "Idiomas";
                         break;
+                        case 'charts':
+                        $ControllerB = "Estadisticas";
+                        break;
 
                         default:
                         $ControllerB = "None";
@@ -268,6 +271,21 @@
                           break;
                           case 'commission':
                           $action = "Nombramientos";
+                          break;
+                          case 'totalRegisteredResearchers':
+                          $action = "Investigadores registrados en el sistema";
+                          break;
+                          case 'projectsTotal':
+                          $action = "Proyectos registrados en el sistema";
+                          break;
+                          case 'booksTotal':
+                          $action = "Libros registrados en el sistema";
+                          break;
+                          case 'chaptersTotal':
+                          $action = "Capítulos de libros registrados en el sistema";
+                          break;
+                          case 'articlesGuides_':
+                          $action = "Aritculos y guías registrados en el sistema";
                           break;
 
                           default:

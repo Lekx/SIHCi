@@ -34,7 +34,7 @@ $this->menu=array(
 
     );
 ?>
-<div class="cvtitle">
+ <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
             <h1>Manejador de Archivos</h1>
             <hr>
