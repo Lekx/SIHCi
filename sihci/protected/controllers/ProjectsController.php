@@ -51,8 +51,11 @@ class ProjectsController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$followups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$id),array('order'=>'id DESC'));
+		$modelfollowup = new ProjectsFollowups;
+
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$this->loadModel($id), 'followups'=>$followups, 'modelfollowup'=>$modelfollowup
 		));
 	}
 
