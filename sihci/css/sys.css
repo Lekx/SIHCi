@@ -1798,7 +1798,7 @@ div.modal-footer
 
     width: 150px !important;
 }
-.grafiOpt
+.grafiOpt , .tableOpt
 {
     margin-top: 30px;
     margin-bottom: 30px;
