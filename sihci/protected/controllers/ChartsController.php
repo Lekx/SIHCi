@@ -49,10 +49,11 @@ class ChartsController extends Controller
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	
-/*
-	public function actionTotalRegisteredResearchers(){
-		$this->render('totalRegisteredResearchers');
-	}*/
+
+	public function actionIndex()
+	{
+		$this->actionTotalRegisteredResearchers();
+	}
 
 
 	//GR01-Total Ingreso de Investigadores 
@@ -209,6 +210,71 @@ class ChartsController extends Controller
 
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'projectsTotal',"years"=>$years));
+		}
+
+	}
+
+	//GR03-Total-Eficiencia
+public function actionEfficiencyTotal(){
+
+		$conexion = Yii::app()->db;
+
+		$year = $conexion->createCommand("
+		SELECT DISTINCT YEAR(creation_date) AS year FROM projects WHERE status = 'completado' ORDER BY creation_date DESC
+		")->queryAll();
+
+		$years = array();
+		$years["total"] = "Total";
+		foreach($year AS $index => $value)
+	        	$years[$value["year"]] = $value["year"];
+	        	
+
+		if(isset($_POST["years"])){
+			
+				$condHu = "";
+
+
+			if($_POST["years"] != "total")
+				$condYears = " AND YEAR(p.creation_date) ='".$_POST['years']."'";
+			else
+				$condYears = "";
+
+
+			$query = '
+				SELECT 
+				COUNT(IF(p.develop_uh="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(p.develop_uh="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(u.id) as totalUsers,
+				MONTH(p.creation_date) as months
+				FROM projects AS p 
+				LEFT JOIN curriculum AS c ON p.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = "fisico" AND u.status = "activo"
+				AND p.status = "completado"
+				'.$condYears.$condHu.'
+				GROUP BY months ORDER BY MONTH(p.creation_date) ASC
+			';
+			$results = $conexion->createCommand($query)->queryAll();
+
+			//print_r($results);
+
+			$months = array();
+			$jim = array();
+			$faa = array();
+			$other = array();
+			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			foreach($results AS $key => $value){
+				array_push($months, $mos[$value["months"]]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+			}
+
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+		}
+
+		if(!isset($_POST["years"])){
+			$this->render('index',array('action'=>'efficiencyTotal',"years"=>$years));
 		}
 
 	}
