@@ -150,12 +150,12 @@ class Persons extends CActiveRecord {
 	 }
 
 
-	protected function afterFind() {
+	/*protected function afterFind() {
 		$this->birth_date = DateTime::createFromFormat('Y-m-d', $this->birth_date)->format('d/m/Y');
 		return parent::afterFind();
 
-}
-	
+}*/
+
 
 
 

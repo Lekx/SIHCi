@@ -1,7 +1,7 @@
 
 
 <div class="form">
-	<?php Yii::app()->bootstrap->register(); 
+	<?php Yii::app()->bootstrap->register();
 Yii::app()->clientScript->registerCssFile(
 	Yii::app()->clientScript->getCoreScriptUrl().
 	'/jui/css/base/jquery-ui.css'
@@ -16,15 +16,14 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-	<p class="note">Los siguientes campos  <span class="required">*</span> son requeridos.</p>
-	<?php echo $form->errorSummary($model); ?>
+
 	<div class="row">
-    
-       
-			<label for="files">Seccion</label>
-			<select name="FilesManager[section]" id="FilesManager_section" >
-				  	<optgroup label="OPD HCG"> 
-				  		<option value=""> </option>
+
+
+<span class="plain-select">
+			<select name="FilesManager[section]" id="FilesManager_section" title="Sección" >
+				  	<optgroup label="OPD HCG">
+				  		<option value="">Seccíon </option>
 					   <option value="informationGeneralDirection">Dirección general</option>
 					   <option value="organigram">Organigrama</option>
 					   <option value="investigationNormative">Normatividad de investigación</option>
@@ -33,7 +32,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 					   <option value="hospitalUnitJimEthicsCommittee">Comités</option>
 					   <option value="locationMapOfOfficeSGEIOPD">Plano de ubicación SGEI OPD</option>
 
-					   
+
 				   </optgroup>
 				   <optgroup label="Comités">
 				   		<option value="hospitalUnitJimEthicsCommittee">Comités</option>
@@ -56,7 +55,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 				   		<option value="sponsoredProjects">Protocolos patrocinados por la industria Farmacéutica</option>
 				   		<option value="livingLabsSalud">Living Labs-Salud</option>
 				   </optgroup>
-					
+
 					 <optgroup label="HCG Fray Antonio Alcalde">
 				   		<option value="hospitalaUnitJIMSubdirectionOfEducationAndInvestigation">HCG Fray Antonio Alcalde</option>
 				   </optgroup>
@@ -95,25 +94,23 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 				   <optgroup label="Vinculación con universidades, institutos y hospitales">
 				   		<option value="vinculationWithUniversityInstitutesHospitals">Vinculación con universidades, institutos y hospitales</option>
 				   </optgroup>
-				
-				  
+
+
 				    <optgroup label="Revistas científicas">
 				   		<option value="scientificMagazines">Revistas científicas</option>
 				   </optgroup>
-				 
+
 			</select>
-   	
+</span>
       </div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'file_name'); ?>
 		<?php echo $form->textField($model,'file_name',array('size'=>50,'maxlength'=>50,'placeholder'=>"Nombre del documento",'title'=>'Nombre del documento',)); ?>
 		<?php echo $form->error($model,'file_name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'path'); ?>
-		<?php echo $form->fileField($model,'path'); ?>
+		<?php echo $form->fileField($model,'path', array('title'=>'Archivo')); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
@@ -124,7 +121,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		    'attribute' => 'start_date',
 		    'htmlOptions' => array(
 		    	    'dateFormat'=>'d/m/Y',
-		    		'size' => '10',         
+		    		'size' => '10',
 		    		'readOnly'=>true,
 		        	'placeholder'=>"Inicio de publicacion",
 		        	'title'=>'Inicio de publicacion',
@@ -141,7 +138,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		    'attribute' => 'end_date',
 		    'htmlOptions' => array(
 		    	    'dateFormat'=>'d/m/Y',
-		    		'size' => '10',         
+		    		'size' => '10',
 		    		'readOnly'=>true,
 		        	'placeholder'=>"Final de publicacion",
 		        	'title'=>'Final de publicacion',
@@ -155,7 +152,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		<!-- cambiar todo a español y este boton-->
 
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
-	
+
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
