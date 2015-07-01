@@ -103,7 +103,7 @@ chart = new Highcharts.Chart({
             data: data.jim
 
         }, {
-            name: 'No asignados',
+            name: 'Otros',
             data: data.other
 
         },]
