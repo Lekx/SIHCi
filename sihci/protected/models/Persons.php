@@ -155,11 +155,7 @@ class Persons extends CActiveRecord {
 		return parent::afterFind();
 
 }*/
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 945e5a4fd507b67c125c8f9d902ebe50fc8fa6b0
 
 
 

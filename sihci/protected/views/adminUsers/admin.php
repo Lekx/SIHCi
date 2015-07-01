@@ -35,32 +35,8 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
    
 });
 	}
-
-
-	function changeRol(id){
-		$.ajax({
-   url: yii.urls.base+"/index.php/adminUsers/changeRol",
-     data: {id: id,idRol: $("#"+id).val()},
-  dataType: 'json',
-   method: "POST",
-   success: function(data) {
-      alert(data);
-   },
-   
-});
-	}
 </script> 
-<?php 
-$roles = Roles::model()->FindAll();
-$rolesList="array(";
-foreach ($roles as $key => $value) {
-	$rolesList.= "\"".$value['id']."\"=>\"".$value["name"]."\",";
-}
-$rolesList.= ")";
 
-//echo $rolesList;
-
-?>
 <div class="admintitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/AdministracionSistema.png" alt="">
             <h1>Gestión de usuarios</h1>
@@ -89,6 +65,7 @@ $this->renderPartial('_search',array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'users-grid',
 	'dataProvider' => $model->search(),
+	//'filter'=>$model,
 	'columns' => array(
 		
 		'email',
@@ -100,14 +77,10 @@ $this->renderPartial('_search',array(
 			'value' => array($this, 'usersFullNames'), 'type' => 'raw',
 			'filter' => Chtml::activeTextField($model, 'names')
 		),
-			 array(
-		 	'type'=>'raw',
-		 	'header' => 'Rol',
-          	'value'=>'CHtml::dropDownList($data->id,$data->id_roles,'.$rolesList.',array("onchange"=>"changeRol($data->id)"))'),
-		/*array(
+		array(
 			'header' => '<b>Rol</b>',
 			'value' => '$data->idRoles->name',
-		),*/
+		),
 		array(
 			'header' => '<b>Curp/Pasaporte</b>',
 			'value' => array($this, 'usersCurpPassport'), 'type' => 'raw',

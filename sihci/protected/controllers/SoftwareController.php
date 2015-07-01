@@ -1,5 +1,4 @@
 <?php
-//include ("logoutTime.php");
 
 class SoftwareController extends Controller
 {
@@ -58,7 +57,9 @@ class SoftwareController extends Controller
 		$model=new Software;
 
 		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
-			//$model->id_curriculum = $id_curriculum->id; 	
+		
+		$end_date = Software::model()->findByAttributes(array('end_date'=>$model->end_date));
+		$model->id_curriculum = $id_curriculum->id; 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -67,10 +68,11 @@ class SoftwareController extends Controller
 			$model->attributes=$_POST['Software'];
 			$model->id_curriculum = $id_curriculum->id;                  
             
-    		$model->path = CUploadedFile::getInstanceByName($model,'path');
+    		if($model->end_date == null)
+    			$model->end_date ='00/00/0000';		
+				
+			$model->path = CUploadedFile::getInstanceByName('Software[path]');
 			
-			if($model->validate()==1)
-			{
 				if ($model->path != null)
              	{	           		
 				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/folderSoftware/';
@@ -94,18 +96,19 @@ class SoftwareController extends Controller
 						$details = "Subsección: Software";
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
-						echo CJSON::encode(array('status'=>'success'));
-	     				Yii::app()->end();
-					}
-			}
-			else
-			{
-				$error = CActiveForm::validate($modelfollowup);
-				if($error!='[]')
-					echo $error;
-
-				Yii::app()->end();
-	        }								    
+						if(!isset($_GET['ajax']))
+							$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+						
+					    /*echo CJSON::encode(array('status'=>'200'));
+					   	$this->redirect(array('admin'));
+				    	Yii::app()->end();*/
+				    }			    	
+				    /*else 
+			    	{
+			    		echo CJSON::encode(array('status'=>'404'));
+		                Yii::app()->end();
+			        }*/
+					    
 		}
 			
 		if(!isset($_POST['ajax']))

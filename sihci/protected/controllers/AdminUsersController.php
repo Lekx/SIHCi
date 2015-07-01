@@ -473,8 +473,6 @@ class AdminUsersController extends Controller {
 			echo "Error al actualizar el estado del usuario.";
 	}
 
-	
-
 	public function actionChangeStatusCurriculum(){
 		$idRefc = $_POST["idc"];
 		$valuec = $_POST["valuec"];
@@ -483,16 +481,6 @@ class AdminUsersController extends Controller {
 			echo "Actualizacion realizada con exito.";
 		else
 			echo "Error al actualizar el estado del usuario.";
-	}
-
-	public function actionChangeRol(){
-		$idRef = $_POST["id"];
-		$idRol = $_POST["idRol"];
-
-		if(Users::model()->updateByPk($idRef, array('id_roles' => $idRol)))
-			echo "Actualizacion realizada con exito.";
-		else
-			echo "Error al actualizar el rol del usuario.";
 	}
 
 	public function actionDoubleSession($id){
