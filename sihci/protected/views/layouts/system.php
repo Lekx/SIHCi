@@ -296,6 +296,24 @@
                           case 'projects':
                           $action = "Proyectos de Investigación";
                           break;
+                          case 'books':
+                          $action = "Libros";
+                          break;
+                          case 'chapters':
+                          $action = "Capítulo de Libros";
+                          break;
+                          case 'patents':
+                          $action = "Registro de propiedad intelectual patentes";
+                          break;
+                          case 'software':
+                          $action = "Registro de propiedad intelectual software";
+                          break;
+                          case 'copyrights':
+                          $action = "Registro de propiedad intelectual derechos de autor";
+                          break;
+                          case 'articlesGuides':
+                          $action = "Artículos y Guías";
+                          break;
 
                           default:
                           $action = " ";

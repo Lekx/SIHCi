@@ -89,7 +89,7 @@ function change(){
 
 <div class="tableOpt">
 	<div class="col-md-3">
-		<span class="plain-select2">
+		<span class="plain-select3">
 	<select id="valueResearchers" onchange="change()">
 	  <option value="total" selected="">Total de Investigadores</option>
 	  <option value="activo">Ingreso Investigadores</option>
@@ -98,7 +98,7 @@ function change(){
 </span>
 </div>
 	<div class="col-md-3">
-		<span class="plain-select2">
+		<span class="plain-select3">
 	<select id="valueResearchersSNI" onchange="change()">
 	  <option value="total">Total Investigadores SNI</option>
 	  <option value="SNI:">Investigadores con SNI</option>
@@ -108,7 +108,7 @@ function change(){
 	</span>
 	</div>
 	<div class="col-md-3">
-		<span class="plain-select2">
+		<span class="plain-select3">
 	<select id="valueHospital" onchange="change()">
 	  <option value="total" selected="">Total de Hospitales</option>
 	  <option >Hospital Civil Fray Antonio Alcalde</option>
@@ -119,7 +119,7 @@ function change(){
 </div>
 
 	<div class="col-md-3">
-		<span class="plain-select2">
+		<span class="plain-select3">
 	  <select id="valueYear" onchange="change()">
 	  <option value="total" selected="">Total de Años</option>
 	  <?php

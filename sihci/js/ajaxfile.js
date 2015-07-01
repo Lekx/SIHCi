@@ -1,6 +1,5 @@
 function send(form, actionUrl, id) {
   var formData = new FormData($("#" + form)[0]);
-  debugger
   $.ajax({
     url: yii.urls.createUrl + "/" + actionUrl + "/" + id,
     type: 'POST',

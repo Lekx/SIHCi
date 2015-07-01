@@ -19,11 +19,8 @@ $this->menu=array(
 
 ?>
 
-<h2>
-	<?php echo $titlePage ?>
-</h2>
 <script type="text/javascript">
-	
+
 function change(){
 	valueHospital = $("#valueHospital").val();
 	valueYear = $("#valueYear").val();
@@ -52,28 +49,42 @@ function change(){
  }
 
 </script>
-<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna"><br><br>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Estadisticas.svg" alt="">
+            <h1>Estadisticas</h1>
+            <hr>
+        </div>
+				<h3>
+					<?php echo $titlePage ?>
+				</h3>
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchcrud">
 
+<div class="tableOpt">
+	<div class="col-md-6">
+		<span class="plain-select3">
 <select id="valueHospital" onchange="change()">
-  <option value="total" selected="">Total de Hospitales</option>	
+  <option value="total" selected="">Total de Hospitales</option>
   <option >Hospital Civil Fray Antonio Alcalde</option>
   <option >Hospital Civil Dr. Juan I. Menchaca</option>
   <option>Otro</option>
 
 </select>
-  <br><br>
-
-
-  <select id="valueYear" onchange="change()">
-  <option value="total" selected="">Total de Años</option>	
-  <?php
-	foreach($year AS $index=> $value)
-		echo '<option value="'.$value["year"].'" >'.$value["year"].'</option>';
-  ?>
+</span>
+</div>
+<div class="col-md-6">
+			<span class="plain-select3">
+<select id="valueYear" onchange="change()">
+<option value="total" selected="">Total de Años</option>
+<?php
+foreach($year AS $index=> $value)
+	echo '<option value="'.$value["year"].'" >'.$value["year"].'</option>';
+?>
 
 </select>
-  <br><br>
-<?php 
+</span>
+</div>
+</div>
+<?php
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-grid',
@@ -107,4 +118,3 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 ),
    	),
 )); ?>
-
