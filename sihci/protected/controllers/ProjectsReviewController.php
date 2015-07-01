@@ -32,7 +32,7 @@ class ProjectsReviewController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review'),
+				'actions'=>array('create','update','admin','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review','sendReview'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -68,7 +68,7 @@ class ProjectsReviewController extends Controller
 
 		$conection = Yii::app()->db;
 
-		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".$role."' GROUP BY(p.title)")->queryAll();
+		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".$role."' GROUP BY p.title")->queryAll();
 
 		//$pProjects = Projects::model()->findAllByAttributes(array("status"=>$role));
 		$pendingProjects ="";
@@ -114,16 +114,12 @@ class ProjectsReviewController extends Controller
 
 		$modelfollowup = new ProjectsFollowups;
 
-
-
-        // Uncomment the following line if AJAX validation is needed
          $this->performAjaxValidation($modelfollowup);
-         
-         //var_dump($_POST);
+
 
         if(isset($_POST['ProjectsFollowups']))
         {
-        	//echo "entered";
+
 			$modelfollowup->unsetAttributes(); 
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
 
@@ -138,7 +134,7 @@ class ProjectsReviewController extends Controller
 	                if(!is_dir($path))
 	                	mkdir($path, 0777, true);
 
-	            	$url_doc = $path.'/'.date('Y-m-d H:i').'ArchivoComentarioPor_'.$modelfollowup->id.'.'.$modelfollowup->url_doc->getExtensionName();
+	            	$url_doc = $path.'/'.date('Y-m-d_H-i').'Archivo.'.$modelfollowup->url_doc->getExtensionName();
 					$modelfollowup->url_doc->saveAs($url_doc);
 
 				    $modelfollowup->url_doc = $url_doc;
@@ -163,6 +159,31 @@ class ProjectsReviewController extends Controller
 		));
 	}
 
+	public function actionSendReview($id)
+	{
+		//$res = Projects::model()->updateByPk($id,array('status'=>'asdfasdfasdf cabron que sss'));
+		
+
+		$conexion = Yii::app()->db;
+
+		$res = $conexion->createCommand("UPDATE projects SET status = 'esoss xxxx' WHERE id =".$id)->execute();
+		//	echo $res;
+		if( $res == 1){
+						$followup = new ProjectsFollowups;
+						$followup->id_project = $id;
+						$followup->id_user = Yii::app()->user->id;
+						$followup->followup = "Proyecto enviado a revisión del otro wey.";
+
+						if($followup->save()){
+			     			echo CJSON::encode(array('status'=>'success','message'=>'Aprobación realizada con éxito','subMessage'=>'Se ha asignado a la siguiente persona este proyecto'));
+							//$this->redirect(array('admin'));
+						}else{
+							echo "no se guardo el followup - ".$followup->id_project." - ".$followup->id_user." - ".$followup->followup." - ".$followup->creation_date;
+						}
+					}else
+						echo "erro al actualizar la tabla de proyectos ".$res;
+				Yii::app()->end();
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
