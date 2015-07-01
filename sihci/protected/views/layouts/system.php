@@ -226,6 +226,9 @@
                         case 'charts':
                         $ControllerB = "Estadisticas";
                         break;
+                        case 'tables':
+                        $ControllerB = "Estadisticas";
+                        break;
 
                         default:
                         $ControllerB = "None";
@@ -286,6 +289,12 @@
                           break;
                           case 'articlesGuides_':
                           $action = "Aritculos y guías registrados en el sistema";
+                          break;
+                          case 'researchers':
+                          $action = "Cantidad de Investigadores";
+                          break;
+                          case 'projects':
+                          $action = "Proyectos de Investigación";
                           break;
 
                           default:
