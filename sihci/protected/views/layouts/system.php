@@ -32,6 +32,7 @@
                     $cs->registerScriptFile($baseUrl . '/js/file.js');
                     $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
                     $cs->registerScriptFile($baseUrl . '/js/evaluateCV.js');
+                    $cs->registerScriptFile($baseUrl . '/js/ajaxfile.js');
         ?>
         <?php
                     Yii::app()->clientScript->registerScript('helpers', '
@@ -41,6 +42,8 @@
                             searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
                             base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
                             back: ' . CJSON::encode(Yii::app()->baseUrl.'/index.php'.'/'.$this->uniqueid.'/admin') . ',
+                            createUrl: ' . CJSON::encode(Yii::app()->createUrl('')) . ',
+                            sendfile: ' . CJSON::encode(Yii::app()->createUrl('',array('id'=>(isset($_GET['id']) ? $_GET['id'] : 0)))) . ',
                         }
                     }',CClientScript::POS_HEAD);
         ?>
@@ -220,6 +223,12 @@
                         case 'languages':
                         $ControllerB = "Idiomas";
                         break;
+                        case 'charts':
+                        $ControllerB = "Estadisticas";
+                        break;
+                        case 'tables':
+                        $ControllerB = "Estadisticas";
+                        break;
 
                         default:
                         $ControllerB = "None";
@@ -266,6 +275,27 @@
                           case 'commission':
                           $action = "Nombramientos";
                           break;
+                          case 'totalRegisteredResearchers':
+                          $action = "Investigadores registrados en el sistema";
+                          break;
+                          case 'projectsTotal':
+                          $action = "Proyectos registrados en el sistema";
+                          break;
+                          case 'booksTotal':
+                          $action = "Libros registrados en el sistema";
+                          break;
+                          case 'chaptersTotal':
+                          $action = "Capítulos de libros registrados en el sistema";
+                          break;
+                          case 'articlesGuides_':
+                          $action = "Aritculos y guías registrados en el sistema";
+                          break;
+                          case 'researchers':
+                          $action = "Cantidad de Investigadores";
+                          break;
+                          case 'projects':
+                          $action = "Proyectos de Investigación";
+                          break;
 
                           default:
                           $action = " ";
@@ -308,26 +338,23 @@
                     </div>
                 </div>
             </div>
-			
-	
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Eliminar <?=$ControllerB ?> </h4>
-      </div>
-      <div class="modal-body">
-		  ¿Estas Seguro de Eliminar Este Registro?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-default deleter">Eliminar</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cance <?=$ControllerB ?> </h4>
+                  </div>
+                  <div class="modal-body">
+            		  ¿Estas Seguro de Cancelar Este Registro?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No, quedarme donde estoy</button>
+                    <button type="button" class="btn btn-default deleter">Si</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="successdiv">
                 <div class="backcontainer">
                     <div class="maincontainer">
