@@ -19,18 +19,12 @@ $this->menu=array(
 
 ?>
 
-<div class="cvtitle">
-            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Estadisticas.svg" alt="">
-            <h1>Estadisticas</h1>
-            <hr>
-        </div>
-
-<h3>
+<h2>
 	<?php echo $titlePage ?>
-</h3>
+</h2>
 
 <script type="text/javascript">
-
+	
 function change(){
 	valueProjects = $("#valueProjects").val();
 	valueHospital = $("#valueHospital").val();
@@ -68,45 +62,34 @@ function change(){
  	}
  }
 </script>
-<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchcrud">
-<div class="tableOpt">
-	<div class="col-md-4">
-		<span class="plain-select2">
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna"><br><br>
 <select id="valueProjects" onchange="change()">
-  <option value="total" selected="">Total de Proyectos</option>
+  <option value="total" selected="">Total de Proyectos</option>	
   <option value="En proceso">Proyectos en proceso</option>
   <option value="borrador">Proyectos en borrador</option>
   <option value="dictaminado">Proyectos Concluidos</option>
   <option value="rechazado">Proyectos Rechazados</option>
   <option value="revisión divuh">Proyectos de Revisión DivUH</option>
 </select>
-</span>
-</div>
+<br><br>
 
-<div class="col-md-4">
-	<span class="plain-select2">
 <select id="valueHospital" onchange="change()">
-  <option value="total" selected="">Total de Hospitales</option>
+  <option value="total" selected="">Total de Hospitales</option>	
   <option >Hospital Civil Fray Antonio Alcalde</option>
   <option >Hospital Civil Dr. Juan I. Menchaca</option>
 </select>
-</span>
-</div>
+  <br><br>
 
-<div class="col-md-4">
-	<span class="plain-select2">
   <select id="valueYear" onchange="change()">
-  <option value="total" selected="">Total de Años</option>
+  <option value="total" selected="">Total de Años</option>	
   <?php
 	foreach($year AS $index=> $value)
 		echo '<option value="'.$value["year"].'" >'.$value["year"].'</option>';
   ?>
 
 </select>
-</span>
-</div>
-</div>
-<?php
+  <br><br>
+<?php 
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
@@ -141,3 +124,4 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 ),
    	),
 )); ?>
+
