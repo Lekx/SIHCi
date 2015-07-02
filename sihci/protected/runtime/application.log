@@ -4790,3 +4790,569 @@ Stack trace:
 REQUEST_URI=/~Saul/sihci/sihci/index.php/projectsReview/view/id/14
 HTTP_REFERER=http://localhost/~Saul/sihci/sihci/index.php/projectsReview
 ---
+2015/07/02 10:41:24 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/mayelgonzalez/Sites/SIHCi/sihci/assets" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php:138
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/Users/mayelgon...')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
+#2 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(216): CAssetManager->publish('/Users/mayelgon...', false, -1, false)
+#3 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(52): TbApi->getAssetsUrl()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(93): TbApi->registerCoreCss()
+#5 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(138): TbApi->registerAllCss()
+#6 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/views/layouts/informativas.php(54): TbApi->register()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/Users/mayelgon...')
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/mayelgon...', Array, true)
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(784): CBaseController->renderFile('/Users/mayelgon...', Array, true)
+#10 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SiteController.php(30): CController->render('index')
+#11 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#16 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#17 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php
+---
+2015/07/02 10:41:27 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/mayelgonzalez/Sites/SIHCi/sihci/assets" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php:138
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/Users/mayelgon...')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
+#2 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(216): CAssetManager->publish('/Users/mayelgon...', false, -1, false)
+#3 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(52): TbApi->getAssetsUrl()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(93): TbApi->registerCoreCss()
+#5 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(138): TbApi->registerAllCss()
+#6 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/views/layouts/informativas.php(54): TbApi->register()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/Users/mayelgon...')
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/mayelgon...', Array, true)
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(784): CBaseController->renderFile('/Users/mayelgon...', Array, true)
+#10 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SiteController.php(30): CController->render('index')
+#11 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#16 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#17 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php
+---
+2015/07/02 10:41:57 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/mayelgonzalez/Sites/SIHCi/sihci/assets" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php:138
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/Users/mayelgon...')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
+#2 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(216): CAssetManager->publish('/Users/mayelgon...', false, -1, false)
+#3 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(52): TbApi->getAssetsUrl()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(93): TbApi->registerCoreCss()
+#5 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(138): TbApi->registerAllCss()
+#6 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/views/layouts/informativas.php(54): TbApi->register()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/Users/mayelgon...')
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/mayelgon...', Array, true)
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(784): CBaseController->renderFile('/Users/mayelgon...', Array, true)
+#10 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SiteController.php(30): CController->render('index')
+#11 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#16 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#17 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php
+---
+2015/07/02 10:41:58 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/mayelgonzalez/Sites/SIHCi/sihci/assets" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php:138
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php(123): CAssetManager->setBasePath('/Users/mayelgon...')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CAssetManager.php(217): CAssetManager->getBasePath()
+#2 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(216): CAssetManager->publish('/Users/mayelgon...', false, -1, false)
+#3 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(52): TbApi->getAssetsUrl()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(93): TbApi->registerCoreCss()
+#5 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/extensions/bootstrap/components/TbApi.php(138): TbApi->registerAllCss()
+#6 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/views/layouts/informativas.php(54): TbApi->register()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/Users/mayelgon...')
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/mayelgon...', Array, true)
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(784): CBaseController->renderFile('/Users/mayelgon...', Array, true)
+#10 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SiteController.php(30): CController->render('index')
+#11 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#16 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#17 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php
+---
+2015/07/02 10:44:00 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 10:44:00 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:47:10 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:47:10 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:48:06 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:48:06 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:49:04 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:49:04 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:52:05 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:52:05 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:53:15 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:53:15 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:54:14 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:54:14 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:55:17 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:55:17 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:56:05 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:56:05 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:56:52 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:56:52 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:56:58 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:56:58 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:57:31 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 11:57:31 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 12:45:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "view" solicitada.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/16
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/admin
+---
+2015/07/02 12:45:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "view" solicitada.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/13
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/admin
+---
+2015/07/02 12:45:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "update" solicitada.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('update')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/update/13
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/admin
+---
+2015/07/02 12:46:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "view" solicitada.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/view/id/34
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/admin
+---
+2015/07/02 12:48:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('personalData')
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculumVitae...')
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/curriculumVitae/personalData
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/account/infoAccount
+---
+2015/07/02 12:48:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('personalData')
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculumVitae...')
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/curriculumVitae/personalData
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/account/infoAccount
+---
+2015/07/02 12:49:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('personalData')
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculumVitae...')
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/curriculumVitae/personalData
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/account/infoAccount
+---
+2015/07/02 12:51:40 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (86)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 12:51:41 [error] [php] mkdir(): Permission denied (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:111)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (111)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 13:02:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "view" solicitada.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/13
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/admin
+---
+2015/07/02 13:02:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "update" solicitada.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('update')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/update/14
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/admin
+---
+2015/07/02 13:03:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "delete" solicitada.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('delete')
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('delete')
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/delete/13?ajax=projects-grid
+HTTP_REFERER=http://localhost/~mayelgonzalez/SIHCi/sihci/index.php/projectsReview/admin
+---
+2015/07/02 13:04:52 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebUser"."type" no se encuentra definida.' in /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/auth/CWebUser.php(146): CComponent->__get('type')
+#1 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/views/layouts/system.php(82): CWebUser->__get('type')
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/Users/mayelgon...')
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/mayelgon...', Array, true)
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(784): CBaseController->renderFile('/Users/mayelgon...', Array, true)
+#5 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/AdminUsersController.php(436): CController->render('admin', Array)
+#6 /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/AdminUsersController.php(421): AdminUsersController->actionAdminUsers()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(49): AdminUsersController->actionIndex()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#15 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('')
+#17 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('adminUsers')
+#18 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#20 {main}
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/adminUsers
+---
+2015/07/02 13:28:40 [error] [php] Missing argument 2 for AccountController::checkEmail(), called in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/AccountController.php on line 109 and defined (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/AccountController.php:9)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(286): AccountController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): AccountController->runActionWithFilters()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): AccountController->run()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/account/updateEmail
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/AccountController.php (9)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/AccountController.php (109)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 13:54:07 [error] [php] mkdir(): Permission denied (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:111)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo/0
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (111)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 13:54:47 [error] [php] mkdir(): Permission denied (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:111)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo/0
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (111)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 13:55:13 [error] [php] mkdir(): Permission denied (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:111)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo/0
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (111)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 13:55:14 [error] [php] mkdir(): Permission denied (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:111)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo/0
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (111)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 13:55:14 [error] [php] mkdir(): Permission denied (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:111)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo/0
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (111)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 13:55:14 [error] [php] mkdir(): Permission denied (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:111)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo/0
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (111)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 13:55:55 [error] [php] mkdir(): Permission denied (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:111)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo/0
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (111)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:08:52 [warning] [application] Error al establecer unsafe al atributo "photo_url" de "Persons".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (146)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:15:45 [error] [php] Undefined variable: error2 (/Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php:145)
+Stack trace:
+#0 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): SponsorsController->runAction()
+#1 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): SponsorsController->filterAccessControl()
+#4 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): SponsorsController->runActionWithFilters()
+#7 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): SponsorsController->run()
+#8 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/mayelgonzalez/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php(19): CWebApplication->run()
+REQUEST_URI=/~mayelgonzalez/SIHCi/sihci/index.php/sponsors/sponsorsInfo/0
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (145)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:16:14 [warning] [application] Error al establecer unsafe al atributo "photo_url" de "Persons".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (146)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:17:20 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (634)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (82)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:17:22 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (634)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (82)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:17:24 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (634)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (82)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:17:29 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (634)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (82)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:17:35 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (86)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:17:35 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (144)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:17:35 [warning] [application] Error al establecer unsafe al atributo "photo_url" de "Persons".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (146)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:35:58 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (634)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (82)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:35:59 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (634)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (82)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:35:59 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (634)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (82)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:36:01 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (86)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:36:01 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (144)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:36:01 [warning] [application] Error al establecer unsafe al atributo "photo_url" de "Persons".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (146)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:36:01 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (634)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (82)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:36:06 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (86)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:36:06 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (144)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:36:06 [warning] [application] Error al establecer unsafe al atributo "photo_url" de "Persons".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (146)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:40:48 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (86)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:40:48 [warning] [application] Error al establecer unsafe al atributo "clase" de "Sponsors".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (144)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:40:48 [warning] [application] Error al establecer unsafe al atributo "photo_url" de "Persons".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (146)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 14:42:48 [warning] [application] Error al establecer unsafe al atributo "photo_url" de "Persons".
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/protected/controllers/SponsorsController.php (146)
+in /Users/mayelgonzalez/Sites/SIHCi/sihci/index.php (19)
