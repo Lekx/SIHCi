@@ -1,3 +1,4 @@
+
 function send(form, actionUrl, id, redirectUrl, extras) {
   var formData;
   if(form != '')
