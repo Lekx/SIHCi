@@ -74,7 +74,7 @@ class ProjectsController extends Controller
 		{
 			$model->attributes=$_POST['Projects'];
 
-			if(Yii::app()->user->id_roles==13){
+			if(Yii::app()->user->Rol->id==13){
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
 			}else{
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;

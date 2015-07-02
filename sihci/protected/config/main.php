@@ -60,11 +60,11 @@ return array(
             'class' => 'bootstrap.components.TbApi',   
         ),
         
-           'yiiwheels' => array(
+        'yiiwheels' => array(
             'class' => 'yiiwheels.YiiWheels',   
         ),
 
-		
+
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
