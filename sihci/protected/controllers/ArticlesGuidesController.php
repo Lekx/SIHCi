@@ -76,13 +76,14 @@ class ArticlesGuidesController extends Controller
 			$model->attributes=$_POST['ArticlesGuides'];
 			$model->id_resume = $id_resume->id;   
 
-	        $model->url_document = CUploadedFile::getInstanceByName('ArticlesGuides[url_document]');
-
-			if($model->validate())
+	        $model->url_document = CUploadedFile::getInstance($model,'url_document');
+            
+			if($model->validate()==1)
             {
+            	
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/';
 
-               	if ($model->url_document != null)
+               	if ($model->url_document !="")
                	{
 	                if(!is_dir($path))
 	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/', 0777, true);
@@ -113,19 +114,13 @@ class ArticlesGuidesController extends Controller
 		              	    $section = "Artículos y Guías"; 
 		     				$action = "Creación";
 							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
-		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		     			
-		              	if(!isset($_GET['ajax']))
-                              $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);		     		
 
+				       		echo CJSON::encode(array('status'=>'success'));
+				     		Yii::app()->end();
+						
 		               }
-		               else
-		               {
-		               		echo CJSON::encode(array('status'=>'404'));
-                            Yii::app()->end();
-		               }
-		                  
-			          
+		                                 
 			    }
 			    else 
 			    {
@@ -152,17 +147,20 @@ class ArticlesGuidesController extends Controller
 							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
-	               	  	if(!isset($_GET['ajax']))
-                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	               	  		echo CJSON::encode(array('status'=>'success'));
+				     		Yii::app()->end();
 
                     } 		                      
-		            else 
-		            {
-		            	echo CJSON::encode(array('status'=>'404'));
-	                    Yii::app()->end();
-		            }
 		        }    
 	        }// if validate
+	        else
+	        {
+	          		$error = CActiveForm::validate($model);
+					if($error!='[]')
+						echo $error;
+   				   
+   				   Yii::app()->end();		         
+	        }
 	    }//	ArticlesGuides	   
         	
    		if(!isset($_POST['ajax']))
@@ -188,8 +186,10 @@ class ArticlesGuidesController extends Controller
         {
 	            $model->attributes=$_POST['ArticlesGuides'];
 	            $model->url_document = CUploadedFile::getInstanceByName('ArticlesGuides[url_document]');
-	
-           		if ($model->url_document != null)
+
+			if($model->validate()==1)
+			{	
+           		if ($model->url_document != "")
                 {
 
                     if(!empty($oldUrlDocument))
@@ -240,14 +240,18 @@ class ArticlesGuidesController extends Controller
 						$details = "Número Registro: ".$model->id;
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		     			
-           	 		  	if(!isset($_GET['ajax']))
-                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+           	 		  	echo CJSON::encode(array('status'=>'success'));
+				     	Yii::app()->end();
                 	} 
-                	/*else 
-                	{
-                		echo CJSON::encode(array('status'=>'404'));
-                        Yii::app()->end();
-                	} */          
+             }
+             else 
+             {
+        		$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+				   
+				Yii::app()->end();
+             }           
             
         }
         	
