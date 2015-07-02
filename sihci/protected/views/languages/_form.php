@@ -205,8 +205,8 @@
 
 
 	<div class="row buttons">
- <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?> 
-<!--  	  <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('languages/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
+      <!--   <?php /* echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?> 
+  	  <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('languages/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
@@ -224,8 +224,14 @@
 			                     }       
 		                  	}',                    
 		                    
-                        ),array('class'=>'savebutton')); 
+                        ),array('class'=>'savebutton')); */
         ?> --> 
+        <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
+                'onclick'=>'send("languages-form", "languages/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","");',
+                 //'id'=> 'post-submit-btn', 
+                'class'=>'savebutton',
+            ));
+   		 ?>
        	<?php echo CHtml::Button('Cancelar',array('submit' => array('languages/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 

@@ -63,8 +63,8 @@ class Software extends CActiveRecord
 			array('sector, organization, second_level, path', 'length', 'max'=>100),    
 			array('searchValue','length', 'max'=>70),
 			array('end_date, resumen, objective, contribution, impact_value, innovation_trascen, transfer_mechanism, hr_formation, creation_date', 'safe'),
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png','allowEmpty' => true),
-   			array('path', 'safe', 'on'=>'update'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

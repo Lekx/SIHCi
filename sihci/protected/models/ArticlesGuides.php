@@ -62,11 +62,10 @@ class ArticlesGuides extends CActiveRecord
 			array('type', 'length', 'max'=>15),
 			array('searchValue','length','max'=>70),   		
 			array('url_document', 'length', 'max'=>100),
-			
-			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png','allowEmpty' => true),
-			array('url_document', 'safe', 'on'=>'update'),
-			
+			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			array('end_page','compare', 'compareAttribute'=>'start_page','operator'=>'>=','message'=>'Página final no puede ser menor a la página inicial'),
+			//array('url_document', 'safe', 'on'=>'update'),		
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_resume, isbn,title, editorial, edicion, publishing_year, volumen, volumen_no, start_page, end_page, article_type, copies_issued, magazine, area, discipline, subdiscipline, url_document, keywords, type, creation_date,searchValue', 'safe', 'on'=>'search'),
