@@ -1,19 +1,33 @@
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Estadisticas.svg" alt="">
+            <h1>Estadisticas</h1>
+            <hr>
+        </div>
+        <h3>Total de capítulos de libros</h3>
 <div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
-<!--Unidad Hospitalaria 
-<?php  //echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
-Año de reporte 
-<?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
-<!--¿Perteneciente al SNI?
-<?php// echo CHtml::dropDownList('sni', '',array("total"=>"Total","no"=>"no","yes"=>"si"),array('onchange'=>'loadChart()')); ?><br/>
-Tipo de reporte 
-<?php// echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>-->
 
+<div class="grafiOpt">
+  <div class="col-md">Año del reporte</div>
+</div>
+<div class="grafiOpt">
+  <!--Unidad Hospitalaria
+  <?php  //echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
+    <div class="col-md">
+            <span class="plain-select2">
+  <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?>
+</span>
+    </div>
+  <!--¿Perteneciente al SNI?
+  <?php// echo CHtml::dropDownList('sni', '',array("total"=>"Total","no"=>"no","yes"=>"si"),array('onchange'=>'loadChart()')); ?><br/>
+  Tipo de reporte
+  <?php// echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>-->
+</div>
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <!-- <input type="button" value="puto" onclick="loadChart()"> -->
 <script>
-//jQuery.noConflict(); 
+//jQuery.noConflict();
 var chart;
 function loadChart(){
 var request = $.ajax({
@@ -81,7 +95,7 @@ chart = new Highcharts.Chart({
             useHTML: true
         },
        tooltip: {
-    
+
         },
         plotOptions: {
             column: {
@@ -110,7 +124,7 @@ chart = new Highcharts.Chart({
     });
 
 });
- 
+
 request.fail(function( jqXHR, textStatus ) {
   alert( "Request failed: " + textStatus );
 });
@@ -123,6 +137,3 @@ $(document).ready(function(){
 
 
 </script>
-
-
-

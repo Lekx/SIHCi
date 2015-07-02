@@ -223,6 +223,12 @@
                         case 'languages':
                         $ControllerB = "Idiomas";
                         break;
+                        case 'charts':
+                        $ControllerB = "Estadisticas";
+                        break;
+                        case 'tables':
+                        $ControllerB = "Estadisticas";
+                        break;
 
                         default:
                         $ControllerB = "None";
@@ -268,6 +274,45 @@
                           break;
                           case 'commission':
                           $action = "Nombramientos";
+                          break;
+                          case 'totalRegisteredResearchers':
+                          $action = "Investigadores registrados en el sistema";
+                          break;
+                          case 'projectsTotal':
+                          $action = "Proyectos registrados en el sistema";
+                          break;
+                          case 'booksTotal':
+                          $action = "Libros registrados en el sistema";
+                          break;
+                          case 'chaptersTotal':
+                          $action = "Capítulos de libros registrados en el sistema";
+                          break;
+                          case 'articlesGuides_':
+                          $action = "Aritculos y guías registrados en el sistema";
+                          break;
+                          case 'researchers':
+                          $action = "Cantidad de Investigadores";
+                          break;
+                          case 'projects':
+                          $action = "Proyectos de Investigación";
+                          break;
+                          case 'books':
+                          $action = "Libros";
+                          break;
+                          case 'chapters':
+                          $action = "Capítulo de Libros";
+                          break;
+                          case 'patents':
+                          $action = "Registro de propiedad intelectual patentes";
+                          break;
+                          case 'software':
+                          $action = "Registro de propiedad intelectual software";
+                          break;
+                          case 'copyrights':
+                          $action = "Registro de propiedad intelectual derechos de autor";
+                          break;
+                          case 'articlesGuides':
+                          $action = "Artículos y Guías";
                           break;
 
                           default:

@@ -77,7 +77,8 @@ select
 
     width: 12%;
     height: 145px;
-    background-image: url("../img/user.svg");
+
+    background-image: url('../img/user.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 115% 115%;
@@ -1022,6 +1023,85 @@ thead th
 
     vertical-align: middle;
 }
+.plain-select2
+{
+  position: relative;
+
+  display: inline-block;
+
+  width: 150px;
+
+  vertical-align: middle;
+}
+.plain-select3
+{
+  position: relative;
+
+  display: inline-block;
+
+  width: 200px;
+
+  vertical-align: middle;
+}
+.plain-select3 select
+{
+
+  font-family: 'Caviar_Dreams_Bold';
+  line-height: normal;
+  line-height: normal;
+
+  display: block;
+
+  width: 100%;
+  height: 25px;
+  margin: 0;
+  padding: 3px 18px 4px 6px;
+
+  color: #0e3152;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+          border-radius: 4px;
+          border-radius: 4px;
+  background-color: #cdf1f3;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+          appearance: none;
+      -ms-border-radius: 4px;
+       -o-border-radius: 4px;
+}
+.plain-select2 select
+{
+
+  font-family: 'Caviar_Dreams_Bold';
+  line-height: normal;
+  line-height: normal;
+
+  display: block;
+
+  width: 150px;
+  width: 100%;
+  height: 25px;
+  margin: 0;
+  padding: 3px 18px 4px 6px;
+
+  color: #0e3152;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+          border-radius: 4px;
+          border-radius: 4px;
+  background-color: #cdf1f3;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+          appearance: none;
+      -ms-border-radius: 4px;
+       -o-border-radius: 4px;
+}
 .plain-select select,
 .plain-select1 select
 {
@@ -1061,6 +1141,42 @@ thead th
     display: none;
 }
 .plain-select:after
+{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 9px;
+
+    width: 0;
+    height: 0;
+    margin-top: -3px;
+
+    content: '';
+    pointer-events: none;
+
+    border-top: 6px solid #0e3152;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+.plain-select2:after
+{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 9px;
+
+    width: 0;
+    height: 0;
+    margin-top: -3px;
+
+    content: '';
+    pointer-events: none;
+
+    border-top: 6px solid #0e3152;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+.plain-select3:after
 {
     position: absolute;
     z-index: 2;
@@ -1605,7 +1721,7 @@ li.menulis.now
 
     width: 70%;
     margin: 0;
-    padding-left: 0px;
+    padding-left: 0;
 
     text-align: center;
 }
@@ -1695,36 +1811,58 @@ ul.yiiPager a:hover,
 }
 #myModal
 {
-	border: 0 !important;
-	width: 610px;
-	background-color: transparent !important;
--webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    width: 610px;
+
+    border: 0 !important;
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,.75);
+       -moz-box-shadow: 0 0 0 0 rgba(0,0,0,.75);
+            box-shadow: 0 0 0 0 rgba(0,0,0,.75);
 }
 div.modal-content
 {
-	text-align: center;
-	width: 400px;
-	margin: auto;
-	display: block;
-	border:0;
-	border-radius: 0;
+    display: block;
+
+    width: 400px;
+    margin: auto;
+
+    text-align: center;
+
+    border: 0;
+    border-radius: 0;
 }
 div.modal-body
 {
-	height: 100px;
-	border:0;
-	border-radius: 0;
+    height: 100px;
+
+    border: 0;
+    border-radius: 0;
 }
 div.modal-footer
 {
-	background-color: #0A324F;
-	border:0;
-	border-radius: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: #0a324f;
 }
-#deleteRegis , #deleteRegis:hover
+#deleteRegis,
+#deleteRegis:hover
 {
-	color: #0A324F;
-	text-decoration: none;
+    text-decoration: none;
+
+    color: #0a324f;
+}
+.dropinline
+{
+    display: inline-block !important;
+
+    width: 150px !important;
+}
+.grafiOpt, .tableOpt
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    padding-bottom: 10px;
+
+    text-align: center;
 }

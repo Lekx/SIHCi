@@ -19,12 +19,18 @@ $this->menu=array(
 
 ?>
 
-<h2>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Estadisticas.svg" alt="">
+            <h1>Estadisticas</h1>
+            <hr>
+        </div>
+
+<h3>
 	<?php echo $titlePage ?>
-</h2>
+</h3>
 
 <script type="text/javascript">
-	
+
 function change(){
 	valueResearchers = $("#valueResearchers").val();
 	valueResearchersSNI = $("#valueResearchersSNI").val();
@@ -79,41 +85,54 @@ function change(){
  }
 
 </script>
-<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna"><br><br>
-<select id="valueResearchers" onchange="change()">
-  <option value="total" selected="">Total de Investigadores</option>	
-  <option value="activo">Ingreso Investigadores</option>
-  <option value="inhabilitado">Baja Investigadores</option>
-</select>
-<br><br>
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchcrud">
 
-<select id="valueResearchersSNI" onchange="change()"> 
-  <option value="total">Total Investigadores SNI</option> 
-  <option value="SNI:">Investigadores con SNI</option>
-  <option value="N/A">Investigadores sin SNI</option>
+<div class="tableOpt">
+	<div class="col-md-3">
+		<span class="plain-select3">
+	<select id="valueResearchers" onchange="change()">
+	  <option value="total" selected="">Total de Investigadores</option>
+	  <option value="activo">Ingreso Investigadores</option>
+	  <option value="inhabilitado">Baja Investigadores</option>
+	</select>
+</span>
+</div>
+	<div class="col-md-3">
+		<span class="plain-select3">
+	<select id="valueResearchersSNI" onchange="change()">
+	  <option value="total">Total Investigadores SNI</option>
+	  <option value="SNI:">Investigadores con SNI</option>
+	  <option value="N/A">Investigadores sin SNI</option>
 
-</select>
-<br><br>
+	</select>
+	</span>
+	</div>
+	<div class="col-md-3">
+		<span class="plain-select3">
+	<select id="valueHospital" onchange="change()">
+	  <option value="total" selected="">Total de Hospitales</option>
+	  <option >Hospital Civil Fray Antonio Alcalde</option>
+	  <option >Hospital Civil Dr. Juan I. Menchaca</option>
+	  <option >Otro</option>
+	</select>
+	</span>
+</div>
 
-<select id="valueHospital" onchange="change()">
-  <option value="total" selected="">Total de Hospitales</option>	
-  <option >Hospital Civil Fray Antonio Alcalde</option>
-  <option >Hospital Civil Dr. Juan I. Menchaca</option>
-  <option >Otro</option>
-</select>
-  <br><br>
+	<div class="col-md-3">
+		<span class="plain-select3">
+	  <select id="valueYear" onchange="change()">
+	  <option value="total" selected="">Total de Años</option>
+	  <?php
+		foreach($year AS $index=> $value)
+			echo '<option value="'.$value["year"].'" >'.$value["year"].'</option>';
+	  ?>
 
+	</select>
+	</span>
+</div>
+</div>
 
-  <select id="valueYear" onchange="change()">
-  <option value="total" selected="">Total de Años</option>	
-  <?php
-	foreach($year AS $index=> $value)
-		echo '<option value="'.$value["year"].'" >'.$value["year"].'</option>';
-  ?>
-
-</select>
-  <br><br>
-<?php 
+<?php
 // print_r($researchersIncome);
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
@@ -140,4 +159,3 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 ),
    	),
 )); ?>
-
