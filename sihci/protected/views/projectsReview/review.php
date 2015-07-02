@@ -55,7 +55,8 @@
 )); 
 if($model->status == Yii::app()->user->Rol->alias){
 echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'javascript: send("","projectsReview/sendReview","'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->user->Rol->alias.'","projectsReview/admin","");',
+
+                'onclick'=>'javascript: send("","projectsReview/sendReview","'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->user->Rol->alias.'","projectsReview/admin","DIVUH");',
                 'class'=>'savebutton',
             ));
 ?>
