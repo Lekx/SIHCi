@@ -6,7 +6,14 @@ $this->breadcrumbs=array(
 	'Sponsorships'=>array('index'),
 	'Manage',
 );
-
+?>
+	<div class="cvtitle">
+        <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
+        <h1>Proyectos</h1>
+        <hr>
+    </div>
+<?php if($checkAuth){ ?>
+<?php
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
@@ -31,13 +38,11 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-<div class="cvtitle">
-            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
-            <h1>Proyectos</h1>
-            <hr>
-        </div>
 
-<h3>Gestionar Patrocinios:</h3>
+
+
+
+<h3>Gestionar Patrocinios.</h3>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
@@ -71,4 +76,14 @@ $('.search-form form').submit(function(){
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+)); 
+}else{
+?>
+
+
+<br><br>
+<h3>Por favor llene primero su perfil de empresa para poder crear patrocinios.</h3>
+
+
+
+<?php } ?>

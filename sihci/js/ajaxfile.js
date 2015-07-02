@@ -37,6 +37,10 @@ function send(form, actionUrl, id, extras) {
         $(".error").hide();
         $(".errorMessage").hide();
         $(".successdiv").show();
+
+          $('.backbut').click(function() {
+            window.location = yii.urls.createUrl+'/'+actionUrl;
+           });
       }
     },
     complete: function(data) {},
