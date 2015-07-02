@@ -90,12 +90,12 @@ class SponsorsController extends Controller {
 				$logo = CUploadedFile::getInstanceByName('Persons[photo_url]');
 				
 			}
-
+			if($modelAddresses->validate() && $modelPersons->validate() && $model->validate()){
 			if ($modelAddresses->validate()) {
 				if ($modelAddresses->save()) {
 					$model->id_user = $iduser;
 					$model->id_address = $modelAddresses->id;
-					if ($model->validate()) {
+					if ($model->validate() == 1) {
 						if ($model->save()) {
 
 							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
@@ -133,12 +133,31 @@ class SponsorsController extends Controller {
 									$log->save();
 
 								}
-							}
+							}	echo CJSON::encode(array('status'=>'success'));
+	     							Yii::app()->end();
 						}
 					}
 
 				}
 			}
+		}else{
+				$error1 = CActiveForm::validate($model);
+				$error2 = CActiveForm::validate($modelAddresses);
+				$error3 = CActiveForm::validate($modelPersons);
+				$error = "{";
+				if($error1 !='[]')
+					$error.= str_replace("{", "",str_replace("}", "",$error1));
+				if($error2 !='[]')
+					$error.= str_replace("{", "",str_replace("}", "",$error2));
+				if($error3 !='[]')
+					$error.= str_replace("{", "",str_replace("}", "",$error3));
+
+
+				if($error!='[]')
+					echo str_replace("]\"", "],\"",$error)."}";
+
+				Yii::app()->end();
+	        }
 
 		}
 

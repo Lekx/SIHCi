@@ -2,8 +2,7 @@
 /* @var $this ArticlesGuidesController */
 /* @var $model ArticlesGuides */
 /* @var $form CActiveForm */
- $cs = Yii::app()->getClientScript();
- $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/articlesGuides/js/script.js');
+
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -39,7 +38,7 @@ function lettersOnly(e)
  
         if(letras.indexOf(tecla)==-1 && !tecla_especial)
      		return false;
-}
+} 
 </script>
 
 <div class="form">
@@ -50,10 +49,10 @@ function lettersOnly(e)
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableClientValidation'=>true,
+	//'enableClientValidation'=>true,
 	'enableAjaxValidation'=>true,
 	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
-	'clientOptions'=>array('validateOnSubmit'=>true),
+	//'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
 	
@@ -485,7 +484,13 @@ function lettersOnly(e)
 	<?php } ?>
 
 	<div class="row buttons">		
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
+		
+		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
+                'onclick'=>'send("articles-guides-form", "articlesGuides/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'"," ");',
+                 //'id'=> 'post-submit-btn', 
+                'class'=>'savebutton',
+            ));
+   		 ?>
 		 <?php echo CHtml::link('Cancelar',array('articlesGuides/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 

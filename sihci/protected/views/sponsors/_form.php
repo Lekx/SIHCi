@@ -1293,9 +1293,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
-		<?php /*
-		<?php echo $form->textField($model, 'sector', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Sector','title'=>'Sector'));?>
-		<?php echo $form->error($model, 'sector');?> */?>
+		
 
 		<?php  echo $form->dropDownList($model, 'sector', array('ACTIVIDADES DEL GOBIERNO Y DE ORGANISMOS INTERNACIONALES Y EXTRATERRITORIALES'=>'ACTIVIDADES DEL GOBIERNO Y DE ORGANISMOS INTERNACIONALES Y EXTRATERRITORIALES',
 																'AGRICULTURA GANADERIA APROVECHAMIENTO FORESTAL PESCA Y CAZA'=>'AGRICULTURA GANADERIA APROVECHAMIENTO FORESTAL PESCA Y CAZA',
@@ -1321,23 +1319,6 @@ $(document).ready(function() {
 																'TRANSPORTES CORREOS Y ALMACENAMIENTO'=>'TRANSPORTES CORREOS Y ALMACENAMIENTO',
 																'OTROS SERVICIOS EXCEPTO ACTIVIDADES DEL GOBIERNO'=>'OTROS SERVICIOS EXCEPTO ACTIVIDADES DEL GOBIERNO'),array('prompt'=>'Seleccionar sector','title'=>'Sector', 'id'=>'sector', 'onchange'=>'changeSector()'))?>
 		<?php echo $form->error($model, 'sector');?>
-<!--
-00 	No especificado
-01 	Instituciones del sector gobierno federal centralizado
-02 	Instituciones del sector entidades paraestatales
-03 	Instituciones del sector gobierno de las entidades federativas
-04 	Instituciones del sector de educacion superior publicas
-05 	Instituciones del sector de educacion superior privadas
-06 	Instituciones del sector privado de empresas productivas (adiat)
-07 	Instituciones / organizaciones no lucrativas
-08 	Instituciones / organizaciones extranjeras
-09 	consultoras
-10 	Gobierno municipal
-11 	Gobierno federal descentralizado
-18 	Gobierno Federal Desconcentrado
-19 	Centros Públicos de Investigación
-20 	Centros Privados de Investigación
--->
 	</div>
 
 	<div class="row" id="comboClase">
@@ -1347,26 +1328,6 @@ $(document).ready(function() {
 	<div class="row">
 		<?php echo $form->textField($model, 'branch', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Rama','title'=>'Rama'));?>
 		<?php echo $form->error($model, 'branch');?>
-
-<!--
-6211 	CONSULTORIOS MEDICOS
-6212 	CONSULTORIOS DENTALES
-6213 	OTROS CONSULTORIOS PARA EL CUIDADO DE LA SALUD
-6214 	CENTROS PARA LA ATENCION DE PACIENTES QUE NO REQUIEREN HOSPITALIZACION
-6215 	LABORATORIOS MEDICOS Y DE DIAGNOSTICO
-6216 	SERVICIOS DE ENFERMERIA A DOMICILIO
-6219 	SERVICIOS DE AMBULANCIAS DE BANCOS DE ORGANOS Y OTROS SERVICIOS AUXILIARES AL TRATAMIENTO MEDICO
-6221 	HOSPITALES GENERALES
-6222 	HOSPITALES PSIQUIATRICOS Y PARA EL TRATAMIENTO POR ABUSO DE SUBSTANCIAS
-6223 	HOSPITALES DE OTRAS ESPECIALIDADES MEDICAS
-6231 	RESIDENCIAS CON CUIDADOS DE ENFERMERAS PARA ENFERMOS CONVALECIENTES EN REHABILITACION INCURABLES Y
-6232 	RESIDENCIAS PARA EL CUIDADO DE PERSONAS CON PROBLEMAS DE RETARDO MENTAL SALUD MENTAL Y ABUSO DE SUB
-6233 	ASILOS Y OTRAS RESIDENCIAS PARA EL CUIDADO DE ANCIANOS Y DISCAPACITADOS
-6239 	ORFANATOS Y OTRAS RESIDENCIAS DE ASISTENCIA SOCIAL
-6241 	SERVICIOS DE ORIENTACION Y TRABAJO SOCIAL
-6242 	SERVICIOS COMUNITARIOS DE ALIMENTACION REFUGIO Y DE EMERGENCIA
-6243 	SERVICIOS DE CAPACITACION PARA EL TRABAJO PARA PERSONAS DESEMPLEADAS SUBEMPLEADAS O DISCAPACITADAS
-6244 	GUARDERIAS -->
 
 
     </div>
@@ -1395,13 +1356,16 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row buttons">
-		<!-- cambiar todo a español y este boton-->
 
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
+	  <?php echo CHtml::htmlButton('Enviar',array(
+                'onclick'=>'send("sponsors-form", "sponsors/sponsorsInfo", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "")',
+                'class'=>'savebutton',
+            ));
+    ?>
 	
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget();?>
 
-</div><!-- form -->
+</div>

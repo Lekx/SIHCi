@@ -4027,7 +4027,12 @@ if(areaValue =="SOCIOLOGIA"){
 
   <div class="row buttons">
 
-    <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton')); ?>
+    <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
+                'onclick'=>'send("books-chapters-form", "booksChapters/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","");',
+                 //'id'=> 'post-submit-btn', 
+                'class'=>'savebutton',
+            ));
+    ?>
     <?php echo CHtml::link('Cancelar',array('booksChapters/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 

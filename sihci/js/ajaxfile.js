@@ -12,7 +12,6 @@ function send(form, actionUrl, id, redirectUrl, extras) {
       formData.append(a+1, temp[a]);
     }
   }
-
   $.ajax({
     url: yii.urls.createUrl + "/" + actionUrl + "/" + id,
     type: 'POST',
@@ -23,7 +22,6 @@ function send(form, actionUrl, id, redirectUrl, extras) {
     success: function(response) {
       var data = JSON.parse(response);
       if (data['status'] != 'success') {
-
         $(".errordiv").show();
         for (var key in data) {
           $("#" + key + "_em_").show();

@@ -7327,9 +7327,9 @@ function changeSector()
     // There is a call to performAjaxValidation() commented in generated controller code.
     // See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
-	'enableClientValidation'=>true,
+	//'enableClientValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
-	'clientOptions'=>array('validateOnSubmit'=>true),
+	//'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
 	<div class="row">
@@ -7457,9 +7457,11 @@ function changeSector()
   </div>
   
 	<div class="row buttons">
-
-
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar',array('class'=>'savebutton')); ?>
+     <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("directed-thesis-form","directedThesis/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","");',
+                'class'=>'savebutton',
+            ));
+    ?>		
 		<?php echo CHtml::link('Cancelar',array('directedThesis/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 
