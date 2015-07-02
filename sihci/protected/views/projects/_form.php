@@ -8,7 +8,7 @@
 <script type="text/javascript">
 function accionCancelar(){
 $('<div></div>').appendTo('form')
-    .html('<div><h6>Esta seguro de cancelar la accion actual? todo su trabajo no guardado sera borrado.</h6></div>')
+    .html('<div><h6>Esta seguro de cancelar la acción actual? todo su trabajo no guardado sera borrado.</h6></div>')
     .dialog({
         modal: true,
         title: 'Cancelar',
@@ -52,28 +52,29 @@ $('<div></div>').appendTo('form')
 		//alert("ouch, you fucked me bby! "+section);
 		$("#section"+section).show();
 	}
-	function ajaxSave(value){
+	function ajaxSave(value,type){
 		var request = $.ajax({
-		  url: yii.urls.base+"/index.php/projects/create",
+		  url: yii.urls.base+"/index.php/projects/"+type,
 		  method: "POST",
 		  data: $("#projects-form").serialize()+"&type="+value,
 		  dataType: "json",
-          success: function(data) {
-				alert(data);
-	     },
+		  success: function(response) {
+		  	alert(response+" as as dfas ");
+		  }
+
 		});
 
 			request.done(function(data) {
 				alert(data);
 				window.location = yii.urls.cancelProject;
 		});
-		request.fail(function(data) {
+		/*request.fail(function(data) {
 				alert(data);
 				window.location = yii.urls.cancelProject;
-		});
+		});*/
 	}
 
-	function save(value){
+	function save(value, type){
 			if(value=="send"){
 				$('<div></div>').appendTo('form')
 				    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
@@ -86,7 +87,7 @@ $('<div></div>').appendTo('form')
 				        resizable: false,
 				        buttons: {
 				            "Enviar a revisión": function () {
-				            	ajaxSave("send");
+				            	ajaxSave("send",type);
 				                $(this).dialog("close");
 
 				            },
@@ -122,7 +123,7 @@ $('<div></div>').appendTo('form')
 <div id="section1" class="sections" >
 	<div class="row">
 		<?php 
-			if(Yii::app()->user->id_roles==13){
+			if(Yii::app()->user->Rol->id == 1){
 				$researcher = "";
 				if(!$model->isNewRecord){
 					$researcher = $model->idCurriculum->idUser->persons[0];
@@ -261,11 +262,11 @@ $('<div></div>').appendTo('form')
 		<?php 
 		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
 		
-		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
+		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','".($model->isNewRecord ? 'create' : 'update')."')",'class'=>'savebutton'));
 
 		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
 		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
-		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
+		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send','".($model->isNewRecord ? 'create' : 'update')."/".(isset($_GET['id']) ? $_GET['id'] : 0)."')",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
 		
