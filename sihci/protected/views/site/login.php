@@ -1,3 +1,8 @@
+<?php
+if(strpos(Yii::app()->request->url,'site/login'))
+	$this->redirect(Yii::app()->user->returnUrl);
+?>
+       
 <div class="loginback">
 	<div class="form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
@@ -97,7 +102,7 @@
         <?php $this->endWidget(); ?>
 
         <div class="closelogin">
-            No deseo Ingresar <i class="glyphicon glyphicon-remove"></i>
+	     No deseo Ingresar <i class="glyphicon glyphicon-remove"></i>
         </div>
         </div><!-- form -->
     </div>
