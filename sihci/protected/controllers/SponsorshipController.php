@@ -132,6 +132,19 @@ class SponsorshipController extends Controller
 		));
 	}
 
+	private function checkAuth()
+	{
+		$conexion = Yii::app()->db;
+		$query = "SELECT u.id, u.email, s.sponsor_name FROM users AS u JOIN sponsors AS s ON s.id_user = u.id WHERE u.id = ".Yii::app()->user->id;
+		$checkAuth = $conexion->createCommand($query)->queryAll();
+		//print_r($checkAuth);
+		$result = false;
+		if(!empty($checkAuth))
+			$result = true;
+
+		return $result;
+	}
+
 	/**
 	 * Manages all models.
 	 */
@@ -141,9 +154,9 @@ class SponsorshipController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Sponsorship']))
 			$model->attributes=$_GET['Sponsorship'];
-
+		//var_dump($this->checkAuth());
 		$this->render('admin',array(
-			'model'=>$model,
+			'model'=>$model, 'checkAuth'=>$this->checkAuth()
 		));
 	}
 

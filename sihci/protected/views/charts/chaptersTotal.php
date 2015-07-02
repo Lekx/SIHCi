@@ -3,6 +3,7 @@
             <h1>Estadisticas</h1>
             <hr>
         </div>
+        <h3>Total de capítulos de libros</h3>
 <div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
 
 <div class="grafiOpt">

@@ -44,31 +44,42 @@ class ProjectsReviewController extends Controller
 			),
 		);
 	}
-/*
-	private function nextReview($actualStatus){
-		switch($actualStatus){
-			case "divuh": $status = "DIV1"; break;
-			case "": $status = "DIV2"; break;
-			case "": $status = "DIV3"; break;
-			case "": $status = "DIV4"; break;
-			case "": $status = "DIV5"; break;
-			default: $status = "DIV6"; break;
 
+	private $messages = array(
+			"SEUH"=>"Proyecto enviado a asignación de folio por el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"COMITE"=>"Proyecto enviado a evaluación de comités de investigación.",
+			"SEUH2"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"SGEI"=>"Proyecto enviado a evaluación del Subdirector General de Enseñanza e Investigación. Notificación enviada al Director de Unidad Hospitalaria.",
+			"DIVUH2"=>"Proyecto enviado a dictaminación por la División de Investigacion de la Unidad Hospitalaria. Notificación enviada a: Director General, Director de División Hospitalaria y al Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"COMITE2"=>"Proyecto enviado a firma de dictamen por comités.",
+			"DICTAMINADO"=>"Proyecto dictaminado como xx. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria.",
+		);
+
+	private function nextReview($actualStatus){
+		$status = "nulo";
+		switch($actualStatus){
+			case "DIVUH": $status = "SEUH"; break;
+			case "SEUH": $status = "COMITE"; break; // ASIGNA NÚMERO DE FOLIO
+			case "COMITE": $status = "SEUH2"; break;
+			case "SEUH2": $status = "SGEI"; break; //ALERTA A DUH
+			case "SGEI": $status = "DIVUH2"; break; // ALERTA A DG, DUH, SEUH //DICTAMINACION
+			case "DIVUH2": $status = "COMITE2"; break; 
+			case "COMITE2": $status = "DICTAMINADO"; break; // ALERTA DIVUH //REVISION DE FIRMAS POR DIVUH
 		}
 
 		return $status;
 	}
-*/
+
 	private function projectsToReview(){
-		$id_role = Users::model()->findByPk(Yii::app()->user->id)->id_roles;
+		//$id_role = Users::model()->findByPk(Yii::app()->user->id)->Rol->id;
 
 
-		$role = Roles::model()->findByPk($id_role)->alias;
+		//$role = Roles::model()->findByPk($id_role)->alias;
 
 
 		$conection = Yii::app()->db;
 
-		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".$role."' GROUP BY p.title")->queryAll();
+		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".strtolower(Yii::app()->user->Rol->alias)."' GROUP BY p.title")->queryAll();
 
 		//$pProjects = Projects::model()->findAllByAttributes(array("status"=>$role));
 		$pendingProjects ="";
@@ -111,18 +122,15 @@ class ProjectsReviewController extends Controller
 	 */
 	public function actionReview($id)
 	{
-
 		$modelfollowup = new ProjectsFollowups;
-
+		$followups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$id),array('order'=>'id DESC'));
          $this->performAjaxValidation($modelfollowup);
-
 
         if(isset($_POST['ProjectsFollowups']))
         {
 
 			$modelfollowup->unsetAttributes(); 
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
-
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
 
@@ -136,7 +144,6 @@ class ProjectsReviewController extends Controller
 
 	            	$url_doc = $path.'/'.date('Y-m-d_H-i').'Archivo.'.$modelfollowup->url_doc->getExtensionName();
 					$modelfollowup->url_doc->saveAs($url_doc);
-
 				    $modelfollowup->url_doc = $url_doc;
 	            }
 
@@ -155,7 +162,7 @@ class ProjectsReviewController extends Controller
         }
 
 		$this->render('review',array(
-			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup
+			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup,'followups'=>$followups
 		));
 	}
 
@@ -166,22 +173,18 @@ class ProjectsReviewController extends Controller
 
 		$conexion = Yii::app()->db;
 
-		$res = $conexion->createCommand("UPDATE projects SET status = 'esoss xxxx' WHERE id =".$id)->execute();
+		$res = $conexion->createCommand("UPDATE projects SET status = '".$this->nextReview($_POST["1"])."' WHERE id =".$id)->execute();
 		//	echo $res;
 		if( $res == 1){
 						$followup = new ProjectsFollowups;
 						$followup->id_project = $id;
 						$followup->id_user = Yii::app()->user->id;
-						$followup->followup = "Proyecto enviado a revisión del otro wey.";
+						$followup->followup = "Proyecto enviado a revisión de ".$this->messages[$this->nextReview($_POST["1"])];
 
-						if($followup->save()){
+						if($followup->save())
 			     			echo CJSON::encode(array('status'=>'success','message'=>'Aprobación realizada con éxito','subMessage'=>'Se ha asignado a la siguiente persona este proyecto'));
-							//$this->redirect(array('admin'));
-						}else{
-							echo "no se guardo el followup - ".$followup->id_project." - ".$followup->id_user." - ".$followup->followup." - ".$followup->creation_date;
-						}
 					}else
-						echo "erro al actualizar la tabla de proyectos ".$res;
+						echo CJSON::encode(array('message'=>'Error al pasar a la siguiente etapa.','subMessage'=>'Por favor vuelva a intetar.'));
 				Yii::app()->end();
 	}
 	/**

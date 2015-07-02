@@ -224,7 +224,7 @@ if(areaValue =="SOCIOLOGIA"){
 
     if(disciplineValue =="Seleccionar Disciplina"){
       var seleccionarDisciplina ="";
-      disciplineValue = aplicacionesDeLaLogica;
+      disciplineValue = seleccionarDisciplina;
     }
 
     if(disciplineValue =="LOGICA DEDUCTIVA"){

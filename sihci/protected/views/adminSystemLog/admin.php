@@ -48,7 +48,6 @@ $('.search-form form').submit(function(){
 
 	'columns'=>array(
 			array('name'=>'Número de Movimiento','type'=>'html','id'=>'id','value'=>'CHtml::encode($data->id)'),
-			array('name'=>'Número de usuario','type'=>'html','id'=>'id_user','value'=>'CHtml::encode($data->id_user)'),
 			array('header'=>'Nombre de usuario',
 				'type'=>'html',
 				'id'=>'id_user',
