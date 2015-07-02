@@ -125,7 +125,7 @@ class ChartsController extends Controller
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -205,7 +205,7 @@ class ChartsController extends Controller
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -270,7 +270,7 @@ public function actionEfficiencyTotal(){
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -338,7 +338,7 @@ public function actionEfficiencyTotal(){
 				array_push($other, ((int)$value["totalBooks"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -404,7 +404,7 @@ public function actionEfficiencyTotal(){
 				array_push($other, ((int)$value["totalChapters"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -469,7 +469,7 @@ public function actionEfficiencyTotal(){
     array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
    }
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
   }
 
   if(!isset($_POST["years"])){
@@ -634,7 +634,7 @@ else
     array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
    }
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
   }
 
 
