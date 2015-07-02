@@ -71,7 +71,7 @@ function change(){
 <input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchcrud">
 <div class="tableOpt">
 	<div class="col-md-4">
-		<span class="plain-select2">
+		<span class="plain-select3">
 <select id="valueProjects" onchange="change()">
   <option value="total" selected="">Total de Proyectos</option>
   <option value="En proceso">Proyectos en proceso</option>
@@ -84,7 +84,7 @@ function change(){
 </div>
 
 <div class="col-md-4">
-	<span class="plain-select2">
+	<span class="plain-select3">
 <select id="valueHospital" onchange="change()">
   <option value="total" selected="">Total de Hospitales</option>
   <option >Hospital Civil Fray Antonio Alcalde</option>
@@ -94,7 +94,7 @@ function change(){
 </div>
 
 <div class="col-md-4">
-	<span class="plain-select2">
+	<span class="plain-select3">
   <select id="valueYear" onchange="change()">
   <option value="total" selected="">Total de Años</option>
   <?php

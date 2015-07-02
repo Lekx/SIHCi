@@ -63,6 +63,7 @@ $this->menu=array(
 		'registration_number',
 	),
 )); 
+
 ?>
 <div class="row">
 <?php $this->renderPartial('../projectsReview/_form', array('model'=>$modelfollowup)); ?>

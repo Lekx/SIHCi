@@ -49,10 +49,11 @@ class ChartsController extends Controller
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	
-/*
-	public function actionTotalRegisteredResearchers(){
-		$this->render('totalRegisteredResearchers');
-	}*/
+
+	public function actionIndex()
+	{
+		$this->actionTotalRegisteredResearchers();
+	}
 
 
 	//GR01-Total Ingreso de Investigadores 
@@ -62,7 +63,7 @@ class ChartsController extends Controller
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) AS year FROM users 
+		SELECT DISTINCT YEAR(creation_date) AS year FROM users ORDER BY creation_date DESC
 		")->queryAll();
 
 		$years = array();
@@ -72,11 +73,7 @@ class ChartsController extends Controller
 	        	
 
 		if(isset($_POST["years"])){
-			/*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
-				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
-			else if($_POST["hu"] == "otro")
-				$condHu = " AND j.hospital_unit IS NULL";
-			else*/
+			
 				$condHu = "";
 
 			if($_POST["sni"] != "total" && $_POST["sni"] == "no")
@@ -128,7 +125,7 @@ class ChartsController extends Controller
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -143,7 +140,7 @@ class ChartsController extends Controller
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) AS year FROM projects
+		SELECT DISTINCT YEAR(creation_date) AS year FROM projects ORDER BY creation_date DESC
 		")->queryAll();
 
 		$years = array();
@@ -153,11 +150,7 @@ class ChartsController extends Controller
 	        	
 
 		if(isset($_POST["years"])){
-			/*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
-				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
-			else if($_POST["hu"] == "otro")
-				$condHu = " AND j.hospital_unit IS NULL";
-			else*/
+			
 				$condHu = "";
 
 			if($_POST["proyecto"] != "total" && $_POST["proyecto"] == "abiertos")
@@ -212,11 +205,76 @@ class ChartsController extends Controller
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'projectsTotal',"years"=>$years));
+		}
+
+	}
+
+	//GR03-Total-Eficiencia
+public function actionEfficiencyTotal(){
+
+		$conexion = Yii::app()->db;
+
+		$year = $conexion->createCommand("
+		SELECT DISTINCT YEAR(creation_date) AS year FROM projects WHERE status = 'completado' ORDER BY creation_date DESC
+		")->queryAll();
+
+		$years = array();
+		$years["total"] = "Total";
+		foreach($year AS $index => $value)
+	        	$years[$value["year"]] = $value["year"];
+	        	
+
+		if(isset($_POST["years"])){
+			
+				$condHu = "";
+
+
+			if($_POST["years"] != "total")
+				$condYears = " AND YEAR(p.creation_date) ='".$_POST['years']."'";
+			else
+				$condYears = "";
+
+
+			$query = '
+				SELECT 
+				COUNT(IF(p.develop_uh="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(p.develop_uh="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(u.id) as totalUsers,
+				MONTH(p.creation_date) as months
+				FROM projects AS p 
+				LEFT JOIN curriculum AS c ON p.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = "fisico" AND u.status = "activo"
+				AND p.status = "completado"
+				'.$condYears.$condHu.'
+				GROUP BY months ORDER BY MONTH(p.creation_date) ASC
+			';
+			$results = $conexion->createCommand($query)->queryAll();
+
+			//print_r($results);
+
+			$months = array();
+			$jim = array();
+			$faa = array();
+			$other = array();
+			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			foreach($results AS $key => $value){
+				array_push($months, $mos[$value["months"]]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+			}
+
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+		}
+
+		if(!isset($_POST["years"])){
+			$this->render('index',array('action'=>'efficiencyTotal',"years"=>$years));
 		}
 
 	}
@@ -228,7 +286,7 @@ class ChartsController extends Controller
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) AS year FROM books
+		SELECT DISTINCT YEAR(creation_date) AS year FROM books ORDER BY creation_date DESC
 		")->queryAll();
 
 		$years = array();
@@ -238,25 +296,10 @@ class ChartsController extends Controller
 	        	
 
 		if(isset($_POST["years"])){
-			/*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
-				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
-			else if($_POST["hu"] == "otro")
-				$condHu = " AND j.hospital_unit IS NULL";
-			else*/
+			
 				$condHu = "";
 
-			/*if($_POST["sni"] != "total" && $_POST["sni"] == "no")
-				$condSni = " AND c.sni = 0 OR c.sni IS NULL";
-			else if($_POST["sni"] == "yes")
-				$condSni = " AND c.sni > 0";
-			else
-				$condSni = "";*/
-
-
-			/*if($_POST["type"] != "total" && $_POST["type"] == "bajas")
-				$condType = " AND u.status ='inactivo'";
-			else
-				$condType = "";*/
+			
 
 
 			if($_POST["years"] != "total")
@@ -295,7 +338,7 @@ class ChartsController extends Controller
 				array_push($other, ((int)$value["totalBooks"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -311,7 +354,7 @@ class ChartsController extends Controller
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) AS year FROM books_chapters 
+		SELECT DISTINCT YEAR(creation_date) AS year FROM books_chapters ORDER BY creation_date DESC
 		")->queryAll();
 
 		$years = array();
@@ -321,25 +364,8 @@ class ChartsController extends Controller
 	        	
 
 		if(isset($_POST["years"])){
-			/*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
-				$condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
-			else if($_POST["hu"] == "otro")
-				$condHu = " AND j.hospital_unit IS NULL";
-			else*/
+			
 				$condHu = "";
-
-			/*if($_POST["sni"] != "total" && $_POST["sni"] == "no")
-				$condSni = " AND c.sni = 0 OR c.sni IS NULL";
-			else if($_POST["sni"] == "yes")
-				$condSni = " AND c.sni > 0";
-			else
-				$condSni = "";*/
-
-
-			/*if($_POST["type"] != "total" && $_POST["type"] == "bajas")
-				$condType = " AND u.status ='inactivo'";
-			else
-				$condType = "";*/
 
 
 			if($_POST["years"] != "total")
@@ -378,7 +404,7 @@ class ChartsController extends Controller
 				array_push($other, ((int)$value["totalChapters"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -393,7 +419,7 @@ class ChartsController extends Controller
  	$conexion = Yii::app()->db;
 
   $year = $conexion->createCommand("
-  SELECT DISTINCT YEAR(creation_date) AS year FROM articles_guides 
+  SELECT DISTINCT YEAR(creation_date) AS year FROM articles_guides ORDER BY creation_date DESC
   ")->queryAll();
 
   $years = array();
@@ -403,25 +429,10 @@ class ChartsController extends Controller
           
 
   if(isset($_POST["years"])){
-   /*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
-    $condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
-   else if($_POST["hu"] == "otro")
-    $condHu = " AND j.hospital_unit IS NULL";
-   else*/
-    $condHu = "";
-   /*
-   if($_POST["sni"] != "total" && $_POST["sni"] == "no")
-    $condSni = " AND c.sni = 0 OR c.sni IS NULL";
-   else if($_POST["sni"] == "yes")
-    $condSni = " AND c.sni > 0";
-   else
-    $condSni = "";
+  
 
-   if($_POST["type"] != "total" && $_POST["type"] == "bajas")
-    $condType = " AND u.status ='inactivo'";
-   else
-    $condType = "";
-   */
+    $condHu = "";
+  
 
    if($_POST["years"] != "total")
     $condYears = " AND YEAR(ar.creation_date) ='".$_POST['years']."'";
@@ -458,7 +469,7 @@ class ChartsController extends Controller
     array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
    }
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
   }
 
   if(!isset($_POST["years"])){
@@ -470,37 +481,41 @@ class ChartsController extends Controller
 //GR07-Patentes-Software-Derechos de autor
 public function actionPatentSoftware(){
 
-	$conexion = Yii::app()->db;
+	 $conexion = Yii::app()->db;
+$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year";
+	if(isset($_POST["property"])){
+
+		if($_POST["property"] == "software"){
+			$query ="
+  			SELECT DISTINCT YEAR(creation_date) AS year FROM software";
+		}
+		else if ($_POST["property"] == "patent"){
+		$query ="
+  			SELECT DISTINCT YEAR(creation_date) AS year FROM patent";	
+		}
+		else if ($_POST["property"] == "copyrights"){
+		$query ="
+  			SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights";	
+		}else{
+				$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year";
+		}	
+}
 
 
-  $query ="
-  SELECT DISTINCT YEAR(creation_date) AS year FROM software";
-
-  $year = $conexion->createCommand($query)->queryAll();
-
-  $years = array();
-  $years["total"] = "Total";
-  foreach($year AS $index => $value)
-          $years[$value["year"]] = $value["year"];
-          
+		$year = $conexion->createCommand($query)->queryAll();
+		
+		$years = array();
+		  $years["total"] = "Total";
+		  foreach($year AS $index => $value)
+		          $years[$value["year"]] = $value["year"];
+	     
 
   if(isset($_POST["years"])){
-   /*if($_POST["hu"] != "ambos" && $_POST["hu"] != "otro" )
-    $condHu = " AND j.hospital_unit ='".$_POST['hu']."'";
-   else if($_POST["hu"] == "otro")
-    $condHu = " AND j.hospital_unit IS NULL";
-   else*/
+ 
     $condHu = "";
-   /*
-   if($_POST["sni"] != "total" && $_POST["sni"] == "no")
-    $condSni = " AND c.sni = 0 OR c.sni IS NULL";
-   else if($_POST["sni"] == "yes")
-    $condSni = " AND c.sni > 0";
-   else
-    $condSni = "";
-    */
+  
 
-   if($_POST["property"] != "total" && $_POST["property"] == "software"){
+   if($_POST["property"] != "todos" && $_POST["property"] == "software"){
     	$table = "software AS s";
 		$alias = "s.id_curriculum";
 		$table1 = "COUNT(s.id)";
@@ -541,7 +556,7 @@ public function actionPatentSoftware(){
    else
     $condYears = "";
 
-
+if($_POST["property"] != "todos"){
    $query = '
     SELECT  
 		COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
@@ -555,6 +570,53 @@ public function actionPatentSoftware(){
 		WHERE u.type = "fisico" AND u.status = "activo"
     	'.$condYears.'
     	GROUP BY months ORDER BY '.$orderMoth.' ASC';
+}
+else
+{
+
+	$query = "
+		SELECT  
+		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+		COUNT(co.id) AS totals,
+		MONTH(co.creation_date) AS months
+		FROM copyrights AS co 
+		LEFT JOIN curriculum AS c ON co.id_curriculum=c.id
+		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+		LEFT JOIN users AS u ON u.id=c.id_user
+		WHERE u.type = 'fisico' AND u.status = 'activo'  
+		".($_POST['years'] != 'total' ? " AND YEAR(co.creation_date) ='".$_POST['years']."'":"")."
+		GROUP BY months 
+		UNION
+		SELECT  
+		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+		COUNT(pa.id) AS totals,
+		MONTH(pa.creation_date) AS months
+		FROM patent AS pa 
+		LEFT JOIN curriculum AS c ON pa.id_curriculum=c.id
+		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+		LEFT JOIN users AS u ON u.id=c.id_user
+		WHERE u.type = 'fisico' AND u.status = 'activo'
+		".($_POST['years'] != 'total' ? " AND YEAR(pa.creation_date) ='".$_POST['years']."'":"")."
+		GROUP BY months
+		UNION
+		SELECT  
+		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+		COUNT(s.id) AS totals,
+		MONTH(s.creation_date) AS months
+		FROM software AS s 
+		LEFT JOIN curriculum AS c ON s.id_curriculum=c.id
+		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+		LEFT JOIN users AS u ON u.id=c.id_user
+		WHERE u.type = 'fisico' AND u.status = 'activo'	
+		".($_POST['years'] != 'total' ? "AND YEAR(s.creation_date) ='".$_POST['years']."' ":"")."
+		GROUP BY months
+		ORDER BY months ASC";
+}
+
+
    $results = $conexion->createCommand($query)->queryAll();
 
    //print_r($results);
@@ -572,16 +634,13 @@ public function actionPatentSoftware(){
     array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
    }
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
   }
 
 
-
 if(!isset($_POST["years"])){
-   $this->render('index',array('action'=>'patentSoftware',"years"=>$years));
+   $this->render('index',array('action'=>'patentSoftware','years'=>$years));
 }
-
-
 
 
 }

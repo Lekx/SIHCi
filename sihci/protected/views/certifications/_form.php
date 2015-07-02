@@ -39,7 +39,7 @@
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model,'specialty', array('Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
+		<?php echo $form->dropDownList($model,'specialty', array(         'Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
          'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
@@ -57,9 +57,9 @@
          'Oftalmología'=>'Oftalmología','Oftalmología neurológica'=>'Oftalmología neurológica','Oncología médica'=>'Oncología médica','Oncología pediátrica'=>'Oncología pediátrica',
          'Ortopedia'=>'Ortopedia','Otorrinolaringología'=>'Otorrinolaringología','Otorrinolaringología pediátrica'=>'Otorrinolaringología pediátrica','Patología clínica'=>'Patología clínica',
          'Patología pediátrica'=>'Patología pediátrica','Pediatría'=>'Pediatría','Psiquiatría'=>'Psiquiatría','Psiquiatría infantil y de la adolescencia'=>'Psiquiatría infantil y de la adolescencia',
+         'Periodoncia'=>'Periodoncia',
          'Radiooncología'=>'Radiooncología','Radiología e imagen'=>'Radiología e imagen','Reumatología'=>'Reumatología','Reumatología pediátrica'=>'Reumatología pediátrica','Terapia endovascular neurológica'=>'Terapia endovascular neurológica',
-         'Urgencias pediátricas'=>'Urgencias pediátricas','Urología'=>'Urología','Urología ginecológica'=>'Urología ginecológica','Cirugía Maxilofacial'=>'Cirugía Maxilofacial','Ortodoncia y Ortopedia Maxilofacial'=>'Ortodoncia y Ortopedia Maxilofacial',
-         'Periodoncia'=>'Periodoncia'),array('prompt'=>'Seleccionar especialidad','title'=>'Especialidad'));?>
+         'Urgencias pediátricas'=>'Urgencias pediátricas','Urología'=>'Urología','Urología ginecológica'=>'Urología ginecológica','Cirugía Maxilofacial'=>'Cirugía Maxilofacial','Ortodoncia y Ortopedia Maxilofacial'=>'Ortodoncia y Ortopedia Maxilofacial'),array('prompt'=>'Seleccionar especialidad','title'=>'Especialidad'));?>
          </span>
 		<?php echo $form->error($model,'specialty'); ?>
 	</div>

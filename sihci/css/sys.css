@@ -760,7 +760,7 @@ thead th
 {
     width: 400px;
     height: 270px;
-    margin-top: 200px;
+    margin-top: calc(50vh - 135px);
     margin-right: auto;
     margin-left: auto;
 
@@ -1023,7 +1023,8 @@ thead th
 
     vertical-align: middle;
 }
-.plain-select2{
+.plain-select2
+{
   position: relative;
 
   display: inline-block;
@@ -1032,8 +1033,48 @@ thead th
 
   vertical-align: middle;
 }
+.plain-select3
+{
+  position: relative;
+
+  display: inline-block;
+
+  width: 200px;
+
+  vertical-align: middle;
+}
+.plain-select3 select
+{
+
+  font-family: 'Caviar_Dreams_Bold';
+  line-height: normal;
+  line-height: normal;
+
+  display: block;
+
+  width: 100%;
+  height: 25px;
+  margin: 0;
+  padding: 3px 18px 4px 6px;
+
+  color: #0e3152;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+          border-radius: 4px;
+          border-radius: 4px;
+  background-color: #cdf1f3;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+          appearance: none;
+      -ms-border-radius: 4px;
+       -o-border-radius: 4px;
+}
 .plain-select2 select
 {
+
   font-family: 'Caviar_Dreams_Bold';
   line-height: normal;
   line-height: normal;
@@ -1118,6 +1159,24 @@ thead th
     border-left: 6px solid transparent;
 }
 .plain-select2:after
+{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 9px;
+
+    width: 0;
+    height: 0;
+    margin-top: -3px;
+
+    content: '';
+    pointer-events: none;
+
+    border-top: 6px solid #0e3152;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+.plain-select3:after
 {
     position: absolute;
     z-index: 2;
@@ -1798,7 +1857,7 @@ div.modal-footer
 
     width: 150px !important;
 }
-.grafiOpt
+.grafiOpt, .tableOpt
 {
     margin-top: 30px;
     margin-bottom: 30px;

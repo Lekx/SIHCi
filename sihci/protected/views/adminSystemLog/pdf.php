@@ -8,7 +8,6 @@ $pdf = Yii::createComponent('application.vendors.mpdf.mpdf');
 
 $html2="";
  $html='
-
 		<h2 align="center">SIHCi</h2>   	
  		<h3 align="center"> Sistema de Investigación del Hospitál Civil de Guadalajara </h3> 
 		<h4 align="center"> Bitácora. Fecha: '.date('d/m/Y').' </h4> 
@@ -23,7 +22,7 @@ $html2="";
 
 		th {     
 			font-size: 13px;     
-			font-weight: normal;     
+			font-weight: normal;    
 			padding: 8px;     
 			background: #0E3152;
    			border-top: 4px solid #aabcfe;    
