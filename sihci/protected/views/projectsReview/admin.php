@@ -1,6 +1,6 @@
 <script type="text/javascript">
 	$(document).ready(function(){
-
+		//alert($("#projectsMenu").text());
 		$("#projectsMenu").appendTo($(".sysmenu"));
 
 	});

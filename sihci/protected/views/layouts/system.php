@@ -101,7 +101,7 @@
                         "MenuEmpresa"=>"CV-HC",
                         "proyectos"=>"Proyectos",
                         "Evaluacion"=>"Evaluación CV",
-                        "proyectosUrl"=>"projects/admin",
+                        "proyectosUrl"=>(Yii::app()->user->Rol->alias != 'usuario' ? "projectsReview" : "projects")."/admin",
                         "labelEstadisticas"=>"",
                         "labelAdmin"=>"",
                         );

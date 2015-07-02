@@ -1,5 +1,18 @@
-function send(form, actionUrl, id) {
-  var formData = new FormData($("#" + form)[0]);
+function send(form, actionUrl, id, extras) {
+  var formData;
+  if(form != '')
+      formData = new FormData($("#" + form)[0]);
+  else
+    formData = new FormData();
+
+  if(extras !=''){
+    var temp = new Array();
+    temp = extras.split(",");
+    for (a in temp ) {
+      formData.append(a+1, temp[a]);
+    }
+  }
+
   $.ajax({
     url: yii.urls.createUrl + "/" + actionUrl + "/" + id,
     type: 'POST',

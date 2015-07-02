@@ -760,7 +760,7 @@ thead th
 {
     width: 400px;
     height: 270px;
-    margin-top: 200px;
+    margin-top: calc(50vh - 135px);
     margin-right: auto;
     margin-left: auto;
 
