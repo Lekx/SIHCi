@@ -1,4 +1,4 @@
-function send(form, actionUrl, id, extras) {
+function send(form, actionUrl, id, redirectUrl, extras) {
   var formData;
   if(form != '')
       formData = new FormData($("#" + form)[0]);
@@ -39,7 +39,7 @@ function send(form, actionUrl, id, extras) {
         $(".successdiv").show();
 
           $('.backbut').click(function() {
-            window.location = yii.urls.createUrl+'/'+actionUrl;
+            window.location = yii.urls.createUrl + "/" + redirectUrl;
            });
       }
     },

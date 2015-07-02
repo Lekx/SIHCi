@@ -1222,15 +1222,17 @@ $(document).ready(function() {
 </span>
         </div>
 
+    <div class="row" class="">
+		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','onKeypress'=>'return lettersOnly(event)','title'=>'Estado'));?>
+		<?php echo $form->error($modelAddresses, 'state');?>
+	</div>
+
 	<div class="row">
 		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal', 'class' => 'numericOnly','title'=>'Código Postal'));?>
 		<?php echo $form->error($modelAddresses, 'zip_code');?>
 	</div>
 
-	<div class="row" class="">
-		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','onKeypress'=>'return lettersOnly(event)','title'=>'Estado'));?>
-		<?php echo $form->error($modelAddresses, 'state');?>
-	</div>
+	
 
 	<div class="row">
 
@@ -1263,7 +1265,7 @@ $(document).ready(function() {
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo', 'class' => 'numericOnly','title'=>'Número Externo'));?>
+		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo','title'=>'Número Externo'));?>
 		<?php echo $form->error($modelAddresses, 'external_number');?>
 	</div>
 
@@ -1278,8 +1280,9 @@ $(document).ready(function() {
 		<?php echo $form->textField($model, 'sponsor_name', array('size' => 50, 'maxlength' => 50, 'placeholder'=>'Nombre de la empersa','title'=>'Nombre de la empersa'));?>
 		<?php echo $form->error($model, 'sponsor_name');?>
 	</div>
+
 		<div>
-		<span class="plain-select">
+		<span class="row plain-select">
 		<?php echo $form->dropDownList($model,'type',array('no lucrativo'=>'No lucrativo','privado'=>'Privado', 'publico'=>'Publico'), 
 		                                                       array('title'=>'Tipo de identidad','prompt'=>'Seleccione el tipo de identidad','options' => array(''=>array('selected'=>true))), 
 		                                                       array('size'=>10)); ?>

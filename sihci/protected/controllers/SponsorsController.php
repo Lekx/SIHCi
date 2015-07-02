@@ -101,8 +101,6 @@ class SponsorsController extends Controller {
 							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 							$modelPersons->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
 							if ($modelPersons->photo_url != NULL) {
-
-								//if($model->photo_url->type == 'application/pdf' || $model->photo_url->type == 'application/msword' || $model->photo_url->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->photo_url->type == 'application/vnd.oasis.opendocument.text' )
 								
 								$id_sponsor = $iduser;
 								
@@ -433,11 +431,10 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
-				//unlink($model->path);
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				
+				if($model->validate())
 				if($model->save())
 					$reload = true;
 				
@@ -455,8 +452,8 @@ class SponsorsController extends Controller {
 				$model->path = CUploadedFile::getInstanceByName('Doc2');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				
-					if ($model->save()) 
+				if($model->validate())
+				if ($model->save()) 
 						$reload = true;
 					
 				
@@ -490,7 +487,8 @@ class SponsorsController extends Controller {
 				$model->path = CUploadedFile::getInstanceByName('Doc4');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-					if ($model->save()) 
+				if($model->validate())
+				if ($model->save()) 
 						$reload = true;
 					
 				
@@ -507,7 +505,8 @@ class SponsorsController extends Controller {
 				$model->path = CUploadedFile::getInstanceByName('Doc5');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-					if ($model->save()) 
+				if($model->validate())
+				if ($model->save()) 
 						$reload = true;
 					
 				
@@ -524,6 +523,7 @@ class SponsorsController extends Controller {
 				$model->path = CUploadedFile::getInstanceByName('Doc6');
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
+				if($model->validate())
 				if ($model->save()) 
 					$reload = true;
 				
