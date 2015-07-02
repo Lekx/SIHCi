@@ -71,7 +71,7 @@ class ProjectsReviewController extends Controller
 	}
 
 	private function projectsToReview(){
-		//$id_role = Users::model()->findByPk(Yii::app()->user->id)->id_roles;
+		//$id_role = Users::model()->findByPk(Yii::app()->user->id)->Rol->id;
 
 
 		//$role = Roles::model()->findByPk($id_role)->alias;

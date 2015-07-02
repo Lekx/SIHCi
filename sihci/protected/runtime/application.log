@@ -4790,3 +4790,411 @@ Stack trace:
 REQUEST_URI=/~Saul/sihci/sihci/index.php/projectsReview/view/id/14
 HTTP_REFERER=http://localhost/~Saul/sihci/sihci/index.php/projectsReview
 ---
+2015/07/02 09:33:22 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebUser"."Roles" no se encuentra definida.' in /Users/Saul/Sites/sihci/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/Saul/Sites/sihci/YiiFramework/framework/web/auth/CWebUser.php(146): CComponent->__get('Roles')
+#1 /Users/Saul/Sites/sihci/sihci/protected/views/projectsReview/review.php(57): CWebUser->__get('Roles')
+#2 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CBaseController.php(126): require('/Users/Saul/Sit...')
+#3 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/Saul/Sit...', Array, true)
+#4 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/Users/Saul/Sit...', Array, true)
+#5 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php(782): CController->renderPartial('review', Array, true)
+#6 /Users/Saul/Sites/sihci/sihci/protected/controllers/ProjectsReviewController.php(166): CController->render('review', Array)
+#7 [internal function]: ProjectsReviewController->actionReview('34')
+#8 /Users/Saul/Sites/sihci/YiiFramework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ProjectsReviewController), Array)
+#9 /Users/Saul/Sites/sihci/YiiFramework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectsReviewController), Object(ReflectionMethod), Array)
+#10 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Users/Saul/Sites/sihci/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /Users/Saul/Sites/sihci/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /Users/Saul/Sites/sihci/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/Saul/Sites/sihci/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#17 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CWebApplication.php(282): CController->run('review')
+#19 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#20 /Users/Saul/Sites/sihci/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /Users/Saul/Sites/sihci/sihci/index.php(19): CApplication->run()
+#22 {main}
+REQUEST_URI=/~Saul/sihci/sihci/index.php/projectsReview/review/34
+HTTP_REFERER=http://localhost/~Saul/sihci/sihci/index.php/projectsReview/admin
+---
+2015/07/02 09:47:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:47:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:48:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:51:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:51:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:55:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:55:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:55:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:56:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:57:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:57:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:57:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:58:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 09:59:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 10:05:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---
+2015/07/02 10:10:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "booksTotalaa" solicitada.' in /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CController.php(270): CController->missingAction('booksTotalaa')
+#1 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CWebApplication.php(282): CController->run('booksTotalaa')
+#2 /Users/Saul/Sites/sihci/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('Charts/booksTot...')
+#3 /Users/Saul/Sites/sihci/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/Saul/Sites/sihci/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~Saul/sihci/sihci/index.php/Charts/booksTotalaa
+---
+2015/07/02 10:20:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "index.php" solicitada.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('index.php')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/site/index.php
+---
+2015/07/02 10:21:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "index.php" solicitada.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('index.php')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/site/index.php
+---
+2015/07/02 10:21:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "index.php"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/index.php
+---
+2015/07/02 10:21:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "index.php" solicitada.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('index.php')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/site/index.php
+---
+2015/07/02 10:22:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "index.php"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/index.php
+---
+2015/07/02 10:27:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "index.php"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/index.php
+---
+2015/07/02 10:27:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "index.php" solicitada.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('index.php')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/site/index.php
+---
+2015/07/02 10:27:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "index.php" solicitada.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('index.php')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/site/index.php
+---
+2015/07/02 10:27:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "index.php"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/index.php
+---
+2015/07/02 10:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "index.php"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/index.php
+---
+2015/07/02 10:28:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "sihci" solicitada.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('sihci')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('sihci')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/sihci/inde...')
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/site/sihci/index.php
+---
+2015/07/02 10:30:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "app" solicitada.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php:483
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(270): CController->missingAction('app')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('app')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/app/index')
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/site/app/index
+---
+2015/07/02 10:36:40 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebUser"."Roles" no se encuentra definida.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CWebUser.php(146): CComponent->__get('Roles')
+#1 /Users/Saul/Sites/SIHCi/sihci/protected/views/projectsReview/review.php(57): CWebUser->__get('Roles')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(126): require('/Users/Saul/Sit...')
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/Saul/Sit...', Array, true)
+#4 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(869): CBaseController->renderFile('/Users/Saul/Sit...', Array, true)
+#5 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(782): CController->renderPartial('review', Array, true)
+#6 /Users/Saul/Sites/SIHCi/sihci/protected/controllers/ProjectsReviewController.php(166): CController->render('review', Array)
+#7 [internal function]: ProjectsReviewController->actionReview('34')
+#8 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ProjectsReviewController), Array)
+#9 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProjectsReviewController), Object(ReflectionMethod), Array)
+#10 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#17 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('review')
+#19 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('projectsReview/...')
+#20 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#22 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/projectsReview/review/34
+HTTP_REFERER=http://localhost/~Saul/SIHCi/sihci/index.php/projectsReview/admin
+---
+2015/07/02 10:38:29 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "ProjectsFollowups".
+in /Users/Saul/Sites/SIHCi/sihci/protected/controllers/ProjectsReviewController.php (133)
+in /Users/Saul/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 10:38:29 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "ProjectsFollowups".
+in /Users/Saul/Sites/SIHCi/sihci/protected/controllers/ProjectsReviewController.php (156)
+in /Users/Saul/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 10:44:28 [warning] [application] Error al establecer unsafe al atributo "email2" de "Users".
+in /Users/Saul/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/Saul/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 10:44:28 [warning] [application] Error al establecer unsafe al atributo "password2" de "Users".
+in /Users/Saul/Sites/SIHCi/sihci/protected/controllers/UsersController.php (65)
+in /Users/Saul/Sites/SIHCi/sihci/index.php (19)
+2015/07/02 10:47:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('personalData')
+#8 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculumVitae...')
+#9 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/curriculumVitae/personalData
+HTTP_REFERER=http://localhost/~Saul/SIHCi/sihci/index.php/account/InfoAccount
+---
+2015/07/02 10:48:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('personaldata')
+#8 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculumVitae...')
+#9 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/curriculumVitae/personaldata
+---
+2015/07/02 10:48:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('personalData')
+#8 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculumVitae...')
+#9 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#11 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/curriculumVitae/personalData
+HTTP_REFERER=http://localhost/~Saul/SIHCi/sihci/index.php/account/InfoAccount
+---
+2015/07/02 10:53:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebUser"."Roles" no se encuentra definida.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CWebUser.php(146): CComponent->__get('Roles')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CComponent.php(612) : eval()'d code(1): CWebUser->__get('Roles')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CComponent.php(612): eval()
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(392): CComponent->evaluateExpression('isset($user->Ro...', Array)
+#4 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(CurriculumVitaeController), Object(CInlineAction), '::1', 'GET')
+#6 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('personalData')
+#13 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculumVitae...')
+#14 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/curriculumVitae/personalData
+---
+2015/07/02 10:53:21 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebUser"."Roles" no se encuentra definida.' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CWebUser.php(146): CComponent->__get('Roles')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CComponent.php(612) : eval()'d code(1): CWebUser->__get('Roles')
+#2 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CComponent.php(612): eval()
+#3 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(392): CComponent->evaluateExpression('isset($user->Ro...', Array)
+#4 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/auth/CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(CurriculumVitaeController), Object(CInlineAction), '::1', 'GET')
+#6 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(282): CController->run('personalData')
+#13 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('curriculumVitae...')
+#14 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/curriculumVitae/personalData
+---
+2015/07/02 10:53:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "sf"' in /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/Saul/Sites/SIHCi/YiiFramework/framework/web/CWebApplication.php(141): CWebApplication->runController('sf')
+#1 /Users/Saul/Sites/SIHCi/YiiFramework/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/Saul/Sites/SIHCi/sihci/index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/~Saul/SIHCi/sihci/index.php/sf
+---

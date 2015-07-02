@@ -61,7 +61,7 @@ class UsersController extends Controller {
 		//$this->performAjaxValidation($model);
 		//$this->performAjaxValidation($modelPersons);
 		if(isset($_POST['Users'])) {
-			$model->id_roles = '1';
+			$model->Rol->id = '1';
 			$model->attributes = $_POST['Users'];
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));

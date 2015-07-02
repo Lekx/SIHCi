@@ -54,9 +54,9 @@
 		'registration_number',
 	),
 )); 
-if($model->status != Yii::app()->user->Roles->alias){
+if($model->status != Yii::app()->user->Rol->alias){
 echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'javascript: send("","projectsReview/sendReview","'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->user->Roles->alias.'");',
+                'onclick'=>'javascript: send("","projectsReview/sendReview","'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->user->Rol->alias.'");',
                 'class'=>'savebutton',
             ));
 ?>
