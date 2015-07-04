@@ -33,6 +33,7 @@
                     $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
                     $cs->registerScriptFile($baseUrl . '/js/evaluateCV.js');
                     $cs->registerScriptFile($baseUrl . '/js/ajaxfile.js');
+                    $cs->registerScriptFile($baseUrl . '/js/numbersLettersOnly.js');
         ?>
         <?php
                     Yii::app()->clientScript->registerScript('helpers', '
@@ -391,7 +392,7 @@
                 <div class="backcontainer">
                     <div class="maincontainer">
                         <div class="errorh2">
-                            <h2>¡Ocurio un Error!</h2>
+                            <h2>¡Ocurió un Error!</h2>
                             <hr>
                             <div class="remainder">
                                 <span>Corrija el error y favor de intentar de nuevo.</span>

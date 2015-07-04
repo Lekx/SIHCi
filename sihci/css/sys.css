@@ -824,6 +824,12 @@ thead th
     color: white;
     background-color: #0e3152;
 }
+.backbut h3 ,.errorbut h3
+{
+  padding: 5px;
+  margin: 0;
+
+}
 .remainder
 {
     width: 260px;
