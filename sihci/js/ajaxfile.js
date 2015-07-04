@@ -1,4 +1,5 @@
  function send(form, actionUrl, id, redirectUrl, extras) {
+
   var formData;
   if(form != '')
       formData = new FormData($("#" + form)[0]);
@@ -9,7 +10,7 @@
     var temp = new Array();
     temp = extras.split(",");
     for (a in temp ) {
-      formData.append(a+1, temp[a]);
+      formData.append(parseInt(a)+1, temp[a]);
     }
   }
 
@@ -39,8 +40,13 @@
         $(".successdiv").show();
 
           $('.backbut').click(function() {
+<<<<<<< HEAD
             window.location = yii.urls.createUrl + "/" + redirectUrl;
            });
+=======
+             window.location = yii.urls.createUrl + "/" + redirectUrl;
+         });
+>>>>>>> 5409777f2a2aa7ea174f844c0f2d043018610ad4
       }
     },
     complete: function(data) {},
