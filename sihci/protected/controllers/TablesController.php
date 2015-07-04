@@ -7,7 +7,6 @@ class TablesController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/system';
-
 	/**
 	 * @return array action filters
 	 */
@@ -58,7 +57,7 @@ class TablesController extends Controller
 
 		  $results = $conexion->createCommand($query)->queryAll();
 
-		 
+
 		  if(!empty($results))
 		  $rArea = " ";
 		  foreach($results AS $key => $value){
@@ -70,32 +69,36 @@ class TablesController extends Controller
 
 	public function actionResearchers()
 	{
+
+
 		$titlePage = "Cantidad de Investigadores";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM users WHERE type="fisico"')->queryAll();
 		$researchers=Yii::app()->db->createCommand('SELECT id FROM users where type="fisico"')->queryAll();
-		 $query='SELECT DISTINCT u.id,p.names, j.hospital_unit, curri.id AS id_curriculum, curri.SNI, curri.status, u.creation_date from users u 
+		 $query='SELECT DISTINCT u.id,p.names, j.hospital_unit, curri.id AS id_curriculum, curri.SNI, curri.status, u.creation_date from users u
  				LEFT JOIN curriculum curri ON curri.id_user=u.id
  				LEFT JOIN jobs j ON curri.id=j.id_curriculum
   				LEFT JOIN persons p ON u.id=p.id_user
-  				WHERE u.type="fisico"';
+  				WHERE u.type="fisico";LIMIT 5' ;
   		$total = count($researchers);
 	     $researchersIncome=new CSqlDataProvider($query, array(
 		    'pagination'=>array(
 		        'pageSize'=>$total,
+
 		    ),
+
 		));
 
 		$this->render('researchers',array('researchersIncome'=>$researchersIncome, 'titlePage'=>$titlePage, 'year'=>$year));
-		
+
 	}
-	
+
 	public function actionProjects()
 	{
 		$titlePage = "Proyectos de Investigación";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM projects')->queryAll();
 		$projects=Yii::app()->db->createCommand('SELECT id FROM projects')->queryAll();
 
-		$query='SELECT u.id,p.names,pro.title, pro.discipline, pro.develop_uh, pro.is_sponsored, pro.registration_number, pro.status, pro.creation_date 
+		$query='SELECT u.id,p.names,pro.title, pro.discipline, pro.develop_uh, pro.is_sponsored, pro.registration_number, pro.status, pro.creation_date
 		 		FROM projects pro
 				 LEFT JOIN curriculum curri ON pro.id_curriculum=curri.id
  				 LEFT JOIN users u ON curri.id_user=u.id
@@ -155,7 +158,7 @@ class TablesController extends Controller
 		$titlePage = "Registro de Propiedad Intelectual: Patentes";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM patent')->queryAll();
 		$patent=Yii::app()->db->createCommand('SELECT id FROM patent')->queryAll();
-		$query='SELECT u.id,p.names,pa.country, pa.name, pa.application_type, pa.application_number, pa.patent_type, j.hospital_unit, pa.creation_date 
+		$query='SELECT u.id,p.names,pa.country, pa.name, pa.application_type, pa.application_number, pa.patent_type, j.hospital_unit, pa.creation_date
 				FROM patent pa
 				 JOIN curriculum curri ON pa.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
@@ -176,7 +179,7 @@ class TablesController extends Controller
 		$titlePage = "Registro de Propiedad Intelectual: Software";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM software')->queryAll();
 		$software=Yii::app()->db->createCommand('SELECT id FROM software')->queryAll();
-		$query='SELECT u.id,p.names, so.country, so.title, so.sector, so.organization, so.objective, so.path, j.hospital_unit, so.creation_date 
+		$query='SELECT u.id,p.names, so.country, so.title, so.sector, so.organization, so.objective, so.path, j.hospital_unit, so.creation_date
 				FROM software so
 				 JOIN curriculum curri ON so.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
@@ -197,7 +200,7 @@ class TablesController extends Controller
 		$titlePage = "Registro de Propiedad Intelectual: Derechos de Autor";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM copyrights')->queryAll();
 		$copyrights=Yii::app()->db->createCommand('SELECT id FROM copyrights')->queryAll();
-		$query='SELECT u.id,p.names, copy.participation_type, copy.title, copy.step_number, copy.application_date, j.hospital_unit, copy.creation_date 
+		$query='SELECT u.id,p.names, copy.participation_type, copy.title, copy.step_number, copy.application_date, j.hospital_unit, copy.creation_date
 				FROM copyrights copy
 				 JOIN curriculum curri ON copy.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
@@ -218,7 +221,7 @@ class TablesController extends Controller
 		$titlePage = "Artículos y Guías";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM articles_guides')->queryAll();
 		$articles=Yii::app()->db->createCommand('SELECT id FROM articles_guides')->queryAll();
-		$query='SELECT u.id,p.names, ar.title, ar.article_type, ar.magazine, ar.url_document, j.hospital_unit, ar.creation_date 
+		$query='SELECT u.id,p.names, ar.title, ar.article_type, ar.magazine, ar.url_document, j.hospital_unit, ar.creation_date
 				FROM articles_guides ar
 				 JOIN curriculum curri ON ar.id_resume=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum

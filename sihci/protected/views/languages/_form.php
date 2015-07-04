@@ -227,7 +227,7 @@
                         ),array('class'=>'savebutton')); */
         ?> --> 
         <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
-                'onclick'=>'send("languages-form", "languages/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","");',
+                'onclick'=>'send("languages-form", "languages/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","languages/admin","");',
                  //'id'=> 'post-submit-btn', 
                 'class'=>'savebutton',
             ));

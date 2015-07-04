@@ -7458,7 +7458,7 @@ function changeSector()
   
 	<div class="row buttons">
      <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
-                'onclick'=>'send("directed-thesis-form","directedThesis/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","");',
+                'onclick'=>'send("directed-thesis-form","directedThesis/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","directedThesis/admin","");',
                 'class'=>'savebutton',
             ));
     ?>		

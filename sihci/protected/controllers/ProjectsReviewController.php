@@ -173,7 +173,7 @@ class ProjectsReviewController extends Controller
 
 		$conexion = Yii::app()->db;
 
-		$res = $conexion->createCommand("UPDATE projects SET status = '".$this->nextReview($_POST["1"])."' WHERE id =".$id)->execute();
+		$res = $conexion->createCommand("UPDATE projects SET status = '".$this->nextReview($_POST[1])."' WHERE id =".$id)->execute();
 		//	echo $res;
 		if( $res == 1){
 						$followup = new ProjectsFollowups;

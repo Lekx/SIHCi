@@ -1,5 +1,5 @@
+ function send(form, actionUrl, id, redirectUrl, extras) {
 
-function send(form, actionUrl, id, redirectUrl, extras) {
   var formData;
   if(form != '')
       formData = new FormData($("#" + form)[0]);
@@ -11,9 +11,10 @@ alert(extras+" "+redirectUrl)
     var temp = new Array();
     temp = extras.split(",");
     for (a in temp ) {
-      formData.append(a+1, temp[a]);
+      formData.append(parseInt(a)+1, temp[a]);
     }
   }
+
   $.ajax({
     url: yii.urls.createUrl + "/" + actionUrl + "/" + id,
     type: 'POST',
@@ -24,6 +25,7 @@ alert(extras+" "+redirectUrl)
     success: function(response) {
       var data = JSON.parse(response);
       if (data['status'] != 'success') {
+
         $(".errordiv").show();
         for (var key in data) {
           $("#" + key + "_em_").show();
@@ -39,8 +41,13 @@ alert(extras+" "+redirectUrl)
         $(".successdiv").show();
 
           $('.backbut').click(function() {
+<<<<<<< HEAD
+            window.location = yii.urls.createUrl + "/" + redirectUrl;
+           });
+=======
              window.location = yii.urls.createUrl + "/" + redirectUrl;
          });
+>>>>>>> 5409777f2a2aa7ea174f844c0f2d043018610ad4
       }
     },
     complete: function(data) {},
