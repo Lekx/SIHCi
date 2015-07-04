@@ -1,5 +1,4 @@
 <?php
-
 class BooksController extends Controller
 {
 	/**
@@ -321,4 +320,25 @@ class BooksController extends Controller
 			Yii::app()->end();
 		}
 	}
+	/*public function beforeLogin()
+	{
+        if ( !Yii::app()->user->isGuest)  
+        {
+               if ( yii::app()->user->getState('userSessionTimeout') < time() ) 
+               {
+                   // timeout
+                   Yii::app()->user->logout();
+                   $this->redirect(array('/site/SessionTimeout'));  //
+               }
+               else 
+               {
+                   yii::app()->user->setState('userSessionTimeout', time() + Yii::app()->params['sessionTimeoutSeconds']) ;
+                   return true; 
+               }
+        }
+        else
+          return true;           
+    }*/
+
+
 }

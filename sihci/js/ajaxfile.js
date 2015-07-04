@@ -1,5 +1,4 @@
-
-function send(form, actionUrl, id, extras) {
+ function send(form, actionUrl, id, redirectUrl, extras) {
   var formData;
   if(form != '')
       formData = new FormData($("#" + form)[0]);
@@ -13,6 +12,7 @@ function send(form, actionUrl, id, extras) {
       formData.append(a+1, temp[a]);
     }
   }
+
   $.ajax({
     url: yii.urls.createUrl + "/" + actionUrl + "/" + id,
     type: 'POST',
@@ -23,6 +23,7 @@ function send(form, actionUrl, id, extras) {
     success: function(response) {
       var data = JSON.parse(response);
       if (data['status'] != 'success') {
+
         $(".errordiv").show();
         for (var key in data) {
           $("#" + key + "_em_").show();
@@ -38,7 +39,7 @@ function send(form, actionUrl, id, extras) {
         $(".successdiv").show();
 
           $('.backbut').click(function() {
-            window.location = yii.urls.createUrl+'/'+actionUrl;
+            window.location = yii.urls.createUrl + "/" + redirectUrl;
            });
       }
     },

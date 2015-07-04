@@ -571,7 +571,7 @@ function lettersOnly(e)
 
 	<div class="row buttons">
 		 <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
-                'onclick'=>'send("books-form","books/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","");',
+                'onclick'=>'send("books-form","books/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","books/admin","");',
                 'class'=>'savebutton',
             ));
     	 ?>

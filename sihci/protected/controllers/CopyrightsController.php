@@ -1,4 +1,6 @@
 <?php
+
+
 class CopyrightsController extends Controller
 {
 	/**
@@ -50,6 +52,7 @@ class CopyrightsController extends Controller
 	 */
 	public function actionView($id)
 	{
+	
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));

@@ -4028,7 +4028,7 @@ if(areaValue =="SOCIOLOGIA"){
   <div class="row buttons">
 
     <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
-                'onclick'=>'send("books-chapters-form", "booksChapters/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","");',
+                'onclick'=>'send("books-chapters-form", "booksChapters/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","booksChapters/admin","");',
                  //'id'=> 'post-submit-btn', 
                 'class'=>'savebutton',
             ));
