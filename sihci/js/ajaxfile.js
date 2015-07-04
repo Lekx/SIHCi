@@ -6,6 +6,7 @@ function send(form, actionUrl, id, redirectUrl, extras) {
   else
     formData = new FormData();
 
+alert(extras+" "+redirectUrl)
   if(extras !=''){
     var temp = new Array();
     temp = extras.split(",");

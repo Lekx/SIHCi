@@ -54,9 +54,9 @@
 	),
 )); 
 if($model->status == Yii::app()->user->Rol->alias){
-echo CHtml::htmlButton('Enviar',array(
+echo CHtml::htmlButton('Enviar a siguiente',array(
 
-                'onclick'=>'javascript: send("","projectsReview/sendReview","'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->user->Rol->alias.'","projectsReview/admin","DIVUH");',
+                'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "projectsReview/review", "'.Yii::app()->user->Rol->alias.',qw");',
                 'class'=>'savebutton',
             ));
 ?>

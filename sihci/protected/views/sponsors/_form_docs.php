@@ -16,7 +16,7 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 
 <?php $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'sponsors-docs-form',
-	'enableAjaxValidation' => false,
+	'enableAjaxValidation' => true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 ));?>
 
@@ -76,7 +76,6 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 	</div>
 
 	<div class="row buttons">
-		<!-- cambiar todo a español y este boton-->
 	<?php echo CHtml::htmlButton('Enviar',array(
                 'onclick'=>'send("sponsors-docs-form", "sponsors/create_docs", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "")',
                 'class'=>'savebutton',

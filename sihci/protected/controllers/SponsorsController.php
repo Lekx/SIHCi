@@ -233,6 +233,7 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->type = $type;
 				$model->value = $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key];
+				var_dump($model);
 				if($model->save()){
 					$section = "Empresas"; //manda parametros al controlador AdminSystemLog
 					$details = "Subsección: Datos de Contacto. Datos: ".$model->type;
@@ -432,13 +433,15 @@ class SponsorsController extends Controller {
 				$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
 				$model->file_name = "Documento_que_acredite_la_creacion_de_la_empresa";
 				$model->path = CUploadedFile::getInstanceByName('Doc1');
+				if($model->validate()){
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				if($model->validate())
 				if($model->save())
 					$reload = true;
 				
-				
+				}else{
+					$error1 = CActiveForm::validate($model);
+				}
 			}
 			if (is_object(CUploadedFile::getInstanceByName('Doc2'))) {
 				unset($model);
@@ -450,12 +453,14 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Acreditacion_de_las_facultades_del_representante_o_apoderado";
 				$model->path = CUploadedFile::getInstanceByName('Doc2');
+				if($model->validate()){
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				if($model->validate())
 				if ($model->save()) 
 						$reload = true;
-					
+				}else{
+					$error2 = CActiveForm::validate($model);
+				}	
 				
 			}
 			if (is_object(CUploadedFile::getInstanceByName('Doc3'))) {
@@ -468,12 +473,16 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Permisos_de_actividades";
 				$model->path = CUploadedFile::getInstanceByName('Doc3');
+				if($model->validate()){
+
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
 					if ($model->save()) 
 						$reload = true;
 					
-				
+				}else{
+					$error3 = CActiveForm::validate($model);
+				}
 			}
 			if (is_object(CUploadedFile::getInstanceByName('Doc4'))) {
 				unset($model);
@@ -485,12 +494,14 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "RFC_o_equivalente";
 				$model->path = CUploadedFile::getInstanceByName('Doc4');
+				if($moel->validate()){
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				if($model->validate())
 				if ($model->save()) 
 						$reload = true;
-					
+					}else{
+					$error4 = CActiveForm::validate($model);
+				}
 				
 			}
 			if (is_object(CUploadedFile::getInstanceByName('Doc5'))) {
@@ -503,13 +514,15 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Comprobante_de_domicilio";
 				$model->path = CUploadedFile::getInstanceByName('Doc5');
+				if($model->validate()){
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				if($model->validate())
 				if ($model->save()) 
 						$reload = true;
 					
-				
+				}else{
+					$error5 = CActiveForm::validate($model);
+				}
 			}
 			if (is_object(CUploadedFile::getInstanceByName('Doc6'))) {
 				unset($model);
@@ -521,16 +534,37 @@ class SponsorsController extends Controller {
 				$model->id_sponsor = $id_sponsor;
 				$model->file_name = "Identificacion_Oficial_del_Representante";
 				$model->path = CUploadedFile::getInstanceByName('Doc6');
+				if($model->validate()){
 				$model->path->saveAs($path2 . $model->file_name . "." . $model->path->getExtensionName());
 				$model->path = "users/" . $id_sponsor . "/docs/" . $model->file_name . "." . $model->path->getExtensionName();
-				if($model->validate())
 				if ($model->save()) 
 					$reload = true;
+				}else{
+					$error6 = CActiveForm::validate($model);
+				}
+
+			}	
+				if ($reload == true){
 				
-			}
-			if ($reload == true) {
-				$this->redirect(array('create_docs'));
-			}
+					if($error1 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error1));
+					if($error2 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error2));
+					if($error3 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error3));
+					if($error4 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error4));
+					if($error5 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error5));
+					if($error6 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error6));
+
+
+				if($error!='[]')
+					echo str_replace("]\"", "],\"",$error)."}";
+
+				Yii::app()->end();
+			 	}
 		}
 		$this->render('create_docs', array(
 			'model' => $model, 'modelDocs' => $modelDocs,
