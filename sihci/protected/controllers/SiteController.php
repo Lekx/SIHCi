@@ -34,7 +34,7 @@ class SiteController extends Controller {
 	 * This is the action to handle external exceptions.
 	 */
 	public function actionError() {
-
+	$this->layout = 'informativas';
 		if ($error = Yii::app()->errorHandler->error) {
 			if (Yii::app()->request->isAjaxRequest) {
 				echo $error['message'];
@@ -142,13 +142,13 @@ class SiteController extends Controller {
 		$date = date("d/m/y H:i:s");
 
 		if (isset($_POST['ajax']) && $_POST['ajax'] === 'recovery-form') {
-			
+
 			$model->attributes = $_POST['RecoveryPassword'];
 
 			$is_active = Users::model()->findByAttributes(array("status" => "activo", "email" => $model->email));
 
 			if ($model->validate() && $is_active != null) {
-				
+
 				$key = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
 				$is_active->act_react_key = $key;
 				$is_active->save();
@@ -169,7 +169,7 @@ class SiteController extends Controller {
 
 				$model->email = "";
 				echo '200';
-				
+
 			}else{
 
 				echo '404';
@@ -181,7 +181,7 @@ class SiteController extends Controller {
 		if (!isset($_POST['ajax'])) {
 			$this->renderPartial('recoveryPassword', array('model' => $model, 'msg' => $msg));
 		}
-	
+
 	}
 
 	//LO03 – Recuperar contraseña
@@ -189,9 +189,9 @@ class SiteController extends Controller {
 
 		$model = new ChangePassword;
 		$msg = '';
-		
+
 		$user = Users::model()->findByAttributes(array('act_react_key'=>$key));
-	
+
 		if ($user != null) {
 
 			if (isset($_POST["ChangePassword"])) {
@@ -200,7 +200,7 @@ class SiteController extends Controller {
 				$user->password = sha1(md5(sha1($model->password)));
 				$user->act_react_key = 'null';
 				$user->save();
-			
+
 
 				$model->password = "";
 				$model->password2 = "";
