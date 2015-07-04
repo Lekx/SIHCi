@@ -89,8 +89,8 @@
                         "proyectos"=>"Proyectos",
                         "Evaluacion"=>"Evaluación",
                         "proyectosUrl"=>"sponsorShip/admin",
-                        "labelEstadisticas"=>"",
-                        "labelAdmin"=>"",
+                        "labelEstadisticas"=>"Estadisticas",
+                        "labelAdmin"=>"Administración",
                         );
                 else if(Yii::app()->user->type == 'fisico')
                     $infoUser = array(
@@ -102,8 +102,8 @@
                         "proyectos"=>"Proyectos",
                         "Evaluacion"=>"Evaluación CV",
                         "proyectosUrl"=>(Yii::app()->user->Rol->alias != 'USUARIO' ? "projectsReview" : "projects")."/admin",
-                        "labelEstadisticas"=>"",
-                        "labelAdmin"=>"",
+                        "labelEstadisticas"=>"Estadisticas",
+                        "labelAdmin"=>"Administración",
                         );
                 else
                     $infoUser = array(
@@ -441,7 +441,7 @@
                     <?php if($infoUser['labelEstadisticas'] == "")
                                             echo "";
                                         else
-                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEstadisticas.png alt="home">', array('site/index'));?>
+                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEstadisticas.png alt="home">', array('Charts/index'));?>
                     <span><?php echo $infoUser['labelEstadisticas'] ?></span>
                 </div>
                 <div class="footermenuI">
@@ -449,7 +449,7 @@
                                         if($infoUser['labelAdmin'] == "")
                                             echo "";
                                         else
-                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PadministracionSistema.png alt="home">', array('site/index'));?>
+                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PadministracionSistema.png alt="home">', array('adminUsers/index'));?>
                     <span><?php echo $infoUser['labelAdmin'] ?></span>
                 </div>
                 <div class="footermenuI">
@@ -458,7 +458,7 @@
                 </div>
                 <div class="footermenuI logout">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCerrarCuenta.png alt="home">', array('site/logout'));?>
-                    <span> Cerrar sesión</span>
+                    <span>Cerrar sesión</span>
                 </div>
             </div>
         </body>
