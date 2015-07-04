@@ -10,7 +10,7 @@ function send(form, actionUrl, id, redirectUrl, extras) {
     var temp = new Array();
     temp = extras.split(",");
     for (a in temp ) {
-      formData.append(a+1, temp[a]);
+      formData.append(parseInt(a)+1, temp[a]);
     }
   }
   $.ajax({
