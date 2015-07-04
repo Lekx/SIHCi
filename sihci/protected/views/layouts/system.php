@@ -101,7 +101,7 @@
                         "MenuEmpresa"=>"CV-HC",
                         "proyectos"=>"Proyectos",
                         "Evaluacion"=>"Evaluación CV",
-                        "proyectosUrl"=>"projects/admin",
+                        "proyectosUrl"=>(Yii::app()->user->Rol->alias != 'USUARIO' ? "projectsReview" : "projects")."/admin",
                         "labelEstadisticas"=>"",
                         "labelAdmin"=>"",
                         );
@@ -130,10 +130,10 @@
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['icon'].'.png alt="home">', array($infoUser['controller']) );?>
                     <span><?php echo $infoUser['MenuEmpresa']; ?></span>
                 </div>
-                <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('EvaluateCV/index'));?>
-                    <span><?php echo $infoUser['Evaluacion']; ?></span>
-                </div>
+                  <div class="headerconteinerC">
+                      <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('EvaluateCV/index'));?>
+                      <span><?php echo $infoUser['Evaluacion']; ?></span>
+                  </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array($infoUser['proyectosUrl']));?>
                     <span><?php echo $infoUser['proyectos']; ?></span>
@@ -380,9 +380,9 @@
                             <h2>Registro con éxito</h2>
                             <hr>
                             <div class="remainder">
-                                <span>El registro a sido realizado con éxtio.</span>
+                                <span>El registro a sido realizado con éxito.</span>
                             </div>
-                            <button class="backbut"><h3>Regresar</h3></button>
+                            <button class="backbut" onclic="redirect()"><h3>Regresar</h3></button>
                         </div>
                     </div>
                 </div>

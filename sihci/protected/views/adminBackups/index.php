@@ -1,6 +1,7 @@
 
 <?php
 
+
 $this->menu=array(
     //array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
     //array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
@@ -45,7 +46,7 @@ $this->menu=array(
 
         <h4>Gestionar:</h4>
 
-<?php include ("logoutTime.php"); ?>
+
 
 <script type="text/javascript">
 
@@ -88,7 +89,7 @@ function search(){
 		    foreach ($files as $key => $backupsFiles)
 			{
 				echo "<tr>";
-					echo "<td>".date("Y-m-d")."</td>";
+					echo "<td>".date("Y/m/d")."</td>";
 					echo "<td>".'3:00'."</td>";
 					echo "<td> <a href='../backups/compressZip.php' target='_self'> Descargar ZIP </a></td>";
 					echo '<td><a href="../backups/compressZip.php" target="_self"><img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/descargar.png alt="home" ></a>';
@@ -116,7 +117,7 @@ function search(){
 		<?php
             //$url=Yii::app()->baseUrl."/backups/dataBase/";
 			//$url= "../sihci/backups/database/";
-			$backUps= scandir("backups/database",0);
+			$backUps= scandir("backups/dataBase",0);
 			unset($backUps[0]);
 			unset($backUps[1]);
 
@@ -126,7 +127,7 @@ function search(){
 				$url = Yii::app()->request->baseUrl."/img/Icons/descargar.png>";
 					echo "<td>".substr($backupsDataBase,0,10)."</td>";
 					echo "<td>".substr($backupsDataBase,-9,-4)."</td>";
-					echo "<td><a href='../backups/database/".$backupsDataBase."' target='_self'>Descargar SQL</a></td>";
+					echo "<td><a href='../backups/dataBase/".$backupsDataBase."' target='_self'>Descargar SQL</a></td>";
 					echo '<td><img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/descargar.png alt="home" >';
 					echo "</td>";
 

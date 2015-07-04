@@ -175,7 +175,7 @@ $(document).ready(function() {
 
 			<div class="phoneinput">
 			<div class="row">
-				<?echo $form->textField($model,'country_code',array('id'=>'countryCode','class'=>'phones country numericOnly','required'=>true,'name'=>'countryCode','placeholder'=>'[52]', 'title'=>'Lada Nacional')); ?>
+				<?php echo $form->textField($model,'country_code',array('id'=>'countryCode','class'=>'phones country numericOnly','required'=>true,'name'=>'countryCode','placeholder'=>'[52]', 'title'=>'Lada Nacional')); ?>
 				
 				<div id="errorCountry" class="errors"> Debe escribir Lada Nacional y tiene que ser número</div>
 				<input id="localCode" type="text" class="phones state numericOnly" name="localAreaCode" maxlength="3" placeholder="[33]" title="Lada Local">

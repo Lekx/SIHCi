@@ -74,7 +74,7 @@ class ProjectsController extends Controller
 		{
 			$model->attributes=$_POST['Projects'];
 
-			if(Yii::app()->user->id_roles==13){
+			if(Yii::app()->user->Rol->id==13){
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
 			}else{
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
@@ -98,13 +98,13 @@ class ProjectsController extends Controller
 
 					if($followup->save()){
 						echo "Proyecto enviado a revisión con éxito";
-						$this->redirect(array('admin'));
+						Yii::app()->end();
 					}else{
 						echo "no se guardo el followup - ".$followup->id_project." - ".$followup->id_user." - ".$followup->followup." - ".$followup->creation_date;
 					}
 				}else{
 					echo "Proyecto guardado con éxito";
-					$this->redirect(array('admin'));
+					Yii::app()->end();
 				}	
 			
 			}else{
@@ -126,15 +126,19 @@ class ProjectsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+echo "entered";
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Projects']))
 		{
+			echo "after post asdf";
 			$model->attributes=$_POST['Projects'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+
+			if($model->save()){
+				echo "i saved";
+				Yii::app()->end();
+			}
 		}
 
 		$this->render('update',array(

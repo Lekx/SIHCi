@@ -16,6 +16,7 @@ return array(
        'yiiwheels' => realpath(__DIR__ . '/../extensions/yiiwheels'), // change if necessary
     ),
 
+
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -45,8 +46,16 @@ return array(
 
 	),
 
+
 	// application components
 	'components'=>array(
+
+	   'session' => array(
+	   	  'autoStart'=>false,
+	      'class' => 'CDbHttpSession',
+	      'timeout' => 300,
+	   ),
+
 		'authManager'=>array(
 				'class'=>'CDbAuthManager',
 				'connectionID'=>'db',
@@ -63,7 +72,7 @@ return array(
             'class' => 'bootstrap.components.TbApi',
         ),
 
-           'yiiwheels' => array(
+        'yiiwheels' => array(
             'class' => 'yiiwheels.YiiWheels',
         ),
 

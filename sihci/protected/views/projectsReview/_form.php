@@ -1,13 +1,9 @@
 
+
+
 <div class="form">
 
-    <?php echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'javascript: send("","projectsReview/sendReview");',
-                'class'=>'savebutton',
-            ));
-
-
-
+    <?php 
 $form=$this->beginWidget('CActiveForm', array(
     'id'=>'projects-followups-form',
     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
@@ -26,7 +22,7 @@ $form=$this->beginWidget('CActiveForm', array(
     </div>
 
     <?php echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'");',
+                'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.$_GET['id'].'","")',
                 'class'=>'savebutton',
             ));
     ?>

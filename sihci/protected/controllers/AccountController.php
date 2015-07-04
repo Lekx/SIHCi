@@ -1,5 +1,6 @@
 <?php 
 
+
   	class AccountController extends Controller{
 
   	public $layout = '//layouts/informativa';
@@ -21,7 +22,7 @@
 
 	function checkPassword($password2, $password22){
 		if ($password2 != $password22){
-			echo "<script> alert(\"Las contraseñas no.\")</script>";
+			echo "<script> alert(\"Las contraseñas no coinciden.\")</script>";
 			return false;
 		}
 		else if($password2 == '' || $password22 == ''){
@@ -106,7 +107,7 @@
 		if(isset($_POST['Account']))
 		{
 			
-			if($this->checkEmail($_POST['Account']['email2'],$this->checkEmailValid($_POST['Account']['email2'], $_POST['Account']['email22'])))
+			if($this->checkEmailValid($_POST['Account']['email2'], $_POST['Account']['email22']) && $this->checkEmail($_POST['Account']['email2'],$_POST['Account']['email22']))
 			{
 
 				if($details->updateByPk($iduser,array('email'=>$_POST['Account']['email2']))){

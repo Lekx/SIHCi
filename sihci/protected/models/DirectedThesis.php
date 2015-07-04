@@ -51,10 +51,8 @@ class DirectedThesis extends CActiveRecord
 			array('discipline', 'length', 'max'=>75),
 			array('subdiscipline', 'length', 'max'=>100),
 			array('conclusion_date, creation_date', 'safe'),
-			array('path, safe','file','allowEmpty'=>true, 'on'=>'create',
-				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
-			       'maxSize'=>array(1204 * 2000),
-			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			array('conclusion_date','compare','compareValue' => date('d/m/Y'),'operator'=>'<='),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
