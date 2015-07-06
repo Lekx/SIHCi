@@ -10,27 +10,27 @@ $this->menu=array(
         array('label'=>'Crear', 'url'=>array('postdegreeGraduates/create'),'itemOptions'=>array('class' => 'sub1')),
 
 //postdegreeGraduates
-    array('label'=>'Gestión de usuarios ', 'url'=>array('AdminUsers/'),'itemOptions'=>array('class' => 'menuitem 2')),
-        array('label'=>'Gestionar', 'url'=>array('AdminUsers/'),'itemOptions'=>array('class' => 'sub2')),
-        array('label'=>'Crear', 'url'=>array('AdminUsers/CreateUser'),'itemOptions'=>array('class' => 'sub2')),
+    array('label'=>'Gestión de usuarios ', 'url'=>array('AdminUsers/'),'itemOptions'=>array('class' => 'menuitem 2 now')),
+        array('label'=>'Gestionar', 'url'=>array('AdminUsers/'),'itemOptions'=>array('class' => 'sub')),
+        array('label'=>'Crear', 'url'=>array('AdminUsers/CreateUser'),'itemOptions'=>array('class' => 'sub')),
 //knowledgeApplication
-    array('label'=>'Gestión de proyectos', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),
-        array('label'=>'Gestionar', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'sub3')),
-        array('label'=>'Crear', 'url'=>array('knowledgeApplication/create'),'itemOptions'=>array('class' => 'sub3')),
-//patent        
+    array('label'=>'Gestión de proyectos', 'url'=>array('adminProjects/admin'),'itemOptions'=>array('class' => 'menuitem 3')),
+        array('label'=>'Gestionar', 'url'=>array('adminProjects/admin'),'itemOptions'=>array('class' => 'sub3')),
+        array('label'=>'Crear', 'url'=>array('adminProjects/create'),'itemOptions'=>array('class' => 'sub3')),
+//patent
     array('label'=>'Respaldos', 'url'=>array('patent/admin'),'itemOptions'=>array('class' => 'menuitem 4')),
-//copyrights    
+//copyrights
     array('label'=>'Áreas de especialidad', 'url'=>array('adminSpecialtyAreas/admin'),'itemOptions'=>array('class' => 'menuitem 5')),
             array('label'=>'Gestionar', 'url'=>array('adminSpecialtyAreas/admin'),'itemOptions'=>array('class' => 'sub5')),
             array('label'=>'Crear', 'url'=>array('adminSpecialtyAreas/create'),'itemOptions'=>array('class' => 'sub5')),
-//copyrights    
-    array('label'=>'Lineas de investigación', 'url'=>array('adminResearchAreas/admin'),'itemOptions'=>array('class' => 'menuitem 6 now')),
-            array('label'=>'Gestionar', 'url'=>array('adminResearchAreas/admin'),'itemOptions'=>array('class' => 'sub')),
-            array('label'=>'Crear', 'url'=>array('adminResearchAreas/create'),'itemOptions'=>array('class' => 'sub')),
-//articlesGuides                
+//copyrights
+    array('label'=>'Lineas de investigación', 'url'=>array('adminResearchAreas/admin'),'itemOptions'=>array('class' => 'menuitem 6')),
+            array('label'=>'Gestionar', 'url'=>array('adminResearchAreas/admin'),'itemOptions'=>array('class' => 'sub6')),
+            array('label'=>'Crear', 'url'=>array('adminResearchAreas/create'),'itemOptions'=>array('class' => 'sub6')),
+//articlesGuides
 
     //array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-    
+
     );
 
 
@@ -67,7 +67,7 @@ $this->menu=array(
          <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificacion de Email" title="Verificacion de Email" ></input>
     </div>
 
-    
+
     <div class="row">
         <?php echo $form->textField($model,'password',array('placeholder'=>"Contraseña",'title'=>'Contraseña Minimo 6 maximo 15 caracteres')); ?>
         <?php echo $form->error($model,'password'); ?>
@@ -97,7 +97,7 @@ $this->menu=array(
 
     <div class="row">
         <?php echo $form->textField($modelPersons,'names',array('placeholder'=>"Nombre/s completos.", 'title'=>'Nombre/s completos')); ?>
-        <?php echo $form->error($modelPersons,'names'); ?>  
+        <?php echo $form->error($modelPersons,'names'); ?>
     </div>
 
     <div class="row">
@@ -110,7 +110,7 @@ $this->menu=array(
         <?php echo $form->error($modelPersons,'last_name2'); ?>
     </div>
 
-    <div class="row">   
+    <div class="row">
         <?php echo $form->textField($modelPersons,'curp_passport',array('placeholder'=>"Pasaporte/Curp",'title'=>'Pasaporte/Curp')); ?>
         <?php echo $form->error($modelPersons,'curp_passport'); ?>
     </div>

@@ -82,20 +82,20 @@ ol li
 	margin-top: 22px;
     margin-left: auto;
     display: block;
-    margin-right: auto;	
+    margin-right: auto;
     margin-bottom: 5px;
     z-index: 999;
 
 }
 .login:hover, .singin{
-cursor: pointer; 
+cursor: pointer;
 }
 #logocuentas2, #logocuentas4
 {
 	margin-top: 22px;
     margin-left: auto;
     display: block;
-    margin-right: auto;	
+    margin-right: auto;
     margin-bottom: 5px;
     z-index: 999
 
@@ -104,11 +104,11 @@ cursor: pointer;
 }
 #logout
 {
- 
+
 	margin-top: 22px;
     margin-left: auto;
     display: block;
-    margin-right: auto;	
+    margin-right: auto;
     margin-bottom: 5px;
     z-index: 999;
     width: 45;
@@ -173,7 +173,7 @@ cursor: pointer;
  	float: right;
  	font-family: 'Caviar_Dreams' !important;
 }
-.searchbar button 
+.searchbar button
 {
 	font-family: 'Caviar_Dreams' !important;
 
@@ -348,7 +348,7 @@ cursor: pointer;
 	margin-top: 80px;
 	left: 0;
 	right: 0;
-   	 
+
 }
 .textfont
 {
@@ -536,7 +536,7 @@ cursor: pointer;
 }
 .contentboxs #box1 #content
 {
-	
+
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -857,7 +857,7 @@ cursor: pointer;
 	text-align: center;
 	color: white;
 	padding-top: 10px;
-	
+
 
 }
 .copyrigths #copy
@@ -913,7 +913,7 @@ padding:15px;
 .cbp-hsmenu1
 {
 	list-style: none !important;
-	
+
 
 }
 .cbp-hssubmenu1 li
@@ -997,13 +997,13 @@ ul.cbp-hsmenu
 	border-left:2px solid white !important;
 	text-decoration:none !important;
 	color:white !important;
-	
+
 }
 .menu .up-btn:hover
 {
 	border-left:0px !important;
 }
-.iconscontent 
+.iconscontent
 {
   margin-right: auto;
   margin-left: auto;
@@ -1023,7 +1023,7 @@ ul.cbp-hsmenu
   padding-bottom: 40px;
 }
 .iconscontent div  ,.iconscontent2 div
-{ 
+{
 
 	width: 33%;
 	height: 100%;
@@ -1128,7 +1128,7 @@ ul.cbp-hsmenu
  	z-index: 900;
 
 }
-.typecontent 
+.typecontent
 {
 	display: block;
 	margin-right: auto;
@@ -1139,7 +1139,7 @@ ul.cbp-hsmenu
 	height: 525px;
 	font-family: 'Caviar_Dreams';
 	z-index: 999;
-	
+
 }
 .typecontent2
 {
@@ -1155,7 +1155,7 @@ ul.cbp-hsmenu
 }
 .backhome
 {
-	
+
 	width:500px;
 	height:50px;
 	background-color:#0E3152;
@@ -1170,13 +1170,13 @@ ul.cbp-hsmenu
 {
 	cursor: pointer;
 }
-.typeicons h3 , .typeicons h4 , .typeicons h1 
+.typeicons h3 , .typeicons h4 , .typeicons h1
 {
 	color: white;
 	text-align: center;
 }
 .typeicons .type1
-{	
+{
   margin-top: 50px;
   padding-left: 200px;
   display: inline-block;
@@ -1192,14 +1192,14 @@ ul.cbp-hsmenu
 }
 
 #searchBarMain1::-webkit-input-placeholder { /* WebKit browsers */
- 
+
     	padding:5px 18px 2px 9px !important;
 
 }
 #searchBarMain1::-webkit-input-placeholder { /* navegadores Webkit */
-   
+
     	padding:5px 18px 2px 9px !important;
- 
+
 }
 #searchBarMain1:-moz-placeholder { /* Mozilla Firefox 4 hasta 18 */
 
@@ -1207,13 +1207,13 @@ ul.cbp-hsmenu
 
 }
 #searchBarMain1::-moz-placeholder { /* Mozilla Firefox 19+ */
-  
+
     	padding:5px 18px 2px 9px !important;
 }
 #searchBarMain1:-ms-input-placeholder { /* Internet Explorer 10+ */
 
     	padding:5px 18px 2px 9px !important;
-    	
+
 }
 
 /* Error and Success Messege */
@@ -1336,4 +1336,12 @@ ul.cbp-hsmenu
 .abortdiv
 {
     display: none;
+}
+.error403
+{
+  display: block;
+  margin: auto;
+  width: 700px;
+  height: 400px;
+  margin-top: -100px;
 }

@@ -32,4 +32,4 @@ $this->menu=array(
 
 <h3>Modificar proyecto de investigación:</h3>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'discipline'=>$this->discipline)); ?>

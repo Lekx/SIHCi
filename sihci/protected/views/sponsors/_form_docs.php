@@ -16,7 +16,7 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 
 <?php $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'sponsors-docs-form',
-	'enableAjaxValidation' => false,
+	'enableAjaxValidation' => true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 ));?>
 
@@ -76,9 +76,12 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 	</div>
 
 	<div class="row buttons">
-		<!-- cambiar todo a español y este boton-->
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+	<?php echo CHtml::htmlButton('Enviar',array(
+                'onclick'=>'send("sponsors-docs-form", "sponsors/create_docs", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "")',
+                'class'=>'savebutton',
+            ));
+    ?>		
+    <?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget();?>

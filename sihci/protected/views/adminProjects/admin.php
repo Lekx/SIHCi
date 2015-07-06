@@ -42,10 +42,15 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
  }
 </script>
 
-<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna"><br><br>
-<?php echo CHtml::link('<span>Registrar<br>Proyecto</span>', array('projects/create'));?><br><br>
-<?php echo CHtml::link('<span>Registrar<br>Patrocinio</span>', array('AdminProjects/CreateSponsorship'));?>
-<?php 
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchadmin" style="width: 75% !important;">
+<input class="adminbut tooltipstered" type="submit" name="yt0" value="">
+<div class="buttons">
+<?php echo CHtml::link('Registrar Proyecto', array('projects/create','class'=>'adminbut'));?>
+<?php echo CHtml::link('Registrar Patrocinio', array('AdminProjects/CreateSponsorship','class'=>'adminbut'));?>
+</div>
+<br>
+<br>
+<?php
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-grid',
@@ -74,8 +79,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	            ),
 	     array('type'=>'raw',
 		 		'name' => 'Estatus',
-		 		'value'=>'@$data["id_user_sponsorer"] 
-		 				? 
+		 		'value'=>'@$data["id_user_sponsorer"]
+		 				?
 		 				CHtml::dropDownList($data["id"],$data["status"],array("0" => "Patrocinio Status" , "1" => "Otro mas"),array("onchange"=>"updateStatusSponsorship($data[id])"))
 		 				:
 		 				CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En proceso" , "dictaminado" => "dictaminado", "borrador"=>"borrador", "DIVUH"=>"revisión divuh", "SEUH"=>"revisión seuh", "COMETI"=>"revisión c. ética", "COMBIO"=>"revisión c. Bio.", "COMINV"=>"revisión c. inv.", "DUH"=>"revisión duh", "SGEI"=>"revisión sgei", "DG"=>"revisión dg", "JIOPD"=>"revisión J.Inv. opd"),array("onchange"=>"updateStatusProject($data[id])"))'
@@ -91,7 +96,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 				'updateButtonUrl'=>'Yii::app()->createUrl("/adminProjects/update", array("id" => $data["id"], "folio" => @$data["folio"]))',
 				),
 
-	     
+
    	),
 ));
  ?>

@@ -52,10 +52,9 @@ class Persons extends CActiveRecord {
 			array('genre', 'length', 'max' => 10),
 			array('country', 'length', 'max' => 50),
 			array('state_of_birth', 'length', 'max' => 45),
-			array('photo_url', 'file', 'allowEmpty' => true,
-				'on' => 'update',
-				'types' => 'png, jpg, jpeg, PNG, JPG, JPEG',
-				'message' => 'Solo se admiten archivos PNG, JPG, JPEG'),
+			array('photo_url','file','types'=>'jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('photo_url','file','types'=>'jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_user, names, last_name1, last_name2, marital_status, genre, birth_date, country, state_of_birth, curp_passport, photo_url, person_rfc', 'safe', 'on' => 'search'),
@@ -149,12 +148,12 @@ class Persons extends CActiveRecord {
 	 	return parent::beforeSave();
 	 }
 
-
+/*
 	protected function afterFind() {
 		$this->birth_date = DateTime::createFromFormat('Y-m-d', $this->birth_date)->format('d/m/Y');
 		return parent::afterFind();
 
-}
+}*/
 
 
 

@@ -56,7 +56,7 @@ class AdminUsersController extends Controller {
 	function checkEmail($email, $email2) {
 
 		if ($email != $email2) {
-			echo "email";
+			echo "Los correos son diferentes.";
 			return false;
 		} else {
 			return true;
@@ -64,7 +64,7 @@ class AdminUsersController extends Controller {
 	}
 	function checkPassword($password, $password2) {
 		if ($password != $password2) {
-			echo "pass";
+			echo "Los passwords son diferentes.";
 			return false;
 		} else {
 			return true;
@@ -471,6 +471,16 @@ class AdminUsersController extends Controller {
 			echo "Actualizacion realizada con exito.";
 		else
 			echo "Error al actualizar el estado del usuario.";
+	}
+
+		public function actionChangeRol(){
+		$idRef = $_POST["id"];
+		$idRol = $_POST["idRol"];
+
+		if(Users::model()->updateByPk($idRef, array('id_roles' => $idRol)))
+			echo "Actualizacion realizada con exito.";
+		else
+			echo "Error al actualizar el rol del usuario.";
 	}
 
 	public function actionChangeStatusCurriculum(){

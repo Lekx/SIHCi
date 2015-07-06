@@ -1,5 +1,4 @@
 <?php
-
 class BooksController extends Controller
 {
 	/**
@@ -74,65 +73,28 @@ class BooksController extends Controller
 		
 		if(isset($_POST['Books']))
 		{
+
 			$model->attributes=$_POST['Books'];
 			$model->id_curriculum = $id_curriculum->id;   
 
-	        $model->path = CUploadedFile::getInstanceByName('Books[path]');
+	        $model->path = CUploadedFile::getInstance($model,'path');
 
-			if($model->validate())
+			if($model->validate()==1 )
             {
             	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
 
-               	if ($model->path != null)
-               	{
-	                if(!is_dir($urlFile))
-	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/', 0777, true);
-	                
-	    		 				
-	 					$model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();    			 			   	
-			              
-			                if($model->save())
-			                {			               		              
-					 			$names = $_POST['names'];
-					            $last_name1 = $_POST['last_names1'];
-					            $last_name2 = $_POST['last_names2'];
-					            $position = $_POST['positions'];
-					            
-	         					foreach($_POST['names'] as $key => $names)
-	         					{
-					               	unset($modelAuthor);
-					               	$modelAuthor = new BooksAuthors;
+               	 if(!empty($oldUrlDocument))
+                    	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
+                    
+                        $model->path = CUploadedFile::getInstance($model,'path');
+	                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
+	                  
+	                    if(!is_dir($urlFile))          
+	                        mkdir($urlFile, 0777, true);
 
-					               	$modelAuthor->id_book = $model->id;
-					       			$modelAuthor->names = $names;
-					        		$modelAuthor->last_name1 = $last_name1[$key];
-					       			$modelAuthor->last_name2 = $last_name2[$key];
-					        		$modelAuthor->position = $position[$key];
-		                    		$modelAuthor->save();
-			              	    }
-			              	    	
-			              	    $section = "Libros";
-     							$action = "Creación";
-								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
-     							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-			                    
-								if(!isset($_GET['ajax']))
-                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-								/*echo CJSON::encode(array('status'=>'success'));
-	                            $this->redirect(array('admin'));
-	                            Yii::app()->end();*/
-
-			               }					               
-			               else
-			               {
-			               		echo CJSON::encode(array('status'=>'404'));
-	                            Yii::app()->end();
-			               }
-			    
-			    }
-			    else
-			    {
+	                    $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+			            $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();                                                    
+			        
 	               	if($model->save())
 	               	{             
 			 			$names = $_POST['names'];
@@ -157,20 +119,25 @@ class BooksController extends Controller
 						
 						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 	               	  	
-						if(!isset($_GET['ajax']))
+						echo CJSON::encode(array('status'=>'success'));
+	     				Yii::app()->end();
+						/*if(!isset($_GET['ajax']))
                                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 						/*echo CJSON::encode(array('status'=>'200'));
                         $this->redirect(array('admin','id'=>$model->id));
                         Yii::app()->end();*/
 
                     } 		                      
-		            else 
-		            {
-		            	echo CJSON::encode(array('status'=>'404'));
-	                    Yii::app()->end();
-		            }
-		        }    
+		           	       
 	        }// if validate
+	        else
+	        {
+        		$error = CActiveForm::validate($model);
+					if($error!='[]')
+						echo $error;
+
+					Yii::app()->end();
+	        }
 	    }//	Books	   
         	
    		if(!isset($_POST['ajax']))
@@ -196,14 +163,16 @@ class BooksController extends Controller
         if(isset($_POST['Books']))
         {
 	            $model->attributes=$_POST['Books'];
-	            $model->path = CUploadedFile::getInstanceByName('Books[path]');
-	
-           		if ($model->path != null)
+	            $model->path = CUploadedFile::getInstance($model,'path');
+			
+			if ($model->validate()== 1)
+			{	
+           		if ($model->path != "")
                 {
                     if(!empty($oldUrlDocument))
                     	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
                     
-                    $model->path = CUploadedFile::getInstanceByName('Books[path]');
+                        $model->path = CUploadedFile::getInstanceByName('Books[path]');
 	                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
 	                  
 	                    if(!is_dir($urlFile))          
@@ -251,18 +220,19 @@ class BooksController extends Controller
 					
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
        	 		   
-       	 		    if(!isset($_GET['ajax']))
-                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-					/*echo CJSON::encode(array('status'=>'200'));
-                    $this->redirect(array('admin'));
-                    Yii::app()->end();*/
-            	} 
-            	
-            	/*else 
-                {
-    				echo CJSON::encode(array('status'=>'404'));
-                    Yii::app()->end();
-                } */          
+       	 			echo CJSON::encode(array('status'=>'success'));
+	     			Yii::app()->end();
+				
+            	}             	
+            }	
+            else 
+        	{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+
+				Yii::app()->end();
+            }          
             
         }
         	
@@ -350,4 +320,25 @@ class BooksController extends Controller
 			Yii::app()->end();
 		}
 	}
+	/*public function beforeLogin()
+	{
+        if ( !Yii::app()->user->isGuest)  
+        {
+               if ( yii::app()->user->getState('userSessionTimeout') < time() ) 
+               {
+                   // timeout
+                   Yii::app()->user->logout();
+                   $this->redirect(array('/site/SessionTimeout'));  //
+               }
+               else 
+               {
+                   yii::app()->user->setState('userSessionTimeout', time() + Yii::app()->params['sessionTimeoutSeconds']) ;
+                   return true; 
+               }
+        }
+        else
+          return true;           
+    }*/
+
+
 }
