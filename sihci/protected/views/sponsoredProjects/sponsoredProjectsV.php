@@ -13,7 +13,7 @@
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	//'id'=>'cveHcPublics',
-	'dataProvider'=>$SponsoredProjectsV,
+	'dataProvider'=>$sponsoredProjectsV,
 	'summaryText'=>'', 
 	'ajaxUpdate' => true,
 	'filter' => null,
