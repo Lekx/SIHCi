@@ -17,3 +17,8 @@ $this->breadcrumbs=array(
 ?><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/Errors/404.svg">
 <?php  } ?>
 </div>
+
+
+<div class="error">
+<?php echo CHtml::encode($message); ?>
+</div>
