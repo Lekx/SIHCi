@@ -15,7 +15,7 @@ class FilesManagerController extends Controller
 		);
 	}
 
-	
+
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -23,49 +23,50 @@ class FilesManagerController extends Controller
 		));
 	}
 
-	
+
 	// MA01-Registrar datos FilesManager
 	public function actionCreate()
 		{
 			$model=new FilesManager;
 
-			
+
 			if(isset($_POST['FilesManager']))
 			{
 
 		$model->attributes=$_POST['FilesManager'];
 		$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
 		$model->path = CUploadedFile::getInstanceByName('FilesManager[path]');
-	
-			if($model->path->type == 'application/pdf' || $model->path->type == 'application/PDF')
-			
-			{	
+		$path = YiiBase::getPathOfAlias("webroot") . "/files_manager/";
+		if (!file_exists($path)) {
+			mkdir($path, 0775, true);
+		}
+			if($model->validate() == 1)
+			{
 
 				$folder = "/files_manager/";
 				$path2 = YiiBase::getPathOfAlias("webroot");
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot")."/files_manager/".$model->file_name.'.pdf');
-				$model->path = $path2."/files_manager/".$model->file_name.'.pdf';
-	   		
+				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").$folder.$model->file_name.'.pdf');
+				$model->path = $path2.$folder.$model->file_name.'.pdf';
+
 					if($model->save())
 						$this->redirect(array('admin'));
 
-			} 
-				 else{
-			 		echo "Tipo de archivo no valido, solo se admiten ";
-			 	}
-	     
+			}else{
+				$error = CActiveForm::validate($model);
+			}
+
 			}
 			$this->render('create',array(
 				'model'=>$model,
 			));
 		}
 
-	
+
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
-		
+
 
 		if(isset($_POST['FilesManager']))
 		{
@@ -79,17 +80,17 @@ class FilesManagerController extends Controller
 		));
 	}
 
-	
+
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
 
-		
+
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	
+
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('FilesManager');
@@ -98,7 +99,7 @@ class FilesManagerController extends Controller
 		));
 	}
 
-	
+
 	public function actionAdmin()
 	{
 		$model=new FilesManager('search');
@@ -111,7 +112,7 @@ class FilesManagerController extends Controller
 		));
 	}
 
-	
+
 	public function loadModel($id)
 	{
 		$model=FilesManager::model()->findByPk($id);
@@ -120,7 +121,7 @@ class FilesManagerController extends Controller
 		return $model;
 	}
 
-	
+
 	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='files-manager-form')
@@ -132,7 +133,7 @@ class FilesManagerController extends Controller
 
 	public function actionDisplayFiles($section)
 		{
-			
+
 		$result = $model=FilesManager::model()->findAll(array(
 			'condition'=>'section="'.$section.'" AND NOW() BETWEEN start_date AND end_date'
 			));
@@ -141,7 +142,7 @@ class FilesManagerController extends Controller
 		echo "<ul>";
 		foreach($result as $files => $newArray){
 			echo"<li><a href='../../".$newArray["path"]."' target='_blank'>".$newArray["file_name"]."</a></li>";
-			
+
 
 		}
 		echo "</ul>";
