@@ -149,23 +149,24 @@ class SiteController extends Controller {
 
 			if ($model->validate() && $is_active != null) {
 
+				
 				$key = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
 				$is_active->act_react_key = $key;
 				$is_active->save();
-				$email = new SendEmail;
-				$subject = "Has solicitado recuperar tu password en";
+				$subject = "Has solicitado recuperar tu contraseña en: ";
 				$subject .= Yii::app()->name;
-				$message = "<a href='http://localhost/sihci/index.php/site/changePassword?key=" . $key . ">";
-				$message .= "Haz click en ésta liga para cambiar tu contraseña";
-				$message .= "</a><br /><br />";
-				$message .= "<a href='http://sgei.hcg.gob.mx/sihci/sihci/index.php'>Regresar a la web</a>";
-				$email->Send_Email
-				(
-					array(Yii::app()->params['emailAdmin'], Yii::app()->name),
-					array($model->email, ''),
-					$subject,
-					$message
-				);
+				$body = "
+			
+					Has solicitado recuperar tu contraseña
+				
+					Haz click en ésta liga para cambiar tu contraseña
+				   
+				    http://sgei.hcg.gob.mx/sihci/sihci/index.php/site/changePassword?key=" . $key . ">";
+				
+				if(!mail($model->email,$subject,$body)){
+				  echo"Error al enviar el mensaje.";
+				}
+				
 
 				$model->email = "";
 				echo '200';
@@ -184,33 +185,47 @@ class SiteController extends Controller {
 
 	}
 
+	function checkPassword($password2, $password22){
+		if ($password2 != $password22){
+			echo "<script> alert(\"Las contraseñas no coinciden.\")</script>";
+			return false;
+		}
+		else if($password2 == '' || $password22 == ''){
+			echo "<script> alert(\"Favor de llenar los campos todos los campos.\")</script>";
+			return false;
+		}else if(strlen($password2)<6 || strlen($password22<6)){
+			echo "<script> alert(\"La contraseña debe ser minimo 6 caracteres.\")</script>";
+			return false;
+		}else
+			return true;
+	}
+
 	//LO03 – Recuperar contraseña
 	public function actionChangePassword($key) {
-
-		$model = new ChangePassword;
-		$msg = '';
-
+		$this->layout = "informativas";
 		$user = Users::model()->findByAttributes(array('act_react_key'=>$key));
-
+		$idUser = $user->id;
+		$currentpassword = $user->password;
 		if ($user != null) {
 
 			if (isset($_POST["ChangePassword"])) {
-				$model->attributes = $_POST['ChangePassword'];
+				if($this->checkPassword($_POST['ChangePassword']['password2'],$_POST['ChangePassword']['password22']))
+			{
 
-				$user->password = sha1(md5(sha1($model->password)));
-				$user->act_react_key = 'null';
-				$user->save();
-
-
-				$model->password = "";
-				$model->password2 = "";
-				$msg = "<strong class='text-success'>su contraseña ha cambiado con éxito</strong>";
-
+				if($user->updateByPk($idUser,array('password'=>sha1(md5(sha1($_POST['ChangePassword']['password2']))), 'act_react_key'=>'null'))){
+						$section = "Cuenta";
+						$details = "Subsección: Olvidó su contraseña.";
+						$action = "Modificación";
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					$this->redirect(Yii::app()->homeUrl);
+				}
+						
+			}
 			}
 		} else {
 			$this->redirect(Yii::app()->homeUrl);
 		}
 
-		$this->render('changePassword', array('model' => $model, 'msg' => $msg, 'key' => $key));
+		$this->render('changePassword', array('model' => $user, 'key' => $key));
 	}
 }
