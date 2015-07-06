@@ -128,6 +128,165 @@ $('<div></div>').appendTo('form')
 
 			
 	}
+
+	function changeSubTemaPrioritario(){
+    
+    var temaValue = $("#temaPrioritorio option:selected").val();
+
+		if(temaValue =="Enfermedades Metabólicas (incluida obesidad)"){
+		    var enfermedadesMetabolicas = ["Diabetes Mellitus Tipo 2",
+								"Obesidad y sobrepeso",
+								"Otro. Especifique"]
+		    temaValue = enfermedadesMetabolicas;
+		}
+		if(temaValue =="Enfermedades Cardiovasculares"){
+		    var enfermedadesCardiovasculares = [
+								"Enfermedad Isquémica del Corazón",
+								"Evento Vascular Cerebral",
+								"Hipertensión Arterial Sistémica",
+								"Otro. Especifique"]
+		    temaValue = enfermedadesCardiovasculares;
+		}
+		if(temaValue =="Enfermedades Infecciosas"){
+		    var enfermedadesInfecciosas = [
+		    							"Enfermedad diarreica aguda en menores de 5 años",
+		    							"Infecciones Nosocomiales",
+										"Infecciones agudas de vías aéreas superiores en menores de 5 años",
+										"VIH/SIDA",
+										"Otro. Especifique"]
+		    temaValue = enfermedadesInfecciosas;
+		}
+		if(temaValue =="Accidentes y Violencia"){
+		    var accidentesViolencia = ["Especifique"]
+		    temaValue = accidentesViolencia;
+		}
+		if(temaValue =="Cáncer"){
+		    var cancer = ["Cáncer de mama",
+											"Cáncer cérvico-uterino",
+											"Otro." ]
+		    temaValue = cancer;
+		}
+		if(temaValue =="Enfermedades crónicas"){
+		    var enfermedadesCronicas = ["Enfermedad hepática crónica",
+										"Otro. Especifique"]
+		    temaValue = enfermedadesCronicas;
+		}
+		if(temaValue =="Enfermedades emergentes"){
+		    var enfermedadesEmergenes = ["Especifique"]
+		    temaValue = enfermedadesEmergenes;
+		}
+		if(temaValue =="Envejecimiento"){
+		    var envejecimiento = ["Especifique"]
+		    temaValue = envejecimiento;
+		}
+		if(temaValue =="Muertes evitables (incluidas muerte materna y perinatal)"){
+		    var muertesEvitables = ["Embarazo",
+									"Enfermedades del recién nacido",
+									"Muerte materna",
+									"Muerte perinatal",
+									"Otro. Especifique"]
+		    temaValue = muertesEvitables;
+		}
+		if(temaValue =="Salud Mental y Adicciones"){
+		    var saludMentalAdicciones = ["Especifique"]
+		    temaValue = saludMentalAdicciones;
+		}
+		if(temaValue =="Discapacidad e Incapacidad"){
+		    var discapacidadIncapacidad = ["Enfermedades y Riesgos de Trabajo",
+											"Otro. Especifique"]
+		    temaValue = discapacidadIncapacidad;
+		}
+		if(temaValue =="Otros"){
+		    var otros = ["Alergia e Inmunología",
+						"Anatomía Patológica",
+						"Anatomía Patológica Pediátrica",
+						"Anestesiología",
+						"Anestesiología Pediátrica",
+						"Angiología",
+						"Biología de la Reproducción Humana",
+						"Cardiología",
+						"Cardiología Pediátrica",
+						"Cirugía Cardiotorácica",
+						"Cirugía Cardiotorácica Pediátrica",
+						"Cirugía General",
+						"Cirugía Pediátrica",
+						"Cirugía Plástica y Reconstructiva ",
+						"Coloproctología",
+						"Comunicación, Audiología y Foniatría",
+						"Dermatología",
+						"Dermatología Pediátrica",
+						"Dermatopatología",
+						"Endocrinología",
+						"Endocrinología Pediátrica",
+						"Epidemiología",
+						"Gastroenterología",
+						"Gastroenterología y Nutrición Pediátrica ",
+						"Genética Médica",
+						"Geriatría",
+						"Ginecología y Obstetricia",
+						"Hematología",
+						"Hematología Pediátrica ",
+						"Infectología Pediátrica ",
+						"Infectología de Adultos",
+						"Medicina Familiar",
+						"Medicina Interna",
+						"Medicina Legal",
+						"Medicina Materno Fetal",
+						"Medicina Nuclear",
+						"Medicina de Rehabilitación",
+						"Medicina de la Actividad Física y Deportiva",
+						"Medicina del Enfermo Pediátrico en Estado Crítico ",
+						"Medicina del Enfermo en Estado Crítico ",
+						"Medicina del Trabajo",
+						"Nefrología",
+						"Nefrología Pediátrica",
+						"Neonatología",
+						"Neumología ",
+						"Neumología Pediátrica ",
+						"Neuro-Otología",
+						"Neuroanestesiología",
+						"Neurocirugía",
+						"Neurocirugía Pediátrica ",
+						"Neurología",
+						"Neurología Pediátrica ",
+						"Neuropatología",
+						"Neuroradiología",
+						"Nutriología Clínica",
+						"Oftalmología",
+						"Oftalmología Neurológica",
+						"Oncología Médica ",
+						"Oncología Pediátrica",
+						"Oncología Quirúrgica",
+						"Ortopedia",
+						"Otorrinolaringología",
+						"Otorrinolaringología Pediátrica",
+						"Patología Clínica",
+						"Patología Pediátrica",
+						"Pediatría",
+						"Psiquiatría",
+						"Psiquiatría Infantil y de la Adolescencia",
+						"Radio-Oncología",
+						"Radiología e imagen",
+						"Reumatología",
+						"Reumatología Pediátrica",
+						"Terapía Endovascular Neurológica",
+						"Urgencias Médico Quirúrgicas",
+						"Urología",
+						"Urología Ginecológica", 
+						"Otro. Especifique"]
+		    temaValue = otros;
+		}
+
+	 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]' onchange='changeSubTemaPrioritario()'>";
+	    newTema+="<option>Subtema Prioritario</option>";
+	    for (var item in temaValue) {
+        newTema +="<option>"+temaValue[ item ]+"</option>";
+    }
+
+    	newTema+="</select></span>";
+
+    	$("#comboSubTemaPrioritario").html(newTema);
+  }
 </script>
 
 <div class="form">
@@ -184,14 +343,29 @@ $('<div></div>').appendTo('form')
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'priority_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Tema prioritario','title'=>'Tema prioritario')); ?>
+		<!-- <?php// echo $form->textField($model,'priority_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Tema prioritario','title'=>'Tema prioritario')); ?> -->
+		<?php echo $form->dropDownList($model,'priority_topic',array('Accidentes y Violencia'=>'Accidentes y Violencia',
+																	'Cáncer'=>'Cáncer',
+																	'Discapacidad e Incapacidad'=>'Discapacidad e Incapacidad',
+																	'Enfermedades Cardiovasculares'=>'Enfermedades Cardiovasculares',
+																	'Enfermedades Infecciosas'=>'Enfermedades Infecciosas',
+																	'Enfermedades Metabólicas (incluida obesidad)'=>'Enfermedades Metabólicas (incluida obesidad)',
+																	'Enfermedades crónicas'=>'Enfermedades crónicas',
+																	'Enfermedades emergentes'=>'Enfermedades emergentes',
+																	'Envejecimiento'=>'Envejecimiento',
+																	'Muertes evitables (incluidas muerte materna y perinatal)'=>'Muertes evitables (incluidas muerte materna y perinatal)',
+																	'Salud Mental y Adicciones'=>'Salud Mental y Adicciones',
+																	'Otros'=>'Otros'),array('prompt'=>'Tema prioritario','title'=>'Tema prioritario','id'=>'temaPrioritorio', 'onchange'=>'changeSubTemaPrioritario()')); ?>
 		<?php echo $form->error($model,'priority_topic'); ?>
 	</div>
+	<div class="row"id="comboSubTemaPrioritario">
 
-	<div class="row">
-		<?php echo $form->textField($model,'sub_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Subtema prioritario','title'=>'Subtema prioritario')); ?>
-		<?php echo $form->error($model,'sub_topic'); ?>
-	</div>
+  	</div>
+
+	<!-- <div class="row">
+		<?php //echo $form->textField($model,'sub_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Subtema prioritario','title'=>'Subtema prioritario')); ?>
+		<?php //echo $form->error($model,'sub_topic'); ?>
+	</div> -->
 
 	<div class="row">
 		<?php echo $form->textArea($model,'justify',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación para el tema seleccionado','title'=>'Justificación para el tema seleccionado')); ?>
@@ -213,6 +387,62 @@ $('<div></div>').appendTo('form')
 	<div class="row">
 		Datos del investigador.
 	</div>
+
+		<?php $persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+				$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
+				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id));
+				$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+				$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id)); 
+				
+				
+			 $this->widget('zii.widgets.CDetailView', array(	
+			'data'=>$persons,
+			'attributes'=>array(
+		
+				array(
+					'label'=>'Nombre(s):',
+					'value'=>$persons->names,
+					),
+				array(
+					'label'=>'Apellido Paterno:',
+					'value'=>$persons->last_name1,
+					),
+				array(
+					'label'=>'Apellido Materno:',
+					'value'=>$persons->last_name2,
+					),  
+				array(
+					'label'=>'Sexo:',
+					'value'=>$persons->genre,
+					), 
+				array(
+					'label'=>'Email:',
+					'value'=>$emailUsers->email,
+					),
+				array(
+					'label'=>'Telefono:',
+					'value'=>$phoneUsers->phone_number.' Ext '.$phoneUsers->extension,
+					),  
+				array(
+					'label'=>'Adscripción en el IMSS:',
+					'value'=>$jobsUsers->hospital_unit,
+					), 
+				array(
+					'label'=>'Delegación:',
+					'value'=>$jobsUsers->hospital_unit,
+					), 
+				array(
+					'label'=>'Máximo grado de estudios:',
+					'value'=>$gradesUsers->grade,
+					), 
+				array(
+					'label'=>'¿Pertenece al SNI?',
+					'value'=>$curriculum->SNI,
+					),   
+			),
+		)); 
+		?>
 
 	<div class="row">
 		<?php echo CHtml::link('Corregir datos del Curriculum Vitae Único (CVU)',array('curriculumVitae/personalData'),array('target'=>'_blank')); ?>
