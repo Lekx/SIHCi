@@ -117,13 +117,13 @@ class ProjectsController extends Controller
 		{
 			$model->attributes=$_POST['Projects'];
 
-			if(Yii::app()->user->Rol->id==13){
+			if(Yii::app()->user->Rol->id==1){
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
 			}else{
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			}
 
-			if($_POST['1']== "draft")
+			if($_POST[1]== "draft")
 				$model->status = "borrador";
 			else
 				$model->status = "DIVUH";
@@ -134,21 +134,33 @@ class ProjectsController extends Controller
 			$model->registration_number = "-1";
 		if($model->validate()){
 			if($model->save()){
-				if($_POST['1'] != "draft"){
+				var_dump($_POST['adtlResearchers']);
+				foreach ($_POST['adtlResearchers'] as $key => $value) {
+					if(!empty($value)){
+						$adtlRes = new ProjectsCoworkers;
+						$adtlRes->id_project = $model->id;
+						$adtlRes->fullName = $value;
+						echo $value;
+						if(!$adtlRes->save())
+							echo "ya valio hermano";
+					}
+				}
+				if($_POST[1] != "draft"){
 					$followup = new ProjectsFollowups;
 					$followup->id_project = $model->id;
 					$followup->id_user = Yii::app()->user->id;
 					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
 
 					if($followup->save()){
-						echo "Proyecto enviado a revisión con éxito";
+						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
 						Yii::app()->end();
 					}else{
-						echo "no se guardo el followup - ".$followup->id_project." - ".$followup->id_user." - ".$followup->followup." - ".$followup->creation_date;
+						echo CJSON::encode(array('status'=>'failure'));
+						Yii::app()->end();
 					}
 				}else{
-					echo "Proyecto guardado con éxito";
-					Yii::app()->end();
+						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
+						Yii::app()->end();
 				}	
 			
 			}

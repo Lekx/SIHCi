@@ -1,7 +1,4 @@
-<?php
-/* @var $this ProjectsController */
-/* @var $model Projects */
-
+<?php 
 $this->breadcrumbs=array(
 	'Projects'=>array('index'),
 	'Create',
@@ -18,7 +15,7 @@ $this->menu=array(
 
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
 	
-	);
+	); 
 ?>
 
 <div class="cvtitle">
