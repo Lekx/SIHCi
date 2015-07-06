@@ -21,6 +21,8 @@ function showAdtlRes(){
 function hideAdtlRes(element){
  	$(element).parent().hide();
  	elemSum--;
+ 	$('#adtlResearchers_'+elemSum).val('');
+
 	if(elemSum < 10)
 		$('#addBtnAr').show();
 
@@ -109,13 +111,16 @@ $('<div></div>').appendTo('form')
 				        resizable: false,
 				        buttons: {
 				            "Enviar a revisión": function () {
-				            	ajaxSave("send",this.type);
-				                $(this).dialog("close");
+								send("projects-form", "projects/create", "<?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>", " <php echo Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.$_GET['id'];",type)
+
+				            	/*ajaxSave("send",type);
+				                $(this).dialog("close");*/
 
 				            },
 				            "Guardar como borrador": function () {
-				            	ajaxSave("draft");
-				                $(this).dialog("close");
+				            	send("projects-form", "projects/create", "<?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>", " <php echo Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.$_GET['id'];",type)
+				            	/*ajaxSave("draft",type);
+				                $(this).dialog("close");*/
 				            }
 				        },
 				        close: function (event, ui) {
@@ -124,7 +129,7 @@ $('<div></div>').appendTo('form')
 				    });
 				
 			}else
-				ajaxSave("draft")
+				send("projects-form", "projects/create", "<?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>", " <php echo Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.$_GET['id'];",type)
 
 			
 	}
@@ -346,7 +351,6 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 	<div class="row buttons">
 
 		<?php 
-		var_dump($model->isNewRecord);
 		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
 		
 		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));

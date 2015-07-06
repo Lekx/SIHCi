@@ -123,17 +123,18 @@ class ProjectsController extends Controller
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			}
 
-			if($_POST['type']== "draft")
+			if($_POST['1']== "draft")
 				$model->status = "borrador";
 			else
 				$model->status = "DIVUH";
 
 			$model->folio = "-1";
 			$model->is_sponsored = 0; 
+			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
-
+		if($model->validate()){
 			if($model->save()){
-				if($_POST['type'] != "draft"){
+				if($_POST['1'] != "draft"){
 					$followup = new ProjectsFollowups;
 					$followup->id_project = $model->id;
 					$followup->id_user = Yii::app()->user->id;
@@ -150,9 +151,14 @@ class ProjectsController extends Controller
 					Yii::app()->end();
 				}	
 			
-			}else{
-				echo "por favor revise que la información sea correcta";
 			}
+		}else{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+
+				Yii::app()->end();
+		}
 		}else{
 
 		$this->render('create',array(

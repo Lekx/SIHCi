@@ -6,7 +6,7 @@
   else
     formData = new FormData();
 
-alert(extras+" "+redirectUrl)
+//alert(extras+" "+redirectUrl)
   if(extras !=''){
     var temp = new Array();
     temp = extras.split(",");
