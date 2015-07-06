@@ -30,4 +30,4 @@ $this->menu=array(
 <h3>Crear proyecto de investigación:</h3>
 
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'discipline'=>$this->discipline)); ?>

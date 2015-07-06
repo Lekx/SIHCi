@@ -60,11 +60,11 @@ class ProjectsReviewController extends Controller
 		switch($actualStatus){
 			case "DIVUH": $status = "SEUH"; break;
 			case "SEUH": $status = "COMITE"; break; // ASIGNA NÚMERO DE FOLIO
-			case "COMITE": $status = "SEUH2"; break;
-			case "SEUH2": $status = "SGEI"; break; //ALERTA A DUH
+			case "COMITE": $status = "SEUH2"; break; // para pasar a seuh2 deben todos los comites asignados(uh) haber dicho "SI"
+			case "SEUH2": $status = "SGEI"; break; // ALERTA A DUH
 			case "SGEI": $status = "DIVUH2"; break; // ALERTA A DG, DUH, SEUH //DICTAMINACION
-			case "DIVUH2": $status = "COMITE2"; break; 
-			case "COMITE2": $status = "DICTAMINADO"; break; // ALERTA DIVUH //REVISION DE FIRMAS POR DIVUH
+			case "DIVUH2": $status = "COMITE2"; break; // para pasar a dictaminado deben todos los comites asignados(uh) haber dicho "SI"
+			case "COMITE2": $status = "DICTAMINADO"; break; // ALERTA DIVUH //REVISION DE FIRMAS POR DIVUH  ///aprobado o no aprobado
 		}
 
 		return $status;

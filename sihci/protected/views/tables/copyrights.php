@@ -44,6 +44,7 @@ $this->menu=array(
 	array('label'=>'Registro de Propiedad Intelectual: Software', 'url'=>array('software')),
 	array('label'=>'Registro de Propiedad Intelectual: Derechos de Autor', 'url'=>array('copyrights')),
 	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
+	array('label'=>'Graficas', 'url'=>array('Charts/index'),'itemOptions'=>array('class' => '')),
 );
 
 ?>
