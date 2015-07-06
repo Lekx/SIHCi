@@ -80,13 +80,14 @@ class BooksChaptersController extends Controller
             $model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
             $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
         
-
+            if($model->validate() == 1)
+            {
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/';
                		if($model->url_doc != ''){
 	                	if(!is_dir($path))
 	                	 	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
 	                	 		                	 	                       //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
-            				if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
+            				// QUITAR  if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
 
  							 $model->url_doc->saveAs($path.'Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName());
 		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName();
@@ -114,26 +115,23 @@ class BooksChaptersController extends Controller
 								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->chapter_title;
      							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 			                    
-     							if(!isset($_GET['ajax']))
+                                echo CJSON::encode(array('status'=>'success'));
+				     			Yii::app()->end();
+     						/*Quitar*/	/*if(!isset($_GET['ajax']))
 								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-
-			               	   /*echo CJSON::encode(array('status'=>'200'));
+			               	   echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
                                Yii::app()->end();*/
-
+                            
 			               		}
-			               		else{	
-			               
-			               		echo CJSON::encode(array('status'=>'404'));
-                                Yii::app()->end();
-			               		}
+			               		
 
-			               }
+			              /* }  QUOTAR
 			               else{	
 
 								//Esta parte va en el campo de filefield como mensaje
 			              		echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
-			            	}
+			            	}*/
 			        }
 			        else
 			        {
@@ -158,16 +156,27 @@ class BooksChaptersController extends Controller
      							$action = "Creación";
 								$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->chapter_title;
      							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-			                    	
-			               	   /*echo CJSON::encode(array('status'=>'200'));
+			                    
+			                    echo CJSON::encode(array('status'=>'success'));
+				     			Yii::app()->end();
+			             /*QUITAR */ 	   /*echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();*/
+                               Yii::app()->end();
                                if(!isset($_GET['ajax']))
-								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));*/
 
 			               }
 
 			        } 
+			} 
+			else{
+					$error = CActiveForm::validate($model);
+					if($error!='[]')
+						echo $error;
+   				   
+   				   Yii::app()->end();
+			}
+
         }
 
         $this->render('create',array(
@@ -197,13 +206,13 @@ class BooksChaptersController extends Controller
 
 	            $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
 				
-				                                                                   //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
+		if($model->validate()==1){
            		if ($model->url_doc != ''){
 
                     if(!empty($actual_url))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_url);
 
-                if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
+               /*QUITAR*/ // if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
                     $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/';
                   
@@ -212,15 +221,16 @@ class BooksChaptersController extends Controller
 
                        $model->url_doc->saveAs($urlFile.'Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName());
 		               $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName();                                                    
-                 }
-			        else  
-			        	echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
+                 /*   }
+			     else  
+			        	echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; */
 
                 } else {
                   
                     $model->url_doc = $actual_url;       
                  }   
-            		if($model->save()){
+            	
+            	if($model->save()){
 
             					$idsBooksChapters = $_POST['idsBooksChapters'];
             					$names = $_POST['names'];
@@ -249,16 +259,24 @@ class BooksChaptersController extends Controller
 					$details = "Registro Número: ".$model->id;
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
                    	 		   
+					echo CJSON::encode(array('status'=>'success'));
+				    Yii::app()->end();			
                    	 		   /*echo CJSON::encode(array('status'=>'200'));
                                $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();*/
+                               Yii::app()->end();
                                if(!isset($_GET['ajax']))
-								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-                	} else {
+								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));*/
 
-                		echo CJSON::encode(array('status'=>'404'));
-                        Yii::app()->end();
-                	}  
+                	}
+            }    	
+            else{
+        			$error = CActiveForm::validate($model);
+					if($error!='[]')
+						echo $error;
+				   
+				     Yii::app()->end();
+            }
+
         }
 
         $this->render('update',array(

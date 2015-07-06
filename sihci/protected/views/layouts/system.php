@@ -33,6 +33,7 @@
                     $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
                     $cs->registerScriptFile($baseUrl . '/js/evaluateCV.js');
                     $cs->registerScriptFile($baseUrl . '/js/ajaxfile.js');
+                    $cs->registerScriptFile($baseUrl . '/js/numbersLettersOnly.js');
         ?>
         <?php
                     Yii::app()->clientScript->registerScript('helpers', '
@@ -89,8 +90,8 @@
                         "proyectos"=>"Proyectos",
                         "Evaluacion"=>"Evaluación",
                         "proyectosUrl"=>"sponsorShip/admin",
-                        "labelEstadisticas"=>"",
-                        "labelAdmin"=>"",
+                        "labelEstadisticas"=>"Estadisticas",
+                        "labelAdmin"=>"Administración",
                         );
                 else if(Yii::app()->user->type == 'fisico')
                     $infoUser = array(
@@ -101,9 +102,9 @@
                         "MenuEmpresa"=>"CV-HC",
                         "proyectos"=>"Proyectos",
                         "Evaluacion"=>"Evaluación CV",
-                        "proyectosUrl"=>(Yii::app()->user->Rol->alias != 'usuario' ? "projectsReview" : "projects")."/admin",
-                        "labelEstadisticas"=>"",
-                        "labelAdmin"=>"",
+                        "proyectosUrl"=>(Yii::app()->user->Rol->alias != 'USUARIO' ? "projectsReview" : "projects")."/admin",
+                        "labelEstadisticas"=>"Estadisticas",
+                        "labelAdmin"=>"Administración",
                         );
                 else
                     $infoUser = array(
@@ -130,10 +131,10 @@
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['icon'].'.png alt="home">', array($infoUser['controller']) );?>
                     <span><?php echo $infoUser['MenuEmpresa']; ?></span>
                 </div>
-                <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('EvaluateCV/index'));?>
-                    <span><?php echo $infoUser['Evaluacion']; ?></span>
-                </div>
+                  <div class="headerconteinerC">
+                      <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('EvaluateCV/index'));?>
+                      <span><?php echo $infoUser['Evaluacion']; ?></span>
+                  </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array($infoUser['proyectosUrl']));?>
                     <span><?php echo $infoUser['proyectos']; ?></span>
@@ -380,9 +381,9 @@
                             <h2>Registro con éxito</h2>
                             <hr>
                             <div class="remainder">
-                                <span>El registro a sido realizado con éxtio.</span>
+                                <span>El registro a sido realizado con éxito.</span>
                             </div>
-                            <button class="backbut"><h3>Regresar</h3></button>
+                            <button class="backbut" onclic="redirect()"><h3>Regresar</h3></button>
                         </div>
                     </div>
                 </div>
@@ -391,7 +392,7 @@
                 <div class="backcontainer">
                     <div class="maincontainer">
                         <div class="errorh2">
-                            <h2>¡Ocurio un Error!</h2>
+                            <h2>¡Ocurió un Error!</h2>
                             <hr>
                             <div class="remainder">
                                 <span>Corrija el error y favor de intentar de nuevo.</span>
@@ -441,7 +442,7 @@
                     <?php if($infoUser['labelEstadisticas'] == "")
                                             echo "";
                                         else
-                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEstadisticas.png alt="home">', array('site/index'));?>
+                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEstadisticas.png alt="home">', array('Charts/index'));?>
                     <span><?php echo $infoUser['labelEstadisticas'] ?></span>
                 </div>
                 <div class="footermenuI">
@@ -449,7 +450,7 @@
                                         if($infoUser['labelAdmin'] == "")
                                             echo "";
                                         else
-                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PadministracionSistema.png alt="home">', array('site/index'));?>
+                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PadministracionSistema.png alt="home">', array('adminUsers/index'));?>
                     <span><?php echo $infoUser['labelAdmin'] ?></span>
                 </div>
                 <div class="footermenuI">
@@ -458,7 +459,7 @@
                 </div>
                 <div class="footermenuI logout">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCerrarCuenta.png alt="home">', array('site/logout'));?>
-                    <span> Cerrar sesión</span>
+                    <span>Cerrar sesión</span>
                 </div>
             </div>
         </body>

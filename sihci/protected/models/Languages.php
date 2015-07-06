@@ -49,11 +49,8 @@ class Languages extends CActiveRecord
 			array('path', 'length', 'max'=>100),
 			array('searchValue','length', 'max'=>70),
 			array('evaluation_date, creation_date', 'safe'),
-			array('path, safe','file','allowEmpty'=>true, 'on'=>'create',
-				   'types'=>'pdf, doc, docx, odt, jpg, jpeg, png',
-			       'maxSize'=>array(1204 * 2000),
-			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),
-			array('path, safe','safe','on'=>'update'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert','safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue, id, id_curriculum, language, description, native_language, is_traducer, is_teacher, conversational_level, reading_level, writting_level, evaluation_date, document_percentage, path, creation_date', 'safe', 'on'=>'search'),

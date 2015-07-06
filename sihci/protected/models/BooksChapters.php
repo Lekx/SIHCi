@@ -58,8 +58,9 @@ class BooksChapters extends CActiveRecord
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
 
-			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg,j peg, png', 'on'=>'create'),
-			array('url_doc, safe','safe', 'on'=>'update'),
+			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			//array('url_doc, safe','safe', 'on'=>'update'),
 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

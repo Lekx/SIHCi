@@ -59,6 +59,49 @@ class ProjectsController extends Controller
 		));
 	}
 
+	public $discipline = array("Anatomía Patológica"=>"Anatomía Patológica",
+		"Anestesiología"=>"Anestesiología",
+		"Angiología"=>"Angiología",
+		"Biología de la Reproducción Humana"=>"Biología de la Reproducción Humana",
+		"Cardiología"=>"Cardiología",
+		"Cirugía Cardiotorácica"=>"Cirugía Cardiotorácica",
+		"Cirugía General"=>"Cirugía General",
+		"Cirugía Maxilofacial"=>"Cirugía Maxilofacial",
+		"Cirugía Pediátrica"=>"Cirugía Pediátrica",
+		"Cirugía Plástica y Reconstructiva"=>"Cirugía Plástica y Reconstructiva",
+		"Coloproctología"=>"Coloproctología",
+		"Audiología, Otoneurología y Foniatría"=>"Audiología, Otoneurología y Foniatría",
+		"Dermatología"=>"Dermatología",
+		"Endocrinología"=>"Endocrinología",
+		"Epidemiología"=>"Epidemiología",
+		"Estomatología"=>"Estomatología",
+		"Gastroenterología"=>"Gastroenterología",
+		"Genética Médica"=>"Genética Médica",
+		"Geriatría"=>"Geriatría",
+		"Ginecología y Obstetricia"=>"Ginecología y Obstetricia",
+		"Hematología"=>"Hematología",
+		"Infectología"=>"Infectología",
+		"Inmunología Clínica y Alergia"=>"Inmunología Clínica y Alergia",
+		"Medicina del Enfermo en Estado Crítico"=>"Medicina del Enfermo en Estado Crítico",
+		"Medicina del Trabajo"=>"Medicina del Trabajo",
+		"Medicina Familiar"=>"Medicina Familiar",
+		"Medicina Física y Rehabilitación"=>"Medicina Física y Rehabilitación",
+		"Medicina Interna"=>"Medicina Interna",
+		"Medicina Nuclear"=>"Medicina Nuclear",
+		"Nefrología"=>"Nefrología",
+		"Neumología"=>"Neumología",
+		"Oftalmología"=>"Oftalmología",
+		"Oncología Médica y Radioterapia"=>"Oncología Médica y Radioterapia",
+		"Ortopedia y Traumatología"=>"Ortopedia y Traumatología",
+		"Otorrinolaringología y Cirugía de Cabeza y Cuello"=>"Otorrinolaringología y Cirugía de Cabeza y Cuello",
+		"Pediatría Médica"=>"Pediatría Médica",
+		"Psiquiatría y Psicología"=>"Psiquiatría y Psicología",
+		"Radiodiagnóstico e Imagen"=>"Radiodiagnóstico e Imagen",
+		"Reumatología"=>"Reumatología",
+		"Urología"=>"Urología",
+		"Otro"=>"Otro",
+		"Neurocirugía"=>"Neurocirugía",
+	);
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -98,13 +141,13 @@ class ProjectsController extends Controller
 
 					if($followup->save()){
 						echo "Proyecto enviado a revisión con éxito";
-						$this->redirect(array('admin'));
+						Yii::app()->end();
 					}else{
 						echo "no se guardo el followup - ".$followup->id_project." - ".$followup->id_user." - ".$followup->followup." - ".$followup->creation_date;
 					}
 				}else{
 					echo "Proyecto guardado con éxito";
-					$this->redirect(array('admin'));
+					Yii::app()->end();
 				}	
 			
 			}else{
@@ -113,7 +156,7 @@ class ProjectsController extends Controller
 		}else{
 
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model,'discipline'=>$this->discipline
 		));
 		}
 	}
@@ -126,19 +169,23 @@ class ProjectsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+echo "entered";
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Projects']))
 		{
+			echo "after post asdf";
 			$model->attributes=$_POST['Projects'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+
+			if($model->save()){
+				echo "i saved";
+				Yii::app()->end();
+			}
 		}
 
 		$this->render('update',array(
-			'model'=>$model,
+			'model'=>$model,'discipline'=>$this->discipline
 		));
 	}
 
