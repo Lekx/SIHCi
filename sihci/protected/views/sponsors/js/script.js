@@ -13,16 +13,14 @@ function send()
         processData: false,
         contentType: false,
         success: function (data)
-        {   
-                    if(data.status=="200"){                         
+        {
+                    if(data.status=="200"){
                     alert("Registro realizado con éxito");
-                    $("#sponsors-form")[0].reset();                
+                    $("#sponsors-form")[0].reset();
             }
-            
+
 
         },
-     
+
     });
 }
-
-

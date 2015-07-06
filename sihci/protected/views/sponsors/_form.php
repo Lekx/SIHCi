@@ -6,36 +6,7 @@
    $cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/sponsors/js/script.js');
 ?>
 <script>
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-});
 
- function lettersOnly(e){
-	 key = e.keyCode || e.which;
-	 tecla = String.fromCharCode(key).toLowerCase();
-	 letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
-	 especiales = [8,37,39,46,45,47];
-
-	 tecla_especial = false
- 	for(var i in especiales){
-     if(key == especiales[i]){
-  			tecla_especial = true;
-  	break;
-            } 
- }
- 
-        if(letras.indexOf(tecla)==-1 && !tecla_especial)
-     return false;
-     }
 
 
      function changeSector(){
@@ -1175,7 +1146,7 @@ $(document).ready(function() {
 								"OTROS SERVICIOS PERSONALES"]
     	sectorValue = otrosServicios;
    }
- 
+
    		var newClase ="<span class='plain-select'><select id='Sponsors_sector' class='tooltipstered' name='Sponsors[clase]' onchange='changeClase()'>";
     	newClase+="<option>Seleccionar Clase</option>";
     for (var item in sectorValue) {
@@ -1232,7 +1203,7 @@ $(document).ready(function() {
 		<?php echo $form->error($modelAddresses, 'zip_code');?>
 	</div>
 
-	
+
 
 	<div class="row">
 
@@ -1283,8 +1254,8 @@ $(document).ready(function() {
 
 		<div>
 		<span class="row plain-select">
-		<?php echo $form->dropDownList($model,'type',array('no lucrativo'=>'No lucrativo','privado'=>'Privado', 'publico'=>'Publico'), 
-		                                                       array('title'=>'Tipo de identidad','prompt'=>'Seleccione el tipo de identidad','options' => array(''=>array('selected'=>true))), 
+		<?php echo $form->dropDownList($model,'type',array('no lucrativo'=>'No lucrativo','privado'=>'Privado', 'publico'=>'Publico'),
+		                                                       array('title'=>'Tipo de identidad','prompt'=>'Seleccione el tipo de identidad','options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10)); ?>
 		<?php echo $form->error($model,'type'); ?>
 		</span>
@@ -1296,7 +1267,7 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
-		
+
 
 		<?php  echo $form->dropDownList($model, 'sector', array('ACTIVIDADES DEL GOBIERNO Y DE ORGANISMOS INTERNACIONALES Y EXTRATERRITORIALES'=>'ACTIVIDADES DEL GOBIERNO Y DE ORGANISMOS INTERNACIONALES Y EXTRATERRITORIALES',
 																'AGRICULTURA GANADERIA APROVECHAMIENTO FORESTAL PESCA Y CAZA'=>'AGRICULTURA GANADERIA APROVECHAMIENTO FORESTAL PESCA Y CAZA',
@@ -1361,11 +1332,11 @@ $(document).ready(function() {
 	<div class="row buttons">
 
 	  <?php echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'send("sponsors-form", "sponsors/sponsorsInfo", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                'onclick'=>'send("sponsors-form", "sponsors/sponsorsInfo", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","sponsors/sponsorsInfo","")',
                 'class'=>'savebutton',
             ));
     ?>
-	
+
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
