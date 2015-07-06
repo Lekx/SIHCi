@@ -50,11 +50,11 @@ return array(
 	// application components
 	'components'=>array(
 
-	   'session' => array(
-	   	  'autoStart'=>false,
+	  /* 'session' => array(
 	      'class' => 'CDbHttpSession',
-	      'timeout' => 300,
-	   ),
+	   	  'autoStart'=>false,
+	      'timeout' => 30,
+	   ),*/
 
 		'authManager'=>array(
 				'class'=>'CDbAuthManager',

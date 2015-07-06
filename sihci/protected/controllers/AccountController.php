@@ -3,10 +3,43 @@
 
   	class AccountController extends Controller{
 
+  	/**
+	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 */
+
   	public $layout = '//layouts/informativa';
+  	/**
+	 * @return array action filters
+	 */
+
 	private $currentemail ='';
 	private $currentpassword ='';
-	
+
+		public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+
+	public function accessRules()
+	{
+		return array(
+				array('allow',
+					'actions'=>array('infoAccount', 'ActivateAccount', 'Index', 'UpdateEmail',
+									'UpdatePassword','SystemLog','personalData','FirstLogin',
+					),					
+					'users'=>array('@'),
+				),
+				array('deny',
+					'users'=>array('*'),
+				),
+
+			);
+
+	}
 	function checkEmail($email2, $email22){
 
 		if ($email2 != $email22){

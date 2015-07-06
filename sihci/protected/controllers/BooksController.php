@@ -320,19 +320,18 @@ class BooksController extends Controller
 			Yii::app()->end();
 		}
 	}
-	/*public function beforeLogin()
+	/*public function afterLogout()
 	{
-        if ( !Yii::app()->user->isGuest)  
+        if (!Yii::app()->user->isGuest)  
         {
-               if ( yii::app()->user->getState('userSessionTimeout') < time() ) 
-               {
-                   // timeout
+               if (Yii::app()->user->getState('userSessionTimeout') < time() ) 
+               {                  // timeout
                    Yii::app()->user->logout();
-                   $this->redirect(array('/site/SessionTimeout'));  //
+                   $this->redirect(array('/site/sessionTimeout'));  //
                }
                else 
                {
-                   yii::app()->user->setState('userSessionTimeout', time() + Yii::app()->params['sessionTimeoutSeconds']) ;
+                   Yii::app()->user->setState('userSessionTimeout', time() + Yii::app()->params['timeout']);
                    return true; 
                }
         }

@@ -77,7 +77,8 @@ class AdminUsersController extends Controller {
 		$modelPersons = new Persons;
 
 		if (isset($_POST['Users'])) {
-			$model->Rol->id = '1';
+			//echo $model->Rol->id;
+			//$model->Rol->id = '3';
 			$model->attributes = $_POST['Users'];
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
