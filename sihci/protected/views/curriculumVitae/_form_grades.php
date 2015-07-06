@@ -2,21 +2,8 @@
 /* @var $this GradesController */
 /* @var $model Grades */
 /* @var $form CActiveForm */
-?><script>
-$(document).ready(function() {
-      $(".numericOnly").keydown(function (e) {
-          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-              (e.keyCode == 65 && e.ctrlKey === true) ||
-              (e.keyCode >= 35 && e.keyCode <= 40)) {
-                  return;
-          }
-          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-              e.preventDefault();
-          }
-
-      });
-  });</script>
-	<style type="text/css">  
+?>
+	<style type="text/css">
         .errors{
             -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -27,7 +14,7 @@ $(document).ready(function() {
             margin-top: -50px;
             margin-left: 455px;
             position: absolute;
-			border-radius: 5px; 
+			border-radius: 5px;
 			border: 2px solid #F20862;
 			background: #F20862;
 			color: #fff;
@@ -76,7 +63,7 @@ $(document).ready(function() {
 	<div class="row">
  <span class="plain-select">
 		<select id="grade" name="grade" title="Seleccionar grado">
-  			<option value="" selected="">Grado</option> 
+  			<option value="" selected="">Grado</option>
   			<option value="Licenciatura">Licenciatura</option>
   			<option value="Maestria">Maestria</option>
   			<option value="Doctorado">Doctorado</option>
@@ -86,7 +73,7 @@ $(document).ready(function() {
 		</span>
 		</div>
 		<div id="errorGrade" class="errors"> Debe seleccionar su Grado</div>
-	<div class="row">		
+	<div class="row">
 		<input id="writNumber" type="text" name="writNumber" placeholder="Número de Cédula" title="Número de Cédula">
 		<div id="errorNumber" class="errors"> Debe ser Número </div>
 	</div>
@@ -96,7 +83,7 @@ $(document).ready(function() {
 	</div>
 	<div class="row">
  <span class="plain-select">
-		<?php 
+		<?php
 
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'language'=> 'es',
@@ -105,12 +92,12 @@ $(document).ready(function() {
 			     'options' => array(
 				     		'changeMonth'=>true, //cambiar por Mes
 				     		'changeYear'=>true, //cambiar por Año
-				    			
+
 			     	),
 			    'htmlOptions' => array(
 			    			'size'=>'10',
 			    			'readonly'=>true,
-			    			'maxlength'=>'10', 
+			    			'maxlength'=>'10',
 							'title'=>'Fecha de Obtencíon',
 			        		'placeholder'=>"Fecha de Obtención"),
 					));
@@ -121,7 +108,7 @@ $(document).ready(function() {
 	<div class="row">
  <span class="plain-select">
 		<select id="status" name="status" title="Selecionar Estado">
-  			<option value="" selected="">Estatus</option> 
+  			<option value="" selected="">Estatus</option>
   			<option value="Creditos Terminados">Creditos Terminados</option>
   			<option value="Grado Obtenido">Grado Obtenido</option>
   			<option value="Proceso">Proceso</option>
@@ -138,7 +125,7 @@ $(document).ready(function() {
 
  <span class="plain-select">
 		<select id="state" name="state" title="Estado de la Tesis">
-  			<option value="" selected="">Estado de la Tésis</option> 
+  			<option value="" selected="">Estado de la Tésis</option>
   			<option value="En proceso">En proceso</option>
   			<option value="Terminado">Terminado</option>
 		</select>
@@ -147,7 +134,7 @@ $(document).ready(function() {
 		</div>
 	<div class="row">
 
-	<?php 
+	<?php
    echo " <span class='plain-select'>";
 	echo $form->dropDownList($model,'sector',array('No especificado'=>'No especificado','Instituciones del sector gobierno federal centralizado'=>'Instituciones del sector gobierno federal centralizado',
 				                                                 'Instituciones del sector entidades paraestatales'=>'Instituciones del sector entidades paraestatales','Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
@@ -156,17 +143,17 @@ $(document).ready(function() {
 				                                                 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras','consultoras'=>'consultoras','Gobierno municipal'=>'Gobierno municipal','Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
 				                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),
 
-				                                                 array('name'=>'sector','prompt'=>'Seleccionar Sector','title'=>'Seleccionae Sector','options' => array(''=>array('selected'=>true)))); 
+				                                                 array('name'=>'sector','prompt'=>'Seleccionar Sector','title'=>'Seleccionae Sector','options' => array(''=>array('selected'=>true))));
 				                                                 echo "</span>";?>
 
-	
-				                                                 
+
+
 
 
 		</div>
 	<div class="row">
 
-	<?php 
+	<?php
 	echo " <span class='plain-select'>";
 	echo $form->dropDownList($model,'institution',array('BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA'=>'BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA','UNIVERSIDAD ESTATAL DE SONORA'=>'UNIVERSIDAD ESTATAL DE SONORA','CENTRO DE INVESTIGACIONES BIOLOGICAS'=>'CENTRO DE INVESTIGACIONES BIOLOGICAS',
 			                                                       'CENTRO DE BIOTECNOLOGIA GENOMICA IPN'=>'CENTRO DE BIOTECNOLOGIA GENOMICA IPN','CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN'=>'CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN','TECNOLOGICO NACIONAL DE MEXICO'=>'TECNOLOGICO NACIONAL DE MEXICO',
@@ -202,7 +189,7 @@ $(document).ready(function() {
 
 									echo "</span>";?>
 
-														
+
 
 
 		<div id="errorInstitution" class="errors"> Debe seleccionar Institución </div>
@@ -238,22 +225,22 @@ $(document).ready(function() {
                                                       </span>
     <?php echo $form->error($model,'area'); ?>
   </div>
-  
+
   <div class="row" id="comboDiscipline">
 
   </div>
   <div class="row" id="comboSubdiscipline">
 
   </div>
-  
+
 		</div>
 
-	<?php 
+	<?php
 	$count = 1;
-	echo $form->errorSummary($model); 
+	echo $form->errorSummary($model);
 	//print_r($getGrades);
 	foreach ($getGrades as $key => $value) {
-		
+
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
 
@@ -267,26 +254,26 @@ $(document).ready(function() {
 					'firstText' => 'Pais',
 
 					));
-			echo $form->error($model,'country'); 
+			echo $form->error($model,'country');
 		echo '</div>';
 
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
-			echo $form->dropDownList($model,'grade',array('Licenciatura'=>'Licenciatura','Maestria'=>'Maestria', 
-																'Doctorado'=>'Doctorado', 'Especialidad'=>'Especialidad‏', 'Super especialidad‏'=>'Super especialidad‏'), 
-			                                                       array('required'=>'true','name'=>'getGrade[]','prompt'=>'Selecciona Grado','title'=>'Selecciona Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))), 
-			                                                       array('size'=>10,'maxlength'=>10)); 
+			echo $form->dropDownList($model,'grade',array('Licenciatura'=>'Licenciatura','Maestria'=>'Maestria',
+																'Doctorado'=>'Doctorado', 'Especialidad'=>'Especialidad‏', 'Super especialidad‏'=>'Super especialidad‏'),
+			                                                       array('required'=>'true','name'=>'getGrade[]','prompt'=>'Selecciona Grado','title'=>'Selecciona Grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))),
+			                                                       array('size'=>10,'maxlength'=>10));
 			echo $form->error($model,'grade');
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->textField($model,'writ_number',array('name'=>'getWritNumber[]','value'=>$getGrades[$key]->writ_number,'class'=>'numericOnly','title'=>'Número de Cédula','size'=>50,'maxlength'=>50, 'placeholder'=>'Número de Cédula','title'=>'Número de Cédula')); 
+			 echo $form->textField($model,'writ_number',array('name'=>'getWritNumber[]','value'=>$getGrades[$key]->writ_number,'class'=>'numericOnly','title'=>'Número de Cédula','size'=>50,'maxlength'=>50, 'placeholder'=>'Número de Cédula','title'=>'Número de Cédula'));
 			echo $form->error($model,'writ_number');
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->textField($model,'title',array('required'=>'true','name'=>'getTitle[]','value'=>$getGrades[$key]->title,'size'=>45,'maxlength'=>45,'placeholder'=>'Título','title'=>'Título')); 
-			 echo $form->error($model,'title'); 
+			 echo $form->textField($model,'title',array('required'=>'true','name'=>'getTitle[]','value'=>$getGrades[$key]->title,'size'=>45,'maxlength'=>45,'placeholder'=>'Título','title'=>'Título'));
+			 echo $form->error($model,'title');
 		echo '</div>';
 
 
@@ -311,31 +298,31 @@ $(document).ready(function() {
 							'title'=>'Fecha de Obtención',
 			        		'placeholder'=>"Fecha de Obtención"),
 					));
-				 echo $form->error($model,'obtention_date'); 
+				 echo $form->error($model,'obtention_date');
 		echo '</div>';
 
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
 			 echo $form->dropDownList($model,'status',array('Creditos_Terminados'=>'Creditos Terminados',
-																'Grado_Obtenido'=>'Grado Obtenido', 
-																'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
-			                                                       array('name'=>'getStatus[]','prompt'=>'Selecciona Estatus','title'=>'Seleccionar Estatus','options' => array($getGrades[$key]->status=>array('selected'=>true))), 
-			                                                       array('size'=>10,'maxlength'=>10)); 
-			 echo $form->error($model,'status'); 
+																'Grado_Obtenido'=>'Grado Obtenido',
+																'Proceso'=>'Proceso','Truncado'=>'Truncado'),
+			                                                       array('name'=>'getStatus[]','prompt'=>'Selecciona Estatus','title'=>'Seleccionar Estatus','options' => array($getGrades[$key]->status=>array('selected'=>true))),
+			                                                       array('size'=>10,'maxlength'=>10));
+			 echo $form->error($model,'status');
 		echo '</div>';
 
 		echo	'<div class="row">';
-			 echo $form->textField($model,'thesis_title',array('required'=>'true','name'=>'getThesisTitle[]','value'=>$getGrades[$key]->thesis_title,'size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis','title'=>'Título de Tésis')); 
-			echo $form->error($model,'thesis_title'); 
+			 echo $form->textField($model,'thesis_title',array('required'=>'true','name'=>'getThesisTitle[]','value'=>$getGrades[$key]->thesis_title,'size'=>60,'maxlength'=>250,'placeholder'=>'Título de Tésis','title'=>'Título de Tésis'));
+			echo $form->error($model,'thesis_title');
 		echo '</div>';
 
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
 			 echo $form->dropDownList($model,'state',array('en_Proceso'=>'En Proceso',
-																'Terminado'=>'Terminado'), 
-			                                                       array('name'=>'getState[]','prompt'=>'Selecciona Estado','title'=>'Seleccionar Estado','options' => array($getGrades[$key]->state=>array('selected'=>true))), 
-			                                                       array('size'=>10,'maxlength'=>10)); 
-			 echo $form->error($model,'state'); 
+																'Terminado'=>'Terminado'),
+			                                                       array('name'=>'getState[]','prompt'=>'Selecciona Estado','title'=>'Seleccionar Estado','options' => array($getGrades[$key]->state=>array('selected'=>true))),
+			                                                       array('size'=>10,'maxlength'=>10));
+			 echo $form->error($model,'state');
 		echo '</div>';
 
 		echo	'<div class="row">';
@@ -346,8 +333,8 @@ $(document).ready(function() {
 				                                                 'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)','Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
 				                                                 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras','consultoras'=>'consultoras','Gobierno municipal'=>'Gobierno municipal','Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
 				                                                 'Gobierno Federal Desconcentrado'=>'Gobierno Federal Desconcentrado','Centros Públicos de Investigación'=>'Centros Públicos de Investigación','Centros Privados de Investigación'=>'Centros Privados de Investigación'),
-				                                                 array('name'=>'getSector[]','prompt'=>'Selecciona Sector','title'=>'Seleccionar Sector','options' => array($getGrades[$key]->sector=>array('selected'=>true)))); 
-			 echo $form->error($model,'sector'); 
+				                                                 array('name'=>'getSector[]','prompt'=>'Selecciona Sector','title'=>'Seleccionar Sector','options' => array($getGrades[$key]->sector=>array('selected'=>true))));
+			 echo $form->error($model,'sector');
 		echo '</div>';
 
 		echo	'<div class="row">';
@@ -381,10 +368,10 @@ $(document).ready(function() {
 			                                                       'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM'=>'ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM','COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN'=>'COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN','UNIVERSIDAD DEL ISTMO'=>'UNIVERSIDAD DEL ISTMO',
 			                                                       'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN','INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX','INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA'=>'INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA',
 			                                                       'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'=>'SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX'),
-														array('required'=>'true','name'=>'getInstitution[]','prompt'=>'Selecciona Institución','title'=>'Seleccionar institución','options' => array($getGrades[$key]->institution=>array('selected'=>true)))); 
+														array('required'=>'true','name'=>'getInstitution[]','prompt'=>'Selecciona Institución','title'=>'Seleccionar institución','options' => array($getGrades[$key]->institution=>array('selected'=>true))));
 
 
-			 echo $form->error($model,'institution'); 
+			 echo $form->error($model,'institution');
 		echo '</div>';
 
 		echo	'<div class="row">';
@@ -415,8 +402,8 @@ $(document).ready(function() {
                               'PSICOLOGIA'=>'PSICOLOGIA',
                               'PROSPECTIVA'=>'PROSPECTIVA',
                               'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('name'=>'getArea[]','prompt'=>'Seleccionar Área','title'=>'Seleccionar Área','options'=>array($getGrades[$key]->area=>array('selected'=>true)),'id'=>'getArea', 'onchange'=>'changeArea()'));
-													
-			 echo $form->error($model,'area'); 
+
+			 echo $form->error($model,'area');
 		echo '</div>';
  echo '<div class="row" id="comboGetDiscipline">';
 
@@ -424,7 +411,7 @@ $(document).ready(function() {
   echo '<div class="row" id="comboGetSubdiscipline">';
 
   echo '</div>';
-		
+
 		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteGrade','id'=>$getGrades[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		echo "<br>";
 		echo "<hr>";
@@ -432,27 +419,27 @@ $(document).ready(function() {
 		$count ++;
 	}
 	echo	'<div class="row buttons">';
-	    echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/grades'), 
+	    echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/grades'),
         				array(
 							'dataType'=>'json',
                      		'type'=>'post',
-                     		'success'=>'function(data) 
+                     		'success'=>'function(data)
                      		 {
-		                                      
+
 		                         if(data.status=="200")
 		                         {
-				                     $(".successdiv").show(); 
-		                         }		                         
+				                     $(".successdiv").show();
+		                         }
 		                         else
 		                         {
-			                     	$(".successdiv").show();    
-			                     }       
-		                  	}',                    
-		                    
-                      ), array('id'=>'btnCreateGrade','class'=>'savebutton')); 
-        
-		
-		echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); 
+			                     	$(".successdiv").show();
+			                     }
+		                  	}',
+
+                      ), array('id'=>'btnCreateGrade','class'=>'savebutton'));
+
+
+		echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?'));
 	echo '</div>';
 ?>
 

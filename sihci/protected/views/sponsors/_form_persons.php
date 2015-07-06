@@ -4,42 +4,11 @@
 /* @var $form CActiveForm */
 
 ?>
-<script>
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-});
 
- function lettersOnly(e){
-	 key = e.keyCode || e.which;
-	 tecla = String.fromCharCode(key).toLowerCase();
-	 letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
-	 especiales = [8,37,39,46,45,47];
-
-	 tecla_especial = false
- 	for(var i in especiales){
-     if(key == especiales[i]){
-  			tecla_especial = true;
-  	break;
-            } 
- }
- 
-        if(letras.indexOf(tecla)==-1 && !tecla_especial)
-     return false;
-     }
-</script>
 
 
 <div class="form">
-	<?php 
+	<?php
 	Yii::app()->clientScript->registerCssFile(
 	Yii::app()->clientScript->getCoreScriptUrl().
 	'/jui/css/base/jquery-ui.css'
@@ -56,16 +25,16 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
-	
-	
+
+
 	<div class="row">
-		
+
 		<?php echo $form->textField($model,'names',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres" ,'title'=>"Nombres",'onKeypress'=>'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'names'); ?>
 	</div>
 
 	<div class="row">
-	
+
 		<?php echo $form->textField($model,'last_name1',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Apellido Paterno", 'title'=>"Apellido Paterno",'onKeypress'=>'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'last_name1'); ?>
 	</div>
@@ -78,8 +47,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	<div class="row">
 	  <span class="plain-select">
 		<?php echo $form->dropDownList($model,'marital_status',array('soltero'=>'Soltero','viudo'=>'Viudo', 'casado'=>'Casado',
-			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'), 
-		                                                       array('title'=>'Estado Civil','prompt'=>'Selecionar Estado Civil','options' => array(''=>array('selected'=>true))), 
+			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'),
+		                                                       array('title'=>'Estado Civil','prompt'=>'Selecionar Estado Civil','options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'marital_status'); ?>
 		</span>
@@ -92,7 +61,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		    'attribute' => 'birth_date',
 		    'htmlOptions' => array(
 		    	    'dateFormat'=>'d/m/Y',
-		    		'size' => '10',         
+		    		'size' => '10',
 		    		'readOnly'=>true,
 		        	'placeholder'=>"Fecha de termino",
 		        	'title'=>'Fecha de termino',
@@ -108,10 +77,10 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		<div class="row">
 		  <span class="plain-select">
 		<?php echo $form->dropDownList($model,'genre',array('Hombre'=>'Hombre',
-															'Mujer'=>'Mujer',), 
-		                                                       array('title'=>'Sexo','prompt'=>' Seleccionar Sexo','options' => array(''=>array('selected'=>true))), 
+															'Mujer'=>'Mujer',),
+		                                                       array('title'=>'Sexo','prompt'=>' Seleccionar Sexo','options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
-	
+
 		</span>
 	</div>
 <div class="row">
@@ -137,7 +106,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-		
+
 		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Curp",'title'=>"Curp")); ?>
 		<?php echo $form->error($model,'curp_passport'); ?>
 	</div>

@@ -3,22 +3,6 @@
 /* @var $model Grades */
 /* @var $form CActiveForm */
 ?>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Grades_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-</script>
 
 <div class="form">
 
@@ -42,20 +26,20 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'grade'); ?>
-		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+		<?php echo $form->dropDownList($model,'grade',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial',
 															'Particular'=>'Particular',
-			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+			                                                          'Campus'=>'Campus', 'otro'=>'otro'),
+		                                                       array('options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'grade'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'writ_number'); ?>
-		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+		<?php echo $form->dropDownList($model,'writ_number',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial',
 															'Particular'=>'Particular',
-			                                                          'Campus'=>'Campus', 'otro'=>'otro'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+			                                                          'Campus'=>'Campus', 'otro'=>'otro'),
+		                                                       array('options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'writ_number'); ?>
 	</div>
@@ -81,7 +65,7 @@
 		     	),
 		    'htmlOptions' => array(
 		    			'size'=>'10',
-		    			'maxlength'=>'10', 
+		    			'maxlength'=>'10',
 		        		'placeholder'=>"Fecha de Obtención"),
 				));
 	?>
@@ -91,9 +75,9 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
 		<?php echo $form->dropDownList($model,'status',array(''=>'','Creditos_Terminados'=>'Creditos Terminados',
-															'Grado_Obtenido'=>'Grado Obtenido', 
-															'Proceso'=>'Proceso','Truncado'=>'Truncado'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+															'Grado_Obtenido'=>'Grado Obtenido',
+															'Proceso'=>'Proceso','Truncado'=>'Truncado'),
+		                                                       array('options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
@@ -107,8 +91,8 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'state'); ?>
 		<?php echo $form->dropDownList($model,'state',array(''=>'','en_Proceso'=>'En Proceso',
-															'Terminado'=>'Terminado'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+															'Terminado'=>'Terminado'),
+		                                                       array('options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
@@ -120,8 +104,8 @@
 																'12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16',
 																'17'=>'17','18'=>'18','19'=>'19','20'=>'20','21'=>'21',
 																'22'=>'22','23'=>'23','24'=>'24','25'=>'25','26'=>'26',
-																'27'=>'27','28'=>'28','29'=>'29','30'=>'30','31'=>'31'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+																'27'=>'27','28'=>'28','29'=>'29','30'=>'30','31'=>'31'),
+		                                                       array('options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10),
 		                                                         array('placeholder'=>'Día de Inicio')); ?>
 		<?php echo $form->error($model,'sector'); ?>
