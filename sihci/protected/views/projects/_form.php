@@ -94,25 +94,41 @@ $('<div></div>').appendTo('form')
 				alert(data);
 				window.location = yii.urls.cancelProject;
 		});*/
-		function save(value){
 
-				$('input[type="hidden"]').attr('disabled', true);
+	function save(value){
 
-					if(value=="send"){
-						$('<div></div>').appendTo('form')
-						    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
-						    .dialog({
-						        modal: true,
-						        title: 'Cancelar',
-						        zIndex: 10000,
-						        autoOpen: true,
-						        width: 'auto',
-						        resizable: false,
-						        buttons: {
-						            "Enviar a revisión": function () {
-										send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
-						            },
+		$('input[type="hidden"]').attr('disabled', true);
 
+			if(value=="send"){
+				$('<div></div>').appendTo('form')
+				    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
+				    .dialog({
+				        modal: true,
+				        title: 'Cancelar',
+				        zIndex: 10000,
+				        autoOpen: true,
+				        width: 'auto',
+				        resizable: false,
+				        buttons: {
+				            "Enviar a revisión": function () {
+								send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
+				            },
+				            "Guardar como borrador": function () {
+				            	send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin","draft")
+
+				            }
+				        },
+				        close: function (event, ui) {
+				            $(this).remove();
+				        }
+				    });
+
+			}else
+				send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
+
+
+
+	}
 
 	function changeSubTema(){
 
@@ -261,7 +277,7 @@ $('<div></div>').appendTo('form')
 						"Otro. Especifique"]
 		    temaValue = otros;
 		}
-			 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]' onchange='changeSubTemaPrioritario()'>";
+			 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]'>";
 	    	newTema+="<option>Subtema Prioritario</option>";
 	    for (var item in temaValue) {
         	newTema +="<option>"+temaValue[ item ]+"</option>";
@@ -319,24 +335,20 @@ $('<div></div>').appendTo('form')
 	</span>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
-
-	<div class="row">
-		Tipo de investigación:
-		<div class="row">
-			<?php echo $form->checkBox($model,'Biomédica',  array('checked'=>'')); ?> Biomédica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<?php echo $form->checkBox($model,'Clínica',  array('checked'=>'')); ?> Clínica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<?php echo $form->checkBox($model,'Educativa',  array('checked'=>'')); ?> Educativa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		</div>
-		<div class="row">
-			<?php echo $form->checkBox($model,'Epidemiológica',  array('checked'=>'')); ?> Epidemiológica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<?php echo $form->checkBox($model,'Servicios de Salud',  array('checked'=>'')); ?> Servicios de Salud
-		</div>
-		Otro tipo de investigación:<div class="row">
-			<?php echo $form->textField($model,'research_type',array('size'=>60,'maxlength'=>250,'placeholder'=>'Tipo de Investigación','title'=>'Tipo de Investigación')); ?>
+		<div class="row recopyRType">
+			<?php echo $form->dropDownList($model,'research_type',array('Biomédica'=>'Biomédica','Clínica'=>'Clínica','Educativa'=>'Educativa','Epidemiológica'=>'Epidemiológica','Servicios de Salud'=>'Servicios de Salud','otra'=>'otra'),array('prompt'=>'Seleccione un tipo de Investigación','title'=>'Tipo de Investigación')); ?>
 			<?php echo $form->error($model,'research_type'); ?>
 		</div>
-	</div>
+		<div class="row">
+			<?php
+				$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+					'targetClass'=>'recopyRType',
+					'addButtonLabel'=>'Agregar tipo de investigación',
+				));
+	 		?>
+     	</div>
 	<div class="row">
+
 		<?php echo $form->dropDownList($model,'priority_topic',array('Accidentes y Violencia'=>'Accidentes y Violencia',
 																	'Cáncer'=>'Cáncer',
 																	'Discapacidad e Incapacidad'=>'Discapacidad e Incapacidad',
@@ -379,11 +391,7 @@ $('<div></div>').appendTo('form')
 
 		<?php   $persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 				$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
-<<<<<<< HEAD
-				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id));
-=======
 				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id,'is_primary'=>1));
->>>>>>> 9a8a3e0d6f5bf67d316b092a7af0567adaa41427
 				$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 				$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
 				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
@@ -405,7 +413,7 @@ $('<div></div>').appendTo('form')
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
 					),
-			/*	array(
+				array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
 					),
@@ -422,27 +430,17 @@ $('<div></div>').appendTo('form')
 					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
 					),
 				array(
-					'label'=>'Máximo grado de estudios:',
-<<<<<<< HEAD
-					'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
-					),
-				array(
-					'label'=>'¿Pertenece al SNI?',
-					'value'=>$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
-=======
-
-					'value'=>$gradesUsers->grade,
-					), */
+				     'label'=>'Máximo grado de estudios:',
+				     'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
+				     ),
 
 				array(
 					'label'=>'¿Pertenece al SNI?',
 					'value'=>$curriculum != null ? $curriculum->SNI :
 					$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
->>>>>>> 9a8a3e0d6f5bf67d316b092a7af0567adaa41427
 					),
 			),
 		));
-		print_r($gradesUsers->grade);
 		?>
 
 	<div class="row">
