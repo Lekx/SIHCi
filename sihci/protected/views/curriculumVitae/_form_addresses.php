@@ -262,12 +262,6 @@
            <?php echo $form->error($model,'country'); ?>
 	</div>
 
-	<div class="row">
-	
-		<?php echo $form->textField($model,'zip_code',array('title'=>'Codigo Postal','placeholder'=>'Código Postal')); ?>
-		<?php echo $form->error($model,'zip_code'); ?>
-	</div>
-
 	<div class="row" id="state">
 		<?php echo $form->textField($model,'state',array('title'=>'Estado','placeholder'=>'Estado')); ?>
         <?php echo $form->error($model,'state'); ?>
@@ -287,6 +281,12 @@
 		<?php echo $form->textField($model,'town',array('title'=>'Municipio','size'=>30,'maxlength'=>30, 'placeholder'=>'Municipio')); ?>
 		<?php echo $form->error($model,'town'); ?>
 	</div>
+    
+    <div class="row">
+    
+        <?php echo $form->textField($model,'zip_code',array('title'=>'Codigo Postal','placeholder'=>'Código Postal')); ?>
+        <?php echo $form->error($model,'zip_code'); ?>
+    </div>
 
 	<div class="row">
 		<?php echo $form->textField($model,'colony',array('title'=>'Colonia','size'=>45,'maxlength'=>45, 'placeholder'=>'Colonia')); ?>
