@@ -4,27 +4,11 @@
 /* @var $form CActiveForm */
 
 ?>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Persons_]').val('');
-				$('[id^=Curriculum_]').val('');
-			}else{
 
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-</script>
 
 <div class="form">
-	<?php 
-	Yii::app()->bootstrap->register(); 
+	<?php
+	Yii::app()->bootstrap->register();
 	Yii::app()->clientScript->registerCssFile(
 	Yii::app()->clientScript->getCoreScriptUrl().
 	'/jui/css/base/jquery-ui.css'
@@ -41,7 +25,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
-	
+
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
 			<?php echo $form->labelEx($curriculum,'status'); ?>
@@ -50,13 +34,13 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row">
-		
+
 		<?php echo $form->textField($model,'names',array('size'=>30,'maxlength'=>30, 'placeholder'=>"Nombres")); ?>
 		<?php echo $form->error($model,'names'); ?>
 	</div>
 
 	<div class="row">
-	
+
 		<?php echo $form->textField($model,'last_name1',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Apellido Paterno")); ?>
 		<?php echo $form->error($model,'last_name1'); ?>
 	</div>
@@ -69,8 +53,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	<div class="row">
 		<?php echo $form->labelEx($model,'marital_status'); ?>
 		<?php echo $form->dropDownList($model,'marital_status',array(''=>'','soltero'=>'Soltero','viudo'=>'Viudo', 'casado'=>'Casado',
-			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+			                                                          'divorciado'=>'Divorciado', 'union libre'=>'Unión Libre'),
+		                                                       array('options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'marital_status'); ?>
 	</div>
@@ -90,7 +74,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		     	),
 		    'htmlOptions' => array(
 		    			'size'=>'10',
-		    			'maxlength'=>'10', 
+		    			'maxlength'=>'10',
 		        		'placeholder'=>"Fecha de Nacimiento"),
 				));
 	?>
@@ -99,8 +83,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 
 		<div class="row">
-		<?php $status = array('Hombre' => 'Hombre','Mujer'=>'Mujer'); 
-		    echo $form-> RadioButtonList($model,'genre' ,$status, array ('separador' => '')); 
+		<?php $status = array('Hombre' => 'Hombre','Mujer'=>'Mujer');
+		    echo $form-> RadioButtonList($model,'genre' ,$status, array ('separador' => ''));
 		 ?>
 		<?php echo $form->error($model,'genre'); ?>
 	</div>
@@ -108,12 +92,12 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 <div class="row">
 		<?php echo $form->labelEx($model,'country'); ?>
 		<?php echo $form->dropDownList($model,'country',array(''=>'','EUA'=>'EUA',
-																			'Mexico'=>'México',), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+																			'Mexico'=>'México',),
+		                                                       array('options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 	    <?php echo $form->error($model,'country'); ?>
 	</div>
-  
+
 	<div class="row">
 	<!-- Nacionalidad es renderizado de Curriculum.php-->
 		<?php echo $form->textField($curriculum,'native_country',array('size'=>45,'maxlength'=>45, 'placeholder'=>"Nacionalidad")); ?>
@@ -123,9 +107,9 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	<div class="row">
 		<?php echo $form->labelEx($model,'state_of_birth'); ?>
 		<?php echo $form->dropDownList($model,'state_of_birth',array(''=>'','Aguascalientes'=>'Aguascalientes',
-																			'Baja_California'=>'Baja California', 
+																			'Baja_California'=>'Baja California',
 																			'Baja_California_Sur'=>'Baja California Sur',
-			                                                         		'Campeche'=>'Campeche', 
+			                                                         		'Campeche'=>'Campeche',
 			                                                         		'Chiapas'=>'Chiapas',
 			                                                         		'Chihuahua'=>'Chihuahua',
 			                                                         		'Coahuila'=>'Coahuila',
@@ -151,20 +135,20 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 			                                                         		'Tlaxcala'=>'Tlaxcala',
 			                                                         		'Veracruz'=>'Veracruz',
 			                                                         		'Yucatan'=>'Yucatán',
-			                                                         		'Zacatecas'=>'Zacatecas',), 
-		                                                       array('options' => array(''=>array('selected'=>true))), 
+			                                                         		'Zacatecas'=>'Zacatecas',),
+		                                                       array('options' => array(''=>array('selected'=>true))),
 		                                                       array('size'=>10,'maxlength'=>10)); ?>
 	    <?php echo $form->error($model,'state_of_birth'); ?>
 	</div>
 
 	<div class="row">
-		
+
 		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Curp")); ?>
 		<?php echo $form->error($model,'curp_passport'); ?>
 	</div>
 
 	<div class="row">
-		
+
 		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'placeholder'=>"Pasaporte")); ?>
 		<?php echo $form->error($model,'curp_passport'); ?>
 	</div>
@@ -172,7 +156,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	<div class="row">
 
 		<?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto")); ?>
-		<?php echo $form->error($model,'photo_url'); ?>     
+		<?php echo $form->error($model,'photo_url'); ?>
 	</div>
 
 	<div class="row">

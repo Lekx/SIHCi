@@ -72,11 +72,10 @@
         <div>
             <?php
                 if(isset(Yii::app()->user->admin) && (int)Yii::app()->user->admin != 0 ){
-                    echo "Sesion doble iniciada | ";
-                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0)));
+                    echo "<div class='dobless'> <p>Sesion doble iniciada</p> ";
+                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0,'class'=>'doblebutt')));
+                    echo "</div>";
                 }
-
-
             ?>
         </div>
         <?php
@@ -138,6 +137,18 @@
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array($infoUser['proyectosUrl']));?>
                     <span><?php echo $infoUser['proyectos']; ?></span>
+                    <?php
+
+                      if(Yii::app()->user->Rol->id > 10)
+                      {
+                        $conection = Yii::app()->db;
+                        $pPro = $conection->createCommand("SELECT count(p.id) as X FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".strtolower(Yii::app()->user->Rol->alias)."' GROUP BY p.title")->queryAll();
+                        echo "<div class='notification'>";
+                        echo $pPro[0]["X"];
+                        echo "</div>";
+                      }
+
+                      ?>
                 </div>
                 <div class="headerconteinerF">
                     <?php
