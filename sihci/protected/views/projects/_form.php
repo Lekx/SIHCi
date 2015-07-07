@@ -383,7 +383,7 @@ $('<div></div>').appendTo('form')
 
 		<?php   $persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 				$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
-				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id));
+				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id,'is_primary'=>1));
 				$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 				$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
 				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id)); 
@@ -427,10 +427,12 @@ $('<div></div>').appendTo('form')
 					), 
 				array(
 					'label'=>'¿Pertenece al SNI?',
-					'value'=>$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
+					'value'=>$curriculum != null ? $curriculum->SNI :
+					$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
 					),    
 			),
-		)); 
+		));
+		print_r($gradesUsers->grade); 
 		?>
 
 	<div class="row">
