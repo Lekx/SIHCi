@@ -108,7 +108,7 @@ function change(){
   <option value="borrador">Proyectos en borrador</option>
   <option value="dictaminado">Proyectos Concluidos</option>
   <option value="rechazado">Proyectos Rechazados</option>
-  <option value="revisión divuh">Proyectos de Revisión DivUH</option>
+  <option value="divuh">Proyectos de Revisión DivUH</option>
 </select>
 </span>
 </div>

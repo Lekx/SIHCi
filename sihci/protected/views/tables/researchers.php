@@ -179,7 +179,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'value'=>array($this,'researchAreas'),'type' => 'raw',
                 ),
 		     array('header'=>'Sistema NI',
-		 		'value'=>'$data["SNI"] == -1 || $data["SNI"] == 0 ? "N/A" : "SNI: ".$data["SNI"]',
+		 		'value'=>'$data["SNI"] == -1 || $data["SNI"] == 0 ? "No SNI" : "SNI: ".$data["SNI"]',
                 ),
 		     array('header'=>'Estatus',
 		 		'value'=>'$data["status"] == 1 ? "activo" : "inhabilitado"',
