@@ -6,21 +6,6 @@ $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/congresses/js/script.js');
 ?>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-
-    });
-});
-</script>
 <!--PC01-Registrar datos  Participacion en congresos-->
 <div class="form">
 
@@ -35,7 +20,7 @@ $(document).ready(function() {
 
 ?>
 
-	
+
 
 	<div class="row">
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Tipo de participación','title'=>'Tipo de participación')); ?>
@@ -182,8 +167,8 @@ $(document).ready(function() {
 	<?php } ?>
 
 	<div class="row buttons">
-	   	 
-		
+
+
 	   	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)),
         				array(
 							'dataType'=>'json',
@@ -195,7 +180,7 @@ $(document).ready(function() {
 		                         {
 
 									$(".successdiv").show();
-									
+
 		                         }
 		                         else
 		                         {
@@ -204,7 +189,7 @@ $(document).ready(function() {
 		                  	}',
 
                         ),array('class'=>'savebutton'));
-          ?> 
+          ?>
 		<?php echo CHtml::link('Cancelar',array('congresses/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 

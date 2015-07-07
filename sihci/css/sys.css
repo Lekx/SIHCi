@@ -44,14 +44,21 @@ select
 .sysheader
 {
     display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display:         flex;
             flex-direction: row;
 
     width: 100%;
     height: 195px;
 
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
     -webkit-flex-direction: row;
     -webkit-flex-flow: wrap;
+        -ms-flex-flow: wrap;
             flex-flow: wrap;
     -webkit-flex: 1 1 auto;
 }
@@ -65,6 +72,8 @@ select
 
 .headerconteinerC
 {
+    position: relative;
+
     width: 12.5%;
     height: 90px;
 
@@ -124,6 +133,8 @@ select
 .syscontent
 {
     display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display:         flex;
             flex-direction: row;
 
@@ -131,8 +142,13 @@ select
     min-height: 450px;
     margin-top: -50px;
 
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
     -webkit-flex-direction: row;
     -webkit-flex-flow: wrap;
+        -ms-flex-flow: wrap;
             flex-flow: wrap;
 }
 .sysmenu
@@ -297,14 +313,21 @@ select
 .footer
 {
     display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display:         flex;
             flex-direction: row;
 
     width: 100%;
     height: 90px;
 
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
     -webkit-flex-direction: row;
     -webkit-flex-flow: wrap;
+        -ms-flex-flow: wrap;
             flex-flow: wrap;
     -webkit-flex: 1 1 auto;
 }
@@ -450,9 +473,7 @@ input[type='radio']
     color: #0e3152;
     border: 0;
     border-color: none;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
+        border-radius: 4px;
     background-color: #cdf1f3;
     box-shadow: none;
 
@@ -463,8 +484,8 @@ input[type='radio']
         -ms-appearance: none;
          -o-appearance: none;
             appearance: none;
-        -ms-border-radius: 4px;
-         -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
 }
 .cvforms textarea
 {
@@ -485,9 +506,7 @@ input[type='radio']
     color: #0e3152;
     border: 0;
     border-color: none;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
+        border-radius: 4px;
     background-color: #cdf1f3;
     box-shadow: none;
 
@@ -498,8 +517,8 @@ input[type='radio']
         -ms-appearance: none;
          -o-appearance: none;
             appearance: none;
-        -ms-border-radius: 4px;
-         -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
 }
 .question p
 {
@@ -522,9 +541,7 @@ input[type='radio']
     color: #0e3152;
     border: 0;
     border-color: none;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
+        border-radius: 4px;
     background-color: #cdf1f3;
     box-shadow: none;
 
@@ -533,8 +550,8 @@ input[type='radio']
         -ms-appearance: listbox;
          -o-appearance: listbox;
             appearance: listbox;
-        -ms-border-radius: 4px;
-         -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
 }
 .cvforms input[type='file']
 {
@@ -824,11 +841,11 @@ thead th
     color: white;
     background-color: #0e3152;
 }
-.backbut h3 ,.errorbut h3
+.backbut h3,
+.errorbut h3
 {
-  padding: 5px;
-  margin: 0;
-
+    margin: 0;
+    padding: 5px;
 }
 .remainder
 {
@@ -1086,19 +1103,17 @@ thead th
     padding: 3px 18px 4px 6px;
 
     color: #0e3152;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
-            border-radius: 4px;
-            border-radius: 4px;
+        border-radius: 4px;
+        border-radius: 4px;
+        border-radius: 4px;
     background-color: #cdf1f3;
 
     -webkit-appearance: none;
        -moz-appearance: none;
         -ms-appearance: none;
             appearance: none;
-        -ms-border-radius: 4px;
-         -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
 }
 .plain-select2 select
 {
@@ -1115,19 +1130,17 @@ thead th
     padding: 3px 18px 4px 6px;
 
     color: #0e3152;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
-            border-radius: 4px;
-            border-radius: 4px;
+        border-radius: 4px;
+        border-radius: 4px;
+        border-radius: 4px;
     background-color: #cdf1f3;
 
     -webkit-appearance: none;
        -moz-appearance: none;
         -ms-appearance: none;
             appearance: none;
-        -ms-border-radius: 4px;
-         -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
 }
 .plain-select select,
 .plain-select1 select
@@ -1145,19 +1158,17 @@ thead th
     padding: 3px 18px 4px 6px;
 
     color: #0e3152;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
-            border-radius: 4px;
-            border-radius: 4px;
+        border-radius: 4px;
+        border-radius: 4px;
+        border-radius: 4px;
     background-color: #cdf1f3;
 
     -webkit-appearance: none;
        -moz-appearance: none;
         -ms-appearance: none;
             appearance: none;
-        -ms-border-radius: 4px;
-         -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
 }
 .ie8 .plain-select select
 {
@@ -1263,14 +1274,12 @@ thead th
     padding: 2px 18px 2px 3px;
 
     color: #0e3152;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
-            border-radius: 4px;
+        border-radius: 4px;
+        border-radius: 4px;
     background-color: #cdf1f3;
 
-        -ms-border-radius: 4px;
-         -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+     -o-border-radius: 4px;
 }
 .slideThree:after
 {
@@ -1451,9 +1460,7 @@ thead th
     width: 50px !important;
     height: 50px !important;
 
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
+    border-radius: 4px;
     background-color: #cdf1f3;
 }
 table.detail-view
@@ -1846,9 +1853,7 @@ ul.yiiPager a:hover,
 
     border: 0 !important;
     background-color: transparent !important;
-    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,.75);
-       -moz-box-shadow: 0 0 0 0 rgba(0,0,0,.75);
-            box-shadow: 0 0 0 0 rgba(0,0,0,.75);
+    box-shadow: 0 0 0 0 rgba(0,0,0,.75);
 }
 div.modal-content
 {
@@ -1922,10 +1927,8 @@ div.pager span
     text-align: center;
 
     color: #fff;
-    -webkit-border-radius: 50%;
-       -moz-border-radius: 50%;
-            border-radius: 4px;
-            border-radius: 50%;
+    border-radius: 4px;
+    border-radius: 50%;
     background: #1eb9c0;
 }
 
@@ -1939,9 +1942,7 @@ div.pager span.active
     height: 25px;
     margin-left: 5px;
 
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
+    border-radius: 4px;
     background-color: transparent;
     background-image: url('../img/Acciones/desactivar.png');
     background-repeat: no-repeat;
@@ -1956,6 +1957,50 @@ div.pager span.active
 }
 .error403
 {
-  display: block;
-  margin: auto;
+    display: block;
+
+    margin: auto;
+}
+.dobless
+{
+    font-size: 12px;
+
+    position: fixed;
+    z-index: 1000;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+
+    opacity: .8;
+    color: white;
+    border-radius: 5px;
+    background-color: #1eb9c0;
+}
+.dobless #yt2,
+.dobless #yt1
+{
+    width: 100%;
+
+    background-color: #0a324f;
+}
+.notification
+{
+    position: absolute;
+    z-index: 1000;
+
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+
+    top: 10%;
+    left: 51%;
+
+    opacity: .7;
+
+    text-align: center;
+    font-family: "Caviar_Dreams";
+    color: white;
+    border-radius: 50%;
+    background: #0A324F;
 }

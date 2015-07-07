@@ -1,30 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "docs_identity".
+ * This is the model class for table "projects_coworkers".
  *
- * The followings are the available columns in table 'docs_identity':
+ * The followings are the available columns in table 'projects_coworkers':
  * @property integer $id
- * @property integer $id_curriculum
- * @property string $type
- * @property string $description
- * @property string $doc_id
- * @property integer $is_Primary
+ * @property integer $id_project
+ * @property string $fullName
  *
  * The followings are the available model relations:
- * @property Curriculum $idCurriculum
+ * @property Projects $idProject
  */
-class DocsIdentity extends CActiveRecord
+class ProjectsCoworkers extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
-
-
-
 	public function tableName()
 	{
-		return 'docs_identity';
+		return 'projects_coworkers';
 	}
 
 	/**
@@ -34,25 +28,15 @@ class DocsIdentity extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
-
 		return array(
-			array('id_curriculum', 'required'),
-			array('id_curriculum, is_Primary', 'numerical', 'integerOnly'=>true),
-			array('type', 'required'),
-			array('description', 'length', 'max'=>250),
-			array('doc_id','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert','safe' => false,  'maxSize'=>1024 * 1024 * 2),
-			array('doc_id','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
-			// array('doc_id','file', 'allowEmpty'=>true,
-			//                   'types'=>'pdf, doc, docx, odt',
-			//                   'on' => 'update',
-			//                   'maxSize'=>array(1024 * 2000),
-			//                   'message'=>'Solo se admiten archivos PDF, ODT, DOC o DOCX'),
+			array('id_project, fullName', 'required'),
+			array('id_project', 'numerical', 'integerOnly'=>true),
+			array('fullName', 'length', 'max'=>70),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, type, description, doc_id, is_Primary', 'safe', 'on'=>'search'),
+			array('id, id_project, fullName', 'safe', 'on'=>'search'),
 		);
 	}
-
 
 	/**
 	 * @return array relational rules.
@@ -62,7 +46,7 @@ class DocsIdentity extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idCurriculum' => array(self::BELONGS_TO, 'Curriculum', 'id_curriculum'),
+			'idProject' => array(self::BELONGS_TO, 'Projects', 'id_project'),
 		);
 	}
 
@@ -73,11 +57,8 @@ class DocsIdentity extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_curriculum' => 'Id Curriculum',
-			'type' => 'Nombre del Documento',
-			'description' => 'Descripción',
-			'doc_id' => 'Documento',
-			'is_Primary' => 'Es primario',
+			'id_project' => 'Id Project',
+			'fullName' => 'Full Name',
 		);
 	}
 
@@ -100,11 +81,8 @@ class DocsIdentity extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('doc_id',$this->doc_id,true);
-		$criteria->compare('is_Primary',$this->is_Primary);
+		$criteria->compare('id_project',$this->id_project);
+		$criteria->compare('fullName',$this->fullName,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -115,7 +93,7 @@ class DocsIdentity extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return DocsIdentity the static model class
+	 * @return ProjectsCoworkers the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

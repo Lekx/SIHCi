@@ -205,27 +205,6 @@
 
 
 	<div class="row buttons">
-      <!--   <?php /* echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?> 
-  	  <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('languages/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="success")
-		                         {
-				                   $(".successdiv").show();		                         
-
-		                         }		                         
-		                         else
-		                         {
-			                     	$(".errordiv").show();  
-			                     }       
-		                  	}',                    
-		                    
-                        ),array('class'=>'savebutton')); */
-        ?> --> 
         <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
                 'onclick'=>'send("languages-form", "languages/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","languages/admin","");',
                  //'id'=> 'post-submit-btn', 

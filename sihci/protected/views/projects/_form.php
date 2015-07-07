@@ -419,17 +419,16 @@ $('<div></div>').appendTo('form')
 					),  
 				array(
 					'label'=>'Unidad hospitalaria:',
-					'value'=>$jobsUsers->hospital_unit,
-					), 
-				
+					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
+					), 	
 				array(
 					'label'=>'Máximo grado de estudios:',
 					'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
 					), 
 				array(
 					'label'=>'¿Pertenece al SNI?',
-					'value'=>$curriculum->SNI,
-					),   
+					'value'=>$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
+					),    
 			),
 		)); 
 		?>
