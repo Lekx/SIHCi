@@ -7,40 +7,18 @@
 
 		$(document).ready(function(){
 			$("#hide_form").click(function(){
-			
+
 				if($("#hide_form").is(':checked'))
 					$(".form").hide();
 				else
 					$(".form").show();
-				
+
 	   		});
-		}); 
+		});
 </script>
 
-<script language="javascript">
-	function letters(){
-	$(".lettersOnly").keydown(function (e) {
-		if (event.keyCode >45 && event.keyCode  <57) event.returnValue = false;
-		{
-    		return;
-    	}
-	}
-</script>
 
-<script>
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-});
-</script>
+
 
 	<div class="row">
 			<input type="checkbox" id="hide_form">Usar la misma direccion que la empresa<br>
@@ -66,7 +44,7 @@ $(document).ready(function() {
             'yiiwheels.widgets.formhelpers.WhCountries',
             array(
                 'name' => 'Addresses[country]',
-                
+
                 'useHelperSelectBox' => true,
                 'pluginOptions' => array(
                     'country' => 'MX',

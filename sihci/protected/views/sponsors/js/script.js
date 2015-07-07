@@ -1,6 +1,5 @@
 function send()
 {
-
     var fd = new FormData();
     var data=$("#sponsors-form").serialize();
     fd.append("Persons[photo_url]",$('#photo_url')[0].files[0]);
@@ -18,8 +17,6 @@ function send()
                     alert("Registro realizado con éxito");
                     $("#sponsors-form")[0].reset();
             }
-
-
         },
 
     });
