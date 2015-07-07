@@ -64,13 +64,13 @@ public function actionSponsoredProjectsV()
 				LEFT JOIN sponsors AS sp ON sp.id_user = spo.id_user_sponsorer 
 				WHERE u.type = "fisico" AND p.is_sponsored = 1';
 
-		 $SponsoredProjectsV=new CSqlDataProvider($query,array(
+		 $sponsoredProjectsV=new CSqlDataProvider($query,array(
                                 'pagination'=>array(
                                                 'pageSize'=>10,
                                 ),
                 ));
-		$this->render('SponsoredProjectsV',array(			
-				'SponsoredProjectsV'=>$SponsoredProjectsV
+		$this->render('sponsoredProjectsV',array(			
+				'sponsoredProjectsV'=>$sponsoredProjectsV
 		));
 
 	}

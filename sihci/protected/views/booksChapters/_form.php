@@ -8,6 +8,43 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
 
 
 <script type="text/javascript">
+<<<<<<< HEAD
+=======
+  $(document).ready(function() {
+      $(".numericOnly").keydown(function (e) {
+          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+              (e.keyCode == 65 && e.ctrlKey === true) ||
+              (e.keyCode >= 35 && e.keyCode <= 40)) {
+                  return;
+          }
+          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+              e.preventDefault();
+          }
+      });
+  });
+
+  function lettersOnly(e)
+{
+  key = e.keyCode || e.which;
+  tecla = String.fromCharCode(key).toLowerCase();
+  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+  especiales = [8,37,39,46,45,47];
+
+   tecla_especial = false
+    for(var i in especiales)
+    {
+        if(key == especiales[i])
+        {
+          tecla_especial = true;
+          break;
+            } 
+    }
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+
+>>>>>>> e59ccf776c9838f10b275a1a80e856cd0b2fb6f6
   function changeArea(){
 
     var areaValue = $("#area option:selected").val();
@@ -3814,7 +3851,7 @@ if(areaValue =="SOCIOLOGIA"){
 
 
     <div class="row">
-        <?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','title'=>'ISBN. (Solo se aceptan numeros)')); ?>
+        <?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','class' => 'numericOnly','title'=>'ISBN. (Solo se aceptan numeros)')); ?>
         <?php echo $form->error($model,'isbn'); ?>
     </div>
 
@@ -3873,19 +3910,19 @@ if(areaValue =="SOCIOLOGIA"){
 
   <div class="row">
 
-    <?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45, 'placeholder'=>'No. volumen','title'=>'No. volumen. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45, 'placeholder'=>'No. volumen','class' => 'numericOnly','title'=>'No. volumen. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'volume'); ?>
   </div>
 
   <div class="row">
 
-    <?php echo $form->textField($model,'pages',array('placeholder'=>'No. páginas','title'=>'No. páginas. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'pages',array('placeholder'=>'No. páginas','class' => 'numericOnly','title'=>'No. páginas. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'pages'); ?>
   </div>
 
   <div class="row">
 
-    <?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas','title'=>'No. citas. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas','class' => 'numericOnly','title'=>'No. citas. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'citations'); ?>
   </div>
 
@@ -3955,18 +3992,18 @@ if(areaValue =="SOCIOLOGIA"){
           echo"<input type='hidden' name='idsBooksChapters[]'>";
        ?>
     <div class="row">
-      <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
+      <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($modelAuthor,'names');?>
     </div>
 
     <div class="row">
-      <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apllido Paterno')); ?>
+      <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apllido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($modelAuthor,'last_name1'); ?>
     </div>
 
     <div class="row">
 
-      <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
+      <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($modelAuthor,'last_name2'); ?>
     </div>
 
@@ -3987,18 +4024,18 @@ if(areaValue =="SOCIOLOGIA"){
           echo"<input type='hidden' value='".$value->id."' name='idsBooksChapters[]'>";
          ?>
     <div class="row">
-      <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
+      <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($value,'names');?>
     </div>
 
     <div class="row">
-      <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
+      <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($value,'last_name1'); ?>
     </div>
 
     <div class="row">
 
-      <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
+      <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($value,'last_name2'); ?>
     </div>
 

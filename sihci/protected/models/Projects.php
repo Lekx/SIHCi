@@ -14,10 +14,10 @@
  * @property string $justify
  * @property integer $is_sni
  * @property string $develop_uh
- * @property integer $institution_colaboration
- * @property integer $national_institutions
+
+
  * @property string $participant_institutions
- * @property integer $international_institutions_
+
  * @property string $participant_institutions_international
  * @property string $colaboration_type
  * @property string $adtl_caracteristics_a
@@ -62,7 +62,7 @@ class Projects extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_curriculum, title, discipline, research_type, priority_topic, sub_topic, justify, is_sni, folio', 'required'),
-			array('id_curriculum, is_sni, institution_colaboration, national_institutions, international_institutions_, is_sponsored', 'numerical', 'integerOnly'=>true),
+			array('id_curriculum, is_sni, is_sponsored', 'numerical', 'integerOnly'=>true),
 			array('title, research_type', 'length', 'max'=>250),
 			array('discipline, priority_topic, sub_topic', 'length', 'max'=>100),
 			array('develop_uh', 'length', 'max'=>50),
@@ -71,7 +71,7 @@ class Projects extends CActiveRecord
 			array('participant_institutions, participant_institutions_international, adtl_caracteristics_a, adtl_caracteristics_b, adtl_caracteristics_c, adtl_caracteristics_d, adtl_caracteristics_e, adtl_caracteristics_f, adtl_caracteristics_g', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, title, discipline, research_type, priority_topic, sub_topic, justify, is_sni, develop_uh, institution_colaboration, national_institutions, participant_institutions, international_institutions_, participant_institutions_international, colaboration_type, adtl_caracteristics_a, adtl_caracteristics_b, adtl_caracteristics_c, adtl_caracteristics_d, adtl_caracteristics_e, adtl_caracteristics_f, adtl_caracteristics_g, status, folio, is_sponsored, registration_number, searchValue', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, title, discipline, research_type, priority_topic, sub_topic, justify, is_sni, develop_uh, participant_institutions, participant_institutions_international, colaboration_type, adtl_caracteristics_a, adtl_caracteristics_b, adtl_caracteristics_c, adtl_caracteristics_d, adtl_caracteristics_e, adtl_caracteristics_f, adtl_caracteristics_g, status, folio, is_sponsored, registration_number, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -100,18 +100,17 @@ class Projects extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'title' => 'Titulo',
-			'discipline' => 'Disciplina',
+			'title' => 'Título del proyecto',
+			'discipline' => 'Disciplina del proyecto',
 			'research_type' => 'Tipo de investigación',
 			'priority_topic' => 'Tema prioritario',
 			'sub_topic' => 'Sub tema prioritario',
-			'justify' => 'Justificación',
+			'justify' => 'Justificación para el tema seleccionado',
 			'is_sni' => 'Es SNI?',
 			'develop_uh' => 'Unidad hospitalaria',
-			'institution_colaboration' => 'Institución que colabora',
-			'national_institutions' => 'Instituciones nacionales',
-			'participant_institutions' => 'Instituciones participantes',
-			'international_institutions_' => 'Instituciones internacionales',
+
+			'participant_institutions' => 'Instituciones nacionales participantes',
+
 			'participant_institutions_international' => 'Instituciones internacionales participantes',
 			'colaboration_type' => 'Tipo de colaboracion',
 			'adtl_caracteristics_a' => 'Adtl Caracteristicas A',
@@ -161,10 +160,9 @@ class Projects extends CActiveRecord
 		$criteria->compare('justify',$this->justify,true);
 		$criteria->compare('is_sni',$this->is_sni);
 		$criteria->compare('develop_uh',$this->develop_uh,true);
-		$criteria->compare('institution_colaboration',$this->institution_colaboration);
-		$criteria->compare('national_institutions',$this->national_institutions);
+
 		$criteria->compare('participant_institutions',$this->participant_institutions,true);
-		$criteria->compare('international_institutions_',$this->international_institutions_);
+
 		$criteria->compare('participant_institutions_international',$this->participant_institutions_international,true);
 		$criteria->compare('colaboration_type',$this->colaboration_type,true);
 		$criteria->compare('adtl_caracteristics_a',$this->adtl_caracteristics_a,true);
