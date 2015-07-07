@@ -5,23 +5,7 @@
 ?>
 
 <div class="form">
-<script type="text/javascript">
-	function showState(){
-		 var state = $("#country option:selected").val();
-		 if(state == "Mexico"){
-		 	alert('asa');
-		 }
-		 var newDiscipline ="<span class='plain-select'><select id='BooksChapters_discipline' class='tooltipstered' name='BooksChapters[discipline]' onchange='changeDiscipline()'>";
-    newDiscipline+="<option>Seleccionar Disciplina</option>";
-    for (var item in areaValue) {
-        newDiscipline +="<option>"+areaValue[ item ]+"</option>";
-    }
 
-    newDiscipline+="</select></span>";
-
-    $("#state").html(newDiscipline);
-	}
-</script>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'addresses-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -285,7 +269,8 @@
 	</div>
 
 	<div class="row" id="state">
-		
+		<?php echo $form->textField($model,'state',array('title'=>'Estado','placeholder'=>'Estado')); ?>
+        <?php echo $form->error($model,'state'); ?>
 	</div>
 
 	<div class="row">
