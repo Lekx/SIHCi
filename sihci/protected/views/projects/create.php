@@ -1,7 +1,4 @@
-<?php
-/* @var $this ProjectsController */
-/* @var $model Projects */
-
+<?php 
 $this->breadcrumbs=array(
 	'Projects'=>array('index'),
 	'Create',
@@ -18,7 +15,7 @@ $this->menu=array(
 
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
 	
-	);
+	); 
 ?>
 
 <div class="cvtitle">
@@ -30,4 +27,4 @@ $this->menu=array(
 <h3>Crear proyecto de investigación:</h3>
 
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'discipline'=>$this->discipline)); ?>

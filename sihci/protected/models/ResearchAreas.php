@@ -88,7 +88,7 @@ class ResearchAreas extends CActiveRecord
 
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR name LIKE CONCAT('%', :searchValue ,'%')  ");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR name LIKE CONCAT('%', :searchValue ,'%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
 
@@ -97,12 +97,7 @@ class ResearchAreas extends CActiveRecord
 		$criteria->compare('name',$this->name,true);*/
 
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
-				'order'=>'name ASC',
-				),
-
-		));
+		return new CActiveDataProvider($this, array('criteria'=>$criteria));
 	}
 
 	/**

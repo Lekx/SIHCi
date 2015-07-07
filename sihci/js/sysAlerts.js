@@ -1,13 +1,9 @@
 $(document).ready(function() {
   $('.backbut').click(function() {
-    /*$('.cleandiv').hide();
-    $('.successdiv').hide();
-    $('.errordiv').hide();
-    $('.abortdiv').hide();*/
     window.location = yii.urls.back;
-
   });
   $('.errorbut').click(function() {
+
     $('.cleandiv').hide();
     $('.successdiv').hide();
     $('.errordiv').hide();
@@ -15,23 +11,6 @@ $(document).ready(function() {
     $('.abortdiv').hide();
 
   });
-  /*$('.cleanbut').click(function() {
-      $('.cleandiv').hide();
-      $('[id^=Addresses_]').val('');
-      $('[id^=Sponsors_]').val('');
-      $('[id^=Jobs_]').val('');
-      $('[id^=getResearch]').val('');
-      $('[id^=getTypeEmail]').val('');
-      $('[id^=getEmail]').val('');
-      $('[id^=Persons_]').val('');
-      $('[id^=Curriculum_]').val('');
-      $('.savebutton').val('Guardar');
-      $('.cleanbutton').val('Borrar');
-      $('#cancelar').val('Cancelar');
-      $('[id^= SponsorBilling]').val('');
-
-  });*/
-
   $('.summary').remove();
   $('.buttons a').click(function(e) {
     var url = $('.buttons a').attr('href');
@@ -43,4 +22,16 @@ $(document).ready(function() {
     $('#myModal').modal('toggle');
     return false;
   });
+
+  setInterval(function() {
+    $(".notification").effect("highlight", {
+      color: '#798B9D'
+    }, 3000);
+  }, 100);
+
+
+  function backSuccesAlert(backurl) {
+    window.location = yii.urls.createUrl + '/' + actionUrl
+
+  }
 });

@@ -29,7 +29,7 @@
 	
 	<?php echo $form->error($model,'doc_id'); ?>
 	<div class="row">
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta', 'title'=>'Acta'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta', 'title'=>'Acta de Nacimiento'));?>
 		
 	</div>
 	
@@ -51,7 +51,12 @@
 <hr>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
+		<?php echo CHtml::htmlButton('Guardar',array(
+                'onclick'=>'send("docs-form", "curriculumVitae/docsIdentity", "'.$model->id.'","curriculumVitae/docsIdentity","");',
+                 //'id'=> 'post-submit-btn', 
+                'class'=>'savebutton',
+            ));
+   		 ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 

@@ -26,7 +26,7 @@
 			excludeSelector: ".exclude",
 			emptySelector: ".empty",
 			copyClass: "copy",
-			append: '',
+			append: ' id="cagason"',
 			clearInputs: true,
 			limit: 0 // 0 = unlimited
 		}, options);
@@ -68,8 +68,12 @@
 				
 				// Increment Clone Children IDs
 				$(clone).find('[id]').each(function(){
-					var newid = $(this).attr('id') + (counter +1);
+					counter++;
+					var newid = $(this).attr('id') + counter;
+
 					$(this).attr('id', newid);
+
+					$(this).attr('name', $(this).attr('name')+counter);
 				});
 				
 				//Clear Inputs/Textarea

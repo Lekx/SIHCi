@@ -4,6 +4,7 @@
 /* @var $form CActiveForm */
 
 ?>
+
 <script type="text/javascript">
 $(document).ready(function() {
     $(".numericOnly").keydown(function (e) {
@@ -42,6 +43,7 @@ function lettersOnly(e)
 } 
 </script>
 
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -56,7 +58,7 @@ function lettersOnly(e)
 	//'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	
+
 	<div class="row">
 		<?php echo $form->textField($model,'isbn',array('size'=>13,'maxlength'=>11,'placeholder'=>'Número de ISBN', 'class'=>'numericOnly','title'=>'Número de ISBN. (Solo se aceptan numeros)','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
@@ -78,7 +80,7 @@ function lettersOnly(e)
 
 	<div class="row">
 	<span class="plain-select">
-		<?php  echo $form->dropDownList($model,'publishing_year',array('promt'=>'Año de publicación', 
+		<?php  echo $form->dropDownList($model,'publishing_year',array('promt'=>'Año de publicación',
                     '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
 					'1934'=>'1934','1935'=>'1935','1936'=>'1936','1937'=>'1937',
 					'1938'=>'1938','1939'=>'1939','1940'=>'1940','1941'=>'1941',
@@ -101,17 +103,17 @@ function lettersOnly(e)
 					'2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
 					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
 					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
-					'2015'=>'2015'),array('title'=>'Año de publicación'));  
+					'2015'=>'2015'),array('title'=>'Año de publicación'));
 		?>
 		</span>
 		<?php echo $form->error($model,'publishing_year'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->textField($model,'article_type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo', 'title'=>'Tipo(maximo 20 caracteres)')); ?>
 		<?php echo $form->error($model,'article_type'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->textField($model,'type',array('size'=>15,'maxlength'=>15,'placeholder'=>'Clasificación del articulo o guía', 'title'=>'Clasificación del articulo o guía(maximo 15 caracteres)')); ?>
 		<?php echo $form->error($model,'type'); ?>
@@ -407,7 +409,7 @@ function lettersOnly(e)
                     'PSICOLOGIA FORENSE'=>'PSICOLOGIA FORENSE','INTERACCION DE GRUPOS'=>'INTERACCION DE GRUPOS','PROCESOS DE GRUPO'=>'PROCESOS DE GRUPO','LIDERAZGO'=>'LIDERAZGO','MERCADEO'=>'MERCADEO','COMPORTAMIENTO POLITICO'=>'COMPORTAMIENTO POLITICO','OPINION PUBLICA'=>'OPINION PUBLICA','COMPORTAMIENTO SEGUN LA FUNCION'=>'COMPORTAMIENTO SEGUN LA FUNCION','PERCEPCIONES Y MOVIMIENTOS SOCIALES'=>'PERCEPCIONES Y MOVIMIENTOS SOCIALES','COMUNICACION SIMBOLICA'=>'COMUNICACION SIMBOLICA','PSICOLOGIA DE LA INGENIERIA'=>'PSICOLOGIA DE LA INGENIERIA','PSICOLOGIA DEL DEPORTE'=>'PSICOLOGIA DEL DEPORTE','OTROS'=>'OTROS','DISEÑO ARQUITECTONICO'=>'DISEÑO ARQUITECTONICO','PARQUES Y JARDINES'=>'PARQUES Y JARDINES','URBANISMO'=>'URBANISMO','EJECUCION DE LA OBRA'=>'EJECUCION DE LA OBRA','OTROS'=>'OTROS','CRITICA DE TEXTOS'=>'CRITICA DE TEXTOS','ANALISIS LITERARIO'=>'ANALISIS LITERARIO','ESTILO Y ESTETICA LITERARIOS'=>'ESTILO Y ESTETICA LITERARIOS',
                     'VOCABULARIO LITERARIO'=>'VOCABULARIO LITERARIO','RETORICA'=>'RETORICA','OTROS'=>'OTROS','CINEMATOGRAFIA'=>'CINEMATOGRAFIA','DANZA'=>'DANZA','COREOGRAFIA'=>'COREOGRAFIA','ARTES DECORATIVAS'=>'ARTES DECORATIVAS','DIBUJO'=>'DIBUJO','GRABADO'=>'GRABADO','ESTETICA DE LAS BELLAS ARTES'=>'ESTETICA DE LAS BELLAS ARTES','MUSICA'=>'MUSICA','MUSICOLOGIA'=>'MUSICOLOGIA','PINTURA'=>'PINTURA','FOTOGRAFIA'=>'FOTOGRAFIA','ESCULTURA'=>'ESCULTURA','TEATRO'=>'TEATRO','OTROS'=>'OTROS','EVOLUCION CULTURAL'=>'EVOLUCION CULTURAL','RELACIONES CULTURALES'=>'RELACIONES CULTURALES','FOLKLORE'=>'FOLKLORE','RELACIONES INTERETNICAS'=>'RELACIONES INTERETNICAS','IDIOMA Y CULTURA'=>'IDIOMA Y CULTURA','CARACTERISTICAS Y CIVILIZACION NACIONALES'=>'CARACTERISTICAS Y CIVILIZACION NACIONALES','SOCIOLOGIA DEL ARTE'=>'SOCIOLOGIA DEL ARTE','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','SOCIOLOGIA DE LA LITERATURA'=>'SOCIOLOGIA DE LA LITERATURA',
                     'SOCIOLOGIA DE LA RELIGION'=>'SOCIOLOGIA DE LA RELIGION','OTROS'=>'OTROS','ACOPIO DE DATOS SOBRE EL TERRENO'=>'ACOPIO DE DATOS SOBRE EL TERRENO','PSICOLOGIA SOCIAL'=>'PSICOLOGIA SOCIAL','DISEÑO DE ENCUESTAS SOCIOLOGICAS'=>'DISEÑO DE ENCUESTAS SOCIOLOGICAS','METODOS DE LAS ENCUESTAS SOCIOLOGICAS'=>'METODOS DE LAS ENCUESTAS SOCIOLOGICAS','OTROS'=>'OTROS','SOCIOLOGIA COMPARADA'=>'SOCIOLOGIA COMPARADA','SOCIOLOGIA HISTORICA'=>'SOCIOLOGIA HISTORICA','METODOLOGIA'=>'METODOLOGIA','SOCIOGRAFIA'=>'SOCIOGRAFIA','TEORIA'=>'TEORIA','OTROS'=>'OTROS','CONFLICTOS'=>'CONFLICTOS','SOLUCION DE CONFLICTOS'=>'SOLUCION DE CONFLICTOS','GUERRA Y PAZ'=>'GUERRA Y PAZ','OTROS'=>'OTROS','MEDICION Y CONSTRUCCION DE INDICES'=>'MEDICION Y CONSTRUCCION DE INDICES','CONSTRUCCION DE MODELOS'=>'CONSTRUCCION DE MODELOS',', ANALISIS ESTADISTICO'=>', ANALISIS ESTADISTICO','OTROS'=>'OTROS','BUROCRACIA'=>'BUROCRACIA','SOCIOLOGIA DE LA ENSEÑANZA'=>'SOCIOLOGIA DE LA ENSEÑANZA',
-                    'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'), 
+                    'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),
                      array('prompt'=>'Seleccionar subdisciplina', 'title'=>'Seleccionar subdisciplina'));
 		?>
 		</span>
@@ -428,11 +430,11 @@ function lettersOnly(e)
 	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
  			'addButtonLabel'=>'Agregar nuevo autor',
-		 )); 
+		 ));
     ?>
-    <div class="authorsRegistry">    		 
+    <div class="authorsRegistry">
 	   <?php  echo "<input type='hidden' name='idsArticlesGuides[]'>"; ?>
-		   
+
 		   <div class="row">
 			  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'names');?>
@@ -442,7 +444,7 @@ function lettersOnly(e)
 			  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name1'); ?>
 		  </div>
-		  
+
 		   <div class="row">
 			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
@@ -452,17 +454,17 @@ function lettersOnly(e)
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
 		  <hr>
-   	</div> 	
-    	    
-	<?php 
+   	</div>
+
+	<?php
 
 
-		if(!$model->isNewRecord)		  
-		  foreach ($modelAuthors as $key => $value) 
+		if(!$model->isNewRecord)
+		  foreach ($modelAuthors as $key => $value)
 		  { ?>
-		 	 		
+
 				 <?php echo "<input type='hidden' value='".$value->id."' name='idsArticlesGuides[]'>"; ?>
-				  
+
 					   <div class="row">
 					  		<?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
 					  		<?php echo $form->error($value,'names');?>
@@ -475,20 +477,20 @@ function lettersOnly(e)
 					  		<?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
 					  		<?php echo $form->error($value,'last_name2'); ?>
 					  </div>
-				
+
 						<div class="row">
 					  		<?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición', 'title'=>'posición. (Solo se aceptan numeros)')); ?>
 					  		<?php echo $form->error($value,'position'); ?>
 					  </div>
-			
-	 
+
+
 	<?php } ?>
 
-	<div class="row buttons">		
-		
+	<div class="row buttons">
+
 		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
                 'onclick'=>'send("articles-guides-form", "articlesGuides/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","articlesGuides/admin","");',
-                 //'id'=> 'post-submit-btn', 
+                 //'id'=> 'post-submit-btn',
                 'class'=>'savebutton',
             ));
    		 ?>

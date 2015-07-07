@@ -33,7 +33,7 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		
+
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'generatorPaths' => array('bootstrap.gii'),
@@ -43,34 +43,38 @@ return array(
 			'newFileMode'=>0666,
 			'newDirMode'=>0777,
 		),
-		
+
 	),
-	
+
 
 	// application components
 	'components'=>array(
-
-	   /*'session' => array(
-	      'class' => 'CDbHttpSession',
+/*
+	   'session' => array(
 	   	  'autoStart'=>false,
-	      'timeout' => 30,
+	      'class' => 'CDbHttpSession',
+	      'timeout' => 300,
+
 	   ),*/
 
 		'authManager'=>array(
 				'class'=>'CDbAuthManager',
 				'connectionID'=>'db',
+				'session'=> array(
+					'timeout'=> 1,
+				),
 			),
 		'user'=>array(
 			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin'=>false,
 		),
 
 		'bootstrap' => array(
-            'class' => 'bootstrap.components.TbApi',   
+            'class' => 'bootstrap.components.TbApi',
         ),
-        
+
         'yiiwheels' => array(
-            'class' => 'yiiwheels.YiiWheels',   
+            'class' => 'yiiwheels.YiiWheels',
         ),
 
 
@@ -82,7 +86,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-	
+
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),

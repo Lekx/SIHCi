@@ -8,6 +8,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
 
 
 <script type="text/javascript">
+<<<<<<< HEAD
+=======
   $(document).ready(function() {
       $(".numericOnly").keydown(function (e) {
           if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -18,11 +20,33 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
           if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
               e.preventDefault();
           }
-
       });
   });
+
+  function lettersOnly(e)
+{
+  key = e.keyCode || e.which;
+  tecla = String.fromCharCode(key).toLowerCase();
+  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+  especiales = [8,37,39,46,45,47];
+
+   tecla_especial = false
+    for(var i in especiales)
+    {
+        if(key == especiales[i])
+        {
+          tecla_especial = true;
+          break;
+            } 
+    }
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+
+>>>>>>> e59ccf776c9838f10b275a1a80e856cd0b2fb6f6
   function changeArea(){
-    
+
     var areaValue = $("#area option:selected").val();
 
 if(areaValue =="ANTROPOLOGIA"){
@@ -96,7 +120,7 @@ if(areaValue =="ANTROPOLOGIA"){
   }
   if(areaValue =="CIENCIAS POLITICAS"){
     var CIENCIASPOLITICAS = ["ADMINISTRACION PUBLICA","BIBLIOTECONOMIA Y ARCHIVONOMIA",
-   "IDEOLOGIAS POLITICAS","INSTITUCIONES POLITICAS","RELACIONES INTERNACIONALES","OPINION PUBLICA", 
+   "IDEOLOGIAS POLITICAS","INSTITUCIONES POLITICAS","RELACIONES INTERNACIONALES","OPINION PUBLICA",
    "OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS POLITICAS","POLITICA TEORICA","POLITICAS SECTORIALES",
    "POLITICA TEORICA","SOCIOLOGIA DE LA POLITICA","SISTEMAS POLITICOS","VIDA POLITICA"]
     areaValue = CIENCIASPOLITICAS;
@@ -228,119 +252,119 @@ if(areaValue =="SOCIOLOGIA"){
     }
 
     if(disciplineValue =="LOGICA DEDUCTIVA"){
-      var logicaDeductiva = ["ALGEBRA DE BOOLE", 
-                  "ANALOGIA", 
-                  "CALCULO DE PROPOSICIONES", 
-                  "FUNCIONES RECURSIVAS", 
-                  "FUNDAMENTOS DE LAS MATEMATICAS", 
-                  "GENERALIZACION", 
-                  "LENGUAJES FORMALIZADOS", 
-                  "LOGICA FORMAL", 
-                  "LOGICA MATEMATICA", 
-                  "LOGICA MODAL", 
-                  "LOGICA SIMBOLICA", 
-                  "SISTEMAS FORMALES", 
-                  "TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS", 
-                  "TEORIA DE LAS PRUEBAS", 
-                  "TEORIA DE LOS LENGUAJES FORMALES", 
-                  "TEORIA DE LOS MODELOS", 
+      var logicaDeductiva = ["ALGEBRA DE BOOLE",
+                  "ANALOGIA",
+                  "CALCULO DE PROPOSICIONES",
+                  "FUNCIONES RECURSIVAS",
+                  "FUNDAMENTOS DE LAS MATEMATICAS",
+                  "GENERALIZACION",
+                  "LENGUAJES FORMALIZADOS",
+                  "LOGICA FORMAL",
+                  "LOGICA MATEMATICA",
+                  "LOGICA MODAL",
+                  "LOGICA SIMBOLICA",
+                  "SISTEMAS FORMALES",
+                  "TEORIA DE DEMOSTRACIONES Y MATEMATICAS CONSTRUCTIVAS",
+                  "TEORIA DE LAS PRUEBAS",
+                  "TEORIA DE LOS LENGUAJES FORMALES",
+                  "TEORIA DE LOS MODELOS",
                   "OTROS"]
       disciplineValue = logicaDeductiva;
     }
     if(disciplineValue =="LOGICA INDUCTIVA"){
-      var logicaInductiva = ["INDUCCION", 
-                 "INTUICIONISMO", 
-                 "PROBABILIDAD", 
+      var logicaInductiva = ["INDUCCION",
+                 "INTUICIONISMO",
+                 "PROBABILIDAD",
                  "OTROS"]
       disciplineValue = logicaInductiva;
     }
     if(disciplineValue =="METODOLOGIA"){
-      var metodologia = ["METODO CIENTIFICO", 
+      var metodologia = ["METODO CIENTIFICO",
                "OTROS"]
       disciplineValue = metodologia;
     }
     if(disciplineValue =="ALGEBRA"){
-      var algebra = ["ALGEBRA DE LIE","ALGEBRA DIFERENCIAL", 
-              "ALGEBRA HOMOLOGICA", 
-              "ALGEBRA LINEAL", 
-              "ALGEBRAS", 
-              "ALGEBRAS NO ASOCIATIVAS", 
-              "ANILLOS", 
-              "CAMPOS", 
-              "ESTRUCTURAS ALGEBRAICAS", 
-              "GENERALIDADES", 
-              "GEOMETRIA ALGEBRAICA", 
-              "GRUPOS","POLINOMIOS", 
-              "RETICULOS", 
-              "TEORIA AXIOMATICA DE CONJUNTOS", 
-              "TEORIA DE LAS CATEGORIAS", 
-              "TEORIA DE LAS MATRICES", 
-              "TEORIA DE LA REPRESENTACION", 
-              "TEORIA K ALGEBRAICA", 
+      var algebra = ["ALGEBRA DE LIE","ALGEBRA DIFERENCIAL",
+              "ALGEBRA HOMOLOGICA",
+              "ALGEBRA LINEAL",
+              "ALGEBRAS",
+              "ALGEBRAS NO ASOCIATIVAS",
+              "ANILLOS",
+              "CAMPOS",
+              "ESTRUCTURAS ALGEBRAICAS",
+              "GENERALIDADES",
+              "GEOMETRIA ALGEBRAICA",
+              "GRUPOS","POLINOMIOS",
+              "RETICULOS",
+              "TEORIA AXIOMATICA DE CONJUNTOS",
+              "TEORIA DE LAS CATEGORIAS",
+              "TEORIA DE LAS MATRICES",
+              "TEORIA DE LA REPRESENTACION",
+              "TEORIA K ALGEBRAICA",
               "OTROS"]
       disciplineValue = algebra;
     }
     if(disciplineValue =="ANALISIS Y ANALISIS FUNCIONAL"){
       var analisisYAnalisisFuncional = [ "ALGEBRA DE OPERADORES LOGICOS",
-                        "ANALISIS ARMONICO", 
-                        "ANALISIS COMBINATORIO", 
+                        "ANALISIS ARMONICO",
+                        "ANALISIS COMBINATORIO",
                         "ANALISIS DE FOURIER",
-                        "ANALISIS GLOBAL", 
+                        "ANALISIS GLOBAL",
                         "AREA",
-                        "CALCULO DE VARIACIONES", 
-                        "CALCULO OPERACIONAL", 
-                        "CONVEXIDAD", 
-                        "DESIGUALDADES", 
-                        "ECUACIONES DIFERENCIALES ORDINARIAS", 
-                        "ECUACIONES DIFERENCIALES PARCIALES", 
-                        "ECUACIONES EN DIFERENCIAS FINITAS", 
-                        "ECUACIONES FUNCIONALES", 
-                        "ECUACIONES INTEGRALES", 
-                        "ESPACIOS ANALITICOS", 
-                        "ESPACIOS DE HILBERT", 
+                        "CALCULO DE VARIACIONES",
+                        "CALCULO OPERACIONAL",
+                        "CONVEXIDAD",
+                        "DESIGUALDADES",
+                        "ECUACIONES DIFERENCIALES ORDINARIAS",
+                        "ECUACIONES DIFERENCIALES PARCIALES",
+                        "ECUACIONES EN DIFERENCIAS FINITAS",
+                        "ECUACIONES FUNCIONALES",
+                        "ECUACIONES INTEGRALES",
+                        "ESPACIOS ANALITICOS",
+                        "ESPACIOS DE HILBERT",
                         "ESPACIOS LINEALES TOPOLOGICOS",
                         "ESPACIOS Y ALGEBRAS DE BANACH",
-                        "MEDIDAS", 
-                        "INTEGRACION", 
-                        "FUNCIONES DE UNA VARIABLE COMPLEJA", 
-                        "FUNCIONES DE VARIABLES REALES", 
+                        "MEDIDAS",
+                        "INTEGRACION",
+                        "FUNCIONES DE UNA VARIABLE COMPLEJA",
+                        "FUNCIONES DE VARIABLES REALES",
                         "FUNCIONES DE VARIAS VARIABLES COMPLEJAS",
                         "FUNCIONES ESPECIALES",
                         "FUNCIONES SUBARMONICAS",
                         "SERIES",
                         "SERIES E INTEGRALES TRIGONOMETRICAS",
-                        "SUMABILIDAD","TEORIA DE FUNCIONES GENERALIZADA", 
-                        "TEORIA DE GRAFICAS","TEORIA DE LA APROXIMACION", 
-                        "TEORIA DEL POTENCIAL", 
-                        "TEORIA ERGODICA", 
-                        "TRANSFORMACIONES INTEGRALES", 
+                        "SUMABILIDAD","TEORIA DE FUNCIONES GENERALIZADA",
+                        "TEORIA DE GRAFICAS","TEORIA DE LA APROXIMACION",
+                        "TEORIA DEL POTENCIAL",
+                        "TEORIA ERGODICA",
+                        "TRANSFORMACIONES INTEGRALES",
                         "OTROS"]
       disciplineValue = analisisYAnalisisFuncional;
     }
     if(disciplineValue =="INFORMATICA MATEMATICA"){
       var informaticaMatematica = ["BANCOS DE DATOS",
-                       "CODIGOS Y SISTEMAS DE CODIFICACION", 
-                       "COMPUTACION ANALOGICA", 
+                       "CODIGOS Y SISTEMAS DE CODIFICACION",
+                       "COMPUTACION ANALOGICA",
                        "COMPUTACION DIGITAL",
-                         "COMPUTACION HIBRIDA", 
+                         "COMPUTACION HIBRIDA",
                          "CONTABILIDAD",
-                         "CONTROL DE INVENTARIO", 
-                         "DISEÑO CON AYUDA DE COMPUTADOR", 
-                         "DISEÑO DE SISTEMAS DE SENSORES", 
-                         "DISEÑO Y COMPONENTES", 
-                         "ENSEÑANZA CON AYUDA DE COMPUTADOR", 
-                         "HEURISTICA", 
-                         "LENGUAJES ALGORITMICOS", 
-                         "LENGUAJES DE PROGRAMACION", 
-                         "MODELIZACION CAUSAL", 
-                         "INFORMATICA", 
-                         "INTELIGENCIA ARTIFICIAL", 
+                         "CONTROL DE INVENTARIO",
+                         "DISEÑO CON AYUDA DE COMPUTADOR",
+                         "DISEÑO DE SISTEMAS DE SENSORES",
+                         "DISEÑO Y COMPONENTES",
+                         "ENSEÑANZA CON AYUDA DE COMPUTADOR",
+                         "HEURISTICA",
+                         "LENGUAJES ALGORITMICOS",
+                         "LENGUAJES DE PROGRAMACION",
+                         "MODELIZACION CAUSAL",
+                         "INFORMATICA",
+                         "INTELIGENCIA ARTIFICIAL",
                          "SIMULACION",
                          "SISTEMAS AUTOMATICOS DE CONTROL DE CALIDAD",
-                         "SISTEMAS DE CONTROL AMBIENTAL", 
-                         "SISTEMAS DE CONTROL MEDICO", 
-                         "SISTEMAS DE CONTROL DE PRODUCCION", 
-                         "SISTEMAS DE INFORMACION", 
+                         "SISTEMAS DE CONTROL AMBIENTAL",
+                         "SISTEMAS DE CONTROL MEDICO",
+                         "SISTEMAS DE CONTROL DE PRODUCCION",
+                         "SISTEMAS DE INFORMACION",
                          "SISTEMAS DE NAVEGACION DE TELEMETRIA Y ESPACIAL",
                          "SISTEMAS DE PRODUCCION AUTOMATICA",
                          "SOPORTE LOGICO DE COMPUTADORES",
@@ -350,22 +374,22 @@ if(areaValue =="SOCIOLOGIA"){
     }
     if(disciplineValue =="GEOMETRIA"){
       var geometria = ["ANALISIS TENSORIAL",
-               "DOMINIOS CONVEXOS", 
-               "ESTRUCTURAS DE ORDEN GEOMETRICO", 
+               "DOMINIOS CONVEXOS",
+               "ESTRUCTURAS DE ORDEN GEOMETRICO",
                "FUNDAMENTOS",
-                 "GEOMETRIA AFIN", 
+                 "GEOMETRIA AFIN",
                  "GEOMETRIA COMPLEJA Y REAL",
-                 "GEOMETRIA DESCRIPTIVA Y ANALITICA", 
-                 "GEOMETRIA DIFERENCIAL", 
-                 "GEOMETRIA DISCRETA", 
-                 "GEOMETRIA EUCLIDIANA", 
-                 "GEOMETRIA PROYECTIVA", 
-                 "GEOMETRIA TOPOLOGICA", 
-                 "GEOMETRIA RIEMANIANA", 
-                 "GEOMETRIAS INFINITAS", 
-                 "GEOMETRIAS NO EUCLIDIANAS", 
-                 "PROBLEMAS DE EXTREMO", 
-                 "TEORIA DE LA FUNCION GEOMETRICA", 
+                 "GEOMETRIA DESCRIPTIVA Y ANALITICA",
+                 "GEOMETRIA DIFERENCIAL",
+                 "GEOMETRIA DISCRETA",
+                 "GEOMETRIA EUCLIDIANA",
+                 "GEOMETRIA PROYECTIVA",
+                 "GEOMETRIA TOPOLOGICA",
+                 "GEOMETRIA RIEMANIANA",
+                 "GEOMETRIAS INFINITAS",
+                 "GEOMETRIAS NO EUCLIDIANAS",
+                 "PROBLEMAS DE EXTREMO",
+                 "TEORIA DE LA FUNCION GEOMETRICA",
                  "TEORIA K",
                  "VARIEDADES COMPLEJAS",
                    "OTROS"]
@@ -373,23 +397,23 @@ if(areaValue =="SOCIOLOGIA"){
     }
     if(disciplineValue =="TEORIA DE LOS NUMEROS"){
       var teoriaDeLosNumeros = [ "GEOMETRIA DE LOS NUMEROS",
-                   "PROBLEMAS DIOFANTINOS", 
-                   "SUCESIONES Y CONJUNTOS", 
+                   "PROBLEMAS DIOFANTINOS",
+                   "SUCESIONES Y CONJUNTOS",
                    "TEORIA DE LOS NUMEROS ALGEBRAICOS",
-                   "TEORIA DE LOS NUMEROS ANALITICOS", 
+                   "TEORIA DE LOS NUMEROS ANALITICOS",
                    "TEORIA DE LOS NUMEROS ELEMENTALES",
-                   "TEORIA K", 
+                   "TEORIA K",
                    "OTROS"]
       disciplineValue = teoriaDeLosNumeros;
     }
     if(disciplineValue =="ANALISIS NUMERICO"){
       var analisisNumerico = [ "ANALISIS DE ERRORES",
-                   "CONSTRUCCION DE ALGORITMOS", 
-                   "CUADRATURA", 
+                   "CONSTRUCCION DE ALGORITMOS",
+                   "CUADRATURA",
                    "DIFERENCIACION NUMERICA",
-                     "ECUACIONES DIFERENCIALES", 
+                     "ECUACIONES DIFERENCIALES",
                      "ECUACIONES DIFERENCIALES ORDINARIAS",
-                     "ECUACIONES DIFERENCIALES PARCIALES", 
+                     "ECUACIONES DIFERENCIALES PARCIALES",
                      "ECUACIONES FUNCIONALES",
                      "ECUACIONES INTEGRALES",
                      "ECUACIONES INTEGRODIFERENCIALES",
@@ -402,16 +426,16 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = analisisNumerico;
     }
     if(disciplineValue =="INVESTIGACION OPERATIVA"){
-      var invetigacionOperativa = [  
-              "ANALISIS MICROECONOMICO", 
+      var invetigacionOperativa = [
+              "ANALISIS MICROECONOMICO",
           "CIBERNETICA",
-          "COLAS", 
+          "COLAS",
           "DISTRIBUCION Y TRANSPORTE",
-          "FIABILIDAD DE LOS SISTEMAS", 
+          "FIABILIDAD DE LOS SISTEMAS",
           "FLUJO DE RED",
           "FORMULACION DE SISTEMAS",
-          "INVENTARIO", 
-          "MODELACION", 
+          "INVENTARIO",
+          "MODELACION",
           "ORDENAMIENTO",
           "OTROS",
           "PROGRAMACION DINAMICA",
@@ -423,27 +447,27 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = invetigacionOperativa;
     }
         if(disciplineValue =="CALCULO DE PROBABILIDADES"){
-      var calculoProbabilidades = [  
+      var calculoProbabilidades = [
           "APLICACION DE LA PROBABILIDAD",
           "CONJUNTOS ALEATORIOS",
           "FUNDAMENTOS DE LA PROBABILIDAD",
-          "GEOMETRIA ESTOCASTICA", 
-          "MATEMATICAS ACTUARIALES", 
+          "GEOMETRIA ESTOCASTICA",
+          "MATEMATICAS ACTUARIALES",
           "PROCESOS DE MARKOV",
-          "PLAUSIBILIDAD", 
+          "PLAUSIBILIDAD",
           "PROCESOS ESTOCASTICOS",
           "PROBABILIDADES SUBJETIVAS",
-          "PROBABILIDAD GEOMETRICA", 
+          "PROBABILIDAD GEOMETRICA",
           "OTROS",
           "TEORIA ANALITICA DE LA PROBABILIDAD",
           "TEOREMAS LIMITE"]
       disciplineValue = calculoProbabilidades;
     }
       if(disciplineValue =="ESTADISTICA"){
-      var estadistica = [  
+      var estadistica = [
           "ANALISIS DE DATOS",
-          "ANALISIS MULTIVARIANTE", 
-          "COMPUTACION PARA LA ESTADISTICA", 
+          "ANALISIS MULTIVARIANTE",
+          "COMPUTACION PARA LA ESTADISTICA",
           "DISEÑO Y ANALISIS DE EXPERIMENTOS",
           "ESTADISTICA ANALITICA",
           "FUNDAMENTOS DE INFERENCIA ESTADISTICA",
@@ -460,43 +484,43 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = estadistica;
     }
         if(disciplineValue =="TOPOLOGIA"){
-      var topologia = [  
+      var topologia = [
           "COHOMOLOGIA",
           "ESPACIOS ABSTRACTOS",
           "DINAMICA TOPOLOGICA",
           "GRUPOS DE TRANSFORMACION",
-          "GRUPOS DE LIE", 
-          "GRUPOS TOPOLOGICOS", 
+          "GRUPOS DE LIE",
+          "GRUPOS TOPOLOGICOS",
           "HACES Y ESPACIOS DE FIBRAS",
           "HOMOLOGIA",
-          "HOMOTOPIA", 
+          "HOMOTOPIA",
           "INMERSION TOPOLOGICA",
           "OTROS",
-          "TEORIA K TOPOLOGICA", 
-          "TOPOLOGIA ALGEBRAICA", 
+          "TEORIA K TOPOLOGICA",
+          "TOPOLOGIA ALGEBRAICA",
           "TOPOLOGIA COMBINATORIA",
-          "TOPOLOGIA DE CONJUNTOS DE PUNTOS", 
+          "TOPOLOGIA DE CONJUNTOS DE PUNTOS",
           "TOPOLOGIA GENERAL",
           "TOPOLOGIA TRIDIMENSIONAL",
-          "VARIEDADES DIFERENCIALES", 
+          "VARIEDADES DIFERENCIALES",
           "VARIEDADES TOPOLOGICAS"]
       disciplineValue = topologia;
     }
            if(disciplineValue =="INFORMATICA"){
-      var informatica = [  
+      var informatica = [
           "DISEÑO Y COMPONENTES",
-          "GRAFICAS INFORMATICAS", 
+          "GRAFICAS INFORMATICAS",
           "ESTRUCTURA Y MANEJO DE DATOS",
           "INTELIGENCIA ARTIFICIAL",
-          "LENGUAJES ALGORITMICOS", 
+          "LENGUAJES ALGORITMICOS",
           "LENGUAJES DE PROGRAMACION",
           "LOGICA MATEMATICA Y LENGUAJES FORMALES",
-          "MATEMATICAS DISCRETAS", 
+          "MATEMATICAS DISCRETAS",
           "MANIPULACION SIMBOLICA Y ALGEBRAICA",
           "OTROS",
           "SISTEMAS DE INFORMACION",
           "PROCESAMIENTO DE TEXTOS Y DOCUMENTOS",
-          "PROGRAMAS MATEMATICOS", 
+          "PROGRAMAS MATEMATICOS",
           "SIMULACION Y MODELACION",
           "TEORIA",
           "TEORIA DE LA CODIFICACION Y DE LA INFORMACION",
@@ -505,30 +529,30 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = informatica;
     }
           if(disciplineValue =="SISTEMAS"){
-      var sistemas = [  
+      var sistemas = [
               "OTROS",
           "SISTEMAS ALGEBRAICOS TOPOLOGICOS Y DIFERENCIABLES",
           "SISTEMAS DINAMICOS",
           "SISTEMAS HAMILTONIANOS",
-          "SISTEMAS LAGRANGIANOS", 
+          "SISTEMAS LAGRANGIANOS",
           "SISTEMAS ESTOCASTICOS Y CONTROL"]
       disciplineValue = sistemas;
     }
         if(disciplineValue =="COSMOLOGIA Y COSMOGONIA"){
-      var cosmologiyCosmogonia = [  
-          "ESTRELLAS BINARIAS", 
-          "CONGLOMERADOS", 
-          "RAYOS COSMICOS", 
-          "GALAXIAS", 
-          "GRAVITACION", 
-          "NEBULOSAS", 
-          "NOVAS", 
-          "PULSARS", 
-          "QUASARS", 
-          "ESTRELLAS", 
+      var cosmologiyCosmogonia = [
+          "ESTRELLAS BINARIAS",
+          "CONGLOMERADOS",
+          "RAYOS COSMICOS",
+          "GALAXIAS",
+          "GRAVITACION",
+          "NEBULOSAS",
+          "NOVAS",
+          "PULSARS",
+          "QUASARS",
+          "ESTRELLAS",
           "EVOLUCION ESTELAR Y DIAGRAMAS HR",
-          "COMPOSICION ESTELAR", 
-          "SUPER NOVAS", 
+          "COMPOSICION ESTELAR",
+          "SUPER NOVAS",
           "ESTRELLAS",
           "VARIABLES",
           "FUENTES DE RAYOS X",
@@ -536,15 +560,15 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = cosmologiyCosmogonia;
     }
         if(disciplineValue =="ESPACIOS Y MATERIA INTERPLANETARIOS"){
-      var espaciosyMateriaInterplanetarios = [  
-          "CAMPOS INTERPLANETARIOS", 
-          "MATERIAS INTERPLANETARIAS", 
+      var espaciosyMateriaInterplanetarios = [
+          "CAMPOS INTERPLANETARIOS",
+          "MATERIAS INTERPLANETARIAS",
           "OTROS",
           "PARTICULAS INTERPLANETARIAS"]
       disciplineValue = espaciosyMateriaInterplanetarios;
     }
         if(disciplineValue =="ASTRONOMIA OPTICA"){
-      var astronomiaOptica = [  
+      var astronomiaOptica = [
           "ASTRONOMIA DE POSICION",
           "TELESCOPIOS",
           "ESPECTROSCOPIA",
@@ -552,7 +576,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = astronomiaOptica;
     }
      if(disciplineValue =="PLANETOLOGIA"){
-      var planetologia = [  
+      var planetologia = [
           "COMETAS",
           "METEORITOS",
           "ATMOSFERAS PLANETARIAS",
@@ -567,23 +591,23 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = planetologia;
     }
     if(disciplineValue =="RADIOASTRONOMIA"){
-      var radioastronimia = [  
+      var radioastronimia = [
           "ANTENAS",
-          "RADIOTELESCOPIOS", 
+          "RADIOTELESCOPIOS",
           "OTROS"]
       disciplineValue = radioastronimia;
     }
      if(disciplineValue =="SISTEMA SOLAR"){
-      var sistemaSolar = [  
+      var sistemaSolar = [
           "ENERGIA SOLAR",
-          "FISICA SOLAR", 
+          "FISICA SOLAR",
           "RADIACION SOLAR",
           "EL SOL",
           "OTROS"]
       disciplineValue = sistemaSolar;
     }
     if(disciplineValue =="ACUSTICA"){
-      var acustica = [  
+      var acustica = [
           "PROPIEDADES ACUSTICAS DE LOS SOLIDOS",
           "ACUSTICA ARQUITECTONICA",
           "FISICA DE LA AUDICION",
@@ -599,7 +623,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = acustica;
     }
      if(disciplineValue =="ELECTROMAGNETISMO"){
-      var electromagnetismo = [  
+      var electromagnetismo = [
           "CONDUCTIVIDAD",
           "CANTIDADES ELECTRICAS Y SU MEDICION",
           "ELECTRICIDAD",
@@ -617,7 +641,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = electromagnetismo;
     }
       if(disciplineValue =="ELECTRONICA"){
-      var electronica = [  
+      var electronica = [
           "CIRCUITOS",
           "ELEMENTOS DE CIRCUITO",
           "TUBOS ELECTRONICOS",
@@ -631,7 +655,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = electronica;
     }
      if(disciplineValue =="FISICA DE LOS FLUIDOS"){
-      var fisicadelosFluidos = [  
+      var fisicadelosFluidos = [
           "COLOIDES",
           "DISPERSIONES",
           "CORRIENTE DE FLUIDOS",
@@ -647,7 +671,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = fisicadelosFluidos;
     }
     if(disciplineValue =="MECANICA"){
-      var mecanica = [  
+      var mecanica = [
           "MECANICA ESTADISTICA",
           "TEORIA DE N CUERPOS",
           "ELASTICIDAD",
@@ -662,7 +686,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = mecanica;
     }
       if(disciplineValue =="FISICA MOLECULAR"){
-      var fisicaMolecular = [  
+      var fisicaMolecular = [
           "RADICALES LIBRES",
           "FISICA DE LAS MOLECULAS INORGANICAS",
           "FISICA DE LAS MACROMOLECULAS",
@@ -678,7 +702,7 @@ if(areaValue =="SOCIOLOGIA"){
     }
 
      if(disciplineValue =="FISICA NUCLEAR"){
-      var fisicaNuclear = [  
+      var fisicaNuclear = [
           "ATOMO DE HELIO",
           "ATOMO DE HIDROGENO",
           "ATOMOS CON Z>2",
@@ -705,7 +729,7 @@ if(areaValue =="SOCIOLOGIA"){
     }
 
     if(disciplineValue =="FISICA DE LAS PARTICULAS NUCLEARES"){
-      var fisicadelasParticulasNucleares = [  
+      var fisicadelasParticulasNucleares = [
               "ACELERADORES DE PARTICULAS",
           "DETECTORES DE RADIACION",
           "FISICA DE PARTICULAS",
@@ -719,7 +743,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = fisicadelasParticulasNucleares;
     }
       if(disciplineValue =="OPTICA"){
-      var optica = [  
+      var optica = [
               "CINEMATOGRAFIA",
           "COLORIMETRIA",
           "ESPECTROSCOPIA DE EMISION",
@@ -749,7 +773,7 @@ if(areaValue =="SOCIOLOGIA"){
     }
 
     if(disciplineValue =="FISICOQUIMICA"){
-      var fisicoquimica = [  
+      var fisicoquimica = [
           "CATALISIS",
           "CINETOQUIMICA",
           "ESPECTROSCOPIA ELECTRONICA",
@@ -789,7 +813,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = fisicoquimica;
     }
     if(disciplineValue =="FISICA DEL ESTADO SOLIDO"){
-      var fisicaDelEstadoSolido = [  
+      var fisicaDelEstadoSolido = [
               "ALEACIONES",
           "COMPUESTOS",
           "CONDUCTORES METALICOS",
@@ -825,8 +849,8 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = fisicaDelEstadoSolido;
     }
     if(disciplineValue =="FISICA TEORICA"){
-      var fisicaTeorica = [  
-              "CAMPOS GRAVITATORIOS", 
+      var fisicaTeorica = [
+              "CAMPOS GRAVITATORIOS",
           "CAMPOS ELECTROMAGNETICOS",
           "CAMPOS",
           "FISICA DE LA ENERGIA",
@@ -844,7 +868,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = fisicaTeorica;
     }
     if(disciplineValue =="TERMODINAMICA"){
-      var termodinamica = [  
+      var termodinamica = [
               "ALTA PRESION",
           "ALTA TEMPERATURA",
           "BAJAS TEMPERATURAS",
@@ -860,7 +884,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = termodinamica;
     }
     if(disciplineValue =="UNIDADES Y CONSTANTES FISICAS"){
-      var unidadesyConstantesFisicas = [  
+      var unidadesyConstantesFisicas = [
               "CONSTANTES (FISICAS)",
           "CONVERSION DE UNIDADES",
           "CALIBRACION DE UNIDADES",
@@ -870,7 +894,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = unidadesyConstantesFisicas;
     }
       if(disciplineValue =="QUIMICA ANALITICA"){
-      var quimicaAnalitica = [  
+      var quimicaAnalitica = [
               "ANALISIS ELECTROQUIMICO",
           "ANALISIS BIOQUIMICO",
           "ANALISIS CROMATOGRAFICO",
@@ -895,7 +919,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = quimicaAnalitica;
     }
      if(disciplineValue =="BIOQUIMICA"){
-      var bioquimica = [  
+      var bioquimica = [
               "ACEITES ESENCIALES",
           "ACIDOS GRASOS",
           "ACIDOS NUCLEICOS",
@@ -934,7 +958,7 @@ if(areaValue =="SOCIOLOGIA"){
     }
 
     if(disciplineValue =="QUIMICA INORGANICA"){
-      var quimicaInorganica = [  
+      var quimicaInorganica = [
               "ALQUILOS METALICOS",
           "CARBONO",
           "COMPUESTOS DEFICIENTES EN ELECTRONES",
@@ -970,7 +994,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = quimicaInorganica;
     }
     if(disciplineValue =="QUIMICA DE LAS MACROMOLECULAS"){
-      var quimicaDeLasMacromoleculas = [  
+      var quimicaDeLasMacromoleculas = [
               "ANALISIS DE LOS POLIMEROS",
           "FIBRAS SINTETICAS",
           "POLIESTIRENOS",
@@ -999,7 +1023,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = quimicaDeLasMacromoleculas;
     }
      if(disciplineValue =="QUIMICA NUCLEAR"){
-      var quimicaNuclear = [  
+      var quimicaNuclear = [
               "MOLECULAS MARCADAS",
           "OTROS",
           "RADIOISOTOPOS",
@@ -1011,7 +1035,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = quimicaNuclear;
     }
      if(disciplineValue =="QUIMICA ORGANICA"){
-      var quimicaOrganica = [  
+      var quimicaOrganica = [
               "PRODUCTOS ORGANOMETALICOS",
           "QUIMICA DE LAS MATERIAS TINTOREAS",
           "QUIMICA DE LOS ESTEROIDES",
@@ -1034,13 +1058,13 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = quimicaOrganica;
     }
     if(disciplineValue =="FARMACOBIOLOGIA"){
-      var farmacobiologia = [  
+      var farmacobiologia = [
               "QUIMICA BIOMOLECURAR",
           "QUIMICA MEDICINAL"]
       disciplineValue = farmacobiologia;
     }
        if(disciplineValue =="BIOLOGIA ANIMAL Y ZOOLOGIA"){
-      var biologiaAnimalyZoologia = [  
+      var biologiaAnimalyZoologia = [
               "ANATOMIA ANIMAL",
           "CRECIMIENTO DE LOS ANIMALES",
           "FISIOLOGIA ANIMAL",
@@ -1068,7 +1092,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = biologiaAnimalyZoologia;
     }
        if(disciplineValue =="ANTROPOLOGIA FISICA"){
-      var antroplogiaFisica = [  
+      var antroplogiaFisica = [
               "ANTROPOLOGIA MEDICA",
           "ANTROPOMETRIA Y ANTROPOLOGIA FORENSE",
           "ARCHIVOS ANTROPOLOGICOS",
@@ -1088,13 +1112,13 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = antroplogiaFisica;
     }
      if(disciplineValue =="BIOMATEMATICA"){
-      var biomatematica = [  
+      var biomatematica = [
               "BIOESTADISTICA",
               "OTROS"]
       disciplineValue = biomatematica;
     }
     if(disciplineValue =="BIOMETRIA"){
-      var biometrica = [  
+      var biometrica = [
               "BIOACUSTICA"
           ,"BIOELECTRICIDAD"
           ,"BIOENERGETICA"
@@ -1105,7 +1129,7 @@ if(areaValue =="SOCIOLOGIA"){
       disciplineValue = biometrica;
     }
     if(disciplineValue =="BIOLOGIA CELULAR"){
-      var biologiaCelular = [  
+      var biologiaCelular = [
               "CULTIVO CELULAR"
           ,"GENETICA CELULAR"
           ,"MORFOLOGIA CELULAR"
@@ -1115,7 +1139,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = biologiaCelular;
     }
     if(disciplineValue =="ETOLOGIA"){
-      var etopologia = [  
+      var etopologia = [
               "ANIMAL",
           "DE LOS INSECTOS",
           "HUMANA",
@@ -1123,7 +1147,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = etopologia;
     }
       if(disciplineValue =="GENETICA"){
-      var genetica = [  
+      var genetica = [
               "EMBRIOLOGIA",
           "GENETICA DE POBLACIONES",
           "INGENIERIA GENETICA",
@@ -1131,7 +1155,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = genetica;
     }
       if(disciplineValue =="BIOLOGIA HUMANA"){
-      var biologiaHumana = [  
+      var biologiaHumana = [
               "EMBRIOLOGIA HUMANA",
           "FISIOLOGIA HUMANA",
           "ANATOMIA HUMANA",
@@ -1149,7 +1173,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = biologiaHumana;
     }
       if(disciplineValue =="FISIOLOGIA HUMANA"){
-      var fisiologiaHumana = [  
+      var fisiologiaHumana = [
               "FISIOLOGIA DE LAS ACTITUDES",
           "ANESTESIOLOGIA",
           "FISIOLOGIA CARDIOVASCULAR,",
@@ -1171,7 +1195,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = fisiologiaHumana;
     }
           if(disciplineValue =="ENTOMOLOGIA GENERAL"){
-      var entomologiaGeneral = [  
+      var entomologiaGeneral = [
               "ENTOMOLOGIA GENERAL",
           "DESARROLLO DE LOS INSECTOS",
           "ECOLOGIA DE LOS INSECTOS",
@@ -1182,7 +1206,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = entomologiaGeneral;
     }
          if(disciplineValue =="MICROBIOLOGIA"){
-      var microbiologia = [  
+      var microbiologia = [
               "ANTIBIOTICOS",
           "FISIOLOGIA BACTERIANA",
           "METABOLISMO BACTERIANO",
@@ -1197,7 +1221,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = microbiologia;
     }
            if(disciplineValue =="PALEONTOLOGIA"){
-      var paleontologia = [  
+      var paleontologia = [
               "PALEONTOLOGIA ANIMAL",
           "PALEONTOLOGIA DE LOS INVERTEBRADOS",
           "PALINOLOGIA",
@@ -1207,7 +1231,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = paleontologia;
     }
           if(disciplineValue =="BOTANICA"){
-      var botanica = [  
+      var botanica = [
               "BRIOLOGIA",
           "DENDROLOGIA",
           "BOTANICA GENERAL",
@@ -1233,7 +1257,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = botanica;
     }
            if(disciplineValue =="VIROLOGIA"){
-      var virologia = [  
+      var virologia = [
               "ARBOVIRUS",
           "BACTERIOFAGOS",
           "VIRUS DERMATROPICOS",
@@ -1247,12 +1271,12 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = virologia;
     }
       if(disciplineValue =="MEDIO AMBIENTE"){
-      var medioAmbiente = [  
+      var medioAmbiente = [
             "GESTIÓN AMBIENTAL"]
   disciplineValue = medioAmbiente;
     }
      if(disciplineValue =="CIENCIAS ATMOSFERICAS"){
-      var cienciasAtmosfericas = [  
+      var cienciasAtmosfericas = [
             "AERONOMIA",
         "RESPLANDOR CELESTE",
         "INTERACCION AIRE-MAR",
@@ -1280,7 +1304,7 @@ if(areaValue =="SOCIOLOGIA"){
         "OTROS"]
   disciplineValue = cienciasAtmosfericas;
     }
-    
+
     if(disciplineValue =="CLIMATOLOGIA"){
       var climatologia = [ "BIOCLIMATOLOGIA",
       "CLIMATOLOGIA ANALITICA",
@@ -1306,7 +1330,7 @@ if(areaValue =="SOCIOLOGIA"){
       "OTROS"]
   disciplineValue = geoquimica;
     }
- 
+
      if(disciplineValue =="GEODESIA"){
       var geodesia = ["ASTRONOMIA GEODESICA",
       "CARTOGRAFIA GEODESICA",
@@ -1316,7 +1340,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = geodesia;
     }
      if(disciplineValue =="GEOGRAFIA"){
-      var geografia = [  
+      var geografia = [
         "BIOGEOGRAFIA",
         "CARTOGRAFIA GEOGRAFICA",
         "GEOGRAFIA DE LOS RECURSOS NATURALES",
@@ -1329,7 +1353,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = geografia;
     }
       if(disciplineValue =="GEOLOGIA"){
-      var geologia = [  
+      var geologia = [
         "ANALISIS DE DIAGRAMAS DE POZO",
         "ECONOMIA DE LOS HIDROCARBUROS",
         "ESTRATIGRAFIA",
@@ -1357,7 +1381,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = geologia;
     }
      if(disciplineValue =="GEOFISICA"){
-      var geofisica = [  
+      var geofisica = [
         "EXPLORACION GEOFISICA",
         "FLUJO DE CALOR (TERRESTRE)",
         "GEOFISICA DE LA TIERRA SOLIDA",
@@ -1370,7 +1394,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = geofisica;
     }
      if(disciplineValue =="HIDROLOGIA"){
-      var hidrologia = [  
+      var hidrologia = [
         "AGUAS SUBTERRANEAS",
         "AGUAS SUPERFICIALES",
         "CALIDAD DEL AGUA",
@@ -1390,7 +1414,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = hidrologia;
     }
        if(disciplineValue =="METEOROLOGIA"){
-      var metereologia = [  
+      var metereologia = [
         "ANALISIS METEOROLOGICO",
         "CONTAMINACION DEL AIRE",
         "CONTROL DEL TIEMPO (METEOROLOGIA)",
@@ -1415,7 +1439,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = metereologia;
     }
      if(disciplineValue =="OCEANOGRAFIA"){
-      var oceonografia = [  
+      var oceonografia = [
       "BOTANICA MARINA",
       "HIELO MARINO",
       "INTERACCIONES MAR-AIRE",
@@ -1431,7 +1455,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = oceonografia;
     }
       if(disciplineValue =="CIENCIAS DEL SUELO"){
-      var cienciasDelSuelo = [  
+      var cienciasDelSuelo = [
       "BIOLOGICA DE SUELOS",
       "BIOQUIMICA DEL SUELO",
       "CARTOGRAFIA DE SUELOS",
@@ -1448,7 +1472,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = cienciasDelSuelo;
     }
      if(disciplineValue =="CIENCIAS DEL COSMOS"){
-      var cienciasDelCosmos = [  
+      var cienciasDelCosmos = [
       "BIOLOGIA ESPACIAL",
       "FISIOLOGIA ESPACIAL",
       "MEDICINA AEROSPACIAL",
@@ -1456,7 +1480,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = cienciasDelCosmos;
     }
       if(disciplineValue =="SALUD PÚBLICA"){
-      var saludPublica = [  
+      var saludPublica = [
       "ADMINISTRACIÓN DE LOS SERVICIOS DE SALUD",
         "ANTROPOLOGÍA MÉDICA",
         "EPIDEMIOLOGÍA",
@@ -1464,7 +1488,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = saludPublica;
     }
      if(disciplineValue =="INVESTIGACIÓN EN SALUD"){
-      var investigacionEnSalud = [  
+      var investigacionEnSalud = [
       "BIOMEDICINA",
       "INVESTIGACION CLÍNICA",
       "INVESTIGACIÓN EN ADICCIONES",
@@ -1473,12 +1497,12 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = investigacionEnSalud;
     }
        if(disciplineValue =="ENFERMERÍA"){
-      var enfermeria = [  
+      var enfermeria = [
       "SALUD MATERNA"]
   disciplineValue = enfermeria;
     }
        if(disciplineValue =="QUIMICA AGRONOMICA"){
-      var quimicaAgronomica = [  
+      var quimicaAgronomica = [
       "BIOQUIMICA AGRONOMICA",
       "FUNGICIDAS",
       "HERBICIDAS",
@@ -1494,7 +1518,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = quimicaAgronomica;
     }
      if(disciplineValue =="INGENIERIA RURAL"){
-      var ingenieriaRural = [  
+      var ingenieriaRural = [
       "CONSTRUCCION RURAL",
       "DRENAJE",
       "EQUIPO DE GRANJA",
@@ -1504,7 +1528,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = ingenieriaRural;
     }
        if(disciplineValue =="AGRONOMIA"){
-      var agronomia = [  
+      var agronomia = [
       "AGRICULTURA EN ZONAS ARIDAS",
       "AGRICULTURA EN ZONAS TEMPLADAS",
       "AGRICULTURA EN ZONAS TROPICALES",
@@ -1528,7 +1552,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = agronomia;
     }
         if(disciplineValue =="CIENCIAS VETERINARIAS"){
-      var cienciasVeterinarias = [  
+      var cienciasVeterinarias = [
       "APICULTURA",
       "ATENCION Y GESTION",
       "AVES DE CORRAL",
@@ -1550,7 +1574,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = cienciasVeterinarias;
     }
         if(disciplineValue =="PECES Y ANIMALES SALVAJES"){
-      var pecesYAnimalesSalvajes = [  
+      var pecesYAnimalesSalvajes = [
       "BIOLOGIA PESQUERA",
       "CAZA (ANIMALES)",
       "CONSERVACION Y ORDENAMIENTO DE LOS ANIMALES SALVAJES",
@@ -1568,7 +1592,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = pecesYAnimalesSalvajes;
     }
       if(disciplineValue =="HORTICULTURA"){
-      var horticultura = [  
+      var horticultura = [
       "FITOGENETICA",
       "FLORICULTURA",
       "FRUTAS",
@@ -1579,7 +1603,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = horticultura;
     }
       if(disciplineValue =="FITOPATOLOGIA"){
-      var fitopatologia = [  
+      var fitopatologia = [
       "BACTERIAS",
       "CONTROL AMBIENTAL DE ENFERMEDADES",
       "CONTROL BIOLOGICO DE ENFERMEDADES",
@@ -1593,7 +1617,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = fitopatologia;
     }
          if(disciplineValue =="CIENCIAS VETERINARIAS"){
-      var cienciasVeterinarias = [  
+      var cienciasVeterinarias = [
       "ANATOMIA",
       "ANESTESIOLOGIA",
       "BIOQUIMICA",
@@ -1615,7 +1639,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = cienciasVeterinarias;
     }
         if(disciplineValue =="MEDICINA CLINICA"){
-      var medicinaClinica = [  
+      var medicinaClinica = [
       "CANCEROLOGIA",
       "DERMATOLOGIA",
       "GENETICA CLINICA",
@@ -1633,7 +1657,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = medicinaClinica;
     }
       if(disciplineValue =="MEDICINA DEL TRABAJO"){
-      var medicinaDelTrabajo = [  
+      var medicinaDelTrabajo = [
       "ENFERMEDADES PROFESIONALES",
       "MEDICINA NUCLEAR",
       "REHABILITACION MEDICA",
@@ -1642,7 +1666,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = medicinaDelTrabajo;
     }
       if(disciplineValue =="MEDICINA INTERNA"){
-      var medicinaInterna = [  
+      var medicinaInterna = [
       "CARDIOLOGIA",
       "ENDOCRINOLOGIA",
       "ENFERMEDADES INFECCIOSAS",
@@ -1656,7 +1680,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = medicinaInterna;
     }
       if(disciplineValue =="NUTRICION"){
-      var nutricion = [ 
+      var nutricion = [
       "DEFICIENCIAS ALIMENTARIAS",
       "DIGESTION",
       "ELEMENTOS MINERALES DE LOS ALIMENTOS",
@@ -1674,7 +1698,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = nutricion;
     }
       if(disciplineValue =="PATOLOGIA"){
-      var patologia = [  
+      var patologia = [
       "ALERGIAS",
       "ARTERIOSCLEROSIS",
       "CARCINOGENESIS",
@@ -1697,7 +1721,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = patologia;
     }
       if(disciplineValue =="FARMACODINAMICA"){
-      var farmacodinamica = [  
+      var farmacodinamica = [
       "ABSORCION DE LOS MEDICAMENTOS",
       "ACTIVACION",
       "AUTOCATALISIS",
@@ -1715,7 +1739,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = farmacodinamica;
     }
         if(disciplineValue =="FARMACOLOGIA"){
-      var farmacologia = [  
+      var farmacologia = [
       "ANALISIS DE LOS PRODUCTOS FARMACEUTICOS",
       "COMPOSICION DE LOS MEDICAMENTOS",
       "EVALUACION DE LOS MEDICAMENTOS",
@@ -1732,7 +1756,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = farmacologia;
     }
        if(disciplineValue =="MEDICINA QUIRURGICA"){
-      var medicinaQuirurgica = [  
+      var medicinaQuirurgica = [
       "ANESTESIOLOGIA",
       "CIRUGIA ABDOMINAL",
       "CIRUGIA CARDIACA",
@@ -1759,7 +1783,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = medicinaQuirurgica;
     }
       if(disciplineValue =="TECNOLOGIA E INGENIERIA AERONAUTICA"){
-      var tecnologiaeIngenieriaAeronautica = [  
+      var tecnologiaeIngenieriaAeronautica = [
       "A LA ROTATORIA",
       "AERODINAMICA",
       "AERONAVES",
@@ -1782,7 +1806,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaeIngenieriaAeronautica;
     }
         if(disciplineValue =="TECNOLOGIA BIOQUIMICA"){
-      var tecnologiaBioquimica = [  
+      var tecnologiaBioquimica = [
       "BIOTECNOLOGIA MARINA",
       "MICROBIOLOGIA INDUSTRIAL",
       "TECNOLOGIA DE LA FERMENTACION",
@@ -1791,7 +1815,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaBioquimica;
     }
         if(disciplineValue =="TECNOLOGIA E INGENIERIA QUIMICA"){
-      var tecnologiaeIngenieriaQuimica = [  
+      var tecnologiaeIngenieriaQuimica = [
       "DESIONIZACION",
       "ECONOMIA QUIMICA",
       "GALVANOPLASTIA",
@@ -1813,7 +1837,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaeIngenieriaQuimica;
     }
       if(disciplineValue =="TECNOLOGIA DE LA INFORMATICA"){
-      var tecnologiaDeLaInformatica = [  
+      var tecnologiaDeLaInformatica = [
       "ARITMETICA E INSTRUCCIONES PARA LA UTILIZACION DE MAQUINAS",
       "ARQUITECTURA DE COMPUTADORES",
       "COMPUTADORES ANALOGICOS",
@@ -1836,7 +1860,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeLaInformatica;
     }
      if(disciplineValue =="TECNOLOGIA DE LA CONSTRUCCION"){
-      var tecnologiaDeLaConstruccion = [  
+      var tecnologiaDeLaConstruccion = [
       "ABASTECIMIENTO DE AGUA",
       "ALCANTARILLADO Y PURIFICACION DE AGUA",
       "CARRETERAS",
@@ -1881,7 +1905,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeLaConstruccion;
     }
     if(disciplineValue =="TECNOLOGIA E INGENIERIA DE LA ELECTRICIDAD"){
-      var tecnologiaeIngenieriaDeLaElectricidad = [  
+      var tecnologiaeIngenieriaDeLaElectricidad = [
       "APARATO DE CONEXION",
       "APLICACIONES DE LA ELECTRICIDAD",
       "CONDUCTORES AISLADOS",
@@ -1895,7 +1919,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaeIngenieriaDeLaElectricidad;
     }
        if(disciplineValue =="TECNOLOGIA ELECTRONICA"){
-      var tecnologiaElectronica = [  
+      var tecnologiaElectronica = [
       "ANTENAS",
       "AUDIOELECTRONICA",
       "DISEÑO DE CIRCUITOS",
@@ -1923,7 +1947,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaElectronica;
     }
     if(disciplineValue =="TECNOLOGIA DEL MEDIO AMBIENTE"){
-      var tecnologiaDelMedioAmbiente = [  
+      var tecnologiaDelMedioAmbiente = [
     "AMBIENTAL",
     "CONTROL DE LA CONTAMINACION DEL AGUA",
     "DESECHOS INDUSTRIALES",
@@ -1945,7 +1969,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDelMedioAmbiente;
     }
     if(disciplineValue =="TECNOLOGIA DE LA ALIMENTACION"){
-      var tecnologiaDelAlimentacion = [  
+      var tecnologiaDelAlimentacion = [
     "ACEITES Y GRASAS VEGETALES",
     "ADITIVOS ALIMENTARIOS",
     "ALIMENTOS PARA ANIMALES",
@@ -1979,7 +2003,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDelAlimentacion;
     }
     if(disciplineValue =="TECNOLOGIA INDUSTRIAL"){
-      var tecnologiaIndistrial = [  
+      var tecnologiaIndistrial = [
     "DISEÑO",
     "EQUIPO INDUSTRIAL",
     "ESPECIFICACIONES DE PROCESOS",
@@ -1993,7 +2017,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaIndistrial;
     }
     if(disciplineValue =="INSTRUMENTAL TECNOLOGICO"){
-      var instrumentalTecnologico = [  
+      var instrumentalTecnologico = [
     "CONTROL DE MAQUINARIA",
     "DISPOSITIVOS ELECTROOPTICOS",
     "EQUIPO DE ENSAYOS ELECTRICOS",
@@ -2017,7 +2041,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = instrumentalTecnologico;
     }
       if(disciplineValue =="TECNOLOGIA DE LAS MATERIAS"){
-      var tecnologiaDeLasMaterias = [  
+      var tecnologiaDeLasMaterias = [
     "CALIZOS",
     "CEMENTOS",
     "CERAMETAL (MATERIAL METALOCERAMICO)",
@@ -2037,7 +2061,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeLasMaterias;
     }
      if(disciplineValue =="TECNOLOGIA MECANICA"){
-      var tecnologiaMecanica = [  
+      var tecnologiaMecanica = [
     "APLICACIONES MECANIZADAS",
     "BOMBAS Y EQUIPO DE MANEJO DE LIQUIDOS",
     "COJINETES",
@@ -2076,14 +2100,14 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaMecanica;
     }
     if(disciplineValue =="TECNOLOGIA DE LA MEDICINA"){
-      var tecnologiaDeLaMedicina = [  
+      var tecnologiaDeLaMedicina = [
     "DISPOSITIVOS DE PROTESIS",
     "ORGANOS ARTIFICIALES",
     "OTROS"]
   disciplineValue = tecnologiaDeLaMedicina;
     }
      if(disciplineValue =="TECNOLOGIA DE LA METALURGIA"){
-      var tecnologiaDeLaMetalurgia = [  
+      var tecnologiaDeLaMetalurgia = [
     "AFINADO",
     "ALUMINIO",
     "COBRE",
@@ -2107,7 +2131,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeLaMetalurgia;
     }
        if(disciplineValue =="TECNOLOGIA DE LOS PRODUCTOS METALICOS"){
-      var tecnologiaDeLosProductosMetalicos = [  
+      var tecnologiaDeLosProductosMetalicos = [
     "ALTOS HORNOS",
     "ARTICULOS DE ALAMBRE",
     "ENVASES Y RECIPIENTES",
@@ -2129,7 +2153,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeLosProductosMetalicos;
     }
       if(disciplineValue =="TECNOLOGIA DE LOS VEHICULOS DE MOTOR"){
-      var tecnologiaDeLosVehiculosDeMotor = [  
+      var tecnologiaDeLosVehiculosDeMotor = [
     "AUTOBUSES",
     "AUTOMOVILES",
     "CAMIONES Y REMOLQUES",
@@ -2145,7 +2169,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeLosVehiculosDeMotor;
     }
      if(disciplineValue =="TECNOLOGIA DE MINAS"){
-      var tecnologiaDeMinas = [  
+      var tecnologiaDeMinas = [
     "AZUFRE",
     "CONCENTRACION DE MINERALES",
     "MECANICA DE ROCAS",
@@ -2164,7 +2188,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeMinas;
     }
         if(disciplineValue =="TECNOLOGIA NAVAL"){
-      var tecnologiaNaval = [  
+      var tecnologiaNaval = [
     "BUQUES MERCANTES",
     "BUQUES",
     "CONSTRUCCION NAVAL",
@@ -2183,7 +2207,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaNaval;
    }
        if(disciplineValue =="TECNOLOGIA NUCLEAR"){
-      var tecnologiaNuclear = [  
+      var tecnologiaNuclear = [
     "ENSAYOS NUCLEARES",
     "EXPLOSIONES NUCLEARES",
     "INGENIERIA QUIMICA NUCLEAR",
@@ -2196,7 +2220,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaNuclear;
     }
     if(disciplineValue =="TECNOLOGIA DEL PETROLEO Y DEL CARBON"){
-      var tecnologiaDelPetroleoYdelCarbon = [  
+      var tecnologiaDelPetroleoYdelCarbon = [
     "ACEITES Y GRASAS LUBRICANTES",
     "ALMACENAMIENTO DE PETROLEO Y GAS",
     "DISEÑO DE REFINERIAS",
@@ -2216,7 +2240,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDelPetroleoYdelCarbon;
     }
       if(disciplineValue =="TECNOLOGIA DE LA ENERGIA"){
-      var tecnologiaDeLaEnergia = [  
+      var tecnologiaDeLaEnergia = [
     "FUENTES DE ENERGIA NO CONVENCIONALES",
     "GENERACION DE ENERGIA",
     "GENERADORES DE ENERGIA",
@@ -2226,7 +2250,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeLaEnergia;
     }
        if(disciplineValue =="TECNOLOGIA DE FERROCARRILES"){
-      var tecnologiaDeFerrocariles = [  
+      var tecnologiaDeFerrocariles = [
     "EQUIPO DE FERROCARRILES",
     "MATERIAL RODANTE (FERROCARRILES)",
     "OTROS",
@@ -2235,7 +2259,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeFerrocariles;
     }
     if(disciplineValue =="TECNOLOGIA DEL ESPACIO"){
-      var tecnologiaDelEspacio = [  
+      var tecnologiaDelEspacio = [
     "CONTROL DE VEHICULOS",
     "INSTALACIONES DE MISILES",
     "MISILES: LANZAMIENTO Y RECUPERACION",
@@ -2247,7 +2271,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDelEspacio;
     }
      if(disciplineValue =="TECNOLOGIA DE LAS TELECOMUNICACIONES"){
-      var tecnologiasDeLasTelecomunicaciones = [  
+      var tecnologiasDeLasTelecomunicaciones = [
     "CINEMATOGRAFIA",
     "COMUNICACIONES MEDIANTE SATELITE",
     "ENLACES DE MICROONDAS",
@@ -2261,7 +2285,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiasDeLasTelecomunicaciones;
     }
     if(disciplineValue =="TECNOLOGIA TEXTIL"){
-      var tecnologiaTextil = [  
+      var tecnologiaTextil = [
     "ACABADOS",
     "ALGODON",
     "HILADO",
@@ -2276,7 +2300,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaTextil;
     }
     if(disciplineValue =="TECNOLOGIA DE LOS SISTEMAS DE TRANSPORTE"){
-      var tecnologiaDeLosSitemasDeTransporte = [  
+      var tecnologiaDeLosSitemasDeTransporte = [
     "ANALISIS DEL TRAFICO",
     "COMBINACIONES DE SISTEMAS",
     "OPERACIONES DE LINEAS AEREAS CONTROL DEL TRAFICO AEREO",
@@ -2285,7 +2309,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDeLosSitemasDeTransporte;
     }
      if(disciplineValue =="ANALISIS DE LAS OPERACIONES TECNOLOGICAS"){
-      var analisisDeLasOperacionesTecnologicas = [  
+      var analisisDeLasOperacionesTecnologicas = [
     "ABSORCION",
     "AGITACION",
     "BOMBEO",
@@ -2317,7 +2341,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = analisisDeLasOperacionesTecnologicas;
     }
     if(disciplineValue =="TECNOLOGIA DEL URBANISMO"){
-      var tecnologiaDelUrbanismo = [  
+      var tecnologiaDelUrbanismo = [
     "COMUNICACIONES",
     "DESARROLLO REGIONAL",
     "MEDIO AMBIENTE URBANO",
@@ -2331,7 +2355,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = tecnologiaDelUrbanismo;
     }
     if(disciplineValue =="GESTION DE LA CALIDAD"){
-      var gestionDeLaCalidad = [  
+      var gestionDeLaCalidad = [
     "COMPARACION REFERENCIAL (BENCHMARKING)",
     "COMUNICACION",
     "CONTROL DE CALIDAD",
@@ -2341,7 +2365,7 @@ if(areaValue =="SOCIOLOGIA"){
     "DISEÑO DE PROCESOS",
     "DOCUMENTACION DE NORMALIZACION Y CERTIFICACION",
     "INSPECCION",
-    "MEJORA E INNOVACION DE PROCESOS", 
+    "MEJORA E INNOVACION DE PROCESOS",
     "OTROS",
     "PROCESOS PRODUCTIVOS",
     "PRODUCTOS DISEÑO Y MEJORA DE",
@@ -2351,7 +2375,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = gestionDeLaCalidad;
     }
      if(disciplineValue =="CIENCIAS DE LA COMPUTACION"){
-      var cienciasDeLaComputacion = [  
+      var cienciasDeLaComputacion = [
     "APLICACIONES DE LA INFORMATICA",
     "ARQUITECTURA DE PROCESADORES",
     "CIRCUITOS INTEGRADOS",
@@ -2372,24 +2396,24 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = cienciasDeLaComputacion;
     }
       if(disciplineValue =="TECNOLOGIA DE BIOPROCESOS"){
-      var tecnologiaDeBioprocesos = [  
+      var tecnologiaDeBioprocesos = [
     "BIOPROCESOS",
     "OTROS"]
   disciplineValue = tecnologiaDeBioprocesos;
     }
       if(disciplineValue =="TECNOLOGIA DE BIOMOLECULAS"){
-      var tecnologiaDeBiomoleculas = [  
+      var tecnologiaDeBiomoleculas = [
     "BIOMOLECULAS",
     "OTROS"]
   disciplineValue = tecnologiaDeBiomoleculas;
     }
     if(disciplineValue =="OTRAS ESPECIALIDADES EN MATERIA DE TECNOLOGIA"){
-      var otrasEspecialidadesEnMateriaDeTEcnologia = [  
+      var otrasEspecialidadesEnMateriaDeTEcnologia = [
     "OTROS"]
   disciplineValue = otrasEspecialidadesEnMateriaDeTEcnologia;
     }
      if(disciplineValue =="ANTROPOLOGIA CULTURAL"){
-      var antropologiaCultural = [  
+      var antropologiaCultural = [
     "ADORNO",
     "DANZAS",
     "ETNOLINGÜISTICA",
@@ -2410,7 +2434,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = antropologiaCultural;
     }
        if(disciplineValue =="ETNOGRAFIA Y ETNOLOGIA"){
-      var EtnografiaYEtnologia = [  
+      var EtnografiaYEtnologia = [
     "AGRICULTURA",
     "ARMAS",
     "ARTESANIA",
@@ -2426,7 +2450,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = EtnografiaYEtnologia;
     }
      if(disciplineValue =="ANTROPOLOGIA SOCIAL"){
-      var antropologiaSocial = [  
+      var antropologiaSocial = [
     "DESCENDENCIA",
     "ESCLAVITUD",
     "FAMILIA",
@@ -2440,7 +2464,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = antropologiaSocial;
     }
      if(disciplineValue =="FECUNDIDAD"){
-      var fecundidad = [  
+      var fecundidad = [
     "ESTERILIDAD Y FECUNDIDAD",
     "FECUNDIDAD GENERAL",
     "ILEGITIMIDAD",
@@ -2450,7 +2474,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = fecundidad;
     }
      if(disciplineValue =="DEMOGRAFIA GENERAL"){
-      var demografiaGeneral = [  
+      var demografiaGeneral = [
     "METODOLOGIA DE ANALISIS",
     "METODOLOGIA DE LA INVESTIGACION",
     "OTROS",
@@ -2458,7 +2482,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = demografiaGeneral;
     }
       if(disciplineValue =="DEMOGRAFIA GEOGRAFICA"){
-      var demografiaGeografica = [  
+      var demografiaGeografica = [
     "DEMOGRAFIA LOCAL",
     "DEMOGRAFIA REGIONAL",
     "DEMOGRAFIA RURAL",
@@ -2469,7 +2493,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = demografiaGeografica;
     }
      if(disciplineValue =="DEMOGRAFIA HISTORICA"){
-      var demografiaHistorica = [  
+      var demografiaHistorica = [
     "ASPECTOS METODOLOGICOS",
     "ASPECTOS TEORICOS",
     "FUENTES DE OBSERVACION",
@@ -2480,7 +2504,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = demografiaHistorica;
     }
      if(disciplineValue =="MORTALIDAD"){
-      var mortalidad = [  
+      var mortalidad = [
     "CAUSAS DE MORTALIDAD",
     "MORTALIDAD GENERAL",
     "MORTALIDAD INFANTIL",
@@ -2490,7 +2514,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = mortalidad;
     }
       if(disciplineValue =="CARACTERISTICAS DE LAS POBLACIONES"){
-      var caracteristicasDeLasPoblaciones = [  
+      var caracteristicasDeLasPoblaciones = [
     "CARACTERISTICAS BIOLOGICAS",
     "CARACTERISTICAS EPIDEMIOLOGICAS",
     "CARACTERISTICAS SOCIOECONOMICAS",
@@ -2505,7 +2529,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = caracteristicasDeLasPoblaciones;
     }
     if(disciplineValue =="EVOLUCION DEMOGRAFICA"){
-      var evolucionDemografica = [  
+      var evolucionDemografica = [
   "CENSOS DEMOGRAFICOS Y OTROS TIPOS DE ACOPIO DE DATOS",
   "DEMOGRAFIA COMPUTACIONAL",
   "DEMOGRAFIA DE OBSERVACION",
@@ -2520,14 +2544,14 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = evolucionDemografica;
     }
      if(disciplineValue =="POLITICA FISCAL Y HACIENDA PUBLICA"){
-      var politicaFiscalyHaciendaPublica = [  
+      var politicaFiscalyHaciendaPublica = [
   "POLITICA FISCAL Y DEUDA PUBLICA",
   "HACIENDA PUBLICA (PRESUPUESTO)",
   "OTROS"]
   disciplineValue = politicaFiscalyHaciendaPublica;
     }
       if(disciplineValue =="ECONOMETRIA"){
-      var econometria = [  
+      var econometria = [
   "ESTADISTICA ECONOMICA",
   "INDICADORES ECONOMICOS",
   "MODELOS ECONOMETRICOS",
@@ -2537,7 +2561,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = econometria;
     }
       if(disciplineValue =="CONTABILIDAD PUBLICA"){
-      var contabilidadPublica = [  
+      var contabilidadPublica = [
   "CUENTAS FINANCIERAS",
   "RIQUEZA NACIONAL Y BALANZA DE PAGOS",
   "CONTABILIDAD DE LA RENTA NACIONAL",
@@ -2550,7 +2574,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = contabilidadPublica;
     }
     if(disciplineValue =="ACTIVIDADES ECONOMICAS"){
-      var actividadesEconomicas = [  
+      var actividadesEconomicas = [
    "DINERO Y BANCA",
   "AHORRO",
   "COMERCIO EXTERIOR",
@@ -2565,7 +2589,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = actividadesEconomicas;
     }
      if(disciplineValue =="SISTEMAS ECONOMICOS"){
-      var sistemasEconomicas = [  
+      var sistemasEconomicas = [
   "SISTEMAS DE ECONOMIA CAPITALISTA",
   "SISTEMAS DE ECONOMIA COLECTIVISTA",
   "SISTEMAS DE ECONOMIA COMPARADA",
@@ -2574,7 +2598,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = sistemasEconomicas;
     }
      if(disciplineValue =="CAMBIO ECONOMICO O TECNOLOGICO"){
-      var cambioEconomicooTecnologico = [  
+      var cambioEconomicooTecnologico = [
   "ECONOMIA DE LA INVESTIGACION Y EL DESARROLLO EXPERIMENTAL",
   "INNOVACION TECNOLOGICA",
   "TRANSFERENCIA DE TECNOLOGIA",
@@ -2582,7 +2606,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = cambioEconomicooTecnologico;
     }
      if(disciplineValue =="TEORIA ECONOMICA"){
-      var teoriaEconomica = [  
+      var teoriaEconomica = [
   "FORMACION DE CAPITAL",
   "TEORIAS DEL CREDITO",
   "MODELOS Y TEORIAS DE DESARROLLO ECONOMICO",
@@ -2606,7 +2630,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = teoriaEconomica;
     }
      if(disciplineValue =="ECONOMIA GENERAL"){
-      var economiaGeneral = [  
+      var economiaGeneral = [
   "COMPORTAMIENTO DEL CONSUMIDOR",
   "HISTORIA DEL PENSAMIENTO ECONOMICO",
   "METODOLOGIA ECONOMICA",
@@ -2614,7 +2638,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = economiaGeneral;
     }
      if(disciplineValue =="ORGANIZACION DE LA INDUSTRIA Y POLITICA ECONOMICA PUBLICA"){
-      var organizacionDeLaIndustriayPoliticaEconomicaPublica = [  
+      var organizacionDeLaIndustriayPoliticaEconomicaPublica = [
   "CONCENTRACION ECONOMICA",
   "EMPRESAS PUBLICAS",
   "ESTRUCTURA DEL MERCADO",
@@ -2626,7 +2650,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = organizacionDeLaIndustriayPoliticaEconomicaPublica;
     }
      if(disciplineValue =="ECONOMIA INTERNACIONAL"){
-      var economiaInternacional = [  
+      var economiaInternacional = [
    "POLITICA ECONOMICA INTERNACIONAL",
   "ACUERDOS MONETARIOS INTERNACIONALES",
   "ASUNTOS INTERNACIONALES",
@@ -2640,7 +2664,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = economiaInternacional;
     }
     if(disciplineValue =="ORGANIZACION Y DIRECCION DE EMPRESAS"){
-      var organizacionyDireccionDeEmpresas = [  
+      var organizacionyDireccionDeEmpresas = [
   "COSTOS",
   "ESTUDIOS DE MERCADO",
   "ESTUDIOS INDUSTRIALES",
@@ -2659,7 +2683,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = organizacionyDireccionDeEmpresas;
     }
      if(disciplineValue =="ECONOMIA SECTORIAL"){
-      var economiaSectorial = [  
+      var economiaSectorial = [
    "LA INDUSTRIA DE LA COMPUTACION",
   "AGRICULTURA",
   "COMERCIO",
@@ -2680,7 +2704,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = economiaSectorial;
     }
     if(disciplineValue =="GEOGRAFIA ECONOMICA"){
-      var geograficaEconomica = [  
+      var geograficaEconomica = [
     "DESARROLLO REGIONAL",
     "DISTRIBUCION DE LOS RECURSOS NATURALES",
     "GEOGRAFIA DE LAS ACTIVIDADES ECONOMICAS",
@@ -2690,7 +2714,7 @@ if(areaValue =="SOCIOLOGIA"){
     }
     //--------------------------------------------------------//
      if(disciplineValue =="GEOGRAFIA HUMANA"){
-      var geograficaHumana = [  
+      var geograficaHumana = [
     "DEMOGEOGRAFIA",
     "GEOGRAFIA CULTURAL",
     "GEOGRAFIA DE LA RELIGION",
@@ -2701,7 +2725,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = geograficaHumana;
     }
      if(disciplineValue =="HISTORIA GENERAL"){
-      var historiaGeneral = [  
+      var historiaGeneral = [
     "HISTORIOGRAFIA",
     "MONOGRAFIAS HISTORICAS",
     "TEORIA Y METODOS",
@@ -2710,14 +2734,14 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = historiaGeneral;
     }
       if(disciplineValue =="HISTORIA DE LOS PAISES"){
-      var historiaDeLosPaises = [  
+      var historiaDeLosPaises = [
     "HISTORIA LOCAL",
     "HISTORIA REGIONAL",
     "OTROS"]
   disciplineValue = historiaDeLosPaises;
     }
       if(disciplineValue =="HISTORIA DE LAS EPOCAS"){
-      var historiaDelasEpocas = [  
+      var historiaDelasEpocas = [
     "PREHISTORIA",
     "HISTORIA ANTIGUA",
     "HISTORIA CONTEMPORANEA",
@@ -2727,7 +2751,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = historiaDelasEpocas;
     }
      if(disciplineValue =="CIENCIAS AUXILIARES DE LA HISTORIA"){
-      var cienciasAuxiliaresDeLaHistoria = [  
+      var cienciasAuxiliaresDeLaHistoria = [
     "ARCHIVISTICA",
     "ARCHIVOS ECONOMICOS",
     "ARQUEOLOGIA",
@@ -2747,7 +2771,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = cienciasAuxiliaresDeLaHistoria;
     }
        if(disciplineValue =="HISTORIA ESPECIALIZADA"){
-      var historiaEspecializada = [  
+      var historiaEspecializada = [
     "HISTORIA DE LA ASTRONOMIA",
     "HISTORIA DE LA BIOLOGIA",
     "HISTORIA DE LA CIENCIA",
@@ -2781,7 +2805,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = historiaEspecializada;
     }
     if(disciplineValue =="TEORIAS Y METODOS JURIDICOS GENERALES"){
-      var teoriayMetodosJuridicosGenerales = [  
+      var teoriayMetodosJuridicosGenerales = [
     "DERECHO COMPARADO",
     "DERECHO CONSUETUDINARIO",
     "DERECHO DE LA ANTIGÜEDAD",
@@ -2792,7 +2816,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = teoriayMetodosJuridicosGenerales;
     }
      if(disciplineValue =="DERECHO INTERNACIONAL"){
-      var derechoInternacional = [  
+      var derechoInternacional = [
     "DERECHO AERONAUTICO",
     "DERECHO DEL ESPACIO ULTRATERRESTRE",
     "DERECHO DEL FONDO DEL MAR",
@@ -2801,7 +2825,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = derechoInternacional;
     }
     if(disciplineValue =="ORGANIZACION PENAL"){
-      var organizacionPenal = [  
+      var organizacionPenal = [
     "FUNCIONARIOS Y PROCEDIMIENTOS JUDICIALES",
     "MAGISTRATURA",
     "TRIBUNALES",
@@ -2809,7 +2833,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = organizacionPenal;
     }
      if(disciplineValue =="DERECHO Y LEGISLACION NACIONALES"){
-      var derechoyLEgislacionNAcionales = [  
+      var derechoyLEgislacionNAcionales = [
     "DERECHO ADMINISTRATIVO",
     "DERECHO AGRARIO Y MINERO",
     "DERECHO CIVIL",
@@ -2830,12 +2854,12 @@ if(areaValue =="SOCIOLOGIA"){
     }
     //----------------------------------///
       if(disciplineValue =="OTRAS ESPECIALIDADES EN MATERIA JURIDICA"){
-      var derechoyLEgislacionNAcionales = [  
+      var derechoyLEgislacionNAcionales = [
     "OTRAS ESPECIALIDADES EN MATERIA JURIDICA"]
   disciplineValue = derechoyLEgislacionNAcionales;
     }
      if(disciplineValue =="LINGÜISTICA APLICADA"){
-      var linguisticaAplicada = [  
+      var linguisticaAplicada = [
     "PREPARACION DE RESUMENES ANALITICOS",
     "DOCUMENTACION AUTOMATIZADA",
     "BILINGÜISMO",
@@ -2853,14 +2877,14 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = linguisticaAplicada;
     }
     if(disciplineValue =="LINGÜISTICA DIACRONICA"){
-      var linguisticaDiacronica = [  
+      var linguisticaDiacronica = [
     "ETIMOLOGIA",
     "LINGÜISTICA HISTORICA",
     "OTROS"]
   disciplineValue = linguisticaDiacronica;
     }
      if(disciplineValue =="LINGÜISTICA SINCRONICA"){
-      var linguisticaSincronica = [  
+      var linguisticaSincronica = [
      "SINTAXIS ANALISIS SINTACTICO",
     "ESTILISTICA (ESTILO Y RETORICA)",
     "ETNOLINGÜISTICA",
@@ -2879,7 +2903,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = linguisticaSincronica;
     }
      if(disciplineValue =="TEORIAS Y METODOS PEDAGOGICOS GENERALES"){
-      var teoriasyMetodosPedagogicosGenerales = [  
+      var teoriasyMetodosPedagogicosGenerales = [
     "ELABORACION DE PLANES DE ESTUDIO",
     "EVALUACION DE ALUMNOS Y MAESTROS",
     "INSTRUCCION PROGRAMADA",
@@ -2892,7 +2916,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = teoriasyMetodosPedagogicosGenerales;
     }
      if(disciplineValue =="ORGANIZACION Y PLANIFICACION PEDAGOGICAS"){
-      var organizacionyPlanificacionPedagogicas = [  
+      var organizacionyPlanificacionPedagogicas = [
     "EDUCACION DE ADULTOS",
     "CENTROS DOCENTES",
     "ORGANIZACION Y ADMINISTRACION",
@@ -2908,14 +2932,14 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = organizacionyPlanificacionPedagogicas;
     }
     if(disciplineValue =="FORMACION Y EMPLEO DE LOS EDUCADORES"){
-      var formacionyEmpleoDeLosEducadores = [  
+      var formacionyEmpleoDeLosEducadores = [
     "CARRERA Y CONDICION DE LOS EDUCADORES",
     "FORMACION DE EDUCADORES",
     "OTROS"]
   disciplineValue = formacionyEmpleoDeLosEducadores;
     }
     if(disciplineValue =="RELACIONES INTERNACIONALES"){
-      var relacionesInternacionales = [  
+      var relacionesInternacionales = [
     "COOPERACION INTERNACIONAL",
     "ORGANIZACIONES INTERNACIONALES",
     "POLITICA INTERNACIONAL",
@@ -2925,7 +2949,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = relacionesInternacionales;
     }
     if(disciplineValue =="POLITICAS SECTORIALES"){
-      var politicasSectoriales = [  
+      var politicasSectoriales = [
      "POLITICA EXTERIOR",
     "PLANIFICACION DE POLITICAS",
     "POLITICA AGRICOLA",
@@ -2946,7 +2970,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = politicasSectoriales;
     }
     if(disciplineValue =="INSTITUCIONES POLITICAS"){
-      var institucionesPoliticas = [  
+      var institucionesPoliticas = [
     "PODER EJECUTIVO",
     "PODER JUDICIAL",
     "PODER LEGISLATIVO",
@@ -2957,7 +2981,7 @@ if(areaValue =="SOCIOLOGIA"){
     //------------------------------------------------------//
 
     if(disciplineValue =="VIDA POLITICA"){
-      var vidaPolitica = [  
+      var vidaPolitica = [
      "PARTIDOS POLITICOS",
     "COMPORTAMIENTO POLITICO",
     "ELECCIONES",
@@ -2968,7 +2992,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = vidaPolitica;
     }
     if(disciplineValue =="SOCIOLOGIA DE LA POLITICA"){
-      var sociologiaDeLaPolitica = [  
+      var sociologiaDeLaPolitica = [
      "CONFLICTOS SOCIALES",
     "DERECHOS HUMANOS",
     "IDIOMAS",
@@ -2979,7 +3003,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = sociologiaDeLaPolitica;
     }
     if(disciplineValue =="ADMINISTRACION PUBLICA"){
-      var administracionPublica = [  
+      var administracionPublica = [
     "GESTION ADMINISTRATIVA",
     "INSTITUCIONES CENTRALES",
     "FUNCION PUBLICA",
@@ -2994,7 +3018,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = administracionPublica;
     }
     if(disciplineValue =="OPINION PUBLICA"){
-      var opinionPublica = [  
+      var opinionPublica = [
     "INFORMACION",
     "MEDIOS DE COMUNICACION DE MASAS",
     "PRENSA",
@@ -3004,7 +3028,7 @@ if(areaValue =="SOCIOLOGIA"){
     }
     //--------------------///
      if(disciplineValue =="BIBLIOTECONOMIA Y ARCHIVONOMIA"){
-      var biblioteconomiayArchivonomia = [  
+      var biblioteconomiayArchivonomia = [
     "ARCHIVONOMIA",
     "BIBLIOLOGIA",
     "BIBLIOTECNIA",
@@ -3014,7 +3038,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = biblioteconomiayArchivonomia;
     }
     if(disciplineValue =="PSICOLOGIA PATOLOGICA"){
-      var psicologiPatologica = [  
+      var psicologiPatologica = [
     "COMPORTAMIENTO DESVIADO",
     "DEFICIENCIA MENTAL",
     "PSICOPATOLOGIA",
@@ -3023,7 +3047,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = psicologiPatologica;
     }
      if(disciplineValue =="PSICOLOGIA DEL NIÑO Y DEL ADOLESCENTE"){
-      var psicologiaDelNinoyDelAdolecente = [  
+      var psicologiaDelNinoyDelAdolecente = [
     "INCAPACIDADES DE APRENDIZAJE",
     "PATOLOGIA DEL HABLA",
     "PSICOLOGIA DEL DESARROLLO",
@@ -3033,7 +3057,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = psicologiaDelNinoyDelAdolecente;
     }
     if(disciplineValue =="ORIENTACION PSICOLOGICA"){
-      var orintacionPsicologica = [  
+      var orintacionPsicologica = [
      "PSICOANALISIS",
     "ORIENTACION EDUCATIVA",
     "ORIENTACION PROFESIONAL",
@@ -3047,7 +3071,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = orintacionPsicologica;
     }
     if(disciplineValue =="PSICOLOGIA DE LA EDUCACION"){
-      var psicologiaDeLaEducacion = [  
+      var psicologiaDeLaEducacion = [
     "FUNCIONAMIENTO COGNOSCITIVO",
     "LEYES DEL APRENDIZAJE",
     "METODOS EDUCATIVOS",
@@ -3056,7 +3080,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = psicologiaDeLaEducacion;
     }
      if(disciplineValue =="EVALUACION Y MEDICION PSICOLOGICAS"){
-      var evaluacionyMedicionPsicoligicas = [  
+      var evaluacionyMedicionPsicoligicas = [
     "PSICOLOGIA DIFERENCIAL",
     "ANALISIS DE ESCALA",
     "CONSTRUCCION DE PRUEBAS",
@@ -3070,7 +3094,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = evaluacionyMedicionPsicoligicas;
     }
        if(disciplineValue =="PSICOLOGIA EXPERIMENTAL"){
-      var psicologiaExperimental = [  
+      var psicologiaExperimental = [
     "ANALISIS EXPERIMENTAL DEL COMPORTAMIENTO",
     "EMOCION",
     "FUNCION CEREBRAL",
@@ -3088,14 +3112,14 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = psicologiaExperimental;
     }
     if(disciplineValue =="PSICOLOGIA GENERAL"){
-      var psicologiaGeneral = [  
+      var psicologiaGeneral = [
     "METODOLOGIA",
     "TEORIA Y SISTEMAS",
     "OTROS"]
   disciplineValue = psicologiaGeneral;
     }
      if(disciplineValue =="PSICOLOGIA GERIATRICA"){
-      var psicologiaGeriatrica = [  
+      var psicologiaGeriatrica = [
     "ENVEJECIMIENTO",
     "MADUREZ",
     "MUERTE",
@@ -3103,7 +3127,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = psicologiaGeriatrica;
     }
      if(disciplineValue =="PSICOLOGIA DEL TRABAJO Y DEL PERSONAL"){
-      var psicologiaDelTrabajoyDelPersonal = [  
+      var psicologiaDelTrabajoyDelPersonal = [
     "EVALUACION DEL RENDIMIENTO",
     "RELACIONES PERSONAL/ADMINISTRACION",
     "ACTITUDES Y MORAL",
@@ -3121,7 +3145,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = psicologiaDelTrabajoyDelPersonal;
     }
      if(disciplineValue =="PARAPSICOLOGIA"){
-      var parapsicologia = [  
+      var parapsicologia = [
     "HIPNOSIS",
     "PERCEPCION EXTRASENSORIAL",
     "OTROS"]
@@ -3129,7 +3153,7 @@ if(areaValue =="SOCIOLOGIA"){
     }
     //----------------------------------------------------------------------///
     if(disciplineValue =="ESTUDIO DE LA PERSONALIDAD"){
-      var estudioDeLaPersonalidad = [  
+      var estudioDeLaPersonalidad = [
     "CREATIVIDAD",
     "CULTURA Y PERSONALIDAD",
     "DESARROLLO DE LA PERSONALIDAD",
@@ -3140,7 +3164,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = estudioDeLaPersonalidad;
     }
     if(disciplineValue =="ESTUDIO PSICOLOGICO DE FENOMENOS SOCIALES"){
-      var estudioPsicologicoDeFenomenosSociales = [  
+      var estudioPsicologicoDeFenomenosSociales = [
     "DISCRIMINACION",
     "FENOMENOS DE LOS GRUPOS MINORITARIOS",
     "POLITICA PUBLICA",
@@ -3148,7 +3172,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = estudioPsicologicoDeFenomenosSociales;
     }
      if(disciplineValue =="PSICOFARMACOLOGIA"){
-      var psicofarmacologia = [  
+      var psicofarmacologia = [
     "ALCOHOLISMO",
     "FUNCION DE LOS MEDICAMENTOS",
     "RESPUESTA DEL COMPORTAMIENTO",
@@ -3158,7 +3182,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = psicofarmacologia;
     }
      if(disciplineValue =="PSICOLOGIA SOCIAL"){
-      var psicologiaSocial = [  
+      var psicologiaSocial = [
     "ACTITUDES",
     "COMPORTAMIENTO COLECTIVO",
     "COMPORTAMIENTO DEL CONSUMIDOR",
@@ -3183,7 +3207,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = psicologiaSocial;
     }
     if(disciplineValue =="ARQUITECTURA"){
-      var arquitectura = [  
+      var arquitectura = [
     "DISEÑO ARQUITECTONICO",
     "EJECUCION DE LA OBRA",
     "PARQUES Y JARDINES",
@@ -3192,7 +3216,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = arquitectura;
     }
     if(disciplineValue =="TEORIA, ANALISIS Y CRITICA LITERARIOS"){
-      var teoriaAnalisisyCriticaLiterarios = [  
+      var teoriaAnalisisyCriticaLiterarios = [
     "ANALISIS LITERARIO",
     "CRITICA DE TEXTOS",
     "ESTILO Y ESTETICA LITERARIOS",
@@ -3201,7 +3225,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = teoriaAnalisisyCriticaLiterarios;
     }
      if(disciplineValue =="TEORIA, ANALISIS Y CRITICA DE LAS BELLAS ARTES"){
-      var teoriaAnalisisyCriticaDeLasBellasArtes = [  
+      var teoriaAnalisisyCriticaDeLasBellasArtes = [
     "CINEMATOGRAFIA",
     "ARTES DECORATIVAS",
     "COREOGRAFIA",
@@ -3218,7 +3242,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = teoriaAnalisisyCriticaDeLasBellasArtes;
     }
     if(disciplineValue =="SOCIOLOGIA CULTURAL"){
-      var sociologiaCultural = [  
+      var sociologiaCultural = [
     "CARACTERISTICAS Y CIVILIZACION NACIONALES",
     "EVOLUCION CULTURAL",
     "FOLKLORE",
@@ -3233,7 +3257,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = sociologiaCultural;
     }
       if(disciplineValue =="SOCIOLOGIA EXPERIMENTAL"){
-      var sociologiaExperimental = [  
+      var sociologiaExperimental = [
     "ACOPIO DE DATOS SOBRE EL TERRENO",
     "DISEÑO DE ENCUESTAS SOCIOLOGICAS",
     "METODOS DE LAS ENCUESTAS SOCIOLOGICAS",
@@ -3242,7 +3266,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = sociologiaExperimental;
     }
      if(disciplineValue =="SOCIOLOGIA GENERAL"){
-      var sociologiaGeneral = [  
+      var sociologiaGeneral = [
     "METODOLOGIA",
     "SOCIOGRAFIA",
     "SOCIOLOGIA COMPARADA",
@@ -3252,7 +3276,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = sociologiaGeneral;
     }
     if(disciplineValue =="PROBLEMAS INTERNACIONALES"){
-      var problemasInternacionales = [  
+      var problemasInternacionales = [
     "CONFLICTOS",
     "GUERRA Y PAZ",
     "SOLUCION DE CONFLICTOS",
@@ -3260,7 +3284,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = problemasInternacionales;
     }
      if(disciplineValue =="SOCIOLOGIA MATEMATICA Y ESTADISTICA"){
-      var SocioligiaMatematicayEstadistica = [  
+      var SocioligiaMatematicayEstadistica = [
     "ANALISIS ESTADISTICO",
     "CONSTRUCCION DE MODELOS",
     "MEDICION Y CONSTRUCCION DE INDICES",
@@ -3268,7 +3292,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = SocioligiaMatematicayEstadistica;
     }
     if(disciplineValue =="SOCIOLOGIA DE ACTIVIDADES PARTICULARES"){
-      var SocioligiaDeActividadesParticulares = [  
+      var SocioligiaDeActividadesParticulares = [
     "BUROCRACIA",
     "OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS",
     "SOCIOLOGIA DE LA EDUCACION",
@@ -3280,7 +3304,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = SocioligiaDeActividadesParticulares;
     }
     if(disciplineValue =="CAMBIO Y DESARROLLO SOCIAL"){
-      var cambioyDesarrolloSocial = [  
+      var cambioyDesarrolloSocial = [
     "DESARROLLO SOCIOECONOMICO",
     "DESARROLLO SUSTENTABLE",
     "EVOLUCION DE LAS SOCIEDADES",
@@ -3293,7 +3317,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = cambioyDesarrolloSocial;
     }
      if(disciplineValue =="COMUNICACION SOCIAL"){
-      var comunicacionSocial = [  
+      var comunicacionSocial = [
     "SIGNOS",
     "SIMBOLOS",
     "SOCIOLINGÜISTICA",
@@ -3301,7 +3325,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = comunicacionSocial;
     }
     if(disciplineValue =="GRUPOS SOCIALES"){
-      var gruposSociales = [  
+      var gruposSociales = [
     "CASTAS",
     "CLASES SOCIALES",
     "CONDICION DE LA MUJER",
@@ -3316,7 +3340,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = gruposSociales;
     }
      if(disciplineValue =="PROBLEMAS SOCIALES"){
-      var probelmasSociales = [  
+      var probelmasSociales = [
     "BIENESTAR SOCIAL",
     "CALIDAD DE VIDA",
     "CONFLICTO Y ACUERDO SOCIAL",
@@ -3335,7 +3359,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = probelmasSociales;
     }
     if(disciplineValue =="SOCIOLOGIA DE LA IMPLANTACION HUMANA"){
-      var sociologiaDeLaImplicacionHumana = [  
+      var sociologiaDeLaImplicacionHumana = [
     "BARRIOS DE TUGURIOS",
     "ESTUDIOS SOBRE LA COMUNIDAD",
     "OCIOLOGIA RURAL",
@@ -3346,17 +3370,17 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = sociologiaDeLaImplicacionHumana;
     }
     if(disciplineValue =="CULTURA FÍSICA"){
-      var culturaFisica = [  
+      var culturaFisica = [
     "ACTIVIDAD FÍSICA Y DEPORTE"]
   disciplineValue = culturaFisica;
     }
      if(disciplineValue =="HUMANIDADES"){
-      var culturaFisica = [  
+      var culturaFisica = [
     "TRABAJO SOCIAL"]
   disciplineValue = culturaFisica;
     }
      if(disciplineValue =="TERAPIA OCUPACIONAL"){
-      var terapiaOcupacional = [  
+      var terapiaOcupacional = [
     "ADULTOS MAYORES",
     "INSERCION LABORAL",
     "PEDIATRIA",
@@ -3365,7 +3389,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = terapiaOcupacional;
     }
      if(disciplineValue =="ETICA INDIVIDUAL"){
-      var eticaIndividual = [  
+      var eticaIndividual = [
     "CODIGOS DE CONDUCTA ÉTICA",
     "CODIGOS DE VALORES",
     "MOTIVACION",
@@ -3375,7 +3399,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = eticaIndividual;
     }
        if(disciplineValue =="ETICA DE GRUPO"){
-      var eticaDeGrupo = [  
+      var eticaDeGrupo = [
     "DECLARACIONES INTERNACIONALES",
     "ÉTICA DE LA CIENCIA",
     "ÉTICA ECONOMICA",
@@ -3385,7 +3409,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = eticaDeGrupo;
     }
         if(disciplineValue =="FILOSOFIA DE LOS CONOCIMIENTOS"){
-      var filosofiaDeLosConocimientos = [  
+      var filosofiaDeLosConocimientos = [
     "EPISTEMOLOGIA",
     "FILOSOFIA APORETICA",
     "TEORIA DE LA PERCEPCION",
@@ -3396,7 +3420,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = filosofiaDeLosConocimientos;
     }
     if(disciplineValue =="ANTROPOLOGIA FILOSOFICA"){
-      var antropologiaFilosofica = [  
+      var antropologiaFilosofica = [
     "ESTETICA",
     "FILOSOFIA DE LA ACCION",
     "FILOSOFIA DE LA IMAGINACION",
@@ -3409,7 +3433,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = antropologiaFilosofica;
     }
     if(disciplineValue =="FILOSOFIA GENERAL"){
-      var filosofiaGeneral = [  
+      var filosofiaGeneral = [
     "LOGICA DIALECTICA",
     "MATERIALISMO DIALECTICO",
     "METAFISICA",
@@ -3419,7 +3443,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = filosofiaGeneral;
     }
         if(disciplineValue =="SISTEMAS FILOSOFICOS"){
-      var sistemasFilosoficos = [  
+      var sistemasFilosoficos = [
     "FILOSOFIA ANTIGUA",
     "FILOSOFIA DE HOY",
     "FILOSOFIA MEDIEVAL",
@@ -3429,7 +3453,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = sistemasFilosoficos;
     }
     if(disciplineValue =="FILOSOFIA DE LA CIENCIA"){
-      var filosofiaDeLaCiencia = [  
+      var filosofiaDeLaCiencia = [
     "FILOSOFIA DE LA BIOLOGIA",
     "FILOSOFIA DE LA FISICA",
     "FILOSOFIA DE LA LOGICA",
@@ -3440,7 +3464,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = filosofiaDeLaCiencia;
     }
        if(disciplineValue =="FILOSOFIA DE LA NATURALEZA"){
-      var filosofiaDeLaNaturaleza = [  
+      var filosofiaDeLaNaturaleza = [
     "FILOSOFIA DE LA MATERIA",
     "FILOSOFIA DE LA VIDA",
     "FILOSOFIA DEL ESPACIO Y DEL TIEMPO",
@@ -3448,7 +3472,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = filosofiaDeLaNaturaleza;
     }
      if(disciplineValue =="FILOSOFIA SOCIAL"){
-      var filosofiaSocial = [  
+      var filosofiaSocial = [
     "FILOSOFIA DE LA CALIDAD",
     "FILOSOFIA DE LA CULTURA",
     "FILOSOFIA DE LA EDUCACION",
@@ -3460,13 +3484,13 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = filosofiaSocial;
     }
       if(disciplineValue =="ANALISIS DE TENDENCIAS"){
-      var analisisDeTendencias = [  
+      var analisisDeTendencias = [
     "RUPTURAS",
     "OTROS"]
   disciplineValue = analisisDeTendencias;
     }
       if(disciplineValue =="NUEVOS SISTEMAS ORGANIZACIONALES"){
-      var nuevosSistemasOrganizacionales = [  
+      var nuevosSistemasOrganizacionales = [
     "CADENAS PRODUCTIVAS",
     "MERCADOS LABORALES",
     "SEGURIDAD NACIONAL E INTERNACIONAL",
@@ -3476,7 +3500,7 @@ if(areaValue =="SOCIOLOGIA"){
   disciplineValue = nuevosSistemasOrganizacionales;
     }
        if(disciplineValue =="SILVICULTURA"){
-      var silvicultura = [  
+      var silvicultura = [
     "CONSERVACION",
     "CONTROL DE LA EROSION",
     "GESTION DE LAS PRADERAS",
@@ -3491,7 +3515,7 @@ if(areaValue =="SOCIOLOGIA"){
     }
 
   if(disciplineValue =="INMUNOLOGIA"){
-      var inmunologia = [  
+      var inmunologia = [
     "ANTICUERPOS DE LOS TEJIDOS",
     "ANTICUERPOS",
     "ANTIGENOS",
@@ -3827,7 +3851,7 @@ if(areaValue =="SOCIOLOGIA"){
 
 
     <div class="row">
-        <?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','title'=>'ISBN. (Solo se aceptan numeros)')); ?>
+        <?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','class' => 'numericOnly','title'=>'ISBN. (Solo se aceptan numeros)')); ?>
         <?php echo $form->error($model,'isbn'); ?>
     </div>
 
@@ -3886,19 +3910,19 @@ if(areaValue =="SOCIOLOGIA"){
 
   <div class="row">
 
-    <?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45, 'placeholder'=>'No. volumen','title'=>'No. volumen. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45, 'placeholder'=>'No. volumen','class' => 'numericOnly','title'=>'No. volumen. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'volume'); ?>
   </div>
 
   <div class="row">
 
-    <?php echo $form->textField($model,'pages',array('placeholder'=>'No. páginas','title'=>'No. páginas. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'pages',array('placeholder'=>'No. páginas','class' => 'numericOnly','title'=>'No. páginas. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'pages'); ?>
   </div>
 
   <div class="row">
 
-    <?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas','title'=>'No. citas. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas','class' => 'numericOnly','title'=>'No. citas. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'citations'); ?>
   </div>
 
@@ -3933,14 +3957,14 @@ if(areaValue =="SOCIOLOGIA"){
                                                       </span>
     <?php echo $form->error($model,'area'); ?>
   </div>
-  
+
   <div class="row"id="comboDiscipline">
 
   </div>
   <div class="row"id="comboSubdiscipline">
 
   </div>
-  
+
 
    <div class="row">
 
@@ -3968,18 +3992,18 @@ if(areaValue =="SOCIOLOGIA"){
           echo"<input type='hidden' name='idsBooksChapters[]'>";
        ?>
     <div class="row">
-      <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
+      <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($modelAuthor,'names');?>
     </div>
 
     <div class="row">
-      <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apllido Paterno')); ?>
+      <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apllido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($modelAuthor,'last_name1'); ?>
     </div>
 
     <div class="row">
 
-      <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
+      <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($modelAuthor,'last_name2'); ?>
     </div>
 
@@ -4000,18 +4024,18 @@ if(areaValue =="SOCIOLOGIA"){
           echo"<input type='hidden' value='".$value->id."' name='idsBooksChapters[]'>";
          ?>
     <div class="row">
-      <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)')); ?>
+      <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombres(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($value,'names');?>
     </div>
 
     <div class="row">
-      <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno')); ?>
+      <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($value,'last_name1'); ?>
     </div>
 
     <div class="row">
 
-      <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno')); ?>
+      <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
       <?php echo $form->error($value,'last_name2'); ?>
     </div>
 
@@ -4029,7 +4053,7 @@ if(areaValue =="SOCIOLOGIA"){
 
     <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
                 'onclick'=>'send("books-chapters-form", "booksChapters/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","booksChapters/admin","");',
-                 //'id'=> 'post-submit-btn', 
+                 //'id'=> 'post-submit-btn',
                 'class'=>'savebutton',
             ));
     ?>

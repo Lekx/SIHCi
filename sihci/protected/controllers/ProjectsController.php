@@ -59,6 +59,49 @@ class ProjectsController extends Controller
 		));
 	}
 
+	public $discipline = array("Anatomía Patológica"=>"Anatomía Patológica",
+		"Anestesiología"=>"Anestesiología",
+		"Angiología"=>"Angiología",
+		"Biología de la Reproducción Humana"=>"Biología de la Reproducción Humana",
+		"Cardiología"=>"Cardiología",
+		"Cirugía Cardiotorácica"=>"Cirugía Cardiotorácica",
+		"Cirugía General"=>"Cirugía General",
+		"Cirugía Maxilofacial"=>"Cirugía Maxilofacial",
+		"Cirugía Pediátrica"=>"Cirugía Pediátrica",
+		"Cirugía Plástica y Reconstructiva"=>"Cirugía Plástica y Reconstructiva",
+		"Coloproctología"=>"Coloproctología",
+		"Audiología, Otoneurología y Foniatría"=>"Audiología, Otoneurología y Foniatría",
+		"Dermatología"=>"Dermatología",
+		"Endocrinología"=>"Endocrinología",
+		"Epidemiología"=>"Epidemiología",
+		"Estomatología"=>"Estomatología",
+		"Gastroenterología"=>"Gastroenterología",
+		"Genética Médica"=>"Genética Médica",
+		"Geriatría"=>"Geriatría",
+		"Ginecología y Obstetricia"=>"Ginecología y Obstetricia",
+		"Hematología"=>"Hematología",
+		"Infectología"=>"Infectología",
+		"Inmunología Clínica y Alergia"=>"Inmunología Clínica y Alergia",
+		"Medicina del Enfermo en Estado Crítico"=>"Medicina del Enfermo en Estado Crítico",
+		"Medicina del Trabajo"=>"Medicina del Trabajo",
+		"Medicina Familiar"=>"Medicina Familiar",
+		"Medicina Física y Rehabilitación"=>"Medicina Física y Rehabilitación",
+		"Medicina Interna"=>"Medicina Interna",
+		"Medicina Nuclear"=>"Medicina Nuclear",
+		"Nefrología"=>"Nefrología",
+		"Neumología"=>"Neumología",
+		"Oftalmología"=>"Oftalmología",
+		"Oncología Médica y Radioterapia"=>"Oncología Médica y Radioterapia",
+		"Ortopedia y Traumatología"=>"Ortopedia y Traumatología",
+		"Otorrinolaringología y Cirugía de Cabeza y Cuello"=>"Otorrinolaringología y Cirugía de Cabeza y Cuello",
+		"Pediatría Médica"=>"Pediatría Médica",
+		"Psiquiatría y Psicología"=>"Psiquiatría y Psicología",
+		"Radiodiagnóstico e Imagen"=>"Radiodiagnóstico e Imagen",
+		"Reumatología"=>"Reumatología",
+		"Urología"=>"Urología",
+		"Otro"=>"Otro",
+		"Neurocirugía"=>"Neurocirugía",
+	);
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -74,46 +117,62 @@ class ProjectsController extends Controller
 		{
 			$model->attributes=$_POST['Projects'];
 
-			if(Yii::app()->user->Rol->id==13){
+			if(Yii::app()->user->Rol->id==1){
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
 			}else{
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			}
 
-			if($_POST['type']== "draft")
+			if($_POST[1]== "draft")
 				$model->status = "borrador";
 			else
 				$model->status = "DIVUH";
 
 			$model->folio = "-1";
 			$model->is_sponsored = 0; 
+			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
-
+		if($model->validate()){
 			if($model->save()){
-				if($_POST['type'] != "draft"){
+				foreach ($_POST['adtlResearchers'] as $key => $value) {
+					if(!empty($value)){
+						$adtlRes = new ProjectsCoworkers;
+						$adtlRes->id_project = $model->id;
+						$adtlRes->fullName = $value;
+
+						$adtlRes->save();
+					}
+				}
+				if($_POST[1] != "draft"){
 					$followup = new ProjectsFollowups;
 					$followup->id_project = $model->id;
 					$followup->id_user = Yii::app()->user->id;
 					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
 
 					if($followup->save()){
-						echo "Proyecto enviado a revisión con éxito";
+						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
 						Yii::app()->end();
 					}else{
-						echo "no se guardo el followup - ".$followup->id_project." - ".$followup->id_user." - ".$followup->followup." - ".$followup->creation_date;
+						echo CJSON::encode(array('status'=>'failure'));
+						Yii::app()->end();
 					}
 				}else{
-					echo "Proyecto guardado con éxito";
-					Yii::app()->end();
+						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
+						Yii::app()->end();
 				}	
 			
-			}else{
-				echo "por favor revise que la información sea correcta";
 			}
+		}else{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+
+				Yii::app()->end();
+		}
 		}else{
 
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model,'discipline'=>$this->discipline
 		));
 		}
 	}
@@ -126,24 +185,71 @@ class ProjectsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-echo "entered";
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Projects']))
 		{
-			echo "after post asdf";
 			$model->attributes=$_POST['Projects'];
 
-			if($model->save()){
-				echo "i saved";
-				Yii::app()->end();
+			if(Yii::app()->user->Rol->id==1){
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
+			}else{
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			}
-		}
 
-		$this->render('update',array(
-			'model'=>$model,
+			if($_POST[1]== "draft")
+				$model->status = "borrador";
+			else
+				$model->status = "DIVUH";
+
+			$model->folio = "-1";
+			$model->is_sponsored = 0; 
+			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
+			$model->registration_number = "-1";
+		if($model->validate()){
+			if($model->save()){
+				foreach ($_POST['adtlResearchers'] as $key => $value) {
+					if(!empty($value)){
+						$adtlRes = new ProjectsCoworkers;
+						$adtlRes->id_project = $model->id;
+						$adtlRes->fullName = $value;
+
+						$adtlRes->save();
+					}
+				}
+				if($_POST[1] != "draft"){
+					$followup = new ProjectsFollowups;
+					$followup->id_project = $model->id;
+					$followup->id_user = Yii::app()->user->id;
+					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+
+					if($followup->save()){
+						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
+						Yii::app()->end();
+					}else{
+						echo CJSON::encode(array('status'=>'failure'));
+						Yii::app()->end();
+					}
+				}else{
+						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
+						Yii::app()->end();
+				}	
+			
+			}
+		}else{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+
+				Yii::app()->end();
+		}
+		}else{
+
+		$this->render('create',array(
+			'model'=>$model,'discipline'=>$this->discipline
 		));
+		}
 	}
 
 	/**

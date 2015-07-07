@@ -21,7 +21,7 @@ if(!$model->isNewRecord){
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php //echo $form->errorSummary($model); ?>
 	<div class="row">
 	<?php echo $form->labelEx($model,'id_user_researcher'); ?>
 

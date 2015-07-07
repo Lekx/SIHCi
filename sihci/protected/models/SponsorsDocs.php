@@ -29,8 +29,9 @@ class SponsorsDocs extends CActiveRecord {
 		return array(
 			array('id_sponsor, file_name, path', 'required'),
 			array('id_sponsor', 'numerical', 'integerOnly' => true),
-			array('file_name, path', 'length', 'max' => 150),
-			
+			array('file_name, path', 'length', 'max' => 200),
+			array('path','file','types'=>'jpg, jpeg, png, pdf, doc, docx, odt', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 5),
+			array('path','file','types'=>'jpg, jpeg, png, pdf, doc, docx, odt', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_sponsor, file_name, path', 'safe', 'on' => 'search'))
