@@ -129,14 +129,14 @@ $('<div></div>').appendTo('form')
 			
 	}
 
-	function changeSubTemaPrioritario(){
-    
-    var temaValue = $("#temaPrioritorio option:selected").val();
+	function changeSubTema(){
 
-		if(temaValue =="Enfermedades Metabólicas (incluida obesidad)"){
+		 var temaValue = $("#tema option:selected").val();
+
+		 if(temaValue =="Enfermedades Metabólicas (incluida obesidad)"){
 		    var enfermedadesMetabolicas = ["Diabetes Mellitus Tipo 2",
-								"Obesidad y sobrepeso",
-								"Otro. Especifique"]
+											"Obesidad y sobrepeso",
+											"Otro. Especifique"]
 		    temaValue = enfermedadesMetabolicas;
 		}
 		if(temaValue =="Enfermedades Cardiovasculares"){
@@ -147,7 +147,7 @@ $('<div></div>').appendTo('form')
 								"Otro. Especifique"]
 		    temaValue = enfermedadesCardiovasculares;
 		}
-		if(temaValue =="Enfermedades Infecciosas"){
+			if(temaValue =="Enfermedades Infecciosas"){
 		    var enfermedadesInfecciosas = [
 		    							"Enfermedad diarreica aguda en menores de 5 años",
 		    							"Infecciones Nosocomiales",
@@ -162,8 +162,8 @@ $('<div></div>').appendTo('form')
 		}
 		if(temaValue =="Cáncer"){
 		    var cancer = ["Cáncer de mama",
-											"Cáncer cérvico-uterino",
-											"Otro." ]
+						"Cáncer cérvico-uterino",
+						"Otro." ]
 		    temaValue = cancer;
 		}
 		if(temaValue =="Enfermedades crónicas"){
@@ -175,7 +175,7 @@ $('<div></div>').appendTo('form')
 		    var enfermedadesEmergenes = ["Especifique"]
 		    temaValue = enfermedadesEmergenes;
 		}
-		if(temaValue =="Envejecimiento"){
+			if(temaValue =="Envejecimiento"){
 		    var envejecimiento = ["Especifique"]
 		    temaValue = envejecimiento;
 		}
@@ -276,16 +276,14 @@ $('<div></div>').appendTo('form')
 						"Otro. Especifique"]
 		    temaValue = otros;
 		}
-
-	 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]' onchange='changeSubTemaPrioritario()'>";
-	    newTema+="<option>Subtema Prioritario</option>";
+			 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]' onchange='changeSubTemaPrioritario()'>";
+	    	newTema+="<option>Subtema Prioritario</option>";
 	    for (var item in temaValue) {
-        newTema +="<option>"+temaValue[ item ]+"</option>";
-    }
+        	newTema +="<option>"+temaValue[ item ]+"</option>";
+    	}
 
-    	newTema+="</select></span>";
-
-    	$("#comboSubTemaPrioritario").html(newTema);
+    		newTema+="</select></span>";
+    		$("#comboSubTema").html(newTema);
   }
 </script>
 
@@ -343,7 +341,6 @@ $('<div></div>').appendTo('form')
 	</div>
 
 	<div class="row">
-		<!-- <?php// echo $form->textField($model,'priority_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Tema prioritario','title'=>'Tema prioritario')); ?> -->
 		<?php echo $form->dropDownList($model,'priority_topic',array('Accidentes y Violencia'=>'Accidentes y Violencia',
 																	'Cáncer'=>'Cáncer',
 																	'Discapacidad e Incapacidad'=>'Discapacidad e Incapacidad',
@@ -355,17 +352,13 @@ $('<div></div>').appendTo('form')
 																	'Envejecimiento'=>'Envejecimiento',
 																	'Muertes evitables (incluidas muerte materna y perinatal)'=>'Muertes evitables (incluidas muerte materna y perinatal)',
 																	'Salud Mental y Adicciones'=>'Salud Mental y Adicciones',
-																	'Otros'=>'Otros'),array('prompt'=>'Tema prioritario','title'=>'Tema prioritario','id'=>'temaPrioritorio', 'onchange'=>'changeSubTemaPrioritario()')); ?>
+																	'Otros'=>'Otros'),array('prompt'=>'Tema prioritario','title'=>'Tema prioritario','id'=>'tema', 'onchange'=>'changeSubTema()')); ?>
 		<?php echo $form->error($model,'priority_topic'); ?>
 	</div>
-	<div class="row"id="comboSubTemaPrioritario">
+	<div class="row" id="comboSubTema">
 
   	</div>
 
-	<!-- <div class="row">
-		<?php //echo $form->textField($model,'sub_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Subtema prioritario','title'=>'Subtema prioritario')); ?>
-		<?php //echo $form->error($model,'sub_topic'); ?>
-	</div> -->
 
 	<div class="row">
 		<?php echo $form->textArea($model,'justify',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación para el tema seleccionado','title'=>'Justificación para el tema seleccionado')); ?>
@@ -388,7 +381,7 @@ $('<div></div>').appendTo('form')
 		Datos del investigador.
 	</div>
 
-		<?php $persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+		<?php   $persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 				$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
 				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id));
 				$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
@@ -422,19 +415,16 @@ $('<div></div>').appendTo('form')
 					),
 				array(
 					'label'=>'Telefono:',
-					'value'=>$phoneUsers->phone_number.' Ext '.$phoneUsers->extension,
+					'value'=>$phoneUsers != null ? $phoneUsers->phone_number.' Ext '.$phoneUsers->extension : " ",
 					),  
 				array(
-					'label'=>'Adscripción en el IMSS:',
+					'label'=>'Unidad hospitalaria:',
 					'value'=>$jobsUsers->hospital_unit,
 					), 
-				array(
-					'label'=>'Delegación:',
-					'value'=>$jobsUsers->hospital_unit,
-					), 
+				
 				array(
 					'label'=>'Máximo grado de estudios:',
-					'value'=>$gradesUsers->grade,
+					'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
 					), 
 				array(
 					'label'=>'¿Pertenece al SNI?',
