@@ -432,12 +432,11 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Unidad hospitalaria:',
 					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
-					), 	
+					), */	
 				array(
-					'label'=>'Máximo grado de estudios:',
-
-					'value'=>$gradesUsers->grade,
-					), */
+				     'label'=>'Máximo grado de estudios:',
+				     'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
+				     ),
 
 				array(
 					'label'=>'¿Pertenece al SNI?',
