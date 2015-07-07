@@ -238,7 +238,7 @@ select
 
     margin: 0;
     padding-top: 5px;
-    padding-left: 97px;
+    padding-left: 10%;
 
     color: white;
 }
@@ -282,6 +282,7 @@ select
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
+
 }
 .cvmenuitems li
 {
@@ -1756,9 +1757,7 @@ li.menulis.now
 
     width: 70%;
     margin: 0;
-    padding-left: 0;
-
-    text-align: center;
+    padding-left: 29%;
 }
 .typelabe,
 .logoutbars
@@ -1992,20 +1991,33 @@ div.pager span.active
 
     width: 30px;
     height: 30px;
-    padding: 5px;
+    padding: 4px;
 
     text-align: center;
-
-    opacity: .7;
+     font-size: 11px;
+    opacity: 1;
     color: white;
     border-radius: 50%;
-    background: #0a324f;
+    background: #0A324F;
 }
-.newpass
+.projectsbutts > a , .projectsbutts > a:hover
 {
-    width: 400px;
-    height: 390px;
-    margin: auto;
+  font-size: 11px;
+  display: inline-block;
 
-    background-color: white;
+  width: 140px ;
+  height: 39px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+
+  border-radius: 4px;
+  opacity: .7;
+  color: white;
+  background-color: #1eb9c0;
 }

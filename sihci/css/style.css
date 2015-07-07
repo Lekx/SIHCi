@@ -1345,3 +1345,52 @@ ul.cbp-hsmenu
   height: 400px;
   margin-top: -100px;
 }
+.newpass
+{
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 400px;
+    height: 390px;
+    margin: auto;
+    margin-top: calc(50vh - 235px);
+    background-color: white;
+    text-align: center;
+}
+.newpass hr
+{
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.newpass h1
+{
+  color: #0E3152;
+}
+.newpass input[type="password"]
+{
+      background-color: #CDF1F3 !important;
+      height: 50px !important;
+      width: 350px !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-top: 26px !important;
+      padding-right: 55px !important;
+      font-family: 'Caviar_Dreams_Bold' !important;
+      font-size: 20px !important;
+      padding-left: 20px !important;
+      color: #0A324F !important;
+      opacity: .60 !important;
+}
+.savebutton
+{
+  width: 400px !important;
+  margin-left: -15px !important;
+  height: 50px !important;
+  color: white;
+  background-color:#0E3152;
+  font-size: 20px;
+}
