@@ -134,15 +134,13 @@ class ProjectsController extends Controller
 			$model->registration_number = "-1";
 		if($model->validate()){
 			if($model->save()){
-				var_dump($_POST['adtlResearchers']);
 				foreach ($_POST['adtlResearchers'] as $key => $value) {
 					if(!empty($value)){
 						$adtlRes = new ProjectsCoworkers;
 						$adtlRes->id_project = $model->id;
 						$adtlRes->fullName = $value;
-						echo $value;
-						if(!$adtlRes->save())
-							echo "ya valio hermano";
+
+						$adtlRes->save();
 					}
 				}
 				if($_POST[1] != "draft"){
@@ -187,24 +185,71 @@ class ProjectsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-echo "entered";
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Projects']))
 		{
-			echo "after post asdf";
 			$model->attributes=$_POST['Projects'];
 
-			if($model->save()){
-				echo "i saved";
-				Yii::app()->end();
+			if(Yii::app()->user->Rol->id==1){
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
+			}else{
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			}
-		}
 
-		$this->render('update',array(
+			if($_POST[1]== "draft")
+				$model->status = "borrador";
+			else
+				$model->status = "DIVUH";
+
+			$model->folio = "-1";
+			$model->is_sponsored = 0; 
+			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
+			$model->registration_number = "-1";
+		if($model->validate()){
+			if($model->save()){
+				foreach ($_POST['adtlResearchers'] as $key => $value) {
+					if(!empty($value)){
+						$adtlRes = new ProjectsCoworkers;
+						$adtlRes->id_project = $model->id;
+						$adtlRes->fullName = $value;
+
+						$adtlRes->save();
+					}
+				}
+				if($_POST[1] != "draft"){
+					$followup = new ProjectsFollowups;
+					$followup->id_project = $model->id;
+					$followup->id_user = Yii::app()->user->id;
+					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+
+					if($followup->save()){
+						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
+						Yii::app()->end();
+					}else{
+						echo CJSON::encode(array('status'=>'failure'));
+						Yii::app()->end();
+					}
+				}else{
+						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
+						Yii::app()->end();
+				}	
+			
+			}
+		}else{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+
+				Yii::app()->end();
+		}
+		}else{
+
+		$this->render('create',array(
 			'model'=>$model,'discipline'=>$this->discipline
 		));
+		}
 	}
 
 	/**

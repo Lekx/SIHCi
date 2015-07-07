@@ -26,9 +26,7 @@ class CurriculumVitaeController extends Controller
 				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
 								'DeletePhone', 'DeleteResearch', 'DeleteGrade', 'DeleteDocs',
 								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission', 'Admin'),
-
-				 'expression'=>'isset($user->Rol->id) && ($user->Rol->alias==="USUARIO" || $user->Rol->alias==="ADMIN" || $user->Rol->alias==="11")',
-
+				 'expression'=>'isset($user->Rol->id) && ($user->type === "fisico")',
 				 'users'=>array('@'),
 			),
 			array('deny',  // deny all users

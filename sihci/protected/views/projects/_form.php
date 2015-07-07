@@ -74,7 +74,7 @@ $('<div></div>').appendTo('form')
 		//alert("ouch, you fucked me bby! "+section);
 		$("#section"+section).show();
 	}
-	function ajaxSave(value,type){
+/*	function ajaxSave(value,type){
 		var request = $.ajax({
 		  url: yii.urls.base+"/index.php/projects/"+type,
 		  method: "POST",
@@ -94,9 +94,11 @@ $('<div></div>').appendTo('form')
 				alert(data);
 				window.location = yii.urls.cancelProject;
 		});*/
-	}
 
-	function save(value, type){
+	function save(value){
+
+		$('input[type="hidden"]').attr('disabled', true);
+
 			if(value=="send"){
 				$('<div></div>').appendTo('form')
 				    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
@@ -109,13 +111,11 @@ $('<div></div>').appendTo('form')
 				        resizable: false,
 				        buttons: {
 				            "Enviar a revisión": function () {
-				            	ajaxSave("send",this.type);
-				                $(this).dialog("close");
-
+								send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
 				            },
 				            "Guardar como borrador": function () {
-				            	ajaxSave("draft");
-				                $(this).dialog("close");
+				            	send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin","draft")
+
 				            }
 				        },
 				        close: function (event, ui) {
@@ -124,7 +124,8 @@ $('<div></div>').appendTo('form')
 				    });
 				
 			}else
-				ajaxSave("draft")
+				send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
+
 
 			
 	}
@@ -336,10 +337,21 @@ $('<div></div>').appendTo('form')
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'research_type',array('size'=>60,'maxlength'=>250,'placeholder'=>'Tipo de Investigación','title'=>'Tipo de Investigación')); ?>
-		<?php echo $form->error($model,'research_type'); ?>
+		Tipo de investigación:
+		<div class="row">
+			<?php echo $form->checkBox($model,'Biomédica',  array('checked'=>'')); ?> Biomédica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<?php echo $form->checkBox($model,'Clínica',  array('checked'=>'')); ?> Clínica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<?php echo $form->checkBox($model,'Educativa',  array('checked'=>'')); ?> Educativa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
+		<div class="row">
+			<?php echo $form->checkBox($model,'Epidemiológica',  array('checked'=>'')); ?> Epidemiológica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<?php echo $form->checkBox($model,'Servicios de Salud',  array('checked'=>'')); ?> Servicios de Salud
+		</div>
+		Otro tipo de investigación:<div class="row">
+			<?php echo $form->textField($model,'research_type',array('size'=>60,'maxlength'=>250,'placeholder'=>'Tipo de Investigación','title'=>'Tipo de Investigación')); ?>
+			<?php echo $form->error($model,'research_type'); ?>
+		</div>
 	</div>
-
 	<div class="row">
 		<?php echo $form->dropDownList($model,'priority_topic',array('Accidentes y Violencia'=>'Accidentes y Violencia',
 																	'Cáncer'=>'Cáncer',
@@ -405,7 +417,7 @@ $('<div></div>').appendTo('form')
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
 					),  
-				array(
+			/*	array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
 					), 
@@ -423,8 +435,10 @@ $('<div></div>').appendTo('form')
 					), 	
 				array(
 					'label'=>'Máximo grado de estudios:',
-					'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
-					), 
+
+					'value'=>$gradesUsers->grade,
+					), */
+
 				array(
 					'label'=>'¿Pertenece al SNI?',
 					'value'=>$curriculum != null ? $curriculum->SNI :
@@ -570,11 +584,11 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		var_dump($model->isNewRecord);
 		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
 		
-		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
-
+		//echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
+		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
 		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
 		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
-		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send','".($model->isNewRecord ? 'create' : 'update')."/".(isset($_GET['id']) ? $_GET['id'] : 0)."')",'style'=>'display:none;','class'=>'savepro'));
+		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
 		
