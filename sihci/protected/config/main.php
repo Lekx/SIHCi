@@ -54,6 +54,7 @@ return array(
 	   	  'autoStart'=>false,
 	      'class' => 'CDbHttpSession',
 	      'timeout' => 300,
+
 	   ),*/
 
 		'authManager'=>array(

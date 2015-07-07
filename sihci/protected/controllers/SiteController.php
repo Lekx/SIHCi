@@ -4,7 +4,8 @@ class SiteController extends Controller {
 	/**
 	 * Declares class-based actions.
 	 */
-	public function actions() {
+	
+	/*public function actions() {
 		return array(
 			// captcha action renders the CAPTCHA image displayed on the contact page
 			'captcha' => array(
@@ -17,9 +18,14 @@ class SiteController extends Controller {
 				'class' => 'CViewAction',
 			),
 		);
-	}
+	}*/
+	
+ 	public function actionSessionTimeout()
+    {
+        $this->render('sessionTimeout');
+    }
 
- 	/**
+	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
