@@ -24,15 +24,16 @@ class ArticlesGuidesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
+	
 	public function accessRules()
 	{
 		return array(
 		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','create','update','delete','view','index'),
-				 'expression'=>' ($user->Rol->alias==="USUARIO" || $user->Rol->alias==="ADMIN") && user->type=="fisico" '),
-				 'users'=>array('@'),
-
+			    'actions'=>array('admin','create','update','delete','view','index'),
+				'expression'=>'($user->type==="fisico" && $user->id)',
+				'users'=>array('@'),
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),

@@ -4,7 +4,8 @@ class SiteController extends Controller {
 	/**
 	 * Declares class-based actions.
 	 */
-	public function actions() {
+	
+	/*public function actions() {
 		return array(
 			// captcha action renders the CAPTCHA image displayed on the contact page
 			'captcha' => array(
@@ -17,7 +18,7 @@ class SiteController extends Controller {
 				'class' => 'CViewAction',
 			),
 		);
-	}
+	}*/
 	
  	public function actionSessionTimeout()
     {

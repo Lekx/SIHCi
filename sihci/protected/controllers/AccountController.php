@@ -28,9 +28,8 @@
 	{
 		return array(
 				array('allow',
-					'actions'=>array('infoAccount', 'ActivateAccount', 'Index', 'UpdateEmail',
-									'UpdatePassword','SystemLog','personalData','FirstLogin',
-					),					
+					'actions'=>array('infoAccount', 'activateAccount', 'index', 'updateEmail',
+									'updatePassword','systemLog','personalData','firstLogin','selectType'),					
 					'users'=>array('@'),
 				),
 				array('deny',

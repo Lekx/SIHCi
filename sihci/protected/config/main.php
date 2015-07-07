@@ -50,7 +50,7 @@ return array(
 	// application components
 	'components'=>array(
 
-	  /* 'session' => array(
+	   /*'session' => array(
 	      'class' => 'CDbHttpSession',
 	   	  'autoStart'=>false,
 	      'timeout' => 30,

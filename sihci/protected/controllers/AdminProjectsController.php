@@ -30,7 +30,7 @@ class AdminProjectsController extends Controller {
 							 'adminProjects', 'getSponsors', 'updateStatusSponsorship', 'updateStatusProject'
 							 ),
 			'expression'=>'($user->Rol->alias==="ADMIN")',
-			'users'=>array('*'),
+			'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 			'users'=>array('*'),

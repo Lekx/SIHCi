@@ -23,14 +23,20 @@ class AdminSystemLogController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
+	 
 	 public function accessRules()
 	 {
 	 	return array(
-	 		array('allow',  // allow all users to perform 'index' and 'view' actions
-	 			'actions'=>array('index','view','delete','update','create','admin','Pdf','SaveLog'),
+	 		
+	 		array('allow',  
+	 			'actions'=>array('delete','update','create','pdf','saveLog','admin','view'),
 	 			'expression'=>'($user->Rol->alias==="ADMIN")',
-	 			'users'=>array('*'),
-	 		),	 		
+	 			'users'=>array('@'),
+	 		),	
+	 		array('allow',
+	 			'actions'=>array('saveLog'),
+	 			'users'=>array('@'),
+	 		),
 	 		array('deny',  // deny all users
 	 			'users'=>array('*'),
 	 		),

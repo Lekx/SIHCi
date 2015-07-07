@@ -18,7 +18,7 @@ class CurriculumVitaeController extends Controller
 		);
 	}
 
-	public function accessRules()
+	/*public function accessRules()
 	{
 		return array(
 		
@@ -26,14 +26,14 @@ class CurriculumVitaeController extends Controller
 				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
 								'DeletePhone', 'DeleteResearch', 'DeleteGrade', 'DeleteDocs',
 								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission', 'Admin'),
-				 'expression'=>'isset($user->Rol->alias) && ($user->Rol->alias==="USUARIO" || $user->Rol->alias==="ADMIN")',
+				 'expression'=>'($user->Rol->alias==="ADMIN" || $user->type==="fisico")',
 				 'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
-	}
+	}*/
 	public function actionAdmin() {
 		$this->redirect("personalData");
 	}
