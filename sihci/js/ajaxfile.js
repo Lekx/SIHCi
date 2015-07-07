@@ -40,13 +40,13 @@
         $(".successdiv").show();
 
           $('.backbut').click(function() {
-<<<<<<< HEAD
+
             window.location = yii.urls.createUrl + "/" + redirectUrl;
            });
-=======
+
              window.location = yii.urls.createUrl + "/" + redirectUrl;
          });
->>>>>>> 5409777f2a2aa7ea174f844c0f2d043018610ad4
+
       }
     },
     complete: function(data) {},
