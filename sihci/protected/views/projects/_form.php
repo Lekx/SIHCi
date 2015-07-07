@@ -3,8 +3,7 @@
 /* @var $model Projects */
 /* @var $form CActiveForm */
 ?>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
 <script type="text/javascript">
 var elemSum = 1;
 function showAdtlRes(){
@@ -21,6 +20,8 @@ function showAdtlRes(){
 function hideAdtlRes(element){
  	$(element).parent().hide();
  	elemSum--;
+ 	$('#adtlResearchers_'+elemSum).val('');
+
 	if(elemSum < 10)
 		$('#addBtnAr').show();
 
@@ -90,13 +91,11 @@ $('<div></div>').appendTo('form')
 				alert(data);
 				window.location = yii.urls.cancelProject;
 		});
-		/*request.fail(function(data) {
-				alert(data);
-				window.location = yii.urls.cancelProject;
-		});*/
 	}
 
 	function save(value, type){
+
+		$('input[type="hidden"]').attr('disabled', true);
 			if(value=="send"){
 				$('<div></div>').appendTo('form')
 				    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
@@ -109,13 +108,10 @@ $('<div></div>').appendTo('form')
 				        resizable: false,
 				        buttons: {
 				            "Enviar a revisión": function () {
-				            	ajaxSave("send",this.type);
-				                $(this).dialog("close");
-
+								send("projects-form", "projects/create", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",type)
 				            },
 				            "Guardar como borrador": function () {
-				            	ajaxSave("draft");
-				                $(this).dialog("close");
+				            	send("projects-form", "projects/create", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",type)
 				            }
 				        },
 				        close: function (event, ui) {
@@ -124,10 +120,166 @@ $('<div></div>').appendTo('form')
 				    });
 				
 			}else
-				ajaxSave("draft")
+				send("projects-form", "projects/create", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",type)
 
 			
 	}
+
+	function changeSubTemaPrioritario(){
+    
+    var temaValue = $("#temaPrioritorio option:selected").val();
+
+		if(temaValue =="Enfermedades Metabólicas (incluida obesidad)"){
+		    var enfermedadesMetabolicas = ["Diabetes Mellitus Tipo 2",
+								"Obesidad y sobrepeso",
+								"Otro. Especifique"]
+		    temaValue = enfermedadesMetabolicas;
+		}
+		if(temaValue =="Enfermedades Cardiovasculares"){
+		    var enfermedadesCardiovasculares = [
+								"Enfermedad Isquémica del Corazón",
+								"Evento Vascular Cerebral",
+								"Hipertensión Arterial Sistémica",
+								"Otro. Especifique"]
+		    temaValue = enfermedadesCardiovasculares;
+		}
+		if(temaValue =="Enfermedades Infecciosas"){
+		    var enfermedadesInfecciosas = [
+		    							"Enfermedad diarreica aguda en menores de 5 años",
+		    							"Infecciones Nosocomiales",
+										"Infecciones agudas de vías aéreas superiores en menores de 5 años",
+										"VIH/SIDA",
+										"Otro. Especifique"]
+		    temaValue = enfermedadesInfecciosas;
+		}
+		if(temaValue =="Accidentes y Violencia"){
+		    var accidentesViolencia = ["Especifique"]
+		    temaValue = accidentesViolencia;
+		}
+		if(temaValue =="Cáncer"){
+		    var cancer = ["Cáncer de mama", "Cáncer cérvico-uterino", "Otro." ]
+		    temaValue = cancer;
+		}
+		if(temaValue =="Enfermedades crónicas"){
+		    var enfermedadesCronicas = ["Enfermedad hepática crónica","Otro. Especifique"]
+		    temaValue = enfermedadesCronicas;
+		}
+		if(temaValue =="Enfermedades emergentes"){
+		    var enfermedadesEmergenes = ["Especifique"]
+		    temaValue = enfermedadesEmergenes;
+		}
+		if(temaValue =="Envejecimiento"){
+		    var envejecimiento = ["Especifique"]
+		    temaValue = envejecimiento;
+		}
+		if(temaValue =="Muertes evitables (incluidas muerte materna y perinatal)"){
+		    var muertesEvitables = ["Embarazo",
+									"Enfermedades del recién nacido",
+									"Muerte materna",
+									"Muerte perinatal",
+									"Otro. Especifique"]
+		    temaValue = muertesEvitables;
+		}
+		if(temaValue =="Salud Mental y Adicciones"){
+		    var saludMentalAdicciones = ["Especifique"]
+		    temaValue = saludMentalAdicciones;
+		}
+		if(temaValue =="Discapacidad e Incapacidad"){
+		    var discapacidadIncapacidad = ["Enfermedades y Riesgos de Trabajo",
+											"Otro. Especifique"]
+		    temaValue = discapacidadIncapacidad;
+		}
+		if(temaValue =="Otros"){
+		    var otros = ["Alergia e Inmunología",
+						"Anatomía Patológica",
+						"Anatomía Patológica Pediátrica",
+						"Anestesiología",
+						"Anestesiología Pediátrica",
+						"Angiología",
+						"Biología de la Reproducción Humana",
+						"Cardiología",
+						"Cardiología Pediátrica",
+						"Cirugía Cardiotorácica",
+						"Cirugía Cardiotorácica Pediátrica",
+						"Cirugía General",
+						"Cirugía Pediátrica",
+						"Cirugía Plástica y Reconstructiva ",
+						"Coloproctología",
+						"Comunicación, Audiología y Foniatría",
+						"Dermatología",
+						"Dermatología Pediátrica",
+						"Dermatopatología",
+						"Endocrinología",
+						"Endocrinología Pediátrica",
+						"Epidemiología",
+						"Gastroenterología",
+						"Gastroenterología y Nutrición Pediátrica ",
+						"Genética Médica",
+						"Geriatría",
+						"Ginecología y Obstetricia",
+						"Hematología",
+						"Hematología Pediátrica ",
+						"Infectología Pediátrica ",
+						"Infectología de Adultos",
+						"Medicina Familiar",
+						"Medicina Interna",
+						"Medicina Legal",
+						"Medicina Materno Fetal",
+						"Medicina Nuclear",
+						"Medicina de Rehabilitación",
+						"Medicina de la Actividad Física y Deportiva",
+						"Medicina del Enfermo Pediátrico en Estado Crítico ",
+						"Medicina del Enfermo en Estado Crítico ",
+						"Medicina del Trabajo",
+						"Nefrología",
+						"Nefrología Pediátrica",
+						"Neonatología",
+						"Neumología ",
+						"Neumología Pediátrica ",
+						"Neuro-Otología",
+						"Neuroanestesiología",
+						"Neurocirugía",
+						"Neurocirugía Pediátrica ",
+						"Neurología",
+						"Neurología Pediátrica ",
+						"Neuropatología",
+						"Neuroradiología",
+						"Nutriología Clínica",
+						"Oftalmología",
+						"Oftalmología Neurológica",
+						"Oncología Médica ",
+						"Oncología Pediátrica",
+						"Oncología Quirúrgica",
+						"Ortopedia",
+						"Otorrinolaringología",
+						"Otorrinolaringología Pediátrica",
+						"Patología Clínica",
+						"Patología Pediátrica",
+						"Pediatría",
+						"Psiquiatría",
+						"Psiquiatría Infantil y de la Adolescencia",
+						"Radio-Oncología",
+						"Radiología e imagen",
+						"Reumatología",
+						"Reumatología Pediátrica",
+						"Terapía Endovascular Neurológica",
+						"Urgencias Médico Quirúrgicas",
+						"Urología",
+						"Urología Ginecológica", 
+						"Otro. Especifique"]
+		    temaValue = otros;
+		}
+
+	 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]' onchange='changeSubTemaPrioritario()'>";
+	    newTema+="<option>Subtema Prioritario</option>";
+	    for (var item in temaValue) {
+        newTema +="<option>"+temaValue[ item ]+"</option>";
+    }
+
+    	newTema+="</select></span>";
+
+    	$("#comboSubTemaPrioritario").html(newTema);
+  }
 </script>
 
 <div class="form">
@@ -141,7 +293,7 @@ $('<div></div>').appendTo('form')
 	'enableAjaxValidation'=>true,
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php //echo $form->errorSummary($model); ?>
 <div id="section1" class="sections" >
 	<div class="row">
 		<?php 
@@ -184,14 +336,23 @@ $('<div></div>').appendTo('form')
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'priority_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Tema prioritario','title'=>'Tema prioritario')); ?>
+		<span class="plain-select">
+		<?php echo $form->dropDownList($model,'priority_topic',array('Accidentes y Violencia'=>'Accidentes y Violencia',
+																	'Cáncer'=>'Cáncer',
+																	'Discapacidad e Incapacidad'=>'Discapacidad e Incapacidad',
+																	'Enfermedades Cardiovasculares'=>'Enfermedades Cardiovasculares',
+																	'Enfermedades Infecciosas'=>'Enfermedades Infecciosas',
+																	'Enfermedades Metabólicas (incluida obesidad)'=>'Enfermedades Metabólicas (incluida obesidad)',
+																	'Enfermedades crónicas'=>'Enfermedades crónicas',
+																	'Enfermedades emergentes'=>'Enfermedades emergentes',
+																	'Envejecimiento'=>'Envejecimiento',
+																	'Muertes evitables (incluidas muerte materna y perinatal)'=>'Muertes evitables (incluidas muerte materna y perinatal)',
+																	'Salud Mental y Adicciones'=>'Salud Mental y Adicciones',
+																	'Otros'=>'Otros'),array('prompt'=>'Tema prioritario','title'=>'Tema prioritario','id'=>'temaPrioritorio', 'onchange'=>'changeSubTemaPrioritario()')); ?>
+		</span>
 		<?php echo $form->error($model,'priority_topic'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'sub_topic',array('size'=>60,'maxlength'=>100,'placeholder'=>'Subtema prioritario','title'=>'Subtema prioritario')); ?>
-		<?php echo $form->error($model,'sub_topic'); ?>
-	</div>
+	<div class="row"id="comboSubTemaPrioritario"></div>
 
 	<div class="row">
 		<?php echo $form->textArea($model,'justify',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación para el tema seleccionado','title'=>'Justificación para el tema seleccionado')); ?>
@@ -211,8 +372,60 @@ $('<div></div>').appendTo('form')
 	</div>
 
 	<div class="row">
-		Datos del investigador.
+		Resumen del investigador.
 	</div>
+
+		<?php
+			$persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+			$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
+			$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id));
+			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+			$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+			$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id)); 
+				
+				
+		 	$this->widget('zii.widgets.CDetailView', array(	
+			'data'=>$persons,
+			'attributes'=>array(
+				array(
+					'label'=>'Nombre(s):',
+					'value'=>$persons->names,
+					),
+				array(
+					'label'=>'Apellido Paterno:',
+					'value'=>$persons->last_name1,
+					),
+				array(
+					'label'=>'Apellido Materno:',
+					'value'=>$persons->last_name2,
+					),  
+				array(
+					'label'=>'Sexo:',
+					'value'=>$persons->genre,
+					), 
+				array(
+					'label'=>'Correo Eléctronico:',
+					'value'=>$emailUsers->email,
+					),
+				array(
+					'label'=>'Télefono:',
+					'value'=>$phoneUsers->phone_number.' Ext '.$phoneUsers->extension,
+					),  
+				array(
+					'label'=>'Adscripción Unidad Hospitalaria:',
+					'value'=>$jobsUsers->hospital_unit,
+					), 
+				array(
+					'label'=>'Máximo grado de estudios:',
+					'value'=>$gradesUsers->grade,
+					), 
+				array(
+					'label'=>'¿Pertenece al SNI?',
+					'value'=>$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
+					),   
+			),
+		)); 
+		?>
 
 	<div class="row">
 		<?php echo CHtml::link('Corregir datos del Curriculum Vitae Único (CVU)',array('curriculumVitae/personalData'),array('target'=>'_blank')); ?>
@@ -311,12 +524,12 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		<?php echo $form->error($model,'adtl_caracteristics_a'); ?>
 	</div>
 	<div class="row">
-	<p>B) Protocolos que contemplen cambios en la polótica institucional sobre la presentación de servicios de salud</p>
+	<p>B) Protocolos que contemplen cambios en la política institucional sobre la presentación de servicios de salud</p>
 		<?php echo $form->textArea($model,'adtl_caracteristics_b',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_b'); ?>
 	</div>
 	<div class="row">
-	<p>C) Protocolos planeados para realizarse entre el instituto Mexicano del Seguro Social y otras insituciones nacionales o extrajeras.</p>
+	<p>C) Protocolos planeados para realizarse entre los Hospitales Civiles de Guadalajara y otras insituciones nacionales o extrajeras.</p>
 		<?php echo $form->textArea($model,'adtl_caracteristics_c',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_c'); ?>
 	</div>
@@ -331,7 +544,7 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		<?php echo $form->error($model,'adtl_caracteristics_e'); ?>
 	</div>
 	<div class="row">
-	<p>F) Protocolos que se realicen en más de una unidad del Instituo Mexicano del seguro Social con la participación de pacientes, muestras o datos</p>
+	<p>F) Protocolos que se realicen en más de una unidad de los Hospitales Civiles de Guadalajara con la participación de pacientes, muestras o datos</p>
 		<?php echo $form->textArea($model,'adtl_caracteristics_f',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_f'); ?>
 	</div>
@@ -346,7 +559,6 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 	<div class="row buttons">
 
 		<?php 
-		var_dump($model->isNewRecord);
 		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
 		
 		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
@@ -356,10 +568,7 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send','".($model->isNewRecord ? 'create' : 'update')."/".(isset($_GET['id']) ? $_GET['id'] : 0)."')",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
-		
-
 		?>
-
 	</div>
 
 <?php $this->endWidget(); ?>

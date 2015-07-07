@@ -193,8 +193,12 @@
 	</div>
 
 	<div class="row buttons">
-	<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton')); ?>
-		
+		 <?php echo CHtml::htmlButton('Guardar',array(
+                'onclick'=>'send("personal-data-form", "curriculumVitae/personalData", "'.$model->id.'","curriculumVitae/personalData","");',
+                 //'id'=> 'post-submit-btn', 
+                'class'=>'savebutton',
+            ));
+   		 ?>
 	
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
