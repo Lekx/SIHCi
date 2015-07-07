@@ -106,9 +106,6 @@ class CurriculumVitaeController extends Controller
 
 			$curriculum->attributes = $_POST['Curriculum'];
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
-
-
-
 				
 			if($model->validate()==1)
 			{	
@@ -126,8 +123,6 @@ class CurriculumVitaeController extends Controller
 					echo CJSON::encode(array('status'=>'success'));
 					Yii::app()->end();
 	     		}
-
-
 	     	}
 	     	else 
             {
@@ -137,7 +132,8 @@ class CurriculumVitaeController extends Controller
 				   
 				Yii::app()->end();
             }  	
-		}
+				
+					}
 		$this->render('personal_data',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
 
@@ -195,8 +191,6 @@ class CurriculumVitaeController extends Controller
 				$model->description = "Acta";
 				$model->doc_id = CUploadedFile::getInstanceByName('Acta');
 
-				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
-
 				
 				if($model->validate()==1)
 				{
@@ -205,11 +199,7 @@ class CurriculumVitaeController extends Controller
 					if($model->save()){
 						$reload = true;
 						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-			     		}
-				}else {
-			 echo "Tipo de archivo no valido, solo se admiten .PDF .DOC . DOCX .ODT";
-			 echo $model->doc_id->type;
-			 	}
+
 			     		echo CJSON::encode(array('status'=>'success'));
 						Yii::app()->end();
 			     	}
@@ -240,8 +230,6 @@ class CurriculumVitaeController extends Controller
 				$model->type = "Pasaporte";
 				$model->description = "Pasaporte";
 				$model->doc_id = CUploadedFile::getInstanceByName('Pasaporte');
-				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
-
 				
 				if($model->validate()==1)
 				{	
@@ -282,9 +270,6 @@ class CurriculumVitaeController extends Controller
 				$model->description = "CURP";
 				$model->doc_id = CUploadedFile::getInstanceByName('CURP');
 
-				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
-
-
 				if($model->validate()==1)
 				{	
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
@@ -324,7 +309,6 @@ class CurriculumVitaeController extends Controller
 				$model->description = "IFE";
 				$model->doc_id = CUploadedFile::getInstanceByName('IFE');
 
-				if($model->doc_id->type == 'image/jpeg' || $model->doc_id->type == 'image/png' || $model->doc_id->type == 'application/pdf' || $model->doc_id->type == 'application/msword' || $model->doc_id->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->doc_id->type == 'application/vnd.oasis.opendocument.text' ){
 
 				if($model->validate()==1)
 				{	
