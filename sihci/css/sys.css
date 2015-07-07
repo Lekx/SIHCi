@@ -1,5 +1,3 @@
-
-
 /* CSS System */
 @font-face
 {
@@ -7,7 +5,6 @@
 
     src: url('../fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf');
 }
-
 @font-face
 {
     font-family: 'Caviar_Dreams';
@@ -1986,21 +1983,29 @@ div.pager span.active
 }
 .notification
 {
+    font-family: 'Caviar_Dreams';
+
     position: absolute;
     z-index: 1000;
+    top: 10%;
+    left: 51%;
 
     width: 30px;
     height: 30px;
     padding: 5px;
 
-    top: 10%;
-    left: 51%;
+    text-align: center;
 
     opacity: .7;
-
-    text-align: center;
-    font-family: "Caviar_Dreams";
     color: white;
     border-radius: 50%;
-    background: #0A324F;
+    background: #0a324f;
+}
+.newpass
+{
+    width: 400px;
+    height: 390px;
+    margin: auto;
+
+    background-color: white;
 }
