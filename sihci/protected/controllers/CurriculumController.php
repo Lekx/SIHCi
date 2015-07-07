@@ -1,5 +1,5 @@
 <?php
-
+//BORRAR
 class CurriculumController extends Controller
 {
 	/**
