@@ -13,7 +13,7 @@ function showAdtlRes(){
 	if(elemSum > 2)
 		$('#ar'+(elemSum-2)+' input[type="button"]').hide();
 
-	
+
 	if(elemSum == 11)
 		$('#addBtnAr').hide();
 }
@@ -25,7 +25,7 @@ function hideAdtlRes(element){
 		$('#addBtnAr').show();
 
 		$('#ar'+(elemSum-1)+' input[type="button"]').show();
-	
+
 }
 
 function accionCancelar(){
@@ -94,41 +94,25 @@ $('<div></div>').appendTo('form')
 				alert(data);
 				window.location = yii.urls.cancelProject;
 		});*/
+		function save(value){
 
-	function save(value){
+				$('input[type="hidden"]').attr('disabled', true);
 
-		$('input[type="hidden"]').attr('disabled', true);
+					if(value=="send"){
+						$('<div></div>').appendTo('form')
+						    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
+						    .dialog({
+						        modal: true,
+						        title: 'Cancelar',
+						        zIndex: 10000,
+						        autoOpen: true,
+						        width: 'auto',
+						        resizable: false,
+						        buttons: {
+						            "Enviar a revisión": function () {
+										send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
+						            },
 
-			if(value=="send"){
-				$('<div></div>').appendTo('form')
-				    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
-				    .dialog({
-				        modal: true,
-				        title: 'Cancelar',
-				        zIndex: 10000,
-				        autoOpen: true,
-				        width: 'auto',
-				        resizable: false,
-				        buttons: {
-				            "Enviar a revisión": function () {
-								send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
-				            },
-				            "Guardar como borrador": function () {
-				            	send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin","draft")
-
-				            }
-				        },
-				        close: function (event, ui) {
-				            $(this).remove();
-				        }
-				    });
-				
-			}else
-				send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
-
-
-			
-	}
 
 	function changeSubTema(){
 
@@ -273,7 +257,7 @@ $('<div></div>').appendTo('form')
 						"Terapía Endovascular Neurológica",
 						"Urgencias Médico Quirúrgicas",
 						"Urología",
-						"Urología Ginecológica", 
+						"Urología Ginecológica",
 						"Otro. Especifique"]
 		    temaValue = otros;
 		}
@@ -302,7 +286,7 @@ $('<div></div>').appendTo('form')
 	<?php echo $form->errorSummary($model); ?>
 <div id="section1" class="sections" >
 	<div class="row">
-		<?php 
+		<?php
 			if(Yii::app()->user->Rol->id == 1){
 				$researcher = "";
 				if(!$model->isNewRecord){
@@ -316,9 +300,9 @@ $('<div></div>').appendTo('form')
 				    'name'=>'Projects[id_curriculum]',
 				    'id'=>'id_curriculum',
 				    'value'=>$researcher,
-				    'source'=>$this->createUrl('/sponsorship/getResearchers'),  
+				    'source'=>$this->createUrl('/sponsorship/getResearchers'),
 				    'options'=>array(
-				        'minLength'=>'0' 
+				        'minLength'=>'0'
 				    ),
 				));
 			}
@@ -395,16 +379,20 @@ $('<div></div>').appendTo('form')
 
 		<?php   $persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 				$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
+<<<<<<< HEAD
+				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id));
+=======
 				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id,'is_primary'=>1));
+>>>>>>> 9a8a3e0d6f5bf67d316b092a7af0567adaa41427
 				$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 				$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
-				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id)); 
-				
-				
-			 $this->widget('zii.widgets.CDetailView', array(	
+				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+
+
+			 $this->widget('zii.widgets.CDetailView', array(
 			'data'=>$persons,
 			'attributes'=>array(
-		
+
 				array(
 					'label'=>'Nombre(s):',
 					'value'=>$persons->names,
@@ -416,11 +404,11 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
-					),  
+					),
 			/*	array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
-					), 
+					),
 				array(
 					'label'=>'Email:',
 					'value'=>$emailUsers->email,
@@ -428,13 +416,20 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Telefono:',
 					'value'=>$phoneUsers != null ? $phoneUsers->phone_number.' Ext '.$phoneUsers->extension : " ",
-					),  
+					),
 				array(
 					'label'=>'Unidad hospitalaria:',
 					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
-					), 	
+					),
 				array(
 					'label'=>'Máximo grado de estudios:',
+<<<<<<< HEAD
+					'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
+					),
+				array(
+					'label'=>'¿Pertenece al SNI?',
+					'value'=>$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
+=======
 
 					'value'=>$gradesUsers->grade,
 					), */
@@ -443,10 +438,11 @@ $('<div></div>').appendTo('form')
 					'label'=>'¿Pertenece al SNI?',
 					'value'=>$curriculum != null ? $curriculum->SNI :
 					$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
-					),    
+>>>>>>> 9a8a3e0d6f5bf67d316b092a7af0567adaa41427
+					),
 			),
 		));
-		print_r($gradesUsers->grade); 
+		print_r($gradesUsers->grade);
 		?>
 
 	<div class="row">
@@ -580,10 +576,10 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 
 	<div class="row buttons">
 
-		<?php 
+		<?php
 		var_dump($model->isNewRecord);
-		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
-		
+		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');
+
 		//echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
 		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
 		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
@@ -591,7 +587,7 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
-		
+
 
 		?>
 

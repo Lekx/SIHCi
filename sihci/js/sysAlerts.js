@@ -26,7 +26,7 @@ $(document).ready(function() {
   setInterval(function() {
     $(".notification").effect("highlight", {
       color: '#798B9D'
-    }, 3000);
+    }, 1000);
   }, 100);
 
 
