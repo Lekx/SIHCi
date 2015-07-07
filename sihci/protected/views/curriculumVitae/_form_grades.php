@@ -234,7 +234,7 @@ $(document).ready(function() {
                               'PEDAGOGIA'=>'PEDAGOGIA',
                               'PSICOLOGIA'=>'PSICOLOGIA',
                               'PROSPECTIVA'=>'PROSPECTIVA',
-                              'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'onchange'=>'changeArea()'));?>
+                              'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'name'=>'area', 'onchange'=>'changeArea()'));?>
                                                       </span>
     <?php echo $form->error($model,'area'); ?>
   </div>

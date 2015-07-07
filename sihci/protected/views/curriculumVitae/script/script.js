@@ -404,7 +404,7 @@ if(areaValue =="SOCIOLOGIA"){
 }
 
 
-    var newDiscipline ="<span class='plain-select'><select id='BooksChapters_discipline' class='tooltipstered' name='BooksChapters[discipline]' onchange='changeDiscipline()'>";
+    var newDiscipline ="<span class='plain-select'><select id='discipline' class='tooltipstered' name='discipline' onchange='changeDiscipline()'>";
     newDiscipline+="<option>Seleccionar Disciplina</option>";
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
@@ -416,7 +416,7 @@ if(areaValue =="SOCIOLOGIA"){
   }
 
   function changeDiscipline(){
-  var disciplineValue = $("#BooksChapters_discipline option:selected").val();
+  var disciplineValue = $("#discipline option:selected").val();
 
     if(disciplineValue =="Seleccionar Disciplina"){
       var seleccionarDisciplina ="";
@@ -3995,7 +3995,7 @@ if(areaValue =="SOCIOLOGIA"){
       var otrasEspecialidadesSociologia = [" "]
      disciplineValue = otrasEspecialidadesSociologia;
   }
-    var newSubdiscipline ="<span class='plain-select'><select id='BooksChapters_subdiscipline' class='tooltipstered' name='BooksChapters[subdiscipline]'>";
+    var newSubdiscipline ="<span class='plain-select'><select id='subdiscipline' class='tooltipstered' name='subdiscipline'>";
     newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
