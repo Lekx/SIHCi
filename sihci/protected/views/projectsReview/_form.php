@@ -20,9 +20,9 @@ $form=$this->beginWidget('CActiveForm', array(
         <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
         <?php echo $form->error($model,'url_doc'); ?>
     </div>
-
+ 
     <?php echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","")',
                 'class'=>'savebutton',
             ));
     ?>

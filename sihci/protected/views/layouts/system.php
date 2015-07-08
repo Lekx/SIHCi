@@ -142,7 +142,7 @@
                       if(Yii::app()->user->Rol->id > 10)
                       {
                         $conection = Yii::app()->db;
-                        $pPro = $conection->createCommand("SELECT count(p.id) as X FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".Yii::app()->user->Rol->alias."' ")->queryAll();
+                        $pPro = $conection->createCommand("SELECT count(distinct p.id) AS X FROM projects AS p INNER JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".Yii::app()->user->Rol->alias."' ")->queryAll();
                         if(!empty($pPro)){
                           echo "<div class='notification'>";
                           echo $pPro[0]["X"];
