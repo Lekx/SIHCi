@@ -44,7 +44,7 @@
          $(".errorMessage").hide();
          $(".successdiv").show();
 
-         $('.backbut').click(function() {
+        $('.backbut').click(function() {
            window.location = yii.urls.createUrl + "/" + redirectUrl;
          });
 
@@ -58,7 +58,5 @@
      contentType: false,
      processData: false
    });
-
-
    return false;
  }

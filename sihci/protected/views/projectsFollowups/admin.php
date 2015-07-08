@@ -16,7 +16,9 @@ $this->menu=array(
 <h1>Seguimiento Proyecto</h1>
 
 <?php 
-echo CHtml::link('Crear Nuevo','create');
+// echo CHtml::link('Crear Nuevo','create');
+echo CHtml::link('Crear Nuevo',array('create',
+                                         'id'=>$idProject));
 	if($followupCurrent != null){
 		
 

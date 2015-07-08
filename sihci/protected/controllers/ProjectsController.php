@@ -129,7 +129,7 @@ class ProjectsController extends Controller
 				$model->status = "DIVUH";
 
 			$model->folio = "-1";
-			$model->is_sponsored = 0; 
+			$model->is_sponsored = 0;
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
 
@@ -168,8 +168,8 @@ class ProjectsController extends Controller
 				}else{
 						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
 						Yii::app()->end();
-				}	
-			
+				}
+
 			}
 		}else{
 				$error = CActiveForm::validate($model);
@@ -214,7 +214,7 @@ class ProjectsController extends Controller
 				$model->status = "DIVUH";
 
 			$model->folio = "-1";
-			$model->is_sponsored = 0; 
+			$model->is_sponsored = 0;
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
 
@@ -254,8 +254,8 @@ class ProjectsController extends Controller
 				}else{
 						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
 						Yii::app()->end();
-				}	
-			
+				}
+
 			}
 		}else{
 				$error = CActiveForm::validate($model);
@@ -314,14 +314,14 @@ class ProjectsController extends Controller
 
 	public function actionAcceptSponsorship($id)
 	{
-		
+
 		$sponsoredProjExist = SponsoredProjects::model()->findByAttributes(array("id_sponsorship"=>$id));
 		if(!is_object($sponsoredProjExist)){
 			//echo "caca";
 			$sponsored = Sponsorship::model()->findByPk($id);
 			$project = new Projects;
 
-			 
+
 
 			 $cv = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 
@@ -345,7 +345,7 @@ class ProjectsController extends Controller
 
 				$sponsoredProj->id_project = 1;
 			 $sponsoredProj->id_sponsorship = $id;
-			
+
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if($project->validate() && $sponsoredProj->validate())
 				if($project->save()){
