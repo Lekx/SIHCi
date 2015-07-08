@@ -142,10 +142,12 @@
                       if(Yii::app()->user->Rol->id > 10)
                       {
                         $conection = Yii::app()->db;
-                        $pPro = $conection->createCommand("SELECT count(p.id) as X FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".strtolower(Yii::app()->user->Rol->alias)."' GROUP BY p.title")->queryAll();
-                        echo "<div class='notification'>";
-                        echo $pPro[0]["X"];
-                        echo "</div>";
+                        $pPro = $conection->createCommand("SELECT count(p.id) as X FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".Yii::app()->user->Rol->alias."' ")->queryAll();
+                        if(!empty($pPro)){
+                          echo "<div class='notification'>";
+                          echo $pPro[0]["X"];
+                          echo "</div>";
+                        }
                       }
 
                       ?>
@@ -441,6 +443,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="loader">
+              <div class="loadspin">
+
+              </div>
             </div>
             <div class="footer">
                 <div class="footermenu1">

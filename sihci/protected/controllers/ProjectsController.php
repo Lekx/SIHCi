@@ -129,11 +129,20 @@ class ProjectsController extends Controller
 				$model->status = "DIVUH";
 
 			$model->folio = "-1";
-			$model->is_sponsored = 0; 
+			$model->is_sponsored = 0;
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
+
+			//var_dump($_POST['research_types']);
+
+			foreach ($_POST['research_types'] as $key => $value) {
+				if(!empty($value))
+					$model->research_type.=$value."*-*";
+			}
+
 		if($model->validate()){
 			if($model->save()){
+
 				foreach ($_POST['adtlResearchers'] as $key => $value) {
 					if(!empty($value)){
 						$adtlRes = new ProjectsCoworkers;
@@ -159,8 +168,8 @@ class ProjectsController extends Controller
 				}else{
 						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
 						Yii::app()->end();
-				}	
-			
+				}
+
 			}
 		}else{
 				$error = CActiveForm::validate($model);
@@ -185,6 +194,7 @@ class ProjectsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -204,11 +214,21 @@ class ProjectsController extends Controller
 				$model->status = "DIVUH";
 
 			$model->folio = "-1";
-			$model->is_sponsored = 0; 
+			$model->is_sponsored = 0;
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
+
+			//var_dump($_POST['research_types']);
+			$newRtypes ="";
+			foreach ($_POST['research_types'] as $key => $value) {
+				if(!empty($value))
+					$newRtypes.=$value."*-*";
+			}
+			$model->research_type = $newRtypes;
+
 		if($model->validate()){
 			if($model->save()){
+
 				foreach ($_POST['adtlResearchers'] as $key => $value) {
 					if(!empty($value)){
 						$adtlRes = new ProjectsCoworkers;
@@ -234,8 +254,8 @@ class ProjectsController extends Controller
 				}else{
 						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
 						Yii::app()->end();
-				}	
-			
+				}
+
 			}
 		}else{
 				$error = CActiveForm::validate($model);
@@ -246,7 +266,7 @@ class ProjectsController extends Controller
 		}
 		}else{
 
-		$this->render('create',array(
+		$this->render('update',array(
 			'model'=>$model,'discipline'=>$this->discipline
 		));
 		}
@@ -294,14 +314,14 @@ class ProjectsController extends Controller
 
 	public function actionAcceptSponsorship($id)
 	{
-		
+
 		$sponsoredProjExist = SponsoredProjects::model()->findByAttributes(array("id_sponsorship"=>$id));
 		if(!is_object($sponsoredProjExist)){
 			//echo "caca";
 			$sponsored = Sponsorship::model()->findByPk($id);
 			$project = new Projects;
 
-			 
+
 
 			 $cv = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 
@@ -325,7 +345,7 @@ class ProjectsController extends Controller
 
 				$sponsoredProj->id_project = 1;
 			 $sponsoredProj->id_sponsorship = $id;
-			
+
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if($project->validate() && $sponsoredProj->validate())
 				if($project->save()){

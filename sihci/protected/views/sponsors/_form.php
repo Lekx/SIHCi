@@ -2,8 +2,7 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 /* @var $form CActiveForm */
-	$cs = Yii::app()->getClientScript();
-   $cs->registerScriptFile( Yii::app()->baseUrl. '/protected/views/sponsors/js/script.js');
+	
 ?>
 <script>
      function changeSector(){
