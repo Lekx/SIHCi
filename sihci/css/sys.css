@@ -797,10 +797,12 @@ thead th
 .maincontainer
 {
     width: 400px;
-    height: 270px;
+    min-height: 270px;
+    height: auto;
     margin-top: calc(50vh - 135px);
     margin-right: auto;
     margin-left: auto;
+    position: relative;
 
     background: #fff;
 }
@@ -808,8 +810,7 @@ thead th
 .errorh2,
 .successh2
 {
-    padding-top: 50px;
-
+    padding-top: 40px;
     text-align: center;
 }
 
@@ -818,9 +819,9 @@ thead th
 .successh2 hr
 {
     width: 80px;
-    margin-top: 35px;
+    margin-top: 25px;
     margin-right: auto;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     margin-left: auto;
 
     text-align: center;
@@ -834,7 +835,11 @@ thead th
 
     width: 400px;
     height: 50px;
-    margin-top: 30px;
+
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    margin-top: 10px;
 
     color: white;
     background-color: #0e3152;
@@ -847,9 +852,13 @@ thead th
 }
 .remainder
 {
-    width: 260px;
+    min-width: 260px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 10px;
+
+
+
 }
 .backgrnd
 {
@@ -878,6 +887,7 @@ thead th
 .successh2 h2
 {
     color: #0e3152;
+    margin: 0;
 }
 /* ---------- */
 
