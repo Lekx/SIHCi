@@ -13,7 +13,7 @@ function showAdtlRes(){
 	if(elemSum > 2)
 		$('#ar'+(elemSum-2)+' input[type="button"]').hide();
 
-	
+
 	if(elemSum == 11)
 		$('#addBtnAr').hide();
 }
@@ -25,7 +25,7 @@ function hideAdtlRes(element){
 		$('#addBtnAr').show();
 
 		$('#ar'+(elemSum-1)+' input[type="button"]').show();
-	
+
 }
 
 function accionCancelar(){
@@ -98,12 +98,12 @@ $('<div></div>').appendTo('form')
 				            $(this).remove();
 				        }
 				    });
-				
+
 			}else
 				send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
 
 
-			
+
 	}
 
 	function changeSubTema(){
@@ -249,7 +249,7 @@ $('<div></div>').appendTo('form')
 						"Terapía Endovascular Neurológica",
 						"Urgencias Médico Quirúrgicas",
 						"Urología",
-						"Urología Ginecológica", 
+						"Urología Ginecológica",
 						"Otro. Especifique"]
 		    temaValue = otros;
 		}
@@ -278,7 +278,7 @@ $('<div></div>').appendTo('form')
 	<?php echo $form->errorSummary($model); ?>
 <div id="section1" class="sections" >
 	<div class="row">
-		<?php 
+		<?php
 			if(Yii::app()->user->Rol->id == 1){
 				$researcher = "";
 				if(!$model->isNewRecord){
@@ -292,9 +292,9 @@ $('<div></div>').appendTo('form')
 				    'name'=>'Projects[id_curriculum]',
 				    'id'=>'id_curriculum',
 				    'value'=>$researcher,
-				    'source'=>$this->createUrl('/sponsorship/getResearchers'),  
+				    'source'=>$this->createUrl('/sponsorship/getResearchers'),
 				    'options'=>array(
-				        'minLength'=>'0' 
+				        'minLength'=>'0'
 				    ),
 				));
 			}
@@ -370,13 +370,13 @@ $('<div></div>').appendTo('form')
 				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id,'is_primary'=>1));
 				$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 				$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
-				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id)); 
-				
-				
-			 $this->widget('zii.widgets.CDetailView', array(	
+				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+
+
+			 $this->widget('zii.widgets.CDetailView', array(
 			'data'=>$persons,
 			'attributes'=>array(
-		
+
 				array(
 					'label'=>'Nombre(s):',
 					'value'=>$persons->names,
@@ -388,11 +388,15 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
+<<<<<<< HEAD
 					),  
+=======
+					),
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
 				array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
-					), 
+					),
 				array(
 					'label'=>'Email:',
 					'value'=>$emailUsers->email,
@@ -400,11 +404,15 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Telefono:',
 					'value'=>$phoneUsers != null ? $phoneUsers->phone_number.' Ext '.$phoneUsers->extension : " ",
-					),  
+					),
 				array(
 					'label'=>'Unidad hospitalaria:',
 					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
+<<<<<<< HEAD
 					), 
+=======
+					),
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
 				array(
 				     'label'=>'Máximo grado de estudios:',
 				     'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
@@ -414,7 +422,7 @@ $('<div></div>').appendTo('form')
 					'label'=>'¿Pertenece al SNI?',
 					'value'=>$curriculum != null ? $curriculum->SNI :
 					$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
-					),    
+					),
 			),
 		));
 		?>
@@ -550,13 +558,21 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 
 	<div class="row buttons">
 
+<<<<<<< HEAD
 		<?php 
+=======
+		<?php
+		var_dump($model->isNewRecord);
+		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');
+
+		//echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
 		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
 		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
 		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
-		
+
 
 		?>
 
