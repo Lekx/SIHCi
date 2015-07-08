@@ -45,7 +45,11 @@ $this->menu = array(
 	<hr>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton("Guardar", array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton') ); ?>
+			  <?php echo CHtml::htmlButton('Enviar',array(
+                'onclick'=>'send("account-form", "account/updateEmail", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                'class'=>'savebutton',
+            ));
+    ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

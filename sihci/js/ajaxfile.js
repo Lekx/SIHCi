@@ -1,18 +1,18 @@
  function send(form, actionUrl, id, redirectUrl, extras) {
 
-  var formData;
-  if(form != '')
-      formData = new FormData($("#" + form)[0]);
-  else
-    formData = new FormData();
+   var formData;
+   if (form != '')
+     formData = new FormData($("#" + form)[0]);
+   else
+     formData = new FormData();
 
-  if(extras !=''){
-    var temp = new Array();
-    temp = extras.split(",");
-    for (a in temp ) {
-      formData.append(parseInt(a)+1, temp[a]);
-    }
-  }
+   if (extras != '') {
+     var temp = new Array();
+     temp = extras.split(",");
+     for (a in temp) {
+       formData.append(parseInt(a) + 1, temp[a]);
+     }
+   }
 
   $.ajax({
     url: yii.urls.createUrl + "/" + actionUrl + "/" + id,
@@ -20,11 +20,16 @@
     data: formData,
     datatype: 'json',
     async: false,
-    beforeSend: function() {},
+    beforeSend: function() {
+      $('.loader').show();
+    },
     success: function(response) {
       var data = JSON.parse(response);
       if (data['status'] != 'success') {
-
+      if (("message" in data)) {
+          $(".errorh2 h2").html(data['message']);
+          $(".errorh2 span").html(data['subMessage']);
+        }
         $(".errordiv").show();
         for (var key in data) {
           $("#" + key + "_em_").show();
@@ -39,19 +44,19 @@
         $(".errorMessage").hide();
         $(".successdiv").show();
 
-          $('.backbut').click(function() {
+        $('.backbut').click(function() {
+           window.location = yii.urls.createUrl + "/" + redirectUrl;
+         });
 
-
-            window.location = yii.urls.createUrl + "/" + redirectUrl;
-           });
-      }
-    },
-    complete: function(data) {},
-    error: function(data) {},
-    cache: false,
-    contentType: false,
-    processData: false
-  });
-
-  return false;
-}
+       }
+     },
+     complete: function(data) {
+       $('.loader').hide();
+     },
+     error: function(data) {},
+     cache: false,
+     contentType: false,
+     processData: false
+   });
+   return false;
+ }
