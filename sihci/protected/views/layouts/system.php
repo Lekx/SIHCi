@@ -150,9 +150,9 @@
                         $condition = "WHERE p.status LIKE '%".$rol."%'";
 
 
-                        $pPro = $conection->createCommand("SELECT count(distinct p.id) AS X FROM projects AS p INNER JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition." ")->queryAll();
+                        $pPro = $conection->createCommand("SELECT count(distinct p.id) AS X FROM projects AS p INNER JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition)->queryAll();
 
-                        if($pPro > 0)){
+                        if($pPro > 0){
                           echo "<div class='notification'>";
                           echo $pPro[0]["X"];
                           echo "</div>";
