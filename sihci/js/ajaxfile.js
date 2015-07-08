@@ -20,9 +20,12 @@
      data: formData,
      datatype: 'json',
      async: false,
-     beforeSend: function() {},
+     beforeSend: function() {
+       $('.loader').show();
+     },
      success: function(response) {
        var data = JSON.parse(response);
+       $('.loader').hide();
        if (data['status'] != 'success') {
 
          $(".errordiv").show();
@@ -31,6 +34,7 @@
            $("#" + key + "_em_").html(data[key]);
          }
        } else {
+         $('.loader').hide();
          if (("message" in data)) {
            $(".successh2 h2").html(data['message']);
            $(".successh2 span").html(data['subMessage']);
@@ -47,7 +51,9 @@
 
        }
      },
-     complete: function(data) {},
+     complete: function(data) {
+       $('.loader').show();
+     },
      error: function(data) {},
      cache: false,
      contentType: false,
