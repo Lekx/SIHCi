@@ -73,19 +73,15 @@ class UsersController extends Controller {
 
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
-						$model->status = 'activo';
 						$model->status = 'inactivo';
 						$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s') . $model->email . rand(1000, 5000))));
-						//if($model->validate())
 						$model->password = sha1(md5(sha1($model->password)));
-						//$model->attributes=$_POST['Users'];
 
 						if ($model->validate()) {
 
 							if (isset($_POST['Persons'])) {
 
 								$modelPersons->attributes = $_POST['Persons'];
-								//$modelPersons->person_rfc = "1234567890123";
 
 								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
 								if (empty($result2)) {

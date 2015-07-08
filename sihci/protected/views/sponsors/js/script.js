@@ -1,4 +1,4 @@
-function send()
+/*function send()
 {
     var fd = new FormData();
     var data=$("#sponsors-form").serialize();
@@ -20,4 +20,4 @@ function send()
         },
 
     });
-}
+}*/

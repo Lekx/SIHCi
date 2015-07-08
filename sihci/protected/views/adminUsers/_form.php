@@ -51,7 +51,9 @@ $this->menu=array(
     // controller action is handling ajax validation correctly.
     // There is a call to performAjaxValidation() commented in generated controller code.
     // See class documentation of CActiveForm for details on this.
-    'enableAjaxValidation'=>false,
+    'enableAjaxValidation' => true,
+  	'htmlOptions' => array('enctype' => 'multipart/form-data'),
+  	'enableClientValidation' => true,
 )); ?>
 
 
@@ -69,12 +71,12 @@ $this->menu=array(
 
 
     <div class="row">
-        <?php echo $form->textField($model,'password',array('placeholder'=>"Contraseña",'title'=>'Contraseña Minimo 6 maximo 15 caracteres')); ?>
+        <?php echo $form->passwordField($model,'password',array('placeholder'=>"Contraseña",'title'=>'Contraseña Minimo 6 maximo 15 caracteres','maxlength'=>15)); ?>
         <?php echo $form->error($model,'password'); ?>
     </div>
 
     <div class="row">
-        <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificacion de Contraseña" title="Verificacion de Contraseña"></input>
+        <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificacion de Contraseña" title="Verificacion de Contraseña" maxlength="15"></input>
     </div>
 
 
@@ -96,17 +98,17 @@ $this->menu=array(
     </div>
 
     <div class="row">
-        <?php echo $form->textField($modelPersons,'names',array('placeholder'=>"Nombre/s completos.", 'title'=>'Nombre/s completos')); ?>
+        <?php echo $form->textField($modelPersons,'names',array('placeholder'=>"Nombre/s completos.", 'title'=>'Nombre/s completos','onKeypress'=>'return lettersOnly(event)')); ?>
         <?php echo $form->error($modelPersons,'names'); ?>
     </div>
 
     <div class="row">
-        <?php echo $form->textField($modelPersons,'last_name1',array('placeholder'=>"Apellido Paterno",'title'=>'Apellido Paterno')); ?>
+        <?php echo $form->textField($modelPersons,'last_name1',array('placeholder'=>"Apellido Paterno",'title'=>'Apellido Paterno','onKeypress'=>'return lettersOnly(event)')); ?>
         <?php echo $form->error($modelPersons,'last_name1'); ?>
     </div>
 
     <div class="row">
-        <?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apelido Materno",'title'=>'Apellido Materno')); ?>
+        <?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apelido Materno",'title'=>'Apellido Materno','onKeypress'=>'return lettersOnly(event)')); ?>
         <?php echo $form->error($modelPersons,'last_name2'); ?>
     </div>
 
@@ -116,8 +118,14 @@ $this->menu=array(
     </div>
 
     <div class="row buttons">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'crear' : 'Guardar'); ?>
-    </div>
+      <?php echo CHtml::htmlButton('Enviar',array(
+                  'onclick'=>'send("users-form", "AdminUsers", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                  'class'=>'savebutton',
+              ));
+      ?>
+      <?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+
+      </div>
 
 <?php $this->endWidget(); ?>
 
