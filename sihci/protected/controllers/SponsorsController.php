@@ -99,7 +99,8 @@ class SponsorsController extends Controller {
 					$model->id_address = $modelAddresses->id;
 					if($model->validate() == 1) {
 						if($model->save()) {
-
+							echo CJSON::encode(array('status'=>'success'));
+							Yii::app()->end();
 
 							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 							$modelPersons->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
@@ -124,8 +125,7 @@ class SponsorsController extends Controller {
 								$logo = "sponsors/" . $id_sponsor . "/cve-hc/" . 'perfil.png';
 
 								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo))) {
-									echo CJSON::encode(array('status'=>'success'));
-			     							Yii::app()->end();
+
 
 									$log = new SystemLog();
 									$log->id_user = $iduser;
@@ -157,8 +157,7 @@ class SponsorsController extends Controller {
 
 				if($error!='[]')
 					echo str_replace("]\"", "],\"",$error)."}";
-
-				Yii::app()->end();
+					Yii::app()->end();
 	        }
 
 		}
