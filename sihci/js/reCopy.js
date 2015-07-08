@@ -26,7 +26,7 @@
 			excludeSelector: ".exclude",
 			emptySelector: ".empty",
 			copyClass: "copy",
-			append: ' id="cagason"',
+			append: '',
 			clearInputs: true,
 			limit: 0 // 0 = unlimited
 		}, options);
