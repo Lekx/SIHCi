@@ -38,7 +38,7 @@ function lettersOnly(e){
 
      tecla_especial = false
     for(var i in especiales){
-     if(key == especiales[i]){
+     if(key == especiales[i] || e.keyCode ==9){
             tecla_especial = true;
     break;
             } 

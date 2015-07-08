@@ -41,12 +41,11 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
 	});
  }
 </script>
-
-<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchadmin" style="width: 75% !important;">
+<div class="projectsbutts">
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchadmin" style="width: 72% !important;">
 <input class="adminbut tooltipstered" type="submit" name="yt0" value="">
-<div class="buttons">
-<?php echo CHtml::link('Registrar Proyecto', array('projects/create','class'=>'adminbut'));?>
-<?php echo CHtml::link('Registrar Patrocinio', array('AdminProjects/CreateSponsorship','class'=>'adminbut'));?>
+<?php echo CHtml::link('Registrar Proyecto', array('projects/create'),array('class'=>'projectS'));?>
+<?php echo CHtml::link('Registrar Patrocinio', array('AdminProjects/CreateSponsorship'),array('class'=>'projectS'));?>
 </div>
 <br>
 <br>

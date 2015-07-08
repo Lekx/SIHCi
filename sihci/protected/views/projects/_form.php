@@ -3,7 +3,8 @@
 /* @var $model Projects */
 /* @var $form CActiveForm */
 ?>
-
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript">
 var elemSum = 1;
 function showAdtlRes(){
@@ -12,7 +13,7 @@ function showAdtlRes(){
 	if(elemSum > 2)
 		$('#ar'+(elemSum-2)+' input[type="button"]').hide();
 
-	
+
 	if(elemSum == 11)
 		$('#addBtnAr').hide();
 }
@@ -20,13 +21,11 @@ function showAdtlRes(){
 function hideAdtlRes(element){
  	$(element).parent().hide();
  	elemSum--;
- 	$('#adtlResearchers_'+elemSum).val('');
-
 	if(elemSum < 10)
 		$('#addBtnAr').show();
 
 		$('#ar'+(elemSum-1)+' input[type="button"]').show();
-	
+
 }
 
 function accionCancelar(){
@@ -70,32 +69,12 @@ $('<div></div>').appendTo('form')
 			$("#back").hide();
 		else
 			$("#back").show();
-
-
-		//alert("ouch, you fucked me bby! "+section);
 		$("#section"+section).show();
 	}
-	function ajaxSave(value,type){
-		var request = $.ajax({
-		  url: yii.urls.base+"/index.php/projects/"+type,
-		  method: "POST",
-		  data: $("#projects-form").serialize()+"&type="+value,
-		  dataType: "json",
-		  success: function(response) {
-		  	alert(response+" as as dfas ");
-		  }
-
-		});
-
-			request.done(function(data) {
-				alert(data);
-				window.location = yii.urls.cancelProject;
-		});
-	}
-
-	function save(value, type){
+	function save(value){
 
 		$('input[type="hidden"]').attr('disabled', true);
+
 			if(value=="send"){
 				$('<div></div>').appendTo('form')
 				    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
@@ -108,31 +87,33 @@ $('<div></div>').appendTo('form')
 				        resizable: false,
 				        buttons: {
 				            "Enviar a revisión": function () {
-								send("projects-form", "projects/create", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",type)
+								send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
 				            },
 				            "Guardar como borrador": function () {
-				            	send("projects-form", "projects/create", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",type)
+				            	send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin","draft")
+
 				            }
 				        },
 				        close: function (event, ui) {
 				            $(this).remove();
 				        }
 				    });
-				
-			}else
-				send("projects-form", "projects/create", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",type)
 
-			
+			}else
+				send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
+
+
+
 	}
 
-	function changeSubTemaPrioritario(){
-    
-    var temaValue = $("#temaPrioritorio option:selected").val();
+	function changeSubTema(){
 
-		if(temaValue =="Enfermedades Metabólicas (incluida obesidad)"){
+		 var temaValue = $("#tema option:selected").val();
+
+		 if(temaValue =="Enfermedades Metabólicas (incluida obesidad)"){
 		    var enfermedadesMetabolicas = ["Diabetes Mellitus Tipo 2",
-								"Obesidad y sobrepeso",
-								"Otro. Especifique"]
+											"Obesidad y sobrepeso",
+											"Otro. Especifique"]
 		    temaValue = enfermedadesMetabolicas;
 		}
 		if(temaValue =="Enfermedades Cardiovasculares"){
@@ -143,7 +124,7 @@ $('<div></div>').appendTo('form')
 								"Otro. Especifique"]
 		    temaValue = enfermedadesCardiovasculares;
 		}
-		if(temaValue =="Enfermedades Infecciosas"){
+			if(temaValue =="Enfermedades Infecciosas"){
 		    var enfermedadesInfecciosas = [
 		    							"Enfermedad diarreica aguda en menores de 5 años",
 		    							"Infecciones Nosocomiales",
@@ -157,18 +138,21 @@ $('<div></div>').appendTo('form')
 		    temaValue = accidentesViolencia;
 		}
 		if(temaValue =="Cáncer"){
-		    var cancer = ["Cáncer de mama", "Cáncer cérvico-uterino", "Otro." ]
+		    var cancer = ["Cáncer de mama",
+						"Cáncer cérvico-uterino",
+						"Otro." ]
 		    temaValue = cancer;
 		}
 		if(temaValue =="Enfermedades crónicas"){
-		    var enfermedadesCronicas = ["Enfermedad hepática crónica","Otro. Especifique"]
+		    var enfermedadesCronicas = ["Enfermedad hepática crónica",
+										"Otro. Especifique"]
 		    temaValue = enfermedadesCronicas;
 		}
 		if(temaValue =="Enfermedades emergentes"){
 		    var enfermedadesEmergenes = ["Especifique"]
 		    temaValue = enfermedadesEmergenes;
 		}
-		if(temaValue =="Envejecimiento"){
+			if(temaValue =="Envejecimiento"){
 		    var envejecimiento = ["Especifique"]
 		    temaValue = envejecimiento;
 		}
@@ -265,20 +249,18 @@ $('<div></div>').appendTo('form')
 						"Terapía Endovascular Neurológica",
 						"Urgencias Médico Quirúrgicas",
 						"Urología",
-						"Urología Ginecológica", 
+						"Urología Ginecológica",
 						"Otro. Especifique"]
 		    temaValue = otros;
 		}
-
-	 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]' onchange='changeSubTemaPrioritario()'>";
-	    newTema+="<option>Subtema Prioritario</option>";
+			 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]'>";
+	    	newTema+="<option>Subtema Prioritario</option>";
 	    for (var item in temaValue) {
-        newTema +="<option>"+temaValue[ item ]+"</option>";
-    }
+        	newTema +="<option>"+temaValue[ item ]+"</option>";
+    	}
 
-    	newTema+="</select></span>";
-
-    	$("#comboSubTemaPrioritario").html(newTema);
+    		newTema+="</select></span>";
+    		$("#comboSubTema").html(newTema);
   }
 </script>
 
@@ -293,10 +275,10 @@ $('<div></div>').appendTo('form')
 	'enableAjaxValidation'=>true,
 )); ?>
 
-	<?php //echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model); ?>
 <div id="section1" class="sections" >
 	<div class="row">
-		<?php 
+		<?php
 			if(Yii::app()->user->Rol->id == 1){
 				$researcher = "";
 				if(!$model->isNewRecord){
@@ -310,9 +292,9 @@ $('<div></div>').appendTo('form')
 				    'name'=>'Projects[id_curriculum]',
 				    'id'=>'id_curriculum',
 				    'value'=>$researcher,
-				    'source'=>$this->createUrl('/sponsorship/getResearchers'),  
+				    'source'=>$this->createUrl('/sponsorship/getResearchers'),
 				    'options'=>array(
-				        'minLength'=>'0' 
+				        'minLength'=>'0'
 				    ),
 				));
 			}
@@ -329,14 +311,20 @@ $('<div></div>').appendTo('form')
 	</span>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
-
+		<div class="row recopyRType">
+			<?php echo $form->dropDownList($model,'research_type',array('Biomédica'=>'Biomédica','Clínica'=>'Clínica','Educativa'=>'Educativa','Epidemiológica'=>'Epidemiológica','Servicios de Salud'=>'Servicios de Salud','otra'=>'otra'),array('prompt'=>'Seleccione un tipo de Investigación','name'=>'research_types[]','title'=>'Tipo de Investigación')); ?>
+			<?php echo $form->error($model,'research_type'); ?>
+		</div>
+		<div class="row">
+			<?php
+				$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+					'targetClass'=>'recopyRType',
+					'addButtonLabel'=>'Agregar tipo de investigación',
+				)); 
+	 		?>
+     	</div>
 	<div class="row">
-		<?php echo $form->textField($model,'research_type',array('size'=>60,'maxlength'=>250,'placeholder'=>'Tipo de Investigación','title'=>'Tipo de Investigación')); ?>
-		<?php echo $form->error($model,'research_type'); ?>
-	</div>
 
-	<div class="row">
-		<span class="plain-select">
 		<?php echo $form->dropDownList($model,'priority_topic',array('Accidentes y Violencia'=>'Accidentes y Violencia',
 																	'Cáncer'=>'Cáncer',
 																	'Discapacidad e Incapacidad'=>'Discapacidad e Incapacidad',
@@ -348,11 +336,13 @@ $('<div></div>').appendTo('form')
 																	'Envejecimiento'=>'Envejecimiento',
 																	'Muertes evitables (incluidas muerte materna y perinatal)'=>'Muertes evitables (incluidas muerte materna y perinatal)',
 																	'Salud Mental y Adicciones'=>'Salud Mental y Adicciones',
-																	'Otros'=>'Otros'),array('prompt'=>'Tema prioritario','title'=>'Tema prioritario','id'=>'temaPrioritorio', 'onchange'=>'changeSubTemaPrioritario()')); ?>
-		</span>
+																	'Otros'=>'Otros'),array('prompt'=>'Tema prioritario','title'=>'Tema prioritario','id'=>'tema', 'onchange'=>'changeSubTema()')); ?>
 		<?php echo $form->error($model,'priority_topic'); ?>
 	</div>
-	<div class="row"id="comboSubTemaPrioritario"></div>
+	<div class="row" id="comboSubTema">
+
+  	</div>
+
 
 	<div class="row">
 		<?php echo $form->textArea($model,'justify',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación para el tema seleccionado','title'=>'Justificación para el tema seleccionado')); ?>
@@ -372,21 +362,21 @@ $('<div></div>').appendTo('form')
 	</div>
 
 	<div class="row">
-		Resumen del investigador.
+		Datos del investigador.
 	</div>
 
-		<?php
-			$persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
-			$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
-			$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id));
-			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
-			$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
-			$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id)); 
-				
-				
-		 	$this->widget('zii.widgets.CDetailView', array(	
+		<?php   $persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+				$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
+				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id,'is_primary'=>1));
+				$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+				$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+
+
+			 $this->widget('zii.widgets.CDetailView', array(
 			'data'=>$persons,
 			'attributes'=>array(
+
 				array(
 					'label'=>'Nombre(s):',
 					'value'=>$persons->names,
@@ -398,33 +388,43 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
+<<<<<<< HEAD
 					),  
+=======
+					),
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
 				array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
-					), 
+					),
 				array(
-					'label'=>'Correo Eléctronico:',
+					'label'=>'Email:',
 					'value'=>$emailUsers->email,
 					),
 				array(
-					'label'=>'Télefono:',
-					'value'=>$phoneUsers->phone_number.' Ext '.$phoneUsers->extension,
-					),  
+					'label'=>'Telefono:',
+					'value'=>$phoneUsers != null ? $phoneUsers->phone_number.' Ext '.$phoneUsers->extension : " ",
+					),
 				array(
-					'label'=>'Adscripción Unidad Hospitalaria:',
-					'value'=>$jobsUsers->hospital_unit,
+					'label'=>'Unidad hospitalaria:',
+					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
+<<<<<<< HEAD
 					), 
+=======
+					),
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
 				array(
-					'label'=>'Máximo grado de estudios:',
-					'value'=>$gradesUsers->grade,
-					), 
+				     'label'=>'Máximo grado de estudios:',
+				     'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
+				     ),
+
 				array(
 					'label'=>'¿Pertenece al SNI?',
-					'value'=>$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
-					),   
+					'value'=>$curriculum != null ? $curriculum->SNI :
+					$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
+					),
 			),
-		)); 
+		));
 		?>
 
 	<div class="row">
@@ -524,12 +524,12 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		<?php echo $form->error($model,'adtl_caracteristics_a'); ?>
 	</div>
 	<div class="row">
-	<p>B) Protocolos que contemplen cambios en la política institucional sobre la presentación de servicios de salud</p>
+	<p>B) Protocolos que contemplen cambios en la polótica institucional sobre la presentación de servicios de salud</p>
 		<?php echo $form->textArea($model,'adtl_caracteristics_b',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_b'); ?>
 	</div>
 	<div class="row">
-	<p>C) Protocolos planeados para realizarse entre los Hospitales Civiles de Guadalajara y otras insituciones nacionales o extrajeras.</p>
+	<p>C) Protocolos planeados para realizarse entre el instituto Mexicano del Seguro Social y otras insituciones nacionales o extrajeras.</p>
 		<?php echo $form->textArea($model,'adtl_caracteristics_c',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_c'); ?>
 	</div>
@@ -544,7 +544,7 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		<?php echo $form->error($model,'adtl_caracteristics_e'); ?>
 	</div>
 	<div class="row">
-	<p>F) Protocolos que se realicen en más de una unidad de los Hospitales Civiles de Guadalajara con la participación de pacientes, muestras o datos</p>
+	<p>F) Protocolos que se realicen en más de una unidad del Instituo Mexicano del seguro Social con la participación de pacientes, muestras o datos</p>
 		<?php echo $form->textArea($model,'adtl_caracteristics_f',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
 		<?php echo $form->error($model,'adtl_caracteristics_f'); ?>
 	</div>
@@ -558,17 +558,24 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 
 	<div class="row buttons">
 
+<<<<<<< HEAD
 		<?php 
-		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
-		
-		echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
+=======
+		<?php
+		var_dump($model->isNewRecord);
+		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');
 
-		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
+		//echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
+		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
 		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
-		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send','".($model->isNewRecord ? 'create' : 'update')."/".(isset($_GET['id']) ? $_GET['id'] : 0)."')",'style'=>'display:none;','class'=>'savepro'));
+		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
+
+
 		?>
+
 	</div>
 
 <?php $this->endWidget(); ?>

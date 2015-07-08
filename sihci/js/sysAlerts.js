@@ -23,6 +23,13 @@ $(document).ready(function() {
     return false;
   });
 
+  setInterval(function() {
+    $(".notification").effect("highlight", {
+      color: '#798B9D'
+    }, 1000);
+  }, 100);
+
+
   function backSuccesAlert(backurl) {
     window.location = yii.urls.createUrl + '/' + actionUrl
 

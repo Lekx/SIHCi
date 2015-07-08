@@ -24,7 +24,7 @@ function lettersOnly(e)
  	key = e.keyCode || e.which;
  	tecla = String.fromCharCode(key).toLowerCase();
  	letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
- 	especiales = [8,37,39,46,45,47];
+ 	especiales = [8,9,37,39,46,45,47];
 
 	 tecla_especial = false
  		for(var i in especiales)
@@ -40,7 +40,7 @@ function lettersOnly(e)
      		return false;
 }
 </script>
-</script>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(

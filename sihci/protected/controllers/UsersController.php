@@ -36,17 +36,17 @@ class UsersController extends Controller {
 
 	public function activateAccount($to,$activationKey){
 		$sihci = "From: SIHCI";
-		
+
 
  		$subject = "Activación de cuenta.";
- 		$body = ' 
+ 		$body = '
 		 Activación de Cuenta.
-		  
+
 		    Le damos la cordial bienvenida a el sistema SIHCi, para activar su cuenta solo debe dar clic en el siguiente enlace. http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.$activationKey.'
-		 
+
 		   Si usted no se ha registrado en nuestro sitio, por favor hacer caso omiso de éste correo.
-		
-		 '; 
+
+		 ';
 
 		if(!mail($to,$subject,$body)){
 		  echo"Error al enviar el mensaje.";
@@ -54,14 +54,14 @@ class UsersController extends Controller {
 	}
 
 	public function actionCreate() {
-		
+
 		$model = new Users;
 		$modelPersons = new Persons;
 
 		//$this->performAjaxValidation($model);
 		//$this->performAjaxValidation($modelPersons);
 		if(isset($_POST['Users'])) {
-			$model->Rol->id = '1';
+			$model->id_roles = '3';
 			$model->attributes = $_POST['Users'];
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
@@ -111,13 +111,13 @@ class UsersController extends Controller {
 												$log->save();
 												echo "202";
 											}else
-												echo "Ha ocurrido un error al crear el registro (CU03)";	
+												echo "Ha ocurrido un error al crear el registro (CU03)";
 										}else
 											echo "Ha ocurrido un error al crear el registro (CU02)";
 
 									}else
 										echo "Ha ocurrido un error al crear el registro (CU01)";
-								
+
 							}else
 								echo "Ya hay una cuenta registrada con este CURP.";
 						}

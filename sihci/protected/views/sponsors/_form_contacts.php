@@ -3,25 +3,7 @@
 /* @var $model SponsorsContacts */
 /* @var $form CActiveForm */
 ?>
-<script>
-	function lettersOnly(e){
-		key = e.keyCode || e.which;
-		tecla = String.fromCharCode(key).toLowerCase();
-		letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
-		especiales = [8,37,39,46,45,47];
 
-		tecla_especial = false
-	 	for(var i in especiales){
-	     	if(key == especiales[i]){
-	  			tecla_especial = true;
-  		break;
-           	} 
- 	}
- 
-        if(letras.indexOf(tecla)==-1 && !tecla_especial)
-     return false;
-     }
-</script>
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -75,8 +57,11 @@ foreach ($fullname as $value) {
 
 
 <div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+	<?php echo CHtml::htmlButton('Enviar',array(
+							'onclick'=>'send("sponsors-contacts-form", "sponsors/create_contacts", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+							'class'=>'savebutton',
+					));
+	?>		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 
 

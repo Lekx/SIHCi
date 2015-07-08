@@ -4,7 +4,8 @@ class SiteController extends Controller {
 	/**
 	 * Declares class-based actions.
 	 */
-	public function actions() {
+	
+	/*public function actions() {
 		return array(
 			// captcha action renders the CAPTCHA image displayed on the contact page
 			'captcha' => array(
@@ -17,9 +18,14 @@ class SiteController extends Controller {
 				'class' => 'CViewAction',
 			),
 		);
-	}
+	}*/
+	
+ 	public function actionSessionTimeout()
+    {
+        $this->render('sessionTimeout');
+    }
 
- 	/**
+	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
@@ -149,24 +155,24 @@ class SiteController extends Controller {
 
 			if ($model->validate() && $is_active != null) {
 
-				
+
 				$key = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
 				$is_active->act_react_key = $key;
 				$is_active->save();
 				$subject = "Has solicitado recuperar tu contraseña en: ";
 				$subject .= Yii::app()->name;
 				$body = "
-			
+
 					Has solicitado recuperar tu contraseña
-				
+
 					Haz click en ésta liga para cambiar tu contraseña
-				   
+
 				    http://sgei.hcg.gob.mx/sihci/sihci/index.php/site/changePassword?key=" . $key . ">";
-				
+
 				if(!mail($model->email,$subject,$body)){
 				  echo"Error al enviar el mensaje.";
 				}
-				
+
 
 				$model->email = "";
 				echo '200';
@@ -219,7 +225,7 @@ class SiteController extends Controller {
 						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 					$this->redirect(Yii::app()->homeUrl);
 				}
-						
+
 			}
 			}
 		} else {

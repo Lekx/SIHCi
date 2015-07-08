@@ -40,8 +40,10 @@
         $(".successdiv").show();
 
           $('.backbut').click(function() {
-             window.location = yii.urls.createUrl + "/" + redirectUrl;
-         });
+
+
+            window.location = yii.urls.createUrl + "/" + redirectUrl;
+           });
       }
     },
     complete: function(data) {},

@@ -29,7 +29,7 @@
 	
 	<?php echo $form->error($model,'doc_id'); ?>
 	<div class="row">
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta', 'title'=>'Acta'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta', 'title'=>'Acta de Nacimiento'));?>
 		
 	</div>
 	
