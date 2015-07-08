@@ -194,6 +194,7 @@ class ProjectsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -218,11 +219,12 @@ class ProjectsController extends Controller
 			$model->registration_number = "-1";
 
 			//var_dump($_POST['research_types']);
-
+			$newRtypes ="";
 			foreach ($_POST['research_types'] as $key => $value) {
 				if(!empty($value))
-					$model->research_type.=$value."*-*";
+					$newRtypes.=$value."*-*";
 			}
+			$model->research_type = $newRtypes;
 
 		if($model->validate()){
 			if($model->save()){

@@ -24,7 +24,10 @@
     success: function(response) {
       var data = JSON.parse(response);
       if (data['status'] != 'success') {
-
+      if (("message" in data)) {
+          $(".errorh2 h2").html(data['message']);
+          $(".errorh2 span").html(data['subMessage']);
+        }
         $(".errordiv").show();
         for (var key in data) {
           $("#" + key + "_em_").show();
@@ -44,13 +47,6 @@
 
             window.location = yii.urls.createUrl + "/" + redirectUrl;
            });
-
-             window.location = yii.urls.createUrl + "/" + redirectUrl;
-         });
-
-
-             window.location = yii.urls.createUrl + "/" + redirectUrl;
-         });
 
       }
     },
