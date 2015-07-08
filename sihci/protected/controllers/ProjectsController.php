@@ -132,8 +132,17 @@ class ProjectsController extends Controller
 			$model->is_sponsored = 0; 
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
+
+			//var_dump($_POST['research_types']);
+
+			foreach ($_POST['research_types'] as $key => $value) {
+				if(!empty($value))
+					$model->research_type.=$value."*-*";
+			}
+
 		if($model->validate()){
 			if($model->save()){
+
 				foreach ($_POST['adtlResearchers'] as $key => $value) {
 					if(!empty($value)){
 						$adtlRes = new ProjectsCoworkers;
@@ -207,8 +216,17 @@ class ProjectsController extends Controller
 			$model->is_sponsored = 0; 
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
+
+			//var_dump($_POST['research_types']);
+
+			foreach ($_POST['research_types'] as $key => $value) {
+				if(!empty($value))
+					$model->research_type.=$value."*-*";
+			}
+
 		if($model->validate()){
 			if($model->save()){
+
 				foreach ($_POST['adtlResearchers'] as $key => $value) {
 					if(!empty($value)){
 						$adtlRes = new ProjectsCoworkers;
@@ -246,7 +264,7 @@ class ProjectsController extends Controller
 		}
 		}else{
 
-		$this->render('create',array(
+		$this->render('update',array(
 			'model'=>$model,'discipline'=>$this->discipline
 		));
 		}

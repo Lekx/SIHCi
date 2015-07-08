@@ -69,32 +69,8 @@ $('<div></div>').appendTo('form')
 			$("#back").hide();
 		else
 			$("#back").show();
-
-
-		//alert("ouch, you fucked me bby! "+section);
 		$("#section"+section).show();
 	}
-/*	function ajaxSave(value,type){
-		var request = $.ajax({
-		  url: yii.urls.base+"/index.php/projects/"+type,
-		  method: "POST",
-		  data: $("#projects-form").serialize()+"&type="+value,
-		  dataType: "json",
-		  success: function(response) {
-		  	alert(response+" as as dfas ");
-		  }
-
-		});
-
-			request.done(function(data) {
-				alert(data);
-				window.location = yii.urls.cancelProject;
-		});
-		/*request.fail(function(data) {
-				alert(data);
-				window.location = yii.urls.cancelProject;
-		});*/
-
 	function save(value){
 
 		$('input[type="hidden"]').attr('disabled', true);
@@ -336,7 +312,7 @@ $('<div></div>').appendTo('form')
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
 		<div class="row recopyRType">
-			<?php echo $form->dropDownList($model,'research_type',array('Biomédica'=>'Biomédica','Clínica'=>'Clínica','Educativa'=>'Educativa','Epidemiológica'=>'Epidemiológica','Servicios de Salud'=>'Servicios de Salud','otra'=>'otra'),array('prompt'=>'Seleccione un tipo de Investigación','title'=>'Tipo de Investigación')); ?>
+			<?php echo $form->dropDownList($model,'research_type',array('Biomédica'=>'Biomédica','Clínica'=>'Clínica','Educativa'=>'Educativa','Epidemiológica'=>'Epidemiológica','Servicios de Salud'=>'Servicios de Salud','otra'=>'otra'),array('prompt'=>'Seleccione un tipo de Investigación','name'=>'research_types[]','title'=>'Tipo de Investigación')); ?>
 			<?php echo $form->error($model,'research_type'); ?>
 		</div>
 		<div class="row">
@@ -344,7 +320,7 @@ $('<div></div>').appendTo('form')
 				$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 					'targetClass'=>'recopyRType',
 					'addButtonLabel'=>'Agregar tipo de investigación',
-				));
+				)); 
 	 		?>
      	</div>
 	<div class="row">
@@ -412,7 +388,11 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
+<<<<<<< HEAD
+					),  
+=======
 					),
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
 				array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
@@ -428,7 +408,11 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Unidad hospitalaria:',
 					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
+<<<<<<< HEAD
+					), 
+=======
 					),
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
 				array(
 				     'label'=>'Máximo grado de estudios:',
 				     'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
@@ -574,13 +558,16 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 
 	<div class="row buttons">
 
+<<<<<<< HEAD
+		<?php 
+=======
 		<?php
 		var_dump($model->isNewRecord);
 		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');
 
 		//echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
+>>>>>>> 0e357f3dcf912d88580228ae714b6b0f2462277d
 		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
-		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
 		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
 		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));

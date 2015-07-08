@@ -22,7 +22,7 @@ $form=$this->beginWidget('CActiveForm', array(
     </div>
 
     <?php echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.$_GET['id'].'","")',
+                'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
                 'class'=>'savebutton',
             ));
     ?>
