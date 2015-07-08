@@ -173,8 +173,7 @@
                     <div class="fullnamed"><h5>
 
                         <?php echo Yii::app()->user->fullname; ?>
-                    </h5></div>
-
+                    </h5> <h6>(<?php echo Yii::app()->user->Rol->name; ?>)</h6></div>
                     <div class="typelabe">
                         <?php
                             echo "<h6>".$infoUser['label']."</h6>";
