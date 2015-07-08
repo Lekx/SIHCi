@@ -11,7 +11,7 @@ $form=$this->beginWidget('CActiveForm', array(
 
     <div class="row">
         <?php echo $form->labelEx($model,'Seguimiento'); ?>
-        <?php echo $form->textArea($model,'followup',array('rows'=>6, 'cols'=>50)); ?>
+        <?php echo $form->textArea($model,'followup',array('rows'=>6, 'cols'=>50, 'title'=>'Seguimiento')); ?>
         <?php echo $form->error($model,'followup'); ?>
     </div>
 
