@@ -445,9 +445,9 @@
                 </div>
             </div>
             <div class="loader">
-              <div class="loadspin">
-
+              <div class="pulse">
               </div>
+                <div class="heart"></div>
             </div>
             <div class="footer">
                 <div class="footermenu1">
