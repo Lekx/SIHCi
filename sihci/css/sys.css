@@ -2059,6 +2059,69 @@ div.pager span.active
 
 }
 
+
+.fa-heart {
+
+  margin: auto;
+  height: 240px;
+  width: 240px;
+  margin-top: calc(50vh - 100px);
+
+  color: #0A324F;
+  font-size: 240px;
+  display: block;
+  text-align: center;
+
+ -moz-animation-duration: 3s;
+  -webkit-animation-duration: 2s;
+  -moz-animation-name: wave;
+  -webkit-animation-name: wave;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite
+}
+
+@-moz-keyframes wave {
+  from {
+    font-size: 240px;
+  }
+  10%{
+    font-size: 210px;
+  }
+  15%{
+    font-size: 200px;
+  }
+  20% {
+    font-size: 240px;
+  }
+  50% {
+    font-size: 215px;
+  }
+  to {
+    font-size: 235px;
+  }
+}
+
+@-webkit-keyframes wave {
+  from {
+    font-size: 240px;
+  }
+  10%{
+    font-size: 210px;
+  }
+  15%{
+    font-size: 200px;
+  }
+  20% {
+    font-size: 240px;
+  }
+  50% {
+    font-size: 215px;
+  }
+  to {
+    font-size: 235px;
+  }
+}
+/*
 .heart {
 
   margin: 100px auto;
@@ -2066,11 +2129,10 @@ div.pager span.active
   width: 110px;
   margin-top: calc(50vh - 40px);
 
-
   background: #0A324F;
-  transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg)!important;
+  -ms-transform: rotate(-45deg)!important;
+  -webkit-transform: rotate(-45deg)!important;
   -webkit-border-radius: 100% 100% 100% 0px;
   border-radius: 100% 100% 100% 0px;
 }
@@ -2095,9 +2157,9 @@ div.pager span.active
   height: 110px;
   -webkit-border-radius: 100% 100% 100% 0px;
   border-radius: 100% 100% 100% 0px;
-}
+  left: 0;
 
- /* pulse animation */
+} /* pulse animation */
 
 
 .pulse {

@@ -447,7 +447,7 @@
             <div class="loader">
               <div class="pulse">
               </div>
-                <div class="heart"></div>
+              <i class="fa fa-heart fa-5x"></i>
             </div>
             <div class="footer">
                 <div class="footermenu1">
