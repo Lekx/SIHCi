@@ -53,12 +53,23 @@
 		'registration_number',
 	),
 )); 
-if($model->status == Yii::app()->user->Rol->alias){
-echo CHtml::htmlButton('Enviar a siguiente',array(
+if(in_array(Yii::app()->user->Rol->alias, explode(",",$model->status))){
 
-                'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "projectsReview/review'.(isset($_GET['id']) ? "/".$_GET['id'] : "").'", "'.Yii::app()->user->Rol->alias.'");',
-                'class'=>'savebutton',
-            ));
+	$rejectRol = Yii::app()->user->Rol->alias;
+	//echo substr(Yii::app()->user->Rol->alias,1,3);
+	if(Yii::app()->user->Rol->alias == "SEUH" || substr(Yii::app()->user->Rol->alias,0,3) == "COM"){
+
+
+		echo CHtml::htmlButton('Rechazar',array(
+			'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "projectsReview/review'.(isset($_GET['id']) ? "/".$_GET['id'] : "").'", "reject'.Yii::app()->user->Rol->alias.'");',
+			'class'=>'savebutton',
+		));
+	}
+
+	echo " ".CHtml::htmlButton('Aprobar',array(
+            'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "projectsReview/review'.(isset($_GET['id']) ? "/".$_GET['id'] : "").'", "'.Yii::app()->user->Rol->alias.'");',
+            'class'=>'savebutton',
+        ));
 ?>
 <div class="row">
 <?php $this->renderPartial('../projectsReview/_form', array('model'=>$modelfollowup)); ?>
