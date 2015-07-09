@@ -34,4 +34,5 @@ $(document).ready(function() {
     window.location = yii.urls.createUrl + '/' + actionUrl
 
   }
+
 });

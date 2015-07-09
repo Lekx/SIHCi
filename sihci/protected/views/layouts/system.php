@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sys.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/projects.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
@@ -34,6 +35,7 @@
                     $cs->registerScriptFile($baseUrl . '/js/evaluateCV.js');
                     $cs->registerScriptFile($baseUrl . '/js/ajaxfile.js');
                     $cs->registerScriptFile($baseUrl . '/js/numbersLettersOnly.js');
+                    $cs->registerScriptFile($baseUrl . '/js/projects.js');
         ?>
         <?php
                     Yii::app()->clientScript->registerScript('helpers', '
