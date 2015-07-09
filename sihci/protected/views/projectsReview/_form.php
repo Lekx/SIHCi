@@ -24,6 +24,7 @@ $form=$this->beginWidget('CActiveForm', array(
     <?php echo CHtml::htmlButton('Enviar',array(
                 'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","")',
                 'class'=>'savebutton',
+                'id'=>'createFollowup',
             ));
     ?>
 <?php $this->endWidget(); ?>

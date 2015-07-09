@@ -37,6 +37,9 @@ echo CHtml::link('Crear Nuevo',array('create',
 						                     var data = JSON.parse(data);
 						                     $('#follow').html('Seguimiento -'+ data['id'] + ' ' + data['date']);
 						                     $('#followup').html(data['followup']);
+						                     $('#createFollowup').attr('onclick', '');
+
+						                   
 						                  }",
 						    'data' => array('id' => $followups[$key]->id,)
 						  ),

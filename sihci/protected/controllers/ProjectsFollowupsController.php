@@ -65,7 +65,6 @@ class ProjectsFollowupsController extends Controller
 		$model=new ProjectsFollowups;
 
 		// Uncomment the following line if AJAX validation is needed
-		
 		$this->performAjaxValidation($model);
 		
 		if(isset($_POST['ProjectsFollowups']))
