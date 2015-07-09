@@ -15,6 +15,26 @@ class FilesManagerController extends Controller
 		);
 	}
 
+	public function accessRules()
+	{
+		return array(
+				
+				array('allow',
+					'actions'=>array('index','create','update','delete','admin','view'),					
+					'expression'=>'($user->Rol->alias==="ADMIN" || $user->Rol->alias==="JIOPD")',
+					'users'=>array('@'),
+				),
+				array('allow',
+					'actions'=>array('displayFiles'),
+					'users'=>array('*'),
+				),
+				array('deny',
+					'users'=>array('*'),
+				),
+
+			);
+	}
+
 
 	public function actionView($id)
 	{

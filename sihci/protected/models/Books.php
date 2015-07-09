@@ -64,7 +64,7 @@ class Books extends CActiveRecord
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'insert','safe' => false,  'maxSize'=>1024 * 1024 * 5),
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'update','safe' => false,  'maxSize'=>1024 * 1024 * 5),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'update','allowEmpty'=>true,'safe' => false,  'maxSize'=>1024 * 1024 * 5),
 			
 			
 			//array('path','file','maxSize'=>array(1024 * 5000), 'message'=>'El Documento excede el peso permitido'),

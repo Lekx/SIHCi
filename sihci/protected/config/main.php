@@ -49,7 +49,7 @@ return array(
 
 	// application components
 	'components'=>array(
-/*
+		/*
 	   'session' => array(
 	   	  'autoStart'=>false,
 	      'class' => 'CDbHttpSession',
