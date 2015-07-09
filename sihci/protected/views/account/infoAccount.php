@@ -4,8 +4,8 @@ $this->menu = array(
     array('label' => 'Datos de Cuenta', 'url' => array('account/infoAccount')),
     array('label' => 'Bitacora', 'url' => array('account/systemLog')),
 
-    
-    
+
+
 );
 ?>
 

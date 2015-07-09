@@ -103,25 +103,19 @@ $this->renderPartial('_search',array(
 			'value' => array($this, 'usersCurpPassport'), 'type' => 'raw',
 		),
 		'registration_date',
-		'status',
 
 		 array(
 		 	'type'=>'raw',
 		 	'header' => 'Rol',
-          	'value'=>'CHtml::dropDownList($data->id,$data->id_roles,'.$rolesList.',array("onchange"=>"changeRol($data->id)","id"=>"rol".$data->id))'),
-
-		/* array(
-		 	'type'=>'raw',
-		 	'header' => 'Estatus Usuario',
-          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array("onchange"=>"changeStatus($data->id)","id"=>"status".$data->id))'),*/
-						array(
-					 	'type'=>'raw',
-					 	'header' => 'Estatus Usuario',
-			          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatus\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"status".$data->id))'),
+      'value'=>'CHtml::dropDownList($data->id,$data->id_roles,'.$rolesList.',array("onchange"=>"send(\"\",\"AdminUsers/changeRol\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"id_roles".$data->id))'),
+		array(
+			'type'=>'raw',
+			'header' => 'Estatus Usuario',
+			'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatus\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"status".$data->id))'),
 			array(
 		 	'type'=>'raw',
 		 	'header' => 'Estatus Curriculum',
-          	'value'=>'!is_null(Curriculum::model()->findByPk($data->id)) ? CHtml::dropDownList(Curriculum::model()->findByPk($data->id)->id,Curriculum::model()->findByPk($data->id)->status,array(1 => "Activo" , 0 => "Inactivo"),array("onchange"=>\'changeStatusCurriculum(1)\')) : ""'),
+          	'value'=>'!is_null(Curriculum::model()->findByAttributes(array("id_user" => $data->id))) ? CHtml::dropDownList(Curriculum::model()->findByPk($data->id)->id,Curriculum::model()->findByPk($data->id)->status,array("1" => "Activo" , "0" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatusCurriculum\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"curriculum".$data->id)) : ($data->type == "fisico" ? "curriculum sin llenar" : "Usuario Moral")'),
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {delete} {login}', 'header' => 'Acciones',
 				'buttons' => array(
@@ -135,6 +129,7 @@ $this->renderPartial('_search',array(
 				'delete' => array(
 				'label' => 'Eliminar.',
 				'url'=> '"AdminUsers/deleteUser?id=".$data->id'),
+
 
 
 				),
