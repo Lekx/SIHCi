@@ -142,7 +142,14 @@ $this->menu=array(
 ?>
 </section>
 <section class="projects5">
-<?php $this->widget('zii.widgets.CDetailView', array(
+
+<?php
+
+$coworkers = "";
+ foreach ($model->projectsCoworkers as $key => $value) {
+ 	$coworkers .=$value->fullName.". ";
+ }
+$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'status',
@@ -157,10 +164,14 @@ $this->menu=array(
 			array(
 					'label'=>'Número de registro',
 					'value'=>$model->registration_number == -1 ? "No asignado" : $mode->folio,
-				),
+				),	array(
+							'label'=>'Investigadores colaboradores',
+							'value'=>$coworkers,
+							),
 
 	),
 ));
+
 
 ?>
 </section>
