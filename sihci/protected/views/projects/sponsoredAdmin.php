@@ -39,9 +39,9 @@ echo "</pre>"; */
 
 <?php
 $mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id))->search();
-//var_dump($mod);
-?>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+
+
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'sponsorship-grid',
 	'dataProvider'=>$mod,
 	//'filter'=>$model,

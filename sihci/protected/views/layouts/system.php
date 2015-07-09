@@ -142,8 +142,17 @@
                       if(Yii::app()->user->Rol->id > 10)
                       {
                         $conection = Yii::app()->db;
-                        $pPro = $conection->createCommand("SELECT count(p.id) as X FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".Yii::app()->user->Rol->alias."' ")->queryAll();
-                        if(!empty($pPro)){
+                      $rol = Yii::app()->user->Rol->alias;
+
+                      $condition = "WHERE p.status = '".$rol."'";
+                      
+                      if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
+                        $condition = "WHERE p.status LIKE '%".$rol."%'";
+
+
+                        $pPro = $conection->createCommand("SELECT count(distinct p.id) AS X FROM projects AS p INNER JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition)->queryAll();
+
+                        if($pPro > 0){
                           echo "<div class='notification'>";
                           echo $pPro[0]["X"];
                           echo "</div>";
@@ -164,8 +173,7 @@
                     <div class="fullnamed"><h5>
 
                         <?php echo Yii::app()->user->fullname; ?>
-                    </h5></div>
-
+                    </h5> <h6>(<?php echo Yii::app()->user->Rol->name; ?>)</h6></div>
                     <div class="typelabe">
                         <?php
                             echo "<h6>".$infoUser['label']."</h6>";
@@ -445,9 +453,9 @@
                 </div>
             </div>
             <div class="loader">
-              <div class="loadspin">
-
+              <div class="pulse">
               </div>
+              <i class="fa fa-heart fa-5x"></i>
             </div>
             <div class="footer">
                 <div class="footermenu1">
