@@ -2262,3 +2262,10 @@ div.pager span.active
  }
 
 }
+
+/* CHANGES STATUS COLOR OF IMPORTANT ROWS FOR PROJECTS SECTION */
+.checkThisItem{
+    background-color: red !important; 
+}
+
+
