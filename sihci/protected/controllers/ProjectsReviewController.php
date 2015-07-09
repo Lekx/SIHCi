@@ -136,6 +136,8 @@ class ProjectsReviewController extends Controller
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
+            if(isset($_POST[1]))
+            	$modelfollowup->id_fucom = $_POST[1];
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
 			if($modelfollowup->validate() == 1){

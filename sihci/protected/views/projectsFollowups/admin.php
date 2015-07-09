@@ -23,9 +23,6 @@ echo CHtml::link('Crear Nuevo',array('create',
 		
 
 		foreach ($followups as $key => $value) {
-
-			// echo " ".date("d/m/Y H:i:s", strtotime($followups[$key]->creation_date))." ";
-			//ajaxlink
 			echo CHtml::ajaxLink(
 						  " ".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
 						  Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
@@ -36,9 +33,14 @@ echo CHtml::link('Crear Nuevo',array('create',
 						                  {
 						                     var data = JSON.parse(data);
 						                     $('#follow').html('Seguimiento -'+ data['id'] + ' ' + data['date']);
-						                     $('#followup').html(data['followup']);
-						                     $('#createFollowup').attr('onclick', '');
+						                     var dataIDP = data['id_project'];
+						                     var dataIDF = data['id'];
 
+						                     $('#followup').html(data['followup']);
+						                     alert(dataIDP+' '+dataIDF);
+						                     $('#createFollowup').unbind('onclick');
+						                     $('#createFollowup').attr('onclick', 'send(\'projects-followups-form\', \'projectsReview/review\',\"'+dataIDP+'\" , \'none\', \"'+dataIDF+'\" )');
+			
 						                   
 						                  }",
 						    'data' => array('id' => $followups[$key]->id,)
