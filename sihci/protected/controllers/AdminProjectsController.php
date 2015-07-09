@@ -28,7 +28,7 @@ class AdminProjectsController extends Controller {
 			'actions'=>array('createProject', 'createSponsorship', 
 							 'update', 'deleteProject', 'view', 'index',
 							 'adminProjects', 'getSponsors', 'updateStatusSponsorship', 'updateStatusProject'
-							 ),
+			),
 			'expression'=>'($user->Rol->alias==="ADMIN")',
 			'users'=>array('@'),
 			),

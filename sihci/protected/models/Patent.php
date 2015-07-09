@@ -116,10 +116,10 @@ class Patent extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$sort= new CSort();
-		$sort->defaultOrder='name ASC';
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'name ASC';
 
 
 		if($this->searchValue)
@@ -129,15 +129,8 @@ class Patent extends CActiveRecord
 		}
 
 
-		return new CActiveDataProvider($this, array('criteria'=>$criteria,'sort'=>$sort));
-
-
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>array(
-		        'condition'=>'id_curriculum='.$curriculumId,
-		        'order'=>'presentation_date ASC',
-		    ),
+			'criteria'=>$criteria,
 		));
 
 	}

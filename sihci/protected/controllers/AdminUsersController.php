@@ -26,7 +26,6 @@ class AdminUsersController extends Controller {
 	public function accessRules()
 	{
 		return array(
-
 			array('allow',
 	 			'actions'=>array('deleteUser','update','createUser','adminUsers','view',
 	 				             'changeStatus','changeRol','changeStatusCurriculum','doubleSession','index'
@@ -34,7 +33,11 @@ class AdminUsersController extends Controller {
 	 			'expression'=>'($user->Rol->alias==="ADMIN")',
 	 			'users'=>array('@'),
 	 		),
-
+	 		array('allow',  
+	 			'actions'=>array('view','changeStatus','changeRol','changeStatusCurriculum','index'),
+	 			'expression'=>'($user->Rol->alias==="JIOPD")',
+	 			'users'=>array('@'),
+	 		),	 		
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -480,23 +483,30 @@ class AdminUsersController extends Controller {
 	}
 
 		public function actionChangeRol(){
-		$idRef = $_POST["id"];
-		$idRol = $_POST["idRol"];
+		$idRef = $_POST[1];
+		$idRol = $_POST[2];
 
-		if(Users::model()->updateByPk($idRef, array('id_roles' => $idRol)))
-			echo "Actualizacion realizada con exito.";
-		else
-			echo "Error al actualizar el rol del usuario.";
+		if(Users::model()->updateByPk($idRef, array('id_roles' => $idRol))){
+			echo CJSON::encode(array('status'=>'success'));
+			Yii::app()->end();
+		}else{
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error al cambiar el rol del usuario.'));
+			Yii::app()->end();
+			}
 	}
 
 	public function actionChangeStatusCurriculum(){
-		$idRefc = $_POST["idc"];
-		$valuec = $_POST["valuec"];
+		$idRefc = $_POST[1];
+		$valuec = $_POST[2];
+		//echo $idRefc." - ".$valuec;
 
-		if(Curriculum::model()->updateByPk($idRefc, array('status' => $valuec)))
-			echo "Actualizacion realizada con exito.";
-		else
-			echo "Error al actualizar el estado del usuario.";
+		if(Curriculum::model()->updateByPk($idRefc, array('status'=>(int)$valuec))){
+			echo CJSON::encode(array('status'=>'success'));
+			Yii::app()->end();
+		}else{
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error al cambiar el estatus del curriculum del usuario.'));
+			Yii::app()->end();
+		}
 	}
 
 	public function actionDoubleSession($id){

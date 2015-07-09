@@ -1,5 +1,5 @@
 <?php
-
+//BORRAR
 class SponsorsContactController extends Controller
 {
 	/**

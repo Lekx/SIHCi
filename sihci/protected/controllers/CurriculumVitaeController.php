@@ -18,24 +18,22 @@ class CurriculumVitaeController extends Controller
 		);
 	}
 
-	/*public function accessRules()
+	public function accessRules()
 	{
 		return array(
 
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
-								'DeletePhone', 'DeleteResearch', 'DeleteGrade', 'DeleteDocs',
-								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission', 'Admin'),
-
+			array('allow',
+				'actions'=>array('personalData', 'docsIdentity', 'addresses', 'index', 'deleteEmail',
+								 'deletePhone', 'deleteResearch', 'deleteGrade', 'deleteDocs',
+								   'jobs', 'researchAreas', 'phones', 'grades', 'commission', 'admin'),
 				 'expression'=>'($user->Rol->alias==="ADMIN" || $user->type==="fisico")',
-
 				 'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
-	}*/
+	}
 	public function actionAdmin() {
 		$this->redirect("personalData");
 	}

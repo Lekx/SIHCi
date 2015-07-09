@@ -65,7 +65,6 @@ class ProjectsFollowupsController extends Controller
 		$model=new ProjectsFollowups;
 
 		// Uncomment the following line if AJAX validation is needed
-		
 		$this->performAjaxValidation($model);
 		
 		if(isset($_POST['ProjectsFollowups']))
@@ -111,7 +110,7 @@ class ProjectsFollowupsController extends Controller
 		// var_dump($date);
 		$followupCurrent= ProjectsFollowups::model()->findByAttributes(array('id'=>$id));
 		$date = date("d/m/Y", strtotime($followupCurrent->creation_date));
-		echo CJSON::encode(array('id'=>$followupCurrent->id,'followup'=>$followupCurrent->followup, 'date'=>$date));
+		echo CJSON::encode(array('id'=>$followupCurrent->id,'id_project'=>$followupCurrent->id_project,'followup'=>$followupCurrent->followup, 'date'=>$date));
 		Yii::app()->end();
 		
 	}
