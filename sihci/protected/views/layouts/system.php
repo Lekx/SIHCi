@@ -147,7 +147,7 @@
                       $rol = Yii::app()->user->Rol->alias;
 
                       $condition = "WHERE p.status = '".$rol."'";
-                      
+
                       if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
                         $condition = "WHERE p.status LIKE '%".$rol."%'";
 
@@ -178,7 +178,7 @@
                     </h5> <h6>(<?php echo Yii::app()->user->Rol->name; ?>)</h6></div>
                     <div class="typelabe">
                         <?php
-                            echo "<h6>".$infoUser['label']."</h6>";
+                            echo "<h6>Perfil  :  ".$infoUser['label']."</h6>";
                         ?>
                     </div>
                     <div class="logoutbars">
@@ -188,6 +188,7 @@
                             echo "</h6>";
                         ?>
                     </div>
+
                 </div>
                 <div class="headerconteiner4">
                     <h4>Menú </h4>
@@ -198,6 +199,9 @@
                       switch ($this->uniqueid) {
                         case 'account':
                         $ControllerB = "Cuenta";
+                        break;
+                        case 'sponsors':
+                        $ControllerB = "Perfil Empresa";
                         break;
                         case 'curriculumVitae':
                         $ControllerB = "Currículum vitae electrónico";
@@ -337,6 +341,24 @@
                           break;
                           case 'articlesGuides':
                           $action = "Artículos y Guías";
+                          break;
+                          case 'sponsorsInfo':
+                          $action = "Datos Empresa";
+                          break;
+                          case 'create_docs':
+                          $action = "Documentos Probatorios";
+                          break;
+                          case 'create_persons':
+                          $action = "Datos de Representante";
+                          break;
+                          case 'create_billing':
+                          $action = "Datos de Facturación";
+                          break;
+                          case 'create_contact':
+                          $action = "Datos de Contacto";
+                          break;
+                          case 'create_contacts':
+                          $action = "Datos de Contactos";
                           break;
 
                           default:

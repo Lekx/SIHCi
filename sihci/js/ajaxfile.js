@@ -44,12 +44,12 @@
          $(".errorMessage").hide();
          $(".successdiv").show();
 
-        $('.backbut').unbind().click(function() {
-          if(redirectUrl != "none")
+         $('.backbut').unbind().click(function() {
+           if (redirectUrl != "none")
              window.location = yii.urls.createUrl + "/" + redirectUrl;
-             else
-               $(".successdiv").hide();
-             
+           else
+             $(".successdiv").hide();
+
          });
 
        }
@@ -57,11 +57,12 @@
      complete: function(data) {
        $('.loader').hide();
      },
-     error: function(data) {},
+     error: function(data) {
+       $('.loader').hide();
+     },
      cache: false,
      contentType: false,
      processData: false
    });
    return false;
  }
-
