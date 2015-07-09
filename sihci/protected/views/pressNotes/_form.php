@@ -13,9 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
-	'enableClientValidation'=>true,
-	'htmlOptions' => array('enctype'=>'multipart/form-data'),
-	'clientOptions'=>array('validateOnSubmit'=>true),
+	
 )); ?>
 
 	<!-- <p class="note">Fields with <span class="required">*</span> are required.</p> -->
@@ -108,25 +106,12 @@
 	</div>
 	
 	<div class="row buttons">
-	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('pressNotes/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-        					'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                       
-		                        if(data.status=="success")
-		                        {
-		                             $(".successdiv").show();		                         
-								}		                         
-		                        else
-		                        {
-			                    	$(".errordiv").show(); 
-			                    }       
-		                  	}',                            
-                        ),array('class'=>'savebutton')); 
-        ?>	
-       	   <?php echo CHtml::link('Cancelar',array('pressNotes/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	 <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("press-notes-form","pressNotes/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","pressNotes/admin","");',
+                'class'=>'savebutton',
+            ));
+    	?>
+      <?php echo CHtml::link('Cancelar',array('pressNotes/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	
 	</div>	
 

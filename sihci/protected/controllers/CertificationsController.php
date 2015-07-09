@@ -76,14 +76,14 @@ class CertificationsController extends Controller
      		
 			}else 
      		{
-     			 $error = CActiveForm::validate($model);
+     			$error = CActiveForm::validate($model);
                  if($error!='[]')
                     echo $error;
                  Yii::app()->end();
-     			}      	
 			}
 				
 
+		}
         $this->render('create',array(
 			'model'=>$model,
 		));

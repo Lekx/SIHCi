@@ -92,14 +92,16 @@ class CongressesController extends Controller
 			                    		$modelAuthor->save();
 			              	 		}
 
-				echo CJSON::encode(array('status'=>'200'));
+				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      			//$this->render(array('admin','id'=>$model->id));
      			
      			
 			}else{
-     			echo CJSON::encode(array('status'=>'404'));
-                        Yii::app()->end();
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
      		}
 
 	}
@@ -160,13 +162,15 @@ class CongressesController extends Controller
 
 
 
-				echo CJSON::encode(array('status'=>'200'));
+				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      			//$this->render(array('admin','id'=>$model->id));
 			}else
      		{
-     			echo CJSON::encode(array('status'=>'404'));
-                        Yii::app()->end();
+     			$error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
      		}
 
 		}

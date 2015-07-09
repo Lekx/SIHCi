@@ -9,8 +9,7 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'knowledge-application-form',
 	'enableAjaxValidation'=>true,
-	'enableClientValidation'=>true,
-	'clientOptions'=>array('validateOnSubmit'=>true)	
+	
 	//'enableClientValidation'=>true,
 	//'clientOptions'=>array('validateOnSubmit'=>true,
 	//	)
@@ -53,26 +52,11 @@
 	</div>
 
 	<div class="row question buttons">
-	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('knowledgeApplication/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="success")
-		                         {
-				                   $(".successdiv").show();		                         
-
-		                         }		                         
-		                         else
-		                         {
-			                     	$(".errordiv").show();  
-			                     }       
-		                  	}',                    
-		                    
-                        ),array('class'=>'savebutton')); 
-        ?>
+	  <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("knowledge-application-form","knowledgeApplication/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","knowledgeApplication/admin","");',
+                'class'=>'savebutton',
+            ));
+    	?>
         <?php echo CHtml::link('Cancelar',array('knowledgeApplication/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 				  
