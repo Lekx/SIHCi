@@ -14,7 +14,6 @@
     'id' => 'users-form',
     'enableAjaxValidation'=>true,
     'action'=>$this->createUrl('users/create'),
-    'enableClientValidation'=>true,
 ));?>
 
     <div class="progreesbar">
@@ -138,11 +137,11 @@
         <div class="row buttons">
 
           <?php echo CHtml::htmlButton('Enviar',array(
-                      'onclick'=>'send("users-form", "users/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                      'onclick'=>'send("users-form", "users/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","site","")',
                       'class'=>'savebutton',
                   ));
           ?>
-         </div>
+        </div>
 
         </fieldset>
         <fieldset id="SuccesSignin">
