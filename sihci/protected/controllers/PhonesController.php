@@ -64,11 +64,11 @@ class PhonesController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 
-	//CV01-Registro de datos  
+	//CV01-Registro de datos
 	public function actionCreate()
 	{
-	
-        
+
+
 		$model=new Phones;
 		$emails = new Emails;
 		// Uncomment the following line if AJAX validation is needed
@@ -88,10 +88,10 @@ class PhonesController extends Controller
 										$emails->save();
 										$this->redirect(array('view','id'=>$model->id));
 									}
-								
+
 							}
-				}	
-			
+				}
+
 		}
 
 		$this->render('create',array('model'=>$model, 'emails' =>$emails,));
@@ -103,18 +103,18 @@ class PhonesController extends Controller
 	 * @param integer $id the ID of the model to be updated
 	 */
 
-     //CV02-Modificar registro 
+     //CV02-Modificar registro
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 		$emails = new Emails;
-		 $emails=Emails::model()->find('id_person=:id_person',
-                              array(':id_person'=>Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
-		
-		
+		$emails=Emails::model()->find('id_person=:id_person',
+    array(':id_person'=>Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
+
+
 	// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
+
 		if(isset($_POST['Phones']) && isset($_POST['Emails']))
 		{
 			$model->attributes=$_POST['Phones'];

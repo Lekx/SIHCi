@@ -8,51 +8,82 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ProjectsFollowups', 'url'=>array('index')),
-	array('label'=>'Create ProjectsFollowups', 'url'=>array('create')),
+	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#projects-followups-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
-<h1>Manage Projects Followups</h1>
+<h1>Seguimiento Proyecto</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<?php 
+// echo CHtml::link('Crear Nuevo','create');
+echo CHtml::link('Crear Nuevo',array('create',
+                                         'id'=>$idProject));
+	if($followupCurrent != null){
+		
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+		foreach ($followups as $key => $value) {
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'projects-followups-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'id_project',
-		'id_user',
-		'followup',
-		'url_doc',
-		'creation_date',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+			// echo " ".date("d/m/Y H:i:s", strtotime($followups[$key]->creation_date))." ";
+			//ajaxlink
+			echo CHtml::ajaxLink(
+						  " ".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
+						  Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
+						  array( // ajaxOptions
+						    'type' => 'POST',
+						    'datatype'=> 'json',
+						    'success' => "function( data )
+						                  {
+						                     var data = JSON.parse(data);
+						                     $('#follow').html('Seguimiento -'+ data['id'] + ' ' + data['date']);
+						                     $('#followup').html(data['followup']);
+						                  }",
+						    'data' => array('id' => $followups[$key]->id,)
+						  ),
+						  array( //htmlOptions
+						    'href' => Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
+						  )
+						);
+			
+		}
+
+		echo "<br><br>";
+		echo "<br><br>";
+
+		echo "<div id='follow'>";
+		echo 'Seguimiento -'.$followupCurrent->id.'  '.date("d/m/Y", strtotime($followupCurrent->creation_date)); 
+		echo "</div>";
+
+		echo "<br><br>";
+
+		echo 'Reporte Investigador';
+
+		echo "<br><br>";
+
+		echo "<div id='followup'>";
+		echo $followupCurrent->followup;
+		echo "</div>";
+
+		$this->renderPartial('../projectsReview/_form', array('model'=>$modelFollowup));
+		// var_dump($comment);
+
+		echo "Comentarios:";
+
+		echo "<br><br><br>";
+		foreach ($comments as $key => $value) {
+			$user = Users::model()->findByAttributes(array('id'=>$comments[$key]->id_user));
+			$rol = Roles::model()->findByAttributes(array('id'=>$user->id_roles));
+
+			echo "Comentario - ".$rol->alias." ";
+			echo $comments[$key]->url_doc != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$comments[$key]->url_doc,array("target"=>"_blank")) : "";
+			
+			echo "<br><br>";
+			
+			echo $comments[$key]->followup;
+
+			echo "<br><br>";
+			
+		}
+	}else
+		echo "<h2>No tiene ningun Proyecto a Seguir</h2>";
+?>

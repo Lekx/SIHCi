@@ -43,7 +43,8 @@
 	function checkEmail($email2, $email22){
 
 		if ($email2 != $email22){
-			echo "<script> alert(\"Los correos no coinciden.\")</script>";
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'Los correos electrónicos no coinciden.'));
+			Yii::app()->end();
 			return false;
 		}
 		else if($email2 == '' || $email22 == ''){
