@@ -24,12 +24,12 @@ class AdminSystemLogController extends Controller
 	 * @return array access control rules
 	 */
 	 
-	 public function accessRules()
-	 {
+	public function accessRules()
+	{
 	 	return array(
 	 		
 	 		array('allow',  
-	 			'actions'=>array('delete','update','create','pdf','saveLog','admin','view'),
+	 			'actions'=>array('delete','update','create','pdf','saveLog','view','index','admin'),
 	 			'expression'=>'($user->Rol->alias==="ADMIN")',
 	 			'users'=>array('@'),
 	 		),	

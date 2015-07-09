@@ -38,7 +38,7 @@ $('<div></div>').appendTo('form')
         width: 'auto',
         resizable: false,
         buttons: {
-            Continuar: function () {
+    Continuar: function () {
                 window.location = yii.urls.cancelProject;
                 $(this).dialog("close");
             },
@@ -310,41 +310,45 @@ $('<div></div>').appendTo('form')
 	</span>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
-
-	Tipo(s) de investigación:
-	<?php 
-	if(!$model->isNewRecord){ 
+	<?php
+	if(!$model->isNewRecord){
 
 		$rTypes = explode('*-*', $model->research_type);
 
 		array_pop($rTypes);
 		foreach ($rTypes as $key => $value) {
 		echo "<div class='row'>";
+		echo "	<span class='plain-select'>";
 			echo $form->dropDownList($model, 'research_type',array('Biomédica'=>'Biomédica','Clínica'=>'Clínica','Educativa'=>'Educativa','Epidemiológica'=>'Epidemiológica','Servicios de Salud'=>'Servicios de Salud','otra'=>'otra'),array('prompt'=>'Seleccione un tipo de Investigación','name'=>'research_types[]','title'=>'Tipo de Investigación','options' => array($value=>array('selected'=>true))));
-			
+			echo "</span>";
 			echo "<a class='deletecontact' href='#' onclick='$(this).parent().slideUp(function(){ $(this).remove() }); return false'>Eliminar</a>";
 		echo "</div>";
 }
 
-	} 
+	}
 	?>
-	
 
-	
+
+
 		<div class="row recopyRType">
+				<span class="plain-select">
 			<?php echo $form->dropDownList($model,'research_type',array('Biomédica'=>'Biomédica','Clínica'=>'Clínica','Educativa'=>'Educativa','Epidemiológica'=>'Epidemiológica','Servicios de Salud'=>'Servicios de Salud','otra'=>'otra'),array('prompt'=>'Seleccione un tipo de Investigación','name'=>'research_types[]','title'=>'Tipo de Investigación')); ?>
+		</span>
 			<?php echo $form->error($model,'research_type'); ?>
 		</div>
-		<div class="row">
+
 			<?php
 				$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 					'targetClass'=>'recopyRType',
 					'addButtonLabel'=>'Agregar tipo de investigación',
-				)); 
-	 		?>
-     	</div>
+				));
+			?>
+
+
+
 	<div class="row">
 
+	<span class="plain-select">
 		<?php echo $form->dropDownList($model,'priority_topic',array('Accidentes y Violencia'=>'Accidentes y Violencia',
 																	'Cáncer'=>'Cáncer',
 																	'Discapacidad e Incapacidad'=>'Discapacidad e Incapacidad',
@@ -357,6 +361,7 @@ $('<div></div>').appendTo('form')
 																	'Muertes evitables (incluidas muerte materna y perinatal)'=>'Muertes evitables (incluidas muerte materna y perinatal)',
 																	'Salud Mental y Adicciones'=>'Salud Mental y Adicciones',
 																	'Otros'=>'Otros'),array('prompt'=>'Tema prioritario','title'=>'Tema prioritario','id'=>'tema', 'onchange'=>'changeSubTema()')); ?>
+																</span>
 		<?php echo $form->error($model,'priority_topic'); ?>
 	</div>
 	<div class="row" id="comboSubTema">
@@ -385,7 +390,7 @@ $('<div></div>').appendTo('form')
 		Datos del investigador.
 	</div>
 
-		<?php   
+		<?php
 
 
 
@@ -415,7 +420,7 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
-					),  
+					),
 				array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
@@ -431,7 +436,7 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Unidad hospitalaria:',
 					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
-					), 
+					),
 				array(
 				     'label'=>'Máximo grado de estudios:',
 				     'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
@@ -444,7 +449,7 @@ $('<div></div>').appendTo('form')
 					),
 			),
 		));
-		
+
 		?>
 
 	<div class="row">
@@ -461,65 +466,72 @@ $('<div></div>').appendTo('form')
 
 
 <div id="section3" class="sections" style="display:none;">
-En caso de que existan investigadores participantes en su proyecto por favor agreguelos en los campos a continuación:
-	<div class="row" >
-		<input type="button" value="Agregar investigador participante" onclick="showAdtlRes()" id="addBtnAr">
-		<?php var_dump(isset($model->projectsCoworkers[0])); ?>
+	<div class="row">
+<p>
+	En caso de que existan investigadores participantes en su proyecto por favor agreguelos en los campos a continuación:
+</p>
+	</div>
+
+
+		<input type="button" value="Agregar investigador participante" class="addSomething"onclick="showAdtlRes()" id="addBtnAr">
 		<div class="row" id="ar1" style="display:<?php echo (isset($model->projectsCoworkers[0]) ? "block": "none"); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[1]','source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 1','title'=>'Investigador participante número 1'),'value'=>(isset($model->projectsCoworkers[0]) ? $model->projectsCoworkers[0]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar2" style="display:<?php echo (isset($model->projectsCoworkers[1]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[2]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 2','title'=>'Investigador participante número 2'),'value'=>(isset($model->projectsCoworkers[1]) ? $model->projectsCoworkers[1]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar3" style="display:<?php echo (isset($model->projectsCoworkers[2]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[3]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 3','title'=>'Investigador participante número 3'),'value'=>(isset($model->projectsCoworkers[2]) ? $model->projectsCoworkers[2]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar4" style="display:<?php echo (isset($model->projectsCoworkers[3]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[4]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 4','title'=>'Investigador participante número 4'),'value'=>(isset($model->projectsCoworkers[3]) ? $model->projectsCoworkers[3]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar5" style="display:<?php echo (isset($model->projectsCoworkers[4]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[5]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0'),'htmlOptions'=>array('placeholder'=>'Investigador participante número 5','title'=>'Investigador participante número 5'),'value'=>(isset($model->projectsCoworkers[4]) ? $model->projectsCoworkers[4]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar6" style="display:<?php echo (isset($model->projectsCoworkers[5]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[6]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 6','title'=>'Investigador participante número 6'),'value'=>(isset($model->projectsCoworkers[5]) ? $model->projectsCoworkers[5]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar7" style="display:<?php echo (isset($model->projectsCoworkers[6]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[7]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 7','title'=>'Investigador participante número 7'),'value'=>(isset($model->projectsCoworkers[6]) ? $model->projectsCoworkers[6]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar8" style="display:<?php echo (isset($model->projectsCoworkers[7]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[8]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 8','title'=>'Investigador participante número 8'),'value'=>(isset($model->projectsCoworkers[7]) ? $model->projectsCoworkers[7]->fullName : ""),)); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar9" style="display:<?php echo (isset($model->projectsCoworkers[8]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[9]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 9','title'=>'Investigador participante número 9'),'value'=>(isset($model->projectsCoworkers[8]) ? $model->projectsCoworkers[8]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 		<div class="row" id="ar10" style="display:<?php echo (isset($model->projectsCoworkers[9]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[10]',
 		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 10','title'=>'Investigador participante número 10'),'value'=>(isset($model->projectsCoworkers[9]) ? $model->projectsCoworkers[9]->fullName : ""), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 	</div>
-</div>
 
 
 <div id="section4" class="sections" style="display:none;">
-En caso de que el proyecto de investigación cuente con la colaboración de otras instituciones(nacionales o extranjeras) escribalas en los campos a continuación:
+	<div class="row">
+		<p>
+			En caso de que el proyecto de investigación cuente con la colaboración de otras instituciones(nacionales o extranjeras) escribalas en los campos a continuación:</p>
+
+	</div>
 
 	<div class="row">
 		<?php echo $form->textArea($model,'participant_institutions',array('rows'=>6, 'cols'=>50,'placeholder'=>'Instituciones nacionales participantes','title'=>'Instituciones nacionales participantes')); ?>
@@ -531,13 +543,16 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		<?php echo $form->error($model,'participant_institutions_international'); ?>
 	</div>
 
-	<div class="row">checkboxes // Formación o capacitación de persona,Asesoría,Análisis,Pacientes/Muestras/Datos,otros
+	<div class="row"><!-- checkboxes // Formación o capacitación de persona,Asesoría,Análisis,Pacientes/Muestras/Datos,otros-->
 		<?php echo $form->textField($model,'colaboration_type',array('size'=>60,'maxlength'=>150,'placeholder'=>'Tipo de colaboracion','title'=>'Tipo de colaboracion')); ?>
 		<?php echo $form->error($model,'colaboration_type'); ?>
 	</div>
 
-	¿El protocolo reúne una o más de las siguientes características? en caso de ser afirmativo justifique brevemente en los campos a continuación:
-(Si el proyecto reúne alguna(s) de las siguientes características, entonces debe ser evaluado por la Comisión Nacional de Investigación Científica)
+<div class="row">
+	<p>¿El protocolo reúne una o más de las siguientes características? en caso de ser afirmativo justifique brevemente en los campos a continuación:
+	(Si el proyecto reúne alguna(s) de las siguientes características, entonces debe ser evaluado por la Comisión Nacional de Investigación Científica)</p>
+</div>
+
 	<div class="row">
 	<p>A) Protocolos en donde se propongan el uso de medicamentos,equipo o material médico no incluido en el cuadro básico institucional</p>
 		<?php echo $form->textArea($model,'adtl_caracteristics_a',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
@@ -576,9 +591,9 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 
 	</div>
 
-	<div class="row buttons">
+	<div class="row buttons projectsbut">
 
-		<?php 
+		<?php
 		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
 		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
 		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));

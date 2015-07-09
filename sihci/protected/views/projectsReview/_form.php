@@ -3,7 +3,7 @@
 
 <div class="form">
 
-    <?php 
+    <?php
 $form=$this->beginWidget('CActiveForm', array(
     'id'=>'projects-followups-form',
     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
@@ -11,8 +11,7 @@ $form=$this->beginWidget('CActiveForm', array(
 )); ?>
 
     <div class="row">
-        <?php echo $form->labelEx($model,'Comentario'); ?>
-        <?php echo $form->textArea($model,'followup',array('rows'=>6, 'cols'=>50)); ?>
+        <?php echo $form->textArea($model,'followup',array('rows'=>6, 'cols'=>50,'placeholder'=>'Comentario')); ?>
         <?php echo $form->error($model,'followup'); ?>
     </div>
 
@@ -27,6 +26,7 @@ $form=$this->beginWidget('CActiveForm', array(
                 'id'=>'createFollowup',
             ));
     ?>
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
