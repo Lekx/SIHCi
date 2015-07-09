@@ -72,14 +72,17 @@ class ProjectsReviewController extends Controller
 
 	private function projectsToReview(){
 		//$id_role = Users::model()->findByPk(Yii::app()->user->id)->Rol->id;
-
-
 		//$role = Roles::model()->findByPk($id_role)->alias;
 
+		$rol = Yii::app()->user->Rol->alias;
+
+		$condition = "WHERE p.status = '".$rol."'";
+		
+		if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
+			$condition = "WHERE p.status LIKE '%".$rol."%'";
 
 		$conection = Yii::app()->db;
-
-		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".strtolower(Yii::app()->user->Rol->alias)."' GROUP BY p.title")->queryAll();
+		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition." GROUP BY p.title")->queryAll();
 
 		//$pProjects = Projects::model()->findAllByAttributes(array("status"=>$role));
 		$pendingProjects ="";
