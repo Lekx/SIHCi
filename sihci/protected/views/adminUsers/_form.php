@@ -119,7 +119,7 @@ $this->menu=array(
 
     <div class="row buttons">
       <?php echo CHtml::htmlButton('Enviar',array(
-                  'onclick'=>'send("users-form", "AdminUsers", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                  'onclick'=>'send("users-form", "users/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","AdminUsers","")',
                   'class'=>'savebutton',
               ));
       ?>

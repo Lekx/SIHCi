@@ -44,8 +44,12 @@
          $(".errorMessage").hide();
          $(".successdiv").show();
 
-        $('.backbut').click(function() {
-           window.location = yii.urls.createUrl + "/" + redirectUrl;
+        $('.backbut').unbind().click(function() {
+          if(redirectUrl != "none")
+             window.location = yii.urls.createUrl + "/" + redirectUrl;
+             else
+               $(".successdiv").hide();
+             
          });
 
        }
