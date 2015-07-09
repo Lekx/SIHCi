@@ -1,0 +1,51 @@
+/* projects */
+.paggersection
+{
+
+  width: 50%;
+  height: 30px;
+  text-align: center;
+}
+.paggersection li ,.paggersection ul
+{
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.paggersection li.active
+{
+  color: #00B9C0;
+}
+.projects2,
+.projects3,
+.projects4,
+.projects5
+{
+  display: none;
+}
+.sections p
+{
+  width: 450px;
+  text-align: justify;
+  margin-left:
+}
+.commets p
+{
+  width: 450px;
+  text-align: justify;
+  margin-left: 15px;
+}
+.commets hr
+{
+  color: #00B9C0;
+}
+small
+{
+    color: #00B9C0;
+}
+.projectsbut
+{
+  margin-left: 10px !important;
+}
