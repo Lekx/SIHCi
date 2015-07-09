@@ -1,4 +1,5 @@
 <?php
+//BORRAR
 class DiplayScientificMagazinesController extends Controller
 {
 	public function actionIndex()

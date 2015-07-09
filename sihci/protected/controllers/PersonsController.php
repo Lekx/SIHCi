@@ -1,5 +1,5 @@
 <?php
-
+//BORRAR
 class PersonsController extends Controller
 {
 	public function actionIndex()

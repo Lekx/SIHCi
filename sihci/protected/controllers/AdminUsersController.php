@@ -28,13 +28,18 @@ class AdminUsersController extends Controller {
 		return array(
 			
 			array('allow',  
-	 			'actions'=>array('deleteUser','update','createUser','adminUsers','view',
-	 				             'changeStatus','changeRol','changeStatusCurriculum','doubleSession','index'
+	 			'actions'=>array('deleteUser','update','createUser','view',
+	 				             'changeStatus','changeRol','changeStatusCurriculum','doubleSession','index',
 	 				            ),
 	 			'expression'=>'($user->Rol->alias==="ADMIN")',
 	 			'users'=>array('@'),
-	 		),	
-
+	 		),
+	 		array('allow',  
+	 			'actions'=>array('view','changeStatus','changeRol','changeStatusCurriculum','index',
+	 				            ),
+	 			'expression'=>'($user->Rol->alias==="JIOPD")',
+	 			'users'=>array('@'),
+	 		),	 		
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
