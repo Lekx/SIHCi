@@ -27,9 +27,10 @@
 	public function accessRules()
 	{
 		return array(
+				
 				array('allow',
 					'actions'=>array('infoAccount', 'activateAccount', 'index', 'updateEmail',
-									'updatePassword','systemLog','personalData','firstLogin','selectType'),					
+									 'updatePassword','systemLog','personalData','firstLogin','selectType'),					
 					'users'=>array('@'),
 				),
 				array('deny',
@@ -37,8 +38,8 @@
 				),
 
 			);
-
 	}
+
 	function checkEmail($email2, $email22){
 
 		if ($email2 != $email22){

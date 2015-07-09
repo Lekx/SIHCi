@@ -23,26 +23,21 @@ class SponsorsController extends Controller {
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/*public function accessRules()
+	public function accessRules()
 	{
-	return array(
-	array('allow',  // allow all users to perform 'index' and 'view' actions
-	'actions'=>array('index','view'),
-	'users'=>array('*'),
-	),
-	array('allow', // allow authenticated user to perform 'create' and 'update' actions
-	'actions'=>array('create','update'),
-	'users'=>array('@'),
-	),
-	array('allow', // allow admin user to perform 'admin' and 'delete' actions
-	'actions'=>array('admin','delete'),
-	'users'=>array('admin'),
-	),
-	array('deny',  // deny all users
-	'users'=>array('*'),
-	),
-	);
-	}*/
+		return array(
+			array('allow',  
+				'actions'=>array('index','view','sponsorsInfo', 'create_persons', 'create_contacts', 'create_contact',
+							     'create_addresses','fillFirst','create_billing','create_docs','delete',
+							     'deleteContacts','deleteContact','admin'),
+				'expression'=>'($user->Rol->alias==="ADMIN" || $user->type==="moral")',			     
+				'users'=>array('@'),
+			),			
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Displays a particular model.
@@ -99,7 +94,8 @@ class SponsorsController extends Controller {
 					$model->id_address = $modelAddresses->id;
 					if($model->validate() == 1) {
 						if($model->save()) {
-
+							echo CJSON::encode(array('status'=>'success'));
+							Yii::app()->end();
 
 							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 							$modelPersons->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
@@ -124,8 +120,7 @@ class SponsorsController extends Controller {
 								$logo = "sponsors/" . $id_sponsor . "/cve-hc/" . 'perfil.png';
 
 								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo))) {
-									echo CJSON::encode(array('status'=>'success'));
-			     							Yii::app()->end();
+
 
 									$log = new SystemLog();
 									$log->id_user = $iduser;
@@ -157,8 +152,7 @@ class SponsorsController extends Controller {
 
 				if($error!='[]')
 					echo str_replace("]\"", "],\"",$error)."}";
-
-				Yii::app()->end();
+					Yii::app()->end();
 	        }
 
 		}

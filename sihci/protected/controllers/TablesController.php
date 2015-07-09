@@ -26,10 +26,11 @@ class TablesController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','researchers', 'projects', 'Books','chapters',
-								 'scientistMagazines','patents', 'software', 'copyrights', 'articlesGuides'),
-				'users'=>array('*'),
+			array('allow',
+			    'actions'=>array('index','researchAreas','researchers','projects','books','chapters',
+			    	             'patents','software','copyrights','articlesGuides'),
+				'expression'=>'($user->Rol->alias==="SGEI" || $user->Rol->alias==="DG" || $user->Rol->alias==="JIOPD" || $user->Rol->alias==="ADMIN")',
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),

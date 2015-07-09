@@ -56,7 +56,7 @@
 if($model->status == Yii::app()->user->Rol->alias){
 echo CHtml::htmlButton('Enviar a siguiente',array(
 
-                'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "projectsReview/review", "'.Yii::app()->user->Rol->alias.',qw");',
+                'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "projectsReview/review'.(isset($_GET['id']) ? "/".$_GET['id'] : "").'", "'.Yii::app()->user->Rol->alias.'");',
                 'class'=>'savebutton',
             ));
 ?>

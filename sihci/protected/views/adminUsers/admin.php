@@ -10,16 +10,15 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
 
 <script type="text/javascript">
 	function changeStatus(id){
-		//alert("entre mija");
 		$.ajax({
    url: yii.urls.base+"/index.php/adminUsers/changeStatus",
-     data: {id: id,value: $("#"+id).val()},
+     data: {id: id,value: $("#status"+id).val()},
   dataType: 'json',
    method: "POST",
    success: function(data) {
       alert(data);
    },
-   
+
 });
 	}
 
@@ -32,25 +31,26 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
    success: function(data) {
       alert(data);
    },
-   
+
 });
 	}
 
 
 	function changeRol(id){
 		$.ajax({
-   url: yii.urls.base+"/index.php/adminUsers/changeRol",
-     data: {id: id,idRol: $("#"+id).val()},
-  dataType: 'json',
-   method: "POST",
-   success: function(data) {
-      alert(data);
+		url: yii.urls.base+"/index.php/adminUsers/changeRol",
+    data: {id: id,idRol: $("#rol"+id).val()},
+  	dataType: 'json',
+   	type: "POST",
+   	success: function(data) {
+			var data = JSON.parse(data);
+      	alert(data);
    },
-   
+
 });
 	}
-</script> 
-<?php 
+</script>
+<?php
 $roles = Roles::model()->FindAll();
 $rolesList="array(";
 foreach ($roles as $key => $value) {
@@ -68,7 +68,7 @@ $rolesList.= ")";
         </div>
 
 
-<?php 
+<?php
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -101,20 +101,24 @@ $this->renderPartial('_search',array(
 		array(
 			'header' => '<b>Curp/Pasaporte</b>',
 			'value' => array($this, 'usersCurpPassport'), 'type' => 'raw',
-		),	
+		),
 		'registration_date',
 		'status',
-		
+
 		 array(
 		 	'type'=>'raw',
 		 	'header' => 'Rol',
-          	'value'=>'CHtml::dropDownList($data->id,$data->id_roles,'.$rolesList.',array("onchange"=>"changeRol($data->id)"))'),
-		
-		 array(
+          	'value'=>'CHtml::dropDownList($data->id,$data->id_roles,'.$rolesList.',array("onchange"=>"changeRol($data->id)","id"=>"rol".$data->id))'),
+
+		/* array(
 		 	'type'=>'raw',
 		 	'header' => 'Estatus Usuario',
-          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array("onchange"=>"changeStatus($data->id)"))'),
-		 array(
+          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array("onchange"=>"changeStatus($data->id)","id"=>"status".$data->id))'),*/
+						array(
+					 	'type'=>'raw',
+					 	'header' => 'Estatus Usuario',
+			          	'value'=>'CHtml::dropDownList("$data->id","$data->status",array("activo" => "Activo" , "inactivo" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatus\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"status".$data->id))'),
+			array(
 		 	'type'=>'raw',
 		 	'header' => 'Estatus Curriculum',
           	'value'=>'!is_null(Curriculum::model()->findByPk($data->id)) ? CHtml::dropDownList(Curriculum::model()->findByPk($data->id)->id,Curriculum::model()->findByPk($data->id)->status,array(1 => "Activo" , 0 => "Inactivo"),array("onchange"=>\'changeStatusCurriculum(1)\')) : ""'),
