@@ -43,15 +43,22 @@ $('.search-form form').submit(function(){
 	'model'=>$model,
 )); ?>
 
+<?php 
+$pjs = Projects::model()->findByAttributes(array('id_curriculum'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
+$pjs->search();
+//var_dump($pjs);
+
+?>
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'projects-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->customSearch(),
 	/*'filterPosition'=>'header',
     'selectableRows'=>1,
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'dataProvider'=>$model->search(), */
 	'columns'=>array(
-		//'id',
+		'id_curriculum',
 		array(
 			'name'=>'is_sponsored',
 			'header'=>'',
@@ -87,28 +94,25 @@ $('.search-form form').submit(function(){
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {seguim} {delete}', 'header' => 'Acciones',
 				'buttons' => array(
-					'login' => array(
-					'label' => '',
-					//'imageUrl' => Yii::app()->request->baseUrl . '/img/Acciones/sesión.png',
-					//'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id))',
-					),
 					'edit' => array(
-						'label' => '',
+						//'label' => '',
 						'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/editar.png',
-						'visible'=>'($data->status == "borrador" || $data->status == "modificar") ? TRUE : FALSE',
-						'url'=> '"projects/update/".$data->id'
+						'visible'=>'($data->status == "BORRADOR" || $data->status == "MODIFICAR") ? TRUE : FALSE',
+						'url'=> '"projects/update/".$data->id',
+						'options'=>array('class'=>'ttip','title'=>'Modificar',),
 					),
 					'seguim' => array(
-						'label' => 'seguim',
-						//'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/editar.png',
-						'visible'=>'$data->status == "aceptado" ? TRUE : FALSE',
-						'url'=> '"projects/update/".$data->id'
+						'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/editar.png',
+						'visible'=>'$data->status == "ACEPTADO" ? TRUE : FALSE',
+						'url'=> 'CHtml::normalizeUrl(array("projectsFollowups/admin/".$data->id))',
+						'options'=>array('class'=>'ttip','title'=>'Seguimineto'),
 					),
 					'delete' => array(
-						'label' => '',
 						'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/eliminar.png',
-						'visible'=>'$data->status == "borrador" ? TRUE : FALSE',
-						'url'=> '"projects/update/".$data->id'
+						'visible'=>'$data->status == "BORRADOR" ? TRUE : FALSE',
+						'url'=> '"projects/update/".$data->id',
+						'options'=>array('title'=>'Eliminar',),
+						
 					),
 		),
 	),),

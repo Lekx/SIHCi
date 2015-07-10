@@ -53,6 +53,10 @@ class ProjectsReviewController extends Controller
 			"DIVUH2"=>"Proyecto enviado a dictaminación por la División de Investigacion de la Unidad Hospitalaria. Notificación enviada a: Director General, Director de División Hospitalaria y al Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
 			"COMITE2"=>"Proyecto enviado a firma de dictamen por comités.",
 			"DICTAMINADO"=>"Proyecto dictaminado como xx. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria.",
+			"rejectDIVUH"=>"Proyecto devuelto por la División de Investigacion de la Unidad Hospitalaria al investigador para su corrección o modificación.",
+			"rejectCOMBIO"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
+			"rejectCOMETI"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
+			"rejectCOMINV"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
 		);
 
 	private function nextReview($actualStatus, $idProject){
@@ -164,7 +168,7 @@ class ProjectsReviewController extends Controller
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
-            if(isset($_POST[1]))
+            if(isset($_POST[1])) // si existe este indice en los extras significa que es un comentario(followup) de un seguimiento(followup)
             	$modelfollowup->id_fucom = $_POST[1];
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
@@ -199,6 +203,8 @@ class ProjectsReviewController extends Controller
 		));
 	}
 
+	//Envia a revisión o evaluación.
+	//params: id del projecto.
 	public function actionSendReview($id)
 	{
 		//$res = Projects::model()->updateByPk($id,array('status'=>'asdfasdfasdf cabron que sss'));
@@ -214,13 +220,13 @@ class ProjectsReviewController extends Controller
 						$followup = new ProjectsFollowups;
 						$followup->id_project = $id;
 						$followup->id_user = Yii::app()->user->id;
-						$followup->followup = "Proyecto enviado a revisión de ".$this->messages[$nextReview];
+						$followup->followup = $this->messages[$nextReview];
 						$followup->type = "comment";
 
 						if($followup->save())
-			     			echo CJSON::encode(array('status'=>'success','message'=>'Aprobación realizada con éxito','subMessage'=>'Se ha asignado a la siguiente persona este proyecto'));
+			     			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido enviado satisfactoriamente para su revisión o evaluación.'));
 					}else
-						echo CJSON::encode(array('message'=>'Error al pasar a la siguiente etapa.','subMessage'=>'Por favor vuelva a intetar.'));
+						echo CJSON::encode(array('message'=>'Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intetar.'));
 				Yii::app()->end();
 	}
 	/**

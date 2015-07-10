@@ -43,7 +43,7 @@ $mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'sponsorship-grid',
-	'dataProvider'=>$mod,
+	'dataProvider'=>$model->customSearch(),
 	//'filter'=>$model,
 	'columns'=>array(
 		//'id',
@@ -62,12 +62,17 @@ $this->widget('zii.widgets.grid.CGridView', array(
 			'header'=>'Empresa que patrocina',
 			'value'=>'Sponsors::model()->findByAttributes(array("id_user"=>$data->id_user_sponsorer))->sponsor_name',
 			),
+
 		array(
+			'name'=>'title',
+			'header'=>'Título del proyecto',
+			'value'=>'$data->project_name',
+			),
+				array(
 			'name'=>'status',
 			'header'=>'Título del proyecto',
 			'value'=>'$data->status == 1 ? "aceptado" : "rechazado"',
 			),
-
 			array(
 			'class'=>'CButtonColumn','template'=>'{view} {accept} {reject}','header'=>'Acciones','buttons'=>array(
 					'view'=>array(
@@ -79,13 +84,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
 							'label'=>'Aceptar',
 							'imageUrl'=>Yii::app()->request->baseUrl.'/img/accept.png',
 							'url'=>'Yii::app()->createUrl("/projects/acceptSponsorship",array("id"=>$data->id))',
-							'visible'=>'true'
+							'visible'=>'$data->status == 0 ? TRUE : FALSE',
 						),
 					'reject'=>array(
 							'label'=>'Rechazar',
 							'imageUrl'=>Yii::app()->request->baseUrl.'/img/reject.png',
 							'url'=>'Yii::app()->createUrl("/projects/rejectSponsorship",array("id"=>$data->id))',
-							'visible'=>'true'
+							'visible'=>'$data->status == 1 ? TRUE : FALSE',
 						)
 				)
 		),

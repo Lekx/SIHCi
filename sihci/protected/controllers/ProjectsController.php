@@ -124,7 +124,7 @@ class ProjectsController extends Controller
 			}
 
 			if($_POST[1]== "draft")
-				$model->status = "borrador";
+				$model->status = "BORRADOR";
 			else
 				$model->status = "DIVUH";
 
