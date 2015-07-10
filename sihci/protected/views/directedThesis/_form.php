@@ -17665,7 +17665,7 @@ function changeSector()
                                           "VICERRECTORÍA DE EXTENSIÓN Y DIFUSIÓN DE LA CULTURA"];
       organizationValue = benemeritaEscuelaNormalAutonoma;
     }
-    if(organizationValue == "BENEMERITA Y CENTENARIA ESCUELA NORMAL DEL ESTADO DE DURANGO"){
+     if(organizationValue == "BENEMERITA Y CENTENARIA ESCUELA NORMAL DEL ESTADO DE DURANGO"){
       var benemeritaEscuelaNormalDurango=[" "];
       organizationValue = benemeritaEscuelaNormalDurango;
     }
@@ -17902,7 +17902,7 @@ function changeSector()
       var neurocienciasPsicoanalisis=[" "];
       organizationValue = neurocienciasPsicoanalisis;
     }
-    if(organizationValue == "INSTITUTO POLITECNICO NACIONAL"){
+     if(organizationValue == "INSTITUTO POLITECNICO NACIONAL"){
       var institutoPolitecnicoNacional=["CENTRO DE DESARROLLO DE PRODUCTOS BIOTICOS",
                                         "CENTRO DE DIFUSIÓN DE CIENCIA Y TECNOLOGÍA",
                                         "CENTRO DE EDUCACION CONTINUA",
@@ -17932,7 +17932,7 @@ function changeSector()
                                         "SECRETARIA DE SERVICIOS EDUCATIVOS",
                                         "SECRETARIA TECNICA",
                                         "UNIDADES ACADEMICAS DE NIVEL SUPERIOR",
-                                        "UNIVERSIDAD ESTATAL DE OSUN",];
+                                        "UNIVERSIDAD ESTATAL DE OSUN"];
       organizationValue = institutoPolitecnicoNacional;
     }
      if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO"){
@@ -18062,9 +18062,10 @@ function changeSector()
     if(organizationValue == "INSTITUTO TECNOLOGICO DEL MAR NO 2 MAZATLAN"){
       var institutoTecnologicoMarMazatlan=["INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN EXTENSION LA CRUZ DE HUANACAXTLE",
                                             "INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN EXTENSION TEACAPAN",
-                                            "INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN. EXTENSION JOCOTEPEC",];
+                                            "INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN. EXTENSION JOCOTEPEC"];
       organizationValue = institutoTecnologicoMarMazatlan;
     }
+
      if(organizationValue == "INSTITUTO TECNOLOGICO FORESTAL"){
       var institutoTecnologicoForestal=[" "];
       organizationValue = institutoTecnologicoForestal;
@@ -18261,6 +18262,7 @@ function changeSector()
       var tecnologicoEstudiosTiangusitengo=[" "];
       organizationValue = tecnologicoEstudiosTiangusitengo;
     }
+
      if(organizationValue == "TECNOLOGICO NACIONAL DE MEXICO"){
       var tecnologicoNaionalMexico=["CENTRO INTERDISCIPLINARIO DE INVESTIGACIÓN Y DOCENCIA EN EDUCACIÓN TÉCNICA",
                                     "CENTRO NACIONAL DE INVESTIGACIÓN Y DESARROLLO TECNOLÓGICO",
@@ -18288,7 +18290,7 @@ function changeSector()
                                     "INSTITUTO TECNOLOGICO DE NOGALES",
                                     "INSTITUTO TECNOLOGICO DE NUEVO LAREDO",
                                     "INSTITUTO TECNOLOGICO DE OCOTLAN",
-                                    "INSTITUTO TECNOLOGICO DE PIEDRAS NEGRAS"
+                                    "INSTITUTO TECNOLOGICO DE PIEDRAS NEGRAS",
                                     "INSTITUTO TECNOLOGICO DE PINOTEPA NACIONAL",
                                     "INSTITUTO TECNOLOGICO DE REYNOSA",
                                     "INSTITUTO TECNOLOGICO DE SAN JUAN DEL RIO",
@@ -18296,31 +18298,31 @@ function changeSector()
                                     "INSTITUTO TECNOLOGICO DE TLAXIACO",
                                     "INSTITUTO TECNOLOGICO DE URSULO GALVAN",
                                     "INSTITUTO TECNOLOGICO DE VALLE DEL YAQUI",
-                                    "INSTITUTO TECNOLOGICO DE ZACATECAS"
+                                    "INSTITUTO TECNOLOGICO DE ZACATECAS",
                                     "INSTITUTO TECNOLOGICO DE ZITACUARO",
                                     "INSTITUTO TECNOLOGICO DEL ISTMO",
-                                    "INSTITUTO TECNOLÓGICO DE ACAPULCO"
+                                    "INSTITUTO TECNOLÓGICO DE ACAPULCO",
                                     "INSTITUTO TECNOLÓGICO DE AGUA PRIETA",
                                     "INSTITUTO TECNOLÓGICO DE AGUASCALIENTES",
                                     "INSTITUTO TECNOLÓGICO DE ALTAMIRA",
                                     "INSTITUTO TECNOLÓGICO DE APIZACO",
                                     "INSTITUTO TECNOLÓGICO DE BOCA DE RÍO",
-                                    "INSTITUTO TECNOLÓGICO DE CAMPECHE"
+                                    "INSTITUTO TECNOLÓGICO DE CAMPECHE",
                                     "INSTITUTO TECNOLÓGICO DE CANCÚN",
                                     "INSTITUTO TECNOLÓGICO DE CELAYA",
                                     "INSTITUTO TECNOLÓGICO DE CHETUMAL",
                                     "INSTITUTO TECNOLÓGICO DE CHIHUAHUA",
-                                    "INSTITUTO TECNOLÓGICO DE CHILPANCINGO"
+                                    "INSTITUTO TECNOLÓGICO DE CHILPANCINGO",
                                     "INSTITUTO TECNOLÓGICO DE CHINÁ",
-                                    "INSTITUTO TECNOLÓGICO DE CIUDAD JIMÉNEZ"
+                                    "INSTITUTO TECNOLÓGICO DE CIUDAD JIMÉNEZ",
                                     "INSTITUTO TECNOLÓGICO DE CIUDAD JUÁREZ",
-                                    "INSTITUTO TECNOLÓGICO DE CIUDAD MADERO"
+                                    "INSTITUTO TECNOLÓGICO DE CIUDAD MADERO",
                                     "INSTITUTO TECNOLÓGICO DE CIUDAD VICTORIA",
-                                    "INSTITUTO TECNOLÓGICO DE COMITÁN"
+                                    "INSTITUTO TECNOLÓGICO DE COMITÁN",
                                     "INSTITUTO TECNOLÓGICO DE CONKAL",
-                                    "INSTITUTO TECNOLÓGICO DE COSTA GRANDE"
-                                    "INSTITUTO TECNOLÓGICO DE CULIACÁN"
-                                    "INSTITUTO TECNOLÓGICO DE DURANGO"
+                                    "INSTITUTO TECNOLÓGICO DE COSTA GRANDE",
+                                    "INSTITUTO TECNOLÓGICO DE CULIACÁN",
+                                    "INSTITUTO TECNOLÓGICO DE DURANGO",
                                     "INSTITUTO TECNOLÓGICO DE EL LLANO AGUASCALIENTES",
                                     "INSTITUTO TECNOLÓGICO DE EL SALTO",
                                     "INSTITUTO TECNOLÓGICO DE GUAYMAS",
@@ -18329,29 +18331,29 @@ function changeSector()
                                     "INSTITUTO TECNOLÓGICO DE LA LAGUNA",
                                     "INSTITUTO TECNOLÓGICO DE LA PAZ",
                                     "INSTITUTO TECNOLÓGICO DE LA ZONA MAYA",
-                                    "INSTITUTO TECNOLÓGICO DE LEÓN"
-                                    "INSTITUTO TECNOLÓGICO DE LINARES"
+                                    "INSTITUTO TECNOLÓGICO DE LEÓN",
+                                    "INSTITUTO TECNOLÓGICO DE LINARES",
                                     "INSTITUTO TECNOLÓGICO DE MAZATLÁN",
-                                    "INSTITUTO TECNOLÓGICO DE MEXICALI"
-                                    "INSTITUTO TECNOLÓGICO DE MORELIA"
-                                    "INSTITUTO TECNOLÓGICO DE MÉRIDA"
+                                    "INSTITUTO TECNOLÓGICO DE MEXICALI",
+                                    "INSTITUTO TECNOLÓGICO DE MORELIA",
+                                    "INSTITUTO TECNOLÓGICO DE MÉRIDA",
                                     "INSTITUTO TECNOLÓGICO DE NUEVO LEÓN",
                                     "INSTITUTO TECNOLÓGICO DE OAXACA",
                                     "INSTITUTO TECNOLÓGICO DE ORIZABA",
                                     "INSTITUTO TECNOLÓGICO DE PACHUCA",
-                                    "INSTITUTO TECNOLÓGICO DE PARRAL"
-                                    "INSTITUTO TECNOLÓGICO DE PUEBLA"
+                                    "INSTITUTO TECNOLÓGICO DE PARRAL",
+                                    "INSTITUTO TECNOLÓGICO DE PUEBLA",
                                     "INSTITUTO TECNOLÓGICO DE QUERÉTARO",
                                     "INSTITUTO TECNOLÓGICO DE ROQUE",
                                     "INSTITUTO TECNOLÓGICO DE SALTILLO",
                                     "INSTITUTO TECNOLÓGICO DE TAPACHULA",
                                     "INSTITUTO TECNOLÓGICO DE TECOMATLÁN",
                                     "INSTITUTO TECNOLÓGICO DE TEHUACÁN",
-                                    "INSTITUTO TECNOLÓGICO DE TEPIC"
+                                    "INSTITUTO TECNOLÓGICO DE TEPIC",
                                     "INSTITUTO TECNOLÓGICO DE TIJUANA",
                                     "INSTITUTO TECNOLÓGICO DE TIZIMÍN",
                                     "INSTITUTO TECNOLÓGICO DE TLAJOMULCO",
-                                    "INSTITUTO TECNOLÓGICO DE TLALNEPANTLA"
+                                    "INSTITUTO TECNOLÓGICO DE TLALNEPANTLA",
                                     "INSTITUTO TECNOLÓGICO DE TOLUCA",
                                     "INSTITUTO TECNOLÓGICO DE TORREÓN",
                                     "INSTITUTO TECNOLÓGICO DE TUXTEPEC",
@@ -18360,8 +18362,8 @@ function changeSector()
                                     "INSTITUTO TECNOLÓGICO DE ZACATEPEC",
                                     "INSTITUTO TECNOLÓGICO DEL VALLE DE MORELIA",
                                     "INSTITUTO TECNOLÓGICO DEL VALLE DEL GUADIANA",
-                                    "INSTITUTO TECNOLÓGICO TUXTLA GUTIÉRREZ"
-                                    "SUBDIRECCION ACADEMICA",];
+                                    "INSTITUTO TECNOLÓGICO TUXTLA GUTIÉRREZ",
+                                    "SUBDIRECCION ACADEMICA"];
       organizationValue = tecnologicoNaionalMexico;
     }
      if(organizationValue == "UNIVERSIDAD AERONAUTICA EN QUERETARO"){
@@ -18374,7 +18376,7 @@ function changeSector()
                                       "PROGRAMA DE GRADUADOS",
                                       "SUBDIRECCION DE ASUNTOS DE POSTGRADO",
                                       "UNIDAD LAGUNA",
-                                      "UNIDAD SALTILLO",];
+                                      "UNIDAD SALTILLO"];
       organizationValue = universidadAgrariaAntonio;
     }
     if(organizationValue == "UNIVERSIDAD AUTONOMA BENITO JUAREZ DE OAXACA"){
@@ -18395,7 +18397,7 @@ function changeSector()
                                             "INSTITUTO DE INVESTIGACIONES SOCIOLOGICAS"];
       organizationValue = universidadAutonomaBenitoJuarez;
     }
-     if(organizationValue == "UNIVERSIDAD AUTONOMA CHAPINGO"){
+    if(organizationValue == "UNIVERSIDAD AUTONOMA CHAPINGO"){
       var universidadAutonomaChapingo=["CENTRO DE AGROFORESTARIA PARA EL DESARROLLO SOSTENIBLE",
                                       "CENTRO DE INVESTIGACIONES ECONOMICAS, SOCIALES Y TECNOLOGICAS DE LA AGROINDUSTRIA Y DE LA AGRICULTURA MUNDIAL",
                                       "CENTRO NACIONAL DE RESCATE Y MEJORAMIENTO DE MAICES CRIOLLOS(CENREMMAC)",
@@ -18510,10 +18512,10 @@ function changeSector()
                                               "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA MEXICALI",
                                               "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA ZONA COSTA (TIJUANA)",
                                               "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA ZONA ENSENADA (ENSENADA)",
-                                              "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA, UNIDAD VALLE DE LAS PALMAS",];
+                                              "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA, UNIDAD VALLE DE LAS PALMAS"];
       organizationValue = universidadAutonomaBajaCalifornia;
     }
-     if(organizationValue == "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA SUR"){
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA SUR"){
       var universidadAutonomaBajaCaliforniaSur=["AREA INTERDISCIPLINARIA DE CIENCIAS AGROPECUARIAS",
                                                 "AREA INTERDISCIPLINARIA DE CIENCIAS DEL MAR",
                                                 "AREA INTERDISCIPLINARIA DE CIENCIAS SOCIALES Y HUMANIDADES",
@@ -18625,7 +18627,7 @@ function changeSector()
                                       "MUSEO REGIONAL UNIVERSITARIO QUINTA GAMEROS:",
                                       "UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD CIUDAD JUAREZ",
                                       "UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD DELICIAS",
-                                      "UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD HIDALGO DEL PARRAL",];
+                                      "UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD HIDALGO DEL PARRAL"];
       organizationValue = universidadAutonomaChiuahua;
     }
      if(organizationValue == "UNIVERSIDAD AUTONOMA DE CIUDAD JUAREZ"){
@@ -18634,7 +18636,7 @@ function changeSector()
                                           "INSTITUTO DE ARQUITECTURA, DISEÑO Y ARTE",
                                           "INSTITUTO DE CIENCIAS BIOMEDICAS",
                                           "INSTITUTO DE CIENCIAS SOCIALES Y ADMINISTRACION",
-                                          "INSTITUTO DE INGENIERIA Y TECNOLOGIA",];
+                                          "INSTITUTO DE INGENIERIA Y TECNOLOGIA"];
       organizationValue = universidadAutonomaCiudadJuerez;
     }
       if(organizationValue == "UNIVERSIDAD AUTONOMA DE COAHUILA"){
@@ -18737,7 +18739,7 @@ function changeSector()
                                       "UNIDAD ACADEMICA DE DERECHO",
                                       "UNIDAD ACADEMICA DE TURISMO",
                                       "UNIDAD ACADÉMICA DE MEDICINA",
-                                      "UNIDAD ACADÉMICA DE ODONTOLOGÍA",];
+                                      "UNIDAD ACADÉMICA DE ODONTOLOGÍA"];
       organizationValue = universidadAutonomaNayarit;
     }
     if(organizationValue == "UNIVERSIDAD AUTONOMA DE NUEVO LEON"){
@@ -18791,7 +18793,7 @@ function changeSector()
                                         "RECTORIA",
                                         "UNIVERSIDAD AUTONOMA DE NUEVO LEON UNIDAD LINARES",
                                         "UNIVERSIDAD AUTONOMA DE NUEVO LEON UNIDAD MARIN",
-                                        "UNIVERSIDAD AUTONOMA DE NUEVO LEON",];
+                                        "UNIVERSIDAD AUTONOMA DE NUEVO LEON"];
       organizationValue = universidadAutonomaNuevoLeon;
     }
     if(organizationValue == "UNIVERSIDAD AUTONOMA DE QUERETARO"){
@@ -18989,7 +18991,7 @@ function changeSector()
                                         "LABORATORIO DE SANIDAD VEGETAL",
                                         "UNIVERSIDAD AUTONOMA DE TLAXCALA UNIDAD APIZACO",
                                         "UNIVERSIDAD AUTONOMA DE TLAXCALA UNIDAD IXTACUIXTLA",
-                                        "UNIVERSIDAD AUTONOMA DE TLAXCALA/ FACULTAD DE CIENCIAS BÁSICAS, INGENIERÍA Y TECNOLOGÍA",];
+                                        "UNIVERSIDAD AUTONOMA DE TLAXCALA/ FACULTAD DE CIENCIAS BÁSICAS, INGENIERÍA Y TECNOLOGÍA"];
       organizationValue = universidadAutonomaTlaxcala;
     }
      if(organizationValue == "UNIVERSIDAD AUTONOMA DE YUCATAN"){
@@ -19013,7 +19015,7 @@ function changeSector()
                                       "FACULTAD DE QUIMICA"];
       organizationValue = universidadAutonomaYucatan;
     }
-     if(organizationValue == "UNIVERSIDAD AUTONOMA DE ZACATECAS FRANCISCO GARCIA SALINAS"){
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE ZACATECAS FRANCISCO GARCIA SALINAS"){
       var universidadAutonomaFranciscoGracia=["AREA ACADEMICA DE CIENCIAS SOCIALES Y ADMINISTRATIVAS",
                                               "AREA ACADEMICA DE EDUCACION Y HUMANIDADES",
                                               "AREA ACADEMICA DE INGENIERIA Y TECNOLOGIA",
@@ -19188,7 +19190,7 @@ function changeSector()
                                             "UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO",];
       organizationValue = universidadAutonomaEstadoMexico;
     }
-     if(organizationValue == "UNIVERSIDAD AUTONOMA DEL ESTADO DE MORELOS"){
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DEL ESTADO DE MORELOS"){
       var universidadAutonomaEstadoMorelos=["CENTRO DE INVESTIGACION TRANSDISCIPLINAR EN PSICOLOGÍA , CITPSI",
                                             "CENTRO DE INVESTIGACIONES BIOLOGICAS",
                                             "CENTRO DE INVESTIGACIONES DE CIENCIAS QUIMICAS",
@@ -19369,7 +19371,7 @@ function changeSector()
                                   "PROGRAMA UNIVERSITARIO DE LENGUAS EXTRANJERAS",
                                   "SIISTEMA DE EDUCACION MEDIA SUPERIOR",
                                   "SISTEMA DE UNIVERSIDAD VIRTUAL",
-                                  "UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG",];
+                                  "UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG"];
       organizationValue = universidadGuadalajara;
     }
       if(organizationValue == "UNIVERSIDAD DE GUANAJUATO"){
@@ -19398,6 +19400,8 @@ function changeSector()
                                     "UNIDAD DE ACCESO A LA INFORMACION PUBLICA",];
       organizationValue = universidadGuanajuato;
     }
+    ///////////////////////////////////////////////////////////////////////////
+
      if(organizationValue == "UNIVERSIDAD DE LA CANADA"){
       var universidadCanada=[" "];
       organizationValue = universidadCanada;
@@ -19406,11 +19410,11 @@ function changeSector()
       var universidadCienegaMichoaca=[" "];
       organizationValue = universidadCienegaMichoaca;
     }
-     if(organizationValue == "UNIVERSIDAD DE LA CIENEGA DEL ESTADO DE MICHOACAN DE OCAMPO"){
+    if(organizationValue == "UNIVERSIDAD DE LA CIENEGA DEL ESTADO DE MICHOACAN DE OCAMPO"){
       var universidadCienegaMichoacana=[" "];
       organizationValue = universidadCienegaMichoacana;
     }
-     if(organizationValue == "UNIVERSIDAD DE LA REPUBLICA"){
+    if(organizationValue == "UNIVERSIDAD DE LA REPUBLICA"){
       var universidadRepublica=["FACULTAD DE MEDICINA - HOSPTAL DE CLÍNICAS DR. MANUEL QUINTELA",
                                 "FACULTAD DE MEDICINA - INSTITUTO DE HIGIENE"];
       organizationValue = universidadRepublica;
@@ -19431,8 +19435,8 @@ function changeSector()
       var universidadAltosChiapas=[" "];
       organizationValue = universidadAltosChiapas;
     }
-    if(organizationValue == "UNIVERSIDAD DE OCCIDENTE"){
-      var universidadOccidentes["CAMPUS CULIACAN",
+     if(organizationValue == "UNIVERSIDAD DE OCCIDENTE"){
+      var universidadOccidentes=["CAMPUS CULIACAN",
                                 "CAMPUS EL FUERTE",
                                 "CAMPUS GUASAVE",
                                 "CAMPUS LOS MOCHIS",
@@ -19440,15 +19444,15 @@ function changeSector()
                                 "DEPARTAMENTO DE INGENIERÍA Y TECNOLOGIA",
                                 "UNIDAD GUAMUCHIL",
                                 "UNIDAD GUASAVE",
-                                "UNIDAD LOS MOCHIS",];
+                                "UNIDAD LOS MOCHIS"];
       organizationValue = universidadOccidentes;
     }
      if(organizationValue == "UNIVERSIDAD DE ORIENTE"){
-      var universidadOriente[" "];
+      var universidadOriente=[" "];
       organizationValue = universidadOriente;
     }
     if(organizationValue == "UNIVERSIDAD DE QUINTANA ROO"){
-      var universidadQuintanaRoo["DIRECCION DE INVESTIGACION Y POSGRADO",
+      var universidadQuintanaRoo=["DIRECCION DE INVESTIGACION Y POSGRADO",
                                   "DIVISION DE CIENCIAS E INGENIERIAS",
                                   "DIVISION DE CIENCIAS POLITICAS Y HUMANIDADES",
                                   "DIVISION DE CIENCIAS SOCIALES Y ECONOMICO ADMINISTRATIVAS",
@@ -19458,76 +19462,77 @@ function changeSector()
       organizationValue = universidadQuintanaRoo;
     }
     if(organizationValue == "UNIVERSIDAD DE SONORA"){
-      var universidadSonora["UNIDAD REGIONAL CENTRO (HERMOSILLO)",
+      var universidadSonora=["UNIDAD REGIONAL CENTRO (HERMOSILLO)",
                             "UNIDAD REGIONAL NORTE (CAMPUS CABORCA)",
                             "UNIDAD REGIONAL NORTE (SANTA ANA)",
-                            "UNIDAD REGIONAL SUR (CAMPUS NAVOJOA)",];
+                            "UNIDAD REGIONAL SUR (CAMPUS NAVOJOA)"];
       organizationValue = universidadSonora;
     }
+
      if(organizationValue == "UNIVERSIDAD DEL CARIBE"){
-      var universidadCaribe["DEPARTAMENTO DE TURISMO SUSTENTABLE, HOTELERIA Y GASTRONOMIA"];
+      var universidadCaribe=["DEPARTAMENTO DE TURISMO SUSTENTABLE, HOTELERIA Y GASTRONOMIA"];
       organizationValue = universidadCaribe;
     }
     if(organizationValue == "UNIVERSIDAD DEL DESARROLLO DEL ESTADO DE PUEBLA"){
-      var universidadEstadoPuebla["CORDINACION DE FISICO-MATEMATICAS"];
+      var universidadEstadoPuebla=["CORDINACION DE FISICO-MATEMATICAS"];
       organizationValue = universidadEstadoPuebla;
     }
-    if(organizationValue == "UNIVERSIDAD DEL ISTMO"){
-      var universidadIstmmo["CAMPUS TEHUANTEPEC"];
+       if(organizationValue == "UNIVERSIDAD DEL ISTMO"){
+      var universidadIstmmo=["CAMPUS TEHUANTEPEC"];
       organizationValue = universidadIstmmo;
     }
      if(organizationValue == "UNIVERSIDAD DEL MAR"){
-      var universidadMar["CAMPUS HUATULCO",
+      var universidadMar=["CAMPUS HUATULCO",
                           "CAMPUS PUERTO ANGEL",
                           "CAMPUS PUERTO ESCONDIDO",
                           "INSTITUTO DE ECOLOGIA"];
       organizationValue = universidadMar;
     }
      if(organizationValue == "UNIVERSIDAD DEL PAPALOAPAN"){
-      var universidadPapaloapan["CAMPUS LOMA BONITA",
+      var universidadPapaloapan=["CAMPUS LOMA BONITA",
                                 "CAMPUS TUXTEPEC"];
       organizationValue = universidadPapaloapan;
     }
     if(organizationValue == "UNIVERSIDAD DEL TOLIMA"){
-      var universidadTolima[" "];
+      var universidadTolima=[" "];
       organizationValue = universidadTolima;
     }
      if(organizationValue == "UNIVERSIDAD DEL VALLE"){
-      var universidadValle["FACULTAD DE SALUD",
+      var universidadValle=["FACULTAD DE SALUD",
                           "FACULTAD DE HUMANIDADES",
                           "SEDE BUGA"];
-      organizationValue = universidadValles;
+      organizationValue = universidadValle;
     }
      if(organizationValue == "UNIVERSIDAD ESTATAL DE SONORA"){
-      var universidadEsatdoSonora["UNIDAD ACADEMICA BENITO JUAREZ",
+      var universidadEsatdoSonora=["UNIDAD ACADEMICA BENITO JUAREZ",
                                   "UNIDAD ACADEMICA MAGDALENA",
                                   "UNIDAD HERMOSILLO",
                                   "UNIDAD NOVOJOA",
-                                  "UNIDAD SAN LUIS RIO COLORADO",];
+                                  "UNIDAD SAN LUIS RIO COLORADO"];
       organizationValue = universidadEsatdoSonora;
     }
-     if(organizationValue == "UNIVERSIDAD ESTATAL DEL VALLE DE ECATEPEC"){
-      var universidadValleEcatepec[" "];
+      if(organizationValue == "UNIVERSIDAD ESTATAL DEL VALLE DE ECATEPEC"){
+      var universidadValleEcatepec=[" "];
       organizationValue = universidadValleEcatepec;
     }
     if(organizationValue == "UNIVERSIDAD INTERCULTURAL DE CHIAPAS"){
-      var universidadinterculturalChiapas[" "];
+      var universidadinterculturalChiapas=[" "];
       organizationValue = universidadinterculturalChiapas;
     }
     if(organizationValue == "UNIVERSIDAD INTERCULTURAL DEL ESTADO DE MEXICO"){
-      var universidadEsatdoMExico[" "];
+      var universidadEsatdoMExico=[" "];
       organizationValue = universidadEsatdoMExico;
     }
     if(organizationValue == "UNIVERSIDAD INTERCULTURAL DEL ESTADO DE TABASCO"){
-      var universidadEsatdoTabasco[" "];
+      var universidadEsatdoTabasco=[" "];
       organizationValue = universidadEsatdoTabasco;
     }
      if(organizationValue == "UNIVERSIDAD INTERCULTURAL INDIGENA DE MICHOACAN"){
-      var universidadIndigenaMichoacan[" "];
+      var universidadIndigenaMichoacan=[" "];
       organizationValue = universidadIndigenaMichoacan;
     }
     if(organizationValue == "UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO"){
-      var universidadJuarezAutonoma["DIVISION ACADEMICA DE CIENCIAS BASICAS",
+      var universidadJuarezAutonoma=["DIVISION ACADEMICA DE CIENCIAS BASICAS",
                                     "DIVISION ACADEMICA DE CIENCIAS BIOLOGICAS",
                                     "DIVISION ACADEMICA DE CIENCIAS DE LA SALUD",
                                     "DIVISION ACADEMICA DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
@@ -19541,7 +19546,7 @@ function changeSector()
       organizationValue = universidadJuarezAutonoma;
     }
     if(organizationValue == "UNIVERSIDAD JUAREZ DEL ESTADO DE DURANGO"){
-      var universidadJuarezDurango["ESCUELA DE ENFERMERIA",
+      var universidadJuarezDurango=["ESCUELA DE ENFERMERIA",
                                   "ESCUELA DE LENGUAS",
                                   "ESCUELA DE MATEMATICAS-UJED",
                                   "ESCUELA DE MEDICINA",
@@ -19573,26 +19578,26 @@ function changeSector()
       organizationValue = universidadJuarezDurango;
     }
     if(organizationValue == "UNIVERSIDAD LATINOAMERICANA SC"){
-      var universidadLatinoamericana["CAMPUS CUERNAVACA (CIENCIAS DE LA SALUD)",
+      var universidadLatinoamericana=["CAMPUS CUERNAVACA (CIENCIAS DE LA SALUD)",
                                     "ESCUELA DE COMUNICACION Y RELACIONES PUBLICAS",
                                     "ESCUELA DE CONTADURIA Y ADMINISTRACION",
-                                    "ESCUELA DE ODONTOLOGIA",];
+                                    "ESCUELA DE ODONTOLOGIA"];
       organizationValue = universidadLatinoamericana;
     }
      if(organizationValue == "UNIVERSIDAD MADERO"){
-      var universidadMadero[" "];
+      var universidadMadero=[" "];
       organizationValue = universidadMadero;
     }
      if(organizationValue == "UNIVERSIDAD MARISTA"){
-      var universidadMarista[" "];
+      var universidadMarista=[" "];
       organizationValue = universidadMarista;
     }
      if(organizationValue == "UNIVERSIDAD MAYA"){
-      var universidadMaya[" "];
+      var universidadMaya=[" "];
       organizationValue = universidadMaya;
     }
      if(organizationValue == "UNIVERSIDAD MICHOACANA DE SAN NICOLAS DE HIDALGO"){
-      var universidadMichiacanaHidalgo["CENTRO DE DIDÁCTICA Y COMUNICACIÓN EDUCATIVA",
+      var universidadMichiacanaHidalgo=["CENTRO DE DIDÁCTICA Y COMUNICACIÓN EDUCATIVA",
                                       "CENTRO DE ESTUDIOS DE LA CULTURA NICOLAITA",
                                       "CENTRO DE INVESTIGACION Y ESTUDIO DE LA CULTURA PUREPECHA",
                                       "CENTRO MULTIDISCIPLINARIO DE ESTUDIOS EN BIOTECNOLOGIA",
@@ -19642,11 +19647,11 @@ function changeSector()
                                       "LABORATORIO DE ORNITOLOGIA, MAESTRIA EN MANEJO Y CONSERVACION DE RECURSOS NATURALES",
                                       "SECRETARIA ACADEMICA",
                                       "SECRETARIA GENERAL",
-                                      "SECRETARÍA ADMINISTRATIVA",];
+                                      "SECRETARÍA ADMINISTRATIVA"];
       organizationValue = universidadMichiacanaHidalgo;
     }
-    if(organizationValue == "UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO"){
-      var universidadNacionalAutonomaMexico["CAMPUS MORELOS",
+        if(organizationValue == "UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO"){
+      var universidadNacionalAutonomaMexico=["CAMPUS MORELOS",
                                             "CENTRO DE INVESTIGACIONES EN ENERGÍA",
                                             "CENTRO UNIVERSITARIO DE COMUNICACION DE LA CIENCIA",
                                             "CENTRO UNIVERSITARIO DE ESTUDIOS CINEMATOGRAFICOS",
@@ -19717,29 +19722,29 @@ function changeSector()
                                             "UNIVERSIDAD DON VASCO A.C.",
                                             "UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO",
                                             "UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO, FACULTAD DE ODONTOLOGIA Y POSGRADO",
-                                            "UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO, FACULTAD DE ODONTOLOGÍA, POSGRADO ODONTOPEDIATRIA",];
+                                            "UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO, FACULTAD DE ODONTOLOGÍA, POSGRADO ODONTOPEDIATRIA"];
       organizationValue = universidadNacionalAutonomaMexico;
     }
      if(organizationValue == "UNIVERSIDAD NACIONAL DE COLOMBIA"){
-      var universidadNacionalColombia["SEDE ARAUCA",
+      var universidadNacionalColombia=["SEDE ARAUCA",
                                       "SEDE BOGOTA",
                                       "SEDE LETICIA",
                                       "SEDE MANIZALES",
                                       "SEDE MEDELLIN",
                                       "SEDE PALMIRA",
-                                      "SEDE SAN ANDRES",];
+                                      "SEDE SAN ANDRES"];
       organizationValue = universidadNacionalColombia;
     }
      if(organizationValue == "UNIVERSIDAD PEDAGOGICA DE DURANGO"){
-      var universidadPedagogicaDurango[" "];
+      var universidadPedagogicaDurango=[" "];
       organizationValue = universidadPedagogicaDurango;
     }
      if(organizationValue == "UNIVERSIDAD PEDAGOGICA DE VERACRUZ"){
-      var universidadPedagogicaVeracruz[" "];
+      var universidadPedagogicaVeracruz=[" "];
       organizationValue = universidadPedagogicaVeracruz;
     }
     if(organizationValue == "UNIVERSIDAD PEDAGOGICA NACIONAL"){
-      var universidadPedagogicaNacional["AREA DE DOCENCIA",
+      var universidadPedagogicaNacional=["AREA DE DOCENCIA",
                                         "AREA DE INVESTIGACION",
                                         "CENTRO DE LENGUAS EXTRANJERAS",
                                         "DEPARTAMENTO DE POSGRADO EN EDUCACION",
@@ -19789,166 +19794,166 @@ function changeSector()
                                         "UNIVERSIDAD PEDAGÓGICA NACIONAL",
                                         "UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 011 AGUASCALIENTES",
                                         "UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 141A, GUADALAJARA",
-                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 32A ZACATECAS",];
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 32A ZACATECAS"];
       organizationValue = universidadPedagogicaNacional;
     }
     if(organizationValue == "UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD O3A"){
-      var universidadPedagogicaNacionalUnidad[" "];
+      var universidadPedagogicaNacionalUnidad=[" "];
       organizationValue = universidadPedagogicaNacionalUnidad;
     }
     if(organizationValue == "UNIVERSIDAD PEDAGOGICA VERACRUZANA"){
-      var universidadPedagogicaVeracruzana[" "];
+      var universidadPedagogicaVeracruzana=[" "];
       organizationValue = universidadPedagogicaVeracruzana;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DE AGUASCALIENTES"){
-      var universidadPolitecnicaAguascalientes[" "];
+      var universidadPolitecnicaAguascalientes=[" "];
       organizationValue = universidadPolitecnicaAguascalientes;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DE ALTAMIRA"){
-      var universidadPolitecnicaAltamira["INGENIERIA EN ENERGIA",
+      var universidadPolitecnicaAltamira=["INGENIERIA EN ENERGIA",
                                           "INGENIERIA EN TECNOLOGIAS DE LA INFORMACIÓN",
-                                          "INGENIERIA INDUSTRIAL",];
+                                          "INGENIERIA INDUSTRIAL"];
       organizationValue = universidadPolitecnicaAltamira;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE BAJA CALIFORNIA"){
-      var universidadPolitecnicaBajaCalifornia[" "];
+      var universidadPolitecnicaBajaCalifornia=[" "];
       organizationValue = universidadPolitecnicaBajaCalifornia;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE CHIAPAS"){
-      var universidadPolitecnicaChiapas[" "];
+      var universidadPolitecnicaChiapas=[" "];
       organizationValue = universidadPolitecnicaChiapas;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DE DURANGO"){
-      var universidadPolitecnicaDurango[" "];
+      var universidadPolitecnicaDurango=[" "];
       organizationValue = universidadPolitecnicaDurango;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DE FRANCISCO I MADERO"){
-      var universidadPolitecnicaFranciscoMadero["DEPARTAMENTO DE INGENIERIA EN AGROTECNOLOGIA"];
+      var universidadPolitecnicaFranciscoMadero=["DEPARTAMENTO DE INGENIERIA EN AGROTECNOLOGIA"];
       organizationValue = universidadPolitecnicaFranciscoMadero;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE GOMEZ PALACIO"){
-      var universidadPolitecnicaGomezPalacio[" "];
+      var universidadPolitecnicaGomezPalacio=[" "];
       organizationValue = universidadPolitecnicaGomezPalacio;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE GUANAJUATO"){
-      var universidadPolitecnicaGuanajuato[" "];
+      var universidadPolitecnicaGuanajuato=[" "];
       organizationValue = universidadPolitecnicaGuanajuato;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE PACHUCA"){
-      var universidadPolitecnicaPachuca["BIOTECNOLOGIA",
+      var universidadPolitecnicaPachuca=["BIOTECNOLOGIA",
                                         "DEPARTAMENTO DE MECATRONICA",
-                                        "DEPARTAMENTO DE TELEMÁTICA",];
+                                        "DEPARTAMENTO DE TELEMÁTICA"];
       organizationValue = universidadPolitecnicaPachuca;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DE PUEBLA"){
-      var universidadPolitecnicaPuebla["PROGRAMA ACADEMICO DE INGENIERIA Y ELECTRONICA"];
+      var universidadPolitecnicaPuebla=["PROGRAMA ACADEMICO DE INGENIERIA Y ELECTRONICA"];
       organizationValue = universidadPolitecnicaPuebla;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DE QUERETARO"){
-      var universidadPolitecnicaQueretaro[" "];
+      var universidadPolitecnicaQueretaro=[" "];
       organizationValue = universidadPolitecnicaQueretaro;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DE SAN LUIS POTOSI"){
-      var universidadPolitecnicaSanLuis["ACADEMIA DE MATEMATICAS",
+      var universidadPolitecnicaSanLuis=["ACADEMIA DE MATEMATICAS",
                                         "COORDINACION DEL SEMINARIO DE INVESTIGACION",
-                                        "DIVISIÓN DE NUEVAS TECNOLOGÍAS DE LA INFORMACIÓN",];
+                                        "DIVISIÓN DE NUEVAS TECNOLOGÍAS DE LA INFORMACIÓN"];
       organizationValue = universidadPolitecnicaSanLuis;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE SINALOA"){
-      var universidadPolitecnicaSinaloa[" "];
+      var universidadPolitecnicaSinaloa=[" "];
       organizationValue = universidadPolitecnicaSinaloa;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DE TLAXCALA"){
-      var universidadPolitecnicaTlaxcala[" "];
+      var universidadPolitecnicaTlaxcala=[" "];
       organizationValue = universidadPolitecnicaTlaxcala;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE TULANCINGO"){
-      var universidadPolitecnicaTulancingo[" "];
+      var universidadPolitecnicaTulancingo=[" "];
       organizationValue = universidadPolitecnicaTulancingo;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE VICTORIA"){
-      var universidadPolitecnicaVictoria["DEPARTAMENTO DE POSGRADO",
+      var universidadPolitecnicaVictoria=["DEPARTAMENTO DE POSGRADO",
                                           "SECRETARIA ACADEMICA"];
       organizationValue = universidadPolitecnicaVictoria;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DE ZACATECAS"){
-      var universidadPolitecnicaZacatecas["DIRECCION DE INGENIERIA EN SISTEMAS COMPUTACIONALES"];
+      var universidadPolitecnicaZacatecas=["DIRECCION DE INGENIERIA EN SISTEMAS COMPUTACIONALES"];
       organizationValue = universidadPolitecnicaZacatecas;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DEL ESTADO DE MORELOS"){
-      var universidadPolitecnicaEstadoMorelos[" "];
+      var universidadPolitecnicaEstadoMorelos=[" "];
       organizationValue = universidadPolitecnicaEstadoMorelos;
     }
       if(organizationValue == "UNIVERSIDAD POLITECNICA DEL GOLFO DE MEXICO"){
-      var universidadPolitecnicaGolfoMexico[" "];
+      var universidadPolitecnicaGolfoMexico=[" "];
       organizationValue = universidadPolitecnicaGolfoMexico;
     }
      if(organizationValue == "UNIVERSIDAD POLITECNICA DEL SUR DE ZACATECAS"){
-      var universidadPolitecnicaSurZacatecas[" "];
+      var universidadPolitecnicaSurZacatecas=[" "];
       organizationValue = universidadPolitecnicaSurZacatecas;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DEL VALLE DE MEXICO"){
-      var universidadPolitecnicaValleMexico[" "];
+      var universidadPolitecnicaValleMexico=[" "];
       organizationValue = universidadPolitecnicaValleMexico;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA DEL VALLE DE TOLUCA"){
-      var universidadPolitecnicaValleToluca[" "];
+      var universidadPolitecnicaValleToluca=[" "];
       organizationValue = universidadPolitecnicaValleToluca;
     }
     if(organizationValue == "UNIVERSIDAD POLITECNICA MESOAMERICANA"){
-      var universidadPolitecnicaMesoamericana[" "];
+      var universidadPolitecnicaMesoamericana=[" "];
       organizationValue = universidadPolitecnicaMesoamericana;
     }
      if(organizationValue == "UNIVERSIDAD POPULAR DE LA CHONTALPA"){
-      var universidadPopulaarChontalpa[" "];
+      var universidadPopulaarChontalpa=[" "];
       organizationValue = universidadPopulaarChontalpa;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE AGUASCALIENTES"){
-      var universidadTecnologiaAguascliantes[" "];
+      var universidadTecnologiaAguascliantes=[" "];
       organizationValue = universidadTecnologiaAguascliantes;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE ALTAMIRA"){
-      var universidadTecnologiaAlatamira[" "];
+      var universidadTecnologiaAlatamira=[" "];
       organizationValue = universidadTecnologiaAlatamira;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE CANCUN"){
-      var universidadTecnologiaCancun[" "];
+      var universidadTecnologiaCancun=[" "];
       organizationValue = universidadTecnologiaCancun;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE COAHUILA"){
-      var universidadTecnologiaCoahuila[" "];
+      var universidadTecnologiaCoahuila=[" "];
       organizationValue = universidadTecnologiaCoahuila;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE HERMOSILLO SONORA"){
-      var universidadTecnologiaHermosilloSonora[" "];
+      var universidadTecnologiaHermosilloSonora=[" "];
       organizationValue = universidadTecnologiaHermosilloSonora;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE HUEJOTZINGO"){
-      var universidadTecnologiaHuejotzing[" "];
+      var universidadTecnologiaHuejotzing=[" "];
       organizationValue = universidadTecnologiaHuejotzing;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE IZUCAR DE MATAMOROS"){
-      var universidadTecnologiaIzucarMAtamoros[" "];
+      var universidadTecnologiaIzucarMAtamoros=[" "];
       organizationValue = universidadTecnologiaIzucarMAtamoros;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE JALISCO"){
-      var universidadTecnologiaJalisco[" "];
+      var universidadTecnologiaJalisco=[" "];
       organizationValue = universidadTecnologiaJalisco;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA COSTA"){
-      var universidadTecnologiaCosta[" "];
+      var universidadTecnologiaCosta=[" "];
       organizationValue = universidadTecnologiaCosta;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA COSTA GRANDE DE GUERRERO"){
-      var universidadTecnologiaCostaGrande[" "];
+      var universidadTecnologiaCostaGrande=[" "];
       organizationValue = universidadTecnologiaCostaGrande;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA HUASTECA HIDALGUENSE"){
-      var universidadTecnologiaHuastecaHidalguense[" "];
+      var universidadTecnologiaHuastecaHidalguense=[" "];
       organizationValue = universidadTecnologiaHuastecaHidalguense;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA MIXTECA"){
-      var universidadTecnologiaHuastecaMixteca["CENTRO DE FISICA Y MATEMATICAS",
+      var universidadTecnologiaHuastecaMixteca=["CENTRO DE FISICA Y MATEMATICAS",
                                                 "DIVISION DE ESTUDIOS DE POSGRADO",
                                                 "INSTITUTO DE AGROINDUSTRIAS",
                                                 "INSTITUTO DE ELECTRONICA Y COMPUTACION",
@@ -19958,135 +19963,135 @@ function changeSector()
       organizationValue = universidadTecnologiaHuastecaMixteca;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA REGION CENTRO DE COAHUILA"){
-      var universidadTecnologiaCentroCoahuila[" "];
+      var universidadTecnologiaCentroCoahuila=[" "];
       organizationValue = universidadTecnologiaCentroCoahuila;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA RIVIERA MAYA"){
-      var universidadTecnologicaRivera[" "];
+      var universidadTecnologicaRivera=[" "];
       organizationValue = universidadTecnologicaRivera;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA SELVA"){
-      var universidadTecnologicaSelva[" "];
+      var universidadTecnologicaSelva=[" "];
       organizationValue = universidadTecnologicaSelva;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA SIERRA HIDALGUENSE"){
-      var universidadTecnologicaSierraHidalguense[" "];
+      var universidadTecnologicaSierraHidalguense=[" "];
       organizationValue = universidadTecnologicaSierraHidalguense;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA ZONA METROPOLITANA DE GUADALAJARA"){
-      var universidadTecnologicaMetropolitana[" "];
+      var universidadTecnologicaMetropolitana=[" "];
       organizationValue = universidadTecnologicaMetropolitana;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LEON"){
-      var universidadTecnologicaLeon[" "];
+      var universidadTecnologicaLeon=[" "];
       organizationValue = universidadTecnologicaLeon;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE MORELIA"){
-      var universidadTecnologicaMorelia["AREA ACADEMICA"];
+      var universidadTecnologicaMorelia=["AREA ACADEMICA"];
       organizationValue = universidadTecnologicaMorelia;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE NAYARIT"){
-      var universidadTecnologicaNayarit[" "];
+      var universidadTecnologicaNayarit=[" "];
       organizationValue = universidadTecnologicaNayarit;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE NEZAHUALCOYOTL"){
-      var universidadTecnologicaNezahualcototl[" "];
+      var universidadTecnologicaNezahualcototl=[" "];
       organizationValue = universidadTecnologicaNezahualcototl;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE PUEBLA"){
-      var universidadTecnologicaPuebla[" "];
+      var universidadTecnologicaPuebla=[" "];
       organizationValue = universidadTecnologicaPuebla;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE QUERETARO"){
-      var universidadTecnologicaQueretaro[" "];
+      var universidadTecnologicaQueretaro=[" "];
       organizationValue = universidadTecnologicaQueretaro;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE SAN JUAN DEL RIO"){
-      var universidadTecnologicaSanJuanDelRia[" "];
+      var universidadTecnologicaSanJuanDelRia=[" "];
       organizationValue = universidadTecnologicaSanJuanDelRia;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE SAN LUIS POTOSI"){
-      var universidadTecnologicaSanLuisPotosi[" "];
+      var universidadTecnologicaSanLuisPotosi=[" "];
       organizationValue = universidadTecnologicaSanLuisPotosi;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TABASCO"){
-      var universidadTecnologicaTabasco[" "];
+      var universidadTecnologicaTabasco=[" "];
       organizationValue = universidadTecnologicaTabasco;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TECAMAC"){
-      var universidadTecnologicaTabasco["SECRETARIA ACADEMICA"];
+      var universidadTecnologicaTabasco=["SECRETARIA ACADEMICA"];
       organizationValue = universidadTecnologicaTabasco;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TECAMACHALCO"){
-      var universidadTecnologicaTecamachalco[" "];
+      var universidadTecnologicaTecamachalco=[" "];
       organizationValue = universidadTecnologicaTecamachalco;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TIJUANA"){
-      var universidadTecnologicaTijuana[" "];
+      var universidadTecnologicaTijuana=[" "];
       organizationValue = universidadTecnologicaTijuana;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TLAXCALA"){
-      var universidadTecnologicaTlaxcala[" "];
+      var universidadTecnologicaTlaxcala=[" "];
       organizationValue = universidadTecnologicaTlaxcala;
     }
       if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TORREON"){
-      var universidadTecnologicaTorreon[" "];
+      var universidadTecnologicaTorreon=[" "];
       organizationValue = universidadTecnologicaTorreon;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TULA"){
-      var universidadTecnologicaTula[" "];
+      var universidadTecnologicaTula=[" "];
       organizationValue = universidadTecnologicaTula;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TULA TEPEJI"){
-      var universidadTecnologicaTulaTepeji[" "];
+      var universidadTecnologicaTulaTepeji=[" "];
       organizationValue = universidadTecnologicaTulaTepeji;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TULANCINGO"){
-      var universidadTecnologicaTulancingo[" "];
+      var universidadTecnologicaTulancingo=[" "];
       organizationValue = universidadTecnologicaTulancingo;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE XICOTEPEC DE JUAREZ"){
-      var universidadTecnologicaXicotepec[" "];
+      var universidadTecnologicaXicotepec=[" "];
       organizationValue = universidadTecnologicaXicotepec;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL CENTRO DE VERACRUZ"){
-      var universidadTecnologicaCentralVeracruz[" "];
+      var universidadTecnologicaCentralVeracruz=[" "];
       organizationValue = universidadTecnologicaCentralVeracruz;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL ESTADO DE ZACATECAS"){
-      var universidadTecnologicaEstadoZacatecas[" "];
+      var universidadTecnologicaEstadoZacatecas=[" "];
       organizationValue = universidadTecnologicaEstadoZacatecas;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL NORTE DE AGUASCALIENTES"){
-      var universidadTecnologicaAguascalientesNorte[" "];
+      var universidadTecnologicaAguascalientesNorte=[" "];
       organizationValue = universidadTecnologicaAguascalientesNorte;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL NORTE DE COAHUILA"){
-      var universidadTecnologicaCoahuilaNorte[" "];
+      var universidadTecnologicaCoahuilaNorte=[" "];
       organizationValue = universidadTecnologicaCoahuilaNorte;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL NORTE DE GUANAJUATO"){
-      var universidadTecnologicaGuanajuatoNorte[" "];
+      var universidadTecnologicaGuanajuatoNorte=[" "];
       organizationValue = universidadTecnologicaGuanajuatoNorte;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL SUR DE SONORA"){
-      var universidadTecnologicaSurSonora[" "];
+      var universidadTecnologicaSurSonora=[" "];
       organizationValue = universidadTecnologicaSurSonora;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL SUROESTE DE GUANAJUATO"){
-      var universidadTecnologicaSuroesteGuanajuato[" "];
+      var universidadTecnologicaSuroesteGuanajuato=[" "];
       organizationValue = universidadTecnologicaSuroesteGuanajuato;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL USUMACINTA"){
-      var universidadTecnologicaUsumacinta[" "];
+      var universidadTecnologicaUsumacinta=[" "];
       organizationValue = universidadTecnologicaUsumacinta;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL VALLE DEL MEZQUITAL"){
-      var universidadTecnologicaMezquital[" "];
+      var universidadTecnologicaMezquital=[" "];
       organizationValue = universidadTecnologicaMezquital;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA EMILIANO ZAPATA DEL ESTADO DE MORELOS"){
-      var universidadTecnologicaZapataMorels["ABOGADO GENERAL",
+      var universidadTecnologicaZapataMorels=["ABOGADO GENERAL",
                                               "DIRECCION DE VINCULACION",
                                               "DIRECCIÓN DE ADMINISTRACIÓN Y FINANZAS",
                                               "DIRECCIÓN DE CARRERA DE MANTENIMIENTO INDUSTRIAL",
@@ -20097,23 +20102,23 @@ function changeSector()
       organizationValue = universidadTecnologicaZapataMorels;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA FIDEL VELAZQUEZ"){
-      var universidadTecnologicaFidelVelelazquez[" "];
+      var universidadTecnologicaFidelVelelazquez=[" "];
       organizationValue = universidadTecnologicaFidelVelelazquez;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA METROPOLITANA"){
-      var universidadTecnologicaMetropolitana[" "];
+      var universidadTecnologicaMetropolitana=[" "];
       organizationValue = universidadTecnologicaMetropolitana;
     }
      if(organizationValue == "UNIVERSIDAD TECNOLOGICA REGIONAL DEL SUR"){
-      var universidadTecnologicaMREgionalSur[" "];
+      var universidadTecnologicaMREgionalSur=[" "];
       organizationValue = universidadTecnologicaMREgionalSur;
     }
     if(organizationValue == "UNIVERSIDAD TECNOLOGICA SANTA CATARINA"){
-      var universidadTecnologicaCatariana[" "];
+      var universidadTecnologicaCatariana=[" "];
       organizationValue = universidadTecnologicaCatariana;
     }
     if(organizationValue == "UNIVERSIDAD VERACRUZANA"){
-      var universidadVeracruzana["CENTRO DE ATENCION INTEGRAL PARA LA SALUD DEL ESTUDIANTE UNIVERSITARIO",
+      var universidadVeracruzana=["CENTRO DE ATENCION INTEGRAL PARA LA SALUD DEL ESTUDIANTE UNIVERSITARIO",
                                   "CENTRO DE CIENCIAS DE LA TIERRA",
                                   "CENTRO DE ECOLOGIA Y PESQUERIAS",
                                   "CENTRO DE ESTUDIOS DE LA CULTURA Y LA COMUNICACION",
@@ -20216,43 +20221,71 @@ function changeSector()
       organizationValue = universidadVeracruzana;
     }
     if(organizationValue == "UNIVERSIDAD VERACRUZANA UNIDAD DE INVESTIGACION DE ECOLOGIA DE PESQUERIAS"){
-      var universidadVeracruzanaInvestigacion[" "];
+      var universidadVeracruzanaInvestigacion=[" "];
       organizationValue = universidadVeracruzanaInvestigacion;
     }
     if(organizationValue == "UNIVERSITA IUAV DI VENEZIA"){
-      var universitaIuav["DIPARTIMENTO DI PIANIFICAZIONE"];
+      var universitaIuav=["DIPARTIMENTO DI PIANIFICAZIONE"];
       organizationValue = universitaIuav;
     }
     if(organizationValue == "UNIVERSITAT FUR BODENKULTUR WIEN"){
-      var universitaFur[" "];
+      var universitaFur=[" "];
       organizationValue = universitaFur;
     }
     if(organizationValue == "UNIVERSITE PIERRE ET MARIE CURIE PARIS VI"){
-      var universitaPierre[" "];
+      var universitaPierre=[" "];
       organizationValue = universitaPierre;
     }
     if(organizationValue == "UNIVERSITY OF WARWICK"){
-      var universitawarwik[" "];
+      var universitawarwik=[" "];
       organizationValue = universitawarwik;
     }
     if(organizationValue == "UNIVERSITY OF WASHINGTON"){
-      var universitawashigton[" "];
+      var universitawashigton=[" "];
       organizationValue = universitawashigton;
     }
     if(organizationValue == "VALDOSTA STATE UNIVERSITY"){
-      var valdosaStateUniversity[" "];
+      var valdosaStateUniversity=[" "];
       organizationValue = valdosaStateUniversity;
     }
+
+    /* No especificados */
+
+     if(organizationValue == "SALVADOR OROZCO LOPEZ"){
+      var salvadorOrozco=[" "];
+      organizationValue = salvadorOrozco;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS CONSTITUCIONALES MEXICOCENTROAMERICA"){
+      var centroEstudiosMexicoAmerica=[" "];
+      organizationValue = centroEstudiosMexicoAmerica;
+    }
+     if(organizationValue == "CENTRO NACIONAL DE EDUCACION NORMAL"){
+      var nacionalEducacionNormal=[" "];
+      organizationValue = nacionalEducacionNormal;
+    }
+     if(organizationValue == "INSTITUTO HIDROFISICO MARINO"){
+      var institutoHidrofisico=[" "];
+      organizationValue = institutoHidrofisico;
+    }
+    if(organizationValue == "INDEPENDIENTE"){
+      var independiente=[" "];
+      organizationValue = independiente;
+    }
+    if(organizationValue == "NO ESPECIFICADO"){
+      var noEspecificado=[" "];
+      organizationValue = noEspecificado;
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    /* Instituciones del sector de educacion superior privadas */
+
+     if(organizationValue == "ACADEMIA MEXICANA DE CIENCIAS ANTROPOLOGICAS AC"){
+      var academiaMexicanaCiencias=[" "];
+      organizationValue = academiaMexicanaCiencias;
+    }
+    if(organizationValue == "BARCELONA GSE"){
+      var barcelonaGse=[" "];
+      organizationValue = barcelonaGse;
+    }
     
     
     
