@@ -194,6 +194,10 @@
                     <h4>Menú </h4>
                 </div>
                 <div class="headerconteiner5">
+                  <?php if(isset($_GET['ide'])){
+                    $ControllerB = $this->uniqueid;
+                    $this->renderPartial('../adminUsers/update_user');
+                  }else{  ?>
                     <span>
                       <?php
                       switch ($this->uniqueid) {
@@ -369,6 +373,7 @@
 
                         ?>
                       </span>
+                      <?php } ?>
                 </div>
             </div>
             <div class="syscontent">

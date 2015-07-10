@@ -8,8 +8,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
 
 
 <script type="text/javascript">
-<<<<<<< HEAD
-=======
+
   $(document).ready(function() {
       $(".numericOnly").keydown(function (e) {
           if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -44,7 +43,6 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
         return false;
 }
 
->>>>>>> e59ccf776c9838f10b275a1a80e856cd0b2fb6f6
   function changeArea(){
 
     var areaValue = $("#area option:selected").val();
