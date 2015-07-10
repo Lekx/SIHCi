@@ -277,7 +277,7 @@ $('<div></div>').appendTo('form')
 						"Otro. Especifique"]
 		    temaValue = otros;
 		}
-			 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]' onchange='changeSubTemaPrioritario()'>";
+			 	var newTema ="<span class='plain-select'><select id='Projects_sub_topic' class='tooltipstered' name='Projects[sub_topic]'>";
 	    	newTema+="<option>Subtema Prioritario</option>";
 	    for (var item in temaValue) {
         	newTema +="<option>"+temaValue[ item ]+"</option>";
@@ -417,7 +417,7 @@ $('<div></div>').appendTo('form')
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
 					),  
-			/*	array(
+				array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
 					), 
@@ -435,10 +435,8 @@ $('<div></div>').appendTo('form')
 					), 	
 				array(
 					'label'=>'Máximo grado de estudios:',
-
-					'value'=>$gradesUsers->grade,
-					), */
-
+					'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
+					), 
 				array(
 					'label'=>'¿Pertenece al SNI?',
 					'value'=>$curriculum != null ? $curriculum->SNI :
@@ -446,7 +444,6 @@ $('<div></div>').appendTo('form')
 					),    
 			),
 		));
-		print_r($gradesUsers->grade); 
 		?>
 
 	<div class="row">
