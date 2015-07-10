@@ -335,7 +335,7 @@ class ProjectsController extends Controller
 			 $project->is_sni = 1;
 			 $project->develop_uh ="-1";
 
-			 $project->status = "borrador";
+			 $project->status = "BORRADOR";
 			 $project->folio = "-1";
 			 $project->is_sponsored = 1;
 			 $project->registration_number = "-1";
@@ -351,7 +351,7 @@ class ProjectsController extends Controller
 				if($project->save()){
 					$sponsoredProj->id_project = $project->id;
 					if($sponsoredProj->save())
-						if(Sponsorship::model()->updateByPk($id,array("status"=>1)))
+						if(Sponsorship::model()->updateByPk($id,array("status"=>"ACEPTADO")))
 							if(!isset($_GET['ajax']))
 								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('sponsoredAdmin'));
 
@@ -363,7 +363,7 @@ class ProjectsController extends Controller
 
 	public function actionRejectSponsorship($id)
 	{
-		Sponsorship::model()->updateByPk($id,array("status"=>"rechazado"));
+		Sponsorship::model()->updateByPk($id,array("status"=>"RECHAZADO"));
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

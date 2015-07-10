@@ -71,26 +71,26 @@ $this->widget('zii.widgets.grid.CGridView', array(
 				array(
 			'name'=>'status',
 			'header'=>'Título del proyecto',
-			'value'=>'$data->status == 1 ? "aceptado" : "rechazado"',
+			'value'=>'strtolower($data->status)',
 			),
 			array(
 			'class'=>'CButtonColumn','template'=>'{view} {accept} {reject}','header'=>'Acciones','buttons'=>array(
 					'view'=>array(
 						'label'=>'Detalles',
 						//'imageUrl'=>Yii::app()->request->baseUrl.'/img/accept.png',
-						'url'=>'Yii::app()->createUrl("/projects/view",array("id"=>$data->id))',
+						'url'=>'Yii::app()->createUrl("/sponsorship/view",array("id"=>$data->id))',
 					),
 					'accept'=>array(
 							'label'=>'Aceptar',
 							'imageUrl'=>Yii::app()->request->baseUrl.'/img/accept.png',
 							'url'=>'Yii::app()->createUrl("/projects/acceptSponsorship",array("id"=>$data->id))',
-							'visible'=>'$data->status == 0 ? TRUE : FALSE',
+							'visible'=>'($data->status == "PENDIENTE" || $data->status == "RECHAZADO")  ? TRUE : FALSE',
 						),
 					'reject'=>array(
 							'label'=>'Rechazar',
 							'imageUrl'=>Yii::app()->request->baseUrl.'/img/reject.png',
 							'url'=>'Yii::app()->createUrl("/projects/rejectSponsorship",array("id"=>$data->id))',
-							'visible'=>'$data->status == 1 ? TRUE : FALSE',
+							'visible'=>'$data->status == "PENDIENTE" ? TRUE : FALSE',
 						)
 				)
 		),
