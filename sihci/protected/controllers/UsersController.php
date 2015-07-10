@@ -36,17 +36,17 @@ class UsersController extends Controller {
 
 	public function activateAccount($to,$activationKey){
 		$sihci = "From: SIHCI";
-		
+
 
  		$subject = "Activación de cuenta.";
- 		$body = ' 
+ 		$body = '
 		 Activación de Cuenta.
-		  
+
 		    Le damos la cordial bienvenida a el sistema SIHCi, para activar su cuenta solo debe dar clic en el siguiente enlace. http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.$activationKey.'
-		 
+
 		   Si usted no se ha registrado en nuestro sitio, por favor hacer caso omiso de éste correo.
-		
-		 '; 
+
+		 ';
 
 		if(!mail($to,$subject,$body)){
 		  echo"Error al enviar el mensaje.";
@@ -54,7 +54,7 @@ class UsersController extends Controller {
 	}
 
 	public function actionCreate() {
-		
+
 		$model = new Users;
 		$modelPersons = new Persons;
 
@@ -73,19 +73,15 @@ class UsersController extends Controller {
 
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
-						$model->status = 'activo';
 						$model->status = 'inactivo';
 						$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s') . $model->email . rand(1000, 5000))));
-						//if($model->validate())
 						$model->password = sha1(md5(sha1($model->password)));
-						//$model->attributes=$_POST['Users'];
 
 						if ($model->validate()) {
 
 							if (isset($_POST['Persons'])) {
 
 								$modelPersons->attributes = $_POST['Persons'];
-								//$modelPersons->person_rfc = "1234567890123";
 
 								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
 								if (empty($result2)) {
@@ -99,9 +95,7 @@ class UsersController extends Controller {
 										if($model->save()){
 											$modelPersons->id_user = $model->id;
 											if($modelPersons->save()){
-												//echo "antes de mandar email";
 												$this->activateAccount($model->email,$model->act_react_key);
-												//echo "despues de mandar email";
 												$log = new SystemLog();
 												$log->id_user = Yii::app()->user->id;
 												$log->section = "Empresas";
@@ -109,25 +103,42 @@ class UsersController extends Controller {
 												$log->action = "creacion";
 												$log->datetime = new CDbExpression('NOW()');
 												$log->save();
-												echo "202";
-											}else
-												echo "Ha ocurrido un error al crear el registro (CU03)";	
-										}else
-											echo "Ha ocurrido un error al crear el registro (CU02)";
+												
+												echo CJSON::encode(array('status'=>'success'));
+												Yii::app()->end();
 
-									}else
-										echo "Ha ocurrido un error al crear el registro (CU01)";
-								
-							}else
-								echo "Ya hay una cuenta registrada con este CURP.";
+												}else{
+												echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Persona), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+												Yii::app()->end();
+											}
+										}else{
+											echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Usuarios), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+											Yii::app()->end();
+										}
+
+									}else{
+										echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Persona), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+										Yii::app()->end();
+									}
+
+							}else{
+								echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp ingresado ya existe, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+								Yii::app()->end();
+							}
 						}
 					}
-				}else
-					echo "Las contraseñas no concuerdan";
-			}else
-				echo "Los correos electronicos no concuerdan";
-			}else
-			echo "Ya existe una cuenta registrada con este correo.";
+				}else{
+					echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Las contraseñas no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+					Yii::app()->end();
+				}
+			}else{
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				Yii::app()->end();
+			}
+			}else{
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ya existe el correo ingresado, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				Yii::app()->end();
+			}
 		}
 
 		if (!isset($_POST['ajax'])) {

@@ -3,8 +3,7 @@
 /* @var $model Projects */
 /* @var $form CActiveForm */
 ?>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
 <script type="text/javascript">
 var elemSum = 1;
 function showAdtlRes(){
@@ -13,7 +12,7 @@ function showAdtlRes(){
 	if(elemSum > 2)
 		$('#ar'+(elemSum-2)+' input[type="button"]').hide();
 
-	
+
 	if(elemSum == 11)
 		$('#addBtnAr').hide();
 }
@@ -25,12 +24,12 @@ function hideAdtlRes(element){
 		$('#addBtnAr').show();
 
 		$('#ar'+(elemSum-1)+' input[type="button"]').show();
-	
+
 }
 
 function accionCancelar(){
 $('<div></div>').appendTo('form')
-    .html('<div><h6>Esta seguro de cancelar la acción actual? todo su trabajo no guardado sera borrado.</h6></div>')
+    .html('<div><h6>¿Está usted seguro de cancelar la acción actual? todo su trabajo no guardado sera borrado.</h6></div>')
     .dialog({
         modal: true,
         title: 'Cancelar',
@@ -39,7 +38,7 @@ $('<div></div>').appendTo('form')
         width: 'auto',
         resizable: false,
         buttons: {
-            Continuar: function () {
+    Continuar: function () {
                 window.location = yii.urls.cancelProject;
                 $(this).dialog("close");
             },
@@ -69,39 +68,15 @@ $('<div></div>').appendTo('form')
 			$("#back").hide();
 		else
 			$("#back").show();
-
-
-		//alert("ouch, you fucked me bby! "+section);
 		$("#section"+section).show();
 	}
-/*	function ajaxSave(value,type){
-		var request = $.ajax({
-		  url: yii.urls.base+"/index.php/projects/"+type,
-		  method: "POST",
-		  data: $("#projects-form").serialize()+"&type="+value,
-		  dataType: "json",
-		  success: function(response) {
-		  	alert(response+" as as dfas ");
-		  }
-
-		});
-
-			request.done(function(data) {
-				alert(data);
-				window.location = yii.urls.cancelProject;
-		});
-		/*request.fail(function(data) {
-				alert(data);
-				window.location = yii.urls.cancelProject;
-		});*/
-
 	function save(value){
 
 		$('input[type="hidden"]').attr('disabled', true);
 
 			if(value=="send"){
 				$('<div></div>').appendTo('form')
-				    .html('<div><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
+				    .html('<div id="customModalBox"><h6>¿Esta seguro de enviar a revisión este proyecto?</h6></div>')
 				    .dialog({
 				        modal: true,
 				        title: 'Cancelar',
@@ -111,10 +86,10 @@ $('<div></div>').appendTo('form')
 				        resizable: false,
 				        buttons: {
 				            "Enviar a revisión": function () {
-								send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
+								send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value);
 				            },
 				            "Guardar como borrador": function () {
-				            	send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin","draft")
+				            	send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin","draft");
 
 				            }
 				        },
@@ -122,12 +97,12 @@ $('<div></div>').appendTo('form')
 				            $(this).remove();
 				        }
 				    });
-				
+
 			}else
-				send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value)
+				send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value);
 
+				$("#customModalBox").hide();
 
-			
 	}
 
 	function changeSubTema(){
@@ -273,7 +248,7 @@ $('<div></div>').appendTo('form')
 						"Terapía Endovascular Neurológica",
 						"Urgencias Médico Quirúrgicas",
 						"Urología",
-						"Urología Ginecológica", 
+						"Urología Ginecológica",
 						"Otro. Especifique"]
 		    temaValue = otros;
 		}
@@ -302,7 +277,7 @@ $('<div></div>').appendTo('form')
 	<?php echo $form->errorSummary($model); ?>
 <div id="section1" class="sections" >
 	<div class="row">
-		<?php 
+		<?php
 			if(Yii::app()->user->Rol->id == 1){
 				$researcher = "";
 				if(!$model->isNewRecord){
@@ -316,9 +291,9 @@ $('<div></div>').appendTo('form')
 				    'name'=>'Projects[id_curriculum]',
 				    'id'=>'id_curriculum',
 				    'value'=>$researcher,
-				    'source'=>$this->createUrl('/sponsorship/getResearchers'),  
+				    'source'=>$this->createUrl('/sponsorship/getResearchers'),
 				    'options'=>array(
-				        'minLength'=>'0' 
+				        'minLength'=>'0'
 				    ),
 				));
 			}
@@ -335,24 +310,45 @@ $('<div></div>').appendTo('form')
 	</span>
 		<?php echo $form->error($model,'discipline'); ?>
 	</div>
+	<?php
+	if(!$model->isNewRecord){
 
-	<div class="row">
-		Tipo de investigación:
-		<div class="row">
-			<?php echo $form->checkBox($model,'Biomédica',  array('checked'=>'')); ?> Biomédica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<?php echo $form->checkBox($model,'Clínica',  array('checked'=>'')); ?> Clínica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<?php echo $form->checkBox($model,'Educativa',  array('checked'=>'')); ?> Educativa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		</div>
-		<div class="row">
-			<?php echo $form->checkBox($model,'Epidemiológica',  array('checked'=>'')); ?> Epidemiológica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<?php echo $form->checkBox($model,'Servicios de Salud',  array('checked'=>'')); ?> Servicios de Salud
-		</div>
-		Otro tipo de investigación:<div class="row">
-			<?php echo $form->textField($model,'research_type',array('size'=>60,'maxlength'=>250,'placeholder'=>'Tipo de Investigación','title'=>'Tipo de Investigación')); ?>
+		$rTypes = explode('*-*', $model->research_type);
+
+		array_pop($rTypes);
+		foreach ($rTypes as $key => $value) {
+		echo "<div class='row'>";
+		echo "	<span class='plain-select'>";
+			echo $form->dropDownList($model, 'research_type',array('Biomédica'=>'Biomédica','Clínica'=>'Clínica','Educativa'=>'Educativa','Epidemiológica'=>'Epidemiológica','Servicios de Salud'=>'Servicios de Salud','otra'=>'otra'),array('prompt'=>'Seleccione un tipo de Investigación','name'=>'research_types[]','title'=>'Tipo de Investigación','options' => array($value=>array('selected'=>true))));
+			echo "</span>";
+			echo "<a class='deletecontact' href='#' onclick='$(this).parent().slideUp(function(){ $(this).remove() }); return false'>Eliminar</a>";
+		echo "</div>";
+}
+
+	}
+	?>
+
+
+
+		<div class="row recopyRType">
+				<span class="plain-select">
+			<?php echo $form->dropDownList($model,'research_type',array('Biomédica'=>'Biomédica','Clínica'=>'Clínica','Educativa'=>'Educativa','Epidemiológica'=>'Epidemiológica','Servicios de Salud'=>'Servicios de Salud','otra'=>'otra'),array('prompt'=>'Seleccione un tipo de Investigación','name'=>'research_types[]','title'=>'Tipo de Investigación')); ?>
+		</span>
 			<?php echo $form->error($model,'research_type'); ?>
 		</div>
-	</div>
+
+			<?php
+				$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+					'targetClass'=>'recopyRType',
+					'addButtonLabel'=>'Agregar tipo de investigación',
+				));
+			?>
+
+
+
 	<div class="row">
+
+	<span class="plain-select">
 		<?php echo $form->dropDownList($model,'priority_topic',array('Accidentes y Violencia'=>'Accidentes y Violencia',
 																	'Cáncer'=>'Cáncer',
 																	'Discapacidad e Incapacidad'=>'Discapacidad e Incapacidad',
@@ -365,6 +361,7 @@ $('<div></div>').appendTo('form')
 																	'Muertes evitables (incluidas muerte materna y perinatal)'=>'Muertes evitables (incluidas muerte materna y perinatal)',
 																	'Salud Mental y Adicciones'=>'Salud Mental y Adicciones',
 																	'Otros'=>'Otros'),array('prompt'=>'Tema prioritario','title'=>'Tema prioritario','id'=>'tema', 'onchange'=>'changeSubTema()')); ?>
+																</span>
 		<?php echo $form->error($model,'priority_topic'); ?>
 	</div>
 	<div class="row" id="comboSubTema">
@@ -393,18 +390,25 @@ $('<div></div>').appendTo('form')
 		Datos del investigador.
 	</div>
 
-		<?php   $persons = Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
-				$emailUsers = Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
-				$phoneUsers = Phones::model()->findByAttributes(array('id_person'=>$persons->id,'is_primary'=>1));
-				$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
-				$gradesUsers = Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
-				$jobsUsers = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id)); 
-				
-				
-			 $this->widget('zii.widgets.CDetailView', array(	
+		<?php
+
+
+
+				$users = Users::model()->findByPk(Yii::app()->user->id);
+				$persons = $users->persons[0]; //Persons::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+				$emailUsers = $users->email;//Users::model()->findByAttributes(array('id'=>Yii::app()->user->id));
+				$phoneUsers = $users->persons[0]->phones[0];//Phones::model()->findByAttributes(array('id_person'=>$persons->id,'is_primary'=>1));
+				$curriculum = $users->curriculums;//Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
+				$gradesUsers = $users->curriculums[0]->grades[0];//Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+				$jobsUsers = $curriculum[0]->jobs[0];//Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
+
+
+
+
+			 $this->widget('zii.widgets.CDetailView', array(
 			'data'=>$persons,
 			'attributes'=>array(
-		
+
 				array(
 					'label'=>'Nombre(s):',
 					'value'=>$persons->names,
@@ -416,32 +420,32 @@ $('<div></div>').appendTo('form')
 				array(
 					'label'=>'Apellido Materno:',
 					'value'=>$persons->last_name2,
-					),  
+					),
 				array(
 					'label'=>'Sexo:',
 					'value'=>$persons->genre,
-					), 
-				array(
-					'label'=>'Email:',
-					'value'=>$emailUsers->email,
+					),
+			array(
+					'label'=>'Correo Electrónico:',
+					'value'=>$emailUsers,
 					),
 				array(
-					'label'=>'Telefono:',
+					'label'=>'Teléfono:',
 					'value'=>$phoneUsers != null ? $phoneUsers->phone_number.' Ext '.$phoneUsers->extension : " ",
-					),  
+					),
 				array(
 					'label'=>'Unidad hospitalaria:',
 					'value'=>$jobsUsers != null ? $jobsUsers->hospital_unit : " ",
-					), 	
+					),
 				array(
-					'label'=>'Máximo grado de estudios:',
-					'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
-					), 
+				     'label'=>'Máximo grado de estudios:',
+				     'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
+				     ),
 				array(
 					'label'=>'¿Pertenece al SNI?',
-					'value'=>$curriculum != null ? $curriculum->SNI :
-					$curriculum->SNI > 0 ? "Si, Número SNI: ".$curriculum->SNI : "No Perteneciente",
-					),    
+					'value'=>$curriculum != null ? $curriculum[0]->SNI :
+					$curriculum[0]->SNI > 0 ? "Si, Número SNI: ".$curriculum[0]->SNI : "No Perteneciente",
+					),
 			),
 		));
 		?>
@@ -452,7 +456,7 @@ $('<div></div>').appendTo('form')
 
 	<div class="row">
 		<span class="plain-select">
-		<?php echo $form->dropDownList($model,'develop_uh',array('Hospital Civil Fray Antonio Alcalde'=>'Hospital Civil Fray Antonio Alcalde','Hospital Civil Dr. Juan I. Menchaca'=>'Hospital Civil Dr. Juan I. Menchaca'),array('prompt'=>'Unidad hospitalaria donde se desarrollará la investigación','title'=>'Unidad hospitalaria donde se desarrollará la investigación')); ?>
+		<?php echo $form->dropDownList($model,'develop_uh',array('Hospital Civil Fray Antonio Alcalde'=>'Hospital Civil Fray Antonio Alcalde','Hospital Civil Dr. Juan I. Menchaca'=>'Hospital Civil Dr. Juan I. Menchaca'),array('prompt'=>'Unidad hospitalaria donde se desarrollará la investigación','title'=>'Unidad hospitalaria donde se desarrollará la investigación','options' => array($model->develop_uh=>array('selected'=>true)))); ?>
 		</span>
 		<?php echo $form->error($model,'develop_uh'); ?>
 	</div>
@@ -460,65 +464,72 @@ $('<div></div>').appendTo('form')
 
 
 <div id="section3" class="sections" style="display:none;">
-En caso de que existan investigadores participantes en su proyecto por favor agreguelos en los campos a continuación:
-	<div class="row" >
-		<input type="button" value="Agregar investigador participante" onclick="showAdtlRes()" id="addBtnAr">
-		<div class="row" id="ar1" style="display:none;">
-			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[1]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 1','title'=>'Investigador participante número 1'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+	<div class="row">
+<p>
+	En caso de que existan investigadores participantes en su proyecto por favor agreguelos en los campos a continuación:
+</p>
+	</div>
+
+
+		<input type="button" value="Agregar investigador participante" class="addSomething"onclick="showAdtlRes()" id="addBtnAr">
+		<div class="row" id="ar1" style="display:<?php echo (isset($model->projectsCoworkers[0]) ? "block": "none"); ?>;">
+			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[1]','source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 1','title'=>'Investigador participante número 1'),'value'=>(isset($model->projectsCoworkers[0]) ? $model->projectsCoworkers[0]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar2" style="display:none;">
+		<div class="row" id="ar2" style="display:<?php echo (isset($model->projectsCoworkers[1]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[2]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 2','title'=>'Investigador participante número 2'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 2','title'=>'Investigador participante número 2'),'value'=>(isset($model->projectsCoworkers[1]) ? $model->projectsCoworkers[1]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar3" style="display:none;">
+		<div class="row" id="ar3" style="display:<?php echo (isset($model->projectsCoworkers[2]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[3]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 3','title'=>'Investigador participante número 3'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 3','title'=>'Investigador participante número 3'),'value'=>(isset($model->projectsCoworkers[2]) ? $model->projectsCoworkers[2]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar4" style="display:none;">
+		<div class="row" id="ar4" style="display:<?php echo (isset($model->projectsCoworkers[3]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[4]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 4','title'=>'Investigador participante número 4'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 4','title'=>'Investigador participante número 4'),'value'=>(isset($model->projectsCoworkers[3]) ? $model->projectsCoworkers[3]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar5" style="display:none;">
+		<div class="row" id="ar5" style="display:<?php echo (isset($model->projectsCoworkers[4]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[5]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0'),'htmlOptions'=>array('placeholder'=>'Investigador participante número 5','title'=>'Investigador participante número 5'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0'),'htmlOptions'=>array('placeholder'=>'Investigador participante número 5','title'=>'Investigador participante número 5'),'value'=>(isset($model->projectsCoworkers[4]) ? $model->projectsCoworkers[4]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar6" style="display:none;">
+		<div class="row" id="ar6" style="display:<?php echo (isset($model->projectsCoworkers[5]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[6]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 6','title'=>'Investigador participante número 6'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 6','title'=>'Investigador participante número 6'),'value'=>(isset($model->projectsCoworkers[5]) ? $model->projectsCoworkers[5]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar7" style="display:none;">
+		<div class="row" id="ar7" style="display:<?php echo (isset($model->projectsCoworkers[6]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[7]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 7','title'=>'Investigador participante número 7'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 7','title'=>'Investigador participante número 7'),'value'=>(isset($model->projectsCoworkers[6]) ? $model->projectsCoworkers[6]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar8" style="display:none;">
+		<div class="row" id="ar8" style="display:<?php echo (isset($model->projectsCoworkers[7]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[8]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 8','title'=>'Investigador participante número 8'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 8','title'=>'Investigador participante número 8'),'value'=>(isset($model->projectsCoworkers[7]) ? $model->projectsCoworkers[7]->fullName : ""),)); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar9" style="display:none;">
+		<div class="row" id="ar9" style="display:<?php echo (isset($model->projectsCoworkers[8]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[9]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 9','title'=>'Investigador participante número 9'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 9','title'=>'Investigador participante número 9'),'value'=>(isset($model->projectsCoworkers[8]) ? $model->projectsCoworkers[8]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
-		<div class="row" id="ar10" style="display:none;">
+		<div class="row" id="ar10" style="display:<?php echo (isset($model->projectsCoworkers[9]) ? 'block': 'none'); ?>;">
 			<?php $this->widget('ext.MyAutoComplete', array('name'=>'adtlResearchers[10]',
-		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 10','title'=>'Investigador participante número 10'), )); ?>
-		    <input type="button" value="cancelar" onclick="hideAdtlRes(this)">
+		    'source'=>$this->createUrl('/sponsorship/getResearchers'), 'options'=>array('minLength'=>'0',),'htmlOptions'=>array('placeholder'=>'Investigador participante número 10','title'=>'Investigador participante número 10'),'value'=>(isset($model->projectsCoworkers[9]) ? $model->projectsCoworkers[9]->fullName : ""), )); ?>
+		    <input type="button" value="     " class="deleteval"  onclick="hideAdtlRes(this)">
 		</div>
 	</div>
-</div>
 
 
 <div id="section4" class="sections" style="display:none;">
-En caso de que el proyecto de investigación cuente con la colaboración de otras instituciones(nacionales o extranjeras) escribalas en los campos a continuación:
+	<div class="row">
+		<p>
+			En caso de que el proyecto de investigación cuente con la colaboración de otras instituciones(nacionales o extranjeras) escribalas en los campos a continuación:</p>
+
+	</div>
 
 	<div class="row">
 		<?php echo $form->textArea($model,'participant_institutions',array('rows'=>6, 'cols'=>50,'placeholder'=>'Instituciones nacionales participantes','title'=>'Instituciones nacionales participantes')); ?>
@@ -530,13 +541,16 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 		<?php echo $form->error($model,'participant_institutions_international'); ?>
 	</div>
 
-	<div class="row">checkboxes // Formación o capacitación de persona,Asesoría,Análisis,Pacientes/Muestras/Datos,otros
+	<div class="row"><!-- checkboxes // Formación o capacitación de persona,Asesoría,Análisis,Pacientes/Muestras/Datos,otros-->
 		<?php echo $form->textField($model,'colaboration_type',array('size'=>60,'maxlength'=>150,'placeholder'=>'Tipo de colaboracion','title'=>'Tipo de colaboracion')); ?>
 		<?php echo $form->error($model,'colaboration_type'); ?>
 	</div>
 
-	¿El protocolo reúne una o más de las siguientes características? en caso de ser afirmativo justifique brevemente en los campos a continuación:
-(Si el proyecto reúne alguna(s) de las siguientes características, entonces debe ser evaluado por la Comisión Nacional de Investigación Científica)
+<div class="row">
+	<p>¿El protocolo reúne una o más de las siguientes características? en caso de ser afirmativo justifique brevemente en los campos a continuación:
+	(Si el proyecto reúne alguna(s) de las siguientes características, entonces debe ser evaluado por la Comisión Nacional de Investigación Científica)</p>
+</div>
+
 	<div class="row">
 	<p>A) Protocolos en donde se propongan el uso de medicamentos,equipo o material médico no incluido en el cuadro básico institucional</p>
 		<?php echo $form->textArea($model,'adtl_caracteristics_a',array('rows'=>6, 'cols'=>50,'placeholder'=>'Justificación','title'=>'Justificación')); ?>
@@ -575,20 +589,15 @@ En caso de que el proyecto de investigación cuente con la colaboración de otra
 
 	</div>
 
-	<div class="row buttons">
+	<div class="row buttons projectsbut">
 
-		<?php 
-		var_dump($model->isNewRecord);
-		//echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); 
-		
-		//echo " ".Chtml::button('Guardar en Borrador',array("id"=>"draft","onClick"=>"save('draft','projects/".($model->isNewRecord ? "create" : "update")."')",'class'=>'savebutton'));
+		<?php
 		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
-		//echo " ".Chtml::button('Borrar',array("type"=>"reset", "onClick"=>"alert('Está usted seguro de limpiar estos datos');"));
 		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
 		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
-		
+
 
 		?>
 

@@ -8,8 +8,8 @@
 
 $this->menu = array(
 	array('label' => 'Datos de Cuenta', 'url' => array('account/infoAccount')),
-	
-	
+
+
 );
 ?>
 <div class="form">
@@ -20,9 +20,9 @@ $this->menu = array(
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
-	
+
 	<div class="cvtitle">
     <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
     <h1>Cuenta</h1>
@@ -45,7 +45,11 @@ $this->menu = array(
 	<hr>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton("Guardar", array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton') ); ?>
+			  <?php echo CHtml::htmlButton('Enviar',array(
+                'onclick'=>'send("account-form", "account/updateEmail", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                'class'=>'savebutton',
+            ));
+    ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

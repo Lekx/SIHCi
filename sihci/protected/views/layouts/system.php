@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sys.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/projects.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
@@ -34,6 +35,7 @@
                     $cs->registerScriptFile($baseUrl . '/js/evaluateCV.js');
                     $cs->registerScriptFile($baseUrl . '/js/ajaxfile.js');
                     $cs->registerScriptFile($baseUrl . '/js/numbersLettersOnly.js');
+                    $cs->registerScriptFile($baseUrl . '/js/projects.js');
         ?>
         <?php
                     Yii::app()->clientScript->registerScript('helpers', '
@@ -142,10 +144,21 @@
                       if(Yii::app()->user->Rol->id > 10)
                       {
                         $conection = Yii::app()->db;
-                        $pPro = $conection->createCommand("SELECT count(p.id) as X FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".strtolower(Yii::app()->user->Rol->alias)."' GROUP BY p.title")->queryAll();
-                        echo "<div class='notification'>";
-                        echo $pPro[0]["X"];
-                        echo "</div>";
+                      $rol = Yii::app()->user->Rol->alias;
+
+                      $condition = "WHERE p.status = '".$rol."'";
+
+                      if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
+                        $condition = "WHERE p.status LIKE '%".$rol."%'";
+
+
+                        $pPro = $conection->createCommand("SELECT count(distinct p.id) AS X FROM projects AS p INNER JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition)->queryAll();
+
+                        if($pPro > 0){
+                          echo "<div class='notification'>";
+                          echo $pPro[0]["X"];
+                          echo "</div>";
+                        }
                       }
 
                       ?>
@@ -162,11 +175,10 @@
                     <div class="fullnamed"><h5>
 
                         <?php echo Yii::app()->user->fullname; ?>
-                    </h5></div>
-
+                    </h5> <h6>(<?php echo Yii::app()->user->Rol->name; ?>)</h6></div>
                     <div class="typelabe">
                         <?php
-                            echo "<h6>".$infoUser['label']."</h6>";
+                            echo "<h6>Perfil  :  ".$infoUser['label']."</h6>";
                         ?>
                     </div>
                     <div class="logoutbars">
@@ -176,16 +188,24 @@
                             echo "</h6>";
                         ?>
                     </div>
+
                 </div>
                 <div class="headerconteiner4">
                     <h4>Menú </h4>
                 </div>
                 <div class="headerconteiner5">
+                  <?php if(isset($_GET['ide'])){
+                    $ControllerB = $this->uniqueid;
+                    $this->renderPartial('../adminUsers/update_user');
+                  }else{  ?>
                     <span>
                       <?php
                       switch ($this->uniqueid) {
                         case 'account':
                         $ControllerB = "Cuenta";
+                        break;
+                        case 'sponsors':
+                        $ControllerB = "Perfil Empresa";
                         break;
                         case 'curriculumVitae':
                         $ControllerB = "Currículum vitae electrónico";
@@ -326,6 +346,24 @@
                           case 'articlesGuides':
                           $action = "Artículos y Guías";
                           break;
+                          case 'sponsorsInfo':
+                          $action = "Datos Empresa";
+                          break;
+                          case 'create_docs':
+                          $action = "Documentos Probatorios";
+                          break;
+                          case 'create_persons':
+                          $action = "Datos de Representante";
+                          break;
+                          case 'create_billing':
+                          $action = "Datos de Facturación";
+                          break;
+                          case 'create_contact':
+                          $action = "Datos de Contacto";
+                          break;
+                          case 'create_contacts':
+                          $action = "Datos de Contactos";
+                          break;
 
                           default:
                           $action = " ";
@@ -335,6 +373,7 @@
 
                         ?>
                       </span>
+                      <?php } ?>
                 </div>
             </div>
             <div class="syscontent">
@@ -441,6 +480,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="loader">
+              <div class="pulse">
+              </div>
+              <i class="fa fa-heart fa-5x"></i>
             </div>
             <div class="footer">
                 <div class="footermenu1">

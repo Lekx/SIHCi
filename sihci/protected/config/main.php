@@ -49,11 +49,12 @@ return array(
 
 	// application components
 	'components'=>array(
-/*
+		/*
 	   'session' => array(
 	   	  'autoStart'=>false,
 	      'class' => 'CDbHttpSession',
 	      'timeout' => 300,
+
 	   ),*/
 
 		'authManager'=>array(

@@ -43,6 +43,7 @@
                                 Yii::app()->clientScript->registerScript('helpers', '
                                 yii = {
                                 urls: {
+                                        createUrl: ' . CJSON::encode(Yii::app()->createUrl('')) . ',
                                         searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
                                         searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
                                         base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
@@ -359,7 +360,7 @@
                                                                                                     echo 'Cerrar Sesion';
                                                                                                     echo '</p>';
                                                                                             }
-                                                                                            
+
                                 ?>
                             </div>
                             <div class="searchbar">

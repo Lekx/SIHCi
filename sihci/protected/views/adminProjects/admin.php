@@ -41,12 +41,11 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
 	});
  }
 </script>
-
-<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchadmin" style="width: 75% !important;">
+<div class="projectsbutts">
+<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchadmin" style="width: 72% !important;">
 <input class="adminbut tooltipstered" type="submit" name="yt0" value="">
-<div class="buttons">
-<?php echo CHtml::link('Registrar Proyecto', array('projects/create','class'=>'adminbut'));?>
-<?php echo CHtml::link('Registrar Patrocinio', array('AdminProjects/CreateSponsorship','class'=>'adminbut'));?>
+<?php echo CHtml::link('Registrar Proyecto', array('projects/create'),array('class'=>'projectS'));?>
+<?php echo CHtml::link('Registrar Patrocinio', array('AdminProjects/CreateSponsorship'),array('class'=>'projectS'));?>
 </div>
 <br>
 <br>
@@ -69,10 +68,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'value'=>'@$data["is_sponsored"] == null || @$data["is_sponsored"] == 1 ? "Patrocinado" : "No Patrocinado"',
                 ),
 		array('header'=>'Folio',
-		 		'name'=>'folio',
+		 		'value'=>'@$data["folio"] != -1 ? @$data["folio"] : "No hay folio"',
                 ),
 		array('header'=>'Número de Registro',
-		 		'name'=>'registration_number',
+				'value'=>'@$data["registration_number"] != -1 ? @$data["registration_number"] : "No hay Número de Registro"',
                 ),
 		array('header'=>'Encargado',
 		 		'name'=>'names',
@@ -83,11 +82,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 				?
 		 				CHtml::dropDownList($data["id"],$data["status"],array("0" => "Patrocinio Status" , "1" => "Otro mas"),array("onchange"=>"updateStatusSponsorship($data[id])"))
 		 				:
-		 				CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En proceso" , "dictaminado" => "dictaminado", "borrador"=>"borrador", "DIVUH"=>"revisión divuh", "SEUH"=>"revisión seuh", "COMETI"=>"revisión c. ética", "COMBIO"=>"revisión c. Bio.", "COMINV"=>"revisión c. inv.", "DUH"=>"revisión duh", "SGEI"=>"revisión sgei", "DG"=>"revisión dg", "JIOPD"=>"revisión J.Inv. opd"),array("onchange"=>"updateStatusProject($data[id])"))'
+		 				CHtml::dropDownList($data["id"],$data["status"],array("En proceso" => "En Proceso" , "dictaminado" => "Dictaminado", "borrador"=>"Borrador","modificar"=>"Modificación", "DIVUH"=>"Revisión DIVUH", "SEUH"=>"Revisión SEUH", "COMETI"=>"Revisión C. Ética", "COMBIO"=>"Revisión C. Bio.", "COMINV"=>"Revisión C. INV.", "DUH"=>"Revisión DUH", "SGEI"=>"Revisión SGEI", "DG"=>"Revisión DG", "JIOPD"=>"Revisión J.Inv. OPD"),array("onchange"=>"updateStatusProject($data[id])"))'
 	            ),
 	     array('header'=>'Fecha de Creación',
-	     	    'type'=>'raw',
-		 		'name'=>'creation_date',
+		 		'value'=>'date("d/m/Y H:i:s", strtotime($data["creation_date"]))',
                 ),
 		  array('header'=>'Acciones',
 				'class'=>'CButtonColumn',

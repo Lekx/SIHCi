@@ -23,26 +23,21 @@ class SponsorsController extends Controller {
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/*public function accessRules()
+	public function accessRules()
 	{
-	return array(
-	array('allow',  // allow all users to perform 'index' and 'view' actions
-	'actions'=>array('index','view'),
-	'users'=>array('*'),
-	),
-	array('allow', // allow authenticated user to perform 'create' and 'update' actions
-	'actions'=>array('create','update'),
-	'users'=>array('@'),
-	),
-	array('allow', // allow admin user to perform 'admin' and 'delete' actions
-	'actions'=>array('admin','delete'),
-	'users'=>array('admin'),
-	),
-	array('deny',  // deny all users
-	'users'=>array('*'),
-	),
-	);
-	}*/
+		return array(
+			array('allow',  
+				'actions'=>array('index','view','sponsorsInfo', 'create_persons', 'create_contacts', 'create_contact',
+							     'create_addresses','fillFirst','create_billing','create_docs','delete',
+							     'deleteContacts','deleteContact','admin'),
+				'expression'=>'($user->Rol->alias==="ADMIN" || $user->type==="moral")',			     
+				'users'=>array('@'),
+			),			
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Displays a particular model.
@@ -63,7 +58,7 @@ class SponsorsController extends Controller {
 
 		$sponsorExist = Sponsors::model()->findByAttributes(array('id_user' => $iduser));
 
-		if ($sponsorExist != null) {
+		if($sponsorExist != null) {
 			$model = $this->loadModel($sponsorExist->id);
 			$modelAddresses = Addresses::model()->findByPk($model->id_address);
 			$section = "Empresas"; //manda parametros al controlador SystemLog
@@ -82,6 +77,7 @@ class SponsorsController extends Controller {
 		$this->performAjaxValidation($model);
 		$this->performAjaxValidation($modelAddresses);
 		$this->performAjaxValidation($modelPersons);
+
 		if (isset($_POST['Sponsors'])) {
 			$model->attributes = $_POST['Sponsors'];
 			$modelAddresses->attributes = $_POST['Addresses'];
@@ -90,13 +86,16 @@ class SponsorsController extends Controller {
 				$logo = CUploadedFile::getInstanceByName('Persons[photo_url]');
 
 			}
+			$model->id_user = 1;
+			$model->id_address = 1;
 			if($modelAddresses->validate() && $modelPersons->validate() && $model->validate()){
-			if ($modelAddresses->validate()) {
-				if ($modelAddresses->save()) {
+				if($modelAddresses->save()) {
 					$model->id_user = $iduser;
 					$model->id_address = $modelAddresses->id;
-					if ($model->validate() == 1) {
-						if ($model->save()) {
+					if($model->validate() == 1) {
+						if($model->save()) {
+							echo CJSON::encode(array('status'=>'success'));
+							Yii::app()->end();
 
 							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 							$modelPersons->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
@@ -122,6 +121,7 @@ class SponsorsController extends Controller {
 
 								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo))) {
 
+
 									$log = new SystemLog();
 									$log->id_user = $iduser;
 									$log->section = "Empresas";
@@ -131,13 +131,12 @@ class SponsorsController extends Controller {
 									$log->save();
 
 								}
-							}	echo CJSON::encode(array('status'=>'success'));
-	     							Yii::app()->end();
+							}
 						}
 					}
 
 				}
-			}
+
 		}else{
 				$error1 = CActiveForm::validate($model);
 				$error2 = CActiveForm::validate($modelAddresses);
@@ -153,8 +152,7 @@ class SponsorsController extends Controller {
 
 				if($error!='[]')
 					echo str_replace("]\"", "],\"",$error)."}";
-
-				Yii::app()->end();
+					Yii::app()->end();
 	        }
 
 		}
@@ -193,62 +191,61 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_contact() {
+	$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+	$model = new SponsorsContact;
+	$modelPull = SponsorsContact::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
+	// Uncomment the following line if AJAX validation is needed
+	$this->performAjaxValidation($model);
+	if (isset($_POST['valuesUpdate1'])) {
 
-		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
-			$iduser = (int)$_GET["ide"];
-		else
-			$iduser = Yii::app()->user->id;
-
-		$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id;
-		$model = new SponsorsContact;
-		$modelPull = SponsorsContact::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		$modelPullIds = $_POST['modelPullIds'];
+		$types = $_POST['modelPullTypes'];
+		$values1 = $_POST['valuesUpdate1'];
+		$values2 = $_POST['valuesUpdate2'];
+		$values3 = $_POST['valuesUpdate3'];
+		foreach ($_POST['modelPullTypes'] as $key => $type)
+			$model->updateByPk($modelPullIds[$key],array('type' => $type,'value' => $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key]));
 
 
-		if (isset($_POST['valuesUpdate1'])) {
+	}
+	if (isset($_POST['values1'])) {
 
-			$modelPullIds = $_POST['modelPullIds'];
-			$types = $_POST['modelPullTypes'];
-			$values1 = $_POST['valuesUpdate1'];
-			$values2 = $_POST['valuesUpdate2'];
-			$values3 = $_POST['valuesUpdate3'];
-					//echo "asigne primer post";
+		$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
+		$types = $_POST['types'];
+		$values1 = $_POST['values1'];
+		$values2 = $_POST['values2'];
+		$values3 = $_POST['values3'];
 
-			foreach ($_POST['modelPullTypes'] as $key => $type)
-				$model->updateByPk($modelPullIds[$key],array('type' => $type,'value' => $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key]));
-		}
-
-		if (isset($_POST['values1'])) {
-
-			$id_sponsor = $iduser;
-			$types = $_POST['types'];
-			$values1 = $_POST['values1'];
-			$values2 = $_POST['values2'];
-			$values3 = $_POST['values3'];
-			foreach ($_POST['types'] as $key => $type) {
-				unset($model);
-
-				$model = new SponsorsContact;
-				$model->id_sponsor = $id_sponsor;
-				$model->type = $type;
-				$model->value = $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key];
-				var_dump($model);
+		foreach ($_POST['types'] as $key => $type) {
+			unset($model);
+			$model = new SponsorsContact;
+			$model->id_sponsor = $id_sponsor;
+			$model->type = $type;
+			$model->value = $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key];
+			if($model->validate() == 1){
 				if($model->save()){
+					echo CJSON::encode(array('status'=>'success'));
+					Yii::app()->end();
 					$section = "Empresas"; //manda parametros al controlador AdminSystemLog
-					$details = "Subsección: Datos de Contacto. Datos: ".$model->type;
+					$details = "Subsección: Datos de Contactos. Datos: ".$model->fullname;
 					$action = "Creación";
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				}
 			}
+		}else {
+			$error = CActiveForm::validate($model);
+			if($error!='[]')
+				echo $error;
+
+			Yii::app()->end();
 
 		}
-
-
-		$this->render('create_contact', array(
-			'model' => $model,'modelPull' => $modelPull
-		));
 	}
+}
+
+	$this->render('create_contact', array(
+		'model' => $model,'modelPull' => $modelPull
+	));
+}
 
 	public function actionCreate_contacts() {
 
@@ -269,21 +266,35 @@ class SponsorsController extends Controller {
 			foreach ($_POST['fullnamesUpdate'] as $key => $names)
 				$model->updateByPk($fullnamesUpdateId[$key],array('fullname' => $names));
 
-			//$this->redirect(array('view', 'id' => $model->id));
 		}
 
 		if (isset($_POST['fullnames'])) {
 			$fullnames = $_POST['fullnames'];
-			foreach ($_POST['fullnames'] as $key => $names) {
+			$success = 0;
+			foreach ($fullnames as $key => $names) {
 				unset($model);
 				$model = new SponsorsContacts;
 				$model->id_sponsor = $id_sponsor;
 				$model->fullname = $names;
-				if($model->save()){
-					$section = "Empresas"; //manda parametros al controlador AdminSystemLog
-					$details = "Subsección: Datos de Contactos. Datos: ".$model->fullname;
-					$action = "Creación";
-					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				if($model->validate() == 1) {
+					if($model->save()){
+						$success++;
+						$section = "Empresas"; //manda parametros al controlador AdminSystemLog
+						$details = "Subsección: Datos de Contactos. Datos: ".$model->fullname;
+						$action = "Creación";
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					}
+					if($success > 8 ){
+						echo CJSON::encode(array('status'=>'success'));
+							Yii::app()->end();
+					}
+				}else {
+					$error = CActiveForm::validate($model);
+					if($error!='[]')
+						echo $error;
+
+					Yii::app()->end();
+
 				}
 
 			}

@@ -1,5 +1,5 @@
 <?php
-
+//BORRAR
 class SponsorsContactsController extends Controller
 {
 	public function actionIndex()

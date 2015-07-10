@@ -22,11 +22,11 @@ class CurriculumVitaeController extends Controller
 	{
 		return array(
 
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('personalData', 'DocsIdentity', 'Addresses', 'Index', 'DeleteEmail',
-								'DeletePhone', 'DeleteResearch', 'DeleteGrade', 'DeleteDocs',
-								   'Jobs', 'ResearchAreas', 'Phones', 'Grades', 'Commission', 'Admin'),
-				 'expression'=>'isset($user->Rol->id) && ($user->type === "fisico")',
+			array('allow',
+				'actions'=>array('personalData', 'docsIdentity', 'addresses', 'index', 'deleteEmail',
+								 'deletePhone', 'deleteResearch', 'deleteGrade', 'deleteDocs',
+								   'jobs', 'researchAreas', 'phones', 'grades', 'commission', 'admin'),
+				 'expression'=>'($user->Rol->alias==="ADMIN" || $user->type==="fisico")',
 				 'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -104,9 +104,9 @@ class CurriculumVitaeController extends Controller
 
 			$curriculum->attributes = $_POST['Curriculum'];
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
-				
+
 			if($model->validate()==1)
-			{	
+			{
 				if($model->photo_url != ''){
 					$model->photo_url->saveAs($path.'/perfil.png');
 				}
@@ -122,15 +122,15 @@ class CurriculumVitaeController extends Controller
 					Yii::app()->end();
 	     		}
 	     	}
-	     	else 
+	     	else
             {
         		$error = CActiveForm::validate($model);
 				if($error!='[]')
 					echo $error;
-				   
+
 				Yii::app()->end();
-            }  	
-				
+            }
+
 					}
 		$this->render('personal_data',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
@@ -189,7 +189,7 @@ class CurriculumVitaeController extends Controller
 				$model->description = "Acta";
 				$model->doc_id = CUploadedFile::getInstanceByName('Acta');
 
-				
+
 				if($model->validate()==1)
 				{
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
@@ -205,9 +205,9 @@ class CurriculumVitaeController extends Controller
 	        		$error = CActiveForm::validate($model);
 					if($error!='[]')
 						echo $error;
-					   
+
 					Yii::app()->end();
-            	}    							
+            	}
 			}
 
 			if (is_object(CUploadedFile::getInstanceByName('Pasaporte'))) {
@@ -228,9 +228,9 @@ class CurriculumVitaeController extends Controller
 				$model->type = "Pasaporte";
 				$model->description = "Pasaporte";
 				$model->doc_id = CUploadedFile::getInstanceByName('Pasaporte');
-				
+
 				if($model->validate()==1)
-				{	
+				{
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
@@ -243,7 +243,7 @@ class CurriculumVitaeController extends Controller
 	        		$error = CActiveForm::validate($model);
 					if($error!='[]')
 						echo $error;
-					   
+
 					Yii::app()->end();
             	}
 
@@ -269,7 +269,7 @@ class CurriculumVitaeController extends Controller
 				$model->doc_id = CUploadedFile::getInstanceByName('CURP');
 
 				if($model->validate()==1)
-				{	
+				{
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
@@ -282,7 +282,7 @@ class CurriculumVitaeController extends Controller
 	        		$error = CActiveForm::validate($model);
 					if($error!='[]')
 						echo $error;
-					   
+
 					Yii::app()->end();
             	}
 
@@ -309,7 +309,7 @@ class CurriculumVitaeController extends Controller
 
 
 				if($model->validate()==1)
-				{	
+				{
 					$model->doc_id->saveAs($path . $model->type . "." . $model->doc_id->getExtensionName());
 					$model->doc_id = $path2 . $model->type . "." . $model->doc_id->getExtensionName();
 					if($model->save()){
@@ -322,7 +322,7 @@ class CurriculumVitaeController extends Controller
 	        		$error = CActiveForm::validate($model);
 					if($error!='[]')
 						echo $error;
-					   
+
 					Yii::app()->end();
             	}
 

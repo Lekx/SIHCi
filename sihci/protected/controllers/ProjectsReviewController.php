@@ -55,12 +55,40 @@ class ProjectsReviewController extends Controller
 			"DICTAMINADO"=>"Proyecto dictaminado como xx. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria.",
 		);
 
-	private function nextReview($actualStatus){
+	private function nextReview($actualStatus, $idProject){
 		$status = "nulo";
+		//cuantos usuarios de comites hay?
+		//si hay dos entonces se necesitan dos comentarios de comite
+		
+		$comiteeUsers = Users::model()->findAllByAttributes(array('id_roles'=>Yii::app()->user->Rol->id));
+
+
+
+		$project = Projects::model()->findByPk($idProject);
+
+		if(count($comiteeUsers) > 1){
+
+			foreach ($comiteeUsers as $key => $value) {
+				if(count(ProjectsFollowups::model()->findByAttributes(array('id_user'=>$value->id,'id_project'=>$idProject))) == 1){
+					echo "solo hay un approve";
+					//$status = $project->status;
+				}else{
+					echo "muchos hay un approve";
+				}
+
+			}
+		}else{
+
+		}
+
+
 		switch($actualStatus){
+			case "rejectDIVUH":case "rejectCOMBIO":case "rejectCOMETI":case "rejectCOMINV": $status = "modificar"; break;
+			case "DIVUH": $status = "SEUH"; break;
+
 			case "DIVUH": $status = "SEUH"; break;
 			case "SEUH": $status = "COMITE"; break; // ASIGNA NÚMERO DE FOLIO
-			case "COMITE": $status = "SEUH2"; break; // para pasar a seuh2 deben todos los comites asignados(uh) haber dicho "SI"
+			case "COMBIO": case "COMINV": case "COMBIO":$status = "SEUH2"; break; // para pasar a seuh2 deben todos los comites asignados(uh) haber dicho "SI"
 			case "SEUH2": $status = "SGEI"; break; // ALERTA A DUH
 			case "SGEI": $status = "DIVUH2"; break; // ALERTA A DG, DUH, SEUH //DICTAMINACION
 			case "DIVUH2": $status = "COMITE2"; break; // para pasar a dictaminado deben todos los comites asignados(uh) haber dicho "SI"
@@ -72,14 +100,17 @@ class ProjectsReviewController extends Controller
 
 	private function projectsToReview(){
 		//$id_role = Users::model()->findByPk(Yii::app()->user->id)->Rol->id;
-
-
 		//$role = Roles::model()->findByPk($id_role)->alias;
 
+		$rol = Yii::app()->user->Rol->alias;
+
+		$condition = "WHERE p.status = '".$rol."'";
+		
+		if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
+			$condition = "WHERE p.status LIKE '%".$rol."%'";
 
 		$conection = Yii::app()->db;
-
-		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id WHERE p.status = '".strtolower(Yii::app()->user->Rol->alias)."' GROUP BY p.title")->queryAll();
+		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition." GROUP BY p.title")->queryAll();
 
 		//$pProjects = Projects::model()->findAllByAttributes(array("status"=>$role));
 		$pendingProjects ="";
@@ -133,6 +164,8 @@ class ProjectsReviewController extends Controller
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
+            if(isset($_POST[1]))
+            	$modelfollowup->id_fucom = $_POST[1];
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
 			if($modelfollowup->validate() == 1){
@@ -173,13 +206,16 @@ class ProjectsReviewController extends Controller
 
 		$conexion = Yii::app()->db;
 
-		$res = $conexion->createCommand("UPDATE projects SET status = '".$this->nextReview($_POST[1])."' WHERE id =".$id)->execute();
+		$nextReview = $this->nextReview($_POST[1], $id);
+
+		$res = $conexion->createCommand("UPDATE projects SET status = '".$nextReview."' WHERE id =".$id)->execute();
 		//	echo $res;
 		if( $res == 1){
 						$followup = new ProjectsFollowups;
 						$followup->id_project = $id;
 						$followup->id_user = Yii::app()->user->id;
-						$followup->followup = "Proyecto enviado a revisión de ".$this->messages[$this->nextReview($_POST["1"])];
+						$followup->followup = "Proyecto enviado a revisión de ".$this->messages[$nextReview];
+						$followup->type = "comment";
 
 						if($followup->save())
 			     			echo CJSON::encode(array('status'=>'success','message'=>'Aprobación realizada con éxito','subMessage'=>'Se ha asignado a la siguiente persona este proyecto'));

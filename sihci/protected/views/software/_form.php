@@ -7,10 +7,43 @@
 ?>
 
 <script type="text/javascript">
+$(document).ready(function() {
+    $(".numericOnly").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
 
+    });
+});
+
+function lettersOnly(e)
+{
+ 	key = e.keyCode || e.which;
+ 	tecla = String.fromCharCode(key).toLowerCase();
+ 	letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+ 	especiales = [8,37,39,46,45,47];
+
+	 tecla_especial = false
+ 		for(var i in especiales)
+ 		{
+     		if(key == especiales[i])
+     		{
+  				tecla_especial = true;
+  				break;
+            } 
+ 		}
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     		return false;
+}
 function changeSector()
  {
-
+    
     var sectorValue = $("#sector option:selected").val();
 
  	   if(sectorValue =="Centros privados de investigación")
@@ -912,7 +945,7 @@ function changeSector()
   	   }
   	   if(sectorValue =="Gobierno municipal")
   	   {
-
+  	   		
   	   		var governementM=[
   	   			"ACUARIO MAZATLAN",
 				"ALCALDIA MUNICIPAL DE SAN SALVADOR",
@@ -1651,7 +1684,7 @@ function changeSector()
 				"UNIDAD DE INVESTIGACION EPIDEMIOLOGICA Y EN SERVICIOS DE SALUD QUERETARO",
 				"UNIDAD MEDICA DE ALTA ESPECIALIDAD HOSPITAL DE GINECOPEDIATRIA NO 48",
 				"UNION IBEROAMERICANA DE MUNICIPALISTAS",
-				"UNIVERSIDAD DE SALENTO"]
+				"UNIVERSIDAD DE SALENTO"]	
   	  		sectorValue = institutionsSCT;
   	   }
   	   if(sectorValue=="Instituciones del sector gobierno de las entidades federativas")
@@ -2263,7 +2296,7 @@ function changeSector()
 				"UNIVERSITY OF WARWICK",
 				"UNIVERSITY OF WASHINGTON",
 				"VALDOSTA STATE UNIVERSITY"]
-
+  	   			 
   	   			 sectorValue = institutionsESP;
   	   }
   	   if(sectorValue=="Instituciones del sector de educación superior privadas")
@@ -3498,19 +3531,19 @@ function changeSector()
 			 	"SALVADOR OROZCO LOPEZ"]
   	   			sectorValue = unspecified;
   	   }
-
-
+ 
+ 
   			 var newOrganization ="<span class='plain-select'><select id='Software_organization' class='tooltipstered' name='Software[organization]' onchange='changeSecondLevel()'>";
    				 newOrganization+="<option>Seleccionar Organización</option>";
-
+		    		
 		    		for (var item in sectorValue)
 		    		    newOrganization +="<option>"+sectorValue[ item ]+"</option>";
-
+		    		
 
 	    	newOrganization+="</select></span>";
 
 	    	$("#selectOrganization").html(newOrganization);
-
+	 	
 }
 </script>
 
@@ -3522,17 +3555,17 @@ function changeSector()
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	//'enableClientValidation'=>true,
+	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>true,
 	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
-	//'clientOptions'=>array('validateOnSubmit'=>true),
-
+	'clientOptions'=>array('validateOnSubmit'=>true),
+	
 )); ?>
 
 
 	<div class="row">
-	 <span class="plain-select">
-		<?php $this->widget('ext.CountrySelectorWidget',
+	 <span class="plain-select">	
+		<?php $this->widget('ext.CountrySelectorWidget', 
 			array(
 				'value' => $model->country,
 				'name' => Chtml::activeName($model, 'country'),
@@ -3547,7 +3580,7 @@ function changeSector()
 	</div>
 
 	<div class="row">
-	 <span class="plain-select">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'participation_type',
 			    array(
 				  		'Autor'=>'Autor',
@@ -3555,7 +3588,7 @@ function changeSector()
 			    ),
 			    array('prompt'=>'Seleccionar participación','title'=>'Participacíon')
 			);
-	    ?>
+	    ?>		
 	    </span>
 		<?php echo $form->error($model,'participation_type'); ?>
 	</div>
@@ -3571,7 +3604,7 @@ function changeSector()
 	</div>
 
 	<div class="row">
-	 <span class="plain-select">
+	 <span class="plain-select">	
 		<?php echo $form->dropDownList($model,'entity',
 				 array(
 				 		'Pública'=>'Pública',
@@ -3597,7 +3630,7 @@ function changeSector()
 		    'attribute' => 'end_date',
 		    'htmlOptions' => array(
 		    	    'dateFormat'=>'d/m/Y',
-		    		'size' => '10',
+		    		'size' => '10',         
 		    		'readOnly'=>true,
 		        	'placeholder'=>"Fecha de termino",
 		        	'title'=>'Fecha de termino',
@@ -3608,7 +3641,7 @@ function changeSector()
 	</div>
 
 	<div class="row">
-	 <span class="plain-select">
+	 <span class="plain-select">	
 			<?php echo $form->dropDownList($model,'sector',
 				    array(
 				  	     'Centros privados de investigación'=>'Centros privados de investigación',
@@ -3620,20 +3653,20 @@ function changeSector()
 				  		 'Instituciones del sector gobierno federal centralizado'=>' Instituciones del sector gobierno federal centralizado',
 				  		 'Instituciones del sector entidades paraestatales'=>' Instituciones del sector entidades paraestatales',
 				  		 'Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
-				  		 'Instituciones del sector de educación superior públicas'=>'Instituciones del sector de educación superior públicas',
+				  		 'Instituciones del sector de educación superior públicas'=>'Instituciones del sector de educación superior públicas',			  		 
 				  		 'Instituciones del sector de educación superior privadas'=>' Instituciones del sector de educación superior privadas',
 				  		 'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)',
 				  		 'Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
 				  		 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras',
 				  		 'No especificado'=>'No especificado',
 				    ),
-					array('prompt'=>'Sector','title'=>'Sector','id'=>'sector', 'onchange'=>'changeSector()')
-			    );
+					array('prompt'=>'Sector','title'=>'Sector','id'=>'sector', 'onchange'=>'changeSector()')			  
+			    ); 
 		?>
 		</span>
 		<?php echo $form->error($model,'sector'); ?>
 	</div>
-
+	
 	<div class="row"id="selectOrganization">
  	</div>
 
@@ -3677,7 +3710,7 @@ function changeSector()
 
 	<div class="row">
 	<span class="radiotext">¿Recibio apoyo económico ?</span>
-		<?php $status = array('1' => 'Si','0'=>'No');
+		<?php $status = array('1' => 'Si','0'=>'No'); 
 		    echo $form-> RadioButtonList($model,'economic_support' ,$status, array('separator' => ' ','labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'economic_support'); ?>
 
@@ -3689,8 +3722,8 @@ function changeSector()
 	</div>
 
 
-	<div class="row buttons">
-	 <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+	<div class="row buttons">		
+	     <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
                 'onclick'=>'send("software-form","software/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","software/admin","");',
                 'class'=>'savebutton',
             ));

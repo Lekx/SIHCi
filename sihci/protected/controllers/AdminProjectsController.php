@@ -27,8 +27,10 @@ class AdminProjectsController extends Controller {
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 			'actions'=>array('createProject', 'createSponsorship', 
 							 'update', 'deleteProject', 'view', 'index',
-							 'adminProjects', 'getSponsors', 'updateStatusSponsorship', 'updateStatusProject'),
-			'users'=>array('*'),
+							 'adminProjects', 'getSponsors', 'updateStatusSponsorship', 'updateStatusProject'
+			),
+			'expression'=>'($user->Rol->alias==="ADMIN")',
+			'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 			'users'=>array('*'),
@@ -51,20 +53,28 @@ class AdminProjectsController extends Controller {
 	 $status = $_POST["status"];
 	 $id = $_POST["id"]; 
 	
-		if(Sponsorship::model()->updateByPk($id,array('status'=>$status)))
+		if(Sponsorship::model()->updateByPk($id,array('status'=>$status))){
 			echo "se ha cambiado con éxito";
-		else
+		}else{
 			echo "existe un error vuelva a intentar";
+		}
 	}
 	// AP05 Cambiar Status
 	public function actionUpdateStatusProject() {
 	 $status = $_POST["status"];
 	 $id = $_POST["id"]; 
 	
-		if(Projects::model()->updateByPk($id,array('status'=>$status)))
+		if(Projects::model()->updateByPk($id,array('status'=>$status))){
+			$projectFollowup = new ProjectsFollowups;
+			$projectFollowup->id_project = $id;
+			$projectFollowup->id_user = Yii::app()->user->id;
+			$projectFollowup->followup = "Proyecto enviado por el Administrador a ".$status;
+			$projectFollowup->type = "comment";
+			$projectFollowup->save();
 			echo "se ha cambiado con éxito";
-		else
+		}else{
 			echo "existe un error vuelva a intentar";
+		}
 	}
 
 	// AP01 Registrar Proyectos
