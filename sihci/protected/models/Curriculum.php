@@ -35,6 +35,7 @@
  * @property ResearchAreasCv[] $researchAreasCvs
  * @property Software[] $softwares
  */
+
 class Curriculum extends CActiveRecord
 {
 	/**

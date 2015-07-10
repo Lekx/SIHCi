@@ -441,7 +441,6 @@ $('<div></div>').appendTo('form')
 				     'label'=>'Máximo grado de estudios:',
 				     'value'=>$gradesUsers != null ? $gradesUsers->grade : " " ,
 				     ),
-
 				array(
 					'label'=>'¿Pertenece al SNI?',
 					'value'=>$curriculum != null ? $curriculum[0]->SNI :
@@ -449,7 +448,6 @@ $('<div></div>').appendTo('form')
 					),
 			),
 		));
-
 		?>
 
 	<div class="row">
