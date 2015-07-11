@@ -35,13 +35,13 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
  																 $('#projects-followups-form').hide();
  						                     $('#follow').hide();
  						                     $('#followup').hide();
+																 $('#comments').hide();
  						                  }",
  						  ),
  						  array( //htmlOptions
  						    'href' => Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
  						  )
  						);
-	if($followupCurrent != null){
 
 
 		foreach ($followups as $key => $value) {
@@ -56,6 +56,7 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 																$('#projects-followups-form').show();
 																$('#follow').show();
 																$('#followup').show();
+																$('#comments').show();
 						                     var data = JSON.parse(data);
 																 $('#projects-followups-form-create').hide();
 																 $('#projects-followups-form').show();
@@ -89,9 +90,6 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 		$this->renderPartial('../projectsReview/_form', array('model'=>$modelFollowup));
 
 		echo "<div id='comments'></div>";
-
-
 		echo "<br><br><br>";
-	}else
-		echo "<h2>No tiene ningun Proyecto a Seguir</h2>";
+
 ?>
