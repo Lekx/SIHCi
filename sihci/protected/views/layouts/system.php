@@ -63,11 +63,18 @@
                                         })
                                         .on( 'focus', function() {
                                         $( this ).tooltipster( 'show' );
-										$('.errorMessage').hide();
+										                    $('.errorMessage').hide();
                                     })
                                         .on( 'blur', function() {
                                         $( this ).tooltipster( 'hide' );
                                     });
+
+                                         $('.delete, .view, .update, .ttip').tooltipster({
+                                            position: 'top',
+                                            trigger: 'hover',
+                                            maxWidth:'50'
+                                        })
+
                                     });
         </script>
     </head>

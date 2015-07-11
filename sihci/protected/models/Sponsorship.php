@@ -116,6 +116,45 @@ class Sponsorship extends CActiveRecord
 		));
 	}
 
+	//Customized search only for logged user
+	public function customSearch()
+	{
+		$criteria=new CDbCriteria;
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_user_researcher = '.$curriculumId;
+		$criteria->order = 'id DESC';
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR project_name LIKE CONCAT('%', :searchValue ,'%') OR description LIKE CONCAT('%', :searchValue ,'%') OR status LIKE CONCAT('%', :searchValue ,'%') ");
+			//$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}	
+		
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+		//Customized search only for logged users when they are sponsors
+	public function customSearchSponsorship()
+	{
+		$criteria=new CDbCriteria;
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_user_sponsorer = '.$curriculumId;
+		$criteria->order = 'id DESC';
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR project_name LIKE CONCAT('%', :searchValue ,'%') OR description LIKE CONCAT('%', :searchValue ,'%') OR status LIKE CONCAT('%', :searchValue ,'%') ");
+			//$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}	
+		
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
