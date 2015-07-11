@@ -50,7 +50,7 @@ $('.search-form form').submit(function(){
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 		'id'=>'sponsorship-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->customSearchSponsorship(),
 	'filterPosition'=>'header',
     'selectableRows'=>1,
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
