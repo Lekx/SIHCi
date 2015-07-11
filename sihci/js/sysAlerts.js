@@ -40,6 +40,4 @@ $(document).ready(function() {
   $('#id_user_sponsorer').attr("placeholder", "Empresa que patrocina");
   $('#id_user_sponsorer').attr("title", "Empresa que patrocina");
 
-
-
 });

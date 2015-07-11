@@ -6,7 +6,7 @@
         <meta name="language" content="en">
         <meta charset="utf-8">
         <!-- blueprint CSS framework -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
         <!--[if lt IE 8]>
@@ -19,6 +19,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/projects.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css">
+
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
@@ -194,6 +196,10 @@
                     <h4>Menú </h4>
                 </div>
                 <div class="headerconteiner5">
+                  <?php if(isset($_GET['ide'])){
+                    $ControllerB = $this->uniqueid;
+                    $this->renderPartial('../adminUsers/update_user');
+                  }else{  ?>
                     <span>
                       <?php
                       switch ($this->uniqueid) {
@@ -396,6 +402,7 @@
 
                         ?>
                       </span>
+                      <?php } ?>
                 </div>
             </div>
             <div class="syscontent">

@@ -238,7 +238,7 @@ select
 
     margin: 0;
     padding-top: 5px;
-    padding-left: 10%;
+    padding-left: 2.5%;
 
     color: white;
 }
@@ -1779,16 +1779,16 @@ li.menulis.now
 {
     display: inline-block;
 
-    width: 70%;
+    width: 71%;
     margin: 0;
-    padding-left: 29%;
+    padding-left: 23%;
 }
 .typelabe,
 .logoutbars
 {
     display: inline-block;
 
-    width: 14%;
+    width: 13%;
     margin: 0;
 
     text-align: center;
