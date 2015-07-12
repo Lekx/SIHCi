@@ -32,7 +32,7 @@ class ProjectsReviewController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review','sendReview'),
+				'actions'=>array('create','update','admin','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review','sendReview','setRegNumber'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -87,9 +87,8 @@ class ProjectsReviewController extends Controller
 
 
 		switch($actualStatus){
-			case "rejectDIVUH":case "rejectCOMBIO":case "rejectCOMETI":case "rejectCOMINV": $status = "modificar"; break;
+			case "rejectDIVUH":case "rejectCOMBIO":case "rejectCOMETI":case "rejectCOMINV": $status = "MODIFICAR"; break;
 			case "DIVUH": $status = "SEUH"; break;
-
 			case "DIVUH": $status = "SEUH"; break;
 			case "SEUH": $status = "COMITE"; break; // ASIGNA NÚMERO DE FOLIO
 			case "COMBIO": case "COMINV": case "COMBIO":$status = "SEUH2"; break; // para pasar a seuh2 deben todos los comites asignados(uh) haber dicho "SI"
@@ -98,7 +97,7 @@ class ProjectsReviewController extends Controller
 			case "DIVUH2": $status = "COMITE2"; break; // para pasar a dictaminado deben todos los comites asignados(uh) haber dicho "SI"
 			case "COMITE2": $status = "DICTAMINADO"; break; // ALERTA DIVUH //REVISION DE FIRMAS POR DIVUH  ///aprobado o no aprobado
 		}
-
+		//echo $status;
 		return $status;
 	}
 
@@ -159,7 +158,7 @@ class ProjectsReviewController extends Controller
 	{
 		$modelfollowup = new ProjectsFollowups;
 		$followups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$id),array('order'=>'id DESC'));
-         $this->performAjaxValidation($modelfollowup);
+		$modelproject = new Projects;
 
         if(isset($_POST['ProjectsFollowups']))
         {
@@ -199,9 +198,30 @@ class ProjectsReviewController extends Controller
         }
 
 		$this->render('review',array(
-			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup,'followups'=>$followups
+			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup,'followups'=>$followups,'modelproject'=>$modelproject,
 		));
 	}
+
+	public function actionSetRegNumber()
+	{
+			var_dump($_POST);
+		
+            if(Projects::model()->updateByPk($_POST[1],array('registration_number'=>$_POST["Projects[registration_number]"]))){
+	     			echo CJSON::encode(array('status'=>'success'));
+	     			Yii::app()->end();
+	        }else{
+	     			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'No se pudo asignar el número de registro, por favor vuelva a intentarlo.'));
+	     			Yii::app()->end();
+				Yii::app()->end();
+	        }
+        Yii::app()->end();
+
+	}
+
+
+
+
+
 
 	//Envia a revisión o evaluación.
 	//params: id del projecto.
@@ -213,6 +233,11 @@ class ProjectsReviewController extends Controller
 		$conexion = Yii::app()->db;
 
 		$nextReview = $this->nextReview($_POST[1], $id);
+/*rejectDIVUH
+rejectCOMBIO
+rejectCOMETI
+rejectCOMINV*/
+//echo $nextReview;
 
 		$res = $conexion->createCommand("UPDATE projects SET status = '".$nextReview."' WHERE id =".$id)->execute();
 		//	echo $res;
@@ -220,7 +245,13 @@ class ProjectsReviewController extends Controller
 						$followup = new ProjectsFollowups;
 						$followup->id_project = $id;
 						$followup->id_user = Yii::app()->user->id;
-						$followup->followup = $this->messages[$nextReview];
+
+						if($nextReview == 'MODIFICAR')
+							$followup->followup = $this->messages[$_POST[1]];
+						else
+							$followup->followup = $this->messages[$nextReview];
+						//echo $followup->followup;
+
 						$followup->type = "comment";
 
 						if($followup->save())

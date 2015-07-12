@@ -98,7 +98,7 @@ $pjs->search();
 						//'label' => '',
 						'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/editar.png',
 						'visible'=>'($data->status == "BORRADOR" || $data->status == "MODIFICAR") ? TRUE : FALSE',
-						'url'=> '"projects/update/".$data->id',
+						'url'=> 'CHtml::normalizeUrl(array("projects/update/".$data->id))',
 						'options'=>array('class'=>'ttip','title'=>'Modificar',),
 					),
 					'seguim' => array(

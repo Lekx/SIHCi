@@ -57,7 +57,34 @@ if(in_array(Yii::app()->user->Rol->alias, explode(",",$model->status))){
 
 	$rejectRol = Yii::app()->user->Rol->alias;
 	//echo substr(Yii::app()->user->Rol->alias,1,3);
-	if(Yii::app()->user->Rol->alias == "SEUH" || substr(Yii::app()->user->Rol->alias,0,3) == "COM"){
+	if(Yii::app()->user->Rol->alias == "SEUH"){ ?>
+
+	<div class="form">
+
+		<?php $form=$this->beginWidget('CActiveForm', array(
+		    'id'=>'regNumber-form',
+		    // Please note: When you enable ajax validation, make sure the corresponding
+		    // controller action is handling ajax validation correctly.
+		    // There is a call to performAjaxValidation() commented in generated controller code.
+		    // See class documentation of CActiveForm for details on this.
+		    'enableAjaxValidation'=>true,
+		)); ?>
+		 <div class="row">
+	        <?php echo $form->labelEx($modelproject,'registration_number'); ?>
+	        <?php echo $form->textField($modelproject,'registration_number',array('size'=>20,'maxlength'=>20,'title'=>'Número de registro','value'=>$modelproject->registration_number =='-1' ? "" : $modelproject->registration_number)); ?>
+	        <?php echo $form->error($modelproject,'registration_number'); ?>
+	    </div>
+    <?php $this->endWidget(); ?>
+
+</div><!-- form -->	
+	<?php
+		echo CHtml::htmlButton('Asignar número de registro',array(
+            'onclick'=>'javascript: send("regNumber-form","projectsReview/setRegNumber", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "projectsReview/review'.(isset($_GET['id']) ? "/".$_GET['id'] : "").'", "'.$modelproject->id.'");',
+            'class'=>'savebutton',
+        ));
+	}
+
+	if(Yii::app()->user->Rol->alias == "DIVUH" || substr(Yii::app()->user->Rol->alias,0,3) == "COM"){
 
 
 		echo CHtml::htmlButton('Rechazar',array(
