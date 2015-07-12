@@ -7,7 +7,7 @@ class ProjectsReviewController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/system';
-	
+
 	/**
 	 * @return array action filters
 	 */
@@ -63,7 +63,7 @@ class ProjectsReviewController extends Controller
 		$status = "nulo";
 		//cuantos usuarios de comites hay?
 		//si hay dos entonces se necesitan dos comentarios de comite
-		
+
 		$comiteeUsers = Users::model()->findAllByAttributes(array('id_roles'=>Yii::app()->user->Rol->id));
 
 
@@ -108,7 +108,7 @@ class ProjectsReviewController extends Controller
 		$rol = Yii::app()->user->Rol->alias;
 
 		$condition = "WHERE p.status = '".$rol."'";
-		
+
 		if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
 			$condition = "WHERE p.status LIKE '%".$rol."%'";
 
@@ -117,7 +117,7 @@ class ProjectsReviewController extends Controller
 
 		//$pProjects = Projects::model()->findAllByAttributes(array("status"=>$role));
 		$pendingProjects ="";
-		
+
 
 		foreach($pProjects AS $key => $value){
 			$element ="";
@@ -126,7 +126,7 @@ class ProjectsReviewController extends Controller
 			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
 			$element .= '</div>';
 			$pendingProjects .= CHtml::link($element,array('projectsReview/review','id'=>$value["id"]));
-			
+
 		}
 		return $pendingProjects;
 	}
@@ -135,7 +135,7 @@ class ProjectsReviewController extends Controller
 	public function actionAdmin()
 	{
 		$model=new Projects('search');
-		
+
 
 		$this->render('admin',array(
 			'model'=>$model, 'pendingProjects'=>$this->projectsToReview()
@@ -163,7 +163,7 @@ class ProjectsReviewController extends Controller
         if(isset($_POST['ProjectsFollowups']))
         {
 
-			$modelfollowup->unsetAttributes(); 
+			$modelfollowup->unsetAttributes();
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
@@ -172,7 +172,7 @@ class ProjectsReviewController extends Controller
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
 			if($modelfollowup->validate() == 1){
-	            if(is_object($modelfollowup->url_doc)){ 
+	            if(is_object($modelfollowup->url_doc)){
 	            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$id;
 
 	                if(!is_dir($path))
@@ -182,8 +182,6 @@ class ProjectsReviewController extends Controller
 					$modelfollowup->url_doc->saveAs($url_doc);
 				    $modelfollowup->url_doc = $url_doc;
 	            }
-
-			
 	            if($modelfollowup->save()){
 	     			echo CJSON::encode(array('status'=>'success'));
 	     			Yii::app()->end();
@@ -192,7 +190,6 @@ class ProjectsReviewController extends Controller
 				$error = CActiveForm::validate($modelfollowup);
 				if($error!='[]')
 					echo $error;
-
 				Yii::app()->end();
 	        }
         }
@@ -228,7 +225,7 @@ class ProjectsReviewController extends Controller
 	public function actionSendReview($id)
 	{
 		//$res = Projects::model()->updateByPk($id,array('status'=>'asdfasdfasdf cabron que sss'));
-		
+
 
 		$conexion = Yii::app()->db;
 
