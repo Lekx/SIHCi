@@ -144,7 +144,7 @@
 		'status',
 		array(
 			'label'=>'Folio',
-			'value'=>$model->folio == -1 ? "No asignado" : $mode->folio,
+			'value'=>$model->folio == -1 ? "No asignado" : $model->folio,
 			),
 		array(
 				'label'=>'¿Patrocinado?',
@@ -152,7 +152,7 @@
 				),
 				array(
 						'label'=>'Número de registro',
-						'value'=>$model->registration_number == -1 ? "No asignado" : $mode->folio,
+						'value'=>$model->registration_number == -1 ? "No asignado" : $model->folio,
 					),
 
 	),
@@ -195,10 +195,10 @@
 if(in_array(Yii::app()->user->Rol->alias, explode(",",$model->status)) || Yii::app()->user->Rol->alias == substr($model->status,0,-1)){
 
 	$rejectRol = Yii::app()->user->Rol->alias;
-	if(Yii::app()->user->Rol->alias == "SEUH" && $model->folio == "-1"){ 
+	if(Yii::app()->user->Rol->alias == "SEUH" && $model->folio == "-1"){
 
 
-	 $form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,)); 
+	 $form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,));
  	?>
 		 <div class="row">
 	        <?php echo $form->labelEx($model,'folio'); ?>
@@ -212,7 +212,7 @@ if(in_array(Yii::app()->user->Rol->alias, explode(",",$model->status)) || Yii::a
 	        'class'=>'savebutton','id'=>'asignarFolio'
 	    ));
 
-		$this->endWidget(); 
+		$this->endWidget();
 
 
 	}
@@ -221,10 +221,10 @@ if(in_array(Yii::app()->user->Rol->alias, explode(",",$model->status)) || Yii::a
 
 //<!--  ASIGNACIÓN DE NÚMERO DE REGISTRO -->
 	//if(substr(Yii::app()->user->Rol->alias,0,3) && $model->registration_number == "-1"){  // ESTE ESTABA PARA COMITÉS
-	if(Yii::app()->user->Rol->alias=="SGEI" && $model->registration_number == "-1"){ 
+	if(Yii::app()->user->Rol->alias=="SGEI" && $model->registration_number == "-1"){
 
 
-	 $form=$this->beginWidget('CActiveForm', array('id'=>'regNumber-form','enableAjaxValidation'=>true,)); 
+	 $form=$this->beginWidget('CActiveForm', array('id'=>'regNumber-form','enableAjaxValidation'=>true,));
  	?>
 		 <div class="row">
 	        <?php echo $form->labelEx($model,'registration_number'); ?>
@@ -238,7 +238,7 @@ if(in_array(Yii::app()->user->Rol->alias, explode(",",$model->status)) || Yii::a
 	        'class'=>'savebutton','id'=>'asignarRegistro'
 	    ));
 
-		$this->endWidget(); 
+		$this->endWidget();
 
 
 	}
@@ -260,13 +260,13 @@ if(Yii::app()->user->Rol->alias == "SEUH"){
 				FROM projects_committee AS pc
 				WHERE pc.id_project = '".$model->id."'")->queryAll();
 
-			  	$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee');    
+			  	$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee');
 
 				$comms = $conexion->createCommand("
-				SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name 
-				FROM users AS u 
-				JOIN persons AS p on p.id_user=u.id 
-				JOIN roles AS r on u.id_roles=r.id 
+				SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name
+				FROM users AS u
+				JOIN persons AS p on p.id_user=u.id
+				JOIN roles AS r on u.id_roles=r.id
 				WHERE r.alias LIKE '%COM%'")->queryAll();
 				//A G R E G A R WHERE UH DE PROYECTO IGUAL A UH DEL MIEMBRO DEL COMMITTEE
 				//A G R E G A R WHERE UH DE PROYECTO IGUAL A UH DEL MIEMBRO DEL COMMITTEE
@@ -287,7 +287,7 @@ else
 	 	 <label>
 		<input type="checkbox" name="designate[COMBIO]" <?php echo $disable." ".(array_key_exists('COMBIO',$commsCheck) ? "checked" : "");?> > Comité de Bioseguridad<br>
 		<small>Se requerirá la aprobación de las siguientes personas:<br>
-		<?php 
+		<?php
 			foreach ($comms as $key => $value) {
 				if($value["alias"] == "COMBIO")
 					echo "<li>".$value["fullname"]."</li>";
@@ -300,7 +300,7 @@ else
 	 	 <label>
 		<input type="checkbox" name="designate[COMETI]"  <?php echo $disable." ".(array_key_exists('COMETI',$commsCheck) ? "checked" : "");?> > Comité de Ética en investigación<br>
 		<small>Se requerirá la aprobación de las siguientes personas:<br>
-		<?php 
+		<?php
 			foreach ($comms as $key => $value) {
 				if($value["alias"] == "COMETI")
 				echo "<li>".$value["fullname"]."</li>";
@@ -313,7 +313,7 @@ else
 	 <label>
 		<input type="checkbox" name="designate[COMINV]" <?php echo $disable." ".(array_key_exists('COMINV',$commsCheck) ? "checked" : "");?> > Comité de investigación<br>
 			<small>Se requerirá la aprobación de las siguientes personas:<br>
-		<?php 
+		<?php
 			foreach ($comms as $key => $value) {
 				if($value["alias"] == "COMINV")
 				echo "<li>".$value["fullname"]."</li>";
@@ -331,7 +331,7 @@ else
 	?>
 </div>
 <?
-		 $this->endWidget(); 
+		 $this->endWidget();
 	}
 
 
@@ -347,7 +347,7 @@ else
 		echo CHtml::htmlButton('No Aprobar',array(
 					'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "projectsReview/review'.(isset($_GET['id']) ? "/".$_GET['id'] : "").'", "reject'.Yii::app()->user->Rol->alias.'");',
 					'class'=>'savebuttonp',
-			));		
+			));
 		echo "</div>";
 	}
 
