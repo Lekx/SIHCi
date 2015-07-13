@@ -1,4 +1,4 @@
- function send(form, actionUrl, id, redirectUrl, extras) {
+ function send(form, actionUrl, id, redirectUrl, extras, extraCall) {
 
    var formData;
    if (form != '')
@@ -43,6 +43,13 @@
          $(".error").hide();
          $(".errorMessage").hide();
          $(".successdiv").show();
+
+         if(typeof extraCall != 'undefined'){
+          var ids = extraCall.split(",");
+          alert(ids[0]+" "+ids[1] +" ");
+            $("#"+ids[0]).hide();
+            $("#"+ids[1]).show();
+         }
 
          $('.backbut').unbind().click(function() {
            if (redirectUrl != "none")

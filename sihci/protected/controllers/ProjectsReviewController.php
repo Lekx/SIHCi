@@ -32,7 +32,7 @@ class ProjectsReviewController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review','sendReview','setRegNumber'),
+				'actions'=>array('create','update','admin','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review','sendReview','setRegNumber','assignCommittees','setFolioNumber'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -47,8 +47,18 @@ class ProjectsReviewController extends Controller
 
 	private $messages = array(
 			"SEUH"=>"Proyecto enviado a asignación de folio por el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
-			"COMITE"=>"Proyecto enviado a evaluación de comités de investigación.",
+			"COMITE"=>"Proyecto enviado a evaluación de los siguientes comités: ",
 			"SEUH2"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			
+			"COMINV,COMETI,COMBIO"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"COMINV,COMETI"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"COMETI,COMBIO"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"COMINV,COMBIO"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"COMINV"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"COMETI"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+			"COMBIO"=>"Proyecto enviado a evaluación de el Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
+
+
 			"SGEI"=>"Proyecto enviado a evaluación del Subdirector General de Enseñanza e Investigación. Notificación enviada al Director de Unidad Hospitalaria.",
 			"DIVUH2"=>"Proyecto enviado a dictaminación por la División de Investigacion de la Unidad Hospitalaria. Notificación enviada a: Director General, Director de División Hospitalaria y al Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
 			"COMITE2"=>"Proyecto enviado a firma de dictamen por comités.",
@@ -57,41 +67,17 @@ class ProjectsReviewController extends Controller
 			"rejectCOMBIO"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
 			"rejectCOMETI"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
 			"rejectCOMINV"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
+
 		);
 
 	private function nextReview($actualStatus, $idProject){
 		$status = "nulo";
-		//cuantos usuarios de comites hay?
-		//si hay dos entonces se necesitan dos comentarios de comite
-
-		$comiteeUsers = Users::model()->findAllByAttributes(array('id_roles'=>Yii::app()->user->Rol->id));
-
-
-
-		$project = Projects::model()->findByPk($idProject);
-
-		if(count($comiteeUsers) > 1){
-
-			foreach ($comiteeUsers as $key => $value) {
-				if(count(ProjectsFollowups::model()->findByAttributes(array('id_user'=>$value->id,'id_project'=>$idProject))) == 1){
-					echo "solo hay un approve";
-					//$status = $project->status;
-				}else{
-					echo "muchos hay un approve";
-				}
-
-			}
-		}else{
-
-		}
-
 
 		switch($actualStatus){
 			case "rejectDIVUH":case "rejectCOMBIO":case "rejectCOMETI":case "rejectCOMINV": $status = "MODIFICAR"; break;
 			case "DIVUH": $status = "SEUH"; break;
-			case "DIVUH": $status = "SEUH"; break;
 			case "SEUH": $status = "COMITE"; break; // ASIGNA NÚMERO DE FOLIO
-			case "COMBIO": case "COMINV": case "COMBIO":$status = "SEUH2"; break; // para pasar a seuh2 deben todos los comites asignados(uh) haber dicho "SI"
+			case "COMINV,COMETI,COMBIO": case "COMINV,COMETI": case "COMETI,COMBIO": case "COMINV,COMBIO": case "COMETI":case "COMINV": case "COMBIO": $status = "SEUH2"; break; // para pasar a seuh2 deben todos los comites asignados(uh) haber dicho "SI"
 			case "SEUH2": $status = "SGEI"; break; // ALERTA A DUH
 			case "SGEI": $status = "DIVUH2"; break; // ALERTA A DG, DUH, SEUH //DICTAMINACION
 			case "DIVUH2": $status = "COMITE2"; break; // para pasar a dictaminado deben todos los comites asignados(uh) haber dicho "SI"
@@ -158,7 +144,7 @@ class ProjectsReviewController extends Controller
 	{
 		$modelfollowup = new ProjectsFollowups;
 		$followups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$id),array('order'=>'id DESC'));
-		$modelproject = new Projects;
+		//$modelproject = Projects::model()->findByPk($id);
 
         if(isset($_POST['ProjectsFollowups']))
         {
@@ -195,26 +181,102 @@ class ProjectsReviewController extends Controller
         }
 
 		$this->render('review',array(
-			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup,'followups'=>$followups,'modelproject'=>$modelproject,
+			'model'=>$this->loadModel($id),'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup,'followups'=>$followups,//'modelproject'=>$modelproject,
 		));
 	}
 
-	public function actionSetRegNumber()
+	public function actionSetFolioNumber()
 	{
-			var_dump($_POST);
-		
-            if(Projects::model()->updateByPk($_POST[1],array('registration_number'=>$_POST["Projects[registration_number]"]))){
-	     			echo CJSON::encode(array('status'=>'success'));
-	     			Yii::app()->end();
-	        }else{
-	     			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'No se pudo asignar el número de registro, por favor vuelva a intentarlo.'));
-	     			Yii::app()->end();
-				Yii::app()->end();
-	        }
+
+            if(Projects::model()->updateByPk($_POST[1],array('folio'=>$_POST["Projects"]["folio"])))
+     			echo CJSON::encode(array('status'=>'success','message'=>'Número de folio asignado con éxito.','subMessage'=>'A continuación seleccione los comités que evaluarán el proyecto.'));
+	        else
+ 				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'No se pudo asignar el número de folio, por favor vuelva a intentarlo.'));
+	        
         Yii::app()->end();
 
 	}
 
+	public function actionSetRegNumber()
+	{
+
+            if(Projects::model()->updateByPk($_POST[1],array('registration_number'=>$_POST["Projects"]["registration_number"])))
+     			echo CJSON::encode(array('status'=>'success','message'=>'Número de registro asignado con éxito.','subMessage'=>'A continuación seleccione los comités que evaluarán el proyecto.'));
+	        else
+ 				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'No se pudo asignar el número de registro, por favor vuelva a intentarlo.'));
+	        
+        Yii::app()->end();
+
+	}
+
+	public function actionAssignCommittees()
+	{
+		
+		if(isset($_POST['designate']))
+		{
+			$idProject = $_POST[1];
+			$conexion = Yii::app()->db;
+			$savedPC = 0;
+
+			if(isset($_POST['designate']['COMINV'])){
+					$comms = $conexion->createCommand("SELECT u.id FROM users AS u JOIN roles AS r on u.id_roles=r.id  WHERE r.alias = 'COMINV'")->queryAll();
+					foreach($comms as $key => $value){
+						$procom = new ProjectsCommittee;
+						$procom->id_project = $idProject;
+						$procom->committee = "COMINV";
+						$procom->id_user_designator = Yii::app()->user->id;
+						$procom->id_user_reviewer = $value["id"];
+						if($procom->save()){
+							$savedPC++;
+						}
+						unset($procom);
+					}
+			}
+
+			if(isset($_POST['designate']['COMBIO'])){
+					$comms = $conexion->createCommand("SELECT u.id FROM users AS u JOIN roles AS r on u.id_roles=r.id  WHERE r.alias = 'COMBIO'")->queryAll();
+					foreach($comms as $key => $value){
+						$procom = new ProjectsCommittee;
+						$procom->id_project = $idProject;
+						$procom->committee = "COMBIO";
+						$procom->id_user_designator = Yii::app()->user->id;
+						$procom->id_user_reviewer = $value["id"];
+						if($procom->save()){
+							$savedPC++;
+						}
+						unset($procom);
+					}
+			}
+
+
+
+			if(isset($_POST['designate']['COMETI'])){
+					$comms = $conexion->createCommand("SELECT u.id FROM users AS u JOIN roles AS r on u.id_roles=r.id  WHERE r.alias = 'COMETI'")->queryAll();
+					foreach($comms as $key => $value){
+						$procom = new ProjectsCommittee;
+						$procom->id_project = $idProject;
+						$procom->committee = "COMETI";
+						$procom->id_user_designator = Yii::app()->user->id;
+						$procom->id_user_reviewer = $value["id"];
+						if($procom->save()){
+							$savedPC++;
+						}
+						unset($procom);
+					}
+			}
+
+			if($savedPC > 0){
+				echo CJSON::encode(array('status'=>'success','message'=>'Comités asignados con éxito','subMessage'=>'Los comités han sido asignados satisfactoriamente ahora puede enviar el proyecto para su evaluación.'));
+			}else{
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'2Necesita asignar mínimo un comité para la evaluación de este proyecto.'));
+			}
+
+		}else{
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Necesita asignar mínimo un comité para la evaluación de este proyecto.'));
+		}
+
+		Yii::app()->end();
+	}
 
 
 
@@ -230,32 +292,100 @@ class ProjectsReviewController extends Controller
 		$conexion = Yii::app()->db;
 
 		$nextReview = $this->nextReview($_POST[1], $id);
-/*rejectDIVUH
-rejectCOMBIO
-rejectCOMETI
-rejectCOMINV*/
-//echo $nextReview;
+		
+
+		//if(substr(Yii::app()->user->Rol->alias,0,3) == "COM"){
+			//check for projects committees
+			$comms1Check =ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$id,'id_user_reviewer'=>Yii::app()->user->id,'status'=>'pendiente'));
+			//$comms1Check = CHtml::listData($comms1Check, 'id_user_reviewer', 'status');
+			//var_dump($comms1Check);
+			if(count($comms1Check) >0)
+				ProjectsCommittee::model()->updateByPk($comms1Check[0]->id,array('status' => 'aprobado'));
+				
+			
+			//volvemos a preguntar
+			$comms2Check =ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$id,'status'=>'pendiente'));
+				// si es mayor a 0 significa que el usuario no ha aprovado
+			if(count($comms2Check) == 0){
+						$commsCheck = $conexion->createCommand("
+						SELECT DISTINCT pc.committee
+						FROM projects_committee AS pc
+						WHERE pc.id_project = '".$id."'")->queryAll();
+						//CONVERT TO SIMPLE ARRAY
+						$commsARRAYCheck = CHtml::listData($commsCheck, 'committee', 'committee');  
+				// cambiar el eestatus de next review 
+		if($nextReview == "COMITE")
+ 			$nextReview .= (array_key_exists('COMINV',$commsARRAYCheck) ? "COMINV," : "").(array_key_exists('COMETI',$commsARRAYCheck) ? "COMETI," : "").(array_key_exists('COMBIO',$commsARRAYCheck) ? "COMBIO" : "");
 
 		$res = $conexion->createCommand("UPDATE projects SET status = '".$nextReview."' WHERE id =".$id)->execute();
 		//	echo $res;
-		if( $res == 1){
-						$followup = new ProjectsFollowups;
-						$followup->id_project = $id;
-						$followup->id_user = Yii::app()->user->id;
+			if( $res == 1){
+					$followup = new ProjectsFollowups;
+					$followup->id_project = $id;
+					$followup->id_user = Yii::app()->user->id;
 
-						if($nextReview == 'MODIFICAR')
-							$followup->followup = $this->messages[$_POST[1]];
-						else
-							$followup->followup = $this->messages[$nextReview];
-						//echo $followup->followup;
 
-						$followup->type = "comment";
+					//$conexion = Yii::app()->db;
+/*					$commsCheck = $conexion->createCommand("
+					SELECT DISTINCT pc.committee
+					FROM projects_committee AS pc
+					WHERE pc.id_project = '".$id."'")->queryAll();*/
 
-						if($followup->save())
-			     			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido enviado satisfactoriamente para su revisión o evaluación.'));
-					}else
-						echo CJSON::encode(array('message'=>'Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intetar.'));
-				Yii::app()->end();
+				  	$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee');  
+
+					if($nextReview == 'MODIFICAR')
+						$followup->followup = $this->messages[$_POST[1]];
+					else if(Yii::app()->user->Rol->alias == "SEUH")
+						$followup->followup = "Proyecto enviado a revisión por los siguientes comités:<br>".(array_key_exists('COMINV',$commsCheck) ? "Comité de Investigación.<br>" : "").(array_key_exists('COMETI',$commsCheck) ? "Comité de Ética en Investigación.<br>" : "").(array_key_exists('COMBIO',$commsCheck) ? "Comité de Bioseguridad." : "");
+					else 
+						$followup->followup = $this->messages[$nextReview];
+					//echo $followup->followup;
+
+					$followup->type = "comment";
+
+					if($followup->save())
+		     			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido enviado satisfactoriamente para su revisión o evaluación.'));
+			}else	
+					echo CJSON::encode(array('message'=>'Ocurrió un error.11','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intentar.'));
+			}
+			else{
+					$commsCheck = $conexion->createCommand("
+					SELECT DISTINCT pc.committee
+					FROM projects_committee AS pc
+					WHERE pc.id_project = '".$id."'")->queryAll();
+
+				  	$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee');  
+
+				if(substr(Yii::app()->user->Rol->alias,0,3) != "COM"){
+					
+					$nextReview = (array_key_exists('COMINV',$commsCheck) ? "COMINV," : "").(array_key_exists('COMETI',$commsCheck) ? "COMETI," : "").(array_key_exists('COMBIO',$commsCheck) ? "COMBIO" : "");
+						$res = $conexion->createCommand("UPDATE projects SET status = '".$nextReview."' WHERE id =".$id)->execute();
+				}
+					
+
+					$followup = new ProjectsFollowups;
+					//$conexion = Yii::app()->db;
+
+
+					if($nextReview == 'MODIFICAR')
+						$followup->followup = $this->messages[$_POST[1]];
+					else if(Yii::app()->user->Rol->alias == "SEUH")
+						$followup->followup = "Proyecto enviado a revisión por los siguientes comités:<br>".(array_key_exists('COMINV',$commsCheck) ? "Comité de Investigación.<br>" : "").(array_key_exists('COMETI',$commsCheck) ? "Comité de Ética en Investigación.<br>" : "").(array_key_exists('COMBIO',$commsCheck) ? "Comité de Bioseguridad." : ""); //$followup->followup = $this->messages[$nextReview]."<br>".(array_key_exists('COMINV',$commsCheck) ? "Comité de Investigación.<br>" : "").(array_key_exists('COMETI',$commsCheck) ? "Comité de Ética en Investigación.<br>" : "").(array_key_exists('COMBIO',$commsCheck) ? "Comité de Bioseguridad." : "");
+					else 
+						$followup->followup = $this->messages[$nextReview];
+
+
+				
+					$followup->id_project = $id;
+					$followup->id_user = Yii::app()->user->id;
+					//$followup->followup = $this->messages[$nextReview];
+					$followup->type = "comment";
+				if($followup->save())
+		     			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito22','subMessage'=>'El proyecto ha sido enviado satisfactoriamente para su revisión o evaluación.'));
+			}
+
+		//}
+			Yii::app()->end();
 	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
