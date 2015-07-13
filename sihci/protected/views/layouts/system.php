@@ -6,7 +6,7 @@
         <meta name="language" content="en">
         <meta charset="utf-8">
         <!-- blueprint CSS framework -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
         <!--[if lt IE 8]>
@@ -19,6 +19,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/projects.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css">
+
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
@@ -268,6 +270,33 @@
                         case 'tables':
                         $ControllerB = "Estadisticas";
                         break;
+                        case 'sponsorship':
+                        $ControllerB = "Patrocinios";
+                        break;
+                        case 'sponsorShip':
+                        $ControllerB = "Patrocinios";
+                        break;
+                        case 'adminUsers':
+                        $ControllerB = "Gestión de usuarios";
+                        break;
+                        case 'FilesManager':
+                        $ControllerB = "Gestión de archivos";
+                        break;
+                        case 'adminProjects':
+                        $ControllerB = "Gestión de proyectos";
+                        break;
+                        case 'adminBackups':
+                        $ControllerB = "Respaldos";
+                        break;
+                        case 'adminSpecialtyAreas':
+                        $ControllerB = "Gestión de Áreas de especialidad";
+                        break;
+                        case 'adminResearchAreas':
+                        $ControllerB = "Gestión de Áreas de investigación";
+                        break;
+                        case 'projectsReview':
+                        $ControllerB = "Gestión de proyectos";
+                        break;
 
                         default:
                         $ControllerB = "None";
@@ -385,9 +414,9 @@
             </div>
             <div class="syscontent">
                 <div class="adminmenu">
-                    <div><?php echo CHtml::link('Manejador de Archivos', array('FilesManager/admin'));?></div>
+                    <div><?php echo CHtml::link('Gestión de Archivos', array('FilesManager/admin'));?></div>
                     <div><?php echo CHtml::link('Gestión de usuarios', array('adminUsers/'));?></div>
-                    <div><?php echo CHtml::link('Manejador de proyectos', array('adminProjects/'));?></div>
+                    <div><?php echo CHtml::link('Gestiónk de proyectos', array('adminProjects/'));?></div>
                     <div><?php echo CHtml::link('Respaldos', array('adminBackups/'));?></div>
                     <div><?php echo CHtml::link('Áreas de especialidad', array('adminSpecialtyAreas/admin'));?></div>
                     <div><?php echo CHtml::link('Lineas de Investigación', array('adminResearchAreas/admin'));?></div>
@@ -419,7 +448,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Cance <?=$ControllerB ?> </h4>
+                    <h4 class="modal-title" id="myModalLabel">Cancelar <?=$ControllerB ?> </h4>
                   </div>
                   <div class="modal-body">
             		  ¿Estas Seguro de Cancelar Este Registro?
