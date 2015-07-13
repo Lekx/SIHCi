@@ -198,6 +198,8 @@ class ProjectsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
+		$pastStatus = $model->status;
+
 		if(isset($_POST['Projects']))
 		{
 			$model->attributes=$_POST['Projects'];
@@ -209,12 +211,14 @@ class ProjectsController extends Controller
 			}
 
 			if($_POST[1]== "draft")
-				$model->status = "borrador";
+				$model->status = "BORRADOR";
 			else
 				$model->status = "DIVUH";
 
+			$model->status = ($pastStatus == "MODIFICAR" && $model->status =="BORRADOR") ? "MODIFICAR" : $model->status;
+
 			$model->folio = "-1";
-			$model->is_sponsored = 0;
+			//$model->is_sponsored = 0;
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
 
@@ -231,7 +235,7 @@ class ProjectsController extends Controller
 
 				foreach ($_POST['adtlResearchers'] as $key => $value) {
 					if(!empty($value)){
-						$adtlRes = new ProjectsCoworkers;
+						$adtlRes = new ProjectsCoworkers; //  A G R E G A R  LA PARTE DE IDS PARA SABER CUALES SE EDITARAN(LIBROS AUTH)
 						$adtlRes->id_project = $model->id;
 						$adtlRes->fullName = $value;
 

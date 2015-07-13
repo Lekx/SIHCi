@@ -14,11 +14,8 @@ if(!$model->isNewRecord){
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'sponsorship-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
 )); ?>
 
 	<?php //echo $form->errorSummary($model); ?>
@@ -58,14 +55,25 @@ if(!$model->isNewRecord){
 			</div>
 	</div>
 
+	<div class="row">
+	<h5>Contrato con investigador:</h5>
+		<?php echo $form->fileField($modelProjectsDocs, 'path', array('name' => 'Doc1'));?>
+		<div id="SponsorshipDocs1_path_em_" class="errorMessage" style="display:none;"></div>
+
+		<?php
+			if(array_key_exists('Documento_que_acredite_la_creacion_de_la_empresa', $modelProjectsDocs))
+				echo "<a href='".Yii::app()->request->baseUrl."/".$modelProjectsDocs['Documento_que_acredite_la_creacion_de_la_empresa'][1]."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$modelProjectsDocs['Documento_que_acredite_la_creacion_de_la_empresa'][1]."' style='width:75px;height:auto;'></a>";
+		?>
+	</div>
+
 
 	<div class="row buttons">
-		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
-							'onclick'=>'send("sponsorship-form","sponsorship/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","sponsorship/admin","")',
-							'class'=>'savebutton',
-					));
-			?>
-			 <?php echo CHtml::link('Cancelar',array('sponsorship/admin')); ?>
+	<?php echo CHtml::htmlButton('Enviar',array(
+                'onclick'=>'send("sponsorship-form", "sponsorship/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "")',
+                'class'=>'savebutton',
+            ));
+    ?>
+    <?php echo CHtml::Button('Cancelar',array('submit' => array('sponsorship'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

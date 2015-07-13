@@ -7280,7 +7280,7 @@ function changeSector()
        }
  
  
-         var newOrganization ="<span class='plain-select'><select id='DirectedThesis_organization' class='tooltipstered' name='DirectedThesisd[organization]' onchange='changeSecondLevel()'>";
+         var newOrganization ="<span class='plain-select'><select id='DirectedThesis_organization' class='tooltipstered' name='DirectedThesis[organization]' onchange='changeSecondLevel()'>";
            newOrganization+="<option>Seleccionar Organización</option>";
             
             for (var item in sectorValue)
@@ -24342,8 +24342,1398 @@ function changeSector()
       organizationValue = UnityMexicana;
     }
 
+    /* Instituciones / organizaciones extranjeras */
 
-
+    if(organizationValue ==  "AC NIELSEN COMPANY"){
+      var niesenCompany=[" "];
+      organizationValue = niesenCompany;
+    }
+     if(organizationValue ==  "ACADEMIA ESLOVACA"){
+      var academyEslovaca=[" "];
+      organizationValue = academyEslovaca;
+    }
+    if(organizationValue ==  "ACADEMIA DE CIENCIA DE RUSIA"){
+      var academyScienceRusia=["INSTITUTO DE CRISTALOGRAFIA",
+                              "INSTITUTO DE ESPECTROSCOPIA",
+                              "INSTITUTO DE PROBLEMAS EN MECANICA",
+                              "INSTIUTO DE ARQUEOLOGIA DE LA ACADEMIA DE CIENCIAS EN RUSIA",];
+      organizationValue = academyScienceRusia;
+    }
+     if(organizationValue ==  "ACADEMIA DE CIENCIAS DE MOSCU"){
+      var academyScienceMoscu=[" "];
+      organizationValue = academyScienceMoscu;
+    }
+     if(organizationValue ==  "ACADEMICA NACIONAL DE CIENCIAS DE UCRANIA"){
+      var academyNationalScienceUcrania=["INSTITUTO DE FISICA DE MATERIA CONDENSADA",
+                                        "INSTITUTO DE TECNICAS EN MECANICA",];
+      organizationValue = academyNationalScienceUcrania;
+    }
+    if(organizationValue ==  "ACADEMY OF NATURAL SCIENCES OF PHILADELPHIA"){
+      var academySciencesPhiladelphia=[" "];
+      organizationValue = academySciencesPhiladelphia;
+    }
+     if(organizationValue ==  "AKITA UNIVERSITY"){
+      var akitaUniversity=[" "];
+      organizationValue = akitaUniversity;
+    }
+    if(organizationValue ==  "AMERICAN MUSEUM OF NATURAL HISTORY"){
+      var americanMuseumNaturaly=[" "];
+      organizationValue = americanMuseumNaturaly;
+    }
+     if(organizationValue ==  "ANTHONY NOLAN RESEARCH INSTITUTE"){
+      var anthonyNolan=[" "];
+      organizationValue = anthonyNolan;
+    }
+    if(organizationValue ==  "ARIZONA STATE UNIVERSITY"){
+      var arzonaStateUnversity=["BUREAU OF APPLIED RESEARCH IN ANTHROPOLOGY",
+                                  "COLLEGE OF HEALTH SOLUTIONS",
+                                  "DEPARTAMENTO DE BIOQUIMICA",
+                                  "DEPARTAMENTO DE QUÍMICA Y BIOQUÍMICA",
+                                  "SCHOOL OF LIFE SCIENCES"];
+      organizationValue = arzonaStateUnversity;
+    }
+     if(organizationValue ==  "ASOCIACION INTERNACIONAL PARA LA PROTECCION ECOLOGICA Y REUBICACION PACIFICA DE LAS PALOMAS URBANAS AC"){
+      var internationalForEcology=[" "];
+      organizationValue = internationalForEcology;
+    }
+    if(organizationValue ==  "ASTROPHYSIKALISCHES INSTITUT POTSDAM"){
+      var institutPotsdam=[" "];
+      organizationValue = institutPotsdam;
+    }
+    if(organizationValue ==  "AT&T BELL LABORATORIES"){
+      var bellLaboratories=[" "];
+      organizationValue = bellLaboratories;
+    }
+    if(organizationValue ==  "AUBURN UNIVERSITY"){
+      var aubunUniversity=[" "];
+      organizationValue = aubunUniversity;
+    }
+    if(organizationValue ==  "AUSTIN RESEARCH INSTITUTE"){
+      var austinResearch=[" "];
+      organizationValue = austinResearch;
+    }
+     if(organizationValue ==  "AUSTRALIAN MUSEUM SYDNEY"){
+      var australianMuseum=[" "];
+      organizationValue = australianMuseum;
+    }
+    if(organizationValue ==  "BANCO INTERAMERICANO DE DESARROLLO"){
+      var bankDevelopment=[" "];
+      organizationValue = bankDevelopment;
+    }
+    if(organizationValue ==  "BELGIAN NUCLEAR RESEARCH CENTRE SCKCEN"){
+      var ResearchCentre=[" "];
+      organizationValue = ResearchCentre;
+    }
+     if(organizationValue ==  "BEN GURION UNIVERSITY"){
+      var benGurionUniversity=[" "];
+      organizationValue = benGurionUniversity;
+    }
+      if(organizationValue ==  "BERKELEY CENTER FOR BEST PRACTICES RESEARCH A C CENTRO DE MEJORES PRACTICAS"){
+      var berkeleyCenterFor=[" "];
+      organizationValue = berkeleyCenterFor;
+    }
+     if(organizationValue ==  "BHABHA ATOMIC RESEARCH CENTRE LASER AND PLASMA TECHNOLOGY DIVISION"){
+      var bhabahAtomic=[" "];
+      organizationValue = bhabahAtomic;
+    }
+    if(organizationValue ==  "BIOTECHNOLOGICAL INSTITUTE OF DENMARK"){
+      var biotechnologicalInstitute=[" "];
+      organizationValue = biotechnologicalInstitute;
+    }
+    if(organizationValue ==  "BLACKETT LABORATORY IMPERIAL COLLEGE LONDON"){
+      var blackettLAboratory=["BLACKETT LABORATORY"];
+      organizationValue = blackettLAboratory;
+    }
+    if(organizationValue ==  "BRANDEIS UNIVERSITY"){
+      var brandeisUniversity=[" "];
+      organizationValue = brandeisUniversity;
+    }
+     if(organizationValue ==  "BRITISH GEOLOGICAL SURVEY"){
+      var britishGEological=[" "];
+      organizationValue = britishGEological;
+    }
+     if(organizationValue ==  "BROWN UNIVERSITY"){
+      var brownUniversity=[" "];
+      organizationValue = brownUniversity;
+    }
+     if(organizationValue ==  "BURNHAM INSTITUTE"){
+      var burnhamInstitute=[" "];
+      organizationValue = burnhamInstitute;
+    }
+     if(organizationValue ==  "BWZ ALLEN ANN HAMILTON"){
+      var bmzAllenAnn=[" "];
+      organizationValue = bmzAllenAnn;
+    }
+     if(organizationValue ==  "C N R S"){
+      var cnrs=[" "];
+      organizationValue = cnrs;
+    }
+    if(organizationValue ==  "CALIFORNIA INSTITUTE OF TECHNOLOGY"){
+      var californiaInstitute=[" "];
+      organizationValue = californiaInstitute;
+    }
+    if(organizationValue ==  "CALTECH"){
+      var calte=[" "];
+      organizationValue = caltech;
+    }
+    if(organizationValue ==  "CARNEGIE MELLON UNIVERSITY"){
+      var carnegieMellon=[" "];
+      organizationValue = carnegieMellon;
+    }
+    if(organizationValue ==  "CENTER FOR DISEASES CONTROL AND PREVENTIONDEPARTMENT OF HEALTH & HUMA"){
+      var centerForDiseases=[" "];
+      organizationValue = centerForDiseases;
+    }
+     if(organizationValue ==  "CENTER OF MARINE BIOTECHNOLOGY"){
+      var centerForMArine=[" "];
+      organizationValue = centerForMArine;
+    }
+    if(organizationValue ==  "CENTRE DE VISIO PER COMPUTADOR"){
+      var centerWachingComputer=[" "];
+      organizationValue = centerWachingComputer;
+    }
+    if(organizationValue ==  "CENTRE DENERGIE ATOMIQUE CEAGRENOBLE"){
+      var centerDebergieAtomique=[" "];
+      organizationValue = centerDebergieAtomique;
+    }
+     if(organizationValue ==  "CENTRE FOR PROTEIN ENGINEERING MRC"){
+      var centerForProtein=[" "];
+      organizationValue = centerForProtein;
+    }
+    if(organizationValue ==  "CENTRE NATIONAL DE LA RECHERCHE SCIENTIFIQUE"){
+      var centerNationalScientifique=["LABORATOIRE D'OCÉANOLOGIE ET DE GEOSCIENCES",
+                            "LABORATOIRE DE PHYSIQUE DES SOLIDES",
+                            "LABORATOIRE DE PHYSIQUE ET MÉCANIQUE DES MILIEUX HÉTÉROGÈNES",
+                            "LABORATOIRE PLASMA ET CONVERSION D¿ENERGIE UMR5213",];
+      organizationValue = centerNationalScientifique;
+    }
+      if(organizationValue ==  "CENTRO ALEXIS VAUTRIN"){
+      var centerAlexisVautrin=[" "];
+      organizationValue = centerAlexisVautrin;
+    }
+      if(organizationValue ==  "CENTRO BRASILEIRO DE PESQUISAS FISICAS"){
+      var centerBrasieiro=[" "];
+      organizationValue = centerBrasieiro;
+    }
+     if(organizationValue ==  "CENTRO BRASILENO DE INVESTIGACIONES EN FISICA"){
+      var centerBrasieiroREsearching=[" "];
+      organizationValue = centerBrasieiroREsearching;
+    }
+     if(organizationValue ==  "CENTRO CULTURAL MOKICHI OAKADA ASOCIACION MOA TOLUCA AC"){
+      var centerMokichi=[" "];
+      organizationValue = centerMokichi;
+    }
+     if(organizationValue ==  "CENTRO DE INVESTIGACION Y DESARROLLO TECNOLOGICO EN COLOMBIA AC"){
+      var centerREsearchingDevelopment=[" "];
+      organizationValue = centerREsearchingDevelopment;
+    }
+      if(organizationValue ==  "CENTRO DE INVESTIGACIONES CIENTIFICAS ISLA DE LA CARTUJA EN SEVILLA"){
+      var centerREsearchingScientifique=[" "];
+      organizationValue = centerREsearchingScientifique;
+    }
+      if(organizationValue ==  "CENTRO DE NEUROCIENCIAS DE CUBA"){
+      var centerNeuroScience=[" "];
+      organizationValue = centerNeuroScience;
+    }
+      if(organizationValue ==  "CENTRO FRANCES DE ESTUDIOS MEXICANOS Y CENTROAMERICANOS"){
+      var centerFrenchStudy=[" "];
+      organizationValue = centerFrenchStudy;
+    }
+      if(organizationValue ==  "CENTRO INTERNACIONAL DE FISICA TEORICA"){
+      var centerInternationalPhisical=[" "];
+      organizationValue = centerInternationalPhisical;
+    }
+      if(organizationValue ==  "CENTRO INTERNACIONAL DE INVESTIGACION Y CAPACITACION AGROPECUARIA AC"){
+      var centerInternationalResearching=[" "];
+      organizationValue = centerInternationalResearching;
+    }
+      if(organizationValue ==  "CENTRO PATAGONICO NACIONAL PUERTO MADRYN"){
+      var centerNationalPortMadryn=[" "];
+      organizationValue = centerNationalPortMadryn;
+    }
+      if(organizationValue ==  "CHILDRENS HOSPITAL DE ORANGE COUNTY"){
+      var childrensHospital=[" "];
+      organizationValue = childrensHospital;
+    }
+     if(organizationValue ==  "CHU BICHATCLAUDE BERNARD"){
+      var chuBitcahtClaude=[" "];
+      organizationValue = chuBitcahtClaude;
+    }
+     if(organizationValue ==  "CLARKSON UNIVERSITY"){
+      var clarksonUniverisity=[" "];
+      organizationValue = clarksonUniverisity;
+    }
+      if(organizationValue ==  "COLEGIO IMPERIAL"){
+      var schoolImperial=[" "];
+      organizationValue = schoolImperial;
+    }
+      if(organizationValue ==  "COLEGIO MEDICO DE MIYAZAKI"){
+      var schoolDoctorMiyazaki=[" "];
+      organizationValue = schoolDoctorMiyazaki;
+    }
+      if(organizationValue ==  "COLLEGE DE FRANCE"){
+      var collegeFrench=["ECOLE DES HAUTES ETUDES EN SCIENCES SOCIALES",
+                          "ECOLE PRACTIQUE DES HAUTES ETUDES",];
+      organizationValue = collegeFrench;
+    }
+      if(organizationValue ==  "COLOMBIA UNIVERSITY"){
+      var colombiaUniversity=[" "];
+      organizationValue = colombiaUniversity;
+    }
+     if(organizationValue ==  "COLORADO STATE UNIVERSITY"){
+      var stateUniversity=[" "];
+      organizationValue = stateUniversity;
+    }
+     if(organizationValue ==  "COLUMBIA UNIVERSITY"){
+      var columbaUniversity=["COLUMBIA LAW SCHOOL",
+                            "DEPARTMENT OF ASTRONOMY",
+                            "GRADUATE SCHOOL OF ARCHITECTURA, PLANNING AND PRESERVATION",
+                            "GRADUATE SCHOOL OF ARCHITECTURE, PLANNING AND PRESERV",
+                            "GRADUATE SCHOOL OF ARTS AND SCIENCES",
+                            "INSTITUTE FOR RESEARCH OF ORAL HISTORY",
+                            "INSTITUTE FOR THE STUDY OF HUMAN RIGHTS",
+                            "INSTITUTE OF LATIN AMERICAN STUDIES",
+                            "LAMONT-DOHERTY EARTH OBSERVATORY",
+                            "SCHOOL OF INTERNATIONAL AND PUBLIC AFFAIRS",
+                            "TEACHERS COLLEGE COLUMBIA UNIVERSITY",];
+      organizationValue = columbaUniversity;
+    }
+    if(organizationValue ==  "COLUMBIA MOUNTAINS INSTITUTE OF APPLIED ECOLOGY"){
+      var columbaMountains=[" "];
+      organizationValue = columbaUniversity;
+    }
+     if(organizationValue ==  "CONCORDIA UNIVERSITY"){
+      var concordiaUniversity=[" "];
+      organizationValue = concordiaUniversity;
+    }
+     if(organizationValue ==  "CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICASCSIC"){
+      var researchingscientifique=["CENTRO DE ACÚSTICA APLICADA Y EVALUACIÓN NO DESTRUCTIVA",
+                                  "CENTRO DE EDAFOLOGIA Y BIOLOGIA APLICADA DEL SEGURA",
+                                  "CENTRO DE HUMANIDADES",
+                                  "CENTRO NACIONAL DE BIOTECNOLOGIA",
+                                  "INSTITUT DE CIENCIES DEL MAR",
+                                  "INSTITUT DE CIÈNCIES DE L'ESPAI",
+                                  "INSTITUTO DE AGROQUIMICA Y TECNOLOGIA DE ALIMENTOS",
+                                  "INSTITUTO DE AUTOMÁTICA INDUSTRIAL",
+                                  "INSTITUTO DE CATALISIS Y PETROLEOQUIMICA",
+                                  "INSTITUTO DE CERAMICA Y VIDRIO",
+                                  "INSTITUTO DE CIENCIA DE MATERIALES DE MADRID",
+                                  "INSTITUTO DE CIENCIA Y TECNOLOGÍA DE ALIMENTOS Y NUTRICIÓN (ICTAN)",
+                                  "INSTITUTO DE CIENCIAS DE MATERIALES DE BARCELONA",
+                                  "INSTITUTO DE DIAGNÓSTICO AMBIENTAL Y ESTUDIOS DEL AGUA",
+                                  "INSTITUTO DE ESTRUCTURA DE LA MATERIA",
+                                  "INSTITUTO DE FISICA APLICADA",
+                                  "INSTITUTO DE INVESTIGACIONES MARINAS CSIC",
+                                  "INSTITUTO DE MICROELECTRONICA DE BARCELONA",
+                                  "INSTITUTO DE MICROELECTRONICA DE MADRID",
+                                  "INSTITUTO DE OPTICA DAZA DE VALDES",
+                                  "INSTITUTO DE PARASITOLOGIA LOPEZ NEYRA",
+                                  "INSTITUTO DEL FRIO",
+                                  "INSTITUTO EDUARDO TORROJA",
+                                  "INSTITUTO NACIONAL DEL CARBON-INCAR",];
+      organizationValue = researchingscientifique;
+    }
+     if(organizationValue ==  "CORNELL UNIVERSITY"){
+      var coronellUniversity=["BOYCE THOMSON INSTITUTE FOR PLANT RESEARCH",
+                              "COLLEGE OF AGRICULTURE AND LIFE SCIENCES",
+                              "COLLEGE OF VETERINARY MEDICINE",
+                              "CORNELL INSTITUTE OF PUBLIC AFFAIRS",
+                              "GENEVA CAMPUS",
+                              "LATINAMERICAN STUDIES PROGRAM",
+                              "WARD CENTER FOR NUCLEAR STUDIES",];
+      organizationValue = coronellUniversity;
+    }
+     if(organizationValue ==  "DALHOUSIE UNIVERSITY"){
+      var dalhousieUniversity=[" "];
+      organizationValue = dalhousieUniversity;
+    }
+     if(organizationValue ==  "DE BUEN & ASOCIADOS"){
+      var ofGoodAssociates=[" "];
+      organizationValue = ofGoodAssociates;
+    }
+    if(organizationValue ==  "DEPARTMENT OF RENAL MEDICINE MANCHESTER ROYAL INFIRMARY"){
+      var departmentOfRenal=[" "];
+      organizationValue = departmentOfRenal;
+    }
+    if(organizationValue ==  "DEUTSCHES ELEKTRONENSYNCHROTON DESY"){
+      var deutschesDesy=[" "];
+      organizationValue = deutschesDesy;
+    }
+    if(organizationValue ==  "DEUTSCHES ELEKTRONENSYNCHROTRON DESY"){
+      var deutschesDesys=[" "];
+      organizationValue = deutschesDesys;
+    }
+    if(organizationValue ==  "DIRECCION DE LA UNIDAD MOSCAMED PROGRAMA MOSCAMED"){
+      var addressesUnitProgram=[" "];
+      organizationValue = addressesUnitProgram;
+    }
+     if(organizationValue ==  "DUKE UNIVERSITY"){
+      var dukeUniversity=["DEPARTAMENTO DE CIENCIA POLITICA"];
+      organizationValue = dukeUniversity;
+    }
+    if(organizationValue ==  "ECOLE NATIONALE SUPERIEURE D ARTS ET METIERS"){
+      var ecoleNationalArts=[" "];
+      organizationValue = ecoleNationalArts;
+    }
+    if(organizationValue ==  "ECOLE NATIONALE SUPERIEURE DE CHIMIE MONTPELLIER"){
+      var ecoleNationalChimie=[" "];
+      organizationValue = ecoleNationalChimie;
+    }
+     if(organizationValue ==  "ECOLE NATIONALE SUPERIEURE DES MINES DE PARIS"){
+      var ecoleNationalMines=["CENTRE AUTOMATIQUE ET SYSTEMES"];
+      organizationValue = ecoleNationalMines;
+    }
+    if(organizationValue ==  "ECOLE NATIONALE SUPERIEURE DES TELECOMMUNICATIONS"){
+      var ecoleNationalTelecomunications=[" "];
+      organizationValue = ecoleNationalTelecomunications;
+    }
+    if(organizationValue ==  "EMBL HEIDELBERG"){
+      var emblHeidelberg=[" "];
+      organizationValue = emblHeidelberg;
+    }
+    if(organizationValue ==  "ENERGY CONVERSION DEVICES INC"){
+      var energyConversatio=[" "];
+      organizationValue = energyConversatio;
+    }
+    if(organizationValue ==  "ENSEEG"){
+      var enseeg=[" "];
+      organizationValue = enseeg;
+    }
+     if(organizationValue ==  "ERASMUS UNIVERSITEIT ROTTERDAM"){
+      var ersmusUniversity=[" "];
+      organizationValue = ersmusUniversity;
+    }
+     if(organizationValue ==  "ERNEST ORLANDO LAWRENCE BERKELEY NATIONAL LABORATORY"){
+      var ernestOrlando=[" "];
+      organizationValue = ernestOrlando;
+    }
+    if(organizationValue ==  "ESCUELA CENTRAL DE NANTES"){
+      var schoolCenterNantes=[" "];
+      organizationValue = schoolCenterNantes;
+    }
+     if(organizationValue ==  "ESCUELA DE MEDICINA DENTAL DE TEL AVIV"){
+      var schoolMedicoDentalTel=[" "];
+      organizationValue = schoolMedicoDentalTel;
+    }
+     if(organizationValue ==  "ESCUELA NACIONAL SUPERIOR DE MINAS DE NANCY"){
+      var schoolNationalMinasNancy=[" "];
+      organizationValue = schoolNationalMinasNancy;
+    }
+     if(organizationValue ==  "ESCUELA NACIONAL SUPERIOR DE TELECOMUNICACIONES DE BRETANIA"){
+      var schoolNationalTelecomunications=[" "];
+      organizationValue = schoolNationalTelecomunications;
+    }
+    if(organizationValue ==  "ESCUELA TECNICA SUPERIOR DE INGENIEROS AERONAUTICOS"){
+      var schoolNationalEngieeniers=[" "];
+      organizationValue = schoolNationalEngieeniers;
+    }
+     if(organizationValue ==  "ESTACION BIOLOGICA DE DONANA"){
+      var stationBiologyDonana=[" "];
+      organizationValue = stationBiologyDonana;
+    }
+     if(organizationValue ==  "ESTACION EXPERIMENTAL DEL ZAIDIN CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICAS"){
+      var stationExperimentalZaidin=[" "];
+      organizationValue = stationExperimentalZaidin;
+    }
+      if(organizationValue ==  "EUROPEAN LABORATORY FOR PARTICLE PHYSICS CERN"){
+      var europeanLaboratoryParticle=[" "];
+      organizationValue = europeanLaboratoryParticle;
+    }
+     if(organizationValue ==  "FACULTAD LATINOAMERICANA DE CIENCIAS SOCIALES SEDE MEXICO"){
+      var schoolScienceMexico=["MAESTRIA EN POBLACION",
+                                "SEDE ACADEMICA BRASIL",
+                                "SEDE ACADEMICA CHILE",
+                                "SEDE ACADEMICA COSTA RICA",
+                                "SEDE ACADEMICA DE ARGENTINA",
+                                "SEDE ACADEMICA DE CUBA",
+                                "SEDE ACADEMICA DE MEXICO",
+                                "SEDE ACADEMICA ECUADOR",
+                                "SEDE ACADEMICA EL SALVADOR",
+                                "SEDE ACADEMICA GUATEMALA",
+                                "SEDE ACADEMICA REPUBLICA DOMINICANA",
+                                "SEDE ACADEMICA URUGUAY"];
+      organizationValue = schoolScienceMexico;
+    } 
+     if(organizationValue ==  "FERMI NATIONAL ACCELERATOR LABORATORY"){
+      var ferminationalAccelerator=[" "];
+      organizationValue = ferminationalAccelerator;
+    }
+     if(organizationValue ==  "FJE ENTERPRISE"){
+      var enterprise=[" "];
+      organizationValue = enterprise;
+    }
+     if(organizationValue ==  "FLORIDA STATE UNIVERSITY"){
+      var stateUniversityFlorida=["DEPARTMENT OF MATHEMATICS"];
+      organizationValue = stateUniversityFlorida;
+    }
+    if(organizationValue ==  "FLUORRX"){
+      var fluorrx=[" "];
+      organizationValue = fluorrx;
+    }
+    if(organizationValue ==  "FONDO MUNDIAL PARA LA NATURALEZA WWF"){
+      var downMundialFor=[" "];
+      organizationValue = downMundialFor;
+    }
+    if(organizationValue ==  "FUNDACION MEMORIA E HISTORIA VISUAL DEL HOLOCAUSTO SHOAH VISUAL HISTORY FOUNDATION"){
+      var fundationMemoryHistory=[" "];
+      organizationValue = fundationMemoryHistory;
+    }
+     if(organizationValue ==  "GEORGAUGUSTUNIVERSITAET ZU GOTTINGEN"){
+      var gottingen=[" "];
+      organizationValue = gottingen;
+    }
+     if(organizationValue ==  "GEORGETOWN UNIVERSITY"){
+      var georgetownUniversity=["DEPARTMENT OF DEMOGRAPHY",
+                                "DEPARTMENT OF PHILOSOPHY",
+                                "GEORGETOWN UNIVERSITY LAW CENTER"];
+      organizationValue = georgetownUniversity;
+    }
+     if(organizationValue ==  "GEORGIA INSTITUTE OF TECHNOLOGY"){
+      var georgiaInstitute=[" "];
+      organizationValue = georgiaInstitute;
+    }
+    if(organizationValue ==  "GIFU UNIVERSITY JAPAN"){
+      var gifuuniversity=[" "];
+      organizationValue = gifuuniversity;
+    }
+    if(organizationValue ==  "GRAND ACCELERATEUR NATIONAL D'LONS LOURDSs"){
+      var grandAccelerator=[" "];
+      organizationValue = grandAccelerator;
+    }
+    if(organizationValue ==  "GRUPO DE ESTUDIO DE FISICA DE MATERIALES INSACNRS"){
+      var groupStudiesInsacnrs=[" "];
+      organizationValue = groupStudiesInsacnrs;
+    }
+    if(organizationValue ==  "HAGGLUNDS DRIVES SEDE MEXICO"){
+      var hagglundsDrives=[" "];
+      organizationValue = hagglundsDrives;
+    }
+     if(organizationValue ==  "HAMBURGER STERNWARTE"){
+      var hambuergerStarnwarte=[" "];
+      organizationValue = hambuergerStarnwarte;
+    }
+    if(organizationValue ==  "HARVARD UNIVERSITY"){
+      var harvardUniversity=["CLÍNICA JOSLIN",
+                              "FACULTY OF ARTS AND SCIENCES",
+                              "GRADUATE SCHOOL OF ARTS AND SCIENCES",
+                              "HARVARD BUSINESS SCHOOL",
+                              "HARVARD COLLEGE",
+                              "HARVARD LAW SCHOOL",
+                              "HARVARD MEDICAL SCHOOL",
+                              "HARVARD SCHOOL OF PUBLIC HEALTH",
+                              "HARVARD UNIVERSITY GEORGE F. BAKER FOUNDATION",
+                              "HARVARD UNIVERSITY GRADUATE SCHOOL OF DESIGN",
+                              "HARVARD UNIVERSITY THE GRADUATE SCHOOL OF ARTS AND SCIENCES",
+                              "INSTITUTE FOR THEORETICAL ATOMIC AND MOLECULAR PHYSICS",
+                              "JOHN F.KENNEDY SCHOOL OF GOVERMENT HARVARD UNIVERSITY",
+                              "LAMONT-DOHERTY EARTH OBSERVATORY",
+                              "MUSEUM OF COMPARATIVE ZOOLOGY",
+                              "SMITHSONIAN CENTER FOR ASTROPHYSICS"];
+      organizationValue = harvardUniversity;
+    }
+    if(organizationValue ==  "HENRY FORD HOSPITAL"){
+      var henryFord=[" "];
+      organizationValue = henryFord;
+    }
+     if(organizationValue ==  "HOPITAUX DE PARIS"){
+      var hopitauxParis=[" "];
+      organizationValue = hopitauxParis;
+    }
+     if(organizationValue ==  "HOSPITAL FOR SICK CHILDREN"){
+      var hopitalDorSick=[" "];
+      organizationValue = hopitalDorSick;
+    }
+     if(organizationValue ==  "HOSPITAL FOR SPECIAL SURGERY"){
+      var hopitalForSpecialSurgery=[" "];
+      organizationValue = hopitalForSpecialSurgery;
+    }
+     if(organizationValue ==  "HOSPITAL UNIVERSITARIO DE MARACAIBO"){
+      var hopitaluniversityMaracaibo=[" "];
+      organizationValue = hopitaluniversityMaracaibo;
+    }
+     if(organizationValue ==  "HUMBOLDT UNIVERSITAT ZU BERLIN"){
+      var humboltUniversity=["INSTITUT FÜR SOZIALWISSENSCHAFTEN",
+                              "MATHEMATISCH-NATURWISSENSCHAFTLICHE FAKULTÄT II/INSTITUT FÜR MATHEMATIK"];
+      organizationValue = humboltUniversity;
+    }
+    if(organizationValue ==  "HYLSA SA DE CV"){
+      var hylsaSa=[" "];
+      organizationValue = hylsaSa;
+    }
+    if(organizationValue ==  "IHEALCREDAL"){
+      var ihealcredal=[" "];
+      organizationValue = ihealcredal;
+    }
+    if(organizationValue ==  "ILLINOIS INSTITUTE OF TECHNOLOGY"){
+      var illinoisInstitute=[" "];
+      organizationValue = illinoisInstitute;
+    }
+     if(organizationValue ==  "IMPERIAL COLLEGE OF SCIENCE TECHNOLOGY AND MEDICINEs"){
+      var collegeScieneAnd=[" "];
+      organizationValue = collegeScieneAnd;
+    }
+     if(organizationValue ==  "INDIAN INSTITUTE OF ASTROPHYSICS BANGALORE"){
+      var isntituteIndianOf=[" "];
+      organizationValue = isntituteIndianOf;
+    }
+     if(organizationValue ==  "INDIANA UNIVERSITY"){
+      var universityIndiana=["PURDUE UNIVERSITY AT INDIANAPOLIS"];
+      organizationValue = universityIndiana;
+    }
+     if(organizationValue ==  "INRAMONTPELLIER"){
+      var inramontpellier=[" "];
+      organizationValue = inramontpellier;
+    }
+    if(organizationValue ==  "INRIA SOPHIA ANTIPOLIS PROJECTO ARIANA"){
+      var inriaSophiaAntipolis=[" "];
+      organizationValue = inriaSophiaAntipolis;
+    }
+    if(organizationValue ==  "INSTITUT DE CHIMIE DES SUBSTANCES NATURELLES"){
+      var chimieInstitut=[" "];
+      organizationValue = chimieInstitut;
+    }
+    if(organizationValue ==  "INSTITUT DE PHYSIQUE ET CHIMIE DES MATERIAUX DE STRASBOURG"){
+      var PhysiqueInstitut=[" "];
+      organizationValue = PhysiqueInstitut;
+    }
+      if(organizationValue ==  "INSTITUT DE RECHERCHES SUBATOMIQUES"){
+      var institutReserches=[" "];
+      organizationValue = institutReserches;
+    }
+      if(organizationValue ==  "INSTITUT DES PRODUITS DE LA VIGNE"){
+      var institutProductsVine=[" "];
+      organizationValue = institutProductsVine;
+    }
+    if(organizationValue ==  "INSTITUT FRANCAIS DE RECHERCHE POUR L`EXPLOTATION DE LA MER"){
+      var institutPFrancaisREcherche=[" "];
+      organizationValue = institutPFrancaisREcherche;
+    }
+    if(organizationValue ==  "INSTITUT FRANCAIS POUR LEXPLOTATION DE LA MER LAB BIOCHIMIE DES MOLECULES MARINES"){
+      var institutPFrancaisLexplotation=[" "];
+      organizationValue = institutPFrancaisLexplotation;
+    }
+    if(organizationValue ==  "INSTITUT FUR TECHNISCHE MECHANIK TH: AACHEN"){
+      var institutFurMEchanic=[" "];
+      organizationValue = institutFurMEchanic;
+    }
+     if(organizationValue ==  "INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE"){
+      var institutNationalAutomatique=[" "];
+      organizationValue = institutNationalAutomatique;
+    }
+    if(organizationValue ==  "INSTITUT NATIONAL POLYTECHNIQUE DE GRENOBLE"){
+      var institutNationalGrenoble=["ECOLE NATIONALE SUPERIEURE D AGRONOMIE ET DES INDUSTRIES ALIMENTAIRES-ENSAIA",
+                                    "ECOLE NATIONALE SUPERIEURE D ELECTROCHIMIE ET DE ELECTROMETALLURGIE DE GRENOBLE",
+                                    "ECOLE NATIONALE SUPERIEURE D ELECTRONIQUE ET DE RADIO ELECTRICITE DE GRENOBLE",
+                                    "ECOLE NATIONALE SUPERIEURE D INFORMATIQUE ET DE MATEMATIQUES APLIQUEES DE GRENOBLE",
+                                    "ÉCOLE NATIONALE SUPÉRIEURE D'INGÉNIEURS ELECTRICIENS DE GRENOBLE",];
+      organizationValue = institutNationalGrenoble;
+    }
+    if(organizationValue ==  "INSTITUT NATIONAL POLYTECHNIQUE DE TOULOUSE"){
+      var institutNationalToulouse=["ECOLE NATIONALE SUPERIEURE AGRONOMIQUE DE TOULOUSE",
+                                    "ECOLE NATIONALE SUPERIEURE DES INGENIEURS EN ARTS CHIMIQUES ET TECHNOLOGIQUES",
+                                    "ECOLE NATIONALE SUPÉRIEURE D¿ELECTROTECHNIQUE, D¿ELECTRONIQUE, D¿INFORMATIQUE, D¿HYDRAULIQUE ET DES TÉLÉCOMMUNICATIONS",];
+      organizationValue = institutNationalToulouse;
+    }
+     if(organizationValue ==  "INSTITUT NATIONAL STATISTIQUE ET RECHERCHE MEDICALE"){
+      var institutNationalRecherche=[" "];
+      organizationValue = institutNationalRecherche;
+    }
+    if(organizationValue ==  "INSTITUT PASTEUR"){
+      var institutPasteur=[" "];
+      organizationValue = institutPasteur;
+    }
+    if(organizationValue ==  "INSTITUTE DE GERIATRIE DE MONTREAL"){
+      var institutGeriatriaMontreal=[" "];
+      organizationValue = institutGeriatriaMontreal;
+    }
+    if(organizationValue ==  "INSTITUTE DE RECHERCHE POUR LE DEVELOPPEMENT"){
+      var institutRechercheDev=[" "];
+      organizationValue = institutRechercheDev;
+    }
+    if(organizationValue ==  "INSTITUTE DE RECHERCHES SUBATOMIQUES"){
+      var institutRecherchesSubatomiques=[" "];
+      organizationValue = institutRecherchesSubatomiques;
+    }
+     if(organizationValue ==  "INSTITUTE FOR ADVANCED STUDY"){
+      var institutAdvancedStudy=[" "];
+      organizationValue = institutAdvancedStudy;
+    }
+    if(organizationValue ==  "INSTITUTE FOR CULTURAL ECOLOGY"){
+      var institutForCultural=[" "];
+      organizationValue = institutForCultural;
+    }
+    if(organizationValue ==  "INSTITUTE FOR OCEANOGRAPHIC RESEARCH IN THE BALTIC SEA"){
+      var institutForResearch=[" "];
+      organizationValue = institutForResearch;
+    }
+    if(organizationValue ==  "INSTITUTE FUER FESTKOERPERFORSCHUNG"){
+      var institutFuerFest=[" "];
+      organizationValue = institutFuerFest;
+    }
+    if(organizationValue ==  "INSTITUTE OF AQUACULTURE RESEARCH AS"){
+      var institutOfREsearchAuqa=[" "];
+      organizationValue = institutOfREsearchAuqa;
+    }
+    if(organizationValue ==  "INSTITUTE OF CHEMICAL TECHNOLOGY"){
+      var institutChemical=[" "];
+      organizationValue = institutChemical;
+    }
+     if(organizationValue ==  "INSTITUTE OF INFORMATION THEORY AND AUTOMATION"){
+      var institutInfomationTheory=[" "];
+      organizationValue = institutInfomationTheory;
+    }
+    if(organizationValue ==  "INSTITUTE OF MECHANICAL ENGINEERING PROBLEMS RAS"){
+      var institutMechanicalEngineering=[" "];
+      organizationValue = institutMechanicalEngineering;
+    }
+    if(organizationValue ==  "INSTITUTE OF PHYSICS OF NATIONAL ACADEMY OF SCIENCES OF BELARUS"){
+      var institutNationalAcademy=[" "];
+      organizationValue = institutNationalAcademy;
+    }
+    if(organizationValue ==  "INSTITUTE OF PLANT PHYSIOLOGY OF THE RUSSIAN ACADEMY OF SCIENCES"){
+      var institutNationalAcademySciences=[" "];
+      organizationValue = institutNationalAcademySciences;
+    }
+    if(organizationValue ==  "INSTITUTO ASTROFISICO DE CANARIAS"){
+      var institutAStroPhisique=[" "];
+      organizationValue = institutAStroPhisique;
+    }
+     if(organizationValue ==  "INSTITUTO CAJAL"){
+      var institutCajal=[" "];
+      organizationValue = institutCajal;
+    }
+    if(organizationValue ==  "INSTITUTO CERVANTES"){
+      var institutCervantes=[" "];
+      organizationValue = institutCervantes;
+    }
+    if(organizationValue ==  "INSTITUTO CHARLES SADRON CNRS"){
+      var institutCharkesSadron=["LABORATOIRE DE CRISTALLOGRAPHIE",
+                                  "LENA-(NEUROSCIENCES COGNITIVES ET IMAGERIE CEREBRALE)CNRS UPR 640 HOPITAL DE LA SALPETRIERE",];
+      organizationValue = institutCharkesSadron;
+    }
+    if(organizationValue ==  "INSTITUTO CULTURAL CABANAS"){
+      var institutCulturalCabanas=[" "];
+      organizationValue = institutCulturalCabanas;
+    }
+    if(organizationValue ==  "INSTITUTO DE ACUSTICA CSIC DE MADRID"){
+      var institutAcusticaCsic=["CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICAS"];
+      organizationValue = institutAcusticaCsic;
+    }
+    if(organizationValue ==  "INSTITUTO DE ALTOS ESTUDIOS UNIVERSIDAD DE PARIS 3"){
+      var institutLongStudies=[" "];
+      organizationValue = institutLongStudies;
+    }
+     if(organizationValue ==  "INSTITUTO DE CERAMICA Y VIDRIO MADRID"){
+      var institutLCeramicaVidrio=[" "];
+      organizationValue = institutLCeramicaVidrio;
+    }
+    if(organizationValue ==  "INSTITUTO DE CERAMICOS DE SHANGHAI ACADEMIA CHINA DE CIENCIAS"){
+      var institutLCeramicaSgangahis=[" "];
+      organizationValue = institutLCeramicaSgangahis;
+    }
+    if(organizationValue ==  "INSTITUTO DE CIBERNETICA FISICA Y MATEMATICAS HABANA CUBA"){
+      var institutLciberneticPhisical=[" "];
+      organizationValue = institutLciberneticPhisical;
+    }
+    if(organizationValue ==  "INSTITUTO DE CIENCIAS EN CONTROL MOSCU RUSIA"){
+      var institutScienceControlMoscu=[" "];
+      organizationValue = institutScienceControlMoscu;
+    }
+    if(organizationValue ==  "INSTITUTO DE CIENCIAS WEIZMANN"){
+      var institutScienceWeizmann=[" "];
+      organizationValue = institutScienceWeizmann;
+    }
+     if(organizationValue ==  "INSTITUTO DE ESTRUCTURA DE LA MATERIA CSIC"){
+      var institutStructureMteria=[" "];
+      organizationValue = institutStructureMteria;
+    }
+     if(organizationValue ==  "INSTITUTO DE FISICA NUCLEAR DE ORSAY"){
+      var institutPhisicalOrsay=[" "];
+      organizationValue = institutPhisicalOrsay;
+    }
+    if(organizationValue ==  "INSTITUTO DE INVESTIGACIONES OPTICAS DAZA DE VALDES CSIC"){
+      var institutResearchingOpticasDaza=[" "];
+      organizationValue = institutResearchingOpticasDaza;
+    }
+    if(organizationValue ==  "INSTITUTO DE MATEMATICAS DE NOVOSIBIRSK"){
+      var institutMAthNovo=[" "];
+      organizationValue = institutMAthNovo;
+    }
+     if(organizationValue ==  "INSTITUTO DE QUIMICA FISICA ROCASOLANO CSIC DEDM"){
+      var institutChemistryCsic=[" "];
+      organizationValue = institutChemistryCsic;
+    }
+     if(organizationValue ==  "INSTITUTO DE QUIMICA ORGANICA GENERAL CSIC"){
+      var institutChemistryOrganic=[" "];
+      organizationValue = institutChemistryOrganic;
+    }
+    if(organizationValue ==  "INSTITUTO ESTATAL DE ELECTRONICA Y MATEMATICAS DE MOSCU"){
+      var institutMathMoscu=[" "];
+      organizationValue = institutMathMoscu;
+    }
+    if(organizationValue ==  "INSTITUTO FRANCES DE INVESTIGACIONES MARINAS"){
+      var institutREsearchingMarines=[" "];
+      organizationValue = institutREsearchingMarines;
+    }
+    if(organizationValue ==  "INSTITUTO GEOLOGICAL NUCLEAR SCIENCES"){
+      var institutGeological=[" "];
+      organizationValue = institutGeological;
+    }
+    if(organizationValue ==  "INSTITUTO ISRAELI DE TECNOLOGIA"){
+      var institutIsraelTEchnology=[" "];
+      organizationValue = institutIsraelTEchnology;
+    }
+    if(organizationValue ==  "INSTITUTO KAROLINSKA ESTOCOLMO SUECIA"){
+      var institutEstocolmoCuecia=["UNIT OF COMPUTATIONAL MEDICINE"];
+      organizationValue = institutEstocolmoCuecia;
+    }
+    if(organizationValue ==  "INSTITUTO MAX PLANCK DE PSICOLINGUISTICA"){
+      var institutMAxPlanck=[" "];
+      organizationValue = institutMAxPlanck;
+    }
+    if(organizationValue ==  "INSTITUTO NACIONAL DE DESIERTOS FLORA Y FAUNA"){
+      var institutNationalFlora=[" "];
+      organizationValue = institutNationalFlora;
+    }
+     if(organizationValue ==  "INSTITUTO NACIONAL POLITECNICO DE GRENOBLE"){
+      var institutNationalpolitecnoc=[" "];
+      organizationValue = institutNationalpolitecnoc;
+    }
+    if(organizationValue ==  "INSTITUTO NAZIONALE DI FISICA NUCLEARE SEZIONE DI MILANO"){
+      var institutNationalPhisical=[" "];
+      organizationValue = institutNationalPhisical;
+    }
+    if(organizationValue ==  "INSTITUTO ORSTOM CREDAL"){
+      var institutOrstomCredial=[" "];
+      organizationValue = institutOrstomCredial;
+    }
+    if(organizationValue ==  "INSTITUTO SUPERIOR DE CIENCIAS Y TECNOLOGIA NUCLEARES LA HABANA"){
+      var institutSciencesTechnology=[" "];
+      organizationValue = institutSciencesTechnology;
+    }
+    if(organizationValue ==  "INSTITUTO SUPERIOR TECNICO"){
+      var institutSuperiorTEcnic=[" "];
+      organizationValue = institutSuperiorTEcnic;
+    }
+     if(organizationValue ==  "INSTITUTO TECNOLOGICO DE COSTA RICA"){
+      var institutSuperiorTEcnicCoastRica=[" "];
+      organizationValue = institutSuperiorTEcnicCoastRica;
+    }
+    if(organizationValue ==  "INSTITUTO ZOOLOGICO"){
+      var institutZoologic=[" "];
+      organizationValue = institutZoologic;
+    }
+    if(organizationValue ==  "INSTITUTOS NACIONALES DE SALUD EN BETHESDA"){
+      var institutNationalsBethesda=[" "];
+      organizationValue = institutNationalsBethesda;
+    }
+    if(organizationValue ==  "INSTIUTO NAZIONALE DI FISICA NUCLEARESEZIONE DI MILANO"){
+      var institutNationalsPhisical=[" "];
+      organizationValue = institutNationalsPhisical;
+    }
+     if(organizationValue ==  "INTEGRATED APPROACH TO CROP RESEARCH"){
+      var integratedApprobach=[" "];
+      organizationValue = integratedApprobach;
+    }
+     if(organizationValue ==  "INTERNATIONAL AGENCY FOR RESEARCH ON CANCER"){
+      var internationalAgencyResearch=[" "];
+      organizationValue = internationalAgencyResearch;
+    }
+    if(organizationValue ==  "INTITUT FUR FESTKOPERFORSCHUNG"){
+      var intitutFurFestko=[" "];
+      organizationValue = intitutFurFestko;
+    }
+    if(organizationValue ==  "IREM DE STRASBOURG"){
+      var iremStrasbourg=[" "];
+      organizationValue = iremStrasbourg;
+    }
+    if(organizationValue ==  "ISTITUTO NAZIONALE DI FISICA NUCLEARE"){
+      var instituteNazionale=[" "];
+      organizationValue = instituteNazionale;
+    }
+     if(organizationValue ==  "STITUTO UNIVERSITARIO DI ARCHITETTURA"){
+      var instituteUnivesityArchi=[" "];
+      organizationValue = instituteUnivesityArchi;
+    }
+    if(organizationValue ==  "JAPAN ATOMIC ENERGY RESEARCH INSTITUTE"){
+      var japanAtomic=[" "];
+      organizationValue = japanAtomic;
+    }
+    if(organizationValue ==  "JARDIN BOTANICO DE NUEVA YORK"){
+      var gardenBotanicNew=[" "];
+      organizationValue = gardenBotanicNew;
+    }
+    if(organizationValue ==  "JET PROPULSION LABORATORY CALIFORNIA INSTITUTE OF TECHNOLOGY"){
+      var jetLaboratoryInstitute=[" "];
+      organizationValue = jetLaboratoryInstitute;
+    }
+    if(organizationValue ==  "JOINT INSTITUTE FOR NUCLEAR RESEARCH"){
+      var jointInstitute=[" "];
+      organizationValue = jointInstitute;
+    }
+    if(organizationValue ==  "JPL/CALTECH PASADENA"){
+      var jplCaltech=[" "];
+      organizationValue = jplCaltech;
+    }
+    if(organizationValue ==  "KANSAS STATE UNIVERSITY"){
+      var kansasState=["MEDICAL CENTER",
+                        "NATURAL HISTORY MUSEUM",];
+      organizationValue = kansasState;
+    }
+    if(organizationValue ==  "KATHOLIEKE UNIVERSITEIT NIJMEGEN"){
+      var nijmegen=[" "];
+      organizationValue = nijmegen;
+    }
+    if(organizationValue ==  "KIKA DE LA GARZA SUBTROPICAL RESEARCH CENTER USDA"){
+      var kkaOfTheGarza=[" "];
+      organizationValue = kkaOfTheGarza;
+    }
+     if(organizationValue ==  "KOREA ADVANCED INSTITUTE OF SCIENCE AND TECHNOLOGY"){
+      var koreaAdvancedScience=[" "];
+      organizationValue = koreaAdvancedScience;
+    }
+     if(organizationValue ==  "LAASCNRS"){
+      var lasscnrs=["LABORATOIRE DETUDES DES PROPRIETES ELECTRONIQUES DES SOLIDES"];
+      organizationValue = lasscnrs;
+    }
+     if(organizationValue ==  "LABORATOIRE LSR LOGICIELS SYSTEMES RESEAUX IMAG FRANCIA"){
+      var laboratoriesLsrSystems=[" "];
+      organizationValue = laboratoriesLsrSystems;
+    }
+    if(organizationValue ==  "LABORATORIO DE INGENIERIA DE PROCESOS CATALITICOS"){
+      var laboratorieEngieeniers=[" "];
+      organizationValue = laboratorieEngieeniers;
+    }
+    if(organizationValue ==  "LABORATORIOS ABBOTT"){
+      var laboratorieAbott=[" "];
+      organizationValue = laboratorieAbott;
+    }
+    if(organizationValue ==  "LANKENAU INSTITUTE FORMEDICAL RESEARCH"){
+      var lankenauinstitute=[" "];
+      organizationValue = lankenauinstitute;
+    }
+    if(organizationValue ==  "LAWRENCE LIVERMORE NATIONAL LABORATORY CALIFORNIA"){
+      var lankenauNational=[" "];
+      organizationValue = lankenauNational;
+    }
+    if(organizationValue ==  "LIMBURGS UNIVERSITAIR CENTRUM"){
+      var universityCentrum=["FACULTEIT WETENSCHAPPEN"];
+      organizationValue = universityCentrum;
+    }
+    if(organizationValue ==  "LOS ALAMOS NATIONAL LABORATORY"){
+      var theAlamosNationalLab=[" "];
+      organizationValue = theAlamosNationalLab;
+    }
+    if(organizationValue ==  "LOUISIANA STATE UNIVERSITY"){
+      var stateUniversityLouisiana=["LOUISIANA STATE UNIVERSITY SYSTEM"];
+      organizationValue = stateUniversityLouisiana;
+    }
+     if(organizationValue ==  "LUNAR AND PLANETARY INSTITUTE"){
+      var lunarAndPlanetary=[" "];
+      organizationValue = lunarAndPlanetary;
+    }
+    if(organizationValue ==  "MASSACHUSETTS EYE & EAR INFIRMARY"){
+      var eyeAndEar=[" "];
+      organizationValue = eyeAndEar;
+    }
+    if(organizationValue ==  "MASSACHUSETTS GENERAL HOSPITAL"){
+      var generalHospitalGeneral=["MGH-INSTITUTE OF HEALTH PROFESSIONS"];
+      organizationValue = generalHospitalGeneral;
+    }
+    if(organizationValue ==  "MASSACHUSETTS INSTITUTE OF TECHNOLOGY"){
+      var instituteTechnologyOF=["INSTITUTE FOR MEDICAL ENGINEERING AND SCIENCE",
+                                "SLOAN MANAGEMENT SCHOOL",
+                                "THE ABDUL LATIF JAMEEL POVERTY ACTION LAB",
+                                "WOODS HOLE OCEANOGRAPHIC INSTITUTION"];
+      organizationValue = instituteTechnologyOF;
+    }
+    if(organizationValue ==  "MCMASTER UNIVERSITY"){
+      var McmasterUnniversity=[" "];
+      organizationValue = McmasterUnniversity;
+    }
+    if(organizationValue ==  "MICHIGAN STATE UNIVERSITY"){
+      var michiganState=[" "];
+      organizationValue = michiganState;
+    }
+     if(organizationValue ==  "MICHIGAN TECHNOLOGICAL UNIVERSITY"){
+      var michiganUniversity=[" "];
+      organizationValue = michiganUniversity;
+    }
+     if(organizationValue ==  "MONTANA STATE UNIVERSITY"){
+      var montanaStateUnivesity=[" "];
+      organizationValue = montanaStateUnivesity;
+    }
+     if(organizationValue ==  "MOSCAMED"){
+      var moscamed=[" "];
+      organizationValue = moscamed;
+    }
+    if(organizationValue ==  "MOUNT SINAI MEDICAL CENTER"){
+      var mountSinaiMedical=[" "];
+      organizationValue = mountSinaiMedical;
+    }
+    if(organizationValue ==  "MUSEO DE HISTORIA NATURAL DE LIMA PERU"){
+      var museumHistoryNatural=[" "];
+      organizationValue = museumHistoryNatural;
+    }
+     if(organizationValue ==  "MUSEO NACIONAL DE HISTORIA NATURAL"){
+      var museumHistoryNaturalNational=[" "];
+      organizationValue = museumHistoryNaturalNational;
+    }
+    if(organizationValue ==  "MUSEUM NATIONAL D HISTOIRE NATURELLE"){
+      var museumNationalNaturelle=[" "];
+      organizationValue = museumNationalNaturelle;
+    }
+    if(organizationValue ==  "MUSEUM OF NORTHERN ARIZONA GEOLOGY"){
+      var museumOfNorthern=[" "];
+      organizationValue = museumOfNorthern;
+    }
+    if(organizationValue ==  "N COPERNICUS ASTRONOMICAL CENTER"){
+      var astronomicalCenter=[" "];
+      organizationValue = astronomicalCenter;
+    }
+    if(organizationValue ==  "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION"){
+      var nationalAreonautics=[" "];
+      organizationValue = nationalAreonautics;
+    }
+    if(organizationValue ==  "NATIONAL HEALTH INSTITUTE"){
+      var nationalHealth=[" "];
+      organizationValue = nationalHealth;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF AGING"){
+      var nationalInstituteAging=[" "];
+      organizationValue = nationalInstituteAging;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF CHILD HEALTH AND HUMAN DEVELOPMENT"){
+      var nationalInstituteChild=[" "];
+      organizationValue = nationalInstituteChild;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF ENVIRONMENTAL HEALTH SCIENCES"){
+      var nationalInstituteSciences=[" "];
+      organizationValue = nationalInstituteSciences;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF MATERIALS AND CHEMICAL RESEARCH"){
+      var nationalInstituteChemicalResearch=[" "];
+      organizationValue = nationalInstituteChemicalResearch;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF MENTAL HEALTH NATIONAL CANCER INSTITUTE"){
+      var nationalInstituteCancer=[" "];
+      organizationValue = nationalInstituteCancer;
+    }
+      if(organizationValue ==  "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY"){
+      var nationalInstituteStandards=[" "];
+      organizationValue = nationalInstituteStandards;
+    }
+    if(organizationValue ==  "NATIONAL MUSEUM OF NATURAL HISTORY SMITHSONIAN INST"){
+      var nationalMuseummNaturalHistory=[" "];
+      organizationValue = nationalMuseummNaturalHistory;
+    }
+    if(organizationValue ==  "NATIONAL OCEANIC ATMOSPHERIC ADMINISTRATION"){
+      var nationalOceanicAdmin=[" "];
+      organizationValue = nationalOceanicAdmin;
+    }
+    if(organizationValue ==  "NATIONAL ZOOLOGICAL PARK/SMITHSONIAN INSTITUTION"){
+      var nationalZoologicalPark=[" "];
+      organizationValue = nationalZoologicalPark;
+    }
+    if(organizationValue ==  "NATURAL HISTORY MUSEUM OF LOS ANGELES COUNTY"){
+      var nationalHistoryAngeles=[" "];
+      organizationValue = nationalHistoryAngeles;
+    }
+     if(organizationValue ==  "NATURAL MUSEUM HISTORY SWEDEN"){
+      var nationalMuseumHistory=[" "];
+      organizationValue = nationalMuseumHistory;
+    }
+      if(organizationValue ==  "NCAURUSDA"){
+      var caurusda=[" "];
+      organizationValue = caurusda;
+    }
+    if(organizationValue ==  "NEW ENGLAND MEDICAL CENTER"){
+      var newEngland=[" "];
+      organizationValue = newEngland;
+    }
+    if(organizationValue ==  "NEW MEXICO INSTITUTE OF MINING AND TECHNOLOGY"){
+      var newMexicoMinig=[" "];
+      organizationValue = newMexicoMinig;
+    }
+    if(organizationValue ==  "NEW MEXICO STATE UNIVERSITY"){
+      var newMexicoState=["ASTRONOMY DEPARTMENT",
+                          "DEPARTAMENTO DE CIENCIAS BIOLOGICAS",
+                          "DEPARTMENT GEOLOGICAL SCIENCES",
+                          "ECONOMIC DEPARTAMENT"];
+      organizationValue = newMexicoState;
+    }
+    if(organizationValue ==  "NEW YORK MEDICAL COLLEGE"){
+      var newYorkMedical=[" "];
+      organizationValue = newYorkMedical;
+    }
+    if(organizationValue ==  "NEW YORK UNIVERSITY"){
+      var newYorkUniversity=["CENTER FOR GENOMICS AND SYSTEMS BIOLOGY",
+                            "CENTER FOR NEURAL SCIENCE",
+                            "COURANT INSTITUTE OF MATHEMATICAL SCIENCES",
+                            "DEPARTMENT OF CHEMISTRY",
+                            "HEALTH SCIENCE CENTER AT BROOKLYN",
+                            "INSTITUTE OF RECONSTRUCTIVE PLASTIC SURGERY",
+                            "MOUNT SINAI SCHOOL OF MEDICINE",
+                            "NEW YORK UNIVERSITY-LEONARD N. STERN SCHOOL OF BUSINESS",
+                            "SCHACK INSTITUTE OF REAL ESTATE",
+                            "SCHOOL OF LAW"];
+      organizationValue = newYorkUniversity;
+    }
+    if(organizationValue ==  "NORTH CAROLINA STATE UNIVERSITY"){
+      var northCarolinaState=[" "];
+      organizationValue = northCarolinaState;
+    }
+     if(organizationValue ==  "NUCL PHYS INST CZECH ACADEMY OF SCIENCE PRAGA"){
+      var nuclPhys=[" "];
+      organizationValue = nuclPhys;
+    }
+     if(organizationValue ==  "OAK RIDGE NATIONAL LABORATORY"){
+      var oakRiddgeNational=["COMPUTER SCIENCE AND MATHEMATICAL DIVISION"];
+      organizationValue = oakRiddgeNational;
+    }
+    if(organizationValue ==  "OBSERVATOIRE DE PARIS MEUDON"){
+      var observatoriesParis=[" "];
+      organizationValue = observatoriesParis;
+    }
+    if(organizationValue ==  "OBSERVATORIO ASTROFISICO ESPECIAL"){
+      var observatoriesSpecial=[" "];
+      organizationValue = observatoriesSpecial;
+    }
+     if(organizationValue ==  "OBSERVATORIO ASTRONOMICO DE STRASBOURG"){
+      var observatorieAstronomico=[" "];
+      organizationValue = observatorieAstronomico;
+    }
+     if(organizationValue ==  "OBSERVATORIO NACIONAL DE RIO DE JANEIRO"){
+      var observatorieRieJaneiro=[" "];
+      organizationValue = observatorieRieJaneiro;
+    }
+    if(organizationValue ==  "OHAIO STATE UNIVERSITY"){
+      var ohaioStateUniversity=[" "];
+      organizationValue = ohaioStateUniversity;
+    }
+    if(organizationValue ==  "OKLAHOMA MEDICAL RESEARCH FUNDATION"){
+      var oklahomaMedical=[" "];
+      organizationValue = oklahomaMedical;
+    }
+    if(organizationValue ==  "OKLAHOMA STATE UNIVERSITY"){
+      var oklahomastate=[" "];
+      organizationValue = oklahomastate;
+    }
+    if(organizationValue ==  "ORGANIZACION DE LAS NACIONES UNIDAS"){
+      var organizationNationesUnid=["COMISION ECONOMICA PARA AMERICA LATINA",
+                                    "FONDO DE LAS NACIONES UNIDAS PARA LA INFANCIA",
+                                    "ORGANIZACION DE LAS NACIONES UNIDAS PARA LA AGRICULTURA Y LA ALIMENTACION",
+                                    "ORGANIZACION DE LAS NACIONES UNIDAS PARA LA CIENCIA, LA EDUCACION Y LA CULTURA",
+                                    "ORGANIZACION DEL TRATADO PARA LA PROHIBICION COMPLETA DE ENSAYOS NUCLEARES",
+                                    "ORGANIZACION MUNDIAL DE LA SALUD",
+                                    "ORGANIZACION PANAMERICANA DE LA SALUD",
+                                    "PROGRAMA DE LAS NACIONES UNIDAS SOBRE EL MEDIO AMBIENTE",
+                                    "TRIBUNAL PENAL INTERNACIONAL PARA LA EX YUGOSLAVIA",];
+      organizationValue = organizationNationesUnid;
+    }
+    if(organizationValue ==  "ORGANIZACION DE LOS ESTADOS AMERICANOS"){
+      var organizationStateMexico=["INSTITUTO PANEMERICANO DE GEOGRAFÍA E HISTORIA",
+                                    "MUSEO DE ARTE DE LAS AMERICAS"];
+      organizationValue = organizationStateMexico;
+    }
+     if(organizationValue ==  "ORGANIZACION INTERNACIONAL DE LAS CIENCIAS QUIMICAS PARA EL DESARROLLO"){
+      var organizationInternationalScience=[" "];
+      organizationValue = organizationInternationalScience;
+    }
+     if(organizationValue ==  "PROGRAMA INTERNACIONAL DE PERFORACIONES CONTINENTALES"){
+      var programaInternational=[" "];
+      organizationValue = programaInternational;
+    }
+    if(organizationValue ==  "QUEENSLAND UNIVERSITY OF TECHNOLOGY"){
+      var queensland=[" "];
+      organizationValue = queensland;
+    }
+    if(organizationValue ==  "STANFORD UNIVERSITY"){
+      var standardsUniversity=["CENTER FOR LATIN AMERICAN STUDIES",
+                                "DEPARTAMENTO DE CIENCIAS BIOLOGICAS",
+                                "ENVIRONMENTAL EARTH SYSTEM SCIENCE",
+                                "INSTITUTE FOR INTERNATIONAL STUDIES",
+                                "SCHOOL OF MEDICINE",
+                                "STANFORD SYNCHROTRON RADIATION LIGHTSOURCE"];
+      organizationValue = standardsUniversity;
+    }
+    if(organizationValue ==  "STONY BROOK UNIVERSITY"){
+      var stonyBook=[" "];
+      organizationValue = stonyBook;
+    }
+    if(organizationValue ==  "TECHNIONISRAEL INSTITUTE OF TECNOLOGY"){
+      var technologyInstitute=[" "];
+      organizationValue = technologyInstitute;
+    }
+    if(organizationValue ==  "TEXAS TECH UNIVERSITY"){
+      var techuniversity=[" "];
+      organizationValue = techuniversity;
+    }
+     if(organizationValue ==  "THE UNIVERSITY OF WARWICK"){
+      var theUniversityOR=["CENTRO DE ESTUDIOS EN RELACIONES ETNICAS"];
+      organizationValue = theUniversityOR;
+    }
+     if(organizationValue ==  "TRUDEAU INSTITUTE INC"){
+      var trudeauInstitute=[" "];
+      organizationValue = trudeauInstitute;
+    }
+      if(organizationValue ==  "UNIDAD DE INVESTIGACION MEDICA EN ENFERMEDADES INFECCIOSAS Y PARASITARIAS"){
+      var researchingMedico=["HOSPITAL DE PEDIATRIA CMN SIGLO XXI"];
+      organizationValue = researchingMedico;
+    }
+      if(organizationValue ==  "UNITED STATE DEPARTMENT OF AGRICULTURE"){
+      var unitedStateDepar=[" "];
+      organizationValue = unitedStateDepar;
+    }
+     if(organizationValue ==  "UNIVERSIDAD AUTONOMA DE MADRID"){
+      var universityAtonoma=["FACULTAD DE CIENCIAS ECONOMICAS Y EMPRESARIALES"];
+      organizationValue = universityAtonoma;
+    }
+     if(organizationValue ==  "UNIVERSIDAD CATOLICA DE LOVAINA"){
+      var universityCatolicaLvaina=[" "];
+      organizationValue = universityCatolicaLvaina;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE CALIFORNIA IRVINE"){
+      var universityCaliforniaIrvine=[" "];
+      organizationValue = universityCaliforniaIrvine;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE CALIFORNIA RIVERSIDE"){
+      var universityCaliforniaRiversidee=["DEPARTMENT OF CHEMISTRY"];
+      organizationValue = universityCaliforniaRiversidee;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE CALIFORNIA SAN DIEGO"){
+      var universityCaliforniaSanDiego=["AMES, BIOENGINEERING",
+                                    "BIOCIRCUITS INSTITUTE",
+                                    "CENTRO DE ESTUDIOS MEXICO ESTADOS UNIDOS",
+                                    "DEPARTAMENTO DE INGENIERÍA MECÁNICA Y AEROESPACIAL",
+                                    "INSTITUTE FOR NONLINEAR SCIENCE",];
+      organizationValue = universityCaliforniaSanDiego;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE FRIBOURG"){
+      var universityFriboug=[" "];
+      organizationValue = universityFriboug;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE ILLINOIS"){
+      var universityIllinos=["ASTRONOMY DEPARTMENT",
+                              "UNIVERSIDAD DE ILLINOIS URBANA CHAMPAIGN",];
+      organizationValue = universityIllinos;
+    }
+     if(organizationValue ==  "UNIVERSIDAD DE KONSTANZ"){
+      var universityKonstanz=[" "];
+      organizationValue = universityKonstanz;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE LA CIUDAD DE NUEVA YORK"){
+      var universityCityNew=[" "];
+      organizationValue = universityCityNew;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE LA COLUMBIA BRITANICA"){
+      var universityBritanic=[" "];
+      organizationValue = universityBritanic;
+    }
+     if(organizationValue ==  "UNIVERSIDAD DE LA HABANA CUBA"){
+      var universityHabanCuba=["CENTRO DE BIOMATERIALES",
+                              "CENTRO DE INVESTIGACIONES MARINAS",
+                              "FACULTAD DE BIOLOGÍA",
+                              "FACULTAD DE CIENCIAS Y TECNLOGIA NUCLEARES",
+                              "FACULTAD DE COMUNICACIÓN",
+                              "FACULTAD DE FARMACIA Y ALIMENTOS",
+                              "FACULTAD DE FILOSOFÍA",
+                              "FACULTAD DE FISICA",
+                              "FACULTAD DE GEOGRAFÍA",
+                              "FACULTAD DE MATEMÁTICA Y COMPUTACIÓN",
+                              "FACULTAD DE PSICOLOGIA",
+                              "FACULTAD DE QUÍMICA",
+                              "FACULTAD DE SOCIOLOGÍA",
+                              "INSTITUTO DE MATERIALES Y REACTIVOS",
+                              "UNIVERSIDAD DE LA HABANA/FACULTAD DE MATEMÁTICA/DEPARTAMENTO MATEMÁTICA APLICADA",];
+      organizationValue = universityHabanCuba;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE LEIDEN"){
+      var universityLeiden=["CAMPUS LA HAYA",
+                            "SOCIAL AN BEHAVIOURAL SCIENCES",];
+      organizationValue = universityLeiden;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE MISSOURICOLUMBIA"){
+      var universityMissour=[" "];
+      organizationValue = universityMissour;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE PENNSYLVANIA"){
+      var universityPennsylvania=["COLLEGE OF MEDICINE",
+                                    "SCHOOL LAW",
+                                    "WHARTON SCHOOL",];
+      organizationValue = universityPennsylvania;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE REGENSBURG"){
+      var universityRegensburg=[" "];
+      organizationValue = universityRegensburg;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE SUSSEX"){
+      var universitySussex=[" "];
+      organizationValue = universitySussex;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE TEXAS EN DALLAS"){
+      var universityTexasDallas=["DEPARTMENT OF MOLECULAR AND CELL BIOLOGY"];
+      organizationValue = universityTexasDallas;
+    }
+     if(organizationValue ==  "UNIVERSIDAD DE TOHOKU JAPON"){
+      var universityTohoku=["INSTITUTO DE INVESTIGACION DE MATERIALES",
+                            "INSTITUTO DE PROCESAMIENTO DE MATERIALES AVANZADOS",];
+      organizationValue = universityTohoku;
+    }
+     if(organizationValue ==  "UNIVERSIDAD DE WASHINGTON EN SEATTLE"){
+      var universitySeattle=[" "];
+      organizationValue = universitySeattle;
+    }
+     if(organizationValue ==  "UNIVERSIDAD ESTATAL DE COLORADO"){
+      var universityestatalColorado=[" "];
+      organizationValue = universityestatalColorado;
+    }
+    if(organizationValue ==  "UNIVERSIDAD LIBRE DE BRUSELAS"){
+      var universityFreeBruselas=[" "];
+      organizationValue = universityFreeBruselas;
+    }
+    if(organizationValue ==  "UNIVERSIDAD NACIONAL DE EDUCACION A DISTANCIA"){
+      var universityNationalEducation=["FACULTAD DE CIENCIAS POLITICAS Y SOCIOLOGIA"];
+      organizationValue = universityNationalEducation;
+    }
+    if(organizationValue ==  "UNIVERSIDAD NACIONAL DE SAN LUIS"){
+      var universityNationalSanluis=[" "];
+      organizationValue = universityNationalSanluis;
+    }
+    if(organizationValue ==  "UNIVERSIDADE ESTADUAL DE CAMPINAS"){
+      var universityStadualCampinas=["INSTITUTO DE FILOSOFIA E CIENCIAS HUMANAS"];
+      organizationValue = universityStadualCampinas;
+    }
+    if(organizationValue ==  "UNIVERSITAT AUTONOMA DE BARCELONA"){
+      var universityAutonomaBarcelona=["DEPARTAMENT DE SOCIOLOGIA",
+                                        "DEPARTAMENTO DE BIOLOGIA ANIMAL",
+                                        "ESCOLA MASSANA",
+                                        "HOSPITAL DE LA SANTA CREU I SANT PAU",];
+      organizationValue = universityAutonomaBarcelona;
+    }
+     if(organizationValue ==  "UNIVERSITAT BOCHUM"){
+      var universityAutonomaBochum=[" "];
+      organizationValue = universityAutonomaBochum;
+    }
+    if(organizationValue ==  "UNIVERSITE DE BOURGOGNE"){
+      var universityBourgogne=["CENTRE GASTON BACHELARD",
+                                "INSTITUT SUPÉRIEUR DE L'AUTOMOBILE ET DES TRANSPORTS",
+                                "LOBAROTOIRE GEVREY DE MATHEMATIQUE PHYSIQUE",];
+      organizationValue = universityBourgogne;
+    }
+    if(organizationValue ==  "UNIVERSITE PARIS 13 PARISNORD"){
+      var universitParisPar=[" "];
+      organizationValue = universitParisPar;
+    }
+    if(organizationValue ==  "UNIVERSITY OF ARKANSAS"){
+      var universitArkansas=["UNIVERSITY OF ARKANSAS FAYETEVILLE"];
+      organizationValue = universitArkansas;
+    }
+    if(organizationValue ==  "UNIVERSITY OF CALIFORNIA AT LOS ALAMOS"){
+      var universityCaliforniaAlamos=[" "];
+      organizationValue = universityCaliforniaAlamos;
+    }
+    if(organizationValue ==  "UNIVERSITY OF CALIFORNIA AT SANTA BARBARA"){
+      var universityCaliforniaSantaBarbara=["COLLEGE OF LETTERS & SCIENCE",
+                                            "MATERIAL RESEARCH LABORATORY"];
+      organizationValue = universityCaliforniaSantaBarbara;
+    }
+    if(organizationValue ==  "UNIVERSITY OF CAMBRIDGE"){
+      var universityCambridge=["BP INSTITUTE FOR MULTIPHASE FLOW",
+                              "CAMBRIDGE INSTITUTE FOR MEDICAL RESEARCH",
+                              "CHURCHILL COLLEGE-CAMBRIDGE",
+                              "CLARE COLLEGE-CAMBRIDGE",
+                              "CLARE HALL COLLEGE-CAMBRIDGE",
+                              "CORPUS CHRISTI COLLEGE-CAMBRIDGE",
+                              "DARWIN COLLEGE-CAMBRIDGE",
+                              "DEPARTAMENTO DE FARMACOLOGIA",
+                              "DEPARTAMENTO DE INGENIERIA",
+                              "DOWNING COLLEGE-CAMBRIDGE",
+                              "EMMANUEL COLLEGE-CAMBRIDGE",
+                              "FITZWILLIAM COLLEGE-CAMBRIDGE",
+                              "GIRTON COLLEGE-CAMBRIDGE",
+                              "GONVILLE CAIUS COLLEGE",
+                              "HUGHES HALL-CAMBRIDGE",
+                              "INSTITUTE OF METABOLIC SCIENCE",
+                              "JESUS COLLEGE-CAMBRIDGE",
+                              "KINGS COLLEGE-CAMBRIDGE",
+                              "LUCY CAVENDISH COLLEGE-CAMBRIDGE",
+                              "NEW HALL-CAMBRIDGE",
+                              "PEMBROKE COLLEGE- CAMBRIDGE",
+                              "PETERHOUSE-CAMBRIDGE",
+                              "QUEENS COLLEGE- CAMBRIDGE",
+                              "ROBINSON COLLEGE-CAMBRIDGE",
+                              "SELWYN COLLEGE-CAMBRIGE",
+                              "SIDNEY SUSSEX COLLEGE",
+                              "ST. CATERINE S COLLEGE-CAMBRIDGE",
+                              "ST. EDMUNDS COLLEGE-CAMBRIDGE",
+                              "ST. JOHN S COLLEGE-CAMBRIDGE",
+                              "TRINITY HALL-CAMBRIDGE",
+                              "WOLFSON COLLEGE-CAMBRIDGE"];
+      organizationValue = universityCambridge;
+    }
+    if(organizationValue ==  "UNIVERSITY OF CHICAGO"){
+      var universityChicago=["DIVISION OF THE SOCIAL SCIENCES",
+                            "HARRIS GRADUATE SCHOOL OF PUBLIC POLICY STUDIES",
+                            "INSTITUTE FOR MOLECULAR ENGINEERING",
+                            "THE COLLEGE",
+                            "THE IRVING B. HARRIS SCHOOL OF PUBLIC POLICY STUDIES",
+                            "THE LAW SCHOOL",];
+      organizationValue = universityChicago;
+    }
+    if(organizationValue ==  "UNIVERSITY OF COLORADO"){
+      var universityColorado=["UNIVERSITY OF COLORADO AT BOULDER",
+                              "UNIVERSITY OF COLORADO AT COLORADO SPRINGS",
+                              "UNIVERSTIY OF COLORADO AT DENVER",];
+      organizationValue = universityColorado;
+    }
+    if(organizationValue ==  "UNIVERSITY OF DENVER"){
+      var universitydenver=[" "];
+      organizationValue = universitydenver;
+    }
+    if(organizationValue ==  "UNIVERSITY OF EMORY"){
+      var universitydEmory=[" "];
+      organizationValue = universitydEmory;
+    }
+    if(organizationValue ==  "UNIVERSITY OF GEORGIA"){
+      var universitydGeorgia=["CENTER FOR REMOTE SENSING AND MAPPING SCIENCE",
+                              "COMPLEX CARBOHYDRATE RESEARCH CENTER"];
+      organizationValue = universitydGeorgia;
+    }
+    if(organizationValue ==  "UNIVERSITY OF NEWCASTLE UPON TYNE"){
+      var universitydNewcastle=[" "];
+      organizationValue = universitydNewcastle;
+    }
+    if(organizationValue ==  "UNIVERSITY OF TEXAS HOUSTON"){
+      var universityOfTexas=[" "];
+      organizationValue = universityOfTexas;
+    }
+    if(organizationValue ==  "UNIVERSITY OF TORONTO"){
+      var universityOfToronto=["SUNNYBROOK, HEALT SCIENCES CENTRE",
+                                "UNIVERSITY OF ST. MICHAEL¿S COLLEGE",];
+      organizationValue = universityOfToronto;
+    }
+     if(organizationValue ==  "UNIVERSITY OF WASHINGTON"){
+      var universityOfWashington=["DEPARTMENT OF BIOENGINEERING",
+                                  "INTERNATIONAL STUDIES",
+                                  "WASHINGTON UNIVERSITY SCHOOL OF MEDICINE",];
+      organizationValue = universityOfWashington;
+    }
+    if(organizationValue ==  "UNIVERSITY OF WISCONSINMADISON"){
+      var universityOfWisconsin=["COLLEGE OF AGRICULTURAL AND LIFE SCIENCES",
+                                  "COLLEGE OF LETTER AND SCIENCE",
+                                  "COOPERATIVE INSTITUTE OF METEOROLOGICAL SATELLITE STUDIES",];
+      organizationValue = universityOfWisconsin;
+    }
+    if(organizationValue ==  "UNIVERSITY OF YORK"){
+      var universityOfYork=[" "];
+      organizationValue = universityOfYork;
+    }
+    if(organizationValue ==  "YALE UNIVERSITY"){
+      var yaleUniversity=["SCHOOL OF ORGANIZATION AND MANAGMENT",
+                          "YALE SCHOOL OF FORESTRY & ENVIRONMENTAL STUDIES"];
+      organizationValue = yaleUniversity;
+    }
 
     var newSecondLevel ="<span class='plain-select'><select id='DirectedThesis_second_level' class='tooltipstered' name='DirectedThesis[second_level]'>";
     newSecondLevel+="<option>Seleccionar Segundo nivel</option>";
@@ -24449,14 +25839,27 @@ function changeSector()
     </span>
     <?php echo $form->error($model,'sector'); ?>
   </div>
-  <div class="row"id="selectOrganization">
+  <?php 
+  if(!$model->isNewRecord){
+  echo '<div class="row"id="selectOrganization">';
+  echo $form->dropDownList($model,'organization',array($model->organization)/*,array('prompt'=>'Seleccionar disciplina')*/);
+  echo '</div>';
+
+  echo '<div class="row"id="selectSecondLevel">';
+  echo $form->dropDownList($model,'second_level',array($model->second_level)/*,array('prompt'=>'Seleccionar disciplina')*/);
+  echo '</div>';
+  }
+  else{
+  echo '<div class="row"id="selectOrganization">
 
   </div>
 
-<div class="row"id="selectSecondLevel">
+  <div class="row"id="selectSecondLevel">
 
-    </div>
+  </div>';
 
+  }
+?>
 	<div class="row">
     <span class="plain-select">
     <?php echo $form->dropDownList($model,'area',array('ANTROPOLOGIA'=>'ANTROPOLOGIA',
@@ -24489,12 +25892,28 @@ function changeSector()
     <?php echo $form->error($model,'area'); ?>
   </div>
 
-  <div class="row" id="comboDiscipline">
+   <?php
+  if(!$model->isNewRecord){
+   // foreach ($model as $value) {
+
+    echo '<div class="row"id="comboDiscipline">';
+    echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
+    echo '</div>';
+  //}
+    echo '<div class="row"id="comboSubdiscipline">';
+    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
+    echo '</div>';
+
+  }
+  else{
+    echo '<div class="row"id="comboDiscipline">
 
   </div>
-  <div class="row" id="comboSubdiscipline">
+  <div class="row"id="comboSubdiscipline">
 
-  </div>
+  </div>';
+  }
+  ?>
   
 	<div class="row buttons">
      <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(

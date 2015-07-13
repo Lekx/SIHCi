@@ -20,7 +20,7 @@ $form=$this->beginWidget('CActiveForm', array(
     </div>
   <div class="row">
     <?php echo CHtml::htmlButton('Crear',array(
-                'onclick'=>'send("projects-followups-form", "projectsFollowups/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                'onclick'=>'send("projects-followups-form-create", "projectsFollowups/createFollowup", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","")',
                 'class'=>'savebuttonp',
             ));
     ?>

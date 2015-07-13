@@ -1,6 +1,5 @@
 
 
-
 <div class="form">
 
     <?php
@@ -11,7 +10,7 @@ $form=$this->beginWidget('CActiveForm', array(
 )); ?>
 
     <div class="row">
-        <?php echo $form->textArea($model,'followup',array('rows'=>6, 'cols'=>50,'placeholder'=>'Comentario')); ?>
+        <?php echo $form->textArea($model,'followup',array('rows'=>6, 'cols'=>50, 'title'=>'Comentario','placeholder'=>'Comentario')); ?>
         <?php echo $form->error($model,'followup'); ?>
     </div>
 
