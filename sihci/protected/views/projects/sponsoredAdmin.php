@@ -38,12 +38,12 @@ echo "</pre>"; */
 <h3>Gestionar patrocinios:</h3>
 
 <?php
-$mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id))->search();
+//$mod = $model->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id))->search();
 
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'sponsorship-grid',
-	'dataProvider'=>$model->customSearch(),
+	'dataProvider'=>Sponsorship::model()->customSearch(),
 	//'filter'=>$model,
 	'columns'=>array(
 		//'id',

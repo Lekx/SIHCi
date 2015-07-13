@@ -6050,7 +6050,7 @@ function changeSector()
         if(sectorValue=="Instituciones del sector de educación superior privadas")
        {
             var institutionsESPrivate=[
-              "ACADEMIA MEXICANA DE CIENCIAS ANTROPOLOGICAS AC",
+          "ACADEMIA MEXICANA DE CIENCIAS ANTROPOLOGICAS AC",
            "BARCELONA GSE",
            "BONA TERRA AC",
            "BOSTON COLLEGE",
@@ -20286,37 +20286,4061 @@ function changeSector()
       var barcelonaGse=[" "];
       organizationValue = barcelonaGse;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     if(organizationValue == "BONA TERRA AC"){
+      var bonaTerraAc=[" "];
+      organizationValue = bonaTerraAc;
+    }
+     if(organizationValue == "BOSTON COLLEGE"){
+      var bostonCollege=[" "];
+      organizationValue = bostonCollege;
+    }
+     if(organizationValue == "CAMPUS SAN LUIS POTOSI"){
+      var campusSanLuis=[" "];
+      organizationValue = campusSanLuis;
+    }
+    if(organizationValue == "CAMPUS UNIVERSITARIO SIGLO XXI SC"){
+      var campusUniversitarioSiglo=[" "];
+      organizationValue = campusUniversitarioSiglo;
+    }
+    if(organizationValue == "CENTRAL DE CAPACITACION E INFORMATICA SC"){
+      var centralCapacitacion=[" "];
+      organizationValue = centralCapacitacion;
+    }
+     if(organizationValue == "CENTRO ACADEMICO DE ESTUDIOS SUPERIORES"){
+      var centroAcademicoSuperiores=[" "];
+      organizationValue = centroAcademicoSuperiores;
+    }
+    if(organizationValue == "CENTRO CULTURAL UNIVERSITARIO JUSTO SIERRA"){
+      var centroCulturaUniversitarioSierra=[" "];
+      organizationValue = centroCulturaUniversitarioSierra;
+    }
+     if(organizationValue == "CENTRO DE ENSENANZA TECNICA Y SUPERIOR"){
+      var centroEnseñanazaTecnicaSuperior=["ENSENADA",
+                                            "MEXICALI",
+                                            "TIJUANA"];
+      organizationValue = centroEnseñanazaTecnicaSuperior;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS E INVESTIGACION GUESTALTICOS"){
+      var centroEstudiosGuestalticos=[" "];
+      organizationValue = centroEstudiosGuestalticos;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS EN CIENCIAS DE LA COMUNICACION CAMPUS PEDREGAL"){
+      var centroEstudiosCienciasPEdregal=[" "];
+      organizationValue = centroEstudiosCienciasPEdregal;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS FILOSOFICOS TOMAS DE AQUINO"){
+      var centroEstudiosFilosoficosAquino=[" "];
+      organizationValue = centroEstudiosFilosoficosAquino;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS JURIDICOS DE PUEBLA AC"){
+      var centroEstudiosJuridicos=[" "];
+      organizationValue = centroEstudiosJuridicos;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES CTM AC"){
+      var centroEstudiosSuperioresCtmAc=[" "];
+      organizationValue = centroEstudiosSuperioresCtmAc;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE BAJA CALIFORNIA SC"){
+      var centroEstudiosSuperioresBajaCaliforniaSc=[" "];
+      organizationValue = centroEstudiosSuperioresBajaCaliforniaSc;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE COMUNICACION EDUCATIVA DE TLAXCALA"){
+      var centroEstudiosSuperioresEducativaTlaxcala=[" "];
+      organizationValue = centroEstudiosSuperioresEducativaTlaxcala;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE SAN ANGEL"){
+      var centroEstudiosSuperioresSanMiguel=[" "];
+      organizationValue = centroEstudiosSuperioresSanMiguel;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE TAMAULIPAS AC"){
+      var centroEstudiosSuperioresTamaulipas=[" "];
+      organizationValue = centroEstudiosSuperioresTamaulipas;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DEL NOROESTE"){
+      var centroEstudiosSuperioresNoroeste=[" "];
+      organizationValue = centroEstudiosSuperioresNoroeste;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DEL NORTE S C"){
+      var centroEstudiosSuperioresNorte=[" "];
+      organizationValue = centroEstudiosSuperioresNorte;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS TECNOLOGICOS Y HUMANISTICOS"){
+      var centroEstudiosTecnologicosH=["CAMPUS MATAMOROS"];
+      organizationValue = centroEstudiosTecnologicosH;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS TECNOLOGICOS Y UNIVERSITARIOS HISPANO MEXICANO"){
+      var centroEstudiosUniversitariosHispano=[" "];
+      organizationValue = centroEstudiosUniversitariosHispano;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS UNIVERSITARIOS DE MONTERREY"){
+      var centroEstudiosMonterrey=["DIVISION DE LAS CIENCIAS DE LA EDUCACION FISICA",
+                                    "FACULTAD DE AGRONOMIA",
+                                    "FACULTAD DE COMERCIO Y ADMINISTRACION",
+                                    "FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+                                    "FACULTAD DE INGENIERIA",
+                                    "FACULTAD DE PEDAGOGIA",
+                                    "FACULTAD DE PSICOLOGIA",
+                                    "FACULTAD DE VETERINARIA Y ZOOTECNIA",
+                                    "INSTITUTO DE POSGRADO"];
+      organizationValue = centroEstudiosMonterrey;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS UNIVERSITARIOS DEL NORTE A C"){
+      var centrosEstudiosuniversitariosNorte=[" "];
+      organizationValue = centrosEstudiosuniversitariosNorte;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS UNIVERSITARIOS LONDRES"){
+      var centroUniversitarioLondres=[" "];
+      organizationValue = centroUniversitarioLondres;
+    }
+    if(organizationValue == "CENTRO EDUCATIVO LATINO AC"){
+      var centroEducativoLatino=[" "];
+      organizationValue = centroEducativoLatino;
+    }
+     if(organizationValue == "CENTRO ELEIA ACTIVIDADES PSICOLOGICAS"){
+      var centroEleiaPsiscologics=["PLANTEL NORTE",
+                                    "PLANTEL SUR"];
+      organizationValue = centroEleiaPsiscologics;
+    }
+     if(organizationValue == "CENTRO LATINOAMERICANO DE ESTUDIOS SUPERIORES AC"){
+      var cenroLatinoamericanoEstudios=[" "];
+      organizationValue = cenroLatinoamericanoEstudios;
+    }
+     if(organizationValue == "CENTRO TECNOLOGICO Y DE EDUCACION SUPERIOR SIERRA MADRE"){
+      var centroTecnologicoEducacionSuperior=[" "];
+      organizationValue = centroTecnologicoEducacionSuperior;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO ANGLOAMERICANO"){
+      var centroUniversitarioAnglo=[" "];
+      organizationValue = centroUniversitarioAnglo;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO ASEC SOR JUANA AC"){
+      var centroUniversitarioAsecSor=[" "];
+      organizationValue = centroUniversitarioAsecSor;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO DE LA CIUDAD DE MEXICO"){
+      var centroUniversitarioCiudadMexico=[" "];
+      organizationValue = centroUniversitarioCiudadMexico;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO DE TIJUANA"){
+      var centroUniversitarioTijuana=[" "];
+      organizationValue = centroUniversitarioTijuana;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO DURANGO INTERCONTINENTAL"){
+      var centroUniversitarioDureangoInter=[" "];
+      organizationValue = centroUniversitarioDureangoInter;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO EMMANUEL KANT"){
+      var centroUniversitarioEmmanuelKant=[" "];
+      organizationValue = centroUniversitarioEmmanuelKant;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO ETAC SC"){
+      var centroUniversitarioEtac=[" "];
+      organizationValue = centroUniversitarioEtac;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO GUADALAJARA LAMAR"){
+      var centroUniversitarioLamar=[" "];
+      organizationValue = centroUniversitarioLamar;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO LATINOAMERICANO DE MORELOS"){
+      var centroUniversitariolatinoMorelos=["FACULTAD DE PSICOLOGIA"];
+      organizationValue = centroUniversitariolatinoMorelos;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO UNE AC"){
+      var centroUniversitarioUneAc=["PLANTEL TORRE QUETZAL"];
+      organizationValue = centroUniversitarioUneAc;
+    }
+    if(organizationValue == "CENTROS CULTURALES DE MEXICO AC"){
+      var centroCulturalesMexico=["CAMPUS DISTRITO FEDERAL",
+                                    "CAMPUS GUADALAJARA"];
+      organizationValue = centroCulturalesMexico;
+    }
+    if(organizationValue == "CENTROS CULTURALES SC"){
+      var centroSCulturalesSc=[" "];
+      organizationValue = centroSCulturalesSc;
+    }
+     if(organizationValue == "CEU ESCUELA DE NEGOCIOS"){
+      var ceuEscuelasNEgocios=[" "];
+      organizationValue = ceuEscuelasNEgocios;
+    }
+     if(organizationValue == "CIENCIAS ARTES Y LETRAS DE MEXICO PARA LA EDUCACION CONTEMPORANEA AC"){
+      var cienciasArtesLetras=[" "];
+      organizationValue = cienciasArtesLetras;
+    }
+     if(organizationValue == "CLAUSTRO UNIVERSITARIO DE CHIHUAHUA AC"){
+      var claustroUniversitarioChiuahua=[" "];
+      organizationValue = claustroUniversitarioChiuahua;
+    }
+     if(organizationValue == "COLEGIO DE GUANAJUATO PARA EL DESARROLLOAC"){
+      var colegioGuanajuatoDesarrollo=[" "];
+      organizationValue = colegioGuanajuatoDesarrollo;
+    }
+     if(organizationValue == "COLEGIO DE SAN IGNACIO DE LOYOLA VIZCAINAS"){
+      var colegioSanIgnacionLoyola=[" "];
+      organizationValue = colegioSanIgnacionLoyola;
+    }
+     if(organizationValue == "COLEGIO INTERDISCIPLINARIO DE ESPECIALIZACION AC"){
+      var colegioEspecializacion=[" "];
+      organizationValue = colegioEspecializacion;
+    }
+     if(organizationValue == "COLEGIO INTERNACIONAL DE EDUCACION SUPERIOR SC"){
+      var colegioEducacionSuperior=[" "];
+      organizationValue = colegioEducacionSuperior;
+    }
+    if(organizationValue == "COLEGIO MADRID AC"){
+      var colegioMadrid=[" "];
+      organizationValue = colegioMadrid;
+    }
+    if(organizationValue == "COLEGIO NACIONAL DE EDUCACION SUPERIOR"){
+      var colegioNacionalSuperior=[" "];
+      organizationValue = colegioNacionalSuperior;
+    }
+     if(organizationValue == "COLEGIO SUPERIOR DE CIENCIAS JURIDICAS"){
+      var colegioSuperiorCienciasJuridicas=[" "];
+      organizationValue = colegioSuperiorCienciasJuridicas;
+    }
+     if(organizationValue == "COLEGIO UNIVERSITARIO DE LONDRES"){
+      var colegioUniversitarioLondres=[" "];
+      organizationValue = colegioUniversitarioLondres;
+    }
+     if(organizationValue == "COLEGIO UNIVERSITARIO DEL DISTRITO FEDERAL"){
+      var colegioDisritoFedereal=[" "];
+      organizationValue = colegioDisritoFedereal;
+    }
+      if(organizationValue == "COLEGIO VISTA HERMOSA"){
+      var colegioVistaHermosa=[" "];
+      organizationValue = colegioVistaHermosa;
+    }
+     if(organizationValue == "COMERCIAL ARIETE SA DE CV"){
+      var comercialAierte=["CONTRALORIA"];
+      organizationValue = comercialAierte;
+    }
+    if(organizationValue == "COMPREHENSIVE ORTHODONTIC INSTITUTE EN MEXICO AC"){
+      var instituteMexico=[" "];
+      organizationValue = instituteMexico;
+    }
+     if(organizationValue == "COMUNIDAD UNIVERSITARIA DEL GOLFO CENTRO AC"){
+      var comunidadUniversitariaGolfo=["DIRECCIÓN GENERAL ACADÉMICA",
+                                        "DIRECCIÓN GENERAL DE DESARROLLO INSTITUCIONAL",
+                                        "DIRECCIÓN GENERAL DE PLANEACIÓN Y EVALUACIÓN",
+                                        "DIRECCIÓN GENERAL DE SERVICIOS DE APOYO",
+                                        "DIRECCIÓN GENERAL DEL MEDIO UNIVERSITARIO",
+                                        "PREPARATORIA IBERO PUEBLA"];
+      organizationValue = comunidadUniversitariaGolfo;
+    }
+    if(organizationValue == "DESARROLLO VIRTUAL CORPORATIVO SC"){
+      var desarolloVirtualCorporativo=[" "];
+      organizationValue = desarolloVirtualCorporativo;
+    }
+    if(organizationValue == "DIGIPEN INSTITUTE OF TECHNOLOGY"){
+      var digipenInstitute=[" "];
+      organizationValue = digipenInstitute;
+    }
+    if(organizationValue == "EDUCACION SUPERIOR MARISTA AC"){
+      var educacionSuperiorMarista=[" "];
+      organizationValue = educacionSuperiorMarista;
+    }
+    if(organizationValue == "ENSENANZA E INVESTIGACION SUPERIOR AC"){
+      var ensenanazaInvestigacionSuperior=[" "];
+      organizationValue = ensenanazaInvestigacionSuperior;
+    }
+    if(organizationValue == "EOI ESCUELA DE NEGOCIOS"){
+      var eoiEscuelaNegocios=[" "];
+      organizationValue = eoiEscuelaNegocios;
+    }
+    if(organizationValue == "ESCUELA BANCARIA Y COMERCIAL"){
+      var escuelaBancariaComercial=["DEPARTAMENTO DE CONTADURIA PÚBLICA",
+                                    "DEPARTAMENTO DE ECONOMÍA/",
+                                    "DEPARTAMENTO DE POSGRADO",
+                                    "LICENCIATURA"];
+      organizationValue = escuelaBancariaComercial;
+    }
+     if(organizationValue == "ESCUELA BENJAMIN FRANKLIN"){
+      var escuelaBenjaminFranklin=["COORDINACION DE LICENCIATURAS"];
+      organizationValue = escuelaBenjaminFranklin;
+    }
+     if(organizationValue == "ESCUELA DE FORMACION NACIONAL PARA SASTRES Y DISENADORES SAN IDELFONSO CAMPUS PUEBLA SC"){
+      var escuelaFormacionSastes=[" "];
+      organizationValue = escuelaFormacionSastes;
+    }
+     if(organizationValue == "ESCUELA DE PERIODISMO CARLOS SEPTIEN GARCIA"){
+      var escuelaPeriodismoCarlos=[" "];
+      organizationValue = escuelaPeriodismoCarlos;
+    }
+    if(organizationValue == "ESCUELA LIBRE DE DERECHO"){
+      var escuelaLibreDerecho=[" "];
+      organizationValue = escuelaLibreDerecho;
+    }
+    if(organizationValue == "ESCUELA LIBRE DE DERECHO DE PUEBLA AC"){
+      var escuelaLibreDerechoPuebla=[" "];
+      organizationValue = escuelaLibreDerechoPuebla;
+    }
+    if(organizationValue == "ESCUELA LIBRE DE PSICOLOGIA A C"){
+      var escuelaLibrePsicologia=["FACULTAD DE PSICOLOGIA"];
+      organizationValue = escuelaLibrePsicologia;
+    }
+    if(organizationValue == "ESCUELA MODELO SCP"){
+      var escuelaModelo=["UNIVERSIDAD MODELO CAMPUS CHETUMAL",
+                          "UNIVERSIDAD MODELO CAMPUS MÉRIDA",
+                          "UNIVERSIDAD MODELO CAMPUS VALLADOLID"];
+      organizationValue = escuelaModelo;
+    }
+    if(organizationValue == "ESCUELA NACIONAL DE ADMINISTRACION PUBLICA SC"){
+      var escuelaNacionalPublica=[" "];
+      organizationValue = escuelaNacionalPublica;
+    }
+    if(organizationValue == "ESCUELA NORMAL PARTICULAR MIGUEL HIDALGO"){
+      var escuelaNormalMiguel=["SECRETARIA DE EDUCACION PUBLICA DEL ESTADO DE PUEBLA"];
+      organizationValue = escuelaNormalMiguel;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR DE CIUDAD MADERO"){
+      var escuelaNormalSuperiorMadero=[" "];
+      organizationValue = escuelaNormalSuperiorMadero;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR FEP"){
+      var escuelaNormalFep=["TITULACIONES"];
+      organizationValue = escuelaNormalFep;
+    }
+    if(organizationValue == "ESCUELA SUPERIOR DE INGENIERIA AUTOMOTRIZ SC"){
+      var escuelaNormalIngenieria=[" "];
+      organizationValue = escuelaNormalIngenieria;
+    }
+    if(organizationValue == "ESCUELA SUPERIOR DE LAS BELLAS ARTES CHAYITO GARZON"){
+      var escuelaSuperiorBellasArtes=[" "];
+      organizationValue = escuelaSuperiorBellasArtes;
+    }
+    if(organizationValue == "ESCUELA SUPERIOR PARTICULAR DE AGRICULTURA HERMANOS ESCOBAR"){
+      var escuelaSuperiorAgriculura=[" "];
+      organizationValue = escuelaSuperiorAgriculura;
+    }
+     if(organizationValue == "FACULTAD LIBRE DE DERECHO DE MONTERREY AC"){
+      var facultadLibreDerecho=[" "];
+      organizationValue = facultadLibreDerecho;
+    }
+     if(organizationValue == "FOMENTO EDUCATIVO POPULAR AC"){
+      var fomentoEducativoPopular=[" "];
+      organizationValue = fomentoEducativoPopular;
+    }
+     if(organizationValue == "FOMENTO EDUCATIVO Y CULTURAL FRANCISCO DE IBARRA AC"){
+      var fomentoEducativoCultural=[" "];
+      organizationValue = fomentoEducativoCultural;
+    }
+     if(organizationValue == "FORMACION UNIVERSITARIA Y HUMANISTA DE LA LAGUNA AC"){
+      var formacionUniversitaria=[" "];
+      organizationValue = formacionUniversitaria;
+    }
+     if(organizationValue == "FUNDACION UNIVERSIDAD DE LAS AMERICAS PUEBLA"){
+      var fundacionUniversidad=["CENTRO DE DESARROLLO REGIONAL",
+                                "CENTRO DE INVESTIGACION EN ECONOMIA Y POLITICAS PUBLICAS",
+                                "CENTRO INTERACTIVO DE RECURSOS DE INFORMACION Y APRENDIZAJE",
+                                "ESCUELA DE ARTES Y HUMANIDADES",
+                                "ESCUELA DE CIENCIAS ADMINISTRATIVAS",
+                                "ESCUELA DE CIENCIAS SOCIALES, ARTES Y HUMANIDADES",
+                                "ESCUELA DE CIENCIAS",
+                                "ESCUELA DE INGENIERIA",
+                                "ESCUELA DE INGENIERÍA Y CIENCIAS",
+                                "ESCUELA DE NEGOCIOS Y ECONOMIA",
+                                "ESCUELA DE NEGOCIOS",
+                                "INSTITUTO DE ESTUDIOS AVANZADOS",
+                                "INSTITUTO DE INVESTIGACION Y POSGRADO",
+                                "RECTORIA",
+                                "UNIVERSIDAD DE LAS AMERICAS, A. C. - CIUDAD DE MEXICO"];
+      organizationValue = fundacionUniversidad;
+    }
+     if(organizationValue == "GRUPO CONVERSARE AC"){
+      var grupoConversare=[" "];
+      organizationValue = grupoConversare;
+    }
+    if(organizationValue == "GRUPO UNIVERSITARIO DE PUEBLA A C"){
+      var grupoUniversityOfPuebla=[" "];
+      organizationValue = grupoUniversityOfPuebla;
+    }
+     if(organizationValue == "HAVERFORD COLLEGE"){
+      var haverfordCollege=[" "];
+      organizationValue = haverfordCollege;
+    }
+     if(organizationValue == "ICONOS INSTITUTO DE INVESTIGACION EN COMUNICACION Y CULTURA"){
+      var iconsInstituteResearchComunity=["INVESTIGACION INSTITUCIONAL"];
+      organizationValue = iconsInstituteResearchComunity;
+    }
+    if(organizationValue == "INSTITUTO BENJAMIN FRANKLIN DE YUCATAN A C"){
+      var institutteBenjaminFranklin=[" "];
+      organizationValue = institutteBenjaminFranklin;
+    }
+    if(organizationValue == "INSTITUTO CELAYENSE"){
+      var institutteCelayense=["ESCUELA SUPERIOR DE COMERCIO",
+                                      "ESCUELA SUPERIOR DE DISEÑO",
+                                      "ESCUELA SUPERIOR DE ODONTOLOGIA",
+                                      "ESCUELA SUPERIOR DE PSICOLOGIA",
+                                      "LICENCIATURA EN NUTRICION",
+                                      "MAESTRIA EN CIENCIAS DE LA EDUCACION",
+                                      "MAESTRIA EN TERAPIA FAMILIAR"];
+      organizationValue = institutteCelayense;
+    }
+     if(organizationValue == "INSTITUTO CULINARIO DE MEXICO"){
+      var institutteClinarieMExico=[" "];
+      organizationValue = institutteClinarieMExico;
+    }
+    if(organizationValue == "INSTITUTO CULTURAL HELENICO AC"){
+      var instituteCultureHelenico=[" "];
+      organizationValue = instituteCultureHelenico;
+    }
+     if(organizationValue == "INSTITUTO CULTURAL MEXICANO JAPONES AC"){
+      var insituteCulturelJapannese=[" "];
+      organizationValue = insituteCulturelJapannese;
+    }
+     if(organizationValue == "INSTITUTO DE ARQUITECTURA AVANZADA DE CATALUNIA"){
+      var instituteArchitectAdvance=[" "];
+      organizationValue = instituteArchitectAdvance;
+    }
+     if(organizationValue == "INSTITUTO DE CIENCIAS Y ESTUDIOS SUPERIORES DE TAMAULIPAS AC"){
+      var instituteStudiesTamaulipas=[" "];
+      organizationValue = instituteStudiesTamaulipas;
+    }
+     if(organizationValue == "INSTITUTO DE COMPUTACION E INFORMATICA DE JEREZ S C"){
+      var instituteComputerJErez=[" "];
+      organizationValue = instituteComputerJErez;
+    }
+     if(organizationValue == "INSTITUTO DE CONSULTORIA UNIVERSITARIA SANTIN S C"){
+      var instituteConsultingUniversity=[" "];
+      organizationValue = instituteConsultingUniversity;
+    }
+    if(organizationValue == "INSTITUTO DE ENLACES EDUCATIVOS"){
+      var instituteEnlaceEducativo=[" "];
+      organizationValue = instituteEnlaceEducativo;
+    }
+    if(organizationValue == "INSTITUTO DE ESPECIALIZACION PARA EJECUTIVOS MONTERREY"){
+      var instituteEspcializacionEjectivos=[" "];
+      organizationValue = instituteEspcializacionEjectivos;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS AVANZADOS DE ZACATECAS AC"){
+      var instituteEstudiosAvanzados=[" "];
+      organizationValue = instituteEstudiosAvanzados;
+    }
+      if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES DE MODA"){
+      var insituteeEstdiosSuperioresModa=[" "];
+      organizationValue = insituteeEstdiosSuperioresModa;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES DE TAMAULIPAS"){
+      var insituteeEstdiosSuperioresTamaulipas=[" "];
+      organizationValue = insituteeEstdiosSuperioresTamaulipas;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES DEL BAJIO SC"){
+      var insituteeEstdiosSuperioresBajio=[" "];
+      organizationValue = insituteeEstdiosSuperioresBajio;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES EN ADMINISTRACION PUBLICA"){
+      var insituteeEstdiosSuperioresAdministracion=[" "];
+      organizationValue = insituteeEstdiosSuperioresAdministracion;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES RAFAEL GUIZAR VALENCIA"){
+      var insituteeEstdiosSuperioresRafael=[" "];
+      organizationValue = insituteeEstdiosSuperioresRafael;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS UNIVERSITARIOS AC"){
+      var insituteeEstdiosUniversity=["PLANTEL PUEBLA"];
+      organizationValue = insituteeEstdiosUniversity;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS UNIVERSITARIOS AC"){
+      var insituteeEstdiosUni=[" "];
+      organizationValue = insituteeEstdiosUni;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS UNIVERSITARIOS ASOCIACION CIVIL"){
+      var insituteeEstdiosUniAsociacion=[" "];
+      organizationValue = insituteeEstdiosUniAsociacion;
+    }
+    if(organizationValue == "INSTITUTO DE FORMACION TEOLOGICA INTERCONGREGACIONAL DE MEXICO AC"){
+      var insituteeEstdiosTologia=[" "];
+      organizationValue = insituteeEstdiosTologia;
+    }
+    if(organizationValue == "INSTITUTO DE IDIOMAS EL BOSQUE DEL CARIBE SC"){
+      var insituteeIdiomasBosque=[" "];
+      organizationValue = insituteeIdiomasBosque;
+    }
+    if(organizationValue == "INSTITUTO DE PEDAGOGIA CRITICA SC"){
+      var insitutePedagogia=[" "];
+      organizationValue = insitutePedagogia;
+    }
+     if(organizationValue == "INSTITUTO DE PRUEBA"){
+      var insitutePrueba=["SUBSEDE DE INSTITUCION DE PRUEBA"];
+      organizationValue = insitutePrueba;
+    }
+    if(organizationValue == "INSTITUTO DE TERAPIA FAMILIAR AC"){
+      var insituteTerapiaFamiliar=[" "];
+      organizationValue = insituteTerapiaFamiliar;
+    }
+    if(organizationValue == "INSTITUTO DE TERAPIA OCUPACIONAL AC"){
+      var insituteTerapiaOcupacional=["DIRECCION GENERAL"];
+      organizationValue = insituteTerapiaOcupacional;
+    }
+    if(organizationValue == "INSTITUTO EDUCATIVO DEL NOROESTE AC CETYS UNIVERSIDAD"){
+      var insituteEducativoNoroeste=["CAMPUS ENSENADA",
+                                      "CAMPUS MEXICALI",
+                                      "CAMPUS TIJUANA"];
+      organizationValue = insituteEducativoNoroeste;
+    }
+    if(organizationValue == "INSTITUTO EDUCATIVO DR CARLOS NAVARRO AC"){
+      var insituteEducativoNCarlos=[" "];
+      organizationValue = insituteEducativoNCarlos;
+    }
+    if(organizationValue == "INSTITUTO FRANCES DE AMERICA LATINA"){
+      var insituteFrancesAmerica=[" "];
+      organizationValue = insituteFrancesAmerica;
+    }
+    if(organizationValue == "INSTITUTO GASTRONOMICO DEL BAJIO"){
+      var insituteGastronomicoBajio=[" "];
+      organizationValue = insituteGastronomicoBajio;
+    }
+    if(organizationValue == "INSTITUTO HUMANISTA DE PSICOTERAPIA GESTALT AC"){
+      var insituteHumanisticoGestalt=[" "];
+      organizationValue = insituteHumanisticoGestalt;
+    }
+    if(organizationValue == "INSTITUTO INTERNACIONAL DE INVESTIGACION DE TECNOLOGIA EDUCATIVA SC"){
+      var insituteInternacionalEducativa=[" "];
+      organizationValue = insituteInternacionalEducativa;
+    }
+    if(organizationValue == "INSTITUTO LAS AMERICAS DE NAYARIT SC"){
+      var insituteAmericasNayarit=[" "];
+      organizationValue = insituteAmericasNayarit;
+    }
+    if(organizationValue == "INSTITUTO LEONARDO BRAVO"){
+      var insituteLeonardoBravo=[" "];
+      organizationValue = insituteLeonardoBravo;
+    }
+    if(organizationValue == "INSTITUTO NACIONAL DE ESTUDIOS FISCALES"){
+      var insituteNacionalEstudios=[" "];
+      organizationValue = insituteNacionalEstudios;
+    }
+    if(organizationValue == "INSTITUTO NACIONAL DE ESTUDIOS SUPERIORES DE DERECHO PENAL"){
+      var insituteNacionalEstudiosDerechoPenal=[" "];
+      organizationValue = insituteNacionalEstudiosDerechoPenal;
+    }
+    if(organizationValue == "INSTITUTO PEDAGOGICO DE ESTUDIOS DE POSGRADO"){
+      var insitutePedagogicoPosgrado=[" "];
+      organizationValue = insitutePedagogicoPosgrado;
+    }
+    if(organizationValue == "INSTITUTO SUPERIO DE ESTUDIOS PARA LA FAMILIA"){
+      var insituteSuperioEstudios=["PLANTEL GUADALAJARA",
+                                    "PLANTEL LEON",
+                                    "PLANTEL MERIDA",
+                                    "PLANTEL MONTERREY",
+                                    "PLANTEL OAXACA"];
+      organizationValue = insituteSuperioEstudios;
+    }
+    if(organizationValue == "INSTITUTO SUPERIOR AUTONOMO DE OCCIDENTE AC"){
+      var insituteSuperioAutonooOccidente=["DIVISION DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                          "DIVISION DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                          "DIVISION DE ESTUDIOS DE POSGRADO",
+                                          "DIVISION DE INGENIERIA",
+                                          "UNIVERSIDAD DEL VALLE DE ATEMAJAC CAMPUS LA PIEDAD",
+                                          "UNIVERSIDAD DEL VALLE DE ATEMAJAC PLANTEL LEON",
+                                          "UNIVERSIDAD DEL VALLE DE ATEMAJAC PLANTEL VALLARTA"];
+      organizationValue = insituteSuperioAutonooOccidente;
+    }
+    if(organizationValue == "INSTITUTO SUPERIOR DE DOCENTES EN EDUCACION ESPECIAL"){
+      var insituteSuperioDocentesEspecialty=[" "];
+      organizationValue = insituteSuperioDocentesEspecialty;
+    }
+     if(organizationValue == "INSTITUTO SUPERIOR DE ESTUDIOS ECLESIASTICOS AC"){
+      var insituteSuperioEclesiasticos=[" "];
+      organizationValue = insituteSuperioEclesiasticos;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AUTONOMO DE MEXICO"){
+      var insituteTecnologicoMexico=["CENTRO DE ANALISIS E INVESTIGACION ECONOMICA, CAIE.",
+                                      "CENTRO DE ESTUDIOS DE COMPETITIVIDAD, CEC.",
+                                      "CENTRO DE EXTENSION UNIVERSITARIA",
+                                      "CENTRO DE INVESTIGACION ECONOMICA",
+                                      "DIVISION ACADEMICA DE ACTUARIA ESTADISTICA Y MATEMATICAS",
+                                      "DIVISION ACADEMICA DE ADMINISTRACION Y CONTADURIA PUBLICA",
+                                      "DIVISION ACADEMICA DE ADMINISTRACION",
+                                      "DIVISION ACADEMICA DE CIENCIAS SOCIALES",
+                                      "DIVISION ACADEMICA DE DERECHO",
+                                      "DIVISION ACADEMICA DE ECONOMIA",
+                                      "DIVISION ACADEMICA DE ECONOMIA, DERECHO Y CIENCIAS SOCIALES",
+                                      "DIVISION ACADEMICA DE ESTUDIOS GENERALES E INTERNACIONALES",
+                                      "DIVISION ACADEMICA DE INGENIERIA",
+                                      "DIVISION DE INGENIERIAS Y CIENCIAS BIOLOGICAS"];
+      organizationValue = insituteTecnologicoMexico;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO DE LA CONSTRUCCION AC"){
+      var insituteTecnologicoConstruccion=[" "];
+      organizationValue = insituteTecnologicoConstruccion;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY"){
+      var insituteTecnologicoSuperiores=["CAMPUS AGUASCALIENTES",
+                                        "CAMPUS CENTRAL DE VERACRUZ",
+                                        "CAMPUS CHIAPAS",
+                                        "CAMPUS CHIHUAHUA",
+                                        "CAMPUS CIUDAD DE MÉXICO",
+                                        "CAMPUS CIUDAD JUÁREZ",
+                                        "CAMPUS COLIMA",
+                                        "CAMPUS CUERNAVACA",
+                                        "CAMPUS CUMBRES",
+                                        "CAMPUS ESTADO DE MÉXICO",
+                                        "CAMPUS EUGENIO GARZA LAGUERA",
+                                        "CAMPUS GUADALAJARA",
+                                        "CAMPUS GUAYMAS",
+                                        "CAMPUS HIDALGO",
+                                        "CAMPUS IRAPUATO",
+                                        "CAMPUS LAGUNA",
+                                        "CAMPUS LEÓN",
+                                        "CAMPUS MONTERREY",
+                                        "CAMPUS MORELIA",
+                                        "CAMPUS PUEBLA",
+                                        "CAMPUS QUERÉTARO",
+                                        "CAMPUS SALTILLO",
+                                        "CAMPUS SAN LUIS POTOSÍ",
+                                        "CAMPUS SANTA CATARINA",
+                                        "CAMPUS SANTA FE",
+                                        "CAMPUS SINALOA",
+                                        "CAMPUS SONORA NORTE",
+                                        "CAMPUS TAMPICO",
+                                        "CAMPUS TOLUCA",
+                                        "CAMPUS-COLIMA",
+                                        "CAMPUS-EUGENIO GARZA SADA",
+                                        "CAMPUS-MAZATLAN",
+                                        "CAMPUS-MORELOS",
+                                        "CAMPUS-OBREGON",
+                                        "CAMPUS-ZACATECAS",
+                                        "CENTRO DE CALIDAD AMBIENTAL",
+                                        "CENTRO DE CONSERVACION PARA EL APROVECHAMIENTO DE LOS RECURSOS NATURALES",
+                                        "DIRECCION GENERAL ACADEMICA",
+                                        "FACULTAD DE INGENIERIA CIVIL",
+                                        "FACULTAD DE INGENIERIA EN GEOMATICA E HIDRAULICA",
+                                        "INSTITUTO TECNOLÓGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY - SEDE PERÚ",
+                                        "INSTITUTO TECNOLÓGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY CAMPUS ZACATECAS",
+                                        "RECTORIA DE ESCUELAS NACIONALES DE POSGRADO",
+                                        "RECTORIA DE LA ZONA METROPOLITANA DE MONTERREY (CAMPUS MONTERREY)",
+                                        "SISTEMA"];
+      organizationValue = insituteTecnologicoSuperiores;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO Y DE ESTUDIOS SUPERIORES DE OCCIDENTE AC"){
+      var insituteTecnologicoSuperioresAc=["DEPARTAMENTO DE ESTUDIOS SOCIOPOLITICOS Y JURIDICOS",
+                                            "DIRECCION DE ADMINISTRACION Y FINANZAS",
+                                            "DIRECCION DE INTEGRACION COMUNITARIA",
+                                            "DIRECCION DE RELACIONES EXTERNAS",
+                                            "DIRECCION GENERAL ACADEMICA",
+                                            "DIVISION DE CIENCIAS DEL HOMBRE Y DEL HABITAT",
+                                            "DIVISION DE CIENCIAS ECONOMICO-ADMINISTRATIVAS",
+                                            "DIVISION DE CIENCIAS SOCIALES Y DEL HOMBRE",
+                                            "DIVISION DE ESTUDIOS DE POSGRADO",
+                                            "DIVISION DE INGENIERIA",
+                                            "ESCUELA DE ARQUITECTURA",
+                                            "ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                            "ESCUELA DE CIENCIAS DE LA EDUCACION",
+                                            "ESCUELA DE DERECHO",
+                                            "ESCUELA DE PSICOLOGIA",
+                                            "UNIDAD ACADEMICA DE CIENCIAS ADMINISTRATIVAS",
+                                            "UNIDAD ACADEMICA DE COMUNICACION",
+                                            "UNIDAD ACADEMICA DE DESARROLLO HUMANO",
+                                            "UNIDAD ACADEMICA DE EDUCACION"];
+      organizationValue = insituteTecnologicoSuperioresAc;
+    }
+    if(organizationValue == "INSTITUTO UNIVERSITARIO DE TECNOLOGIAS DE INFORMACION EEDUCACION A C"){
+      var institutoUniversitarioEducacion=[" "];
+      organizationValue = institutoUniversitarioEducacion;
+    }
+     if(organizationValue == "INSTITUTO UNIVERSITARIO DEL ESTADO DE MEXICO"){
+      var institutoUniversitarioEstadoMExico=["ESCUELA PROFESIONAL DE ARQUITECTURA",
+                                              "ESCUELA PROFESIONAL DE COMUNICACION",];
+      organizationValue = institutoUniversitarioEstadoMExico;
+    }
+    if(organizationValue == "INSTITUTO UNIVERSITARIO INTERNACIONAL SC"){
+      var institutoUniversitarioInternacional=[" "];
+      organizationValue = institutoUniversitarioInternacional;
+    }
+    if(organizationValue == "INSTITUTO UNIVERSITARIO PUEBLA SC"){
+      var institutoUniversitarioPuebla=[" "];
+      organizationValue = institutoUniversitarioPuebla;
+    }
+    if(organizationValue == "INSTITUTO UNIVERSITARIO VERACRUZANO SC"){
+      var institutoUniversitarioVeracruzano=[" "];
+      organizationValue = institutoUniversitarioVeracruzano;
+    }
+     if(organizationValue == "INSTITUTO VERACRUZANO DE EDUCACION SUPERIOR"){
+      var institutoUniversitarioVeracruzanoSuperior=[" "];
+      organizationValue = institutoUniversitarioVeracruzanoSuperior;
+    }
+     if(organizationValue == "INSTITUTO VOCACIONAL ENRIQUE DIAZ DE LEON AC"){
+      var institutoVocacionalEnrique=[" "];
+      organizationValue = institutoVocacionalEnrique;
+    }
+     if(organizationValue == "INTERNATIONAL INDUSTRY INSTITUTE"){
+      var internacionalIndustry=[" "];
+      organizationValue = internacionalIndustry;
+    }
+    if(organizationValue == "INTERNATIONAL INDUSTRY INSTITUTE SC"){
+      var internacionalIndustrySc=[" "];
+      organizationValue = internacionalIndustrySc;
+    } 
+    if(organizationValue == "INVESTIGACIONES Y ESTUDIOS SUPERIORES SC UNIVERSIDAD ANAHUAC MEXICO NORTE"){
+      var investigacionesEstudiosAnahuac=[" "];
+      organizationValue = investigacionesEstudiosAnahuac;
+    } 
+     if(organizationValue == "ISTHMUS NORTE SC ESCUELA DE ARQUITECTURA DE AMERICA LATINA Y EL CARIBE"){
+      var isthmusNorte=[" "];
+      organizationValue = isthmusNorte;
+    } 
+      if(organizationValue == "LICEO UNIVERSIDAD PEDRO DE GANTE"){
+      var liceoUniversity=[" "];
+      organizationValue = liceoUniversity;
+    }
+     if(organizationValue == "NORMAL SUPERIOR JUANA DE ASBAJE"){
+      var normalySuperioryJuana=[" "];
+      organizationValue = normalySuperioryJuana;
+    }
+     if(organizationValue == "NORMATIVIDAD Y ACTUALIZACION GUBERNAMENTAL SC"){
+      var normatividadActualizacionGuber=[" "];
+      organizationValue = normatividadActualizacionGuber;
+    }
+    if(organizationValue == "NORMATIVIDAD Y ACTUALIZACION GUBERNAMENTAL SC"){
+      var normatividadActualizacionGuberSc=[" "];
+      organizationValue = normatividadActualizacionGuberSc;
+    }
+    if(organizationValue == "NORTHEASTERN UNIVERSITY"){
+      var northeasternUniversity=[" "];
+      organizationValue = northeasternUniversity;
+    }
+    if(organizationValue == "NUEVA ESCUELA TECNOLOGICA"){
+      var newSchoolTecnology=[" "];
+      organizationValue = newSchoolTecnology;
+    }
+    if(organizationValue == "PROMOCION CULTURAL INTERNACIONAL ITALO CALVINO A C"){
+      var promocionCultural=[" "];
+      organizationValue = promocionCultural;
+    }
+    if(organizationValue == "PROMOCION DE LA CULTURA Y LA EDUCACION SUPERIOR DEL BAJIO AC"){
+      var promocionCulturalEducacion=[" "];
+      organizationValue = promocionCulturalEducacion;
+    }
+    if(organizationValue == "PROMOTORA DE CULTURA Y SERVICIO SOCIAL AC"){
+      var promotoraCulturaServicio=[" "];
+      organizationValue = promotoraCulturaServicio;
+    }
+    if(organizationValue == "SAINT LOUIS UNIVERSITY MADRID CAMPUS"){
+      var saintLuisUniversity=[" "];
+      organizationValue = saintLuisUniversity;
+    }
+    if(organizationValue == "SALZBURG GLOBAL SEMINAR"){
+      var salzburgGlobal=[" "];
+      organizationValue = salzburgGlobal;
+    }
+    if(organizationValue == "TECNOLOGICO GENEXIS AC"){
+      var tecnollogicoGenexis=[" "];
+      organizationValue = tecnollogicoGenexis;
+    }
+    if(organizationValue == "TECNOLOGICO UNIVERSITARIO DE BC SC"){
+      var tecnollogicoUniversitario=[" "];
+      organizationValue = tecnollogicoUniversitario;
+    }
+     if(organizationValue == "TECNOLOGICO UNIVERSITARIO DE MEXICO"){
+      var tecnologiaUniversitario=[" "];
+      organizationValue = tecnologiaUniversitario;
+    }
+    if(organizationValue == "THE ANGLO MEXICAN FOUNDATION"){
+      var angloMexican=["SUCURSAL COAPA"];
+      organizationValue = angloMexican;
+    }
+     if(organizationValue == "THE UNIVERSITY OF CHICAGO"){
+      var theUniversityChicago=[" "];
+      organizationValue = theUniversityChicago;
+    }
+      if(organizationValue == "THE UNIVERSITY OF NEWCASTLE AUSTRALIA"){
+      var universityNewCastle=[" "];
+      organizationValue = universityNewCastle;
+    }
+      if(organizationValue == "TUSCULUM COLLEGE"){
+      var tusculumCollege=[" "];
+      organizationValue = tusculumCollege;
+    }
+     if(organizationValue == "UIC UNIVERSIDAD INTERCONTINENTAL AC"){
+      var uicUniversidadInter=[" "];
+      organizationValue = uicUniversidadInter;
+    }
+     if(organizationValue == "UNIVER NOROESTE AC"){
+      var univerNoroesteAc=[" "];
+      organizationValue = univerNoroesteAc;
+    }
+     if(organizationValue == "UNIVER NOROESTE AC"){
+      var univerNoroeste=[" "];
+      organizationValue = univerNoroeste;
+    }
+     if(organizationValue == "UNIVERSIDA DE DURANGO CAMPUS CIUDAD JUAREZ"){
+      var durangoCampusJuerez=[" "];
+      organizationValue = durangoCampusJuerez;
+    }
+     if(organizationValue == "UNIVERSIDA DE WALES COLLEGE CARDIFF"){
+      var walesCollege=[" "];
+      organizationValue = walesCollege;
+    }
+     if(organizationValue == "UNIVERSIDAD ABIERTA DE SAN LUIS POTOSI"){
+      var abiertaSanLuis=[" "];
+      organizationValue = abiertaSanLuis;
+    }
+     if(organizationValue == "UNIVERSIDAD AMERICANA DE ACAPULCO AC"){
+      var americanaAcapulco=[" "];
+      organizationValue = americanaAcapulco;
+    }
+    if(organizationValue == "UNIVERSIDAD ANAHUAC"){
+      var universidadAnahuac=["BACHILLERATO ANÁHUAC",
+                              "ESCUELA DE ECONOMIA Y NEGOCIOS",
+                              "FACULTAD DE EDUCACION"];
+      organizationValue = universidadAnahuac;
+    }
+    if(organizationValue == "UNIVERSIDAD ANAHUAC DE OAXACA SC"){
+      var universidadAnahuacOaxaca=[" "];
+      organizationValue = universidadAnahuacOaxaca;
+    }
+    if(organizationValue == "UNIVERSIDAD ANAHUAC DEL NORTE"){
+      var universidadAnahuacNorte=["APOYO TECNOLOGICO",
+                                    "CENTRO DE ESTUDIOS SUPERIORES DEL GOLFO S.C.",
+                                    "COORDINACION GENERAL DE HUMANIDADES",
+                                    "ESCUELA DE ACTUARIA",
+                                    "ESCUELA DE ADMINISTRACION DE EMPRESAS Y CONTADURIA",
+                                    "ESCUELA DE ADMINISTRACION EDUCACIONAL",
+                                    "ESCUELA DE ADMINISTRACION TURISTICA",
+                                    "ESCUELA DE ARQUITECTURA",
+                                    "ESCUELA DE CIENCIAS DE LA COMUNICACION SOCIAL",
+                                    "ESCUELA DE DERECHO",
+                                    "ESCUELA DE DISEÑO",
+                                    "ESCUELA DE ECONOMIA",
+                                    "ESCUELA DE INFORMATICA",
+                                    "ESCUELA DE INGENIERIA",
+                                    "ESCUELA DE MEDICINA",
+                                    "ESCUELA DE PSICOLOGIA",
+                                    "UNIVERSIDAD ANAHUAC DE XALAPA"];
+      organizationValue = universidadAnahuacNorte;
+    } 
+      if(organizationValue == "UNIVERSIDAD ANAHUAC DEL SUR SC"){
+      var universidadAnahuacSurSc=["CENTRO DE ALTA DIRECCION EN INGENIERIA Y TECNOLOGIA",
+                                    "ESCUELA DE DERECHO",
+                                    "FACULTAD DE NEGOCIOS-UNIVERSIDAD ANAHUAC DEL SUR"];
+      organizationValue = universidadAnahuacSurSc;
+    } 
+       if(organizationValue == "UNIVERSIDAD ANAHUAC MEXICO NORTE"){
+      var universidadMexicoNorte=[" "];
+      organizationValue = universidadMexicoNorte;
+    } 
+      if(organizationValue == "UNIVERSIDAD ANGLO HISPANOMEXICANA"){
+      var angloHispanoamericana=[" "];
+      organizationValue = angloHispanoamericana;
+    } 
+      if(organizationValue == "UNIVERSIDAD ATENAS VERACRUZANA SC"){
+      var atenasVeracruzana=[" "];
+      organizationValue = atenasVeracruzana;
+    } 
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE DURANGO"){
+      var autonomaDurango=[" "];
+      organizationValue = autonomaDurango;
+    } 
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE FRESNILLO AC"){
+      var autonomaFesnollo=[" "];
+      organizationValue = autonomaFesnollo;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE GUADALAJARA AC"){
+      var autonomaGuadalajara=["CENTRO DE DISEÑO",
+                                "CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS",
+                                "DIRECCION GENERAL DE ESTUDIOS DE POSGRADO",
+                                "ESCUELA DE ANTROPOLOGIA",
+                                "ESCUELA DE BIOLOGIA",
+                                "ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                "ESCUELA DE ENFERMERIA",
+                                "ESCUELA DE FILOSOFIA Y LETRAS",
+                                "ESCUELA DE INFORMATICA",
+                                "ESCUELA DE INGENIERIA AGRICOLA",
+                                "ESCUELA DE INGENIERIA MECANICA",
+                                "ESCUELA DE INGENIERIA",
+                                "ESCUELA DE LINGUISTICA",
+                                "ESCUELA DE MATEMATICAS",
+                                "ESCUELA DE ODONTOLOGIA",
+                                "ESCUELA DE PSICOLOGIA",
+                                "FACULTAD DE ADMINISTRACION, CONTABILIDAD Y ECONOMIA",
+                                "FACULTAD DE CIENCIAS NATURALES Y AGROPECUARIAS",
+                                "FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS",
+                                "FACULTAD DE CIENCIAS",
+                                "FACULTAD DE DERECHO",
+                                "FACULTAD DE EDUCACION",
+                                "FACULTAD DE MEDICINA",
+                                "INSTITUTO DE CIENCIAS BIOLOGICAS",
+                                "INSTITUTO DE CIENCIAS EXACTAS Y TERRESTRES"];
+      organizationValue = autonomaGuadalajara;
+    }
+      if(organizationValue == "UNIVERSIDAD AUTONOMA DE LA LAGUNA AC"){
+      var autonomaLaguna=[" "];
+      organizationValue = autonomaLaguna;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE VERACRUZ VILLA RICA"){
+      var autonomaVeracruzVilla=[" "];
+      organizationValue = autonomaVeracruzVilla;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DEL NORESTE AC"){
+      var autonomaNoreste=[" "];
+      organizationValue = autonomaNoreste;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA ESPANA DE DURANGO"){
+      var autonomaEspanaDurango=["ESCUELA DE CIENCIAS MEDICAS"];
+      organizationValue = autonomaEspanaDurango;
+    }
+    if(organizationValue == "UNIVERSIDAD BONATERRA AC"){
+      var universidadBonaterra=[" "];
+      organizationValue = universidadBonaterra;
+    }
+    if(organizationValue == "UNIVERSIDAD CATOLICA DE CUALIACAN AC"){
+      var universidadCatolica=[" "];
+      organizationValue = universidadCatolica;
+    }
+    if(organizationValue == "UNIVERSIDAD CHAPULTEPEC"){
+      var universidadChapultepec=["DIRECCION DE ESTUDIOS DE POSGRADO E INVESTIGACION",
+                                  "ESCUELA DE COMERCIO Y ADMINISTRACION",];
+      organizationValue = universidadChapultepec;
+    }
+    if(organizationValue == "UNIVERSIDAD CONTEMPORANEA"){
+      var universidadContemporanea=[" "];
+      organizationValue = universidadContemporanea;
+    }
+     if(organizationValue == "UNIVERSIDAD CUAUHTEMOC"){
+      var universidadCuauhtemoc=["CAMPUS PUEBLA",
+                                  "CAMPUS SAN LUIS POTOSI",];
+      organizationValue = universidadCuauhtemoc;
+    }
+    if(organizationValue == "UNIVERSIDAD DE CIENCIA Y TECNOLOGIA DE MISSOURI"){
+      var universidadCienciaMissouri=[" "];
+      organizationValue = universidadCienciaMissouri;
+    }
+    if(organizationValue == "UNIVERSIDAD DE CUAUTITLAN IZCALLI SC"){
+      var universidadCuautitlla=[" "];
+      organizationValue = universidadCuautitlla;
+    }
+    if(organizationValue == "UNIVERSIDAD DE ESTUDIOS DE POPSGRADO EN DERECHO"){
+      var universidadPosgrado=[" "];
+      organizationValue = universidadPosgrado;
+    }
+     if(organizationValue == "UNIVERSIDAD DE INTEGRACION HUMANISTA"){
+      var universidadHumanista=[" "];
+      organizationValue = universidadHumanista;
+    }
+    if(organizationValue == "UNIVERSIDAD DE LA SALLE BAJIO AC"){
+      var universidadSalleBajio=["ESCUELA DE AGRONOMIA",
+                                "ESCUELA DE CIENCIAS ECONÓMICO ADMINISTRATIVAS",
+                                "ESCUELA DE COMUNICACIÓN Y MERCADOTECNIA",
+                                "ESCUELA DE DISEÑO",
+                                "ESCUELA DE EDUCACIÓN Y DESARROLLO HUMANO",
+                                "ESCUELA DE INGENIERIA CIVIL, MECANICA E INDUSTRIAL",
+                                "ESCUELA DE TURISMO",
+                                "ESCUELA DE VETERINARIA",
+                                "FACULTAD DE ARQUITECTURA",
+                                "FACULTAD DE COMPUTACION Y ELECTRONICA",
+                                "FACULTAD DE DERECHO",
+                                "FACULTAD DE ODONTOLOGIA"];
+      organizationValue = universidadSalleBajio;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LAS AMERICAS AC"){
+      var universidadAmericasAc=["DIVISIÓN DE CIENCIAS DEL COMPORTAMIENTO Y DESARROLLO"];
+      organizationValue = universidadAmericasAc;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LAS CALIFORNIAS SC"){
+      var universidadCalifornia=[" "];
+      organizationValue = universidadCalifornia;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LAS NACIONES"){
+      var universidadNaciones=[" "];
+      organizationValue = universidadNaciones;
+    }
+      if(organizationValue == "UNIVERSIDAD DE LEON"){
+      var universidadLeon=["LICENCIATURA EN COMUNICACION",
+                            "UNIVERSIDAD DE LEON PLANTEL CENTRO",
+                            "UNIVERSIDAD DE LEON PLANTEL SAN MIGUEL DE ALLENDE"];
+      organizationValue = universidadLeon;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LONDRES"){
+      var universidadLondres=["PLANTEL GUANAJUATO",
+                              "PLANTEL LUIS CABRERA",
+                              "PLANTEL ORIZABA",
+                              "PLANTEL QUERETARO"];
+      organizationValue = universidadLondres;
+    }
+     if(organizationValue == "UNIVERSIDAD DE MAZATLAN AC"){
+      var universidadMazatlanAc=[" "];
+      organizationValue = universidadMazatlanAc;
+    }
+    if(organizationValue == "UNIVERSIDAD DE MONTEMORELOS A C"){
+      var universidadMontemorelos=["DIVISION DE POSGRADO",
+                                    "ESCUELA DE BELLAS ARTES",
+                                    "ESCUELA DE CONTADURIA PUBLICA",
+                                    "ESCUELA DE ENFERMERIA",
+                                    "ESCUELA DE MEDICINA",
+                                    "ESCUELA DE NUTRICION",
+                                    "ESCUELA DE QUIMICOS CLINICOS BIOLOGOS",
+                                    "FACULTAD DE CIENCIAS DE LA EDUCACION",
+                                    "FACULTAD DE CIENCIAS DE LA SALUD"];
+      organizationValue = universidadMontemorelos;
+    }
+     if(organizationValue == "UNIVERSIDAD DE MONTERREY"){
+      var universidadMonterrey=["DIVISION DE ARQUITECTURA, DISEÑO E INGENIERIA",
+                                "DIVISION DE ARTE",
+                                "DIVISION DE CIENCIAS DE LA SALUD",
+                                "DIVISION DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                "DIVISION DE CIENCIAS JURIDICAS Y SOCIALES",
+                                "DIVISION DE EDUCACION Y HUMANIDADES",
+                                "DIVISION DE HUMANIDADES Y CIENCIAS SOCIALES",
+                                "DIVISION DE INGENIERIA Y CIENCIAS NATURALES Y EXACTAS",
+                                "DIVISIÓN DE DERECHO Y CIENCIAS SOCIALES",
+                                "DIVISIÓN DE POSGRADO"];
+      organizationValue = universidadMonterrey;
+    }
+    if(organizationValue == "UNIVERSIDAD DE MORELIA SC"){
+      var universidadMorelia=[" "];
+      organizationValue = universidadMorelia;
+    }
+     if(organizationValue == "UNIVERSIDAD DE NEGOCIOS ISEC"){
+      var universidadNegocios=[" "];
+      organizationValue = universidadNegocios;
+    }
+      if(organizationValue == "UNIVERSIDAD DE SAN MIGUEL AC"){
+      var universidadSanMiguel=[" "];
+      organizationValue = universidadSanMiguel;
+    }
+     if(organizationValue == "UNIVERSIDAD DE SOTAVENTO AC"){
+      var universidadSotavento=["UNIVERSIDAD DE SOTAVENTO A.C. CAMPUS COATZACOALCOS"];
+      organizationValue = universidadSotavento;
+    }
+     if(organizationValue == "UNIVERSIDAD DE XALAPA"){
+      var universidadXalapa=[" "];
+      organizationValue = universidadXalapa;
+    }
+     if(organizationValue == "UNIVERSIDAD DE XALAPA AC"){
+      var universidadXalapaAc=[" "];
+      organizationValue = universidadXalapaAc;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL NOROESTE SC"){
+      var universidadNoroeste=["CAMPUS CENTRO"];
+      organizationValue = universidadNoroeste;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL ALTIPLANO"){
+      var universidadAltiplano=[" "];
+      organizationValue = universidadAltiplano;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL BAJIO"){
+      var universidadBajio=["ESCUELA DE AGRONOMIA",
+                            "ESCUELA DE ARQUITECTURA",
+                            "ESCUELA DE COMPUTACION",
+                            "ESCUELA DE CONTABILIDAD Y ADMINISTRACION",
+                            "ESCUELA DE DERECHO",
+                            "ESCUELA DE DISEÑO AMBIENTAL",
+                            "ESCUELA DE DISEÑO INDUSTRIAL",
+                            "ESCUELA DE DISEÑO",
+                            "ESCUELA DE INGENIERIA",
+                            "ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                            "ESCUELA DE ODONTOLOGIA",
+                            "ESCUELA DE PERIODISMO Y CIENCIAS DE LA COMUNICACION COLECTIVA",
+                            "ESCUELA DE TURISMO Y HOTELERIA"];
+      organizationValue = universidadBajio;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL CENTRO DE MEXICO"){
+      var universidadCentroMExico=["ESCUELA DE FILOSOFIA"];
+      organizationValue = universidadCentroMExico;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL CLAUSTRO DE SOR JUANA A C"){
+      var universidadClaustroSor=["COLEGIO DE LETRAS Y HUMANIDADES",
+                                  "COLEGIO DE FILOSOFIA",
+                                  "COLEGIO DE COMUNICACION",
+                                  "COLEGIO DE ARTE Y CULTURA",
+                                  "FACULTAD DE GASTRONOMÍA"];
+      organizationValue = universidadClaustroSor;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL DESARROLLO EMPRESARIAL Y PEDAGOGICO"){
+      var universidadEmpresarialPedagogico=[" "];
+      organizationValue = universidadEmpresarialPedagogico;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL DESARROLLO PROFESIONAL SC"){
+      var universidadProfesionalSc=[" "];
+      organizationValue = universidadProfesionalSc;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL DISTRITO FEDERAL"){
+      var universidadFederalDistrito=[" "];
+      organizationValue = universidadFederalDistrito;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL GOLFO DE MEXICO CAMPUS CD MENDOZA"){
+      var universidadGolfoMExicoMendoza=[" "];
+      organizationValue = universidadGolfoMExicoMendoza;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL GOLFO DE MEXICO CAMPUS ORIZABA SC"){
+      var universidadGolfoMExicoOrizaba=[" "];
+      organizationValue = universidadGolfoMExicoOrizaba;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL MAYAB SC"){
+      var universidadMayab=["ESCUELA DE INGEN",
+                            "UNIVERSIDAD DEL MAYAB, A.C. (CHABLEKAL)",
+                            "UNIVERSIDAD DEL MAYAB, A.C. (MERIDA)"];
+      organizationValue = universidadMayab;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL NORESTE AC"){
+      var universidadNoroesteAc=["FACULTAD DE CIENCIAS QUIMICO-BIOLOGICAS"];
+      organizationValue = universidadNoroesteAc;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL NORTE"){
+      var universidadNorte=[" "];
+      organizationValue = universidadNorte;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL PEDREGAL"){
+      var universidadPedregal=[" "];
+      organizationValue = universidadPedregal;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL SOL"){
+      var universidadSol=[" "];
+      organizationValue = universidadSol;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL SUR DE CALIFORNIA"){
+      var universidadSurCalifornia=[" "];
+      organizationValue = universidadSurCalifornia;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL TEPEYAC A C"){
+      var universidadTepeyac=[" "];
+      organizationValue = universidadTepeyac;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL TERCER MILENIO SC"){
+      var universidadTercerMilenio=["GOMEZ PALACIO",
+                                    "SEDE ACAPULCO",
+                                    "SEDE AGUASCALIENTES",
+                                    "SEDE ATILIXCO",
+                                    "SEDE CAMPECHE",
+                                    "SEDE CANCUN II",
+                                    "SEDE CANCUN",
+                                    "SEDE CD. DEL CARMEN",
+                                    "SEDE CENTRAL, MTY",
+                                    "SEDE CHALCO",
+                                    "SEDE CHETUMAL",
+                                    "SEDE COATZACOALCOS",
+                                    "SEDE COTIJA",
+                                    "SEDE COZUMEL",
+                                    "SEDE CUERNAVACA",
+                                    "SEDE DURANGO",
+                                    "SEDE ENSENADA",
+                                    "SEDE FRESNILLO",
+                                    "SEDE GOMEZ PALACIO",
+                                    "SEDE GUADALAJARA",
+                                    "SEDE HERMOSILLO",
+                                    "SEDE JUCHITAN",
+                                    "SEDE MERIDA II",
+                                    "SEDE MERIDA",
+                                    "SEDE MONTERREY",
+                                    "SEDE MORELIA",
+                                    "SEDE OBREGON",
+                                    "SEDE OCOTLAN",
+                                    "SEDE PACHUCA",
+                                    "SEDE PLAYA DEL CARMEN",
+                                    "SEDE REYNOSA",
+                                    "SEDE SAHUAYO",
+                                    "SEDE SALTILLO",
+                                    "SEDE SAN LUIS POTOSI",
+                                    "SEDE TAMPICO",
+                                    "SEDE TAPACHULA",
+                                    "SEDE TAXQUEÑA",
+                                    "SEDE TEHUACAN",
+                                    "SEDE TEJUPILCO",
+                                    "SEDE TEPATITLAN",
+                                    "SEDE TIJUANA",
+                                    "SEDE TIZIMIN",
+                                    "SEDE TLALNEPANTLA",
+                                    "SEDE TOLUCA",
+                                    "SEDE TULA",
+                                    "SEDE TUXPAN",
+                                    "SEDE TUXTEPEC",
+                                    "SEDE URUAPAN",
+                                    "SEDE VILLAHERMOSA",
+                                    "SEDE ZACATECAS",
+                                    "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO SEDE FRESNILLO"];
+      organizationValue = universidadTercerMilenio;
+    }
+      if(organizationValue == "UNIVERSIDAD DEL VALLE DE MATATIPAC S C"){
+      var universidadValleMatatipac=[" "];
+      organizationValue = universidadValleMatatipac;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL VALLE DE MEXICO SC"){
+      var universidadValleMexico=["CAMPUS AGUASCALIENTES",
+                                  "CAMPUS CENTRO EDUCATIVO SANTA FE",
+                                  "CAMPUS CHAPULTEPEC",
+                                  "CAMPUS COYOACAN",
+                                  "CAMPUS CUERNAVACA",
+                                  "CAMPUS CUMBRES",
+                                  "CAMPUS EDO. DE MEXICO",
+                                  "CAMPUS GUADALAJARA NORTE",
+                                  "CAMPUS GUADALAJARA SUR",
+                                  "CAMPUS HERMOSILLO",
+                                  "CAMPUS HISPANO",
+                                  "CAMPUS INSURGENTES NORTE",
+                                  "CAMPUS LAGO DE GUADALUPE",
+                                  "CAMPUS LOMAS VERDES",
+                                  "CAMPUS MATAMOROS",
+                                  "CAMPUS MERIDA",
+                                  "CAMPUS MEXICALI",
+                                  "CAMPUS MONTERREY",
+                                  "CAMPUS NOGALES",
+                                  "CAMPUS NUEVO LAREDO",
+                                  "CAMPUS PUEBLA",
+                                  "CAMPUS QUERETARO",
+                                  "CAMPUS REYNOSA",
+                                  "CAMPUS ROMA",
+                                  "CAMPUS SALTILLO",
+                                  "CAMPUS SAN ANGEL",
+                                  "CAMPUS SAN LUIS POTOSI",
+                                  "CAMPUS SAN MIGUEL DE ALLENDE",
+                                  "CAMPUS SAN RAFAEL",
+                                  "CAMPUS TAMPICO",
+                                  "CAMPUS TEXCOCO",
+                                  "CAMPUS TLALPAN",
+                                  "CAMPUS TOLUCA",
+                                  "CAMPUS TORREON",
+                                  "CAMPUS TUXTLA",
+                                  "CAMPUS VICTORIA",
+                                  "CAMPUS VILLAHERMOSA",
+                                  "CAMPUS XOCHIMILCO",
+                                  "CAMPUS ZAPOPAN"];
+      organizationValue = universidadValleMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL VALLE DE ORIZABA"){
+      var universidadValleOrizaba=[" "];
+      organizationValue = universidadValleOrizaba;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL VALLE DE PUEBLA SC"){
+      var universidadVallePuebla=["ESCUELA DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                  "ESCUELA DE DERECHO",];
+      organizationValue = universidadVallePuebla;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL VALLE DE TLAXCALA"){
+      var universidadValleTlaxcala=[" "];
+      organizationValue = universidadValleTlaxcala;
+    }
+     if(organizationValue == "UNIVERSIDAD EUROAMERICANA"){
+      var universidadEuroAmericana=[" "];
+      organizationValue = universidadEuroAmericana;
+    }
+    if(organizationValue == "UNIVERSIDAD FEMENINA DE MEXICO"){
+      var universidadFemeninaMexico=[" "];
+      organizationValue = universidadFemeninaMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD FRANCO MEXICANA"){
+      var universidadFrancoMexico=[" "];
+      organizationValue = universidadFrancoMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD GENESIS"){
+      var universidadGenesis=[" "];
+      organizationValue = universidadGenesis;
+    }
+    if(organizationValue == "UNIVERSIDAD HISPANO MEXICANA PLANTEL CENTRAL"){
+      var universidadHispanoMexicana=[" "];
+      organizationValue = universidadHispanoMexicana;
+    }
+     if(organizationValue == "UNIVERSIDAD IBEROAMERICANA AC"){
+      var universidadIberoamericana=["CAMPUS DISTRITO FEDERAL",
+                                    "CAMPUS LAGUNA",
+                                    "CAMPUS NOROESTE",
+                                    "DEPARTAMENTO DE ARQUITECTURA",
+                                    "DEPARTAMENTO DE ARTE",
+                                    "DEPARTAMENTO DE CIENCIAS RELIGIOSAS",
+                                    "DEPARTAMENTO DE CIENCIAS SOCIALES Y POLITICAS",
+                                    "DEPARTAMENTO DE COMUNICACIÓN",
+                                    "DEPARTAMENTO DE DERECHO",
+                                    "DEPARTAMENTO DE DISEÑO",
+                                    "DEPARTAMENTO DE ECONOMÍA",
+                                    "DEPARTAMENTO DE EDUCACIÓN",
+                                    "DEPARTAMENTO DE ESTUDIOS EMPRESARIALES",
+                                    "DEPARTAMENTO DE ESTUDIOS INTERNACIONALES",
+                                    "DEPARTAMENTO DE FILOSOFÍA",
+                                    "DEPARTAMENTO DE FÍSICA Y MATEMÁTICAS",
+                                    "DEPARTAMENTO DE HISTORIA",
+                                    "DEPARTAMENTO DE INGENIERÍA Y CIENCIAS QUÍMICAS",
+                                    "DEPARTAMENTO DE INGENIERÍAS",
+                                    "DEPARTAMENTO DE LETRAS",
+                                    "DEPARTAMENTO DE PSICOLOGÍA",
+                                    "DEPARTAMENTO DE SALUD",
+                                    "DIVISION DE CIENCIAS E INGENIERIA",
+                                    "DIVISION DE ECONOMIA",
+                                    "DIVISION DE ESTUDIOS DISCIPLINARES",
+                                    "INSTITUTO DE INVESTIGACIONES PARA EL DESARROLLO DE LA EDUCACIÓN",
+                                    "INSTITUTO DE INVESTIGACIONES SOBRE DESARROLLO SUSTENTABLE Y EQUIDAD SOCIAL",
+                                    "PLANTEL PUEBLA",
+                                    "PLANTEL SANTA FE (DISTRITO FEDERAL)",
+                                    "UNIVERSIDAD IBEROAMERICANA CAMPUS LEON"];
+      organizationValue = universidadIberoamericana;
+    }
+    if(organizationValue == "UNIVERSIDAD IBEROAMERICANA TIJUANA / PROMOCION Y DOCENCIA AC"){
+      var universidadTijuanaPromocion=[" "];
+      organizationValue = universidadTijuanaPromocion;
+    }
+    if(organizationValue == "UNIVERSIDAD INSURGENTES PLANTEL TLALPAN SC"){
+      var universidadInsurgentes=["PLANTEL TLALPAN"];
+      organizationValue = universidadInsurgentes;
+    }
+    if(organizationValue == "UNIVERSIDAD INTERAMERICANA DEL NORTE"){
+      var universidadInterAmericana=["CAMPUS MAZATLAN"];
+      organizationValue = universidadInterAmericana;
+    }
+    if(organizationValue == "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO"){
+      var universidadInterAmericana=["CAMPUS CANCUN",
+                                      "UNID CAMPUS CAMPECHE",
+                                      "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO CAMPUS FRESNILLO",
+                                      "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO CAMPUS MORELIA",
+                                      "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO SEDE AGUASCALIENTES",
+                                      "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO SEDE CHETUMAL"];
+      organizationValue = universidadInterAmericana;
+    }
+     if(organizationValue == "UNIVERSIDAD INTERCONTINENTAL"){
+      var universidadIntercontinental=["ESCUELA DE ADMINISTRACION HOTELERA",
+                                      "ESCUELA DE ADMINISTRACION",
+                                      "ESCUELA DE ARQUITECTURA",
+                                      "ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                      "ESCUELA DE CONTADURIA",
+                                      "ESCUELA DE DERECHO",
+                                      "ESCUELA DE DISEÑO",
+                                      "ESCUELA DE FILOSOFIA",
+                                      "ESCUELA DE INFORMATICA",
+                                      "ESCUELA DE LENGUAS",
+                                      "ESCUELA DE ODONTOLOGIA",
+                                      "ESCUELA DE PEDAGOGIA",
+                                      "ESCUELA DE PSICOLOGIA",
+                                      "ESCUELA DE RELACIONES TURISTICAS",
+                                      "ESCUELA DE TEOLOGIA",
+                                      "ESCUELA DE TRADUCCION",
+                                      "INSTITUTO DE POSGRADOS, INVESTIGACION Y EDUCACION CONTINUA",];
+      organizationValue = universidadIntercontinental;
+    }
+    if(organizationValue == "UNIVERSIDAD ISIDRO FABELA DE TOLUCA SC"){
+      var universidadIsidroFabela=[" "];
+      organizationValue = universidadIsidroFabela;
+    }
+      if(organizationValue == "UNIVERSIDAD ISTMO AMERICANA AC"){
+      var universidadIsidroFabela=["UNIVERSIDAD ITSMO AMERICANA CAMPUS FORUM",
+                                    "UNIVERSIDAD ITSMO AMERICANA CAMPUS CENTRO"];
+      organizationValue = universidadIsidroFabela;
+    }
+     if(organizationValue == "UNIVERSIDAD JOSE VASCONCELOS DE OAXACA SC"){
+      var universidadJoseVasconsuelos=[" "];
+      organizationValue = universidadJoseVasconsuelos;
+    }
+    if(organizationValue == "UNIVERSIDAD JUSTO SIERRA"){
+      var unidadJustoSierra=[" "];
+      organizationValue = unidadJustoSierra;
+    }
+    if(organizationValue == "UNIVERSIDAD KINO"){
+      var universidadKino=[" "];
+      organizationValue = universidadKino;
+    }
+    if(organizationValue == "UNIVERSIDAD LA CONCORDIA"){
+      var universidadConcordia=[" "];
+      organizationValue = universidadConcordia;
+    }
+     if(organizationValue == "UNIVERSIDAD LA SALLE AC"){
+      var universidadSalle=["DIRECCION DE ESTUDIOS DE POSGRADO E INVESTIGACION",
+                            "ESCUELA DE CIENCIAS DE LA EDUCACION",
+                            "ESCUELA DE CONTADURIA Y ADMINISTRACION",
+                            "ESCUELA DE DERECHO",
+                            "ESCUELA DE FILOSOFIA",
+                            "ESCUELA DE INGENIERIA",
+                            "ESCUELA DE ODONTOLOGIA",
+                            "ESCUELA DE QUIMICA",
+                            "ESCUELA MEXICANA DE ARQUITECTURA",
+                            "ESCUELA MEXICANA DE MEDICINA",
+                            "FACULTAD DE DERECHO",
+                            "FACULTAD MEXICANA DE MEDICINA",
+                            "SEDE CUERNAVACA",
+                            "UNIDAD BAJIO",
+                            "UNIVERSIDAD LA SALLE, A.C. UNIDAD BENAVENTE",];
+      organizationValue = universidadSalle;
+    }
+    if(organizationValue == "UNIVERSIDAD LA SALLE BENAVENTE"){
+      var universidadSalleBenavente=[" "];
+      organizationValue = universidadSalleBenavente;
+    }
+    if(organizationValue == "UNIVERSIDAD LA SALLE DE PACHUCA AC"){
+      var universidadSallePAchuca=[" "];
+      organizationValue = universidadSallePAchuca;
+    }
+    if(organizationValue == "UNIVERSIDAD LA SALLE NOROESTE AC"){
+      var universidadSalleNoroeste=[" "];
+      organizationValue = universidadSalleNoroeste;
+    }
+    if(organizationValue == "UNIVERSIDAD LA SALLE VICTORIA AC"){
+      var universidadSalleVictoria=[" "];
+      organizationValue = universidadSalleVictoria;
+    }
+    if(organizationValue == "UNIVERSIDAD LASALLISTA BENAVENTE"){
+      var universidadLasallista=["ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                  "ESCUELA DE CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA",
+                                  "ESCUELA DE COMPUTACION",
+                                  "ESCUELA DE CONTADURIA",
+                                  "ESCUELA DE DERECHO",
+                                  "ESCUELA DE RELACIONES INTERNACIONALES"];
+      organizationValue = universidadLasallista;
+    }
+     if(organizationValue == "UNIVERSIDAD LATINA DE AMERICA AC"){
+      var universidadLatinaAc=[" "];
+      organizationValue = universidadLatinaAc;
+    }
+     if(organizationValue == "UNIVERSIDAD LATINA SC"){
+      var universidadLatina=["CAMPUS CUERNAVACA",
+                              "PLANTEL SUR",];
+      organizationValue = universidadLatina;
+    }
+     if(organizationValue == "UNIVERSIDAD LICEO CERVANTINO"){
+      var universidadLiceoCervantino=[" "];
+      organizationValue = universidadLiceoCervantino;
+    }
+    if(organizationValue == "UNIVERSIDAD MAGNA"){
+      var universidadMagna=[" "];
+      organizationValue = universidadMagna;
+    }
+    if(organizationValue == "UNIVERSIDAD MARISTA CHAMPAGNAT"){
+      var universidadMarista=[" "];
+      organizationValue = universidadMarista;
+    }
+    if(organizationValue == "UNIVERSIDAD MARISTA DE MERIDA AC"){
+      var universidadMaristaMerida=["LICENCIATURA EN ADMINISTRACIÓN DE RECURSOS NATURALES"];
+      organizationValue = universidadMaristaMerida;
+    }
+    if(organizationValue == "UNIVERSIDAD MARISTA DE QUERETARO AC"){
+      var universidadMaristaQueretaro=[" "];
+      organizationValue = universidadMaristaQueretaro;
+    }
+    if(organizationValue == "UNIVERSIDAD MESOAMERICANA"){
+      var universidadMesoamericana=[" "];
+      organizationValue = universidadMesoamericana;
+    }
+     if(organizationValue == "UNIVERSIDAD METODISTA MADERO"){
+      var universidadMetodistaMadero=[" "];
+      organizationValue = universidadMetodistaMadero;
+    }
+    if(organizationValue == "UNIVERSIDAD METROPOLITANA DE AGUA CALIENTE SC"){
+      var universidadMetropolitanaAgua=[" "];
+      organizationValue = universidadMetropolitanaAgua;
+    }
+     if(organizationValue == "UNIVERSIDAD METROPOLITANA DE MONTERREY"){
+      var universidadMetropolitanaMonterrey=[" "];
+      organizationValue = universidadMetropolitanaMonterrey;
+    }
+     if(organizationValue == "UNIVERSIDAD MEXICANA SC"){
+      var universidadMetropilitana=[" "];
+      organizationValue = universidadMetropilitana;
+    }
+    if(organizationValue == "UNIVERSIDAD MEXICO AMERICANA DEL NORTE AC"){
+      var universidadAmericanaNorte=["DIVISION HUMANIDADES Y CIENCIAS SOCIALES"];
+      organizationValue = universidadAmericanaNorte;
+    }
+     if(organizationValue == "UNIVERSIDAD MODELO"){
+      var universidadModelo=[" "];
+      organizationValue = universidadModelo;
+    }
+     if(organizationValue == "UNIVERSIDAD MORELOS DE CUERNAVACA"){
+      var universidadModelosCuernavaca=[" "];
+      organizationValue = universidadModelosCuernavaca;
+    }
+     if(organizationValue == "UNIVERSIDAD MOTOLINIA"){
+      var universidadMotolinia=[" "];
+      organizationValue = universidadMotolinia;
+    }
+    if(organizationValue == "UNIVERSIDAD OLMECA AC"){
+      var universidadOlmecaAc=[" "];
+      organizationValue = universidadOlmecaAc;
+    }
+    if(organizationValue == "UNIVERSIDAD ORGANISMO MUNDIAL DE INVESTIGACION"){
+      var universidadOrganismoMundila=[" "];
+      organizationValue = universidadOrganismoMundila;
+    }
+    if(organizationValue == "UNIVERSIDAD PEDREGAL DEL SUR"){
+      var universidadPEdregalDelSur=[" "];
+      organizationValue = universidadPEdregalDelSur;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA HISPANO MEXICANA"){
+      var universidadPolitecnicaHispano=[" "];
+      organizationValue = universidadPolitecnicaHispano;
+    }
+      if(organizationValue == "UNIVERSIDAD PONTIFICIA DE MEXICO"){
+      var universidadPonticiaMexico=[" "];
+      organizationValue = universidadPonticiaMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD POPULAR AUTONOMA DEL ESTADO DE PUEBLA AC"){
+      var universidadPopularAutonoma=["DIVISION DE CIENCIAS DE LA SALUD",
+                                      "DIVISION DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                      "DIVISION DE HUMANIDADES",
+                                      "DIVISION TECNOLOGICA",
+                                      "ESCUELA DE AGRONOMIA",
+                                      "ESCUELA DE INGENIERIA",
+                                      "FACULTAD DE ADMINISTRACION DE EMPRESAS",
+                                      "FACULTAD DE FILOSOFIA"];
+      organizationValue = universidadPopularAutonoma;
+    }
+    if(organizationValue == "UNIVERSIDAD PRIVADA DEL ESTADO DE MEXICO"){
+      var universidadPriveadaEsatdo=[" "];
+      organizationValue = universidadPriveadaEsatdo;
+    }
+    if(organizationValue == "UNIVERSIDAD QUETZALCOATL"){
+      var universidadQuetzalcoatl=[" "];
+      organizationValue = universidadQuetzalcoatl;
+    }
+    if(organizationValue == "UNIVERSIDAD REALISTA DE MEXICO"){
+      var universidadRealistaMexico=[" "];
+      organizationValue = universidadRealistaMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD REGIOMONTANA AC"){
+      var universidadRegioMontana=["DEPARTAMENTO DE MUSICA",
+                                    "DIVISION DE ARQUITECTURA Y CIENCIAS DEL DISEÑO",
+                                    "DIVISION DE CIENCIAS DE LA COMUNICACION Y DIFUSION CULTURAL",
+                                    "DIVISION DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS",
+                                    "DIVISION DE ESTUDIOS DE POSGRADO",
+                                    "DIVISION DE INGENIERIA Y ARQUITECTURA",
+                                    "DIVISION DE INGENIERIA Y CIENCIAS EXACTAS",
+                                    "FACULTAD DE HUMANIDADES Y CIENCIAS SOCIALES",];
+      organizationValue = universidadRegioMontana;
+    }
+     if(organizationValue == "UNIVERSIDAD REGIONAL DEL NORTE"){
+      var universidadRegionalNorte=[" "];
+      organizationValue = universidadRegionalNorte;
+    }
+    if(organizationValue == "UNIVERSIDAD REGIONAL DEL SURESTE AC"){
+      var universidadRegionalSureste=[" "];
+      organizationValue = universidadRegionalSureste;
+    }
+    if(organizationValue == "UNIVERSIDAD SANTO TOMAS"){
+      var universidadSantoTomas=["CAMPUS LOS ANGELES"];
+      organizationValue = universidadSantoTomas;
+    }
+    if(organizationValue == "UNIVERSIDAD SENTIMIENTOS DE LA NACION AC"){
+      var universidadSentimientosNacion=[" "];
+      organizationValue = universidadSentimientosNacion;
+    }
+     if(organizationValue == "UNIVERSIDAD TECMILENIO"){
+      var universidadTecmilenio=["CAMPUS CANCUN",
+                                "CAMPUS CUAUTITLAN IZCALLI",
+                                "CAMPUS LAGUNA",
+                                "UNIVERSIDAD TEC MILENIO CAMPUS CHIHUAHUA",
+                                "UNIVERSIDAD TEC MILENIO CAMPUS PUEBLA",
+                                "UNIVERSIDAD TEC MILENIO CAMPUS SAN LUIS POTOSÍ",
+                                "UNIVERSIDAD TEC MILENIO CAMPUS ZAPOPAN",
+                                "UNIVERSIDAD TEC MILENIO LAS TORRES",
+                                "UNIVERSIDAD TECMILENIO CAMPUS METEPEC"];
+      organizationValue = universidadTecmilenio;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA AMERICANA"){
+      var universidadTecnologiaAmericana=[" "];
+      organizationValue = universidadTecnologiaAmericana;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE MEXICO"){
+      var universidadTecnologiaMexico=["ESCUELA DE ODONTOLOGIA",
+                                        "FACULTAD DE ADMINISTRACION Y CIENCIAS SOCIALES",
+                                        "FACULTAD DE INGENIERIA",
+                                        "INSTITUTO DE INVESTIGACION DE TECNOLOGIA EDUCATIVA",];
+      organizationValue = universidadTecnologiaMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE SINALOA"){
+      var universidadTecnologiaSinaloa=["CAMPUS MAZATLAN"];
+      organizationValue = universidadTecnologiaSinaloa;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL SUR SC"){
+      var universidadTecnologiaSur=["UNIVERSIDAD TECNOLÓGICA DEL SUR, S.C."];
+      organizationValue = universidadTecnologiaSur;
+    }
+    if(organizationValue == "UNIVERSIDAD UNIVER"){
+      var universidadUniver=["UNIVERSIDAD UNIVER PLANTEL MAR EGEO"];
+      organizationValue = universidadUniver;
+    }
+     if(organizationValue == "UNIVERSIDAD VALLE DEL BRAVO"){
+      var universidadValleBravo=["UNIDAD CIUDAD MANTE"];
+      organizationValue = universidadValleBravo;
+    }
+    if(organizationValue == "UNIVERSIDAD VALLE DEL GRIJALVA SC"){
+      var universidadValleGrijalva=[" "];
+      organizationValue = universidadValleGrijalva;
+    }
+     if(organizationValue == "UNIVERSIDAD VASCO DE QUIROGA"){
+      var universidadVascoQuiroga=[" "];
+      organizationValue = universidadVascoQuiroga;
+    }
+    if(organizationValue == "UNIVERSIDAD VILLA RICA"){
+      var universidadVillarica=["ESCUELA DE CONTADURIA Y ADMINISTRACION",
+                                "ESCUELA DE DERECHO",
+                                "ESCUELA DE ECONOMIA MARITIMA",
+                                "ESCUELA DE PSICOLOGIA",
+                                "FACULTAD DE ARQUITECTURA",
+                                "FACULTAD DE ECONOMIA POLITICA",
+                                "FACULTAD DE ECONOMIA",
+                                "FACULTAD DE INGENIERIA"];
+      organizationValue = universidadVillarica;
+    } 
+     if(organizationValue == "UNIVERSIDAD XICOTEPETL AC"){
+      var universidadXicotepetl=[" "];
+      organizationValue = universidadXicotepetl;
+    } 
+     if(organizationValue == "UNIVERSIDADE DE PASSO FUNDO"){
+      var universidadPassoFundo=[" "];
+      organizationValue = universidadPassoFundo;
+    }
+     if(organizationValue == "UNIVERSIDADE SAO FRANCISCO ITATIBA SP BRASIL"){
+      var universidadSaoFrancisco=[" "];
+      organizationValue = universidadSaoFrancisco;
+    }
+    if(organizationValue == "UNIVERSITY OF MICHIGAN DEARBORN"){
+      var universidadMichigan=[" "];
+      organizationValue = universidadMichigan;
+    }
+    if(organizationValue == "UNIVERSITY OF THE WEST SCOTLAND"){
+      var universidadTheWest=[" "];
+      organizationValue = universidadTheWest;
+    }
+    if(organizationValue == "UNIVESIDAD ALVA EDISON"){
+      var universidadAlvaEdison=[" "];
+      organizationValue = universidadAlvaEdison;
+    }
+    if(organizationValue == "VANCOUVER LANGUAGE CENTRE OF GUADALAJARA AC"){
+      var vancouverLanguage=[" "];
+      organizationValue = vancouverLanguage;
+    }
+    if(organizationValue == "WESTHILL INSTITUTE SC"){
+      var westhillInstitute=["ESCUELA DE MEDICINA"];
+      organizationValue = westhillInstitute;
+    }
+
+    /* Instituciones del sector privado de empresas productivas (adiat) */
 
 
+ if(organizationValue == "ABB MEXICO SA DE CV"){
+      var abbMexico=[" "];
+      organizationValue = abbMexico;
+    }
+    if(organizationValue == "ACCIONES Y VALORES DE MEXICO"){
+      var accionesValores=[" "];
+      organizationValue = abbMexico;
+    }
+     if(organizationValue == "ACDENTURE"){
+      var acednture=[" "];
+      organizationValue = acednture;
+    }
+    if(organizationValue == "ACERTEK SA DE CV"){
+      var acertekSa=[" "];
+      organizationValue = acertekSa;
+    }
+     if(organizationValue == "ACUICOLA LA VICTORIA S A DE C V"){
+      var acuicolaVictoria=[" "];
+      organizationValue = acuicolaVictoria;
+    }
+     if(organizationValue == "ADRIANN S DE MEXICO SA DE CV"){
+      var adrianMexico=[" "];
+      organizationValue = adrianMexico;
+    }
+     if(organizationValue == "AEROVIAS CARIBE"){
+      var aeroviasCaribe=[" "];
+      organizationValue = aeroviasCaribe;
+    }
+     if(organizationValue == "AFORE BITAL"){
+      var aforeBital=[" "];
+      organizationValue = aforeBital;
+    }
+      if(organizationValue == "AFORE INBURSA"){
+      var aforeInvursa=[" "];
+      organizationValue = aforeInvursa;
+    }
+    if(organizationValue == "AFORE SANTANDER MEXICANO"){
+      var aforeSantanderMexicano=[" "];
+      organizationValue = aforeSantanderMexicano;
+    }
+    if(organizationValue == "AFORE SOLIDA BANORTE GENERALI"){
+      var aforeSolidaBanorte=[" "];
+      organizationValue = aforeSolidaBanorte;
+    }
+      if(organizationValue == "AFORE XXI"){
+      var aforexxi=[" "];
+      organizationValue = aforexxi;
+    }
+      if(organizationValue == "AGILENT TECHNOLOGIES MEXICO"){
+      var agilentMexco=[" "];
+      organizationValue = agilentMexco;
+    }
+      if(organizationValue == "ALCATEL"){
+      var alcatel=[" "];
+      organizationValue = alcatel;
+    }
+     if(organizationValue == "ALLIANZ MEXICO COMPANIA DE SEGUROS"){
+      var allianzMexico=[" "];
+      organizationValue = allianzMexico;
+    }
+     if(organizationValue == "ALMACENES COPPEL"){
+      var alamcenesCoppel=[" "];
+      organizationValue = alamcenesCoppel;
+    }
+     if(organizationValue == "ALMACENES ZARAGOZA"){
+      var almacenesZaragoza=[" "];
+      organizationValue = almacenesZaragoza;
+    }
+     if(organizationValue == "ALMEXA ALUMINIO"){
+      var almexaAlumnio=[" "];
+      organizationValue = almexaAlumnio;
+    }
+    if(organizationValue == "ALPEK SA DE CV"){
+      var alpekSa=[" "];
+      organizationValue = alpekSa;
+    }
+     if(organizationValue == "ALTOS HORNOS DE MEXICO S A B DE C V"){
+      var altosHornos=[" "];
+      organizationValue = altosHornos;
+    }
+     if(organizationValue == "ARABELA"){
+      var arabela=[" "];
+      organizationValue = arabela;
+    }
+     if(organizationValue == "ARANCIA CORN PRODUCTS"){
+      var aranciaCorn=[" "];
+      organizationValue = aranciaCorn;
+    }
+     if(organizationValue == "ASEGURADORA HIDALGO"){
+      var aseguradoraHisdalgo=[" "];
+      organizationValue = aseguradoraHisdalgo;
+    }
+    if(organizationValue == "ATLAS COPCO MEXICANA"){
+      var atlasCopco=[" "];
+      organizationValue = atlasCopco;
+    }
+     if(organizationValue == "BANCO MERCANTIL DEL NORTE"){
+      var bancoMercantil=[" "];
+      organizationValue = bancoMercantil;
+    }
+    if(organizationValue == "BANCO NACIONAL DE MEXICO SA"){
+      var bancoNacionalMexico=[" "];
+      organizationValue = bancoNacionalMexico;
+    }
+    if(organizationValue == "BANCO SANTANDER MEXICANO"){
+      var bancoSantandereMexicano=[" "];
+      organizationValue = bancoSantandereMexicano;
+    }
+     if(organizationValue == "BANCRECER"){
+      var bancrecer=[" "];
+      organizationValue = bancrecer;
+    }
+     if(organizationValue == "BEBIDAS PURIFICADAS DEL CENTRO"){
+      var bebidasPurificadas=[" "];
+      organizationValue = bebidasPurificadas;
+    }
+     if(organizationValue == "BLUE BIRD DE MEXICO"){
+      var blueBird=[" "];
+      organizationValue = blueBird;
+    }
+      if(organizationValue == "BMG ENTERTAINMENT MEXICO"){
+      var bmgEntertainmet=[" "];
+      organizationValue = bmgEntertainmet;
+    }
+      if(organizationValue == "BRISTOL MYERS SQUIBB DE MEXICO S DE RL DE CV"){
+      var bristolMyers=[" "];
+      organizationValue = bristolMyers;
+    }
+      if(organizationValue == "BROTHER INTERNATIONAL DE MEXICO"){
+      var brotherInternational=[" "];
+      organizationValue = brotherInternational;
+    }
+     if(organizationValue == "BUFETE INDUSTRIAL"){
+      var bufeteIndustrial=[" "];
+      organizationValue = bufeteIndustrial;
+    }
+     if(organizationValue == "CABLEVISION SA DE CV"){
+      var cablevisionSa=[" "];
+      organizationValue = cablevisionSa;
+    }
+       if(organizationValue == "CANON MEXICANA"){
+      var canonMexico=[" "];
+      organizationValue = canonMexico;
+    }
+       if(organizationValue == "CARTONES PONDEROSA"){
+      var cartonesPonderosa=[" "];
+      organizationValue = cartonesPonderosa;
+    }
+       if(organizationValue == "CASA DE BOLSA BANORTE"){
+      var houseBackBanorte=[" "];
+      organizationValue = houseBackBanorte;
+    }
+      if(organizationValue == "CASA DE BOLSA BBVA BANCOMER"){
+      var HouseBackBbva=[" "];
+      organizationValue = HouseBackBbva;
+    }
+     if(organizationValue == "CASA DE BOLSA INVERLAT"){
+      var houseBackInverlat=[" "];
+      organizationValue = houseBackInverlat;
+    }
+     if(organizationValue == "CASA DE CAMBIO MONEX"){
+      var houseToChanseMonex=[" "];
+      organizationValue = houseToChanseMonex;
+    }
+    if(organizationValue == "CELANESE MEXICANA"){
+      var celaneseMexicana=[" "];
+      organizationValue = celaneseMexicana;
+    }
+     if(organizationValue == "CELULOSA Y DERIVADOS SA DE CV"){
+      var celulosaDerivados=[" "];
+      organizationValue = celulosaDerivados;
+    }
+     if(organizationValue == "CEMENTOS CRUZ AZUL"){
+      var cementosCurzAzul=[" "];
+      organizationValue = cementosCurzAzul;
+    }
+     if(organizationValue == "CEMEX DE MEXICO SA DE CV"){
+      var cemexMexico=[" "];
+      organizationValue = cemexMexico;
+    }
+     if(organizationValue == "CIA EMBOTELLADORA DE CUALIACAN"){
+      var ciaEmbotelladora=[" "];
+      organizationValue = ciaEmbotelladora;
+    }
+     if(organizationValue == "CIA EMBOTELLADORA NUEVA OBREGON"){
+      var ciaEmbotelladoraObregon=[" "];
+      organizationValue = ciaEmbotelladoraObregon;
+    }
+    if(organizationValue == "CINEMARK DE MEXICO"){
+      var cinemarkMexico=[" "];
+      organizationValue = cinemarkMexico;
+    }
+      if(organizationValue == "CITIBANK"){
+      var citibank=[" "];
+      organizationValue = citibank;
+    }
+      if(organizationValue == "CMM SA DE CV"){
+      var cmmSa=["CENTRO MEDICO METROPOLITANO DEL SURESTE S.A. DE C.V."];
+      organizationValue = cmmSa;
+    }
+      if(organizationValue == "COCACOLA FEMSA"){
+      var cocacolaFemsa=[" "];
+      organizationValue = cocacolaFemsa;
+    }
+       if(organizationValue == "COMPANIA CERILLERA LA CENTRAL"){
+      var companiaCerillera=[" "];
+      organizationValue = companiaCerillera;
+    }
+      if(organizationValue == "COMPANIA INDUSTRIALIZADORA DE CARBON ACTIVADO DE TECOMAN SA DE CV"){
+      var companoaCarbon=[" "];
+      organizationValue = companoaCarbon;
+    }
+    if(organizationValue == "COMPANIA MINERA AUTLAN S A B DE CV"){
+      var companiaMinera=[" "];
+      organizationValue = companiaMinera;
+    }
+     if(organizationValue == "CONDUCTORES MEXICANOS SA"){
+      var conductoresMexicanos=[" "];
+      organizationValue = conductoresMexicanos;
+    }
+     if(organizationValue == "CONS INTERNACIONAL DE MEDIO AMBIENTE"){
+      var internationalMedioAmbiente=[" "];
+      organizationValue = internationalMedioAmbiente;
+    }
+       if(organizationValue == "CONSORCIO ARA"){
+      var consorcioAra=[" "];
+      organizationValue = consorcioAra;
+    }
+    if(organizationValue == "CONSORCIO HOGAR"){
+      var consorcioHogar=[" "];
+      organizationValue = consorcioHogar;
+    }
+      if(organizationValue == "CONSTRUCCIONES Y CANALIZACIONES"){
+      var construccionesCanalizaciones=[" "];
+      organizationValue = construccionesCanalizaciones;
+    }
+      if(organizationValue == "CONSTRUCTORA SILMEL SA DE CV"){
+      var construccionesSimel=["INGENIERIA PROMOTORA DE DESARROLLO S.A. DE C.V."];
+      organizationValue = construccionesSimel;
+    }
+       if(organizationValue == "CONSTRUCTORA Y URBANIZADORA ARA"){
+      var construccionesUrbanizadora=[" "];
+      organizationValue = construccionesUrbanizadora;
+    }
+    if(organizationValue == "CONTROL NUMERICO Y ROBOTICA SA DE CV"){
+      var controlNumerico=[" "];
+      organizationValue = controlNumerico;
+    }
+      if(organizationValue == "CONTROLADORA DE FARMACIAS"){
+      var controladoraFarmacias=[" "];
+      organizationValue = controladoraFarmacias;
+    }
+       if(organizationValue == "COPACHISA"){
+      var copachisa=[" "];
+      organizationValue = copachisa;
+    }
+       if(organizationValue == "CORP INTERAM DE ENTRETENIMIENTO"){
+      var corpInteram=[" "];
+      organizationValue = corpInteram;
+    }
+        if(organizationValue == "CORPORACION DURANGO"){
+      var corporacionDurango=[" "];
+      organizationValue = corporacionDurango;
+    }
+    if(organizationValue == "CORPORACION GEO SAB DE CV"){
+      var corporacionGeoSab=[" "];
+      organizationValue = corporacionGeoSab;
+    }
+     if(organizationValue == "CORPORACION MEXICANA DE RESTAURANTES"){
+      var corporacionMexicana=[" "];
+      organizationValue = corporacionMexicana;
+    }
+     if(organizationValue == "CORPORATIVO FRAGUA"){
+      var corporativoFragua=[" "];
+      organizationValue = corporativoFragua;
+    }
+     if(organizationValue == "COSMOCEL S A"){
+      var cosmocel=[" "];
+      organizationValue = cosmocel;
+    }
+      if(organizationValue == "CUPRO SAN LUIS"){
+      var cuproSanLuis=[" "];
+      organizationValue = cuproSanLuis;
+    }
+      if(organizationValue == "CYDSA CORPORATIVO S A DE C V"){
+      var cydsaCorp=["DIVISION QUIMICA"];
+      organizationValue = cydsaCorp;
+    }
+      if(organizationValue == "DALTILE MEXICO"){
+      var daltileMexico=[" "];
+      organizationValue = daltileMexico;
+    }
+       if(organizationValue == "DANA HEAVY AXLE MEXICO"){
+      var danaHeavy=[" "];
+      organizationValue = danaHeavy;
+    }
+       if(organizationValue == "DATA CAPITAL"){
+      var dataCapital=[" "];
+      organizationValue = dataCapital;
+    }
+        if(organizationValue == "DERIVADOS ACRILICOS SA DE CV"){
+      var derivadosAcrilicos=[" "];
+      organizationValue = derivadosAcrilicos;
+    }
+    if(organizationValue == "DESARROLLADORA HOMEZ"){
+      var desarrolladoraHomez=[" "];
+      organizationValue = desarrolladoraHomez;
+    }
+    if(organizationValue == "DISTRIBUCION Y VENTAS S A DE C V"){
+      var distribucionVentas=[" "];
+      organizationValue = distribucionVentas;
+    }
+     if(organizationValue == "DROGUERIA Y FARMACIA EL FENIX"){
+      var drogueraFarmacia=[" "];
+      organizationValue = drogueraFarmacia;
+    }
+     if(organizationValue == "DURANGO PAPER COMPANY"){
+      var durangoPaper=[" "];
+      organizationValue = durangoPaper;
+    }
+     if(organizationValue == "ECE"){
+      var ece=[" "];
+      organizationValue = ece;
+    }
+     if(organizationValue == "ECOFIBRAS PONDEROSA"){
+      var ecofibrasPonderosa=[" "];
+      organizationValue = ecofibrasPonderosa;
+    }
+     if(organizationValue == "EL OSO SA DE CV"){
+      var osoSa=[" "];
+      organizationValue = osoSa;
+    }
+    if(organizationValue == "ELECTRICA AUTOMOTRIZ OMEGA SA DE CV"){
+      var electricaAutomotriz=[" "];
+      organizationValue = electricaAutomotriz;
+    }
+    if(organizationValue ==  "ELEVADORES OTIS"){
+      var elevadoresOtis=[" "];
+      organizationValue = elevadoresOtis;
+    }
+      if(organizationValue ==  "EMBOTELLADORA AGA DEL CENTRO"){
+      var embotelladoraAga=[" "];
+      organizationValue = embotelladoraAga;
+    }
+      if(organizationValue ==  "EMBOTELLADORA AGUASCALIENTES"){
+      var embotelladoraAguascalientes=[" "];
+      organizationValue = embotelladoraAguascalientes;
+    }
+       if(organizationValue ==  "EMBOTELLADORA AMECA"){
+      var embotelladoraAmeca=[" "];
+      organizationValue = embotelladoraAmeca;
+    }
+         if(organizationValue ==  "EMBOTELLADORA ARGOS"){
+      var embotelladoraArgos=[" "];
+      organizationValue = embotelladoraArgos;
+    }
+    if(organizationValue ==  "EMBOTELLADORA DE CHIHUAHUA"){
+      var embotelladoraChiuahua=[" "];
+      organizationValue = embotelladoraChiuahua;
+    }
+     if(organizationValue ==  "EMBOTELLADORA DE COAHUILA"){
+      var embotelladoraCoahuila=[" "];
+      organizationValue = embotelladoraCoahuila;
+    }
+      if(organizationValue ==  "EMBOTELLADORA DE LA FRONTERA SA DE CV"){
+      var embotelladoraFrontera=[" "];
+      organizationValue = embotelladoraFrontera;
+    }
+      if(organizationValue ==  "EMBOTELLADORA DE MEXICALI"){
+      var embotelladoraexicalli=[" "];
+      organizationValue = embotelladoraexicalli;
+    }
+      if(organizationValue ==  "EMBOTELLADORA DE OCCIDENTE"){
+      var embotelladoraOccidente=[" "];
+      organizationValue = embotelladoraOccidente;
+    }
+     if(organizationValue ==  "EMBOTELLADORA GOMEZ PALACIO"){
+      var embotelladoraGomezPalacio=[" "];
+      organizationValue = embotelladoraGomezPalacio;
+    }
+     if(organizationValue ==  "EMBOTELLADORA GUADALUPE VICTORIA"){
+      var embotelladoraGuadalupe=[" "];
+      organizationValue = embotelladoraGuadalupe;
+    }
+     if(organizationValue ==  "EMBOTELLADORA GUADIANA"){
+      var embotelladoraGuadiana=[" "];
+      organizationValue = embotelladoraGuadiana;
+    }
+     if(organizationValue ==  "EMBOTELLADORA LA BUFA"){
+      var embotelladoraBufa=[" "];
+      organizationValue = embotelladoraBufa;
+    }
+     if(organizationValue ==  "EMBOTELLADORA LAGUNERA"){
+      var embotelladoraLagunera=[" "];
+      organizationValue = embotelladoraLagunera;
+    }
+       if(organizationValue ==  "EMBOTELLADORA LAS TROJES"){
+      var embotelladoraTrojes=[" "];
+      organizationValue = embotelladoraTrojes;
+    }
+       if(organizationValue ==  "EMBOTELLADORA LOS ALTOS"){
+      var embotelladoraAltos=[" "];
+      organizationValue = embotelladoraAltos;
+    }
+       if(organizationValue ==  "EMBOTELLADORA PITIC"){
+      var embotelladoraPitic=[" "];
+      organizationValue = embotelladoraPitic;
+    }
+       if(organizationValue ==  "EMBOTELLADORA SAN LUIS"){
+      var embotelladoraSanLuis=[" "];
+      organizationValue = embotelladoraSanLuis;
+    }
+       if(organizationValue ==  "EMBOTELLADORA TANGAMANGA"){
+      var embotelladoraTangamanga=[" "];
+      organizationValue = embotelladoraTangamanga;
+    }
+        if(organizationValue ==  "EMBOTELLADORA ZAPOPAN"){
+      var embotelladoraZapopan=[" "];
+      organizationValue = embotelladoraZapopan;
+    }
+    if(organizationValue ==  "ENERTEC MEXICOM S DE RL DE CV"){
+      var energetecMexicom=[" "];
+      organizationValue = energetecMexicom;
+    }
+     if(organizationValue ==  "EQUIPOS MEDICOS VIZCARRA SA"){
+      var equiposMedicos=[" "];
+      organizationValue = equiposMedicos;
+    }
+      if(organizationValue ==  "EXPORTADORA DE SAL"){
+      var exportadorasal=[" "];
+      organizationValue = exportadorasal;
+    }
+     if(organizationValue ==  "FABRICA DE PAPEL SAN FRANCISCO"){
+      var fabricaPapel=[" "];
+      organizationValue = fabricaPapel;
+    }
+      if(organizationValue ==  "FARMACIAS BENAVIDES"){
+      var farmaciasBenavides=[" "];
+      organizationValue = farmaciasBenavides;
+    }
+     if(organizationValue ==  "FEMSA CERVEZA"){
+      var femsaCerveza=["CENTRO DE SERVICIO DIESEL, S.A. DE C.V."];
+      organizationValue = femsaCerveza;
+    }
+    if(organizationValue ==  "FOMENTO RADIO BEEP"){
+      var fomentoRadio=[" "];
+      organizationValue = fomentoRadio;
+    }
+     if(organizationValue ==  "FORD CREDIT DE MEXICO"){
+      var fordCredit=[" "];
+      organizationValue = fordCredit;
+    }
+     if(organizationValue ==  "FORD MOTORS COMPANY DE MEXICO"){
+      var fordMotors=[" "];
+      organizationValue = fordMotors;
+    }
+    if(organizationValue ==  "FYPASA CONSTRUCCIONES"){
+      var fypasaConsturciones=[" "];
+      organizationValue = fypasaConsturciones;
+    }
+     if(organizationValue ==  "GALVAK SA DE CV"){
+      var galvak=[" "];
+      organizationValue = galvak;
+    }
+    if(organizationValue ==  "GANADEROS ASOCIADOS DE QUERETARO SA DE CV"){
+      var ganaderosAsociados=[" "];
+      organizationValue = ganaderosAsociados;
+    }
+    if(organizationValue ==  "GANADEROS PRODUCTORES DE LECHE PURA SA DE CV"){
+      var ganaderosProductors=[" "];
+      organizationValue = ganaderosProductors;
+    }
+     if(organizationValue ==  "GARANTE"){
+      var garante=[" "];
+      organizationValue = garante;
+    }
+     if(organizationValue ==  "GEDAS NORTH AMERICA"){
+      var gedasNorth=[" "];
+      organizationValue = gedasNorth;
+    }
+    if(organizationValue ==  "GENERAL ELECTRIC DE MEXICO"){
+      var genralElectric=[" "];
+      organizationValue = genralElectric;
+    }
+     if(organizationValue ==  "GIRSA CORPORATIVO SA DE CV"){
+      var gisaCorp=["CID, CENTRO DE INVESTIGACION Y DESARROLLO TECNOLOGICO, S.A. DE C.V."];
+      organizationValue = gisaCorp;
+    }
+     if(organizationValue ==  "GMAC MEXICANA"){
+      var gmacMexicana=[" "];
+      organizationValue = gmacMexicana;
+    }
+     if(organizationValue ==  "GRAFOS REGIA"){
+      var grafosRegia=[" "];
+      organizationValue = grafosRegia;
+    }
+    if(organizationValue ==  "GRAN CLASE EN MUEBLES SA DE CV"){
+      var granClaseMuebles=[" "];
+      organizationValue = granClaseMuebles;
+    }
+    if(organizationValue ==  "GRUJPO CHARWELL DE MEXICO ?"){
+      var gruposCharwell=[" "];
+      organizationValue = gruposCharwell;
+    }
+     if(organizationValue ==  "GRUMA"){
+      var gruma=[" "];
+      organizationValue = gruma;
+    }
+      if(organizationValue ==  "GRUPE"){
+      var grupe=[" "];
+      organizationValue = grupe;
+    }
+       if(organizationValue ==  "GRUPO ACCION"){
+      var grupoAccion=[" "];
+      organizationValue = grupoAccion;
+    }
+    if(organizationValue ==  "GRUPO AEROMAR"){
+      var grupoAeromar=[" "];
+      organizationValue = grupoAeromar;
+    }
+     if(organizationValue ==  "GRUPO AEROPORTUARIO DEL SURESTE"){
+      var grupoSureste=[" "];
+      organizationValue = grupoSureste;
+    }
+     if(organizationValue ==  "GRUPO ALFA"){
+      var grupoAlfa=["NEMAC",
+                    "PLANETARIO ALFA",];
+      organizationValue = grupoAlfa;
+    }
+     if(organizationValue ==  "GRUPO AMERICAN INDUSTRIES"){
+      var groupAmericanIndustries=[" "];
+      organizationValue = groupAmericanIndustries;
+    }
+     if(organizationValue ==  "GRUPO BAL"){
+      var groupBal=[" "];
+      organizationValue = groupBal;
+    }
+     if(organizationValue ==  "GRUPO BLACK & DEKER MEXICO"){
+      var groupBlackDeker=[" "];
+      organizationValue = groupBlackDeker;
+    }
+     if(organizationValue ==  "GRUPO CENTRAL DE DISCOS"){
+      var groupCentrakDisc=[" "];
+      organizationValue = groupCentrakDisc;
+    }
+     if(organizationValue ==  "GRUPO CINEMEX"){
+      var groupCinemex=["SERVIUNO, S.A. DE C.V."];
+      organizationValue = groupCinemex;
+    }
+     if(organizationValue ==  "GRUPO COMERCIAL GOMO"){
+      var groupComecialGoo=[" "];
+      organizationValue = groupComecialGoo;
+    }
+      if(organizationValue ==  "GRUPO COSTAMEX"){
+      var groupCostamex=[" "];
+      organizationValue = groupCostamex;
+    }
+     if(organizationValue ==  "GRUPO COVARRA"){
+      var groupCovarra=[" "];
+      organizationValue = groupCovarra;
+    }
+     if(organizationValue ==  "GRUPO DESC"){
+      var groupDesc=[" "];
+      organizationValue = groupDesc;
+    }
+     if(organizationValue ==  "GRUPO DIVAZ"){
+      var groupDivaz=[" "];
+      organizationValue = groupDivaz;
+    }
+    if(organizationValue ==  "GRUPO ECHLIN AUTOMOTRIZ"){
+      var groupEchin=[" "];
+      organizationValue = groupEchin;
+    }
+     if(organizationValue ==  "GRUPO FAMSA"){
+      var groupFamsa=[" "];
+      organizationValue = groupFamsa;
+    }
+     if(organizationValue ==  "GRUPO FERROVIARIO"){
+      var groupFerroViario=[" "];
+      organizationValue = groupFerroViario;
+    }
+     if(organizationValue ==  "GRUPO FINANCIERO AFIRME"){
+      var groupFinacieroAfirme=[" "];
+      organizationValue = groupFinacieroAfirme;
+    }
+     if(organizationValue ==  "GRUPO FINANCIERO BANAMEX ACCIVAL"){
+      var groupFinacieroBanamez=[" "];
+      organizationValue = groupFinacieroBanamez;
+    }
+     if(organizationValue ==  "GRUPO FINANCIERO BBVA BANCOMER"){
+      var groupFinacieroBbva=[" "];
+      organizationValue = groupFinacieroBbva;
+    }
+     if(organizationValue ==  "GRUPO GIGANTE"){
+      var groupGigante=[" "];
+      organizationValue = groupGigante;
+    }
+    if(organizationValue ==  "GRUPO HERDEZ"){
+      var groupHerdez=[" "];
+      organizationValue = groupHerdez;
+    }
+    if(organizationValue ==  "GRUPO ICONSA"){
+      var groupIconsa=[" "];
+      organizationValue = groupIconsa;
+    }
+     if(organizationValue ==  "GRUPO IMSA"){
+      var groupImsa=[" "];
+      organizationValue = groupImsa;
+    }
+    if(organizationValue ==  "GRUPO INDI"){
+      var groupIndi=[" "];
+      organizationValue = groupIndi;
+    }
+     if(organizationValue ==  "GRUPO INDUSTRIAL CAMESA"){
+      var groupIndustrial=[" "];
+      organizationValue = groupIndustrial;
+    }
+    if(organizationValue ==  "GRUPO INDUSTRIAL MASECA"){
+      var groupIndustrialMAseca=[" "];
+      organizationValue = groupIndustrialMAseca;
+    }
+     if(organizationValue ==  "GRUPO INDUSTRIAL MEXICANO"){
+      var groupIndustrialMexicano=[" "];
+      organizationValue = groupIndustrialMexicano;
+    }
+     if(organizationValue ==  "GRUPO IUSA"){
+      var groupIndustrialIusa=[" "];
+      organizationValue = groupIndustrialIusa;
+    }
+     if(organizationValue ==  "GRUPO MARCATEL"){
+      var groupMarcatel=[" "];
+      organizationValue = groupMarcatel;
+    }
+    if(organizationValue ==  "GRUPO MARTI"){
+      var groupMarti=[" "];
+      organizationValue = groupMarti;
+    }
+     if(organizationValue ==  "GRUPO MEXICANO DE DESARROLLO"){
+      var groupMexicanDeveloper=[" "];
+      organizationValue = groupMexicanDeveloper;
+    }
+     if(organizationValue ==  "GRUPO NOVARTIS MEXICO"){
+      var groupNovartisMexico=[" "];
+      organizationValue = groupNovartisMexico;
+    }
+     if(organizationValue ==  "GRUPO PALACIO DE HIERRO"){
+      var groupPalaceHierro=[" "];
+      organizationValue = groupPalaceHierro;
+    }
+     if(organizationValue ==  "GRUPO PIPSAMEX"){
+      var groupPipsamex=[" "];
+      organizationValue = groupPipsamex;
+    }
+      if(organizationValue ==  "GRUPO POSADAS SAB DE CV"){
+      var groupPosadas=[" "];
+      organizationValue = groupPosadas;
+    }
+     if(organizationValue ==  "GRUPO QUALITA"){
+      var groupQualita=[" "];
+      organizationValue = groupQualita;
+    }
+      if(organizationValue ==  "GRUPO QUMMA"){
+      var groupQmma=[" "];
+      organizationValue = groupQmma;
+    }
+     if(organizationValue ==  "GRUPO RADIO ACIR COMUNICACIONES"){
+      var groupRadioAcir=[" "];
+      organizationValue = groupRadioAcir;
+    }
+     if(organizationValue ==  "GRUPO RADIO CENTRO"){
+      var groupRadioCentro=[" "];
+      organizationValue = groupRadioCentro;
+    } 
+     if(organizationValue ==  "GRUPO RADIOFORMULA"){
+      var groupRadioFormula=[" "];
+      organizationValue = groupRadioFormula;
+    } 
+     if(organizationValue ==  "GRUPO ROCHE SYNTEX DE MEXICO SA DE CV"){
+      var groupRoche=["DIVISION DE INVESTIGACION"];
+      organizationValue = groupRoche;
+    } 
+      if(organizationValue ==  "GRUPO ROTOPLAS"){
+      var groupRtoplas=[" "];
+      organizationValue = groupRtoplas;
+    } 
+      if(organizationValue ==  "GRUPO RUBIO"){
+      var groupRubio=[" "];
+      organizationValue = groupRubio;
+    } 
+     if(organizationValue ==  "GRUPO SANBORNS"){
+      var groupSanborns=[" "];
+      organizationValue = groupSanborns;
+    } 
+    if(organizationValue ==  "GRUPO SIDEK"){
+      var groupSidek=[" "];
+      organizationValue = groupSidek;
+    }
+     if(organizationValue ==  "GRUPO SITUR"){
+      var groupSitur=[" "];
+      organizationValue = groupSitur;
+    }
+     if(organizationValue ==  "GRUPO SONOCO"){
+      var groupSonoc=[" "];
+      organizationValue = groupSonoc;
+    }
+      if(organizationValue ==  "GRUPO TELEVISA"){
+      var groupTelevisa=["FUNDACION CULTURAL TELEVISA A. C.",
+                          "OPERBES SA DE CV"];
+      organizationValue = groupTelevisa;
+    }
+       if(organizationValue ==  "GRUPO TICONSA"){
+      var groupTicosa=[" "];
+      organizationValue = groupTicosa;
+    }
+       if(organizationValue ==  "GRUPO UPDATE"){
+      var groupUpdate=[" "];
+      organizationValue = groupUpdate;
+    }
+        if(organizationValue ==  "GRUPO XENON"){
+      var groupXenon=[" "];
+      organizationValue = groupXenon;
+    }
+     if(organizationValue ==  "HAMILTON BEACH PROCTOR SILEX DE MEXICO"){
+      var hamiltonBeach=[" "];
+      organizationValue = hamiltonBeach;
+    }
+     if(organizationValue ==  "HARRY MAZAL SA DE CV"){
+      var harryMazal=[" "];
+      organizationValue = harryMazal;
+    }
+    if(organizationValue ==  "HERMES CORPORATIVO"){
+      var hermesCorp=[" "];
+      organizationValue = hermesCorp;
+    }
+    if(organizationValue ==  "HILASAL MEXICANA S A B DE C V"){
+      var hilasalMexicana=[" "];
+      organizationValue = hilasalMexicana;
+    }
+    if(organizationValue ==  "HIPOTECARIA NACIONAL"){
+      var hipotecaNacional=[" "];
+      organizationValue = hipotecaNacional;
+    }
+     if(organizationValue ==  "HITCHINER"){
+      var hitchiner=[" "];
+      organizationValue = hitchiner;
+    }
+     if(organizationValue ==  "HOTEL NIKKO MEXICO"){
+      var hotelNikko=["ASESORÍA TURÍSTICA Y AMBIENTAL",
+                    "CENOTE DORADO S.C. DE R.L. DE C.V.",
+                    "CENTRE EUROPEEN DE REALITE VIRTUELLE",
+                    "EMPRESAS ECOLOGICAS EL ROCIO SA DE CV",
+                    "GRUPO ALIANZA MEXICANA POR LA SOBREDOTACION SC",
+                    "MAQUILADORA AGRICOLA DE NAYARIT S.A DE C.V",
+                    "NATURALIS BIODIVERSITY CENTER",
+                    "NEW ENGLAND COMPLEX SYSTEMS INSTITUTE",
+                    "PES PROSPECTIVA S.C.",
+                    "SOLUCIONES ANALITICAS Y PRACTICAS DE PROCESOS SA DE CV",
+                    "UNIVERSITATEA DE VEST VASILE GOLDIS ARAD"];
+      organizationValue = hotelNikko;
+    }
+    if(organizationValue ==  "HOTELES PRESIDENTE SA DE CV"){
+      var hotelesPresidente=[" "];
+      organizationValue = hotelesPresidente;
+    }
+     if(organizationValue ==  "HYLSAMEX SA DE CV"){
+      var hylsamex=["ACEREX",
+                    "GALVACER",
+                    "HYL TECNOLOGIA DE HYLSAMEX",
+                    "HYLSA, DIVISION ACEROS PLANOS",
+                    "HYLSA, DIVISION ALAMBRÓN Y VARILLA",
+                    "PLANTA MONTERREY"];
+      organizationValue = hylsamex;
+    }
+      if(organizationValue ==  "IEM"){
+      var iem=[" "];
+      organizationValue = iem;
+    }
+     if(organizationValue ==  "INDUSTRIA AUTOMOTRIZ"){
+      var industrieAutomotriz=[" "];
+      organizationValue = industrieAutomotriz;
+    }
+     if(organizationValue ==  "INDUSTRIAS DERIVADAS DEL ETILENO SA DE CV"){
+      var insdutriasDerivadasEtileno=[" "];
+      organizationValue = insdutriasDerivadasEtileno;
+    }
+     if(organizationValue ==  "INDUSTRIAS FIRA SA DE CV"){
+      var industriesFira=[" "];
+      organizationValue = industriesFira;
+    }
+     if(organizationValue ==  "INDUSTRIAS NACOBRE"){
+      var industriesNAcobrea=[" "];
+      organizationValue = industriesNAcobrea;
+    }
+     if(organizationValue ==  "INDUSTRIAS NEGROMEX SA DE CV"){
+      var insdutriesNegromex=["DIVISION DE INVESTIGACION Y DESARROLLO"];
+      organizationValue = insdutriesNegromex;
+    }
+    if(organizationValue ==  "INDUSTRIAS RESISTOL SA"){
+      var insdutriesREsitol=[" "];
+      organizationValue = insdutriesREsitol;
+    }
+     if(organizationValue ==  "INDUSTRIAS UNIDAS SA"){
+      var insdutriesUnidas=[" "];
+      organizationValue = insdutriesUnidas;
+    }
+     if(organizationValue ==  "INGENIERIA Y SINTESIS S A DE CV"){
+      var engenieerSistesis=["INGENIERÍA PROMOTORA DE DESARROLLO S.A. DE C.V."];
+      organizationValue = engenieerSistesis;
+    }
+      if(organizationValue ==  "INGENIO ADOLFO LOPEZ MATEOS SA DE CV"){
+      var ingenioAdolfo=[" "];
+      organizationValue = ingenioAdolfo;
+    }
+      if(organizationValue ==  "INGENIO TRES VALLES SA DE CV"){
+      var ingenioTresValles=[" "];
+      organizationValue = ingenioTresValles;
+    }
+     if(organizationValue ==  "INMUEBLES SERCOX SA DE CV SERVICIOS CONDUMEX SA DE CV"){
+      var inueblesSercox=[" "];
+      organizationValue = inueblesSercox;
+    }
+     if(organizationValue ==  "INNOVAMEDICA SA DE CV"){
+      var innovamedicaS=[" "];
+      organizationValue = innovamedicaS;
+    }
+    if(organizationValue ==  "INVERSORA BURSATIL"){
+      var imversoraBursatil=[" "];
+      organizationValue = imversoraBursatil;
+    }
+     if(organizationValue ==  "ITP INGENIERIA Y FABRICACION SA DE CV"){
+      var itpEngieener=[" "];
+      organizationValue = itpEngieener;
+    }
+     if(organizationValue ==  "IXE GRUPO FINANCIERO"){
+      var ixeGroup=[" "];
+      organizationValue = ixeGroup;
+    }
+    if(organizationValue ==  "JPM PANTERA"){
+      var panter=[" "];
+      organizationValue = panter;
+    }
+     if(organizationValue ==  "KAMER COMERCIAL SA DE CV"){
+      var kamerComercy=[" "];
+      organizationValue = kamerComercy;
+    }
+    if(organizationValue ==  "KENKEL SALGADO"){
+      var kenkelSalgado=[" "];
+      organizationValue = kenkelSalgado;
+    }
+    if(organizationValue ==  "KOBLENZ ELECTRICA SA DE CV"){
+      var koblenzEelctric=[" "];
+      organizationValue = koblenzEelctric;
+    }
+    if(organizationValue ==  "LABORATORIOS CLINICOS DE PUEBLA SA DE CV"){
+      var laboratorieClicnic=["DEPARTAMENTO DE ENSEÑANZA E INVESTIGACION",
+                              "DEPARTAMENTO DE HEMATOLOGIA",
+                              "DEPARTAMENTO DE INMUNOLOGIA",
+                              "PROGRAMA DE ESPECIALIDAD EN PATOLOGIA CLINICA",];
+      organizationValue = laboratorieClicnic;
+    }
+     if(organizationValue ==  "LABORATORIOS SILANES SA DE CV"){
+      var laboratorieSlilanes=[" "];
+      organizationValue = laboratorieSlilanes;
+    }
+     if(organizationValue ==  "LATINOAMERICANA DE CONCRETOS"){
+      var latinoamericanaConcretos=[" "];
+      organizationValue = latinoamericanaConcretos;
+    }
+     if(organizationValue ==  "LATINOAMERICANA DE DUTY FREE"){
+      var latinoamericanaDuty=[" "];
+      organizationValue = latinoamericanaDuty;
+    }
+     if(organizationValue ==  "LUNKOMEX SA DE CV"){
+      var lunkomex=[" "];
+      organizationValue = lunkomex;
+    }
+     if(organizationValue ==  "MAIZORO"){
+      var maizoro=[" "];
+      organizationValue = maizoro;
+    }
+      if(organizationValue ==  "MANUFACTURERA DE CIGUENALES DE MEXICO SA DE CV"){
+      var manufactureCiguenales=[" "];
+      organizationValue = maimanufactureCiguenaleszoro;
+    }  
+    if(organizationValue ==  "MAQUINADOS Y PILOTOS SALDANA SA DE CV"){
+      var maquinadosPilotos=[" "];
+      organizationValue = maquinadosPilotos;
+    }
+    if(organizationValue ==  "MARINDUSTRIAS SA DE CV"){
+      var marindustries=[" "];
+      organizationValue = marindustries;
+    }
+    if(organizationValue ==  "MCCANN ERICKSON DE MEXICO"){
+      var erickson=[" "];
+      organizationValue = erickson;
+    }
+     if(organizationValue ==  "MEDICA SUR S A B DE CV"){
+      var medicaSur=["MEDICA SUR"];
+      organizationValue = medicaSur;
+    }
+    if(organizationValue ==  "METCO SA DE CV"){
+      var metcoS=[" "];
+      organizationValue = metcoS;
+    }
+    if(organizationValue ==  "MEXINOX"){
+      var mexinox=[" "];
+      organizationValue = mexinox;
+    }
+    if(organizationValue ==  "MINAS LUISMIN"){
+      var mineLuismin=[" "];
+      organizationValue = mineLuismin;
+    }
+    if(organizationValue ==  "MINERA DEL NORTE"){
+      var mineraNorth=[" "];
+      organizationValue = mineraNorth;
+    }
+    if(organizationValue ==  "MOLYMEX"){
+      var molymex=[" "];
+      organizationValue = molymex;
+    }
+    if(organizationValue ==  "MOPESA MOTORES POWER SA"){
+      var mopesaMotores=[" "];
+      organizationValue = mopesaMotores;
+    }
+    if(organizationValue ==  "NCR DE MEXICO"){
+      var ncrMexico=[" "];
+      organizationValue = ncrMexico;
+    }
+     if(organizationValue ==  "NEMAK MEXICO SA"){
+      var nemakMexico=[" "];
+      organizationValue = nemakMexico;
+    }
+      if(organizationValue ==  "NESTLE MEXICO SA DE CV"){
+      var nestleMexico=[" "];
+      organizationValue = nestleMexico;
+    }
+    if(organizationValue ==  "NHUMOS A DE CV"){
+      var humosA=[" "];
+      organizationValue = humosA;
+    }
+     if(organizationValue ==  "NO SABE FALLAR"){
+      var sabeFallar=[" "];
+      organizationValue = sabeFallar;
+    }
+     if(organizationValue ==  "NOVATEC CONSULTORES"){
+      var novatecConsultores=[" "];
+      organizationValue = novatecConsultores;
+    }
+     if(organizationValue ==  "NUEVO GRUPO IUSACELL"){
+      var newGroupIusacell=[" "];
+      organizationValue = newGroupIusacell;
+    }
+     if(organizationValue ==  "ORACLE DE MEXICO SA DE CV"){
+      var oracleMexico=[" "];
+      organizationValue = oracleMexico;
+    }
+     if(organizationValue ==  "ORGANISMO INTERNACIONAL DE ENERGIA ATOMICA"){
+      var organismoIntenational=[" "];
+      organizationValue = organismoIntenational;
+    }
+     if(organizationValue ==  "ORGANIZACION SORIANA"){
+      var organizationSoriana=[" "];
+      organizationValue = organizationSoriana;
+    }
+     if(organizationValue ==  "PANASONIC DE MEXICO"){
+      var panasonicMexico=[" "];
+      organizationValue = panasonicMexico;
+    }
+     if(organizationValue ==  "PESCA SUSTENTABLE S DE R L M"){
+      var pescaSustentable=[" "];
+      organizationValue = pescaSustentable;
+    }
+     if(organizationValue ==  "PHILIPS MEXICANA SA DE CV"){
+      var philipsMexicana=[" "];
+      organizationValue = philipsMexicana;
+    } 
+     if(organizationValue ==  "PIHCSA MEDICA S A DE C V"){
+      var pihcsaMedica=[" "];
+      organizationValue = pihcsaMedica;
+    } 
+      if(organizationValue ==  "PLANOBRA S A DE CV"){
+      var planobraSa=[" "];
+      organizationValue = planobraSa;
+    } 
+       if(organizationValue ==  "PLASTICOS REX SA DE CV"){
+      var plasticRex=[" "];
+      organizationValue = plasticRex;
+    } 
+      if(organizationValue ==  "PLIANA HOLDINGS"){
+      var plianaHoldings=[" "];
+      organizationValue = plianaHoldingss;
+    } 
+    if(organizationValue ==  "POLYONE DISTRIBUCION MEXICO"){
+      var polyoneMexico=[" "];
+      organizationValue = polyoneMexico;
+    } 
+     if(organizationValue ==  "PROBIOMED SA DE CV"){
+      var probiomedS=[" "];
+      organizationValue = probiomedS;
+    }
+     if(organizationValue ==  "PRODUCTORA DE PAPEL SA DE CV"){
+      var productoraPapel=[" "];
+      organizationValue = productoraPapel;
+    }
+    if(organizationValue ==  "PRODUCTOS DEL MONTE"){
+      var productoraMoonte=[" "];
+      organizationValue = productoraMoonte;
+    }
+    if(organizationValue ==  "PRODUCTOS ESPECIALIZADOS DE ACERO"){
+      var productEspializados=[" "];
+      organizationValue = productEspializados;
+    }
+     if(organizationValue ==  "PRODUCTOS METALICOS STEELE"){
+      var productMetalicos=[" "];
+      organizationValue = productMetalicos;
+    }
+     if(organizationValue ==  "PROFUTURO GNP"){
+      var profuturoGnp=[" "];
+      organizationValue = profuturoGnp;
+    }
+    if(organizationValue ==  "PROTEL"){
+      var protel=[" "];
+      organizationValue = protel;
+    }
+     if(organizationValue ==  "PYASA INGENIEROS CIVILES"){
+      var pyasaEngeeniers=[" "];
+      organizationValue = pyasaEngeeniers;
+    }
+    if(organizationValue ==  "QB INDUSTRIAS"){
+      var qbIndustries=[" "];
+      organizationValue = qbIndustries;
+    }
+    if(organizationValue ==  "QUALITA SISTEMAS"){
+      var qualitaSystem=[" "];
+      organizationValue = qualitaSystem;
+    }
+    if(organizationValue ==  "RAYOVAC DE MEXICO"){
+      var rayovacMexico=[" "];
+      organizationValue = rayovacMexico;
+    }
+    if(organizationValue ==  "READER_S DIGEST MEXICO"){
+      var readerDigesto=[" "];
+      organizationValue = readerDigesto;
+    }
+    if(organizationValue ==  "REAL TURISMO"){
+      var realTurismo=[" "];
+      organizationValue = realTurismo;
+    }
+     if(organizationValue ==  "REGIO EMPRESAS"){
+      var regioEmpresas=[" "];
+      organizationValue = regioEmpresas;
+    } 
+     if(organizationValue ==  "REGIOPLAST"){
+      var regioplast=[" "];
+      organizationValue = regioplast;
+    } 
+     if(organizationValue ==  "RUIZ URQUIZIA Y CIA ANDERSEN"){
+      var ruizCia=[" "];
+      organizationValue = ruizCia;
+    } 
+     if(organizationValue ==  "SABRE SOCIEDAD TECNOLOGICA S DE RL DE CV"){
+      var sabreSociedad=[" "];
+      organizationValue = sabreSociedad;
+    } 
+     if(organizationValue ==  "SANLUIS CORPORACION"){
+      var sanluisCorp=[" "];
+      organizationValue = sanluisCorp;
+    }
+    if(organizationValue ==  "SANLUIS RASSINI AUTOPARTES"){
+      var sanluisRassini=[" "];
+      organizationValue = sanluisRassini;
+    }
+    if(organizationValue ==  "SATELITES MEXICANOS"){
+      var satelitesMexicanos=["ENLACES INTEGRA"];
+      organizationValue = satelitesMexicanos;
+    }
+    if(organizationValue ==  "SCHWABE MEXICO SA DE CV"){
+      var schwabeMExico=[" "];
+      organizationValue = schwabeMExico;
+    }
+     if(organizationValue ==  "SEGUROS BANAMEX AEGON"){
+      var segurosBanamex=[" "];
+      organizationValue = segurosBanamex;
+    }
+     if(organizationValue ==  "SEGUROS BANCOMER"){
+      var segurosBancomer=[" "];
+      organizationValue = segurosBancomer;
+    }
+      if(organizationValue ==  "SEMILLAS IYADILPRO Y YA SA DE CV"){
+      var semillasYa=[" "];
+      organizationValue = semillasYa;
+    }
+       if(organizationValue ==  "SERVICIO DE APOYO CORPORATIVO SA DE CV"){
+      var servicionApoyoCorporativo=[" "];
+      organizationValue = servicionApoyoCorporativo;
+    }
+       if(organizationValue ==  "SERVICIOS INDUSTRIALES PENOLES SA DE CV"){
+      var servicionsIndustriales=[" "];
+      organizationValue = servicionsIndustriales;
+    }
+       if(organizationValue ==  "SHELL MEXICO"){
+      var shellMexico=[" "];
+      organizationValue = shellMexico;
+    }
+      if(organizationValue ==  "SIDENORABX"){
+      var sidenorabx=[" "];
+      organizationValue = sidenorabx;
+    }
+    if(organizationValue ==  "SIEMENS VDO SA DE CV"){
+      var siemensVdo=[" "];
+      organizationValue = siemensVdo;
+    }
+    if(organizationValue ==  "SINGER MEXICANA"){
+      var singerMexicana=[" "];
+      organizationValue = singerMexicana;
+    }
+     if(organizationValue ==  "SISTEMAS ELECTRICOS Y CONMUTADORES"){
+      var systemsElectronics=[" "];
+      organizationValue = systemsElectronics;
+    }
+     if(organizationValue ==  "SISTEMAS Y SERVICIOS DE COMUNICACION"){
+      var systemsAndService=[" "];
+      organizationValue = systemsAndService;
+    }
+     if(organizationValue ==  "SKF DE MEXICO SA DE CV"){
+      var skfMexico=[" "];
+      organizationValue = skfMexico;
+    }
+     if(organizationValue ==  "SOCIEDAD COOPERATIVA AGROPECUARIA DEL DISTRITO DE ALTAR"){
+      var sociedadCooperativa=[" "];
+      organizationValue = sociedadCooperativa;
+    }
+     if(organizationValue ==  "SOCIEDAD DE PRODUCCION AGROPECUARIA PALOMARES SPR DE RL DE CV"){
+      var sociedadAgropecuaria=[" "];
+      organizationValue = sociedadAgropecuaria;
+    }
+    if(organizationValue ==  "SOFTTEK MEXICO"){
+      var softtekMexico=[" "];
+      organizationValue = softtekMexico;
+    }
+    if(organizationValue ==  "SONY ELECTRONICOS DE MEXICO"){
+      var sonyelectronics=[" "];
+      organizationValue = sonyelectronics;
+    }
+     if(organizationValue ==  "SUPERIOR INDUSTRIAS DE MEXICO"){
+      var superioIndustries=[" "];
+      organizationValue = superioIndustries;
+    }
+     if(organizationValue ==  "SYNKRO"){
+      var synkro=[" "];
+      organizationValue = synkro;
+    }
+      if(organizationValue ==  "TECMARKETING"){
+      var tecmarketng=[" "];
+      organizationValue = tecmarketng;
+    }
+     if(organizationValue ==  "TECNOLOGIA OPTICA APLICADA S A DE C V"){
+      var technologiOptic=[" "];
+      organizationValue = technologiOptic;
+    }
+    if(organizationValue ==  "TEKCHEM"){
+      var tekchem=[" "];
+      organizationValue = tekchem;
+    }
+    if(organizationValue ==  "TELEFONOS DE MEXICO SAB DE CV"){
+      var phonesMexico=[" "];
+      organizationValue = phonesMexico;
+    }
+     if(organizationValue ==  "TELEFONOS DEL NOROESTE SA DE CV"){
+      var phonesNoroeste=[" "];
+      organizationValue = phonesNoroeste;
+    }
+      if(organizationValue ==  "TRACTO EQUIPOS DEL PACIFICO S A DE C V"){
+      var tectoEquipos=[" "];
+      organizationValue = tectoEquipos;
+    }
+     if(organizationValue ==  "TRANSPORTACION MARITIMA MEXICANA"){
+      var transportacionMaritima=[" "];
+      organizationValue = transportacionMaritima;
+    }
+      if(organizationValue ==  "TUBOS DE ACERO DE MEXICO SA"){
+      var tubosAcero=[" "];
+      organizationValue = tubosAcero;
+    }
+      if(organizationValue ==  "TUBOS FLEXIBLES"){
+      var tubosFlexibles=[" "];
+      organizationValue = tubosFlexibles;
+    }
+     if(organizationValue ==  "TV AZTECA SAB DE CV"){
+      var aztecaSab=[" "];
+      organizationValue = aztecaSab;
+    }
+    if(organizationValue ==  "UNISYS DE MEXICO"){
+      var unisysMexico=[" "];
+      organizationValue = unisysMexico;
+    }
+    if(organizationValue ==  "VECTOR CASA DE BOLSA"){
+      var vectorHouse=[" "];
+      organizationValue = vectorHouse;
+    }
+     if(organizationValue ==  "VERSAX"){
+      var versax=[" "];
+      organizationValue = versax;
+    }
+    if(organizationValue ==  "VIDEOMAX"){
+      var videoMax=[" "];
+      organizationValue = videoMax;
+    }
+     if(organizationValue ==  "VITRO SA DE CV"){
+      var vitroSa=[" "];
+      organizationValue = vitroSa;
+    }
+     if(organizationValue ==  "XEROX MEXICANA"){
+      var xeroxMexicana=[" "];
+      organizationValue = xeroxMexicana;
+    }
+    if(organizationValue ==  "ZINCACERO SA DE CV"){
+      var sincaderoSa=[" "];
+      organizationValue = sincaderoSa;
+    }
 
+    /*Instituciones / organizaciones no lucrativas*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     if(organizationValue ==  "ACADEMIA DE ESTUDIOS FISCALES DE LA CONTADURIA PUBLICA AC"){
+      var academyStudies=[" "];
+      organizationValue = academyStudies;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE AUDITORIA INTEGRAL AC"){
+      var academyMexicanaIntegral=[" "];
+      organizationValue = academyMexicanaIntegral;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE CIRUGIA AC"){
+      var academyMexicanaCirugia=[" "];
+      organizationValue = academyMexicanaCirugia;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE DERECHO INTERNACIONAL PRIVADO Y COMPARADO AC"){
+      var academyMexicanaRinght=[" "];
+      organizationValue = academyMexicanaRinght;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE DERECHO Y ECONOMIA AC"){
+      var academyMexicanaEconomy=[" "];
+      organizationValue = academyMexicanaEconomy;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE INGENIERIA AC"){
+      var academyMexicanaEngieenire=[" "];
+      organizationValue = academyMexicanaEngieenire;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE INVESTIGACION DE DEMOGRAFIA MEDICA AC"){
+      var academyMexicanaReseaching=[" "];
+      organizationValue = academyMexicanaReseaching;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE INVESTIGACION FISCAL AC"){
+      var academyMexicanaResearchingFiscal=[" "];
+      organizationValue = academyMexicanaResearchingFiscal;
+    }
+     if(organizationValue ==  "ACADEMIA MEXICANA DE LA LENGUA AC"){
+      var academyMexicanaLengua=[" "];
+      organizationValue = academyMexicanaLengua;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE PEDIATRIA AC"){
+      var academyMexicanaPediatria=[" "];
+      organizationValue = academyMexicanaPediatria;
+    }
+     if(organizationValue ==  "ACADEMIA MEXICANA DE TECNOLOGIA AC"){
+      var academyMexicanaTechnology=[" "];
+      organizationValue = academyMexicanaTechnology;
+    }
+     if(organizationValue ==  "ACADEMIA NACIONAL DE INVESTIGACION Y DESARROLLO AC"){
+      var academyNanionalyDeveloper=[" "];
+      organizationValue = academyNanionalyDeveloper;
+    }
+      if(organizationValue ==  "ACCION Y DESARROLLO ECOLOGICO AC"){
+      var accionDeveloperEcologic=[" "];
+      organizationValue = accionDeveloperEcologic;
+    }
+     if(organizationValue ==  "AGRUPACION POTOSINA DE HEMATOLOGIA AC"){
+      var agrupacionPotosinaHematologia=[" "];
+      organizationValue = agrupacionPotosinaHematologia;
+    }
+      if(organizationValue ==  "ASESORES PARA EL AVANCE SOCIAL"){
+      var asesoresAvanceSocial=[" "];
+      organizationValue = asesoresAvanceSocial;
+    }
+     if(organizationValue ==  "ASOCIACION DE DESARROLLO E INVESTIGACION PEDAGOGICA AC"){
+      var asociacionDeveloperREsearching=[" "];
+      organizationValue = asociacionDeveloperREsearching;
+    }
+     if(organizationValue ==  "ASOCIACION DE INGENIEROS DE MINAS METALURGISTAS Y GEOLOGOS DE MEXICO AC"){
+      var asociacionEngieeniersMinas=[" "];
+      organizationValue = asociacionEngieeniersMinas;
+    }
+      if(organizationValue ==  "ASOCIACION DE INGENIEROS PETROLEROS DE MEXICO AC"){
+      var asociacionEngieenierssMexico=[" "];
+      organizationValue = asociacionEngieenierssMexico;
+    }
+     if(organizationValue ==  "ASOCIACION DE INGENIEROS UNIVERSITARIOS MECANICOS ELECTRICISTASAC"){
+      var asociacionEngieeniersUniversityMechanic=[" "];
+      organizationValue = asociacionEngieeniersUniversityMechanic;
+    }
+     if(organizationValue ==  "ASOCIACION DE MEDICINA INTERNA DE MEXICO AC"){
+      var asociacionMedicIntern=[" "];
+      organizationValue = asociacionMedicIntern;
+    }
+    if(organizationValue ==  "ASOCIACION DENTAL MEXICANA FEDERACION NACIONAL DE COLEGIOS DE CIRUJANOS DENTISTAS AC"){
+      var asociacionNationalCirujanos=[" "];
+      organizationValue = asociacionNationalCirujanos;
+    }
+     if(organizationValue ==  "ASOCIACION FARMACEUTICA MEXICANA AC"){
+      var asociacionFarma=[" "];
+      organizationValue = asociacionFarma;
+    }
+     if(organizationValue ==  "ASOCIACION JUVENIL DE DIVULGADORES DE LA CIENCIA AC"){
+      var asociacionJuvenilCiencia=[" "];
+      organizationValue = asociacionJuvenilCiencia;
+    }
+    if(organizationValue ==  "ASOCIACION MEDICA DEL HOSPITAL ABC AC"){
+      var asociacionMedicaHospital=[" "];
+      organizationValue = asociacionMedicaHospital;
+    }
+    if(organizationValue ==  "ASOCIACION MEDICA DEL HOSPITAL INFANTIL DEL ESTADO DE SONORA AC"){
+      var asociacionMedicaHospitalSonora=[" "];
+      organizationValue = asociacionMedicaHospitalSonora;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE ACCION CONTRA LA LEPRA AC"){
+      var asociacionMexicanaAccion=[" "];
+      organizationValue = asociacionMexicanaAccion;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE CIRUGIA ENDOSCOPICA AC"){
+      var asociacionMexicanaCirugia=[" "];
+      organizationValue = asociacionMexicanaCirugia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE COMERCIO ELECTRONICO"){
+      var asociacionMexicanaComercy=[" "];
+      organizationValue = asociacionMexicanaComercy;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE CULTURA AC"){
+      var asociacionMexicanaCultura=[" "];
+      organizationValue = asociacionMexicanaCultura;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE DIRECTIVOS DE LA INVESTIGACION APLICADA Y EL DESARROLLO TECNOLOGICO AC"){
+      var asociacionMexicanaDirectivosAplicada=[" "];
+      organizationValue = asociacionMexicanaDirectivosAplicada;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE DISTRIBUIDORES DE GAS NATURAL AC"){
+      var asociacionMexicanaDistribuidores=[" "];
+      organizationValue = asociacionMexicanaDistribuidores;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE ENDOSCOPIA GINECOLOGICA Y MICROCIRUGIA AC"){
+      var asociacionMexicanaEndoscopia=[" "];
+      organizationValue = asociacionMexicanaEndoscopia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE ESTUDIOS DEL CARIBE AC"){
+      var asociacionMexicanaStudie=[" "];
+      organizationValue = asociacionMexicanaStudie;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE ESTUDIOS PARA LA DEFENSA DEL CONSUMIDOR AC"){
+      var asociacionMexicanaDefencyConsumer=[" "];
+      organizationValue = asociacionMexicanaDefencyConsumer;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE FABRICANTES DE CONDUCTORES ELECTRICOS AC"){
+      var asociacionMexicanaFabricantes=[" "];
+      organizationValue = asociacionMexicanaFabricantes;
+    }
+      if(organizationValue ==  "ASOCIACION MEXICANA DE FARMACOLOGIA AC"){
+      var asociacionMexicanaFarmacologia=[" "];
+      organizationValue = asociacionMexicanaFarmacologia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE FIBROSIS QUISTICA AC"){
+      var asociacionMexicanaFibrosis=[" "];
+      organizationValue = asociacionMexicanaFibrosis;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE GASTROENTEROLOGIA AC"){
+      var asociacionMexicanaGastro=[" "];
+      organizationValue = asociacionMexicanaGastro;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE GINECOLOGIA Y OBSTETRICIA AC"){
+      var asociacionMexicanaGinecologia=[" "];
+      organizationValue = asociacionMexicanaGinecologia;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE INFECTOLOGIA Y MICROBIOLOGIA CLINICA AC"){
+      var asociacionMexicanaInfectologia=[" "];
+      organizationValue = asociacionMexicanaInfectologia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE LA INDUSTRIA DEL CONCRETO PREMEZCLADO AC"){
+      var asociacionMexicanaindustria=[" "];
+      organizationValue = asociacionMexicanaindustria;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE METROLOGIA AC"){
+      var asociacionMexicanaemtroligy=[" "];
+      organizationValue = asociacionMexicanaemtroligy;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE MICROSCOPIA AC"){
+      var asociacionMexicanaMicroscopia=[" "];
+      organizationValue = asociacionMexicanaMicroscopia;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE PEDAGOGIA AC"){
+      var asociacionMexicanaPedagogia=[" "];
+      organizationValue = asociacionMexicanaPedagogia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE PSICOTERAPIA PSICOANALITICA DE LA INFANCIA Y ADOLESCENCIA"){
+      var asociacionMexicanaInaciaAdolecencia=[" "];
+      organizationValue = asociacionMexicanaInaciaAdolecencia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE TECNICOS DE LAS INDUSTRIAS DE LA CELULOSA Y DEL PAPEL AC"){
+      var asociacionMexicanaCelulosa=[" "];
+      organizationValue = asociacionMexicanaCelulosa;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE TECNICOS ESPECIALISTAS EN OVINOCULTURA AC"){
+      var asociacionMexicanaTecnicosOvino=[" "];
+      organizationValue = asociacionMexicanaTecnicosOvino;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DEL COBRE AC"){
+      var asociacionMexicanaCobre=[" "];
+      organizationValue = asociacionMexicanaCobre;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA PARA EL ESTUDIO DE LAS INFECCIONES NOSOCOMIALES AC"){
+      var asociacionMexicanaEstudioNoso=[" "];
+      organizationValue = asociacionMexicanaEstudioNoso;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA PARA LA INVESTIGACION DE ENFERMEDADES NEURODEGENERATIVAS Y PLASTICIDAD CEREBRAL AC"){
+      var asociacionMexicanaEstudioPlasticidad=[" "];
+      organizationValue = asociacionMexicanaEstudioPlasticidad;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA PARA LA REHABILITACION Y CONSERVACION DE LOS PSITACIDOS AC"){
+      var asociacionMexicanaEstudioConservacion=[" "];
+      organizationValue = asociacionMexicanaEstudioConservacion;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE CARDIOLOGOS DE MEXICO AC"){
+      var asociacionNationalCardiologos=[" "];
+      organizationValue = asociacionNationalCardiologos;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE ENERGIA SOLAR AC"){
+      var asociacionNationalEnetgia=[" "];
+      organizationValue = asociacionNationalEnetgia;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE ESPECIALISTAS EN CIENCIAS AVICOLAS DE MEXICO AC"){
+      var asociacionNationalEspecialista=[" "];
+      organizationValue = asociacionNationalEspecialista;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE NORMALIZACION Y CERTIFICACION DEL SECTOR ELECTRICO AC"){
+      var asociacionNationalCertifications=[" "];
+      organizationValue = asociacionNationalCertifications;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE TECNOLOGOS EN ALIMENTOS DE MEXICO AC"){
+      var asociacionNationalMeet=[" "];
+      organizationValue = asociacionNationalMeet;
+    }
+    if(organizationValue ==  "ASOCIACION PARA EL DESARROLLO INTEGRAL DE LA REGION MISANTLA AC"){
+      var asociacionNationalDeveloper=[" "];
+      organizationValue = asociacionNationalDeveloper;
+    }
+    if(organizationValue ==  "ASOCIACION PARA EL ESTUDIO Y TRATAMIENTO DEL PROCESO DE ENVEJECIMIENTO Y EL DETERIORO CELULAR AC"){
+      var asociacionStudyTratamiento=[" "];
+      organizationValue = asociacionStudyTratamiento;
+    }
+    if(organizationValue ==  "ASOCIACION PRO CONSEJO TECNICO CONSULTIVO NACIONAL DE SANIDAD ANIMAL AC"){
+      var asociacionStudyTecnico=[" "];
+      organizationValue = asociacionStudyTecnico;
+    }
+    if(organizationValue ==  "ASOCIACION PSICOANALITICA MEXICANA AC"){
+      var asociacionMexicanaPsicoanalitia=["CENTRO DE ESTUDIOS DE POSTGRADO"];
+      organizationValue = asociacionMexicanaPsicoanalitia;
+    }
+    if(organizationValue ==  "BARRA MEXICANA COLEGIO DE ABOGADOS AC"){
+      var barraMexicanaColegio=[" "];
+      organizationValue = barraMexicanaColegio;
+    }
+    if(organizationValue ==  "BIOCENOSIS AC"){
+      var biocenosisAc=[" "];
+      organizationValue = biocenosisAc;
+    }
+     if(organizationValue ==  "BOSQUE TROPICAL INVESTIGACION PARA LA CONSERVACION DE LA NATURALEZA AC"){
+      var treeTropicalyBio=[" "];
+      organizationValue = treeTropicalyBio;
+    }
+     if(organizationValue ==  "CAMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACION"){
+      var cameraNationalInsdury=["CAMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACION DELEGACION LOS MOCHIS",
+                                "CÁMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACIÓN DE TORREÓN",
+                                "CÁMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACIÓN DELEGACIÓN YUCATÁN",];
+      organizationValue = cameraNationalInsdury;
+    }
+     if(organizationValue ==  "CANTE AC"){
+      var canteAc=[" "];
+      organizationValue = canteAc;
+    }
+     if(organizationValue ==  "CAPACITACION Y DESARROLLO INTEGRAL AC"){
+      var developerIntegral=[" "];
+      organizationValue = developerIntegral;
+    }
+    if(organizationValue ==  "CENTRO AVANZADO DE COMUNICACIONES AC"){
+      var centerAdvanceComunity=[" "];
+      organizationValue = centerAdvanceComunity;
+    }
+    if(organizationValue ==  "CENTRO DE ANALISIS Y DIFUSION ECONOMICA AC"){
+      var centerAnaliticsDifusion=[" "];
+      organizationValue = centerAnaliticsDifusion;
+    }
+     if(organizationValue ==  "CENTRO DE APRENDIZAJE ORGANIZACIONAL SC"){
+      var centerLearningOrganizational=[" "];
+      organizationValue = centerLearningOrganizational;
+    }
+    if(organizationValue ==  "CENTRO DE APRENDIZAJE Y CONVIVENCIA AC"){
+      var centerLearningConvivencia=[" "];
+      organizationValue = centerLearningConvivencia;
+    }
+    if(organizationValue ==  "CENTRO DE ASESORIA E INVESTIGACION URBANA CASA Y CD AC"){
+      var centerAsesorieUrbany=[" "];
+      organizationValue = centerAsesorieUrbany;
+    }
+    if(organizationValue ==  "CENTRO DE COOPERACION REGIONAL PARA LA EDUCACION DE ADULTOS EN AMERICA LATINA Y EL CARIBE"){
+      var centerRegionalAmerican=[" "];
+      organizationValue = centerRegionalAmerican;
+    }
+    if(organizationValue ==  "CENTRO DE CRECIMIENTO AC"){
+      var centerCrecieminto=[" "];
+      organizationValue = centerCrecieminto;
+    }
+    if(organizationValue ==  "CENTRO DE DESARROLLO TECNOLOGICO Y HUMANO AC"){
+      var centerDeveloperTechnology=[" "];
+      organizationValue = centerDeveloperTechnology;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS DE INVESTIGACION DEL SURESTE AC"){
+      var centerStudiesSureste=[" "];
+      organizationValue = centerStudiesSureste;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS DE POLITICA COMPARADA AC"){
+      var centerStudiesComparada=[" "];
+      organizationValue = centerStudiesComparada;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS DE PROBLEMAS DE COYUNTURA PREVISION Y PROSPECTIVA AC"){
+      var centerStudiesProblemPrevision=[" "];
+      organizationValue = centerStudiesProblemPrevision;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS DEL SECTOR PRIVADO PARA EL DESARROLLO AC"){
+      var centerStudiesSectorPrivate =[" "];
+      organizationValue = centerStudiesSectorPrivate;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS ECONOMICOS DEL SECTOR PRIVADO AC"){
+      var centerStudiesSectorPrivateEcnomic =[" "];
+      organizationValue = centerStudiesSectorPrivateEcnomic;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS EDUCATIVOS AC"){
+      var centerStudiesEducativos =["DIRECCION ACADEMICA",
+                                    "INSTITUTO GASTRONOMICO L¿ ÉCOLE DU CHEF"];
+      organizationValue = centerStudiesEducativos;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS EN DIABETES AC"){
+      var centerStudiesDiabetes =[" "];
+      organizationValue = centerStudiesDiabetes;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS EN ECONOMIA Y EDUCACION AC"){
+      var centerStudiesEconomicEducation =[" "];
+      organizationValue = centerStudiesEconomicEducation;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS FISCALES Y LEGISLATIVOS AC"){
+      var centerStudiesFiscalies =[" "];
+      organizationValue = centerStudiesFiscalies;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS GENERALES AC"){
+      var centerStudiesGEenraly =[" "];
+      organizationValue = centerStudiesGEenraly;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS PARA EL DESARROLLO REGIONAL AC"){
+      var centerStudiesForDEveloper =[" "];
+      organizationValue = centerStudiesForDEveloper;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS PARA LA REFORMA DEL ESTADO AC"){
+      var centerStudiesreformaState =[" "];
+      organizationValue = centerStudiesreformaState;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS PARA UN PROYECTO NACIONAL ALTERNATIVOSC"){
+      var centerStudiesreNationalProject =[" "];
+      organizationValue = centerStudiesreNationalProject;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS PROSPECTIVOS AC"){
+      var centerStudiesreProspetic =[" "];
+      organizationValue = centerStudiesreProspetic;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS SOBRE ALCOHOL Y ALCOHOLISMO AC"){
+      var centerStudiesOnAlcohol =[" "];
+      organizationValue = centerStudiesOnAlcohol;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS SOCIALES AC"){
+      var centerStudiesSocial =[" "];
+      organizationValue = centerStudiesSocial;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS SOCIALES Y ECOLOGICOS AC"){
+      var centerStudiesSocialAndEcologic =[" "];
+      organizationValue = centerStudiesSocialAndEcologic;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS Y CAPACITACION PARA EL DESARROLLO SUSTENTABLE"){
+      var centerEstudiesCapactityForDeveloper =[" "];
+      organizationValue = centerEstudiesCapactityForDeveloper;
+    }
+    if(organizationValue ==  "CENTRO DE EVALUACION INTEGRALAC"){
+      var centerEvaluationIntegral =[" "];
+      organizationValue = centerEvaluationIntegral;
+    }
+    if(organizationValue ==  "CENTRO DE EXHIBICION REPRODUCCION E INVESTIGACION DE FLORA Y FAUNA AC"){
+      var centerExhitionFlora =[" "];
+      organizationValue = centerExhitionFlora;
+    }
+    if(organizationValue ==  "CENTRO DE FORMACION ASESORIA Y GESTION SOCIAL AC"){
+      var centerFormationAsesoria =[" "];
+      organizationValue = centerFormationAsesoria;
+    }
+    if(organizationValue ==  "CENTRO DE GENETICA FORESTAL AC"){
+      var centerGeneticForestal =[" "];
+      organizationValue = centerGeneticForestal;
+    }
+    if(organizationValue ==  "CENTRO DE INSTRUMENTACION Y REGISTRO SISMICO AC"){
+      var centerRegistrySismico =[" "];
+      organizationValue = centerRegistrySismico;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION ADUANERA Y DE COMERCIO INTERNACIONAL AC"){
+      var centerInvestigactionComercy =[" "];
+      organizationValue = centerInvestigactionComercy;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION DE CHIAPAS"){
+      var centerInvestigactionChiapas =[" "];
+      organizationValue = centerInvestigactionChiapas;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION EN ESTUDIOS PSICOANALITICOS AC"){
+      var centerInvestigactionStudies =[" "];
+      organizationValue = centerInvestigactionStudies;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION PARA EL DESARROLLO AC"){
+      var centerInvestigactionDevelopers =[" "];
+      organizationValue = centerInvestigactionDevelopers;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION Y ASISTENCIA TECNOLOGICA DEL ESTADO DE GUANAJUATO"){
+      var centerInvestigactionAsistencia =[" "];
+      organizationValue = centerInvestigactionAsistencia;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION Y DESARROLLO EDUCATIVO EN SECUNDARIAS DE GUERRERO"){
+      var centerInvestigactionGerrero =[" "];
+      organizationValue = centerInvestigactionGerrero;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION Y DESARROLLO PARA LA ZONA RURAL DEL DISTRITO FEDERAL AC"){
+      var centerInvestigactionDistritoFederal =[" "];
+      organizationValue = centerInvestigactionDistritoFederal;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION Y ESTUDIOS SOBRE SEXUALIDAD"){
+      var centerInvestigactionSexualidad =[" "];
+      organizationValue = centerInvestigactionSexualidad;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES BIOLOGICAS DE BAJA CALIFORNIA SUR AC"){
+      var centerInvestigactionBiology =[" "];
+      organizationValue = centerInvestigactionBiology;
+    }
+     if(organizationValue ==  "CENTRO DE INVESTIGACIONES DE CONSTRUCCION CON TIERRA Y ENERGIAS ALTERNATIVAS AC"){
+      var centerInvestigactionEarthAndEnergy =[" "];
+      organizationValue = centerInvestigactionEarthAndEnergy;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES ECOLOGICAS DEL SURESTE"){
+      var centerInvestigactionEcology =[" "];
+      organizationValue = centerInvestigactionEcology;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES EN SALUD DE COMITAN AC"){
+      var centerInvestigactionComitanEcologyComitan =[" "];
+      organizationValue = centerInvestigactionComitanEcologyComitan;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES HISTORICAS DE SAN LUIS POTOSI A C"){
+      var centerInvestigactionHistory =[" "];
+      organizationValue = centerInvestigactionHistory;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES MEDICAS BIOLOGIAS Y SOCIALES DE LOS SERVICIOS MEDICOS DEL HOSPITAL DE JESUS AC"){
+      var centerInvestigactionBiologySociales =[" "];
+      organizationValue = centerInvestigactionBiologySociales;
+    }
+     if(organizationValue ==  "CENTRO DE INVESTIGACIONES PECUARIAS DEL ESTADO DE PUEBLA AC"){
+      var centerInvestigactionPecuariasPueda =[" "];
+      organizationValue = centerInvestigactionPecuariasPueda;
+    }
+     if(organizationValue ==  "CENTRO DE INVESTIGACIONES SISMICAS AC"){
+      var centerInvestigactionSismicas =[" "];
+      organizationValue = centerInvestigactionSismicas;
+    }
+      if(organizationValue ==  "CENTRO DE MEJORAMIENTO FAMILIAR AC"){
+      var centerInvestigactionFamily =[" "];
+      organizationValue = centerInvestigactionFamily;
+    }
+     if(organizationValue ==  "CENTRO DE NUEVAS ESTRATEGIAS TECNOLOGICAS AC"){
+      var centerNewsEstretegy =[" "];
+      organizationValue = centerNewsEstretegy;
+    }
+    if(organizationValue ==  "CENTRO DE VIGILANCIA EPIDEMIOLOGICA"){
+      var centerVigilaciaEdie =[" "];
+      organizationValue = centerVigilaciaEdie;
+    }
+     if(organizationValue ==  "CENTRO DEL TERCER MUNDO PARA MANEJO DE AGUA A C"){
+      var centerThirdWorldDrive =[" "];
+      organizationValue = centerThirdWorldDrive;
+    }
+     if(organizationValue ==  "CENTRO ERICKSONIANO DE MEXICO AC"){
+      var centerEricjsont =[" "];
+      organizationValue = centerEricjsont;
+    }
+     if(organizationValue ==  "CENTRO ESTATAL TECNICO DE LA EDUCACION DEL INSTITUTO DE EDUCACION DE AGUASCALIENTES"){
+      var centerTEcnicoEducation =[" "];
+      organizationValue = centerTEcnicoEducation;
+    }
+     if(organizationValue ==  "CENTRO INTERNACIONAL DE CIENCIAS A C"){
+      var centerInternationalCiencia =[" "];
+      organizationValue = centerInternationalCiencia;
+    }
+    if(organizationValue ==  "CENTRO INTERNACIONAL LUCAS ALAMAN PARA EL CRECIMIENTO ECONOMICO AC"){
+      var centerInternationalLucasAlaman =[" "];
+      organizationValue = centerInternationalLucasAlaman;
+    }
+    if(organizationValue ==  "CENTRO LATINOAMERICANO DE LA GLOBALIDAD SC"){
+      var centerLatinoamericanGlobal =[" "];
+      organizationValue = centerLatinoamericanGlobal;
+    }
+    if(organizationValue ==  "CENTRO MEXICANO DE DERECHO AMBIENTAL A C"){
+      var centerMexicanoRight =[" "];
+      organizationValue = centerMexicanoRight;
+    }
+     if(organizationValue ==  "CENTRO MEXICANO PARA LA FILANTROPIA"){
+      var centerMexicanoFilantropia =["COORDINACION DE DIALOGO CON EL EQUIPO DE TRANSICION"];
+      organizationValue = centerMexicanoFilantropia;
+    }
+     if(organizationValue ==  "CENTRO NACIONAL DE EVALUACION PARA LA EDUCACION SUPERIOR AC"){
+      var centerNationalEvaluation =[" "];
+      organizationValue = centerNationalEvaluation;
+    }
+     if(organizationValue ==  "CENTRO NACIONAL DE INVESTIGACION EN FISIOLOGIA Y MEJORAMIENTO ANIMAL"){
+      var centerNationalResearching =[" "];
+      organizationValue = centerNationalResearching;
+    }
+     if(organizationValue ==  "CENTRO NACIONAL DE PRODUCCION SOSTENIBLE"){
+      var centerNationalSostenible =[" "];
+      organizationValue = centerNationalSostenible;
+    }
+    if(organizationValue ==  "CENTRO NACIONAL DE TRANSPLANTES"){
+      var centerNationalTransplantes =[" "];
+      organizationValue = centerNationalTransplantes;
+    }
+     if(organizationValue ==  "CENTRO NACIONAL PARA LA CALIDAD DEL PLASTICO SC"){
+      var centerNationalPlastic =[" "];
+      organizationValue = centerNationalPlastic;
+    }
+     if(organizationValue ==  "CENTRO PARA LA CALIDAD TOTAL Y LA COMPETITIVIDAD"){
+      var centerNationalCalidadTotal =[" "];
+      organizationValue = centerNationalCalidadTotal;
+    }
+     if(organizationValue ==  "CENTRO PARA LA INNOVACION Y EL DESARROLLO COMPETITIVO EMPRESARIAL SC"){
+      var centerInnovationDevelopEmpresary =[" "];
+      organizationValue = centerInnovationDevelopEmpresary;
+    }
+    if(organizationValue ==  "CENTRO REGIONAL DE INVESTIGACION PESQUERA SEMARNAP"){
+      var centerRegionalInvestigation =["CENTRO REGIONAL DE INVESTIGACION PESQUERA-MANZANILLO, COLIMA"];
+      organizationValue = centerRegionalInvestigation;
+    }
+    if(organizationValue ==  "CENTRO TATA VASCO AC"){
+      var centerTataVasco =[" "];
+      organizationValue = centerTataVasco;
+    }
+    if(organizationValue ==  "CENTRO TECNOLOGICO PARA EL DESARROLLO DE HABILIDADES DE MANUFACTURA DE GUADALAJARA AC"){
+      var centerForDeveloperHabilities=[" "];
+      organizationValue = centerForDeveloperHabilities;
+    }
+    if(organizationValue ==  "CENTRO TEPOZTLAN AC"){
+      var centerTepoztlas=[" "];
+      organizationValue = centerTepoztlas;
+    }
+     if(organizationValue ==  "CIENCIA Y TECNOLOGIA DEL MAYAB AC"){
+      var cienciaTechnology=[" "];
+      organizationValue = cienciaTechnology;
+    }
+    if(organizationValue ==  "CINEMATOGRAFICA A C"){
+      var cinematographic=[" "];
+      organizationValue = cinematographic;
+    }
+    if(organizationValue ==  "COCIA AC"){
+      var cociaAc=[" "];
+      organizationValue = cociaAc;
+    }
+     if(organizationValue ==  "COLECTIVO DE APOYO SIERRA TARAHUMARA LUIS GONZALEZ RODRIGUEZ AC"){
+      var cletiveHelpSierra=[" "];
+      organizationValue = cletiveHelpSierra;
+    }
+    if(organizationValue ==  "COLEGIO DE CONTADORES PUBLICOS DE MEXICO AC"){
+      var colegioContadoresPublic=[" "];
+      organizationValue = colegioContadoresPublic;
+    }
+    if(organizationValue ==  "COLEGIO DE INGENIEROS PETROLEROS DE MEXICO A C"){
+      var colegioEngieeniersPetroleros=[" "];
+      organizationValue = colegioEngieeniersPetroleros;
+    }
+    if(organizationValue ==  "COLEGIO MEXICANO DE ABOGADOS AC"){
+      var colegioColegioMexicanos=[" "];
+      organizationValue = colegioColegioMexicanos;
+    }
+    if(organizationValue ==  "COLEGIO NACIONAL DE CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA AC"){
+      var colegioNationalPilitic=[" "];
+      organizationValue = colegioNationalPilitic;
+    }
+     if(organizationValue ==  "COLEGIO NACIONAL DE INGENIEROS QUIMICOS Y DE QUIMICOS AC"){
+      var colegioNationalEngieeniersQuimic=[" "];
+      organizationValue = colegioNationalEngieeniersQuimic;
+    }
+     if(organizationValue ==  "COMPITE AC"){
+      var compiteAc=[" "];
+      organizationValue = compiteAc;
+    }
+     if(organizationValue ==  "COMUNIDAD ASHKENAZI DE MEXICO A C"){
+      var comunityMexico=[" "];
+      organizationValue = comunityMexico;
+    }
+    if(organizationValue ==  "CONCIENCIA ECOLOGICA DE AGUASCALIENTES AC"){
+      var concienciaEcology=[" "];
+      organizationValue = concienciaEcology;
+    }
+    if(organizationValue ==  "CONSEJO NACIONAL REGULADOR DE AGRICULTURA ORGANICA AC"){
+      var consejoNationalRegulador=[" "];
+      organizationValue = consejoNationalRegulador;
+    }
+    if(organizationValue ==  "CONSEJO REGULADOR DEL TEQUILA AC"){
+      var consejoREguladorTequila=[" "];
+      organizationValue = consejoREguladorTequila;
+    }
+    if(organizationValue ==  "CONSERVACION HUMANA AC"){
+      var conservationHumana=[" "];
+      organizationValue = conservationHumana;
+    }
+    if(organizationValue ==  "CONSORCIO LATINOAMERICANO PARA CAPACITACION EN MICROFINANCIAMIENTO SC"){
+      var consorcioCapacitation=[" "];
+      organizationValue = consorcioCapacitation;
+    }
+    if(organizationValue ==  "CRISOL CENTRO DE INVESTIGACIONES PSICOSOCIALES AC"){
+      var crisolCenterResearches=[" "];
+      organizationValue = crisolCenterResearches;
+    }
+    if(organizationValue ==  "CUADERNOS DE NUTRICION AC"){
+      var NoteBooksNutrition=[" "];
+      organizationValue = NoteBooksNutrition;
+    }
+    if(organizationValue ==  "DESARROLLO DE LA CULTURA ECOLOGICA AC"){
+      var developerCultura=[" "];
+      organizationValue = developerCultura;
+    }
+    if(organizationValue ==  "DUCKS UNLIMITED DE MEXICO AC"){
+      var duksUnlimited=[" "];
+      organizationValue = duksUnlimited;
+    }
+    if(organizationValue ==  "EL COLEGIO DE LEON AC"){
+      var coelgioLyon=[" "];
+      organizationValue = coelgioLyon;
+    }
+     if(organizationValue ==  "EL CORZO SAN RAFAEL AC"){
+      var corzoSan=[" "];
+      organizationValue = corzoSan;
+    }
+    if(organizationValue ==  "ESPACIOS NATURALES Y DESARROLLO SUSTENTABLE AC"){
+      var esapciosNaruralesDesarrollo=[" "];
+      organizationValue = esapciosNaruralesDesarrollo;
+    }
+     if(organizationValue ==  "ESTUDIOS RURALES Y ASESORIA CAMPESINA AC"){
+      var estuidosRurales=[" "];
+      organizationValue = estuidosRurales;
+    }    
+      if(organizationValue ==  "ETNOBIOLOGIA PARA LA CONSERVACION AC"){
+      var etnobiologiaConservation=[" "];
+      organizationValue = etnobiologiaConservation;
+    } 
+      if(organizationValue ==  "FEDERACION CANOFILA MEXICANA AC"){
+      var federacionCanofila=[" "];
+      organizationValue = federacionCanofila;
+    }  
+      if(organizationValue ==  "FEDERACION DE SOCIEDADES CIENTIFICAS DE MEXICO AC"){
+      var federacionSociedades=[" "];
+      organizationValue = federacionSociedades;
+    } 
+      if(organizationValue ==  "FEDERACION MEXICANA DE COLEGIOS DE OBSTETRICIA Y GINECOLOGIA AC"){
+      var federacionMexicanaColegios=[" "];
+      organizationValue = federacionMexicanaColegios;
+    } 
+     if(organizationValue ==  "FEDERACION MEXICANA DE ENDOSCOPIA GINECOLOGICA AC"){
+      var federacionMexicanaEndoscopia=[" "];
+      organizationValue = federacionMexicanaEndoscopia;
+    } 
+     if(organizationValue ==  "FIDEICOMISO ARCHIVOS PLUTARCO ELIAS CALLES Y FERNANDO TORREBLANCA"){
+      var federacionFilesPlutarco=[" "];
+      organizationValue = federacionFilesPlutarco;
+    } 
+     if(organizationValue ==  "FIDEICOMISO FONDO PARA LA BIODIVERSIDAD"){
+      var federacionFondo=["COMISION INTERSECRETARIAL"];
+      organizationValue = federacionFondo;
+    } 
+    if(organizationValue ==  "FOMENTO DE NUTRICION Y SALUD AC"){
+      var fomentoNutricion=[" "];
+      organizationValue = fomentoNutricion;
+    }
+    if(organizationValue ==  "FONDO DE ESTUDIOS E INVESTIGACIONES RICARDO J ZEVADA"){
+      var fomentoEstudiosResearching=[" "];
+      organizationValue = fomentoEstudiosResearching;
+    }
+     if(organizationValue ==  "FONDO TERRA SC"){
+      var fondoterra=[" "];
+      organizationValue = fondoterra;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO JALISCIENSE AC"){
+      var fundationMexicanaForSalud=[" "];
+      organizationValue = fundationMexicanaForSalud;
+    }
+    if(organizationValue ==  "FUNDACION ARTURO ROSENBLUETH AC"){
+      var fundacionArturo=[" "];
+      organizationValue = fundacionArturo;
+    }
+     if(organizationValue ==  "FUNDACION AVENTIS AC"){
+      var fundacionAventis=[" "];
+      organizationValue = fundacionAventis;
+    }
+      if(organizationValue ==  "FUNDACION CIENTIFICA JOSE M GARCIA VALDECASAS SANTA MARIA AC"){
+      var fundationCintificJose=[" "];
+      organizationValue = fundationCintificJose;
+    }
+     if(organizationValue ==  "FUNDACION CLINICA LONDRES AC"){
+      var fundationClinicaLondres=[" "];
+      organizationValue = fundationClinicaLondres;
+    } 
+     if(organizationValue ==  "FUNDACION CLINICA MEDICA SUR AC"){
+      var fundationClinicaMEdica=[" "];
+      organizationValue = fundationClinicaMEdica;
+    } 
+     if(organizationValue ==  "FUNDACION COMPARTE VIDA AC"){
+      var fundationShare=[" "];
+      organizationValue = fundationShare;
+    }
+     if(organizationValue ==  "FUNDACION DE ASISTENCIA PRIVADA CONDE DE VALENCIANA IAP"){
+      var fundationPrivateValenciana=[" "];
+      organizationValue = fundationPrivateValenciana;
+    }
+     if(organizationValue ==  "FUNDACION ECOLOGICA MEXICANA AC"){
+      var fundationEcology=[" "];
+      organizationValue = fundationEcology;
+    }
+     if(organizationValue ==  "FUNDACION EDUARDO SELER PARA LA INVESTIGACION ARQUEOLOGICA Y ETNOHISTORICA AC"){
+      var fundationEduardoResearchng=["ESCUELA DE EDUCACION SUPERIOR EN CIENCIAS HISTORICAS Y ANTROPOLOGICAS"];
+      organizationValue = fundationEduardoResearchng;
+    }
+    if(organizationValue ==  "FUNDACION GUILLLERMO GONZALEZ CAMARENA AC"){
+      var fundationGuillermo=[" "];
+      organizationValue = fundationGuillermo;
+    }
+    if(organizationValue ==  "FUNDACION HEBERTO CASTILLO MARTINEZ A C"){
+      var fundationHerbeto=[" "];
+      organizationValue = fundationHerbeto;
+    }
+     if(organizationValue ==  "FUNDACION HERDEZ AC"){
+      var fundationHerdez=[" "];
+      organizationValue = fundationHerdez;
+    }
+     if(organizationValue ==  "FUNDACION HIDALGO PRODUCE AC"){
+      var fundationHidalgo=[" "];
+      organizationValue = fundationHidalgo;
+    }
+    if(organizationValue ==  "FUNDACION ICA AC"){
+      var fundationIcaAc=[" "];
+      organizationValue = fundationIcaAc;
+    }
+    if(organizationValue ==  "FUNDACION JAVIER BARROS SIERRA A C"){
+      var fundationJavier=["CENTRO DE INVESTIGACION SISMICA"];
+      organizationValue = fundationJavier;
+    }
+    if(organizationValue ==  "FUNDACION LUIS DONALDO COLOSIO MURRIETA AC"){
+      var fundationLuisDonaldo=[" "];
+      organizationValue = fundationLuisDonaldo;
+    }
+    if(organizationValue ==  "FUNDACION LUSARA PARA LA INVESTIGACION CIENTIFICA AC"){
+      var fundationLusara=[" "];
+      organizationValue = fundationLusara;
+    }
+    if(organizationValue ==  "FUNDACION MAR DE CORTEZ AC"){
+      var fundationMarCortez=[" "];
+      organizationValue = fundationMarCortez;
+    }
+     if(organizationValue ==  "FUNDACION MEXICANA PARA ENFERMEDADES HEPATICAS AC"){
+      var fundationMexicanaForepaticas=[" "];
+      organizationValue = fundationMexicanaForepaticas;
+    }
+     if(organizationValue ==  "FUNDACION MEXICANA PARA LA CALIDAD TOTAL AC"){
+      var fundationMexicanaForCalidad=[" "];
+      organizationValue = fundationMexicanaForCalidad;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA EDUCACION AMBIENTAL AC"){
+      var fundationMexicanaForEducation=[" "];
+      organizationValue = fundationMexicanaForEducation;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA INVESTIGACION AGROPECUARIA Y FORESTAL AC"){
+      var fundationMexicanaForResearchindForestal=["CAMPO EXPERIMENTAL BAJIO",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL CENTRO (GUANAJUATO)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL CENTRO (MEXICO)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL GOLFO CENTRO (TABASCO)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL GOLFO CENTRO (VERACRUZ)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL NORESTE (NUEVO LEON)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL NORESTE (TAMAULIPAS)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL NOROESTE (SINALOA)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL NORTE CENTRO (CHIHUAHUA)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL PACIFICO CENTRO (JALISCO)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL PACIFICO CENTRO (NAYARIT)",
+                                                  "CENTRO NACIONAL DE INVESTIGACION EN FISIOLOGIA Y MEJORAMIENTO ANIMAL",
+                                                  "CENTRO NACIONAL DE INVESTIGACION EN MICROBIOLOGIA VETERINARIA",
+                                                  "CENTRO NACIONAL DE INVESTIGACION EN PARASITOLOGIA VETERINARIA",];
+      organizationValue = fundationMexicanaForResearchindForestal;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD AC"){
+      var fundationMexicanaForSalud=["PROYECTO ECONOMIA Y SALUD"];
+      organizationValue = fundationMexicanaForSalud;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO NUEVO LEON AC"){
+      var fundationMexicanaForSaludChapter=[" "];
+      organizationValue = fundationMexicanaForSaludChapter;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO PENINSULAR AC"){
+      var fundationMexicanaForSaludChapterPeninsular=[" "];
+      organizationValue = fundationMexicanaForSaludChapterPeninsular;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO REGIONAL FRONTERA NORTE AC"){
+      var fundationMexicanaForSaludChapterRegional=[" "];
+      organizationValue = fundationMexicanaForSaludChapterRegional;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO SONORA AC"){
+      var fundationMexicanaForSaludChapterSonora=[" "];
+      organizationValue = fundationMexicanaForSaludChapterSonora;
+    }
+    if(organizationValue ==  "FUNDACION MEXICOESTADOS UNIDOS PARA LA CIENCIA AC"){
+      var fundationMexicanaUnidosCiencia=[" "];
+      organizationValue = fundationMexicanaUnidosCiencia;
+    }
+     if(organizationValue ==  "FUNDACION MINSA AC"){
+      var fundationMinsa=[" "];
+      organizationValue = fundationMinsa;
+    }
+     if(organizationValue ==  "FUNDACION NUEVA SOCIEDAD RURAL AC"){
+      var fundationNewSociety=[" "];
+      organizationValue = fundationNewSociety;
+    }
+     if(organizationValue ==  "FUNDACION PRODUCE PUEBLA AC"){
+      var fundationProduce=[" "];
+      organizationValue = fundationProduce;
+    }
+     if(organizationValue ==  "FUNDACION SALVADOR SANCHEZ COLIN CICTAMEX SC"){
+      var fundationPSalvadorSanchez=[" "];
+      organizationValue = fundationPSalvadorSanchez;
+    }
+     if(organizationValue ==  "FUNDACION XOCHITLA AC"){
+      var fundationXochitlaAc=[" "];
+      organizationValue = fundationXochitlaAc;
+    }
+     if(organizationValue ==  "GRUPO AUTONOMO PARA LA INVESTIGACION AMBIENTAL AC"){
+      var groupAutonomy=[" "];
+      organizationValue = groupAutonomy;
+    }
+    if(organizationValue ==  "GRUPO DE ESTUDIOS AMBIENTALES AC"){
+      var groupStudies=[" "];
+      organizationValue = groupStudies;
+    }
+    if(organizationValue ==  "GRUPO ECOSIEMENS"){
+      var groupEcosistemas=[" "];
+      organizationValue = groupEcosistemas;
+    }
+    if(organizationValue ==  "GRUPO INTERDISCIPLINARIO DE TECNOLOGIA RURAL APROPIADA A C"){
+      var groupTechnology=[" "];
+      organizationValue = groupTechnology;
+    }
+    if(organizationValue ==  "HOMBRE NATURALEZA AC"){
+      var manNaturaleza=[" "];
+      organizationValue = manNaturaleza;
+    }
+     if(organizationValue ==  "IDF CONGRESO MEXICO 2OOO AC"){
+      var congressMexico=[" "];
+      organizationValue = congressMexico;
+    }
+    if(organizationValue ==  "ILSI DE MEXICO AC"){
+      var ilsiMexico=[" "];
+      organizationValue = ilsiMexico;
+    }
+     if(organizationValue ==  "INGENIEROS AGRONOMOS PARASITOLOGOS AC"){
+      var engieeniersAgronomos=[" "];
+      organizationValue = engieeniersAgronomos;
+    }
+     if(organizationValue ==  "INSTITUTO AUTONOMO DE INVESTIGACIONES ECOLOGICAS AC"){
+      var instituteAutonomy=[" "];
+      organizationValue = instituteAutonomy;
+    }
+     if(organizationValue ==  "INSTITUTO CULTURAL LUDWIG VON MISES AC"){
+      var insituteCulturalVon=[" "];
+      organizationValue = insituteCulturalVon;
+    }
+     if(organizationValue ==  "INSTITUTO DANONE AC"){
+      var insituteDanone=[" "];
+      organizationValue = insituteDanone;
+    }
+    if(organizationValue ==  "INSTITUTO DE ADMINISTRACION PUBLICA DEL ESTADO DE QUERETARO"){
+      var insituteAdministrationPublica=[" "];
+      organizationValue = insituteAdministrationPublica;
+    }
+    if(organizationValue ==  "INSTITUTO DE CULTURA ECOLOGICA AC"){
+      var insituteCulturaEcology=[" "];
+      organizationValue = insituteCulturaEcology;
+    }
+    if(organizationValue ==  "INSTITUTO DE ENDOMETAENDODONCIA AC"){
+      var insituteEndoMeta=[" "];
+      organizationValue = insituteEndoMeta;
+    }
+    if(organizationValue ==  "INSTITUTO DE ESPECIALIZACION PARA EJECUTIVOS AC"){
+      var insituteForEjecutivos=[" "];
+      organizationValue = insituteForEjecutivos;
+    }
+    if(organizationValue ==  "INSTITUTO DE FOMENTO E INVESTIGACION EDUCATIVA AC"){
+      var insituteForEducativa=[" "];
+      organizationValue = insituteForEducativa;
+    }
+    if(organizationValue ==  "INSTITUTO DE INVESTIGACION DE MEGAFAUNA MARINA Y COSTERA A C"){
+      var insituteResearchingMarina=[" "];
+      organizationValue = insituteResearchingMarina;
+    }
+     if(organizationValue ==  "INSTITUTO DE INVESTIGACION ECONOMICA Y SOCIAL LUCAS ALAMAN A C"){
+      var insituteResearchingEconomic=[" "];
+      organizationValue = insituteResearchingEconomic;
+    }
+     if(organizationValue ==  "INSTITUTO DE INVESTIGACIONES CIENTIFICAS A C"){
+      var insituteResearchingCientific=[" "];
+      organizationValue = insituteResearchingCientific;
+    }
+    if(organizationValue ==  "INSTITUTO DE INVESTIGACIONES CIENTIFICAS HANS SELYE AC"){
+      var insituteResearchingCientificHans=[" "];
+      organizationValue = insituteResearchingCientificHans;
+    } 
+    if(organizationValue ==  "INSTITUTO DE LA FAMILIA A C"){
+      var insituteFamily=[" "];
+      organizationValue = insituteFamily;
+    }
+    if(organizationValue ==  "INSTITUTO DE MICOLOGIA NEOTROPICAL APLICADA AC"){
+      var insituteMicologiaAplicada=[" "];
+      organizationValue = insituteMicologiaAplicada;
+    }
+     if(organizationValue ==  "INSTITUTO DE OFTALMOLOGIA"){
+      var insituteOftalmologia=[" "];
+      organizationValue = insituteOftalmologia;
+    }
+    if(organizationValue ==  "INSTITUTO DE PROPOSICIONES ESTRATEGICAS AC"){
+      var insituteEstrategi=[" "];
+      organizationValue = insituteEstrategi;
+    }
+     if(organizationValue ==  "INSTITUTO DE RECURSOS BIOTICOS DE TABASCO A C"){
+      var insituteResourceBiotico=[" "];
+      organizationValue = insituteResourceBiotico;
+    }
+     if(organizationValue ==  "INSTITUTO DE SALUD AMBIENTE Y TRABAJO SC"){
+      var insituteSaludAmbiente=[" "];
+      organizationValue = insituteSaludAmbiente;
+    }
+    if(organizationValue ==  "INSTITUTO INTERNACIONAL DEL DERECHO Y DEL ESTADO AC"){
+      var insituteInternational=[" "];
+      organizationValue = insituteInternational;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE CONTADORES PUBLICOS AC"){
+      var insituteMexicanoContadores=[" "];
+      organizationValue = insituteMexicanoContadores;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE CONTROL DE CALIDAD A C"){
+      var insituteMexicanoControl=[" "];
+      organizationValue = insituteMexicanoControl;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE EJECUTIVOS DE FINANZAS AC"){
+      var insituteMexicanoFinanzaz=[" "];
+      organizationValue = insituteMexicanoFinanzaz;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE EJECUTIVOS EN FINANZAS AC UNID NL"){
+      var insituteMexicanoEjecutivos=[" "];
+      organizationValue = insituteMexicanoEjecutivos;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE ESTRATEGIAS SC"){
+      var insituteMexicanoEstrategias=[" "];
+      organizationValue = insituteMexicanoEstrategias;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE ESTUDIOS SOCIALES AC"){
+      var insituteMexicanoSociales=[" "];
+      organizationValue = insituteMexicanoSociales;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE INVESTIGACION DE FAMILIA Y POBLACION AC"){
+      var insituteMexicanoSFamily=[" "];
+      organizationValue = insituteMexicanoSFamily;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE INVESTIGACIONES AEROSTATICAS AC"){
+      var insituteMexicanoAeroestaticas=[" "];
+      organizationValue = insituteMexicanoAeroestaticas;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE LA AUDICION Y EL LENGUAJE AC"){
+      var insituteMexicanoAudicion=[" "];
+      organizationValue = insituteMexicanoAudicion;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE NORMALIZACION Y CERTIFICACION A C"){
+      var insituteMexicanoCertification=[" "];
+      organizationValue = insituteMexicanoCertification;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE RECURSOS NATURALES RENOVABLES AC"){
+      var insituteMexicanoResoucesNaturales=[" "];
+      organizationValue = insituteMexicanoResoucesNaturales;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE SEXOLOGIA AC"){
+      var insituteMexicanoSexologia=[" "];
+      organizationValue = insituteMexicanoSexologia;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE TANATOLOGIA AC"){
+      var insituteMexicanoTanatologia=[" "];
+      organizationValue = insituteMexicanoTanatologia;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE TECNOLOGIAS APROPIADAS SC"){
+      var insituteMexicanoTechnologyApro=[" "];
+      organizationValue = insituteMexicanoTechnologyApro;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO PARA LA EXCELENCIA EDUCATIVA AC"){
+      var insituteMexicanoExcelencia=[" "];
+      organizationValue = insituteMexicanoExcelencia;
+    }
+     if(organizationValue ==  "INSTITUTO MEXIQUENSE DE CULTURA AC"){
+      var insituteMexiquenseCutura=[" "];
+      organizationValue = insituteMexiquenseCutura;
+    }
+     if(organizationValue ==  "INSTITUTO NACIONAL DE CAPACITACION AGROPECUARIA AC"){
+      var insituteNationalCapacitation=[" "];
+      organizationValue = insituteNationalCapacitation;
+    }
+    if(organizationValue ==  "INSTITUTO NACIONAL DE TUBERIAS PLASTICAS AC"){
+      var insituteNationalTuberias=[" "];
+      organizationValue = insituteNationalTuberias;
+    }
+    if(organizationValue ==  "INSTITUTO PARA EL DESARROLLO INTEGRAL DE LA CALIDAD EN LA EDUCACION AC"){
+      var insituteNationalDeveloperIntegral=[" "];
+      organizationValue = insituteNationalDeveloperIntegral;
+    }
+    if(organizationValue ==  "INSTITUTO PARA LA PLANEACION DEL DESARROLLO A C"){
+      var insitutePalaneacionDeveloperl=[" "];
+      organizationValue = insitutePalaneacionDeveloperl;
+    }
+    if(organizationValue ==  "INSTITUTO TAMAULIPECO DE INVESTIGACION EDUCATIVA Y DESARROLLO DE LA DOCENCIA"){
+      var insituteResearchingEducativa=[" "];
+      organizationValue = insituteResearchingEducativa;
+    }
+     if(organizationValue ==  "INSTITUTO TECNOLOGICO DE TELEFONOS DE MEXICO SC"){
+      var insituteTechnologPhones=[" "];
+      organizationValue = insituteTechnologPhones;
+    }
+     if(organizationValue ==  "INSTITUTO TECNOLOGICO DEL PLASTICO AC"){
+      var insituteTechnologPlastic=[" "];
+      organizationValue = insituteTechnologPlastic;
+    }
+     if(organizationValue ==  "INTEGRACION GANADERA AC"){
+      var insituteGanadera=[" "];
+      organizationValue = insituteGanadera;
+    }
+    if(organizationValue ==  "INVESTIGACION DEL EQUILIBRIO BIOTICO EN YUCATAN AC"){
+      var insituteEquolibrio=[" "];
+      organizationValue = insituteEquolibrio;
+    }
+     if(organizationValue ==  "INVESTIGACION Y CAPACITACION EN SALUD REPRODUCTIVA AC"){
+      var insituteCapacitationSalud=[" "];
+      organizationValue = insituteCapacitationSalud;
+    }
+     if(organizationValue ==  "INVESTIGACION Y DESARROLLO EDUCATIVO APLICADO SC"){
+      var insituteDEveloperEducativo=[" "];
+      organizationValue = insituteDEveloperEducativo;
+    }
+     if(organizationValue ==  "LA CIENCIA Y LA TECNOLOGIA AL SERVICIO DEL HOMBRE AC"){
+      var TechnologyServices=[" "];
+      organizationValue = TechnologyServices;
+    }
+     if(organizationValue ==  "MANCERA SC ERNEST&YOUNG"){
+      var AMneraErnest=[" "];
+      organizationValue = AMneraErnest;
+    }
+     if(organizationValue ==  "ORGANIZACION VIDA SILVESTRE AC"){
+      var rganizationLife=[" "];
+      organizationValue = rganizationLife;
+    }
+    if(organizationValue ==  "PATRONATO DEL PARQUE ECOLOGICO"){
+      var patronatoPark=[" "];
+      organizationValue = patronatoParks;
+    }
+    if(organizationValue ==  "PATRONATO DEL PARQUE ECOLOGICO DE XOCHIMILCO AC"){
+      var patronatoParkXochimilco=[" "];
+      organizationValue = patronatoParkXochimilco;
+    }
+     if(organizationValue ==  "PHILOS AC"){
+      var philos=[" "];
+      organizationValue = philos;
+    }
+     if(organizationValue ==  "PROGRAMA DE ACCION FORESTAL TROPICAL AC"){
+      var programAccionForestal=[" "];
+      organizationValue = programAccionForestal;
+    }
+    if(organizationValue ==  "PROGRAMA INTERNACIONAL COOPERATIVO DEL TIZON TARDIO DE LA PAPA AC"){
+      var internationalCooperativo=[" "];
+      organizationValue = internationalCooperativo;
+    }
+    if(organizationValue ==  "PRONATURA AC"){
+      var pronatura=[" "];
+      organizationValue = pronatura;
+    }
+     if(organizationValue ==  "PRONATURA NORESTE AC"){
+      var pronaturaNoreste=[" "];
+      organizationValue = pronaturaNoreste;
+    }
+     if(organizationValue ==  "PRONATURA PENINSULA DE YUCATAN AC"){
+      var pronaturaPeninsula=[" "];
+      organizationValue = pronaturaPeninsula;
+    }
+     if(organizationValue ==  "PRONATURA SUR AC"){
+      var pronaturaSur=[" "];
+      organizationValue = pronaturaSur;
+    }
+    if(organizationValue ==  "PROYECTO CAMINA AC"){
+      var projectWalk=[" "];
+      organizationValue = projectWalk;
+    }
+    if(organizationValue ==  "RED DE INVESTIGACION URBANA AC"){
+      var redResearchingUrbana=[" "];
+      organizationValue = redResearchingUrbana;
+    }
+    if(organizationValue ==  "SANUT AC"){
+      var sanut=[" "];
+      organizationValue = sanut;
+    }
+    if(organizationValue ==  "SEMINARIO DE SOCIOPSICOANALISIS AC"){
+      var seminarioSocio=[" "];
+      organizationValue = seminarioSocio;
+    }
+    if(organizationValue ==  "SERVICIOS DE APOYO A LA INVESTIGACION MEDICA AC"){
+      var servicesApoyoResearching=[" "];
+      organizationValue = servicesApoyoResearching;
+    }
+    if(organizationValue ==  "SOCIEDAD DE SOLIDARIDAD SOCIAL"){
+      var servicesSolidaridad=[" "];
+      organizationValue = servicesSolidaridad;
+    }
+    if(organizationValue ==  "SOCIEDAD MATEMATICA MEXICANA AC"){
+      var societyMatematics=[" "];
+      organizationValue = societyMatematics;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA DE BIOLOGIA DE LA REPRODUCCION HUMANA AC"){
+      var societyBiology=[" "];
+      organizationValue = societyBiology;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE BIOQUIMICA AC"){
+      var societyMexicanaQuimic=[" "];
+      organizationValue = societyMexicanaQuimic;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE CARDIOLOGIA AC"){
+      var societyMexicanaCardiology=[" "];
+      organizationValue = societyMexicanaCardiology;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE CRISTALOGRAFIA AC"){
+      var societyMexicanaCritalofia=[" "];
+      organizationValue = societyMexicanaCritalofia;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE FISICA AC"){
+      var societyMexicanaFisica=[" "];
+      organizationValue = societyMexicanaFisica;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE HISTOCOMPATIBILIDAD Y TRANSPLANTE AC"){
+      var societyMexicanaTransplante=[" "];
+      organizationValue = societyMexicanaTransplante;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE INGENIERIA ESTRUCTURAL AC"){
+      var societyMexicanaEngeenier=[" "];
+      organizationValue = societyMexicanaEngeenier;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE INGENIERIA SISMICA AC"){
+      var societyMexicanaEngeenierSismica=[" "];
+      organizationValue = societyMexicanaEngeenierSismica;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE MECANICA DE SUELOS A C"){
+      var societyMexicanaMechanic=[" "];
+      organizationValue = societyMexicanaMechanic;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE NUTRICION Y ENDOCRINOLOGIA AC"){
+      var societyMexicanaNutrition=[" "];
+      organizationValue = societyMexicanaNutrition;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE OFTALMOLOGIA AC"){
+      var societyMexicanaOftamologia=[" "];
+      organizationValue = societyMexicanaOftamologia;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA DE OTORRINOLARINGOLOGIA Y CIRUGIA DE CABEZA Y CUELLO AC"){
+      var societyMexicanaCirugia=[" "];
+      organizationValue = societyMexicanaCirugia;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA DE PLANCTOLOGIA AC"){
+      var sociedadMexicanaPlanctologia=[" "];
+      organizationValue = sociedadMexicanaPlanctologia;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA DE PSIQUIATRIA BIOLOGICA AC"){
+      var sociedadMexicanaBiology=[" "];
+      organizationValue = sociedadMexicanaBiology;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA PARA LA DIVULGACION DE LA CIENCIA Y LA TECNICA AC"){
+      var sociedadMexicanaCienciaTecnica=[" "];
+      organizationValue = sociedadMexicanaCienciaTecnica;
+    }
+     if(organizationValue ==  "SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES AC"){
+      var sociedadMexicanaStudies=["SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES - CAMPUS MONTERREY",
+                                    "SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES CAMPUS CIUDAD DE MEXICO",];
+      organizationValue = sociedadMexicanaStudies;
+    }
+    if(organizationValue ==  "SOCIEDAD PARA EL ESTUDIO DE LOS RECURSOS BIOTICOS DE OAXACA AC"){
+      var sociedadStudyREsources=[" "];
+      organizationValue = sociedadStudyREsources;
+    }
+    if(organizationValue ==  "SOCIEDAD PARA LOS RECURSOS BIOTICOS DE OAXACA AC"){
+      var sociedadREsourcesBioticos=[" "];
+      organizationValue = sociedadREsourcesBioticos;
+    }
+    if(organizationValue ==  "TECNOLOGIAS NATURALES INTERNACIONALES"){
+      var technologyNaturales=[" "];
+      organizationValue = technologyNaturales;
+    }
+    if(organizationValue ==  "TRANSPARENCIA MEXICANA AC"){
+      var tranparenciaMexicana=[" "];
+      organizationValue = tranparenciaMexicana;
+    }
+    if(organizationValue ==  "TRAZOS CENTRO DE INVESTIGACION AC"){
+      var trazosCenterResearching=[" "];
+      organizationValue = trazosCenterResearching;
+    }
+    if(organizationValue ==  "UNIDAD DE SERVICIOS EMPRESARIALES DEL NORTE AC"){
+      var unitServices=[" "];
+      organizationValue = unitServices;
+    }
+    if(organizationValue ==  "UNION MEXICANA DE AGRUPACIONES ESPELEOLOGICAS AC"){
+      var UnityMexicana=[" "];
+      organizationValue = UnityMexicana;
+    }
+    if(organizationValue ==  "UNION MEXICANA DE AGRUPACIONES ESPELEOLOGICAS AC"){
+      var UnityMexicana=[" "];
+      organizationValue = UnityMexicana;
+    }
 
 
 
@@ -20413,7 +24437,7 @@ function changeSector()
                'Instituciones del sector entidades paraestatales'=>' Instituciones del sector entidades paraestatales',
                'Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
                'Instituciones del sector de educación superior públicas'=>'Instituciones del sector de educación superior públicas',             
-               'Instituciones del sector de educación superior privadas'=>' Instituciones del sector de educación superior privadas',
+               'Instituciones del sector de educación superior privadas'=>'Instituciones del sector de educación superior privadas',
                'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)',
                'Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
                'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras',
