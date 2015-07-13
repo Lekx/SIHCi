@@ -43,12 +43,7 @@ $('.search-form form').submit(function(){
 	'model'=>$model,
 )); ?>
 
-<?php 
-$pjs = Projects::model()->findByAttributes(array('id_curriculum'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
-$pjs->search();
-//var_dump($pjs);
 
-?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'projects-grid',
@@ -58,7 +53,7 @@ $pjs->search();
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'dataProvider'=>$model->search(), */
 	'columns'=>array(
-		'id_curriculum',
+		//'id_curriculum',
 		array(
 			'name'=>'is_sponsored',
 			'header'=>'',
@@ -98,7 +93,7 @@ $pjs->search();
 						//'label' => '',
 						'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/editar.png',
 						'visible'=>'($data->status == "BORRADOR" || $data->status == "MODIFICAR") ? TRUE : FALSE',
-						'url'=> '"projects/update/".$data->id',
+						'url'=> '"update/".$data->id',
 						'options'=>array('class'=>'ttip','title'=>'Modificar',),
 					),
 					'seguim' => array(
@@ -110,9 +105,9 @@ $pjs->search();
 					'delete' => array(
 						'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/eliminar.png',
 						'visible'=>'$data->status == "BORRADOR" ? TRUE : FALSE',
-						'url'=> '"projects/update/".$data->id',
+						'url'=> '"update/".$data->id',
 						'options'=>array('title'=>'Eliminar',),
-						
+
 					),
 		),
 	),),

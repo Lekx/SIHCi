@@ -209,12 +209,12 @@ class ProjectsController extends Controller
 			}
 
 			if($_POST[1]== "draft")
-				$model->status = "borrador";
+				$model->status = "BORRADOR";
 			else
 				$model->status = "DIVUH";
 
 			$model->folio = "-1";
-			$model->is_sponsored = 0;
+			//$model->is_sponsored = 0;
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
 
