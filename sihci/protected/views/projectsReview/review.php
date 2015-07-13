@@ -220,7 +220,8 @@ if(in_array(Yii::app()->user->Rol->alias, explode(",",$model->status)) || Yii::a
 
 
 //<!--  ASIGNACIÓN DE NÚMERO DE REGISTRO -->
-	if(substr(Yii::app()->user->Rol->alias,0,3) && $model->registration_number == "-1"){ 
+	//if(substr(Yii::app()->user->Rol->alias,0,3) && $model->registration_number == "-1"){  // ESTE ESTABA PARA COMITÉS
+	if(Yii::app()->user->Rol->alias=="SGEI" && $model->registration_number == "-1"){ 
 
 
 	 $form=$this->beginWidget('CActiveForm', array('id'=>'regNumber-form','enableAjaxValidation'=>true,)); 
