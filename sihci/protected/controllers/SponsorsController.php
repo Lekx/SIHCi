@@ -439,7 +439,6 @@ class SponsorsController extends Controller {
 			}
 		}
 		$model = new SponsorsDocs;
-		$reload = false;
 		if (isset($_POST['Doc1'])) {
 			$path2 = YiiBase::getPathOfAlias("webroot") . "/users/" . $id_sponsor . "/docs/";
 			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
@@ -470,6 +469,8 @@ class SponsorsController extends Controller {
 					$error1 = str_replace('SponsorsDocs_path','SponsorsDocs1_path',$error1);
 				}
 			}
+
+
 			if (is_object(CUploadedFile::getInstanceByName('Doc2'))) {
 				unset($model);
 				if (!array_key_exists('Acreditacion_de_las_facultades_del_representante_o_apoderado', $modelDocs)) {
