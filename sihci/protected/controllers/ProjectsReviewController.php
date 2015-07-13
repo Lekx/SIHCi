@@ -7,7 +7,7 @@ class ProjectsReviewController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/system';
-	
+
 	/**
 	 * @return array action filters
 	 */
@@ -53,13 +53,17 @@ class ProjectsReviewController extends Controller
 			"DIVUH2"=>"Proyecto enviado a dictaminación por la División de Investigacion de la Unidad Hospitalaria. Notificación enviada a: Director General, Director de División Hospitalaria y al Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.",
 			"COMITE2"=>"Proyecto enviado a firma de dictamen por comités.",
 			"DICTAMINADO"=>"Proyecto dictaminado como xx. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria.",
+			"rejectDIVUH"=>"Proyecto devuelto por la División de Investigacion de la Unidad Hospitalaria al investigador para su corrección o modificación.",
+			"rejectCOMBIO"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
+			"rejectCOMETI"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
+			"rejectCOMINV"=>"Proyecto devuelto por el comité al investigador para su corrección o modificación. Notificación enviada a la División de Investigacion de la Unidad Hospitalaria y al Subdirector de Enseñanza e Investigación de la Unidad Hospitalaria.",
 		);
 
 	private function nextReview($actualStatus, $idProject){
 		$status = "nulo";
 		//cuantos usuarios de comites hay?
 		//si hay dos entonces se necesitan dos comentarios de comite
-		
+
 		$comiteeUsers = Users::model()->findAllByAttributes(array('id_roles'=>Yii::app()->user->Rol->id));
 
 
@@ -105,7 +109,7 @@ class ProjectsReviewController extends Controller
 		$rol = Yii::app()->user->Rol->alias;
 
 		$condition = "WHERE p.status = '".$rol."'";
-		
+
 		if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
 			$condition = "WHERE p.status LIKE '%".$rol."%'";
 
@@ -114,7 +118,7 @@ class ProjectsReviewController extends Controller
 
 		//$pProjects = Projects::model()->findAllByAttributes(array("status"=>$role));
 		$pendingProjects ="";
-		
+
 
 		foreach($pProjects AS $key => $value){
 			$element ="";
@@ -123,7 +127,7 @@ class ProjectsReviewController extends Controller
 			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
 			$element .= '</div>';
 			$pendingProjects .= CHtml::link($element,array('projectsReview/review','id'=>$value["id"]));
-			
+
 		}
 		return $pendingProjects;
 	}
@@ -132,7 +136,7 @@ class ProjectsReviewController extends Controller
 	public function actionAdmin()
 	{
 		$model=new Projects('search');
-		
+
 
 		$this->render('admin',array(
 			'model'=>$model, 'pendingProjects'=>$this->projectsToReview()
@@ -160,16 +164,16 @@ class ProjectsReviewController extends Controller
         if(isset($_POST['ProjectsFollowups']))
         {
 
-			$modelfollowup->unsetAttributes(); 
+			$modelfollowup->unsetAttributes();
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
-            if(isset($_POST[1]))
+            if(isset($_POST[1])) // si existe este indice en los extras significa que es un comentario(followup) de un seguimiento(followup)
             	$modelfollowup->id_fucom = $_POST[1];
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
 			if($modelfollowup->validate() == 1){
-	            if(is_object($modelfollowup->url_doc)){ 
+	            if(is_object($modelfollowup->url_doc)){
 	            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$id;
 
 	                if(!is_dir($path))
@@ -179,8 +183,6 @@ class ProjectsReviewController extends Controller
 					$modelfollowup->url_doc->saveAs($url_doc);
 				    $modelfollowup->url_doc = $url_doc;
 	            }
-
-			
 	            if($modelfollowup->save()){
 	     			echo CJSON::encode(array('status'=>'success'));
 	     			Yii::app()->end();
@@ -189,7 +191,6 @@ class ProjectsReviewController extends Controller
 				$error = CActiveForm::validate($modelfollowup);
 				if($error!='[]')
 					echo $error;
-
 				Yii::app()->end();
 	        }
         }
@@ -199,10 +200,12 @@ class ProjectsReviewController extends Controller
 		));
 	}
 
+	//Envia a revisión o evaluación.
+	//params: id del projecto.
 	public function actionSendReview($id)
 	{
 		//$res = Projects::model()->updateByPk($id,array('status'=>'asdfasdfasdf cabron que sss'));
-		
+
 
 		$conexion = Yii::app()->db;
 
@@ -214,13 +217,13 @@ class ProjectsReviewController extends Controller
 						$followup = new ProjectsFollowups;
 						$followup->id_project = $id;
 						$followup->id_user = Yii::app()->user->id;
-						$followup->followup = "Proyecto enviado a revisión de ".$this->messages[$nextReview];
+						$followup->followup = $this->messages[$nextReview];
 						$followup->type = "comment";
 
 						if($followup->save())
-			     			echo CJSON::encode(array('status'=>'success','message'=>'Aprobación realizada con éxito','subMessage'=>'Se ha asignado a la siguiente persona este proyecto'));
+			     			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido enviado satisfactoriamente para su revisión o evaluación.'));
 					}else
-						echo CJSON::encode(array('message'=>'Error al pasar a la siguiente etapa.','subMessage'=>'Por favor vuelva a intetar.'));
+						echo CJSON::encode(array('message'=>'Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intetar.'));
 				Yii::app()->end();
 	}
 	/**

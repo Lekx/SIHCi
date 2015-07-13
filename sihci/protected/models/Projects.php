@@ -182,6 +182,26 @@ class Projects extends CActiveRecord
 		));
 	}
 
+	//Customized search only for logged user
+	public function customSearch()
+	{
+		$criteria=new CDbCriteria;
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'id DESC';
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR is_sponsored LIKE CONCAT('%', :searchValue ,'%') OR title LIKE CONCAT('%', :searchValue ,'%')OR discipline LIKE CONCAT('%', :searchValue , '%') OR develop_uh LIKE CONCAT('%', :searchValue , '%') OR folio LIKE CONCAT('%', :searchValue , '%') OR registration_number LIKE CONCAT('%', :searchValue , '%') OR status LIKE CONCAT('%', :searchValue , '%') ");
+			//$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}	
+		
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

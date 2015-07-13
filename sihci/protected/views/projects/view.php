@@ -15,7 +15,6 @@ $this->menu=array(
 		array('label'=>'Crear', 'url'=>array('projects/create'),'itemOptions'=>array('class' => 'sub')),
 		array('label'=>'Gestionar', 'url'=>array('projects/admin'),'itemOptions'=>array('class' => 'sub')),
 
-
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
 
 	);
@@ -59,7 +58,6 @@ $this->menu=array(
 		$curriculum = $users->curriculums;//Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 		$gradesUsers = $users->curriculums[0]->grades[0];//Grades::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
 		$jobsUsers = $curriculum[0]->jobs[0];//Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
-
 
 
 
@@ -125,55 +123,56 @@ $this->menu=array(
 ?>
 </section>
 <section class="projects4">
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'adtl_caracteristics_a',
-		'adtl_caracteristics_b',
-		'adtl_caracteristics_c',
-		'adtl_caracteristics_d',
-		'adtl_caracteristics_e',
-		'adtl_caracteristics_f',
-		'adtl_caracteristics_g',
+	<?php
 
-	),
-));
+	$coworkers = "";
+	 foreach ($model->projectsCoworkers as $key => $value) {
+	 	$coworkers .=$value->fullName.". ";
+	 }
+	$this->widget('zii.widgets.CDetailView', array(
+		'data'=>$model,
+		'attributes'=>array(
+			'status',
+			array(
+				'label'=>'Folio',
+				'value'=>$model->folio == -1 ? "No asignado" : $mode->folio,
+				),
+				array(
+						'label'=>'¿Patrocinado?',
+						'value'=>$model->is_sponsored == 1 ? "Si" : "No",
+						),
+				array(
+						'label'=>'Número de registro',
+						'value'=>$model->registration_number == -1 ? "No asignado" : $mode->folio,
+					),	array(
+								'label'=>'Investigadores colaboradores',
+								'value'=>$coworkers,
+								),
 
-?>
+		),
+	));
+
+
+	?>
 </section>
 <section class="projects5">
+	<?php $this->widget('zii.widgets.CDetailView', array(
+		'data'=>$model,
+		'attributes'=>array(
+			'adtl_caracteristics_a',
+			'adtl_caracteristics_b',
+			'adtl_caracteristics_c',
+			'adtl_caracteristics_d',
+			'adtl_caracteristics_e',
+			'adtl_caracteristics_f',
+			'adtl_caracteristics_g',
 
-<?php
+		),
+	));
 
-$coworkers = "";
- foreach ($model->projectsCoworkers as $key => $value) {
- 	$coworkers .=$value->fullName.". ";
- }
-$this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'status',
-		array(
-			'label'=>'Folio',
-			'value'=>$model->folio == -1 ? "No asignado" : $mode->folio,
-			),
-			array(
-					'label'=>'¿Patrocinado?',
-					'value'=>$model->is_sponsored == 1 ? "Si" : "No",
-					),
-			array(
-					'label'=>'Número de registro',
-					'value'=>$model->registration_number == -1 ? "No asignado" : $mode->folio,
-				),	array(
-							'label'=>'Investigadores colaboradores',
-							'value'=>$coworkers,
-							),
-
-	),
-));
+	?>
 
 
-?>
 </section>
 <div class="row">
 	<div class="paggersection">

@@ -2,9 +2,9 @@
 
 <div class="form">
 
-    <?php 
+    <?php
 $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'projects-followups-form',
+    'id'=>'projects-followups-form-create',
     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
    'enableAjaxValidation'=>true,
 )); ?>
@@ -21,7 +21,7 @@ $form=$this->beginWidget('CActiveForm', array(
     </div>
 
     <?php echo CHtml::htmlButton('Crear',array(
-                'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                'onclick'=>'send("projects-followups-form", "projectsFollowups/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
                 'class'=>'savebutton',
             ));
     ?>

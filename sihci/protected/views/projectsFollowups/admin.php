@@ -10,17 +10,39 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
-
+$project = Projects::model()->findByAttributes(array('id'=>$idProject));
 ?>
+<script>
+	$(document).ready(function(){
+		$('#projects-followups-form').hide();
 
-<h1>Seguimiento Proyecto</h1>
+	});
+</script>
+<h1>Seguimientos del Proyecto </h1>
+<h5><?php echo $project->title;?></h5>
 
-<?php 
+<?php
 // echo CHtml::link('Crear Nuevo','create');
-echo CHtml::link('Crear Nuevo',array('create',
-                                         'id'=>$idProject));
-	if($followupCurrent != null){
-		
+			 echo CHtml::ajaxLink(
+ 						  "Crear Nuevo",
+ 						  Yii::app()->createUrl( 'projectsFollowups/create/'.$project->id ),
+ 						  array( // ajaxOptions
+ 						    'type' => 'POST',
+ 						    'datatype'=> 'json',
+ 						    'success' => "function( data )
+ 						                  {
+ 																 $('#projects-followups-form-create').show();
+ 																 $('#projects-followups-form').hide();
+ 						                     $('#follow').hide();
+ 						                     $('#followup').hide();
+																 $('#comments').hide();
+ 						                  }",
+ 						  ),
+ 						  array( //htmlOptions
+ 						    'href' => Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
+ 						  )
+ 						);
+
 
 		foreach ($followups as $key => $value) {
 			echo CHtml::ajaxLink(
@@ -31,17 +53,27 @@ echo CHtml::link('Crear Nuevo',array('create',
 						    'datatype'=> 'json',
 						    'success' => "function( data )
 						                  {
+																$('#projects-followups-form').show();
+																$('#follow').show();
+																$('#followup').show();
+																$('#comments').show();
 						                     var data = JSON.parse(data);
-						                     $('#follow').html('Seguimiento -'+ data['id'] + ' ' + data['date']);
-						                     var dataIDP = data['id_project'];
+																 $('#projects-followups-form-create').hide();
+																 $('#projects-followups-form').show();
+						                     $('#follow').html('<br><br>Reporte del Investigador <br><br>Seguimiento -'+ data['id'] + ' ' + data['date']+'<br><br>');
+
+																 var dataIDP = data['id_project'];
 						                     var dataIDF = data['id'];
+																 var dataComments = data['comments'];
 
 						                     $('#followup').html(data['followup']);
-						                     alert(dataIDP+' '+dataIDF);
+
+																 alert(dataComments);
+
 						                     $('#createFollowup').unbind('onclick');
 						                     $('#createFollowup').attr('onclick', 'send(\'projects-followups-form\', \'projectsReview/review\',\"'+dataIDP+'\" , \'none\', \"'+dataIDF+'\" )');
-			
-						                   
+																 $('#comments').html('Comentarios:<br><br>'+dataComments);
+
 						                  }",
 						    'data' => array('id' => $followups[$key]->id,)
 						  ),
@@ -49,46 +81,15 @@ echo CHtml::link('Crear Nuevo',array('create',
 						    'href' => Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
 						  )
 						);
-			
+
 		}
+		echo "<div id='follow'></div>";
+		echo "<div id='followup'></div>";
 
-		echo "<br><br>";
-		echo "<br><br>";
-
-		echo "<div id='follow'>";
-		echo 'Seguimiento -'.$followupCurrent->id.'  '.date("d/m/Y", strtotime($followupCurrent->creation_date)); 
-		echo "</div>";
-
-		echo "<br><br>";
-
-		echo 'Reporte Investigador';
-
-		echo "<br><br>";
-
-		echo "<div id='followup'>";
-		echo $followupCurrent->followup;
-		echo "</div>";
-
+		$this->renderPartial('../projectsFollowups/_form', array('model'=>$modelFollowup));
 		$this->renderPartial('../projectsReview/_form', array('model'=>$modelFollowup));
-		// var_dump($comment);
 
-		echo "Comentarios:";
-
+		echo "<div id='comments'></div>";
 		echo "<br><br><br>";
-		foreach ($comments as $key => $value) {
-			$user = Users::model()->findByAttributes(array('id'=>$comments[$key]->id_user));
-			$rol = Roles::model()->findByAttributes(array('id'=>$user->id_roles));
 
-			echo "Comentario - ".$rol->alias." ";
-			echo $comments[$key]->url_doc != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$comments[$key]->url_doc,array("target"=>"_blank")) : "";
-			
-			echo "<br><br>";
-			
-			echo $comments[$key]->followup;
-
-			echo "<br><br>";
-			
-		}
-	}else
-		echo "<h2>No tiene ningun Proyecto a Seguir</h2>";
 ?>

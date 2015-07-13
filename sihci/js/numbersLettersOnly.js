@@ -1190,6 +1190,7 @@ $(document).ready(function() {
     $("#comboClase").html(newClase);
   }
 });
+
 function lettersOnly(e) {
   key = e.keyCode || e.which;
   tecla = String.fromCharCode(key).toLowerCase();
