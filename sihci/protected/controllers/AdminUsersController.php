@@ -33,11 +33,11 @@ class AdminUsersController extends Controller {
 	 			'expression'=>'($user->Rol->alias==="ADMIN")',
 	 			'users'=>array('@'),
 	 		),
-	 		array('allow',  
+	 		array('allow',
 	 			'actions'=>array('view','changeStatus','changeRol','changeStatusCurriculum','index'),
 	 			'expression'=>'($user->Rol->alias==="JIOPD")',
 	 			'users'=>array('@'),
-	 		),	 		
+	 		),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -53,24 +53,71 @@ class AdminUsersController extends Controller {
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-
-	function checkEmail($email, $email2) {
-
-		if ($email != $email2) {
-			echo "Los correos son diferentes.";
+	function checkEmailDifferent($email, $email2){
+		if ($email != $email2){
 			return false;
-		} else {
+		}else
 			return true;
 		}
-	}
-	function checkPassword($password, $password2) {
-		if ($password != $password2) {
-			echo "Los passwords son diferentes.";
-			return false;
-		} else {
+
+function checkEmailNull($email, $email2){
+	if($email == '' || $email2 == ''){
+		return false;
+	}else
 			return true;
 		}
+
+
+		public function activateAccount($to,$activationKey){
+			$sihci = "From: SIHCI";
+
+
+	 		$subject = "Activación de cuenta.";
+	 		$body = '
+			 Activación de Cuenta.
+
+			    Le damos la cordial bienvenida a el sistema SIHCi, para activar su cuenta solo debe dar clic en el siguiente enlace. http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.$activationKey.'
+
+			   Si usted no se ha registrado en nuestro sitio, por favor hacer caso omiso de éste correo.
+
+			 ';
+
+			if(!mail($to,$subject,$body)){
+			  echo"Error al enviar el mensaje.";
+			}
+		}
+		
+	function checkPasswordDifferent($password, $password2){
+		if ($password != $password2){
+      return false;
+		}else
+			return true;
+
+
+}
+
+	function checkPasswordNull($password, $password2){
+		if($password == '' || $password2 == ''){
+      return false;
+		}else
+			return true;
+
+		}
+
+	public function actionInfoAccount(){
+			$this->layout = 'system';
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+			$details = Users::model()->findByPk($iduser);
+			$this->render('infoAccount',array(
+			'details'=>$details,
+			));
 	}
+
+
 	public function actionCreateUser() {
 
 		$layout =  '//layouts/system';
@@ -85,8 +132,8 @@ class AdminUsersController extends Controller {
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
 			if (empty($result)){
-			if ($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2'])) {
-				if ($this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2'])) {
+				if ($this->checkEmailDifferent($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailNull($_POST['Users']['email'], $_POST['Users']['email2'])) {
+					if ($this->checkPasswordDifferent($_POST['Users']['password'], $_POST['Users']['password2']) && $this->checkPasswordNull($_POST['Users']['password'],$_POST['Users']['password2'])) {
 
 
 
@@ -498,7 +545,6 @@ class AdminUsersController extends Controller {
 	public function actionChangeStatusCurriculum(){
 		$idRefc = $_POST[1];
 		$valuec = $_POST[2];
-		//echo $idRefc." - ".$valuec;
 
 		if(Curriculum::model()->updateByPk($idRefc, array('status'=>(int)$valuec))){
 			echo CJSON::encode(array('status'=>'success'));

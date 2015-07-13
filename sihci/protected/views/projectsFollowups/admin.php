@@ -45,6 +45,7 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
  																 $('#projects-followups-form').hide();
  						                     $('#follow').hide();
  						                     $('#followup').hide();
+																 $('#comments').hide();
  						                  }",
  						  ),
  						  array( //htmlOptions
@@ -52,8 +53,6 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 								'class'=> 'createFollowup',
  						  )
  						);
-	if($followupCurrent != null){
-var_dump($followups[$key]->id);
 		foreach ($followups as $key => $value) {
 			echo CHtml::ajaxLink(
 						  " ".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
@@ -66,6 +65,7 @@ var_dump($followups[$key]->id);
 																$('#projects-followups-form').show();
 																$('#follow').show();
 																$('#followup').show();
+																$('#comments').show();
 						                     var data = JSON.parse(data);
 																 $('#projects-followups-form-create').hide();
 																 $('#projects-followups-form').show();
@@ -98,9 +98,6 @@ var_dump($followups[$key]->id);
 		$this->renderPartial('../projectsReview/_form', array('model'=>$modelFollowup));
 
 		echo "<div id='comments'></div>";
-
-
 		echo "<br><br><br>";
-	}else
-		echo "<h2>No tiene ningun Proyecto a Seguir</h2>";
+
 ?>
