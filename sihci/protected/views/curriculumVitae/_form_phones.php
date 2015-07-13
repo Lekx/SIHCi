@@ -66,15 +66,15 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-<input id="showFormEmail" type="button" value="Agregar Nuevo Email">
+<input id="showFormEmail" type="button" value="Agregar Nuevo Correo Electrónico">
 
 
 	<div class="emails">
 	 <div class="row">
 		 <span class="plain-select1">
-		 	<h5>Email:</h5>
-			<select id="typeEmail" title="Tipo de Email" name="typesEmails">
-	  			<option value="" selected="">Tipo Email</option>
+		 	<h5>Correo Electrónico:</h5>
+			<select id="typeEmail" title="Tipo de correo electrónico" name="typesEmails">
+	  			<option value="" selected="">Tipo de correo electrónico</option>
 	  			<option value="Trabajo">Trabajo</option>
 	  			<option value="Residencial">Residencial</option>
 	  			<option value="Particular">Particular</option>
@@ -83,7 +83,7 @@
 			</select>
 		</span>
 		</div>
-		<div id="errorTypeEmail" class="errors"> Debe seleccionar Tipo de Email</div>
+		<div id="errorTypeEmail" class="errors"> Debe seleccionar Tipo de Tipo de correo electrónico</div>
 		<div class="row">
 		<input id="mail" title="Email" type="text" name="emails" placeholder="Email">
 		<div id="errorMail" class="errors"> Debe ser un correo válido: ejemplo@mail.com</div>
@@ -119,12 +119,12 @@
 		foreach($getEmails as $key => $value){
 
 				echo "<div class='row'>";
-				echo "<h5>Email:</h5>";
+				echo "<h5>Correo electrónico:</h5>";
 				echo " <span class='plain-select'>";
 				echo $form->dropDownList($emails,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'),
-		                                                       array('title'=>'Tipo de Email','prompt'=>'Tipo de Email','required'=>'true','name'=>'getTypeEmail[]','options' => array(''.$getEmails[$key]->type.''=>array('selected'=>true))));
+		                                                       array('title'=>'Tipo de correo electrónico','prompt'=>'Tipo de correo electrónico','required'=>'true','name'=>'getTypeEmail[]','options' => array(''.$getEmails[$key]->type.''=>array('selected'=>true))));
 				echo "</span>";
 				echo "</div>";
 				echo "<div class='row'>";

@@ -4583,10 +4583,10 @@ function changeSector()
             sectorValue = consultora;
        }
 
-             if(sectorValue=="Gobierno federal descentralizado")
+      if(sectorValue=="Gobierno federal descentralizado")
        {
          var governementFD =[
-          "AGENCIA ESPACIAL MEXICANA",
+      "AGENCIA ESPACIAL MEXICANA",
       "APOYOS Y SERVICIOS A LA COMERCIALIZACION AGROPECUARIA",
       "ARCHIVO GENERAL DE LA NACION",
       "ASOCIACION INTERMUNICIPAL PARA LA PROTECCION DEL MEDIO AMBIENTE Y DESARROLLO SUSTENTABLE DEL LAGO DE CHAPALA",
@@ -4668,8 +4668,7 @@ function changeSector()
       "UNIVERSIDAD POLITECNICA DEL VALLE DEL EVORA",
       "UNIVERSIDAD TECNOLOGICA DE LA SIERRA SUR DE OAXACA",
       "UNIVERSIDAD TECNOLOGICA LINARES",
-      "UNIVERSIDADE FEDERAL DE SÃO CARLOS",
-          ]
+      "UNIVERSIDADE FEDERAL DE SÃO CARLOS"]
           sectorValue = governementFD;
        }
        if(sectorValue =="Gobierno federal desconcentrado")
@@ -5142,29 +5141,29 @@ function changeSector()
         "ROMEXICO TAIWAN",
         "ROVISIONES SALARIALES Y ECONOMICAS",
         "ADFAS",
-        "ECRETARIA DE LA DEFENSA NACIONAL",
-        "ECRETARIA DE AGRICULTURA GANADERIA DESARROLLO RURAL PESCA Y ALIMENTACION",
-        "ECRETARIA DE AGRICULTURA GANADERIA DESARROLLO RURAL PESCA Y ALIMENTACION SAGARPA",
-        "ECRETARIA DE AGRICULTURA GANADERIA PESCA Y ALIMENTACION EN OAXACA",
-        "ECRETARIA DE COMERCIO Y FOMENTO INDUSTRIAL",
-        "ECRETARIA DE COMUNICACIONES Y TRANSPORTES",
-        "ECRETARIA DE DESARROLLO AGRARIO TERRITORIAL Y URBANO",
-        "ECRETARIA DE DESARROLLO SOCIAL",
-        "ECRETARIA DE ECONOMIA",
-        "ECRETARIA DE EDUCACION DE TAMAULIPAS",
-        "ECRETARIA DE EDUCACION DE VERACRUZ",
-        "ECRETARIA DE EDUCACION PUBLICA",
-        "ECRETARIA DE EDUCACION PUBLICA/DIRECCION GENERAL DE MATERIALES EDUCATIVOS",
-        "ECRETARIA DE ENERGIA",
-        "ECRETARIA DE GOBERNACION",
-        "ECRETARIA DE HACIENDA Y CREDITO PUBLICO",
-        "ECRETARIA DE INFRAESTRUCTURA URBANA Y ECOLOGIA",
-        "ECRETARIA DE LA FUNCION PUBLICA",
-        "ECRETARIA DE LA REFORMA AGRARIA",
-        "ECRETARIA DE MARINA",
-        "ECRETARIA DE MEDIO AMBIENTE Y RECURSOS NATURALES",
-        "ECRETARIA DE MEDIO AMBIENTE Y RECURSOS NATURALES DELEGACION FEDERAL NUEVO LEON",
-        "ECRETARIA DE RELACIONES EXTERIORES",
+        "SECRETARIA DE LA DEFENSA NACIONAL",
+        "SECRETARIA DE AGRICULTURA GANADERIA DESARROLLO RURAL PESCA Y ALIMENTACION",
+        "SECRETARIA DE AGRICULTURA GANADERIA DESARROLLO RURAL PESCA Y ALIMENTACION SAGARPA",
+        "SECRETARIA DE AGRICULTURA GANADERIA PESCA Y ALIMENTACION EN OAXACA",
+        "SECRETARIA DE COMERCIO Y FOMENTO INDUSTRIAL",
+        "SECRETARIA DE COMUNICACIONES Y TRANSPORTES",
+        "SECRETARIA DE DESARROLLO AGRARIO TERRITORIAL Y URBANO",
+        "SECRETARIA DE DESARROLLO SOCIAL",
+        "SECRETARIA DE ECONOMIA",
+        "SECRETARIA DE EDUCACION DE TAMAULIPAS",
+        "SECRETARIA DE EDUCACION DE VERACRUZ",
+        "SECRETARIA DE EDUCACION PUBLICA",
+        "SECRETARIA DE EDUCACION PUBLICA/DIRECCION GENERAL DE MATERIALES EDUCATIVOS",
+        "SECRETARIA DE ENERGIA",
+        "SECRETARIA DE GOBERNACION",
+        "SECRETARIA DE HACIENDA Y CREDITO PUBLICO",
+        "SECRETARIA DE INFRAESTRUCTURA URBANA Y ECOLOGIA",
+        "SECRETARIA DE LA FUNCION PUBLICA",
+        "SECRETARIA DE LA REFORMA AGRARIA",
+        "SECRETARIA DE MARINA",
+        "SECRETARIA DE MEDIO AMBIENTE Y RECURSOS NATURALES",
+        "SECRETARIA DE MEDIO AMBIENTE Y RECURSOS NATURALES DELEGACION FEDERAL NUEVO LEON",
+        "SECRETARIA DE RELACIONES EXTERIORES",
         "SECRETARIA DE SALUBRIDAD Y ASISTENCIA",
         "SECRETARIA DE SALUD",
         "SECRETARIA DE SEGURIDAD PUBLICA",
@@ -6051,7 +6050,7 @@ function changeSector()
         if(sectorValue=="Instituciones del sector de educación superior privadas")
        {
             var institutionsESPrivate=[
-              "ACADEMIA MEXICANA DE CIENCIAS ANTROPOLOGICAS AC",
+          "ACADEMIA MEXICANA DE CIENCIAS ANTROPOLOGICAS AC",
            "BARCELONA GSE",
            "BONA TERRA AC",
            "BOSTON COLLEGE",
@@ -7281,7 +7280,7 @@ function changeSector()
        }
  
  
-         var newOrganization ="<span class='plain-select'><select id='DirectedThesis_organization' class='tooltipstered' name='DirectedThesisd[organization]' onchange='changeSecondLevel()'>";
+         var newOrganization ="<span class='plain-select'><select id='DirectedThesis_organization' class='tooltipstered' name='DirectedThesis[organization]' onchange='changeSecondLevel()'>";
            newOrganization+="<option>Seleccionar Organización</option>";
             
             for (var item in sectorValue)
@@ -11085,13 +11084,14656 @@ function changeSector()
 
     /* Gobierno Municipal */
 
-    if(organizationValue =="SERVICIOS A LA NAVEGACION EN EL ESPACIO AEREO MEXICANO/SENEAM"){
-      var aereoMexicano =[" "];
-      organizationValue = aereoMexicano;
+    if(organizationValue =="ACUARIO MAZATLAN"){
+      var acuarioMazatlan =[" "];
+      organizationValue = acuarioMazatlan;
+    }
+    if(organizationValue =="ALCALDIA MUNICIPAL DE SAN SALVADOR"){
+      var alcaldiaMunicipalSalvador =[" "];
+      organizationValue = alcaldiaMunicipalSalvador;
+    }
+     if(organizationValue =="ALCALDIA MUNICIPAL SANTIAGO DE CALI"){
+      var alcaldiaMunicipalSantoagoCali =[" "];
+      organizationValue = alcaldiaMunicipalSantoagoCali;
+    }
+     if(organizationValue =="ARCHIVO HISTORICO DEL MUNICIPIO DE COLIMA"){
+      var archivoHistoricoMunicipio =[" "];
+      organizationValue = archivoHistoricoMunicipio;
+    }
+      if(organizationValue =="AYUNTAMENTO DE CUNDUACAN"){
+      var ayuntamientoCunduacan =[" "];
+      organizationValue = ayuntamientoCunduacan;
+    }
+      if(organizationValue =="AYUNTAMIENTO CONSTITUCIONAL MUNICIPAL DE JITOTOL CHIAPAS"){
+      var ayuntamientoConstitucionalJitotol =[" "];
+      organizationValue = ayuntamientoConstitucionalJitotol;
+    }
+      if(organizationValue =="AYUNTAMIENTO DE ALMODOVAR"){
+      var ayuntamientoAlmodovar =[" "];
+      organizationValue = ayuntamientoAlmodovar;
+    }
+      if(organizationValue =="AYUNTAMIENTO DE APAXTLA DE CASTREJON"){
+      var ayuntamientoApaxtlaCastejon =[" "];
+      organizationValue = ayuntamientoApaxtlaCastejon;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE CENTRO TABASCO"){
+      var ayuntamientoCentroTabasco =[" "];
+      organizationValue = ayuntamientoCentroTabasco;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE CUAUTITLAN IZCALLI"){
+      var ayuntamientoCuatitlanIzcalli =[" "];
+      organizationValue = ayuntamientoCuatitlanIzcalli;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE GUADALAJARA"){
+      var ayuntamientoGuadalajara =["CONSEJO MUNICIPAL DEL DEPORTE DE GUADALAJARA",
+                                    "OFICINA DE COMBATE A LA CORRUPCIÓN"];
+      organizationValue = ayuntamientoGuadalajara;
+    }
+    if(organizationValue =="AYUNTAMIENTO DE LA PAZ ESTADO DE MEXICO"){
+      var ayuntamientoPAzEstadoMexico =[" "];
+      organizationValue = ayuntamientoPAzEstadoMexico;
+    }
+    if(organizationValue =="AYUNTAMIENTO DE MERIDA YUCATAN"){
+      var ayuntamientoMeridaYucatan =[" "];
+      organizationValue = ayuntamientoMeridaYucatan;
+    }
+    if(organizationValue =="AYUNTAMIENTO DE MORELIA"){
+      var ayuntamientoMorelia =[" "];
+      organizationValue = ayuntamientoMorelia;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE RIOVERDE SLP"){
+      var ayuntamientoRioverde =[" "];
+      organizationValue = ayuntamientoRioverde;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE SAN GABRIEL JALISCO"){
+      var ayuntamientoSanGabriel =[" "];
+      organizationValue = ayuntamientoSanGabriel;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE SAN JUAN DEL RIO"){
+      var ayuntamientoSAnJuanRio =[" "];
+      organizationValue = ayuntamientoSAnJuanRio;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE TECAMAC"){
+      var ayuntamientoTecamac =[" "];
+      organizationValue = ayuntamientoTecamac;
+    }
+      if(organizationValue =="AYUNTAMIENTO DE TEQUIXQUIAC"){
+      var ayuntamientoTequixquiac =[" "];
+      organizationValue = ayuntamientoTequixquiac;
+    }
+      if(organizationValue =="AYUNTAMIENTO DE TIJUANA BAJA CALIFORNIA"){
+      var ayuntamientoTijuanaBajaCalifornia =[" "];
+      organizationValue = ayuntamientoTijuanaBajaCalifornia;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE TOLUCA"){
+      var ayuntamientoToluca =[" "];
+      organizationValue = ayuntamientoToluca;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE VERACRUZ"){
+      var ayuntamientoVeracruz =[" "];
+      organizationValue = ayuntamientoVeracruz;
     }
 
+     if(organizationValue =="AYUNTAMIENTO DE ZAPOPAN"){
+      var ayuntamientoZapopan =["INSTITUTO DE CULTURA"];
+      organizationValue = ayuntamientoZapopan;
+    }
+     if(organizationValue =="AYUNTAMIENTO DE ZAPOTLAN EL GRANDE"){
+      var ayuntamientoZapotlanGrande =[" "];
+      organizationValue = ayuntamientoZapotlanGrande;
+    }
+     if(organizationValue =="AYUNTAMIENTO DEL MUNICIPIO DE PUEBLA"){
+      var ayuntamientoMunicipioPuebla =[" "];
+      organizationValue = ayuntamientoMunicipioPuebla;
+    }
+    if(organizationValue =="CENTRO DE INVESTIGACION Y EDUCACION AMBIENTAL DEL MUNICIPIO DE NUEVO LAREDO"){
+      var centroInvestigacionEducacionAmbiental =[" "];
+      organizationValue = centroInvestigacionEducacionAmbiental;
+    }
+     if(organizationValue =="CENTRO DE READAPTACION SOCIAL DE CD CUAUHTEMOC"){
+      var centroReadaptacionSocial =[" "];
+      organizationValue = centroReadaptacionSocial;
+    }
+     if(organizationValue =="CENTRO DE SALUD MENTAL"){
+      var centroSaludMental =[" "];
+      organizationValue = centroSaludMental;
+    }
+     if(organizationValue =="CITY OF EL PASO"){
+      var cityElPaso =[" "];
+      organizationValue = cityElPaso;
+    }
+     if(organizationValue =="CIUDAD DE NUEVA YORK"){
+      var ciudadNuevaYork =[" "];
+      organizationValue = ciudadNuevaYork;
+    }
+     if(organizationValue =="COAPATAP"){
+      var coapatap =[" "];
+      organizationValue = coapatap;
+    }
+      if(organizationValue =="COMFORTECH SA DE CV"){
+      var comfortech =[" "];
+      organizationValue = comfortech;
+    }
+     if(organizationValue =="COMISION CIUDADANA DE AGUA POTABLE Y ALCANTARILLADO DEL MUNICIPIO DE AGUASCALIENTES"){
+      var comisionCiudadanaAguaPotable =[" "];
+      organizationValue = comisionCiudadanaAguaPotable;
+    }
+    if(organizationValue =="COMISION DE AGUA POTABLE ALCANTARILLADO Y SANEAMIENTO DE URUAPAN"){
+      var comisionAguaPotableAlcantarillado =[" "];
+      organizationValue = comisionAguaPotableAlcantarillado;
+    }
+      if(organizationValue =="COMISION DE AGUA POTABLE Y ALCANTARILLADO DEL MUNICIPIO DE ACAPULCO"){
+      var comisionAguaPotableAlcantarilladoAcapulco =[" "];
+      organizationValue = comisionAguaPotableAlcantarilladoAcapulco;
+    }
+      if(organizationValue =="CONSEJO CONSULTIVO DEL CENTRO HISTORICO"){
+      var consejoConsultivoCentroHistorico =[" "];
+      organizationValue = consejoConsultivoCentroHistorico;
+    }
+      if(organizationValue =="CONSEJO DE URBANIZACION MUNICIPAL DE ENSENADA"){
+      var consejoUrbanizacionMunicipalEnsenada =[" "];
+      organizationValue = consejoUrbanizacionMunicipalEnsenada;
+    }
+      if(organizationValue =="CONSEJO MUNICIPAL DEL DEPORTE EN TLAQUEPAQUE"){
+      var consejoMunicipalDeporteTlaquepaque =[" "];
+      organizationValue = consejoMunicipalDeporteTlaquepaque;
+    }
+     if(organizationValue =="CONTRALORIA INTERNA DE INFRAESTRUCTURA Y DESARROLLO SOCIAL"){
+      var controladoraInterna =[" "];
+      organizationValue = controladoraInterna;
+    }
+      if(organizationValue =="DELEGACION ALVARO OBREGON"){
+      var delegacionAlvaroObregon =[" "];
+      organizationValue = delegacionAlvaroObregon;
+    }
+       if(organizationValue =="DELEGACION BENITO JUAREZ"){
+      var delegacionBenitoJuarez =[" "];
+      organizationValue = delegacionBenitoJuarez;
+    }
+    if(organizationValue =="DELEGACION COYOACAN"){
+      var delegacionCoyoacan =[" "];
+      organizationValue = delegacionCoyoacan;
+    }
+    if(organizationValue =="DELEGACION CUAJIMALPA DE MORELOS"){
+      var delegacionCuajimalpa =[" "];
+      organizationValue = delegacionCuajimalpa;
+    }
+    if(organizationValue =="DELEGACION IZTAPALAPA"){
+      var delegacionIztapalapa =[" "];
+      organizationValue = delegacionIztapalapa;
+    }
+     if(organizationValue =="DELEGACION MIGUEL HIDALGO"){
+      var delegacionMiguelHidalgo =[" "];
+      organizationValue = delegacionMiguelHidalgo;
+    }
+    if(organizationValue =="DELEGACION MILPA ALTA"){
+      var delegacionMilpaAlta =[" "];
+      organizationValue = delegacionMilpaAlta;
+    }
+    if(organizationValue =="DELEGACION VENUSTIANO CARRANZA"){
+      var delegacionVenustianoCarranza =[" "];
+      organizationValue = delegacionVenustianoCarranza;
+    }
+    if(organizationValue =="DEPARTAMENTO DE ASUNTOS INTERNACIONALES DE LA CIUDAD DE SAN ANTONIO"){
+      var departamentoAsuntosInternacionales =[" "];
+      organizationValue = departamentoAsuntosInternacionales;
+    }
+    if(organizationValue =="DESARROLLO INTEGRAL DE LA FAMILIA SAN PEDRO GARZA GARCIA NUEVO LEON"){
+      var desarrolloIntegralFamilia =[" "];
+      organizationValue = desarrolloIntegralFamilia;
+    }
+     if(organizationValue =="DESARROLLO Y APLICACION CIENTIFICA SC"){
+      var desarrolloAplicacionCientifica =[" "];
+      organizationValue = desarrolloAplicacionCientifica;
+    }
+     if(organizationValue =="DIR DE MEDIO AMB Y SERV PUBLICAS DEL CENTRO"){
+      var dirMedioAmbServ =[" "];
+      organizationValue = dirMedioAmbServ;
+    }
+    if(organizationValue =="DIRECCION DE DESARROLLO ECONOMICO DEL H AYUNTAMIENTO DE SAN LUIS POTOSI"){
+      var direccionDesarrolloEconimico =[" "];
+      organizationValue = direccionDesarrolloEconimico;
+    }
+     if(organizationValue =="DIRECCION DE DESARROLLO RURAL DEL MUNICIPIO DE GOMEZ PALACIO DURANGO"){
+      var direccionDesarrolloRuralMunicipio =[" "];
+      organizationValue = direccionDesarrolloRuralMunicipio;
+    }
+    if(organizationValue =="DIRECCION GENERAL DE DESARROLLO URBANO MUNICIPIO DE LEON GTO"){
+      var direccionGeneralDesarrolloUrbano =[" "];
+      organizationValue = direccionGeneralDesarrolloUrbano;
+    }
+    if(organizationValue =="DIRECCION GENERAL DE MEDIO AMBIENTE SUSTENTABLE"){
+      var direccionMedioAMbienteSustentable =[" "];
+      organizationValue = direccionMedioAMbienteSustentable;
+    }
+    if(organizationValue =="DIRECCION GENERAL DE PREVENCION Y READAPTACION SOCIAL DEL ESTADO DE MEXICO"){
+      var direccionMedioPrevencion =[" "];
+      organizationValue = direccionMedioPrevencion;
+    }
+    if(organizationValue =="DIRECCION MUNICIPAL CONTRA LAS ADICCIONES"){
+      var direccionMunicipalContraAdicciones =[" "];
+      organizationValue = direccionMunicipalContraAdicciones;
+    }
+    if(organizationValue =="ESCUELA NORMAL OFICIAL LIC BENITO JUAREZ"){
+      var escuelaNormalOficial =[" "];
+      organizationValue = escuelaNormalOficial;
+    }
+    if(organizationValue =="ESCUELA PREPARATORIA MUNICIPAL DE TIJUANA"){
+      var escuelaPreparatoriaMunicipal =[" "];
+      organizationValue = escuelaPreparatoriaMunicipal;
+    }
+     if(organizationValue =="ESCUELA PRIMARIA OFICIAL CARMEN MILLAN DIF"){
+      var escuelaPrimariaoficialCarmen =[" "];
+      organizationValue = escuelaPrimariaoficialCarmen;
+    }
+     if(organizationValue =="FIDEICOMISO DE VIVIENDA DESARROLLO SOCIAL Y URBANO"){
+      var fideicomisoViviendaDesarrollo =[" "];
+      organizationValue = fideicomisoViviendaDesarrollo;
+    }
+    if(organizationValue =="GOBIERNO AUTONOMO MUNICIPAL DE BETANZOS"){
+      var gobiernoAutonomoMuniciapal =[" "];
+      organizationValue = gobiernoAutonomoMuniciapal;
+    }
+     if(organizationValue =="GOBIERNO AUTONOMO MUNICIPAL DE LA PAZ"){
+      var gobiernoAutonomoMuniciapalPaz =[" "];
+      organizationValue = gobiernoAutonomoMuniciapalPaz;
+    }
+    if(organizationValue =="GOBIERNO DE PERU"){
+      var gobiernoPeru =[" "];
+      organizationValue = gobiernoPeru;
+    }
+     if(organizationValue =="GOBIERNO MUNICIPAL DE MORLEON GUANAJUATO"){
+      var gobiernoMuniciaplMorelon =[" "];
+      organizationValue = gobiernoMuniciaplMorelon;
+    }
+     if(organizationValue =="GOBIERNO MUNICIPAL DE SAN FELIPE GUANAJUATO"){
+      var gobiernoMuniciapalGuanajuato =[" "];
+      organizationValue = gobiernoMuniciapalGuanajuato;
+    }
+     if(organizationValue =="GOBIERNO MUNICIPAL DE SILAO DE LA VICTORIA"){
+      var gobiernoMuniciapalVictoria =[" "];
+      organizationValue = gobiernoMuniciapalVictoria;
+    }
+     if(organizationValue =="GOBIERNO MUNIICPAL DE BETANZOS POTOSI BOLIVIA"){
+      var gobiernoMuniciapalPotosiBolivia =[" "];
+      organizationValue = gobiernoMuniciapalPotosiBolivia;
+    }
+    if(organizationValue =="GUARDERIA INFANTIL"){
+      var guarderiaInfantil =[" "];
+      organizationValue = guarderiaInfantil;
+    }
+    if(organizationValue =="H AYUNTAMIENTO CONSTITUCIONAL DE PETATLAN GUERRERO"){
+      var ayuntamientoConstitucionalPetatlan =[" "];
+      organizationValue = ayuntamientoConstitucionalPetatlan;
+    }
+     if(organizationValue =="H AYUNTAMIENTO CONSTITUCIONAL DE TEXCOCO"){
+      var ayuntamientoConstitucionalTexcoco =[" "];
+      organizationValue = ayuntamientoConstitucionalTexcoco;
+    }
+     if(organizationValue =="H AYUNTAMIENTO CONSTITUCIONAL DE VILLA ALDAMA VERACRUZ"){
+      var ayuntamientoConstitucionalAldamaVeracruz =[" "];
+      organizationValue = ayuntamientoConstitucionalAldamaVeracruz;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE ACULCO ESTADO DE MEXICO"){
+      var ayuntamientoConstitucionalEstadoMExico =[" "];
+      organizationValue = ayuntamientoConstitucionalEstadoMExico;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE AMANALCO"){
+      var ayuntamientoAmanalco =[" "];
+      organizationValue = ayuntamientoAmanalco;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE ARANDAS"){
+      var ayuntamientoArandas =[" "];
+      organizationValue = ayuntamientoArandas;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE ATIZAPAN DE ZARAGOZA ESTADO DE MEXICO"){
+      var ayuntamientoAtizapanZaragoza =[" "];
+      organizationValue = ayuntamientoAtizapanZaragoza;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE CABORCA SONORA"){
+      var ayuntamientoCabocaSonora =["SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA CABORCA, SONORA"];
+      organizationValue = ayuntamientoCabocaSonora;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE CAJEME"){
+      var ayuntamientoCajeme =[" "];
+      organizationValue = ayuntamientoCajeme;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE CIUDAD DE NEZAHUALCOYOTL"){
+      var ayuntamientoCiudad =[" "];
+      organizationValue = ayuntamientoCiudad;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE COLIMA"){
+      var ayuntamientoColima =[" "];
+      organizationValue = ayuntamientoColima;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE COMITAN DE DOMINGUEZ"){
+      var ayuntamientoComitanDominguez =[" "];
+      organizationValue = ayuntamientoComitanDominguez;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE COPANDARO"){
+      var ayuntamientoCoopandaro =[" "];
+      organizationValue = ayuntamientoCoopandaro;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE CORDOBA"){
+      var ayuntamientoCordoba =[" "];
+      organizationValue = ayuntamientoCordoba;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE CUAUTITLAN ESTADO DE MEXICO"){
+      var ayuntamientoCuatitlamMexico =[" "];
+      organizationValue = ayuntamientoCuatitlamMexico;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE ECATEPEC DE MORELOS"){
+      var ayuntamientoEcatepecMorelos =[" "];
+      organizationValue = ayuntamientoEcatepecMorelos;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE GUASAVE"){
+      var ayuntamientoGuasave =[" "];
+      organizationValue = ayuntamientoGuasave;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE GUAYMAS"){
+      var ayuntamientoGuaymas =["SECRETARIA DEL AYUNTAMIENTO"];
+      organizationValue = ayuntamientoGuaymas;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE HERMOSILLO"){
+      var ayuntamientoHermosillo =[" "];
+      organizationValue = ayuntamientoHermosillo;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE LOS REYES DE SALGADO"){
+      var ayuntamientoReyesSalgado =[" "];
+      organizationValue = ayuntamientoReyesSalgado;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE MARAVATIO"){
+      var ayuntamientoMaravatio =[" "];
+      organizationValue = ayuntamientoMaravatio;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE MEXICALI"){
+      var ayuntamientoMexicali =[" "];
+      organizationValue = ayuntamientoMexicali;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE NAUCALPAN DE JUAREZ"){
+      var ayuntamientoNaucalpanJuarez =[" "];
+      organizationValue = ayuntamientoNaucalpanJuarez;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE OTHON P BLANCO"){
+      var ayuntamientoOthonBlanco =[" "];
+      organizationValue = ayuntamientoOthonBlanco;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE PARACHO DE VERDUZCO"){
+      var ayuntamientoParachoVerduzco =[" "];
+      organizationValue = ayuntamientoParachoVerduzco;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE PLAYAS DE ROSARITO"){
+      var ayuntamientoPlayasRosarito =[" "];
+      organizationValue = ayuntamientoPlayasRosarito;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE SALVADOR ESCALANTE"){
+      var ayuntamientoSalvadorEscalante =[" "];
+      organizationValue = ayuntamientoSalvadorEscalante;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE SAN LUIS POTOSI"){
+      var ayuntamientoLuisPotosi =[" "];
+      organizationValue = ayuntamientoLuisPotosi;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE SANTO DOMINGO TEHUANTEPECOAXACA"){
+      var ayuntamientoSantoDomingo =[" "];
+      organizationValue = ayuntamientoSantoDomingo;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE TECOZAUTLA HGO"){
+      var ayuntamientoTexozautla =[" "];
+      organizationValue = ayuntamientoTexozautla;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE TIANGUISTENCO ESTADO DE MEXICO"){
+      var ayuntamientoTianguitenco =[" "];
+      organizationValue = ayuntamientoTianguitenco;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE TLALNEPANTLA DE BAZ"){
+      var ayuntamientoTlanepantla =[" "];
+      organizationValue = ayuntamientoTlanepantla;
+    }
+      if(organizationValue =="H AYUNTAMIENTO DE TONALA"){
+      var ayuntamientoTonala =[" "];
+      organizationValue = ayuntamientoTonala;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE TUXTLA CHICO"){
+      var ayuntamientoTuxtlaChico =[" "];
+      organizationValue = ayuntamientoTuxtlaChico;
+    }
+     if(organizationValue =="H AYUNTAMIENTO DE VALLE DE CHALCO"){
+      var ayuntamientoVillaChalco =[" "];
+      organizationValue = ayuntamientoVillaChalco;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DE ZINACANTEPEC"){
+      var ayuntamientoZinacantepec =[" "];
+      organizationValue = ayuntamientoZinacantepec;
+    }
+    if(organizationValue =="H AYUNTAMIENTO DEL MUNICIPIO DE TENABO CAMPECHE"){
+      var ayuntamientoMunicipioTenabo =[" "];
+      organizationValue = ayuntamientoMunicipioTenabo;
+    }
+    if(organizationValue =="H AYUNTAMIENTO MUNICIPAL CONSTITUCIONAL DE COMITAN DE DOMINGUEZ CHIAPAS"){
+      var ayuntamientoMunicipalConstitucional =[" "];
+      organizationValue = ayuntamientoMunicipalConstitucional;
+    }
+      if(organizationValue =="H AYUNTAMIENTO MUNICIPAL DE ACALA CHIAPAS"){
+      var ayuntamientoMunicpalAcalaChiapas =[" "];
+      organizationValue = ayuntamientoMunicpalAcalaChiapas;
+    }
+     if(organizationValue =="H AYUNTAMIENTO MUNICIPAL DE AMATENANGO DEL VALLE CHIAPAS"){
+      var ayuntamientoMunicipalValleChiapas =[" "];
+      organizationValue = ayuntamientoMunicipalValleChiapas;
+    }
+     if(organizationValue =="H AYUNTAMIENTO PARAISO"){
+      var ayuntamientoParaiso =[" "];
+      organizationValue = ayuntamientoParaiso;
+    }
+     if(organizationValue =="H AYUTNAMIENTO DE TONALA JALISCO"){
+      var ayuntamientoTonalaJalisco =[" "];
+      organizationValue = ayuntamientoTonalaJalisco;
+    }
+     if(organizationValue =="HAYUNTAMIENTO CONSTITUCIONAL DE VILLA ALDAMA VER"){
+      var ayuntamientoConstitucionalVillaAldama =[" "];
+      organizationValue = ayuntamientoConstitucionalVillaAldama;
+    }
+     if(organizationValue =="HONORABLE AYUNTAMIENTO DE NICOLAS ROMERO ESTADO DE MEXICO"){
+      var honorableAyuntaminetoNicolasRomero =[" "];
+      organizationValue = honorableAyuntaminetoNicolasRomero;
+    }
+    if(organizationValue =="HONORABLE AYUNTAMIENTO DE TLACOLULA DE MATAMOROS / INSTANCIA DE LA MUJER TLACOLULENSE"){
+      var honorableAyuntamientoTlacolula =[" "];
+      organizationValue = honorableAyuntamientoTlacolula;
+    }
+     if(organizationValue =="HOSPITAL CIVIL VICTORIA"){
+      var hospitalCivilVictoria =[" "];
+      organizationValue = hospitalCivilVictoria;
+    }
+     if(organizationValue =="HOSPITAL MUNICIPAL MARGARITA MAZA DE JUAREZ MAZATLAN"){
+      var hospitalMunicipalMargarita =[" "];
+      organizationValue = hospitalMunicipalMargarita;
+    }
+      if(organizationValue =="INCUBADORA DE NEGOCIOS EXTENCION UAZ VALPARAISO"){
+      var incubadoraNegocios =[" "];
+      organizationValue = incubadoraNegocios;
+    }
+     if(organizationValue =="INSTITUO MUNICIPAL DE PLANEACION URBANA"){
+      var institutooMunicipalPlaneacion =[" "];
+      organizationValue = institutooMunicipalPlaneacion;
+    }
+     if(organizationValue =="INSTITUTO DE PLANEACION PARA EL DESARROLLO SUSTENTABLE DE MANZANILLO"){
+      var institutoPlaneacionDesarrollo =[" "];
+      organizationValue = institutoPlaneacionDesarrollo;
+    }
+     if(organizationValue =="INSTITUTO DE PLANEACION Y DESARROLLO MUNICIPAL DE SAN NICOLAS DE LOS GARZA"){
+      var institutoPlaneacionDesarrolloMunicipla =[" "];
+      organizationValue = institutoPlaneacionDesarrolloMunicipla;
+    }
+     if(organizationValue =="INSTITUTO ESTATAL ELECTORAL DE MORELOS"){
+      var institutoElectoralMorelos =[" "];
+      organizationValue = institutoElectoralMorelos;
+    }
+     if(organizationValue =="INSTITUTO MUNICIPAL AGUASCALENTENSE PARA LA CULTURA"){
+      var institutoAguascalientesPAra =[" "];
+      organizationValue = institutoAguascalientesPAra;
+    }
+     if(organizationValue =="INSTITUTO MUNICIPAL DE ARTE Y CULTURA PUEBLA"){
+      var institutoMunicipalArteCultura =[" "];
+      organizationValue = institutoMunicipalArteCultura;
+    }
+     if(organizationValue =="INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION DE NOGALES"){
+      var institutoMunicipalInvestigacion =[" "];
+      organizationValue = institutoMunicipalInvestigacion;
+    }
+    if(organizationValue =="INSTITUTO MUNICIPAL DE LA FAMILIA DE SAN PEDRO GARZA GARCIA NL"){
+      var institutoMunicipalFamiliaSanPedro =[" "];
+      organizationValue = institutoMunicipalFamiliaSanPedro;
+    }
+     if(organizationValue =="INSTITUTO MUNICIPAL DE LA JUVENTUD DE CELAYA"){
+      var institutoMunicipalJuventud =[" "];
+      organizationValue = institutoMunicipalJuventud;
+    }
+    if(organizationValue =="INSTITUTO MUNICIPAL DE LA JUVENTUD DE TECATE"){
+      var institutoMunicipalTecate =[" "];
+      organizationValue = institutoMunicipalTecate;
+    }
+    if(organizationValue =="INSTITUTO MUNICIPAL DE LA MUJER JUARENSE"){
+      var institutoMunicipalMujer =[" "];
+      organizationValue = institutoMunicipalMujer;
+    }
+     if(organizationValue =="INSTITUTO MUNICIPAL DE PLANEACION"){
+      var institutoMunicipalPlaneacion =[" "];
+      organizationValue = institutoMunicipalPlaneacion;
+    }
+     if(organizationValue =="INSTITUTO MUNICIPAL DE PLANEACION DE CHIHUAHUA"){
+      var institutoMunicipalPlaneacionChiuahua =[" "];
+      organizationValue = institutoMunicipalPlaneacionChiuahua;
+    }
+     if(organizationValue =="INSTITUTO MUNICIPAL DE PLANEACION DE LOS CABOS"){
+      var institutoMunicipalPlaneacionCabos =[" "];
+      organizationValue = institutoMunicipalPlaneacionCabos;
+    }
+    if(organizationValue =="INSTITUTO MUNICIPAL DE PLANEACION URBANA SAN PEDRO GARZA GARCIA"){
+      var institutoMunicipalPlaneacionGarzaGarcia =[" "];
+      organizationValue = institutoMunicipalPlaneacionGarzaGarcia;
+    }
+    if(organizationValue =="INSTITUTO PARA LA COMPETITIVIDAD Y EL COMERCIO EXTERIOR DE NUEVO LAREDO"){
+      var institutoCompetitividadCoemercio =[" "];
+      organizationValue = institutoCompetitividadCoemercio;
+    }
+     if(organizationValue =="LOGYT SA DE CV"){
+      var logit =[" "];
+      organizationValue = logit;
+    }
+     if(organizationValue =="LOWER RIO GRANDE VALLEY DEVELOPMENT COUNCIL"){
+      var lowerRio =[" "];
+      organizationValue = lowerRio;
+    }
+    if(organizationValue =="MUNICIPIO DE ACALA CHIAPAS"){
+      var municipioAcalaChiapas =[" "];
+      organizationValue = municipioAcalaChiapas;
+    }
+    if(organizationValue =="MUNICIPIO DE ACAMBARO GTO"){
+      var municipioAcambargo =[" "];
+      organizationValue = municipioAcambargo;
+    }
+    if(organizationValue =="MUNICIPIO DE AGUILILLA MICHOACAN"){
+      var municipioAguililla =[" "];
+      organizationValue = municipioAguililla;
+    }
+     if(organizationValue =="MUNICIPIO DE ALTAMIRA"){
+      var municipioAltamira =[" "];
+      organizationValue = municipioAltamira;
+    }
+     if(organizationValue =="MUNICIPIO DE ATLACOMULCO"){
+      var municipioAtlacomulco =[" "];
+      organizationValue = municipioAtlacomulco;
+    }
+     if(organizationValue =="MUNICIPIO DE CALAKMUL CAMPECHE"){
+      var municipioCalakmul =[" "];
+      organizationValue = municipioCalakmul;
+    }
+    if(organizationValue =="MUNICIPIO DE CD CUAUHTEMOC CHIHUAHUA"){
+      var municipioCuatomok =[" "];
+      organizationValue = municipioCuatomok;
+    }
+     if(organizationValue =="MUNICIPIO DE CHALCO"){
+      var municipioChalco =[" "];
+      organizationValue = municipioChalco;
+    }
+    if(organizationValue =="MUNICIPIO DE CHAPALA JAL"){
+      var municipioChapala =[" "];
+      organizationValue = municipioChapala;
+    }
+     if(organizationValue =="MUNICIPIO DE COATZACOALCOSVER"){
+      var municipioCoatzacolcosver =[" "];
+      organizationValue = municipioCoatzacolcosver;
+    }
+    if(organizationValue =="MUNICIPIO DE CUERNAVACA"){
+      var municipioCuernavaca =[" "];
+      organizationValue = municipioCuernavaca;
+    }
+    if(organizationValue =="MUNICIPIO DE EL MARQUES"){
+      var municipioMarques =[" "];
+      organizationValue = municipioMarques;
+    }
+    if(organizationValue =="MUNICIPIO DE GUADALAJARA"){
+      var municipioGuadalajaa =[" "];
+      organizationValue = municipioGuadalajaa;
+    }
+    if(organizationValue =="MUNICIPIO DE GUAYMAS SONORA"){
+      var municipioGuaymasSonora =[" "];
+      organizationValue = municipioGuaymasSonora;
+    }
+    if(organizationValue =="MUNICIPIO DE IXTLAHUACAN DE LOS MEMBRILLOS"){
+      var municipioMenbrillos =[" "];
+      organizationValue = municipioMenbrillos;
+    }
+     if(organizationValue =="MUNICIPIO DE JUAREZ"){
+      var municipioJuarez =[" "];
+      organizationValue = municipioJuarez;
+    }
+     if(organizationValue =="MUNICIPIO DE LERMA"){
+      var municipioLeerma =[" "];
+      organizationValue = municipioLeerma;
+    }
+     if(organizationValue =="MUNICIPIO DE MAGDALENA SONORA"){
+      var municipioMagdalena =[" "];
+      organizationValue = municipioMagdalena;
+    } 
+     if(organizationValue =="MUNICIPIO DE MATAMOROS"){
+      var municipioMatamoros =[" "];
+      organizationValue = municipioMatamoros;
+    } 
+     if(organizationValue =="MUNICIPIO DE MATEHUALA"){
+      var municipioMatehuala =[" "];
+      organizationValue = municipioMatehuala;
+    } 
+    if(organizationValue =="MUNICIPIO DE MONTERREY"){
+      var municipioMonterrey =[" "];
+      organizationValue = municipioMonterrey;
+    } 
+     if(organizationValue =="MUNICIPIO DE OAXACA DE JUAREZ"){
+      var municipioOaxaca =[" "];
+      organizationValue = municipioOaxaca;
+    } 
+    if(organizationValue =="MUNICIPIO DE PIEDRAS NEGRAS"){
+      var municipioPiedrasNegras =[" "];
+      organizationValue = municipioPiedrasNegras;
+    } 
+    if(organizationValue =="MUNICIPIO DE PINAL DE AMOLES"){
+      var municipioPinalAmores =[" "];
+      organizationValue = municipioPinalAmores;
+    } 
+    if(organizationValue =="MUNICIPIO DE QUERETARO"){
+      var municipioQueretaro =["DIRECCIÓN DE OBRAS PÚBLICAS",
+                              "SECRETARÍA DE DESARROLLO SUSTENTABLE"];
+      organizationValue = municipioQueretaro;
+    } 
+     if(organizationValue =="MUNICIPIO DE ROSALES"){
+      var municipioRosales =[" "];
+      organizationValue = municipioRosales;
+    } 
+    if(organizationValue =="MUNICIPIO DE SAN ANDRES TUXTLA"){
+      var municipioAndres =[" "];
+      organizationValue = municipioAndres;
+    } 
+     if(organizationValue =="MUNICIPIO DE SAN CRISTOBAL DE LAS CASAS"){
+      var municipioCristobal =[" "];
+      organizationValue = municipioCristobal;
+    } 
+     if(organizationValue =="MUNICIPIO DE SAN FELIPE USILA"){
+      var municipioFelipe =[" "];
+      organizationValue = municipioFelipe;
+    } 
+     if(organizationValue =="MUNICIPIO DE SAN FRANCISCO DE LOS ROMO"){
+      var municipioFrancisco =[" "];
+      organizationValue = municipioFrancisco;
+    } 
+    if(organizationValue =="MUNICIPIO DE SAN JERONIMO SOSOLA OAXACA"){
+      var municipioJeronimo =[" "];
+      organizationValue = municipioJeronimo;
+    }
+    if(organizationValue =="MUNICIPIO DE SAN JUAN GUICHICOVI"){
+      var municipioSanJuan =[" "];
+      organizationValue = municipioSanJuan;
+    }
+     if(organizationValue =="MUNICIPIO DE SAN LUIS POTOSI"){
+      var municipioSanLuisPotosi =[" "];
+      organizationValue = municipioSanLuisPotosi;
+    }
+       if(organizationValue =="MUNICIPIO DE TULTITLAN"){
+      var municipioTultitlan =[" "];
+      organizationValue = municipioTultitlan;
+    }
+       if(organizationValue =="MUNICIPIO DE SAN NICOLAS DE LOS GARZA N L"){
+      var municipioSanNicolas =[" "];
+      organizationValue = municipioSanNicolas;
+    }
+    if(organizationValue =="MUNICIPIO DE SAN PEDRO GARZA GARCIA NL"){
+      var municipioSanPedroGarza =[" "];
+      organizationValue = municipioSanPedroGarza;
+    }
+    if(organizationValue =="MUNICIPIO DE SANTO DOMINGO TEHUANTEPEC"){
+      var municipioSantoDomingo =[" "];
+      organizationValue = municipioSantoDomingo;
+    }
+    if(organizationValue =="MUNICIPIO DE SOLIDARIDAD QUINTANA ROO"){
+      var municipioSolidaridad =["TESORERÍA MUNICIPAL"];
+      organizationValue = municipioSolidaridad;
+    }
+    if(organizationValue =="MUNICIPIO DE TAMPICO"){
+      var municipioTampico =[" "];
+      organizationValue = municipioTampico;
+    }
+     if(organizationValue =="MUNICIPIO DE TANCITARO MICHOACAN"){
+      var municipioTancitaroMichoacan =[" "];
+      organizationValue = municipioTancitaroMichoacan;
+    }
+      if(organizationValue =="MUNICIPIO DE TECALITLAN JALISCO"){
+      var municipioTecatitlan =[" "];
+      organizationValue = municipioTecatitlan;
+    }
+      if(organizationValue =="MUNICIPIO DE TETELA DEL VOLCAN"){
+      var municipioTetela =[" "];
+      organizationValue = municipioTetela;
+    }
+     if(organizationValue =="MUNICIPIO DE URES"){
+      var municipioUres =["H AYUNTAMIENTO DE URES"];
+      organizationValue = municipioUres;
+    }
+     if(organizationValue =="MUNICIPIO DE URIANGATO"){
+      var municipioUrianGato =[" "];
+      organizationValue = municipioUrianGato;
+    }
+    if(organizationValue =="MUNICIPIO DE VALLE DE SANTIAGO GUANAJUATO"){
+      var municipioSantiagoGuanajuato =[" "];
+      organizationValue = municipioSantiagoGuanajuato;
+    }
+     if(organizationValue =="MUNICIPIO DE XALISCO NAYARIT"){
+      var municipioXaliscoNayarit =[" "];
+      organizationValue = municipioXaliscoNayarit;
+    }
+     if(organizationValue =="MUNICIPIO DE YAUTEPEC MORELOS"){
+      var municipioYautepec =[" "];
+      organizationValue = municipioYautepec;
+    }
+     if(organizationValue =="MUNICIPIO DE ZACATECAS"){
+      var municipioZacatecas =[" "];
+      organizationValue = municipioZacatecas;
+    }
+     if(organizationValue =="MUNICIPIO DE ZITACUARO"){
+      var municipioZitacuaro =[" "];
+      organizationValue = municipioZitacuaro;
+    }
+     if(organizationValue =="MUNICIPIO JIQUILPAN DE JUAREZ MICHOCAN"){
+      var municipioJiquilpan =[" "];
+      organizationValue = municipioJiquilpan;
+    }
+    if(organizationValue =="MUNICIPIO TENABO"){
+      var municipioTenabo =[" "];
+      organizationValue = municipioTenabo;
+    }
+     if(organizationValue =="NORTHERM ILLINOIS UNIVERSITY"){
+      var northermIllinois =["DEPARTMENT OF GEOLOGY AND ENVIRONMENTAL GEOSCIENCES"];
+      organizationValue = northermIllinois;
+    }
+    if(organizationValue =="OFICINA DEL CRONISTA DE LA CIUDAD H AYUNTAMIENTO DE CAMPECHE"){
+      var oficinaCronistaCiudad =[" "];
+      organizationValue = oficinaCronistaCiudad;
+    }
+      if(organizationValue =="ORGANISMO OPERADOR DE AGUA POTABLE ALCANTARILLADO Y SANEAMIENTO DE MORELIA"){
+      var organismoOperador =[" "];
+      organizationValue = organismoOperador;
+    }
+     if(organizationValue =="ORGANISMO OPERADOR MUNICIPAL DEL SISTEMA DE AGUA POTABLE ALCANTARILLADO Y SANEAMIENTO DE LOS CABOS"){
+      var organismoOperadorMunicipal =[" "];
+      organizationValue = organismoOperadorMunicipal;
+    }
+      if(organizationValue =="ORGANISMO OPERADOR PARAMUNICIPAL AGUA POTABLE ALCANTARILLADO Y SANEAMIENTO DESCENTRALIZADO DE LAS AUTORIDADES DEL AYUNTAMIENTO DE RIOVERDE SLP"){
+      var organismoOperadorParaMunicipal =[" "];
+      organizationValue = organismoOperadorParaMunicipal;
+    }
+     if(organizationValue =="ORGANISMO PUBLICO DESCENTRALIZADO PARA LA PRESTACION DE LOS SERVICIOS DE AGUA POTABLE ALCANTARILLADO Y SANEAMIENTO LA PAZ MEXICO"){
+      var organismoPublicoDescentralizado =[" "];
+      organizationValue = organismoPublicoDescentralizado;
+    }
+     if(organizationValue =="PARQUE ZOOLOGICO BENITO JUAREZ"){
+      var parqueZoologico =[" "];
+      organizationValue = parqueZoologico;
+    }
+     if(organizationValue =="PRESIDENCIA MUNICIPAL DE CHIHUAHUA"){
+      var parqueMunicipal =[" "];
+      organizationValue = parqueMunicipal;
+    }
+    if(organizationValue =="PRESIDENCIA MUNICIPAL DE CIUDAD HIDALGO"){
+      var parqueMunicipalHidalgo =[" "];
+      organizationValue = parqueMunicipalHidalgo;
+    }
+    if(organizationValue =="PRESIDENCIA MUNICIPAL DE HUEHUETLA HIDALGO"){
+      var parqueMunicipalHuehuetla =[" "];
+      organizationValue = parqueMunicipalHuehuetla;
+    }
+     if(organizationValue =="PRESIDENCIA MUNICIPAL DE IRAPUATO GUANAJUATO"){
+      var parqueMunicipalIrapuatoGuanajuanto =[" "];
+      organizationValue = parqueMunicipalIrapuatoGuanajuanto;
+    }
+    if(organizationValue =="PRESIDENCIA MUNICIPAL DE JARAL DEL PROGRESO GUANAJUATO"){
+      var presindeciaMunicpalJaral =["SECRETARÍA DEL AYUNTAMIENTO DEL MUNICIPIO DE JARAL DEL PROGRESO, GUANAJUATO."];
+      organizationValue = presindeciaMunicpalJaral;
+    }
+    if(organizationValue =="PRESIDENCIA MUNICIPAL DE LEON GUANAJUATO"){
+      var presindeciaMunicipalGuanajuato =["DIRECCIÓN GENERAL DE DESARROLLO INSTITUCIONAL",
+                                            "DIRECCIÓN GENERAL DE SALUD MUNICIPAL",
+                                            "SECRETARÍA PARTICULAR"];
+      organizationValue = presindeciaMunicipalGuanajuato;
+    }
+     if(organizationValue =="PRESIDENCIA MUNICIPAL DE JERECUARO GUANAJUATO"){
+      var presindeciaMunicipalJerecuaroGuanajuato =[" "];
+      organizationValue = presindeciaMunicipalJerecuaroGuanajuato;
+    }
+     if(organizationValue =="PRESIDENCIA MUNICIPAL DE MINERAL DE LA REFORMA"){
+      var presindeciaMunicipalMineral =[" "];
+      organizationValue = presindeciaMunicipalMineral;
+    }
+    if(organizationValue =="PRESIDENCIA MUNICIPAL DE OCOZOCOAUTLA DE ESPINOSA"){
+      var presindeciaMunicipalEsponoza =[" "];
+      organizationValue = presindeciaMunicipalEsponoza;
+    }
+    if(organizationValue =="PRESIDENCIA MUNICIPAL DE PACHUCA DE SOTO"){
+      var presindeciaMunicipalPAchucaSoto =["SECRETARÍA DE CONTRALORÍA MUNICIPIO DE PACHUCA"];
+      organizationValue = presindeciaMunicipalPAchucaSoto;
+    }
+     if(organizationValue =="PROGRAMA DE VIH/SIDA DE LA CIUDAD DE MEXICO"){
+      var programaCiudad =[" "];
+      organizationValue = programaCiudad;
+    }
+     if(organizationValue =="PROTECCION CIVIL DURANGO"){
+      var proteccionDurango =[" "];
+      organizationValue = proteccionDurango;
+    }
+     if(organizationValue =="R AYUNTAMIENTO DE CUATRO CIENEGAS DE CARRANZA COAHUILA DE ZARAGOZA"){
+      var ayuntamientoCuatroCienegas =[" "];
+      organizationValue = ayuntamientoCuatroCienegas;
+    }
+     if(organizationValue =="R AYUNTAMIENTO DE NUEVO LAREDO"){
+      var ayuntamientoNuevoLaredo =[" "];
+      organizationValue = ayuntamientoNuevoLaredo;
+    }
+     if(organizationValue =="RASTRO CUAUHTEMOC TIF 191"){
+      var rasroCuauhtemoc =[" "];
+      organizationValue = rasroCuauhtemoc;
+    }
+    if(organizationValue =="REPUBLICANO AYUNTAMIENTO CD GUADALUPE"){
+      var republicanoAyuntamiento =[" "];
+      organizationValue = republicanoAyuntamiento;
+    }
+      if(organizationValue =="SECRETARIA DE DESARROLLO URBANO Y ECOLOGIA / R AYUNTAMIENTO DE REYNOSA TAMAULIPAS"){
+      var secretariaDesarrolloUrbano =[" "];
+      organizationValue = secretariaDesarrolloUrbano;
+    }
+     if(organizationValue =="SECRETARIA DE LA PRESIDENCIA CULIACAN"){
+      var secretariaPresidencia =[" "];
+      organizationValue = secretariaPresidencia;
+    }
+      if(organizationValue =="SECRETARIA DE MEIO AMBIENTE E URBANISMO SEMURB"){
+      var secretariaMeioAmbiente =[" "];
+      organizationValue = secretariaMeioAmbiente;
+    }
+       if(organizationValue =="SECRETARIA DE SEGURIDAD PUBLICA MUNICIPAL SAN JUAN DEL RIO"){
+      var secretariaSeguridadPublica =[" "];
+      organizationValue = secretariaSeguridadPublica;
+    }
+       if(organizationValue =="SISTEMA DE AGUA POTABLE Y ALCANTARILLADO MUNICIPAL DE VALLE DE SANTIAGO"){
+      var sistemaAguaPotable =[" "];
+      organizationValue = sistemaAguaPotable;
+    }
+      if(organizationValue =="SISTEMA DE AGUA Y SANEAMIENTO METROPOLITANO DE VERACRUZ BOCA DEL RIO Y MEDELLIN"){
+      var sistemaAguaSaneamiento =[" "];
+      organizationValue = sistemaAguaSaneamiento;
+    }
+     if(organizationValue =="SISTEMA DE DESARROLLO INTEGRAL DE LA FAMILIA"){
+      var sistemaDesarrolloIntegralf =[" "];
+      organizationValue = sistemaDesarrolloIntegralf;
+    }
+     if(organizationValue =="SISTEMA DE URBANIZACION MUNICIPAL ADICIONAL"){
+      var sistemaUrbanizacionMunicpal =[" "];
+      organizationValue = sistemaUrbanizacionMunicpal;
+    }
+      if(organizationValue =="SISTEMA INTEGRAL DE ASEO PUBLICO"){
+      var sisteaIntegralAseoPublico =[" "];
+      organizationValue = sisteaIntegralAseoPublico;
+    }
+     if(organizationValue =="SISTEMA INTEGRAL DE ASEO PUBLICO DE LEON"){
+      var sisteaIntegralAseoPublicoLeon =[" "];
+      organizationValue = sisteaIntegralAseoPublicoLeon;
+    }
+     if(organizationValue =="SISTEMA MUNICIPAL DE AGUA POTABLE Y ALCANTARILLADO DE TUXTLA GUTIERREZ CHIAPAS"){
+      var sistemaMunicipalAguaPotable =[" "];
+      organizationValue = sistemaMunicipalAguaPotable;
+    }
+     if(organizationValue =="SISTEMA MUNICIPAL DE PARQUES TEMATICOS DE TIJUANA"){
+      var sistemaMunicpalParquesTematicos =[" "];
+      organizationValue = sistemaMunicpalParquesTematicos;
+    }
+     if(organizationValue =="SISTEMA MUNICIPAL DIF TEXCOCO"){
+      var sistemaMunicipalDif =[" "];
+      organizationValue = sistemaMunicipalDif;
+    }
+    if(organizationValue =="SISTEMA MUNICIPAL PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DE TEMIXCO"){
+      var sistemaMunicipalParaDesarrolloIntegral =[" "];
+      organizationValue = sistemaMunicipalParaDesarrolloIntegral;
+    }
+      if(organizationValue =="SISTEMA MUNICIPAL PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE METEPEC ESTADO DE MEXICO"){
+      var sistemaIntegralMunicipioMetepec =[" "];
+      organizationValue = sistemaIntegralMunicipioMetepec;
+    }
+     if(organizationValue =="SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DE PACHUCA DE SOTO"){
+      var sistemaFamiliaPachucaSoto =[" "];
+      organizationValue = sistemaFamiliaPachucaSoto;
+    }
+     if(organizationValue =="SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DE TECATE"){
+      var tecate =[" "];
+      organizationValue = tecate;
+    }
+     if(organizationValue =="SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE JALISCO"){
+      var municipioJalisco =[" "];
+      organizationValue = municipioJalisco;
+    }
+     if(organizationValue =="SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA EN EL MUNICIPIO DE LEON GUANAJUATO"){
+      var municipioLeonGuanajuato =[" "];
+      organizationValue = municipioLeonGuanajuato;
+    }
+    if(organizationValue =="SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA MUNICIPIO DE ROSALES"){
+      var municipioRosales =[" "];
+      organizationValue = municipioRosales;
+    }
+     if(organizationValue =="SUBPROCURADURIA JURIDICA DEL ESTADO DE MEXICO"){
+      var juridicaEstadoMexico =[" "];
+      organizationValue = juridicaEstadoMexico;
+    }
+     if(organizationValue =="TESORERIA MUNICIPAL DE TORREON"){
+      var tesoreriaMunicipalTorreon =[" "];
+      organizationValue = tesoreriaMunicipalTorreon;
+    }
+      if(organizationValue =="UNIDAD DE REHABILITACION PSICOSOCIAL"){
+      var unidadPsicosocial =[" "];
+      organizationValue = unidadPsicosocial;
+    }
+      if(organizationValue =="XIX AYUNTAMIENTO DE ENSENADA"){
+      var ayuntamientoEnsenada =[" "];
+      organizationValue = ayuntamientoEnsenada;
+    }
+     if(organizationValue =="XIX AYUNTAMIENTO TECATE BAJA CALIFORNIA"){
+      var tecateBajaCalifornia =[" "];
+      organizationValue = tecateBajaCalifornia;
+    }
+    if(organizationValue =="ZOOLOGICO GUADALAJARA"){
+      var zoologicoGuadalajra =[" "];
+      organizationValue = zoologicoGuadalajra;
+    }
+
+    /* Instituciones del sector gobierno federal centralizado */
+
+    if(organizationValue =="COORDINACION DE VIGILANCIA EPIDEMIOLOGICA"){
+      var cordinacionVigilancia =[" "];
+      organizationValue = cordinacionVigilancia;
+    }
+
+    if(organizationValue =="DIRECCION GENERAL DE TELEVISION EDUCATIVA"){
+      var direccionGeneralTelevision =["ESCAPARATE COMUNICACIÓN",
+                                        "UNIVISIÓN NETWORK-MÉXICO"];
+      organizationValue = direccionGeneralTelevision;
+    }
+    if(organizationValue =="GERENCIA GENERAL DE BIOLOGICOS Y REACTIVOS"){
+      var gerenciaGEneralBiologicos =[" "];
+      organizationValue = gerenciaGEneralBiologicos;
+    }
+     if(organizationValue =="HOSPITAL INFANTIL DE TAMAULIPAS"){
+      var hospitalInfantil =[" "];
+      organizationValue = hospitalInfantil;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE PESCA"){
+      var isntitutoNacionalPEsca =["DIRECCION GENERAL DE INVESTIGACION PESQUERA DEL ATLANTICO"];
+      organizationValue = isntitutoNacionalPEsca;
+    }
+    if(organizationValue =="SECRETARIA DE EDUCACION PUBLICA"){
+      var secretariaEducacionPublica =["COLEGIO DE BACHILLERES",
+                                        "COLEGIO NACIONAL DE EDUCACION PROFESIONAL TECNICA",
+                                        "COMISION DE OPERACION Y FOMENTO DE ACTIVIDADES ACADEMICAS DEL INSTITUTO POLITECNICO NACIONAL",
+                                        "COMISION NACIONAL DE LOS LIBROS DE TEXTO GRATUITOS",
+                                        "COMISION NACIONAL DEL DEPORTE",
+                                        "COMITE ADMINISTRADOR DEL PROGRAMA FEDERAL DE CONSTRUCCION DE ESCUELAS",
+                                        "COMPALIA OPERADORA DEL CENTRO CULTURAL Y TURISTICO DE TIJUANA, S.A. DE C.V.",
+                                        "COMPAÑÍA OPERADORA DEL CENTRO CULTURAL Y TURÍSTICO DE TIJUANA S.A. DE C.V.",
+                                        "CONSEJO NACIONAL PARA LA CULTURA Y LAS ARTES",
+                                        "COORDINACION DE ORGANOS DESCONCENTRADOS Y DEL SECTOR PARAESTATAL",
+                                        "COORDINACION GENERAL DE ACTUALIZACION Y CAPACITACION PARA MAESTROS EN SERVICIO",
+                                        "COORDINACION GENERAL DE EDUCACION INTERCULTURAL BILINGUE",
+                                        "COORDINACION GENERAL DE REPRESENTACIONES DE LA SEP EN LAS ENTIDADES FEDERATIVAS",
+                                        "COORDINACION GENERAL DE UNIVERSIDADES TECNOLOGICAS",
+                                        "COORDINACION NACIONAL DE CARRERA MAGISTERIAL",
+                                        "DIRECCION DE SALUD ESCOLAR",
+                                        "DIRECCION GENERAL DE ACREDITACION, INCORPORACION Y REVALIDACION",
+                                        "DIRECCION GENERAL DE ADMINISTRACION DE PERSONAL EN EL DISTRITO FEDERAL",
+                                        "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                                        "DIRECCION GENERAL DE CENTROS DE FORMACION PARA EL TRABAJO",
+                                        "DIRECCION GENERAL DE EDUCACION FISICA EN EL DISTRITO FEDERAL",
+                                        "DIRECCION GENERAL DE EDUCACION INDIGENA",
+                                        "DIRECCION GENERAL DE EDUCACION NORMAL Y ACTUALIZACION DEL MAGISTERIO EN EL DISTRITO FEDERAL",
+                                        "DIRECCION GENERAL DE EDUCACION SECUNDARIA TECNICA",
+                                        "DIRECCION GENERAL DE EDUCACION SUPERIOR",
+                                        "DIRECCION GENERAL DE EVALUACION",
+                                        "DIRECCION GENERAL DE EXTENSION EDUCATIVA",
+                                        "DIRECCION GENERAL DE INVESTIGACION EDUCATIVA",
+                                        "DIRECCION GENERAL DE MATERIALES Y METODOS EDUCATIVOS",
+                                        "DIRECCION GENERAL DE NORMATIVIDAD",
+                                        "DIRECCION GENERAL DE OPERACION DE SERVICIOS EDUCATIVOS EN EL DISTRITO FEDERAL",
+                                        "DIRECCION GENERAL DE PERSONAL",
+                                        "DIRECCION GENERAL DE PLANEACION, PROGRAMACION Y PRESUPUESTO EN EL DISTRITO FEDERAL",
+                                        "DIRECCION GENERAL DE PLANEACION, PROGRAMACION Y PRESUPUESTO",
+                                        "DIRECCION GENERAL DE PROFESIONES",
+                                        "DIRECCION GENERAL DE RECURSOS FINANCIEROS",
+                                        "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS",
+                                        "DIRECCION GENERAL DE RELACIONES INTERNACIONALES",
+                                        "DIRECCION GENERAL DE SERVICIOS EDUCATIVOS IZTAPALAPA",
+                                        "DIRECCION GENERAL DE TECNOLOGIA DE LA INFORMACION",
+                                        "DIRECCION GENERAL DEL BACHILLERATO",
+                                        "EDUCAL, S. A. DE C. V.",
+                                        "EL COLEGIO NACIONAL",
+                                        "ESTUDIOS CHURUBUSCO AZTECA, S. A.",
+                                        "FIDEICOMISO PARA LA CINETECA NACIONAL",
+                                        "FONDO DE CULTURA ECONÓMICA",
+                                        "INSTITUTO MEXICANO DE LA JUVENTUD",
+                                        "INSTITUTO MEXICANO DE LA RADIO",
+                                        "INSTITUTO NACIONAL DEL DERECHO DE AUTOR",
+                                        "INSTITUTO NACIONAL PARA LA EDUCACION DE LOS ADULTOS",
+                                        "OFICIALIA MAYOR",
+                                        "PATRONATO DE OBRAS E INSTALACIONES DEL INSTITUTO POLITECNICO NACIONAL",
+                                        "RADIO EDUCACION",
+                                        "REPRESENTACION DE LA SEP EN AGUASCALIENTES",
+                                        "REPRESENTACION DE LA SEP EN BAJA CALIFORNIA SUR",
+                                        "REPRESENTACION DE LA SEP EN BAJA CALIFORNIA",
+                                        "REPRESENTACION DE LA SEP EN CAMPECHE",
+                                        "REPRESENTACION DE LA SEP EN CHIAPAS",
+                                        "REPRESENTACION DE LA SEP EN CHIHUAHUA",
+                                        "REPRESENTACION DE LA SEP EN COAHUILA",
+                                        "REPRESENTACION DE LA SEP EN COLIMA",
+                                        "REPRESENTACION DE LA SEP EN DURANGO",
+                                        "REPRESENTACION DE LA SEP EN GUANAJUATO",
+                                        "REPRESENTACION DE LA SEP EN GUERRERO",
+                                        "REPRESENTACION DE LA SEP EN HIDALGO",
+                                        "REPRESENTACION DE LA SEP EN JALISCO",
+                                        "REPRESENTACION DE LA SEP EN MEXICO",
+                                        "REPRESENTACION DE LA SEP EN MICHOACAN",
+                                        "REPRESENTACION DE LA SEP EN MORELOS",
+                                        "REPRESENTACION DE LA SEP EN NAYARIT",
+                                        "REPRESENTACION DE LA SEP EN NUEVO LEON",
+                                        "REPRESENTACION DE LA SEP EN OAXACA",
+                                        "REPRESENTACION DE LA SEP EN PUEBLA",
+                                        "REPRESENTACION DE LA SEP EN QUERETARO",
+                                        "REPRESENTACION DE LA SEP EN QUINTANA ROO",
+                                        "REPRESENTACION DE LA SEP EN SAN LUIS POTOSI",
+                                        "REPRESENTACION DE LA SEP EN SINALOA",
+                                        "REPRESENTACION DE LA SEP EN SONORA",
+                                        "REPRESENTACION DE LA SEP EN TABASCO",
+                                        "REPRESENTACION DE LA SEP EN TAMAULIPAS",
+                                        "REPRESENTACION DE LA SEP EN TLAXCALA",
+                                        "REPRESENTACION DE LA SEP EN VERACRUZ",
+                                        "REPRESENTACION DE LA SEP EN YUCATAN",
+                                        "REPRESENTACION DE LA SEP EN ZACATECAS",
+                                        "SECRETARIA DEL ESTADO DE COAHUILA",
+                                        "SECRETARIA DEL ESTADO DE DURANGO",
+                                        "SECRETARIA DEL ESTADO DE NUEVO LEON",
+                                        "SECRETARIA DEL ESTADO DE SINALOA",
+                                        "SECRETARIA DEL ESTADO DE TABASCO",
+                                        "SECRETARIA DEL ESTADO SAN LUIS POTOSI",
+                                        "SECRETARIA",
+                                        "SUBSECRETARIA DE EDUCACION BASICA Y NORMAL",
+                                        "SUBSECRETARIA DE EDUCACION E INVESTIGACION TECNOLOGICAS",
+                                        "SUBSECRETARIA DE EDUCACION SUPERIOR E INVESTIGACION CIENTIFICA",
+                                        "SUBSECRETARIA DE PLANEACION Y COORDINACION",
+                                        "SUBSECRETARIA DE SERVICIOS EDUCATIVOS PARA EL DISTRITO FEDERAL",
+                                        "TELEVISION METROPOLITANA, S. A. DE C. V.",
+                                        "UNIDAD DE COMUNICACION SOCIAL",
+                                        "UNIDAD DE CONTRALORIA INTERNA",
+                                        "XE-IPN CANAL 11"];
+      organizationValue = secretariaEducacionPublica;
+    }
+    if(organizationValue =="SECRETARIA DE SALUD"){
+      var secretariaSalud =["ADMINISTRACION DEL PATRIMONIO DE LA BENEFICENCIA PUBLICA",
+                            "CENTRO DE DESARROLLO DE APLICACIONES TECNOLOGICAS",
+                            "CENTRO NACIONAL DE LA TRANSFUSION SANGUINEA",
+                            "CENTRO NACIONAL DE REHABILITACION",
+                            "CENTRO NACIONAL DE VIGILANCIA EPIDEMIOLOGICA",
+                            "CENTRO NACIONAL PARA LA PREVENCION Y CONTROL DEL VIH/SIDA",
+                            "COMISION DEL CONSEJO NACIONAL CONTRA LAS ADICCIONES",
+                            "COMISION FEDERAL PARA LA PROTECCION CONTRA RIESGOS SANITARIOS",
+                            "COMISION NACIONAL DE ARBITRAJE MEDICO",
+                            "COORDINACION DE INSTITUTOS NACIONALES DE SALUD",
+                            "COORDINACION DE SALUD MENTAL",
+                            "COORDINACION GENERAL DE LOS INSTITUTOS NACIONALES DE SALUD",
+                            "COORDINACION GENERAL DE PLANEACION ESTRATEGICA",
+                            "DIRECCION GENERAL DE ANALISIS Y DISEÑO DE POLITICAS DE SALUD",
+                            "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                            "DIRECCION GENERAL DE CALIDAD Y EDUCACION EN SALUD",
+                            "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                            "DIRECCION GENERAL DE COOPERACION Y DIFUSION EN ADICCIONES Y SALUD MENTAL",
+                            "DIRECCION GENERAL DE COORDINACION Y DESARROLLO CONTRA LAS ADICCIONES",
+                            "DIRECCION GENERAL DE DESARROLLO DE LA INFRAESTRUCTURA FISICA",
+                            "DIRECCION GENERAL DE EPIDEMIOLOGIA",
+                            "DIRECCION GENERAL DE EQUIDAD Y DESARROLLO EN SALUD",
+                            "DIRECCION GENERAL DE INFORMACION Y EVALUACION DEL DESEMPEÑO",
+                            "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+                            "DIRECCION GENERAL DE PROMOCION DE LA SALUD",
+                            "DIRECCION GENERAL DE PROTECCION FINANCIERA EN SALUD",
+                            "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                            "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+                            "DIRECCION GENERAL DE RELACIONES INTERNACIONALES",
+                            "DIRECCION GENERAL DE SALUD REPRODUCTIVA",
+                            "DIRECCION GENERAL DE TECNOLOGIA DE LA INFORMACION",
+                            "DIRECCION GENERAL PARA LA DESCENTRALIZACION HOSPITALARIA",
+                            "DIRECCION GENERAL TECNICA EN ADICCIONES Y SALUD MENTAL",
+                            "HOSPITAL GENERAL DE MEXICO DR. EDUARDO LICEAGA",
+                            "HOSPITAL GENERAL DE OCCIDENTE, SECRETARIA DE SALUD, JALISCO",
+                            "HOSPITAL GENERAL DR. MANUEL GEA GONZALEZ",
+                            "HOSPITAL GENERAL DR. MIGUEL SILVA DE MORELIA",
+                            "HOSPITAL INFANTIL DE MONTERREY",
+                            "HOSPITAL INFANTIL DE MORELIA EVA SAMANO",
+                            "HOSPITAL JUAREZ DE MEXICO",
+                            "HOSPITAL PSIQUIATRICO INFANTIL DR. JUAN N. NAVARRO",
+                            "IMSS SOLIDARIDAD",
+                            "INSTITUTO DE DIAGNOSTICO Y REFERENCIAS EPIDEMIOLOGICAS",
+                            "INSTITUTO DE SALUBRIDAD Y ENFERMEDADES TROPICALES",
+                            "INSTITUTO NACIONAL DE LA COMUNICACION HUMANA DOCTOR ANDRES BUSTAMANTE GARCIA",
+                            "INSTITUTO NACIONAL DE LA COMUNICACION HUMANA",
+                            "INSTITUTO NACIONAL DE LA SENECTUD",
+                            "INSTITUTO NACIONAL DE MEDICINA DE REHABILITACION",
+                            "INSTITUTO NACIONAL DE ORTOPEDIA",
+                            "INSTITUTO NACIONAL DE PSIQUIATRIA",
+                            "INSTITUTO NACIONAL DE REHABILITACION",
+                            "PROGRAMA NACIONAL CONTRA EL CANCER, A.C.",
+                            "SECRETARIA DEL ESTADO DE DURANGO",
+                            "SECRETARIA DEL ESTADO DE HIDALGO",
+                            "SECRETARIA DEL ESTADO DE JALISCO",
+                            "SECRETARIA DEL ESTADO DE OAXACA",
+                            "SECRETARIA DEL ESTADO DE SAN LUIS POTOSI",
+                            "SECRETARIA DEL ESTADO DE SINALOA",
+                            "SECRETARIA DEL ESTADO DE TABASCO",
+                            "SECRETARIA",
+                            "SECRETARIADO DEL CONSEJO NACIONAL DE SALUD",
+                            "SERVICIOS DE SALUD MENTAL",
+                            "SERVICIOS DE SALUD PARA LA POBLACION ABIERTA DEL DISTRITO FEDERAL",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE AGUASCALIENTES",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA SUR",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CAMPECHE",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CHIAPAS",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CHIHUAHUA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE COAHUILA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE COLIMA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE DURANGO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE GUANAJUATO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE GUERRERO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE HIDALGO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE JALISCO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MEXICO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MICHOACAN",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MORELOS",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE NAYARIT",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE NUEVO LEON",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE OAXACA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE PUEBLA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE QUERETARO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE QUINTANA ROO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SAN LUIS POTOSI",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SINALOA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SONORA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TABASCO",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TAMAULIPAS",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TLAXCALA",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE VERACRUZ",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE YUCATAN",
+                            "SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE ZACATECAS",
+                            "SUBSECRETARIA DE ADMINISTRACION Y FINANZAS",
+                            "SUBSECRETARIA DE INNOVACION Y CALIDAD",
+                            "SUBSECRETARIA DE PREVENCION Y CONTROL DE ENFERMEDADES",
+                            "SUBSECRETARIA DE PREVENCION Y PROTECCION DE LA SALUD",
+                            "SUBSECRETARIA DE RELACIONES INSTITUCIONALES",
+                            "UNIDAD DE CONTRALORIA INTERNA"];
+      organizationValue = secretariaSalud;
+    }
+    if(organizationValue =="SECRETARIA DE SALUBRIDAD Y ASISTENCIA"){
+      var secretariaSalubridad =["DIVISION DE INVESTIGACION BASICA"];
+      organizationValue = secretariaSalubridad;
+    }
+    if(organizationValue =="TRIBUNAL SUPERIOR DE JUSTICIA"){
+      var tribunalSuperiorJusticia =["SEGUNDA SALA PENAL",
+                                      "TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE OAXACA"];
+      organizationValue = tribunalSuperiorJusticia;
+    }
+    if(organizationValue =="COMISION FEDERAL DE MEJORA REGULATORIA"){
+      var comisionFederalMejora =[" "];
+      organizationValue = comisionFederalMejora;
+    }
+        if(organizationValue =="DIRECCION GENERAL DE EDUCACION TECNOLOGICA INDUSTRIAL DGETI"){
+      var direccionEducacionTecnologia =["CENTRO DE BACHILLERATO TECNICO INDUSTRIAL Y DE SERVICIOS NO. 49",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 110",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 119",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 141",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 142",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 144",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 233",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 239",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 263",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 271",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 4",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NO. 86",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NO.128",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUM. 122",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUMERO 114",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUMERO 189",
+                                          "CENTRO DE BACHILLERATO TECNOLOGICO, INDUSTRIAL Y DE SERVICIOS 89",
+                                          "CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 107",
+                                          "CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 117",
+                                          "CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 22",
+                                          "CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 228",
+                                          "CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 230",
+                                          "CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICOS NO.145",
+                                          "CENTRO DE BACHILLERATO TECNOLÓGICO, INDUSTRIAL Y DE SERVICIOS 94",
+                                          "CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS 33",
+                                          "CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS 58",
+                                          "CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NO.61",
+                                          "CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NUMERO 74"];
+      organizationValue = direccionEducacionTecnologia;
+    }
+    if(organizationValue =="PRESIDENCIA DE LA REPUBLICA"){
+      var presidenciaRepublica =["COMISION NACIONAL PARA EL DESARROLLO DE LOS PUEBLOS INDIGENAS",
+                                  "COORDINACION DE ASESORES",
+                                  "COORDINACION DE COMUNICACION SOCIAL",
+                                  "COORDINACION DE GABINETES Y PROYECTOS ESPECIALES",
+                                  "COORDINACION DE IMAGEN Y OPINION PUBLICA",
+                                  "COORDINACION GENERAL DE ADMINISTRACION",
+                                  "COORDINACION GENERAL DE COMUNICACION SOCIAL",
+                                  "COORDINACION GENERAL DE TRANSPORTE AEREO PRESIDENCIAL",
+                                  "COORDINACIÓN DE ESTRATEGIA Y MENSAJE GUBERNAMENTAL",
+                                  "DIRECCION GENERAL DE ADMINISTRACION",
+                                  "ESTADO MAYOR PRESIDENCIAL",
+                                  "OFICINA DE APOYO PARA LAS ACTIVIDADES DE LA ESPOSA DEL C. PRESIDENTE DE LA REPÚBLICA",
+                                  "OFICINA DE PLANEACION ESTRATEGICA Y DESARROLLO REGIONAL",
+                                  "OFICINA DE POLITICAS PUBLICAS Y CRECIMIENTO CON CALIDAD",
+                                  "OFICINA DE REPRESENTACION PARA LA PROMOCION E INTEGRACION SOCIAL PARA LAS PERSONAS CON DISCAPACIDAD",
+                                  "OFICINA PARA LA INNOVACION GUBERNAMENTAL",
+                                  "SECRETARIA EJECUTIVA DEL CONSEJO CONSULTIVO DE CIENCIAS",
+                                  "SECRETARIA PARTICULAR"];
+      organizationValue = presidenciaRepublica;
+    }
+        if(organizationValue =="SECRETARIA DE AGRICULTURA GANADERIA DESARROLLO RURAL PESCA Y ALIMENTACION"){
+      var secreatriaAgriculturaDesarrollo =["APOYOS Y SERVICIOS A LA COMERCIALIZACION AGROPECUARIA",
+                                            "CAMPO EXPERIMENTAL ZACATECAS",
+                                            "CENTRO DE ESTADISTICA AGROPECUARIA",
+                                            "COLEGIO SUPERIOR AGROPECUARIO DEL ESTADO DE GUERRERO",
+                                            "COMISION NACIONAL DE ACUACULTURA Y PESCA",
+                                            "COMISION NACIONAL DE SANIDAD AGROPECUARIA",
+                                            "COORDINACION GENERAL DE COMUNICACION SOCIAL",
+                                            "COORDINACION GENERAL DE DELEGACIONES",
+                                            "COORDINACION GENERAL DE ENLACE Y OPERACION",
+                                            "COORDINACION GENERAL DE EXTENSIONISMO Y DESARROLLO TECNOLOGICO",
+                                            "COORDINACION GENERAL DE GANADERIA",
+                                            "COORDINACION GENERAL JURIDICA",
+                                            "DELEGACION EN AGUASCALIENTES",
+                                            "DELEGACION EN BAJA CALIFORNIA SUR",
+                                            "DELEGACION EN BAJA CALIFORNIA",
+                                            "DELEGACION EN CAMPECHE",
+                                            "DELEGACION EN CHIAPAS",
+                                            "DELEGACION EN CHIHUAHUA",
+                                            "DELEGACION EN COAHUILA",
+                                            "DELEGACION EN COLIMA",
+                                            "DELEGACION EN DURANGO",
+                                            "DELEGACION EN EL DISTRITO FEDERAL",
+                                            "DELEGACION EN EL ESTADO DE MEXICO",
+                                            "DELEGACION EN GUANAJUATO",
+                                            "DELEGACION EN GUERRERO",
+                                            "DELEGACION EN HIDALGO",
+                                            "DELEGACION EN JALISCO",
+                                            "DELEGACION EN LA REGION LAGUNERA",
+                                            "DELEGACION EN MICHOACAN",
+                                            "DELEGACION EN MORELOS",
+                                            "DELEGACION EN NAYARIT",
+                                            "DELEGACION EN NUEVO LEON",
+                                            "DELEGACION EN OAXACA",
+                                            "DELEGACION EN PUEBLA",
+                                            "DELEGACION EN QUERETARO",
+                                            "DELEGACION EN QUINTANA ROO",
+                                            "DELEGACION EN SAN LUIS POTOSI",
+                                            "DELEGACION EN SINALOA",
+                                            "DELEGACION EN SONORA",
+                                            "DELEGACION EN TABASCO",
+                                            "DELEGACION EN TAMAULIPAS",
+                                            "DELEGACION EN TLAXCALA",
+                                            "DELEGACION EN VERACRUZ",
+                                            "DELEGACION EN YUCATAN",
+                                            "DELEGACION EN ZACATECAS",
+                                            "DIRECCION DE FOMENTO Y PROTECCION PECUARIA",
+                                            "DIRECCION GENERAL DE ADMINISTRACION DE RIESGOS Y PROYECTOS DE INVERSION",
+                                            "DIRECCION GENERAL DE APOYO AL FINANCIAMIENTO RURAL",
+                                            "DIRECCION GENERAL DE APOYOS PARA EL DESARROLLO RURAL",
+                                            "DIRECCION GENERAL DE DESARROLLO HUMANO Y PROFESIONALIZACION",
+                                            "DIRECCION GENERAL DE EFICIENCIA FINANCIERA Y RENDICION DE CUENTAS",
+                                            "DIRECCION GENERAL DE ESTUDIOS AGROPECUARIOS Y PESQUEROS",
+                                            "DIRECCION GENERAL DE ESTUDIOS PARA EL DESARROLLO RURAL",
+                                            "DIRECCION GENERAL DE FOMENTO A LA AGRICULTURA",
+                                            "DIRECCION GENERAL DE PROGRAMAS REGIONALES Y ORGANIZACION RURAL",
+                                            "DIRECCION GENERAL DE PROMOCION DE LA EFICIENCIA Y CALIDAD DE LOS SERVICIOS",
+                                            "DIRECCION GENERAL DE PROVEEDURIA Y RACIONALIZACION DE BIENES Y SERVICIOS",
+                                            "DIRECCION GENERAL DE SANIDAD ANIMAL",
+                                            "DIRECCION GENERAL DE SANIDAD VEGETAL",
+                                            "DIRECCION GENERAL DE SERVICIOS PROFESIONALES PARA EL DESARROLLO RURAL",
+                                            "DIRECCION GENERAL DE VINCULACION Y DESARROLLO TECNOLOGICO",
+                                            "FIDEICOMISO DE RIESGO COMPARTIDO",
+                                            "FONDO DE EMPRESAS EXPROPIADAS DEL SECTOR AZUCARERO",
+                                            "GERENCIA DEL SERVICIO METEOROLOGICO NACIONAL",
+                                            "INSTITUTO NACIONAL DE LA PESCA",
+                                            "INSTITUTO NACIONAL PARA EL DESARROLLO DE CAPACIDADES DEL SECTOR RURAL, A. C. (INCA-RURAL)",
+                                            "OFICIALIA MAYOR",
+                                            "PRODUCTORA NACIONAL DE BIOLOGICOS VETERINARIOS",
+                                            "PRODUCTORA NACIONAL DE BIOLÓGICOS VETERINARIOS",
+                                            "PROGRAMA MOSCAMED",
+                                            "SECRETARIA",
+                                            "SERVICIO DE INFORMACION Y ESTADISTICA AGROALIMENTARIA Y PESQUERA",
+                                            "SERVICIO NACIONAL DE INSPECCION Y CERTIFICACION DE SEMILLAS",
+                                            "SERVICIO NACIONAL DE SANIDAD, INOCUIDAD Y CALIDAD AGROALIMENTARIA",
+                                            "SUBSECRETARIA DE AGRICULTURA",
+                                            "SUBSECRETARIA DE DESARROLLO RURAL",
+                                            "SUBSECRETARIA DE FOMENTO A LOS AGRONEGOCIOS",
+                                            "UNIDAD DE CONTRALORIA INTERNA"];
+      organizationValue = secreatriaAgriculturaDesarrollo;
+    }
+     if(organizationValue =="SECRETARIA DE ECONOMIA"){
+      var secretariaEconomia =["AGROINDUSTRIAS DEL SUR O.P.D.",
+                                "BANCO NACIONAL DE COMERCIO EXTERIOR (AHORA PROMEXICO)",
+                                "COMISION FEDERAL DE COMPETENCIA",
+                                "CONSEJO DE RECURSOS MINERALES",
+                                "COORDINACION GENERAL DE DELEGACIONES FEDERALES",
+                                "COORDINACION GENERAL DE MINERIA",
+                                "COORDINACION GENERAL DE NEGOCIACIONES CON EUROPA Y SECTOR SERVICIOS",
+                                "COORDINACION GENERAL DEL PROGRAMA NACIONAL DE APOYO PARA LAS EMPRESAS DE SOLIDARIDAD",
+                                "COORDINACION GENERAL DEL PROGRAMA NACIONAL DE FINANCIAMIENTO AL MICROEMPRESARIO",
+                                "DELEGACION EN AGUASCALIENTES",
+                                "DELEGACION EN BAJA CALIFORNIA SUR",
+                                "DELEGACION EN BAJA CALIFORNIA",
+                                "DELEGACION EN CAMPECHE",
+                                "DELEGACION EN CHIAPAS",
+                                "DELEGACION EN CHIHUAHUA",
+                                "DELEGACION EN COAHUILA",
+                                "DELEGACION EN COLIMA",
+                                "DELEGACION EN DISTRITO FEDERAL",
+                                "DELEGACION EN DURANGO",
+                                "DELEGACION EN GUANAJUATO",
+                                "DELEGACION EN GUERRERO",
+                                "DELEGACION EN HIDALGO",
+                                "DELEGACION EN JALISCO",
+                                "DELEGACION EN MEXICO",
+                                "DELEGACION EN MICHOACAN",
+                                "DELEGACION EN MORELOS",
+                                "DELEGACION EN NAYARIT",
+                                "DELEGACION EN NUEVO LEON",
+                                "DELEGACION EN OAXACA",
+                                "DELEGACION EN PUEBLA",
+                                "DELEGACION EN QUERETARO",
+                                "DELEGACION EN QUINTANA ROO",
+                                "DELEGACION EN SAN LUIS POTOSI",
+                                "DELEGACION EN SINALOA",
+                                "DELEGACION EN SONORA",
+                                "DELEGACION EN TABASCO",
+                                "DELEGACION EN TAMAULIPAS",
+                                "DELEGACION EN TLAXCALA",
+                                "DELEGACION EN VERACRUZ",
+                                "DELEGACION EN YUCATAN",
+                                "DELEGACION EN ZACATECAS",
+                                "DIRECCION DE INVERSIONES INDUSTRIALES",
+                                "DIRECCION GENERAL DE ASUNTOS COMERCIALES MULTILATERALES",
+                                "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                                "DIRECCION GENERAL DE CONSULTORIA JURIDICA DE NEGOCIACIONES",
+                                "DIRECCION GENERAL DE FOMENTO AL COMERCIO INTERIOR",
+                                "DIRECCION GENERAL DE INDUSTRIAS",
+                                "DIRECCION GENERAL DE INFORMATICA",
+                                "DIRECCION GENERAL DE INVERSION EXTRANJERA",
+                                "DIRECCION GENERAL DE MINAS",
+                                "DIRECCION GENERAL DE NORMAS",
+                                "DIRECCION GENERAL DE NORMATIVIDAD MERCANTIL",
+                                "DIRECCION GENERAL DE POLITICA DE COMERCIO INTERIOR Y ABASTO",
+                                "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+                                "DIRECCION GENERAL DE PROMOCION A",
+                                "DIRECCION GENERAL DE PROMOCION B",
+                                "DIRECCION GENERAL DE PROMOCION C",
+                                "DIRECCION GENERAL DE PROMOCION D",
+                                "DIRECCION GENERAL DE PROMOCION MINERA",
+                                "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                                "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+                                "DIRECCION GENERAL DE SERVICIOS AL COMERCIO EXTERIOR",
+                                "DIRECCION GENERAL DEL REGISTRO NACIONAL DE VEHICULOS",
+                                "FIDEICOMISO DE FOMENTO MINERO",
+                                "INSTITUTO MEXICANO DE LA PROPIEDAD INDUSTRIAL",
+                                "OFICIALIA MAYOR",
+                                "OFICINA COMERCIAL Y DEL TLCAN EN WASHINGTON DC",
+                                "PROCURADURIA FEDERAL DEL CONSUMIDOR",
+                                "PROMEXICO",
+                                "SECRETARIA",
+                                "SECRETARIADO TECNICO DE PLANEACION, COMUNICACION Y ENLACE",
+                                "SERVICIO NACIONAL DE INFORMACION DE MERCADOS",
+                                "SUBDELEGACION EN CANCUN",
+                                "SUBDELEGACION EN CELAYA",
+                                "SUBDELEGACION EN CHILPANCINGO",
+                                "SUBDELEGACION EN CIUDAD JUAREZ",
+                                "SUBDELEGACION EN CIUDAD OBREGON",
+                                "SUBDELEGACION EN COATZACOALCOS",
+                                "SUBDELEGACION EN EL PUERTO DE VERACRUZ",
+                                "SUBDELEGACION EN GOMEZ PALACIO",
+                                "SUBDELEGACION EN MATAMOROS",
+                                "SUBDELEGACION EN NOGALES",
+                                "SUBDELEGACION EN NUEVO LAREDO",
+                                "SUBDELEGACION EN PIEDRAS NEGRAS",
+                                "SUBDELEGACION EN POZA RICA",
+                                "SUBDELEGACION EN REYNOSA",
+                                "SUBDELEGACION EN SAN LUIS RIO COLORADO",
+                                "SUBDELEGACION EN TAMPICO",
+                                "SUBDELEGACION EN TAPACHULA",
+                                "SUBDELEGACION EN TIJUANA",
+                                "SUBDELEGACION EN TORREON",
+                                "SUBSECRETARIA DE COMERCIO INTERIOR",
+                                "SUBSECRETARIA DE COMPETITIVIDAD Y NORMATIVIDAD",
+                                "SUBSECRETARIA DE NEGOCIACIONES COMERCIALES INTERNACIONALES",
+                                "SUBSECRETARIA DE NORMATIVIDAD Y SERVICIOS A LA INDUSTRIA Y AL COMERCIO EXTERIOR",
+                                "SUBSECRETARIA PARA LA PEQUEÑA Y MEDIANA EMPRESA",
+                                "TRANSPORTADORA DE SAL, S. A. DE C. V.",
+                                "UNIDAD DE CONTRALORIA INTERNA",
+                                "UNIDAD DE NEGOCIACIONES CON AMERICA, ACCESO AL MERCADO Y COMPRAS DEL SECTOR PUBLICO",
+                                "UNIDAD DE PRACTICAS COMERCIALES INTERNACIONALES"];
+      organizationValue = secretariaEconomia;
+    }
+    if(organizationValue =="SECRETARIA DE COMUNICACIONES Y TRANSPORTES"){
+      var secretariaCominicacionesTransportes =["ADMINISTRACION PORTUARIA INTEGRAL DE ALTAMIRA, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE COATZACOALCOS, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE DOS BOCAS, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE ENSENADA, S. A DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE GUAYMAS, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE LAZARO CARDENAS, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE MANZANILLO, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE MAZATLAN, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE PROGRESO, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE PUERTO MADERO, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE PUERTO VALLARTA, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE SALINA CRUZ, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE TAMPICO, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE TOPOLOBAMPO, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE TUXPAN, S. A. DE C. V.",
+                                                "ADMINISTRACION PORTUARIA INTEGRAL DE VERACRUZ, S. A. DE C. V.",
+                                                "AEROPUERTO INTERNACIONAL DE LA CIUDAD DE MEXICO, S. A. DE C. V.",
+                                                "CAMINOS Y PUENTES FEDERALES DE INGRESOS Y SERVICIOS CONEXOS",
+                                                "CENTRO DE INVESTIGACION Y DESARROLLO DE TELECOMUNICACIONES",
+                                                "CENTRO SCT AGUASCALIENTES",
+                                                "CENTRO SCT BAJA CALIFORNIA SUR",
+                                                "CENTRO SCT BAJA CALIFORNIA",
+                                                "CENTRO SCT CAMPECHE",
+                                                "CENTRO SCT CHIAPAS",
+                                                "CENTRO SCT CHIHUAHUA",
+                                                "CENTRO SCT COAHUILA",
+                                                "CENTRO SCT COLIMA",
+                                                "CENTRO SCT DURANGO",
+                                                "CENTRO SCT GUANAJUATO",
+                                                "CENTRO SCT GUERRERO",
+                                                "CENTRO SCT HIDALGO",
+                                                "CENTRO SCT JALISCO",
+                                                "CENTRO SCT MEXICO",
+                                                "CENTRO SCT MICHOACAN",
+                                                "CENTRO SCT MORELOS",
+                                                "CENTRO SCT NAYARIT",
+                                                "CENTRO SCT NUEVO LEON",
+                                                "CENTRO SCT OAXACA",
+                                                "CENTRO SCT PUEBLA",
+                                                "CENTRO SCT QUERETARO",
+                                                "CENTRO SCT QUINTANA ROO",
+                                                "CENTRO SCT SAN LUIS POTOSI",
+                                                "CENTRO SCT SINALOA",
+                                                "CENTRO SCT SONORA",
+                                                "CENTRO SCT TABASCO",
+                                                "CENTRO SCT TAMAULIPAS",
+                                                "CENTRO SCT TLAXCALA",
+                                                "CENTRO SCT VERACRUZ",
+                                                "CENTRO SCT YUCATAN",
+                                                "CENTRO SCT ZACATECAS",
+                                                "COORDINACION GENERAL DE PLANEACION Y CENTROS S. C. T.",
+                                                "COORDINACION GENERAL DE PUERTOS Y MARINA MERCANTE",
+                                                "COORDINACION GENERAL DEL SISTEMA NACIONAL E-MEXICO",
+                                                "DIRECCION GENERAL DE AERONAUTICA CIVIL",
+                                                "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                                                "DIRECCION GENERAL DE AUTOTRANSPORTE FEDERAL",
+                                                "DIRECCION GENERAL DE CAPITANIAS",
+                                                "DIRECCION GENERAL DE CARRETERAS FEDERALES",
+                                                "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                                                "DIRECCION GENERAL DE CONSERVACION DE CARRETERAS",
+                                                "DIRECCION GENERAL DE EVALUACION",
+                                                "DIRECCION GENERAL DE FOMENTO Y ADMINISTRACION PORTUARIA",
+                                                "DIRECCION GENERAL DE MARINA MERCANTE",
+                                                "DIRECCION GENERAL DE PLANEACION",
+                                                "DIRECCION GENERAL DE POLITICA DE TELECOMUNICACIONES",
+                                                "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+                                                "DIRECCION GENERAL DE PROTECCION Y MEDICINA PREVENTIVA EN EL TRANSPORTE",
+                                                "DIRECCION GENERAL DE PUERTOS",
+                                                "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                                                "DIRECCION GENERAL DE RECURSOS MATERIALES",
+                                                "DIRECCION GENERAL DE SERVICIOS TECNICOS",
+                                                "DIRECCION GENERAL DE SISTEMAS DE RADIO Y TELEVISION",
+                                                "DIRECCION GENERAL DE TARIFAS, TRANSPORTE FERROVIARIO Y MULTIMODAL",
+                                                "DIRECCION GENERAL DE TELECOMUNICACIONES",
+                                                "FERROCARRIL DEL ISTMO DE TEHUANTEPEC, S. A. DE C. V.",
+                                                "FERROCARRILES NACIONALES DE MEXICO",
+                                                "FIDEICOMISO DE FORMACION Y CAPACITACION PARA EL PERSONAL DE LA MARINA MERCANTE NACIONAL",
+                                                "FONDO NACIONAL PARA LOS DESARROLLOS PORTUARIOS",
+                                                "GRUPO AEROPORTUARIO DE LA CIUDAD DE MEXICO, S. A. DE C. V.",
+                                                "INSTITUTO MEXICANO DEL TRANSPORTE",
+                                                "OFICIALIA MAYOR",
+                                                "ORGANO INTERNO DE CONTROL",
+                                                "SECRETARIA",
+                                                "SERVICIO POSTAL MEXICANO",
+                                                "SERVICIOS A LA NAVEGACION EN EL ESPACIO AEREO MEXICANO",
+                                                "SERVICIOS AEROPORTUARIOS DE LA CIUDAD DE MEXICO, S. A. DE C. V.",
+                                                "SUBSECRETARIA DE COMUNICACIONES",
+                                                "SUBSECRETARIA DE INFRAESTRUCTURA",
+                                                "SUBSECRETARIA DE TRANSPORTE",
+                                                "TELECOMUNICACIONES DE MEXICO",
+                                                "UNIDAD DE APOYO AL CAMBIO ESTRUCTURAL",
+                                                "UNIDAD DE AUTOPISTAS DE CUOTA",
+                                                "UNIDAD DE INFORMATICA",
+                                                "UNIDAD DE INFRAESTRUCTURA CARRETERA PARA EL DESARROLLO REGIONAL",
+                                                "UNIDAD DE LA RED FEDERAL",
+                                                "UNIDAD DE PROGRAMAS DE COBERTURA SOCIAL DE COMUNICACIONES"];
+      organizationValue = secretariaCominicacionesTransportes;
+    }
+      if(organizationValue =="SECRETARIA DE ENERGIA"){
+      var secretariaEnergia =["COMISION NACIONAL DE SEGURIDAD NUCLEAR Y SALVAGUARDIAS",
+                              "COMISION REGULADORA DE ENERGIA",
+                              "COMPAÑIA MEXICANA DE EXPLORACIONES, S. A. DE C. V.",
+                              "DIRECCION GENERAL DE ASUNTOS INTERNACIONALES",
+                              "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                              "DIRECCION GENERAL DE DESARROLLO INDUSTRIAL DE HIDROCARBUROS",
+                              "DIRECCION GENERAL DE EXPLORACION Y EXPLOTACION DE HIDROCARBUROS",
+                              "DIRECCION GENERAL DE FORMULACION DE POLITICA ENERGETICA",
+                              "DIRECCION GENERAL DE GAS L. P.",
+                              "DIRECCION GENERAL DE INSTALACIONES ELECTRICAS Y RECURSOS NUCLEARES",
+                              "DIRECCION GENERAL DE INVESTIGACION Y DESARROLLO DE TECNOLOGIA Y MEDIO AMBIENTE",
+                              "DIRECCION GENERAL DE OPERACION FINANCIERA DEL SUBSECTOR ELECTRICIDAD",
+                              "DIRECCION GENERAL DE OPERACION FINANCIERA DEL SUBSECTOR HIDROCARBUROS",
+                              "DIRECCION GENERAL DE OPERACIONES PRODUCTIVAS DEL SUBSECTOR ELECTRICIDAD",
+                              "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+                              "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                              "DIRECCION GENERAL DE RECURSOS Y SERVICIOS GENERALES",
+                              "DIRECCION GENERAL DE SEGURIDAD Y PROTECCION AL AMBIENTE",
+                              "I.I.I. SERVICIOS, S. A. DE C. V.",
+                              "INSTALACIONES INMOBILIARIAS PARA INDUSTRIAS, S. A. DE C. V. (CONSOLIDADO)",
+                              "INSTALACIONES INMOBILIARIAS PARA INDUSTRIAS, S. A. DE C. V.",
+                              "LUZ Y FUERZA DEL CENTRO (BRUTO)",
+                              "LUZ Y FUERZA DEL CENTRO",
+                              "OFICIALIA MAYOR",
+                              "ORGANO INTERNO DE CONTROL",
+                              "P.M.I. COMERCIO INTERNACIONAL, S. A. DE C. V.",
+                              "PETROQUIMICA CAMARGO, S. A. DE C. V.",
+                              "PETROQUIMICA CANGREJERA, S. A. DE C. V.",
+                              "PETROQUIMICA CORPORATIVO",
+                              "PETROQUIMICA COSOLEACAQUE, S. A. DE C. V.",
+                              "PETROQUIMICA ESCOLIN, S. A. DE C. V.",
+                              "PETROQUIMICA MORELOS, S. A. DE C. V.",
+                              "PETROQUIMICA PAJARITOS, S. A. DE C. V.",
+                              "PETROQUIMICA TULA, S. A. DE C. V.",
+                              "SECRETARIA",
+                              "SUBSECRETARIA DE ELECTRICIDAD",
+                              "SUBSECRETARIA DE HIDROCARBUROS",
+                              "SUBSECRETARIA DE OPERACION ENERGETICA",
+                              "SUBSECRETARIA DE POLITICA ENERGETICA Y DESARROLLO TECNOLOGICO",
+                              "SUBSECRETARIO DE PLANEACION ENERGETICA Y DESARROLLO TECNOLOGICO",
+                              "UNIDAD DE COMUNICACION SOCIAL",
+                              "UNIDAD DE INFORMATICA Y TELECOMUNICACIONES"];
+      organizationValue = secretariaEnergia;
+    }
+     if(organizationValue =="SECRETARIA DE GOBERNACION"){
+      var secretariaGobernacion =["CENTRO DE INVESTIGACION Y SEGURIDAD NACIONAL",
+                                  "CENTRO DE PRODUCCION DE PROGRAMAS INFORMATIVOS Y ESPECIALES",
+                                  "COORDINACION GENERAL DE LA COMISION MEXICANA DE AYUDA A REFUGIADOS",
+                                  "COORDINACION GENERAL DE PROTECCION CIVIL",
+                                  "DIRECCION GENERAL DE ASOCIACIONES RELIGIOSAS",
+                                  "DIRECCION GENERAL DE COMPILACION Y CONSULTA DEL ORDEN JURIDICO NACIONAL",
+                                  "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                                  "DIRECCION GENERAL DE COORDINACION CON ENTIDADES FEDERATIVAS",
+                                  "DIRECCION GENERAL DE DESARROLLO POLITICO",
+                                  "DIRECCION GENERAL DE ESTUDIOS LEGISLATIVOS",
+                                  "DIRECCION GENERAL DE INFORMACION LEGISLATIVA",
+                                  "DIRECCION GENERAL DE MEDIOS IMPRESOS",
+                                  "DIRECCION GENERAL DE NORMATIVIDAD DE COMUNICACION",
+                                  "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+                                  "DIRECCION GENERAL DE PROTECCION CIVIL",
+                                  "DIRECCION GENERAL DE RADIO, TELEVISION Y CINEMATOGRAFIA",
+                                  "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                                  "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+                                  "DIRECCION GENERAL DE TECNOLOGIAS DE LA INFORMACION",
+                                  "DIRECCION GENERAL DEL REGISTRO NACIONAL DE POBLACION E IDENTIFICACION PERSONAL",
+                                  "DIRECCION GENERAL PARA EL FONDO DE DESASTRES NATURALES",
+                                  "INSTITUTO NACIONAL DE ESTUDIOS HISTORICOS DE LA REVOLUCION MEXICANA",
+                                  "INSTITUTO NACIONAL DE MIGRACION",
+                                  "INSTITUTO NACIONAL PARA EL FEDERALISMO Y EL DESARROLLO MUNICIPAL",
+                                  "NOTIMEX, S. A. DE C. V.",
+                                  "OFICIALIA MAYOR",
+                                  "OFICINA DEL COMISIONADO NACIONAL DE SEGURIDAD",
+                                  "PENSIONADOS DE TALLERES GRAFICOS DE LA NACION",
+                                  "POLICIA FEDERAL",
+                                  "SECRETARIA GENERAL DEL CONSEJO NACIONAL DE POBLACION",
+                                  "SECRETARIA TECNICA DE LA COMISION CALIFICADORA DE PUBLICACIONES Y REVISTAS ILUSTRADAS",
+                                  "SECRETARIA TECNICA DE LA COMISION PARA ASUNTOS DE LA FRONTERA NORTE",
+                                  "SECRETARIA",
+                                  "SERVICIO DE PROTECCIÓN FEDERAL",
+                                  "SUBSECRETARIA DE ASUNTOS JURIDICOS Y DERECHOS HUMANOS",
+                                  "SUBSECRETARIA DE DESARROLLO POLITICO",
+                                  "SUBSECRETARIA DE ENLACE LEGISLATIVO",
+                                  "SUBSECRETARIA DE GOBIERNO",
+                                  "SUBSECRETARIA DE NORMATIVIDAD DE MEDIOS",
+                                  "SUBSECRETARIA DE POBLACION, MIGRACION Y ASUNTOS RELIGIOSOS",
+                                  "TALLERES GRAFICOS DE MEXICO",
+                                  "TRIBUNAL FEDERAL DE CONCILIACION Y ARBITRAJE",
+                                  "UNIDAD DE ASUNTOS JURIDICOS",
+                                  "UNIDAD DE CONTRALORIA INTERNA",
+                                  "UNIDAD DE ENLACE FEDERAL",
+                                  "UNIDAD DE ENLACE LEGISLATIVO",
+                                  "UNIDAD DE GOBIERNO",
+                                  "UNIDAD DE POLÍTICA MIGRATORIA",
+                                  "UNIDAD PARA LA ATENCION DE ORGANIZACIONES SOCIALES",
+                                  "UNIDAD PARA LA PROMOCION Y DEFENSA DE LOS DERECHOS HUMANOS"];
+      organizationValue = secretariaGobernacion;
+    }
+        if(organizationValue =="SECRETARIA DE HACIENDA Y CREDITO PUBLICO"){
+      var secretariaHeciendaCredito =["AGROASEMEX, S. A.",
+                                      "AHMSA FABRICA NACIONAL DE MAQUINAS Y HERRAMIENTAS, S.A. DE C.V.",
+                                      "ALMACENES NACIONALES DE DEPOSITO, S. A.",
+                                      "BANCO DEL AHORRO NACIONAL Y SERVICIOS FINANCIEROS, S. N. C.",
+                                      "BANCO NACIONAL DE COMERCIO EXTERIOR, S. N. C.",
+                                      "BANCO NACIONAL DE CREDITO RURAL, S. N. C.",
+                                      "BANCO NACIONAL DE OBRAS Y SERVICIOS PUBLICOS, S. N. C.",
+                                      "BANCO NACIONAL DEL EJERCITO, FUERZA AEREA Y ARMADA, S. N. C.",
+                                      "CASA DE MONEDA DE MEXICO",
+                                      "COMISION NACIONAL BANCARIA Y DE VALORES",
+                                      "COMISION NACIONAL DE SEGUROS Y FIANZAS",
+                                      "COMISION NACIONAL DEL SISTEMA DE AHORRO PARA EL RETIRO",
+                                      "COMISION NACIONAL PARA LA PROTECCION Y DEFENSA DE LOS USUARIOS DE SERVICIOS FINANCIEROS",
+                                      "CONSULTORIA AMBIENTAL PARA LA PLANEACION DEL DESARROLLO REGIONAL, S.C.",
+                                      "DIRECCION GENERAL DE ASUNTOS HACENDARIOS INTERNACIONALES",
+                                      "DIRECCION GENERAL DE BANCA DE DESARROLLO",
+                                      "DIRECCION GENERAL DE BANCA Y AHORRO",
+                                      "DIRECCION GENERAL DE CREDITO PUBLICO",
+                                      "DIRECCION GENERAL DE PLANEACION HACENDARIA",
+                                      "DIRECCION GENERAL DE PROCEDIMIENTOS LEGALES",
+                                      "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO A",
+                                      "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO B",
+                                      "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+                                      "DIRECCION GENERAL DE PROMOCION CULTURAL Y ACERVO PATRIMONIAL",
+                                      "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                                      "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+                                      "DIRECCION GENERAL DE SEGUROS Y VALORES",
+                                      "DIRECCION GENERAL DE SISTEMAS AUTOMATIZADOS",
+                                      "DIRECCION GENERAL DE TALLERES DE IMPRESION DE ESTAMPILLAS Y VALORES",
+                                      "DIRECCION GENERAL DE VIGILANCIA DE FONDOS Y VALORES",
+                                      "DIRECCION GENERAL JURIDICA DE EGRESOS",
+                                      "EXPORTADORES ASOCIADOS, S. A. DE C. V.",
+                                      "FIDEICOMISO LIQUIDADOR DE INSTITUCIONES Y ORGANIZACIONES AUXILIARES DE CREDITO",
+                                      "FINANCIERA NACIONAL AZUCARERA, S. N. C.",
+                                      "FINANCIERA NACIONAL DE DESARROLLO AGROPECUARIO, RURAL, FORESTAL Y PESQUERO",
+                                      "FONDO DE CAPITALIZACION E INVERSION DEL SECTOR RURAL",
+                                      "FONDO DE GARANTIA Y FOMENTO PARA LA AGRICULTURA, GANADERIA Y AVICULTURA",
+                                      "FONDO DE GARANTIA Y FOMENTO PARA LAS ACTIVIDADES PESQUERAS",
+                                      "FONDO DE OPERACION Y FINANCIAMIENTO BANCARIO A LA VIVIENDA",
+                                      "FONDO ESPECIAL DE ASISTENCIA TECNICA Y GARANTIA PARA CREDITOS AGROPECUARIOS",
+                                      "FONDO ESPECIAL PARA FINANCIAMIENTOS AGROPECUARIOS",
+                                      "HOSPITAL DE LA SECRETARIA DE HACIENDA",
+                                      "INSTITUTO NACIONAL DE CAPACITACION FISCAL",
+                                      "INSTITUTO NACIONAL DE LAS MUJERES",
+                                      "INSTITUTO PARA EL DESARROLLO TECNICO DE LAS HACIENDAS PUBLICAS",
+                                      "INSTITUTO PARA LA PROTECCION AL AHORRO BANCARIO",
+                                      "LOTERIA NACIONAL PARA LA ASISTENCIA PUBLICA",
+                                      "NACIONAL FINANCIERA, S.N.C. EN SU CARACTER DE FIDUCIARIA EN EL FONDO DE CAPITALIZACIÓN E INVERSIÓN DEL SECTOR RURAL",
+                                      "OCEAN GARDEN PRODUCTS INC.",
+                                      "OFICIALIA MAYOR",
+                                      "ORGANO INTERNO DE CONTROL",
+                                      "PROCURADURIA FISCAL DE LA FEDERACION",
+                                      "PRODUCTORA DE COSPELES, S. A. DE C. V.",
+                                      "PRONOSTICOS PARA LA ASISTENCIA PUBLICA",
+                                      "SECRETARIA",
+                                      "SERVICIO DE ADMINISTRACION DE BIENES ASEGURADOS",
+                                      "SERVICIO DE ADMINISTRACION TRIBUTARIA",
+                                      "SERVICIOS DE ALMACENAMIENTO DEL NORTE, S. A.",
+                                      "SOCIEDAD HIPOTECARIA FEDERAL, S. N. C.",
+                                      "SUBPROCURADURIA FISCAL FEDERAL DE AMPAROS",
+                                      "SUBPROCURADURIA FISCAL FEDERAL DE ASUNTOS FINANCIEROS",
+                                      "SUBPROCURADURIA FISCAL FEDERAL DE INVESTIGACIONES",
+                                      "SUBPROCURADURIA FISCAL FEDERAL DE LEGISLACION Y CONSULTA",
+                                      "SUBSECRETARIA DE EGRESOS",
+                                      "SUBSECRETARIA DE HACIENDA Y CREDITO PUBLICO",
+                                      "SUBSECRETARIA DE INGRESOS",
+                                      "SUBTESORERIA DE CONTABILIDAD Y CONTROL OPERATIVO",
+                                      "SUBTESORERIA DE OPERACION",
+                                      "TESORERIA DE LA FEDERACION",
+                                      "UNIDAD DE COMUNICACION SOCIAL Y VOCERO",
+                                      "UNIDAD DE CONTABILIDAD GUBERNAMENTAL E INFORMES SOBRE LA GESTION PUBLICA",
+                                      "UNIDAD DE COORDINACION HACENDARIA CON ENTIDADES FEDERATIVAS",
+                                      "UNIDAD DE ENLACE CON EL CONGRESO DE LA UNION",
+                                      "UNIDAD DE INTELIGENCIA FINANCIERA",
+                                      "UNIDAD DE INVERSIONES",
+                                      "UNIDAD DE LEGISLACION TRIBUTARIA",
+                                      "UNIDAD DE POLITICA DE INGRESOS",
+                                      "UNIDAD DE POLITICA Y CONTROL PRESUPUESTARIO",
+                                      "UNIDAD DE SERVICIO CIVIL"];
+      organizationValue = secretariaHeciendaCredito;
+    }
+      if(organizationValue =="SECRETARIA DE RELACIONES EXTERIORES"){
+      var secretariaRelacionesExteriores =["CONSULADO DE MEXICO EN FRANCFORT DEL MENO",
+                                            "CONSULADO DE MÉXICO EN CALÉXICO",
+                                            "CONSULADO GENERAL DE MEXICO EN LOS ANGELES",
+                                            "CONSULADO GENERAL DE MEXICO EN NUEVA YORK",
+                                            "CONSULADO GENERAL DE MÉXICO EN HOUSTO TX",
+                                            "CONSULADO GENERAL DE MÉXICO EN SAN FRANCISCO",
+                                            "CONSULTORIA JURIDICA",
+                                            "COORDINACION GENERAL PLAN PUEBLA-PANAMA",
+                                            "DELEGACIÓN PERMANENTE DE MÉXICO ANTE LA O.C.D.E.",
+                                            "DIRECCION GENERAL DE ARCHIVO BIBLIOTECA Y PUBLICACIONES",
+                                            "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                                            "DIRECCION GENERAL DE BIENES INMUEBLES Y RECURSOS MATERIALES",
+                                            "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                                            "DIRECCION GENERAL DE COMUNICACIONES E INFORMATICA",
+                                            "DIRECCION GENERAL DE COMUNIDADES MEXICANAS EN EL EXTERIOR Y ENLACE ESTATAL",
+                                            "DIRECCION GENERAL DE COOPERACION EDUCATIVA Y CULTURAL",
+                                            "DIRECCION GENERAL DE COOPERACION TECNICA Y CIENTIFICA",
+                                            "DIRECCION GENERAL DE DELEGACIONES",
+                                            "DIRECCION GENERAL DE DERECHOS HUMANOS",
+                                            "DIRECCION GENERAL DE ENLACE POLITICO",
+                                            "DIRECCION GENERAL DE NEGOCIACIONES ECONOMICAS INTERNACIONALES",
+                                            "DIRECCION GENERAL DE ORGANISMOS DE COOPERACION ECONOMICA Y DE DESARROLLO",
+                                            "DIRECCION GENERAL DE ORGANISMOS Y MECANISMOS REGIONALES AMERICANOS",
+                                            "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+                                            "DIRECCION GENERAL DE PROMOCION ECONOMICA INTERNACIONAL",
+                                            "DIRECCION GENERAL DE PROTECCION Y ASUNTOS CONSULARES",
+                                            "DIRECCION GENERAL DE PROTOCOLO",
+                                            "DIRECCION GENERAL DE RELACIONES ECONOMICAS BILATERALES",
+                                            "DIRECCION GENERAL DEL ACERVO HISTORICO DIPLOMATICO",
+                                            "DIRECCION GENERAL DEL SERVICIO EXTERIOR Y DE PERSONAL",
+                                            "DIRECCION GENERAL PARA AFRICA, ASIA-PACIFICO Y MEDIO ORIENTE",
+                                            "DIRECCION GENERAL PARA AMERICA DEL NORTE",
+                                            "DIRECCION GENERAL PARA AMERICA LATINA Y EL CARIBE",
+                                            "DIRECCION GENERAL PARA EL SISTEMA DE LAS NACIONES UNIDAS",
+                                            "DIRECCION GENERAL PARA EUROPA",
+                                            "DIRECCION GENERAL PARA TEMAS GLOBALES",
+                                            "EMBAJADA DE MEXICO EN EL REINO UNIDO",
+                                            "EMBAJADA DE MEXICO EN LA SANTA SEDE",
+                                            "EMBAJADA DE MÉXICO EN CHINA",
+                                            "EMBAJADA DE MÉXICO EN ESPAÑA",
+                                            "EMBAJADA DE MÉXICO EN ESTADOS UNIDOS DE AMÉRICA",
+                                            "EMBAJADA DE MÉXICO EN KENIA, SECRETARÍA DE RELACIONES EXTERIORES",
+                                            "EMBAJADA EN CANADA",
+                                            "INSTITUTO DE MEXICO",
+                                            "INSTITUTO MATIAS ROMERO",
+                                            "INSTITUTO MEXICANO DE COOPERACION INTERNACIONAL",
+                                            "OFICIALIA MAYOR",
+                                            "SECCION MEXICANA DE LA COMISION INTERNACIONAL DE LIMITES Y AGUAS MEXICO-ESTADOS UNIDOS DE AMERICA",
+                                            "SECCION MEXICANA DE LA COMISION INTERNACIONAL DE LIMITES Y AGUAS MEXICO-GUATEMALA-BELICE",
+                                            "SECRETARIA",
+                                            "SUBSECRETARIA DE RELACIONES ECONOMICAS Y COOPERACION INTERNACIONAL",
+                                            "SUBSECRETARIA DE RELACIONES EXTERIORES",
+                                            "SUBSECRETARIA PARA AFRICA, ASIA-PACIFICO, EUROPA Y NACIONES UNIDAS",
+                                            "SUBSECRETARIA PARA AMERICA LATINA Y EL CARIBE",
+                                            "SUBSECRETARIA PARA DERECHOS HUMANOS Y DEMOCRACIA",
+                                            "SUBSECRETARIA PARA TEMAS GLOBALES",
+                                            "SUBSECRETARÍA PARA ASUNTOS MULTILATERALES Y DERECHOS HUMANOS",
+                                            "UNIDAD DE ASUNTOS CULTURALES",
+                                            "UNIDAD DE CONTRALORIA INTERNA",
+                                            "WEPI DE MEXICO, S.A. DE C.V.",];
+      organizationValue = secretariaRelacionesExteriores;
+    }
+     if(organizationValue =="DIRECCION GENERAL DE INSTITUTOS TECNOLOGICOS REGIONALES"){
+      var direccioninstitutotsTEcnologicos =[" "];
+      organizationValue = direccioninstitutotsTEcnologicos;
+    }
+     if(organizationValue =="SECRETARIA DE DESARROLLO SOCIAL"){
+      var secretariaDesarrolloSocial =["COMISION NACIONAL DE FOMENTO A LA VIVIENDA",
+                                        "COMISION NACIONAL DE ZONAS ARIDAS",
+                                        "COMISION PARA LA REGULARIZACION DE LA TENENCIA DE LA TIERRA",
+                                        "CONTRALORIA INTERNA",
+                                        "COORDINACION GENERAL DE ADMINISTRACION",
+                                        "COORDINACION GENERAL DE MICRORREGIONES",
+                                        "COORDINACION GENERAL DE PADRONES DE BENEFICIARIOS DE LOS PROGRAMAS SOCIALES",
+                                        "COORDINACION GENERAL DE PROSPECTIVA Y PLANEACION",
+                                        "COORDINACION NACIONAL DEL PROGRAMA DE DESARROLLO HUMANO OPORTUNIDADES",
+                                        "DELEGACION SEDESOL EN AGUASCALIENTES",
+                                        "DELEGACION SEDESOL EN BAJA CALIFORNIA SUR",
+                                        "DELEGACION SEDESOL EN BAJA CALIFORNIA",
+                                        "DELEGACION SEDESOL EN CAMPECHE",
+                                        "DELEGACION SEDESOL EN CHIAPAS",
+                                        "DELEGACION SEDESOL EN CHIHUAHUA",
+                                        "DELEGACION SEDESOL EN COAHUILA",
+                                        "DELEGACION SEDESOL EN COLIMA",
+                                        "DELEGACION SEDESOL EN DURANGO",
+                                        "DELEGACION SEDESOL EN GUANAJUATO",
+                                        "DELEGACION SEDESOL EN GUERRERO",
+                                        "DELEGACION SEDESOL EN HIDALGO",
+                                        "DELEGACION SEDESOL EN JALISCO",
+                                        "DELEGACION SEDESOL EN MEXICO",
+                                        "DELEGACION SEDESOL EN MICHOACAN",
+                                        "DELEGACION SEDESOL EN MORELOS",
+                                        "DELEGACION SEDESOL EN NAYARIT",
+                                        "DELEGACION SEDESOL EN NUEVO LEON",
+                                        "DELEGACION SEDESOL EN OAXACA",
+                                        "DELEGACION SEDESOL EN PUEBLA",
+                                        "DELEGACION SEDESOL EN QUERETARO",
+                                        "DELEGACION SEDESOL EN QUINTANA ROO",
+                                        "DELEGACION SEDESOL EN SAN LUIS POTOSI",
+                                        "DELEGACION SEDESOL EN SINALOA",
+                                        "DELEGACION SEDESOL EN SONORA",
+                                        "DELEGACION SEDESOL EN TABASCO",
+                                        "DELEGACION SEDESOL EN TAMAULIPAS",
+                                        "DELEGACION SEDESOL EN TLAXCALA",
+                                        "DELEGACION SEDESOL EN VERACRUZ",
+                                        "DELEGACION SEDESOL EN YUCATAN",
+                                        "DELEGACION SEDESOL EN ZACATECAS",
+                                        "DICONSA, S. A. DE C. V.",
+                                        "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                                        "DIRECCION GENERAL DE ATENCION SOCIAL A LA VIVIENDA URBANA Y RURAL",
+                                        "DIRECCION GENERAL DE DESARROLLO SOCIAL Y HUMANO",
+                                        "DIRECCION GENERAL DE DESARROLLO URBANO Y REGIONAL",
+                                        "DIRECCION GENERAL DE EFICIENCIA DE PROGRAMAS DE DESARROLLO SOCIAL",
+                                        "DIRECCION GENERAL DE EVALUACION DE LOS PROGRAMAS SOCIALES",
+                                        "DIRECCION GENERAL DE INFORMATICA, TELECOMUNICACIONES Y DESARROLLO TECNOLOGICO",
+                                        "DIRECCION GENERAL DE MEDICION Y SEGUIMIENTO DE PROGRAMAS DE DESARROLLO SOCIAL",
+                                        "DIRECCION GENERAL DE ORDENACION DEL TERRITORIO",
+                                        "DIRECCION GENERAL DE ORGANIZACION, CALIDAD E INNOVACION",
+                                        "DIRECCION GENERAL DE POLITICAS SOCIALES",
+                                        "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+                                        "DIRECCION GENERAL DE RELACIONES INTERNACIONALES",
+                                        "DIRECCION GENERAL DE SUELO Y RESERVA TERRITORIAL",
+                                        "FIDEICOMISO FONDO NACIONAL DE HABITACIONES POPULARES",
+                                        "FONDO NACIONAL PARA EL FOMENTO DE LAS ARTESANIAS",
+                                        "INSTITUTO NACIONAL DE LAS PERSONAS ADULTAS MAYORES (INAPAM)",
+                                        "INSTITUTO NACIONAL DE SOLIDARIDAD",
+                                        "LICONSA, S. A. DE C. V.",
+                                        "OFICIALIA MAYOR",
+                                        "SECRETARIA DE DESARROLLO URBANO Y ECOLOGIA",
+                                        "SECRETARIA",
+                                        "SUBSECRETARIA DE DESARROLLO SOCIAL Y HUMANO",
+                                        "SUBSECRETARIA DE DESARROLLO URBANO Y ORDENACION DEL TERRITORIO",
+                                        "SUBSECRETARIA DE PROSPECTIVA, PLANEACION Y EVALUACION",
+                                        "UNIDAD DE COMUNICACION SOCIAL",
+                                        "UNIDAD DE COORDINACION DE DELEGACIONES",
+                                        "UNIDAD DE COORDINACION SECTORIAL"];
+      organizationValue = secretariaDesarrolloSocial;
+    }
+        if(organizationValue =="CENTRO NACIONAL PARA LA SALUD DE LA INFANCIA Y ADOLESCENCIA"){
+      var centroNacionalParaSalud =[" "];
+      organizationValue = centroNacionalParaSalud;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE ESTADISTICA GEOGRAFIA E INFORMATICA"){
+      var institutoNacionalEstadistica =[" "];
+      organizationValue = institutoNacionalEstadistica;
+    }
+     if(organizationValue =="CENTRO NACIONAL DE PREVENCION DE DESASTRES"){
+      var centroNacionalPrevencion =["COORDINACION DE INVESTIGACION"];
+      organizationValue = centroNacionalPrevencion;
+    }
+     if(organizationValue =="COMISION FEDERAL DE TELECOMUNICACIONES"){
+      var comisionFederalTelecomunicaciones =[" "];
+      organizationValue = comisionFederalTelecomunicaciones;
+    }
+     if(organizationValue =="COMISION NACIONAL PARA EL AHORRO DE ENERGIA"){
+      var comisionNAcionalParaAhorro =[" "];
+      organizationValue = comisionNAcionalParaAhorro;
+    }
+    if(organizationValue =="CONSEJO NACIONAL DE POBLACION"){
+      var consejoNacionalPoblacion =["DIRECCION DE INVESTIGACION DEMOGRAFICA"];
+      organizationValue = consejoNacionalPoblacion;
+    }
+     if(organizationValue =="CONSEJO NACIONAL DE PREVENCION Y CONTROL DEL SIDA"){
+      var consejoNacionalPrevencionControl =[" "];
+      organizationValue = consejoNacionalPrevencionControl;
+    }
+     if(organizationValue =="INSTITUTO MATIAS ROMERO DE ESTUDIOS DIPLOMATICOS"){
+      var institutoMatiasMorenoEstudios =[" "];
+      organizationValue = institutoMatiasMorenoEstudios;
+    }
+      if(organizationValue =="INSTITUTO NACIONAL DE DESARROLLO SOCIAL"){
+      var institutoNacionalDesarrollo =[" "];
+      organizationValue = institutoNacionalDesarrollo;
+    }
+      if(organizationValue =="PODER LEGISLATIVO"){
+      var poderLjistlativo =["AUDITORIA SUPERIOR DE LA FEDERACION",
+                              "H. CAMARA DE DIPUTADOS",
+                              "H. CAMARA DE SENADORES"];
+      organizationValue = poderLjistlativo;
+    }
+     if(organizationValue =="PODER JUDICIAL DE LA FEDERACION"){
+      var pederJudicialFederacion =["CONSEJO DE LA JUDICATURA FEDERAL",
+                                    "JUZGADO 1RO DE DISTRITO EN CAMPECHE, CAMPECHE",
+                                    "SALA SUPERIOR",
+                                    "SALAS REGIONALES",
+                                    "SUPREMA CORTE DE JUSTICIA DE LA NACION",
+                                    "TERCER TRIBUNAL COLEGIADO EN MATERIA ADMINISTRATIVA DEL PRIMER CIRCUITO",
+                                    "TRIBUNAL ELECTORAL"];
+      organizationValue = pederJudicialFederacion;
+    }
+     if(organizationValue =="SECRETARIA DE LA DEFENSA NACIONAL"){
+      var secretariaDefensaNacional =["CENTRO DE INVESTIGACIÓN Y DESARROLLO DEL EJÉRCITO Y FUERZA AÉREA MEXICANOS",
+                                      "COMANDANCIA DE LA FUERZA AEREA MEXICANA",
+                                      "COMANDANCIA I REGION MILITAR",
+                                      "COMANDANCIA II REGION MILITAR",
+                                      "COMANDANCIA III REGION MILITAR",
+                                      "COMANDANCIA IV REGION MILITAR",
+                                      "COMANDANCIA IX REGION MILITAR",
+                                      "COMANDANCIA V REGION MILITAR",
+                                      "COMANDANCIA VI REGION MILITAR",
+                                      "COMANDANCIA VII REGION MILITAR",
+                                      "COMANDANCIA VIII REGION MILITAR",
+                                      "COMANDANCIA X REGION MILITAR",
+                                      "COMANDANCIA XI REGION MILITAR",
+                                      "COMANDANCIA XII REGION MILITAR",
+                                      "DIRECCION GENERAL DE ADMINISTRACION",
+                                      "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                                      "DIRECCION GENERAL DE EDUCACION MILITAR Y RECTORIA DE LA UNIVERSIDAD DEL EJERCITO Y FUERZA AEREA",
+                                      "DIRECCION GENERAL DE FABRICAS DE VESTUARIO Y EQUIPO",
+                                      "DIRECCION GENERAL DE INDUSTRIA MILITAR",
+                                      "DIRECCION GENERAL DE INFORMATICA",
+                                      "DIRECCION GENERAL DE INGENIEROS",
+                                      "DIRECCION GENERAL DE JUSTICIA MILITAR",
+                                      "DIRECCION GENERAL DE SANIDAD",
+                                      "ESCUELA MILITAR DE GRADUADOS DE SANIDAD",
+                                      "INSTITUTO DE SEGURIDAD SOCIAL PARA LAS FUERZAS ARMADAS MEXICANAS",
+                                      "JEFATURA DEL CUERPO DE DEFENSORES DE OFICIO",
+                                      "JEFATURA DEL ESTADO MAYOR DE LA DEFENSA NACIONAL",
+                                      "PRESIDENCIA DEL SUPREMO TRIBUNAL MILITAR",
+                                      "PROCURADURIA GENERAL DE JUSTICIA MILITAR",
+                                      "SECRETARIA",
+                                      "UNIVERSIDAD DEL EJÉRCITO Y FUERZA AÉREA"];
+      organizationValue = secretariaDefensaNacional;
+    }
+    if(organizationValue =="SECRETARIA DE MARINA"){
+      var secretariaMarina =["CENTRO DE ESTUDIOS SUPERIORES NAVALES",
+                              "DIRECCION GENERAL DE ADMINISTRACION Y FINANZAS",
+                              "DIRECCION GENERAL DE CONSTRUCCIONES NAVALES",
+                              "DIRECCION GENERAL DE INVESTIGACION Y DESARROLLO",
+                              "DIRECCION GENERAL DE OCEANOGRAFIA NAVAL",
+                              "DIRECCION GENERAL DE OCEANOGRAFIA Y SENALAMIENTO MARITIMO",
+                              "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                              "DIRECCION GENERAL DE SERVICIOS",
+                              "ESCUELA MEDICO NAVAL",
+                              "ESTACION OCEANOGRAFICA DE PUERTO PROGRESO, YUCATAN",
+                              "ESTADO MAYOR GENERAL DE LA ARMADA",
+                              "FUERZAS, REGIONES, ZONAS Y SECTORES NAVALES",
+                              "INSPECCION Y CONTRALORIA GENERAL DE MARINA",
+                              "INSTITUTO DE INVESTIGACION Y DESARROLLO TECNOLOGICO DE LA ARMADA DE MEXICO",
+                              "JUNTA DE ALMIRANTES",
+                              "JUNTA NAVAL",
+                              "OFICIALIA MAYOR",
+                              "SECRETARIA",
+                              "SUBSECRETARIA",
+                              "UNIDAD DE HISTORIA Y CULTURA NAVAL",
+                              "UNIDAD DE PLANEACION ESTRATEGICA",
+                              "UNIDAD JURIDICA"];
+      organizationValue = secretariaMarina;
+    }   
+     if(organizationValue =="SECRETARIA DE TRABAJO Y PREVISION SOCIAL"){
+      var secretariaTrabajoPrevision =["CENTRO DE CAPACITACION",
+                                        "COMISION NACIONAL DE LOS SALARIOS MINIMOS",
+                                        "COMITE NACIONAL MIXTO DE PROTECCION AL SALARIO",
+                                        "CONTRALORIA INTERNA",
+                                        "COORDINACION GENERAL DE ASUNTOS INTERNACIONALES",
+                                        "COORDINACION GENERAL DE DELEGACIONES FEDERALES DEL TRABAJO",
+                                        "COORDINACION GENERAL DE FUNCIONARIOS CONCILIADORES",
+                                        "COORDINACION GENERAL DE PLANEACION Y POLITICA SECTORIAL",
+                                        "DELEGACION EN AGUASCALIENTES",
+                                        "DELEGACION EN BAJA CALIFORNIA SUR",
+                                        "DELEGACION EN BAJA CALIFORNIA",
+                                        "DELEGACION EN CAMPECHE",
+                                        "DELEGACION EN CHIAPAS",
+                                        "DELEGACION EN CHIHUAHUA",
+                                        "DELEGACION EN COAHUILA",
+                                        "DELEGACION EN COLIMA",
+                                        "DELEGACION EN DURANGO",
+                                        "DELEGACION EN GUANAJUATO",
+                                        "DELEGACION EN GUERRERO",
+                                        "DELEGACION EN HIDALGO",
+                                        "DELEGACION EN JALISCO",
+                                        "DELEGACION EN MEXICO",
+                                        "DELEGACION EN MICHOACAN",
+                                        "DELEGACION EN MORELOS",
+                                        "DELEGACION EN NAYARIT",
+                                        "DELEGACION EN NUEVO LEON",
+                                        "DELEGACION EN OAXACA",
+                                        "DELEGACION EN PUEBLA",
+                                        "DELEGACION EN QUERETARO",
+                                        "DELEGACION EN QUINTANA ROO",
+                                        "DELEGACION EN SAN LUIS POTOSI",
+                                        "DELEGACION EN SINALOA",
+                                        "DELEGACION EN SONORA",
+                                        "DELEGACION EN TABASCO",
+                                        "DELEGACION EN TAMAULIPAS",
+                                        "DELEGACION EN TLAXCALA",
+                                        "DELEGACION EN VERACRUZ",
+                                        "DELEGACION EN YUCATAN",
+                                        "DELEGACION EN ZACATECAS",
+                                        "DELEGACION METROPOLITANA EN EL DISTRITO FEDERAL",
+                                        "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                                        "DIRECCION GENERAL DE CAPACITACION Y PRODUCTIVIDAD",
+                                        "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                                        "DIRECCION GENERAL DE DESARROLLO HUMANO",
+                                        "DIRECCION GENERAL DE EMPLEO",
+                                        "DIRECCION GENERAL DE ENLACE LEGISLATIVO Y VINCULACION SOCIAL",
+                                        "DIRECCION GENERAL DE EQUIDAD Y GENERO",
+                                        "DIRECCION GENERAL DE INFORMATICA Y TELECOMUNICACIONES",
+                                        "DIRECCION GENERAL DE INSPECCION FEDERAL DEL TRABAJO",
+                                        "DIRECCION GENERAL DE NORMALIZACION Y CERTIFICACION DE COMPETENCIA LABORAL",
+                                        "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+                                        "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+                                        "DIRECCION GENERAL DE REGISTRO DE ASOCIACIONES",
+                                        "DIRECCION GENERAL DE SEGURIDAD Y SALUD EN EL TRABAJO",
+                                        "FONDO DE FOMENTO Y GARANTIA PARA EL CONSUMO DE LOS TRABAJADORES",
+                                        "JUNTA FEDERAL DE CONCILIACION Y ARBITRAJE",
+                                        "OFICIALIA MAYOR",
+                                        "PROCURADURIA FEDERAL DE LA DEFENSA DEL TRABAJO",
+                                        "SECRETARIA",
+                                        "SUBSECRETARIA DE CAPACITACION, PRODUCTIVIDAD Y EMPLEO",
+                                        "SUBSECRETARIA DE EMPLEO Y PREVISION SOCIAL",
+                                        "SUBSECRETARIA DE PREVISION SOCIAL",
+                                        "SUBSECRETARIA DEL TRABAJO",
+                                        "SUBSECRETARÍA DE EMPLEO Y PRODUCTIVIDAD LABORAL"];
+      organizationValue = secretariaTrabajoPrevision;
+    }   
+     if(organizationValue =="SECRETARIA DE LA REFORMA AGRARIA"){
+      var secretariaReformaAgraria =["DIRECCION GENERAL DE ADMINISTRACION",
+                                      "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                                      "DIRECCION GENERAL DE COORDINACION",
+                                      "DIRECCION GENERAL DE INFORMACION AGRARIA",
+                                      "DIRECCION GENERAL DE ORDENAMIENTO Y REGULARIZACION",
+                                      "DIRECCION GENERAL DE POLITICA Y PLANEACION AGRARIA",
+                                      "FIDEICOMISO FONDO NACIONAL DE FOMENTO EJIDAL",
+                                      "INSTITUTO NACIONAL DE DESARROLLO AGRARIO",
+                                      "OFICIALIA MAYOR",
+                                      "PROCURADURIA AGRARIA",
+                                      "REGISTRO AGRARIO NACIONAL",
+                                      "REPRESENTACION ESPECIAL CHIAPAS",
+                                      "REPRESENTACION ESPECIAL OAXACA",
+                                      "REPRESENTACION REGIONAL CENTRO NORTE",
+                                      "REPRESENTACION REGIONAL CENTRO SUR",
+                                      "REPRESENTACION REGIONAL CENTRO",
+                                      "REPRESENTACION REGIONAL GOLFO",
+                                      "REPRESENTACION REGIONAL NORESTE",
+                                      "REPRESENTACION REGIONAL NOROESTE",
+                                      "REPRESENTACION REGIONAL NORTE",
+                                      "REPRESENTACION REGIONAL OCCIDENTE",
+                                      "REPRESENTACION REGIONAL PACIFICO CENTRO",
+                                      "REPRESENTACION REGIONAL PACIFICO",
+                                      "REPRESENTACION REGIONAL PENINSULAR",
+                                      "REPRESENTACION REGIONAL SUR",
+                                      "SECRETARIA",
+                                      "SUBSECRETARIA DE ORDENAMIENTO DE LA PROPIEDAD RURAL",
+                                      "SUBSECRETARIA DE POLITICA SECTORIAL",
+                                      "UNIDAD DE COMUNICACION SOCIAL",
+                                      "UNIDAD DE CONCERTACION AGRARIA",
+                                      "UNIDAD DE CONTRALORIA INTERNA",
+                                      "UNIDAD TECNICA OPERATIVA"];
+      organizationValue = secretariaReformaAgraria;
+    }  
+     if(organizationValue =="PROCURADURIA GENERAL DE LA REPUBLICA"){
+      var procuraduriaGenerakREpublica =["AGENCIA DE INVESTIGACION CRIMINAL",
+                                          "AGENCIA FEDERAL DE INVESTIGACION",
+                                          "CONTRALORIA INTERNA",
+                                          "COORDINACIÓN DE PLANEACIÓN, DESARROLLO E INNOVACIÓN INSTITUCIONAL",
+                                          "DELEGACION ESTATAL EN AGUASCALIENTES",
+                                          "DELEGACION ESTATAL EN BAJA CALIFORNIA SUR",
+                                          "DELEGACION ESTATAL EN BAJA CALIFORNIA",
+                                          "DELEGACION ESTATAL EN CAMPECHE",
+                                          "DELEGACION ESTATAL EN CHIAPAS",
+                                          "DELEGACION ESTATAL EN CHIHUAHUA",
+                                          "DELEGACION ESTATAL EN COAHUILA",
+                                          "DELEGACION ESTATAL EN COLIMA",
+                                          "DELEGACION ESTATAL EN DURANGO",
+                                          "DELEGACION ESTATAL EN EL DISTRITO FEDERAL",
+                                          "DELEGACION ESTATAL EN GUANAJUATO",
+                                          "DELEGACION ESTATAL EN GUERRERO",
+                                          "DELEGACION ESTATAL EN HIDALGO",
+                                          "DELEGACION ESTATAL EN JALISCO",
+                                          "DELEGACION ESTATAL EN MEXICO",
+                                          "DELEGACION ESTATAL EN MICHOACAN",
+                                          "DELEGACION ESTATAL EN MORELOS",
+                                          "DELEGACION ESTATAL EN NAYARIT",
+                                          "DELEGACION ESTATAL EN NUEVO LEON",
+                                          "DELEGACION ESTATAL EN OAXACA",
+                                          "DELEGACION ESTATAL EN PUEBLA",
+                                          "DELEGACION ESTATAL EN QUERETARO",
+                                          "DELEGACION ESTATAL EN QUINTANA ROO",
+                                          "DELEGACION ESTATAL EN SAN LUIS POTOSI",
+                                          "DELEGACION ESTATAL EN SINALOA",
+                                          "DELEGACION ESTATAL EN SONORA",
+                                          "DELEGACION ESTATAL EN TABASCO",
+                                          "DELEGACION ESTATAL EN TAMAULIPAS",
+                                          "DELEGACION ESTATAL EN TLAXCALA",
+                                          "DELEGACION ESTATAL EN VERACRUZ",
+                                          "DELEGACION ESTATAL EN YUCATAN",
+                                          "DELEGACION ESTATAL EN ZACATECAS",
+                                          "DIRECCION GENERAL DE AMPARO",
+                                          "DIRECCION GENERAL DE ASUNTOS LEGALES INTERNACIONALES",
+                                          "DIRECCION GENERAL DE AUDITORIA",
+                                          "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                                          "DIRECCION GENERAL DE CONSTITUCIONALIDAD Y DOCUMENTACION JURIDICA",
+                                          "DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES A",
+                                          "DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES B",
+                                          "DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES C",
+                                          "DIRECCION GENERAL DE CONTROL Y REGISTRO DE ASEGURAMIENTOS MINISTERIALES",
+                                          "DIRECCION GENERAL DE CONTROL Y VERIFICACION",
+                                          "DIRECCION GENERAL DE COORDINACION DE SERVICIOS PERICIALES",
+                                          "DIRECCION GENERAL DE COORDINACION INTERINSTITUCIONAL",
+                                          "DIRECCION GENERAL DE EVALUACION",
+                                          "DIRECCION GENERAL DE INFORMATICA Y TELECOMUNICACIONES",
+                                          "DIRECCION GENERAL DE INSPECCION INTERNA",
+                                          "DIRECCION GENERAL DE LO CONTENCIOSO Y CONSULTIVO",
+                                          "DIRECCION GENERAL DE NORMATIVIDAD TECNICO PENAL",
+                                          "DIRECCION GENERAL DE ORGANIZACION Y CONTROL DEL PERSONAL MINISTERIAL, POLICIAL Y PERICIAL",
+                                          "DIRECCION GENERAL DE PREVENCION DEL DELITO Y SERVICIOS A LA COMUNIDAD",
+                                          "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+                                          "DIRECCION GENERAL DE PROTECCION A LOS DERECHOS HUMANOS",
+                                          "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                                          "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+                                          "DIRECCION GENERAL DE RESPONSABILIDADES E INCONFORMIDADES",
+                                          "DIRECCION GENERAL DE SERVICIOS AEREOS",
+                                          "DIRECCION GENERAL DE VISITADURIA",
+                                          "DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO A",
+                                          "DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO B",
+                                          "DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO C",
+                                          "FISCALIA ESPECIAL PARA MOVIMIENTOS SOCIALES Y POLITICOS DEL PASADO",
+                                          "FISCALIA ESPECIALIZADA PARA LA ATENCION DE DELITOS CONTRA LA SALUD",
+                                          "FISCALIA ESPECIALIZADA PARA LA ATENCION DE DELITOS ELECTORALES",
+                                          "INSTITUTO DE CAPACITACION",
+                                          "OFICIALIA MAYOR",
+                                          "SUBPROCURADURIA DE COORDINACION GENERAL Y DESARROLLO",
+                                          "SUBPROCURADURIA DE PROCEDIMIENTOS PENALES A",
+                                          "SUBPROCURADURIA DE PROCEDIMIENTOS PENALES B",
+                                          "SUBPROCURADURIA DE PROCEDIMIENTOS PENALES C",
+                                          "SUBPROCURADURIA ESPECIAL",
+                                          "SUBPROCURADURIA JURIDICA Y DE ASUNTOS INTERNACIONALES",
+                                          "UNIDAD ESPECIALIZADA CONTRA EL LAVADO DE DINERO",
+                                          "UNIDAD ESPECIALIZADA EN DELINCUENCIA ORGANIZADA",
+                                          "VISITADURIA GENERAL"];
+      organizationValue = procuraduriaGenerakREpublica;
+    }  
+       if(organizationValue =="SECRETARIA DE TURISMO"){
+      var secretariaTurismo =["BAJA, MANTENIMIENTO Y OPERACION, S. A. DE C. V.",
+                              "CENTRO DE ESTUDIOS SUPERIORES DE TURISMO",
+                              "CONSEJO DE PROMOCION TURISTICA DE MEXICO, S. A. DE C. V.",
+                              "CONTRALORIA INTERNA",
+                              "DIRECCION GENERAL DE ADMINISTRACION",
+                              "DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+                              "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                              "DIRECCION GENERAL DE DESARROLLO DE LA CULTURA TURISTICA",
+                              "DIRECCION GENERAL DE DESARROLLO DE PRODUCTOS TURISTICOS",
+                              "DIRECCION GENERAL DE DESARROLLO INSTITUCIONAL Y COORDINACION SECTORIAL",
+                              "DIRECCION GENERAL DE INFORMACION Y ANALISIS",
+                              "DIRECCION GENERAL DE MEJORA REGULATORIA",
+                              "DIRECCION GENERAL DE PLANEACION ESTRATEGICA Y POLITICA SECTORIAL",
+                              "DIRECCION GENERAL DE PROGRAMAS REGIONALES",
+                              "DIRECCION GENERAL DE SERVICIOS AL TURISTA",
+                              "FONDO NACIONAL DE FOMENTO AL TURISMO",
+                              "NACIONAL HOTELERA DE BAJA CALIFORNIA, S. A. DE C. V.",
+                              "SECRETARIA DE TURISMO",
+                              "SUBSECRETARIA DE INNOVACION Y CALIDAD",
+                              "SUBSECRETARIA DE OPERACION TURISTICA",
+                              "SUBSECRETARIA DE PLANEACION TURISTICA"];
+      organizationValue = secretariaTurismo;
+    }  
+      if(organizationValue =="PROVISIONES SALARIALES Y ECONOMICAS"){
+      var provisionesSalariales =["UNIDAD DE POLITICA Y CONTROL PRESUPUESTARIO"];
+      organizationValue = provisionesSalariales;
+    }  
+      if(organizationValue =="DEUDA PUBLICA"){
+      var deudaPublica =["DIRECCION GENERAL DE CREDITO PUBLICO"];
+      organizationValue = deudaPublica;
+    }
+      if(organizationValue =="PREVISIONES Y APORTACIONES PARA LOS SISTEMAS DE EDUCACION BASICA NORMAL TECNOLOGICA Y DE ADULTOS"){
+      var previsionesAportacionesSistemas =["DIRECCION GENERAL DE PLANEACION, PROGRAMACION Y PRESUPUESTO",
+                                            "DISTRITO FEDERAL"];
+      organizationValue = previsionesAportacionesSistemas;
+    }
+      if(organizationValue =="SECRETARIA DE LA FUNCION PUBLICA"){
+      var secreaariaFuncionPublica =["COMISION DE AVALUOS DE BIENES NACIONALES",
+                                      "CONTRALORIA INTERNA",
+                                      "COORDINACION GENERAL DE ORGANOS DE VIGILANCIA Y CONTROL",
+                                      "DIRECCION GENERAL DE ADMINISTRACION",
+                                      "DIRECCION GENERAL DE ANALISIS DE ESTRUCTURA Y PROFESIONALIZACION DEL SERVICIO PUBLICO",
+                                      "DIRECCION GENERAL DE ATENCION CIUDADANA",
+                                      "DIRECCION GENERAL DE EFICIENCIA ADMINISTRATIVA",
+                                      "DIRECCION GENERAL DE INCONFORMIDADES",
+                                      "DIRECCION GENERAL DE INFORMATICA",
+                                      "DIRECCION GENERAL DE MODERNIZACION ADMINISTRATIVA Y PROCESOS",
+                                      "DIRECCION GENERAL DE OPERACION REGIONAL Y CONTRALORIA SOCIAL",
+                                      "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+                                      "DIRECCION GENERAL DE RESPONSABILIDADES Y SITUACION PATRIMONIAL",
+                                      "DIRECCION GENERAL DE SIMPLIFICACION REGULATORIA",
+                                      "INSTITUTO DE ADMINISTRACION Y AVALUOS DE BIENES NACIONALES",
+                                      "INSTITUTO FEDERAL DE ACCESO A LA INFORMACION PUBLICA",
+                                      "OFICIALIA MAYOR",
+                                      "P.M.I. COMERCIO INTERNACIONAL, S.A. DE C.V.",
+                                      "SECRETARIA EJECUTIVA DE LA COM. INTERSECRETARIAL PARA LA TRANSPARENCIA Y EL COMBATE A LA CORRUPCION EN LA ADMON PUB.FED.",
+                                      "SECRETARIA",
+                                      "SUBSECRETARIA DE ATENCION CIUDADANA Y NORMATIVIDAD",
+                                      "SUBSECRETARIA DE CONTROL Y AUDITORIA DE LA GESTION PUBLICA",
+                                      "SUBSECRETARIA DE DESARROLLO Y SIMPLIFICACION ADMINISTRATIVA",
+                                      "UNIDAD DE ASUNTOS JURIDICOS",
+                                      "UNIDAD DE AUDITORIA GUBERNAMENTAL",
+                                      "UNIDAD DE CONTROL Y EVALUACION DE LA GESTION PUBLICA",
+                                      "UNIDAD DE NORMATIVIDAD DE ADQUISICIONES, OBRAS PUBLICAS, SERVICIOS Y PATRIMONIO FEDERAL",
+                                      "UNIDAD DE SERVICIOS ELECTRONICOS GUBERNAMENTALES",
+                                      "UNIDAD DE VINCULACION PARA LA TRANSPARENCIA",
+                                      "UNIDAD DEL SERVICIO PROFESIONAL Y RECURSOS",];
+      organizationValue = secreaariaFuncionPublica;
+    }
+      if(organizationValue =="PARTICIPACIONES A ENTIDADES FEDERATIVAS Y MUNICIPIOS"){
+      var secreaariaFuncionPublica =["UNIDAD DE COORDINACION HACENDARIA CON ENTIDADES FEDERATIVAS"];
+      organizationValue = secreaariaFuncionPublica;
+    }
+     if(organizationValue =="EROGACIONES PARA LAS OPERACIONES Y PROGRAMAS DE SANEAMIENTO FINANCIERO"){
+      var erogacionesOperacionesProgramas =["DIRECCION GENERAL DE CREDITO PUBLICO"];
+      organizationValue = erogacionesOperacionesProgramas;
+    }
+     if(organizationValue =="ADEUDOS DE EJERCICIOS FISCALES ANTERIORES"){
+      var adeudosEjercisions =["UNIDAD DE POLITICA Y CONTROL PRESUPUESTARIO"];
+      organizationValue = adeudosEjercisions;
+    }
+      if(organizationValue =="TRIBUNALES AGRARIOS"){
+      var tribunalesAgrarios =["TRIBUNALES AGRARIOS",
+                              "TRIBUNAL SUPERIOR AGRARIO",
+                              "TRIBUNALES UNITARIOS AGRARIOS",
+                              "OFICIALIA MAYOR",];
+      organizationValue = tribunalesAgrarios;
+    }
+     if(organizationValue =="TRIBUNAL FEDERAL DE JUSTICIA FISCAL Y ADMINISTRATIVA"){
+      var tribunalFederalJusticia =["CENTRO DE ESTUDIOS SUPERIORES EN MATERIA DE DERECHO FISCAL Y ADMINISTRATIVO",
+                                    "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+                                    "DIRECCION GENERAL DE RECURSOS HUMANOS",
+                                    "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+                                    "OFICIALIA MAYOR",
+                                    "PRIMERA SALA REGIONAL DE OCCIDENTE, CON SEDE EN GUADALAJARA, JAL.",
+                                    "PRIMERA SALA REGIONAL DE ORIENTE, CON SEDE EN PUEBLA, PUE.",
+                                    "PRIMERA SALA REGIONAL DEL NORESTE, CON SEDE EN GARZA GARCIA, N. L.",
+                                    "PRIMERA SALA REGIONAL DEL NORTE CENTRO II, CON SEDE EN TORREON, COAH.",
+                                    "PRIMERA SALA REGIONAL DEL SURESTE, CON SEDE EN OAXACA, OAX.",
+                                    "PRIMERA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX.",
+                                    "PRIMERA SALA REGIONAL PENINSULAR, CON SEDE EN MERIDA, YUC.",
+                                    "SALA REGIONAL CHIAPAS-TABASCO, CON SEDE EN TUXTLA GUITIERREZ, CHIAPAS",
+                                    "SALA REGIONAL DEL CARIBE, CON SEDE EN CANCUN, QUINTANA ROO",
+                                    "SALA REGIONAL DEL CENTRO I, CON SEDE EN AGUASCALIENTES, AGS.",
+                                    "SALA REGIONAL DEL CENTRO II, CON SEDE EN QUERETARO, QRO.",
+                                    "SALA REGIONAL DEL CENTRO III, CON SEDE EN CELAYA, GTO.",
+                                    "SALA REGIONAL DEL GOLFO NORTE, CON SEDE EN CIUDAD VICTORIA, TAMPS.",
+                                    "SALA REGIONAL DEL GOLFO, CON SEDE EN JALAPA, VER.",
+                                    "SALA REGIONAL DEL NOROESTE I, CON SEDE EN TIJUANA, B. C.",
+                                    "SALA REGIONAL DEL NOROESTE II, CON SEDE EN CIUDAD OBREGON, SON.",
+                                    "SALA REGIONAL DEL NOROESTE III, CON SEDE EN CULIACAN, SIN.",
+                                    "SALA REGIONAL DEL NORTE CENTRO I, CON SEDE EN CHIHUAHUA, CHIH.",
+                                    "SALA REGIONAL DEL PACIFICO, CON SEDE EN ACAPULCO, GRO.",
+                                    "SEGUNDA SALA REGIONAL DE OCCIDENTE, CON SEDE EN GUADALAJARA, JAL.",
+                                    "SEGUNDA SALA REGIONAL DE ORIENTE, CON SEDE EN PUEBLA, PUE.",
+                                    "SEGUNDA SALA REGIONAL DEL NORESTE, CON SEDE EN MONTERREY, N. L.",
+                                    "SEGUNDA SALA REGIONAL DEL NORTE CENTRO II, CON SEDE EN TORREON, COAH.",
+                                    "SEGUNDA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX.",
+                                    "TERCERA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX.",
+                                    "TRIBUNAL FEDERAL DE JUSTICIA FISCAL Y ADMINISTRATIVA CON SEDE EN EL DISTRITO FEDERAL",];
+      organizationValue = tribunalFederalJusticia;
+    }
+     if(organizationValue =="APORTACIONES FEDERALES PARA ENTIDADES FEDERATIVAS Y MUNICIPIOS"){
+      var aportacionesFederales =["AGUASCALIENTES",
+                                  "BAJA CALIFORNIA SUR",
+                                  "BAJA CALIFORNIA",
+                                  "CAMPECHE",
+                                  "CHIAPAS",
+                                  "CHIHUAHUA",
+                                  "COAHUILA",
+                                  "COLIMA",
+                                  "DISTRITO FEDERAL",
+                                  "DURANGO",
+                                  "ENTIDADES FEDERATIVAS Y MUNICIPIOS",
+                                  "GUANAJUATO",
+                                  "GUERRERO",
+                                  "HIDALGO",
+                                  "HIDALGO",
+                                  "JALISCO",
+                                  "MEXICO",
+                                  "MICHOACAN",
+                                  "MORELOS",
+                                  "NAYARIT",
+                                  "NUEVO LEON",
+                                  "OAXACA",
+                                  "PUEBLA",
+                                  "QUERETARO",
+                                  "QUINTANA ROO",
+                                  "SAN LUIS POTOSI",
+                                  "SINALOA",
+                                  "SONORA",
+                                  "TABASCO",
+                                  "TAMAULIPAS",
+                                  "TLAXCALA",
+                                  "VERACRUZ",
+                                  "YUCATAN",
+                                  "ZACATECAS",
+                                  "TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL",];
+      organizationValue = aportacionesFederales;
+    }
+     if(organizationValue =="SECRETARIA DE SEGURIDAD PUBLICA"){
+      var secretatiaSeguridadPublica =["CONSEJO DE MENORES",
+                                        "COORDINACION GENERAL DE ASUNTOS INTERNOS",
+                                        "COORDINACION GENERAL DE ASUNTOS JURIDICOS",
+                                        "DIRECCION GENERAL DE ADMINISTRACION Y FORMACION DE RECURSOS HUMANOS",
+                                        "DIRECCION GENERAL DE COMUNICACION SOCIAL",
+                                        "DIRECCION GENERAL DE DESARROLLO TECNOLOGICO",
+                                        "DIRECCION GENERAL DE PLANEACION Y ESTADISTICA",
+                                        "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+                                        "DIRECCION GENERAL DE PROTECCION DE LOS DERECHOS HUMANOS",
+                                        "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+                                        "DIRECCION GENERAL DE REGISTRO Y SUPERVISION A EMPRESAS Y SERVICIOS DE SEGURIDAD PRIVADA",
+                                        "DIRECCION GENERAL DE SERVICIOS A LA COMUNIDAD Y PARTICIPACION CIUDADANA",
+                                        "DIRECCION GENERAL DE VINCULACION CON INSTITUCIONES POLICIALES",
+                                        "OFICIALIA MAYOR",
+                                        "POLICIA FEDERAL PREVENTIVA",
+                                        "PREVENCION Y READAPTACION SOCIAL",
+                                        "SECRETARIA DE SEGURIDAD PUBLICA DE SINALOA",
+                                        "SECRETARIA DE SEGURIDAD PUBLICA DEL ESTDO DE YUCATAN",
+                                        "SECRETARIA",
+                                        "SECRETARIADO EJECUTIVO DEL SISTEMA NACIONAL DE SEGURIDAD PUBLICA",
+                                        "SUBSECRETARIA DE SEGURIDAD PUBLICA",
+                                        "SUBSECRETARIA DE SERVICIOS A LA CIUDADANIA",
+                                        "UNIDAD DE CONTRALORIA INTERNA"];
+      organizationValue = secretatiaSeguridadPublica;
+    }
+    if(organizationValue =="FONDO DE APORTACIONES PARA LA EDUCACION BASICA Y NORMAL"){
+      var fondoAportacionesEducacion =["AGUASCALIENTES",
+                                      "BAJA CALIFORNIA SUR",
+                                      "BAJA CALIFORNIA",
+                                      "CAMPECHE",
+                                      "CHIAPAS",
+                                      "CHIHUAHUA",
+                                      "COAHUILA",
+                                      "COLIMA",
+                                      "DISTRITO FEDERAL",
+                                      "DURANGO",
+                                      "GUANAJUATO",
+                                      "GUERRERO",
+                                      "JALISCO",
+                                      "MEXICO",
+                                      "MICHOACAN",
+                                      "MORELOS",
+                                      "NAYARIT",
+                                      "NUEVO LEON",
+                                      "OAXACA",
+                                      "PUEBLA",
+                                      "QUERETARO",
+                                      "QUINTANA ROO",
+                                      "SAN LUIS POTOSI",
+                                      "SINALOA",
+                                      "SONORA",
+                                      "TABASCO",
+                                      "TAMAULIPAS",
+                                      "TLAXCALA",
+                                      "VERACRUZ",
+                                      "YUCATAN",
+                                      "ZACATECAS",
+                                      "TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"];
+      organizationValue = fondoAportacionesEducacion;
+    }
+    if(organizationValue =="FONDO DE APORTACIONES PARA LOS SERVICIOS DE SALUD"){
+      var fondoAportacionesServiciosSalud =["AGUASCALIENTES",
+                                            "BAJA CALIFORNIA SUR",
+                                            "BAJA CALIFORNIA",
+                                            "CAMPECHE",
+                                            "CHIAPAS",
+                                            "CHIHUAHUA",
+                                            "COAHUILA",
+                                            "COLIMA",
+                                            "DISTRITO FEDERAL",
+                                            "DURANGO",
+                                            "GUANAJUATO",
+                                            "GUERRERO",
+                                            "JALISCO",
+                                            "MEXICO",
+                                            "MICHOACAN",
+                                            "MORELOS",
+                                            "NAYARIT",
+                                            "NUEVO LEON",
+                                            "OAXACA",
+                                            "PUEBLA",
+                                            "QUERETARO",
+                                            "QUINTANA ROO",
+                                            "SAN LUIS POTOSI",
+                                            "SINALOA",
+                                            "SONORA",
+                                            "TABASCO",
+                                            "TAMAULIPAS",
+                                            "TLAXCALA",
+                                            "VERACRUZ",
+                                            "YUCATAN",
+                                            "ZACATECAS",
+                                            "TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"];
+      organizationValue = fondoAportacionesServiciosSalud;
+    }
+     if(organizationValue =="FONDO DE APORTACIONES PARA LA INFRAESTRUCTURA SOCIAL"){
+      var fondeAportacionesInfraestructura =["AGUASCALIENTES",
+                                            "BAJA CALIFORNIA SUR",
+                                            "BAJA CALIFORNIA",
+                                            "CAMPECHE",
+                                            "CHIAPAS",
+                                            "CHIHUAHUA",
+                                            "COAHUILA",
+                                            "COLIMA",
+                                            "DISTRITO FEDERAL",
+                                            "DURANGO",
+                                            "GUANAJUATO",
+                                            "GUERRERO",
+                                            "JALISCO",
+                                            "MEXICO",
+                                            "MICHOACAN",
+                                            "MORELOS",
+                                            "NAYARIT",
+                                            "NUEVO LEON",
+                                            "OAXACA",
+                                            "PUEBLA",
+                                            "QUERETARO",
+                                            "QUINTANA ROO",
+                                            "SAN LUIS POTOSI",
+                                            "SINALOA",
+                                            "SONORA",
+                                            "TABASCO",
+                                            "TAMAULIPAS",
+                                            "TLAXCALA",
+                                            "VERACRUZ",
+                                            "YUCATAN",
+                                            "ZACATECAS"];
+      organizationValue = fondeAportacionesInfraestructura;
+    }
+    if(organizationValue =="FONDO DE APORTACIONES PARA EL FORTALECIMIENTO DE LOS MUNICIPIOS Y DE LAS DEMARCACIONES TERRITORIALES DEL D F"){
+      var aportacionesFortalecimiento =["AGUASCALIENTES",
+                                            "BAJA CALIFORNIA SUR",
+                                            "BAJA CALIFORNIA",
+                                            "CAMPECHE",
+                                            "CHIAPAS",
+                                            "CHIHUAHUA",
+                                            "COAHUILA",
+                                            "COLIMA",
+                                            "DISTRITO FEDERAL",
+                                            "DURANGO",
+                                            "GUANAJUATO",
+                                            "GUERRERO",
+                                            "JALISCO",
+                                            "MEXICO",
+                                            "MICHOACAN",
+                                            "MORELOS",
+                                            "NAYARIT",
+                                            "NUEVO LEON",
+                                            "OAXACA",
+                                            "PUEBLA",
+                                            "QUERETARO",
+                                            "QUINTANA ROO",
+                                            "SAN LUIS POTOSI",
+                                            "SINALOA",
+                                            "SONORA",
+                                            "TABASCO",
+                                            "TAMAULIPAS",
+                                            "TLAXCALA",
+                                            "VERACRUZ",
+                                            "YUCATAN",
+                                            "ZACATECAS"];
+      organizationValue = aportacionesFortalecimiento;
+    }
+     if(organizationValue =="FONDO DE APORTACIONES MULTIPLES"){
+      var fondoAportacionesMultiples =["AGUASCALIENTES",
+                                        "BAJA CALIFORNIA SUR",
+                                        "BAJA CALIFORNIA",
+                                        "CAMPECHE",
+                                        "CHIAPAS",
+                                        "CHIHUAHUA",
+                                        "COAHUILA",
+                                        "COLIMA",
+                                        "DISTRITO FEDERAL",
+                                        "DURANGO",
+                                        "GUANAJUATO",
+                                        "GUERRERO",
+                                        "JALISCO",
+                                        "MEXICO",
+                                        "MICHOACAN",
+                                        "MORELOS",
+                                        "NAYARIT",
+                                        "NUEVO LEON",
+                                        "OAXACA",
+                                        "PUEBLA",
+                                        "QUERETARO",
+                                        "QUINTANA ROO",
+                                        "SAN LUIS POTOSI",
+                                        "SINALOA",
+                                        "SONORA",
+                                        "TABASCO",
+                                        "TAMAULIPAS",
+                                        "TLAXCALA",
+                                        "VERACRUZ",
+                                        "YUCATAN",
+                                        "ZACATECAS",
+                                        "TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"];
+      organizationValue = fondoAportacionesMultiples;
+    }
+     if(organizationValue =="FONDO DE APORTACIONES PARA LA SEGURIDAD PUBLICA DE LOS ESTADOS Y DEL DISTRITO FEDERAL"){
+      var fondoAportacionesSeguridad =["AGUASCALIENTES",
+                                      "BAJA CALIFORNIA SUR",
+                                      "BAJA CALIFORNIA",
+                                      "CAMPECHE",
+                                      "CHIAPAS",
+                                      "CHIHUAHUA",
+                                      "COAHUILA",
+                                      "COLIMA",
+                                      "DISTRITO FEDERAL",
+                                      "DURANGO",
+                                      "GUANAJUATO",
+                                      "GUERRERO",
+                                      "JALISCO",
+                                      "MEXICO",
+                                      "MICHOACAN",
+                                      "MORELOS",
+                                      "NAYARIT",
+                                      "NUEVO LEON",
+                                      "OAXACA",
+                                      "PUEBLA",
+                                      "QUERETARO",
+                                      "QUINTANA ROO",
+                                      "SAN LUIS POTOSI",
+                                      "SINALOA",
+                                      "SONORA",
+                                      "TABASCO",
+                                      "TAMAULIPAS",
+                                      "TLAXCALA",
+                                      "VERACRUZ",
+                                      "YUCATAN",
+                                      "ZACATECAS",
+                                      "ENTIDADES FEDERATIVAS Y MUNICIPIOS"];
+      organizationValue = fondoAportacionesSeguridad;
+    }
+      if(organizationValue =="FONDO DE APORTACIONES PARA LA EDUCACION TECNOLOGICA Y DE ADULTOS"){
+      var fondoApotacionesEducacionTecnologica =["AGUASCALIENTES",
+                                                  "BAJA CALIFORNIA SUR",
+                                                  "BAJA CALIFORNIA",
+                                                  "CAMPECHE",
+                                                  "CHIAPAS",
+                                                  "CHIHUAHUA",
+                                                  "COAHUILA",
+                                                  "COLIMA",
+                                                  "DISTRITO FEDERAL",
+                                                  "DURANGO",
+                                                  "GUANAJUATO",
+                                                  "GUERRERO",
+                                                  "JALISCO",
+                                                  "MEXICO",
+                                                  "MICHOACAN",
+                                                  "MORELOS",
+                                                  "NAYARIT",
+                                                  "NUEVO LEON",
+                                                  "OAXACA",
+                                                  "PUEBLA",
+                                                  "QUERETARO",
+                                                  "QUINTANA ROO",
+                                                  "SAN LUIS POTOSI",
+                                                  "SINALOA",
+                                                  "SONORA",
+                                                  "TABASCO",
+                                                  "TAMAULIPAS",
+                                                  "TLAXCALA",
+                                                  "VERACRUZ",
+                                                  "YUCATAN",
+                                                  "ZACATECAS",
+                                                  "TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"];
+      organizationValue = fondoApotacionesEducacionTecnologica;
+    }
+     if(organizationValue =="CONSEJERIA JURIDICA DEL EJECUTIVO FEDERAL"){
+      var consejeriaJuridicaEjecutivo =[" "];
+      organizationValue = consejeriaJuridicaEjecutivo;
+    }
+     if(organizationValue =="SECRETARIA DE MEDIO AMBIENTE Y RECURSOS NATURALES DELEGACION FEDERAL NUEVO LEON"){
+      var secretariaMedioAmbienteRecuersos =[" "];
+      organizationValue = secretariaMedioAmbienteRecuersos;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE FRESNILLO Z AC"){
+      var insitutoTecnologicoSuperiorFresnillo =[" "];
+      organizationValue = insitutoTecnologicoSuperiorFresnillo;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE URUAPAN"){
+      var institutoTEcnologicoSuperiorUruapan =[" "];
+      organizationValue = institutoTEcnologicoSuperiorUruapan;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE LA MONTANA"){
+      var institutoTEcnologicoSuperiorMontana =[" "];
+      organizationValue = institutoTEcnologicoSuperiorMontana;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE CAJEME"){
+      var institutoTEcnologicoSuperiorCajeme =["SUBDIRECCION"];
+      organizationValue = institutoTEcnologicoSuperiorCajeme;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE ACAYUCAN"){
+      var institutoTEcnologicoSuperiorAcutuaca =[" "];
+      organizationValue = institutoTEcnologicoSuperiorAcutuaca;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE FELIPE CARRILLO PUERTO"){
+      var institutoTEcnologicoSuperiorCarrilloPuerto =[" "];
+      organizationValue = institutoTEcnologicoSuperiorCarrilloPuerto;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE LA SIERRA NORTE DE PUEBLA"){
+      var institutoTEcnologicoSuperiorNortePuebla =[" "];
+      organizationValue = institutoTEcnologicoSuperiorNortePuebla;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE PANUCO"){
+      var institutoTEcnologicoSuperiorPanuco =[" "];
+      organizationValue = institutoTEcnologicoSuperiorPanuco;
+    }
+     if(organizationValue =="SECRETARIA DE INFRAESTRUCTURA URBANA Y ECOLOGIA"){
+      var secretariaInfraestructura =[" "];
+      organizationValue = secretariaInfraestructura;
+    }
+     if(organizationValue =="COMISION NACIONAL PARA EL CONOCIMIENTO Y USO DE LA BIODIVERSIDAD"){
+      var comosionNacionalConocimiento =["DIRECCION GENERAL DE BIOINFORMATICA",
+                                        "DIRECCION TECNICA DE ANALISIS Y PRIORIDADES",
+                                        "SECRETARIA EJECUTIVA"];
+      organizationValue = comosionNacionalConocimiento;
+    }
+     if(organizationValue =="HOSPITAL CENTRAL MILITAR"){
+      var hospitalCentralMilitar =[" "];
+      organizationValue = hospitalCentralMilitar;
+    }
+     if(organizationValue =="COMISION NACIONAL PARA LA ERRADICACION DE LA TUBERCULOSIS BOVINA Y BRUCELOSIS"){
+      var comisionNacionalErradicacion =[" "];
+      organizationValue = comisionNacionalErradicacion;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DEL SUR DE GUANAJUATO"){
+      var institutoTecnologicoSurGuanajuato =[" "];
+      organizationValue = institutoTecnologicoSurGuanajuato;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE MONCLOVA"){
+      var institutoTecnologicoMaclovia =[" "];
+      organizationValue = institutoTecnologicoMaclovia;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE TIERRA BLANCA"){
+      var institutoTecnologicoTierraBlanca =[" "];
+      organizationValue = institutoTecnologicoTierraBlanca;
+    }
+      if(organizationValue =="INSTITUTO TECNOLOGICO DE ESTUDIOS SUPERIORES DE LA REGION CARBONIFERA"){
+      var institutoTecnologicoEstudiosSuperiores =[" "];
+      organizationValue = institutoTecnologicoEstudiosSuperiores;
+    }
+      if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE LA COSTA CHICA"){
+      var institutoTecnologicoCostaChica =[" "];
+      organizationValue = institutoTecnologicoCostaChica;
+    }
+      if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE CANANEA"){
+      var institutoTecnologicoSuperiorCananea =[" "];
+      organizationValue = institutoTecnologicoSuperiorCananea;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE MISANTLA"){
+      var institutoTecnologicoSuperiorMisantla =[" "];
+      organizationValue = institutoTecnologicoSuperiorMisantla;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR ZACATECAS SUR"){
+      var institutoTecnologicoZacatecasSur =[" "];
+      organizationValue = institutoTecnologicoZacatecasSur;
+    }
+     if(organizationValue =="COMISION MEXICOEUA PARA EL INTERCAMBIO EDUCATIVO Y CULTURAL"){
+      var comisionMexicoeuaIntercambio =[" "];
+      organizationValue = comisionMexicoeuaIntercambio;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DEL OCCIDENTE DEL ESTADO DE HIDALGO"){
+      var institutoTEcnologicoSuperiorOccidenteEstado =[" "];
+      organizationValue = institutoTEcnologicoSuperiorOccidenteEstado;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE ALAMO TEMAPACHE"){
+      var institutoTEcnologicoSuperiorAlamoTemapache =[" "];
+      organizationValue = institutoTEcnologicoSuperiorAlamoTemapache;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE LERDO"){
+      var institutoTEcnologicoSuperiorLErdo =[" "];
+      organizationValue = institutoTEcnologicoSuperiorLErdo;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE ZAPOPAN"){
+      var institutoTEcnologicoSuperiorZapopan =["DIVISION DE CIENCIAS BASICAS"];
+      organizationValue = institutoTEcnologicoSuperiorZapopan;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE PEROTE"){
+      var institutoTEcnologicoSuperiorPerote =[" "];
+      organizationValue = institutoTEcnologicoSuperiorPerote;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE TAMAZUNCHALE"){
+      var institutoTecnologicoTemazunchale =[" "];
+      organizationValue = institutoTecnologicoTemazunchale;
+    }
+     if(organizationValue =="COMISION NACIONAL DEL CACAOCONADECA"){
+      var comisionNacionalCacaoconadeca =[" "];
+      organizationValue = comisionNacionalCacaoconadeca;
+    }
+     if(organizationValue =="INSTITUTO MEXICANO DE COMUNICACIONES"){
+      var insititutoMexicanoComunicaciones =[" "];
+      organizationValue = insititutoMexicanoComunicaciones;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE HUICHAPAN"){
+      var institutoSuperiorHuichapan =[" "];
+      organizationValue = institutoSuperiorHuichapan;
+    }
+     if(organizationValue =="BANCO NACIONAL DE OBRAS Y SERVICIOS PUBLICOS SA"){
+      var bancoNacionalObras =[" "];
+      organizationValue = bancoNacionalObras;
+    }
+    if(organizationValue =="CAMARA DE DIPUTADOS"){
+      var camaraDiputados =["CENTRO DE ESTUDIOS SOCIALES Y DE OPINION PUBLICA",
+                            "COMISION ESPECIAL PARA LA REFORMA DEL ESTADO",
+                            "COORDINACION DE LA DIPUTACION FEDERAL DEL ESTADO DE HIDALGO",];
+      organizationValue = camaraDiputados;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE LA REGION DE LOS LLANOS"){
+      var insitutoTecnologicoRegionLlanos =[" "];
+      organizationValue = insitutoTecnologicoRegionLlanos;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE HUATUSCO"){
+      var institutoTecnologicoHuatusco =[" "];
+      organizationValue = institutoTecnologicoHuatusco;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE CIUDAD ACUNA"){
+      var institutoTecnologicoAcuna =[" "];
+      organizationValue = institutoTecnologicoAcuna;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE MOTUL"){
+      var institutoTecnologicoMotul =[" "];
+      organizationValue = institutoTecnologicoMotul;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE SUR DEL EDO DE YUCATAN"){
+      var institutoTecnologicoEdoYucatan =[" "];
+      organizationValue = institutoTecnologicoEdoYucatan;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE CINTALAPA"){
+      var institutoTecnologicoCintalpa =[" "];
+      organizationValue = institutoTecnologicoCintalpa;
+    }
+    if(organizationValue =="IINSTITUTO TECNOLOGICO SUPERIOR DE EL GRULLO"){
+      var institutoTecnologicoGrullo =[" "];
+      organizationValue = institutoTecnologicoGrullo;
+    }
+     if(organizationValue =="TECNOLOGICO DE ESTUDIOS SUPERIORES DEL ORIENTE DEL ESTADO DE MEXICO"){
+      var tecnologicoEstudiosSuperioresOriente =[" "];
+      organizationValue = tecnologicoEstudiosSuperioresOriente;
+    }
+      if(organizationValue =="TECNOLOGICO DE ESTUDIOS SUPERIORES DE VALLE DE BRAVO"){
+      var tecnologicoEstudosSuperioresValle =[" "];
+      organizationValue = tecnologicoEstudosSuperioresValle;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE CALKINI EN EL ESTADO DE CAMPECHE"){
+      var institutioTecnologicoSuperiorCalkini =[" "];
+      organizationValue = institutioTecnologicoSuperiorCalkini;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE CHAPALA"){
+      var institutoTEcnologicoSuperiorChapala =[" "];
+      organizationValue = institutoTEcnologicoSuperiorChapala;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE CD HIDALGO"){
+      var institutoTEcnologicoSuperiorHidalgo =[" "];
+      organizationValue = institutoTEcnologicoSuperiorHidalgo;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE ALVARADO"){
+      var institutoTEcnologicoSuperioAlvarado =[" "];
+      organizationValue = institutoTEcnologicoSuperioAlvarado;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO DE ESTUDIOS SUPERIORES DE ZAMORA"){
+      var institutoTEcnologicoSuperioZamora =[" "];
+      organizationValue = institutoTEcnologicoSuperioZamora;
+    }
+     if(organizationValue =="UNIDAD DE ESPECIALIDADES MEDICAS"){
+      var unidadEspcialidadesMedica =[" "];
+      organizationValue = unidadEspcialidadesMedica;
+    }
+     if(organizationValue =="UNIVERSITE JOSEPH FOURIER"){
+      var universidadJoseph =[" "];
+      organizationValue = universidadJoseph;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE TAMAZULA DE GORDIANO"){
+      var institutoTecnologicoSuperiorTamazula =[" "];
+      organizationValue = institutoTecnologicoSuperiorTamazula;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR ZACATECAS OCCIDENTE"){
+      var institutoTecnologicoSuperiorZacatecasOccidente =[" "];
+      organizationValue = institutoTecnologicoSuperiorZacatecasOccidente;
+    }
+    if(organizationValue =="US HOUSE OF REPRESENTATIVES"){
+      var usHouseRepresentativas =[" "];
+      organizationValue = usHouseRepresentativas;
+    }
+    if(organizationValue =="ACADEMIA REGIONAL DE SEGURIDAD PUBLICA DEL NORORESTE"){
+      var academinaRegionalSeguridad =[" "];
+      organizationValue = academinaRegionalSeguridad;
+    }
+     if(organizationValue =="FIDEICOMISO PARA APOYAR EL CAMBIO DE ADMINISTRACION DEL EJECUTIVO FEDERAL"){
+      var fideicomisoApoyarAdministracion =[" "];
+      organizationValue = fideicomisoApoyarAdministracion;
+    }
+    if(organizationValue =="EMBAJADA DE MEXICO EN ITALIA"){
+      var emabajdaMexicoItaliana =[" "];
+      organizationValue = emabajdaMexicoItaliana;
+    }
+    if(organizationValue =="CONSEJO ECONOMICO Y SOCIAL DEL ESTADO DE JALISCO PARA EL DESARROLLO Y LA COMPETITIVIDAD"){
+      var consejoEconomicoEstado =[" "];
+      organizationValue = consejoEconomicoEstado;
+    }
+     if(organizationValue =="EMBAJADA DE MEXICO EN AUSTRIA"){
+      var emajadaMexicoAustralia =[" "];
+      organizationValue = emajadaMexicoAustralia;
+    }
+     if(organizationValue =="AZERBAIJAN DIPLOMATIC ACADEMY"){
+      var diplomaticAcademy =[" "];
+      organizationValue = diplomaticAcademy;
+    }
+     if(organizationValue =="SISTEMA TELEYUCATAN SA DE CV"){
+      var sistemaTeleyucatan =[" "];
+      organizationValue = sistemaTeleyucatan;
+    }
+     if(organizationValue =="PODER JUDICIAL DE LA FEDERACION CONSEJO DE LA JUDICATURA FEDERAL"){
+      var poderJudicialFederacion =[" "];
+      organizationValue = poderJudicialFederacion;
+    }
+     if(organizationValue =="CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NO 22"){
+      var centroEstudiosTecnologicos =[" "];
+      organizationValue = centroEstudiosTecnologicos;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO SUPERIOR DE RIOVERDE"){
+      var institutoTecnologicoSuperiorRioVerde =[" "];
+      organizationValue = institutoTecnologicoSuperiorRioVerde;
+    }
+    if(organizationValue =="NUEVA"){
+      var nueva =[" "];
+      organizationValue = nueva;
+    }
+    if(organizationValue =="SECRETARIA DE COMERCIO Y FOMENTO INDUSTRIAL"){
+      var secretariaComercioFomento =["SUBSECRETARIA DE INVERSIONES EXTRANJERAS Y TRANSFERENCIA DE TECNOLOGÍA"];
+      organizationValue = secretariaComercioFomento;
+    }
+     if(organizationValue =="BANCO DEL AHORRO Y SERVICIOS FINANCIEROS SNC"){
+      var bancoAhorroServiciosFinancieros =[" "];
+      organizationValue = bancoAhorroServiciosFinancieros;
+    }
+     if(organizationValue =="KOREA ASTRONOMY AND SPACE SCIENCE INSTITUTE"){
+      var koreaAstronomy =[" "];
+      organizationValue = koreaAstronomy;
+    }
+      if(organizationValue =="CENTRO DE ESTUDIOS DE LAS FINANZAS PUBLICAS"){
+      var centroEstudiosFinanzas =[" "];
+      organizationValue = centroEstudiosFinanzas;
+    }
+     if(organizationValue =="EMBAJADA DE MEXICO EN INDONESIA"){
+      var embajadaMexicoIndonesia =[" "];
+      organizationValue = embajadaMexicoIndonesia;
+    }
+     if(organizationValue =="EMBAJADA MEXICANA EN PARIS"){
+      var embajadaMexicanaPAirs =[" "];
+      organizationValue = embajadaMexicanaPAirs;
+    }
+    if(organizationValue =="EMBAJADA DE MEXICO EN FINLANDIA"){
+      var embajadaMexicanaFinlandia =[" "];
+      organizationValue = embajadaMexicanaFinlandia;
+    }
+    if(organizationValue =="LECHE INDUSTRIALIZADA CONASUPO SA DE CV LICONSA"){
+      var lecheIndustrializadora =[" "];
+      organizationValue = lecheIndustrializadora;
+    }
+    if(organizationValue =="COMISION NACIONAL PARA EL FOMENTO DE LA VIVIENDA"){
+      var comisionNacionalFomento =[" "];
+      organizationValue = comisionNacionalFomento;
+    }
+    if(organizationValue =="FESTIVAL INTERNACIONAL CERVANTINO"){
+      var festivalInternacional =[" "];
+      organizationValue = festivalInternacional;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO DE HARBIN"){
+      var institutoTecnologicoHarbin =[" "];
+      organizationValue = institutoTecnologicoHarbin;
+    }
+     if(organizationValue =="SECRETARIA DE TURISMO DEL ESTADO DE JALISCO"){
+      var secretariaTurismoEstadoJalisco =[" "];
+      organizationValue = secretariaTurismoEstadoJalisco;
+    }
+    if(organizationValue =="SECRETARIA DE EDUCACION DE TAMAULIPAS"){
+      var secretariaEducacionTamaulipas =[" "];
+      organizationValue = secretariaEducacionTamaulipas;
+    }
+    if(organizationValue =="SECRETARIA DE AGRICULTURA GANADERIA PESCA Y ALIMENTACION EN OAXACA"){
+      var secretariaAgriculturaGanaderia =[" "];
+      organizationValue = secretariaAgriculturaGanaderia;
+    }
+    if(organizationValue =="ANTHROPOLOGICAL SURVEY OF INDIA"){
+      var suveyIndia =[" "];
+      organizationValue = suveyIndia;
+    }
+    if(organizationValue =="SECRETARIA DE MEDIO AMBIENTE Y RECURSOS NATURALES"){
+      var secretariaMedioAmbienteRecursosNaturales =["INSTITUTO NACIONAL DE ECOLOGÍA Y CAMBIO CLIMÁTICO"];
+      organizationValue = secretariaMedioAmbienteRecursosNaturales;
+    }
+    if(organizationValue =="SECRETARIA DE AGRICULTURA GANADERIA DESARROLLO RURAL PESCA Y ALIMENTACION SAGARPA"){
+      var secretariaAgriculturaGanaderiaDesarrollo =["CENTRO NACIONAL DE REFERENCIA DE CONTROL BIOLOGICO",
+                                                      "COMITE ESTATAL DE SANIDAD VEGETAL DE QUINTANA ROO",
+                                                      "CONSEJO NACIONAL CONSULTIVO CITOSANITARIO CONACOSI",
+                                                      "DIRECCION GENERAL DE FIBRAS NATURALES Y BIOCOMBUSTIBLES",];
+      organizationValue = secretariaAgriculturaGanaderiaDesarrollo;
+    }
+    if(organizationValue =="MINISTERIO DE EDUCACION CHILE"){
+      var ministerioChile =[" "];
+      organizationValue = ministerioChile;
+    }
+     if(organizationValue =="NATIONAL AGRICULTURE AND FOOD RESEARCH ORGANIZATION"){
+      var nationalAgricultureFood =[" "];
+      organizationValue = nationalAgricultureFood;
+    }
+    if(organizationValue =="EMBAJADA DE MEXICO ALEMANIA"){
+      var embajadaMexicoAlemania =[" "];
+      organizationValue = embajadaMexicoAlemania;
+    }
+     if(organizationValue =="ACUACULTIVOS SIERRA GORDA AC"){
+      var acuacultivoSierra =[" "];
+      organizationValue = acuacultivoSierra;
+    }
+    if(organizationValue =="UNIVERSIDAD BOLIVARIANA DE VENEZUELA"){
+      var universidadBolivariana =["UNIVERSIDAD BOLIVARIANA DE VENEZUELA"];
+      organizationValue = universidadBolivariana;
+    }
+    if(organizationValue =="COMISION NACIONAL DE FOMENTO PARA LA EDUCACION"){
+      var comisionNacionalFomentoPAraEducacion =[" "];
+      organizationValue = comisionNacionalFomentoPAraEducacion;
+    }
+    if(organizationValue =="UNITED STATES DEPARTMENT OF THE INTERIOR"){
+      var unitedDerpartmentInterior =[" "];
+      organizationValue = unitedDerpartmentInterior;
+    }
+    if(organizationValue =="INSTITUTE FOR HEALTH MANAGEMENT KUALA LUMPUR MALASYA"){
+      var instituteForHealt =[" "];
+      organizationValue = instituteForHealt;
+    }
+    if(organizationValue =="BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA"){
+      var benemeritaUniverso =[" "];
+      organizationValue = benemeritaUniverso;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE CANCEROLOGICA INCAN"){
+      var institutoNacionalCancerologia =[" "];
+      organizationValue = institutoNacionalCancerologia;
+    }
+    if(organizationValue =="SERVICIOS DE TECNOLOGIA PROFESIONALES STP SC"){
+      var serviciosTEcnologiaProfesionales =[" "];
+      organizationValue = serviciosTEcnologiaProfesionales;
+    }
+    if(organizationValue =="EMBAJADA DE MEXICO EN BELGICA"){
+      var emnajadaMexicoBElica =[" "];
+      organizationValue = emnajadaMexicoBElica;
+    }
+    if(organizationValue =="MUSEO DE CIENCIAS NATURALES DE MADRID"){
+      var useoCienciasNauralesMAdrid =[" "];
+      organizationValue = useoCienciasNauralesMAdrid;
+    }
+    if(organizationValue =="CENTRO INTEGRAL POR LOS DERECHOS PLENOS VIOLETA PARRA"){
+      var centroInntegralDerechoPlenos =[" "];
+      organizationValue = centroInntegralDerechoPlenos;
+    }
+    if(organizationValue =="COMUNIDAD EVANS ESCUELA PARA ADULTOS"){
+      var comunidadEvansEscuelaPAra =[" "];
+      organizationValue = comunidadEvansEscuelaPAra;
+    }
+    if(organizationValue =="SECRETARIA DE EDUCACION DE VERACRUZ"){
+      var secretariaEducacionVeracruz =["SUBDIRECCION DE TECNOLOGIAS DE LA INFORMACION"];
+      organizationValue = secretariaEducacionVeracruz;
+    }
+    if(organizationValue =="INSTITUTO COLOMBIANO DE BIENESTAR FAMILIAR"){
+      var isntitutoColombianoBienastar =[" "];
+      organizationValue = isntitutoColombianoBienastar;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE INVESTIGACION Y DESARROLLO PESQUERO INIDEP"){
+      var institutoNacionalInvestigacionDesarrollo =[" "];
+      organizationValue = institutoNacionalInvestigacionDesarrollo;
+    }
+     if(organizationValue =="MINISTERIO DE INFORMATICA Y LAS COMUNICACIONES DIRECCION DE INFORMATICA AREA DE DESARROLLO CUBA"){
+      var ministroInformaticaCOmunicaciones =[" "];
+      organizationValue = ministroInformaticaCOmunicaciones;
+    }
+    if(organizationValue =="CENTRO DE CAPACITACION PARA EL TRABAJO INDUSTRIAL NO 94"){
+      var centroCapacitacionTrabajo =[" "];
+      organizationValue = centroCapacitacionTrabajo;
+    }
+     if(organizationValue =="BRIGADA DE EDUCACION PARA EL DESARROLLO RURAL NO 111"){
+      var brigadaEducacionRurarr =[" "];
+      organizationValue = brigadaEducacionRurarr;
+    }
+      if(organizationValue =="CENTRO DE REHABILITACION ZAPATA GABY BRIMMER"){
+      var centroREhabilitacionZapata =[" "];
+      organizationValue = centroREhabilitacionZapata;
+    }
+      if(organizationValue =="ECOLE NATIONALE SUPERIEURE DE TECHNIQUES AVANCEES"){
+      var ecoleNationale =[" "];
+      organizationValue = ecoleNationale;
+    }
+      if(organizationValue =="CAMPO PLATA SA DE CV"){
+      var campoPlata =[" "];
+      organizationValue = campoPlata;
+    }
+      if(organizationValue =="COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE QUINTANA ROO PLANTEL CANCUN II"){
+      var colegioEstudiosTEcnologicosQuintana =[" "];
+      organizationValue = colegioEstudiosTEcnologicosQuintana;
+    }
+    if(organizationValue =="SISTEMA CHIAPANECO DE RADIO TEEVISION Y CINEMATOGRAFIA"){
+      var sistemaChiapanecoRadio =[" "];
+      organizationValue = sistemaChiapanecoRadio;
+    }
+    if(organizationValue =="HÔPITAL GENERALE PELTIER"){
+      var generalePeliter =[" "];
+      organizationValue = sistemaChiapanecoRadio;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO DE CD VICTORIA"){
+      var inititutoTecnologicoVictori =[" "];
+      organizationValue = inititutoTecnologicoVictori;
+    }
+    if(organizationValue =="CENTRO DE INVESTIGACIONES OPTICAS CONICET CIC"){
+      var centroInvetigacionesOpticas =[" "];
+      organizationValue = centroInvetigacionesOpticas;
+    }
+     if(organizationValue =="CETIS 3O CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NO 3O"){
+      var cetisCEntroEStidos =[" "];
+      organizationValue = cetisCEntroEStidos;
+    }
+     if(organizationValue =="EIDGENOSSISCHE MATERIAL PRUFUNGS ANSTALT"){
+      var materialAnstalt =[" "];
+      organizationValue = materialAnstalt;
+    }
+     if(organizationValue =="MISION PERMANENTE DE MEXICO ANTE LOS ORGANISMOS INTERNACIONALES CON SEDE EN GINEBRA"){
+      var permanenteMexico =[" "];
+      organizationValue = permanenteMexico;
+    }
+    if(organizationValue =="FMX FESTIVAL DE MEXICO"){
+      var festivalMexico =[" "];
+      organizationValue = festivalMexico;
+    }
+     if(organizationValue =="DIRECCION GENERAL DE EDUCACION SUPERIOR TECNOLOGICA INSTITUTO TECNOLOGICO DE MEXICALI"){
+      var direccionGEneralEducacionTEcnologia =[" "];
+      organizationValue = direccionGEneralEducacionTEcnologia;
+    }
+    if(organizationValue =="JUZGADO 1RO DE DISTRITO EN CAMPECHE CAMPECHE"){
+      var juzgadoDistro =[" "];
+      organizationValue = juzgadoDistro;
+    }
+    if(organizationValue =="HOSPITAL DE EMERGENCIAS PSIQUIATRICAS TORCUATO DE ALVEAR"){
+      var hospitalEmergenciasTorcuato =[" "];
+      organizationValue = hospitalEmergenciasTorcuato;
+    }
+      if(organizationValue =="CECATI 162"){
+      var cecati =[" "];
+      organizationValue = cecati;
+    }
+     if(organizationValue =="SECRETARIADO EJECUTIVO DEL SISTEMA NACIONAL DE SEGURIDAD PUBLICA"){
+      var secretariadoEjecutivo =[" "];
+      organizationValue = secretariadoEjecutivo;
+    }
+     if(organizationValue =="CENTRO DE ESTUSIOS TECNOLOGICOS INSUSTRIAL Y DE SERVICIOS NO 1OO"){
+      var centroEstudiosTEcnologicosInsustrisl =[" "];
+      organizationValue = secretariadoEjecutivo;
+    }
+    if(organizationValue =="UNIVERSIDAD NACIONAL DE CUYO MENDOZA"){
+      var universiadaNacionalCuyo =[" "];
+      organizationValue = universiadaNacionalCuyo;
+    }
+     if(organizationValue =="UNIDAD DE PLANEACION MINERO ENERGETICA UPME"){
+      var unidadPlaneacionMinero =[" "];
+      organizationValue = unidadPlaneacionMinero;
+    }
+    if(organizationValue =="MINISTERIO DE AGRICULTURA PERU PROYECTO SIERRA SUR II"){
+      var ministerioAgricultura =[" "];
+      organizationValue = ministerioAgricultura;
+    }
+    if(organizationValue =="HOSPITAL PABLO VI BOSA  SALUD PUBLICA"){
+      var hospitalPabliBosa =[" "];
+      organizationValue = hospitalPabliBosa;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO DE CIUDAD CUAUHTEMOC"){
+      var institutoTecnologicoCiudadCuauhtemoc =[" "];
+      organizationValue = institutoTecnologicoCiudadCuauhtemoc;
+    }
+    if(organizationValue =="SECRETARIA DEL TRABAJO Y PREVISION SOCIAL / COORDINACION DE ASESORES DE LA OFICINA DE LA C SECRETARIA"){
+      var secretariaTrabajoPrevisionSocial =[" "];
+      organizationValue = secretariaTrabajoPrevisionSocial;
+    }
+     if(organizationValue =="UNIVERSIDAD DE CAMAGUEY IGNACION AGRAMONTE Y LOINAZ CUBA"){
+      var universidadCamagueyLoinaz =[" "];
+      organizationValue = universidadCamagueyLoinaz;
+    }
+    if(organizationValue =="IMSS QUINTANA ROO"){
+      var imssQuintanaRoo =[" "];
+      organizationValue = imssQuintanaRoo;
+    }
+     if(organizationValue =="TRIBUNAL ELECTORAL DEL PODER JUDICIAL DE LA FEDERACION"){
+      var tribunalElectoralPoderJudicial =[" "];
+      organizationValue = tribunalElectoralPoderJudicial;
+    }
+     if(organizationValue =="CENTRO DE CAPACITACION PARA EL TRABAJO INDUSTRIAL NO169"){
+      var centroCapacitacionTRabajoIndustrial =[" "];
+      organizationValue = centroCapacitacionTRabajoIndustrial;
+    }
+     if(organizationValue =="AMERICAN LEGION AUXILIARY"){
+      var americanLegion =[" "];
+      organizationValue = americanLegion;
+    }
+     if(organizationValue =="ASOCIACION DE TENIS DEL DISTRITO FEDERAL"){
+      var asociacionTenisDistrito =[" "];
+      organizationValue = asociacionTenisDistrito;
+    }
+     if(organizationValue =="INSTITUTO DE INVESTIGACION Y EVALUACION DEL PACIFICO"){
+      var isntitutoInvestigacionEvaluacion =[" "];
+      organizationValue = isntitutoInvestigacionEvaluacion;
+    }
+      if(organizationValue =="ESCUELA PRIMARIA AQUILES SERDAN"){
+      var escuelaPrimariaAquiles =[" "];
+      organizationValue = escuelaPrimariaAquiles;
+    }
+       if(organizationValue =="ESCUELA SECUNDARIA TECNICA NUM 11O"){
+      var escuelaSecundariaTecnica =[" "];
+      organizationValue = escuelaSecundariaTecnica;
+    }
+      if(organizationValue =="INSITITUCION DE PRUEBA PARA PROCESO RENIECYT 2"){
+      var institutoPruebaProceso =[" "];
+      organizationValue = institutoPruebaProceso;
+    }
+     if(organizationValue =="SECRETARIA DE EDUCACION PUBLICA/DIRECCION GENERAL DE MATERIALES EDUCATIVOS"){
+      var secretariaEdcacionPuebla =[" "];
+      organizationValue = secretariaEdcacionPuebla;
+    }
+    if(organizationValue =="HOSPITAL REGIONAL DE ALTA ESPECIALIDAD ISSSTE PUEBLA"){
+      var hospitalREgionalEspecialidadIssste =[" "];
+      organizationValue = hospitalREgionalEspecialidadIssste;
+    }
+    if(organizationValue =="SUPERINTENDENCIA DEL SISTEMA FINANCIERO DE EL SALVADOR"){
+      var superintendenciaSistema =[" "];
+      organizationValue = superintendenciaSistema;
+    }
+     if(organizationValue =="CENTRO ACUICOLA TANCOL/DELEGACION FEDERAL EN TAMAULIPAS/SECRETARIA DE MEDIO AMBIENTE RECURSOS NATURALES Y PESCA"){
+      var acuicolaTancolFederal =[" "];
+      organizationValue = acuicolaTancolFederal;
+    }
+    if(organizationValue =="SEMARNAP / DELEGACION FEDERAL EN TAMAULIPAS"){
+      var semarnapDelegacion =[" "];
+      organizationValue = semarnapDelegacion;
+    }
+      if(organizationValue =="SECRETARIA DE SEGURIDAD PUBLICA CENTRO DE INVESTIGACION Y ESTUDIOS EN SEGURIDAD"){
+      var secretariaSeguridadPublicaCentro =[" "];
+      organizationValue = secretariaSeguridadPublicaCentro;
+    }
+     if(organizationValue =="ANTIGUO COLEGIO DE SAN ILDEFONSO"){
+      var antiguoColegioSan =[" "];
+      organizationValue = antiguoColegioSan;
+    }
+     if(organizationValue =="INSTITUTO BOLIVIANO DE INVESTIGACION FORESTAL IBIF"){
+      var institutoBolivianoForestal =[" "];
+      organizationValue = institutoBolivianoForestal;
+    }
+     if(organizationValue =="UNIVERSIDADE FEDERAL DO RIO GRANDE DO SOUL"){
+      var universidadFederalRioGrande =[" "];
+      organizationValue = universidadFederalRioGrande;
+    }
+    if(organizationValue =="SADFAS"){
+      var sadfas =[" "];
+      organizationValue = sadfas;
+    }
+     if(organizationValue =="EMBAJADA DE MEXICO EN URUGUAY"){
+      var embajadaMexicoUruguay =[" "];
+      organizationValue = embajadaMexicoUruguay;
+    }
+    if(organizationValue =="DELEGACION DE LA SECRETARIA DE ECONOMIA EN LA EMBAJADA DE MEXICO EN TOKIO"){
+      var delegacionSecretariaEconomia =[" "];
+      organizationValue = delegacionSecretariaEconomia;
+    }
+     if(organizationValue =="FONDO SECTORIAL DE INVESTIGACION SRECONACYT"){
+      var fondoSectorialInvestigacion =[" "];
+      organizationValue = fondoSectorialInvestigacion;
+    }
+    if(organizationValue =="INSTITUTO PROFESIONAL DE ARTE Y DISENO AC"){
+      var institutoProfesionalArte =[" "];
+      organizationValue = institutoProfesionalArte;
+    }
+      if(organizationValue =="CENTRO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES EN ANTROPOLOGIA SOCIAL CIESAS"){
+      var centroInvestigacionesEstudiosSuperiores =[" "];
+      organizationValue = centroInvestigacionesEstudiosSuperiores;
+    }
+     if(organizationValue =="CENTRO NACIONAL DE ENSENANZA TECNICA INDUSTRIAL"){
+      var centroNacionalEnsenanzaTecnica =[" "];
+      organizationValue = centroNacionalEnsenanzaTecnica;
+    }
+    if(organizationValue =="MISION PERMANENTE DE MEXICO ANTE LA ORGANIZACION MUNDIAL DE COMERCIO"){
+      var misionPermanenteMexico =[" "];
+      organizationValue = misionPermanenteMexico;
+    }
+    if(organizationValue =="CONSULADO GENERAL DE MEXICO EN EL PASO TEXAS"){
+      var consuladoGeneralMExicoPasoTexas =[" "];
+      organizationValue = consuladoGeneralMExicoPasoTexas;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE EVALUACION EDUCATIVA"){
+      var institutoNacionalEvaluacion =[" "];
+      organizationValue = institutoNacionalEvaluacion;
+    }
+     if(organizationValue =="HOSPITAL REGIONAL DR RAFAEL PASCACIO GAMBOA"){
+      var hospitalRegionalRafael =[" "];
+      organizationValue = hospitalRegionalRafael;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO DE MERIDA"){
+      var institutoTEcnologicoMeridad =[" "];
+      organizationValue = institutoTEcnologicoMeridad;
+    }
+    if(organizationValue =="COLEGIO DE BACHILLERES DEL ESTADO DE HIDALGO"){
+      var colegioBachilleresEstadoHidalgo =[" "];
+      organizationValue = colegioBachilleresEstadoHidalgo;
+    }
+     if(organizationValue =="SECRETARIA DE DESARROLLO AGRARIO TERRITORIAL Y URBANO"){
+      var secretariaDesarrolloAgriario =[" "];
+      organizationValue = secretariaDesarrolloAgriario;
+    }
+    if(organizationValue =="KOREA RESEARCH INSTITUTE OF BIOSCIENCE AND BIOTECHNOLOGY"){
+      var koreaREsearchOf =[" "];
+      organizationValue = koreaREsearchOf;
+    }
+    if(organizationValue =="MINISTERIO DE DESARROLLO SOCIAL"){
+      var ministroDesarrollo =[" "];
+      organizationValue = ministroDesarrollo;
+    }
+    if(organizationValue =="CENTRO DE ESTUDIOS TECNOLOGICO INDUSTRIALES Y DE SERVICIOS NO 12O"){
+      var centroEstudiosTecnologicoIndustriales =[" "];
+      organizationValue = centroEstudiosTecnologicoIndustriales;
+    }
+     if(organizationValue =="CENTRO DE REHABILITACION IZTAPALAPA"){
+      var centroRehabilitacionIztapalapa =[" "];
+      organizationValue = centroRehabilitacionIztapalapa;
+    }
+    if(organizationValue =="INSTITUTO DE CIENCIAS FORENSES DEL TRIBUNAL SUPERIOR DE JUSTICIA DEL DISTRITO FEDERAL"){
+      var institutoCienciasForenses =[" "];
+      organizationValue = institutoCienciasForenses;
+    }
+    if(organizationValue =="CENTRO DE CAPACITACION PARA EL TRABAJO INDUSTRIAL 84"){
+      var centroCapacitacionTrabajoIndustrialPara =[" "];
+      organizationValue = centroCapacitacionTrabajoIndustrialPara;
+    }
+     if(organizationValue =="PROMEXICO ALEMANIA"){
+      var promexicoAlemania =[" "];
+      organizationValue = promexicoAlemania;
+    }
+     if(organizationValue =="PROMEXICO TAIWAN"){
+      var promexicoTaiwan =[" "];
+      organizationValue = promexicoTaiwan;
+    }
+     if(organizationValue =="OPTIESTILO"){
+      var optiestilo =[" "];
+      organizationValue = optiestilo;
+    }
+     if(organizationValue =="INSTITUTO DE EDUCACION SUPERIOR PARA LA FORMACION DIPLOMATICA IESSFORD"){
+      var institutoEducacionPAraFormacion =[" "];
+      organizationValue = institutoEducacionPAraFormacion;
+    }
+    if(organizationValue =="PROMEXICO PERU"){
+      var promexicoPeru =[" "];
+      organizationValue = promexicoPeru;
+    }
+    if(organizationValue =="CENTRO MEDICO NACIONAL GRAL DE DIVISION MANUEL AVILA CAMACHO HOSPITAL DE ESPECIALIDADES IMSS PUEBLA"){
+      var centroMedicoNacionalPuebla =[" "];
+      organizationValue = centroMedicoNacionalPuebla;
+    }
+     if(organizationValue =="US GEOLOGICAL SURVEY NATIONAL WILDLIFE HEALTH CENTER"){
+      var geologicalSurvey =[" "];
+      organizationValue = geologicalSurvey;
+    }
+     if(organizationValue =="SENADO DE LA REPUBLICA"){
+      var senadoRepublica =[" "];
+      organizationValue = senadoRepublica;
+    }
+     if(organizationValue =="ESCUELA SECUNDARIA TECNICA NO 2O7"){
+      var escuelaSecundariaTecnica =[" "];
+      organizationValue = escuelaSecundariaTecnica;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE PESQUISAS ESPACIAIS"){
+      var institutoNacionalEspaciais =[" "];
+      organizationValue = institutoNacionalEspaciais;
+    }
+     if(organizationValue =="INSTITUTE SENEGALAISE DE RECHERCHES AGRICOLE"){
+      var senegalaiseAgricole =[" "];
+      organizationValue = senegalaiseAgricole;
+    }
+    if(organizationValue =="ANIMAL HEALTH AND VETERIRARY LABORATORIES AGENCY"){
+      var animalHealth =[" "];
+      organizationValue = animalHealth;
+    }
+     if(organizationValue =="INSTITUTO TECNOLOGICO DE CHIHUAHUA"){
+      var institutoTecnologicoChihuahua =[" "];
+      organizationValue = institutoTecnologicoChihuahua;
+    }
+    if(organizationValue =="DUCKS UNIVERSITY"){
+      var dukscUniversity =[" "];
+      organizationValue = dukscUniversity;
+    }
+    if(organizationValue =="COMISION FEDERAL DE COMPETENCIA ECONOMICA"){
+      var comisionFederalCompetencia =[" "];
+      organizationValue = comisionFederalCompetencia;
+    }
+     if(organizationValue =="INSTITUTO FEDERAL ELECTORAL"){
+      var intitutoFederalElectoral =[" "];
+      organizationValue = intitutoFederalElectoral;
+    }
+      if(organizationValue =="MECANISMO NACIONAL DE PREVENCION CONTRA LA TORTURA"){
+      var mecanismoNacional =[" "];
+      organizationValue = mecanismoNacional;
+    }
+     if(organizationValue =="SERVICIO NACIONAL DE APRENDIZAJE"){
+      var servicioNacionalAprendizaje =[" "];
+      organizationValue = servicioNacionalAprendizaje;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE EDUCACION PARA ADULTOS"){
+      var institucionNacionalEducacion =[" "];
+      organizationValue = institucionNacionalEducacion;
+    }
+    if(organizationValue =="DIRECCION GENERAL DE DESARROLLO CURRICULAR"){
+      var direccionGeneralDesarrolloCurricular =[" "];
+      organizationValue = direccionGeneralDesarrolloCurricular;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL PARA LA EVALUACION DE LA EDUCACION"){
+      var institutoNacionalEvaluacion =[" "];
+      organizationValue = institutoNacionalEvaluacion;
+    }
+    if(organizationValue =="INSTITUT FUR PFLANZENVIROLOGIE MIKROBIOLOGIE UND BIOLOGISCHE SICHERHEIT"){
+      var institutFur =[" "];
+      organizationValue = institutFur;
+    }
+     if(organizationValue =="INSTITUTO DE  SEGURIDAD Y SERVICIOS SOCIALES DEL LOS TRABAJADORES DEL ESTADO HOSPITAL MANUEL CARDENAS  DE LA  VEGA CULIACAN"){
+      var institutoSeguridadSocialesTrabajadoresHospial =[" "];
+      organizationValue = institutoSeguridadSocialesTrabajadoresHospial;
+    }
+      if(organizationValue =="INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL ESTADO CLINICA HOSPITAL MAZATLAN"){
+      var serviciosSocialesTrabajadores =[" "];
+      organizationValue = serviciosSocialesTrabajadores;
+    }
+      if(organizationValue =="UNIDAD DE ANALISIS ECONOMICO"){
+      var unidadAnalisisEconomico =[" "];
+      organizationValue = unidadAnalisisEconomico;
+    }
+     if(organizationValue =="FIRA BANCO DE MEXICO"){
+      var firaBancoMexico =[" "];
+      organizationValue = firaBancoMexico;
+    }
+     if(organizationValue =="CBTIS NO3"){
+      var cbtis =[" "];
+      organizationValue = cbtis;
+    }
+    if(organizationValue =="INSTITUTO COLOMBIANO AGROPECUARIO ICA"){
+      var institutoColombianoAgropecuario =[" "];
+      organizationValue = institutoColombianoAgropecuario;
+    }
+    if(organizationValue =="CENTRO REGIONAL DE INVESTIGACION PESQUERA"){
+      var centroRegionalInvestigacionPesquera =[" "];
+      organizationValue = centroRegionalInvestigacionPesquera;
+    }
+     if(organizationValue =="INSTITUTO DE RECURSOS NATURALES Y AGROBIOLOGIA DE SALAMANCA IRNASA"){
+      var institutoRecursosNaturales =[" "];
+      organizationValue = institutoRecursosNaturales;
+    }
+    if(organizationValue =="CENTRO NACIONAL DE MEMORIA HISTORICA"){
+      var centroNAcionalMemoriaHistorica =[" "];
+      organizationValue = centroNAcionalMemoriaHistorica;
+    }
+    if(organizationValue =="PROMEXICO MONTREAL"){
+      var promexicoMonteral =[" "];
+      organizationValue = promexicoMonteral;
+    }
+     if(organizationValue =="SUBSECRETARIA DE GOBIERNO DEL DISTRITO FEDERAL"){
+      var subsecretariaGobiernoFederal =[" "];
+      organizationValue = subsecretariaGobiernoFederal;
+    }
+     if(organizationValue =="MINISTERIO DE RELACIONES EXTERIORES EL SALVADOR"){
+      var ministroRelacioneExteriores =[" "];
+      organizationValue = ministroRelacioneExteriores;
+    }
+     if(organizationValue =="HOSPITAL GENERAL DE CUAUTITLAN GENERAL JOSE VICENTE VILLADA· FORD"){
+      var hospitalGeneralJose =[" "];
+      organizationValue = hospitalGeneralJose;
+    }
+    if(organizationValue =="ASOCIACION MANUEL ALVAREZ BRAVO"){
+      var asociacionManuelAlvarez =[" "];
+      organizationValue = asociacionManuelAlvarez;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO DE CAMPECHE"){
+      var tecnologicoCampeche =[" "];
+      organizationValue = tecnologicoCampeche;
+    }
+    if(organizationValue =="INSTITUTO TECNOLOGICO DEL VALLE DEL GUADIANA"){
+      var institutoTecnologicoValle =[" "];
+      organizationValue = institutoTecnologicoValle;
+    }
+     if(organizationValue =="CENTRO MEDICO NACIONAL 2O DE NOVIEMBRE ISSSTE"){
+      var centroMEdicoNAcionalNoviembre =[" "];
+      organizationValue = centroMEdicoNAcionalNoviembre;
+    }
+     if(organizationValue =="INSTITUTO DE ONCOLOGIA Y RADIOBIOLOGIA"){
+      var oncologiaRadiobiologia =[" "];
+      organizationValue = oncologiaRadiobiologia;
+    }
+
+    /*Instituciones del sector entidades paraestatales*/
+
+      if(organizationValue =="ADMINISTRACION PORTUARIA INTEGRAL DE LAZARO CARDENAS SA DE CV"){
+      var administracionPortuaria =[" "];
+      organizationValue = administracionPortuaria;
+    }
+     if(organizationValue =="AEROPUERTO INTERNACIONAL DE LA CIUDAD DE MEXICO SA DE CV"){
+      var aeropuertoInternacional =[" "];
+      organizationValue = aeropuertoInternacional;
+    }
+    if(organizationValue =="AEROPUERTOS Y SERVICIOS AUXILIARES"){
+      var aropuertosServiciosAuxiliares =[" "];
+      organizationValue = aropuertosServiciosAuxiliares;
+    }
+    if(organizationValue =="AGCERT MEXICO SERVICIOS AMBIENTALES S DE RL DE CV"){
+      var mexicoServiciosAmbientales =[" "];
+      organizationValue = mexicoServiciosAmbientales;
+    }
+    if(organizationValue =="AGENCIA PARA LA PLANEACION DEL DESARROLLO URBANO DE NUEVO LEON"){
+      var agenciaPlaneacionDesarrollo =[" "];
+      organizationValue = agenciaPlaneacionDesarrollo;
+    }
+     if(organizationValue =="APORTACIONES A SEGURIDAD SOCIAL"){
+      var apotacionesSeguridadSocial =["UNIDAD DE SERVICIO CIVIL",
+                                        "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO A"];
+      organizationValue = apotacionesSeguridadSocial;
+    }
+     if(organizationValue =="ASOCIACION NACIONAL DE UNIVERSIDADES E INSTITUCIONES DE EDUCACION SUPERIOR"){
+      var asociacionNacionalUniversidades =[" "];
+      organizationValue = asociacionNacionalUniversidades;
+    }
+     if(organizationValue =="BANCO DE MEXICO"){
+      var asociacionNacionalUniversidades =["DELEGACION REGIONAL MONTERREY",
+                                            "FIDEICOMSIOS INSTITUIDOS EN RELACIÓN CON LA AGRICULTURA",
+                                            "JUNTA DE GOBIERNO",];
+      organizationValue = asociacionNacionalUniversidades;
+    }
+      if(organizationValue =="BENEMERITA ESCUELA NORMAL URBANA FEDERAL FRONTERIZA"){
+      var benemeritaEscuelaNormalUrbana =[" "];
+      organizationValue = benemeritaEscuelaNormalUrbana;
+    }
+      if(organizationValue =="BENEMERITO HOSPITAL JUAN MARIA DE SALVATIERRA"){
+      var benemeritohospitalJuan =[" "];
+      organizationValue = benemeritohospitalJuan;
+    }
+    if(organizationValue =="CAJA SOLIDARIA DE SANTA MARIA DEL ORO SC"){
+      var cajaSolidariaSanta =[" "];
+      organizationValue = cajaSolidariaSanta;
+    }
+    if(organizationValue =="CASA DE ANGELES PUEBLA"){
+      var casaAngelesPuebla =[" "];
+      organizationValue = casaAngelesPuebla;
+    }
+    if(organizationValue =="CASA DE LA CULTURA DE URIANGATO"){
+      var casaCulturaUriangato =[" "];
+      organizationValue = casaCulturaUriangato;
+    }
+     if(organizationValue =="CENTRO DE ADIESTRAMIENTO EN SEGURIDAD ECOLOGIA Y SOBREVIVENCIA"){
+      var centroAdistramientoSeguridadEcologia =[" "];
+      organizationValue = centroAdistramientoSeguridadEcologia;
+    }
+     if(organizationValue =="CENTRO DE ARTE MEXICANO"){
+      var centroArteMexicano =[" "];
+      organizationValue = centroArteMexicano;
+    }
+    if(organizationValue =="CENTRO DE CAPACITACION CINEMATOGRAFICA AC"){
+      var centroCinematografia =[" "];
+      organizationValue = centroCinematografia;
+    }
+    if(organizationValue =="CENTRO DE CIENCIA Y TECNOLOGIA Y PLANETARIO DE GUADALAJARA SEVERO DIAZ MIRON"){
+      var centroCienciaTecnologiaPlanetario =[" "];
+      organizationValue = centroCienciaTecnologiaPlanetario;
+    }
+    if(organizationValue =="CENTRO DE COORDINACION PARA LA PREVENCION DE DESASTRES EN CENTROAMERICA"){
+      var centroCoordinacionPrevencion =[" "];
+      organizationValue = centroCoordinacionPrevencion;
+    }
+    if(organizationValue =="CENTRO DE ESPECIALIDADES MEDICAS DEL ESTADO DE VERACRUZ"){
+      var centroEspecialidadesMEdicas =[" "];
+      organizationValue = centroEspecialidadesMEdicas;
+    }
+    if(organizationValue =="CENTRO DE ESTUDIOS AVANZADOS EN ZONAS ARIDAS"){
+      var centroEstudiosAvanzadosAridas =[" "];
+      organizationValue = centroEstudiosAvanzadosAridas;
+    }
+     if(organizationValue =="CENTRO DE ESTUDIOS CULTURALES AC"){
+      var centrosEstudiosCulturales =[" "];
+      organizationValue = centrosEstudiosCulturales;
+    }
+     if(organizationValue =="CENTRO DE INGENIERIA Y DESARROLLO INDUSTRIAL"){
+      var centroIngenieriaDesarrollo =["DIRECCION DE INVESTIGACION Y POSGRADO",
+                                        "DIRECCION DE TECNOLOGIA DE MATERIALES",
+                                        "GERENCIA DE DISEÑO Y MANUFACTURA MECANICOS",
+                                        "GERENCIA DE INGENIERIA EN SOLDADURA, INSPECCION Y PRUEBAS",
+                                        "POSGRADO INTERINSTITUCIONAL EN CIENCIA Y TECNOLOGIA",
+                                        "SEDE NUEVO LEON",
+                                        "UNIDAD DE FORMACION ACADEMICA POSGRADUAL",];
+      organizationValue = centroIngenieriaDesarrollo;
+    }
+    if(organizationValue =="CENTRO DE INVESTIGACION CIENTIFICA Y DE EDUCACION SUPERIOR DE ENSENADA BAJA CALIFORNIA"){
+      var centroInvestigacionCientificaEducacion =["CENTRO DE COMPUTO",
+                                                  "COORDINACION ACADEMICA",
+                                                  "DEPARATAMENTO DE CIENCIAS DE LA COMPUTACION",
+                                                  "DEPARTAMENTO DE SERVICIOS ESCOLARES",
+                                                  "DIRECCION DE ESTUDIOS DE POSGRADO",
+                                                  "DIRECCION DE INNOVACION Y DESARROLLO",
+                                                  "DIRECCION DE PLANEACION",
+                                                  "DIRECCION DE TELEMATICA",
+                                                  "DIVISION DE BIOLOGIA EXPERIMENTAL Y APLICADA",
+                                                  "DIVISION DE CIENCIAS DE LA TIERRA",
+                                                  "DIVISION DE FISICA APLICADA",
+                                                  "DIVISION DE OCEANOLOGIA",
+                                                  "UNIDAD DE BIOLOGIA EXPERIMENTAL Y APLICADA",
+                                                  "UNIDAD DE TRANSFERENCIA TECNOLÓGICA DE TEPIC",
+                                                  "UNIDAD LA PAZ",
+                                                  "UNIDAD MONTERREY"];
+      organizationValue = centroInvestigacionCientificaEducacion;
+    }
+    if(organizationValue =="CENTRO DE INVESTIGACION DE ISSSTECALI"){
+      var centroInvestigacionIssstecali =[" "];
+      organizationValue = centroInvestigacionIssstecali;
+    }
+     if(organizationValue =="CENTRO DE INVESTIGACION EN GEOGRAFIA Y GEOMATICA INGENIERO JORGE L TAMAYO AC"){
+      var centroInvestigacionGeografica =["COORDINACIÓN DE POSGRADO"];
+      organizationValue = centroInvestigacionGeografica;
+    }
+     if(organizationValue =="CENTRO DE INVESTIGACION EN MATEMATICAS AC"){
+      var centroInvestigacionMatematicas =["AREA CIENCIAS DE LA COMPUTACION",
+                                            "AREA DE MATEMATICAS BASICAS",
+                                            "AREA DE PROBABILIDAD Y ESTADISTICA",];
+      organizationValue = centroInvestigacionMatematicas;
+    }
+     if(organizationValue =="CENTRO DE INVESTIGACION EN MATERIALES AVANZADOS SC"){
+      var centroInvestigacionMateriales =["CENTRO DE DESARROLLO MATERIALES E INGENIERIA",
+                                          "DEPARTAMENTO DE METALURGIA",
+                                          "DEPARTAMENTO DE MICROSCOPIA ELECTRONICA",
+                                          "DIRECCION GENERAL",
+                                          "DIVISION DE CARACTERIZACION DE MATERIALES",
+                                          "DIVISION DE CIENCIA E INGENIERIA AMBIENTAL",
+                                          "DIVISION DE DETERIORO DE MATERIALES",
+                                          "DIVISION DE ESTUDIO DE SUPERFICIES",
+                                          "DIVISION DE FISICA Y QUIMICA DE MATERIALES",
+                                          "DIVISION DE INGENIERIA Y PROCESOS DE MAN",
+                                          "DIVISION DE MATERIALES CERAMICOS Y BENEFICIO DE MINERALES",
+                                          "DIVISION DE MICROSCOPIA",
+                                          "SEP CONACYT"];
+      organizationValue = centroInvestigacionMateriales;
+    }
+    if(organizationValue =="CENTRO DE INVESTIGACION EN QUIMICA APLICADA AC"){
+      var centroInvestigacionQuimica =["DEPARTAMENTO DE PLASTICOS EN AGRICULTURA",
+                                        "DIRECCION DE INVESTIGACION Y VINCULACION",
+                                        "DIVISION DE ESTUDIOS ANALITICOS Y AMBIENTALES",
+                                        "DIVISION DE PROCESOS QUIMICOS",
+                                        "DIVISION DE TECNOLOGIA DE PLASTICOS",
+                                        "DIVISION DE TECNOLOGIA DE POLIMEROS",
+                                        "GERENCIA DE FISICOQUIMICA DE POLIOMEROS",
+                                        "GERENCIA DE INGENIERIA DE PROCESOS QUIMICOS",
+                                        "GERENCIA DE QUIMICA DE POLIMEROS",];
+      organizationValue = centroInvestigacionQuimica;
+    }
+    if(organizationValue =="CENTRO DE INVESTIGACION Y DESARROLLO DE ISSSTECALI"){
+      var centroInvestigacionDesarrolloIssstecali =[" "];
+      organizationValue = centroInvestigacionDesarrolloIssstecali;
+    }
+    if(organizationValue =="CENTRO DE INVESTIGACION Y DESARROLLO TECNOLOGICO EN ELECTROQUIMICA SC"){
+      var centroInvestigacionDesarrolloElectroquimica =["DEPARTAMENTO DE ELECTROQUIMICA",
+                                                        "DEPARTAMENTO DE TECNOLOGIA AMBIENTAL",
+                                                        "DIRECCION GENERAL",];
+      organizationValue = centroInvestigacionDesarrolloElectroquimica;
+    }
+     if(organizationValue =="CENTRO DE INVESTIGACION Y DOCENCIA DE SERVICIOS EDUCATIVOS DEL ESTADO DE CHIHUAHUA"){
+      var centroInvestigacionServicios =[" "];
+      organizationValue = centroInvestigacionServicios;
+    }
+     if(organizationValue =="CENTRO DE INVESTIGACION Y DOCENCIA ECONOMICAS AC"){
+      var centroinvestigacionDocencia =["DEPARTAMENTO DE ESTUDIOS POLITICOS",
+                                        "DEPARTAMENTO DE HISTORIA",
+                                        "DIVISION DE ADMINISTRACION PUBLICA",
+                                        "DIVISION DE ECONOMIA",
+                                        "DIVISION DE ESTUDIOS INTERNACIONALES",
+                                        "DIVISION DE ESTUDIOS JURIDICOS",
+                                        "DIVISION DE ESTUDIOS POLITICOS",
+                                        "DIVISION DE HISTORIA",
+                                        "SECRETARIA ACADEMICA",
+                                        "SECRETARIA GENERAL"];
+      organizationValue = centroinvestigacionDocencia;
+    }
+    if(organizationValue =="CENTRO DE INVESTIGACION Y DOCENCIA EN HUMANIDADES DEL ESTADO DE MORELOS"){
+      var centroInvestigacionHumanidades =[" "];
+      organizationValue = centroInvestigacionHumanidades;
+    }
+      if(organizationValue =="CENTRO DE INVESTIGACION Y FOMENTO OVINO DE ZACATECAS"){
+      var centroInvestigacionFomenoOvino =[" "];
+      organizationValue = centroInvestigacionFomenoOvino;
+    }
+       if(organizationValue =="CENTRO DE INVESTIGACIONES EN OPTICA AC"){
+      var centroInvestigacionOptica =["AREA DE DISEÑO OPTICO",
+                                      "AREA DE INTERFEROMETRIA Y OPTOELECTRONICA",
+                                      "AREA DE INVESTIGACION",
+                                      "AREA DE OPTICA APLICADA Y DESARROLLO TECNOLOGICO",
+                                      "AREA DE PROCESAMIENTO DIGITAL DE IMAGENES",
+                                      "DIRECCION DE FORMACION ACADEMICA",
+                                      "DIRECCION DE VINCULACION Y DESARROLLO",
+                                      "GRUPO DE PROPIEDADES OPTICAS DE LA MATERIA",
+                                      "LABORATORIO DE LASERES",
+                                      "METROLOGIA OPTICA",
+                                      "UNIDAD AGUASCALIENTES",];
+      organizationValue = centroInvestigacionOptica;
+    }
+      if(organizationValue =="CENTRO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES EN ANTROPOLOGIA SOCIAL"){
+      var centroInvestigacionesEstudiosSuperioresAntropologia =["AREA C: PROCESO HISTORICOS, POLITICOS Y",
+                                                                "AREA I PROCESOS SOCIALES EN EL MEDIO RURAL",
+                                                                "AREA II ECONOMIA SOCIEDAD Y PROCESOS URBANOS",
+                                                                "AREA III RELACIONES ETNICAS",
+                                                                "AREA IV ESTADO ORGANIZACION POLITICA SOCIAL Y ESTRUCTURA",
+                                                                "AREA V PROCESOS AGRARIOS Y CONTEMPORANEOS",
+                                                                "AREA VI LENGUAJE Y SOCIEDAD",
+                                                                "AREA VII CULTURA E IDEOLOGIA",
+                                                                "AREA VIII ANTROPOLOGIA DE LA EDUCACION",
+                                                                "DIRECCION GENERAL",
+                                                                "DIRECCIÓN ACADÉMICA",
+                                                                "PROGRAMA CHETUMAL",
+                                                                "PROGRAMA NORESTE",
+                                                                "UNIDAD - D.F.",
+                                                                "UNIDAD GOLFO",
+                                                                "UNIDAD NORESTE",
+                                                                "UNIDAD OCCIDENTE",
+                                                                "UNIDAD PACIFICO SUR",
+                                                                "UNIDAD PENINSULAR",
+                                                                "UNIDAD SURESTE",];
+      organizationValue = centroInvecentroInvestigacionesEstudiosSuperioresAntropologiastigacionOptica;
+    }
+     if(organizationValue =="CENTRO DE REHABILITACION Y EDUCACION ESPECIAL"){
+      var centroRehabilitacionEducacion =[" "];
+      organizationValue = centroRehabilitacionEducacion;
+    }
+     if(organizationValue =="CENTRO ESTATAL DE CANCEROLOGIA DE LOS SERVICIOS DE SALUD DE NAYARIT"){
+      var centroEstatalCancerologia =[" "];
+      organizationValue = centroEstatalCancerologia;
+    }
+     if(organizationValue =="CENTRO NACIONAL DE REFERENCIA EN CONTROL BIOLOGICO/SENASICA"){
+      var centroNaconalReferencia =[" "];
+      organizationValue = centroNaconalReferencia;
+    }
+     if(organizationValue =="CENTRO PYMEXPORTA SONORA AC"){
+      var centroSonora =[" "];
+      organizationValue = centroSonora;
+    }
+     if(organizationValue =="CENTROS DE INTEGRACION JUVENIL AC"){
+      var centroIntegracionJuvenil =["DIRECCION DE DESARROLLO OPERATIVO",
+                                      "DIRECCION DE INVESTIGACION Y ENSEÑANZA",
+                                      "DIRECCION DE PLANEACION",
+                                      "DIRECCION DE PREVENCION",
+                                      "DIRECCION DE TRATAMIENTO Y REHABILITACION",
+                                      "DIRECCION GENERAL ADJUNTA ADMINISTRATIVA",
+                                      "DIRECCION GENERAL ADJUNTA NORMATIVA",
+                                      "DIRECCION GENERAL ADJUNTA OPERATIVA Y DE PATRONATOS",
+                                      "DIRECCION GENERAL",
+                                      "ORGANO INTERNO DE CONTROL",];
+      organizationValue = centroIntegracionJuvenil;
+    }
+     if(organizationValue =="CINVESTAV UNIDAD TAMAULIPAS"){
+      var cinvestavUnidadTamaulipas =[" "];
+      organizationValue = cinvestavUnidadTamaulipas;
+    }
+    if(organizationValue =="CLINICA DE OSTEOPOROSIS DE PUEBLA"){
+      var clinicaOsteoporosis =[" "];
+      organizationValue = clinicaOsteoporosis;
+    }
+    if(organizationValue =="CLINICA PSIQUIATRICA DR EVERARDO NEUMANN PENA"){
+      var clinicaPsiquiatrica =[" "];
+      organizationValue = clinicaPsiquiatrica;
+    }
+    if(organizationValue =="COLEGIO DE BACHILLERES DEL ESTADO DE MICHOACAN"){
+      var colegioBAchilleresMichoacan =[" "];
+      organizationValue = colegioBAchilleresMichoacan;
+    }
+    if(organizationValue =="COLEGIO DE LA FRONTERA NORTE"){
+      var colegioFRonteraNorte =[" "];
+      organizationValue = colegioFRonteraNorte;
+    }
+     if(organizationValue =="COLEGIO DE POSTGRADUADOS"){
+      var colegioPostgraduados =["CAMPUS CAMPECHE",
+                                  "CAMPUS CORDOBA",
+                                  "CAMPUS MONTECILLO",
+                                  "CAMPUS PUEBLA",
+                                  "CAMPUS SAN LUIS POTOSI",
+                                  "CAMPUS SAN LUIS POTOSI",
+                                  "CAMPUS TABASCO",
+                                  "CAMPUS VERACRUZ",
+                                  "CENTRO DE BOTANICA",
+                                  "CENTRO DE ECONOMIA AGRICOLA",
+                                  "CENTRO DE EDAFOLOGIA",
+                                  "CENTRO DE ENSEÑANZA, INV. Y CAPACITACION PARA EL ...CEICADAR",
+                                  "CENTRO DE ENTOMOLOGIA Y ACAROLOGIA",
+                                  "CENTRO DE ESTADISTICA Y CALCULO",
+                                  "CENTRO DE ESTUDIOS DEL DESARROLLO RURAL",
+                                  "CENTRO DE FITOPATOLOGIA",
+                                  "CENTRO DE FRUTICULTURA",
+                                  "CENTRO DE GANADERIA",
+                                  "CENTRO DE GENETICA",
+                                  "CENTRO DE HIDROCIENCIAS",
+                                  "CENTRO REGIONAL DE ENSEÑANZA, CAPACITACION E INVESTIGACION",
+                                  "DOCTORADO EN ESTRATEGIAS PARA EL DESARROLLO AGRICOLA REGIONAL",
+                                  "ESPECIALIDAD DE POSTGRADO EN ECONOMIA INSTITUTO DE SOCIOECONOMIA, ESTADISTICA E INFORMATICA.",
+                                  "INSTITUTO DE CIENCIAS AGRICOLAS",
+                                  "INSTITUTO DE FITOSANIDAD",
+                                  "INSTITUTO DE RECURSOS GENETICOS Y PRODUCTIVIDAD",
+                                  "INSTITUTO DE RECURSOS NATURALES",
+                                  "INSTITUTO DE SOCIOECONOMIA ESTADISTICA E INFORMATICA",
+                                  "PROGRAMA FORESTAL",
+                                  "SECRETARIA GENERAL",];
+      organizationValue = colegioPostgraduados;
+    }
+     if(organizationValue =="COMESA"){
+      var comesa =[" "];
+      organizationValue = comesa;
+    }
+     if(organizationValue =="COMISION ESTATAL DE AGUAS DE QUERETARO"){
+      var comisionEstatalAguas =[" "];
+      organizationValue = comisionEstatalAguas;
+    }
+     if(organizationValue =="COMISION ESTATAL DE DERECHOS HUMANOS NUEVO LEON"){
+      var comsionDerechosHumanosNuevoLeon =[" "];
+      organizationValue = comsionDerechosHumanosNuevoLeon;
+    }
+     if(organizationValue =="COMISION ESTATAL DE LOS DERECHOS HUMANOS DE SINALOA"){
+      var comisionSinaloa =["INSTITUTO DE INVESTIGACIONES EN DERECHOS HUMANOS DE LA COMISIÓN ESTATAL DE LOS DERECHOS HUMANOS DE SINALOA"];
+      organizationValue = comisionSinaloa;
+    }
+     if(organizationValue =="COMISION ESTATAL DE SERVICIOS PUBLICOS DE MEXICALI"){
+      var comisonMexicali =[" "];
+      organizationValue = comisonMexicali;
+    }
+    if(organizationValue =="COMISION ESTATAL DEL AGUA JALISCO"){
+      var comisionAguaJalisco =[" "];
+      organizationValue = comisionAguaJalisco;
+    }
+    if(organizationValue =="COMISION FEDERAL DE ELECTRICIDAD"){
+      var comisionElectricidad =["CENTRO NACIONAL DE CAPACITACION CELAYA",
+                                  "COMISION FEDERAL DE ELECTRICIDAD DIVISION CENTRO SUR",
+                                  "COORDINACION DE PROYECTOS HIDROELECTRICOS",
+                                  "DIVISION CENTRO OCCIDENTE",
+                                  "GERENCIA DE ESTUDIOS DE INGENIERIA CIVIL",
+                                  "GERENCIA DE PROYECTOS GEOTERMOELECTRICOS",
+                                  "GERENCIA REGIONAL DE PRODUCCION CENTRAL",
+                                  "LABORATORIO DE PRUEBAS DE EQUIPOS Y MATERIALES",
+                                  "SINDICATO ÚNICO DE TRABAJADORES ELECTRICISTAS DE LA REPÚBLICA MEXICANA",
+                                  "UNIDAD DE INGENIERIA ESPECIALIZADA",];
+      organizationValue = comisionElectricidad;
+    }
+     if(organizationValue =="COMISION FEDERAL DE ELECTRICIDAD DIVISION BAJIO"){
+      var comisionElectricidadBAjio =["SUBGERENCIA DE DISTRIBUCION"];
+      organizationValue = comisionElectricidadBAjio;
+    }
+    if(organizationValue =="COMISION FEDERAL DE ELECTRICIDAD DIVISION DE DISTRIBUCION CENTRO ORIENTE"){
+      var comisionElectricidadCentroOriente =[" "];
+      organizationValue = comisionElectricidadCentroOriente;
+    }
+    if(organizationValue =="COMISION NACIONAL DE LOS DERECHOS HUMANOS"){
+      var comisionNacionalDerechos =["CONTRALORIA INTERNA",
+                                      "COORDINACION GENERAL DE ADMINISTRACION",
+                                      "COORDINACION GENERAL DE COMUNICACION Y PROYECTOS",
+                                      "CUARTA VISITADURIA GENERAL",
+                                      "DIRECCION GENERAL DE INFORMACION AUTOMATIZADA",
+                                      "DIRECCION GENERAL DE LA PRESIDENCIA",
+                                      "DIRECCION GENERAL DE QUEJAS Y ORIENTACION",
+                                      "DIRECCION GENERAL DEL CENTRO NACIONAL DE DERECHOS HUMANOS",
+                                      "PRESIDENCIA",
+                                      "PRIMERA VISITADURIA GENERAL",
+                                      "SECRETARIA EJECUTIVA",
+                                      "SECRETARIA TECNICA DEL CONSEJO CONSULTIVO",
+                                      "SEGUNDA VISITADURIA GENERAL",
+                                      "TERCERA VISITADURIA GENERAL",];
+      organizationValue = comisionNacionalDerechos;
+    }
+    if(organizationValue =="COMISION NACIONAL DE VIVIENDA"){
+      var comisionNacionalVivienda =[" "];
+      organizationValue = comisionNacionalVivienda;
+    }
+    if(organizationValue =="COMITE ESTATAL DE SANIDAD E INOCUIDAD ACUICOLA DE JALISCO"){
+      var comiteEstatalSanidad =[" "];
+      organizationValue = comiteEstatalSanidad;
+    }
+    if(organizationValue =="COMITE ESTATAL PARA EL FOMENTO Y PROTECCION PECUARIA DEL ESTADO S C CEFPPEQ"){
+      var comiteFomentoProteccion =["LABORATORIO DE PATOLOGIA ANIMAL"];
+      organizationValue = comiteFomentoProteccion;
+    }
+    if(organizationValue =="COMPALIA NACIONAL DE SUBSISTENCIAS POPULARES"){
+      var compaliaNacionalPupulares =[" "];
+      organizationValue = compaliaNacionalPupulares;
+    }
+    if(organizationValue =="COMPANIA AEROPORTUARIA HIDALGUENSE SAPI DE CV"){
+      var campaniaHidalguense =[" "];
+      organizationValue = campaniaHidalguense;
+    }
+    if(organizationValue =="CONSEJO ESTATAL DE PROMOCION ECONOMICA"){
+      var sonsejoEstatalPromocion =[" "];
+      organizationValue = sonsejoEstatalPromocion;
+    }
+    if(organizationValue =="CONSEJO GENERAL DEL INSTITUTO ELECTORAL DE QUERETARO"){
+      var consejoElectoralQueretaro =[" "];
+      organizationValue = consejoElectoralQueretaro;
+    }
+     if(organizationValue =="CONSEJO NACIONAL DE VACUNACION"){
+      var cpnsejpNacionalVacunacion =[" "];
+      organizationValue = cpnsejpNacionalVacunacion;
+    }
+     if(organizationValue =="CONSEJO PARA LA PROMOCION ECONOMICA DE SONORA"){
+      var consejoPromocionEconomia =[" "];
+      organizationValue = consejoPromocionEconomia;
+    }
+      if(organizationValue =="CONSULTORIO DENTAL DRA LUZ MARINA GARCIA"){
+      var consultorioDentalMarina =[" "];
+      organizationValue = consultorioDentalMarina;
+    }
+      if(organizationValue =="COORDINADORA AL FOMENTO DEL COMERCIO EXTERIOR"){
+      var coordinadoraFomentoComercio =[" "];
+      organizationValue = coordinadoraFomentoComercio;
+    }
+     if(organizationValue =="CORPORACION MEXICANA DE INVESTIGACION EN MATERIALES SA DE CV"){
+      var corporacionMexicanaInvestigacion =["DIRECCION CORPORATIVA",
+                                              "DIRECCION DE DESARROLLO TECNOLOGICO",
+                                              "DIRECCION DE INVESTIGACION",
+                                              "FERDI NT, S.A. DE C. V",
+                                              "UNIDAD CIUDAD DEL CARMEN, CAMPECHE",
+                                              "UNIDAD MONCLOVA",
+                                              "UNIDAD VILLAHERMOSA, TABASCO",];
+      organizationValue = corporacionMexicanaInvestigacion;
+    }
+    if(organizationValue =="DELEGACION DE TLALPAN"){
+      var delagacionTlalpan =["DIRECCIÓN DE ECOLOGÍA Y DESARROLLO SUSTENTABLE"];
+      organizationValue = delagacionTlalpan;
+    }
+     if(organizationValue =="DELEGACION ESTATAL TLAXCALA"){
+      var delegacionEstatalTlaxacal =[" "];
+      organizationValue = delegacionEstatalTlaxacal;
+    }
+    if(organizationValue =="DIRECCION DE EDUCACION FISICA DE OAXACA"){
+      var direccionEducacionFisica =[" "];
+      organizationValue = direccionEducacionFisica;
+    }
+    if(organizationValue =="DIRECCION GENERAL DE SALUD AMBIENTAL"){
+      var direccionSaludAmbietal =[" "];
+      organizationValue = direccionSaludAmbietal;
+    }
+    if(organizationValue =="EL COLEGIO DE LA FRONTERA NORTE AC"){
+      var colegioFronteraNorteAC =["CENTRO DE ESTUDIOS DE NORTEAMERICA",
+                                    "CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE DE MEXICO-MEXICALI",
+                                    "CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE DE MEXICO-TIJUANA",
+                                    "CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE",
+                                    "DEPARTAMENTO DE ESTUDIOS CULTURALES",
+                                    "DEPARTAMENTO DE ESTUDIOS DE ADMINISTRACION",
+                                    "DIRECCION DE POSGRADO",
+                                    "DIRECCION GENERAL ACADEMICA",
+                                    "DIRECCION REGIONAL DE MONTERREY",
+                                    "OFICINA COORDINADORA DE MONTERREY",
+                                    "OFICINA DE INVESTIGACION-CIUDAD JUAREZ",
+                                    "OFICINA REGIONAL DE MATAMOROS",
+                                    "UNIDAD REGIONAL CIUDAD JUAREZ",
+                                    "UNIDAD REGIONAL MATAMOROS",
+                                    "UNIDAD REGIONAL MEXICALI",
+                                    "UNIDAD REGIONAL MONTERREY",
+                                    "UNIDAD REGIONAL NOGALES",
+                                    "UNIDAD REGIONAL NUEVO LAREDO",
+                                    "UNIDAD REGIONAL PIEDRAS NEGRAS",];
+      organizationValue = colegioFronteraNorteAC;
+    }
+    if(organizationValue =="EL COLEGIO DE LA FRONTERA SUR"){
+      var colegioFronteraSur =["AREA AGROECOLOGICA",
+                                "AREA DE CONSERVACION DE LOS RECURSOS NATURALES",
+                                "AREA DE ESTUDIOS ECONOMICOS Y SOCIALES",
+                                "AREA DE SALUD",
+                                "AREA DE SISTEMAS DE PRODUCCION",
+                                "UNIDAD CAMPECHE",
+                                "UNIDAD CAMPECHE",
+                                "UNIDAD CHETUMAL",
+                                "UNIDAD SAN CRISTOBAL DE LAS CASAS",
+                                "UNIDAD TAPACHULA",
+                                "UNIDAD VILLAHERMOSA",];
+      organizationValue = colegioFronteraSur;
+    }
+    if(organizationValue =="EL COLEGIO DE MEXICO AC"){
+      var colegioMexico =["BIBLIOTECA COSIO VILLEGAS",
+                          "CENTRO DE ESTUDIOS DE ASIA Y AFRICA",
+                          "CENTRO DE ESTUDIOS DEMOGRAFICOS Y DE DESARROLLO URBANO",
+                          "CENTRO DE ESTUDIOS ECONOMICOS",
+                          "CENTRO DE ESTUDIOS HISTORICOS",
+                          "CENTRO DE ESTUDIOS INTERNACIONALES",
+                          "CENTRO DE ESTUDIOS LINGUISTICOS Y LITERARIOS",
+                          "CENTRO DE ESTUDIOS SOCIOLOGICOS",
+                          "PROGRAMA INTERDISCIPLINARIO DE ESTUDIOS DE LA MUJER",
+                          "SECRETARIA GENERAL",
+                          "UNIDAD DE COMPUTO",];
+      organizationValue = colegioMexico;
+    }
+     if(organizationValue =="EL COLEGIO DE MICHOACAN AC"){
+      var colegioMichoacanAC =["CENTRO DE ESTUDIOS ANTROPOLOGICOS",
+                                "CENTRO DE ESTUDIOS ARQUEOLOGICOS",
+                                "CENTRO DE ESTUDIOS DE GEOGRAFIA HUAMANA",
+                                "CENTRO DE ESTUDIOS DE LAS TRADICIONES",
+                                "CENTRO DE ESTUDIOS HISTORICOS",
+                                "CENTRO DE ESTUDIOS RURALES",
+                                "SECRETARIA GENERAL",];
+      organizationValue = colegioMichoacanAC;
+    }
+    if(organizationValue =="EL COLEGIO DE SAN LUIS AC"){
+      var colegioSanLuis =["PROGRAMA DE ESTUDIOS ANTROPOLOGICOS",
+                            "PROGRAMA DE ESTUDIOS LITERARIOS",
+                            "PROGRAMA DE ESTUDIOS POLITICOS E INTERNACIONALES",
+                            "PROGRAMA DE HISTORIA",
+                            "PROGRAMA DE INVESTIGACION DE AGUA Y SOCIEDAD",
+                            "PROGRAMA MEXICO-ESTADOS UNIDOS",];
+      organizationValue = colegioSanLuis;
+    }
+     if(organizationValue =="ESCUELA DE ENFERMERIA AURELIA SALDIERNA RODRIGUEZ"){
+      var escuelaEnfermeriaAurelia =[" "];
+      organizationValue = escuelaEnfermeriaAurelia;
+    }
+     if(organizationValue =="ESCUELA INTERNACIONAL DE CINE Y TV"){
+      var escuelaInternacionalCine =[" "];
+      organizationValue = escuelaInternacionalCine;
+    }
+      if(organizationValue =="ESCUELA SUPERIOR DE ARTES DE YUCATAN"){
+      var escuelaSuperiorArtes =[" "];
+      organizationValue = escuelaSuperiorArtes;
+    }
+      if(organizationValue =="FIDEICOMISO CENTRO PARA EL DESARROLLO DE PROVEEDORES DE CHIHUAHUA"){
+      var fideicomisoCentroProveedores =[" "];
+      organizationValue = fideicomisoCentroProveedores;
+    }
+      if(organizationValue =="FIDEICOMISO CHIHUAHUA FORESTAL"){
+      var fideicomisoForestal =[" "];
+      organizationValue = fideicomisoForestal;
+    }
+     if(organizationValue =="FIDEICOMISO INGENIO PLAN DE SAN LUIS"){
+      var fideicomisoIngenioPlanSan =[" "];
+      organizationValue = fideicomisoIngenioPlanSan;
+    }
+    if(organizationValue =="FIDEICOMISO TURISMO NUEVO LEON/OFICINA DE CONVENCIONES Y VISITANTES"){
+      var fideicomisoTurismoNuevoLeon =[" "];
+      organizationValue = fideicomisoTurismoNuevoLeon;
+    }
+     if(organizationValue =="FOMENTO ECONOMICO MEXICANO"){
+      var fomentoEconomico =[" "];
+      organizationValue = fomentoEconomico;
+    }
+     if(organizationValue =="FONDO ESTATAL PARA LA CULTURA Y LAS ARTES DE BAJA CALIFORNIA"){
+      var fondoEstatalCulturaArtes =[" "];
+      organizationValue = fondoEstatalCulturaArtes;
+    }
+      if(organizationValue =="FONDO JALISCO DE FOMENTO EMPRESARIAL"){
+      var fondoJaliscoFomento =[" "];
+      organizationValue = fondoJaliscoFomento;
+    }
+      if(organizationValue =="GERENCIA DEL LABORATORIO DE PRUEBAS DE EQUIPOS Y MATERIALES LAPEM"){
+      var gerenciaLaboratorioPruebas =[" "];
+      organizationValue = gerenciaLaboratorioPruebas;
+    }
+     if(organizationValue =="GOBIERNO DEL ESTADO DE SONORA"){
+      var gobiernoSonora =["CENTRO ECOLOGICO DE SONORA",
+                            "CENTRO MEDICO IGNACIO CHAVEZ (ISSSTE SONORA)",
+                            "COLEGIO DE BACHILLERES DEL ESTADO DE SONORA",
+                            "COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE SONORA",
+                            "CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE SONORA",
+                            "CONSEJO SONORENSE PROMOTOR DE LA REGULACIÓN DEL BACANORA",
+                            "H. AYUNTAMIENTO DE SAN LUIS RÍO COLORADO",
+                            "HOSPITAL GENERAL DEL ESTADO DE SONORA",
+                            "INSTITUTO DE ACUACULTURA DEL ESTADO DE SONORA",
+                            "INSTITUTO DE EVALUACION EDUCATIVA DEL ESTADO DE SONORA",
+                            "INSTITUTO DEL MEDIO AMBIENTE Y DESARROLLO SUSTENTABLE",
+                            "INSTITUTO MUNICIPAL DE PLANEACION URBANA DE HERMOSILLO",
+                            "INSTITUTO SONORENSE DE LA JUVENTUD",
+                            "MUNICIPIO DE CABORCA",
+                            "MUNICIPIO DE CAJEME",
+                            "MUNICIPIO DE HERMOSILLO",
+                            "OPERADORA DE PROYECTOS ESTRATEGICOS DEL ESTADO DE SONORA",
+                            "PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE SONORA",
+                            "SECRETARIA DE DESARROLLO SOCIAL DEL ESTADO DE SONORA",
+                            "SECRETARIA DE ECONOMIA",
+                            "SECRETARIA DE EDUCACION Y CULTURA DEL ESTADO DE SONORA",
+                            "SECRETARIA DE INFRAESTRUCTURA URBANA Y ECOLOGIA",
+                            "SECRETARIA DE SALUD PUBLICA",
+                            "SECRETARÍA DE SEGURIDAD PÚBLICA DEL ESTADO DE SONORA",];
+      organizationValue = gobiernoSonora;
+    }
+     if(organizationValue =="HOSPITAL ESCANDON"){
+      var hospitalEscandon =[" "];
+      organizationValue = hospitalEscandon;
+    }
+     if(organizationValue =="HOSPITAL GENERAL DR AGUSTIN OHORAN"){
+      var hospitalGeneralAgustin =[" "];
+      organizationValue = hospitalGeneralAgustin;
+    }
+     if(organizationValue =="HOSPITAL GENERAL C SALINA CRUZ"){
+      var hospitalGeneralSalina =[" "];
+      organizationValue = hospitalGeneralSalina;
+    }
+     if(organizationValue =="HOSPITAL GENERAL DE MEXICO"){
+      var hospitalGeneralMexico =[" "];
+      organizationValue = hospitalGeneralMexico;
+    }
+    if(organizationValue =="HOSPITAL GENERAL DE SALTILLO"){
+      var hospitalGeneralSaltillo =[" "];
+      organizationValue = hospitalGeneralSaltillo;
+    }
+    if(organizationValue =="HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO 21 IMSS LEON GUANAJATO"){
+      var hospitalGeneralMedicinaFamiliar =[" "];
+      organizationValue = hospitalGeneralMedicinaFamiliar;
+    }
+     if(organizationValue =="HOSPITAL GENERAL DR DARIO FERNANDEZ FIERRO"){
+      var hospitalGeneralDario =[" "];
+      organizationValue = hospitalGeneralDario;
+    }
+     if(organizationValue =="HOSPITAL GENERAL DR MANUEL GEA GONZALEZ"){
+      var hospitalGeneralManuelGea =[" "];
+      organizationValue = hospitalGeneralManuelGea;
+    }
+     if(organizationValue =="HOSPITAL GENERAL NANCHITAL"){
+      var hospitalGeneralNanchita =["LABORATORIO DE TOXICOLOGIA INDUSTRIAL"];
+      organizationValue = hospitalGeneralNanchita;
+    }
+    if(organizationValue =="HOSPITAL GENERAL ZONA NORTE DE PUEBLA"){
+      var hospitalGeneralZonaNorte =[" "];
+      organizationValue = hospitalGeneralZonaNorte;
+    }
+     if(organizationValue =="HOSPITAL INFANTIL DE GUADALAJARA"){
+      var hospitalInfantilGuadalajara =[" "];
+      organizationValue = hospitalInfantilGuadalajara;
+    }
+     if(organizationValue =="HOSPITAL INFANTIL DE MEXICO FEDERICO GOMEZ"){
+      var hospitalInfantilFederico =["COORDINACION DE LOS INSTITUTO NACIONALES DE SALUD",
+                                        "DIVISION DE ASISTENCIA MEDICA",
+                                        "DIVISION DE INVESTIGACION",
+                                        "SUBDIRECCION DE INVESTIGACION"];
+      organizationValue = hospitalInfantilFederico;
+    }
+      if(organizationValue =="HOSPITAL INFANTIL DEL ESTADO DE SONORA"){
+      var hospitalInfantilSonora =[" "];
+      organizationValue = hospitalInfantilSonora;
+    }
+      if(organizationValue =="HOSPITAL METROPOLITANO"){
+      var hospitalMEtropolitano =[" "];
+      organizationValue = hospitalMEtropolitano;
+    }
+    if(organizationValue =="HOSPITAL PRESIDENTE JUAREZ OAXACA"){
+      var hospitalPresidenteJuarez =[" "];
+      organizationValue = hospitalPresidenteJuarez;
+    }
+     if(organizationValue =="HOSPITAL PSIQUIATRICO"){
+      var hospitalPsiquiatrico =[" "];
+      organizationValue = hospitalPsiquiatrico;
+    }
+     if(organizationValue =="HOSPITAL PSIQUIATRICO CRUZ DEL SUR"){
+      var hospitalPsiquiatricoCruzSur =[" "];
+      organizationValue = hospitalPsiquiatricoCruzSur;
+    }
+     if(organizationValue =="HOSPITAL PSIQUIATRICO INFANTIL"){
+      var hospitalPsiquiatricoInfantil =[" "];
+      organizationValue = hospitalPsiquiatricoInfantil;
+    }
+      if(organizationValue =="HOSPITAL REGIONAL PRESIDENTE JUAREZ"){
+      var hospitalRegionalPresidente =[" "];
+      organizationValue = hospitalRegionalPresidente;
+    }
+      if(organizationValue =="HOSPITAL REGIONAL PRESIDENTE JUAREZ OAXACA"){
+      var hospitalRegionalPresidenteOaxaca =[" "];
+      organizationValue = hospitalRegionalPresidenteOaxaca;
+    }
+     if(organizationValue =="IMPULSORA DEL PEQUELO COMERCIO SA DE CV"){
+      var hospitalPequeloCOmercio =[" "];
+      organizationValue = hospitalPequeloCOmercio;
+    }
+     if(organizationValue =="INFOTEC CENTRO DE INVESTIGACION E INNOVACION EN TECNOLOGIAS DE LA INFORMACION Y COMUNICACION"){
+      var infotectCentroInvestigacion =[" "];
+      organizationValue = infotectCentroInvestigacion;
+    }
+     if(organizationValue =="INSTITUTO DE ESTUDIOS SUPERIORES DE LA SIERRA AC"){
+      var institutoEstudiosSuperioresSierra =["PLANTEL ZACAPOAXTLA"];
+      organizationValue = institutoEstudiosSuperioresSierra;
+    }
+      if(organizationValue =="INSTITUTO COAHUILENSE DE CULTURA"){
+      var institutoCulturaCoahuliense =[" "];
+      organizationValue = institutoCulturaCoahuliense;
+    }
+       if(organizationValue =="INSTITUTO DE ESTUDIOS HISTORICOS DR MARIO LUIS MORA"){
+      var institutoHitoircosMario =[" "];
+      organizationValue = institutoHitoircosMario;
+    }
+     if(organizationValue =="INSTITUTO DE ACCION URBANA E INTEGRACION SOCIAL"){
+      var institutoAccionUrbanaIntegracion =[" "];
+      organizationValue = institutoAccionUrbanaIntegracion;
+    }
+    if(organizationValue =="INSTITUTO DE ADMINISTRACION PUBLICA DEL ESTADO DE HIDALGO AC"){
+      var institutoAdmnistracionPublicaEstado =[" "];
+      organizationValue = institutoAdmnistracionPublicaEstado;
+    }
+    if(organizationValue =="INSTITUTO DE COMUNICACION INTERNACIONAL DE MEXICO A C"){
+      var institutiComunicacionInternacional =[" "];
+      organizationValue = institutiComunicacionInternacional;
+    }
+     if(organizationValue =="INSTITUTO DE CULTURA DE BAJA CALIFORNIA"){
+      var institutoCulturaBaja =[" "];
+      organizationValue = institutoCulturaBaja;
+    }
+     if(organizationValue =="INSTITUTO DE DESARROLLO ECONOMICO Y SOCIAL"){
+      var institutoDesarrolloEconomicoSocial =[" "];
+      organizationValue = institutoDesarrolloEconomicoSocial;
+    }
+      if(organizationValue =="INSTITUTO DE ECOLOGIA AC"){
+      var institutoDesarrolloEcologiaAc =["AREA DE ECOLOGIA BIOSISTEMATICA DE ANIMALES Y BIOGEOGRAFIA",
+                                                "AREA DE ECOLOGIA GENERAL Y CONSERVACION DEL GERMOPLASMA",
+                                                "AREA DE ECOLOGIA Y CONSERVACION",
+                                                "AREA DE VEGETACION Y FLORA",
+                                                "CENTRO DE INVESTIGACIONES COSTERAS LA MANCHA",
+                                                "CENTRO DE INVESTIGACIONES SOBRE LA SEQUIA",
+                                                "CENTRO REGIONAL CHIHUAHUA",
+                                                "CENTRO REGIONAL DEL BAJIO",
+                                                "CENTRO REGIONAL DURANGO",
+                                                "CENTRO REGIONAL PATZCUARO",
+                                                "COORDINACION DE UNIDADES",
+                                                "DEPARTAMENTO DE PRODUCTOS FORESTALES Y CONSERVACION DE BOSQUES.",
+                                                "DIVISION DE ECOLOGIA",
+                                                "DIVISION DE RECURSOS NATURALES",
+                                                "DIVISION DE SISTEMATICA",
+                                                "JARDIN BOTANICO FRANCISCO JAVIER CLAVIJERO",
+                                                "LABORATORIO DE CIENCIA Y TECNOLOGIA DE LA MADERA",
+                                                "RED DE MANEJO BIORRACIONAL DE PLAGAS Y VECTORES",
+                                                "SECRETARIA ACADEMICA",
+                                                "SECRETARIA DE POSGRADO",
+                                                "UNIDAD DE SONORA",
+                                                "UNIDAD VERACRUZ",];
+      organizationValue = institutoDesarrolloEcologiaAc;
+    }
+      if(organizationValue =="INSTITUTO DE ENERGIAS RENOVABLES DEL ESTADO DE CHIAPAS"){
+      var insitutoEnergiasRenovables =[" "];
+      organizationValue = insitutoEnergiasRenovables;
+    }
+     if(organizationValue =="INSTITUTO DE ESTUDIOS AVANZADOS"){
+      var insitutoEstudiosAvanzados =[" "];
+      organizationValue = insitutoEstudiosAvanzados;
+    }
+       if(organizationValue =="INSTITUTO DE ESTUDIOS LEGISLATIVOS"){
+      var insitutoEstudiosLegislativos =[" "];
+      organizationValue = insitutoEstudiosLegislativos;
+    }
+       if(organizationValue =="INSTITUTO DE INVESTIGACION Y CAPACITACION LABORAL"){
+      var insitutoEstudiosInvestigacionCapacitacion =[" "];
+      organizationValue = insitutoEstudiosInvestigacionCapacitacion;
+    }
+      if(organizationValue =="INSTITUTO DE INVESTIGACIONES DR JOSE MARIA LUIS MORA"){
+      var insitutoEstudiosInvestigadoresJose =["COORDINACION DE CIENCIAS COMPUTACIONALES",
+                                              "COORDINACION DE INVESTIGACION",
+                                              "DIRECCION DE DOCENCIA",
+                                              "DIRECCION GENERAL"];
+      organizationValue = insitutoEstudiosInvestigadoresJose;
+    }
+     if(organizationValue =="INSTITUTO DE INVESTIGACIONES ELECTRICAS"){
+      var institutoInvestigacionesElectricas =["DEPARTAMENTO DE PROCESOS QUIMICOS",
+                                                "DIVISION DE ENERGIAS ALTERNAS",
+                                                "DIVISION DE EQUIPOS",
+                                                "DIVISION DE ESTUDIOS DE INGENIERIA",
+                                                "DIVISION DE FUENTES DE ENERGIA",
+                                                "DIVISION DE INFORMACION TECNOLOGICA Y DESARROLLO PROFESIONAL",
+                                                "DIVISION DE INFORMATICA Y DESARROLLO PRODUCTIVO",
+                                                "DIVISION DE SISTEMAS DE CONTROL",
+                                                "DIVISION DE SISTEMAS DE POTENCIA",
+                                                "DIVISION DE SISTEMAS ELECTRICOS",
+                                                "DIVISION DE SISTEMAS MECANICOS",
+                                                "SECRETARIADO TECNICO"];
+      organizationValue = institutoInvestigacionesElectricas;
+    }
+     if(organizationValue =="INSTITUTO DE LA MUJER GUANAJUATENSE"){
+      var institutoMujerGuanajuatense =[" "];
+      organizationValue = institutoMujerGuanajuatense;
+    }
+    if(organizationValue =="INSTITUTO DE LA VIVIENDA DEL ESTADO DE QUERETARO"){
+      var institutoViviendaEsatdoQueretaro =[" "];
+      organizationValue = institutoViviendaEsatdoQueretaro;
+    }
+    if(organizationValue =="INSTITUTO DE LITURGIA MUSICA Y ARTE"){
+      var insitutoLiturgiaMusica =[" "];
+      organizationValue = insitutoLiturgiaMusica;
+    }
+      if(organizationValue =="INSTITUTO DE OFTALMOLOGIA CONDE DE VALENCIANA"){
+      var institutoOoftamologiaConde =[" "];
+      organizationValue = institutoOoftamologiaConde;
+    }
+      if(organizationValue =="INSTITUTO DE SEGURIDAD SOCIAL AL SERVICIO DE LOS TRABAJADORES DEL ESTADO"){
+      var institutoSeguridadSocialServico =[" "];
+      organizationValue = institutoSeguridadSocialServico;
+    }
+      if(organizationValue =="INSTITUTO DE SEGURIDAD SOCIAL Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL ESTADO/CLINICA HOSPITAL CHILPANCINGO"){
+      var institutoSeguridadSocialServiciosSociales =["INSTITUTO DE SEGURIDAD SOCIAL AL SERVICIO DE LOS TRABAJADORES DEL ESTADO/CLINICA HOSPITAL CHILPANCINGO"];
+      organizationValue = institutoSeguridadSocialServiciosSociales;
+    }
+    if(organizationValue =="INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL ESTADO"){
+      var institutoSeguridadSocialTrabajadoresEstado =["CENTRO DE CIRUGIA AMBULATORIA",
+                                                        "CENTRO MEDICO NACIONAL 20 DE NOVIEMBRE",
+                                                        "CLINICA - HOSPITAL DE LA HEROICA CIUDAD DE HUAJUAPAN DE LEÓN",
+                                                        "CLINICA DE ESPECIALIDADES DENTALES HONORATO VILLA ACOSTA",
+                                                        "CLINICA DE ESPECIALIDADES INDIANILLA",
+                                                        "CLINICA DE MEDICINA FAMILIAR DR. IGNACIO CHAVEZ",
+                                                        "CLINICA DE MEDICINA FAMILIAR GUSTAVO A. MADERO",
+                                                        "CLINICA DE MEDICINA FAMILIAR SALINACRUZ OAXACA",
+                                                        "CLINICA HOSPITAL ALBERTO PISANTY OVADIA",
+                                                        "CLINICA HOSPITAL CHILPANCINGO GUERRERO",
+                                                        "CLINICA HOSPITAL DE CIUDAD VICTORIA",
+                                                        "CLÍNICA HOSPITAL DR. ISMAEL VÁZQUEZ ORTIZ, ISSSTE-QUERÉTARO",
+                                                        "CMF+Q DE OMETEPEC GUERRERO",
+                                                        "DELEGACION ESTATAL CHIAPAS",
+                                                        "DELEGACION ESTATAL NUEVO LEON",
+                                                        "DELEGACION REGIONAL ZONA NORTE",
+                                                        "DELEGACIÓN ESTATAL MICHOACÁN",
+                                                        "DIRECCIÓN DE DELEGACIONES",
+                                                        "DIRECCIÓN MÉDICA",
+                                                        "ESCUELA DE NUTRICION",
+                                                        "H. R. DR. MANUEL CÁRDENAS DE LA VEGA",
+                                                        "HOSPITAL DR. FERNANDO QUIROZ",
+                                                        "HOSPITAL DR. VALENTIN GOMEZ FARIAS",
+                                                        "HOSPITAL FRANCISCO GALINDO CHAVEZ",
+                                                        "HOSPITAL GENERAL 1 DE OCTUBRE",
+                                                        "HOSPITAL GENERAL DE SAN LUIS POTOSI",
+                                                        "HOSPITAL GENERAL I.S.S.S.T.E ACAPULCO",
+                                                        "HOSPITAL GENERAL I.S.S.S.T.E. VERACRUZ",
+                                                        "HOSPITAL GENERAL IGNACIO ZARAGOZA",
+                                                        "HOSPITAL GENERAL REGIONAL LIC. ADOLFO LOPEZ MATEOS",
+                                                        "HOSPITAL ISSSTECALI",
+                                                        "HOSPITAL JURISDICCIONAL VASCO DE QUIROGA",
+                                                        "HOSPITAL REGIONAL 20 DE NOVIEMBRE",
+                                                        "HOSPITAL REGIONAL ISSSTE LEÓN",
+                                                        "HOSPITAL REGIONAL MERIDA",
+                                                        "INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DE BAJA CALIFORNIA",
+                                                        "INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DEL ESTADO DE BAJA CALIFORNIA",
+                                                        "INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DEL ESTADO DE BAJA CALIFORNIA/ ISSSTECALI BC",
+                                                        "INSTITUTO DEL FONDO NACIONAL DE LA VIVIENDA PARA LOS TRABAJADORES",
+                                                        "ISSSTE DURANGO",
+                                                        "JEFATURA DE LOS SERVICIOS DE INVESTIGACION",
+                                                        "SECRETARÍA GENERAL DEL ISSSTE",
+                                                        "SUPERISSSTE",
+                                                        "UNIDAD DE MEDICINA FAMILIAR DE ZIHUATANEJO"];
+      organizationValue = institutoSeguridadSocialTrabajadoresEstado;
+    }
+     if(organizationValue =="INSTITUTO ELECTORAL Y DE PARTICIPACION CIUDADANA DE COAHUILA"){
+      var institutoElectoralParticipacion =[" "];
+      organizationValue = institutoElectoralParticipacion;
+    }
+      if(organizationValue =="INSTITUTO ELECTORAL VERACRUZANO"){
+      var institutoElectoralVeracruzano =[" "];
+      organizationValue = institutoElectoralVeracruzano;
+    }
+      if(organizationValue =="INSTITUTO ELECTORAL Y DE PARTICIPACION CIUDADANA DEL ESTADO DE JALISCO"){
+      var institutoElectoralPArticipacionCiudana =[" "];
+      organizationValue = institutoElectoralPArticipacionCiudana;
+    }
+      if(organizationValue =="INSTITUTO ESTATAL DE CANCEROLOGIA DR ARTURO BELTRAN ORTEGA"){
+      var institutoEstataCancerologia =[" "];
+      organizationValue = institutoEstataCancerologia;
+    }
+     if(organizationValue =="INSTITUTO ESTATAL DE DOCUMENTACION DE MORELOS"){
+      var institutoEstatalDocumentacion =[" "];
+      organizationValue = institutoEstatalDocumentacion;
+    }
+    if(organizationValue =="INSTITUTO ESTATAL DE LA CULTURA DEL ESTADO DE GUANAJUATO"){
+      var institutoEstatalCulturaGuanajuato =[" "];
+      organizationValue = institutoEstatalCulturaGuanajuato;
+    }
+     if(organizationValue =="INSTITUTO ESTATAL ELECTORAL DE AGUASCALIENTES"){
+      var institutoEstatalElectoral =[" "];
+      organizationValue = institutoEstatalElectoral;
+    }
+     if(organizationValue =="INSTITUTO FEDERAL DE TELECOMUNICACIONES"){
+      var initutoFederalTelecomunicaciones =[" "];
+      organizationValue = initutoFederalTelecomunicaciones;
+    }
+     if(organizationValue =="INSTITUTO JALICIENCE DE LA CALIDAD"){
+      var intitutoJalicienceCalidad =[" "];
+      organizationValue = intitutoJalicienceCalidad;
+    }
+     if(organizationValue =="INSTITUTO JALISCIENSE DE CANCEROLOGIA"){
+      var intitutoJalicienceCancerologia =[" "];
+      organizationValue = intitutoJalicienceCancerologia;
+    }
+      if(organizationValue =="INSTITUTO JALISCIENSE DE LA JUVENTUD"){
+      var intitutoJalicienceJuventud =[" "];
+      organizationValue = intitutoJalicienceJuventud;
+    }
+      if(organizationValue =="INSTITUTO JALISCIENSE DE LAS MUJERES"){
+      var intitutoJalicienceMujeres =[" "];
+      organizationValue = intitutoJalicienceMujeres;
+    }
+      if(organizationValue =="INSTITUTO MEXICANO DE CINEMATOGRAFIA"){
+      var intitutoMexicanoCinematografia =[" "];
+      organizationValue = intitutoMexicanoCinematografia;
+    }
+      if(organizationValue =="INSTITUTO MEXICANO DE COMERCIO EXTERIOR"){
+      var intitutoMexicanoComercionExterior =[" "];
+      organizationValue = intitutoMexicanoComercionExterior;
+    }
+      if(organizationValue =="INSTITUTO MEXICANO DE ESTUDIOS POLITICOS AC"){
+      var institutoMexicanoEstudiosPoli =[" "];
+      organizationValue = institutoMexicanoEstudiosPoli;
+    }
+      if(organizationValue =="INSTITUTO MEXICANO DE PSIQUIATRIA"){
+      var institutoMexicanoPsiquiatria =["DIVISION DE INVESTIGACION EN NEUROCIENCIAS",
+                                          "SERVICIOS CLINICOS"];
+      organizationValue = institutoMexicanoPsiquiatria;
+    }
+       if(organizationValue =="INSTITUTO MEXICANO DEL CAFE"){
+      var intitutoDelCafe =[" "];
+      organizationValue = intitutoDelCafe;
+    }
+      if(organizationValue =="INSTITUTO MEXICANO DEL PETROLEO"){
+      var intitutoMExicanoDelPetroleo =["COMPETENCIA DE CIENCIAS BASICAS",
+                                        "COMPETENCIA DE CONTROL E INSTRUMENTACION",
+                                        "COORDINACION DE INVESTIGACION Y DESARROLLO",
+                                        "COORDINACION DE TRATAMIENTO DE CRUDO MAYA",
+                                        "COORDINACION DEL PROGRAMA DE BIOTECNOLOGIA DEL PETROLEO",
+                                        "DELEGACION REGIONAL NORTE (POZA RICA, VER.)",
+                                        "DIRECCION EJECUTIVA DE CAPACITACION",
+                                        "DIRECCION EJECUTIVA DE COMPETENCIAS",
+                                        "DIRECCION EJECUTIVA DE EXPLORACION Y PRODUCCION",
+                                        "DIRECCION EJECUTIVA DE INGENIERIA DE PROCESO",
+                                        "DIRECCION EJECUTIVA DE INGENIERIA DE PRODUCCION",
+                                        "DIRECCION EJECUTIVA DE INVESTIGACION Y POSGRADO",
+                                        "DIRECCION EJECUTIVA DE INVESTIGACION Y POSGRADO",
+                                        "DIRECCION EJECUTIVA DE INVESTIGACION",
+                                        "DIRECCION EJECUTIVA DE PLANEACION Y DESARROLLO",
+                                        "DIRECCION EJECUTIVA DE PROCESO Y MEDIO AMBIENTE",
+                                        "DIRECCION EJECUTIVA TECNICA",
+                                        "DIRECCION GENERAL",
+                                        "DIRECCION REGIONAL ZONA CENTRO (VERACRUZ)",
+                                        "DIRECCION REGIONAL ZONA CENTRO",
+                                        "DIRECCION REGIONAL ZONA MARINA ( CD. DEL CARMEN, CAMP. )",
+                                        "DIRECCION REGIONAL ZONA SUR ( VILLAHERMOSA, TAB. )",
+                                        "PROGRAMA DE INGENIERIA MOLECULAR",
+                                        "PROGRAMAS DE INVESTIGACION",
+                                        "PROGRAMAS DE INVESTIGACION",
+                                        "SUBDIR. DE TECNOLOGIA AMBIENTAL, ENERGIA Y DESARR. DE PROD.",
+                                        "SUBDIRECCION DE DESARROLLO TECN. EN EXPLORACION Y PRODUCCION",
+                                        "SUBDIRECCION DE INVESTIGACION BASICA DE PROCESOS",
+                                        "SUBDIRECCION DE INVESTIGACION Y TECNOLOGIA",
+                                        "SUBDIRECCION DE PROYECTOS ESTRATEGICOS",
+                                        "SUBDIRECCION DE TECNOLOGIA AMBIENTAL, ENERGIA",
+                                        "SUBDIRECCION DE TRANSFORMACION INDUSTRIA",
+                                        "SUBDIRECCION DE TRANSFORMACION INDUSTRIAL",
+                                        "SUBDIRECCION GENERAL DE CAPACITACION Y DESARROLLO",
+                                        "SUBDIRECCION GENERAL DE INVESTIGACION APLICADA",
+                                        "SUBDIRECCION GENERAL DE TECNOLOGIA DE EXPLORACION",];
+      organizationValue = intitutoMExicanoDelPetroleo;
+    }
+     if(organizationValue =="INSTITUTO MEXICANO DEL SEGURO SOCIAL"){
+      var intitutoMExicanoSeguroSocia =["BIBLIOTECA CENTRAL DEL CENTRO MEDICO NACIONAL",
+                                          "CENTRO COMUNITARIO DE SALUD MENTAL, IMSS, JALISCO",
+                                          "CENTRO DE INVESTIGACION BIOMEDICA DE MICHOACAN",
+                                          "CENTRO DE INVESTIGACION BIOMEDICA DE OCCIDENTE",
+                                          "CENTRO DE INVESTIGACION BIOMEDICA DE ORIENTE",
+                                          "CENTRO DE INVESTIGACION BIOMEDICA DEL D.F.",
+                                          "CENTRO DE INVESTIGACION BIOMEDICA DEL NORESTE",
+                                          "CENTRO DE INVESTIGACION BIOMEDICA DEL SUR",
+                                          "CENTRO MEDICO LA RAZA",
+                                          "CENTRO MEDICO NACIONAL ADOLFO RUIZ CORTINES",
+                                          "CENTRO MEDICO NACIONAL DE OCCIDENTE",
+                                          "CENTRO MEDICO NACIONAL LIC. IGNACIO GARCIA TELLEZ",
+                                          "CENTRO MEDICO NACIONAL SIGLO XXI",
+                                          "CLINICA HOSPITAL NO. 1 (HIDALGO)",
+                                          "COORDINACION DE INVESTIGACION EN SALUD",
+                                          "COORDINACION DE INVESTIGACION MEDICA",
+                                          "COORDINACION DELEGACIONAL DE SALUD COMUNITARIA",
+                                          "DELEGACION ESTATAL DE GUANAJUATO",
+                                          "DELEGACION ESTATAL EN COAHUILA",
+                                          "DELEGACION ESTATAL EN TABASCO",
+                                          "DELEGACION ESTATAL I.M.S.S. COLIMA",
+                                          "DELEGACION JALISCO",
+                                          "DELEGACION MORELOS",
+                                          "DELEGACION REGIONAL HIDALGO",
+                                          "DELEGACION VERACRUZ NORTE",
+                                          "DIRECCION DE PRESTACIONES MEDICAS.",
+                                          "HOSPITAL DE CARDIOLOGIA DR. LUIS MENDEZ (DELEGACION NUM. 5)",
+                                          "HOSPITAL DE ESPECIALIDADES C.M.N. (DELEGACION NUM. 2)",
+                                          "HOSPITAL DE ESPECIALIDADES C.M.R. (DELEGACION NO. 2)",
+                                          "HOSPITAL DE ESPECIALIDADES NO. 21",
+                                          "HOSPITAL DE ESPECIALIDADES NO. 25",
+                                          "HOSPITAL DE ESPECIALIDADES, CMN",
+                                          "HOSPITAL DE ESPECILIDADES DE GUADALAJARA",
+                                          "HOSPITAL DE GINECO-OBSTETRICIA 1",
+                                          "HOSPITAL DE GINECO-OBSTETRICIA 3 (DELEGACION NUM. 3)",
+                                          "HOSPITAL DE GINECO-OBSTETRICIA NO. 2 (DELEGACION NO. 5)",
+                                          "HOSPITAL DE GINECO-OBSTETRICIA NO. 3-A (DELEGACION NO. 3)",
+                                          "HOSPITAL DE GINECO-OBSTETRICIA NUM. 4 (DELEGACION NUM. 6)",
+                                          "HOSPITAL DE GINECO-PEDIATRIA (CENTRO MEDICO DE OCCIDENTE)",
+                                          "HOSPITAL DE INFECTOLOGIA C.M.R. (DELEGACION NUM. 2)",
+                                          "HOSPITAL DE ONCOLOGIA C.M.N. (DELEGACION NUM. 5)",
+                                          "HOSPITAL DE PEDIATRIA C.M.N. (DELEGACION NUM. 5)",
+                                          "HOSPITAL DE TRAUMATOLOGIA MAGDALENA DE LAS SALINAS",
+                                          "HOSPITAL GENERAL DE ZONA 1-A",
+                                          "HOSPITAL GENERAL DE ZONA 76 ESTADO DE MEXICO",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 CHIHUAHUA",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 DURANGO",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 MORELIA",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 1",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 15",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 24",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 29 (DELEGACION NO. 2)",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 36",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 4",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 6",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 8 (DELEGACION NO.6)",
+                                          "HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NUM. 68 (DELEGACION NUM. 3)",
+                                          "HOSPITAL GENERAL DE ZONA II NO. 1",
+                                          "HOSPITAL GENERAL DE ZONA NO. 10",
+                                          "HOSPITAL GENERAL DE ZONA NO. 12",
+                                          "HOSPITAL GENERAL DE ZONA NO. 16",
+                                          "HOSPITAL GENERAL DE ZONA NO. 2",
+                                          "HOSPITAL GENERAL DE ZONA NO. 2-A (DELEGACION NO. 4)",
+                                          "HOSPITAL GENERAL DE ZONA NO. 25 (DELEGACION NO. 4)",
+                                          "HOSPITAL GENERAL DE ZONA NO. 27 (DELEGACION NO. 2)",
+                                          "HOSPITAL GENERAL DE ZONA NO. 35",
+                                          "HOSPITAL GENERAL DE ZONA NO. 45",
+                                          "HOSPITAL GENERAL DE ZONA NO. 46",
+                                          "HOSPITAL GENERAL DE ZONA NO. 57 LA QUEBRADA",
+                                          "HOSPITAL GENERAL DE ZONA NO. 58 (DELEGACION NO. 1)",
+                                          "HOSPITAL GENERAL DE ZONA NO. 89",
+                                          "HOSPITAL GENERAL DE ZONA NUM. 1-A (DELEGACION NUM. 5)",
+                                          "HOSPITAL GENERAL DE ZONA NUM. 30",
+                                          "HOSPITAL GENERAL DEL C.M.N. (DELEGACION 5)",
+                                          "HOSPITAL GENERAL DEL CENTRO MEDICO LA RAZA (DELEGACION NUM. 2)",
+                                          "HOSPITAL GENERAL REGIONAL 1 GABRIEL MANCERA",
+                                          "HOSPITAL GENERAL REGIONAL DE ORIZABA",
+                                          "HOSPITAL GENERAL REGIONAL NO 20",
+                                          "HOSPITAL REGIONAL DE ESPECIALIDADES NO. 23",
+                                          "HOSPITAL REGIONAL NO. 34 DE MONTERREY",
+                                          "HOSPITAL REGIONAL NUMERO 25",
+                                          "JEFATURA DE CONTROL DE CALIDAD",
+                                          "JEFATURA DE SERVICIOS DE INVESTIGACION MEDICA C.M.N.",
+                                          "JEFATURA DE SERVICIOS DE PLANIFICACION FAMILIAR",
+                                          "JEFATURA DE SERVICIOS DE SALUD EN EL TRABAJO C.M.N., (DELEGACION NUM. 5)",
+                                          "JEFATURA REGIONAL DE SERVICIOS MEDICOS",
+                                          "SUBDIRECCION GENERAL MEDICA",
+                                          "UNIDAD DE INV. EN EPIDEMIOLOGIA Y EN SERVICIOS DE SALUD, MOR.",
+                                          "UNIDAD DE INVESTIGACION BIOMEDICA DE OCCIDENTE",
+                                          "UNIDAD DE INVESTIGACION BIOMEDICA DEL NOROESTE",
+                                          "UNIDAD DE INVESTIGACION CLINICA EN ENFERMEDADES DEL APARATO DIGESTIVO",
+                                          "UNIDAD DE INVESTIGACION CLINICA EN ENFERMEDADES INFECCIOSAS Y PARASITARIAS",
+                                          "UNIDAD DE INVESTIGACION EN ENFERMEDADES NEFROLOGICAS",
+                                          "UNIDAD DE INVESTIGACION EN MEDICINA TRADICIONAL Y DESARROLLO DE MEDICAMENTOS",
+                                          "UNIDAD DE INVESTIGACION EPIDEMIOLOGICA Y SERVICIOS DE SALUD DE ADOLESCENTES",
+                                          "UNIDAD DE MEDICINA FAMILIAR NO. 25",
+                                          "UNIDAD DE MEDICINA FAMILIAR NO. 60 (DELEGACION NO. 1)",
+                                          "UNIDAD DE MEDICINA FAMILIAR NO. 61 CON HOSPITALIZACION",
+                                          "UNIDAD DE MEDICINA FAMILIAR NO. 7",
+                                          "UNIDAD DURANGO"];
+      organizationValue = intitutoMExicanoSeguroSocia;
+    }
+     if(organizationValue =="INSTITUTO MEXICANO DEL SEGURO SOCIAL MAZATLAN"){
+      var intitutoMExicanoSeguroSociaMazatlan =[" "];
+      organizationValue = intitutoMExicanoSeguroSociaMazatlan;
+    }
+     if(organizationValue =="INSTITUTO MEXICANO DEL SEGURO SOCIALFONDO PARA EL FOMENTO DE LA INVESTIGACION MEDICA"){
+      var intitutoMExicanoSeguroSocialFomento =[" "];
+      organizationValue = intitutoMExicanoSeguroSocialFomento;
+    }
+    if(organizationValue =="INSTITUTO MOSCOVITA DE LA INDUSTRIA PETROQUIMICA Y DEL GAS IVAN MIXAILOVICH GUBKIN"){
+      var intitutoMoscovitaIndustria =[" "];
+      organizationValue = intitutoMoscovitaIndustria;
+    }
+     if(organizationValue =="INSTITUTO MUNICIPAL DE SEGURIDAD PUBLICA"){
+      var institutoMunicipalSeguridad =[" "];
+      organizationValue = institutoMunicipalSeguridad;
+    }
+      if(organizationValue =="INSTITUTO NACIONAL DE ADMINISTRACION PUBLICA AC"){
+      var intitutoNAcionalAdministracionPublica =["CENTRO DE ESTUDIOS DE ADMINISTRACION ESTATAL Y MUNICIPAL"];
+      organizationValue = intitutoNAcionalAdministracionPublica;
+    }
+      if(organizationValue =="INSTITUTO NACIONAL DE ANTROPOLOGIA E HISTORIA"){
+      var intitutoNAcionalAntropologiaHistoria =["CENTROS INAH",
+                                                  "COORDINACION NACIONAL DE DIFUSION",
+                                                  "COORDINACION NACIONAL DE MUSEOS Y EXPOSICIONES",
+                                                  "DELEGACIÓN CAMPECHE",
+                                                  "ESCUELA DE ANTROPOLOGÍA E HISTORIA DEL NORTE DE MEXICO",
+                                                  "ESCUELA DE ANTROPOLOGÍA E HISTORIA DEL NORTE DE MÉXICO",
+                                                  "ESCUELA NACIONAL DE ANTROPOLOGIA E HISTORIA",
+                                                  "ESCUELA NACIONAL DE CONSERVACION RESTAURACION Y MUSEOGRAFIA",
+                                                  "MUSEO DE EL CARMEN",
+                                                  "MUSEO NACIONAL DE HISTORIA",
+                                                  "SECRETARIA ADMINISTRATIVA",
+                                                  "SECRETARIA TECNICA",];
+      organizationValue = intitutoNAcionalAntropologiaHistoria;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE BELLAS ARTES Y LITERATURA"){
+      var intitutoNAcionalBellasArtes =["ACADEMIA DE LA DANZA MEXICANA",
+                                        "CENTRO NACIONAL DE INVESTIGACION TEATRAL RODOLFO USIGLI",
+                                        "CENTRO NACIONAL DE INVESTIGACION Y DOCUMENTACION DE LA DANZA",
+                                        "CENTRO NACIONAL DE INVESTIGACION, DOCUMENTACION E INFORMACION DE ARTES PLASTICAS",
+                                        "CENTRO NACIONAL DE INVESTIGACIÓN, DOCUMENTACIÓN E INFORMACIÓN TEATRAL RODOLFO USIGLI",
+                                        "CENTRO NAL. DE INVES. DOCUMENTACION E INFORMACION MUSICAL",
+                                        "CONSERVATORIO NACIONAL DE MÚSICA",
+                                        "COORDINACION NACIONAL DE MUSICA Y OPERA",
+                                        "COORDINACIÓN NACIONAL DE LITERATURA",
+                                        "DEPARTAMENTO DE INGENIERIA EN SISTEMAS COMPUTACIONALES",
+                                        "ESCUELA DE DISEÑO",
+                                        "ESCUELA NACIONAL DE PINTURA ESCULTURA Y GRABADO LA ESMERALDA",
+                                        "ESCUELA SUPERIOR DE MÚSICA",
+                                        "INSTITUTO MEXICANO DEL ROCK EN ESPAÑOL",
+                                        "INSTITUTO MEXICANO DEL ROCK PLUS PLUS",
+                                        "MUSEO DE ARTE MODERNO",
+                                        "MUSEO NACIONAL DE ARTE",
+                                        "SECRETARIA DE EDUCACION Y CULTURA",
+                                        "SUBDIRECCION GENERAL DE EDUCACION E INVESTIGACION ARTISTICA",];
+      organizationValue = intitutoNAcionalBellasArtes;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE CANCEROLOGIA"){
+      var intitutoNAcionalCancerologiaDE =["DIVISION DE INVESTIGACION BASICA",
+                                            "DIVISION DE INVESTIGACION CLINICA",
+                                            "DIVISION MEDICA",];
+      organizationValue = intitutoNAcionalCancerologiaDE;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE CAPACITACION DEL SECTOR AGROPECUARIO AC"){
+      var institutoNAcionalCapaciotacion =[" "];
+      organizationValue = institutoNAcionalCapaciotacion;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE CARDIOLOGIA IGNACIO CHAVEZ"){
+      var institutoNAcionalCardiologia =["DEPARTAMENTO DE BIOQUIMICA",
+                                          "DEPARTAMENTO DE CULTIVO DE TEJIDOS",
+                                          "DEPARTAMENTO DE FISIOLOGIA",
+                                          "DEPARTAMENTO DE NEFROLOGIA",
+                                          "DIVISION DE ASISTENCIA",
+                                          "DIVISION DE CIENCIAS BASICAS",
+                                          "DIVISION DE INVESTIGACION CLINICA",
+                                          "DIVISION DE MEDICINA EXPERIMENTAL",
+                                          "SUBDIRECCION DE ASISTENCIA",
+                                          "SUBDIRECCION DE INVESTIGACION BASICA Y DESARROLLO TECNOLOGICO",
+                                          "SUBDIRECCION DE INVESTIGACION CLINICA",
+                                          "SUBDIRECCIÓN ESPECIALIDADES MÉDICO QUIRURGICAS",];
+      organizationValue = institutoNAcionalCardiologia;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE CIENCIA Y TECNOLOGIA INDUSTRIAL AVANZADA"){
+      var institutoNAcionalCienciaTecnologia =[" "];
+      organizationValue = institutoNAcionalCienciaTecnologia;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE CIENCIAS MEDICAS Y NUTRICION SALVADOR ZUBIRAN"){
+      var intitutoNAcionalCienciasMEdicas =["DEPARTAMENTO DE BIOLOGIA DE LA REPRODUCCION",
+                                            "DEPARTAMENTO DE FISIOLOGIA DE LA NUTRICION",
+                                            "DEPARTAMENTO DE GASTROENTEROLOGIA",
+                                            "DEPARTAMENTO DE INMUNOLOGIA REUMATOLOGIA",
+                                            "DEPARTAMENTO DE NEFROLOGIA Y METABOLISMO MINERAL",
+                                            "DEPARTAMENTO DE PATOLOGIA",
+                                            "DIRECCIÓN DE NUTRICIÓN",
+                                            "DIVISION DE CIRUGIA",
+                                            "DIVISION DE CONSULTA EXTERNA",
+                                            "DIVISION DE ENSEÑANZA",
+                                            "DIVISION DE INVESTIGACION BASICA",
+                                            "DIVISION DE INVESTIGACION EPIDEMIOLOGICA",
+                                            "DIVISION DE MEDICINA",
+                                            "DIVISION DE NUTRICION DE LA COMUNIDAD",
+                                            "DIVISION DE NUTRICION EXPERIMENTAL DE CIENCIA DE LOS ALIMENTOS",
+                                            "SUBDIRECCION GENERAL DE INVESTIGACION",];
+      organizationValue = intitutoNAcionalCienciasMEdicas;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE DIAGNOSTICO Y REFERENCIA EPIDEMIOLOGICOS"){
+      var intitutoNAcionalDiagnostico =["DEPARTAMENTO DE BIOLOGIA MOLECULAR",
+                                        "DEPARTAMENTO DE INMUNOGENETICA",
+                                        "DEPARTAMENTO DE PARASITOLOGIA",
+                                        "DEPARTAMENTO DE SERVICIOS Y APOYO",
+                                        "DEPARTAMENTO DE INVESTIGACIONES INMUNOLOGICAS",
+                                        "INSTITUTO DE DIAGNÓSTICO Y REFERENCIA EPIDEMIOLÓGICOS",];
+      organizationValue = intitutoNAcionalDiagnostico;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE ENFERMEDADES RESPIRATORIAS"){
+      var intitutoNAcionalEnfermedades =["DIRECCION DE INVESTIGACION",
+                                          "DIRECCION MEDICA",
+                                          "SUBDIRECCION DE INVESTIGACION",
+                                          "SUBDIRECCION MEDICA",
+                                          "SUBDIRECCIÓN DE INVESTIGACIÓN BIOMÉDICA"];
+      organizationValue = intitutoNAcionalEnfermedades;
+    }
+       if(organizationValue =="INSTITUTO NACIONAL DE INVESTIGACIONES NUCLEARES"){
+      var intitutoNacionalNuclears =["COORDINACION DE ASUNTOS INTERNACIONALES",
+                                      "COORDINACION DE PROMOCION Y DIVULGACION CIENTIFICA",
+                                      "GERENCIA DE APLICACIONES NUCLEARES EN LA SALUD",
+                                      "GERENCIA DE ASUNTOS JURIDICOS",
+                                      "GERENCIA DE CIENCIA DE MATERIALES",
+                                      "GERENCIA DE CIENCIAS AMBIENTALES",
+                                      "GERENCIA DE CIENCIAS APLICADAS",
+                                      "GERENCIA DE CIENCIAS BASICAS",
+                                      "GERENCIA DE COMERCIALIZACION",
+                                      "GERENCIA DE GARANTIA DE CALIDAD",
+                                      "GERENCIA DE INFORMATICA",
+                                      "GERENCIA DE INGENIERIA",
+                                      "GERENCIA DE SEGURIDAD RADIOLOGICA",
+                                      "GERENCIA DE TECNOLOGIA NUCLEAR",];
+      organizationValue = intitutoNacionalNuclears;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE MEDICINA GENOMICA"){
+      var institutoNacionalGenomica =[" "];
+      organizationValue = institutoNacionalGenomica;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE NEUROLOGIA Y NEUROCIRUGIA MANUEL VELASCO SUAREZ"){
+      var institutoNacionalNeurologia=["DIRECCIÓN DE INVESTIGACIÓN",
+                                      "DIVISION DE INVESTIGACION",
+                                      "DIVISION DE NEUROCIRUGIA",
+                                      "DIVISION DE NEUROLOGIA",
+                                      "SUBDIRECCION DE SERVICIOS AUXILIARES DE DIAGNOSTICO Y TRATAMIENTO",
+                                      "SUBDIRECCION GENERAL DE INVESTIGACION",
+                                      "SUBDIRECCION MEDICA",
+                                      "UNIDAD DE INVESTIGACION DEL SISTEMA NERVIOSO",
+                                      "UNIDAD DE INVESTIGACION SOCIOMEDICA",
+                                      "UNIDAD DE INVESTIGACIONES CEREBRALES",];
+      organizationValue = institutoNacionalNeurologia;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE PEDIATRIA"){
+      var institutoNacionalPEdiatria=["DIVISION DE INVESTIGACION MEDICA",
+                                      "SUBDIRECCION DE MEDICINA EXPERIMENTAL",
+                                      "UNIDAD DE INVESTIGACION EN SALUD INFANTIL",
+                                      "UNIDAD DE INVESTIGACION",
+                                      "UNIDAD DE SERVICIO",];
+      organizationValue = institutoNacionalPEdiatria;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE PERINATOLOGIA"){
+      var institutoNacionalPerinatologia=["SUBDIRECCION DE ENSENANZA DE EDUCACION PROFESIONAL",
+                                          "SUBDIRECCION DE INVESTIGACION",
+                                          "SUBDIRECCION MEDICA"];
+      organizationValue = institutoNacionalPerinatologia;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DE PSIQUIATRIA RAMON DE LA FUENTE MUNIZ"){
+      var institutoNAcionalPsiquitria=["DIRECCIÓN DE INVESTIGACIÓN EN NEUROCIENCIAS",
+                                        "DIVISION DE INVESTIGACION EN NEUROCIENCIAS",
+                                        "DIVISION DE INVESTIGACIONES BIOMEDICAS",
+                                        "DIVISION DE INVESTIGACIONES CLINICAS",
+                                        "DIVISION DE INVESTIGACIONES EPIDEMIOLOGICAS Y SOCIALES",
+                                        "DIVISION DE SERVICIOS CLINICOS",];
+      organizationValue = institutoNAcionalPsiquitria;
+    }
+    if(organizationValue =="INSTITUTO NACIONAL DE SALUD PUBLICA"){
+      var intitutoNAcionalSaludPublica=["CENTRO DE ESTUDIOS DE ADMINISTRACION ESTATAL Y MUNICIPAL",
+                                        "CENTRO DE INVESTIGACION EN SALUD POBLACIONAL",
+                                        "CENTRO DE INVESTIGACION Y NUTRICION EN SALUD",
+                                        "CENTRO DE INVESTIGACIONES EN SISTEMAS DE SALUD",
+                                        "CENTRO DE INVESTIGACIONES SOBRE ENFERMEDADES INFECCIOSAS",
+                                        "CENTRO DE INVESTIGACIÓN EN EVALUACIÓN Y ENCUESTAS",
+                                        "DIRECCION DE ADMINISTRACION Y FINANZAS",
+                                        "DIRECCION DE EVALUACION DE SISTEMAS Y ECONOMIA DE LA SALUD",
+                                        "DIRECCION DE GERENCIA Y LIDERAZGO",
+                                        "DIRECCION DE INFORMATICA",
+                                        "DIRECCION GENERAL",
+                                        "ESCUELA DE SALUD PUBLICA DE MEXICO",
+                                        "INSTITUTO NACIONAL DE SALUD PUBLICA",
+                                        "MINISTERE DE LA SANTE PUBLIQUE ET DE LA POPULATION",
+                                        "SECRETARIA ACADEMICA"];
+      organizationValue = intitutoNAcionalSaludPublica;
+    }
+      if(organizationValue =="INSTITUTO NACIONAL DE VIROLOGIA"){
+      var intitutoNAcionalVirologia=[" "];
+      organizationValue = intitutoNAcionalVirologia;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL DEL CONSUMIDOR"){
+      var intitutoNAcionalConsumidor=[" "];
+      organizationValue = intitutoNAcionalConsumidor;
+    }
+      if(organizationValue =="INSTITUTO NACIONAL INDIGENISTA"){
+      var intitutoNAcionalIngesta=["DIRECCION ADJUNTA",
+                                    "EL TIEMPO QUE RESTA, A.C",
+                                    "SUBDIRECCION DE INVESTIGACION"];
+      organizationValue = intitutoNAcionalIngesta;
+    }
+     if(organizationValue =="INSTITUTO NACIONAL PARA EL FOMENTO DE LA VIVIENDA DE LOS TRABAJADORES"){
+      var intitutoNAcionalVivienda=[" "];
+      organizationValue = intitutoNAcionalVivienda;
+    }
+     if(organizationValue =="INSTITUTO POTOSINO DE INVESTIGACION CIENTIFICA Y TECNOLOGICA AC"){
+      var intitutoPotosinoCientifica=["DIVISION DE BIOLOGIA MOLECULAR",
+                                      "DIVISION DE INGENIERIA AMBIENTAL Y MANEJO DE RECURSOS NATURALES",
+                                      "DIVISION DE MATEMATICAS APLICADAS Y SISTEMA",
+                                      "DIVISION DE MATEMÁTICAS APLICADAS",
+                                      "DIVISION DE MATERIALES AVANZADOS PARA LA TECNOLOGIA MODERNA",
+                                      "DIVISION GEOCIENCIAS APLICADAS",
+                                      "DIVISIÓN DE CIENCIAS AMBIENTALES",
+                                      "DIVISIÓN DE MATERIALES AVANZADOS"];
+      organizationValue = intitutoPotosinoCientifica;
+    }
+     if(organizationValue =="INSTITUTO REGISTRAL Y CATASTRAL DEL ESTADO DE NUEVO LEON"){
+      var intitutoregistralCastral=[" "];
+      organizationValue = intitutoregistralCastral;
+    }
+     if(organizationValue =="INSTITUTO SINALOENSE DE LAS MUJERES"){
+      var institutoSinaloense=[" "];
+      organizationValue = institutoSinaloense;
+    }
+    if(organizationValue =="INSTITUTO TEMAZCALLI PREV Y REHAB"){
+      var institutoTemazcalli=[" "];
+      organizationValue = institutoTemazcalli;
+    }
+    if(organizationValue =="INSTITUTO TLAXCALTECA DE LA CULTURA"){
+      var institutoTlaxcalteca=[" "];
+      organizationValue = institutoTlaxcalteca;
+    }
+    if(organizationValue =="JUNTA CENTRAL DE AGUA Y SANEAMIENTO DEL ESTADO DE CHIHUAHUA"){
+      var juntaCentralAgua=[" "];
+      organizationValue = juntaCentralAgua;
+    }
+    if(organizationValue == "LA JUNTA DE ELECTRIFICACION DE YUCATAN"){
+      var juntaElectrificacion=[" "];
+      organizationValue = juntaElectrificacion;
+    }
+     if(organizationValue == "LABORATORIO DE BIOLOGICOS Y REACTIVOS DE MEXICO SA DE CV"){
+      var laboratorioBiologicos=[" "];
+      organizationValue = laboratorioBiologicos;
+    }
+      if(organizationValue == "LABORATORIO NACIONAL DE GENOMICA PARA LA BIODIVERSIDAD CINVESTAV IPN"){
+      var laboratorioBNAcionalGenomica=[" "];
+      organizationValue = laboratorioBNAcionalGenomica;
+    }
+     if(organizationValue == "LABORATORIOS DE BIOLOGICOS Y REACTIVOS DE MEXICO SA DE CV"){
+      var laboratoriosBiologicosReactivos=[" "];
+      organizationValue = laboratoriosBiologicosReactivos;
+    }
+     if(organizationValue == "LICONSA SA DE CV"){
+      var liconsa=[" "];
+      organizationValue = liconsa;
+    }
+    if(organizationValue == "MAQUINARIA DE VERACRUZ OPD"){
+      var maquinariaVeracruz=[" "];
+      organizationValue = maquinariaVeracruz;
+    }
+    if(organizationValue == "MOSHI RICE"){
+      var moshiRice=[" "];
+      organizationValue = moshiRice;
+    }
+     if(organizationValue == "MUSEO FRIDA KAHLO"){
+      var museoFrida=[" "];
+      organizationValue = museoFrida;
+    }
+      if(organizationValue == "ORGANISMO OPERADOR MUNICIPAL DE AGUA POTABLE ALCANTARILLADO Y SANEAMIENTO DE CAJEME"){
+      var organismoOperardorMunicipal=[" "];
+      organizationValue = organismoOperardorMunicipal;
+    }
+     if(organizationValue == "PARQUE AGRO TECNOLOGICO XONOTLI SA DE CV"){
+      var paruqeAgroTecnologico=[" "];
+      organizationValue = paruqeAgroTecnologico;
+    }
+    if(organizationValue == "PARTIDO REVOLUCIONARIO INSTITUCIONAL"){
+      var partidoRevolucionario=["COMITE DIRECTIVO ESTATAL DEL PRI JALISCO"];
+      organizationValue = partidoRevolucionario;
+    }
+     if(organizationValue == "PARTIDO VERDE ECOLOGISTA DE MEXICO"){
+      var partidoVerdeEcologista=[" "];
+      organizationValue = partidoVerdeEcologista;
+    }
+      if(organizationValue == "PEMEX CORPORATIVO"){
+      var pemexCorporativo=[" "];
+      organizationValue = pemexCorporativo;
+    }
+     if(organizationValue == "PENSIONES CIVILES DEL ESTADO DE CHIHUAHUA"){
+      var pesionesCivilesEstado=[" "];
+      organizationValue = pesionesCivilesEstado;
+    }
+    if(organizationValue == "PETROLEOS MEXICANOS"){
+      var petrolesMexicanos=["COMPAÑIA MEXICANA DE EXPLORACIONES, S.A. DE C.V.",
+                              "DIRECCION CORPORATIVA DE ADMINISTRACION",
+                              "DIRECCION CORPORATIVA DE FINANZAS",
+                              "DIRECCION CORPORATIVA DE INGENIERIA Y DESARROLLO DE PROYECTOS",
+                              "DIRECCION CORPORATIVA DE OPERACIONES",
+                              "DIRECCIÓN CORPORATIVA DE TECNOLOGÍA DE INFORMACIÓN Y PROCESOS DE NEGOCIO",
+                              "PEMEX EXPLORACION Y PRODUCCION",
+                              "PEMEX GAS Y PETROQUIMICA BASICA",
+                              "PEMEX PETROQUIMICA",
+                              "PEMEX REFINACION"];
+      organizationValue = petrolesMexicanos;
+    }
+    if(organizationValue == "PMI COMERCIO INTERNACIONAL SA DE CV"){
+      var pmiComercioInternacional=[" "];
+      organizationValue = pmiComercioInternacional;
+    }
+     if(organizationValue == "PODER JUDICIAL DE BAJA CALIFORNIA"){
+      var poderJudicialBaja=[" "];
+      organizationValue = poderJudicialBaja;
+    }
+     if(organizationValue == "PROCURADURIA DE LOS DERECHOS HUMANOS Y PROTECCION CIUDADANA DEL ESTADO DE BAJA CALIFORNIA"){
+      var procuraduriaDerechosHumanos=[" "];
+      organizationValue = procuraduriaDerechosHumanos;
+    }
+    if(organizationValue == "PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE GUANAJUATO"){
+      var procuraduriaGeneralJusticia=[" "];
+      organizationValue = procuraduriaGeneralJusticia;
+    }
+     if(organizationValue == "PRODUCTORA NACIONAL DE SEMILLAS"){
+      var productoraNacionalSemillas=[" "];
+      organizationValue = productoraNacionalSemillas;
+    }
+     if(organizationValue == "QUINTA VISITADURIA GENERAL DE LA COMISION NACIONAL DE LOS DERECHOS HUMANOS"){
+      var quintaVisitaduria=[" "];
+      organizationValue = quintaVisitaduria;
+    }
+     if(organizationValue == "SECRETARIA DE EDUCACION PUBLICA DEL ESTADO DE HIDALGO"){
+      var secretariaEducacionPublicaHidalgo=["CENTRO ESTATAL DE LENGUAS Y CULTURAS INDIGENAS DEL ESTADO DE HIDALGO"];
+      organizationValue = secretariaEducacionPublicaHidalgo;
+    }
+      if(organizationValue == "SECRETARIA DE EDUCACION PUBLICA DEL ESTADO DE PUEBLA"){
+      var secretariaEducacionPublicaPuebla=[" "];
+      organizationValue = secretariaEducacionPublicaPuebla;
+    }
+     if(organizationValue == "SECRETARIA DE FINANZAS"){
+      var secretariaFinanzas=[" "];
+      organizationValue = secretariaFinanzas;
+    }
+     if(organizationValue == "SECRETARIA DE LA GESTION PUBLICA"){
+      var secretariaGestionPublica=[" "];
+      organizationValue = secretariaGestionPublica;
+    }
+     if(organizationValue == "SECRETARIA DE SALUD/HOSPITAL GENERAL PACHUCA/DEPARTAMENTO DE INVESTIGACION"){
+      var secretariaSaludGeneral=[" "];
+      organizationValue = secretariaSaludGeneral;
+    }
+     if(organizationValue == "SERVICIO DE INFORMACION Y ESTADISTICA AGROPECUARIA Y PESQUERA"){
+      var servicioInformacionEstadistica=[" "];
+      organizationValue = servicioInformacionEstadistica;
+    }
+    if(organizationValue == "SERVICIOS DE AGUA Y DRENAJE DE MONTERREY"){
+      var servicioAguaDrenaje=[" "];
+      organizationValue = servicioAguaDrenaje;
+    }
+     if(organizationValue == "SERVICIOS DE SALUD DE CHIHUAHUA"){
+      var servicioSaludChihuahua=[" "];
+      organizationValue = servicioSaludChihuahua;
+    }
+     if(organizationValue == "SERVICIOS DE SALUD DE OAXACA"){
+      var servicioSaludOaxaca=[" "];
+      organizationValue = servicioSaludOaxaca;
+    }
+     if(organizationValue == "SISTEMA DE PARQUES INDUSTRIALES DE SONORA O P D E"){
+      var sistemasParquesIndustriales=[" "];
+      organizationValue = sistemasParquesIndustriales;
+    }
+     if(organizationValue == "SISTEMA DE PARQUES INDUSTRIALES DE SONORA O P D E"){
+      var sistemasParquesIndustrialesSonora=[" "];
+      organizationValue = sistemasParquesIndustrialesSonora;
+    }
+     if(organizationValue == "SISTEMA DE TREN ELECTRICO URBANO"){
+      var sistemaTresELectrico=[" "];
+      organizationValue = sistemaTresELectrico;
+    }
+     if(organizationValue == "SISTEMA NACIONAL PARA EL DESARROLLO INTEGRAL PARA LA FAMILIA"){
+      var sistemaNAcionalDesarrolloFamilia=["SISTEMA EN TAMAULIPAS",
+                                            "DIRECCION DE REHABILITACION Y ASISTENCIA SOCIAL",
+                                            "UNIDAD DE ASISTENCIA E INTEGRACIÓN SOCIAL",
+                                            "SECRETARÍA PARTICULAR DEL DESPACHO DEL TITULAR",
+                                            "DIRECCIÓN GENERAL DE ASUNTOS INTERNACIONALES",
+                                            "DIF PUEBLA",
+                                            "CENTRO DE REHABILITACIÓN E INCLUSIÓN SOCIAL DEL ESTADO DE VERACRUZ (CRIS/CREEVER)",];
+      organizationValue = sistemaNAcionalDesarrolloFamilia;
+    }
+     if(organizationValue == "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL ESTADO DE GUANAJUATO"){
+      var sistamGuanajuato=[" "];
+      organizationValue = sistamGuanajuato;
+    }
+     if(organizationValue == "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL ESTADO DE NAYARIT"){
+      var sistamNayarit=[" "];
+      organizationValue = sistamNayarit;
+    }
+    if(organizationValue == "SISTEMA PARA EL DESARROLLO INTEGRAL PARA LA FAMILIA GUADALAJARA"){
+      var sistamGuadalajara=[" "];
+      organizationValue = sistamGuadalajara;
+    }
+    if(organizationValue == "SISTEMAS DE SEGURIDAD Y ELECTRONICA DEL PACIFICO SA DE CV"){
+      var sistamaPacificio=[" "];
+      organizationValue = sistamaPacificio;
+    }
+    if(organizationValue == "SOCIEDAD CONSTRUCTORA DE EQUIPOS CLINICOS Y ELECTROMEDICOS SA DE CV"){
+      var sociedadConstructora=[" "];
+      organizationValue = sociedadConstructora;
+    }
+    if(organizationValue == "SOLUCIONES INFORMATICAS Y ADMINISTRATIVAS SA DE CV"){
+      var solucionesInformaticas=[" "];
+      organizationValue = solucionesInformaticas;
+    }
+    if(organizationValue == "UNIDAD DE GENOMICA AVANZADA UGA CINVESTAV IPN"){
+      var unidadGenomica=[" "];
+      organizationValue = unidadGenomica;
+    }
+    if(organizationValue == "UNIDAD DE INVESTIGACION EPIDEMIOLOGICA Y EN SERVICIOS DE SALUD QUERETARO"){
+      var unidadInevstigacionEpidemiologica=[" "];
+      organizationValue = unidadInevstigacionEpidemiologica;
+    }
+     if(organizationValue == "UNIDAD MEDICA DE ALTA ESPECIALIDAD HOSPITAL DE GINECOPEDIATRIA NO 48"){
+      var unidadMedicaAlta=[" "];
+      organizationValue = unidadMedicaAlta;
+    }
+    if(organizationValue == "UNION IBEROAMERICANA DE MUNICIPALISTAS"){
+      var unioniberoAmericana=[" "];
+      organizationValue = unioniberoAmericana;
+    }
+      if(organizationValue == "UNIVERSIDAD DE SALENTO"){
+      var universidadSalento=[" "];
+      organizationValue = universidadSalento;
+    }
+
+    /*Instituciones del sector gobierno de las entidades federativas*/
+
+     if(organizationValue == "CENTRO DE INVESTIGACIONES DE QUINTANA ROO"){
+      var centroQuintanaRoo=["CENTRO INTERDISCIPLINARIO DE INVESTIGACION EDUCATIVA",
+                              "DIRECCION DE ESTUDIOS DEL CARIBE"];
+      organizationValue = centroQuintanaRoo;
+    }
+    if(organizationValue == "CENTRO DE INVESTIGACION Y DESARROLLO DE LOS RECURSOS NATURALES DE SONORA AC"){
+      var centroDesarrolloNaturals=["DEPARTAMENTO DE INGENIERIA ELECTRONICA"];
+      organizationValue = centroDesarrolloNaturals;
+    }
+    if(organizationValue == "CENTRO DE INVESTIGACION Y DESARROLLO DEL ESTADO DE MICHOACAN"){
+      var centroDesarrolloMichoacan=["DIRECCION GENERAL"];
+      organizationValue = centroDesarrolloMichoacan;
+    }
+    if(organizationValue == "EL COLEGIO DE JALISCO AC"){
+      var colegioJalisco=["AREA DE INVESTIGACION"];
+      organizationValue = colegioJalisco;
+    }
+     if(organizationValue == "EL COLEGIO MEXIQUENSE AC"){
+      var colegioMexiquense=["CENTRO DE ESTUDIOS DE DESARROLLO SOCIAL",
+                              "CENTRO DE ESTUDIOS HISTORICOS",
+                              "CENTRO DE ESTUDIOS SOCIALES",
+                              "CENTRO DE ESTUDIOS SOCIOESPACIALES Y POLITICAS PUBLICAS",
+                              "COORDINACION ACADEMICA",
+                              "PRESIDENCIA",
+                              "PROGRAMA DE ESTUDIOS URBANOS Y AMBIENTALES",
+                              "PROGRAMA INTERDISCIPLINARIO DE ESTUDIOS"];
+      organizationValue = colegioMexiquense;
+    }
+     if(organizationValue == "EL COLEGIO DE SONORA OPD"){
+      var colegioSonoraOpd=["CENTRO DE ESTUDIOS SOCIALES",
+                            "COORDINACION DE INVESTIGACION",
+                            "DIRECCION GENERAL ACADEMICA",];
+      organizationValue = colegioSonoraOpd;
+    }
+     if(organizationValue == "HOSPITAL CIVIL DE GUADALAJARA"){
+      var hopitalCivilGuadalajara=["HOSPITAL CIVIL DE GUADALAJARA DR JUAN I MENCHACA",
+                                    "HOSPITAL CIVIL DE GUADALAJARA FRAY ANTONIO ALCALDE"];
+      organizationValue = hopitalCivilGuadalajara;
+    }
+     if(organizationValue == "HOSPITAL GENERAL AURELIO VALDIVIESO"){
+      var hospitalGeneralAurelio=[" "];
+      organizationValue = hospitalGeneralAurelio;
+    }
+    if(organizationValue == "INSTITUTO DE ECOLOGIA APLICADA DE GUERRERO AC"){
+      var institutoEcologiaAplicada=[" "];
+      organizationValue = institutoEcologiaAplicada;
+    }
+    if(organizationValue == "INSTITUTO DE HISTORIA NATURAL DEL ESTADO DE CHIAPAS"){
+      var institutoHistoriaEstado=[" "];
+      organizationValue = institutoHistoriaEstado;
+    }
+     if(organizationValue == "INSTITUTO DEL MEDIO AMBIENTE Y DESARROLLO SUSTENTABLE DEL ESTADO DE SONORA"){
+      var insitutoAmbienteSonora=[" "];
+      organizationValue = insitutoAmbienteSonora;
+    }
+     if(organizationValue == "INSTITUTO DE SERVICIOS EDUCATIVOS DEL ESTADO DE COAHUILA"){
+      var institutoServiciosCoahuila=[" "];
+      organizationValue = institutoServiciosCoahuila;
+    }
+     if(organizationValue == "CENTRO QUERETANO DE RECURSOS NATURALES"){
+      var centroQueretaroRecursos=[" "];
+      organizationValue = centroQueretaroRecursos;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE AGUASCALIENTES"){
+      var gobiernoEstadoAguscalientes=["ARCHIVO HISTORICO DEL ESTADO",
+                                      "CENTENARIO HOSPITAL DE MIGUEL HIDALGO",
+                                      "CENTRO DE INVESTIGACIONES Y ESTUDIOS MULTIDISCIPLINARIOS DE AGUASCALIENTES, A.C",
+                                      "CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE AGUASCALIENTES",
+                                      "HOSPITAL DE LA MUJER",
+                                      "HOSPITAL GENERAL TERCER MILENIO",
+                                      "INSTITUTO CULTURAL DE AGUASCALIENTES",
+                                      "INSTITUTO DE EDUCACIÓN DE AGUASCALIENTES",
+                                      "INSTITUTO DE SERVICIOS DE SALUD DEL ESTADO DE AGUASCALIENTES",
+                                      "MUNICIPIO DE AGUASCALIENTES",
+                                      "PROCURADURIA GENERAL DE JUSTICIA DE AGUASCALIENTES",
+                                      "SECRETARIA DE OBRAS PUBLICAS",
+                                      "SECRETARIA DEL MEDIO AMBIENTE DEL GOBIERNO ESTADO DE AGUASCALIENTES",];
+      organizationValue = gobiernoEstadoAguscalientes;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE COLIMA"){
+      var gobiernoEstadoColima=["ARCHIVO HISTORICO DEL MUNICIPIO DE COLIMA",
+                                "CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE COLIMA",
+                                "LABORATORIO ESTATAL DE SALUD PUBLICA DE COLIMA",
+                                "SERVICIOS DE SALUD DEL ESTADO DE COLIMA"];
+      organizationValue = gobiernoEstadoColima;
+    }
+      if(organizationValue == "GOBIERNO DEL ESTADO DE GUANAJUATO"){
+      var gobiernoEstadoGuanajuato=["COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE GUANAJUATO",
+                                    "COMISIÓN ESTATAL DEL DEPORTE Y ATENCIÓN A LA JUVENTUD",
+                                    "CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE GUANAJUATO",
+                                    "GOBIERNO MUNICIPAL DE GUANAJUATO",
+                                    "INSTITUTO ESTATAL DE CAPACITACIÓN",
+                                    "MUNICIPIO DE LEON",
+                                    "PARQUE AGRO TECNOLÓGICO XONOTLI, S.A. DE C.V.",
+                                    "SECRETARIA DE DESARROLLO AGROPECUARIO",
+                                    "SECRETARIA DE SALUD",
+                                    "SECRETARÍA DE GOBIERNO DEL ESTADO DE GUANAJUATO",
+                                    "SECUNDARIA OFICIAL LIC. TIMOTEO LOZANO",
+                                    "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE GUANAJUATO",
+                                    "SISTEMA AVANZADO DE BACHILLERATO Y EDUCACIÓN SUPERIOR EN EL ESTADO DE GUANAJUATO",
+                                    "TRIBUNAL DE LO CONTENCIOSO ADMINISTRATIVO DEL ESTADO DE GUANAJUATO",];
+      organizationValue = gobiernoEstadoGuanajuato;
+    }
+      if(organizationValue == "GOBIERNO DEL ESTADO DE JALISCO"){
+      var gobiernoEstadoJalisco=["CONGRESO DEL ESTADO DE JALISCO",
+                                  "CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE JALISCO",
+                                  "DIRECCIÓN GENERAL DE EDUCACIÓN NORMAL",
+                                  "HOSPITAL CIVIL DE GUADALAJARA",
+                                  "HOSPITAL GENERAL DE OCCIDENTE",
+                                  "INSTITUTO DE FORMACION PARA EL TRABAJO DEL ESTADO DE JALISCO",
+                                  "INSTITUTO DE INFORMACIÓN ESTADÍSTICA Y GEOGRÁFICA DEL ESTADO DE JALISCO",
+                                  "INSTITUTO DE INFORMACIÓN TERRITORIAL DEL ESTADO DE JALISCO",
+                                  "INSTITUTO TECNOLOGICO SUPERIOR",
+                                  "MUNICIPIO DE CHAPALA, JALISCO",
+                                  "MUNICIPIO DE LA BARCA",
+                                  "MUNICIPIO DE PUERTO VALLARTA",
+                                  "MUNICIPIO DE TLAJOMULCO DE ZÚÑIGA",
+                                  "MUNICIPIO DE ZAPOPAN JALISCO",
+                                  "ORGANISMO PUBLICO DESCENTRALIZADO HOSPITAL CIVIL DE GUADALAJARA",
+                                  "SECRETARIA DE DESARROLLO RURAL",
+                                  "SECRETARIA DE EDUCACION",
+                                  "SECRETARIA DE PROMOCION ECONOMICA DE JALISCO",
+                                  "SECRETARIA DE SALUD Y BIENESTAR SOCIAL",
+                                  "SECRETARIA GENERAL DE GOBIERNO",
+                                  "SECRETARÍA DE CULTURA",
+                                  "SECRETARÍA DE MEDIO AMBIENTE PARA EL DESARROLLO SUSTENTABLE DEL GOBIERNO DEL ESTADO DE JALISCO",
+                                  "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE JALISCO",
+                                  "SERVICIOS Y TRANSPORTES OPD",
+                                  "SISTEMA ESTATAL DE INFORMACIÓN JALISCO",
+                                  "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA, JALISCO",
+                                  "TRIBUNAL ELECTORAL DEL PODER JUDICIAL DEL ESTADO DE JALISCO",
+                                  "TROMPO MÁGICO, MUSEO INTERACTIVO DEL NIÑO",];
+      organizationValue = gobiernoEstadoJalisco;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE MORELOS"){
+      var gobiernoEstadoMorelos=["CENTRO DE INVESTIGACION Y DOCENCIA EN HUMANIDADES",
+                                "CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE MORELOS",
+                                "HOSPITAL DEL NIÑO MORELENSE",
+                                "HOSPITAL GENERAL DE CUERNAVACA DR. JOSE G. PARRES",
+                                "INCUBADORA DE EMPRESAS DE INNOVACION TECNOLOGICA Y ADMINISTRATIVA",
+                                "SECRETARÍA DE INNOVACIÓN, CIENCIA Y TECNOLOGÍA",
+                                "SERVICIOS DE SALUD DE MORELOS",
+                                "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA MORELOS",];
+      organizationValue = gobiernoEstadoMorelos;
+    }
+      if(organizationValue == "GOBIERNO DEL ESTADO DE QUERETARO"){
+      var gobiernoEstadoQueretaro=["COMITE ADMINISTRADOR DEL PROGRAMA DE CONSTRUCCION DE ESCUELAS DEL ESTADO DE QUERETARO",
+                                    "CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE QUERETARO",
+                                    "ESCUELA NORMAL SUPERIOR DE QUERETARO",
+                                    "SECRETARIA DE DESARROLLO SUSTENTABLE",
+                                    "SECRETARIA DE DESARROLLO URBANO Y OBRAS PUBLICAS",
+                                    "SECRETARIA DE EDUCACIÓN",
+                                    "SECRETARÍA DE TURISMO",
+                                    "SERVICIOS DE SALUD DEL ESTADO DE QUERETARO SESEQ.",];
+      organizationValue = gobiernoEstadoQueretaro;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE YUCATAN"){
+      var gobiernoEstadoYucatan=["ARCHIVO GENERAL DEL ESTADO DE YUCATAN",
+                                "CASA DE LAS ARTESANIAS DEL ESTADO DE YUCATÁN",
+                                "CENTRO DE EVALUACIÓN EDUCATIVA DEL ESTADO DE YUCATÁN",
+                                "COMITE ESTATAL PARA EL FOMENTO Y PROTECCION PECUARIA DEL ESTADO DE YUCATAN SCP",
+                                "CONSEJO DE CIENCIA, INNOVACIÓN Y TECNOLOGÍA DEL ESTADO DE YUCATÁN",
+                                "DESPACHO DEL GOBERNADOR",
+                                "DIRECCION DE EDUCACION MEDIA SUPERIOR Y SUPERIOR",
+                                "INSTITUTO DE CULTURA DE YUCATAN",
+                                "INSTITUTO PARA EL DESARROLLO DE LA CULTURA MAYA DEL ESTADO DE YUCATÁN",
+                                "INSTITUTO PARA EL DESARROLLO Y CERTIFICACIÓN DE LA INFRAESTRUCTURA FÍSICA EDUCATIVA DE YUCATÁN",
+                                "SECRETARIA DE DESARROLLO URBANO Y MEDIO AMBIENTE DEL ESTADO DE YUCATAN",
+                                "SECRETARIA DE EDUCACION DEL ESTADO DE YUCATAN",
+                                "SECRETARIA DE EDUCACION DEL GOBIERNO",
+                                "SECRETARIA DE SALUD",
+                                "SERVICIOS DE SALUD DE YUCATAN",
+                                "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA EN YUCATAN",];
+      organizationValue = gobiernoEstadoYucatan;
+    }
+     if(organizationValue == "GOBIERNO DEL DISTRITO FEDERAL"){
+      var gobiernoEstadoFEderal=["ASAMBLEA LEGISLATIVA DEL DISTRITO FEDERAL",
+                                "COMISION DE DERECHOS HUMANOS DEL DISTRITO FEDERAL",
+                                "CONSEJO DE LA JUDICATURA DEL DISTRITO FEDERAL",
+                                "HOSPITAL GENERAL DE URGENCIAS DR. RUBEN LEÑERO",
+                                "HOSPITAL GENERAL XOCO",
+                                "INSTITUTO DE CIENCIA Y TECNOLOGIA DEL DISTRITO FEDERAL",
+                                "INSTITUTO DE CULTURA DE LA CIUDAD DE MEXICO",
+                                "INSTITUTO DE LAS MUJERES DEL DISTRITO FEDERAL",
+                                "INSTITUTO DE VERIFICACION ADMINISTRATIVA DEL DISTRITO FEDERAL",
+                                "INSTITUTO ELECTORAL DEL DISTRITO FEDERAL",
+                                "INSTITUTO PARA LA ATENCIÓN Y PREVENCIÓN DE LAS ADICCIONES EN LA CIUDAD DE MÉXICO",
+                                "PATRONATO DE APOYO A LA INVESTIGACION Y EXPERIMENTACION PECUARIA EN MEXICO, A.C.",
+                                "PROCURADURIA SOCIAL DEL DISTRITO FEDERAL",
+                                "PROCURADURÍA AMBIENTAL Y DEL ORDENAMIENTO TERRITORIAL DEL DISTRITO FEDERAL",
+                                "PROCURADURÍA GENERAL DE JUSTICIA DEL DISTRITO FEDERAL",
+                                "SECRETARIA DE CULTURA",
+                                "SECRETARIA DE DESARROLLO URBANO Y VIVIENDA",
+                                "SECRETARIA DE FINANZAS DEL GOBIERNO DEL DISTRITO FEDERAL",
+                                "SECRETARIA DE GOBIERNO",
+                                "SECRETARIA DE MEDIO AMBIENTE",
+                                "SECRETARIA DE SALUD DEL DISTRITO FEDERAL",
+                                "SECRETARIA DE SEGURIDAD PUBLICA DEL DISTRITO FEDERAL",
+                                "SECRETARÍA DE CIENCIA, TECNOLOGÍA E INNOVACIÓN DEL DISTRITO FEDERAL",
+                                "SECRETARÍA DE EDUCACIÓN",
+                                "SERVICIOS DE SALUD PUBLICA DEL DISTRITO FEDERAL",
+                                "SISTEMA DE AGUAS DE LA CIUDAD MEXICO",
+                                "SISTEMA DE TRANSPORTE COLECTIVO",
+                                "UNIVERSIDAD DE LA CIUDAD DE MEXICO",];
+      organizationValue = gobiernoEstadoFEderal;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE CHIAPAS"){
+      var gobiernoEstadoChiapas=["CENTRO ESTATAL DE PREVENCIÓN SOCIAL DE LA VIOLENCIA Y PARTICIPACIÓN CIUDADANA",
+                                  "COLEGIO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS DEL ESTADO DE CHIAPAS",
+                                  "CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE CHIAPAS",
+                                  "CONTRALORÍA GENERAL DE GOBIERNO",
+                                  "ENTRO ESTATAL DE PREVENCIÓN SOCIAL DE LA VIOLENCIA Y PARTICIPACIÓN CIUDADANA",
+                                  "INSTITUTO DE PROTECCION CIVIL PARA EL MANEJO INTEGRAL DE RIESGOS DE DESASTRES DEL ESTADO DE CHIAPAS",
+                                  "INSTITUTO DE RECONVERSION PRODUCTIVA Y BIOENERGETICOS",
+                                  "INSTITUTO DE SALUD",
+                                  "INSTITUTO DEL CAFÉ DE CHIAPAS",
+                                  "MUNICIPIO DE TAPACHULA CHIAPAS",
+                                  "MUNICIPIO DE TUXTLA GUTIÉRREZ",
+                                  "PODER JUDICIAL DEL ESTADO DE CHIAPAS",
+                                  "SECRETARIA DE EDUCACION",
+                                  "SECRETARIA DE HACIENDA",
+                                  "SECRETARIA DE MEDIO AMBIENTE, VIVIENDA E HISTORIA NATURAL",
+                                  "SECRETARIA DE SALUD",
+                                  "SECRETARIA DE SEGURIDAD PUBLICA DEL ESTADO DE CHIAPAS",
+                                  "SECRETARIA DEL CAMPO",
+                                  "SECRETARÍA DE ADMINISTRACIÓN",
+                                  "SECRETARÍA DE TRANSPORTES",
+                                  "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE CHIAPAS",];
+      organizationValue = gobiernoEstadoChiapas;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE MEXICO"){
+      var gobiernoEstadoMexico=["COLEGIO DE EDUCACIÓN PROFESIONAL TÉCNICA DEL ESTADO DE MÉXICO (CONALEP ESTADO DE MÉXICO)",
+                                "CONSEJO MEXIQUENSE DE CIENCIA Y TECNOLOGIA",
+                                "HOSPITAL PARA EL NILO",
+                                "INSTITUTO DE SALUD DEL ESTADO DE MEXICO",
+                                "INSTITUTO DE SALUD DEL ESTADO DE MÉXICO",
+                                "INSTITUTO DE SEGURIDAD SOCIAL DEL ESTADO DE MEXICO Y MUNICIPIOS",
+                                "INSTITUTO ESTATAL PARA EL DESARROLLO DE LA SEGURIDAD EN EL TRABAJO",
+                                "INSTITUTO MATERNO INFANTIL DEL ESTADO DE MEXICO",
+                                "INSTITUTO MEXIQUENSE DE LA PIROTECNIA",
+                                "INSTITUTO SUPERIOR DE CIENCIAS DE LA EDUCACION DEL ESTADO DE MEXICO",
+                                "MUNICIPIO DE METEPEC",
+                                "MUNICIPIO DE TEMASCALCINGO",
+                                "MUNICIPIO DE TOLUCA",
+                                "PODER JUDICIAL",
+                                "SECRETARIA DE DESARROLLO AGROPECUARIO",
+                                "SECRETARIA DE EDUCACION, CULTURA Y BIENESTAR SOCIAL",
+                                "SECRETARIA DE FINANZAS",
+                                "SECRETARÍA DE SALUD",
+                                "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE MEXICO",];
+      organizationValue = gobiernoEstadoMexico;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE VERACRUZ"){
+      var gobiernoEstadoVeracruz=["CONSEJO DEL SISTEMA VERACRUZANO DEL AGUA",
+                                  "CONSEJO VERACRUZANO DE INVESTIGACIÓN CIENTÍFICA Y DESARROLLO TECNOLÓGICO",
+                                  "INSTITUTO SUPERIOR DE MUSICA DEL ESTADO DE VERACRUZ-LLAVE",
+                                  "MUNICIPIO DE XALAPA",
+                                  "SECRETARIA DE COMUNICACIONES",
+                                  "SECRETARIA DE EDUCACION DEL ESTADO DE VERACRUZ",
+                                  "SECRETARIA DE EDUCACION Y CULTURA",
+                                  "SECRETARÍA DE FINANZAS Y PLANEACIÓN",
+                                  "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE VERACRUZ",
+                                  "SERVICIOS DE SALUD DE VERACRUZ",];
+      organizationValue = gobiernoEstadoVeracruz;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE QUINTANA ROO"){
+      var gobiernoEstadoQuintanaRoo=["COMISION DE AGUA POTABLE Y ALCANTARILLADO DEL ESTADO DE QUINTANA ROO",
+                                      "CONSEJO ESTATAL DE POBLACION DE QUINTANA ROO",
+                                      "CONSEJO QUINTANARROENSE DE CIENCIA Y TECNOLOGIA",
+                                      "INSTITUTO QUINTANARROENSE DE LA MUJER",
+                                      "MUNICIPIO DE BENITO JUAREZ",
+                                      "SECRETARIA DE DESARROLLO AGROPECUARIO RURAL E INDIGENA",
+                                      "SECRETARIA DE DESARROLLO ECONÓMICO",
+                                      "SECRETARIA DE FINANZAS Y PLANEACION",
+                                      "SECRETARÍA DE CULTURA",
+                                      "SECRETARÍA DE DESARROLLO URBANO Y MEDIO AMBIENTE",
+                                      "SERVICIOS EDUCATIVOS DE QUINTANA ROO",
+                                      "SERVICIOS ESTATALES DE SALUD QUINTANA ROO",
+                                      "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE BENITO JUÁREZ, QUINTANA ROO."];
+      organizationValue = gobiernoEstadoQuintanaRoo;
+    }
+    if(organizationValue == "CENTRO DE INVESTIGACION Y TECNOLOGIA EN CACTUS AC"){
+      var centroTEcnologiaCactus=[" "];
+      organizationValue = centroTEcnologiaCactus;
+    }
+    if(organizationValue == "ORGANIZACION PARA LA CONSERVACION ESTUDIO Y ANALISIS DE LA NATURALEZA AC"){
+      var organizacionCOnservacionEstudio=[" "];
+      organizationValue = organizacionCOnservacionEstudio;
+    }
+    if(organizationValue == "SOCIEDAD ASTRONOMICA JUARENSE AC"){
+      var sociedadAstronomia=[" "];
+      organizationValue = sociedadAstronomia;
+    }
+     if(organizationValue == "INSTITUTO DE LA NATURALEZA Y SOCIEDAD DE OAXACA"){
+      var insitutoNaturalezSociedad=[" "];
+      organizationValue = insitutoNaturalezSociedad;
+    }
+     if(organizationValue == "CENTRO DE INVESTIGACION Y DESARROLLO DE LA PRODUCCION HORTOFRUTICULA Y DE PLANTACIONES AGROINDUSTRIALES DEL ESTADO DE CHIAPAS COPLANTA"){
+      var centroProduccionPlantaciones=[" "];
+      organizationValue = centroProduccionPlantaciones;
+    }
+     if(organizationValue == "INSTITUTO DE ALERGIAS Y AUTOINMUNIDAD DR MAXIMILIANO RUIZ CASTANEDA AC"){
+      var insitutioAlergias=[" "];
+      organizationValue = insitutioAlergias;
+    }
+     if(organizationValue == "INSTITUTO DE INVESTIGACIONES LEGISLATIVAS DEL H CONGRESO DEL ESTADO DE SONORA"){
+      var institutoinvestigacionesLegislativas=[" "];
+      organizationValue = institutoinvestigacionesLegislativas;
+    }
+     if(organizationValue == "CONSEJO DE DESARROLLO TECNOLOGICO Y CIENTIFICO DE NUEVO LEON FIDEICOMISO"){
+      var consejoCientificoNuevoLeon=[" "];
+      organizationValue = consejoCientificoNuevoLeon;
+    }
+     if(organizationValue == "CAMARA DE LA INDUSTRIA DEL CALZADO DEL ESTADO DE GUANAJUATO"){
+      var camaraIndustrialCalzado=[" "];
+      organizationValue = camaraIndustrialCalzado;
+    }
+     if(organizationValue == "INSTITUTO DE CAPACITACION PARA EL TRABAJO DEL EDO DE HIDALGO"){
+      var insitutoCapacitacionTrabajo=[" "];
+      organizationValue = insitutoCapacitacionTrabajo;
+    }
+     if(organizationValue == "COMISION FORESTAL DEL ESTADO DE MICHOACAN"){
+      var comisionForestalEstado=[" "];
+      organizationValue = comisionForestalEstado;
+    }
+    if(organizationValue == "SECRETARIA DE PLANEACION DEL DESARROLLO Y GASTO PUBLICO"){
+      var secratariaPlaneacion=[" "];
+      organizationValue = secratariaPlaneacion;
+    }
+     if(organizationValue == "INSTITUTO DE ECOLOGIA Y MEDIO AMBIENTE DE ZACATECAS"){
+      var institutoEcologiaZacatecas=[" "];
+      organizationValue = institutoEcologiaZacatecas;
+    }
+    if(organizationValue == "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA TAMAULIPAS"){
+      var sistemaIntegralTamaulipas=[" "];
+      organizationValue = sistemaIntegralTamaulipas;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE BAJA CALIFORNIA"){
+      var gobiernoEstadoBajaCalifornia=["COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE BAJA CALIFORNIA",
+                                        "COMISION ESTATAL DE ENERGIA DE BAJA CALIFORNIA",
+                                        "COMISIÓN ESTATAL DE SERVICIOS PÚBLICOS DE TIJUANA",
+                                        "CONSEJO ESTATAL DE CIENCIA E INNOVACIÓN TECNOLÓGICA",
+                                        "DIRECCION DE CONTROL Y EVALUACION GUBERNAMENTAL",
+                                        "GOBIERNO MUNICIPAL ENSENADA",
+                                        "INSTITUTO DE SERVICIOS DE SALUD PUBLICA DEL ESTADO DE BC",
+                                        "INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION DE ENSENADA",
+                                        "INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION URBANA DEL MUNICIPIO DE MEXICALI",
+                                        "MUNICIPIO DE TIJUANA",
+                                        "SECRETARIA DE DESARROLLO ECONÓMICO",
+                                        "SECRETARIA DE EDUCACION Y BIENESTAR SOCIAL CONSEJO BAJACALIFORNIANO",
+                                        "SECRETARIA DE INFRAESTRUCTURA Y DESARROLLO URBANO",
+                                        "SECRETARIA DE SEGURIDAD PUBLICA DEL ESTADO DE BAJA CALIFORNIA"];
+      organizationValue = gobiernoEstadoBajaCalifornia;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE BAJA CALIFORNIA SUR"){
+      var gobiernoEstadoBajaCaliforniaSur=["CONSEJO SUDCALIFORNIANO DE CIENCIA Y TECNOLOGIA",
+                                            "FONDO SOCIAL PARA EL DESARROLLO DE BAJA CALIFORNIA SUR",
+                                            "MUNICIPIO DE LA PAZ",
+                                            "MUNICIPIO DE LOS CABOS",
+                                            "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA SUR"];
+      organizationValue = gobiernoEstadoBajaCaliforniaSur;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE CAMPECHE"){
+      var gobiernoEstadoCampeche=["COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE CAMPECHE",
+                                  "CONSEJO ESTATAL DE INVESTIGACION CIENTIFICA Y DESARROLLO TECNOLOGICO DE CAMPECHE",
+                                  "FUNDACION PABLO GARCIA",
+                                  "MUNICIPIO DEL CARMEN CAM",
+                                  "SECRETARIA DE CULTURA DE CAMPECHE",
+                                  "SECRETARIA DE FOMENTO INDUSTRIAL Y COMERCIAL",
+                                  "SECRETARIA DE MEDIO AMBIENTE Y APROVECHAMIENTO SUSTENTABLE",
+                                  "SECRETARIA DE SALUD",
+                                  "TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE CAMPECHE"];
+      organizationValue = gobiernoEstadoCampeche;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE COAHUILA"){
+      var gobiernoEstadoCoahuila=["CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE COAHUILA",
+                                  "MUNICIPIO DE SALTILLO COAH.",
+                                  "SECRETARIA DE EDUCACION Y CULTURA",
+                                  "SECRETARIA DE FINANZAS DEL GOBIERNO DEL ESTADO",
+                                  "SECRETARIA DE MEDIO AMBIENTE DE COAHUILA",
+                                  "SECRETARIA DE OBRAS PUBLICAS Y TRANSPORTE DEL ESTADO DE COAHUILA",
+                                  "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE COAHUILA"];
+      organizationValue = gobiernoEstadoCoahuila;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE CHIHUAHUA"){
+      var gobiernoEstadoChiuah=["BENEMERITA CENTENARIA ESCUELA NORMAL DEL ESTADO PROFESOR LUIS URIAS BELDERRAIN",
+                                "COMISION ESTATAL DE VIVIENDA, SUELO E INFRAESTRUCTURA DEL ESTADO DE CHIHUAHUA",
+                                "CONSEJO ESTATAL DE CIENCIA, TECNOLOGIA E INNOVACION DE CHIHUAHUA",
+                                "FISCALIA GENERAL DEL ESTADO DE CHIHUAHUA",
+                                "H. CONGRESO DEL ESTADO DE CHIHUAHUA",
+                                "HOSPITAL GENERAL DE CHIHUAHUA",
+                                "INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION",
+                                "INSTITUTO MUNICIPAL DE PLANEACION",
+                                "MUNICIPIO DE CHIHUAHUA",
+                                "MUNICIPIO DE DELICIAS",
+                                "PATRONATO PARA EL APOYO A LA INVESTIGACION Y FOMENTO AGRICOLA DEL DISTRITO DE DESARROLLO RURAL 013, A.C.",
+                                "PROMOTORA DE LA INDUSTRIA CHIHUAHUENSE",
+                                "SECRETARIA DE ECONOMIA",
+                                "SECRETARIA DE PLANEACIÓN Y EVALUACIÓN",
+                                "SECRETARIA DE SALUD",
+                                "SECRETARÍA DE EDUCACIÓN, CULTURA Y DEPORTE",
+                                "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE CHIHUAHUA",
+                                "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DE CHIHUAHUA"];
+      organizationValue = gobiernoEstadoChiuah;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE DURANGO"){
+      var gobiernoEstadoDurango=["AYUNTAMIENTO DEL MUNICIPIO DE DURANGO",
+                                  "BEBELECHE, MUSEO INTERACTIVO DE DURANGO",
+                                  "CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE DURANGO",
+                                  "GOBIERNO DEL ESTADO DE DURANGO / SECRETARIA DE DESARROLLO ECONOMICO",
+                                  "MUNICIPIO DE GOMEZ PALACIO",
+                                  "SECRETARÍA DE EDUCACIÓN DEL ESTADO DE DURANGO",
+                                  "SERVICIOS DE SALUD DE DURANGO",];
+      organizationValue = gobiernoEstadoDurango;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE GUERRERO"){
+      var gobiernoEstadoGuerrero=["AUDITORIA GENERAL DE ESTADO",
+                                  "CONSEJO DE CIENCIA, TECNOLOGIA E INNOVACIÓN DEL ESTADO DE GUERRERO",
+                                  "EL HOSPITAL DE LA MADRE Y EL NIÑO GUERRENSE",
+                                  "LA AVISPA MUSEO INTERACTIVO ESTABLECIMIENTO PÚBLICO DE BIENESTAR SOCIAL",
+                                  "PROCURADURIA DE PROTECCION ECOLOGICA",
+                                  "SECRETARIA DE AGRICULTURA Y RECURSOS HIDRAULICOS",
+                                  "SECRETARIA DE EDUCACION GUERRERO",
+                                  "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE GUERRERO",
+                                  "SERVICIOS ESTATALES DE SALUD DE GUERRERO",
+                                  "SERVICIOS PARA EL DESARROLLO SOCIAL, A.C."];
+      organizationValue = gobiernoEstadoGuerrero;
+    }
+      if(organizationValue == "GOBIERNO DEL ESTADO DE HIDALGO"){
+      var gobiernoEstadoHidalgo=["COMISION DE DERECHOS HUMANOS DEL ESTADO DE HIDALGO",
+                                  "CONSEJERÍA JURÍDICA DEL GOBERNADOR DEL ESTADO DE HIDALGO",
+                                  "CONSEJO DE CIENCIA, TECNOLOGÍA E INNOVACIÓN DE HIDALGO",
+                                  "CONSEJO ESTATAL PARA LA CULTURA Y LAS ARTES",
+                                  "CONSEJO RECTOR DE PACHUCA CIUDAD DEL CONOCIMIENTO Y LA CULTURA",
+                                  "DIRECCIÓN DE DEFENSORIA DE OFICIO",
+                                  "INSTITUTO DE ESTUDIOS LEGISLATIVOS DEL CONGRESO DEL ESTADO LIBRE Y SOBERANO DE HIDALGO",
+                                  "INSTITUTO DE PROFESIONALIZACIÓN E INVESTIGACIONES JURÍDICAS DEL PODER JUDICIAL DEL ESTADO DE HIDALGO",
+                                  "INSTITUTO HIDALGUENSE DE COMPETITIVIDAD EMPRESARIAL",
+                                  "INSTITUTO MUNICIPAL DE INVESTIGACIÓN Y PLANEACIÓN",
+                                  "MUSEO INTERACTIVO PARA LA NIÑEZ Y LA JUVENTUD HIDALGUENSE EL REHILETE",
+                                  "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE HIDALGO",
+                                  "SERVICIOS DE SALUD DE HIDALGO",
+                                  "SERVICIOS DE SALUD DE HIDALGO",
+                                  "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL ESTADO DE HIDALGO",
+                                  "TRIBUNAL ELECTORAL DEL ESTADO DE HIDALGO",];
+      organizationValue = gobiernoEstadoHidalgo;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE MICHOACAN"){
+      var gobiernoEstadoMichoacana=["AGENCIA ESTATAL DE ATRACCIÓN DE INVERSIONES Y PROYECTOS ESTRATÉGICOS DEL ESTADO DE MICHOACÁN DE OCAMPO",
+                                    "CENTRO ESTATAL PARA EL DESARROLLO MUNICIPAL",
+                                    "COMISIÓN ESTATAL DEL AGUA Y GESTIÓN DE CUENCAS",
+                                    "COMISIÓN FORESTAL DEL ESTADO",
+                                    "CONGRESO DEL ESTADO DE MICHOACÁN DE OCAMPO",
+                                    "CONSEJO ESTATAL DE CIENCIA, TECNOLOGÍA E INNOVACIÓN",
+                                    "FIDEICOMISO FONDO ESTATAL DE CIENCIA Y TECNOLOGIA",
+                                    "H. AYUNTAMIENTO CONSTITUCIONAL DE IXTLAN",
+                                    "INSTITUTO PARA LA TRANSPARENCIA Y ACCESO A LA INFORMACION PUBLICA DEL ESTADO DE MICHOACAN",
+                                    "PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE MICHOACAN",
+                                    "SECRETARIA DE DESARROLLO SOCIAL",
+                                    "SECRETARIA DE EDUCACIÓN DEL ESTADO",
+                                    "SECRETARIA DE LA MUJER",
+                                    "SECRETARIA DE PLANEACION Y DESARROLLO ESTATAL",
+                                    "SECRETARIA DE TURISMO",
+                                    "SECRETARÍA DE DESARROLLO ECONÓMICO DEL ESTADO DE MICHOACÁN",
+                                    "SECRETARÍA DE GOBIERNO",
+                                    "SECRETARÍA DE POLÍTICA SOCIAL",
+                                    "SECRETARÍA PARTICULAR DEL C. GOBERNADOR",
+                                    "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE MICHOACAN",
+                                    "SERVICIOS DE SALUD DE MICHOACAN",];
+      organizationValue = gobiernoEstadoMichoacana;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE NAYARIT"){
+      var gobiernoEstadoNayarit=["CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE NAYARIT",
+                                  "PROCURADURIA GENERAL DE JUSTICIA",
+                                  "SECRETARIA DE DESARROLLO ECONOMICO",
+                                  "SECRETARIA DE EDUCACION PUBLICA",
+                                  "SECRETARIA DE FINANZAS",
+                                  "SECRETARIA DE LA CONTRALORIA GENERAL",
+                                  "SECRETARIA DE PLANEACION",
+                                  "SECRETARIA DE TURISMO",
+                                  "SECRETARIA GENERAL DE GOBIERNO",
+                                  "SECRETARÍA DE OBRAS PÚBLICAS DEL ESTADO DE NAYARIT"];
+      organizationValue = gobiernoEstadoNayarit;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE NUEVO LEON"){
+      var gobiernoEstadoNuevoLeon=["ARCHIVO GENERAL DEL ESTADO DE NUEVO LEON",
+                                      "CENTRO DE INVESTIGACIONES HISTORICAS Y CULTURALES MUSEO AMPARO, A.C.",
+                                      "COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE NUEVO LEON",
+                                      "CONGRESO DEL ESTADO DE NUEVO LEÓN",
+                                      "COORDINACIÓN DE CIENCIA Y TECNOLOGÍA DE NUEVO LEÓN",
+                                      "ESCUELA DE LICENCIATURA EN CIENCIAS DE LA EDUCACION",
+                                      "INSTITUTO DE DEFENSORÍA PÚBLICA DE NUEVO LEÓN",
+                                      "INSTITUTO DE INNOVACION Y TRANSFERENCIA DE TECNOLOGIA DE NUEVO LEON",
+                                      "INSTITUTO DE INVESTIGACION, INNOVACIÓN Y ESTUDIOS DE POSGRADO PARA LA EDUCACIÓN DEL ESTADO DE NUEVO LEÓN",
+                                      "INSTITUTO DEL AGUA DEL ESTADO DE NUEVO LEÓN, O.P.D.",
+                                      "MUNICIPIO DE LA CIUDAD DE MONTERREY",
+                                      "MUNICIPIO DE LINARES NUEVO LEON",
+                                      "MUNICIPIO GUADALUPE NUEVO LEON",
+                                      "MUNICIPIO SAN NICOLAS DE LOS GARZA",
+                                      "PODER JUDICIAL DEL ESTADO DE NUEVO LEON",
+                                      "SECRETARÍA DE EDUCACIÓN DEL ESTADO DE NUEVO LEÓN",
+                                      "SECRETARÍA GENERAL DE GOBIERNO",
+                                      "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE NUEVO LEON",
+                                      "SERVICIOS DE SALUD DE NUEVO LEON"];
+      organizationValue = gobiernoEstadoNuevoLeon;
+    }
+      if(organizationValue == "GOBIERNO DEL ESTADO DE OAXACA"){
+      var gobiernoEstadoOaxaca=["CENTRO DE DISEÑO DE OAXACA",
+                                "COMISION ESTATAL DE ARBITRAJE MEDICO DE OAXACA",
+                                "CONSEJO ESTATAL PARA LA PREVENCIÓN Y CONTROL DEL SIDA (COESIDA) OAXACA",
+                                "CONSEJO OAXAQUEÑO DE CIENCIA Y TECNOLOGIA",
+                                "COORDINACIÓN DE TECNOLOGÍAS DE LA INFORMACIÓN",
+                                "COORDINACIÓN GENERAL DE EDUCACIÓN MEDIA SUPERIOR, SUPERIOR, CIENCIA Y TECNOLOGÍA",
+                                "INSTITUTO DE LA JUVENTUD OAXAQUEÑA",
+                                "INSTITUTO DE LA MUJER OAXAQUEÑA",
+                                "INSTITUTO DEL PATRIMONIO CULTURAL DEL ESTADO DE OAXACA",
+                                "INSTITUTO ESTATAL DE EDUCACION PUBLICA DE OAXACA",
+                                "JARDIN ETNOBOTÁNICO DEL CENTRO CULTURAL SANTO DOMINGO",
+                                "MUNICIPIO DE OAXACA DE JUAREZ",
+                                "SECRETARIA DE SALUD",
+                                "SECRETARÍA DE ADMINISTRACIÓN",
+                                "SECRETARÍA DE ECONOMÍA",
+                                "SECRETARÍA DE FINANZAS",
+                                "SERVICIOS DE SALUD DE OAXACA"];
+      organizationValue = gobiernoEstadoOaxaca;
+    }
+      if(organizationValue == "GOBIERNO DEL ESTADO DE PUEBLA"){
+      var gobiernoEstadoPuebla=["COLEGIO DE EDUCACIÓN PROFESIONAL TÉCNICA DEL ESTADO DE PUEBLA",
+                                "CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE PUEBLA",
+                                "CONSEJO ESTATAL DE POBLACION DEL ESTADO DE PUEBLA",
+                                "MUNICIPIO DE SAN PEDRO CH",
+                                "SECRETARIA DE DESARROLLO RURAL GOBIERNO DEL ESTADO DE PUEBLA",
+                                "SECRETARÍA DE COMPETITIVIDAD, TRABAJO Y DESARROLLO ECONÓMICO",
+                                "SECRETARÍA DE DESARROLLO ECONÓMICO",
+                                "SECRETARÍA DE INFRAESTRUCTURA",
+                                "SECRETARÍA DEL MEDIO AMBIENTE Y RECURSOS NATURALES DEL ESTADO DE PUEBLA",
+                                "SERVICIOS DE SALUD DEL ESTADO PUEBLA"];
+      organizationValue = gobiernoEstadoPuebla;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE SAN LUIS POTOSI"){
+      var gobiernoEstadoSanLuis=["CENTRO POTOSINO DE TECNOLOGIA EDUCATIVA",
+                                  "CONSEJO ESTATAL DE POBLACION DE SAN LUIS POTOSI",
+                                  "CONSEJO POTOSINO DE CIENCIA Y TECNOLOGIA",
+                                  "HOSPITAL CENTRAL IGNACIO MORONES PRIETO",
+                                  "PROMOTORA DEL ESTADO DE SAN LUIS POTOSÍ",
+                                  "SECRETARIA DE DESARROLLO AGROPECUARIO Y RECURSOS HIDRAULICOS DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI",
+                                  "SECRETARIA DE ECOLOGIA Y GESTION AMBIENTAL DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI",
+                                  "SECRETARIA DE EDUCACION DEL GOBIERNO DEL ESTADO",
+                                  "SECRETARIA DE TURISMO DEL ESTADO DE SAN LUIS POTOSI",
+                                  "SECRETARÍA DE DESARROLLO ECONÓMICO DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI",
+                                  "SERVICIOS DE SALUD DE SAN LUIS POTOSI",
+                                  "SISTEMA MUNICIPAL PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE MATEHUALA"];
+      organizationValue = gobiernoEstadoSanLuis;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE SINALOA"){
+      var gobiernoEstadoSinaloa=["CENTRO DE CIENCIAS DE SINALOA",
+                                  "CENTRO ESTATAL DE INVESTIGACIÓN Y DESARROLLO EDUCATIVO DE SINALOA",
+                                  "COMISION ESTATAL DE ENERGIA DE SINALOA",
+                                  "CONSEJO DE CIENCIA Y TECNOLOGIA DE SINALOA",
+                                  "CONSEJO PARA EL DESARROLLO ECONOMICO DE SINALOA",
+                                  "COORDINACIÓN GENERAL DE DESARROLLO TECNOLÓGICO",
+                                  "EL COLEGIO DE SINALOA",
+                                  "EL COLEGIO DE SINALOA, A.C.",
+                                  "HOSPITAL CIVIL DE CULIACAN",
+                                  "HOSPITAL GENERAL DE ESCUINAPA",
+                                  "HOSPITAL GENERAL DE GUASAVE",
+                                  "HOSPITAL GENERAL DE LOS MOCHIS",
+                                  "HOSPITAL GENERAL DE MAZATLAN DR. MARTINIANO CARBAJAL",
+                                  "HOSPITAL PEDIATRICO DE SINALOA DR. RIGOBERTO AGUILAR PICO",
+                                  "HOSPITAL PEDIATRICO DE SINALOA",
+                                  "INSTITUTO DE APOYO A LA INVESTIGACIÓN E INNOVACIÓN",
+                                  "MUNICIPIO DE AHOME",
+                                  "MUNICIPIO DE CULIACÁN",
+                                  "MUNICIPIO DE EL ROSARIO",
+                                  "MUNICIPIO DE ESCUINAPA DE HIDALGO",
+                                  "MUNICIPIO DE MAZATLAN",
+                                  "SECRETARIA DE AGRICULTURA, GANADERIA Y PESCA",
+                                  "SECRETARIA DE AGRICULTURA, GANADERIA, DESARROLLO RURAL, PESCA Y ALIMENTACION",
+                                  "SECRETARIA DE DESARROLLO ECONOMICO",
+                                  "SECRETARÍA DE INNOVACIÓN GUBERNAMENTAL",
+                                  "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE SINALOA",
+                                  "SERVICIOS DE SALUD DE SINALOA"];
+      organizationValue = gobiernoEstadoSinaloa;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE TABASCO"){
+      var gobiernoEstadoTabasco=["CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE TABASCO",
+                                  "HOSPITAL DEL NIÑO DR. RODOLFO NIETO PADRON",
+                                  "HOSPITAL REGIONAL DE ALTA ESPECIALIDAD DR. JUAN GRAHAM CASASÚS",
+                                  "INSTITUTO ESTATAL DE LAS MUJERES",
+                                  "MUSEO INTERACTIVO PAPAGAYO",
+                                  "PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE TABASCO",
+                                  "SECRETARIA DE DESARROLLO AGROPECUARIO, FORESTAL Y PESCA DEL ESTADO DE TABASCO",
+                                  "SECRETARIA DE EDUCACIÓN DEL ESTADO DE TABASCO",
+                                  "SECRETARIA DE SALUD DEL ESTADO DE TABASCO",
+                                  "SECRETARIA DE TURISMO DEL ESTADO DE TABASCO",
+                                  "SECRETARÍA DE ADMINISTRACIÓN",
+                                  "SECRETARÍA DE ENERGÍA, RECURSOS NATURALES Y PROTECCIÓN AMBIENTAL"];
+      organizationValue = gobiernoEstadoTabasco;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE TAMAULIPAS"){
+      var gobiernoEstadoTamaulipas=["COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE TAMAULIPAS",
+                                    "COMISION MUNICIPAL DE AGUA POTABLE Y ALCANTARILLADO DEL MUNICIPIO DE REYNOSA TAMAULIPAS",
+                                    "COMISIÓN ESTATAL PARA LA CONSERVACIÓN Y APROVECHAMIENTO ECONÓMICO DE LA VIDA SILVESTRE EN TAMAULIPAS",
+                                    "CONSEJO TAMAULIPECO DE CIENCIA Y TECNOLOGIA",
+                                    "DIRECCIÓN DE FORMACIÓN Y SUPERACION PROFESIONAL DE LOS DOCENTES",
+                                    "INSTITUTO TAMAULIPECO PARA LA CULTURA Y LAS ARTES",
+                                    "MUNICIPIO DE CD. MADERO, TAMAULIPAS",
+                                    "SECRETARIA DE EDUCACION, CULTURA Y DEPORTE",
+                                    "SECRETARÍA DE EDUCACIÓN DEL ESTADO DE TAMAULIPAS",
+                                    "SECRETARÍA DE SALUD",
+                                    "SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE TAMAULIPAS",
+                                    "SERVICIOS DE SALUD DE TAMAULIPAS"];
+      organizationValue = gobiernoEstadoTamaulipas;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE TLAXCALA"){
+      var gobiernoEstadoTlaxcala=["COMISIÓN DE ACCESO A LA INFORMACIÓN PÚBLICA Y PROTECCIÓN DE DATOS PERSONALES DEL ESTADO DE TLAXCALA",
+                                  "CONTRALORIA DEL EJECUTIVO",
+                                  "FIDEICOMISO COLEGIO DE HISTORIA DE TLAXCALA",
+                                  "SECRETARIA DE SALUD DEL ESTADO",
+                                  "SECRETARÍA DE TURISMO Y DESARROLLO ECONÓMICO"];
+      organizationValue = gobiernoEstadoTlaxcala;
+    }
+    if(organizationValue == "GOBIERNO DEL ESTADO DE ZACATECAS"){
+      var gobiernoEstadoZacatecas=["CONSEJO ZACATECANO DE CIENCIA, TECNOLOGÍA E INNOVACIÓN",
+                                    "SECRETARIA DE DESARROLLO ECONOMICO",
+                                    "SECRETARIA DE EDUCACION Y CULTURA",
+                                    "SERVICIOS DE SALUD DE ZACATECAS"];
+      organizationValue = gobiernoEstadoZacatecas;
+    }
+     if(organizationValue == "INSTITUTO ESTATAL ELECTORAL DE CHIAPAS"){
+      var insitutoElctoralChiapas=[" "];
+      organizationValue = insitutoElctoralChiapas;
+    }
+     if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE JALISCO"){
+      var colegioEstudiosCientificiosJalisco=[" "];
+      organizationValue = colegioEstudiosCientificiosJalisco;
+    }
+    if(organizationValue == "DIRECCION DE INVESTIGACION Y FOMENTO DE LA CULTURA REGIONAL"){
+      var direccioninvestigacionRegional=[" "];
+      organizationValue = direccioninvestigacionRegional;
+    }
+    if(organizationValue == "SECRETARIA DE DESARROLLO SOCIAL DEL DISTRITO FEDERAL"){
+      var secretariaDesarrolloFederal=["DIRECCION GENERAL DE EQUIDAD Y DESARROLLO SOCIAL"];
+      organizationValue = secretariaDesarrolloFederal;
+    }
+    if(organizationValue == "CONGRESO DEL ESTADO DE GUERRERO"){
+      var congresoGuerrero=["AUDITORIA GENERAL DE ESTADO"];
+      organizationValue = congresoGuerrero;
+    }
+    if(organizationValue == "COMISION ESTATAL DE DERECHOS HUMANOS DEL ESTADO DE MEXICO"){
+      var comisionEstatlDerechosHumanaos=[" "];
+      organizationValue = comisionEstatlDerechosHumanaos;
+    }
+    if(organizationValue == "TRIBUNAL ELECTORAL DEL ESTADO DE MEXICO"){
+      var tribunaElectoralEstadoMExico=[" "];
+      organizationValue = tribunaElectoralEstadoMExico;
+    }
+     if(organizationValue == "COMISION ESTATAL DE DERECHOS HUMANOS DE JALISCO"){
+      var comisionEstatalJalisco=["TERCERA VISITADURIA GENERAL"];
+      organizationValue = comisionEstatalJalisco;
+    }  
+    if(organizationValue == "INSTIT SEG SERV SOC TRAB EDO"){
+      var instit=[" "];
+      organizationValue = instit;
+    }
+     if(organizationValue == "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA EN EL ESTADO DE SONORA"){
+      var sistemaParaDesarrolloSonora=[" "];
+      organizationValue = sistemaParaDesarrolloSonora;
+    }
+      if(organizationValue == "COMITE DE FOMENTO Y PROTECCION PECUARIA DEL ESTADO DE MEXICO SC"){
+      var comiteFomentoProteccion=[" "];
+      organizationValue = comiteFomentoProteccion;
+    }
+     if(organizationValue == "COMITE ESTATAL DE SANIDAD ACUICOLA DE SINALOA AC"){
+      var comiteEstatalSinaloa=[" "];
+      organizationValue = comiteEstatalSinaloa;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS DE POSGRADO"){
+      var institutoEstudiosPosgrado=[" "];
+      organizationValue = institutoEstudiosPosgrado;
+    }
+     if(organizationValue == "COMISION NACIONAL DE AREAS NATURALES PROTEGIDAS REGION FRONTERA SUR"){
+      var comisionNacionalRegion=[" "];
+      organizationValue = comisionNacionalRegion;
+    }
+    if(organizationValue == "COMISION PARA EL FOMENTO ECONOMICO DE LAS EMP DEL SECTOR IND AEROESPACIAL COMERCIAL Y DE SERV DEL ESTADO DE QUERETARO"){
+      var comisionFomentoQueretaro=[" "];
+      organizationValue = comisionFomentoQueretaro;
+    }
+     if(organizationValue == "INSTITUTO DE APOYO AL DESARROLLO TECNOLOGICO"){
+      var institutoDesarrolloTecnologico=[" "];
+      organizationValue = institutoDesarrolloTecnologico;
+    }
+    if(organizationValue == "FIDEICOMISO PARA EL DESARROLLO INDUSTRIAL DE TABASCO"){
+      var fideicomisoTabasco=[" "];
+      organizationValue = fideicomisoTabasco;
+    }
+    if(organizationValue == "INSTITUCION D PRUABA EN REGCYT"){
+      var institutoPruaba=[" "];
+      organizationValue = institutoPruaba;
+    }
+    if(organizationValue == "FIDEICOMISO PIAPYME 1O23O BANCOMEXT 1O23O"){
+      var fideicomisoPiapyme=[" "];
+      organizationValue = fideicomisoPiapyme;
+    }
+    if(organizationValue == "HOSPITAL GENERAL O'HORAN SERVICIOS DE SALUD DE YUCATAN"){
+      var hospitalGeneralYucatan=[" "];
+      organizationValue = hospitalGeneralYucatan;
+    }
+     if(organizationValue == "INSTITUTO PARA EL FINANCIAMIENTO DEL ESTADO DE HIDALGO"){
+      var institutoFinanciamientoHidalgo=[" "];
+      organizationValue = institutoFinanciamientoHidalgo;
+    }
+      if(organizationValue == "FARSAMEX"){
+      var farsamex=[" "];
+      organizationValue = farsamex;
+    }
+    if(organizationValue == "INSTITUTO DE EDUCACION MEDIA SUPERIOR DEL DISTRITO FEDERAL"){
+      var institutoDistroFederal=[" "];
+      organizationValue = institutoDistroFederal;
+    }
+     if(organizationValue == "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE VALLE DE SANTIAGO"){
+      var sistemasDesarrolloSantiago=[" "];
+      organizationValue = sistemasDesarrolloSantiago;
+    }
+     if(organizationValue == "CONTRALORIA GENERAL DEL INSTITUTO FEDERAL ELECTORAL"){
+      var controladoraFederalElectoral=[" "];
+      organizationValue = controladoraFederalElectoral;
+    }
+      if(organizationValue == "COMISION NACIONAL FORESTAL BAJA CALIFORNIA"){
+      var comisionForestalBajaCalifornia=[" "];
+      organizationValue = comisionForestalBajaCalifornia;
+    }
+    if(organizationValue == "COMISION DE PESCA DEL ESTADO DE MICHOACAN"){
+      var comisionPescaMichoacan=[" "];
+      organizationValue = comisionPescaMichoacan;
+    }
+     if(organizationValue == "COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE VERACRUZ"){
+      var colegionTecnicaVeracruz=[" "];
+      organizationValue = colegionTecnicaVeracruz;
+    }
+      if(organizationValue == "CENTRO ESTATAL DE TECNOLOGIAS DE INFORMACION Y COMUNICACIONES"){
+      var cenroEstatalComuniaciones=[" "];
+      organizationValue = cenroEstatalComuniaciones;
+    }
+     if(organizationValue == "INSTITUTO MORELENSE DE INFORMACION PUBLICA Y ESTADISTICA"){
+      var institutoMorelenseEstadistica=[" "];
+      organizationValue = institutoMorelenseEstadistica;
+    }
+    if(organizationValue == "TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE HIDALGO"){
+      var tribunalsuperiorJusticiaHidalgo=["SEGUNDA SALA PENAL"];
+      organizationValue = tribunalsuperiorJusticiaHidalgo;
+    }
+    if(organizationValue == "FIDEICOMISO BICENTENARIO NUEVO LEON"){
+      var fideicomisoBicentenario=[" "];
+      organizationValue = fideicomisoBicentenario;
+    }
+    if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE SAN LUIS POTOSI"){
+      var colegioEstudiosCientificosSanLuis=[" "];
+      organizationValue = colegioEstudiosCientificosSanLuis;
+    }
+     if(organizationValue == "COMITE ESTATAL DE SANIDAD VEGETAL DEL ESTADO PUEBLA"){
+      var comiteEstatalSanidad=[" "];
+      organizationValue = comiteEstatalSanidad;
+    }
+      if(organizationValue == "PODER JUDICIAL DEL ESTADO DE SONORA"){
+      var poderJudicialEstaodSonora=[" "];
+      organizationValue = poderJudicialEstaodSonora;
+    }
+    if(organizationValue == "PODER JUDICIAL PARA EL ESTADO DE SONORA"){
+      var poderJudicialParaEstaodSonora=["SUPREMO TRIBUNAL DE JUSTICIA"];
+      organizationValue = poderJudicialParaEstaodSonora;
+    }
+    if(organizationValue == "SUPREMO TRIBUNAL DE JUSTICIA DEL ESTADO DE SONORA"){
+      var supremoTribunal=[" "];
+      organizationValue = supremoTribunal;
+    }
+    if(organizationValue == "ACADEMIA VERACRUZANA DE LAS LENGUAS INDIGENAS"){
+      var academiaVeracruzana=[" "];
+      organizationValue = academiaVeracruzana;
+    }
+     if(organizationValue == "INSTITUTO DE ALFABETIZACION Y EDUCACION BASICA PARA ADULTOS"){
+      var institutoAlfabetizacion=[" "];
+      organizationValue = institutoAlfabetizacion;
+    }
+    if(organizationValue == "INSTITUTO PARA EL DESARROLLO DE SISTEMAS DE PRODUCCION DEL TROPICO HUMEDO DE TABASCO"){
+      var institutoTropicoHumedo=[" "];
+      organizationValue = institutoTropicoHumedo;
+    }
+     if(organizationValue == "INSTITUTO SINALOENSE DE CULTURA"){
+      var institutoSinaloenseCulura=[" "];
+      organizationValue = institutoSinaloenseCulura;
+    }
+     if(organizationValue == "HHH FUNSION"){
+      var hhh=[" "];
+      organizationValue = hhh;
+    }
+     if(organizationValue == "ESCUELA NORMAL SUPERIOR DEL ESTADO DE MEXICO"){
+      var esceulaNormalMexico=[" "];
+      organizationValue = esceulaNormalMexico;
+    }
+    if(organizationValue == "COMISION ESTATAL PARA LA PLANEACION DE LA EDUCACION SUPERIOR EN MICHOACAN"){
+      var comisionEstatlPlaneacionMichoacan=[" "];
+      organizationValue = comisionEstatlPlaneacionMichoacan;
+    }
+     if(organizationValue == "COMISION ESTATAL DEL AGUA DE GUANAJUATO"){
+      var comisionEstatlGuanajuato=[" "];
+      organizationValue = comisionEstatlGuanajuato;
+    }
+     if(organizationValue == "INSTITUTO DE SERVICIOS DE SALUD PUBLICA DEL ESTADO DE BAJA CALIFORNIA"){
+      var institutoServiciosBajaCali=["HOSPITAL GENERAL DE MEXICALI",
+                                        "HOSPITAL GENERAL DE TIJUANA"];
+      organizationValue = institutoServiciosBajaCali;
+    }
+     if(organizationValue == "CONSEJERIA JURIDICA Y DE SERVICIOS LEGALES"){
+      var consejeriaJuridicaLegales=[" "];
+      organizationValue = consejeriaJuridicaLegales;
+    }
+     if(organizationValue == "PODER JUDICIAL DEL ESTADO DE COLIMA"){
+      var poderJudicialColima=[" "];
+      organizationValue = poderJudicialColima;
+    }
+    if(organizationValue == "H CONGRESO DEL ESTADO LIBRE Y SOBERANO DE TABASCO"){
+      var congresoEstadoLibre=["DIRECCION DE ESTUDIOS LEGISLATIVOS"];
+      organizationValue = congresoEstadoLibre;
+    }
+    if(organizationValue == "HOSPITAL PSIQUIATRICO FRAY BERNARDINO ALVAREZ"){
+      var hospitalFrayAlvarez=[" "];
+      organizationValue = hospitalFrayAlvarez;
+    }
+      if(organizationValue == "SECRETARIA DE DESARROLLO SOCIAL Y REGIONAL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI"){
+      var regionalEstadoSanLuis=[" "];
+      organizationValue = regionalEstadoSanLuis;
+    }
+    if(organizationValue == "SECRETARIA DE SEGURIDAD PUBLICA DEL ESTADO DE SAN LUIS POTOSI"){
+      var seguridadPublicadSanLuis=[" "];
+      organizationValue = seguridadPublicadSanLuis;
+    }
+     if(organizationValue == "SECRETARIA DE CULTURA DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI"){
+      var culturaSanLuis=[" "];
+      organizationValue = culturaSanLuis;
+    }
+    if(organizationValue == "SECRETARIA DE DESARROLLO URBANO VIVIENDA Y OBRAS PUBLICAS"){
+      var urabanoVivienda=["SECRETARIA DE DESARROLLO URBANO Y OBRAS PUBLICAS"];
+      organizationValue = urabanoVivienda;
+    }
+     if(organizationValue == "CONGRESO DEL ESTADO DE COAHUILA DE ZARAGOZA"){
+      var congresoZaragoza=[" "];
+      organizationValue = congresoZaragoza;
+    }
+     if(organizationValue == "PODER JUDICIAL DEL ESTADO DE AGUASCALIENTES"){
+      var poderJudicialAguascalientes=[" "];
+      organizationValue = poderJudicialAguascalientes;
+    }
+    if(organizationValue == "CONGRESO DEL ESTADO DE AGUASCALIENTES"){
+      var congresoAguscalientes=[" "];
+      organizationValue = congresoAguscalientes;
+    }
+     if(organizationValue == "ISET SECRETARIA DEL TRABAJO Y DE LA PREVISON SOCIAL GOBIERNO DEL ESTADO DE MEXICO"){
+      var trabajoPrevisionEstadoMexico=[" "];
+      organizationValue = trabajoPrevisionEstadoMexico;
+    }
+     if(organizationValue == "SECRETARIA DE DESARROLLO SOCIAL COAHUILA"){
+      var secretariaSocialCoahuila=[" "];
+      organizationValue = secretariaSocialCoahuila;
+    }
+    if(organizationValue == "INSTITUTO ELECTORAL DE MICHOACAN"){
+      var institutoElectoralMichoacan=[" "];
+      organizationValue = institutoElectoralMichoacan;
+    }
+    if(organizationValue == "AQUASAVE"){
+      var aquasave=[" "];
+      organizationValue = aquasave;
+    }
+    if(organizationValue == "GEOSCIENCE AUSTRALIA"){
+      var geoscienceAustralia=[" "];
+      organizationValue = geoscienceAustralia;
+    }
+     if(organizationValue == "INSTITUTO ESTATAL DE ACCESO A LA INFORMACION PUBLICA"){
+      var institutoEstatalAccesoPublica=[" "];
+      organizationValue = institutoEstatalAccesoPublica;
+    }
+    if(organizationValue == "COMISION DE TRANSPARENCIA Y ACCESO A LA INFORMACION DEL ESTADO DE NUEVO LEON"){
+      var comisionTransparenciaNuevoLeon=[" "];
+      organizationValue = comisionTransparenciaNuevoLeon;
+    }
+     if(organizationValue == "FUENTES DE FINANCIMARK"){
+      var fuentsFina=[" "];
+      organizationValue = fuentsFina;
+    }
+     if(organizationValue == "MUSEO DE ARTE DE ZAPOPAN"){
+      var museoArtesZapopan=[" "];
+      organizationValue = museoArtesZapopan;
+    }
+    if(organizationValue == "SECRETARIA DE DESAROLLO SOCIAL DEL ESATADO DE COAHUILA"){
+      var secretariaSocialEstadoCoahuila=[" "];
+      organizationValue = secretariaSocialEstadoCoahuila;
+    }
+     if(organizationValue == "ZOOLOGICO DE CHAPULTEPEC"){
+      var zoologicoChapultepec=[" "];
+      organizationValue = zoologicoChapultepec;
+    }
+      if(organizationValue == "INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DEL ESTADO DE BAJA CALIFORNIA"){
+      var institutoMunicipios=[" "];
+      organizationValue = institutoMunicipios;
+    }
+      if(organizationValue == "INSTITUTO ELECTORAL DEL ESTADO DE ZACATECAS"){
+      var insitutoEstadoZacatecas=[" "];
+      organizationValue = insitutoEstadoZacatecas;
+    }
+      if(organizationValue == "CONSEJO ESTATAL DE TURISMO DE PUEBLA"){
+      var consejoTurismoPuebla=[" "];
+      organizationValue = consejoTurismoPuebla;
+    }
+     if(organizationValue == "TELEVISION ESTATAL MEXICANA"){
+      var televisionEstala=[" "];
+      organizationValue = televisionEstala;
+    }
+    if(organizationValue == "COLEGIO DE BACHILLERES DEL ESTADO DE MORELOS"){
+      var colegioBachilleresMorelos=[" "];
+      organizationValue = colegioBachilleresMorelos;
+    }
+    if(organizationValue == "CENTRO ONCOLOGICO ESTATAL ISSEMYM"){
+      var centroOncologicoIssemym=["CENTRO ONCOLOGICO ESTATAL ISSEMYM",
+                                    "CENTRO ONCOLOGICO ESTATAL ISSEMYM"];
+      organizationValue = centroOncologicoIssemym;
+    }
+    if(organizationValue == "INSTITUTO DE TRANSPARENCIA E INFORMACION PUBLICA DEL ESTADO DE JALISCO"){
+      var institutoTrasparencia=[" "];
+      organizationValue = institutoTrasparencia;
+    }
+    if(organizationValue == "HOSPITAL GENERAL DE SOLEDAD"){
+      var hospitalGeneralSoledad=[" "];
+      organizationValue = hospitalGeneralSoledad;
+    }
+    if(organizationValue == "INSTITUTO ESTATAL PARA EL FOMENTO DE LAS ACTIVIDADES ARTESANALES EN CAMPECHE"){
+      var artesanalesCAmpeche=[" "];
+      organizationValue = artesanalesCAmpeche;
+    }
+    if(organizationValue == "HOSPITAL INFANTIL DEL ESTADO DE CHIHUAHUA"){
+      var hospitalInfantilChiuahua=[" "];
+      organizationValue = hospitalInfantilChiuahua;
+    }
+     if(organizationValue == "LEGISLATURA DEL ESTADO DE ZACATECAS"){
+      var legislaturaEstadoZacatecas=[" "];
+      organizationValue = legislaturaEstadoZacatecas;
+    }
+     if(organizationValue == "INSITUTO VERACRUZANO DE LA CULTURA"){
+      var institutoVeracruzanoCultura=[" "];
+      organizationValue = institutoVeracruzanoCultura;
+    }
+     if(organizationValue == "UNIVERSIDADE FEDERAL DE SANTA CATARINA"){
+      var universidadSantaCatariana=[" "];
+      organizationValue = universidadSantaCatariana;
+    }
+    if(organizationValue == "SECRETARIA DE AGRICULTURA GANADERIA PESCA Y ALIMENTACION"){
+      var secretariaAgriculturaPesca=[" "];
+      organizationValue = secretariaAgriculturaPesca;
+    }
+    if(organizationValue == "FEDERAL RESERVE BANK OF NEW YORK"){
+      var federalReseve=[" "];
+      organizationValue = federalReseve;
+    }
+     if(organizationValue == "ESCUELA DE BACHILLERES DIURNA RICARDO FLORES MAGON"){
+      var escuelaBachilleresRicardo=[" "];
+      organizationValue = escuelaBachilleresRicardo;
+    }
+    if(organizationValue == "COLEGIO DE BACHILLERES DEL ESTADO DE YUCATAN"){
+      var colegioBachilleresYucatan=[" "];
+      organizationValue = colegioBachilleresYucatan;
+    }
+    if(organizationValue == "COLEGIO DE BACHILLERES DEL ESTADO DE MEXICO"){
+      var colegioBachilleresEstadoMexico=[" "];
+      organizationValue = colegioBachilleresEstadoMexico;
+    }
+    if(organizationValue == "SECRETARIA DE SALUD DE HIDALGO_HOSPITAL GENERAL PACHUCA_DEPARTAMENTO DE INVESTIGACION"){
+      var hidalgoHospitalGeneral=[" "];
+      organizationValue = hidalgoHospitalGeneral;
+    }
+     if(organizationValue == "INSTITUTO DE SEGURIDAD SOCIAL DEL ESTADO DE TABASCO"){
+      var seguridadSocialEstadoTabasco=[" "];
+      organizationValue = seguridadSocialEstadoTabasco;
+    }
+    if(organizationValue == "PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE BAJA CALIFORNIA"){
+      var procuraduriaGeneralBajaCali=[" "];
+      organizationValue = procuraduriaGeneralBajaCali;
+    }
+      if(organizationValue == "COMISION PARA LA REGULARIZACION DE LA TENENCIA DE LA TIERRA DEL ESTADO DE BAJA CALIFORNIA"){
+      var comisionRegularizacion=[" "];
+      organizationValue = comisionRegularizacion;
+    }
+     if(organizationValue == "SECRETARIA DE PROTECCION CIVIL"){
+      var secretariaProteccionCivil=[" "];
+      organizationValue = secretariaProteccionCivil;
+    }
+     if(organizationValue == "GOBIERNO DEL ESTADO DE MEXICO SECRETARIA DE EDUCACION"){
+      var gobiernoEducacion=[" "];
+      organizationValue = gobiernoEducacion;
+    }
+    if(organizationValue == "ESTACION EXPERIMENTAL INDIO HATUEY"){
+      var estacionExperimentalIndio=[" "];
+      organizationValue = estacionExperimentalIndio;
+    }
+     if(organizationValue == "CENTRO DE ATENCION PARA LA SALUD DE LA MUJER"){
+      var centroAtencionParaMujer=[" "];
+      organizationValue = centroAtencionParaMujer;
+    }
+     if(organizationValue == "SECRETARIA DE COMUNICACIONES Y OBRAS PUBLICAS DEL ESTADO DE DURANGO"){
+      var secretariaComuniacionesDurango=[" "];
+      organizationValue = secretariaComuniacionesDurango;
+    }
+      if(organizationValue == "CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE BAJA CALIFORNIA"){
+      var centroBajaCalifornia=[" "];
+      organizationValue = centroBajaCalifornia;
+    }
+     if(organizationValue == "COMMUNAUTE DE COMUNES DU LOIRON"){
+      var communnauteComunes=[" "];
+      organizationValue = communnauteComunes;
+    }
+    if(organizationValue == "INSTITUTO PARA EL DESARROLLO DE LA SOCIEDAD DEL CONOCIMIENTO DEL ESTADO DE AGUASCALIENTES"){
+      var conocimienoAguascalientes=[" "];
+      organizationValue = conocimienoAguascalientes;
+    }
+    if(organizationValue == "QUERETARIO ING"){
+      var queretaroing=[" "];
+      organizationValue = queretaroing;
+    }
+      if(organizationValue == "SECRETARIA DE DESARROLLO URBANO Y VIVIENDA"){
+      var secretariaDesarrolloFederal=[" "];
+      organizationValue = secretariaDesarrolloFederal;
+    }
+      if(organizationValue == "INSTITUTO DE EDUCACION PARA ADULTOS ZONA SOTSIL"){
+      var institutoEducacionAdultosSotsil=[" "];
+      organizationValue = institutoEducacionAdultosSotsil;
+    }
+     if(organizationValue == "CONSEJO DE LA JUDICATURA DEL ESTADO DE JALISCO"){
+      var consejoJuridicatura=[" "];
+      organizationValue = consejoJuridicatura;
+    }
+     if(organizationValue == "INSTITUTO CHIHUAHUENSE DE SALUD"){
+      var institutoChiuahuanes=[" "];
+      organizationValue = institutoChiuahuanes;
+    }
+    if(organizationValue == "SECRETARIA DE ASENTAMIENTOS Y OBRAS PUBLICAS"){
+      var secretariaAsentamiento=[" "];
+      organizationValue = secretariaAsentamiento;
+    }
+    if(organizationValue == "COMISION ESTATAL DE ENERGIA DE BAJA CALIFORNIA"){
+      var comisionEstatalEnergiaBajaCal=[" "];
+      organizationValue = comisionEstatalEnergiaBajaCal;
+    }
+    if(organizationValue == "INSTITUTO SUPERIOR DE SANIDAD"){
+      var institutoSuperiorSanidad=[" "];
+      organizationValue = institutoSuperiorSanidad;
+    }
+    if(organizationValue == "CONGRESO DEL ESTADOLIBRE Y SOBERANO DE PUEBLA"){
+      var congresoEstadoLibreSobreano=[" "];
+      organizationValue = congresoEstadoLibreSobreano;
+    }
+    if(organizationValue == "COMISION ESTATAL PARA LA ATENCION AL MIGRANTE POBLANO DEL GOBIERNO DEL ESTADO DE PUEBLA"){
+      var comisionEstatalMigrante=[" "];
+      organizationValue = comisionEstatalMigrante;
+    }
+    if(organizationValue == "INSTITUTO DE EVALUACION EDUCATIVA DE NUEVO LEON"){
+      var institutoEvaluacionNuevoleon=[" "];
+      organizationValue = institutoEvaluacionNuevoleon;
+    }
+     if(organizationValue == "CENTENARIA Y BENEMERITA ESCUELA NORMAL DEL ESTADO DE QUERETARO ANDRES BALVANERA"){
+      var centenariaQueretaro=[" "];
+      organizationValue = centenariaQueretaro;
+    }
+     if(organizationValue == "INSTITUTO DE EDUCACION PARA ADULTOS DE CHIAPAS"){
+      var institutoEducacionChiapas=[" "];
+      organizationValue = institutoEducacionChiapas;
+    }
+     if(organizationValue == "TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE VERACRUZ"){
+      var tribunalAdultorChiapas=[" "];
+      organizationValue = tribunalAdultorChiapas;
+    }
+     if(organizationValue == "COMISION ESTATAL ELECTORAL DE NUEVO LEON"){
+      var comisionEstatlNuevoLeon=[" "];
+      organizationValue = comisionEstatlNuevoLeon;
+    }
+      if(organizationValue == "TRIBUNAL DE JUSTICIA ADMINISTRATIVA DEL ESTADO DE MICHOACAN DE OCAMPO"){
+      var tribunalMichoacaOcampo=[" "];
+      organizationValue = tribunalMichoacaOcampo;
+    }
+     if(organizationValue == "PODER JUIDICIAL DEL ESTADO DE YUCATAN"){
+      var poderEstadoYucatan=[" "];
+      organizationValue = poderEstadoYucatan;
+    }
+    if(organizationValue == "SECRETARIA DE DESARROLLO RURAL Y EQUIDAD PARA LAS COMUNIDADES"){
+      var desarolloRuralComunidades=[" "];
+      organizationValue = desarolloRuralComunidades;
+    }
+    if(organizationValue == "INSTITUTO MUNICIPAL DE LA JUVENTUD"){
+      var intitutoJuventudMunicipal=[" "];
+      organizationValue = intitutoJuventudMunicipal;
+    }
+    if(organizationValue == "INSTITUTO ELECTORAL DEL ESTADO DE MEXICO"){
+      var intitutoElectoralEstadoMExico=[" "];
+      organizationValue = intitutoElectoralEstadoMExico;
+    }
+     if(organizationValue == "GOBIERNO DE CANADA"){
+      var gobiernoCanada=[" "];
+      organizationValue = gobiernoCanada;
+    }
+     if(organizationValue == "INSTITUTO ESTATAL ELECTORAL DE HIDALGO"){
+      var estatlEectoralHidalgo=[" "];
+      organizationValue = estatlEectoralHidalgo;
+    }
+     if(organizationValue == "MUSEO JOSE MARIA VELASCO"){
+      var museoJoseMariaVelesaz=[" "];
+      organizationValue = museoJoseMariaVelesaz;
+    }
+    if(organizationValue == "SECRETARIA DE CONSTRUCCION DESARROLLO URBANO Y VIVIENDA DEL ESTADO DE TLAXCALA"){
+      var secretariaConstruccionTlaxcala=[" "];
+      organizationValue = secretariaConstruccionTlaxcala;
+    }
+    if(organizationValue == "ESCUELA PREPARATORIA FEDERAL POR COOPERACION VALENTIN GOMEZ FARIAS"){
+      var escuelaPreparatoriaCooperacion=[" "];
+      organizationValue = escuelaPreparatoriaCooperacion;
+    }
+    if(organizationValue == "H AYUNTAMIENTO DE CHAPANTONGO HIDALGO"){
+      var ayuntaminetoChapatongo=[" "];
+      organizationValue = ayuntaminetoChapatongo;
+    }
+    if(organizationValue == "INSTITUTO DE VIVIENDA DEL ESTADO DE GUANAJUATO"){
+      var viviendaGuanajuato=[" "];
+      organizationValue = viviendaGuanajuato;
+    }
+    if(organizationValue == "DELEGACION CUAUHTEMOC"){
+      var delegacionCuatemoc=[" "];
+      organizationValue = delegacionCuatemoc;
+    }
+    if(organizationValue == "UNIDAD DE INNOVACION GUBERNAMENTAL Y MEJORA REGULATORIA"){
+      var unidadInnovacionRegulatoria=[" "];
+      organizationValue = unidadInnovacionRegulatoria;
+    }
+     if(organizationValue == "SECRETARIA DE DESARROLLO RURAL DEL ESTADO DE PUEBLA"){
+      var secretariaDesarrolloPuebla=[" "];
+      organizationValue = secretariaDesarrolloPuebla;
+    }
+      if(organizationValue == "INSTITUTO DE SEGURIDAD SOCIAL DE LOS TRABAJADORES DEL ESTADO DE YUCATAN ISSTEY"){
+      var institutoSeguridadYucatanIsstey=[" "];
+      organizationValue = institutoSeguridadYucatanIsstey;
+    }
+     if(organizationValue == "CONSEJO ESTATAL DE TRANSPORTE Y VIALIDAD"){
+      var consejoEstatlTransporte=[" "];
+      organizationValue = consejoEstatlTransporte;
+    }
+     if(organizationValue == "INSTITUTO DE CULTURA DE MORELOS"){
+      var institutoCulturaMorelos=["FONDO EDITORIAL"];
+      organizationValue = institutoCulturaMorelos;
+    }
+     if(organizationValue == "SECRETARIA DE COMUNICACIONES DEL ESTADO DE VERACRUZ"){
+      var comuniacionesVeracruz=[" "];
+      organizationValue = comuniacionesVeracruz;
+    }
+    if(organizationValue == "SECRETARIA DE CULURA DE CAMPECHE"){
+      var secretariaCuluraCampche=[" "];
+      organizationValue = secretariaCuluraCampche;
+    }
+    if(organizationValue == "H CONGRESO DEL ESTADO DE YUCATAN"){
+      var hCongresoEsadoYucatan=[" "];
+      organizationValue = hCongresoEsadoYucatan;
+    }
+    if(organizationValue == "CAPITAL EN CRECIMIENTO"){
+      var capitalCrecimiento=[" "];
+      organizationValue = capitalCrecimiento;
+    }
+    if(organizationValue == "INSTITUTO DE TRANSPARENCIA Y ACCESO A LA INFORMACION DE TAMAULIPAS"){
+      var intitutoTransparenciaTamaulipas=[" "];
+      organizationValue = intitutoTransparenciaTamaulipas;
+    }
+    if(organizationValue == "INSTITUTO CHIHUAHUENSE DE EDUCACION PARA LOS ADULTOS"){
+      var institutoEducacionAdultos=[" "];
+      organizationValue = institutoEducacionAdultos;
+    }
+    if(organizationValue == "INSTITUTO DE INVESTIGACIONES LEGISLATIVAS DEL H CONGRESO DEL ESTADO DE SAN LUIS POTOSI"){
+      var investigacionesCongresoSanLuisPotosi=[" "];
+      organizationValue = investigacionesCongresoSanLuisPotosi;
+    }
+     if(organizationValue == "CENTRAL DE ABASTOS IZTAPALAPA"){
+      var centralAbastos=[" "];
+      organizationValue = centralAbastos;
+    }
+     if(organizationValue == "INSTITUTO NACIONAL DE ESTUDIOS SINDICALES Y DE ADMINISTRACION PUBLICA DE LA FSTSE"){
+      var institutoSidicalesPublica=[" "];
+      organizationValue = institutoSidicalesPublica;
+    }
+     if(organizationValue == "SECRETARIA DE COMUNICACIONES Y OBRAS PUBLICAS DEL ESTADO DE MICHOACAN"){
+      var comunicaionesMichoacan=[" "];
+      organizationValue = comunicaionesMichoacan;
+    }
+    if(organizationValue == "FONDO DE INFRAESTRUCTURA PARA EL DESARROLLO INDUSTRIAL DE SINALOA"){
+      var frondoInfrestructura=[" "];
+      organizationValue = frondoInfrestructura;
+    }
+     if(organizationValue == "INSTITUTO DE INVESTIGACIONES LEGISLATIVAS DEL H CONGRESO DEL ESTADO DE ZACATECAS"){
+      var intitutoLEgislativasCongresoZacatecas=[" "];
+      organizationValue = intitutoLEgislativasCongresoZacatecas;
+    }
+     if(organizationValue == "INSTITUTO DE SEGURIDAD SOCIAL DE LOS SERVIDORES PUBLICOS DEL ESTADO DE GUERRERO"){
+      var intitutoSeguridadSocialEstadoGuerrror=[" "];
+      organizationValue = intitutoSeguridadSocialEstadoGuerrror;
+    }
+    if(organizationValue == "UNIDAD DE INTEGRACION EDUCATIVA DE NUEVO LEON"){
+      var unidadIntegracionNuevoLeon=[" "];
+      organizationValue = unidadIntegracionNuevoLeon;
+    }
+     if(organizationValue == "H CONGRESO DEL ESTADO DE VERACRUZ DE IGNACIO DE LA LLAVE"){
+      var congresoVeracruzIgnacio=[" "];
+      organizationValue = congresoVeracruzIgnacio;
+    }
+    if(organizationValue == "INSTITUTO DE PLANEACION DEL ESTADO DE GUANAJUATO"){
+      var intitutoPlaneacionGuanajuato=[" "];
+      organizationValue = intitutoPlaneacionGuanajuato;
+    }
+    if(organizationValue == "NORTH BRISTOL NHS TRUST"){
+      var nothBrisbol=[" "];
+      organizationValue = nothBrisbol;
+    }
+    if(organizationValue == "SECRETARIA DE DESARROLLO ECONOMICO DEL ESTADO DE DURANGO"){
+      var secretariaEconomicoEstadoDurango=[" "];
+      organizationValue = secretariaEconomicoEstadoDurango;
+    }
+     if(organizationValue == "HONORABLE TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE BAJA CALIFORNIA SUR"){
+      var honorableTrubunalBajaCaliSur=[" "];
+      organizationValue = honorableTrubunalBajaCaliSur;
+    }
+     if(organizationValue == "INSTITUTO CHIHUAHUENSE DE LA MUJER"){
+      var institutoChiuahuense=[" "];
+      organizationValue = institutoChiuahuense;
+    }
+     if(organizationValue == "SECRETARIA DE DESARROLLO ECONOMICO DEL ESTADO DE TLAXCALA"){
+      var secretariaEconomicoEstadoTlaxacala=[" "];
+      organizationValue = secretariaEconomicoEstadoTlaxacala;
+    }
+    if(organizationValue == "BACHILLERATO A DISTANCIA DEL GOBIERNO DEL DISTRITO FEDERAL"){
+      var bachilleratoDistanciaFederal=[" "];
+      organizationValue = bachilleratoDistanciaFederal;
+    }
+    if(organizationValue == "INSTITUTO DE CAPACITACION PARA EL TRABAJO DEL ESTADO DE NAYARIT"){
+      var capacitacionTrabajoEstadoNayarit=[" "];
+      organizationValue = capacitacionTrabajoEstadoNayarit;
+    }
+    if(organizationValue == "INSTITUTO JALISCIENCE DE CIENCIAS FORENSES"){
+      var instiutoJalicienseCienciasForences=[" "];
+      organizationValue = instiutoJalicienseCienciasForences;
+    }
+    if(organizationValue == "SERVICIOS DE SALUD DE VERACRUZ"){
+      var servicionsSaludVeracruz=["CENTRO DE ESPECIALIDADES MEDICAS DEL ESTADO DE VERACRUZ DR. RAFAEL LUCIO",
+                                  "HOSPITAL GENERAL DE MISANTLA",
+                                  "HOSPITAL GENERAL TARIMOYA DR. HORACIO DÍAZ CHÁZARO",
+                                  "HOSPITAL REGIONAL DE ALTA ESPECIALIDAD DE VERACRUZ VIRGILIO URIBE",
+                                  "HOSPITAL REGIONAL DE RIO BLANCO",
+                                  "HOSPITAL REGIONAL DE ROZA RICA"];
+      organizationValue = servicionsSaludVeracruz;
+    }
+    if(organizationValue == "UNIVERSIDAD NACIONAL DE CUYO MENDOZA ARGENTINA"){
+      var universidadNacionalCuyoMemndoza=[" "];
+      organizationValue = universidadNacionalCuyoMemndoza;
+    }
+     if(organizationValue == "COMISION DE LOS DERECHOS HUMANOS DEL ESTADO DE PUEBLA"){
+      var comisionDerechosHumanaoEstadoPuebla=[" "];
+      organizationValue = comisionDerechosHumanaoEstadoPuebla;
+    }
+     if(organizationValue == "FABRICA DE POSTES DE YUCATAN SA DE CV"){
+      var fabricaPostesYucatan=[" "];
+      organizationValue = fabricaPostesYucatan;
+    }
+     if(organizationValue == "SECRETARIA DE DESARROLLO SOCIAL DEL ESTADO DE PUEBLA"){
+      var secretariaDesarrllooEstadoPuebla=[" "];
+      organizationValue = secretariaDesarrllooEstadoPuebla;
+    }
+    if(organizationValue == "DELEGACION ESTATAL VERACRUZ"){
+      var delegacionEstatalVeracruz=[" "];
+      organizationValue = delegacionEstatalVeracruz;
+    }
+    if(organizationValue == "CENTENARIO HOSPITAL MIGUEL HIDALGO"){
+      var centenarioHospitalMiguel=[" "];
+      organizationValue = centenarioHospitalMiguel;
+    }
+    if(organizationValue == "H AYUNTAMIENTO CONSTITUCIONAL DE TECUALA"){
+      var ayuntamientoConstitucionalTecuala=[" "];
+      organizationValue = ayuntamientoConstitucionalTecuala;
+    }
+      if(organizationValue == "IMSS UNIDAD DE MEDICINA FAMILIAR CLINICA NO 28"){
+      var imssUnidadclicnica=[" "];
+      organizationValue = imssUnidadclicnica;
+    }
+     if(organizationValue == "IMSS UNIDAD DE MEDICINA FAMILIAR NO 28"){
+      var unidadImssFamiliar=[" "];
+      organizationValue = unidadImssFamiliar;
+    }
+    if(organizationValue == "SECRETARIA DE TURISMO DE PUEBLA"){
+      var secretariaTurismoPuebla=[" "];
+      organizationValue = secretariaTurismoPuebla;
+    }
+      if(organizationValue == "INSTITUTO QUERETANO DE LA MUJER"){
+      var queretanomujer=[" "];
+      organizationValue = queretanomujer;
+    }
+     if(organizationValue == "CONGRESO DEL ESTADO DE SAN LUIS POTOSI"){
+      var congresoEstadoSanLuisPotosi=[" "];
+      organizationValue = congresoEstadoSanLuisPotosi;
+    }
+    if(organizationValue == "PROTECTORA DE BOSQUES DEL ESTADO DE MEXICO PROBOSQUE"){
+      var protectoraBosquesProbosques=[" "];
+      organizationValue = protectoraBosquesProbosques;
+    }
+     if(organizationValue == "SECRETARIA DEL MEDIO AMBIENTE DEL ESTADO DE MEXICO"){
+      var secretariaMedioAmbienteEstadoMExico=[" "];
+      organizationValue = secretariaMedioAmbienteEstadoMExico;
+    }
+     if(organizationValue == "INSTITUTO ESTATAL ELECTORAL CHIHUAHUA"){
+      var insitutiEstatalChiuahua=[" "];
+      organizationValue = insitutiEstatalChiuahua;
+    }
+    if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE VERACRUZ"){
+      var colegioEstudiosTecnologiasVeracruz=[" "];
+      organizationValue = colegioEstudiosTecnologiasVeracruz;
+    }
+     if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO COAHUILA"){
+      var colegioCientificosTEcnologicosCoahuila=[" "];
+      organizationValue = colegioCientificosTEcnologicosCoahuila;
+    }
+     if(organizationValue == "TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE COAHUILA DE ZARAGOZA"){
+      var tribunalSuperiorZaragoza=[" "];
+      organizationValue = tribunalSuperiorZaragoza;
+    }
+     if(organizationValue == "DIF MUNICIPAL DE MAPASTEPEC CHIAPAS"){
+      var municipalMapastepec=[" "];
+      organizationValue = municipalMapastepec;
+    }
+    if(organizationValue == "MINISTERIO DE PLANIFICACION DEL DESARROLLO"){
+      var ministroPlnificacion=[" "];
+      organizationValue = ministroPlnificacion;
+    }
+     if(organizationValue == "CONSEJO ESTATAL PARA LAS CULTURAS Y LAS ARTES DE CHIAPAS"){
+      var consejoEstatlCulturasArtes=["CENTRO DE INVESTIGACIONES SOBRE EL PATRIMONIO CULTURAL"];
+      organizationValue = consejoEstatlCulturasArtes;
+    }
+     if(organizationValue == "SECRETARIA DE DESARROLLO URBANO Y MEDIO AMBIENTE/ GOBIERNO DE TAMAULIPAS/SECRETARIA DE FINANZAS"){
+      var urbanoMedioAmbiente=[" "];
+      organizationValue = urbanoMedioAmbiente;
+    }
+    if(organizationValue == "SECRETARIA DE DESARROLLO URBANO Y ECOLOGIA/SECRETARIA DE FINANZAS/GOBIERNO DE TAMAULIPAS"){
+      var ecologiaFinanzas=[" "];
+      organizationValue = ecologiaFinanzas;
+    }
+    if(organizationValue == "SECRETARIA DE LA CONTRALORIA Y DESARROLLO ADMINISTRATIVO / GOBIERNO DE TAMAULIPAS"){
+      var administrativoGobierno=[" "];
+      organizationValue = administrativoGobierno;
+    }
+    if(organizationValue == "SECRETARIA DE EDUCACION PUBLICA DE VERACRUZ"){
+      var educacionpublicaVeracruz=[" "];
+      organizationValue = educacionpublicaVeracruz;
+    }
+    if(organizationValue == "TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE MORELOS"){
+      var superiorJusticiaEstadoMorelos=[" "];
+      organizationValue = superiorJusticiaEstadoMorelos;
+    }
+    if(organizationValue == "HOSPITAL GENERAL DE CUERNAVACA DR JOSE G PARRES"){
+      var generalCuernavaca=[" "];
+      organizationValue = generalCuernavaca;
+    }
+    if(organizationValue == "RED DE TRASPORTE DE PASAJEROS DEL DF"){
+      var redTranportePasajeros=[" "];
+      organizationValue = redTranportePasajeros;
+    }
+     if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE SONORA"){
+      var colegionCientificosSonora=[" "];
+      organizationValue = colegionCientificosSonora;
+    }
+    if(organizationValue == "561O"){
+      var nuemors=[" "];
+      organizationValue = nuemors;
+    }
+    if(organizationValue == "FIDEICOMISO PARA EL DESARROLLO DE PARQUES Y ZONAS INDUSTRIALES EN EL ESTADO DE MEXICO"){
+      var fireicomisoDesarolloParques=[" "];
+      organizationValue = fireicomisoDesarolloParques;
+    }
+     if(organizationValue == "FEDERACION INDIGENA ECOLOGICA DE CHIAPAS"){
+      var federacionIndigeneEcologica=[" "];
+      organizationValue = federacionIndigeneEcologica;
+    }
+    if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE QUINTANA ROO"){
+      var colegionCientificosQuintanaRoo=[" "];
+      organizationValue = colegionCientificosQuintanaRoo;
+    }
+    if(organizationValue == "INSTITUTO DE LA EDUCACION BASICA DEL ESTADO DE MORELOS"){
+      var insitutoEducacionBasicaEstadoMorelso=[" "];
+      organizationValue = insitutoEducacionBasicaEstadoMorelso;
+    }
+    if(organizationValue == "COMITE ESTATAL DE SANIDAD ACUICOLA DEL ESTADO DE NAYARIT AC"){
+      var comiteEstatalSanidad=[" "];
+      organizationValue = comiteEstatalSanidad;
+    }
+    if(organizationValue == "BENEMERITA ESCUELA NORMAL ESTATAL PROFR JESUS PRADO LUNA"){
+      var benemetriaEscuelaNormal=[" "];
+      organizationValue = benemetriaEscuelaNormal;
+    }
+     if(organizationValue == "CONSEJO CONSULTIVO CIUDADANO DEL ESTADO DE HIDALGO"){
+      var consejoConsultivoEstadoHidalgo=[" "];
+      organizationValue = consejoConsultivoEstadoHidalgo;
+    }
+     if(organizationValue == "SECRETARIA DE DESARROLLO ECONOMICO Y PORTUARIO"){
+      var desarrolloEconomicoPortuario=[" "];
+      organizationValue = desarrolloEconomicoPortuario;
+    }
+    if(organizationValue == "SOS EN COMPUTACION SA DE CV"){
+      var sosComputacion=[" "];
+      organizationValue = sosComputacion;
+    }
+     if(organizationValue == "INSTITUTO DE LA JUVENTUD GUANAJUATENSE"){
+      var insitutoJuventudGuanajuatense=[" "];
+      organizationValue = insitutoJuventudGuanajuatense;
+    }
+      if(organizationValue == "INSTITUTO TECNOLOGICO DE TLAHUAC II"){
+      var insitutoTluhuac=[" "];
+      organizationValue = insitutoTluhuac;
+    }
+    if(organizationValue == "H CONGRESO DEL ESTADO DE COLIMA"){
+      var congresoEstadoColima=[" "];
+      organizationValue = congresoEstadoColima;
+    }
+    if(organizationValue == "CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 91"){
+      var centroBrachilleratoTecnologico=[" "];
+      organizationValue = centroBrachilleratoTecnologico;
+    }
+    if(organizationValue == "SEEVYT SISTEMA ESTATAL PARA LA VIDA Y EL TRABAJO GOBIERNO DEL ESTADO DE GUANAJUATO"){
+      var seeveytSistema=[" "];
+      organizationValue = seeveytSistema;
+    }
+    if(organizationValue == "MINISTERIO DE SALUD Y MEDIA AMBIENTE DE LA PROVINCIA DE SANTA FE"){
+      var ministroSaludMedia=["PROGRAMA PROVINCIAL DE ENFERMEDADES DE TRANSMISIÓN SEXUAL Y SIDA"];
+      organizationValue = ministroSaludMedia;
+    }
+     if(organizationValue == "INSTITUTO DE ARTES VISUALES"){
+      var institutoArtesVisusales=[" "];
+      organizationValue = institutoArtesVisusales;
+    }
+     if(organizationValue == "CONSEJO QUINTANARROENSE DE CIENCIA Y TECNOLOGIA"){
+      var consejoCienciaTecnologia=[" "];
+      organizationValue = consejoCienciaTecnologia;
+    }
+     if(organizationValue == "H CONGRESO DEL ESTADO DE GUANAJUATO"){
+      var congresoEsatdoGunajuato=[" "];
+      organizationValue = congresoEsatdoGunajuato;
+    }
+    if(organizationValue == "CONGRESO DEL ESTADO DE HIDALGO"){
+      var congresoEstadoHidalgo=["ORGANO DE FISCALIZACIÓN DEL ESTADO DE HIDALGO"];
+      organizationValue = congresoEstadoHidalgo;
+    }
+    if(organizationValue == "CONSEJO DE EVALUACION DEL DESARROLLO SOCIAL DEL DISTRITO FEDERAL EVALUA DF"){
+      var consejoEvaluacionDesarrilloSocial=[" "];
+      organizationValue = consejoEvaluacionDesarrilloSocial;
+    }
+     if(organizationValue == "SUPREMO TRIBUNAL DE JUSTICIA DEL ESTADO DE GUANAJUATO"){
+      var supremoTribunalGuanajuato=[" "];
+      organizationValue = supremoTribunalGuanajuato;
+    }
+    if(organizationValue == "PROCURADURIA SOCIAL DEL DISTRITO FEDERAL"){
+      var procuSocualDistrito=[" "];
+      organizationValue = procuSocualDistrito;
+    }
+    if(organizationValue == "COMISION DE FISCALIZACION ELECTORAL"){
+      var comisionFiscalizacion=[" "];
+      organizationValue = comisionFiscalizacion;
+    }
+    if(organizationValue == "INSTITUTO DE FORMACION PARA EL TRABAJO DEL ESTADO DE TABASCO"){
+      var formacionTrabajoEstado=[" "];
+      organizationValue = formacionTrabajoEstado;
+    }
+     if(organizationValue == "COMISION DE DERECHO HUMANOS DEL DISTRITO FEDERAL"){
+      var comisionDerechoHumanosDistrito=[" "];
+      organizationValue = comisionDerechoHumanosDistrito;
+    }
+    if(organizationValue == "CONSEIL GENERAL DE LA SEINE ET MARNE"){
+      var conseilGeneral=[" "];
+      organizationValue = conseilGeneral;
+    }
+    if(organizationValue == "INSTITUTO DE CAPACITACION Y VINCULACION TECNOLOGICA DEL ESTADO DE CHIAPAS"){
+      var capacitacionVinculacion=[" "];
+      organizationValue = capacitacionVinculacion;
+    }
+     if(organizationValue == "SECRETARIA DE EDUCACION EN EL ESTADO DE MICHOACAN"){
+      var secretariaEducacionEsatdo=["SUBSECRETARIA DE EDUCACION MEDIA SUPERIOR Y SUPERIOR"];
+      organizationValue = secretariaEducacionEsatdo;
+    }
+    if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE BAJA CALIFORNIA"){
+      var colegionEstudiosTEcnologicos=[" "];
+      organizationValue = colegionEstudiosTEcnologicos;
+    }
+    if(organizationValue == "INSTITUTO NACIONAL DE INVESTIGACION AGRARIA Y VETERINARIA"){
+      var nacionalinvestigacionesAgraria=[" "];
+      organizationValue = nacionalinvestigacionesAgraria;
+    }
+    if(organizationValue == "LES OFFICES JEUNESSE INTERNATIONAUX DU QUEBEC"){
+      var lesofficces=[" "];
+      organizationValue = lesofficces;
+    }
+     if(organizationValue == "COLEGIO SUPERIOR PARA LA EDUCACION INTERCULTURAL DE OAXACA"){
+      var superiorEducacion=[" "];
+      organizationValue = superiorEducacion;
+    }
+     if(organizationValue == "INSTITUTO MEXICANO DEL SEGURO SOCIAL/CENTRO MEDICO NACIONAL SIGLO XXI/UMAE"){
+      var mexicanoSeguroSocialSiglo=[" "];
+      organizationValue = mexicanoSeguroSocialSiglo;
+    }
+     if(organizationValue == "DIRECCION GENERAL DE TELESECUNDARIAS DE TULANCINGO HIDALGO ZONA 2"){
+      var direccionGeneralTulancingo=[" "];
+      organizationValue = direccionGeneralTulancingo;
+    }
+     if(organizationValue == "DIRECCION GENERAL DE TELESECUNDARIAS DE TULANCINGO ZONA 2"){
+      var direccionGeneralTulancingoZona=[" "];
+      organizationValue = direccionGeneralTulancingoZona;
+    }
+    if(organizationValue == "SECRETARIA DE DESARROLLO E INTEGRACION SOCIAL"){
+      var integracionSocial=[" "];
+      organizationValue = integracionSocial;
+    }
+     if(organizationValue == "SECRETARIA DE SEGURIDAD PUBLICA DEL ESTADO DE CHIHUAHUA"){
+      var seguridadPublicaChiuahua=[" "];
+      organizationValue = seguridadPublicaChiuahua;
+    }
+    if(organizationValue == "COMISION ESTATAL DEL AGUA Y ALCANTARILLADO DE HIDALGO"){
+      var comisionEstatlAguaHidalgo=[" "];
+      organizationValue = comisionEstatlAguaHidalgo;
+    }
+     if(organizationValue == "HOSPITAL PEDIATRICO DE SINALOA"){
+      var hospitalPediatrico=[" "];
+      organizationValue = hospitalPediatrico;
+    }
+     if(organizationValue == "CENTRO DE STUDIOS TECNOLOGICOS INDUSTRIALES Y DE SERVICIOS NO 92"){
+      var centroStudiosTecnologicosServicios=[" "];
+      organizationValue = centroStudiosTecnologicosServicios;
+    }
+    if(organizationValue == "CAM MANUEL LOPEZ DAVILA"){
+      var camManuelLopez=[" "];
+      organizationValue = camManuelLopez;
+    }
+     if(organizationValue == "FEDERATION OF HIDALGO IN CLEARWATER FLORIDA"){
+      var federationHidalgoFlorida=[" "];
+      organizationValue = federationHidalgoFlorida;
+    }
+      if(organizationValue == "PODER JUDICIAL DEL ESTADO DE MICHOACAN"){
+      var poderJudicialEstadoMichoacan=[" "];
+      organizationValue = poderJudicialEstadoMichoacan;
+    }
+     if(organizationValue == "INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION URBANA DE CAJEME"){
+      var municpalInvestigacionCajeme=[" "];
+      organizationValue = municpalInvestigacionCajeme;
+    }
+     if(organizationValue == "CONGRESO DEL ESTADO DE MEXICO"){
+      var congresoEsatdoMexico=[" "];
+      organizationValue = congresoEsatdoMexico;
+    }
+     if(organizationValue == "COMISION DE TELEVISION EDUCATIVA DE SAN LUIS POTOSI XHSLS CANAL 9"){
+      var comisionTelevisonEducativa=[" "];
+      organizationValue = comisionTelevisonEducativa;
+    }
+     if(organizationValue == "BENEMERITA Y CENTENARIA ESCUELA NORMAL DE JALISCO"){
+      var benemeritaCentenaria=[" "];
+      organizationValue = benemeritaCentenaria;
+    }
+    if(organizationValue == "INSTITUTO DE ECOLOGIA DEL ESTADO DE GUANAJUATO"){
+      var ecologiaGuanajuato=[" "];
+      organizationValue = ecologiaGuanajuato;
+    }
+    if(organizationValue == "ESCUELA JUDICIAL DEL TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE ZACATECAS"){
+      var JudicialTribunalSuperior=[" "];
+      organizationValue = JudicialTribunalSuperior;
+    }
+    if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE GUANAJUATO"){
+      var estudiosCientificosGuanajuato=[" "];
+      organizationValue = estudiosCientificosGuanajuato;
+    }
+    if(organizationValue == "HOSPITAL GENERAL DE BOCA DEL RIO DRA ISABEL CARREON GARCIA"){
+      var generalBocaRioDra=[" "];
+      organizationValue = generalBocaRioDra;
+    }
+     if(organizationValue == "HOSPITAL DE LA AMISTAD COREAMEXICO"){
+      var amistadCoreaMexico=[" "];
+      organizationValue = amistadCoreaMexico;
+    }
+     if(organizationValue == "SERVICIOS DE SALUD DE VERACRUZ/HOSPITAL EGINAL DE RIO BLANCO"){
+      var serviciosSaludVeracruzEginal=[" "];
+      organizationValue = serviciosSaludVeracruzEginal;
+    }
+     if(organizationValue == "CONTRALORIA GENERAL DEL ESTADO DE VERACRUZ"){
+      var generalEstadoVeracruz=[" "];
+      organizationValue = generalEstadoVeracruz;
+    }
+    if(organizationValue == "CONTRALORIA GENERAL DEL DF"){
+      var generalDf=[" "];
+      organizationValue = generalDf;
+    }
+
+    /*Instituciones del sector de educacion superior publicas*/
+
+     if(organizationValue == "ARGELANDERINSTITUT FUER ASTRONOMIE"){
+      var fuerAstronomie=[" "];
+      organizationValue = fuerAstronomie;
+    }
+     if(organizationValue == "ATENEO FILOSOFICO AC"){
+      var ateneoFilosofo=[" "];
+      organizationValue = ateneoFilosofo;
+    }
+     if(organizationValue == "BENEMERITA ESCUELA NACIONAL DE MAESTROS"){
+      var benemeritaEscuelaNacional=[" "];
+      organizationValue = benemeritaEscuelaNacional;
+    }
+    if(organizationValue == "BENEMERITA ESCUELA NORMAL DE COAHUILA"){
+      var benemeritaEscuelaNormalCoahuila=[" "];
+      organizationValue = benemeritaEscuelaNormalCoahuila;
+    }
+    if(organizationValue == "BENEMERITA ESCUELA NORMAL VERACRUZANA ENRIQUE C REBSAMEN"){
+      var benemeritaEscuelaNormalVeracruzana=[" "];
+      organizationValue = benemeritaEscuelaNormalVeracruzana;
+    }
+    if(organizationValue == "BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA"){
+      var benemeritaEscuelaNormalAutonoma=["BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA",
+                                          "CENTRO DE INFORMACION DE MEDICAMENTOS",
+                                          "CENTRO DE INVESTIGACIONES EN DISPOSITIVOS SEMI",
+                                          "CENTRO DE INVESTIGACIONES MICROBIOLOGICAS",
+                                          "CENTRO DE TECNOLOGIA EDUCATIVA CTE",
+                                          "CENTRO UNIVERSITARIO DE VINCULACION",
+                                          "CENTRO UNIVERSITARIO PARA LA PREVENCION DE DESASTRES REGIONALES CUPREDER",
+                                          "CIENCIAS DE LA ELECTRONICA",
+                                          "COORDINACION DE INTERCAMBIO ACADEMICO Y RELACIONES INTERNACIONALES",
+                                          "DIRECCION GENERAL DE ESTUDIOS DE POSGRADO",
+                                          "EDUCACION A DISTANCIA",
+                                          "ESCUELA DE ADMINISTRACION DE EMPRESAS",
+                                          "ESCUELA DE ARTES PLASTICAS Y AUDIOVISUALES",
+                                          "ESCUELA DE ARTES",
+                                          "ESCUELA DE BIOLOGIA",
+                                          "ESCUELA DE CIENCIAS DE LA ELECTRONICA",
+                                          "ESCUELA DE INGENIERIA QUIMICA",
+                                          "ESCUELA DE MEDICINA",
+                                          "ESCUELA DE ODONTOLOGIA",
+                                          "ESCUELA DE VETERINARIA Y ZOOTECNIA",
+                                          "FACULTAD DE ADMINISTRACION",
+                                          "FACULTAD DE ARQUITECTURA Y ORDENAMIENTO DEL TERRITORIO",
+                                          "FACULTAD DE ARQUITECTURA",
+                                          "FACULTAD DE CIENCIAS DE LA COMPUTACION",
+                                          "FACULTAD DE CIENCIAS DE LA COMUNICACIÓN",
+                                          "FACULTAD DE CIENCIAS DE LA ELECTRONICA",
+                                          "FACULTAD DE CIENCIAS FISICO MATEMATICAS",
+                                          "FACULTAD DE CIENCIAS QUIMICAS",
+                                          "FACULTAD DE CONTADURIA",
+                                          "FACULTAD DE CULTURA FISICA",
+                                          "FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+                                          "FACULTAD DE ECONOMIA",
+                                          "FACULTAD DE ENFERMERIA",
+                                          "FACULTAD DE ESTOMATOLOGIA",
+                                          "FACULTAD DE FILOSOFIA Y LETRAS",
+                                          "FACULTAD DE INGENIERIA QUIMICA",
+                                          "FACULTAD DE INGENIERIA",
+                                          "FACULTAD DE LENGUAS",
+                                          "FACULTAD DE MEDICINA",
+                                          "FACULTAD DE PSICOLOGIA",
+                                          "HERBARIO Y JARDIN BOTANICO DE LA BUAP",
+                                          "HOSPITAL UNIVERSITARIO DE PUEBLA",
+                                          "INSTITUTO DE CIENCIAS AMBIENTALES",
+                                          "INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES ALFONSO VÉLEZ PLIEGO ICSYH",
+                                          "INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                          "INSTITUTO DE CIENCIAS",
+                                          "INSTITUTO DE FISICA LUIS RIVERA TERRAZAS",
+                                          "INSTITUTO DE FISIOLOGIA",
+                                          "INSTITUTO EN CIENCIAS DE GOBIERNO Y DESARROLLO ESTRATÉGICO",
+                                          "MAESTRIA EN DIAGNOSTICO Y REHABILITACION NEUROPSICOLOGICA",
+                                          "OFICINA DE LA ABOGADA GENERAL",
+                                          "PREPARATORIA ALFONSO CALDERON MORENO",
+                                          "PREPARATORIA EMILIANO ZAPATA",
+                                          "PREPARATORIA ENRIQUE CABRERA BARROSO URBANA",
+                                          "RECTORIA",
+                                          "RED DE ESTUDIOS DE LA ECONOMIA MUNDIAL REDEM",
+                                          "UNIDAD ACADEMICA DE INGENIERIA AGROHIDRAULICA",
+                                          "VICERRECTORIA DE INVESTIGACION Y ESTUDIOS DE POSGRADO",
+                                          "VICERRECTORIA DE PRESUPUESTO Y PLANEACION",
+                                          "VICERRECTORÍA DE DOCENCIA",
+                                          "VICERRECTORÍA DE EXTENSIÓN Y DIFUSIÓN DE LA CULTURA"];
+      organizationValue = benemeritaEscuelaNormalAutonoma;
+    }
+     if(organizationValue == "BENEMERITA Y CENTENARIA ESCUELA NORMAL DEL ESTADO DE DURANGO"){
+      var benemeritaEscuelaNormalDurango=[" "];
+      organizationValue = benemeritaEscuelaNormalDurango;
+    }
+     if(organizationValue == "BENEMERITA Y CENTENARIA ESCUELA NORMAL OFICIAL DE GUANAJUATO"){
+      var benemeritaEscuelaNormalGuanajuato=[" "];
+      organizationValue = benemeritaEscuelaNormalGuanajuato;
+    }
+    if(organizationValue == "CAPACITACION DE OCCIDENTE SACV"){
+      var capacitacionOccidente=[" "];
+      organizationValue = capacitacionOccidente;
+    }
+     if(organizationValue == "CENTRO DE BACHILLERATO TEC INDUSTRIAL Y DE SERVICIOS 26"){
+      var bachilleratoIndustrial=[" "];
+      organizationValue = bachilleratoIndustrial;
+    }
+     if(organizationValue == "CENTRO DE BIOTECNOLOGIA GENOMICA IPN"){
+      var biotecnologiaGenomica=[" "];
+      organizationValue = biotecnologiaGenomica;
+    }
+     if(organizationValue == "CENTRO DE ENSENANZA TECNICA INDUSTRIAL"){
+      var ensenanzaTecnicaIndustrial=["SUBDIRECCION DE INVESTIGACION Y DESARROL"];
+      organizationValue = ensenanzaTecnicaIndustrial;
+    }
+     if(organizationValue == "CENTRO DE ENSENANZA TECNICA Y SUPERIOR UNIVERSIDAD"){
+      var ensenanzaSuperiorUniversidad=["ESCUELA DE INGENIERIA"];
+      organizationValue = ensenanzaSuperiorUniversidad;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS DE POSGRADO DEL BAJIO"){
+      var estudiosPosgradoBajio=[" "];
+      organizationValue = estudiosPosgradoBajio;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS DE RECURSOS BIOTICOS IPN"){
+      var estudiosRecursosBioticos=[" "];
+      organizationValue = estudiosRecursosBioticos;
+    }
+      if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES CTM"){
+      var centroEstudiosSuperioresCTM=[" "];
+      organizationValue = centroEstudiosSuperioresCTM;
+    }
+      if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE LA ESCUELA MEXICANA DE TURISMO"){
+      var estudiosSuperioresEscuelaTurismo=[" "];
+      organizationValue = estudiosSuperioresEscuelaTurismo;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS 7"){
+      var centroIndutrialServicios=[" "];
+      organizationValue = centroIndutrialServicios;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NO 8 RAFAEL DONDE"){
+      var centroIndutrialServiciosRafael=[" "];
+      organizationValue = centroIndutrialServiciosRafael;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS UNIVERSITARIOS FRAY LUCA PACCIOLI SC"){
+      var universitariosFrayLuca=[" "];
+      organizationValue = universitariosFrayLuca;
+    }
+    if(organizationValue == "CENTRO DE GRADUADOS E INNVESTIGACION DEL INSTITUTO TECNOLOGICO DE MORELIA"){
+      var graduadosInvestigacionsMorelia=[" "];
+      organizationValue = graduadosInvestigacionsMorelia;
+    }
+     if(organizationValue == "CENTRO DE GRADUADOS E INVESTIGACION DEL INSTITUTO TECNOLOGICO DE LA LAGUNA"){
+      var graduadosInvestigacionsLAguna=[" "];
+      organizationValue = graduadosInvestigacionsLAguna;
+    }
+    if(organizationValue == "CENTRO DE INVESTIGACIONES BIOLOGICAS"){
+      var centroInvestigacionesBiologicas=[" "];
+      organizationValue = centroInvestigacionesBiologicas;
+    }
+     if(organizationValue == "CENTRO SUPERIOR DE ESTUDIOS TECNOLOGICOS DE TEPOSCOLULA"){
+      var centroTecnologicosTeposcolula=[" "];
+      organizationValue = centroTecnologicosTeposcolula;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO DEL FUTBOL Y CIENCIAS DEL DEPORTE"){
+      var futbolCienciasDeporte=[" "];
+      organizationValue = futbolCienciasDeporte;
+    }
+      if(organizationValue == "CLAUSTRO UNIVERSITARIO DE CHIHUAHUA AC"){
+      var claustroUniversitario=[" "];
+      organizationValue = claustroUniversitario;
+    }
+      if(organizationValue == "CLEMSON UNIVERSITY"){
+      var clemsonUniversity=[" "];
+      organizationValue = clemsonUniversity;
+    }
+      if(organizationValue == "COLEGIO DE BACHILLERES DEL ESTADO DE BAJA CALIFORNIA"){
+      var colegioBachilleresBaja=[" "];
+      organizationValue = colegioBachilleresBaja;
+    }
+     if(organizationValue == "COLEGIO DE BACHILLERES DEL ESTADO DE CHIAPAS"){
+      var colegioBachilleresChiapas=[" "];
+      organizationValue = colegioBachilleresChiapas;
+    }
+     if(organizationValue == "COLEGIO DE ESTUD CIENTIF Y TECNOLOG DEL EDO DE BAJA CALIF"){
+      var cientifTecnologEdo=[" "];
+      organizationValue = cientifTecnologEdo;
+    } 
+    if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE MICHOACAN"){
+      var colegioCientificosMichoacana=[" "];
+      organizationValue = colegioCientificosMichoacana;
+    } 
+    if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE TLAXCALA"){
+      var cientificosTEcnologicosTlaxcala=[" "];
+      organizationValue = cientificosTEcnologicosTlaxcala;
+    } 
+     if(organizationValue == "COLEGIO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS DEL ESTADO DE ZACATECAS"){
+      var cientificosTEcnologicosZacatecas=[" "];
+      organizationValue = cientificosTEcnologicosZacatecas;
+    } 
+     if(organizationValue == "COLEGIO SUPERIOR DE AGRICULTURA TROPICAL"){
+      var superiroAgriculturaTropiacal=[" "];
+      organizationValue = superiroAgriculturaTropiacal;
+    } 
+    if(organizationValue == "DEPARTAMENTO DE INVESTIGACIONES EDUCATIVAS DEL CENTRO DE INVESTIGACION Y DE ESTUDIOS AVANZADOS DEL IPN"){
+      var departamentoEducativasCEntro=[" "];
+      organizationValue = departamentoEducativasCEntro;
+    }
+     if(organizationValue == "DIRECCION DE FORMACION Y SUPERACION DOCENTE"){
+      var dierccionFormacionDocente=[" "];
+      organizationValue = dierccionFormacionDocente;
+    }
+     if(organizationValue == "DIRECCION GENERAL DE EDUCACION EN CIENCIA Y TECNOLOGIA DEL MAR"){
+      var direccionGeneralEducacionTecnologica=["CENTRO DE ESTUDIOS TECNOLOGICOS DEL MAR",
+                                                "CENTRO DE ESTUDIOS TECNOLOGICOS DEL MAR NO. 8"];
+      organizationValue = direccionGeneralEducacionTecnologica;
+    }
+    if(organizationValue == "DIVISION DE ESTUDIOS SUPERIORES DEL INSTITUTO 18 DE MARZO"){
+      var divisionEstudiosMarzo=[" "];
+      organizationValue = divisionEstudiosMarzo;
+    }
+    if(organizationValue == "EL COLEGIO DE TAMAULIPAS"){
+      var colegioTamaulipas=[" "];
+      organizationValue = colegioTamaulipas;
+    }
+    if(organizationValue == "ESCUELA LIBRE DE DERECHO DE SINALOA"){
+      var libreDerechoSinaloa=[" "];
+      organizationValue = libreDerechoSinaloa;
+    }
+    if(organizationValue == "ESCUELA NACIONAL DE BIBLIOTECONOMIA Y ARCHIVONOMIA"){
+      var nacionalArchivonomia=["SECRETARIA DE EDUCACION PUBLICA DIRECCION GENERAL DE EDUCACION SUPERIOR"];
+      organizationValue = nacionalArchivonomia;
+    }
+     if(organizationValue == "ESCUELA NACIONAL DE ESTUDIOS PROFESIONALES IZTACALA UNAM"){
+      var escuelaNacionalEstudiosIztacala=[" "];
+      organizationValue = escuelaNacionalEstudiosIztacala;
+    }
+     if(organizationValue == "ESCUELA NACIONAL PARA MAESTRAS DE JARDINES DE NINOS"){
+      var maestrasJardinesninos=[" "];
+      organizationValue = maestrasJardinesninos;
+    }
+     if(organizationValue == "ESCUELA NORMAL MANUEL AVILA CAMACHO"){
+      var manuelAvilaCamacho=[" "];
+      organizationValue = manuelAvilaCamacho;
+    }
+    if(organizationValue == "ESCUELA NORMAL DE EDUCACION PRIMARIA RODOLFO MENENDEZ DE LA PENA"){
+      var primariaRodolfoMendez=[" "];
+      organizationValue = primariaRodolfoMendez;
+    }
+    if(organizationValue == "ESCUELA NORMAL DE SINALOA"){
+      var normalSinaloa=[" "];
+      organizationValue = normalSinaloa;
+    }
+    if(organizationValue == "ESCUELA NORMAL DEL ESTADO DE CHIHUAHUA PROFR LUIS URIAS BELDERRAIN"){
+      var estadoChichuaProf=[" "];
+      organizationValue = estadoChichuaProf;
+    }
+    if(organizationValue == "ESCUELA NORMAL REGIONAL DE ESPECIALIZACION DEL ESTADO DE COAHUILA"){
+      var regionalEspecializacionCoahuila=[" "];
+      organizationValue = regionalEspecializacionCoahuila;
+    }
+    if(organizationValue == "ESCUELA NORMAL RURAL VANGUARDIA"){
+      var ruralVanguardia=[" "];
+      organizationValue = ruralVanguardia;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR DE HERMOSILLO"){
+      var normalSuperiorHermosillo=[" "];
+      organizationValue = normalSuperiorHermosillo;
+    }
+     if(organizationValue == "ESCUELA NORMAL SUPERIOR DE LA LAGUNA"){
+      var normalSuperiorLaguna=[" "];
+      organizationValue = normalSuperiorLaguna;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR DE MEXICO"){
+      var normalSuperiorMExico=[" "];
+      organizationValue = normalSuperiorMExico;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR DE NUEVO LEON"){
+      var normalSuperiorNuevoLeon=[" "];
+      organizationValue = normalSuperiorNuevoLeon;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR DEL ESTADO DE BAJA CALIFORNIA SUR"){
+      var normalSuperiorBajaCalifornia=[" "];
+      organizationValue = normalSuperiorBajaCalifornia;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR DEL ESTADO DE COAHUILA"){
+      var normalSuperiorEsatdoCoahuila=["DIVISION DE ESTUDIOS DE POSGRADO"];
+      organizationValue = normalSuperiorEsatdoCoahuila;
+    }
+     if(organizationValue == "ESCUELA NORMAL SUPERIOR DEL ESTADO DE QUERETARO"){
+      var normalSuperiorEsatadoQueretaro=[" "];
+      organizationValue = normalSuperiorEsatadoQueretaro;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR DEL ESTADO DE YUCATAN"){
+      var normalSuperiorEstadoYucatan=[" "];
+      organizationValue = normalSuperiorEstadoYucatan;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR PROF MOISES SAENZ GARZA"){
+      var normalSuperiorEstadoGArza=[" "];
+      organizationValue = normalSuperiorEstadoGArza;
+    }
+    if(organizationValue == "ESCUELA SUPERIOR DE EDUCACION FISICA"){
+      var escuelaSuperiorEducacionFisica=[" "];
+      organizationValue = escuelaSuperiorEducacionFisica;
+    }
+    if(organizationValue == "FOMENTO CIENTIFICO DE MONTERREY SA DE CV"){
+      var fomentoCientificoMonterrey=[" "];
+      organizationValue = fomentoCientificoMonterrey;
+    }
+     if(organizationValue == "HOSPITAL CLINIC DE BARCELONA"){
+      var hospitalClinicbarcelona=[" "];
+      organizationValue = hospitalClinicbarcelona;
+    }
+     if(organizationValue == "INSTITUTO BALSEIRO"){
+      var balseiro=[" "];
+      organizationValue = balseiro;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS INTEGRALES DEL CENTRO DE MEXICO"){
+      var insitutoCentroMexico=[" "];
+      organizationValue = insitutoCentroMexico;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES DE TAMAULIPAS AC"){
+      var isntitutoEstudiosTamaulipas=[" "];
+      organizationValue = isntitutoEstudiosTamaulipas;
+    }
+    if(organizationValue == "INSTITUTO NACIONAL DE NEUROCIENCIAS Y PSICOANALISIS SC"){
+      var neurocienciasPsicoanalisis=[" "];
+      organizationValue = neurocienciasPsicoanalisis;
+    }
+     if(organizationValue == "INSTITUTO POLITECNICO NACIONAL"){
+      var institutoPolitecnicoNacional=["CENTRO DE DESARROLLO DE PRODUCTOS BIOTICOS",
+                                        "CENTRO DE DIFUSIÓN DE CIENCIA Y TECNOLOGÍA",
+                                        "CENTRO DE EDUCACION CONTINUA",
+                                        "CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS-CECYT",
+                                        "CENTRO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS NO 1",
+                                        "CENTRO DE INCUBACION DE EMPRESAS DE BASE TECNOLOGICA DEL INSTITUTO POLITECNICO NACIONAL",
+                                        "CENTRO DE LENGUAS EXTRANJERAS (UNIDAD CULHUACAN)",
+                                        "CENTRO DE LENGUAS EXTRANJERAS (UNIDAD ZACATENCO)",
+                                        "CENTRO DE NANOCIENCIAS Y MICRO Y NANOTECNOLOGIAS",
+                                        "CENTRO MEXICANO PARA LA PRODUCCION MAS LIMPIA, SEP/IPN",
+                                        "CENTRO MULTIDISCIPLINARIO DE COMPETITIVIDAD INTERNACIONAL",
+                                        "CENTRO NACIONAL DE CALCULO",
+                                        "CENTRO NACIONAL DE INFORMACION Y DOCUMENTACION TECNOLOGICA",
+                                        "CENTROS DE INVESTIGACION CIENTIFICA Y TECNOLOGICA",
+                                        "CENTROS Y UNIDADES DE APOYO A LA INNOVACION EDUCATIVA",
+                                        "CENTROS Y UNIDADES DE APOYO PARA EL FOMENTO Y DESARROLLO EMPRESARIAL",
+                                        "DEFENSORIA DE LOS DERECHOS POLITECNICOS",
+                                        "DIRECCION DE GRADUADOS E INVESTIGACION",
+                                        "ESCUELA SUPERIOR DE ECONOMIA",
+                                        "PATRONATO DE OBRAS E INSTALACIONES",
+                                        "PLANETARIO LUIS ENRIQUE ERRO",
+                                        "PROYECTO DE ESTUDIOS SOCIALES, TECNOLOGICOS Y CIENTIFICOS",
+                                        "PROYECTO INTERDISCIPLINARIO DEL MEDIO AMBIENTE Y DESARROLLO INTEGRAL",
+                                        "SECRETARIA ACADEMICA",
+                                        "SECRETARIA DE EXTENSION E INTEGRACION SOCIAL",
+                                        "SECRETARIA DE INVESTIGACION Y POSGRADO",
+                                        "SECRETARIA DE SERVICIOS EDUCATIVOS",
+                                        "SECRETARIA TECNICA",
+                                        "UNIDADES ACADEMICAS DE NIVEL SUPERIOR",
+                                        "UNIVERSIDAD ESTATAL DE OSUN"];
+      organizationValue = institutoPolitecnicoNacional;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO"){
+      var institutoTecnologicoAgropecuario=[" "];
+      organizationValue = institutoTecnologicoAgropecuario;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO 26"){
+      var institutoTecnologicoAgropecuarioseis=["CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS"];
+      organizationValue = institutoTecnologicoAgropecuarioseis;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO 8"){
+      var institutoTecnologicoAgropecuarioOcho=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioOcho;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO DE MIACATLAN 9"){
+      var institutoTecnologicoAgropecuarioMiacatlam=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioMiacatlam;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO DE OAXACA NO 23"){
+      var institutoTecnologicoAgropecuarioOaxaca=["CENTRO DE INVESTIGACION"];
+      organizationValue = institutoTecnologicoAgropecuarioOaxaca;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 1"){
+      var institutoTecnologicoAgropecuarioNoUno=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioNoUno;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 16"){
+      var institutoTecnologicoAgropecuarioNoSis=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioNoSis;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 19"){
+      var institutoTecnologicoAgropecuarioNoNueve=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioNoNueve;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 1O DE TORREON"){
+      var institutoTecnologicoAgropecuarioTorreon=["CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS"];
+      organizationValue = institutoTecnologicoAgropecuarioTorreon;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 2 CONKAL YUCATAN"){
+      var institutoTecnologicoAgropecuarioYucatan=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioYucatan;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 21"){
+      var institutoTecnologicoAgropecuarioNovein=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioNovein;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 23 DE STA CRUZ XOXOCOTLAN"){
+      var institutoTecnologicoAgropecuarioCruz=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioCruz;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 28"){
+      var institutoTecnologicoAgropecuarioVeint=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioVeint;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 29 XOCOYUCANTLAX"){
+      var institutoTecnologicoAgropecuarioXocoyucantlax=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioXocoyucantlax;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 2O DE AGUASCALIENTES"){
+      var institutoTecnologicoAgropecuarioAguascalientes=["CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS"];
+      organizationValue = institutoTecnologicoAgropecuarioAguascalientes;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 33 DE CELAYA"){
+      var institutoTecnologicoAgropecuarioCelaya=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioCelaya;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 4"){
+      var institutoTecnologicoAgropecuarioNoCuatro=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioNoCuatro;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 5 DE CAMPECHE"){
+      var institutoTecnologicoAgropecuarioCampeche=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioCampeche;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NO 7 DE MICHOACAN"){
+      var institutoTecnologicoAgropecuarioMichoacana=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioMichoacana;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO AGROPECUARIO NUM 32"){
+      var institutoTecnologicoAgropecuarioNumTres=[" "];
+      organizationValue = institutoTecnologicoAgropecuarioNumTres;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO DE BAJA CALIFORNIA"){
+      var institutoTecnologicoBajaCalifornia=[" "];
+      organizationValue = institutoTecnologicoBajaCalifornia;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO DE SONORA"){
+      var institutoTecnologicoSonora=["ÁREA DE INGENIERÍA Y TECNOLOGÍA",
+                                      "DEPARTAMENTO DE CIENCIAS ADMINISTRATIVAS",
+                                      "DEPARTAMENTO DE CONTADURIA Y FINANZAS",
+                                      "DEPARTAMENTO DE EXTENSIÓN DE LA CULTURA",
+                                      "DEPARTAMENTO DE HUMANIDADES",
+                                      "DEPARTAMENTO DE INGENIERIA ELECTRICA Y ELECTRONICA",
+                                      "DEPARTAMENTO DE INGENIERIA ESTRUCTURAL E HIDRAULICA",
+                                      "DEPARTAMENTO DE INGENIERIA INDUSTRIAL",
+                                      "DEPARTAMENTO DE MATEMATICA Y FISICA",
+                                      "DEPARTAMENTO DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                      "DEPARTAMENTO DE PSICOLOGIA",
+                                      "DEPARTAMENTO DE QUIMICA E INGENIERIA QUIMICA",
+                                      "DEPARTAMENTO SOCIOCULTURAL",
+                                      "DIRECCION DE FOMENTO A LA INVESTIGACION",
+                                      "DIRECCION DE INVESTIGACION Y ESTUDIOS DE POSTGRADO",
+                                      "DIVISION DE CIENCIAS SOCIALES",
+                                      "DIVISION DE INGENIERIAS Y CIENCIAS BIOLOGICAS",
+                                      "DIVISION DE RECURSOS NATURALES",
+                                      "INSTITUTO TECNOLÓGICO DE SONORA",
+                                      "UNIDAD GUAYMAS",
+                                      "UNIDAD NAVOJOA"];
+      organizationValue = institutoTecnologicoSonora;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO DEL MAR"){
+      var institutoTecnologicoMar=["DIRECCION GENERAL EN CIENCIA Y TECNOLOGIA"];
+      organizationValue = institutoTecnologicoMar;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO DEL MAR EN CAMPECHE ITMAR NO O4"){
+      var institutoTecnologicoMaCampeche=[" "];
+      organizationValue = institutoTecnologicoMaCampeche;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO DEL MAR EN GUAYMAS EXTENSION LA PAZ"){
+      var institutoTecnologicoMarGuaymas=[" "];
+      organizationValue = institutoTecnologicoMarGuaymas;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO DEL MAR EN GUAYMAS EXTENSION PUERTO PELASCO"){
+      var institutoTecnologicoMarGuaymasEtension=[" "];
+      organizationValue = institutoTecnologicoMarGuaymasEtension;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO DEL MAR NO 2 MAZATLAN"){
+      var institutoTecnologicoMarMazatlan=["INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN EXTENSION LA CRUZ DE HUANACAXTLE",
+                                            "INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN EXTENSION TEACAPAN",
+                                            "INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN. EXTENSION JOCOTEPEC"];
+      organizationValue = institutoTecnologicoMarMazatlan;
+    }
+
+     if(organizationValue == "INSTITUTO TECNOLOGICO FORESTAL"){
+      var institutoTecnologicoForestal=[" "];
+      organizationValue = institutoTecnologicoForestal;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE APATZINGAN"){
+      var institutoTecnologicoApatzingan=[" "];
+      organizationValue = institutoTecnologicoApatzingan;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE ARANDAS"){
+      var institutoTecnologicoArandas=[" "];
+      organizationValue = institutoTecnologicoArandas;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE ATLIXCO"){
+      var institutoTecnologicoAtlixco=[" "];
+      organizationValue = institutoTecnologicoAtlixco;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE CIUDAD SERDAN"){
+      var institutoTecnologicoCerdan=[" "];
+      organizationValue = institutoTecnologicoCerdan;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE COMALCALCO"){
+      var institutoTecnologicoComalcalco=[" "];
+      organizationValue = institutoTecnologicoComalcalco;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE COSAMALOAPAN"){
+      var institutoTecnologicoCosamaloapan=[" "];
+      organizationValue = institutoTecnologicoCosamaloapan;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE HUETAMO"){
+      var institutoTecnologicoHuetamo=[" "];
+      organizationValue = institutoTecnologicoHuetamo;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE LA REGION SIERRA"){
+      var institutoTecnologicoRegisonSierra=[" "];
+      organizationValue = institutoTecnologicoRegisonSierra;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE LAGOS DE MORENO"){
+      var institutoTecnologicoLagosMoreno=[" "];
+      organizationValue = institutoTecnologicoLagosMoreno;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE LAS CHOAPAS"){
+      var institutoTecnologicoChoapas=[" "];
+      organizationValue = institutoTecnologicoChoapas;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE LIBRES"){
+      var institutoTecnologicoLibres=["DEPERTAMENTO DE VINCULACION"];
+      organizationValue = institutoTecnologicoLibres;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE LOS REYES"){
+      var institutoTecnologicoReyes=[" "];
+      organizationValue = institutoTecnologicoReyes;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE LOS RIOS"){
+      var institutoTecnologicoRios=[" "];
+      organizationValue = institutoTecnologicoRios;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE NUEVO CASAS GRANDES"){
+      var institutoTecnologicoNuevoCasas=[" "];
+      organizationValue = institutoTecnologicoNuevoCasas;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE POZA RICA"){
+      var institutoTecnologicoPozaRica=[" "];
+      organizationValue = institutoTecnologicoPozaRica;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE PUERTO VALLARTA"){
+      var institutoTecnologicoPuertoVallarta=[" "];
+      organizationValue = institutoTecnologicoPuertoVallarta;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE SAN ANDRES TUXTLA"){
+      var institutoTecnologicoTuxtla=[" "];
+      organizationValue = institutoTecnologicoTuxtla;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE SAN MARTIN TEXMELUCAN"){
+      var institutoTecnologicoTuxmelucan=[" "];
+      organizationValue = institutoTecnologicoTuxmelucan;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE SANTIAGO PAPASQUIARO"){
+      var institutoTecnologicoSantiago=[" "];
+      organizationValue = institutoTecnologicoSantiago;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE TACAMBARO"){
+      var institutoTecnologicoTacambaro=[" "];
+      organizationValue = institutoTecnologicoTacambaro;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE TANTOYUCA"){
+      var institutoTecnologicoTantoyuca=[" "];
+      organizationValue = institutoTecnologicoTantoyuca;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE TEPEACA"){
+      var institutoTecnologicoTepeaca=[" "];
+      organizationValue = institutoTecnologicoTepeaca;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE TEPEXI DE RODRIGUEZ"){
+      var institutoTecnologicoTepexiRodriguez=[" "];
+      organizationValue = institutoTecnologicoTepexiRodriguez;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE TEQUILA"){
+      var institutoTecnologicoTepexiTquila=[" "];
+      organizationValue = institutoTecnologicoTepexiTquila;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE TEZIUTLAN"){
+      var institutoTecnologicoTepexiTqziutlan=[" "];
+      organizationValue = institutoTecnologicoTepexiTqziutlan;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE VALLADOLID"){
+      var institutoTecnologicoTepexiValladolid=[" "];
+      organizationValue = institutoTecnologicoTepexiValladolid;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE XALAPA"){
+      var institutoTecnologicoTepexiXalapa=[" "];
+      organizationValue = institutoTecnologicoTepexiXalapa;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DE ZONGOLICA"){
+      var institutoTecnologicoZongolia=[" "];
+      organizationValue = institutoTecnologicoZongolia;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR DEL ORIENTE DEL ESTADO DE HIDALGO"){
+      var institutoTecnologicoOriente=["DIVISION DE INGENIERIA DE INDUSTRIAS ALIMENTARIAS"];
+      organizationValue = institutoTecnologicoOriente;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR PROGRESO"){
+      var institutoTecnologicoProgreso=[" "];
+      organizationValue = institutoTecnologicoProgreso;
+    }
+    if(organizationValue == "INSTITUTO TECNOLOGICO SUPERIOR ZACATECAS NORTE"){
+      var institutoTecnologicoZacatecasNorte=[" "];
+      organizationValue = institutoTecnologicoZacatecasNorte;
+    }
+    if(organizationValue == "LA SORBONNE NOUVELLE PARIS III"){
+      var sorbonneNouvelle=[" "];
+      organizationValue = sorbonneNouvelle;
+    }
+    if(organizationValue == "LABORATORIO NACIONAL DE INFORMATICA AVANZADA AC"){
+      var laboratorioNacionalAvanzada=["LANIA, A.C."];
+      organizationValue = laboratorioNacionalAvanzada;
+    }
+     if(organizationValue == "LAURENTIAN UNIVERSITY SUDBURY"){
+      var laurentianUniversity=[" "];
+      organizationValue = laurentianUniversity;
+    }
+     if(organizationValue == "LYCEE HÔTELIER DE DINARD"){
+      var lyceeDinard=[" "];
+      organizationValue = lyceeDinard;
+    }
+      if(organizationValue == "NORMAL NO 1 DE NEZAHUALCOYOTL"){
+      var normalNEza=[" "];
+      organizationValue = normalNEza;
+    }
+     if(organizationValue == "POLITECNICO DE GUANAJUATO AC"){
+      var plitecnicoGuanajuato=[" "];
+      organizationValue = plitecnicoGuanajuato;
+    }
+     if(organizationValue == "SERVICIOS EDUCATIVOS INTEGRADOS AL EDO DE MEX"){
+      var servicionsEducativosIntegrados=[" "];
+      organizationValue = servicionsEducativosIntegrados;
+    }
+    if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE CHALCO"){
+      var tecnologicoSuperioresChaco=[" "];
+      organizationValue = tecnologicoSuperioresChaco;
+    }
+     if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE CHIMALHUACAN"){
+      var tecnologicoSuperioresChimalhuacan=[" "];
+      organizationValue = tecnologicoSuperioresChimalhuacan;
+    }
+    if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE COACALCO"){
+      var tecnologicoSuperioresCoacalco=[" "];
+      organizationValue = tecnologicoSuperioresCoacalco;
+    }
+    if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE CUATITLAN IZCALLI"){
+      var tecnologicoEstudiosCuatitla=[" "];
+      organizationValue = tecnologicoEstudiosCuatitla;
+    }
+     if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE ECATEPEC"){
+      var tecnologicoEstudiosEcatepec=["DIRECCION ACADEMICA"];
+      organizationValue = tecnologicoEstudiosEcatepec;
+    }
+     if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE HUIXQUILUCAN"){
+      var tecnologicoEstudiosHuixquilucan=[" "];
+      organizationValue = tecnologicoEstudiosHuixquilucan;
+    }
+    if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE IXTAPALUCA"){
+      var tecnologicoEstudiosIxtapaluca=[" "];
+      organizationValue = tecnologicoEstudiosIxtapaluca;
+    }
+      if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE JILOTEPEC"){
+      var tecnologicoEstudiosJilotepec=[" "];
+      organizationValue = tecnologicoEstudiosJilotepec;
+    }
+     if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE JOCOTITLAN"){
+      var tecnologicoEstudiosJocotitlan=[" "];
+      organizationValue = tecnologicoEstudiosJocotitlan;
+    }
+    if(organizationValue == "TECNOLOGICO DE ESTUDIOS SUPERIORES DE TIANGUISTENCO"){
+      var tecnologicoEstudiosTiangusitengo=[" "];
+      organizationValue = tecnologicoEstudiosTiangusitengo;
+    }
+
+     if(organizationValue == "TECNOLOGICO NACIONAL DE MEXICO"){
+      var tecnologicoNaionalMexico=["CENTRO INTERDISCIPLINARIO DE INVESTIGACIÓN Y DOCENCIA EN EDUCACIÓN TÉCNICA",
+                                    "CENTRO NACIONAL DE INVESTIGACIÓN Y DESARROLLO TECNOLÓGICO",
+                                    "CENTRO REGIONAL DE OPTIMIZACIÓN Y DESARROLLO DE EQUIPO DE CHIHUAHUA",
+                                    "DEPARTAMENTO DE CIENCIAS COMPUTACIONALES",
+                                    "INSTITUTO TECNOLOGICO DE BAHIA DE BANDERAS",
+                                    "INSTITUTO TECNOLOGICO DE CD. VALLES",
+                                    "INSTITUTO TECNOLOGICO DE CERRO AZUL",
+                                    "INSTITUTO TECNOLOGICO DE CHIHUAHUA II",
+                                    "INSTITUTO TECNOLOGICO DE CIUDAD GUZMAN",
+                                    "INSTITUTO TECNOLOGICO DE COLIMA",
+                                    "INSTITUTO TECNOLOGICO DE COMITANCILLO",
+                                    "INSTITUTO TECNOLOGICO DE CUAUTLA",
+                                    "INSTITUTO TECNOLOGICO DE DELICIAS",
+                                    "INSTITUTO TECNOLOGICO DE ENSENADA",
+                                    "INSTITUTO TECNOLOGICO DE HUATABAMPO",
+                                    "INSTITUTO TECNOLOGICO DE IGUALA",
+                                    "INSTITUTO TECNOLOGICO DE JIQUILPAN",
+                                    "INSTITUTO TECNOLOGICO DE LA PIEDAD",
+                                    "INSTITUTO TECNOLOGICO DE LAZARO CARDENAS",
+                                    "INSTITUTO TECNOLOGICO DE LOS MOCHIS",
+                                    "INSTITUTO TECNOLOGICO DE MATAMOROS",
+                                    "INSTITUTO TECNOLOGICO DE MATEHUALA",
+                                    "INSTITUTO TECNOLOGICO DE MINATITLAN",
+                                    "INSTITUTO TECNOLOGICO DE NOGALES",
+                                    "INSTITUTO TECNOLOGICO DE NUEVO LAREDO",
+                                    "INSTITUTO TECNOLOGICO DE OCOTLAN",
+                                    "INSTITUTO TECNOLOGICO DE PIEDRAS NEGRAS",
+                                    "INSTITUTO TECNOLOGICO DE PINOTEPA NACIONAL",
+                                    "INSTITUTO TECNOLOGICO DE REYNOSA",
+                                    "INSTITUTO TECNOLOGICO DE SAN JUAN DEL RIO",
+                                    "INSTITUTO TECNOLOGICO DE SAN LUIS POTOSI",
+                                    "INSTITUTO TECNOLOGICO DE TLAXIACO",
+                                    "INSTITUTO TECNOLOGICO DE URSULO GALVAN",
+                                    "INSTITUTO TECNOLOGICO DE VALLE DEL YAQUI",
+                                    "INSTITUTO TECNOLOGICO DE ZACATECAS",
+                                    "INSTITUTO TECNOLOGICO DE ZITACUARO",
+                                    "INSTITUTO TECNOLOGICO DEL ISTMO",
+                                    "INSTITUTO TECNOLÓGICO DE ACAPULCO",
+                                    "INSTITUTO TECNOLÓGICO DE AGUA PRIETA",
+                                    "INSTITUTO TECNOLÓGICO DE AGUASCALIENTES",
+                                    "INSTITUTO TECNOLÓGICO DE ALTAMIRA",
+                                    "INSTITUTO TECNOLÓGICO DE APIZACO",
+                                    "INSTITUTO TECNOLÓGICO DE BOCA DE RÍO",
+                                    "INSTITUTO TECNOLÓGICO DE CAMPECHE",
+                                    "INSTITUTO TECNOLÓGICO DE CANCÚN",
+                                    "INSTITUTO TECNOLÓGICO DE CELAYA",
+                                    "INSTITUTO TECNOLÓGICO DE CHETUMAL",
+                                    "INSTITUTO TECNOLÓGICO DE CHIHUAHUA",
+                                    "INSTITUTO TECNOLÓGICO DE CHILPANCINGO",
+                                    "INSTITUTO TECNOLÓGICO DE CHINÁ",
+                                    "INSTITUTO TECNOLÓGICO DE CIUDAD JIMÉNEZ",
+                                    "INSTITUTO TECNOLÓGICO DE CIUDAD JUÁREZ",
+                                    "INSTITUTO TECNOLÓGICO DE CIUDAD MADERO",
+                                    "INSTITUTO TECNOLÓGICO DE CIUDAD VICTORIA",
+                                    "INSTITUTO TECNOLÓGICO DE COMITÁN",
+                                    "INSTITUTO TECNOLÓGICO DE CONKAL",
+                                    "INSTITUTO TECNOLÓGICO DE COSTA GRANDE",
+                                    "INSTITUTO TECNOLÓGICO DE CULIACÁN",
+                                    "INSTITUTO TECNOLÓGICO DE DURANGO",
+                                    "INSTITUTO TECNOLÓGICO DE EL LLANO AGUASCALIENTES",
+                                    "INSTITUTO TECNOLÓGICO DE EL SALTO",
+                                    "INSTITUTO TECNOLÓGICO DE GUAYMAS",
+                                    "INSTITUTO TECNOLÓGICO DE HERMOSILLO",
+                                    "INSTITUTO TECNOLÓGICO DE LA CUENCA DEL PAPALOAPAN",
+                                    "INSTITUTO TECNOLÓGICO DE LA LAGUNA",
+                                    "INSTITUTO TECNOLÓGICO DE LA PAZ",
+                                    "INSTITUTO TECNOLÓGICO DE LA ZONA MAYA",
+                                    "INSTITUTO TECNOLÓGICO DE LEÓN",
+                                    "INSTITUTO TECNOLÓGICO DE LINARES",
+                                    "INSTITUTO TECNOLÓGICO DE MAZATLÁN",
+                                    "INSTITUTO TECNOLÓGICO DE MEXICALI",
+                                    "INSTITUTO TECNOLÓGICO DE MORELIA",
+                                    "INSTITUTO TECNOLÓGICO DE MÉRIDA",
+                                    "INSTITUTO TECNOLÓGICO DE NUEVO LEÓN",
+                                    "INSTITUTO TECNOLÓGICO DE OAXACA",
+                                    "INSTITUTO TECNOLÓGICO DE ORIZABA",
+                                    "INSTITUTO TECNOLÓGICO DE PACHUCA",
+                                    "INSTITUTO TECNOLÓGICO DE PARRAL",
+                                    "INSTITUTO TECNOLÓGICO DE PUEBLA",
+                                    "INSTITUTO TECNOLÓGICO DE QUERÉTARO",
+                                    "INSTITUTO TECNOLÓGICO DE ROQUE",
+                                    "INSTITUTO TECNOLÓGICO DE SALTILLO",
+                                    "INSTITUTO TECNOLÓGICO DE TAPACHULA",
+                                    "INSTITUTO TECNOLÓGICO DE TECOMATLÁN",
+                                    "INSTITUTO TECNOLÓGICO DE TEHUACÁN",
+                                    "INSTITUTO TECNOLÓGICO DE TEPIC",
+                                    "INSTITUTO TECNOLÓGICO DE TIJUANA",
+                                    "INSTITUTO TECNOLÓGICO DE TIZIMÍN",
+                                    "INSTITUTO TECNOLÓGICO DE TLAJOMULCO",
+                                    "INSTITUTO TECNOLÓGICO DE TLALNEPANTLA",
+                                    "INSTITUTO TECNOLÓGICO DE TOLUCA",
+                                    "INSTITUTO TECNOLÓGICO DE TORREÓN",
+                                    "INSTITUTO TECNOLÓGICO DE TUXTEPEC",
+                                    "INSTITUTO TECNOLÓGICO DE VERACRUZ",
+                                    "INSTITUTO TECNOLÓGICO DE VILLAHERMOSA",
+                                    "INSTITUTO TECNOLÓGICO DE ZACATEPEC",
+                                    "INSTITUTO TECNOLÓGICO DEL VALLE DE MORELIA",
+                                    "INSTITUTO TECNOLÓGICO DEL VALLE DEL GUADIANA",
+                                    "INSTITUTO TECNOLÓGICO TUXTLA GUTIÉRREZ",
+                                    "SUBDIRECCION ACADEMICA"];
+      organizationValue = tecnologicoNaionalMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD AERONAUTICA EN QUERETARO"){
+      var universidadAeronauticaQueretaro=[" "];
+      organizationValue = universidadAeronauticaQueretaro;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA AGRARIA ANTONIO NARRO"){
+      var universidadAgrariaAntonio=["COORDINACION DE AGRONOMIA",
+                                      "INSTITUTO MEXICANO DEL MAIZ",
+                                      "PROGRAMA DE GRADUADOS",
+                                      "SUBDIRECCION DE ASUNTOS DE POSTGRADO",
+                                      "UNIDAD LAGUNA",
+                                      "UNIDAD SALTILLO"];
+      organizationValue = universidadAgrariaAntonio;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA BENITO JUAREZ DE OAXACA"){
+      var universidadAutonomaBenitoJuarez=["BIBLIOTECA FRAY FRANCISCO DE BURGOA",
+                                            "CENTRO DE SOCIOLOGIA",
+                                            "ESCUELA DE ARQUITECTURA",
+                                            "ESCUELA DE CIENCIAS QUIMICAS",
+                                            "ESCUELA DE DERECHO Y CIENCIAS SOCIALES",
+                                            "ESCUELA DE ECONOMIA",
+                                            "ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                            "FACULTAD DE CIENCIAS QUÍMICAS",
+                                            "FACULTAD DE CIENCIAS",
+                                            "FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN",
+                                            "FACULTAD DE MEDICINA Y CIRUGIA",
+                                            "FACULTAD DE ODONTOLOGIA",
+                                            "INSTITUTO DE CIENCIAS DE LA EDICACION",
+                                            "INSTITUTO DE INVESTIGACIONES EN HUMANIDADES",
+                                            "INSTITUTO DE INVESTIGACIONES SOCIOLOGICAS"];
+      organizationValue = universidadAutonomaBenitoJuarez;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA CHAPINGO"){
+      var universidadAutonomaChapingo=["CENTRO DE AGROFORESTARIA PARA EL DESARROLLO SOSTENIBLE",
+                                      "CENTRO DE INVESTIGACIONES ECONOMICAS, SOCIALES Y TECNOLOGICAS DE LA AGROINDUSTRIA Y DE LA AGRICULTURA MUNDIAL",
+                                      "CENTRO NACIONAL DE RESCATE Y MEJORAMIENTO DE MAICES CRIOLLOS(CENREMMAC)",
+                                      "CENTRO REGIONAL UNIVERSITARIO ANAHUAC (CRUAN), UBICADO EN CHAPINGO, ESTADO DE MEXICO",
+                                      "CENTRO REGIONAL UNIVERSITARIO CENTRO NORTE (CRUCEN), UBICADO EN EL ORITO, ZACATECAS",
+                                      "CENTRO REGIONAL UNIVERSITARIO CENTRO OCCIDENTE. UNID. EN MORELIA, MICHOACAN",
+                                      "CENTRO REGIONAL UNIVERSITARIO DE LA PENINSULA DE YUCATAN",
+                                      "CENTRO REGIONAL UNIVERSITARIO DE MORELIA",
+                                      "CENTRO REGIONAL UNIVERSITARIO DE SAN CRISTOBAL DE LAS CASAS (CHIAPAS)",
+                                      "CENTRO REGIONAL UNIVERSITARIO NOROESTE. UNIDAD CD. OBREGON, SONORA",
+                                      "CENTRO REGIONAL UNIVERSITARIO OCCIDENTE. UNIDAD GUADAJALARA, JALISCO",
+                                      "CENTRO REGIONAL UNIVERSITARIO ORIENTE. UNIDAD HUATUSCO, VERACRUZ.",
+                                      "CENTRO REGIONAL UNIVERSITARIO SUR (CRUS), UNIDAD OAXACA, OAXACA.",
+                                      "CENTRO REGIONAL UNIVERSITARIO SURESTE. UNIDAD PUYACATENGO, TEAPA,TABASCO.",
+                                      "COORDINACION DE ESTUDIOS DE POSTGRADO",
+                                      "DEPARTAMENTO DE BOSQUES",
+                                      "DEPARTAMENTO DE CIENCIAS FORESTALES",
+                                      "DEPARTAMENTO DE ECONOMIA AGRICOLA",
+                                      "DEPARTAMENTO DE FITOTECNIA",
+                                      "DEPARTAMENTO DE INDUSTRIAS AGRICOLAS",
+                                      "DEPARTAMENTO DE INGENIERIA AGROINDUSTRIAL",
+                                      "DEPARTAMENTO DE INGENIERIA DE MECANICA AGRICOLA",
+                                      "DEPARTAMENTO DE IRRIGACION",
+                                      "DEPARTAMENTO DE MANEJO DE RECURSOS FORESTALES",
+                                      "DEPARTAMENTO DE PARASITOLOGIA AGRICOLA",
+                                      "DEPARTAMENTO DE SOCIOLOGIA RURAL",
+                                      "DEPARTAMENTO DE SUELOS",
+                                      "DEPARTAMENTO DE ZOOTECNIA",
+                                      "DIRECCION DE CENTROS REGIONALES",
+                                      "DIRECCION GENERAL ACADEMICA",
+                                      "DIRECCION GENERAL DE INVESTIGACION Y POSGRADO",
+                                      "DIVISION DE CIENCIAS ECONOMICAS ADMINISTRATIVAS",
+                                      "PREPARATORIA AGRICOLA",
+                                      "SUBDIRECCION DE INVESTIG",
+                                      "SUBDIRECCION GENERAL DE INVESTIGACION Y SERVICIO",
+                                      "UNIDAD REGIONAL UNIVERSITARIA DE ZONAS ARIDAS"];
+      organizationValue = universidadAutonomaChapingo;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE AGUASCALIENTES"){
+      var universidadAutonomaAguascalientes=["CENTRO DE CIENCIAS AGROPECUARIAS",
+                                              "CENTRO DE CIENCIAS AGROPECUARIAS",
+                                              "CENTRO DE CIENCIAS BASICAS",
+                                              "CENTRO DE CIENCIAS BIOMEDICAS",
+                                              "CENTRO DE CIENCIAS DE LA SALUD",
+                                              "CENTRO DE CIENCIAS DEL DISEÑO Y DE LA CONSTRUCCIÓN",
+                                              "CENTRO DE CIENCIAS ECONOMICAS ADMINISTRATIVAS",
+                                              "CENTRO DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                              "CENTRO TECNOLOGICO",
+                                              "DIRECCION GENERAL DE ASUNTOS ACADEMICOS",
+                                              "EL CENTRO DE ARTES Y CULTURA",
+                                              "UNIVERSIDAD AUTONOMA DE AGUASCALIENTES"];
+      organizationValue = universidadAutonomaAguascalientes;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA"){
+      var universidadAutonomaBajaCalifornia=["AREA INTERDISCIPLINARIA DE CIENCIAS AGROPECUARIAS",
+                                              "AREA INTERDISCIPLINARIA DE CIENCIAS SOCIALES",
+                                              "CENTRO DE IDIOMAS MEXICALI",
+                                              "CENTRO DE INVESTIGACIONES HISTORICAS",
+                                              "DIRECCION DE ASUNTOS ACADEMICOS",
+                                              "DIRECCION GENERAL DE ORGANIZACION PROGRAMACION Y PRESUPUESTO",
+                                              "ESCUELA DE CIENCIAS POLITICAS",
+                                              "ESCUELA DE CIENCIAS SOCIALES",
+                                              "ESCUELA DE CONTABILIDAD",
+                                              "ESCUELA DE ENFERMERIA",
+                                              "ESCUELA DE ENOLOGIA Y GASTRONOMIA",
+                                              "ESCUELA DE INGENIERIA",
+                                              "ESCUELA DE INGENIERÍA Y NEGOCIOS GUADALUPE VICTORIA",
+                                              "ESCUELA DE ODONTOLOGIA",
+                                              "ESCUELA DE PEDAGOGIA",
+                                              "ESCUELA DE TURISMO",
+                                              "ESCUELA DE VETERINARIA",
+                                              "ESCUELA SUPERIOR DE CIENCIAS AGRICOLAS",
+                                              "ESCUELA TECNICA, AGRICOLA Y GANADERA",
+                                              "FACULTAD DE ARQUITECTURA",
+                                              "FACULTAD DE CIENCIAS ADMINISTRATIVAS Y SOCIALES",
+                                              "FACULTAD DE CIENCIAS ADMINISTRATIVAS",
+                                              "FACULTAD DE CIENCIAS ADMINSTRATIVAS",
+                                              "FACULTAD DE CIENCIAS AGRICOLAS",
+                                              "FACULTAD DE CIENCIAS HUMANAS",
+                                              "FACULTAD DE CIENCIAS MARINAS",
+                                              "FACULTAD DE CIENCIAS QUIMICAS E INGENIERIA",
+                                              "FACULTAD DE CIENCIAS SOCIALES Y POLITICAS",
+                                              "FACULTAD DE CIENCIAS",
+                                              "FACULTAD DE DEPORTES",
+                                              "FACULTAD DE DERECHO CAMPUS TIJUANA",
+                                              "FACULTAD DE DERECHO MEXICALI",
+                                              "FACULTAD DE DERECHO",
+                                              "FACULTAD DE ECONOMIA Y RELACIONES INTERNATIONALES",
+                                              "FACULTAD DE ECONOMIA",
+                                              "FACULTAD DE HUMANIDADES Y CIENCIAS SOCIALES",
+                                              "FACULTAD DE IDIOMAS",
+                                              "FACULTAD DE INGENIERIA Y NEGOCIOS SAN QUINTIN",
+                                              "FACULTAD DE INGENIERIA",
+                                              "FACULTAD DE INGENIERIA, ARQUITECTURA Y DISEÑO",
+                                              "FACULTAD DE MEDICINA Y PSICOLOGIA - TIJUANA",
+                                              "FACULTAD DE MEDICINA",
+                                              "FACULTAD DE MEDICINA-MEXICALI",
+                                              "FACULTAD DE ODONTOLOGIA",
+                                              "INSTITUTO DE CIENCIAS AGRICOLAS",
+                                              "INSTITUTO DE GEOGRAFIA E HISTORIA",
+                                              "INSTITUTO DE INGENIERIA",
+                                              "INSTITUTO DE INVESTIGACION Y DESARROLLO EDUCATIVO",
+                                              "INSTITUTO DE INVESTIGACIONES EN AGRICULTURA Y GANADERIA",
+                                              "INSTITUTO DE INVESTIGACIONES EN CIENCIAS VETERINARIAS",
+                                              "INSTITUTO DE INVESTIGACIONES HISTORICAS",
+                                              "INSTITUTO DE INVESTIGACIONES OCEANOLOGICAS",
+                                              "INSTITUTO DE INVESTIGACIONES SOCIALES (MEXICALI)",
+                                              "INSTITUTO DE INVESTIGACIONES SOCIALES",
+                                              "UNIDAD MEXICALI",
+                                              "UNIDAD UNIVERSITARIA DE CIENCIAS DE LA EDUCACION",
+                                              "UNIDAD UNIVERSITARIA TECATE",
+                                              "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA MEXICALI",
+                                              "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA ZONA COSTA (TIJUANA)",
+                                              "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA ZONA ENSENADA (ENSENADA)",
+                                              "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA, UNIDAD VALLE DE LAS PALMAS"];
+      organizationValue = universidadAutonomaBajaCalifornia;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA SUR"){
+      var universidadAutonomaBajaCaliforniaSur=["AREA INTERDISCIPLINARIA DE CIENCIAS AGROPECUARIAS",
+                                                "AREA INTERDISCIPLINARIA DE CIENCIAS DEL MAR",
+                                                "AREA INTERDISCIPLINARIA DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                                "CENTRO INTERDISCIPLINARIO DE INVESTIGACION",
+                                                "DEPARTAMENTO DE BIOLOGIA MARINA",
+                                                "DEPARTAMENTO DE COMERCIO EXTERIOR",
+                                                "DEPARTAMENTO DE DERECHO",
+                                                "DEPARTAMENTO DE ECONOMIA",
+                                                "DEPARTAMENTO DE FILOSOFIA",
+                                                "DEPARTAMENTO DE GEOLOGIA",
+                                                "DEPARTAMENTO DE HISTORIA",
+                                                "DEPARTAMENTO DE INGENIERIA EN PESQUERIAS",
+                                                "DEPARTAMENTO DE LETRAS",
+                                                "DEPARTAMENTO DE SISTEMAS COMPUTACIONALES",
+                                                "DIRECCION GENERAL DE APOYO ACADEMICO",
+                                                "UNIVERSIDAD AUTONOMA BAJA CALIFORNIA SUR",];
+      organizationValue = universidadAutonomaBajaCaliforniaSur;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE CAMPECHE"){
+      var universidadAutonomaCampeche=["CADETRAA PROGRAMA REGIONAL DE CAPACITACION Y DESARROLLO TECNOLOGICO EN REFRIGERACION Y ACONDICIONAMIENTO DE AIRE",
+                                        "CENTRO DE ECOLOGIA, PESQUERIAS Y OCEANOGRAFIA DEL GOLFO DE MEXICO",
+                                        "CENTRO DE ESPAÑOL Y MAYA",
+                                        "CENTRO DE ESTUDIOS DE DESARROLLO SUSTENTABLE Y DE APROVECHAMIENTO DE LA VIDA SILVESTRE",
+                                        "CENTRO DE INVESTIGACIONES EN ENFERMEDADES TROPICALES",
+                                        "CENTRO DE INVESTIGACIONES HISTORICAS Y SOCIALES",
+                                        "CENTRO DE INVESTIGACIONES JURIDICAS",
+                                        "DIRECCION ESTUDIO DE POSGRADO E INVESTIGACION",
+                                        "ESCUELA PREPARATORIA LIC ERMILO SANDOVAL CAMPOS",
+                                        "ESCUELA SUPERIOR DE ENFERMERIA",
+                                        "FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS",
+                                        "FACULTAD DE CIENCIAS SOCIALES",
+                                        "FACULTAD DE CONTADURIA Y ADMINISTRACION",
+                                        "FACULTAD DE DERECHO",
+                                        "FACULTAD DE HUMANIDADES",
+                                        "FACULTAD DE INGENIERIA",
+                                        "FACULTAD DE MEDICINA",
+                                        "FACULTAD DE ODONTOLOGIA",
+                                        "PROGRAMA DE CORROSION DEL GOLFO DE MEXICO",
+                                        "PROGRAMA DE ECOLOGIA, PESQUERIAS Y OCEANOGRAFIA DEL...EPOMEX",
+                                        "UNIVERSIDAD VIRTUAL ITESM SEDE EXTERNA CAMPECHE",
+                                        "YUM KAAX PROGRAMA DE DIVULGACION ECOLOGICA",];
+      organizationValue = universidadAutonomaCampeche;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE CHIAPAS"){
+      var universidadAutonomaChiapas=["AGENCIA UNIVERSITARIA DE DESARROLLO CACAO-CHOCOLATE",
+                                      "CAMPUS I AREA DE CIENCIAS FISICO MATEMATICAS",
+                                      "CAMPUS I FACULTAD DE INGENIERIA CIVIL",
+                                      "CAMPUS II AREA DE CIENCIAS BIOMEDICAS",
+                                      "CAMPUS III AREA DE CIENCIAS SOCIALES",
+                                      "CAMPUS III CENTRO DE ESTUDIOS INDIGENAS",
+                                      "CAMPUS III ESCUELA DE DERECHO",
+                                      "CAMPUS III FACULTAD DE CIENCIAS SOCIALES",
+                                      "CAMPUS IV AREA DE CIENCIAS DE LA ADMINISTRACION",
+                                      "CAMPUS IV ESCUELA DE CIENCIAS AGRICOLAS",
+                                      "CAMPUS IV ESCUELA DE CIENCIAS QUIMICAS",
+                                      "CAMPUS V AREA DE CIENCIAS AGRONOMICAS",
+                                      "CAMPUS VI AREA DE HUMANIDADES",
+                                      "CENTRO DE ESTUDIOS EN FÍSICA Y MATEMÁTICAS BÁSICAS Y APLICADAS",
+                                      "CENTRO DE ESTUDIOS PARA EL DESARROLLO MIUNICIPAL Y POLITICAS PUBLICAS",
+                                      "CENTRO DE ESTUDIOS PARA LA CONSTRUCCIÓN DE CIUDADANÍA Y LA SEGURIDAD",
+                                      "CENTRO DE ESTUDIOS UNIVERSITARIOS",
+                                      "CENTRO DE INVESTIGACIONES JURIDICAS",
+                                      "CENTRO MESOAMERICANO DE ESTUDIOS EN SALUD PUBLICA Y DESASTRES",
+                                      "DES CIENCIAS AGROPECUARIAS",
+                                      "DES: RED DE CENTROS UNIVERSITARIOS",
+                                      "ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                      "FACULTAD DE ARQUITECTURA",
+                                      "FACULTAD DE CIENCIAS AGRICOLAS",
+                                      "FACULTAD DE CIENCIAS AGRONOMICAS",
+                                      "FACULTAD DE CIENCIAS QUIMICAS",
+                                      "FACULTAD DE CIENCIAS SOCIALES",
+                                      "FACULTAD DE CONTADURIA Y ADMINISTRACION",
+                                      "FACULTAD DE HUMANIDADES",
+                                      "FACULTAD DE INGENIERIA CIVIL",
+                                      "FACULTAD DE LENGUAS CAMPUS TUXTLA",
+                                      "FACULTAD DE MEDICINA HUMANA",
+                                      "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                      "INSTITUTO DE ESTUDIOS INDIGENAS",
+                                      "MESOAMERICAN CENTRE FOR THEORETICAL PHYSICS",
+                                      "UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD COMITAN",
+                                      "UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD HUEHUETAN",
+                                      "UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD PICHUCALCO",
+                                      "UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD SAN CRISTOBAL",
+                                      "UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD TAPACHULA",
+                                      "UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD TONALA",
+                                      "UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD VILLA FLORES",];
+      organizationValue = universidadAutonomaChiapas;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE CHIHUAHUA"){
+      var universidadAutonomaChiuahua=["CENTRO REGIONAL DE ADIESTRAMIENTO Y EDUCACION CONTINUA (CD. CAMARGO)",
+                                      "CIESTAAM-UACH",
+                                      "ESCUELA DE ODONTOLOGIA",
+                                      "FACULTAD DE ARTES",
+                                      "FACULTAD DE CIENCIAS AGRICOLAS Y FORESTALES",
+                                      "FACULTAD DE CIENCIAS AGROTECNOLOGICAS",
+                                      "FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES UNIDAD CHIHUAHUA",
+                                      "FACULTAD DE CIENCIAS QUIMICAS",
+                                      "FACULTAD DE CONTADURIA Y ADMINISTRACION",
+                                      "FACULTAD DE DERECHO",
+                                      "FACULTAD DE EDUCACION FISICA Y CIENCIAS DEL DEPORTE",
+                                      "FACULTAD DE ENFERMERIA Y NUTRIOLOGIA:",
+                                      "FACULTAD DE ENFERMERIA",
+                                      "FACULTAD DE FILOSOFIA Y LETRAS",
+                                      "FACULTAD DE FRUTICULTURA",
+                                      "FACULTAD DE INGENIERIA",
+                                      "FACULTAD DE MEDICINA",
+                                      "FACULTAD DE ZOOTECNIA",
+                                      "HOSPITAL CENTRAL UNIVERSITARIO:",
+                                      "MUSEO REGIONAL UNIVERSITARIO QUINTA GAMEROS:",
+                                      "UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD CIUDAD JUAREZ",
+                                      "UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD DELICIAS",
+                                      "UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD HIDALGO DEL PARRAL"];
+      organizationValue = universidadAutonomaChiuahua;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE CIUDAD JUAREZ"){
+      var universidadAutonomaCiudadJuerez=["CENTRO DE ESTUDIOS BIOLOGICOS",
+                                          "DIRECCION GENERAL DE INVESTIGACION Y POSGRADO",
+                                          "INSTITUTO DE ARQUITECTURA, DISEÑO Y ARTE",
+                                          "INSTITUTO DE CIENCIAS BIOMEDICAS",
+                                          "INSTITUTO DE CIENCIAS SOCIALES Y ADMINISTRACION",
+                                          "INSTITUTO DE INGENIERIA Y TECNOLOGIA"];
+      organizationValue = universidadAutonomaCiudadJuerez;
+    }
+      if(organizationValue == "UNIVERSIDAD AUTONOMA DE COAHUILA"){
+      var universidadAutonomaCoahuila=["CENTRO DE INVESTIGACION EN MATEMATICAS APLICADAS",
+                                        "CENTRO DE INVESTIGACIONES SOCIOECONOMICAS",
+                                        "ESCUELA DE ADMINISTRACION",
+                                        "ESCUELA DE CONTADURIA Y ADMINISTRACION",
+                                        "ESCUELA DE INGENIERIA MECANICA Y ELECTRICA",
+                                        "ESCUELA DE MATEMATICAS",
+                                        "ESCUELA DE METALURGIA",
+                                        "FACULTAD DE ARQUITECTURA",
+                                        "FACULTAD DE CIENCIA, EDUCACIÓN Y HUMANIDADES",
+                                        "FACULTAD DE CIENCIAS FISICO MATEMATICAS",
+                                        "FACULTAD DE CIENCIAS QUIMICAS",
+                                        "FACULTAD DE ECONOMÍA UNIDAD SALTILLO",
+                                        "FACULTAD DE MEDICINA",
+                                        "UNIDAD SALTILLO",
+                                        "UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE CIUDAD ACUÑA",
+                                        "UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE MONCLOVA",
+                                        "UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE NUEVA ROSITA",
+                                        "UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE PIEDRAS NEGRAS",
+                                        "UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE SAN PEDRO",
+                                        "UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD TORREON"];
+      organizationValue = universidadAutonomaCoahuila;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE GUERRERO"){
+      var universidadAutonomaGuerrero=["CENTRO DE INVESTIGACION Y POSGRADOS EN ESTUDIOS SOCIOTERRITORIALES",
+                                        "CENTRO DE INVESTIGACIONES MICROBIOLOGICAS",
+                                        "CENTRO DE INVESTIGACIÓN DE ENFERMEDADES TROPICALES",
+                                        "CENTRO DE LENGUAS EXTRANJERAS",
+                                        "COORDINACION DE LA INVESTIGACION CIENTIFICA",
+                                        "COORDINACION GENERAL DEL POSGRADO EN DERECHO",
+                                        "ESCUELA DE CIENCIAS QUIMICAS Y BIOLOGICA",
+                                        "ESCUELA DE ECOLOGIA MARINA",
+                                        "ESCUELA DE FISICA Y MATEMATICAS",
+                                        "ESCUELA NORMAL SUPERIOR",
+                                        "ESCUELA REGIONAL DE CIENCIAS DE LA TIERRA (TAXCO)",
+                                        "ESCUELA SUPERIOR DE ARQUITECTURA Y URBANISMO",
+                                        "ESCUELA SUPERIOR DE CIENCIAS DE LA COMUNICACION",
+                                        "ESCUELA SUPERIOR DE CIENCIAS ECONOMICAS",
+                                        "ESCUELA SUPERIOR DE ENFERMERIA NO. 1",
+                                        "ESCUELA SUPERIOR DE ENFERMERIA NO. 4 (TAXCO)",
+                                        "ESCUELA SUPERIOR DE MEDICINA, VETERINARIA Y ZOOTECNIA (CD. ALTAMIRANO)",
+                                        "FACULTAD DE CIENCIAS DE LA EDUCACION",
+                                        "FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS",
+                                        "FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+                                        "FACULTAD DE FILOSOFIA Y LETRAS",
+                                        "FACULTAD DE INGENIERIA",
+                                        "FACULTAD DE MATEMATICAS",
+                                        "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                        "INSTITUTO INTERNACIONAL DE ESTUDIOS POLITICOS AVANZ IGNACIO MANUEL ALTAMIRANO",
+                                        "PREPARATORIA GREGORIO BELLO CARRANZA N. 25",
+                                        "UNIDAD ACADEMICA DE ENFERMERIA NO.4",
+                                        "UNIDAD ACADEMICA DE TURISMO",
+                                        "UNIDAD DE CIENCIAS DE DESARROLLO REGIONAL",
+                                        "UNIDAD DE ESTUDIOS DE POSGRADO E INVESTIGACION",
+                                        "UNIDAD DE INVESTIGACION ESPECIALIZADA EN MICROBIOLOGIA",
+                                        "UNIVERSIDAD AUTONOMA DE GUERRERO UNIDAD ACAPULCO",
+                                        "UNIVERSIDAD AUTONOMA DE GUERRERO UNIDAD IGUALA",
+                                        "UNIVERSIDAD AUTÓNOMA DE GUERRERO/FACULTAD DE MATEMÁTICA/MAESTRÍA EN ESTADÍSTICA APLICADA",];
+      organizationValue = universidadAutonomaGuerrero;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE HIDALGO"){
+      var universidadAutonomaHidalgo=["ESCUELA SUPERIOR DE APAN"];
+      organizationValue = universidadAutonomaHidalgo;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE LA CIUDAD DE MEXICO"){
+      var universidadAutonomaCiudadMexico=["DEL VALLE UNIVERSIDAD AUTÓNOMA DE LA CIUDAD DE MÉXICO",
+                                            "PLANTEL CASA LIBERTAD IZTAPALAPA",
+                                            "PLANTEL CUAUTEPEC",
+                                            "POSGRADO EN HUMANIDADES Y CIENCIAS SOCIALES",
+                                            "SAN LORENZO TEZONCO"];
+      organizationValue = universidadAutonomaCiudadMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE NAYARIT"){
+      var universidadAutonomaNayarit=["ACUACULTURA INTEGRAL, S.A. DE C.V.",
+                                      "AREA DE CIENCIAS BIOLÓGICO AGROPECUARIAS Y PESQUERAS",
+                                      "AREA DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                      "ASOCIACIÓN NAYARITA DE PRODUCTORES DE OSTIÓN, A.C.",
+                                      "CENTRO UNIVERSITARIO DE IDIOMAS",
+                                      "COORDINACION DE INVESTIGACION CIENTIFICA",
+                                      "DIRECCION DE EDUCACION SUPERIOR E INVESTIGACION CIENTIFICA",
+                                      "ESCUELA DE COMERCIO Y ADMINISTRACION",
+                                      "ESCUELA DE INGENIERIA PESQUERA",
+                                      "ESCUELA DE MEDICINA HUMANA",
+                                      "ESCUELA SUPERIOR DE INGENIERIA QUIMICA INDUSTRIAL",
+                                      "ESCUELA SUPERIOR DE TURISMO FACULTAD DE AGRICULTURA",
+                                      "FACULTAD DE AGRICULTURA",
+                                      "FACULTAD DE CIENCIAS DE LA EDUCACION",
+                                      "FACULTAD DE CIENCIAS E INGENIERIAS",
+                                      "FACULTAD DE DERECHO",
+                                      "FACULTAD DE ECONOMIA",
+                                      "FACULTAD DE ENFERMERIA",
+                                      "FACULTAD DE INGENIERIA PESQUERA",
+                                      "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                      "FACULTAD DE ODONTOLOGIA",
+                                      "FACULTAD DE TURISMO",
+                                      "SERVICIOS INTEGRALES DE PESCA Y ACUICULTURA, S.A. DE",
+                                      "UNIDAD ACADEMICA DE CONTADURIA Y ADMINISTRACION",
+                                      "UNIDAD ACADEMICA DE DERECHO",
+                                      "UNIDAD ACADEMICA DE TURISMO",
+                                      "UNIDAD ACADÉMICA DE MEDICINA",
+                                      "UNIDAD ACADÉMICA DE ODONTOLOGÍA"];
+      organizationValue = universidadAutonomaNayarit;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE NUEVO LEON"){
+      var universidadAutonomaNuevoLeon=["CENTRO DE ESTUDIOS Y CERTIFICACIÓN DE LENGUAS EXTRANJERAS",
+                                        "CENTRO DE INCUBACION DE EMPRESAS Y TRANSFERENCIA DE TECNOLOGÍA UANL",
+                                        "CENTRO DE INVESTIGACIÓN Y DESARROLLO EN EDUCACION BILINGÜE",
+                                        "CLÍNICA UNIVERSITARIA 21 DE ENERO",
+                                        "COLEGIO DE GRADUADOS",
+                                        "DIRECCION GENERAL DE INVESTIGACION CIENTIFICA",
+                                        "ESC. IND. Y PREPA TECNICA PABLO LIVAS",
+                                        "ESCUELA INDUSTRIAL Y PREPARATORIA TÉCNICA ÁLVARO OBREGÓN",
+                                        "ESCUELA Y PREPARATORIA TECNICA MEDICA",
+                                        "FACULTAD DE AGRONOMIA",
+                                        "FACULTAD DE ARQUITECTURA",
+                                        "FACULTAD DE ARTES ESCENICAS",
+                                        "FACULTAD DE ARTES VISUALES",
+                                        "FACULTAD DE CIENCIAS BIOLOGICAS",
+                                        "FACULTAD DE CIENCIAS DE LA COMUNICACION",
+                                        "FACULTAD DE CIENCIAS DE LA TIERRA",
+                                        "FACULTAD DE CIENCIAS FISICO MATEMATICAS",
+                                        "FACULTAD DE CIENCIAS FISICO-MATEMATICAS",
+                                        "FACULTAD DE CIENCIAS FORESTALES",
+                                        "FACULTAD DE CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA",
+                                        "FACULTAD DE CIENCIAS QUIMICAS",
+                                        "FACULTAD DE CIENCIAS",
+                                        "FACULTAD DE CONTADURIA PUBLICA Y ADMINISTRACION",
+                                        "FACULTAD DE DERECHO Y CRIMINOLOGIA",
+                                        "FACULTAD DE ECONOMIA",
+                                        "FACULTAD DE ENFERMERIA",
+                                        "FACULTAD DE FILOSOFIA Y LETRAS",
+                                        "FACULTAD DE INGENIERIA CIVIL",
+                                        "FACULTAD DE INGENIERIA MECANICA Y ELECTRICA",
+                                        "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                        "FACULTAD DE MEDICINA",
+                                        "FACULTAD DE MUSICA",
+                                        "FACULTAD DE ODONTOLOGIA",
+                                        "FACULTAD DE ORGANIZACION DEPORTIVA",
+                                        "FACULTAD DE PSICOLOGIA",
+                                        "FACULTAD DE SALUD PUBLICA",
+                                        "FACULTAD DE TRABAJO SOCIAL",
+                                        "HOSPITAL UNIVERSITARIO",
+                                        "INSTITUTO DE DEFENSORÍA PÚBLICA DE NUEVO LEÓN",
+                                        "INSTITUTO DE INVESTIGACIONES SOCIALES",
+                                        "PREPARATORIA # 16",
+                                        "PREPARATORIA # 22",
+                                        "PREPARATORIA 1",
+                                        "PREPARATORIA 15 UNIDAD FLORIDA",
+                                        "PREPARATORIA 20",
+                                        "PREPARATORIA 7",
+                                        "PREPARATORIA NO. 17",
+                                        "RECTORIA",
+                                        "UNIVERSIDAD AUTONOMA DE NUEVO LEON UNIDAD LINARES",
+                                        "UNIVERSIDAD AUTONOMA DE NUEVO LEON UNIDAD MARIN",
+                                        "UNIVERSIDAD AUTONOMA DE NUEVO LEON"];
+      organizationValue = universidadAutonomaNuevoLeon;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE QUERETARO"){
+      var universidadAutonomaQueretaro=["CENTRO DE ESTUDIOS ACADEMICOS SOBRE CONTAMINACION AMBIENTAL",
+                                        "CENTRO DE ESTUDIOS LINGUISTICOS Y LITERARIOS",
+                                        "DIRECCION DE ESTUDIOS DE POSGRADO",
+                                        "ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                        "FACULTAD DE BELLAS ARTES",
+                                        "FACULTAD DE CIENCIAS NATURALES",
+                                        "FACULTAD DE CIENCIAS POLITICAS Y SOCIALES",
+                                        "FACULTAD DE CIENCIAS QUIMICAS",
+                                        "FACULTAD DE CIENCIAS",
+                                        "FACULTAD DE CONTADURIA Y ADMINISTRACION",
+                                        "FACULTAD DE DERECHO",
+                                        "FACULTAD DE ENFERMERIA",
+                                        "FACULTAD DE FILOSOFIA",
+                                        "FACULTAD DE INFORMATICA",
+                                        "FACULTAD DE INGENIERIA",
+                                        "FACULTAD DE LENGUAS Y LETRAS",
+                                        "FACULTAD DE MEDICINA",
+                                        "FACULTAD DE PSICOLOGIA",
+                                        "FACULTAD DE QUIMICA",
+                                        "FACULTAD DE QUÍMICA MATERIALES",
+                                        "RADIO UNIVERSIDAD",
+                                        "UNIVERSIDAD AUTONOMA DE QUERETARO CAMPUS SAN JUAN DEL RIO",];
+      organizationValue = universidadAutonomaQueretaro;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI"){
+      var universidadAutonomaSanLuis=["CENTRO DE BIOCIENCIAS",
+                                      "COORDINACION ACADÉMICA REGIÓN ALTIPLANO",
+                                      "COORDINACION DE CIENCIAS DE LA COMUNICACION",
+                                      "COORDINACION DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                      "COORDINACIÓN ACADÉMICA REGIÓN HUASTECA SUR",
+                                      "ESCUELA DE BIBLIOTECOLOGIA E INFORMACION",
+                                      "ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                      "ESCUELA DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                      "ESCUELA DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                      "ESCUELA DE PSICOLOGIA",
+                                      "FACULTAD DE AGRONOMIA",
+                                      "FACULTAD DE CIENCIAS QUIMICAS",
+                                      "FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                      "FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                      "FACULTAD DE CIENCIAS",
+                                      "FACULTAD DE CONTADURIA Y ADMINISTRACION",
+                                      "FACULTAD DE DERECHO",
+                                      "FACULTAD DE ECONOMIA",
+                                      "FACULTAD DE ENFERMERIA",
+                                      "FACULTAD DE ESTOMATOLOGIA",
+                                      "FACULTAD DE INGENIERIA",
+                                      "FACULTAD DE MEDICINA",
+                                      "FACULTAD DE PSICOLOGIA",
+                                      "FACULTAD DEL HABITAT",
+                                      "INSTITUTO DE FISICA",
+                                      "INSTITUTO DE GEOLOGIA",
+                                      "INSTITUTO DE INVESTIGACION EN COMUNICACION OPTICA",
+                                      "INSTITUTO DE INVESTIGACIONES DE ZONAS DESERTICAS",
+                                      "INSTITUTO DE INVESTIGACIONES HUMANISTICAS",
+                                      "INSTITUTO DE INVESTIGACIÓN EN COMUNICACIÓN ÓPTICA",
+                                      "INSTITUTO DE METALURGIA",
+                                      "LABORATORIO NACIONAL-CIACYT (COORDINACION PARA LA INNOVACION Y LA APLICACION DE LA CIENCIA Y TECNOLOGIA)",
+                                      "SECRETARÍA DE INVESTIGACIÓN Y POSGRADO",
+                                      "UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD SOLEDAD DE DIAZ GUTIERREZ",
+                                      "UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD ZONA HUASTECA-CIUDAD VALLES",
+                                      "UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD ZONA MEDIA RIOVERDE",
+                                      "UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI",
+                                      "UNIVERSIDAD AUTÓNOMA DE SAN LUIS POTOSÍ, FACULTAD DE ESTOMATOLOGÍA"];
+      organizationValue = universidadAutonomaSanLuis;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE SINALOA"){
+      var universidadAutonomaSinaloa=["CAMPUS CULIACAN",
+                                      "CENTRO DE COMPUTO UNIVERSITARIO",
+                                      "CENTRO DE ESTUDIO DE IDIOMAS",
+                                      "CENTRO DE INSTRUMENTOS",
+                                      "CENTRO DE INVESTIGACION Y DOCENCIA EN CIENCIAS DE LA SALUD",
+                                      "CENTRO DE INVESTIGACION Y SERVICIOS EDUCATIVOS",
+                                      "COMITE DE INVESTIGACION BIOMEDICA ESTUDIANTIL (CIBEUAS)",
+                                      "COORDINACION GENERAL DE INVESTIGACION Y POSTGRADO",
+                                      "ESCUELA DE ADMINISTRACION AGROPECUARIA Y DESARROLLO RURAL",
+                                      "ESCUELA DE ARQUITECTURA",
+                                      "ESCUELA DE BIOLOGIA",
+                                      "ESCUELA DE CIENCIAS DE LA TIERRA",
+                                      "ESCUELA DE CIENCIAS DEL MAR",
+                                      "ESCUELA DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS",
+                                      "ESCUELA DE CIENCIAS FISICO-MATEMATICAS",
+                                      "ESCUELA DE CIENCIAS QUIMICO-BIOLOGICAS",
+                                      "ESCUELA DE CONTABILIDAD Y ADMINISTRACION",
+                                      "ESCUELA DE DERECHO GUASAVE",
+                                      "ESCUELA DE DERECHO Y CIENCIAS SOCIALES",
+                                      "ESCUELA DE ECONOMIA",
+                                      "ESCUELA DE ESTUDIOS INTERNACIONALES Y POLITICAS",
+                                      "ESCUELA DE FILOSOFIA Y LETRAS",
+                                      "ESCUELA DE HISTORIA",
+                                      "ESCUELA DE INFORMATICA",
+                                      "ESCUELA DE INGENIERIA DE MAZATLAN",
+                                      "ESCUELA DE INGENIERIA",
+                                      "ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                      "ESCUELA DE MEDICINA",
+                                      "ESCUELA DE ODONTOLOGIA",
+                                      "ESCUELA DE PSICOLOGIA",
+                                      "ESCUELA DE TRABAJO SOCIAL",
+                                      "ESCUELA SUPERIOR DE AGRICULTURA DEL VALLE",
+                                      "ESCUELA SUPERIOR DE AGRICULTURA",
+                                      "ESCUELA SUPERIOR DE EDUCACION FISICA",
+                                      "ESCUELA SUPERIOR DE ENFERMERÍA",
+                                      "FACULTAD DE AGRICULTURA",
+                                      "FACULTAD DE AGRONOMIA",
+                                      "FACULTAD DE ARQUITECTURA",
+                                      "FACULTAD DE CIENCIAS DE LA EDUCACIÓN",
+                                      "FACULTAD DE CIENCIAS DEL MAR",
+                                      "FACULTAD DE CIENCIAS ECONÓMICAS Y SOCIALES",
+                                      "FACULTAD DE CIENCIAS FISICO-MATEMATICAS",
+                                      "FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS",
+                                      "FACULTAD DE CIENCIAS",
+                                      "FACULTAD DE DERECHO",
+                                      "FACULTAD DE HISTORIA",
+                                      "FACULTAD DE INGENIERIA MOCHIS",
+                                      "FACULTAD DE INGENIERIA",
+                                      "FACULTAD DE ODONTOLOGIA",
+                                      "INSTITUTO DE INVESTIGACIONES ECONOMICAS Y SOCIALES",
+                                      "PROGRAMA UNIVERSITARIO DE PROTECCION Y MEJORAMIENTO AL AMBIENTE",
+                                      "UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD GUAMUCHIL",
+                                      "UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD LOS MOCHIS",
+                                      "UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD MAZATLAN"];
+      organizationValue = universidadAutonomaSinaloa;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE TAMAULIPAS"){
+      var universidadAutonomaTamaulipas=["CENTRO DE EXCELENCIA",
+                                        "CENTRO DE INVESTIGACION SOCIAL",
+                                        "CENTRO DE LENGUAS Y LINGÜÍSTICA APLICADA",
+                                        "DEPARTAMENTO DE ANALISIS DE ALIMENTOS",
+                                        "DIRECCION DE INVESTIGACION CIENTIFICA",
+                                        "DIRECCION GENERAL DE INNOVACION TECNOLOGICA",
+                                        "FACULTAD DE AGRONOMIA",
+                                        "FACULTAD DE ARQUITECTURA, DISEÑO Y URBANISMO",
+                                        "FACULTAD DE CIENCIAS DE LA EDUCACION",
+                                        "FACULTAD DE CIENCIAS QUIMICAS",
+                                        "FACULTAD DE COMERCIO Y ADMINISTRACION (TAMPICO)",
+                                        "FACULTAD DE COMERCIO, ADMINISTRACION Y CIENCIAS SOCIALES (NUEVO LAREDO)",
+                                        "FACULTAD DE DERECHO",
+                                        "FACULTAD DE ENFERMERIA (VICTORIA)",
+                                        "FACULTAD DE ENFERMERIA",
+                                        "FACULTAD DE INGENIERIA Y CIENCIAS",
+                                        "FACULTAD DE INGENIERIA",
+                                        "FACULTAD DE MEDICINA DR. ALBERTO ROMO CABALLERO",
+                                        "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                        "FACULTAD DE ODONTOLOGIA",
+                                        "INSTITUTO DE ECOLOGIA Y ALIMENTOS",
+                                        "INSTITUTO DE INVESTIGACIONES HISTORICAS",
+                                        "UNIDAD ACADEMICA DE CIENCIAS DE LA SALUD Y TECNOLOGIA (MATAMOROS)",
+                                        "UNIDAD ACADEMICA DE CIENCIAS JURIDICAS Y SOCIALES",
+                                        "UNIDAD ACADEMICA DE TRABAJO SOCIAL Y CIENCIAS PARA EL DESARROLLO HUMANO",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA LIC. FRANCISCO HERNANDEZ GARCIA",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA DE AGRONOMIA Y CIENCIAS",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA DE CIENCIAS, EDUCACION Y HUMANIDADES",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA DE COMERCIO Y ADMINISTRACION VICTORIA",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA DE TRABAJO SOCIAL Y CIENCIAS PARA EL DESARROLLO HUMANO",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA MANTE-CENTRO",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA MATAMOROS (UAT)",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA REYNOSA AZTLAN",
+                                        "UNIDAD ACADEMICA MULTIDISCIPLINARIA REYNOSA-RODHE",
+                                        "UNIVERSIDAD AUTONOMA DE TAMAULIPAS CENTRO UNIVERSITARIO TAMPICO-CIUDAD MADERO",
+                                        "UNIVERSIDAD AUTONOMA DE TAMAULIPAS H. MATAMOROS:",
+                                        "UNIVERSIDAD AUTONOMA DE TAMAULIPAS MANTE",
+                                        "UNIVERSIDAD AUTONOMA DE TAMAULIPAS NUEVO LAREDO",
+                                        "UNIVERSIDAD AUTONOMA DE TAMAULIPAS REYNOSA",];
+      organizationValue = universidadAutonomaTamaulipas;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE TLAXCALA"){
+      var universidadAutonomaTlaxcala=["CENTRO DE INVESTIGACION ACUICOLA",
+                                        "CENTRO DE INVESTIGACION EN CIENCIAS BIOLOGICAS",
+                                        "CENTRO DE INVESTIGACION EN GENETICA Y AMBIENTE",
+                                        "CENTRO DE INVESTIGACION EN GINECOLOGIA Y OBSTETRICIA Y FECUNDACION ARTIFICIAL ANIMAL",
+                                        "CENTRO DE INVESTIGACION EN REPRODUCCION ANIMAL",
+                                        "CENTRO DE INVESTIGACION INTERDISCIPLINARIA SOBRE DESARROLLO REGIONAL",
+                                        "CENTRO DE INVESTIGACIONES FISIOLOGICAS",
+                                        "CENTRO TLAXCALA DE BIOLOGIA DE LA CONDUCTA",
+                                        "COORDINACION NACIONAL DE RECURSOS HUMANOS",
+                                        "DEPARTAMENTO DE AGROBIOLOGIA",
+                                        "DEPARTAMENTO DE CIENCIAS DE LA EDUCACION",
+                                        "DEPARTAMENTO DE CIENCIAS DE LA SALUD",
+                                        "DEPARTAMENTO DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                        "DEPARTAMENTO DE CIENCIAS",
+                                        "DEPARTAMENTO DE DERECHO Y CIENCIAS POLITICAS",
+                                        "DEPARTAMENTO DE EDUCACION ESPECIALIZADA",
+                                        "DEPARTAMENTO DE ENFERMERIA Y OBSTETRICIA",
+                                        "DEPARTAMENTO DE FILOSOFIA Y LETRAS",
+                                        "DEPARTAMENTO DE INGENIERIA Y TECNOLOGIA",
+                                        "DEPARTAMENTO DE ODONTOLOGIA",
+                                        "DEPARTAMENTO DE SOCIOLOGIA Y TRABAJO SOCIAL",
+                                        "ESCUELA DE BIOLOGIA AGROPECUARIA",
+                                        "ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                        "FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                        "INSTITUTO DE ESTUDIOS ECONOMICOS DE AMERICA LATINA",
+                                        "INSTITUTO NACIONAL DE ANTROPOLOGÍA Y PENSAMIENTO LATINOAMERICANO",
+                                        "LABORATORIO DE SANIDAD VEGETAL",
+                                        "UNIVERSIDAD AUTONOMA DE TLAXCALA UNIDAD APIZACO",
+                                        "UNIVERSIDAD AUTONOMA DE TLAXCALA UNIDAD IXTACUIXTLA",
+                                        "UNIVERSIDAD AUTONOMA DE TLAXCALA/ FACULTAD DE CIENCIAS BÁSICAS, INGENIERÍA Y TECNOLOGÍA"];
+      organizationValue = universidadAutonomaTlaxcala;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE YUCATAN"){
+      var universidadAutonomaYucatan=["CENTRO DE INVESTIGACIONES REGIONALES DOCTOR HIDEYO MOGUCHI, UNIDAD BIOMEDICA",
+                                      "FACULTAD DE ARQUITECTURA",
+                                      "FACULTAD DE CIENCIAS ANTROPOLOGICAS",
+                                      "FACULTAD DE CONTADURIA Y ADMINISTRACION",
+                                      "FACULTAD DE DERECHO",
+                                      "FACULTAD DE ECONOMIA",
+                                      "FACULTAD DE EDUCACION",
+                                      "FACULTAD DE ENFERMERIA. UNIVERSIDAD AUTÓNOMA DE YUCATAN",
+                                      "FACULTAD DE ENFERMERÍA",
+                                      "FACULTAD DE INGENIERIA QUIMICA",
+                                      "FACULTAD DE INGENIERIA",
+                                      "FACULTAD DE MATEMATICAS",
+                                      "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                      "FACULTAD DE MEDICINA",
+                                      "FACULTAD DE ODONTOLOGIA",
+                                      "FACULTAD DE ODONTOLOGIA. UNIVERSIDAD AUTÓNOMA DE YUCATAN",
+                                      "FACULTAD DE PSICOLOGIA",
+                                      "FACULTAD DE QUIMICA"];
+      organizationValue = universidadAutonomaYucatan;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE ZACATECAS FRANCISCO GARCIA SALINAS"){
+      var universidadAutonomaFranciscoGracia=["AREA ACADEMICA DE CIENCIAS SOCIALES Y ADMINISTRATIVAS",
+                                              "AREA ACADEMICA DE EDUCACION Y HUMANIDADES",
+                                              "AREA ACADEMICA DE INGENIERIA Y TECNOLOGIA",
+                                              "CENTRO DE BIOLOGIA EXPERIMENTAL",
+                                              "CENTRO DE CIENCIAS QUIMICAS",
+                                              "CENTRO DE CONTABILIDAD Y ADMINISTRACION",
+                                              "CENTRO DE DOCENCIA SUPERIOR",
+                                              "CENTRO DE DOCTORADO EN ESTUDIOS DEL DESARROLLO",
+                                              "CENTRO DE ESTUDIOS MULTIDISCIPLINARIOS",
+                                              "CENTRO DE ESTUDIOS PROSPECTIVOS",
+                                              "CENTRO DE INVESTIGACIONES HISTORICAS",
+                                              "CENTRO DE INVESTIGACIONES JURIDICAS",
+                                              "CENTRO REGIONAL DE ESTUDIOS NUCLEARES",
+                                              "CENTRO UNIVERSITARIO DE INVESTIGACION",
+                                              "DIRECCION DE ESTUDIOS DE POSGRADO",
+                                              "DIRECCION GENERAL DE INVESTIGACION Y POSGRADO",
+                                              "ESCUELA DE AGRONOMIA",
+                                              "ESCUELA DE FISICA",
+                                              "ESCUELA DE INGENIERIA",
+                                              "ESCUELA DE MEDICINA",
+                                              "FACULTAD DE CIENCIAS QUIMICAS",
+                                              "FACULTAD DE CIENCIAS SOCIALES",
+                                              "FACULTAD DE DERECHO",
+                                              "FACULTAD DE ECONOMIA",
+                                              "FACULTAD DE FISICA",
+                                              "FACULTAD DE MEDICINA HUMANA",
+                                              "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                              "FACULTAD DE MEDICINA",
+                                              "INSTITUTO DE CIENCIAS BASICAS",
+                                              "INSTITUTO DE INVESTIGACIONES ODONTOLOGICAS",
+                                              "RECTORIA",
+                                              "UNIDAD ACADEMICA DE BIOLOGIA EXPERIMENTAL",
+                                              "UNIDAD ACADEMICA DE CONTADURIA",
+                                              "UNIDAD ACADEMICA DE ESTUDIOS DE LAS HUMANIDADES",
+                                              "UNIDAD ACADEMICA DE ESTUDIOS NUCLEARES",
+                                              "UNIDAD ACADEMICA DE INGENIERÍA ELÉCTRICA",
+                                              "UNIDAD ACADÉMICA DE AGRONOMÍA",
+                                              "UNIDAD ACADÉMICA DE MATEMÁTICAS",
+                                              "UNIDAD ACADÉMICA DE MÚSICA",
+                                              "UNIDAD ACADÉMICA DE PSICOLOGÍA",
+                                              "UNIDAD ACADÉMICA PREPARATORIA",
+                                              "UNIDAD DE POSGRADO EN CIENCIA POLITICA",
+                                              "UNIDIDAD ACADEMICA DE ODONTOLOGIA"];
+      organizationValue = universidadAutonomaFranciscoGracia;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DEL CARMEN"){
+      var universidadAutonomaCarmen=["FACULTAD DE CIENCIAS DE LA INFORMACION",
+                                      "FACULTAD DE CIENCIAS DE LA SALUD",
+                                      "FACULTAD DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                      "FACULTAD DE CIENCIAS EDUCATIVAS",
+                                      "FACULTAD DE DERECHO",
+                                      "FACULTAD DE INGENIERIA",
+                                      "FACULTAD DE PESCA",
+                                      "FACULTAD DE QUIMICA",];
+      organizationValue = universidadAutonomaCarmen;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DEL ESTADO DE HIDALGO"){
+      var universidadAutonomaEstadoHidalgo=["AREA ACADEMICA DE CIENCIAS DE LA COMUNICACION",
+                                            "AREA ACADEMICA DE MATEMATICAS APLICADAS",
+                                            "AREA ACADEMICA DE MUSICA",
+                                            "CENTRO DE DIDACTICA",
+                                            "CENTRO DE ESTUDIOS SOBRE LA UNIVERSIDAD",
+                                            "CENTRO DE INVESTIGACION EN CIENCIA Y TECNICAS EN ALIMENTOS",
+                                            "CENTRO DE INVESTIGACION EN CIENCIAS Y MATERIALES",
+                                            "CENTRO DE INVESTIGACIONES BIOLOGICAS",
+                                            "CENTRO DE INVESTIGACIONES EN MATERIALES Y METALURGIA",
+                                            "CENTRO DE INVESTIGACIONES NEFROLOGICAS",
+                                            "CENTRO DE INVESTIGACIONES QUÍMICAS",
+                                            "CENTRO DE INVESTIGACIONES SOBRE EL ESTADO DE HIDALGO",
+                                            "CENTRO DE INVESTIGACIÓN AVANZADA EN INGENIERÍA INDUSTRIAL",
+                                            "CENTRO DE INVESTIGACIÓN EN BIOLOGÍA DE LA REPRODUCCIÓN",
+                                            "CENTRO DE INVESTIGACIÓN EN CIENCIA Y TECNOLOGÍA DE ALIMENTOS",
+                                            "CENTRO DE INVESTIGACIÓN EN CIENCIAS ECONÓMICO ADMINISTRATIVAS",
+                                            "CENTRO DE INVESTIGACIÓN EN CIENCIAS Y DESARROLLO DE LA EDUCACIÓN",
+                                            "CENTRO DE INVESTIGACIÓN EN TECNOLOGÍAS DE INFORMACIÓN Y SISTEMAS",
+                                            "COORDINACION DE LA DIVISION DE DOCENCIA",
+                                            "DIRECCIÓN DE TELECOMUNICACIONES",
+                                            "DIRECCIÓN DE VINCULACIÓN CON EL SECTOR SOCIAL Y PRODUCTIVO",
+                                            "DIVISION DE INVESTIGACION CIENTIFICA Y TECNOLOGICA",
+                                            "ESCUELA DE MEDICINA",
+                                            "ESCUELA SUPERIOR DE APAN",
+                                            "ESCUELA SUPERIOR DE TEPEJI DEL RIO",
+                                            "ESCUELA SUPERIOR DE TEPEJI",
+                                            "ESCUELA SUPERIOR DE TIZAYUCA",
+                                            "INSTITUTO DE ARTE",
+                                            "INSTITUTO DE CIENCIAS AGROPECUARIAS",
+                                            "INSTITUTO DE CIENCIAS BASICAS E INGENIERIA",
+                                            "INSTITUTO DE CIENCIAS BIOLOGICAS",
+                                            "INSTITUTO DE CIENCIAS DE LA SALUD",
+                                            "INSTITUTO DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                            "INSTITUTO DE CIENCIAS EXACTAS",
+                                            "INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                            "INSTITUTO DE INVESTIGACIONES EN CIENCIAS DE LA TIERRA",
+                                            "INSTITUTO DE INVESTIGACIONES EN CIENCIAS",
+                                            "PLANTEL DISTRITO FEDERAL",
+                                            "PREPARATORIA INCORPORADA UAEH SALVADOR ALLENDE",
+                                            "PRODUCTORA UNIVERSITARIA DE LÁCTEOS (PROUNILAC)",
+                                            "SUBNODO REGIONAL DE MATEMATICAS",
+                                            "SUBNODO REGISTRO MATEMATICAS EDUCATIVAS",
+                                            "ÁREA ACADEMICA DE CIENCIAS POLÍTICAS Y ADMINISTRACIÓN PÚBLICA",
+                                            "ÁREA ACADÉMICA DE CIENCIAS DE LA TIERRA Y MATERIALES",
+                                            "ÁREA ACADÉMICA DE COMUNICACIÓN",
+                                            "ÁREA ACADÉMICA DE ENFERMERÍA",
+                                            "ÁREA ACADÉMICA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                            "ÁREA ACADÉMICA DE ODONTOLOGÍA",
+                                            "ÁREA ACADÉMICA DE PSICOLOGÍA",
+                                            "ÁREA ACADÉMICA DE TRABAJO SOCIAL",];
+      organizationValue = universidadAutonomaEstadoHidalgo;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO"){
+      var universidadAutonomaEstadoMexico=["CENTRO DE ACTIVIDADES CULTURALES",
+                                            "CENTRO DE ENSEÑANZA DE LENGUAS",
+                                            "CENTRO DE ESTUDIOS E INVESTIGACION EN DESARROLLO SUSTENTABLE",
+                                            "CENTRO DE INNOVACION, DESARROLLO E INVESTIGACION EDUCATIVA C.I.D.I.E.",
+                                            "CENTRO DE INVESTIGACION EN CIENCIAS BASICAS",
+                                            "CENTRO DE INVESTIGACION EN CIENCIAS HUMANISTICA",
+                                            "CENTRO DE INVESTIGACION EN CIENCIAS SOCIALES Y HUMANIDADES",
+                                            "CENTRO DE INVESTIGACION EN INGENIERIA ESTRUCTURAL",
+                                            "CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS DE LA POBLACION",
+                                            "CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN CIENCIAS DE LA SALUD",
+                                            "CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA C.",
+                                            "CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN FITOMEJORAMIENTO",
+                                            "CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN ODONTOLOGIA",
+                                            "CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN PLANEACION TERRITORIAL",
+                                            "CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN SALUD ANIMAL",
+                                            "CENTRO INTERNACIONAL DE LENGUA Y CULTURA",
+                                            "CENTRO UNIVERSITARIO DE DESARROLLO PROFESIONAL Y ACADEMICO",
+                                            "CENTRO UNIVERSITARIO UAEM ATLACOMULCO",
+                                            "CENTRO UNIVERSITARIO UAEM ECATEPEC",
+                                            "CENTRO UNIVERSITARIO UAEM TEMASCALTEPEC",
+                                            "CENTRO UNIVERSITARIO UAEM TENANCINGO",
+                                            "CENTRO UNIVERSITARIO UAEM TEXCOCO",
+                                            "CENTRO UNIVERSITARIO UAEM VALLE DE CHALCO",
+                                            "CENTRO UNIVERSITARIO UAEM VALLE DE MEXICO",
+                                            "CENTRO UNIVERSITARIO UAEM VALLE DE TEOTIHUACAN",
+                                            "CENTRO UNIVERSITARIO UAEM ZUMPANGO",
+                                            "CENTRO UNVERSITARIO UAEM AMECAMECA",
+                                            "COORDINACION DE INVESTIGACION CIENTIFICA",
+                                            "ESCUELA DE LENGUAS",
+                                            "ESCUELA PREPARATORIA TEXCOCO",
+                                            "FACULTAD DE AGRONOMIA",
+                                            "FACULTAD DE ANTROPOLOGIA",
+                                            "FACULTAD DE ARQUITECTURA",
+                                            "FACULTAD DE ARTES",
+                                            "FACULTAD DE CIENCIAS AGRICOLAS",
+                                            "FACULTAD DE CIENCIAS DE LA CONDUCTA",
+                                            "FACULTAD DE CIENCIAS FISICAS",
+                                            "FACULTAD DE CIENCIAS POLITICAS Y SOCIALES",
+                                            "FACULTAD DE CIENCIAS",
+                                            "FACULTAD DE CONTADURIA Y ADMINISTRACION",
+                                            "FACULTAD DE DERECHO",
+                                            "FACULTAD DE ECONOMIA",
+                                            "FACULTAD DE ENFERMERIA Y OBSTETRICIA",
+                                            "FACULTAD DE GEOGRAFIA",
+                                            "FACULTAD DE HUMANIDADES",
+                                            "FACULTAD DE INGENIERIA",
+                                            "FACULTAD DE LENGUAS",
+                                            "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                            "FACULTAD DE MEDICINA",
+                                            "FACULTAD DE ODONTOLOGIA",
+                                            "FACULTAD DE PLANEACION URBANA Y REGIONAL",
+                                            "FACULTAD DE QUIMICA",
+                                            "FACULTAD DE TURISMO Y GASTRONOMIA",
+                                            "INSTITUTO DE INVESTIGACION EN CIENCIAS MEDICAS",
+                                            "INSTITUTO EN CIENCIAS AGROPECUARIAS Y RURALES",
+                                            "INSTITUTO EN ESTUDIOS SOBRE LA UNIVERSIDAD",
+                                            "UNIDAD ACADEMICA PROFESIONAL CUAUTITLÁN IZCALLI",
+                                            "UNIDAD ACADEMICA PROFESIONAL NEZAHUALCOYOTL",
+                                            "UNIDAD ACADEMICA PROFESIONAL TIANGUISTENCO",
+                                            "UNIDAD ACADÉMICA PROFESIONAL HUEHUETOCA",
+                                            "UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO",
+                                            "UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO",];
+      organizationValue = universidadAutonomaEstadoMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DEL ESTADO DE MORELOS"){
+      var universidadAutonomaEstadoMorelos=["CENTRO DE INVESTIGACION TRANSDISCIPLINAR EN PSICOLOGÍA , CITPSI",
+                                            "CENTRO DE INVESTIGACIONES BIOLOGICAS",
+                                            "CENTRO DE INVESTIGACIONES DE CIENCIAS QUIMICAS",
+                                            "CENTRO DE INVESTIGACIONES EN INGENIERIA Y CIENCIAS APLICADAS",
+                                            "CENTRO DE INVESTIGACIÓN DE DINÁMICA CELULAR",
+                                            "CENTRO DE INVESTIGACIÓN EN BIODIVERSIDAD Y CONSERVACIÓN",
+                                            "CENTRO DE INVESTIGACIÓN EN BIOTECNOLOGIA",
+                                            "CENTRO DE INVESTIGACIÓN EN CIENCIAS",
+                                            "CENTRO DE INVESTIGACIÓN TRANSDISCIPLINAR EN PSICOLOGÍA",
+                                            "COORDINACION DE INVESTIGACION",
+                                            "ESCUELA DE ARQUITECTURA",
+                                            "ESCUELA DE ESTUDIOS SUPERIORES DE JOJUTLA",
+                                            "ESCUELA DE ESTUDIOS SUPERIORES DE JONACATEPEC",
+                                            "ESCUELA DE ESTUDIOS SUPERIORES DE XALOSTOC",
+                                            "FACULTAD DE ARQUITECTURA",
+                                            "FACULTAD DE ARTES",
+                                            "FACULTAD DE CIENCIAS AGROPECUARIAS",
+                                            "FACULTAD DE CIENCIAS BIOLOGICAS",
+                                            "FACULTAD DE CIENCIAS QUIMICAS E INDUSTRIALES",
+                                            "FACULTAD DE CIENCIAS QUÍMICAS E INGENIERIA",
+                                            "FACULTAD DE CIENCIAS",
+                                            "FACULTAD DE COMUNICACION HUMANA",
+                                            "FACULTAD DE CONTADURIA, ADMINISTRACION E INFORMATICA",
+                                            "FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+                                            "FACULTAD DE DISEÑO",
+                                            "FACULTAD DE ENFERMERIA",
+                                            "FACULTAD DE ESTUDIOS SOCIALES",
+                                            "FACULTAD DE ESTUDIOS SUPERIORES DE CUAUTLA",
+                                            "FACULTAD DE FARMACIA",
+                                            "FACULTAD DE HUMANIDADES",
+                                            "FACULTAD DE MEDICINA",
+                                            "FACULTAD DE PSICOLOGIA",
+                                            "INSTITUTO DE CIENCIAS DE LA EDUCACION",
+                                            "INSTITUTO PROFESIONAL DE LA REGION ORIENTE",
+                                            "INSTITUTO PROFESIONAL DE LA REGION SUR",];
+      organizationValue = universidadAutonomaEstadoMorelos;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA INDIGENA DE MEXICO"){
+      var universidadAutonomaIndigenaMexico=["UNIDAD MOCHICAHUI"];
+      organizationValue = universidadAutonomaIndigenaMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA METROPOLITANA"){
+      var universidadAutonomaMEtropolitana=["UNIDAD AZCAPOTZALCO",
+                                            "UNIDAD XOCHIMILCO",
+                                            "RECTORIA GENERAL",
+                                            "UNIDAD CUAJIMALPA",
+                                            "UNIDAD IZTAPALAPA",
+                                            "UNIDAD LERMA",
+                                            "UNIDAD CUAJIMALPA",
+                                            "LALICS RED LATINOAMERICANA PARA EL ESTUDIO DE LA ECONOMÍA DEL APRENDIZAJE, LA INNOVACIÓN Y LA CREACIÓN DE SISTEMAS DE CAPACIDADES",];
+      organizationValue = universidadAutonomaMEtropolitana;
+    }
+     if(organizationValue == "UNIVERSIDAD DE ANTIOQUIA"){
+      var universidadAutonomaAntioquia=[" "];
+      organizationValue = universidadAutonomaAntioquia;
+    }
+     if(organizationValue == "UNIVERSIDAD DE CANTABRIA"){
+      var universidadAutonomaCantabria=["UNIVERSIDAD DE CANTABRIA"];
+      organizationValue = universidadAutonomaCantabria;
+    }
+     if(organizationValue == "UNIVERSIDAD DE CIENCIAS Y ARTES DE CHIAPAS"){
+      var universidadAutonomaCienciasArtesChiapas=["CENTRO DE ESTUDIOS SUPERIORES DE MEXICO Y CENTROAMERICA",
+                                                    "ESCUELA DE BIOLOGIA",
+                                                    "ESCUELA DE MUSICA",
+                                                    "ESCUELA DE NUTRICION",
+                                                    "ESCUELA DE ODONTOLOGIA",
+                                                    "ESCUELA DE PSICOLOGIA",
+                                                    "ESCUELA DE TOPOGRAFIA",
+                                                    "FACULTAD DE ARTES",
+                                                    "FACULTAD DE HUMANIDADES",
+                                                    "INSTITUTO DE CIENCIAS BIOLÓGICAS",
+                                                    "INSTITUTO DE CIENCIAS BÁSICAS Y APLICADAS",];
+      organizationValue = universidadAutonomaCienciasArtesChiapas;
+    }
+     if(organizationValue == "UNIVERSIDAD DE COLIMA"){
+      var universidadColima=["CENTRO DE INVESTIGACIONES OCEANOLOGICAS",
+                              "CENTRO UNIVERSITARIO DE ESTUDIOS E INV. DE VULCANOLOGIA",
+                              "CENTRO UNIVERSITARIO DE ESTUDIOS E INVESTIGACION SOBRE LA CUENCA DEL PACIFICO",
+                              "CENTRO UNIVERSITARIO DE GESTION AMBIENTAL",
+                              "CENTRO UNIVERSITARIO DE INVEST. EN CIENCIAS DEL AMBIENTE",
+                              "CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS BASICAS",
+                              "CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS BIOMEDICAS",
+                              "CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS DE LA TIERRA",
+                              "CENTRO UNIVERSITARIO DE INVESTIGACION Y DESARROLLO AGROPECUARIO",
+                              "CENTRO UNIVERSITARIO DE INVESTIGACIONES PARA EL DESARROLLO SUSTENTABLE",
+                              "CENTRO UNIVERSITARIO DE INVESTIGACIONES SOCIALES",
+                              "CENTRO UNIVERSITARIO DE INVESTIGACIONES",
+                              "COORDINACION DE INVESTIGACION CIENTIFICA",
+                              "COORDINACION GENERAL DE VINCULACION",
+                              "DELEGACION REGIONAL NO. 1 MANZANILLO",
+                              "DELEGACION REGIONAL NO. 2 TECOMAN",
+                              "DELEGACION REGIONAL NO. 3 COLIMA",
+                              "DELEGACION REGIONAL NO. 4 COQUIMATLAN",
+                              "ESCUELA DE MERCADOTECNIA",
+                              "ESCUELA SUPERIOR DE CIENCIAS QUIMICAS",
+                              "FACULTAD DE CIENCIAS BASICAS",
+                              "FACULTAD DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS",
+                              "FACULTAD DE CIENCIAS POLITICAS Y SOCIALES",
+                              "FACULTAD DE CONTABILIDAD Y ADMINISTRACION",
+                              "FACULTAD DE INGENIERIA CIVIL",
+                              "FACULTAD DE INGENIERIA ELECTROMECANICA",
+                              "FACULTAD DE INGENIERIA MECANICA Y ELECTRICA",
+                              "FACULTAD DE LETRAS Y COMUNICACION",
+                              "FACULTAD DE MEDICINA",
+                              "FACULTAD DE PSICOLOGIA",
+                              "FACULTAD DE QUIMICA",
+                              "FACULTAD DE TURISMO",
+                              "INSTITUTO UNIVERSITARIO DE INVESTIGACIONES JURÍDICAS",
+                              "UNIDAD REGIONAL 5 VILLA DE ALVAREZ",];
+      organizationValue = universidadColima;
+    }
+     if(organizationValue == "UNIVERSIDAD DE GUADALAJARA"){
+      var universidadGuadalajara=["CENTRO DE ESTUDIOS DEL PACIFICO",
+                                  "CENTRO DE ESTUDIOS E INVESTIGACION EN COMPORTAMIENTO",
+                                  "CENTRO DE ESTUDIOS E INVESTIGACIONES EN PSICOLOGIA",
+                                  "CENTRO DE ESTUDIOS ESTRATEGICOS PARA EL DESARROLLO",
+                                  "CENTRO DE ESTUDIOS PARA EXTRANJEROS",
+                                  "CENTRO DE INVESTIGACIONES EDUCATIVAS",
+                                  "CENTRO DE INVESTIGACIONES JURIDICAS",
+                                  "CENTRO DE INVESTIGACIONES SOBRE LOS MOVIMIENTOS SOCIALES",
+                                  "CENTRO UNIVERSITARIO DE ARTE, ARQUITECTURA Y DISEÑO",
+                                  "CENTRO UNIVERSITARIO DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS",
+                                  "CENTRO UNIVERSITARIO DE CIENCIAS DE LA SALUD",
+                                  "CENTRO UNIVERSITARIO DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS",
+                                  "CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS E INGENIERIA",
+                                  "CENTRO UNIVERSITARIO DE CIENCIAS SOCIALES Y HUMANIDADES.",
+                                  "CENTRO UNIVERSITARIO DE LA CIENEGA",
+                                  "CENTRO UNIVERSITARIO DE LA COSTA SUR",
+                                  "CENTRO UNIVERSITARIO DE LA COSTA SUR",
+                                  "CENTRO UNIVERSITARIO DE LA COSTA",
+                                  "CENTRO UNIVERSITARIO DE LA COSTA.",
+                                  "CENTRO UNIVERSITARIO DE LOS ALTOS",
+                                  "CENTRO UNIVERSITARIO DE LOS LAGOS",
+                                  "CENTRO UNIVERSITARIO DE LOS VALLES",
+                                  "CENTRO UNIVERSITARIO DE TONALA",
+                                  "CENTRO UNIVERSITARIO DEL NORTE",
+                                  "CENTRO UNIVERSITARIO DEL SUR.",
+                                  "CENTRO VOCACIONAL DE ACTIVIDADES PARA EL DESARROLLO DE LA COMUNIDAD",
+                                  "COORDINACION DE COOPERACION ACADEMICA UDG",
+                                  "COORDINACION DE EDUCACION CONTINUA, ABIERTA Y A DISTANCIA",
+                                  "COORDINACION DE VINCULACION Y TRANSFERENCIA TECNOLOGICA",
+                                  "COORDINACION GENERAL DE SISTEMAS PARA LA INOVACION DEL APRENDIZAJE",
+                                  "COORDINACIÓN GENERAL DE SERVICIOS A UNIVERSITARIOS",
+                                  "DEPARTAMENTO DE GEOGRAFIA",
+                                  "DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA",
+                                  "EL COLEGIO DE JALISCO",
+                                  "ESCUELA DE GRADUADOS",
+                                  "ESCUELA PREPARATORIA # 2",
+                                  "ESCUELA PREPARATORIA DE JALISCO",
+                                  "ESCUELA PREPARATORIA DE TONALA NORTE",
+                                  "ESCUELA PREPARATORIA REGIONAL DE ATOTONILCO",
+                                  "ESCUELA PREPARATORIA REGIONAL DE EL SALTO",
+                                  "FACULTAD DE AGRONOMIA",
+                                  "FACULTAD DE ARQUITECTURA",
+                                  "FACULTAD DE CIENCIAS BIOLOGICAS",
+                                  "FACULTAD DE CIENCIAS QUIMICAS",
+                                  "FACULTAD DE CIENCIAS",
+                                  "FACULTAD DE DERECHO",
+                                  "FACULTAD DE ECONOMIA",
+                                  "FACULTAD DE FILOSOFIA Y LETRAS",
+                                  "FACULTAD DE GEOGRAFIA",
+                                  "FACULTAD DE INGENIERIA",
+                                  "FACULTAD DE MEDICINA",
+                                  "FACULTAD DE MEDICINA, VETERINARIA Y ZOOTECNIA",
+                                  "FACULTAD DE ODONTOLOGIA",
+                                  "FACULTAD DE ODONTOLOGIA",
+                                  "FACULTAD DE PSICOLOGIA",
+                                  "INSTITUTO DE BOTANICA",
+                                  "INSTITUTO DE ESTUDIOS SOCIALES",
+                                  "INSTITUTO DE INVESTIGACIONES JURIDICAS",
+                                  "INSTITUTO DE PATOLOGIA INFECCIOSA Y EXPERIMENTAL",
+                                  "INSTITUTO EN MADERA CELULOSA Y PAPEL ING. KARL A. GRELLMANN",
+                                  "INSTITUTO MANANTLAN DE ECOLOGIA Y CONSERVACION",
+                                  "INSTITUTO REGIONAL DE INVESTIGACION EN SALUD PUBLICA",
+                                  "LABORATORIO NATURAL LAS JOYAS DE LA SIERRA",
+                                  "PREPARATORIA # 7",
+                                  "PREPARATORIA 4",
+                                  "PROGRAMA UNIVERSITARIO DE LENGUAS EXTRANJERAS",
+                                  "SIISTEMA DE EDUCACION MEDIA SUPERIOR",
+                                  "SISTEMA DE UNIVERSIDAD VIRTUAL",
+                                  "UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG"];
+      organizationValue = universidadGuadalajara;
+    }
+      if(organizationValue == "UNIVERSIDAD DE GUANAJUATO"){
+      var universidadGuanajuato=["CAMPUS CELAYA - SALVATIERRA",
+                                    "CAMPUS GUANAJUATO",
+                                    "CAMPUS IRAPUATO - SALAMANCA",
+                                    "CAMPUS LEÓN",
+                                    "CENTRO DE INVESTIGACIONES EN QUIMICA INORGANICA",
+                                    "COLEGIO DEL NIVEL MEDIO SUPERIOR",
+                                    "CONTRALORIA INTERNA",
+                                    "DEPARTAMENTO DE INVESTIGACIONES DE LA FACULTAD DE RELACIONES INDUSTRIALES",
+                                    "DIRECCION DE ASUNTOS JURIDICOS",
+                                    "DIRECCION DE ENLACE Y COMUNICACIÓN UNIVERSITARIA",
+                                    "DIRECCION DE INVESTIGACION",
+                                    "DIRECCION DE PLANEACION",
+                                    "ESCUELA DE INGENIERIA TOPOGRAFICA E HIDRAULICA",
+                                    "IGLU-CENTRO MEXICO",
+                                    "INSTITUTO DE INVESTIGACION SOBRE EL TRABAJO",
+                                    "INSTITUTO DE INVESTIGACIONES BIOMEDICAS",
+                                    "INSTITUTO DE INVESTIGACIONES CIENTIFICAS",
+                                    "INSTITUTO DE INVESTIGACIONES MEDICAS",
+                                    "OBSERVATORIO DE LA LUZ",
+                                    "OUI-IGLU",
+                                    "PROCURADURIA UNIVERSITARIA DE LOS DERECHOS ACADEMICOS",
+                                    "SECRETARIA GENERAL",
+                                    "UNIDAD DE ACCESO A LA INFORMACION PUBLICA",];
+      organizationValue = universidadGuanajuato;
+    }
+    ///////////////////////////////////////////////////////////////////////////
+
+     if(organizationValue == "UNIVERSIDAD DE LA CANADA"){
+      var universidadCanada=[" "];
+      organizationValue = universidadCanada;
+    }
+      if(organizationValue == "UNIVERSIDAD DE LA CIENEGA DEL ESTADO DE MICHOACAN DE OCAMPO"){
+      var universidadCienegaMichoaca=[" "];
+      organizationValue = universidadCienegaMichoaca;
+    }
+    if(organizationValue == "UNIVERSIDAD DE LA CIENEGA DEL ESTADO DE MICHOACAN DE OCAMPO"){
+      var universidadCienegaMichoacana=[" "];
+      organizationValue = universidadCienegaMichoacana;
+    }
+    if(organizationValue == "UNIVERSIDAD DE LA REPUBLICA"){
+      var universidadRepublica=["FACULTAD DE MEDICINA - HOSPTAL DE CLÍNICAS DR. MANUEL QUINTELA",
+                                "FACULTAD DE MEDICINA - INSTITUTO DE HIGIENE"];
+      organizationValue = universidadRepublica;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LA SIERRA"){
+      var universidadSierra=[" "];
+      organizationValue = universidadSierra;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LA SIERRA JUAREZ"){
+      var universidadSierrJuarez=["INSTITUTO DE ESTUDIOS AMBIENTALES"];
+      organizationValue = universidadSierrJuarez;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LA SIERRA SUR"){
+      var universidadSierrSur=[" "];
+      organizationValue = universidadSierrSur;
+    }
+    if(organizationValue == "UNIVERSIDAD DE LOS ALTOS DE CHIAPAS"){
+      var universidadAltosChiapas=[" "];
+      organizationValue = universidadAltosChiapas;
+    }
+     if(organizationValue == "UNIVERSIDAD DE OCCIDENTE"){
+      var universidadOccidentes=["CAMPUS CULIACAN",
+                                "CAMPUS EL FUERTE",
+                                "CAMPUS GUASAVE",
+                                "CAMPUS LOS MOCHIS",
+                                "CAMPUS MAZATLAN",
+                                "DEPARTAMENTO DE INGENIERÍA Y TECNOLOGIA",
+                                "UNIDAD GUAMUCHIL",
+                                "UNIDAD GUASAVE",
+                                "UNIDAD LOS MOCHIS"];
+      organizationValue = universidadOccidentes;
+    }
+     if(organizationValue == "UNIVERSIDAD DE ORIENTE"){
+      var universidadOriente=[" "];
+      organizationValue = universidadOriente;
+    }
+    if(organizationValue == "UNIVERSIDAD DE QUINTANA ROO"){
+      var universidadQuintanaRoo=["DIRECCION DE INVESTIGACION Y POSGRADO",
+                                  "DIVISION DE CIENCIAS E INGENIERIAS",
+                                  "DIVISION DE CIENCIAS POLITICAS Y HUMANIDADES",
+                                  "DIVISION DE CIENCIAS SOCIALES Y ECONOMICO ADMINISTRATIVAS",
+                                  "DIVISION DE DESARROLLO SUSTENTABLE",
+                                  "SECRETARIA GENERAL",
+                                  "UNIDAD COZUMEL"];
+      organizationValue = universidadQuintanaRoo;
+    }
+    if(organizationValue == "UNIVERSIDAD DE SONORA"){
+      var universidadSonora=["UNIDAD REGIONAL CENTRO (HERMOSILLO)",
+                            "UNIDAD REGIONAL NORTE (CAMPUS CABORCA)",
+                            "UNIDAD REGIONAL NORTE (SANTA ANA)",
+                            "UNIDAD REGIONAL SUR (CAMPUS NAVOJOA)"];
+      organizationValue = universidadSonora;
+    }
+
+     if(organizationValue == "UNIVERSIDAD DEL CARIBE"){
+      var universidadCaribe=["DEPARTAMENTO DE TURISMO SUSTENTABLE, HOTELERIA Y GASTRONOMIA"];
+      organizationValue = universidadCaribe;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL DESARROLLO DEL ESTADO DE PUEBLA"){
+      var universidadEstadoPuebla=["CORDINACION DE FISICO-MATEMATICAS"];
+      organizationValue = universidadEstadoPuebla;
+    }
+       if(organizationValue == "UNIVERSIDAD DEL ISTMO"){
+      var universidadIstmmo=["CAMPUS TEHUANTEPEC"];
+      organizationValue = universidadIstmmo;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL MAR"){
+      var universidadMar=["CAMPUS HUATULCO",
+                          "CAMPUS PUERTO ANGEL",
+                          "CAMPUS PUERTO ESCONDIDO",
+                          "INSTITUTO DE ECOLOGIA"];
+      organizationValue = universidadMar;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL PAPALOAPAN"){
+      var universidadPapaloapan=["CAMPUS LOMA BONITA",
+                                "CAMPUS TUXTEPEC"];
+      organizationValue = universidadPapaloapan;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL TOLIMA"){
+      var universidadTolima=[" "];
+      organizationValue = universidadTolima;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL VALLE"){
+      var universidadValle=["FACULTAD DE SALUD",
+                          "FACULTAD DE HUMANIDADES",
+                          "SEDE BUGA"];
+      organizationValue = universidadValle;
+    }
+     if(organizationValue == "UNIVERSIDAD ESTATAL DE SONORA"){
+      var universidadEsatdoSonora=["UNIDAD ACADEMICA BENITO JUAREZ",
+                                  "UNIDAD ACADEMICA MAGDALENA",
+                                  "UNIDAD HERMOSILLO",
+                                  "UNIDAD NOVOJOA",
+                                  "UNIDAD SAN LUIS RIO COLORADO"];
+      organizationValue = universidadEsatdoSonora;
+    }
+      if(organizationValue == "UNIVERSIDAD ESTATAL DEL VALLE DE ECATEPEC"){
+      var universidadValleEcatepec=[" "];
+      organizationValue = universidadValleEcatepec;
+    }
+    if(organizationValue == "UNIVERSIDAD INTERCULTURAL DE CHIAPAS"){
+      var universidadinterculturalChiapas=[" "];
+      organizationValue = universidadinterculturalChiapas;
+    }
+    if(organizationValue == "UNIVERSIDAD INTERCULTURAL DEL ESTADO DE MEXICO"){
+      var universidadEsatdoMExico=[" "];
+      organizationValue = universidadEsatdoMExico;
+    }
+    if(organizationValue == "UNIVERSIDAD INTERCULTURAL DEL ESTADO DE TABASCO"){
+      var universidadEsatdoTabasco=[" "];
+      organizationValue = universidadEsatdoTabasco;
+    }
+     if(organizationValue == "UNIVERSIDAD INTERCULTURAL INDIGENA DE MICHOACAN"){
+      var universidadIndigenaMichoacan=[" "];
+      organizationValue = universidadIndigenaMichoacan;
+    }
+    if(organizationValue == "UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO"){
+      var universidadJuarezAutonoma=["DIVISION ACADEMICA DE CIENCIAS BASICAS",
+                                    "DIVISION ACADEMICA DE CIENCIAS BIOLOGICAS",
+                                    "DIVISION ACADEMICA DE CIENCIAS DE LA SALUD",
+                                    "DIVISION ACADEMICA DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                    "DIVISION ACADEMICA DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                    "DIVISION ACADEMICA DE EDUCACION Y ARTES",
+                                    "INSTITUTO DE INGENIERIA",
+                                    "UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO DIVISION ACADEMICA CIENCIAS AGROPECUARIAS",
+                                    "UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD CHONTALPA",
+                                    "UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD DE LOS RIOS",
+                                    "UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD SIERRA",];
+      organizationValue = universidadJuarezAutonoma;
+    }
+    if(organizationValue == "UNIVERSIDAD JUAREZ DEL ESTADO DE DURANGO"){
+      var universidadJuarezDurango=["ESCUELA DE ENFERMERIA",
+                                  "ESCUELA DE LENGUAS",
+                                  "ESCUELA DE MATEMATICAS-UJED",
+                                  "ESCUELA DE MEDICINA",
+                                  "ESCUELA DE ODONTOLOGIA",
+                                  "ESCUELA DE PINTURA, ESCULTURA Y ARTESANIAS",
+                                  "ESCUELA DE PSICOLOGIA",
+                                  "ESCUELA DE TRABAJO SOCIAL",
+                                  "ESCUELA SUPERIOR DE MUSICA",
+                                  "FACULTAD DE CIENCIAS BIOLOGICAS",
+                                  "FACULTAD DE CIENCIAS FORESTALES",
+                                  "FACULTAD DE CIENCIAS QUIMICAS",
+                                  "FACULTAD DE CIENCIAS QUIMICAS",
+                                  "FACULTAD DE CIENCIAS QUÍMICAS GÓMEZ PALACIO",
+                                  "FACULTAD DE DERECHO",
+                                  "FACULTAD DE ECONOMIA, CONTADURIA Y ADMINISTRACION",
+                                  "FACULTAD DE INGENIERIA CIVIL",
+                                  "FACULTAD DE MATEMATICAS",
+                                  "FACULTAD DE MEDICINA HUMANA",
+                                  "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                  "FACULTAD DE MEDICINA Y NUTRICION",
+                                  "FACULTAD DE MEDICINA",
+                                  "FACULTAD SUPERIOR DE AGRICULTURA Y ZOOTECNIA",
+                                  "INSTITUTO DE CIENCIAS SOCIALES",
+                                  "INSTITUTO DE INVESTIGACION CIENTIFICA",
+                                  "INSTITUTO DE INVESTIGACIONES HISTORICAS",
+                                  "INSTITUTO DE INVESTIGACIONES JURIDICAS",
+                                  "INSTITUTO DE SILVILCULTURA E INDUSTRIA DE LA MADERA",
+                                  "UNIVERSIDAD JUAREZ DEL ESTADO DE DURANGO,GOMEZ PALACIO, DGO."];
+      organizationValue = universidadJuarezDurango;
+    }
+    if(organizationValue == "UNIVERSIDAD LATINOAMERICANA SC"){
+      var universidadLatinoamericana=["CAMPUS CUERNAVACA (CIENCIAS DE LA SALUD)",
+                                    "ESCUELA DE COMUNICACION Y RELACIONES PUBLICAS",
+                                    "ESCUELA DE CONTADURIA Y ADMINISTRACION",
+                                    "ESCUELA DE ODONTOLOGIA"];
+      organizationValue = universidadLatinoamericana;
+    }
+     if(organizationValue == "UNIVERSIDAD MADERO"){
+      var universidadMadero=[" "];
+      organizationValue = universidadMadero;
+    }
+     if(organizationValue == "UNIVERSIDAD MARISTA"){
+      var universidadMarista=[" "];
+      organizationValue = universidadMarista;
+    }
+     if(organizationValue == "UNIVERSIDAD MAYA"){
+      var universidadMaya=[" "];
+      organizationValue = universidadMaya;
+    }
+     if(organizationValue == "UNIVERSIDAD MICHOACANA DE SAN NICOLAS DE HIDALGO"){
+      var universidadMichiacanaHidalgo=["CENTRO DE DIDÁCTICA Y COMUNICACIÓN EDUCATIVA",
+                                      "CENTRO DE ESTUDIOS DE LA CULTURA NICOLAITA",
+                                      "CENTRO DE INVESTIGACION Y ESTUDIO DE LA CULTURA PUREPECHA",
+                                      "CENTRO MULTIDISCIPLINARIO DE ESTUDIOS EN BIOTECNOLOGIA",
+                                      "COORDINACION DE LA INVESTIGACION CIENTIFICA",
+                                      "COORDINACION GENERAL DE ESTUDIOS DE POSGRADO",
+                                      "DEPARTAMENTO DE IDIOMAS",
+                                      "ESCUELA DE ADMINISTRACION DE EMPRESAS AGROPECUARIAS",
+                                      "ESCUELA DE AGROBIOLOGIA",
+                                      "ESCUELA DE CIENCIAS AGROPECUARIAS",
+                                      "ESCUELA DE CIENCIAS FISICO-MATEMATICAS",
+                                      "ESCUELA DE ECONOMIA",
+                                      "ESCUELA DE ENFERMERIA",
+                                      "ESCUELA DE HISTORIA",
+                                      "ESCUELA DE INGENIERIA CIVIL",
+                                      "ESCUELA DE INGENIERIA CIVIL",
+                                      "ESCUELA DE LENGUA Y LITERATURAS HISPANICAS",
+                                      "ESCUELA DE QUIMICO FARMACOBIOLOGIA",
+                                      "ESCUELA POPULAR DE BELLAS ARTES",
+                                      "FACULTAD DE AGROBIOLOGIA PRESIDENTE JUAREZ",
+                                      "FACULTAD DE ARQUITECTURA",
+                                      "FACULTAD DE BIOLOGIA",
+                                      "FACULTAD DE CIENCIAS FÍSICO MATEMÁTICAS",
+                                      "FACULTAD DE CIENCIAS MEDICAS Y BIOLOGICAS DR. IGNACIO CHAVEZ",
+                                      "FACULTAD DE CONTABILIDAD Y ADMINISTRACION",
+                                      "FACULTAD DE CONTADURIA Y CIENCIAS ADMINISTRATIVAS",
+                                      "FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+                                      "FACULTAD DE ECONOMIA",
+                                      "FACULTAD DE FILOSOFIA",
+                                      "FACULTAD DE INGENIERIA CIVIL",
+                                      "FACULTAD DE INGENIERIA ELECTRICA",
+                                      "FACULTAD DE INGENIERIA EN TECNOLOGIA DE LA MADERA",
+                                      "FACULTAD DE INGENIERIA MECANICA",
+                                      "FACULTAD DE INGENIERIA QUIMICA",
+                                      "FACULTAD DE INGENIERIA",
+                                      "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA.",
+                                      "FACULTAD DE MEDICINA",
+                                      "FACULTAD DE ODONTOLOGIA",
+                                      "FACULTAD DE PSICOLOGIA",
+                                      "INSTITUTO DE FISICA Y MATEMATICAS",
+                                      "INSTITUTO DE INVESTIGACIONES AGROPECUARIAS Y FORESTALES",
+                                      "INSTITUTO DE INVESTIGACIONES ECONOMICAS Y EMPRESARIALES",
+                                      "INSTITUTO DE INVESTIGACIONES FILOSÓFICAS",
+                                      "INSTITUTO DE INVESTIGACIONES HISTORICAS",
+                                      "INSTITUTO DE INVESTIGACIONES METALURGICAS",
+                                      "INSTITUTO DE INVESTIGACIONES QUIMICO-BIOLOGICAS",
+                                      "INSTITUTO DE INVESTIGACIONES SOBRE LOS RECURSOS NATURALES",
+                                      "LABORATORIO DE ORNITOLOGIA, MAESTRIA EN MANEJO Y CONSERVACION DE RECURSOS NATURALES",
+                                      "SECRETARIA ACADEMICA",
+                                      "SECRETARIA GENERAL",
+                                      "SECRETARÍA ADMINISTRATIVA"];
+      organizationValue = universidadMichiacanaHidalgo;
+    }
+        if(organizationValue == "UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO"){
+      var universidadNacionalAutonomaMexico=["CAMPUS MORELOS",
+                                            "CENTRO DE INVESTIGACIONES EN ENERGÍA",
+                                            "CENTRO UNIVERSITARIO DE COMUNICACION DE LA CIENCIA",
+                                            "CENTRO UNIVERSITARIO DE ESTUDIOS CINEMATOGRAFICOS",
+                                            "CENTRO UNIVERSITARIO DE TEATRO",
+                                            "COLEGIO DE CIENCIAS Y HUMANIDADES",
+                                            "COORDINACION DE HUMANIDADES",
+                                            "COORDINACION DE INNOVACION Y DESARROLLO",
+                                            "COORDINACION DE INVESTIGACION CIENTIFICA",
+                                            "COORDINACION DE PLANEACION",
+                                            "COORDINACION DEL CONSEJO ACADEMICO DEL AREA DE LAS HUMANI...",
+                                            "DIRECCION DE INTERCAMBIO ACADEMICO",
+                                            "DIRECCION DE LITERATURA",
+                                            "DIRECCION DE PLATAFORMAS OCEANOGRAFICAS",
+                                            "DIRECCION DE TEATRO Y DANZA",
+                                            "DIRECCION GENERAL DE ACTIVIDADES CINEMATOGRAFICAS",
+                                            "DIRECCION GENERAL DE ACTIVIDADES MUSICALES",
+                                            "DIRECCION GENERAL DE ARTES PLASTICAS (ANTES CENTRO DE INVESTIGACION Y SERVICIOS MUSEOLOGICOS)",
+                                            "DIRECCION GENERAL DE ASUNTOS DEL PERSONAL ACADEMICO",
+                                            "DIRECCION GENERAL DE DIFUSIÓN CULTURAL / CENTRO CULTURAL TLATELOLCO",
+                                            "DIRECCION GENERAL DE ESTUDIOS DE POSGRADO",
+                                            "DIRECCION GENERAL DE INFORMACION Y RELACIONES",
+                                            "DIRECCION GENERAL DE ORIENTACION Y SERVICIOS EDUCATIVOS",
+                                            "DIRECCION GENERAL DE PROYECTOS ACADEMICOS",
+                                            "DIRECCION GENERAL DE SERVICIOS DE COMPUTO ACADEMICO",
+                                            "DIRECCION GENERAL DE SERVICIOS DE VINCULACION TECNOLOGICA",
+                                            "DIRECCION GENERAL DE SERVICIOS GENERALES",
+                                            "DIRECCION GENERAL DE SERVICIOS MEDICOS",
+                                            "DIRECCION GENERAL DE TELEVISION UNIVERSITARIA",
+                                            "DIRECCIÓN GENERAL DE COOPERACIÓN E INTERNACIONALIZACIÓN",
+                                            "DIRECCIÓN GENERAL DE EVALUACIÓN EDUCATIVA",
+                                            "DIRECCIÓN GENERAL DE OBRAS Y CONSERVACIÓN",
+                                            "ESCUELA NACIONAL DE ESTUDIOS SUPERIORES UNIDAD MORELIA",
+                                            "ESCUELA NACIONAL DE MUSICA",
+                                            "ESCUELA NACIONAL DE TRABAJO SOCIAL",
+                                            "ESCUELA NACIONAL PREPARATORIA 3",
+                                            "ESCUELA NACIONAL PREPARATORIA 7",
+                                            "ESCUELA NACIONAL PREPARATORIA PLANTEL 2",
+                                            "ESCUELA NACIONAL PREPARATORIA PLANTEL 4",
+                                            "ESCUELA NACIONAL PREPARATORIA PLANTEL 6",
+                                            "ESCUELA NACIONAL PREPARATORIA, PLANTEL 5",
+                                            "ESCUELA NACIONAL PREPARATORIA, PLANTEL 9",
+                                            "ESCUELA NACIONAL PREPARATORIA. PLANTEL 1",
+                                            "ESCUELA NACIONAL PREPARATORIA. PLANTEL 8",
+                                            "ESCUELA PERMANENTE DE EXTENSION EN SAN ANTONIO (EPESA)",
+                                            "FACULTAD DE ARQUITECTURA",
+                                            "FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES",
+                                            "FACULTAD DE CIENCIAS",
+                                            "FACULTAD DE ECONOMIA",
+                                            "FACULTAD DE ESTUDIOS SUPERIORES ARAGÓN",
+                                            "FACULTAD DE ESTUDIOS SUPERIORES CUATITLAN IZCALLI",
+                                            "FACULTAD DE ESTUDIOS SUPERIORES IZTACALA",
+                                            "FACULTAD DE ESTUDIOS SUPERIORES ZARAGOZA",
+                                            "FACULTAD DE INGENIERÍA",
+                                            "FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                                            "FACULTAD DE QUÍMICA",
+                                            "FACULTAD DE ODONTOLOGIA Y POSGRADO",
+                                            "FCA UNAM",
+                                            "INSTITUTO DE BIOLOGÍA",
+                                            "OFICINA DEL ABOGADO GENERAL",
+                                            "PRUEBA",
+                                            "RADIO UNAM",
+                                            "RECTORIA",
+                                            "SECRETARIA DE DESARROLLO INSTITUCIONAL",
+                                            "SECRETARIA GENERA",
+                                            "ULTAD DE CONTADURIA Y ADMINISTRACION",
+                                            "UNIDAD ACADEMICA DE LOS CICLOS PROFESIONAL Y DE POSGRADO CCH",
+                                            "UNIDAD DE POSGRADO",
+                                            "UNIVERSIDAD DON VASCO A.C.",
+                                            "UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO",
+                                            "UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO, FACULTAD DE ODONTOLOGIA Y POSGRADO",
+                                            "UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO, FACULTAD DE ODONTOLOGÍA, POSGRADO ODONTOPEDIATRIA"];
+      organizationValue = universidadNacionalAutonomaMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD NACIONAL DE COLOMBIA"){
+      var universidadNacionalColombia=["SEDE ARAUCA",
+                                      "SEDE BOGOTA",
+                                      "SEDE LETICIA",
+                                      "SEDE MANIZALES",
+                                      "SEDE MEDELLIN",
+                                      "SEDE PALMIRA",
+                                      "SEDE SAN ANDRES"];
+      organizationValue = universidadNacionalColombia;
+    }
+     if(organizationValue == "UNIVERSIDAD PEDAGOGICA DE DURANGO"){
+      var universidadPedagogicaDurango=[" "];
+      organizationValue = universidadPedagogicaDurango;
+    }
+     if(organizationValue == "UNIVERSIDAD PEDAGOGICA DE VERACRUZ"){
+      var universidadPedagogicaVeracruz=[" "];
+      organizationValue = universidadPedagogicaVeracruz;
+    }
+    if(organizationValue == "UNIVERSIDAD PEDAGOGICA NACIONAL"){
+      var universidadPedagogicaNacional=["AREA DE DOCENCIA",
+                                        "AREA DE INVESTIGACION",
+                                        "CENTRO DE LENGUAS EXTRANJERAS",
+                                        "DEPARTAMENTO DE POSGRADO EN EDUCACION",
+                                        "PROGRAMA DE IMPULSO Y DESARROLLO DE LA EDUCACION DE ADULTOS",
+                                        "UNIDAD 011 AGUASCALIENTES",
+                                        "UNIDAD 112 CELAYA",
+                                        "UNIDAD 113 LEON GUANAJUATO",
+                                        "UNIDAD 12-C IGUALA",
+                                        "UNIDAD 12A",
+                                        "UNIDAD 12B",
+                                        "UNIDAD 141 GUADALAJARA",
+                                        "UNIDAD 142, TLAQUEPAQUE",
+                                        "UNIDAD 143, AUTLAN",
+                                        "UNIDAD 144 - CIUDAD GUZMAN",
+                                        "UNIDAD 145, ZAPOPAN",
+                                        "UNIDAD 153 ECATEPEC",
+                                        "UNIDAD 161 MORELIA DE LA UNIVERSIDAD PEDAGOGICA NACIONAL",
+                                        "UNIDAD 251 DE LA UNIVERSIDAD PEDAGOGICA NACIONAL",
+                                        "UNIDAD AJUSCO",
+                                        "UNIDAD CHIHUAHUA",
+                                        "UNIDAD COLIMA NO. 061",
+                                        "UNIDAD HIDALGO",
+                                        "UNIDAD MONCLOVA",
+                                        "UNIDAD MORELOS",
+                                        "UNIDAD NUEVO LEON",
+                                        "UNIDAD OAXACA",
+                                        "UNIDAD PUEBLA",
+                                        "UNIDAD REGIONAL JALAPA",
+                                        "UNIDAD TORREON",
+                                        "UNIDAD UPN 162 ZAMORA",
+                                        "UNIDAD UPN NO. 94 CENTRO",
+                                        "UNIDAD UPN NO. 95 AZCAPOTZALCO",
+                                        "UNIDAD UPN NO. 96 NORTE",
+                                        "UNIDAD UPN NO. 97 SUR",
+                                        "UNIDAD UPN NO. 98 ORIENTE",
+                                        "UNIDAD UPN NO. 99 PONIENTE",
+                                        "UNIDAD ZACATECAS",
+                                        "UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 122 ACAPULCO",
+                                        "UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 123",
+                                        "UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 163 URUAPAN, MICHOACAN",
+                                        "UNIVERSIDAD PEDAGOGICA NACIONAL, UNIDAD 02B, TIJUANA",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 021 DE MEXICALI",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 111 GUANAJUATO",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 181",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 212 TEZIUTLÁN",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 241",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 011 AGUASCALIENTES",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 141A, GUADALAJARA",
+                                        "UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 32A ZACATECAS"];
+      organizationValue = universidadPedagogicaNacional;
+    }
+    if(organizationValue == "UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD O3A"){
+      var universidadPedagogicaNacionalUnidad=[" "];
+      organizationValue = universidadPedagogicaNacionalUnidad;
+    }
+    if(organizationValue == "UNIVERSIDAD PEDAGOGICA VERACRUZANA"){
+      var universidadPedagogicaVeracruzana=[" "];
+      organizationValue = universidadPedagogicaVeracruzana;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DE AGUASCALIENTES"){
+      var universidadPolitecnicaAguascalientes=[" "];
+      organizationValue = universidadPolitecnicaAguascalientes;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DE ALTAMIRA"){
+      var universidadPolitecnicaAltamira=["INGENIERIA EN ENERGIA",
+                                          "INGENIERIA EN TECNOLOGIAS DE LA INFORMACIÓN",
+                                          "INGENIERIA INDUSTRIAL"];
+      organizationValue = universidadPolitecnicaAltamira;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE BAJA CALIFORNIA"){
+      var universidadPolitecnicaBajaCalifornia=[" "];
+      organizationValue = universidadPolitecnicaBajaCalifornia;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE CHIAPAS"){
+      var universidadPolitecnicaChiapas=[" "];
+      organizationValue = universidadPolitecnicaChiapas;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DE DURANGO"){
+      var universidadPolitecnicaDurango=[" "];
+      organizationValue = universidadPolitecnicaDurango;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DE FRANCISCO I MADERO"){
+      var universidadPolitecnicaFranciscoMadero=["DEPARTAMENTO DE INGENIERIA EN AGROTECNOLOGIA"];
+      organizationValue = universidadPolitecnicaFranciscoMadero;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE GOMEZ PALACIO"){
+      var universidadPolitecnicaGomezPalacio=[" "];
+      organizationValue = universidadPolitecnicaGomezPalacio;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE GUANAJUATO"){
+      var universidadPolitecnicaGuanajuato=[" "];
+      organizationValue = universidadPolitecnicaGuanajuato;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE PACHUCA"){
+      var universidadPolitecnicaPachuca=["BIOTECNOLOGIA",
+                                        "DEPARTAMENTO DE MECATRONICA",
+                                        "DEPARTAMENTO DE TELEMÁTICA"];
+      organizationValue = universidadPolitecnicaPachuca;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DE PUEBLA"){
+      var universidadPolitecnicaPuebla=["PROGRAMA ACADEMICO DE INGENIERIA Y ELECTRONICA"];
+      organizationValue = universidadPolitecnicaPuebla;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DE QUERETARO"){
+      var universidadPolitecnicaQueretaro=[" "];
+      organizationValue = universidadPolitecnicaQueretaro;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DE SAN LUIS POTOSI"){
+      var universidadPolitecnicaSanLuis=["ACADEMIA DE MATEMATICAS",
+                                        "COORDINACION DEL SEMINARIO DE INVESTIGACION",
+                                        "DIVISIÓN DE NUEVAS TECNOLOGÍAS DE LA INFORMACIÓN"];
+      organizationValue = universidadPolitecnicaSanLuis;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE SINALOA"){
+      var universidadPolitecnicaSinaloa=[" "];
+      organizationValue = universidadPolitecnicaSinaloa;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DE TLAXCALA"){
+      var universidadPolitecnicaTlaxcala=[" "];
+      organizationValue = universidadPolitecnicaTlaxcala;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE TULANCINGO"){
+      var universidadPolitecnicaTulancingo=[" "];
+      organizationValue = universidadPolitecnicaTulancingo;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE VICTORIA"){
+      var universidadPolitecnicaVictoria=["DEPARTAMENTO DE POSGRADO",
+                                          "SECRETARIA ACADEMICA"];
+      organizationValue = universidadPolitecnicaVictoria;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DE ZACATECAS"){
+      var universidadPolitecnicaZacatecas=["DIRECCION DE INGENIERIA EN SISTEMAS COMPUTACIONALES"];
+      organizationValue = universidadPolitecnicaZacatecas;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DEL ESTADO DE MORELOS"){
+      var universidadPolitecnicaEstadoMorelos=[" "];
+      organizationValue = universidadPolitecnicaEstadoMorelos;
+    }
+      if(organizationValue == "UNIVERSIDAD POLITECNICA DEL GOLFO DE MEXICO"){
+      var universidadPolitecnicaGolfoMexico=[" "];
+      organizationValue = universidadPolitecnicaGolfoMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA DEL SUR DE ZACATECAS"){
+      var universidadPolitecnicaSurZacatecas=[" "];
+      organizationValue = universidadPolitecnicaSurZacatecas;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DEL VALLE DE MEXICO"){
+      var universidadPolitecnicaValleMexico=[" "];
+      organizationValue = universidadPolitecnicaValleMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA DEL VALLE DE TOLUCA"){
+      var universidadPolitecnicaValleToluca=[" "];
+      organizationValue = universidadPolitecnicaValleToluca;
+    }
+    if(organizationValue == "UNIVERSIDAD POLITECNICA MESOAMERICANA"){
+      var universidadPolitecnicaMesoamericana=[" "];
+      organizationValue = universidadPolitecnicaMesoamericana;
+    }
+     if(organizationValue == "UNIVERSIDAD POPULAR DE LA CHONTALPA"){
+      var universidadPopulaarChontalpa=[" "];
+      organizationValue = universidadPopulaarChontalpa;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE AGUASCALIENTES"){
+      var universidadTecnologiaAguascliantes=[" "];
+      organizationValue = universidadTecnologiaAguascliantes;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE ALTAMIRA"){
+      var universidadTecnologiaAlatamira=[" "];
+      organizationValue = universidadTecnologiaAlatamira;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE CANCUN"){
+      var universidadTecnologiaCancun=[" "];
+      organizationValue = universidadTecnologiaCancun;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE COAHUILA"){
+      var universidadTecnologiaCoahuila=[" "];
+      organizationValue = universidadTecnologiaCoahuila;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE HERMOSILLO SONORA"){
+      var universidadTecnologiaHermosilloSonora=[" "];
+      organizationValue = universidadTecnologiaHermosilloSonora;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE HUEJOTZINGO"){
+      var universidadTecnologiaHuejotzing=[" "];
+      organizationValue = universidadTecnologiaHuejotzing;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE IZUCAR DE MATAMOROS"){
+      var universidadTecnologiaIzucarMAtamoros=[" "];
+      organizationValue = universidadTecnologiaIzucarMAtamoros;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE JALISCO"){
+      var universidadTecnologiaJalisco=[" "];
+      organizationValue = universidadTecnologiaJalisco;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA COSTA"){
+      var universidadTecnologiaCosta=[" "];
+      organizationValue = universidadTecnologiaCosta;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA COSTA GRANDE DE GUERRERO"){
+      var universidadTecnologiaCostaGrande=[" "];
+      organizationValue = universidadTecnologiaCostaGrande;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA HUASTECA HIDALGUENSE"){
+      var universidadTecnologiaHuastecaHidalguense=[" "];
+      organizationValue = universidadTecnologiaHuastecaHidalguense;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA MIXTECA"){
+      var universidadTecnologiaHuastecaMixteca=["CENTRO DE FISICA Y MATEMATICAS",
+                                                "DIVISION DE ESTUDIOS DE POSGRADO",
+                                                "INSTITUTO DE AGROINDUSTRIAS",
+                                                "INSTITUTO DE ELECTRONICA Y COMPUTACION",
+                                                "INSTITUTO DE INGENIERIA EN DISEÑO",
+                                                "INSTITUTO DE INGENIERIA INDUSTRIAL",
+                                                "VICE-RECTORIA ACADEMICA"];
+      organizationValue = universidadTecnologiaHuastecaMixteca;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA REGION CENTRO DE COAHUILA"){
+      var universidadTecnologiaCentroCoahuila=[" "];
+      organizationValue = universidadTecnologiaCentroCoahuila;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA RIVIERA MAYA"){
+      var universidadTecnologicaRivera=[" "];
+      organizationValue = universidadTecnologicaRivera;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA SELVA"){
+      var universidadTecnologicaSelva=[" "];
+      organizationValue = universidadTecnologicaSelva;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA SIERRA HIDALGUENSE"){
+      var universidadTecnologicaSierraHidalguense=[" "];
+      organizationValue = universidadTecnologicaSierraHidalguense;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LA ZONA METROPOLITANA DE GUADALAJARA"){
+      var universidadTecnologicaMetropolitana=[" "];
+      organizationValue = universidadTecnologicaMetropolitana;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE LEON"){
+      var universidadTecnologicaLeon=[" "];
+      organizationValue = universidadTecnologicaLeon;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE MORELIA"){
+      var universidadTecnologicaMorelia=["AREA ACADEMICA"];
+      organizationValue = universidadTecnologicaMorelia;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE NAYARIT"){
+      var universidadTecnologicaNayarit=[" "];
+      organizationValue = universidadTecnologicaNayarit;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE NEZAHUALCOYOTL"){
+      var universidadTecnologicaNezahualcototl=[" "];
+      organizationValue = universidadTecnologicaNezahualcototl;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE PUEBLA"){
+      var universidadTecnologicaPuebla=[" "];
+      organizationValue = universidadTecnologicaPuebla;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE QUERETARO"){
+      var universidadTecnologicaQueretaro=[" "];
+      organizationValue = universidadTecnologicaQueretaro;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE SAN JUAN DEL RIO"){
+      var universidadTecnologicaSanJuanDelRia=[" "];
+      organizationValue = universidadTecnologicaSanJuanDelRia;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE SAN LUIS POTOSI"){
+      var universidadTecnologicaSanLuisPotosi=[" "];
+      organizationValue = universidadTecnologicaSanLuisPotosi;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TABASCO"){
+      var universidadTecnologicaTabasco=[" "];
+      organizationValue = universidadTecnologicaTabasco;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TECAMAC"){
+      var universidadTecnologicaTabasco=["SECRETARIA ACADEMICA"];
+      organizationValue = universidadTecnologicaTabasco;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TECAMACHALCO"){
+      var universidadTecnologicaTecamachalco=[" "];
+      organizationValue = universidadTecnologicaTecamachalco;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TIJUANA"){
+      var universidadTecnologicaTijuana=[" "];
+      organizationValue = universidadTecnologicaTijuana;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TLAXCALA"){
+      var universidadTecnologicaTlaxcala=[" "];
+      organizationValue = universidadTecnologicaTlaxcala;
+    }
+      if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TORREON"){
+      var universidadTecnologicaTorreon=[" "];
+      organizationValue = universidadTecnologicaTorreon;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TULA"){
+      var universidadTecnologicaTula=[" "];
+      organizationValue = universidadTecnologicaTula;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TULA TEPEJI"){
+      var universidadTecnologicaTulaTepeji=[" "];
+      organizationValue = universidadTecnologicaTulaTepeji;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE TULANCINGO"){
+      var universidadTecnologicaTulancingo=[" "];
+      organizationValue = universidadTecnologicaTulancingo;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE XICOTEPEC DE JUAREZ"){
+      var universidadTecnologicaXicotepec=[" "];
+      organizationValue = universidadTecnologicaXicotepec;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL CENTRO DE VERACRUZ"){
+      var universidadTecnologicaCentralVeracruz=[" "];
+      organizationValue = universidadTecnologicaCentralVeracruz;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL ESTADO DE ZACATECAS"){
+      var universidadTecnologicaEstadoZacatecas=[" "];
+      organizationValue = universidadTecnologicaEstadoZacatecas;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL NORTE DE AGUASCALIENTES"){
+      var universidadTecnologicaAguascalientesNorte=[" "];
+      organizationValue = universidadTecnologicaAguascalientesNorte;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL NORTE DE COAHUILA"){
+      var universidadTecnologicaCoahuilaNorte=[" "];
+      organizationValue = universidadTecnologicaCoahuilaNorte;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL NORTE DE GUANAJUATO"){
+      var universidadTecnologicaGuanajuatoNorte=[" "];
+      organizationValue = universidadTecnologicaGuanajuatoNorte;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL SUR DE SONORA"){
+      var universidadTecnologicaSurSonora=[" "];
+      organizationValue = universidadTecnologicaSurSonora;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL SUROESTE DE GUANAJUATO"){
+      var universidadTecnologicaSuroesteGuanajuato=[" "];
+      organizationValue = universidadTecnologicaSuroesteGuanajuato;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL USUMACINTA"){
+      var universidadTecnologicaUsumacinta=[" "];
+      organizationValue = universidadTecnologicaUsumacinta;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL VALLE DEL MEZQUITAL"){
+      var universidadTecnologicaMezquital=[" "];
+      organizationValue = universidadTecnologicaMezquital;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA EMILIANO ZAPATA DEL ESTADO DE MORELOS"){
+      var universidadTecnologicaZapataMorels=["ABOGADO GENERAL",
+                                              "DIRECCION DE VINCULACION",
+                                              "DIRECCIÓN DE ADMINISTRACIÓN Y FINANZAS",
+                                              "DIRECCIÓN DE CARRERA DE MANTENIMIENTO INDUSTRIAL",
+                                              "DIRECCIÓN DE CARRERA DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN",
+                                              "DIRECCIÓN DE LAS CARRERAS DE COMERCIALIZACIÓN Y ADMINISTRACIÓN",
+                                              "DIRECCIÓN DE PROYECTOS ESTRATÉGICOS",
+                                              "RECTORÍA"];
+      organizationValue = universidadTecnologicaZapataMorels;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA FIDEL VELAZQUEZ"){
+      var universidadTecnologicaFidelVelelazquez=[" "];
+      organizationValue = universidadTecnologicaFidelVelelazquez;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA METROPOLITANA"){
+      var universidadTecnologicaMetropolitana=[" "];
+      organizationValue = universidadTecnologicaMetropolitana;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA REGIONAL DEL SUR"){
+      var universidadTecnologicaMREgionalSur=[" "];
+      organizationValue = universidadTecnologicaMREgionalSur;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA SANTA CATARINA"){
+      var universidadTecnologicaCatariana=[" "];
+      organizationValue = universidadTecnologicaCatariana;
+    }
+    if(organizationValue == "UNIVERSIDAD VERACRUZANA"){
+      var universidadVeracruzana=["CENTRO DE ATENCION INTEGRAL PARA LA SALUD DEL ESTUDIANTE UNIVERSITARIO",
+                                  "CENTRO DE CIENCIAS DE LA TIERRA",
+                                  "CENTRO DE ECOLOGIA Y PESQUERIAS",
+                                  "CENTRO DE ESTUDIOS DE LA CULTURA Y LA COMUNICACION",
+                                  "CENTRO DE ESTUDIOS E INVESTIGACIONES EN CONOCIMIENTO Y APRENDIZAJE HUMANO",
+                                  "CENTRO DE ESTUDIOS HISTORICOS",
+                                  "CENTRO DE ESTUDIOS PSICOLOGICOS",
+                                  "CENTRO DE ESTUDIOS SOBRE DERECHO GLOBALIZACION Y SEGURIDAD",
+                                  "CENTRO DE ESTUDIOS Y SERVICIOS EN SALUD",
+                                  "CENTRO DE GENETICA FORESTAL",
+                                  "CENTRO DE IDIOMAS",
+                                  "CENTRO DE INICIACION MUSICAL",
+                                  "CENTRO DE INVESTIGACION EN DOCUMENTACION SOBRE LA UNIVERSIDAD",
+                                  "CENTRO DE INVESTIGACIONES BIOLOGICAS",
+                                  "CENTRO DE INVESTIGACIONES BIOMÉDICAS",
+                                  "CENTRO DE INVESTIGACIONES CEREBRALES",
+                                  "CENTRO DE INVESTIGACIONES TROPICALES",
+                                  "CENTRO PARA ESTUDIANTES EXTRANJEROS",
+                                  "DIRECCION GENERAL DE APOYO AL DESARROLLO ACADEMICO",
+                                  "DIRECCION GENERAL DE INVESTIGACIONES",
+                                  "DIRECCION GENERAL DE LA UNIDAD DE ESTUDIOS DE POSGRADO",
+                                  "DIRECCION GENERAL DEL AREA ACADEMICA DE ARTES",
+                                  "DIRECCIÓN GENERAL DEL SISTEMA DE ENSEÑANZA ABIERTA",
+                                  "DOCTOR ARQUITECTO URBANISTA",
+                                  "ESCUELA DE LETRAS",
+                                  "FACULTAD DE ANTROPOLOGIA",
+                                  "FACULTAD DE ARQUITECTURA",
+                                  "FACULTAD DE ARTES PLASTICAS",
+                                  "FACULTAD DE BIOANALISIS",
+                                  "FACULTAD DE BIOLOGIA",
+                                  "FACULTAD DE CIENCIAS ADMINISTRATIVAS Y SOCIALES",
+                                  "FACULTAD DE CIENCIAS AGRICOLAS",
+                                  "FACULTAD DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS",
+                                  "FACULTAD DE CIENCIAS Y TECNICAS DE LA COMUNICACION",
+                                  "FACULTAD DE CIENCIAS",
+                                  "FACULTAD DE CONTADURIA Y ADMINISTRACION",
+                                  "FACULTAD DE DANZA",
+                                  "FACULTAD DE DERECHO",
+                                  "FACULTAD DE ECONOMIA",
+                                  "FACULTAD DE ENFERMERIA",
+                                  "FACULTAD DE ESTADISTICA E INFORMATICA",
+                                  "FACULTAD DE FILOSOFIA",
+                                  "FACULTAD DE FISICA E INTELIGENCIA ARTIFICIAL",
+                                  "FACULTAD DE HISTORIA",
+                                  "FACULTAD DE IDIOMAS",
+                                  "FACULTAD DE INGENIERIA CIVIL",
+                                  "FACULTAD DE INGENIERIA MECANICA ELECTRICA",
+                                  "FACULTAD DE INGENIERIA QUIMICA Y AMBIENTAL",
+                                  "FACULTAD DE INGENIERÍA QUÍMICA",
+                                  "FACULTAD DE INSTRUMENTACION ELECTRONICA",
+                                  "FACULTAD DE LETRAS ESPAÑOLAS",
+                                  "FACULTAD DE MATEMATICAS",
+                                  "FACULTAD DE MEDICINA",
+                                  "FACULTAD DE MEDICINA, VETERINARIA Y ZOOTECNIA",
+                                  "FACULTAD DE MUSICA",
+                                  "FACULTAD DE NUTRICION",
+                                  "FACULTAD DE ODONTOLOGIA",
+                                  "FACULTAD DE PEDAGOGIA",
+                                  "FACULTAD DE PSICOLOGIA",
+                                  "FACULTAD DE QUIMICA",
+                                  "FACULTAD DE QUÍMICA FARMACEÚTICA BIOLOGICA",
+                                  "FACULTAD DE SOCIOLOGIA",
+                                  "FACULTAD DE TEATRO",
+                                  "HOSPITAL ESCUELA DE GINECOLOGIA Y OBSTETRICIA",
+                                  "INST. DE INVESTIGACIONES Y EST. SUPERIORES DE LAS CIENCIAS",
+                                  "INSTITUTO DE ANTROPOLOGIA",
+                                  "INSTITUTO DE ARTES PLASTICAS",
+                                  "INSTITUTO DE BIOTECNOLOGÍA Y ECOLOGÍA APLICADA",
+                                  "INSTITUTO DE CIENCIAS BASICAS",
+                                  "INSTITUTO DE CIENCIAS DE LA SALUD",
+                                  "INSTITUTO DE CONTADURIA PUBLICA",
+                                  "INSTITUTO DE FILOSOFIA",
+                                  "INSTITUTO DE GENETICA FORESTAL",
+                                  "INSTITUTO DE INVESTIGACION EN PSICOLOGIA Y EDUCACION",
+                                  "INSTITUTO DE INVESTIGACIONES BIOLOGICAS",
+                                  "INSTITUTO DE INVESTIGACIONES EN EDUCACION",
+                                  "INSTITUTO DE INVESTIGACIONES HISTORICO-SOCIALES",
+                                  "INSTITUTO DE INVESTIGACIONES JURIDICAS",
+                                  "INSTITUTO DE INVESTIGACIONES LINGÜISTICO-LITERARIAS",
+                                  "INSTITUTO DE INVESTIGACIONES PSICOLOGICAS",
+                                  "INSTITUTO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES DE CIENCIAS ADMINISTRATIVAS",
+                                  "INSTITUTO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES ECONOMICOS",
+                                  "INSTITUTO DE NEUROETOLOGIA",
+                                  "INSTITUTO DE PSICOLOGIA Y EDUCACION",
+                                  "INSTITUTO DE SALUD PUBLICA",
+                                  "INSTITUTO VERACRUZANO DE INVESTIGACIONES EN LA EDUCACION DE LA SALUD",
+                                  "LABORATORIO DE ALTA TECNOLOGIA DE XALAPA SC",
+                                  "MUSEO DE ANTROPOLOGIA",
+                                  "SERVICIOS DE APOYO EN RESOLUCIÓN ANALÍTICA",
+                                  "SISTEMA DE ENSEÑANZA ABIERTA",
+                                  "UNIDAD DE INVESTIGACION DE ECOLOGÍA DE PESQUERÍAS",
+                                  "UNIVERSIDAD VERACRUNA INTERCULTURAL",
+                                  "UNIVERSIDAD VERACRUZANA INTERCULTURAL",
+                                  "UNIVERSIDAD VERACRUZANA REGION COATZACOALCOS-MINATITLAN",
+                                  "UNIVERSIDAD VERACRUZANA REGION CORDOBA-ORIZABA",
+                                  "UNIVERSIDAD VERACRUZANA REGION POZA RICA-TUXPAN",
+                                  "UNIVERSIDAD VERACRUZANA REGION VERACRUZ",
+                                  "UNIVERSIDAD VERACRUZANA REGION XALAPA",
+                                  "ZONA XALAPA-FACULTAD DE FISICA",
+                                  "ZONA XALAPA-INSTITUTO DE INVESTIGACIONES PSICOLOGICAS"];
+      organizationValue = universidadVeracruzana;
+    }
+    if(organizationValue == "UNIVERSIDAD VERACRUZANA UNIDAD DE INVESTIGACION DE ECOLOGIA DE PESQUERIAS"){
+      var universidadVeracruzanaInvestigacion=[" "];
+      organizationValue = universidadVeracruzanaInvestigacion;
+    }
+    if(organizationValue == "UNIVERSITA IUAV DI VENEZIA"){
+      var universitaIuav=["DIPARTIMENTO DI PIANIFICAZIONE"];
+      organizationValue = universitaIuav;
+    }
+    if(organizationValue == "UNIVERSITAT FUR BODENKULTUR WIEN"){
+      var universitaFur=[" "];
+      organizationValue = universitaFur;
+    }
+    if(organizationValue == "UNIVERSITE PIERRE ET MARIE CURIE PARIS VI"){
+      var universitaPierre=[" "];
+      organizationValue = universitaPierre;
+    }
+    if(organizationValue == "UNIVERSITY OF WARWICK"){
+      var universitawarwik=[" "];
+      organizationValue = universitawarwik;
+    }
+    if(organizationValue == "UNIVERSITY OF WASHINGTON"){
+      var universitawashigton=[" "];
+      organizationValue = universitawashigton;
+    }
+    if(organizationValue == "VALDOSTA STATE UNIVERSITY"){
+      var valdosaStateUniversity=[" "];
+      organizationValue = valdosaStateUniversity;
+    }
+
+    /* No especificados */
+
+     if(organizationValue == "SALVADOR OROZCO LOPEZ"){
+      var salvadorOrozco=[" "];
+      organizationValue = salvadorOrozco;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS CONSTITUCIONALES MEXICOCENTROAMERICA"){
+      var centroEstudiosMexicoAmerica=[" "];
+      organizationValue = centroEstudiosMexicoAmerica;
+    }
+     if(organizationValue == "CENTRO NACIONAL DE EDUCACION NORMAL"){
+      var nacionalEducacionNormal=[" "];
+      organizationValue = nacionalEducacionNormal;
+    }
+     if(organizationValue == "INSTITUTO HIDROFISICO MARINO"){
+      var institutoHidrofisico=[" "];
+      organizationValue = institutoHidrofisico;
+    }
+    if(organizationValue == "INDEPENDIENTE"){
+      var independiente=[" "];
+      organizationValue = independiente;
+    }
+    if(organizationValue == "NO ESPECIFICADO"){
+      var noEspecificado=[" "];
+      organizationValue = noEspecificado;
+    }
+    
+    /* Instituciones del sector de educacion superior privadas */
+
+     if(organizationValue == "ACADEMIA MEXICANA DE CIENCIAS ANTROPOLOGICAS AC"){
+      var academiaMexicanaCiencias=[" "];
+      organizationValue = academiaMexicanaCiencias;
+    }
+    if(organizationValue == "BARCELONA GSE"){
+      var barcelonaGse=[" "];
+      organizationValue = barcelonaGse;
+    }
+     if(organizationValue == "BONA TERRA AC"){
+      var bonaTerraAc=[" "];
+      organizationValue = bonaTerraAc;
+    }
+     if(organizationValue == "BOSTON COLLEGE"){
+      var bostonCollege=[" "];
+      organizationValue = bostonCollege;
+    }
+     if(organizationValue == "CAMPUS SAN LUIS POTOSI"){
+      var campusSanLuis=[" "];
+      organizationValue = campusSanLuis;
+    }
+    if(organizationValue == "CAMPUS UNIVERSITARIO SIGLO XXI SC"){
+      var campusUniversitarioSiglo=[" "];
+      organizationValue = campusUniversitarioSiglo;
+    }
+    if(organizationValue == "CENTRAL DE CAPACITACION E INFORMATICA SC"){
+      var centralCapacitacion=[" "];
+      organizationValue = centralCapacitacion;
+    }
+     if(organizationValue == "CENTRO ACADEMICO DE ESTUDIOS SUPERIORES"){
+      var centroAcademicoSuperiores=[" "];
+      organizationValue = centroAcademicoSuperiores;
+    }
+    if(organizationValue == "CENTRO CULTURAL UNIVERSITARIO JUSTO SIERRA"){
+      var centroCulturaUniversitarioSierra=[" "];
+      organizationValue = centroCulturaUniversitarioSierra;
+    }
+     if(organizationValue == "CENTRO DE ENSENANZA TECNICA Y SUPERIOR"){
+      var centroEnseñanazaTecnicaSuperior=["ENSENADA",
+                                            "MEXICALI",
+                                            "TIJUANA"];
+      organizationValue = centroEnseñanazaTecnicaSuperior;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS E INVESTIGACION GUESTALTICOS"){
+      var centroEstudiosGuestalticos=[" "];
+      organizationValue = centroEstudiosGuestalticos;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS EN CIENCIAS DE LA COMUNICACION CAMPUS PEDREGAL"){
+      var centroEstudiosCienciasPEdregal=[" "];
+      organizationValue = centroEstudiosCienciasPEdregal;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS FILOSOFICOS TOMAS DE AQUINO"){
+      var centroEstudiosFilosoficosAquino=[" "];
+      organizationValue = centroEstudiosFilosoficosAquino;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS JURIDICOS DE PUEBLA AC"){
+      var centroEstudiosJuridicos=[" "];
+      organizationValue = centroEstudiosJuridicos;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES CTM AC"){
+      var centroEstudiosSuperioresCtmAc=[" "];
+      organizationValue = centroEstudiosSuperioresCtmAc;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE BAJA CALIFORNIA SC"){
+      var centroEstudiosSuperioresBajaCaliforniaSc=[" "];
+      organizationValue = centroEstudiosSuperioresBajaCaliforniaSc;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE COMUNICACION EDUCATIVA DE TLAXCALA"){
+      var centroEstudiosSuperioresEducativaTlaxcala=[" "];
+      organizationValue = centroEstudiosSuperioresEducativaTlaxcala;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE SAN ANGEL"){
+      var centroEstudiosSuperioresSanMiguel=[" "];
+      organizationValue = centroEstudiosSuperioresSanMiguel;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DE TAMAULIPAS AC"){
+      var centroEstudiosSuperioresTamaulipas=[" "];
+      organizationValue = centroEstudiosSuperioresTamaulipas;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DEL NOROESTE"){
+      var centroEstudiosSuperioresNoroeste=[" "];
+      organizationValue = centroEstudiosSuperioresNoroeste;
+    }
+     if(organizationValue == "CENTRO DE ESTUDIOS SUPERIORES DEL NORTE S C"){
+      var centroEstudiosSuperioresNorte=[" "];
+      organizationValue = centroEstudiosSuperioresNorte;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS TECNOLOGICOS Y HUMANISTICOS"){
+      var centroEstudiosTecnologicosH=["CAMPUS MATAMOROS"];
+      organizationValue = centroEstudiosTecnologicosH;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS TECNOLOGICOS Y UNIVERSITARIOS HISPANO MEXICANO"){
+      var centroEstudiosUniversitariosHispano=[" "];
+      organizationValue = centroEstudiosUniversitariosHispano;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS UNIVERSITARIOS DE MONTERREY"){
+      var centroEstudiosMonterrey=["DIVISION DE LAS CIENCIAS DE LA EDUCACION FISICA",
+                                    "FACULTAD DE AGRONOMIA",
+                                    "FACULTAD DE COMERCIO Y ADMINISTRACION",
+                                    "FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+                                    "FACULTAD DE INGENIERIA",
+                                    "FACULTAD DE PEDAGOGIA",
+                                    "FACULTAD DE PSICOLOGIA",
+                                    "FACULTAD DE VETERINARIA Y ZOOTECNIA",
+                                    "INSTITUTO DE POSGRADO"];
+      organizationValue = centroEstudiosMonterrey;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS UNIVERSITARIOS DEL NORTE A C"){
+      var centrosEstudiosuniversitariosNorte=[" "];
+      organizationValue = centrosEstudiosuniversitariosNorte;
+    }
+    if(organizationValue == "CENTRO DE ESTUDIOS UNIVERSITARIOS LONDRES"){
+      var centroUniversitarioLondres=[" "];
+      organizationValue = centroUniversitarioLondres;
+    }
+    if(organizationValue == "CENTRO EDUCATIVO LATINO AC"){
+      var centroEducativoLatino=[" "];
+      organizationValue = centroEducativoLatino;
+    }
+     if(organizationValue == "CENTRO ELEIA ACTIVIDADES PSICOLOGICAS"){
+      var centroEleiaPsiscologics=["PLANTEL NORTE",
+                                    "PLANTEL SUR"];
+      organizationValue = centroEleiaPsiscologics;
+    }
+     if(organizationValue == "CENTRO LATINOAMERICANO DE ESTUDIOS SUPERIORES AC"){
+      var cenroLatinoamericanoEstudios=[" "];
+      organizationValue = cenroLatinoamericanoEstudios;
+    }
+     if(organizationValue == "CENTRO TECNOLOGICO Y DE EDUCACION SUPERIOR SIERRA MADRE"){
+      var centroTecnologicoEducacionSuperior=[" "];
+      organizationValue = centroTecnologicoEducacionSuperior;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO ANGLOAMERICANO"){
+      var centroUniversitarioAnglo=[" "];
+      organizationValue = centroUniversitarioAnglo;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO ASEC SOR JUANA AC"){
+      var centroUniversitarioAsecSor=[" "];
+      organizationValue = centroUniversitarioAsecSor;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO DE LA CIUDAD DE MEXICO"){
+      var centroUniversitarioCiudadMexico=[" "];
+      organizationValue = centroUniversitarioCiudadMexico;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO DE TIJUANA"){
+      var centroUniversitarioTijuana=[" "];
+      organizationValue = centroUniversitarioTijuana;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO DURANGO INTERCONTINENTAL"){
+      var centroUniversitarioDureangoInter=[" "];
+      organizationValue = centroUniversitarioDureangoInter;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO EMMANUEL KANT"){
+      var centroUniversitarioEmmanuelKant=[" "];
+      organizationValue = centroUniversitarioEmmanuelKant;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO ETAC SC"){
+      var centroUniversitarioEtac=[" "];
+      organizationValue = centroUniversitarioEtac;
+    }
+    if(organizationValue == "CENTRO UNIVERSITARIO GUADALAJARA LAMAR"){
+      var centroUniversitarioLamar=[" "];
+      organizationValue = centroUniversitarioLamar;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO LATINOAMERICANO DE MORELOS"){
+      var centroUniversitariolatinoMorelos=["FACULTAD DE PSICOLOGIA"];
+      organizationValue = centroUniversitariolatinoMorelos;
+    }
+     if(organizationValue == "CENTRO UNIVERSITARIO UNE AC"){
+      var centroUniversitarioUneAc=["PLANTEL TORRE QUETZAL"];
+      organizationValue = centroUniversitarioUneAc;
+    }
+    if(organizationValue == "CENTROS CULTURALES DE MEXICO AC"){
+      var centroCulturalesMexico=["CAMPUS DISTRITO FEDERAL",
+                                    "CAMPUS GUADALAJARA"];
+      organizationValue = centroCulturalesMexico;
+    }
+    if(organizationValue == "CENTROS CULTURALES SC"){
+      var centroSCulturalesSc=[" "];
+      organizationValue = centroSCulturalesSc;
+    }
+     if(organizationValue == "CEU ESCUELA DE NEGOCIOS"){
+      var ceuEscuelasNEgocios=[" "];
+      organizationValue = ceuEscuelasNEgocios;
+    }
+     if(organizationValue == "CIENCIAS ARTES Y LETRAS DE MEXICO PARA LA EDUCACION CONTEMPORANEA AC"){
+      var cienciasArtesLetras=[" "];
+      organizationValue = cienciasArtesLetras;
+    }
+     if(organizationValue == "CLAUSTRO UNIVERSITARIO DE CHIHUAHUA AC"){
+      var claustroUniversitarioChiuahua=[" "];
+      organizationValue = claustroUniversitarioChiuahua;
+    }
+     if(organizationValue == "COLEGIO DE GUANAJUATO PARA EL DESARROLLOAC"){
+      var colegioGuanajuatoDesarrollo=[" "];
+      organizationValue = colegioGuanajuatoDesarrollo;
+    }
+     if(organizationValue == "COLEGIO DE SAN IGNACIO DE LOYOLA VIZCAINAS"){
+      var colegioSanIgnacionLoyola=[" "];
+      organizationValue = colegioSanIgnacionLoyola;
+    }
+     if(organizationValue == "COLEGIO INTERDISCIPLINARIO DE ESPECIALIZACION AC"){
+      var colegioEspecializacion=[" "];
+      organizationValue = colegioEspecializacion;
+    }
+     if(organizationValue == "COLEGIO INTERNACIONAL DE EDUCACION SUPERIOR SC"){
+      var colegioEducacionSuperior=[" "];
+      organizationValue = colegioEducacionSuperior;
+    }
+    if(organizationValue == "COLEGIO MADRID AC"){
+      var colegioMadrid=[" "];
+      organizationValue = colegioMadrid;
+    }
+    if(organizationValue == "COLEGIO NACIONAL DE EDUCACION SUPERIOR"){
+      var colegioNacionalSuperior=[" "];
+      organizationValue = colegioNacionalSuperior;
+    }
+     if(organizationValue == "COLEGIO SUPERIOR DE CIENCIAS JURIDICAS"){
+      var colegioSuperiorCienciasJuridicas=[" "];
+      organizationValue = colegioSuperiorCienciasJuridicas;
+    }
+     if(organizationValue == "COLEGIO UNIVERSITARIO DE LONDRES"){
+      var colegioUniversitarioLondres=[" "];
+      organizationValue = colegioUniversitarioLondres;
+    }
+     if(organizationValue == "COLEGIO UNIVERSITARIO DEL DISTRITO FEDERAL"){
+      var colegioDisritoFedereal=[" "];
+      organizationValue = colegioDisritoFedereal;
+    }
+      if(organizationValue == "COLEGIO VISTA HERMOSA"){
+      var colegioVistaHermosa=[" "];
+      organizationValue = colegioVistaHermosa;
+    }
+     if(organizationValue == "COMERCIAL ARIETE SA DE CV"){
+      var comercialAierte=["CONTRALORIA"];
+      organizationValue = comercialAierte;
+    }
+    if(organizationValue == "COMPREHENSIVE ORTHODONTIC INSTITUTE EN MEXICO AC"){
+      var instituteMexico=[" "];
+      organizationValue = instituteMexico;
+    }
+     if(organizationValue == "COMUNIDAD UNIVERSITARIA DEL GOLFO CENTRO AC"){
+      var comunidadUniversitariaGolfo=["DIRECCIÓN GENERAL ACADÉMICA",
+                                        "DIRECCIÓN GENERAL DE DESARROLLO INSTITUCIONAL",
+                                        "DIRECCIÓN GENERAL DE PLANEACIÓN Y EVALUACIÓN",
+                                        "DIRECCIÓN GENERAL DE SERVICIOS DE APOYO",
+                                        "DIRECCIÓN GENERAL DEL MEDIO UNIVERSITARIO",
+                                        "PREPARATORIA IBERO PUEBLA"];
+      organizationValue = comunidadUniversitariaGolfo;
+    }
+    if(organizationValue == "DESARROLLO VIRTUAL CORPORATIVO SC"){
+      var desarolloVirtualCorporativo=[" "];
+      organizationValue = desarolloVirtualCorporativo;
+    }
+    if(organizationValue == "DIGIPEN INSTITUTE OF TECHNOLOGY"){
+      var digipenInstitute=[" "];
+      organizationValue = digipenInstitute;
+    }
+    if(organizationValue == "EDUCACION SUPERIOR MARISTA AC"){
+      var educacionSuperiorMarista=[" "];
+      organizationValue = educacionSuperiorMarista;
+    }
+    if(organizationValue == "ENSENANZA E INVESTIGACION SUPERIOR AC"){
+      var ensenanazaInvestigacionSuperior=[" "];
+      organizationValue = ensenanazaInvestigacionSuperior;
+    }
+    if(organizationValue == "EOI ESCUELA DE NEGOCIOS"){
+      var eoiEscuelaNegocios=[" "];
+      organizationValue = eoiEscuelaNegocios;
+    }
+    if(organizationValue == "ESCUELA BANCARIA Y COMERCIAL"){
+      var escuelaBancariaComercial=["DEPARTAMENTO DE CONTADURIA PÚBLICA",
+                                    "DEPARTAMENTO DE ECONOMÍA/",
+                                    "DEPARTAMENTO DE POSGRADO",
+                                    "LICENCIATURA"];
+      organizationValue = escuelaBancariaComercial;
+    }
+     if(organizationValue == "ESCUELA BENJAMIN FRANKLIN"){
+      var escuelaBenjaminFranklin=["COORDINACION DE LICENCIATURAS"];
+      organizationValue = escuelaBenjaminFranklin;
+    }
+     if(organizationValue == "ESCUELA DE FORMACION NACIONAL PARA SASTRES Y DISENADORES SAN IDELFONSO CAMPUS PUEBLA SC"){
+      var escuelaFormacionSastes=[" "];
+      organizationValue = escuelaFormacionSastes;
+    }
+     if(organizationValue == "ESCUELA DE PERIODISMO CARLOS SEPTIEN GARCIA"){
+      var escuelaPeriodismoCarlos=[" "];
+      organizationValue = escuelaPeriodismoCarlos;
+    }
+    if(organizationValue == "ESCUELA LIBRE DE DERECHO"){
+      var escuelaLibreDerecho=[" "];
+      organizationValue = escuelaLibreDerecho;
+    }
+    if(organizationValue == "ESCUELA LIBRE DE DERECHO DE PUEBLA AC"){
+      var escuelaLibreDerechoPuebla=[" "];
+      organizationValue = escuelaLibreDerechoPuebla;
+    }
+    if(organizationValue == "ESCUELA LIBRE DE PSICOLOGIA A C"){
+      var escuelaLibrePsicologia=["FACULTAD DE PSICOLOGIA"];
+      organizationValue = escuelaLibrePsicologia;
+    }
+    if(organizationValue == "ESCUELA MODELO SCP"){
+      var escuelaModelo=["UNIVERSIDAD MODELO CAMPUS CHETUMAL",
+                          "UNIVERSIDAD MODELO CAMPUS MÉRIDA",
+                          "UNIVERSIDAD MODELO CAMPUS VALLADOLID"];
+      organizationValue = escuelaModelo;
+    }
+    if(organizationValue == "ESCUELA NACIONAL DE ADMINISTRACION PUBLICA SC"){
+      var escuelaNacionalPublica=[" "];
+      organizationValue = escuelaNacionalPublica;
+    }
+    if(organizationValue == "ESCUELA NORMAL PARTICULAR MIGUEL HIDALGO"){
+      var escuelaNormalMiguel=["SECRETARIA DE EDUCACION PUBLICA DEL ESTADO DE PUEBLA"];
+      organizationValue = escuelaNormalMiguel;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR DE CIUDAD MADERO"){
+      var escuelaNormalSuperiorMadero=[" "];
+      organizationValue = escuelaNormalSuperiorMadero;
+    }
+    if(organizationValue == "ESCUELA NORMAL SUPERIOR FEP"){
+      var escuelaNormalFep=["TITULACIONES"];
+      organizationValue = escuelaNormalFep;
+    }
+    if(organizationValue == "ESCUELA SUPERIOR DE INGENIERIA AUTOMOTRIZ SC"){
+      var escuelaNormalIngenieria=[" "];
+      organizationValue = escuelaNormalIngenieria;
+    }
+    if(organizationValue == "ESCUELA SUPERIOR DE LAS BELLAS ARTES CHAYITO GARZON"){
+      var escuelaSuperiorBellasArtes=[" "];
+      organizationValue = escuelaSuperiorBellasArtes;
+    }
+    if(organizationValue == "ESCUELA SUPERIOR PARTICULAR DE AGRICULTURA HERMANOS ESCOBAR"){
+      var escuelaSuperiorAgriculura=[" "];
+      organizationValue = escuelaSuperiorAgriculura;
+    }
+     if(organizationValue == "FACULTAD LIBRE DE DERECHO DE MONTERREY AC"){
+      var facultadLibreDerecho=[" "];
+      organizationValue = facultadLibreDerecho;
+    }
+     if(organizationValue == "FOMENTO EDUCATIVO POPULAR AC"){
+      var fomentoEducativoPopular=[" "];
+      organizationValue = fomentoEducativoPopular;
+    }
+     if(organizationValue == "FOMENTO EDUCATIVO Y CULTURAL FRANCISCO DE IBARRA AC"){
+      var fomentoEducativoCultural=[" "];
+      organizationValue = fomentoEducativoCultural;
+    }
+     if(organizationValue == "FORMACION UNIVERSITARIA Y HUMANISTA DE LA LAGUNA AC"){
+      var formacionUniversitaria=[" "];
+      organizationValue = formacionUniversitaria;
+    }
+     if(organizationValue == "FUNDACION UNIVERSIDAD DE LAS AMERICAS PUEBLA"){
+      var fundacionUniversidad=["CENTRO DE DESARROLLO REGIONAL",
+                                "CENTRO DE INVESTIGACION EN ECONOMIA Y POLITICAS PUBLICAS",
+                                "CENTRO INTERACTIVO DE RECURSOS DE INFORMACION Y APRENDIZAJE",
+                                "ESCUELA DE ARTES Y HUMANIDADES",
+                                "ESCUELA DE CIENCIAS ADMINISTRATIVAS",
+                                "ESCUELA DE CIENCIAS SOCIALES, ARTES Y HUMANIDADES",
+                                "ESCUELA DE CIENCIAS",
+                                "ESCUELA DE INGENIERIA",
+                                "ESCUELA DE INGENIERÍA Y CIENCIAS",
+                                "ESCUELA DE NEGOCIOS Y ECONOMIA",
+                                "ESCUELA DE NEGOCIOS",
+                                "INSTITUTO DE ESTUDIOS AVANZADOS",
+                                "INSTITUTO DE INVESTIGACION Y POSGRADO",
+                                "RECTORIA",
+                                "UNIVERSIDAD DE LAS AMERICAS, A. C. - CIUDAD DE MEXICO"];
+      organizationValue = fundacionUniversidad;
+    }
+     if(organizationValue == "GRUPO CONVERSARE AC"){
+      var grupoConversare=[" "];
+      organizationValue = grupoConversare;
+    }
+    if(organizationValue == "GRUPO UNIVERSITARIO DE PUEBLA A C"){
+      var grupoUniversityOfPuebla=[" "];
+      organizationValue = grupoUniversityOfPuebla;
+    }
+     if(organizationValue == "HAVERFORD COLLEGE"){
+      var haverfordCollege=[" "];
+      organizationValue = haverfordCollege;
+    }
+     if(organizationValue == "ICONOS INSTITUTO DE INVESTIGACION EN COMUNICACION Y CULTURA"){
+      var iconsInstituteResearchComunity=["INVESTIGACION INSTITUCIONAL"];
+      organizationValue = iconsInstituteResearchComunity;
+    }
+    if(organizationValue == "INSTITUTO BENJAMIN FRANKLIN DE YUCATAN A C"){
+      var institutteBenjaminFranklin=[" "];
+      organizationValue = institutteBenjaminFranklin;
+    }
+    if(organizationValue == "INSTITUTO CELAYENSE"){
+      var institutteCelayense=["ESCUELA SUPERIOR DE COMERCIO",
+                                      "ESCUELA SUPERIOR DE DISEÑO",
+                                      "ESCUELA SUPERIOR DE ODONTOLOGIA",
+                                      "ESCUELA SUPERIOR DE PSICOLOGIA",
+                                      "LICENCIATURA EN NUTRICION",
+                                      "MAESTRIA EN CIENCIAS DE LA EDUCACION",
+                                      "MAESTRIA EN TERAPIA FAMILIAR"];
+      organizationValue = institutteCelayense;
+    }
+     if(organizationValue == "INSTITUTO CULINARIO DE MEXICO"){
+      var institutteClinarieMExico=[" "];
+      organizationValue = institutteClinarieMExico;
+    }
+    if(organizationValue == "INSTITUTO CULTURAL HELENICO AC"){
+      var instituteCultureHelenico=[" "];
+      organizationValue = instituteCultureHelenico;
+    }
+     if(organizationValue == "INSTITUTO CULTURAL MEXICANO JAPONES AC"){
+      var insituteCulturelJapannese=[" "];
+      organizationValue = insituteCulturelJapannese;
+    }
+     if(organizationValue == "INSTITUTO DE ARQUITECTURA AVANZADA DE CATALUNIA"){
+      var instituteArchitectAdvance=[" "];
+      organizationValue = instituteArchitectAdvance;
+    }
+     if(organizationValue == "INSTITUTO DE CIENCIAS Y ESTUDIOS SUPERIORES DE TAMAULIPAS AC"){
+      var instituteStudiesTamaulipas=[" "];
+      organizationValue = instituteStudiesTamaulipas;
+    }
+     if(organizationValue == "INSTITUTO DE COMPUTACION E INFORMATICA DE JEREZ S C"){
+      var instituteComputerJErez=[" "];
+      organizationValue = instituteComputerJErez;
+    }
+     if(organizationValue == "INSTITUTO DE CONSULTORIA UNIVERSITARIA SANTIN S C"){
+      var instituteConsultingUniversity=[" "];
+      organizationValue = instituteConsultingUniversity;
+    }
+    if(organizationValue == "INSTITUTO DE ENLACES EDUCATIVOS"){
+      var instituteEnlaceEducativo=[" "];
+      organizationValue = instituteEnlaceEducativo;
+    }
+    if(organizationValue == "INSTITUTO DE ESPECIALIZACION PARA EJECUTIVOS MONTERREY"){
+      var instituteEspcializacionEjectivos=[" "];
+      organizationValue = instituteEspcializacionEjectivos;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS AVANZADOS DE ZACATECAS AC"){
+      var instituteEstudiosAvanzados=[" "];
+      organizationValue = instituteEstudiosAvanzados;
+    }
+      if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES DE MODA"){
+      var insituteeEstdiosSuperioresModa=[" "];
+      organizationValue = insituteeEstdiosSuperioresModa;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES DE TAMAULIPAS"){
+      var insituteeEstdiosSuperioresTamaulipas=[" "];
+      organizationValue = insituteeEstdiosSuperioresTamaulipas;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES DEL BAJIO SC"){
+      var insituteeEstdiosSuperioresBajio=[" "];
+      organizationValue = insituteeEstdiosSuperioresBajio;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES EN ADMINISTRACION PUBLICA"){
+      var insituteeEstdiosSuperioresAdministracion=[" "];
+      organizationValue = insituteeEstdiosSuperioresAdministracion;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS SUPERIORES RAFAEL GUIZAR VALENCIA"){
+      var insituteeEstdiosSuperioresRafael=[" "];
+      organizationValue = insituteeEstdiosSuperioresRafael;
+    }
+     if(organizationValue == "INSTITUTO DE ESTUDIOS UNIVERSITARIOS AC"){
+      var insituteeEstdiosUniversity=["PLANTEL PUEBLA"];
+      organizationValue = insituteeEstdiosUniversity;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS UNIVERSITARIOS AC"){
+      var insituteeEstdiosUni=[" "];
+      organizationValue = insituteeEstdiosUni;
+    }
+    if(organizationValue == "INSTITUTO DE ESTUDIOS UNIVERSITARIOS ASOCIACION CIVIL"){
+      var insituteeEstdiosUniAsociacion=[" "];
+      organizationValue = insituteeEstdiosUniAsociacion;
+    }
+    if(organizationValue == "INSTITUTO DE FORMACION TEOLOGICA INTERCONGREGACIONAL DE MEXICO AC"){
+      var insituteeEstdiosTologia=[" "];
+      organizationValue = insituteeEstdiosTologia;
+    }
+    if(organizationValue == "INSTITUTO DE IDIOMAS EL BOSQUE DEL CARIBE SC"){
+      var insituteeIdiomasBosque=[" "];
+      organizationValue = insituteeIdiomasBosque;
+    }
+    if(organizationValue == "INSTITUTO DE PEDAGOGIA CRITICA SC"){
+      var insitutePedagogia=[" "];
+      organizationValue = insitutePedagogia;
+    }
+     if(organizationValue == "INSTITUTO DE PRUEBA"){
+      var insitutePrueba=["SUBSEDE DE INSTITUCION DE PRUEBA"];
+      organizationValue = insitutePrueba;
+    }
+    if(organizationValue == "INSTITUTO DE TERAPIA FAMILIAR AC"){
+      var insituteTerapiaFamiliar=[" "];
+      organizationValue = insituteTerapiaFamiliar;
+    }
+    if(organizationValue == "INSTITUTO DE TERAPIA OCUPACIONAL AC"){
+      var insituteTerapiaOcupacional=["DIRECCION GENERAL"];
+      organizationValue = insituteTerapiaOcupacional;
+    }
+    if(organizationValue == "INSTITUTO EDUCATIVO DEL NOROESTE AC CETYS UNIVERSIDAD"){
+      var insituteEducativoNoroeste=["CAMPUS ENSENADA",
+                                      "CAMPUS MEXICALI",
+                                      "CAMPUS TIJUANA"];
+      organizationValue = insituteEducativoNoroeste;
+    }
+    if(organizationValue == "INSTITUTO EDUCATIVO DR CARLOS NAVARRO AC"){
+      var insituteEducativoNCarlos=[" "];
+      organizationValue = insituteEducativoNCarlos;
+    }
+    if(organizationValue == "INSTITUTO FRANCES DE AMERICA LATINA"){
+      var insituteFrancesAmerica=[" "];
+      organizationValue = insituteFrancesAmerica;
+    }
+    if(organizationValue == "INSTITUTO GASTRONOMICO DEL BAJIO"){
+      var insituteGastronomicoBajio=[" "];
+      organizationValue = insituteGastronomicoBajio;
+    }
+    if(organizationValue == "INSTITUTO HUMANISTA DE PSICOTERAPIA GESTALT AC"){
+      var insituteHumanisticoGestalt=[" "];
+      organizationValue = insituteHumanisticoGestalt;
+    }
+    if(organizationValue == "INSTITUTO INTERNACIONAL DE INVESTIGACION DE TECNOLOGIA EDUCATIVA SC"){
+      var insituteInternacionalEducativa=[" "];
+      organizationValue = insituteInternacionalEducativa;
+    }
+    if(organizationValue == "INSTITUTO LAS AMERICAS DE NAYARIT SC"){
+      var insituteAmericasNayarit=[" "];
+      organizationValue = insituteAmericasNayarit;
+    }
+    if(organizationValue == "INSTITUTO LEONARDO BRAVO"){
+      var insituteLeonardoBravo=[" "];
+      organizationValue = insituteLeonardoBravo;
+    }
+    if(organizationValue == "INSTITUTO NACIONAL DE ESTUDIOS FISCALES"){
+      var insituteNacionalEstudios=[" "];
+      organizationValue = insituteNacionalEstudios;
+    }
+    if(organizationValue == "INSTITUTO NACIONAL DE ESTUDIOS SUPERIORES DE DERECHO PENAL"){
+      var insituteNacionalEstudiosDerechoPenal=[" "];
+      organizationValue = insituteNacionalEstudiosDerechoPenal;
+    }
+    if(organizationValue == "INSTITUTO PEDAGOGICO DE ESTUDIOS DE POSGRADO"){
+      var insitutePedagogicoPosgrado=[" "];
+      organizationValue = insitutePedagogicoPosgrado;
+    }
+    if(organizationValue == "INSTITUTO SUPERIO DE ESTUDIOS PARA LA FAMILIA"){
+      var insituteSuperioEstudios=["PLANTEL GUADALAJARA",
+                                    "PLANTEL LEON",
+                                    "PLANTEL MERIDA",
+                                    "PLANTEL MONTERREY",
+                                    "PLANTEL OAXACA"];
+      organizationValue = insituteSuperioEstudios;
+    }
+    if(organizationValue == "INSTITUTO SUPERIOR AUTONOMO DE OCCIDENTE AC"){
+      var insituteSuperioAutonooOccidente=["DIVISION DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                          "DIVISION DE CIENCIAS SOCIALES Y HUMANIDADES",
+                                          "DIVISION DE ESTUDIOS DE POSGRADO",
+                                          "DIVISION DE INGENIERIA",
+                                          "UNIVERSIDAD DEL VALLE DE ATEMAJAC CAMPUS LA PIEDAD",
+                                          "UNIVERSIDAD DEL VALLE DE ATEMAJAC PLANTEL LEON",
+                                          "UNIVERSIDAD DEL VALLE DE ATEMAJAC PLANTEL VALLARTA"];
+      organizationValue = insituteSuperioAutonooOccidente;
+    }
+    if(organizationValue == "INSTITUTO SUPERIOR DE DOCENTES EN EDUCACION ESPECIAL"){
+      var insituteSuperioDocentesEspecialty=[" "];
+      organizationValue = insituteSuperioDocentesEspecialty;
+    }
+     if(organizationValue == "INSTITUTO SUPERIOR DE ESTUDIOS ECLESIASTICOS AC"){
+      var insituteSuperioEclesiasticos=[" "];
+      organizationValue = insituteSuperioEclesiasticos;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO AUTONOMO DE MEXICO"){
+      var insituteTecnologicoMexico=["CENTRO DE ANALISIS E INVESTIGACION ECONOMICA, CAIE.",
+                                      "CENTRO DE ESTUDIOS DE COMPETITIVIDAD, CEC.",
+                                      "CENTRO DE EXTENSION UNIVERSITARIA",
+                                      "CENTRO DE INVESTIGACION ECONOMICA",
+                                      "DIVISION ACADEMICA DE ACTUARIA ESTADISTICA Y MATEMATICAS",
+                                      "DIVISION ACADEMICA DE ADMINISTRACION Y CONTADURIA PUBLICA",
+                                      "DIVISION ACADEMICA DE ADMINISTRACION",
+                                      "DIVISION ACADEMICA DE CIENCIAS SOCIALES",
+                                      "DIVISION ACADEMICA DE DERECHO",
+                                      "DIVISION ACADEMICA DE ECONOMIA",
+                                      "DIVISION ACADEMICA DE ECONOMIA, DERECHO Y CIENCIAS SOCIALES",
+                                      "DIVISION ACADEMICA DE ESTUDIOS GENERALES E INTERNACIONALES",
+                                      "DIVISION ACADEMICA DE INGENIERIA",
+                                      "DIVISION DE INGENIERIAS Y CIENCIAS BIOLOGICAS"];
+      organizationValue = insituteTecnologicoMexico;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO DE LA CONSTRUCCION AC"){
+      var insituteTecnologicoConstruccion=[" "];
+      organizationValue = insituteTecnologicoConstruccion;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY"){
+      var insituteTecnologicoSuperiores=["CAMPUS AGUASCALIENTES",
+                                        "CAMPUS CENTRAL DE VERACRUZ",
+                                        "CAMPUS CHIAPAS",
+                                        "CAMPUS CHIHUAHUA",
+                                        "CAMPUS CIUDAD DE MÉXICO",
+                                        "CAMPUS CIUDAD JUÁREZ",
+                                        "CAMPUS COLIMA",
+                                        "CAMPUS CUERNAVACA",
+                                        "CAMPUS CUMBRES",
+                                        "CAMPUS ESTADO DE MÉXICO",
+                                        "CAMPUS EUGENIO GARZA LAGUERA",
+                                        "CAMPUS GUADALAJARA",
+                                        "CAMPUS GUAYMAS",
+                                        "CAMPUS HIDALGO",
+                                        "CAMPUS IRAPUATO",
+                                        "CAMPUS LAGUNA",
+                                        "CAMPUS LEÓN",
+                                        "CAMPUS MONTERREY",
+                                        "CAMPUS MORELIA",
+                                        "CAMPUS PUEBLA",
+                                        "CAMPUS QUERÉTARO",
+                                        "CAMPUS SALTILLO",
+                                        "CAMPUS SAN LUIS POTOSÍ",
+                                        "CAMPUS SANTA CATARINA",
+                                        "CAMPUS SANTA FE",
+                                        "CAMPUS SINALOA",
+                                        "CAMPUS SONORA NORTE",
+                                        "CAMPUS TAMPICO",
+                                        "CAMPUS TOLUCA",
+                                        "CAMPUS-COLIMA",
+                                        "CAMPUS-EUGENIO GARZA SADA",
+                                        "CAMPUS-MAZATLAN",
+                                        "CAMPUS-MORELOS",
+                                        "CAMPUS-OBREGON",
+                                        "CAMPUS-ZACATECAS",
+                                        "CENTRO DE CALIDAD AMBIENTAL",
+                                        "CENTRO DE CONSERVACION PARA EL APROVECHAMIENTO DE LOS RECURSOS NATURALES",
+                                        "DIRECCION GENERAL ACADEMICA",
+                                        "FACULTAD DE INGENIERIA CIVIL",
+                                        "FACULTAD DE INGENIERIA EN GEOMATICA E HIDRAULICA",
+                                        "INSTITUTO TECNOLÓGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY - SEDE PERÚ",
+                                        "INSTITUTO TECNOLÓGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY CAMPUS ZACATECAS",
+                                        "RECTORIA DE ESCUELAS NACIONALES DE POSGRADO",
+                                        "RECTORIA DE LA ZONA METROPOLITANA DE MONTERREY (CAMPUS MONTERREY)",
+                                        "SISTEMA"];
+      organizationValue = insituteTecnologicoSuperiores;
+    }
+     if(organizationValue == "INSTITUTO TECNOLOGICO Y DE ESTUDIOS SUPERIORES DE OCCIDENTE AC"){
+      var insituteTecnologicoSuperioresAc=["DEPARTAMENTO DE ESTUDIOS SOCIOPOLITICOS Y JURIDICOS",
+                                            "DIRECCION DE ADMINISTRACION Y FINANZAS",
+                                            "DIRECCION DE INTEGRACION COMUNITARIA",
+                                            "DIRECCION DE RELACIONES EXTERNAS",
+                                            "DIRECCION GENERAL ACADEMICA",
+                                            "DIVISION DE CIENCIAS DEL HOMBRE Y DEL HABITAT",
+                                            "DIVISION DE CIENCIAS ECONOMICO-ADMINISTRATIVAS",
+                                            "DIVISION DE CIENCIAS SOCIALES Y DEL HOMBRE",
+                                            "DIVISION DE ESTUDIOS DE POSGRADO",
+                                            "DIVISION DE INGENIERIA",
+                                            "ESCUELA DE ARQUITECTURA",
+                                            "ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                            "ESCUELA DE CIENCIAS DE LA EDUCACION",
+                                            "ESCUELA DE DERECHO",
+                                            "ESCUELA DE PSICOLOGIA",
+                                            "UNIDAD ACADEMICA DE CIENCIAS ADMINISTRATIVAS",
+                                            "UNIDAD ACADEMICA DE COMUNICACION",
+                                            "UNIDAD ACADEMICA DE DESARROLLO HUMANO",
+                                            "UNIDAD ACADEMICA DE EDUCACION"];
+      organizationValue = insituteTecnologicoSuperioresAc;
+    }
+    if(organizationValue == "INSTITUTO UNIVERSITARIO DE TECNOLOGIAS DE INFORMACION EEDUCACION A C"){
+      var institutoUniversitarioEducacion=[" "];
+      organizationValue = institutoUniversitarioEducacion;
+    }
+     if(organizationValue == "INSTITUTO UNIVERSITARIO DEL ESTADO DE MEXICO"){
+      var institutoUniversitarioEstadoMExico=["ESCUELA PROFESIONAL DE ARQUITECTURA",
+                                              "ESCUELA PROFESIONAL DE COMUNICACION",];
+      organizationValue = institutoUniversitarioEstadoMExico;
+    }
+    if(organizationValue == "INSTITUTO UNIVERSITARIO INTERNACIONAL SC"){
+      var institutoUniversitarioInternacional=[" "];
+      organizationValue = institutoUniversitarioInternacional;
+    }
+    if(organizationValue == "INSTITUTO UNIVERSITARIO PUEBLA SC"){
+      var institutoUniversitarioPuebla=[" "];
+      organizationValue = institutoUniversitarioPuebla;
+    }
+    if(organizationValue == "INSTITUTO UNIVERSITARIO VERACRUZANO SC"){
+      var institutoUniversitarioVeracruzano=[" "];
+      organizationValue = institutoUniversitarioVeracruzano;
+    }
+     if(organizationValue == "INSTITUTO VERACRUZANO DE EDUCACION SUPERIOR"){
+      var institutoUniversitarioVeracruzanoSuperior=[" "];
+      organizationValue = institutoUniversitarioVeracruzanoSuperior;
+    }
+     if(organizationValue == "INSTITUTO VOCACIONAL ENRIQUE DIAZ DE LEON AC"){
+      var institutoVocacionalEnrique=[" "];
+      organizationValue = institutoVocacionalEnrique;
+    }
+     if(organizationValue == "INTERNATIONAL INDUSTRY INSTITUTE"){
+      var internacionalIndustry=[" "];
+      organizationValue = internacionalIndustry;
+    }
+    if(organizationValue == "INTERNATIONAL INDUSTRY INSTITUTE SC"){
+      var internacionalIndustrySc=[" "];
+      organizationValue = internacionalIndustrySc;
+    } 
+    if(organizationValue == "INVESTIGACIONES Y ESTUDIOS SUPERIORES SC UNIVERSIDAD ANAHUAC MEXICO NORTE"){
+      var investigacionesEstudiosAnahuac=[" "];
+      organizationValue = investigacionesEstudiosAnahuac;
+    } 
+     if(organizationValue == "ISTHMUS NORTE SC ESCUELA DE ARQUITECTURA DE AMERICA LATINA Y EL CARIBE"){
+      var isthmusNorte=[" "];
+      organizationValue = isthmusNorte;
+    } 
+      if(organizationValue == "LICEO UNIVERSIDAD PEDRO DE GANTE"){
+      var liceoUniversity=[" "];
+      organizationValue = liceoUniversity;
+    }
+     if(organizationValue == "NORMAL SUPERIOR JUANA DE ASBAJE"){
+      var normalySuperioryJuana=[" "];
+      organizationValue = normalySuperioryJuana;
+    }
+     if(organizationValue == "NORMATIVIDAD Y ACTUALIZACION GUBERNAMENTAL SC"){
+      var normatividadActualizacionGuber=[" "];
+      organizationValue = normatividadActualizacionGuber;
+    }
+    if(organizationValue == "NORMATIVIDAD Y ACTUALIZACION GUBERNAMENTAL SC"){
+      var normatividadActualizacionGuberSc=[" "];
+      organizationValue = normatividadActualizacionGuberSc;
+    }
+    if(organizationValue == "NORTHEASTERN UNIVERSITY"){
+      var northeasternUniversity=[" "];
+      organizationValue = northeasternUniversity;
+    }
+    if(organizationValue == "NUEVA ESCUELA TECNOLOGICA"){
+      var newSchoolTecnology=[" "];
+      organizationValue = newSchoolTecnology;
+    }
+    if(organizationValue == "PROMOCION CULTURAL INTERNACIONAL ITALO CALVINO A C"){
+      var promocionCultural=[" "];
+      organizationValue = promocionCultural;
+    }
+    if(organizationValue == "PROMOCION DE LA CULTURA Y LA EDUCACION SUPERIOR DEL BAJIO AC"){
+      var promocionCulturalEducacion=[" "];
+      organizationValue = promocionCulturalEducacion;
+    }
+    if(organizationValue == "PROMOTORA DE CULTURA Y SERVICIO SOCIAL AC"){
+      var promotoraCulturaServicio=[" "];
+      organizationValue = promotoraCulturaServicio;
+    }
+    if(organizationValue == "SAINT LOUIS UNIVERSITY MADRID CAMPUS"){
+      var saintLuisUniversity=[" "];
+      organizationValue = saintLuisUniversity;
+    }
+    if(organizationValue == "SALZBURG GLOBAL SEMINAR"){
+      var salzburgGlobal=[" "];
+      organizationValue = salzburgGlobal;
+    }
+    if(organizationValue == "TECNOLOGICO GENEXIS AC"){
+      var tecnollogicoGenexis=[" "];
+      organizationValue = tecnollogicoGenexis;
+    }
+    if(organizationValue == "TECNOLOGICO UNIVERSITARIO DE BC SC"){
+      var tecnollogicoUniversitario=[" "];
+      organizationValue = tecnollogicoUniversitario;
+    }
+     if(organizationValue == "TECNOLOGICO UNIVERSITARIO DE MEXICO"){
+      var tecnologiaUniversitario=[" "];
+      organizationValue = tecnologiaUniversitario;
+    }
+    if(organizationValue == "THE ANGLO MEXICAN FOUNDATION"){
+      var angloMexican=["SUCURSAL COAPA"];
+      organizationValue = angloMexican;
+    }
+     if(organizationValue == "THE UNIVERSITY OF CHICAGO"){
+      var theUniversityChicago=[" "];
+      organizationValue = theUniversityChicago;
+    }
+      if(organizationValue == "THE UNIVERSITY OF NEWCASTLE AUSTRALIA"){
+      var universityNewCastle=[" "];
+      organizationValue = universityNewCastle;
+    }
+      if(organizationValue == "TUSCULUM COLLEGE"){
+      var tusculumCollege=[" "];
+      organizationValue = tusculumCollege;
+    }
+     if(organizationValue == "UIC UNIVERSIDAD INTERCONTINENTAL AC"){
+      var uicUniversidadInter=[" "];
+      organizationValue = uicUniversidadInter;
+    }
+     if(organizationValue == "UNIVER NOROESTE AC"){
+      var univerNoroesteAc=[" "];
+      organizationValue = univerNoroesteAc;
+    }
+     if(organizationValue == "UNIVER NOROESTE AC"){
+      var univerNoroeste=[" "];
+      organizationValue = univerNoroeste;
+    }
+     if(organizationValue == "UNIVERSIDA DE DURANGO CAMPUS CIUDAD JUAREZ"){
+      var durangoCampusJuerez=[" "];
+      organizationValue = durangoCampusJuerez;
+    }
+     if(organizationValue == "UNIVERSIDA DE WALES COLLEGE CARDIFF"){
+      var walesCollege=[" "];
+      organizationValue = walesCollege;
+    }
+     if(organizationValue == "UNIVERSIDAD ABIERTA DE SAN LUIS POTOSI"){
+      var abiertaSanLuis=[" "];
+      organizationValue = abiertaSanLuis;
+    }
+     if(organizationValue == "UNIVERSIDAD AMERICANA DE ACAPULCO AC"){
+      var americanaAcapulco=[" "];
+      organizationValue = americanaAcapulco;
+    }
+    if(organizationValue == "UNIVERSIDAD ANAHUAC"){
+      var universidadAnahuac=["BACHILLERATO ANÁHUAC",
+                              "ESCUELA DE ECONOMIA Y NEGOCIOS",
+                              "FACULTAD DE EDUCACION"];
+      organizationValue = universidadAnahuac;
+    }
+    if(organizationValue == "UNIVERSIDAD ANAHUAC DE OAXACA SC"){
+      var universidadAnahuacOaxaca=[" "];
+      organizationValue = universidadAnahuacOaxaca;
+    }
+    if(organizationValue == "UNIVERSIDAD ANAHUAC DEL NORTE"){
+      var universidadAnahuacNorte=["APOYO TECNOLOGICO",
+                                    "CENTRO DE ESTUDIOS SUPERIORES DEL GOLFO S.C.",
+                                    "COORDINACION GENERAL DE HUMANIDADES",
+                                    "ESCUELA DE ACTUARIA",
+                                    "ESCUELA DE ADMINISTRACION DE EMPRESAS Y CONTADURIA",
+                                    "ESCUELA DE ADMINISTRACION EDUCACIONAL",
+                                    "ESCUELA DE ADMINISTRACION TURISTICA",
+                                    "ESCUELA DE ARQUITECTURA",
+                                    "ESCUELA DE CIENCIAS DE LA COMUNICACION SOCIAL",
+                                    "ESCUELA DE DERECHO",
+                                    "ESCUELA DE DISEÑO",
+                                    "ESCUELA DE ECONOMIA",
+                                    "ESCUELA DE INFORMATICA",
+                                    "ESCUELA DE INGENIERIA",
+                                    "ESCUELA DE MEDICINA",
+                                    "ESCUELA DE PSICOLOGIA",
+                                    "UNIVERSIDAD ANAHUAC DE XALAPA"];
+      organizationValue = universidadAnahuacNorte;
+    } 
+      if(organizationValue == "UNIVERSIDAD ANAHUAC DEL SUR SC"){
+      var universidadAnahuacSurSc=["CENTRO DE ALTA DIRECCION EN INGENIERIA Y TECNOLOGIA",
+                                    "ESCUELA DE DERECHO",
+                                    "FACULTAD DE NEGOCIOS-UNIVERSIDAD ANAHUAC DEL SUR"];
+      organizationValue = universidadAnahuacSurSc;
+    } 
+       if(organizationValue == "UNIVERSIDAD ANAHUAC MEXICO NORTE"){
+      var universidadMexicoNorte=[" "];
+      organizationValue = universidadMexicoNorte;
+    } 
+      if(organizationValue == "UNIVERSIDAD ANGLO HISPANOMEXICANA"){
+      var angloHispanoamericana=[" "];
+      organizationValue = angloHispanoamericana;
+    } 
+      if(organizationValue == "UNIVERSIDAD ATENAS VERACRUZANA SC"){
+      var atenasVeracruzana=[" "];
+      organizationValue = atenasVeracruzana;
+    } 
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE DURANGO"){
+      var autonomaDurango=[" "];
+      organizationValue = autonomaDurango;
+    } 
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE FRESNILLO AC"){
+      var autonomaFesnollo=[" "];
+      organizationValue = autonomaFesnollo;
+    }
+     if(organizationValue == "UNIVERSIDAD AUTONOMA DE GUADALAJARA AC"){
+      var autonomaGuadalajara=["CENTRO DE DISEÑO",
+                                "CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS",
+                                "DIRECCION GENERAL DE ESTUDIOS DE POSGRADO",
+                                "ESCUELA DE ANTROPOLOGIA",
+                                "ESCUELA DE BIOLOGIA",
+                                "ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                "ESCUELA DE ENFERMERIA",
+                                "ESCUELA DE FILOSOFIA Y LETRAS",
+                                "ESCUELA DE INFORMATICA",
+                                "ESCUELA DE INGENIERIA AGRICOLA",
+                                "ESCUELA DE INGENIERIA MECANICA",
+                                "ESCUELA DE INGENIERIA",
+                                "ESCUELA DE LINGUISTICA",
+                                "ESCUELA DE MATEMATICAS",
+                                "ESCUELA DE ODONTOLOGIA",
+                                "ESCUELA DE PSICOLOGIA",
+                                "FACULTAD DE ADMINISTRACION, CONTABILIDAD Y ECONOMIA",
+                                "FACULTAD DE CIENCIAS NATURALES Y AGROPECUARIAS",
+                                "FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS",
+                                "FACULTAD DE CIENCIAS",
+                                "FACULTAD DE DERECHO",
+                                "FACULTAD DE EDUCACION",
+                                "FACULTAD DE MEDICINA",
+                                "INSTITUTO DE CIENCIAS BIOLOGICAS",
+                                "INSTITUTO DE CIENCIAS EXACTAS Y TERRESTRES"];
+      organizationValue = autonomaGuadalajara;
+    }
+      if(organizationValue == "UNIVERSIDAD AUTONOMA DE LA LAGUNA AC"){
+      var autonomaLaguna=[" "];
+      organizationValue = autonomaLaguna;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DE VERACRUZ VILLA RICA"){
+      var autonomaVeracruzVilla=[" "];
+      organizationValue = autonomaVeracruzVilla;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA DEL NORESTE AC"){
+      var autonomaNoreste=[" "];
+      organizationValue = autonomaNoreste;
+    }
+    if(organizationValue == "UNIVERSIDAD AUTONOMA ESPANA DE DURANGO"){
+      var autonomaEspanaDurango=["ESCUELA DE CIENCIAS MEDICAS"];
+      organizationValue = autonomaEspanaDurango;
+    }
+    if(organizationValue == "UNIVERSIDAD BONATERRA AC"){
+      var universidadBonaterra=[" "];
+      organizationValue = universidadBonaterra;
+    }
+    if(organizationValue == "UNIVERSIDAD CATOLICA DE CUALIACAN AC"){
+      var universidadCatolica=[" "];
+      organizationValue = universidadCatolica;
+    }
+    if(organizationValue == "UNIVERSIDAD CHAPULTEPEC"){
+      var universidadChapultepec=["DIRECCION DE ESTUDIOS DE POSGRADO E INVESTIGACION",
+                                  "ESCUELA DE COMERCIO Y ADMINISTRACION",];
+      organizationValue = universidadChapultepec;
+    }
+    if(organizationValue == "UNIVERSIDAD CONTEMPORANEA"){
+      var universidadContemporanea=[" "];
+      organizationValue = universidadContemporanea;
+    }
+     if(organizationValue == "UNIVERSIDAD CUAUHTEMOC"){
+      var universidadCuauhtemoc=["CAMPUS PUEBLA",
+                                  "CAMPUS SAN LUIS POTOSI",];
+      organizationValue = universidadCuauhtemoc;
+    }
+    if(organizationValue == "UNIVERSIDAD DE CIENCIA Y TECNOLOGIA DE MISSOURI"){
+      var universidadCienciaMissouri=[" "];
+      organizationValue = universidadCienciaMissouri;
+    }
+    if(organizationValue == "UNIVERSIDAD DE CUAUTITLAN IZCALLI SC"){
+      var universidadCuautitlla=[" "];
+      organizationValue = universidadCuautitlla;
+    }
+    if(organizationValue == "UNIVERSIDAD DE ESTUDIOS DE POPSGRADO EN DERECHO"){
+      var universidadPosgrado=[" "];
+      organizationValue = universidadPosgrado;
+    }
+     if(organizationValue == "UNIVERSIDAD DE INTEGRACION HUMANISTA"){
+      var universidadHumanista=[" "];
+      organizationValue = universidadHumanista;
+    }
+    if(organizationValue == "UNIVERSIDAD DE LA SALLE BAJIO AC"){
+      var universidadSalleBajio=["ESCUELA DE AGRONOMIA",
+                                "ESCUELA DE CIENCIAS ECONÓMICO ADMINISTRATIVAS",
+                                "ESCUELA DE COMUNICACIÓN Y MERCADOTECNIA",
+                                "ESCUELA DE DISEÑO",
+                                "ESCUELA DE EDUCACIÓN Y DESARROLLO HUMANO",
+                                "ESCUELA DE INGENIERIA CIVIL, MECANICA E INDUSTRIAL",
+                                "ESCUELA DE TURISMO",
+                                "ESCUELA DE VETERINARIA",
+                                "FACULTAD DE ARQUITECTURA",
+                                "FACULTAD DE COMPUTACION Y ELECTRONICA",
+                                "FACULTAD DE DERECHO",
+                                "FACULTAD DE ODONTOLOGIA"];
+      organizationValue = universidadSalleBajio;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LAS AMERICAS AC"){
+      var universidadAmericasAc=["DIVISIÓN DE CIENCIAS DEL COMPORTAMIENTO Y DESARROLLO"];
+      organizationValue = universidadAmericasAc;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LAS CALIFORNIAS SC"){
+      var universidadCalifornia=[" "];
+      organizationValue = universidadCalifornia;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LAS NACIONES"){
+      var universidadNaciones=[" "];
+      organizationValue = universidadNaciones;
+    }
+      if(organizationValue == "UNIVERSIDAD DE LEON"){
+      var universidadLeon=["LICENCIATURA EN COMUNICACION",
+                            "UNIVERSIDAD DE LEON PLANTEL CENTRO",
+                            "UNIVERSIDAD DE LEON PLANTEL SAN MIGUEL DE ALLENDE"];
+      organizationValue = universidadLeon;
+    }
+     if(organizationValue == "UNIVERSIDAD DE LONDRES"){
+      var universidadLondres=["PLANTEL GUANAJUATO",
+                              "PLANTEL LUIS CABRERA",
+                              "PLANTEL ORIZABA",
+                              "PLANTEL QUERETARO"];
+      organizationValue = universidadLondres;
+    }
+     if(organizationValue == "UNIVERSIDAD DE MAZATLAN AC"){
+      var universidadMazatlanAc=[" "];
+      organizationValue = universidadMazatlanAc;
+    }
+    if(organizationValue == "UNIVERSIDAD DE MONTEMORELOS A C"){
+      var universidadMontemorelos=["DIVISION DE POSGRADO",
+                                    "ESCUELA DE BELLAS ARTES",
+                                    "ESCUELA DE CONTADURIA PUBLICA",
+                                    "ESCUELA DE ENFERMERIA",
+                                    "ESCUELA DE MEDICINA",
+                                    "ESCUELA DE NUTRICION",
+                                    "ESCUELA DE QUIMICOS CLINICOS BIOLOGOS",
+                                    "FACULTAD DE CIENCIAS DE LA EDUCACION",
+                                    "FACULTAD DE CIENCIAS DE LA SALUD"];
+      organizationValue = universidadMontemorelos;
+    }
+     if(organizationValue == "UNIVERSIDAD DE MONTERREY"){
+      var universidadMonterrey=["DIVISION DE ARQUITECTURA, DISEÑO E INGENIERIA",
+                                "DIVISION DE ARTE",
+                                "DIVISION DE CIENCIAS DE LA SALUD",
+                                "DIVISION DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                "DIVISION DE CIENCIAS JURIDICAS Y SOCIALES",
+                                "DIVISION DE EDUCACION Y HUMANIDADES",
+                                "DIVISION DE HUMANIDADES Y CIENCIAS SOCIALES",
+                                "DIVISION DE INGENIERIA Y CIENCIAS NATURALES Y EXACTAS",
+                                "DIVISIÓN DE DERECHO Y CIENCIAS SOCIALES",
+                                "DIVISIÓN DE POSGRADO"];
+      organizationValue = universidadMonterrey;
+    }
+    if(organizationValue == "UNIVERSIDAD DE MORELIA SC"){
+      var universidadMorelia=[" "];
+      organizationValue = universidadMorelia;
+    }
+     if(organizationValue == "UNIVERSIDAD DE NEGOCIOS ISEC"){
+      var universidadNegocios=[" "];
+      organizationValue = universidadNegocios;
+    }
+      if(organizationValue == "UNIVERSIDAD DE SAN MIGUEL AC"){
+      var universidadSanMiguel=[" "];
+      organizationValue = universidadSanMiguel;
+    }
+     if(organizationValue == "UNIVERSIDAD DE SOTAVENTO AC"){
+      var universidadSotavento=["UNIVERSIDAD DE SOTAVENTO A.C. CAMPUS COATZACOALCOS"];
+      organizationValue = universidadSotavento;
+    }
+     if(organizationValue == "UNIVERSIDAD DE XALAPA"){
+      var universidadXalapa=[" "];
+      organizationValue = universidadXalapa;
+    }
+     if(organizationValue == "UNIVERSIDAD DE XALAPA AC"){
+      var universidadXalapaAc=[" "];
+      organizationValue = universidadXalapaAc;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL NOROESTE SC"){
+      var universidadNoroeste=["CAMPUS CENTRO"];
+      organizationValue = universidadNoroeste;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL ALTIPLANO"){
+      var universidadAltiplano=[" "];
+      organizationValue = universidadAltiplano;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL BAJIO"){
+      var universidadBajio=["ESCUELA DE AGRONOMIA",
+                            "ESCUELA DE ARQUITECTURA",
+                            "ESCUELA DE COMPUTACION",
+                            "ESCUELA DE CONTABILIDAD Y ADMINISTRACION",
+                            "ESCUELA DE DERECHO",
+                            "ESCUELA DE DISEÑO AMBIENTAL",
+                            "ESCUELA DE DISEÑO INDUSTRIAL",
+                            "ESCUELA DE DISEÑO",
+                            "ESCUELA DE INGENIERIA",
+                            "ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+                            "ESCUELA DE ODONTOLOGIA",
+                            "ESCUELA DE PERIODISMO Y CIENCIAS DE LA COMUNICACION COLECTIVA",
+                            "ESCUELA DE TURISMO Y HOTELERIA"];
+      organizationValue = universidadBajio;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL CENTRO DE MEXICO"){
+      var universidadCentroMExico=["ESCUELA DE FILOSOFIA"];
+      organizationValue = universidadCentroMExico;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL CLAUSTRO DE SOR JUANA A C"){
+      var universidadClaustroSor=["COLEGIO DE LETRAS Y HUMANIDADES",
+                                  "COLEGIO DE FILOSOFIA",
+                                  "COLEGIO DE COMUNICACION",
+                                  "COLEGIO DE ARTE Y CULTURA",
+                                  "FACULTAD DE GASTRONOMÍA"];
+      organizationValue = universidadClaustroSor;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL DESARROLLO EMPRESARIAL Y PEDAGOGICO"){
+      var universidadEmpresarialPedagogico=[" "];
+      organizationValue = universidadEmpresarialPedagogico;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL DESARROLLO PROFESIONAL SC"){
+      var universidadProfesionalSc=[" "];
+      organizationValue = universidadProfesionalSc;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL DISTRITO FEDERAL"){
+      var universidadFederalDistrito=[" "];
+      organizationValue = universidadFederalDistrito;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL GOLFO DE MEXICO CAMPUS CD MENDOZA"){
+      var universidadGolfoMExicoMendoza=[" "];
+      organizationValue = universidadGolfoMExicoMendoza;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL GOLFO DE MEXICO CAMPUS ORIZABA SC"){
+      var universidadGolfoMExicoOrizaba=[" "];
+      organizationValue = universidadGolfoMExicoOrizaba;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL MAYAB SC"){
+      var universidadMayab=["ESCUELA DE INGEN",
+                            "UNIVERSIDAD DEL MAYAB, A.C. (CHABLEKAL)",
+                            "UNIVERSIDAD DEL MAYAB, A.C. (MERIDA)"];
+      organizationValue = universidadMayab;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL NORESTE AC"){
+      var universidadNoroesteAc=["FACULTAD DE CIENCIAS QUIMICO-BIOLOGICAS"];
+      organizationValue = universidadNoroesteAc;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL NORTE"){
+      var universidadNorte=[" "];
+      organizationValue = universidadNorte;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL PEDREGAL"){
+      var universidadPedregal=[" "];
+      organizationValue = universidadPedregal;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL SOL"){
+      var universidadSol=[" "];
+      organizationValue = universidadSol;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL SUR DE CALIFORNIA"){
+      var universidadSurCalifornia=[" "];
+      organizationValue = universidadSurCalifornia;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL TEPEYAC A C"){
+      var universidadTepeyac=[" "];
+      organizationValue = universidadTepeyac;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL TERCER MILENIO SC"){
+      var universidadTercerMilenio=["GOMEZ PALACIO",
+                                    "SEDE ACAPULCO",
+                                    "SEDE AGUASCALIENTES",
+                                    "SEDE ATILIXCO",
+                                    "SEDE CAMPECHE",
+                                    "SEDE CANCUN II",
+                                    "SEDE CANCUN",
+                                    "SEDE CD. DEL CARMEN",
+                                    "SEDE CENTRAL, MTY",
+                                    "SEDE CHALCO",
+                                    "SEDE CHETUMAL",
+                                    "SEDE COATZACOALCOS",
+                                    "SEDE COTIJA",
+                                    "SEDE COZUMEL",
+                                    "SEDE CUERNAVACA",
+                                    "SEDE DURANGO",
+                                    "SEDE ENSENADA",
+                                    "SEDE FRESNILLO",
+                                    "SEDE GOMEZ PALACIO",
+                                    "SEDE GUADALAJARA",
+                                    "SEDE HERMOSILLO",
+                                    "SEDE JUCHITAN",
+                                    "SEDE MERIDA II",
+                                    "SEDE MERIDA",
+                                    "SEDE MONTERREY",
+                                    "SEDE MORELIA",
+                                    "SEDE OBREGON",
+                                    "SEDE OCOTLAN",
+                                    "SEDE PACHUCA",
+                                    "SEDE PLAYA DEL CARMEN",
+                                    "SEDE REYNOSA",
+                                    "SEDE SAHUAYO",
+                                    "SEDE SALTILLO",
+                                    "SEDE SAN LUIS POTOSI",
+                                    "SEDE TAMPICO",
+                                    "SEDE TAPACHULA",
+                                    "SEDE TAXQUEÑA",
+                                    "SEDE TEHUACAN",
+                                    "SEDE TEJUPILCO",
+                                    "SEDE TEPATITLAN",
+                                    "SEDE TIJUANA",
+                                    "SEDE TIZIMIN",
+                                    "SEDE TLALNEPANTLA",
+                                    "SEDE TOLUCA",
+                                    "SEDE TULA",
+                                    "SEDE TUXPAN",
+                                    "SEDE TUXTEPEC",
+                                    "SEDE URUAPAN",
+                                    "SEDE VILLAHERMOSA",
+                                    "SEDE ZACATECAS",
+                                    "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO SEDE FRESNILLO"];
+      organizationValue = universidadTercerMilenio;
+    }
+      if(organizationValue == "UNIVERSIDAD DEL VALLE DE MATATIPAC S C"){
+      var universidadValleMatatipac=[" "];
+      organizationValue = universidadValleMatatipac;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL VALLE DE MEXICO SC"){
+      var universidadValleMexico=["CAMPUS AGUASCALIENTES",
+                                  "CAMPUS CENTRO EDUCATIVO SANTA FE",
+                                  "CAMPUS CHAPULTEPEC",
+                                  "CAMPUS COYOACAN",
+                                  "CAMPUS CUERNAVACA",
+                                  "CAMPUS CUMBRES",
+                                  "CAMPUS EDO. DE MEXICO",
+                                  "CAMPUS GUADALAJARA NORTE",
+                                  "CAMPUS GUADALAJARA SUR",
+                                  "CAMPUS HERMOSILLO",
+                                  "CAMPUS HISPANO",
+                                  "CAMPUS INSURGENTES NORTE",
+                                  "CAMPUS LAGO DE GUADALUPE",
+                                  "CAMPUS LOMAS VERDES",
+                                  "CAMPUS MATAMOROS",
+                                  "CAMPUS MERIDA",
+                                  "CAMPUS MEXICALI",
+                                  "CAMPUS MONTERREY",
+                                  "CAMPUS NOGALES",
+                                  "CAMPUS NUEVO LAREDO",
+                                  "CAMPUS PUEBLA",
+                                  "CAMPUS QUERETARO",
+                                  "CAMPUS REYNOSA",
+                                  "CAMPUS ROMA",
+                                  "CAMPUS SALTILLO",
+                                  "CAMPUS SAN ANGEL",
+                                  "CAMPUS SAN LUIS POTOSI",
+                                  "CAMPUS SAN MIGUEL DE ALLENDE",
+                                  "CAMPUS SAN RAFAEL",
+                                  "CAMPUS TAMPICO",
+                                  "CAMPUS TEXCOCO",
+                                  "CAMPUS TLALPAN",
+                                  "CAMPUS TOLUCA",
+                                  "CAMPUS TORREON",
+                                  "CAMPUS TUXTLA",
+                                  "CAMPUS VICTORIA",
+                                  "CAMPUS VILLAHERMOSA",
+                                  "CAMPUS XOCHIMILCO",
+                                  "CAMPUS ZAPOPAN"];
+      organizationValue = universidadValleMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL VALLE DE ORIZABA"){
+      var universidadValleOrizaba=[" "];
+      organizationValue = universidadValleOrizaba;
+    }
+    if(organizationValue == "UNIVERSIDAD DEL VALLE DE PUEBLA SC"){
+      var universidadVallePuebla=["ESCUELA DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                  "ESCUELA DE DERECHO",];
+      organizationValue = universidadVallePuebla;
+    }
+     if(organizationValue == "UNIVERSIDAD DEL VALLE DE TLAXCALA"){
+      var universidadValleTlaxcala=[" "];
+      organizationValue = universidadValleTlaxcala;
+    }
+     if(organizationValue == "UNIVERSIDAD EUROAMERICANA"){
+      var universidadEuroAmericana=[" "];
+      organizationValue = universidadEuroAmericana;
+    }
+    if(organizationValue == "UNIVERSIDAD FEMENINA DE MEXICO"){
+      var universidadFemeninaMexico=[" "];
+      organizationValue = universidadFemeninaMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD FRANCO MEXICANA"){
+      var universidadFrancoMexico=[" "];
+      organizationValue = universidadFrancoMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD GENESIS"){
+      var universidadGenesis=[" "];
+      organizationValue = universidadGenesis;
+    }
+    if(organizationValue == "UNIVERSIDAD HISPANO MEXICANA PLANTEL CENTRAL"){
+      var universidadHispanoMexicana=[" "];
+      organizationValue = universidadHispanoMexicana;
+    }
+     if(organizationValue == "UNIVERSIDAD IBEROAMERICANA AC"){
+      var universidadIberoamericana=["CAMPUS DISTRITO FEDERAL",
+                                    "CAMPUS LAGUNA",
+                                    "CAMPUS NOROESTE",
+                                    "DEPARTAMENTO DE ARQUITECTURA",
+                                    "DEPARTAMENTO DE ARTE",
+                                    "DEPARTAMENTO DE CIENCIAS RELIGIOSAS",
+                                    "DEPARTAMENTO DE CIENCIAS SOCIALES Y POLITICAS",
+                                    "DEPARTAMENTO DE COMUNICACIÓN",
+                                    "DEPARTAMENTO DE DERECHO",
+                                    "DEPARTAMENTO DE DISEÑO",
+                                    "DEPARTAMENTO DE ECONOMÍA",
+                                    "DEPARTAMENTO DE EDUCACIÓN",
+                                    "DEPARTAMENTO DE ESTUDIOS EMPRESARIALES",
+                                    "DEPARTAMENTO DE ESTUDIOS INTERNACIONALES",
+                                    "DEPARTAMENTO DE FILOSOFÍA",
+                                    "DEPARTAMENTO DE FÍSICA Y MATEMÁTICAS",
+                                    "DEPARTAMENTO DE HISTORIA",
+                                    "DEPARTAMENTO DE INGENIERÍA Y CIENCIAS QUÍMICAS",
+                                    "DEPARTAMENTO DE INGENIERÍAS",
+                                    "DEPARTAMENTO DE LETRAS",
+                                    "DEPARTAMENTO DE PSICOLOGÍA",
+                                    "DEPARTAMENTO DE SALUD",
+                                    "DIVISION DE CIENCIAS E INGENIERIA",
+                                    "DIVISION DE ECONOMIA",
+                                    "DIVISION DE ESTUDIOS DISCIPLINARES",
+                                    "INSTITUTO DE INVESTIGACIONES PARA EL DESARROLLO DE LA EDUCACIÓN",
+                                    "INSTITUTO DE INVESTIGACIONES SOBRE DESARROLLO SUSTENTABLE Y EQUIDAD SOCIAL",
+                                    "PLANTEL PUEBLA",
+                                    "PLANTEL SANTA FE (DISTRITO FEDERAL)",
+                                    "UNIVERSIDAD IBEROAMERICANA CAMPUS LEON"];
+      organizationValue = universidadIberoamericana;
+    }
+    if(organizationValue == "UNIVERSIDAD IBEROAMERICANA TIJUANA / PROMOCION Y DOCENCIA AC"){
+      var universidadTijuanaPromocion=[" "];
+      organizationValue = universidadTijuanaPromocion;
+    }
+    if(organizationValue == "UNIVERSIDAD INSURGENTES PLANTEL TLALPAN SC"){
+      var universidadInsurgentes=["PLANTEL TLALPAN"];
+      organizationValue = universidadInsurgentes;
+    }
+    if(organizationValue == "UNIVERSIDAD INTERAMERICANA DEL NORTE"){
+      var universidadInterAmericana=["CAMPUS MAZATLAN"];
+      organizationValue = universidadInterAmericana;
+    }
+    if(organizationValue == "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO"){
+      var universidadInterAmericana=["CAMPUS CANCUN",
+                                      "UNID CAMPUS CAMPECHE",
+                                      "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO CAMPUS FRESNILLO",
+                                      "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO CAMPUS MORELIA",
+                                      "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO SEDE AGUASCALIENTES",
+                                      "UNIVERSIDAD INTERAMERICANA PARA EL DESARROLLO SEDE CHETUMAL"];
+      organizationValue = universidadInterAmericana;
+    }
+     if(organizationValue == "UNIVERSIDAD INTERCONTINENTAL"){
+      var universidadIntercontinental=["ESCUELA DE ADMINISTRACION HOTELERA",
+                                      "ESCUELA DE ADMINISTRACION",
+                                      "ESCUELA DE ARQUITECTURA",
+                                      "ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                      "ESCUELA DE CONTADURIA",
+                                      "ESCUELA DE DERECHO",
+                                      "ESCUELA DE DISEÑO",
+                                      "ESCUELA DE FILOSOFIA",
+                                      "ESCUELA DE INFORMATICA",
+                                      "ESCUELA DE LENGUAS",
+                                      "ESCUELA DE ODONTOLOGIA",
+                                      "ESCUELA DE PEDAGOGIA",
+                                      "ESCUELA DE PSICOLOGIA",
+                                      "ESCUELA DE RELACIONES TURISTICAS",
+                                      "ESCUELA DE TEOLOGIA",
+                                      "ESCUELA DE TRADUCCION",
+                                      "INSTITUTO DE POSGRADOS, INVESTIGACION Y EDUCACION CONTINUA",];
+      organizationValue = universidadIntercontinental;
+    }
+    if(organizationValue == "UNIVERSIDAD ISIDRO FABELA DE TOLUCA SC"){
+      var universidadIsidroFabela=[" "];
+      organizationValue = universidadIsidroFabela;
+    }
+      if(organizationValue == "UNIVERSIDAD ISTMO AMERICANA AC"){
+      var universidadIsidroFabela=["UNIVERSIDAD ITSMO AMERICANA CAMPUS FORUM",
+                                    "UNIVERSIDAD ITSMO AMERICANA CAMPUS CENTRO"];
+      organizationValue = universidadIsidroFabela;
+    }
+     if(organizationValue == "UNIVERSIDAD JOSE VASCONCELOS DE OAXACA SC"){
+      var universidadJoseVasconsuelos=[" "];
+      organizationValue = universidadJoseVasconsuelos;
+    }
+    if(organizationValue == "UNIVERSIDAD JUSTO SIERRA"){
+      var unidadJustoSierra=[" "];
+      organizationValue = unidadJustoSierra;
+    }
+    if(organizationValue == "UNIVERSIDAD KINO"){
+      var universidadKino=[" "];
+      organizationValue = universidadKino;
+    }
+    if(organizationValue == "UNIVERSIDAD LA CONCORDIA"){
+      var universidadConcordia=[" "];
+      organizationValue = universidadConcordia;
+    }
+     if(organizationValue == "UNIVERSIDAD LA SALLE AC"){
+      var universidadSalle=["DIRECCION DE ESTUDIOS DE POSGRADO E INVESTIGACION",
+                            "ESCUELA DE CIENCIAS DE LA EDUCACION",
+                            "ESCUELA DE CONTADURIA Y ADMINISTRACION",
+                            "ESCUELA DE DERECHO",
+                            "ESCUELA DE FILOSOFIA",
+                            "ESCUELA DE INGENIERIA",
+                            "ESCUELA DE ODONTOLOGIA",
+                            "ESCUELA DE QUIMICA",
+                            "ESCUELA MEXICANA DE ARQUITECTURA",
+                            "ESCUELA MEXICANA DE MEDICINA",
+                            "FACULTAD DE DERECHO",
+                            "FACULTAD MEXICANA DE MEDICINA",
+                            "SEDE CUERNAVACA",
+                            "UNIDAD BAJIO",
+                            "UNIVERSIDAD LA SALLE, A.C. UNIDAD BENAVENTE",];
+      organizationValue = universidadSalle;
+    }
+    if(organizationValue == "UNIVERSIDAD LA SALLE BENAVENTE"){
+      var universidadSalleBenavente=[" "];
+      organizationValue = universidadSalleBenavente;
+    }
+    if(organizationValue == "UNIVERSIDAD LA SALLE DE PACHUCA AC"){
+      var universidadSallePAchuca=[" "];
+      organizationValue = universidadSallePAchuca;
+    }
+    if(organizationValue == "UNIVERSIDAD LA SALLE NOROESTE AC"){
+      var universidadSalleNoroeste=[" "];
+      organizationValue = universidadSalleNoroeste;
+    }
+    if(organizationValue == "UNIVERSIDAD LA SALLE VICTORIA AC"){
+      var universidadSalleVictoria=[" "];
+      organizationValue = universidadSalleVictoria;
+    }
+    if(organizationValue == "UNIVERSIDAD LASALLISTA BENAVENTE"){
+      var universidadLasallista=["ESCUELA DE CIENCIAS DE LA COMUNICACION",
+                                  "ESCUELA DE CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA",
+                                  "ESCUELA DE COMPUTACION",
+                                  "ESCUELA DE CONTADURIA",
+                                  "ESCUELA DE DERECHO",
+                                  "ESCUELA DE RELACIONES INTERNACIONALES"];
+      organizationValue = universidadLasallista;
+    }
+     if(organizationValue == "UNIVERSIDAD LATINA DE AMERICA AC"){
+      var universidadLatinaAc=[" "];
+      organizationValue = universidadLatinaAc;
+    }
+     if(organizationValue == "UNIVERSIDAD LATINA SC"){
+      var universidadLatina=["CAMPUS CUERNAVACA",
+                              "PLANTEL SUR",];
+      organizationValue = universidadLatina;
+    }
+     if(organizationValue == "UNIVERSIDAD LICEO CERVANTINO"){
+      var universidadLiceoCervantino=[" "];
+      organizationValue = universidadLiceoCervantino;
+    }
+    if(organizationValue == "UNIVERSIDAD MAGNA"){
+      var universidadMagna=[" "];
+      organizationValue = universidadMagna;
+    }
+    if(organizationValue == "UNIVERSIDAD MARISTA CHAMPAGNAT"){
+      var universidadMarista=[" "];
+      organizationValue = universidadMarista;
+    }
+    if(organizationValue == "UNIVERSIDAD MARISTA DE MERIDA AC"){
+      var universidadMaristaMerida=["LICENCIATURA EN ADMINISTRACIÓN DE RECURSOS NATURALES"];
+      organizationValue = universidadMaristaMerida;
+    }
+    if(organizationValue == "UNIVERSIDAD MARISTA DE QUERETARO AC"){
+      var universidadMaristaQueretaro=[" "];
+      organizationValue = universidadMaristaQueretaro;
+    }
+    if(organizationValue == "UNIVERSIDAD MESOAMERICANA"){
+      var universidadMesoamericana=[" "];
+      organizationValue = universidadMesoamericana;
+    }
+     if(organizationValue == "UNIVERSIDAD METODISTA MADERO"){
+      var universidadMetodistaMadero=[" "];
+      organizationValue = universidadMetodistaMadero;
+    }
+    if(organizationValue == "UNIVERSIDAD METROPOLITANA DE AGUA CALIENTE SC"){
+      var universidadMetropolitanaAgua=[" "];
+      organizationValue = universidadMetropolitanaAgua;
+    }
+     if(organizationValue == "UNIVERSIDAD METROPOLITANA DE MONTERREY"){
+      var universidadMetropolitanaMonterrey=[" "];
+      organizationValue = universidadMetropolitanaMonterrey;
+    }
+     if(organizationValue == "UNIVERSIDAD MEXICANA SC"){
+      var universidadMetropilitana=[" "];
+      organizationValue = universidadMetropilitana;
+    }
+    if(organizationValue == "UNIVERSIDAD MEXICO AMERICANA DEL NORTE AC"){
+      var universidadAmericanaNorte=["DIVISION HUMANIDADES Y CIENCIAS SOCIALES"];
+      organizationValue = universidadAmericanaNorte;
+    }
+     if(organizationValue == "UNIVERSIDAD MODELO"){
+      var universidadModelo=[" "];
+      organizationValue = universidadModelo;
+    }
+     if(organizationValue == "UNIVERSIDAD MORELOS DE CUERNAVACA"){
+      var universidadModelosCuernavaca=[" "];
+      organizationValue = universidadModelosCuernavaca;
+    }
+     if(organizationValue == "UNIVERSIDAD MOTOLINIA"){
+      var universidadMotolinia=[" "];
+      organizationValue = universidadMotolinia;
+    }
+    if(organizationValue == "UNIVERSIDAD OLMECA AC"){
+      var universidadOlmecaAc=[" "];
+      organizationValue = universidadOlmecaAc;
+    }
+    if(organizationValue == "UNIVERSIDAD ORGANISMO MUNDIAL DE INVESTIGACION"){
+      var universidadOrganismoMundila=[" "];
+      organizationValue = universidadOrganismoMundila;
+    }
+    if(organizationValue == "UNIVERSIDAD PEDREGAL DEL SUR"){
+      var universidadPEdregalDelSur=[" "];
+      organizationValue = universidadPEdregalDelSur;
+    }
+     if(organizationValue == "UNIVERSIDAD POLITECNICA HISPANO MEXICANA"){
+      var universidadPolitecnicaHispano=[" "];
+      organizationValue = universidadPolitecnicaHispano;
+    }
+      if(organizationValue == "UNIVERSIDAD PONTIFICIA DE MEXICO"){
+      var universidadPonticiaMexico=[" "];
+      organizationValue = universidadPonticiaMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD POPULAR AUTONOMA DEL ESTADO DE PUEBLA AC"){
+      var universidadPopularAutonoma=["DIVISION DE CIENCIAS DE LA SALUD",
+                                      "DIVISION DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+                                      "DIVISION DE HUMANIDADES",
+                                      "DIVISION TECNOLOGICA",
+                                      "ESCUELA DE AGRONOMIA",
+                                      "ESCUELA DE INGENIERIA",
+                                      "FACULTAD DE ADMINISTRACION DE EMPRESAS",
+                                      "FACULTAD DE FILOSOFIA"];
+      organizationValue = universidadPopularAutonoma;
+    }
+    if(organizationValue == "UNIVERSIDAD PRIVADA DEL ESTADO DE MEXICO"){
+      var universidadPriveadaEsatdo=[" "];
+      organizationValue = universidadPriveadaEsatdo;
+    }
+    if(organizationValue == "UNIVERSIDAD QUETZALCOATL"){
+      var universidadQuetzalcoatl=[" "];
+      organizationValue = universidadQuetzalcoatl;
+    }
+    if(organizationValue == "UNIVERSIDAD REALISTA DE MEXICO"){
+      var universidadRealistaMexico=[" "];
+      organizationValue = universidadRealistaMexico;
+    }
+     if(organizationValue == "UNIVERSIDAD REGIOMONTANA AC"){
+      var universidadRegioMontana=["DEPARTAMENTO DE MUSICA",
+                                    "DIVISION DE ARQUITECTURA Y CIENCIAS DEL DISEÑO",
+                                    "DIVISION DE CIENCIAS DE LA COMUNICACION Y DIFUSION CULTURAL",
+                                    "DIVISION DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS",
+                                    "DIVISION DE ESTUDIOS DE POSGRADO",
+                                    "DIVISION DE INGENIERIA Y ARQUITECTURA",
+                                    "DIVISION DE INGENIERIA Y CIENCIAS EXACTAS",
+                                    "FACULTAD DE HUMANIDADES Y CIENCIAS SOCIALES",];
+      organizationValue = universidadRegioMontana;
+    }
+     if(organizationValue == "UNIVERSIDAD REGIONAL DEL NORTE"){
+      var universidadRegionalNorte=[" "];
+      organizationValue = universidadRegionalNorte;
+    }
+    if(organizationValue == "UNIVERSIDAD REGIONAL DEL SURESTE AC"){
+      var universidadRegionalSureste=[" "];
+      organizationValue = universidadRegionalSureste;
+    }
+    if(organizationValue == "UNIVERSIDAD SANTO TOMAS"){
+      var universidadSantoTomas=["CAMPUS LOS ANGELES"];
+      organizationValue = universidadSantoTomas;
+    }
+    if(organizationValue == "UNIVERSIDAD SENTIMIENTOS DE LA NACION AC"){
+      var universidadSentimientosNacion=[" "];
+      organizationValue = universidadSentimientosNacion;
+    }
+     if(organizationValue == "UNIVERSIDAD TECMILENIO"){
+      var universidadTecmilenio=["CAMPUS CANCUN",
+                                "CAMPUS CUAUTITLAN IZCALLI",
+                                "CAMPUS LAGUNA",
+                                "UNIVERSIDAD TEC MILENIO CAMPUS CHIHUAHUA",
+                                "UNIVERSIDAD TEC MILENIO CAMPUS PUEBLA",
+                                "UNIVERSIDAD TEC MILENIO CAMPUS SAN LUIS POTOSÍ",
+                                "UNIVERSIDAD TEC MILENIO CAMPUS ZAPOPAN",
+                                "UNIVERSIDAD TEC MILENIO LAS TORRES",
+                                "UNIVERSIDAD TECMILENIO CAMPUS METEPEC"];
+      organizationValue = universidadTecmilenio;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA AMERICANA"){
+      var universidadTecnologiaAmericana=[" "];
+      organizationValue = universidadTecnologiaAmericana;
+    }
+     if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE MEXICO"){
+      var universidadTecnologiaMexico=["ESCUELA DE ODONTOLOGIA",
+                                        "FACULTAD DE ADMINISTRACION Y CIENCIAS SOCIALES",
+                                        "FACULTAD DE INGENIERIA",
+                                        "INSTITUTO DE INVESTIGACION DE TECNOLOGIA EDUCATIVA",];
+      organizationValue = universidadTecnologiaMexico;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DE SINALOA"){
+      var universidadTecnologiaSinaloa=["CAMPUS MAZATLAN"];
+      organizationValue = universidadTecnologiaSinaloa;
+    }
+    if(organizationValue == "UNIVERSIDAD TECNOLOGICA DEL SUR SC"){
+      var universidadTecnologiaSur=["UNIVERSIDAD TECNOLÓGICA DEL SUR, S.C."];
+      organizationValue = universidadTecnologiaSur;
+    }
+    if(organizationValue == "UNIVERSIDAD UNIVER"){
+      var universidadUniver=["UNIVERSIDAD UNIVER PLANTEL MAR EGEO"];
+      organizationValue = universidadUniver;
+    }
+     if(organizationValue == "UNIVERSIDAD VALLE DEL BRAVO"){
+      var universidadValleBravo=["UNIDAD CIUDAD MANTE"];
+      organizationValue = universidadValleBravo;
+    }
+    if(organizationValue == "UNIVERSIDAD VALLE DEL GRIJALVA SC"){
+      var universidadValleGrijalva=[" "];
+      organizationValue = universidadValleGrijalva;
+    }
+     if(organizationValue == "UNIVERSIDAD VASCO DE QUIROGA"){
+      var universidadVascoQuiroga=[" "];
+      organizationValue = universidadVascoQuiroga;
+    }
+    if(organizationValue == "UNIVERSIDAD VILLA RICA"){
+      var universidadVillarica=["ESCUELA DE CONTADURIA Y ADMINISTRACION",
+                                "ESCUELA DE DERECHO",
+                                "ESCUELA DE ECONOMIA MARITIMA",
+                                "ESCUELA DE PSICOLOGIA",
+                                "FACULTAD DE ARQUITECTURA",
+                                "FACULTAD DE ECONOMIA POLITICA",
+                                "FACULTAD DE ECONOMIA",
+                                "FACULTAD DE INGENIERIA"];
+      organizationValue = universidadVillarica;
+    } 
+     if(organizationValue == "UNIVERSIDAD XICOTEPETL AC"){
+      var universidadXicotepetl=[" "];
+      organizationValue = universidadXicotepetl;
+    } 
+     if(organizationValue == "UNIVERSIDADE DE PASSO FUNDO"){
+      var universidadPassoFundo=[" "];
+      organizationValue = universidadPassoFundo;
+    }
+     if(organizationValue == "UNIVERSIDADE SAO FRANCISCO ITATIBA SP BRASIL"){
+      var universidadSaoFrancisco=[" "];
+      organizationValue = universidadSaoFrancisco;
+    }
+    if(organizationValue == "UNIVERSITY OF MICHIGAN DEARBORN"){
+      var universidadMichigan=[" "];
+      organizationValue = universidadMichigan;
+    }
+    if(organizationValue == "UNIVERSITY OF THE WEST SCOTLAND"){
+      var universidadTheWest=[" "];
+      organizationValue = universidadTheWest;
+    }
+    if(organizationValue == "UNIVESIDAD ALVA EDISON"){
+      var universidadAlvaEdison=[" "];
+      organizationValue = universidadAlvaEdison;
+    }
+    if(organizationValue == "VANCOUVER LANGUAGE CENTRE OF GUADALAJARA AC"){
+      var vancouverLanguage=[" "];
+      organizationValue = vancouverLanguage;
+    }
+    if(organizationValue == "WESTHILL INSTITUTE SC"){
+      var westhillInstitute=["ESCUELA DE MEDICINA"];
+      organizationValue = westhillInstitute;
+    }
+
+    /* Instituciones del sector privado de empresas productivas (adiat) */
 
 
+ if(organizationValue == "ABB MEXICO SA DE CV"){
+      var abbMexico=[" "];
+      organizationValue = abbMexico;
+    }
+    if(organizationValue == "ACCIONES Y VALORES DE MEXICO"){
+      var accionesValores=[" "];
+      organizationValue = abbMexico;
+    }
+     if(organizationValue == "ACDENTURE"){
+      var acednture=[" "];
+      organizationValue = acednture;
+    }
+    if(organizationValue == "ACERTEK SA DE CV"){
+      var acertekSa=[" "];
+      organizationValue = acertekSa;
+    }
+     if(organizationValue == "ACUICOLA LA VICTORIA S A DE C V"){
+      var acuicolaVictoria=[" "];
+      organizationValue = acuicolaVictoria;
+    }
+     if(organizationValue == "ADRIANN S DE MEXICO SA DE CV"){
+      var adrianMexico=[" "];
+      organizationValue = adrianMexico;
+    }
+     if(organizationValue == "AEROVIAS CARIBE"){
+      var aeroviasCaribe=[" "];
+      organizationValue = aeroviasCaribe;
+    }
+     if(organizationValue == "AFORE BITAL"){
+      var aforeBital=[" "];
+      organizationValue = aforeBital;
+    }
+      if(organizationValue == "AFORE INBURSA"){
+      var aforeInvursa=[" "];
+      organizationValue = aforeInvursa;
+    }
+    if(organizationValue == "AFORE SANTANDER MEXICANO"){
+      var aforeSantanderMexicano=[" "];
+      organizationValue = aforeSantanderMexicano;
+    }
+    if(organizationValue == "AFORE SOLIDA BANORTE GENERALI"){
+      var aforeSolidaBanorte=[" "];
+      organizationValue = aforeSolidaBanorte;
+    }
+      if(organizationValue == "AFORE XXI"){
+      var aforexxi=[" "];
+      organizationValue = aforexxi;
+    }
+      if(organizationValue == "AGILENT TECHNOLOGIES MEXICO"){
+      var agilentMexco=[" "];
+      organizationValue = agilentMexco;
+    }
+      if(organizationValue == "ALCATEL"){
+      var alcatel=[" "];
+      organizationValue = alcatel;
+    }
+     if(organizationValue == "ALLIANZ MEXICO COMPANIA DE SEGUROS"){
+      var allianzMexico=[" "];
+      organizationValue = allianzMexico;
+    }
+     if(organizationValue == "ALMACENES COPPEL"){
+      var alamcenesCoppel=[" "];
+      organizationValue = alamcenesCoppel;
+    }
+     if(organizationValue == "ALMACENES ZARAGOZA"){
+      var almacenesZaragoza=[" "];
+      organizationValue = almacenesZaragoza;
+    }
+     if(organizationValue == "ALMEXA ALUMINIO"){
+      var almexaAlumnio=[" "];
+      organizationValue = almexaAlumnio;
+    }
+    if(organizationValue == "ALPEK SA DE CV"){
+      var alpekSa=[" "];
+      organizationValue = alpekSa;
+    }
+     if(organizationValue == "ALTOS HORNOS DE MEXICO S A B DE C V"){
+      var altosHornos=[" "];
+      organizationValue = altosHornos;
+    }
+     if(organizationValue == "ARABELA"){
+      var arabela=[" "];
+      organizationValue = arabela;
+    }
+     if(organizationValue == "ARANCIA CORN PRODUCTS"){
+      var aranciaCorn=[" "];
+      organizationValue = aranciaCorn;
+    }
+     if(organizationValue == "ASEGURADORA HIDALGO"){
+      var aseguradoraHisdalgo=[" "];
+      organizationValue = aseguradoraHisdalgo;
+    }
+    if(organizationValue == "ATLAS COPCO MEXICANA"){
+      var atlasCopco=[" "];
+      organizationValue = atlasCopco;
+    }
+     if(organizationValue == "BANCO MERCANTIL DEL NORTE"){
+      var bancoMercantil=[" "];
+      organizationValue = bancoMercantil;
+    }
+    if(organizationValue == "BANCO NACIONAL DE MEXICO SA"){
+      var bancoNacionalMexico=[" "];
+      organizationValue = bancoNacionalMexico;
+    }
+    if(organizationValue == "BANCO SANTANDER MEXICANO"){
+      var bancoSantandereMexicano=[" "];
+      organizationValue = bancoSantandereMexicano;
+    }
+     if(organizationValue == "BANCRECER"){
+      var bancrecer=[" "];
+      organizationValue = bancrecer;
+    }
+     if(organizationValue == "BEBIDAS PURIFICADAS DEL CENTRO"){
+      var bebidasPurificadas=[" "];
+      organizationValue = bebidasPurificadas;
+    }
+     if(organizationValue == "BLUE BIRD DE MEXICO"){
+      var blueBird=[" "];
+      organizationValue = blueBird;
+    }
+      if(organizationValue == "BMG ENTERTAINMENT MEXICO"){
+      var bmgEntertainmet=[" "];
+      organizationValue = bmgEntertainmet;
+    }
+      if(organizationValue == "BRISTOL MYERS SQUIBB DE MEXICO S DE RL DE CV"){
+      var bristolMyers=[" "];
+      organizationValue = bristolMyers;
+    }
+      if(organizationValue == "BROTHER INTERNATIONAL DE MEXICO"){
+      var brotherInternational=[" "];
+      organizationValue = brotherInternational;
+    }
+     if(organizationValue == "BUFETE INDUSTRIAL"){
+      var bufeteIndustrial=[" "];
+      organizationValue = bufeteIndustrial;
+    }
+     if(organizationValue == "CABLEVISION SA DE CV"){
+      var cablevisionSa=[" "];
+      organizationValue = cablevisionSa;
+    }
+       if(organizationValue == "CANON MEXICANA"){
+      var canonMexico=[" "];
+      organizationValue = canonMexico;
+    }
+       if(organizationValue == "CARTONES PONDEROSA"){
+      var cartonesPonderosa=[" "];
+      organizationValue = cartonesPonderosa;
+    }
+       if(organizationValue == "CASA DE BOLSA BANORTE"){
+      var houseBackBanorte=[" "];
+      organizationValue = houseBackBanorte;
+    }
+      if(organizationValue == "CASA DE BOLSA BBVA BANCOMER"){
+      var HouseBackBbva=[" "];
+      organizationValue = HouseBackBbva;
+    }
+     if(organizationValue == "CASA DE BOLSA INVERLAT"){
+      var houseBackInverlat=[" "];
+      organizationValue = houseBackInverlat;
+    }
+     if(organizationValue == "CASA DE CAMBIO MONEX"){
+      var houseToChanseMonex=[" "];
+      organizationValue = houseToChanseMonex;
+    }
+    if(organizationValue == "CELANESE MEXICANA"){
+      var celaneseMexicana=[" "];
+      organizationValue = celaneseMexicana;
+    }
+     if(organizationValue == "CELULOSA Y DERIVADOS SA DE CV"){
+      var celulosaDerivados=[" "];
+      organizationValue = celulosaDerivados;
+    }
+     if(organizationValue == "CEMENTOS CRUZ AZUL"){
+      var cementosCurzAzul=[" "];
+      organizationValue = cementosCurzAzul;
+    }
+     if(organizationValue == "CEMEX DE MEXICO SA DE CV"){
+      var cemexMexico=[" "];
+      organizationValue = cemexMexico;
+    }
+     if(organizationValue == "CIA EMBOTELLADORA DE CUALIACAN"){
+      var ciaEmbotelladora=[" "];
+      organizationValue = ciaEmbotelladora;
+    }
+     if(organizationValue == "CIA EMBOTELLADORA NUEVA OBREGON"){
+      var ciaEmbotelladoraObregon=[" "];
+      organizationValue = ciaEmbotelladoraObregon;
+    }
+    if(organizationValue == "CINEMARK DE MEXICO"){
+      var cinemarkMexico=[" "];
+      organizationValue = cinemarkMexico;
+    }
+      if(organizationValue == "CITIBANK"){
+      var citibank=[" "];
+      organizationValue = citibank;
+    }
+      if(organizationValue == "CMM SA DE CV"){
+      var cmmSa=["CENTRO MEDICO METROPOLITANO DEL SURESTE S.A. DE C.V."];
+      organizationValue = cmmSa;
+    }
+      if(organizationValue == "COCACOLA FEMSA"){
+      var cocacolaFemsa=[" "];
+      organizationValue = cocacolaFemsa;
+    }
+       if(organizationValue == "COMPANIA CERILLERA LA CENTRAL"){
+      var companiaCerillera=[" "];
+      organizationValue = companiaCerillera;
+    }
+      if(organizationValue == "COMPANIA INDUSTRIALIZADORA DE CARBON ACTIVADO DE TECOMAN SA DE CV"){
+      var companoaCarbon=[" "];
+      organizationValue = companoaCarbon;
+    }
+    if(organizationValue == "COMPANIA MINERA AUTLAN S A B DE CV"){
+      var companiaMinera=[" "];
+      organizationValue = companiaMinera;
+    }
+     if(organizationValue == "CONDUCTORES MEXICANOS SA"){
+      var conductoresMexicanos=[" "];
+      organizationValue = conductoresMexicanos;
+    }
+     if(organizationValue == "CONS INTERNACIONAL DE MEDIO AMBIENTE"){
+      var internationalMedioAmbiente=[" "];
+      organizationValue = internationalMedioAmbiente;
+    }
+       if(organizationValue == "CONSORCIO ARA"){
+      var consorcioAra=[" "];
+      organizationValue = consorcioAra;
+    }
+    if(organizationValue == "CONSORCIO HOGAR"){
+      var consorcioHogar=[" "];
+      organizationValue = consorcioHogar;
+    }
+      if(organizationValue == "CONSTRUCCIONES Y CANALIZACIONES"){
+      var construccionesCanalizaciones=[" "];
+      organizationValue = construccionesCanalizaciones;
+    }
+      if(organizationValue == "CONSTRUCTORA SILMEL SA DE CV"){
+      var construccionesSimel=["INGENIERIA PROMOTORA DE DESARROLLO S.A. DE C.V."];
+      organizationValue = construccionesSimel;
+    }
+       if(organizationValue == "CONSTRUCTORA Y URBANIZADORA ARA"){
+      var construccionesUrbanizadora=[" "];
+      organizationValue = construccionesUrbanizadora;
+    }
+    if(organizationValue == "CONTROL NUMERICO Y ROBOTICA SA DE CV"){
+      var controlNumerico=[" "];
+      organizationValue = controlNumerico;
+    }
+      if(organizationValue == "CONTROLADORA DE FARMACIAS"){
+      var controladoraFarmacias=[" "];
+      organizationValue = controladoraFarmacias;
+    }
+       if(organizationValue == "COPACHISA"){
+      var copachisa=[" "];
+      organizationValue = copachisa;
+    }
+       if(organizationValue == "CORP INTERAM DE ENTRETENIMIENTO"){
+      var corpInteram=[" "];
+      organizationValue = corpInteram;
+    }
+        if(organizationValue == "CORPORACION DURANGO"){
+      var corporacionDurango=[" "];
+      organizationValue = corporacionDurango;
+    }
+    if(organizationValue == "CORPORACION GEO SAB DE CV"){
+      var corporacionGeoSab=[" "];
+      organizationValue = corporacionGeoSab;
+    }
+     if(organizationValue == "CORPORACION MEXICANA DE RESTAURANTES"){
+      var corporacionMexicana=[" "];
+      organizationValue = corporacionMexicana;
+    }
+     if(organizationValue == "CORPORATIVO FRAGUA"){
+      var corporativoFragua=[" "];
+      organizationValue = corporativoFragua;
+    }
+     if(organizationValue == "COSMOCEL S A"){
+      var cosmocel=[" "];
+      organizationValue = cosmocel;
+    }
+      if(organizationValue == "CUPRO SAN LUIS"){
+      var cuproSanLuis=[" "];
+      organizationValue = cuproSanLuis;
+    }
+      if(organizationValue == "CYDSA CORPORATIVO S A DE C V"){
+      var cydsaCorp=["DIVISION QUIMICA"];
+      organizationValue = cydsaCorp;
+    }
+      if(organizationValue == "DALTILE MEXICO"){
+      var daltileMexico=[" "];
+      organizationValue = daltileMexico;
+    }
+       if(organizationValue == "DANA HEAVY AXLE MEXICO"){
+      var danaHeavy=[" "];
+      organizationValue = danaHeavy;
+    }
+       if(organizationValue == "DATA CAPITAL"){
+      var dataCapital=[" "];
+      organizationValue = dataCapital;
+    }
+        if(organizationValue == "DERIVADOS ACRILICOS SA DE CV"){
+      var derivadosAcrilicos=[" "];
+      organizationValue = derivadosAcrilicos;
+    }
+    if(organizationValue == "DESARROLLADORA HOMEZ"){
+      var desarrolladoraHomez=[" "];
+      organizationValue = desarrolladoraHomez;
+    }
+    if(organizationValue == "DISTRIBUCION Y VENTAS S A DE C V"){
+      var distribucionVentas=[" "];
+      organizationValue = distribucionVentas;
+    }
+     if(organizationValue == "DROGUERIA Y FARMACIA EL FENIX"){
+      var drogueraFarmacia=[" "];
+      organizationValue = drogueraFarmacia;
+    }
+     if(organizationValue == "DURANGO PAPER COMPANY"){
+      var durangoPaper=[" "];
+      organizationValue = durangoPaper;
+    }
+     if(organizationValue == "ECE"){
+      var ece=[" "];
+      organizationValue = ece;
+    }
+     if(organizationValue == "ECOFIBRAS PONDEROSA"){
+      var ecofibrasPonderosa=[" "];
+      organizationValue = ecofibrasPonderosa;
+    }
+     if(organizationValue == "EL OSO SA DE CV"){
+      var osoSa=[" "];
+      organizationValue = osoSa;
+    }
+    if(organizationValue == "ELECTRICA AUTOMOTRIZ OMEGA SA DE CV"){
+      var electricaAutomotriz=[" "];
+      organizationValue = electricaAutomotriz;
+    }
+    if(organizationValue ==  "ELEVADORES OTIS"){
+      var elevadoresOtis=[" "];
+      organizationValue = elevadoresOtis;
+    }
+      if(organizationValue ==  "EMBOTELLADORA AGA DEL CENTRO"){
+      var embotelladoraAga=[" "];
+      organizationValue = embotelladoraAga;
+    }
+      if(organizationValue ==  "EMBOTELLADORA AGUASCALIENTES"){
+      var embotelladoraAguascalientes=[" "];
+      organizationValue = embotelladoraAguascalientes;
+    }
+       if(organizationValue ==  "EMBOTELLADORA AMECA"){
+      var embotelladoraAmeca=[" "];
+      organizationValue = embotelladoraAmeca;
+    }
+         if(organizationValue ==  "EMBOTELLADORA ARGOS"){
+      var embotelladoraArgos=[" "];
+      organizationValue = embotelladoraArgos;
+    }
+    if(organizationValue ==  "EMBOTELLADORA DE CHIHUAHUA"){
+      var embotelladoraChiuahua=[" "];
+      organizationValue = embotelladoraChiuahua;
+    }
+     if(organizationValue ==  "EMBOTELLADORA DE COAHUILA"){
+      var embotelladoraCoahuila=[" "];
+      organizationValue = embotelladoraCoahuila;
+    }
+      if(organizationValue ==  "EMBOTELLADORA DE LA FRONTERA SA DE CV"){
+      var embotelladoraFrontera=[" "];
+      organizationValue = embotelladoraFrontera;
+    }
+      if(organizationValue ==  "EMBOTELLADORA DE MEXICALI"){
+      var embotelladoraexicalli=[" "];
+      organizationValue = embotelladoraexicalli;
+    }
+      if(organizationValue ==  "EMBOTELLADORA DE OCCIDENTE"){
+      var embotelladoraOccidente=[" "];
+      organizationValue = embotelladoraOccidente;
+    }
+     if(organizationValue ==  "EMBOTELLADORA GOMEZ PALACIO"){
+      var embotelladoraGomezPalacio=[" "];
+      organizationValue = embotelladoraGomezPalacio;
+    }
+     if(organizationValue ==  "EMBOTELLADORA GUADALUPE VICTORIA"){
+      var embotelladoraGuadalupe=[" "];
+      organizationValue = embotelladoraGuadalupe;
+    }
+     if(organizationValue ==  "EMBOTELLADORA GUADIANA"){
+      var embotelladoraGuadiana=[" "];
+      organizationValue = embotelladoraGuadiana;
+    }
+     if(organizationValue ==  "EMBOTELLADORA LA BUFA"){
+      var embotelladoraBufa=[" "];
+      organizationValue = embotelladoraBufa;
+    }
+     if(organizationValue ==  "EMBOTELLADORA LAGUNERA"){
+      var embotelladoraLagunera=[" "];
+      organizationValue = embotelladoraLagunera;
+    }
+       if(organizationValue ==  "EMBOTELLADORA LAS TROJES"){
+      var embotelladoraTrojes=[" "];
+      organizationValue = embotelladoraTrojes;
+    }
+       if(organizationValue ==  "EMBOTELLADORA LOS ALTOS"){
+      var embotelladoraAltos=[" "];
+      organizationValue = embotelladoraAltos;
+    }
+       if(organizationValue ==  "EMBOTELLADORA PITIC"){
+      var embotelladoraPitic=[" "];
+      organizationValue = embotelladoraPitic;
+    }
+       if(organizationValue ==  "EMBOTELLADORA SAN LUIS"){
+      var embotelladoraSanLuis=[" "];
+      organizationValue = embotelladoraSanLuis;
+    }
+       if(organizationValue ==  "EMBOTELLADORA TANGAMANGA"){
+      var embotelladoraTangamanga=[" "];
+      organizationValue = embotelladoraTangamanga;
+    }
+        if(organizationValue ==  "EMBOTELLADORA ZAPOPAN"){
+      var embotelladoraZapopan=[" "];
+      organizationValue = embotelladoraZapopan;
+    }
+    if(organizationValue ==  "ENERTEC MEXICOM S DE RL DE CV"){
+      var energetecMexicom=[" "];
+      organizationValue = energetecMexicom;
+    }
+     if(organizationValue ==  "EQUIPOS MEDICOS VIZCARRA SA"){
+      var equiposMedicos=[" "];
+      organizationValue = equiposMedicos;
+    }
+      if(organizationValue ==  "EXPORTADORA DE SAL"){
+      var exportadorasal=[" "];
+      organizationValue = exportadorasal;
+    }
+     if(organizationValue ==  "FABRICA DE PAPEL SAN FRANCISCO"){
+      var fabricaPapel=[" "];
+      organizationValue = fabricaPapel;
+    }
+      if(organizationValue ==  "FARMACIAS BENAVIDES"){
+      var farmaciasBenavides=[" "];
+      organizationValue = farmaciasBenavides;
+    }
+     if(organizationValue ==  "FEMSA CERVEZA"){
+      var femsaCerveza=["CENTRO DE SERVICIO DIESEL, S.A. DE C.V."];
+      organizationValue = femsaCerveza;
+    }
+    if(organizationValue ==  "FOMENTO RADIO BEEP"){
+      var fomentoRadio=[" "];
+      organizationValue = fomentoRadio;
+    }
+     if(organizationValue ==  "FORD CREDIT DE MEXICO"){
+      var fordCredit=[" "];
+      organizationValue = fordCredit;
+    }
+     if(organizationValue ==  "FORD MOTORS COMPANY DE MEXICO"){
+      var fordMotors=[" "];
+      organizationValue = fordMotors;
+    }
+    if(organizationValue ==  "FYPASA CONSTRUCCIONES"){
+      var fypasaConsturciones=[" "];
+      organizationValue = fypasaConsturciones;
+    }
+     if(organizationValue ==  "GALVAK SA DE CV"){
+      var galvak=[" "];
+      organizationValue = galvak;
+    }
+    if(organizationValue ==  "GANADEROS ASOCIADOS DE QUERETARO SA DE CV"){
+      var ganaderosAsociados=[" "];
+      organizationValue = ganaderosAsociados;
+    }
+    if(organizationValue ==  "GANADEROS PRODUCTORES DE LECHE PURA SA DE CV"){
+      var ganaderosProductors=[" "];
+      organizationValue = ganaderosProductors;
+    }
+     if(organizationValue ==  "GARANTE"){
+      var garante=[" "];
+      organizationValue = garante;
+    }
+     if(organizationValue ==  "GEDAS NORTH AMERICA"){
+      var gedasNorth=[" "];
+      organizationValue = gedasNorth;
+    }
+    if(organizationValue ==  "GENERAL ELECTRIC DE MEXICO"){
+      var genralElectric=[" "];
+      organizationValue = genralElectric;
+    }
+     if(organizationValue ==  "GIRSA CORPORATIVO SA DE CV"){
+      var gisaCorp=["CID, CENTRO DE INVESTIGACION Y DESARROLLO TECNOLOGICO, S.A. DE C.V."];
+      organizationValue = gisaCorp;
+    }
+     if(organizationValue ==  "GMAC MEXICANA"){
+      var gmacMexicana=[" "];
+      organizationValue = gmacMexicana;
+    }
+     if(organizationValue ==  "GRAFOS REGIA"){
+      var grafosRegia=[" "];
+      organizationValue = grafosRegia;
+    }
+    if(organizationValue ==  "GRAN CLASE EN MUEBLES SA DE CV"){
+      var granClaseMuebles=[" "];
+      organizationValue = granClaseMuebles;
+    }
+    if(organizationValue ==  "GRUJPO CHARWELL DE MEXICO ?"){
+      var gruposCharwell=[" "];
+      organizationValue = gruposCharwell;
+    }
+     if(organizationValue ==  "GRUMA"){
+      var gruma=[" "];
+      organizationValue = gruma;
+    }
+      if(organizationValue ==  "GRUPE"){
+      var grupe=[" "];
+      organizationValue = grupe;
+    }
+       if(organizationValue ==  "GRUPO ACCION"){
+      var grupoAccion=[" "];
+      organizationValue = grupoAccion;
+    }
+    if(organizationValue ==  "GRUPO AEROMAR"){
+      var grupoAeromar=[" "];
+      organizationValue = grupoAeromar;
+    }
+     if(organizationValue ==  "GRUPO AEROPORTUARIO DEL SURESTE"){
+      var grupoSureste=[" "];
+      organizationValue = grupoSureste;
+    }
+     if(organizationValue ==  "GRUPO ALFA"){
+      var grupoAlfa=["NEMAC",
+                    "PLANETARIO ALFA",];
+      organizationValue = grupoAlfa;
+    }
+     if(organizationValue ==  "GRUPO AMERICAN INDUSTRIES"){
+      var groupAmericanIndustries=[" "];
+      organizationValue = groupAmericanIndustries;
+    }
+     if(organizationValue ==  "GRUPO BAL"){
+      var groupBal=[" "];
+      organizationValue = groupBal;
+    }
+     if(organizationValue ==  "GRUPO BLACK & DEKER MEXICO"){
+      var groupBlackDeker=[" "];
+      organizationValue = groupBlackDeker;
+    }
+     if(organizationValue ==  "GRUPO CENTRAL DE DISCOS"){
+      var groupCentrakDisc=[" "];
+      organizationValue = groupCentrakDisc;
+    }
+     if(organizationValue ==  "GRUPO CINEMEX"){
+      var groupCinemex=["SERVIUNO, S.A. DE C.V."];
+      organizationValue = groupCinemex;
+    }
+     if(organizationValue ==  "GRUPO COMERCIAL GOMO"){
+      var groupComecialGoo=[" "];
+      organizationValue = groupComecialGoo;
+    }
+      if(organizationValue ==  "GRUPO COSTAMEX"){
+      var groupCostamex=[" "];
+      organizationValue = groupCostamex;
+    }
+     if(organizationValue ==  "GRUPO COVARRA"){
+      var groupCovarra=[" "];
+      organizationValue = groupCovarra;
+    }
+     if(organizationValue ==  "GRUPO DESC"){
+      var groupDesc=[" "];
+      organizationValue = groupDesc;
+    }
+     if(organizationValue ==  "GRUPO DIVAZ"){
+      var groupDivaz=[" "];
+      organizationValue = groupDivaz;
+    }
+    if(organizationValue ==  "GRUPO ECHLIN AUTOMOTRIZ"){
+      var groupEchin=[" "];
+      organizationValue = groupEchin;
+    }
+     if(organizationValue ==  "GRUPO FAMSA"){
+      var groupFamsa=[" "];
+      organizationValue = groupFamsa;
+    }
+     if(organizationValue ==  "GRUPO FERROVIARIO"){
+      var groupFerroViario=[" "];
+      organizationValue = groupFerroViario;
+    }
+     if(organizationValue ==  "GRUPO FINANCIERO AFIRME"){
+      var groupFinacieroAfirme=[" "];
+      organizationValue = groupFinacieroAfirme;
+    }
+     if(organizationValue ==  "GRUPO FINANCIERO BANAMEX ACCIVAL"){
+      var groupFinacieroBanamez=[" "];
+      organizationValue = groupFinacieroBanamez;
+    }
+     if(organizationValue ==  "GRUPO FINANCIERO BBVA BANCOMER"){
+      var groupFinacieroBbva=[" "];
+      organizationValue = groupFinacieroBbva;
+    }
+     if(organizationValue ==  "GRUPO GIGANTE"){
+      var groupGigante=[" "];
+      organizationValue = groupGigante;
+    }
+    if(organizationValue ==  "GRUPO HERDEZ"){
+      var groupHerdez=[" "];
+      organizationValue = groupHerdez;
+    }
+    if(organizationValue ==  "GRUPO ICONSA"){
+      var groupIconsa=[" "];
+      organizationValue = groupIconsa;
+    }
+     if(organizationValue ==  "GRUPO IMSA"){
+      var groupImsa=[" "];
+      organizationValue = groupImsa;
+    }
+    if(organizationValue ==  "GRUPO INDI"){
+      var groupIndi=[" "];
+      organizationValue = groupIndi;
+    }
+     if(organizationValue ==  "GRUPO INDUSTRIAL CAMESA"){
+      var groupIndustrial=[" "];
+      organizationValue = groupIndustrial;
+    }
+    if(organizationValue ==  "GRUPO INDUSTRIAL MASECA"){
+      var groupIndustrialMAseca=[" "];
+      organizationValue = groupIndustrialMAseca;
+    }
+     if(organizationValue ==  "GRUPO INDUSTRIAL MEXICANO"){
+      var groupIndustrialMexicano=[" "];
+      organizationValue = groupIndustrialMexicano;
+    }
+     if(organizationValue ==  "GRUPO IUSA"){
+      var groupIndustrialIusa=[" "];
+      organizationValue = groupIndustrialIusa;
+    }
+     if(organizationValue ==  "GRUPO MARCATEL"){
+      var groupMarcatel=[" "];
+      organizationValue = groupMarcatel;
+    }
+    if(organizationValue ==  "GRUPO MARTI"){
+      var groupMarti=[" "];
+      organizationValue = groupMarti;
+    }
+     if(organizationValue ==  "GRUPO MEXICANO DE DESARROLLO"){
+      var groupMexicanDeveloper=[" "];
+      organizationValue = groupMexicanDeveloper;
+    }
+     if(organizationValue ==  "GRUPO NOVARTIS MEXICO"){
+      var groupNovartisMexico=[" "];
+      organizationValue = groupNovartisMexico;
+    }
+     if(organizationValue ==  "GRUPO PALACIO DE HIERRO"){
+      var groupPalaceHierro=[" "];
+      organizationValue = groupPalaceHierro;
+    }
+     if(organizationValue ==  "GRUPO PIPSAMEX"){
+      var groupPipsamex=[" "];
+      organizationValue = groupPipsamex;
+    }
+      if(organizationValue ==  "GRUPO POSADAS SAB DE CV"){
+      var groupPosadas=[" "];
+      organizationValue = groupPosadas;
+    }
+     if(organizationValue ==  "GRUPO QUALITA"){
+      var groupQualita=[" "];
+      organizationValue = groupQualita;
+    }
+      if(organizationValue ==  "GRUPO QUMMA"){
+      var groupQmma=[" "];
+      organizationValue = groupQmma;
+    }
+     if(organizationValue ==  "GRUPO RADIO ACIR COMUNICACIONES"){
+      var groupRadioAcir=[" "];
+      organizationValue = groupRadioAcir;
+    }
+     if(organizationValue ==  "GRUPO RADIO CENTRO"){
+      var groupRadioCentro=[" "];
+      organizationValue = groupRadioCentro;
+    } 
+     if(organizationValue ==  "GRUPO RADIOFORMULA"){
+      var groupRadioFormula=[" "];
+      organizationValue = groupRadioFormula;
+    } 
+     if(organizationValue ==  "GRUPO ROCHE SYNTEX DE MEXICO SA DE CV"){
+      var groupRoche=["DIVISION DE INVESTIGACION"];
+      organizationValue = groupRoche;
+    } 
+      if(organizationValue ==  "GRUPO ROTOPLAS"){
+      var groupRtoplas=[" "];
+      organizationValue = groupRtoplas;
+    } 
+      if(organizationValue ==  "GRUPO RUBIO"){
+      var groupRubio=[" "];
+      organizationValue = groupRubio;
+    } 
+     if(organizationValue ==  "GRUPO SANBORNS"){
+      var groupSanborns=[" "];
+      organizationValue = groupSanborns;
+    } 
+    if(organizationValue ==  "GRUPO SIDEK"){
+      var groupSidek=[" "];
+      organizationValue = groupSidek;
+    }
+     if(organizationValue ==  "GRUPO SITUR"){
+      var groupSitur=[" "];
+      organizationValue = groupSitur;
+    }
+     if(organizationValue ==  "GRUPO SONOCO"){
+      var groupSonoc=[" "];
+      organizationValue = groupSonoc;
+    }
+      if(organizationValue ==  "GRUPO TELEVISA"){
+      var groupTelevisa=["FUNDACION CULTURAL TELEVISA A. C.",
+                          "OPERBES SA DE CV"];
+      organizationValue = groupTelevisa;
+    }
+       if(organizationValue ==  "GRUPO TICONSA"){
+      var groupTicosa=[" "];
+      organizationValue = groupTicosa;
+    }
+       if(organizationValue ==  "GRUPO UPDATE"){
+      var groupUpdate=[" "];
+      organizationValue = groupUpdate;
+    }
+        if(organizationValue ==  "GRUPO XENON"){
+      var groupXenon=[" "];
+      organizationValue = groupXenon;
+    }
+     if(organizationValue ==  "HAMILTON BEACH PROCTOR SILEX DE MEXICO"){
+      var hamiltonBeach=[" "];
+      organizationValue = hamiltonBeach;
+    }
+     if(organizationValue ==  "HARRY MAZAL SA DE CV"){
+      var harryMazal=[" "];
+      organizationValue = harryMazal;
+    }
+    if(organizationValue ==  "HERMES CORPORATIVO"){
+      var hermesCorp=[" "];
+      organizationValue = hermesCorp;
+    }
+    if(organizationValue ==  "HILASAL MEXICANA S A B DE C V"){
+      var hilasalMexicana=[" "];
+      organizationValue = hilasalMexicana;
+    }
+    if(organizationValue ==  "HIPOTECARIA NACIONAL"){
+      var hipotecaNacional=[" "];
+      organizationValue = hipotecaNacional;
+    }
+     if(organizationValue ==  "HITCHINER"){
+      var hitchiner=[" "];
+      organizationValue = hitchiner;
+    }
+     if(organizationValue ==  "HOTEL NIKKO MEXICO"){
+      var hotelNikko=["ASESORÍA TURÍSTICA Y AMBIENTAL",
+                    "CENOTE DORADO S.C. DE R.L. DE C.V.",
+                    "CENTRE EUROPEEN DE REALITE VIRTUELLE",
+                    "EMPRESAS ECOLOGICAS EL ROCIO SA DE CV",
+                    "GRUPO ALIANZA MEXICANA POR LA SOBREDOTACION SC",
+                    "MAQUILADORA AGRICOLA DE NAYARIT S.A DE C.V",
+                    "NATURALIS BIODIVERSITY CENTER",
+                    "NEW ENGLAND COMPLEX SYSTEMS INSTITUTE",
+                    "PES PROSPECTIVA S.C.",
+                    "SOLUCIONES ANALITICAS Y PRACTICAS DE PROCESOS SA DE CV",
+                    "UNIVERSITATEA DE VEST VASILE GOLDIS ARAD"];
+      organizationValue = hotelNikko;
+    }
+    if(organizationValue ==  "HOTELES PRESIDENTE SA DE CV"){
+      var hotelesPresidente=[" "];
+      organizationValue = hotelesPresidente;
+    }
+     if(organizationValue ==  "HYLSAMEX SA DE CV"){
+      var hylsamex=["ACEREX",
+                    "GALVACER",
+                    "HYL TECNOLOGIA DE HYLSAMEX",
+                    "HYLSA, DIVISION ACEROS PLANOS",
+                    "HYLSA, DIVISION ALAMBRÓN Y VARILLA",
+                    "PLANTA MONTERREY"];
+      organizationValue = hylsamex;
+    }
+      if(organizationValue ==  "IEM"){
+      var iem=[" "];
+      organizationValue = iem;
+    }
+     if(organizationValue ==  "INDUSTRIA AUTOMOTRIZ"){
+      var industrieAutomotriz=[" "];
+      organizationValue = industrieAutomotriz;
+    }
+     if(organizationValue ==  "INDUSTRIAS DERIVADAS DEL ETILENO SA DE CV"){
+      var insdutriasDerivadasEtileno=[" "];
+      organizationValue = insdutriasDerivadasEtileno;
+    }
+     if(organizationValue ==  "INDUSTRIAS FIRA SA DE CV"){
+      var industriesFira=[" "];
+      organizationValue = industriesFira;
+    }
+     if(organizationValue ==  "INDUSTRIAS NACOBRE"){
+      var industriesNAcobrea=[" "];
+      organizationValue = industriesNAcobrea;
+    }
+     if(organizationValue ==  "INDUSTRIAS NEGROMEX SA DE CV"){
+      var insdutriesNegromex=["DIVISION DE INVESTIGACION Y DESARROLLO"];
+      organizationValue = insdutriesNegromex;
+    }
+    if(organizationValue ==  "INDUSTRIAS RESISTOL SA"){
+      var insdutriesREsitol=[" "];
+      organizationValue = insdutriesREsitol;
+    }
+     if(organizationValue ==  "INDUSTRIAS UNIDAS SA"){
+      var insdutriesUnidas=[" "];
+      organizationValue = insdutriesUnidas;
+    }
+     if(organizationValue ==  "INGENIERIA Y SINTESIS S A DE CV"){
+      var engenieerSistesis=["INGENIERÍA PROMOTORA DE DESARROLLO S.A. DE C.V."];
+      organizationValue = engenieerSistesis;
+    }
+      if(organizationValue ==  "INGENIO ADOLFO LOPEZ MATEOS SA DE CV"){
+      var ingenioAdolfo=[" "];
+      organizationValue = ingenioAdolfo;
+    }
+      if(organizationValue ==  "INGENIO TRES VALLES SA DE CV"){
+      var ingenioTresValles=[" "];
+      organizationValue = ingenioTresValles;
+    }
+     if(organizationValue ==  "INMUEBLES SERCOX SA DE CV SERVICIOS CONDUMEX SA DE CV"){
+      var inueblesSercox=[" "];
+      organizationValue = inueblesSercox;
+    }
+     if(organizationValue ==  "INNOVAMEDICA SA DE CV"){
+      var innovamedicaS=[" "];
+      organizationValue = innovamedicaS;
+    }
+    if(organizationValue ==  "INVERSORA BURSATIL"){
+      var imversoraBursatil=[" "];
+      organizationValue = imversoraBursatil;
+    }
+     if(organizationValue ==  "ITP INGENIERIA Y FABRICACION SA DE CV"){
+      var itpEngieener=[" "];
+      organizationValue = itpEngieener;
+    }
+     if(organizationValue ==  "IXE GRUPO FINANCIERO"){
+      var ixeGroup=[" "];
+      organizationValue = ixeGroup;
+    }
+    if(organizationValue ==  "JPM PANTERA"){
+      var panter=[" "];
+      organizationValue = panter;
+    }
+     if(organizationValue ==  "KAMER COMERCIAL SA DE CV"){
+      var kamerComercy=[" "];
+      organizationValue = kamerComercy;
+    }
+    if(organizationValue ==  "KENKEL SALGADO"){
+      var kenkelSalgado=[" "];
+      organizationValue = kenkelSalgado;
+    }
+    if(organizationValue ==  "KOBLENZ ELECTRICA SA DE CV"){
+      var koblenzEelctric=[" "];
+      organizationValue = koblenzEelctric;
+    }
+    if(organizationValue ==  "LABORATORIOS CLINICOS DE PUEBLA SA DE CV"){
+      var laboratorieClicnic=["DEPARTAMENTO DE ENSEÑANZA E INVESTIGACION",
+                              "DEPARTAMENTO DE HEMATOLOGIA",
+                              "DEPARTAMENTO DE INMUNOLOGIA",
+                              "PROGRAMA DE ESPECIALIDAD EN PATOLOGIA CLINICA",];
+      organizationValue = laboratorieClicnic;
+    }
+     if(organizationValue ==  "LABORATORIOS SILANES SA DE CV"){
+      var laboratorieSlilanes=[" "];
+      organizationValue = laboratorieSlilanes;
+    }
+     if(organizationValue ==  "LATINOAMERICANA DE CONCRETOS"){
+      var latinoamericanaConcretos=[" "];
+      organizationValue = latinoamericanaConcretos;
+    }
+     if(organizationValue ==  "LATINOAMERICANA DE DUTY FREE"){
+      var latinoamericanaDuty=[" "];
+      organizationValue = latinoamericanaDuty;
+    }
+     if(organizationValue ==  "LUNKOMEX SA DE CV"){
+      var lunkomex=[" "];
+      organizationValue = lunkomex;
+    }
+     if(organizationValue ==  "MAIZORO"){
+      var maizoro=[" "];
+      organizationValue = maizoro;
+    }
+      if(organizationValue ==  "MANUFACTURERA DE CIGUENALES DE MEXICO SA DE CV"){
+      var manufactureCiguenales=[" "];
+      organizationValue = maimanufactureCiguenaleszoro;
+    }  
+    if(organizationValue ==  "MAQUINADOS Y PILOTOS SALDANA SA DE CV"){
+      var maquinadosPilotos=[" "];
+      organizationValue = maquinadosPilotos;
+    }
+    if(organizationValue ==  "MARINDUSTRIAS SA DE CV"){
+      var marindustries=[" "];
+      organizationValue = marindustries;
+    }
+    if(organizationValue ==  "MCCANN ERICKSON DE MEXICO"){
+      var erickson=[" "];
+      organizationValue = erickson;
+    }
+     if(organizationValue ==  "MEDICA SUR S A B DE CV"){
+      var medicaSur=["MEDICA SUR"];
+      organizationValue = medicaSur;
+    }
+    if(organizationValue ==  "METCO SA DE CV"){
+      var metcoS=[" "];
+      organizationValue = metcoS;
+    }
+    if(organizationValue ==  "MEXINOX"){
+      var mexinox=[" "];
+      organizationValue = mexinox;
+    }
+    if(organizationValue ==  "MINAS LUISMIN"){
+      var mineLuismin=[" "];
+      organizationValue = mineLuismin;
+    }
+    if(organizationValue ==  "MINERA DEL NORTE"){
+      var mineraNorth=[" "];
+      organizationValue = mineraNorth;
+    }
+    if(organizationValue ==  "MOLYMEX"){
+      var molymex=[" "];
+      organizationValue = molymex;
+    }
+    if(organizationValue ==  "MOPESA MOTORES POWER SA"){
+      var mopesaMotores=[" "];
+      organizationValue = mopesaMotores;
+    }
+    if(organizationValue ==  "NCR DE MEXICO"){
+      var ncrMexico=[" "];
+      organizationValue = ncrMexico;
+    }
+     if(organizationValue ==  "NEMAK MEXICO SA"){
+      var nemakMexico=[" "];
+      organizationValue = nemakMexico;
+    }
+      if(organizationValue ==  "NESTLE MEXICO SA DE CV"){
+      var nestleMexico=[" "];
+      organizationValue = nestleMexico;
+    }
+    if(organizationValue ==  "NHUMOS A DE CV"){
+      var humosA=[" "];
+      organizationValue = humosA;
+    }
+     if(organizationValue ==  "NO SABE FALLAR"){
+      var sabeFallar=[" "];
+      organizationValue = sabeFallar;
+    }
+     if(organizationValue ==  "NOVATEC CONSULTORES"){
+      var novatecConsultores=[" "];
+      organizationValue = novatecConsultores;
+    }
+     if(organizationValue ==  "NUEVO GRUPO IUSACELL"){
+      var newGroupIusacell=[" "];
+      organizationValue = newGroupIusacell;
+    }
+     if(organizationValue ==  "ORACLE DE MEXICO SA DE CV"){
+      var oracleMexico=[" "];
+      organizationValue = oracleMexico;
+    }
+     if(organizationValue ==  "ORGANISMO INTERNACIONAL DE ENERGIA ATOMICA"){
+      var organismoIntenational=[" "];
+      organizationValue = organismoIntenational;
+    }
+     if(organizationValue ==  "ORGANIZACION SORIANA"){
+      var organizationSoriana=[" "];
+      organizationValue = organizationSoriana;
+    }
+     if(organizationValue ==  "PANASONIC DE MEXICO"){
+      var panasonicMexico=[" "];
+      organizationValue = panasonicMexico;
+    }
+     if(organizationValue ==  "PESCA SUSTENTABLE S DE R L M"){
+      var pescaSustentable=[" "];
+      organizationValue = pescaSustentable;
+    }
+     if(organizationValue ==  "PHILIPS MEXICANA SA DE CV"){
+      var philipsMexicana=[" "];
+      organizationValue = philipsMexicana;
+    } 
+     if(organizationValue ==  "PIHCSA MEDICA S A DE C V"){
+      var pihcsaMedica=[" "];
+      organizationValue = pihcsaMedica;
+    } 
+      if(organizationValue ==  "PLANOBRA S A DE CV"){
+      var planobraSa=[" "];
+      organizationValue = planobraSa;
+    } 
+       if(organizationValue ==  "PLASTICOS REX SA DE CV"){
+      var plasticRex=[" "];
+      organizationValue = plasticRex;
+    } 
+      if(organizationValue ==  "PLIANA HOLDINGS"){
+      var plianaHoldings=[" "];
+      organizationValue = plianaHoldingss;
+    } 
+    if(organizationValue ==  "POLYONE DISTRIBUCION MEXICO"){
+      var polyoneMexico=[" "];
+      organizationValue = polyoneMexico;
+    } 
+     if(organizationValue ==  "PROBIOMED SA DE CV"){
+      var probiomedS=[" "];
+      organizationValue = probiomedS;
+    }
+     if(organizationValue ==  "PRODUCTORA DE PAPEL SA DE CV"){
+      var productoraPapel=[" "];
+      organizationValue = productoraPapel;
+    }
+    if(organizationValue ==  "PRODUCTOS DEL MONTE"){
+      var productoraMoonte=[" "];
+      organizationValue = productoraMoonte;
+    }
+    if(organizationValue ==  "PRODUCTOS ESPECIALIZADOS DE ACERO"){
+      var productEspializados=[" "];
+      organizationValue = productEspializados;
+    }
+     if(organizationValue ==  "PRODUCTOS METALICOS STEELE"){
+      var productMetalicos=[" "];
+      organizationValue = productMetalicos;
+    }
+     if(organizationValue ==  "PROFUTURO GNP"){
+      var profuturoGnp=[" "];
+      organizationValue = profuturoGnp;
+    }
+    if(organizationValue ==  "PROTEL"){
+      var protel=[" "];
+      organizationValue = protel;
+    }
+     if(organizationValue ==  "PYASA INGENIEROS CIVILES"){
+      var pyasaEngeeniers=[" "];
+      organizationValue = pyasaEngeeniers;
+    }
+    if(organizationValue ==  "QB INDUSTRIAS"){
+      var qbIndustries=[" "];
+      organizationValue = qbIndustries;
+    }
+    if(organizationValue ==  "QUALITA SISTEMAS"){
+      var qualitaSystem=[" "];
+      organizationValue = qualitaSystem;
+    }
+    if(organizationValue ==  "RAYOVAC DE MEXICO"){
+      var rayovacMexico=[" "];
+      organizationValue = rayovacMexico;
+    }
+    if(organizationValue ==  "READER_S DIGEST MEXICO"){
+      var readerDigesto=[" "];
+      organizationValue = readerDigesto;
+    }
+    if(organizationValue ==  "REAL TURISMO"){
+      var realTurismo=[" "];
+      organizationValue = realTurismo;
+    }
+     if(organizationValue ==  "REGIO EMPRESAS"){
+      var regioEmpresas=[" "];
+      organizationValue = regioEmpresas;
+    } 
+     if(organizationValue ==  "REGIOPLAST"){
+      var regioplast=[" "];
+      organizationValue = regioplast;
+    } 
+     if(organizationValue ==  "RUIZ URQUIZIA Y CIA ANDERSEN"){
+      var ruizCia=[" "];
+      organizationValue = ruizCia;
+    } 
+     if(organizationValue ==  "SABRE SOCIEDAD TECNOLOGICA S DE RL DE CV"){
+      var sabreSociedad=[" "];
+      organizationValue = sabreSociedad;
+    } 
+     if(organizationValue ==  "SANLUIS CORPORACION"){
+      var sanluisCorp=[" "];
+      organizationValue = sanluisCorp;
+    }
+    if(organizationValue ==  "SANLUIS RASSINI AUTOPARTES"){
+      var sanluisRassini=[" "];
+      organizationValue = sanluisRassini;
+    }
+    if(organizationValue ==  "SATELITES MEXICANOS"){
+      var satelitesMexicanos=["ENLACES INTEGRA"];
+      organizationValue = satelitesMexicanos;
+    }
+    if(organizationValue ==  "SCHWABE MEXICO SA DE CV"){
+      var schwabeMExico=[" "];
+      organizationValue = schwabeMExico;
+    }
+     if(organizationValue ==  "SEGUROS BANAMEX AEGON"){
+      var segurosBanamex=[" "];
+      organizationValue = segurosBanamex;
+    }
+     if(organizationValue ==  "SEGUROS BANCOMER"){
+      var segurosBancomer=[" "];
+      organizationValue = segurosBancomer;
+    }
+      if(organizationValue ==  "SEMILLAS IYADILPRO Y YA SA DE CV"){
+      var semillasYa=[" "];
+      organizationValue = semillasYa;
+    }
+       if(organizationValue ==  "SERVICIO DE APOYO CORPORATIVO SA DE CV"){
+      var servicionApoyoCorporativo=[" "];
+      organizationValue = servicionApoyoCorporativo;
+    }
+       if(organizationValue ==  "SERVICIOS INDUSTRIALES PENOLES SA DE CV"){
+      var servicionsIndustriales=[" "];
+      organizationValue = servicionsIndustriales;
+    }
+       if(organizationValue ==  "SHELL MEXICO"){
+      var shellMexico=[" "];
+      organizationValue = shellMexico;
+    }
+      if(organizationValue ==  "SIDENORABX"){
+      var sidenorabx=[" "];
+      organizationValue = sidenorabx;
+    }
+    if(organizationValue ==  "SIEMENS VDO SA DE CV"){
+      var siemensVdo=[" "];
+      organizationValue = siemensVdo;
+    }
+    if(organizationValue ==  "SINGER MEXICANA"){
+      var singerMexicana=[" "];
+      organizationValue = singerMexicana;
+    }
+     if(organizationValue ==  "SISTEMAS ELECTRICOS Y CONMUTADORES"){
+      var systemsElectronics=[" "];
+      organizationValue = systemsElectronics;
+    }
+     if(organizationValue ==  "SISTEMAS Y SERVICIOS DE COMUNICACION"){
+      var systemsAndService=[" "];
+      organizationValue = systemsAndService;
+    }
+     if(organizationValue ==  "SKF DE MEXICO SA DE CV"){
+      var skfMexico=[" "];
+      organizationValue = skfMexico;
+    }
+     if(organizationValue ==  "SOCIEDAD COOPERATIVA AGROPECUARIA DEL DISTRITO DE ALTAR"){
+      var sociedadCooperativa=[" "];
+      organizationValue = sociedadCooperativa;
+    }
+     if(organizationValue ==  "SOCIEDAD DE PRODUCCION AGROPECUARIA PALOMARES SPR DE RL DE CV"){
+      var sociedadAgropecuaria=[" "];
+      organizationValue = sociedadAgropecuaria;
+    }
+    if(organizationValue ==  "SOFTTEK MEXICO"){
+      var softtekMexico=[" "];
+      organizationValue = softtekMexico;
+    }
+    if(organizationValue ==  "SONY ELECTRONICOS DE MEXICO"){
+      var sonyelectronics=[" "];
+      organizationValue = sonyelectronics;
+    }
+     if(organizationValue ==  "SUPERIOR INDUSTRIAS DE MEXICO"){
+      var superioIndustries=[" "];
+      organizationValue = superioIndustries;
+    }
+     if(organizationValue ==  "SYNKRO"){
+      var synkro=[" "];
+      organizationValue = synkro;
+    }
+      if(organizationValue ==  "TECMARKETING"){
+      var tecmarketng=[" "];
+      organizationValue = tecmarketng;
+    }
+     if(organizationValue ==  "TECNOLOGIA OPTICA APLICADA S A DE C V"){
+      var technologiOptic=[" "];
+      organizationValue = technologiOptic;
+    }
+    if(organizationValue ==  "TEKCHEM"){
+      var tekchem=[" "];
+      organizationValue = tekchem;
+    }
+    if(organizationValue ==  "TELEFONOS DE MEXICO SAB DE CV"){
+      var phonesMexico=[" "];
+      organizationValue = phonesMexico;
+    }
+     if(organizationValue ==  "TELEFONOS DEL NOROESTE SA DE CV"){
+      var phonesNoroeste=[" "];
+      organizationValue = phonesNoroeste;
+    }
+      if(organizationValue ==  "TRACTO EQUIPOS DEL PACIFICO S A DE C V"){
+      var tectoEquipos=[" "];
+      organizationValue = tectoEquipos;
+    }
+     if(organizationValue ==  "TRANSPORTACION MARITIMA MEXICANA"){
+      var transportacionMaritima=[" "];
+      organizationValue = transportacionMaritima;
+    }
+      if(organizationValue ==  "TUBOS DE ACERO DE MEXICO SA"){
+      var tubosAcero=[" "];
+      organizationValue = tubosAcero;
+    }
+      if(organizationValue ==  "TUBOS FLEXIBLES"){
+      var tubosFlexibles=[" "];
+      organizationValue = tubosFlexibles;
+    }
+     if(organizationValue ==  "TV AZTECA SAB DE CV"){
+      var aztecaSab=[" "];
+      organizationValue = aztecaSab;
+    }
+    if(organizationValue ==  "UNISYS DE MEXICO"){
+      var unisysMexico=[" "];
+      organizationValue = unisysMexico;
+    }
+    if(organizationValue ==  "VECTOR CASA DE BOLSA"){
+      var vectorHouse=[" "];
+      organizationValue = vectorHouse;
+    }
+     if(organizationValue ==  "VERSAX"){
+      var versax=[" "];
+      organizationValue = versax;
+    }
+    if(organizationValue ==  "VIDEOMAX"){
+      var videoMax=[" "];
+      organizationValue = videoMax;
+    }
+     if(organizationValue ==  "VITRO SA DE CV"){
+      var vitroSa=[" "];
+      organizationValue = vitroSa;
+    }
+     if(organizationValue ==  "XEROX MEXICANA"){
+      var xeroxMexicana=[" "];
+      organizationValue = xeroxMexicana;
+    }
+    if(organizationValue ==  "ZINCACERO SA DE CV"){
+      var sincaderoSa=[" "];
+      organizationValue = sincaderoSa;
+    }
+
+    /*Instituciones / organizaciones no lucrativas*/
+
+     if(organizationValue ==  "ACADEMIA DE ESTUDIOS FISCALES DE LA CONTADURIA PUBLICA AC"){
+      var academyStudies=[" "];
+      organizationValue = academyStudies;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE AUDITORIA INTEGRAL AC"){
+      var academyMexicanaIntegral=[" "];
+      organizationValue = academyMexicanaIntegral;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE CIRUGIA AC"){
+      var academyMexicanaCirugia=[" "];
+      organizationValue = academyMexicanaCirugia;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE DERECHO INTERNACIONAL PRIVADO Y COMPARADO AC"){
+      var academyMexicanaRinght=[" "];
+      organizationValue = academyMexicanaRinght;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE DERECHO Y ECONOMIA AC"){
+      var academyMexicanaEconomy=[" "];
+      organizationValue = academyMexicanaEconomy;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE INGENIERIA AC"){
+      var academyMexicanaEngieenire=[" "];
+      organizationValue = academyMexicanaEngieenire;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE INVESTIGACION DE DEMOGRAFIA MEDICA AC"){
+      var academyMexicanaReseaching=[" "];
+      organizationValue = academyMexicanaReseaching;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE INVESTIGACION FISCAL AC"){
+      var academyMexicanaResearchingFiscal=[" "];
+      organizationValue = academyMexicanaResearchingFiscal;
+    }
+     if(organizationValue ==  "ACADEMIA MEXICANA DE LA LENGUA AC"){
+      var academyMexicanaLengua=[" "];
+      organizationValue = academyMexicanaLengua;
+    }
+    if(organizationValue ==  "ACADEMIA MEXICANA DE PEDIATRIA AC"){
+      var academyMexicanaPediatria=[" "];
+      organizationValue = academyMexicanaPediatria;
+    }
+     if(organizationValue ==  "ACADEMIA MEXICANA DE TECNOLOGIA AC"){
+      var academyMexicanaTechnology=[" "];
+      organizationValue = academyMexicanaTechnology;
+    }
+     if(organizationValue ==  "ACADEMIA NACIONAL DE INVESTIGACION Y DESARROLLO AC"){
+      var academyNanionalyDeveloper=[" "];
+      organizationValue = academyNanionalyDeveloper;
+    }
+      if(organizationValue ==  "ACCION Y DESARROLLO ECOLOGICO AC"){
+      var accionDeveloperEcologic=[" "];
+      organizationValue = accionDeveloperEcologic;
+    }
+     if(organizationValue ==  "AGRUPACION POTOSINA DE HEMATOLOGIA AC"){
+      var agrupacionPotosinaHematologia=[" "];
+      organizationValue = agrupacionPotosinaHematologia;
+    }
+      if(organizationValue ==  "ASESORES PARA EL AVANCE SOCIAL"){
+      var asesoresAvanceSocial=[" "];
+      organizationValue = asesoresAvanceSocial;
+    }
+     if(organizationValue ==  "ASOCIACION DE DESARROLLO E INVESTIGACION PEDAGOGICA AC"){
+      var asociacionDeveloperREsearching=[" "];
+      organizationValue = asociacionDeveloperREsearching;
+    }
+     if(organizationValue ==  "ASOCIACION DE INGENIEROS DE MINAS METALURGISTAS Y GEOLOGOS DE MEXICO AC"){
+      var asociacionEngieeniersMinas=[" "];
+      organizationValue = asociacionEngieeniersMinas;
+    }
+      if(organizationValue ==  "ASOCIACION DE INGENIEROS PETROLEROS DE MEXICO AC"){
+      var asociacionEngieenierssMexico=[" "];
+      organizationValue = asociacionEngieenierssMexico;
+    }
+     if(organizationValue ==  "ASOCIACION DE INGENIEROS UNIVERSITARIOS MECANICOS ELECTRICISTASAC"){
+      var asociacionEngieeniersUniversityMechanic=[" "];
+      organizationValue = asociacionEngieeniersUniversityMechanic;
+    }
+     if(organizationValue ==  "ASOCIACION DE MEDICINA INTERNA DE MEXICO AC"){
+      var asociacionMedicIntern=[" "];
+      organizationValue = asociacionMedicIntern;
+    }
+    if(organizationValue ==  "ASOCIACION DENTAL MEXICANA FEDERACION NACIONAL DE COLEGIOS DE CIRUJANOS DENTISTAS AC"){
+      var asociacionNationalCirujanos=[" "];
+      organizationValue = asociacionNationalCirujanos;
+    }
+     if(organizationValue ==  "ASOCIACION FARMACEUTICA MEXICANA AC"){
+      var asociacionFarma=[" "];
+      organizationValue = asociacionFarma;
+    }
+     if(organizationValue ==  "ASOCIACION JUVENIL DE DIVULGADORES DE LA CIENCIA AC"){
+      var asociacionJuvenilCiencia=[" "];
+      organizationValue = asociacionJuvenilCiencia;
+    }
+    if(organizationValue ==  "ASOCIACION MEDICA DEL HOSPITAL ABC AC"){
+      var asociacionMedicaHospital=[" "];
+      organizationValue = asociacionMedicaHospital;
+    }
+    if(organizationValue ==  "ASOCIACION MEDICA DEL HOSPITAL INFANTIL DEL ESTADO DE SONORA AC"){
+      var asociacionMedicaHospitalSonora=[" "];
+      organizationValue = asociacionMedicaHospitalSonora;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE ACCION CONTRA LA LEPRA AC"){
+      var asociacionMexicanaAccion=[" "];
+      organizationValue = asociacionMexicanaAccion;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE CIRUGIA ENDOSCOPICA AC"){
+      var asociacionMexicanaCirugia=[" "];
+      organizationValue = asociacionMexicanaCirugia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE COMERCIO ELECTRONICO"){
+      var asociacionMexicanaComercy=[" "];
+      organizationValue = asociacionMexicanaComercy;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE CULTURA AC"){
+      var asociacionMexicanaCultura=[" "];
+      organizationValue = asociacionMexicanaCultura;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE DIRECTIVOS DE LA INVESTIGACION APLICADA Y EL DESARROLLO TECNOLOGICO AC"){
+      var asociacionMexicanaDirectivosAplicada=[" "];
+      organizationValue = asociacionMexicanaDirectivosAplicada;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE DISTRIBUIDORES DE GAS NATURAL AC"){
+      var asociacionMexicanaDistribuidores=[" "];
+      organizationValue = asociacionMexicanaDistribuidores;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE ENDOSCOPIA GINECOLOGICA Y MICROCIRUGIA AC"){
+      var asociacionMexicanaEndoscopia=[" "];
+      organizationValue = asociacionMexicanaEndoscopia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE ESTUDIOS DEL CARIBE AC"){
+      var asociacionMexicanaStudie=[" "];
+      organizationValue = asociacionMexicanaStudie;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE ESTUDIOS PARA LA DEFENSA DEL CONSUMIDOR AC"){
+      var asociacionMexicanaDefencyConsumer=[" "];
+      organizationValue = asociacionMexicanaDefencyConsumer;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE FABRICANTES DE CONDUCTORES ELECTRICOS AC"){
+      var asociacionMexicanaFabricantes=[" "];
+      organizationValue = asociacionMexicanaFabricantes;
+    }
+      if(organizationValue ==  "ASOCIACION MEXICANA DE FARMACOLOGIA AC"){
+      var asociacionMexicanaFarmacologia=[" "];
+      organizationValue = asociacionMexicanaFarmacologia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE FIBROSIS QUISTICA AC"){
+      var asociacionMexicanaFibrosis=[" "];
+      organizationValue = asociacionMexicanaFibrosis;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE GASTROENTEROLOGIA AC"){
+      var asociacionMexicanaGastro=[" "];
+      organizationValue = asociacionMexicanaGastro;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE GINECOLOGIA Y OBSTETRICIA AC"){
+      var asociacionMexicanaGinecologia=[" "];
+      organizationValue = asociacionMexicanaGinecologia;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE INFECTOLOGIA Y MICROBIOLOGIA CLINICA AC"){
+      var asociacionMexicanaInfectologia=[" "];
+      organizationValue = asociacionMexicanaInfectologia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE LA INDUSTRIA DEL CONCRETO PREMEZCLADO AC"){
+      var asociacionMexicanaindustria=[" "];
+      organizationValue = asociacionMexicanaindustria;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE METROLOGIA AC"){
+      var asociacionMexicanaemtroligy=[" "];
+      organizationValue = asociacionMexicanaemtroligy;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE MICROSCOPIA AC"){
+      var asociacionMexicanaMicroscopia=[" "];
+      organizationValue = asociacionMexicanaMicroscopia;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA DE PEDAGOGIA AC"){
+      var asociacionMexicanaPedagogia=[" "];
+      organizationValue = asociacionMexicanaPedagogia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE PSICOTERAPIA PSICOANALITICA DE LA INFANCIA Y ADOLESCENCIA"){
+      var asociacionMexicanaInaciaAdolecencia=[" "];
+      organizationValue = asociacionMexicanaInaciaAdolecencia;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE TECNICOS DE LAS INDUSTRIAS DE LA CELULOSA Y DEL PAPEL AC"){
+      var asociacionMexicanaCelulosa=[" "];
+      organizationValue = asociacionMexicanaCelulosa;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DE TECNICOS ESPECIALISTAS EN OVINOCULTURA AC"){
+      var asociacionMexicanaTecnicosOvino=[" "];
+      organizationValue = asociacionMexicanaTecnicosOvino;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA DEL COBRE AC"){
+      var asociacionMexicanaCobre=[" "];
+      organizationValue = asociacionMexicanaCobre;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA PARA EL ESTUDIO DE LAS INFECCIONES NOSOCOMIALES AC"){
+      var asociacionMexicanaEstudioNoso=[" "];
+      organizationValue = asociacionMexicanaEstudioNoso;
+    }
+     if(organizationValue ==  "ASOCIACION MEXICANA PARA LA INVESTIGACION DE ENFERMEDADES NEURODEGENERATIVAS Y PLASTICIDAD CEREBRAL AC"){
+      var asociacionMexicanaEstudioPlasticidad=[" "];
+      organizationValue = asociacionMexicanaEstudioPlasticidad;
+    }
+    if(organizationValue ==  "ASOCIACION MEXICANA PARA LA REHABILITACION Y CONSERVACION DE LOS PSITACIDOS AC"){
+      var asociacionMexicanaEstudioConservacion=[" "];
+      organizationValue = asociacionMexicanaEstudioConservacion;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE CARDIOLOGOS DE MEXICO AC"){
+      var asociacionNationalCardiologos=[" "];
+      organizationValue = asociacionNationalCardiologos;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE ENERGIA SOLAR AC"){
+      var asociacionNationalEnetgia=[" "];
+      organizationValue = asociacionNationalEnetgia;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE ESPECIALISTAS EN CIENCIAS AVICOLAS DE MEXICO AC"){
+      var asociacionNationalEspecialista=[" "];
+      organizationValue = asociacionNationalEspecialista;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE NORMALIZACION Y CERTIFICACION DEL SECTOR ELECTRICO AC"){
+      var asociacionNationalCertifications=[" "];
+      organizationValue = asociacionNationalCertifications;
+    }
+    if(organizationValue ==  "ASOCIACION NACIONAL DE TECNOLOGOS EN ALIMENTOS DE MEXICO AC"){
+      var asociacionNationalMeet=[" "];
+      organizationValue = asociacionNationalMeet;
+    }
+    if(organizationValue ==  "ASOCIACION PARA EL DESARROLLO INTEGRAL DE LA REGION MISANTLA AC"){
+      var asociacionNationalDeveloper=[" "];
+      organizationValue = asociacionNationalDeveloper;
+    }
+    if(organizationValue ==  "ASOCIACION PARA EL ESTUDIO Y TRATAMIENTO DEL PROCESO DE ENVEJECIMIENTO Y EL DETERIORO CELULAR AC"){
+      var asociacionStudyTratamiento=[" "];
+      organizationValue = asociacionStudyTratamiento;
+    }
+    if(organizationValue ==  "ASOCIACION PRO CONSEJO TECNICO CONSULTIVO NACIONAL DE SANIDAD ANIMAL AC"){
+      var asociacionStudyTecnico=[" "];
+      organizationValue = asociacionStudyTecnico;
+    }
+    if(organizationValue ==  "ASOCIACION PSICOANALITICA MEXICANA AC"){
+      var asociacionMexicanaPsicoanalitia=["CENTRO DE ESTUDIOS DE POSTGRADO"];
+      organizationValue = asociacionMexicanaPsicoanalitia;
+    }
+    if(organizationValue ==  "BARRA MEXICANA COLEGIO DE ABOGADOS AC"){
+      var barraMexicanaColegio=[" "];
+      organizationValue = barraMexicanaColegio;
+    }
+    if(organizationValue ==  "BIOCENOSIS AC"){
+      var biocenosisAc=[" "];
+      organizationValue = biocenosisAc;
+    }
+     if(organizationValue ==  "BOSQUE TROPICAL INVESTIGACION PARA LA CONSERVACION DE LA NATURALEZA AC"){
+      var treeTropicalyBio=[" "];
+      organizationValue = treeTropicalyBio;
+    }
+     if(organizationValue ==  "CAMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACION"){
+      var cameraNationalInsdury=["CAMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACION DELEGACION LOS MOCHIS",
+                                "CÁMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACIÓN DE TORREÓN",
+                                "CÁMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACIÓN DELEGACIÓN YUCATÁN",];
+      organizationValue = cameraNationalInsdury;
+    }
+     if(organizationValue ==  "CANTE AC"){
+      var canteAc=[" "];
+      organizationValue = canteAc;
+    }
+     if(organizationValue ==  "CAPACITACION Y DESARROLLO INTEGRAL AC"){
+      var developerIntegral=[" "];
+      organizationValue = developerIntegral;
+    }
+    if(organizationValue ==  "CENTRO AVANZADO DE COMUNICACIONES AC"){
+      var centerAdvanceComunity=[" "];
+      organizationValue = centerAdvanceComunity;
+    }
+    if(organizationValue ==  "CENTRO DE ANALISIS Y DIFUSION ECONOMICA AC"){
+      var centerAnaliticsDifusion=[" "];
+      organizationValue = centerAnaliticsDifusion;
+    }
+     if(organizationValue ==  "CENTRO DE APRENDIZAJE ORGANIZACIONAL SC"){
+      var centerLearningOrganizational=[" "];
+      organizationValue = centerLearningOrganizational;
+    }
+    if(organizationValue ==  "CENTRO DE APRENDIZAJE Y CONVIVENCIA AC"){
+      var centerLearningConvivencia=[" "];
+      organizationValue = centerLearningConvivencia;
+    }
+    if(organizationValue ==  "CENTRO DE ASESORIA E INVESTIGACION URBANA CASA Y CD AC"){
+      var centerAsesorieUrbany=[" "];
+      organizationValue = centerAsesorieUrbany;
+    }
+    if(organizationValue ==  "CENTRO DE COOPERACION REGIONAL PARA LA EDUCACION DE ADULTOS EN AMERICA LATINA Y EL CARIBE"){
+      var centerRegionalAmerican=[" "];
+      organizationValue = centerRegionalAmerican;
+    }
+    if(organizationValue ==  "CENTRO DE CRECIMIENTO AC"){
+      var centerCrecieminto=[" "];
+      organizationValue = centerCrecieminto;
+    }
+    if(organizationValue ==  "CENTRO DE DESARROLLO TECNOLOGICO Y HUMANO AC"){
+      var centerDeveloperTechnology=[" "];
+      organizationValue = centerDeveloperTechnology;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS DE INVESTIGACION DEL SURESTE AC"){
+      var centerStudiesSureste=[" "];
+      organizationValue = centerStudiesSureste;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS DE POLITICA COMPARADA AC"){
+      var centerStudiesComparada=[" "];
+      organizationValue = centerStudiesComparada;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS DE PROBLEMAS DE COYUNTURA PREVISION Y PROSPECTIVA AC"){
+      var centerStudiesProblemPrevision=[" "];
+      organizationValue = centerStudiesProblemPrevision;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS DEL SECTOR PRIVADO PARA EL DESARROLLO AC"){
+      var centerStudiesSectorPrivate =[" "];
+      organizationValue = centerStudiesSectorPrivate;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS ECONOMICOS DEL SECTOR PRIVADO AC"){
+      var centerStudiesSectorPrivateEcnomic =[" "];
+      organizationValue = centerStudiesSectorPrivateEcnomic;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS EDUCATIVOS AC"){
+      var centerStudiesEducativos =["DIRECCION ACADEMICA",
+                                    "INSTITUTO GASTRONOMICO L¿ ÉCOLE DU CHEF"];
+      organizationValue = centerStudiesEducativos;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS EN DIABETES AC"){
+      var centerStudiesDiabetes =[" "];
+      organizationValue = centerStudiesDiabetes;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS EN ECONOMIA Y EDUCACION AC"){
+      var centerStudiesEconomicEducation =[" "];
+      organizationValue = centerStudiesEconomicEducation;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS FISCALES Y LEGISLATIVOS AC"){
+      var centerStudiesFiscalies =[" "];
+      organizationValue = centerStudiesFiscalies;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS GENERALES AC"){
+      var centerStudiesGEenraly =[" "];
+      organizationValue = centerStudiesGEenraly;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS PARA EL DESARROLLO REGIONAL AC"){
+      var centerStudiesForDEveloper =[" "];
+      organizationValue = centerStudiesForDEveloper;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS PARA LA REFORMA DEL ESTADO AC"){
+      var centerStudiesreformaState =[" "];
+      organizationValue = centerStudiesreformaState;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS PARA UN PROYECTO NACIONAL ALTERNATIVOSC"){
+      var centerStudiesreNationalProject =[" "];
+      organizationValue = centerStudiesreNationalProject;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS PROSPECTIVOS AC"){
+      var centerStudiesreProspetic =[" "];
+      organizationValue = centerStudiesreProspetic;
+    }
+     if(organizationValue ==  "CENTRO DE ESTUDIOS SOBRE ALCOHOL Y ALCOHOLISMO AC"){
+      var centerStudiesOnAlcohol =[" "];
+      organizationValue = centerStudiesOnAlcohol;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS SOCIALES AC"){
+      var centerStudiesSocial =[" "];
+      organizationValue = centerStudiesSocial;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS SOCIALES Y ECOLOGICOS AC"){
+      var centerStudiesSocialAndEcologic =[" "];
+      organizationValue = centerStudiesSocialAndEcologic;
+    }
+    if(organizationValue ==  "CENTRO DE ESTUDIOS Y CAPACITACION PARA EL DESARROLLO SUSTENTABLE"){
+      var centerEstudiesCapactityForDeveloper =[" "];
+      organizationValue = centerEstudiesCapactityForDeveloper;
+    }
+    if(organizationValue ==  "CENTRO DE EVALUACION INTEGRALAC"){
+      var centerEvaluationIntegral =[" "];
+      organizationValue = centerEvaluationIntegral;
+    }
+    if(organizationValue ==  "CENTRO DE EXHIBICION REPRODUCCION E INVESTIGACION DE FLORA Y FAUNA AC"){
+      var centerExhitionFlora =[" "];
+      organizationValue = centerExhitionFlora;
+    }
+    if(organizationValue ==  "CENTRO DE FORMACION ASESORIA Y GESTION SOCIAL AC"){
+      var centerFormationAsesoria =[" "];
+      organizationValue = centerFormationAsesoria;
+    }
+    if(organizationValue ==  "CENTRO DE GENETICA FORESTAL AC"){
+      var centerGeneticForestal =[" "];
+      organizationValue = centerGeneticForestal;
+    }
+    if(organizationValue ==  "CENTRO DE INSTRUMENTACION Y REGISTRO SISMICO AC"){
+      var centerRegistrySismico =[" "];
+      organizationValue = centerRegistrySismico;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION ADUANERA Y DE COMERCIO INTERNACIONAL AC"){
+      var centerInvestigactionComercy =[" "];
+      organizationValue = centerInvestigactionComercy;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION DE CHIAPAS"){
+      var centerInvestigactionChiapas =[" "];
+      organizationValue = centerInvestigactionChiapas;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION EN ESTUDIOS PSICOANALITICOS AC"){
+      var centerInvestigactionStudies =[" "];
+      organizationValue = centerInvestigactionStudies;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION PARA EL DESARROLLO AC"){
+      var centerInvestigactionDevelopers =[" "];
+      organizationValue = centerInvestigactionDevelopers;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION Y ASISTENCIA TECNOLOGICA DEL ESTADO DE GUANAJUATO"){
+      var centerInvestigactionAsistencia =[" "];
+      organizationValue = centerInvestigactionAsistencia;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION Y DESARROLLO EDUCATIVO EN SECUNDARIAS DE GUERRERO"){
+      var centerInvestigactionGerrero =[" "];
+      organizationValue = centerInvestigactionGerrero;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION Y DESARROLLO PARA LA ZONA RURAL DEL DISTRITO FEDERAL AC"){
+      var centerInvestigactionDistritoFederal =[" "];
+      organizationValue = centerInvestigactionDistritoFederal;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACION Y ESTUDIOS SOBRE SEXUALIDAD"){
+      var centerInvestigactionSexualidad =[" "];
+      organizationValue = centerInvestigactionSexualidad;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES BIOLOGICAS DE BAJA CALIFORNIA SUR AC"){
+      var centerInvestigactionBiology =[" "];
+      organizationValue = centerInvestigactionBiology;
+    }
+     if(organizationValue ==  "CENTRO DE INVESTIGACIONES DE CONSTRUCCION CON TIERRA Y ENERGIAS ALTERNATIVAS AC"){
+      var centerInvestigactionEarthAndEnergy =[" "];
+      organizationValue = centerInvestigactionEarthAndEnergy;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES ECOLOGICAS DEL SURESTE"){
+      var centerInvestigactionEcology =[" "];
+      organizationValue = centerInvestigactionEcology;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES EN SALUD DE COMITAN AC"){
+      var centerInvestigactionComitanEcologyComitan =[" "];
+      organizationValue = centerInvestigactionComitanEcologyComitan;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES HISTORICAS DE SAN LUIS POTOSI A C"){
+      var centerInvestigactionHistory =[" "];
+      organizationValue = centerInvestigactionHistory;
+    }
+    if(organizationValue ==  "CENTRO DE INVESTIGACIONES MEDICAS BIOLOGIAS Y SOCIALES DE LOS SERVICIOS MEDICOS DEL HOSPITAL DE JESUS AC"){
+      var centerInvestigactionBiologySociales =[" "];
+      organizationValue = centerInvestigactionBiologySociales;
+    }
+     if(organizationValue ==  "CENTRO DE INVESTIGACIONES PECUARIAS DEL ESTADO DE PUEBLA AC"){
+      var centerInvestigactionPecuariasPueda =[" "];
+      organizationValue = centerInvestigactionPecuariasPueda;
+    }
+     if(organizationValue ==  "CENTRO DE INVESTIGACIONES SISMICAS AC"){
+      var centerInvestigactionSismicas =[" "];
+      organizationValue = centerInvestigactionSismicas;
+    }
+      if(organizationValue ==  "CENTRO DE MEJORAMIENTO FAMILIAR AC"){
+      var centerInvestigactionFamily =[" "];
+      organizationValue = centerInvestigactionFamily;
+    }
+     if(organizationValue ==  "CENTRO DE NUEVAS ESTRATEGIAS TECNOLOGICAS AC"){
+      var centerNewsEstretegy =[" "];
+      organizationValue = centerNewsEstretegy;
+    }
+    if(organizationValue ==  "CENTRO DE VIGILANCIA EPIDEMIOLOGICA"){
+      var centerVigilaciaEdie =[" "];
+      organizationValue = centerVigilaciaEdie;
+    }
+     if(organizationValue ==  "CENTRO DEL TERCER MUNDO PARA MANEJO DE AGUA A C"){
+      var centerThirdWorldDrive =[" "];
+      organizationValue = centerThirdWorldDrive;
+    }
+     if(organizationValue ==  "CENTRO ERICKSONIANO DE MEXICO AC"){
+      var centerEricjsont =[" "];
+      organizationValue = centerEricjsont;
+    }
+     if(organizationValue ==  "CENTRO ESTATAL TECNICO DE LA EDUCACION DEL INSTITUTO DE EDUCACION DE AGUASCALIENTES"){
+      var centerTEcnicoEducation =[" "];
+      organizationValue = centerTEcnicoEducation;
+    }
+     if(organizationValue ==  "CENTRO INTERNACIONAL DE CIENCIAS A C"){
+      var centerInternationalCiencia =[" "];
+      organizationValue = centerInternationalCiencia;
+    }
+    if(organizationValue ==  "CENTRO INTERNACIONAL LUCAS ALAMAN PARA EL CRECIMIENTO ECONOMICO AC"){
+      var centerInternationalLucasAlaman =[" "];
+      organizationValue = centerInternationalLucasAlaman;
+    }
+    if(organizationValue ==  "CENTRO LATINOAMERICANO DE LA GLOBALIDAD SC"){
+      var centerLatinoamericanGlobal =[" "];
+      organizationValue = centerLatinoamericanGlobal;
+    }
+    if(organizationValue ==  "CENTRO MEXICANO DE DERECHO AMBIENTAL A C"){
+      var centerMexicanoRight =[" "];
+      organizationValue = centerMexicanoRight;
+    }
+     if(organizationValue ==  "CENTRO MEXICANO PARA LA FILANTROPIA"){
+      var centerMexicanoFilantropia =["COORDINACION DE DIALOGO CON EL EQUIPO DE TRANSICION"];
+      organizationValue = centerMexicanoFilantropia;
+    }
+     if(organizationValue ==  "CENTRO NACIONAL DE EVALUACION PARA LA EDUCACION SUPERIOR AC"){
+      var centerNationalEvaluation =[" "];
+      organizationValue = centerNationalEvaluation;
+    }
+     if(organizationValue ==  "CENTRO NACIONAL DE INVESTIGACION EN FISIOLOGIA Y MEJORAMIENTO ANIMAL"){
+      var centerNationalResearching =[" "];
+      organizationValue = centerNationalResearching;
+    }
+     if(organizationValue ==  "CENTRO NACIONAL DE PRODUCCION SOSTENIBLE"){
+      var centerNationalSostenible =[" "];
+      organizationValue = centerNationalSostenible;
+    }
+    if(organizationValue ==  "CENTRO NACIONAL DE TRANSPLANTES"){
+      var centerNationalTransplantes =[" "];
+      organizationValue = centerNationalTransplantes;
+    }
+     if(organizationValue ==  "CENTRO NACIONAL PARA LA CALIDAD DEL PLASTICO SC"){
+      var centerNationalPlastic =[" "];
+      organizationValue = centerNationalPlastic;
+    }
+     if(organizationValue ==  "CENTRO PARA LA CALIDAD TOTAL Y LA COMPETITIVIDAD"){
+      var centerNationalCalidadTotal =[" "];
+      organizationValue = centerNationalCalidadTotal;
+    }
+     if(organizationValue ==  "CENTRO PARA LA INNOVACION Y EL DESARROLLO COMPETITIVO EMPRESARIAL SC"){
+      var centerInnovationDevelopEmpresary =[" "];
+      organizationValue = centerInnovationDevelopEmpresary;
+    }
+    if(organizationValue ==  "CENTRO REGIONAL DE INVESTIGACION PESQUERA SEMARNAP"){
+      var centerRegionalInvestigation =["CENTRO REGIONAL DE INVESTIGACION PESQUERA-MANZANILLO, COLIMA"];
+      organizationValue = centerRegionalInvestigation;
+    }
+    if(organizationValue ==  "CENTRO TATA VASCO AC"){
+      var centerTataVasco =[" "];
+      organizationValue = centerTataVasco;
+    }
+    if(organizationValue ==  "CENTRO TECNOLOGICO PARA EL DESARROLLO DE HABILIDADES DE MANUFACTURA DE GUADALAJARA AC"){
+      var centerForDeveloperHabilities=[" "];
+      organizationValue = centerForDeveloperHabilities;
+    }
+    if(organizationValue ==  "CENTRO TEPOZTLAN AC"){
+      var centerTepoztlas=[" "];
+      organizationValue = centerTepoztlas;
+    }
+     if(organizationValue ==  "CIENCIA Y TECNOLOGIA DEL MAYAB AC"){
+      var cienciaTechnology=[" "];
+      organizationValue = cienciaTechnology;
+    }
+    if(organizationValue ==  "CINEMATOGRAFICA A C"){
+      var cinematographic=[" "];
+      organizationValue = cinematographic;
+    }
+    if(organizationValue ==  "COCIA AC"){
+      var cociaAc=[" "];
+      organizationValue = cociaAc;
+    }
+     if(organizationValue ==  "COLECTIVO DE APOYO SIERRA TARAHUMARA LUIS GONZALEZ RODRIGUEZ AC"){
+      var cletiveHelpSierra=[" "];
+      organizationValue = cletiveHelpSierra;
+    }
+    if(organizationValue ==  "COLEGIO DE CONTADORES PUBLICOS DE MEXICO AC"){
+      var colegioContadoresPublic=[" "];
+      organizationValue = colegioContadoresPublic;
+    }
+    if(organizationValue ==  "COLEGIO DE INGENIEROS PETROLEROS DE MEXICO A C"){
+      var colegioEngieeniersPetroleros=[" "];
+      organizationValue = colegioEngieeniersPetroleros;
+    }
+    if(organizationValue ==  "COLEGIO MEXICANO DE ABOGADOS AC"){
+      var colegioColegioMexicanos=[" "];
+      organizationValue = colegioColegioMexicanos;
+    }
+    if(organizationValue ==  "COLEGIO NACIONAL DE CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA AC"){
+      var colegioNationalPilitic=[" "];
+      organizationValue = colegioNationalPilitic;
+    }
+     if(organizationValue ==  "COLEGIO NACIONAL DE INGENIEROS QUIMICOS Y DE QUIMICOS AC"){
+      var colegioNationalEngieeniersQuimic=[" "];
+      organizationValue = colegioNationalEngieeniersQuimic;
+    }
+     if(organizationValue ==  "COMPITE AC"){
+      var compiteAc=[" "];
+      organizationValue = compiteAc;
+    }
+     if(organizationValue ==  "COMUNIDAD ASHKENAZI DE MEXICO A C"){
+      var comunityMexico=[" "];
+      organizationValue = comunityMexico;
+    }
+    if(organizationValue ==  "CONCIENCIA ECOLOGICA DE AGUASCALIENTES AC"){
+      var concienciaEcology=[" "];
+      organizationValue = concienciaEcology;
+    }
+    if(organizationValue ==  "CONSEJO NACIONAL REGULADOR DE AGRICULTURA ORGANICA AC"){
+      var consejoNationalRegulador=[" "];
+      organizationValue = consejoNationalRegulador;
+    }
+    if(organizationValue ==  "CONSEJO REGULADOR DEL TEQUILA AC"){
+      var consejoREguladorTequila=[" "];
+      organizationValue = consejoREguladorTequila;
+    }
+    if(organizationValue ==  "CONSERVACION HUMANA AC"){
+      var conservationHumana=[" "];
+      organizationValue = conservationHumana;
+    }
+    if(organizationValue ==  "CONSORCIO LATINOAMERICANO PARA CAPACITACION EN MICROFINANCIAMIENTO SC"){
+      var consorcioCapacitation=[" "];
+      organizationValue = consorcioCapacitation;
+    }
+    if(organizationValue ==  "CRISOL CENTRO DE INVESTIGACIONES PSICOSOCIALES AC"){
+      var crisolCenterResearches=[" "];
+      organizationValue = crisolCenterResearches;
+    }
+    if(organizationValue ==  "CUADERNOS DE NUTRICION AC"){
+      var NoteBooksNutrition=[" "];
+      organizationValue = NoteBooksNutrition;
+    }
+    if(organizationValue ==  "DESARROLLO DE LA CULTURA ECOLOGICA AC"){
+      var developerCultura=[" "];
+      organizationValue = developerCultura;
+    }
+    if(organizationValue ==  "DUCKS UNLIMITED DE MEXICO AC"){
+      var duksUnlimited=[" "];
+      organizationValue = duksUnlimited;
+    }
+    if(organizationValue ==  "EL COLEGIO DE LEON AC"){
+      var coelgioLyon=[" "];
+      organizationValue = coelgioLyon;
+    }
+     if(organizationValue ==  "EL CORZO SAN RAFAEL AC"){
+      var corzoSan=[" "];
+      organizationValue = corzoSan;
+    }
+    if(organizationValue ==  "ESPACIOS NATURALES Y DESARROLLO SUSTENTABLE AC"){
+      var esapciosNaruralesDesarrollo=[" "];
+      organizationValue = esapciosNaruralesDesarrollo;
+    }
+     if(organizationValue ==  "ESTUDIOS RURALES Y ASESORIA CAMPESINA AC"){
+      var estuidosRurales=[" "];
+      organizationValue = estuidosRurales;
+    }    
+      if(organizationValue ==  "ETNOBIOLOGIA PARA LA CONSERVACION AC"){
+      var etnobiologiaConservation=[" "];
+      organizationValue = etnobiologiaConservation;
+    } 
+      if(organizationValue ==  "FEDERACION CANOFILA MEXICANA AC"){
+      var federacionCanofila=[" "];
+      organizationValue = federacionCanofila;
+    }  
+      if(organizationValue ==  "FEDERACION DE SOCIEDADES CIENTIFICAS DE MEXICO AC"){
+      var federacionSociedades=[" "];
+      organizationValue = federacionSociedades;
+    } 
+      if(organizationValue ==  "FEDERACION MEXICANA DE COLEGIOS DE OBSTETRICIA Y GINECOLOGIA AC"){
+      var federacionMexicanaColegios=[" "];
+      organizationValue = federacionMexicanaColegios;
+    } 
+     if(organizationValue ==  "FEDERACION MEXICANA DE ENDOSCOPIA GINECOLOGICA AC"){
+      var federacionMexicanaEndoscopia=[" "];
+      organizationValue = federacionMexicanaEndoscopia;
+    } 
+     if(organizationValue ==  "FIDEICOMISO ARCHIVOS PLUTARCO ELIAS CALLES Y FERNANDO TORREBLANCA"){
+      var federacionFilesPlutarco=[" "];
+      organizationValue = federacionFilesPlutarco;
+    } 
+     if(organizationValue ==  "FIDEICOMISO FONDO PARA LA BIODIVERSIDAD"){
+      var federacionFondo=["COMISION INTERSECRETARIAL"];
+      organizationValue = federacionFondo;
+    } 
+    if(organizationValue ==  "FOMENTO DE NUTRICION Y SALUD AC"){
+      var fomentoNutricion=[" "];
+      organizationValue = fomentoNutricion;
+    }
+    if(organizationValue ==  "FONDO DE ESTUDIOS E INVESTIGACIONES RICARDO J ZEVADA"){
+      var fomentoEstudiosResearching=[" "];
+      organizationValue = fomentoEstudiosResearching;
+    }
+     if(organizationValue ==  "FONDO TERRA SC"){
+      var fondoterra=[" "];
+      organizationValue = fondoterra;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO JALISCIENSE AC"){
+      var fundationMexicanaForSalud=[" "];
+      organizationValue = fundationMexicanaForSalud;
+    }
+    if(organizationValue ==  "FUNDACION ARTURO ROSENBLUETH AC"){
+      var fundacionArturo=[" "];
+      organizationValue = fundacionArturo;
+    }
+     if(organizationValue ==  "FUNDACION AVENTIS AC"){
+      var fundacionAventis=[" "];
+      organizationValue = fundacionAventis;
+    }
+      if(organizationValue ==  "FUNDACION CIENTIFICA JOSE M GARCIA VALDECASAS SANTA MARIA AC"){
+      var fundationCintificJose=[" "];
+      organizationValue = fundationCintificJose;
+    }
+     if(organizationValue ==  "FUNDACION CLINICA LONDRES AC"){
+      var fundationClinicaLondres=[" "];
+      organizationValue = fundationClinicaLondres;
+    } 
+     if(organizationValue ==  "FUNDACION CLINICA MEDICA SUR AC"){
+      var fundationClinicaMEdica=[" "];
+      organizationValue = fundationClinicaMEdica;
+    } 
+     if(organizationValue ==  "FUNDACION COMPARTE VIDA AC"){
+      var fundationShare=[" "];
+      organizationValue = fundationShare;
+    }
+     if(organizationValue ==  "FUNDACION DE ASISTENCIA PRIVADA CONDE DE VALENCIANA IAP"){
+      var fundationPrivateValenciana=[" "];
+      organizationValue = fundationPrivateValenciana;
+    }
+     if(organizationValue ==  "FUNDACION ECOLOGICA MEXICANA AC"){
+      var fundationEcology=[" "];
+      organizationValue = fundationEcology;
+    }
+     if(organizationValue ==  "FUNDACION EDUARDO SELER PARA LA INVESTIGACION ARQUEOLOGICA Y ETNOHISTORICA AC"){
+      var fundationEduardoResearchng=["ESCUELA DE EDUCACION SUPERIOR EN CIENCIAS HISTORICAS Y ANTROPOLOGICAS"];
+      organizationValue = fundationEduardoResearchng;
+    }
+    if(organizationValue ==  "FUNDACION GUILLLERMO GONZALEZ CAMARENA AC"){
+      var fundationGuillermo=[" "];
+      organizationValue = fundationGuillermo;
+    }
+    if(organizationValue ==  "FUNDACION HEBERTO CASTILLO MARTINEZ A C"){
+      var fundationHerbeto=[" "];
+      organizationValue = fundationHerbeto;
+    }
+     if(organizationValue ==  "FUNDACION HERDEZ AC"){
+      var fundationHerdez=[" "];
+      organizationValue = fundationHerdez;
+    }
+     if(organizationValue ==  "FUNDACION HIDALGO PRODUCE AC"){
+      var fundationHidalgo=[" "];
+      organizationValue = fundationHidalgo;
+    }
+    if(organizationValue ==  "FUNDACION ICA AC"){
+      var fundationIcaAc=[" "];
+      organizationValue = fundationIcaAc;
+    }
+    if(organizationValue ==  "FUNDACION JAVIER BARROS SIERRA A C"){
+      var fundationJavier=["CENTRO DE INVESTIGACION SISMICA"];
+      organizationValue = fundationJavier;
+    }
+    if(organizationValue ==  "FUNDACION LUIS DONALDO COLOSIO MURRIETA AC"){
+      var fundationLuisDonaldo=[" "];
+      organizationValue = fundationLuisDonaldo;
+    }
+    if(organizationValue ==  "FUNDACION LUSARA PARA LA INVESTIGACION CIENTIFICA AC"){
+      var fundationLusara=[" "];
+      organizationValue = fundationLusara;
+    }
+    if(organizationValue ==  "FUNDACION MAR DE CORTEZ AC"){
+      var fundationMarCortez=[" "];
+      organizationValue = fundationMarCortez;
+    }
+     if(organizationValue ==  "FUNDACION MEXICANA PARA ENFERMEDADES HEPATICAS AC"){
+      var fundationMexicanaForepaticas=[" "];
+      organizationValue = fundationMexicanaForepaticas;
+    }
+     if(organizationValue ==  "FUNDACION MEXICANA PARA LA CALIDAD TOTAL AC"){
+      var fundationMexicanaForCalidad=[" "];
+      organizationValue = fundationMexicanaForCalidad;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA EDUCACION AMBIENTAL AC"){
+      var fundationMexicanaForEducation=[" "];
+      organizationValue = fundationMexicanaForEducation;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA INVESTIGACION AGROPECUARIA Y FORESTAL AC"){
+      var fundationMexicanaForResearchindForestal=["CAMPO EXPERIMENTAL BAJIO",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL CENTRO (GUANAJUATO)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL CENTRO (MEXICO)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL GOLFO CENTRO (TABASCO)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL GOLFO CENTRO (VERACRUZ)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL NORESTE (NUEVO LEON)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL NORESTE (TAMAULIPAS)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL NOROESTE (SINALOA)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL NORTE CENTRO (CHIHUAHUA)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL PACIFICO CENTRO (JALISCO)",
+                                                  "CENTRO DE INVESTIGACION REGIONAL DEL PACIFICO CENTRO (NAYARIT)",
+                                                  "CENTRO NACIONAL DE INVESTIGACION EN FISIOLOGIA Y MEJORAMIENTO ANIMAL",
+                                                  "CENTRO NACIONAL DE INVESTIGACION EN MICROBIOLOGIA VETERINARIA",
+                                                  "CENTRO NACIONAL DE INVESTIGACION EN PARASITOLOGIA VETERINARIA",];
+      organizationValue = fundationMexicanaForResearchindForestal;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD AC"){
+      var fundationMexicanaForSalud=["PROYECTO ECONOMIA Y SALUD"];
+      organizationValue = fundationMexicanaForSalud;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO NUEVO LEON AC"){
+      var fundationMexicanaForSaludChapter=[" "];
+      organizationValue = fundationMexicanaForSaludChapter;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO PENINSULAR AC"){
+      var fundationMexicanaForSaludChapterPeninsular=[" "];
+      organizationValue = fundationMexicanaForSaludChapterPeninsular;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO REGIONAL FRONTERA NORTE AC"){
+      var fundationMexicanaForSaludChapterRegional=[" "];
+      organizationValue = fundationMexicanaForSaludChapterRegional;
+    }
+    if(organizationValue ==  "FUNDACION MEXICANA PARA LA SALUD CAPITULO SONORA AC"){
+      var fundationMexicanaForSaludChapterSonora=[" "];
+      organizationValue = fundationMexicanaForSaludChapterSonora;
+    }
+    if(organizationValue ==  "FUNDACION MEXICOESTADOS UNIDOS PARA LA CIENCIA AC"){
+      var fundationMexicanaUnidosCiencia=[" "];
+      organizationValue = fundationMexicanaUnidosCiencia;
+    }
+     if(organizationValue ==  "FUNDACION MINSA AC"){
+      var fundationMinsa=[" "];
+      organizationValue = fundationMinsa;
+    }
+     if(organizationValue ==  "FUNDACION NUEVA SOCIEDAD RURAL AC"){
+      var fundationNewSociety=[" "];
+      organizationValue = fundationNewSociety;
+    }
+     if(organizationValue ==  "FUNDACION PRODUCE PUEBLA AC"){
+      var fundationProduce=[" "];
+      organizationValue = fundationProduce;
+    }
+     if(organizationValue ==  "FUNDACION SALVADOR SANCHEZ COLIN CICTAMEX SC"){
+      var fundationPSalvadorSanchez=[" "];
+      organizationValue = fundationPSalvadorSanchez;
+    }
+     if(organizationValue ==  "FUNDACION XOCHITLA AC"){
+      var fundationXochitlaAc=[" "];
+      organizationValue = fundationXochitlaAc;
+    }
+     if(organizationValue ==  "GRUPO AUTONOMO PARA LA INVESTIGACION AMBIENTAL AC"){
+      var groupAutonomy=[" "];
+      organizationValue = groupAutonomy;
+    }
+    if(organizationValue ==  "GRUPO DE ESTUDIOS AMBIENTALES AC"){
+      var groupStudies=[" "];
+      organizationValue = groupStudies;
+    }
+    if(organizationValue ==  "GRUPO ECOSIEMENS"){
+      var groupEcosistemas=[" "];
+      organizationValue = groupEcosistemas;
+    }
+    if(organizationValue ==  "GRUPO INTERDISCIPLINARIO DE TECNOLOGIA RURAL APROPIADA A C"){
+      var groupTechnology=[" "];
+      organizationValue = groupTechnology;
+    }
+    if(organizationValue ==  "HOMBRE NATURALEZA AC"){
+      var manNaturaleza=[" "];
+      organizationValue = manNaturaleza;
+    }
+     if(organizationValue ==  "IDF CONGRESO MEXICO 2OOO AC"){
+      var congressMexico=[" "];
+      organizationValue = congressMexico;
+    }
+    if(organizationValue ==  "ILSI DE MEXICO AC"){
+      var ilsiMexico=[" "];
+      organizationValue = ilsiMexico;
+    }
+     if(organizationValue ==  "INGENIEROS AGRONOMOS PARASITOLOGOS AC"){
+      var engieeniersAgronomos=[" "];
+      organizationValue = engieeniersAgronomos;
+    }
+     if(organizationValue ==  "INSTITUTO AUTONOMO DE INVESTIGACIONES ECOLOGICAS AC"){
+      var instituteAutonomy=[" "];
+      organizationValue = instituteAutonomy;
+    }
+     if(organizationValue ==  "INSTITUTO CULTURAL LUDWIG VON MISES AC"){
+      var insituteCulturalVon=[" "];
+      organizationValue = insituteCulturalVon;
+    }
+     if(organizationValue ==  "INSTITUTO DANONE AC"){
+      var insituteDanone=[" "];
+      organizationValue = insituteDanone;
+    }
+    if(organizationValue ==  "INSTITUTO DE ADMINISTRACION PUBLICA DEL ESTADO DE QUERETARO"){
+      var insituteAdministrationPublica=[" "];
+      organizationValue = insituteAdministrationPublica;
+    }
+    if(organizationValue ==  "INSTITUTO DE CULTURA ECOLOGICA AC"){
+      var insituteCulturaEcology=[" "];
+      organizationValue = insituteCulturaEcology;
+    }
+    if(organizationValue ==  "INSTITUTO DE ENDOMETAENDODONCIA AC"){
+      var insituteEndoMeta=[" "];
+      organizationValue = insituteEndoMeta;
+    }
+    if(organizationValue ==  "INSTITUTO DE ESPECIALIZACION PARA EJECUTIVOS AC"){
+      var insituteForEjecutivos=[" "];
+      organizationValue = insituteForEjecutivos;
+    }
+    if(organizationValue ==  "INSTITUTO DE FOMENTO E INVESTIGACION EDUCATIVA AC"){
+      var insituteForEducativa=[" "];
+      organizationValue = insituteForEducativa;
+    }
+    if(organizationValue ==  "INSTITUTO DE INVESTIGACION DE MEGAFAUNA MARINA Y COSTERA A C"){
+      var insituteResearchingMarina=[" "];
+      organizationValue = insituteResearchingMarina;
+    }
+     if(organizationValue ==  "INSTITUTO DE INVESTIGACION ECONOMICA Y SOCIAL LUCAS ALAMAN A C"){
+      var insituteResearchingEconomic=[" "];
+      organizationValue = insituteResearchingEconomic;
+    }
+     if(organizationValue ==  "INSTITUTO DE INVESTIGACIONES CIENTIFICAS A C"){
+      var insituteResearchingCientific=[" "];
+      organizationValue = insituteResearchingCientific;
+    }
+    if(organizationValue ==  "INSTITUTO DE INVESTIGACIONES CIENTIFICAS HANS SELYE AC"){
+      var insituteResearchingCientificHans=[" "];
+      organizationValue = insituteResearchingCientificHans;
+    } 
+    if(organizationValue ==  "INSTITUTO DE LA FAMILIA A C"){
+      var insituteFamily=[" "];
+      organizationValue = insituteFamily;
+    }
+    if(organizationValue ==  "INSTITUTO DE MICOLOGIA NEOTROPICAL APLICADA AC"){
+      var insituteMicologiaAplicada=[" "];
+      organizationValue = insituteMicologiaAplicada;
+    }
+     if(organizationValue ==  "INSTITUTO DE OFTALMOLOGIA"){
+      var insituteOftalmologia=[" "];
+      organizationValue = insituteOftalmologia;
+    }
+    if(organizationValue ==  "INSTITUTO DE PROPOSICIONES ESTRATEGICAS AC"){
+      var insituteEstrategi=[" "];
+      organizationValue = insituteEstrategi;
+    }
+     if(organizationValue ==  "INSTITUTO DE RECURSOS BIOTICOS DE TABASCO A C"){
+      var insituteResourceBiotico=[" "];
+      organizationValue = insituteResourceBiotico;
+    }
+     if(organizationValue ==  "INSTITUTO DE SALUD AMBIENTE Y TRABAJO SC"){
+      var insituteSaludAmbiente=[" "];
+      organizationValue = insituteSaludAmbiente;
+    }
+    if(organizationValue ==  "INSTITUTO INTERNACIONAL DEL DERECHO Y DEL ESTADO AC"){
+      var insituteInternational=[" "];
+      organizationValue = insituteInternational;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE CONTADORES PUBLICOS AC"){
+      var insituteMexicanoContadores=[" "];
+      organizationValue = insituteMexicanoContadores;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE CONTROL DE CALIDAD A C"){
+      var insituteMexicanoControl=[" "];
+      organizationValue = insituteMexicanoControl;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE EJECUTIVOS DE FINANZAS AC"){
+      var insituteMexicanoFinanzaz=[" "];
+      organizationValue = insituteMexicanoFinanzaz;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE EJECUTIVOS EN FINANZAS AC UNID NL"){
+      var insituteMexicanoEjecutivos=[" "];
+      organizationValue = insituteMexicanoEjecutivos;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE ESTRATEGIAS SC"){
+      var insituteMexicanoEstrategias=[" "];
+      organizationValue = insituteMexicanoEstrategias;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE ESTUDIOS SOCIALES AC"){
+      var insituteMexicanoSociales=[" "];
+      organizationValue = insituteMexicanoSociales;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE INVESTIGACION DE FAMILIA Y POBLACION AC"){
+      var insituteMexicanoSFamily=[" "];
+      organizationValue = insituteMexicanoSFamily;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE INVESTIGACIONES AEROSTATICAS AC"){
+      var insituteMexicanoAeroestaticas=[" "];
+      organizationValue = insituteMexicanoAeroestaticas;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE LA AUDICION Y EL LENGUAJE AC"){
+      var insituteMexicanoAudicion=[" "];
+      organizationValue = insituteMexicanoAudicion;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE NORMALIZACION Y CERTIFICACION A C"){
+      var insituteMexicanoCertification=[" "];
+      organizationValue = insituteMexicanoCertification;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO DE RECURSOS NATURALES RENOVABLES AC"){
+      var insituteMexicanoResoucesNaturales=[" "];
+      organizationValue = insituteMexicanoResoucesNaturales;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE SEXOLOGIA AC"){
+      var insituteMexicanoSexologia=[" "];
+      organizationValue = insituteMexicanoSexologia;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE TANATOLOGIA AC"){
+      var insituteMexicanoTanatologia=[" "];
+      organizationValue = insituteMexicanoTanatologia;
+    }
+     if(organizationValue ==  "INSTITUTO MEXICANO DE TECNOLOGIAS APROPIADAS SC"){
+      var insituteMexicanoTechnologyApro=[" "];
+      organizationValue = insituteMexicanoTechnologyApro;
+    }
+    if(organizationValue ==  "INSTITUTO MEXICANO PARA LA EXCELENCIA EDUCATIVA AC"){
+      var insituteMexicanoExcelencia=[" "];
+      organizationValue = insituteMexicanoExcelencia;
+    }
+     if(organizationValue ==  "INSTITUTO MEXIQUENSE DE CULTURA AC"){
+      var insituteMexiquenseCutura=[" "];
+      organizationValue = insituteMexiquenseCutura;
+    }
+     if(organizationValue ==  "INSTITUTO NACIONAL DE CAPACITACION AGROPECUARIA AC"){
+      var insituteNationalCapacitation=[" "];
+      organizationValue = insituteNationalCapacitation;
+    }
+    if(organizationValue ==  "INSTITUTO NACIONAL DE TUBERIAS PLASTICAS AC"){
+      var insituteNationalTuberias=[" "];
+      organizationValue = insituteNationalTuberias;
+    }
+    if(organizationValue ==  "INSTITUTO PARA EL DESARROLLO INTEGRAL DE LA CALIDAD EN LA EDUCACION AC"){
+      var insituteNationalDeveloperIntegral=[" "];
+      organizationValue = insituteNationalDeveloperIntegral;
+    }
+    if(organizationValue ==  "INSTITUTO PARA LA PLANEACION DEL DESARROLLO A C"){
+      var insitutePalaneacionDeveloperl=[" "];
+      organizationValue = insitutePalaneacionDeveloperl;
+    }
+    if(organizationValue ==  "INSTITUTO TAMAULIPECO DE INVESTIGACION EDUCATIVA Y DESARROLLO DE LA DOCENCIA"){
+      var insituteResearchingEducativa=[" "];
+      organizationValue = insituteResearchingEducativa;
+    }
+     if(organizationValue ==  "INSTITUTO TECNOLOGICO DE TELEFONOS DE MEXICO SC"){
+      var insituteTechnologPhones=[" "];
+      organizationValue = insituteTechnologPhones;
+    }
+     if(organizationValue ==  "INSTITUTO TECNOLOGICO DEL PLASTICO AC"){
+      var insituteTechnologPlastic=[" "];
+      organizationValue = insituteTechnologPlastic;
+    }
+     if(organizationValue ==  "INTEGRACION GANADERA AC"){
+      var insituteGanadera=[" "];
+      organizationValue = insituteGanadera;
+    }
+    if(organizationValue ==  "INVESTIGACION DEL EQUILIBRIO BIOTICO EN YUCATAN AC"){
+      var insituteEquolibrio=[" "];
+      organizationValue = insituteEquolibrio;
+    }
+     if(organizationValue ==  "INVESTIGACION Y CAPACITACION EN SALUD REPRODUCTIVA AC"){
+      var insituteCapacitationSalud=[" "];
+      organizationValue = insituteCapacitationSalud;
+    }
+     if(organizationValue ==  "INVESTIGACION Y DESARROLLO EDUCATIVO APLICADO SC"){
+      var insituteDEveloperEducativo=[" "];
+      organizationValue = insituteDEveloperEducativo;
+    }
+     if(organizationValue ==  "LA CIENCIA Y LA TECNOLOGIA AL SERVICIO DEL HOMBRE AC"){
+      var TechnologyServices=[" "];
+      organizationValue = TechnologyServices;
+    }
+     if(organizationValue ==  "MANCERA SC ERNEST&YOUNG"){
+      var AMneraErnest=[" "];
+      organizationValue = AMneraErnest;
+    }
+     if(organizationValue ==  "ORGANIZACION VIDA SILVESTRE AC"){
+      var rganizationLife=[" "];
+      organizationValue = rganizationLife;
+    }
+    if(organizationValue ==  "PATRONATO DEL PARQUE ECOLOGICO"){
+      var patronatoPark=[" "];
+      organizationValue = patronatoParks;
+    }
+    if(organizationValue ==  "PATRONATO DEL PARQUE ECOLOGICO DE XOCHIMILCO AC"){
+      var patronatoParkXochimilco=[" "];
+      organizationValue = patronatoParkXochimilco;
+    }
+     if(organizationValue ==  "PHILOS AC"){
+      var philos=[" "];
+      organizationValue = philos;
+    }
+     if(organizationValue ==  "PROGRAMA DE ACCION FORESTAL TROPICAL AC"){
+      var programAccionForestal=[" "];
+      organizationValue = programAccionForestal;
+    }
+    if(organizationValue ==  "PROGRAMA INTERNACIONAL COOPERATIVO DEL TIZON TARDIO DE LA PAPA AC"){
+      var internationalCooperativo=[" "];
+      organizationValue = internationalCooperativo;
+    }
+    if(organizationValue ==  "PRONATURA AC"){
+      var pronatura=[" "];
+      organizationValue = pronatura;
+    }
+     if(organizationValue ==  "PRONATURA NORESTE AC"){
+      var pronaturaNoreste=[" "];
+      organizationValue = pronaturaNoreste;
+    }
+     if(organizationValue ==  "PRONATURA PENINSULA DE YUCATAN AC"){
+      var pronaturaPeninsula=[" "];
+      organizationValue = pronaturaPeninsula;
+    }
+     if(organizationValue ==  "PRONATURA SUR AC"){
+      var pronaturaSur=[" "];
+      organizationValue = pronaturaSur;
+    }
+    if(organizationValue ==  "PROYECTO CAMINA AC"){
+      var projectWalk=[" "];
+      organizationValue = projectWalk;
+    }
+    if(organizationValue ==  "RED DE INVESTIGACION URBANA AC"){
+      var redResearchingUrbana=[" "];
+      organizationValue = redResearchingUrbana;
+    }
+    if(organizationValue ==  "SANUT AC"){
+      var sanut=[" "];
+      organizationValue = sanut;
+    }
+    if(organizationValue ==  "SEMINARIO DE SOCIOPSICOANALISIS AC"){
+      var seminarioSocio=[" "];
+      organizationValue = seminarioSocio;
+    }
+    if(organizationValue ==  "SERVICIOS DE APOYO A LA INVESTIGACION MEDICA AC"){
+      var servicesApoyoResearching=[" "];
+      organizationValue = servicesApoyoResearching;
+    }
+    if(organizationValue ==  "SOCIEDAD DE SOLIDARIDAD SOCIAL"){
+      var servicesSolidaridad=[" "];
+      organizationValue = servicesSolidaridad;
+    }
+    if(organizationValue ==  "SOCIEDAD MATEMATICA MEXICANA AC"){
+      var societyMatematics=[" "];
+      organizationValue = societyMatematics;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA DE BIOLOGIA DE LA REPRODUCCION HUMANA AC"){
+      var societyBiology=[" "];
+      organizationValue = societyBiology;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE BIOQUIMICA AC"){
+      var societyMexicanaQuimic=[" "];
+      organizationValue = societyMexicanaQuimic;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE CARDIOLOGIA AC"){
+      var societyMexicanaCardiology=[" "];
+      organizationValue = societyMexicanaCardiology;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE CRISTALOGRAFIA AC"){
+      var societyMexicanaCritalofia=[" "];
+      organizationValue = societyMexicanaCritalofia;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE FISICA AC"){
+      var societyMexicanaFisica=[" "];
+      organizationValue = societyMexicanaFisica;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE HISTOCOMPATIBILIDAD Y TRANSPLANTE AC"){
+      var societyMexicanaTransplante=[" "];
+      organizationValue = societyMexicanaTransplante;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE INGENIERIA ESTRUCTURAL AC"){
+      var societyMexicanaEngeenier=[" "];
+      organizationValue = societyMexicanaEngeenier;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE INGENIERIA SISMICA AC"){
+      var societyMexicanaEngeenierSismica=[" "];
+      organizationValue = societyMexicanaEngeenierSismica;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE MECANICA DE SUELOS A C"){
+      var societyMexicanaMechanic=[" "];
+      organizationValue = societyMexicanaMechanic;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE NUTRICION Y ENDOCRINOLOGIA AC"){
+      var societyMexicanaNutrition=[" "];
+      organizationValue = societyMexicanaNutrition;
+    }
+    if(organizationValue ==  "SOCIEDAD MEXICANA DE OFTALMOLOGIA AC"){
+      var societyMexicanaOftamologia=[" "];
+      organizationValue = societyMexicanaOftamologia;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA DE OTORRINOLARINGOLOGIA Y CIRUGIA DE CABEZA Y CUELLO AC"){
+      var societyMexicanaCirugia=[" "];
+      organizationValue = societyMexicanaCirugia;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA DE PLANCTOLOGIA AC"){
+      var sociedadMexicanaPlanctologia=[" "];
+      organizationValue = sociedadMexicanaPlanctologia;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA DE PSIQUIATRIA BIOLOGICA AC"){
+      var sociedadMexicanaBiology=[" "];
+      organizationValue = sociedadMexicanaBiology;
+    }
+     if(organizationValue ==  "SOCIEDAD MEXICANA PARA LA DIVULGACION DE LA CIENCIA Y LA TECNICA AC"){
+      var sociedadMexicanaCienciaTecnica=[" "];
+      organizationValue = sociedadMexicanaCienciaTecnica;
+    }
+     if(organizationValue ==  "SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES AC"){
+      var sociedadMexicanaStudies=["SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES - CAMPUS MONTERREY",
+                                    "SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES CAMPUS CIUDAD DE MEXICO",];
+      organizationValue = sociedadMexicanaStudies;
+    }
+    if(organizationValue ==  "SOCIEDAD PARA EL ESTUDIO DE LOS RECURSOS BIOTICOS DE OAXACA AC"){
+      var sociedadStudyREsources=[" "];
+      organizationValue = sociedadStudyREsources;
+    }
+    if(organizationValue ==  "SOCIEDAD PARA LOS RECURSOS BIOTICOS DE OAXACA AC"){
+      var sociedadREsourcesBioticos=[" "];
+      organizationValue = sociedadREsourcesBioticos;
+    }
+    if(organizationValue ==  "TECNOLOGIAS NATURALES INTERNACIONALES"){
+      var technologyNaturales=[" "];
+      organizationValue = technologyNaturales;
+    }
+    if(organizationValue ==  "TRANSPARENCIA MEXICANA AC"){
+      var tranparenciaMexicana=[" "];
+      organizationValue = tranparenciaMexicana;
+    }
+    if(organizationValue ==  "TRAZOS CENTRO DE INVESTIGACION AC"){
+      var trazosCenterResearching=[" "];
+      organizationValue = trazosCenterResearching;
+    }
+    if(organizationValue ==  "UNIDAD DE SERVICIOS EMPRESARIALES DEL NORTE AC"){
+      var unitServices=[" "];
+      organizationValue = unitServices;
+    }
+    if(organizationValue ==  "UNION MEXICANA DE AGRUPACIONES ESPELEOLOGICAS AC"){
+      var UnityMexicana=[" "];
+      organizationValue = UnityMexicana;
+    }
+    if(organizationValue ==  "UNION MEXICANA DE AGRUPACIONES ESPELEOLOGICAS AC"){
+      var UnityMexicana=[" "];
+      organizationValue = UnityMexicana;
+    }
+
+    /* Instituciones / organizaciones extranjeras */
+
+    if(organizationValue ==  "AC NIELSEN COMPANY"){
+      var niesenCompany=[" "];
+      organizationValue = niesenCompany;
+    }
+     if(organizationValue ==  "ACADEMIA ESLOVACA"){
+      var academyEslovaca=[" "];
+      organizationValue = academyEslovaca;
+    }
+    if(organizationValue ==  "ACADEMIA DE CIENCIA DE RUSIA"){
+      var academyScienceRusia=["INSTITUTO DE CRISTALOGRAFIA",
+                              "INSTITUTO DE ESPECTROSCOPIA",
+                              "INSTITUTO DE PROBLEMAS EN MECANICA",
+                              "INSTIUTO DE ARQUEOLOGIA DE LA ACADEMIA DE CIENCIAS EN RUSIA",];
+      organizationValue = academyScienceRusia;
+    }
+     if(organizationValue ==  "ACADEMIA DE CIENCIAS DE MOSCU"){
+      var academyScienceMoscu=[" "];
+      organizationValue = academyScienceMoscu;
+    }
+     if(organizationValue ==  "ACADEMICA NACIONAL DE CIENCIAS DE UCRANIA"){
+      var academyNationalScienceUcrania=["INSTITUTO DE FISICA DE MATERIA CONDENSADA",
+                                        "INSTITUTO DE TECNICAS EN MECANICA",];
+      organizationValue = academyNationalScienceUcrania;
+    }
+    if(organizationValue ==  "ACADEMY OF NATURAL SCIENCES OF PHILADELPHIA"){
+      var academySciencesPhiladelphia=[" "];
+      organizationValue = academySciencesPhiladelphia;
+    }
+     if(organizationValue ==  "AKITA UNIVERSITY"){
+      var akitaUniversity=[" "];
+      organizationValue = akitaUniversity;
+    }
+    if(organizationValue ==  "AMERICAN MUSEUM OF NATURAL HISTORY"){
+      var americanMuseumNaturaly=[" "];
+      organizationValue = americanMuseumNaturaly;
+    }
+     if(organizationValue ==  "ANTHONY NOLAN RESEARCH INSTITUTE"){
+      var anthonyNolan=[" "];
+      organizationValue = anthonyNolan;
+    }
+    if(organizationValue ==  "ARIZONA STATE UNIVERSITY"){
+      var arzonaStateUnversity=["BUREAU OF APPLIED RESEARCH IN ANTHROPOLOGY",
+                                  "COLLEGE OF HEALTH SOLUTIONS",
+                                  "DEPARTAMENTO DE BIOQUIMICA",
+                                  "DEPARTAMENTO DE QUÍMICA Y BIOQUÍMICA",
+                                  "SCHOOL OF LIFE SCIENCES"];
+      organizationValue = arzonaStateUnversity;
+    }
+     if(organizationValue ==  "ASOCIACION INTERNACIONAL PARA LA PROTECCION ECOLOGICA Y REUBICACION PACIFICA DE LAS PALOMAS URBANAS AC"){
+      var internationalForEcology=[" "];
+      organizationValue = internationalForEcology;
+    }
+    if(organizationValue ==  "ASTROPHYSIKALISCHES INSTITUT POTSDAM"){
+      var institutPotsdam=[" "];
+      organizationValue = institutPotsdam;
+    }
+    if(organizationValue ==  "AT&T BELL LABORATORIES"){
+      var bellLaboratories=[" "];
+      organizationValue = bellLaboratories;
+    }
+    if(organizationValue ==  "AUBURN UNIVERSITY"){
+      var aubunUniversity=[" "];
+      organizationValue = aubunUniversity;
+    }
+    if(organizationValue ==  "AUSTIN RESEARCH INSTITUTE"){
+      var austinResearch=[" "];
+      organizationValue = austinResearch;
+    }
+     if(organizationValue ==  "AUSTRALIAN MUSEUM SYDNEY"){
+      var australianMuseum=[" "];
+      organizationValue = australianMuseum;
+    }
+    if(organizationValue ==  "BANCO INTERAMERICANO DE DESARROLLO"){
+      var bankDevelopment=[" "];
+      organizationValue = bankDevelopment;
+    }
+    if(organizationValue ==  "BELGIAN NUCLEAR RESEARCH CENTRE SCKCEN"){
+      var ResearchCentre=[" "];
+      organizationValue = ResearchCentre;
+    }
+     if(organizationValue ==  "BEN GURION UNIVERSITY"){
+      var benGurionUniversity=[" "];
+      organizationValue = benGurionUniversity;
+    }
+      if(organizationValue ==  "BERKELEY CENTER FOR BEST PRACTICES RESEARCH A C CENTRO DE MEJORES PRACTICAS"){
+      var berkeleyCenterFor=[" "];
+      organizationValue = berkeleyCenterFor;
+    }
+     if(organizationValue ==  "BHABHA ATOMIC RESEARCH CENTRE LASER AND PLASMA TECHNOLOGY DIVISION"){
+      var bhabahAtomic=[" "];
+      organizationValue = bhabahAtomic;
+    }
+    if(organizationValue ==  "BIOTECHNOLOGICAL INSTITUTE OF DENMARK"){
+      var biotechnologicalInstitute=[" "];
+      organizationValue = biotechnologicalInstitute;
+    }
+    if(organizationValue ==  "BLACKETT LABORATORY IMPERIAL COLLEGE LONDON"){
+      var blackettLAboratory=["BLACKETT LABORATORY"];
+      organizationValue = blackettLAboratory;
+    }
+    if(organizationValue ==  "BRANDEIS UNIVERSITY"){
+      var brandeisUniversity=[" "];
+      organizationValue = brandeisUniversity;
+    }
+     if(organizationValue ==  "BRITISH GEOLOGICAL SURVEY"){
+      var britishGEological=[" "];
+      organizationValue = britishGEological;
+    }
+     if(organizationValue ==  "BROWN UNIVERSITY"){
+      var brownUniversity=[" "];
+      organizationValue = brownUniversity;
+    }
+     if(organizationValue ==  "BURNHAM INSTITUTE"){
+      var burnhamInstitute=[" "];
+      organizationValue = burnhamInstitute;
+    }
+     if(organizationValue ==  "BWZ ALLEN ANN HAMILTON"){
+      var bmzAllenAnn=[" "];
+      organizationValue = bmzAllenAnn;
+    }
+     if(organizationValue ==  "C N R S"){
+      var cnrs=[" "];
+      organizationValue = cnrs;
+    }
+    if(organizationValue ==  "CALIFORNIA INSTITUTE OF TECHNOLOGY"){
+      var californiaInstitute=[" "];
+      organizationValue = californiaInstitute;
+    }
+    if(organizationValue ==  "CALTECH"){
+      var calte=[" "];
+      organizationValue = caltech;
+    }
+    if(organizationValue ==  "CARNEGIE MELLON UNIVERSITY"){
+      var carnegieMellon=[" "];
+      organizationValue = carnegieMellon;
+    }
+    if(organizationValue ==  "CENTER FOR DISEASES CONTROL AND PREVENTIONDEPARTMENT OF HEALTH & HUMA"){
+      var centerForDiseases=[" "];
+      organizationValue = centerForDiseases;
+    }
+     if(organizationValue ==  "CENTER OF MARINE BIOTECHNOLOGY"){
+      var centerForMArine=[" "];
+      organizationValue = centerForMArine;
+    }
+    if(organizationValue ==  "CENTRE DE VISIO PER COMPUTADOR"){
+      var centerWachingComputer=[" "];
+      organizationValue = centerWachingComputer;
+    }
+    if(organizationValue ==  "CENTRE DENERGIE ATOMIQUE CEAGRENOBLE"){
+      var centerDebergieAtomique=[" "];
+      organizationValue = centerDebergieAtomique;
+    }
+     if(organizationValue ==  "CENTRE FOR PROTEIN ENGINEERING MRC"){
+      var centerForProtein=[" "];
+      organizationValue = centerForProtein;
+    }
+    if(organizationValue ==  "CENTRE NATIONAL DE LA RECHERCHE SCIENTIFIQUE"){
+      var centerNationalScientifique=["LABORATOIRE D'OCÉANOLOGIE ET DE GEOSCIENCES",
+                            "LABORATOIRE DE PHYSIQUE DES SOLIDES",
+                            "LABORATOIRE DE PHYSIQUE ET MÉCANIQUE DES MILIEUX HÉTÉROGÈNES",
+                            "LABORATOIRE PLASMA ET CONVERSION D¿ENERGIE UMR5213",];
+      organizationValue = centerNationalScientifique;
+    }
+      if(organizationValue ==  "CENTRO ALEXIS VAUTRIN"){
+      var centerAlexisVautrin=[" "];
+      organizationValue = centerAlexisVautrin;
+    }
+      if(organizationValue ==  "CENTRO BRASILEIRO DE PESQUISAS FISICAS"){
+      var centerBrasieiro=[" "];
+      organizationValue = centerBrasieiro;
+    }
+     if(organizationValue ==  "CENTRO BRASILENO DE INVESTIGACIONES EN FISICA"){
+      var centerBrasieiroREsearching=[" "];
+      organizationValue = centerBrasieiroREsearching;
+    }
+     if(organizationValue ==  "CENTRO CULTURAL MOKICHI OAKADA ASOCIACION MOA TOLUCA AC"){
+      var centerMokichi=[" "];
+      organizationValue = centerMokichi;
+    }
+     if(organizationValue ==  "CENTRO DE INVESTIGACION Y DESARROLLO TECNOLOGICO EN COLOMBIA AC"){
+      var centerREsearchingDevelopment=[" "];
+      organizationValue = centerREsearchingDevelopment;
+    }
+      if(organizationValue ==  "CENTRO DE INVESTIGACIONES CIENTIFICAS ISLA DE LA CARTUJA EN SEVILLA"){
+      var centerREsearchingScientifique=[" "];
+      organizationValue = centerREsearchingScientifique;
+    }
+      if(organizationValue ==  "CENTRO DE NEUROCIENCIAS DE CUBA"){
+      var centerNeuroScience=[" "];
+      organizationValue = centerNeuroScience;
+    }
+      if(organizationValue ==  "CENTRO FRANCES DE ESTUDIOS MEXICANOS Y CENTROAMERICANOS"){
+      var centerFrenchStudy=[" "];
+      organizationValue = centerFrenchStudy;
+    }
+      if(organizationValue ==  "CENTRO INTERNACIONAL DE FISICA TEORICA"){
+      var centerInternationalPhisical=[" "];
+      organizationValue = centerInternationalPhisical;
+    }
+      if(organizationValue ==  "CENTRO INTERNACIONAL DE INVESTIGACION Y CAPACITACION AGROPECUARIA AC"){
+      var centerInternationalResearching=[" "];
+      organizationValue = centerInternationalResearching;
+    }
+      if(organizationValue ==  "CENTRO PATAGONICO NACIONAL PUERTO MADRYN"){
+      var centerNationalPortMadryn=[" "];
+      organizationValue = centerNationalPortMadryn;
+    }
+      if(organizationValue ==  "CHILDRENS HOSPITAL DE ORANGE COUNTY"){
+      var childrensHospital=[" "];
+      organizationValue = childrensHospital;
+    }
+     if(organizationValue ==  "CHU BICHATCLAUDE BERNARD"){
+      var chuBitcahtClaude=[" "];
+      organizationValue = chuBitcahtClaude;
+    }
+     if(organizationValue ==  "CLARKSON UNIVERSITY"){
+      var clarksonUniverisity=[" "];
+      organizationValue = clarksonUniverisity;
+    }
+      if(organizationValue ==  "COLEGIO IMPERIAL"){
+      var schoolImperial=[" "];
+      organizationValue = schoolImperial;
+    }
+      if(organizationValue ==  "COLEGIO MEDICO DE MIYAZAKI"){
+      var schoolDoctorMiyazaki=[" "];
+      organizationValue = schoolDoctorMiyazaki;
+    }
+      if(organizationValue ==  "COLLEGE DE FRANCE"){
+      var collegeFrench=["ECOLE DES HAUTES ETUDES EN SCIENCES SOCIALES",
+                          "ECOLE PRACTIQUE DES HAUTES ETUDES",];
+      organizationValue = collegeFrench;
+    }
+      if(organizationValue ==  "COLOMBIA UNIVERSITY"){
+      var colombiaUniversity=[" "];
+      organizationValue = colombiaUniversity;
+    }
+     if(organizationValue ==  "COLORADO STATE UNIVERSITY"){
+      var stateUniversity=[" "];
+      organizationValue = stateUniversity;
+    }
+     if(organizationValue ==  "COLUMBIA UNIVERSITY"){
+      var columbaUniversity=["COLUMBIA LAW SCHOOL",
+                            "DEPARTMENT OF ASTRONOMY",
+                            "GRADUATE SCHOOL OF ARCHITECTURA, PLANNING AND PRESERVATION",
+                            "GRADUATE SCHOOL OF ARCHITECTURE, PLANNING AND PRESERV",
+                            "GRADUATE SCHOOL OF ARTS AND SCIENCES",
+                            "INSTITUTE FOR RESEARCH OF ORAL HISTORY",
+                            "INSTITUTE FOR THE STUDY OF HUMAN RIGHTS",
+                            "INSTITUTE OF LATIN AMERICAN STUDIES",
+                            "LAMONT-DOHERTY EARTH OBSERVATORY",
+                            "SCHOOL OF INTERNATIONAL AND PUBLIC AFFAIRS",
+                            "TEACHERS COLLEGE COLUMBIA UNIVERSITY",];
+      organizationValue = columbaUniversity;
+    }
+    if(organizationValue ==  "COLUMBIA MOUNTAINS INSTITUTE OF APPLIED ECOLOGY"){
+      var columbaMountains=[" "];
+      organizationValue = columbaUniversity;
+    }
+     if(organizationValue ==  "CONCORDIA UNIVERSITY"){
+      var concordiaUniversity=[" "];
+      organizationValue = concordiaUniversity;
+    }
+     if(organizationValue ==  "CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICASCSIC"){
+      var researchingscientifique=["CENTRO DE ACÚSTICA APLICADA Y EVALUACIÓN NO DESTRUCTIVA",
+                                  "CENTRO DE EDAFOLOGIA Y BIOLOGIA APLICADA DEL SEGURA",
+                                  "CENTRO DE HUMANIDADES",
+                                  "CENTRO NACIONAL DE BIOTECNOLOGIA",
+                                  "INSTITUT DE CIENCIES DEL MAR",
+                                  "INSTITUT DE CIÈNCIES DE L'ESPAI",
+                                  "INSTITUTO DE AGROQUIMICA Y TECNOLOGIA DE ALIMENTOS",
+                                  "INSTITUTO DE AUTOMÁTICA INDUSTRIAL",
+                                  "INSTITUTO DE CATALISIS Y PETROLEOQUIMICA",
+                                  "INSTITUTO DE CERAMICA Y VIDRIO",
+                                  "INSTITUTO DE CIENCIA DE MATERIALES DE MADRID",
+                                  "INSTITUTO DE CIENCIA Y TECNOLOGÍA DE ALIMENTOS Y NUTRICIÓN (ICTAN)",
+                                  "INSTITUTO DE CIENCIAS DE MATERIALES DE BARCELONA",
+                                  "INSTITUTO DE DIAGNÓSTICO AMBIENTAL Y ESTUDIOS DEL AGUA",
+                                  "INSTITUTO DE ESTRUCTURA DE LA MATERIA",
+                                  "INSTITUTO DE FISICA APLICADA",
+                                  "INSTITUTO DE INVESTIGACIONES MARINAS CSIC",
+                                  "INSTITUTO DE MICROELECTRONICA DE BARCELONA",
+                                  "INSTITUTO DE MICROELECTRONICA DE MADRID",
+                                  "INSTITUTO DE OPTICA DAZA DE VALDES",
+                                  "INSTITUTO DE PARASITOLOGIA LOPEZ NEYRA",
+                                  "INSTITUTO DEL FRIO",
+                                  "INSTITUTO EDUARDO TORROJA",
+                                  "INSTITUTO NACIONAL DEL CARBON-INCAR",];
+      organizationValue = researchingscientifique;
+    }
+     if(organizationValue ==  "CORNELL UNIVERSITY"){
+      var coronellUniversity=["BOYCE THOMSON INSTITUTE FOR PLANT RESEARCH",
+                              "COLLEGE OF AGRICULTURE AND LIFE SCIENCES",
+                              "COLLEGE OF VETERINARY MEDICINE",
+                              "CORNELL INSTITUTE OF PUBLIC AFFAIRS",
+                              "GENEVA CAMPUS",
+                              "LATINAMERICAN STUDIES PROGRAM",
+                              "WARD CENTER FOR NUCLEAR STUDIES",];
+      organizationValue = coronellUniversity;
+    }
+     if(organizationValue ==  "DALHOUSIE UNIVERSITY"){
+      var dalhousieUniversity=[" "];
+      organizationValue = dalhousieUniversity;
+    }
+     if(organizationValue ==  "DE BUEN & ASOCIADOS"){
+      var ofGoodAssociates=[" "];
+      organizationValue = ofGoodAssociates;
+    }
+    if(organizationValue ==  "DEPARTMENT OF RENAL MEDICINE MANCHESTER ROYAL INFIRMARY"){
+      var departmentOfRenal=[" "];
+      organizationValue = departmentOfRenal;
+    }
+    if(organizationValue ==  "DEUTSCHES ELEKTRONENSYNCHROTON DESY"){
+      var deutschesDesy=[" "];
+      organizationValue = deutschesDesy;
+    }
+    if(organizationValue ==  "DEUTSCHES ELEKTRONENSYNCHROTRON DESY"){
+      var deutschesDesys=[" "];
+      organizationValue = deutschesDesys;
+    }
+    if(organizationValue ==  "DIRECCION DE LA UNIDAD MOSCAMED PROGRAMA MOSCAMED"){
+      var addressesUnitProgram=[" "];
+      organizationValue = addressesUnitProgram;
+    }
+     if(organizationValue ==  "DUKE UNIVERSITY"){
+      var dukeUniversity=["DEPARTAMENTO DE CIENCIA POLITICA"];
+      organizationValue = dukeUniversity;
+    }
+    if(organizationValue ==  "ECOLE NATIONALE SUPERIEURE D ARTS ET METIERS"){
+      var ecoleNationalArts=[" "];
+      organizationValue = ecoleNationalArts;
+    }
+    if(organizationValue ==  "ECOLE NATIONALE SUPERIEURE DE CHIMIE MONTPELLIER"){
+      var ecoleNationalChimie=[" "];
+      organizationValue = ecoleNationalChimie;
+    }
+     if(organizationValue ==  "ECOLE NATIONALE SUPERIEURE DES MINES DE PARIS"){
+      var ecoleNationalMines=["CENTRE AUTOMATIQUE ET SYSTEMES"];
+      organizationValue = ecoleNationalMines;
+    }
+    if(organizationValue ==  "ECOLE NATIONALE SUPERIEURE DES TELECOMMUNICATIONS"){
+      var ecoleNationalTelecomunications=[" "];
+      organizationValue = ecoleNationalTelecomunications;
+    }
+    if(organizationValue ==  "EMBL HEIDELBERG"){
+      var emblHeidelberg=[" "];
+      organizationValue = emblHeidelberg;
+    }
+    if(organizationValue ==  "ENERGY CONVERSION DEVICES INC"){
+      var energyConversatio=[" "];
+      organizationValue = energyConversatio;
+    }
+    if(organizationValue ==  "ENSEEG"){
+      var enseeg=[" "];
+      organizationValue = enseeg;
+    }
+     if(organizationValue ==  "ERASMUS UNIVERSITEIT ROTTERDAM"){
+      var ersmusUniversity=[" "];
+      organizationValue = ersmusUniversity;
+    }
+     if(organizationValue ==  "ERNEST ORLANDO LAWRENCE BERKELEY NATIONAL LABORATORY"){
+      var ernestOrlando=[" "];
+      organizationValue = ernestOrlando;
+    }
+    if(organizationValue ==  "ESCUELA CENTRAL DE NANTES"){
+      var schoolCenterNantes=[" "];
+      organizationValue = schoolCenterNantes;
+    }
+     if(organizationValue ==  "ESCUELA DE MEDICINA DENTAL DE TEL AVIV"){
+      var schoolMedicoDentalTel=[" "];
+      organizationValue = schoolMedicoDentalTel;
+    }
+     if(organizationValue ==  "ESCUELA NACIONAL SUPERIOR DE MINAS DE NANCY"){
+      var schoolNationalMinasNancy=[" "];
+      organizationValue = schoolNationalMinasNancy;
+    }
+     if(organizationValue ==  "ESCUELA NACIONAL SUPERIOR DE TELECOMUNICACIONES DE BRETANIA"){
+      var schoolNationalTelecomunications=[" "];
+      organizationValue = schoolNationalTelecomunications;
+    }
+    if(organizationValue ==  "ESCUELA TECNICA SUPERIOR DE INGENIEROS AERONAUTICOS"){
+      var schoolNationalEngieeniers=[" "];
+      organizationValue = schoolNationalEngieeniers;
+    }
+     if(organizationValue ==  "ESTACION BIOLOGICA DE DONANA"){
+      var stationBiologyDonana=[" "];
+      organizationValue = stationBiologyDonana;
+    }
+     if(organizationValue ==  "ESTACION EXPERIMENTAL DEL ZAIDIN CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICAS"){
+      var stationExperimentalZaidin=[" "];
+      organizationValue = stationExperimentalZaidin;
+    }
+      if(organizationValue ==  "EUROPEAN LABORATORY FOR PARTICLE PHYSICS CERN"){
+      var europeanLaboratoryParticle=[" "];
+      organizationValue = europeanLaboratoryParticle;
+    }
+     if(organizationValue ==  "FACULTAD LATINOAMERICANA DE CIENCIAS SOCIALES SEDE MEXICO"){
+      var schoolScienceMexico=["MAESTRIA EN POBLACION",
+                                "SEDE ACADEMICA BRASIL",
+                                "SEDE ACADEMICA CHILE",
+                                "SEDE ACADEMICA COSTA RICA",
+                                "SEDE ACADEMICA DE ARGENTINA",
+                                "SEDE ACADEMICA DE CUBA",
+                                "SEDE ACADEMICA DE MEXICO",
+                                "SEDE ACADEMICA ECUADOR",
+                                "SEDE ACADEMICA EL SALVADOR",
+                                "SEDE ACADEMICA GUATEMALA",
+                                "SEDE ACADEMICA REPUBLICA DOMINICANA",
+                                "SEDE ACADEMICA URUGUAY"];
+      organizationValue = schoolScienceMexico;
+    } 
+     if(organizationValue ==  "FERMI NATIONAL ACCELERATOR LABORATORY"){
+      var ferminationalAccelerator=[" "];
+      organizationValue = ferminationalAccelerator;
+    }
+     if(organizationValue ==  "FJE ENTERPRISE"){
+      var enterprise=[" "];
+      organizationValue = enterprise;
+    }
+     if(organizationValue ==  "FLORIDA STATE UNIVERSITY"){
+      var stateUniversityFlorida=["DEPARTMENT OF MATHEMATICS"];
+      organizationValue = stateUniversityFlorida;
+    }
+    if(organizationValue ==  "FLUORRX"){
+      var fluorrx=[" "];
+      organizationValue = fluorrx;
+    }
+    if(organizationValue ==  "FONDO MUNDIAL PARA LA NATURALEZA WWF"){
+      var downMundialFor=[" "];
+      organizationValue = downMundialFor;
+    }
+    if(organizationValue ==  "FUNDACION MEMORIA E HISTORIA VISUAL DEL HOLOCAUSTO SHOAH VISUAL HISTORY FOUNDATION"){
+      var fundationMemoryHistory=[" "];
+      organizationValue = fundationMemoryHistory;
+    }
+     if(organizationValue ==  "GEORGAUGUSTUNIVERSITAET ZU GOTTINGEN"){
+      var gottingen=[" "];
+      organizationValue = gottingen;
+    }
+     if(organizationValue ==  "GEORGETOWN UNIVERSITY"){
+      var georgetownUniversity=["DEPARTMENT OF DEMOGRAPHY",
+                                "DEPARTMENT OF PHILOSOPHY",
+                                "GEORGETOWN UNIVERSITY LAW CENTER"];
+      organizationValue = georgetownUniversity;
+    }
+     if(organizationValue ==  "GEORGIA INSTITUTE OF TECHNOLOGY"){
+      var georgiaInstitute=[" "];
+      organizationValue = georgiaInstitute;
+    }
+    if(organizationValue ==  "GIFU UNIVERSITY JAPAN"){
+      var gifuuniversity=[" "];
+      organizationValue = gifuuniversity;
+    }
+    if(organizationValue ==  "GRAND ACCELERATEUR NATIONAL D'LONS LOURDSs"){
+      var grandAccelerator=[" "];
+      organizationValue = grandAccelerator;
+    }
+    if(organizationValue ==  "GRUPO DE ESTUDIO DE FISICA DE MATERIALES INSACNRS"){
+      var groupStudiesInsacnrs=[" "];
+      organizationValue = groupStudiesInsacnrs;
+    }
+    if(organizationValue ==  "HAGGLUNDS DRIVES SEDE MEXICO"){
+      var hagglundsDrives=[" "];
+      organizationValue = hagglundsDrives;
+    }
+     if(organizationValue ==  "HAMBURGER STERNWARTE"){
+      var hambuergerStarnwarte=[" "];
+      organizationValue = hambuergerStarnwarte;
+    }
+    if(organizationValue ==  "HARVARD UNIVERSITY"){
+      var harvardUniversity=["CLÍNICA JOSLIN",
+                              "FACULTY OF ARTS AND SCIENCES",
+                              "GRADUATE SCHOOL OF ARTS AND SCIENCES",
+                              "HARVARD BUSINESS SCHOOL",
+                              "HARVARD COLLEGE",
+                              "HARVARD LAW SCHOOL",
+                              "HARVARD MEDICAL SCHOOL",
+                              "HARVARD SCHOOL OF PUBLIC HEALTH",
+                              "HARVARD UNIVERSITY GEORGE F. BAKER FOUNDATION",
+                              "HARVARD UNIVERSITY GRADUATE SCHOOL OF DESIGN",
+                              "HARVARD UNIVERSITY THE GRADUATE SCHOOL OF ARTS AND SCIENCES",
+                              "INSTITUTE FOR THEORETICAL ATOMIC AND MOLECULAR PHYSICS",
+                              "JOHN F.KENNEDY SCHOOL OF GOVERMENT HARVARD UNIVERSITY",
+                              "LAMONT-DOHERTY EARTH OBSERVATORY",
+                              "MUSEUM OF COMPARATIVE ZOOLOGY",
+                              "SMITHSONIAN CENTER FOR ASTROPHYSICS"];
+      organizationValue = harvardUniversity;
+    }
+    if(organizationValue ==  "HENRY FORD HOSPITAL"){
+      var henryFord=[" "];
+      organizationValue = henryFord;
+    }
+     if(organizationValue ==  "HOPITAUX DE PARIS"){
+      var hopitauxParis=[" "];
+      organizationValue = hopitauxParis;
+    }
+     if(organizationValue ==  "HOSPITAL FOR SICK CHILDREN"){
+      var hopitalDorSick=[" "];
+      organizationValue = hopitalDorSick;
+    }
+     if(organizationValue ==  "HOSPITAL FOR SPECIAL SURGERY"){
+      var hopitalForSpecialSurgery=[" "];
+      organizationValue = hopitalForSpecialSurgery;
+    }
+     if(organizationValue ==  "HOSPITAL UNIVERSITARIO DE MARACAIBO"){
+      var hopitaluniversityMaracaibo=[" "];
+      organizationValue = hopitaluniversityMaracaibo;
+    }
+     if(organizationValue ==  "HUMBOLDT UNIVERSITAT ZU BERLIN"){
+      var humboltUniversity=["INSTITUT FÜR SOZIALWISSENSCHAFTEN",
+                              "MATHEMATISCH-NATURWISSENSCHAFTLICHE FAKULTÄT II/INSTITUT FÜR MATHEMATIK"];
+      organizationValue = humboltUniversity;
+    }
+    if(organizationValue ==  "HYLSA SA DE CV"){
+      var hylsaSa=[" "];
+      organizationValue = hylsaSa;
+    }
+    if(organizationValue ==  "IHEALCREDAL"){
+      var ihealcredal=[" "];
+      organizationValue = ihealcredal;
+    }
+    if(organizationValue ==  "ILLINOIS INSTITUTE OF TECHNOLOGY"){
+      var illinoisInstitute=[" "];
+      organizationValue = illinoisInstitute;
+    }
+     if(organizationValue ==  "IMPERIAL COLLEGE OF SCIENCE TECHNOLOGY AND MEDICINEs"){
+      var collegeScieneAnd=[" "];
+      organizationValue = collegeScieneAnd;
+    }
+     if(organizationValue ==  "INDIAN INSTITUTE OF ASTROPHYSICS BANGALORE"){
+      var isntituteIndianOf=[" "];
+      organizationValue = isntituteIndianOf;
+    }
+     if(organizationValue ==  "INDIANA UNIVERSITY"){
+      var universityIndiana=["PURDUE UNIVERSITY AT INDIANAPOLIS"];
+      organizationValue = universityIndiana;
+    }
+     if(organizationValue ==  "INRAMONTPELLIER"){
+      var inramontpellier=[" "];
+      organizationValue = inramontpellier;
+    }
+    if(organizationValue ==  "INRIA SOPHIA ANTIPOLIS PROJECTO ARIANA"){
+      var inriaSophiaAntipolis=[" "];
+      organizationValue = inriaSophiaAntipolis;
+    }
+    if(organizationValue ==  "INSTITUT DE CHIMIE DES SUBSTANCES NATURELLES"){
+      var chimieInstitut=[" "];
+      organizationValue = chimieInstitut;
+    }
+    if(organizationValue ==  "INSTITUT DE PHYSIQUE ET CHIMIE DES MATERIAUX DE STRASBOURG"){
+      var PhysiqueInstitut=[" "];
+      organizationValue = PhysiqueInstitut;
+    }
+      if(organizationValue ==  "INSTITUT DE RECHERCHES SUBATOMIQUES"){
+      var institutReserches=[" "];
+      organizationValue = institutReserches;
+    }
+      if(organizationValue ==  "INSTITUT DES PRODUITS DE LA VIGNE"){
+      var institutProductsVine=[" "];
+      organizationValue = institutProductsVine;
+    }
+    if(organizationValue ==  "INSTITUT FRANCAIS DE RECHERCHE POUR L`EXPLOTATION DE LA MER"){
+      var institutPFrancaisREcherche=[" "];
+      organizationValue = institutPFrancaisREcherche;
+    }
+    if(organizationValue ==  "INSTITUT FRANCAIS POUR LEXPLOTATION DE LA MER LAB BIOCHIMIE DES MOLECULES MARINES"){
+      var institutPFrancaisLexplotation=[" "];
+      organizationValue = institutPFrancaisLexplotation;
+    }
+    if(organizationValue ==  "INSTITUT FUR TECHNISCHE MECHANIK TH: AACHEN"){
+      var institutFurMEchanic=[" "];
+      organizationValue = institutFurMEchanic;
+    }
+     if(organizationValue ==  "INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE"){
+      var institutNationalAutomatique=[" "];
+      organizationValue = institutNationalAutomatique;
+    }
+    if(organizationValue ==  "INSTITUT NATIONAL POLYTECHNIQUE DE GRENOBLE"){
+      var institutNationalGrenoble=["ECOLE NATIONALE SUPERIEURE D AGRONOMIE ET DES INDUSTRIES ALIMENTAIRES-ENSAIA",
+                                    "ECOLE NATIONALE SUPERIEURE D ELECTROCHIMIE ET DE ELECTROMETALLURGIE DE GRENOBLE",
+                                    "ECOLE NATIONALE SUPERIEURE D ELECTRONIQUE ET DE RADIO ELECTRICITE DE GRENOBLE",
+                                    "ECOLE NATIONALE SUPERIEURE D INFORMATIQUE ET DE MATEMATIQUES APLIQUEES DE GRENOBLE",
+                                    "ÉCOLE NATIONALE SUPÉRIEURE D'INGÉNIEURS ELECTRICIENS DE GRENOBLE",];
+      organizationValue = institutNationalGrenoble;
+    }
+    if(organizationValue ==  "INSTITUT NATIONAL POLYTECHNIQUE DE TOULOUSE"){
+      var institutNationalToulouse=["ECOLE NATIONALE SUPERIEURE AGRONOMIQUE DE TOULOUSE",
+                                    "ECOLE NATIONALE SUPERIEURE DES INGENIEURS EN ARTS CHIMIQUES ET TECHNOLOGIQUES",
+                                    "ECOLE NATIONALE SUPÉRIEURE D¿ELECTROTECHNIQUE, D¿ELECTRONIQUE, D¿INFORMATIQUE, D¿HYDRAULIQUE ET DES TÉLÉCOMMUNICATIONS",];
+      organizationValue = institutNationalToulouse;
+    }
+     if(organizationValue ==  "INSTITUT NATIONAL STATISTIQUE ET RECHERCHE MEDICALE"){
+      var institutNationalRecherche=[" "];
+      organizationValue = institutNationalRecherche;
+    }
+    if(organizationValue ==  "INSTITUT PASTEUR"){
+      var institutPasteur=[" "];
+      organizationValue = institutPasteur;
+    }
+    if(organizationValue ==  "INSTITUTE DE GERIATRIE DE MONTREAL"){
+      var institutGeriatriaMontreal=[" "];
+      organizationValue = institutGeriatriaMontreal;
+    }
+    if(organizationValue ==  "INSTITUTE DE RECHERCHE POUR LE DEVELOPPEMENT"){
+      var institutRechercheDev=[" "];
+      organizationValue = institutRechercheDev;
+    }
+    if(organizationValue ==  "INSTITUTE DE RECHERCHES SUBATOMIQUES"){
+      var institutRecherchesSubatomiques=[" "];
+      organizationValue = institutRecherchesSubatomiques;
+    }
+     if(organizationValue ==  "INSTITUTE FOR ADVANCED STUDY"){
+      var institutAdvancedStudy=[" "];
+      organizationValue = institutAdvancedStudy;
+    }
+    if(organizationValue ==  "INSTITUTE FOR CULTURAL ECOLOGY"){
+      var institutForCultural=[" "];
+      organizationValue = institutForCultural;
+    }
+    if(organizationValue ==  "INSTITUTE FOR OCEANOGRAPHIC RESEARCH IN THE BALTIC SEA"){
+      var institutForResearch=[" "];
+      organizationValue = institutForResearch;
+    }
+    if(organizationValue ==  "INSTITUTE FUER FESTKOERPERFORSCHUNG"){
+      var institutFuerFest=[" "];
+      organizationValue = institutFuerFest;
+    }
+    if(organizationValue ==  "INSTITUTE OF AQUACULTURE RESEARCH AS"){
+      var institutOfREsearchAuqa=[" "];
+      organizationValue = institutOfREsearchAuqa;
+    }
+    if(organizationValue ==  "INSTITUTE OF CHEMICAL TECHNOLOGY"){
+      var institutChemical=[" "];
+      organizationValue = institutChemical;
+    }
+     if(organizationValue ==  "INSTITUTE OF INFORMATION THEORY AND AUTOMATION"){
+      var institutInfomationTheory=[" "];
+      organizationValue = institutInfomationTheory;
+    }
+    if(organizationValue ==  "INSTITUTE OF MECHANICAL ENGINEERING PROBLEMS RAS"){
+      var institutMechanicalEngineering=[" "];
+      organizationValue = institutMechanicalEngineering;
+    }
+    if(organizationValue ==  "INSTITUTE OF PHYSICS OF NATIONAL ACADEMY OF SCIENCES OF BELARUS"){
+      var institutNationalAcademy=[" "];
+      organizationValue = institutNationalAcademy;
+    }
+    if(organizationValue ==  "INSTITUTE OF PLANT PHYSIOLOGY OF THE RUSSIAN ACADEMY OF SCIENCES"){
+      var institutNationalAcademySciences=[" "];
+      organizationValue = institutNationalAcademySciences;
+    }
+    if(organizationValue ==  "INSTITUTO ASTROFISICO DE CANARIAS"){
+      var institutAStroPhisique=[" "];
+      organizationValue = institutAStroPhisique;
+    }
+     if(organizationValue ==  "INSTITUTO CAJAL"){
+      var institutCajal=[" "];
+      organizationValue = institutCajal;
+    }
+    if(organizationValue ==  "INSTITUTO CERVANTES"){
+      var institutCervantes=[" "];
+      organizationValue = institutCervantes;
+    }
+    if(organizationValue ==  "INSTITUTO CHARLES SADRON CNRS"){
+      var institutCharkesSadron=["LABORATOIRE DE CRISTALLOGRAPHIE",
+                                  "LENA-(NEUROSCIENCES COGNITIVES ET IMAGERIE CEREBRALE)CNRS UPR 640 HOPITAL DE LA SALPETRIERE",];
+      organizationValue = institutCharkesSadron;
+    }
+    if(organizationValue ==  "INSTITUTO CULTURAL CABANAS"){
+      var institutCulturalCabanas=[" "];
+      organizationValue = institutCulturalCabanas;
+    }
+    if(organizationValue ==  "INSTITUTO DE ACUSTICA CSIC DE MADRID"){
+      var institutAcusticaCsic=["CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICAS"];
+      organizationValue = institutAcusticaCsic;
+    }
+    if(organizationValue ==  "INSTITUTO DE ALTOS ESTUDIOS UNIVERSIDAD DE PARIS 3"){
+      var institutLongStudies=[" "];
+      organizationValue = institutLongStudies;
+    }
+     if(organizationValue ==  "INSTITUTO DE CERAMICA Y VIDRIO MADRID"){
+      var institutLCeramicaVidrio=[" "];
+      organizationValue = institutLCeramicaVidrio;
+    }
+    if(organizationValue ==  "INSTITUTO DE CERAMICOS DE SHANGHAI ACADEMIA CHINA DE CIENCIAS"){
+      var institutLCeramicaSgangahis=[" "];
+      organizationValue = institutLCeramicaSgangahis;
+    }
+    if(organizationValue ==  "INSTITUTO DE CIBERNETICA FISICA Y MATEMATICAS HABANA CUBA"){
+      var institutLciberneticPhisical=[" "];
+      organizationValue = institutLciberneticPhisical;
+    }
+    if(organizationValue ==  "INSTITUTO DE CIENCIAS EN CONTROL MOSCU RUSIA"){
+      var institutScienceControlMoscu=[" "];
+      organizationValue = institutScienceControlMoscu;
+    }
+    if(organizationValue ==  "INSTITUTO DE CIENCIAS WEIZMANN"){
+      var institutScienceWeizmann=[" "];
+      organizationValue = institutScienceWeizmann;
+    }
+     if(organizationValue ==  "INSTITUTO DE ESTRUCTURA DE LA MATERIA CSIC"){
+      var institutStructureMteria=[" "];
+      organizationValue = institutStructureMteria;
+    }
+     if(organizationValue ==  "INSTITUTO DE FISICA NUCLEAR DE ORSAY"){
+      var institutPhisicalOrsay=[" "];
+      organizationValue = institutPhisicalOrsay;
+    }
+    if(organizationValue ==  "INSTITUTO DE INVESTIGACIONES OPTICAS DAZA DE VALDES CSIC"){
+      var institutResearchingOpticasDaza=[" "];
+      organizationValue = institutResearchingOpticasDaza;
+    }
+    if(organizationValue ==  "INSTITUTO DE MATEMATICAS DE NOVOSIBIRSK"){
+      var institutMAthNovo=[" "];
+      organizationValue = institutMAthNovo;
+    }
+     if(organizationValue ==  "INSTITUTO DE QUIMICA FISICA ROCASOLANO CSIC DEDM"){
+      var institutChemistryCsic=[" "];
+      organizationValue = institutChemistryCsic;
+    }
+     if(organizationValue ==  "INSTITUTO DE QUIMICA ORGANICA GENERAL CSIC"){
+      var institutChemistryOrganic=[" "];
+      organizationValue = institutChemistryOrganic;
+    }
+    if(organizationValue ==  "INSTITUTO ESTATAL DE ELECTRONICA Y MATEMATICAS DE MOSCU"){
+      var institutMathMoscu=[" "];
+      organizationValue = institutMathMoscu;
+    }
+    if(organizationValue ==  "INSTITUTO FRANCES DE INVESTIGACIONES MARINAS"){
+      var institutREsearchingMarines=[" "];
+      organizationValue = institutREsearchingMarines;
+    }
+    if(organizationValue ==  "INSTITUTO GEOLOGICAL NUCLEAR SCIENCES"){
+      var institutGeological=[" "];
+      organizationValue = institutGeological;
+    }
+    if(organizationValue ==  "INSTITUTO ISRAELI DE TECNOLOGIA"){
+      var institutIsraelTEchnology=[" "];
+      organizationValue = institutIsraelTEchnology;
+    }
+    if(organizationValue ==  "INSTITUTO KAROLINSKA ESTOCOLMO SUECIA"){
+      var institutEstocolmoCuecia=["UNIT OF COMPUTATIONAL MEDICINE"];
+      organizationValue = institutEstocolmoCuecia;
+    }
+    if(organizationValue ==  "INSTITUTO MAX PLANCK DE PSICOLINGUISTICA"){
+      var institutMAxPlanck=[" "];
+      organizationValue = institutMAxPlanck;
+    }
+    if(organizationValue ==  "INSTITUTO NACIONAL DE DESIERTOS FLORA Y FAUNA"){
+      var institutNationalFlora=[" "];
+      organizationValue = institutNationalFlora;
+    }
+     if(organizationValue ==  "INSTITUTO NACIONAL POLITECNICO DE GRENOBLE"){
+      var institutNationalpolitecnoc=[" "];
+      organizationValue = institutNationalpolitecnoc;
+    }
+    if(organizationValue ==  "INSTITUTO NAZIONALE DI FISICA NUCLEARE SEZIONE DI MILANO"){
+      var institutNationalPhisical=[" "];
+      organizationValue = institutNationalPhisical;
+    }
+    if(organizationValue ==  "INSTITUTO ORSTOM CREDAL"){
+      var institutOrstomCredial=[" "];
+      organizationValue = institutOrstomCredial;
+    }
+    if(organizationValue ==  "INSTITUTO SUPERIOR DE CIENCIAS Y TECNOLOGIA NUCLEARES LA HABANA"){
+      var institutSciencesTechnology=[" "];
+      organizationValue = institutSciencesTechnology;
+    }
+    if(organizationValue ==  "INSTITUTO SUPERIOR TECNICO"){
+      var institutSuperiorTEcnic=[" "];
+      organizationValue = institutSuperiorTEcnic;
+    }
+     if(organizationValue ==  "INSTITUTO TECNOLOGICO DE COSTA RICA"){
+      var institutSuperiorTEcnicCoastRica=[" "];
+      organizationValue = institutSuperiorTEcnicCoastRica;
+    }
+    if(organizationValue ==  "INSTITUTO ZOOLOGICO"){
+      var institutZoologic=[" "];
+      organizationValue = institutZoologic;
+    }
+    if(organizationValue ==  "INSTITUTOS NACIONALES DE SALUD EN BETHESDA"){
+      var institutNationalsBethesda=[" "];
+      organizationValue = institutNationalsBethesda;
+    }
+    if(organizationValue ==  "INSTIUTO NAZIONALE DI FISICA NUCLEARESEZIONE DI MILANO"){
+      var institutNationalsPhisical=[" "];
+      organizationValue = institutNationalsPhisical;
+    }
+     if(organizationValue ==  "INTEGRATED APPROACH TO CROP RESEARCH"){
+      var integratedApprobach=[" "];
+      organizationValue = integratedApprobach;
+    }
+     if(organizationValue ==  "INTERNATIONAL AGENCY FOR RESEARCH ON CANCER"){
+      var internationalAgencyResearch=[" "];
+      organizationValue = internationalAgencyResearch;
+    }
+    if(organizationValue ==  "INTITUT FUR FESTKOPERFORSCHUNG"){
+      var intitutFurFestko=[" "];
+      organizationValue = intitutFurFestko;
+    }
+    if(organizationValue ==  "IREM DE STRASBOURG"){
+      var iremStrasbourg=[" "];
+      organizationValue = iremStrasbourg;
+    }
+    if(organizationValue ==  "ISTITUTO NAZIONALE DI FISICA NUCLEARE"){
+      var instituteNazionale=[" "];
+      organizationValue = instituteNazionale;
+    }
+     if(organizationValue ==  "STITUTO UNIVERSITARIO DI ARCHITETTURA"){
+      var instituteUnivesityArchi=[" "];
+      organizationValue = instituteUnivesityArchi;
+    }
+    if(organizationValue ==  "JAPAN ATOMIC ENERGY RESEARCH INSTITUTE"){
+      var japanAtomic=[" "];
+      organizationValue = japanAtomic;
+    }
+    if(organizationValue ==  "JARDIN BOTANICO DE NUEVA YORK"){
+      var gardenBotanicNew=[" "];
+      organizationValue = gardenBotanicNew;
+    }
+    if(organizationValue ==  "JET PROPULSION LABORATORY CALIFORNIA INSTITUTE OF TECHNOLOGY"){
+      var jetLaboratoryInstitute=[" "];
+      organizationValue = jetLaboratoryInstitute;
+    }
+    if(organizationValue ==  "JOINT INSTITUTE FOR NUCLEAR RESEARCH"){
+      var jointInstitute=[" "];
+      organizationValue = jointInstitute;
+    }
+    if(organizationValue ==  "JPL/CALTECH PASADENA"){
+      var jplCaltech=[" "];
+      organizationValue = jplCaltech;
+    }
+    if(organizationValue ==  "KANSAS STATE UNIVERSITY"){
+      var kansasState=["MEDICAL CENTER",
+                        "NATURAL HISTORY MUSEUM",];
+      organizationValue = kansasState;
+    }
+    if(organizationValue ==  "KATHOLIEKE UNIVERSITEIT NIJMEGEN"){
+      var nijmegen=[" "];
+      organizationValue = nijmegen;
+    }
+    if(organizationValue ==  "KIKA DE LA GARZA SUBTROPICAL RESEARCH CENTER USDA"){
+      var kkaOfTheGarza=[" "];
+      organizationValue = kkaOfTheGarza;
+    }
+     if(organizationValue ==  "KOREA ADVANCED INSTITUTE OF SCIENCE AND TECHNOLOGY"){
+      var koreaAdvancedScience=[" "];
+      organizationValue = koreaAdvancedScience;
+    }
+     if(organizationValue ==  "LAASCNRS"){
+      var lasscnrs=["LABORATOIRE DETUDES DES PROPRIETES ELECTRONIQUES DES SOLIDES"];
+      organizationValue = lasscnrs;
+    }
+     if(organizationValue ==  "LABORATOIRE LSR LOGICIELS SYSTEMES RESEAUX IMAG FRANCIA"){
+      var laboratoriesLsrSystems=[" "];
+      organizationValue = laboratoriesLsrSystems;
+    }
+    if(organizationValue ==  "LABORATORIO DE INGENIERIA DE PROCESOS CATALITICOS"){
+      var laboratorieEngieeniers=[" "];
+      organizationValue = laboratorieEngieeniers;
+    }
+    if(organizationValue ==  "LABORATORIOS ABBOTT"){
+      var laboratorieAbott=[" "];
+      organizationValue = laboratorieAbott;
+    }
+    if(organizationValue ==  "LANKENAU INSTITUTE FORMEDICAL RESEARCH"){
+      var lankenauinstitute=[" "];
+      organizationValue = lankenauinstitute;
+    }
+    if(organizationValue ==  "LAWRENCE LIVERMORE NATIONAL LABORATORY CALIFORNIA"){
+      var lankenauNational=[" "];
+      organizationValue = lankenauNational;
+    }
+    if(organizationValue ==  "LIMBURGS UNIVERSITAIR CENTRUM"){
+      var universityCentrum=["FACULTEIT WETENSCHAPPEN"];
+      organizationValue = universityCentrum;
+    }
+    if(organizationValue ==  "LOS ALAMOS NATIONAL LABORATORY"){
+      var theAlamosNationalLab=[" "];
+      organizationValue = theAlamosNationalLab;
+    }
+    if(organizationValue ==  "LOUISIANA STATE UNIVERSITY"){
+      var stateUniversityLouisiana=["LOUISIANA STATE UNIVERSITY SYSTEM"];
+      organizationValue = stateUniversityLouisiana;
+    }
+     if(organizationValue ==  "LUNAR AND PLANETARY INSTITUTE"){
+      var lunarAndPlanetary=[" "];
+      organizationValue = lunarAndPlanetary;
+    }
+    if(organizationValue ==  "MASSACHUSETTS EYE & EAR INFIRMARY"){
+      var eyeAndEar=[" "];
+      organizationValue = eyeAndEar;
+    }
+    if(organizationValue ==  "MASSACHUSETTS GENERAL HOSPITAL"){
+      var generalHospitalGeneral=["MGH-INSTITUTE OF HEALTH PROFESSIONS"];
+      organizationValue = generalHospitalGeneral;
+    }
+    if(organizationValue ==  "MASSACHUSETTS INSTITUTE OF TECHNOLOGY"){
+      var instituteTechnologyOF=["INSTITUTE FOR MEDICAL ENGINEERING AND SCIENCE",
+                                "SLOAN MANAGEMENT SCHOOL",
+                                "THE ABDUL LATIF JAMEEL POVERTY ACTION LAB",
+                                "WOODS HOLE OCEANOGRAPHIC INSTITUTION"];
+      organizationValue = instituteTechnologyOF;
+    }
+    if(organizationValue ==  "MCMASTER UNIVERSITY"){
+      var McmasterUnniversity=[" "];
+      organizationValue = McmasterUnniversity;
+    }
+    if(organizationValue ==  "MICHIGAN STATE UNIVERSITY"){
+      var michiganState=[" "];
+      organizationValue = michiganState;
+    }
+     if(organizationValue ==  "MICHIGAN TECHNOLOGICAL UNIVERSITY"){
+      var michiganUniversity=[" "];
+      organizationValue = michiganUniversity;
+    }
+     if(organizationValue ==  "MONTANA STATE UNIVERSITY"){
+      var montanaStateUnivesity=[" "];
+      organizationValue = montanaStateUnivesity;
+    }
+     if(organizationValue ==  "MOSCAMED"){
+      var moscamed=[" "];
+      organizationValue = moscamed;
+    }
+    if(organizationValue ==  "MOUNT SINAI MEDICAL CENTER"){
+      var mountSinaiMedical=[" "];
+      organizationValue = mountSinaiMedical;
+    }
+    if(organizationValue ==  "MUSEO DE HISTORIA NATURAL DE LIMA PERU"){
+      var museumHistoryNatural=[" "];
+      organizationValue = museumHistoryNatural;
+    }
+     if(organizationValue ==  "MUSEO NACIONAL DE HISTORIA NATURAL"){
+      var museumHistoryNaturalNational=[" "];
+      organizationValue = museumHistoryNaturalNational;
+    }
+    if(organizationValue ==  "MUSEUM NATIONAL D HISTOIRE NATURELLE"){
+      var museumNationalNaturelle=[" "];
+      organizationValue = museumNationalNaturelle;
+    }
+    if(organizationValue ==  "MUSEUM OF NORTHERN ARIZONA GEOLOGY"){
+      var museumOfNorthern=[" "];
+      organizationValue = museumOfNorthern;
+    }
+    if(organizationValue ==  "N COPERNICUS ASTRONOMICAL CENTER"){
+      var astronomicalCenter=[" "];
+      organizationValue = astronomicalCenter;
+    }
+    if(organizationValue ==  "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION"){
+      var nationalAreonautics=[" "];
+      organizationValue = nationalAreonautics;
+    }
+    if(organizationValue ==  "NATIONAL HEALTH INSTITUTE"){
+      var nationalHealth=[" "];
+      organizationValue = nationalHealth;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF AGING"){
+      var nationalInstituteAging=[" "];
+      organizationValue = nationalInstituteAging;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF CHILD HEALTH AND HUMAN DEVELOPMENT"){
+      var nationalInstituteChild=[" "];
+      organizationValue = nationalInstituteChild;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF ENVIRONMENTAL HEALTH SCIENCES"){
+      var nationalInstituteSciences=[" "];
+      organizationValue = nationalInstituteSciences;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF MATERIALS AND CHEMICAL RESEARCH"){
+      var nationalInstituteChemicalResearch=[" "];
+      organizationValue = nationalInstituteChemicalResearch;
+    }
+    if(organizationValue ==  "NATIONAL INSTITUTE OF MENTAL HEALTH NATIONAL CANCER INSTITUTE"){
+      var nationalInstituteCancer=[" "];
+      organizationValue = nationalInstituteCancer;
+    }
+      if(organizationValue ==  "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY"){
+      var nationalInstituteStandards=[" "];
+      organizationValue = nationalInstituteStandards;
+    }
+    if(organizationValue ==  "NATIONAL MUSEUM OF NATURAL HISTORY SMITHSONIAN INST"){
+      var nationalMuseummNaturalHistory=[" "];
+      organizationValue = nationalMuseummNaturalHistory;
+    }
+    if(organizationValue ==  "NATIONAL OCEANIC ATMOSPHERIC ADMINISTRATION"){
+      var nationalOceanicAdmin=[" "];
+      organizationValue = nationalOceanicAdmin;
+    }
+    if(organizationValue ==  "NATIONAL ZOOLOGICAL PARK/SMITHSONIAN INSTITUTION"){
+      var nationalZoologicalPark=[" "];
+      organizationValue = nationalZoologicalPark;
+    }
+    if(organizationValue ==  "NATURAL HISTORY MUSEUM OF LOS ANGELES COUNTY"){
+      var nationalHistoryAngeles=[" "];
+      organizationValue = nationalHistoryAngeles;
+    }
+     if(organizationValue ==  "NATURAL MUSEUM HISTORY SWEDEN"){
+      var nationalMuseumHistory=[" "];
+      organizationValue = nationalMuseumHistory;
+    }
+      if(organizationValue ==  "NCAURUSDA"){
+      var caurusda=[" "];
+      organizationValue = caurusda;
+    }
+    if(organizationValue ==  "NEW ENGLAND MEDICAL CENTER"){
+      var newEngland=[" "];
+      organizationValue = newEngland;
+    }
+    if(organizationValue ==  "NEW MEXICO INSTITUTE OF MINING AND TECHNOLOGY"){
+      var newMexicoMinig=[" "];
+      organizationValue = newMexicoMinig;
+    }
+    if(organizationValue ==  "NEW MEXICO STATE UNIVERSITY"){
+      var newMexicoState=["ASTRONOMY DEPARTMENT",
+                          "DEPARTAMENTO DE CIENCIAS BIOLOGICAS",
+                          "DEPARTMENT GEOLOGICAL SCIENCES",
+                          "ECONOMIC DEPARTAMENT"];
+      organizationValue = newMexicoState;
+    }
+    if(organizationValue ==  "NEW YORK MEDICAL COLLEGE"){
+      var newYorkMedical=[" "];
+      organizationValue = newYorkMedical;
+    }
+    if(organizationValue ==  "NEW YORK UNIVERSITY"){
+      var newYorkUniversity=["CENTER FOR GENOMICS AND SYSTEMS BIOLOGY",
+                            "CENTER FOR NEURAL SCIENCE",
+                            "COURANT INSTITUTE OF MATHEMATICAL SCIENCES",
+                            "DEPARTMENT OF CHEMISTRY",
+                            "HEALTH SCIENCE CENTER AT BROOKLYN",
+                            "INSTITUTE OF RECONSTRUCTIVE PLASTIC SURGERY",
+                            "MOUNT SINAI SCHOOL OF MEDICINE",
+                            "NEW YORK UNIVERSITY-LEONARD N. STERN SCHOOL OF BUSINESS",
+                            "SCHACK INSTITUTE OF REAL ESTATE",
+                            "SCHOOL OF LAW"];
+      organizationValue = newYorkUniversity;
+    }
+    if(organizationValue ==  "NORTH CAROLINA STATE UNIVERSITY"){
+      var northCarolinaState=[" "];
+      organizationValue = northCarolinaState;
+    }
+     if(organizationValue ==  "NUCL PHYS INST CZECH ACADEMY OF SCIENCE PRAGA"){
+      var nuclPhys=[" "];
+      organizationValue = nuclPhys;
+    }
+     if(organizationValue ==  "OAK RIDGE NATIONAL LABORATORY"){
+      var oakRiddgeNational=["COMPUTER SCIENCE AND MATHEMATICAL DIVISION"];
+      organizationValue = oakRiddgeNational;
+    }
+    if(organizationValue ==  "OBSERVATOIRE DE PARIS MEUDON"){
+      var observatoriesParis=[" "];
+      organizationValue = observatoriesParis;
+    }
+    if(organizationValue ==  "OBSERVATORIO ASTROFISICO ESPECIAL"){
+      var observatoriesSpecial=[" "];
+      organizationValue = observatoriesSpecial;
+    }
+     if(organizationValue ==  "OBSERVATORIO ASTRONOMICO DE STRASBOURG"){
+      var observatorieAstronomico=[" "];
+      organizationValue = observatorieAstronomico;
+    }
+     if(organizationValue ==  "OBSERVATORIO NACIONAL DE RIO DE JANEIRO"){
+      var observatorieRieJaneiro=[" "];
+      organizationValue = observatorieRieJaneiro;
+    }
+    if(organizationValue ==  "OHAIO STATE UNIVERSITY"){
+      var ohaioStateUniversity=[" "];
+      organizationValue = ohaioStateUniversity;
+    }
+    if(organizationValue ==  "OKLAHOMA MEDICAL RESEARCH FUNDATION"){
+      var oklahomaMedical=[" "];
+      organizationValue = oklahomaMedical;
+    }
+    if(organizationValue ==  "OKLAHOMA STATE UNIVERSITY"){
+      var oklahomastate=[" "];
+      organizationValue = oklahomastate;
+    }
+    if(organizationValue ==  "ORGANIZACION DE LAS NACIONES UNIDAS"){
+      var organizationNationesUnid=["COMISION ECONOMICA PARA AMERICA LATINA",
+                                    "FONDO DE LAS NACIONES UNIDAS PARA LA INFANCIA",
+                                    "ORGANIZACION DE LAS NACIONES UNIDAS PARA LA AGRICULTURA Y LA ALIMENTACION",
+                                    "ORGANIZACION DE LAS NACIONES UNIDAS PARA LA CIENCIA, LA EDUCACION Y LA CULTURA",
+                                    "ORGANIZACION DEL TRATADO PARA LA PROHIBICION COMPLETA DE ENSAYOS NUCLEARES",
+                                    "ORGANIZACION MUNDIAL DE LA SALUD",
+                                    "ORGANIZACION PANAMERICANA DE LA SALUD",
+                                    "PROGRAMA DE LAS NACIONES UNIDAS SOBRE EL MEDIO AMBIENTE",
+                                    "TRIBUNAL PENAL INTERNACIONAL PARA LA EX YUGOSLAVIA",];
+      organizationValue = organizationNationesUnid;
+    }
+    if(organizationValue ==  "ORGANIZACION DE LOS ESTADOS AMERICANOS"){
+      var organizationStateMexico=["INSTITUTO PANEMERICANO DE GEOGRAFÍA E HISTORIA",
+                                    "MUSEO DE ARTE DE LAS AMERICAS"];
+      organizationValue = organizationStateMexico;
+    }
+     if(organizationValue ==  "ORGANIZACION INTERNACIONAL DE LAS CIENCIAS QUIMICAS PARA EL DESARROLLO"){
+      var organizationInternationalScience=[" "];
+      organizationValue = organizationInternationalScience;
+    }
+     if(organizationValue ==  "PROGRAMA INTERNACIONAL DE PERFORACIONES CONTINENTALES"){
+      var programaInternational=[" "];
+      organizationValue = programaInternational;
+    }
+    if(organizationValue ==  "QUEENSLAND UNIVERSITY OF TECHNOLOGY"){
+      var queensland=[" "];
+      organizationValue = queensland;
+    }
+    if(organizationValue ==  "STANFORD UNIVERSITY"){
+      var standardsUniversity=["CENTER FOR LATIN AMERICAN STUDIES",
+                                "DEPARTAMENTO DE CIENCIAS BIOLOGICAS",
+                                "ENVIRONMENTAL EARTH SYSTEM SCIENCE",
+                                "INSTITUTE FOR INTERNATIONAL STUDIES",
+                                "SCHOOL OF MEDICINE",
+                                "STANFORD SYNCHROTRON RADIATION LIGHTSOURCE"];
+      organizationValue = standardsUniversity;
+    }
+    if(organizationValue ==  "STONY BROOK UNIVERSITY"){
+      var stonyBook=[" "];
+      organizationValue = stonyBook;
+    }
+    if(organizationValue ==  "TECHNIONISRAEL INSTITUTE OF TECNOLOGY"){
+      var technologyInstitute=[" "];
+      organizationValue = technologyInstitute;
+    }
+    if(organizationValue ==  "TEXAS TECH UNIVERSITY"){
+      var techuniversity=[" "];
+      organizationValue = techuniversity;
+    }
+     if(organizationValue ==  "THE UNIVERSITY OF WARWICK"){
+      var theUniversityOR=["CENTRO DE ESTUDIOS EN RELACIONES ETNICAS"];
+      organizationValue = theUniversityOR;
+    }
+     if(organizationValue ==  "TRUDEAU INSTITUTE INC"){
+      var trudeauInstitute=[" "];
+      organizationValue = trudeauInstitute;
+    }
+      if(organizationValue ==  "UNIDAD DE INVESTIGACION MEDICA EN ENFERMEDADES INFECCIOSAS Y PARASITARIAS"){
+      var researchingMedico=["HOSPITAL DE PEDIATRIA CMN SIGLO XXI"];
+      organizationValue = researchingMedico;
+    }
+      if(organizationValue ==  "UNITED STATE DEPARTMENT OF AGRICULTURE"){
+      var unitedStateDepar=[" "];
+      organizationValue = unitedStateDepar;
+    }
+     if(organizationValue ==  "UNIVERSIDAD AUTONOMA DE MADRID"){
+      var universityAtonoma=["FACULTAD DE CIENCIAS ECONOMICAS Y EMPRESARIALES"];
+      organizationValue = universityAtonoma;
+    }
+     if(organizationValue ==  "UNIVERSIDAD CATOLICA DE LOVAINA"){
+      var universityCatolicaLvaina=[" "];
+      organizationValue = universityCatolicaLvaina;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE CALIFORNIA IRVINE"){
+      var universityCaliforniaIrvine=[" "];
+      organizationValue = universityCaliforniaIrvine;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE CALIFORNIA RIVERSIDE"){
+      var universityCaliforniaRiversidee=["DEPARTMENT OF CHEMISTRY"];
+      organizationValue = universityCaliforniaRiversidee;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE CALIFORNIA SAN DIEGO"){
+      var universityCaliforniaSanDiego=["AMES, BIOENGINEERING",
+                                    "BIOCIRCUITS INSTITUTE",
+                                    "CENTRO DE ESTUDIOS MEXICO ESTADOS UNIDOS",
+                                    "DEPARTAMENTO DE INGENIERÍA MECÁNICA Y AEROESPACIAL",
+                                    "INSTITUTE FOR NONLINEAR SCIENCE",];
+      organizationValue = universityCaliforniaSanDiego;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE FRIBOURG"){
+      var universityFriboug=[" "];
+      organizationValue = universityFriboug;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE ILLINOIS"){
+      var universityIllinos=["ASTRONOMY DEPARTMENT",
+                              "UNIVERSIDAD DE ILLINOIS URBANA CHAMPAIGN",];
+      organizationValue = universityIllinos;
+    }
+     if(organizationValue ==  "UNIVERSIDAD DE KONSTANZ"){
+      var universityKonstanz=[" "];
+      organizationValue = universityKonstanz;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE LA CIUDAD DE NUEVA YORK"){
+      var universityCityNew=[" "];
+      organizationValue = universityCityNew;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE LA COLUMBIA BRITANICA"){
+      var universityBritanic=[" "];
+      organizationValue = universityBritanic;
+    }
+     if(organizationValue ==  "UNIVERSIDAD DE LA HABANA CUBA"){
+      var universityHabanCuba=["CENTRO DE BIOMATERIALES",
+                              "CENTRO DE INVESTIGACIONES MARINAS",
+                              "FACULTAD DE BIOLOGÍA",
+                              "FACULTAD DE CIENCIAS Y TECNLOGIA NUCLEARES",
+                              "FACULTAD DE COMUNICACIÓN",
+                              "FACULTAD DE FARMACIA Y ALIMENTOS",
+                              "FACULTAD DE FILOSOFÍA",
+                              "FACULTAD DE FISICA",
+                              "FACULTAD DE GEOGRAFÍA",
+                              "FACULTAD DE MATEMÁTICA Y COMPUTACIÓN",
+                              "FACULTAD DE PSICOLOGIA",
+                              "FACULTAD DE QUÍMICA",
+                              "FACULTAD DE SOCIOLOGÍA",
+                              "INSTITUTO DE MATERIALES Y REACTIVOS",
+                              "UNIVERSIDAD DE LA HABANA/FACULTAD DE MATEMÁTICA/DEPARTAMENTO MATEMÁTICA APLICADA",];
+      organizationValue = universityHabanCuba;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE LEIDEN"){
+      var universityLeiden=["CAMPUS LA HAYA",
+                            "SOCIAL AN BEHAVIOURAL SCIENCES",];
+      organizationValue = universityLeiden;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE MISSOURICOLUMBIA"){
+      var universityMissour=[" "];
+      organizationValue = universityMissour;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE PENNSYLVANIA"){
+      var universityPennsylvania=["COLLEGE OF MEDICINE",
+                                    "SCHOOL LAW",
+                                    "WHARTON SCHOOL",];
+      organizationValue = universityPennsylvania;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE REGENSBURG"){
+      var universityRegensburg=[" "];
+      organizationValue = universityRegensburg;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE SUSSEX"){
+      var universitySussex=[" "];
+      organizationValue = universitySussex;
+    }
+    if(organizationValue ==  "UNIVERSIDAD DE TEXAS EN DALLAS"){
+      var universityTexasDallas=["DEPARTMENT OF MOLECULAR AND CELL BIOLOGY"];
+      organizationValue = universityTexasDallas;
+    }
+     if(organizationValue ==  "UNIVERSIDAD DE TOHOKU JAPON"){
+      var universityTohoku=["INSTITUTO DE INVESTIGACION DE MATERIALES",
+                            "INSTITUTO DE PROCESAMIENTO DE MATERIALES AVANZADOS",];
+      organizationValue = universityTohoku;
+    }
+     if(organizationValue ==  "UNIVERSIDAD DE WASHINGTON EN SEATTLE"){
+      var universitySeattle=[" "];
+      organizationValue = universitySeattle;
+    }
+     if(organizationValue ==  "UNIVERSIDAD ESTATAL DE COLORADO"){
+      var universityestatalColorado=[" "];
+      organizationValue = universityestatalColorado;
+    }
+    if(organizationValue ==  "UNIVERSIDAD LIBRE DE BRUSELAS"){
+      var universityFreeBruselas=[" "];
+      organizationValue = universityFreeBruselas;
+    }
+    if(organizationValue ==  "UNIVERSIDAD NACIONAL DE EDUCACION A DISTANCIA"){
+      var universityNationalEducation=["FACULTAD DE CIENCIAS POLITICAS Y SOCIOLOGIA"];
+      organizationValue = universityNationalEducation;
+    }
+    if(organizationValue ==  "UNIVERSIDAD NACIONAL DE SAN LUIS"){
+      var universityNationalSanluis=[" "];
+      organizationValue = universityNationalSanluis;
+    }
+    if(organizationValue ==  "UNIVERSIDADE ESTADUAL DE CAMPINAS"){
+      var universityStadualCampinas=["INSTITUTO DE FILOSOFIA E CIENCIAS HUMANAS"];
+      organizationValue = universityStadualCampinas;
+    }
+    if(organizationValue ==  "UNIVERSITAT AUTONOMA DE BARCELONA"){
+      var universityAutonomaBarcelona=["DEPARTAMENT DE SOCIOLOGIA",
+                                        "DEPARTAMENTO DE BIOLOGIA ANIMAL",
+                                        "ESCOLA MASSANA",
+                                        "HOSPITAL DE LA SANTA CREU I SANT PAU",];
+      organizationValue = universityAutonomaBarcelona;
+    }
+     if(organizationValue ==  "UNIVERSITAT BOCHUM"){
+      var universityAutonomaBochum=[" "];
+      organizationValue = universityAutonomaBochum;
+    }
+    if(organizationValue ==  "UNIVERSITE DE BOURGOGNE"){
+      var universityBourgogne=["CENTRE GASTON BACHELARD",
+                                "INSTITUT SUPÉRIEUR DE L'AUTOMOBILE ET DES TRANSPORTS",
+                                "LOBAROTOIRE GEVREY DE MATHEMATIQUE PHYSIQUE",];
+      organizationValue = universityBourgogne;
+    }
+    if(organizationValue ==  "UNIVERSITE PARIS 13 PARISNORD"){
+      var universitParisPar=[" "];
+      organizationValue = universitParisPar;
+    }
+    if(organizationValue ==  "UNIVERSITY OF ARKANSAS"){
+      var universitArkansas=["UNIVERSITY OF ARKANSAS FAYETEVILLE"];
+      organizationValue = universitArkansas;
+    }
+    if(organizationValue ==  "UNIVERSITY OF CALIFORNIA AT LOS ALAMOS"){
+      var universityCaliforniaAlamos=[" "];
+      organizationValue = universityCaliforniaAlamos;
+    }
+    if(organizationValue ==  "UNIVERSITY OF CALIFORNIA AT SANTA BARBARA"){
+      var universityCaliforniaSantaBarbara=["COLLEGE OF LETTERS & SCIENCE",
+                                            "MATERIAL RESEARCH LABORATORY"];
+      organizationValue = universityCaliforniaSantaBarbara;
+    }
+    if(organizationValue ==  "UNIVERSITY OF CAMBRIDGE"){
+      var universityCambridge=["BP INSTITUTE FOR MULTIPHASE FLOW",
+                              "CAMBRIDGE INSTITUTE FOR MEDICAL RESEARCH",
+                              "CHURCHILL COLLEGE-CAMBRIDGE",
+                              "CLARE COLLEGE-CAMBRIDGE",
+                              "CLARE HALL COLLEGE-CAMBRIDGE",
+                              "CORPUS CHRISTI COLLEGE-CAMBRIDGE",
+                              "DARWIN COLLEGE-CAMBRIDGE",
+                              "DEPARTAMENTO DE FARMACOLOGIA",
+                              "DEPARTAMENTO DE INGENIERIA",
+                              "DOWNING COLLEGE-CAMBRIDGE",
+                              "EMMANUEL COLLEGE-CAMBRIDGE",
+                              "FITZWILLIAM COLLEGE-CAMBRIDGE",
+                              "GIRTON COLLEGE-CAMBRIDGE",
+                              "GONVILLE CAIUS COLLEGE",
+                              "HUGHES HALL-CAMBRIDGE",
+                              "INSTITUTE OF METABOLIC SCIENCE",
+                              "JESUS COLLEGE-CAMBRIDGE",
+                              "KINGS COLLEGE-CAMBRIDGE",
+                              "LUCY CAVENDISH COLLEGE-CAMBRIDGE",
+                              "NEW HALL-CAMBRIDGE",
+                              "PEMBROKE COLLEGE- CAMBRIDGE",
+                              "PETERHOUSE-CAMBRIDGE",
+                              "QUEENS COLLEGE- CAMBRIDGE",
+                              "ROBINSON COLLEGE-CAMBRIDGE",
+                              "SELWYN COLLEGE-CAMBRIGE",
+                              "SIDNEY SUSSEX COLLEGE",
+                              "ST. CATERINE S COLLEGE-CAMBRIDGE",
+                              "ST. EDMUNDS COLLEGE-CAMBRIDGE",
+                              "ST. JOHN S COLLEGE-CAMBRIDGE",
+                              "TRINITY HALL-CAMBRIDGE",
+                              "WOLFSON COLLEGE-CAMBRIDGE"];
+      organizationValue = universityCambridge;
+    }
+    if(organizationValue ==  "UNIVERSITY OF CHICAGO"){
+      var universityChicago=["DIVISION OF THE SOCIAL SCIENCES",
+                            "HARRIS GRADUATE SCHOOL OF PUBLIC POLICY STUDIES",
+                            "INSTITUTE FOR MOLECULAR ENGINEERING",
+                            "THE COLLEGE",
+                            "THE IRVING B. HARRIS SCHOOL OF PUBLIC POLICY STUDIES",
+                            "THE LAW SCHOOL",];
+      organizationValue = universityChicago;
+    }
+    if(organizationValue ==  "UNIVERSITY OF COLORADO"){
+      var universityColorado=["UNIVERSITY OF COLORADO AT BOULDER",
+                              "UNIVERSITY OF COLORADO AT COLORADO SPRINGS",
+                              "UNIVERSTIY OF COLORADO AT DENVER",];
+      organizationValue = universityColorado;
+    }
+    if(organizationValue ==  "UNIVERSITY OF DENVER"){
+      var universitydenver=[" "];
+      organizationValue = universitydenver;
+    }
+    if(organizationValue ==  "UNIVERSITY OF EMORY"){
+      var universitydEmory=[" "];
+      organizationValue = universitydEmory;
+    }
+    if(organizationValue ==  "UNIVERSITY OF GEORGIA"){
+      var universitydGeorgia=["CENTER FOR REMOTE SENSING AND MAPPING SCIENCE",
+                              "COMPLEX CARBOHYDRATE RESEARCH CENTER"];
+      organizationValue = universitydGeorgia;
+    }
+    if(organizationValue ==  "UNIVERSITY OF NEWCASTLE UPON TYNE"){
+      var universitydNewcastle=[" "];
+      organizationValue = universitydNewcastle;
+    }
+    if(organizationValue ==  "UNIVERSITY OF TEXAS HOUSTON"){
+      var universityOfTexas=[" "];
+      organizationValue = universityOfTexas;
+    }
+    if(organizationValue ==  "UNIVERSITY OF TORONTO"){
+      var universityOfToronto=["SUNNYBROOK, HEALT SCIENCES CENTRE",
+                                "UNIVERSITY OF ST. MICHAEL¿S COLLEGE",];
+      organizationValue = universityOfToronto;
+    }
+     if(organizationValue ==  "UNIVERSITY OF WASHINGTON"){
+      var universityOfWashington=["DEPARTMENT OF BIOENGINEERING",
+                                  "INTERNATIONAL STUDIES",
+                                  "WASHINGTON UNIVERSITY SCHOOL OF MEDICINE",];
+      organizationValue = universityOfWashington;
+    }
+    if(organizationValue ==  "UNIVERSITY OF WISCONSINMADISON"){
+      var universityOfWisconsin=["COLLEGE OF AGRICULTURAL AND LIFE SCIENCES",
+                                  "COLLEGE OF LETTER AND SCIENCE",
+                                  "COOPERATIVE INSTITUTE OF METEOROLOGICAL SATELLITE STUDIES",];
+      organizationValue = universityOfWisconsin;
+    }
+    if(organizationValue ==  "UNIVERSITY OF YORK"){
+      var universityOfYork=[" "];
+      organizationValue = universityOfYork;
+    }
+    if(organizationValue ==  "YALE UNIVERSITY"){
+      var yaleUniversity=["SCHOOL OF ORGANIZATION AND MANAGMENT",
+                          "YALE SCHOOL OF FORESTRY & ENVIRONMENTAL STUDIES"];
+      organizationValue = yaleUniversity;
+    }
 
     var newSecondLevel ="<span class='plain-select'><select id='DirectedThesis_second_level' class='tooltipstered' name='DirectedThesis[second_level]'>";
     newSecondLevel+="<option>Seleccionar Segundo nivel</option>";
@@ -11185,7 +25827,7 @@ function changeSector()
                'Instituciones del sector entidades paraestatales'=>' Instituciones del sector entidades paraestatales',
                'Instituciones del sector gobierno de las entidades federativas'=>'Instituciones del sector gobierno de las entidades federativas',
                'Instituciones del sector de educación superior públicas'=>'Instituciones del sector de educación superior públicas',             
-               'Instituciones del sector de educación superior privadas'=>' Instituciones del sector de educación superior privadas',
+               'Instituciones del sector de educación superior privadas'=>'Instituciones del sector de educación superior privadas',
                'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)',
                'Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
                'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras',
@@ -11197,14 +25839,27 @@ function changeSector()
     </span>
     <?php echo $form->error($model,'sector'); ?>
   </div>
-  <div class="row"id="selectOrganization">
+  <?php 
+  if(!$model->isNewRecord){
+  echo '<div class="row"id="selectOrganization">';
+  echo $form->dropDownList($model,'organization',array($model->organization)/*,array('prompt'=>'Seleccionar disciplina')*/);
+  echo '</div>';
+
+  echo '<div class="row"id="selectSecondLevel">';
+  echo $form->dropDownList($model,'second_level',array($model->second_level)/*,array('prompt'=>'Seleccionar disciplina')*/);
+  echo '</div>';
+  }
+  else{
+  echo '<div class="row"id="selectOrganization">
 
   </div>
 
-<div class="row"id="selectSecondLevel">
+  <div class="row"id="selectSecondLevel">
 
-    </div>
+  </div>';
 
+  }
+?>
 	<div class="row">
     <span class="plain-select">
     <?php echo $form->dropDownList($model,'area',array('ANTROPOLOGIA'=>'ANTROPOLOGIA',
@@ -11237,12 +25892,28 @@ function changeSector()
     <?php echo $form->error($model,'area'); ?>
   </div>
 
-  <div class="row" id="comboDiscipline">
+   <?php
+  if(!$model->isNewRecord){
+   // foreach ($model as $value) {
+
+    echo '<div class="row"id="comboDiscipline">';
+    echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
+    echo '</div>';
+  //}
+    echo '<div class="row"id="comboSubdiscipline">';
+    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
+    echo '</div>';
+
+  }
+  else{
+    echo '<div class="row"id="comboDiscipline">
 
   </div>
-  <div class="row" id="comboSubdiscipline">
+  <div class="row"id="comboSubdiscipline">
 
-  </div>
+  </div>';
+  }
+  ?>
   
 	<div class="row buttons">
      <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(

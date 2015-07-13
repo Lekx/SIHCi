@@ -32,7 +32,7 @@ class ProjectsFollowupsController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('createFollowup','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -60,47 +60,43 @@ class ProjectsFollowupsController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($id)
+	public function actionCreateFollowup($id)
 	{
-		$model=new ProjectsFollowups;
+		$modelfollowup = new ProjectsFollowups;
+		// $followups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$id),array('order'=>'id DESC'));
+         $this->performAjaxValidation($modelfollowup);
 
-		// Uncomment the following line if AJAX validation is needed
-		
-		$this->performAjaxValidation($model);
-		
-		if(isset($_POST['ProjectsFollowups']))
-		{
-			$model->unsetAttributes();
-			$model->attributes=$_POST['ProjectsFollowups'];
-			$model->id_project = $id;
-			$model->id_user = 11;
-			$model->creation_date = date("Y-m-d H:i:s");
-			$model->type = "followup";
-			$model->url_doc = CUploadedFile::getInstance($model,'url_doc');
+        if(isset($_POST['ProjectsFollowups']))
+        {
 
-			if($model->validate() == 1){
-				if(is_object($model->url_doc)){ 
+			$modelfollowup->unsetAttributes();
+            $modelfollowup->attributes=$_POST['ProjectsFollowups'];
+            $modelfollowup->id_project = $id;
+            $modelfollowup->id_user = Yii::app()->user->id;
+            $modelfollowup->type = "followup";
+            $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
+			if($modelfollowup->validate() == 1){
+	            if(is_object($modelfollowup->url_doc)){
 	            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$id;
 
 	                if(!is_dir($path))
 	                	mkdir($path, 0777, true);
 
-	            	$url_doc = $path.'/'.date('Y-m-d_H-i').'Archivo.'.$model->url_doc->getExtensionName();
-					$model->url_doc->saveAs($url_doc);
-				    $model->url_doc = $url_doc;
+	            	$url_doc = $path.'/'.date('Y-m-d_H-i').'Archivo.'.$modelfollowup->url_doc->getExtensionName();
+					$modelfollowup->url_doc->saveAs($url_doc);
+				    $modelfollowup->url_doc = $url_doc;
 	            }
-				if($model->save()){
-					echo CJSON::encode(array('status'=>'success'));
-		     		Yii::app()->end();
+	            if($modelfollowup->save()){
+	     			echo CJSON::encode(array('status'=>'success'));
+	     			Yii::app()->end();
 				}
-			 }else{
-				$error = CActiveForm::validate($model);
+	        }else{
+				$error = CActiveForm::validate($modelfollowup);
 				if($error!='[]')
 					echo $error;
-
 				Yii::app()->end();
 	        }
-		}
+        }
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -108,12 +104,26 @@ class ProjectsFollowupsController extends Controller
 	public function actionFollowupToShow()
 	{
 		$id= $_POST["id"];
-		// var_dump($date);
 		$followupCurrent= ProjectsFollowups::model()->findByAttributes(array('id'=>$id));
 		$date = date("d/m/Y", strtotime($followupCurrent->creation_date));
-		echo CJSON::encode(array('id'=>$followupCurrent->id,'followup'=>$followupCurrent->followup, 'date'=>$date));
+		$comments= ProjectsFollowups::model()->findAllByAttributes(array('id_fucom'=>$id,), array('order'=>'creation_date DESC'));
+		$comment="";
+		foreach ($comments as $key => $value) {
+			$user = Users::model()->findByAttributes(array('id'=>$comments[$key]->id_user));
+			$rol = Roles::model()->findByAttributes(array('id'=>$user->id_roles));
+
+			$comment .= "<div clas='comentsrow'><h5>Comentario - ".$rol->alias."</h5>";
+			$comment .= "<p>".$comments[$key]->url_doc != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$comments[$key]->url_doc,array("target"=>"_blank")) : "</p>";
+			$comment .= "<br><br>";
+
+			$comment .= "<div class=''>".$comments[$key]->followup."</div>";
+
+			$comment .= "</div> <hr>";
+
+		}
+		echo CJSON::encode(array('id'=>$followupCurrent->id,'id_project'=>$followupCurrent->id_project,'followup'=>$followupCurrent->followup, 'date'=>$date, 'comments'=>$comment));
 		Yii::app()->end();
-		
+
 	}
 
 	/**
@@ -172,14 +182,12 @@ class ProjectsFollowupsController extends Controller
 	{
 		$modelFollowup=new ProjectsFollowups();
 		$idLast=Yii::app()->db->createCommand('SELECT MAX(id) AS id FROM projects_followups WHERE type="followup"')->queryRow();
-		
+
 		$followupCurrent= ProjectsFollowups::model()->findByAttributes(array('id'=>$idLast['id']));
-		$comments= ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$id,'type'=>'comment'), array('order'=>'creation_date DESC'));
 		$followups= ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$id,'type'=>'followup'), array('order'=>'creation_date DESC'));
-		
-		$this->render('admin',array('modelFollowup'=>$modelFollowup, 
-									'followupCurrent'=>$followupCurrent, 
-									'comments'=>$comments,
+
+		$this->render('admin',array('modelFollowup'=>$modelFollowup,
+									'followupCurrent'=>$followupCurrent,
 									'followups'=>$followups,
 									'idProject'=>$id));
 	}
@@ -201,11 +209,11 @@ class ProjectsFollowupsController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param ProjectsFollowups $model the model to be validated
+	 * @param Projects $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='projects-followups-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='projects-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

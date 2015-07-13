@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+
+
   $('input[type=file]').each(function() {
     var id = $(this).attr('id'),
       name = $(this).attr('name'),

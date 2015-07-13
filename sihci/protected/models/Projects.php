@@ -113,13 +113,13 @@ class Projects extends CActiveRecord
 
 			'participant_institutions_international' => 'Instituciones internacionales participantes',
 			'colaboration_type' => 'Tipo de colaboracion',
-			'adtl_caracteristics_a' => 'Adtl Caracteristicas A',
-			'adtl_caracteristics_b' => 'Adtl Caracteristicas B',
-			'adtl_caracteristics_c' => 'Adtl Caracteristicas C',
-			'adtl_caracteristics_d' => 'Adtl Caracteristicas D',
-			'adtl_caracteristics_e' => 'Adtl Caracteristicas E',
-			'adtl_caracteristics_f' => 'Adtl Caracteristicas F',
-			'adtl_caracteristics_g' => 'Adtl Caracteristicas G',
+			'adtl_caracteristics_a' => 'Protocolos en donde se propongan el uso de medicamentos,equipo o material médico no incluido en el cuadro básico institucional',
+			'adtl_caracteristics_b' => 'Protocolos que contemplen cambios en la polótica institucional sobre la presentación de servicios de salud',
+			'adtl_caracteristics_c' => 'Protocolos planeados para realizarse entre el instituto Mexicano del Seguro Social y otras insituciones nacionales o extrajeras.',
+			'adtl_caracteristics_d' => 'Protocoolos que requieren la autorización específica de la Secretaría de Salud según la ley General de Salud',
+			'adtl_caracteristics_e' => 'Protocolos que reciban apoyo económico o meterial de la industria farmacéutica o entidades con fines lucrativos',
+			'adtl_caracteristics_f' => 'Protocolos que se realicen en más de una unidad del Instituo Mexicano del seguro Social con la participación de pacientes, muestras o datos',
+			'adtl_caracteristics_g' => 'Protocolos cuyos autores se inconformen con el dictamen emitido por los Comités Locales de Investigación en Salud',
 			'status' => 'Estatus',
 			'folio' => 'Folio',
 			'is_sponsored' => '¿Patrocinado?',
@@ -177,6 +177,26 @@ class Projects extends CActiveRecord
 		$criteria->compare('is_sponsored',$this->is_sponsored);
 		$criteria->compare('registration_number',$this->registration_number,true);*/
 
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	//Customized search only for logged user
+	public function customSearch()
+	{
+		$criteria=new CDbCriteria;
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'id DESC';
+		if($this->searchValue)
+		{
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR is_sponsored LIKE CONCAT('%', :searchValue ,'%') OR title LIKE CONCAT('%', :searchValue ,'%')OR discipline LIKE CONCAT('%', :searchValue , '%') OR develop_uh LIKE CONCAT('%', :searchValue , '%') OR folio LIKE CONCAT('%', :searchValue , '%') OR registration_number LIKE CONCAT('%', :searchValue , '%') OR status LIKE CONCAT('%', :searchValue , '%') ");
+			//$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}	
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

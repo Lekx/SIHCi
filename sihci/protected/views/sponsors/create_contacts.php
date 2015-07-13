@@ -32,6 +32,6 @@ $this->menu = array(
         </div>
 
 
-<h4>Contactos</h4>
+<h4>Datos de Contactos:</h4>
 
 <?php $this->renderPartial('_form_contacts', array('model' => $model, 'fullname' => $fullname));?>

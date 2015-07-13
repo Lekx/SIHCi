@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+  $("select").mouseleave(function(event) {
+    event.stopPropagation();
+  });
+
   $('.backbut').click(function() {
     window.location = yii.urls.back;
   });
@@ -31,7 +36,13 @@ $(document).ready(function() {
 
 
   function backSuccesAlert(backurl) {
-    window.location = yii.urls.createUrl + '/' + actionUrl
-
+    window.location = yii.urls.createUrl + '/' + actionUrl;
   }
+
+  $('#Sponsor').attr("placeholder", "Investigador a patrocinar");
+  $('#Sponsor').attr("title", "Investigador a patrocinar");
+
+  $('#id_user_sponsorer').attr("placeholder", "Empresa que patrocina");
+  $('#id_user_sponsorer').attr("title", "Empresa que patrocina");
+
 });

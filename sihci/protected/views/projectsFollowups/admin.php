@@ -10,80 +10,106 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Gestionar', 'url'=>array('admin')),
 );
-
+$project = Projects::model()->findByAttributes(array('id'=>$idProject));
 ?>
+<script>
+	$(document).ready(function(){
+		$('#projects-followups-form').hide();
 
-<h1>Seguimiento Proyecto</h1>
+	});
+</script>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
+      <h1>Seguimientos del Proyecto </h1>
+            <hr>
+        </div>
 
-<?php 
+
+
+<div class="projecttitle">
+<h4><?php echo $project->title;?></h4>
+</div>
+
+
+<?php
 // echo CHtml::link('Crear Nuevo','create');
-echo CHtml::link('Crear Nuevo',array('create',
-                                         'id'=>$idProject));
-	if($followupCurrent != null){
-		
+			 echo CHtml::ajaxLink(
+ 						  "jesus de nazareth",
+ 						  Yii::app()->createUrl( 'projectsFollowups/create/'.$project->id ),
+ 						  array( // ajaxOptions
+ 						    'type' => 'POST',
+ 						    'datatype'=> 'json',
+ 						    'success' => "function( data )
+ 						                  {
+ 																 $('#projects-followups-form-create').show();
+ 																 $('#projects-followups-form').hide();
+ 						                     $('#follow').hide();
+ 						                     $('#followup').hide();
+																 $('#comments').hide();
+ 						                  }",
+ 						  ),
+ 						  array( //htmlOptions
+ 						    'href' => Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
+								'class'=> 'createFollowup',
+ 						  )
+ 						);
 
+		echo "	<div class='customNavigation'>
+	  <a class='btn prev'><i class='fa fa-arrow-left'></i></a> </div>";
+		echo "<div id='owl-demo' class=''>";
 		foreach ($followups as $key => $value) {
-
-			// echo " ".date("d/m/Y H:i:s", strtotime($followups[$key]->creation_date))." ";
-			//ajaxlink
 			echo CHtml::ajaxLink(
-						  " ".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
+						  "".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
 						  Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
 						  array( // ajaxOptions
 						    'type' => 'POST',
 						    'datatype'=> 'json',
 						    'success' => "function( data )
 						                  {
+																$('#projects-followups-form').show();
+																$('#follow').show();
+																$('#followup').show();
+																$('#comments').show();
 						                     var data = JSON.parse(data);
-						                     $('#follow').html('Seguimiento -'+ data['id'] + ' ' + data['date']);
-						                     $('#followup').html(data['followup']);
+																 $('#projects-followups-form-create').hide();
+																 $('#projects-followups-form').show();
+						                     $('#follow').html('<h5 class=followuph5>Seguimiento -'+ data['id'] + ' ' + data['date']+'</h5>');
+
+																 var dataIDP = data['id_project'];
+						                     var dataIDF = data['id'];
+																 var dataComments = data['comments'];
+
+						                     $('#followup').html('<h4>Reporte Investigador</h4>'+data['followup']);
+
+
+						                     $('#createFollowup').unbind('onclick');
+						                     $('#createFollowup').attr('onclick', 'send(\'projects-followups-form\', \'projectsReview/review\',\"'+dataIDP+'\" , \'none\', \"'+dataIDF+'\" )');
+																 $('#comments').html('<h3>Comentarios:</h3>'+dataComments+'');
+
 						                  }",
 						    'data' => array('id' => $followups[$key]->id,)
 						  ),
 						  array( //htmlOptions
 						    'href' => Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
-						  )
+								'class'=> 'item Followups '.$key,
+								)
 						);
-			
+
 		}
-
-		echo "<br><br>";
-		echo "<br><br>";
-
-		echo "<div id='follow'>";
-		echo 'Seguimiento -'.$followupCurrent->id.'  '.date("d/m/Y", strtotime($followupCurrent->creation_date)); 
 		echo "</div>";
+		echo "	<div class='customNavigation'>
+		<a class='btn next'><i class='fa fa-arrow-right'></i></a> </div>";
+		echo "<div id='owl-demo' class=''>";
+		echo "<div id='follow'></div>";
+		echo "<div id='followup'></div>";
+		?>
 
-		echo "<br><br>";
+		<?php
 
-		echo 'Reporte Investigador';
-
-		echo "<br><br>";
-
-		echo "<div id='followup'>";
-		echo $followupCurrent->followup;
-		echo "</div>";
-
+		$this->renderPartial('../projectsFollowups/_form', array('model'=>$modelFollowup));
 		$this->renderPartial('../projectsReview/_form', array('model'=>$modelFollowup));
-		// var_dump($comment);
 
-		echo "Comentarios:";
+		echo "<div id='comments'></div>";
+		echo "<br>";
 
-		echo "<br><br><br>";
-		foreach ($comments as $key => $value) {
-			$user = Users::model()->findByAttributes(array('id'=>$comments[$key]->id_user));
-			$rol = Roles::model()->findByAttributes(array('id'=>$user->id_roles));
-
-			echo "Comentario - ".$rol->alias." ";
-			echo $comments[$key]->url_doc != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$comments[$key]->url_doc,array("target"=>"_blank")) : "";
-			
-			echo "<br><br>";
-			
-			echo $comments[$key]->followup;
-
-			echo "<br><br>";
-			
-		}
-	}else
-		echo "<h2>No tiene ningun Proyecto a Seguir</h2>";
 ?>

@@ -105,7 +105,7 @@ select
 }
 .headerconteiner3
 {
-    width: calc(88% + 15px);
+    width: calc(88%);
     height: 20px;
     margin-top: -72px;
 
@@ -158,7 +158,7 @@ select
 }
 .sysmaincontent
 {
-    width: 74%;
+    width: 79%;
     height: 100%;
     min-height: 350px;
     padding-bottom: 50px;
@@ -238,7 +238,7 @@ select
 
     margin: 0;
     padding-top: 5px;
-    padding-left: 10%;
+    padding-left: 2.5%;
 
     color: white;
 }
@@ -384,7 +384,7 @@ select
 {
     font-family: 'Caviar_Dreams_Bold';
 
-    padding-left: 145px;
+    padding-left: 125px;
 }
 .cvforms h4
 {
@@ -394,7 +394,7 @@ select
 {
     font-family: 'Caviar_Dreams_Bold';
 
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: -140px;
 }
 .cvtitle h1
@@ -403,7 +403,7 @@ select
 
     display: inline-block;
 
-    margin-left: 30px;
+    margin-left: 15px;
 }
 .cvtitle img
 {
@@ -415,7 +415,7 @@ select
     width: 80% !important;
     margin-top: -20px;
     margin-bottom: 0;
-    margin-left: 140px;
+    margin-left: 120px;
 
     border-bottom: 2px solid #1eb9c0;
 }
@@ -570,7 +570,7 @@ input[type='radio']
 
     padding-top: 10px;
 }
-.savebutton
+.savebutton, .savebuttonp
 {
     font-size: 20px;
 
@@ -580,6 +580,11 @@ input[type='radio']
     opacity: 1!important;
     color: white;
     background-color: #0e3152 !important;
+}
+.savebuttonp
+{
+  width: 450px !important;
+
 }
 .cleanbutton
 {
@@ -688,12 +693,11 @@ thead th
     display: block;
     display: inline-block;
 
-    width: 190px ;
-    height: 40px;
-    padding-top: 7px;
-    padding-right: 10px;
+    width: 191px ;
+    height: 41px;
+    padding: 10px 15px;
     padding-bottom: 7px;
-    padding-left: 10px;
+    vertical-align: top;
 
     text-align: center;
     text-decoration: none;
@@ -979,6 +983,7 @@ thead th
     margin: 15px !important;
     padding: 3px;
 
+
     text-align: center !important;
 
     color: white !important;
@@ -1012,9 +1017,10 @@ thead th
 
     width: 450px !important;
     height: 25px;
-    margin: 15px !important;
-
+    margin-top: 15px !important;
+    margin-left: 15px !important;
     text-align: center;
+    padding-top: 3px;
 
     color: white;
     background-color: #00b9c0;
@@ -1023,6 +1029,10 @@ thead th
 {
     margin-top: 20px;
     margin-bottom: 50px;
+}
+.addSomething a:hover ,.addSomething a,.addSomething a:focus
+{
+  text-decoration: none !important;
 }
 .acoutmail
 {
@@ -1768,17 +1778,24 @@ li.menulis.now
 .fullnamed
 {
     display: inline-block;
-
-    width: 70%;
+    width: 100%;
     margin: 0;
-    padding-left: 29%;
+    text-align: left;
+    padding-left: 279px;
+
+
+
+}
+.fullnamed h6
+{
+  margin-left: 10px; margin-right: 10px;
 }
 .typelabe,
 .logoutbars
 {
     display: inline-block;
 
-    width: 14%;
+    width: 10%;
     margin: 0;
 
     text-align: center;
@@ -2068,7 +2085,7 @@ div.pager span.active
   margin-top: calc(50vh - 100px);
 
   color: #0A324F;
-  font-size: 240px;
+  font-size: 200px;
   display: block;
   text-align: center;
 
@@ -2121,46 +2138,6 @@ div.pager span.active
     font-size: 235px;
   }
 }
-/*
-.heart {
-
-  margin: 100px auto;
-  height: 110px;
-  width: 110px;
-  margin-top: calc(50vh - 40px);
-
-  background: #0A324F;
-  transform: rotate(-45deg)!important;
-  -ms-transform: rotate(-45deg)!important;
-  -webkit-transform: rotate(-45deg)!important;
-  -webkit-border-radius: 100% 100% 100% 0px;
-  border-radius: 100% 100% 100% 0px;
-}
-.heart:before {
-  margin-top: -64px;
-  position: absolute;
-  content: "";
-  display: block;
-  width: 110px;
-  height: 110px;
-  background: #0A324F;
-  -webkit-border-radius: 100% 100% 100% 0px;
-  border-radius: 100% 100% 100% 0px;
-}
-.heart:after {
-  margin-left: 65px;
-  position: absolute;
-  background: #0A324F;
-  content: "";
-  display: block;
-  width: 110px;
-  height: 110px;
-  -webkit-border-radius: 100% 100% 100% 0px;
-  border-radius: 100% 100% 100% 0px;
-  left: 0;
-
-} /* pulse animation */
-
 
 .pulse {
   height: 100px;
@@ -2261,4 +2238,9 @@ div.pager span.active
     opacity:0;
  }
 
+}
+
+/* CHANGES STATUS COLOR OF IMPORTANT ROWS FOR PROJECTS SECTION */
+.checkThisItem{
+    background-color: red !important;
 }

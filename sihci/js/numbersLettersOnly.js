@@ -11,26 +11,6 @@ $(document).ready(function() {
     }
   });
 
-
-  function lettersOnly(e) {
-    key = e.keyCode || e.which;
-    tecla = String.fromCharCode(key).toLowerCase();
-    letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
-    especiales = [8, 37, 39, 46, 45, 47];
-
-    tecla_especial = false
-    for (var i in especiales) {
-      if (key == especiales[i] || e.keyCode == 9) {
-        tecla_especial = true;
-        break;
-      }
-    }
-
-    if (letras.indexOf(tecla) == -1 && !tecla_especial)
-      return false;
-  }
-
-
   function changeSector() {
     var sectorValue = $("#sector option:selected").val();
 
@@ -1210,3 +1190,21 @@ $(document).ready(function() {
     $("#comboClase").html(newClase);
   }
 });
+
+function lettersOnly(e) {
+  key = e.keyCode || e.which;
+  tecla = String.fromCharCode(key).toLowerCase();
+  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+  especiales = [8, 37, 39, 46, 45, 47];
+
+  tecla_especial = false
+  for (var i in especiales) {
+    if (key == especiales[i] || e.keyCode == 9) {
+      tecla_especial = true;
+      break;
+    }
+  }
+
+  if (letras.indexOf(tecla) == -1 && !tecla_especial)
+    return false;
+}

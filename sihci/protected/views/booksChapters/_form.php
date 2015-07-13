@@ -8,8 +8,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
 
 
 <script type="text/javascript">
-<<<<<<< HEAD
-=======
+
   $(document).ready(function() {
       $(".numericOnly").keydown(function (e) {
           if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -44,7 +43,6 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
         return false;
 }
 
->>>>>>> e59ccf776c9838f10b275a1a80e856cd0b2fb6f6
   function changeArea(){
 
     var areaValue = $("#area option:selected").val();
@@ -3958,12 +3956,29 @@ if(areaValue =="SOCIOLOGIA"){
     <?php echo $form->error($model,'area'); ?>
   </div>
 
-  <div class="row"id="comboDiscipline">
+  <?php
+  if(!$model->isNewRecord){
+   // foreach ($model as $value) {
+
+    echo '<div class="row"id="comboDiscipline">';
+    echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
+    echo '</div>';
+  //}
+    echo '<div class="row"id="comboSubdiscipline">';
+    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
+    echo '</div>';
+
+  }
+  else{
+    echo '<div class="row"id="comboDiscipline">
 
   </div>
   <div class="row"id="comboSubdiscipline">
 
-  </div>
+  </div>';
+  }
+  ?>
+
 
 
    <div class="row">

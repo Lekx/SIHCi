@@ -47,7 +47,6 @@ class Addresses extends CActiveRecord
 			array('delegation, town', 'length', 'max'=>30),
 			array('colony', 'length', 'max'=>45),
 			array('external_number, internal_number', 'length', 'max'=>8),
-			array('external_number, internal_number','numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, country, zip_code, state, delegation, city, town, colony, street, external_number, internal_number', 'safe', 'on'=>'search'),

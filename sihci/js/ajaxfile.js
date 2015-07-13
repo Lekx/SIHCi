@@ -1,4 +1,4 @@
- function send(form, actionUrl, id, redirectUrl, extras) {
+ function send(form, actionUrl, id, redirectUrl, extras, extraCall) {
 
    var formData;
    if (form != '')
@@ -44,12 +44,19 @@
          $(".errorMessage").hide();
          $(".successdiv").show();
 
-        $('.backbut').unbind().click(function() {
-          if(redirectUrl != "none")
+         if(typeof extraCall != 'undefined'){
+          var ids = extraCall.split(",");
+          alert(ids[0]+" "+ids[1] +" ");
+            $("#"+ids[0]).hide();
+            $("#"+ids[1]).show();
+         }
+
+         $('.backbut').unbind().click(function() {
+           if (redirectUrl != "none")
              window.location = yii.urls.createUrl + "/" + redirectUrl;
-             else
-               $(".successdiv").hide();
-             
+           else
+             $(".successdiv").hide();
+
          });
 
        }
@@ -57,11 +64,12 @@
      complete: function(data) {
        $('.loader').hide();
      },
-     error: function(data) {},
+     error: function(data) {
+       $('.loader').hide();
+     },
      cache: false,
      contentType: false,
      processData: false
    });
    return false;
  }
-
