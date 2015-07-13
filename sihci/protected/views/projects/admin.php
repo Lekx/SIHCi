@@ -43,12 +43,7 @@ $('.search-form form').submit(function(){
 	'model'=>$model,
 )); ?>
 
-<?php 
-$pjs = Projects::model()->findByAttributes(array('id_curriculum'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
-$pjs->search();
-//var_dump($pjs);
 
-?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'projects-grid',
