@@ -3956,12 +3956,29 @@ if(areaValue =="SOCIOLOGIA"){
     <?php echo $form->error($model,'area'); ?>
   </div>
 
-  <div class="row"id="comboDiscipline">
+  <?php
+  if(!$model->isNewRecord){
+   // foreach ($model as $value) {
+
+    echo '<div class="row"id="comboDiscipline">';
+    echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
+    echo '</div>';
+  //}
+    echo '<div class="row"id="comboSubdiscipline">';
+    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
+    echo '</div>';
+
+  }
+  else{
+    echo '<div class="row"id="comboDiscipline">
 
   </div>
   <div class="row"id="comboSubdiscipline">
 
-  </div>
+  </div>';
+  }
+  ?>
+
 
 
    <div class="row">

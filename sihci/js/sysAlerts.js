@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+  $("select").mouseleave(function(event) {
+    event.stopPropagation();
+  });
+
   $('.backbut').click(function() {
     window.location = yii.urls.back;
   });

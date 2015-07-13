@@ -28,15 +28,15 @@ function hideAdtlRes(element){
 }
 
 function accionCancelar(){
-$('<div></div>').appendTo('form')
+$('<div>></div>').appendTo('form')
     .html('<div><h6>¿Está usted seguro de cancelar la acción actual? todo su trabajo no guardado sera borrado.</h6></div>')
     .dialog({
         modal: true,
+				height: 270,
+				width: 350,
         title: 'Cancelar',
         zIndex: 10000,
         autoOpen: true,
-        width: 'auto',
-        resizable: false,
         buttons: {
     Continuar: function () {
                 window.location = yii.urls.cancelProject;
@@ -70,7 +70,9 @@ $('<div></div>').appendTo('form')
 			$("#back").show();
 		$("#section"+section).show();
 	}
+
 	function save(value){
+
 
 		$('input[type="hidden"]').attr('disabled', true);
 
@@ -82,7 +84,8 @@ $('<div></div>').appendTo('form')
 				        title: 'Cancelar',
 				        zIndex: 10000,
 				        autoOpen: true,
-				        width: 'auto',
+								height: 270,
+								width: 350,
 				        resizable: false,
 				        buttons: {
 				            "Enviar a revisión": function () {
@@ -105,6 +108,13 @@ $('<div></div>').appendTo('form')
 
 	}
 
+function sendpro(value){
+	send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin",value);
+}
+function sendera(){
+	send("projects-form", "projects/<?php echo ($model->isNewRecord ? 'create' : 'update'); ?>", <?php echo (isset($_GET['id']) ? $_GET['id'] : 0); ?>, "projects/admin","draft");
+
+}
 	function changeSubTema(){
 
 		 var temaValue = $("#tema option:selected").val();
@@ -593,8 +603,9 @@ $('<div></div>').appendTo('form')
 
 		<?php
 		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
-		echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
-		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"save('send')",'style'=>'display:none;','class'=>'savepro'));
+		//echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
+		echo CHtml::link('Cancelar',array('projects/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?'));
+		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
 
@@ -603,6 +614,24 @@ $('<div></div>').appendTo('form')
 
 	</div>
 
+	<div class="modal fade" id="projectsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Proyectos </h4>
+				</div>
+				<div class="modal-body">
+					<h3>¡Enviar a Revisión!</h3>
+					¿Esta usted seguro de enviar Proyecto de Investigación a revisión?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default sendpro" onClick="sendpro('send')" >Si.. Enviar Ahora</button>
+					<button type="button" class="btn btn-default nopro" data-dismiss="modal" >No.. Dejarlo como esta</button>
+				</div>
+			</div>
+		</div>
+	</div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

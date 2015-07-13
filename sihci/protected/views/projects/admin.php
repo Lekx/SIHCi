@@ -43,6 +43,10 @@ $('.search-form form').submit(function(){
 	'model'=>$model,
 )); ?>
 
+<?php
+$pjs = Projects::model()->findByAttributes(array('id_curriculum'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
+$pjs->search();
+//var_dump($pjs);
 
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -58,7 +62,7 @@ $('.search-form form').submit(function(){
 			'name'=>'is_sponsored',
 			'header'=>'',
 			'type'=>'html','id'=>'is_sponsored','value'=>'CHtml::encode($data->is_sponsored)',
-			'value'=>'$data->is_sponsored == "1" ? "Si" : "No"',
+			'value'=>'$data->is_sponsored == "1" ? "Si" : ""',
 		),
 		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'substr($data->title,0,50)."..."','htmlOptions'=>array('width'=>'250px')),
 		array(

@@ -1143,7 +1143,7 @@
     	sectorValue = otrosServicios;
    }
 
-   		var newClase ="<span class='plain-select'><select id='Sponsors_sector' class='tooltipstered' name='Sponsors[clase]' onchange='changeClase()'>";
+   		var newClase ="<span class='plain-select'><select id='Sponsors_class' class='tooltipstered' name='Sponsors[class]' onchange='changeClase()'>";
     	newClase+="<option>Seleccionar Clase</option>";
     for (var item in sectorValue) {
         newClase +="<option>"+sectorValue[ item ]+"</option>";
@@ -1291,10 +1291,16 @@
 		<?php echo $form->error($model, 'sector');?>
 	</div>
 
-	<div class="row" id="comboClase">
+	<?php 
+	if(!$model->isNewRecord){
+	echo '<div class="row" id="comboClase">';
+    echo $form->dropDownList($model,'class',array($model->class)/*,array('prompt'=>'Seleccionar disciplina')*/);
+  	 echo '</div>';
+  	}
+  	echo '<div class="row" id="comboClase">
 
-  </div>
-
+  	</div>';
+  	?>
 	<div class="row">
 		<?php echo $form->textField($model, 'branch', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Rama','title'=>'Rama'));?>
 		<?php echo $form->error($model, 'branch');?>

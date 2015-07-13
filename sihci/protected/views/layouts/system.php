@@ -18,6 +18,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sys.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/projects.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/owl-carousel/owl.carousel.js">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css">
 
@@ -29,6 +31,7 @@
         <?php
                     $baseUrl = Yii::app()->baseUrl;
                     $cs = Yii::app()->getClientScript();
+                    $cs->registerScriptFile($baseUrl . '/owl-carousel/owl.carousel.js');
                     $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
                     $cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
                     $cs->registerScriptFile($baseUrl . '/js/reCopy.js');
@@ -191,20 +194,18 @@
                     <div class="fullnamed"><h5>
 
                         <?php echo Yii::app()->user->fullname; ?>
-                    </h5> <h6>(<?php echo Yii::app()->user->Rol->name; ?>)</h6></div>
-                    <div class="typelabe">
-                        <?php
-                            echo "<h6>Perfil  :  ".$infoUser['label']."</h6>";
-                        ?>
-                    </div>
-                    <div class="logoutbars">
-                        <?php
-                            echo "<h6 id='logoutlable'>";
-                            echo CHtml::link('Cerrar sesión', array('site/logout'));
-                            echo "</h6>";
-                        ?>
-                    </div>
+                    </h5> <h5>(<?php echo Yii::app()->user->Rol->name; ?>)</h5>
 
+                    <?php
+                        echo "<h6>Perfil  :  ".$infoUser['label']."</h6>";
+                    ?>
+
+                    <?php
+                        echo "<h6 id='logoutlable'>";
+                        echo CHtml::link('Cerrar sesión', array('site/logout'));
+                        echo "</h6>";
+                    ?>
+                    </div>
                 </div>
                 <div class="headerconteiner4">
                     <h4>Menú </h4>
@@ -303,6 +304,9 @@
                         break;
                         case 'projectsReview':
                         $ControllerB = "Gestión de proyectos";
+                        break;
+                        case 'projectsfollowups':
+                        $ControllerB = "Seguimientos del Proyecto";
                         break;
 
                         default:
@@ -407,6 +411,7 @@
                           case 'create_contacts':
                           $action = "Datos de Contactos";
                           break;
+
 
                           default:
                           $action = " ";
@@ -535,6 +540,16 @@
                     <span> asistencia@sihci.com.mx / (52) 32.34.67.32</span>
                 </div>
                 <div class="footermenuI">
+
+                  <?php
+                   if($this->action->Id == "create" || $this->action->Id == "update" || $this->action->Id == "view")
+                    {
+                      echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/Iconsvg/Perfil/Salir.svg alt="home">', array('admin'));
+                      echo "<span>Regresar al listado</span>";
+                    }
+
+                   ?>
+
                 </div>
                 <div class="footermenuI">
                     <?php if($infoUser['labelEstadisticas'] == "")
