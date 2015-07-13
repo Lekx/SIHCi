@@ -36,6 +36,7 @@ class Books extends CActiveRecord
 	 */
 	public $searchValue;
 
+
 	public function tableName()
 	{
 		return 'books';
@@ -49,7 +50,7 @@ class Books extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords', 'required'),
+			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords,', 'required'),
 			array('id_curriculum, isbn, edition, release_date, volume, pages, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('book_title, path', 'length', 'max'=>100),
 			array('publisher, traductor', 'length', 'max'=>80),
@@ -57,14 +58,14 @@ class Books extends CActiveRecord
 			array('idioma', 'length', 'max'=>15),
 			array('traductor_type', 'length', 'max'=>20),
 			array('area', 'length', 'max'=>40),
+			array('searchValue', 'length', 'max'=>60),
 			array('discipline', 'length', 'max'=>60),
 			array('subdiscipline', 'length', 'max'=>45),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'insert','safe' => false,  'maxSize'=>1024 * 1024 * 5),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'update','allowEmpty'=>true,'safe' => false,  'maxSize'=>1024 * 1024 * 5),
 			
-			array('path','required', 'on'=>'create'),
-			array('path', 'safe', 'on'=>'update'),
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg,jpeg,png', 'on'=>'insert'),
 			
 			//array('path','file','maxSize'=>array(1024 * 5000), 'message'=>'El Documento excede el peso permitido'),
 			// The following rule is used by search().
@@ -94,23 +95,23 @@ class Books extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'isbn' => 'ISBN',
-			'book_title' => 'Título del libro',
-			'publisher' => 'Editorial',
-			'edition' => 'Edición',
-			'release_date' => 'Año de publicación',
-			'volume' => 'Volume',
-			'pages' => 'Número de paginas',
-			'copies_issued' => 'Tiraje',
-			'work_type' => 'Tipo de trabajo',
-			'idioma' => 'Idioma',
-			'traductor_type' => 'Tipo de traductor',
-			'traductor' => 'Nombre del traductor',
-			'area' => 'Área',
-			'discipline' => 'Disciplina',
-			'subdiscipline' => 'Subdisciplina',
-			'path' => 'Documento',
-			'keywords' => 'Palabras claves',
+			'isbn' => 'Número de ISBN:',
+			'book_title' => 'Título del libro:',
+			'publisher' => 'Editorial:',					       		
+			'edition' => 'Edición:',
+			'release_date' => 'Año de publicación:',
+			'volume' => 'Volume:',
+			'pages' => 'Número de paginas:',
+			'copies_issued' => 'Tiraje:',
+			'work_type' => 'Identificador libro:',
+			'idioma' => 'Idioma:',
+			'traductor_type' => 'Tipo de traductor:',
+			'traductor' => 'Nombre del traductor:',
+			'area' => 'Área:',
+			'discipline' => 'Disciplina:',
+			'subdiscipline' => 'Subdisciplina:',
+			'path' => 'Documento:',
+			'keywords' => 'Palabras claves:',					       			
 			'creation_date' => 'Creation Date',
 		);
 	}
@@ -132,11 +133,16 @@ class Books extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'book_title ASC';
 		if($this->searchValue)
 		{
 			$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}	
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

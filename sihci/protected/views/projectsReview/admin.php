@@ -1,11 +1,13 @@
 <script type="text/javascript">
 	$(document).ready(function(){
-
+		//alert($("#projectsMenu").text());
 		$("#projectsMenu").appendTo($(".sysmenu"));
 
 	});
 
 </script>
+
+
 
 
 <div id="projectsMenu">
@@ -38,8 +40,13 @@ $('.search-form form').submit(function(){
 
 
 ?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Proyectos</h1>
+            <hr>
+        </div>
 
-<h1>Gestión de proyectos</h1>
+<h3>Gestión de proyectos</h3>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
@@ -60,7 +67,7 @@ $('.search-form form').submit(function(){
 			'name'=>'is_sponsored',
 			'type'=>'html','id'=>'is_sponsored','value'=>'CHtml::encode($data->is_sponsored)',
 			'value'=>'$data->is_sponsored == "1" ? "Si" : "No"',
-			
+
 		),
 		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
 
@@ -69,7 +76,7 @@ $('.search-form form').submit(function(){
 			'name'=>'discipline',
 			'type'=>'html','id'=>'discipline','value'=>'CHtml::encode($data->discipline)',
 			'value'=>'$data->discipline == "-1" ? "" : $data->discipline',
-			
+
 			),
 		/*array(
 			'name'=>'research_type',
@@ -83,7 +90,7 @@ $('.search-form form').submit(function(){
 			'name'=>'develop_uh',
 			'type'=>'html','id'=>'develop_uh','value'=>'CHtml::encode($data->develop_uh)',
 			'value'=>'$data->develop_uh == "-1" ? "" : $data->develop_uh',
-			
+
 			),
 
 		array(
@@ -105,7 +112,7 @@ $('.search-form form').submit(function(){
 		'sub_topic',
 		'justify',
 		'is_sni',
-		
+
 		'institution_colaboration',
 		'national_institutions',
 		'participant_institutions',

@@ -65,23 +65,31 @@ class SponsorshipController extends Controller
 		$model=new Sponsorship;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
+		if(isset($_POST['Sponsorship'])){
 
-
-		if(isset($_POST['Sponsorship']))
-		{
 			$model->attributes=$_POST['Sponsorship'];
 			$model->id_user_sponsorer = Yii::app()->user->id;
-			$model->status = "pendiente";
-			if($model->save())
-				$this->redirect(array('admin','id'=>$model->id));
-		}
+			$model->status = "PENDIENTE";
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+			if($model->validate()){
+					if($model->save()){
+						echo CJSON::encode(array('status'=>'success'));
+						Yii::app()->end();
+					}
+				}else{
+						$error = CActiveForm::validate($model);
+						if($error!='[]')
+						echo $error;
+						Yii::app()->end();
+					}
+		}
+			$this->render('create',array(
+				'model'=>$model,
+			));
 	}
+
 
 	/**
 	 * Updates a particular model.
@@ -97,9 +105,18 @@ class SponsorshipController extends Controller
 
 		if(isset($_POST['Sponsorship']))
 		{
-			$model->attributes=$_POST['Sponsorship'];
-			if($model->save())
-				$this->redirect(array('admin'));
+				$model->attributes=$_POST['Sponsorship'];
+			if($model->validate()){
+				if($model->save()){
+					echo CJSON::encode(array('status'=>'success'));
+					Yii::app()->end();
+				}
+			}else {
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+				echo $error;
+				Yii::app()->end();
+			}
 		}
 
 		$this->render('update',array(
@@ -132,6 +149,19 @@ class SponsorshipController extends Controller
 		));
 	}
 
+	private function checkAuth()
+	{
+		$conexion = Yii::app()->db;
+		$query = "SELECT u.id, u.email, s.sponsor_name FROM users AS u JOIN sponsors AS s ON s.id_user = u.id WHERE u.id = ".Yii::app()->user->id;
+		$checkAuth = $conexion->createCommand($query)->queryAll();
+		//print_r($checkAuth);
+		$result = false;
+		if(!empty($checkAuth))
+			$result = true;
+
+		return $result;
+	}
+
 	/**
 	 * Manages all models.
 	 */
@@ -141,9 +171,9 @@ class SponsorshipController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Sponsorship']))
 			$model->attributes=$_GET['Sponsorship'];
-
+		//var_dump($this->checkAuth());
 		$this->render('admin',array(
-			'model'=>$model,
+			'model'=>$model, 'checkAuth'=>$this->checkAuth()
 		));
 	}
 
@@ -177,18 +207,18 @@ class SponsorshipController extends Controller
 
 	public function actionGetResearchers() {
 		if (Yii::app()->request->isAjaxRequest&&!empty($_GET['term'])) {
-			$sql = 'SELECT u.id , CONCAT(p.last_name1, " ", p.last_name2, ", ", p.names) AS label 
-			FROM users AS u 
-			LEFT JOIN persons AS p ON u.id = p.id_user 
-			RIGHT JOIN curriculum AS cv ON u.id = cv.id_user 
-			WHERE u.type="fisico" 
-			AND u.status="activo" 
+			$sql = 'SELECT u.id , CONCAT(p.last_name1, " ", p.last_name2, ", ", p.names) AS label
+			FROM users AS u
+			LEFT JOIN persons AS p ON u.id = p.id_user
+			RIGHT JOIN curriculum AS cv ON u.id = cv.id_user
+			WHERE u.type="fisico"
+			AND u.status="activo"
 			AND (p.last_name1 LIKE :qterm OR p.names LIKE :qterm) ORDER BY p.last_name1 ASC';
 			$command = Yii::app()->db->createCommand($sql);
 			$qterm = $_GET['term'].'%';
 			$command->bindParam(":qterm", $qterm, PDO::PARAM_STR);
 			$result = $command->queryAll();
-			echo CJSON::encode($result); 
+			echo CJSON::encode($result);
 			exit;
 		} else {
 			return false;

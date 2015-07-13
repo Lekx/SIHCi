@@ -24,31 +24,31 @@
 	
 	<div class="row question">
 	<p>Trabajo libre o publicación(es) Autor(es) título, revista, año, volumen, páginas</p>
-        <?php echo $form->textArea($model,'term1',array('placeholder'=>'Respuesta..','title'=>'Repuesta')); ?>
+        <?php echo $form->textArea($model,'term1',array('placeholder'=>'Respuesta..','title'=>'Repuesta (maximo  500 caracteres)')); ?>
 		<?php echo $form->error($model,'term1'); ?>
 	</div>
 
 	<div class="row question">
 	<p>Problema por el cual se realizó el estudio de investigación</p>
-		<?php echo $form->textArea($model,'term2',array('placeholder'=>'Respuesta..','title'=>'Repuesta')); ?>
+		<?php echo $form->textArea($model,'term2',array('placeholder'=>'Respuesta..','title'=>'Repuesta (maximo  500 caracteres)')); ?>
 		<?php echo $form->error($model,'term2'); ?>
 	</div>
 
 	<div class="row question">
 	<p>Conocimiento científico útil generado en la investigación con potencial de aplicación para la innovación en  salud</p>
-		<?php echo $form->textArea($model,'term3',array('placeholder'=>'Respuesta..','title'=>'Repuesta')); ?>
+		<?php echo $form->textArea($model,'term3',array('placeholder'=>'Respuesta..','title'=>'Repuesta (maximo  500 caracteres)')); ?>
 		<?php echo $form->error($model,'term3'); ?>
 	</div>
 
 	<div class="row question">
 	<p>Estrategias para la transferencia y aplicación del conocimiento científico para la innovación de programas de salud, programas educativos, registros de propiedad intelectual y la elaboración de políticas públicas en salud</p>
-		<?php echo $form->textArea($model,'term4',array('placeholder'=>'Respuesta..','title'=>'Repuesta')); ?>
+		<?php echo $form->textArea($model,'term4',array('placeholder'=>'Respuesta..','title'=>'Repuesta (maximo  500 caracteres)')); ?>
 		<?php echo $form->error($model,'term4'); ?>
 	</div>
 
 	<div class="row question">
 	<p>Impacto en salud, social y económico de la transferencia y aplicación del conocimiento científico BENEFICIOS, para los pacientes, los profesionales de la salud y las instituciones entre otros</p>
-		<?php echo $form->textArea($model,'term5',array('placeholder'=>'Respuesta..','title'=>'Repuesta')); ?>
+		<?php echo $form->textArea($model,'term5',array('placeholder'=>'Respuesta..','title'=>'Repuesta (maximo  500 caracteres)')); ?>
 		<?php echo $form->error($model,'term5'); ?>
 	</div>
 
@@ -73,7 +73,7 @@
 		                    
                         ),array('class'=>'savebutton')); 
         ?>
-        <?php echo CHtml::Button('Cancelar',array('submit' => array('knowledgeApplication/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+        <?php echo CHtml::link('Cancelar',array('knowledgeApplication/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 				  
 <?php $this->endWidget(); ?>

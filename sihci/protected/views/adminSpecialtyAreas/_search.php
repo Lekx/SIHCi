@@ -16,7 +16,7 @@
 		<div class="row subtitleadmin">
 		<h4>Gestionar Area:</h4>
 		</div>
-	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>'Ejemplo: Ricardo','class'=>'searchadmin')); ?>	
+	   	<?php echo $form->textField($model,'searchValue',array('size'=>60,'maxlength'=>70, 'placeholder'=>' Búsqueda por columna','class'=>'searchadmin')); ?>	
 		<?php echo CHtml::submitButton('',array('class'=>'adminbut')); ?>
 	   	<?php echo CHtml::link('Crear',array('AdminSpecialtyAreas/create'),array('class'=>'admin_create')); ?>
 

@@ -12,7 +12,7 @@
 	)); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado", 'title'=>'Nombre del graduado'));?>
+		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>70,'placeholder'=>"Nombre completo del graduado", 'title'=>'Nombre del graduado (maximo 60 caracteres)'));?>
 		<?php echo $form->error($model,'fullname'); ?>
 	</div>
 	
@@ -40,7 +40,7 @@
 		                    
                         ),array('class'=>'savebutton')); 
         ?>
-       	<?php echo CHtml::Button('Cancelar',array('submit' => array('postdegreeGraduates/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+       <?php echo CHtml::link('Cancelar',array('postdegreeGraduates/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>

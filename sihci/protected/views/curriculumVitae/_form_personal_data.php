@@ -17,8 +17,6 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-<?php echo $form->errorSummary($model); ?>
-<?php echo $form->errorSummary($curriculum); ?>
 
 	<div class="row">
 		<section title=".slideThree">
@@ -168,7 +166,7 @@
 
 	<div class="row">
 		
-		<?php echo $form->textField($model,'curp_passport',array('size'=>20,'maxlength'=>20, 'title'=>'CURP o Pasaporte','placeholder'=>"Curp")); ?>
+		<?php echo $form->textField($model,'curp_passport',array('size'=>18,'maxlength'=>18, 'title'=>'CURP o Pasaporte','placeholder'=>"Curp")); ?>
 		
 		
           <?php echo $form->error($model,'curp_passport'); ?>
@@ -195,8 +193,12 @@
 	</div>
 
 	<div class="row buttons">
-	<?php echo CHtml::button('Guardar', array('submit' => array('curriculumVitae/personalData'), 'confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton')); ?>
-		
+		 <?php echo CHtml::htmlButton('Guardar',array(
+                'onclick'=>'send("personal-data-form", "curriculumVitae/personalData", "'.$model->id.'","curriculumVitae/personalData","");',
+                 //'id'=> 'post-submit-btn', 
+                'class'=>'savebutton',
+            ));
+   		 ?>
 	
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>

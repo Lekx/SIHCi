@@ -22,17 +22,20 @@
 )); ?>
 
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model);
+	if($model->SNI == -1)
+		$model->SNI = "";
+	?>
 
 <div class="docs">
 	
 	<div class="row">
-		<?php echo $form->textField($model,'SNI',array('title'=>'SNI','size'=>60,'maxlength'=>250, 'placeholder'=>'SNI')); ?>
+		<?php echo $form->textField($model,'SNI',array('title'=>'Nombramiento SNI','maxlength'=>11, 'placeholder'=>'Nombramiento SNI')); ?>
 		<?php echo $form->error($model,'SNI'); ?>
 	</div>
 
 	<div class="row">
-			<?php echo $form->textField($model,'researcher_title',array('title'=>'Nombramiento','size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento")); ?>
+			<?php echo $form->textField($model,'researcher_title',array('title'=>'Nombramiento en el Hopital Civil','size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento en el Hospital Civil")); ?>
 		<?php echo $form->error($model,'researcher_title'); ?>  
 	</div>
 

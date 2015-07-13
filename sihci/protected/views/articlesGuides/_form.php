@@ -2,9 +2,9 @@
 /* @var $this ArticlesGuidesController */
 /* @var $model ArticlesGuides */
 /* @var $form CActiveForm */
- $cs = Yii::app()->getClientScript();
- $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/articlesGuides/js/script.js');
+
 ?>
+
 <script type="text/javascript">
 $(document).ready(function() {
     $(".numericOnly").keydown(function (e) {
@@ -19,7 +19,31 @@ $(document).ready(function() {
 
     });
 });
+
+function lettersOnly(e)
+{
+ 	key = e.keyCode || e.which;
+ 	tecla = String.fromCharCode(key).toLowerCase();
+ 	letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+	especiales = [8,9,37,39,46,45,47];
+
+
+	 tecla_especial = false
+ 		for(var i in especiales)
+ 		{
+     		if(key == especiales[i])
+     		{
+  				tecla_especial = true;
+  				break;
+            } 
+ 		}
+ 
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+     		return false;
+} 
 </script>
+
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -28,36 +52,35 @@ $(document).ready(function() {
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableClientValidation'=>true,
+	//'enableClientValidation'=>true,
 	'enableAjaxValidation'=>true,
 	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
-	'clientOptions'=>array('validateOnSubmit'=>true),
+	//'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn',array('size'=>13,'placeholder'=>'ISBN', 'class'=>'numericOnly','title'=>'ISBN')); ?>
+		<?php echo $form->textField($model,'isbn',array('size'=>13,'maxlength'=>11,'placeholder'=>'Número de ISBN', 'class'=>'numericOnly','title'=>'Número de ISBN. (Solo se aceptan numeros)','class' => 'numericOnly')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Título', 'title'=>'Título')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>150, 'placeholder'=>'Título', 'title'=>'Título (maximo 150 caracteres)')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 	<div class="row">
-		<?php echo $form->textField($model,'editorial',array('size'=>60,'maxlength'=>80, 'placeholder'=>'Editorial', 'title'=>'Editorial')); ?>
+		<?php echo $form->textField($model,'editorial',array('size'=>60,'maxlength'=>80, 'placeholder'=>'Editorial', 'title'=>'Editorial (maximo 80 caracteres)')); ?>
 		<?php echo $form->error($model,'editorial'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'edicion',array('placeholder'=>'Edición', 'class'=>'numericOnly','title'=>'Edición')); ?>
+		<?php echo $form->textField($model,'edicion',array('placeholder'=>'Edición','maxlength'=>11, 'class'=>'numericOnly','title'=>'Edición. (Solo se aceptan numeros)')); ?>
 		<?php echo $form->error($model,'edicion'); ?>
 	</div>
 
 	<div class="row">
 	<span class="plain-select">
-		<?php  echo $form->dropDownList($model,'publishing_year',array('promt'=>'Año de publicación', 
+		<?php  echo $form->dropDownList($model,'publishing_year',array('promt'=>'Año de publicación',
                     '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
 					'1934'=>'1934','1935'=>'1935','1936'=>'1936','1937'=>'1937',
 					'1938'=>'1938','1939'=>'1939','1940'=>'1940','1941'=>'1941',
@@ -80,46 +103,53 @@ $(document).ready(function() {
 					'2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
 					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
 					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
-					'2015'=>'2015'),array('title'=>'Año de publicación'));  
+					'2015'=>'2015'),array('title'=>'Año de publicación'));
 		?>
 		</span>
 		<?php echo $form->error($model,'publishing_year'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'volumen',array('placeholder'=>'Volumen','class'=>'numericOnly', 'title'=>'Volumen')); ?>
-		<?php echo $form->error($model,'volumen'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'volumen_no',array('placeholder'=>'Número de Volumen','class'=>'numericOnly', 'title'=>'Número de Volumen')); ?>
-		<?php echo $form->error($model,'volumen_no'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'start_page',array('placeholder'=>'Pagina inicial','class'=>'numericOnly', 'title'=>'Pagina inicial')); ?>
-		<?php echo $form->error($model,'start_page'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'end_page',array('placeholder'=>'Pagina final', 'class'=>'numericOnly','title'=>'Pagina final')); ?>
-		<?php echo $form->error($model,'end_page'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'article_type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo de articulo', 'title'=>'Tipo de articulo')); ?>
+		<?php echo $form->textField($model,'article_type',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Tipo', 'title'=>'Tipo(maximo 20 caracteres)')); ?>
 		<?php echo $form->error($model,'article_type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje', 'class'=>'numericOnly','title'=>'Tiraje')); ?>
-		<?php echo $form->error($model,'copies_issued'); ?>
+		<?php echo $form->textField($model,'type',array('size'=>15,'maxlength'=>15,'placeholder'=>'Clasificación del articulo o guía', 'title'=>'Clasificación del articulo o guía(maximo 15 caracteres)')); ?>
+		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'magazine',array('size'=>50,'maxlength'=>50,'placeholder'=>'Revista', 'title'=>'Revista')); ?>
+		<?php echo $form->textField($model,'magazine',array('size'=>50,'maxlength'=>50,'placeholder'=>'Revista', 'title'=>'Revista (maximo 50 caracteres)')); ?>
 		<?php echo $form->error($model,'magazine'); ?>
 	</div>
+
+
+	<div class="row">
+		<?php echo $form->textField($model,'volumen',array('placeholder'=>'Volumen','maxlength'=>11,'class'=>'numericOnly', 'title'=>'Volumen. (Solo se aceptan numeros)',)); ?>
+		<?php echo $form->error($model,'volumen'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->textField($model,'volumen_no',array('placeholder'=>'Número de Volumen','class'=>'numericOnly', 'title'=>'Número de Volumen. (Solo se aceptan numeros)')); ?>
+		<?php echo $form->error($model,'volumen_no'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->textField($model,'start_page',array('placeholder'=>'Pagina inicial','maxlength'=>11,'class'=>'numericOnly', 'title'=>'Pagina inicial. (Solo se aceptan numeros)')); ?>
+		<?php echo $form->error($model,'start_page'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->textField($model,'end_page',array('placeholder'=>'Pagina final','maxlength'=>11, 'class'=>'numericOnly','title'=>'Pagina final. (Solo se aceptan numeros)')); ?>
+		<?php echo $form->error($model,'end_page'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->textField($model,'copies_issued',array('placeholder'=>'Tiraje', 'class'=>'numericOnly','title'=>'Tiraje. (Solo se aceptan numeros)')); ?>
+		<?php echo $form->error($model,'copies_issued'); ?>
+	</div>
+
 
 	<div class="row">
 	<span class="plain-select">
@@ -379,7 +409,7 @@ $(document).ready(function() {
                     'PSICOLOGIA FORENSE'=>'PSICOLOGIA FORENSE','INTERACCION DE GRUPOS'=>'INTERACCION DE GRUPOS','PROCESOS DE GRUPO'=>'PROCESOS DE GRUPO','LIDERAZGO'=>'LIDERAZGO','MERCADEO'=>'MERCADEO','COMPORTAMIENTO POLITICO'=>'COMPORTAMIENTO POLITICO','OPINION PUBLICA'=>'OPINION PUBLICA','COMPORTAMIENTO SEGUN LA FUNCION'=>'COMPORTAMIENTO SEGUN LA FUNCION','PERCEPCIONES Y MOVIMIENTOS SOCIALES'=>'PERCEPCIONES Y MOVIMIENTOS SOCIALES','COMUNICACION SIMBOLICA'=>'COMUNICACION SIMBOLICA','PSICOLOGIA DE LA INGENIERIA'=>'PSICOLOGIA DE LA INGENIERIA','PSICOLOGIA DEL DEPORTE'=>'PSICOLOGIA DEL DEPORTE','OTROS'=>'OTROS','DISEÑO ARQUITECTONICO'=>'DISEÑO ARQUITECTONICO','PARQUES Y JARDINES'=>'PARQUES Y JARDINES','URBANISMO'=>'URBANISMO','EJECUCION DE LA OBRA'=>'EJECUCION DE LA OBRA','OTROS'=>'OTROS','CRITICA DE TEXTOS'=>'CRITICA DE TEXTOS','ANALISIS LITERARIO'=>'ANALISIS LITERARIO','ESTILO Y ESTETICA LITERARIOS'=>'ESTILO Y ESTETICA LITERARIOS',
                     'VOCABULARIO LITERARIO'=>'VOCABULARIO LITERARIO','RETORICA'=>'RETORICA','OTROS'=>'OTROS','CINEMATOGRAFIA'=>'CINEMATOGRAFIA','DANZA'=>'DANZA','COREOGRAFIA'=>'COREOGRAFIA','ARTES DECORATIVAS'=>'ARTES DECORATIVAS','DIBUJO'=>'DIBUJO','GRABADO'=>'GRABADO','ESTETICA DE LAS BELLAS ARTES'=>'ESTETICA DE LAS BELLAS ARTES','MUSICA'=>'MUSICA','MUSICOLOGIA'=>'MUSICOLOGIA','PINTURA'=>'PINTURA','FOTOGRAFIA'=>'FOTOGRAFIA','ESCULTURA'=>'ESCULTURA','TEATRO'=>'TEATRO','OTROS'=>'OTROS','EVOLUCION CULTURAL'=>'EVOLUCION CULTURAL','RELACIONES CULTURALES'=>'RELACIONES CULTURALES','FOLKLORE'=>'FOLKLORE','RELACIONES INTERETNICAS'=>'RELACIONES INTERETNICAS','IDIOMA Y CULTURA'=>'IDIOMA Y CULTURA','CARACTERISTICAS Y CIVILIZACION NACIONALES'=>'CARACTERISTICAS Y CIVILIZACION NACIONALES','SOCIOLOGIA DEL ARTE'=>'SOCIOLOGIA DEL ARTE','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','SOCIOLOGIA DE LA LITERATURA'=>'SOCIOLOGIA DE LA LITERATURA',
                     'SOCIOLOGIA DE LA RELIGION'=>'SOCIOLOGIA DE LA RELIGION','OTROS'=>'OTROS','ACOPIO DE DATOS SOBRE EL TERRENO'=>'ACOPIO DE DATOS SOBRE EL TERRENO','PSICOLOGIA SOCIAL'=>'PSICOLOGIA SOCIAL','DISEÑO DE ENCUESTAS SOCIOLOGICAS'=>'DISEÑO DE ENCUESTAS SOCIOLOGICAS','METODOS DE LAS ENCUESTAS SOCIOLOGICAS'=>'METODOS DE LAS ENCUESTAS SOCIOLOGICAS','OTROS'=>'OTROS','SOCIOLOGIA COMPARADA'=>'SOCIOLOGIA COMPARADA','SOCIOLOGIA HISTORICA'=>'SOCIOLOGIA HISTORICA','METODOLOGIA'=>'METODOLOGIA','SOCIOGRAFIA'=>'SOCIOGRAFIA','TEORIA'=>'TEORIA','OTROS'=>'OTROS','CONFLICTOS'=>'CONFLICTOS','SOLUCION DE CONFLICTOS'=>'SOLUCION DE CONFLICTOS','GUERRA Y PAZ'=>'GUERRA Y PAZ','OTROS'=>'OTROS','MEDICION Y CONSTRUCCION DE INDICES'=>'MEDICION Y CONSTRUCCION DE INDICES','CONSTRUCCION DE MODELOS'=>'CONSTRUCCION DE MODELOS',', ANALISIS ESTADISTICO'=>', ANALISIS ESTADISTICO','OTROS'=>'OTROS','BUROCRACIA'=>'BUROCRACIA','SOCIOLOGIA DE LA ENSEÑANZA'=>'SOCIOLOGIA DE LA ENSEÑANZA',
-                    'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'), 
+                    'SOCIOLOGIA DE LA INDUSTRIA'=>'SOCIOLOGIA DE LA INDUSTRIA','SOCIOLOGIA DE LA MEDICINA'=>'SOCIOLOGIA DE LA MEDICINA','SOCIOLOGIA DE LA EDUCACION'=>'SOCIOLOGIA DE LA EDUCACION','SOCIOLOGIA DEL DERECHO'=>'SOCIOLOGIA DEL DERECHO','OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS'=>'OCIOLOGIA DE LOS MEDIOS DE COMUNICACION DE MASAS','SOCIOLOGIA DE LAS CIENCIAS'=>'SOCIOLOGIA DE LAS CIENCIAS','OTROS'=>'OTROS','EVOLUCION DE LAS SOCIEDADES'=>'EVOLUCION DE LAS SOCIEDADES','PAISES EN DESARROLLO'=>'PAISES EN DESARROLLO','POLITICA SOCIAL'=>'POLITICA SOCIAL','SEGURIDAD SOCIAL'=>'SEGURIDAD SOCIAL','SERVICIOS SOCIALES'=>'SERVICIOS SOCIALES','DESARROLLO SOCIOECONOMICO'=>'DESARROLLO SOCIOECONOMICO','TECNOLOGIA Y CAMBIO SOCIAL'=>'TECNOLOGIA Y CAMBIO SOCIAL','DESARROLLO SUSTENTABLE'=>'DESARROLLO SUSTENTABLE','OTROS'=>'OTROS','SIGNOS'=>'SIGNOS','SOCIOLINGÜISTICA'=>'SOCIOLINGÜISTICA','SIMBOLOS'=>'SIMBOLOS','OTROS'=>'OTROS'),
                      array('prompt'=>'Seleccionar subdisciplina', 'title'=>'Seleccionar subdisciplina'));
 		?>
 		</span>
@@ -387,80 +417,84 @@ $(document).ready(function() {
 	</div>
 
 	<div class="row">
-		<?php echo $form->fileField($model,'url_document',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
+		<?php echo $form->fileField($model,'url_document',array('size'=>60,'maxlength'=>100,'title'=>'archivo del articulo o guía')); ?>
 		<?php echo $form->error($model,'url_document'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250,'placeholder'=>'Palabras clave', 'title'=>'Palabras clave')); ?>
+		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250,'placeholder'=>'Palabras clave', 'title'=>'Palabras clave (maximo 250 caracteres)')); ?>
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->textField($model,'type',array('size'=>15,'maxlength'=>15,'placeholder'=>'Tipo', 'title'=>'Tipo')); ?>
-		<?php echo $form->error($model,'type'); ?>
-	</div>
 
 	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
  			'addButtonLabel'=>'Agregar nuevo autor',
-		 )); 
+		 ));
     ?>
-    <div class="authorsRegistry">    		 
+    <div class="authorsRegistry">
 	   <?php  echo "<input type='hidden' name='idsArticlesGuides[]'>"; ?>
-		   
+
 		   <div class="row">
-			  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)')); ?>
+			  <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'names');?>
 		   </div>
 
 		  <div class="row">
-			  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno')); ?>
+			  <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name1'); ?>
 		  </div>
-		  
+
 		   <div class="row">
-			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno')); ?>
+			  <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
 			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
 	       </div>
 		  <div class="row">
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición', 'title'=>'posición')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición', 'title'=>'posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
 		  <hr>
-   	</div> 	
-    	    
-	<?php 
-		if(!$model->isNewRecord)		  
-		  foreach ($modelAuthors as $key => $value) 
+   	</div>
+
+	<?php
+
+
+		if(!$model->isNewRecord)
+		  foreach ($modelAuthors as $key => $value)
 		  { ?>
-		 	 		
+
 				 <?php echo "<input type='hidden' value='".$value->id."' name='idsArticlesGuides[]'>"; ?>
-				  
-							<div class="row">
-					  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)')); ?>
-					  <?php echo $form->error($value,'names');?>
+
+					   <div class="row">
+					  		<?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
+					  		<?php echo $form->error($value,'names');?>
 					  </div>
-							<div class="row">
-					   <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno')); ?>
-					  <?php echo $form->error($value,'last_name1'); ?>
+					  <div class="row">
+					  		 <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
+					  		<?php echo $form->error($value,'last_name1'); ?>
 					  </div>
+					  <div class="row">
+					  		<?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
+					  		<?php echo $form->error($value,'last_name2'); ?>
+					  </div>
+
 						<div class="row">
-					  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno')); ?>
-					  <?php echo $form->error($value,'last_name2'); ?>
+					  		<?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición', 'title'=>'posición. (Solo se aceptan numeros)')); ?>
+					  		<?php echo $form->error($value,'position'); ?>
 					  </div>
-				
-						<div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición', 'title'=>'posición')); ?>
-					  <?php echo $form->error($value,'position'); ?>
-					  </div>
-			
-	 
+
+
 	<?php } ?>
 
-	<div class="row buttons">		
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('articlesGuides/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	<div class="row buttons">
+
+		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
+                'onclick'=>'send("articles-guides-form", "articlesGuides/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","articlesGuides/admin","");',
+                 //'id'=> 'post-submit-btn',
+                'class'=>'savebutton',
+            ));
+   		 ?>
+		 <?php echo CHtml::link('Cancelar',array('articlesGuides/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -1,5 +1,4 @@
 <?php
-
 class HospitalUnitJimEthicsCommitteeController extends Controller
 {
 	public function actionIndex()

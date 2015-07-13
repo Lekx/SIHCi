@@ -20,6 +20,8 @@ class PostdegreeGraduates extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	public $searchValue;
 	
 	public function tableName()
 	{
@@ -39,8 +41,9 @@ class PostdegreeGraduates extends CActiveRecord
 			array('id_curriculum, fullname', 'required'),
 			array('id_curriculum', 'numerical','integerOnly'=>true),
 			array('fullname', 'length', 'max'=>70),
+			array('searchValue', 'length', 'max'=>70),
 			array('creation_date', 'safe'),
-		    array('id, id_curriculum, fullname', 'safe', 'on'=>'search'),
+		    array('id, id_curriculum, fullname, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,8 +60,8 @@ class PostdegreeGraduates extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'fullname' => 'Nombre completo del graduado.',
-			'creation_date' => 'Fecha de creación.',
+			'fullname' => 'Nombre completo del graduado:',
+			'creation_date' => 'Fecha de creación',
 		);
 	}
 
@@ -75,15 +78,23 @@ class PostdegreeGraduates extends CActiveRecord
 	 * based on the search/filter conditions.
 	 */
 	public function search()
-	{
-				
-		$criteria = new CDbCriteria;	
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('fullname',$this->fullname);
-
+	{		
+		$criteria=new CDbCriteria;
+	
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'fullname ASC';
+		
+		if($this->searchValue)
+		{
+			$criteria->addCondition("fullname LIKE CONCAT('%', :searchValue , '%') OR creation_date LIKE CONCAT('%', :searchValue ,'%')");
+			$criteria->params = array('searchValue'=>$this->searchValue);
+		}	
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+
 		));
 	}
 
