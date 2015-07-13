@@ -1,5 +1,26 @@
 $(document).ready(function() {
 
+  var owl = $("#owl-demo");
+
+  owl.owlCarousel({
+    items: 4,
+    autoWidth: true,
+  });
+
+  // Custom Navigation Events
+  $(".next").click(function() {
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function() {
+    owl.trigger('owl.prev');
+  })
+  $(".play").click(function() {
+    owl.trigger('owl.play', 1000); //owl.play event accept autoPlay speed as second parameter
+  })
+  $(".stop").click(function() {
+    owl.trigger('owl.stop');
+  })
+
   var currentPage = $('.paggersection li.active').text();
   if (currentPage == "1") {
     $('.fa-arrow-left').hide();
@@ -55,6 +76,11 @@ $(document).ready(function() {
 
   });
 
-
+  $('.savepro').click(function() {
+    $('#projectsModal').modal('toggle');
+  });
+  $('.sendpro').click(function() {
+    $('#projectsModal').modal('toggle');
+  });
 
 });

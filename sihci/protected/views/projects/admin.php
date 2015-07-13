@@ -43,7 +43,7 @@ $('.search-form form').submit(function(){
 	'model'=>$model,
 )); ?>
 
-<?php 
+<?php
 $pjs = Projects::model()->findByAttributes(array('id_curriculum'=>Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id));
 $pjs->search();
 //var_dump($pjs);
@@ -58,12 +58,11 @@ $pjs->search();
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'dataProvider'=>$model->search(), */
 	'columns'=>array(
-		'id_curriculum',
 		array(
 			'name'=>'is_sponsored',
 			'header'=>'',
 			'type'=>'html','id'=>'is_sponsored','value'=>'CHtml::encode($data->is_sponsored)',
-			'value'=>'$data->is_sponsored == "1" ? "Si" : "No"',
+			'value'=>'$data->is_sponsored == "1" ? "Si" : ""',
 		),
 		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'substr($data->title,0,50)."..."','htmlOptions'=>array('width'=>'250px')),
 		array(
@@ -112,7 +111,7 @@ $pjs->search();
 						'visible'=>'$data->status == "BORRADOR" ? TRUE : FALSE',
 						'url'=> '"projects/update/".$data->id',
 						'options'=>array('title'=>'Eliminar',),
-						
+
 					),
 		),
 	),),

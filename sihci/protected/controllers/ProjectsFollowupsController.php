@@ -114,13 +114,13 @@ class ProjectsFollowupsController extends Controller
 			$user = Users::model()->findByAttributes(array('id'=>$comments[$key]->id_user));
 			$rol = Roles::model()->findByAttributes(array('id'=>$user->id_roles));
 
-			$comment .= "Comentario - ".$rol->alias." ";
-			$comment .= $comments[$key]->url_doc != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$comments[$key]->url_doc,array("target"=>"_blank")) : "";
+			$comment .= "<div clas='comentsrow'><h5>Comentario - ".$rol->alias."</h5>";
+			$comment .= "<p>".$comments[$key]->url_doc != null ? CHtml::link('Ver archivo', Yii::app()->baseUrl.$comments[$key]->url_doc,array("target"=>"_blank")) : "</p>";
 			$comment .= "<br><br>";
 
-			$comment .= $comments[$key]->followup;
+			$comment .= "<div class=''>".$comments[$key]->followup."</div>";
 
-			$comment .= "<br><br>";
+			$comment .= "</div> <hr>";
 
 		}
 		echo CJSON::encode(array('id'=>$followupCurrent->id,'id_project'=>$followupCurrent->id_project,'followup'=>$followupCurrent->followup, 'date'=>$date, 'comments'=>$comment));

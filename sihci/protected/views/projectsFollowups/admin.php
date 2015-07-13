@@ -53,9 +53,13 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 								'class'=> 'createFollowup',
  						  )
  						);
+
+		echo "	<div class='customNavigation'>
+	  <a class='btn prev'><i class='fa fa-arrow-left'></i></a> </div>";
+		echo "<div id='owl-demo' class=''>";
 		foreach ($followups as $key => $value) {
 			echo CHtml::ajaxLink(
-						  " ".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
+						  "".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
 						  Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
 						  array( // ajaxOptions
 						    'type' => 'POST',
@@ -69,35 +73,43 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 						                     var data = JSON.parse(data);
 																 $('#projects-followups-form-create').hide();
 																 $('#projects-followups-form').show();
-						                     $('#follow').html('<br><br>Reporte del Investigador <br><br>Seguimiento -'+ data['id'] + ' ' + data['date']+'<br><br>');
+						                     $('#follow').html('<h5 class=followuph5>Seguimiento -'+ data['id'] + ' ' + data['date']+'</h5>');
 
 																 var dataIDP = data['id_project'];
 						                     var dataIDF = data['id'];
 																 var dataComments = data['comments'];
 
-						                     $('#followup').html(data['followup']);
+						                     $('#followup').html('<h4>Reporte Investigador</h4>'+data['followup']);
 
 
 						                     $('#createFollowup').unbind('onclick');
 						                     $('#createFollowup').attr('onclick', 'send(\'projects-followups-form\', \'projectsReview/review\',\"'+dataIDP+'\" , \'none\', \"'+dataIDF+'\" )');
-																 $('#comments').html('Comentarios:<br><br>'+dataComments);
+																 $('#comments').html('<h3>Comentarios:</h3>'+dataComments+'');
 
 						                  }",
 						    'data' => array('id' => $followups[$key]->id,)
 						  ),
 						  array( //htmlOptions
 						    'href' => Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
-						  )
+								'class'=> 'item Followups '.$key,
+								)
 						);
 
 		}
+		echo "</div>";
+		echo "	<div class='customNavigation'>
+		<a class='btn next'><i class='fa fa-arrow-right'></i></a> </div>";
+		echo "<div id='owl-demo' class=''>";
 		echo "<div id='follow'></div>";
 		echo "<div id='followup'></div>";
+		?>
+
+		<?php
 
 		$this->renderPartial('../projectsFollowups/_form', array('model'=>$modelFollowup));
 		$this->renderPartial('../projectsReview/_form', array('model'=>$modelFollowup));
 
 		echo "<div id='comments'></div>";
-		echo "<br><br><br>";
+		echo "<br>";
 
 ?>
