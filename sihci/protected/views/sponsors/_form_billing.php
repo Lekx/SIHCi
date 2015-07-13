@@ -13,7 +13,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation' => false,
+	'enableAjaxValidation' => true,
 ));?>
 
 
@@ -98,8 +98,11 @@
 
 
 	<div class="row buttons">
-		<?php /* echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); */?>
-		<input type="submit"  class="savebutton" onclick="validationFrom()" value="Guardar">
+		<?php echo CHtml::htmlButton('Enviar',array(
+								'onclick'=>'send("sponsors-billing-form", "sponsors/create_billing", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+								'class'=>'savebutton',
+						));
+		?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

@@ -18,13 +18,23 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 
 	});
 </script>
-<h1>Seguimientos del Proyecto </h1>
-<h5><?php echo $project->title;?></h5>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
+      <h1>Seguimientos del Proyecto </h1>
+            <hr>
+        </div>
+
+
+
+<div class="projecttitle">
+<h4><?php echo $project->title;?></h4>
+</div>
+
 
 <?php
 // echo CHtml::link('Crear Nuevo','create');
 			 echo CHtml::ajaxLink(
- 						  "Crear Nuevo",
+ 						  "jesus de nazareth",
  						  Yii::app()->createUrl( 'projectsFollowups/create/'.$project->id ),
  						  array( // ajaxOptions
  						    'type' => 'POST',
@@ -40,10 +50,9 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
  						  ),
  						  array( //htmlOptions
  						    'href' => Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
+								'class'=> 'createFollowup',
  						  )
  						);
-
-
 		foreach ($followups as $key => $value) {
 			echo CHtml::ajaxLink(
 						  " ".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
@@ -68,7 +77,6 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 
 						                     $('#followup').html(data['followup']);
 
-																 alert(dataComments);
 
 						                     $('#createFollowup').unbind('onclick');
 						                     $('#createFollowup').attr('onclick', 'send(\'projects-followups-form\', \'projectsReview/review\',\"'+dataIDP+'\" , \'none\', \"'+dataIDF+'\" )');

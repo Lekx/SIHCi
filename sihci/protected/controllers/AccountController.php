@@ -48,8 +48,11 @@
 		}
 		else if($email2 == '' || $email22 == ''){
       echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'Favor de llenar los campos de email.'));
-      Yii::app()->end();			return false;
+      Yii::app()->end();
+      return false;
 		}else{
+      echo CJSON::encode(array('status'=>'success'));
+      Yii::app()->end();
 			return true;
 	}
 }
@@ -65,6 +68,8 @@
       Yii::app()->end();
       return false;
 		}else{
+      echo CJSON::encode(array('status'=>'success'));
+      Yii::app()->end();
 			return true;
 	}
 }
@@ -89,6 +94,8 @@
       			return false;
 		}
 		else{
+      echo CJSON::encode(array('status'=>'success'));
+      Yii::app()->end();
 			return true;
 		}
 	}
@@ -99,6 +106,8 @@
         				return false;
 		}
 			else{
+        echo CJSON::encode(array('status'=>'success'));
+        Yii::app()->end();
 				return true;
 		}
 }
@@ -109,8 +118,9 @@
           Yii::app()->end();
           return false;
 		  } else {
-
-		       return true;
+          echo CJSON::encode(array('status'=>'success'));
+          Yii::app()->end();
+		      return true;
 		  }
 }
 
@@ -210,9 +220,7 @@
 
 			$this->layout='//layouts/system';
 			$model = new SystemLogUsers('search');
-			//$model->unsetAttributes();
-			//if(isset($_GET['SystemLog']))
-			//	$model->attributes=$_GET['SystemLog'];
+
 
 			$this->render('systemLog',array(
 				'model'=>$model,

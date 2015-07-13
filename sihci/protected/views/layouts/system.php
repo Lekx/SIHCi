@@ -72,7 +72,7 @@
                                          $('.delete, .view, .update, .ttip').tooltipster({
                                             position: 'top',
                                             trigger: 'hover',
-                                            maxWidth:'50'
+                                            maxWidth:'90'
                                         });
 
                                         $('.ttipnot').tooltipster({
@@ -80,6 +80,7 @@
                                             trigger: 'hover',
                                             maxWidth:'150'
                                         });
+
 
                                     });
         </script>
