@@ -72,8 +72,15 @@
                                          $('.delete, .view, .update, .ttip').tooltipster({
                                             position: 'top',
                                             trigger: 'hover',
-                                            maxWidth:'50'
-                                        })
+                                            maxWidth:'90'
+                                        });
+
+                                        $('.ttipnot').tooltipster({
+                                            position: 'top',
+                                            trigger: 'hover',
+                                            maxWidth:'150'
+                                        });
+
 
                                     });
         </script>
@@ -163,8 +170,8 @@
 
                         $pPro = $conection->createCommand("SELECT count(distinct p.id) AS X FROM projects AS p INNER JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition)->queryAll();
 
-                        if($pPro > 0){
-                          echo "<div class='notification'>";
+                        if($pPro[0]["X"] > 0){
+                          echo "<div class='notification ttipnot' title='Proyecto(s) pendientes de su aprobación'>";
                           echo $pPro[0]["X"];
                           echo "</div>";
                         }

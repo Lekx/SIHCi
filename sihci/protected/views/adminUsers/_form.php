@@ -46,7 +46,7 @@ $this->menu=array(
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'users-form',
+    'id'=>'usersAdmin-form',
     // Please note: When you enable ajax validation, make sure the corresponding
     // controller action is handling ajax validation correctly.
     // There is a call to performAjaxValidation() commented in generated controller code.
@@ -119,11 +119,11 @@ $this->menu=array(
 
     <div class="row buttons">
       <?php echo CHtml::htmlButton('Enviar',array(
-                  'onclick'=>'send("users-form", "users/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","AdminUsers","")',
+                  'onclick'=>'send("usersAdmin-form", "users/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","AdminUsers","")',
                   'class'=>'savebutton',
               ));
       ?>
-      <?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+      <?php echo CHtml::Button('Cancelar',array('submit' => array('AdminUsers'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 
       </div>
 

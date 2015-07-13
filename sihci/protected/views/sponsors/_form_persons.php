@@ -118,10 +118,14 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row buttons">
-
-		<input type="submit"  class="savebutton" onclick="validationFrom()" value="Guardar">
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+		<?php echo CHtml::htmlButton('Enviar',array(
+								'onclick'=>'send("persons-form", "sponsors/create_persons", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+								'class'=>'savebutton',
+						));
+		?>
+		 <?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?> 
 	</div>
+
 	<script>
 		function cleanUp(){
 			var text;
@@ -132,10 +136,6 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 			}
 			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
 		}
 </script>
 

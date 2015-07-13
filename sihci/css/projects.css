@@ -49,3 +49,45 @@ small
 {
   margin-left: 10px !important;
 }
+.projecttitle
+{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 90%;
+  text-align: justify;
+}
+
+/* Follow ups */
+.createFollowup
+{
+  background-image: url("../img/Icon svg/Proyectos/seguimiento-nuevo.svg");
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display:inline-block;
+	text-indent:-9999px;
+}
+.Followups
+{
+  background-image: url("../img/Icon svg/Proyectos/seguimiento-comentario.svg");
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display:inline-block;
+	text-indent:-9999px;
+}
+.nocomets
+{
+  background-image: url("../img/Icon svg/Proyectos/seguimiento.svg");
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display:inline-block;
+	text-indent:-9999px;
+}

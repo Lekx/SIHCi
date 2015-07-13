@@ -10,8 +10,7 @@ $form=$this->beginWidget('CActiveForm', array(
 )); ?>
 
     <div class="row">
-        <?php echo $form->labelEx($model,'Seguimiento'); ?>
-        <?php echo $form->textArea($model,'followup',array('rows'=>6, 'cols'=>50, 'title'=>'Seguimiento')); ?>
+        <?php echo $form->textArea($model,'followup',array('rows'=>6, 'cols'=>50, 'title'=>'Seguimiento', 'placeholder'=>'Seguimiento')); ?>
         <?php echo $form->error($model,'followup'); ?>
     </div>
 
@@ -19,12 +18,13 @@ $form=$this->beginWidget('CActiveForm', array(
         <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento')); ?>
         <?php echo $form->error($model,'url_doc'); ?>
     </div>
-
+  <div class="row">
     <?php echo CHtml::htmlButton('Crear',array(
-                'onclick'=>'send("projects-followups-form", "projectsFollowups/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
-                'class'=>'savebutton',
+                'onclick'=>'send("projects-followups-form-create", "projectsFollowups/createFollowup", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","")',
+                'class'=>'savebuttonp',
             ));
     ?>
+        </div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

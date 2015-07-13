@@ -1,22 +1,72 @@
 <?php
 class UsersController extends Controller {
-	function checkEmail($email, $email2) {
 
-		if ($email != $email2) {
-			echo "Los Emails no coinciden.";
+
+	function checkEmailDifferent($email, $email2){
+		if ($email != $email2){
 			return false;
-		} else {
+		}else
 			return true;
 		}
-	}
-	function checkPassword($password, $password2) {
-		if ($password != $password2) {
-			echo "Las contraseñas no coinciden.";
-			return false;
-		} else {
+
+function checkEmailNull($email, $email2){
+	if($email == '' || $email2 == ''){
+		return false;
+	}else
 			return true;
 		}
+
+
+	function checkPasswordDifferent($password, $password2){
+		if ($password != $password2){
+      return false;
+		}else
+			return true;
+
+
+		}
+
+	function checkPasswordNull($password, $password2){
+		if($password == '' || $password2 == ''){
+      return false;
+		}else
+			return true;
+
+		}
+
+	public function actionInfoAccount(){
+			$this->layout = 'system';
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+			$details = Users::model()->findByPk($iduser);
+			$this->render('infoAccount',array(
+			'details'=>$details,
+			));
 	}
+
+	public function checkEmailExist($email){
+		if ($this->currentemail != $email){
+      			return false;
+		}
+		else
+			return true;
+		}
+		public function checkPasswordExist($password){
+			if ($this->currentpassword != sha1(md5(sha1($password)))){
+        	return false;
+			}else
+				return true;
+			}
+
+		public function checkEmailValid($email){
+		  	if (!preg_match("/^([a-zA-Z0-9._]+)@([a-zA-Z0-9.-]+).([a-zA-Z]{2,4})$/",$email)){
+          return false;
+		  } else
+		      return true;
+		  }
 
 	public $layout = '//layouts/column2';
 
@@ -66,8 +116,8 @@ class UsersController extends Controller {
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
 			if (empty($result)){
-			if ($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2'])) {
-				if ($this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2'])) {
+			if ($this->checkEmailDifferent($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailNull($_POST['Users']['email'], $_POST['Users']['email2'])) {
+				if ($this->checkPasswordDifferent($_POST['Users']['password'], $_POST['Users']['password2']) && $this->checkPasswordNull($_POST['Users']['password'],$_POST['Users']['password2'])) {
 
 
 
@@ -103,7 +153,7 @@ class UsersController extends Controller {
 												$log->action = "creacion";
 												$log->datetime = new CDbExpression('NOW()');
 												$log->save();
-												
+
 												echo CJSON::encode(array('status'=>'success'));
 												Yii::app()->end();
 

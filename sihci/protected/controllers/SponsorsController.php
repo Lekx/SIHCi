@@ -26,13 +26,13 @@ class SponsorsController extends Controller {
 	public function accessRules()
 	{
 		return array(
-			array('allow',  
+			array('allow',
 				'actions'=>array('index','view','sponsorsInfo', 'create_persons', 'create_contacts', 'create_contact',
 							     'create_addresses','fillFirst','create_billing','create_docs','delete',
 							     'deleteContacts','deleteContact','admin'),
-				'expression'=>'($user->Rol->alias==="ADMIN" || $user->type==="moral")',			     
+				'expression'=>'($user->Rol->alias==="ADMIN" || $user->type==="moral")',
 				'users'=>array('@'),
-			),			
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -174,14 +174,19 @@ class SponsorsController extends Controller {
 		if (isset($_POST['Persons'])) {
 			$model->attributes = $_POST['Persons'];
 			$model->id_user = $iduser;
-
+			if($model->validate()){
 			if ($model->save()) {
 				$section="Empresas";
 				$details="Subsección: Datos de Representante. Registro Número ".$model->id;
 				$action="Modificación";
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				//$this->redirect(array('view', 'id' => $model->id));
-			}
+				echo CJSON::encode(array('status'=>'success'));
+				Yii::app()->end();
+		}
+		}else{
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+			Yii::app()->end();
+		}
 
 		}
 
@@ -224,20 +229,16 @@ class SponsorsController extends Controller {
 			$model->value = $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key];
 			if($model->validate() == 1){
 				if($model->save()){
-					echo CJSON::encode(array('status'=>'success'));
-					Yii::app()->end();
 					$section = "Empresas"; //manda parametros al controlador AdminSystemLog
 					$details = "Subsección: Datos de Contactos. Datos: ".$model->fullname;
 					$action = "Creación";
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					echo CJSON::encode(array('status'=>'success'));
+					Yii::app()->end();
 			}
 		}else {
-			$error = CActiveForm::validate($model);
-			if($error!='[]')
-				echo $error;
-
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
 			Yii::app()->end();
-
 		}
 	}
 }
@@ -362,6 +363,9 @@ class SponsorsController extends Controller {
 			$details = "Subsección: Datos de Facturación";
 			$action = "Creación";
 		}
+		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelAddresses);
+
 
 		if (isset($_POST['SponsorBilling'])) {
 
@@ -372,6 +376,7 @@ class SponsorsController extends Controller {
 			if (isset($_POST['sameAddress'])) {
 
 				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id_address;
+
 				if ($model->save())
 					if ($modelAddresses->id != $model->id_address_billing && $modelAddresses->id > 0) {
 						if ($modelAddresses->delete())
@@ -388,7 +393,8 @@ class SponsorsController extends Controller {
 
 							if ($model->save()) {
 								Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-								$this->redirect(array('create_billing'));
+								echo CJSON::encode(array('status'=>'success'));
+									Yii::app()->end();
 							}
 
 
@@ -433,7 +439,6 @@ class SponsorsController extends Controller {
 			}
 		}
 		$model = new SponsorsDocs;
-		$reload = false;
 		if (isset($_POST['Doc1'])) {
 			$path2 = YiiBase::getPathOfAlias("webroot") . "/users/" . $id_sponsor . "/docs/";
 			$id_sponsor = Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
@@ -464,6 +469,8 @@ class SponsorsController extends Controller {
 					$error1 = str_replace('SponsorsDocs_path','SponsorsDocs1_path',$error1);
 				}
 			}
+
+
 			if (is_object(CUploadedFile::getInstanceByName('Doc2'))) {
 				unset($model);
 				if (!array_key_exists('Acreditacion_de_las_facultades_del_representante_o_apoderado', $modelDocs)) {

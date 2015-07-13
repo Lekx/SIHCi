@@ -120,8 +120,7 @@ class Sponsorship extends CActiveRecord
 	public function customSearch()
 	{
 		$criteria=new CDbCriteria;
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-		
+		$curriculumId = Yii::app()->user->id;
 		$criteria->condition='id_user_researcher = '.$curriculumId;
 		$criteria->order = 'id DESC';
 		if($this->searchValue)
@@ -129,8 +128,8 @@ class Sponsorship extends CActiveRecord
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR project_name LIKE CONCAT('%', :searchValue ,'%') OR description LIKE CONCAT('%', :searchValue ,'%') OR status LIKE CONCAT('%', :searchValue ,'%') ");
 			//$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
-		}	
-		
+		}
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -141,7 +140,7 @@ class Sponsorship extends CActiveRecord
 	{
 		$criteria=new CDbCriteria;
 		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-		
+
 		$criteria->condition='id_user_sponsorer = '.$curriculumId;
 		$criteria->order = 'id DESC';
 		if($this->searchValue)
@@ -149,8 +148,8 @@ class Sponsorship extends CActiveRecord
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR project_name LIKE CONCAT('%', :searchValue ,'%') OR description LIKE CONCAT('%', :searchValue ,'%') OR status LIKE CONCAT('%', :searchValue ,'%') ");
 			//$criteria->addCondition("book_title LIKE CONCAT('%', :searchValue , '%') OR  publisher LIKE CONCAT('%', :searchValue , '%') OR volume LIKE CONCAT('%', :searchValue ,'%') OR isbn LIKE CONCAT('%', :searchValue , '%') OR edition LIKE CONCAT('%', :searchValue , '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
-		}	
-		
+		}
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

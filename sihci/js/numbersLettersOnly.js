@@ -11,8 +11,6 @@ $(document).ready(function() {
     }
   });
 
-
-
   function changeSector() {
     var sectorValue = $("#sector option:selected").val();
 
