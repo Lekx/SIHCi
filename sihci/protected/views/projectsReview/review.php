@@ -24,8 +24,6 @@
 <?php $this->widget('zii.widgets.CDetailView', array(
 'data'=>$model,
 'attributes'=>array(
-	'id',
-	'id_curriculum',
 	'title',
 	'discipline',
 	'research_type',
@@ -104,7 +102,10 @@
 		'priority_topic',
 		'sub_topic',
 		'justify',
-		'is_sni',
+		array(
+				'label'=>'¿Es SNI?',
+				'value'=>$model->is_sni !== 1 ? "No asignado" : $model->is_sni,
+			),
 
 	),
 	)); ?>
@@ -116,9 +117,18 @@
 		'develop_uh',
 		'colaboration_type',
 		'status',
-		'folio',
-		'is_sponsored',
-		'registration_number',
+		array(
+			'label'=>'Folio',
+			'value'=>$model->folio == -1 ? "No asignado" : $mode->folio,
+			),
+		array(
+				'label'=>'¿Patrocinado?',
+				'value'=>$model->is_sponsored == 1 ? "Si" : "No",
+				),
+				array(
+						'label'=>'Número de registro',
+						'value'=>$model->registration_number == -1 ? "No asignado" : $mode->folio,
+					),
 
 	),
 	)); ?>
