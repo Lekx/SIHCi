@@ -56,25 +56,11 @@
 	<?php } ?>
 
 	<div class="row buttons">
-        <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('adminSpecialtyAreas/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)),
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data)
-                     		 {
-			                         if(data.status=="200")
-			                         {
-					                    $(".successdiv").show();
-			                         }
-			                         else
-			                         {
-				                     	$(".errordiv").show();
-				                     }
-		                  	}',
-
-                        ),array('class'=>'savebutton'));
-        ?>
-
+       <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("admin-specialty-areas-form","adminSpecialtyAreas/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","adminSpecialtyAreas/admin","");',
+                'class'=>'savebutton',
+            ));
+    	 ?>
 
        	<?php echo CHtml::link('Cancelar', array('/adminSpecialtyAreas/admin'),array('confirm' => 'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>

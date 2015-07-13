@@ -62,10 +62,10 @@ class BooksAuthors extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_book' => 'Id Book',
-			'names' => 'Names',
-			'last_name1' => 'Last Name1',
-			'last_name2' => 'Last Name2',
-			'position' => 'Position',
+			'names' => 'Nombre(s)',
+			'last_name1' => 'Apellido Paterno',
+			'last_name2' => 'Apellido Materno',
+			'position' => 'Posición',
 		);
 	}
 

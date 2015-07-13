@@ -17,29 +17,11 @@
 	</div>
 	
 	<div class="row buttons">
-	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('postdegreeGraduates/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="success")
-		                         {
-				                    
-							
-				                     $(".successdiv").show();		                         
-
-	
-		                         }		                         
-		                         else
-		                         {
-			                     	 $(".errordiv").show(); 
-			                     }       
-		                  	}',                    
-		                    
-                        ),array('class'=>'savebutton')); 
-        ?>
+	    <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("postdegree-graduates-form","postdegreeGraduates/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","postdegreeGraduates/admin","");',
+                'class'=>'savebutton',
+            ));
+    	?>
        <?php echo CHtml::link('Cancelar',array('postdegreeGraduates/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 	

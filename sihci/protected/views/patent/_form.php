@@ -8,18 +8,17 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'patent-form',
+	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableClientValidation'=>true,
-	'enableAjaxValidation'=>true,
-	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
-	'clientOptions'=>array('validateOnSubmit'=>true),
+	//'htmlOptions'=>array('enctype' => 'multipart/form-data'),
+	//'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
 
-	<?php // echo $form->errorSummary($model); ?>
 
 
 	<div class="row">
@@ -176,27 +175,12 @@
 	</div>
 
 	<div class="row buttons">
-	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('patent/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)),
-	        				array(
-								'dataType'=>'json',
-	                     		'type'=>'post',
-	                     		'success'=>'function(data)
-	                     		 {
-
-			                         if(data.status=="200")
-			                         {
-					                     $(".successdiv").show();
-
-			                         }
-			                         else
-			                         {
-				                     	$(".errordiv").show();
-				                     }
-			                  	}',
-
-	                        ),array('class'=>'savebutton'));
-	        ?>
-	        <?php echo CHtml::link('Cancelar',array('patent/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+    	<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("patent-form","patent/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","patent/admin","");',
+                'class'=>'savebutton',
+            ));
+    	?>
+	    <?php echo CHtml::link('Cancelar',array('patent/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
 
        	</div>
