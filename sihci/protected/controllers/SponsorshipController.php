@@ -62,19 +62,47 @@ class SponsorshipController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Sponsorship;
-
+		$modelProjectsDocs = new ProjectsDocs;
+		$model= new Sponsorship;
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelProjectsDocs);
+
 
 		if(isset($_POST['Sponsorship'])){
-
 			$model->attributes=$_POST['Sponsorship'];
 			$model->id_user_sponsorer = Yii::app()->user->id;
 			$model->status = "PENDIENTE";
 
+			/*$id_sponsorship = Sponsorship::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+			$DocExist = SponsorsDocs::model()->findAllByAttributes(array('id_sponsor' => $id_sponsor));
+			$modelProjectsDocs = array();
+			if ($DocExist != null) {
+				foreach ($DocExist as $key => $value) {
+					$modelProjectsDocs[$value->file_name] = array($value->id, $value->path);
+				}
+			}*/
+
+			$modelProjectsDocs = new ProjectsDocs;
+
 			if($model->validate()){
 					if($model->save()){
+						/*
+						$id_user = Yii::app()->user->id;
+						$model_id = $model->id;
+						$path = YiiBase::getPathOfAlias("webroot") . "/users/" . $id_user . "/sponsorship/" . $model_id; ;
+						if (!file_exists($path)) {
+								mkdir($path, 0777, true);
+						}
+						$modelProjectsDocs->file_name = "Contrato con investigador";
+						$model->path = CUploadedFile::getInstanceByName('Doc1');
+
+
+*/
+
+
+
+
 						echo CJSON::encode(array('status'=>'success'));
 						Yii::app()->end();
 					}
@@ -86,7 +114,7 @@ class SponsorshipController extends Controller
 					}
 		}
 			$this->render('create',array(
-				'model'=>$model,
+				'model'=>$model,'modelProjectsDocs'=>$modelProjectsDocs
 			));
 	}
 

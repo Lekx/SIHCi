@@ -53,7 +53,7 @@ $('.search-form form').submit(function(){
     'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'dataProvider'=>$model->search(), */
 	'columns'=>array(
-		'id_curriculum',
+		//'id_curriculum',
 		array(
 			'name'=>'is_sponsored',
 			'header'=>'',
@@ -93,7 +93,7 @@ $('.search-form form').submit(function(){
 						//'label' => '',
 						'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/editar.png',
 						'visible'=>'($data->status == "BORRADOR" || $data->status == "MODIFICAR") ? TRUE : FALSE',
-						'url'=> 'CHtml::normalizeUrl(array("projects/update/".$data->id))',
+						'url'=> '"update/".$data->id',
 						'options'=>array('class'=>'ttip','title'=>'Modificar',),
 					),
 					'seguim' => array(
@@ -105,9 +105,9 @@ $('.search-form form').submit(function(){
 					'delete' => array(
 						'imageUrl' => Yii::app()->request->baseUrl.'/img/Acciones/eliminar.png',
 						'visible'=>'$data->status == "BORRADOR" ? TRUE : FALSE',
-						'url'=> '"projects/update/".$data->id',
+						'url'=> '"update/".$data->id',
 						'options'=>array('title'=>'Eliminar',),
-						
+
 					),
 		),
 	),),
