@@ -70,14 +70,12 @@ class ArticlesGuidesController extends Controller
 		{
 			$model->attributes=$_POST['ArticlesGuides'];
 			$model->id_resume = $id_resume->id;   
-
 	        $model->url_document = CUploadedFile::getInstance($model,'url_document');
             
 			if($model->validate()==1)
             {
             	
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/';
-
                	if ($model->url_document !="")
                	{
 	                if(!is_dir($path))
@@ -98,7 +96,6 @@ class ArticlesGuidesController extends Controller
          					{
 				               	unset($modelAuthor);
 				               	$modelAuthor = new ArtGuidesAuthor;
-
 				               	$modelAuthor->id_art_guides = $model->id;
 				       			$modelAuthor->names = $names;
 				        		$modelAuthor->last_name1 = $last_name1[$key];
@@ -110,7 +107,6 @@ class ArticlesGuidesController extends Controller
 		     				$action = "Creación";
 							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);		     		
-
 				       		echo CJSON::encode(array('status'=>'success'));
 				     		Yii::app()->end();
 						
@@ -144,7 +140,6 @@ class ArticlesGuidesController extends Controller
 		     			
 	               	  		echo CJSON::encode(array('status'=>'success'));
 				     		Yii::app()->end();
-
                     } 		                      
 		        }    
 	        }// if validate

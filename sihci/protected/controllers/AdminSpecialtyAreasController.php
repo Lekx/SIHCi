@@ -80,14 +80,16 @@ class AdminSpecialtyAreasController extends Controller
             		$modelSpecialtyAreas->save();
           	    }	
 
-                echo CJSON::encode(array('status'=>'200'));
+               	echo CJSON::encode(array('status'=>'success'));
                 Yii::app()->end();
 
            }					               
            else
            {
-           		echo CJSON::encode(array('status'=>'404'));
-                Yii::app()->end();
+           		 $error = CActiveForm::validate($model);
+                   if($error!='[]')
+                      echo $error;
+                   Yii::app()->end();
            }
         }   
   		$this->render('create',array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas));
@@ -112,7 +114,7 @@ class AdminSpecialtyAreasController extends Controller
 		{
 			$model->attributes=$_POST['AdminSpecialtyAreas'];
 
-
+		
 			if($model->save())
             {           		              
 	        	$idsAdminSpecialtyAreas = $_POST['idsAdminSpecialtyAreas'];
@@ -139,13 +141,15 @@ class AdminSpecialtyAreasController extends Controller
                 	}
 	            	
           	    }	
-                echo CJSON::encode(array('status'=>'200'));
+               echo CJSON::encode(array('status'=>'success'));
                 Yii::app()->end();
 	        }
 	        else
            	{
-           		echo CJSON::encode(array('status'=>'404'));
-                Yii::app()->end();
+       		    $error = CActiveForm::validate($model);
+               if($error!='[]')
+                  echo $error;
+               Yii::app()->end();
             }				               
 		}	
   		$this->render('update',array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas,'modelSpecialtyArea'=>$modelSpecialtyArea));

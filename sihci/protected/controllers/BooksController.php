@@ -114,12 +114,7 @@ class BooksController extends Controller
 	               	  	
 						echo CJSON::encode(array('status'=>'success'));
 	     				Yii::app()->end();
-						/*if(!isset($_GET['ajax']))
-                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-						/*echo CJSON::encode(array('status'=>'200'));
-                        $this->redirect(array('admin','id'=>$model->id));
-                        Yii::app()->end();*/
-
+						
                     } 		                      
 		           	       
 	        }// if validate
@@ -136,6 +131,7 @@ class BooksController extends Controller
    		if(!isset($_POST['ajax']))
 				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
 	}
+
 
 	/**
 	 * Updates a particular model.
@@ -313,24 +309,7 @@ class BooksController extends Controller
 			Yii::app()->end();
 		}
 	}
-	/*public function afterLogout()
-	{
-        if (!Yii::app()->user->isGuest)  
-        {
-               if (Yii::app()->user->getState('userSessionTimeout') < time() ) 
-               {                  // timeout
-                   Yii::app()->user->logout();
-                   $this->redirect(array('/site/sessionTimeout'));  //
-               }
-               else 
-               {
-                   Yii::app()->user->setState('userSessionTimeout', time() + Yii::app()->params['timeout']);
-                   return true; 
-               }
-        }
-        else
-          return true;           
-    }*/
+
 
 
 }
