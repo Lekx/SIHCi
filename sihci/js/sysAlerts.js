@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+	$('.highcharts-legend text, .highcharts-legend span').each(function(index, element) {
+    $(element).hover(function() {
+        chart.tooltip.refresh(chart.series[0].data[index]);
+    },function() {
+        chart.tooltip.hide();
+    });
+});
+	
   $("select").mouseleave(function(event) {
     event.stopPropagation();
   });
@@ -19,7 +27,6 @@ $(document).ready(function() {
   $('.summary').remove();
   $('.buttons a').click(function(e) {
     var url = $('.buttons a').attr('href');
-    debugger
     $('.deleter').click(function() {
       window.location = url;
     });

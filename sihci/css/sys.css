@@ -2075,18 +2075,30 @@ div.pager span.active
     background: rgba(40, 50, 90, .70);
 
 }
-
+.heart
+{ 
+  height: 240px;
+  width: 240px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 8888;
+}
 
 .fa-heart {
 
-  margin: auto;
+
   height: 240px;
   width: 240px;
-  margin-top: calc(50vh - 100px);
-
+  margin-left: auto;
+  margin-right:auto;
   color: #0A324F;
   font-size: 200px;
-  display: block;
+  display: block !important;
   text-align: center;
 
  -moz-animation-duration: 3s;
@@ -2243,4 +2255,18 @@ div.pager span.active
 /* CHANGES STATUS COLOR OF IMPORTANT ROWS FOR PROJECTS SECTION */
 .checkThisItem{
     background-color: red !important;
+}
+.downloadrow
+{
+	text-align:center;
+}
+.tooltipchart
+{
+	padding:2px;
+	font-size:10px;
+	display:none;
+	position:absolute;
+	top:700px;
+	left:1000px;
+	z-index:9999;
 }

@@ -7,6 +7,7 @@ $this->breadcrumbs=array(
 	'Ingreso de Investigadores',
 );
 $this->menu=array(
+	array('label'=>'Graficas', 'url'=>array('Charts/index')),
 	array('label'=>'Cantidad de Investigadores', 'url'=>array('researchers')),
 	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
@@ -15,9 +16,7 @@ $this->menu=array(
 	array('label'=>'Registro de Propiedad Intelectual: Software', 'url'=>array('software')),
 	array('label'=>'Registro de Propiedad Intelectual: Derechos de Autor', 'url'=>array('copyrights')),
 	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
-  array('label'=>'Graficas', 'url'=>array('Charts/index'),'itemOptions'=>array('class' => '')),
 );
-
 ?>
 
 <script type="text/javascript">
@@ -115,7 +114,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		     array(
 				'header'=>'Descarga de Capítulos de Libros',
        			 'type'=>'raw',
-      			 'value'=>'CHtml::link("Descargar ".$data["chapter_title"].".", "http://".$_SERVER["SERVER_NAME"].Yii::app()->request->baseUrl."".$data["url_doc"]."", array("target"=>"_blank"))',
+				 'htmlOptions' => array('style' => 'width: 120px;','class'=>'downloadrow'),
+      			 'value'=>'CHtml::link("<img src='.Yii::app()->request->baseUrl.'/img/icons/descargar.png>", "http://".$_SERVER["SERVER_NAME"].Yii::app()->request->baseUrl."".$data["url_doc"]."", array("target"=>"_blank"))',
                 ),
    	),
 )); ?>

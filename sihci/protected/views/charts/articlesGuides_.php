@@ -4,7 +4,7 @@
             <hr>
         </div>
         <h3>Total de articulos y guías</h3>
-<div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
+<div class="tooltipchart">Seleccionar este elemento</div>
 <div class="grafiOpt">
   <div class="col-md">Año del reporte</div>
 </div>
@@ -17,9 +17,9 @@
 </span>
     </div>
   <!--¿Perteneciente al SNI?
-  <?php// echo CHtml::dropDownList('sni', '',array("total"=>"Total","no"=>"no","yes"=>"si"),array('onchange'=>'loadChart()')); ?><br/>
+  <?php // echo CHtml::dropDownList('sni', '',array("total"=>"Total","no"=>"no","yes"=>"si"),array('onchange'=>'loadChart()')); ?><br/>
   Tipo de reporte
-  <?php// echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>-->
+  <?php // echo CHtml::dropDownList('type', '',array("total"=>"total registrados","bajas"=>"bajas","altas"=>"altas"),array('onchange'=>'loadChart()')); ?><br/>-->
 </div>
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>

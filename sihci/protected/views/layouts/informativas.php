@@ -332,6 +332,9 @@
                         </section>
                         <section class="logsection">
                             <div class="login">
+								<div class="notificationsys">
+								 <h5>Ingresar a tu cuenta.</h5>
+								</div>
                                 <?php
                                                                                                 if (Yii::app()->user->isGuest) {
                                                                                                     echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));

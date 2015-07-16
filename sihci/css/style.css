@@ -171,6 +171,7 @@ cursor: pointer;
 	margin-top: 10px;
 	margin-right: 16px;
  	float: right;
+	position: relative;
  	font-family: 'Caviar_Dreams' !important;
 }
 .searchbar button
@@ -1393,4 +1394,116 @@ ul.cbp-hsmenu
   color: white;
   background-color:#0E3152;
   font-size: 20px;
+}
+.notificationsys
+{
+ display: none;
+}
+
+table select
+{
+    font-size: 9px;
+
+    width: 65px !important;
+    height: 15px !important;
+}
+
+ul.yiiPager .selected a
+{
+    background-color: #1eb9c0 !important;
+}
+ul.yiiPager a:hover,
+.pager li > a:hover
+{
+    color: white !important;
+    background-color: #0e3152 !important;
+}
+.tableheader
+{
+    height: 35px;
+
+    color: white;
+    background-color: #1eb9c0;
+}
+.tableheader h4
+{
+    padding: 8px;
+}
+.table.Backup th
+{
+    height: 15px;
+    padding: 2px;
+
+    color: white;
+    background-color: #798b9d;
+}
+.table a,
+.table  a:hover
+{
+    text-decoration: none !important;
+}
+
+.grid-view table.items tr.odd,
+.grid-view table.items tr.even
+{
+    border-bottom: 2px solid #cdf1f3;
+}
+
+.items table tr
+{
+    margin: 10px !important;
+}
+.items thead th
+{
+    font-family: 'Caviar_Dreams' !important;
+    font-size: .9em !important;
+    font-style: normal !important;
+	color: white !important;
+    padding-top: 3px !important;
+    padding-right: 5px !important;
+    padding-bottom: 3px !important;
+    padding-left: 5px !important;
+
+    text-align: left !important;
+
+    border: none !important;
+    background-color: #798b9d !important;
+}
+.items table td
+{
+    font-size: 1.1em !important;
+
+    min-width: 100px !important;
+    height: 30px !important;
+    margin-left: 30px !important;
+    padding: 3px !important;
+
+    text-align: left !important;
+
+    border: none !important;
+    background-color: white !important;
+}
+.items table
+{
+    font-family: 'Caviar_Dreams' !important;
+
+    border: none !important;
+}
+.hometable td, .hometable th
+{
+	height: 50px;
+	border-bottom: 1px solid #00B9C0;
+}
+.savehome
+{
+	font-family: 'Caviar_Dreams_Bold';
+  font-size: 25px;
+  position: absolute;
+  width: 400px !important;
+  height: 50px !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: -11px;
+  color: white;
+  background-color: #0e3152;
 }

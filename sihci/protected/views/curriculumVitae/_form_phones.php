@@ -90,7 +90,7 @@
 		</div>
 
 
-         <?php echo CHtml::ajaxButton ('Crear Nuevo email',CController::createUrl('curriculumVitae/phones'),
+         <?php echo CHtml::ajaxButton ('Crear nuevo correo electrónico',CController::createUrl('curriculumVitae/phones'),
                          array(
 							'dataType'=>'json',
                      		'type'=>'post',

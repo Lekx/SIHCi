@@ -270,36 +270,31 @@ class SponsorsController extends Controller {
 		}
 
 		if (isset($_POST['fullnames'])) {
+			$countSuccess = 0;
 			$fullnames = $_POST['fullnames'];
-			$success = 0;
 			foreach ($fullnames as $key => $names) {
 				unset($model);
 				$model = new SponsorsContacts;
 				$model->id_sponsor = $id_sponsor;
 				$model->fullname = $names;
-				if($model->validate() == 1) {
-					if($model->save()){
-						$success++;
+				if($model->save()){
+					$countSuccess++;
 						$section = "Empresas"; //manda parametros al controlador AdminSystemLog
 						$details = "Subsección: Datos de Contactos. Datos: ".$model->fullname;
 						$action = "Creación";
 						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-					}
-					if($success > 8 ){
-						echo CJSON::encode(array('status'=>'success'));
-							Yii::app()->end();
-					}
-				}else {
-					$error = CActiveForm::validate($model);
-					if($error!='[]')
-						echo $error;
-
-					Yii::app()->end();
-
 				}
 
+				}
+				if($countSuccess == count($fullnames)){
+				echo CJSON::encode(array('status'=>'success'));
+			}else{
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
 			}
-		}
+			Yii::app()->end();
+
+			}
+		
 
 
 

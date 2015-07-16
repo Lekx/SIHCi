@@ -83,4 +83,11 @@ $(document).ready(function() {
     $('.cvmenuitems').hover(function() {}, function() {
         $('.sub1,.sub2, .sub3, .sub3, .sub4, .sub5, .sub6, .sub7, .sub8, .sub9, .sub10, .sub11, .sub12,.sub13').hide();
     });
+	
+	 $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
 });

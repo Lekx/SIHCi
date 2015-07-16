@@ -27,7 +27,10 @@
 	public function accessRules()
 	{
 		return array(
-
+				array('allow',
+					'actions'=>array('activateAccount'),
+					'users'=>array('*'),
+				),
 				array('allow',
 					'actions'=>array('infoAccount', 'activateAccount', 'index', 'updateEmail','updatePassword','systemLog','personalData','firstLogin','selectType'),
 					'users'=>array('@'),

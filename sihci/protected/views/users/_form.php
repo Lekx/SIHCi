@@ -138,7 +138,7 @@
 
           <?php echo CHtml::htmlButton('Enviar',array(
                       'onclick'=>'send("users-form", "users/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","site","")',
-                      'class'=>'savebutton',
+                      'class'=>'savehome',
                   ));
           ?>
         </div>
@@ -163,7 +163,3 @@
             No deseo Ingresar <i class="glyphicon glyphicon-remove"></i>
         </div>
         </div><!-- form -->
-
-    Status API Training Shop Blog About Help
-
-    © 2015 GitHub, Inc. Terms Privacy Security Contact

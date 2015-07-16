@@ -17,7 +17,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'ajaxUpdate' => true,
 	'summaryText'=>'',
 	'filter' => null,
-	'htmlOptions'=> array('class'=>'table'),
+	'htmlOptions'=> array('class'=>'hometable'),
 	'columns'=>array(
 
 		 /*array('header'=>'Número de Registro',
@@ -25,15 +25,19 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 ),*/
 		  array('header'=>'Nombre del Investigador',
 		 		'name'=>'fullname',
+				'htmlOptions'=>array('width'=>'40px'),
                 ),
 		   /*array('header'=>'Nombre del Investigador',
 		 		'value'=>array($this,'usersFullNames'),'type' => 'raw',
                 ),*/
 		   array('header'=>'Línea de Investigación',
 		   		'value'=>array($this,'researchAreas'),'type' => 'raw',
+				 'htmlOptions'=>array('width'=>'40px'),
                 ),
 		    array('header'=>'Unidad Hospitalaria',
 		 		'name'=>'hospital_unit',
+				'htmlOptions'=>array('width'=>'40px'),
+				'headerHtmlOptions'=>array('width'=>'30')
                 ),
    	),
 )); ?>

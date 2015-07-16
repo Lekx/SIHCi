@@ -214,7 +214,7 @@ public function actionEfficiencyTotal(){
 		$conexion = Yii::app()->db;
 
 		$year = $conexion->createCommand("
-		SELECT DISTINCT YEAR(creation_date) AS year FROM projects WHERE status = 'completado' ORDER BY creation_date DESC
+		SELECT DISTINCT YEAR(creation_date) AS year FROM projects WHERE status = 'FINALIZADO' ORDER BY creation_date DESC
 		")->queryAll();
 
 		$years = array();

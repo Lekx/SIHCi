@@ -1,7 +1,13 @@
 $(document).ready(function() {
+	
+function stopRKey(evt) { 
+  var evt = (evt) ? evt : ((event) ? event : null); 
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+} 
 
-
-
+document.onkeypress = stopRKey;
+	
   $('input[type=file]').each(function() {
     var id = $(this).attr('id'),
       name = $(this).attr('name'),
@@ -11,6 +17,7 @@ $(document).ready(function() {
     var filetype = $(this).attr('title')
     button.on('click', function(e) {
       e.preventDefault();
+		 $('.deleteval').remove();
       //var id = $(this).attr('id'), name = $(this).attr('name');
       $('#' + id).remove();
       input = $('<input style="display:none" type="file" ' + 'id="' + id + '" ' +

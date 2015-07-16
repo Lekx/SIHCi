@@ -72,7 +72,7 @@
                                         $( this ).tooltipster( 'hide' );
                                     });
 
-                                         $('.delete, .view, .update, .ttip').tooltipster({
+                                         $('.delete, .view, .update, .ttip , .highcharts-legend-item').tooltipster({
                                             position: 'top',
                                             trigger: 'hover',
                                             maxWidth:'90'
@@ -531,8 +531,10 @@
             </div>
             <div class="loader">
               <div class="pulse">
-              </div>
-              <i class="fa fa-heart fa-5x"></i>
+              
+				</div>
+				<div class="heart">
+				<i class="fa fa-heart fa-5x"></i></div>
             </div>
             <div class="footer">
                 <div class="footermenu1">

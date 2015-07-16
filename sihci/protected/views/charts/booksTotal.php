@@ -52,7 +52,7 @@ chart = new Highcharts.Chart({
                     var chart = this,
                         legend = chart.legend;
 
-                    for (var i = 0, len = legend.allItems.length; i < len; i++) {
+                   for (var i = 0, len = legend.allItems.length; i < len; i++) {
                         (function(i) {
                             var item = legend.allItems[i].legendItem;
                             item.on('mouseover', function (e) {
