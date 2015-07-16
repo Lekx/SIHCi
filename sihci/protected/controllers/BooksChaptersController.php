@@ -30,7 +30,7 @@ class BooksChaptersController extends Controller
 		return array(
 		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-			    'actions'=>array('admin','create','update','delete','view','index'),
+			    'actions'=>array('admin','create','update','delete','deleteAuthor','view','index'),
 				'expression'=>'($user->type==="fisico")',
 				'users'=>array('@'),
 			),
@@ -80,13 +80,10 @@ class BooksChaptersController extends Controller
                		if($model->url_doc != ''){
 	                	if(!is_dir($path))
 	                	 	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/', 0777, true);
-	                	 		                	 	                       //.doc                                         .docx                                                                                              .odt                                                     .jpg y .jpeg                                           .png                        
-            				// QUITAR  if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
 
  							 $model->url_doc->saveAs($path.'Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName());
 		           			 $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName();
 	                	
-		           			 	//echo"antes de guardar";
 			               		if($model->save()){
 			               		              
 					 			$names = $_POST['names'];
@@ -111,21 +108,8 @@ class BooksChaptersController extends Controller
 			                    
                                 echo CJSON::encode(array('status'=>'success'));
 				     			Yii::app()->end();
-     						/*Quitar*/	/*if(!isset($_GET['ajax']))
-								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-			               	   echo CJSON::encode(array('status'=>'200'));
-                               $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();*/
                             
 			               		}
-			               		
-
-			              /* }  QUOTAR
-			               else{	
-
-								//Esta parte va en el campo de filefield como mensaje
-			              		echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; 
-			            	}*/
 			        }
 			        else
 			        {
@@ -153,12 +137,6 @@ class BooksChaptersController extends Controller
 			                    
 			                    echo CJSON::encode(array('status'=>'success'));
 				     			Yii::app()->end();
-			             /*QUITAR */ 	   /*echo CJSON::encode(array('status'=>'200'));
-                               $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();
-                               if(!isset($_GET['ajax']))
-								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));*/
-
 			               }
 
 			        } 
@@ -206,7 +184,6 @@ class BooksChaptersController extends Controller
                     if(!empty($actual_url))
                     unlink(YiiBase::getPathOfAlias("webroot").$actual_url);
 
-               /*QUITAR*/ // if($model->url_doc->type == 'application/pdf' || $model->url_doc->type == 'application/msword' || $model->url_doc->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->url_doc->type == 'application/vnd.oasis.opendocument.text' || $model->url_doc->type == 'image/jpeg' || $model->url_doc->type == 'image/png'){
                     $model->url_doc = CUploadedFile::getInstanceByName('BooksChapters[url_doc]');
                     $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Books_Chapters/';
                   
@@ -215,9 +192,6 @@ class BooksChaptersController extends Controller
 
                        $model->url_doc->saveAs($urlFile.'Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName());
 		               $model->url_doc = '/users/'.Yii::app()->user->id.'/Books_Chapters/Capitulo_libro'.date('d-m-Y_H-i-s').'.'.$model->url_doc->getExtensionName();                                                    
-                 /*   }
-			     else  
-			        	echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png"; */
 
                 } else {
                   
@@ -255,11 +229,6 @@ class BooksChaptersController extends Controller
                    	 		   
 					echo CJSON::encode(array('status'=>'success'));
 				    Yii::app()->end();			
-                   	 		   /*echo CJSON::encode(array('status'=>'200'));
-                               $this->redirect(array('admin','id'=>$model->id));
-                               Yii::app()->end();
-                               if(!isset($_GET['ajax']))
-								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));*/
 
                 	}
             }    	
@@ -301,6 +270,18 @@ class BooksChaptersController extends Controller
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+	public function actionDeleteAuthor($id, $idBooksChapters){
+
+		$modelAuthors= BooksChaptersAuthors::model()->findByPk($id);
+		$section = "Autor de capítulos libros";
+		$action = "Eliminación";
+		$details = "Registro Número: ".$modelAuthors->id.". Datos: ".$modelAuthors->names;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$modelAuthors->delete();
+		//$this->loadModel($id)->delete();
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('booksChapters/update/'.$idBooksChapters));
 	}
 
 	/**

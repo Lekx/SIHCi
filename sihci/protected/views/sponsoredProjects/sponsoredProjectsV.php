@@ -21,10 +21,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'htmlOptions' => array('class' => 'table'),
 	'columns'=>array(
 
-	array('header'=>'patrocinador',
+	array('header'=>'Patrocinador',
 		 		'name'=>'sponsor_name',
                 ),
-		   array('header'=>'Titulo del proyecto',
+		   array('header'=>'Título del proyecto',
 		 		'name'=>'title',
                 ),
 		    array('header'=>'Disciplina',
