@@ -14,6 +14,7 @@
  * @property integer $volume
  * @property integer $pages
  * @property integer $citations
+ * @property integer $total_of_authors
  * @property string $area
  * @property string $discipline
  * @property string $subdiscipline
@@ -25,7 +26,6 @@
  * The followings are the available model relations:
  * @property Curriculum $idCurriculum
  * @property BooksChaptersAuthors[] $booksChaptersAuthors
- * @property booksChaptersAuthors $position
  */
 class BooksChapters extends CActiveRecord
 {
@@ -49,10 +49,11 @@ class BooksChapters extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_curriculum, chapter_title, book_title, publishing_year', 'required'),
-			array('id_curriculum, pages, citations,volume , citations, isbn', 'numerical', 'integerOnly'=>true),
-			array('chapter_title, url_doc', 'length', 'max'=>100),
-			array('discipline, subdiscipline','length', 'max'=>200),
-			array('book_title, editorial, area' , 'length', 'max'=>45),
+			array('id_curriculum, pages, citations,volume , citations,  total_of_authors, isbn', 'numerical', 'integerOnly'=>true),
+			array('chapter_title, subdiscipline,url_doc', 'length', 'max'=>100),
+			array('book_title, editorial', 'length', 'max'=>45),
+			array('area', 'length', 'max'=>60),
+			array('discipline', 'length', 'max'=>70),
 			array('publishers', 'length', 'max'=>255),
 			array('publishing_year, creation_date', 'safe'),
 			array('keywords', 'length', 'max'=>250),

@@ -19,9 +19,6 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/congresses/js/scri
 ));
 
 ?>
-
-
-
 	<div class="row">
 		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Tipo de participación','title'=>'Tipo de participación')); ?>
 		<?php echo $form->error($model,'work_title'); ?>
@@ -164,8 +161,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/congresses/js/scri
 					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. (Solo se aceptan numeros)')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
+				     <?php echo CHtml::button('Elminar',array('submit' => array('congresses/deleteAuthor','id'=>$modelAuthors[$key]->id,'idCongressAuthors'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
 	<?php } ?>
-
+	<hr>
+				</div>
 	<div class="row buttons">
 		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
                 'onclick'=>'send("congresses-form","congresses/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","congresses/admin","");',
