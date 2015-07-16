@@ -19,7 +19,7 @@
 	<hr>
 		<?php
 		echo "<div class='row'>";
-		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
+		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','onKeypress'=>'return lettersOnly(event)','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
 		echo $form->error($model, 'fullname');
 		echo "</div>";
 ?>
@@ -57,8 +57,11 @@ foreach ($fullname as $value) {
 
 
 <div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',  array('class'=>'savebutton'));?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+	<?php echo CHtml::htmlButton('Enviar',array(
+							'onclick'=>'send("sponsors-contacts-form", "sponsors/create_contacts", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+							'class'=>'savebutton',
+					));
+	?>		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 
 

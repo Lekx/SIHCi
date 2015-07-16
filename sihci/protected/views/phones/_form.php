@@ -6,26 +6,8 @@
 $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
      'targetClass'=>'emails',
      'addButtonLabel'=>'Agregar nuevo',
-  )); 
+  ));
 ?>
-	<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=Phones_]').val('');
-				$('[id^=Emails_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-
-</script>
 
 <div class="form">
 
@@ -49,27 +31,27 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 			<div class="row">
 		<!-- tipo de email viene de PhonesController.php-->
 		<?php echo $form->labelEx($emails,'type'); ?>
-			<?php echo $form->dropDownList($emails,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+			<?php echo $form->dropDownList($emails,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial',
 																'Particular'=>'Particular',
-				                                                'Campus'=>'Campus', 'otro'=>'otro'), 
+				                                                'Campus'=>'Campus', 'otro'=>'otro'),
 			                                                       array('options' => array(''=>array('selected'=>true)))); ?>
 			<?php echo $form->error($emails,'type'); ?>
 		</div>
-			
+
 	</div>
-	
+
 <div class="phone">
-<?php 
+<?php
 $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
      'targetClass'=>'phone',
      'addButtonLabel'=>'Agregar nuevo',
-  )); 
+  ));
 ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->dropDownList($model,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial', 
+		<?php echo $form->dropDownList($model,'type',array(''=>'','Trabajo'=>'Trabajo','Residencial'=>'Recidencial',
 															'Particular'=>'Particular',
-			                                                'Campus'=>'Campus', 'otro'=>'otro'), 
+			                                                'Campus'=>'Campus', 'otro'=>'otro'),
 		                                                       array('options' => array(''=>array('selected'=>true)))); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
@@ -114,4 +96,3 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-

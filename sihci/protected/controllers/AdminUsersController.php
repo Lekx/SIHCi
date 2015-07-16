@@ -22,26 +22,27 @@ class AdminUsersController extends Controller {
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/*public function accessRules()
+
+	public function accessRules()
 	{
-	return array(
-	array('allow',  // allow all users to perform 'index' and 'view' actions
-	'actions'=>array('index','view'),
-	'users'=>array('*'),
-	),
-	array('allow', // allow authenticated user to perform 'create' and 'update' actions
-	'actions'=>array('create','update'),
-	'users'=>array('@'),
-	),
-	array('allow', // allow admin user to perform 'admin' and 'delete' actions
-	'actions'=>array('admin','delete'),
-	'users'=>array('admin'),
-	),
-	array('deny',  // deny all users
-	'users'=>array('*'),
-	),
-	);
-	}*/
+		return array(
+			array('allow',
+	 			'actions'=>array('deleteUser','update','createUser','adminUsers','view',
+	 				             'changeStatus','changeRol','changeStatusCurriculum','doubleSession','index'
+	 				            ),
+	 			'expression'=>'($user->Rol->alias==="ADMIN")',
+	 			'users'=>array('@'),
+	 		),
+	 		array('allow',
+	 			'actions'=>array('view','changeStatus','changeRol','changeStatusCurriculum','index'),
+	 			'expression'=>'($user->Rol->alias==="JIOPD")',
+	 			'users'=>array('@'),
+	 		),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Displays a particular model.
@@ -52,45 +53,93 @@ class AdminUsersController extends Controller {
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-
-	function checkEmail($email, $email2) {
-
-		if ($email != $email2) {
-			echo "email";
+	function checkEmailDifferent($email, $email2){
+		if ($email != $email2){
 			return false;
-		} else {
+		}else
 			return true;
 		}
-	}
-	function checkPassword($password, $password2) {
-		if ($password != $password2) {
-			echo "pass";
-			return false;
-		} else {
+
+function checkEmailNull($email, $email2){
+	if($email == '' || $email2 == ''){
+		return false;
+	}else
 			return true;
 		}
+
+
+		public function activateAccount($to,$activationKey){
+			$sihci = "From: SIHCI";
+
+
+	 		$subject = "Activación de cuenta.";
+	 		$body = '
+			 Activación de Cuenta.
+
+			    Le damos la cordial bienvenida a el sistema SIHCi, para activar su cuenta solo debe dar clic en el siguiente enlace. http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.$activationKey.'
+
+			   Si usted no se ha registrado en nuestro sitio, por favor hacer caso omiso de éste correo.
+
+			 ';
+
+			if(!mail($to,$subject,$body)){
+			  echo"Error al enviar el mensaje.";
+			}
+		}
+		
+	function checkPasswordDifferent($password, $password2){
+		if ($password != $password2){
+      return false;
+		}else
+			return true;
+
+
+}
+
+	function checkPasswordNull($password, $password2){
+		if($password == '' || $password2 == ''){
+      return false;
+		}else
+			return true;
+
+		}
+
+	public function actionInfoAccount(){
+			$this->layout = 'system';
+		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+			$iduser = (int)$_GET["ide"];
+		else
+			$iduser = Yii::app()->user->id;
+
+			$details = Users::model()->findByPk($iduser);
+			$this->render('infoAccount',array(
+			'details'=>$details,
+			));
 	}
+
+
 	public function actionCreateUser() {
 
+		$layout =  '//layouts/system';
 		$model = new Users;
 		$modelPersons = new Persons;
 
-		if (isset($_POST['Users'])) {
-			$model->id_roles = '1';
+		//$this->performAjaxValidation($model);
+		//$this->performAjaxValidation($modelPersons);
+		if(isset($_POST['Users'])) {
+			$model->id_roles = '3';
 			$model->attributes = $_POST['Users'];
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
-			if (empty($result)) {
-				if ($this->checkEmail($_POST['Users']['email'], $_POST['Users']['email2'])) {
-					if ($this->checkPassword($_POST['Users']['password'], $_POST['Users']['password2'])) {
+			if (empty($result)){
+				if ($this->checkEmailDifferent($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailNull($_POST['Users']['email'], $_POST['Users']['email2'])) {
+					if ($this->checkPasswordDifferent($_POST['Users']['password'], $_POST['Users']['password2']) && $this->checkPasswordNull($_POST['Users']['password'],$_POST['Users']['password2'])) {
+
+
 
 						$model->registration_date = new CDbExpression('NOW()');
 						$model->activation_date = new CDbExpression('0000-00-00');
-
-						$model->status = 'activo';
-
 						$model->status = 'inactivo';
-
 						$model->act_react_key = sha1(md5(sha1(date('d/m/y H:i:s') . $model->email . rand(1000, 5000))));
 						$model->password = sha1(md5(sha1($model->password)));
 
@@ -99,7 +148,6 @@ class AdminUsersController extends Controller {
 							if (isset($_POST['Persons'])) {
 
 								$modelPersons->attributes = $_POST['Persons'];
-								$modelPersons->person_rfc = "1234567890123";
 
 								$result2 = $modelPersons->findAll(array('condition' => 'curp_passport="' . $modelPersons->curp_passport . '"'));
 								if (empty($result2)) {
@@ -107,55 +155,60 @@ class AdminUsersController extends Controller {
 									$modelPersons->id_user = 0;
 									$modelPersons->marital_status = -1;
 									$modelPersons->genre = -1;
-									$modelPersons->birth_date = '0000-00-00';
+									$modelPersons->birth_date = '00/00/0000';
 
 									if ($modelPersons->validate()) {
-										if ($model->save()) {
+										if($model->save()){
 											$modelPersons->id_user = $model->id;
-											if ($modelPersons->save()) {
-												echo "202";
-											} else {
-												echo "Ha ocurrido un error al crear el registro (CU03)";
-											}
+											if($modelPersons->save()){
+												$this->activateAccount($model->email,$model->act_react_key);
+												$log = new SystemLog();
+												$log->id_user = Yii::app()->user->id;
+												$log->section = "Empresas";
+												$log->details = "Se creo un nuevo registro";
+												$log->action = "creacion";
+												$log->datetime = new CDbExpression('NOW()');
+												$log->save();
 
-										} else {
-											echo "Ha ocurrido un error al crear el registro (CU02)";
+												echo CJSON::encode(array('status'=>'success'));
+												Yii::app()->end();
+
+												}else{
+												echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Persona), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+												Yii::app()->end();
+											}
+										}else{
+											echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Usuarios), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+											Yii::app()->end();
 										}
 
-										$log = new SystemLog();
-										$log->id_user = Yii::app()->user->id;
-										$log->section = "Empresas";
-										$log->details = "Se creo un nuevo registro";
-										$log->action = "creacion";
-										$log->datetime = new CDbExpression('NOW()');
-										$log->save();
-
-									} else {
-										echo "Ha ocurrido un error al crear el registro (CU01)";
+									}else{
+										echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Persona), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+										Yii::app()->end();
 									}
 
-								} else {
-									echo "Ya hay una cuenta registrada con este CURP.";
-								}
-
+							}else{
+								echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp ingresado ya existe, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+								Yii::app()->end();
 							}
 						}
-					} else {
-						echo "Las contraseñas no concuerdan";
 					}
-
-				} else {
-					echo "Los correos electronicos no concuerdan";
+				}else{
+					echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Las contraseñas no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+					Yii::app()->end();
 				}
-
-			} else {
-				echo "Ya existe una cuenta registrada con este correo.";
+			}else{
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				Yii::app()->end();
 			}
-
+			}else{
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ya existe el correo ingresado, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				Yii::app()->end();
+			}
 		}
 
 		if (!isset($_POST['ajax'])) {
-			$this->renderPartial('create_user', array('model' => $model, 'modelPersons' => $modelPersons));
+			$this->render('create_user', array('model' => $model, 'modelPersons' => $modelPersons));
 		}
 	}
 
@@ -191,7 +244,7 @@ class AdminUsersController extends Controller {
 	public function actionDeleteUser($id) {
 
 		$users = Users::model()->findByPK($id);
-		
+
 
 		if($users->type == "fisico"){
 			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$id));
@@ -284,15 +337,15 @@ class AdminUsersController extends Controller {
 					$command->delete('books_chapters', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
 					$command = Yii::app()->db->createCommand();
 				}
-				
+
 				if($certifications != null){
 					$command->delete('certifications', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
 					$command = Yii::app()->db->createCommand();
 				}
-				
+
 				$curriculum->delete();
 			}
-			
+
 			if($address != null)
 					$address->delete();
 
@@ -307,21 +360,21 @@ class AdminUsersController extends Controller {
 				if($phones != null){
 					$command->delete('phones', 'id_person=:id_person', array(':id_person'=>$persons->id));
 					$command = Yii::app()->db->createCommand();
-				}                      
+				}
 
 
 				$persons->delete();
 			}
 
 			$users->delete();
-			
+
 		}else{
 
 			$command = Yii::app()->db->createCommand();
 			$sponsorship = Sponsorship::model()->findAllByAttributes(array('id_user_sponsorer'=>$id));
 			$sponsors = Sponsors::model()->findByAttributes(array('id_user'=>$id));
 			$persons = Persons::model()->findByAttributes(array('id_user'=>$id));
-			
+
 			if($sponsors != null){
 				$sponsorsContacts = SponsorsContacts::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
 				$sponsorBilling = SponsorBilling::model()->findAllByAttributes(array('id_sponsor'=>$sponsors->id));
@@ -331,11 +384,11 @@ class AdminUsersController extends Controller {
 				if($sponsorsDocs != null){
 					$command->delete('sponsors_docs', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
 					$command = Yii::app()->db->createCommand();
-				}  
+				}
 				if($sponsorsContact != null){
 					$command->delete('sponsors_contact', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
 					$command = Yii::app()->db->createCommand();
-				}  
+				}
 				if($sponsorBilling != null){
 					$command->delete('sponsor_billing', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
 					$command = Yii::app()->db->createCommand();
@@ -343,12 +396,12 @@ class AdminUsersController extends Controller {
 				if($sponsorsContacts != null){
 					$command->delete('sponsors_contacts', 'id_sponsor=:id_sponsor', array(':id_sponsor'=>$sponsors->id));
 					$command = Yii::app()->db->createCommand();
-				}   
+				}
 
 				$sponsors->delete();
 			}
 			if($sponsorship != null){
-				
+
 				foreach ($sponsorship as $key => $value) {
 					$sponsoredProjects = SponsoredProjects::model()->findByAttributes(array('id_sponsorship'=>$sponsorship[$key]->id));
 					if($sponsoredProjects != null){
@@ -416,7 +469,7 @@ class AdminUsersController extends Controller {
 	 * Lists all models.
 	 */
 	public function actionIndex() {
-		
+
 		$this->actionAdminUsers();
 	}
 
@@ -463,41 +516,57 @@ class AdminUsersController extends Controller {
 	}
 
 	public function actionChangeStatus(){
-		$idRef = $_POST["id"];
-		$value = $_POST["value"];
+		$idRef = $_POST[1];
+		$value = $_POST[2];
 
-		if(Users::model()->updateByPk($idRef, array('status' => $value)))
-			echo "Actualizacion realizada con exito.";
-		else
-			echo "Error al actualizar el estado del usuario.";
+		if(Users::model()->updateByPk($idRef, array('status' => $value))){
+			echo CJSON::encode(array('status'=>'success'));
+			Yii::app()->end();
+		}else{
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error al cambiar el estatus del usuario.'));
+			Yii::app()->end();
+		}
+
+	}
+
+		public function actionChangeRol(){
+		$idRef = $_POST[1];
+		$idRol = $_POST[2];
+
+		if(Users::model()->updateByPk($idRef, array('id_roles' => $idRol))){
+			echo CJSON::encode(array('status'=>'success'));
+			Yii::app()->end();
+		}else{
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error al cambiar el rol del usuario.'));
+			Yii::app()->end();
+			}
 	}
 
 	public function actionChangeStatusCurriculum(){
-		$idRefc = $_POST["idc"];
-		$valuec = $_POST["valuec"];
+		$idRefc = $_POST[1];
+		$valuec = $_POST[2];
 
-		if(Curriculum::model()->updateByPk($idRefc, array('status' => $valuec)))
-			echo "Actualizacion realizada con exito.";
-		else
-			echo "Error al actualizar el estado del usuario.";
+		if(Curriculum::model()->updateByPk($idRefc, array('status'=>(int)$valuec))){
+			echo CJSON::encode(array('status'=>'success'));
+			Yii::app()->end();
+		}else{
+			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error al cambiar el estatus del curriculum del usuario.'));
+			Yii::app()->end();
+		}
 	}
 
 	public function actionDoubleSession($id){
 
 		if((int)$id == 0){
 			Yii::app()->user->setState('id',Yii::app()->user->admin);
-			Yii::app()->user->setState('admin',0);	
-			//echo "vamos a salir";
+			Yii::app()->user->setState('admin',0);
 			$this->redirect(array('adminUsers/adminUsers'));
 		}else{
 			Yii::app()->user->setState('admin',Yii::app()->user->id);
 			Yii::app()->user->setState('id',(int)$id);
-			//echo "vamos a entrar";
 			$this->redirect(array('account/infoAccount'));
 		}
-		//echo $id;
-		//$this->redirect(array('Account/InfoAccount'));
-	} 
+	}
 
 	public function usersFullNames($data, $row) {
 

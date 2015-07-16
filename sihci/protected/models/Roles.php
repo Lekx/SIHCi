@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'roles':
  * @property integer $id
  * @property string $rol
+ * @property string $alias
  *
  * The followings are the available model relations:
  * @property Permisos[] $permisoses
@@ -29,10 +30,11 @@ class Roles extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('alias', 'length', 'max'=>45),
 			array('rol', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rol', 'safe', 'on'=>'search'),
+			array('id, rol, alias', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,6 +59,7 @@ class Roles extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'rol' => 'Rol',
+			'alias' => 'Alias',
 		);
 	}
 
@@ -80,6 +83,7 @@ class Roles extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('rol',$this->rol,true);
+		$criteria->compare('alias',$this->alias,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

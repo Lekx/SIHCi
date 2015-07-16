@@ -33,13 +33,9 @@ class BooksAuthors extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_book, names, last_name1, last_name2, position', 'required'),
-			array('id_book', 'numerical','position', 'integerOnly'=>true),
+			array('id_book, position', 'numerical', 'integerOnly'=>true),
 			array('names', 'length', 'max'=>30),
 			array('last_name1, last_name2', 'length', 'max'=>20),
-
-
-			array('position', 'length', 'max'=>45, 'integerOnly'=>true),
-
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_book, names, last_name1, last_name2, position', 'safe', 'on'=>'search'),
@@ -66,10 +62,10 @@ class BooksAuthors extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_book' => 'Id Book',
-			'names' => 'Names',
-			'last_name1' => 'Last Name1',
-			'last_name2' => 'Last Name2',
-			'position' => 'Position',
+			'names' => 'Nombre(s)',
+			'last_name1' => 'Apellido Paterno',
+			'last_name2' => 'Apellido Materno',
+			'position' => 'Posición',
 		);
 	}
 

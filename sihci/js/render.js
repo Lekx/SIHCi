@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	
     $('body').keyup(function(e) {
         if (e.which == 27) {
             $(".loginHome").hide();
@@ -13,9 +14,23 @@ $(document).ready(function() {
     });
     $("img#logocuentas2").click(function() {
         $(".loginHome").show();
+		 $("#login-form").show();
+		$(document).mouseup(function (e)
+			{
+			var container = $("#login-form");
+
+			if (!container.is(e.target) // if the target of the click isn't the container...
+				&& container.has(e.target).length === 0) // ... nor a descendant of the container
+			{
+				container.hide();
+				$(".loginHome").hide();
+				$('[id^=LoginForm_]').val('');
+			}
+		});
         $(".glyphicon").css("color", "#1EB9C0");
         $("#yt0").css("background-color", "#0E3152 !important");
         $("#yt0").val("Ingresar a mi cuenta");
+	
     });
     $(".closelogin").click(function() {
         $(".loginHome").hide();
@@ -27,6 +42,19 @@ $(document).ready(function() {
     $("#recoveryHome").click(function() {
         $(".loginHome").hide();
         $(".recoveryHome").show();
+		 $("#recovery-form").show();
+		$(document).mouseup(function (e)
+			{
+			var container = $("#recovery-form");
+
+			if (!container.is(e.target) // if the target of the click isn't the container...
+				&& container.has(e.target).length === 0) // ... nor a descendant of the container
+			{
+				container.hide();
+				$(".recoveryHome").hide();
+				$('[id^=RecoveryPassword]').val('');
+			}
+		});
         $(".glyphicon").css("color", "#1EB9C0");
         $("#yt0").css("background-color", "#0E3152 !important");
         $("#yt0").val("Ingresar a mi cuenta");
@@ -63,6 +91,20 @@ $(document).ready(function() {
     });
     $("img#logocuentas").click(function() {
         $(".createHome").show();
+		 $("#users-form").show();
+		$(document).mouseup(function (e)
+			{
+			var container = $("#users-form");
+
+			if (!container.is(e.target) // if the target of the click isn't the container...
+				&& container.has(e.target).length === 0) // ... nor a descendant of the container
+			{
+				container.hide();
+				$(".createHome").hide();
+				$('[id^=Persons_]').val('');
+				$('[id^=Users]').val('');
+			}
+		});
         $(".glyphicon").css("color", "#1EB9C0");
         $("#yt0").css("background-color", "#0E3152 !important");
         $("#yt0").val("Ingresar a mi cuenta");

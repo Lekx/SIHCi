@@ -9,8 +9,7 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'copyrights-form',
 	'enableAjaxValidation'=>true,
-	'enableClientValidation'=>true,
-	'clientOptions'=>array('validateOnSubmit'=>true)
+	
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -22,7 +21,7 @@
 			<?php echo $form->dropDownList($model,'participation_type',
 				array(
 						'Autor'=>'Autor',
-						'Coautor'=>'Coautor'
+						'Co-autor'=>'Co-autor'
 					),
 					array('prompt'=>'Seleccionar participación', 'title'=>'Seleccionar participación')
 				); 
@@ -91,39 +90,16 @@
 	</div>
 
 	<div class="row buttons">
-	    <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('copyrights/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="success")
-		                         {
-									$(".successdiv").show();
+	    <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("copyrights-form","copyrights/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","copyrights/admin","");',
+                'class'=>'savebutton',
+            ));
+    	?>              
+        <?php echo CHtml::link('Cancelar',array('copyrights/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
-		                         }		                         
-		                         else
-		                         {
-			                     	$(".errordiv").show();   
-			                     }       
-		                  	}',                    
-		                    
-                        ),array('class'=>'savebutton')); 
-        ?>
-        
-        <?php echo CHtml::Button('Cancelar',array('submit' => array('copyrights/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
-
-		<div class="200">
-		
-		</div>
-		
-		<div class="404">
-		</div>
-		
+			
 	</div>
 
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-

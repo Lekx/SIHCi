@@ -25,4 +25,13 @@
 	<?php echo CHtml::encode($data->validity_date_start); ?>
 	<br />
 
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('validity_date_end')); ?>:</b>
+	<?php echo CHtml::encode($data->validity_date_end); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
+	<?php echo CHtml::encode($data->type); ?>
+	<br />
+
 </div>

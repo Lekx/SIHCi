@@ -27,17 +27,10 @@ class SoftwareController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('*'),
+			    'actions'=>array('admin','create','update','delete','view','index'),
+				'expression'=>'($user->type==="fisico")',
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -63,58 +56,59 @@ class SoftwareController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
+		if($model->end_date == "30/11/-0001" || $model->end_date == "0000-00-00"){
+				$model->end_date = "";
+		}
+
 		if(isset($_POST['Software']))
 		{
 			$model->attributes=$_POST['Software'];
-			$model->id_curriculum = $id_curriculum->id;                  
-            
-    		if($model->end_date == null)
-    			$model->end_date ='00/00/0000';		
-				
-				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
-				{
-	           		
-	           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
-				   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
-            		
+			$model->id_curriculum = $id_curriculum->id;                 
+            			
+			$model->path = CUploadedFile::getInstance($model,'path');
+			
+			if($model->validate() == 1 )
+			{
+				if ($model->path != '')
+             	{	             		
+             		$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/folderSoftware/';
 		          
 		            if(!is_dir($urlFile))          
-		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/', 0777, true);
-		            
-		            
-		                $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-					    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   			         
+		              	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/folderSoftware/', 0777, true);
+		          
+					    $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/folderSoftware/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
+				
 			    }
-				else
-					$model->path = "";	
+				else{
+				   $model->path = "";
+				}
 
-					if($model->save())
-					{	   		
-						$section = "Propiedad Intelectual"; 
-		     			$action = "Creación";
-						$details = "Subsección: Software";
-		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		     				   
-					    echo CJSON::encode(array('status'=>'200'));
-					    $this->redirect(array('admin'));
-				    	Yii::app()->end();
-				    }			    	
-				    else 
-			    	{
-			    		echo CJSON::encode(array('status'=>'404'));
-			    	    Yii::app()->end();
-			        }
-					    
-		}
+				if($model->save())
+				{	   		
+					$section = "Propiedad Intelectual"; 
+	     			$action = "Creación";
+					$details = "Subsección: Software";
+	     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+	     			
+			    	echo CJSON::encode(array('status'=>'success'));
+     				Yii::app()->end();
+			    }
+
+			}
+			else 
+			{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+				   
+				Yii::app()->end();
+			}
+				
 			
-		if(!isset($_POST['ajax']))
-			$this->render('create',array('model'=>$model));
-	}
-
-
-	public function actionUpload()
-	{
-
+		}
+				if(!isset($_POST['ajax']))
+					$this->render('create',array('model'=>$model));
 	}
 	/**
 	 * Updates a particular model.
@@ -128,66 +122,62 @@ class SoftwareController extends Controller
 		$model=new Software;
 
 		$model=$this->loadModel($id);
-
-		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
-		$end_date = Software::model()->findByAttributes(array('end_date'=>$model->end_date));
-		$oldPath = $model->path;
-
+		$id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   				
 		$model->id_curriculum = $id_curriculum->id; 
 				
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
+		$oldPath = $model->path;
 		
-		if($model->end_date == "30/11/-0001" || $model->end_date == "00/00/0000"){
-			$model->end_date = "";
-		}	
-
+	
 		if(isset($_POST['Software']))
 		{
 			$model->attributes=$_POST['Software'];
-			$model->id_curriculum = $id_curriculum->id;                      
-			
-			if($model->end_date == null)
-    			$model->end_date ='00/00/0000';		
 
-    		
-				if (!empty(CUploadedFile::getInstanceByName('Software[path]')))
-				{
-							
+			$model->id_curriculum = $id_curriculum->id;                      
+			$model->path = CUploadedFile::getInstanceByName('Software[path]');
+			
+				
+    		if ($model->validate()==1)
+    		{	
+				if ($model->path != '')
+				{							
 					if(!empty($oldPath))
 						unlink(YiiBase::getPathOfAlias("webroot").$oldPath);
 					
-		           		$model->path = CUploadedFile::getInstanceByName('Software[path]');
-					   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Folder_Software/';
-			          
-			            if(!is_dir($urlFile))          
+				   		$model->path = CUploadedFile::getInstanceByName('Software[path]');
+					   	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/folderSoftware/';      		
+					
+					if(!is_dir($urlFile))          
 			              	mkdir($urlFile, 0777, true);
 
-						    $model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
-						    $model->path = '/users/'.Yii::app()->user->id.'/Folder_Software/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   	
-							
-			    }				
-				else						   
-				   $model->path=$oldPath;  
-					
+						$model->path->saveAs($urlFile.'fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
+					    $model->path = '/users/'.Yii::app()->user->id.'/folderSoftware/fileSoftware'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();    			 			   											
+			    }			
+				else{
+				  $model->path=$oldPath;  
+				}
 
-					if($model->save())
-					{	   		
+				if($model->save())
+				{	   		
 						$section = "Propiedad Intelectual"; 
 		     			$action = "Modificación";
 						$details = "Subsección: Software. Número Registro: ".$model->id;
 		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		     				   
-					    echo CJSON::encode(array('status'=>'200'));
-					   	$this->redirect(array('admin'));
-				    	Yii::app()->end();
-				    }			    	
-				    else 
-			    	{
-			    		echo CJSON::encode(array('status'=>'404'));
-		                Yii::app()->end();
-			        }
-					    
+		     				   							
+				    	echo CJSON::encode(array('status'=>'success'));
+	     				Yii::app()->end();
+					
+				}
+			}
+			else 
+			{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+			   
+				Yii::app()->end();
+			}	   
 		}
 			
 		if(!isset($_POST['ajax']))
@@ -210,11 +200,13 @@ class SoftwareController extends Controller
 		$details = "Subsección: Software. Registro Número: ".$model->id.". Fecha de Creación: ".$model->creation_date.".";
 		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		
-		if ($model->path != null ){			
+		if ($model->path != null )
+		{			
 			 unlink(YiiBase::getPathOfAlias("webroot").$model->path);
 		     $model->delete();
 		}
-		else {
+		else 
+		{
  			$model->delete();
 		}
 
@@ -290,4 +282,3 @@ class SoftwareController extends Controller
 		}
 	}
 }
-

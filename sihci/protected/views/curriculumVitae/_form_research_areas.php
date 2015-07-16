@@ -49,8 +49,8 @@
 
 	<?php echo $form->errorSummary($model); ?>
 	
-<input id="showFormResearch" type="button"  value="Agregar Línea de Investigación" class="addSomething">
-<input id="hideFormResearch" type="button"  value="Cancelar" class="cancelSomething">
+<input id="showFormResearch" type="button"  value="Agregar Nueva Línea de Investigación" class="addSomething">
+<!-- <input id="hideFormResearch" type="button"  value="Cancelar" class="cancelSomething"> -->
 
 <div class="research">
 <div class="research2">
@@ -58,27 +58,7 @@
 		<input id="research" type="text" name="nameResearch" title="Nombre de Investigación" placeholder="Nombre de Investigación">
 		<div id="errorResearch" class="errors"> No debe estar vacío</div>
 		</div>
-		 <?php echo CHtml::ajaxButton ('Crear Línea de Investigación',CController::createUrl('curriculumVitae/researchAreas'), 
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                                      
-		                         if(data.status=="200")
-		                         {
-				                     alert("Linea de investigación se ha creado con éxito");
-				                 ndow.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";
-		                         }		                         
-		                         else
-		                         {
-			                     	  alert("Linea de investigación se ha creado con éxito");
-				                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/researchAreas').'";  
-			                     }       
-		                  	}',                    
-		                    
-                        ), array('id'=>'btnCreateResearch','class'=>'addSomething')); 
-        ?>
+		
 </div><!-- form -->
 
 	<?php 
@@ -113,7 +93,7 @@
 		                         }		                         
 		                         else
 		                         {
-			                     	$(".errordiv").show();    
+			                     	 $(".successdiv").show();   
 			                     }       
 		                  	}',                    
 		                    

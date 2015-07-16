@@ -1,20 +1,41 @@
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Estadisticas.svg" alt="">
+            <h1>Estadisticas</h1>
+            <hr>
+        </div>
+        <h3>Total de proyectos registrados</h3>
+<div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
 
 
-<!--Unidad Hospitalaria 
-<?php // echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
-Año de reporte 
-<?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
-Tipo de proyecto
-<?php echo CHtml::dropDownList('proyecto', '',array("total"=>"Total","abiertos"=>"Abiertos","concluidos"=>"Concluidos","rechazados"=>"Rechazados"),array('onchange'=>'loadChart()')); ?><br/>
-Patrocinados
-<?php echo CHtml::dropDownList('patrocinador', '',array("total"=>"Todos","patrocinado"=>"Patrocinado","Nopatrocinado"=>"No patrocinado"),array('onchange'=>'loadChart()')); ?><br/>
+<div class="grafiOpt">
+  <div class="col-md-4">Año del reporte</div>
+  <div class="col-md-4">Tipo de proyecto</div>
+  <div class="col-md-4">Patrocinados</div>
+</div>
+<div class="grafiOpt">
+<div class="col-md-4">
+    <span class="plain-select2">
+<?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()','class'=>'dropinline')); ?>
+    </span>
+</div>
+<div class="col-md-4">
+    <span class="plain-select2">
+<?php echo CHtml::dropDownList('proyecto', '',array("total"=>"Total","abiertos"=>"Abiertos","concluidos"=>"Concluidos","rechazados"=>"Rechazados"),array('onchange'=>'loadChart()','class'=>'dropinline')); ?>
+</span>
+</div>
+<div class="col-md-4">
+    <span class="plain-select2">
+<?php echo CHtml::dropDownList('patrocinador', '',array("total"=>"Todos","patrocinado"=>"Patrocinado","Nopatrocinado"=>"No patrocinado"),array('onchange'=>'loadChart()','class'=>'dropinline')); ?>
+</span>
+</div>
+</div>
 
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <!-- <input type="button" value="puto" onclick="loadChart()"> -->
 <script>
-//jQuery.noConflict(); 
+//jQuery.noConflict();
 var chart;
 function loadChart(){
 var request = $.ajax({
@@ -32,11 +53,28 @@ request.done(function(data) {
 
 chart = new Highcharts.Chart({
 
-
         chart: {
             renderTo: 'container',
-            type: 'column'
-        },  credits: {
+            type: 'column',
+              events: {
+                load: function () {
+                    var chart = this,
+                        legend = chart.legend;
+
+                    for (var i = 0, len = legend.allItems.length; i < len; i++) {
+                        (function(i) {
+                            var item = legend.allItems[i].legendItem;
+                            item.on('mouseover', function (e) {
+                                $(".tooltipchart").show();
+                            }).on('mouseout', function (e) {
+                                $(".tooltipchart").hide();
+                            });
+                        })(i);
+                    }
+
+                }
+            }
+    },  credits: {
       enabled: false
   },
         title: {
@@ -65,7 +103,7 @@ chart = new Highcharts.Chart({
             useHTML: true
         },
        tooltip: {
-    
+
         },
         plotOptions: {
             column: {
@@ -94,7 +132,7 @@ chart = new Highcharts.Chart({
     });
 
 });
- 
+
 request.fail(function( jqXHR, textStatus ) {
   alert( "Request failed: " + textStatus );
 });
@@ -105,8 +143,4 @@ $(document).ready(function(){
 
 });
 
-
 </script>
-
-
-

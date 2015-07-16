@@ -30,8 +30,9 @@ class SponsorsContacts extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_sponsor', 'required'),
+			array('fullname', 'required'),
 			array('id_sponsor', 'numerical', 'integerOnly'=>true),
-			array('fullname', 'length', 'max'=>70),
+			//array('fullname','match', 'pattern'=>'/^[a-zA-Z]+$/', 'length', 'max'=>70),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_sponsor, fullname', 'safe', 'on'=>'search'),

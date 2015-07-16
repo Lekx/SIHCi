@@ -6,21 +6,6 @@ $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/congresses/js/script.js');
 ?>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-
-    });
-});
-</script>
 <!--PC01-Registrar datos  Participacion en congresos-->
 <div class="form">
 
@@ -34,17 +19,14 @@ $(document).ready(function() {
 ));
 
 ?>
-
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
-		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Puesto','title'=>'Puesto')); ?>
+		<?php echo $form->textField($model,'work_title',array('size'=>60,'maxlength'=>200, 'placeholder'=>'Tipo de participación','title'=>'Tipo de participación')); ?>
 		<?php echo $form->error($model,'work_title'); ?>
 	</div>
 
 	<div class="row">
 			<span class="plain-select">
-		<?php echo $form->dropDownList($model,'year', array('promt'=>'Seleccionar año',
+		<?php echo $form->dropDownList($model,'year', array(
 															'1930'=>'1930','1931'=>'1931',
 															'1932'=>'1932','1933'=>'1933','1934'=>'1934','1935'=>'1935',
 															'1936'=>'1936','1937'=>'1937','1938'=>'1938','1939'=>'1939',
@@ -77,7 +59,7 @@ $(document).ready(function() {
 															'2044'=>'2044','2045'=>'2045','2046'=>'2046','2047'=>'2047',
 															'2048'=>'2048','2049'=>'2049','2050'=>'2050'
 
-															),array('title'=>'Año')); ?>
+															),array('title'=>'Año','prompt'=>'Seleccionar año')); ?>
 															</span>
 		<?php echo $form->error($model,'year'); ?>
 	</div>
@@ -88,13 +70,6 @@ $(document).ready(function() {
 		<?php echo $form->error($model,'congress'); ?>
 	</div>
 
-	<div class="row">
-         <!-- <?php /*
-                $status = array('Nacional' => 'Nacional','Internacional'=>'Internacional');
-                echo $form-> RadioButtonList($model,'type' ,$status, array ('separador' => ''));?>
-         <?php echo $form->error($model,'type'); */ ?> -->
-
-	</div>
 
 	<div class="row">
 			<span class="plain-select">
@@ -105,7 +80,7 @@ $(document).ready(function() {
 				    'name' => Chtml::activeName($model, 'country'),
 				    'id' => Chtml::activeId($model, 'country'),
 				    'useCountryCode' => false,
-				    'defaultValue' => 'Mexico',
+				    'defaultValue' => 'México',
 				    'firstEmpty' => false,
 			    )
 			);
@@ -116,7 +91,7 @@ $(document).ready(function() {
 
 	<div class="row">
 			<span class="plain-select">
-        <?php echo $form->dropDownList($model,'work_type',array('promt'=>'Seleccionar tipo de trabajo','Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'),array('title'=>'Tipo Trabajo'));?>
+        <?php echo $form->dropDownList($model,'work_type',array('Conferencia Magistral'=>'Conferencia Magistral','Articulo in Extenso'=>'Articulo in Extenso','Ponencia'=>'Ponencia','Poster'=>'Poster'),array('title'=>'Tipo Trabajo','prompt'=>'Seleccionar tipo de trabajo'));?>
         </span>
         <?php echo $form->error($model,'work_type'); ?>
 
@@ -155,7 +130,7 @@ $(document).ready(function() {
 
 		<div class="row">
 
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. (Solo se aceptan numeros)')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
     	</div>
@@ -183,45 +158,21 @@ $(document).ready(function() {
 				  </div>
 
 				  <div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición')); ?>
+					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'class' => 'numericOnly','placeholder'=>'Posición','title'=>'Posición. (Solo se aceptan numeros)')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
+				     <?php echo CHtml::button('Elminar',array('submit' => array('congresses/deleteAuthor','id'=>$modelAuthors[$key]->id,'idCongressAuthors'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
 	<?php } ?>
-
+	<hr>
+				</div>
 	<div class="row buttons">
-	   	 
-		
-	   	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('congresses/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)),
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data)
-                     		 {
+		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("congresses-form","congresses/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","congresses/admin","");',
+                'class'=>'savebutton',
+            ));
+    	?> 
+		<?php echo CHtml::link('Cancelar',array('congresses/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 
-		                         if(data.status=="200")
-		                         {
-
-									$(".successdiv").show();
-									
-		                         }
-		                         else
-		                         {
-			                     	 $(".errordiv").show();
-			                     }
-		                  	}',
-
-                        ),array('class'=>'savebutton'));
-          ?> 
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('congresses/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
-
-
-
-		<div class="200">
-
-		</div>
-
-		<div class="404">
-		</div>
 
 	</div>
 

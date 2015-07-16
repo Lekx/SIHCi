@@ -68,8 +68,12 @@
 				
 				// Increment Clone Children IDs
 				$(clone).find('[id]').each(function(){
-					var newid = $(this).attr('id') + (counter +1);
+					counter++;
+					var newid = $(this).attr('id') + counter;
+
 					$(this).attr('id', newid);
+
+					$(this).attr('name', $(this).attr('name')+counter);
 				});
 				
 				//Clear Inputs/Textarea

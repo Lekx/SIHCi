@@ -103,7 +103,11 @@ class Congresses extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'work_title ASC';
+		
 		if($this->searchValue)
 		{
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR work_title LIKE CONCAT('%', :searchValue ,'%') OR congress LIKE CONCAT('%', :searchValue , '%') OR keywords LIKE CONCAT('%', :searchValue , '%') OR year LIKE CONCAT('%', :searchValue , '%') ");
@@ -119,10 +123,9 @@ class Congresses extends CActiveRecord
 		$criteria->compare('work_type',$this->work_type,true);
 		$criteria->compare('keywords',$this->keywords,true);
 		$criteria->compare('creation_date',$this->creation_date,true);*/
-
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+					'criteria'=>$criteria,
+				));
 	}
 
 	/**

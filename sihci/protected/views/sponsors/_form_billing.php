@@ -4,28 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<script>
-$(document).ready(function() {
-    $(".numericOnly").keydown(function (e) {
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                return;
-        }
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-});
-$(document).ready(function(){
-	if($("#sponsorsBillingCheck").is(":checked"))
-		$("#sponsorsBillingForm").hide();
 
-    $("#sponsorsBillingCheck").click(function(){
-       $("#sponsorsBillingForm").toggle();
-    });
-});
-</script>
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -34,11 +13,11 @@ $(document).ready(function(){
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation' => false,
+	'enableAjaxValidation' => true,
 ));?>
 
 
-	Utlizar la misma Direccion.
+	Utlizar la misma Dirección.
 	<div class="row">
 		<input type="checkbox" id="sponsorsBillingCheck" name="sameAddress"  <?php echo $sameAd == true ? "CHECKED" : "";?>/>
 	</div>
@@ -66,19 +45,19 @@ $(document).ready(function(){
 		<?php echo $form->error($modelAddresses, 'zip_code');?>
 </div>
 <div class="row">
-		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','title' => 'Estado'));?>
+		<?php echo $form->textField($modelAddresses, 'state', array('size' => 20, 'maxlength' => 20, 'placeholder' => 'Estado','title' => 'Estado','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'state');?>
 		</div>
 <div class="row">
-		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','title' => 'Delegación'));?>
+		<?php echo $form->textField($modelAddresses, 'delegation', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Delegación','title' => 'Delegación','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'delegation');?>
 		</div>
 <div class="row">
-		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','title' => 'Ciudad'));?>
+		<?php echo $form->textField($modelAddresses, 'city', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Ciudad','title' => 'Ciudad','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'city');?>
 		</div>
 <div class="row">
-		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','title' => 'Municipio'));?>
+		<?php echo $form->textField($modelAddresses, 'town', array('size' => 30, 'maxlength' => 30, 'placeholder' => 'Municipio','title' => 'Municipio','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'town');?>
 		</div>
 <div class="row">
@@ -102,7 +81,7 @@ $(document).ready(function(){
 
 	<div id="billing" name="billing">
 	<div class="row">
-		<?php echo $form->textField($model, 'name', array('size' => 45, 'placeholder' => 'Nombre', 'maxlength' => 45,'title' => 'Nombre'));?>
+		<?php echo $form->textField($model, 'name', array('size' => 45, 'placeholder' => 'Nombre', 'maxlength' => 45,'title' => 'Nombre','onKeypress'=>'return lettersOnly(event)'));?>
 		<?php echo $form->error($model, 'name');?>
 </div>
 <div class="row">
@@ -119,8 +98,11 @@ $(document).ready(function(){
 
 
 	<div class="row buttons">
-		<?php /* echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); */?>
-		<input type="submit"  class="savebutton" onclick="validationFrom()" value="Guardar">
+		<?php echo CHtml::htmlButton('Enviar',array(
+								'onclick'=>'send("sponsors-billing-form", "sponsors/create_billing", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+								'class'=>'savebutton',
+						));
+		?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 

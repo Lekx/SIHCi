@@ -51,11 +51,57 @@ class ProjectsController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$followups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$id),array('order'=>'id DESC'));
+		$modelfollowup = new ProjectsFollowups;
+
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$this->loadModel($id), 'followups'=>$followups, 'modelfollowup'=>$modelfollowup
 		));
 	}
 
+	public $discipline = array("Anatomía Patológica"=>"Anatomía Patológica",
+		"Anestesiología"=>"Anestesiología",
+		"Angiología"=>"Angiología",
+		"Biología de la Reproducción Humana"=>"Biología de la Reproducción Humana",
+		"Cardiología"=>"Cardiología",
+		"Cirugía Cardiotorácica"=>"Cirugía Cardiotorácica",
+		"Cirugía General"=>"Cirugía General",
+		"Cirugía Maxilofacial"=>"Cirugía Maxilofacial",
+		"Cirugía Pediátrica"=>"Cirugía Pediátrica",
+		"Cirugía Plástica y Reconstructiva"=>"Cirugía Plástica y Reconstructiva",
+		"Coloproctología"=>"Coloproctología",
+		"Audiología, Otoneurología y Foniatría"=>"Audiología, Otoneurología y Foniatría",
+		"Dermatología"=>"Dermatología",
+		"Endocrinología"=>"Endocrinología",
+		"Epidemiología"=>"Epidemiología",
+		"Estomatología"=>"Estomatología",
+		"Gastroenterología"=>"Gastroenterología",
+		"Genética Médica"=>"Genética Médica",
+		"Geriatría"=>"Geriatría",
+		"Ginecología y Obstetricia"=>"Ginecología y Obstetricia",
+		"Hematología"=>"Hematología",
+		"Infectología"=>"Infectología",
+		"Inmunología Clínica y Alergia"=>"Inmunología Clínica y Alergia",
+		"Medicina del Enfermo en Estado Crítico"=>"Medicina del Enfermo en Estado Crítico",
+		"Medicina del Trabajo"=>"Medicina del Trabajo",
+		"Medicina Familiar"=>"Medicina Familiar",
+		"Medicina Física y Rehabilitación"=>"Medicina Física y Rehabilitación",
+		"Medicina Interna"=>"Medicina Interna",
+		"Medicina Nuclear"=>"Medicina Nuclear",
+		"Nefrología"=>"Nefrología",
+		"Neumología"=>"Neumología",
+		"Oftalmología"=>"Oftalmología",
+		"Oncología Médica y Radioterapia"=>"Oncología Médica y Radioterapia",
+		"Ortopedia y Traumatología"=>"Ortopedia y Traumatología",
+		"Otorrinolaringología y Cirugía de Cabeza y Cuello"=>"Otorrinolaringología y Cirugía de Cabeza y Cuello",
+		"Pediatría Médica"=>"Pediatría Médica",
+		"Psiquiatría y Psicología"=>"Psiquiatría y Psicología",
+		"Radiodiagnóstico e Imagen"=>"Radiodiagnóstico e Imagen",
+		"Reumatología"=>"Reumatología",
+		"Urología"=>"Urología",
+		"Otro"=>"Otro",
+		"Neurocirugía"=>"Neurocirugía",
+	);
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -71,31 +117,71 @@ class ProjectsController extends Controller
 		{
 			$model->attributes=$_POST['Projects'];
 
-			if(Yii::app()->user->id_roles==13){
+			if(Yii::app()->user->Rol->id==1){
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
 			}else{
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
 			}
 
-			if($_POST['type']== "draft")
-				$model->status = "borrador";
+			if($_POST[1]== "draft")
+				$model->status = "BORRADOR";
 			else
-				$model->status = "revisión divuh";
+				$model->status = "DIVUH";
 
 			$model->folio = "-1";
-			$model->is_sponsored = 0; 
+			$model->is_sponsored = 0;
+			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
 			$model->registration_number = "-1";
 
-			if($model->save()){
-				echo "datos guardados con exito";
-				$this->redirect(array('view','id'=>$model->id));
-			}else{
-				echo "por favor revise que la información sea correcta";
+			//var_dump($_POST['research_types']);
+
+			foreach ($_POST['research_types'] as $key => $value) {
+				if(!empty($value))
+					$model->research_type.=$value."*-*";
 			}
+
+		if($model->validate()){
+			if($model->save()){
+
+				foreach ($_POST['adtlResearchers'] as $key => $value) {
+					if(!empty($value)){
+						$adtlRes = new ProjectsCoworkers;
+						$adtlRes->id_project = $model->id;
+						$adtlRes->fullName = $value;
+
+						$adtlRes->save();
+					}
+				}
+				if($_POST[1] != "draft"){
+					$followup = new ProjectsFollowups;
+					$followup->id_project = $model->id;
+					$followup->id_user = Yii::app()->user->id;
+					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+
+					if($followup->save()){
+						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
+						Yii::app()->end();
+					}else{
+						echo CJSON::encode(array('status'=>'failure'));
+						Yii::app()->end();
+					}
+				}else{
+						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
+						Yii::app()->end();
+				}
+
+			}
+		}else{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+
+				Yii::app()->end();
+		}
 		}else{
 
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model,'discipline'=>$this->discipline
 		));
 		}
 	}
@@ -110,18 +196,84 @@ class ProjectsController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
+
+		$pastStatus = $model->status;
 
 		if(isset($_POST['Projects']))
 		{
 			$model->attributes=$_POST['Projects'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+
+			if(Yii::app()->user->Rol->id==1){
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
+			}else{
+				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+			}
+
+			if($_POST[1]== "draft")
+				$model->status = "BORRADOR";
+			else
+				$model->status = "DIVUH";
+
+			$model->status = ($pastStatus == "MODIFICAR" && $model->status =="BORRADOR") ? "MODIFICAR" : $model->status;
+
+			$model->folio = "-1";
+			//$model->is_sponsored = 0;
+			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
+			$model->registration_number = "-1";
+
+			//var_dump($_POST['research_types']);
+			$newRtypes ="";
+			foreach ($_POST['research_types'] as $key => $value) {
+				if(!empty($value))
+					$newRtypes.=$value."*-*";
+			}
+			$model->research_type = $newRtypes;
+
+		if($model->validate()){
+			if($model->save()){
+
+				foreach ($_POST['adtlResearchers'] as $key => $value) {
+					if(!empty($value)){
+						$adtlRes = new ProjectsCoworkers; //  A G R E G A R  LA PARTE DE IDS PARA SABER CUALES SE EDITARAN(LIBROS AUTH)
+						$adtlRes->id_project = $model->id;
+						$adtlRes->fullName = $value;
+
+						$adtlRes->save();
+					}
+				}
+				if($_POST[1] != "draft"){
+					$followup = new ProjectsFollowups;
+					$followup->id_project = $model->id;
+					$followup->id_user = Yii::app()->user->id;
+					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+
+					if($followup->save()){
+						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
+						Yii::app()->end();
+					}else{
+						echo CJSON::encode(array('status'=>'failure'));
+						Yii::app()->end();
+					}
+				}else{
+						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
+						Yii::app()->end();
+				}
+
+			}
+		}else{
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+
+				Yii::app()->end();
 		}
+		}else{
 
 		$this->render('update',array(
-			'model'=>$model,
+			'model'=>$model,'discipline'=>$this->discipline
 		));
+		}
 	}
 
 	/**
@@ -166,13 +318,14 @@ class ProjectsController extends Controller
 
 	public function actionAcceptSponsorship($id)
 	{
-		Sponsorship::model()->updateByPk($id,array("status"=>"aceptado"));
+
 		$sponsoredProjExist = SponsoredProjects::model()->findByAttributes(array("id_sponsorship"=>$id));
 		if(!is_object($sponsoredProjExist)){
+			//echo "caca";
 			$sponsored = Sponsorship::model()->findByPk($id);
 			$project = new Projects;
 
-			 
+
 
 			 $cv = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));
 
@@ -186,7 +339,7 @@ class ProjectsController extends Controller
 			 $project->is_sni = 1;
 			 $project->develop_uh ="-1";
 
-			 $project->status = "borrador";
+			 $project->status = "BORRADOR";
 			 $project->folio = "-1";
 			 $project->is_sponsored = 1;
 			 $project->registration_number = "-1";
@@ -196,14 +349,16 @@ class ProjectsController extends Controller
 
 				$sponsoredProj->id_project = 1;
 			 $sponsoredProj->id_sponsorship = $id;
-			
+
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if($project->validate() && $sponsoredProj->validate())
 				if($project->save()){
 					$sponsoredProj->id_project = $project->id;
 					if($sponsoredProj->save())
-						if(!isset($_GET['ajax']))
-							$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('sponsoredAdmin'));
+						if(Sponsorship::model()->updateByPk($id,array("status"=>"ACEPTADO")))
+							if(!isset($_GET['ajax']))
+								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('sponsoredAdmin'));
+
 				}
 		}
 		if(!isset($_GET['ajax']))
@@ -212,7 +367,7 @@ class ProjectsController extends Controller
 
 	public function actionRejectSponsorship($id)
 	{
-		Sponsorship::model()->updateByPk($id,array("status"=>"rechazado"));
+		Sponsorship::model()->updateByPk($id,array("status"=>"RECHAZADO"));
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -221,10 +376,12 @@ class ProjectsController extends Controller
 
 	public function actionSponsoredAdmin()
 	{
-		$model = new Sponsorship('search');
+		//$model = new Sponsorship('search');
+
+		$model = Sponsorship::model()->findByAttributes(array("id_user_researcher"=>Yii::app()->user->id));
 
 
-		$model->unsetAttributes();  // clear any default values
+		//$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Projects']))
 			$model->attributes=$_GET['Projects'];
 

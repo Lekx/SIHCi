@@ -1,37 +1,55 @@
 $(document).ready(function() {
-    $('.backbut').click(function() {
-        /*$('.cleandiv').hide();
-        $('.successdiv').hide();
-        $('.errordiv').hide();
-        $('.abortdiv').hide();*/
-        window.location = yii.urls.back;
 
+	$('.highcharts-legend text, .highcharts-legend span').each(function(index, element) {
+    $(element).hover(function() {
+        chart.tooltip.refresh(chart.series[0].data[index]);
+    },function() {
+        chart.tooltip.hide();
     });
-    $('.errorbut').click(function() {
-        $('.cleandiv').hide();
-        $('.successdiv').hide();
-        $('.errordiv').hide();
-        $('.errordivuser').hide();s
-        $('.abortdiv').hide();
+});
+	
+  $("select").mouseleave(function(event) {
+    event.stopPropagation();
+  });
 
-    });
-    $('.cleanbut').click(function() {
-        $('.cleandiv').hide();
-        $('[id^=Addresses_]').val('');
-        $('[id^=Sponsors_]').val('');
-        $('[id^=Jobs_]').val('');
-        $('[id^=getResearch]').val('');
-        $('[id^=getTypeEmail]').val('');
-        $('[id^=getEmail]').val('');
-        $('[id^=Persons_]').val('');
-        $('[id^=Curriculum_]').val('');
-        $('.savebutton').val('Guardar');
-        $('.cleanbutton').val('Borrar');
-        $('#cancelar').val('Cancelar');
-        $('[id^= SponsorBilling]').val('');
+  $('.backbut').click(function() {
+    window.location = yii.urls.back;
+  });
+  $('.errorbut').click(function() {
 
+    $('.cleandiv').hide();
+    $('.successdiv').hide();
+    $('.errordiv').hide();
+    $('.errordivuser').hide();
+    $('.abortdiv').hide();
+
+  });
+  $('.summary').remove();
+  $('.buttons a').click(function(e) {
+    var url = $('.buttons a').attr('href');
+    $('.deleter').click(function() {
+      window.location = url;
     });
-    
-    $('.summary').remove();
+    e.preventDefault();
+    $('#myModal').modal('toggle');
+    return false;
+  });
+
+  setInterval(function() {
+    $(".notification").effect("highlight", {
+      color: '#798B9D'
+    }, 1000);
+  }, 100);
+
+
+  function backSuccesAlert(backurl) {
+    window.location = yii.urls.createUrl + '/' + actionUrl;
+  }
+
+  $('#Sponsor').attr("placeholder", "Investigador a patrocinar");
+  $('#Sponsor').attr("title", "Investigador a patrocinar");
+
+  $('#id_user_sponsorer').attr("placeholder", "Empresa que patrocina");
+  $('#id_user_sponsorer').attr("title", "Empresa que patrocina");
 
 });

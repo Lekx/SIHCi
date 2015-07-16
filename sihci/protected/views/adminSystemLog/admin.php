@@ -25,14 +25,19 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Gestionar</h1>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Bitacora</h1>
+            <hr>
+        </div>
+
+<h3>Getionar:</h3>
 
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'system-log-grid',
 	'dataProvider'=>$model->search(),
@@ -43,20 +48,19 @@ $('.search-form form').submit(function(){
 
 	'columns'=>array(
 			array('name'=>'Número de Movimiento','type'=>'html','id'=>'id','value'=>'CHtml::encode($data->id)'),
-			array('name'=>'Número de usuario','type'=>'html','id'=>'id_user','value'=>'CHtml::encode($data->id_user)'),
+			array('header'=>'Nombre de usuario',
+				'type'=>'html',
+				'id'=>'id_user',
+				'value'=>'Persons::model()->findByAttributes(array("id_user"=>$data->id_user)) != null ? Persons::model()->findByAttributes(array("id_user"=>$data->id_user))->names : "Usuario eliminado"'),
 			array('name'=>'Sección','type'=>'html','id'=>'section','value'=>'CHtml::encode($data->section)'),
 			array('name'=>'Detalles','type'=>'html','id'=>'details','value'=>'CHtml::encode($data->details)'),
 			array('name'=>'Acción','type'=>'html','id'=>'action','value'=>'CHtml::encode($data->action)'),
 			array('name'=>'Fecha','type'=>'html','id'=>'datetime','value'=>'CHtml::encode($data->datetime)'),
-		
-		// 'id',
-		// 'id_user',
-		// 'section',
-		// 'details',
-		// 'action',
-		// 'datetime',
+
+
 		array(
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+));
+ ?>
