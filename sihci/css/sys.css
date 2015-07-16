@@ -106,25 +106,26 @@ select
 .headerconteiner3
 {
     width: calc(88%);
-    height: 20px;
+    height: 35px;
     margin-top: -72px;
 
     background: #0e3152;
+    padding-bottom: 10px;
 }
 .headerconteiner4
 {
-    width: calc(19% - 5px);
-    height: 35px;
-    margin-top: -68px;
+    width: calc(17% - 5px);
+    height: 20px;
+    margin-top: -53px;
 
     background: #00b9c0;
 }
 .headerconteiner5
 {
-    width: calc(69% + 15px);
+    width: calc(72% + 15px);
     height: 35px;
-    margin-top: -68px;
-
+    margin-top: -53px;
+    font-size: 12px;
     background: #798b9d;
 }
 .syscontent
@@ -150,7 +151,7 @@ select
 }
 .sysmenu
 {
-    width: calc(19% - 5px);
+    width: calc(17% - 5px);
     height: auto;
     min-height: 450px;
 
@@ -211,6 +212,7 @@ select
     font-family: 'Caviar_Dreams';
 
     padding-left: 5%;
+    margin: 0;
 
     color: white;
 }
@@ -218,7 +220,7 @@ select
 .headerconteiner4:after
 {
     position: absolute;
-    left: 14%;
+    left: 12%;
 
     width: 0;
     height: 10px;
@@ -237,7 +239,6 @@ select
     display: inline-block;
 
     margin: 0;
-    padding-top: 5px;
     padding-left: 2.5%;
 
     color: white;
@@ -288,6 +289,7 @@ select
     font-family: 'Caviar_Dreams_Bold';
 
     list-style: none;
+    width: 88%;
 }
 .cvmenuitems a
 {
@@ -960,7 +962,7 @@ thead th
 {
     font-family: 'Caviar_Dreams' !important;
 
-    width: 100%;
+    width: 88%;
 
     border-bottom: 1px solid #1eb9c0;
 }
@@ -1778,10 +1780,12 @@ li.menulis.now
 .fullnamed
 {
     display: inline-block;
-    width: 100%;
+    width: 71.5%;
     margin: 0;
     text-align: left;
-    padding-left: 279px;
+    padding-left: 249px;
+    color: white;
+    font-size: .9em;
 
 
 
@@ -1795,10 +1799,11 @@ li.menulis.now
 {
     display: inline-block;
 
-    width: 10%;
+    width: 13%;
     margin: 0;
 
     text-align: center;
+    vertical-align: top;
 }
 #projects-form p
 {
@@ -2076,7 +2081,7 @@ div.pager span.active
 
 }
 .heart
-{ 
+{
   height: 240px;
   width: 240px;
   overflow: hidden;
@@ -2269,4 +2274,10 @@ div.pager span.active
 	top:700px;
 	left:1000px;
 	z-index:9999;
+}
+#Languages_native_language,#Languages_is_traducer, #Languages_is_teacher
+{
+  width: auto;
+  margin-left: 32px !important;
+  margin-right: 32px !important;
 }

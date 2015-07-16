@@ -5651,3 +5651,26 @@ Stack trace:
 REQUEST_URI=/sihci/sihci/index.php/EvaluateCV/index
 HTTP_REFERER=http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/systemLog
 ---
+2015/07/16 12:34:59 [warning] [application] Error al establecer unsafe al atributo "path" de "Languages".
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (253)
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (62)
+in /Users/Dan/Sites/sihci/sihci/index.php (19)
+2015/07/16 12:35:00 [warning] [application] Error al establecer unsafe al atributo "path" de "Languages".
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (253)
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (62)
+in /Users/Dan/Sites/sihci/sihci/index.php (19)
+2015/07/16 12:35:01 [warning] [application] Error al establecer unsafe al atributo "path" de "Languages".
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (253)
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (62)
+in /Users/Dan/Sites/sihci/sihci/index.php (19)
+2015/07/16 12:35:02 [warning] [application] Error al establecer unsafe al atributo "path" de "Languages".
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (253)
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (62)
+in /Users/Dan/Sites/sihci/sihci/index.php (19)
+2015/07/16 12:35:03 [warning] [application] Error al establecer unsafe al atributo "path" de "Languages".
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (253)
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/LanguagesController.php (62)
+in /Users/Dan/Sites/sihci/sihci/index.php (19)
+2015/07/16 12:36:46 [warning] [application] Error al establecer unsafe al atributo "photo_url" de "Persons".
+in /Users/Dan/Sites/sihci/sihci/protected/controllers/CurriculumVitaeController.php (103)
+in /Users/Dan/Sites/sihci/sihci/index.php (19)

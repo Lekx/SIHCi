@@ -191,21 +191,26 @@
                     ?>
                 </div>
                 <div class="headerconteiner3">
-                    <div class="fullnamed"><h5>
+                    <div class="fullnamed">
 
-                        <?php echo Yii::app()->user->fullname; ?>
-                    </h5> <h5>(<?php echo Yii::app()->user->Rol->name; ?>)</h5>
+                        <?php echo Yii::app()->user->fullname; ?><br>
+                           (<?php echo Yii::app()->user->Rol->name; ?>)
+                           <br>
 
+                    </div>
+                    <div class="typelabe">
                     <?php
                         echo "<h6>Perfil  :  ".$infoUser['label']."</h6>";
                     ?>
-
+                    </div>
+                    <div class="logoutbars">
                     <?php
                         echo "<h6 id='logoutlable'>";
                         echo CHtml::link('Cerrar sesión', array('site/logout'));
                         echo "</h6>";
                     ?>
                     </div>
+
                 </div>
                 <div class="headerconteiner4">
                     <h4>Menú </h4>
@@ -531,7 +536,7 @@
             </div>
             <div class="loader">
               <div class="pulse">
-              
+
 				</div>
 				<div class="heart">
 				<i class="fa fa-heart fa-5x"></i></div>
