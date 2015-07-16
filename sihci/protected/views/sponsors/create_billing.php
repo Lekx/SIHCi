@@ -32,6 +32,6 @@ $this->menu = array(
         </div>
 
 
-<h4>Datos de Facturacion</h4>
+<h4>Datos de Facturación</h4>
 
 <?php $this->renderPartial('_form_billing', array('model' => $model, 'modelAddresses' => $modelAddresses, 'sameAd' => $sameAd));?>

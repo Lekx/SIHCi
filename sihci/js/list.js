@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+	$('#logocuentas4').on({
+    'mouseenter':function(){
+        $('.notificationsys').show();
+    },'mouseleave':function(){
+     $('.notificationsys').hide(); 
+    }
+});
     // body...
 $('.cbp-hssubmenu1 > li').hide();
 

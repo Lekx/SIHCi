@@ -1,4 +1,3 @@
-
 <?php
 /**
  * This is the model class for table "files_manager".
@@ -25,8 +24,11 @@ class FilesManager extends CActiveRecord
 		return array(
 			array('section, file_name, path, start_date, end_date', 'required'),
 			array('section', 'length', 'max'=>100),
-			array('file_name', 'length', 'max'=>50),
-			array('path', 'length', 'max'=>150),
+			array('file_name', 'length', 'max'=>100),
+			array('path, safe','file','allowEmpty'=>true, 'on'=>'create',
+				   'types'=>'pdf,PDF',
+			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),		
+			array('path', 'length', 'max'=>250),
 			array('id, section, file_name, path, start_date, end_date', 'safe', 'on'=>'search'),
 		);
 	}

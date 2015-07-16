@@ -1,5 +1,4 @@
 <?php
-
 class CongressesController extends Controller
 {
 	/**
@@ -27,17 +26,10 @@ class CongressesController extends Controller
      public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','admin','delete'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('*'),
+			    'actions'=>array('admin','create','update','delete','deleteAuthor','view','index'),
+				'expression'=>'($user->type==="fisico")',
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -100,14 +92,16 @@ class CongressesController extends Controller
 			                    		$modelAuthor->save();
 			              	 		}
 
-				echo CJSON::encode(array('status'=>'200'));
+				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      			//$this->render(array('admin','id'=>$model->id));
      			
      			
 			}else{
-     			echo CJSON::encode(array('status'=>'404'));
-                        Yii::app()->end();
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
      		}
 
 	}
@@ -168,13 +162,15 @@ class CongressesController extends Controller
 
 
 
-				echo CJSON::encode(array('status'=>'200'));
+				echo CJSON::encode(array('status'=>'success'));
      			Yii::app()->end();
      			//$this->render(array('admin','id'=>$model->id));
 			}else
      		{
-     			echo CJSON::encode(array('status'=>'404'));
-                        Yii::app()->end();
+     			$error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
      		}
 
 		}
@@ -203,6 +199,19 @@ class CongressesController extends Controller
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+
+	public function actionDeleteAuthor($id, $idCongressAuthors){
+
+		$modelAuthors= CongressesAuthors::model()->findByPk($id);
+		$section = "Autor de Congreso";
+		$action = "Eliminación";
+		$details = "Registro Número: ".$modelAuthors->id.". Datos: ".$modelAuthors->names;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$modelAuthors->delete();
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('congresses/update/'.$idCongressAuthors));
+
 	}
 
 	/**

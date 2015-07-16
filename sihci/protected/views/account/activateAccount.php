@@ -1,13 +1,26 @@
 
 
 <?php
-
-//echo $result;
-
 	if($result == "success")
-		echo "Su cuenta ha sido activada con éxito, ahora puede ingresar al sistema.";
+	 
+echo "<div class='selecttype'>
+    <div class='typecontent2'>
+        <div class='typeicons'>
+        <h1>¡Cuenta verificada con éxito!, ya puedes iniciar sesión.</h1>
+		<div class='backhome'><h4>Regresar a la pagina principal</h4></div>
+        	</div>
+        </div>
+    </div>
+</div>";
 	else
-		echo "Ha habido un error en la activación de su cuenta, por favor revise su información o contacte al administrador.";
-
-
+		echo  "<div class='selecttype'>
+    <div class='typecontent2'>
+        <div class='typeicons'>
+        <h1>¡Error al verificar la cuenta contactar al administrador del sistema!</h1>
+		<div class='backhome'><h4>Regresar a la pagina principal</h4></div>
+        	</div>
+        </div>
+    </div>
+</div>";
 ?>
+

@@ -13,11 +13,10 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
-	'htmlOptions' => array('enctype' => 'multipart/form-data'),
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
 
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 <span class="plain-select">
@@ -110,87 +109,9 @@
 	</div>
 
 	<div class="row">
-<span class="plain-select">
-		<?php echo $form->dropDownList($model,'native_language',array(
-					'Albanés'=>'Albanés',
-					'Alemán'=>'Alemán',
-					'Amharico'=>'Amharico',
-					'Arabe'=>'Arabe',
-					'Armenio' =>'Armenio',
-					'Bengali'=>'Bengali',
-					'Bieloruso'=>'Bieloruso',
-					'Birmanés'=>'Birmanés',
-					'Bulgaro' =>'Bulgaro' ,
-					'Catalan'=>'Catalan',
-					'Checo'=>'Checo',
-					'Chino'=>'Chino',
-					'Coreano'=>'Coreano',
-					'Croata'=>'Coreano',
-					'Danés'=>'Danés',
-					'Dari'=>'Dari',
-					'Dzongkha'=>'Dzongkha',
-					'Escocés'=>'Escocés',
-					'Eslovaco'=>'Eslovaco',
-					'Esloveniano'=>'Esloveniano',
-					'Español'=>'Español',
-					'Esperanto'=>'Esperanto',
-					'Estoniano' =>'Estoniano',
-					'Faroese'=>'Faroese',
-					'Farsi'=>'Farsi',
-					'Finlandés'=>'Finlandés',
-					'Francés'=>'Francés',
-					'Gaelico'=>'Gaelico',
-					'Galese'=>'Galese',
-					'Gallego'=>'Gallego',
-					'Griego'=>'Griego',
-					'Hebreo'=>'Hebreo',
-					'Hindi'=>'Hindi',
-					'Holandés'=>'Holandés',
-					'Hungaro' =>'Hungaro' ,
-					'Inglés'=>'Inglés',
-					'Indonesio'=>'Indonesio',
-					'Inuktitut (Eskimo)'=>'Inuktitut (Eskimo)',
-					'Islandico'=>'Islandico',
-					'Italiano'=>'Italiano',
-					'Japonés'=>'Japonés',
-					'Khmer'=>'Khmer',
-					'Kurdo'=>'Kurdo',
-					'Lao'=>'Lao',
-					'Laponico'=>'Laponico',
-					'Latviano'=>'Latviano',
-					'Lituano'=>	'Lituano',
-					'Macedonio'=>'Macedonio',
-					'Malayés'=>'Malayés',
-					'Maltés'=>'Maltés',
-					'Nepali'=>'Nepali',
-					'Noruego' =>'Noruego',
-					'Pashto'=>'Pashto',
-					'Polaco'=>'Polaco',
-					'Portugués'=>'Portugués',
-					'Rumano'=>'Rumano',
-					'Ruso' =>'Ruso',
-					'Serbio'=>'Serbio',
-					'Somali'=>'Somali',
-					'Suahili'=>'Suahili',
-					'Sueco'=>'Sueco',
-					'Tagalog-Filipino'=>'Tagalog-Filipino',
-					'Tajik'=>'Tajik',
-					'Tamil'=>'Tamil',
-					'Tailandés'=>'Tailandés',
-					'Tibetano'=>'Tibetano',
-					'Tigrinia'=>'Tigrinia',
-					'Tonganés'=>'Tonganés',
-					'Turco'=>'Turco',
-					'Turkmenistano'=>'Turkmenistano',
-					'Ucraniano'=>'Ucraniano',
-					'Urdu'=>'Urdu',
-					'Uzbekistano'=>'Uzbekistano',
-					'Vasco'=>'Vasco',
-					'Vietnamés'=>'Vietnamés'),
-					array('prompt'=>'Seleccionar idioma nativo','title'=>'Idioma Nativo')
-                );
-		?>
-		</span>
+		<?php echo $form->label($model, 'native_language');?>
+		<?php echo $form->checkbox($model,'native_language');?>
+		
 		<?php echo $form->error($model,'native_language'); ?>
 	</div>
 
@@ -278,13 +199,18 @@
 
 	<div class="row">
 		
-		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto", "title"=>"Exámen / Documento probatorio")); ?>
+		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100, "title"=>"Exámen / Documento probatorio")); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
 
 
 	<div class="row buttons">
-	 <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar', array('class'=>'savebutton')); ?>
+        <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
+                'onclick'=>'send("languages-form", "languages/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","languages/admin","");',
+                 //'id'=> 'post-submit-btn', 
+                'class'=>'savebutton',
+            ));
+   		 ?>
        	<?php echo CHtml::Button('Cancelar',array('submit' => array('languages/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 

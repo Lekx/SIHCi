@@ -73,14 +73,14 @@ class Certifications extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_curriculum' => 'Id Curriculum',
-			'folio' => 'Folio',
-			'reference' => 'Referencia',
-			'reference_type' => 'Tipo de Referencia',
-			'specialty' => 'Especialidad',
-			'validity_date_start' => 'Fecha de Inicio',
-			'validity_date_end' => 'Fecha final',
-			'type' => 'Tipo',
-			'creation_date' => 'Creation Date',
+			'folio' => 'Folio:',
+			'reference' => 'Referencia:',
+			'reference_type' => 'Tipo de Referencia:',
+			'specialty' => 'Especialidad:',
+			'validity_date_start' => 'Fecha de Inicio:',
+			'validity_date_end' => 'Fecha final:',
+			'type' => 'Tipo:',
+			'creation_date' => 'Creation Date:',
 		);
 	}
 
@@ -101,6 +101,10 @@ class Certifications extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		
+		$criteria->condition='id_curriculum = '.$curriculumId;
+		$criteria->order = 'specialty ASC';
 		if($this->searchValue)
 		{
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR folio LIKE CONCAT('%', :searchValue ,'%') OR specialty LIKE CONCAT('%', :searchValue , '%') OR reference LIKE CONCAT('%', :searchValue , '%') OR reference_type LIKE CONCAT('%', :searchValue , '%') ");

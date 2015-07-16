@@ -3,13 +3,17 @@
 /* @var $model Users */
 /* @var $form CActiveForm */
 ?>
-
+<?php
+            $baseUrl = Yii::app()->baseUrl;
+            $cs = Yii::app()->getClientScript();
+            $cs->registerScriptFile($baseUrl . '/js/ajaxfile.js');
+            $cs->registerScriptFile($baseUrl . '/js/numbersLettersOnly.js');
+?>
 <div id="crateusers" class="form">
     <?php $form = $this->beginWidget('CActiveForm', array(
     'id' => 'users-form',
     'enableAjaxValidation'=>true,
     'action'=>$this->createUrl('users/create'),
-    'enableClientValidation'=>true,
 ));?>
 
     <div class="progreesbar">
@@ -49,7 +53,6 @@
         <div class="row">
 
         <?php $this->widget('ext.CountrySelectorWidget', array(
-
         'value' =>  'Persons_country',
         'name' => 'Persons[country]',
         'id' =>  'Persons_country',
@@ -57,7 +60,6 @@
         'defaultValue' => 'Mexico',
         'firstEmpty' => true,
         'firstText' => 'Pais',
-
         )); ?>
 
           <?php echo $form->error($model,'country'); ?>
@@ -89,11 +91,11 @@
                 <i class="glyphicon glyphicon-globe"></i>
                 <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "CURP / Pasaporte", 'title'=>'CURP / Pasaporte' ));?>
             </div>
-           </div> 
+           </div>
         <div class="emptycontent"></div>
         <input type="button" name="previousform" class="previousform action-button" value="Regresar.." />
         <input type="button" name="nextform" class="nextform action-button 2" value="Listo.." />
-    </fieldset> 
+    </fieldset>
 
     <fieldset id="preregisterForm">
         <div class="row">
@@ -114,15 +116,15 @@
                 <i class="glyphicon glyphicon-lock"></i>
                 <?php echo $form->passwordField($model, 'password', array('placeholder' => "Contraseña",'title'=>'Ingresa tu Contraseña'));?>
             </div>
-              
+
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-lock"></i>
                 <input type="password" title="Confirma tu Contraseña" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña"></input>
             </div>
-       
-             
+
+
         </div>
 
         <input type="hidden" name="Users[registration_date]" id="Users_registration_date" value="0000-00-00 00:00:00">
@@ -134,29 +136,18 @@
 
         <div class="row buttons">
 
-             <?php echo CHtml::ajaxButton('Generar Registro', CController::createUrl('users/create'),
-                 array(
-                    'type'=>'POST',
-                    'data'=> 'js:$("#users-form").serialize()+ "&ajax=users-form"',
-                    'success'=>'function(response) { 
-                        if(response == "202"){ 
-                            $("#preregisterForm").hide();
-                            $("#SuccesSignin").show();
-                        
-                    }else
-                       $(".errordivuser").show();
-                    }',                    
-                     'beforeSend'=>'function(){                        
-                           $("#AjaxLoader").show();
-                      }'
-                     )); ?>
-         </div>            
-            
+          <?php echo CHtml::htmlButton('Enviar',array(
+                      'onclick'=>'send("users-form", "users/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","site","")',
+                      'class'=>'savehome',
+                  ));
+          ?>
+        </div>
+
         </fieldset>
         <fieldset id="SuccesSignin">
-            
+
             <h1 id="RegistroSus">¡Registro Exitoso!</h1>
-           
+
             <hr id="resgistrohr">
         <p>Se ha enviado un correo electrónico a su dirección, por favor siga las indicaciones ahi descritas para activar su cuenta.</p>
              <input type="button" id="LogInUsers" name="" class="indexbut action-button 4" value="Regresar al sitio" />

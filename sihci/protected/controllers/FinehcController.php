@@ -1,5 +1,4 @@
 <?php
-
 class FinehcController extends Controller
 {
 	public function actionIndex()

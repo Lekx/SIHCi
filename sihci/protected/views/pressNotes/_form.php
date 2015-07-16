@@ -13,9 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
-	'enableClientValidation'=>true,
-	'htmlOptions' => array('enctype'=>'multipart/form-data'),
-	'clientOptions'=>array('validateOnSubmit'=>true),
+	
 )); ?>
 
 	<!-- <p class="note">Fields with <span class="required">*</span> are required.</p> -->
@@ -66,6 +64,11 @@
 		    'model' => $model,
 		    'language'=> 'es',
 		    'attribute' => 'date',
+		     'options' => array(
+			     		'changeMonth'=>true, //cambiar por Mes
+			     		'changeYear'=>true, //cambiar por Año
+			    			'maxDate' => 'now',
+		     	),
 		    'htmlOptions' => array(
 		    	    'dateFormat'=>'d/m/Y',
 		    		'size' => '10',         
@@ -80,17 +83,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>150,'placeholder'=>'Título de la publicación','title'=>'Título de la publicación')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>150,'placeholder'=>'Título de la publicación','title'=>'Título de la publicación (maximo 45 caracteres)')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>150,'placeholder'=>'Dependencia responsable','title'=>'Dependencia responsable')); ?>
+		<?php echo $form->textField($model,'responsible_agency',array('size'=>45,'maxlength'=>150,'placeholder'=>'Dependencia responsable','title'=>'Dependencia responsable (maximo 45 caracteres)')); ?>
 		<?php echo $form->error($model,'responsible_agency'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica', 'title'=>'Nota periodistica')); ?>
+		<?php echo $form->textArea($model,'note',array('size'=>45,'maxlength'=>150,'placeholder'=>'Nota periodistica', 'title'=>'Nota periodistica (maximo 45 caracteres)')); ?>
 		<?php echo $form->error($model,'note'); ?>
 	</div>
 
@@ -103,25 +106,12 @@
 	</div>
 	
 	<div class="row buttons">
-	 <?php echo CHtml::ajaxButton ($model->isNewRecord ? 'Guardar' : 'Modificar',CController::createUrl('pressNotes/'.($model->isNewRecord ? 'create' : 'update/'.$model->id)), 
-        				array(
-        					'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data) 
-                     		 {
-		                       
-		                        if(data.status=="success")
-		                        {
-		                             $(".successdiv").show();		                         
-								}		                         
-		                        else
-		                        {
-			                    	$(".errordiv").show(); 
-			                    }       
-		                  	}',                            
-                        ),array('class'=>'savebutton')); 
-        ?>	
-       	 	<?php echo CHtml::Button('Cancelar',array('submit' => array('pressnotes/admin'),'confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
+	 <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
+                'onclick'=>'send("press-notes-form","pressNotes/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","pressNotes/admin","");',
+                'class'=>'savebutton',
+            ));
+    	?>
+      <?php echo CHtml::link('Cancelar',array('pressNotes/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	
 	</div>	
 

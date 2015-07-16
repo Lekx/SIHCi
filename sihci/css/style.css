@@ -82,20 +82,20 @@ ol li
 	margin-top: 22px;
     margin-left: auto;
     display: block;
-    margin-right: auto;	
+    margin-right: auto;
     margin-bottom: 5px;
     z-index: 999;
 
 }
 .login:hover, .singin{
-cursor: pointer; 
+cursor: pointer;
 }
 #logocuentas2, #logocuentas4
 {
 	margin-top: 22px;
     margin-left: auto;
     display: block;
-    margin-right: auto;	
+    margin-right: auto;
     margin-bottom: 5px;
     z-index: 999
 
@@ -104,11 +104,11 @@ cursor: pointer;
 }
 #logout
 {
- 
+
 	margin-top: 22px;
     margin-left: auto;
     display: block;
-    margin-right: auto;	
+    margin-right: auto;
     margin-bottom: 5px;
     z-index: 999;
     width: 45;
@@ -171,9 +171,10 @@ cursor: pointer;
 	margin-top: 10px;
 	margin-right: 16px;
  	float: right;
+	position: relative;
  	font-family: 'Caviar_Dreams' !important;
 }
-.searchbar button 
+.searchbar button
 {
 	font-family: 'Caviar_Dreams' !important;
 
@@ -348,7 +349,7 @@ cursor: pointer;
 	margin-top: 80px;
 	left: 0;
 	right: 0;
-   	 
+
 }
 .textfont
 {
@@ -536,7 +537,7 @@ cursor: pointer;
 }
 .contentboxs #box1 #content
 {
-	
+
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -857,7 +858,7 @@ cursor: pointer;
 	text-align: center;
 	color: white;
 	padding-top: 10px;
-	
+
 
 }
 .copyrigths #copy
@@ -913,7 +914,7 @@ padding:15px;
 .cbp-hsmenu1
 {
 	list-style: none !important;
-	
+
 
 }
 .cbp-hssubmenu1 li
@@ -997,13 +998,13 @@ ul.cbp-hsmenu
 	border-left:2px solid white !important;
 	text-decoration:none !important;
 	color:white !important;
-	
+
 }
 .menu .up-btn:hover
 {
 	border-left:0px !important;
 }
-.iconscontent 
+.iconscontent
 {
   margin-right: auto;
   margin-left: auto;
@@ -1023,7 +1024,7 @@ ul.cbp-hsmenu
   padding-bottom: 40px;
 }
 .iconscontent div  ,.iconscontent2 div
-{ 
+{
 
 	width: 33%;
 	height: 100%;
@@ -1139,15 +1140,44 @@ ul.cbp-hsmenu
 	height: 525px;
 	font-family: 'Caviar_Dreams';
 	z-index: 999;
-	
+
 }
-.typeicons h3 , .typeicons h4
+.typecontent2
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	width: 900px;
+	height: 525px;
+	font-family: 'Caviar_Dreams';
+	z-index: 999;
+}
+.backhome
+{
+
+	width:500px;
+	height:50px;
+	background-color:#0E3152;
+	color: white;
+	margin: auto;
+	display: auto;
+	text-align: center;
+	padding-top: 5px;
+	margin-top: 100px;
+}
+.backhome:hover
+{
+	cursor: pointer;
+}
+.typeicons h3 , .typeicons h4 , .typeicons h1
 {
 	color: white;
 	text-align: center;
 }
 .typeicons .type1
-{	
+{
   margin-top: 50px;
   padding-left: 200px;
   display: inline-block;
@@ -1163,14 +1193,14 @@ ul.cbp-hsmenu
 }
 
 #searchBarMain1::-webkit-input-placeholder { /* WebKit browsers */
- 
+
     	padding:5px 18px 2px 9px !important;
 
 }
 #searchBarMain1::-webkit-input-placeholder { /* navegadores Webkit */
-   
+
     	padding:5px 18px 2px 9px !important;
- 
+
 }
 #searchBarMain1:-moz-placeholder { /* Mozilla Firefox 4 hasta 18 */
 
@@ -1178,13 +1208,13 @@ ul.cbp-hsmenu
 
 }
 #searchBarMain1::-moz-placeholder { /* Mozilla Firefox 19+ */
-  
+
     	padding:5px 18px 2px 9px !important;
 }
 #searchBarMain1:-ms-input-placeholder { /* Internet Explorer 10+ */
 
     	padding:5px 18px 2px 9px !important;
-    	
+
 }
 
 /* Error and Success Messege */
@@ -1307,4 +1337,173 @@ ul.cbp-hsmenu
 .abortdiv
 {
     display: none;
+}
+.error403
+{
+  display: block;
+  margin: auto;
+  width: 700px;
+  height: 400px;
+  margin-top: -100px;
+}
+.newpass
+{
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 400px;
+    height: 390px;
+    margin: auto;
+    margin-top: calc(50vh - 235px);
+    background-color: white;
+    text-align: center;
+}
+.newpass hr
+{
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.newpass h1
+{
+  color: #0E3152;
+}
+.newpass input[type="password"]
+{
+      background-color: #CDF1F3 !important;
+      height: 50px !important;
+      width: 350px !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-top: 26px !important;
+      padding-right: 55px !important;
+      font-family: 'Caviar_Dreams_Bold' !important;
+      font-size: 20px !important;
+      padding-left: 20px !important;
+      color: #0A324F !important;
+      opacity: .60 !important;
+}
+.savebutton
+{
+  width: 400px !important;
+  margin-left: -15px !important;
+  height: 50px !important;
+  color: white;
+  background-color:#0E3152;
+  font-size: 20px;
+}
+.notificationsys
+{
+ display: none;
+}
+
+table select
+{
+    font-size: 9px;
+
+    width: 65px !important;
+    height: 15px !important;
+}
+
+ul.yiiPager .selected a
+{
+    background-color: #1eb9c0 !important;
+}
+ul.yiiPager a:hover,
+.pager li > a:hover
+{
+    color: white !important;
+    background-color: #0e3152 !important;
+}
+.tableheader
+{
+    height: 35px;
+
+    color: white;
+    background-color: #1eb9c0;
+}
+.tableheader h4
+{
+    padding: 8px;
+}
+.table.Backup th
+{
+    height: 15px;
+    padding: 2px;
+
+    color: white;
+    background-color: #798b9d;
+}
+.table a,
+.table  a:hover
+{
+    text-decoration: none !important;
+}
+
+.grid-view table.items tr.odd,
+.grid-view table.items tr.even
+{
+    border-bottom: 2px solid #cdf1f3;
+}
+
+.items table tr
+{
+    margin: 10px !important;
+}
+.items thead th
+{
+    font-family: 'Caviar_Dreams' !important;
+    font-size: .9em !important;
+    font-style: normal !important;
+	color: white !important;
+    padding-top: 3px !important;
+    padding-right: 5px !important;
+    padding-bottom: 3px !important;
+    padding-left: 5px !important;
+
+    text-align: left !important;
+
+    border: none !important;
+    background-color: #798b9d !important;
+}
+.items table td
+{
+    font-size: 1.1em !important;
+
+    min-width: 100px !important;
+    height: 30px !important;
+    margin-left: 30px !important;
+    padding: 3px !important;
+
+    text-align: left !important;
+
+    border: none !important;
+    background-color: white !important;
+}
+.items table
+{
+    font-family: 'Caviar_Dreams' !important;
+
+    border: none !important;
+}
+.hometable td, .hometable th
+{
+	height: 50px;
+	border-bottom: 1px solid #00B9C0;
+}
+.savehome
+{
+	font-family: 'Caviar_Dreams_Bold';
+  font-size: 25px;
+  position: absolute;
+  width: 400px !important;
+  height: 50px !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: -11px;
+  color: white;
+  background-color: #0e3152;
 }

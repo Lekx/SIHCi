@@ -29,33 +29,34 @@
 	
 	<?php echo $form->error($model,'doc_id'); ?>
 	<div class="row">
-	<h5>Acta de Nacimiento:</h5>
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta', 'title'=>'Acta de Nacimiento'));?>
 		
 	</div>
 	
 	<div class="row">
-		<h5>CURP:</h5>
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'CURP'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'CURP', 'title'=>'Curp'));?>
 		
 	</div>
 
 	<div class="row">
-		<h5>IFE:</h5>
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'IFE'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'IFE', 'title'=>'IFE'));?>
 
 	</div>
 
 	<div class="row">
-		<h5>Pasaporte:</h5>
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte', 'title'=>'Pasaporte'));?>
 	
 	</div>
 
 <hr>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
+		<?php echo CHtml::htmlButton('Guardar',array(
+                'onclick'=>'send("docs-form", "curriculumVitae/docsIdentity", "'.$model->id.'","curriculumVitae/docsIdentity","");',
+                 //'id'=> 'post-submit-btn', 
+                'class'=>'savebutton',
+            ));
+   		 ?>
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
 

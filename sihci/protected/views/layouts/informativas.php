@@ -5,7 +5,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="en">
         <!-- blueprint CSS framework -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/screen.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/print.css" media="print">
         <!--[if lt IE 8]>
@@ -21,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/users.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css">
         <?php Yii::app()->clientScript->registerCoreScript('jquery');?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <?php
@@ -37,11 +37,13 @@
                                 $cs->registerScriptFile($baseUrl . '/js/searchbar.js');
                                 $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
                                  $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
+  								$cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
         ?>
         <?php
                                 Yii::app()->clientScript->registerScript('helpers', '
                                 yii = {
                                 urls: {
+                                        createUrl: ' . CJSON::encode(Yii::app()->createUrl('')) . ',
                                         searchbar: ' . CJSON::encode(Yii::app()->createUrl('searchBar/autoSearch?keyword=')) . ',
                                         searchBarResults: ' . CJSON::encode(Yii::app()->createUrl('searchBar/searchResults?keyword=')) . ',
                                         base: ' . CJSON::encode(Yii::app()->baseUrl) . ',
@@ -330,6 +332,9 @@
                         </section>
                         <section class="logsection">
                             <div class="login">
+								<div class="notificationsys">
+								 <h5>Ingresar a tu cuenta.</h5>
+								</div>
                                 <?php
                                                                                                 if (Yii::app()->user->isGuest) {
                                                                                                     echo CHtml::image(Yii::app()->request->baseUrl . '/img/icons/cuentaIngresar.png', 'this is alt tag of image', array('title' => 'image title here', 'id' => 'logocuentas2'));
@@ -358,7 +363,7 @@
                                                                                                     echo 'Cerrar Sesion';
                                                                                                     echo '</p>';
                                                                                             }
-                                                                                            
+
                                 ?>
                             </div>
                             <div class="searchbar">

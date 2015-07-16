@@ -27,19 +27,13 @@ class LanguagesController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
+			
+			array('allow',  
+				'actions'=>array('index','create','admin','update','delete','view'),
+				'expression'=>'($user->type==="fisico")',
+				'users'=>array('@'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','deleteLanguage'),
-				'users'=>array('*'),
-			),
-			array('deny',  // deny all users
+			array('deny',  
 				'users'=>array('*'),
 			),
 		);
@@ -81,28 +75,42 @@ class LanguagesController extends Controller
 			$model->id_curriculum = $curriculum->id; 
 			$model->path = CUploadedFile::getInstanceByName('Languages[path]');
 
-			if($model->path != ''){
-					$model->path->saveAs($path.'/documentPercentage'.$model->id.'.'.$model->path->getExtensionName());
-					$model->path = $path2."documentPercentage".$model->id.".".$model->path->getExtensionName();
-				}else{
+			if($model->validate()==1)
+			{		
+					if($model->path != ''){
+							$model->path->saveAs($path.'/documentPercentage'.$model->id.'.'.$model->path->getExtensionName());
+							$model->path = $path2."documentPercentage".$model->id.".".$model->path->getExtensionName();
+						}else{
 
-				$model->path = "";
-				}
+						$model->path = "";
+						}
 
 
-			if($model->save())
-     		{
-     			$section = "Idiomas"; 
-     			$action = "Creación";
-				$details = "Nombre del usuario: ".Yii::app()->user->fullname;
-     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-     			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-     		}	
-		     
-		}
+					if($model->save())
+		     		{
+		     			$section = "Idiomas"; 
+		     			$action = "Creación";
+						$details = "Nombre del usuario: ".Yii::app()->user->fullname;
+		     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		     			/*if(!isset($_GET['ajax']))
+						$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));*/
+						echo CJSON::encode(array('status'=>'success'));
+						Yii::app()->end();
 
-			$this->render('create',array('model'=>$model));
+		     		}		 	
+	     	}
+	     	else 
+            {
+        		$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+				   
+				Yii::app()->end();
+            }  	
+			     
+		}	$this->render('create',array('model'=>$model));
+		
+
 	}
 
 	/**
@@ -113,6 +121,7 @@ class LanguagesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$oldPath = $model->path;
 		$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/UserLanguages/';
 		$path2 = '/users/'.Yii::app()->user->id.'/UserLanguages/';
 		// Uncomment the following line if AJAX validation is needed
@@ -121,31 +130,55 @@ class LanguagesController extends Controller
 		 if($model->evaluation_date == "30/11/-0001" || $model->evaluation_date == "0000-00-00"){
 				$model->evaluation_date = "";
 			}
-		$oldPath = $model->path;
 
+		
 		if(isset($_POST['Languages']))
 		{
 			$model->attributes=$_POST['Languages'];
-
-			$model->path = CUploadedFile::getInstanceByName('Languages[path]');
-
-			if($model->path != ''){
-					$model->path->saveAs($path.'/documentPercentage'.$model->id.'.'.$model->path->getExtensionName());
-					$model->path = $path2."documentPercentage".$model->id.".".$model->path->getExtensionName();
-			}else{
-				$model->path = $oldPath;
-			}
 			
+			$model->path = CUploadedFile::getInstanceByName('Languages[path]');
+			if($model->validate()==1)
+			{	
+				if($model->path != '')
+				{
+						if(!empty($oldPath))
+							unlink(YiiBase::getPathOfAlias("webroot").$oldPath);
+						
+			           		$model->path = CUploadedFile::getInstanceByName('Languages[path]');
+				          
+				            if(!is_dir($path))          
+				              	mkdir($path, 0777, true);
 
-			if($model->save())
-     		{
-     			$section = "Idiomas"; 
-     			$action = "Creación";
-				$details = "Numero de registro: ".$model->id;
-     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-     			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-     		}	
+
+							    $model->path->saveAs($path.'/documentPercentage'.$model->id.'.'.$model->path->getExtensionName());
+							    $model->path = $path2."documentPercentage".$model->id.".".$model->path->getExtensionName();  			 			   	
+				}
+				else{		   
+					   $model->path=$oldPath;
+				}
+
+				if($model->save())
+	     		{
+	     			$section = "Idiomas"; 
+	     			$action = "Creación";
+					$details = "Numero de registro: ".$model->id;
+	     			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				    
+				    echo CJSON::encode(array('status'=>'success'));
+					Yii::app()->end();
+	     			/*if(!isset($_GET['ajax']))
+					$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));*/
+
+	     		}
+	     	}
+	     	else 
+	        {
+	    		$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+				   
+				Yii::app()->end();
+	        }  		
 		     
 		}
 

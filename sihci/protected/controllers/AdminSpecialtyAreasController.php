@@ -1,5 +1,4 @@
 <?php
-
 class AdminSpecialtyAreasController extends Controller
 {
 	/**
@@ -27,21 +26,14 @@ class AdminSpecialtyAreasController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('*'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
+	 		array('allow',  // allow all users to perform 'index' and 'view' actions
+	 			'actions'=>array('index','view','delete','update','create','admin'),
+	 			'expression'=>'($user->Rol->alias==="ADMIN")',
+	 			'users'=>array('*'),
+	 		),
+	 		array('deny',  // deny all users
+	 			'users'=>array('*'),
+	 		),
 		);
 	}
 
@@ -88,14 +80,16 @@ class AdminSpecialtyAreasController extends Controller
             		$modelSpecialtyAreas->save();
           	    }	
 
-                echo CJSON::encode(array('status'=>'200'));
+               	echo CJSON::encode(array('status'=>'success'));
                 Yii::app()->end();
 
            }					               
            else
            {
-           		echo CJSON::encode(array('status'=>'404'));
-                Yii::app()->end();
+           		 $error = CActiveForm::validate($model);
+                   if($error!='[]')
+                      echo $error;
+                   Yii::app()->end();
            }
         }   
   		$this->render('create',array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas));
@@ -119,6 +113,8 @@ class AdminSpecialtyAreasController extends Controller
 		if(isset($_POST['AdminSpecialtyAreas']))
 		{
 			$model->attributes=$_POST['AdminSpecialtyAreas'];
+
+		
 			if($model->save())
             {           		              
 	        	$idsAdminSpecialtyAreas = $_POST['idsAdminSpecialtyAreas'];
@@ -126,11 +122,12 @@ class AdminSpecialtyAreasController extends Controller
             	
             	foreach($_POST['ext_subspecialty'] as $key => $value)
 				{
-	               	if($idsAdminSpecialtyAreas[$key] == '')
+	               	if($idsAdminSpecialtyAreas[$key] != '')
 	               	{
-	               	
+	               		echo 'Pase por aqui'.$value;      		
 		               	unset($modelSpecialtyAreas);
 		               	$modelSpecialtyAreas = new AdSpecialtyAreas;
+
 		               	$modelSpecialtyAreas->id_specialty_areas = $model->id;
 		       			$modelSpecialtyAreas->ext_subspecialty = $ext_subspecialty[$key];
 	            		$modelSpecialtyAreas->save();
@@ -138,22 +135,26 @@ class AdminSpecialtyAreasController extends Controller
           	   	    }	
                    	else
                    	{
+                   		echo "No se que hago aqui ".$value;
+                   		$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialtys' => $value)); 		
 
-                   		$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialty'=>$value)); 								
                 	}
 	            	
           	    }	
-                echo CJSON::encode(array('status'=>'200'));
+               echo CJSON::encode(array('status'=>'success'));
                 Yii::app()->end();
 	        }
 	        else
            	{
-           		echo CJSON::encode(array('status'=>'404'));
-                Yii::app()->end();
+       		    $error = CActiveForm::validate($model);
+               if($error!='[]')
+                  echo $error;
+               Yii::app()->end();
             }				               
 		}	
   		$this->render('update',array('model'=>$model,'modelSpecialtyAreas'=>$modelSpecialtyAreas,'modelSpecialtyArea'=>$modelSpecialtyArea));
 	}
+
 
 	/**
 	 * Deletes a particular model.

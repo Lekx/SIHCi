@@ -3,13 +3,13 @@
         <div class="callbacks_container">
             <ul class="rslides" id="slider4">
                 <li>
-                    <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg">
+                    <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/Home SIHCi/1.png">
                 </li>
                 <li>
-                    <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner2.jpg">
+                    <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/Home SIHCi/2.png">
                 </li>
                 <li>
-                    <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner3.jpg">>
+                    <img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/Home SIHCi/3.png">>
                 </li>
             </ul>
         </div>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             </a>
-            <div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner4.jpg"></div>
+            <div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/Home SIHCi/4.png"></div>
             <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/generetionOfKnowledgeScientific/index">
             <div id="box4">
                 <br>
@@ -83,7 +83,7 @@
                 <h5>Programas de generación de conocimento</h5>
             </div>
             </a>
-            <div id="box5"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner2.jpg"></div>
+            <div id="box5"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/Home SIHCi/6.png"></div>
             <a href="">
             <div id="box6">
                 <div>
@@ -104,7 +104,7 @@
             <div id="box2">
                 <div><p><span><h3>SIHCi</h3></span>Sistema de investigación del hospital Civil de Guadalajara. </p></div>
             </div>
-            <div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner3.jpg"></div>
+            <div id="box3"><img id="img1" src="<?php echo Yii::app()->request->baseUrl; ?>/img/Home SIHCi/5.png"></div>
             <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/scientificWriting/index">
             <div id="box4">
                 <div id="content"><h3>Programas de generación de conocimiento cientifico</h3><span>La generación de conocimiento es un bien en sí mismo: las sociedades más desarrolladas del mundo reconocen la importancia del conocimiento científico y dedican recursos humanos y financieros para impulsar esta actividad. Tradicionalmente, los investigadores realizan estudios que generan conocimiento científico nuevo; éste es comunicado a través presentaciones en congresos y reuniones científicas, y es difundido, en una proporción variable, en publicaciones científicas que usualmente “leen” otros investigadores para realizar más estudios y generar más conocimiento, y así sucesivamente </span>
@@ -158,7 +158,7 @@
         </section>
         <section class"imagefoot">
             <div class="carrusel">
-                <img  id="back" src="<?php echo Yii::app()->request->baseUrl; ?>/img/banner.jpg">
+                <img  id="back" src="<?php echo Yii::app()->request->baseUrl; ?>/img/Home SIHCi/7.png">
                 <div class="opcity"></div>
                 <a href="<?php echo Yii::app()->request->baseUrl; ?>"><img id="logohmeb"src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/logoHmeBlanco.png" alt="home"></a>
                 <div class="textfont">

@@ -62,26 +62,62 @@ class SponsorshipController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Sponsorship;
-
+		$modelProjectsDocs = new ProjectsDocs;
+		$model= new Sponsorship;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelProjectsDocs);
 
 
-
-		if(isset($_POST['Sponsorship']))
-		{
+		if(isset($_POST['Sponsorship'])){
 			$model->attributes=$_POST['Sponsorship'];
 			$model->id_user_sponsorer = Yii::app()->user->id;
-			$model->status = "pendiente";
-			if($model->save())
-				$this->redirect(array('admin','id'=>$model->id));
-		}
+			$model->status = "PENDIENTE";
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+			/*$id_sponsorship = Sponsorship::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
+			$DocExist = SponsorsDocs::model()->findAllByAttributes(array('id_sponsor' => $id_sponsor));
+			$modelProjectsDocs = array();
+			if ($DocExist != null) {
+				foreach ($DocExist as $key => $value) {
+					$modelProjectsDocs[$value->file_name] = array($value->id, $value->path);
+				}
+			}*/
+
+			$modelProjectsDocs = new ProjectsDocs;
+
+			if($model->validate()){
+					if($model->save()){
+						/*
+						$id_user = Yii::app()->user->id;
+						$model_id = $model->id;
+						$path = YiiBase::getPathOfAlias("webroot") . "/users/" . $id_user . "/sponsorship/" . $model_id; ;
+						if (!file_exists($path)) {
+								mkdir($path, 0777, true);
+						}
+						$modelProjectsDocs->file_name = "Contrato con investigador";
+						$model->path = CUploadedFile::getInstanceByName('Doc1');
+
+
+*/
+
+
+
+
+						echo CJSON::encode(array('status'=>'success'));
+						Yii::app()->end();
+					}
+				}else{
+						$error = CActiveForm::validate($model);
+						if($error!='[]')
+						echo $error;
+						Yii::app()->end();
+					}
+		}
+			$this->render('create',array(
+				'model'=>$model,'modelProjectsDocs'=>$modelProjectsDocs
+			));
 	}
+
 
 	/**
 	 * Updates a particular model.
@@ -97,9 +133,18 @@ class SponsorshipController extends Controller
 
 		if(isset($_POST['Sponsorship']))
 		{
-			$model->attributes=$_POST['Sponsorship'];
-			if($model->save())
-				$this->redirect(array('admin'));
+				$model->attributes=$_POST['Sponsorship'];
+			if($model->validate()){
+				if($model->save()){
+					echo CJSON::encode(array('status'=>'success'));
+					Yii::app()->end();
+				}
+			}else {
+				$error = CActiveForm::validate($model);
+				if($error!='[]')
+				echo $error;
+				Yii::app()->end();
+			}
 		}
 
 		$this->render('update',array(
@@ -132,6 +177,19 @@ class SponsorshipController extends Controller
 		));
 	}
 
+	private function checkAuth()
+	{
+		$conexion = Yii::app()->db;
+		$query = "SELECT u.id, u.email, s.sponsor_name FROM users AS u JOIN sponsors AS s ON s.id_user = u.id WHERE u.id = ".Yii::app()->user->id;
+		$checkAuth = $conexion->createCommand($query)->queryAll();
+		//print_r($checkAuth);
+		$result = false;
+		if(!empty($checkAuth))
+			$result = true;
+
+		return $result;
+	}
+
 	/**
 	 * Manages all models.
 	 */
@@ -141,9 +199,9 @@ class SponsorshipController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Sponsorship']))
 			$model->attributes=$_GET['Sponsorship'];
-
+		//var_dump($this->checkAuth());
 		$this->render('admin',array(
-			'model'=>$model,
+			'model'=>$model, 'checkAuth'=>$this->checkAuth()
 		));
 	}
 
@@ -177,18 +235,18 @@ class SponsorshipController extends Controller
 
 	public function actionGetResearchers() {
 		if (Yii::app()->request->isAjaxRequest&&!empty($_GET['term'])) {
-			$sql = 'SELECT u.id , CONCAT(p.last_name1, " ", p.last_name2, ", ", p.names) AS label 
-			FROM users AS u 
-			LEFT JOIN persons AS p ON u.id = p.id_user 
-			RIGHT JOIN curriculum AS cv ON u.id = cv.id_user 
-			WHERE u.type="fisico" 
-			AND u.status="activo" 
+			$sql = 'SELECT u.id , CONCAT(p.last_name1, " ", p.last_name2, ", ", p.names) AS label
+			FROM users AS u
+			LEFT JOIN persons AS p ON u.id = p.id_user
+			RIGHT JOIN curriculum AS cv ON u.id = cv.id_user
+			WHERE u.type="fisico"
+			AND u.status="activo"
 			AND (p.last_name1 LIKE :qterm OR p.names LIKE :qterm) ORDER BY p.last_name1 ASC';
 			$command = Yii::app()->db->createCommand($sql);
 			$qterm = $_GET['term'].'%';
 			$command->bindParam(":qterm", $qterm, PDO::PARAM_STR);
 			$result = $command->queryAll();
-			echo CJSON::encode($result); 
+			echo CJSON::encode($result);
 			exit;
 		} else {
 			return false;

@@ -6,24 +6,8 @@
      'targetClass'=>'docs',
      'addButtonLabel'=>'Agregar nuevo',
      'limit'=>4,
-  )); 
+  ));
 ?>
-<script>
-		function cleanUp(){
-			var text;
-			var result = confirm("¿Está usted seguro de limpiar estos datos?");
-			if (result==true) {
-				$('[id^=DocsIdentity_]').val('');
-			}else{
-
-			}
-			document.getElementById("demo").innerHTML = text;
-		}
-		function validationFrom(){
-			alert("Registro Realizado con éxito");
-			return false;
-		}
-</script>
 
 <div class="form">
 
@@ -44,8 +28,8 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->dropDownList($model,'type',array(''=>'','acta'=>'Acta de Nacimiento','pasaporte'=>'Pasaporte',
-															'curp'=>'CURP', 'ife' => 'IFE'), 
-		                                              array('options' => array(''=>array('selected'=>true))), 
+															'curp'=>'CURP', 'ife' => 'IFE'),
+		                                              array('options' => array(''=>array('selected'=>true))),
 		                                              array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
@@ -59,7 +43,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'doc_id'); ?>
 			<?php echo $form->fileField($model,'doc_id',array('size'=>60,'maxlength'=>100, 'placeholder'=>"documento oficial a subir")); ?>
-		<?php echo $form->error($model,'doc_id'); ?>  
+		<?php echo $form->error($model,'doc_id'); ?>
 	</div>
 
 	<div class="row">
@@ -74,7 +58,7 @@
 		<input type="button" onclick="cleanUp()" value="Limpiar">
 		<?php echo CHtml::link('Cancelar',array('/docsIdentity/admin')); ?>
 	</div>
-	
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

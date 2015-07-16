@@ -1,5 +1,6 @@
 <?php
 
+
 class CopyrightsController extends Controller
 {
 	/**
@@ -27,16 +28,9 @@ class CopyrightsController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+			array('allow',
+			    'actions'=>array('admin','create','update','delete','view','index'),
+				'expression'=>'($user->type==="fisico")',
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -51,6 +45,7 @@ class CopyrightsController extends Controller
 	 */
 	public function actionView($id)
 	{
+	
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -90,8 +85,10 @@ class CopyrightsController extends Controller
      		}	
      		else 
      		{
-     			echo CJSON::encode(array('status'=>'404'));
-                Yii::app()->end();
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
      		}
 
      		//Yii::app()->end();
@@ -137,8 +134,10 @@ class CopyrightsController extends Controller
      		}	
      		else 
      		{
-     			echo CJSON::encode(array('status'=>'404'));
-                Yii::app()->end();
+     			 $error = CActiveForm::validate($model);
+                 if($error!='[]')
+                    echo $error;
+                 Yii::app()->end();
      		}
 		}
 

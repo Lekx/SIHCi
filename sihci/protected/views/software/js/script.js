@@ -24,9 +24,6 @@ function send()
             }
 
         },
-     /*   error: function () {
-            alert("Ha ocurrido un error al guardar sus datos en el servidor. Por favor vuelva intente en unos minitus asegurese que este conectado a internet");
-        }*/
     });
 }
 
@@ -50,14 +47,8 @@ function upDate()
                     alert("Registro realizado con éxito");
                     $("#articles-guides-form")[0].reset();
             }
-            /*else
-            {
-                alert(data);
-            } */
 
         },
-       /*error: function () {
-            alert("Ha ocurrido un error al guardar sus datos en el servidor. Por favor vuelva intente en unos minitus asegurese que este conectado a internet");
-        }*/
+
     });
 }

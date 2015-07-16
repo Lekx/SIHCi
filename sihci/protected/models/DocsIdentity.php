@@ -40,7 +40,8 @@ class DocsIdentity extends CActiveRecord
 			array('id_curriculum, is_Primary', 'numerical', 'integerOnly'=>true),
 			array('type', 'required'),
 			array('description', 'length', 'max'=>250),
-
+			array('doc_id','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert','safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('doc_id','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			// array('doc_id','file', 'allowEmpty'=>true,
 			//                   'types'=>'pdf, doc, docx, odt',
 			//                   'on' => 'update',

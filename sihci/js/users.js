@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('input').attr('autocomplete', 'off');
     var $submit = $(".nextform.action-button.1"),
         $inputs = $('#Persons_names, #Persons_last_name1, #Persons_last_name2');
-    if ($("input[name*='country']").val() == 'MX') {
+    if ($("input[name*='country']").val() == 'México') {
         $('#Persons_curp_passport').prop("placeholder", "CURP");
     } else {
         $('#Persons_curp_passport').prop("placeholder", "Pasaporte");

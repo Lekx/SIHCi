@@ -1,5 +1,4 @@
 <?php
-
 class DisplayProINVENHCiController extends Controller
 {
 	public function actionIndex()
