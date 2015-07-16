@@ -563,7 +563,7 @@
                                         if($infoUser['labelAdmin'] == "")
                                             echo "";
                                         else
-                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PadministracionSistema.png alt="home">', array('adminUsers/index'));?>
+                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PAdministracionSistema.png alt="home">', array('adminUsers/index'));?>
                     <span><?php echo $infoUser['labelAdmin'] ?></span>
                 </div>
                 <div class="footermenuI">
