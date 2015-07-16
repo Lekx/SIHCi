@@ -6,7 +6,7 @@
  //     'targetClass'=>'docs',
  //     'addButtonLabel'=>'Agregar nuevo',
  //     'limit'=>4,
- //  )); 
+ //  ));
 ?>
 <div class="form">
 
@@ -26,16 +26,16 @@
 	}
 
 	?>
-	
+
 	<?php echo $form->error($model,'doc_id'); ?>
 	<div class="row">
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta', 'title'=>'Acta de Nacimiento'));?>
-		
+
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'CURP', 'title'=>'Curp'));?>
-		
+
 	</div>
 
 	<div class="row">
@@ -45,7 +45,7 @@
 
 	<div class="row">
 		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte', 'title'=>'Pasaporte'));?>
-	
+
 	</div>
 
 <hr>
@@ -53,14 +53,13 @@
 	<div class="row buttons">
 		<?php echo CHtml::htmlButton('Guardar',array(
                 'onclick'=>'send("docs-form", "curriculumVitae/docsIdentity", "'.$model->id.'","curriculumVitae/docsIdentity","");',
-                 //'id'=> 'post-submit-btn', 
+                 //'id'=> 'post-submit-btn',
                 'class'=>'savebutton',
             ));
    		 ?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+	<?php echo CHtml::link('Cancelar',array('curriculumVitae/docsIdentity'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 <?php $this->endWidget();?>
 
 </div><!-- form -->
-		 
