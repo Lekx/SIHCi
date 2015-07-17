@@ -65,44 +65,47 @@ class ArticlesGuidesController extends Controller
 		$model->id_resume = $id_resume->id; 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelAuthor);
 		
-		if(isset($_POST['ArticlesGuides']))
+		if(isset($_POST['ArticlesGuides']) && isset($_POST['ArtGuidesAuthor']))
 		{
 			$model->attributes=$_POST['ArticlesGuides'];
+			$modelAuthor->attributes=$_POST['ArtGuidesAuthor'];
+
 			$model->id_resume = $id_resume->id;   
 	        $model->url_document = CUploadedFile::getInstance($model,'url_document');
-            
-			if($model->validate()==1)
-            {
-            	
+			$modelAuthor->id_art_guides = "1";
+
+			if($model->validate()==1 && $modelAuthor->validate()==1)
+            {            	
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/';
                	if ($model->url_document !="")
                	{
 	                if(!is_dir($path))
-	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/', 0777, true);
-	              
+	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/', 0777, true);	              
 	                
 	 					$model->url_document->saveAs($path.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
-					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();    			 			   	
+					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();
+		                
 		                if($model->save())
 		                {
-		               		              
-				 			$names = $_POST['names'];
-				            $last_name1 = $_POST['last_names1'];
-				            $last_name2 = $_POST['last_names2'];
-				            $position = $_POST['positions'];
-				            
-         					foreach($_POST['names'] as $key => $names)
-         					{
-				               	unset($modelAuthor);
-				               	$modelAuthor = new ArtGuidesAuthor;
-				               	$modelAuthor->id_art_guides = $model->id;
-				       			$modelAuthor->names = $names;
+		          
+							$names = $_POST['names'];
+				            $last_name1 = $_POST['last_name1'];
+				            $last_name2 = $_POST['last_name2'];
+				            $position = $_POST['position'];
+       						   
+	     					foreach($_POST['ArtGuidesAuthor'] as $key => $value)
+	     					{							
+	     						unset($modelAuthor);
+				               	$modelAuthor = new ArtGuidesAuthor;	
+								$modelAuthor->id_art_guides  = $model->id;
+				       			$modelAuthor->names = $names[$key];
 				        		$modelAuthor->last_name1 = $last_name1[$key];
 				       			$modelAuthor->last_name2 = $last_name2[$key];
 				        		$modelAuthor->position = $position[$key];
 	                    		$modelAuthor->save();
-		              	    }	
+		              	    }
 		              	    $section = "Artículos y Guías"; 
 		     				$action = "Creación";
 							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
@@ -117,41 +120,53 @@ class ArticlesGuidesController extends Controller
 			    {
 	               	if($model->save())
 	               	{             
-			 			$names = $_POST['names'];
-			            $last_name1 = $_POST['last_names1'];
-			            $last_name2 = $_POST['last_names2'];
-			            $position = $_POST['positions'];
-			            
-     					foreach($_POST['names'] as $key => $names)
+
+			      		/*$names = $_POST['ArtGuidesAuthor']['names'];
+			            $last_name1 = $_POST['ArtGuidesAuthor']['last_name1'];
+			            $last_name2 = $_POST['ArtGuidesAuthor']['last_name2'];
+			            $position = $_POST['ArtGuidesAuthor']['position'];*/
+			            	$names = $_POST['names'];
+				            $last_name1 = $_POST['last_name1'];
+				            $last_name2 = $_POST['last_name2'];
+				            $position = $_POST['position'];
+				            
+			  			foreach($_POST['ArtGuidesAuthor'] as $key => $value)
      					{
-			               	unset($modelAuthor);
-			               	$modelAuthor = new ArtGuidesAuthor;
-			               	$modelAuthor->id_art_guides  = $model->id;
-			       			$modelAuthor->names = $names;
+     						unset($modelAuthor);
+				            $modelAuthor = new ArtGuidesAuthor;	
+							$modelAuthor->id_art_guides  = $model->id;
+			       			$modelAuthor->names = $names[$key];
 			        		$modelAuthor->last_name1 = $last_name1[$key];
 			       			$modelAuthor->last_name2 = $last_name2[$key];
 			        		$modelAuthor->position = $position[$key];
                     		$modelAuthor->save();
 	              	    }	
-              	 	 		$section = "Artículos y Guías"; 
-		     				$action = "Creación";
-							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
-		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		     			
-	               	  		echo CJSON::encode(array('status'=>'success'));
-				     		Yii::app()->end();
+          	 	 		$section = "Artículos y Guías"; 
+	     				$action = "Creación";
+						$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
+	     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+	     			
+               	  		echo CJSON::encode(array('status'=>'success'));
+			     		Yii::app()->end();
                     } 		                      
 		        }    
 	        }// if validate
 	        else
 	        {
-	          		$error = CActiveForm::validate($model);
-					if($error!='[]')
-						echo $error;
-   				   
-   				   Yii::app()->end();		         
+          		$error1 = CActiveForm::validate($model);
+				$error2 = CActiveForm::validate($modelAuthor);
+				$error = "{";
+				if($error1 !='[]')
+					$error.= str_replace("{", "",str_replace("}", "",$error1));
+				if($error2 !='[]')
+					$error.= str_replace("{", "",str_replace("}", "",$error2));
+
+				if($error!='[]')
+					echo str_replace("]\"", "],\"",$error)."}";
+
+				Yii::app()->end();		         
 	        }
-	    }//	ArticlesGuides	   
+	    }//	ArticlesGuides  
         	
    		if(!isset($_POST['ajax']))
 				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
