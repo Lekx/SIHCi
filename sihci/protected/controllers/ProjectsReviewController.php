@@ -144,12 +144,22 @@ class ProjectsReviewController extends Controller
 
 			$modelfollowup->unsetAttributes();
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
+
+            $modelfollowup->type="comment";
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
-            if(isset($_POST[1])) // si existe este indice en los extras significa que es un comentario(followup) de un seguimiento(followup)
-            	$modelfollowup->id_fucom = $_POST[1];
+            if(isset($_POST[1]))
+	            if($_POST[1] != "mandatory") // si existe este indice en los extras significa que es un comentario(followup) de un seguimiento(followup)
+	            	$modelfollowup->id_fucom = $_POST[1];
+	            else{
+	            	$modelfollowup->followup = "se adjunta documento";
+	            	$modelfollowup->type="mandatory";
+	            	$modelfollowup->step_number = $_POST[2];
+	            }
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
+            
+
 			if($modelfollowup->validate() == 1){
 	            if(is_object($modelfollowup->url_doc)){
 	            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$id;
