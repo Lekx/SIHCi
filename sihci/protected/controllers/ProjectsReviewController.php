@@ -277,6 +277,11 @@ class ProjectsReviewController extends Controller
 			$followup->type = "system";
 			$followup->step_number = $actualStep;
 
+			if($action == "reject")
+				$followup->step_number = $actualStep - 1; //restamos uno para que se quede donde mismo
+			else
+				$followup->step_number = $actualStep;
+
 			if($followup->save())
 	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido enviado satisfactoriamente para su revisión o evaluación.'));
 

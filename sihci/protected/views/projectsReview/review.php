@@ -225,6 +225,9 @@
 
 	$userRol = Yii::app()->user->Rol->alias;
 	$userId = Yii::app()->user->id;
+	echo $evaluationStep;
+
+	echo $evaluationRules[$evaluationStep]["userType"];
 
 /* EL STEP DEL PROYECTO EN PROJECT FOLLOWUPS DEBE INICIAR EN CERO */
 /* AGREGAMOS  UNO  PARA  SABER  EL  ESTADO  ACTUAL */

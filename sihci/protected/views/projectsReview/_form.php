@@ -1,8 +1,8 @@
 <?php 
 
-//$mandatory = true;
+$mandatory = false;
 if(isset($evaluationStep) && ($evaluationStep == 3 || $evaluationStep == 4 ||$evaluationStep == 12)){
-  var_dump($evaluationStep);
+//  var_dump($evaluationStep);
   $mandatory = true;
 }
 ?>
