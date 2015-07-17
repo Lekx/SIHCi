@@ -225,6 +225,10 @@
 
 	$userRol = Yii::app()->user->Rol->alias;
 	$userId = Yii::app()->user->id;
+
+	if($userRol == "COMBIO" || $userRol == "COMINV" || $userRol == "COMITE")
+		$userRol = "COMITE";
+
 	echo $evaluationStep;
 
 	echo $evaluationRules[$evaluationStep]["userType"];
@@ -394,7 +398,7 @@ echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		$conexion = Yii::app()->db;
 		$checkForDoc = $conexion->createCommand("
 		SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
-		AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".$evaluationStep." AND url_doc IS NOT NULL")->queryAll()[0];
+		AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 		if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
 			echo "<div class='row' style='margin-left: 25px !important'>";
@@ -417,8 +421,8 @@ echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 		
 		$conexion = Yii::app()->db;
 		$checkForDoc = $conexion->createCommand("
-		SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
-		AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".$evaluationStep." AND url_doc IS NOT NULL")->queryAll()[0];
+		SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." 
+		AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 		print_r($checkForDoc);
 		if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
 

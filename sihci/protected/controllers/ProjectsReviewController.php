@@ -210,7 +210,7 @@ class ProjectsReviewController extends Controller
 				$followup->id_user = Yii::app()->user->id;
 				$followup->followup = "Proyecto aprobado por miembro del comité.";
 				$followup->type = "system";
-				//$followup->step_number = $actualStep;
+				$followup->step_number = $actualStep-1;
 
 			if($followup->save())
 				echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido calificado satisfactoriamente, es necesario que todos los miembros del comité realicén la misma calificación para que el proyecto pase a una siguiente fase.'));
