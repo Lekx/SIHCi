@@ -57,7 +57,7 @@
 		<h5>Nombre de Investigación</h5>
 		<!-- <input id="research" type="text" name="ResearchAreas_name" title="Nombre de Investigación" placeholder="Nombre de Investigación"> -->
 			<?php echo $form->textField($model,'name',array('title'=>'Nombre de Investigación','size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación')); ?>
-    <div id="errorResearch" class="errors"> No debe estar vacío</div>
+    	<div id="ResearchAreas_name1_em_" class="errorMessage" style="display:none;"></div>
 		</div>
 
 </div><!-- form -->
@@ -70,7 +70,7 @@
 		echo "<div class='research2'>";
 		echo "<h5>Linea de Investigacion ".$countDocs.":</h5>";
 		echo $form->textField($model,'name',array('title'=>'Nombre de Investigación','name'=>'getResearch[]','value'=>$getResearch[$key]->name,'size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación'));
-		echo $form->error($model,'name');
+		echo	'<div id="getResearch1_em_" class="errorMessage" style="display:none;"></div>';
 		echo "</div>";
 		echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteResearch', 'id'=>$getResearch[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		echo "</div>";
