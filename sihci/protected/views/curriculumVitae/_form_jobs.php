@@ -119,25 +119,12 @@
 	</div>
 
 	<div class="row buttons">
-		 <?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/jobs'),
-        				array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data)
-                     		 {
-
-		                         if(data.status=="200")
-		                         {
-				                       $(".successdiv").show();
-		                         }
-		                         else
-		                         {
-			                     	$(".errordiv").show();
-			                     }
-		                  	}',
-
-                      ), array('class'=>'savebutton'));
-        ?>
+		<?php echo CHtml::htmlButton('Guardar',array(
+							 'onclick'=>'send("jobs-form", "curriculumVitae/jobs", "'.$model->id.'","curriculumVitae/jobs","");',
+								//'id'=> 'post-submit-btn',
+							 'class'=>'savebutton',
+					 ));
+			 ?>
 
 		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
 	</div>
