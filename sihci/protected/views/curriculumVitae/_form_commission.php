@@ -6,7 +6,7 @@
  //     'targetClass'=>'docs',
  //     'addButtonLabel'=>'Agregar nuevo',
  //     'limit'=>4,
- //  )); 
+ //  ));
 ?>
 
 <div class="form">
@@ -28,7 +28,7 @@
 	?>
 
 <div class="docs">
-	
+
 	<div class="row">
 		<?php echo $form->textField($model,'SNI',array('title'=>'Nombramiento SNI','maxlength'=>11, 'placeholder'=>'Nombramiento SNI')); ?>
 		<?php echo $form->error($model,'SNI'); ?>
@@ -36,33 +36,33 @@
 
 	<div class="row">
 			<?php echo $form->textField($model,'researcher_title',array('title'=>'Nombramiento en el Hopital Civil','size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento en el Hospital Civil")); ?>
-		<?php echo $form->error($model,'researcher_title'); ?>  
+		<?php echo $form->error($model,'researcher_title'); ?>
 	</div>
 
 </div>
 
 	<div class="row buttons">
-		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/commission'), 
+		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/commission'),
 				array(
 					'dataType'=>'json',
              		'type'=>'post',
-             		'success'=>'function(data) 
+             		'success'=>'function(data)
              		 {
-                                      
+
                          if(data.status=="success")
                          {
 		                      $(".successdiv").show();
-                         }		                         
+                         }
                          else
                          {
-	                     	  	$(".errordiv").show(); 
-	                     }       
-                  	}'),array('class'=>'savebutton'));   
+	                     	  	$(".errordiv").show();
+	                     }
+                  	}'),array('class'=>'savebutton'));
 		?>
-		
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+
+<?php echo CHtml::link('Cancelar',array('curriculumVitae/commission'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
-	
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

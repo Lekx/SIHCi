@@ -258,8 +258,7 @@
 		                  	}',
 
                       ), array('class'=>'savebutton'));  ?>
-
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+<?php echo CHtml::link('Cancelar',array('curriculumVitae/phones'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 <hr>
 <?php $this->endWidget(); ?>

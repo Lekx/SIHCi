@@ -372,25 +372,25 @@ if(areaValue =="SOCIOLOGIA"){
     }
     if(disciplineValue =="GEOMETRIA"){
       var geometria = ["ANALISIS TENSORIAL",
-               "DOMINIOS CONVEXOS",
-               "ESTRUCTURAS DE ORDEN GEOMETRICO",
-               "FUNDAMENTOS",
-                 "GEOMETRIA AFIN",
-                 "GEOMETRIA COMPLEJA Y REAL",
-                 "GEOMETRIA DESCRIPTIVA Y ANALITICA",
-                 "GEOMETRIA DIFERENCIAL",
-                 "GEOMETRIA DISCRETA",
-                 "GEOMETRIA EUCLIDIANA",
-                 "GEOMETRIA PROYECTIVA",
-                 "GEOMETRIA TOPOLOGICA",
-                 "GEOMETRIA RIEMANIANA",
-                 "GEOMETRIAS INFINITAS",
-                 "GEOMETRIAS NO EUCLIDIANAS",
-                 "PROBLEMAS DE EXTREMO",
-                 "TEORIA DE LA FUNCION GEOMETRICA",
-                 "TEORIA K",
-                 "VARIEDADES COMPLEJAS",
-                   "OTROS"]
+                       "DOMINIOS CONVEXOS",
+                       "ESTRUCTURAS DE ORDEN GEOMETRICO",
+                       "FUNDAMENTOS",
+                         "GEOMETRIA AFIN",
+                         "GEOMETRIA COMPLEJA Y REAL",
+                         "GEOMETRIA DESCRIPTIVA Y ANALITICA",
+                         "GEOMETRIA DIFERENCIAL",
+                         "GEOMETRIA DISCRETA",
+                         "GEOMETRIA EUCLIDIANA",
+                         "GEOMETRIA PROYECTIVA",
+                         "GEOMETRIA TOPOLOGICA",
+                         "GEOMETRIA RIEMANIANA",
+                         "GEOMETRIAS INFINITAS",
+                         "GEOMETRIAS NO EUCLIDIANAS",
+                         "PROBLEMAS DE EXTREMO",
+                         "TEORIA DE LA FUNCION GEOMETRICA",
+                         "TEORIA K",
+                         "VARIEDADES COMPLEJAS",
+                           "OTROS"]
       disciplineValue = geometria;
     }
     if(disciplineValue =="TEORIA DE LOS NUMEROS"){
@@ -3846,10 +3846,8 @@ if(areaValue =="SOCIOLOGIA"){
   'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-
-
     <div class="row">
-        <?php echo $form->textField($model,'isbn', array('placeholder'=>'ISBN','class' => 'numericOnly','title'=>'ISBN. (Solo se aceptan numeros)')); ?>
+        <?php echo $form->textField($model,'isbn',array('placeholder'=>'ISBN','class' => 'numericOnly','id'=>'limite','title'=>'ISBN. (Solo se aceptan numeros)')); ?>
         <?php echo $form->error($model,'isbn'); ?>
     </div>
 
@@ -3868,7 +3866,7 @@ if(areaValue =="SOCIOLOGIA"){
   <div class="row">
     <span class="plain-select">
     <?php echo $form->dropDownList($model,'publishing_year',array(
-              '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
+          '1930'=>'1930','1931'=>'1931','1932'=>'1932','1933'=>'1933',
           '1934'=>'1934','1935'=>'1935','1936'=>'1936','1937'=>'1937',
           '1938'=>'1938','1939'=>'1939','1940'=>'1940','1941'=>'1941',
           '1942'=>'1942','1943'=>'1943','1944'=>'1944','1945'=>'1945',
@@ -3890,7 +3888,6 @@ if(areaValue =="SOCIOLOGIA"){
           '2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
           '2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
           '2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
-
           '2015'=>'2015'),array('title'=>'Año de publicación','prompt'=>'Seleccionar año de publicación'));?>
 </span>
     <?php echo $form->error($model,'publishing_year'); ?>
@@ -3919,10 +3916,14 @@ if(areaValue =="SOCIOLOGIA"){
   </div>
 
   <div class="row">
-
     <?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas','class' => 'numericOnly','title'=>'No. citas. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'citations'); ?>
   </div>
+
+   <div class="row">
+        <?php echo $form->textField($model,'total_of_authors',array('placeholder'=>'Total de autores','class' => 'numericOnly','title'=>'Total de autores. (Solo se aceptan numeros)')); ?>
+        <?php echo $form->error($model,'total_of_authors'); ?>
+    </div>
 
   <div class="row">
     <span class="plain-select">
@@ -3952,18 +3953,16 @@ if(areaValue =="SOCIOLOGIA"){
                               'PSICOLOGIA'=>'PSICOLOGIA',
                               'PROSPECTIVA'=>'PROSPECTIVA',
                               'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'onchange'=>'changeArea()'));?>
-                                                      </span>
+    </span>
     <?php echo $form->error($model,'area'); ?>
   </div>
 
   <?php
   if(!$model->isNewRecord){
-   // foreach ($model as $value) {
 
     echo '<div class="row"id="comboDiscipline">';
     echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
     echo '</div>';
-  //}
     echo '<div class="row"id="comboSubdiscipline">';
     echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
     echo '</div>';
@@ -3978,9 +3977,6 @@ if(areaValue =="SOCIOLOGIA"){
   </div>';
   }
   ?>
-
-
-
    <div class="row">
 
         <?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Palabras claves','title'=>'Palabras Claves')); ?>
@@ -3993,7 +3989,6 @@ if(areaValue =="SOCIOLOGIA"){
     <?php echo $form->error($model,'url_doc'); ?>
   </div>
 
-
   <?php
       $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
       'targetClass'=>'authorsRegistry',
@@ -4001,7 +3996,6 @@ if(areaValue =="SOCIOLOGIA"){
      ));
       ?>
       <div class="authorsRegistry">
-
 
       <?php
           echo"<input type='hidden' name='idsBooksChapters[]'>";
@@ -4028,7 +4022,6 @@ if(areaValue =="SOCIOLOGIA"){
       <?php echo $form->error($modelAuthor,'position'); ?>
       </div>
       </div>
-
 
       <?php
       if(!$model->isNewRecord)
@@ -4059,6 +4052,7 @@ if(areaValue =="SOCIOLOGIA"){
       <?php echo $form->error($value,'position');
     ?>
   </div>
+   <?php echo CHtml::button('Elminar',array('submit' => array('booksChapters/deleteAuthor','id'=>$modelAuthors[$key]->id,'idBooksChapters'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
   <hr>
     <?php } ?>
 

@@ -12,6 +12,7 @@
  * @property string $creation_date
  * @property string $type
  * @property integer $id_fucom
+ * @property integer $step_number
  *
  * The followings are the available model relations:
  * @property Projects $idProject
@@ -36,13 +37,12 @@ class ProjectsFollowups extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_project, id_user, followup', 'required'),
-			array('id_project, id_user, id_fucom', 'numerical', 'integerOnly'=>true),
+			array('id_project, id_user, id_fucom, step_number', 'numerical', 'integerOnly'=>true),
 			array('type', 'length', 'max'=>30),
 			array('url_doc, creation_date', 'safe'),
-			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_project, id_user, followup, url_doc, creation_date, type, id_fucom', 'safe', 'on'=>'search'),
+			array('id, id_project, id_user, followup, url_doc, creation_date, type, id_fucom, step_number', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,6 +73,7 @@ class ProjectsFollowups extends CActiveRecord
 			'creation_date' => 'Creation Date',
 			'type' => 'Type',
 			'id_fucom' => 'Id Fucom',
+			'step_number' => 'Step Number',
 		);
 	}
 
@@ -102,6 +103,7 @@ class ProjectsFollowups extends CActiveRecord
 		$criteria->compare('creation_date',$this->creation_date,true);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('id_fucom',$this->id_fucom);
+		$criteria->compare('step_number',$this->step_number);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
