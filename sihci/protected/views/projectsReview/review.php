@@ -226,19 +226,27 @@
 	$userRol = Yii::app()->user->Rol->alias;
 	$userId = Yii::app()->user->id;
 
+	if($userRol == "COMBIO" || $userRol == "COMINV" || $userRol == "COMITE")
+		$userRol = "COMITE";
+
+	echo $evaluationStep;
+
+	echo $evaluationRules[$evaluationStep]["userType"];
+
 /* EL STEP DEL PROYECTO EN PROJECT FOLLOWUPS DEBE INICIAR EN CERO */
 /* AGREGAMOS  UNO  PARA  SABER  EL  ESTADO  ACTUAL */
 //$step = 2;
 //$userRol = "DIVUH";
-/*$roles = array("DIVUH", "SEUH", "COMITE", "COMBIO", "COMINV", "DUH", "SGEI", "DG", "JUR");
+/*
+$roles = array("DIVUH", "SEUH", "COMITE", "COMBIO", "COMINV", "DUH", "SGEI", "DG", "JUR");
 for($evaluationStep = 1; $evaluationStep <= 12; $evaluationStep++)  {
 echo "<br><br><br>=============================================================================[ PASO: ".$evaluationStep." ]====================<br>";
 print_r($evaluationRules[$evaluationStep]);
 //print_r($evaluationRules[$evaluationStep]["actions"]); 
 foreach ($roles as $key => $userRol) {
 echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ROL: ".$userRol." - - <br>";
-	*/
-
+	
+*/
 
 	if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
 			//echo "<hr>FORM ASIGNAR COMITÉS";
@@ -371,7 +379,7 @@ echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 	}
 
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1 || $evaluationStep == 2 || $evaluationStep == 4 || $evaluationStep == 6 || $evaluationStep == 10 || $evaluationStep == 12)){
+	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1 || $evaluationStep == 2 || $evaluationStep == 6 || $evaluationStep == 10)){
 			//echo "<hr>BOTÓN ENVIAR";
 			echo "<div class='row' style='margin-left: 30px !important'>";
 				echo " ".CHtml::htmlButton('Aprobar',array(
@@ -383,15 +391,16 @@ echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 	}
 
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 4 || $userRol && $evaluationStep == 12)){
+	$fileTypes = array("3"=>"la minuta", "4"=>"el acta de aprobación","12"=>"el dictamen de aprobación");
+	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 4 || $userRol && $evaluationStep == 12) ){
 			//echo "<hr>BOTÓN RECHAZAR";
 
-			echo "<<<< ADJUNTAR ARCHIVO >>>>>";
+		$conexion = Yii::app()->db;
+		$checkForDoc = $conexion->createCommand("
+		SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
+		AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
-	}
-	// botones solo para comités
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3){
-			//echo "<hr>BOTÓN RECHAZAR";
+		if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
 			echo "<div class='row' style='margin-left: 25px !important'>";
 				echo CHtml::htmlButton('No aprobar',array(
 					'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',reject");',
@@ -399,31 +408,55 @@ echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 				));		
 			echo "</div>";
 
-			echo "<<<< ADJUNTAR ARCHIVO >>>>>";
-
+		}else{
+			echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+		}
 	}
 
 
 
-	// botones solo para comités
+
+	// botones solo para comités 			// botones solo para comités
 	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 11)){
-			//echo "<hr>BOTÓN RECHAZAR";
-		$userId = 17;
-		$committeeCheck =ProjectsCommittee::model()->findByAttributes(array('id_project'=>$model->id,'id_user_reviewer'=>$userId));
+		
+		$conexion = Yii::app()->db;
+		$checkForDoc = $conexion->createCommand("
+		SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." 
+		AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
+		print_r($checkForDoc);
+		if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
 
-		echo $committeeCheck["status"];
+			if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3){
+					//echo "<hr>BOTÓN RECHAZAR";
+					echo "<div class='row' style='margin-left: 25px !important'>";
+						echo CHtml::htmlButton('No aprobar',array(
+							'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',reject");',
+							'class'=>'savebuttonp',
+						));		
+					echo "</div>";
+			}
 
-			echo "<div class='row' style='margin-left: 30px !important'>";
-				echo " ".CHtml::htmlButton('Aprobar',array(
-					'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',accept");',
-					'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+			if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 11)){
+					//echo "<hr>BOTÓN RECHAZAR";
+				$userId = 17;
+				$committeeCheck =ProjectsCommittee::model()->findByAttributes(array('id_project'=>$model->id,'id_user_reviewer'=>$userId));
 
-				));
-			echo "</div>";
+				echo $committeeCheck["status"];
+
+					echo "<div class='row' style='margin-left: 30px !important'>";
+						echo " ".CHtml::htmlButton('Aprobar',array(
+							'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',accept");',
+							'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+
+						));
+					echo "</div>";
+			}
+
+		}else if($evaluationStep !=11){
+			echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+		}
 
 	}
-
-
 
 
 
@@ -499,7 +532,7 @@ echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 <div class="row">
-<?php $this->renderPartial('../projectsReview/_form', array('model'=>$modelfollowup)); ?>
+<?php $this->renderPartial('../projectsReview/_form', array('model'=>$modelfollowup,'evaluationStep'=>$evaluationStep)); ?>
 </div>
 
 <!--  COMENTARIOS -->
