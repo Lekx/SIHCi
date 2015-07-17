@@ -48,6 +48,7 @@ $pjs = Projects::model()->findByAttributes(array('id_curriculum'=>Curriculum::mo
 $pjs->search();
 //var_dump($pjs);
 
+
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'projects-grid',
 	'dataProvider'=>$model->customSearch(),
