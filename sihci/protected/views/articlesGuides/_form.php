@@ -4069,9 +4069,12 @@ if(areaValue =="SOCIOLOGIA"){
 					  		<?php echo $form->textField($value,'position',array('ArtGuidesAuthor'=>'position','value'=>$value->position,'maxlength'=>11,'placeholder'=>'posición', 'title'=>'posición. (Solo se aceptan numeros)')); ?>
 					  		<?php echo $form->error($value,'position'); ?>
 					  </div>
+                <?php echo CHtml::button('Elminar',array('submit' => array('articlesGuides/deleteAuthor','id'=>$modelAuthors[$key]->id,'idArticlesGuidesAuthors'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
+  <?php } ?>
+             <hr>
+          </div>
 
 
-	<?php } ?>
 
 	<div class="row buttons">
 

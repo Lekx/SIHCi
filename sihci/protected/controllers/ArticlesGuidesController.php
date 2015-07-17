@@ -30,7 +30,7 @@ class ArticlesGuidesController extends Controller
 		return array(
 		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-			    'actions'=>array('admin','create','update','delete','view','index'),
+			    'actions'=>array('admin','create','update','delete','deleteAuthor','view','index'),
 				'expression'=>'($user->type==="fisico")',
 				'users'=>array('@'),
 			),
@@ -291,6 +291,19 @@ class ArticlesGuidesController extends Controller
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+
+	public function actionDeleteAuthor($id, $idArticlesGuidesAuthors){
+
+		$modelAuthors= ArtGuidesAuthor::model()->findByPk($id);
+		$section = "Autor de articulos y guías";
+		$action = "Eliminación";
+		$details = "Registro Número: ".$modelAuthors->id.". Datos: ".$modelAuthors->names;
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$modelAuthors->delete();
+
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('articlesGuides/update/'.$idArticlesGuidesAuthors));
 	}
 
 	/**

@@ -105,8 +105,6 @@ class ChartsController extends Controller
 			';
 			$results = $conexion->createCommand($query)->queryAll();
 
-			//print_r($results);
-
 			$months = array();
 			$jim = array();
 			$faa = array();
@@ -185,8 +183,6 @@ class ChartsController extends Controller
 			';
 			$results = $conexion->createCommand($query)->queryAll();
 
-			//print_r($results);
-
 			$months = array();
 			$jim = array();
 			$faa = array();
@@ -209,7 +205,7 @@ class ChartsController extends Controller
 	}
 
 	//GR03-Total-Eficiencia
-public function actionEfficiencyTotal(){
+	public function actionEfficiencyTotal(){
 
 		$conexion = Yii::app()->db;
 
@@ -293,14 +289,10 @@ public function actionEfficiencyTotal(){
 			
 				$condHu = "";
 
-			
-
-
 			if($_POST["years"] != "total")
 				$condYears = " AND YEAR(b.creation_date) ='".$_POST['years']."'";
 			else
 				$condYears = "";
-
 
 			$query = '
 				SELECT 
@@ -317,8 +309,6 @@ public function actionEfficiencyTotal(){
 				GROUP BY months ORDER BY MONTH(b.creation_date) ASC
 			';
 			$results = $conexion->createCommand($query)->queryAll();
-
-			//print_r($results);
 
 			$months = array();
 			$jim = array();
@@ -338,9 +328,7 @@ public function actionEfficiencyTotal(){
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'booksTotal',"years"=>$years));
 		}
-
 	}
-
 
 	//GR05-Total-Capitulos
 	public function actionChaptersTotal(){
@@ -367,7 +355,6 @@ public function actionEfficiencyTotal(){
 			else
 				$condYears = "";
 
-
 			$query = '
 				SELECT 
 					COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
@@ -383,8 +370,6 @@ public function actionEfficiencyTotal(){
 				GROUP BY months ORDER BY MONTH(cap.creation_date) ASC
 			';
 			$results = $conexion->createCommand($query)->queryAll();
-
-			//print_r($results);
 
 			$months = array();
 			$jim = array();
@@ -404,240 +389,222 @@ public function actionEfficiencyTotal(){
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'chaptersTotal',"years"=>$years));
 		}
-
 	}
 
 	//GR06-total Articulos-guias
- public function actionArticlesGuides_(){
+ 	public function actionArticlesGuides_(){
 
- 	$conexion = Yii::app()->db;
+ 		$conexion = Yii::app()->db;
 
-  $year = $conexion->createCommand("
-  SELECT DISTINCT YEAR(creation_date) AS year FROM articles_guides ORDER BY creation_date DESC
-  ")->queryAll();
+		$year = $conexion->createCommand("
+		  SELECT DISTINCT YEAR(creation_date) AS year FROM articles_guides ORDER BY creation_date DESC
+		  ")->queryAll();
 
-  $years = array();
-  $years["total"] = "Total";
-  foreach($year AS $index => $value)
-          $years[$value["year"]] = $value["year"];
-          
+		  	$years = array();
+		  	$years["total"] = "Total";
+		  	foreach($year AS $index => $value)
+	          $years[$value["year"]] = $value["year"];
+	          
+	  		if(isset($_POST["years"])){
+	    	$condHu = "";
+	  
+	   		if($_POST["years"] != "total")
+	    		$condYears = " AND YEAR(ar.creation_date) ='".$_POST['years']."'";
+	   		else
+	    		$condYears = "";
 
-  if(isset($_POST["years"])){
-  
+			   $query = '
+			    SELECT 
+			    COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+			    COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+			    COUNT(ar.id) AS totalArticles,
+			    MONTH(ar.creation_date) as months
+			    FROM articles_guides AS ar
+			    LEFT JOIN curriculum AS c ON c.id=ar.id_resume
+			    LEFT JOIN users AS u ON u.id=c.id_user 
+			    LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+			    WHERE u.type = "fisico" AND u.status = "activo"
+			    '.$condYears./*$condType.$condSni.*/$condHu.'
+			    GROUP BY months ORDER BY MONTH(ar.creation_date) ASC
+			   ';
+			   $results = $conexion->createCommand($query)->queryAll();
 
-    $condHu = "";
-  
+			   $months = array();
+			   $jim = array();
+			   $faa = array();
+			   $other = array();
+			   $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+	   		foreach($results AS $key => $value){
+	   			
+			    array_push($months, $mos[$value["months"]]);
+			    array_push($jim, (int)$value["jim"]);
+			    array_push($faa, (int)$value["faa"]);
+			    array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
+	   		}
 
-   if($_POST["years"] != "total")
-    $condYears = " AND YEAR(ar.creation_date) ='".$_POST['years']."'";
-   else
-    $condYears = "";
+	   		echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+	  	}
 
-   $query = '
-    SELECT 
-    COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
-    COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
-    COUNT(ar.id) AS totalArticles,
-    MONTH(ar.creation_date) as months
-    FROM articles_guides AS ar
-    LEFT JOIN curriculum AS c ON c.id=ar.id_resume
-    LEFT JOIN users AS u ON u.id=c.id_user 
-    LEFT JOIN jobs AS j ON j.id_curriculum=c.id
-    WHERE u.type = "fisico" AND u.status = "activo"
-    '.$condYears./*$condType.$condSni.*/$condHu.'
-    GROUP BY months ORDER BY MONTH(ar.creation_date) ASC
-   ';
-   $results = $conexion->createCommand($query)->queryAll();
+		  if(!isset($_POST["years"])){
+		   $this->render('index',array('action'=>'articlesGuides_',"years"=>$years));
+	 	 }	
+ 	}
 
-   //print_r($results);
+	//GR07-Patentes-Software-Derechos de autor
+	public function actionPatentSoftware(){
 
-   $months = array();
-   $jim = array();
-   $faa = array();
-   $other = array();
-   $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-   foreach($results AS $key => $value){
-    array_push($months, $mos[$value["months"]]);
-    array_push($jim, (int)$value["jim"]);
-    array_push($faa, (int)$value["faa"]);
-    array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
-   }
+		 	$conexion = Yii::app()->db;
+			$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year";
+			if(isset($_POST["property"])){
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
-  }
+				if($_POST["property"] == "software"){
+					$query ="
+		  			SELECT DISTINCT YEAR(creation_date) AS year FROM software";
+				}
+				else if ($_POST["property"] == "patent"){
+					$query ="
+		  				SELECT DISTINCT YEAR(creation_date) AS year FROM patent";	
+				}
+				else if ($_POST["property"] == "copyrights"){
+					$query ="
+		  				SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights";	
+				}else{
+						$query = "
+						SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year";
+				}	
+			}
 
-  if(!isset($_POST["years"])){
-   $this->render('index',array('action'=>'articlesGuides_',"years"=>$years));
-  }
+			$year = $conexion->createCommand($query)->queryAll();
+			
+			$years = array();
+			  $years["total"] = "Total";
+			  foreach($year AS $index => $value)
+			          $years[$value["year"]] = $value["year"];
+		     
+	  		if(isset($_POST["years"])){
+	 
+	    		$condHu = "";
+	  
+		   if($_POST["property"] != "todos" && $_POST["property"] == "software"){
+		    	$table = "software AS s";
+				$alias = "s.id_curriculum";
+				$table1 = "COUNT(s.id)";
+				$orderMoth = "MONTH(s.creation_date)";
+			}
+			else if($_POST["property"] == "patent"){
+				$table = "patent AS pa";
+				$alias = "pa.id_curriculum";
+				$table1 = "COUNT(pa.id)";
+				$orderMoth = "MONTH(pa.creation_date)";
 
- }
+			}
+			else if($_POST["property"] == "copyrights"){
+				$table = "copyrights AS co";
+				$alias = "co.id_curriculum";
+				$table1 = "COUNT(co.id)";
+				$orderMoth = "MONTH(co.creation_date)";
 
-//GR07-Patentes-Software-Derechos de autor
-public function actionPatentSoftware(){
+			}
+		   	else{
 
-	 $conexion = Yii::app()->db;
-$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year";
-	if(isset($_POST["property"])){
+		    	$table = "";
+				$alias = "";
+				$table1 = "";
+				$orderMoth = "";
+			}
+		   
+		   if($_POST["years"] != "total" && $_POST["property"] == "patent"){
+		    	$condYears = " AND YEAR(pa.creation_date) ='".$_POST['years']."'";
+			}
+			else if($_POST["years"] != "total" && $_POST["property"] == "software"){
+				$condYears = " AND YEAR(s.creation_date) ='".$_POST['years']."'";
+			}
+			else if($_POST["years"] != "total" && $_POST["property"] == "copyrights"){
+				$condYears = " AND YEAR(co.creation_date) ='".$_POST['years']."'";
+			}
+		   else
+		    	$condYears = "";
 
-		if($_POST["property"] == "software"){
-			$query ="
-  			SELECT DISTINCT YEAR(creation_date) AS year FROM software";
+		if($_POST["property"] != "todos"){
+		   $query = '
+		    SELECT  
+				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				'.$table1.' AS totals,
+				'.$orderMoth.' AS months
+				FROM '.$table.' 
+				LEFT JOIN curriculum AS c ON '.$alias.'=c.id
+				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = "fisico" AND u.status = "activo"
+		    	'.$condYears.'
+		    	GROUP BY months ORDER BY '.$orderMoth.' ASC';
 		}
-		else if ($_POST["property"] == "patent"){
-		$query ="
-  			SELECT DISTINCT YEAR(creation_date) AS year FROM patent";	
+		else
+		{
+
+			$query = "
+				SELECT  
+				COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+				COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+				COUNT(co.id) AS totals,
+				MONTH(co.creation_date) AS months
+				FROM copyrights AS co 
+				LEFT JOIN curriculum AS c ON co.id_curriculum=c.id
+				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = 'fisico' AND u.status = 'activo'  
+				".($_POST['years'] != 'total' ? " AND YEAR(co.creation_date) ='".$_POST['years']."'":"")."
+				GROUP BY months 
+				UNION
+				SELECT  
+				COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+				COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+				COUNT(pa.id) AS totals,
+				MONTH(pa.creation_date) AS months
+				FROM patent AS pa 
+				LEFT JOIN curriculum AS c ON pa.id_curriculum=c.id
+				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = 'fisico' AND u.status = 'activo'
+				".($_POST['years'] != 'total' ? " AND YEAR(pa.creation_date) ='".$_POST['years']."'":"")."
+				GROUP BY months
+				UNION
+				SELECT  
+				COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+				COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+				COUNT(s.id) AS totals,
+				MONTH(s.creation_date) AS months
+				FROM software AS s 
+				LEFT JOIN curriculum AS c ON s.id_curriculum=c.id
+				LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = 'fisico' AND u.status = 'activo'	
+				".($_POST['years'] != 'total' ? "AND YEAR(s.creation_date) ='".$_POST['years']."' ":"")."
+				GROUP BY months
+				ORDER BY months ASC";
 		}
-		else if ($_POST["property"] == "copyrights"){
-		$query ="
-  			SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights";	
-		}else{
-				$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year";
-		}	
-}
 
+		   $results = $conexion->createCommand($query)->queryAll();
 
-		$year = $conexion->createCommand($query)->queryAll();
-		
-		$years = array();
-		  $years["total"] = "Total";
-		  foreach($year AS $index => $value)
-		          $years[$value["year"]] = $value["year"];
-	     
+			   $months = array();
+			   $jim = array();
+			   $faa = array();
+			   $other = array();
+			   $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+		  
+		   foreach($results AS $key => $value){
+			    array_push($months, $mos[$value["months"]]);
+			    array_push($jim, (int)$value["jim"]);
+			    array_push($faa, (int)$value["faa"]);
+			    array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
+		   }
+		   	echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+		  }
 
-  if(isset($_POST["years"])){
- 
-    $condHu = "";
-  
-
-   if($_POST["property"] != "todos" && $_POST["property"] == "software"){
-    	$table = "software AS s";
-		$alias = "s.id_curriculum";
-		$table1 = "COUNT(s.id)";
-		$orderMoth = "MONTH(s.creation_date)";
+		if(!isset($_POST["years"])){
+		   	$this->render('index',array('action'=>'patentSoftware','years'=>$years));
+		}
 	}
-	else if($_POST["property"] == "patent"){
-		$table = "patent AS pa";
-		$alias = "pa.id_curriculum";
-		$table1 = "COUNT(pa.id)";
-		$orderMoth = "MONTH(pa.creation_date)";
-
-	}
-	else if($_POST["property"] == "copyrights"){
-		$table = "copyrights AS co";
-		$alias = "co.id_curriculum";
-		$table1 = "COUNT(co.id)";
-		$orderMoth = "MONTH(co.creation_date)";
-
-	}
-   	else{
-
-    	$table = "";
-		$alias = "";
-		$table1 = "";
-		$orderMoth = "";
-	}
-   
-
-   if($_POST["years"] != "total" && $_POST["property"] == "patent"){
-    $condYears = " AND YEAR(pa.creation_date) ='".$_POST['years']."'";
-	}
-	else if($_POST["years"] != "total" && $_POST["property"] == "software"){
-		$condYears = " AND YEAR(s.creation_date) ='".$_POST['years']."'";
-	}
-	else if($_POST["years"] != "total" && $_POST["property"] == "copyrights"){
-		$condYears = " AND YEAR(co.creation_date) ='".$_POST['years']."'";
-	}
-   else
-    $condYears = "";
-
-if($_POST["property"] != "todos"){
-   $query = '
-    SELECT  
-		COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
-		COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
-		'.$table1.' AS totals,
-		'.$orderMoth.' AS months
-		FROM '.$table.' 
-		LEFT JOIN curriculum AS c ON '.$alias.'=c.id
-		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
-		LEFT JOIN users AS u ON u.id=c.id_user
-		WHERE u.type = "fisico" AND u.status = "activo"
-    	'.$condYears.'
-    	GROUP BY months ORDER BY '.$orderMoth.' ASC';
-}
-else
-{
-
-	$query = "
-		SELECT  
-		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
-		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
-		COUNT(co.id) AS totals,
-		MONTH(co.creation_date) AS months
-		FROM copyrights AS co 
-		LEFT JOIN curriculum AS c ON co.id_curriculum=c.id
-		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
-		LEFT JOIN users AS u ON u.id=c.id_user
-		WHERE u.type = 'fisico' AND u.status = 'activo'  
-		".($_POST['years'] != 'total' ? " AND YEAR(co.creation_date) ='".$_POST['years']."'":"")."
-		GROUP BY months 
-		UNION
-		SELECT  
-		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
-		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
-		COUNT(pa.id) AS totals,
-		MONTH(pa.creation_date) AS months
-		FROM patent AS pa 
-		LEFT JOIN curriculum AS c ON pa.id_curriculum=c.id
-		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
-		LEFT JOIN users AS u ON u.id=c.id_user
-		WHERE u.type = 'fisico' AND u.status = 'activo'
-		".($_POST['years'] != 'total' ? " AND YEAR(pa.creation_date) ='".$_POST['years']."'":"")."
-		GROUP BY months
-		UNION
-		SELECT  
-		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
-		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
-		COUNT(s.id) AS totals,
-		MONTH(s.creation_date) AS months
-		FROM software AS s 
-		LEFT JOIN curriculum AS c ON s.id_curriculum=c.id
-		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
-		LEFT JOIN users AS u ON u.id=c.id_user
-		WHERE u.type = 'fisico' AND u.status = 'activo'	
-		".($_POST['years'] != 'total' ? "AND YEAR(s.creation_date) ='".$_POST['years']."' ":"")."
-		GROUP BY months
-		ORDER BY months ASC";
-}
-
-
-   $results = $conexion->createCommand($query)->queryAll();
-
-   //print_r($results);
-
-   $months = array();
-   $jim = array();
-   $faa = array();
-   $other = array();
-   $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-  
-   foreach($results AS $key => $value){
-    array_push($months, $mos[$value["months"]]);
-    array_push($jim, (int)$value["jim"]);
-    array_push($faa, (int)$value["faa"]);
-    array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
-   }
-
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
-  }
-
-
-if(!isset($_POST["years"])){
-   $this->render('index',array('action'=>'patentSoftware','years'=>$years));
-}
-
-
-}
-
 }
 ?>
