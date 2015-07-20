@@ -160,15 +160,6 @@ class Patent extends CActiveRecord
    		return parent::afterFind();
     }
 
-    public function compareDate($attribute,$params) 
-    {	
-		if(!empty($this->attributes['presentation_date'])) 
-		{
-			if(strtotime($this->attributes['presentation_date']) > strtotime($this->attributes['consession_date'])) 
-			{
-				$this->addError($attribute,'La fecha de presentación no puede ser mayor a la fecha de concesión');
-			}
-		}
-	}
+
 	
 }

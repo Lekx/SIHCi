@@ -63,13 +63,12 @@ class PatentController extends Controller
 		$model->id_curriculum = $id_curriculum;
 		$this->performAjaxValidation($model);
 
+	
 		if(isset($_POST['Patent']))
 		{
 			$model->attributes=$_POST['Patent'];
 			$model->id_curriculum =$id_curriculum;
 
-			if($model->consession_date == null)
-    			$model->consession_date ='00/00/0000';	
 
 		    if($model->save())
      		{
@@ -116,9 +115,7 @@ class PatentController extends Controller
 		{
 			$model->attributes=$_POST['Patent'];
 
-			if($model->consession_date == null)
-    			$model->consession_date ='00/00/0000';	
-    		
+	    		
 			if($model->save())
      		{
      			$section = "Propiedad Intelectual"; 

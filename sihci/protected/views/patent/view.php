@@ -89,14 +89,19 @@ $this->menu=array(
 		'application_type',
 		'application_number',
 		'patent_type',
+		'presentation_date',
 		'consession_date',
 		'record',
-		'presentation_date',
 		'international_clasification',
 		'title',
 		'owner',
 		'resumen',
-		'industrial_exploitation',
+			array(
+			'label'=>'Explotación industrial',
+			'name'=>'industrial_exploitation',
+			'value'=>$model->industrial_exploitation == 1 ? "Si" : "No",
+			),
+		
 		'resource_operator',
 	),
 )); ?>

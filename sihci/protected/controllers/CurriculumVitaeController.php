@@ -112,13 +112,14 @@ class CurriculumVitaeController extends Controller
 					$curriculum->save();
 
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-
-					// echo CJSON::encode(array('status'=>'200'));
-	    //  			Yii::app()->end();
-	     		// }else {
-	     		// 	// echo CJSON::encode(array('status'=>'404'));
-	       //  //          Yii::app()->end();
-	     		}
+					echo CJSON::encode(array('status'=>'success'));
+					Yii::app()->end();
+				}else{
+					$error = CActiveForm::validate($model);
+								if($error!='[]')
+									 echo $error;
+								Yii::app()->end();
+				}
 
 
 		}
@@ -442,27 +443,32 @@ class CurriculumVitaeController extends Controller
 
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$researchAreas = ResearchAreas::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
-		$getResearch = ResearchAreas::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
+		$getResearch = ResearchAreas::model()->findAllByAttributes(array('id_curriculum' => $curriculum->id));
+		// $getResearch = ResearchAreas::model()->findAllByAttributes('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
 		$model=new ResearchAreas;
-
-		// $this->performAjaxValidation($model);
+		$error = "{";
+		$error1 = "";
+		$error2 = "";
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['ResearchAreas']) || isset($_POST['getResearch']))
 		{
-			$researchNew = new ResearchAreas();
 				$model->attributes=$_POST['ResearchAreas'];
-			$nameResearch = $model->name;
+			$reload = false;
+			$model->id_curriculum = $curriculum->id;
+			$model->name = $model->name;
+			if($model->validate()){
+				if($model->save()){
+					$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
+					$details = "Subsección Linea de investigación: ".$model->name.".";
+					$action = "Creación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
-
-			$researchNew->id_curriculum = $curriculum->id;
-			$researchNew->name = $nameResearch;
-			if($researchNew->save()){
-				$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
-				$details = "Subsección Linea de investigación: ".$researchNew->name.".";
-				$action = "Creación";
-				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-				echo CJSON::encode(array('status'=>'success'));
-				Yii::app()->end();
+					$reload=true;
+				}
+			}else{
+				$error1 = CActiveForm::validate($model);
+				$error1 = str_replace('ResearchAreas_name','ResearchAreas_name1',$error1);
 			}
 
 
@@ -472,21 +478,32 @@ class CurriculumVitaeController extends Controller
 					$research = ResearchAreas::model()->findByPk($getResearch[$key]->id);
 					$research->id_curriculum = $curriculum->id;
 					$research->name = $value;
-					if(!$research->save()){
-						$error = CActiveForm::validate($model);
-									if($error!='[]')
-										 echo $error;
-									Yii::app()->end();
+					if($research->validate()){
+						if($research->save())
+							$reload=true;
+					}else{
+						$error2 = CActiveForm::validate($getResearchs);
+						$error2 = str_replace('getResearch','getResearch1',$error1);
 					}
-				}
 
+				}
+			}
+
+			if($reload==true){
 				echo CJSON::encode(array('status'=>'success'));
-		    	Yii::app()->end();
+				Yii::app()->end();
 			}else{
-				$error = CActiveForm::validate($model);
-							if($error!='[]')
-								 echo $error;
-							Yii::app()->end();
+
+				if($error1 !='[]')
+					$error.= str_replace("{", "",str_replace("}", "",$error1));
+
+				if($error2 !='[]')
+					$error.= str_replace("{", "",str_replace("}", "",$error2));
+
+				if($error!='[]')
+					echo str_replace("]\"", "],\"",$error)."}";
+
+				Yii::app()->end();
 			}
 
 			// $this->redirect('researchAreas');
@@ -502,30 +519,31 @@ class CurriculumVitaeController extends Controller
 			$iduser = Yii::app()->user->id;
 
 		$person = Persons::model()->findByAttributes(array('id_user'=>$iduser));
-		$phones = Phones::model()->findByAttributes(array('id_person' => $person->id));
+		// $phones = Phones::model()->findByAttributes(array('id_person' => $person->id));
+		$phone =new Phones;
+		$email = new Emails;
 
-		$model=new Phones;
-		$emails = new Emails;
-		$getEmails = Emails::model()->findAll('id_person=:id_person',array(':id_person'=>$person->id));
-		$getPhones = Phones::model()->findAll('id_person=:id_person',array(':id_person'=>$person->id));
+		$getEmails = Emails::model()->findAllByAttributes(array('id_person'=>$person->id));
+		$getPhones = Phones::model()->findAllByAttributes(array('id_person'=>$person->id));
 
-		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($email);
+		$this->performAjaxValidation($phone);
 
-		if(isset($_POST['phoneNumber']) || isset($_POST['emails']))
+		if(isset($_POST['Phones']) || isset($_POST['getPhoneNumber']) || isset($_POST['Emails']) || isset($_POST['getEmail']))
 		{
-			$emailNew = $_POST["emails"];
-			$typeEmailNew = $_POST["typesEmails"];
+			$email->attributes = $_POST['Emails'];
+			$reload=false;
 
-			$emailsNew = new Emails();
-			$emailsNew->id_person = $person->id;
-			$emailsNew->email = $emailNew;
-			$emailsNew->type = $typeEmailNew;
-			if($emailsNew->save()){
-				$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
-				$details = "Subsección Datos de Contacto. Email.";
-				$action = "Creación";
-				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-			}
+			$email->id_person = $person->id;
+			$email->email = $email->email;
+			$email->type = $email->type;
+				if($email->save()){
+					$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
+					$details = "Subsección Datos de Contacto. Email.";
+					$action = "Creación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					$reload=true;
+				}
 
 
 			if ($getEmails != null) {
@@ -537,34 +555,30 @@ class CurriculumVitaeController extends Controller
 			 			$emails = Emails::model()->findByPk($getEmails[$key]->id);
 						$emails->email = $getEmail[$key];
 						$emails->type = $getTypeEmail[$key];
-						$emails->save();
+						if($emails->save()){
+							$reload=true;
+						}
 					}
 
 			}
-
-			$typesPhonesNew = $_POST["typesPhones"];
-			$countryCodeNew = $_POST["countryCode"];
-			$localAreaCodeNew = $_POST["localAreaCode"];
-			$phoneNumberNew = $_POST["phoneNumber"];
-			$extensionNew = $_POST["extension"];
-
-			$phoneNew = new Phones();
-			$phoneNew->id_person = $person->id;
-			$phoneNew->type = $typesPhonesNew;
-			$phoneNew->country_code = $countryCodeNew;
-			$phoneNew->local_area_code = $localAreaCodeNew;
-			$phoneNew->phone_number = $phoneNumberNew;
-			$phoneNew->extension = $extensionNew;
-			$phoneNew->is_primary = "0";
-			if($phoneNew->save()){
+			$phone->attributes = $_POST['Phones'];
+			$phone->id_person = $person->id;
+			$phone->type = $phone->type;
+			$phone->country_code = $phone->country_code;
+			$phone->local_area_code = $phone->local_area_code;
+			$phone->phone_number = $phone->phone_number;
+			$phone->extension = $phone->extension;
+			$phone->is_primary = "1";
+			if($phone->save()){
 				$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
 				$details = "Subsección Datos de Contacto. Teléfono";
 				$action = "Creación";
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				$reload=true;
 			}
 
 
-			if ($phones != null) {
+			if ($getPhones != null) {
 
 				$getTypesPhones = $_POST["getTypesPhones"];
 				$getCountryCode = $_POST["getCountryCode"];
@@ -581,19 +595,26 @@ class CurriculumVitaeController extends Controller
 					$phones->phone_number = $getPhoneNumber[$key];
 					$phones->extension = $getExtension[$key];
 					$phones->is_primary = $getIsPrimary[$key+1];
-					$phones->save();
+					if($phones->save()){
+						$reload=true;
+					}
 				}
-				echo CJSON::encode(array('status'=>'success'));
-		    	Yii::app()->end();
-			}else{
-				$error = CActiveForm::validate($model);
+
+			}
+
+
+		if($reload == true){
+			echo CJSON::encode(array('status'=>'success'));
+				Yii::app()->end();
+		}else{
+				$error = CActiveForm::validate($email);
                 if($error!='[]')
                    echo $error;
                 Yii::app()->end();
 			}
 			$this->redirect('phones');
 		}
-		$this->render('phones',array('model'=>$model, 'emails' =>$emails, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,));
+		$this->render('phones',array('phone'=>$phone, 'email' =>$email, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,));
 	}
 
 	public function actionGrades(){
