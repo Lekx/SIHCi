@@ -119,24 +119,10 @@ class DirectedThesis extends CActiveRecord
 		$criteria->order = 'title ASC';
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR author LIKE CONCAT('%', :searchValue , '%') OR sector LIKE CONCAT('%', :searchValue , '%') OR grade LIKE CONCAT('%', :searchValue , '%') OR organization LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR discipline LIKE CONCAT('%', :searchValue , '%') OR subdiscipline LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR author LIKE CONCAT('%', :searchValue , '%') OR conclusion_date LIKE CONCAT('%', :searchValue , '%') OR sector LIKE CONCAT('%', :searchValue , '%') OR grade LIKE CONCAT('%', :searchValue , '%') OR organization LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR discipline LIKE CONCAT('%', :searchValue , '%') OR subdiscipline LIKE CONCAT('%', :searchValue , '%')  ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
-		/*$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('conclusion_date',$this->conclusion_date,true);
-		$criteria->compare('author',$this->author,true);
-		$criteria->compare('path',$this->path);
-		$criteria->compare('grade',$this->grade,true);
-		$criteria->compare('sector',$this->sector,true);
-		$criteria->compare('organization',$this->organization,true);
-		$criteria->compare('second_level',$this->second_level,true);
-		$criteria->compare('area',$this->area,true);
-		$criteria->compare('discipline',$this->discipline,true);
-		$criteria->compare('subdiscipline',$this->subdiscipline,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-		*/
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

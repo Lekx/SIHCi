@@ -7682,3 +7682,1669 @@ in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
 2015/07/16 16:33:56 [warning] [application] Error al establecer unsafe al atributo "path" de "Books".
 in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksController.php (70)
 in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/16 17:28:03 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/16 17:28:04 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/16 17:28:12 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/16 17:28:17 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/16 17:28:38 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/16 17:59:15 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:45:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php:323
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php(50): BooksChaptersController->loadModel('')
+#1 [internal function]: BooksChaptersController->actionView('')
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(BooksChaptersController), Array)
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BooksChaptersController), Object(ReflectionMethod), Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('booksChapters/v...')
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/booksChapters/view/id/
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/booksChapters/admin
+---
+2015/07/17 09:45:57 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:46:01 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:46:18 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:46:24 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:46:28 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:46:29 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:46:30 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:46:32 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:46:47 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:47:19 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (73)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:06 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:07 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:14 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:16 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:18 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:19 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:19 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:24 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:38 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:48:49 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (73)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:53:49 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:53:50 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:53:52 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:53:53 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:53:54 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:53:55 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:53:56 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:53:57 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:54:10 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:54:14 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (73)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:59:24 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 09:59:58 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:27 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:29 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:30 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:31 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:31 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:32 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:32 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:33 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:39 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:00:42 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (73)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:07 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:07 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:08 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:11 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:12 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:14 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:15 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:19 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:21 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:22 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:24 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:26 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:37 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:04:40 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (71)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:05:13 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:05:19 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:05:20 [warning] [application] Error al establecer unsafe al atributo "url_document" de "ArticlesGuides".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (340)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php:328
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\ArticlesGuidesController.php(50): ArticlesGuidesController->loadModel('')
+#1 [internal function]: ArticlesGuidesController->actionView('')
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ArticlesGuidesController), Array)
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticlesGuidesController), Object(ReflectionMethod), Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('articlesGuides/...')
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#16 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/articlesGuides/view/id/
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/articlesGuides/admin
+---
+2015/07/17 10:11:37 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:38 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:40 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:42 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:42 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:44 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:46 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:49 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:55 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (73)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:11:56 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:34:36 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:37:16 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:38:58 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:51:59 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 10:53:24 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:11:42 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:27:28 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:31:48 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:43:40 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:46:55 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:00 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:03 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:12 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:15 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:41 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:44 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:45 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:51 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:47:54 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:48:00 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:48:08 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:48:22 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (73)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:52:47 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:52:53 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:53:06 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:53:13 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:53:14 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:53:56 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:54:00 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:54:03 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:54:10 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (173)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 11:54:33 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (177)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:20:28 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:28:38 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:35:27 [warning] [application] Error al establecer unsafe al atributo "url_doc" de "BooksChapters".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (335)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\BooksChaptersController.php (68)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:40:28 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:40:30 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:40:46 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:40:47 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (306)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:41:08 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:44:59 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (291)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:45:00 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (291)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:45:07 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (291)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:45:08 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (291)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (63)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:45:23 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (67)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:47:08 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (279)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (137)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 12:47:11 [warning] [application] Error al establecer unsafe al atributo "path" de "DirectedThesis".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (142)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 15:14:36 [error] [php] Cannot use a scalar value as an array (C:\xampp1\htdocs\SIHCi\YiiFramework\framework\zii\widgets\grid\CGridView.php:387)
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(180): DirectedThesisController->createWidget()
+#1 C:\xampp1\htdocs\SIHCi\sihci\protected\views\directedThesis\admin.php(131): DirectedThesisController->widget()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): DirectedThesisController->renderInternal()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(869): DirectedThesisController->renderFile()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(782): DirectedThesisController->renderPartial()
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php(240): DirectedThesisController->render()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): DirectedThesisController->actionAdmin()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): DirectedThesisController->runAction()
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): DirectedThesisController->filterAccessControl()
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): DirectedThesisController->runActionWithFilters()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): DirectedThesisController->run()
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/directedThesis/admin
+in C:\xampp1\htdocs\SIHCi\sihci\protected\views\directedThesis\admin.php (131)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\DirectedThesisController.php (240)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/17 15:50:57 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:06 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:06 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:10 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:22 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:33 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:38 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:42 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:44 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:46 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:51:46 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(67): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create/0
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:52:05 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'mayorque')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(67): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create/0
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:29 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:29 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:30 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:31 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:34 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:37 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:41 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:43 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:44 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/17 15:55:50 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(67): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#19 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create/0
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/18 11:54:07 [warning] [application] Error al establecer unsafe al atributo "path" de "Software".
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SoftwareController.php (280)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SoftwareController.php (57)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/18 14:09:00 [error] [php] Non-static method Date_TimeZone::isValidID() should not be called statically (C:\xampp1\php\pear\Date\TimeZone.php:4717)
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\YiiBase.php(432): include()
+#1 unknown(0): autoload()
+#2 C:\xampp1\htdocs\SIHCi\sihci\protected\models\Certifications.php(58): spl_autoload_call()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CInlineValidator.php(42): Certifications->mayorque()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(159): CInlineValidator->validate()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(987): Certifications->validate()
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): validate()
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CertificationsController->runAction()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CertificationsController->filterAccessControl()
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CertificationsController->runActionWithFilters()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CertificationsController->run()
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+in C:\xampp1\php\pear\Date\TimeZone.php (4717)
+in C:\xampp1\php\pear\Date\TimeZone.php (4717)
+in C:\xampp1\php\pear\Date.php (55)
+2015/07/18 14:09:02 [error] [php] Non-static method Date_TimeZone::isValidID() should not be called statically (C:\xampp1\php\pear\Date\TimeZone.php:4717)
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\YiiBase.php(432): include()
+#1 unknown(0): autoload()
+#2 C:\xampp1\htdocs\SIHCi\sihci\protected\models\Certifications.php(58): spl_autoload_call()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CInlineValidator.php(42): Certifications->mayorque()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(159): CInlineValidator->validate()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(987): Certifications->validate()
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): validate()
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CertificationsController->runAction()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CertificationsController->filterAccessControl()
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CertificationsController->runActionWithFilters()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CertificationsController->run()
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+in C:\xampp1\php\pear\Date\TimeZone.php (4717)
+in C:\xampp1\php\pear\Date\TimeZone.php (4717)
+in C:\xampp1\php\pear\Date.php (55)
+2015/07/18 14:16:06 [error] [exception.CException] exception 'CException' with message 'La propiedad "CSafeValidator"."0" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('0', 'safe')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('safe', Object(Certifications), 'validity_date_s...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/18 14:16:32 [error] [exception.CException] exception 'CException' with message 'Certifications tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#6 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#7 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#21 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/18 14:17:17 [error] [exception.CException] exception 'CException' with message 'La propiedad "CCompareValidator"."dateFormat" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('dateFormat', 'dd-MM-yyyy')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('compare', Object(Certifications), 'validity_date_e...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/18 14:17:19 [error] [exception.CException] exception 'CException' with message 'La propiedad "CCompareValidator"."dateFormat" no se encuentra definida.' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\validators\CValidator.php(177): CComponent->__set('dateFormat', 'dd-MM-yyyy')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(287): CValidator::createValidator('compare', Object(Certifications), 'validity_date_e...', Array)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\widgets\CActiveForm.php(986): CActiveRecord->__set('attributes', Array)
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(199): CActiveForm::validate(Object(Certifications))
+#9 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\CertificationsController.php(63): CertificationsController->performAjaxValidation(Object(Certifications))
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): CertificationsController->actionCreate()
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('certifications/...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#23 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/certifications/create
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/certifications/create
+---
+2015/07/20 09:05:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'sgeiadmi_sihci'' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(458): CModule->getComponent('db')
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Users))
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\UsersController.php(153): CActiveRecord->__construct()
+#9 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#10 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\xampp1\htdocs\SIHCi\sihci\protected\views\layouts\informativas.php(397): CWebApplication->runController('/users/create')
+#20 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(126): require('C:\xampp1\htdoc...')
+#21 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp1\htdoc...', Array, true)
+#22 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp1\htdoc...', Array, true)
+#23 C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SiteController.php(36): CController->render('index')
+#24 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#25 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#26 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#27 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): CController->run('')
+#29 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#30 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#31 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#32 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/
+---
+2015/07/20 09:07:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "ProDIME'"' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('ProDIME'')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/ProDIME%27
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/searchBar/searchResults?keyword=prodi
+---
+2015/07/20 09:11:23 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:492)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (492)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 09:14:35 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:492)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (492)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 09:14:42 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:492)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (492)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 09:16:26 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:492)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (492)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 09:16:33 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:492)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (492)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 10:33:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "CVE-HC"' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('CVE-HC')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/CVE-HC
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/site/index
+---
+2015/07/20 10:33:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "CVE-HC"' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('CVE-HC')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/CVE-HC
+---
+2015/07/20 10:33:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "CVE-HC"' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('CVE-HC')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/CVE-HC
+HTTP_REFERER=http://localhost/SIHCI/sihci/index.php/site/index
+---
+2015/07/20 11:11:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "backups"' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('backups')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/backups
+---
+2015/07/20 11:12:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "backups/index.php"' in C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController('backups/index.p...')
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CApplication->run()
+#3 {main}
+REQUEST_URI=/SIHCI/sihci/index.php/backups/index.php
+---
+2015/07/20 15:43:43 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:498)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (498)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (45)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 15:44:32 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:498)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (498)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (45)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 15:45:38 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:500)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (500)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (47)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 15:52:12 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:493)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (493)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 16:12:17 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:493)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (493)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 16:12:51 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:493)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (493)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 16:15:23 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:493)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (493)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 16:15:49 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:493)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (493)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 16:17:05 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:493)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (493)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (40)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 16:19:00 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:499)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (499)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (46)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
+2015/07/20 16:44:50 [error] [php] strpos(): Empty needle (C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php:501)
+Stack trace:
+#0 unknown(0): SearchBarController->actionSearchResults()
+#1 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#2 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(286): SearchBarController->runAction()
+#5 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CController.php(265): SearchBarController->runActionWithFilters()
+#6 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(282): SearchBarController->run()
+#7 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp1\htdocs\SIHCi\YiiFramework\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp1\htdocs\SIHCi\sihci\index.php(19): CWebApplication->run()
+REQUEST_URI=/SIHCI/sihci/index.php/searchBar/searchResults?keyword=
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (501)
+in C:\xampp1\htdocs\SIHCi\sihci\protected\controllers\SearchBarController.php (48)
+in C:\xampp1\htdocs\SIHCi\sihci\index.php (19)
