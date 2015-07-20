@@ -42,23 +42,12 @@
 </div>
 
 	<div class="row buttons">
-		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/commission'),
-				array(
-					'dataType'=>'json',
-             		'type'=>'post',
-             		'success'=>'function(data)
-             		 {
-
-                         if(data.status=="success")
-                         {
-		                      $(".successdiv").show();
-                         }
-                         else
-                         {
-	                     	  	$(".errordiv").show();
-	                     }
-                  	}'),array('class'=>'savebutton'));
-		?>
+		<?php echo CHtml::htmlButton('Guardar',array(
+							 'onclick'=>'send("commission-form", "curriculumVitae/commission", "'.$model->id.'","curriculumVitae/commission","");',
+								//'id'=> 'post-submit-btn',
+							 'class'=>'savebutton',
+					 ));
+			 ?>
 
 <?php echo CHtml::link('Cancelar',array('curriculumVitae/commission'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>

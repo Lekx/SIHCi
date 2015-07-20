@@ -16,21 +16,8 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 ));?>
 
-
-
-	<?php
-	// foreach ($getDocs as $key => $value) {
-	// 	echo "<a href='".Yii::app()->baseUrl."".$getDocs[$key]->doc_id."' target='_blank'>  Archivo ".$getDocs[$key]->type."</a> <br>";
-	// 	echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteDocs','id'=>$getDocs[$key]->id, 'pathDoc'=>$getDocs[$key]->doc_id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
-	// 	echo "<hr>";
-	// }
-
-	?>
-
-	<?php echo $form->errorSummary($model);?>
-
 	<div class="row">
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta', 'title'=>'Acta de Nacimiento'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Acta', 'title'=>'acta de nacimiento'));?>
 			<div id="DocsIdentity_doc_id1_em_" class="errorMessage" style="display:none;"></div>
 			<?php
 				if(array_key_exists('Acta', $modelDocs)){
@@ -41,7 +28,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'CURP', 'title'=>'Curp'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'CURP', 'title'=>'curp'));?>
 		<div id="DocsIdentity_doc_id2_em_" class="errorMessage" style="display:none;"></div>
 		<?php
 			if(array_key_exists('CURP', $modelDocs)){
@@ -52,7 +39,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'IFE', 'title'=>'IFE'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'IFE', 'title'=>'credencial oficial'));?>
 		<div id="DocsIdentity_doc_id3_em_" class="errorMessage" style="display:none;"></div>
 		<?php
 			if(array_key_exists('IFE', $modelDocs)){
@@ -63,7 +50,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte', 'title'=>'Pasaporte'));?>
+		<?php echo $form->fileField($model, 'doc_id', array('name' => 'Pasaporte', 'title'=>'pasaporte'));?>
 		<div id="DocsIdentity_doc_id4_em_" class="errorMessage" style="display:none;"></div>
 		<?php
 			if(array_key_exists('Pasaporte', $modelDocs)){

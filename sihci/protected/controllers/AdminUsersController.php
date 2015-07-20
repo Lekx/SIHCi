@@ -86,7 +86,7 @@ function checkEmailNull($email, $email2){
 			  echo"Error al enviar el mensaje.";
 			}
 		}
-		
+
 	function checkPasswordDifferent($password, $password2){
 		if ($password != $password2){
       return false;
