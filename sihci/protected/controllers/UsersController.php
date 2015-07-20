@@ -131,21 +131,6 @@ function checkEmailNull($email, $email2){
 		if(!mail($to,$subject,$message,$headers)){
 		  echo"Error al enviar el mensaje.";
 		}
-		
-
- 		/*$subject = "Activación de cuenta.";
- 		$body = '
-		 Activación de Cuenta.
-
-		    Le damos la cordial bienvenida a el sistema SIHCi, para activar su cuenta solo debe dar clic en el siguiente enlace. http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.$activationKey.'
-
-		   Si usted no se ha registrado en nuestro sitio, por favor hacer caso omiso de éste correo.
-
-		 ';
-
-		if(!mail($to,$subject,$body)){
-		  echo"Error al enviar el mensaje.";
-		}*/
 	}
 
 	public function actionCreate() {

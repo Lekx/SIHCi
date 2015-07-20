@@ -30,4 +30,4 @@ $this->menu=array(
 
 <h4>Datos de Contacto:</h4>
 
-<?php $this->renderPartial('_form_phones', array('model'=>$model, 'emails'=>$emails, 'getEmails'=>$getEmails, 'getPhones'=> $getPhones,)); ?>
+<?php $this->renderPartial('_form_phones', array('phone'=>$phone, 'email' =>$email, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,)); ?>

@@ -1,4 +1,11 @@
+<?php 
 
+$mandatory = false;
+if(isset($evaluationStep) && ($evaluationStep == 3 || $evaluationStep == 4 ||$evaluationStep == 12)){
+//  var_dump($evaluationStep);
+  $mandatory = true;
+}
+?>
 
 <div class="form">
 
@@ -21,7 +28,7 @@ $form=$this->beginWidget('CActiveForm', array(
 
     <div class="row">
       <?php echo CHtml::htmlButton('Enviar',array(
-                  'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","")',
+                  'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","'.($mandatory == true ? "mandatory,".($evaluationStep-1) : "").'")',
                   'class'=>'savebuttonp',
                   'id'=>'createFollowup',
               ));

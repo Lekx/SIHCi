@@ -157,6 +157,8 @@ class ProjectsController extends Controller
 					$followup->id_project = $model->id;
 					$followup->id_user = Yii::app()->user->id;
 					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+					$followup->type = "system";
+					$followup->step_number = 0;
 
 					if($followup->save()){
 						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
@@ -247,6 +249,8 @@ class ProjectsController extends Controller
 					$followup->id_project = $model->id;
 					$followup->id_user = Yii::app()->user->id;
 					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+					$followup->type = "system";
+					$followup->step_number = 0;
 
 					if($followup->save()){
 						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));

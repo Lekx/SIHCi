@@ -10,17 +10,6 @@
 		#btnCreatePhone{
 				background-color: #00b973 !important;
 			}
-/* 	.deleteEmail, .deletePhone{
-		background-color: #dd7777 !important;
-    color: white !important;
-    display: block !important;
-    height: 25px !important;
-    margin: 15px !important;
-    padding: 3px;
-    text-align: center !important;
-    width: 450px !important;
-	} */
-
          .errors{
             -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -64,51 +53,29 @@
 	'enableAjaxValidation' => true,
 ));?>
 
-	<?php echo $form->errorSummary($model); ?>
-
-<input id="showFormEmail" type="button" value="Agregar Nuevo Correo Electrónico">
 
 
-	<div class="emails">
-	 <div class="row">
-		 <span class="plain-select1">
-		 	<h5>Correo Electrónico:</h5>
-			<select id="typeEmail" title="Tipo de correo electrónico" name="typesEmails">
-	  			<option value="" selected="">Tipo de correo electrónico</option>
-	  			<option value="Trabajo">Trabajo</option>
-	  			<option value="Residencial">Residencial</option>
-	  			<option value="Particular">Particular</option>
-	  			<option value="Campus">Campus</option>
-	  			<option value="otro">otro</option>
-			</select>
-		</span>
-		</div>
-		<div id="errorTypeEmail" class="errors"> Debe seleccionar Tipo de Tipo de correo electrónico</div>
-		<div class="row">
-		<input id="mail" title="Email" type="text" name="emails" placeholder="Email">
-		<div id="errorMail" class="errors"> Debe ser un correo válido: ejemplo@mail.com</div>
-		</div>
+<!-- <input id="showFormEmail" type="button" value="Agregar Nuevo Correo Electrónico"> -->
 
 
-         <?php echo CHtml::ajaxButton ('Crear nuevo correo electrónico',CController::createUrl('curriculumVitae/phones'),
-                         array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data)
-                     		 {
+	<?php
+	echo "<div class='row'>";
+	echo "<h5>Nuevo correo electrónico:</h5>";
+	echo " <span class='plain-select'>";
+	echo $form->dropDownList($email,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
+												'Particular'=>'Particular',
+																								'Campus'=>'Campus', 'otro'=>'otro'),
+																										 array('title'=>'Tipo de correo electrónico','prompt'=>'Tipo de correo electrónico'));
+	echo "</span>";
+	echo $form->error($email,'type');
+	echo "</div>";
+	echo "<div class='row'>";
 
-		                         if(data.status=="200")
-		                         {
-				                     $(".successdiv").show();
-		                         }
-		                         else
-		                         {
-			                     	   $(".successdiv").show();
-			                     }
-		                  	}',
+	echo $form->textField($email,'email',array('title'=>'Email','placeholder'=>'Email'));
+	echo $form->error($email, 'email');
+	echo "</div>";
 
-                        ), array('id'=>'btnCreateEmail'));
-            ?>
+	 ?>
 
 	</div>
 
@@ -121,16 +88,16 @@
 				echo "<div class='row'>";
 				echo "<h5>Correo electrónico:</h5>";
 				echo " <span class='plain-select'>";
-				echo $form->dropDownList($emails,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
+				echo $form->dropDownList($email,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'),
-		                                                       array('title'=>'Tipo de correo electrónico','prompt'=>'Tipo de correo electrónico','required'=>'true','name'=>'getTypeEmail[]','options' => array(''.$getEmails[$key]->type.''=>array('selected'=>true))));
+		                                                       array('title'=>'Tipo de correo electrónico','prompt'=>'Tipo de correo electrónico','name'=>'getTypeEmail[]','options' => array(''.$getEmails[$key]->type.''=>array('selected'=>true))));
 				echo "</span>";
 				echo "</div>";
 				echo "<div class='row'>";
-				echo $form->error($emails,'type');
-			 	echo $form->textField($emails,'email',array('title'=>'Email','required'=>'true','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
-			 	echo $form->error($emails, 'email');
+				echo $form->error($email,'type');
+			 	echo $form->textField($email,'email',array('title'=>'Email','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
+			 	echo $form->error($email, 'email');
 			 	echo "</div>";
 
 				echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deleteEmail', 'id'=>$getEmails[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?' , 'class'=>'deleteSomething'));
@@ -142,57 +109,39 @@
 		<br>
 
 
-	<input type="button" id="showFormPhone" value="Agregar Nuevo Teléfono">
+	<!-- <input type="button" id="showFormPhone" value="Agregar Nuevo Teléfono"> -->
 
-<div class="phone">
+<!-- <div class="phone"> -->
 <div class="row">
+	<h5>Nuevo teléfono:</h5>
  <span class="plain-select">
-	<select id="typePhone" title="Tipo de Teléfono" name="typesPhones">
-			<option value="" selected="">Tipo de Teléfono</option>
-			<option value="Trabajo">Trabajo</option>
-			<option value="Residencial">Residencial</option>
-			<option value="Particular">Particular</option>
-			<option value="Campus">Campus</option>
-			<option value="otro">otro</option>
-	</select>
+<?php	 echo $form->dropDownList($phone,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
+														 'Particular'=>'Particular',
+																										 'Campus'=>'Campus', 'otro'=>'otro'),
+																													array('title'=>'Tipo de Teléfono','prompt'=>'Tipo de Teléfono')); ?>
 	</span>
-		<div id="errorTypePhone" class="errors"> Debe seleccionar tipo de Teléfono</div>
+	<?php echo $form->error($phone,'type'); ?>
 	</div>
 
 			<div class="phoneinput">
-			<div class="row">
-				<?php echo $form->textField($model,'country_code',array('id'=>'countryCode','class'=>'phones country numericOnly','required'=>true,'name'=>'countryCode','placeholder'=>'[52]', 'title'=>'Lada Nacional')); ?>
+				<div class="row">
+				<?php
+				 echo $form->textField($phone,'country_code',array('class'=>'phones country numericOnly','required'=>true,'placeholder'=>'[52]', 'title'=>'Lada Nacional'));
+		 		 echo $form->error($phone,'country_code');
 
-				<div id="errorCountry" class="errors"> Debe escribir Lada Nacional y tiene que ser número</div>
-				<input id="localCode" type="text" class="phones state numericOnly" name="localAreaCode" maxlength="3" placeholder="[33]" title="Lada Local">
-				<div id="errorLocal" class="errors"> Debe escribir Lada Estatal y tiene que ser número</div>
-				<input id="phoneNum" type="text" class="phones phonew numericOnly" name="phoneNumber" maxlength="10" placeholder="[000-000-00]" title="Número de Teléfono">
-				<div id="errorPhone" class="errors"> Debe escribir número de Teléfono y tiene que ser número</div>
-				<input type="text" class="phones extension numericOnly" name="extension" maxlength="8" placeholder="[Ext]" title="Extensión">
+		 		 echo $form->textField($phone,'local_area_code',array('class'=>'phones state numericOnly','required'=>'true','placeholder'=>'[33]', 'title'=>'Lada Local'));
+		 		 echo $form->error($phone,'local_area_code');
+
+		 		 echo $form->textField($phone,'phone_number',array('class'=>'phones phonew numericOnly','required'=>'true','placeholder'=>'[000-000-00-00]', 'title'=>'Número de Teléfono'));
+		 		 echo $form->error($phone,'phone_number');
+
+		 		 echo $form->textField($phone,'extension',array('class'=>'phones extension numericOnly','placeholder'=>'[Ext]', 'title'=>'Extensión'));
+		 		 echo $form->error($phone,'extension');
+				?>
 				</div>
 			</div>
 
-          <?php echo CHtml::ajaxButton ('Crear Nuevo Teléfono',CController::createUrl('curriculumVitae/phones'),
-                        array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data)
-                     		 {
-
-		                         if(data.status=="200")
-		                         {
-				                     $(".successdiv").show();
-		                         }
-		                         else
-		                         {
-			                     	   $(".successdiv").show();
-			                     }
-		                  	}',
-
-                        ), array('id'=>'btnCreatePhone','class'=>'addSomething'));
-            ?>
-
-</div><!--FORM Phone -->
+<!-- </div> FORM Phone -->
 <hr>
 
 		<?php
@@ -200,32 +149,32 @@
 	 	echo "<div class='row'>";
       	echo "<h5>Teléfono:</h5>";
      	echo " <span class='plain-select'>";
-		echo $form->dropDownList($model,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
+		echo $form->dropDownList($phone,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'),
-		                                                       array('title'=>'Tipo de Teléfono','prompt'=>'Tipo de Teléfono','required'=>'true','name'=>'getTypesPhones[]','options' => array($getPhones[$key]->type=>array('selected'=>true))));
+		                                                       array('title'=>'Tipo de Teléfono','prompt'=>'Tipo de Teléfono','name'=>'getTypesPhones[]','options' => array($getPhones[$key]->type=>array('selected'=>true))));
 		 echo "</span>";
-		 echo $form->error($model,'type');
+		 echo $form->error($phone,'type');
 		 echo "</div>";
 		 echo "<div class='phoneinput'>";
 		 echo "<div class='row'>";
-		 echo $form->textField($model,'country_code',array('class'=>'phones country numericOnly','required'=>true,'name'=>'getCountryCode[]','value'=>$getPhones[$key]->country_code,'placeholder'=>'[52]', 'title'=>'Lada Nacional'));
-		 echo $form->error($model,'country_code');
+		 echo $form->textField($phone,'country_code',array('class'=>'phones country numericOnly','name'=>'getCountryCode[]','value'=>$getPhones[$key]->country_code,'placeholder'=>'[52]', 'title'=>'Lada Nacional'));
+		 echo $form->error($phone,'country_code');
 
-		 echo $form->textField($model,'local_area_code',array('class'=>'phones state numericOnly','required'=>'true','name'=>'getLocalAreaCode[]','value'=>$getPhones[$key]->local_area_code,'placeholder'=>'[33]', 'title'=>'Lada Local'));
-		 echo $form->error($model,'local_area_code');
+		 echo $form->textField($phone,'local_area_code',array('class'=>'phones state numericOnly','name'=>'getLocalAreaCode[]','value'=>$getPhones[$key]->local_area_code,'placeholder'=>'[33]', 'title'=>'Lada Local'));
+		 echo $form->error($phone,'local_area_code');
 
-		 echo $form->textField($model,'phone_number',array('class'=>'phones phonew numericOnly','required'=>'true','name'=>'getPhoneNumber[]','value'=>$getPhones[$key]->phone_number,'placeholder'=>'[000-000-00-00]', 'title'=>'Número de Teléfono'));
-		 echo $form->error($model,'phone_number');
+		 echo $form->textField($phone,'phone_number',array('class'=>'phones phonew numericOnly','name'=>'getPhoneNumber[]','value'=>$getPhones[$key]->phone_number,'placeholder'=>'[000-000-00-00]', 'title'=>'Número de Teléfono'));
+		 echo $form->error($phone,'phone_number');
 
-		 echo $form->textField($model,'extension',array('class'=>'phones extension numericOnly','name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'[Ext]', 'title'=>'Extensión'));
-		 echo $form->error($model,'extension');
+		 echo $form->textField($phone,'extension',array('class'=>'phones extension numericOnly','name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'[Ext]', 'title'=>'Extensión'));
+		 echo $form->error($phone,'extension');
 		 echo "<br>";
 		 echo "<br>";
 
 		echo "Marcar como primario ";
-     echo $form->radioButton($model,'is_primary',array('name'=>'getIsPrimary[]', 'uncheckValue'=>'0', 'checked'=>$getPhones[$key]->is_primary));
-      echo $form->error($model,'is_primary');
+     echo $form->radioButton($phone,'is_primary',array('name'=>'getIsPrimary[]', 'uncheckValue'=>'0', 'checked'=>$getPhones[$key]->is_primary));
+      echo $form->error($phone,'is_primary');
       echo "</div>";
 		 echo CHtml::button('Elminar',array('submit' => array('curriculumVitae/deletePhone', 'id'=>$getPhones[$key]->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
 		 echo "</div>";
@@ -237,29 +186,13 @@
 
 
 	<div class="row buttons">
-         <?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/phones'),
-                        array(
-							'dataType'=>'json',
-                     		'type'=>'post',
-                     		'success'=>'function(data)
-                     		 {
-
-		                         if(data.status=="200")
-		                         {
-				                     $(".successdiv").show();
-		                         }
-		                         else
-		                         {
-		                         	alert("Aún no ha creado un teléfono y/o un email");
-                                     window.location.href ="'.Yii::app()->createUrl('curriculumVitae/phones').'";
-			                     	$(".errordiv").show();
-
-			                     }
-		                  	}',
-
-                      ), array('class'=>'savebutton'));  ?>
-
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?')); ?>
+		<?php echo CHtml::htmlButton('Guardar',array(
+							 'onclick'=>'send("phones-form", "curriculumVitae/phones", "'.$phone->id.'","curriculumVitae/phones","");',
+								//'id'=> 'post-submit-btn',
+							 'class'=>'savebutton',
+					 ));
+			 ?>
+<?php echo CHtml::link('Cancelar',array('curriculumVitae/phones'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 <hr>
 <?php $this->endWidget(); ?>
