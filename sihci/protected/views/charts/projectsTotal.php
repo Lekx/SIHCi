@@ -13,8 +13,6 @@
   <div class="col-md-4">Patrocinados</div>
 </div>
 <div class="grafiOpt">
-<!--Unidad Hospitalaria
-<?php // echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
 <div class="col-md-4">
     <span class="plain-select2">
 <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()','class'=>'dropinline')); ?>

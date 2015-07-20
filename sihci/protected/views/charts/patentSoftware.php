@@ -1,16 +1,34 @@
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Estadisticas.svg" alt="">
+            <h1>Estadisticas</h1>
+            <hr>
+        </div>
+        <h3>Patentes, Software, Derechos de autor</h3>
+
 <div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
-<!--Unidad Hospitalaria 
-<?php // echo CHtml::dropDownList('hu', '',array("ambos"=>"ambos","Hospital Civil Dr. Juan I. Menchaca"=>"Hospital Civil Dr. Juan I. Menchaca","Hospital Civil Fray Antonio Alcalde"=>"Hospital Civil Fray Antonio Alcalde","otro"=>"otro"),array('onchange'=>'loadChart()')); ?><br/>-->
-Año de reporte 
-<?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?><br/>
-Tipo
-<?php echo CHtml::dropDownList('property', '',array("todos"=>"Todos","patent"=>"Patentes","software"=>"Software","copyrights"=>"Derechos de autor"),array('onchange'=>'loadChart()')); ?><br/>
 
+<div class="grafiOpt">
+  <div class="col-md-6">Año del reporte</div>
+  <div class="col-md-6">Tipo</div>
+</div>
 
+<div class="grafiOpt">
+  <div class="col-md-6">
+      <span class="plain-select3">
+<?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()')); ?>
+      </span>
+  </div>
+  <div class="col-md-6">
+      <span class="plain-select3">
+        <?php echo CHtml::dropDownList('property', '',array("todos"=>"Todos","patent"=>"Patentes","software"=>"Software","copyrights"=>"Derechos de autor"),array('onchange'=>'loadChart()')); ?>
+    </span>
+  </div>
+</div>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
+
 <script>
-//jQuery.noConflict(); 
+//jQuery.noConflict();
 var chart;
 function loadChart(){
 var request = $.ajax({
@@ -70,7 +88,7 @@ chart = new Highcharts.Chart({
             }
         },
         tooltip: {
-            
+
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
                 '<td style="padding:0"><b>{point.y} investigadores</b></td></tr>',
@@ -79,7 +97,7 @@ chart = new Highcharts.Chart({
             useHTML: true
         },
        tooltip: {
-    
+
         },
         plotOptions: {
             column: {
@@ -108,7 +126,7 @@ chart = new Highcharts.Chart({
     });
 
 });
- 
+
 request.fail(function( jqXHR, textStatus ) {
   alert( "Request failed: " + textStatus );
 });
@@ -121,6 +139,3 @@ $(document).ready(function(){
 
 
 </script>
-
-
-
