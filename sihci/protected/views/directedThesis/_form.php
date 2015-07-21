@@ -194,7 +194,7 @@ if(areaValue =="SOCIOLOGIA"){
 }
 
 
-    var newDiscipline ="<span class='plain-select'><select id='DirectedThesis_discipline' class='tooltipstered' name='DirectedThesis[discipline]' onchange='changeDiscipline()'>";
+    var newDiscipline ="<span class='plain-select'><select id='DirectedThesis_discipline' title='Disciplina.' name='DirectedThesis[discipline]' onchange='changeDiscipline()'>";
     newDiscipline+="<option>Seleccionar Disciplina</option>";
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
@@ -203,6 +203,18 @@ if(areaValue =="SOCIOLOGIA"){
     newDiscipline+="</select></span>";
 
     $("#comboDiscipline").html(newDiscipline);
+
+      $('#DirectedThesis_discipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
   }
 
   function changeDiscipline(){
@@ -3785,7 +3797,7 @@ if(areaValue =="SOCIOLOGIA"){
       var otrasEspecialidadesSociologia = [" "]
      disciplineValue = otrasEspecialidadesSociologia;
   }
-    var newSubdiscipline ="<span class='plain-select'><select id='DirectedThesis_subdiscipline' class='tooltipstered' name='DirectedThesis[subdiscipline]'>";
+    var newSubdiscipline ="<span class='plain-select'><select id='DirectedThesis_subdiscipline' title='Subdisciplina.' name='DirectedThesis[subdiscipline]'>";
     newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
@@ -3794,6 +3806,18 @@ if(areaValue =="SOCIOLOGIA"){
     newSubdiscipline+="</select></span>";
 
     $("#comboSubdiscipline").html(newSubdiscipline);
+
+    $('#DirectedThesis_subdiscipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
 }
 
 /*Init combo box Sector*/
@@ -7280,7 +7304,7 @@ function changeSector()
        }
  
  
-         var newOrganization ="<span class='plain-select'><select id='DirectedThesis_organization' class='tooltipstered' name='DirectedThesis[organization]' onchange='changeSecondLevel()'>";
+         var newOrganization ="<span class='plain-select'><select id='DirectedThesis_organization' title='Organización.' name='DirectedThesis[organization]' onchange='changeSecondLevel()'>";
            newOrganization+="<option>Seleccionar Organización</option>";
             
             for (var item in sectorValue)
@@ -7288,6 +7312,18 @@ function changeSector()
             
         newOrganization+="</select></span>";
         $("#selectOrganization").html(newOrganization);
+
+            $('#DirectedThesis_organization').tooltipster({
+                position: 'right',
+                trigger: 'custom',
+                })
+                  .on( 'focus', function() {
+                  $( this ).tooltipster( 'show' );
+                  $('.errorMessage').hide();
+                  })
+                .on( 'blur', function() {
+                $( this ).tooltipster( 'hide' );
+                });
     
 }
 
@@ -25735,7 +25771,7 @@ function changeSector()
       organizationValue = yaleUniversity;
     }
 
-    var newSecondLevel ="<span class='plain-select'><select id='DirectedThesis_second_level' class='tooltipstered' name='DirectedThesis[second_level]'>";
+    var newSecondLevel ="<span class='plain-select'><select id='DirectedThesis_second_level' title='Segundo nivel' name='DirectedThesis[second_level]'>";
     newSecondLevel+="<option>Seleccionar Segundo nivel</option>";
     for (var item in organizationValue) {
         newSecondLevel +="<option>"+organizationValue[ item ]+"</option>";
@@ -25744,6 +25780,18 @@ function changeSector()
     newSecondLevel+="</select></span>";
 
     $("#selectSecondLevel").html(newSecondLevel);
+
+      $('#DirectedThesis_second_level').tooltipster({
+                position: 'right',
+                trigger: 'custom',
+                })
+                  .on( 'focus', function() {
+                  $( this ).tooltipster( 'show' );
+                  $('.errorMessage').hide();
+                  })
+                .on( 'blur', function() {
+                $( this ).tooltipster( 'hide' );
+                });
 }
 
 </script>
