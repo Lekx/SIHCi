@@ -4,7 +4,6 @@
 /* @var $form CActiveForm */
 ?>
 <style type="text/css">
-
         .research{
             display: none;
         }
@@ -45,10 +44,10 @@
 	<?php
 	$countDocs = 1;
 	foreach ($getResearch as $key => $value) {
-		echo "<hr>";
+		echo "<hr>"; 
 		echo "<div class='row'>";
 		echo "<div class='research2'>";
-		echo "<h5>Línea de investigacion ".$countDocs.":</h5>";
+		echo "<h5>Línea de investigación ".$countDocs.":</h5>";
 		echo $form->textField($model,'name',array('title'=>'Nombre de investigación','name'=>'getResearch[]','value'=>$getResearch[$key]->name,'size'=>60,'maxlength'=>150, 'placeholder'=>'Nombre de investigación'));
 		echo	'<div id="getResearch1_em_" class="errorMessage" style="display:none;"></div>';
 		echo "</div>";

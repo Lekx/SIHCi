@@ -5,7 +5,7 @@
 ?>
 
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
-<div class="form">
+<!-- <div class="form"> -->
 
 <?php $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'phones-form',
@@ -41,7 +41,7 @@
 
 	 ?>
 
-	</div>
+	<!-- </div> -->
 
 
 		<?php
@@ -91,16 +91,16 @@
 				<div class="row">
 				<?php
 				 echo $form->textField($phone,'country_code',array('class'=>'phones country numericOnly','placeholder'=>'[52]', 'title'=>'Lada nacional'));
-		 		 echo $form->error($phone,'country_code');
 
 		 		 echo $form->textField($phone,'local_area_code',array('class'=>'phones state numericOnly','placeholder'=>'[33]', 'title'=>'Lada local'));
-		 		 echo $form->error($phone,'local_area_code');
 
 		 		 echo $form->textField($phone,'phone_number',array('class'=>'phones phonew numericOnly','placeholder'=>'[000-000-00-00]', 'title'=>'Número de teléfono'));
-		 		 echo $form->error($phone,'phone_number');
 
 		 		 echo $form->textField($phone,'extension',array('class'=>'phones extension numericOnly','placeholder'=>'[Ext]', 'title'=>'Extensión'));
-		 		 echo $form->error($phone,'extension');
+		 		 echo $form->error($phone,'phone_number');
+				 echo $form->error($phone,'country_code');
+				 echo $form->error($phone,'local_area_code');
+				 echo $form->error($phone,'extension');
 				?>
 				</div>
 			</div>

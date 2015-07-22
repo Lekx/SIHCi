@@ -31,4 +31,4 @@ $this->menu=array(
 <h4>Formación académica:</h4>
 
 
-<?php $this->renderPartial('_form_grades', array('model'=>$model, 'getGrades'=>$getGrades)); ?>
+<?php $this->renderPartial('_form_grades', array('model'=>$model, 'modelUp'=>$modelUp,'getGrades'=>$getGrades)); ?>
