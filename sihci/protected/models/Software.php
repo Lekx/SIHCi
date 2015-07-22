@@ -160,15 +160,5 @@ class Software extends CActiveRecord
 		return parent::model($className);
 	}
 
-	protected function beforeSave()
-    {
-			$this->end_date = DateTime::createFromFormat('d/m/Y', $this->end_date)->format('Y-m-d');
-        	return parent::beforeSave();
-    }
-
-   	protected function afterFind()
-    {
-       		$this->end_date = DateTime::createFromFormat('Y-m-d', $this->end_date)->format('d/m/Y');
-     		return parent::afterFind();
-    }
+	
 }

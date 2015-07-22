@@ -23,7 +23,7 @@ $this->breadcrumbs=array(
 				echo  "<h2> Resultado de la busqueda:<br> <b>\"".$keyword."\" fue:<h2><hr>";
 
 			foreach($results as $index => $subarray)
-				echo "<h3><a href=".Yii::app()->baseUrl."/index.php"."/".$index."'>".$subarray["title"]."</a></h3>"."<h4 id='description'><a href=".Yii::app()->baseUrl."/index.php"."/".$index.">".$subarray["desc"]."</a></h4>";
+				echo "<h3><a href=".Yii::app()->baseUrl."/index.php"."/".$index.">".$subarray["title"]."</a></h3>"."<h4 id='description'><a href=".Yii::app()->baseUrl."/index.php"."/".$index.">".$subarray["desc"]."</a></h4>";
 			?>
 		</section>
 

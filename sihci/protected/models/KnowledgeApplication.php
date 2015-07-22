@@ -128,6 +128,12 @@ class KnowledgeApplication extends CActiveRecord
 		return parent::model($className);
 	}
 
+	protected function afterFind()
+    {
+       		
+     	    $this->creation_date=date('d/m/Y H:m:s',strtotime($this->creation_date));
+     		return parent::afterFind();
+    }
 
    
 }

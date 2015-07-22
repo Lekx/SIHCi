@@ -230,8 +230,9 @@ if(areaValue =="SOCIOLOGIA"){
 }
 
 
-    var newDiscipline ="<span class='plain-select'><select id='BooksChapters_discipline' class='tooltipstered' name='BooksChapters[discipline]' onchange='changeDiscipline()'>";
+    var newDiscipline ="<span class='plain-select'><select id='BooksChapters_discipline' title='Disciplina.' name='BooksChapters[discipline]' onchange='changeDiscipline()'>";
     newDiscipline+="<option>Seleccionar Disciplina</option>";
+
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
     }
@@ -239,6 +240,17 @@ if(areaValue =="SOCIOLOGIA"){
     newDiscipline+="</select></span>";
 
     $("#comboDiscipline").html(newDiscipline);
+      $('#BooksChapters_discipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+    })
+    .on( 'focus', function() {
+    $( this ).tooltipster( 'show' );
+    $('.errorMessage').hide();
+})
+    .on( 'blur', function() {
+    $( this ).tooltipster( 'hide' );
+});
   }
 
   function changeDiscipline(){
@@ -3821,7 +3833,7 @@ if(areaValue =="SOCIOLOGIA"){
       var otrasEspecialidadesSociologia = [" "]
      disciplineValue = otrasEspecialidadesSociologia;
   }
-    var newSubdiscipline ="<span class='plain-select'><select id='BooksChapters_subdiscipline' class='tooltipstered' name='BooksChapters[subdiscipline]'>";
+    var newSubdiscipline ="<span class='plain-select'><select id='BooksChapters_subdiscipline' title='Subdisciplina.' name='BooksChapters[subdiscipline]'>";
     newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
@@ -3830,7 +3842,18 @@ if(areaValue =="SOCIOLOGIA"){
     newSubdiscipline+="</select></span>";
 
     $("#comboSubdiscipline").html(newSubdiscipline);
-}
+        $('#BooksChapters_subdiscipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
+  }
 </script>
 
 <div class="form">
@@ -3847,7 +3870,7 @@ if(areaValue =="SOCIOLOGIA"){
 )); ?>
 
     <div class="row">
-        <?php echo $form->textField($model,'isbn',array('placeholder'=>'ISBN','class' => 'numericOnly','id'=>'limite','title'=>'ISBN. (Solo se aceptan numeros)')); ?>
+        <?php echo $form->textField($model,'isbn',array('size'=>13,'maxlength'=>13,'placeholder'=>'ISBN','class' => 'numericOnly','id'=>'limite','title'=>'ISBN. (Solo se aceptan numeros)')); ?>
         <?php echo $form->error($model,'isbn'); ?>
     </div>
 
@@ -3905,23 +3928,23 @@ if(areaValue =="SOCIOLOGIA"){
 
   <div class="row">
 
-    <?php echo $form->textField($model,'volume',array('size'=>45,'maxlength'=>45, 'placeholder'=>'No. volumen','class' => 'numericOnly','title'=>'No. volumen. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'volume',array('size'=>5,'maxlength'=>5, 'placeholder'=>'No. volumen','class' => 'numericOnly','title'=>'No. volumen. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'volume'); ?>
   </div>
 
   <div class="row">
 
-    <?php echo $form->textField($model,'pages',array('placeholder'=>'No. páginas','class' => 'numericOnly','title'=>'No. páginas. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'pages',array('size'=>10,'maxlength'=>10,'placeholder'=>'No. páginas','class' => 'numericOnly','title'=>'No. páginas. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'pages'); ?>
   </div>
 
   <div class="row">
-    <?php echo $form->textField($model,'citations',array('placeholder'=>'No. citas','class' => 'numericOnly','title'=>'No. citas. (Solo se aceptan numeros)')); ?>
+    <?php echo $form->textField($model,'citations',array('size'=>10,'maxlength'=>10,'placeholder'=>'No. citas','class' => 'numericOnly','title'=>'No. citas. (Solo se aceptan numeros)')); ?>
     <?php echo $form->error($model,'citations'); ?>
   </div>
 
    <div class="row">
-        <?php echo $form->textField($model,'total_of_authors',array('placeholder'=>'Total de autores','class' => 'numericOnly','title'=>'Total de autores. (Solo se aceptan numeros)')); ?>
+        <?php echo $form->textField($model,'total_of_authors',array('size'=>5,'maxlength'=>5,'placeholder'=>'Total de autores','class' => 'numericOnly','title'=>'Total de autores. (Solo se aceptan numeros)')); ?>
         <?php echo $form->error($model,'total_of_authors'); ?>
     </div>
 
@@ -3960,21 +3983,21 @@ if(areaValue =="SOCIOLOGIA"){
   <?php
   if(!$model->isNewRecord){
 
-    echo '<div class="row"id="comboDiscipline">';
-    echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
-    echo '</div>';
-    echo '<div class="row"id="comboSubdiscipline">';
-    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
-    echo '</div>';
+      echo '<div class="row"id="comboDiscipline">';
+      echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
+      echo '</div>';
+      echo '<div class="row"id="comboSubdiscipline">';
+      echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
+      echo '</div>';
 
   }
   else{
-    echo '<div class="row"id="comboDiscipline">
+    echo '<div class="row"id="comboDiscipline">';
 
-  </div>
-  <div class="row"id="comboSubdiscipline">
+    echo '</div>';
+    echo '<div class="row"id="comboSubdiscipline">';
 
-  </div>';
+    echo '</div>';
   }
   ?>
    <div class="row">
