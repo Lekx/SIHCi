@@ -102,6 +102,7 @@ $this->renderPartial('_search',array(
 			'header' => '<b>Curp/Pasaporte</b>',
 			'value' => array($this, 'usersCurpPassport'), 'type' => 'raw',
 		),
+	
 		'registration_date',
 
 		 array(

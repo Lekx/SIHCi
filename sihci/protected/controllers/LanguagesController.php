@@ -29,7 +29,7 @@ class LanguagesController extends Controller
 		return array(
 			
 			array('allow',  
-				'actions'=>array('index','create','admin','update','delete','view'),
+				'actions'=>array('index','create','admin','update','deleteLanguage','view'),
 				'expression'=>'($user->type==="fisico")',
 				'users'=>array('@'),
 			),

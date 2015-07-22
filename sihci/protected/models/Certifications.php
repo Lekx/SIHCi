@@ -38,21 +38,36 @@ class Certifications extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, validity_date_start', 'required'),
-			array('id_curriculum', 'numerical', 'integerOnly'=>true),
-			array('folio, reference', 'length', 'max'=>30),
-			array('reference_type', 'length', 'max'=>15),
-			array('specialty, type', 'length', 'max'=>60),
-			array('validity_date_end, creation_date', 'safe'),
-			array('validity_date_end', 'safe'),
-			array('validity_date_end','compare','compareAttribute'=>'validity_date_start','operator'=>'>='),	
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('searchValue','length', 'max'=>70),
-			array('id, id_curriculum, folio, reference, reference_type, specialty, validity_date_start, validity_date_end, type, creation_date, searchValue', 'safe', 'on'=>'search'),
+				array('id_curriculum, validity_date_start', 'required'),
+				array('id_curriculum', 'numerical', 'integerOnly'=>true),
+				array('folio, reference', 'length', 'max'=>30),
+				array('reference_type', 'length', 'max'=>15),
+				array('specialty, type', 'length', 'max'=>60),
+				array('validity_date_end, creation_date', 'safe'),
+				array('validity_date_start','safe'),
+				array('validity_date_start','dateinitial'),
+				array('validity_date_end','dateFinal'),
+				array('validity_date_end','compare','compareAttribute'=>'validity_date_start','operator'=>'>='),	
+				// The following rule is used by search().
+				// @todo Please remove those attributes that should not be searched.
+				array('searchValue','length', 'max'=>70),
+				array('id, id_curriculum, folio, reference, reference_type, specialty, validity_date_start, validity_date_end, type, creation_date, searchValue', 'safe', 'on'=>'search'),
 		);
 	}
 
+	// public function mayorque($attribute,$params)
+	// {
+ //   		if (date("Y-m-d",strtotime($this->validity_date_end)) > date("Y-m-d",strtotime($this->validity_date_start)))
+ //      		$this->addError('validity_date_end','fecha_recibe no puede ser mayor a fecha_rfq.');
+	// }
+
+
+	   public function dateinitial(){
+	   		$this->validity_date_start = Datetime::createFromFormat('d/m/Y', $this->validity_date_start)->format('Y-m-d');
+	   }
+	    public function dateFinal(){
+	        $this->validity_date_end = Datetime::createFromFormat('d/m/Y', $this->validity_date_end)->format('Y-m-d');
+	   }
 	/**
 	 * @return array relational rules.
 	 */
@@ -110,17 +125,7 @@ class Certifications extends CActiveRecord
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR folio LIKE CONCAT('%', :searchValue ,'%') OR specialty LIKE CONCAT('%', :searchValue , '%') OR reference LIKE CONCAT('%', :searchValue , '%') OR reference_type LIKE CONCAT('%', :searchValue , '%') ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
-		/*$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('folio',$this->folio,true);
-		$criteria->compare('reference',$this->reference,true);
-		$criteria->compare('reference_type',$this->reference_type,true);
-		$criteria->compare('specialty',$this->specialty,true);
-		$criteria->compare('validity_date_start',$this->validity_date_start,true);
-		$criteria->compare('validity_date_end',$this->validity_date_end,true);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-	*/
+	
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -140,12 +145,12 @@ class Certifications extends CActiveRecord
 	protected function beforeSave()
     {
 
-			$this->validity_date_start = Datetime::createFromFormat('d/m/Y', $this->validity_date_start)->format('Y-m-d');
-	        $this->validity_date_end = Datetime::createFromFormat('d/m/Y', $this->validity_date_end)->format('Y-m-d');
+			//$this->validity_date_start = Datetime::createFromFormat('d/m/Y', $this->validity_date_start)->format('Y-m-d');
+	        //$this->validity_date_end = Datetime::createFromFormat('d/m/Y', $this->validity_date_end)->format('Y-m-d');
         	return parent::beforeSave();
     }
 
-    	protected function afterFind()
+    protected function afterFind()
     {
   
        		$this->validity_date_start = Datetime::createFromFormat('Y-m-d', $this->validity_date_start)->format('d/m/Y');

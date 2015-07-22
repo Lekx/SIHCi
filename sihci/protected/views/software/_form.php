@@ -3523,7 +3523,7 @@ function changeSector()
        }
  
  
-         var newOrganization ="<span class='plain-select'><select id='Software_organization' class='tooltipstered' name='Software[organization]' onchange='changeSecondLevel()'>";
+         var newOrganization ="<span class='plain-select'><select id='Software_organization' title='Organización.' name='Software[organization]' onchange='changeSecondLevel()'>";
            newOrganization+="<option>Seleccionar Organización</option>";
             
             for (var item in sectorValue)
@@ -3531,6 +3531,18 @@ function changeSector()
             
         newOrganization+="</select></span>";
         $("#selectOrganization").html(newOrganization);
+
+          $('#Software_organization').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
     
 }
 
@@ -21978,8 +21990,8 @@ function changeSector()
       organizationValue = yaleUniversity;
     }
 
-    var newSecondLevel ="<span class='plain-select'><select id='Software_second_level' class='tooltipstered' name='Software[second_level]'>";
-    newSecondLevel+="<option>Seleccionar Segundo nivel</option>";
+    var newSecondLevel ="<span class='plain-select'><select id='Software_second_level' title='Segundo nivel' name='Software[second_level]' >";
+    newSecondLevel+="<option>Seleccionar segundo nivel</option>";
     for (var item in organizationValue) {
         newSecondLevel +="<option>"+organizationValue[ item ]+"</option>";
     }
@@ -21987,6 +21999,18 @@ function changeSector()
     newSecondLevel+="</select></span>";
 
     $("#selectSecondLevel").html(newSecondLevel);
+
+       $('#Software_second_level').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
 }
 
 </script>
@@ -22088,7 +22112,7 @@ function changeSector()
 	 <span class="plain-select">	
 			<?php echo $form->dropDownList($model,'sector',
 				    array(
-				  	     'Centros privados de investigación'=>'Centros privados de investigación',
+				  	   'Centros privados de investigación'=>'Centros privados de investigación',
 				  		 'Centros públicos de investigación'=>'Centros públicos de investigación',
 				  		 'Consultoras'=>'Consultoras',
 				  		 'Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
@@ -22104,32 +22128,32 @@ function changeSector()
 				  		 'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras',
 				  		 'No especificado'=>'No especificado',
 				    ),
-					array('prompt'=>'Sector','title'=>'Sector','id'=>'sector', 'onchange'=>'changeSector()')			  
+					array('prompt'=>'Seleccionar sector','title'=>'Sector','id'=>'sector', 'onchange'=>'changeSector()')			  
 			    ); 
 		?>
 		</span>
 		<?php echo $form->error($model,'sector'); ?>
-	</div>
-	
-  <?php
-  if(!$model->isNewRecord){ 
-
-    echo '<div class="row"id="selectOrganization">';
-    echo $form->dropDownList($model,'organization',array($model->organization)/*,array('prompt'=>'Seleccionar disciplina')*/);
-    echo '</div>';
-    echo '<div class="row"id="selectSecondLevel">';
-    echo $form->dropDownList($model,'second_level',array($model->second_level)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
-    echo '</div>';
-	
-  }else
-  {
-  echo '<div class="row"id="selectOrganization">
   </div>
-
-    <div class="row"id="selectSecondLevel">
-    </div>';
-  }
-  ?>
+  	
+    <?php
+        if(!$model->isNewRecord)
+        { 
+          echo '<div class="row"id="selectOrganization">';
+          echo $form->dropDownList($model,'organization',array($model->organization,'title'=>'Organización'));
+          echo '</div>';
+          echo '<div class="row"id="selectSecondLevel">';
+          echo $form->dropDownList($model,'second_level',array($model->second_level,'title'=>'Segundo nivel'));
+          echo '</div>';
+      	
+        }
+        else
+        {
+          echo '<div class="row"id="selectOrganization">
+                </div>
+                <div class="row"id="selectSecondLevel">
+                </div>';
+        }
+    ?>
 
 	<div class="row">
 		<?php echo $form->textArea($model,'resumen',array('rows'=>6, 'cols'=>50,'maxlength'=>1000,'placeholder'=>'Resumen','title'=>'Resumen (maximo 1000 caracteres)')); ?>

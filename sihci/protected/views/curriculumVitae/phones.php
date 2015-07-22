@@ -3,7 +3,7 @@
 /* @var $model Phones */
 
 $this->breadcrumbs=array(
-	'Datos de Contacto'=>array('phones'),
+	'Datos de contacto'=>array('phones'),
 );
 $controller="";
 $editUser = "";
@@ -11,7 +11,7 @@ if(isset($_GET["ide"]))
 	$editUser = "?ide=".(int)$_GET["ide"];
 
 $this->menu=array(
-	array('label'=>'Datos Personales', 'url'=>array(($controller==""?'curriculumVitae/personalData':$controller).$editUser)),
+	array('label'=>'Datos personales', 'url'=>array(($controller==""?'curriculumVitae/personalData':$controller).$editUser)),
 	array('label'=>'Documentos oficiales', 'url'=>array(($controller==""?'curriculumVitae/docsIdentity':$controller).$editUser)),
 	array('label'=>'Datos de dirección actual', 'url'=>array(($controller==""?'curriculumVitae/addresses':$controller).$editUser)),
 	array('label'=>'Datos laborales', 'url'=>array(($controller==""?'curriculumVitae/jobs':$controller).$editUser)),
@@ -28,6 +28,6 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Datos de Contacto:</h4>
+<h4>Datos de contacto:</h4>
 
-<?php $this->renderPartial('_form_phones', array('model'=>$model, 'emails'=>$emails, 'getEmails'=>$getEmails, 'getPhones'=> $getPhones,)); ?>
+<?php $this->renderPartial('_form_phones', array('phone'=>$phone, 'email' =>$email, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,)); ?>

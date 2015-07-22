@@ -174,7 +174,7 @@
 
 	<div class="row">
 
-		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Foto", "title"=>"Foto de Perfil")); ?>
+		  <?php echo $form->fileField($model,'photo_url',array('size'=>60,'maxlength'=>100, 'value'=>'foto.png', 'placeholder'=>"Foto", "title"=>"Foto de Perfil")); ?>
 
 		<?php echo $form->error($model,'photo_url'); ?>
 		<?php
@@ -199,8 +199,7 @@
                 'class'=>'savebutton',
             ));
    		 ?>
-
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+		 <?php echo CHtml::link('Cancelar',array('curriculumVitae/personalData'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 

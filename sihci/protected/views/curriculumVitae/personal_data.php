@@ -3,7 +3,7 @@
 /* @var $model Persons */
 
 $this->breadcrumbs=array(
-	'Datos Personales'=>array('personal_data'),
+	'Datos personales'=>array('personal_data'),
 );
 $controller="";
 $editUser = "";
@@ -11,7 +11,7 @@ if(isset($_GET["ide"]))
 	$editUser = "?ide=".(int)$_GET["ide"];
 
 $this->menu=array(
-	array('label'=>'Datos Personales', 'url'=>array(($controller==""?'curriculumVitae/personalData':$controller).$editUser)),
+	array('label'=>'Datos personales', 'url'=>array(($controller==""?'curriculumVitae/personalData':$controller).$editUser)),
 	array('label'=>'Documentos oficiales', 'url'=>array(($controller==""?'curriculumVitae/docsIdentity':$controller).$editUser)),
 	array('label'=>'Datos de dirección actual', 'url'=>array(($controller==""?'curriculumVitae/addresses':$controller).$editUser)),
 	array('label'=>'Datos laborales', 'url'=>array(($controller==""?'curriculumVitae/jobs':$controller).$editUser)),
@@ -28,6 +28,6 @@ $this->menu=array(
             <hr>
         </div>
 
-<h4>Datos Personales:</h4>
+<h4>Datos personales:</h4>
 
 <?php $this->renderPartial('_form_personal_data', array('model'=>$model, 'curriculum'=>$curriculum)); ?>

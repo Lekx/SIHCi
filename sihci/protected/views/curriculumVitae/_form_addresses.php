@@ -257,7 +257,7 @@
         'Yugoslavia' => "Yugoslavia",
         'Zambia' => "Zambia",
         'Zimbabwe' => "Zimbabwe"),
-        array('prompt'=>'Seleccionar País','title'=>'País', 'id'=>'contry', 'onchange'=>'showState()'));?>         
+        array('prompt'=>'Seleccionar País','title'=>'País', 'id'=>'contry',));?>
           </span>
            <?php echo $form->error($model,'country'); ?>
 	</div>
@@ -281,10 +281,10 @@
 		<?php echo $form->textField($model,'town',array('title'=>'Municipio','size'=>30,'maxlength'=>30, 'placeholder'=>'Municipio')); ?>
 		<?php echo $form->error($model,'town'); ?>
 	</div>
-    
+
     <div class="row">
-    
-        <?php echo $form->textField($model,'zip_code',array('title'=>'Codigo Postal','placeholder'=>'Código Postal')); ?>
+
+        <?php echo $form->textField($model,'zip_code',array('title'=>'Codigo Postal','class'=>'numericOnly', 'placeholder'=>'Código Postal')); ?>
         <?php echo $form->error($model,'zip_code'); ?>
     </div>
 
@@ -309,28 +309,13 @@
 	</div>
 
 	<div class="row buttons">
-			<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/addresses'), 
-				array(
-					'dataType'=>'json',
-             		'type'=>'post',
-             		'class'=>'savebutton',
-             		'success'=>'function(data) 
-             		 {
-                                      
-                         if(data.status=="200")
-                         {
-		                     $(".successdiv").show();
-		                    
-                         }		                         
-                         else
-                         {
-	                     	  $(".errordiv").show(); 
-	                     }       
-                  	}',                    
-                ), array('class'=>'savebutton'));  
-		?>
-		
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('curriculumVitae/index'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+		<?php echo CHtml::htmlButton('Guardar',array(
+							 'onclick'=>'send("addresses-form", "curriculumVitae/addresses", "'.$model->id.'","curriculumVitae/addresses","");',
+								//'id'=> 'post-submit-btn',
+							 'class'=>'savebutton',
+					 ));
+			?>
+		<?php echo CHtml::link('Cancelar',array('curriculumVitae/addresses'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 		</div>
 
 <?php $this->endWidget(); ?>

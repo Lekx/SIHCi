@@ -85,7 +85,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>'Valor de impacto', 'title'=>'Valor de impacto')); ?>
+		<?php echo $form->textArea($model,'impact_value',array('rows'=>6, 'cols'=>50,'maxlength'=>150,'placeholder'=>' Generación de valor e impacto para el beneficiario', 'title'=>' Generación de valor e impacto para el beneficiario')); ?>
 		<?php echo $form->error($model,'impact_value'); ?>
 	</div>
 
