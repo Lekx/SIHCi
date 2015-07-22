@@ -9,6 +9,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
 
 <script type="text/javascript">
 
+
   $(document).ready(function() {
       $(".numericOnly").keydown(function (e) {
           if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -36,14 +37,17 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
         {
           tecla_especial = true;
           break;
-            } 
+            }
     }
- 
+
         if(letras.indexOf(tecla)==-1 && !tecla_especial)
         return false;
 }
 
+
   function changeArea(){
+
+
 
     var areaValue = $("#area option:selected").val();
 
@@ -230,15 +234,28 @@ if(areaValue =="SOCIOLOGIA"){
 }
 
 
-    var newDiscipline ="<span class='plain-select'><select id='BooksChapters_discipline' class='tooltipstered' name='BooksChapters[discipline]' onchange='changeDiscipline()'>";
+    var newDiscipline ="<span class='plain-select'><select id='BooksChapters_discipline' title='Disciplina' name='BooksChapters[discipline]' onchange='changeDiscipline()'>";
     newDiscipline+="<option>Seleccionar Disciplina</option>";
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
     }
 
+
     newDiscipline+="</select></span>";
 
     $("#comboDiscipline").html(newDiscipline);
+
+    $('#BooksChapters_discipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+    })
+    .on( 'focus', function() {
+    $( this ).tooltipster( 'show' );
+    $('.errorMessage').hide();
+})
+    .on( 'blur', function() {
+    $( this ).tooltipster( 'hide' );
+});
   }
 
   function changeDiscipline(){
@@ -3821,7 +3838,7 @@ if(areaValue =="SOCIOLOGIA"){
       var otrasEspecialidadesSociologia = [" "]
      disciplineValue = otrasEspecialidadesSociologia;
   }
-    var newSubdiscipline ="<span class='plain-select'><select id='BooksChapters_subdiscipline' class='tooltipstered' name='BooksChapters[subdiscipline]'>";
+    var newSubdiscipline ="<span class='plain-select'><select id='BooksChapters_subdiscipline'  title='Subdisciplina' name='BooksChapters[subdiscipline]'>";
     newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
@@ -3830,7 +3847,21 @@ if(areaValue =="SOCIOLOGIA"){
     newSubdiscipline+="</select></span>";
 
     $("#comboSubdiscipline").html(newSubdiscipline);
+
+    $('#BooksChapters_subdiscipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+    })
+    .on( 'focus', function() {
+    $( this ).tooltipster( 'show' );
+    $('.errorMessage').hide();
+})
+    .on( 'blur', function() {
+    $( this ).tooltipster( 'hide' );
+});
+  }
 }
+
 </script>
 
 <div class="form">

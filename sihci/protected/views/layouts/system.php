@@ -60,7 +60,7 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <script>
                                     $(document).ready(function() {
-                                        $('input, select,textarea,filepicker').tooltipster({
+                                        $('input, select,textarea,filepicker,#BooksChapters_discipline').tooltipster({
                                             position: 'right',
                                             trigger: 'custom',
                                         })
@@ -433,7 +433,7 @@
                 <div class="adminmenu">
                     <div><?php echo CHtml::link('Gestión de Archivos', array('FilesManager/admin'));?></div>
                     <div><?php echo CHtml::link('Gestión de usuarios', array('adminUsers/'));?></div>
-                    <div><?php echo CHtml::link('Gestiónk de proyectos', array('adminProjects/'));?></div>
+                    <div><?php echo CHtml::link('Gestión de proyectos', array('adminProjects/'));?></div>
                     <div><?php echo CHtml::link('Respaldos', array('adminBackups/'));?></div>
                     <div><?php echo CHtml::link('Áreas de especialidad', array('adminSpecialtyAreas/admin'));?></div>
                     <div><?php echo CHtml::link('Lineas de Investigación', array('adminResearchAreas/admin'));?></div>

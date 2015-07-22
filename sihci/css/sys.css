@@ -1783,7 +1783,7 @@ li.menulis.now
     width: 71.5%;
     margin: 0;
     text-align: left;
-    padding-left: 249px;
+    padding-left: 236px;
     color: white;
     font-size: .9em;
 
@@ -2044,7 +2044,7 @@ div.pager span.active
 
     display: inline-block;
 
-    width: 140px ;
+    width: 130px ;
     height: 39px;
     margin-right: 5px;
     margin-left: 5px;
@@ -2280,4 +2280,9 @@ div.pager span.active
   width: auto;
   margin-left: 32px !important;
   margin-right: 32px !important;
+}
+.ui-autocomplete li
+{
+  background-color: #00B9C0 !important;
+  color: white !important;
 }
