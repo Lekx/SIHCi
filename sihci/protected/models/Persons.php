@@ -43,7 +43,7 @@ class Persons extends CActiveRecord {
 		return array(
 			array('id_user, names, last_name1, marital_status, country, genre, birth_date, curp_passport', 'required'),
 			array('id_user', 'numerical', 'integerOnly' => true),
-			array('names', 'length', 'max' => 30),
+			array('names', 'match', 'pattern'=>'/^[a-zA-Z]+$/', 'message'=>'El nombre debe de tener solo letras'),
 			array('curp_passport', 'length', 'min' => 11, 'max' => 18),
 			array('curp_passport', 'match', 'pattern'=>'/^[A-Z0-9A-Z0-9]+$/', 'message'=>'Deben ser en Mayúsculas y con el siguiente formato ABCD123456ABCDEF12'),
 			array('person_rfc', 'length', 'min' => 13, 'max' => 13),

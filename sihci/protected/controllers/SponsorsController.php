@@ -1,3 +1,4 @@
+
 <?php
 
 class SponsorsController extends Controller {
@@ -94,8 +95,6 @@ class SponsorsController extends Controller {
 					$model->id_address = $modelAddresses->id;
 					if($model->validate() == 1) {
 						if($model->save()) {
-							echo CJSON::encode(array('status'=>'success'));
-							Yii::app()->end();
 
 							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 							$modelPersons->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
@@ -118,10 +117,8 @@ class SponsorsController extends Controller {
 								}
 								$logo->saveAs($path . 'perfil.' . $logo->getExtensionName());
 								$logo = "sponsors/" . $id_sponsor . "/cve-hc/" . 'perfil.png';
-
-								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo))) {
-
-
+								$modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo));
+								//if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo))) {
 									$log = new SystemLog();
 									$log->id_user = $iduser;
 									$log->section = "Empresas";
@@ -129,8 +126,11 @@ class SponsorsController extends Controller {
 									$log->action = "creacion";
 									$log->datetime = new CDbExpression('NOW()');
 									$log->save();
+									echo CJSON::encode(array('status'=>'success'));
+									Yii::app()->end();
 
-								}
+
+								//}
 							}
 						}
 					}
@@ -294,7 +294,7 @@ class SponsorsController extends Controller {
 			Yii::app()->end();
 
 			}
-		
+
 
 
 
