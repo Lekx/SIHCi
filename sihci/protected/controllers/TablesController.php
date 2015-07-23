@@ -73,7 +73,7 @@ class TablesController extends Controller
 
 
 		$titlePage = "Cantidad de Investigadores";
-		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM users WHERE type="fisico"')->queryAll();
+		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM users WHERE type="fisico" ORDER BY year DESC')->queryAll();
 		$researchers=Yii::app()->db->createCommand('SELECT id FROM users where type="fisico"')->queryAll();
 		 $query='SELECT DISTINCT u.id,p.names, j.hospital_unit, curri.id AS id_curriculum, curri.SNI, curri.status, u.creation_date from users u
  				LEFT JOIN curriculum curri ON curri.id_user=u.id
