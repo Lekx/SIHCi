@@ -703,7 +703,7 @@ class CurriculumVitaeController extends Controller
 		$commission = Curriculum::model()->findByAttributes(array('id_user' => $iduser));
 		$model=new Curriculum;
 
-     	$section = "Curriculum Vitae."; //manda parametros al controlador SystemLog
+    $section = "Curriculum Vitae."; //manda parametros al controlador SystemLog
 		$details = "Subsección Nombramientos.";
 		$action = "Creación.";
 
@@ -712,6 +712,9 @@ class CurriculumVitaeController extends Controller
 			$details = "Subsección Nombramientos. Número Registro: ".$model->id;
 			$action = "Modificación.";
 		}
+
+		if($model->SNI == 0)
+			$model->SNI = "";
 
 		if(isset($_POST['Curriculum']))
 		{
@@ -727,8 +730,6 @@ class CurriculumVitaeController extends Controller
 		}
 		$this->render('commission',array('model'=>$model,));
 	}
-
-
 
 	public function actionDeleteEmail($id){
 		$model=Emails::model()->findByPk($id);
