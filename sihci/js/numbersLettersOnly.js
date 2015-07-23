@@ -1,16 +1,13 @@
 $(document).ready(function() {
-	
-  $(".numericOnly").keydown(function(e) {
-    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-      (e.keyCode == 65 && e.ctrlKey === true) ||
-      (e.keyCode >= 35 && e.keyCode <= 40)) {
-      return;
-    }
-    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode >
-        105)) {
-      e.preventDefault();
-    }
+
+  $(".numericOnly").bind('keyup input',function(){
+		var input = $(this);
+    input.val(input.val().replace(/[^0-9]/g,'') );
   });
+	$('.lettersAndNumbers').bind('keyup input',function(){
+    var input = $(this);
+    input.val(input.val().replace(/[^a-z0-9A-ZñÑ´'ÁáÉéÍíÓóÚú ]/g,'') );
+	});
 
   function changeSector() {
     var sectorValue = $("#sector option:selected").val();

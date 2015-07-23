@@ -38,7 +38,7 @@
 	<div class="row">
  		<span class="plain-select">
 			<?php echo $form->dropDownList($model,'grade',
-														array('Licenciatura'=>'Licenciatura','Maestria'=>'Maestria',
+														array('Licenciatura'=>'Licenciatura','Maestría'=>'Maestría',
 														 			'Doctorado'=>'Doctorado', 'Especialidad'=>'Especialidad‏',
 																	'Super especialidad‏'=>'Super especialidad‏'),
 														array('prompt'=>'Seleccionar grado','title'=>'Seleccionar grado','options' => array(''=>array('selected'=>true))),
@@ -222,7 +222,7 @@
 
 		echo	'<div class="row">';
 		echo " <span class='plain-select'>";
-			echo $form->dropDownList($modelUp,'grade',array('Licenciatura'=>'Licenciatura','Maestria'=>'Maestria',
+			echo $form->dropDownList($modelUp,'grade',array('Licenciatura'=>'Licenciatura','Maestría'=>'Maestría',
 																'Doctorado'=>'Doctorado', 'Especialidad'=>'Especialidad‏', 'Super especialidad‏'=>'Super especialidad‏'),
 			                                                       array('name'=>'getGrade[]','prompt'=>'Seleccionar grado','title'=>'Seleccionar grado','options' => array($getGrades[$key]->grade=>array('selected'=>true))),
 			                                                       array('size'=>10,'maxlength'=>10));
