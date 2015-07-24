@@ -79,8 +79,6 @@ class CurriculumVitaeController extends Controller
 			$curriculum->native_country = $model->country;
 			$curriculum->SNI = -1;
 			$curriculum->save();
-
-
 		}
 
 		if (!is_dir($path)) {
@@ -99,7 +97,6 @@ class CurriculumVitaeController extends Controller
 
 			$curriculum->attributes = $_POST['Curriculum'];
 			$model->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
-
 
 				if($model->photo_url != ''){
 					$model->photo_url->saveAs($path.'/perfil.png');
@@ -120,8 +117,6 @@ class CurriculumVitaeController extends Controller
 									 echo $error;
 								Yii::app()->end();
 				}
-
-
 		}
 		$this->render('personal_data',array('model'=>$model, 'curriculum'=>$curriculum));
 	}
@@ -139,7 +134,6 @@ class CurriculumVitaeController extends Controller
 			$iduser = Yii::app()->user->id;
 
 		$curriculum=Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
-		// $getDocs = DocsIdentity::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
 		$DocExist = DocsIdentity::model()->findAllByAttributes(array('id_curriculum' => $curriculum->id));
 
 		$modelDocs = array();
@@ -147,13 +141,10 @@ class CurriculumVitaeController extends Controller
 			foreach ($DocExist as $key => $value) {
 				$modelDocs[$value->type] = array($value->id, $value->doc_id, $value->type);
 			}
-
 		}
 
 		$model=new DocsIdentity;
 		$reload = false;
-		//
-		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Acta'])){
 			$path = YiiBase::getPathOfAlias("webroot").'/users/'.$iduser.'/cve-hc/';
@@ -167,13 +158,11 @@ class CurriculumVitaeController extends Controller
 				unset($model);
 				$section = "Curriculum Vitae";
 				if (!array_key_exists('Acta', $modelDocs)) {
-					// var_dump($modelDocs);
 					$model = new DocsIdentity;
 					$action = "Creación";
 					$details = "Subsección Documentos Oficiales. Se subió Acta";
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['Acta'][0]);
-					// unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['Acta'][1]);
 					$action = "Modificación";
 					$details = "Subsección Documentos Oficiales. Se subió Acta. Número Registro: ".$model->id;
 				}
@@ -206,7 +195,6 @@ class CurriculumVitaeController extends Controller
 					$details = "Subsección Documentos Oficiales. Se subió Pasaporte";
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['Pasaporte'][0]);
-					// unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['Pasaporte'][1]);
 					$action = "Modificación";
 					$details = "Subsección Documentos Oficiales. Se subió Pasaporte. Número Registro: ".$model->id;
 				}
@@ -239,7 +227,6 @@ class CurriculumVitaeController extends Controller
 					$details = "Subsección Documentos Oficiales. Se subió CURP";
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['CURP'][0]);
-					// unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['CURP'][1]);
 					$action = "Modificación";
 					$details = "Subsección Documentos Oficiales. Se subió CURP. Número Registro: ".$model->id;
 				}
@@ -272,7 +259,6 @@ class CurriculumVitaeController extends Controller
 					$details = "Subsección Documentos Oficiales. Se subió IFE";
 				} else {
 					$model = DocsIdentity::model()->findByPk($modelDocs['IFE'][0]);
-					// unlink(YiiBase::getPathOfAlias("webroot").''.$modelDocs['IFE'][1]);
 					$action = "Modificación";
 					$details = "Subsección Documentos Oficiales. Se subió IFE. Número Registro: ".$model->id;
 				}
@@ -444,12 +430,13 @@ class CurriculumVitaeController extends Controller
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$researchAreas = ResearchAreas::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
 		$getResearch = ResearchAreas::model()->findAllByAttributes(array('id_curriculum' => $curriculum->id));
-		// $getResearch = ResearchAreas::model()->findAllByAttributes('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
+
 		$model=new ResearchAreas;
 		$error = "{";
 		$error1 = "";
 		$error2 = "";
-		 $this->performAjaxValidation($model);
+
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['ResearchAreas']) || isset($_POST['getResearch']))
 		{
@@ -482,8 +469,8 @@ class CurriculumVitaeController extends Controller
 						if($research->save())
 							$reload=true;
 					}else{
-						$error2 = CActiveForm::validate($getResearchs);
-						$error2 = str_replace('getResearch','getResearch1',$error1);
+						$error2 = CActiveForm::validate($model);
+						$error2 = str_replace('getResearch','getResearch1',$error2);
 					}
 
 				}
@@ -506,7 +493,6 @@ class CurriculumVitaeController extends Controller
 				Yii::app()->end();
 			}
 
-			// $this->redirect('researchAreas');
 		}
 		$this->render('research_areas',array('model'=>$model, 'getResearch'=>$getResearch,));
 	}
@@ -519,12 +505,14 @@ class CurriculumVitaeController extends Controller
 			$iduser = Yii::app()->user->id;
 
 		$person = Persons::model()->findByAttributes(array('id_user'=>$iduser));
-		// $phones = Phones::model()->findByAttributes(array('id_person' => $person->id));
-		$phone =new Phones;
-		$email = new Emails;
-
 		$getEmails = Emails::model()->findAllByAttributes(array('id_person'=>$person->id));
 		$getPhones = Phones::model()->findAllByAttributes(array('id_person'=>$person->id));
+
+		$phone =new Phones;
+		$email = new Emails;
+		$email->id_person=$person->id;
+		$phone->id_person=$person->id;
+		$phone->is_primary="1";
 
 		$this->performAjaxValidation($email);
 		$this->performAjaxValidation($phone);
@@ -535,8 +523,6 @@ class CurriculumVitaeController extends Controller
 			$reload=false;
 
 			$email->id_person = $person->id;
-			$email->email = $email->email;
-			$email->type = $email->type;
 				if($email->save()){
 					$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
 					$details = "Subsección Datos de Contacto. Email.";
@@ -544,7 +530,6 @@ class CurriculumVitaeController extends Controller
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 					$reload=true;
 				}
-
 
 			if ($getEmails != null) {
 
@@ -563,11 +548,6 @@ class CurriculumVitaeController extends Controller
 			}
 			$phone->attributes = $_POST['Phones'];
 			$phone->id_person = $person->id;
-			$phone->type = $phone->type;
-			$phone->country_code = $phone->country_code;
-			$phone->local_area_code = $phone->local_area_code;
-			$phone->phone_number = $phone->phone_number;
-			$phone->extension = $phone->extension;
 			$phone->is_primary = "1";
 			if($phone->save()){
 				$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
@@ -576,7 +556,6 @@ class CurriculumVitaeController extends Controller
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 				$reload=true;
 			}
-
 
 			if ($getPhones != null) {
 
@@ -607,12 +586,20 @@ class CurriculumVitaeController extends Controller
 			echo CJSON::encode(array('status'=>'success'));
 				Yii::app()->end();
 		}else{
-				$error = CActiveForm::validate($email);
-                if($error!='[]')
-                   echo $error;
-                Yii::app()->end();
+				$error1 = CActiveForm::validate($email);
+				$error2 = CActiveForm::validate($phone);
+	      $error = "{";
+					if($error1 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error1));
+					if($error2 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error2));
+
+					if($error!='[]')
+						echo str_replace("]\"", "],\"",$error)."}";
+
+        Yii::app()->end();
 			}
-			$this->redirect('phones');
+			// $this->redirect('phones');
 		}
 		$this->render('phones',array('phone'=>$phone, 'email' =>$email, 'getEmails'=> $getEmails, 'getPhones'=> $getPhones,));
 	}
@@ -626,32 +613,25 @@ class CurriculumVitaeController extends Controller
 
 		$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$iduser));
 		$grade = Grades::model()->findByAttributes(array('id_curriculum' => $curriculum->id));
-		$getGrades = Grades::model()->findAll('id_curriculum=:id_curriculum',array(':id_curriculum'=>$curriculum->id));
+		$getGrades = Grades::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
+
 		$model=new Grades;
+		$modelUp = new Grades;
 
+		$reload =false;
 		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelUp);
 
-		if(isset($_POST['grade']))
+		if(isset($_POST['Grades']) || isset($_POST['getGrades']))
 		{
-			$gradeNew = new Grades();
-			$gradeNew->id_curriculum = $curriculum->id;
-			$gradeNew->country = $_POST['country'];
-			$gradeNew->grade = $_POST['grade'];
-			$gradeNew->writ_number = $_POST['writNumber'];
-			$gradeNew->title = $_POST['title'];
-			$gradeNew->obtention_date = $_POST['obtentionDate'];
-			$gradeNew->thesis_title = $_POST['thesisTitle'];
-			$gradeNew->state = $_POST['state'];
-			$gradeNew->sector = "sector";
-			$gradeNew->institution = $_POST['institution'];
-			$gradeNew->area = $_POST['area'];
-			$gradeNew->discipline = $_POST['discipline'];
-			$gradeNew->subdiscipline = $_POST['subdiscipline'];
-			if($gradeNew->save()){
+			$model->attributes = $_POST['Grades'];
+			$model->id_curriculum = $curriculum->id;
+			if($model->save()){
 				$section = "Curriculum Vitae"; //manda parametros al controlador AdminSystemLog
 				$details = "Subsección Formación Académica.";
 				$action = "Creación";
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+				$reload=true;
 			}
 
 			if ($getGrades != null) {
@@ -683,22 +663,33 @@ class CurriculumVitaeController extends Controller
 					$gradeUp->area = $getArea[$key];
 					$gradeUp->discipline = $getDiscipline[$key];
 					$gradeUp->subdiscipline = $getSubdiscipline[$key];
-
-					$gradeUp->save();
+					if($gradeUp->save()){
+						$reload = true;
+					}
 				}
+			}
 
+			if($reload==true){
 				echo CJSON::encode(array('status'=>'success'));
-		    	Yii::app()->end();
+				Yii::app()->end();
 			}else{
-				$error = CActiveForm::validate($model);
-                if($error!='[]')
-                   echo $error;
-                Yii::app()->end();
+				$error1 = CActiveForm::validate($model);
+				$error2 = CActiveForm::validate($modelUp);
+	      $error = "{";
+					if($error1 !='[]')
+						$error.= str_replace("{  ", "",str_replace("}", "",$error1));
+					if($error2 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error2));
+
+					if($error!='[]')
+						echo str_replace("]\"", "],\"",$error)."}";
+
+				Yii::app()->end();
 			}
 
 		}
 
-		$this->render('grades',array('model'=>$model, 'getGrades'=>$getGrades));
+		$this->render('grades',array('model'=>$model, 'modelUp'=>$modelUp, 'getGrades'=>$getGrades));
 	}
 
 
@@ -712,7 +703,7 @@ class CurriculumVitaeController extends Controller
 		$commission = Curriculum::model()->findByAttributes(array('id_user' => $iduser));
 		$model=new Curriculum;
 
-     	$section = "Curriculum Vitae."; //manda parametros al controlador SystemLog
+    $section = "Curriculum Vitae."; //manda parametros al controlador SystemLog
 		$details = "Subsección Nombramientos.";
 		$action = "Creación.";
 
@@ -722,32 +713,23 @@ class CurriculumVitaeController extends Controller
 			$action = "Modificación.";
 		}
 
-		$this->performAjaxValidation($model);
+		if($model->SNI == 0)
+			$model->SNI = "";
 
 		if(isset($_POST['Curriculum']))
 		{
 			$model->attributes=$_POST['Curriculum'];
+
 			if($model->save())
      		{
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
-     			echo CJSON::encode(array('status'=>'success'));
-     			Yii::app()->end();
-     		}
-     		else
-     		{
-     			 $error = CActiveForm::validate($model);
-                 if($error!='[]')
-                    echo $error;
-                 Yii::app()->end();
-     		}
-     		$this->redirect('commission');
-
+				echo CJSON::encode(array('status'=>'success'));
+				Yii::app()->end();
+			}
 		}
 		$this->render('commission',array('model'=>$model,));
 	}
-
-
 
 	public function actionDeleteEmail($id){
 		$model=Emails::model()->findByPk($id);

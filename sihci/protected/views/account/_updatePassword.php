@@ -9,8 +9,8 @@
 
 $this->menu = array(
 	array('label' => 'Datos de Cuenta', 'url' => array('account/infoAccount')),
-	
-	
+
+
 );
 ?>
 
@@ -35,7 +35,7 @@ $this->menu = array(
 
 
 	<div class="row">
-		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off', "placeholder"=>"Contraseña Actual","title"=>'Contraseña Actual')); ?>
+		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off', "placeholder"=>"Contraseña Actual","title"=>'Contraseña Actual',"maxlength"=>"12")); ?>
 		<?php echo $form->error($details,'password'); ?>
 		<hr>
 	</div>
@@ -47,17 +47,17 @@ $this->menu = array(
 	<div class="row">
 		<input type="password" name="Account[password22]" id="Account_password22" placeholder="Repetir Nueva Contraseña" title="Repetir Nueva Contraseña" oncopy="return false;" onpaste="return false;" oncut="return false;" maxlength="12">
 	</div>
-	
+
 	<hr>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton("Guardar", array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton') ); ?>
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+		<?php echo CHtml::htmlButton('Enviar',array(
+						'onclick'=>'send("account-form", "account/updatePassword", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","site/index","")',
+						'class'=>'savebutton',
+				));
+	?>		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 	<?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
-
-
