@@ -50,13 +50,11 @@
 			return false;
 		}
 		else if($email2 == '' || $email22 == ''){
-      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'Favor de llenar los campos de email.'));
+      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'Favor de llenar los campos de correo.'));
       Yii::app()->end();
       return false;
 		}else{
-      echo CJSON::encode(array('status'=>'success'));
-      Yii::app()->end();
-			return true;
+      return true;
 	}
 }
 
@@ -71,8 +69,7 @@
       Yii::app()->end();
       return false;
 		}else{
-      echo CJSON::encode(array('status'=>'success'));
-      Yii::app()->end();
+
 			return true;
 	}
 }
@@ -92,16 +89,16 @@
 
 	public function checkEmailExist($email){
 		if ($this->currentemail != $email){
-      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'El correo no es de la cuenta.'));
+      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'El correo electronico no es de la cuenta.'));
       Yii::app()->end();
       			return false;
 		}
 		else{
-      echo CJSON::encode(array('status'=>'success'));
-      Yii::app()->end();
+
 			return true;
 		}
 	}
+
 		public function checkPasswordExist($password){
 			if ($this->currentpassword != sha1(md5(sha1($password)))){
         echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'La contraseña no es de la cuenta.'));
@@ -109,20 +106,18 @@
         				return false;
 		}
 			else{
-        echo CJSON::encode(array('status'=>'success'));
-        Yii::app()->end();
+
 				return true;
 		}
 }
 
 		public function checkEmailValid($email){
 		  	if (!preg_match("/^([a-zA-Z0-9._]+)@([a-zA-Z0-9.-]+).([a-zA-Z]{2,4})$/",$email)){
-          echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'El email no es valido.'));
+          echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'El correo electronico no es valido.'));
           Yii::app()->end();
           return false;
 		  } else {
-          echo CJSON::encode(array('status'=>'success'));
-          Yii::app()->end();
+
 		      return true;
 		  }
 }
@@ -157,21 +152,18 @@
 
 		$details = Users::model()->findByPk($iduser);
 		$this->currentemail = $details->email;
-		if(isset($_POST['Account']))
-		{
-
-			if($this->checkEmailValid($_POST['Account']['email2'], $_POST['Account']['email22']) && $this->checkEmail($_POST['Account']['email2'],$_POST['Account']['email22']))
-			{
-
-				if($details->updateByPk($iduser,array('email'=>$_POST['Account']['email2']))){
+		if(isset($_POST['Account'])){
+      if($this->checkEmail($_POST['Account']['email2'],$_POST['Account']['email22']) && $this->checkEmailValid($_POST['Account']['email2'], $_POST['Account']['email22'])){
+        if($details->updateByPk($iduser,array('email'=>$_POST['Account']['email2']))){
+          $details->email = $_POST['Account']['email2'];
 					$section = "Cuenta";
 					$details = "Subsección: Cambio Email.";
 					$action = "Modificación";
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-
-					Yii::app()->user->logout();
-					$this->redirect(Yii::app()->homeUrl);
-				}
+          echo CJSON::encode(array('status'=>'success'));
+          Yii::app()->user->logout();
+          Yii::app()->end();
+        }
 
 			}
 		}
@@ -193,19 +185,17 @@
 		$this->currentpassword = $details->password;
 		if(isset($_POST['Account']))
 		{
-			if($this->checkPasswordExist($_POST['Users']['password']) && $this->checkPassword($_POST['Account']['password2'],$_POST['Account']['password22']))
-			{
-
-				$details->password=sha1(md5(sha1($_POST['Account']['password2'])));
-				if($details->updateByPk($iduser,array('password'=>sha1(md5(sha1($_POST['Account']['password2'])))))){
-						$section = "Cuenta";
-						$details = "Subsección: Cambio contraseña.";
-						$action = "Modificación";
-						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-
+			if($this->checkPasswordExist($_POST['Users']['password']) && $this->checkPassword($_POST['Account']['password2'],$_POST['Account']['password22'])){
+        $details->password=sha1(md5(sha1($_POST['Account']['password2'])));
+			if($details->updateByPk($iduser,array('password'=>sha1(md5(sha1($_POST['Account']['password2'])))))){
+					$section = "Cuenta";
+					$details = "Subsección: Cambio contraseña.";
+					$action = "Modificación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+          echo CJSON::encode(array('status'=>'success'));
+          Yii::app()->user->logout();
+          Yii::app()->end();
 				}
-						Yii::app()->user->logout();
-						$this->redirect(Yii::app()->homeUrl);
 			}
 		}
 		$this->render('_updatePassword',array(

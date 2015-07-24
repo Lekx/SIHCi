@@ -40,13 +40,15 @@ class Addresses extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('country, zip_code, state, delegation, city, town, colony, external_number', 'required'),
-			array('zip_code', 'length', 'max' => 6),
+			array('zip_code', 'length', 'min'=>5, 'max' => 6),
 			array('zip_code', 'numerical', 'integerOnly'=>true),
 			array('country, city, street', 'length', 'max'=>50),
 			array('state', 'length', 'max'=>20),
 			array('delegation, town', 'length', 'max'=>30),
 			array('colony', 'length', 'max'=>45),
 			array('external_number, internal_number', 'length', 'max'=>8),
+			array('external_number', 'match', 'pattern'=>'/^[0-9A-Za-z]+$/', 'message'=>'Número externo inválido, debe iniciar con un número'),
+			array('internal_number', 'match', 'pattern'=>'/^[0-9A-Za-z]+$/', 'message'=>'Número interno inválido, debe iniciar con un número'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, country, zip_code, state, delegation, city, town, colony, street, external_number, internal_number', 'safe', 'on'=>'search'),

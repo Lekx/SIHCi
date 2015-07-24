@@ -40,13 +40,13 @@ $this->menu = array(
 	</div>
 
 	<div class="row">
-		<input placeholder="Repetir Nuevo Correo"  title="Nuevo Correo" type="text" name="Account[email22]" id="Account_email22" oncopy="return false;" onpaste="return false;" oncut="return false;">
+		<input placeholder="Repetir Nuevo Correo"  title="Repetir Nuevo Correo" type="text" name="Account[email22]" id="Account_email22" oncopy="return false;" onpaste="return false;" oncut="return false;">
 	</div>
 	<hr>
 
 	<div class="row buttons">
 			  <?php echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'send("account-form", "account/updateEmail", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+                'onclick'=>'send("account-form", "account/updateEmail", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","site/index","")',
                 'class'=>'savebutton',
             ));
     ?>

@@ -43,17 +43,17 @@ class Persons extends CActiveRecord {
 		return array(
 			array('id_user, names, last_name1, marital_status, country, genre, birth_date, curp_passport', 'required'),
 			array('id_user', 'numerical', 'integerOnly' => true),
-			array('names', 'length', 'max' => 30),
+			array('names', 'match', 'pattern'=>'/^[a-zA-Z]+$/', 'message'=>'El nombre debe de tener solo letras'),
 			array('curp_passport', 'length', 'min' => 11, 'max' => 18),
 			array('curp_passport', 'match', 'pattern'=>'/^[A-Z0-9A-Z0-9]+$/', 'message'=>'Deben ser en Mayúsculas y con el siguiente formato ABCD123456ABCDEF12'),
 			array('person_rfc', 'length', 'min' => 13, 'max' => 13),
-			array('person_rfc', 'match', 'pattern'=>'/^[A-Z0-9A-Z]+$/', 'message'=>'Deben ser en Mayúsculas y con el siguiente formato ABCD123456A12'),
+			array('person_rfc', 'match', 'pattern'=>'/^[A-Z0-9A-Z]+$/', 'message'=>'El RFC debe ser en Mayúsculas y con el siguiente formato ABCD123456A12'),
 			array('last_name1, last_name2, marital_status', 'length', 'max' => 20),
 			array('genre', 'length', 'max' => 10),
 			array('country', 'length', 'max' => 50),
 			array('state_of_birth', 'length', 'max' => 45),
 			array('photo_url','file','types'=>'jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
-			array('photo_url','file','types'=>'jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			// array('photo_url','file','types'=>'jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

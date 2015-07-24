@@ -39,7 +39,7 @@
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php echo $form->dropDownList($model,'specialty', array(         'Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
+		<?php echo $form->dropDownList($model,'specialty', array('Alergia e inmunología clínica'=>'Alergia e inmunología clínica','Alergia e inmunología clínica pediátrica'=>'Alergia e inmunología clínica pediátrica',
          'Anatomía patológica'=>'Anatomía patológica','Anestesiología'=>'Anestesiología','Anestesiología pediátrica'=>'Anestesiología pediátrica','Angiología y cirugía vascular'=>'Angiología y cirugía vascular','Biología de la reproducción humana'=>'Biología de la reproducción humana',
          'Cardiología'=>'Cardiología','Cardiología pediátrica'=>'Cardiología pediátrica','Cirugía cardiotorácica'=>'Cirugía cardiotorácica',
          'Cirugía cardiotorácica pediátrica'=>'Cirugía cardiotorácica pediátrica','Cirugía general'=>'Cirugía general','Cirugía oncológica (adultos)'=>'Cirugía oncológica (adultos)',
@@ -75,7 +75,7 @@
 		    		'size' => '10',         
 		        	'maxlength' => '10',
 		        	'readOnly'=>true, 
-		        	'placeholder'=>"Fecha de Inicio" , 
+		        	'placeholder'=>"Fecha de Inicio", 
 		        	'title'=>'Fecha de Inicio' 
 		    ),
 		));

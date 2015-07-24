@@ -192,7 +192,7 @@ if(areaValue =="SOCIOLOGIA"){
 }
 
 
-    var newDiscipline ="<span class='plain-select'><select id='Books_discipline' class='tooltipstered' name='Books[discipline]' onchange='changeDiscipline()'>";
+    var newDiscipline ="<span class='plain-select'><select id='Books_discipline' title='Disciplina.' name='Books[discipline]' onchange='changeDiscipline()'>";
     newDiscipline+="<option>Seleccionar Disciplina</option>";
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
@@ -201,6 +201,18 @@ if(areaValue =="SOCIOLOGIA"){
     newDiscipline+="</select></span>";
 
     $("#comboDiscipline").html(newDiscipline);
+
+      $('#Books_discipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
   }
 
   function changeDiscipline(){
@@ -3783,7 +3795,7 @@ if(areaValue =="SOCIOLOGIA"){
       var otrasEspecialidadesSociologia = [" "]
      disciplineValue = otrasEspecialidadesSociologia;
   }
-    var newSubdiscipline ="<span class='plain-select'><select id='Books_subdiscipline' class='tooltipstered' name='Books[subdiscipline]'>";
+    var newSubdiscipline ="<span class='plain-select'><select id='Books_subdiscipline' title='Subdisciplina.' name='Books[subdiscipline]'>";
     newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
@@ -3792,6 +3804,18 @@ if(areaValue =="SOCIOLOGIA"){
     newSubdiscipline+="</select></span>";
 
     $("#comboSubdiscipline").html(newSubdiscipline);
+
+       $('#Books_subdiscipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
 } 
 </script>
 
@@ -4036,12 +4060,12 @@ if(areaValue =="SOCIOLOGIA"){
 
   }
   else{
-    echo '<div class="row"id="comboDiscipline">
+    echo '<div class="row"id="comboDiscipline">';
 
-  </div>
-  <div class="row"id="comboSubdiscipline">
+  echo '</div>';
+  echo '<div class="row"id="comboSubdiscipline">';
 
-  </div>';
+  echo '</div>';
   }
   ?>
 
