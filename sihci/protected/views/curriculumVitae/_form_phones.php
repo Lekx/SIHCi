@@ -3,45 +3,9 @@
 /* @var $model Phones */
 /* @var $form CActiveForm */
 ?>
-<style type="text/css">
-		#btnCreateEmail{
-				background-color: #00b973 !important;
-			}
-		#btnCreatePhone{
-				background-color: #00b973 !important;
-			}
-         .errors{
-            -webkit-boxshadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            background: red;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            display: none;
-            margin-top: -50px;
-            margin-left: 455px;
-            position: absolute;
-			border-radius: 5px;
-			border: 2px solid #F20862;
-			background: #F20862;
-			color: #fff;
-			width: 190px !important;
-			font-family: 'Caviar_Dreams_Bold' !important;
-			font-size: 12px;
-			line-height: 16px;
-			padding: 8px 10px;
-			text-align:  center;
-        }
-        .emails{
-            display: none;
-        }
-        .phone{
-            display: none;
-        }
-
-    </style>
 
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/curriculumVitae/script/script.js"></script>
-<div class="form">
+<!-- <div class="form"> -->
 
 <?php $form = $this->beginWidget('CActiveForm', array(
 	'id' => 'phones-form',
@@ -71,13 +35,13 @@
 	echo "</div>";
 	echo "<div class='row'>";
 
-	echo $form->textField($email,'email',array('title'=>'Email','placeholder'=>'Email'));
+	echo $form->textField($email,'email',array('title'=>'Correo electrónico','placeholder'=>'Correo electrónico'));
 	echo $form->error($email, 'email');
 	echo "</div>";
 
 	 ?>
 
-	</div>
+	<!-- </div> -->
 
 
 		<?php
@@ -96,7 +60,7 @@
 				echo "</div>";
 				echo "<div class='row'>";
 				echo $form->error($email,'type');
-			 	echo $form->textField($email,'email',array('title'=>'Email','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Email'));
+			 	echo $form->textField($email,'email',array('title'=>'Correo electrónico','name'=>'getEmail[]','value'=>''.$getEmails[$key]->email.'','placeholder'=>'Correo electrónico'));
 			 	echo $form->error($email, 'email');
 			 	echo "</div>";
 
@@ -118,7 +82,7 @@
 <?php	 echo $form->dropDownList($phone,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
 														 'Particular'=>'Particular',
 																										 'Campus'=>'Campus', 'otro'=>'otro'),
-																													array('title'=>'Tipo de Teléfono','prompt'=>'Tipo de Teléfono')); ?>
+																													array('title'=>'Tipo de teléfono','prompt'=>'Tipo de teléfono')); ?>
 	</span>
 	<?php echo $form->error($phone,'type'); ?>
 	</div>
@@ -126,17 +90,17 @@
 			<div class="phoneinput">
 				<div class="row">
 				<?php
-				 echo $form->textField($phone,'country_code',array('class'=>'phones country numericOnly','required'=>true,'placeholder'=>'[52]', 'title'=>'Lada Nacional'));
-		 		 echo $form->error($phone,'country_code');
+				 echo $form->textField($phone,'country_code',array('class'=>'phones country numericOnly','placeholder'=>'[52]', 'title'=>'Lada nacional'));
 
-		 		 echo $form->textField($phone,'local_area_code',array('class'=>'phones state numericOnly','required'=>'true','placeholder'=>'[33]', 'title'=>'Lada Local'));
-		 		 echo $form->error($phone,'local_area_code');
+		 		 echo $form->textField($phone,'local_area_code',array('class'=>'phones state numericOnly','placeholder'=>'[33]', 'title'=>'Lada local'));
 
-		 		 echo $form->textField($phone,'phone_number',array('class'=>'phones phonew numericOnly','required'=>'true','placeholder'=>'[000-000-00-00]', 'title'=>'Número de Teléfono'));
-		 		 echo $form->error($phone,'phone_number');
+		 		 echo $form->textField($phone,'phone_number',array('class'=>'phones phonew numericOnly','placeholder'=>'[000-000-00-00]', 'title'=>'Número de teléfono'));
 
 		 		 echo $form->textField($phone,'extension',array('class'=>'phones extension numericOnly','placeholder'=>'[Ext]', 'title'=>'Extensión'));
-		 		 echo $form->error($phone,'extension');
+		 		 echo $form->error($phone,'phone_number');
+				 echo $form->error($phone,'country_code');
+				 echo $form->error($phone,'local_area_code');
+				 echo $form->error($phone,'extension');
 				?>
 				</div>
 			</div>
@@ -152,19 +116,19 @@
 		echo $form->dropDownList($phone,'type',array('Trabajo'=>'Trabajo','Residencial'=>'Residencial',
 															'Particular'=>'Particular',
 			                                                'Campus'=>'Campus', 'otro'=>'otro'),
-		                                                       array('title'=>'Tipo de Teléfono','prompt'=>'Tipo de Teléfono','name'=>'getTypesPhones[]','options' => array($getPhones[$key]->type=>array('selected'=>true))));
+		                                                       array('title'=>'Tipo de teléfono','prompt'=>'Tipo de teléfono','name'=>'getTypesPhones[]','options' => array($getPhones[$key]->type=>array('selected'=>true))));
 		 echo "</span>";
 		 echo $form->error($phone,'type');
 		 echo "</div>";
 		 echo "<div class='phoneinput'>";
 		 echo "<div class='row'>";
-		 echo $form->textField($phone,'country_code',array('class'=>'phones country numericOnly','name'=>'getCountryCode[]','value'=>$getPhones[$key]->country_code,'placeholder'=>'[52]', 'title'=>'Lada Nacional'));
+		 echo $form->textField($phone,'country_code',array('class'=>'phones country numericOnly','name'=>'getCountryCode[]','value'=>$getPhones[$key]->country_code,'placeholder'=>'[52]', 'title'=>'Lada nacional'));
 		 echo $form->error($phone,'country_code');
 
-		 echo $form->textField($phone,'local_area_code',array('class'=>'phones state numericOnly','name'=>'getLocalAreaCode[]','value'=>$getPhones[$key]->local_area_code,'placeholder'=>'[33]', 'title'=>'Lada Local'));
+		 echo $form->textField($phone,'local_area_code',array('class'=>'phones state numericOnly','name'=>'getLocalAreaCode[]','value'=>$getPhones[$key]->local_area_code,'placeholder'=>'[33]', 'title'=>'Lada local'));
 		 echo $form->error($phone,'local_area_code');
 
-		 echo $form->textField($phone,'phone_number',array('class'=>'phones phonew numericOnly','name'=>'getPhoneNumber[]','value'=>$getPhones[$key]->phone_number,'placeholder'=>'[000-000-00-00]', 'title'=>'Número de Teléfono'));
+		 echo $form->textField($phone,'phone_number',array('class'=>'phones phonew numericOnly','name'=>'getPhoneNumber[]','value'=>$getPhones[$key]->phone_number,'placeholder'=>'[000-000-00-00]', 'title'=>'Número de teléfono'));
 		 echo $form->error($phone,'phone_number');
 
 		 echo $form->textField($phone,'extension',array('class'=>'phones extension numericOnly','name'=>'getExtension[]','value'=>$getPhones[$key]->extension,'placeholder'=>'[Ext]', 'title'=>'Extensión'));

@@ -257,7 +257,7 @@
         'Yugoslavia' => "Yugoslavia",
         'Zambia' => "Zambia",
         'Zimbabwe' => "Zimbabwe"),
-        array('prompt'=>'Seleccionar País','title'=>'País', 'id'=>'contry', 'onchange'=>'showState()'));?>
+        array('prompt'=>'Seleccionar País','title'=>'País', 'id'=>'contry',));?>
           </span>
            <?php echo $form->error($model,'country'); ?>
 	</div>
@@ -284,7 +284,7 @@
 
     <div class="row">
 
-        <?php echo $form->textField($model,'zip_code',array('title'=>'Codigo Postal','placeholder'=>'Código Postal')); ?>
+        <?php echo $form->textField($model,'zip_code',array('title'=>'Codigo Postal','class'=>'numericOnly', 'placeholder'=>'Código Postal')); ?>
         <?php echo $form->error($model,'zip_code'); ?>
     </div>
 

@@ -116,7 +116,7 @@ class SponsorsController extends Controller {
 
 								}
 								$logo->saveAs($path . 'perfil.' . $logo->getExtensionName());
-								$logo = "sponsors/" . $id_sponsor . "/cve-hc/" . 'perfil.png';
+								$logo = "sponsors/" . $id_sponsor . " /cve-hc/" . 'perfil.png';
 								$modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo));
 								//if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo))) {
 									$log = new SystemLog();

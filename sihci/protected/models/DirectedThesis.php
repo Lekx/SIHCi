@@ -46,9 +46,10 @@ class DirectedThesis extends CActiveRecord
 			array('id_curriculum', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>250),
 			array('author, grade', 'length', 'max'=>45),
-			array('path, sector, organization, second_level', 'length', 'max'=>100),
+			array('path, sector, second_level', 'length', 'max'=>100),
+			array('organization','length', 'max'=>130),
 			array('area', 'length', 'max'=>60),
-			array('discipline', 'length', 'max'=>75),
+			array('discipline', 'length', 'max'=>70),
 			array('subdiscipline', 'length', 'max'=>100),
 			array('conclusion_date, creation_date', 'safe'),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
@@ -119,24 +120,10 @@ class DirectedThesis extends CActiveRecord
 		$criteria->order = 'title ASC';
 		if($this->searchValue)
 		{
-			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR author LIKE CONCAT('%', :searchValue , '%') OR sector LIKE CONCAT('%', :searchValue , '%') OR grade LIKE CONCAT('%', :searchValue , '%') OR organization LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR discipline LIKE CONCAT('%', :searchValue , '%') OR subdiscipline LIKE CONCAT('%', :searchValue , '%')");
+			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR author LIKE CONCAT('%', :searchValue , '%') OR conclusion_date LIKE CONCAT('%', :searchValue , '%') OR sector LIKE CONCAT('%', :searchValue , '%') OR grade LIKE CONCAT('%', :searchValue , '%') OR organization LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR discipline LIKE CONCAT('%', :searchValue , '%') OR subdiscipline LIKE CONCAT('%', :searchValue , '%')  ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
-		/*$criteria->compare('id',$this->id);
-		$criteria->compare('id_curriculum',$this->id_curriculum);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('conclusion_date',$this->conclusion_date,true);
-		$criteria->compare('author',$this->author,true);
-		$criteria->compare('path',$this->path);
-		$criteria->compare('grade',$this->grade,true);
-		$criteria->compare('sector',$this->sector,true);
-		$criteria->compare('organization',$this->organization,true);
-		$criteria->compare('second_level',$this->second_level,true);
-		$criteria->compare('area',$this->area,true);
-		$criteria->compare('discipline',$this->discipline,true);
-		$criteria->compare('subdiscipline',$this->subdiscipline,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-		*/
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

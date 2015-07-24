@@ -228,7 +228,7 @@ if(areaValue =="SOCIOLOGIA"){
 }
 
 
-    var newDiscipline ="<span class='plain-select'><select id='ArticlesGuides_discipline' class='tooltipstered' name='ArticlesGuides[discipline]' onchange='changeDiscipline()'>";
+    var newDiscipline ="<span class='plain-select'><select id='ArticlesGuides_discipline' title='Disciplina.' name='ArticlesGuides[discipline]' onchange='changeDiscipline()'>";
     newDiscipline+="<option>Seleccionar disciplina</option>";
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
@@ -237,6 +237,18 @@ if(areaValue =="SOCIOLOGIA"){
     newDiscipline+="</select></span>";
 
     $("#comboDiscipline").html(newDiscipline);
+
+     $('#ArticlesGuides_discipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
   }
 
   function changeDiscipline(){
@@ -3819,7 +3831,7 @@ if(areaValue =="SOCIOLOGIA"){
       var otrasEspecialidadesSociologia = [" "]
      disciplineValue = otrasEspecialidadesSociologia;
   }
-    var newSubdiscipline ="<span class='plain-select'><select id='ArticlesGuides_subdiscipline' class='tooltipstered' name='ArticlesGuides[subdiscipline]'>";
+    var newSubdiscipline ="<span class='plain-select'><select id='ArticlesGuides_subdiscipline' title='Subdisciplina' name='ArticlesGuides[subdiscipline]'>";
     newSubdiscipline+="<option>Seleccionar subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
@@ -3828,6 +3840,18 @@ if(areaValue =="SOCIOLOGIA"){
     newSubdiscipline+="</select></span>";
 
     $("#comboSubdiscipline").html(newSubdiscipline);
+
+    $('#ArticlesGuides_subdiscipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
 } 
 </script>
 

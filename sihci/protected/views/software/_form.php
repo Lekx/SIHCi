@@ -3523,7 +3523,7 @@ function changeSector()
        }
  
  
-         var newOrganization ="<span class='plain-select'><select id='Software_organization' class='tooltipstered' name='Software[organization]' onchange='changeSecondLevel()'>";
+         var newOrganization ="<span class='plain-select'><select id='Software_organization' title='Organización.' name='Software[organization]' onchange='changeSecondLevel()'>";
            newOrganization+="<option>Seleccionar Organización</option>";
             
             for (var item in sectorValue)
@@ -3531,6 +3531,18 @@ function changeSector()
             
         newOrganization+="</select></span>";
         $("#selectOrganization").html(newOrganization);
+
+          $('#Software_organization').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
     
 }
 
@@ -21978,7 +21990,7 @@ function changeSector()
       organizationValue = yaleUniversity;
     }
 
-    var newSecondLevel ="<span class='plain-select'><select id='Software_second_level' class='tooltipstered' name='Software[second_level]' >";
+    var newSecondLevel ="<span class='plain-select'><select id='Software_second_level' title='Segundo nivel' name='Software[second_level]' >";
     newSecondLevel+="<option>Seleccionar segundo nivel</option>";
     for (var item in organizationValue) {
         newSecondLevel +="<option>"+organizationValue[ item ]+"</option>";
@@ -21987,6 +21999,18 @@ function changeSector()
     newSecondLevel+="</select></span>";
 
     $("#selectSecondLevel").html(newSecondLevel);
+
+       $('#Software_second_level').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
 }
 
 </script>

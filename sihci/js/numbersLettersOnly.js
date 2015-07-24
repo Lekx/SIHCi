@@ -10,7 +10,14 @@ $(document).ready(function() {
         105)) {
       e.preventDefault();
     }
+  $(".numericOnly").bind('keyup input',function(){
+		var input = $(this);
+    input.val(input.val().replace(/[^0-9]/g,'') );
   });
+	$('.lettersAndNumbers').bind('keyup input',function(){
+    var input = $(this);
+    input.val(input.val().replace(/[^a-z0-9A-ZñÑ´'ÁáÉéÍíÓóÚú ]/g,'') );
+	});
 
   function changeSector() {
     var sectorValue = $("#sector option:selected").val();

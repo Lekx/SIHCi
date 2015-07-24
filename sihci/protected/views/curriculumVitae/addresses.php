@@ -3,7 +3,7 @@
 /* @var $model Addresses */
 
 $this->breadcrumbs=array(
-	'Dirección Actual'=>array('addresses'),
+	'Dirección actual'=>array('addresses'),
 );
 $controller="";
 $editUser = "";
@@ -11,7 +11,7 @@ if(isset($_GET["ide"]))
 	$editUser = "?ide=".(int)$_GET["ide"];
 
 $this->menu=array(
-	array('label'=>'Datos Personales', 'url'=>array(($controller==""?'curriculumVitae/personalData':$controller).$editUser)),
+	array('label'=>'Datos personales', 'url'=>array(($controller==""?'curriculumVitae/personalData':$controller).$editUser)),
 	array('label'=>'Documentos oficiales', 'url'=>array(($controller==""?'curriculumVitae/docsIdentity':$controller).$editUser)),
 	array('label'=>'Datos de dirección actual', 'url'=>array(($controller==""?'curriculumVitae/addresses':$controller).$editUser)),
 	array('label'=>'Datos laborales', 'url'=>array(($controller==""?'curriculumVitae/jobs':$controller).$editUser)),

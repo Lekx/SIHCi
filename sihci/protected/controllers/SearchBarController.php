@@ -133,6 +133,7 @@ $this->render('searchResults',array(
 "CVE-HC",
 "CURRICULUM VITAE",
 "INVESTIGADORES",
+"cve",
 ),
 
 
@@ -445,18 +446,19 @@ $this->render('searchResults',array(
 
 ),
 
-   "EditUnit" => array(
+   "editUnit" => array(
     "title"=>"Programas de cooperación internacional en investigación",
     "desc"=>"Presentación 
 Unidad Editorial, es una figura orgánica pertenecie nte al OPD Hospital Civil de Guadalajara.",
     "NULL",
     "Programas de cooperación internacional en investigación",
+    "unidad",
        
 ),
 
 
 
-   "ProgramsPNCP" => array(
+   "scientificMagazines" => array(
     "title"=>"Revistas Cientificas",
     "desc"=>"Publicaciones científicas
 El principal vehículo de comunicación de la ciencia es el artículo científico original; es una obra de arte intelectual: el conocimiento científico nuevo que se origina a p artir del análisis e interpretación de los datos de una investigación en ciencias de la salud debe divulgar se.",
@@ -469,14 +471,13 @@ El principal vehículo de comunicación de la ciencia es el artículo científic
 
 ),
 
-   "ProgramsPNCP" => array(
+   "vinculationWithUniversityInstitutesHospitals" => array(
     "title"=>"Vinculacion Con Universidad Institutos Y Hospitales",
     "desc"=>"Vinculacion",
     "NULL",
     "Extensión y Vinculación",
     "Vinculacion Con Universidad Institutos Y Hospitales",
     "",
-
 )
 );
 	}
@@ -495,6 +496,7 @@ El principal vehículo de comunicación de la ciencia es el artículo científic
 				    	//print_r($subvalue);
 				    	//echo"</pre>";
 				    		}
+
 			    	}
 			    }
 
@@ -505,7 +507,5 @@ El principal vehículo de comunicación de la ciencia es el artículo científic
 
 
 }
-
-
 
 ?>
