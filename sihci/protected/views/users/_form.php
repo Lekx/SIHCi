@@ -29,20 +29,22 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'names', array('placeholder' => "Nombre(s).", 'title'=>'Ingresa tu nombre'));?>
+                <?php echo $form->textField($modelPersons, 'names', array('placeholder' => "Nombre(s).", 'title'=>'Ingresa tu nombre','onKeypress'=>'return lettersOnly(event)'));?>
             </div>
         </div>
 
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'last_name1', array('placeholder' => "Apellido Paterno",'title'=>'Ingresa tu Apellido Paterno'));?>
+                <?php echo $form->textField($modelPersons, 'last_name1', array('placeholder' => "Apellido Paterno",'title'=>'Ingresa tu Apellido Paterno','onKeypress'=>'return lettersOnly(event)'));?>
             </div>
         </div>
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
-                <?php echo $form->textField($modelPersons, 'last_name2', array('placeholder' => "Apellido Materno" ,'title'=>'Ingresa tu Apellido Materno'));?>
+
+                <?php echo $form->textField($modelPersons, 'last_name2', array('placeholder' => "Apellido Materno" ,'title'=>'Ingresa tu Apellido Materno','onKeypress'=>'return lettersOnly(event)'));?>
+
             </div>
         </div>
         <input type="button" name="nextform" class="nextform action-button 1" value="Listo.." />
@@ -89,7 +91,7 @@
 
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-globe"></i>
-                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "CURP / Pasaporte", 'title'=>'CURP / Pasaporte' ));?>
+                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "CURP / Pasaporte", 'title'=>'CURP / Pasaporte','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
             </div>
            </div>
         <div class="emptycontent"></div>
@@ -101,7 +103,7 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <?php echo $form->textField($model, 'email', array('placeholder' => "Email", 'title'=>'Ingresa tu dirección de email'));?>
+                <?php echo $form->textField($model, 'email', array('placeholder' => "Correo electronico", 'title'=>'Ingresa tu dirección de correo electronico'));?>
             </div>
         </div>
         <div class="row">

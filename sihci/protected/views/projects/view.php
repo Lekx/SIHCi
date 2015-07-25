@@ -190,17 +190,21 @@ $this->menu=array(
 <div class="row commets">
 <?php
 
-if($model->status !="borrador")
+if($model->status !="BORRADOR"){
 	$this->renderPartial('../projectsReview/_form', array('model'=>$modelfollowup));
 
-foreach($followups AS $key => $value){
-	//print_r($value);
-	$user = Users::model()->findByPk($value->id_user);
-	//var_dump();
-	echo '<p>'.$user->persons[0]->names.' '.$user->persons[0]->last_name1.' '.$user->persons[0]->last_name2.' ('.$user->email.') escribió: <p>';
-	echo $value['followup'].'<br>';
-	echo '<small>Creado el '.$value['creation_date'].' '.(empty($value['url_doc']) ? "" : "<p><a href=../../".$value['url_doc']." target = '_blank'>Ver archivo disponible</a>" ).'<p></small><hr></p>';
+	foreach($followups AS $key => $value){
+		//print_r($value);
+		$user = Users::model()->findByPk($value->id_user);
+		//var_dump();
+		echo '<p>'.$user->persons[0]->names.' '.$user->persons[0]->last_name1.' '.$user->persons[0]->last_name2.' ('.$user->email.') escribió: <p>';
+		echo $value['followup'].'<br>';
+		echo '<small>Creado el '.$value['creation_date'].' '.(empty($value['url_doc']) ? "" : "<p><a href=../../".$value['url_doc']." target = '_blank'>Ver archivo disponible</a>" ).'<p></small><hr></p>';
 
+	}
+
+}else{
+	echo "Usted podrá generar comentarios acerca del proyecto una vez que lo envie a evaluación.";
 }
 ?>
 </div>

@@ -225,13 +225,31 @@
 
 	$userRol = Yii::app()->user->Rol->alias;
 	$userId = Yii::app()->user->id;
+	$redirectUrl = "projectsReview/review/".(isset($_GET['id']) ? $_GET['id'] : 0);
+	
 
-	if($userRol == "COMBIO" || $userRol == "COMINV" || $userRol == "COMITE")
+	if($userRol == "COMBIO" || $userRol == "COMINV" || $userRol == "COMETI")
 		$userRol = "COMITE";
 
-	echo $evaluationStep;
+/*	echo "<div style='border:1px solid #333;background-color:#333;width:50%;padding:10px;color:white;border-radius:5px;'>Paso: ".$evaluationStep." Rol: ".$evaluationRules[$evaluationStep]["userType"]." Acciones: ";
+	print_r($evaluationRules[$evaluationStep]["actions"]);
+	echo "</div>";*/
 
-	echo $evaluationRules[$evaluationStep]["userType"];
+			$conexion = Yii::app()->db;
+			$commsCheck = $conexion->createCommand("
+			SELECT DISTINCT pc.committee
+			FROM projects_committee AS pc
+			WHERE pc.id_project = '".$model->id."'")->queryAll();
+			$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee'); 
+
+			if(count($commsCheck)){
+				echo "Comités asignados a este proyecto:<br>";
+				echo array_key_exists("COMETI", $commsCheck) ? " - Comité de Ética en Investigación.<br>" : "";
+				echo array_key_exists("COMINV", $commsCheck) ? " - Comité de Investigación.<br>" : "";
+				echo array_key_exists("COMBIO", $commsCheck) ? " - Comité de Bioseguridad.<br>" : "";
+			}
+
+
 
 /* EL STEP DEL PROYECTO EN PROJECT FOLLOWUPS DEBE INICIAR EN CERO */
 /* AGREGAMOS  UNO  PARA  SABER  EL  ESTADO  ACTUAL */
@@ -247,234 +265,443 @@ foreach ($roles as $key => $userRol) {
 echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ROL: ".$userRol." - - <br>";
 	
 */
+if($model->status != "MODIFICAR"){
 
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
-			//echo "<hr>FORM ASIGNAR COMITÉS";
-			$conexion = Yii::app()->db;
+	if($model->is_sponsored == 1){	
+		echo "claps";
+		$fileTypes = array("3"=>"la minuta", "4"=>"el acta de aprobación","12"=>"el dictamen de aprobación");
 
-
-			$commsCheck = $conexion->createCommand("
-			SELECT DISTINCT pc.committee
-			FROM projects_committee AS pc
-			WHERE pc.id_project = '".$model->id."'")->queryAll();
-
-			$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee');    
-
-			$comms = $conexion->createCommand("
-			SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name 
-			FROM users AS u 
-			JOIN persons AS p on p.id_user=u.id 
-			JOIN roles AS r on u.id_roles=r.id 
-			WHERE r.alias LIKE '%COM%'")->queryAll();
-			//A G R E G A R WHERE UH DE PROYECTO IGUAL A UH DEL MIEMBRO DEL COMMITTEE
-
-			$form=$this->beginWidget('CActiveForm', array('id'=>'committees-form','enableAjaxValidation'=>true,));
-
-				if($evaluationStep == 2)
-					$disable = "";
-				else
-					$disable = "disabled";
-				?>
-				<div class="row commWrapper" id="formCommittees" style="display:<?php echo $model->folio == "-1" ? "none" : "block" ?>;">
-				<div class="row">
-				Asignar a los siguientes comités para la evaluación de éste proyecto:
-				</div>
-				<div class="row comm">
-				<label>
-				<input type="checkbox" name="designate[COMBIO]" <?php echo $disable." ".(array_key_exists('COMBIO',$commsCheck) ? "checked" : "");?> > Comité de Bioseguridad<br>
-				<small>Se requerirá la aprobación de las siguientes personas:<br>
-				<?php 
-				foreach ($comms as $key => $value) {
-				if($value["alias"] == "COMBIO")
-				echo "<li>".$value["fullname"]."</li>";
-				}
-				?>
-				</small>
-				</label>
-				</div>
-				<div class="row comm">
-				<label>
-				<input type="checkbox" name="designate[COMETI]"  <?php echo $disable." ".(array_key_exists('COMETI',$commsCheck) ? "checked" : "");?> > Comité de Ética en investigación<br>
-				<small>Se requerirá la aprobación de las siguientes personas:<br>
-				<?php 
-				foreach ($comms as $key => $value) {
-				if($value["alias"] == "COMETI")
-				echo "<li>".$value["fullname"]."</li>";
-				}
-				?>
-				</small>
-				</label>
-				</div>
-				<div class="row comm">
-				<label>
-				<input type="checkbox" name="designate[COMINV]" <?php echo $disable." ".(array_key_exists('COMINV',$commsCheck) ? "checked" : "");?> > Comité de investigación<br>
-				<small>Se requerirá la aprobación de las siguientes personas:<br>
-				<?php 
-				foreach ($comms as $key => $value) {
-				if($value["alias"] == "COMINV")
-				echo "<li>".$value["fullname"]."</li>";
-				}
-				?>
-				</small>
-				</label>
-				</div>
-				<?php
-				if($evaluationStep == 2)
-				echo CHtml::htmlButton('Asignar Comités',array(
-					'onclick'=>'javascript: send("committees-form","projectsReview/assignCommittees", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$_GET['id'].'","asignarComites,acceptEvaButton")',
-					'class'=>'savebutton','id'=>'asignarComites'
-				));
-				?>
-				</div>
-				<?
-			$this->endWidget(); 
-
-	}
-
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
-			//echo "<hr>FORM ASIGNAR FOLIO";
-			$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,)); 
-				?>
-				<div class="row">
-					<?php echo $form->labelEx($model,'folio'); ?>
-					<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
-					<?php echo $form->error($model,'folio'); ?>
-				</div>
-
-				<?php
-				echo CHtml::htmlButton('Asignar número de folio',array(
-					'onclick'=>'javascript: send("folioNumber-form","projectsReview/setFolioNumber", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$_GET['id'].'","folioNumber-form,formCommittees")',
-					'class'=>'savebutton','id'=>'asignarFolio'
-				));
-			$this->endWidget(); 
-	}
-
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 6){
-			//echo "<hr>FORM ASIGNAR NÚMERO DE REGISTRO";
-			$form=$this->beginWidget('CActiveForm', array('id'=>'regNumber-form','enableAjaxValidation'=>true,)); 
-				?>
-				<div class="row">
-					<?php echo $form->labelEx($model,'registration_number'); ?>
-					<?php echo $form->textField($model,'registration_number',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->registration_number =='-1' ? "" : $model->registration_number)); ?>
-					<?php echo $form->error($model,'registration_number'); ?>
-				</div>
-
-				<?php
-				echo CHtml::htmlButton('Asignar número de folio',array(
-					'onclick'=>'javascript: send("regNumber-form","projectsReview/setRegNumber", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$_GET['id'].'","regNumber-form,asignarFolio")',
-					'class'=>'savebutton','id'=>'asignarRegistro'
-				));
-			$this->endWidget();
-	}
-
-
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 1){
-			//echo "<hr>BOTÓN RECHAZAR";
-			echo "<div class='row' style='margin-left: 25px !important'>";
-				echo CHtml::htmlButton('No aprobar',array(
-					'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',reject");',
-					'class'=>'savebuttonp',
-				));		
-			echo "</div>";
-
-	}
-
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1 || $evaluationStep == 2 || $evaluationStep == 6 || $evaluationStep == 10)){
-			//echo "<hr>BOTÓN ENVIAR";
-			echo "<div class='row' style='margin-left: 30px !important'>";
-				echo " ".CHtml::htmlButton('Aprobar',array(
-					'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',accept");',
-					'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
-
-				));
-			echo "</div>";
-
-	}
-
-	$fileTypes = array("3"=>"la minuta", "4"=>"el acta de aprobación","12"=>"el dictamen de aprobación");
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 4 || $userRol && $evaluationStep == 12) ){
-			//echo "<hr>BOTÓN RECHAZAR";
-
-		$conexion = Yii::app()->db;
-		$checkForDoc = $conexion->createCommand("
-		SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
-		AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
-
-		if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
-			echo "<div class='row' style='margin-left: 25px !important'>";
-				echo CHtml::htmlButton('No aprobar',array(
-					'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',reject");',
-					'class'=>'savebuttonp',
-				));		
-			echo "</div>";
-
-		}else{
-			echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
-		}
-	}
-
-
-
-
-	// botones solo para comités 			// botones solo para comités
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 11)){
-		
-		$conexion = Yii::app()->db;
-		$checkForDoc = $conexion->createCommand("
-		SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." 
-		AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
-		print_r($checkForDoc);
-		if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
-
-			if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3){
-					//echo "<hr>BOTÓN RECHAZAR";
-					echo "<div class='row' style='margin-left: 25px !important'>";
-						echo CHtml::htmlButton('No aprobar',array(
-							'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',reject");',
-							'class'=>'savebuttonp',
-						));		
-					echo "</div>";
-			}
-
-			if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 11)){
-					//echo "<hr>BOTÓN RECHAZAR";
-				$userId = 17;
-				$committeeCheck =ProjectsCommittee::model()->findByAttributes(array('id_project'=>$model->id,'id_user_reviewer'=>$userId));
-
-				echo $committeeCheck["status"];
-
+		// asignación de folio, comités y aprobación en paso 2.
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
+				if($model->folio != -1 && count($commsCheck)>0){
 					echo "<div class='row' style='margin-left: 30px !important'>";
 						echo " ".CHtml::htmlButton('Aprobar',array(
-							'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',accept");',
+							'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 							'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
-
 						));
 					echo "</div>";
-			}
 
-		}else if($evaluationStep !=11){
-			echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+				}else if($model->folio != -1){
+
+					$comms = $conexion->createCommand("
+					SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name 
+					FROM users AS u 
+					JOIN persons AS p on p.id_user=u.id 
+					JOIN roles AS r on u.id_roles=r.id 
+					WHERE r.alias LIKE '%COM%'")->queryAll();
+
+					$form=$this->beginWidget('CActiveForm', array('id'=>'committees-form','enableAjaxValidation'=>true,));
+
+					//if($evaluationStep == 2)
+						$disable = "";
+				//	else
+				//		$disable = "disabled";
+					?>
+					<div class="row commWrapper" id="formCommittees" >
+					<div class="row">
+					Asignar a los siguientes comités para la evaluación de éste proyecto:
+					</div>
+					<div class="row comm">
+					<label>
+					<input type="checkbox" name="designate[COMBIO]" <?php echo $disable." ".(array_key_exists('COMBIO',$commsCheck) ? "checked" : "");?> > Comité de Bioseguridad<br>
+					<small>Se requerirá la aprobación de las siguientes personas:<br>
+					<?php 
+					foreach ($comms as $key => $value) {
+					if($value["alias"] == "COMBIO")
+					echo "<li>".$value["fullname"]."</li>";
+					}
+					?>
+					</small>
+					</label>
+					</div>
+					<div class="row comm">
+					<label>
+					<input type="checkbox" name="designate[COMETI]"  <?php echo $disable." ".(array_key_exists('COMETI',$commsCheck) ? "checked" : "");?> > Comité de Ética en investigación<br>
+					<small>Se requerirá la aprobación de las siguientes personas:<br>
+					<?php 
+					foreach ($comms as $key => $value) {
+					if($value["alias"] == "COMETI")
+					echo "<li>".$value["fullname"]."</li>";
+					}
+					?>
+					</small>
+					</label>
+					</div>
+					<div class="row comm">
+					<label>
+					<input type="checkbox" name="designate[COMINV]" <?php echo $disable." ".(array_key_exists('COMINV',$commsCheck) ? "checked" : "");?> > Comité de investigación<br>
+					<small>Se requerirá la aprobación de las siguientes personas:<br>
+					<?php 
+					foreach ($comms as $key => $value) {
+					if($value["alias"] == "COMINV")
+					echo "<li>".$value["fullname"]."</li>";
+					}
+					?>
+					</small>
+					</label>
+					</div>
+					<?php
+					//if($evaluationStep == 2)
+					echo CHtml::htmlButton('Asignar Comités',array(
+						'onclick'=>'javascript: send("committees-form","projectsReview/assignCommittees", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","asignarComites,acceptEvaButton")',
+						'class'=>'savebutton','id'=>'asignarComites'
+					));
+					?>
+					</div>
+					<?
+					$this->endWidget(); 
+
+				}else{
+					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,)); 
+						?>
+						<div class="row">
+							<?php echo $form->labelEx($model,'folio'); ?>
+							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
+							<?php echo $form->error($model,'folio'); ?>
+						</div>
+						<?php
+						echo CHtml::htmlButton('Asignar número de folio',array(
+							'onclick'=>'javascript: send("folioNumber-form","projectsReview/setFolioNumber","'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","folioNumber-form,formCommittees")',
+							'class'=>'savebutton','id'=>'asignarFolio'
+						));
+					$this->endWidget(); 
+				}
+		} // fin del paso 2
+
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 6){
+			if($model->registration_number == "-1"){
+				$form=$this->beginWidget('CActiveForm', array('id'=>'regNumber-form','enableAjaxValidation'=>true,)); 
+					?>
+					<div class="row">
+						<?php echo $form->labelEx($model,'registration_number'); ?>
+						<?php echo $form->textField($model,'registration_number',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->registration_number =='-1' ? "" : $model->registration_number)); ?>
+						<?php echo $form->error($model,'registration_number'); ?>
+					</div>
+					<?php
+					echo CHtml::htmlButton('Asignar número de registro',array(
+						'onclick'=>'javascript: send("regNumber-form","projectsReview/setRegNumber", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","regNumber-form,asignarFolio")',
+						'class'=>'savebutton','id'=>'asignarRegistro'
+					));
+				$this->endWidget();
+				}else{
+					echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('Aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+					echo "</div>";
+				}
 		}
 
-	}
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 1 ){
+				echo "<div class='row' style='margin-left: 25px !important'>";
+					echo CHtml::htmlButton('No aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+						'class'=>'savebuttonp',
+					));		
+				echo "</div>";
+		}
+
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol &&  $evaluationStep == 4){
+			$conexion = Yii::app()->db;
+			$checkForDoc = $conexion->createCommand("
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." AND type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
+
+			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('Aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+				echo "</div>";
+			}else{
+				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+			}
+		}
+
+
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1 || $evaluationStep == 10)){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('Aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+				echo "</div>";
+		}
+
+		
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 12 ){ // aqui quite el evaluation step al 4
+			$conexion = Yii::app()->db;
+			$checkForDoc = $conexion->createCommand("
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
+			AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
+
+			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('Aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+				echo "</div>";
+
+			}else{
+				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+			}
+		}
+
+		// botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités
+		// botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 11)){
+			
+			$conexion = Yii::app()->db;
+			$checkForDoc = $conexion->createCommand("
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." 
+			AND type = 'mandatory' AND step_number = 2 AND url_doc IS NOT NULL")->queryAll()[0];
+
+			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$model->id,"id_user_reviewer"=>$userId))->status;
+
+			if($commStatus!="pendiente")
+				echo "<br>Usted ya ha <b>".$commStatus."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
+			
+			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0 ){
+
+				if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3 && ($commStatus == "aprobado" || $commStatus == "pendiente")){
+						//echo "<hr>BOTÓN RECHAZAR";
+						echo "<div class='row' style='margin-left: 25px !important'>";
+							echo CHtml::htmlButton('No aprobar',array(
+								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+								'class'=>'savebuttonp',
+							));		
+						echo "</div>";
+				}
+
+				if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 11)){
+					if($commStatus == "rechazado" || $commStatus == "pendiente"){
+						echo "<div class='row' style='margin-left: 30px !important'>";
+							echo " ".CHtml::htmlButton('Aprobar',array(
+								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+								'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+							));
+						echo "</div>";
+					}
+				}
+
+			}else if($evaluationStep !=11){
+				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+			}
+
+		}
+
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 5 || $evaluationStep == 7 || $evaluationStep == 8 || $evaluationStep == 9)){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('REVISAR',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',review");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+
+					));
+				echo "</div>";
+
+		} 
+
+	}else{ // FIN DE REGLAS PARA PATROCINADOS    E   I N I C I O   PARA PROYECTOS   N O   PATROCINADOS
+		$fileTypes = array("4"=>"EL DOC DE DIVUH", "7"=>"el acta de aprobación","11"=>"el dictamen de aprobación","13"=>"EL DOC DE SEUH");
+
+		// botones review que no hacen nada
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 5 || $evaluationStep == 6 || $evaluationStep == 8 || $evaluationStep == 9 || $evaluationStep == 10 || $evaluationStep == 14)){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('REVISAR',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',review");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+
+					));
+				echo "</div>";
+
+		}
+
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1)){
+				echo "<div class='row' style='margin-left: 25px !important'>";
+					echo CHtml::htmlButton('No aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+						'class'=>'savebuttonp',
+					));		
+				echo "</div>";
+
+				echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('Aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+				echo "</div>";
+		}
+
+// asignación de folio, comités y aprobación en paso 2.
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
+				if($model->folio != -1 && count($commsCheck)>0){
+					echo "<div class='row' style='margin-left: 30px !important'>";
+						echo " ".CHtml::htmlButton('Aprobar',array(
+							'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+							'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+						));
+					echo "</div>";
+
+				}else if($model->folio != -1){
+
+					$comms = $conexion->createCommand("
+					SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name 
+					FROM users AS u 
+					JOIN persons AS p on p.id_user=u.id 
+					JOIN roles AS r on u.id_roles=r.id 
+					WHERE r.alias LIKE '%COM%'")->queryAll();
+
+					$form=$this->beginWidget('CActiveForm', array('id'=>'committees-form','enableAjaxValidation'=>true,));
+
+					//if($evaluationStep == 2)
+						$disable = "";
+				//	else
+				//		$disable = "disabled";
+					?>
+					<div class="row commWrapper" id="formCommittees" >
+					<div class="row">
+					Asignar a los siguientes comités para la evaluación de éste proyecto:
+					</div>
+					<div class="row comm">
+					<label>
+					<input type="checkbox" name="designate[COMBIO]" <?php echo $disable." ".(array_key_exists('COMBIO',$commsCheck) ? "checked" : "");?> > Comité de Bioseguridad<br>
+					<small>Se requerirá la aprobación de las siguientes personas:<br>
+					<?php 
+					foreach ($comms as $key => $value) {
+					if($value["alias"] == "COMBIO")
+					echo "<li>".$value["fullname"]."</li>";
+					}
+					?>
+					</small>
+					</label>
+					</div>
+					<div class="row comm">
+					<label>
+					<input type="checkbox" name="designate[COMETI]"  <?php echo $disable." ".(array_key_exists('COMETI',$commsCheck) ? "checked" : "");?> > Comité de Ética en investigación<br>
+					<small>Se requerirá la aprobación de las siguientes personas:<br>
+					<?php 
+					foreach ($comms as $key => $value) {
+					if($value["alias"] == "COMETI")
+					echo "<li>".$value["fullname"]."</li>";
+					}
+					?>
+					</small>
+					</label>
+					</div>
+					<div class="row comm">
+					<label>
+					<input type="checkbox" name="designate[COMINV]" <?php echo $disable." ".(array_key_exists('COMINV',$commsCheck) ? "checked" : "");?> > Comité de investigación<br>
+					<small>Se requerirá la aprobación de las siguientes personas:<br>
+					<?php 
+					foreach ($comms as $key => $value) {
+					if($value["alias"] == "COMINV")
+					echo "<li>".$value["fullname"]."</li>";
+					}
+					?>
+					</small>
+					</label>
+					</div>
+					<?php
+					//if($evaluationStep == 2)
+					echo CHtml::htmlButton('Asignar Comités',array(
+						'onclick'=>'javascript: send("committees-form","projectsReview/assignCommittees", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","asignarComites,acceptEvaButton")',
+						'class'=>'savebutton','id'=>'asignarComites'
+					));
+					?>
+					</div>
+					<?
+					$this->endWidget(); 
+
+				}else{
+					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,)); 
+						?>
+						<div class="row">
+							<?php echo $form->labelEx($model,'folio'); ?>
+							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
+							<?php echo $form->error($model,'folio'); ?>
+						</div>
+						<?php
+						echo CHtml::htmlButton('Asignar número de folio',array(
+							'onclick'=>'javascript: send("folioNumber-form","projectsReview/setFolioNumber","'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","folioNumber-form,formCommittees")',
+							'class'=>'savebutton','id'=>'asignarFolio'
+						));
+					$this->endWidget(); 
+				}
+		} // fin del paso 2
+
+		// botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités
+		// botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 12)){
+			//echo $evaluationStep."pendejo";
+			/*
+			$conexion = Yii::app()->db;
+			$checkForDoc = $conexion->createCommand("
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." 
+			AND type = 'mandatory' AND step_number = 2 AND url_doc IS NOT NULL")->queryAll()[0];
+*/
+			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$model->id,"id_user_reviewer"=>$userId))->status;
+
+			if($commStatus!="pendiente")
+				echo "<br>Usted ya ha <b>".$commStatus."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
+			
+			/*if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0 ){
+
+				if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3 && ($commStatus == "aprobado" || $commStatus == "pendiente")){
+						//echo "<hr>BOTÓN RECHAZAR";
+						echo "<div class='row' style='margin-left: 25px !important'>";
+							echo CHtml::htmlButton('No aprobar',array(
+								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+								'class'=>'savebuttonp',
+							));		
+						echo "</div>";
+				} */
+
+				if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 12)){
+					if($commStatus == "rechazado" || $commStatus == "pendiente"){
+						echo "<div class='row' style='margin-left: 30px !important'>";
+							echo " ".CHtml::htmlButton('Aprobar',array(
+								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+								'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+							));
+						echo "</div>";
+					}
+				}
+
+			/*}else if($evaluationStep !=11){
+				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+			}*/
+
+		}
+
+			// REGLAS PARA LOS QUE SON OBLIGADOS A SUBIR ARCHIVO ANTES DE APROBAR
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 4 || $evaluationStep == 7 || $evaluationStep == 11 || $evaluationStep == 13)){ 
+			$conexion = Yii::app()->db;
+			$checkForDoc = $conexion->createCommand("
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
+			AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
+
+			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('Aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+				echo "</div>";
+
+			}else{
+				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+			}
+		}
+
+
+	} 
 
 
 
 
-
-	if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 5 || $evaluationStep == 7 || $evaluationStep == 8 || $evaluationStep == 9)){
-			//echo "<hr>BOTÓN REVISAR(NO HACE NADA)";
-			echo "<div class='row' style='margin-left: 30px !important'>";
-				echo " ".CHtml::htmlButton('REVISAR',array(
-					'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',review");',
-					'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
-
-				));
-			echo "</div>";
-
-	}
-
-
+}
 
 
 
@@ -532,7 +759,7 @@ echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 <div class="row">
-<?php $this->renderPartial('../projectsReview/_form', array('model'=>$modelfollowup,'evaluationStep'=>$evaluationStep)); ?>
+<?php $this->renderPartial('../projectsReview/_form', array('model'=>$modelfollowup,'evaluationStep'=>$evaluationStep,'is_sponsored'=>$model->is_sponsored)); // modifed, added las param, may be removed ?>
 </div>
 
 <!--  COMENTARIOS -->

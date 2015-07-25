@@ -30,12 +30,12 @@
 <div class="docs">
 
 	<div class="row">
-		<?php echo $form->textField($model,'SNI',array('title'=>'Nombramiento SNI','maxlength'=>11, 'placeholder'=>'Nombramiento SNI')); ?>
+		<?php echo $form->textField($model,'SNI',array('title'=>'Nombramiento SNI','maxlength'=>11,'class'=>'numericOnly', 'placeholder'=>'Nombramiento SNI')); ?>
 		<?php echo $form->error($model,'SNI'); ?>
 	</div>
 
 	<div class="row">
-			<?php echo $form->textField($model,'researcher_title',array('title'=>'Nombramiento en el Hopital Civil','size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento en el Hospital Civil")); ?>
+			<?php echo $form->textField($model,'researcher_title',array('class'=>'lettersAndNumbers','title'=>'Nombramiento en el Hopital Civil','size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento en el Hospital Civil")); ?>
 		<?php echo $form->error($model,'researcher_title'); ?>
 	</div>
 

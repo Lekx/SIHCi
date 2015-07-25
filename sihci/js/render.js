@@ -93,16 +93,7 @@ $(document).ready(function() {
 		$(".createHome").show();
 		$("#users-form").show();
 		$(document).mouseup(function(e) {
-			var container = $("#users-form");
 
-
-			if (container.is(e.target) // if the target of the click isn't the container...
-				&& container.has(e.target).length === 0) // ... nor a descendant of the container
-			{
-				container.hide();
-				$(".createHome").hide();
-
-			}
 		});
 		$(".glyphicon").css("color", "#1EB9C0");
 		$("#yt0").css("background-color", "#0E3152 !important");
