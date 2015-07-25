@@ -50,7 +50,10 @@ chart = new Highcharts.Chart({
                         (function(i) {
                             var item = legend.allItems[i].legendItem;
                             item.on('mouseover', function (e) {
-                                $(".tooltipchart").show();
+                              var childPosition = $(".highcharts-legend-item text:eq( "+i+" ) ").offset();
+                               $(".tooltipchart").css("top",childPosition.top+20);
+                               $(".tooltipchart").css("left",childPosition.left);
+                               $(".tooltipchart").show();
                             }).on('mouseout', function (e) {
                                 $(".tooltipchart").hide();
                             });

@@ -1,5 +1,7 @@
  function send(form, actionUrl, id, redirectUrl, extras, extraCall) {
 
+
+   $('.tooltipster-base').hide();
    var formData;
    if (form != '')
      formData = new FormData($("#" + form)[0]);
@@ -42,13 +44,14 @@
          }
          $(".error").hide();
          $(".errorMessage").hide();
+         $('.tooltipster-base').hide();
          $(".successdiv").show();
 
-         if(typeof extraCall != 'undefined'){
-          var ids = extraCall.split(",");
-          alert(ids[0]+" "+ids[1] +" ");
-            $("#"+ids[0]).hide();
-            $("#"+ids[1]).show();
+         if (typeof extraCall != 'undefined') {
+           var ids = extraCall.split(",");
+           alert(ids[0] + " " + ids[1] + " ");
+           $("#" + ids[0]).hide();
+           $("#" + ids[1]).show();
          }
 
          $('.backbut').unbind().click(function() {
