@@ -41,8 +41,8 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
  						    'datatype'=> 'json',
  						    'success' => "function( data )
  						                  {
- 																 $('#projects-followups-form-create').show();
- 																 $('#projects-followups-form').hide();
+											 $('#projects-followups-form-create').show();
+											 $('#projects-followups-form').hide();
  						                     $('#follow').hide();
  						                     $('#followup').hide();
 																 $('#comments').hide();

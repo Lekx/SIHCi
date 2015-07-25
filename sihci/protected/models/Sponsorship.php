@@ -120,7 +120,7 @@ class Sponsorship extends CActiveRecord
 	public function customSearch()
 	{
 		$criteria=new CDbCriteria;
-		$curriculumId = Yii::app()->user->id;
+		$curriculumId = Users::model()->findByPk(Yii::app()->user->id)->curriculums[0]['id'];
 		$criteria->condition='id_user_researcher = '.$curriculumId;
 		$criteria->order = 'id DESC';
 		if($this->searchValue)

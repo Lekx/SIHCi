@@ -9,4 +9,5 @@
 		foreach ($results as $key => $value){
 					Users::model()->updateByPk($value['id_user'], array("status"=>"suspendido"));
 		}
-?>			
+
+?>

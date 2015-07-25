@@ -9,6 +9,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
 
 <script type="text/javascript">
 
+
   $(document).ready(function() {
       $(".numericOnly").keydown(function (e) {
           if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -36,14 +37,17 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/booksChapters/js/s
         {
           tecla_especial = true;
           break;
-            } 
+            }
     }
- 
+
         if(letras.indexOf(tecla)==-1 && !tecla_especial)
         return false;
 }
 
+
   function changeArea(){
+
+
 
     var areaValue = $("#area option:selected").val();
 
@@ -236,6 +240,7 @@ if(areaValue =="SOCIOLOGIA"){
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
     }
+
 
     newDiscipline+="</select></span>";
 
