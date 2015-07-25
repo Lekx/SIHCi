@@ -575,7 +575,7 @@
                 </div>
                 <div class="footermenuI">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PBitacora.png alt="home">', array('account/systemLog'));?>
-                    <span>Bitacora</span>
+                    <span>Bitácora</span>
                 </div>
                 <div class="footermenuI logout">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCerrarCuenta.png alt="home">', array('site/logout'));?>

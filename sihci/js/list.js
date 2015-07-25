@@ -1,13 +1,5 @@
 $(document).ready(function() {
-	var str = $("#logoutext").text();
-	$('#logocuentas4').on({
-		'mouseenter': function() {
-			$('#logoutext').html("Ingresar a tu perfil");
-		},
-		'mouseleave': function() {
-			$('#logoutext').html(str);
-		}
-	});
+
 	// body...
 	$('.cbp-hssubmenu1 > li').hide();
 

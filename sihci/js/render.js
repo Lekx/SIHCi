@@ -9,6 +9,7 @@ $(document).ready(function() {
 			$("#yt0").css("background-color", "#0E3152 !important");
 			$("#yt0").val("Ingresar a mi cuenta");
 			$('[id^=LoginForm_]').val('');
+			$('.tooltipster-base').hide();
 
 		}
 	});
@@ -17,6 +18,7 @@ $(document).ready(function() {
 		$("#login-form").show();
 		$(document).mouseup(function(e) {
 			var container = $("#login-form");
+
 
 			if (!container.is(e.target) // if the target of the click isn't the container...
 				&& container.has(e.target).length === 0) // ... nor a descendant of the container
@@ -93,7 +95,8 @@ $(document).ready(function() {
 		$(document).mouseup(function(e) {
 			var container = $("#users-form");
 
-			if (!container.is(e.target) // if the target of the click isn't the container...
+
+			if (container.is(e.target) // if the target of the click isn't the container...
 				&& container.has(e.target).length === 0) // ... nor a descendant of the container
 			{
 				container.hide();

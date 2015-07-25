@@ -2274,6 +2274,13 @@ div.pager span.active
 	top:700px;
 	left:1000px;
 	z-index:9999;
+
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #0E3152;
+  background: #0E3152;
+  color: #fff;
+  width: 190px !important;
 }
 #Languages_native_language,#Languages_is_traducer, #Languages_is_teacher
 {
