@@ -30,35 +30,24 @@
 <div class="docs">
 
 	<div class="row">
-		<?php echo $form->textField($model,'SNI',array('title'=>'Nombramiento SNI','maxlength'=>11, 'placeholder'=>'Nombramiento SNI')); ?>
+		<?php echo $form->textField($model,'SNI',array('title'=>'Nombramiento SNI','maxlength'=>11,'class'=>'numericOnly', 'placeholder'=>'Nombramiento SNI')); ?>
 		<?php echo $form->error($model,'SNI'); ?>
 	</div>
 
 	<div class="row">
-			<?php echo $form->textField($model,'researcher_title',array('title'=>'Nombramiento en el Hopital Civil','size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento en el Hospital Civil")); ?>
+			<?php echo $form->textField($model,'researcher_title',array('class'=>'lettersAndNumbers','title'=>'Nombramiento en el Hopital Civil','size'=>60,'maxlength'=>100, 'placeholder'=>"Nombramiento en el Hospital Civil")); ?>
 		<?php echo $form->error($model,'researcher_title'); ?>
 	</div>
 
 </div>
 
 	<div class="row buttons">
-		<?php echo CHtml::ajaxButton ('Guardar',CController::createUrl('curriculumVitae/commission'),
-				array(
-					'dataType'=>'json',
-             		'type'=>'post',
-             		'success'=>'function(data)
-             		 {
-
-                         if(data.status=="success")
-                         {
-		                      $(".successdiv").show();
-                         }
-                         else
-                         {
-	                     	  	$(".errordiv").show();
-	                     }
-                  	}'),array('class'=>'savebutton'));
-		?>
+		<?php echo CHtml::htmlButton('Guardar',array(
+							 'onclick'=>'send("commission-form", "curriculumVitae/commission", "'.$model->id.'","curriculumVitae/commission","");',
+								//'id'=> 'post-submit-btn',
+							 'class'=>'savebutton',
+					 ));
+			 ?>
 
 <?php echo CHtml::link('Cancelar',array('curriculumVitae/commission'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>

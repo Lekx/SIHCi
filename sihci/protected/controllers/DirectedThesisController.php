@@ -71,7 +71,6 @@
                     { 
                         if($model->path != '')
                         {                                                                         //.doc                                         .docx                                                                                              .odt                                        .jpg y .jpeg                          .png                        
-     /*Quitar esta todo el if jona  */ // if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png'){
                             $model->path = CUploadedFile::getInstanceByName('DirectedThesis[path]');
                             $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/DirectedThesis/';
                       
@@ -90,18 +89,8 @@
                                 echo CJSON::encode(array('status'=>'success'));
                                 Yii::app()->end();
                                     
-                             /*QUITAR*/      /* if(!isset($_GET['ajax']))
-                                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-                                    /*echo CJSON::encode(array('status'=>'200'));
-                                    $this->redirect(array('admin','id'=>$model->id));
-                                    Yii::app()->end();*/
                             }                   
                          
-                        //}//QUITAR con
-                        /*else{
-                            echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png";
-                  
-                        } */ //QUITAR IF
                         }//path != ''
                         else 
                         {
@@ -114,11 +103,7 @@
                                
                                 echo CJSON::encode(array('status'=>'success'));
                                 Yii::app()->end();
-                               /* if(!isset($_GET['ajax']))
-                                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-                                /*echo CJSON::encode(array('status'=>'200'));
-                                $this->redirect(array('admin','id'=>$model->id));
-                                Yii::app()->end();*/
+                              
                             } 
                         }                     
                     }//if validate
@@ -129,7 +114,6 @@
                    
                          Yii::app()->end();
                     } 
-
             }
                 
             if(!isset($_POST['ajax']))
@@ -162,9 +146,6 @@
                 {
                     if ($model->path != "")
                     {
-
-                   /*QUITAR*/    // if($model->path->type == 'application/pdf' || $model->path->type == 'application/msword' || $model->path->type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || $model->path->type == 'application/vnd.oasis.opendocument.text' || $model->path->type == 'image/jpeg' || $model->path->type == 'image/png'){
-
                          if(!empty($actual_path))
                             unlink(YiiBase::getPathOfAlias("webroot").$actual_path);
 
@@ -177,9 +158,6 @@
 
                             $model->path->saveAs($urlFile.'Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName());
                             $model->path = '/users/'.Yii::app()->user->id.'/DirectedThesis/Doc_aprobatorio'.date('d-m-Y_H-i-s').'.'.$model->path->getExtensionName();                                    
-                        /*QUITAR*//*else 
-                                        }
-                            echo "Tipo de archivo no valido, solo se admiten pdf, doc, docx, odt, jpg, jpeg, png";*/
                     }
                     else {                     
                       $model->path = $actual_path;    
@@ -194,11 +172,6 @@
 
                                 echo CJSON::encode(array('status'=>'success'));
                                 Yii::app()->end();    
-                          /*QUITAR*/ /*  if(!isset($_GET['ajax']))
-                                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-                            /*echo CJSON::encode(array('status'=>'200'));
-                            $this->redirect(array('admin','id'=>$model->id));
-                            Yii::app()->end();*/
                     }                   
                 }    
                 else {

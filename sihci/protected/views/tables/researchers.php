@@ -132,7 +132,7 @@ function change(){
 	<select id="valueResearchersSNI" onchange="change()">
 	  <option value="total">Total Investigadores SNI</option>
 	  <option value="SNI:">Investigadores con SNI</option>
-	  <option value="N/A">Investigadores sin SNI</option>
+	  <option value="No SNI">Investigadores sin SNI</option>
 
 	</select>
 	</span>
@@ -141,8 +141,8 @@ function change(){
 		<span class="plain-select3">
 	<select id="valueHospital" onchange="change()">
 	  <option value="total" selected="">Total de Hospitales</option>
+		<option >Hospital Civil Dr. Juan I. Menchaca</option>
 	  <option >Hospital Civil Fray Antonio Alcalde</option>
-	  <option >Hospital Civil Dr. Juan I. Menchaca</option>
 	  <option >Otro</option>
 	</select>
 	</span>
@@ -185,7 +185,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		 		'value'=>'$data["status"] == 1 ? "activo" : "inhabilitado"',
                 ),
 		     array('header'=>'Fecha de Creación',
-		 		'name'=>'creation_date',
+				// 	'name'=>'creation_date',
+				'value'=>'date("d/m/Y H:i:s", strtotime($data["creation_date"]))',
                 ),
    	),
 )); ?>

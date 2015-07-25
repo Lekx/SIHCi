@@ -74,7 +74,7 @@ class Jobs extends CActiveRecord
 			'start_day' => 'Día de Inicio',
 			'start_month' => 'Mes de Inicio',
 			'start_year' => 'Año de inicio',
-			'hospital_unit' => 'HU',
+			'hospital_unit' => 'Unidad Hospitalaria',
 			'rud' => 'RUD',
 			'schedule' => 'Horario de trabajo',
 		);

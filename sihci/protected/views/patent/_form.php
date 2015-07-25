@@ -40,10 +40,10 @@
 	 <span class="plain-select">
 		<?php echo $form->dropDownList($model,'participation_type',
 			  	  array(
-					  		'Inventor'=>'Inventor',
-					  	'Co-inventor'=>'Co-inventor'
+					  	'Inventor'=>'Inventor',
+					  	'Co-inventor'=>'Co-inventor',					  	
 				  ),
-				  array('prompt'=>'Seleccionar participación', 'title'=>'Pariticipacíon')
+				  array('prompt'=>'Seleccionar participación', 'title'=>'Participación')
 			 );
 	    ?>
 		<?php echo $form->error($model,'participation_type'); ?>
@@ -80,7 +80,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'application_number',array('placeholder'=>'Número de registro o Número de solicitud', 'class'=>'numericOnly','title'=>'Numero de registro o de solicitud')); ?>
+		<?php echo $form->textField($model,'application_number',array('maxlength'=>10,'placeholder'=>'Número de registro o Número de solicitud', 'class'=>'numericOnly','title'=>'Número de registro o de solicitud')); ?>
 		<?php echo $form->error($model,'application_number'); ?>
 	</div>
 
@@ -97,6 +97,25 @@
 		?>
 		</span>
 		<?php echo $form->error($model,'patent_type'); ?>
+	</div>
+
+	<div class="row">
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'model' => $model,
+			    'language'=> 'es',
+			    'attribute' => 'presentation_date',
+			    'htmlOptions' => array(
+			    	    'dateFormat'=>'d/m/Y',
+			    		'size' => '10',
+			   			'readonly'=>true,
+			        	'maxlength' => '10',
+
+			        	'placeholder'=>"Fecha de presentación",
+			        	'title'=>'Fecha de presentación',
+			    ),
+			));
+		?>
+		<?php echo $form->error($model,'presentation_date'); ?>
 	</div>
 
 	<div class="row">
@@ -120,26 +139,7 @@
 	</div>
 
 	<div class="row">
-        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model' => $model,
-			    'language'=> 'es',
-			    'attribute' => 'presentation_date',
-			    'htmlOptions' => array(
-			    	    'dateFormat'=>'d/m/Y',
-			    		'size' => '10',
-			   			'readonly'=>true,
-			        	'maxlength' => '10',
-
-			        	'placeholder'=>"Fecha de presentación",
-			        	'title'=>'Fecha de presentación',
-			    ),
-			));
-		?>
-		<?php echo $form->error($model,'presentation_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>150,'placeholder'=>'Expediente', 'title'=>'Expediente (maximo  150 caracteres)')); ?>
+		<?php echo $form->textField($model,'record',array('size'=>60,'maxlength'=>250,'placeholder'=>'Expediente', 'title'=>'Expediente (maximo  250 caracteres)')); ?>
 		<?php echo $form->error($model,'record'); ?>
 	</div>
 
@@ -165,7 +165,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'industrial_exploitation',array('placeholder'=>'Explatación industrial','title'=>'Explatación industrial','class'=>'numericOnly')); ?>
+		<span class="radiotext">Explotación industrial</span>
+		<?php echo $form->checkbox($model,'industrial_exploitation');?>
 		<?php echo $form->error($model,'industrial_exploitation'); ?>
 	</div>
 

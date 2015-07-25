@@ -96,6 +96,7 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'directed-thesis-grid',
 	'dataProvider'=>$model->search(),
@@ -107,7 +108,8 @@ $('.search-form form').submit(function(){
 		//'id_curriculum',
 		array('name'=>'T&iacute;tulo','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
 		array('name'=>'Autor','type'=>'html','id'=>'author','value'=>'CHtml::encode($data->author)'),
-		'conclusion_date',
+		array('name'=>'Fecha de conclusion','type'=>'html','id'=>'conclusion_date','value'=>'CHtml::encode($data->conclusion_date)'),
+		//'conclusion_date',
 		array('name'=>'Sector','type'=>'html','id'=>'sector','value'=>'CHtml::encode($data->sector)'),
 		//'author',
 		//'path',
@@ -118,6 +120,7 @@ $('.search-form form').submit(function(){
 		array('name'=>'Área','type'=>'html','id'=>'area','value'=>'CHtml::encode($data->area)'),
 		array('name'=>'Disciplina','type'=>'html','id'=>'discipline','value'=>'CHtml::encode($data->discipline)'),
 		array('name'=>'Subdisciplina','type'=>'html','id'=>'subdiscipline','value'=>'CHtml::encode($data->subdiscipline)'),
+		
 		//'organization',
 		//'area',
 		//'discipline',

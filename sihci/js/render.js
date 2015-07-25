@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
     $('body').keyup(function(e) {
         if (e.which == 27) {
             $(".loginHome").hide();
@@ -9,7 +9,7 @@ $(document).ready(function() {
             $("#yt0").css("background-color", "#0E3152 !important");
             $("#yt0").val("Ingresar a mi cuenta");
             $('[id^=LoginForm_]').val('');
-          
+
         }
     });
     $("img#logocuentas2").click(function() {
@@ -30,7 +30,7 @@ $(document).ready(function() {
         $(".glyphicon").css("color", "#1EB9C0");
         $("#yt0").css("background-color", "#0E3152 !important");
         $("#yt0").val("Ingresar a mi cuenta");
-	
+
     });
     $(".closelogin").click(function() {
         $(".loginHome").hide();
@@ -94,16 +94,7 @@ $(document).ready(function() {
 		 $("#users-form").show();
 		$(document).mouseup(function (e)
 			{
-			var container = $("#users-form");
-
-			if (!container.is(e.target) // if the target of the click isn't the container...
-				&& container.has(e.target).length === 0) // ... nor a descendant of the container
-			{
-				container.hide();
-				$(".createHome").hide();
-				$('[id^=Persons_]').val('');
-				$('[id^=Users]').val('');
-			}
+			
 		});
         $(".glyphicon").css("color", "#1EB9C0");
         $("#yt0").css("background-color", "#0E3152 !important");

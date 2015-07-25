@@ -192,7 +192,7 @@ if(areaValue =="SOCIOLOGIA"){
 }
 
 
-    var newDiscipline ="<span class='plain-select'><select id='Books_discipline' class='tooltipstered' name='Books[discipline]' onchange='changeDiscipline()'>";
+    var newDiscipline ="<span class='plain-select'><select id='Books_discipline' title='Disciplina.' name='Books[discipline]' onchange='changeDiscipline()'>";
     newDiscipline+="<option>Seleccionar Disciplina</option>";
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
@@ -201,6 +201,18 @@ if(areaValue =="SOCIOLOGIA"){
     newDiscipline+="</select></span>";
 
     $("#comboDiscipline").html(newDiscipline);
+
+      $('#Books_discipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
   }
 
   function changeDiscipline(){
@@ -3783,7 +3795,7 @@ if(areaValue =="SOCIOLOGIA"){
       var otrasEspecialidadesSociologia = [" "]
      disciplineValue = otrasEspecialidadesSociologia;
   }
-    var newSubdiscipline ="<span class='plain-select'><select id='Books_subdiscipline' class='tooltipstered' name='Books[subdiscipline]'>";
+    var newSubdiscipline ="<span class='plain-select'><select id='Books_subdiscipline' title='Subdisciplina.' name='Books[subdiscipline]'>";
     newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
@@ -3792,6 +3804,18 @@ if(areaValue =="SOCIOLOGIA"){
     newSubdiscipline+="</select></span>";
 
     $("#comboSubdiscipline").html(newSubdiscipline);
+
+       $('#Books_subdiscipline').tooltipster({
+        position: 'right',
+        trigger: 'custom',
+        })
+          .on( 'focus', function() {
+          $( this ).tooltipster( 'show' );
+          $('.errorMessage').hide();
+          })
+        .on( 'blur', function() {
+        $( this ).tooltipster( 'hide' );
+        });
 } 
 </script>
 
@@ -3812,7 +3836,7 @@ if(areaValue =="SOCIOLOGIA"){
 
 
 	<div class="row">
-		<?php echo $form->textField($model,'isbn', array('placeholder'=>'Número de ISBN','class' => 'numericOnly','title'=>'Número de ISBN. (Solo se aceptan numeros)')); ?>
+		<?php echo $form->textField($model,'isbn', array('maxlength'=>13,'placeholder'=>'Número de ISBN','class' => 'numericOnly','title'=>'Número de ISBN. (Solo se aceptan numeros)')); ?>
 		<?php echo $form->error($model,'isbn'); ?>
 	</div>
 
@@ -4036,12 +4060,12 @@ if(areaValue =="SOCIOLOGIA"){
 
   }
   else{
-    echo '<div class="row"id="comboDiscipline">
+    echo '<div class="row"id="comboDiscipline">';
 
-  </div>
-  <div class="row"id="comboSubdiscipline">
+  echo '</div>';
+  echo '<div class="row"id="comboSubdiscipline">';
 
-  </div>';
+  echo '</div>';
   }
   ?>
 
@@ -4079,7 +4103,7 @@ if(areaValue =="SOCIOLOGIA"){
 			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
 	       </div>
 		  <div class="row">
-		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'Posición', 'title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
+		  <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'Posición','maxlength'=>11 , 'title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
 		  <?php echo $form->error($modelAuthor,'position'); ?>
 		  </div>
 		  <hr>
@@ -4107,7 +4131,7 @@ if(areaValue =="SOCIOLOGIA"){
 					  <?php echo $form->error($value,'last_name2'); ?>
 				  </div>
 				  <div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
+					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','maxlength'=>11,'title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
 					  <?php echo $form->error($value,'position'); ?>
 				  </div>
 				      <?php echo CHtml::button('Elminar',array('submit' => array('books/deleteAuthor','id'=>$modelAuthors[$key]->id,'idBooks'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>

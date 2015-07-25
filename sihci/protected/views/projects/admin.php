@@ -46,7 +46,8 @@ $('.search-form form').submit(function(){
 <?php
 
 
- $this->widget('zii.widgets.grid.CGridView', array(
+
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'projects-grid',
 	'dataProvider'=>$model->customSearch(),
 	/*'filterPosition'=>'header',
