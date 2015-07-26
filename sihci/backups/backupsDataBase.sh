@@ -2,12 +2,12 @@
 
 #Add important datas dir location, password, etc 
 
-date=$(date +%Y-%m-%d-%H:%M)
+date=$(date +%d-%m-%Y-%H:%M)
 NAME_DATABASE="sihci"
 MYSQL_USER="root"
 MYSQL_PASSWORD="000"
 NAME_FOLDER="dataBase"
-HOST="192.168.1.26"
+HOST="127.0.0.1"
 BACKUP_FOLDER="/var/www/html/SIHCi/sihci/backups/$NAME_FOLDER"
 
 #Create Folder from backups

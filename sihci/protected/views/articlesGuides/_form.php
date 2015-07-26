@@ -3933,7 +3933,7 @@ if(areaValue =="SOCIOLOGIA"){
           'Revistas Arbitradas'=>'Revistas Arbitradas',
           'Revistas Indizadas'=>'Revistas Indizadas',
         ),
-        array('prompt'=>'Seleccionar tipo de Articulo','title'=>'Tipo de Articulo'));
+        array('prompt'=>'Seleccionar tipo de articulo','title'=>'Tipo de articulo'));
     ?>
 		<?php echo $form->error($model,'article_type'); ?>
     </span>
