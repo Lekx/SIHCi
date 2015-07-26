@@ -1,10 +1,10 @@
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Estadisticas.svg" alt="">
             <h1>Estadisticas</h1>
-            <hr>  
+            <hr>
         </div>
         <h3>Investigadores registrados en el sistema</h3>
-<div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
+<div class="tooltipchart" >Seleccionar este elemento</div>
 
 <div class="grafiOpt">
   <div class="col-md-4">Año del reporte</div>

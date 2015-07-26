@@ -42,7 +42,9 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-user"></i>
+
                 <?php echo $form->textField($modelPersons, 'last_name2', array('placeholder' => "Apellido Materno" ,'title'=>'Ingresa tu Apellido Materno','onKeypress'=>'return lettersOnly(event)'));?>
+
             </div>
         </div>
         <input type="button" name="nextform" class="nextform action-button 1" value="Listo.." />
@@ -107,7 +109,7 @@
         <div class="row">
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <input type="text" title="Confirma tu dirección de email" name="Users[email2]" id="Users_email2" placeholder="Verificación de Email" ></input>
+                <input type="text" title="Verificación de correo electrónico" name="Users[email2]" id="Users_email2" placeholder="Verificación de correo electrónico" ></input>
             </div>
 
         </div>

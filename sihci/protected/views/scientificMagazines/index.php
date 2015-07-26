@@ -15,7 +15,7 @@ $this->breadcrumbs=array(
             <hr>
         </div>
          <div class="generalinformation">
-        Publicaciones científicas
+        <h4>Publicaciones científicas</h4>
         <p>El principal vehículo de comunicación de la ciencia
         es el artículo científico original; es una obra de
         arte intelectual:
@@ -33,7 +33,7 @@ $this->breadcrumbs=array(
         con éxito transitar de la escritura privada a la es
         critura pública a través del artículo científico or
         iginal.</p>
-        Hipócrates Revista Médica
+          <h4>Hipócrates Revista Médica</h4>
         <p>Revista médica de divulgación académica con orienta
         ción clínica que busca fortalecer los conocimientos
         obtenidos
@@ -49,7 +49,7 @@ $this->breadcrumbs=array(
         médicos de mayor jerarquía y experiencia en la tran
         smisión de sus conocimientos a las nuevas generacio
         nes. </p>
-        Archivos en Pediatría
+        <h4>  Archivos en Pediatría</h4>
         <p>Forma parte de las 5 mejores revistas editadas en M
         éxico. Cumple 5 años de aparición regular, sin inte
         rrupciones.
@@ -64,7 +64,7 @@ $this->breadcrumbs=array(
         va como un
         medio de expresión intelectual y de actualización m
         édica.</p>
-        Tracto Genital Inferior
+          <h4>Tracto Genital Inferior</h4>
         <p>Revista científica que pretende difundir informació
         n consistente, multidisciplinaria y de vanguardia,
         mediante la
