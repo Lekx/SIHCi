@@ -10,7 +10,6 @@ return array(
 	'username' => 'root',
 	'password' => '000',
 	'charset' => 'utf8'
->>>>>>> 5fe3a5059cd02745f5af28490936f3d919ac1d7d
 
 	/*
 	'emulatePrepare' => true,
