@@ -55,7 +55,7 @@ class Books extends CActiveRecord
 			array('book_title, path', 'length', 'max'=>100),
 			array('publisher, traductor', 'length', 'max'=>80),
 			array('work_type', 'length', 'max'=>30),
-			array('idioma', 'length', 'max'=>15),
+			array('idioma', 'length', 'max'=>20),
 			array('traductor_type', 'length', 'max'=>20),
 			array('area', 'length', 'max'=>40),
 			array('searchValue', 'length', 'max'=>60),
