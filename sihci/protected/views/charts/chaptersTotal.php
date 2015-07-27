@@ -39,7 +39,6 @@ request.done(function(data) {
 
 chart = new Highcharts.Chart({
 
-
         chart: {
             renderTo: 'container',
             type: 'column',
@@ -76,8 +75,12 @@ chart = new Highcharts.Chart({
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
         },
         xAxis: {
+            
             categories: data.months,
+            categories: data.totalBooks,
+              
             crosshair: true
+
         },
         yAxis: {
             min: 0,
@@ -117,7 +120,7 @@ chart = new Highcharts.Chart({
 
             name: 'Hospital Civil Dr. Juan I. Menchaca',
             data: data.jim,
-			 showInLegend: true
+			showInLegend: true
 
         }, {
             name: 'Otros',
