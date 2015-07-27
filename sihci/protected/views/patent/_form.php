@@ -80,7 +80,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model,'application_number',array('maxlength'=>10,'placeholder'=>'Número de registro o Número de solicitud', 'class'=>'numericOnly','title'=>'Número de registro o de solicitud')); ?>
+		<?php echo $form->textField($model,'application_number',array('maxlength'=>11,'placeholder'=>'Número de registro o Número de solicitud', 'class'=>'numericOnly','title'=>'Número de registro o de solicitud')); ?>
 		<?php echo $form->error($model,'application_number'); ?>
 	</div>
 
