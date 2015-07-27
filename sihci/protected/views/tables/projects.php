@@ -68,23 +68,53 @@ function change(){
 
 	$('tbody > tr').show();
 
-	if( valueHospital == 'total' && valueProjects == 'total' && valueYear=='total')
+	if( valueHospital == 'total' && valueProjects == 'total' && valueYear=='total'){
 		$('tbody > tr').show();
-	else if(valueProjects == 'total' && valueHospital == 'total'){
+		totalVisibles = parseInt($('tbody >tr').length);
+		$('#totalToShow').html(totalVisibles);
+	}else if(valueProjects == 'total' && valueHospital == 'total'){
 		$('tbody > tr:not(:contains('+valueYear+'))').hide();
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueYear+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
 	}else if(valueProjects == 'total' && valueYear == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'))').hide();
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
 	}else if(valueHospital == 'total' && valueYear == 'total'){
 		$('tbody > tr:not(:contains('+valueProjects+'))').hide();
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueProjects+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
 	}else if( valueProjects == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').hide();
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
 	}else if( valueHospital == 'total'){
 		$('tbody > tr:not(:contains('+valueProjects+'):contains('+valueYear+'))').hide();
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueProjects+'):contains('+valueYear+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
 	}else if( valueYear == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueProjects+'))').hide();
-	}else
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'):contains('+valueProjects+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
+	}else{
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueProjects+'))').hide();
-
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueProjects+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
+  }
 }//function
 
  function search(){
@@ -94,11 +124,15 @@ function change(){
  	if (valueSearch == '') {
  		$('tbody > tr').show();
  	}else{
+
+		$('tbody > tr > td').html().toLowerCase();
  		$('tbody > tr:not(:contains('+valueSearch+'))').hide();
  	}
  }
+
+
 </script>
-<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchcrud">
+<input type="text" id="search" onKeyPress="search()" placeholder="Búsqueda por columna" title="La barra de búsqueda es sensible a las mayúsculas" class="searchcrud">
 <?php echo CHtml::Button('',array('class'=>'adminbut')); ?>
 <div class="tableOpt">
 	<div class="col-md-4">
@@ -146,7 +180,7 @@ function change(){
 </div>
 </div>
 <?php
-
+echo "Total de proyectos: <div id='total' style='display: none'>".$total."</div> <div class='totalTables' id='totalToShow'>".$total."</div>";
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$projects,

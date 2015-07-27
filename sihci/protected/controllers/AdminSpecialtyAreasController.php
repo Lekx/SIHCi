@@ -120,28 +120,24 @@ class AdminSpecialtyAreasController extends Controller
 	        	$idsAdminSpecialtyAreas = $_POST['idsAdminSpecialtyAreas'];
 	 			$ext_subspecialty = $_POST['ext_subspecialtys'];	          
             	
-            	foreach($_POST['ext_subspecialty'] as $key => $value)
-				{
-	               	if($idsAdminSpecialtyAreas[$key] != '')
-	               	{
-	               		echo 'Pase por aqui'.$value;      		
-		               	unset($modelSpecialtyAreas);
-		               	$modelSpecialtyAreas = new AdSpecialtyAreas;
-
-		               	$modelSpecialtyAreas->id_specialty_areas = $model->id;
-		       			$modelSpecialtyAreas->ext_subspecialty = $ext_subspecialty[$key];
-	            		$modelSpecialtyAreas->save();
-		        		
-          	   	    }	
-                   	else
-                   	{
-                   		echo "No se que hago aqui ".$value;
-                   		$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialtys' => $value)); 		
-
-                	}
-	            	
-          	    }	
-               echo CJSON::encode(array('status'=>'success'));
+    				 foreach($_POST['ext_subspecialtys'] as $key => $value)
+ 					 {
+ 					 
+		        		if($idsAdminSpecialtyAreas[$key] == '')
+		        		{
+		        			unset($modelSpecialtyAreas);
+							$modelSpecialtyAreas = new AdSpecialtyAreas;
+		        			$modelSpecialtyAreas->id_specialty_areas = $model->id;
+		        			$modelSpecialtyAreas->ext_subspecialty = $ext_subspecialty[$key];
+		        			$modelSpecialtyAreas->save();
+                		}
+                		else
+                		{
+							$modelSpecialtyAreas->updateByPk($idsAdminSpecialtyAreas[$key], array('ext_subspecialty' => $ext_subspecialty[$key])); 		
+            		    }
+            	    }	
+               	
+               	echo CJSON::encode(array('status'=>'success'));
                 Yii::app()->end();
 	        }
 	        else
