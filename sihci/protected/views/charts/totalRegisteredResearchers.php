@@ -19,7 +19,7 @@
   </div>
   <div class="col-md-4">
       <span class="plain-select2">
-  <?php echo CHtml::dropDownList('sni', '',array("total"=>"Total","no"=>"No","yes"=>"Si"),array('onchange'=>'loadChart()','class'=>'dropinline')); ?>
+  <?php echo CHtml::dropDownList('sni', '',array("total"=>"Ambos","no"=>"No","yes"=>"Si"),array('onchange'=>'loadChart()','class'=>'dropinline')); ?>
     </span>
   </div>
     <div class="col-md-4">
