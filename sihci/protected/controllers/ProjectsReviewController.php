@@ -93,57 +93,6 @@ class ProjectsReviewController extends Controller
 
 
 
-		public $followup = array(  "0"=>"seguimiento de proyectos.",
-					 "1"=>array("userType"=>"DIVUH", 
-					 	"message"=>array(
-					 		"review"=>"Seguimiento revisado por DIVUH.",
-					 		"accept"=>"",
-					 		"reject"=>""
-					 		),
-					 	"actions"=>array("review",""), "type"=>"auto", 
-					 	"realSteps"=>array("6.24")),
-
- 					 "2"=>array("userType"=>"SEUH", 
-					 	"message"=>array(
-					 		"accept"=>"Seguimiento enviado a evaluación de comité(s) asignado(s).",
-					 		"reject"=>"Seguimienot retornado al loop XXXXX"
-					 		),
-					 	"actions"=>array("accept","convokeComms"), "type"=>"manual", 
-					 	"realSteps"=>array("6.25")),
-
-					 "3"=>array("userType"=>"COMITE", 
-					 	"message"=>array(
-					 		"accept"=>"Seguimiento enviado a evaluación del Subdirector General de Enseñanza e Investigación.",
-					 		"reject"=>""
-					 		),
-					 	"actions"=>array("accept","reject"), "type"=>"manual", 
-					 	"realSteps"=>array("6.26","6.27","6.28")),
-
-					 "4"=>array("userType"=>"SEUH", 
-					 	"message"=>array(
-					 		"accept"=>"",
-					 		"reject"=>""
-					 		),
-					 	"actions"=>array("accpet","addFile"), "type"=>"manual", 
-					 	"realSteps"=>array("6.29")),
-
-				 	"5"=>array("userType"=>"DUH", 
-					 	"message"=>array(
-					 		"review"=>"Seguimiento revisado por DUH.",
-					 		"accept"=>"",
-					 		"reject"=>""
-					 		),
-					 	"actions"=>array("review",""), "type"=>"auto", 
-					 	"realSteps"=>array("6.30")),
-
-					 "6"=>array("userType"=>"DIVUH", 
-					 	"message"=>array(
-					 		"accept"=>"Seguimiento aprobado.",
-					 		"reject"=>""
-					 		),
-					 	"actions"=>array("accept","addFile"), "type"=>"manual", 
-					 	"realSteps"=>array("6.31")),
-	);
 
 
 
@@ -157,24 +106,46 @@ class ProjectsReviewController extends Controller
 		$rol = Yii::app()->user->Rol->alias;
 
 		$condition = "WHERE p.status = '".$rol."'";
+		$pfcondition = "WHERE pf.status = '".$rol."'";
 
-		if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
+		if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI"){
 			$condition = "WHERE p.status = 'COMITE'";
+			$pfcondition = "WHERE pf.status = 'COMITE'";
+		}
 
 		$conection = Yii::app()->db;
 		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition." GROUP BY p.title")->queryAll();
 
-		$pendingProjects ="";
+
+		$pFollowups = $conection->createCommand("SELECT pf.id AS pif, pf.status, pf.type, pf.step_number, pf.creation_date, p.id, p.status, p.is_sponsored, p.title FROM projects_followups AS pf JOIN projects AS p ON p.id = pf.id_project ".$pfcondition." AND pf.type = 'followup' AND p.status = 'ACEPTADO'")->queryAll();
+
+		$pendingProjects ="Projectos pendientes por aprobar:";
 
 		foreach($pProjects AS $key => $value){
 			$element ="";
-			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.85em;">';
+			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.80em;">';
 			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
 			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
 			$element .= '</div>';
 			$pendingProjects .= CHtml::link($element,array('projectsReview/review','id'=>$value["id"]));
 
 		}
+
+
+		$pendingProjects .="<br><hr>Seguimientos pendientes por aprobar:";
+
+		foreach($pFollowups AS $key => $value){
+			$element ="";
+			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.80em;">';
+			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
+			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
+			$element .= '</div>';
+			$pendingProjects .= CHtml::link($element,array('projectsFollowups/followupReview','id'=>$value["pif"]));
+
+		}
+
+
+
 		return $pendingProjects;
 	}
 
@@ -190,7 +161,7 @@ class ProjectsReviewController extends Controller
 		else
 			$evaluationRules = $this->sponsoredRules;
 
-
+	 $this->performAjaxValidation($modelfollowup);
 		$conexion = Yii::app()->db;
 		$lastfollowup = $conexion->createCommand("
 		SELECT id, id_project, id_user, step_number
@@ -202,19 +173,24 @@ class ProjectsReviewController extends Controller
         if(isset($_POST['ProjectsFollowups']))
         {
 
-			$modelfollowup->unsetAttributes();
+			//$modelfollowup->unsetAttributes();
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
 
             $modelfollowup->type="comment";
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
             if(isset($_POST[1]))
-	            if($_POST[1] != "mandatory") // si existe este indice en los extras significa que es un comentario(followup) de un seguimiento(followup)
-	            	$modelfollowup->id_fucom = $_POST[1];
-	            else{
+	            if($_POST[1] == "mandatory"){ // si existe este indice en los extras significa que es un comentario(followup) de un seguimiento(followup)
 	            	$modelfollowup->followup = "se adjunta documento";
 	            	$modelfollowup->type="mandatory";
 	            	$modelfollowup->step_number = $_POST[2];
+
+	            }else if($_POST[1] == "mandatoryFW"){
+	            	$modelfollowup->type="mandatoryFW";
+	            	$modelfollowup->step_number = $_POST[2];
+            		$modelfollowup->id_fucom = $_POST[3];
+	            }else{
+	            	$modelfollowup->id_fucom = $_POST[1];
 	            }
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
@@ -532,7 +508,7 @@ public function actionSetFolioNumber()
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='projects-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='projects-followups-forms')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

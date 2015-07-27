@@ -1,3 +1,3 @@
 <?php
-header("Location: /sihci/sihci/index.php");
+header("Location: /SIHCi/sihci/index.php");
 ?>

@@ -115,7 +115,7 @@
                         );
                 else if(Yii::app()->user->type == 'fisico')
                     $infoUser = array(
-                        "label"=>"Fisico",
+                        "label"=>"Físico",
                         "icon"=>"PCV-HC",
                         "cuentaicon"=>"Pcuenta",
                         "controller"=>"curriculumVitae/personalData",

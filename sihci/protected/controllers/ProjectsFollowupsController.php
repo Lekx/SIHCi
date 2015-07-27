@@ -32,7 +32,7 @@ class ProjectsFollowupsController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('createFollowup','update'),
+				'actions'=>array('createFollowup','update', 'FollowupReview','SendReview'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -74,6 +74,7 @@ class ProjectsFollowupsController extends Controller
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
             $modelfollowup->type = "followup";
+            $modelfollowup->status = "SEUH";
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
 			if($modelfollowup->validate() == 1){
 	            if(is_object($modelfollowup->url_doc)){
@@ -87,8 +88,23 @@ class ProjectsFollowupsController extends Controller
 				    $modelfollowup->url_doc = $url_doc;
 	            }
 	            if($modelfollowup->save()){
-	     			echo CJSON::encode(array('status'=>'success'));
-	     			Yii::app()->end();
+					$followup = new ProjectsFollowups;
+					$followup->id_project = $modelfollowup->id_project;
+					$followup->id_user = Yii::app()->user->id;
+					$followup->id_fucom = $modelfollowup->id;
+
+					$followup->followup = "Seguimiento enviado a evaluación del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.";
+					$followup->type = "system";
+					$followup->step_number = 1;
+
+					if($followup->save()){
+						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'El seguimiento ha sido enviado para su evaluación.'));
+						Yii::app()->end();
+					}else{
+						echo CJSON::encode(array('status'=>'failure'));
+						Yii::app()->end();
+					}
+
 				}
 	        }else{
 				$error = CActiveForm::validate($modelfollowup);
@@ -213,10 +229,167 @@ class ProjectsFollowupsController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='projects-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='projects-followups-form-create')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
+
+
+		public $followupRules = array(  "0"=>"seguimiento de proyectos.",
+					 "1"=>array("userType"=>"DIVUH", 
+					 	"message"=>array(
+					 		"review"=>"Seguimiento revisado por la División de Investigacion de la Unidad Hospitalaria.",
+					 		"accept"=>"",
+					 		"reject"=>""
+					 		), "actions"=>array("review",""), "type"=>"auto", "realSteps"=>array("6.24")),
+ 					 "2"=>array("userType"=>"SEUH", 
+					 	"message"=>array(
+					 		"accept"=>"Seguimiento enviado a evaluación de comité(s) asignado(s).",
+					 		"reject"=>"Seguimiento devuelto al investigador para su corrección por parte del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria."
+					 		), "actions"=>array("accept","convokeComms"), "type"=>"manual", "realSteps"=>array("6.25")),
+					 "3"=>array("userType"=>"COMITE", 
+					 	"message"=>array(
+					 		"accept"=>"Seguimiento enviado a evaluación del Subdirector General de Enseñanza e Investigación.",
+					 		"reject"=>"Seguimiento devuelto al investigador para su corrección por parte del comité."
+					 		), "actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.26","6.27","6.28")),
+					 "4"=>array("userType"=>"SEUH", 
+					 	"message"=>array(
+					 		"accept"=>"Seguimiento enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria.",
+					 		"reject"=>""
+					 		), "actions"=>array("accpet","addFile"), "type"=>"manual", "realSteps"=>array("6.29")),
+				 	"5"=>array("userType"=>"DUH", 
+					 	"message"=>array(
+					 		"review"=>"Seguimiento revisado por el Director de Unidad Hospitalaria.",
+					 		"accept"=>"",
+					 		"reject"=>""
+					 		), "actions"=>array("review",""), "type"=>"auto", "realSteps"=>array("6.30")),
+					 "6"=>array("userType"=>"DIVUH", 
+					 	"message"=>array(
+					 		"accept"=>"Seguimiento aprobado.",
+					 		"reject"=>""
+					 		), "actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.31")), );
+
+
+	public function actionFollowupReview($id)
+	{
+		$model=$this->loadModel($id);
+		$modelProject = Projects::model()->findByPk($model->id_project);
+		$modelfollowup = new ProjectsFollowups;
+
+		$conexion = Yii::app()->db;
+		$lastfollowup = $conexion->createCommand("
+		SELECT id, id_project, id_user, step_number
+		FROM projects_followups
+		WHERE type = 'system' && id_fucom = '".$model->id."' ORDER BY id DESC LIMIT 0,1")->queryAll()[0];
+		$evaluationStep = (int)$lastfollowup["step_number"] + 1;
+
+		$this->render('followupReview',array(
+			'model'=>$model,'modelfollowup'=>$modelfollowup,'modelProject'=>$modelProject, 'followupRules' => $this->followupRules, 'evaluationStep'=>$evaluationStep
+		));
+	}
+
+
+
+
+//Envia a revisión o evaluación (no comites).
+	//params: id del followup project.
+	public function actionSendReview($id, $actualStepCom = 0, $actionCom = 0)
+	{
+		$conexion = Yii::app()->db;
+		$followupId = $id;
+		$modelProject = ProjectsFollowups::model()->findByPk($followupId)->id_project;
+
+		if($actualStepCom != 0 && $actualStepCom != 0){
+			$actualStep = $actualStepCom;
+			$action = $actionCom;
+		}else{
+			$actualStep = $_POST[1];
+			$action = $_POST[2];
+		}
+
+
+
+		if($action == "accept"){
+				$status = $this->followupRules[$actualStep+1]["userType"];
+		}else if($action == "reject")
+			$status = "MODIFICAR";
+
+		$result = false;
+
+		if($action != "review"){
+
+			$result = ProjectsFollowups::model()->updateByPk($followupId,array('status' => $status));
+
+		}else if($action == "review"){
+
+			$followup = new ProjectsFollowups;
+			$followup->id_project = $modelProject;
+			$followup->id_user = Yii::app()->user->id;
+			$followup->followup = $this->followupRules[$actualStep]["message"][$action];
+			$followup->type = "system";
+			$followup->id_fucom = $followupId;
+
+			if($followup->save()){
+	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El seguimiento ha sido revisado satisfactoriamente.'));
+	 			Yii::app()->end();
+			}
+
+		}
+
+		if($result == 1){
+			$followup = new ProjectsFollowups;
+			$followup->id_project = $modelProject;
+			$followup->id_user = Yii::app()->user->id;
+			$followup->followup = $this->followupRules[$actualStep]["message"][$action];
+			$followup->type = "system";
+			$followup->id_fucom = $followupId;
+
+
+
+			if($action == "reject")
+				$followup->step_number = $actualStep - 1; //restamos uno para que se quede donde mismo
+			else{
+				//echo $actualStep;
+
+				/*	if($actualStep == 4)
+						$followup->step_number = 6;
+					else if($actualStep == 7)
+						$followup->step_number = 10;
+					else
+						$followup->step_number = $actualStep;
+*/
+			
+
+			}
+
+			
+
+			if($followup->save())
+				$subMessage = 'El seguimiento ha sido enviado satisfactoriamente para su revisión o evaluación.';
+				if($actualStep == 6 ) // added and, may be removed
+					$subMessage = 'El seguimiento ha sido aprobado satisfactoriamente.';
+
+	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>$subMessage));
+
+		}else{
+			echo CJSON::encode(array('message'=>'2 Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intentar.'));
+		}
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

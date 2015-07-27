@@ -14,7 +14,7 @@ $this->breadcrumbs = array(
 <section class="informativa">
 
 			<section class="column-left">
-				
+
 			</section>
 
 
@@ -39,6 +39,6 @@ $this->breadcrumbs = array(
 			 <a href= "URL" >FAA: Comité de ética.</a>
 			 <a href= "URL" >FAA: Comité de ética en investigación.</a>
 			 <a href= "URL" >FAA: Comité de Bioseguridad.</a>-->
-		<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
+			 <?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
 </section>

@@ -35,17 +35,17 @@ $this->menu = array(
 
 
 	<div class="row">
-		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off', "placeholder"=>"Contraseña Actual","title"=>'Contraseña Actual',"maxlength"=>"12")); ?>
+		<?php echo $form->passwordField($details,'password',array('value' => '','autocomplete' => 'off', "placeholder"=>"Contraseña Actual","title"=>'Contraseña Actual',"maxlength"=>"18")); ?>
 		<?php echo $form->error($details,'password'); ?>
 		<hr>
 	</div>
 
 	<div class="row">
-		<input type="password" name="Account[password2]" id="Account_password2" placeholder="Nueva Contraseña" title="Nueva Contraseña" oncopy="return false;" onpaste="return false;" oncut="return false;" maxlength="12">
+		<input type="password" name="Account[password2]" id="Account_password2" placeholder="Nueva Contraseña" title="Nueva Contraseña" oncopy="return false;" onpaste="return false;" oncut="return false;" maxlength="18">
 	</div>
 
 	<div class="row">
-		<input type="password" name="Account[password22]" id="Account_password22" placeholder="Repetir Nueva Contraseña" title="Repetir Nueva Contraseña" oncopy="return false;" onpaste="return false;" oncut="return false;" maxlength="12">
+		<input type="password" name="Account[password22]" id="Account_password22" placeholder="Repetir Nueva Contraseña" title="Repetir Nueva Contraseña" oncopy="return false;" onpaste="return false;" oncut="return false;" maxlength="18">
 	</div>
 
 	<hr>
@@ -55,7 +55,8 @@ $this->menu = array(
 						'onclick'=>'send("account-form", "account/updatePassword", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","site/index","")',
 						'class'=>'savebutton',
 				));
-	?>		<?php echo CHtml::Button('Cancelar',array('submit' => array('account/infoAccount'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+	?>
+	<?php echo CHtml::link('Cancelar',array('account/infoAccount'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
 	</div>
 
 	<?php $this->endWidget(); ?>

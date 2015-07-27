@@ -18,9 +18,9 @@ class FilesManagerController extends Controller
 	public function accessRules()
 	{
 		return array(
-				
+
 				array('allow',
-					'actions'=>array('index','create','update','delete','admin','view'),					
+					'actions'=>array('index','create','update','delete','admin','view'),
 					'expression'=>'($user->Rol->alias==="ADMIN" || $user->Rol->alias==="JIOPD")',
 					'users'=>array('@'),
 				),
@@ -47,12 +47,18 @@ class FilesManagerController extends Controller
 	// MA01-Registrar datos FilesManager
 	public function actionCreate()
 		{
+			if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
+				$iduser = (int)$_GET["ide"];
+			else
+				$iduser = Yii::app()->user->id;
+
 			$model=new FilesManager;
+			$this->performAjaxValidation($model);
 
 
 			if(isset($_POST['FilesManager']))
 			{
-
+		$file = CUploadedFile::getInstanceByName('FilesManager[path]');
 		$model->attributes=$_POST['FilesManager'];
 		$model->end_date = substr($model->end_date, 0, 10)." "."23:59:59";
 		$model->path = CUploadedFile::getInstanceByName('FilesManager[path]');
@@ -60,21 +66,36 @@ class FilesManagerController extends Controller
 		if (!file_exists($path)) {
 			mkdir($path, 0775, true);
 		}
-			if($model->validate() == 1)
-			{
-
+			if($model->validate()){
 				$folder = "/files_manager/";
 				$path2 = YiiBase::getPathOfAlias("webroot");
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").$folder.$model->file_name.'.pdf');
+				$file->saveAs(YiiBase::getPathOfAlias("webroot").$folder.$model->file_name.'.pdf');
 				$model->path = $path2.$folder.$model->file_name.'.pdf';
 
-					if($model->save())
-						$this->redirect(array('admin'));
-
-			}else{
+					if($model->save()){
+						$log = new SystemLog();
+						$log->id_user = $iduser;
+						$log->section = "Empresas";
+						$log->details = "Se creo un nuevo registro";
+						$log->action = "creacion";
+						$log->datetime = new CDbExpression('NOW()');
+						$log->save();
+						echo CJSON::encode(array('status'=>'success'));
+						Yii::app()->end();
+					}else{
+				//echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Solo se admiten archivos con extenciòn .pdf'));
 				$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+				Yii::app()->end();
 			}
-
+		}else{
+			//echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Por Favor llene todos los campos.'));
+			$error = CActiveForm::validate($model);
+				if($error!='[]')
+					echo $error;
+				Yii::app()->end();
+		}
 			}
 			$this->render('create',array(
 				'model'=>$model,

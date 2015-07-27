@@ -42,19 +42,19 @@ $this->breadcrumbs=array(
 				ic,
 				Hospital Universitario de Gran Canaria, Sociedad Cu
 				bana de Patología Clínica, St. Jude Medical Center
-				(Fullerton) (ver cuadros). 
+				(Fullerton) (ver cuadros).
 			</p>
 
 			<img id="redaccion"src="<?php echo Yii::app()->request->baseUrl."/protected/views/desplegarInformacion/img1.png"; ?>">
 			<img id="redaccion"src="<?php echo Yii::app()->request->baseUrl."/protected/views/desplegarInformacion/img2.png"; ?>">
-		
-		
+
+
 		</section>
 
 	<section class="column-right">
 	<h5>DOCUMENTOS</h5>
 	<h5>DESCARGABLES:</h5>
-		<?php Yii::app()->runController('filesManager/DisplayFiles/section/desplegarInformacion'); ?>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
 
 </section>

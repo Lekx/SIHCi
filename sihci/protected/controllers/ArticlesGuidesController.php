@@ -89,13 +89,18 @@ class ArticlesGuidesController extends Controller
 		                
 		                if($model->save())
 		                {
-		          
-							$names = $_POST['names'];
-				            $last_name1 = $_POST['last_name1'];
-				            $last_name2 = $_POST['last_name2'];
-				            $position = $_POST['position'];
-       						   
-	     					foreach($_POST['ArtGuidesAuthor'] as $key => $value)
+		          			//$names = $_POST['ArtGuidesAuthor']['names'];
+				            //$last_name1 = $_POST['ArtGuidesAuthor']['last_name1'];
+				            //$last_name2 = $_POST['ArtGuidesAuthor']['last_name2'];
+				            //$position = $_POST['ArtGuidesAuthor']['position'];
+				            if(isset($_POST['names']))
+				            {
+								$names = $_POST['names'];
+					            $last_name1 = $_POST['last_name1'];
+					            $last_name2 = $_POST['last_name2'];
+					            $position = $_POST['position'];
+       						}   
+	     					foreach($_POST['names'] as $key => $value)
 	     					{							
 	     						unset($modelAuthor);
 				               	$modelAuthor = new ArtGuidesAuthor;	
@@ -121,15 +126,17 @@ class ArticlesGuidesController extends Controller
 	               	if($model->save())
 	               	{             
 
-			      		/*$names = $_POST['ArtGuidesAuthor']['names'];
-			            $last_name1 = $_POST['ArtGuidesAuthor']['last_name1'];
-			            $last_name2 = $_POST['ArtGuidesAuthor']['last_name2'];
-			            $position = $_POST['ArtGuidesAuthor']['position'];*/
-			            	$names = $_POST['names'];
-				            $last_name1 = $_POST['last_name1'];
-				            $last_name2 = $_POST['last_name2'];
-				            $position = $_POST['position'];
-				            
+			      		//$names = $_POST['ArtGuidesAuthor']['names'];
+			            //$last_name1 = $_POST['ArtGuidesAuthor']['last_name1'];
+			            //$last_name2 = $_POST['ArtGuidesAuthor']['last_name2'];
+			            //$position = $_POST['ArtGuidesAuthor']['position'];
+			            if(isset($_POST['names']))
+				        {
+				            $names = $_POST['names'];
+					        $last_name1 = $_POST['last_name1'];
+					        $last_name2 = $_POST['last_name2'];
+					        $position = $_POST['position'];
+				        }    
 			  			foreach($_POST['ArtGuidesAuthor'] as $key => $value)
      					{
      						unset($modelAuthor);
@@ -171,7 +178,7 @@ class ArticlesGuidesController extends Controller
    		if(!isset($_POST['ajax']))
 				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
 	} 
-
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

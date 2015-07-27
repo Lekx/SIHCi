@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "projects_followups".
  *
@@ -9,10 +8,6 @@
  * @property integer $id_user
  * @property string $followup
  * @property string $url_doc
- * @property string $creation_date
- * @property string $type
- * @property integer $id_fucom
- * @property integer $step_number
  *
  * The followings are the available model relations:
  * @property Projects $idProject
@@ -27,7 +22,6 @@ class ProjectsFollowups extends CActiveRecord
 	{
 		return 'projects_followups';
 	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -37,15 +31,14 @@ class ProjectsFollowups extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_project, id_user, followup', 'required'),
-			array('id_project, id_user, id_fucom, step_number', 'numerical', 'integerOnly'=>true),
-			array('type', 'length', 'max'=>30),
-			array('url_doc, creation_date', 'safe'),
+			array('id_project, id_user', 'numerical', 'integerOnly'=>true),
+			array('url_doc', 'length', 'max'=>150),
+			array('url_doc','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_project, id_user, followup, url_doc, creation_date, type, id_fucom, step_number', 'safe', 'on'=>'search'),
+			array('id, id_project, id_user, followup', 'safe', 'on'=>'search'),
 		);
 	}
-
 	/**
 	 * @return array relational rules.
 	 */
@@ -58,7 +51,6 @@ class ProjectsFollowups extends CActiveRecord
 			'idUser' => array(self::BELONGS_TO, 'Users', 'id_user'),
 		);
 	}
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -68,15 +60,10 @@ class ProjectsFollowups extends CActiveRecord
 			'id' => 'ID',
 			'id_project' => 'Id Project',
 			'id_user' => 'Id User',
-			'followup' => 'Followup',
-			'url_doc' => 'Url Doc',
-			'creation_date' => 'Creation Date',
-			'type' => 'Type',
-			'id_fucom' => 'Id Fucom',
-			'step_number' => 'Step Number',
+			'followup' => 'Comentario',
+			'url_doc' => 'Documento',
 		);
 	}
-
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -92,24 +79,16 @@ class ProjectsFollowups extends CActiveRecord
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
-
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_project',$this->id_project);
 		$criteria->compare('id_user',$this->id_user);
 		$criteria->compare('followup',$this->followup,true);
 		$criteria->compare('url_doc',$this->url_doc,true);
-		$criteria->compare('creation_date',$this->creation_date,true);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('id_fucom',$this->id_fucom);
-		$criteria->compare('step_number',$this->step_number);
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

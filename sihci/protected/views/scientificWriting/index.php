@@ -228,7 +228,7 @@ $this->breadcrumbs=array(
         uando se integran un mínimo de 12 participantes par
         a realizar
         el TRC en área local, nacional o internacional.
-   
+
         </div>
     </section>
     <section class="column-right">
