@@ -89,7 +89,7 @@
 		<?php echo $form->error($model, 'rfc');?>
 		</div>
 <div class="row">
-		<?php echo $form->textField($model, 'email', array('size' => 60, 'placeholder' => 'Email', 'title' => 'Email','maxlength' => 70, 'email' => 'email'));?>
+		<?php echo $form->textField($model, 'email', array('size' => 60, 'placeholder' => 'Correo electronico', 'title' => 'Correo electronico','maxlength' => 40, 'email' => 'email'));?>
 		<?php echo $form->error($model, 'email');?>
 		</div>
 	</div>

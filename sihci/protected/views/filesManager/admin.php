@@ -54,10 +54,10 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
 	'id'=>'files-manager-grid',
 	'dataProvider'=>$model->search(),
 	'columns'=>array(
-		'id',
+		//'id',
 		'section',
 		'file_name',
-		'path',
+		//'path',
 		'start_date',
 		'end_date',
 		array(
