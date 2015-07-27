@@ -55,7 +55,7 @@ class ArticlesGuidesController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	/*public function actionCreate()
+	public function actionCreate()
 	{
 		$model=new ArticlesGuides;
 		$modelAuthor = new ArtGuidesAuthor;
@@ -89,13 +89,18 @@ class ArticlesGuidesController extends Controller
 		                
 		                if($model->save())
 		                {
-		          
-							$names = $_POST['names'];
-				            $last_name1 = $_POST['last_name1'];
-				            $last_name2 = $_POST['last_name2'];
-				            $position = $_POST['position'];
-       						   
-	     					foreach($_POST['ArtGuidesAuthor'] as $key => $value)
+		          			//$names = $_POST['ArtGuidesAuthor']['names'];
+				            //$last_name1 = $_POST['ArtGuidesAuthor']['last_name1'];
+				            //$last_name2 = $_POST['ArtGuidesAuthor']['last_name2'];
+				            //$position = $_POST['ArtGuidesAuthor']['position'];
+				            if(isset($_POST['names']))
+				            {
+								$names = $_POST['names'];
+					            $last_name1 = $_POST['last_name1'];
+					            $last_name2 = $_POST['last_name2'];
+					            $position = $_POST['position'];
+       						}   
+	     					foreach($_POST['names'] as $key => $value)
 	     					{							
 	     						unset($modelAuthor);
 				               	$modelAuthor = new ArtGuidesAuthor;	
@@ -122,14 +127,16 @@ class ArticlesGuidesController extends Controller
 	               	{             
 
 			      		//$names = $_POST['ArtGuidesAuthor']['names'];
-			           // $last_name1 = $_POST['ArtGuidesAuthor']['last_name1'];
-			           // $last_name2 = $_POST['ArtGuidesAuthor']['last_name2'];
-			           // $position = $_POST['ArtGuidesAuthor']['position'];
-			            	$names = $_POST['names'];
-				            $last_name1 = $_POST['last_name1'];
-				            $last_name2 = $_POST['last_name2'];
-				            $position = $_POST['position'];
-				            
+			            //$last_name1 = $_POST['ArtGuidesAuthor']['last_name1'];
+			            //$last_name2 = $_POST['ArtGuidesAuthor']['last_name2'];
+			            //$position = $_POST['ArtGuidesAuthor']['position'];
+			            if(isset($_POST['names']))
+				        {
+				            $names = $_POST['names'];
+					        $last_name1 = $_POST['last_name1'];
+					        $last_name2 = $_POST['last_name2'];
+					        $position = $_POST['position'];
+				        }    
 			  			foreach($_POST['ArtGuidesAuthor'] as $key => $value)
      					{
      						unset($modelAuthor);
@@ -171,112 +178,7 @@ class ArticlesGuidesController extends Controller
    		if(!isset($_POST['ajax']))
 				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
 	} 
-	*/
-		public function actionCreate()
-	{
-		$model=new ArticlesGuides;
-		$modelAuthor = new ArtGuidesAuthor;
-		   
-		$id_resume = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id));   
-		
-		$model->id_resume = $id_resume->id; 
-		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-		
-		if(isset($_POST['ArticlesGuides']))
-		{
-			$model->attributes=$_POST['ArticlesGuides'];
-			$model->id_resume = $id_resume->id;   
-
-	        $model->url_document = CUploadedFile::getInstanceByName('ArticlesGuides[url_document]');
-
-			if($model->validate())
-            {
-            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/';
-
-               	if (!empty(CUploadedFile::getInstanceByName('ArticlesGuides[url_document]')))
-               	{
-	                if(!is_dir($path))
-	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/', 0777, true);
-	              
-	                	$model->url_document->saveAs($path.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
-					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();    			 			   	
-		                if($model->save())
-		                {
-		               		              
-				 			$names = $_POST['names'];
-				            $last_name1 = $_POST['last_names1'];
-				            $last_name2 = $_POST['last_names2'];
-				            $position = $_POST['positions'];
-				            
-         					foreach($_POST['names'] as $key => $names)
-         					{
-				               	unset($modelAuthor);
-				               	$modelAuthor = new ArtGuidesAuthor;
-
-				               	$modelAuthor->id_art_guides = $model->id;
-				       			$modelAuthor->names = $names;
-				        		$modelAuthor->last_name1 = $last_name1[$key];
-				       			$modelAuthor->last_name2 = $last_name2[$key];
-				        		$modelAuthor->position = $position[$key];
-	                    		$modelAuthor->save();
-		              	    }	
-		              	    $section = "Artículos y Guías"; 
-		     				$action = "Creación";
-							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
-		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		     				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		                    Yii::app()->end();
-		               }
-		               else
-		               {
-		               		echo CJSON::encode(array('status'=>'404'));
-                            Yii::app()->end();
-		               }
-		                  
-			          
-			    }
-			    else 
-			    {
-	               	if($model->save())
-	               	{             
-			 			$names = $_POST['names'];
-			            $last_name1 = $_POST['last_names1'];
-			            $last_name2 = $_POST['last_names2'];
-			            $position = $_POST['positions'];
-			            
-     					foreach($_POST['names'] as $key => $names)
-     					{
-			               	unset($modelAuthor);
-			               	$modelAuthor = new ArtGuidesAuthor;
-			               	$modelAuthor->id_art_guides  = $model->id;
-			       			$modelAuthor->names = $names;
-			        		$modelAuthor->last_name1 = $last_name1[$key];
-			       			$modelAuthor->last_name2 = $last_name2[$key];
-			        		$modelAuthor->position = $position[$key];
-                    		$modelAuthor->save();
-	              	    }	
-              	 	 		$section = "Artículos y Guías"; 
-		     				$action = "Creación";
-							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
-		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		     				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-                        	Yii::app()->end();
-
-                    } 		                      
-		            else 
-		            {
-		            	echo CJSON::encode(array('status'=>'404'));
-	                    Yii::app()->end();
-		            }
-		        }    
-	        }// if validate
-	    }//	ArticlesGuides	   
-        	
-   		if(!isset($_POST['ajax']))
-				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
-	} 
-
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

@@ -4094,7 +4094,7 @@ if(areaValue =="SOCIOLOGIA"){
 					  		<?php echo $form->error($value,'position'); ?>
 					  </div>
                 <?php echo CHtml::button('Elminar',array('submit' => array('articlesGuides/deleteAuthor','id'=>$modelAuthors[$key]->id,'idArticlesGuidesAuthors'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
-  <?php } ?>
+      <?php } ?>
              <hr>
           </div>
 
