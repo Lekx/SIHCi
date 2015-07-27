@@ -2293,3 +2293,7 @@ div.pager span.active
   background-color: #00B9C0 !important;
   color: white !important;
 }
+.totalTables{
+  margin-left: 140px;
+  margin-top: -20px;
+}

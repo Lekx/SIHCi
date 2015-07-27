@@ -64,15 +64,29 @@ function change(){
 
 	$('tbody > tr').show();
 
-	if( valueHospital == 'total' && valueYear=='total')
+	if( valueHospital == 'total' && valueYear=='total'){
 		$('tbody > tr').show();
-	else if(valueHospital == 'total'){
+		totalVisibles = parseInt($('tbody >tr').length);
+		$('#totalToShow').html(totalVisibles);
+	}else if(valueHospital == 'total'){
 		$('tbody > tr:not(:contains('+valueYear+'))').hide();
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueYear+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
 	}else if(valueYear == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'))').hide();
-	}else
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
+	}else{
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').hide();
-
+		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').length);
+		total = parseInt($('#total').html());
+		totalToShow = total - totalInvisible;
+		$('#totalToShow').html(totalToShow);
+	}
 }//function
  function search(){
  	valueSearch = $("#search").val();
@@ -87,7 +101,7 @@ function change(){
 
 </script>
 <!-- <h3>en construcción . . .</h3> -->
-<input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchcrud">
+<input type="text" id="search" onKeyPress="search()" placeholder="Búsqueda por columna" title="La barra de búsqueda es sensible a las mayúsculas" class="searchcrud">
 <?php echo CHtml::Button('',array('class'=>'adminbut')); ?>
 <div class="tableOpt">
 	<div class="col-md-6">
@@ -114,6 +128,7 @@ function change(){
 </div>
 </div>
 <?php
+echo "Total de libros: <div id='total' style='display: none'>".$total."</div> <div class='totalTables' id='totalToShow'>".$total."</div>";
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'books-grid',
