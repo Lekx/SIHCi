@@ -1,8 +1,10 @@
+
 <?php 
 
 $mandatory = false;
-if(isset($evaluationStep) && ($evaluationStep == 3 || $evaluationStep == 4 ||$evaluationStep == 12)){
-//  var_dump($evaluationStep);
+if(isset($evaluationStep) && ($evaluationStep == 3 || $evaluationStep == 4 ||$evaluationStep == 12) && $is_sponsored == 1){ // MODIFED ADDED LAST && MAY BE REMOVED
+  $mandatory = true;
+}else if(isset($evaluationStep) && ($evaluationStep == 4 || $evaluationStep == 7 || $evaluationStep == 11 || $evaluationStep == 13) && $is_sponsored == 0){ // MODIFED ADDED LAST && MAY BE REMOVED all the else
   $mandatory = true;
 }
 ?>
@@ -11,7 +13,7 @@ if(isset($evaluationStep) && ($evaluationStep == 3 || $evaluationStep == 4 ||$ev
 
     <?php
 $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'projects-followups-form',
+    'id'=>'projects-followups-forms',
     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
    'enableAjaxValidation'=>true,
 )); ?>
@@ -27,9 +29,9 @@ $form=$this->beginWidget('CActiveForm', array(
     </div>
 
     <div class="row">
-      <?php echo CHtml::htmlButton('Enviar',array(
-                  'onclick'=>'send("projects-followups-form", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","'.($mandatory == true ? "mandatory,".($evaluationStep-1) : "").'")',
-                  'class'=>'savebuttonp',
+      <?php echo CHtml::htmlButton('Crear comentario',array(
+                  'onclick'=>'send("projects-followups-forms", "projectsReview/review", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","'.($mandatory == true ? "mandatory,".($evaluationStep-1) : "").'")',
+                  'class'=>'savebutton',
                   'id'=>'createFollowup',
               ));
       ?>

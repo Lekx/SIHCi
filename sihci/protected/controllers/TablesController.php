@@ -72,14 +72,14 @@ class TablesController extends Controller
 	{
 
 
-		$titlePage = "Cantidad de Investigadores";
+		$titlePage = "Cantidad de investigadores";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM users WHERE type="fisico" ORDER BY year DESC')->queryAll();
 		$researchers=Yii::app()->db->createCommand('SELECT id FROM users where type="fisico"')->queryAll();
 		 $query='SELECT DISTINCT u.id,p.names, j.hospital_unit, curri.id AS id_curriculum, curri.SNI, curri.status, u.creation_date from users u
  				LEFT JOIN curriculum curri ON curri.id_user=u.id
  				LEFT JOIN jobs j ON curri.id=j.id_curriculum
   				LEFT JOIN persons p ON u.id=p.id_user
-  				WHERE u.type="fisico";LIMIT 5' ;
+  				WHERE u.type="fisico" ORDER BY u.creation_date DESC' ;
   		$total = count($researchers);
 	     $researchersIncome=new CSqlDataProvider($query, array(
 		    'pagination'=>array(
@@ -95,7 +95,7 @@ class TablesController extends Controller
 
 	public function actionProjects()
 	{
-		$titlePage = "Proyectos de Investigación";
+		$titlePage = "Proyectos de investigación";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM projects ORDER BY year DESC')->queryAll();
 		$projects=Yii::app()->db->createCommand('SELECT id FROM projects')->queryAll();
 
@@ -103,7 +103,7 @@ class TablesController extends Controller
 		 		FROM projects pro
 				 LEFT JOIN curriculum curri ON pro.id_curriculum=curri.id
  				 LEFT JOIN users u ON curri.id_user=u.id
-  				 LEFT JOIN persons p ON u.id=p.id_user';
+  				 LEFT JOIN persons p ON u.id=p.id_user ORDER BY pro.creation_date DESC';
   	     $total = count($projects);
 	     $projects=new CSqlDataProvider($query, array(
 		    'pagination'=>array(
@@ -123,7 +123,7 @@ class TablesController extends Controller
 				 JOIN curriculum curri ON bo.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+  				 JOIN persons p ON u.id=p.id_user ORDER BY bo.creation_date DESC';
   	    $total = count($books);
 	     $books=new CSqlDataProvider($query, array(
 		    'pagination'=>array(
@@ -136,14 +136,14 @@ class TablesController extends Controller
 
 	public function actionChapters()
 	{
-		$titlePage = "Capítulos de Libros";
+		$titlePage = "Capítulos de libros";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM books_chapters ORDER BY year DESC')->queryAll();
 		$booksChapters=Yii::app()->db->createCommand('SELECT id FROM books_chapters')->queryAll();
 		$query='SELECT u.id,p.names,cha.chapter_title, cha.book_title, cha.publishers, cha.url_doc, j.hospital_unit, cha.creation_date FROM books_chapters cha
 				 JOIN curriculum curri ON cha.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+  				 JOIN persons p ON u.id=p.id_user ORDER BY cha.creation_date DESC';
   		$total = count($booksChapters);
 	     $chapters=new CSqlDataProvider($query, array(
 		    'pagination'=>array(
@@ -156,7 +156,7 @@ class TablesController extends Controller
 
 	public function actionPatents()
 	{
-		$titlePage = "Registro de Propiedad Intelectual: Patentes";
+		$titlePage = "Registro de propiedad intelectual: Patentes";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM patent ORDER BY year DESC')->queryAll();
 		$patent=Yii::app()->db->createCommand('SELECT id FROM patent')->queryAll();
 		$query='SELECT u.id,p.names,pa.country, pa.name, pa.application_type, pa.application_number, pa.patent_type, j.hospital_unit, pa.creation_date
@@ -164,7 +164,7 @@ class TablesController extends Controller
 				 JOIN curriculum curri ON pa.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+  				 JOIN persons p ON u.id=p.id_user ORDER BY pa.creation_date DESC';
   		$total = count($patent);
 	     $patents=new CSqlDataProvider($query, array(
 		    'pagination'=>array(
@@ -177,7 +177,7 @@ class TablesController extends Controller
 
 	public function actionSoftware()
 	{
-		$titlePage = "Registro de Propiedad Intelectual: Software";
+		$titlePage = "Registro de propiedad intelectual: Software";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM software ORDER BY year DESC')->queryAll();
 		$software=Yii::app()->db->createCommand('SELECT id FROM software')->queryAll();
 		$query='SELECT u.id,p.names, so.country, so.title, so.sector, so.organization, so.objective, so.path, j.hospital_unit, so.creation_date
@@ -185,7 +185,7 @@ class TablesController extends Controller
 				 JOIN curriculum curri ON so.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+  				 JOIN persons p ON u.id=p.id_user ORDER BY so.creation_date DESC';
         $total = count($software);
 	     $softwares=new CSqlDataProvider($query, array(
 		    'pagination'=>array(
@@ -198,7 +198,7 @@ class TablesController extends Controller
 
 	public function actionCopyrights()
 	{
-		$titlePage = "Registro de Propiedad Intelectual: Derechos de Autor";
+		$titlePage = "Registro de propiedad intelectual: Derechos de autor";
 		$year=Yii::app()->db->createCommand('SELECT DISTINCT YEAR(creation_date) as year FROM copyrights ORDER BY year DESC')->queryAll();
 		$copyrights=Yii::app()->db->createCommand('SELECT id FROM copyrights')->queryAll();
 		$query='SELECT u.id,p.names, copy.participation_type, copy.title, copy.step_number, copy.application_date, j.hospital_unit, copy.creation_date
@@ -206,7 +206,7 @@ class TablesController extends Controller
 				 JOIN curriculum curri ON copy.id_curriculum=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+  				 JOIN persons p ON u.id=p.id_user ORDER BY copy.creation_date DESC';
         $total = count($copyrights);
 	     $copyrights=new CSqlDataProvider($query, array(
 		    'pagination'=>array(
@@ -227,7 +227,7 @@ class TablesController extends Controller
 				 JOIN curriculum curri ON ar.id_resume=curri.id
 				 JOIN jobs j ON curri.id=j.id_curriculum
  				 JOIN users u ON curri.id_user=u.id
-  				 JOIN persons p ON u.id=p.id_user';
+  				 JOIN persons p ON u.id=p.id_user ORDER BY ar.creation_date DESC';
   	    $total = count($articles);
 	     $articlesGuides=new CSqlDataProvider($query, array(
 		    'pagination'=>array(

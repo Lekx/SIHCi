@@ -205,6 +205,7 @@ class ProjectsController extends Controller
 		if(isset($_POST['Projects']))
 		{
 			$model->attributes=$_POST['Projects'];
+			$conexion = Yii::app()->db;
 
 			if(Yii::app()->user->Rol->id==1){
 				$model->id_curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$model->id_curriculum))->id;
@@ -214,15 +215,37 @@ class ProjectsController extends Controller
 
 			if($_POST[1]== "draft")
 				$model->status = "BORRADOR";
-			else
+			else{
+	
+			$checkGreaterSteps = ProjectsFollowups::model()->findByAttributes(array("id_project"=>$model->id, "type"=>"system"),array('order'=>'id DESC'));
+			//var_dump($checkGreaterSteps);
+			$model->status = "DIVUH";
+			if(!is_null($checkGreaterSteps)){
+				$conexion->createCommand("UPDATE projects_followups SET type = 'comment' WHERE id_project = ".$id." AND type ='mandatory'")->execute();
+			}
+
+			/*if(!is_null($checkGreaterSteps)){
+
+				if($checkGreaterSteps->step_number == 3)
+					$model->status = "COMITE";
+				else
+					$model->status = "DIVUH";
+
+			}else{
 				$model->status = "DIVUH";
+			}*/
+
+
+
+			}
 
 			$model->status = ($pastStatus == "MODIFICAR" && $model->status =="BORRADOR") ? "MODIFICAR" : $model->status;
 
-			$model->folio = "-1";
+			$model->folio = ($model->folio != "-1" ? $model->folio : "-1");
 			//$model->is_sponsored = 0;
 			$model->is_sni = (Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->SNI > 0 ? 1 : 0);
-			$model->registration_number = "-1";
+			//$model->registration_number = "-1";
+			$model->registration_number = ($model->registration_number != "-1" ? $model->registration_number : "-1");
 
 			//var_dump($_POST['research_types']);
 			$newRtypes ="";
@@ -248,11 +271,23 @@ class ProjectsController extends Controller
 					$followup = new ProjectsFollowups;
 					$followup->id_project = $model->id;
 					$followup->id_user = Yii::app()->user->id;
-					$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+					
 					$followup->type = "system";
-					$followup->step_number = 0;
+					
+					//$checkGreaterSteps = ProjectsFollowups::model()->findByAttributes(array("id_project"=>$model->id, "type"=>"system"),array('order'=>'id DESC'));
+					//var_dump($checkGreaterSteps);
+					//if(!is_null($checkGreaterSteps)){
+						
+					//	$followup->step_number = $checkGreaterSteps->step_number;
+					//	$followup->followup = "Proyecto modificado y enviado a revisión.";
+					//}else{
+						$followup->followup = "Proyecto enviado a revisión del Jefe de división de unidad hospitalaria.";
+						$followup->step_number = 0;
+					//}
 
 					if($followup->save()){
+						
+						$conexion->createCommand("UPDATE projects_committee SET status = 'pendiente' WHERE id_project = ".$id)->execute();
 						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
 						Yii::app()->end();
 					}else{

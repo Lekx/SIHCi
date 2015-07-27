@@ -10,9 +10,6 @@ $(window).scroll(function(event){
    if (scroll > 200 ){
       $('#header-content-container').show();
    }
-   
+
    lastScrollTop = scroll;
 });
-
-
- 

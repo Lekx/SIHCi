@@ -85,52 +85,18 @@ function checkEmailNull($email, $email2){
 
 
 	public function activateAccount($to,$activationKey){
+
 		$sihci = "From: SIHCI";
-
-		// subject
 		$subject = "Activar cuenta";
+		$title = "¡Felicidades!";
+		$content = "Tu registro a sido exitoso, ahora eres miembro SIHCi, si deseas acceder a tu cuenta necesitas confirmar tu correo, podrás hacerlo con un sensillo click en el link que se encuentra a continuación:";
+		$urlImg = "usuario.png";
+		$urltitle = "Activar Cuenta.";
+		$key = $activationKey;
+		Yii::app()->runController('mail/sendMail/to/'.$to.'/subject/'.$subject.'/title/'.$title.'/content/'.$content.'/urlImg/'.$urlImg.'/urltitle/'.$urltitle.'/key/'.$key);
 
-		// message
-		$message ='<html>
-			  <head>
-				<meta charset="UTF-8"/>
-			  </head>
-			  <body>
-				<div id="container" style="width: 450px;height: auto;background-color: #ECEDEE">
-			  <div class="logo">
-				<img src="http://sgei.hcg.gob.mx/sihci/sihci/img/correos/up.png" alt="" style="width: 100%"/></div>
-			  <div class="content" style="font-size: 15px;padding: 20px;text-align: justify">
-				<h2>¡Felicidades!</h2>
-			  Tu registro a sido exitoso, ahora eres miembro SIHCi,
-			  si deseas acceder a tu cuenta necesitas confirmar tu correo,
-			  podrás hacerlo con un sensillo click en el link que
-			  se encuentra a continuación:
-			  </div>
-			  <div class="link">
-				<img src="http://sgei.hcg.gob.mx/sihci/sihci/img/correos/usuario.png" alt="" style=""/><a href="http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.$activationKey.'" style="text-decoration: none;display: inline-block;margin-left: 20px;margin-bottom: 20px"><h5>Activar mi cuenta ahora</h5></a>
-			  </div>
-			  <div class="footer" style="font-size: 15px;padding-top: 10px;padding-bottom: 10px;border-top: 1px solid #00B9C0;text-align: center;margin-top: 10px">
-				Todos los derechos reservados. Copyright © 2015 SIHCi
-			  </div>
-			</div>
-			  </body>
-			</html>
-		';
 
-		// from
 
-		// To send HTML mail, the Content-type header must be set
-		$headers = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= "CC: udevelopd@gmail.com\r\n";
-		$headers .= 'Content-type: text/html;  charset=utf-8' . "\r\n";
-
-		// Additional headers
-		$headers .= "From: sihci@noreply.com";
-
-		// Mail it
-		if(!mail($to,$subject,$message,$headers)){
-		  echo"Error al enviar el mensaje.";
-		}
 	}
 
 	public function actionCreate() {
@@ -187,35 +153,35 @@ function checkEmailNull($email, $email2){
 												Yii::app()->end();
 
 												}else{
-												echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Persona), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+												echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Persona), vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 												Yii::app()->end();
 											}
 										}else{
-											echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Usuarios), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+											echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Usuarios), vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 											Yii::app()->end();
 										}
 
 									}else{
-										echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp o pasaporte no es correcto, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+										echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp o pasaporte no es correcto, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 										Yii::app()->end();
 									}
 
 							}else{
-								echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp ingresado ya existe, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+								echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp ingresado ya existe, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 								Yii::app()->end();
 							}
 						}
 					}
 				}else{
-					echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Las contraseñas no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+					echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Las contraseñas no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 					Yii::app()->end();
 				}
 			}else{
-				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 				Yii::app()->end();
 			}
 			}else{
-				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ya existe el correo ingresado, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ya existe el correo ingresado, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 				Yii::app()->end();
 			}
 		}

@@ -4,7 +4,7 @@
             <hr>
         </div>
         <h3>Total de capítulos de libros</h3>
-<div class="tooltipchart" style="">Seleccionar este elemento</div>
+<div class="tooltipchart">Seleccionar este elemento</div>
 
 <div class="grafiOpt">
   <div class="col-md">Año del reporte</div>
@@ -39,7 +39,6 @@ request.done(function(data) {
 
 chart = new Highcharts.Chart({
 
-
         chart: {
             renderTo: 'container',
             type: 'column',
@@ -52,7 +51,10 @@ chart = new Highcharts.Chart({
                         (function(i) {
                             var item = legend.allItems[i].legendItem;
                             item.on('mouseover', function (e) {
-                                $(".tooltipchart").show();
+                              var childPosition = $(".highcharts-legend-item text:eq( "+i+" ) ").offset();
+                               $(".tooltipchart").css("top",childPosition.top+20);
+                               $(".tooltipchart").css("left",childPosition.left);
+                               $(".tooltipchart").show();
                             }).on('mouseout', function (e) {
                                 $(".tooltipchart").hide();
                             });
@@ -73,8 +75,12 @@ chart = new Highcharts.Chart({
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
         },
         xAxis: {
+            
             categories: data.months,
+            categories: data.totalBooks,
+              
             crosshair: true
+
         },
         yAxis: {
             min: 0,
@@ -108,13 +114,13 @@ chart = new Highcharts.Chart({
             name: 'Hospital Civil Fray Antonio Alcalde',
             data: data.faa,
 			showInLegend: true
-			
+
 
         }, {
 
             name: 'Hospital Civil Dr. Juan I. Menchaca',
             data: data.jim,
-			 showInLegend: true
+			showInLegend: true
 
         }, {
             name: 'Otros',
@@ -135,7 +141,7 @@ $(document).ready(function(){
     loadChart();
 
 });
-	
+
 
 
 </script>

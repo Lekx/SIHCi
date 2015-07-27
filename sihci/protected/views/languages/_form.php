@@ -109,21 +109,16 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'native_language');?>
+	   &nbsp;Idioma Nativo
 		<?php echo $form->checkbox($model,'native_language');?>
-		
+
 		<?php echo $form->error($model,'native_language'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'is_traducer');?>
+	  	Traductor
 		<?php echo $form->checkbox($model,'is_traducer');?>
-		
-		<?php echo $form->error($model,'is_traducer'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'is_teacher');?>
+		<?php echo $form->error($model,'is_traducer'); ?>
+	  	Profesor
 		<?php echo $form->checkbox($model,'is_teacher');?>
 		<?php echo $form->error($model,'is_teacher'); ?>
 	</div>
@@ -179,7 +174,7 @@
 			     		'changeYear'=>true, //cambiar por Año
 			    		'maxDate' => 'now',
 				        'yearRange'=>'1930:now',
-				       
+
 
 		     	),
 		    'htmlOptions' => array(
@@ -198,7 +193,7 @@
 	</div>
 
 	<div class="row">
-		
+
 		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100, "title"=>"Exámen / Documento probatorio")); ?>
 		<?php echo $form->error($model,'path'); ?>
 	</div>
@@ -207,7 +202,7 @@
 	<div class="row buttons">
         <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
                 'onclick'=>'send("languages-form", "languages/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","languages/admin","");',
-                 //'id'=> 'post-submit-btn', 
+                 //'id'=> 'post-submit-btn',
                 'class'=>'savebutton',
             ));
    		 ?>

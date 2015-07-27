@@ -47,14 +47,14 @@ class DirectedThesis extends CActiveRecord
 			array('title', 'length', 'max'=>250),
 			array('author, grade', 'length', 'max'=>45),
 			array('path, sector, second_level', 'length', 'max'=>100),
-			array('organization','length', 'max'=>130),
+			array('organization','length', 'max'=>150),
 			array('area', 'length', 'max'=>60),
 			array('discipline', 'length', 'max'=>70),
 			array('subdiscipline', 'length', 'max'=>100),
 			array('conclusion_date, creation_date', 'safe'),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
-			array('conclusion_date','compare','compareValue' => date('d/m/Y'),'operator'=>'<='),
+			array('conclusion_date','compare','compareValue' =>date('d/m/Y'),'operator'=>'<='),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),
