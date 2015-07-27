@@ -5,7 +5,7 @@
         </div>
         <h3>Patentes, Software, Derechos de autor</h3>
 
-<div class="tooltipchar">Seleccionar este elemento</div>
+<div class="tooltipchart">Seleccionar este elemento</div>
 
 <div class="grafiOpt">
   <div class="col-md-6">Año del reporte</div>
