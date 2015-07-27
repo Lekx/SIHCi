@@ -77,6 +77,6 @@ $this->breadcrumbs=array(
     <section class="column-right">
         <h5>DOCUMENTOS</h5>
         <h5>DESCARGABLES:</h5>
-        <?php Yii::app()->runController('filesManager/DisplayFiles/section/UnidadEditorial'); ?>
+        <?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
     </section>
 </section>

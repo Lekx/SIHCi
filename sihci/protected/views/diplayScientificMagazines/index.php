@@ -23,9 +23,9 @@ RC01-Desplagar-Revistas-Cientificas
 		fico, se logrará
 		con éxito transitar de la escritura privada a la es
 		critura pública a través del artículo científico or
-		iginal. 
+		iginal.
 	</p>
-	
+
 	<p>
 		<h6>Hipócrates Revista Médica</h6>
 		Revista médica de divulgación académica con orienta
@@ -42,7 +42,7 @@ RC01-Desplagar-Revistas-Cientificas
 		ando a los
 		médicos de mayor jerarquía y experiencia en la tran
 		smisión de sus conocimientos a las nuevas generacio
-		nes. 
+		nes.
 	</p>
 
 	<p>
@@ -75,11 +75,11 @@ RC01-Desplagar-Revistas-Cientificas
 		ior, en un esfuerzo que vincule y genere redes que
 		filtren ideas, e
 		hipótesis científicas, favoreciendo una fluida gama
-		en líneas de análisis e investigación. 
+		en líneas de análisis e investigación.
 	</p>
 
 </section>
 
 <section>
-	<?php Yii::app()->runController('filesManager/DisplayFiles/section/Revistas científicas'); ?>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 </section>

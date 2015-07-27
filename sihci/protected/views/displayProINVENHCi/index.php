@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 ?>
 <section class="informativa">
-    
+
     <section class="column-center">
        <div class="titleinfo">
        <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
@@ -121,6 +121,6 @@ $this->breadcrumbs=array(
     <section class="column-right">
         <h5>DOCUMENTOS</h5>
         <h5>DESCARGABLES:</h5>
-        <?php Yii::app()->runController('filesManager/DisplayFiles/section/desplegraProINVENHCi'); ?>
+        <?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
     </section>
 </section>

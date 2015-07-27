@@ -3,11 +3,56 @@
 /* @var $model Users */
 /* @var $form CActiveForm */
 ?>
+<script type="text/javascript">
+
+  $('.lettersAndNumbers').bind('keyup input',function(){
+    var input = $(this);
+    input.val(input.val().replace(/[^a-z0-9A-ZñÑ´'ÁáÉéÍíÓóÚú ]/g,'') );
+  });
+
+    function lettersOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
+    function numericOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      numbers = " 1234567890";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (numbers.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
+</script>
+
+
+
 <?php
             $baseUrl = Yii::app()->baseUrl;
             $cs = Yii::app()->getClientScript();
             $cs->registerScriptFile($baseUrl . '/js/ajaxfile.js');
-            $cs->registerScriptFile($baseUrl . '/js/numbersLettersOnly.js');
+            //$cs->registerScriptFile($baseUrl . '/js/numbersLettersOnly.js');
 ?>
 <div id="crateusers" class="form">
     <?php $form = $this->beginWidget('CActiveForm', array(
@@ -89,7 +134,7 @@
 
             <div class="inner-addon right-addon">
                 <i class="glyphicon glyphicon-globe"></i>
-                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "CURP / Pasaporte", 'title'=>'CURP / Pasaporte','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
+                <?php echo $form->textField($modelPersons, 'curp_passport', array('placeholder' => "CURP / Pasaporte", 'title'=>'CURP / Pasaporte','class'=>'lettersAndNumbers'));?>
             </div>
            </div>
         <div class="emptycontent"></div>

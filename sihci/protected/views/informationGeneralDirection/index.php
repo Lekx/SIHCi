@@ -21,8 +21,8 @@ $this->breadcrumbs=array(
 
 <div class="generalinformation">
 
-	
-	
+
+
 			<span>¿Quiénes somos?</span><br>
 			<!--<span>¿Qué es el Hospital Civil de Guadalajara?</span><br><br>-->
 
@@ -40,17 +40,17 @@ $this->breadcrumbs=array(
 		</ul>
 		Líneas estratégicas:
 		<ul>
-			 <li> Transformar la administración hospitalaria basada en procesos.</li> 
-			 <li> Alcanzar un pleno desarrollo profesional y humano de profesionales en salud.</li> 
-			 <li>  Establecer una Cultura enfocada hacia la Calidad y Seguridad Institucional.</li> 
-			 <li> Desarrollar la investigación operativa en procesos de salud.</li> 
-			 <li> Establecer sistema único e integral de información</li> 
-			 <li> Lograr más y mejor comunicación.</li> 
-			 <li> Implementar un sistema de financiamiento efectivo.</li> 
-		     <li> Modernización, hacia un Hospital de Vanguardia. </li> 
+			 <li> Transformar la administración hospitalaria basada en procesos.</li>
+			 <li> Alcanzar un pleno desarrollo profesional y humano de profesionales en salud.</li>
+			 <li>  Establecer una Cultura enfocada hacia la Calidad y Seguridad Institucional.</li>
+			 <li> Desarrollar la investigación operativa en procesos de salud.</li>
+			 <li> Establecer sistema único e integral de información</li>
+			 <li> Lograr más y mejor comunicación.</li>
+			 <li> Implementar un sistema de financiamiento efectivo.</li>
+		     <li> Modernización, hacia un Hospital de Vanguardia. </li>
 			 <li> Internacionalización Institucional a través de Convenios e intercambios de capacitación, investigación y
-			   programas de alto impacto social con Instituciones nacionales e Internacionales reconocidas.</li> 
-			 <li>  Implementación de un sistema de participación activa del usuario externo en los programas asistenciales.</li> 
+			   programas de alto impacto social con Instituciones nacionales e Internacionales reconocidas.</li>
+			 <li>  Implementación de un sistema de participación activa del usuario externo en los programas asistenciales.</li>
 		</ul>
 		Ideología Institucional<br>
 		Misión
@@ -91,7 +91,7 @@ $this->breadcrumbs=array(
 	<section class="column-right">
 	<h5>DOCUMENTOS</h5>
 	<h5>DESCARGABLES:</h5>
-		<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
-	
+
 </section>

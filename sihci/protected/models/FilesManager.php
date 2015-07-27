@@ -13,7 +13,7 @@
 
 class FilesManager extends CActiveRecord
 {
-	
+
 	public function tableName()
 	{
 		return 'files_manager';
@@ -25,18 +25,17 @@ class FilesManager extends CActiveRecord
 			array('section, file_name, path, start_date, end_date', 'required'),
 			array('section', 'length', 'max'=>100),
 			array('file_name', 'length', 'max'=>100),
-			array('path, safe','file','allowEmpty'=>true, 'on'=>'create',
-				   'types'=>'pdf,PDF',
-			       'message'=>'Solo se admiten archivos pdf, doc, docx, odt, jpg, jpeg, png'),		
+			array('path','file','types'=>'pdf,PDF', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2,
+			       'message'=>'Solo se admiten archivos con extenciòn .pdf'),
 			array('path', 'length', 'max'=>250),
 			array('id, section, file_name, path, start_date, end_date', 'safe', 'on'=>'search'),
 		);
 	}
 
-	
+
 	public function relations()
 	{
-		
+
 		return array(
 		);
 	}
@@ -45,15 +44,15 @@ class FilesManager extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'section' => 'Seccion',
+			'section' => 'Sección',
 			'file_name' => 'Nombre archivo',
 			'path' => 'Ruta',
-			'start_date' => 'Fecha Inicio',
-			'end_date' => 'Fecha de final',
+			'start_date' => 'Fecha inicio',
+			'end_date' => 'Fecha final',
 		);
 	}
 
-	
+
 	public function search()
 	{
 		$criteria=new CDbCriteria;
@@ -70,7 +69,7 @@ class FilesManager extends CActiveRecord
 		));
 	}
 
-	
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -87,7 +86,7 @@ class FilesManager extends CActiveRecord
 
     	protected function afterFind()
     {
-  
+
        		$this->start_date = DateTime::createFromFormat('Y-m-d H:i:s', $this->start_date)->format('d/m/Y');
         	$this->end_date = DateTime::createFromFormat('Y-m-d H:i:s', $this->end_date)->format('d/m/Y');
      		return parent::afterFind();

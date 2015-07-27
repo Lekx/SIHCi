@@ -138,15 +138,15 @@ function checkEmailNull($email, $email2){
 		$model = new Users;
 		$modelPersons = new Persons;
 
-		//$this->performAjaxValidation($model);
-		//$this->performAjaxValidation($modelPersons);
+		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelPersons);
 		if(isset($_POST['Users'])) {
 			$model->id_roles = '3';
 			$model->attributes = $_POST['Users'];
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
 			if (empty($result)){
-			if ($this->checkEmailDifferent($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailNull($_POST['Users']['email'], $_POST['Users']['email2'])) {
+			if ($this->checkEmailDifferent($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailNull($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailValid($_POST['Users']['email'],$_POST['Users']['email2'])) {
 				if ($this->checkPasswordDifferent($_POST['Users']['password'], $_POST['Users']['password2']) && $this->checkPasswordNull($_POST['Users']['password'],$_POST['Users']['password2'])) {
 
 
@@ -183,7 +183,6 @@ function checkEmailNull($email, $email2){
 												$log->action = "creacion";
 												$log->datetime = new CDbExpression('NOW()');
 												$log->save();
-
 												echo CJSON::encode(array('status'=>'success'));
 												Yii::app()->end();
 
