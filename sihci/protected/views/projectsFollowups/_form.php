@@ -1,3 +1,15 @@
+<script type="text/javascript">
+    
+$(document).ready(function(){
+
+
+$("textarea").keyup(function(e) {
+    while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+        $(this).height($(this).height()+1);
+    };
+});
+});
+</script>
 <div class="form">
 
     <?php
@@ -5,6 +17,7 @@ $form=$this->beginWidget('CActiveForm', array(
     'id'=>'projects-followups-form-create',
     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
    'enableAjaxValidation'=>true,
+      'enableClientValidation'=>true,
 )); ?>
 
     <div class="row">

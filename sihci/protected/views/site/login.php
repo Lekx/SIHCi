@@ -1,6 +1,6 @@
 <?php
 if(strpos(Yii::app()->request->url,'site/login'))
-	$this->redirect(Yii::app()->user->returnUrl);
+	$this->redirect('index');
 ?>
 
 	<div class="loginback">

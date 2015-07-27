@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/* $(document).ready(function() {
 
   $(".numericOnly").keydown(function(e) {
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -1216,3 +1216,4 @@ function lettersOnly(e) {
   if (letras.indexOf(tecla) == -1 && !tecla_especial)
     return false;
 }
+*/

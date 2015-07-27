@@ -135,7 +135,7 @@ $this->menu=array(
 			'status',
 			array(
 				'label'=>'Folio',
-				'value'=>$model->folio == -1 ? "No asignado" : $mode->folio,
+				'value'=>$model->folio == -1 ? "No asignado" : $model->folio,
 				),
 				array(
 						'label'=>'¿Patrocinado?',
@@ -143,7 +143,7 @@ $this->menu=array(
 						),
 				array(
 						'label'=>'Número de registro',
-						'value'=>$model->registration_number == -1 ? "No asignado" : $mode->folio,
+						'value'=>$model->registration_number == -1 ? "No asignado" : $model->folio,
 					),	array(
 								'label'=>'Investigadores colaboradores',
 								'value'=>$coworkers,
