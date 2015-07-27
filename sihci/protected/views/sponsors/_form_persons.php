@@ -123,7 +123,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 								'class'=>'savebutton',
 						));
 		?>
-		 <?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?> 
+		 <?php echo CHtml::link('Cancelar',array('sponsors/create_persons')); ?>
 	</div>
 
 	<script>
