@@ -4,7 +4,7 @@ class SiteController extends Controller {
 	/**
 	 * Declares class-based actions.
 	 */
-	
+
 	/*public function actions() {
 		return array(
 			// captcha action renders the CAPTCHA image displayed on the contact page
@@ -19,7 +19,7 @@ class SiteController extends Controller {
 			),
 		);
 	}*/
-	
+
  	public function actionSessionTimeout()
     {
         $this->render('sessionTimeout');
@@ -133,7 +133,7 @@ class SiteController extends Controller {
 	// LO02 – Cerrar sesión
 	public function actionLogout() {
 				$section = "Logout";
-				$details = "Usuario: ".Yii::app()->user->fullname;
+				$details = "Usuario: ";//.Yii::app()->user->fullname;
 				$action = "Cerró Sesión";
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		Yii::app()->user->logout();
@@ -159,20 +159,14 @@ class SiteController extends Controller {
 				$key = sha1(md5(sha1($date . "" . $model->email . "" . $random)));
 				$is_active->act_react_key = $key;
 				$is_active->save();
+				$sihci = "From: SIHCI";
 				$subject = "Has solicitado recuperar tu contraseña en: ";
 				$subject .= Yii::app()->name;
-				$body = "
-
-					Has solicitado recuperar tu contraseña
-
-					Haz click en ésta liga para cambiar tu contraseña
-
-				    http://sgei.hcg.gob.mx/sihci/sihci/index.php/site/changePassword?key=" . $key . ">";
-
-				if(!mail($model->email,$subject,$body)){
-				  echo"Error al enviar el mensaje.";
-				}
-
+				$title = "¡Has solicitado recuperar tu contraseña!";
+				$content = "Haz click en ésta liga para cambiar tu contraseña:";
+				$urlImg = "contrasena.png";
+				$urltitle = "Cambiar Contraseña.";
+				Yii::app()->runController('mail/sendMail/to/'.$to.'/subject/'.$subject.'/title/'.$title.'/content/'.$content.'/urlImg/'.$urlImg.'/urltitle/'.$urltitle.'/key/'.$key);
 
 				$model->email = "";
 				echo '200';

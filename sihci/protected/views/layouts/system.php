@@ -60,7 +60,7 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <script>
                                     $(document).ready(function() {
-                                        $('input, select,textarea,filepicker').tooltipster({
+                                        $('input, select,textarea,filepicker,#BooksChapters_discipline').tooltipster({
                                             position: 'right',
                                             trigger: 'custom',
                                         })
@@ -115,7 +115,7 @@
                         );
                 else if(Yii::app()->user->type == 'fisico')
                     $infoUser = array(
-                        "label"=>"Fisico",
+                        "label"=>"Físico",
                         "icon"=>"PCV-HC",
                         "cuentaicon"=>"Pcuenta",
                         "controller"=>"curriculumVitae/personalData",
@@ -191,21 +191,26 @@
                     ?>
                 </div>
                 <div class="headerconteiner3">
-                    <div class="fullnamed"><h5>
+                    <div class="fullnamed">
 
-                        <?php echo Yii::app()->user->fullname; ?>
-                    </h5> <h5>(<?php echo Yii::app()->user->Rol->name; ?>)</h5>
+                        <?php echo Yii::app()->user->fullname; ?><br>
+                           (<?php echo Yii::app()->user->Rol->name; ?>)
+                           <br>
 
+                    </div>
+                    <div class="typelabe">
                     <?php
                         echo "<h6>Perfil  :  ".$infoUser['label']."</h6>";
                     ?>
-
+                    </div>
+                    <div class="logoutbars">
                     <?php
                         echo "<h6 id='logoutlable'>";
                         echo CHtml::link('Cerrar sesión', array('site/logout'));
                         echo "</h6>";
                     ?>
                     </div>
+
                 </div>
                 <div class="headerconteiner4">
                     <h4>Menú </h4>
@@ -428,7 +433,7 @@
                 <div class="adminmenu">
                     <div><?php echo CHtml::link('Gestión de Archivos', array('FilesManager/admin'));?></div>
                     <div><?php echo CHtml::link('Gestión de usuarios', array('adminUsers/'));?></div>
-                    <div><?php echo CHtml::link('Gestiónk de proyectos', array('adminProjects/'));?></div>
+                    <div><?php echo CHtml::link('Gestión de proyectos', array('adminProjects/'));?></div>
                     <div><?php echo CHtml::link('Respaldos', array('adminBackups/'));?></div>
                     <div><?php echo CHtml::link('Áreas de especialidad', array('adminSpecialtyAreas/admin'));?></div>
                     <div><?php echo CHtml::link('Lineas de Investigación', array('adminResearchAreas/admin'));?></div>
@@ -531,7 +536,7 @@
             </div>
             <div class="loader">
               <div class="pulse">
-              
+
 				</div>
 				<div class="heart">
 				<i class="fa fa-heart fa-5x"></i></div>
@@ -570,7 +575,7 @@
                 </div>
                 <div class="footermenuI">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PBitacora.png alt="home">', array('account/systemLog'));?>
-                    <span>Bitacora</span>
+                    <span>Bitácora</span>
                 </div>
                 <div class="footermenuI logout">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PCerrarCuenta.png alt="home">', array('site/logout'));?>

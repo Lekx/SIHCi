@@ -16,4 +16,3 @@ mkdir -p $BACKUP_FOLDER
 mysqldump --force --opt  -u${MYSQL_USER} -h${HOST} -p${MYSQL_PASSWORD} $NAME_DATABASE > "$BACKUP_FOLDER/${date}.sql"
 
 
-

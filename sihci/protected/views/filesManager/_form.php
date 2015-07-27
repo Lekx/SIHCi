@@ -12,7 +12,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'files-manager-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
@@ -32,73 +33,67 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 					   <option value="hospitalUnitJimEthicsCommittee">Comités</option>
 					   <option value="locationMapOfOfficeSGEIOPD">Plano de ubicación SGEI OPD</option>
 
-
-				   </optgroup>
-				   <optgroup label="Comités">
-				   		<option value="hospitalUnitJimEthicsCommittee">Comités</option>
-				   </optgroup>
-
-				   <optgroup label="CVE-HC">
+				  	<optgroup label="CVE-HC">
 				   		<option value="cveHc">CVE-HC</option>
-					</optgroup>
+						</optgroup>
 
-					<optgroup label="FInEHC">
+						<optgroup label="FInEHC">
 				   		<option value="finehc">FInEHC</option>
-					</optgroup>
+						</optgroup>
 
-					<optgroup label="FInEHC">
-				   		<option value="informationOfGeneralSubdirectionOfEducationAndInvestigation">Sub-Dirección General de enseñanza e investigación</option>
-					</optgroup>
+						<optgroup label="Sub-Dirección General de enseñanza e investigación">
+							<option value="informationOfGeneralSubdirectionOfEducationAndInvestigation">Sub-Dirección General de enseñanza e investigación</option>
+						</optgroup>
 
-				   <optgroup label="Centro de Investigación Clínica">
+				 		<optgroup label="Centro de Investigación Clínica">
 				   		<option value="displayInvestigationLines">Lineas de investigación</option>
 				   		<option value="sponsoredProjects">Protocolos patrocinados por la industria Farmacéutica</option>
 				   		<option value="livingLabsSalud">Living Labs-Salud</option>
-				   </optgroup>
+				   	</optgroup>
 
-					 <optgroup label="HCG Fray Antonio Alcalde">
+					 	<optgroup label="HCG Fray Antonio Alcalde">
 				   		<option value="hospitalaUnitJIMSubdirectionOfEducationAndInvestigation">HCG Fray Antonio Alcalde</option>
-				   </optgroup>
+				   	</optgroup>
 
 				     <optgroup label="HCG DR. Juan I. Menchaca">
 				   		<option value="proINVENCI">HCG DR. Juan I. Menchaca</option>
-				   </optgroup>
+				   	</optgroup>
 
 				    <optgroup label="Programa de formación de recursos humanos en investigación">
 				   		<option value="programsPNCP">Programas PNCP</option>
 				   		<option value="programsNoPNCP">Programas no PNCP</option>
-				   </optgroup>
+				   	</optgroup>
 
-				   <optgroup label="proINVENCI">
+				   	<optgroup label="proINVENCI">
 				   		<option value="displayProINVENHCi">proINVENCI</option>
-				   </optgroup>
+				   	</optgroup>
 
 				    <optgroup label="ProDIME">
 				   		<option value="proDIME">ProDIME</option>
-				   </optgroup>
+				   	</optgroup>
 
 				    <optgroup label="Unidad Editorial">
 				   		<option value="editUnit">Unidad Editorial</option>
-				   </optgroup>
+				   	</optgroup>
 
 
-				   <optgroup label="Programas de generación de conocimiento">
+				   	<optgroup label="Programas de generación de conocimiento">
 				   		<option value="scientificWriting">Redacción Científicas</option>
 				   		<option value="generetionOfKnowledgeScientific">Lineas de generación de conmiento científico</option>
-				   </optgroup>
+				   	</optgroup>
 
-				   <optgroup label="Programas de coperación internacional en investigación">
+				   	<optgroup label="Programas de coperación internacional en investigación">
 				   		<option value="displayInformation">Programas de coperación internacional en investigación</option>
-				   </optgroup>
+				   	</optgroup>
 
-				   <optgroup label="Vinculación con universidades, institutos y hospitales">
+				   	<optgroup label="Vinculación con universidades, institutos y hospitales">
 				   		<option value="vinculationWithUniversityInstitutesHospitals">Vinculación con universidades, institutos y hospitales</option>
-				   </optgroup>
+				   	</optgroup>
 
 
 				    <optgroup label="Revistas científicas">
 				   		<option value="scientificMagazines">Revistas científicas</option>
-				   </optgroup>
+				   	</optgroup>
 
 			</select>
 </span>
@@ -123,8 +118,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		    	    'dateFormat'=>'d/m/Y',
 		    		'size' => '10',
 		    		'readOnly'=>true,
-		        	'placeholder'=>"Inicio de publicacion",
-		        	'title'=>'Inicio de publicacion',
+		        	'placeholder'=>"Inicio de publicación",
+		        	'title'=>'Inicio de publicación',
 		    ),
 		));
 		?>
@@ -140,8 +135,8 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 		    	    'dateFormat'=>'d/m/Y',
 		    		'size' => '10',
 		    		'readOnly'=>true,
-		        	'placeholder'=>"Final de publicacion",
-		        	'title'=>'Final de publicacion',
+		        	'placeholder'=>"Final de publicación",
+		        	'title'=>'Final de publicación',
 		    ),
 		));
 		?>
@@ -149,11 +144,14 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 	</div>
 
 	<div class="row buttons">
-		<!-- cambiar todo a español y este boton-->
 
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar', array('confirm'=>'¿Seguro que desea Guardar?','class'=>'savebutton'));?>
+		<?php echo CHtml::htmlButton('Enviar',array(
+								'onclick'=>'send("files-manager-form", "FilesManager/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+								'class'=>'savebutton',
+						));
+		?>
 
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+		<?php echo CHtml::Button('Cancelar',array('submit' => array('FilesManager/admin'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

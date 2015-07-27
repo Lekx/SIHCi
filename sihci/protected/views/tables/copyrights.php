@@ -37,14 +37,14 @@ $this->breadcrumbs=array(
 );
 $this->menu=array(
 	array('label'=>'Graficas', 'url'=>array('Charts/index')),
-	array('label'=>'Cantidad de Investigadores', 'url'=>array('researchers')),
-	array('label'=>'Proyectos de Investigación', 'url'=>array('projects')),
+	array('label'=>'Cantidad de investigadores', 'url'=>array('researchers')),
+	array('label'=>'Proyectos de investigación', 'url'=>array('projects')),
 	array('label'=>'Libros', 'url'=>array('books')),
-	array('label'=>'Capítulos de Libros', 'url'=>array('chapters')),
-	array('label'=>'Registro de Propiedad Intelectual: Patentes', 'url'=>array('patents')),
-	array('label'=>'Registro de Propiedad Intelectual: Software', 'url'=>array('software')),
-	array('label'=>'Registro de Propiedad Intelectual: Derechos de Autor', 'url'=>array('copyrights')),
-	array('label'=>'Artículos y Guías', 'url'=>array('articlesGuides')),
+	array('label'=>'Capítulos de libros', 'url'=>array('chapters')),
+	array('label'=>'Registro de propiedad intelectual: Patentes', 'url'=>array('patents')),
+	array('label'=>'Registro de propiedad intelectual: Software', 'url'=>array('software')),
+	array('label'=>'Registro de propiedad intelectual: Derechos de autor', 'url'=>array('copyrights')),
+	array('label'=>'Artículos y guías', 'url'=>array('articlesGuides')),
 );
 
 ?>
@@ -89,12 +89,12 @@ function change(){
 </script>
 <!-- <h3>en construcción . . .</h3> -->
 <input type="text" id="search" onchange="search()" placeholder="Búsqueda por columna" class="searchcrud">
-
+<?php echo CHtml::Button('',array('class'=>'adminbut')); ?>
 <div class="tableOpt">
 	<div class="col-md-6">
 		<span class="plain-select3">
 <select id="valueHospital" onchange="change()">
-  <option value="total" selected="">Total de Hospitales</option>
+  <option value="total" selected="">Total de hospitales</option>
   <option >Hospital Civil Fray Antonio Alcalde</option>
   <option >Hospital Civil Dr. Juan I. Menchaca</option>
   <option>Otro</option>
@@ -105,7 +105,7 @@ function change(){
 <div class="col-md-6">
 	<span class="plain-select3">
   <select id="valueYear" onchange="change()">
-	  <option value="total" selected="">Total de Años</option>
+	  <option value="total" selected="">Total de años</option>
 	  <?php
 		foreach($year AS $index=> $value)
 			echo '<option value="'.$value["year"].'" >'.$value["year"].'</option>';
@@ -123,10 +123,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'filter' => null,
 	'summaryText'=>'',
 	'columns'=>array(
-		  array('header'=>'Nombre de Usuario',
+		  array('header'=>'Nombre de usuario',
 		 		'name'=>'names',
                 ),
-	      array('header'=>'Undad Hospitalaria',
+	      array('header'=>'Undad hospitalaria',
 	 		'value'=>'$data["hospital_unit"] == "NA" || $data["hospital_unit"] == null ? "Otro" : $data["hospital_unit"]',
             ),
 		  array('header'=>'Título',
@@ -138,11 +138,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		     array('header'=>'Número de paso',
 		 		'name'=>'step_number',
                 ),
-		     array('header'=>'Fecha de Aplicación',
+		     array('header'=>'Fecha de aplicación',
 		 		'name'=>'application_date',
                 ),
-		     array('header'=>'Fecha de Creación',
-		 		'name'=>'creation_date',
-                ),
+		     array('header'=>'Fecha de creación',
+	'value'=>'date("d/m/Y H:i:s", strtotime($data["creation_date"]))',                ),
    	),
 )); ?>

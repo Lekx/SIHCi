@@ -2,9 +2,55 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 /* @var $form CActiveForm */
-	
+
 ?>
-<script>
+<script type="text/javascript">
+
+  $('.lettersAndNumbers').bind('keyup input',function(){
+    var input = $(this);
+    input.val(input.val().replace(/[^a-z0-9A-ZñÑ´'ÁáÉéÍíÓóÚú ]/g,'') );
+  });
+
+    function lettersOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
+    function numericOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      numbers = " 1234567890";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (numbers.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
+
+
+
+
+
+
      function changeSector(){
      	var sectorValue = $("#sector option:selected").val();
 
@@ -1195,7 +1241,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal', 'class' => 'numericOnly','title'=>'Código Postal'));?>
+		<?php echo $form->textField($modelAddresses, 'zip_code', array('placeholder' => 'Código Postal', 'onKeypress'=>'return numericOnly(event)','title'=>'Código Postal'));?>
 		<?php echo $form->error($modelAddresses, 'zip_code');?>
 	</div>
 
@@ -1237,7 +1283,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno', 'class' => 'numericOnly','title'=>'Número Interno'));?>
+		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno', 'onKeypress'=>'return numericOnly(event)','title'=>'Número Interno'));?>
 		<?php echo $form->error($modelAddresses, 'internal_number');?>
 	</div>
 
@@ -1291,7 +1337,7 @@
 		<?php echo $form->error($model, 'sector');?>
 	</div>
 
-	<?php 
+	<?php
 	if(!$model->isNewRecord){
 	echo '<div class="row" id="comboClase">';
     echo $form->dropDownList($model,'class',array($model->class)/*,array('prompt'=>'Seleccionar disciplina')*/);
@@ -1319,7 +1365,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model, 'employeess_number', array('class' => 'numericOnly','placeholder'=>'Numero de empleados','title'=>'Numero de empleados'));?>
+		<?php echo $form->textField($model, 'employeess_number', array('placeholder'=>'Numero de empleados','title'=>'Numero de empleados','onKeypress'=>'return numericOnly(event)'));?>
 		<?php echo $form->error($model, 'employeess_number');?>
 	</div>
 

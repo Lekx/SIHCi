@@ -1,6 +1,6 @@
 <?php
 if(strpos(Yii::app()->request->url,'site/login'))
-	$this->redirect(Yii::app()->user->returnUrl);
+	$this->redirect('index');
 ?>
 
 	<div class="loginback">
@@ -18,7 +18,7 @@ if(strpos(Yii::app()->request->url,'site/login'))
 					<div class="inputlog">
 						<div class="inner-addon right-addon">
 							<i class="glyphicon glyphicon-envelope"></i>
-							<?php echo $form->textField($model,'username', array('placeholder'=>"Email..",'title'=>'Favor de ingresar su correo de registro')); ?>
+							<?php echo $form->textField($model,'username', array('placeholder'=>"Correo electronico..",'title'=>'Favor de ingresar su correo de registro')); ?>
 
 						</div>
 					</div>
@@ -46,10 +46,11 @@ if(strpos(Yii::app()->request->url,'site/login'))
 		                        			 $(".tooltipster-base").css("background-color","#F20862 !important");
 
 		                        			 $(".tooltipster-base").css("border","1px solid #F20862");
+																	 $(".tooltipster-arrow-border").css("border-color","#F20862 !important");
 		                        			 $("div.tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show").css("border-color","#F20862");
 		                        			 $("#yt0").css("background-color", "#F20862 !important");
 		                        			 $("#yt0").css("font-size", "12px");
-											  $("#yt0").css("text-align", "center");
+											  				 	 $("#yt0").css("text-align", "center");
 		                        			 $("#yt0").val("Su cuenta no ha sido activada aún, revise su correo registrado.");
 		                        			 $(".infodialog").removeClass("infodialog").addClass("infodialogerror");
 		                        			 $(".glyphicon").css("color","#F20862 ");
@@ -58,8 +59,10 @@ if(strpos(Yii::app()->request->url,'site/login'))
 		                        			 $(".infodialog1error").css("visibility", "visible");
 		                        			 $("#LoginForm_username").css("background-color", "#F20862 !important");
 		                        			 $("#LoginForm_username").css("background-color", "#F20862 !important");
-		                        		     $(".inner-addon").effect( "shake" , {times:3}, 20);
-									    	$(".tooltipster-base").remove();
+		                        		  $(".inner-addon").effect( "shake" , {times:3}, 20);
+									    					 	$(".tooltipster-base").remove();
+																	$(".tooltipster-base").hide();
+																	$(".tooltipster-arrow-right.tooltipster-arrow span").css("border-color","#F20862 !important");
 
 		                        		}
 		                        		else if(response == "200"){
@@ -70,6 +73,7 @@ if(strpos(Yii::app()->request->url,'site/login'))
 		                        			 $(".infodialog").css("visibility", "hidden");
 		                        			 $(".infodialog1error").removeClass("infodialog1error").addClass("infodialog1");
 		                        			 $(".infodialog").css("visibility", "hidden");
+																	 $(".tooltipster-base").hide();
 											 window.open("'.Yii::app()->createUrl('/account/firstLogin').'","_blank ");
 
 
@@ -79,6 +83,8 @@ if(strpos(Yii::app()->request->url,'site/login'))
 		                        			 $(".tooltipster-base").css("background-color","#F20862 !important");
 		                        			 $(".tooltipster-base").css("border","1px solid #F20862");
 		                        			 $(".tooltipster-base").css("border-color","#F20862 !important");
+																	 $(".tooltipster-arrow-border").css("border-color","#F20862 !important");
+																	 $(".tooltipster-arrow-right.tooltipster-arrow span").css("border-color","#F20862 !important");
 		                        			 $("div.tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show").css("border-color","#F20862 !important");
 		                        			 $("#yt0").css("background-color", "#F20862 !important");
 		                        			 $("#yt0").val("Listo... Ingresar a mi cuenta");

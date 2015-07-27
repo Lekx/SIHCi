@@ -68,25 +68,34 @@ class ProjectsReviewController extends Controller
 					"10"=>array("userType"=>"DIVUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del comité(s) asignado."),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.20")),
 					"11"=>array("userType"=>"COMITE", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria"),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.21")),
 					"12"=>array("userType"=>"DIVUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto Dictaminado."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.22")),
+					//"13"=>array("userType"=>"USUARIO GENERAL", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto Dictaminado."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.22")),
 				);               
-/*
+
 	public $noSponsoredRules = array(  "0"=>"Proyecto no patrocinado",
-					 "1"=>array("userType"=>"DIVUH", "actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.03","6.04","6.05")),
-					 "2"=>array("userType"=>"SEUH", "actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.06")),
-					 "3"=>array("userType"=>"COMITE", "actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.07","6.08","6.09")),
-					 "4"=>array("userType"=>"DIVUH", "actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.1")),
-				"5"=>array("userType"=>"SEUH", "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.11")),
-				"6"=>array("userType"=>"DUH", "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.12")),
-					 "7"=>array("userType"=>"SGEI", "actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.13","6.14")),
-				 "8"=>array("userType"=>"DG", "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.15")),
-				 "9"=>array("userType"=>"DUH", "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.16")),
-				"10"=>array("userType"=>"SEUH", "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.17")),
-					"11"=>array("userType"=>"DIVUH", "actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.18")),
-					"12"=>array("userType"=>"COMITE", "actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.19")),
-					"13"=>array("userType"=>"SEUH", "actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.2")),
-				"14"=>array("userType"=>"DIVUH", "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.21")),
+					 "1"=>array("userType"=>"DIVUH", "message"=>array("accept"=>"Proyecto enviado a asignación de folio, comités y evaluación del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.","reject"=>"Proyecto devuelto al investigador para su corrección por parte de la División de Investigacion de la Unidad Hospitalaria."),"actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.03","6.04","6.05")),
+					 "2"=>array("userType"=>"SEUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del comité(s) asignado."),"actions"=>array("accept","addcomms","addfolio"), "type"=>"manual", "realSteps"=>array("6.06")),
+					 "3"=>array("userType"=>"COMITE", "message"=>array("accept"=>"Proyecto enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria.","reject"=>"Proyecto devuelto al investigador para su corrección por parte del comité."),"actions"=>array("accept","reject",), "type"=>"manual", "realSteps"=>array("6.07","6.08","6.09")),
+					 //los tres anteriorres iguales al de si patrocinado
+					 "4"=>array("userType"=>"DIVUH", "message"=>array("accept"=>"Proyecto enviado a evaluación del Subdirector General de Enseñanza e Investigación.","reject"=>"","review"=>""), "actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.10")),
+				 "5"=>array("userType"=>"SEUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por SEUH"), "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.11")),
+				 "6"=>array("userType"=>"DUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DUH"), "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.12")),
+					 "7"=>array("userType"=>"SGEI", "message"=>array("accept"=>"Proyecto enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria.","reject"=>"","review"=>""), "actions"=>array("accept,addFile","addregistration"), "type"=>"manual", "realSteps"=>array("6.13","6.14")),
+				 "8"=>array("userType"=>"DG", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DG"), "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.15")),
+				 "9"=>array("userType"=>"DUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DUH"), "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.16")),
+				"10"=>array("userType"=>"SEUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por SEUH"), "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.17")),
+					"11"=>array("userType"=>"DIVUH", "message"=>array("accept"=>"Proyecto enviado a evaluación del comité(s) asignado.","reject"=>"","review"=>""), "actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.18")),
+					"12"=>array("userType"=>"COMITE", "message"=>array("accept"=>"Proyecto enviado a asignación de folio, comités y evaluación del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.","reject"=>"","review"=>""), "actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.19")),
+					"13"=>array("userType"=>"SEUH", "message"=>array("accept"=>"Proyecto Dictaminado.","reject"=>"","review"=>""), "actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.2")),
+				"14"=>array("userType"=>"DIVUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DIVUH"), "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.21")),
 	);
-*/
+
+
+
+
+
+
+
+
 	public function actionIndex()
 	{
 		$this->actionAdmin();
@@ -97,24 +106,46 @@ class ProjectsReviewController extends Controller
 		$rol = Yii::app()->user->Rol->alias;
 
 		$condition = "WHERE p.status = '".$rol."'";
+		$pfcondition = "WHERE pf.status = '".$rol."'";
 
-		if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI")
+		if($rol == "COMINV" || $rol == "COMBIO" || $rol == "COMETI"){
 			$condition = "WHERE p.status = 'COMITE'";
+			$pfcondition = "WHERE pf.status = 'COMITE'";
+		}
 
 		$conection = Yii::app()->db;
 		$pProjects = $conection->createCommand("SELECT p.is_sponsored, p.id, p.title, pf.creation_date FROM projects AS p LEFT JOIN projects_followups AS pf ON pf.id_project = p.id ".$condition." GROUP BY p.title")->queryAll();
 
-		$pendingProjects ="";
+
+		$pFollowups = $conection->createCommand("SELECT pf.id AS pif, pf.status, pf.type, pf.step_number, pf.creation_date, p.id, p.status, p.is_sponsored, p.title FROM projects_followups AS pf JOIN projects AS p ON p.id = pf.id_project ".$pfcondition." AND pf.type = 'followup' AND p.status = 'ACEPTADO'")->queryAll();
+
+		$pendingProjects ="Projectos pendientes por aprobar:";
 
 		foreach($pProjects AS $key => $value){
 			$element ="";
-			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.85em;">';
+			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.80em;">';
 			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
 			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
 			$element .= '</div>';
 			$pendingProjects .= CHtml::link($element,array('projectsReview/review','id'=>$value["id"]));
 
 		}
+
+
+		$pendingProjects .="<br><hr>Seguimientos pendientes por aprobar:";
+
+		foreach($pFollowups AS $key => $value){
+			$element ="";
+			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.80em;">';
+			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
+			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
+			$element .= '</div>';
+			$pendingProjects .= CHtml::link($element,array('projectsFollowups/followupReview','id'=>$value["pif"]));
+
+		}
+
+
+
 		return $pendingProjects;
 	}
 
@@ -130,7 +161,7 @@ class ProjectsReviewController extends Controller
 		else
 			$evaluationRules = $this->sponsoredRules;
 
-
+	 $this->performAjaxValidation($modelfollowup);
 		$conexion = Yii::app()->db;
 		$lastfollowup = $conexion->createCommand("
 		SELECT id, id_project, id_user, step_number
@@ -142,19 +173,24 @@ class ProjectsReviewController extends Controller
         if(isset($_POST['ProjectsFollowups']))
         {
 
-			$modelfollowup->unsetAttributes();
+			//$modelfollowup->unsetAttributes();
             $modelfollowup->attributes=$_POST['ProjectsFollowups'];
 
             $modelfollowup->type="comment";
             $modelfollowup->id_project = $id;
             $modelfollowup->id_user = Yii::app()->user->id;
             if(isset($_POST[1]))
-	            if($_POST[1] != "mandatory") // si existe este indice en los extras significa que es un comentario(followup) de un seguimiento(followup)
-	            	$modelfollowup->id_fucom = $_POST[1];
-	            else{
+	            if($_POST[1] == "mandatory"){ // si existe este indice en los extras significa que es un comentario(followup) de un seguimiento(followup)
 	            	$modelfollowup->followup = "se adjunta documento";
 	            	$modelfollowup->type="mandatory";
 	            	$modelfollowup->step_number = $_POST[2];
+
+	            }else if($_POST[1] == "mandatoryFW"){
+	            	$modelfollowup->type="mandatoryFW";
+	            	$modelfollowup->step_number = $_POST[2];
+            		$modelfollowup->id_fucom = $_POST[3];
+	            }else{
+	            	$modelfollowup->id_fucom = $_POST[1];
 	            }
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
@@ -200,15 +236,16 @@ class ProjectsReviewController extends Controller
 		$userId = Yii::app()->user->id;
 		//$userId = 16;
 
-		$committeeCheck =ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$projectId,'id_user_reviewer'=>$userId,'status'=>'pendiente'));
+		$committeeCheck =ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$projectId,'id_user_reviewer'=>$userId));
 		ProjectsCommittee::model()->updateByPk($committeeCheck[0]->id,array('status' => ($action == 'reject' ? 'rechazado' : 'aprobado')));
+
 		$committeesCheck =ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$projectId,'status'=>'pendiente'));
 
 			if(count($committeesCheck) > 0){
 				$followup = new ProjectsFollowups;
 				$followup->id_project = $projectId;
 				$followup->id_user = Yii::app()->user->id;
-				$followup->followup = "Proyecto aprobado por miembro del comité.";
+				$followup->followup = "Proyecto ".($action == "accept" ? "aprobado" : "no aprobado")." por miembro del comité.";
 				$followup->type = "system";
 				$followup->step_number = $actualStep-1;
 
@@ -233,6 +270,7 @@ class ProjectsReviewController extends Controller
 	{
 		$conexion = Yii::app()->db;
 		$projectId = $id;
+		$modelProject = $this->loadModel($projectId);
 
 		if($actualStepCom != 0 && $actualStepCom != 0){
 			$actualStep = $actualStepCom;
@@ -242,19 +280,34 @@ class ProjectsReviewController extends Controller
 			$action = $_POST[2];
 		}
 
-		if($this->loadModel($projectId)->is_sponsored == 0)
+		if($modelProject->is_sponsored == 0) // modified from $this->loadModel($projectId)->is_sponsored
 			$evaluationRules = $this->noSponsoredRules;
 		else
 			$evaluationRules = $this->sponsoredRules;
 
-		if($action == "accept")
-			$status = $evaluationRules[$actualStep+1]["userType"];
-		else if($action == "reject")
+		if($action == "accept"){
+			if($actualStep == 12 && $modelProject->is_sponsored == 1) // MODIFIED, ADDED AND, MAY BE REMOVED
+				$status = "ACEPTADO";
+			//else if($actualStep == 13 && $modelProject->is_sponsored == 0) // MODIFIED, ADDED sentence, MAY BE REMOVEDall this else if
+			else
+				$status = $evaluationRules[$actualStep+1]["userType"];
+		}else if($action == "reject")
 			$status = "MODIFICAR";
 
 		$result = false;
 
 		if($action != "review"){
+			if($actualStep == 4)
+				$status = "SGEI";
+			else if($actualStep == 6)
+				$status = "DIVUH";
+			else if($modelProject->is_sponsored == 0 && $actualStep == 7) // THIS WAS ADDED AND MAY BE REMOVED
+				$status = "DIVUH";
+			else if($modelProject->is_sponsored == 0 && $actualStep == 13) // THIS WAS ADDED AND MAY BE REMOVED
+				$status = "ACEPTADO";
+			else
+				$status = $status;
+
 			$result = Projects::model()->updateByPk($projectId,array('status' => $status));
 		}else if($action == "review"){
 
@@ -263,7 +316,16 @@ class ProjectsReviewController extends Controller
 			$followup->id_user = Yii::app()->user->id;
 			$followup->followup = $evaluationRules[$actualStep]["message"][$action];
 			$followup->type = "system";
-			$followup->step_number = $actualStep;
+
+/*
+			if($actualStep == 4)
+				$followup->step_number = 5;
+			else if($actualStep == 6)
+				$followup->step_number = 9;
+			else
+				$followup->step_number = $actualStep; */
+
+
 
 			if($followup->save())
 	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido revisado satisfactoriamente.'));
@@ -275,15 +337,45 @@ class ProjectsReviewController extends Controller
 			$followup->id_user = Yii::app()->user->id;
 			$followup->followup = $evaluationRules[$actualStep]["message"][$action];
 			$followup->type = "system";
-			$followup->step_number = $actualStep;
+
+
 
 			if($action == "reject")
 				$followup->step_number = $actualStep - 1; //restamos uno para que se quede donde mismo
-			else
-				$followup->step_number = $actualStep;
+			else{
+				//echo $actualStep;
+				if($modelProject->is_sponsored == 1){ // modified : added may be removed
+					if($actualStep == 4)
+						$followup->step_number = 5;
+					else if($actualStep == 6)
+						$followup->step_number = 9;
+					else
+						$followup->step_number = $actualStep;
+
+				}else{ // modified : added may be removed all the else
+					if($actualStep == 4)
+						$followup->step_number = 6;
+					else if($actualStep == 7)
+						$followup->step_number = 10;
+					else
+						$followup->step_number = $actualStep;
+
+				}
+
+
+			}
+				if($actualStep == 10 && $modelProject->is_sponsored == 1){ // added and may be removed
+					$conexion->createCommand("UPDATE projects_committee SET status = 'pendiente' WHERE id_project = ".$projectId)->execute();
+				}else if($actualStep == 11 && $modelProject->is_sponsored == 0){
+					$conexion->createCommand("UPDATE projects_committee SET status = 'pendiente' WHERE id_project = ".$projectId)->execute();
+				}
 
 			if($followup->save())
-	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido enviado satisfactoriamente para su revisión o evaluación.'));
+				$subMessage = 'El proyecto ha sido enviado satisfactoriamente para su revisión o evaluación.';
+				if(($actualStep == 12 && $modelProject->is_sponsored == 1) || ($actualStep == 13 && $modelProject->is_sponsored == 0)) // added and, may be removed
+					$subMessage = 'El proyecto ha sido dictaminado satisfactoriamente. Ahora el investigador puede crear seguimientos para este proyecto.';
+
+	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>$subMessage));
 
 		}else{
 			echo CJSON::encode(array('message'=>'2 Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intentar.'));
@@ -416,7 +508,7 @@ public function actionSetFolioNumber()
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='projects-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='projects-followups-forms')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

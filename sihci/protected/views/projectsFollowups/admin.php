@@ -14,9 +14,17 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 ?>
 <script>
 	$(document).ready(function(){
-		$('#projects-followups-form').hide();
+		$('#projects-followups-formdiv').hide();
 
 	});
+
+	function toggleFollowup(){
+		$('#projects-followups-form-create').show();
+		$('#projects-followups-formdiv').hide();
+		$('#follow').hide();
+		$('#followup').hide();
+		$('#comments').hide();
+	}
 </script>
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
@@ -27,25 +35,27 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 
 
 <div class="projecttitle">
-<h4><?php echo $project->title;?></h4>
+<h4><?php echo $idProject." ".$project->title; ?></h4>
 </div>
 
 
 <?php
+echo CHtml::link('Link Text', "#",array('class'=> 'createFollowup','onClick'=>'toggleFollowup()'));
 // echo CHtml::link('Crear Nuevo','create');
+/*
 			 echo CHtml::ajaxLink(
  						  "jesus de nazareth",
- 						  Yii::app()->createUrl( 'projectsFollowups/create/'.$project->id ),
+ 						  Yii::app()->createUrl('projectsFollowups/create/'.$project->id ),
  						  array( // ajaxOptions
  						    'type' => 'POST',
  						    'datatype'=> 'json',
  						    'success' => "function( data )
  						                  {
- 																 $('#projects-followups-form-create').show();
- 																 $('#projects-followups-form').hide();
+											 $('#projects-followups-form-create').show();
+											 $('#projects-followups-form').hide();
  						                     $('#follow').hide();
  						                     $('#followup').hide();
-																 $('#comments').hide();
+											 $('#comments').hide();
  						                  }",
  						  ),
  						  array( //htmlOptions
@@ -53,6 +63,7 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 								'class'=> 'createFollowup',
  						  )
  						);
+			 */
 
 		echo "	<div class='customNavigation'>
 	  <a class='btn prev'><i class='fa fa-arrow-left'></i></a> </div>";
@@ -66,7 +77,7 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 						    'datatype'=> 'json',
 						    'success' => "function( data )
 						                  {
-																$('#projects-followups-form').show();
+																$('#projects-followups-formdiv').show();
 																$('#follow').show();
 																$('#followup').show();
 																$('#comments').show();
@@ -83,7 +94,7 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 
 
 						                     $('#createFollowup').unbind('onclick');
-						                     $('#createFollowup').attr('onclick', 'send(\'projects-followups-form\', \'projectsReview/review\',\"'+dataIDP+'\" , \'none\', \"'+dataIDF+'\" )');
+						                     $('#createFollowup').attr('onclick', 'send(\'projects-followups-forms\', \'projectsReview/review\',\"'+dataIDP+'\" , \'none\', \"'+dataIDF+'\" )');
 																 $('#comments').html('<h3>Comentarios:</h3>'+dataComments+'');
 
 						                  }",
@@ -104,12 +115,18 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 		echo "<div id='followup'></div>";
 		?>
 
+
 		<?php
 
 		$this->renderPartial('../projectsFollowups/_form', array('model'=>$modelFollowup));
-		$this->renderPartial('../projectsReview/_form', array('model'=>$modelFollowup));
+
+		?>
+<div id="projects-followups-formdiv">
+		<?php
+		$this->renderPartial('../projectsReview/_form', array('model'=>$modelFollowup,'idProject' => $project->id));
 
 		echo "<div id='comments'></div>";
 		echo "<br>";
 
 ?>
+</div>

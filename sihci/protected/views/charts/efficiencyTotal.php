@@ -1,7 +1,25 @@
-<div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Estadisticas.svg" alt="">
+            <h1>Estadisticas</h1>
+            <hr>
+        </div>
+        <h3>Total de Eficiencia</h3>
 
-Año del reporte
-<?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()','class'=>'dropinline')); ?>
+
+        <div class="grafiOpt">
+          <div class="col-md">Año del reporte</div>
+        </div>
+
+        <div class="grafiOpt">
+          <div class="col-md">
+        <span class="plain-select2">
+      <?php echo CHtml::dropDownList('years', '',$years,array('onchange'=>'loadChart()','class'=>'dropinline')); ?>
+        </span>
+        </div>
+        </div>
+
+<div class="tooltipchart">Seleccionar este elemento</div>
+
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
@@ -36,7 +54,10 @@ chart = new Highcharts.Chart({
                         (function(i) {
                             var item = legend.allItems[i].legendItem;
                             item.on('mouseover', function (e) {
-                                $(".tooltipchart").show();
+                              var childPosition = $(".highcharts-legend-item text:eq( "+i+" ) ").offset();
+                               $(".tooltipchart").css("top",childPosition.top+20);
+                               $(".tooltipchart").css("left",childPosition.left);
+                               $(".tooltipchart").show();
                             }).on('mouseout', function (e) {
                                 $(".tooltipchart").hide();
                             });
