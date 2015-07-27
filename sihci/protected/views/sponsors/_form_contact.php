@@ -4,26 +4,26 @@
 /* @var $form CActiveForm */
 ?>
 <script type="text/javascript">
-	
+
 $(document).ready(function(){
 
 $('.fType').on('change', function(e) {
 	var option = $(this).val();
-  
+
 
  $(this).parent().children('.removable').remove();
 
 	if(option == 'EMAIL'){
-		
-		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="hidden" class="removable dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldE" placeholder="Email">');
+
+		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="hidden" class="removable dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldE"  title="Correo electronico" placeholder="Correo electronico">');
 
 	}else if(option == 'CELULAR'){
-		
-		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="text" class="hidden dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldC" placeholder="Celular">');
+
+		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" ><input type="text" class="hidden dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldC" title="Celular" placeholder="Celular">');
 
 	}else{
-		
-		$(this).parent().append('<input type="text" class="removable dFieldT" name="values1[]" placeholder="Lada 1"><input type="text" class="removable dFieldT" name="values2[]" placeholder="Lada 2"><input type="text" class="removable dFieldT" name="values3[]" placeholder="Telefono">');
+
+		$(this).parent().append('<input type="text" class="removable dFieldT" name="values1[]" placeholder="Lada 1"><input type="text" class="removable dFieldT" name="values2[]" placeholder="Lada 2"><input type="text" title="Teléfono" class="removable dFieldT" name="values3[]" placeholder="Teléfono">');
 
 	}
 
@@ -49,9 +49,9 @@ s
 	<hr>
 	<div class="row">
 	  <span class="plain-select1">
-		<?php 
-			
-			echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','EMAIL'=>'Email'), 
+		<?php
+
+			echo $form->dropDownList($model, 'type',array('TELEFONO'=>'Teléfono','CELULAR'=>'Celular','EMAIL'=>'Correo electronico'),
 			                     						array('prompt'=>'Tipo de Contacto','name'=>'types[]','class'=>'fType','options' => array(''=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20 ,'title'=>'Tipo de Contacto'));
 			echo $form->error($model, 'type');;
 		?>
@@ -70,21 +70,21 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 ?>
 
 
-	
+
 	<?php
 	foreach ($modelPull as $valuePull) {
 		echo "<hr>";
 		echo "<input type='hidden' value='".$valuePull['id']."' name ='modelPullIds[]'>";  //array('prompt'=> $valuePull['type'])
-	
+
 		echo "<div class='row'>";
 		echo "  <span class='plain-select'>";
-		echo $form->dropDownList($model, 'type', array('telefono'=>'Teléfono','celular'=>'Celular','fax'=>'Fax','email'=>'Email'), array('prompt'=> $valuePull['type']),
+		echo $form->dropDownList($model, 'type', array('telefono'=>'Teléfono','celular'=>'Celular','fax'=>'Fax','email'=>'Correo electronico'), array('prompt'=> $valuePull['type']),
 		                     						array('name' => 'modelPullTypes[]','class'=>'fType','options' => array($valuePull['type']=>array('selected'=>true))),array('size' => 20, 'maxlength' => 20,'title'=>'Tipo de Contacto'));
 		echo "</span>";
 		echo $form->error($model, 'type');
 		echo "</div>";
 
-	
+
 		$valueArray= explode("-", $valuePull['value']);
 				echo "<div class='row'>";
 		echo '<input type="'.($valuePull['type'] == 'email' ||  $valuePull['type'] == 'celular' ? 'hidden' : 'text').'"  name="valuesUpdate1[]" value="'.$valueArray[0].'" >';

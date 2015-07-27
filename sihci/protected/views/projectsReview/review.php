@@ -256,14 +256,14 @@
 //$step = 2;
 //$userRol = "DIVUH";
 
-$roles = array("DIVUH", "SEUH", "COMITE", "COMBIO", "COMINV", "DUH", "SGEI", "DG", "JUR");
+/*$roles = array("DIVUH", "SEUH", "COMITE", "COMBIO", "COMINV", "DUH", "SGEI", "DG", "JUR");
 for($evaluationStep = 1; $evaluationStep <= 12; $evaluationStep++)  {
 echo "<br><br><br>=============================================================================[ PASO: ".$evaluationStep." ]====================<br>";
 print_r($evaluationRules[$evaluationStep]);
 //print_r($evaluationRules[$evaluationStep]["actions"]);
 foreach ($roles as $key => $userRol) {
 echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ROL: ".$userRol." - - <br>";
-
+*/
 
 if($model->status != "MODIFICAR"){
 
@@ -707,10 +707,8 @@ if($model->status != "MODIFICAR"){
 
 
 
-// /* }}  */
+ //}}
 
-}
-}
 
 ?>
 
