@@ -104,15 +104,15 @@ function checkEmailNull($email, $email2){
 		$model = new Users;
 		$modelPersons = new Persons;
 
-		//$this->performAjaxValidation($model);
-		//$this->performAjaxValidation($modelPersons);
+		$this->performAjaxValidation($model);
+		$this->performAjaxValidation($modelPersons);
 		if(isset($_POST['Users'])) {
 			$model->id_roles = '3';
 			$model->attributes = $_POST['Users'];
 
 			$result = $model->findAll(array('condition' => 'email="' . $model->email . '"'));
 			if (empty($result)){
-			if ($this->checkEmailDifferent($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailNull($_POST['Users']['email'], $_POST['Users']['email2'])) {
+			if ($this->checkEmailDifferent($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailNull($_POST['Users']['email'], $_POST['Users']['email2']) && $this->checkEmailValid($_POST['Users']['email'],$_POST['Users']['email2'])) {
 				if ($this->checkPasswordDifferent($_POST['Users']['password'], $_POST['Users']['password2']) && $this->checkPasswordNull($_POST['Users']['password'],$_POST['Users']['password2'])) {
 
 
@@ -149,40 +149,39 @@ function checkEmailNull($email, $email2){
 												$log->action = "creacion";
 												$log->datetime = new CDbExpression('NOW()');
 												$log->save();
-
 												echo CJSON::encode(array('status'=>'success'));
 												Yii::app()->end();
 
 												}else{
-												echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Persona), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+												echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Persona), vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 												Yii::app()->end();
 											}
 										}else{
-											echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Usuarios), vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+											echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro (Usuarios), vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 											Yii::app()->end();
 										}
 
 									}else{
-										echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp o pasaporte no es correcto, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+										echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp o pasaporte no es correcto, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 										Yii::app()->end();
 									}
 
 							}else{
-								echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp ingresado ya existe, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+								echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El curp ingresado ya existe, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 								Yii::app()->end();
 							}
 						}
 					}
 				}else{
-					echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Las contraseñas no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+					echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Las contraseñas no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 					Yii::app()->end();
 				}
 			}else{
-				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no concuerdan, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 				Yii::app()->end();
 			}
 			}else{
-				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ya existe el correo ingresado, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ya existe el correo ingresado, vuelva a intentarlo más tarde o si persiste el error contacte al administrador.'));
 				Yii::app()->end();
 			}
 		}

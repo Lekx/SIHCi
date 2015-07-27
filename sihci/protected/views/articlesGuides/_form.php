@@ -3933,7 +3933,7 @@ if(areaValue =="SOCIOLOGIA"){
           'Revistas Arbitradas'=>'Revistas Arbitradas',
           'Revistas Indizadas'=>'Revistas Indizadas',
         ),
-        array('prompt'=>'Seleccionar tipo de Articulo','title'=>'Tipo de Articulo'));
+        array('prompt'=>'Seleccionar tipo de articulo','title'=>'Tipo de articulo'));
     ?>
 		<?php echo $form->error($model,'article_type'); ?>
     </span>
@@ -4094,7 +4094,7 @@ if(areaValue =="SOCIOLOGIA"){
 					  		<?php echo $form->error($value,'position'); ?>
 					  </div>
                 <?php echo CHtml::button('Elminar',array('submit' => array('articlesGuides/deleteAuthor','id'=>$modelAuthors[$key]->id,'idArticlesGuidesAuthors'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
-  <?php } ?>
+      <?php } ?>
              <hr>
           </div>
 

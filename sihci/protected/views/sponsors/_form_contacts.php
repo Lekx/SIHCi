@@ -19,7 +19,7 @@
 	<hr>
 		<?php
 		echo "<div class='row'>";
-		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','onKeypress'=>'return lettersOnly(event)','name' => 'fullnames[]','size' => 60, 'maxlength' => 70));
+		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','onKeypress'=>'return lettersOnly(event)','name' => 'fullnames[]','size' => 60, 'maxlength' => 30));
 		echo $form->error($model, 'fullname');
 		echo "</div>";
 ?>
@@ -43,7 +43,7 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 foreach ($fullname as $value) {
 	echo "<input type='hidden' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
 	echo "<div class='row'>";
-	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 70));
+	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 30));
 	echo $form->error($model, 'fullname');
 	echo "</div>";
 	echo CHtml::link('Eliminar',array('sponsors/deleteContacts','id'=>$value['id']),array('class'=>'deleteSomething'));

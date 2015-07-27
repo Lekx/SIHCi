@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 <section class="informativa">
 
 	<section class="column-center">
-	
+
 		<div class="titleinfo">
 		<img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/Transparencia.png" alt="">
 		<h3>Organismo Público Descentralizado Hospital Civil de Guadalajara.</h3>
@@ -22,8 +22,8 @@ $this->breadcrumbs=array(
 			<br>
 		</div>
 				<div class="generalinformation">
-		
-			
+
+
 			<p>El Organismo Público Descentralizado Hospital Civil
 			de Guadalajara, con domicilio
 			ubicado en el número 278 doscientos setenta y ocho
@@ -67,7 +67,7 @@ $this->breadcrumbs=array(
 			datos sensibles que de los mismos se adviertan; ent
 			endiéndose por Datos
 			Personales, aquellos que se refieren a la persona f
-			ísica identificada o identificable por datos sensibles, 
+			ísica identificada o identificable por datos sensibles,
 			los que afecten su intimidad, y que puedan dar origen a
 			discriminación o que su difusión o entrega a tercer
 			os conlleve un riesgo para su
@@ -131,6 +131,6 @@ $this->breadcrumbs=array(
 	<section class="column-right">
 		<h5>DOCUMENTOS</h5>
 		<h5>DESCARGABLES:</h5>
-		<?php Yii::app()->runController('filesManager/DisplayFiles/section/desplegarTransparencia'); ?>
+		<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
-</section>	
+</section>

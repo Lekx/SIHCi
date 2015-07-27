@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 		</div>
 
 		<div class="generalinformation">
-			<p>El OPD Hospital Civil de Guadalajara cuenta con un marco normativo con el cual se rigen todos sus integrantes. 
+			<p>El OPD Hospital Civil de Guadalajara cuenta con un marco normativo con el cual se rigen todos sus integrantes.
 			En este espacio usted podrá consultar las normas más recientes.</p>
 		</div>
 	</section>
@@ -28,7 +28,7 @@ $this->breadcrumbs=array(
 	<section class="column-right">
 	<h5>DOCUMENTOS</h5>
 	<h5>DESCARGABLES:</h5>
-		<?php Yii::app()->runController('filesManager/DisplayFiles/section/Normatividad de investigacion'); ?>
+	<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
 
 </section>

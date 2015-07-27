@@ -71,7 +71,7 @@ class ChartsController extends Controller
 				$condHu = "";
 
 			if($_POST["sni"] != "total" && $_POST["sni"] == "no")
-				$condSni = " AND c.sni = 0 OR c.sni IS NULL";
+				$condSni = "  AND (c.sni = -1 OR c.sni IS NULL)";
 			else if($_POST["sni"] == "yes")
 				$condSni = " AND c.sni > 0";
 			else
@@ -79,7 +79,7 @@ class ChartsController extends Controller
 
 
 			if($_POST["type"] != "total" && $_POST["type"] == "bajas")
-				$condType = " AND u.status ='inactivo'";
+				$condType = " AND u.status ='inactivo' ";
 			else if ($_POST["type"] == "altas")
 				$condType = " AND u.status ='activo'";
 			else
@@ -90,7 +90,6 @@ class ChartsController extends Controller
 				$condYears = " AND YEAR(u.creation_date) ='".$_POST['years']."'";
 			else
 				$condYears = "";
-
 
 			$query = '
 				SELECT 
@@ -121,7 +120,7 @@ class ChartsController extends Controller
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 		}
 
 		if(!isset($_POST["years"])){
@@ -150,11 +149,11 @@ class ChartsController extends Controller
 				$condHu = "";
 
 			if($_POST["proyecto"] != "total" && $_POST["proyecto"] == "abiertos")
-				$condProyecto = " AND p.status != 'dictaminado' AND p.status != 'rechazado'";
+				$condProyecto = " AND p.status != 'dictaminado' AND p.status != 'RECHAZADO'";
 			else if($_POST["proyecto"] == "concluidos")
-				$condProyecto = " AND p.status = 'dictaminado'";
+				$condProyecto = " AND p.status = 'DICTAMINADO'";
 			else if($_POST["proyecto"] == "rechazados")
-				$condProyecto = " AND p.status = 'rechazado'";
+				$condProyecto = " AND p.status = 'RECHAZADO'";
 			else
 				$condProyecto = "";
 
@@ -207,7 +206,6 @@ class ChartsController extends Controller
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'projectsTotal',"years"=>$years));
 		}
-
 	}
 
 	//GR03-Total-Eficiencia
@@ -246,7 +244,7 @@ public function actionEfficiencyTotal(){
 				LEFT JOIN curriculum AS c ON p.id_curriculum=c.id
 				LEFT JOIN users AS u ON u.id=c.id_user
 				WHERE u.type = "fisico" AND u.status = "activo"
-				AND p.status = "completado"
+				AND p.status = "FINALIZADO"
 				'.$condYears.$condHu.'
 				GROUP BY months ORDER BY MONTH(p.creation_date) ASC
 			';
@@ -363,13 +361,39 @@ public function actionEfficiencyTotal(){
 			
 				$condHu = "";
 
-
 			if($_POST["years"] != "total")
 				$condYears = " AND YEAR(cap.creation_date) ='".$_POST['years']."'";
 			else
 				$condYears = "";
 
+			if($_POST["years"] == "total"){
+				$query = '
+				SELECT 
+					COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+					COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+					COUNT(cap.id) AS totalChapters
+					FROM books_chapters AS cap
+					LEFT JOIN curriculum AS c ON c.id=cap.id_curriculum
+					LEFT JOIN users AS u ON u.id=c.id_user 
+					LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+					WHERE u.type = "fisico" AND u.status = "activo" ';
 
+					$results = $conexion->createCommand($query)->queryAll();
+
+					$jim = array();
+					$faa = array();
+					$other = array();
+					$totalBooks = array("Total");
+				foreach($results AS $key => $value){
+					array_push($totalBooks, (int)$value["totalChapters"]);
+					array_push($jim, (int)$value["jim"]);
+					array_push($faa, (int)$value["faa"]);
+					array_push($other, ((int)$value["totalChapters"]-((int)$value["faa"]+(int)$value["jim"])));
+				}
+				echo '{"totalBooks":'.json_encode($totalBooks).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+
+
+			}else{
 			$query = '
 				SELECT 
 					COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
@@ -381,12 +405,10 @@ public function actionEfficiencyTotal(){
 					LEFT JOIN users AS u ON u.id=c.id_user 
 					LEFT JOIN jobs AS j ON j.id_curriculum=c.id
 					WHERE u.type = "fisico" AND u.status = "activo"
-				'.$condYears./*$condType.$condSni.*/$condHu.'
+				'.$condYears.$condHu.'
 				GROUP BY months ORDER BY MONTH(cap.creation_date) ASC
 			';
 			$results = $conexion->createCommand($query)->queryAll();
-
-			//print_r($results);
 
 			$months = array();
 			$jim = array();
@@ -399,8 +421,8 @@ public function actionEfficiencyTotal(){
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalChapters"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
-
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			}
 		}
 
 		if(!isset($_POST["years"])){

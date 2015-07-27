@@ -143,7 +143,9 @@ class Persons extends CActiveRecord {
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
 	}
+
 /*	 protected function beforeSave() {
+
 	  	$this->birth_date = DateTime::createFromFormat('d/m/Y', $this->birth_date)->format('Y-m-d');
 	  	return parent::beforeSave();
 	 }

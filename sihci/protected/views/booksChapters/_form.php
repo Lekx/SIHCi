@@ -3980,7 +3980,7 @@ if(areaValue =="SOCIOLOGIA"){
                               'PEDAGOGIA'=>'PEDAGOGIA',
                               'PSICOLOGIA'=>'PSICOLOGIA',
                               'PROSPECTIVA'=>'PROSPECTIVA',
-                              'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'onchange'=>'changeArea()'));?>
+                              'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Área', 'id'=>'area', 'onchange'=>'changeArea()'));?>
     </span>
     <?php echo $form->error($model,'area'); ?>
   </div>
@@ -4013,8 +4013,17 @@ if(areaValue =="SOCIOLOGIA"){
 
   <div class="row">
 
-    <?php echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento / capítulo de libros')); ?>
-    <?php echo $form->error($model,'url_doc'); ?>
+    <?php 
+      if(!$model->isNewRecord){
+        echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento / capítulo de libros')); 
+        echo $model->url_doc != null ? "<a href='".Yii::app()->request->baseUrl."/".$model->url_doc."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$model->url_doc."' style='width:75px;height:auto;'></a>" : "";
+        echo $form->error($model,'url_doc');
+      }else{
+           echo $form->fileField($model,'url_doc',array('size'=>60,'maxlength'=>100,'title'=>'Documento / capítulo de libros'));
+           echo $form->error($model,'url_doc'); 
+      }
+    ?>
+
   </div>
 
   <?php
