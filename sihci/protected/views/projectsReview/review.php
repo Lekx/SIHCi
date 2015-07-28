@@ -226,7 +226,7 @@
 	$userRol = Yii::app()->user->Rol->alias;
 	$userId = Yii::app()->user->id;
 	$redirectUrl = "projectsReview/review/".(isset($_GET['id']) ? $_GET['id'] : 0);
-	
+
 
 	if($userRol == "COMBIO" || $userRol == "COMINV" || $userRol == "COMETI")
 		$userRol = "COMITE";
@@ -240,7 +240,7 @@
 			SELECT DISTINCT pc.committee
 			FROM projects_committee AS pc
 			WHERE pc.id_project = '".$model->id."'")->queryAll();
-			$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee'); 
+			$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee');
 
 			if(count($commsCheck)){
 				echo "Comités asignados a este proyecto:<br>";
@@ -261,14 +261,14 @@ for($evaluationStep = 1; $evaluationStep <= 12; $evaluationStep++)  {
 echo "<br><br><br>=======================================================================[ PASO: ".$evaluationStep.", Rol: ".$evaluationRules[$evaluationStep]["userType"]." ]==============<br>";
 //print_r($evaluationRules[$evaluationStep]);
 $userRol = $evaluationRules[$evaluationStep]["userType"];
-//print_r($evaluationRules[$evaluationStep]["actions"]); 
+//print_r($evaluationRules[$evaluationStep]["actions"]);
 //oreach ($roles as $key => $userRol) {
 //echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ROL: ".$userRol." - - <br>";
-	
+
 
 if($model->status != "MODIFICAR"){
 
-	if($model->is_sponsored == 1){	
+	if($model->is_sponsored == 1){
 
 /*   	START  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S
 *		START  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S
@@ -292,7 +292,7 @@ if($model->status != "MODIFICAR"){
 				$checkForDoc = $conexion->createCommand("SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." AND type = 'mandatory' AND step_number = ".($agreementStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 				if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
-					echo "<div class='row' style='margin-left: 30px !important'>";
+					echo "<div class='row'>";
 						echo " ".CHtml::htmlButton('Aprobar',array(
 							'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 							'class'=>'savebuttonp','id'=>'acceptEvaButton',
@@ -312,7 +312,7 @@ if($model->status != "MODIFICAR"){
 				echo CHtml::htmlButton('No aprobar',array(
 					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
 					'class'=>'savebuttonp',
-				));		
+				));
 				echo "</div>";
 				echo " <div class='row' style='margin-left: 30px !important'>";
 				echo " ".CHtml::htmlButton('Aprobar',array(
@@ -352,10 +352,10 @@ if($model->status != "MODIFICAR"){
 				}else if($model->folio != -1){
 
 					$comms = $conexion->createCommand("
-					SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name 
-					FROM users AS u 
-					JOIN persons AS p on p.id_user=u.id 
-					JOIN roles AS r on u.id_roles=r.id 
+					SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name
+					FROM users AS u
+					JOIN persons AS p on p.id_user=u.id
+					JOIN roles AS r on u.id_roles=r.id
 					WHERE r.alias LIKE '%COM%'")->queryAll();
 
 					$form=$this->beginWidget('CActiveForm', array('id'=>'committees-form','enableAjaxValidation'=>true,));
@@ -373,7 +373,7 @@ if($model->status != "MODIFICAR"){
 					<label>
 					<input type="checkbox" name="designate[COMBIO]" <?php echo $disable." ".(array_key_exists('COMBIO',$commsCheck) ? "checked" : "");?> > Comité de Bioseguridad<br>
 					<small>Se requerirá la aprobación de las siguientes personas:<br>
-					<?php 
+					<?php
 					foreach ($comms as $key => $value) {
 					if($value["alias"] == "COMBIO")
 					echo "<li>".$value["fullname"]."</li>";
@@ -386,7 +386,7 @@ if($model->status != "MODIFICAR"){
 					<label>
 					<input type="checkbox" name="designate[COMETI]"  <?php echo $disable." ".(array_key_exists('COMETI',$commsCheck) ? "checked" : "");?> > Comité de Ética en investigación<br>
 					<small>Se requerirá la aprobación de las siguientes personas:<br>
-					<?php 
+					<?php
 					foreach ($comms as $key => $value) {
 					if($value["alias"] == "COMETI")
 					echo "<li>".$value["fullname"]."</li>";
@@ -399,7 +399,7 @@ if($model->status != "MODIFICAR"){
 					<label>
 					<input type="checkbox" name="designate[COMINV]" <?php echo $disable." ".(array_key_exists('COMINV',$commsCheck) ? "checked" : "");?> > Comité de investigación<br>
 					<small>Se requerirá la aprobación de las siguientes personas:<br>
-					<?php 
+					<?php
 					foreach ($comms as $key => $value) {
 					if($value["alias"] == "COMINV")
 					echo "<li>".$value["fullname"]."</li>";
@@ -417,10 +417,10 @@ if($model->status != "MODIFICAR"){
 					?>
 					</div>
 					<?
-					$this->endWidget(); 
+					$this->endWidget();
 
 				}else{
-					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,)); 
+					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,));
 						?>
 						<div class="row">
 							<?php echo $form->labelEx($model,'folio'); ?>
@@ -432,13 +432,13 @@ if($model->status != "MODIFICAR"){
 							'onclick'=>'javascript: send("folioNumber-form","projectsReview/setFolioNumber","'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","folioNumber-form,formCommittees")',
 							'class'=>'savebutton','id'=>'asignarFolio'
 						));
-					$this->endWidget(); 
+					$this->endWidget();
 				}
 		} // fin del paso 2
 
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 6){
 			if($model->registration_number == "-1"){
-				$form=$this->beginWidget('CActiveForm', array('id'=>'regNumber-form','enableAjaxValidation'=>true,)); 
+				$form=$this->beginWidget('CActiveForm', array('id'=>'regNumber-form','enableAjaxValidation'=>true,));
 					?>
 					<div class="row">
 						<?php echo $form->labelEx($model,'registration_number'); ?>
@@ -466,7 +466,7 @@ if($model->status != "MODIFICAR"){
 					echo CHtml::htmlButton('No aprobar',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
 						'class'=>'savebuttonp',
-					));		
+					));
 				echo "</div>";
 		}
 
@@ -497,11 +497,11 @@ if($model->status != "MODIFICAR"){
 				echo "</div>";
 		}
 
-		
+
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 12 ){ // aqui quite el evaluation step al 4
 			$conexion = Yii::app()->db;
 			$checkForDoc = $conexion->createCommand("
-			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId."
 			AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
@@ -520,10 +520,10 @@ if($model->status != "MODIFICAR"){
 		// botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités
 		// botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités botones solo para comités  botones solo para comités
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 11)){
-			
+
 			$conexion = Yii::app()->db;
 			$checkForDoc = $conexion->createCommand("
-			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." 
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id."
 			AND type = 'mandatory' AND step_number = 2 AND url_doc IS NOT NULL")->queryAll()[0];
 
 			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$model->id,"id_user_reviewer"=>$userId));
@@ -532,7 +532,7 @@ if($model->status != "MODIFICAR"){
 
 			if($commStatus!="pendiente")
 				echo "<br>Usted ya ha <b>".$commStatus."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
-			
+
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0 ){
 
 				if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3 && ($commStatus == "aprobado" || $commStatus == "pendiente")){
@@ -541,7 +541,7 @@ if($model->status != "MODIFICAR"){
 							echo CHtml::htmlButton('No aprobar',array(
 								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
 								'class'=>'savebuttonp',
-							));		
+							));
 						echo "</div>";
 				}
 
@@ -571,7 +571,7 @@ if($model->status != "MODIFICAR"){
 					));
 				echo "</div>";
 
-		} 
+		}
 
 	}else{ // FIN DE REGLAS PARA PATROCINADOS    E   I N I C I O   PARA PROYECTOS   N O   PATROCINADOS
 // FIN DE REGLAS PARA PATROCINADOS    E   I N I C I O   PARA PROYECTOS   N O   PATROCINADOS
@@ -599,7 +599,7 @@ if($model->status != "MODIFICAR"){
 					echo CHtml::htmlButton('No aprobar',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
 						'class'=>'savebuttonp',
-					));		
+					));
 				echo "</div>";
 
 				echo "<div class='row' style='margin-left: 30px !important'>";
@@ -623,10 +623,10 @@ if($model->status != "MODIFICAR"){
 				}else if($model->folio != -1){
 
 					$comms = $conexion->createCommand("
-					SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name 
-					FROM users AS u 
-					JOIN persons AS p on p.id_user=u.id 
-					JOIN roles AS r on u.id_roles=r.id 
+					SELECT CONCAT(p.last_name1,' ',p.last_name2,', ',p.names) as fullname, u.email, u.id, r.alias,r.name
+					FROM users AS u
+					JOIN persons AS p on p.id_user=u.id
+					JOIN roles AS r on u.id_roles=r.id
 					WHERE r.alias LIKE '%COM%'")->queryAll();
 
 					$form=$this->beginWidget('CActiveForm', array('id'=>'committees-form','enableAjaxValidation'=>true,));
@@ -644,7 +644,7 @@ if($model->status != "MODIFICAR"){
 					<label>
 					<input type="checkbox" name="designate[COMBIO]" <?php echo $disable." ".(array_key_exists('COMBIO',$commsCheck) ? "checked" : "");?> > Comité de Bioseguridad<br>
 					<small>Se requerirá la aprobación de las siguientes personas:<br>
-					<?php 
+					<?php
 					foreach ($comms as $key => $value) {
 					if($value["alias"] == "COMBIO")
 					echo "<li>".$value["fullname"]."</li>";
@@ -657,7 +657,7 @@ if($model->status != "MODIFICAR"){
 					<label>
 					<input type="checkbox" name="designate[COMETI]"  <?php echo $disable." ".(array_key_exists('COMETI',$commsCheck) ? "checked" : "");?> > Comité de Ética en investigación<br>
 					<small>Se requerirá la aprobación de las siguientes personas:<br>
-					<?php 
+					<?php
 					foreach ($comms as $key => $value) {
 					if($value["alias"] == "COMETI")
 					echo "<li>".$value["fullname"]."</li>";
@@ -670,7 +670,7 @@ if($model->status != "MODIFICAR"){
 					<label>
 					<input type="checkbox" name="designate[COMINV]" <?php echo $disable." ".(array_key_exists('COMINV',$commsCheck) ? "checked" : "");?> > Comité de investigación<br>
 					<small>Se requerirá la aprobación de las siguientes personas:<br>
-					<?php 
+					<?php
 					foreach ($comms as $key => $value) {
 					if($value["alias"] == "COMINV")
 					echo "<li>".$value["fullname"]."</li>";
@@ -688,10 +688,10 @@ if($model->status != "MODIFICAR"){
 					?>
 					</div>
 					<?
-					$this->endWidget(); 
+					$this->endWidget();
 
 				}else{
-					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,)); 
+					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,));
 						?>
 						<div class="row">
 							<?php echo $form->labelEx($model,'folio'); ?>
@@ -703,7 +703,7 @@ if($model->status != "MODIFICAR"){
 							'onclick'=>'javascript: send("folioNumber-form","projectsReview/setFolioNumber","'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","folioNumber-form,formCommittees")',
 							'class'=>'savebutton','id'=>'asignarFolio'
 						));
-					$this->endWidget(); 
+					$this->endWidget();
 				}
 		} // fin del paso 2
 
@@ -714,14 +714,14 @@ if($model->status != "MODIFICAR"){
 			/*
 			$conexion = Yii::app()->db;
 			$checkForDoc = $conexion->createCommand("
-			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." 
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id."
 			AND type = 'mandatory' AND step_number = 2 AND url_doc IS NOT NULL")->queryAll()[0];
 */
 			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$model->id,"id_user_reviewer"=>$userId))->status;
 
 			if($commStatus!="pendiente")
 				echo "<br>Usted ya ha <b>".$commStatus."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
-			
+
 			/*if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0 ){
 
 				if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3 && ($commStatus == "aprobado" || $commStatus == "pendiente")){
@@ -730,7 +730,7 @@ if($model->status != "MODIFICAR"){
 							echo CHtml::htmlButton('No aprobar',array(
 								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
 								'class'=>'savebuttonp',
-							));		
+							));
 						echo "</div>";
 				} */
 
@@ -752,10 +752,10 @@ if($model->status != "MODIFICAR"){
 		}
 
 			// REGLAS PARA LOS QUE SON OBLIGADOS A SUBIR ARCHIVO ANTES DE APROBAR
-		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 4 || $evaluationStep == 7 || $evaluationStep == 11 || $evaluationStep == 13)){ 
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 4 || $evaluationStep == 7 || $evaluationStep == 11 || $evaluationStep == 13)){
 			$conexion = Yii::app()->db;
 			$checkForDoc = $conexion->createCommand("
-			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId."
 			AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
@@ -772,7 +772,7 @@ if($model->status != "MODIFICAR"){
 		}
 
 
-	} 
+	}
 
 
 

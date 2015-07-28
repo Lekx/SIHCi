@@ -61,12 +61,12 @@ $this->menu=array(
 
 
     <div class="row">
-        <?php echo $form->textField($model,'email',array('placeholder'=>"Email",'title'=>'Email')); ?>
+        <?php echo $form->textField($model,'email',array('placeholder'=>"Correo electronico",'title'=>'Correo electronico')); ?>
         <?php echo $form->error($model,'email'); ?>
     </div>
 
     <div class="row">
-         <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificacion de Email" title="Verificacion de Email" ></input>
+         <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de correo electronico" title="Verificación de correo electronico" ></input>
     </div>
 
 
@@ -76,7 +76,7 @@ $this->menu=array(
     </div>
 
     <div class="row">
-        <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificacion de Contraseña" title="Verificacion de Contraseña" maxlength="15"></input>
+        <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña" title="Verificación de Contraseña" maxlength="15"></input>
     </div>
 
 
@@ -108,7 +108,7 @@ $this->menu=array(
     </div>
 
     <div class="row">
-        <?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apelido Materno",'title'=>'Apellido Materno','onKeypress'=>'return lettersOnly(event)')); ?>
+        <?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apellido Materno",'title'=>'Apellido Materno','onKeypress'=>'return lettersOnly(event)')); ?>
         <?php echo $form->error($modelPersons,'last_name2'); ?>
     </div>
 
@@ -123,7 +123,7 @@ $this->menu=array(
                   'class'=>'savebutton',
               ));
       ?>
-      <?php echo CHtml::Button('Cancelar',array('submit' => array('AdminUsers'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+      	 <?php echo CHtml::link('Cancelar',array('adminUsers/')); ?>
 
       </div>
 
