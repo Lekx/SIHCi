@@ -1,7 +1,7 @@
 
 <?php 
 
-   $nameZip = date('d-m-Y').".zip"; 
+   $nameZip = date('Y-m-d').".zip"; 
    $archiveFolder = "../backups/files"; 
 
    $zip = new ZipArchive();
@@ -21,6 +21,7 @@
    
             $filePath = $file->getRealPath();
             $relativePath = substr($filePath, strlen($archiveFolder) + 1);
+
             
             $zip->addFile($filePath, $relativePath);
         }
@@ -59,7 +60,7 @@
                 header('Content-Length: ' . filesize($nameZip));
 
                 ob_clean();
-               // flush();
+                flush();
                 
                 readfile($nameZip);
                 unlink($nameZip);
@@ -69,5 +70,5 @@
         }    
 
 
-?>
 
+?>

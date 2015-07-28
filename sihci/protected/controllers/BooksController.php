@@ -74,48 +74,42 @@ class BooksController extends Controller
 
 			if($model->validate()==1 )
             {
-            	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
+            	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';         
+                  
+                if(!is_dir($urlFile))          
+                    mkdir($urlFile, 0777, true);
 
-               	 if(!empty($oldUrlDocument))
-                    	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
-                    
-                        $model->path = CUploadedFile::getInstance($model,'path');
-	                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
-	                  
-	                    if(!is_dir($urlFile))          
-	                        mkdir($urlFile, 0777, true);
-
-	                    $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
-			            $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();                                                    
+                $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+	            $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();                                                    
 			        
-	               	if($model->save())
-	               	{             
-			 			$names = $_POST['names'];
-			            $last_name1 = $_POST['last_names1'];
-			            $last_name2 = $_POST['last_names2'];
-			            $position = $_POST['positions'];
-			            
-     					foreach($_POST['names'] as $key => $names)
-     					{
-			               	unset($modelAuthor);
-			               	$modelAuthor = new BooksAuthors;
-			               	$modelAuthor->id_book  = $model->id;
-			       			$modelAuthor->names = $names;
-			        		$modelAuthor->last_name1 = $last_name1[$key];
-			       			$modelAuthor->last_name2 = $last_name2[$key];
-			        		$modelAuthor->position = $position[$key];
-                    		$modelAuthor->save();
-	              	    }	
-              	 		$section = "Libros";
-						$action = "Creación";
-						$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
-						
-						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-	               	  	
-						echo CJSON::encode(array('status'=>'success'));
-	     				Yii::app()->end();
-						
-                    } 		                      
+               	if($model->save())
+               	{             
+		 			$names = $_POST['names'];
+		            $last_name1 = $_POST['last_names1'];
+		            $last_name2 = $_POST['last_names2'];
+		            $position = $_POST['positions'];
+		            
+ 					foreach($_POST['names'] as $key => $names)
+ 					{
+		               	unset($modelAuthor);
+		               	$modelAuthor = new BooksAuthors;
+		               	$modelAuthor->id_book  = $model->id;
+		       			$modelAuthor->names = $names;
+		        		$modelAuthor->last_name1 = $last_name1[$key];
+		       			$modelAuthor->last_name2 = $last_name2[$key];
+		        		$modelAuthor->position = $position[$key];
+                		$modelAuthor->save();
+              	    }	
+          	 		$section = "Libros";
+					$action = "Creación";
+					$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
+					
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+               	  	
+					echo CJSON::encode(array('status'=>'success'));
+     				Yii::app()->end();
+					
+                } 		                      
 		           	       
 	        }// if validate
 	        else
@@ -143,7 +137,7 @@ class BooksController extends Controller
 		$this->performAjaxValidation($model);
 		$this->performAjaxValidation($modelAuthor);
 
-		if(isset($_POST['Books']) && isset($_POST['BooksAuthors']) )
+		if(isset($_POST['Books']) && isset($_POST['BooksAuthors'])) 
 		{
 
 			$model->attributes=$_POST['Books'];
@@ -154,73 +148,65 @@ class BooksController extends Controller
 			$modelAuthor->id_book  = "1";
 			if($model->validate()==1 && $modelAuthor->validate()==1)
             {
-            	$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
+        		$urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
 
-               	 if(!empty($oldUrlDocument))
-                    	unlink(YiiBase::getPathOfAlias("webroot").$oldUrlDocument);
+                if(!is_dir($urlFile))
+                	mkdir($urlFile, 0777, true);
 
-                        $model->path = CUploadedFile::getInstance($model,'path');
-	                    $urlFile = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/Userbooks/';
+                $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
+		        $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();
 
-	                    if(!is_dir($urlFile))
-	                        mkdir($urlFile, 0777, true);
+               	if($model->save())
+               	{
 
-	                    $model->path->saveAs($urlFile.'file'.$model->isbn.'.'.$model->path->getExtensionName());
-			            $model->path= '/users/'.Yii::app()->user->id.'/Userbooks/file'.$model->isbn.'.'.$model->path->getExtensionName();
+					$names = $_POST['names'];
+		            $last_name1 = $_POST['last_name1'];
+		            $last_name2 = $_POST['last_name2'];
+		            $position = $_POST['position'];
 
-	               	if($model->save())
-	               	{
+ 					foreach($_POST['names'] as $key => $value)
+ 					{
+						unset($modelAuthor);
+						$modelAuthor = new BooksAuthors;
+						$modelAuthor->id_book  = $model->id;
+		       			$modelAuthor->names = $names[$key];
+		        		$modelAuthor->last_name1 = $last_name1[$key];
+		       			$modelAuthor->last_name2 = $last_name2[$key];
+		        		$modelAuthor->position = $position[$key];
+                		$modelAuthor->save();
+              	    }
+          	 		$section = "Libros";
+					$action = "Creación";
+					$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
 
-						$names = $_POST['names'];
-			            $last_name1 = $_POST['last_names1'];
-			            $last_name2 = $_POST['last_names2'];
-			            $position = $_POST['positions'];		
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
-     					foreach($_POST['names'] as $key => $value)
-     					{
-							unset($modelAuthor);
-							$modelAuthor = new BooksAuthors;
-							$modelAuthor->id_book  = $model->id;
-			       			$modelAuthor->names = $names[$key];
-			        		$modelAuthor->last_name1 = $last_name1[$key];
-			       			$modelAuthor->last_name2 = $last_name2[$key];
-			        		$modelAuthor->position = $position[$key];
-                    		$modelAuthor->save();
-	              	    }
-              	 		$section = "Libros";
-						$action = "Creación";
-						$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->book_title;
-
-						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-
-						echo CJSON::encode(array('status'=>'success'));
-	     				Yii::app()->end();
-					
-                    }
+					echo CJSON::encode(array('status'=>'success'));
+     				Yii::app()->end();
+				
+                }
 
 	        }// if validate
-	      	else
+	        else
 	        {
         		$error1 = CActiveForm::validate($model);
-				$error2 = CActiveForm::validate($modelAuthor);
-				$error = "{";
+						$error2 = CActiveForm::validate($modelAuthor);
+						$error = "{";
 
-				if($error1 !='[]')
-					$error.= str_replace("{", "",str_replace("}", "",$error1));
-				if($error2 !='[]')
-					$error.= str_replace("{", "",str_replace("}", "",$error2));
+					if($error1 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error1));
+					if($error2 !='[]')
+						$error.= str_replace("{", "",str_replace("}", "",$error2));
 
-				if($error!='[]')
-					echo str_replace("]\"", "],\"",$error)."}";
-				
-				Yii::app()->end();
+						if($error!='[]')
+							echo str_replace("]\"", "],\"",$error)."}";
+					Yii::app()->end();
 	        }
 	    }//	Books
 
    		if(!isset($_POST['ajax']))
 				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
 	}
-
 
 
 	/**
