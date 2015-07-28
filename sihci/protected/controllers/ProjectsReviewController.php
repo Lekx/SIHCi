@@ -87,11 +87,11 @@ class ProjectsReviewController extends Controller
 					"11"=>array("userType"=>"COMITE", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria"),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.21")),
 					"12"=>array("userType"=>"DIVUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto Dictaminado."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.22")),
 					//"13"=>array("userType"=>"USUARIO GENERAL", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto Dictaminado."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.22")),
-				);               
+				);
 
 	public $agreementRules = array( "0"=>"Contrato de patrocinios",
 	"1"=>array("userType"=>"DUH","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.10")),
-	"2"=>array("userType"=>"SGEI","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.11")),
+	"2"=>array("userType"=>"SGEI","message"=>array("accept"=>"Contrato enviado a revisión.","review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.11")),
 		"3"=>array("userType"=>"JURIDICO","message"=>array("accept"=>""),"actions"=>array("accept","reject","addfile"), "type"=>"manual", "realSteps"=>array("6.12","6.13","6.14","6.15")),
 
 
@@ -99,7 +99,7 @@ class ProjectsReviewController extends Controller
 "5"=>array("userType"=>"FILLER","message"=>array("accept"=>""),"actions"=>array("accept","XX"), "type"=>"XX", "realSteps"=>array("6.16")),
 			//se junta con el 6.16 del paso 6
 			"6"=>array("userType"=>"SGEI","message"=>array("accept"=>""),"actions"=>array("accept","addfolio"), "type"=>"manual", "realSteps"=>array("6.16")),
-			
+
 		"7"=>array("userType"=>"DG","message"=>array("accept"=>"","reject"=>""),"actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.17","6.18","6.19")),
 		"8"=>array("userType"=>"SGEI","message"=>array("accept"=>""),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.20")),
 "9"=>array("userType"=>"FILLER","message"=>array("accept"=>""),"actions"=>array("accept","XX"), "type"=>"XX", "realSteps"=>array("6.16")),
@@ -135,26 +135,42 @@ class ProjectsReviewController extends Controller
 
 		$pFollowups = $conection->createCommand("SELECT pf.id AS pif, pf.status, pf.type, pf.step_number, pf.creation_date, p.id, p.status, p.is_sponsored, p.title FROM projects_followups AS pf JOIN projects AS p ON p.id = pf.id_project ".$pfcondition." AND pf.type = 'followup' AND p.status = 'ACEPTADO'")->queryAll();
 
-		$pendingProjects ="Projectos pendientes por aprobar:";
+		$pendingProjects ="<div class='projectRow'> Projectos pendientes por aprobar:</div>";
 
 		foreach($pProjects AS $key => $value){
+			if($value["is_sponsored"] == 1)
+			{
+				$spon = "<img src=".Yii::app()->request->baseUrl . '/img/Acciones/patrocinio.svg'.">";
+			}
+			else {
+					$spon = "<img src=".Yii::app()->request->baseUrl . '/img/Acciones/patrocinio2.svg'.">";
+
+			}
 			$element ="";
-			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.80em;">';
+			$element .= '<div class="projectRow" style=" padding: 5px; width:97%;border:0px solid #00B9C0; margin:5px;font-size:.9em;">';
 			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
-			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
+			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #00B9C0;font-size:.9em;">'.$spon.' - '.$value["creation_date"].'</div>';
 			$element .= '</div>';
 			$pendingProjects .= CHtml::link($element,array('projectsReview/review','id'=>$value["id"]));
 
 		}
 
 
-		$pendingProjects .="<br><hr>Seguimientos pendientes por aprobar:";
+		$pendingProjects .="<br><hr><div class='projectRow'> Seguimientos pendientes a aprobar:</div>";
 
 		foreach($pFollowups AS $key => $value){
+			if($value["is_sponsored"] == 1)
+			{
+				$spon = "<img src=".Yii::app()->request->baseUrl . '/img/Acciones/patrocinio.svg'.">";
+			}
+			else {
+					$spon = "<img src=".Yii::app()->request->baseUrl . '/img/Acciones/patrocinio2.svg'.">";
+
+			}
 			$element ="";
 			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.80em;">';
 			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
-			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #333;font-size:.9em;">'.$value["is_sponsored"].' - '.$value["creation_date"].'</div>';
+			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #00B9C0;font-size:.9em;">'.$spon.' - '.$value["creation_date"].'</div>';
 			$element .= '</div>';
 			$pendingProjects .= CHtml::link($element,array('projectsFollowups/followupReview','id'=>$value["pif"]));
 
@@ -189,7 +205,7 @@ class ProjectsReviewController extends Controller
 			$evaluationStep = (int)$lastfollowup[0]["step_number"] + 1;
 		else
 			$evaluationStep = 0;
-		
+
 
 
 
@@ -200,7 +216,7 @@ class ProjectsReviewController extends Controller
 		SELECT id, id_project, id_user, step_number
 		FROM projects_followups
 		WHERE type = 'agreement' && id_project = '".$model->id."' ORDER BY id DESC LIMIT 0,1")->queryAll();
-		
+
 		if(count($lastfollowupAgreement) > 0)
 			$agreementStep = (int)$lastfollowupAgreement[0]["step_number"] + 1;
 		else
@@ -232,7 +248,7 @@ class ProjectsReviewController extends Controller
 	            }
 
             $modelfollowup->url_doc = CUploadedFile::getInstance($modelfollowup,'url_doc');
-            
+
 
 			if($modelfollowup->validate() == 1){
 	            if(is_object($modelfollowup->url_doc)){
@@ -291,21 +307,22 @@ class ProjectsReviewController extends Controller
 				echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El proyecto ha sido calificado satisfactoriamente, es necesario que todos los miembros del comité realicén la misma calificación para que el proyecto pase a una siguiente fase.'));
 
 			}else{
-				
+
 				$checkDifferentStatus = $conexion->createCommand("SELECT DISTINCT status FROM projects_committee WHERE id_project = ".$projectId." AND status != 'pendeinte' ")->queryAll();
 				if(count($checkDifferentStatus) == 1) //si solo no hay diferencias en los estatus
 					$this->actionSendReview($projectId, $actualStep, $action);
 				else
 					echo CJSON::encode(array('message'=>'1 Ocurrió un error.','subMessage'=>'Este proyecto ya ha sido calificado.'));
 
-				
+
 			}
 	}
-	
+
 
 	public function actionAgreement($projectId, $actualStepFirst = 0, $actionFirst = 0)
 	{
 
+		//echo "<script>alert('".$projectId." - ".$actualStepFirst." - ".$actionFirst."');</script>";
 		if($actualStepFirst != 0 && $actionFirst != 0){
 			$actualStep = $actualStepFirst;
 			$action = $actionFirst;
@@ -319,15 +336,13 @@ class ProjectsReviewController extends Controller
 		$followup = new ProjectsFollowups;
 		$followup->id_project = $projectId;
 		$followup->id_user = Yii::app()->user->id;
-		$followup->followup = $agreementRules[$actualStep]["message"][$action];
+		$followup->followup = $this->agreementRules[$actualStep]["message"][$action];
 		$followup->type = "agreement";
 		$followup->step_number = $actualStep;
 
-		if($followup->save())
- 			echo CJSON::encode(array('status'=>'success','message'=>'ag Acción realizada con éxito','subMessage'=>'El contrato ha sido revisado satisfactoriamente.'));
- 		else
+		if(!$followup->save())
  			echo CJSON::encode(array('message'=>'ag Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intentar.'));
-	}	
+	}
 
 	//Envia a revisión o evaluación (no comites).
 	//params: id del projecto.
@@ -377,8 +392,8 @@ class ProjectsReviewController extends Controller
 
 
 			//llamar a revision de contratos si el paso es 2 o mayor y 
-			if($actualStep == 2 && $status == 'ACEPTADO')
-				$this->agreements($projectId,$actualStep,$action);
+			if($actualStep == 2 && $action == 'accept')
+				$this->actionAgreement($projectId,$actualStep,$action);
 			
 
 		}else if($action == "review"){
@@ -452,7 +467,7 @@ class ProjectsReviewController extends Controller
 		}else{
 			echo CJSON::encode(array('message'=>'2 Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intentar.'));
 		}
-		
+
 	}
 
 
@@ -464,7 +479,7 @@ public function actionSetFolioNumber()
      			echo CJSON::encode(array('status'=>'success','message'=>'Número de folio asignado con éxito.','subMessage'=>'A continuación seleccione los comités que evaluarán el proyecto.'));
 	        else
  				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'No se pudo asignar el número de folio, por favor vuelva a intentarlo.'));
-	        
+
         Yii::app()->end();
 
 	}
@@ -476,7 +491,7 @@ public function actionSetFolioNumber()
      			echo CJSON::encode(array('status'=>'success','message'=>'Número de registro asignado con éxito.','subMessage'=>'A continuación seleccione los comités que evaluarán el proyecto.'));
 	        else
  				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'No se pudo asignar el número de registro, por favor vuelva a intentarlo.'));
-	        
+
         Yii::app()->end();
 
 	}
@@ -484,7 +499,7 @@ public function actionSetFolioNumber()
 	// V A L I D O
 	public function actionAssignCommittees()
 	{
-		
+
 		if(isset($_POST['designate']))
 		{
 			$idProject = $_POST[1];

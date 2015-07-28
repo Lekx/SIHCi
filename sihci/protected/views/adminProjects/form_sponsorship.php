@@ -2,6 +2,10 @@
 /* @var $this SponsorshipController */
 /* @var $model Sponsorship */
 /* @var $form CActiveForm */
+$this->menu=array(
+	array('label'=>'Administrar Proyectos', 'url'=>array('adminProjects')),
+);
+
 
 $researcher = "";
 $sponsor = "";
@@ -34,7 +38,6 @@ if(!$model->isNewRecord){
 	'enableAjaxValidation'=>true,
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 	<?php
@@ -89,7 +92,7 @@ if(!$model->isNewRecord){
 
 	<div class="row buttons">
 		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
-							'onclick'=>'send("admin-sponsorship-form","sponsorship/'.($model->isNewRecord ? '' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","adminProjects/","")',
+							'onclick'=>'send("admin-sponsorship-form","'.($model->isNewRecord ? 'adminProjects/createSponsorship' : 'sponsorship/update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","adminProjects/","")',
 							'class'=>'savebutton',
 					));
 			?>

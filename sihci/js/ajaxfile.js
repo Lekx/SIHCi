@@ -49,7 +49,7 @@
 
          if (typeof extraCall != 'undefined') {
            var ids = extraCall.split(",");
-           alert(ids[0] + " " + ids[1] + " ");
+          // alert(ids[0] + " " + ids[1] + " ");
            $("#" + ids[0]).hide();
            $("#" + ids[1]).show();
          }

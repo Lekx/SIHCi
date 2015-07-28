@@ -2416,3 +2416,12 @@ div.pager span.active
   margin-left: 140px;
   margin-top: -20px;
 }
+#projectsMenu a
+{
+  text-decoration: none;
+}
+.projectRow
+{
+  padding: 5px;
+  font-size: .9em;
+}
