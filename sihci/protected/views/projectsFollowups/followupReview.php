@@ -15,13 +15,14 @@ $fileTypes = array( "4"=>"Documento de revisión","6"=>"el dictamen de aprobaci�
 	$userRol = Yii::app()->user->Rol->alias;
 	$userId = Yii::app()->user->id;
 	$redirectUrl = "projectsFollowups/followupReview/".(isset($_GET['id']) ? $_GET['id'] : 0);
+		if($userRol == "COMBIO" || $userRol == "COMINV" || $userRol == "COMETI")
+		$userRol = "COMITE";
 
 //for($evaluationStep = 1; $evaluationStep <= 6; $evaluationStep++)  {
 
 
-
  	echo "<hr> <br><br><font color='red'>".$followupRules[$evaluationStep]['type']."</font> <b>Paso: ".$evaluationStep."</b> Rol: ".$followupRules[$evaluationStep]['userType']." Acciones: ".$followupRules[$evaluationStep]['actions'][0].", ".(isset($followupRules[$evaluationStep]['actions'][1]) ? $followupRules[$evaluationStep]['actions'][1] : "").", ".(isset($followupRules[$evaluationStep]['actions'][2]) ? $followupRules[$evaluationStep]['actions'][2] : "")."<br>";
- 	$userRol =$followupRules[$evaluationStep]['userType'];
+ //	$userRol =$followupRules[$evaluationStep]['userType'];
 
 
 		if($followupRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1 || $evaluationStep == 5)){
@@ -64,21 +65,38 @@ $fileTypes = array( "4"=>"Documento de revisión","6"=>"el dictamen de aprobaci�
 				
 		}
 
+			//aprobacion por comites
  		if($followupRules[$evaluationStep]["userType"] ==  $userRol && $evaluationStep == 3){
 
-				echo "<div class='row' style='margin-left: 25px !important'>";
-					echo CHtml::htmlButton('No aprobar',array(
-						'onclick'=>'javascript: send("","projectsFollowups/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
-						'class'=>'savebuttonp',
-					));		
-				echo "</div>";
-				echo "<div class='row' style='margin-left: 30px !important'>";
-				echo " ".CHtml::htmlButton('Aprobar',array(
-					'onclick'=>'javascript: send("","projectsFollowups/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
-					'class'=>'savebuttonp','id'=>'acceptEvaButton',
-				));
-				echo "</div>";
+
+
+
+
+			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$modelProject->id,"id_user_reviewer"=>$userId));
+			var_dump($commStatus);
+			if(is_object($commStatus)){
+				$commStatus = $commStatus->status;
+				if($commStatus!="pendienteFW")
+					echo "<br>Usted ya ha <b>".substr($commStatus,0,-2)."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
 				
+				if($commStatus == "aprobadoFW" || $commStatus == "pendienteFW"){
+					echo "<div class='row' style='margin-left: 25px !important'>";
+						echo CHtml::htmlButton('No aprobar',array(
+							'onclick'=>'javascript: send("","projectsFollowups/sendReviewCommittee", "'.$modelProject->id.'", "'.$redirectUrl.'", "'.$evaluationStep.',reject,'.(isset($_GET['id']) ? $_GET['id'] : 0).'");',
+							'class'=>'savebuttonp',
+						));		
+					echo "</div>";
+				}
+
+				if($commStatus == "rechazadoFW" || $commStatus == "pendienteFW"){
+					echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('Aprobar',array(
+						'onclick'=>'javascript: send("","projectsFollowups/sendReviewCommittee", "'.$modelProject->id.'", "'.$redirectUrl.'", "'.$evaluationStep.',accept,'.(isset($_GET['id']) ? $_GET['id'] : 0).'");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+					echo "</div>";
+				}
+			}
 		}
 
 			// REGLAS PARA LOS QUE SON OBLIGADOS A SUBIR ARCHIVO ANTES DE APROBAR
@@ -86,12 +104,12 @@ $fileTypes = array( "4"=>"Documento de revisión","6"=>"el dictamen de aprobaci�
 			$conexion = Yii::app()->db;
 			$checkForDoc = $conexion->createCommand("
 			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
-			AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
+			AND id_project = ".$modelProject->id." AND  type = 'mandatoryFW' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
 				echo "<div class='row' style='margin-left: 30px !important'>";
 					echo " ".CHtml::htmlButton('Aprobar',array(
-						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+						'onclick'=>'javascript: send("","projectsFollowups/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 						'class'=>'savebuttonp','id'=>'acceptEvaButton',
 					));
 				echo "</div>";
@@ -100,6 +118,7 @@ $fileTypes = array( "4"=>"Documento de revisión","6"=>"el dictamen de aprobaci�
 				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
 			}
 		}
+
 
 
 

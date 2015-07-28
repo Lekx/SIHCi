@@ -55,22 +55,6 @@ class ProjectsReviewController extends Controller
 		));
 	}
 
-	public $sponsoredRules = array(  "0"=>"Proyecto patrocinado",
-					 "1"=>array("userType"=>"DIVUH", "message"=>array("accept"=>"Proyecto enviado a asignación de folio, comités y evaluación del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.","reject"=>"Proyecto devuelto al investigador para su corrección por parte de la División de Investigacion de la Unidad Hospitalaria."),"actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.06","6.07","6.08")),
-					 "2"=>array("userType"=>"SEUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del comité(s) asignado."),"actions"=>array("accept","addcomms","addfolio"), "type"=>"manual", "realSteps"=>array("6.09")),
-					 "3"=>array("userType"=>"COMITE", "message"=>array("accept"=>"Proyecto enviado a evaluación del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.","reject"=>"Proyecto devuelto al investigador para su corrección por parte del comité."),"actions"=>array("accept","reject","addFile"), "type"=>"manual", "realSteps"=>array("6.10","6.11","6.12","6.13")),
-				 	 "4"=>array("userType"=>"SEUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del Subdirector General de Enseñanza e Investigación."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.14")),
-				 "5"=>array("userType"=>"DUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DUH"),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.15")),
-				 	 "6"=>array("userType"=>"SGEI", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria."),"actions"=>array("accept","addregistration"), "type"=>"manual", "realSteps"=>array("6.16")),
-				 "7"=>array("userType"=>"DG", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por SGEI"),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.17")),
-			 	 "8"=>array("userType"=>"DUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DUH"),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.18")),
-				 "9"=>array("userType"=>"SEUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por SEUH"),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.19")),
-					"10"=>array("userType"=>"DIVUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del comité(s) asignado."),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.20")),
-					"11"=>array("userType"=>"COMITE", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria"),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.21")),
-					"12"=>array("userType"=>"DIVUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto Dictaminado."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.22")),
-					//"13"=>array("userType"=>"USUARIO GENERAL", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto Dictaminado."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.22")),
-				);               
-
 	public $noSponsoredRules = array(  "0"=>"Proyecto no patrocinado",
 					 "1"=>array("userType"=>"DIVUH", "message"=>array("accept"=>"Proyecto enviado a asignación de folio, comités y evaluación del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.","reject"=>"Proyecto devuelto al investigador para su corrección por parte de la División de Investigacion de la Unidad Hospitalaria."),"actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.03","6.04","6.05")),
 					 "2"=>array("userType"=>"SEUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del comité(s) asignado."),"actions"=>array("accept","addcomms","addfolio"), "type"=>"manual", "realSteps"=>array("6.06")),
@@ -89,8 +73,40 @@ class ProjectsReviewController extends Controller
 				"14"=>array("userType"=>"DIVUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DIVUH"), "actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.21")),
 	);
 
+	public $sponsoredRules = array(  "0"=>"Proyecto patrocinado",
+					 "1"=>array("userType"=>"DIVUH", "message"=>array("accept"=>"Proyecto enviado a asignación de folio, comités y evaluación del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.","reject"=>"Proyecto devuelto al investigador para su corrección por parte de la División de Investigacion de la Unidad Hospitalaria."),"actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.06","6.07","6.08")),
+					 "2"=>array("userType"=>"SEUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del comité(s) asignado."),"actions"=>array("accept","addcomms","addfolio"), "type"=>"manual", "realSteps"=>array("6.09")),
+					 "3"=>array("userType"=>"COMITE", "message"=>array("accept"=>"Proyecto enviado a evaluación del Subdirector de Enseñanza e Investigacion de la Unidad Hospitalaria.","reject"=>"Proyecto devuelto al investigador para su corrección por parte del comité."),"actions"=>array("accept","reject","addFile"), "type"=>"manual", "realSteps"=>array("6.10","6.11","6.12","6.13")),
+				 	 "4"=>array("userType"=>"SEUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del Subdirector General de Enseñanza e Investigación."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.14")),
+				 "5"=>array("userType"=>"DUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DUH"),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.15")),
+				 	 "6"=>array("userType"=>"SGEI", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria."),"actions"=>array("accept","addregistration"), "type"=>"manual", "realSteps"=>array("6.16")),
+				 "7"=>array("userType"=>"DG", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por SGEI"),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.17")),
+			 	 "8"=>array("userType"=>"DUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por DUH"),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.18")),
+				 "9"=>array("userType"=>"SEUH", "message"=>array("accept"=>"","reject"=>"","review"=>"Proyecto revisado por SEUH"),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.19")),
+					"10"=>array("userType"=>"DIVUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación del comité(s) asignado."),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.20")),
+					"11"=>array("userType"=>"COMITE", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto enviado a evaluación de la División de Investigacion de la Unidad Hospitalaria"),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.21")),
+					"12"=>array("userType"=>"DIVUH", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto Dictaminado."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.22")),
+					//"13"=>array("userType"=>"USUARIO GENERAL", "message"=>array("review"=>"","reject"=>"","accept"=>"Proyecto Dictaminado."),"actions"=>array("accept","addFile"), "type"=>"manual", "realSteps"=>array("6.22")),
+				);               
+
+	public $agreementRules = array( "0"=>"Contrato de patrocinios",
+	"1"=>array("userType"=>"DUH","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.10")),
+	"2"=>array("userType"=>"SGEI","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.11")),
+		"3"=>array("userType"=>"JURIDICO","message"=>array("accept"=>""),"actions"=>array("accept","reject","addfile"), "type"=>"manual", "realSteps"=>array("6.12","6.13","6.14","6.15")),
 
 
+"4"=>array("userType"=>"FILLER","message"=>array("accept"=>""),"actions"=>array("accept","XX"), "type"=>"XX", "realSteps"=>array("6.16")),
+"5"=>array("userType"=>"FILLER","message"=>array("accept"=>""),"actions"=>array("accept","XX"), "type"=>"XX", "realSteps"=>array("6.16")),
+			//se junta con el 6.16 del paso 6
+			"6"=>array("userType"=>"SGEI","message"=>array("accept"=>""),"actions"=>array("accept","addfolio"), "type"=>"manual", "realSteps"=>array("6.16")),
+			
+		"7"=>array("userType"=>"DG","message"=>array("accept"=>"","reject"=>""),"actions"=>array("accept","reject"), "type"=>"manual", "realSteps"=>array("6.17","6.18","6.19")),
+		"8"=>array("userType"=>"SGEI","message"=>array("accept"=>""),"actions"=>array("accept"), "type"=>"manual", "realSteps"=>array("6.20")),
+"9"=>array("userType"=>"FILLER","message"=>array("accept"=>""),"actions"=>array("accept","XX"), "type"=>"XX", "realSteps"=>array("6.16")),
+	"10"=>array("userType"=>"DUH","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.21")),
+	"11"=>array("userType"=>"SEUH","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.22")),
+	"12"=>array("userType"=>"DIVUH","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.23")),
+	);
 
 
 
@@ -166,9 +182,31 @@ class ProjectsReviewController extends Controller
 		$lastfollowup = $conexion->createCommand("
 		SELECT id, id_project, id_user, step_number
 		FROM projects_followups
-		WHERE type = 'system' && id_project = '".$model->id."' ORDER BY id DESC LIMIT 0,1")->queryAll()[0];
+		WHERE type = 'system' && id_project = '".$model->id."' ORDER BY id DESC LIMIT 0,1")->queryAll();
 
-		$evaluationStep = (int)$lastfollowup["step_number"] + 1;
+
+		if(count($lastfollowup) > 0)
+			$evaluationStep = (int)$lastfollowup[0]["step_number"] + 1;
+		else
+			$evaluationStep = 0;
+		
+
+
+
+
+
+///obtenemos step de agreement
+		$lastfollowupAgreement = $conexion->createCommand("
+		SELECT id, id_project, id_user, step_number
+		FROM projects_followups
+		WHERE type = 'agreement' && id_project = '".$model->id."' ORDER BY id DESC LIMIT 0,1")->queryAll();
+		
+		if(count($lastfollowupAgreement) > 0)
+			$agreementStep = (int)$lastfollowupAgreement[0]["step_number"] + 1;
+		else
+			$agreementStep = 0;
+
+/// fin de step de agreement
 
         if(isset($_POST['ProjectsFollowups']))
         {
@@ -220,7 +258,7 @@ class ProjectsReviewController extends Controller
         }
 
 		$this->render('review',array(
-			'model'=>$this->loadModel($id),'evaluationRules'=>$evaluationRules,'evaluationStep'=>$evaluationStep,'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup,'followups'=>$followups,//'modelproject'=>$modelproject,
+			'model'=>$this->loadModel($id),'evaluationRules'=>$evaluationRules,'evaluationStep'=>$evaluationStep,'pendingProjects'=>$this->projectsToReview(),'modelfollowup'=>$modelfollowup,'followups'=>$followups,'agreementRules'=>$this->agreementRules,'agreementStep'=>$agreementStep,//'modelproject'=>$modelproject,
 		));
 	}
 
@@ -264,6 +302,33 @@ class ProjectsReviewController extends Controller
 			}
 	}
 	
+
+	public function actionAgreement($projectId, $actualStepFirst = 0, $actionFirst = 0)
+	{
+
+		if($actualStepFirst != 0 && $actionFirst != 0){
+			$actualStep = $actualStepFirst;
+			$action = $actionFirst;
+		}else{
+			$actualStep = $_POST[1];
+			$action = $_POST[2];
+		}
+
+
+
+		$followup = new ProjectsFollowups;
+		$followup->id_project = $projectId;
+		$followup->id_user = Yii::app()->user->id;
+		$followup->followup = $agreementRules[$actualStep]["message"][$action];
+		$followup->type = "agreement";
+		$followup->step_number = $actualStep;
+
+		if($followup->save())
+ 			echo CJSON::encode(array('status'=>'success','message'=>'ag Acción realizada con éxito','subMessage'=>'El contrato ha sido revisado satisfactoriamente.'));
+ 		else
+ 			echo CJSON::encode(array('message'=>'ag Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intentar.'));
+	}	
+
 	//Envia a revisión o evaluación (no comites).
 	//params: id del projecto.
 	public function actionSendReview($id, $actualStepCom = 0, $actionCom = 0)
@@ -272,7 +337,7 @@ class ProjectsReviewController extends Controller
 		$projectId = $id;
 		$modelProject = $this->loadModel($projectId);
 
-		if($actualStepCom != 0 && $actualStepCom != 0){
+		if($actualStepCom != 0 && $actionCom != 0){
 			$actualStep = $actualStepCom;
 			$action = $actionCom;
 		}else{
@@ -309,6 +374,13 @@ class ProjectsReviewController extends Controller
 				$status = $status;
 
 			$result = Projects::model()->updateByPk($projectId,array('status' => $status));
+
+
+			//llamar a revision de contratos si el paso es 2 o mayor y 
+			if($actualStep == 2 && $status == 'ACEPTADO')
+				$this->agreements($projectId,$actualStep,$action);
+			
+
 		}else if($action == "review"){
 
 			$followup = new ProjectsFollowups;

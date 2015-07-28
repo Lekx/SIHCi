@@ -26,7 +26,7 @@ if(!$model->isNewRecord){
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'sponsorship-form',
+	'id'=>'admin-sponsorship-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -89,7 +89,7 @@ if(!$model->isNewRecord){
 
 	<div class="row buttons">
 		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
-							'onclick'=>'send("sponsorship-form","sponsorship'.($model->isNewRecord ? '' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","adminProjects/","")',
+							'onclick'=>'send("admin-sponsorship-form","sponsorship/'.($model->isNewRecord ? '' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","adminProjects/","")',
 							'class'=>'savebutton',
 					));
 			?>

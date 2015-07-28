@@ -10,6 +10,7 @@
         105)) {
       e.preventDefault();
     }
+  });
     $(".numericOnly").bind('keyup input', function() {
       var input = $(this);
       input.val(input.val().replace(/[^0-9]/g, ''));

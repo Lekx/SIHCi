@@ -32,7 +32,7 @@ class ProjectsFollowupsController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('createFollowup','update', 'FollowupReview','SendReview'),
+				'actions'=>array('createFollowup','update', 'FollowupReview','SendReview','SendReviewCommittee'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -290,7 +290,44 @@ class ProjectsFollowupsController extends Controller
 		));
 	}
 
+	public function actionSendReviewCommittee($id)
+	{
+		$conexion = Yii::app()->db;
+		$projectId = $id;
+		$actualStep = $_POST[1];
+		$action = $_POST[2];
+		$idFucom = $_POST[3];
+		$userId = Yii::app()->user->id;
+		//$userId = 16;
 
+		$committeeCheck =ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$projectId,'id_user_reviewer'=>$userId));
+		ProjectsCommittee::model()->updateByPk($committeeCheck[0]->id,array('status' => ($action == 'reject' ? 'rechazadoFW' : 'aprobadoFW')));
+
+		$committeesCheck =ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$projectId,'status'=>'pendienteFW'));
+
+			if(count($committeesCheck) > 0){
+				$followup = new ProjectsFollowups;
+				$followup->id_project = $projectId;
+				$followup->id_user = Yii::app()->user->id;
+				$followup->followup = "Seguimiento ".($action == "accept" ? "aprobado" : "no aprobado")." por miembro del comité.";
+				$followup->type = "system";
+				$followup->step_number = $actualStep-1;
+				$followup->id_fucom = $idFucom;
+
+			if($followup->save())
+				echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El seguimiento ha sido calificado satisfactoriamente, es necesario que todos los miembros del comité realicén la misma calificación para que el proyecto pase a una siguiente fase.'));
+
+			}else{
+				
+				$checkDifferentStatus = $conexion->createCommand("SELECT DISTINCT status FROM projects_committee WHERE id_project = ".$projectId." AND status != 'pendeinteFW' ")->queryAll();
+				if(count($checkDifferentStatus) == 1) //si solo no hay diferencias en los estatus
+					$this->actionSendReview($idFucom, $actualStep, $action);
+				else
+					echo CJSON::encode(array('message'=>'1 Ocurrió un error.','subMessage'=>'Este seguimiento ya ha sido calificado.'));
+
+				
+			}
+	}
 
 
 //Envia a revisión o evaluación (no comites).
@@ -311,15 +348,18 @@ class ProjectsFollowupsController extends Controller
 
 
 
-		if($action == "accept"){
+		if($action == "accept" && $actualStep < 6){
 				$status = $this->followupRules[$actualStep+1]["userType"];
-		}else if($action == "reject")
+		}else if($action == "reject" && $actualStep < 6)
 			$status = "MODIFICAR";
+		else 
+			$status = "APROBADO";
 
 		$result = false;
 
 		if($action != "review"){
-
+			if($actualStep == 4)
+				$status = "DIVUH";
 			$result = ProjectsFollowups::model()->updateByPk($followupId,array('status' => $status));
 
 		}else if($action == "review"){
@@ -332,6 +372,7 @@ class ProjectsFollowupsController extends Controller
 			$followup->id_fucom = $followupId;
 
 			if($followup->save()){
+
 	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>'El seguimiento ha sido revisado satisfactoriamente.'));
 	 			Yii::app()->end();
 			}
@@ -354,25 +395,28 @@ class ProjectsFollowupsController extends Controller
 				//echo $actualStep;
 
 				/*	if($actualStep == 4)
-						$followup->step_number = 6;
-					else if($actualStep == 7)
-						$followup->step_number = 10;
+						$followup->step_number = 6;*/
+					 if($actualStep == 4)
+						$followup->step_number = 5;
 					else
 						$followup->step_number = $actualStep;
-*/
+
 			
 
 			}
 
-			
 
-			if($followup->save())
+
+			if($followup->save()){
+				if($actualStep == 2){
+					$conexion->createCommand("UPDATE projects_committee SET status = 'pendienteFW' WHERE id_project = ".$modelProject)->execute();
+				}
 				$subMessage = 'El seguimiento ha sido enviado satisfactoriamente para su revisión o evaluación.';
 				if($actualStep == 6 ) // added and, may be removed
 					$subMessage = 'El seguimiento ha sido aprobado satisfactoriamente.';
 
 	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>$subMessage));
-
+			}
 		}else{
 			echo CJSON::encode(array('message'=>'2 Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intentar.'));
 		}
