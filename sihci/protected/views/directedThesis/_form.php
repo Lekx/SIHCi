@@ -25855,7 +25855,8 @@ function changeSector()
 		<?php 
     if(!$model->isNewRecord){
        echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo / tesis dirigida')); 
-       echo $model->path != null ? "<a href='".Yii::app()->request->baseUrl."/".$model->path."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$model->path."' style='width:75px;height:auto;'></a>" : "";
+       //echo $model->path != null ? "<a href='".Yii::app()->request->baseUrl."/".$model->path."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$model->path."' style='width:75px;height:auto;'></a>" : "";
+       echo $model->path != null ? "<a href='".Yii::app()->request->baseUrl."/".$model->path."' target='_blank'><img src='".Yii::app()->request->baseUrl."/img/Acciones/desplegar.png'></a>" : "";
        echo $form->error($model,'path'); 
     }else{
        echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo / tesis dirigida')); 
