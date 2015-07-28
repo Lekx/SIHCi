@@ -74,7 +74,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Registros de propiedad intelectual en el sistema'
+            text: 'Registros de propiedad intelectual en el sistema' + '<br>' + ($("#years").val() == 'total' ? data.totals : $("#years").val() != 'total' ? data.total : data.total)
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
@@ -114,16 +114,16 @@ chart = new Highcharts.Chart({
         },
         series: [{
 
-            name: 'Hospital Civil Fray Antonio Alcalde',
+            name: 'Hospital Civil Fray Antonio Alcalde' + '<br>' + 'Total:' + ' ' + ($("#years").val() == 'total' ? data.faa : $("#years").val() != 'total' ? data.faa : data.faa),
             data: data.faa
 
         }, {
 
-            name: 'Hospital Civil Dr. Juan I. Menchaca',
+            name: 'Hospital Civil Dr. Juan I. Menchaca' + '<br>' + 'Total:' + ' ' + ($("#years").val() == 'total' ? data.jim : $("#years").val() != 'total' ? data.jim : data.jim),
             data: data.jim
 
         }, {
-            name: 'Otros',
+            name: 'Otros' + '<br>' + 'Total:' + ' ' + ($("#years").val() == 'total' ? data.other : $("#years").val() != 'total' ? data.other : data.other),
             data: data.other
 
         },]

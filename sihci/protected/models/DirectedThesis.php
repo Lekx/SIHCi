@@ -144,14 +144,13 @@ class DirectedThesis extends CActiveRecord
 	}
 		protected function beforeSave()
     {
-
 			$this->conclusion_date = DateTime::createFromFormat('d/m/Y', $this->conclusion_date)->format('Y-m-d');
 	        return parent::beforeSave();
     }
 
-    	protected function afterFind()
-    {
+    protected function afterFind(){
        		$this->conclusion_date = DateTime::createFromFormat('Y-m-d', $this->conclusion_date)->format('d/m/Y');
      		return parent::afterFind();
+
     }
 }
