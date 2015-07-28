@@ -87,7 +87,7 @@ class AdminProjectsController extends Controller {
 		{
 			$model->attributes=$_POST['Sponsorship'];
 			// $model->id_user_sponsorer = Yii::app()->user->id;
-			// $model->status = "pendiente";
+			$model->status = "PENDIENTE";
 
 			if($model->validate()){
 			if($model->save()){
@@ -250,7 +250,7 @@ class AdminProjectsController extends Controller {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-		if (isset($_POST['ajax']) && $_POST['ajax'] === 'sponsorship-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax'] === 'admin-sponsorship-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
