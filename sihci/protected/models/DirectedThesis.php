@@ -54,20 +54,13 @@ class DirectedThesis extends CActiveRecord
 			array('conclusion_date, creation_date', 'safe'),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
-			//array('conclusion_date','compare','compareValue' =>date('d/m/Y'),'operator'=>'<='),
-			array('conclusion_date','changeDate','safe','on'=>'search'),
-			//array('conclusion_date','on'=>'search'),
+			array('conclusion_date','compare','compareValue' =>date('d/m/Y'),'operator'=>'<='),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('searchValue','length', 'max'=>70),
 			array('id, id_curriculum, title, conclusion_date, author, path, grade, sector, organization, second_level, area, discipline, subdiscipline, creation_date, searchValue', 'safe', 'on'=>'search'),
 			array('path, safe','safe','on'=>'update'),
 		);
-	}
-	public function changeDate(){
-
-	$this->conclusion_date = DateTime::createFromFormat('Y/m/d', $this->conclusion_date)->format('d-m-Y');
-
 	}
 
 	/**

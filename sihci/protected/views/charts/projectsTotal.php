@@ -4,7 +4,7 @@
             <hr>
         </div>
         <h3>Total de proyectos registrados</h3>
-<div class="tooltipchart">Seleccionar este elemento</div>
+<div class="tooltipchart" style="padding:2px;font-size:10px;display:none;position:absolute;top:500px;left:500px;z-index:9999;">Seleccionar este elemento</div>
 
 
 <div class="grafiOpt">
@@ -65,10 +65,7 @@ chart = new Highcharts.Chart({
                         (function(i) {
                             var item = legend.allItems[i].legendItem;
                             item.on('mouseover', function (e) {
-                              var childPosition = $(".highcharts-legend-item text:eq( "+i+" ) ").offset();
-                               $(".tooltipchart").css("top",childPosition.top+20);
-                               $(".tooltipchart").css("left",childPosition.left);
-                               $(".tooltipchart").show();
+                                $(".tooltipchart").show();
                             }).on('mouseout', function (e) {
                                 $(".tooltipchart").hide();
                             });
@@ -81,13 +78,13 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Proyectos registrados en el sistema'
+            text: 'Proyectos registrados en el sistema' + '<br>'+ ($("#years").val() == 'total' ? data.totalUsers : $("#years").val() != 'total' ? data.total : data.total)
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
         },
         xAxis: {
-            categories: data.months,
+            categories: ($("#years").val() == 'total' ? data.totalUsers : data.months),
             crosshair: true
         },
         yAxis: {
@@ -119,16 +116,16 @@ chart = new Highcharts.Chart({
         },
         series: [{
 
-            name: 'Hospital Civil Fray Antonio Alcalde',
+            name: 'Hospital Civil Fray Antonio Alcalde' + '<br>' + 'Total:' + '' + data.faa,
             data: data.faa
 
         }, {
 
-            name: 'Hospital Civil Dr. Juan I. Menchaca',
+            name: 'Hospital Civil Dr. Juan I. Menchaca'+ '<br>' + 'Total:' + '' + data.jim,
             data: data.jim
 
         }, {
-            name: 'No asignados',
+            name: 'No asignados'+ '<br>' + 'Total:' + '' + data.other,
             data: data.other
 
         },]
