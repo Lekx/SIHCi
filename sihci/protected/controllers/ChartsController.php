@@ -117,7 +117,7 @@ class ChartsController extends Controller
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
-			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
 
 			}else{
 
@@ -157,7 +157,6 @@ class ChartsController extends Controller
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'totalRegisteredResearchers',"years"=>$years));
 		}
-
 	}
 
 	//GR02-Total-Proyectos
@@ -788,7 +787,7 @@ if($_POST["years"] == "total"){
     array_push($faa, (int)$value["faa"]);
     array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
    }
-   echo '{"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totals":'.json_encode($totals).',"testsql":'.json_encode($query).'}';
+   echo '{"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totals":'.json_encode($totals).'}';
 
 }else{
 
@@ -868,14 +867,13 @@ else
     array_push($total, (int)$value["totals"]);
    }
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).',"testsql":'.json_encode($query).'}';
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
   }
 }
 
 	if(!isset($_POST["years"])){
 	   $this->render('index',array('action'=>'patentSoftware','years'=>$years));
 	}
-
 }
 }
 ?>
