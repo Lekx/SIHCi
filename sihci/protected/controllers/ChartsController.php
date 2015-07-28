@@ -788,7 +788,7 @@ if($_POST["years"] == "total"){
     array_push($faa, (int)$value["faa"]);
     array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
    }
-   echo '{"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totals":'.json_encode($totals).'}';
+   echo '{"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totals":'.json_encode($totals).',"testsql":'.json_encode($query).'}';
 
 }else{
 
@@ -865,10 +865,10 @@ else
     array_push($jim, (int)$value["jim"]);
     array_push($faa, (int)$value["faa"]);
     array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
-    array_push($total, (int)$value["months"]);
+    array_push($total, (int)$value["totals"]);
    }
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).',"testsql":'.json_encode($query).'}';
   }
 }
 
