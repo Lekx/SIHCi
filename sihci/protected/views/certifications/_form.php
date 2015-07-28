@@ -14,18 +14,18 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
 	'clientOptions'=>array('validateOnSubmit'=>true,)
-	
+
 )); ?>
 
-	
+
 	<div class="row">
-		
+
 		<?php echo $form->textField($model,'folio',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Folio','title'=>'Folio')); ?>
 		<?php echo $form->error($model,'folio'); ?>
 	</div>
 
 	<div class="row">
-		
+
 		<?php echo $form->textField($model,'reference',array('size'=>30,'maxlength'=>30,'placeholder'=>'Referencia','title'=>'Referencia')); ?>
 		<?php echo $form->error($model,'reference'); ?>
 	</div>
@@ -72,11 +72,12 @@
 		    'language'=> 'es',
 		    'attribute' => 'validity_date_start',
 		    'htmlOptions' => array(
-		    		'size' => '10',         
+		    		'size' => '10',
 		        	'maxlength' => '10',
-		        	'readOnly'=>true, 
-		        	'placeholder'=>"Fecha de Inicio", 
-		        	'title'=>'Fecha de Inicio' 
+		        	'readOnly'=>true,
+		        	'placeholder'=>"Fecha de Inicio",
+		        	'title'=>'Fecha de Inicio'
+			
 		    ),
 		));
 		?>
@@ -86,17 +87,17 @@
 
 	<div class="row">
 		 <span class="plain-select">
-		<?php 
+		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model' => $model,
 		    'language'=> 'es',
 		    'attribute' => 'validity_date_end',
 		    'htmlOptions' => array(
-		    		'size' => '10',         
+		    		'size' => '10',
 		        	'maxlength' => '10',
-		        	'readOnly'=>true, 
+		        	'readOnly'=>true,
 		        	'placeholder'=>"Fecha Final" ,
-		        	'title'=>'Fecha de Final'  
+		        	'title'=>'Fecha de Final'
 		    ),
 		));
 		?>
@@ -106,8 +107,8 @@
 
 	<div class="row">
 	<span class="radiotext">Tipo:          </span>
-		<?php 
-		$status = array('certificación' => 'Certificación','Recertificación'=>'Recertificación'); 
+		<?php
+		$status = array('certificación' => 'Certificación','Recertificación'=>'Recertificación');
         echo $form-> RadioButtonList($model,'type' ,$status ,array('separator' => ' ', 'labelOptions'=>array('style'=>'display:inline')));?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
@@ -117,10 +118,10 @@
                 'onclick'=>'send("certifications-form","certifications/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","certifications/admin","");',
                 'class'=>'savebutton',
             ));
-    	?> 
+    	?>
        	<?php echo CHtml::link('Cancelar',array('certifications/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
-		
-		
+
+
 	</div>
 
 

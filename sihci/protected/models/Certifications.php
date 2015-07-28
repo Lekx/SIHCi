@@ -47,7 +47,7 @@ class Certifications extends CActiveRecord
 				array('validity_date_start','safe'),
 				array('validity_date_start','dateinitial'),
 				array('validity_date_end','dateFinal'),
-				array('validity_date_end','compare','compareAttribute'=>'validity_date_start','operator'=>'>='),	
+				array('validity_date_end','compare','compareAttribute'=>'validity_date_start','operator'=>'>='),
 				// The following rule is used by search().
 				// @todo Please remove those attributes that should not be searched.
 				array('searchValue','length', 'max'=>70),
@@ -117,7 +117,7 @@ class Certifications extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-		
+
 		$criteria->condition='id_curriculum = '.$curriculumId;
 		$criteria->order = 'specialty ASC';
 		if($this->searchValue)
@@ -125,7 +125,7 @@ class Certifications extends CActiveRecord
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR folio LIKE CONCAT('%', :searchValue ,'%') OR specialty LIKE CONCAT('%', :searchValue , '%') OR reference LIKE CONCAT('%', :searchValue , '%') OR reference_type LIKE CONCAT('%', :searchValue , '%') ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
-	
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -152,7 +152,7 @@ class Certifications extends CActiveRecord
 
     protected function afterFind()
     {
-  
+
        		$this->validity_date_start = Datetime::createFromFormat('Y-m-d', $this->validity_date_start)->format('d/m/Y');
         	$this->validity_date_end = Datetime::createFromFormat('Y-m-d', $this->validity_date_end)->format('d/m/Y');
      		return parent::afterFind();
