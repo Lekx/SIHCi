@@ -7,6 +7,12 @@
 ?>
 
 <script type="text/javascript">
+/*$(document).ready(function(){
+
+
+
+});*/
+
  function changeArea(){
     
     var areaValue = $("#area option:selected").val();
@@ -25951,16 +25957,19 @@ function changeSector()
   if(!$model->isNewRecord){
    // foreach ($model as $value) {
 
-    echo '<div class="row"id="comboDiscipline">';
-    echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
+    echo '<div class="row" id="comboDisciplinex" >';
+      //echo $model->discipline;
+   echo $form->dropDownList($model,'discipline',array($model->discipline));
     echo '</div>';
   //}
     echo '<div class="row"id="comboSubdiscipline">';
-    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
+     /*echo  $model->subdiscipline;*/
+    $form->dropDownList($model,'discipline',array($model->discipline));
     echo '</div>';
 
   }
   else{
+
     echo '<div class="row"id="comboDiscipline">
 
   </div>

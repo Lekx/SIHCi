@@ -557,7 +557,7 @@
                   <?php
                    if($this->action->Id == "create" || $this->action->Id == "update" || $this->action->Id == "view")
                     {
-                      echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/Iconsvg/Perfil/Salir.svg alt="home">', array('admin'));
+                      echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/Iconsvg/Perfil/Salir.svg alt="home">', array('index'));
                       echo "<span>Regresar al listado</span>";
                     }
 

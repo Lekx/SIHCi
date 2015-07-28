@@ -1,5 +1,5 @@
 
-<?php 
+<?php
 
 $mandatory = false;
 if(isset($evaluationStep) && ($evaluationStep == 3 || $evaluationStep == 4 ||$evaluationStep == 12) && $is_sponsored == 1){ // MODIFED ADDED LAST && MAY BE REMOVED

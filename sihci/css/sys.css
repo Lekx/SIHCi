@@ -2410,9 +2410,18 @@ div.pager span.active
 }
 .name
 {
-    padding-left: 247px;
+    padding-left: 19%;
 }
 .totalTables{
   margin-left: 140px;
   margin-top: -20px;
+}
+#projectsMenu a
+{
+  text-decoration: none;
+}
+.projectRow
+{
+  padding: 5px;
+  font-size: .9em;
 }

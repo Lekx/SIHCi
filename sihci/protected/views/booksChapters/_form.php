@@ -4023,7 +4023,6 @@ if(areaValue =="SOCIOLOGIA"){
            echo $form->error($model,'url_doc'); 
       }
     ?>
-
   </div>
 
   <?php
