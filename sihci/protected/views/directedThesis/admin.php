@@ -89,7 +89,6 @@ $('.search-form form').submit(function(){
 
 <h3>Gestionar Registro de Tesis Dirigidas</h3>
 
-<!-- <?php /* echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); */ ?> -->
 <div class="search-form" style="display:block">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
