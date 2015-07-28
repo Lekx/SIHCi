@@ -167,7 +167,6 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 
 	<div class="row buttons">
 		<input type="submit" onclick="validationFrom()" value="Guardar">
-		<input type="button" onclick="cleanUp()" value="Limpiar">
 		<?php echo CHtml::link('Cancelar',array('/persons/admin')); ?>
 	</div>
 

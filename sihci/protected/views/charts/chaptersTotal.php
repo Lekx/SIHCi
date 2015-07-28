@@ -66,7 +66,7 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Capítulos de libros registrados en el sistema'
+            text: 'Capítulos de libros registrados en el sistema' + '<br>' + ($("#years").val() == 'total' ? data.totalBooks : $("#years").val() == 'total' ? data.total : data.total ) 
         },
 		  legend: {
 			enabled: true
@@ -75,10 +75,9 @@ chart = new Highcharts.Chart({
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
         },
         xAxis: {
+
+            categories: ($("#years").val() == 'total' ? data.totalBooks : data.months),
             
-            categories: data.months,
-            categories: data.totalBooks,
-              
             crosshair: true
 
         },
@@ -111,19 +110,19 @@ chart = new Highcharts.Chart({
         },
         series: [{
 
-            name: 'Hospital Civil Fray Antonio Alcalde',
+            name: 'Hospital Civil Fray Antonio Alcalde' + '<br>' + 'Total:' + ' ' + data.faa,
             data: data.faa,
 			showInLegend: true
 
 
         }, {
 
-            name: 'Hospital Civil Dr. Juan I. Menchaca',
+            name: 'Hospital Civil Dr. Juan I. Menchaca' + '<br>' + 'Total:' + ' ' + data.jim,
             data: data.jim,
 			showInLegend: true
 
         }, {
-            name: 'Otros',
+            name: 'Otros' + '<br>' + 'Total:' + ' ' + data.other,
             data: data.other,
 			showInLegend: true
 
