@@ -25,4 +25,4 @@ $this->menu=array(
 
 <h3>Creacion de patrocinio:</h3>
 
-<?php $this->renderPartial('_form', array('model'=>$model, 'modelProjectsDocs'=>$modelProjectsDocs)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>

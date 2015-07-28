@@ -11,6 +11,23 @@
  * @property string $description
  * @property string $keywords
  * @property string $status
+ * @property string $creation_date
+ * @property string $doc_commitment
+ * @property string $doc_auth_cofepris
+ * @property string $doc_project
+ * @property string $doc_brochure
+ * @property string $doc_consent
+ * @property string $doc_amendment
+ * @property string $doc_bank_payment
+ * @property string $doc_edu_guides
+ * @property string $doc_project_dev_guides
+ * @property string $doc_recruitment
+ * @property string $doc_conclusion_criteria
+ * @property string $doc_confidentiality
+ * @property string $doc_interests_conflict
+ * @property string $doc_patient_payment
+ * @property string $doc_participants
+ *
  *
  * The followings are the available model relations:
  * @property SponsoredProjects[] $sponsoredProjects
@@ -30,6 +47,11 @@ class Sponsorship extends CActiveRecord
 		return 'sponsorship';
 	}
 
+//doc_auth_cofepris, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria,
+
+
+//doc_commitment, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -38,14 +60,18 @@ class Sponsorship extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_user_sponsorer, id_user_researcher, project_name, description, keywords', 'required'),
+			array('id_user_sponsorer, id_user_researcher, keywords', 'required'),
 			array('id_user_sponsorer, id_user_researcher', 'numerical', 'integerOnly'=>true),
-			array('project_name', 'length', 'max'=>45),
+			array('project_name', 'length', 'max'=>250),
+			array('description', 'length', 'max'=>500),
+			array('keywords, doc_auth_cofepris, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria, doc_commitment, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants', 'length', 'max'=>150),
 			array('status', 'length', 'max'=>20),
-			array('description, keywords', 'length', 'max'=>150),
+			array('creation_date', 'safe'),
+			array('doc_auth_cofepris, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 5),
+			array('doc_commitment, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>false,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_user_sponsorer, id_user_researcher, project_name, description, keywords, status, searchValue', 'safe', 'on'=>'search'),
+			array('id, id_user_sponsorer, id_user_researcher, project_name, description, keywords, status, creation_date, doc_commitment, doc_auth_cofepris, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,6 +102,22 @@ class Sponsorship extends CActiveRecord
 			'description' => 'Descripción',
 			'keywords' => 'Palabras clave',
 			'status' => 'Estatus',
+			'creation_date' => 'Creation Date',
+			'doc_commitment' => 'Contrato con investigador',
+			'doc_auth_cofepris' => 'Aut. por el estudio clínico de COFEPRIS',
+			'doc_project' => 'Proyecto',
+			'doc_brochure' => 'Brochure del producto',
+			'doc_consent' => 'Consentimiento informado',
+			'doc_amendment' => 'Enmiendas',
+			'doc_bank_payment' => 'Comprobante de pago bancario',
+			'doc_edu_guides' => 'Guías educativas para parcientes',
+			'doc_project_dev_guides' => 'Guías para el desarrollo del proyecto',
+			'doc_recruitment' => 'Material de difusión para reclutamiento',
+			'doc_conclusion_criteria' => 'Criterios de inclusión y no inclusión',
+			'doc_confidentiality' => 'Acuerdo de confidencialidad',
+			'doc_interests_conflict' => 'Declaración de conflicto de intereses',
+			'doc_patient_payment' => 'Tabulador de pago por paciente incluido',
+			'doc_participants' => 'Lista de pacientes participantes',
 		);
 	}
 

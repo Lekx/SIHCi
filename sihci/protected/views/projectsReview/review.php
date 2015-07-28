@@ -255,12 +255,12 @@
 /* AGREGAMOS  UNO  PARA  SABER  EL  ESTADO  ACTUAL */
 //$step = 2;
 //$userRol = "DIVUH";
-
+/*
 $roles = array("DIVUH", "SEUH", "COMITE", "COMBIO", "COMINV", "DUH", "SGEI", "DG", "JUR");
 for($evaluationStep = 1; $evaluationStep <= 12; $evaluationStep++)  {
 echo "<br><br><br>=======================================================================[ PASO: ".$evaluationStep.", Rol: ".$evaluationRules[$evaluationStep]["userType"]." ]==============<br>";
 //print_r($evaluationRules[$evaluationStep]);
-$userRol = $evaluationRules[$evaluationStep]["userType"];
+$userRol = $evaluationRules[$evaluationStep]["userType"]; */
 //print_r($evaluationRules[$evaluationStep]["actions"]); 
 //oreach ($roles as $key => $userRol) {
 //echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ROL: ".$userRol." - - <br>";
@@ -274,26 +274,26 @@ if($model->status != "MODIFICAR"){
 *		START  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S
 *		START  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S  	*/
 
-	$userRols = $agreementRules[$evaluationStep]["userType"];
+	//$userRols = $agreementRules[$evaluationStep]["userType"];
 
 		echo $agreementStep;
 		if($agreementStep > 0){
 			//BOTONES DUMMY DE REVISAR
-			if($agreementRules[$evaluationStep]["userType"] == $userRols && ($agreementStep == 1 || $agreementStep == 2 || $agreementStep == 10 || $agreementStep == 11 || $agreementStep == 12)){
+			if($agreementRules[$agreementStep]["userType"] == $userRol && ($agreementStep == 1 || $agreementStep == 2 || $agreementStep == 10 || $agreementStep == 11 || $agreementStep == 12)){
 				echo "<div class='row' style='margin-left: 30px !important'>";
-				echo " ".CHtml::htmlButton('REVISAR',array(
+				echo " ".CHtml::htmlButton('REVISAR Contrato',array(
 					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',review");',
 					'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
 				));
 				echo "</div>";
 			}
-			if($agreementRules[$evaluationStep]["userType"] == $userRols && $agreementStep == 3){
+			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 3){
 				$conexion = Yii::app()->db;
 				$checkForDoc = $conexion->createCommand("SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." AND type = 'mandatory' AND step_number = ".($agreementStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 				if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
 					echo "<div class='row' style='margin-left: 30px !important'>";
-						echo " ".CHtml::htmlButton('Aprobar',array(
+						echo " ".CHtml::htmlButton('Aprobar Contrato',array(
 							'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 							'class'=>'savebuttonp','id'=>'acceptEvaButton',
 						));
@@ -303,28 +303,28 @@ if($model->status != "MODIFICAR"){
 				}
 			}
 
-			if($agreementRules[$evaluationStep]["userType"] == $userRols && $agreementStep == 6){
+			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 6){
 				echo "LOGICA: CRUZAMIENTO CON REVISION DE PROYECTO(ESPERAR PARA CONTINUAR)";
 			}
 
-			if($agreementRules[$evaluationStep]["userType"] == $userRols && $agreementStep == 7){
+			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 7){
 				echo "<div class='row' style='margin-left: 25px !important'>";
-				echo CHtml::htmlButton('No aprobar',array(
+				echo CHtml::htmlButton('No aprobar Contrato',array(
 					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
 					'class'=>'savebuttonp',
 				));		
 				echo "</div>";
 				echo " <div class='row' style='margin-left: 30px !important'>";
-				echo " ".CHtml::htmlButton('Aprobar',array(
+				echo " ".CHtml::htmlButton('Aprobar Contrato',array(
 					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 					'class'=>'savebuttonp','id'=>'acceptEvaButton',
 				));
 				echo "</div>";
 			}
 
-			if($agreementRules[$evaluationStep]["userType"] == $userRols && $agreementStep == 8){
+			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 8){
 				echo "<div class='row' style='margin-left: 30px !important'>";
-				echo " ".CHtml::htmlButton('Aprobar',array(
+				echo " ".CHtml::htmlButton('Aprobar Contrato',array(
 					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 					'class'=>'savebuttonp','id'=>'acceptEvaButton',
 				));
@@ -785,7 +785,7 @@ if($model->status != "MODIFICAR"){
 
 
 
-}
+//}
 
 ?>
 

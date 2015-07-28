@@ -91,7 +91,7 @@ class ProjectsReviewController extends Controller
 
 	public $agreementRules = array( "0"=>"Contrato de patrocinios",
 	"1"=>array("userType"=>"DUH","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.10")),
-	"2"=>array("userType"=>"SGEI","message"=>array("review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.11")),
+	"2"=>array("userType"=>"SGEI","message"=>array("accept"=>"Contrato enviado a revisión.","review"=>""),"actions"=>array("review"), "type"=>"auto", "realSteps"=>array("6.11")),
 		"3"=>array("userType"=>"JURIDICO","message"=>array("accept"=>""),"actions"=>array("accept","reject","addfile"), "type"=>"manual", "realSteps"=>array("6.12","6.13","6.14","6.15")),
 
 
@@ -306,6 +306,7 @@ class ProjectsReviewController extends Controller
 	public function actionAgreement($projectId, $actualStepFirst = 0, $actionFirst = 0)
 	{
 
+		//echo "<script>alert('".$projectId." - ".$actualStepFirst." - ".$actionFirst."');</script>";
 		if($actualStepFirst != 0 && $actionFirst != 0){
 			$actualStep = $actualStepFirst;
 			$action = $actionFirst;
@@ -319,13 +320,11 @@ class ProjectsReviewController extends Controller
 		$followup = new ProjectsFollowups;
 		$followup->id_project = $projectId;
 		$followup->id_user = Yii::app()->user->id;
-		$followup->followup = $agreementRules[$actualStep]["message"][$action];
+		$followup->followup = $this->agreementRules[$actualStep]["message"][$action];
 		$followup->type = "agreement";
 		$followup->step_number = $actualStep;
 
-		if($followup->save())
- 			echo CJSON::encode(array('status'=>'success','message'=>'ag Acción realizada con éxito','subMessage'=>'El contrato ha sido revisado satisfactoriamente.'));
- 		else
+		if(!$followup->save())
  			echo CJSON::encode(array('message'=>'ag Ocurrió un error.','subMessage'=>'Error al realizar la acción solicitada, por favor vuelva a intentar.'));
 	}	
 
@@ -377,8 +376,8 @@ class ProjectsReviewController extends Controller
 
 
 			//llamar a revision de contratos si el paso es 2 o mayor y 
-			if($actualStep == 2 && $status == 'ACEPTADO')
-				$this->agreements($projectId,$actualStep,$action);
+			if($actualStep == 2 && $action == 'accept')
+				$this->actionAgreement($projectId,$actualStep,$action);
 			
 
 		}else if($action == "review"){
