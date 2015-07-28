@@ -45,9 +45,9 @@ $form=$this->beginWidget('CActiveForm', array(
     </div>
 
     <div class="row">
-      <?php echo CHtml::htmlButton('Crear comentariox',array(
+      <?php echo CHtml::htmlButton('Crear comentario',array(
                   'onclick'=>'send("projects-followups-forms", "projectsReview/review", "'.$idProject.'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","'.$extras.'")',
-                  'class'=>'savebutton',
+                  'class'=>'savebuttonp',
                   'id'=>'createFollowup',
               ));
       ?>

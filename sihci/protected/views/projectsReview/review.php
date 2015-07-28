@@ -260,9 +260,11 @@ $roles = array("DIVUH", "SEUH", "COMITE", "COMBIO", "COMINV", "DUH", "SGEI", "DG
 for($evaluationStep = 1; $evaluationStep <= 12; $evaluationStep++)  {
 echo "<br><br><br>=======================================================================[ PASO: ".$evaluationStep.", Rol: ".$evaluationRules[$evaluationStep]["userType"]." ]==============<br>";
 //print_r($evaluationRules[$evaluationStep]);
-<<<<<<< HEAD
+
 $userRol = $evaluationRules[$evaluationStep]["userType"]; */
-//print_r($evaluationRules[$evaluationStep]["actions"]); 
+//print_r($evaluationRules[$evaluationStep]["actions"]);
+
+
 //oreach ($roles as $key => $userRol) {
 //echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ROL: ".$userRol." - - <br>";
 
@@ -296,7 +298,6 @@ if($model->status != "MODIFICAR"){
 
 					echo "<div class='row' style='margin-left: 30px !important'>";
 						echo " ".CHtml::htmlButton('Aprobar Contrato',array(
-
 							'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 							'class'=>'savebuttonp','id'=>'acceptEvaButton',
 						));
