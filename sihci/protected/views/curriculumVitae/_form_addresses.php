@@ -3,7 +3,51 @@
 /* @var $model Addresses */
 /* @var $form CActiveForm */
 ?>
+<script type="text/javascript">
+function state(){
+	 country = $("#Addresses_country").val();
+	 if(country == "Mexico"){
 
+		 var comboState ="<span class='plain-select'><select id='Addresses_state' class='tooltipstered' name='Addresses[state]'>";
+		 comboState+='<option>Seleccionar Estado</option>';
+		 comboState+='<option value="Aguascalientes">Aguascalientes</option>';
+		 comboState+='<option value="Baja California">Baja California</option>';
+		 comboState+='<option value="Baja California Sur">Baja California Sur</option>';
+		 comboState+='<option value="Campeche">Campeche</option>';
+		 comboState+='<option value="Chiapas">Chiapas</option>';
+		 comboState+='<option value="Chihuahua">Chihuahua</option>';
+		 comboState+='<option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>';
+		 comboState+='<option value="Colima">Colima</option>';
+		 comboState+='<option value="Distrito Federal">Distrito Federal</option>';
+		 comboState+='<option value="Durango">Durango</option>';
+		 comboState+='<option value="Guanajuato">Guanajuato</option>';
+		 comboState+='<option value="Guerrero">Guerrero</option>';
+		 comboState+='<option value="Hidalgo">Hidalgo</option>';
+		 comboState+='<option value="Jalisco">Jalisco</option>';
+		 comboState+='<option value="Mexico">Mexico</option>';
+		 comboState+='<option value="Michoacan de Ocampo">Michoacan de Ocampo</option>';
+		 comboState+='<option value="Morelos">Morelos</option>';
+		 comboState+='<option value="Nayarit">Nayarit</option>';
+		 comboState+='<option value="Nuevo Leon">Nuevo Leon</option>';
+	 	 comboState+='<option value="Oaxaca">Oaxaca</option>';
+		 comboState+='<option value="Puebla">Puebla</option>';
+		 comboState+='<option value="Queretaro de Arteaga">Queretaro de Arteaga</option>';
+		 comboState+='<option value="Quintana Roo">Quintana Roo</option>';
+		 comboState+='<option value="San Luis Potosi">San Luis Potosi</option>';
+		 comboState+='<option value="Sinaloa">Sinaloa</option>';
+		 comboState+='<option value="Sonora">Sonora</option>';
+		 comboState+='<option value="Tabasco">Tabasco</option>';
+		 comboState+='<option value="Tamaulipas">Tamaulipas</option>';
+		 comboState+='<option value="Tlaxcala">Tlaxcala</option>';
+		 comboState+='<option value="Veracruz-Llave">Veracruz-Llave</option>';
+		 comboState+='<option value="Yucatan">Yucatan</option>';
+		 comboState+='<option value="Zacatecas">Zacatecas</option>';
+
+		 comboState+="</select></span>";
+		 $("#Addresses_state").replaceWith(comboState);
+	 }
+}
+</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -257,14 +301,55 @@
         'Yugoslavia' => "Yugoslavia",
         'Zambia' => "Zambia",
         'Zimbabwe' => "Zimbabwe"),
-        array('prompt'=>'Seleccionar País','title'=>'País', 'id'=>'contry',));?>
+        array('prompt'=>'Seleccionar País','title'=>'País', 'onchange'=>'state()',));?>
           </span>
            <?php echo $form->error($model,'country'); ?>
 	</div>
 
 	<div class="row" id="state">
-		<?php echo $form->textField($model,'state',array('title'=>'Estado','placeholder'=>'Estado')); ?>
-        <?php echo $form->error($model,'state'); ?>
+		<?php
+		if($model->country == "Mexico"){
+		echo	'<span class="plain-select">';
+			echo $form->dropDownList($model,'state',
+											array("Aguascalientes",
+														"Baja California Sur"=>"Baja California Sur",
+														"Baja California"=>"Baja California",
+														"Campeche"=>"Campeche",
+														"Chiapas"=>"Chiapas",
+														"Chihuahua"=>"Chihuahua",
+														"Coahuila de Zaragoza"=>"Coahuila de Zaragoza",
+														"Colima"=>"Colima",
+														"Distrito Federal"=>"Distrito Federal",
+														"Durango"=>"Durango",
+														"Guanajuato"=>"Guanajuato",
+														"Guerrero"=>"Guerrero",
+														"Hidalgo"=>"Hidalgo",
+														"Jalisco"=>"Jalisco",
+														"Mexico"=>"Mexico",
+														"Michoacan de Ocampo"=>"Michoacan de Ocampo",
+														"Morelos"=>"Morelos",
+														"Nayarit"=>"Nayarit",
+														"Nuevo Leon"=>"Nuevo Leon",
+														"Oaxaca"=>"Oaxaca",
+														"Puebla"=>"Puebla",
+														"Queretaro de Arteaga"=>"Queretaro de Arteaga",
+														"Quintana Roo"=>"Quintana Roo",
+														"San Luis Potosi"=>"San Luis Potosi",
+														"Sinaloa"=>"Sinaloa",
+														"Sonora"=>"Sonora",
+														"Tabasco"=>"Tabasco",
+														"Tamaulipas"=>"Tamaulipas",
+														"Tlaxcala"=>"Tlaxcala",
+														"Veracruz-Llave"=>"Veracruz",
+														"Yucatan"=>"Yucatan",
+														"Zacatecas"=>"Zacatecas"),
+			        array('prompt'=>'Seleccionar Estado','title'=>'Estado',));
+						echo	'</span>';
+		}else{
+			echo $form->textField($model,'state',array('title'=>'Estado','placeholder'=>'Estado'));
+	  	echo $form->error($model,'state');
+	  }
+		?>
 	</div>
 
 	<div class="row">

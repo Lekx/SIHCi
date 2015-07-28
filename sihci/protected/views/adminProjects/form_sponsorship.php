@@ -2,6 +2,10 @@
 /* @var $this SponsorshipController */
 /* @var $model Sponsorship */
 /* @var $form CActiveForm */
+$this->menu=array(
+	array('label'=>'Administrar Proyectos', 'url'=>array('adminProjects')),
+);
+
 
 $researcher = "";
 $sponsor = "";
