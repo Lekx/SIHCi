@@ -6,10 +6,11 @@
 <script type="text/javascript">
 function state(){
 	 country = $("#Addresses_country").val();
+	 alert(country);
 	 if(country == "Mexico"){
 
 		 var comboState ="<span class='plain-select'><select id='Addresses_state' class='tooltipstered' name='Addresses[state]'>";
-		 comboState+='<option>Seleccionar Estado</option>';
+		 comboState+='<option value="">Seleccionar Estado</option>';
 		 comboState+='<option value="Aguascalientes">Aguascalientes</option>';
 		 comboState+='<option value="Baja California">Baja California</option>';
 		 comboState+='<option value="Baja California Sur">Baja California Sur</option>';
@@ -43,8 +44,12 @@ function state(){
 		 comboState+='<option value="Yucatan">Yucatan</option>';
 		 comboState+='<option value="Zacatecas">Zacatecas</option>';
 
-		 comboState+="</select></span>";
-		 $("#Addresses_state").replaceWith(comboState);
+		 comboState+="</select></span><div style='display:none' id='Addresses_state_em_' class='errorMessage'></div>";
+		 $("#stateToShow").html(comboState);
+	 }else{
+		 var comboState ='<input type="text" id="Addresses_delegation" name="Addresses[state]" placeholder="Estado" maxlength="30" size="30" class="tooltipstered">';
+		 		comboState+='<div style="display:none" id="Addresses_state_em_" class="errorMessage"></div>';
+		  $("#stateToShow").html(comboState);
 	 }
 }
 </script>
@@ -308,6 +313,7 @@ function state(){
 
 	<div class="row" id="state">
 		<?php
+		echo '<div id=stateToShow>';
 		if($model->country == "Mexico"){
 		echo	'<span class="plain-select">';
 			echo $form->dropDownList($model,'state',
@@ -345,10 +351,12 @@ function state(){
 														"Zacatecas"=>"Zacatecas"),
 			        array('prompt'=>'Seleccionar Estado','title'=>'Estado',));
 						echo	'</span>';
+						echo $form->error($model,'state');
 		}else{
 			echo $form->textField($model,'state',array('title'=>'Estado','placeholder'=>'Estado'));
 	  	echo $form->error($model,'state');
 	  }
+		echo "</div>";
 		?>
 	</div>
 
