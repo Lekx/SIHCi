@@ -77,6 +77,6 @@ $this->menu=array(
             <hr>
         </div>
 
-<h3>Modificar registro de Arituclos y Guias con ISBN: <?php echo $model->isbn; ?></h3>
+<h3>Modificar registro de Articulos y Guias con título: <?php echo $model->title; ?></h3>
 
 <?php $this->renderPartial('_form', array('model'=>$model, 'modelAuthor'=>$modelAuthor,'modelAuthors'=>$modelAuthors)); ?>
