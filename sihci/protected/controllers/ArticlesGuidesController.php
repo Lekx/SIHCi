@@ -80,8 +80,8 @@ class ArticlesGuidesController extends Controller
 	                if(!is_dir($path))
 	                	mkdir($path, 0777, true);
 	              	                
-	 					$model->url_document->saveAs($path.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
-					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();    			 			   	
+	 					$model->url_document->saveAs($path.'file'.date("d-m-Y H:m:s").'.'.$model->url_document->getExtensionName());
+					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.date("d-m-Y H:m:s").'.'.$model->url_document->getExtensionName();    			 			   	
 		               
 		                if($model->save())
 		                {
@@ -162,8 +162,8 @@ class ArticlesGuidesController extends Controller
                     if(!is_dir($urlFile))          
                         mkdir($urlFile, 0777, true);
 
-                       $model->url_document->saveAs($urlFile.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
-		               $model->url_document= '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();                                                    
+                       $model->url_document->saveAs($urlFile.'file'.date("d-m-Y H:m:s").'.'.$model->url_document->getExtensionName());
+		               $model->url_document= '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.date("d-m-Y H:m:s").'.'.$model->url_document->getExtensionName();                                                    
                 }                
                 else                  
                    $model->url_document = $oldUrlDocument;       
