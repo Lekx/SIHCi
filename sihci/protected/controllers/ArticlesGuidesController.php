@@ -24,7 +24,6 @@ class ArticlesGuidesController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	
 	public function accessRules()
 	{
 		return array(
@@ -65,77 +64,70 @@ class ArticlesGuidesController extends Controller
 		$model->id_resume = $id_resume->id; 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
-		$this->performAjaxValidation($modelAuthor);
 		
 		if(isset($_POST['ArticlesGuides']))
 		{
 			$model->attributes=$_POST['ArticlesGuides'];
-			$modelAuthor->attributes=$_POST['ArtGuidesAuthor'];
-
 			$model->id_resume = $id_resume->id;   
-	        $model->url_document = CUploadedFile::getInstance($model,'url_document');
-			$modelAuthor->id_art_guides = "1";
 
-			if($model->validate()==1 && $modelAuthor->validate()==1)
-            {            	
+	        $model->url_document = CUploadedFile::getInstance($model,'url_document');
+            
+			if($model->validate()==1)
+            {
+            	
             	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/';
-         
+
 	                if(!is_dir($path))
-	                	mkdir(YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/ArticlesAndGuides/', 0777, true);	              
-	                
-	 					$model->url_document->saveAs($path.'file'.$model->id.'.'.$model->url_document->getExtensionName());
-					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->id.'.'.$model->url_document->getExtensionName();
-		                
+	                	mkdir($path, 0777, true);
+	              	                
+	 					$model->url_document->saveAs($path.'file'.$model->isbn.'.'.$model->url_document->getExtensionName());
+					    $model->url_document = '/users/'.Yii::app()->user->id.'/ArticlesAndGuides/file'.$model->isbn.'.'.$model->url_document->getExtensionName();    			 			   	
+		               
 		                if($model->save())
 		                {
-		          				$names = $_POST['ArtGuidesAuthor']['names'];
-				            	$last_name1 = $_POST['ArtGuidesAuthor']['last_name1'];
-				            	$last_name2 = $_POST['ArtGuidesAuthor']['last_name2'];
-				            	$position = $_POST['ArtGuidesAuthor']['position'];
-				        
-       						foreach($_POST['ArtGuidesAuthor'] as $key => $value)
-	     					{							
-	     						unset($modelAuthor);
-				               	$modelAuthor = new ArtGuidesAuthor;	
-								$modelAuthor->id_art_guides  = $model->id;
-				       			$modelAuthor->names = $names;
-				        		$modelAuthor->last_name1 = $last_name1;
-				       			$modelAuthor->last_name2 = $last_name2;
-				        		$modelAuthor->position = $position;
-	                    		$modelAuthor->save();
-		              	    }
+		               		              
+				 			$names = $_POST['names'];
+				            $last_name1 = $_POST['last_names1'];
+				            $last_name2 = $_POST['last_names2'];
+				            $position = $_POST['positions'];
+				            
+         					foreach($_POST['names'] as $key => $names)
+         					{
+				               	unset($modelAuthor);
+				               	$modelAuthor = new ArtGuidesAuthor;
 
+				               	$modelAuthor->id_art_guides = $model->id;
+				       			$modelAuthor->names = $names;
+				        		$modelAuthor->last_name1 = $last_name1[$key];
+				       			$modelAuthor->last_name2 = $last_name2[$key];
+				        		$modelAuthor->position = $position[$key];
+	                    		$modelAuthor->save();
+		              	    }	
 		              	    $section = "Artículos y Guías"; 
 		     				$action = "Creación";
 							$details = "Fecha: ".date("Y-m-d H:i:s").". Datos: Titulo: ".$model->title;
 		     				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);		     		
+
 				       		echo CJSON::encode(array('status'=>'success'));
 				     		Yii::app()->end();
 						
-		               }
-		                                 
-			}// if validate 					       
+		               }               
+			   
+		    }// if validate
 	        else
 	        {
-          		$error1 = CActiveForm::validate($model);
-				$error2 = CActiveForm::validate($modelAuthor);
-				$error = "{";
-				if($error1 !='[]')
-					$error.= str_replace("{", "",str_replace("}", "",$error1));
-				if($error2 !='[]')
-					$error.= str_replace("{", "",str_replace("}", "",$error2));
-
-				if($error!='[]')
-					echo str_replace("]\"", "],\"",$error)."}";
-
-				Yii::app()->end();		         
+	          		$error = CActiveForm::validate($model);
+					if($error!='[]')
+						echo $error;
+   				   
+   				   Yii::app()->end();		         
 	        }
-	    }//	ArticlesGuides  
+	    }//	ArticlesGuides	   
         	
    		if(!isset($_POST['ajax']))
 				$this->render('create',array('model'=>$model,'modelAuthor'=>$modelAuthor));
 	} 
-	
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -257,19 +249,21 @@ class ArticlesGuidesController extends Controller
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	public function actionDeleteAuthor($id, $idArticlesGuidesAuthors){
+	public function actionDeleteAuthor($id, $idsArticlesGuides)
+	{
 
-		$modelAuthors= ArtGuidesAuthor::model()->findByPk($id);
-		$section = "Autor de articulos y guías";
-		$action = "Eliminación";
-		$details = "Registro Número: ".$modelAuthors->id.". Datos: ".$modelAuthors->names;
-		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		$modelAuthors->delete();
+	  $modelAuthors= ArtGuidesAuthor::model()->findByPk($id);
+	  $section = "Autor de articulos y guías";
+	  $action = "Eliminación";
+	  $details = "Registro Número: ".$modelAuthors->id.". Datos: ".$modelAuthors->names;
+	 
+	  Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+	  $modelAuthors->delete();
 
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('articlesGuides/update/'.$idArticlesGuidesAuthors));
-	}
-
+	  if(!isset($_GET['ajax']))
+	   $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('articlesGuides/update/'.$idsArticlesGuides));
+	 
+	 }
 	/**
 	 * Lists all models.
 	 */

@@ -54,6 +54,7 @@ class ArticlesGuides extends CActiveRecord
 			array('id_resume,title, start_page, end_page, article_type, magazine, area, discipline,subdiscipline,keywords', 'required'),
 			array('id_resume,edicion, publishing_year, volumen, volumen_no, start_page, end_page, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('editorial', 'length', 'max'=>80),
+			array('isbn', 'length', 'max'=>13),
 			array('article_type', 'length', 'max'=>25),
 			array('magazine', 'length', 'max'=>50),
 			array('area, discipline, subdiscipline', 'length', 'max'=>60),
@@ -61,8 +62,8 @@ class ArticlesGuides extends CActiveRecord
 			array('type', 'length', 'max'=>15),
 			array('searchValue','length','max'=>70),   		
 			array('url_document', 'length', 'max'=>100),
-			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
-			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'update', 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'insert','allowEmpty'=>false,'safe' => false,  'maxSize'=>1024 * 1024 * 2),
+			array('url_document','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'update', 'allowEmpty'=>true, 'safe' => false,  'maxSize'=>1024 * 1024 * 2),
 			array('end_page','compare', 'compareAttribute'=>'start_page','operator'=>'>=','message'=>'Página final no puede ser menor a la página inicial'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

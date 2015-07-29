@@ -50,7 +50,7 @@ class Books extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords,path', 'required'),
+			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords', 'required'),
 			array('id_curriculum, isbn, edition, release_date, volume, pages, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('book_title, path', 'length', 'max'=>100),
 			array('publisher, traductor', 'length', 'max'=>80),
@@ -63,7 +63,7 @@ class Books extends CActiveRecord
 			array('subdiscipline', 'length', 'max'=>45),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'insert','allowEmpty'=>true,'safe' => false,  'maxSize'=>1024 * 1024 * 5),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'insert','allowEmpty'=>false,'safe' => false,  'maxSize'=>1024 * 1024 * 5),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'update','allowEmpty'=>true,'safe' => false,  'maxSize'=>1024 * 1024 * 5),
 			
 			

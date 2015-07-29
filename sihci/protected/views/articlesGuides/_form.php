@@ -4034,65 +4034,65 @@ if(areaValue =="SOCIOLOGIA"){
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
 
-
-	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
- 			'targetClass'=>'authorsRegistry',
- 			'addButtonLabel'=>'Agregar nuevo autor',
-		 ));
+<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+      'targetClass'=>'authorsRegistry',
+      'addButtonLabel'=>'Agregar nuevo autor',
+     )); 
     ?>
-    <div class="authorsRegistry">
-	   
-           <?php echo "<input type='hidden'>";  ?>  
+    <div class="authorsRegistry">        
+     <?php  echo "<input type='hidden' name='idsArticlesGuides[]'>"; ?>
+       
+       <div class="row">
+        <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
+        <?php echo $form->error($modelAuthor,'names');?>
+       </div>
 
-  		   <div class="row">
-  			  <?php echo $form->textField($modelAuthor,'names',array('ArticlesGuides'=>'names','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
-  			  <?php echo $form->error($modelAuthor,'names');?>
-  		   </div>
+      <div class="row">
+        <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
+        <?php echo $form->error($modelAuthor,'last_name1'); ?>
+      </div>
+      
+       <div class="row">
+        <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
+        <?php echo $form->error($modelAuthor,'last_name2'); ?>
+         </div>
+      <div class="row">
+      <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'posición', 'title'=>'posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
+      <?php echo $form->error($modelAuthor,'position'); ?>
+      </div>
+      <hr>
+    </div>  
+          
+  <?php 
+    if(!$model->isNewRecord)      
+      foreach ($modelAuthors as $key => $value) 
+      { ?>
+          
+         <?php echo "<input type='hidden' value='".$value->id."' name='idsArticlesGuides[]'>"; ?>
+          
+             <div class="row">
+                <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
+                <?php echo $form->error($value,'names');?>
+            </div>
+            <div class="row">
+                 <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
+                <?php echo $form->error($value,'last_name1'); ?>
+            </div>
+            <div class="row">
+                <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
+                <?php echo $form->error($value,'last_name2'); ?>
+            </div>
+        
+            <div class="row">
+                <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'posición', 'title'=>'posición. (Solo se aceptan numeros)')); ?>
+                <?php echo $form->error($value,'position'); ?>
+            </div>
+          <?php echo CHtml::button('Elminar',array('submit' => array('articlesGuides/deleteAuthor','id'=>$modelAuthors[$key]->id,'idsArticlesGuides'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
+      <hr>
 
-  		  <div class="row">
-  			  <?php echo $form->textField($modelAuthor,'last_name1',array('ArticlesGuides'=>'last_names1','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
-  			  <?php echo $form->error($modelAuthor,'last_name1'); ?>
-  		  </div>
+   
+  <?php } ?>
 
-  		   <div class="row">
-  			  <?php echo $form->textField($modelAuthor,'last_name2',array('ArticlesGuides'=>'last_names2','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
-  			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
-  	       </div>
-  		  <div class="row">
-  		  <?php echo $form->textField($modelAuthor,'position',array('ArticlesGuides'=>'position','placeholder'=>'Posición', 'maxlength'=>11,'title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
-  		  <?php echo $form->error($modelAuthor,'position'); ?>
-  		  </div>
-  		  <hr>
-  </div>
-
-  	<?php
-  		if(!$model->isNewRecord)
-  		  foreach ($modelAuthors as $key => $value)
-  		  { ?>
-
-  				 <?php echo "<input type='hidden' value='".$value->id."' name='ArtGuidesAuthor[]'>"; ?>
-
-  					   <div class="row">
-  					  		<?php echo $form->textField($value,'names',array('ArtGuidesAuthor'=>'names','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)', 'title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
-  					  		<?php echo $form->error($value,'names');?>
-  					  </div>
-  					  <div class="row">
-  					  		 <?php echo $form->textField($value,'last_name1',array('ArtGuidesAuthor'=>'last_names1','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno', 'title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
-  					  		<?php echo $form->error($value,'last_name1'); ?>
-  					  </div>
-  					  <div class="row">
-  					  		<?php echo $form->textField($value,'last_name2',array('ArtGuidesAuthor'=>'last_names2','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno', 'title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
-  					  		<?php echo $form->error($value,'last_name2'); ?>
-  					  </div>
-
-  						<div class="row">
-  					  		<?php echo $form->textField($value,'position',array('ArtGuidesAuthor'=>'position','value'=>$value->position,'maxlength'=>11,'placeholder'=>'posición', 'title'=>'posición. (Solo se aceptan numeros)')); ?>
-  					  		<?php echo $form->error($value,'position'); ?>
-  					  </div>
-                  <?php echo CHtml::button('Elminar',array('submit' => array('articlesGuides/deleteAuthor','id'=>$modelAuthors[$key]->id,'idArticlesGuidesAuthors'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
-               <?php } ?>
-               <hr>
-  </div>
 
 	<div class="row buttons">
 
