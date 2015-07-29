@@ -2,9 +2,26 @@
 /* @var $this CongressesController */
 /* @var $model Congresses */
 /* @var $form CActiveForm */
-$cs = Yii::app()->getClientScript();
-$cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/congresses/js/script.js');
 ?>
+<script type="text/javascript">
+/*
+$(document).ready(function(){
+	$(".checkAuths").click(function(){
+		
+		var names = $("#names").val();
+		var ln1 = $("#last_names1").val();
+		var ln2 = $("#last_names2").val();
+		var pos = $("#positions").val();
+		
+		if(names == "" || ln1 != "" || ln2 != "" || pos != ""){
+			alert("es necesario registrar mínimo un autor");
+		}
+		return false;
+
+	});
+});
+*/
+</script>
 
 <!--PC01-Registrar datos  Participacion en congresos-->
 <div class="form">
@@ -107,6 +124,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/congresses/js/scri
 			$this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
  			'addButtonLabel'=>'Agregar nuevo autor',
+ 			'excludeSelector'=>'.errorMessage',
 		 ));
     	?>
     	<div class="authorsRegistry ">
@@ -167,8 +185,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/protected/views/congresses/js/scri
 				</div>
 	<div class="row buttons">
 		<?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
-                'onclick'=>'send("congresses-form","congresses/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","congresses/admin","");',
-                'class'=>'savebutton',
+                'onclick'=>'send("congresses-form","congresses/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","congresses/admin","checkAuths");',
+                'class'=>'savebutton checkAuths',
             ));
     	?> 
 		<?php echo CHtml::link('Cancelar',array('congresses/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?')); ?>
