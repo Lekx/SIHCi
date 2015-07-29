@@ -7,6 +7,12 @@
 ?>
 
 <script type="text/javascript">
+/*$(document).ready(function(){
+
+
+
+});*/
+
  function changeArea(){
     
     var areaValue = $("#area option:selected").val();
@@ -25849,7 +25855,8 @@ function changeSector()
 		<?php 
     if(!$model->isNewRecord){
        echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo / tesis dirigida')); 
-       echo $model->path != null ? "<a href='".Yii::app()->request->baseUrl."/".$model->path."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$model->path."' style='width:75px;height:auto;'></a>" : "";
+       //echo $model->path != null ? "<a href='".Yii::app()->request->baseUrl."/".$model->path."' target='_blank'><img src='".Yii::app()->request->baseUrl."/".$model->path."' style='width:75px;height:auto;'></a>" : "";
+       echo $model->path != null ? "<a href='".Yii::app()->request->baseUrl."/".$model->path."' target='_blank'><img src='".Yii::app()->request->baseUrl."/img/Acciones/desplegar.png'></a>" : "";
        echo $form->error($model,'path'); 
     }else{
        echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo / tesis dirigida')); 
@@ -25951,16 +25958,19 @@ function changeSector()
   if(!$model->isNewRecord){
    // foreach ($model as $value) {
 
-    echo '<div class="row"id="comboDiscipline">';
-    echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
+    echo '<div class="row" id="comboDisciplinex" >';
+      //echo $model->discipline;
+   echo $form->dropDownList($model,'discipline',array($model->discipline));
     echo '</div>';
   //}
     echo '<div class="row"id="comboSubdiscipline">';
-    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
+     /*echo  $model->subdiscipline;*/
+    $form->dropDownList($model,'discipline',array($model->discipline));
     echo '</div>';
 
   }
   else{
+
     echo '<div class="row"id="comboDiscipline">
 
   </div>

@@ -79,7 +79,7 @@ class Addresses extends CActiveRecord
 			'country' => 'Pais',
 			'zip_code' => 'Codigo Postal',
 			'state' => 'Estado',
-			'delegation' => 'Delegacion',
+			'delegation' => 'Delegación',
 			'city' => 'Municipio',
 			'town' => 'Ciudad',
 			'colony' => 'Colonia',

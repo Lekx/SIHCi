@@ -190,244 +190,250 @@
 
                     ?>
                 </div>
-                <div class="headerconteiner3">
-                    <div class="fullnamed">
 
-                        <?php echo Yii::app()->user->fullname; ?><br>
-                           (<?php echo Yii::app()->user->Rol->name; ?>)
-                           <br>
+            </div>
+            <div class="containerla">
+                  <div class="infobar name col-md-7">
 
-                    </div>
-                    <div class="typelabe">
+                      <?php echo Yii::app()->user->fullname; ?><br>
+                         (<?php echo Yii::app()->user->Rol->name; ?>)
+                         <br>
+
+                  </div>
+                  <div class="infobar type col-md-2">
+                  <?php
+                      echo "<h6>Perfil  :  ".$infoUser['label']."</h6>";
+                  ?>
+                  </div>
+                  <div class="infobar logout col-md-2">
+                  <?php
+                      echo "<h6 id='logoutlable'>";
+                      echo CHtml::link('Cerrar sesión', array('site/logout'));
+                      echo "</h6>";
+                  ?>
+                  </div>
+
+            </div>
+            <div class="menucon">
+              <div class="menucv ">
+                  Menú
+              </div><div class="bread">
+                <?php if(isset($_GET['ide'])){
+                  $ControllerB = $this->uniqueid;
+                  $this->renderPartial('../adminUsers/update_user');
+                }else{  ?>
+
                     <?php
-                        echo "<h6>Perfil  :  ".$infoUser['label']."</h6>";
-                    ?>
-                    </div>
-                    <div class="logoutbars">
-                    <?php
-                        echo "<h6 id='logoutlable'>";
-                        echo CHtml::link('Cerrar sesión', array('site/logout'));
-                        echo "</h6>";
-                    ?>
-                    </div>
+                    switch ($this->uniqueid) {
+                      case 'account':
+                      $ControllerB = "Cuenta";
+                      break;
+                      case 'sponsors':
+                      $ControllerB = "Perfil Empresa";
+                      break;
+                      case 'curriculumVitae':
+                      $ControllerB = "Currículum vitae electrónico";
+                      break;
+                      case 'evaluateCV':
+                      $ControllerB = "Evaluación Curricular";
+                      break;
+                      case 'postdegreeGraduates':
+                      $ControllerB = "Gestionar graduados";
+                      break;
+                      case 'pressNotes':
+                      $ControllerB = "Difusión de prensa";
+                      break;
+                      case 'knowledgeApplication':
+                      $ControllerB = "Aplicación del Conocimiento";
+                      break;
+                      case 'patent':
+                      $ControllerB = "Registro Pantente";
+                      break;
+                      case 'copyrights':
+                      $ControllerB = "Registro derecho de autor";
+                      break;
+                      case 'software':
+                      $ControllerB = "Registro software";
+                      break;
+                      case 'postdegreeGraduates':
+                      $ControllerB = "Gestionar graduados";
+                      break;
+                      case 'articlesGuides':
+                      $ControllerB = "Articulos Y Guías";
+                      break;
+                      case 'books':
+                      $ControllerB = "Libros";
+                      break;
+                      case 'booksChapters':
+                      $ControllerB = "Capítulo de Libros";
+                      break;
+                      case 'congresses':
+                      $ControllerB = "Participacíon en congresos";
+                      break;
+                      case 'directedThesis':
+                      $ControllerB = "Tesis Dirigidas";
+                      break;
+                      case 'certifications':
+                      $ControllerB = "Certificaciones por consejos";
+                      break;
+                      case 'languages':
+                      $ControllerB = "Idiomas";
+                      break;
+                      case 'charts':
+                      $ControllerB = "Estadisticas";
+                      break;
+                      case 'tables':
+                      $ControllerB = "Estadisticas";
+                      break;
+                      case 'sponsorship':
+                      $ControllerB = "Patrocinios";
+                      break;
+                      case 'sponsorShip':
+                      $ControllerB = "Patrocinios";
+                      break;
+                      case 'adminUsers':
+                      $ControllerB = "Gestión de usuarios";
+                      break;
+                      case 'FilesManager':
+                      $ControllerB = "Gestión de archivos";
+                      break;
+                      case 'adminProjects':
+                      $ControllerB = "Gestión de proyectos";
+                      break;
+                      case 'adminBackups':
+                      $ControllerB = "Respaldos";
+                      break;
+                      case 'adminSpecialtyAreas':
+                      $ControllerB = "Gestión de Áreas de especialidad";
+                      break;
+                      case 'adminResearchAreas':
+                      $ControllerB = "Gestión de Áreas de investigación";
+                      break;
+                      case 'projectsReview':
+                      $ControllerB = "Gestión de proyectos";
+                      break;
+                      case 'projectsfollowups':
+                      $ControllerB = "Seguimientos del Proyecto";
+                      break;
 
-                </div>
-                <div class="headerconteiner4">
-                    <h4>Menú </h4>
-                </div>
-                <div class="headerconteiner5">
-                  <?php if(isset($_GET['ide'])){
-                    $ControllerB = $this->uniqueid;
-                    $this->renderPartial('../adminUsers/update_user');
-                  }else{  ?>
-                    <span>
-                      <?php
-                      switch ($this->uniqueid) {
-                        case 'account':
-                        $ControllerB = "Cuenta";
+                      default:
+                      $ControllerB = "None";
+                      break;
+                    }
+
+                      switch ($this->action->Id) {
+                        case 'admin':
+                        $action = "Gestionar";
                         break;
-                        case 'sponsors':
-                        $ControllerB = "Perfil Empresa";
+                        case 'create':
+                        $action = "Crear";
                         break;
-                        case 'curriculumVitae':
-                        $ControllerB = "Currículum vitae electrónico";
+                        case 'update':
+                        $action = "Modificar";
                         break;
-                        case 'evaluateCV':
-                        $ControllerB = "Evaluación Curricular";
+                        case 'infoAccount':
+                        $action = "Datos de Cuenta";
                         break;
-                        case 'postdegreeGraduates':
-                        $ControllerB = "Gestionar graduados";
+                        case 'systemLog':
+                        $action = "Bitacora";
                         break;
-                        case 'pressNotes':
-                        $ControllerB = "Difusión de prensa";
+                        case 'personalData':
+                        $action = "Datos Personales";
                         break;
-                        case 'knowledgeApplication':
-                        $ControllerB = "Aplicación del Conocimiento";
+                        case 'docsIdentity':
+                        $action = "Documentos Oficiales";
                         break;
-                        case 'patent':
-                        $ControllerB = "Registro Pantente";
+                        case 'addresses':
+                        $action = "Datos de dirección actual";
                         break;
-                        case 'copyrights':
-                        $ControllerB = "Registro derecho de autor";
+                        case 'jobs':
+                        $action = "Datos laborales";
                         break;
-                        case 'software':
-                        $ControllerB = "Registro software";
+                        case 'researchAreas':
+                        $action = "Lineas de Investigación";
                         break;
-                        case 'postdegreeGraduates':
-                        $ControllerB = "Gestionar graduados";
+                        case 'phones':
+                        $action = "Datos de Contacto";
                         break;
-                        case 'articlesGuides':
-                        $ControllerB = "Articulos Y Guías";
+                        case 'grades':
+                        $action = "Formación Académica";
+                        break;
+                        case 'commission':
+                        $action = "Nombramientos";
+                        break;
+                        case 'totalRegisteredResearchers':
+                        $action = "Investigadores registrados en el sistema";
+                        break;
+                        case 'projectsTotal':
+                        $action = "Proyectos registrados en el sistema";
+                        break;
+                        case 'booksTotal':
+                        $action = "Libros registrados en el sistema";
+                        break;
+                        case 'chaptersTotal':
+                        $action = "Capítulos de libros registrados en el sistema";
+                        break;
+                        case 'articlesGuides_':
+                        $action = "Aritculos y guías registrados en el sistema";
+                        break;
+                        case 'researchers':
+                        $action = "Cantidad de Investigadores";
+                        break;
+                        case 'projects':
+                        $action = "Proyectos de Investigación";
                         break;
                         case 'books':
-                        $ControllerB = "Libros";
+                        $action = "Libros";
                         break;
-                        case 'booksChapters':
-                        $ControllerB = "Capítulo de Libros";
+                        case 'chapters':
+                        $action = "Capítulo de Libros";
                         break;
-                        case 'congresses':
-                        $ControllerB = "Participacíon en congresos";
+                        case 'patents':
+                        $action = "Registro de propiedad intelectual patentes";
                         break;
-                        case 'directedThesis':
-                        $ControllerB = "Tesis Dirigidas";
+                        case 'software':
+                        $action = "Registro de propiedad intelectual software";
                         break;
-                        case 'certifications':
-                        $ControllerB = "Certificaciones por consejos";
+                        case 'copyrights':
+                        $action = "Registro de propiedad intelectual derechos de autor";
                         break;
-                        case 'languages':
-                        $ControllerB = "Idiomas";
+                        case 'articlesGuides':
+                        $action = "Artículos y Guías";
                         break;
-                        case 'charts':
-                        $ControllerB = "Estadisticas";
+                        case 'sponsorsInfo':
+                        $action = "Datos Empresa";
                         break;
-                        case 'tables':
-                        $ControllerB = "Estadisticas";
+                        case 'create_docs':
+                        $action = "Documentos Probatorios";
                         break;
-                        case 'sponsorship':
-                        $ControllerB = "Patrocinios";
+                        case 'create_persons':
+                        $action = "Datos de Representante";
                         break;
-                        case 'sponsorShip':
-                        $ControllerB = "Patrocinios";
+                        case 'create_billing':
+                        $action = "Datos de Facturación";
                         break;
-                        case 'adminUsers':
-                        $ControllerB = "Gestión de usuarios";
+                        case 'create_contact':
+                        $action = "Datos de Contacto";
                         break;
-                        case 'FilesManager':
-                        $ControllerB = "Gestión de archivos";
+                        case 'create_contacts':
+                        $action = "Datos de Contactos";
                         break;
-                        case 'adminProjects':
-                        $ControllerB = "Gestión de proyectos";
-                        break;
-                        case 'adminBackups':
-                        $ControllerB = "Respaldos";
-                        break;
-                        case 'adminSpecialtyAreas':
-                        $ControllerB = "Gestión de Áreas de especialidad";
-                        break;
-                        case 'adminResearchAreas':
-                        $ControllerB = "Gestión de Áreas de investigación";
-                        break;
-                        case 'projectsReview':
-                        $ControllerB = "Gestión de proyectos";
-                        break;
-                        case 'projectsfollowups':
-                        $ControllerB = "Seguimientos del Proyecto";
-                        break;
+
 
                         default:
-                        $ControllerB = "None";
+                        $action = " ";
                         break;
                       }
+                     echo $ControllerB; ?> / <?php echo $action;
 
-                        switch ($this->action->Id) {
-                          case 'admin':
-                          $action = "Gestionar";
-                          break;
-                          case 'create':
-                          $action = "Crear";
-                          break;
-                          case 'update':
-                          $action = "Modificar";
-                          break;
-                          case 'infoAccount':
-                          $action = "Datos de Cuenta";
-                          break;
-                          case 'systemLog':
-                          $action = "Bitacora";
-                          break;
-                          case 'personalData':
-                          $action = "Datos Personales";
-                          break;
-                          case 'docsIdentity':
-                          $action = "Documentos Oficiales";
-                          break;
-                          case 'addresses':
-                          $action = "Datos de dirección actual";
-                          break;
-                          case 'jobs':
-                          $action = "Datos laborales";
-                          break;
-                          case 'researchAreas':
-                          $action = "Lineas de Investigación";
-                          break;
-                          case 'phones':
-                          $action = "Datos de Contacto";
-                          break;
-                          case 'grades':
-                          $action = "Formación Académica";
-                          break;
-                          case 'commission':
-                          $action = "Nombramientos";
-                          break;
-                          case 'totalRegisteredResearchers':
-                          $action = "Investigadores registrados en el sistema";
-                          break;
-                          case 'projectsTotal':
-                          $action = "Proyectos registrados en el sistema";
-                          break;
-                          case 'booksTotal':
-                          $action = "Libros registrados en el sistema";
-                          break;
-                          case 'chaptersTotal':
-                          $action = "Capítulos de libros registrados en el sistema";
-                          break;
-                          case 'articlesGuides_':
-                          $action = "Aritculos y guías registrados en el sistema";
-                          break;
-                          case 'researchers':
-                          $action = "Cantidad de Investigadores";
-                          break;
-                          case 'projects':
-                          $action = "Proyectos de Investigación";
-                          break;
-                          case 'books':
-                          $action = "Libros";
-                          break;
-                          case 'chapters':
-                          $action = "Capítulo de Libros";
-                          break;
-                          case 'patents':
-                          $action = "Registro de propiedad intelectual patentes";
-                          break;
-                          case 'software':
-                          $action = "Registro de propiedad intelectual software";
-                          break;
-                          case 'copyrights':
-                          $action = "Registro de propiedad intelectual derechos de autor";
-                          break;
-                          case 'articlesGuides':
-                          $action = "Artículos y Guías";
-                          break;
-                          case 'sponsorsInfo':
-                          $action = "Datos Empresa";
-                          break;
-                          case 'create_docs':
-                          $action = "Documentos Probatorios";
-                          break;
-                          case 'create_persons':
-                          $action = "Datos de Representante";
-                          break;
-                          case 'create_billing':
-                          $action = "Datos de Facturación";
-                          break;
-                          case 'create_contact':
-                          $action = "Datos de Contacto";
-                          break;
-                          case 'create_contacts':
-                          $action = "Datos de Contactos";
-                          break;
+                      ?>
+
+                  </div>
+                    <?php } ?>
+
+            </div>
 
 
-                          default:
-                          $action = " ";
-                          break;
-                        }
-                       echo $ControllerB; ?> / <?php echo $action;
-
-                        ?>
-                      </span>
-                      <?php } ?>
-                </div>
             </div>
             <div class="syscontent">
                 <div class="adminmenu">
@@ -551,7 +557,7 @@
                   <?php
                    if($this->action->Id == "create" || $this->action->Id == "update" || $this->action->Id == "view")
                     {
-                      echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/Iconsvg/Perfil/Salir.svg alt="home">', array('admin'));
+                      echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/Iconsvg/Perfil/Salir.svg alt="home">', array('index'));
                       echo "<span>Regresar al listado</span>";
                     }
 

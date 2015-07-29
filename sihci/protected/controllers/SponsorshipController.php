@@ -62,11 +62,11 @@ class SponsorshipController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$modelProjectsDocs = new ProjectsDocs;
+
 		$model= new Sponsorship;
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
-		$this->performAjaxValidation($modelProjectsDocs);
+		//$this->performAjaxValidation($modelProjectsDocs);
 
 
 		if(isset($_POST['Sponsorship'])){
@@ -83,7 +83,7 @@ class SponsorshipController extends Controller
 				}
 			}*/
 
-			$modelProjectsDocs = new ProjectsDocs;
+			//$modelProjectsDocs = new ProjectsDocs;
 
 			if($model->validate()){
 					if($model->save()){
@@ -114,7 +114,7 @@ class SponsorshipController extends Controller
 					}
 		}
 			$this->render('create',array(
-				'model'=>$model,'modelProjectsDocs'=>$modelProjectsDocs
+				'model'=>$model
 			));
 	}
 

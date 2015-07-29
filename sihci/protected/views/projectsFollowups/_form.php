@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    
+
 $(document).ready(function(){
 
 
@@ -30,9 +30,9 @@ $form=$this->beginWidget('CActiveForm', array(
         <?php echo $form->error($model,'url_doc'); ?>
     </div>
   <div class="row">
-    <?php echo CHtml::htmlButton('Crear',array(
+    <?php echo CHtml::htmlButton('',array(
                 'onclick'=>'send("projects-followups-form-create", "projectsFollowups/createFollowup", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : "").'","")',
-                'class'=>'savebutton'
+                'class'=>'savebuttonp'
             ));
     ?>
         </div>

@@ -91,6 +91,38 @@ class ChartsController extends Controller
 			else
 				$condYears = "";
 
+
+			if($_POST["years"] == "total"){
+
+				$query = '
+				SELECT 
+				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(u.id) as totalUsers
+				from users as u 
+				left join curriculum as c ON c.id_user = u.id 
+				left join jobs as j on j.id_curriculum = c.id
+				WHERE u.type="fisico"
+				'.$condType.$condSni.$condHu;
+
+				$results = $conexion->createCommand($query)->queryAll();
+
+				$jim = array();
+				$faa = array();
+				$other = array();
+				$totalUsers = array();
+				$totales = array("Total");
+			foreach($results AS $key => $value){
+				array_push($totalUsers, (int)$value["totalUsers"]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($totales, (int)$value["totalUsers"]);
+			}
+			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
+
+			}else{
+
 			$query = '
 				SELECT 
 				COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
@@ -106,27 +138,27 @@ class ChartsController extends Controller
 			';
 			$results = $conexion->createCommand($query)->queryAll();
 
-			//print_r($results);
-
 			$months = array();
 			$jim = array();
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($total, (int)$value["totalUsers"]);
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
+		}
 		}
 
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'totalRegisteredResearchers',"years"=>$years));
 		}
-
 	}
 
 	//GR02-Total-Proyectos
@@ -149,11 +181,11 @@ class ChartsController extends Controller
 				$condHu = "";
 
 			if($_POST["proyecto"] != "total" && $_POST["proyecto"] == "abiertos")
-				$condProyecto = " AND p.status != 'dictaminado' AND p.status != 'RECHAZADO'";
+				$condProyecto = " AND p.status != 'DICTAMINADO' AND p.status != 'RECHAZADO'";
 			else if($_POST["proyecto"] == "concluidos")
-				$condProyecto = " AND p.status = 'DICTAMINADO'";
+				$condProyecto = " AND p.status = 'dictaminado'";
 			else if($_POST["proyecto"] == "rechazados")
-				$condProyecto = " AND p.status = 'RECHAZADO'";
+				$condProyecto = " AND p.status = 'DICTAMINADO'";
 			else
 				$condProyecto = "";
 
@@ -170,6 +202,36 @@ class ChartsController extends Controller
 			else
 				$condYears = "";
 
+			if($_POST["years"] == "total"){
+
+				$query = '
+				SELECT 
+				COUNT(IF(p.develop_uh="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(p.develop_uh="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(u.id) as totalUsers
+				FROM projects AS p 
+				LEFT JOIN curriculum AS c ON p.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = "fisico" AND u.status = "activo" 
+				'.$condYears.$condPatro.$condProyecto.$condHu;
+
+			$results = $conexion->createCommand($query)->queryAll();
+
+			$jim = array();
+			$faa = array();
+			$other = array();
+			$totalUsers = array();
+			$totales = array("Total");
+			foreach($results AS $key => $value){
+				array_push($totalUsers, (int)$value["totalUsers"]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($totales, (int)$value["totalUsers"]);
+			}
+			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
+
+			}else{
 
 			$query = '
 				SELECT 
@@ -186,26 +248,28 @@ class ChartsController extends Controller
 			';
 			$results = $conexion->createCommand($query)->queryAll();
 
-			//print_r($results);
-
 			$months = array();
 			$jim = array();
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($total, (int)$value["totalUsers"]);
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
 		}
+	}
 
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'projectsTotal',"years"=>$years));
 		}
+
 	}
 
 	//GR03-Total-Eficiencia
@@ -234,6 +298,36 @@ public function actionEfficiencyTotal(){
 				$condYears = "";
 
 
+			if($_POST["years"] == "total"){
+
+				$query = '
+				SELECT 
+				COUNT(IF(p.develop_uh="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				COUNT(IF(p.develop_uh="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				COUNT(u.id) as totalUsers
+				FROM projects AS p 
+				LEFT JOIN curriculum AS c ON p.id_curriculum=c.id
+				LEFT JOIN users AS u ON u.id=c.id_user
+				WHERE u.type = "fisico" AND u.status = "activo"
+				AND p.status = "FINALIZADO" ';
+				$results = $conexion->createCommand($query)->queryAll();
+
+			$jim = array();
+			$faa = array();
+			$other = array();
+			$totalUsers = array();
+			$totales = array("Total");
+			foreach($results AS $key => $value){
+				array_push($totalUsers, (int)$value["totalUsers"]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($totales, (int)$value["totalUsers"]);
+			}
+			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
+
+			}else{
+
 			$query = '
 				SELECT 
 				COUNT(IF(p.develop_uh="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
@@ -250,22 +344,23 @@ public function actionEfficiencyTotal(){
 			';
 			$results = $conexion->createCommand($query)->queryAll();
 
-			//print_r($results);
-
 			$months = array();
 			$jim = array();
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($total, (int)$value["totalUsers"]);
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
 		}
+	}
 
 		if(!isset($_POST["years"])){
 			$this->render('index',array('action'=>'efficiencyTotal',"years"=>$years));
@@ -302,6 +397,35 @@ public function actionEfficiencyTotal(){
 				$condYears = "";
 
 
+			if($_POST["years"] == "total"){
+
+				$query = '
+				SELECT 
+					COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+					COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+					COUNT(b.id) AS totalBooks
+					FROM books AS b
+					LEFT JOIN curriculum AS c ON b.id_curriculum=c.id
+					LEFT JOIN users AS u ON u.id=c.id_user
+					LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+					WHERE u.type = "fisico" AND u.status = "activo" ';
+			$results = $conexion->createCommand($query)->queryAll();
+
+			$jim = array();
+			$faa = array();
+			$other = array();
+			$totalBooks = array();
+			$totales = array("Total");
+			foreach($results AS $key => $value){
+				array_push($totalBooks, (int)$value["totalBooks"]);
+				array_push($jim, (int)$value["jim"]);
+				array_push($faa, (int)$value["faa"]);
+				array_push($other, ((int)$value["totalBooks"]-((int)$value["faa"]+(int)$value["jim"])));
+			}
+			echo '{"totalBooks":'.json_encode($totalBooks).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
+			
+			}else{
+
 			$query = '
 				SELECT 
 					COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
@@ -318,21 +442,22 @@ public function actionEfficiencyTotal(){
 			';
 			$results = $conexion->createCommand($query)->queryAll();
 
-			//print_r($results);
-
 			$months = array();
 			$jim = array();
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalBooks"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($total, (int)$value["totalBooks"]);
 			}
 
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
+			}
 		}
 
 		if(!isset($_POST["years"])){
@@ -383,16 +508,17 @@ public function actionEfficiencyTotal(){
 					$jim = array();
 					$faa = array();
 					$other = array();
-					$totalBooks = array("Total");
+					$totalBooks = array();
+					$totales = array("Total");
 				foreach($results AS $key => $value){
 					array_push($totalBooks, (int)$value["totalChapters"]);
 					array_push($jim, (int)$value["jim"]);
 					array_push($faa, (int)$value["faa"]);
 					array_push($other, ((int)$value["totalChapters"]-((int)$value["faa"]+(int)$value["jim"])));
+					array_push($totales, (int)$value["totalChapters"]);
 				}
-				echo '{"totalBooks":'.json_encode($totalBooks).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
-
-
+				echo '{"totalBooks":'.json_encode($totalBooks).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
+				
 			}else{
 			$query = '
 				SELECT 
@@ -415,13 +541,15 @@ public function actionEfficiencyTotal(){
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalChapters"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($total, (int)$value["totalChapters"]);
 			}
-			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"testsql":'.json_encode($query).'}';
+			echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
 			}
 		}
 
@@ -457,6 +585,37 @@ public function actionEfficiencyTotal(){
    else
     $condYears = "";
 
+	if($_POST["years"] == "total"){
+
+		$query = '
+				    SELECT 
+				    COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+				    COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+				    COUNT(ar.id) AS totalArticles
+				    FROM articles_guides AS ar
+				    LEFT JOIN curriculum AS c ON c.id=ar.id_resume
+				    LEFT JOIN users AS u ON u.id=c.id_user 
+				    LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+				    WHERE u.type = "fisico" AND u.status = "activo"';
+   $results = $conexion->createCommand($query)->queryAll();
+
+   	$months = array();
+   	$jim = array();
+   	$faa = array();
+   	$other = array();
+	$totalArticles = array();  
+	$totales = array("Total"); 
+	foreach($results AS $key => $value){
+    array_push($totalArticles, (int)$value["totalArticles"]);
+    array_push($jim, (int)$value["jim"]);
+    array_push($faa, (int)$value["faa"]);
+    array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
+    array_push($totales, (int)$value["totalArticles"]);
+	}
+   	echo '{"totalArticles":'.json_encode($totalArticles).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
+
+	}else{
+
    $query = '
     SELECT 
     COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
@@ -473,21 +632,22 @@ public function actionEfficiencyTotal(){
    ';
    $results = $conexion->createCommand($query)->queryAll();
 
-   //print_r($results);
-
    $months = array();
    $jim = array();
    $faa = array();
    $other = array();
    $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+   $total = array();
    foreach($results AS $key => $value){
     array_push($months, $mos[$value["months"]]);
     array_push($jim, (int)$value["jim"]);
     array_push($faa, (int)$value["faa"]);
     array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
+    array_push($total, (int)$value["totalArticles"]);
    }
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
+	}
   }
 
   if(!isset($_POST["years"])){
@@ -500,7 +660,7 @@ public function actionEfficiencyTotal(){
 public function actionPatentSoftware(){
 
 	 $conexion = Yii::app()->db;
-$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year";
+$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year DESC";
 	if(isset($_POST["property"])){
 
 		if($_POST["property"] == "software"){
@@ -515,7 +675,7 @@ $query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELE
 		$query ="
   			SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights";	
 		}else{
-				$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year";
+				$query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELECT DISTINCT YEAR(creation_date) AS year FROM software union SELECT DISTINCT YEAR(creation_date) AS year FROM patent ORDER BY year DESC";
 		}	
 }
 
@@ -574,6 +734,76 @@ $query = "SELECT DISTINCT YEAR(creation_date) AS year FROM copyrights union SELE
    else
     $condYears = "";
 
+if($_POST["years"] == "total"){
+
+	if($_POST["property"] != "todos"){
+   $query = '
+    SELECT  
+		COUNT(IF(j.hospital_unit="Hospital Civil Dr. Juan I. Menchaca",1,NULL)) AS jim, 
+		COUNT(IF(j.hospital_unit="Hospital Civil Fray Antonio Alcalde",1,NULL)) AS faa,
+		'.$table1.' AS totals
+		FROM '.$table.' 
+		LEFT JOIN curriculum AS c ON '.$alias.'=c.id
+		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+		LEFT JOIN users AS u ON u.id=c.id_user
+		WHERE u.type = "fisico" AND u.status = "activo"
+    	'.$condYears;
+
+	}else{
+
+	$query = "
+		SELECT  
+		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+		COUNT(co.id) AS totals
+		FROM copyrights AS co 
+		LEFT JOIN curriculum AS c ON co.id_curriculum=c.id
+		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+		LEFT JOIN users AS u ON u.id=c.id_user
+		WHERE u.type = 'fisico' AND u.status = 'activo'  
+		".($_POST['years'] != 'total' ? " AND YEAR(co.creation_date) ='".$_POST['years']."'":"")."
+		UNION
+		SELECT  
+		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+		COUNT(pa.id) AS totals
+		FROM patent AS pa 
+		LEFT JOIN curriculum AS c ON pa.id_curriculum=c.id
+		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+		LEFT JOIN users AS u ON u.id=c.id_user
+		WHERE u.type = 'fisico' AND u.status = 'activo'
+		".($_POST['years'] != 'total' ? " AND YEAR(pa.creation_date) ='".$_POST['years']."'":"")."
+		UNION
+		SELECT  
+		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
+		COUNT(IF(j.hospital_unit='Hospital Civil Fray Antonio Alcalde',1,NULL)) AS faa,
+		COUNT(s.id) AS totals
+		FROM software AS s 
+		LEFT JOIN curriculum AS c ON s.id_curriculum=c.id
+		LEFT JOIN jobs AS j ON j.id_curriculum=c.id
+		LEFT JOIN users AS u ON u.id=c.id_user
+		WHERE u.type = 'fisico' AND u.status = 'activo'	
+		".($_POST['years'] != 'total' ? "AND YEAR(s.creation_date) ='".$_POST['years']."' ":"")."";
+	}
+
+   $results = $conexion->createCommand($query)->queryAll();
+
+   $jim = array();
+   $faa = array();
+   $other = array();
+   $totals = array();
+   $totales = array("Total","Total","Total");
+   foreach($results AS $key => $value){
+    array_push($totals, (int)$value["totals"]);
+    array_push($jim, (int)$value["jim"]);
+    array_push($faa, (int)$value["faa"]);
+    array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
+    array_push($totales, (int)$value["totals"]);
+   }
+   echo '{"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totals":'.json_encode($totals).',"totales":'.json_encode($totales).'}';
+
+}else{
+
 if($_POST["property"] != "todos"){
    $query = '
     SELECT  
@@ -591,7 +821,6 @@ if($_POST["property"] != "todos"){
 }
 else
 {
-
 	$query = "
 		SELECT  
 		COUNT(IF(j.hospital_unit='Hospital Civil Dr. Juan I. Menchaca',1,NULL)) AS jim, 
@@ -637,31 +866,27 @@ else
 
    $results = $conexion->createCommand($query)->queryAll();
 
-   //print_r($results);
-
    $months = array();
    $jim = array();
    $faa = array();
    $other = array();
    $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-  
+   $total = array();
    foreach($results AS $key => $value){
     array_push($months, $mos[$value["months"]]);
     array_push($jim, (int)$value["jim"]);
     array_push($faa, (int)$value["faa"]);
     array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
+    array_push($total, (int)$value["totals"]);
    }
 
-   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+   echo '{"months":'.json_encode($months).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"total":'.json_encode($total).'}';
   }
-
-
-if(!isset($_POST["years"])){
-   $this->render('index',array('action'=>'patentSoftware','years'=>$years));
 }
 
-
+	if(!isset($_POST["years"])){
+	   $this->render('index',array('action'=>'patentSoftware','years'=>$years));
+	}
 }
-
 }
 ?>

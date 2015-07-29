@@ -358,7 +358,6 @@ class SponsorsController extends Controller {
 					Yii::app()->end();
 				}
 		} else {
-			echo "valio verga";
 			$model = new SponsorBilling;
 			$modelAddresses = new Addresses;
 			$sameAd = false;
