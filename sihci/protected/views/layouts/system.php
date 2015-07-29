@@ -120,9 +120,9 @@
                         "icon"=>"PCV-HC",
                         "cuentaicon"=>"Pcuenta",
                         "controller"=>"curriculumVitae/personalData",
-                        "MenuEmpresa"=>"CV-HC",
+                        "MenuEmpresa"=>"CVU-HC",
                         "proyectos"=>"Proyectos",
-                        "Evaluacion"=>"Evaluación CV",
+                        "Evaluacion"=>"Evaluación Curricular",
                         "proyectosUrl"=>(Yii::app()->user->Rol->alias != 'USUARIO' ? "projectsReview" : "projects")."/admin",
                         "labelEstadisticas"=>"Estadisticas",
                         "labelAdmin"=>"Administración",
@@ -133,9 +133,9 @@
                     "icon"=>"PCV-HC",
                     "cuentaicon"=>"Pcuenta",
                     "controller"=>"curriculumVitae/personalData",
-                    "MenuEmpresa"=>"CV-HC",
+                    "MenuEmpresa"=>"CVU-HC",
                     "proyectos"=>"Proyectos",
-                    "Evaluacion"=>"Evaluación CV",
+                    "Evaluacion"=>"Evaluación Curricular",
                     "proyectosUrl"=>"projects/admin",
                     );
         ?>
