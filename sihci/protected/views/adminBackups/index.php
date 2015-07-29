@@ -86,13 +86,12 @@ function search(){
 
 		    foreach ($files as $key => $backupsFiles)
 			{
-				echo "<tr>";
+					echo "<tr>";
 					echo "<td>".date("d-m-Y")."</td>";
 					echo "<td>".'3:00'."</td>";
-					echo "<td> <a href='../backups/compressZip.php' target='_self'> Descargar ZIP </a></td>";
-					echo '<td><a href="../backups/compressZip.php" target="_self"><img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/descargar.png alt="home" ></a>';
+					echo "<td> <a href='/SIHCi/sihci/backups/compressZip.php' target='_self'> Descargar ZIP </a></td>";
+					echo '<td><a href="/SIHCi/sihci/backupscompressZip.php" target="_self"><img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/descargar.png alt="home" ></a>';
 					echo "</td>";
-
 
 
 			}

@@ -6,7 +6,6 @@
 <script type="text/javascript">
 function state(){
 	 country = $("#Addresses_country").val();
-	 alert(country);
 	 if(country == "Mexico"){
 
 		 var comboState ="<span class='plain-select'><select id='Addresses_state' class='tooltipstered' name='Addresses[state]'>";
