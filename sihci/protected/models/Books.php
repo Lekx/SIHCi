@@ -15,7 +15,7 @@
  * @property integer $pages
  * @property integer $copies_issued
  * @property string $work_type
- * @property string $idioma
+ * @property string $language
  * @property string $traductor_type
  * @property string $traductor
  * @property string $area
@@ -50,12 +50,12 @@ class Books extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords,', 'required'),
+			array('id_curriculum, isbn,book_title, publisher, release_date, pages, area, discipline, keywords', 'required'),
 			array('id_curriculum, isbn, edition, release_date, volume, pages, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('book_title, path', 'length', 'max'=>100),
 			array('publisher, traductor', 'length', 'max'=>80),
 			array('work_type', 'length', 'max'=>30),
-			array('idioma', 'length', 'max'=>20),
+			array('language', 'length', 'max'=>20),
 			array('traductor_type', 'length', 'max'=>20),
 			array('area', 'length', 'max'=>40),
 			array('searchValue', 'length', 'max'=>60),
@@ -63,14 +63,13 @@ class Books extends CActiveRecord
 			array('subdiscipline', 'length', 'max'=>45),
 			array('keywords', 'length', 'max'=>250),
 			array('creation_date', 'safe'),
-			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'insert','safe' => false,  'maxSize'=>1024 * 1024 * 5),
+			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'insert','allowEmpty'=>false,'safe' => false,  'maxSize'=>1024 * 1024 * 5),
 			array('path','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png','on'=>'update','allowEmpty'=>true,'safe' => false,  'maxSize'=>1024 * 1024 * 5),
 			
 			
-			//array('path','file','maxSize'=>array(1024 * 5000), 'message'=>'El Documento excede el peso permitido'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_curriculum, isbn, book_title, publisher, edition, release_date, volume, pages, copies_issued, work_type, idioma, traductor_type, traductor, area, discipline, subdiscipline, path, keywords, searchValue ,creation_date', 'safe', 'on'=>'search'),
+			array('id, id_curriculum, isbn, book_title, publisher, edition, release_date, volume, pages, copies_issued, work_type, language, traductor_type, traductor, area, discipline, subdiscipline, path, keywords, searchValue ,creation_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -104,7 +103,7 @@ class Books extends CActiveRecord
 			'pages' => 'Número de paginas:',
 			'copies_issued' => 'Tiraje:',
 			'work_type' => 'Identificador libro:',
-			'idioma' => 'Idioma:',
+			'language' => 'Idioma:',
 			'traductor_type' => 'Tipo de traductor:',
 			'traductor' => 'Nombre del traductor:',
 			'area' => 'Área:',

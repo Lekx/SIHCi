@@ -2,10 +2,9 @@
 
 #Parameters
 date=$(date +%Y-%m-%d-%H-%M)
-START=$(date +%H-%M)
 NAME_FOLDER="files"
-COPY_FOLDER="/var/www/html/SIHCi/sihci/users/"
-BACKUP_FOLDER="/var/www/html/SIHCi/sihci/backups/$NAME_FOLDER"
+COPY_FOLDER="/home/sgeiadmi/public_html/sihci/sihci/users"
+BACKUP_FOLDER="/home/sgeiadmi/public_html/sihci/sihci/backups/$NAME_FOLDER"
 
 #Create folder for backups
 mkdir -p $BACKUP_FOLDER

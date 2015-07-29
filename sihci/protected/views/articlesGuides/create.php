@@ -78,6 +78,6 @@ $this->menu=array(
         </div>
 
 
-<h4>Crear registro de Arituclos y Guías:</h4>
+<h4>Crear registro de Articulos y Guías:</h4>
 
 <?php $this->renderPartial('_form', array('model'=>$model, 'modelAuthor'=>$modelAuthor)); ?>
