@@ -125,8 +125,9 @@ chart = new Highcharts.Chart({
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
         },
-        xAxis: { 
-            categories: ($("#years").val() == 'total' ?  data.totales  : data.months),
+        xAxis: {
+            categories: ($("#years").val() == 'total' ? data.totals : data.months),
+            //categories: data.months,
             crosshair: true
         },
         yAxis: {

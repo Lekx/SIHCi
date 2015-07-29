@@ -4,6 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="en">
+        <link rel="shortcut icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl;?>/favicon.ico"/>
+        <link rel="shortcut icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl;?>/favicon.ico"/>
         <!-- blueprint CSS framework -->
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/screen.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl;?>/css/print.css" media="print">
@@ -36,7 +38,7 @@
                                 $cs->registerScriptFile($baseUrl . '/js/progressUser.js');
                                 $cs->registerScriptFile($baseUrl . '/js/searchbar.js');
                                 $cs->registerScriptFile($baseUrl . '/js/jquery.tooltipster.min.js');
-                                 $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
+                                $cs->registerScriptFile($baseUrl . '/js/sysAlerts.js');
   								$cs->registerScriptFile($baseUrl . '/js/passorcurp.js');
         ?>
         <?php

@@ -527,20 +527,21 @@
                               'PSICOLOGIA'=>'PSICOLOGIA',
                               'PROSPECTIVA'=>'PROSPECTIVA',
                               'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),
-											array('name'=>'getArea[]','prompt'=>'Seleccionar área','title'=>'Seleccionar área','options'=>array($getGrades[$key]->area=>array('selected'=>true)),'id'=>'getArea', 'onchange'=>'changeArea()'));
+											array('name'=>'getArea[]','prompt'=>'Seleccionar área','title'=>'Seleccionar área','options'=>array($getGrades[$key]->area=>array('selected'=>true)),'id'=>'getArea', 'onchange'=>'changeGetArea()'));
 			echo '</span>';
 			 echo $form->error($modelUp,'area', array('id'=>'Grades_area_em_'.$getGrades[$key]->id));
 		echo '</div>';
 
 
-		echo '<div class="row"id="comboDiscipline">';
+		echo '<div class="row "id="getComboDiscipline">';
 		echo '<span class="plain-select">';
-	echo $form->dropDownList($modelUp,'discipline',array($getGrades[$key]->discipline=>$getGrades[$key]->discipline),array('prompt'=>'Seleccionar disciplina', 'name'=>'getDiscipline[]','options'=>array($getGrades[$key]->discipline=>array('selected'=>true))));
+	echo $form->dropDownList($modelUp,'discipline',array($getGrades[$key]->discipline=>$getGrades[$key]->discipline),array('prompt'=>'Seleccionar disciplina','id'=>'getDiscipline', 'name'=>'getDiscipline[]','options'=>array($getGrades[$key]->discipline=>array('selected'=>true))));
 		echo '</span>';
 		echo '</div>';
-		echo '<div class="row"id="comboSubdiscipline">';
+
+		echo '<div class="row" id="getComboSubdiscipline">';
 		echo '<span class="plain-select">';
-			echo $form->dropDownList($modelUp,'subdiscipline',array($getGrades[$key]->subdiscipline => $getGrades[$key]->subdiscipline),array('prompt'=>'Seleccionar subdisciplina', 'name'=>'getSubdiscipline[]','options'=>array($getGrades[$key]->subdiscipline=>array('selected'=>true))));
+			echo $form->dropDownList($modelUp,'subdiscipline',array($getGrades[$key]->subdiscipline => $getGrades[$key]->subdiscipline),array('prompt'=>'Seleccionar subdisciplina','id'=>'getSubdiscipline', 'name'=>'getSubdiscipline[]','options'=>array($getGrades[$key]->subdiscipline=>array('selected'=>true))));
 		echo '</span>';
 		echo '</div>';
 

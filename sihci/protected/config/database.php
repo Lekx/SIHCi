@@ -6,6 +6,7 @@ return array(
 
 	//'connectionString' => 'mysql:host=127.0.0.1;dbname=sihci',
 	'connectionString' => 'mysql:host=192.168.0.15;dbname=sihci',
+	// 'connectionString' => 'mysql:host=localhost;dbname=sihci',
 	'emulatePrepare' => true,
 	'username' => 'root',
 	'password' => '000',
