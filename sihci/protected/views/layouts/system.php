@@ -79,7 +79,7 @@
                                             maxWidth:'90'
                                         });
 
-                                        $('.ttipnot').tooltipster({
+                                        $('.ttipnot, .sponsorTag').tooltipster({
                                             position: 'top',
                                             trigger: 'hover',
                                             maxWidth:'150'
