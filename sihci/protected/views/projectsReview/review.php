@@ -262,7 +262,10 @@ echo "<br><br><br>==============================================================
 //print_r($evaluationRules[$evaluationStep]);
 
 $userRol = $evaluationRules[$evaluationStep]["userType"]; */
-//print_r($evaluationRules[$evaluationStep]["actions"]); 
+//print_r($evaluationRules[$evaluationStep]["actions"]);
+
+//print_r($evaluationRules[$evaluationStep]["actions"]);
+
 
 
 //oreach ($roles as $key => $userRol) {

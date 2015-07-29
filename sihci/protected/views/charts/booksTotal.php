@@ -21,6 +21,11 @@
 <script>
 //jQuery.noConflict();
 var chart;
+var theTotals = 0;
+var theTotalFaa = 0;
+var theTotalJim = 0;
+var theTotalOther = 0;
+
 function loadChart(){
 var request = $.ajax({
   url: yii.urls.base+"/index.php/charts/booksTotal",
@@ -34,6 +39,38 @@ request.done(function(data) {
               name: "mentions",
               data: data.ejem
             });*/
+
+function total(){
+  var theTotals = 0;
+          for(var i = 0; i < data.total.length; i++){
+                        theTotals += data.total[i] << 0;
+                    }
+    return theTotals;
+}
+
+function totalFaa(){
+  var theTotalFaa = 0;
+          for(var i = 0; i < data.faa.length; i++){
+                        theTotalFaa += data.faa[i] << 0;
+                    }
+    return theTotalFaa;
+}
+
+function totalJim(){
+  var theTotalJim = 0;
+          for(var i = 0; i < data.jim.length; i++){
+                        theTotalJim += data.jim[i] << 0;
+                    }
+    return theTotalJim;
+}
+
+function totalOther(){
+  var theTotalOther = 0;
+          for(var i = 0; i < data.other.length; i++){
+                        theTotalOther += data.other[i] << 0;
+                    }
+    return theTotalOther;
+}
 
 chart = new Highcharts.Chart({
 
@@ -51,7 +88,7 @@ chart = new Highcharts.Chart({
                             var item = legend.allItems[i].legendItem;
                             item.on('mouseover', function (e) {
                               var childPosition = $(".highcharts-legend-item text:eq( "+i+" ) ").offset();
-                               $(".tooltipchart").css("top",childPosition.top+20);
+                               $(".tooltipchart").css("top",childPosition.top+40);
                                $(".tooltipchart").css("left",childPosition.left);
                                $(".tooltipchart").show();
                             }).on('mouseout', function (e) {
@@ -66,14 +103,14 @@ chart = new Highcharts.Chart({
       enabled: false
   },
         title: {
-            text: 'Libros registrados en el sistema' + '<br>' + ($("#years").val() == 'total' ? data.totalBooks : $("#years").val() == 'total' ? data.total : data.total) 
+            text: 'Libros registrados en el sistema' + '<br>' + 'Total:' + ' ' +($("#years").val() == 'total' ? data.totalBooks : $("#years").val() != 'total' ? totals = total() : '') 
         },
         subtitle: {
             text: 'SIHCi: Sistema de Investigación del Hospital Civil de Guadalajara'
         },
         xAxis: {
             
-            categories: ($("#years").val() == 'total' ? data.totalBooks : data.months),
+            categories: ($("#years").val() == 'total' ? data.totales : data.months),
             crosshair: true
         },
         yAxis: {
@@ -105,16 +142,16 @@ chart = new Highcharts.Chart({
         },
         series: [{
 
-            name: 'Hospital Civil Fray Antonio Alcalde' + '<br>' + 'Total:' + ' ' + data.faa,
+            name: 'Hospital Civil Fray Antonio Alcalde' + '<br>' + 'Total:' + ' ' + ($("#years").val() == 'total' ? data.faa : $("#years").val() != 'total' ? faa = totalFaa() : '' ),
             data: data.faa
 
         }, {
 
-            name: 'Hospital Civil Dr. Juan I. Menchaca' + '<br>' + 'Total:' + ' ' + data.jim,
+            name: 'Hospital Civil Dr. Juan I. Menchaca' + '<br>' + 'Total:' + ' ' + ($("#years").val() == 'total' ? data.jim : $("#years").val() != 'total' ? jim = totalJim() : '' ),
             data: data.jim
 
         }, {
-            name: 'Otros' + '<br>' + 'Total:' + ' ' + data.other,
+            name: 'Otros' + '<br>' + 'Total:' + ' ' + ($("#years").val() == 'total' ? data.other : $("#years").val() != 'total' ? other = totalOther() : '' ),
             data: data.other
 
         },]

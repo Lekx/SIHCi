@@ -391,10 +391,10 @@ class ProjectsReviewController extends Controller
 			$result = Projects::model()->updateByPk($projectId,array('status' => $status));
 
 
-			//llamar a revision de contratos si el paso es 2 o mayor y 
+			//llamar a revision de contratos si el paso es 2 o mayor y
 			if($actualStep == 2 && $action == 'accept')
 				$this->actionAgreement($projectId,$actualStep,$action);
-			
+
 
 		}else if($action == "review"){
 

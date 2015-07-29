@@ -76,7 +76,7 @@ class CurriculumVitaeController extends Controller
 
 			$curriculum->id_user= $iduser;
 			$curriculum->id_actual_address= $addresses->id;
-			$curriculum->native_country = $model->country;
+			$curriculum->native_country = "-1";
 			$curriculum->SNI = -1;
 			$curriculum->save();
 		}
@@ -88,6 +88,9 @@ class CurriculumVitaeController extends Controller
 		if($model->birth_date == "30/11/-0001" || $model->birth_date == "00/00/0000"){
 				$model->birth_date = "";
 			}
+		if($curriculum->native_country == "-1"){
+			$curriculum->native_country = "";
+		}
 
 		$this->performAjaxValidation($model);
 

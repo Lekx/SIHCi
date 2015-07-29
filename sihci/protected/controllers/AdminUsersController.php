@@ -242,15 +242,15 @@ function checkEmailNull($email, $email2){
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDeleteUser($id) {
-
+		$command = Yii::app()->db->createCommand();
 		$users = Users::model()->findByPK($id);
 
 
 		if($users->type == "fisico"){
 			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$id));
 			$persons = Persons::model()->findByAttributes(array('id_user'=>$id));
-			$address = Addresses::model()->findByAttributes(array('id'=>$curriculum->id_actual_address));
-			$command = Yii::app()->db->createCommand();
+			// $address = Addresses::model()->findByAttributes(array('id'=>$curriculum->id_actual_address));
+
 
 			if($curriculum != null){
 
@@ -291,6 +291,18 @@ function checkEmailNull($email, $email2){
 					$command = Yii::app()->db->createCommand();
 				}
 				if($projects != null){
+
+					// $projectsCoworkers = ProjectsCoworkers::model()->findAllByAttributes(array('id_project'=>$projects->id));
+					// $projectsFollowups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$projects->id));
+					// if($projectsCoworkers != null){
+					// 	$command->delete('projects_coworkers', 'id_project=:id_project', array(':id_project'=>$projects->id));
+					// 	$command = Yii::app()->db->createCommand();
+					// }
+					// if($projectsFollowups != null){
+					// 	$command->delete('projects_followups', 'id_project=:id_project', array(':id_project'=>$projects->id));
+					// 	$command = Yii::app()->db->createCommand();
+					// }
+
 					$command->delete('projects', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
 					$command = Yii::app()->db->createCommand();
 				}
@@ -420,7 +432,7 @@ function checkEmailNull($email, $email2){
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('adminUsers'));
+			$this->redirect(array('adminUsers'));
 		}
 
 	}

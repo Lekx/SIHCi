@@ -87,7 +87,7 @@ $this->menu=array(
 		'pages',
 		'copies_issued',
 		'work_type',
-		'idioma',
+		'language',
 		'traductor_type',
 		'traductor',
 		'area',

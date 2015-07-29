@@ -3920,7 +3920,7 @@ if(areaValue =="SOCIOLOGIA"){
 
 <div class="row">
 <span class="plain-select">
-		<?php echo $form->dropDownList($model,'idioma',array(
+		<?php echo $form->dropDownList($model,'language',array(
 					'Albanés'=>'Albanés',
 					'Alemán'=>'Alemán',
 					'Amharico'=>'Amharico',
@@ -4000,7 +4000,7 @@ if(areaValue =="SOCIOLOGIA"){
                 );
 		?>
 		</span>
-		<?php echo $form->error($model,'idioma'); ?>
+		<?php echo $form->error($model,'language'); ?>
 	</div>
 
 	<div class="row">
@@ -4018,129 +4018,136 @@ if(areaValue =="SOCIOLOGIA"){
 
 	
 		<div class="row">
-    <span class="plain-select">
-    <?php echo $form->dropDownList($model,'area',array('ANTROPOLOGIA'=>'ANTROPOLOGIA',
-                              'ARTES Y LETRAS'=>'ARTES Y LETRAS',
-                              'ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
-                              'CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
-                              'CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION',
-                              'CIENCIAS DE LA TECNOLOGIA'=>'CIENCIAS DE LA TECNOLOGIA',
-                              'CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
-                              'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD',
-                              'CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA',
-                              'CIENCIAS ECONOMICAS'=>'CIENCIAS ECONOMICAS',
-                              'CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
-                              'CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS',
-                              'DEMOGRAFIA'=>'DEMOGRAFIA',
-                              'ETICA'=>'ETICA',
-                              'FILOSOFIA'=>'FILOSOFIA',
-                              'FISICA'=>'FISICA',
-                              'GEOGRAFIA'=>'GEOGRAFIA',
-                              'HISTORIA'=>'HISTORIA',
-                              'LINGÜISTICA'=>'LINGÜISTICA',
-                              'LOGICA'=>'LOGICA',
-                              'MATEMATICAS'=>'MATEMATICAS',
-                              'MEDICINA Y PATOLOGIA HUMANA'=>'MEDICINA Y PATOLOGIA HUMANA',
-                              'PEDAGOGIA'=>'PEDAGOGIA',
-                              'PSICOLOGIA'=>'PSICOLOGIA',
-                              'PROSPECTIVA'=>'PROSPECTIVA',
-                              'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'onchange'=>'changeArea()'));?>
-                                                      </span>
-    <?php echo $form->error($model,'area'); ?>
+        <span class="plain-select">
+        <?php echo $form->dropDownList($model,'area',array('ANTROPOLOGIA'=>'ANTROPOLOGIA',
+                                  'ARTES Y LETRAS'=>'ARTES Y LETRAS',
+                                  'ASTRONOMIA Y ASTROFISICA'=>'ASTRONOMIA Y ASTROFISICA',
+                                  'CIENCIAS AGRONOMICAS Y VETERINARIAS'=>'CIENCIAS AGRONOMICAS Y VETERINARIAS',
+                                  'CIENCIAS DE LA OCUPACION'=>'CIENCIAS DE LA OCUPACION',
+                                  'CIENCIAS DE LA TECNOLOGIA'=>'CIENCIAS DE LA TECNOLOGIA',
+                                  'CIENCIAS DE LA TIERRA Y DEL COSMOS'=>'CIENCIAS DE LA TIERRA Y DEL COSMOS',
+                                  'CIENCIAS DE LA SALUD'=>'CIENCIAS DE LA SALUD',
+                                  'CIENCIAS DE LA VIDA'=>'CIENCIAS DE LA VIDA',
+                                  'CIENCIAS ECONOMICAS'=>'CIENCIAS ECONOMICAS',
+                                  'CIENCIAS JURIDICAS Y DERECHO'=>'CIENCIAS JURIDICAS Y DERECHO',
+                                  'CIENCIAS POLITICAS'=>'CIENCIAS POLITICAS',
+                                  'DEMOGRAFIA'=>'DEMOGRAFIA',
+                                  'ETICA'=>'ETICA',
+                                  'FILOSOFIA'=>'FILOSOFIA',
+                                  'FISICA'=>'FISICA',
+                                  'GEOGRAFIA'=>'GEOGRAFIA',
+                                  'HISTORIA'=>'HISTORIA',
+                                  'LINGÜISTICA'=>'LINGÜISTICA',
+                                  'LOGICA'=>'LOGICA',
+                                  'MATEMATICAS'=>'MATEMATICAS',
+                                  'MEDICINA Y PATOLOGIA HUMANA'=>'MEDICINA Y PATOLOGIA HUMANA',
+                                  'PEDAGOGIA'=>'PEDAGOGIA',
+                                  'PSICOLOGIA'=>'PSICOLOGIA',
+                                  'PROSPECTIVA'=>'PROSPECTIVA',
+                                  'QUIMICA'=>'QUIMICA', 'SOCIOLOGIA'=>'SOCIOLOGIA'),array('prompt'=>'Seleccionar área','title'=>'Area', 'id'=>'area', 'onchange'=>'changeArea()'));?>
+                                                          </span>
+        <?php echo $form->error($model,'area'); ?>
   </div>
- <?php
-  if(!$model->isNewRecord){
+  <?php
+      
+      if(!$model->isNewRecord)
+      {
 
-    echo '<div class="row"id="comboDiscipline">';
-    echo $form->dropDownList($model,'discipline',array($model->discipline)/*,array('prompt'=>'Seleccionar disciplina')*/);
-    echo '</div>';
-    echo '<div class="row"id="comboSubdiscipline">';
-    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline)/*,array('prompt'=>'Seleccionar subdisciplina')*/);
-    echo '</div>';
+        echo '<div class="row"id="comboDiscipline">';
+        echo $form->dropDownList($model,'discipline',array($model->discipline));
+        echo '</div>';
+        echo '<div class="row"id="comboSubdiscipline">';
+        echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline));
+        echo '</div>';
 
-  }
-  else{
-    echo '<div class="row"id="comboDiscipline">';
-
-  echo '</div>';
-  echo '<div class="row"id="comboSubdiscipline">';
-
-  echo '</div>';
-  }
+      }
+      else
+      {
+        echo '<div class="row"id="comboDiscipline">';
+        echo '</div>';
+        echo '<div class="row"id="comboSubdiscipline">';
+        echo '</div>';
+      }
   ?>
 
-	<div class="row">
-		<?php echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo del libro')); ?>
-		<?php echo $form->error($model,'path'); ?>
-	</div>
+  <div class="row">      
+    <?php 
+      if(!$model->isNewRecord){
+        echo $form->FileField($model,'path',array('maxlength'=>100,'title'=>'archivo probatorio')); 
+        echo "<a href='".Yii::app()->request->baseUrl."/".$model->path."' target='_blank'><img src='".Yii::app()->request->baseUrl."/img/Acciones/desplegar.png'></a>";
+        echo $form->error($model,'path');
+      }else{
+           echo $form->fileField($model,'path',array('size'=>60,'maxlength'=>100,'title'=>'archivo probatorio'));
+          echo $form->error($model,'path');
+      }
+    ?>
+  </div>
+    
 
 	<div class="row">
 		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>250, 'placeholder'=>'Palabras claves','title'=>'Palabras Clave')); ?>
 		<?php echo $form->error($model,'keywords'); ?>
 	</div>
-
- 	<?php $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
+ 
+ 	<?php  $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
  			'targetClass'=>'authorsRegistry',
  			'addButtonLabel'=>'Agregar nuevo autor',
 		 ));
     ?>
     <div class="authorsRegistry ">
-	   <!-- <?php /* echo "<input type='hidden' name='idsBooks[]'>"; */ ?> -->
+     <?php  echo "<input type='hidden' name='idsBooks[]'>"; ?>
 
-		   <hr>
-		   <div class="row">
-			  <?php echo $form->textField($modelAuthor,'names',array('BooksAuthors'=>'names','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
-			  <?php echo $form->error($modelAuthor,'names');?>
-		   </div>
+       <hr>
+       <div class="row">
+        <?php echo $form->textField($modelAuthor,'names',array('name'=>'names[]','size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
+        <?php echo $form->error($modelAuthor,'names');?>
+       </div>
 
-		  <div class="row">
-			  <?php echo $form->textField($modelAuthor,'last_name1',array('BooksAuthors'=>'last_names1','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
-			  <?php echo $form->error($modelAuthor,'last_name1'); ?>
-		  </div>
+      <div class="row">
+        <?php echo $form->textField($modelAuthor,'last_name1',array('name'=>'last_names1[]','size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
+        <?php echo $form->error($modelAuthor,'last_name1'); ?>
+      </div>
 
-		   <div class="row">
-			  <?php echo $form->textField($modelAuthor,'last_name2',array('BooksAuthors'=>'last_names2','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
-			  <?php echo $form->error($modelAuthor,'last_name2'); ?>
-	       </div>
-		  <div class="row">
-		  <?php echo $form->textField($modelAuthor,'position',array('BooksAuthors'=>'positions','placeholder'=>'Posición','maxlength'=>11 , 'title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
-		  <?php echo $form->error($modelAuthor,'position'); ?>
-		  </div>
-		  <hr>
-   	</div>
+       <div class="row">
+        <?php echo $form->textField($modelAuthor,'last_name2',array('name'=>'last_names2[]','size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Apellido Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
+        <?php echo $form->error($modelAuthor,'last_name2'); ?>
+         </div>
+      <div class="row">
+      <?php echo $form->textField($modelAuthor,'position',array('name'=>'positions[]','placeholder'=>'Posición', 'title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
+      <?php echo $form->error($modelAuthor,'position'); ?>
+      </div>
+      <hr>
+    </div>
 
-	<?php
-		if(!$model->isNewRecord)
-		  foreach ($modelAuthors as $key => $value)
-		  { ?>
+  <?php
+    if(!$model->isNewRecord)
+      foreach ($modelAuthors as $key => $value)
+      { ?>
 
-				  <?php echo "<input type='hidden' value='".$value->id."' name='idsBooks[]'>"; ?>
+          <?php echo "<input type='hidden' value='".$value->id."' name='idsBooks[]'>"; ?>
 
-				  <div class="row">
-					  <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
-					  <?php echo $form->error($value,'names');?>
-				  </div>
+          <div class="row">
+            <?php echo $form->textField($value,'names',array('name'=>'names[]','value'=>$value->names,'size'=>30,'maxlength'=>30, 'placeholder'=>'Nombre(s)','title'=>'Nombre(s)','onKeyPress'=>'return lettersOnly(event)')); ?>
+            <?php echo $form->error($value,'names');?>
+          </div>
 
-				  <div class="row">
-					   <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
-					  <?php echo $form->error($value,'last_name1'); ?>
-				  </div>
+          <div class="row">
+             <?php echo $form->textField($value,'last_name1',array('name'=>'last_names1[]','value'=>$value->last_name1,'size'=>20,'maxlength'=>20, 'placeholder'=>'Apellido Paterno','title'=>'Apellido Paterno','onKeyPress'=>'return lettersOnly(event)')); ?>
+            <?php echo $form->error($value,'last_name1'); ?>
+          </div>
 
-				  <div class="row">
-					  <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
-					  <?php echo $form->error($value,'last_name2'); ?>
-				  </div>
-				  <div class="row">
-					  <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','maxlength'=>11,'title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
-					  <?php echo $form->error($value,'position'); ?>
-				  </div>
-				  
+          <div class="row">
+            <?php echo $form->textField($value,'last_name2',array('name'=>'last_names2[]','value'=>$value->last_name2,'size'=>20,'maxlength'=>20,'placeholder'=>'Apellido Materno','title'=>'Materno','onKeyPress'=>'return lettersOnly(event)')); ?>
+            <?php echo $form->error($value,'last_name2'); ?>
+          </div>
+          <div class="row">
+            <?php echo $form->textField($value,'position',array('name'=>'positions[]','value'=>$value->position,'placeholder'=>'Posición','title'=>'Posición. (Solo se aceptan numeros)','class'=>'numericOnly')); ?>
+            <?php echo $form->error($value,'position'); ?>
+          </div>
           <?php echo CHtml::button('Elminar',array('submit' => array('books/deleteAuthor','id'=>$modelAuthors[$key]->id,'idBooks'=>$model->id),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething')); ?>
-
-  	<?php } ?>
-            	 <hr>
-         		 </div>
-
+          <hr>
+           
+  <?php } ?>
 
 	<div class="row buttons">
 		 <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar': 'Modificar',array(
