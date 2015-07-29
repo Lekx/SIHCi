@@ -51,8 +51,8 @@ class ArticlesGuides extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_resume,title, start_page, end_page, article_type, magazine, area, discipline,subdiscipline,keywords', 'required'),
-			array('id_resume,edicion, publishing_year, volumen, volumen_no, start_page, end_page, copies_issued', 'numerical', 'integerOnly'=>true),
+			array('id_resume,title, start_page, end_page, article_type, magazine, keywords', 'required'),
+			array('id_resume, edicion, publishing_year, volumen, volumen_no, start_page, end_page, copies_issued', 'numerical', 'integerOnly'=>true),
 			array('editorial', 'length', 'max'=>80),
 			array('isbn', 'length', 'max'=>13),
 			array('article_type', 'length', 'max'=>25),
