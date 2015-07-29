@@ -249,8 +249,8 @@ function checkEmailNull($email, $email2){
 		if($users->type == "fisico"){
 			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$id));
 			$persons = Persons::model()->findByAttributes(array('id_user'=>$id));
-			// $address = Addresses::model()->findByAttributes(array('id'=>$curriculum->id_actual_address));
-
+			$address = Addresses::model()->findByAttributes(array('id'=>$curriculum->id_actual_address));
+			$sponsorship = Sponsorship::model()->findAllByAttributes(array('id_user_researcher'=>$id));
 
 			if($curriculum != null){
 
@@ -268,7 +268,7 @@ function checkEmailNull($email, $email2){
 				$software = Software::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
 				$postdegreeGraduates = PostdegreeGraduates::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
 				$researchAreas = ResearchAreas::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
-
+				$knowledgeApplication = KnowledgeApplication::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
 				$jobs = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
 
 				if($jobs != null)
@@ -292,17 +292,40 @@ function checkEmailNull($email, $email2){
 				}
 				if($projects != null){
 
-					// $projectsCoworkers = ProjectsCoworkers::model()->findAllByAttributes(array('id_project'=>$projects->id));
-					// $projectsFollowups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$projects->id));
-					// if($projectsCoworkers != null){
-					// 	$command->delete('projects_coworkers', 'id_project=:id_project', array(':id_project'=>$projects->id));
-					// 	$command = Yii::app()->db->createCommand();
-					// }
-					// if($projectsFollowups != null){
-					// 	$command->delete('projects_followups', 'id_project=:id_project', array(':id_project'=>$projects->id));
-					// 	$command = Yii::app()->db->createCommand();
-					// }
+					foreach ($projects as $key => $value) {
+						$projectsCoworkers = ProjectsCoworkers::model()->findAllByAttributes(array('id_project'=>$projects[$key]->id));
+						$projectsCommittee = ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$projects[$key]->id));
+						$projectsFollowups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$projects[$key]->id));
 
+						if($projectsCoworkers != null){
+							$command->delete('projects_coworkers', 'id_project=:id_project', array(':id_project'=>$projects[$key]->id));
+							$command = Yii::app()->db->createCommand();
+						}
+
+						if($projectsCommittee != null){
+							$command->delete('projects_committee', 'id_project=:id_project', array(':id_project'=>$projects[$key]->id));
+							$command = Yii::app()->db->createCommand();
+						}
+
+					 if($projectsFollowups != null){
+					 	$command->delete('projects_followups', 'id_project=:id_project', array(':id_project'=>$projects[$key]->id));
+					 	$command = Yii::app()->db->createCommand();
+					 }
+					 if($sponsorship != null){
+
+						 foreach ($sponsorship as $key => $value) {
+							 $sponsoredProjects = SponsoredProjects::model()->findByAttributes(array('id_project'=>$projects[$key]->id));
+
+							 if($sponsoredProjects != null){
+								 $command->delete('sponsored_projects', 'id=:id', array(':id'=>$sponsoredProjects->id));
+								 $command = Yii::app()->db->createCommand();
+							 }
+
+						 }
+						 $command->delete('sponsorship', 'id_user_sponsorer=:id_user_sponsorer', array(':id_user_sponsorer'=>$id));
+						 $command = Yii::app()->db->createCommand();
+					 }
+					}
 					$command->delete('projects', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
 					$command = Yii::app()->db->createCommand();
 				}
@@ -354,12 +377,17 @@ function checkEmailNull($email, $email2){
 					$command->delete('certifications', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
 					$command = Yii::app()->db->createCommand();
 				}
+				if($knowledgeApplication != null){
+					$command->delete('knowledge_application', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
 
 				$curriculum->delete();
 			}
 
-			if($address != null)
+			if($address != null){
 					$address->delete();
+				}
 
 			if($persons != null){
 				$emails = Emails::model()->findAllByAttributes(array('id_person'=>$persons->id));
