@@ -110,14 +110,16 @@ class ChartsController extends Controller
 				$jim = array();
 				$faa = array();
 				$other = array();
-				$totalUsers = array("Total");
+				$totalUsers = array();
+				$totales = array("Total");
 			foreach($results AS $key => $value){
 				array_push($totalUsers, (int)$value["totalUsers"]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($totales, (int)$value["totalUsers"]);
 			}
-			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
 
 			}else{
 
@@ -141,7 +143,7 @@ class ChartsController extends Controller
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-			$total = array("Total");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
@@ -218,14 +220,16 @@ class ChartsController extends Controller
 			$jim = array();
 			$faa = array();
 			$other = array();
-			$totalUsers = array("Total");
+			$totalUsers = array();
+			$totales = array("Total");
 			foreach($results AS $key => $value){
 				array_push($totalUsers, (int)$value["totalUsers"]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($totales, (int)$value["totalUsers"]);
 			}
-			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
 
 			}else{
 
@@ -249,7 +253,7 @@ class ChartsController extends Controller
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-			$total = array("Total");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
@@ -311,14 +315,16 @@ public function actionEfficiencyTotal(){
 			$jim = array();
 			$faa = array();
 			$other = array();
-			$totalUsers = array("Total");
+			$totalUsers = array();
+			$totales = array("Total");
 			foreach($results AS $key => $value){
 				array_push($totalUsers, (int)$value["totalUsers"]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalUsers"]-((int)$value["faa"]+(int)$value["jim"])));
+				array_push($totales, (int)$value["totalUsers"]);
 			}
-			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"totalUsers":'.json_encode($totalUsers).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
 
 			}else{
 
@@ -343,7 +349,7 @@ public function actionEfficiencyTotal(){
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-			$total = array("Total");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
@@ -408,14 +414,15 @@ public function actionEfficiencyTotal(){
 			$jim = array();
 			$faa = array();
 			$other = array();
-			$totalBooks = array("Total");
+			$totalBooks = array();
+			$totales = array("Total");
 			foreach($results AS $key => $value){
 				array_push($totalBooks, (int)$value["totalBooks"]);
 				array_push($jim, (int)$value["jim"]);
 				array_push($faa, (int)$value["faa"]);
 				array_push($other, ((int)$value["totalBooks"]-((int)$value["faa"]+(int)$value["jim"])));
 			}
-			echo '{"totalBooks":'.json_encode($totalBooks).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+			echo '{"totalBooks":'.json_encode($totalBooks).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
 			
 			}else{
 
@@ -440,7 +447,7 @@ public function actionEfficiencyTotal(){
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-			$total = array("Total");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
@@ -501,14 +508,16 @@ public function actionEfficiencyTotal(){
 					$jim = array();
 					$faa = array();
 					$other = array();
-					$totalBooks = array("Total");
+					$totalBooks = array();
+					$totales = array("Total");
 				foreach($results AS $key => $value){
 					array_push($totalBooks, (int)$value["totalChapters"]);
 					array_push($jim, (int)$value["jim"]);
 					array_push($faa, (int)$value["faa"]);
 					array_push($other, ((int)$value["totalChapters"]-((int)$value["faa"]+(int)$value["jim"])));
+					array_push($totales, (int)$value["totalChapters"]);
 				}
-				echo '{"totalBooks":'.json_encode($totalBooks).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+				echo '{"totalBooks":'.json_encode($totalBooks).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
 				
 			}else{
 			$query = '
@@ -532,7 +541,7 @@ public function actionEfficiencyTotal(){
 			$faa = array();
 			$other = array();
 			$mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-			$total = array("Total");
+			$total = array();
 			foreach($results AS $key => $value){
 				array_push($months, $mos[$value["months"]]);
 				array_push($jim, (int)$value["jim"]);
@@ -594,14 +603,16 @@ public function actionEfficiencyTotal(){
    	$jim = array();
    	$faa = array();
    	$other = array();
-	$totalArticles = array("Total");   
+	$totalArticles = array();  
+	$totales = array("Total"); 
 	foreach($results AS $key => $value){
     array_push($totalArticles, (int)$value["totalArticles"]);
     array_push($jim, (int)$value["jim"]);
     array_push($faa, (int)$value["faa"]);
     array_push($other, ((int)$value["totalArticles"]-((int)$value["faa"]+(int)$value["jim"])));
+    array_push($totales, (int)$value["totalArticles"]);
 	}
-   	echo '{"totalArticles":'.json_encode($totalArticles).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).'}';
+   	echo '{"totalArticles":'.json_encode($totalArticles).',"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totales":'.json_encode($totales).'}';
 
 	}else{
 
@@ -626,7 +637,7 @@ public function actionEfficiencyTotal(){
    $faa = array();
    $other = array();
    $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-   $total = array("Total");
+   $total = array();
    foreach($results AS $key => $value){
     array_push($months, $mos[$value["months"]]);
     array_push($jim, (int)$value["jim"]);
@@ -780,14 +791,16 @@ if($_POST["years"] == "total"){
    $jim = array();
    $faa = array();
    $other = array();
-   $totals = array("Total");
+   $totals = array();
+   $totales = array("Total","Total","Total");
    foreach($results AS $key => $value){
     array_push($totals, (int)$value["totals"]);
     array_push($jim, (int)$value["jim"]);
     array_push($faa, (int)$value["faa"]);
     array_push($other, ((int)$value["totals"]-((int)$value["faa"]+(int)$value["jim"])));
+    array_push($totales, (int)$value["totals"]);
    }
-   echo '{"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totals":'.json_encode($totals).'}';
+   echo '{"jim":'.json_encode($jim).',"faa":'.json_encode($faa).',"other":'.json_encode($other).',"totals":'.json_encode($totals).',"totales":'.json_encode($totales).'}';
 
 }else{
 
@@ -858,7 +871,7 @@ else
    $faa = array();
    $other = array();
    $mos = array("dummy","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-   $total = array("Total");
+   $total = array();
    foreach($results AS $key => $value){
     array_push($months, $mos[$value["months"]]);
     array_push($jim, (int)$value["jim"]);
