@@ -66,7 +66,7 @@ $('.search-form form').submit(function(){
 		array(
 			'name'=>'is_sponsored',
 			'type'=>'html','id'=>'is_sponsored','value'=>'CHtml::encode($data->is_sponsored)',
-			'value'=>'$data->is_sponsored == "1" ? "Si" : "No"',
+			'value'=>'$data->is_sponsored == "1" ? "Si" : "No" ',
 
 		),
 		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'CHtml::encode($data->title)'),
