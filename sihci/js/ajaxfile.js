@@ -1,4 +1,8 @@
  function send(form, actionUrl, id, redirectUrl, extras, extraCall) {
+$(".errorh2 span").html("Corrija el error y favor de intentar de nuevo.");
+
+if(extras == "checkAuths")
+  checkAuths(form);
 
 
    $('.tooltipster-base').hide();
@@ -75,4 +79,45 @@
      processData: false
    });
    return false;
+
+ }
+
+function capitalise(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
+ function checkAuths(formid){
+  var formid = capitalise(formid.split("-")[0]);
+  if(formid == "articles")
+    formid == "artGuides";
+
+  alert(formid+" caca");
+
+    var names = $("#names").val();
+    var ln1 = $("#last_names1").val();
+    var ln2 = $("#last_names2").val();
+    var pos = $("#positions").val();
+    
+    if(names == "") {
+      $("#"+formid+"Authors_names_em_").html("nombre(s) no puede ser nulo.");
+      $("#"+formid+"Authors_names_em_:first").show();
+    }
+   if(ln1 == ""){
+    $("#"+formid+"Authors_last_name1_em_").html("Apellido paterno no puede ser nulo.");
+      $("#"+formid+"Authors_last_name1_em_:first").show();
+   }
+    if(ln2 == ""){
+      $("#"+formid+"Authors_last_name2_em_").html("Apellido materno no puede ser nulo.");
+      $("#"+formid+"Authors_last_name2_em_:first").show();
+
+    }
+    if(pos == ""){
+      $("#"+formid+"Authors_position_em_").html("Posición del autor no puede ser nulo.");
+      $("#"+formid+"Authors_position_em_:first").show();
+  
+    }
+          
+ 
+
+
  }

@@ -6,7 +6,8 @@
         <meta name="language" content="en">
         <meta charset="utf-8">
         <!-- blueprint CSS framework -->
-
+        <link rel="shortcut icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl;?>/favicon.ico"/>
+        <link rel="shortcut icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl;?>/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
         <!--[if lt IE 8]>
