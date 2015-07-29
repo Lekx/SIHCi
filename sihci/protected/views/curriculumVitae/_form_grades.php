@@ -279,6 +279,7 @@
   </div>
 
 </div>
+<hr>
 	<?php
 	$count = 1;
 	echo $form->errorSummary($model);
