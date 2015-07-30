@@ -115,7 +115,7 @@ class DirectedThesis extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 		$criteria=new CDbCriteria;
 		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
-		
+
 		$criteria->condition='id_curriculum = '.$curriculumId;
 		$criteria->order = 'title ASC';
 		if($this->searchValue)
@@ -123,7 +123,7 @@ class DirectedThesis extends CActiveRecord
 			$criteria->addCondition("id LIKE CONCAT('%', :searchValue , '%') OR title LIKE CONCAT('%', :searchValue ,'%') OR author LIKE CONCAT('%', :searchValue , '%') OR conclusion_date LIKE CONCAT('%', :searchValue , '%') OR sector LIKE CONCAT('%', :searchValue , '%') OR grade LIKE CONCAT('%', :searchValue , '%') OR organization LIKE CONCAT('%', :searchValue , '%') OR area LIKE CONCAT('%', :searchValue , '%') OR discipline LIKE CONCAT('%', :searchValue , '%') OR subdiscipline LIKE CONCAT('%', :searchValue , '%')  ");
 			$criteria->params = array('searchValue'=>$this->searchValue);
 		}
-		
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

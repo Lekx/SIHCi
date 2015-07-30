@@ -4,10 +4,10 @@
 /* @var $form CActiveForm */
 ?>
 <script type="text/javascript">
-
+$(document).ready(function() {
   $('.lettersAndNumbers').bind('keyup input',function(){
     var input = $(this);
-    input.val(input.val().replace(/[^a-z0-9A-ZñÑ´'ÁáÉéÍíÓóÚú ]/g,'') );
+    input.val(input.val().replace(/[^A-Z0-9]/g, ''));
   });
 
     function lettersOnly(e) {
@@ -44,6 +44,7 @@
       if (numbers.indexOf(tecla) == -1 && !tecla_especial)
         return false;
     }
+  });
 </script>
 
 
