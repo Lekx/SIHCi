@@ -5,6 +5,7 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+$sessionTimeout = 300;
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'SIHCi',
@@ -46,18 +47,18 @@ return array(
 
 	),
 
+		// application components
+   'params'=>require(dirname(__FILE__).'/params.php'),
 
-	// application components
 	'components'=>array(
-		/*
-	   'session' => array(
+		'session' => array(
 	   	  'autoStart'=>false,
 	      'class' => 'CDbHttpSession',
-	      'timeout' => 300,
+	      'timeout' => $sessionTimeout,
 
-	   ),*/
+	   ),
 
-		'authManager'=>array(
+	 	'authManager'=>array(
 				'class'=>'CDbAuthManager',
 				'connectionID'=>'db',
 				'session'=> array(
