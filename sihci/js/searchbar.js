@@ -63,6 +63,8 @@ $(document).ready(function() {
 
 
   $("#search").click(function() {
+    $search = $("#search").val();
+    if($search != "")
     window.location = yii.urls.searchBarResults + searchKey;
   });
 

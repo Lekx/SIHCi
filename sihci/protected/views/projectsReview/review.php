@@ -282,7 +282,7 @@ if($model->status != "MODIFICAR"){
 
 	//$userRols = $agreementRules[$evaluationStep]["userType"];
 
-		echo $agreementStep;
+
 		if($agreementStep > 0){
 			//BOTONES DUMMY DE REVISAR
 			if($agreementRules[$agreementStep]["userType"] == $userRol && ($agreementStep == 1 || $agreementStep == 2 || $agreementStep == 10 || $agreementStep == 11 || $agreementStep == 12)){
@@ -348,6 +348,7 @@ if($model->status != "MODIFICAR"){
 
 		// asignación de folio, comités y aprobación en paso 2.
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
+
 				if($model->folio != -1 && count($commsCheck)>0){
 					echo "<div class='row' style='margin-left: 30px !important'>";
 						echo " ".CHtml::htmlButton('Aprobar',array(
@@ -423,15 +424,15 @@ if($model->status != "MODIFICAR"){
 					));
 					?>
 					</div>
-					<?
+					<?php
 					$this->endWidget();
 
 				}else{
+
 					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,));
 						?>
 						<div class="row">
-							<?php echo $form->labelEx($model,'folio'); ?>
-							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
+							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'placeholder'=>'Número de folio','title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
 							<?php echo $form->error($model,'folio'); ?>
 						</div>
 						<?php

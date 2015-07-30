@@ -87,7 +87,6 @@ function capitalise(string) {
 }
 
  function checkAuths(formid){
-
   var realForm = formid;
   var formid = capitalise(formid.split("-")[0]);
   if(formid == "Articles")
@@ -120,8 +119,6 @@ function capitalise(string) {
       $("#"+formid+"_position_em_:first").show();
   
     }
-          
- 
 
 
  }

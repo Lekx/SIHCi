@@ -25,6 +25,7 @@ $(document).ready(function(){
     });
 });
 </script>
+
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(

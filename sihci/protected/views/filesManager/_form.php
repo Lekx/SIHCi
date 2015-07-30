@@ -32,6 +32,7 @@ Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' );
 					   <option value="displayTransparencia">Transparencia</option>
 					   <option value="hospitalUnitJimEthicsCommittee">Comités</option>
 					   <option value="locationMapOfOfficeSGEIOPD">Plano de ubicación SGEI OPD</option>
+					 </optgroup>
 
 				  	<optgroup label="CVE-HC">
 				   		<option value="cveHc">CVE-HC</option>
