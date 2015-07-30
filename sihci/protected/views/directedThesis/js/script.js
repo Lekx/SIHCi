@@ -187,7 +187,7 @@ if(areaValue =="SOCIOLOGIA"){
 
 
     var newDiscipline ="<span class='plain-select'><select id='DirectedThesis_discipline' title='Disciplina.' name='DirectedThesis[discipline]' onchange='changeDiscipline()'>";
-    newDiscipline+="<option>Seleccionar Disciplina</option>";
+    newDiscipline+="<option value=''>Seleccionar Disciplina</option>";
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
     }
@@ -212,10 +212,10 @@ if(areaValue =="SOCIOLOGIA"){
   function changeDiscipline(){
   var disciplineValue = $("#DirectedThesis_discipline option:selected").val();
 
-    if(disciplineValue =="Seleccionar Disciplina"){
+    /*if(disciplineValue =="Seleccionar Disciplina"){
       var seleccionarDisciplina ="";
       disciplineValue = aplicacionesDeLaLogica;
-    }
+    }*/
 
     if(disciplineValue =="LOGICA DEDUCTIVA"){
       var logicaDeductiva = ["ALGEBRA DE BOOLE",
@@ -3790,7 +3790,7 @@ if(areaValue =="SOCIOLOGIA"){
      disciplineValue = otrasEspecialidadesSociologia;
   }
     var newSubdiscipline ="<span class='plain-select'><select id='DirectedThesis_subdiscipline' title='Subdisciplina.' name='DirectedThesis[subdiscipline]'>";
-    newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
+    newSubdiscipline+="<option value=''>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
     }
@@ -4001,7 +4001,7 @@ function changeGetArea(){
 
 
       var newDiscipline ="<span class='plain-select'><select id='getComboDiscipline' name='getDiscipline[]' onchange='changeGetDiscipline()'>";
-      newDiscipline+="<option>Seleccionar disciplina</option>";
+      newDiscipline+="<option value=''>Seleccionar disciplina</option>";
       for (var item in areaValue) {
           newDiscipline +="<option>"+areaValue[ item ]+"</option>";
       }
@@ -4013,10 +4013,10 @@ function changeGetArea(){
 function changeGetDiscipline(){
   var disciplineValue = $("#getComboDiscipline option:selected").val();
 
-    if(disciplineValue =="Seleccionar disciplina"){
+    /*if(disciplineValue =="Seleccionar disciplina"){
       var seleccionarDisciplina ="";
       disciplineValue = aplicacionesDeLaLogica;
-    }
+    }*/
 
     if(disciplineValue =="LOGICA DEDUCTIVA"){
       var logicaDeductiva = ["ALGEBRA DE BOOLE",
@@ -7591,7 +7591,7 @@ function changeGetDiscipline(){
      disciplineValue = otrasEspecialidadesSociologia;
   }
     var newSubdiscipline ="<span class='plain-select'><select id='getSubdiscipline' name='getSubdiscipline[]'>";
-    newSubdiscipline+="<option>Seleccionar subdisciplina</option>";
+    newSubdiscipline+="<option value=''>Seleccionar subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
     }
@@ -7606,6 +7606,7 @@ function changeGetDiscipline(){
 function changeSector()
  {
     var sectorValue = $("#sector option:selected").val();
+
      if(sectorValue =="Centros públicos de investigación")
      {
        var investigationCenter = [
@@ -11086,7 +11087,7 @@ function changeSector()
 
 
          var newOrganization ="<span class='plain-select'><select id='DirectedThesis_organization' title='Organización.' name='DirectedThesis[organization]' onchange='changeSecondLevel()'>";
-           newOrganization+="<option>Seleccionar Organización</option>";
+           newOrganization+="<option value=''>Seleccionar Organización</option>";
 
             for (var item in sectorValue)
                 newOrganization +="<option>"+sectorValue[ item ]+"</option>";
@@ -11111,10 +11112,10 @@ function changeSector()
  function changeSecondLevel(){
   var organizationValue = $("#DirectedThesis_organization option:selected").val();
 
-    if(organizationValue =="Seleccionar Organización"){
+    /*if(organizationValue =="Seleccionar Organización"){
       var seleccionarOrganization =[" "];
       organizationValue = seleccionarOrganization;
-    }
+    }*/
      if(organizationValue =="A&C BIOTESLA SC"){
       var biotesla =[" "];
       organizationValue = biotesla;
@@ -29553,7 +29554,7 @@ function changeSector()
     }
 
     var newSecondLevel ="<span class='plain-select'><select id='DirectedThesis_second_level' title='Segundo nivel' name='DirectedThesis[second_level]'>";
-    newSecondLevel+="<option>Seleccionar Segundo nivel</option>";
+    newSecondLevel+="<option value=''>Seleccionar Segundo nivel</option>";
     for (var item in organizationValue) {
         newSecondLevel +="<option>"+organizationValue[ item ]+"</option>";
     }
@@ -29580,7 +29581,7 @@ function changeSector()
 
 function changeGetSector()
  {
-    var sectorValue = $("#sector option:selected").val();
+    var sectorValue = $("#sector").val();
      if(sectorValue =="Centros públicos de investigación")
      {
        var investigationCenter = [
@@ -33061,35 +33062,24 @@ function changeGetSector()
  
  
          var newOrganization ="<span class='plain-select'><select id='getSelectOrganization' title='Organización.' name='getOrganization[]' onchange='changeGetSecondLevel()'>";
-           newOrganization+="<option>Seleccionar Organización</option>";
+           newOrganization+="<option value=''>Seleccionar Organización</option>";
             
             for (var item in sectorValue)
                 newOrganization +="<option>"+sectorValue[ item ]+"</option>";
             
         newOrganization+="</select></span>";
+
         $("#getSelectOrganization").html(newOrganization);
 
-            $('#DirectedThesis_organization').tooltipster({
-                position: 'right',
-                trigger: 'custom',
-                })
-                  .on( 'focus', function() {
-                  $( this ).tooltipster( 'show' );
-                  $('.errorMessage').hide();
-                  })
-                .on( 'blur', function() {
-                $( this ).tooltipster( 'hide' );
-                });
-    
 }
 
  function changeGetSecondLevel(){
-  var organizationValue = $("#DirectedThesis_organization option:selected").val();
+  var organizationValue = $("#getSelectOrganization option:selected").val();
 
-    if(organizationValue =="Seleccionar Organización"){
+    /*if(organizationValue =="Seleccionar segundo nivel"){
       var seleccionarOrganization =[" "];
       organizationValue = seleccionarOrganization;
-    }
+    }*/
      if(organizationValue =="A&C BIOTESLA SC"){
       var biotesla =[" "];
       organizationValue = biotesla;
@@ -51538,7 +51528,7 @@ function changeGetSector()
     }
 
     var newSecondLevel ="<span class='plain-select'><select id='getSecond_level' title='Segundo nivel' name='getSecond_level[]'>";
-    newSecondLevel+="<option>Seleccionar Segundo nivel</option>";
+    newSecondLevel+="<option value=''>Seleccionar Segundo nivel</option>";
     for (var item in organizationValue) {
         newSecondLevel +="<option>"+organizationValue[ item ]+"</option>";
     }
@@ -51547,17 +51537,6 @@ function changeGetSector()
 
     $("#getSelectSecondLevel").html(newSecondLevel);
 
-      $('#DirectedThesis_second_level').tooltipster({
-                position: 'right',
-                trigger: 'custom',
-                })
-                  .on( 'focus', function() {
-                  $( this ).tooltipster( 'show' );
-                  $('.errorMessage').hide();
-                  })
-                .on( 'blur', function() {
-                $( this ).tooltipster( 'hide' );
-                });
 }
 
 
