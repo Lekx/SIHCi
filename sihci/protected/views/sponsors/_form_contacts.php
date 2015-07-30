@@ -4,6 +4,49 @@
 /* @var $form CActiveForm */
 ?>
 
+<script type="text/javascript">
+
+  $('.lettersAndNumbers').bind('keyup input',function(){
+    var input = $(this);
+    input.val(input.val().replace(/[^a-z0-9A-ZñÑ´'ÁáÉéÍíÓóÚú ]/g,'') );
+  });
+
+    function lettersOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
+    function numericOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      numbers = " 1234567890";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (numbers.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
+</script>
+
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -19,7 +62,7 @@
 	<hr>
 		<?php
 		echo "<div class='row'>";
-		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','onKeypress'=>'return lettersOnly(event)','name' => 'fullnames[]','size' => 60, 'maxlength' => 30));
+		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 30,'onKeypress'=>'return lettersOnly(event)'));
 		echo $form->error($model, 'fullname');
 		echo "</div>";
 ?>
@@ -43,7 +86,7 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 foreach ($fullname as $value) {
 	echo "<input type='hidden' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
 	echo "<div class='row'>";
-	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 30));
+	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 30, 'disabled'=>'true'));
 	echo $form->error($model, 'fullname');
 	echo "</div>";
 	echo CHtml::link('Eliminar',array('sponsors/deleteContacts','id'=>$value['id']),array('class'=>'deleteSomething'));

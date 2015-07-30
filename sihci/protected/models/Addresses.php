@@ -77,15 +77,15 @@ class Addresses extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'country' => 'Pais',
-			'zip_code' => 'Codigo Postal',
+			'zip_code' => 'Codigo postal',
 			'state' => 'Estado',
 			'delegation' => 'Delegación',
 			'city' => 'Municipio',
 			'town' => 'Ciudad',
 			'colony' => 'Colonia',
 			'street' => 'Calle',
-			'external_number' => 'Numero Exterior',
-			'internal_number' => 'Numero Interior',
+			'external_number' => 'Numero exterior',
+			'internal_number' => 'Numero interior',
 		);
 	}
 

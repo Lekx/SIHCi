@@ -249,7 +249,7 @@
   <div class="row buttons">
 
     <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
-                'onclick'=>'send("books-chapters-form", "booksChapters/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","booksChapters/admin","");',
+                'onclick'=>'send("books-chapters-form", "booksChapters/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","booksChapters/admin","checkAuths");',
                  //'id'=> 'post-submit-btn',
                 'class'=>'savebutton',
             ));

@@ -59,7 +59,7 @@ class SponsorsContacts extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_sponsor' => 'Id Sponsor',
-			'fullname' => 'Nombre Completo',
+			'fullname' => 'Nombre completo',
 		);
 	}
 

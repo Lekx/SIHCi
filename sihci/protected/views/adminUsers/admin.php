@@ -89,7 +89,6 @@ $this->renderPartial('_search',array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'users-grid',
 	'dataProvider' => $model->search(),
-	//'filter'=>$model,
 	'columns' => array(
 		array(
 			'header' => '<b>Nombre Completo</b>',

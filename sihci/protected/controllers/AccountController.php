@@ -42,37 +42,37 @@
 			);
 	}
 
-	function checkEmail($email2, $email22){
-
+  function checkEmailDifferent($email2, $email22){
 		if ($email2 != $email22){
-			echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'Los correos electrónicos no coinciden.'));
-			Yii::app()->end();
 			return false;
-		}
-		else if($email2 == '' || $email22 == ''){
-      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'Favor de llenar los campos de correo.'));
-      Yii::app()->end();
-      return false;
-		}else{
-      return true;
-	}
-}
-
-	function checkPassword($password2, $password22){
-		if ($password2 != $password22){
-      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'Las contraseñas no coinciden.'));
-      Yii::app()->end();
-      return false;
-		}
-		else if($password2 == '' || $password22 == ''){
-      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'Favor de llenar los campos de contraseñas.'));
-      Yii::app()->end();
-      return false;
-		}else{
-
+		}else
 			return true;
-	}
-}
+		}
+
+function checkEmailNull($email2, $email22){
+	if($email2 == '' || $email22 == ''){
+		return false;
+	}else
+			return true;
+		}
+
+
+	function checkPasswordDifferent($password2, $password22){
+		if ($password2 != $password22){
+      return false;
+		}else
+			return true;
+
+
+		}
+
+	function checkPasswordNull($password2, $password22){
+		if($password2 == '' || $password22 == ''){
+      return false;
+		}else
+			return true;
+
+		}
 
 	public function actionInfoAccount(){
 			$this->layout = 'system';
@@ -87,40 +87,26 @@
 			));
 	}
 
-	public function checkEmailExist($email){
-		if ($this->currentemail != $email){
-      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'El correo electronico no es de la cuenta.'));
-      Yii::app()->end();
+	public function checkEmailExist($email2){
+		if ($this->currentemail != $email2){
       			return false;
 		}
-		else{
-
+		else
 			return true;
 		}
-	}
-
-		public function checkPasswordExist($password){
-			if ($this->currentpassword != sha1(md5(sha1($password)))){
-        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'La contraseña no es de la cuenta.'));
-        Yii::app()->end();
-        				return false;
-		}
-			else{
-
+		public function checkPasswordExist($password2){
+			if ($this->currentpassword != sha1(md5(sha1($password2)))){
+        	return false;
+			}else
 				return true;
-		}
-}
+			}
 
-		public function checkEmailValid($email){
-		  	if (!preg_match("/^([a-zA-Z0-9._]+)@([a-zA-Z0-9.-]+).([a-zA-Z]{2,4})$/",$email)){
-          echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error','subMessage'=>'El correo electronico no es valido.'));
-          Yii::app()->end();
+		public function checkEmailValid($email2){
+		  	if (!preg_match("/^([a-zA-Z0-9._]+)@([a-zA-Z0-9.-]+).([a-zA-Z]{2,4})$/",$email2)){
           return false;
-		  } else {
-
+		  } else
 		      return true;
 		  }
-}
 
 	public function actionActivateAccount($key){
 
@@ -153,7 +139,9 @@
 		$details = Users::model()->findByPk($iduser);
 		$this->currentemail = $details->email;
 		if(isset($_POST['Account'])){
-      if($this->checkEmail($_POST['Account']['email2'],$_POST['Account']['email22']) && $this->checkEmailValid($_POST['Account']['email2'], $_POST['Account']['email22'])){
+      if($this->checkEmailDifferent($_POST['Account']['email2'],$_POST['Account']['email22'])){
+      if($this->checkEmailValid($_POST['Account']['email2'], $_POST['Account']['email22'])){
+      if($this->checkEmailNull($_POST['Account']['email2'], $_POST['Account']['email22'])){
         if($details->updateByPk($iduser,array('email'=>$_POST['Account']['email2']))){
           $details->email = $_POST['Account']['email2'];
 					$section = "Cuenta";
@@ -164,8 +152,19 @@
           Yii::app()->user->logout();
           Yii::app()->end();
         }
+      }else{
+        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El correo ingresado no tiene un formato valido. "ejemplo@ejemplo.com"'));
+        Yii::app()->end();
+      }
+    }else{
+      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Llene los campos de correo electronico.'));
+      Yii::app()->end();
+    }
+			}else{
+        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no coinciden.'));
+        Yii::app()->end();
 
-			}
+      }
 		}
 		$this->render('_updateEmail',array(
 			'details'=>$details,
@@ -185,7 +184,9 @@
 		$this->currentpassword = $details->password;
 		if(isset($_POST['Account']))
 		{
-			if($this->checkPasswordExist($_POST['Users']['password']) && $this->checkPassword($_POST['Account']['password2'],$_POST['Account']['password22'])){
+			if($this->checkPasswordExist($_POST['Users']['password'])){
+      if($this->checkPasswordDifferent($_POST['Account']['password2'],$_POST['Account']['password22'])){
+      if($this->checkPasswordNull($_POST['Account']['password2'],$_POST['Account']['password22'])){
         $details->password=sha1(md5(sha1($_POST['Account']['password2'])));
 			if($details->updateByPk($iduser,array('password'=>sha1(md5(sha1($_POST['Account']['password2'])))))){
 					$section = "Cuenta";
@@ -196,7 +197,18 @@
           Yii::app()->user->logout();
           Yii::app()->end();
 				}
-			}
+      }else{
+        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Llene los campos de contraseña.'));
+        Yii::app()->end();
+      }
+      }else{
+        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Las contraseñas no coinciden.'));
+        Yii::app()->end();
+      }
+    }else{
+      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'La contraseña no es de la cuenta.'));
+      Yii::app()->end();
+    }
 		}
 		$this->render('_updatePassword',array(
 			'details'=>$details,
