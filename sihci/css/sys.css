@@ -2420,10 +2420,9 @@ div.pager span.active
 {
     padding-left: 19%;
 }
-.totalTables
-{
-    margin-top: -20px;
-    margin-left: 140px;
+.totalTables{
+  margin-left: 45px;
+  margin-top: -20px;
 }
 #projectsMenu a
 {
