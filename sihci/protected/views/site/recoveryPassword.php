@@ -21,7 +21,7 @@
 			<div class="inputlog">
 				<div class="inner-addon right-addon">
 					 <i class="glyphicon glyphicon-envelope"></i>
-					<?php echo $form->textField($model,'email', array('placeholder'=>"Email..",'title'=>'Favor de ingresar su correo de registro.')); ?>
+					<?php echo $form->textField($model,'email', array('placeholder'=>"Correo Electronico..",'title'=>'Favor de ingresar su correo de registro.')); ?>
 					<?php //echo $form->error($model,'email'); ?>
 
 				</div>
@@ -34,9 +34,9 @@
 					'data'=> 'js:$("#recovery-form").serialize()+ "&ajax=recovery-form"',
 					'success'=>'js:function(response){
 								if(response == "404"){
-											
+
 											$(".errordiv").show();
-					         			
+
 								}
 								else{
 

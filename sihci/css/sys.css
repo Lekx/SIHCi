@@ -2,7 +2,6 @@
 @font-face
 {
     font-family: 'Caviar_Dreams_Bold';
-
     src: url('../fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf');
 }
 @font-face
@@ -84,7 +83,7 @@ select
     z-index: 999 !important;
 
     width: 12%;
-        height: 170px;
+    height: 170px;
 
     background-image: url('../img/user.svg');
     background-repeat: no-repeat;
@@ -94,7 +93,7 @@ select
 .headerconteinerF #perfil
 {
     width: 100%;
-        height: 190px;
+    height: 190px;
     margin-top: -20px;
 }
 .headerconteiner2
@@ -826,7 +825,7 @@ thead th
 .errorh2,
 .successh2
 {
-    padding-top: 40px;
+    padding-top: 30px;
 
     text-align: center;
 }
@@ -1804,7 +1803,8 @@ li.menulis.now
     color: white;
 }
 .fullnamed h6
-{margin-right: 10px;
+{
+    margin-right: 10px;
     margin-left: 10px;
 }
 .typelabe,
@@ -1840,7 +1840,12 @@ li.menulis.now
 }
 .savepro
 {
-    background-color: #0a324f !important;
+    font-size: 20px;
+    width: 120px !important;
+    height: 40px;
+    opacity: 1!important;
+    color: white;
+    background-color:gray !important;
 }
 
 
@@ -2362,12 +2367,14 @@ div.pager span.active
 }
 .menucon
 {
-    height: 25px;
     z-index: -1 !important;
+
+    height: 25px;
 }
 .menucv
 {
     display: inline-block;
+
     width: calc(17% - 5px);
     height: 25px;
     padding-left: 20px;
@@ -2377,25 +2384,26 @@ div.pager span.active
 }
 .menucv::after
 {
-  position: absolute;
-  left: 12%;
+    position: absolute;
+    left: 12%;
 
-  width: 0;
-  height: 10px;
-  margin-top: 10px;
+    width: 0;
+    height: 10px;
+    margin-top: 10px;
 
-  content: '';
+    content: '';
 
-  border-width: 25px;
-  border-style: solid;
-  border-color: #00b9c0 transparent transparent transparent;
-
+    border-width: 25px;
+    border-style: solid;
+    border-color: #00b9c0 transparent transparent transparent;
 }
 
 .bread
 {
-    display: inline-block;
     z-index: -1 !important;
+
+    display: inline-block;
+
     width: 82.37%;
     height: 25px;
     padding-left: 20px;
@@ -2412,16 +2420,57 @@ div.pager span.active
 {
     padding-left: 19%;
 }
-.totalTables{
-  margin-left: 140px;
-  margin-top: -20px;
+.totalTables
+{
+    margin-top: -20px;
+    margin-left: 140px;
 }
 #projectsMenu a
 {
-  text-decoration: none;
+    text-decoration: none;
 }
 .projectRow
 {
-  padding: 5px;
-  font-size: .9em;
+    font-size: .9em;
+
+    padding: 5px;
+}
+#logoutlable a,
+#logoutlable a:hover
+{
+    text-decoration: none !important;
+
+    color: white !important;
+}
+
+.commWrapper{
+  width:100%;
+  position: relative;
+  overflow: hidden;
+  padding:0 !important;
+  margin:0 !important;
+}
+.commWrapper .row{
+  margin:5px !important;
+}
+
+.comm{
+  width:270px;
+  min-height: 150px;
+  max-height: 200px;
+  float:left;
+  border:1px solid #ddd;
+  padding:5px;
+  padding-left:15px;
+  margin:5px;
+}
+.row strong
+{
+  font-family: 'Caviar_Dreams_Bold' !important;
+  color: #00B9C0;
+}
+.sponsorTag
+{
+  width: 20px !important;
+  height: 20px !important;
 }
