@@ -247,7 +247,7 @@ class AdminUsersController extends Controller {
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDeleteUser($id) {
-
+		$command = Yii::app()->db->createCommand();
 		$users = Users::model()->findByPK($id);
 
 
@@ -255,7 +255,7 @@ class AdminUsersController extends Controller {
 			$curriculum = Curriculum::model()->findByAttributes(array('id_user'=>$id));
 			$persons = Persons::model()->findByAttributes(array('id_user'=>$id));
 			$address = Addresses::model()->findByAttributes(array('id'=>$curriculum->id_actual_address));
-			$command = Yii::app()->db->createCommand();
+			$sponsorship = Sponsorship::model()->findAllByAttributes(array('id_user_researcher'=>$id));
 
 			if($curriculum != null){
 
@@ -273,7 +273,7 @@ class AdminUsersController extends Controller {
 				$software = Software::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
 				$postdegreeGraduates = PostdegreeGraduates::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
 				$researchAreas = ResearchAreas::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
-
+				$knowledgeApplication = KnowledgeApplication::model()->findAllByAttributes(array('id_curriculum'=>$curriculum->id));
 				$jobs = Jobs::model()->findByAttributes(array('id_curriculum'=>$curriculum->id));
 
 				if($jobs != null)
@@ -296,6 +296,41 @@ class AdminUsersController extends Controller {
 					$command = Yii::app()->db->createCommand();
 				}
 				if($projects != null){
+
+					foreach ($projects as $key => $value) {
+						$projectsCoworkers = ProjectsCoworkers::model()->findAllByAttributes(array('id_project'=>$projects[$key]->id));
+						$projectsCommittee = ProjectsCommittee::model()->findAllByAttributes(array('id_project'=>$projects[$key]->id));
+						$projectsFollowups = ProjectsFollowups::model()->findAllByAttributes(array('id_project'=>$projects[$key]->id));
+
+						if($projectsCoworkers != null){
+							$command->delete('projects_coworkers', 'id_project=:id_project', array(':id_project'=>$projects[$key]->id));
+							$command = Yii::app()->db->createCommand();
+						}
+
+						if($projectsCommittee != null){
+							$command->delete('projects_committee', 'id_project=:id_project', array(':id_project'=>$projects[$key]->id));
+							$command = Yii::app()->db->createCommand();
+						}
+
+					 if($projectsFollowups != null){
+					 	$command->delete('projects_followups', 'id_project=:id_project', array(':id_project'=>$projects[$key]->id));
+					 	$command = Yii::app()->db->createCommand();
+					 }
+					 if($sponsorship != null){
+
+						 foreach ($sponsorship as $key => $value) {
+							 $sponsoredProjects = SponsoredProjects::model()->findByAttributes(array('id_project'=>$projects[$key]->id));
+
+							 if($sponsoredProjects != null){
+								 $command->delete('sponsored_projects', 'id=:id', array(':id'=>$sponsoredProjects->id));
+								 $command = Yii::app()->db->createCommand();
+							 }
+
+						 }
+						 $command->delete('sponsorship', 'id_user_sponsorer=:id_user_sponsorer', array(':id_user_sponsorer'=>$id));
+						 $command = Yii::app()->db->createCommand();
+					 }
+					}
 					$command->delete('projects', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
 					$command = Yii::app()->db->createCommand();
 				}
@@ -347,12 +382,17 @@ class AdminUsersController extends Controller {
 					$command->delete('certifications', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
 					$command = Yii::app()->db->createCommand();
 				}
+				if($knowledgeApplication != null){
+					$command->delete('knowledge_application', 'id_curriculum=:id_curriculum', array(':id_curriculum'=>$curriculum->id));
+					$command = Yii::app()->db->createCommand();
+				}
 
 				$curriculum->delete();
 			}
 
-			if($address != null)
+			if($address != null){
 					$address->delete();
+				}
 
 			if($persons != null){
 				$emails = Emails::model()->findAllByAttributes(array('id_person'=>$persons->id));
@@ -425,7 +465,7 @@ class AdminUsersController extends Controller {
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('adminUsers'));
+			$this->redirect(array('adminUsers'));
 		}
 
 	}

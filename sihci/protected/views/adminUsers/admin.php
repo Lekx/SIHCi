@@ -119,16 +119,16 @@ $this->renderPartial('_search',array(
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {delete} {login}', 'header' => 'Acciones',
 				'buttons' => array(
-				'login' => array('label' => '','imageUrl' => Yii::app()->request->baseUrl . '/img/Acciones/sesion.png',
-				'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id))',
-				),
-				'edit' => array(
-				'label' => '',
-				'imageUrl'=> Yii::app()->request->baseUrl . '/img/Acciones/editar.png',
-				'url'=> '"AdminUsers/update?ide=".$data->id'),
-				'delete' => array(
-				'label' => 'Eliminar.',
-				'url'=> '"AdminUsers/deleteUser?id=".$data->id'),
+									'login' => array('label' => '','imageUrl' => Yii::app()->request->baseUrl . '/img/Acciones/sesion.png',
+									'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id))',
+									),
+								'edit' => array(
+								'label' => '',
+								'imageUrl'=> Yii::app()->request->baseUrl . '/img/Acciones/editar.png',
+								'url'=> '"AdminUsers/update?ide=".$data->id'),
+								'delete' => array(
+								'label' => 'Eliminar.',
+								'url'=> 'Yii::app()->createUrl("/adminUsers/deleteUser",array("id"=>$data->id))'),
 
 
 

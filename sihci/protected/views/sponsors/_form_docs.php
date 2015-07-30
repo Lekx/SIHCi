@@ -21,7 +21,7 @@
 
 	<div class="row">
 	<h5>Decreto de creación, acta constitutiva o documento que acredite la creación de la empresa:</h5>
-		<?php echo $form->fileField($model, 'path', array('name' => 'Doc1'));?>
+		<?php echo $form->fileField($model, 'path', array('name' => 'Doc1','title'=>'Documento probatorio'));?>
 		<div id="SponsorsDocs1_path_em_" class="errorMessage" style="display:none;"></div>
 
 		<?php
@@ -31,7 +31,7 @@
 	</div>
 	<div class="row">
 	<h5>Documento con el que se acreditan las facultades del representante o apoderado (poder, acta de asamblea, nombramiento, etc.):</h5>
-		<?php echo $form->fileField($model, 'path', array('name' => 'Doc2'));?>
+		<?php echo $form->fileField($model, 'path', array('name' => 'Doc2','title'=>'Documento probatorio'));?>
 		<div id="SponsorsDocs2_path_em_" class="errorMessage" style="display:none;"></div>
 
 		<?php
@@ -41,7 +41,7 @@
 	</div>
 	<div class="row">
 	<h5>Licencias, autorizaciones, permisos para las actividades, etc:</h5>
-		<?php echo $form->fileField($model, 'path', array('name' => 'Doc3'));?>
+		<?php echo $form->fileField($model, 'path', array('name' => 'Doc3','title'=>'Documento probatorio'));?>
 		<div id="SponsorsDocs3_path_em_" class="errorMessage" style="display:none;"></div>
 
 		<?php
@@ -51,7 +51,7 @@
 	</div>
 	<div class="row">
 	<h5>RFC o equivalente (empresa):</h5>
-		<?php echo $form->fileField($model, 'path', array('name' => 'Doc4'));?>
+		<?php echo $form->fileField($model, 'path', array('name' => 'Doc4','title'=>'Documento probatorio'));?>
 		<div id="SponsorsDocs4_path_em_" class="errorMessage" style="display:none;"></div>
 
 		<?php
@@ -61,7 +61,7 @@
 	</div>
 	<div class="row">
 	<h5>Comprobante de domicilio (opcional para extranjeras):</h5>
-		<?php echo $form->fileField($model, 'path', array('name' => 'Doc5'));?>
+		<?php echo $form->fileField($model, 'path', array('name' => 'Doc5','title'=>'Documento probatorio'));?>
 		<div id="SponsorsDocs5_path_em_" class="errorMessage" style="display:none;"></div>
 
 		<?php
@@ -71,7 +71,7 @@
 	</div>
 	<div class="row">
 	<h5>Identificación Oficial del Representante:</h5>
-		<?php echo $form->fileField($model, 'path', array('name' => 'Doc6'));?>
+		<?php echo $form->fileField($model, 'path', array('name' => 'Doc6','title'=>'Documento probatorio'));?>
 		<div id="SponsorsDocs6_path_em_" class="errorMessage" style="display:none;"></div>
 
 		<?php
@@ -86,7 +86,7 @@
                 'class'=>'savebutton',
             ));
     ?>
-    <?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+     <?php echo CHtml::link('Cancelar',array('sponsors/create_docs')); ?>
 	</div>
 
 <?php $this->endWidget();?>

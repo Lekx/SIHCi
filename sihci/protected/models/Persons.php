@@ -45,9 +45,9 @@ class Persons extends CActiveRecord {
 			array('id_user', 'numerical', 'integerOnly' => true),
 			array('names', 'match', 'pattern'=>'/^[a-zA-Z]+$/', 'message'=>'El nombre debe de tener solo letras','on'=>'insert'),
 			array('curp_passport', 'length', 'min' => 11, 'max' => 18),
-			array('curp_passport', 'match', 'pattern'=>'/^[A-Z0-9A-Z0-9]+$/', 'message'=>'Deben ser en Mayúsculas y con el siguiente formato ABCD123456ABCDEF12'),
+			// array('curp_passport', 'match', 'pattern'=>'/^[A-Z0-9A-Z0-9]+$/', 'message'=>'Deben ser en Mayúsculas y con el siguiente formato ABCD123456ABCDEF12'),
 			array('person_rfc', 'length', 'min' => 13, 'max' => 13),
-			array('person_rfc', 'match', 'pattern'=>'/^[A-Z0-9A-Z]+$/', 'message'=>'El RFC debe ser en Mayúsculas y con el siguiente formato ABCD123456A12'),
+			// array('person_rfc', 'match', 'pattern'=>'/^[A-Z0-9A-Z]+$/', 'message'=>'El RFC debe ser en Mayúsculas y con el siguiente formato ABCD123456A12'),
 			array('last_name1, last_name2, marital_status', 'length', 'max' => 20),
 			array('genre', 'length', 'max' => 10),
 			array('country', 'length', 'max' => 50),
@@ -144,18 +144,17 @@ class Persons extends CActiveRecord {
 		return parent::model($className);
 	}
 
-/*	 protected function beforeSave() {
+	 protected function beforeSave() {
 
 	  	$this->birth_date = DateTime::createFromFormat('d/m/Y', $this->birth_date)->format('Y-m-d');
 	  	return parent::beforeSave();
 	 }
 
+	 protected function afterFind() {
+	 	$this->birth_date = date('d/m/Y', strtotime($this->birth_date));
+	 	return parent::afterFind();
 
-	protected function afterFind() {
-		$this->birth_date = DateTime::createFromFormat('Y-m-d', $this->birth_date)->format('d/m/Y');
-		return parent::afterFind();
-
-}*/
+	 }
 
 
 

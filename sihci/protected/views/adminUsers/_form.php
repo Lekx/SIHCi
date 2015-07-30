@@ -127,6 +127,7 @@ $this->menu=array(
 
     <div class="row">
          <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de correo electronico" title="Verificacion de correo electronico" ></input>
+
     </div>
 
 
@@ -137,6 +138,7 @@ $this->menu=array(
 
     <div class="row">
         <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña" title="Verificacion de Contraseña" maxlength="15"></input>
+
     </div>
 
 
@@ -168,7 +170,7 @@ $this->menu=array(
     </div>
 
     <div class="row">
-        <?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apelido Materno",'title'=>'Apellido Materno','onKeypress'=>'return lettersOnly(event)')); ?>
+        <?php echo $form->textField($modelPersons,'last_name2',array('placeholder'=>"Apellido Materno",'title'=>'Apellido Materno','onKeypress'=>'return lettersOnly(event)')); ?>
         <?php echo $form->error($modelPersons,'last_name2'); ?>
     </div>
 
@@ -183,7 +185,7 @@ $this->menu=array(
                   'class'=>'savebutton',
               ));
       ?>
-      <?php echo CHtml::Button('Cancelar',array('submit' => array('AdminUsers'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+      	 <?php echo CHtml::link('Cancelar',array('adminUsers/')); ?>
 
       </div>
 

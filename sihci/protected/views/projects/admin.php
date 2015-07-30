@@ -60,9 +60,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
 			'name'=>'is_sponsored',
 			'header'=>'',
 			'type'=>'html','id'=>'is_sponsored','value'=>'CHtml::encode($data->is_sponsored)',
-			'value'=>'$data->is_sponsored == "1" ? "Si" : "NO"','htmlOptions'=>array('width'=>'20px !important')
+			'value'=>'$data->is_sponsored == "1" ? "<img src=\'".Yii::app()->request->baseUrl."/img/Acciones/patrocinio.svg\' class=\'sponsorTag\' title=\'Proyecto patrocinado\'>" : "<img src=\'".Yii::app()->request->baseUrl."/img/Acciones/patrocinio2.svg\' class=\'sponsorTag\' title=\'Proyecto no patrocinado\'>"','htmlOptions'=>array('style' => 'width: 30px;')
 		),
-		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'substr($data->title,0,50)."..."','htmlOptions'=>array('width'=>'250px')),
+		array('name'=>'Título','type'=>'html','id'=>'title','value'=>'substr($data->title,0,50)."..."','htmlOptions'=>array('style' => 'width: 500px;')),
 		array(
 			'name'=>'discipline',
 			'type'=>'html','id'=>'discipline','value'=>'CHtml::encode($data->discipline)',
@@ -78,15 +78,15 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		array(
 			'name'=>'folio',
 			'type'=>'html','id'=>'folio','value'=>'CHtml::encode($data->folio)',
-			'value'=>'$data->folio == "-1" ? "" : $data->folio',
+			'value'=>'$data->folio == "-1" ? "" : $data->folio','htmlOptions'=>array('style' => 'width: 80px;')
 			),
 		array(
 			'name'=>'registration_number',
 			'type'=>'html','id'=>'registration_number','value'=>'CHtml::encode($data->registration_number)',
-			'value'=>'$data->registration_number == "-1" ? "" : $data->registration_number',
+			'value'=>'$data->registration_number == "-1" ? "" : $data->registration_number','htmlOptions'=>array('style' => 'width: 80px;')
 			),
 
-		array('name'=>'Estatus','type'=>'html','id'=>'status','value'=>'CHtml::encode($data->status)','cssClassExpression' => '"checkThisItem"',),
+		array('name'=>'Estatus','type'=>'html','id'=>'status','value'=>'CHtml::encode($data->status)','cssClassExpression' => '"checkThisItem"','htmlOptions'=>array('style' => 'width: 80px;')),
 
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {seguim} {delete}', 'header' => 'Acciones',
@@ -111,6 +111,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
 						'options'=>array('title'=>'Eliminar',),
 
 					),
-		),
+		),'htmlOptions'=>array('style' => 'width: 50px;')
 	),),
 )); ?>

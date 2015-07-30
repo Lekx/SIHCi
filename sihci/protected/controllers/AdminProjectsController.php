@@ -87,7 +87,7 @@ class AdminProjectsController extends Controller {
 		{
 			$model->attributes=$_POST['Sponsorship'];
 			// $model->id_user_sponsorer = Yii::app()->user->id;
-			// $model->status = "pendiente";
+			$model->status = "PENDIENTE";
 
 			if($model->validate()){
 			if($model->save()){
@@ -121,7 +121,7 @@ class AdminProjectsController extends Controller {
 			if (isset($_POST['Sponsorship'])) {
 				$model->attributes = $_POST['Sponsorship'];
 				if ($model->save()) {
-					$this->redirect(array('adminProjects'));
+					// $this->redirect(array('adminProjects'));
 				}
 			}
 			$update = "form_sponsorship";
@@ -167,7 +167,7 @@ class AdminProjectsController extends Controller {
 			$query .= 'SELECT CONCAT(p.names," ", p.last_name1," ", p.last_name2) AS names, pro.*,
 			pc.id AS id_project_coworkers, pc.id_project, pc.fullname, pd.id AS id_project_docs, pd.id_project,
 			pd.type, pd.path, pd.creation_date AS creation_date_project_docs, pf.id AS id_project_followups,
-			pf.id_project, pf.followup, pf.datetime
+			pf.id_project, pf.followup
 			 FROM projects pro
 				 JOIN curriculum curri ON pro.id_curriculum=curri.id
  				 JOIN users u ON curri.id_user=u.id
@@ -250,7 +250,7 @@ class AdminProjectsController extends Controller {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-		if (isset($_POST['ajax']) && $_POST['ajax'] === 'sponsorship-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax'] === 'admin-sponsorship-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

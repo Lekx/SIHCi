@@ -21,7 +21,7 @@ $this->menu = array(
 	array('label' => 'Datos Empresa', 'url' => array('sponsors/sponsorsInfo'.$editUser)),
 	array('label' => 'Documentos Probatorios', 'url' => array(($controller==""?'sponsors/create_docs':$controller).$editUser)),
 	array('label' => 'Datos de Representante', 'url' => array(($controller==""?'sponsors/create_persons':$controller).$editUser)),
-	array('label' => 'Datos de Facturacion', 'url' => array(($controller==""?'sponsors/create_billing':$controller).$editUser)),
+	array('label' => 'Datos de Facturación', 'url' => array(($controller==""?'sponsors/create_billing':$controller).$editUser)),
 	array('label' => 'Datos de Contacto', 'url' => array(($controller==""?'sponsors/create_contact':$controller).$editUser)),
 	array('label' => 'Datos de Contactos', 'url' => array(($controller==""?'sponsors/create_contacts':$controller).$editUser)),
 );

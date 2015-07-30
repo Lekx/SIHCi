@@ -1310,7 +1310,7 @@
 
 	<div class="row">
 
-
+<span class='plain-select'>
 		<?php  echo $form->dropDownList($model, 'sector', array('ACTIVIDADES DEL GOBIERNO Y DE ORGANISMOS INTERNACIONALES Y EXTRATERRITORIALES'=>'ACTIVIDADES DEL GOBIERNO Y DE ORGANISMOS INTERNACIONALES Y EXTRATERRITORIALES',
 																'AGRICULTURA GANADERIA APROVECHAMIENTO FORESTAL PESCA Y CAZA'=>'AGRICULTURA GANADERIA APROVECHAMIENTO FORESTAL PESCA Y CAZA',
 																'COMERCIO AL POR MAYOR'=>'COMERCIO AL POR MAYOR',
@@ -1335,6 +1335,7 @@
 																'TRANSPORTES CORREOS Y ALMACENAMIENTO'=>'TRANSPORTES CORREOS Y ALMACENAMIENTO',
 																'OTROS SERVICIOS EXCEPTO ACTIVIDADES DEL GOBIERNO'=>'OTROS SERVICIOS EXCEPTO ACTIVIDADES DEL GOBIERNO'),array('prompt'=>'Seleccionar sector','title'=>'Sector', 'id'=>'sector', 'onchange'=>'changeSector()'))?>
 		<?php echo $form->error($model, 'sector');?>
+  </span>
 	</div>
 
 	<?php
@@ -1385,7 +1386,7 @@
             ));
     ?>
 
-		<?php echo CHtml::Button('Cancelar',array('submit' => array('sponsors/sponsorsInfo'),'confirm'=>'¿Seguro que desea Cancelar?','id'=>'cancelar')); ?>
+	 <?php echo CHtml::link('Cancelar',array('sponsors/sponsorsInfo')); ?>
 	</div>
 
 <?php $this->endWidget();?>

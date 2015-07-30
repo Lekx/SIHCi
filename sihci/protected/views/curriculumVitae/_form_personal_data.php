@@ -63,6 +63,8 @@
 	<div class="row">
     <span class="plain-select">
 		<?php
+
+
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'language'=> 'es',
 		    'attribute' => 'birth_date',
@@ -72,7 +74,7 @@
 			     		'changeMonth'=>true, //cambiar por Mes
 			     		'changeYear'=>true, //cambiar por Año
 			    		'maxDate' => 'now-5475',
-				        'yearRange'=>'1930:now',
+				      'yearRange'=>'1930:now',
 
 
 		     	),
@@ -166,7 +168,7 @@
 
 	<div class="row">
 
-		<?php echo $form->textField($model,'curp_passport',array('size'=>18,'maxlength'=>18, 'title'=>'CURP o Pasaporte','placeholder'=>"Curp")); ?>
+		<?php echo $form->textField($model,'curp_passport',array('size'=>18,'maxlength'=>18, 'title'=>'CURP o Pasaporte','class'=>'curpValidate','placeholder'=>"Curp")); ?>
 
 
           <?php echo $form->error($model,'curp_passport'); ?>

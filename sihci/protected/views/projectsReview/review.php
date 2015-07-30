@@ -255,24 +255,100 @@
 /* AGREGAMOS  UNO  PARA  SABER  EL  ESTADO  ACTUAL */
 //$step = 2;
 //$userRol = "DIVUH";
-
+/*
 $roles = array("DIVUH", "SEUH", "COMITE", "COMBIO", "COMINV", "DUH", "SGEI", "DG", "JUR");
 for($evaluationStep = 1; $evaluationStep <= 12; $evaluationStep++)  {
-echo "<br><br><br>=============================================================================[ PASO: ".$evaluationStep." ]====================<br>";
-print_r($evaluationRules[$evaluationStep]);
+echo "<br><br><br>=======================================================================[ PASO: ".$evaluationStep.", Rol: ".$evaluationRules[$evaluationStep]["userType"]." ]==============<br>";
+//print_r($evaluationRules[$evaluationStep]);
+
+$userRol = $evaluationRules[$evaluationStep]["userType"]; */
 //print_r($evaluationRules[$evaluationStep]["actions"]);
-foreach ($roles as $key => $userRol) {
-echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ROL: ".$userRol." - - <br>";
+
+//print_r($evaluationRules[$evaluationStep]["actions"]);
+
+
+
+//oreach ($roles as $key => $userRol) {
+//echo "<br> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ROL: ".$userRol." - - <br>";
 
 
 if($model->status != "MODIFICAR"){
 
 	if($model->is_sponsored == 1){
-		echo "claps";
+
+/*   	START  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S
+*		START  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S
+*		START  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S  	*/
+
+	//$userRols = $agreementRules[$evaluationStep]["userType"];
+
+
+		if($agreementStep > 0){
+			//BOTONES DUMMY DE REVISAR
+			if($agreementRules[$agreementStep]["userType"] == $userRol && ($agreementStep == 1 || $agreementStep == 2 || $agreementStep == 10 || $agreementStep == 11 || $agreementStep == 12)){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+				echo " ".CHtml::htmlButton('REVISAR Contrato',array(
+					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',review");',
+					'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+				));
+				echo "</div>";
+			}
+			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 3){
+				$conexion = Yii::app()->db;
+				$checkForDoc = $conexion->createCommand("SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." AND type = 'mandatory' AND step_number = ".($agreementStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
+
+				if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
+
+					echo "<div class='row' style='margin-left: 30px !important'>";
+						echo " ".CHtml::htmlButton('Aprobar Contrato',array(
+							'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+							'class'=>'savebuttonp','id'=>'acceptEvaButton',
+						));
+					echo "</div>";
+				}else{
+					echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios el documento necesario de aprobación.</b>";
+				}
+			}
+
+			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 6){
+				echo "LOGICA: CRUZAMIENTO CON REVISION DE PROYECTO(ESPERAR PARA CONTINUAR)";
+			}
+
+			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 7){
+				echo "<div class='row' style='margin-left: 25px !important'>";
+				echo CHtml::htmlButton('No aprobar Contrato',array(
+					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+					'class'=>'savebuttonp',
+				));
+				echo "</div>";
+				echo " <div class='row' style='margin-left: 30px !important'>";
+				echo " ".CHtml::htmlButton('Aprobar Contrato',array(
+					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+					'class'=>'savebuttonp','id'=>'acceptEvaButton',
+				));
+				echo "</div>";
+			}
+
+			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 8){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+				echo " ".CHtml::htmlButton('Aprobar Contrato',array(
+					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+					'class'=>'savebuttonp','id'=>'acceptEvaButton',
+				));
+				echo "</div>";
+			}
+		}
+
+/*   	ENDOF  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S
+*		ENDOF  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S
+*		ENDOF  S  P  O  N  S  O  R  S     A  G  R   E  E  M  E  N  T     R  U  L  E  S  	*/
+
+		//echo "claps";
 		$fileTypes = array("3"=>"la minuta", "4"=>"el acta de aprobación","12"=>"el dictamen de aprobación");
 
 		// asignación de folio, comités y aprobación en paso 2.
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
+
 				if($model->folio != -1 && count($commsCheck)>0){
 					echo "<div class='row' style='margin-left: 30px !important'>";
 						echo " ".CHtml::htmlButton('Aprobar',array(
@@ -348,15 +424,15 @@ if($model->status != "MODIFICAR"){
 					));
 					?>
 					</div>
-					<?
+					<?php
 					$this->endWidget();
 
 				}else{
+
 					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,));
 						?>
 						<div class="row">
-							<?php echo $form->labelEx($model,'folio'); ?>
-							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
+							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'placeholder'=>'Número de folio','title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
 							<?php echo $form->error($model,'folio'); ?>
 						</div>
 						<?php
@@ -458,7 +534,9 @@ if($model->status != "MODIFICAR"){
 			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id."
 			AND type = 'mandatory' AND step_number = 2 AND url_doc IS NOT NULL")->queryAll()[0];
 
-			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$model->id,"id_user_reviewer"=>$userId))->status;
+			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$model->id,"id_user_reviewer"=>$userId));
+			if(is_object($commStatus))
+				$commStatus = $commStatus->status;
 
 			if($commStatus!="pendiente")
 				echo "<br>Usted ya ha <b>".$commStatus."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
@@ -504,6 +582,12 @@ if($model->status != "MODIFICAR"){
 		}
 
 	}else{ // FIN DE REGLAS PARA PATROCINADOS    E   I N I C I O   PARA PROYECTOS   N O   PATROCINADOS
+// FIN DE REGLAS PARA PATROCINADOS    E   I N I C I O   PARA PROYECTOS   N O   PATROCINADOS
+		// FIN DE REGLAS PARA PATROCINADOS    E   I N I C I O   PARA PROYECTOS   N O   PATROCINADOS
+		// FIN DE REGLAS PARA PATROCINADOS    E   I N I C I O   PARA PROYECTOS   N O   PATROCINADOS
+
+
+
 		$fileTypes = array("4"=>"EL DOC DE DIVUH", "7"=>"el acta de aprobación","11"=>"el dictamen de aprobación","13"=>"EL DOC DE SEUH");
 
 		// botones review que no hacen nada
@@ -707,10 +791,9 @@ if($model->status != "MODIFICAR"){
 
 
 
-// /* }}  */
 
-}
-}
+
+//}
 
 ?>
 
