@@ -57,7 +57,7 @@ class CurriculumVitaeController extends Controller
 		if($curriculum == null){
 			$curriculum = new Curriculum;
 			$addresses = new Addresses;
-
+			
 			$addresses->country = "null";
 			$addresses->zip_code = 0;
 			$addresses->state = "null";
@@ -68,7 +68,9 @@ class CurriculumVitaeController extends Controller
 			$addresses->street = "null";
 			$addresses->external_number = "null";
 			$addresses->internal_number = "null";
+			
 			if($addresses->save()){
+				
 				$details = "Subsección Dirección Actual";
 				$action = "Creación";
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
