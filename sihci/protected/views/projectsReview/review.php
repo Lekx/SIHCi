@@ -2,25 +2,7 @@
 	label{
 		width:100%;
 	}
-	.commWrapper{
-		width:100%;
-		position: relative;
-		overflow: hidden;
-		padding:0 !important;
-		margin:0 !important;
-	}
-	.commWrapper .row{
-		margin:5px !important;
-	}
 
-	.comm{
-		width:270px;
-		float:left;
-		border:1px solid #ddd;
-		padding:5px;
-		padding-left:15px;
-		margin:5px;
-	}
 </style>
 
 <script type="text/javascript">
@@ -243,11 +225,17 @@
 			$commsCheck = CHtml::listData($commsCheck, 'committee', 'committee');
 
 			if(count($commsCheck)){
-				echo "Comités asignados a este proyecto:<br>";
+				echo "<div class='row'>";
+				echo "<div class='row'>";
+				echo "<h4>Comités asignados a este proyecto:</h4>";
 				echo array_key_exists("COMETI", $commsCheck) ? " - Comité de Ética en Investigación.<br>" : "";
 				echo array_key_exists("COMINV", $commsCheck) ? " - Comité de Investigación.<br>" : "";
 				echo array_key_exists("COMBIO", $commsCheck) ? " - Comité de Bioseguridad.<br>" : "";
+				echo "</div>";
+				echo "</div>";
+
 			}
+
 
 
 
@@ -287,9 +275,9 @@ if($model->status != "MODIFICAR"){
 			//BOTONES DUMMY DE REVISAR
 			if($agreementRules[$agreementStep]["userType"] == $userRol && ($agreementStep == 1 || $agreementStep == 2 || $agreementStep == 10 || $agreementStep == 11 || $agreementStep == 12)){
 				echo "<div class='row' style='margin-left: 30px !important'>";
-				echo " ".CHtml::htmlButton('REVISAR Contrato',array(
+				echo " ".CHtml::htmlButton('Revisar Contrato',array(
 					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',review");',
-					'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+					'class'=>'savebutton','id'=>'acceptEvaButton','style'=>'display:block;'
 				));
 				echo "</div>";
 			}
@@ -306,7 +294,7 @@ if($model->status != "MODIFICAR"){
 						));
 					echo "</div>";
 				}else{
-					echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios el documento necesario de aprobación.</b>";
+					echo "<div class='row'><div clas='row' style='margin-left: 25px !important; width: 430px; text-align: justify;'><h4><strong>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios el documento necesario de aprobación.</strong></h4></div></div>";
 				}
 			}
 
@@ -315,16 +303,15 @@ if($model->status != "MODIFICAR"){
 			}
 
 			if($agreementRules[$agreementStep]["userType"] == $userRol && $agreementStep == 7){
-				echo "<div class='row' style='margin-left: 25px !important'>";
-				echo CHtml::htmlButton('No aprobar Contrato',array(
-					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
-					'class'=>'savebuttonp',
-				));
-				echo "</div>";
-				echo " <div class='row' style='margin-left: 30px !important'>";
+				echo "<div class='row' style='margin-left: 30px !important'>";
+
 				echo " ".CHtml::htmlButton('Aprobar Contrato',array(
 					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 					'class'=>'savebuttonp','id'=>'acceptEvaButton',
+				));
+				echo CHtml::htmlButton('No aprobar Contrato',array(
+					'onclick'=>'javascript: send("","projectsReview/agreement", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+					'class'=>'savepro',
 				));
 				echo "</div>";
 			}
@@ -350,7 +337,7 @@ if($model->status != "MODIFICAR"){
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
 
 				if($model->folio != -1 && count($commsCheck)>0){
-					echo "<div class='row' style='margin-left: 30px !important'>";
+					echo "<div class='row' style='margin-left: 25px !important'>";
 						echo " ".CHtml::htmlButton('Aprobar',array(
 							'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 							'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
@@ -416,51 +403,64 @@ if($model->status != "MODIFICAR"){
 					</small>
 					</label>
 					</div>
-					<?php
-					//if($evaluationStep == 2)
-					echo CHtml::htmlButton('Asignar Comités',array(
-						'onclick'=>'javascript: send("committees-form","projectsReview/assignCommittees", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","asignarComites,acceptEvaButton")',
-						'class'=>'savebutton','id'=>'asignarComites'
-					));
-					?>
+
 					</div>
+						<div class="row">
+					<div class="row">
+						<?php
+						//if($evaluationStep == 2)
+						echo CHtml::htmlButton('Asignar Comités',array(
+							'onclick'=>'javascript: send("committees-form","projectsReview/assignCommittees", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","asignarComites,acceptEvaButton")',
+							'class'=>'savebuttonp','id'=>'asignarComites'
+						));
+						?>
+					</div>
+				</div>
 					<?php
+
 					$this->endWidget();
 
 				}else{
 
 					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,));
 						?>
+							<div class="row">
 						<div class="row">
 							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'placeholder'=>'Número de folio','title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
 							<?php echo $form->error($model,'folio'); ?>
 						</div>
+						<div class="row">
 						<?php
 						echo CHtml::htmlButton('Asignar número de folio',array(
 							'onclick'=>'javascript: send("folioNumber-form","projectsReview/setFolioNumber","'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","folioNumber-form,formCommittees")',
-							'class'=>'savebutton','id'=>'asignarFolio'
+							'class'=>'savebuttonp','id'=>'asignarFolio'
 						));
+						echo "</div>";
+							echo "</div>";
 					$this->endWidget();
 				}
 		} // fin del paso 2
 
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 6){
 			if($model->registration_number == "-1"){
+				echo "	<div class='row'>";
 				$form=$this->beginWidget('CActiveForm', array('id'=>'regNumber-form','enableAjaxValidation'=>true,));
 					?>
 					<div class="row">
-						<?php echo $form->labelEx($model,'registration_number'); ?>
-						<?php echo $form->textField($model,'registration_number',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->registration_number =='-1' ? "" : $model->registration_number)); ?>
+						<?php echo $form->textField($model,'registration_number',array('size'=>20,'maxlength'=>20,'placeholder'=>'Número de folio','title'=>'Número de folio','value'=>$model->registration_number =='-1' ? "" : $model->registration_number)); ?>
 						<?php echo $form->error($model,'registration_number'); ?>
 					</div>
+					<div class="row">
 					<?php
 					echo CHtml::htmlButton('Asignar número de registro',array(
 						'onclick'=>'javascript: send("regNumber-form","projectsReview/setRegNumber", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","regNumber-form,asignarFolio")',
-						'class'=>'savebutton','id'=>'asignarRegistro'
+						'class'=>'savebuttonp','id'=>'asignarRegistro'
 					));
+					echo "</div>";
+						echo "</div>";
 				$this->endWidget();
 				}else{
-					echo "<div class='row' style='margin-left: 30px !important'>";
+					echo "<div class='row' style='margin-left: 25px !important'>";
 					echo " ".CHtml::htmlButton('Aprobar',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 						'class'=>'savebuttonp','id'=>'acceptEvaButton',
@@ -469,11 +469,20 @@ if($model->status != "MODIFICAR"){
 				}
 		}
 
+		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1 || $evaluationStep == 10)){
+				echo "<div class='row' style='margin-left: 30px !important'>";
+					echo " ".CHtml::htmlButton('Aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
+						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+echo "</div>";
+		}
+
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 1 ){
-				echo "<div class='row' style='margin-left: 25px !important'>";
+
 					echo CHtml::htmlButton('No aprobar',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
-						'class'=>'savebuttonp',
+						'class'=>'savepro',
 					));
 				echo "</div>";
 		}
@@ -484,26 +493,19 @@ if($model->status != "MODIFICAR"){
 			SELECT COUNT(id) AS total FROM projects_followups WHERE id_project = ".$model->id." AND type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
-				echo "<div class='row' style='margin-left: 30px !important'>";
+				echo "<div class='row' style='margin-left: 25px !important'>";
 					echo " ".CHtml::htmlButton('Aprobar',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 						'class'=>'savebuttonp','id'=>'acceptEvaButton',
 					));
 				echo "</div>";
 			}else{
-				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+				echo "<div class='row'><div clas='row' style='margin-left: 25px !important; width: 430px; text-align: justify;'><h4><strong>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</strong></h4></div></div>";
 			}
 		}
 
 
-		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1 || $evaluationStep == 10)){
-				echo "<div class='row' style='margin-left: 30px !important'>";
-					echo " ".CHtml::htmlButton('Aprobar',array(
-						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
-						'class'=>'savebuttonp','id'=>'acceptEvaButton',
-					));
-				echo "</div>";
-		}
+
 
 
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 12 ){ // aqui quite el evaluation step al 4
@@ -513,7 +515,7 @@ if($model->status != "MODIFICAR"){
 			AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
-				echo "<div class='row' style='margin-left: 30px !important'>";
+				echo "<div class='row' style='margin-left: 25px !important'>";
 					echo " ".CHtml::htmlButton('Aprobar',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 						'class'=>'savebuttonp','id'=>'acceptEvaButton',
@@ -521,7 +523,7 @@ if($model->status != "MODIFICAR"){
 				echo "</div>";
 
 			}else{
-				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+				echo "<div class='row'><div clas='row' style='margin-left: 25px !important; width: 430px; text-align: justify;'><h4><strong>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</strong></h4></div></div>";
 			}
 		}
 
@@ -539,39 +541,41 @@ if($model->status != "MODIFICAR"){
 				$commStatus = $commStatus->status;
 
 			if($commStatus!="pendiente")
-				echo "<br>Usted ya ha <b>".$commStatus."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
+				echo "<div class='row' style='text-align: justify; width: 500px;'><div class='row'><strong>Usted ya ha ".$commStatus."</strong> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br></div></div>";
 
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0 ){
 
-				if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3 && ($commStatus == "aprobado" || $commStatus == "pendiente")){
-						//echo "<hr>BOTÓN RECHAZAR";
-						echo "<div class='row' style='margin-left: 25px !important'>";
-							echo CHtml::htmlButton('No aprobar',array(
-								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
-								'class'=>'savebuttonp',
-							));
-						echo "</div>";
-				}
 
 				if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 3 || $evaluationStep == 11)){
+						echo "<div class='row' style='margin-left: 30px !important;'>";
 					if($commStatus == "rechazado" || $commStatus == "pendiente"){
-						echo "<div class='row' style='margin-left: 30px !important'>";
 							echo " ".CHtml::htmlButton('Aprobar',array(
 								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
-								'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
+								'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>''
 							));
-						echo "</div>";
+
 					}
 				}
 
+				if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 3 && ($commStatus == "aprobado" || $commStatus == "pendiente")){
+
+							echo CHtml::htmlButton('No aprobar',array(
+								'onclick'=>'javascript: send("","projectsReview/sendReviewCommittee", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+								'class'=>'savepro',
+							));
+
+				}
+	echo "</div>";
+
+
 			}else if($evaluationStep !=11){
-				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+				echo "<div class='row'><div clas='row' style='margin-left: 25px !important; width: 430px; text-align: justify;'><h4><strong>ara poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</strong></h4></div></div>";
 			}
 
 		}
 
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 5 || $evaluationStep == 7 || $evaluationStep == 8 || $evaluationStep == 9)){
-				echo "<div class='row' style='margin-left: 30px !important'>";
+				echo "<div class='row' style='margin-left: 25px !important'>";
 					echo " ".CHtml::htmlButton('REVISAR',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "none", "'.$evaluationStep.',review");',
 						'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
@@ -592,7 +596,7 @@ if($model->status != "MODIFICAR"){
 
 		// botones review que no hacen nada
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 5 || $evaluationStep == 6 || $evaluationStep == 8 || $evaluationStep == 9 || $evaluationStep == 10 || $evaluationStep == 14)){
-				echo "<div class='row' style='margin-left: 30px !important'>";
+				echo "<div class='row' style='margin-left: 25px !important'>";
 					echo " ".CHtml::htmlButton('REVISAR',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',review");',
 						'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
@@ -604,16 +608,15 @@ if($model->status != "MODIFICAR"){
 
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 1)){
 				echo "<div class='row' style='margin-left: 25px !important'>";
-					echo CHtml::htmlButton('No aprobar',array(
-						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
-						'class'=>'savebuttonp',
-					));
-				echo "</div>";
 
-				echo "<div class='row' style='margin-left: 30px !important'>";
 					echo " ".CHtml::htmlButton('Aprobar',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					));
+
+					echo CHtml::htmlButton('No aprobar',array(
+						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+						'class'=>'savepro',
 					));
 				echo "</div>";
 		}
@@ -621,7 +624,7 @@ if($model->status != "MODIFICAR"){
 // asignación de folio, comités y aprobación en paso 2.
 		if($evaluationRules[$evaluationStep]["userType"] == $userRol && $evaluationStep == 2){
 				if($model->folio != -1 && count($commsCheck)>0){
-					echo "<div class='row' style='margin-left: 30px !important'>";
+					echo "<div class='row' style='margin-left: 25px !important'>";
 						echo " ".CHtml::htmlButton('Aprobar',array(
 							'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 							'class'=>'savebuttonp','id'=>'acceptEvaButton','style'=>'display:block;'
@@ -687,30 +690,38 @@ if($model->status != "MODIFICAR"){
 					</small>
 					</label>
 					</div>
-					<?php
-					//if($evaluationStep == 2)
-					echo CHtml::htmlButton('Asignar Comités',array(
-						'onclick'=>'javascript: send("committees-form","projectsReview/assignCommittees", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","asignarComites,acceptEvaButton")',
-						'class'=>'savebutton','id'=>'asignarComites'
-					));
-					?>
 					</div>
-					<?
+					<div class="row">
+					<div class="row">
+						<?php
+						//if($evaluationStep == 2)
+						echo CHtml::htmlButton('Asignar Comités',array(
+							'onclick'=>'javascript: send("committees-form","projectsReview/assignCommittees", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","asignarComites,acceptEvaButton")',
+							'class'=>'savebuttonp','id'=>'asignarComites'
+						));
+						?>
+					</div>
+				</div>
+					<?php
 					$this->endWidget();
 
 				}else{
+					echo "<div class='row'>";
 					$form=$this->beginWidget('CActiveForm', array('id'=>'folioNumber-form','enableAjaxValidation'=>true,));
 						?>
 						<div class="row">
-							<?php echo $form->labelEx($model,'folio'); ?>
-							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
+							<?php echo $form->textField($model,'folio',array('size'=>20,'maxlength'=>20,'placeholder'=>'Número de folio','title'=>'Número de folio','value'=>$model->folio =='-1' ? "" : $model->folio)); ?>
 							<?php echo $form->error($model,'folio'); ?>
 						</div>
+						<div class="row">
+
 						<?php
 						echo CHtml::htmlButton('Asignar número de folio',array(
 							'onclick'=>'javascript: send("folioNumber-form","projectsReview/setFolioNumber","'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$_GET['id'].'","folioNumber-form,formCommittees")',
-							'class'=>'savebutton','id'=>'asignarFolio'
+							'class'=>'savebuttonp','id'=>'asignarFolio'
 						));
+						echo "</div>";
+								echo "</div>";
 					$this->endWidget();
 				}
 		} // fin del paso 2
@@ -728,7 +739,10 @@ if($model->status != "MODIFICAR"){
 			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$model->id,"id_user_reviewer"=>$userId))->status;
 
 			if($commStatus!="pendiente")
-				echo "<br>Usted ya ha <b>".$commStatus."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
+				echo "<div class='row' style='text-align: justify; width: 500px;'><div class='row'><strong>Usted ya ha ".$commStatus."
+				</strong> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por
+				 parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación,
+				la calificación de todos los miembros del comité asignado deben ser las misma.</div></div><br>";
 
 			/*if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0 ){
 
@@ -767,7 +781,7 @@ if($model->status != "MODIFICAR"){
 			AND id_project = ".$model->id." AND  type = 'mandatory' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){
-				echo "<div class='row' style='margin-left: 30px !important'>";
+				echo "<div class='row' style='margin-left: 25px !important'>";
 					echo " ".CHtml::htmlButton('Aprobar',array(
 						'onclick'=>'javascript: send("","projectsReview/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
 						'class'=>'savebuttonp','id'=>'acceptEvaButton',
@@ -775,7 +789,7 @@ if($model->status != "MODIFICAR"){
 				echo "</div>";
 
 			}else{
-				echo "<b>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."</b>";
+				echo "<div class='row'><div clas='row' style='margin-left: 25px !important; width: 430px; text-align: justify;'><h4><strong>Para poder aprobar el proyecto es necesario que primero adjunte en el formulario de comentarios ".$fileTypes[$evaluationStep]."<strong></h4></div></div>";
 			}
 		}
 
@@ -846,7 +860,8 @@ if($model->status != "MODIFICAR"){
 </div>
 
 <!--  COMENTARIOS -->
-<div class="row">
+<div class="row" style="width:; text-align: justify;">
+<div class="row" style="width: 60%; text-align: justify;">
 <?php
 
 foreach($followups AS $key => $value){
@@ -859,4 +874,5 @@ foreach($followups AS $key => $value){
 
 }
 ?>
+</div>
 </div>
