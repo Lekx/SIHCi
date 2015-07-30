@@ -89,7 +89,6 @@ $this->renderPartial('_search',array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'users-grid',
 	'dataProvider' => $model->search(),
-	//'filter'=>$model,
 	'columns' => array(
 		array(
 			'header' => '<b>Nombre Completo</b>',
@@ -102,7 +101,7 @@ $this->renderPartial('_search',array(
 			'header' => '<b>Curp/Pasaporte</b>',
 			'value' => array($this, 'usersCurpPassport'), 'type' => 'raw',
 		),
-	
+
 		'registration_date',
 
 		 array(

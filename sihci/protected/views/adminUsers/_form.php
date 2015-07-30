@@ -36,6 +36,70 @@ $this->menu=array(
 
 ?>
 
+<script type="text/javascript">
+
+  $('.lettersAndNumbers').bind('keyup input',function(){
+    var input = $(this);
+    input.val(input.val().replace(/[^a-z0-9A-ZñÑ´'ÁáÉéÍíÓóÚú ]/g,'') );
+  });
+
+    function lettersOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
+    function numericOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      numbers = " 1234567890";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (numbers.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
+
+
+
+    function lettersAndNumbersOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz1234567890";
+      especiales = "8-9-37-38-46-164";
+
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+        }
+
+</script>
+
     <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
             <h1>Gestión de usuarios</h1>
@@ -47,10 +111,6 @@ $this->menu=array(
 
 <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'usersAdmin-form',
-    // Please note: When you enable ajax validation, make sure the corresponding
-    // controller action is handling ajax validation correctly.
-    // There is a call to performAjaxValidation() commented in generated controller code.
-    // See class documentation of CActiveForm for details on this.
     'enableAjaxValidation' => true,
   	'htmlOptions' => array('enctype' => 'multipart/form-data'),
   	'enableClientValidation' => true,
@@ -61,12 +121,12 @@ $this->menu=array(
 
 
     <div class="row">
-        <?php echo $form->textField($model,'email',array('placeholder'=>"Email",'title'=>'Email')); ?>
+        <?php echo $form->textField($model,'email',array('placeholder'=>"Correo electronico",'title'=>'Correo electronico')); ?>
         <?php echo $form->error($model,'email'); ?>
     </div>
 
     <div class="row">
-         <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificacion de Email" title="Verificacion de Email" ></input>
+         <input type="text" name="Users[email2]" id="Users_email2" placeholder="Verificación de correo electronico" title="Verificacion de correo electronico" ></input>
     </div>
 
 
@@ -76,7 +136,7 @@ $this->menu=array(
     </div>
 
     <div class="row">
-        <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificacion de Contraseña" title="Verificacion de Contraseña" maxlength="15"></input>
+        <input type="password" name="Users[password2]" id="Users_password2" placeholder="Verificación de Contraseña" title="Verificacion de Contraseña" maxlength="15"></input>
     </div>
 
 
@@ -113,13 +173,13 @@ $this->menu=array(
     </div>
 
     <div class="row">
-        <?php echo $form->textField($modelPersons,'curp_passport',array('placeholder'=>"Pasaporte/Curp",'title'=>'Pasaporte/Curp')); ?>
+        <?php echo $form->textField($modelPersons,'curp_passport',array('placeholder'=>"Pasaporte/Curp",'title'=>'Pasaporte/Curp', 'onKeypress'=>'return lettersAndNumbersOnly(event)')); ?>
         <?php echo $form->error($modelPersons,'curp_passport'); ?>
     </div>
 
     <div class="row buttons">
       <?php echo CHtml::htmlButton('Enviar',array(
-                  'onclick'=>'send("usersAdmin-form", "users/create", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","AdminUsers","")',
+                  'onclick'=>'send("usersAdmin-form", "AdminUsers/createUser", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","AdminUsers","")',
                   'class'=>'savebutton',
               ));
       ?>

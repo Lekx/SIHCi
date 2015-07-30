@@ -54,8 +54,6 @@ class Users extends CActiveRecord
 			array('act_react_key', 'length', 'max'=>200),
 			array('status', 'length', 'max'=>15),
 			array('type', 'length', 'max'=>30),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
 			array('id, id_roles, email, password, registration_date, activation_date, act_react_key, status, type,searchValue,names,last_name1,last_name1,curp_passport', 'safe', 'on'=>'search'),
 		);
 	}
@@ -87,9 +85,9 @@ class Users extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_roles' => 'Id Roles',
-			'email' => 'Email',
+			'email' => 'Correo electronico',
 			'password' => 'Contraseña',
-			'registration_date' => 'Registration Date',
+			'registration_date' => 'Fecha de registro',
 			'activation_date' => 'Activation Date',
 			'act_react_key' => 'Act React Key',
 			'status' => 'Status',
@@ -116,7 +114,7 @@ class Users extends CActiveRecord
 		{
 			$criteria->addCondition("email LIKE CONCAT('%', :searchValue, '%')OR status LIKE CONCAT('%', :searchValue, '%') OR type LIKE CONCAT('%', :searchValue, '%')");
 			$criteria->params = array('searchValue'=>$this->searchValue);
-			$criteria->with = array( 'persons' );		
+			$criteria->with = array( 'persons' );
 			$criteria->compare( 'persons.names', $this->names, true );
 			$criteria->compare( 'persons.last_name1', $this->last_name1, true );
 			$criteria->compare( 'persons.last_name2', $this->last_name2, true );

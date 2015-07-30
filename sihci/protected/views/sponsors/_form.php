@@ -1379,8 +1379,8 @@
 
 	<div class="row buttons">
 
-	  <?php echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'send("sponsors-form", "sponsors/sponsorsInfo", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
+	  <?php echo CHtml::htmlButton('Guardar',array(
+                'onclick'=>'send("sponsors-form", "sponsors/sponsorsInfo", "'.(isset($_GET['id']) ? $_GET['id'] : isset($_GET['ide']) ? $_GET['ide'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : isset($_GET['ide']) ? $_GET['ide'] : 0).'","")',
                 'class'=>'savebutton',
             ));
     ?>
