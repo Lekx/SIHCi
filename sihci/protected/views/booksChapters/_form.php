@@ -60,7 +60,10 @@
           '2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
           '2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
           '2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
-          '2015'=>'2015'),array('title'=>'Año de publicación','prompt'=>'Seleccionar año de publicación'));?>
+          '2015'=>'2015','2016'=>'2016','2017'=>'2017','2018'=>'2018',
+          '2019'=>'2019','2020'=>'2020','2021'=>'2021','2022'=>'2022',
+          '2023'=>'2023','2024'=>'2024','2025'=>'2025','2026'=>'2026',
+          '2027'=>'2027','2028'=>'2028','2029'=>'2029','2030'=>'2030'),array('title'=>'Año de publicación','prompt'=>'Seleccionar año de publicación'));?>
 </span>
     <?php echo $form->error($model,'publishing_year'); ?>
   </div>
@@ -246,7 +249,7 @@
   <div class="row buttons">
 
     <?php echo CHtml::htmlButton($model->isNewRecord ? 'Guardar' : 'Modificar',array(
-                'onclick'=>'send("books-chapters-form", "booksChapters/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","booksChapters/admin","");',
+                'onclick'=>'send("books-chapters-form", "booksChapters/'.($model->isNewRecord ? 'create' : 'update').'", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","booksChapters/admin","checkAuths");',
                  //'id'=> 'post-submit-btn',
                 'class'=>'savebutton',
             ));

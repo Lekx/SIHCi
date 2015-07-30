@@ -33146,6 +33146,10 @@ function changeGetSector()
       var apradie =[" "];
       organizationValue = apradie;
     }
+     if(organizationValue =="APTEG SC"){
+      var apradi =[" "];
+      organizationValue = apradi;
+    }
       if(organizationValue =="ARANEA SYSTEMS SA DE CV"){
       var araneaSystem =[" "];
       organizationValue = araneaSystem;
@@ -37330,6 +37334,12 @@ function changeGetSector()
       var honorableAyuntaminetoNicolasRomero =[" "];
       organizationValue = honorableAyuntaminetoNicolasRomero;
     }
+     if(organizationValue =="AGRICULTORES UNIDOS DEL RINCON SPR DE RL"){
+      var farmRnc =[" "];
+      organizationValue = farmRnc;
+    }
+
+
     if(organizationValue =="HONORABLE AYUNTAMIENTO DE TLACOLULA DE MATAMOROS / INSTANCIA DE LA MUJER TLACOLULENSE"){
       var honorableAyuntamientoTlacolula =[" "];
       organizationValue = honorableAyuntamientoTlacolula;

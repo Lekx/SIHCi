@@ -63,8 +63,8 @@ class BooksAuthors extends CActiveRecord
 			'id' => 'ID',
 			'id_book' => 'Id Book',
 			'names' => 'Nombre(s)',
-			'last_name1' => 'Apellido Paterno',
-			'last_name2' => 'Apellido Materno',
+			'last_name1' => 'Apellido paterno',
+			'last_name2' => 'Apellido materno',
 			'position' => 'Posición',
 		);
 	}

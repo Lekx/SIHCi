@@ -51,15 +51,12 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionSponsorsInfo() {
-
 		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
 			$iduser = (int)$_GET["ide"];
 		else
 			$iduser = Yii::app()->user->id;
-
 		$sponsorExist = Sponsors::model()->findByAttributes(array('id_user' => $iduser));
-
-		if($sponsorExist != null) {
+		if ($sponsorExist != null) {
 			$model = $this->loadModel($sponsorExist->id);
 			$modelAddresses = Addresses::model()->findByPk($model->id_address);
 			$section = "Empresas"; //manda parametros al controlador SystemLog
@@ -71,10 +68,10 @@ class SponsorsController extends Controller {
 			$section = "Empresas"; //manda parametros al controlador SystemLog
 			$details = "Subsección: Datos de Facturación";
 			$action = "Creación";
-
 		}
 
 		$modelPersons = Persons::model()->findByAttributes(array('id_user' => $iduser));
+
 		$this->performAjaxValidation($model);
 		$this->performAjaxValidation($modelAddresses);
 		$this->performAjaxValidation($modelPersons);
@@ -82,61 +79,53 @@ class SponsorsController extends Controller {
 		if (isset($_POST['Sponsors'])) {
 			$model->attributes = $_POST['Sponsors'];
 			$modelAddresses->attributes = $_POST['Addresses'];
+			$model->id_address = 1;
+			$model->id_user = $iduser;
+
 			$modelPersons->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
 			if ($modelPersons->photo_url != "") {
 				$logo = CUploadedFile::getInstanceByName('Persons[photo_url]');
-
 			}
-			$model->id_user = 1;
-			$model->id_address = 1;
-			if($modelAddresses->validate() && $modelPersons->validate() && $model->validate()){
-				if($modelAddresses->save()) {
-					$model->id_user = $iduser;
-					$model->id_address = $modelAddresses->id;
-					if($model->validate() == 1) {
-						if($model->save()) {
 
+			if($modelAddresses->validate() && $modelPersons->validate() && $model->validate()){
+			//if ($modelAddresses->validate()) {
+
+				if ($modelAddresses->save()) {
+					$model->id_user = $iduser;
+					if ($model->validate() == 1) {
+							$model->id_address = $modelAddresses->id;
+						if ($model->save()) {
 							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 							$modelPersons->photo_url = CUploadedFile::getInstanceByName('Persons[photo_url]');
 							if ($modelPersons->photo_url != NULL) {
-
 								$id_sponsor = $iduser;
-
 								$path = YiiBase::getPathOfAlias("webroot") . "/users/" . $id_sponsor . "/cve-hc/";
 								if (!file_exists($path)) {
 									mkdir($path, 0775, true);
 								}
-
 								$files = glob($path);
 								foreach ($files as $file) {
-
 									if (is_file($file)) {
 										unlink($file);
 									}
-
 								}
 								$logo->saveAs($path . 'perfil.' . $logo->getExtensionName());
-								$logo = "sponsors/" . $id_sponsor . " /cve-hc/" . 'perfil.png';
-								$modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo));
-										$log = new SystemLog();
-										$log->id_user = $iduser;
-										$log->section = "Empresas";
-										$log->details = "Se creo un nuevo registro";
-										$log->action = "creacion";
-										$log->datetime = new CDbExpression('NOW()');
-										$log->save();
-										echo CJSON::encode(array('status'=>'success'));
-										Yii::app()->end();
-
-
-
-							}
-						}	echo CJSON::encode(array('status'=>'success'));
-							Yii::app()->end();
+								$logo = "users/" . $id_sponsor . "/cve-hc/" . 'perfil.png';
+								if ($modelPersons->updateByPk(Persons::model()->findByAttributes(array("id_user" => $iduser))->id, array('photo_url' => $logo))) {
+									$log = new SystemLog();
+									$log->id_user = $iduser;
+									$log->section = "Empresas";
+									$log->details = "Se creo un nuevo registro";
+									$log->action = "creacion";
+									$log->datetime = new CDbExpression('NOW()');
+									$log->save();
+								}
+							}	echo CJSON::encode(array('status'=>'success'));
+	     							Yii::app()->end();
+						}
 					}
-
 				}
-
+		//	}
 		}else{
 				$error1 = CActiveForm::validate($model);
 				$error2 = CActiveForm::validate($modelAddresses);
@@ -148,15 +137,11 @@ class SponsorsController extends Controller {
 					$error.= str_replace("{", "",str_replace("}", "",$error2));
 				if($error3 !='[]')
 					$error.= str_replace("{", "",str_replace("}", "",$error3));
-
-
 				if($error!='[]')
 					echo str_replace("]\"", "],\"",$error)."}";
-					Yii::app()->end();
+				Yii::app()->end();
 	        }
-
 		}
-
 		$this->render('SponsorsInfo', array(
 			'model' => $model, 'modelAddresses' => $modelAddresses, 'modelPersons' => $modelPersons,
 		));
@@ -201,7 +186,7 @@ class SponsorsController extends Controller {
 	$modelPull = SponsorsContact::model()->findAllByAttributes(array("id_sponsor"=>$id_sponsor));
 	// Uncomment the following line if AJAX validation is needed
 	$this->performAjaxValidation($model);
-	if (isset($_POST['valuesUpdate1'])) {
+/*	if (isset($_POST['valuesUpdate1'])) {
 
 		$modelPullIds = $_POST['modelPullIds'];
 		$types = $_POST['modelPullTypes'];
@@ -212,7 +197,7 @@ class SponsorsController extends Controller {
 			$model->updateByPk($modelPullIds[$key],array('type' => $type,'value' => $values1[$key] . "-" . $values2[$key] . "-" . $values3[$key]));
 
 
-	}
+	}*/
 	if (isset($_POST['values1'])) {
 
 		$id_sponsor = Sponsors::model()->findByAttributes(array('id_user' => Yii::app()->user->id))->id;
@@ -230,7 +215,7 @@ class SponsorsController extends Controller {
 			if($model->validate() == 1){
 				if($model->save()){
 					$section = "Empresas"; //manda parametros al controlador AdminSystemLog
-					$details = "Subsección: Datos de Contactos. Datos: ".$model->fullname;
+					$details = "Subsección: Datos de Contactos. Datos: ".$model->value;
 					$action = "Creación";
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 					echo CJSON::encode(array('status'=>'success'));
@@ -289,7 +274,7 @@ class SponsorsController extends Controller {
 				if($countSuccess == count($fullnames)){
 				echo CJSON::encode(array('status'=>'success'));
 			}else{
-				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
+				echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Llene el campo de nombre completo.'));
 			}
 			Yii::app()->end();
 
@@ -334,15 +319,12 @@ class SponsorsController extends Controller {
 	}
 
 	public function actionCreate_billing() {
-
 		if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
 			$iduser = (int)$_GET["ide"];
 		else
 			$iduser = Yii::app()->user->id;
-
 		$billingExist = SponsorBilling::model()->findByAttributes(array('id_sponsor' => Sponsors::model()->findByAttributes(array('id_user' => $iduser))->id));
 		$sponsor = Sponsors::model()->findByAttributes(array("id_user" => $iduser));
-
 		if ($billingExist != null) {
 			$model = $billingExist;
 			$modelAddresses = Addresses::model()->findByPk($model->id_address_billing);
@@ -350,13 +332,6 @@ class SponsorsController extends Controller {
 			$section = "Empresas"; //manda parametros al controlador SystemLog
 			$details = "Subsección: Datos de Facturación. Registro Número ".$model->id;
 			$action = "Modificación";
-			if ($model->save()){
-				echo CJSON::encode(array('status'=>'success'));
-					Yii::app()->end();
-				}else{
-					echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
-					Yii::app()->end();
-				}
 		} else {
 			$model = new SponsorBilling;
 			$modelAddresses = new Addresses;
@@ -364,56 +339,37 @@ class SponsorsController extends Controller {
 			$section = "Empresas"; //manda parametros al controlador SystemLog
 			$details = "Subsección: Datos de Facturación";
 			$action = "Creación";
-
-		}// aqui termina
+		}
 		$this->performAjaxValidation($model);
 		$this->performAjaxValidation($modelAddresses);
-
-
 		if (isset($_POST['SponsorBilling'])) {
-
 			$model->attributes = $_POST['SponsorBilling'];
-
 			$model->id_sponsor = $sponsor->id;
-
 			if (isset($_POST['sameAddress'])) {
-
 				$model->id_address_billing = Sponsors::model()->findByAttributes(array("id_user" => $iduser))->id_address;
-
 				if ($model->save())
 					if ($modelAddresses->id != $model->id_address_billing && $modelAddresses->id > 0) {
 						if ($modelAddresses->delete()){
 							echo CJSON::encode(array('status'=>'success'));
-								Yii::app()->end();
-						}
-					}else{
-							echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
 							Yii::app()->end();
+							}
+					}else{
+						echo CJSON::encode(array('status'=>'success'));
+						Yii::app()->end();
 					}
 				} else {
-					if($model->validate() && $modelAddresses->validate()==1){
-
 						$modelAddresses = new Addresses;
 						$modelAddresses->attributes = $_POST['Addresses'];
-
 						if ($modelAddresses->save()) {
 							$model->id_address_billing = $modelAddresses->id;
-						}
-						if ($model->save()){
-							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-							echo CJSON::encode(array('status'=>'success'));
-								Yii::app()->end();
-						}else{
-							echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Ha ocurrido un error interno al crear el registro, vuelva a intentarlo más tarde o si persiste el error contacte a el administrador.'));
-							Yii::app()->end();
+							if ($model->save()) {
+								Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+								echo CJSON::encode(array('status'=>'success'));
+									Yii::app()->end();
+							}
 						}
 					}
 				}
-			}
-
-
-
-
 		$this->render('create_billing', array(
 			'model' => $model, 'modelAddresses' => $modelAddresses, 'sameAd' => $sameAd,
 		));
@@ -638,11 +594,17 @@ $this->render('create_docs', array(
 			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		$model->delete();
 
+		$this->redirect(array('create_contact'));
+		Yii::app()->end();
+
+
+	//	echo CJSON::encode(array('status'=>'success'));
+		//			Yii::app()->end();
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if (!isset($_GET['ajax'])) {
+	/*	if (!isset($_GET['ajax'])) {
 			$this->redirect(array('create_contact'));
 			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
+		}*/
 
 	}
 	/**

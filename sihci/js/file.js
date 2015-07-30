@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	function stopRKey(evt) {
+	/*function stopRKey(evt) {
 		var evt = (evt) ? evt : ((event) ? event : null);
 		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
 		if ((evt.keyCode == 13) && (node.type == "text")) {
@@ -8,7 +8,7 @@ $(document).ready(function() {
 		}
 	}
 
-	document.onkeypress = stopRKey;
+	document.onkeypress = stopRKey;*/
 
 	$('input[type=file]').each(function() {
 		var id = $(this).attr('id'),
