@@ -11111,7 +11111,6 @@ function changeSector()
 }
 
  function changeSecondLevel(){
-  alert('ok');
   var organizationValue = $("#DirectedThesis_organization option:selected").val();
 
     /*if(organizationValue =="Seleccionar Organización"){
