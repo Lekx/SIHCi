@@ -139,29 +139,31 @@ function checkEmailNull($email2, $email22){
 		$details = Users::model()->findByPk($iduser);
 		$this->currentemail = $details->email;
 		if(isset($_POST['Account'])){
+      if($this->checkEmailNull($_POST['Account']['email2'],$_POST['Account']['email22'])){
+      if($this->checkEmailValid($_POST['Account']['email2'],$_POST['Account']['email22'])){
       if($this->checkEmailDifferent($_POST['Account']['email2'],$_POST['Account']['email22'])){
-      if($this->checkEmailValid($_POST['Account']['email2'], $_POST['Account']['email22'])){
-      if($this->checkEmailNull($_POST['Account']['email2'], $_POST['Account']['email22'])){
         if($details->updateByPk($iduser,array('email'=>$_POST['Account']['email2']))){
           $details->email = $_POST['Account']['email2'];
 					$section = "Cuenta";
 					$details = "Subsección: Cambio Email.";
 					$action = "Modificación";
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+          
           echo CJSON::encode(array('status'=>'success'));
-          Yii::app()->user->logout();
+          if(Yii::app()->user->admin == 0 )//lastday add
+          	Yii::app()->user->logout();
           Yii::app()->end();
         }
       }else{
-        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El correo ingresado no tiene un formato valido. "ejemplo@ejemplo.com"'));
+        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no coinciden.'));
         Yii::app()->end();
       }
     }else{
-      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Llene los campos de correo electronico.'));
+      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'El correo ingresado no tiene un formato valido. "ejemplo@ejemplo.com"'));
       Yii::app()->end();
     }
 			}else{
-        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Los correos no coinciden.'));
+        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Llene los campos de correo electronico.'));
         Yii::app()->end();
 
       }
@@ -184,9 +186,9 @@ function checkEmailNull($email2, $email22){
 		$this->currentpassword = $details->password;
 		if(isset($_POST['Account']))
 		{
-			if($this->checkPasswordExist($_POST['Users']['password'])){
-      if($this->checkPasswordDifferent($_POST['Account']['password2'],$_POST['Account']['password22'])){
-      if($this->checkPasswordNull($_POST['Account']['password2'],$_POST['Account']['password22'])){
+			if($this->checkPasswordNull($_POST['Account']['password2'],$_POST['Account']['password22'])){
+      if($this->checkPasswordExist($_POST['Users']['password'])){
+        if($this->checkPasswordDifferent($_POST['Account']['password2'],$_POST['Account']['password22'])){
         $details->password=sha1(md5(sha1($_POST['Account']['password2'])));
 			if($details->updateByPk($iduser,array('password'=>sha1(md5(sha1($_POST['Account']['password2'])))))){
 					$section = "Cuenta";
@@ -198,15 +200,15 @@ function checkEmailNull($email2, $email22){
           Yii::app()->end();
 				}
       }else{
-        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Llene los campos de contraseña.'));
-        Yii::app()->end();
-      }
-      }else{
         echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Las contraseñas no coinciden.'));
         Yii::app()->end();
       }
+      }else{
+        echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'La contraseña no es de la cuenta.'));
+        Yii::app()->end();
+      }
     }else{
-      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'La contraseña no es de la cuenta.'));
+      echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'Llene los campos de contraseña.'));
       Yii::app()->end();
     }
 		}

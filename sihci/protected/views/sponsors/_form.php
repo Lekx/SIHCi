@@ -14,7 +14,7 @@
     function lettersOnly(e) {
       key = e.keyCode || e.which;
       tecla = String.fromCharCode(key).toLowerCase();
-      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz.";
       especiales = "8-9-37-38-46-164";
 
       tecla_especial = false
@@ -46,7 +46,23 @@
         return false;
     }
 
+    function lettersAndNumbersOnly(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz1234567890.";
+      especiales = "8-9-37-38-46-164";
 
+      tecla_especial = false
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+    }
 
 
 
@@ -1267,30 +1283,30 @@
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'colony', array('size' => 45, 'maxlength' => 45, 'placeholder' => 'Colonia','title'=>'Colonia'));?>
+		<?php echo $form->textField($modelAddresses, 'colony', array('size' => 45, 'maxlength' => 45, 'placeholder' => 'Colonia','title'=>'Colonia','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'colony');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($modelAddresses, 'street', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Calle','title'=>'Calle'));?>
+		<?php echo $form->textField($modelAddresses, 'street', array('size' => 50, 'maxlength' => 50, 'placeholder' => 'Calle','title'=>'Calle','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'street');?>
 	</div>
 
 	<div class="row">
 
-		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo','title'=>'Número Externo'));?>
+		<?php echo $form->textField($modelAddresses, 'external_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Externo','title'=>'Número Externo','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
 		<?php echo $form->error($modelAddresses, 'external_number');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno', 'onKeypress'=>'return numericOnly(event)','title'=>'Número Interno'));?>
+		<?php echo $form->textField($modelAddresses, 'internal_number', array('size' => 8, 'maxlength' => 8, 'placeholder' => 'Número Interno', 'onKeypress'=>'return lettersAndNumbersOnly(event)','title'=>'Número Interno'));?>
 		<?php echo $form->error($modelAddresses, 'internal_number');?>
 	</div>
 
 
 
 	<div class="row">
-		<?php echo $form->textField($model, 'sponsor_name', array('size' => 50, 'maxlength' => 50, 'placeholder'=>'Nombre de la empersa','title'=>'Nombre de la empersa'));?>
+		<?php echo $form->textField($model, 'sponsor_name', array('size' => 50, 'maxlength' => 50, 'placeholder'=>'Nombre de la empersa','title'=>'Nombre de la empersa','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
 		<?php echo $form->error($model, 'sponsor_name');?>
 	</div>
 
@@ -1304,7 +1320,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model, 'website', array('size' => 60, 'maxlength' => 100, 'placeholder'=>'Pagina Web','title'=>'Pagina Web'));?>
+		<?php echo $form->textField($model, 'website', array('size' => 60, 'maxlength' => 100, 'placeholder'=>'www.ejemplo.com.mx','title'=>'Pagina Web','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
 		<?php echo $form->error($model, 'website');?>
 	</div>
 
@@ -1349,19 +1365,19 @@
   	</div>';
   	?>
 	<div class="row">
-		<?php echo $form->textField($model, 'branch', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Rama','title'=>'Rama'));?>
+		<?php echo $form->textField($model, 'branch', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Rama','title'=>'Rama','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
 		<?php echo $form->error($model, 'branch');?>
 
 
     </div>
 
 	<div class="row">
-		<?php echo $form->textField($model, 'main_activity', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Actividad Principal','title'=>'Actividad Principal'));?>
+		<?php echo $form->textField($model, 'main_activity', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Actividad Principal','title'=>'Actividad Principal','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
 		<?php echo $form->error($model, 'main_activity');?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->textField($model, 'legal_structure', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Estructura Legal','title'=>'Estructura Legal'));?>
+		<?php echo $form->textField($model, 'legal_structure', array('size' => 60, 'maxlength' => 100,'placeholder'=>'Estructura Legal','title'=>'Estructura Legal','onKeypress'=>'return lettersAndNumbersOnly(event)'));?>
 		<?php echo $form->error($model, 'legal_structure');?>
 	</div>
 

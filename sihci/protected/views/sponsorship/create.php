@@ -1,11 +1,5 @@
 <?php
-/* @var $this SponsorshipController */
-/* @var $model Sponsorship */
 
-$this->breadcrumbs=array(
-	'Sponsorships'=>array('index'),
-	'Create',
-);
 
 $this->menu=array(
 	array('label'=>'Patrocinios', 'url'=>array('sponsorship/admin'),'itemOptions'=>array('class' => 'menuitem 1 now')),

@@ -462,6 +462,8 @@ class ProjectsReviewController extends Controller
 				if(($actualStep == 12 && $modelProject->is_sponsored == 1) || ($actualStep == 13 && $modelProject->is_sponsored == 0)) // added and, may be removed
 					$subMessage = 'El proyecto ha sido dictaminado satisfactoriamente. Ahora el investigador puede crear seguimientos para este proyecto.';
 
+
+				sendMail($followup->step_number,$projectId);	
 	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>$subMessage));
 
 		}else{
@@ -566,7 +568,26 @@ public function actionSetFolioNumber()
 		Yii::app()->end();
 	}
 
+	function sendMail($stepNumber, $idProject){
 
+		$project = Projects::model()->findByAttributes(array('id'=>$idProject));
+
+		if($stepNumber == 0) // modified from $this->loadModel($projectId)->is_sponsored
+			$rules = $this->noSponsoredRules;
+		else
+			$rules = $this->sponsoredRules;
+
+		$userType = $rules[$stepNumber+1]["userType"];
+		$message = $rules[$stepNumber+1]["message"];
+
+		$rol = Roles::model()->findByAttributes(array('alias'=>$userType));
+		$user = Users::model()->findByAttributes(array('id_roles'=>$rol->id));
+
+		$subject = "Evaluación de proyectos";
+		$title="El proyecto ".$project->title." necesita de su revisión";
+		$urlImg = "proyectos";
+		Yii::app()->runController('mail/sendMail/to/'.$user->email.'/subject/'.$subject.'/title/'.$title.'/content/'.$message.'/urlImg/'.$urlImg.'/urltitle/'.$urltitle.'/key/'.$key);
+	}
 
 
 

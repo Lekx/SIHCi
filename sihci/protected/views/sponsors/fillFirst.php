@@ -2,11 +2,6 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 
-$this->breadcrumbs=array(
-	'Sponsors'=>array('index'),
-	'Create',
-);
-
 $controller="";
 if(isset($_GET["ide"]) && ((int)$_GET["ide"]) > 0)
 			$iduser = (int)$_GET["ide"];

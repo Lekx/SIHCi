@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
         <!--[if lt IE 8]>
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
+        <link rel="stylesheet" type="text/css" href="<?php //echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
         <![endif]-->
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap-3.0.0/css/bootstrap.min.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
@@ -90,12 +90,60 @@
         </script>
     </head>
     <body>
+      <?php
+$user=Yii::app()->user;
+if(!$user->getIsGuest())
+{
+   $time= ($user->getState(CWebUser::AUTH_TIMEOUT_VAR) - time()-10)*1000;//converting to millisecs
+   Yii::app()->clientScript->registerSCript('timeoutAlert','
+     setTimeout(function()
+    {
+          var n=10;
+            setInterval(function()
+            {
+                  if(n>0)$("#timeout").addClass("flash-error").text("Your session will expire in "+n+" seconds");
+                  
+                  if(n==0) {
+                        $("#timeout").text("Your session has expired!");
+                      $(".errordivsession").show();
+
+                        clearInterval();
+                             }
+                --n;    
+                },1000) 
+        }, 
+                
+        '.$time.')
+',CClientScript::POS_END);
+}
+?>
+           <div class="errordivsession" style="display:none;">
+                <div class="backcontainer">
+                    <div class="maincontainer">
+                        <div class="errorh2 errorsessionh2">
+                            <h2>¡Sesión Expirada!</h2>
+                            <hr>
+                            <div class="remainder">
+                                <span>Su sesión ha expirado, por favor vuelva a iniciar sesión.</span>
+                            </div>
+                            <?php echo CHtml::link('<h3>Volver al sitio</h3>',array('site/index'),array('class'=>'errorbut','style'=>'text-align:center;')); ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <div>
             <?php
                 if(isset(Yii::app()->user->admin) && (int)Yii::app()->user->admin != 0 ){
-                    echo "<div class='dobless'> <p>Sesion doble iniciada</p> ";
-                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0,'class'=>'doblebutt')));
+                  $person = Persons::model()->findByAttributes(array("id_user"=>Yii::app()->user->id));
+                //  echo "sesiontype ".Yii::app()->user->sessionType;
+                  if(Yii::app()->user->sessionType != "modify")
+                    echo "<div class='dobless'> <p>Sesión doble iniciada como:<br>".$person->names." ".$person->last_name1." ".$person->last_name2."</p> ";
+                  else
+                    echo "<div class='dobless' style='background-color:orangered;' > <p>Modifcando datos de: <br>".$person->names." ".$person->last_name1." ".$person->last_name2."</p> ";
+                    
+                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0,),'class'=>'doblebutt'));
                     echo "</div>";
                 }
             ?>

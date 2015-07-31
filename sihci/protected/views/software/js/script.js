@@ -3502,7 +3502,7 @@ function changeSector()
  
  
          var newOrganization ="<span class='plain-select'><select id='Software_organization' title='Organización.' name='Software[organization]' onchange='changeSecondLevel()'>";
-           newOrganization+="<option>Seleccionar Organización</option>";
+           newOrganization+="<option value=''>Seleccionar Organización</option>";
             
             for (var item in sectorValue)
                 newOrganization +="<option>"+sectorValue[ item ]+"</option>";
@@ -3527,10 +3527,10 @@ function changeSector()
  function changeSecondLevel(){
   var organizationValue = $("#Software_organization option:selected").val();
 
-    if(organizationValue =="Seleccionar Organización"){
+    /*if(organizationValue =="Seleccionar Organización"){
       var seleccionarOrganization =[" "];
       organizationValue = seleccionarOrganization;
-    }
+    }*/
      if(organizationValue =="A&C BIOTESLA SC"){
       var biotesla =[" "];
       organizationValue = biotesla;
@@ -21969,7 +21969,7 @@ function changeSector()
     }
 
     var newSecondLevel ="<span class='plain-select'><select id='Software_second_level' title='Segundo nivel' name='Software[second_level]' >";
-    newSecondLevel+="<option>Seleccionar segundo nivel</option>";
+    newSecondLevel+="<option value=''>Seleccionar segundo nivel</option>";
     for (var item in organizationValue) {
         newSecondLevel +="<option>"+organizationValue[ item ]+"</option>";
     }
@@ -25477,7 +25477,7 @@ function changeGetSector()
  
  
          var newOrganization ="<span class='plain-select'><select id='getSelectOrganization' title='Organización.' name='getOrganization[]' onchange='changeGetSecondLevel()'>";
-           newOrganization+="<option>Seleccionar Organización</option>";
+           newOrganization+="<option value=''>Seleccionar Organización</option>";
             
             for (var item in sectorValue)
                 newOrganization +="<option>"+sectorValue[ item ]+"</option>";
@@ -25502,10 +25502,10 @@ function changeGetSector()
  function changeGetSecondLevel(){
   var organizationValue = $("#Software_organization option:selected").val();
 
-    if(organizationValue =="Seleccionar Organización"){
+    /*if(organizationValue =="Seleccionar Organización"){
       var seleccionarOrganization =[" "];
       organizationValue = seleccionarOrganization;
-    }
+    }*/
      if(organizationValue =="A&C BIOTESLA SC"){
       var biotesla =[" "];
       organizationValue = biotesla;
@@ -43944,7 +43944,7 @@ function changeGetSector()
     }
 
     var newSecondLevel ="<span class='plain-select'><select id='getSecond_level' title='Segundo nivel' name='getSecond_level[]'>";
-    newSecondLevel+="<option>Seleccionar Segundo nivel</option>";
+    newSecondLevel+="<option value=''>Seleccionar Segundo nivel</option>";
     for (var item in organizationValue) {
         newSecondLevel +="<option>"+organizationValue[ item ]+"</option>";
     }

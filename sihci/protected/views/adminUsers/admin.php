@@ -115,17 +115,18 @@ $this->renderPartial('_search',array(
 			array(
 		 	'type'=>'raw',
 		 	'header' => 'Estatus Curriculum',
-          	'value'=>'!is_null(Curriculum::model()->findByAttributes(array("id_user" => $data->id))) ? CHtml::dropDownList(Curriculum::model()->findByPk($data->id)->id,Curriculum::model()->findByPk($data->id)->status,array("1" => "Activo" , "0" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatusCurriculum\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"curriculum".$data->id)) : ($data->type == "fisico" ? "curriculum sin llenar" : "Usuario Moral")'),
+						'value'=>'$data->type == "moral" ? "Usuario moral" : ($data->type == "" ? "Usuario indefinido" : (($data->type == "fisico" && is_object(Curriculum::model()->findByAttributes(array("id_user"=>$data->id)))) ? CHtml::dropDownList(Curriculum::model()->findByAttributes(array("id_user"=>$data->id))->id,Curriculum::model()->findByAttributes(array("id_user"=>$data->id))->status,array("1" => "Activo" , "0" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatusCurriculum\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"curriculum".$data->id)) : "nada"))'),//is_object(Curriculum::model()->findByAttributes(array("id_user" => $data->id))) ? CHtml::dropDownList(Curriculum::model()->findByPk($data->id)->id,Curriculum::model()->findByPk($data->id)->status,array("1" => "Activo" , "0" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatusCurriculum\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"curriculum".$data->id)) : ($data->type == "fisico" ? "Curriculum sin llenar" : $data->type == "moral" ? "Usuario moral" : "Usuario indefinido")'),
+						//'value'=>'is_object(Curriculum::model()->findByAttributes(array("id_user" => $data->id))) ? "no tengo curriculum": "si tengo cv"'),
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {delete} {login}', 'header' => 'Acciones',
 				'buttons' => array(
 									'login' => array('label' => '','imageUrl' => Yii::app()->request->baseUrl . '/img/Acciones/sesion.png',
-									'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id))',
+									'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id,"type"=>"dsession"))',
 									),
 								'edit' => array(
 								'label' => '',
 								'imageUrl'=> Yii::app()->request->baseUrl . '/img/Acciones/editar.png',
-								'url'=> '"AdminUsers/update?ide=".$data->id'),
+								'url'=> 'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id,"type"=>"modify"))'),
 								'delete' => array(
 								'label' => 'Eliminar.',
 								'url'=> 'Yii::app()->createUrl("/adminUsers/deleteUser",array("id"=>$data->id))'),

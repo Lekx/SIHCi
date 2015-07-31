@@ -1,12 +1,3 @@
-<?php
-/* @var $this SponsorshipController */
-/* @var $model Sponsorship */
-
-$this->breadcrumbs=array(
-	'Sponsorships'=>array('index'),
-	'Manage',
-);
-?>
 	<div class="cvtitle">
         <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
         <h1>Proyectos</h1>
