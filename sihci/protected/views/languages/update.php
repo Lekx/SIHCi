@@ -2,11 +2,6 @@
 /* @var $this LanguagesController */
 /* @var $model Languages */
 
-$this->breadcrumbs=array(
-	'Languages'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 	//knowledgeApplication

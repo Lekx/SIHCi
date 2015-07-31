@@ -1,10 +1,10 @@
 <?php
 /* @var $this SiteController */
-/* @var $error array */
+/* @var $error array 
 $this->pageTitle=Yii::app()->name . ' -FInEHC';
 $this->breadcrumbs=array(
 '/ FInEHC',
-);
+);*/
 ?>
 <section class="informativa">
     <section class="column-center">

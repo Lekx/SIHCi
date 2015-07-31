@@ -2,10 +2,7 @@
 /* @var $this PostdegreeGraduatesController */
 /* @var $model PostdegreeGraduates */
 
-$this->breadcrumbs=array(
-	'Graduados de posgrado'=>array('index'),
-	'Crear',
-);
+
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

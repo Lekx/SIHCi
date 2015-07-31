@@ -6,6 +6,7 @@ class DisplayInvestigationLinesController extends Controller
 	{
 		$this->layout = 'informativas';
 		$this->render('index');
+	
 	}
 
 	// Uncomment the following methods and override them if needed

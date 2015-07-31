@@ -2,10 +2,6 @@
 /* @var $this PhonesController */
 /* @var $model Phones */
 
-$this->breadcrumbs=array(
-	'Phones'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
 	array('label'=>'List Phones', 'url'=>array('index')),

@@ -1,12 +1,4 @@
 <?php
-/* @var $this SponsorshipController */
-/* @var $model Sponsorship */
-
-$this->breadcrumbs=array(
-	'Sponsorships'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

@@ -1,9 +1,6 @@
 <?php
 /* @var $this ProjectsCoworkersController */
 
-$this->breadcrumbs=array(
-	'Projects Coworkers',
-);
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 

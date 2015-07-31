@@ -2,11 +2,10 @@
 /* @var $this SponsorshipController */
 /* @var $model Sponsorship */
 
-$this->breadcrumbs=array(
-	'Proyectos'=>array('sponsoredAdmin'),
-	'Gestión',
-);
+<<<<<<< HEAD
+=======
 
+>>>>>>> ae089f6f7322ab820cdf70fe395bafa378ac5502
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
@@ -60,18 +59,18 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		array(
 			'name'=>'id_user_researcher',
 			'header'=>'Empresa que patrocina',
-			'value'=>'Sponsors::model()->findByAttributes(array("id_user"=>$data->id_user_sponsorer))->sponsor_name',
+			'value'=>'Sponsors::model()->findByAttributes(array("id_user"=>$data->id_user_sponsorer))->sponsor_name','htmlOptions'=>array('style' => 'width: 200px;')
 			),
 
 		array(
 			'name'=>'title',
 			'header'=>'Título del proyecto',
-			'value'=>'$data->project_name',
+			'value'=>'$data->project_name','htmlOptions'=>array('style' => 'width: 700px;')
 			),
 				array(
 			'name'=>'status',
-			'header'=>'Título del proyecto',
-			'value'=>'strtolower($data->status)',
+			'header'=>'Estatus',
+			'value'=>'strtolower($data->status)','htmlOptions'=>array('style' => 'width: 100px;')
 			),
 			array(
 			'class'=>'CButtonColumn','template'=>'{view} {accept} {reject}','header'=>'Acciones','buttons'=>array(
@@ -92,7 +91,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 							'url'=>'Yii::app()->createUrl("/projects/rejectSponsorship",array("id"=>$data->id))',
 							'visible'=>'$data->status == "PENDIENTE" ? TRUE : FALSE',
 						)
-				)
+				),'htmlOptions'=>array('style' => 'width: 50px;')
 		),
 	),
 )); ?>

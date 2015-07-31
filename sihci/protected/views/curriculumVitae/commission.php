@@ -2,9 +2,6 @@
 /* @var $this AddressesController */
 /* @var $model Addresses */
 
-$this->breadcrumbs=array(
-	'Nombramientos'=>array('commission'),
-);
 $controller="";
 $editUser = "";
 if(isset($_GET["ide"]))

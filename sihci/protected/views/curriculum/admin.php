@@ -2,10 +2,7 @@
 /* @var $this CurriculumController */
 /* @var $model Curriculum */
 
-$this->breadcrumbs=array(
-	'Curriculums'=>array('index'),
-	'Manage',
-);
+
 
 $this->menu=array(
 	array('label'=>'List Curriculum', 'url'=>array('index')),

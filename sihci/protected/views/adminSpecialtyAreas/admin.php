@@ -4,10 +4,6 @@
 
 //AE05-Desplegar datos
 
-$this->breadcrumbs=array(
-	'Admin Specialty Areases'=>array('index'),
-	'Manage',
-);
 
 
 

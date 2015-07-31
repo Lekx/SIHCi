@@ -1,11 +1,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
-
+/*
 $this->pageTitle=Yii::app()->name . ' - Información de Dirección general';
 $this->breadcrumbs=array(
 	'OPD / Información de Dirección general',
-);
+);*/
 ?>
 <!-- >OP01-Desplegar información de Dirección general-->
 

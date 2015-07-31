@@ -2,11 +2,6 @@
 /* @var $this CertificationsController */
 /* @var $model Certifications */
 
-$this->breadcrumbs=array(
-	'Certifications'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 	//knowledgeApplication

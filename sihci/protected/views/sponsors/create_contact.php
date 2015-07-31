@@ -2,10 +2,10 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 
-$this->breadcrumbs=array(
-	'Sponsors'=>array('index'),
-	'Create',
-);
+<<<<<<< HEAD
+
+=======
+>>>>>>> ae089f6f7322ab820cdf70fe395bafa378ac5502
 
 $controller="";
 

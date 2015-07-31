@@ -2,11 +2,6 @@
 /* @var $this FilesManagerController */
 /* @var $model FilesManager */
 
-$this->breadcrumbs=array(
-	'Files Managers'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
 $this->menu=array(
 
     array('label'=>'Manejador de Archivos ', 'url'=>array('FilesManager/admin'),'itemOptions'=>array('class' => 'menuitem 1 now')),

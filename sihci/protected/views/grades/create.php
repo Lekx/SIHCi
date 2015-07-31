@@ -2,10 +2,7 @@
 /* @var $this GradesController */
 /* @var $model Grades */
 
-$this->breadcrumbs=array(
-	'Grades'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
 	array('label'=>'List Grades', 'url'=>array('index')),

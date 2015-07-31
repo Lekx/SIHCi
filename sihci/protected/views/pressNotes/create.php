@@ -2,10 +2,7 @@
 /* @var $this PressNotesController */
 /* @var $model PressNotes */
 
-$this->breadcrumbs=array(
-	'Press Notes'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

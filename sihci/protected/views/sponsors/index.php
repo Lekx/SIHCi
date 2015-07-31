@@ -2,10 +2,6 @@
 /* @var $this SponsorsController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Sponsors',
-);
-
 
 $this->menu = array(
 	array('label' => 'Datos Empresa', 'url' => array('sponsors/sponsorsInfo')),

@@ -14,8 +14,9 @@ if(!$model->isNewRecord){
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'sponsorship-form',
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'enableAjaxValidation'=>true,
-	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
+	'enableClientValidation'=>true,
 )); ?>
 
 	<?php //echo $form->errorSummary($model); ?>
@@ -40,12 +41,12 @@ if(!$model->isNewRecord){
 		<?php echo $form->error($model,'id_user_researcher'); ?>
 			</div>
 			<div class="row">
-				<?php echo $form->textArea($model,'project_name',array('size'=>45,'maxlength'=>45,'placeholder'=>'Nombre del proyecto','title'=>'Nombre del proyecto')); ?>
+				<?php echo $form->textArea($model,'project_name',array('size'=>60,'maxlength'=>250,'placeholder'=>'Nombre del proyecto','title'=>'Nombre del proyecto')); ?>
 				<?php echo $form->error($model,'project_name'); ?>
 			</div>
 
 			<div class="row">
-				<?php echo $form->textArea($model,'description',array('size'=>60,'maxlength'=>150,'placeholder'=>'Descripción','title'=>'Descripción')); ?>
+				<?php echo $form->textArea($model,'description',array('size'=>60,'maxlength'=>250,'placeholder'=>'Descripción','title'=>'Descripción')); ?>
 				<?php echo $form->error($model,'description'); ?>
 			</div>
 
@@ -69,7 +70,7 @@ if(!$model->isNewRecord){
 	</div>
 
 	<div class="row">
-		<?php echo $form->fileField($model,'doc_project',array('size'=>60,'maxlength'=>150,'title'=>$model->getAttributeLabel('doc_project'))); ?>
+		<?php echo $form->fileField($model,'doc_project',array('size'=>60,'maxlength'=>150,'title'=>'lacaca')); ?>
 		<?php echo $form->error($model,'doc_project'); ?>
 	</div>
 

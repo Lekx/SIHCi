@@ -2,10 +2,7 @@
 /* @var $this PressNotesController */
 /* @var $model PressNotes */
 //DP06-Barra de búsqueda
-$this->breadcrumbs=array(
-	'Press Notes'=>array('index'),
-	'Manage',
-);
+
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

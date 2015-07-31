@@ -2,11 +2,6 @@
 /* @var $this BooksController */
 /* @var $model Books */
 
-$this->breadcrumbs=array(
-	'Books'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 	//knowledgeApplication

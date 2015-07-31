@@ -2,10 +2,7 @@
 /* @var $this ResearchAreasController */
 /* @var $model ResearchAreas */
 
-$this->breadcrumbs=array(
-	'Research Areases'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
 

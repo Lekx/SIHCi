@@ -3,9 +3,7 @@
 /* @var $model Certifications */
 
 $this->breadcrumbs=array(
-	'Certifications'=>array('index'),
-	$model->id,
-);
+
 $this->menu=array(
 	//knowledgeApplication
 	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),

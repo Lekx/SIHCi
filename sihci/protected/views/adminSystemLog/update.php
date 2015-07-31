@@ -2,10 +2,7 @@
 /* @var $this AdminSystemLogController */
 /* @var $model SystemLog */
 
-$this->breadcrumbs=array(
-	'Gestionar'=>array('index'),
-	'Modificar',
-);
+
 
 $this->menu=array(
 	//array('label'=>'List SystemLog', 'url'=>array('index')),

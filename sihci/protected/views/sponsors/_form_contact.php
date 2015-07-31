@@ -15,7 +15,8 @@ $('.fType').on('change', function(e) {
 
 	if(option == 'EMAIL'){
 
-		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[] onKeypress = "return validateEmail (event)" ><input type="hidden" class="removable dFieldT" name="values2[]" ><input type="text" name="values3[]" class="removable dFieldE" placeholder="Correo Electronico"  onKeypress = "return numericAndLettersOnly(event)" onKeypress = "return validateEmail(event)">');
+		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[] onKeypress = "return validateEmail (event)" ><input type="hidden" class="removable dFieldT" name="values2[]" ><input type="email" name="values3[]" class="removable dFieldE" placeholder="Correo Electronico"  onKeypress = "return numericAndLettersOnly(event)" onsubmit = "validateEmail()" onKeypress = "return validateEmail(event)">');
+
 
 	}else if(option == 'CELULAR'){
 
@@ -23,7 +24,7 @@ $('.fType').on('change', function(e) {
 
 	}else{
 
-		$(this).parent().append('<input type="text" class="removable dFieldT" name="values1[]" placeholder="Lada 1" onKeypress = "return numericOnly(event)maxlength = "2"><input type="text" class="removable dFieldT" name="values2[]" placeholder="Lada 2" onKeypress = "return numericOnly(event)" maxlength = "3"><input type="text" class="removable dFieldT" name="values3[]" placeholder="Telefono" onKeypress = "return numericOnly(event)" maxlength = "12">');
+		$(this).parent().append('<input type="text" class="removable dFieldT" name="values1[]" placeholder="Lada 1" onKeypress = "return numericOnly(event)" maxlength = "2"><input type="text" class="removable dFieldT" name="values2[]" placeholder="Lada 2" onKeypress = "return numericOnly(event)" maxlength = "3"><input type="text" class="removable dFieldT" name="values3[]" placeholder="Telefono" onKeypress = "return numericOnly(event)" maxlength = "12">');
 
 	}
 
@@ -149,7 +150,8 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 		echo '<input type="text" name="valuesUpdate3[]" placeholder="'.$valuePull['type'].'" value="'.$valueArray[2].'" disabled>';
 		echo "</div>";
 		echo "<hr>";
-		echo CHtml::link('Eliminar',array('Sponsors/deleteContact','id'=>$valuePull['id']), array('class'=>'deleteSomething'));
+		echo CHtml::button('Eliminar',array('submit'=>array('Sponsors/deleteContact','id'=>$valuePull['id']),'confirm'=>'¿Seguro que desea eliminarlo?','class'=>'deleteSomething'));
+
 }
 ?>
 
@@ -158,7 +160,7 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 
 
 	<div class="row buttons">
-		<?php echo CHtml::htmlButton('Enviar',array(
+		<?php echo CHtml::htmlButton('Guardar',array(
 								'onclick'=>'send("sponsors-contact-form", "sponsors/create_contact", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.Yii::app()->controller->id.'/'.Yii::app()->controller->action->id.'/'.(isset($_GET['id']) ? $_GET['id'] : 0).'","")',
 								'class'=>'savebutton',
 						));

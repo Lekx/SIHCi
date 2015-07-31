@@ -1,9 +1,10 @@
 <!-- OP02-Desplegar información de  Subdirección General de enseñanza e investigación -->
 <?php
+/*
 $this->pageTitle=Yii::app()->name . 'Informacion De Subdireccion General De Ensenanza e Investigacion';
 $this->breadcrumbs=array(
 ' Informacion De Subdireccion General De Ensenanza e Investigacion',
-);
+);*/
 ?>
 <section class="informativa">
     <section class="column-left">

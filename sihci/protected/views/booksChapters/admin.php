@@ -2,10 +2,6 @@
 /* @var $this BooksChaptersController */
 /* @var $model BooksChapters */
 
-$this->breadcrumbs=array(
-	'Books Chapters'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
 	//knowledgeApplication

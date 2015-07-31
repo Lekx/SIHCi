@@ -2,11 +2,6 @@
 /* @var $this BooksController */
 /* @var $model Books */
 
-$this->breadcrumbs=array(
-	'Books'=>array('index'),
-	'Create',
-);
-
 $this->menu=array(
 	//knowledgeApplication
 array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),

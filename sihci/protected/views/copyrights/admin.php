@@ -2,10 +2,6 @@
 /* @var $this CopyrightsController */
 /* @var $model Copyrights */
 
-$this->breadcrumbs=array(
-	'Copyrights'=>array('index'),
-	'Manage',
-);
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),

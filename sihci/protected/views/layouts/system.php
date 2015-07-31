@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
         <!--[if lt IE 8]>
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
+        <link rel="stylesheet" type="text/css" href="<?php //echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
         <![endif]-->
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap-3.0.0/css/bootstrap.min.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
@@ -136,14 +136,20 @@ if(!$user->getIsGuest())
         <div>
             <?php
                 if(isset(Yii::app()->user->admin) && (int)Yii::app()->user->admin != 0 ){
-                    echo "<div class='dobless'> <p>Sesion doble iniciada</p> ";
-                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0,'class'=>'doblebutt')));
+                  $person = Persons::model()->findByAttributes(array("id_user"=>Yii::app()->user->id));
+                //  echo "sesiontype ".Yii::app()->user->sessionType;
+                  if(Yii::app()->user->sessionType != "modify")
+                    echo "<div class='dobless'> <p>Sesión doble iniciada como:<br>".$person->names." ".$person->last_name1." ".$person->last_name2."</p> ";
+                  else
+                    echo "<div class='dobless' style='background-color:orangered;' > <p>Modifcando datos de: <br>".$person->names." ".$person->last_name1." ".$person->last_name2."</p> ";
+                    
+                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0,),'class'=>'doblebutt'));
                     echo "</div>";
                 }
             ?>
         </div>
         <?php
-                if(Yii::app()->user->type == 'moral')
+                if(Yii::app()->user->type == 'moral' && Yii::app()->user->Rol->alias != "ADMIN" )
                     $infoUser = array(
                         "label"=>"Moral",
                         "icon"=>"PerfilEmpresa",
@@ -151,12 +157,12 @@ if(!$user->getIsGuest())
                         "controller"=>"sponsors/sponsorsInfo",
                         "MenuEmpresa"=>"Perfil Empresa",
                         "proyectos"=>"Proyectos",
-                        "Evaluacion"=>"Evaluación",
+                        "Evaluacion"=>"",
                         "proyectosUrl"=>"sponsorShip/admin",
-                        "labelEstadisticas"=>"Estadisticas",
-                        "labelAdmin"=>"Administración",
+                        "labelEstadisticas"=>"",
+                        "labelAdmin"=>"",
                         );
-                else if(Yii::app()->user->type == 'fisico')
+                else if(Yii::app()->user->type == 'fisico' && Yii::app()->user->Rol->alias != "ADMIN")
                     $infoUser = array(
                         "label"=>"Físico",
                         "icon"=>"PCV-HC",
@@ -166,10 +172,10 @@ if(!$user->getIsGuest())
                         "proyectos"=>"Proyectos",
                         "Evaluacion"=>"Evaluación Curricular",
                         "proyectosUrl"=>(Yii::app()->user->Rol->alias != 'USUARIO' ? "projectsReview" : "projects")."/admin",
-                        "labelEstadisticas"=>"Estadisticas",
-                        "labelAdmin"=>"Administración",
-                        );
-                else
+                        "labelEstadisticas"=>"",
+                        "labelAdmin"=>"",
+                      );
+                else if (Yii::app()->user->Rol->alias == "ADMIN")
                     $infoUser = array(
                     "label"=>"Administrador",
                     "icon"=>"PCV-HC",
@@ -179,24 +185,47 @@ if(!$user->getIsGuest())
                     "proyectos"=>"Proyectos",
                     "Evaluacion"=>"Evaluación Curricular",
                     "proyectosUrl"=>"projects/admin",
+                    "labelEstadisticas"=>"Estadisticas",
+                    "labelAdmin"=>"Administración",
                     );
         ?>
         <div class="main">
             <div class="sysheader">
                 <div class="headerconteiner1">
+
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/logoHme.png alt="home">', array('site/index'));?>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['cuentaicon'].'.png alt="home">', array('account/infoAccount'));?>
-                    <span>Cuenta</span>
+                    <?php
+                    if($infoUser['Evaluacion'] == "")
+                        echo "";
+                    else{
+                      echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['cuentaicon'].'.png alt="home">', array('account/infoAccount'));
+                      echo "<span>Cuenta</span>";
+                    }?>
                 </div>
                 <div class="headerconteinerC">
-                    <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['icon'].'.png alt="home">', array($infoUser['controller']) );?>
-                    <span><?php echo $infoUser['MenuEmpresa']; ?></span>
+                    <?php
+                    if($infoUser['Evaluacion'] == ""){
+                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['cuentaicon'].'.png alt="home">', array('account/infoAccount'));
+                    echo "<span>Cuenta</span>";
+                    }
+                    else{
+                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['icon'].'.png alt="home">', array($infoUser['controller']) );
+                    echo "<span>".$infoUser['MenuEmpresa']; } ?></span>
                 </div>
                   <div class="headerconteinerC">
-                      <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('EvaluateCV/index'));?>
-                      <span><?php echo $infoUser['Evaluacion']; ?></span>
+                      <?php
+                          if($infoUser['Evaluacion'] == "")
+                          {
+                          echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/'.$infoUser['icon'].'.png alt="home">', array($infoUser['controller']));
+                          echo "<span>".$infoUser['MenuEmpresa']."</span>";
+                          }
+                          else{
+                          echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PEvaluacionCV.png alt="home">', array('EvaluateCV/index'));
+                          echo "<span>".$infoUser['Evaluacion']."</span>";
+                          }
+                         ?></span>
                   </div>
                 <div class="headerconteinerC">
                     <?php echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PProyectos.png alt="home">', array($infoUser['proyectosUrl']));?>
@@ -360,7 +389,7 @@ if(!$user->getIsGuest())
                       break;
 
                       default:
-                      $ControllerB = "None";
+                      $ControllerB = " ";
                       break;
                     }
 
@@ -619,7 +648,7 @@ if(!$user->getIsGuest())
                                         if($infoUser['labelAdmin'] == "")
                                             echo "";
                                         else
-                    echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PAdministracionSistema.png alt="home">', array('adminUsers/index'));?>
+                                        echo CHtml::link('<img id="" src=' . Yii::app()->request->baseUrl . '/img/icons/CVmenu/PAdministracionSistema.png alt="home">', array('adminUsers/index'));?>
                     <span><?php echo $infoUser['labelAdmin'] ?></span>
                 </div>
                 <div class="footermenuI">

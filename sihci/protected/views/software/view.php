@@ -2,10 +2,7 @@
 /* @var $this SoftwareController */
 /* @var $model Software */
 
-$this->breadcrumbs=array(
-	'Softwares'=>array('index'),
-	$model->title,
-);
+
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),

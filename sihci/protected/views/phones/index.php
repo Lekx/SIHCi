@@ -2,9 +2,6 @@
 /* @var $this PhonesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Phones',
-);
 
 $this->menu=array(
 	array('label'=>'Create Phones', 'url'=>array('create')),

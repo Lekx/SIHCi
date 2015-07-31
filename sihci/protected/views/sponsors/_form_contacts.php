@@ -62,7 +62,7 @@
 	<hr>
 		<?php
 		echo "<div class='row'>";
-		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 30,'onKeypress'=>'return lettersOnly(event)'));
+		echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnames[]','size' => 60, 'maxlength' => 50,'onKeypress'=>'return lettersOnly(event)'));
 		echo $form->error($model, 'fullname');
 		echo "</div>";
 ?>
@@ -86,10 +86,22 @@ $this->widget('ext.widgets.reCopy.ReCopyWidget', array(
 foreach ($fullname as $value) {
 	echo "<input type='hidden' value='".$value['id']."' name ='fullnamesUpdateId[]'>";
 	echo "<div class='row'>";
-	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 30, 'disabled'=>'true'));
+	echo $form->textField($model, 'fullname', array('title'=>'Nombre Completo','placeholder'=>'Nombre Completo','name' => 'fullnamesUpdate[]', 'value' => $value['fullname'], 'size' => 60, 'maxlength' => 50, 'disabled'=>'true'));
 	echo $form->error($model, 'fullname');
 	echo "</div>";
-	echo CHtml::link('Eliminar',array('sponsors/deleteContacts','id'=>$value['id']),array('class'=>'deleteSomething'));
+//	echo CHtml::link('Eliminar',array('sponsors/deleteContacts','id'=>$value['id']),array('class'=>'deleteSomething'));
+  echo CHtml::ajaxLink(
+    $text = 'Eliminar OP',
+    $url = Yii::app()->controller->createUrl("deleteContacts",array("id"=>$value['id'])),//'/sponsors/deleteContacts/'.$value['id'],
+    $ajaxOptions=array (
+        'type'=>'POST',
+        'dataType'=>'json',
+        'success'=>'function(){ $(".successdiv").show();
+
+        }'
+        ),
+    $htmlOptions=array ("id"=>"chis")
+    );
 	echo '<hr>';
 }
 ?>

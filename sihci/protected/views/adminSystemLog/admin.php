@@ -1,10 +1,7 @@
 <?php
 /* @var $this SystemLogController */
 /* @var $model SystemLog */
-$this->breadcrumbs=array(
-	'Bitácora'=>array('admin'),
-	'Gestionar',
-);
+
 $this->menu=array(
 	//array('label'=>'List SystemLog', 'url'=>array('index')),
 	//array('label'=>'Create SystemLog', 'url'=>array('create')),

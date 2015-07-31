@@ -49,6 +49,17 @@ $cs->registerScriptFile($baseUrl. '/js/admin.js');
 
 });
 	}
+
+	function search(){
+  	valueSearch = $("#search").val();
+  	$('tbody > tr').show();
+
+  	if (valueSearch == '') {
+  		$('tbody > tr').show();
+  	}else{
+  		$('tbody > tr:not(:contains('+valueSearch+'))').hide();
+  	}
+  }
 </script>
 <?php
 $roles = Roles::model()->FindAll();
@@ -82,10 +93,9 @@ $('.search-form form').submit(function(){
 });
 ");
 
-$this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-
+ ?>
+<input type="text" id="search" onKeyPress="search()" placeholder="Búsqueda por columna" title="La barra de búsqueda es sensible a las mayúsculas" class="searchcrud">
+<?php echo CHtml::Button('',array('class'=>'adminbut')); ?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'users-grid',
 	'dataProvider' => $model->search(),
@@ -101,7 +111,6 @@ $this->renderPartial('_search',array(
 			'header' => '<b>Curp/Pasaporte</b>',
 			'value' => array($this, 'usersCurpPassport'), 'type' => 'raw',
 		),
-
 		'registration_date',
 
 		 array(
@@ -115,17 +124,17 @@ $this->renderPartial('_search',array(
 			array(
 		 	'type'=>'raw',
 		 	'header' => 'Estatus Curriculum',
-          	'value'=>'!is_null(Curriculum::model()->findByAttributes(array("id_user" => $data->id))) ? CHtml::dropDownList(Curriculum::model()->findByPk($data->id)->id,Curriculum::model()->findByPk($data->id)->status,array("1" => "Activo" , "0" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatusCurriculum\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"curriculum".$data->id)) : ($data->type == "fisico" ? "curriculum sin llenar" : "Usuario Moral")'),
+						'value'=>'$data->type == "moral" ? "Usuario moral" : ($data->type == "" ? "Usuario indefinido" : (($data->type == "fisico" && is_object(Curriculum::model()->findByAttributes(array("id_user"=>$data->id)))) ? CHtml::dropDownList(Curriculum::model()->findByAttributes(array("id_user"=>$data->id))->id,Curriculum::model()->findByAttributes(array("id_user"=>$data->id))->status,array("1" => "Activo" , "0" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatusCurriculum\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"curriculum".$data->id)) : "nada"))'),//is_object(Curriculum::model()->findByAttributes(array("id_user" => $data->id))) ? CHtml::dropDownList(Curriculum::model()->findByPk($data->id)->id,Curriculum::model()->findByPk($data->id)->status,array("1" => "Activo" , "0" => "Inactivo"),array("onchange"=>"send(\"\",\"AdminUsers/changeStatusCurriculum\",$data->id,\"none\",\"$data->id,\"+this.value)","id"=>"curriculum".$data->id)) : ($data->type == "fisico" ? "Curriculum sin llenar" : $data->type == "moral" ? "Usuario moral" : "Usuario indefinido")'),
 			array(
 				'class' => 'CButtonColumn', 'template' => '{view} {edit} {delete} {login}', 'header' => 'Acciones',
 				'buttons' => array(
 									'login' => array('label' => '','imageUrl' => Yii::app()->request->baseUrl . '/img/Acciones/sesion.png',
-									'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id))',
+									'url'=>'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id,"type"=>"dsession"))',
 									),
 								'edit' => array(
 								'label' => '',
 								'imageUrl'=> Yii::app()->request->baseUrl . '/img/Acciones/editar.png',
-								'url'=> '"AdminUsers/update?ide=".$data->id'),
+								'url'=> 'Yii::app()->createUrl("/adminUsers/doubleSession",array("id"=>$data->id,"type"=>"modify"))'),
 								'delete' => array(
 								'label' => 'Eliminar.',
 								'url'=> 'Yii::app()->createUrl("/adminUsers/deleteUser",array("id"=>$data->id))'),

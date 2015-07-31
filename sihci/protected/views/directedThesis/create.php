@@ -2,10 +2,11 @@
 /* @var $this DirectedThesisController */
 /* @var $model DirectedThesis */
 
-$this->breadcrumbs=array(
-	'Directed Thesises'=>array('index'),
-	'Create',
-);
+// $this->breadcrumbs=array(
+// 	'Directed Thesises'=>array('index'),
+// 	'Create',
+// );
+
 
 $this->menu=array(
 	//knowledgeApplication

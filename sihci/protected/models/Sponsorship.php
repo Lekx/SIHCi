@@ -67,11 +67,12 @@ class Sponsorship extends CActiveRecord
 			array('keywords, doc_auth_cofepris, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria, doc_commitment, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants', 'length', 'max'=>150),
 			array('status', 'length', 'max'=>20),
 			array('creation_date', 'safe'),
-			array('doc_auth_cofepris, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 5),
-			array('doc_commitment, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>false,'on'=>'insert', 'safe' => false,  'maxSize'=>1024 * 1024 * 5),
+			
+			array('doc_auth_cofepris, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>true,'on'=>'insert', 'safe'=>false, 'maxSize'=>1024 * 1024 * 5),
+			//array('doc_commitment, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants','file','types'=>'pdf, doc, docx, odt, jpg, jpeg, png', 'allowEmpty'=>false,'on'=>'insert', 'safe'=>false, 'maxSize'=>1024 * 1024 * 5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_user_sponsorer, id_user_researcher, project_name, description, keywords, status, creation_date, doc_commitment, doc_auth_cofepris, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants', 'safe', 'on'=>'search'),
+		//	array('id, id_user_sponsorer, id_user_researcher, project_name, description, keywords, status, creation_date, doc_commitment, doc_auth_cofepris, doc_project, doc_brochure, doc_consent, doc_amendment, doc_bank_payment, doc_edu_guides, doc_project_dev_guides, doc_recruitment, doc_conclusion_criteria, doc_confidentiality, doc_interests_conflict, doc_patient_payment, doc_participants', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -162,8 +163,9 @@ class Sponsorship extends CActiveRecord
 	public function customSearch()
 	{
 		$criteria=new CDbCriteria;
-		$curriculumId = Users::model()->findByPk(Yii::app()->user->id)->curriculums[0]['id'];
-		$criteria->condition='id_user_researcher = '.$curriculumId;
+		//$curriculumId = Users::model()->findByPk(Yii::app()->user->id)->curriculums[0]['id'];
+		$user_id = Yii::app()->user->id;
+		$criteria->condition='id_user_researcher = '.$user_id;
 		$criteria->order = 'id DESC';
 		if($this->searchValue)
 		{
@@ -180,10 +182,11 @@ class Sponsorship extends CActiveRecord
 		//Customized search only for logged users when they are sponsors
 	public function customSearchSponsorship()
 	{
-		$criteria=new CDbCriteria;
-		$curriculumId = Curriculum::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		$criteria=new CDbCriteria;///asdfasdfasdfasdf
 
-		$criteria->condition='id_user_sponsorer = '.$curriculumId;
+		//$sponsorId = Sponsors::model()->findByAttributes(array('id_user'=>Yii::app()->user->id))->id;
+		$user_id = Yii::app()->user->id;
+		$criteria->condition='id_user_sponsorer = '.$user_id;
 		$criteria->order = 'id DESC';
 		if($this->searchValue)
 		{
