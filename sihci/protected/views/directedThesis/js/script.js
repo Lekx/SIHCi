@@ -32138,7 +32138,7 @@ function changeGetSector()
        if(sectorValue=="Instituciones del sector privado de empresas productivas (adiat)")
        {
             var institutionsSEP=[
-                "ABB MEXICO SA DE CV",
+            "ABB MEXICO SA DE CV",
              "ACCIONES Y VALORES DE MEXICO",
              "ACDENTURE",
              "ACERTEK SA DE CV",

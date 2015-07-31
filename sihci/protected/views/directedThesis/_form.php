@@ -110,7 +110,7 @@
 
     echo '<div class="row" id="selectOrganization" >';
     echo '<span class="plain-select">';
-    echo $form->dropDownList($model,'organization',array($model->organization => $model->organization),array('prompt'=>'Seleccionar organización','onclick'=>'changeSector()','options'=>array($model->organization=>array('selected'=>true))));
+    echo $form->dropDownList($model,'organization',array($model->organization => $model->organization),array('prompt'=>'Seleccionar organización','options'=>array($model->organization=>array('selected'=>true))));
     echo '</span>';
     echo $form->error($model,'organization');
     echo '</div>';
@@ -118,7 +118,7 @@
 
     echo '<div class="row"id="selectSecondLevel">';
     echo '<span class="plain-select">';
-         echo $form->dropDownList($model,'second_level',array($model->second_level => $model->second_level),array('prompt'=>'Seleccionar organización','onclick'=>'changeSector()','options'=>array($model->second_level=>array('selected'=>true))));
+    echo $form->dropDownList($model,'second_level',array($model->second_level => $model->second_level),array('prompt'=>'Seleccionar organización','options'=>array($model->second_level=>array('selected'=>true))));
     echo '</span>';
     echo $form->error($model,'second_level');
     echo '</div>';
