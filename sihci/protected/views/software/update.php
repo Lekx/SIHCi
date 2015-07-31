@@ -2,11 +2,11 @@
 /* @var $this SoftwareController */
 /* @var $model Software */
 
-$this->breadcrumbs=array(
-	'Softwares'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
+// $this->breadcrumbs=array(
+// 	'Softwares'=>array('index'),
+// 	$model->title=>array('view','id'=>$model->id),
+// 	'Update',
+// );
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

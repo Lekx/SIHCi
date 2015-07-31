@@ -607,6 +607,10 @@
 				array('prompt'=>'Seleccionar organización','options'=>array($model->organization=>array('selected'=>true))));
  
     }
+	/*CEntros Publicos de investigación*/
+
+
+
     if ($model->sector=="Consultoras"){
     	    	echo $form->dropDownList($model,'organization',array(
     	    		 "ACCENTURE SC"=>"ACCENTURE SC",
@@ -3614,11 +3618,8907 @@
     //Centros privados de investigacion
 	if ($model->organization=="A&C BIOTESLA SC"){
 	    echo $form->dropDownList($model,'second_level',array(
-	    	"A"=>"A",
+	    	"A"=>"A"
 	    ),
 	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
 	}
+	if ($model->organization=="BDEO MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ACCESOS SIN LIMITE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AGAVES EL CERDEJO SPR DE R L"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AGENCIA DE INVESTIGACION EN COMUNICACION DE CAPACITACION Y DE ASESORIA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AGRICULTORES UNIDOS DEL RINCON  SPR DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AGROPECUARIA LAS MERCEDES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AHOMEX PROSESA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ALFA GRUPO TECNOLOGICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""  ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ALIANZA MEDICA ESTRATEGICA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>""
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ALTENERGIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ALTIPLANO ENERGY SYSTEMS DIVISION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ANALYZE LABS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="APRADIE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ARANEA SYSTEMS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ARIA SPECIALTIES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ARVIDANA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORIA GLOBAL AMBIENTAL S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AUREACODE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AUTOTEK INDUSTRIAL DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AVE RAVS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AVNTK SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BARI POLIESTIRENOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BIO HOMINIS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BIO HORTA DEL NORTE SOCIEDAD DE RL MI"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BIO HORTI DEL NORTE S DE RL MI"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BIO HUMUS Y COMPOSTAS DE MEXICO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BRASUCA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BREMER TEC SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="C3 INTERNACIONAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CALIDAD E INNOVACION EN METAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CARBON CLICK SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CARDIOVASCULAR RESEARCH INSTITUTE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CAREPLUSS PHARMA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CAUCHOS SBR DE CHIHUAHUA S DE R L MI"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CDI CENTRO DENTAL INTELIGENTE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CEDEIM CENTRO DE DESARROLLO EDUCACION E INVESTIGACION DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO ARGENTINO DE ESTUDIOS INTERNACIONALES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE ACOPIO DE AGAVE MORELOS SPR DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE DESARROLLO EMPRESARIAL Y ARTICULACION PRODUCTIVA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE DIAGNOSTICO EN METABOLISMO ENERGETICO Y MEDICINA MITOCONDRIAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE DIAGNOSTICO GENETICO SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE ESTUDIOS APLICADOS PARA MATERIALES COMPUESTOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE ESTUDIOS DE LA FOTOSINTESIS HUMANA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE FORMACION INTEGRAL A TRAVES DEL DEPORTE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE FORMACION INVESTIGACION Y DESARROLLO DE LA OVINOCULTURA LECHERA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE IDT PARA EL SECTOR FARMACEUTICO Y COSMETICO S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INNOVACION LLERANDI AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION ABRIL AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION APLICADA PARA EL AGUA Y ENERGIAS ALTERNAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION DE ESTERILIZACION Y ENVASE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION E INNOVACION EN QUIMICA AVANZADA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION EN CONSTRUCCION ARQUITECTONICA Y DESARROLLO EN INNOVACION CIENTIFICA Y TECNOLOGICA  CICADICYT AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION EN PSICOTERAPIA PSICOANALITICA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION EN TECNOLOGIAS DE INFORMACION S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION Y DESARROLLO COSTERO SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION Y DESARROLLO EN MATERIALES Y ENERGIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION Y DESARROLLO TECNOLOGICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACIONES BIOLOGICAS Y DESARROLLO REGIONAL S DE RL MI"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACIONES GENETICAS DE MORELIA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO EDUCATIVO NEUROCOM SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO EMPRENDEDOR DE NEGOCIOS S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO INTEGRAL AVANZADO EN DISENO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO INTERNACIONAL DE INVESTIGACION INNOVACION DESARROLLO Y TRANSFERENCIA DE TECNOLOGIA ALFREDO CABANAS FIICSA SUBSEDE SURESTE AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO ONCOLOGICO DE ZACATECAS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO PARA EL DESARROLLO EXPORTADOR AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CIBFEX CENTRO DE INVESTIGACION BIOTECNOLOGICO DE FRUTAS EXOTICAS SPR DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CIDAT SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CIDIA CENTRO DE INVESTIGACION Y DESARROLLO DE INGENIERIA AVANZADA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CLINICA DENTAL METROPOLITANA SMILE CENTER SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CLINICAL TRIALS MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CODE SERVICES COMPANY S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COGHLAN SPRENGEL Y ASOCIADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COIMTEC SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COMBUSTIBLES CONTROLADOS CIM SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COMERCIALIZADORA ROCAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COMITE DE DESARROLLO EMPRESARIAL AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COMPANIA GANADERA LAS CABRAS S DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONDOMINIO KLH1 S DE R L DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONDOMINIO KLH1 S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSORCIO NEMESIS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORA DE ASESORES FORESTALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORA MEXICANA DE NEGOCIOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONTORNO CENTRO DE PROSPECTIVA Y DEBATE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONTROLES LATINOAMERICANOS S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CORPORACION ACAT SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CORPORACION MEXICANA DE TRANSFERENCIA DE BIOTECNOLOGIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CRECIMIENTO ALIMENTARIO MODERNO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CRYODENT SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DAY DREAM SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DESARROLLADORA DE TECNOLOGIAS Y SOLUCIONES GTSA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DESARROLLO DE FUENTES ALTERNAS ENERGETICAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DESARROLLOS TECNOLOGICOS SUSTENTABLES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DESTILERIA 5O1 SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DIAGNOSTICOS CLINICOS VETERINARIOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DIDCOM SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DIGITAL PROJECT S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DISENO E IMPLEMENTACION DE SERVICIO COMPUTACIONAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DOMODITY MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DOW QUIMICA MEXICANA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DULE DISENO Y ARTE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ECOLE FRANCAISE D'ELECTRONIQUE ET D'INFORMATIQUE"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ECOLORO MONTERREY SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EDITORA E IMPRESORA DEL SURESTE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EL MESON PRINCIPAL DEL NORTE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ELECTRINET SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ELECTROFORMADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EMEV ARTE Y CIENCIA SOCIEDAD DE RESPONSABILIDAD LIMITADA DE CAPITAL VARIABLE"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENEGIN SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENERGIA IMPULSO TECNOLOGICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENFOQUE QUIMICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENTRADA DE GROUP DE MEXICO S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENZYFERM SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EQUIPAMIENTOS ELECTRICOS SA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EQUIPO AUTOMOTRIZ AMERICANA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ESTIMULACION MAGNETICA TRANSCRANEAL DE MEXICO SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EXCELENCIA EN SERVICIOS PROFESIONALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EXPLOSIVOS ASTURION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EXPORTADORA DE PARTES PARA BOMBAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FERRAND PHARMA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FIDEAC SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FOLDER X HOLDING SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FOCUSFRAME MEXICO S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FORMACION Y DESARROLLO CONTINUO SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FUNDACION PARA EL DESARROLLO HUMANO Y METACOGNITIVO A C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FUTURNET SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GALECTRA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GARZA ANCIRA ESTUPINAN MENDE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GEMA DEL CARIBE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GENERADOR DE INNOVACION TECNOLOGICA PARA EL DESARROLLO SOCIOEMPRESARIAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GENETICA Y BIOLOGIA HUMANA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GEOMETRIA EMPRESARIAL AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GLOBAL BIOTHERAPEUTICS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GREEN BATTERY MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO AGROPECUARIO Y ACUICOLA ASHANTI S DE PR DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO AMIVIDA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO BEMIR SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RUPO COMERCIAL LGM SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO GOR SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO INDUSTRIAL DEPLAYUSA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO MABRO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO NUTRIBLOCK S DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO SINOTEK SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GW GLOBAL WASH SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HESA TECNICA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HEVAM FOODS S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HOME TERMINAL SOLUTIONS DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HONEYWELL AEROSPACE ENGINE SIMULATION COMPANY S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ICOA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="IMAGEN POR RESONANCIA MAGNETICA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="IMITEK SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INDUSTRIAL CONSULTING GROUP SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INEMUR MEXICOS DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INFORMATICA Y SOLUCIONES DEL CENTRO DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INFRATECNO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA DE MICROORGANISMOS Y PROCESOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA ESPECIALIZADA Y FABRICACION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA INTEGRAL DE AGUASCALIENTES SA  DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INMUEBLES Y SERVICIOS DEL CENTRO S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INNOVACION Y DESARROLLO DE ENERGIA ALFA SUSTENTABLE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INNOVARO GESTTEC SRL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUT FRANCAIS DU PETROLE SCHOOL IFP SCHOOL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO BIOMEDICO DE INVESTIGACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO DE HEMATOPATOLOGIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO DE INVESTIGACION CLINICA DE OCCIDENTE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO DE INVESTIGACION EN QUIMICA APLICADA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO EPISTEMOLOGICO PARA ESTUDIOS MULTIDISCIPLINARIOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO INTERNACIONAL DE INVESTIGACION ANIMAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO MEXICANO DE FLEBOLOGIA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO PANVASCULAR DE OCCIDENTE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSUMOS AGROPECUARIOS DE MICHOACAN USPR DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INVEMED INVESTIGACIONES MEXICANAS Y DESARROLLOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INVENSYS APPLIANCE CONTROLS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INVESTIGACIONES BIOLOGICAS Y AMBIENTALES DEL NORESTE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ITOPIA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ITRACK SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="IZZ SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="KEET ELECTRONICS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="KIN ENERGY INTERNACIONAL S DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LABORATORIO CRILAB SC DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LABORATORIO DE BIOTECNOLOGIA APLICADA  S  DE  RL  DE  CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LABORATORIO DE NUTRICION VEGETAL S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LABORATORIOS DE CIENCIA Y TECNOLOGIA S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LABORATORIOS DEL NOROESTESA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LABORATORIOS DIAGNOMOL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LABORATORIOS PARGGON SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LACTA INGREDIENTES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LAMPORT GENETICA Y DESARROLLO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LEANMATICS INSPECCION Y ANALISIS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LEDSS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LOWMAR SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LP BOND INVESTIGACIONES Y DESARROLLOS DEL TERCER MILENIO S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LUB Y REC DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MACRO APLICACIONES PARA CONTROL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MADELS SPR DE RL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MAES MEXICO AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MAQUINARIA AUTOMATICA Y TECNOLOGIA INDUSTRIAL CORPORATIVA MATICORP S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MAQUINARIA LENERO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MARCADORES GENOMICOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MARISCOS CONGELADOS LOS ARCOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MARLEX HEALTH CARE S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MAURICE PAINT SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MEDI CARE GROUP SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MEGASALUD INTERNACIONAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="METAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MEXAGON SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MEXICANA DE ARROZ SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MEXICHEM SOLUCIONES INTEGRALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MEXNEMA S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MINERALES DE ANTEQUERA  SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="NGWISE COMUNICACIONES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="NORTECHMEDICAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="NYSCO DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="OPENSERVICE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ORBE SERVICIOS A LA INDUSTRIA SISTEMATIZADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PENTAIR WATER MEXICO S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PEPTHERAPEUTICS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PHY SA DE TOTECHNIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PHYTOTECHNIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="POLORMA AGRICOLA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PORTAL VERDE DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PREFABRICADOS TECNICOS DE LA CONSTRUCCION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROCESOS Y ANALISIS ESTADISTICOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PRODUCTORES RUAYSIN SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROMOTORA INMOBILIARIA VILLA XXI SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROYECTOS CIVILES E INDUSTRIALES SIERRA NORTE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PRUEBA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PRUEBAS DE HERMETICIDAD Y MEDICION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="QUATTREZ SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="QUETZAL AEROESPACIAL S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RADIO TRACKING DATA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RAHVSLAFFITTEMUM SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RAPHSON & VON MISES CONSULTING SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RAWWATER ENGINEERING LIMITED LTD"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="REAL ESTATE ADVISERS DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RECICLADOS QUIMICOS DE SALAMANCA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RECOMBINA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="REDASA INDUSTRIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="REINTECH RECYCLED INNOVATION AND TECHNOLOGY SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="REVLUX SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="REVOLVENCIA EN ENERGETICOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RG SOLUCIONES CIBERNETICAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RIVERA VALMANA LOPEZ BARRO CECCHINI SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ROY MOTORS COMPANY SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RUBIORGANICOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SALAMANDRA CONTENIDOS DIGITALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SALSA PICANTE EL PULPITO S DE RLMI"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SCIENTIA INNOVA SRL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SCRIPT CONNECTOR SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS AMBIENTALES INTERNACIONALES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS AMBIENTALES Y DE ENERGIAS RENOVABLES DEL CENTRO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS COMPUTACIONALES DE MONCLOVA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS MEDICOS PARACLINICOS DE MICHOACAN SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS PORTUARIOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS TECNOLOGICOS ESPECIALIZADOS DE LATINOAMERICA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SHB TECNOLOGIA Y DESARROLLO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SHK TECNOLOGIA MECANICA SAPI DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SIBEES SOFT SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SIC CELAYA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SISTEMAS DE GESTION ENERGETICA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SISTEMAS INDUSTRIALES AUTOMATIZADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SMARTECHNOLOGY SOFTWARE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SMK ELECTRONICA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOCIEDAD MEXICANA DE CRIMINOLOGIA CAPITULO NUEVO LEON A C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLACE LABS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLUCIONES COMPUTACIONALES EMPRESARIALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLUCIONES ECOLOGICAS DEL GUADIANA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLUCIONES ESPECIALIZADAS EN SISTEMAS DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLUCIONES G4 SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLUTIONS IN COMBUSTION AND INDUSTRIAL CONTROL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SQUIB MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SUPERLIFE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SYNERGY BIOTECH SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TECHNOLOGICAL IMPROVEMENTS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TECNOLOGIA DE CALIDAD SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TECNOLOGIAS HOMEOSTATICAS SAPI DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TECNOLOGIAS INNOVADORAS INTERNACIONALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TECNOLOGIAS NATURALES INTERNACIONAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TEKNOPELLETS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TEQUILERA NEWTON E HIJOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TIZACRIL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TRIVASA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="UNIDAD DE INVESTIGACION CLINICA CARDIOMETABOLICA DE OCCIDENTE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="UNIDAD DE INVESTIGACION EN SALUD DE CHIHUAHUA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="UNIVERSIDAD DE KANAZAWA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="UNIVERSIDAD LAUREADA DE MEXICO SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="UT SOUTHWESTERN MEDICAL CENTE"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="VIA EDUCACION AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="VIDATERRA CORPORATIVO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="VIROLAB S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="VITRO FLEX SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="W INTERACTIVE MEDIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="WEISEPAHRM SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="WITECH SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+
+	if ($model->organization=="WTSV TECHNOLOGIES S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ZYBORGONE"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	/*Centros publicos de Investigacion */
+	if ($model->organization=="CENTRO DE INVESTIGACION CIENTIFICA DE YUCATAN AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	 "CENTRO DE ESTUDIOS DEL AGUA" => "CENTRO DE ESTUDIOS DEL AGUA",
+     "DIRECCION GENERAL" => "DIRECCION GENERAL",
+     "UNIDAD DE BIOLOGIA EXPERIMENTAL" => "UNIDAD DE BIOLOGIA EXPERIMENTAL",
+     "UNIDAD DE BIOLOGIA VEGETAL" => "UNIDAD DE BIOLOGIA VEGETAL",
+     "UNIDAD DE BIOQUIMICA Y BIOLOGIA MOLECULAR DE PLANTAS" => "UNIDAD DE BIOQUIMICA Y BIOLOGIA MOLECULAR DE PLANTAS",
+     "UNIDAD DE BIOQUIMICA Y BIOLOGIA MOLECULAR" => "UNIDAD DE BIOQUIMICA Y BIOLOGIA MOLECULAR",
+     "UNIDAD DE BIOTECNOLOGIA" => "UNIDAD DE BIOTECNOLOGIA",
+     "UNIDAD DE BIOTECNOLOGIA" => "UNIDAD DE BIOTECNOLOGIA",
+     "UNIDAD DE ECOLOGIA" => "UNIDAD DE ECOLOGIA",
+     "UNIDAD DE ENERGÍA RENOVABLE" => "UNIDAD DE ENERGÍA RENOVABLE",
+     "UNIDAD DE MATERIALES" => "UNIDAD DE MATERIALES",
+     "UNIDAD DE QUIMICA APLICADA" => "UNIDAD DE QUIMICA APLICADA",
+     "UNIDAD DE RECURSOS NATURALES" => "UNIDAD DE RECURSOS NATURALES", ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="CENTRO DE INVESTIGACION EN ALIMENTACION Y DESARROLLO AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"COORDINACION DE TECNOLOGIA DE ALIMENTOS DE ORIGEN VEGETAL" => "COORDINACION DE TECNOLOGIA DE ALIMENTOS DE ORIGEN VEGETAL",
+"DIRECCION DE DESARROLLO" => "DIRECCION DE DESARROLLO",
+"DIRECCION GENERAL" => "DIRECCION GENERAL",
+"DIVISION ACADEMICA DE CIENCIA Y TECNOLOGIA DE ALIMENTOS" => "DIVISION ACADEMICA DE CIENCIA Y TECNOLOGIA DE ALIMENTOS",
+"DIVISION ACADEMICA DE CIENCIAS DE LOS ALIMENTOS" => "DIVISION ACADEMICA DE CIENCIAS DE LOS ALIMENTOS",
+"DIVISION ACADEMICA DE NUTRICION" => "DIVISION ACADEMICA DE NUTRICION",
+"DIVISION ACADEMICA DE TECNOLOGIA DE ALIMENTOS DE ORIGEN ANIMAL" => "DIVISION ACADEMICA DE TECNOLOGIA DE ALIMENTOS DE ORIGEN ANIMAL",
+"DIVISION ACADEMICA DE TECNOLOGIA DE ALIMENTOS DE ORIGEN VEGETAL" => "DIVISION ACADEMICA DE TECNOLOGIA DE ALIMENTOS DE ORIGEN VEGETAL",
+"UNIDAD CHIHUAHUA" => "UNIDAD CHIHUAHUA",
+"UNIDAD CUAUHTEMOC EN CHIHUAHUA" => "UNIDAD CUAUHTEMOC EN CHIHUAHUA",
+"UNIDAD CUAUHTEMOC" => "UNIDAD CUAUHTEMOC",
+"UNIDAD DE CULIACAN" => "UNIDAD DE CULIACAN",
+"UNIDAD DE MAZATLAN" => "UNIDAD DE MAZATLAN",
+"UNIDAD DELICIAS" => "UNIDAD DELICIAS",
+"UNIDAD GUAYMAS" => "UNIDAD GUAYMAS",
+"UNIDAD MAZATLAN EN ACUICULTURA Y MANEJO AMBIENTAL" => "UNIDAD MAZATLAN EN ACUICULTURA Y MANEJO AMBIENTAL"),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+
+	if ($model->organization=="CENTRO DE INVESTIGACION Y ASISTENCIA EN TECNOLOGIA Y DISENO DEL ESTADO DE JALISCO AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AREA DE ESTUDIOS Y PROCESOS RURALES CONTEMPORANEOS" => "AREA DE ESTUDIOS Y PROCESOS RURALES CONTEMPORANEOS",
+"DIRECCION ADJUNTA DE INNOVACION TECNOLOGICA" => "DIRECCION ADJUNTA DE INNOVACION TECNOLOGICA",
+"DIRECCIÓN DE INVESTIGACIÓN Y POSGRADO" => "DIRECCIÓN DE INVESTIGACIÓN Y POSGRADO",
+"DIVISION DE AUTENTICIDAD Y CALIDAD DE PRODUCTOS AGROALIMENTACION" => "DIVISION DE AUTENTICIDAD Y CALIDAD DE PRODUCTOS AGROALIMENTACION",
+"DIVISION DE BIOTECNOLOGIA" => "DIVISION DE BIOTECNOLOGIA",
+"DIVISION DE BIOTRANSFORMACION MICROBIANA" => "DIVISION DE BIOTRANSFORMACION MICROBIANA",
+"DIVISION DE BIOTRANSFORMACION" => "DIVISION DE BIOTRANSFORMACION",
+"DIVISION DE INGENIERIA" => "DIVISION DE INGENIERIA",
+"DIVISION DE MICROPROPAGACION Y MEJORAMIENTO GENETICO VEGETAL" => "DIVISION DE MICROPROPAGACION Y MEJORAMIENTO GENETICO VEGETAL",
+"UNIDAD DE BIOTECNOLOGÍA INDUSTRIAL" => "UNIDAD DE BIOTECNOLOGÍA INDUSTRIAL",
+"UNIDAD DE BIOTECNOLOGÍA MÉDICA FARMACEÚTICA" => "UNIDAD DE BIOTECNOLOGÍA MÉDICA FARMACEÚTICA",
+"UNIDAD DE BIOTECNOLOGÍA VEGETAL" => "UNIDAD DE BIOTECNOLOGÍA VEGETAL",
+"UNIDAD DE SERVICIOS ANALÍTICOS Y METROLÓGICOS" => "UNIDAD DE SERVICIOS ANALÍTICOS Y METROLÓGICOS",
+"UNIDAD DE TECNOLOGÍA ALIMENTARIA" => "UNIDAD DE TECNOLOGÍA ALIMENTARIA",
+"UNIDAD DE TECNOLOGÍA AMBIENTAL" => "UNIDAD DE TECNOLOGÍA AMBIENTAL",
+"UNIDAD NORESTE" => "UNIDAD NORESTE",
+"UNIDAD SURESTE DE SERVICIOS TECNOLOGICOS" => "UNIDAD SURESTE DE SERVICIOS TECNOLOGICOS",
+"UNIDAD SURESTE" => "UNIDAD SURESTE",),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="CENTRO DE INVESTIGACION Y DE ESTUDIOS AVANZADOS DEL IPN  UNIDAD ZACATENCO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"DEPARTAMENTO DE BIOLOGIA CELULAR" => "DEPARTAMENTO DE BIOLOGIA CELULAR",
+            "DEPARTAMENTO DE MATEMATICA EDUCATIVA"=>"DEPARTAMENTO DE MATEMATICA EDUCATIVA" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="CENTRO DE INVESTIGACIONES BIOLOGICAS DEL NOROESTE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"COORDINACION DE PROGRAMA DE AGRICULTURA EN ZONAS ARIDAS" => "COORDINACION DE PROGRAMA DE AGRICULTURA EN ZONAS ARIDAS",
+ "COORDINACION DE PROGRAMA DE PLANEACION AMBIENTAL" => "COORDINACION DE PROGRAMA DE PLANEACION AMBIENTAL",
+ "COORDINACIÓN DE PROGRAMA DE ECOLOGIA PESQUERA" => "COORDINACIÓN DE PROGRAMA DE ECOLOGIA PESQUERA",
+ "COORDINACIÓN DE VINCULACIÓN, SERVICIOS Y TRANSFERENCIA DE INVESTIGACIÓN (COVISTI)" => "COORDINACIÓN DE VINCULACIÓN, SERVICIOS Y TRANSFERENCIA DE INVESTIGACIÓN (COVISTI)",
+ "COORDINACIÓN PROGRAMA DE ACUACULTURA" => "COORDINACIÓN PROGRAMA DE ACUACULTURA",
+ "DEPARTAMENTO DE BIOLOGIA DE VERTEBRADOS TERRESTRES" => "DEPARTAMENTO DE BIOLOGIA DE VERTEBRADOS TERRESTRES",
+ "DEPARTAMENTO DE BIOLOGIA MARINA" => "DEPARTAMENTO DE BIOLOGIA MARINA",
+ "DEPARTAMENTO DE CLIMATOLOGIA APLICADA" => "DEPARTAMENTO DE CLIMATOLOGIA APLICADA",
+ "DEPARTAMENTO DE ECOLOGIA TERRESTRE E IMPACTO A" => "DEPARTAMENTO DE ECOLOGIA TERRESTRE E IMPACTO A",
+ "DEPARTAMENTO DE ECOLOGIA TERRESTRE E IMPACTO AMBIENTAL" => "DEPARTAMENTO DE ECOLOGIA TERRESTRE E IMPACTO AMBIENTAL",
+ "DEPARTAMENTO DE ECOLOGIA TERRESTRE E IMPACTO AMBIENTAL" => "DEPARTAMENTO DE ECOLOGIA TERRESTRE E IMPACTO AMBIENTAL",
+ "DEPARTAMENTO DE FISIOLOGIA VEGETAL" => "DEPARTAMENTO DE FISIOLOGIA VEGETAL",
+ "DEPARTAMENTO DE INVESTIGACION CLINICA Y BIOQUIMICA" => "DEPARTAMENTO DE INVESTIGACION CLINICA Y BIOQUIMICA",
+ "DEPARTAMENTO DE MANEJO DE RECURSOS NATURALES" => "DEPARTAMENTO DE MANEJO DE RECURSOS NATURALES",
+ "DEPARTAMENTO DE MICROBIOLOGIA" => "DEPARTAMENTO DE MICROBIOLOGIA",
+ "DEPARTAMENTO DE RECURSOS MARINOS" => "DEPARTAMENTO DE RECURSOS MARINOS",
+ "DIRECCIÓN DE ESTUDIOS DE POSGRADO" => "DIRECCIÓN DE ESTUDIOS DE POSGRADO",
+ "DIRECCIÓN GENERAL" => "DIRECCIÓN GENERAL",
+ "DIVISION DE BIOLOGIA MARINA" => "DIVISION DE BIOLOGIA MARINA",
+ "PARQUE DE INNOVACIÓN TECNOLÓGICA" => "PARQUE DE INNOVACIÓN TECNOLÓGICA",
+ "PROGRAMA ACADÉMICO DE ACUICULTURA" => "PROGRAMA ACADÉMICO DE ACUICULTURA",
+ "PROGRAMA DE ACUICULTURA" => "PROGRAMA DE ACUICULTURA",
+ "PROGRAMA DE ECOLOGÍA PESQUERA" => "PROGRAMA DE ECOLOGÍA PESQUERA",
+ "PROGRAMA DE ESTUDIOS DE POSGRADO" => "PROGRAMA DE ESTUDIOS DE POSGRADO",
+ "PROGRAMA DE PLANEACIÓN AMBIENTAL Y CONSERVACIÓN" => "PROGRAMA DE PLANEACIÓN AMBIENTAL Y CONSERVACIÓN",
+ "UNIDAD GUAYMAS" => "UNIDAD GUAYMAS",
+ "UNIDAD GUERRERO NEGRO" => "UNIDAD GUERRERO NEGRO",
+ "UNIDAD HERMOSILLO" => "UNIDAD HERMOSILLO",
+ "UNIDAD LA PAZ" => "UNIDAD LA PAZ",
+ "UNIDAD SONORA" => "UNIDAD SONORA",
+ "UNIDAD-CULIACAN" => "UNIDAD-CULIACAN",
+ "VINCULACION Y TRANSFERENCIA TECNOLOGICA" => "VINCULACION Y TRANSFERENCIA TECNOLOGICA", ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="CENTRO NACIONAL DE METROLOGIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AREA DE METROLOGIA DE MATERIALES" => "AREA DE METROLOGIA DE MATERIALES",
+			"AREA DE METROLOGIA ELECTRICA" => "AREA DE METROLOGIA ELECTRICA",
+			"AREA DE METROLOGIA FISICA" => "AREA DE METROLOGIA FISICA",
+			"AREA DE METROLOGIA MECANICA" => "AREA DE METROLOGIA MECANICA",
+			"AREA DE SERVICIOS TECNOLOGICOS" => "AREA DE SERVICIOS TECNOLOGICOS",
+			"DIRECCION DE ADMINISTRACIÓN Y FINANZAS" => "DIRECCION DE ADMINISTRACIÓN Y FINANZAS",
+			"MESURA" => "MESURA", 
+	),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+
+if ($model->organization=="CIATEC AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AREA DE INVESTIGACION" => "AREA DE INVESTIGACION",
+"COORDINACION DE CAPACITACION" => "COORDINACION DE CAPACITACION",
+"DEPARTAMENTO DE INVESTIGACION" => "DEPARTAMENTO DE INVESTIGACION",
+"DIRECCION DE DESARROLLO DE TALENTO" => "DIRECCION DE DESARROLLO DE TALENTO",
+"DIRECCION DE INVESTIGACION Y DESARROLLO" => "DIRECCION DE INVESTIGACION Y DESARROLLO",
+"DIRECCION GENERAL" => "DIRECCION GENERAL", ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="CIATEQ AC CENTRO DE TECNOLOGIA AVANZADA CIATEQ"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AREA DE EQUIPOS" => "AREA DE EQUIPOS",
+	    	"AREA DE MAQUINARIA AGRICOLA" => "AREA DE MAQUINARIA AGRICOLA",
+"AREA DE MAQUINARIA Y AUTOMATIZACION" => "AREA DE MAQUINARIA Y AUTOMATIZACION",
+"AREA DE PROCESOS Y METALURGIA" => "AREA DE PROCESOS Y METALURGIA",
+"AREA DE ROBOTICA" => "AREA DE ROBOTICA",
+"AREA DE SISTEMAS Y ELECTRONICA" => "AREA DE SISTEMAS Y ELECTRONICA",
+"DIRECCION GENERAL" => "DIRECCION GENERAL",
+"UNIDAD AGUASCALIENTES" => "UNIDAD AGUASCALIENTES",
+"UNIDAD BERNARDO QUINTANA" => "UNIDAD BERNARDO QUINTANA",
+"UNIDAD CIUDAD SAHAGÚN" => "UNIDAD CIUDAD SAHAGÚN",
+"UNIDAD ESTADO DE MÉXICO" => "UNIDAD ESTADO DE MÉXICO",
+"UNIDAD GUADALAJARA" => "UNIDAD GUADALAJARA",
+"UNIDAD RETABLO" => "UNIDAD RETABLO",
+"UNIDAD SAN LUIS POTOSI" => "UNIDAD SAN LUIS POTOSI", ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="EL COLEGIO DE PUEBLA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"EL COLEGIO DE PUEBLA AC"=>"EL COLEGIO DE PUEBLA AC" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="EL COLEGIO DE TLAXCALA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"CENTRO DE ESTUDIOS ANTROPOLOGICOS"=>"CENTRO DE ESTUDIOS ANTROPOLOGICOS",
+	    	"UNIDAD DE SEGUIMIENTO Y EVALUACION"=>"UNIDAD DE SEGUIMIENTO Y EVALUACION" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="EL COLEGIO DE VERACRUZ"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"SUBDIRECCION DE INVESTIGACION"=>"SUBDIRECCION DE INVESTIGACION" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
 	
+	
+	if ($model->organization=="INSTITUTO NACIONAL DE ASTROFISICA OPTICA Y ELECTRONICA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AREA DE ASTROFISICA" => "AREA DE ASTROFISICA",
+"AREA DE CIENCIAS COMPUTACIONALES" => "AREA DE CIENCIAS COMPUTACIONALES",
+"AREA DE ELECTRONICA" => "AREA DE ELECTRONICA",
+"AREA DE FOTONICA" => "AREA DE FOTONICA",
+"AREA DE INVESTIGACION CIENTIFICA" => "AREA DE INVESTIGACION CIENTIFICA",
+"AREA DE OPTICA" => "AREA DE OPTICA",
+"COORDINACION DE ASTROFISICA" => "COORDINACION DE ASTROFISICA",
+"COORDINACION DE ELECTRONICA" => "COORDINACION DE ELECTRONICA",
+"COORDINACION DE OPTICA" => "COORDINACION DE OPTICA",
+"DIRECCION GENERAL" => "DIRECCION GENERAL", ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	
+if ($model->organization=="INSTITUTO NACIONAL DE INVESTIGACIONES FORESTALES AGRICOLAS Y PECUARIAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"CAMPO EXPERIMENTAL BAJIO" => "CAMPO EXPERIMENTAL BAJIO",
+"CAMPO EXPERIMENTAL COSTA DE ENSENADA" => "CAMPO EXPERIMENTAL COSTA DE ENSENADA",
+"CAMPO EXPERIMENTAL RIO BRAVO" => "CAMPO EXPERIMENTAL RIO BRAVO",
+"CAMPO EXPERIMENTAL SAN MARTINITO" => "CAMPO EXPERIMENTAL SAN MARTINITO",
+"CAMPO EXPERIMENTAL URUAPAN" => "CAMPO EXPERIMENTAL URUAPAN",
+"CAMPO EXPERIMENTAL ZACATEPEC" => "CAMPO EXPERIMENTAL ZACATEPEC",
+"CENTRO DE INVESTIGACION REGIONAL CENTRO" => "CENTRO DE INVESTIGACION REGIONAL CENTRO",
+"CENTRO DE INVESTIGACION REGIONAL GOLFO CENTRO" => "CENTRO DE INVESTIGACION REGIONAL GOLFO CENTRO",
+"CENTRO DE INVESTIGACION REGIONAL NORESTE" => "CENTRO DE INVESTIGACION REGIONAL NORESTE",
+"CENTRO DE INVESTIGACION REGIONAL NOROESTE" => "CENTRO DE INVESTIGACION REGIONAL NOROESTE",
+"CENTRO DE INVESTIGACION REGIONAL NORTE CENTRO" => "CENTRO DE INVESTIGACION REGIONAL NORTE CENTRO",
+"CENTRO DE INVESTIGACION REGIONAL PACIFICO CENTRO" => "CENTRO DE INVESTIGACION REGIONAL PACIFICO CENTRO",
+"CENTRO DE INVESTIGACION REGIONAL PACIFICO SUR" => "CENTRO DE INVESTIGACION REGIONAL PACIFICO SUR",
+"CENTRO DE INVESTIGACION REGIONAL SURESTE" => "CENTRO DE INVESTIGACION REGIONAL SURESTE",
+"CENTRO DE INVESTIGACIONES FORESTALES Y AGROPECUARIAS CHIHUAHUA" => "CENTRO DE INVESTIGACIONES FORESTALES Y AGROPECUARIAS CHIHUAHUA",
+"CENTRO DE INVESTIGACIONES FORESTALES Y AGROPECUARIAS OAXACA" => "CENTRO DE INVESTIGACIONES FORESTALES Y AGROPECUARIAS OAXACA",
+"CENTRO DE INVESTIGACIONES FORESTALES Y AGROPECUARIAS SAN LUIS POTOSI" => "CENTRO DE INVESTIGACIONES FORESTALES Y AGROPECUARIAS SAN LUIS POTOSI",
+"CENTRO DE INVESTIGACIONES FORESTALES Y AGROPECUARIAS VERACRUZ" => "CENTRO DE INVESTIGACIONES FORESTALES Y AGROPECUARIAS VERACRUZ",
+"CENTRO NACIONAL DE INVESTIGACION DISC. EN RELACION ATM" => "CENTRO NACIONAL DE INVESTIGACION DISC. EN RELACION ATM",
+"CENTRO NACIONAL DE INVESTIGACION DISCIPLINARIA EN CONSERVACION Y MEJORAMIENTO DE ECOSISTEMAS FORESTALES" => "CENTRO NACIONAL DE INVESTIGACION DISCIPLINARIA EN CONSERVACION Y MEJORAMIENTO DE ECOSISTEMAS FORESTALES",
+"CENTRO NACIONAL DE INVESTIGACION DISCIPLINARIA EN MICROBIOLOGIA ANIMAL" => "CENTRO NACIONAL DE INVESTIGACION DISCIPLINARIA EN MICROBIOLOGIA ANIMAL",
+"CENTRO NACIONAL DE INVESTIGACION DISCIPLINARIA EN PARASITOLOGIA VETERINARIA" => "CENTRO NACIONAL DE INVESTIGACION DISCIPLINARIA EN PARASITOLOGIA VETERINARIA",
+"CENTRO NACIONAL DE INVESTIGACION DISCIPLINARIA EN PRODUCCION SOSTENIBLE" => "CENTRO NACIONAL DE INVESTIGACION DISCIPLINARIA EN PRODUCCION SOSTENIBLE",
+"CENTRO NACIONAL DE INVESTIGACION EN FISIOLOGIA Y MEJORAMIENTO ANIMAL" => "CENTRO NACIONAL DE INVESTIGACION EN FISIOLOGIA Y MEJORAMIENTO ANIMAL",
+"CENTRO NACIONAL DE INVESTIGACION EN RELACION ATMOSFERA-SUELO-PLANTA-AGUA" => "CENTRO NACIONAL DE INVESTIGACION EN RELACION ATMOSFERA-SUELO-PLANTA-AGUA",
+"CENTRO NACIONAL DE INVESTIGACIÓN DISCIPLINARIA EN RELACIÓN AGUA-SUELO-PLANTA ATMÓSFERA (CENID-RASPA)" => "CENTRO NACIONAL DE INVESTIGACIÓN DISCIPLINARIA EN RELACIÓN AGUA-SUELO-PLANTA ATMÓSFERA (CENID-RASPA)",
+"CENTRO NACIONAL DE RECURSOS GENÉTICOS" => "CENTRO NACIONAL DE RECURSOS GENÉTICOS",
+"CIRCE-CEVAMEX" => "CIRCE-CEVAMEX",
+"COORDINACIÓN DE INVESTIGACION, INNOVACIÓN Y VINCULACIÓN" => "COORDINACIÓN DE INVESTIGACION, INNOVACIÓN Y VINCULACIÓN",
+"COSTA DE HERMOSILLO" => "COSTA DE HERMOSILLO",
+"DIRECCION GENERAL DE COORDINACION Y DESARROLLO" => "DIRECCION GENERAL DE COORDINACION Y DESARROLLO",
+"DIRECCION GENERAL DE INVESTIGACION AGRICOLA" => "DIRECCION GENERAL DE INVESTIGACION AGRICOLA",
+"DIRECCION GENERAL DE INVESTIGACION FORESTAL" => "DIRECCION GENERAL DE INVESTIGACION FORESTAL",
+"DIRECCION GENERAL DE INVESTIGACION PECUARIA" => "DIRECCION GENERAL DE INVESTIGACION PECUARIA",
+"DIRECCION GENERAL DIVISION AGRICOLA" => "DIRECCION GENERAL DIVISION AGRICOLA",
+"GRUPO INTERDISCIPLINARIO DE INVESTIGACION, ESTUDIOS Y PROYECTOS AMBIENTALES, S. C." => "GRUPO INTERDISCIPLINARIO DE INVESTIGACION, ESTUDIOS Y PROYECTOS AMBIENTALES, S. C.",
+"INIFAP CAMPO EXPERIMENTAL TECOMÁN" => "INIFAP CAMPO EXPERIMENTAL TECOMÁN",
+"INIFAP-CENIFMA" => "INIFAP-CENIFMA",
+"INIFAP-CENPROS" => "INIFAP-CENPROS",
+"INIFAP-SAGAR" => "INIFAP-SAGAR",
+"INIFAP-ZINACANTEPEC" => "INIFAP-ZINACANTEPEC",
+"PRONISAF" => "PRONISAF",
+"UNIDAD DE AGUASCALIENTES" => "UNIDAD DE AGUASCALIENTES",
+"UNIDAD DE COAHUILA" => "UNIDAD DE COAHUILA", ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+
+if ($model->organization=="SECRETARIA DEL MEDIO AMBIENTE RECURSOS NATURALES Y PESCA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"CENTRO DE EDUCACION Y CAPACITACION PARA EL DESARROLLO SUSTENTABLE" => "CENTRO DE EDUCACION Y CAPACITACION PARA EL DESARROLLO SUSTENTABLE",
+"COMISION NACIONAL DE AREAS NATURALES PROTEGIDAS" => "COMISION NACIONAL DE AREAS NATURALES PROTEGIDAS",
+"COMISION NACIONAL FORESTAL" => "COMISION NACIONAL FORESTAL",
+"COORDINACION GENERAL DE COMUNICACION SOCIAL" => "COORDINACION GENERAL DE COMUNICACION SOCIAL",
+"COORDINACION GENERAL DE DELEGACIONES" => "COORDINACION GENERAL DE DELEGACIONES",
+"COORDINACION GENERAL JURIDICA" => "COORDINACION GENERAL JURIDICA",
+"DELEGACION EN AGUASCALIENTES" => "DELEGACION EN AGUASCALIENTES",
+"DELEGACION EN BAJA CALIFORNIA SUR" => "DELEGACION EN BAJA CALIFORNIA SUR",
+"DELEGACION EN BAJA CALIFORNIA" => "DELEGACION EN BAJA CALIFORNIA",
+"DELEGACION EN CAMPECHE" => "DELEGACION EN CAMPECHE",
+"DELEGACION EN CHIAPAS" => "DELEGACION EN CHIAPAS",
+"DELEGACION EN CHIHUAHUA" => "DELEGACION EN CHIHUAHUA",
+"DELEGACION EN COAHUILA" => "DELEGACION EN COAHUILA",
+"DELEGACION EN COLIMA" => "DELEGACION EN COLIMA",
+"DELEGACION EN DURANGO" => "DELEGACION EN DURANGO",
+"DELEGACION EN GUANAJUATO" => "DELEGACION EN GUANAJUATO",
+"DELEGACION EN GUERRERO" => "DELEGACION EN GUERRERO",
+"DELEGACION EN HIDALGO" => "DELEGACION EN HIDALGO",
+"DELEGACION EN JALISCO" => "DELEGACION EN JALISCO",
+"DELEGACION EN MEXICO" => "DELEGACION EN MEXICO",
+"DELEGACION EN MICHOACAN" => "DELEGACION EN MICHOACAN",
+"DELEGACION EN MORELOS" => "DELEGACION EN MORELOS",
+"DELEGACION EN NAYARIT" => "DELEGACION EN NAYARIT",
+"DELEGACION EN NUEVO LEON" => "DELEGACION EN NUEVO LEON",
+"DELEGACION EN OAXACA" => "DELEGACION EN OAXACA",
+"DELEGACION EN PUEBLA" => "DELEGACION EN PUEBLA",
+"DELEGACION EN QUERETARO" => "DELEGACION EN QUERETARO",
+"DELEGACION EN QUINTANA ROO" => "DELEGACION EN QUINTANA ROO",
+"DELEGACION EN SAN LUIS POTOSI" => "DELEGACION EN SAN LUIS POTOSI",
+"DELEGACION EN SINALOA" => "DELEGACION EN SINALOA",
+"DELEGACION EN SONORA" => "DELEGACION EN SONORA",
+"DELEGACION EN TABASCO" => "DELEGACION EN TABASCO",
+"DELEGACION EN TAMAULIPAS" => "DELEGACION EN TAMAULIPAS",
+"DELEGACION EN TLAXCALA" => "DELEGACION EN TLAXCALA",
+"DELEGACION EN VERACRUZ" => "DELEGACION EN VERACRUZ",
+"DELEGACION EN YUCATAN" => "DELEGACION EN YUCATAN",
+"DELEGACION EN ZACATECAS" => "DELEGACION EN ZACATECAS",
+"DIRECCION GENERAL DE ENERGIA Y ACTIVIDADES EXTRACTIVAS" => "DIRECCION GENERAL DE ENERGIA Y ACTIVIDADES EXTRACTIVAS",
+"DIRECCION GENERAL DE ESTADISTICA E INFORMACION AMBIENTAL" => "DIRECCION GENERAL DE ESTADISTICA E INFORMACION AMBIENTAL",
+"DIRECCION GENERAL DE FEDERALIZACION Y DESCENTRALIZACION DE SERVICIOS FORESTALES Y DE SUELO" => "DIRECCION GENERAL DE FEDERALIZACION Y DESCENTRALIZACION DE SERVICIOS FORESTALES Y DE SUELO",
+"DIRECCION GENERAL DE FOMENTO AMBIENTAL DEL DESARROLLO URBANO, TRANSPORTE, SERVICIOS Y TURISMO" => "DIRECCION GENERAL DE FOMENTO AMBIENTAL DEL DESARROLLO URBANO, TRANSPORTE, SERVICIOS Y TURISMO",
+"DIRECCION GENERAL DE IMPACTO Y RIESGO AMBIENTAL" => "DIRECCION GENERAL DE IMPACTO Y RIESGO AMBIENTAL",
+"DIRECCION GENERAL DE INFORMATICA Y TELECOMUNICACIONES" => "DIRECCION GENERAL DE INFORMATICA Y TELECOMUNICACIONES",
+"DIRECCION GENERAL DE LA INDUSTRIA" => "DIRECCION GENERAL DE LA INDUSTRIA",
+"DIRECCION GENERAL DE MANEJO INTEGRAL DE CONTAMINANTES" => "DIRECCION GENERAL DE MANEJO INTEGRAL DE CONTAMINANTES",
+"DIRECCION GENERAL DE PLANEACION Y EVALUACION" => "DIRECCION GENERAL DE PLANEACION Y EVALUACION",
+"DIRECCION GENERAL DE POLITICA AMBIENTAL E INTEGRACION REGIONAL Y SECTORIAL" => "DIRECCION GENERAL DE POLITICA AMBIENTAL E INTEGRACION REGIONAL Y SECTORIAL",
+"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO" => "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+"DIRECCION GENERAL DE RECURSOS HUMANOS" => "DIRECCION GENERAL DE RECURSOS HUMANOS",
+"DIRECCION GENERAL DE RECURSOS MATERIALES, INMUEBLES Y SERVICIOS" => "DIRECCION GENERAL DE RECURSOS MATERIALES, INMUEBLES Y SERVICIOS",
+"DIRECCION GENERAL DE VIDA SILVESTRE" => "DIRECCION GENERAL DE VIDA SILVESTRE",
+"DIRECCION GENERAL DE ZONA FEDERAL MARITIMO TERRESTRE Y AMBIENTES COSTEROS" => "DIRECCION GENERAL DE ZONA FEDERAL MARITIMO TERRESTRE Y AMBIENTES COSTEROS",
+"DIRECCION GENERAL DEL MANEJO INTEGRAL CONTRA CONTAMINANTES" => "DIRECCION GENERAL DEL MANEJO INTEGRAL CONTRA CONTAMINANTES",
+"DIRECCION GENERAL DEL SECTOR PRIMARIO Y RECURSOS NATURALES RENOVABLES" => "DIRECCION GENERAL DEL SECTOR PRIMARIO Y RECURSOS NATURALES RENOVABLES",
+"INSTITUTO MEXICANO DE TECNOLOGIA DEL AGUA" => "INSTITUTO MEXICANO DE TECNOLOGIA DEL AGUA",
+"INSTITUTO NACIONAL DE ECOLOGIA" => "INSTITUTO NACIONAL DE ECOLOGIA",
+"OFICIALIA MAYOR" => "OFICIALIA MAYOR",
+"PROCURADURIA FEDERAL DE PROTECCION AL AMBIENTE" => "PROCURADURIA FEDERAL DE PROTECCION AL AMBIENTE",
+"SECRETARIA" => "SECRETARIA",
+"SUBSECRETARIA DE FOMENTO Y NORMATIVIDAD AMBIENTAL" => "SUBSECRETARIA DE FOMENTO Y NORMATIVIDAD AMBIENTAL",
+"SUBSECRETARIA DE GESTION PARA LA PROTECCION AMBIENTAL" => "SUBSECRETARIA DE GESTION PARA LA PROTECCION AMBIENTAL",
+"SUBSECRETARIA DE PLANEACION Y POLITICA AMBIENTAL" => "SUBSECRETARIA DE PLANEACION Y POLITICA AMBIENTAL",
+"UNIDAD COORDINADORA DE ASUNTOS INTERNACIONALES" => "UNIDAD COORDINADORA DE ASUNTOS INTERNACIONALES",
+"UNIDAD COORDINADORA DE PARTICIPACION SOCIAL Y TRANSPARENCIA" => "UNIDAD COORDINADORA DE PARTICIPACION SOCIAL Y TRANSPARENCIA",
+"UNIDAD DE CONTRALORIA INTERNA" => "UNIDAD DE CONTRALORIA INTERNA", ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	/*Consultoras*/
+	if ($model->organization=="CENTRO DE CAPACITACION EVALUACION PARA EL DESARROLLO RURAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO TECNICO EN CONSULTORIA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ESPIRAL CONSULTORA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA EN INFORMATICA Y COMPUTACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INTERNET ARCHITECTS CONSULTING SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PECIS CONSULTORIA SCP"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORES EN MODERNIZACION TECNOLOGICA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PARAMETRO CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CIRIL SA CONSULTORIA EN SISTEMAS DE INFORMACION GEOGRAFICA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO REHABILITACION INTEGRAL CUERNAVACA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS DE CONSULTORIA Y OPERACION DE PROYECTOS SOCIALES SECOPS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ADATECH SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AGUSTIN MEDARDO Y ASOCIADOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AGUSTIN RAMOS Y ASOCIADOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ALIMENTOS BALANCEADOS SUPER S A"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ALMONDA CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AMERICAN TOUCH SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="APDM ENERGIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="APOYO INFORMATICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASERTEL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORES EN BIOLOGIA PESQUERA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORES EN FINANZAS CORPORATIVAS S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORES EN PLANEACION Y PROYECTOS INTEGRALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORIA EMPRESARIAL DE ZACATECAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORIA EN CALIDAD Y PRODUCTIVIDAD SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORIA EN SISTEMAS DE CALIDAD Y DEL MEDIO AMBIENTE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORIA ESPECIALIZADA EN SISTEMAS DE CALIDAD SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORIA PROFESIONAL EN ENSELANZA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASOCIACION NACIONAL DE MEDICOS Y VETERINARIOS ESPECIALISTAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASP CONSULTORES Y REPRESENTACION SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASPIC CALIDAD TOTAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASPROV CONSULTORES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BARDHAL DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization==""){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BARSAN CONSULTORES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BEYOND QUALITY SYSTEMS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BIENES ACTIVOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BLOQUE CONSTRUCTOR"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CADEA CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CARNETEC CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE COMERCIALIZACION ALTERNATIVA Y PROYECCION ORGANIZADORA SA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE CAPACITACION Y ADIESTRAMIENTO SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE COMPUTO DE ALTO RENDIMIENTO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE EDUCACION SUPERIOR DEL SISTEMA ABIERTO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE VALIDACION Y CALIBRACIONES DE OCCIDENTE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO INTEGRAL DE ASESORIA Y PROYECTOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO PARA LA INNOVACION Y EL DESARROLLO EMPRESARIAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CHEMQUEST"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COMPANIA MEXICANA DE ESPECIALIDADES INDUSTRIALES SA DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CIBERMUNDO DE OCCIDENTE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CLASE MUNDIAL CONSULTORES SC DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONEXION TECNOLOGICASC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSEJO ESTATAL DEL CAFE"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSTRUCCIONES CONSULTORIAS Y SERVICIOS TECNICOS DE MEXICO SA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTING GROUP DE MEXICO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORES AMBIENTALES S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORES ASOCIADOS LIDERES EN ADMINISTRACION Y PRODUCTIVIDAD"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORES MULTIDISIPLINARIOS DE EMPRESAS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA EJECUTIVA Y LOGROS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA EN TECNOLOGIA ECONOMIA Y FINANZAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA INTEGRAL DE CONTROL Y AUTOMATIZACION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA INTEGRAL DE SISTEMAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA INTEGRAL EN CALIDAD SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA INTERNACIONAL EJECUTIVA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA Y CAPACITACION PARA LA COMPETITIVIDAD SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA Y GESTION EMPRESARIAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONVERSION ASESORES DE EMPRESAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DE LA TIJERA Y ASOCIADOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DESECHABLES VITALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DESPACHO DE CONSULTORIA EN PROCESOS DE CALIDAD"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DIBAMA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DIDACTEK DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DISENO E INSTALACIONES DEL NORTE"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DISENO EN CONSULTORIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DISTRIBUIDORA DE ALIMENTOS Y BEBIDAS DE PUEBLA SA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DIVIMEC DE MEXICO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DUNN Y ASOCIADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ECO CORPORACION EMPRESARIAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ECOPROYECTOS DE SISTEMAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EFECTIVIDAD ORGANIZACIONAL Y CONSULTORIA PROFESIONAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EMPRESA ESM SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENERGIA Y ECOLOGIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENERGY SAVING DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENLACE DIRECTIVO CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EQUIPOS E INGENIERIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ESTEVA MARABOTO CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ESTUDIOS CORPORATIVOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ESTUDIOS Y PROYECTOS DE INGENIERIA AMBIENTAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FCH CONSULTORES Y CONSTRUCCIONES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GCC DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GELTUNG ASESORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GENERADORES MEXICANOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GESTORIA FINANCIERA INTEGRADA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GP CONSULTING SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO ALTEMA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO CRASA Y ASOCIADOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO DE CONSULTORIA TECNICA INDUSTRIAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO DE INGENIERIA PROYECTOS Y FINANCIAMIENTO SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO ECOEFICIENCIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GSS SA DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HLR INTERNATIONAL CONSULTANTS INC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HEURISTICA AMBIENTAL CONSULTORIA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HOSPITAL A PISANTY OVADIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HSTCO INC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="IMAGINATION SOLUCIONES EN ADMINISTRACION DE RECURSOS  SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INDUSTRIA MOLITORIA EMAQUE COMPUTACION Y ORGANIZACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INDUSTRIA FARMACEUTICA VETERINARIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA APLICADA POSITRON"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA DE PROTECCION AMBIENTAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA EN ALIMENTOS IDEA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA EN CONTROLES CORPORATIVOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA INTEGRAL CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA PARA DECISIONES EMPRESARIALES ACERTADAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INGENIERIA PROYECTOS Y AUTOMATIZACION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INNOVACION ORGANIZACIONAL CONSULTORES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO DE ADMINISTRACION DE CALIDAD Y SERVICIOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INTEGRACION CONSULTORES MULTIDISIPLINARIOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INTELINET SERVICIOS ESTRATEGICOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INTESIS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ISEI"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="IT PARTNER CORPORATE SERVICES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ITALCALCE"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="IZAOLM ASESORES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="JIT CONSULTORES ASOCIADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="JJLCI CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LABORATORIO DE ESPECIALIDADES MICROBIOLOGICAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LAJAPYME SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LEN ASESORIA EN INGENIERIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LGAI MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="LIDER CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MR SERVICIOS DE FOMENTO INDUSTRIAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MAHAGEMENT FORUM MEXICO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MANSOFT SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MAS CONSULTING MANAGEMENT ADMINISTRATION SYSTEMS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MASTERQUIM"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MCKINSEY"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="METRIX SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MIRC ASESORES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MODELOS DE PRODUCTIVIDAD CALIDAD Y COMPUTACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MSM ASESORES EMPRESARIALES INTEGRALES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="NEW PLUS TECHNOLOGIES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="NORRIS AND ELLIOTT SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PARADIGMAS S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PARNET SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PAVICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PERRY INGENIEROS PROYECTOS SA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PINA LUGO Y ASOCIADOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PIR EQUIPOS Y SERVICIOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PLANEACION ESTRATEGICA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PLANEACION ADMINISTRACION Y CONSTRUCCION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PLEXUS CONSULTORES SA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PLUS INTEGRAL CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="POTENCIA FLUIDA GOPA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROCIVAC AC ECCACIV SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PRODUCTIVIDAD TECNOLOGIA Y CALIDAD PROTEC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROYECTA CONSULTORES DE LA LAGUNA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROYECTOS ASESORIAS Y ESTUDIOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="QAD SISTEMAS INTEGRADOS CASA DE SOFTWARE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="QUALITEC INTERNACIONAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="QUALITY HOUSE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RED CONSULTORES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="REMEDIACION AMBIENTAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SAGITALI CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SEMINARIOS EMPOWERMENT"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIO DE TRANSPORTES ELECTRICOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIO INTEGRAL EN CALIDAD Y PRODUCTIVIDAD PARA LA EMPRESA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="SERVICIO INTERNACIONAL DE CAM SA DE S V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS EN INFORMATICA ESPECIALIZADA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SICAMET SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SICPE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SINCO SERVICIOS INTEGRALES DE CONSULTORIAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SINERGIA SERVICIOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SISE CONSULTORIA AMBIENTAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SISTEMAS INTEGRADOS DE APLICACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SISTEMAS INTEGRADOS DE CALIDAD TOTAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SISTEMAS PARA EL DESARROLLO RURAL SA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SISTEMAS TRANSACCIONALES DE MEXICO S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOCIEDAD MEXICANA DE NORMALIZACION Y CONTROL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOFTTEK CONSULTORES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLUCIONES A SISTEMAS DE INGENIERIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLUCIONES SISTEMATICAS S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOLUCIONES TECNICAS Y ENERGETICAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SOCIETA TURISMO AREA IMOLA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SUCHIL CANALES Y ASOCIADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TRT TECNOLOGIA DE REFUERZO PARA TENERIAS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TALLER DE ARQUITECTURA ESPACIO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TECNICA RODFER DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TECNOPINCH INTEGRAL SOLUTIONS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MG DE MEXICO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="URALDE YSI Y ASOCIADOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="URIEGAS TORRES Y ASOCIADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="VISION INTEGRAL DE EMPRESAS NACIONALES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="YAXKIN CONSULTING SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="VDTECH CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="QLAB SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FIICSA CONLA MEXICO AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO SEPRES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="OUTSOURCING ENGINEERING SERVICES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="KPMG CARDENAS DOSAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HUBER & ASOCIADOS CONSULTORIA JURIDICA POLITICA Y ELECTORAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GUTIERREZ CONSULTORES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORES INTERNACIONALES CLB S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="E R N INGENIEROS CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="KEISEN CONSULTORES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ERM ENVIROMENTAL RESOURCES MANAGEMENT MEXICO OFFICE CITY"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TQS CONSULTORES S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORA PSW GLOBAL SOLUTIONS S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORIA INT EN  ESTUDIOS SERV Y SIST AGROECOLOGICOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS TECNOLOGIA Y ORGANIZACION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="QUALSYS CONSULTING SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COMPUSI"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PRUEBA CONSULTING BED"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CORPORACION AMBIENTAL DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DOMINION TECNOLOGIAS DE LA INFORMACION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROCESOS Y SISTEMAS DE INFORMACION EN GEOMATICA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="METCOTECH S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INTRA CONSULTING"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GEODA GEOSISTEMAS Y DESARROLLO AMBIENTAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="OIKOS CONSULTORIA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ADAPTIVE IT PARTNERS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENTERPRISE VALUATION SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="WIND ENERGY ASSOCIATION LATIN AMERICA AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENTORNO CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DATAETICA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GESTION Y PROMOCION DE NEGOCIOS ROLOPEZ SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SIKILTE Y BIODIESEL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GOGO CONSULTING SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSULTORES EN ESTRATEGIA Y POLITICAS PUBLICAS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INTEGRADORES DE TECNOLOGIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="REDES INVESTIGACION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AMBIOS ECOLOGIA Y DESARROLLO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BIOCONSULTORES SOLUCIONES SUSTENTABLES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GUERRA Y MILLAN CONSULTORES ASOCIADOS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ANANTA S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="YNNOVATECK SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BEMIRA MX SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FISCOSOLUTION SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BUFETE DE SOLUCIONES Y TRANSFERENCIA DE TECNOLOGIA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONTACTA Y CRECE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TIPYME SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MAPA DE TALENTOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SYNGULAR BRANDING SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BEMIRA MX SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AGRICOLA HNOS BECERRA FAVRO S A DE C V"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO CONSULTOR DE DISENO URBANO Y ARQUITECTURA S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="C&B SOFTWARE SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BC SOFTWARE SA CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SEMICONDUCTORES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="HIDALGO SOFTWARE SERVICES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="QM KASUGA CONSULTING AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROYECTO EDUCATIVO SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AGROCIME CONSULTORES SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="FACTOR INFORMATICO DE NEGOCIOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROGRAMAS EMPRESARIALES SA CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CODIGO EMPRESARIAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DAVID PARRA GRAVE NOTARIO PUBLICO NUMERO 21 DE GUADALAJARA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO MEXICANO DE FLEBOLOGIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="IKER ANALISIS DE MERCADOS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO COMERCIO ELECTRONICO Y ASESORES ESPECIALIZADOS EN SISTEMAS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO COMERCIO ELECTONICO Y ASESORES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="EDGESOLUTIONS SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DME SOLUCIONES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="WINTER WEB INTERNET AND NETWORK TECNOLOGY FOR ENTERPRISE RESOURCES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SISWORX DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="POUNCE CONSULTING SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PUENTES SOCIALES SUR AC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="AHRES DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENLACE GRUPO DE CONSULTORIA S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PUNTO VERDE CONSULTORES S C"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GUTLAB LABORATORIO DE ANALISIS QUIMICOS INDUSTRIALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="COMERCIALIZADORA ANADIC LAGUNA SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="IL SAAMAL SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CORPORATIVO DEL GRUPO COLIMAN SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="OPERACION PROFESIONAL ADMINISTRATIVA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="B&C BUSINESS CONSULTING SERVICES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSISS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BURO DE INVESTIGACIONES LEGALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="BLOCK NETWORKS SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INTEGRATION CONSULTORIA DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENERNAT SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ESCALA BIOMEDICA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="M DREIECK SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="MOLECULA DIGITAL SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ENERGREEN SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ACCENTURE SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="GRUPO DE APOYO A LA INDUSTRIA SC DE P DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="WEBB NEGOCIOS ON LINE S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SERVICIOS INTEGRALES ESPECIALIZADOS EN EL MANEJO DE PLANES Y RECURSOS EMPRESARIALES S A DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DE LA RIVA INVESTIGACION ESTRATEGICA SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ACNIELSEN S DE RL DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DIALOGA PROFESIONALES EN EDUCACION SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ALCAMPO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ERLAB SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TECNOLOGIA URBANA Y AMBIENTAL DE MEXICO SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="ASESORIA Y SERVICIOS AMBIENTALES SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO ESTRATEGICO DE NEGOCIOS PROYECTOS CONSULTORIA Y CAPACITACION SC"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="RECREO COMUNICACION SA DE CV"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	""=>"" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+
+	 /*Gobierno federal descentralizado*/
+
+	if ($model->organization=="ARCHIVO GENERAL DE LA NACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"ARCHIVO DEL ESTADO DE JALISCO"=>"ARCHIVO DEL ESTADO DE JALISCO",
+			"ARCHIVO DEL ESTADO DE SONORA"=>"ARCHIVO DEL ESTADO DE SONORA",
+			"ARCHIVO DEL ESTADO DE YUCATAN"=>"ARCHIVO DEL ESTADO DE YUCATAN", ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CENTRO DE INVESTIGACION Y DE ESTUDIOS AVANZADOS DEL INSTITUTO POLITECNICO NACIONAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"BIOTERIO"=>"BIOTERIO",
+				"CENTRO DE INVESTIGACION Y DE ESTUDIOS AVANZADOS DEL INSTITUTO POLITECNICO NACIONAL - UNIDAD TAMAULIPAS"=>"CENTRO DE INVESTIGACION Y DE ESTUDIOS AVANZADOS DEL INSTITUTO POLITECNICO NACIONAL - UNIDAD TAMAULIPAS",
+				"CENTRO DE INVESTIGACION Y DE ESTUDIOS AVANZADOS DEL INSTITUTO POLITECNICO NACIONAL"=>"CENTRO DE INVESTIGACION Y DE ESTUDIOS AVANZADOS DEL INSTITUTO POLITECNICO NACIONAL",
+				"CINVESTAV UNIDAD SALTILLO"=>"CINVESTAV UNIDAD SALTILLO",
+				"COORDINACION DE SERVICIOS EXPERIMENTALES"=>"COORDINACION DE SERVICIOS EXPERIMENTALES",
+				"DEPARTAMENTO DE BIOLOGIA CELULAR"=>"DEPARTAMENTO DE BIOLOGIA CELULAR",
+				"DEPARTAMENTO DE BIOMEDICINA MOLECULAR"=>"DEPARTAMENTO DE BIOMEDICINA MOLECULAR",
+				"DEPARTAMENTO DE BIOQUIMICA"=>"DEPARTAMENTO DE BIOQUIMICA",
+				"DEPARTAMENTO DE BIOTECNOLOGIA"=>"DEPARTAMENTO DE BIOTECNOLOGIA",
+				"DEPARTAMENTO DE CAPACITACION Y DESARROLLO"=>"DEPARTAMENTO DE CAPACITACION Y DESARROLLO",
+				"DEPARTAMENTO DE COMPUTACION"=>"DEPARTAMENTO DE COMPUTACION",
+				"DEPARTAMENTO DE CONTROL AUTOMATICO"=>"DEPARTAMENTO DE CONTROL AUTOMATICO",
+				"DEPARTAMENTO DE FARMACOBIOLOGIA"=>"DEPARTAMENTO DE FARMACOBIOLOGIA",
+				"DEPARTAMENTO DE FISICA"=>"DEPARTAMENTO DE FISICA",
+				"DEPARTAMENTO DE FISIOLOGIA, BIOFISICA Y NEUROCIENCIAS"=>"DEPARTAMENTO DE FISIOLOGIA, BIOFISICA Y NEUROCIENCIAS",
+				"DEPARTAMENTO DE GENETICA Y BIOLOGIA MOLECULAR"=>"DEPARTAMENTO DE GENETICA Y BIOLOGIA MOLECULAR",
+				"DEPARTAMENTO DE INGENIERIA ELECTRICA"=>"DEPARTAMENTO DE INGENIERIA ELECTRICA",
+				"DEPARTAMENTO DE INVESTIGACIONES EDUCATIVAS"=>"DEPARTAMENTO DE INVESTIGACIONES EDUCATIVAS",
+				"DEPARTAMENTO DE MATEMATICA EDUCATIVA"=>"DEPARTAMENTO DE MATEMATICA EDUCATIVA",
+				"DEPARTAMENTO DE MATEMATICA EDUCATIVA"=>"DEPARTAMENTO DE MATEMATICA EDUCATIVA",
+				"DEPARTAMENTO DE MATEMATICAS"=>"DEPARTAMENTO DE MATEMATICAS",
+				"DEPARTAMENTO DE PATOLOGIA EXPERIMENTAL"=>"DEPARTAMENTO DE PATOLOGIA EXPERIMENTAL",
+				"DEPARTAMENTO DE PATOLOGIA"=>"DEPARTAMENTO DE PATOLOGIA",
+				"DEPARTAMENTO DE QUIMICA"=>"DEPARTAMENTO DE QUIMICA",
+				"DEPARTAMENTO DE TOXICOLOGIA"=>"DEPARTAMENTO DE TOXICOLOGIA",
+				"LABORATORIO FRANCO-MEXICANO DE INFORMÁTICA Y AUTOMÁTICA UMI 3175 CNRS - CINVESTAV"=>"LABORATORIO FRANCO-MEXICANO DE INFORMÁTICA Y AUTOMÁTICA UMI 3175 CNRS - CINVESTAV",
+				"PROGRAMA DE BIOMEDICINA MOLECULAR"=>"PROGRAMA DE BIOMEDICINA MOLECULAR",
+				"SECCION DE METODOLOGIA Y TEORIA DE LA CIENCIA"=>"SECCION DE METODOLOGIA Y TEORIA DE LA CIENCIA",
+				"SECCION DE TERAPEUTICA EXPERIMENTAL"=>"SECCION DE TERAPEUTICA EXPERIMENTAL",
+				"SECCION DE TOXICOLOGIA AMBIENTAL"=>"SECCION DE TOXICOLOGIA AMBIENTAL",
+				"SECCION EXTERNA DE FARMACOLOGIA"=>"SECCION EXTERNA DE FARMACOLOGIA",
+				"SECCION EXTERNA DE TOXICOLOGIA"=>"SECCION EXTERNA DE TOXICOLOGIA",
+				"SECCION TLAXCALA"=>"SECCION TLAXCALA",
+				"SECRETARIA ACADEMICA"=>"SECRETARIA ACADEMICA",
+				"UNIDAD DE BIOTECNOLOGIA E ING. GENETICA DE PLANTAS CINVESTAV-IPN"=>"UNIDAD DE BIOTECNOLOGIA E ING. GENETICA DE PLANTAS CINVESTAV-IPN",
+				"UNIDAD DISTRITO FEDERAL"=>"UNIDAD DISTRITO FEDERAL",
+				"UNIDAD GUADALAJARA"=>"UNIDAD GUADALAJARA",
+				"UNIDAD IRAPUATO"=>"UNIDAD IRAPUATO",
+				"UNIDAD MONTERREY"=>"UNIDAD MONTERREY",
+				"UNIDAD MÉRIDA"=>"UNIDAD MÉRIDA",
+				"UNIDAD QUERÉTARO"=>"UNIDAD QUERÉTARO",
+				"UNIDAD SALTILLO"=>"UNIDAD SALTILLO",
+				"UNIDAD TAMAULIPAS"=>"UNIDAD TAMAULIPAS",
+				"UNIDAD TLAXCALA"=>"UNIDAD TLAXCALA",
+	    	 ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="CONSEJO NACIONAL DE CIENCIA Y TECNOLOGIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"DEPARTAMENTO DE ADMINISTRACION Y GESTION DOCUMENTAL"=>"DEPARTAMENTO DE ADMINISTRACION Y GESTION DOCUMENTAL",
+				"DIRECCION ADJUNTA DE ASUNTOS JURIDICOS"=>"DIRECCION ADJUNTA DE ASUNTOS JURIDICOS",
+				"DIRECCION ADJUNTA DE CENTROS DE INVESTIGACION"=>"DIRECCION ADJUNTA DE CENTROS DE INVESTIGACION",
+				"DIRECCION ADJUNTA DE DESAROLLO TECNOLOGICO Y NEGOCIOS DE INNOVACION"=>"DIRECCION ADJUNTA DE DESAROLLO TECNOLOGICO Y NEGOCIOS DE INNOVACION",
+				"DIRECCION ADJUNTA DE DESARROLLO CIENTÍFICO"=>"DIRECCION ADJUNTA DE DESARROLLO CIENTÍFICO",
+				"DIRECCION ADJUNTA DE DESARROLLO REGIONAL Y SECTORIAL"=>"DIRECCION ADJUNTA DE DESARROLLO REGIONAL Y SECTORIAL",
+				"DIRECCION ADJUNTA DE INFORMACION EVALUACION Y NORMATIVIDAD"=>"DIRECCION ADJUNTA DE INFORMACION EVALUACION Y NORMATIVIDAD",
+				"DIRECCION ADJUNTA DE POLITICA Y COOPERACION INTERNACIONAL EN CIENCIA Y TECNOLOGIA"=>"DIRECCION ADJUNTA DE POLITICA Y COOPERACION INTERNACIONAL EN CIENCIA Y TECNOLOGIA",
+				"DIRECCION ADJUNTA DE POSGRADO Y BECAS"=>"DIRECCION ADJUNTA DE POSGRADO Y BECAS",
+				"DIRECCION DE DIVULGACION Y DIFUSION DE CIENCIA Y TECNOLOGIA"=>"DIRECCION DE DIVULGACION Y DIFUSION DE CIENCIA Y TECNOLOGIA",
+				"DIRECCION GENERAL"=>"DIRECCION GENERAL",
+				"DIRECCIÓN ADJUNTA DE ADMINISTRACION Y FINANZAS"=>"DIRECCIÓN ADJUNTA DE ADMINISTRACION Y FINANZAS",
+				"DIRECCIÓN ADJUNTA DE CENTROS CONACYT"=>"DIRECCIÓN ADJUNTA DE CENTROS CONACYT",
+				"FONDO PARA EL DESARROLLO DE RECURSOS HUMANOS"=>"FONDO PARA EL DESARROLLO DE RECURSOS HUMANOS",
+				"ORGANO INTERNO DE CONTROL"=>"ORGANO INTERNO DE CONTROL",
+				"SECRETARIA EJECUTIVA DE LA CIBIOGEM"=>"SECRETARIA EJECUTIVA DE LA CIBIOGEM",
+				"SECRETARIA PARTICULAR DE LA DIRECCION GENERAL"=>"SECRETARIA PARTICULAR DE LA DIRECCION GENERAL",
+				"SUBDIRECCION DE APOYO AL POSGRAD"=>"SUBDIRECCION DE APOYO AL POSGRAD",
+				"SUBDIRECCION DE CONTROL GERENCIAL"=>"SUBDIRECCION DE CONTROL GERENCIAL",
+				"UNIDAD TECNICA DE PROYECTOS E INFORMACION ESTRATEGICA"=>"UNIDAD TECNICA DE PROYECTOS E INFORMACION ESTRATEGICA"),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="UNIVERSIDADE FEDERAL DE SÃO CARLOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"UNIVERSIDADE FEDERAL DE SÃO CARLOS"=>"UNIVERSIDADE FEDERAL DE SÃO CARLOS",
+		),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	/*Gobierno Federal Desconcentrado */
+
+	if ($model->organization=="COMISION NACIONAL DEL AGUA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"COORDINACION DE ASUNTOS FRONTERIZOS"=>"COORDINACION DE ASUNTOS FRONTERIZOS",
+			"COORDINACIÓN GENERAL DE RECAUDACIÓN Y FISCALIZACIÓN"=>"COORDINACIÓN GENERAL DE RECAUDACIÓN Y FISCALIZACIÓN",
+			"COORDINACIÓN GENERAL DEL SERVICIO METEOROLÓGICO NACIONAL"=>"COORDINACIÓN GENERAL DEL SERVICIO METEOROLÓGICO NACIONAL",
+			"DIRECCION LOCAL BAJA CALIFORNIA SUR"=>"DIRECCION LOCAL BAJA CALIFORNIA SUR",
+			"DIRECCION LOCAL CHIHUAHUA"=>"DIRECCION LOCAL CHIHUAHUA",
+			"GERENCIA REGIONAL AGUAS DEL VALLE DE MEXICO"=>"GERENCIA REGIONAL AGUAS DEL VALLE DE MEXICO",
+			"ORGANISMO DE CUENCA RIO BRAVO"=>"ORGANISMO DE CUENCA RIO BRAVO",
+			"SUBDIRECCION GENERAL TECNICA"=>"SUBDIRECCION GENERAL TECNICA",
+			"SUBDIRECCIÓN GENERAL DE AGUA POTABLE, DRENAJE Y SANEAMIENTO"=>"SUBDIRECCIÓN GENERAL DE AGUA POTABLE, DRENAJE Y SANEAMIENTO",
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="INSTITUTO NACIONAL ELECTORAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	   		"CONSEJEROS ELECTORALES"=>"CONSEJEROS ELECTORALES",
+			"CONSEJO GENERAL"=>"CONSEJO GENERAL",
+			"DIRECCION EJECUTIVA DE ADMINISTRACION"=>"DIRECCION EJECUTIVA DE ADMINISTRACION",
+			"DIRECCION EJECUTIVA DE CAPACITACION ELECTORAL Y EDUCACION CIVICA"=>"DIRECCION EJECUTIVA DE CAPACITACION ELECTORAL Y EDUCACION CIVICA",
+			"DIRECCION EJECUTIVA DE ORGANIZACION ELECTORAL"=>"DIRECCION EJECUTIVA DE ORGANIZACION ELECTORAL",
+			"DIRECCION EJECUTIVA DE PRERROGATIVAS Y PARTIDOS POLITICOS"=>"DIRECCION EJECUTIVA DE PRERROGATIVAS Y PARTIDOS POLITICOS",
+			"DIRECCION EJECUTIVA DEL REGISTRO FEDERAL DE ELECTORES"=>"DIRECCION EJECUTIVA DEL REGISTRO FEDERAL DE ELECTORES",
+			"DIRECCION EJECUTIVA DEL SERVICIO PROFESIONAL ELECTORAL"=>"DIRECCION EJECUTIVA DEL SERVICIO PROFESIONAL ELECTORAL",
+			"JUNTAS DISTRITALES"=>"JUNTAS DISTRITALES",
+			"JUNTAS LOCALES"=>"JUNTAS LOCALES",
+			"PRESIDENCIA DEL CONSEJO GENERAL"=>"PRESIDENCIA DEL CONSEJO GENERAL",
+			"SECRETARIA EJECUTIVA"=>"SECRETARIA EJECUTIVA"
+	   	 ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+
+	/* Gobierno Municipal */
+	if ($model->organization=="AYUNTAMIENTO DE GUADALAJARA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"CONSEJO MUNICIPAL DEL DEPORTE DE GUADALAJARA"=>"CONSEJO MUNICIPAL DEL DEPORTE DE GUADALAJARA", 
+	    	"OFICINA DE COMBATE A LA CORRUPCIÓN"=>"OFICINA DE COMBATE A LA CORRUPCIÓN"),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+
+	if ($model->organization=="AYUNTAMIENTO DE ZAPOPAN"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"INSTITUTO DE CULTURA"=>"INSTITUTO DE CULTURA" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="MUNICIPIO DE QUERETARO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"DIRECCIÓN DE OBRAS PÚBLICAS"=>"DIRECCIÓN DE OBRAS PÚBLICAS",
+	    	"SECRETARÍA DE DESARROLLO SUSTENTABLE"=>"SECRETARÍA DE DESARROLLO SUSTENTABLE" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="NORTHERM ILLINOIS UNIVERSITY"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"DEPARTMENT OF GEOLOGY AND ENVIRONMENTAL GEOSCIENCES"=>"DEPARTMENT OF GEOLOGY AND ENVIRONMENTAL GEOSCIENCES" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="PRESIDENCIA MUNICIPAL DE JARAL DEL PROGRESO GUANAJUATO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"SECRETARÍA DEL AYUNTAMIENTO DEL MUNICIPIO DE JARAL DEL PROGRESO, GUANAJUATO."=>"SECRETARÍA DEL AYUNTAMIENTO DEL MUNICIPIO DE JARAL DEL PROGRESO, GUANAJUATO." ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="PRESIDENCIA MUNICIPAL DE LEON GUANAJUATO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"DIRECCIÓN GENERAL DE DESARROLLO INSTITUCIONA"=>"DIRECCIÓN GENERAL DE DESARROLLO INSTITUCIONA",
+	    	"DIRECCIÓN GENERAL DE SALUD MUNICIPAL"=>"DIRECCIÓN GENERAL DE SALUD MUNICIPAL",
+	    	"SECRETARÍA PARTICULAR"=>"SECRETARÍA PARTICULAR"
+	    	),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	if ($model->organization=="PRESIDENCIA MUNICIPAL DE PACHUCA DE SOTO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"SECRETARÍA DE CONTRALORÍA MUNICIPIO DE PACHUCA"=>"SECRETARÍA DE CONTRALORÍA MUNICIPIO DE PACHUCA" ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}
+	
+	/* Instituciones del sector gobierno federal centralizado */
+	if ($model->organization=="SECRETARIA DE EDUCACION PUBLICA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"COLEGIO DE BACHILLERES"=>"COLEGIO DE BACHILLERES",
+				"COLEGIO NACIONAL DE EDUCACION PROFESIONAL TECNICA"=>"COLEGIO NACIONAL DE EDUCACION PROFESIONAL TECNICA",
+				"COMISION DE OPERACION Y FOMENTO DE ACTIVIDADES ACADEMICAS DEL INSTITUTO POLITECNICO NACIONAL"=>"COMISION DE OPERACION Y FOMENTO DE ACTIVIDADES ACADEMICAS DEL INSTITUTO POLITECNICO NACIONAL",
+				"COMISION NACIONAL DE LOS LIBROS DE TEXTO GRATUITOS"=>"COMISION NACIONAL DE LOS LIBROS DE TEXTO GRATUITOS",
+				"COMISION NACIONAL DEL DEPORTE"=>"COMISION NACIONAL DEL DEPORTE",
+				"COMITE ADMINISTRADOR DEL PROGRAMA FEDERAL DE CONSTRUCCION DE ESCUELAS"=>"COMITE ADMINISTRADOR DEL PROGRAMA FEDERAL DE CONSTRUCCION DE ESCUELAS",
+				"COMPALIA OPERADORA DEL CENTRO CULTURAL Y TURISTICO DE TIJUANA, S.A. DE C.V."=>"COMPALIA OPERADORA DEL CENTRO CULTURAL Y TURISTICO DE TIJUANA, S.A. DE C.V.",
+				"COMPAÑÍA OPERADORA DEL CENTRO CULTURAL Y TURÍSTICO DE TIJUANA S.A. DE C.V."=>"COMPAÑÍA OPERADORA DEL CENTRO CULTURAL Y TURÍSTICO DE TIJUANA S.A. DE C.V.",
+				"CONSEJO NACIONAL PARA LA CULTURA Y LAS ARTES"=>"CONSEJO NACIONAL PARA LA CULTURA Y LAS ARTES",
+				"COORDINACION DE ORGANOS DESCONCENTRADOS Y DEL SECTOR PARAESTATAL"=>"COORDINACION DE ORGANOS DESCONCENTRADOS Y DEL SECTOR PARAESTATAL",
+				"COORDINACION GENERAL DE ACTUALIZACION Y CAPACITACION PARA MAESTROS EN SERVICIO"=>"COORDINACION GENERAL DE ACTUALIZACION Y CAPACITACION PARA MAESTROS EN SERVICIO",
+				"COORDINACION GENERAL DE EDUCACION INTERCULTURAL BILINGUE"=>"COORDINACION GENERAL DE EDUCACION INTERCULTURAL BILINGUE",
+				"COORDINACION GENERAL DE REPRESENTACIONES DE LA SEP EN LAS ENTIDADES FEDERATIVAS"=>"COORDINACION GENERAL DE REPRESENTACIONES DE LA SEP EN LAS ENTIDADES FEDERATIVAS",
+				"COORDINACION GENERAL DE UNIVERSIDADES TECNOLOGICAS"=>"COORDINACION GENERAL DE UNIVERSIDADES TECNOLOGICAS",
+				"COORDINACION NACIONAL DE CARRERA MAGISTERIAL"=>"COORDINACION NACIONAL DE CARRERA MAGISTERIAL",
+				"DIRECCION DE SALUD ESCOLAR"=>"DIRECCION DE SALUD ESCOLAR",
+				"DIRECCION GENERAL DE ACREDITACION, INCORPORACION Y REVALIDACION"=>"DIRECCION GENERAL DE ACREDITACION, INCORPORACION Y REVALIDACION",
+				"DIRECCION GENERAL DE ADMINISTRACION DE PERSONAL EN EL DISTRITO FEDERAL"=>"DIRECCION GENERAL DE ADMINISTRACION DE PERSONAL EN EL DISTRITO FEDERAL",
+				"DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+				"DIRECCION GENERAL DE CENTROS DE FORMACION PARA EL TRABAJO"=>"DIRECCION GENERAL DE CENTROS DE FORMACION PARA EL TRABAJO",
+				"DIRECCION GENERAL DE EDUCACION FISICA EN EL DISTRITO FEDERAL"=>"DIRECCION GENERAL DE EDUCACION FISICA EN EL DISTRITO FEDERAL",
+				"DIRECCION GENERAL DE EDUCACION INDIGENA"=>"DIRECCION GENERAL DE EDUCACION INDIGENA",
+				"DIRECCION GENERAL DE EDUCACION NORMAL Y ACTUALIZACION DEL MAGISTERIO EN EL DISTRITO FEDERAL"=>"DIRECCION GENERAL DE EDUCACION NORMAL Y ACTUALIZACION DEL MAGISTERIO EN EL DISTRITO FEDERAL",
+				"DIRECCION GENERAL DE EDUCACION SECUNDARIA TECNICA"=>"DIRECCION GENERAL DE EDUCACION SECUNDARIA TECNICA",
+				"DIRECCION GENERAL DE EDUCACION SUPERIOR"=>"DIRECCION GENERAL DE EDUCACION SUPERIOR",
+				"DIRECCION GENERAL DE EVALUACION"=>"DIRECCION GENERAL DE EVALUACION",
+				"DIRECCION GENERAL DE EXTENSION EDUCATIVA"=>"DIRECCION GENERAL DE EXTENSION EDUCATIVA",
+				"DIRECCION GENERAL DE INVESTIGACION EDUCATIVA"=>"DIRECCION GENERAL DE INVESTIGACION EDUCATIVA",
+				"DIRECCION GENERAL DE MATERIALES Y METODOS EDUCATIVOS"=>"DIRECCION GENERAL DE MATERIALES Y METODOS EDUCATIVOS",
+				"DIRECCION GENERAL DE NORMATIVIDAD"=>"DIRECCION GENERAL DE NORMATIVIDAD",
+				"DIRECCION GENERAL DE OPERACION DE SERVICIOS EDUCATIVOS EN EL DISTRITO FEDERAL"=>"DIRECCION GENERAL DE OPERACION DE SERVICIOS EDUCATIVOS EN EL DISTRITO FEDERAL",
+				"DIRECCION GENERAL DE PERSONAL"=>"DIRECCION GENERAL DE PERSONAL",
+				"DIRECCION GENERAL DE PLANEACION, PROGRAMACION Y PRESUPUESTO EN EL DISTRITO FEDERAL"=>"DIRECCION GENERAL DE PLANEACION, PROGRAMACION Y PRESUPUESTO EN EL DISTRITO FEDERAL",
+				"DIRECCION GENERAL DE PLANEACION, PROGRAMACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PLANEACION, PROGRAMACION Y PRESUPUESTO",
+				"DIRECCION GENERAL DE PROFESIONES"=>"DIRECCION GENERAL DE PROFESIONES",
+				"DIRECCION GENERAL DE RECURSOS FINANCIEROS"=>"DIRECCION GENERAL DE RECURSOS FINANCIEROS",
+				"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS"=>"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS",
+				"DIRECCION GENERAL DE RELACIONES INTERNACIONALES"=>"DIRECCION GENERAL DE RELACIONES INTERNACIONALES",
+				"DIRECCION GENERAL DE SERVICIOS EDUCATIVOS IZTAPALAPA"=>"DIRECCION GENERAL DE SERVICIOS EDUCATIVOS IZTAPALAPA",
+				"DIRECCION GENERAL DE TECNOLOGIA DE LA INFORMACION"=>"DIRECCION GENERAL DE TECNOLOGIA DE LA INFORMACION",
+				"DIRECCION GENERAL DEL BACHILLERATO"=>"DIRECCION GENERAL DEL BACHILLERATO",
+				"EDUCAL, S. A. DE C. V."=>"EDUCAL, S. A. DE C. V.",
+				"EL COLEGIO NACIONAL"=>"EL COLEGIO NACIONAL",
+				"ESTUDIOS CHURUBUSCO AZTECA, S. A."=>"ESTUDIOS CHURUBUSCO AZTECA, S. A.",
+				"FIDEICOMISO PARA LA CINETECA NACIONAL"=>"FIDEICOMISO PARA LA CINETECA NACIONAL",
+				"FONDO DE CULTURA ECONÓMICA"=>"FONDO DE CULTURA ECONÓMICA",
+				"INSTITUTO MEXICANO DE LA JUVENTUD"=>"INSTITUTO MEXICANO DE LA JUVENTUD",
+				"INSTITUTO MEXICANO DE LA RADIO"=>"INSTITUTO MEXICANO DE LA RADIO",
+				"INSTITUTO NACIONAL DEL DERECHO DE AUTOR"=>"INSTITUTO NACIONAL DEL DERECHO DE AUTOR",
+				"INSTITUTO NACIONAL PARA LA EDUCACION DE LOS ADULTOS"=>"INSTITUTO NACIONAL PARA LA EDUCACION DE LOS ADULTOS",
+				"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+				"PATRONATO DE OBRAS E INSTALACIONES DEL INSTITUTO POLITECNICO NACIONAL"=>"PATRONATO DE OBRAS E INSTALACIONES DEL INSTITUTO POLITECNICO NACIONAL",
+				"RADIO EDUCACION"=>"RADIO EDUCACION",
+				"REPRESENTACION DE LA SEP EN AGUASCALIENTES"=>"REPRESENTACION DE LA SEP EN AGUASCALIENTES",
+				"REPRESENTACION DE LA SEP EN BAJA CALIFORNIA SUR"=>"REPRESENTACION DE LA SEP EN BAJA CALIFORNIA SUR",
+				"REPRESENTACION DE LA SEP EN BAJA CALIFORNIA"=>"REPRESENTACION DE LA SEP EN BAJA CALIFORNIA",
+				"REPRESENTACION DE LA SEP EN CAMPECHE"=>"REPRESENTACION DE LA SEP EN CAMPECHE",
+				"REPRESENTACION DE LA SEP EN CHIAPAS"=>"REPRESENTACION DE LA SEP EN CHIAPAS",
+				"REPRESENTACION DE LA SEP EN CHIHUAHUA"=>"REPRESENTACION DE LA SEP EN CHIHUAHUA",
+				"REPRESENTACION DE LA SEP EN COAHUILA"=>"REPRESENTACION DE LA SEP EN COAHUILA",
+				"REPRESENTACION DE LA SEP EN COLIMA"=>"REPRESENTACION DE LA SEP EN COLIMA",
+				"REPRESENTACION DE LA SEP EN DURANGO"=>"REPRESENTACION DE LA SEP EN DURANGO",
+				"REPRESENTACION DE LA SEP EN GUANAJUATO"=>"REPRESENTACION DE LA SEP EN GUANAJUATO",
+				"REPRESENTACION DE LA SEP EN GUERRERO"=>"REPRESENTACION DE LA SEP EN GUERRERO",
+				"REPRESENTACION DE LA SEP EN HIDALGO"=>"REPRESENTACION DE LA SEP EN HIDALGO",
+				"REPRESENTACION DE LA SEP EN JALISCO"=>"REPRESENTACION DE LA SEP EN JALISCO",
+				"REPRESENTACION DE LA SEP EN MEXICO"=>"REPRESENTACION DE LA SEP EN MEXICO",
+				"REPRESENTACION DE LA SEP EN MICHOACAN"=>"REPRESENTACION DE LA SEP EN MICHOACAN",
+				"REPRESENTACION DE LA SEP EN MORELOS"=>"REPRESENTACION DE LA SEP EN MORELOS",
+				"REPRESENTACION DE LA SEP EN NAYARIT"=>"REPRESENTACION DE LA SEP EN NAYARIT",
+				"REPRESENTACION DE LA SEP EN NUEVO LEON"=>"REPRESENTACION DE LA SEP EN NUEVO LEON",
+				"REPRESENTACION DE LA SEP EN OAXACA"=>"REPRESENTACION DE LA SEP EN OAXACA",
+				"REPRESENTACION DE LA SEP EN PUEBLA"=>"REPRESENTACION DE LA SEP EN PUEBLA",
+				"REPRESENTACION DE LA SEP EN QUERETARO"=>"REPRESENTACION DE LA SEP EN QUERETARO",
+				"REPRESENTACION DE LA SEP EN QUINTANA ROO"=>"REPRESENTACION DE LA SEP EN QUINTANA ROO",
+				"REPRESENTACION DE LA SEP EN SAN LUIS POTOSI"=>"REPRESENTACION DE LA SEP EN SAN LUIS POTOSI",
+				"REPRESENTACION DE LA SEP EN SINALOA"=>"REPRESENTACION DE LA SEP EN SINALOA",
+				"REPRESENTACION DE LA SEP EN SONORA"=>"REPRESENTACION DE LA SEP EN SONORA",
+				"REPRESENTACION DE LA SEP EN TABASCO"=>"REPRESENTACION DE LA SEP EN TABASCO",
+				"REPRESENTACION DE LA SEP EN TAMAULIPAS"=>"REPRESENTACION DE LA SEP EN TAMAULIPAS",
+				"REPRESENTACION DE LA SEP EN TLAXCALA"=>"REPRESENTACION DE LA SEP EN TLAXCALA",
+				"REPRESENTACION DE LA SEP EN VERACRUZ"=>"REPRESENTACION DE LA SEP EN VERACRUZ",
+				"REPRESENTACION DE LA SEP EN YUCATAN"=>"REPRESENTACION DE LA SEP EN YUCATAN",
+				"REPRESENTACION DE LA SEP EN ZACATECAS"=>"REPRESENTACION DE LA SEP EN ZACATECAS",
+				"SECRETARIA DEL ESTADO DE COAHUILA"=>"SECRETARIA DEL ESTADO DE COAHUILA",
+				"SECRETARIA DEL ESTADO DE DURANGO"=>"SECRETARIA DEL ESTADO DE DURANGO",
+				"SECRETARIA DEL ESTADO DE NUEVO LEON"=>"SECRETARIA DEL ESTADO DE NUEVO LEON",
+				"SECRETARIA DEL ESTADO DE SINALOA"=>"SECRETARIA DEL ESTADO DE SINALOA",
+				"SECRETARIA DEL ESTADO DE TABASCO"=>"SECRETARIA DEL ESTADO DE TABASCO",
+				"SECRETARIA DEL ESTADO SAN LUIS POTOSI"=>"SECRETARIA DEL ESTADO SAN LUIS POTOSI",
+				"SECRETARIA"=>"SECRETARIA",
+				"SUBSECRETARIA DE EDUCACION BASICA Y NORMAL"=>"SUBSECRETARIA DE EDUCACION BASICA Y NORMAL",
+				"SUBSECRETARIA DE EDUCACION E INVESTIGACION TECNOLOGICAS"=>"SUBSECRETARIA DE EDUCACION E INVESTIGACION TECNOLOGICAS",
+				"SUBSECRETARIA DE EDUCACION SUPERIOR E INVESTIGACION CIENTIFICA"=>"SUBSECRETARIA DE EDUCACION SUPERIOR E INVESTIGACION CIENTIFICA",
+				"SUBSECRETARIA DE PLANEACION Y COORDINACION"=>"SUBSECRETARIA DE PLANEACION Y COORDINACION",
+				"SUBSECRETARIA DE SERVICIOS EDUCATIVOS PARA EL DISTRITO FEDERAL"=>"SUBSECRETARIA DE SERVICIOS EDUCATIVOS PARA EL DISTRITO FEDERAL",
+				"TELEVISION METROPOLITANA, S. A. DE C. V."=>"TELEVISION METROPOLITANA, S. A. DE C. V.",
+				"UNIDAD DE COMUNICACION SOCIAL"=>"UNIDAD DE COMUNICACION SOCIAL",
+				"UNIDAD DE CONTRALORIA INTERNA"=>"UNIDAD DE CONTRALORIA INTERNA",
+				"XE-IPN CANAL 11"=>"XE-IPN CANAL 11"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE SALUD"){
+	    echo $form->dropDownList($model,'second_level',array(
+			"ADMINISTRACION DEL PATRIMONIO DE LA BENEFICENCIA PUBLICA"=>"ADMINISTRACION DEL PATRIMONIO DE LA BENEFICENCIA PUBLICA",
+			"CENTRO DE DESARROLLO DE APLICACIONES TECNOLOGICAS"=>"CENTRO DE DESARROLLO DE APLICACIONES TECNOLOGICAS",
+			"CENTRO NACIONAL DE LA TRANSFUSION SANGUINEA"=>"CENTRO NACIONAL DE LA TRANSFUSION SANGUINEA",
+			"CENTRO NACIONAL DE REHABILITACION"=>"CENTRO NACIONAL DE REHABILITACION",
+			"CENTRO NACIONAL DE VIGILANCIA EPIDEMIOLOGICA"=>"CENTRO NACIONAL DE VIGILANCIA EPIDEMIOLOGICA",
+			"CENTRO NACIONAL PARA LA PREVENCION Y CONTROL DEL VIH/SIDA"=>"CENTRO NACIONAL PARA LA PREVENCION Y CONTROL DEL VIH/SIDA",
+			"COMISION DEL CONSEJO NACIONAL CONTRA LAS ADICCIONES"=>"COMISION DEL CONSEJO NACIONAL CONTRA LAS ADICCIONES",
+			"COMISION FEDERAL PARA LA PROTECCION CONTRA RIESGOS SANITARIOS"=>"COMISION FEDERAL PARA LA PROTECCION CONTRA RIESGOS SANITARIOS",
+			"COMISION NACIONAL DE ARBITRAJE MEDICO"=>"COMISION NACIONAL DE ARBITRAJE MEDICO",
+			"COORDINACION DE INSTITUTOS NACIONALES DE SALUD"=>"COORDINACION DE INSTITUTOS NACIONALES DE SALUD",
+			"COORDINACION DE SALUD MENTAL"=>"COORDINACION DE SALUD MENTAL",
+			"COORDINACION GENERAL DE LOS INSTITUTOS NACIONALES DE SALUD"=>"COORDINACION GENERAL DE LOS INSTITUTOS NACIONALES DE SALUD",
+			"COORDINACION GENERAL DE PLANEACION ESTRATEGICA"=>"COORDINACION GENERAL DE PLANEACION ESTRATEGICA",
+			"DIRECCION GENERAL DE ANALISIS Y DISEÑO DE POLITICAS DE SALUD"=>"DIRECCION GENERAL DE ANALISIS Y DISEÑO DE POLITICAS DE SALUD",
+			"DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+			"DIRECCION GENERAL DE CALIDAD Y EDUCACION EN SALUD"=>"DIRECCION GENERAL DE CALIDAD Y EDUCACION EN SALUD",
+			"DIRECCION GENERAL DE COMUNICACION SOCIAL"=>"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+			"DIRECCION GENERAL DE COOPERACION Y DIFUSION EN ADICCIONES Y SALUD MENTAL"=>"DIRECCION GENERAL DE COOPERACION Y DIFUSION EN ADICCIONES Y SALUD MENTAL",
+			"DIRECCION GENERAL DE COORDINACION Y DESARROLLO CONTRA LAS ADICCIONES"=>"DIRECCION GENERAL DE COORDINACION Y DESARROLLO CONTRA LAS ADICCIONES",
+			"DIRECCION GENERAL DE DESARROLLO DE LA INFRAESTRUCTURA FISICA"=>"DIRECCION GENERAL DE DESARROLLO DE LA INFRAESTRUCTURA FISICA",
+			"DIRECCION GENERAL DE EPIDEMIOLOGIA"=>"DIRECCION GENERAL DE EPIDEMIOLOGIA",
+			"DIRECCION GENERAL DE EQUIDAD Y DESARROLLO EN SALUD"=>"DIRECCION GENERAL DE EQUIDAD Y DESARROLLO EN SALUD",
+			"DIRECCION GENERAL DE INFORMACION Y EVALUACION DEL DESEMPEÑO"=>"DIRECCION GENERAL DE INFORMACION Y EVALUACION DEL DESEMPEÑO",
+			"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+			"DIRECCION GENERAL DE PROMOCION DE LA SALUD"=>"DIRECCION GENERAL DE PROMOCION DE LA SALUD",
+			"DIRECCION GENERAL DE PROTECCION FINANCIERA EN SALUD"=>"DIRECCION GENERAL DE PROTECCION FINANCIERA EN SALUD",
+			"DIRECCION GENERAL DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE RECURSOS HUMANOS",
+			"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES"=>"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+			"DIRECCION GENERAL DE RELACIONES INTERNACIONALES"=>"DIRECCION GENERAL DE RELACIONES INTERNACIONALES",
+			"DIRECCION GENERAL DE SALUD REPRODUCTIVA"=>"DIRECCION GENERAL DE SALUD REPRODUCTIVA",
+			"DIRECCION GENERAL DE TECNOLOGIA DE LA INFORMACION"=>"DIRECCION GENERAL DE TECNOLOGIA DE LA INFORMACION",
+			"DIRECCION GENERAL PARA LA DESCENTRALIZACION HOSPITALARIA"=>"DIRECCION GENERAL PARA LA DESCENTRALIZACION HOSPITALARIA",
+			"DIRECCION GENERAL TECNICA EN ADICCIONES Y SALUD MENTAL"=>"DIRECCION GENERAL TECNICA EN ADICCIONES Y SALUD MENTAL",
+			"HOSPITAL GENERAL DE MEXICO DR. EDUARDO LICEAGA"=>"HOSPITAL GENERAL DE MEXICO DR. EDUARDO LICEAGA",
+			"HOSPITAL GENERAL DE OCCIDENTE, SECRETARIA DE SALUD, JALISCO"=>"HOSPITAL GENERAL DE OCCIDENTE, SECRETARIA DE SALUD, JALISCO",
+			"HOSPITAL GENERAL DR. MANUEL GEA GONZALEZ"=>"HOSPITAL GENERAL DR. MANUEL GEA GONZALEZ",
+			"HOSPITAL GENERAL DR. MIGUEL SILVA DE MORELIA"=>"HOSPITAL GENERAL DR. MIGUEL SILVA DE MORELIA",
+			"HOSPITAL INFANTIL DE MONTERREY"=>"HOSPITAL INFANTIL DE MONTERREY",
+			"HOSPITAL INFANTIL DE MORELIA EVA SAMANO"=>"HOSPITAL INFANTIL DE MORELIA EVA SAMANO",
+			"HOSPITAL JUAREZ DE MEXICO"=>"HOSPITAL JUAREZ DE MEXICO",
+			"HOSPITAL PSIQUIATRICO INFANTIL DR. JUAN N. NAVARRO"=>"HOSPITAL PSIQUIATRICO INFANTIL DR. JUAN N. NAVARRO",
+			"IMSS SOLIDARIDAD"=>"IMSS SOLIDARIDAD",
+			"INSTITUTO DE DIAGNOSTICO Y REFERENCIAS EPIDEMIOLOGICAS"=>"INSTITUTO DE DIAGNOSTICO Y REFERENCIAS EPIDEMIOLOGICAS",
+			"INSTITUTO DE SALUBRIDAD Y ENFERMEDADES TROPICALES"=>"INSTITUTO DE SALUBRIDAD Y ENFERMEDADES TROPICALES",
+			"INSTITUTO NACIONAL DE LA COMUNICACION HUMANA DOCTOR ANDRES BUSTAMANTE GARCIA"=>"INSTITUTO NACIONAL DE LA COMUNICACION HUMANA DOCTOR ANDRES BUSTAMANTE GARCIA",
+			"INSTITUTO NACIONAL DE LA COMUNICACION HUMANA"=>"INSTITUTO NACIONAL DE LA COMUNICACION HUMANA",
+			"INSTITUTO NACIONAL DE LA SENECTUD"=>"INSTITUTO NACIONAL DE LA SENECTUD",
+			"INSTITUTO NACIONAL DE MEDICINA DE REHABILITACION"=>"INSTITUTO NACIONAL DE MEDICINA DE REHABILITACION",
+			"INSTITUTO NACIONAL DE ORTOPEDIA"=>"INSTITUTO NACIONAL DE ORTOPEDIA",
+			"INSTITUTO NACIONAL DE PSIQUIATRIA"=>"INSTITUTO NACIONAL DE PSIQUIATRIA",
+			"INSTITUTO NACIONAL DE REHABILITACION"=>"INSTITUTO NACIONAL DE REHABILITACION",
+			"PROGRAMA NACIONAL CONTRA EL CANCER, A.C."=>"PROGRAMA NACIONAL CONTRA EL CANCER, A.C.",
+			"SECRETARIA DEL ESTADO DE DURANGO"=>"SECRETARIA DEL ESTADO DE DURANGO",
+			"SECRETARIA DEL ESTADO DE HIDALGO"=>"SECRETARIA DEL ESTADO DE HIDALGO",
+			"SECRETARIA DEL ESTADO DE JALISCO"=>"SECRETARIA DEL ESTADO DE JALISCO",
+			"SECRETARIA DEL ESTADO DE OAXACA"=>"SECRETARIA DEL ESTADO DE OAXACA",
+			"SECRETARIA DEL ESTADO DE SAN LUIS POTOSI"=>"SECRETARIA DEL ESTADO DE SAN LUIS POTOSI",
+			"SECRETARIA DEL ESTADO DE SINALOA"=>"SECRETARIA DEL ESTADO DE SINALOA",
+			"SECRETARIA DEL ESTADO DE TABASCO"=>"SECRETARIA DEL ESTADO DE TABASCO",
+			"SECRETARIA"=>"SECRETARIA",
+			"SECRETARIADO DEL CONSEJO NACIONAL DE SALUD"=>"SECRETARIADO DEL CONSEJO NACIONAL DE SALUD",
+			"SERVICIOS DE SALUD MENTAL"=>"SERVICIOS DE SALUD MENTAL",
+			"SERVICIOS DE SALUD PARA LA POBLACION ABIERTA DEL DISTRITO FEDERAL"=>"SERVICIOS DE SALUD PARA LA POBLACION ABIERTA DEL DISTRITO FEDERAL",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE AGUASCALIENTES"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE AGUASCALIENTES",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA SUR"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA SUR",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CAMPECHE"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CAMPECHE",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CHIAPAS"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CHIAPAS",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CHIHUAHUA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE CHIHUAHUA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE COAHUILA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE COAHUILA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE COLIMA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE COLIMA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE DURANGO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE DURANGO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE GUANAJUATO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE GUANAJUATO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE GUERRERO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE GUERRERO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE HIDALGO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE HIDALGO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE JALISCO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE JALISCO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MEXICO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MEXICO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MICHOACAN"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MICHOACAN",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MORELOS"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE MORELOS",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE NAYARIT"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE NAYARIT",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE NUEVO LEON"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE NUEVO LEON",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE OAXACA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE OAXACA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE PUEBLA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE PUEBLA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE QUERETARO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE QUERETARO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE QUINTANA ROO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE QUINTANA ROO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SAN LUIS POTOSI"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SAN LUIS POTOSI",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SINALOA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SINALOA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SONORA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE SONORA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TABASCO"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TABASCO",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TAMAULIPAS"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TAMAULIPAS",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TLAXCALA"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE TLAXCALA",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE VERACRUZ"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE VERACRUZ",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE YUCATAN"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE YUCATAN",
+			"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE ZACATECAS"=>"SERVICIOS ESTATALES DE SALUD PUBLICA EN EL ESTADO DE ZACATECAS",
+			"SUBSECRETARIA DE ADMINISTRACION Y FINANZAS"=>"SUBSECRETARIA DE ADMINISTRACION Y FINANZAS",
+			"SUBSECRETARIA DE INNOVACION Y CALIDAD"=>"SUBSECRETARIA DE INNOVACION Y CALIDAD",
+			"SUBSECRETARIA DE PREVENCION Y CONTROL DE ENFERMEDADES"=>"SUBSECRETARIA DE PREVENCION Y CONTROL DE ENFERMEDADES",
+			"SUBSECRETARIA DE PREVENCION Y PROTECCION DE LA SALUD"=>"SUBSECRETARIA DE PREVENCION Y PROTECCION DE LA SALUD",
+			"SUBSECRETARIA DE RELACIONES INSTITUCIONALES"=>"SUBSECRETARIA DE RELACIONES INSTITUCIONALES",
+			"UNIDAD DE CONTRALORIA INTERNA"=>"UNIDAD DE CONTRALORIA INTERNA",
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="DIRECCION GENERAL DE EDUCACION TECNOLOGICA INDUSTRIAL DGETI"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"CENTRO DE BACHILLERATO TECNICO INDUSTRIAL Y DE SERVICIOS NO. 49"=>"CENTRO DE BACHILLERATO TECNICO INDUSTRIAL Y DE SERVICIOS NO. 49",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 110"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 110",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 119"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 119",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 141"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 141",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 142"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 142",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 144"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 144",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 233"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 233",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 239"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 239",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 263"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 263",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 271"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 271",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 4"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS 4",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NO. 86"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NO. 86",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NO.128"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NO.128",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUM. 122"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUM. 122",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUMERO 114"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUMERO 114",
+				"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUMERO 189"=>"CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUMERO 189",
+				"CENTRO DE BACHILLERATO TECNOLOGICO, INDUSTRIAL Y DE SERVICIOS 89"=>"CENTRO DE BACHILLERATO TECNOLOGICO, INDUSTRIAL Y DE SERVICIOS 89",
+				"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 107"=>"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 107",
+				"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 117"=>"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 117",
+				"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 22"=>"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 22",
+				"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 228"=>"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 228",
+				"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 230"=>"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICIOS 230",
+				"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICOS NO.145"=>"CENTRO DE BACHILLERATO TECNOLÓGICO INDUSTRIAL Y DE SERVICOS NO.145",
+				"CENTRO DE BACHILLERATO TECNOLÓGICO, INDUSTRIAL Y DE SERVICIOS 94"=>"CENTRO DE BACHILLERATO TECNOLÓGICO, INDUSTRIAL Y DE SERVICIOS 94",
+				"CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS 33"=>"CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS 33",
+				"CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS 58"=>"CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS 58",
+				"CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NO.61"=>"CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NO.61",
+				"CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NUMERO 74"=>"CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SERVICIOS NUMERO 74"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PRESIDENCIA DE LA REPUBLICA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"COMISION NACIONAL PARA EL DESARROLLO DE LOS PUEBLOS INDIGENAS"=>"COMISION NACIONAL PARA EL DESARROLLO DE LOS PUEBLOS INDIGENAS",
+			"COORDINACION DE ASESORES"=>"COORDINACION DE ASESORES",
+			"COORDINACION DE COMUNICACION SOCIAL"=>"COORDINACION DE COMUNICACION SOCIAL",
+			"COORDINACION DE GABINETES Y PROYECTOS ESPECIALES"=>"COORDINACION DE GABINETES Y PROYECTOS ESPECIALES",
+			"COORDINACION DE IMAGEN Y OPINION PUBLICA"=>"COORDINACION DE IMAGEN Y OPINION PUBLICA",
+			"COORDINACION GENERAL DE ADMINISTRACION"=>"COORDINACION GENERAL DE ADMINISTRACION",
+			"COORDINACION GENERAL DE COMUNICACION SOCIAL"=>"COORDINACION GENERAL DE COMUNICACION SOCIAL",
+			"COORDINACION GENERAL DE TRANSPORTE AEREO PRESIDENCIAL"=>"COORDINACION GENERAL DE TRANSPORTE AEREO PRESIDENCIAL",
+			"COORDINACIÓN DE ESTRATEGIA Y MENSAJE GUBERNAMENTAL"=>"COORDINACIÓN DE ESTRATEGIA Y MENSAJE GUBERNAMENTAL",
+			"DIRECCION GENERAL DE ADMINISTRACION"=>"DIRECCION GENERAL DE ADMINISTRACION",
+			"ESTADO MAYOR PRESIDENCIAL"=>"ESTADO MAYOR PRESIDENCIAL",
+			"OFICINA DE APOYO PARA LAS ACTIVIDADES DE LA ESPOSA DEL C. PRESIDENTE DE LA REPÚBLICA"=>"OFICINA DE APOYO PARA LAS ACTIVIDADES DE LA ESPOSA DEL C. PRESIDENTE DE LA REPÚBLICA",
+			"OFICINA DE PLANEACION ESTRATEGICA Y DESARROLLO REGIONAL"=>"OFICINA DE PLANEACION ESTRATEGICA Y DESARROLLO REGIONAL",
+			"OFICINA DE POLITICAS PUBLICAS Y CRECIMIENTO CON CALIDAD"=>"OFICINA DE POLITICAS PUBLICAS Y CRECIMIENTO CON CALIDAD",
+			"OFICINA DE REPRESENTACION PARA LA PROMOCION E INTEGRACION SOCIAL PARA LAS PERSONAS CON DISCAPACIDAD"=>"OFICINA DE REPRESENTACION PARA LA PROMOCION E INTEGRACION SOCIAL PARA LAS PERSONAS CON DISCAPACIDAD",
+			"OFICINA PARA LA INNOVACION GUBERNAMENTAL"=>"OFICINA PARA LA INNOVACION GUBERNAMENTAL",
+			"SECRETARIA EJECUTIVA DEL CONSEJO CONSULTIVO DE CIENCIAS"=>"SECRETARIA EJECUTIVA DEL CONSEJO CONSULTIVO DE CIENCIAS",
+			"SECRETARIA PARTICULAR"=>"SECRETARIA PARTICULAR"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE AGRICULTURA GANADERIA DESARROLLO RURAL PESCA Y ALIMENTACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"APOYOS Y SERVICIOS A LA COMERCIALIZACION AGROPECUARIA"=>"APOYOS Y SERVICIOS A LA COMERCIALIZACION AGROPECUARIA",
+				"CAMPO EXPERIMENTAL ZACATECAS"=>"CAMPO EXPERIMENTAL ZACATECAS",
+				"CENTRO DE ESTADISTICA AGROPECUARIA"=>"CENTRO DE ESTADISTICA AGROPECUARIA",
+				"COLEGIO SUPERIOR AGROPECUARIO DEL ESTADO DE GUERRERO"=>"COLEGIO SUPERIOR AGROPECUARIO DEL ESTADO DE GUERRERO",
+				"COMISION NACIONAL DE ACUACULTURA Y PESCA"=>"COMISION NACIONAL DE ACUACULTURA Y PESCA",
+				"COMISION NACIONAL DE SANIDAD AGROPECUARIA"=>"COMISION NACIONAL DE SANIDAD AGROPECUARIA",
+				"COORDINACION GENERAL DE COMUNICACION SOCIAL"=>"COORDINACION GENERAL DE COMUNICACION SOCIAL",
+				"COORDINACION GENERAL DE DELEGACIONES"=>"COORDINACION GENERAL DE DELEGACIONES",
+				"COORDINACION GENERAL DE ENLACE Y OPERACION"=>"COORDINACION GENERAL DE ENLACE Y OPERACION",
+				"COORDINACION GENERAL DE EXTENSIONISMO Y DESARROLLO TECNOLOGICO"=>"COORDINACION GENERAL DE EXTENSIONISMO Y DESARROLLO TECNOLOGICO",
+				"COORDINACION GENERAL DE GANADERIA"=>"COORDINACION GENERAL DE GANADERIA",
+				"COORDINACION GENERAL JURIDICA"=>"COORDINACION GENERAL JURIDICA",
+				"DELEGACION EN AGUASCALIENTES"=>"DELEGACION EN AGUASCALIENTES",
+				"DELEGACION EN BAJA CALIFORNIA SUR"=>"DELEGACION EN BAJA CALIFORNIA SUR",
+				"DELEGACION EN BAJA CALIFORNIA"=>"DELEGACION EN BAJA CALIFORNIA",
+				"DELEGACION EN CAMPECHE"=>"DELEGACION EN CAMPECHE",
+				"DELEGACION EN CHIAPAS"=>"DELEGACION EN CHIAPAS",
+				"DELEGACION EN CHIHUAHUA"=>"DELEGACION EN CHIHUAHUA",
+				"DELEGACION EN COAHUILA"=>"DELEGACION EN COAHUILA",
+				"DELEGACION EN COLIMA"=>"DELEGACION EN COLIMA",
+				"DELEGACION EN DURANGO"=>"DELEGACION EN DURANGO",
+				"DELEGACION EN EL DISTRITO FEDERAL"=>"DELEGACION EN EL DISTRITO FEDERAL",
+				"DELEGACION EN EL ESTADO DE MEXICO"=>"DELEGACION EN EL ESTADO DE MEXICO",
+				"DELEGACION EN GUANAJUATO"=>"DELEGACION EN GUANAJUATO",
+				"DELEGACION EN GUERRERO"=>"DELEGACION EN GUERRERO",
+				"DELEGACION EN HIDALGO"=>"DELEGACION EN HIDALGO",
+				"DELEGACION EN JALISCO"=>"DELEGACION EN JALISCO",
+				"DELEGACION EN LA REGION LAGUNERA"=>"DELEGACION EN LA REGION LAGUNERA",
+				"DELEGACION EN MICHOACAN"=>"DELEGACION EN MICHOACAN",
+				"DELEGACION EN MORELOS"=>"DELEGACION EN MORELOS",
+				"DELEGACION EN NAYARIT"=>"DELEGACION EN NAYARIT",
+				"DELEGACION EN NUEVO LEON"=>"DELEGACION EN NUEVO LEON",
+				"DELEGACION EN OAXACA"=>"DELEGACION EN OAXACA",
+				"DELEGACION EN PUEBLA"=>"DELEGACION EN PUEBLA",
+				"DELEGACION EN QUERETARO"=>"DELEGACION EN QUERETARO",
+				"DELEGACION EN QUINTANA ROO"=>"DELEGACION EN QUINTANA ROO",
+				"DELEGACION EN SAN LUIS POTOSI"=>"DELEGACION EN SAN LUIS POTOSI",
+				"DELEGACION EN SINALOA"=>"DELEGACION EN SINALOA",
+				"DELEGACION EN SONORA"=>"DELEGACION EN SONORA",
+				"DELEGACION EN TABASCO"=>"DELEGACION EN TABASCO",
+				"DELEGACION EN TAMAULIPAS"=>"DELEGACION EN TAMAULIPAS",
+				"DELEGACION EN TLAXCALA"=>"DELEGACION EN TLAXCALA",
+				"DELEGACION EN VERACRUZ"=>"DELEGACION EN VERACRUZ",
+				"DELEGACION EN YUCATAN"=>"DELEGACION EN YUCATAN",
+				"DELEGACION EN ZACATECAS"=>"DELEGACION EN ZACATECAS",
+				"DIRECCION DE FOMENTO Y PROTECCION PECUARIA"=>"DIRECCION DE FOMENTO Y PROTECCION PECUARIA",
+				"DIRECCION GENERAL DE ADMINISTRACION DE RIESGOS Y PROYECTOS DE INVERSION"=>"DIRECCION GENERAL DE ADMINISTRACION DE RIESGOS Y PROYECTOS DE INVERSION",
+				"DIRECCION GENERAL DE APOYO AL FINANCIAMIENTO RURAL"=>"DIRECCION GENERAL DE APOYO AL FINANCIAMIENTO RURAL",
+				"DIRECCION GENERAL DE APOYOS PARA EL DESARROLLO RURAL"=>"DIRECCION GENERAL DE APOYOS PARA EL DESARROLLO RURAL",
+				"DIRECCION GENERAL DE DESARROLLO HUMANO Y PROFESIONALIZACION"=>"DIRECCION GENERAL DE DESARROLLO HUMANO Y PROFESIONALIZACION",
+				"DIRECCION GENERAL DE EFICIENCIA FINANCIERA Y RENDICION DE CUENTAS"=>"DIRECCION GENERAL DE EFICIENCIA FINANCIERA Y RENDICION DE CUENTAS",
+				"DIRECCION GENERAL DE ESTUDIOS AGROPECUARIOS Y PESQUEROS"=>"DIRECCION GENERAL DE ESTUDIOS AGROPECUARIOS Y PESQUEROS",
+				"DIRECCION GENERAL DE ESTUDIOS PARA EL DESARROLLO RURAL"=>"DIRECCION GENERAL DE ESTUDIOS PARA EL DESARROLLO RURAL",
+				"DIRECCION GENERAL DE FOMENTO A LA AGRICULTURA"=>"DIRECCION GENERAL DE FOMENTO A LA AGRICULTURA",
+				"DIRECCION GENERAL DE PROGRAMAS REGIONALES Y ORGANIZACION RURAL"=>"DIRECCION GENERAL DE PROGRAMAS REGIONALES Y ORGANIZACION RURAL",
+				"DIRECCION GENERAL DE PROMOCION DE LA EFICIENCIA Y CALIDAD DE LOS SERVICIOS"=>"DIRECCION GENERAL DE PROMOCION DE LA EFICIENCIA Y CALIDAD DE LOS SERVICIOS",
+				"DIRECCION GENERAL DE PROVEEDURIA Y RACIONALIZACION DE BIENES Y SERVICIOS"=>"DIRECCION GENERAL DE PROVEEDURIA Y RACIONALIZACION DE BIENES Y SERVICIOS",
+				"DIRECCION GENERAL DE SANIDAD ANIMAL"=>"DIRECCION GENERAL DE SANIDAD ANIMAL",
+				"DIRECCION GENERAL DE SANIDAD VEGETAL"=>"DIRECCION GENERAL DE SANIDAD VEGETAL",
+				"DIRECCION GENERAL DE SERVICIOS PROFESIONALES PARA EL DESARROLLO RURAL"=>"DIRECCION GENERAL DE SERVICIOS PROFESIONALES PARA EL DESARROLLO RURAL",
+				"DIRECCION GENERAL DE VINCULACION Y DESARROLLO TECNOLOGICO"=>"DIRECCION GENERAL DE VINCULACION Y DESARROLLO TECNOLOGICO",
+				"FIDEICOMISO DE RIESGO COMPARTIDO"=>"FIDEICOMISO DE RIESGO COMPARTIDO",
+				"FONDO DE EMPRESAS EXPROPIADAS DEL SECTOR AZUCARERO"=>"FONDO DE EMPRESAS EXPROPIADAS DEL SECTOR AZUCARERO",
+				"GERENCIA DEL SERVICIO METEOROLOGICO NACIONAL"=>"GERENCIA DEL SERVICIO METEOROLOGICO NACIONAL",
+				"INSTITUTO NACIONAL DE LA PESCA"=>"INSTITUTO NACIONAL DE LA PESCA",
+				"INSTITUTO NACIONAL PARA EL DESARROLLO DE CAPACIDADES DEL SECTOR RURAL, A. C. (INCA-RURAL)"=>"INSTITUTO NACIONAL PARA EL DESARROLLO DE CAPACIDADES DEL SECTOR RURAL, A. C. (INCA-RURAL)",
+				"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+				"PRODUCTORA NACIONAL DE BIOLOGICOS VETERINARIOS"=>"PRODUCTORA NACIONAL DE BIOLOGICOS VETERINARIOS",
+				"PRODUCTORA NACIONAL DE BIOLÓGICOS VETERINARIOS"=>"PRODUCTORA NACIONAL DE BIOLÓGICOS VETERINARIOS",
+				"PROGRAMA MOSCAMED"=>"PROGRAMA MOSCAMED",
+				"SECRETARIA"=>"SECRETARIA",
+				"SERVICIO DE INFORMACION Y ESTADISTICA AGROALIMENTARIA Y PESQUERA"=>"SERVICIO DE INFORMACION Y ESTADISTICA AGROALIMENTARIA Y PESQUERA",
+				"SERVICIO NACIONAL DE INSPECCION Y CERTIFICACION DE SEMILLAS"=>"SERVICIO NACIONAL DE INSPECCION Y CERTIFICACION DE SEMILLAS",
+				"SERVICIO NACIONAL DE SANIDAD, INOCUIDAD Y CALIDAD AGROALIMENTARIA"=>"SERVICIO NACIONAL DE SANIDAD, INOCUIDAD Y CALIDAD AGROALIMENTARIA",
+				"SUBSECRETARIA DE AGRICULTURA"=>"SUBSECRETARIA DE AGRICULTURA",
+				"SUBSECRETARIA DE DESARROLLO RURAL"=>"SUBSECRETARIA DE DESARROLLO RURAL",
+				"SUBSECRETARIA DE FOMENTO A LOS AGRONEGOCIOS"=>"SUBSECRETARIA DE FOMENTO A LOS AGRONEGOCIOS",
+				"UNIDAD DE CONTRALORIA INTERNA"=>"UNIDAD DE CONTRALORIA INTERNA"),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE ECONOMIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+				"AGROINDUSTRIAS DEL SUR O.P.D."=>"AGROINDUSTRIAS DEL SUR O.P.D.",
+				"BANCO NACIONAL DE COMERCIO EXTERIOR (AHORA PROMEXICO)"=>"BANCO NACIONAL DE COMERCIO EXTERIOR (AHORA PROMEXICO)",
+				"COMISION FEDERAL DE COMPETENCIA"=>"COMISION FEDERAL DE COMPETENCIA",
+				"CONSEJO DE RECURSOS MINERALES"=>"CONSEJO DE RECURSOS MINERALES",
+				"COORDINACION GENERAL DE DELEGACIONES FEDERALES"=>"COORDINACION GENERAL DE DELEGACIONES FEDERALES",
+				"COORDINACION GENERAL DE MINERIA"=>"COORDINACION GENERAL DE MINERIA",
+				"COORDINACION GENERAL DE NEGOCIACIONES CON EUROPA Y SECTOR SERVICIOS"=>"COORDINACION GENERAL DE NEGOCIACIONES CON EUROPA Y SECTOR SERVICIOS",
+				"COORDINACION GENERAL DEL PROGRAMA NACIONAL DE APOYO PARA LAS EMPRESAS DE SOLIDARIDAD"=>"COORDINACION GENERAL DEL PROGRAMA NACIONAL DE APOYO PARA LAS EMPRESAS DE SOLIDARIDAD",
+				"COORDINACION GENERAL DEL PROGRAMA NACIONAL DE FINANCIAMIENTO AL MICROEMPRESARIO"=>"COORDINACION GENERAL DEL PROGRAMA NACIONAL DE FINANCIAMIENTO AL MICROEMPRESARIO",
+				"DELEGACION EN AGUASCALIENTES"=>"DELEGACION EN AGUASCALIENTES",
+				"DELEGACION EN BAJA CALIFORNIA SUR"=>"DELEGACION EN BAJA CALIFORNIA SUR",
+				"DELEGACION EN BAJA CALIFORNIA"=>"DELEGACION EN BAJA CALIFORNIA",
+				"DELEGACION EN CAMPECHE"=>"DELEGACION EN CAMPECHE",
+				"DELEGACION EN CHIAPAS"=>"DELEGACION EN CHIAPAS",
+				"DELEGACION EN CHIHUAHUA"=>"DELEGACION EN CHIHUAHUA",
+				"DELEGACION EN COAHUILA"=>"DELEGACION EN COAHUILA",
+				"DELEGACION EN COLIMA"=>"DELEGACION EN COLIMA",
+				"DELEGACION EN DISTRITO FEDERAL"=>"DELEGACION EN DISTRITO FEDERAL",
+				"DELEGACION EN DURANGO"=>"DELEGACION EN DURANGO",
+				"DELEGACION EN GUANAJUATO"=>"DELEGACION EN GUANAJUATO",
+				"DELEGACION EN GUERRERO"=>"DELEGACION EN GUERRERO",
+				"DELEGACION EN HIDALGO"=>"DELEGACION EN HIDALGO",
+				"DELEGACION EN JALISCO"=>"DELEGACION EN JALISCO",
+				"DELEGACION EN MEXICO"=>"DELEGACION EN MEXICO",
+				"DELEGACION EN MICHOACAN"=>"DELEGACION EN MICHOACAN",
+				"DELEGACION EN MORELOS"=>"DELEGACION EN MORELOS",
+				"DELEGACION EN NAYARIT"=>"DELEGACION EN NAYARIT",
+				"DELEGACION EN NUEVO LEON"=>"DELEGACION EN NUEVO LEON",
+				"DELEGACION EN OAXACA"=>"DELEGACION EN OAXACA",
+				"DELEGACION EN PUEBLA"=>"DELEGACION EN PUEBLA",
+				"DELEGACION EN QUERETARO"=>"DELEGACION EN QUERETARO",
+				"DELEGACION EN QUINTANA ROO"=>"DELEGACION EN QUINTANA ROO",
+				"DELEGACION EN SAN LUIS POTOSI"=>"DELEGACION EN SAN LUIS POTOSI",
+				"DELEGACION EN SINALOA"=>"DELEGACION EN SINALOA",
+				"DELEGACION EN SONORA"=>"DELEGACION EN SONORA",
+				"DELEGACION EN TABASCO"=>"DELEGACION EN TABASCO",
+				"DELEGACION EN TAMAULIPAS"=>"DELEGACION EN TAMAULIPAS",
+				"DELEGACION EN TLAXCALA"=>"DELEGACION EN TLAXCALA",
+				"DELEGACION EN VERACRUZ"=>"DELEGACION EN VERACRUZ",
+				"DELEGACION EN YUCATAN"=>"DELEGACION EN YUCATAN",
+				"DELEGACION EN ZACATECAS"=>"DELEGACION EN ZACATECAS",
+				"DIRECCION DE INVERSIONES INDUSTRIALES"=>"DIRECCION DE INVERSIONES INDUSTRIALES",
+				"DIRECCION GENERAL DE ASUNTOS COMERCIALES MULTILATERALES"=>"DIRECCION GENERAL DE ASUNTOS COMERCIALES MULTILATERALES",
+				"DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+				"DIRECCION GENERAL DE CONSULTORIA JURIDICA DE NEGOCIACIONES"=>"DIRECCION GENERAL DE CONSULTORIA JURIDICA DE NEGOCIACIONES",
+				"DIRECCION GENERAL DE FOMENTO AL COMERCIO INTERIOR"=>"DIRECCION GENERAL DE FOMENTO AL COMERCIO INTERIOR",
+				"DIRECCION GENERAL DE INDUSTRIAS"=>"DIRECCION GENERAL DE INDUSTRIAS",
+				"DIRECCION GENERAL DE INFORMATICA"=>"DIRECCION GENERAL DE INFORMATICA",
+				"DIRECCION GENERAL DE INVERSION EXTRANJERA"=>"DIRECCION GENERAL DE INVERSION EXTRANJERA",
+				"DIRECCION GENERAL DE MINAS"=>"DIRECCION GENERAL DE MINAS",
+				"DIRECCION GENERAL DE NORMAS"=>"DIRECCION GENERAL DE NORMAS",
+				"DIRECCION GENERAL DE NORMATIVIDAD MERCANTIL"=>"DIRECCION GENERAL DE NORMATIVIDAD MERCANTIL",
+				"DIRECCION GENERAL DE POLITICA DE COMERCIO INTERIOR Y ABASTO"=>"DIRECCION GENERAL DE POLITICA DE COMERCIO INTERIOR Y ABASTO",
+				"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+				"DIRECCION GENERAL DE PROMOCION A"=>"DIRECCION GENERAL DE PROMOCION A",
+				"DIRECCION GENERAL DE PROMOCION B"=>"DIRECCION GENERAL DE PROMOCION B",
+				"DIRECCION GENERAL DE PROMOCION C"=>"DIRECCION GENERAL DE PROMOCION C",
+				"DIRECCION GENERAL DE PROMOCION D"=>"DIRECCION GENERAL DE PROMOCION D",
+				"DIRECCION GENERAL DE PROMOCION MINERA"=>"DIRECCION GENERAL DE PROMOCION MINERA",
+				"DIRECCION GENERAL DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE RECURSOS HUMANOS",
+				"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES"=>"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+				"DIRECCION GENERAL DE SERVICIOS AL COMERCIO EXTERIOR"=>"DIRECCION GENERAL DE SERVICIOS AL COMERCIO EXTERIOR",
+				"DIRECCION GENERAL DEL REGISTRO NACIONAL DE VEHICULOS"=>"DIRECCION GENERAL DEL REGISTRO NACIONAL DE VEHICULOS",
+				"FIDEICOMISO DE FOMENTO MINERO"=>"FIDEICOMISO DE FOMENTO MINERO",
+				"INSTITUTO MEXICANO DE LA PROPIEDAD INDUSTRIAL"=>"INSTITUTO MEXICANO DE LA PROPIEDAD INDUSTRIAL",
+				"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+				"OFICINA COMERCIAL Y DEL TLCAN EN WASHINGTON DC"=>"OFICINA COMERCIAL Y DEL TLCAN EN WASHINGTON DC",
+				"PROCURADURIA FEDERAL DEL CONSUMIDOR"=>"PROCURADURIA FEDERAL DEL CONSUMIDOR",
+				"PROMEXICO"=>"PROMEXICO",
+				"SECRETARIA"=>"SECRETARIA",
+				"SECRETARIADO TECNICO DE PLANEACION, COMUNICACION Y ENLACE"=>"SECRETARIADO TECNICO DE PLANEACION, COMUNICACION Y ENLACE",
+				"SERVICIO NACIONAL DE INFORMACION DE MERCADOS"=>"SERVICIO NACIONAL DE INFORMACION DE MERCADOS",
+				"SUBDELEGACION EN CANCUN"=>"SUBDELEGACION EN CANCUN",
+				"SUBDELEGACION EN CELAYA"=>"SUBDELEGACION EN CELAYA",
+				"SUBDELEGACION EN CHILPANCINGO"=>"SUBDELEGACION EN CHILPANCINGO",
+				"SUBDELEGACION EN CIUDAD JUAREZ"=>"SUBDELEGACION EN CIUDAD JUAREZ",
+				"SUBDELEGACION EN CIUDAD OBREGON"=>"SUBDELEGACION EN CIUDAD OBREGON",
+				"SUBDELEGACION EN COATZACOALCOS"=>"SUBDELEGACION EN COATZACOALCOS",
+				"SUBDELEGACION EN EL PUERTO DE VERACRUZ"=>"SUBDELEGACION EN EL PUERTO DE VERACRUZ",
+				"SUBDELEGACION EN GOMEZ PALACIO"=>"SUBDELEGACION EN GOMEZ PALACIO",
+				"SUBDELEGACION EN MATAMOROS"=>"SUBDELEGACION EN MATAMOROS",
+				"SUBDELEGACION EN NOGALES"=>"SUBDELEGACION EN NOGALES",
+				"SUBDELEGACION EN NUEVO LAREDO"=>"SUBDELEGACION EN NUEVO LAREDO",
+				"SUBDELEGACION EN PIEDRAS NEGRAS"=>"SUBDELEGACION EN PIEDRAS NEGRAS",
+				"SUBDELEGACION EN POZA RICA"=>"SUBDELEGACION EN POZA RICA",
+				"SUBDELEGACION EN REYNOSA"=>"SUBDELEGACION EN REYNOSA",
+				"SUBDELEGACION EN SAN LUIS RIO COLORADO"=>"SUBDELEGACION EN SAN LUIS RIO COLORADO",
+				"SUBDELEGACION EN TAMPICO"=>"SUBDELEGACION EN TAMPICO",
+				"SUBDELEGACION EN TAPACHULA"=>"SUBDELEGACION EN TAPACHULA",
+				"SUBDELEGACION EN TIJUANA"=>"SUBDELEGACION EN TIJUANA",
+				"SUBDELEGACION EN TORREON"=>"SUBDELEGACION EN TORREON",
+				"SUBSECRETARIA DE COMERCIO INTERIOR"=>"SUBSECRETARIA DE COMERCIO INTERIOR",
+				"SUBSECRETARIA DE COMPETITIVIDAD Y NORMATIVIDAD"=>"SUBSECRETARIA DE COMPETITIVIDAD Y NORMATIVIDAD",
+				"SUBSECRETARIA DE NEGOCIACIONES COMERCIALES INTERNACIONALES"=>"SUBSECRETARIA DE NEGOCIACIONES COMERCIALES INTERNACIONALES",
+				"SUBSECRETARIA DE NORMATIVIDAD Y SERVICIOS A LA INDUSTRIA Y AL COMERCIO EXTERIOR"=>"SUBSECRETARIA DE NORMATIVIDAD Y SERVICIOS A LA INDUSTRIA Y AL COMERCIO EXTERIOR",
+				"SUBSECRETARIA PARA LA PEQUEÑA Y MEDIANA EMPRESA"=>"SUBSECRETARIA PARA LA PEQUEÑA Y MEDIANA EMPRESA",
+				"TRANSPORTADORA DE SAL, S. A. DE C. V."=>"TRANSPORTADORA DE SAL, S. A. DE C. V.",
+				"UNIDAD DE CONTRALORIA INTERNA"=>"UNIDAD DE CONTRALORIA INTERNA",
+				"UNIDAD DE NEGOCIACIONES CON AMERICA, ACCESO AL MERCADO Y COMPRAS DEL SECTOR PUBLICO"=>"UNIDAD DE NEGOCIACIONES CON AMERICA, ACCESO AL MERCADO Y COMPRAS DEL SECTOR PUBLICO",
+				"UNIDAD DE PRACTICAS COMERCIALES INTERNACIONALES"=>"UNIDAD DE PRACTICAS COMERCIALES INTERNACIONALES"),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE COMUNICACIONES Y TRANSPORTES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"ADMINISTRACION PORTUARIA INTEGRAL DE ALTAMIRA, S. A. DE C. V."=>	"ADMINISTRACION PORTUARIA INTEGRAL DE ALTAMIRA, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE COATZACOALCOS, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE COATZACOALCOS, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE DOS BOCAS, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE DOS BOCAS, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE ENSENADA, S. A DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE ENSENADA, S. A DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE GUAYMAS, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE GUAYMAS, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE LAZARO CARDENAS, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE LAZARO CARDENAS, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE MANZANILLO, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE MANZANILLO, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE MAZATLAN, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE MAZATLAN, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE PROGRESO, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE PROGRESO, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE PUERTO MADERO, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE PUERTO MADERO, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE PUERTO VALLARTA, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE PUERTO VALLARTA, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE SALINA CRUZ, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE SALINA CRUZ, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE TAMPICO, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE TAMPICO, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE TOPOLOBAMPO, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE TOPOLOBAMPO, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE TUXPAN, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE TUXPAN, S. A. DE C. V.",
+			"ADMINISTRACION PORTUARIA INTEGRAL DE VERACRUZ, S. A. DE C. V."=>"ADMINISTRACION PORTUARIA INTEGRAL DE VERACRUZ, S. A. DE C. V.",
+			"AEROPUERTO INTERNACIONAL DE LA CIUDAD DE MEXICO, S. A. DE C. V."=>"AEROPUERTO INTERNACIONAL DE LA CIUDAD DE MEXICO, S. A. DE C. V.",
+			"CAMINOS Y PUENTES FEDERALES DE INGRESOS Y SERVICIOS CONEXOS"=>"CAMINOS Y PUENTES FEDERALES DE INGRESOS Y SERVICIOS CONEXOS",
+			"CENTRO DE INVESTIGACION Y DESARROLLO DE TELECOMUNICACIONES"=>"CENTRO DE INVESTIGACION Y DESARROLLO DE TELECOMUNICACIONES",
+			"CENTRO SCT AGUASCALIENTES"=>"CENTRO SCT AGUASCALIENTES",
+			"CENTRO SCT BAJA CALIFORNIA SUR"=>"CENTRO SCT BAJA CALIFORNIA SUR",
+			"CENTRO SCT BAJA CALIFORNIA"=>"CENTRO SCT BAJA CALIFORNIA",
+			"CENTRO SCT CAMPECHE"=>"CENTRO SCT CAMPECHE",
+			"CENTRO SCT CHIAPAS"=>"CENTRO SCT CHIAPAS",
+			"CENTRO SCT CHIHUAHUA"=>"CENTRO SCT CHIHUAHUA",
+			"CENTRO SCT COAHUILA"=>"CENTRO SCT COAHUILA",
+			"CENTRO SCT COLIMA"=>"CENTRO SCT COLIMA",
+			"CENTRO SCT DURANGO"=>"CENTRO SCT DURANGO",
+			"CENTRO SCT GUANAJUATO"=>"CENTRO SCT GUANAJUATO",
+			"CENTRO SCT GUERRERO"=>"CENTRO SCT GUERRERO",
+			"CENTRO SCT HIDALGO"=>"CENTRO SCT HIDALGO",
+			"CENTRO SCT JALISCO"=>"CENTRO SCT JALISCO",
+			"CENTRO SCT MEXICO"=>"CENTRO SCT MEXICO",
+			"CENTRO SCT MICHOACAN"=>"CENTRO SCT MICHOACAN",
+			"CENTRO SCT MORELOS"=>"CENTRO SCT MORELOS",
+			"CENTRO SCT NAYARIT"=>"CENTRO SCT NAYARIT",
+			"CENTRO SCT NUEVO LEON"=>"CENTRO SCT NUEVO LEON",
+			"CENTRO SCT OAXACA"=>"CENTRO SCT OAXACA",
+			"CENTRO SCT PUEBLA"=>"CENTRO SCT PUEBLA",
+			"CENTRO SCT QUERETARO"=>"CENTRO SCT QUERETARO",
+			"CENTRO SCT QUINTANA ROO"=>"CENTRO SCT QUINTANA ROO",
+			"CENTRO SCT SAN LUIS POTOSI"=>"CENTRO SCT SAN LUIS POTOSI",
+			"CENTRO SCT SINALOA"=>"CENTRO SCT SINALOA",
+			"CENTRO SCT SONORA"=>"CENTRO SCT SONORA",
+			"CENTRO SCT TABASCO"=>"CENTRO SCT TABASCO",
+			"CENTRO SCT TAMAULIPAS"=>"CENTRO SCT TAMAULIPAS",
+			"CENTRO SCT TLAXCALA"=>"CENTRO SCT TLAXCALA",
+			"CENTRO SCT VERACRUZ"=>"CENTRO SCT VERACRUZ",
+			"CENTRO SCT YUCATAN"=>"CENTRO SCT YUCATAN",
+			"CENTRO SCT ZACATECAS"=>"CENTRO SCT ZACATECAS",
+			"COORDINACION GENERAL DE PLANEACION Y CENTROS S. C. T."=>"COORDINACION GENERAL DE PLANEACION Y CENTROS S. C. T.",
+			"COORDINACION GENERAL DE PUERTOS Y MARINA MERCANTE"=>"COORDINACION GENERAL DE PUERTOS Y MARINA MERCANTE",
+			"COORDINACION GENERAL DEL SISTEMA NACIONAL E-MEXICO"=>"COORDINACION GENERAL DEL SISTEMA NACIONAL E-MEXICO",
+			"DIRECCION GENERAL DE AERONAUTICA CIVIL"=>"DIRECCION GENERAL DE AERONAUTICA CIVIL",
+			"DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+			"DIRECCION GENERAL DE AUTOTRANSPORTE FEDERAL"=>"DIRECCION GENERAL DE AUTOTRANSPORTE FEDERAL",
+			"DIRECCION GENERAL DE CAPITANIAS"=>"DIRECCION GENERAL DE CAPITANIAS",
+			"DIRECCION GENERAL DE CARRETERAS FEDERALES"=>"DIRECCION GENERAL DE CARRETERAS FEDERALES",
+			"DIRECCION GENERAL DE COMUNICACION SOCIAL"=>"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+			"DIRECCION GENERAL DE CONSERVACION DE CARRETERAS"=>"DIRECCION GENERAL DE CONSERVACION DE CARRETERAS",
+			"DIRECCION GENERAL DE EVALUACION"=>"DIRECCION GENERAL DE EVALUACION",
+			"DIRECCION GENERAL DE FOMENTO Y ADMINISTRACION PORTUARIA"=>"DIRECCION GENERAL DE FOMENTO Y ADMINISTRACION PORTUARIA",
+			"DIRECCION GENERAL DE MARINA MERCANTE"=>"DIRECCION GENERAL DE MARINA MERCANTE",
+			"DIRECCION GENERAL DE PLANEACION"=>"DIRECCION GENERAL DE PLANEACION",
+			"DIRECCION GENERAL DE POLITICA DE TELECOMUNICACIONES"=>"DIRECCION GENERAL DE POLITICA DE TELECOMUNICACIONES",
+			"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+			"DIRECCION GENERAL DE PROTECCION Y MEDICINA PREVENTIVA EN EL TRANSPORTE"=>"DIRECCION GENERAL DE PROTECCION Y MEDICINA PREVENTIVA EN EL TRANSPORTE",
+			"DIRECCION GENERAL DE PUERTOS"=>"DIRECCION GENERAL DE PUERTOS",
+			"DIRECCION GENERAL DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE RECURSOS HUMANOS",
+			"DIRECCION GENERAL DE RECURSOS MATERIALES"=>"DIRECCION GENERAL DE RECURSOS MATERIALES",
+			"DIRECCION GENERAL DE SERVICIOS TECNICOS"=>"DIRECCION GENERAL DE SERVICIOS TECNICOS",
+			"DIRECCION GENERAL DE SISTEMAS DE RADIO Y TELEVISION"=>"DIRECCION GENERAL DE SISTEMAS DE RADIO Y TELEVISION",
+			"DIRECCION GENERAL DE TARIFAS, TRANSPORTE FERROVIARIO Y MULTIMODAL"=>"DIRECCION GENERAL DE TARIFAS, TRANSPORTE FERROVIARIO Y MULTIMODAL",
+			"DIRECCION GENERAL DE TELECOMUNICACIONES"=>"DIRECCION GENERAL DE TELECOMUNICACIONES",
+			"FERROCARRIL DEL ISTMO DE TEHUANTEPEC, S. A. DE C. V."=>"FERROCARRIL DEL ISTMO DE TEHUANTEPEC, S. A. DE C. V.",
+			"FERROCARRILES NACIONALES DE MEXICO"=>"FERROCARRILES NACIONALES DE MEXICO",
+			"FIDEICOMISO DE FORMACION Y CAPACITACION PARA EL PERSONAL DE LA MARINA MERCANTE NACIONAL"=>"FIDEICOMISO DE FORMACION Y CAPACITACION PARA EL PERSONAL DE LA MARINA MERCANTE NACIONAL",
+			"FONDO NACIONAL PARA LOS DESARROLLOS PORTUARIOS"=>"FONDO NACIONAL PARA LOS DESARROLLOS PORTUARIOS",
+			"GRUPO AEROPORTUARIO DE LA CIUDAD DE MEXICO, S. A. DE C. V."=>"GRUPO AEROPORTUARIO DE LA CIUDAD DE MEXICO, S. A. DE C. V.",
+			"INSTITUTO MEXICANO DEL TRANSPORTE"=>"INSTITUTO MEXICANO DEL TRANSPORTE",
+			"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+			"ORGANO INTERNO DE CONTROL"=>"ORGANO INTERNO DE CONTROL",
+			"SECRETARIA"=>"SECRETARIA",
+			"SERVICIO POSTAL MEXICANO"=>"SERVICIO POSTAL MEXICANO",
+			"SERVICIOS A LA NAVEGACION EN EL ESPACIO AEREO MEXICANO"=>"SERVICIOS A LA NAVEGACION EN EL ESPACIO AEREO MEXICANO",
+			"SERVICIOS AEROPORTUARIOS DE LA CIUDAD DE MEXICO, S. A. DE C. V."=>"SERVICIOS AEROPORTUARIOS DE LA CIUDAD DE MEXICO, S. A. DE C. V.",
+			"SUBSECRETARIA DE COMUNICACIONES"=>"SUBSECRETARIA DE COMUNICACIONES",
+			"SUBSECRETARIA DE INFRAESTRUCTURA"=>"SUBSECRETARIA DE INFRAESTRUCTURA",
+			"SUBSECRETARIA DE TRANSPORTE"=>"SUBSECRETARIA DE TRANSPORTE",
+			"TELECOMUNICACIONES DE MEXICO"=>"TELECOMUNICACIONES DE MEXICO",
+			"UNIDAD DE APOYO AL CAMBIO ESTRUCTURAL"=>"UNIDAD DE APOYO AL CAMBIO ESTRUCTURAL",
+			"UNIDAD DE AUTOPISTAS DE CUOTA"=>"UNIDAD DE AUTOPISTAS DE CUOTA",
+			"UNIDAD DE INFORMATICA"=>"UNIDAD DE INFORMATICA",
+			"UNIDAD DE INFRAESTRUCTURA CARRETERA PARA EL DESARROLLO REGIONAL"=>"UNIDAD DE INFRAESTRUCTURA CARRETERA PARA EL DESARROLLO REGIONAL",
+			"UNIDAD DE LA RED FEDERAL"=>"UNIDAD DE LA RED FEDERAL",
+			"UNIDAD DE PROGRAMAS DE COBERTURA SOCIAL DE COMUNICACIONES"=>"UNIDAD DE PROGRAMAS DE COBERTURA SOCIAL DE COMUNICACIONES",
+
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE ENERGIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"COMISION NACIONAL DE SEGURIDAD NUCLEAR Y SALVAGUARDIAS"=>"COMISION NACIONAL DE SEGURIDAD NUCLEAR Y SALVAGUARDIAS",
+			"COMISION REGULADORA DE ENERGIA"=>"COMISION REGULADORA DE ENERGIA",
+			"COMPAÑIA MEXICANA DE EXPLORACIONES, S. A. DE C. V."=>"COMPAÑIA MEXICANA DE EXPLORACIONES, S. A. DE C. V.",
+			"DIRECCION GENERAL DE ASUNTOS INTERNACIONALES"=>"DIRECCION GENERAL DE ASUNTOS INTERNACIONALES",
+			"DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+			"DIRECCION GENERAL DE DESARROLLO INDUSTRIAL DE HIDROCARBUROS"=>"DIRECCION GENERAL DE DESARROLLO INDUSTRIAL DE HIDROCARBUROS",
+			"DIRECCION GENERAL DE EXPLORACION Y EXPLOTACION DE HIDROCARBUROS"=>"DIRECCION GENERAL DE EXPLORACION Y EXPLOTACION DE HIDROCARBUROS",
+			"DIRECCION GENERAL DE FORMULACION DE POLITICA ENERGETICA"=>"DIRECCION GENERAL DE FORMULACION DE POLITICA ENERGETICA",
+			"DIRECCION GENERAL DE GAS L. P."=>"DIRECCION GENERAL DE GAS L. P.",
+			"DIRECCION GENERAL DE INSTALACIONES ELECTRICAS Y RECURSOS NUCLEARES"=>"DIRECCION GENERAL DE INSTALACIONES ELECTRICAS Y RECURSOS NUCLEARES",
+			"DIRECCION GENERAL DE INVESTIGACION Y DESARROLLO DE TECNOLOGIA Y MEDIO AMBIENTE"=>"DIRECCION GENERAL DE INVESTIGACION Y DESARROLLO DE TECNOLOGIA Y MEDIO AMBIENTE",
+			"DIRECCION GENERAL DE OPERACION FINANCIERA DEL SUBSECTOR ELECTRICIDAD"=>"DIRECCION GENERAL DE OPERACION FINANCIERA DEL SUBSECTOR ELECTRICIDAD",
+			"DIRECCION GENERAL DE OPERACION FINANCIERA DEL SUBSECTOR HIDROCARBUROS"=>"DIRECCION GENERAL DE OPERACION FINANCIERA DEL SUBSECTOR HIDROCARBUROS",
+			"DIRECCION GENERAL DE OPERACIONES PRODUCTIVAS DEL SUBSECTOR ELECTRICIDAD"=>"DIRECCION GENERAL DE OPERACIONES PRODUCTIVAS DEL SUBSECTOR ELECTRICIDAD",
+			"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+			"DIRECCION GENERAL DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE RECURSOS HUMANOS",
+			"DIRECCION GENERAL DE RECURSOS Y SERVICIOS GENERALES"=>"DIRECCION GENERAL DE RECURSOS Y SERVICIOS GENERALES",
+			"DIRECCION GENERAL DE SEGURIDAD Y PROTECCION AL AMBIENTE"=>"DIRECCION GENERAL DE SEGURIDAD Y PROTECCION AL AMBIENTE",
+			"I.I.I. SERVICIOS, S. A. DE C. V."=>"I.I.I. SERVICIOS, S. A. DE C. V.",
+			"INSTALACIONES INMOBILIARIAS PARA INDUSTRIAS, S. A. DE C. V. (CONSOLIDADO)"=>"INSTALACIONES INMOBILIARIAS PARA INDUSTRIAS, S. A. DE C. V. (CONSOLIDADO)",
+			"INSTALACIONES INMOBILIARIAS PARA INDUSTRIAS, S. A. DE C. V."=>"INSTALACIONES INMOBILIARIAS PARA INDUSTRIAS, S. A. DE C. V.",
+			"LUZ Y FUERZA DEL CENTRO (BRUTO)"=>"LUZ Y FUERZA DEL CENTRO (BRUTO)",
+			"LUZ Y FUERZA DEL CENTRO"=>"LUZ Y FUERZA DEL CENTRO",
+			"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+			"ORGANO INTERNO DE CONTROL"=>"ORGANO INTERNO DE CONTROL",
+			"P.M.I. COMERCIO INTERNACIONAL, S. A. DE C. V."=>"P.M.I. COMERCIO INTERNACIONAL, S. A. DE C. V.",
+			"PETROQUIMICA CAMARGO, S. A. DE C. V."=>"PETROQUIMICA CAMARGO, S. A. DE C. V.",
+			"PETROQUIMICA CANGREJERA, S. A. DE C. V."=>"PETROQUIMICA CANGREJERA, S. A. DE C. V.",
+			"PETROQUIMICA CORPORATIVO"=>"PETROQUIMICA CORPORATIVO",
+			"PETROQUIMICA COSOLEACAQUE, S. A. DE C. V."=>"PETROQUIMICA COSOLEACAQUE, S. A. DE C. V.",
+			"PETROQUIMICA ESCOLIN, S. A. DE C. V."=>"PETROQUIMICA ESCOLIN, S. A. DE C. V.",
+			"PETROQUIMICA MORELOS, S. A. DE C. V."=>"PETROQUIMICA MORELOS, S. A. DE C. V.",
+			"PETROQUIMICA PAJARITOS, S. A. DE C. V."=>"PETROQUIMICA PAJARITOS, S. A. DE C. V.",
+			"PETROQUIMICA TULA, S. A. DE C. V."=>"PETROQUIMICA TULA, S. A. DE C. V.",
+			"SECRETARIA"=>"SECRETARIA",
+			"SUBSECRETARIA DE ELECTRICIDAD"=>"SUBSECRETARIA DE ELECTRICIDAD",
+			"SUBSECRETARIA DE HIDROCARBUROS"=>"SUBSECRETARIA DE HIDROCARBUROS",
+			"SUBSECRETARIA DE OPERACION ENERGETICA"=>"SUBSECRETARIA DE OPERACION ENERGETICA",
+			"SUBSECRETARIA DE POLITICA ENERGETICA Y DESARROLLO TECNOLOGICO"=>"SUBSECRETARIA DE POLITICA ENERGETICA Y DESARROLLO TECNOLOGICO",
+			"SUBSECRETARIO DE PLANEACION ENERGETICA Y DESARROLLO TECNOLOGICO"=>"SUBSECRETARIO DE PLANEACION ENERGETICA Y DESARROLLO TECNOLOGICO",
+			"UNIDAD DE COMUNICACION SOCIAL"=>"UNIDAD DE COMUNICACION SOCIAL",
+			"UNIDAD DE INFORMATICA Y TELECOMUNICACIONES"=>"UNIDAD DE INFORMATICA Y TELECOMUNICACIONES"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE GOBERNACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+
+	    	"CENTRO DE INVESTIGACION Y SEGURIDAD NACIONAL"=>"CENTRO DE INVESTIGACION Y SEGURIDAD NACIONAL",
+			"CENTRO DE PRODUCCION DE PROGRAMAS INFORMATIVOS Y ESPECIALES"=>	"CENTRO DE PRODUCCION DE PROGRAMAS INFORMATIVOS Y ESPECIALES",
+			"COORDINACION GENERAL DE LA COMISION MEXICANA DE AYUDA A REFUGIADOS"=>	"COORDINACION GENERAL DE LA COMISION MEXICANA DE AYUDA A REFUGIADOS",
+			"COORDINACION GENERAL DE PROTECCION CIVIL"=>	"COORDINACION GENERAL DE PROTECCION CIVIL",
+			"DIRECCION GENERAL DE ASOCIACIONES RELIGIOSAS"=>	"DIRECCION GENERAL DE ASOCIACIONES RELIGIOSAS",
+			"DIRECCION GENERAL DE COMPILACION Y CONSULTA DEL ORDEN JURIDICO NACIONAL"=>	"DIRECCION GENERAL DE COMPILACION Y CONSULTA DEL ORDEN JURIDICO NACIONAL",
+			"DIRECCION GENERAL DE COMUNICACION SOCIAL"=>	"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+			"DIRECCION GENERAL DE COORDINACION CON ENTIDADES FEDERATIVAS"=>	"DIRECCION GENERAL DE COORDINACION CON ENTIDADES FEDERATIVAS",
+			"DIRECCION GENERAL DE DESARROLLO POLITICO"=>	"DIRECCION GENERAL DE DESARROLLO POLITICO",
+			"DIRECCION GENERAL DE ESTUDIOS LEGISLATIVOS"=>	"DIRECCION GENERAL DE ESTUDIOS LEGISLATIVOS",
+			"DIRECCION GENERAL DE INFORMACION LEGISLATIVA"=>	"DIRECCION GENERAL DE INFORMACION LEGISLATIVA",
+			"DIRECCION GENERAL DE MEDIOS IMPRESOS"=>	"DIRECCION GENERAL DE MEDIOS IMPRESOS",
+			"DIRECCION GENERAL DE NORMATIVIDAD DE COMUNICACION"=>	"DIRECCION GENERAL DE NORMATIVIDAD DE COMUNICACION",
+			"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO"=>	"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+			"DIRECCION GENERAL DE PROTECCION CIVIL"=>	"DIRECCION GENERAL DE PROTECCION CIVIL",
+			"DIRECCION GENERAL DE RADIO, TELEVISION Y CINEMATOGRAFIA"=>	"DIRECCION GENERAL DE RADIO, TELEVISION Y CINEMATOGRAFIA",
+			"DIRECCION GENERAL DE RECURSOS HUMANOS"=>	"DIRECCION GENERAL DE RECURSOS HUMANOS",
+			"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES"=>	"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+			"DIRECCION GENERAL DE TECNOLOGIAS DE LA INFORMACION"=>	"DIRECCION GENERAL DE TECNOLOGIAS DE LA INFORMACION",
+			"DIRECCION GENERAL DEL REGISTRO NACIONAL DE POBLACION E IDENTIFICACION PERSONAL"=>	"DIRECCION GENERAL DEL REGISTRO NACIONAL DE POBLACION E IDENTIFICACION PERSONAL",
+			"DIRECCION GENERAL PARA EL FONDO DE DESASTRES NATURALES"=>	"DIRECCION GENERAL PARA EL FONDO DE DESASTRES NATURALES",
+			"INSTITUTO NACIONAL DE ESTUDIOS HISTORICOS DE LA REVOLUCION MEXICANA"=>	"INSTITUTO NACIONAL DE ESTUDIOS HISTORICOS DE LA REVOLUCION MEXICANA",
+			"INSTITUTO NACIONAL DE MIGRACION"=>	"INSTITUTO NACIONAL DE MIGRACION",
+			"INSTITUTO NACIONAL PARA EL FEDERALISMO Y EL DESARROLLO MUNICIPAL"=>	"INSTITUTO NACIONAL PARA EL FEDERALISMO Y EL DESARROLLO MUNICIPAL",
+			"NOTIMEX, S. A. DE C. V."=>	"NOTIMEX, S. A. DE C. V.",
+			"OFICIALIA MAYOR"=>	"OFICIALIA MAYOR",
+			"OFICINA DEL COMISIONADO NACIONAL DE SEGURIDAD"=>	"OFICINA DEL COMISIONADO NACIONAL DE SEGURIDAD",
+			"PENSIONADOS DE TALLERES GRAFICOS DE LA NACION"=>	"PENSIONADOS DE TALLERES GRAFICOS DE LA NACION",
+			"POLICIA FEDERAL"=>	"POLICIA FEDERAL",
+			"SECRETARIA GENERAL DEL CONSEJO NACIONAL DE POBLACION"=>	"SECRETARIA GENERAL DEL CONSEJO NACIONAL DE POBLACION",
+			"SECRETARIA TECNICA DE LA COMISION CALIFICADORA DE PUBLICACIONES Y REVISTAS ILUSTRADAS"=>	"SECRETARIA TECNICA DE LA COMISION CALIFICADORA DE PUBLICACIONES Y REVISTAS ILUSTRADAS",
+			"SECRETARIA TECNICA DE LA COMISION PARA ASUNTOS DE LA FRONTERA NORTE"=>	"SECRETARIA TECNICA DE LA COMISION PARA ASUNTOS DE LA FRONTERA NORTE",
+			"SECRETARIA"=>	"SECRETARIA",
+			"SERVICIO DE PROTECCIÓN FEDERAL"=>	"SERVICIO DE PROTECCIÓN FEDERAL",
+			"SUBSECRETARIA DE ASUNTOS JURIDICOS Y DERECHOS HUMANOS"=>	"SUBSECRETARIA DE ASUNTOS JURIDICOS Y DERECHOS HUMANOS",
+			"SUBSECRETARIA DE DESARROLLO POLITICO"=>	"SUBSECRETARIA DE DESARROLLO POLITICO",
+			"SUBSECRETARIA DE ENLACE LEGISLATIVO"=>	"SUBSECRETARIA DE ENLACE LEGISLATIVO",
+			"SUBSECRETARIA DE GOBIERNO"=>	"SUBSECRETARIA DE GOBIERNO",
+			"SUBSECRETARIA DE NORMATIVIDAD DE MEDIOS"=>	"SUBSECRETARIA DE NORMATIVIDAD DE MEDIOS",
+			"SUBSECRETARIA DE POBLACION, MIGRACION Y ASUNTOS RELIGIOSOS"=>	"SUBSECRETARIA DE POBLACION, MIGRACION Y ASUNTOS RELIGIOSOS",
+			"TALLERES GRAFICOS DE MEXICO"=>	"TALLERES GRAFICOS DE MEXICO",
+			"TRIBUNAL FEDERAL DE CONCILIACION Y ARBITRAJE"=>	"TRIBUNAL FEDERAL DE CONCILIACION Y ARBITRAJE",
+			"UNIDAD DE ASUNTOS JURIDICOS"=>	"UNIDAD DE ASUNTOS JURIDICOS",
+			"UNIDAD DE CONTRALORIA INTERNA"=>	"UNIDAD DE CONTRALORIA INTERNA",
+			"UNIDAD DE ENLACE FEDERAL"=>	"UNIDAD DE ENLACE FEDERAL",
+			"UNIDAD DE ENLACE LEGISLATIVO"=>	"UNIDAD DE ENLACE LEGISLATIVO",
+			"UNIDAD DE GOBIERNO"=>	"UNIDAD DE GOBIERNO",
+			"UNIDAD DE POLÍTICA MIGRATORIA"=>	"UNIDAD DE POLÍTICA MIGRATORIA",
+			"UNIDAD PARA LA ATENCION DE ORGANIZACIONES SOCIALES"=>	"UNIDAD PARA LA ATENCION DE ORGANIZACIONES SOCIALES",
+			"UNIDAD PARA LA PROMOCION Y DEFENSA DE LOS DERECHOS HUMANOS"=>	"UNIDAD PARA LA PROMOCION Y DEFENSA DE LOS DERECHOS HUMANOS",
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE HACIENDA Y CREDITO PUBLICO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AGROASEMEX, S. A."=>"AGROASEMEX, S. A.",
+			"AHMSA FABRICA NACIONAL DE MAQUINAS Y HERRAMIENTAS, S.A. DE C.V."=>"AHMSA FABRICA NACIONAL DE MAQUINAS Y HERRAMIENTAS, S.A. DE C.V.",
+			"ALMACENES NACIONALES DE DEPOSITO, S. A."=>"ALMACENES NACIONALES DE DEPOSITO, S. A.",
+			"BANCO DEL AHORRO NACIONAL Y SERVICIOS FINANCIEROS, S. N. C."=>"BANCO DEL AHORRO NACIONAL Y SERVICIOS FINANCIEROS, S. N. C.",
+			"BANCO NACIONAL DE COMERCIO EXTERIOR, S. N. C."=>"BANCO NACIONAL DE COMERCIO EXTERIOR, S. N. C.",
+			"BANCO NACIONAL DE CREDITO RURAL, S. N. C."=>"BANCO NACIONAL DE CREDITO RURAL, S. N. C.",
+			"BANCO NACIONAL DE OBRAS Y SERVICIOS PUBLICOS, S. N. C."=>"BANCO NACIONAL DE OBRAS Y SERVICIOS PUBLICOS, S. N. C.",
+			"BANCO NACIONAL DEL EJERCITO, FUERZA AEREA Y ARMADA, S. N. C."=>"BANCO NACIONAL DEL EJERCITO, FUERZA AEREA Y ARMADA, S. N. C.",
+			"CASA DE MONEDA DE MEXICO"=>"CASA DE MONEDA DE MEXICO",
+			"COMISION NACIONAL BANCARIA Y DE VALORES"=>"COMISION NACIONAL BANCARIA Y DE VALORES",
+			"COMISION NACIONAL DE SEGUROS Y FIANZAS"=>"COMISION NACIONAL DE SEGUROS Y FIANZAS",
+			"COMISION NACIONAL DEL SISTEMA DE AHORRO PARA EL RETIRO"=>"COMISION NACIONAL DEL SISTEMA DE AHORRO PARA EL RETIRO",
+			"COMISION NACIONAL PARA LA PROTECCION Y DEFENSA DE LOS USUARIOS DE SERVICIOS FINANCIEROS"=>"COMISION NACIONAL PARA LA PROTECCION Y DEFENSA DE LOS USUARIOS DE SERVICIOS FINANCIEROS",
+			"CONSULTORIA AMBIENTAL PARA LA PLANEACION DEL DESARROLLO REGIONAL, S.C."=>"CONSULTORIA AMBIENTAL PARA LA PLANEACION DEL DESARROLLO REGIONAL, S.C.",
+			"DIRECCION GENERAL DE ASUNTOS HACENDARIOS INTERNACIONALES"=>"DIRECCION GENERAL DE ASUNTOS HACENDARIOS INTERNACIONALES",
+			"DIRECCION GENERAL DE BANCA DE DESARROLLO"=>"DIRECCION GENERAL DE BANCA DE DESARROLLO",
+			"DIRECCION GENERAL DE BANCA Y AHORRO"=>"DIRECCION GENERAL DE BANCA Y AHORRO",
+			"DIRECCION GENERAL DE CREDITO PUBLICO"=>"DIRECCION GENERAL DE CREDITO PUBLICO",
+			"DIRECCION GENERAL DE PLANEACION HACENDARIA"=>"DIRECCION GENERAL DE PLANEACION HACENDARIA",
+			"DIRECCION GENERAL DE PROCEDIMIENTOS LEGALES"=>"DIRECCION GENERAL DE PROCEDIMIENTOS LEGALES",
+			"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO A"=>"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO A",
+			"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO B"=>"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO B",
+			"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+			"DIRECCION GENERAL DE PROMOCION CULTURAL Y ACERVO PATRIMONIAL"=>"DIRECCION GENERAL DE PROMOCION CULTURAL Y ACERVO PATRIMONIAL",
+			"DIRECCION GENERAL DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE RECURSOS HUMANOS",
+			"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES"=>"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+			"DIRECCION GENERAL DE SEGUROS Y VALORES"=>"DIRECCION GENERAL DE SEGUROS Y VALORES",
+			"DIRECCION GENERAL DE SISTEMAS AUTOMATIZADOS"=>"DIRECCION GENERAL DE SISTEMAS AUTOMATIZADOS",
+			"DIRECCION GENERAL DE TALLERES DE IMPRESION DE ESTAMPILLAS Y VALORES"=>"DIRECCION GENERAL DE TALLERES DE IMPRESION DE ESTAMPILLAS Y VALORES",
+			"DIRECCION GENERAL DE VIGILANCIA DE FONDOS Y VALORES"=>"DIRECCION GENERAL DE VIGILANCIA DE FONDOS Y VALORES",
+			"DIRECCION GENERAL JURIDICA DE EGRESOS"=>"DIRECCION GENERAL JURIDICA DE EGRESOS",
+			"EXPORTADORES ASOCIADOS, S. A. DE C. V."=>"EXPORTADORES ASOCIADOS, S. A. DE C. V.",
+			"FIDEICOMISO LIQUIDADOR DE INSTITUCIONES Y ORGANIZACIONES AUXILIARES DE CREDITO"=>"FIDEICOMISO LIQUIDADOR DE INSTITUCIONES Y ORGANIZACIONES AUXILIARES DE CREDITO",
+			"FINANCIERA NACIONAL AZUCARERA, S. N. C."=>"FINANCIERA NACIONAL AZUCARERA, S. N. C.",
+			"FINANCIERA NACIONAL DE DESARROLLO AGROPECUARIO, RURAL, FORESTAL Y PESQUERO"=>"FINANCIERA NACIONAL DE DESARROLLO AGROPECUARIO, RURAL, FORESTAL Y PESQUERO",
+			"FONDO DE CAPITALIZACION E INVERSION DEL SECTOR RURAL"=>"FONDO DE CAPITALIZACION E INVERSION DEL SECTOR RURAL",
+			"FONDO DE GARANTIA Y FOMENTO PARA LA AGRICULTURA, GANADERIA Y AVICULTURA"=>"FONDO DE GARANTIA Y FOMENTO PARA LA AGRICULTURA, GANADERIA Y AVICULTURA",
+			"FONDO DE GARANTIA Y FOMENTO PARA LAS ACTIVIDADES PESQUERAS"=>"FONDO DE GARANTIA Y FOMENTO PARA LAS ACTIVIDADES PESQUERAS",
+			"FONDO DE OPERACION Y FINANCIAMIENTO BANCARIO A LA VIVIENDA"=>"FONDO DE OPERACION Y FINANCIAMIENTO BANCARIO A LA VIVIENDA",
+			"FONDO ESPECIAL DE ASISTENCIA TECNICA Y GARANTIA PARA CREDITOS AGROPECUARIOS"=>"FONDO ESPECIAL DE ASISTENCIA TECNICA Y GARANTIA PARA CREDITOS AGROPECUARIOS",
+			"FONDO ESPECIAL PARA FINANCIAMIENTOS AGROPECUARIOS"=>"FONDO ESPECIAL PARA FINANCIAMIENTOS AGROPECUARIOS",
+			"HOSPITAL DE LA SECRETARIA DE HACIENDA"=>"HOSPITAL DE LA SECRETARIA DE HACIENDA",
+			"INSTITUTO NACIONAL DE CAPACITACION FISCAL"=>"INSTITUTO NACIONAL DE CAPACITACION FISCAL",
+			"INSTITUTO NACIONAL DE LAS MUJERES"=>"INSTITUTO NACIONAL DE LAS MUJERES",
+			"INSTITUTO PARA EL DESARROLLO TECNICO DE LAS HACIENDAS PUBLICAS"=>"INSTITUTO PARA EL DESARROLLO TECNICO DE LAS HACIENDAS PUBLICAS",
+			"INSTITUTO PARA LA PROTECCION AL AHORRO BANCARIO"=>"INSTITUTO PARA LA PROTECCION AL AHORRO BANCARIO",
+			"LOTERIA NACIONAL PARA LA ASISTENCIA PUBLICA"=>"LOTERIA NACIONAL PARA LA ASISTENCIA PUBLICA",
+			"NACIONAL FINANCIERA, S.N.C. EN SU CARACTER DE FIDUCIARIA EN EL FONDO DE CAPITALIZACIÓN E INVERSIÓN DEL SECTOR RURAL"=>"NACIONAL FINANCIERA, S.N.C. EN SU CARACTER DE FIDUCIARIA EN EL FONDO DE CAPITALIZACIÓN E INVERSIÓN DEL SECTOR RURAL",
+			"OCEAN GARDEN PRODUCTS INC."=>"OCEAN GARDEN PRODUCTS INC.",
+			"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+			"ORGANO INTERNO DE CONTROL"=>"ORGANO INTERNO DE CONTROL",
+			"PROCURADURIA FISCAL DE LA FEDERACION"=>"PROCURADURIA FISCAL DE LA FEDERACION",
+			"PRODUCTORA DE COSPELES, S. A. DE C. V."=>"PRODUCTORA DE COSPELES, S. A. DE C. V.",
+			"PRONOSTICOS PARA LA ASISTENCIA PUBLICA"=>"PRONOSTICOS PARA LA ASISTENCIA PUBLICA",
+			"SECRETARIA"=>"SECRETARIA",
+			"SERVICIO DE ADMINISTRACION DE BIENES ASEGURADOS"=>"SERVICIO DE ADMINISTRACION DE BIENES ASEGURADOS",
+			"SERVICIO DE ADMINISTRACION TRIBUTARIA"=>"SERVICIO DE ADMINISTRACION TRIBUTARIA",
+			"SERVICIOS DE ALMACENAMIENTO DEL NORTE, S. A."=>"SERVICIOS DE ALMACENAMIENTO DEL NORTE, S. A.",
+			"SOCIEDAD HIPOTECARIA FEDERAL, S. N. C."=>"SOCIEDAD HIPOTECARIA FEDERAL, S. N. C.",
+			"SUBPROCURADURIA FISCAL FEDERAL DE AMPAROS"=>"SUBPROCURADURIA FISCAL FEDERAL DE AMPAROS",
+			"SUBPROCURADURIA FISCAL FEDERAL DE ASUNTOS FINANCIEROS"=>"SUBPROCURADURIA FISCAL FEDERAL DE ASUNTOS FINANCIEROS",
+			"SUBPROCURADURIA FISCAL FEDERAL DE INVESTIGACIONES"=>"SUBPROCURADURIA FISCAL FEDERAL DE INVESTIGACIONES",
+			"SUBPROCURADURIA FISCAL FEDERAL DE LEGISLACION Y CONSULTA"=>"SUBPROCURADURIA FISCAL FEDERAL DE LEGISLACION Y CONSULTA",
+			"SUBSECRETARIA DE EGRESOS"=>"SUBSECRETARIA DE EGRESOS",
+			"SUBSECRETARIA DE HACIENDA Y CREDITO PUBLICO"=>"SUBSECRETARIA DE HACIENDA Y CREDITO PUBLICO",
+			"SUBSECRETARIA DE INGRESOS"=>"SUBSECRETARIA DE INGRESOS",
+			"SUBTESORERIA DE CONTABILIDAD Y CONTROL OPERATIVO"=>"SUBTESORERIA DE CONTABILIDAD Y CONTROL OPERATIVO",
+			"SUBTESORERIA DE OPERACION"=>"SUBTESORERIA DE OPERACION",
+			"TESORERIA DE LA FEDERACION"=>"TESORERIA DE LA FEDERACION",
+			"UNIDAD DE COMUNICACION SOCIAL Y VOCERO"=>"UNIDAD DE COMUNICACION SOCIAL Y VOCERO",
+			"UNIDAD DE CONTABILIDAD GUBERNAMENTAL E INFORMES SOBRE LA GESTION PUBLICA"=>"UNIDAD DE CONTABILIDAD GUBERNAMENTAL E INFORMES SOBRE LA GESTION PUBLICA",
+			"UNIDAD DE COORDINACION HACENDARIA CON ENTIDADES FEDERATIVAS"=>"UNIDAD DE COORDINACION HACENDARIA CON ENTIDADES FEDERATIVAS",
+			"UNIDAD DE ENLACE CON EL CONGRESO DE LA UNION"=>"UNIDAD DE ENLACE CON EL CONGRESO DE LA UNION",
+			"UNIDAD DE INTELIGENCIA FINANCIERA"=>"UNIDAD DE INTELIGENCIA FINANCIERA",
+			"UNIDAD DE INVERSIONES"=>"UNIDAD DE INVERSIONES",
+			"UNIDAD DE LEGISLACION TRIBUTARIA"=>"UNIDAD DE LEGISLACION TRIBUTARIA",
+			"UNIDAD DE POLITICA DE INGRESOS"=>"UNIDAD DE POLITICA DE INGRESOS",
+			"UNIDAD DE POLITICA Y CONTROL PRESUPUESTARIO"=>"UNIDAD DE POLITICA Y CONTROL PRESUPUESTARIO",
+			"UNIDAD DE SERVICIO CIVIL"=>"UNIDAD DE SERVICIO CIVIL"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE RELACIONES EXTERIORES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    			"CONSULADO DE MEXICO EN FRANCFORT DEL MENO"=>"CONSULADO DE MEXICO EN FRANCFORT DEL MENO",
+					"CONSULADO DE MÉXICO EN CALÉXICO"=>"CONSULADO DE MÉXICO EN CALÉXICO",
+					"CONSULADO GENERAL DE MEXICO EN LOS ANGELES"=>"CONSULADO GENERAL DE MEXICO EN LOS ANGELES",
+					"CONSULADO GENERAL DE MEXICO EN NUEVA YORK"=>"CONSULADO GENERAL DE MEXICO EN NUEVA YORK",
+					"CONSULADO GENERAL DE MÉXICO EN HOUSTO TX"=>"CONSULADO GENERAL DE MÉXICO EN HOUSTO TX",
+					"CONSULADO GENERAL DE MÉXICO EN SAN FRANCISCO"=>"CONSULADO GENERAL DE MÉXICO EN SAN FRANCISCO",
+					"CONSULTORIA JURIDICA"=>"CONSULTORIA JURIDICA",
+					"COORDINACION GENERAL PLAN PUEBLA-PANAMA"=>"COORDINACION GENERAL PLAN PUEBLA-PANAMA",
+					"DELEGACIÓN PERMANENTE DE MÉXICO ANTE LA O.C.D.E."=>"DELEGACIÓN PERMANENTE DE MÉXICO ANTE LA O.C.D.E.",
+					"DIRECCION GENERAL DE ARCHIVO BIBLIOTECA Y PUBLICACIONES"=>"DIRECCION GENERAL DE ARCHIVO BIBLIOTECA Y PUBLICACIONES",
+					"DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+					"DIRECCION GENERAL DE BIENES INMUEBLES Y RECURSOS MATERIALES"=>"DIRECCION GENERAL DE BIENES INMUEBLES Y RECURSOS MATERIALES",
+					"DIRECCION GENERAL DE COMUNICACION SOCIAL"=>"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+					"DIRECCION GENERAL DE COMUNICACIONES E INFORMATICA"=>"DIRECCION GENERAL DE COMUNICACIONES E INFORMATICA",
+					"DIRECCION GENERAL DE COMUNIDADES MEXICANAS EN EL EXTERIOR Y ENLACE ESTATAL"=>"DIRECCION GENERAL DE COMUNIDADES MEXICANAS EN EL EXTERIOR Y ENLACE ESTATAL",
+					"DIRECCION GENERAL DE COOPERACION EDUCATIVA Y CULTURAL"=>"DIRECCION GENERAL DE COOPERACION EDUCATIVA Y CULTURAL",
+					"DIRECCION GENERAL DE COOPERACION TECNICA Y CIENTIFICA"=>"DIRECCION GENERAL DE COOPERACION TECNICA Y CIENTIFICA",
+					"DIRECCION GENERAL DE DELEGACIONES"=>"DIRECCION GENERAL DE DELEGACIONES",
+					"DIRECCION GENERAL DE DERECHOS HUMANOS"=>"DIRECCION GENERAL DE DERECHOS HUMANOS",
+					"DIRECCION GENERAL DE ENLACE POLITICO"=>"DIRECCION GENERAL DE ENLACE POLITICO",
+					"DIRECCION GENERAL DE NEGOCIACIONES ECONOMICAS INTERNACIONALES"=>"DIRECCION GENERAL DE NEGOCIACIONES ECONOMICAS INTERNACIONALES",
+					"DIRECCION GENERAL DE ORGANISMOS DE COOPERACION ECONOMICA Y DE DESARROLLO"=>"DIRECCION GENERAL DE ORGANISMOS DE COOPERACION ECONOMICA Y DE DESARROLLO",
+					"DIRECCION GENERAL DE ORGANISMOS Y MECANISMOS REGIONALES AMERICANOS"=>"DIRECCION GENERAL DE ORGANISMOS Y MECANISMOS REGIONALES AMERICANOS",
+					"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+					"DIRECCION GENERAL DE PROMOCION ECONOMICA INTERNACIONAL"=>"DIRECCION GENERAL DE PROMOCION ECONOMICA INTERNACIONAL",
+					"DIRECCION GENERAL DE PROTECCION Y ASUNTOS CONSULARES"=>"DIRECCION GENERAL DE PROTECCION Y ASUNTOS CONSULARES",
+					"DIRECCION GENERAL DE PROTOCOLO"=>"DIRECCION GENERAL DE PROTOCOLO",
+					"DIRECCION GENERAL DE RELACIONES ECONOMICAS BILATERALES"=>"DIRECCION GENERAL DE RELACIONES ECONOMICAS BILATERALES",
+					"DIRECCION GENERAL DEL ACERVO HISTORICO DIPLOMATICO"=>"DIRECCION GENERAL DEL ACERVO HISTORICO DIPLOMATICO",
+					"DIRECCION GENERAL DEL SERVICIO EXTERIOR Y DE PERSONAL"=>"DIRECCION GENERAL DEL SERVICIO EXTERIOR Y DE PERSONAL",
+					"DIRECCION GENERAL PARA AFRICA, ASIA-PACIFICO Y MEDIO ORIENTE"=>"DIRECCION GENERAL PARA AFRICA, ASIA-PACIFICO Y MEDIO ORIENTE",
+					"DIRECCION GENERAL PARA AMERICA DEL NORTE"=>"DIRECCION GENERAL PARA AMERICA DEL NORTE",
+					"DIRECCION GENERAL PARA AMERICA LATINA Y EL CARIBE"=>"DIRECCION GENERAL PARA AMERICA LATINA Y EL CARIBE",
+					"DIRECCION GENERAL PARA EL SISTEMA DE LAS NACIONES UNIDAS"=>"DIRECCION GENERAL PARA EL SISTEMA DE LAS NACIONES UNIDAS",
+					"DIRECCION GENERAL PARA EUROPA"=>"DIRECCION GENERAL PARA EUROPA",
+					"DIRECCION GENERAL PARA TEMAS GLOBALES"=>"DIRECCION GENERAL PARA TEMAS GLOBALES",
+					"EMBAJADA DE MEXICO EN EL REINO UNIDO"=>"EMBAJADA DE MEXICO EN EL REINO UNIDO",
+					"EMBAJADA DE MEXICO EN LA SANTA SEDE"=>"EMBAJADA DE MEXICO EN LA SANTA SEDE",
+					"EMBAJADA DE MÉXICO EN CHINA"=>"EMBAJADA DE MÉXICO EN CHINA",
+					"EMBAJADA DE MÉXICO EN ESPAÑA"=>"EMBAJADA DE MÉXICO EN ESPAÑA",
+					"EMBAJADA DE MÉXICO EN ESTADOS UNIDOS DE AMÉRICA"=>"EMBAJADA DE MÉXICO EN ESTADOS UNIDOS DE AMÉRICA",
+					"EMBAJADA DE MÉXICO EN KENIA, SECRETARÍA DE RELACIONES EXTERIORES"=>"EMBAJADA DE MÉXICO EN KENIA, SECRETARÍA DE RELACIONES EXTERIORES",
+					"EMBAJADA EN CANADA"=>"EMBAJADA EN CANADA",
+					"INSTITUTO DE MEXICO"=>"INSTITUTO DE MEXICO",
+					"INSTITUTO MATIAS ROMERO"=>"INSTITUTO MATIAS ROMERO",
+					"INSTITUTO MEXICANO DE COOPERACION INTERNACIONAL"=>"INSTITUTO MEXICANO DE COOPERACION INTERNACIONAL",
+					"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+					"SECCION MEXICANA DE LA COMISION INTERNACIONAL DE LIMITES Y AGUAS MEXICO-ESTADOS UNIDOS DE AMERICA"=>"SECCION MEXICANA DE LA COMISION INTERNACIONAL DE LIMITES Y AGUAS MEXICO-ESTADOS UNIDOS DE AMERICA",
+					"SECCION MEXICANA DE LA COMISION INTERNACIONAL DE LIMITES Y AGUAS MEXICO-GUATEMALA-BELICE"=>"SECCION MEXICANA DE LA COMISION INTERNACIONAL DE LIMITES Y AGUAS MEXICO-GUATEMALA-BELICE",
+					"SECRETARIA"=>"SECRETARIA",
+					"SUBSECRETARIA DE RELACIONES ECONOMICAS Y COOPERACION INTERNACIONAL"=>"SUBSECRETARIA DE RELACIONES ECONOMICAS Y COOPERACION INTERNACIONAL",
+					"SUBSECRETARIA DE RELACIONES EXTERIORES"=>"SUBSECRETARIA DE RELACIONES EXTERIORES",
+					"SUBSECRETARIA PARA AFRICA, ASIA-PACIFICO, EUROPA Y NACIONES UNIDAS"=>"SUBSECRETARIA PARA AFRICA, ASIA-PACIFICO, EUROPA Y NACIONES UNIDAS",
+					"SUBSECRETARIA PARA AMERICA LATINA Y EL CARIBE"=>"SUBSECRETARIA PARA AMERICA LATINA Y EL CARIBE",
+					"SUBSECRETARIA PARA DERECHOS HUMANOS Y DEMOCRACIA"=>"SUBSECRETARIA PARA DERECHOS HUMANOS Y DEMOCRACIA",
+					"SUBSECRETARIA PARA TEMAS GLOBALES"=>"SUBSECRETARIA PARA TEMAS GLOBALES",
+					"SUBSECRETARÍA PARA ASUNTOS MULTILATERALES Y DERECHOS HUMANOS"=>"SUBSECRETARÍA PARA ASUNTOS MULTILATERALES Y DERECHOS HUMANOS",
+					"UNIDAD DE ASUNTOS CULTURALES"=>"UNIDAD DE ASUNTOS CULTURALES",
+					"UNIDAD DE CONTRALORIA INTERNA"=>"UNIDAD DE CONTRALORIA INTERNA",
+					"WEPI DE MEXICO, S.A. DE C.V."=>"WEPI DE MEXICO, S.A. DE C.V.",
+	    	 ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE DESARROLLO SOCIAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"COMISION NACIONAL DE FOMENTO A LA VIVIENDA"=>"COMISION NACIONAL DE FOMENTO A LA VIVIENDA",
+			"COMISION NACIONAL DE ZONAS ARIDAS"=>	"COMISION NACIONAL DE ZONAS ARIDAS",
+			"COMISION PARA LA REGULARIZACION DE LA TENENCIA DE LA TIERRA"=>	"COMISION PARA LA REGULARIZACION DE LA TENENCIA DE LA TIERRA",
+			"CONTRALORIA INTERNA"=>	"CONTRALORIA INTERNA",
+			"COORDINACION GENERAL DE ADMINISTRACION"=>	"COORDINACION GENERAL DE ADMINISTRACION",
+			"COORDINACION GENERAL DE MICRORREGIONES"=>	"COORDINACION GENERAL DE MICRORREGIONES",
+			"COORDINACION GENERAL DE PADRONES DE BENEFICIARIOS DE LOS PROGRAMAS SOCIALES"=>	"COORDINACION GENERAL DE PADRONES DE BENEFICIARIOS DE LOS PROGRAMAS SOCIALES",
+			"COORDINACION GENERAL DE PROSPECTIVA Y PLANEACION"=>	"COORDINACION GENERAL DE PROSPECTIVA Y PLANEACION",
+			"COORDINACION NACIONAL DEL PROGRAMA DE DESARROLLO HUMANO OPORTUNIDADES"=>	"COORDINACION NACIONAL DEL PROGRAMA DE DESARROLLO HUMANO OPORTUNIDADES",
+			"DELEGACION SEDESOL EN AGUASCALIENTES"=>	"DELEGACION SEDESOL EN AGUASCALIENTES",
+			"DELEGACION SEDESOL EN BAJA CALIFORNIA SUR"=>	"DELEGACION SEDESOL EN BAJA CALIFORNIA SUR",
+			"DELEGACION SEDESOL EN BAJA CALIFORNIA"=>	"DELEGACION SEDESOL EN BAJA CALIFORNIA",
+			"DELEGACION SEDESOL EN CAMPECHE"=>	"DELEGACION SEDESOL EN CAMPECHE",
+			"DELEGACION SEDESOL EN CHIAPAS"=>	"DELEGACION SEDESOL EN CHIAPAS",
+			"DELEGACION SEDESOL EN CHIHUAHUA"=>	"DELEGACION SEDESOL EN CHIHUAHUA",
+			"DELEGACION SEDESOL EN COAHUILA"=>	"DELEGACION SEDESOL EN COAHUILA",
+			"DELEGACION SEDESOL EN COLIMA"=>	"DELEGACION SEDESOL EN COLIMA",
+			"DELEGACION SEDESOL EN DURANGO"=>	"DELEGACION SEDESOL EN DURANGO",
+			"DELEGACION SEDESOL EN GUANAJUATO"=>	"DELEGACION SEDESOL EN GUANAJUATO",
+			"DELEGACION SEDESOL EN GUERRERO"=>	"DELEGACION SEDESOL EN GUERRERO",
+			"DELEGACION SEDESOL EN HIDALGO"=>	"DELEGACION SEDESOL EN HIDALGO",
+			"DELEGACION SEDESOL EN JALISCO"=>	"DELEGACION SEDESOL EN JALISCO",
+			"DELEGACION SEDESOL EN MEXICO"=>	"DELEGACION SEDESOL EN MEXICO",
+			"DELEGACION SEDESOL EN MICHOACAN"=>	"DELEGACION SEDESOL EN MICHOACAN",
+			"DELEGACION SEDESOL EN MORELOS"=>	"DELEGACION SEDESOL EN MORELOS",
+			"DELEGACION SEDESOL EN NAYARIT"=>	"DELEGACION SEDESOL EN NAYARIT",
+			"DELEGACION SEDESOL EN NUEVO LEON"=>	"DELEGACION SEDESOL EN NUEVO LEON",
+			"DELEGACION SEDESOL EN OAXACA"=>	"DELEGACION SEDESOL EN OAXACA",
+			"DELEGACION SEDESOL EN PUEBLA"=>	"DELEGACION SEDESOL EN PUEBLA",
+			"DELEGACION SEDESOL EN QUERETARO"=>	"DELEGACION SEDESOL EN QUERETARO",
+			"DELEGACION SEDESOL EN QUINTANA ROO"=>	"DELEGACION SEDESOL EN QUINTANA ROO",
+			"DELEGACION SEDESOL EN SAN LUIS POTOSI"=>	"DELEGACION SEDESOL EN SAN LUIS POTOSI",
+			"DELEGACION SEDESOL EN SINALOA"=>	"DELEGACION SEDESOL EN SINALOA",
+			"DELEGACION SEDESOL EN SONORA"=>	"DELEGACION SEDESOL EN SONORA",
+			"DELEGACION SEDESOL EN TABASCO"=>	"DELEGACION SEDESOL EN TABASCO",
+			"DELEGACION SEDESOL EN TAMAULIPAS"=>	"DELEGACION SEDESOL EN TAMAULIPAS",
+			"DELEGACION SEDESOL EN TLAXCALA"=>	"DELEGACION SEDESOL EN TLAXCALA",
+			"DELEGACION SEDESOL EN VERACRUZ"=>	"DELEGACION SEDESOL EN VERACRUZ",
+			"DELEGACION SEDESOL EN YUCATAN"=>	"DELEGACION SEDESOL EN YUCATAN",
+			"DELEGACION SEDESOL EN ZACATECAS"=>	"DELEGACION SEDESOL EN ZACATECAS",
+			"DICONSA, S. A. DE C. V."=>	"DICONSA, S. A. DE C. V.",
+			"DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>	"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+			"DIRECCION GENERAL DE ATENCION SOCIAL A LA VIVIENDA URBANA Y RURAL"=>	"DIRECCION GENERAL DE ATENCION SOCIAL A LA VIVIENDA URBANA Y RURAL",
+			"DIRECCION GENERAL DE DESARROLLO SOCIAL Y HUMANO"=>	"DIRECCION GENERAL DE DESARROLLO SOCIAL Y HUMANO",
+			"DIRECCION GENERAL DE DESARROLLO URBANO Y REGIONAL"=>	"DIRECCION GENERAL DE DESARROLLO URBANO Y REGIONAL",
+			"DIRECCION GENERAL DE EFICIENCIA DE PROGRAMAS DE DESARROLLO SOCIAL"=>	"DIRECCION GENERAL DE EFICIENCIA DE PROGRAMAS DE DESARROLLO SOCIAL",
+			"DIRECCION GENERAL DE EVALUACION DE LOS PROGRAMAS SOCIALES"=>	"DIRECCION GENERAL DE EVALUACION DE LOS PROGRAMAS SOCIALES",
+			"DIRECCION GENERAL DE INFORMATICA, TELECOMUNICACIONES Y DESARROLLO TECNOLOGICO"=>	"DIRECCION GENERAL DE INFORMATICA, TELECOMUNICACIONES Y DESARROLLO TECNOLOGICO",
+			"DIRECCION GENERAL DE MEDICION Y SEGUIMIENTO DE PROGRAMAS DE DESARROLLO SOCIAL"=>	"DIRECCION GENERAL DE MEDICION Y SEGUIMIENTO DE PROGRAMAS DE DESARROLLO SOCIAL",
+			"DIRECCION GENERAL DE ORDENACION DEL TERRITORIO"=>	"DIRECCION GENERAL DE ORDENACION DEL TERRITORIO",
+			"DIRECCION GENERAL DE ORGANIZACION, CALIDAD E INNOVACION"=>	"DIRECCION GENERAL DE ORGANIZACION, CALIDAD E INNOVACION",
+			"DIRECCION GENERAL DE POLITICAS SOCIALES"=>	"DIRECCION GENERAL DE POLITICAS SOCIALES",
+			"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO"=>	"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+			"DIRECCION GENERAL DE RELACIONES INTERNACIONALES"=>	"DIRECCION GENERAL DE RELACIONES INTERNACIONALES",
+			"DIRECCION GENERAL DE SUELO Y RESERVA TERRITORIAL"=>	"DIRECCION GENERAL DE SUELO Y RESERVA TERRITORIAL",
+			"FIDEICOMISO FONDO NACIONAL DE HABITACIONES POPULARES"=>	"FIDEICOMISO FONDO NACIONAL DE HABITACIONES POPULARES",
+			"FONDO NACIONAL PARA EL FOMENTO DE LAS ARTESANIAS"=>	"FONDO NACIONAL PARA EL FOMENTO DE LAS ARTESANIAS",
+			"INSTITUTO NACIONAL DE LAS PERSONAS ADULTAS MAYORES (INAPAM)"=>	"INSTITUTO NACIONAL DE LAS PERSONAS ADULTAS MAYORES (INAPAM)",
+			"INSTITUTO NACIONAL DE SOLIDARIDAD"=>	"INSTITUTO NACIONAL DE SOLIDARIDAD",
+			"LICONSA, S. A. DE C. V."=>	"LICONSA, S. A. DE C. V.",
+			"OFICIALIA MAYOR"=>	"OFICIALIA MAYOR",
+			"SECRETARIA DE DESARROLLO URBANO Y ECOLOGIA"=>	"SECRETARIA DE DESARROLLO URBANO Y ECOLOGIA",
+			"SECRETARIA"=>	"SECRETARIA",
+			"SUBSECRETARIA DE DESARROLLO SOCIAL Y HUMANO"=>	"SUBSECRETARIA DE DESARROLLO SOCIAL Y HUMANO",
+			"SUBSECRETARIA DE DESARROLLO URBANO Y ORDENACION DEL TERRITORIO"=>	"SUBSECRETARIA DE DESARROLLO URBANO Y ORDENACION DEL TERRITORIO",
+			"SUBSECRETARIA DE PROSPECTIVA, PLANEACION Y EVALUACION"=>	"SUBSECRETARIA DE PROSPECTIVA, PLANEACION Y EVALUACION",
+			"UNIDAD DE COMUNICACION SOCIAL"=>	"UNIDAD DE COMUNICACION SOCIAL",
+			"UNIDAD DE COORDINACION DE DELEGACIONES"=>	"UNIDAD DE COORDINACION DE DELEGACIONES",
+			"UNIDAD DE COORDINACION SECTORIAL"=>"UNIDAD DE COORDINACION SECTORIAL"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PODER JUDICIAL DE LA FEDERACION"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"CONSEJO DE LA JUDICATURA FEDERAL"=>"CONSEJO DE LA JUDICATURA FEDERAL",
+			"JUZGADO 1RO DE DISTRITO EN CAMPECHE, CAMPECHE"=>"JUZGADO 1RO DE DISTRITO EN CAMPECHE, CAMPECHE",
+			"SALA SUPERIOR"=>"SALA SUPERIOR",
+			"SALAS REGIONALES"=>"SALAS REGIONALES",
+			"SUPREMA CORTE DE JUSTICIA DE LA NACION"=>"SUPREMA CORTE DE JUSTICIA DE LA NACION",
+			"TERCER TRIBUNAL COLEGIADO EN MATERIA ADMINISTRATIVA DEL PRIMER CIRCUITO"=>"TERCER TRIBUNAL COLEGIADO EN MATERIA ADMINISTRATIVA DEL PRIMER CIRCUITO",
+			"TRIBUNAL ELECTORAL"=>"TRIBUNAL ELECTORAL"
+ 		),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE LA DEFENSA NACIONAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"CENTRO DE INVESTIGACIÓN Y DESARROLLO DEL EJÉRCITO Y FUERZA AÉREA MEXICANOS"=>"CENTRO DE INVESTIGACIÓN Y DESARROLLO DEL EJÉRCITO Y FUERZA AÉREA MEXICANOS",
+			"COMANDANCIA DE LA FUERZA AEREA MEXICANA"=>"COMANDANCIA DE LA FUERZA AEREA MEXICANA",
+			"COMANDANCIA I REGION MILITAR"=>"COMANDANCIA I REGION MILITAR",
+			"COMANDANCIA II REGION MILITAR"=>"COMANDANCIA II REGION MILITAR",
+			"COMANDANCIA III REGION MILITAR"=>"COMANDANCIA III REGION MILITAR",
+			"COMANDANCIA IV REGION MILITAR"=>"COMANDANCIA IV REGION MILITAR",
+			"COMANDANCIA IX REGION MILITAR"=>"COMANDANCIA IX REGION MILITAR",
+			"COMANDANCIA V REGION MILITAR"=>"COMANDANCIA V REGION MILITAR",
+			"COMANDANCIA VI REGION MILITAR"=>"COMANDANCIA VI REGION MILITAR",
+			"COMANDANCIA VII REGION MILITAR"=>"COMANDANCIA VII REGION MILITAR",
+			"COMANDANCIA VIII REGION MILITAR"=>"COMANDANCIA VIII REGION MILITAR",
+			"COMANDANCIA X REGION MILITAR"=>"COMANDANCIA X REGION MILITAR",
+			"COMANDANCIA XI REGION MILITAR"=>"COMANDANCIA XI REGION MILITAR",
+			"COMANDANCIA XII REGION MILITAR"=>"COMANDANCIA XII REGION MILITAR",
+			"DIRECCION GENERAL DE ADMINISTRACION"=>"DIRECCION GENERAL DE ADMINISTRACION",
+			"DIRECCION GENERAL DE COMUNICACION SOCIAL"=>"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+			"DIRECCION GENERAL DE EDUCACION MILITAR Y RECTORIA DE LA UNIVERSIDAD DEL EJERCITO Y FUERZA AEREA"=>"DIRECCION GENERAL DE EDUCACION MILITAR Y RECTORIA DE LA UNIVERSIDAD DEL EJERCITO Y FUERZA AEREA",
+			"DIRECCION GENERAL DE FABRICAS DE VESTUARIO Y EQUIPO"=>"DIRECCION GENERAL DE FABRICAS DE VESTUARIO Y EQUIPO",
+			"DIRECCION GENERAL DE INDUSTRIA MILITAR"=>"DIRECCION GENERAL DE INDUSTRIA MILITAR",
+			"DIRECCION GENERAL DE INFORMATICA"=>"DIRECCION GENERAL DE INFORMATICA",
+			"DIRECCION GENERAL DE INGENIEROS"=>"DIRECCION GENERAL DE INGENIEROS",
+			"DIRECCION GENERAL DE JUSTICIA MILITAR"=>"DIRECCION GENERAL DE JUSTICIA MILITAR",
+			"DIRECCION GENERAL DE SANIDAD"=>"DIRECCION GENERAL DE SANIDAD",
+			"ESCUELA MILITAR DE GRADUADOS DE SANIDAD"=>"ESCUELA MILITAR DE GRADUADOS DE SANIDAD",
+			"INSTITUTO DE SEGURIDAD SOCIAL PARA LAS FUERZAS ARMADAS MEXICANAS"=>"INSTITUTO DE SEGURIDAD SOCIAL PARA LAS FUERZAS ARMADAS MEXICANAS",
+			"JEFATURA DEL CUERPO DE DEFENSORES DE OFICIO"=>"JEFATURA DEL CUERPO DE DEFENSORES DE OFICIO",
+			"JEFATURA DEL ESTADO MAYOR DE LA DEFENSA NACIONAL"=>"JEFATURA DEL ESTADO MAYOR DE LA DEFENSA NACIONAL",
+			"PRESIDENCIA DEL SUPREMO TRIBUNAL MILITAR"=>"PRESIDENCIA DEL SUPREMO TRIBUNAL MILITAR",
+			"PROCURADURIA GENERAL DE JUSTICIA MILITAR"=>"PROCURADURIA GENERAL DE JUSTICIA MILITAR",
+			"SECRETARIA"=>"SECRETARIA",
+			"UNIVERSIDAD DEL EJÉRCITO Y FUERZA AÉREA"=>"UNIVERSIDAD DEL EJÉRCITO Y FUERZA AÉREA" 
+		),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE MARINA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"CENTRO DE ESTUDIOS SUPERIORES NAVALES"=>"CENTRO DE ESTUDIOS SUPERIORES NAVALES",
+			"DIRECCION GENERAL DE ADMINISTRACION Y FINANZAS"=>"DIRECCION GENERAL DE ADMINISTRACION Y FINANZAS",
+			"DIRECCION GENERAL DE CONSTRUCCIONES NAVALES"=>"DIRECCION GENERAL DE CONSTRUCCIONES NAVALES",
+			"DIRECCION GENERAL DE INVESTIGACION Y DESARROLLO"=>"DIRECCION GENERAL DE INVESTIGACION Y DESARROLLO",
+			"DIRECCION GENERAL DE OCEANOGRAFIA NAVAL"=>"DIRECCION GENERAL DE OCEANOGRAFIA NAVAL",
+			"DIRECCION GENERAL DE OCEANOGRAFIA Y SENALAMIENTO MARITIMO"=>"DIRECCION GENERAL DE OCEANOGRAFIA Y SENALAMIENTO MARITIMO",
+			"DIRECCION GENERAL DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE RECURSOS HUMANOS",
+			"DIRECCION GENERAL DE SERVICIOS"=>"DIRECCION GENERAL DE SERVICIOS",
+			"ESCUELA MEDICO NAVAL"=>"ESCUELA MEDICO NAVAL",
+			"ESTACION OCEANOGRAFICA DE PUERTO PROGRESO, YUCATAN"=>"ESTACION OCEANOGRAFICA DE PUERTO PROGRESO, YUCATAN",
+			"ESTADO MAYOR GENERAL DE LA ARMADA"=>"ESTADO MAYOR GENERAL DE LA ARMADA",
+			"FUERZAS, REGIONES, ZONAS Y SECTORES NAVALES"=>"FUERZAS, REGIONES, ZONAS Y SECTORES NAVALES",
+			"INSPECCION Y CONTRALORIA GENERAL DE MARINA"=>"INSPECCION Y CONTRALORIA GENERAL DE MARINA",
+			"INSTITUTO DE INVESTIGACION Y DESARROLLO TECNOLOGICO DE LA ARMADA DE MEXICO"=>"INSTITUTO DE INVESTIGACION Y DESARROLLO TECNOLOGICO DE LA ARMADA DE MEXICO",
+			"JUNTA DE ALMIRANTES"=>"JUNTA DE ALMIRANTES",
+			"JUNTA NAVAL"=>"JUNTA NAVAL",
+			"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+			"SECRETARIA"=>"SECRETARIA",
+			"SUBSECRETARIA"=>"SUBSECRETARIA",
+			"UNIDAD DE HISTORIA Y CULTURA NAVAL"=>"UNIDAD DE HISTORIA Y CULTURA NAVAL",
+			"UNIDAD DE PLANEACION ESTRATEGICA"=>"UNIDAD DE PLANEACION ESTRATEGICA",
+			"UNIDAD JURIDICA"=>"UNIDAD JURIDICA"
+	     ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE TRABAJO Y PREVISION SOCIAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	        "CENTRO DE CAPACITACION"=>"CENTRO DE CAPACITACION",
+		        "COMISION NACIONAL DE LOS SALARIOS MINIMOS"=>"COMISION NACIONAL DE LOS SALARIOS MINIMOS",
+		        "COMITE NACIONAL MIXTO DE PROTECCION AL SALARIO"=>"COMITE NACIONAL MIXTO DE PROTECCION AL SALARIO",
+		        "CONTRALORIA INTERNA"=>"CONTRALORIA INTERNA",
+		        "COORDINACION GENERAL DE ASUNTOS INTERNACIONALES"=>"COORDINACION GENERAL DE ASUNTOS INTERNACIONALES",
+		        "COORDINACION GENERAL DE DELEGACIONES FEDERALES DEL TRABAJO"=>"COORDINACION GENERAL DE DELEGACIONES FEDERALES DEL TRABAJO",
+		        "COORDINACION GENERAL DE FUNCIONARIOS CONCILIADORES"=>"COORDINACION GENERAL DE FUNCIONARIOS CONCILIADORES",
+		        "COORDINACION GENERAL DE PLANEACION Y POLITICA SECTORIAL"=>"COORDINACION GENERAL DE PLANEACION Y POLITICA SECTORIAL",
+		        "DELEGACION EN AGUASCALIENTES"=>"DELEGACION EN AGUASCALIENTES",
+		        "DELEGACION EN BAJA CALIFORNIA SUR"=>"DELEGACION EN BAJA CALIFORNIA SUR",
+		        "DELEGACION EN BAJA CALIFORNIA"=>"DELEGACION EN BAJA CALIFORNIA",
+		        "DELEGACION EN CAMPECHE"=>"DELEGACION EN CAMPECHE",
+		        "DELEGACION EN CHIAPAS"=>"DELEGACION EN CHIAPAS",
+		        "DELEGACION EN CHIHUAHUA"=>"DELEGACION EN CHIHUAHUA",
+		        "DELEGACION EN COAHUILA"=>"DELEGACION EN COAHUILA",
+		        "DELEGACION EN COLIMA"=>"DELEGACION EN COLIMA",
+		        "DELEGACION EN DURANGO"=>"DELEGACION EN DURANGO",
+		        "DELEGACION EN GUANAJUATO"=>"DELEGACION EN GUANAJUATO",
+		        "DELEGACION EN GUERRERO"=>"DELEGACION EN GUERRERO",
+		        "DELEGACION EN HIDALGO"=>"DELEGACION EN HIDALGO",
+		        "DELEGACION EN JALISCO"=>"DELEGACION EN JALISCO",
+		        "DELEGACION EN MEXICO"=>"DELEGACION EN MEXICO",
+		        "DELEGACION EN MICHOACAN"=>"DELEGACION EN MICHOACAN",
+		        "DELEGACION EN MORELOS"=>"DELEGACION EN MORELOS",
+		        "DELEGACION EN NAYARIT"=>"DELEGACION EN NAYARIT",
+		        "DELEGACION EN NUEVO LEON"=>"DELEGACION EN NUEVO LEON",
+		        "DELEGACION EN OAXACA"=>"DELEGACION EN OAXACA",
+		        "DELEGACION EN PUEBLA"=>"DELEGACION EN PUEBLA",
+		        "DELEGACION EN QUERETARO"=>"DELEGACION EN QUERETARO",
+		        "DELEGACION EN QUINTANA ROO"=>"DELEGACION EN QUINTANA ROO",
+		        "DELEGACION EN SAN LUIS POTOSI"=>"DELEGACION EN SAN LUIS POTOSI",
+		        "DELEGACION EN SINALOA"=>"DELEGACION EN SINALOA",
+		        "DELEGACION EN SONORA"=>"DELEGACION EN SONORA",
+		        "DELEGACION EN TABASCO"=>"DELEGACION EN TABASCO",
+		        "DELEGACION EN TAMAULIPAS"=>"DELEGACION EN TAMAULIPAS",
+		        "DELEGACION EN TLAXCALA"=>"DELEGACION EN TLAXCALA",
+		        "DELEGACION EN VERACRUZ"=>"DELEGACION EN VERACRUZ",
+		        "DELEGACION EN YUCATAN"=>"DELEGACION EN YUCATAN",
+		        "DELEGACION EN ZACATECAS"=>"DELEGACION EN ZACATECAS",
+		        "DELEGACION METROPOLITANA EN EL DISTRITO FEDERAL"=>"DELEGACION METROPOLITANA EN EL DISTRITO FEDERAL",
+		        "DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+		        "DIRECCION GENERAL DE CAPACITACION Y PRODUCTIVIDAD"=>"DIRECCION GENERAL DE CAPACITACION Y PRODUCTIVIDAD",
+		        "DIRECCION GENERAL DE COMUNICACION SOCIAL"=>"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+		        "DIRECCION GENERAL DE DESARROLLO HUMANO"=>"DIRECCION GENERAL DE DESARROLLO HUMANO",
+		        "DIRECCION GENERAL DE EMPLEO"=>"DIRECCION GENERAL DE EMPLEO",
+		        "DIRECCION GENERAL DE ENLACE LEGISLATIVO Y VINCULACION SOCIAL"=>"DIRECCION GENERAL DE ENLACE LEGISLATIVO Y VINCULACION SOCIAL",
+		        "DIRECCION GENERAL DE EQUIDAD Y GENERO"=>"DIRECCION GENERAL DE EQUIDAD Y GENERO",
+		        "DIRECCION GENERAL DE INFORMATICA Y TELECOMUNICACIONES"=>"DIRECCION GENERAL DE INFORMATICA Y TELECOMUNICACIONES",
+		        "DIRECCION GENERAL DE INSPECCION FEDERAL DEL TRABAJO"=>"DIRECCION GENERAL DE INSPECCION FEDERAL DEL TRABAJO",
+		        "DIRECCION GENERAL DE NORMALIZACION Y CERTIFICACION DE COMPETENCIA LABORAL"=>"DIRECCION GENERAL DE NORMALIZACION Y CERTIFICACION DE COMPETENCIA LABORAL",
+		        "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+		        "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES"=>"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+		        "DIRECCION GENERAL DE REGISTRO DE ASOCIACIONES"=>"DIRECCION GENERAL DE REGISTRO DE ASOCIACIONES",
+		        "DIRECCION GENERAL DE SEGURIDAD Y SALUD EN EL TRABAJO"=>"DIRECCION GENERAL DE SEGURIDAD Y SALUD EN EL TRABAJO",
+		        "FONDO DE FOMENTO Y GARANTIA PARA EL CONSUMO DE LOS TRABAJADORES"=>"FONDO DE FOMENTO Y GARANTIA PARA EL CONSUMO DE LOS TRABAJADORES",
+		        "JUNTA FEDERAL DE CONCILIACION Y ARBITRAJE"=>"JUNTA FEDERAL DE CONCILIACION Y ARBITRAJE",
+		        "OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+		        "PROCURADURIA FEDERAL DE LA DEFENSA DEL TRABAJO"=>"PROCURADURIA FEDERAL DE LA DEFENSA DEL TRABAJO",
+		        "SECRETARIA"=>"SECRETARIA",
+		        "SUBSECRETARIA DE CAPACITACION, PRODUCTIVIDAD Y EMPLEO"=>"SUBSECRETARIA DE CAPACITACION, PRODUCTIVIDAD Y EMPLEO",
+		        "SUBSECRETARIA DE EMPLEO Y PREVISION SOCIAL"=>"SUBSECRETARIA DE EMPLEO Y PREVISION SOCIAL",
+		        "SUBSECRETARIA DE PREVISION SOCIAL"=>"SUBSECRETARIA DE PREVISION SOCIAL",
+		        "SUBSECRETARIA DEL TRABAJO"=>"SUBSECRETARIA DEL TRABAJO",
+		        "SUBSECRETARÍA DE EMPLEO Y PRODUCTIVIDAD LABORAL"=>"SUBSECRETARÍA DE EMPLEO Y PRODUCTIVIDAD LABORAL"
+	     ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE LA REFORMA AGRARIA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	 "DIRECCION GENERAL DE ADMINISTRACION"=>"DIRECCION GENERAL DE ADMINISTRACION",
+	        "DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+	        "DIRECCION GENERAL DE COORDINACION"=>"DIRECCION GENERAL DE COORDINACION",
+	        "DIRECCION GENERAL DE INFORMACION AGRARIA"=>"DIRECCION GENERAL DE INFORMACION AGRARIA",
+	        "DIRECCION GENERAL DE ORDENAMIENTO Y REGULARIZACION"=>"DIRECCION GENERAL DE ORDENAMIENTO Y REGULARIZACION",
+	        "DIRECCION GENERAL DE POLITICA Y PLANEACION AGRARIA"=>"DIRECCION GENERAL DE POLITICA Y PLANEACION AGRARIA",
+	        "FIDEICOMISO FONDO NACIONAL DE FOMENTO EJIDAL"=>"FIDEICOMISO FONDO NACIONAL DE FOMENTO EJIDAL",
+	        "INSTITUTO NACIONAL DE DESARROLLO AGRARIO"=>"INSTITUTO NACIONAL DE DESARROLLO AGRARIO",
+	        "OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+	        "PROCURADURIA AGRARIA"=>"PROCURADURIA AGRARIA",
+	        "REGISTRO AGRARIO NACIONAL"=>"REGISTRO AGRARIO NACIONAL",
+	        "REPRESENTACION ESPECIAL CHIAPAS"=>"REPRESENTACION ESPECIAL CHIAPAS",
+	        "REPRESENTACION ESPECIAL OAXACA"=>"REPRESENTACION ESPECIAL OAXACA",
+	        "REPRESENTACION REGIONAL CENTRO NORTE"=>"REPRESENTACION REGIONAL CENTRO NORTE",
+	        "REPRESENTACION REGIONAL CENTRO SUR"=>"REPRESENTACION REGIONAL CENTRO SUR",
+	        "REPRESENTACION REGIONAL CENTRO"=>"REPRESENTACION REGIONAL CENTRO",
+	        "REPRESENTACION REGIONAL GOLFO"=>"REPRESENTACION REGIONAL GOLFO",
+	        "REPRESENTACION REGIONAL NORESTE"=>"REPRESENTACION REGIONAL NORESTE",
+	        "REPRESENTACION REGIONAL NOROESTE"=>"REPRESENTACION REGIONAL NOROESTE",
+	        "REPRESENTACION REGIONAL NORTE"=>"REPRESENTACION REGIONAL NORTE",
+	        "REPRESENTACION REGIONAL OCCIDENTE"=>"REPRESENTACION REGIONAL OCCIDENTE",
+	        "REPRESENTACION REGIONAL PACIFICO CENTRO"=>"REPRESENTACION REGIONAL PACIFICO CENTRO",
+	        "REPRESENTACION REGIONAL PACIFICO"=>"REPRESENTACION REGIONAL PACIFICO",
+	        "REPRESENTACION REGIONAL PENINSULAR"=>"REPRESENTACION REGIONAL PENINSULAR",
+	        "REPRESENTACION REGIONAL SUR"=>"REPRESENTACION REGIONAL SUR",
+	        "SECRETARIA"=>"SECRETARIA",
+	        "SUBSECRETARIA DE ORDENAMIENTO DE LA PROPIEDAD RURAL"=>"SUBSECRETARIA DE ORDENAMIENTO DE LA PROPIEDAD RURAL",
+	        "SUBSECRETARIA DE POLITICA SECTORIAL"=>"SUBSECRETARIA DE POLITICA SECTORIAL",
+	        "UNIDAD DE COMUNICACION SOCIAL"=>"UNIDAD DE COMUNICACION SOCIAL",
+	        "UNIDAD DE CONCERTACION AGRARIA"=>"UNIDAD DE CONCERTACION AGRARIA",
+	        "UNIDAD DE CONTRALORIA INTERNA"=>"UNIDAD DE CONTRALORIA INTERNA",
+	        "UNIDAD TECNICA OPERATIVA"=>"UNIDAD TECNICA OPERATIVA"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="PROCURADURIA GENERAL DE LA REPUBLICA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AGENCIA DE INVESTIGACION CRIMINAL"=>"AGENCIA DE INVESTIGACION CRIMINAL",
+			"AGENCIA FEDERAL DE INVESTIGACION"=>"AGENCIA FEDERAL DE INVESTIGACION",
+			"CONTRALORIA INTERNA"=>"CONTRALORIA INTERNA",
+			"COORDINACIÓN DE PLANEACIÓN, DESARROLLO E INNOVACIÓN INSTITUCIONAL"=>"COORDINACIÓN DE PLANEACIÓN, DESARROLLO E INNOVACIÓN INSTITUCIONAL",
+			"DELEGACION ESTATAL EN AGUASCALIENTES"=>"DELEGACION ESTATAL EN AGUASCALIENTES",
+			"DELEGACION ESTATAL EN BAJA CALIFORNIA SUR"=>"DELEGACION ESTATAL EN BAJA CALIFORNIA SUR",
+			"DELEGACION ESTATAL EN BAJA CALIFORNIA"=>"DELEGACION ESTATAL EN BAJA CALIFORNIA",
+			"DELEGACION ESTATAL EN CAMPECHE"=>"DELEGACION ESTATAL EN CAMPECHE",
+			"DELEGACION ESTATAL EN CHIAPAS"=>"DELEGACION ESTATAL EN CHIAPAS",
+			"DELEGACION ESTATAL EN CHIHUAHUA"=>"DELEGACION ESTATAL EN CHIHUAHUA",
+			"DELEGACION ESTATAL EN COAHUILA"=>"DELEGACION ESTATAL EN COAHUILA",
+			"DELEGACION ESTATAL EN COLIMA"=>"DELEGACION ESTATAL EN COLIMA",
+			"DELEGACION ESTATAL EN DURANGO"=>"DELEGACION ESTATAL EN DURANGO",
+			"DELEGACION ESTATAL EN EL DISTRITO FEDERAL"=>"DELEGACION ESTATAL EN EL DISTRITO FEDERAL",
+			"DELEGACION ESTATAL EN GUANAJUATO"=>"DELEGACION ESTATAL EN GUANAJUATO",
+			"DELEGACION ESTATAL EN GUERRERO"=>"DELEGACION ESTATAL EN GUERRERO",
+			"DELEGACION ESTATAL EN HIDALGO"=>"DELEGACION ESTATAL EN HIDALGO",
+			"DELEGACION ESTATAL EN JALISCO"=>"DELEGACION ESTATAL EN JALISCO",
+			"DELEGACION ESTATAL EN MEXICO"=>"DELEGACION ESTATAL EN MEXICO",
+			"DELEGACION ESTATAL EN MICHOACAN"=>"DELEGACION ESTATAL EN MICHOACAN",
+			"DELEGACION ESTATAL EN MORELOS"=>"DELEGACION ESTATAL EN MORELOS",
+			"DELEGACION ESTATAL EN NAYARIT"=>"DELEGACION ESTATAL EN NAYARIT",
+			"DELEGACION ESTATAL EN NUEVO LEON"=>"DELEGACION ESTATAL EN NUEVO LEON",
+			"DELEGACION ESTATAL EN OAXACA"=>"DELEGACION ESTATAL EN OAXACA",
+			"DELEGACION ESTATAL EN PUEBLA"=>"DELEGACION ESTATAL EN PUEBLA",
+			"DELEGACION ESTATAL EN QUERETARO"=>"DELEGACION ESTATAL EN QUERETARO",
+			"DELEGACION ESTATAL EN QUINTANA ROO"=>"DELEGACION ESTATAL EN QUINTANA ROO",
+			"DELEGACION ESTATAL EN SAN LUIS POTOSI"=>"DELEGACION ESTATAL EN SAN LUIS POTOSI",
+			"DELEGACION ESTATAL EN SINALOA"=>"DELEGACION ESTATAL EN SINALOA",
+			"DELEGACION ESTATAL EN SONORA"=>"DELEGACION ESTATAL EN SONORA",
+			"DELEGACION ESTATAL EN TABASCO"=>"DELEGACION ESTATAL EN TABASCO",
+			"DELEGACION ESTATAL EN TAMAULIPAS"=>"DELEGACION ESTATAL EN TAMAULIPAS",
+			"DELEGACION ESTATAL EN TLAXCALA"=>"DELEGACION ESTATAL EN TLAXCALA",
+			"DELEGACION ESTATAL EN VERACRUZ"=>"DELEGACION ESTATAL EN VERACRUZ",
+			"DELEGACION ESTATAL EN YUCATAN"=>"DELEGACION ESTATAL EN YUCATAN",
+			"DELEGACION ESTATAL EN ZACATECAS"=>"DELEGACION ESTATAL EN ZACATECAS",
+			"DIRECCION GENERAL DE AMPARO"=>"DIRECCION GENERAL DE AMPARO",
+			"DIRECCION GENERAL DE ASUNTOS LEGALES INTERNACIONALES"=>"DIRECCION GENERAL DE ASUNTOS LEGALES INTERNACIONALES",
+			"DIRECCION GENERAL DE AUDITORIA"=>"DIRECCION GENERAL DE AUDITORIA",
+			"DIRECCION GENERAL DE COMUNICACION SOCIAL"=>"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+			"DIRECCION GENERAL DE CONSTITUCIONALIDAD Y DOCUMENTACION JURIDICA"=>"DIRECCION GENERAL DE CONSTITUCIONALIDAD Y DOCUMENTACION JURIDICA",
+			"DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES A"=>"DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES A",
+			"DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES B"=>"DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES B",
+			"DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES C"=>"DIRECCION GENERAL DE CONTROL DE PROCEDIMIENTOS PENALES C",
+			"DIRECCION GENERAL DE CONTROL Y REGISTRO DE ASEGURAMIENTOS MINISTERIALES"=>"DIRECCION GENERAL DE CONTROL Y REGISTRO DE ASEGURAMIENTOS MINISTERIALES",
+			"DIRECCION GENERAL DE CONTROL Y VERIFICACION"=>"DIRECCION GENERAL DE CONTROL Y VERIFICACION",
+			"DIRECCION GENERAL DE COORDINACION DE SERVICIOS PERICIALES"=>"DIRECCION GENERAL DE COORDINACION DE SERVICIOS PERICIALES",
+			"DIRECCION GENERAL DE COORDINACION INTERINSTITUCIONAL"=>"DIRECCION GENERAL DE COORDINACION INTERINSTITUCIONAL",
+			"DIRECCION GENERAL DE EVALUACION"=>"DIRECCION GENERAL DE EVALUACION",
+			"DIRECCION GENERAL DE INFORMATICA Y TELECOMUNICACIONES"=>"DIRECCION GENERAL DE INFORMATICA Y TELECOMUNICACIONES",
+			"DIRECCION GENERAL DE INSPECCION INTERNA"=>"DIRECCION GENERAL DE INSPECCION INTERNA",
+			"DIRECCION GENERAL DE LO CONTENCIOSO Y CONSULTIVO"=>"DIRECCION GENERAL DE LO CONTENCIOSO Y CONSULTIVO",
+			"DIRECCION GENERAL DE NORMATIVIDAD TECNICO PENAL"=>"DIRECCION GENERAL DE NORMATIVIDAD TECNICO PENAL",
+			"DIRECCION GENERAL DE ORGANIZACION Y CONTROL DEL PERSONAL MINISTERIAL, POLICIAL Y PERICIAL"=>"DIRECCION GENERAL DE ORGANIZACION Y CONTROL DEL PERSONAL MINISTERIAL, POLICIAL Y PERICIAL",
+			"DIRECCION GENERAL DE PREVENCION DEL DELITO Y SERVICIOS A LA COMUNIDAD"=>"DIRECCION GENERAL DE PREVENCION DEL DELITO Y SERVICIOS A LA COMUNIDAD",
+			"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+			"DIRECCION GENERAL DE PROTECCION A LOS DERECHOS HUMANOS"=>"DIRECCION GENERAL DE PROTECCION A LOS DERECHOS HUMANOS",
+			"DIRECCION GENERAL DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE RECURSOS HUMANOS",
+			"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES"=>"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+			"DIRECCION GENERAL DE RESPONSABILIDADES E INCONFORMIDADES"=>"DIRECCION GENERAL DE RESPONSABILIDADES E INCONFORMIDADES",
+			"DIRECCION GENERAL DE SERVICIOS AEREOS"=>"DIRECCION GENERAL DE SERVICIOS AEREOS",
+			"DIRECCION GENERAL DE VISITADURIA"=>"DIRECCION GENERAL DE VISITADURIA",
+			"DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO A"=>"DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO A",
+			"DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO B"=>"DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO B",
+			"DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO C"=>"DIRECCION GENERAL DEL MINISTERIO PUBLICO ESPECIALIZADO C",
+			"FISCALIA ESPECIAL PARA MOVIMIENTOS SOCIALES Y POLITICOS DEL PASADO"=>"FISCALIA ESPECIAL PARA MOVIMIENTOS SOCIALES Y POLITICOS DEL PASADO",
+			"FISCALIA ESPECIALIZADA PARA LA ATENCION DE DELITOS CONTRA LA SALUD"=>"FISCALIA ESPECIALIZADA PARA LA ATENCION DE DELITOS CONTRA LA SALUD",
+			"FISCALIA ESPECIALIZADA PARA LA ATENCION DE DELITOS ELECTORALES"=>"FISCALIA ESPECIALIZADA PARA LA ATENCION DE DELITOS ELECTORALES",
+			"INSTITUTO DE CAPACITACION"=>"INSTITUTO DE CAPACITACION",
+			"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+			"SUBPROCURADURIA DE COORDINACION GENERAL Y DESARROLLO"=>"SUBPROCURADURIA DE COORDINACION GENERAL Y DESARROLLO",
+			"SUBPROCURADURIA DE PROCEDIMIENTOS PENALES A"=>"SUBPROCURADURIA DE PROCEDIMIENTOS PENALES A",
+			"SUBPROCURADURIA DE PROCEDIMIENTOS PENALES B"=>"SUBPROCURADURIA DE PROCEDIMIENTOS PENALES B",
+			"SUBPROCURADURIA DE PROCEDIMIENTOS PENALES C"=>"SUBPROCURADURIA DE PROCEDIMIENTOS PENALES C",
+			"SUBPROCURADURIA ESPECIAL"=>"SUBPROCURADURIA ESPECIAL",
+			"SUBPROCURADURIA JURIDICA Y DE ASUNTOS INTERNACIONALES"=>"SUBPROCURADURIA JURIDICA Y DE ASUNTOS INTERNACIONALES",
+			"UNIDAD ESPECIALIZADA CONTRA EL LAVADO DE DINERO"=>"UNIDAD ESPECIALIZADA CONTRA EL LAVADO DE DINERO",
+			"UNIDAD ESPECIALIZADA EN DELINCUENCIA ORGANIZADA"=>"UNIDAD ESPECIALIZADA EN DELINCUENCIA ORGANIZADA",
+			"VISITADURIA GENERAL"=>"VISITADURIA GENERAL"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE TURISMO"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"BAJA, MANTENIMIENTO Y OPERACION, S. A. DE C. V."=>"BAJA, MANTENIMIENTO Y OPERACION, S. A. DE C. V.",
+			"CENTRO DE ESTUDIOS SUPERIORES DE TURISMO"=>"CENTRO DE ESTUDIOS SUPERIORES DE TURISMO",
+			"CONSEJO DE PROMOCION TURISTICA DE MEXICO, S. A. DE C. V."=>"CONSEJO DE PROMOCION TURISTICA DE MEXICO, S. A. DE C. V.",
+			"CONTRALORIA INTERNA"=>"CONTRALORIA INTERNA",
+			"DIRECCION GENERAL DE ADMINISTRACION"=>"DIRECCION GENERAL DE ADMINISTRACION",
+			"DIRECCION GENERAL DE ASUNTOS JURIDICOS"=>"DIRECCION GENERAL DE ASUNTOS JURIDICOS",
+			"DIRECCION GENERAL DE COMUNICACION SOCIAL"=>"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+			"DIRECCION GENERAL DE DESARROLLO DE LA CULTURA TURISTICA"=>"DIRECCION GENERAL DE DESARROLLO DE LA CULTURA TURISTICA",
+			"DIRECCION GENERAL DE DESARROLLO DE PRODUCTOS TURISTICOS"=>"DIRECCION GENERAL DE DESARROLLO DE PRODUCTOS TURISTICOS",
+			"DIRECCION GENERAL DE DESARROLLO INSTITUCIONAL Y COORDINACION SECTORIAL"=>"DIRECCION GENERAL DE DESARROLLO INSTITUCIONAL Y COORDINACION SECTORIAL",
+			"DIRECCION GENERAL DE INFORMACION Y ANALISIS"=>"DIRECCION GENERAL DE INFORMACION Y ANALISIS",
+			"DIRECCION GENERAL DE MEJORA REGULATORIA"=>"DIRECCION GENERAL DE MEJORA REGULATORIA",
+			"DIRECCION GENERAL DE PLANEACION ESTRATEGICA Y POLITICA SECTORIAL"=>"DIRECCION GENERAL DE PLANEACION ESTRATEGICA Y POLITICA SECTORIAL",
+			"DIRECCION GENERAL DE PROGRAMAS REGIONALES"=>"DIRECCION GENERAL DE PROGRAMAS REGIONALES",
+			"DIRECCION GENERAL DE SERVICIOS AL TURISTA"=>"DIRECCION GENERAL DE SERVICIOS AL TURISTA",
+			"FONDO NACIONAL DE FOMENTO AL TURISMO"=>"FONDO NACIONAL DE FOMENTO AL TURISMO",
+			"NACIONAL HOTELERA DE BAJA CALIFORNIA, S. A. DE C. V."=>"NACIONAL HOTELERA DE BAJA CALIFORNIA, S. A. DE C. V.",
+			"SECRETARIA DE TURISMO"=>"SECRETARIA DE TURISMO",
+			"SUBSECRETARIA DE INNOVACION Y CALIDAD"=>"SUBSECRETARIA DE INNOVACION Y CALIDAD",
+			"SUBSECRETARIA DE OPERACION TURISTICA"=>"SUBSECRETARIA DE OPERACION TURISTICA",
+			"SUBSECRETARIA DE PLANEACION TURISTICA"=>"SUBSECRETARIA DE PLANEACION TURISTICA",
+	     ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="SECRETARIA DE LA FUNCION PUBLICA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    			        "COMISION DE AVALUOS DE BIENES NACIONALES"=>"COMISION DE AVALUOS DE BIENES NACIONALES",
+		        "CONTRALORIA INTERNA"=>"CONTRALORIA INTERNA",
+		        "COORDINACION GENERAL DE ORGANOS DE VIGILANCIA Y CONTROL"=>"COORDINACION GENERAL DE ORGANOS DE VIGILANCIA Y CONTROL",
+		        "DIRECCION GENERAL DE ADMINISTRACION"=>"DIRECCION GENERAL DE ADMINISTRACION",
+		        "DIRECCION GENERAL DE ANALISIS DE ESTRUCTURA Y PROFESIONALIZACION DEL SERVICIO PUBLICO"=>"DIRECCION GENERAL DE ANALISIS DE ESTRUCTURA Y PROFESIONALIZACION DEL SERVICIO PUBLICO",
+		        "DIRECCION GENERAL DE ATENCION CIUDADANA"=>"DIRECCION GENERAL DE ATENCION CIUDADANA",
+		        "DIRECCION GENERAL DE EFICIENCIA ADMINISTRATIVA"=>"DIRECCION GENERAL DE EFICIENCIA ADMINISTRATIVA",
+		        "DIRECCION GENERAL DE INCONFORMIDADES"=>"DIRECCION GENERAL DE INCONFORMIDADES",
+		        "DIRECCION GENERAL DE INFORMATICA"=>"DIRECCION GENERAL DE INFORMATICA",
+		        "DIRECCION GENERAL DE MODERNIZACION ADMINISTRATIVA Y PROCESOS"=>"DIRECCION GENERAL DE MODERNIZACION ADMINISTRATIVA Y PROCESOS",
+		        "DIRECCION GENERAL DE OPERACION REGIONAL Y CONTRALORIA SOCIAL"=>"DIRECCION GENERAL DE OPERACION REGIONAL Y CONTRALORIA SOCIAL",
+		        "DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO",
+		        "DIRECCION GENERAL DE RESPONSABILIDADES Y SITUACION PATRIMONIAL"=>"DIRECCION GENERAL DE RESPONSABILIDADES Y SITUACION PATRIMONIAL",
+		        "DIRECCION GENERAL DE SIMPLIFICACION REGULATORIA"=>"DIRECCION GENERAL DE SIMPLIFICACION REGULATORIA",
+		        "INSTITUTO DE ADMINISTRACION Y AVALUOS DE BIENES NACIONALES"=>"INSTITUTO DE ADMINISTRACION Y AVALUOS DE BIENES NACIONALES",
+		        "INSTITUTO FEDERAL DE ACCESO A LA INFORMACION PUBLICA"=>"INSTITUTO FEDERAL DE ACCESO A LA INFORMACION PUBLICA",
+		        "OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+		        "P.M.I. COMERCIO INTERNACIONAL, S.A. DE C.V."=>"P.M.I. COMERCIO INTERNACIONAL, S.A. DE C.V.",
+		        "SECRETARIA EJECUTIVA DE LA COM. INTERSECRETARIAL PARA LA TRANSPARENCIA Y EL COMBATE A LA CORRUPCION EN LA ADMON PUB.FED."=>"SECRETARIA EJECUTIVA DE LA COM. INTERSECRETARIAL PARA LA TRANSPARENCIA Y EL COMBATE A LA CORRUPCION EN LA ADMON PUB.FED.",
+		        "SECRETARIA"=>"SECRETARIA",
+		        "SUBSECRETARIA DE ATENCION CIUDADANA Y NORMATIVIDAD"=>"SUBSECRETARIA DE ATENCION CIUDADANA Y NORMATIVIDAD",
+		        "SUBSECRETARIA DE CONTROL Y AUDITORIA DE LA GESTION PUBLICA"=>"SUBSECRETARIA DE CONTROL Y AUDITORIA DE LA GESTION PUBLICA",
+		        "SUBSECRETARIA DE DESARROLLO Y SIMPLIFICACION ADMINISTRATIVA"=>"SUBSECRETARIA DE DESARROLLO Y SIMPLIFICACION ADMINISTRATIVA",
+		        "UNIDAD DE ASUNTOS JURIDICOS"=>"UNIDAD DE ASUNTOS JURIDICOS",
+		        "UNIDAD DE AUDITORIA GUBERNAMENTAL"=>"UNIDAD DE AUDITORIA GUBERNAMENTAL",
+		        "UNIDAD DE CONTROL Y EVALUACION DE LA GESTION PUBLICA"=>"UNIDAD DE CONTROL Y EVALUACION DE LA GESTION PUBLICA",
+		        "UNIDAD DE NORMATIVIDAD DE ADQUISICIONES, OBRAS PUBLICAS, SERVICIOS Y PATRIMONIO FEDERAL"=>"UNIDAD DE NORMATIVIDAD DE ADQUISICIONES, OBRAS PUBLICAS, SERVICIOS Y PATRIMONIO FEDERAL",
+		        "UNIDAD DE SERVICIOS ELECTRONICOS GUBERNAMENTALES"=>"UNIDAD DE SERVICIOS ELECTRONICOS GUBERNAMENTALES",
+		        "UNIDAD DE VINCULACION PARA LA TRANSPARENCIA"=>"UNIDAD DE VINCULACION PARA LA TRANSPARENCIA",
+		        "UNIDAD DEL SERVICIO PROFESIONAL Y RECURSOS"=>"UNIDAD DEL SERVICIO PROFESIONAL Y RECURSOS"
+
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+	if ($model->organization=="TRIBUNALES AGRARIOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"TRIBUNALES AGRARIOS"=>"TRIBUNALES AGRARIOS",
+            "TRIBUNAL SUPERIOR AGRARIO"=> "TRIBUNAL SUPERIOR AGRARIO",
+            "TRIBUNALES UNITARIOS AGRARIOS"=>  "TRIBUNALES UNITARIOS AGRARIOS",
+            "OFICIALIA MAYOR"=> "OFICIALIA MAYOR"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+   if ($model->organization=="TRIBUNAL FEDERAL DE JUSTICIA FISCAL Y ADMINISTRATIVA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	    "CENTRO DE ESTUDIOS SUPERIORES EN MATERIA DE DERECHO FISCAL Y ADMINISTRATIVO"=>"CENTRO DE ESTUDIOS SUPERIORES EN MATERIA DE DERECHO FISCAL Y ADMINISTRATIVO",
+		        "DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+		        "DIRECCION GENERAL DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE RECURSOS HUMANOS",
+		        "DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES"=>"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+		        "OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+		        "PRIMERA SALA REGIONAL DE OCCIDENTE, CON SEDE EN GUADALAJARA, JAL."=>"PRIMERA SALA REGIONAL DE OCCIDENTE, CON SEDE EN GUADALAJARA, JAL.",
+		        "PRIMERA SALA REGIONAL DE ORIENTE, CON SEDE EN PUEBLA, PUE."=>"PRIMERA SALA REGIONAL DE ORIENTE, CON SEDE EN PUEBLA, PUE.",
+		        "PRIMERA SALA REGIONAL DEL NORESTE, CON SEDE EN GARZA GARCIA, N. L."=>"PRIMERA SALA REGIONAL DEL NORESTE, CON SEDE EN GARZA GARCIA, N. L.",
+		        "PRIMERA SALA REGIONAL DEL NORTE CENTRO II, CON SEDE EN TORREON, COAH."=>"PRIMERA SALA REGIONAL DEL NORTE CENTRO II, CON SEDE EN TORREON, COAH.",
+		        "PRIMERA SALA REGIONAL DEL SURESTE, CON SEDE EN OAXACA, OAX."=>"PRIMERA SALA REGIONAL DEL SURESTE, CON SEDE EN OAXACA, OAX.",
+		        "PRIMERA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX."=>"PRIMERA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX.",
+		        "PRIMERA SALA REGIONAL PENINSULAR, CON SEDE EN MERIDA, YUC."=>"PRIMERA SALA REGIONAL PENINSULAR, CON SEDE EN MERIDA, YUC.",
+		        "SALA REGIONAL CHIAPAS-TABASCO, CON SEDE EN TUXTLA GUITIERREZ, CHIAPAS"=>"SALA REGIONAL CHIAPAS-TABASCO, CON SEDE EN TUXTLA GUITIERREZ, CHIAPAS",
+		        "SALA REGIONAL DEL CARIBE, CON SEDE EN CANCUN, QUINTANA ROO"=>"SALA REGIONAL DEL CARIBE, CON SEDE EN CANCUN, QUINTANA ROO",
+		        "SALA REGIONAL DEL CENTRO I, CON SEDE EN AGUASCALIENTES, AGS."=>"SALA REGIONAL DEL CENTRO I, CON SEDE EN AGUASCALIENTES, AGS.",
+		        "SALA REGIONAL DEL CENTRO II, CON SEDE EN QUERETARO, QRO."=>"SALA REGIONAL DEL CENTRO II, CON SEDE EN QUERETARO, QRO.",
+		        "SALA REGIONAL DEL CENTRO III, CON SEDE EN CELAYA, GTO."=>"SALA REGIONAL DEL CENTRO III, CON SEDE EN CELAYA, GTO.",
+		        "SALA REGIONAL DEL GOLFO NORTE, CON SEDE EN CIUDAD VICTORIA, TAMPS."=>"SALA REGIONAL DEL GOLFO NORTE, CON SEDE EN CIUDAD VICTORIA, TAMPS.",
+		        "SALA REGIONAL DEL GOLFO, CON SEDE EN JALAPA, VER."=>"SALA REGIONAL DEL GOLFO, CON SEDE EN JALAPA, VER.",
+		        "SALA REGIONAL DEL NOROESTE I, CON SEDE EN TIJUANA, B. C."=>"SALA REGIONAL DEL NOROESTE I, CON SEDE EN TIJUANA, B. C.",
+		        "SALA REGIONAL DEL NOROESTE II, CON SEDE EN CIUDAD OBREGON, SON."=>"SALA REGIONAL DEL NOROESTE II, CON SEDE EN CIUDAD OBREGON, SON.",
+		        "SALA REGIONAL DEL NOROESTE III, CON SEDE EN CULIACAN, SIN."=>"SALA REGIONAL DEL NOROESTE III, CON SEDE EN CULIACAN, SIN.",
+		        "SALA REGIONAL DEL NORTE CENTRO I, CON SEDE EN CHIHUAHUA, CHIH."=>"SALA REGIONAL DEL NORTE CENTRO I, CON SEDE EN CHIHUAHUA, CHIH.",
+		        "SALA REGIONAL DEL PACIFICO, CON SEDE EN ACAPULCO, GRO."=>"SALA REGIONAL DEL PACIFICO, CON SEDE EN ACAPULCO, GRO.",
+		        "SEGUNDA SALA REGIONAL DE OCCIDENTE, CON SEDE EN GUADALAJARA, JAL."=>"SEGUNDA SALA REGIONAL DE OCCIDENTE, CON SEDE EN GUADALAJARA, JAL.",
+		        "SEGUNDA SALA REGIONAL DE ORIENTE, CON SEDE EN PUEBLA, PUE."=>"SEGUNDA SALA REGIONAL DE ORIENTE, CON SEDE EN PUEBLA, PUE.",
+		        "SEGUNDA SALA REGIONAL DEL NORESTE, CON SEDE EN MONTERREY, N. L."=>"SEGUNDA SALA REGIONAL DEL NORESTE, CON SEDE EN MONTERREY, N. L.",
+		        "SEGUNDA SALA REGIONAL DEL NORTE CENTRO II, CON SEDE EN TORREON, COAH."=>"SEGUNDA SALA REGIONAL DEL NORTE CENTRO II, CON SEDE EN TORREON, COAH.",
+		        "SEGUNDA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX."=>"SEGUNDA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX.",
+		        "TERCERA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX."=>"TERCERA SALA REGIONAL HIDALGO-MEXICO, CON SEDE EN TLALNEPANTLA, MEX.",
+		        "TRIBUNAL FEDERAL DE JUSTICIA FISCAL Y ADMINISTRATIVA CON SEDE EN EL DISTRITO FEDERAL"=>"TRIBUNAL FEDERAL DE JUSTICIA FISCAL Y ADMINISTRATIVA CON SEDE EN EL DISTRITO FEDERAL",
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+   if ($model->organization=="APORTACIONES FEDERALES PARA ENTIDADES FEDERATIVAS Y MUNICIPIOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"AGUASCALIENTES"=>"AGUASCALIENTES",
+				"BAJA CALIFORNIA SUR"=> "BAJA CALIFORNIA SUR",
+				"BAJA CALIFORNIA"=> "BAJA CALIFORNIA",
+				"CAMPECHE"=>"CAMPECHE",
+				"CHIAPAS"=>"CHIAPAS",
+				"CHIHUAHUA"=>"CHIHUAHUA",
+				"COAHUILA"=>"COAHUILA",
+				"COLIMA"=>"COLIMA",
+				"DISTRITO FEDERAL"=>"DISTRITO FEDERAL",
+				"DURANGO"=>"DURANGO",
+				"ENTIDADES FEDERATIVAS Y MUNICIPIOS"=>"ENTIDADES FEDERATIVAS Y MUNICIPIOS",
+				"GUANAJUATO"=>"GUANAJUATO",
+				"GUERRERO"=>"GUERRERO",
+				"HIDALGO"=>"HIDALGO",
+				"HIDALGO"=>"HIDALGO",
+				"JALISCO"=>"JALISCO",
+				"MEXICO"=> "MEXICO",
+				"MICHOACAN"=> "MICHOACAN",
+				"MORELOS"=>  "MORELOS",
+				"NAYARIT"=>"NAYARIT",
+				"NUEVO LEON"=>"NUEVO LEON",
+				"OAXACA"=>"OAXACA",
+				"PUEBLA"=>  "PUEBLA",
+				"QUERETARO"=> "QUERETARO",
+				"QUINTANA ROO"=>"QUINTANA ROO",
+				"SAN LUIS POTOSI"=>"SAN LUIS POTOSI",
+				"SINALOA"=>        "SINALOA",
+				"SONORA"=>        "SONORA",
+				"TABASCO"=>        "TABASCO",
+				"TAMAULIPAS"=>        "TAMAULIPAS",
+				"TLAXCALA"=>        "TLAXCALA",
+				"VERACRUZ"=>   "VERACRUZ",
+				"YUCATAN"=> "YUCATAN",
+				"ZACATECAS"=>  "ZACATECAS",
+				"TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"=>  "TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL",
+
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+   if ($model->organization=="SECRETARIA DE SEGURIDAD PUBLICA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"CONSEJO DE MENORES"=>"CONSEJO DE MENORES",
+				"COORDINACION GENERAL DE ASUNTOS INTERNOS"=>"COORDINACION GENERAL DE ASUNTOS INTERNOS",
+				"COORDINACION GENERAL DE ASUNTOS JURIDICOS"=>"COORDINACION GENERAL DE ASUNTOS JURIDICOS",
+				"DIRECCION GENERAL DE ADMINISTRACION Y FORMACION DE RECURSOS HUMANOS"=>"DIRECCION GENERAL DE ADMINISTRACION Y FORMACION DE RECURSOS HUMANOS",
+				"DIRECCION GENERAL DE COMUNICACION SOCIAL"=>"DIRECCION GENERAL DE COMUNICACION SOCIAL",
+				"DIRECCION GENERAL DE DESARROLLO TECNOLOGICO"=>"DIRECCION GENERAL DE DESARROLLO TECNOLOGICO",
+				"DIRECCION GENERAL DE PLANEACION Y ESTADISTICA"=>"DIRECCION GENERAL DE PLANEACION Y ESTADISTICA",
+				"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE PROGRAMACION, ORGANIZACION Y PRESUPUESTO",
+				"DIRECCION GENERAL DE PROTECCION DE LOS DERECHOS HUMANOS"=>"DIRECCION GENERAL DE PROTECCION DE LOS DERECHOS HUMANOS",
+				"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES"=>"DIRECCION GENERAL DE RECURSOS MATERIALES Y SERVICIOS GENERALES",
+				"DIRECCION GENERAL DE REGISTRO Y SUPERVISION A EMPRESAS Y SERVICIOS DE SEGURIDAD PRIVADA"=>"DIRECCION GENERAL DE REGISTRO Y SUPERVISION A EMPRESAS Y SERVICIOS DE SEGURIDAD PRIVADA",
+				"DIRECCION GENERAL DE SERVICIOS A LA COMUNIDAD Y PARTICIPACION CIUDADANA"=>"DIRECCION GENERAL DE SERVICIOS A LA COMUNIDAD Y PARTICIPACION CIUDADANA",
+				"DIRECCION GENERAL DE VINCULACION CON INSTITUCIONES POLICIALES"=>"DIRECCION GENERAL DE VINCULACION CON INSTITUCIONES POLICIALES",
+				"OFICIALIA MAYOR"=>"OFICIALIA MAYOR",
+				"POLICIA FEDERAL PREVENTIVA"=>"POLICIA FEDERAL PREVENTIVA",
+				"PREVENCION Y READAPTACION SOCIAL"=>"PREVENCION Y READAPTACION SOCIAL",
+				"SECRETARIA DE SEGURIDAD PUBLICA DE SINALOA"=>"SECRETARIA DE SEGURIDAD PUBLICA DE SINALOA",
+				"SECRETARIA DE SEGURIDAD PUBLICA DEL ESTDO DE YUCATAN"=>"SECRETARIA DE SEGURIDAD PUBLICA DEL ESTDO DE YUCATAN",
+				"SECRETARIA"=>"SECRETARIA",
+				"SECRETARIADO EJECUTIVO DEL SISTEMA NACIONAL DE SEGURIDAD PUBLICA"=>"SECRETARIADO EJECUTIVO DEL SISTEMA NACIONAL DE SEGURIDAD PUBLICA",
+				"SUBSECRETARIA DE SEGURIDAD PUBLICA"=>"SUBSECRETARIA DE SEGURIDAD PUBLICA",
+				"SUBSECRETARIA DE SERVICIOS A LA CIUDADANIA"=>"SUBSECRETARIA DE SERVICIOS A LA CIUDADANIA",
+				"UNIDAD DE CONTRALORIA INTERNA"=>"UNIDAD DE CONTRALORIA INTERNA"
+
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+    if ($model->organization=="FONDO DE APORTACIONES PARA LA EDUCACION BASICA Y NORMAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"AGUASCALIENTES"=>"AGUASCALIENTES",
+			"BAJA CALIFORNIA SUR"=>"BAJA CALIFORNIA SUR",
+			"BAJA CALIFORNIA"=>"BAJA CALIFORNIA",
+			"CAMPECHE"=>"CAMPECHE",
+			"CHIAPAS"=>"CHIAPAS",
+			"CHIHUAHUA"=>"CHIHUAHUA",
+			"COAHUILA"=>"COAHUILA",
+			"COLIMA"=>"COLIMA",
+			"DISTRITO FEDERAL"=>"DISTRITO FEDERAL",
+			"DURANGO"=>"DURANGO",
+			"GUANAJUATO"=>"GUANAJUATO",
+			"GUERRERO"=>"GUERRERO",
+			"JALISCO"=>"JALISCO",
+			"MEXICO"=>"MEXICO",
+			"MICHOACAN"=>"MICHOACAN",
+			"MORELOS"=>"MORELOS",
+			"NAYARIT"=>"NAYARIT",
+			"NUEVO LEON"=>"NUEVO LEON",
+			"OAXACA"=>"OAXACA",
+			"PUEBLA"=>"PUEBLA",
+			"QUERETARO"=>"QUERETARO",
+			"QUINTANA ROO"=>"QUINTANA ROO",
+			"SAN LUIS POTOSI"=>"SAN LUIS POTOSI",
+			"SINALOA"=>"SINALOA",
+			"SONORA"=>"SONORA",
+			"TABASCO"=>"TABASCO",
+			"TAMAULIPAS"=>"TAMAULIPAS",
+			"TLAXCALA"=>"TLAXCALA",
+			"VERACRUZ"=>"VERACRUZ",
+			"YUCATAN"=>"YUCATAN",
+			"ZACATECAS"=>"ZACATECAS",
+			"TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"=>"TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL",
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+    if ($model->organization=="FONDO DE APORTACIONES PARA LA INFRAESTRUCTURA SOCIAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"AGUASCALIENTES"=>"AGUASCALIENTES",
+				"BAJA CALIFORNIA SUR"=>"BAJA CALIFORNIA SUR",
+				"BAJA CALIFORNIA"=>"BAJA CALIFORNIA",
+				"CAMPECHE"=>"CAMPECHE",
+				"CHIAPAS"=>"CHIAPAS",
+				"CHIHUAHUA"=>"CHIHUAHUA",
+				"COAHUILA"=>"COAHUILA",
+				"COLIMA"=>"COLIMA",
+				"DISTRITO FEDERAL"=>"DISTRITO FEDERAL",
+				"DURANGO"=>"DURANGO",
+				"GUANAJUATO"=>"GUANAJUATO",
+				"GUERRERO"=>"GUERRERO",
+				"JALISCO"=>"JALISCO",
+				"MEXICO"=>"MEXICO",
+				"MICHOACAN"=>"MICHOACAN",
+				"MORELOS"=>"MORELOS",
+				"NAYARIT"=>"NAYARIT",
+				"NUEVO LEON"=>"NUEVO LEON",
+				"OAXACA"=>"OAXACA",
+				"PUEBLA"=>"PUEBLA",
+				"QUERETARO"=>"QUERETARO",
+				"QUINTANA ROO"=>"QUINTANA ROO",
+				"SAN LUIS POTOSI"=>"SAN LUIS POTOSI",
+				"SINALOA"=>"SINALOA",
+				"SONORA"=>"SONORA",
+				"TABASCO"=>"TABASCO",
+				"TAMAULIPAS"=>"TAMAULIPAS",
+				"TLAXCALA"=>"TLAXCALA",
+				"VERACRUZ"=>"VERACRUZ",
+				"YUCATAN"=>"YUCATAN",
+				"ZACATECAS"=>"ZACATECAS"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+    if ($model->organization=="FONDO DE APORTACIONES PARA EL FORTALECIMIENTO DE LOS MUNICIPIOS Y DE LAS DEMARCACIONES TERRITORIALES DEL D F"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AGUASCALIENTES"=>"AGUASCALIENTES",
+			"BAJA CALIFORNIA SUR"=>"BAJA CALIFORNIA SUR",
+			"BAJA CALIFORNIA"=>"BAJA CALIFORNIA",
+			"CAMPECHE"=>"CAMPECHE",
+			"CHIAPAS"=>"CHIAPAS",
+			"CHIHUAHUA"=>"CHIHUAHUA",
+			"COAHUILA"=>"COAHUILA",
+			"COLIMA"=>"COLIMA",
+			"DISTRITO FEDERAL"=>"DISTRITO FEDERAL",
+			"DURANGO"=>"DURANGO",
+			"GUANAJUATO"=>"GUANAJUATO",
+			"GUERRERO"=>"GUERRERO",
+			"JALISCO"=>"JALISCO",
+			"MEXICO"=>"MEXICO",
+			"MICHOACAN"=>"MICHOACAN",
+			"MORELOS"=>"MORELOS",
+			"NAYARIT"=>"NAYARIT",
+			"NUEVO LEON"=>"NUEVO LEON",
+			"OAXACA"=>"OAXACA",
+			"PUEBLA"=>"PUEBLA",
+			"QUERETARO"=>"QUERETARO",
+			"QUINTANA ROO"=>"QUINTANA ROO",
+			"SAN LUIS POTOSI"=>"SAN LUIS POTOSI",
+			"SINALOA"=>"SINALOA",
+			"SONORA"=>"SONORA",
+			"TABASCO"=>"TABASCO",
+			"TAMAULIPAS"=>"TAMAULIPAS",
+			"TLAXCALA"=>"TLAXCALA",
+			"VERACRUZ"=>"VERACRUZ",
+			"YUCATAN"=>"YUCATAN",
+			"ZACATECAS"=>"ZACATECAS"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+    if ($model->organization=="FONDO DE APORTACIONES MULTIPLES"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	"AGUASCALIENTES"=>"AGUASCALIENTES",
+			"BAJA CALIFORNIA SUR"=>"BAJA CALIFORNIA SUR",
+			"BAJA CALIFORNIA"=>"BAJA CALIFORNIA",
+			"CAMPECHE"=>"CAMPECHE",
+			"CHIAPAS"=>"CHIAPAS",
+			"CHIHUAHUA"=>"CHIHUAHUA",
+			"COAHUILA"=>"COAHUILA",
+			"COLIMA"=>"COLIMA",
+			"DISTRITO FEDERAL"=>"DISTRITO FEDERAL",
+			"DURANGO"=>"DURANGO",
+			"GUANAJUATO"=>"GUANAJUATO",
+			"GUERRERO"=>"GUERRERO",
+			"JALISCO"=>"JALISCO",
+			"MEXICO"=>"MEXICO",
+			"MICHOACAN"=>"MICHOACAN",
+			"MORELOS"=>"MORELOS",
+			"NAYARIT"=>"NAYARIT",
+			"NUEVO LEON"=>"NUEVO LEON",
+			"OAXACA"=>"OAXACA",
+			"PUEBLA"=>"PUEBLA",
+			"QUERETARO"=>"QUERETARO",
+			"QUINTANA ROO"=>"QUINTANA ROO",
+			"SAN LUIS POTOSI"=>"SAN LUIS POTOSI",
+			"SINALOA"=>"SINALOA",
+			"SONORA"=>"SONORA",
+			"TABASCO"=>"TABASCO",
+			"TAMAULIPAS"=>"TAMAULIPAS",
+			"TLAXCALA"=>"TLAXCALA",
+			"VERACRUZ"=>"VERACRUZ",
+			"YUCATAN"=>"YUCATAN",
+			"ZACATECAS"=>"ZACATECAS",
+			"TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"=>"TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL",
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+    if ($model->organization=="FONDO DE APORTACIONES PARA LA SEGURIDAD PUBLICA DE LOS ESTADOS Y DEL DISTRITO FEDERAL"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"AGUASCALIENTES"=>"AGUASCALIENTES",
+				"BAJA CALIFORNIA SUR"=>"BAJA CALIFORNIA SUR",
+				"BAJA CALIFORNIA"=>"BAJA CALIFORNIA",
+				"CAMPECHE"=>"CAMPECHE",
+				"CHIAPAS"=>"CHIAPAS",
+				"CHIHUAHUA"=>"CHIHUAHUA",
+				"COAHUILA"=>"COAHUILA",
+				"COLIMA"=>"COLIMA",
+				"DISTRITO FEDERAL"=>"DISTRITO FEDERAL",
+				"DURANGO"=>"DURANGO",
+				"GUANAJUATO"=>"GUANAJUATO",
+				"GUERRERO"=>"GUERRERO",
+				"JALISCO"=>"JALISCO",
+				"MEXICO"=>"MEXICO",
+				"MICHOACAN"=>"MICHOACAN",
+				"MORELOS"=>"MORELOS",
+				"NAYARIT"=>"NAYARIT",
+				"NUEVO LEON"=>"NUEVO LEON",
+				"OAXACA"=>"OAXACA",
+				"PUEBLA"=>"PUEBLA",
+				"QUERETARO"=>"QUERETARO",
+				"QUINTANA ROO"=>"QUINTANA ROO",
+				"SAN LUIS POTOSI"=>"SAN LUIS POTOSI",
+				"SINALOA"=>"SINALOA",
+				"SONORA"=>"SONORA",
+				"TABASCO"=>"TABASCO",
+				"TAMAULIPAS"=>"TAMAULIPAS",
+				"TLAXCALA"=>"TLAXCALA",
+				"VERACRUZ"=>"VERACRUZ",
+				"YUCATAN"=>"YUCATAN",
+				"ZACATECAS"=>"ZACATECAS",
+				"ENTIDADES FEDERATIVAS Y MUNICIPIOS"=>"ENTIDADES FEDERATIVAS Y MUNICIPIOS",
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+       if ($model->organization=="FONDO DE APORTACIONES PARA LA EDUCACION TECNOLOGICA Y DE ADULTOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"AGUASCALIENTES"=>"AGUASCALIENTES",
+			"BAJA CALIFORNIA SUR"=>"BAJA CALIFORNIA SUR",
+			"BAJA CALIFORNIA"=>"BAJA CALIFORNIA",
+			"CAMPECHE"=>"CAMPECHE",
+			"CHIAPAS"=>"CHIAPAS",
+			"CHIHUAHUA"=>"CHIHUAHUA",
+			"COAHUILA"=>"COAHUILA",
+			"COLIMA"=>"COLIMA",
+			"DISTRITO FEDERAL"=>"DISTRITO FEDERAL",
+			"DURANGO"=>"DURANGO",
+			"GUANAJUATO"=>"GUANAJUATO",
+			"GUERRERO"=>"GUERRERO",
+			"JALISCO"=>"JALISCO",
+			"MEXICO"=>"MEXICO",
+			"MICHOACAN"=>"MICHOACAN",
+			"MORELOS"=>"MORELOS",
+			"NAYARIT"=>"NAYARIT",
+			"NUEVO LEON"=>"NUEVO LEON",
+			"OAXACA"=>"OAXACA",
+			"PUEBLA"=>"PUEBLA",
+			"QUERETARO"=>"QUERETARO",
+			"QUINTANA ROO"=>"QUINTANA ROO",
+			"SAN LUIS POTOSI"=>"SAN LUIS POTOSI",
+			"SINALOA"=>"SINALOA",
+			"SONORA"=>"SONORA",
+			"TABASCO"=>"TABASCO",
+			"TAMAULIPAS"=>"TAMAULIPAS",
+			"TLAXCALA"=>"TLAXCALA",
+			"VERACRUZ"=>"VERACRUZ",
+			"YUCATAN"=>"YUCATAN",
+			"ZACATECAS"=>"ZACATECAS",
+			"TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"=>"TODOS LOS ESTADOS INCLUYENDO EL DISTRITO FEDERAL"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+       if ($model->organization=="COMISION NACIONAL PARA EL CONOCIMIENTO Y USO DE LA BIODIVERSIDAD"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    	    	"DIRECCION GENERAL DE BIOINFORMATICA"=>"DIRECCION GENERAL DE BIOINFORMATICA",
+                    "DIRECCION TECNICA DE ANALISIS Y PRIORIDADES"=>"DIRECCION TECNICA DE ANALISIS Y PRIORIDADES",
+                    "SECRETARIA EJECUTIVA"=>"SECRETARIA EJECUTIVA"
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+       if ($model->organization=="CAMARA DE DIPUTADOS"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		   "CENTRO DE ESTUDIOS SOCIALES Y DE OPINION PUBLICA"=>"CENTRO DE ESTUDIOS SOCIALES Y DE OPINION PUBLICA",
+                   "COMISION ESPECIAL PARA LA REFORMA DEL ESTADO"=>"COMISION ESPECIAL PARA LA REFORMA DEL ESTADO",
+                   "COORDINACION DE LA DIPUTACION FEDERAL DEL ESTADO DE HIDALGO"=>"COORDINACION DE LA DIPUTACION FEDERAL DEL ESTADO DE HIDALGO",
+
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+    if ($model->organization=="SECRETARIA DE AGRICULTURA GANADERIA DESARROLLO RURAL PESCA Y ALIMENTACION SAGARPA"){
+	    echo $form->dropDownList($model,'second_level',array(
+	    		"CENTRO NACIONAL DE REFERENCIA DE CONTROL BIOLOGICO"=>"CENTRO NACIONAL DE REFERENCIA DE CONTROL BIOLOGICO",
+				"COMITE ESTATAL DE SANIDAD VEGETAL DE QUINTANA ROO"=>"COMITE ESTATAL DE SANIDAD VEGETAL DE QUINTANA ROO",
+				"CONSEJO NACIONAL CONSULTIVO CITOSANITARIO CONACOSI"=>"CONSEJO NACIONAL CONSULTIVO CITOSANITARIO CONACOSI",
+				"DIRECCION GENERAL DE FIBRAS NATURALES Y BIOCOMBUSTIBLES"=>"DIRECCION GENERAL DE FIBRAS NATURALES Y BIOCOMBUSTIBLES",
+
+	    ),
+	   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+	}	   
+   
+   /*Instituciones del sector entidades paraestatales*/
+			   
+			if ($model->organization=="APORTACIONES A SEGURIDAD SOCIAL"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"UNIDAD DE SERVICIO CIVIL"=>"UNIDAD DE SERVICIO CIVIL",
+		"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO A"=>"DIRECCION GENERAL DE PROGRAMACION Y PRESUPUESTO A",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="BANCO DE MEXICO"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"DELEGACION REGIONAL MONTERREY"=>"DELEGACION REGIONAL MONTERREY",
+		"FIDEICOMSIOS INSTITUIDOS EN RELACIÓN CON LA AGRICULTURA"=>"FIDEICOMSIOS INSTITUIDOS EN RELACIÓN CON LA AGRICULTURA",
+		"JUNTA DE GOBIERNO"=>"JUNTA DE GOBIERNO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="CENTRO DE INGENIERIA Y DESARROLLO INDUSTRIAL"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    						"DIRECCION DE INVESTIGACION Y POSGRADO"=>"DIRECCION DE INVESTIGACION Y POSGRADO",
+										"DIRECCION DE TECNOLOGIA DE MATERIALES"=>"DIRECCION DE TECNOLOGIA DE MATERIALES",
+										"GERENCIA DE DISEÑO Y MANUFACTURA MECANICOS"=>"GERENCIA DE DISEÑO Y MANUFACTURA MECANICOS",
+										"GERENCIA DE INGENIERIA EN SOLDADURA INSPECCION Y PRUEBAS"=>"GERENCIA DE INGENIERIA EN SOLDADURA, INSPECCION Y PRUEBAS",
+										"POSGRADO INTERINSTITUCIONAL EN CIENCIA Y TECNOLOGIA"=>"POSGRADO INTERINSTITUCIONAL EN CIENCIA Y TECNOLOGIA",
+										"SEDE NUEVO LEON"=>"SEDE NUEVO LEON",
+										"UNIDAD DE FORMACION ACADEMICA POSGRADUAL"=>"UNIDAD DE FORMACION ACADEMICA POSGRADUAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="CENTRO DE INVESTIGACION CIENTIFICA Y DE EDUCACION SUPERIOR DE ENSENADA BAJA CALIFORNIA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    									"CENTRO DE COMPUTO"=>"CENTRO DE COMPUTO",
+													"COORDINACION ACADEMICA"=>"COORDINACION ACADEMICA",
+													"DEPARATAMENTO DE CIENCIAS DE LA COMPUTACION"=>"DEPARATAMENTO DE CIENCIAS DE LA COMPUTACION",
+													"DEPARTAMENTO DE SERVICIOS ESCOLARES"=>"DEPARTAMENTO DE SERVICIOS ESCOLARES",
+													"DIRECCION DE ESTUDIOS DE POSGRADO"=>"DIRECCION DE ESTUDIOS DE POSGRADO",
+													"DIRECCION DE INNOVACION Y DESARROLLO"=>"DIRECCION DE INNOVACION Y DESARROLLO",
+													"DIRECCION DE PLANEACION"=>"DIRECCION DE PLANEACION",
+													"DIRECCION DE TELEMATICA"=>"DIRECCION DE TELEMATICA",
+													"DIVISION DE BIOLOGIA EXPERIMENTAL Y APLICADA"=>"DIVISION DE BIOLOGIA EXPERIMENTAL Y APLICADA",
+													"DIVISION DE CIENCIAS DE LA TIERRA"=>"DIVISION DE CIENCIAS DE LA TIERRA",
+													"DIVISION DE FISICA APLICADA"=>"DIVISION DE FISICA APLICADA",
+													"DIVISION DE OCEANOLOGIA"=>"DIVISION DE OCEANOLOGIA",
+													"UNIDAD DE BIOLOGIA EXPERIMENTAL Y APLICADA"=>"UNIDAD DE BIOLOGIA EXPERIMENTAL Y APLICADA",
+													"UNIDAD DE TRANSFERENCIA TECNOLÓGICA DE TEPIC"=>"UNIDAD DE TRANSFERENCIA TECNOLÓGICA DE TEPIC",
+													"UNIDAD LA PAZ"=>"UNIDAD LA PAZ",
+													"UNIDAD MONTERREY"=>"UNIDAD MONTERREY",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="CENTRO DE INVESTIGACION EN MATEMATICAS AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    							"AREA CIENCIAS DE LA COMPUTACION"=>"AREA CIENCIAS DE LA COMPUTACION",
+											"AREA DE MATEMATICAS BASICAS"=>"AREA DE MATEMATICAS BASICAS",
+											"AREA DE PROBABILIDAD Y ESTADISTICA"=>"AREA DE PROBABILIDAD Y ESTADISTICA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="CENTRO DE INVESTIGACION EN MATERIALES AVANZADOS SC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    						"CENTRO DE DESARROLLO MATERIALES E INGENIERIA"=>"CENTRO DE DESARROLLO MATERIALES E INGENIERIA",
+		"DEPARTAMENTO DE METALURGIA"=>"DEPARTAMENTO DE METALURGIA",
+		"DEPARTAMENTO DE MICROSCOPIA ELECTRONICA"=>"DEPARTAMENTO DE MICROSCOPIA ELECTRONICA",
+		"DIRECCION GENERAL"=>"DIRECCION GENERAL",
+		"DIVISION DE CARACTERIZACION DE MATERIALES"=>"DIVISION DE CARACTERIZACION DE MATERIALES",
+		"DIVISION DE CIENCIA E INGENIERIA AMBIENTAL"=>"DIVISION DE CIENCIA E INGENIERIA AMBIENTAL",
+		"DIVISION DE DETERIORO DE MATERIALES"=>"DIVISION DE DETERIORO DE MATERIALES",
+		"DIVISION DE ESTUDIO DE SUPERFICIES"=>"DIVISION DE ESTUDIO DE SUPERFICIES",
+		"DIVISION DE FISICA Y QUIMICA DE MATERIALES"=>"DIVISION DE FISICA Y QUIMICA DE MATERIALES",
+		"DIVISION DE INGENIERIA Y PROCESOS DE MAN"=>"DIVISION DE INGENIERIA Y PROCESOS DE MAN",
+		"DIVISION DE MATERIALES CERAMICOS Y BENEFICIO DE MINERALES"=>"DIVISION DE MATERIALES CERAMICOS Y BENEFICIO DE MINERALES",
+		"DIVISION DE MICROSCOPIA"=>"DIVISION DE MICROSCOPIA",
+		"SEP CONACYT"=>"SEP CONACYT",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="CENTRO DE INVESTIGACION EN QUIMICA APLICADA AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    					"DEPARTAMENTO DE PLASTICOS EN AGRICULTURA"=>"DEPARTAMENTO DE PLASTICOS EN AGRICULTURA",
+		"DIRECCION DE INVESTIGACION Y VINCULACION"=>"DIRECCION DE INVESTIGACION Y VINCULACION",
+		"DIVISION DE ESTUDIOS ANALITICOS Y AMBIENTALES"=>"DIVISION DE ESTUDIOS ANALITICOS Y AMBIENTALES",
+		"DIVISION DE PROCESOS QUIMICOS"=>"DIVISION DE PROCESOS QUIMICOS",
+		"DIVISION DE TECNOLOGIA DE PLASTICOS"=>"DIVISION DE TECNOLOGIA DE PLASTICOS",
+		"DIVISION DE TECNOLOGIA DE POLIMEROS"=>"DIVISION DE TECNOLOGIA DE POLIMEROS",
+		"GERENCIA DE FISICOQUIMICA DE POLIOMEROS"=>"GERENCIA DE FISICOQUIMICA DE POLIOMEROS",
+		"GERENCIA DE INGENIERIA DE PROCESOS QUIMICOS"=>"GERENCIA DE INGENIERIA DE PROCESOS QUIMICOS",
+		"GERENCIA DE QUIMICA DE POLIMEROS"=>"GERENCIA DE QUIMICA DE POLIMEROS",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="CENTRO DE INVESTIGACION Y DESARROLLO TECNOLOGICO EN ELECTROQUIMICA SC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"DEPARTAMENTO DE ELECTROQUIMICA"=>"DEPARTAMENTO DE ELECTROQUIMICA",
+		"DEPARTAMENTO DE TECNOLOGIA AMBIENTAL"=>"DEPARTAMENTO DE TECNOLOGIA AMBIENTAL",
+		"DIRECCION GENERAL"=>"DIRECCION GENERAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="CENTRO DE INVESTIGACION Y DOCENCIA ECONOMICAS AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"DEPARTAMENTO DE ESTUDIOS POLITICOS"=>"DEPARTAMENTO DE ESTUDIOS POLITICOS",
+		"DEPARTAMENTO DE HISTORIA"=>"DEPARTAMENTO DE HISTORIA",
+		"DIVISION DE ADMINISTRACION PUBLICA"=>"DIVISION DE ADMINISTRACION PUBLICA",
+		"DIVISION DE ECONOMIA"=>"DIVISION DE ECONOMIA",
+		"DIVISION DE ESTUDIOS INTERNACIONALES"=>"DIVISION DE ESTUDIOS INTERNACIONALES",
+		"DIVISION DE ESTUDIOS JURIDICOS"=>"DIVISION DE ESTUDIOS JURIDICOS",
+		"DIVISION DE ESTUDIOS POLITICOS"=>"DIVISION DE ESTUDIOS POLITICOS",
+		"DIVISION DE HISTORIA"=>"DIVISION DE HISTORIA",
+		"SECRETARIA ACADEMICA"=>"SECRETARIA ACADEMICA",
+		"SECRETARIA GENERAL"=>"SECRETARIA GENERAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+
+				if ($model->organization=="CENTRO DE INVESTIGACIONES EN OPTICA AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"AREA DE DISEÑO OPTICO"=>"AREA DE DISEÑO OPTICO",
+		"AREA DE INTERFEROMETRIA Y OPTOELECTRONICA"=>"AREA DE INTERFEROMETRIA Y OPTOELECTRONICA",
+		"AREA DE INVESTIGACION"=>"AREA DE INVESTIGACION",
+		"AREA DE OPTICA APLICADA Y DESARROLLO TECNOLOGICO"=>"AREA DE OPTICA APLICADA Y DESARROLLO TECNOLOGICO",
+		"AREA DE PROCESAMIENTO DIGITAL DE IMAGENES"=>"AREA DE PROCESAMIENTO DIGITAL DE IMAGENES",
+		"DIRECCION DE FORMACION ACADEMICA"=>"DIRECCION DE FORMACION ACADEMICA",
+		"DIRECCION DE VINCULACION Y DESARROLLO"=>"DIRECCION DE VINCULACION Y DESARROLLO",
+		"GRUPO DE PROPIEDADES OPTICAS DE LA MATERIA"=>"GRUPO DE PROPIEDADES OPTICAS DE LA MATERIA",
+		"LABORATORIO DE LASERES"=>"LABORATORIO DE LASERES",
+		"METROLOGIA OPTICA"=>"METROLOGIA OPTICA",
+		"UNIDAD AGUASCALIENTES"=>"UNIDAD AGUASCALIENTES",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+				if ($model->organization=="CENTRO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES EN ANTROPOLOGIA SOCIAL"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"AREA C: PROCESO HISTORICOS POLITICOS Y"=>"AREA C: PROCESO HISTORICOS, POLITICOS Y",
+		"AREA I PROCESOS SOCIALES EN EL MEDIO RURAL"=>"AREA I PROCESOS SOCIALES EN EL MEDIO RURAL",
+		"AREA II ECONOMIA SOCIEDAD Y PROCESOS URBANOS"=>"AREA II ECONOMIA SOCIEDAD Y PROCESOS URBANOS",
+		"AREA III RELACIONES ETNICAS"=>"AREA III RELACIONES ETNICAS",
+		"AREA IV ESTADO ORGANIZACION POLITICA SOCIAL Y ESTRUCTURA"=>"AREA IV ESTADO ORGANIZACION POLITICA SOCIAL Y ESTRUCTURA",
+		"AREA V PROCESOS AGRARIOS Y CONTEMPORANEOS"=>"AREA V PROCESOS AGRARIOS Y CONTEMPORANEOS",
+		"AREA VI LENGUAJE Y SOCIEDAD"=>"AREA VI LENGUAJE Y SOCIEDAD",
+		"AREA VII CULTURA E IDEOLOGIA"=>"AREA VII CULTURA E IDEOLOGIA",
+		"AREA VIII ANTROPOLOGIA DE LA EDUCACION"=>"AREA VIII ANTROPOLOGIA DE LA EDUCACION",
+		"DIRECCION GENERAL"=>"DIRECCION GENERAL",
+		"DIRECCIÓN ACADÉMICA"=>"DIRECCIÓN ACADÉMICA",
+		"PROGRAMA CHETUMAL"=>"PROGRAMA CHETUMAL",
+		"PROGRAMA NORESTE"=>"PROGRAMA NORESTE",
+		"UNIDAD - D.F."=>"UNIDAD - D.F.",
+		"UNIDAD GOLFO"=>"UNIDAD GOLFO",
+		"UNIDAD NORESTE"=>"UNIDAD NORESTE",
+		"UNIDAD OCCIDENTE"=>"UNIDAD OCCIDENTE",
+		"UNIDAD PACIFICO SUR"=>"UNIDAD PACIFICO SUR",
+		"UNIDAD PENINSULAR"=>"UNIDAD PENINSULAR",
+		"UNIDAD SURESTE"=>"UNIDAD SURESTE",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+				if ($model->organization=="CENTROS DE INTEGRACION JUVENIL AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    					"DIRECCION DE DESARROLLO OPERATIVO"=>"DIRECCION DE DESARROLLO OPERATIVO",
+		"DIRECCION DE INVESTIGACION Y ENSEÑANZA"=>"DIRECCION DE INVESTIGACION Y ENSEÑANZA",
+		"DIRECCION DE PLANEACION"=>"DIRECCION DE PLANEACION",
+		"DIRECCION DE PREVENCION"=>"DIRECCION DE PREVENCION",
+		"DIRECCION DE TRATAMIENTO Y REHABILITACION"=>"DIRECCION DE TRATAMIENTO Y REHABILITACION",
+		"DIRECCION GENERAL ADJUNTA ADMINISTRATIVA"=>"DIRECCION GENERAL ADJUNTA ADMINISTRATIVA",
+		"DIRECCION GENERAL ADJUNTA NORMATIVA"=>"DIRECCION GENERAL ADJUNTA NORMATIVA",
+		"DIRECCION GENERAL ADJUNTA OPERATIVA Y DE PATRONATOS"=>"DIRECCION GENERAL ADJUNTA OPERATIVA Y DE PATRONATOS",
+		"DIRECCION GENERAL"=>"DIRECCION GENERAL",
+		"ORGANO INTERNO DE CONTROL"=>"ORGANO INTERNO DE CONTROL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+				
+				if ($model->organization=="COLEGIO DE POSTGRADUADOS"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"CAMPUS CAMPECHE"=>"CAMPUS CAMPECHE",
+		"CAMPUS CORDOBA"=>"CAMPUS CORDOBA",
+		"CAMPUS MONTECILLO"=>"CAMPUS MONTECILLO",
+		"CAMPUS PUEBLA"=>"CAMPUS PUEBLA",
+		"CAMPUS SAN LUIS POTOSI"=>"CAMPUS SAN LUIS POTOSI",
+		"CAMPUS SAN LUIS POTOSI"=>"CAMPUS SAN LUIS POTOSI",
+		"CAMPUS TABASCO"=>"CAMPUS TABASCO",
+		"CAMPUS VERACRUZ"=>"CAMPUS VERACRUZ",
+		"CENTRO DE BOTANICA"=>"CENTRO DE BOTANICA",
+		"CENTRO DE ECONOMIA AGRICOLA"=>"CENTRO DE ECONOMIA AGRICOLA",
+		"CENTRO DE EDAFOLOGIA"=>"CENTRO DE EDAFOLOGIA",
+		"CENTRO DE ENSEÑANZA, INV. Y CAPACITACION PARA EL ...CEICADAR"=>"CENTRO DE ENSEÑANZA, INV. Y CAPACITACION PARA EL ...CEICADAR",
+		"CENTRO DE ENTOMOLOGIA Y ACAROLOGIA"=>"CENTRO DE ENTOMOLOGIA Y ACAROLOGIA",
+		"CENTRO DE ESTADISTICA Y CALCULO"=>"CENTRO DE ESTADISTICA Y CALCULO",
+		"CENTRO DE ESTUDIOS DEL DESARROLLO RURAL"=>"CENTRO DE ESTUDIOS DEL DESARROLLO RURAL",
+		"CENTRO DE FITOPATOLOGIA"=>"CENTRO DE FITOPATOLOGIA",
+		"CENTRO DE FRUTICULTURA"=>"CENTRO DE FRUTICULTURA",
+		"CENTRO DE GANADERIA"=>"CENTRO DE GANADERIA",
+		"CENTRO DE GENETICA"=>"CENTRO DE GENETICA",
+		"CENTRO DE HIDROCIENCIAS"=>"CENTRO DE HIDROCIENCIAS",
+		"CENTRO REGIONAL DE ENSEÑANZA, CAPACITACION E INVESTIGACION"=>"CENTRO REGIONAL DE ENSEÑANZA, CAPACITACION E INVESTIGACION",
+		"DOCTORADO EN ESTRATEGIAS PARA EL DESARROLLO AGRICOLA REGIONAL"=>"DOCTORADO EN ESTRATEGIAS PARA EL DESARROLLO AGRICOLA REGIONAL",
+		"ESPECIALIDAD DE POSTGRADO EN ECONOMIA INSTITUTO DE SOCIOECONOMIA, ESTADISTICA E INFORMATICA."=>"ESPECIALIDAD DE POSTGRADO EN ECONOMIA INSTITUTO DE SOCIOECONOMIA, ESTADISTICA E INFORMATICA.",
+		"INSTITUTO DE CIENCIAS AGRICOLAS"=>"INSTITUTO DE CIENCIAS AGRICOLAS",
+		"INSTITUTO DE FITOSANIDAD"=>"INSTITUTO DE FITOSANIDAD",
+		"INSTITUTO DE RECURSOS GENETICOS Y PRODUCTIVIDAD"=>"INSTITUTO DE RECURSOS GENETICOS Y PRODUCTIVIDAD",
+		"INSTITUTO DE RECURSOS NATURALES"=>"INSTITUTO DE RECURSOS NATURALES",
+		"INSTITUTO DE SOCIOECONOMIA ESTADISTICA E INFORMATICA"=>"INSTITUTO DE SOCIOECONOMIA ESTADISTICA E INFORMATICA",
+		"PROGRAMA FORESTAL"=>"PROGRAMA FORESTAL",
+		"SECRETARIA GENERAL"=>"SECRETARIA GENERAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+				
+				if ($model->organization=="COMISION ESTATAL DE LOS DERECHOS HUMANOS DE SINALOA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"INSTITUTO DE INVESTIGACIONES EN DERECHOS HUMANOS DE LA COMISIÓN ESTATAL DE LOS DERECHOS HUMANOS DE SINALOA"=>"INSTITUTO DE INVESTIGACIONES EN DERECHOS HUMANOS DE LA COMISIÓN ESTATAL DE LOS DERECHOS HUMANOS DE SINALOA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="COMISION FEDERAL DE ELECTRICIDAD"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"CENTRO NACIONAL DE CAPACITACION CELAYA"=>"CENTRO NACIONAL DE CAPACITACION CELAYA",
+		"COMISION FEDERAL DE ELECTRICIDAD DIVISION CENTRO SUR"=>"COMISION FEDERAL DE ELECTRICIDAD DIVISION CENTRO SUR",
+		"COORDINACION DE PROYECTOS HIDROELECTRICOS"=>"COORDINACION DE PROYECTOS HIDROELECTRICOS",
+		"DIVISION CENTRO OCCIDENTE"=>"DIVISION CENTRO OCCIDENTE",
+		"GERENCIA DE ESTUDIOS DE INGENIERIA CIVIL"=>"GERENCIA DE ESTUDIOS DE INGENIERIA CIVIL",
+		"GERENCIA DE PROYECTOS GEOTERMOELECTRICOS"=>"GERENCIA DE PROYECTOS GEOTERMOELECTRICOS",
+		"GERENCIA REGIONAL DE PRODUCCION CENTRAL"=>"GERENCIA REGIONAL DE PRODUCCION CENTRAL",
+		"LABORATORIO DE PRUEBAS DE EQUIPOS Y MATERIALES"=>"LABORATORIO DE PRUEBAS DE EQUIPOS Y MATERIALES",
+		"SINDICATO ÚNICO DE TRABAJADORES ELECTRICISTAS DE LA REPÚBLICA MEXICANA"=>"SINDICATO ÚNICO DE TRABAJADORES ELECTRICISTAS DE LA REPÚBLICA MEXICANA",
+		"UNIDAD DE INGENIERIA ESPECIALIZADA"=>"UNIDAD DE INGENIERIA ESPECIALIZADA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="COMISION FEDERAL DE ELECTRICIDAD DIVISION BAJIO"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"SUBGERENCIA DE DISTRIBUCION"=>"SUBGERENCIA DE DISTRIBUCION",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="COMISION NACIONAL DE LOS DERECHOS HUMANOS"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    					"CONTRALORIA INTERNA"=>"CONTRALORIA INTERNA",
+		"COORDINACION GENERAL DE ADMINISTRACION"=>"COORDINACION GENERAL DE ADMINISTRACION",
+		"COORDINACION GENERAL DE COMUNICACION Y PROYECTOS"=>"COORDINACION GENERAL DE COMUNICACION Y PROYECTOS",
+		"CUARTA VISITADURIA GENERAL"=>"CUARTA VISITADURIA GENERAL",
+		"DIRECCION GENERAL DE INFORMACION AUTOMATIZADA"=>"DIRECCION GENERAL DE INFORMACION AUTOMATIZADA",
+		"DIRECCION GENERAL DE LA PRESIDENCIA"=>"DIRECCION GENERAL DE LA PRESIDENCIA",
+		"DIRECCION GENERAL DE QUEJAS Y ORIENTACION"=>"DIRECCION GENERAL DE QUEJAS Y ORIENTACION",
+		"DIRECCION GENERAL DEL CENTRO NACIONAL DE DERECHOS HUMANOS"=>"DIRECCION GENERAL DEL CENTRO NACIONAL DE DERECHOS HUMANOS",
+		"PRESIDENCIA"=>"PRESIDENCIA",
+		"PRIMERA VISITADURIA GENERAL"=>"PRIMERA VISITADURIA GENERAL",
+		"SECRETARIA EJECUTIVA"=>"SECRETARIA EJECUTIVA",
+		"SECRETARIA TECNICA DEL CONSEJO CONSULTIVO"=>"SECRETARIA TECNICA DEL CONSEJO CONSULTIVO",
+		"SEGUNDA VISITADURIA GENERAL"=>"SEGUNDA VISITADURIA GENERAL",
+		"TERCERA VISITADURIA GENERAL"=>"TERCERA VISITADURIA GENERAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="COMITE ESTATAL PARA EL FOMENTO Y PROTECCION PECUARIA DEL ESTADO S C CEFPPEQ"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"LABORATORIO DE PATOLOGIA ANIMAL"=>"LABORATORIO DE PATOLOGIA ANIMAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="CORPORACION MEXICANA DE INVESTIGACION EN MATERIALES SA DE CV"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    				"DIRECCION CORPORATIVA"=>"DIRECCION CORPORATIVA",
+		"DIRECCION DE DESARROLLO TECNOLOGICO"=>"DIRECCION DE DESARROLLO TECNOLOGICO",
+		"DIRECCION DE INVESTIGACION"=>"DIRECCION DE INVESTIGACION",
+		"FERDI NT, S.A. DE C. V"=>"FERDI NT, S.A. DE C. V",
+		"UNIDAD CIUDAD DEL CARMEN, CAMPECHE"=>"UNIDAD CIUDAD DEL CARMEN, CAMPECHE",
+		"UNIDAD MONCLOVA"=>"UNIDAD MONCLOVA",
+		"UNIDAD VILLAHERMOSA, TABASCO"=>"UNIDAD VILLAHERMOSA, TABASCO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="DELEGACION DE TLALPAN"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"DIRECCIÓN DE ECOLOGÍA Y DESARROLLO SUSTENTABLE"=>"DIRECCIÓN DE ECOLOGÍA Y DESARROLLO SUSTENTABLE",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="EL COLEGIO DE LA FRONTERA NORTE AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"CENTRO DE ESTUDIOS DE NORTEAMERICA"=>"CENTRO DE ESTUDIOS DE NORTEAMERICA",
+		"CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE DE MEXICO-MEXICALI"=>"CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE DE MEXICO-MEXICALI",
+		"CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE DE MEXICO-TIJUANA"=>"CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE DE MEXICO-TIJUANA",
+		"CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE"=>"CENTRO DE ESTUDIOS FRONTERIZOS DEL NORTE",
+		"DEPARTAMENTO DE ESTUDIOS CULTURALES"=>"DEPARTAMENTO DE ESTUDIOS CULTURALES",
+		"DEPARTAMENTO DE ESTUDIOS DE ADMINISTRACION"=>"DEPARTAMENTO DE ESTUDIOS DE ADMINISTRACION",
+		"DIRECCION DE POSGRADO"=>"DIRECCION DE POSGRADO",
+		"DIRECCION GENERAL ACADEMICA"=>"DIRECCION GENERAL ACADEMICA",
+		"DIRECCION REGIONAL DE MONTERREY"=>"DIRECCION REGIONAL DE MONTERREY",
+		"OFICINA COORDINADORA DE MONTERREY"=>"OFICINA COORDINADORA DE MONTERREY",
+		"OFICINA DE INVESTIGACION-CIUDAD JUAREZ"=>"OFICINA DE INVESTIGACION-CIUDAD JUAREZ",
+		"OFICINA REGIONAL DE MATAMOROS"=>"OFICINA REGIONAL DE MATAMOROS",
+		"UNIDAD REGIONAL CIUDAD JUAREZ"=>"UNIDAD REGIONAL CIUDAD JUAREZ",
+		"UNIDAD REGIONAL MATAMOROS"=>"UNIDAD REGIONAL MATAMOROS",
+		"UNIDAD REGIONAL MEXICALI"=>"UNIDAD REGIONAL MEXICALI",
+		"UNIDAD REGIONAL MONTERREY"=>"UNIDAD REGIONAL MONTERREY",
+		"UNIDAD REGIONAL NOGALES"=>"UNIDAD REGIONAL NOGALES",
+		"UNIDAD REGIONAL NUEVO LAREDO"=>"UNIDAD REGIONAL NUEVO LAREDO",
+		"UNIDAD REGIONAL PIEDRAS NEGRAS"=>"UNIDAD REGIONAL PIEDRAS NEGRAS",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="EL COLEGIO DE LA FRONTERA SUR"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"AREA AGROECOLOGICA"=>"AREA AGROECOLOGICA",
+		"AREA DE CONSERVACION DE LOS RECURSOS NATURALES"=>"AREA DE CONSERVACION DE LOS RECURSOS NATURALES",
+		"AREA DE ESTUDIOS ECONOMICOS Y SOCIALES"=>"AREA DE ESTUDIOS ECONOMICOS Y SOCIALES",
+		"AREA DE SALUD"=>"AREA DE SALUD",
+		"AREA DE SISTEMAS DE PRODUCCION"=>"AREA DE SISTEMAS DE PRODUCCION",
+		"UNIDAD CAMPECHE"=>"UNIDAD CAMPECHE",
+		"UNIDAD CAMPECHE"=>"UNIDAD CAMPECHE",
+		"UNIDAD CHETUMAL"=>"UNIDAD CHETUMAL",
+		"UNIDAD SAN CRISTOBAL DE LAS CASAS"=>"UNIDAD SAN CRISTOBAL DE LAS CASAS",
+		"UNIDAD TAPACHULA"=>"UNIDAD TAPACHULA",
+		"UNIDAD VILLAHERMOSA"=>"UNIDAD VILLAHERMOSA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="EL COLEGIO DE MEXICO AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"BIBLIOTECA COSIO VILLEGAS"=>"BIBLIOTECA COSIO VILLEGAS",
+		"CENTRO DE ESTUDIOS DE ASIA Y AFRICA"=>"CENTRO DE ESTUDIOS DE ASIA Y AFRICA",
+		"CENTRO DE ESTUDIOS DEMOGRAFICOS Y DE DESARROLLO URBANO"=>"CENTRO DE ESTUDIOS DEMOGRAFICOS Y DE DESARROLLO URBANO",
+		"CENTRO DE ESTUDIOS ECONOMICOS"=>"CENTRO DE ESTUDIOS ECONOMICOS",
+		"CENTRO DE ESTUDIOS HISTORICOS"=>"CENTRO DE ESTUDIOS HISTORICOS",
+		"CENTRO DE ESTUDIOS INTERNACIONALES"=>"CENTRO DE ESTUDIOS INTERNACIONALES",
+		"CENTRO DE ESTUDIOS LINGUISTICOS Y LITERARIOS"=>"CENTRO DE ESTUDIOS LINGUISTICOS Y LITERARIOS",
+		"CENTRO DE ESTUDIOS SOCIOLOGICOS"=>"CENTRO DE ESTUDIOS SOCIOLOGICOS",
+		"PROGRAMA INTERDISCIPLINARIO DE ESTUDIOS DE LA MUJER"=>"PROGRAMA INTERDISCIPLINARIO DE ESTUDIOS DE LA MUJER",
+		"SECRETARIA GENERAL"=>"SECRETARIA GENERAL",
+		"UNIDAD DE COMPUTO"=>"UNIDAD DE COMPUTO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="EL COLEGIO DE MICHOACAN AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"CENTRO DE ESTUDIOS ANTROPOLOGICOS"=>"CENTRO DE ESTUDIOS ANTROPOLOGICOS",
+		"CENTRO DE ESTUDIOS ARQUEOLOGICOS"=>"CENTRO DE ESTUDIOS ARQUEOLOGICOS",
+		"CENTRO DE ESTUDIOS DE GEOGRAFIA HUAMANA"=>"CENTRO DE ESTUDIOS DE GEOGRAFIA HUAMANA",
+		"CENTRO DE ESTUDIOS DE LAS TRADICIONES"=>"CENTRO DE ESTUDIOS DE LAS TRADICIONES",
+		"CENTRO DE ESTUDIOS HISTORICOS"=>"CENTRO DE ESTUDIOS HISTORICOS",
+		"CENTRO DE ESTUDIOS RURALES"=>"CENTRO DE ESTUDIOS RURALES",
+		"SECRETARIA GENERAL"=>"SECRETARIA GENERAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="EL COLEGIO DE SAN LUIS AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"PROGRAMA DE ESTUDIOS ANTROPOLOGICOS"=>"PROGRAMA DE ESTUDIOS ANTROPOLOGICOS",
+		"PROGRAMA DE ESTUDIOS LITERARIOS"=>"PROGRAMA DE ESTUDIOS LITERARIOS",
+		"PROGRAMA DE ESTUDIOS POLITICOS E INTERNACIONALES"=>"PROGRAMA DE ESTUDIOS POLITICOS E INTERNACIONALES",
+		"PROGRAMA DE HISTORIA"=>"PROGRAMA DE HISTORIA",
+		"PROGRAMA DE INVESTIGACION DE AGUA Y SOCIEDAD"=>"PROGRAMA DE INVESTIGACION DE AGUA Y SOCIEDAD",
+		"PROGRAMA MEXICO-ESTADOS UNIDOS"=>"PROGRAMA MEXICO-ESTADOS UNIDOS",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="GOBIERNO DEL ESTADO DE SONORA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"CENTRO ECOLOGICO DE SONORA"=>"CENTRO ECOLOGICO DE SONORA",
+		"CENTRO MEDICO IGNACIO CHAVEZ (ISSSTE SONORA)"=>"CENTRO MEDICO IGNACIO CHAVEZ (ISSSTE SONORA)",
+		"COLEGIO DE BACHILLERES DEL ESTADO DE SONORA"=>"COLEGIO DE BACHILLERES DEL ESTADO DE SONORA",
+		"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE SONORA"=>"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE SONORA",
+		"CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE SONORA"=>"CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE SONORA",
+		"CONSEJO SONORENSE PROMOTOR DE LA REGULACIÓN DEL BACANORA"=>"CONSEJO SONORENSE PROMOTOR DE LA REGULACIÓN DEL BACANORA",
+		"H. AYUNTAMIENTO DE SAN LUIS RÍO COLORADO"=>"H. AYUNTAMIENTO DE SAN LUIS RÍO COLORADO",
+		"HOSPITAL GENERAL DEL ESTADO DE SONORA"=>"HOSPITAL GENERAL DEL ESTADO DE SONORA",
+		"INSTITUTO DE ACUACULTURA DEL ESTADO DE SONORA"=>"INSTITUTO DE ACUACULTURA DEL ESTADO DE SONORA",
+		"INSTITUTO DE EVALUACION EDUCATIVA DEL ESTADO DE SONORA"=>"INSTITUTO DE EVALUACION EDUCATIVA DEL ESTADO DE SONORA",
+		"INSTITUTO DEL MEDIO AMBIENTE Y DESARROLLO SUSTENTABLE"=>"INSTITUTO DEL MEDIO AMBIENTE Y DESARROLLO SUSTENTABLE",
+		"INSTITUTO MUNICIPAL DE PLANEACION URBANA DE HERMOSILLO"=>"INSTITUTO MUNICIPAL DE PLANEACION URBANA DE HERMOSILLO",
+		"INSTITUTO SONORENSE DE LA JUVENTUD"=>"INSTITUTO SONORENSE DE LA JUVENTUD",
+		"MUNICIPIO DE CABORCA"=>"MUNICIPIO DE CABORCA",
+		"MUNICIPIO DE CAJEME"=>"MUNICIPIO DE CAJEME",
+		"MUNICIPIO DE HERMOSILLO"=>"MUNICIPIO DE HERMOSILLO",
+		"OPERADORA DE PROYECTOS ESTRATEGICOS DEL ESTADO DE SONORA"=>"OPERADORA DE PROYECTOS ESTRATEGICOS DEL ESTADO DE SONORA",
+		"PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE SONORA"=>"PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE SONORA",
+		"SECRETARIA DE DESARROLLO SOCIAL DEL ESTADO DE SONORA"=>"SECRETARIA DE DESARROLLO SOCIAL DEL ESTADO DE SONORA",
+		"SECRETARIA DE ECONOMIA"=>"SECRETARIA DE ECONOMIA",
+		"SECRETARIA DE EDUCACION Y CULTURA DEL ESTADO DE SONORA"=>"SECRETARIA DE EDUCACION Y CULTURA DEL ESTADO DE SONORA",
+		"SECRETARIA DE INFRAESTRUCTURA URBANA Y ECOLOGIA"=>"SECRETARIA DE INFRAESTRUCTURA URBANA Y ECOLOGIA",
+		"SECRETARIA DE SALUD PUBLICA"=>"SECRETARIA DE SALUD PUBLICA",
+		"SECRETARÍA DE SEGURIDAD PÚBLICA DEL ESTADO DE SONORA"=>"SECRETARÍA DE SEGURIDAD PÚBLICA DEL ESTADO DE SONORA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="HOSPITAL GENERAL NANCHITAL"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"LABORATORIO DE TOXICOLOGIA INDUSTRIAL"=>"LABORATORIO DE TOXICOLOGIA INDUSTRIAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="HOSPITAL INFANTIL DE MEXICO FEDERICO GOMEZ"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"COORDINACION DE LOS INSTITUTO NACIONALES DE SALUD"=>"COORDINACION DE LOS INSTITUTO NACIONALES DE SALUD",
+		"DIVISION DE ASISTENCIA MEDICA"=>"DIVISION DE ASISTENCIA MEDICA",
+		"DIVISION DE INVESTIGACION"=>"DIVISION DE INVESTIGACION",
+		"SUBDIRECCION DE INVESTIGACION"=>"SUBDIRECCION DE INVESTIGACION",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="INSTITUTO DE ECOLOGIA AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"AREA DE ECOLOGIA BIOSISTEMATICA DE ANIMALES Y BIOGEOGRAFIA"=>"AREA DE ECOLOGIA BIOSISTEMATICA DE ANIMALES Y BIOGEOGRAFIA",
+		"AREA DE ECOLOGIA GENERAL Y CONSERVACION DEL GERMOPLASMA"=>"AREA DE ECOLOGIA GENERAL Y CONSERVACION DEL GERMOPLASMA",
+		"AREA DE ECOLOGIA Y CONSERVACION"=>"AREA DE ECOLOGIA Y CONSERVACION",
+		"AREA DE VEGETACION Y FLORA"=>"AREA DE VEGETACION Y FLORA",
+		"CENTRO DE INVESTIGACIONES COSTERAS LA MANCHA"=>"CENTRO DE INVESTIGACIONES COSTERAS LA MANCHA",
+		"CENTRO DE INVESTIGACIONES SOBRE LA SEQUIA"=>"CENTRO DE INVESTIGACIONES SOBRE LA SEQUIA",
+		"CENTRO REGIONAL CHIHUAHUA"=>"CENTRO REGIONAL CHIHUAHUA",
+		"CENTRO REGIONAL DEL BAJIO"=>"CENTRO REGIONAL DEL BAJIO",
+		"CENTRO REGIONAL DURANGO"=>"CENTRO REGIONAL DURANGO",
+		"CENTRO REGIONAL PATZCUARO"=>"CENTRO REGIONAL PATZCUARO",
+		"COORDINACION DE UNIDADES"=>"COORDINACION DE UNIDADES",
+		"DEPARTAMENTO DE PRODUCTOS FORESTALES Y CONSERVACION DE BOSQUES."=>"DEPARTAMENTO DE PRODUCTOS FORESTALES Y CONSERVACION DE BOSQUES.",
+		"DIVISION DE ECOLOGIA"=>"DIVISION DE ECOLOGIA",
+		"DIVISION DE RECURSOS NATURALES"=>"DIVISION DE RECURSOS NATURALES",
+		"DIVISION DE SISTEMATICA"=>"DIVISION DE SISTEMATICA",
+		"JARDIN BOTANICO FRANCISCO JAVIER CLAVIJERO"=>"JARDIN BOTANICO FRANCISCO JAVIER CLAVIJERO",
+		"LABORATORIO DE CIENCIA Y TECNOLOGIA DE LA MADERA"=>"LABORATORIO DE CIENCIA Y TECNOLOGIA DE LA MADERA",
+		"RED DE MANEJO BIORRACIONAL DE PLAGAS Y VECTORES"=>"RED DE MANEJO BIORRACIONAL DE PLAGAS Y VECTORES",
+		"SECRETARIA ACADEMICA"=>"SECRETARIA ACADEMICA",
+		"SECRETARIA DE POSGRADO"=>"SECRETARIA DE POSGRADO",
+		"UNIDAD DE SONORA"=>"UNIDAD DE SONORA",
+		"UNIDAD VERACRUZ"=>"UNIDAD VERACRUZ",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="INSTITUTO DE INVESTIGACIONES DR JOSE MARIA LUIS MORA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"COORDINACION DE CIENCIAS COMPUTACIONALES"=>"COORDINACION DE CIENCIAS COMPUTACIONALES",
+		"COORDINACION DE INVESTIGACION"=>"COORDINACION DE INVESTIGACION",
+		"DIRECCION DE DOCENCIA"=>"DIRECCION DE DOCENCIA",
+		"DIRECCION GENERAL"=>"DIRECCION GENERAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO DE INVESTIGACIONES ELECTRICAS"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"DEPARTAMENTO DE PROCESOS QUIMICOS"=>"DEPARTAMENTO DE PROCESOS QUIMICOS",
+		"DIVISION DE ENERGIAS ALTERNAS"=>"DIVISION DE ENERGIAS ALTERNAS",
+		"DIVISION DE EQUIPOS"=>"DIVISION DE EQUIPOS",
+		"DIVISION DE ESTUDIOS DE INGENIERIA"=>"DIVISION DE ESTUDIOS DE INGENIERIA",
+		"DIVISION DE FUENTES DE ENERGIA"=>"DIVISION DE FUENTES DE ENERGIA",
+		"DIVISION DE INFORMACION TECNOLOGICA Y DESARROLLO PROFESIONAL"=>"DIVISION DE INFORMACION TECNOLOGICA Y DESARROLLO PROFESIONAL",
+		"DIVISION DE INFORMATICA Y DESARROLLO PRODUCTIVO"=>"DIVISION DE INFORMATICA Y DESARROLLO PRODUCTIVO",
+		"DIVISION DE SISTEMAS DE CONTROL"=>"DIVISION DE SISTEMAS DE CONTROL",
+		"DIVISION DE SISTEMAS DE POTENCIA"=>"DIVISION DE SISTEMAS DE POTENCIA",
+		"DIVISION DE SISTEMAS ELECTRICOS"=>"DIVISION DE SISTEMAS ELECTRICOS",
+		"DIVISION DE SISTEMAS MECANICOS"=>"DIVISION DE SISTEMAS MECANICOS",
+		"SECRETARIADO TECNICO"=>"SECRETARIADO TECNICO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="INSTITUTO DE SEGURIDAD SOCIAL Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL ESTADO/CLINICA HOSPITAL CHILPANCINGO"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"INSTITUTO DE SEGURIDAD SOCIAL AL SERVICIO DE LOS TRABAJADORES DEL ESTADO/CLINICA HOSPITAL CHILPANCINGO"=>"INSTITUTO DE SEGURIDAD SOCIAL AL SERVICIO DE LOS TRABAJADORES DEL ESTADO/CLINICA HOSPITAL CHILPANCINGO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL ESTADO"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"CENTRO DE CIRUGIA AMBULATORIA"=>"CENTRO DE CIRUGIA AMBULATORIA",
+		"CENTRO MEDICO NACIONAL 20 DE NOVIEMBRE"=>"CENTRO MEDICO NACIONAL 20 DE NOVIEMBRE",
+		"CLINICA - HOSPITAL DE LA HEROICA CIUDAD DE HUAJUAPAN DE LEÓN"=>"CLINICA - HOSPITAL DE LA HEROICA CIUDAD DE HUAJUAPAN DE LEÓN",
+		"CLINICA DE ESPECIALIDADES DENTALES HONORATO VILLA ACOSTA"=>"CLINICA DE ESPECIALIDADES DENTALES HONORATO VILLA ACOSTA",
+		"CLINICA DE ESPECIALIDADES INDIANILLA"=>"CLINICA DE ESPECIALIDADES INDIANILLA",
+		"CLINICA DE MEDICINA FAMILIAR DR. IGNACIO CHAVEZ"=>"CLINICA DE MEDICINA FAMILIAR DR. IGNACIO CHAVEZ",
+		"CLINICA DE MEDICINA FAMILIAR GUSTAVO A. MADERO"=>"CLINICA DE MEDICINA FAMILIAR GUSTAVO A. MADERO",
+		"CLINICA DE MEDICINA FAMILIAR SALINACRUZ OAXACA"=>"CLINICA DE MEDICINA FAMILIAR SALINACRUZ OAXACA",
+		"CLINICA HOSPITAL ALBERTO PISANTY OVADIA"=>"CLINICA HOSPITAL ALBERTO PISANTY OVADIA",
+		"CLINICA HOSPITAL CHILPANCINGO GUERRERO"=>"CLINICA HOSPITAL CHILPANCINGO GUERRERO",
+		"CLINICA HOSPITAL DE CIUDAD VICTORIA"=>"CLINICA HOSPITAL DE CIUDAD VICTORIA",
+		"CLÍNICA HOSPITAL DR. ISMAEL VÁZQUEZ ORTIZ, ISSSTE-QUERÉTARO"=>"CLÍNICA HOSPITAL DR. ISMAEL VÁZQUEZ ORTIZ, ISSSTE-QUERÉTARO",
+		"CMF+Q DE OMETEPEC GUERRERO"=>"CMF+Q DE OMETEPEC GUERRERO",
+		"DELEGACION ESTATAL CHIAPAS"=>"DELEGACION ESTATAL CHIAPAS",
+		"DELEGACION ESTATAL NUEVO LEON"=>"DELEGACION ESTATAL NUEVO LEON",
+		"DELEGACION REGIONAL ZONA NORTE"=>"DELEGACION REGIONAL ZONA NORTE",
+		"DELEGACIÓN ESTATAL MICHOACÁN"=>"DELEGACIÓN ESTATAL MICHOACÁN",
+		"DIRECCIÓN DE DELEGACIONES"=>"DIRECCIÓN DE DELEGACIONES",
+		"DIRECCIÓN MÉDICA"=>"DIRECCIÓN MÉDICA",
+		"ESCUELA DE NUTRICION"=>"ESCUELA DE NUTRICION",
+		"H. R. DR. MANUEL CÁRDENAS DE LA VEGA"=>"H. R. DR. MANUEL CÁRDENAS DE LA VEGA",
+		"HOSPITAL DR. FERNANDO QUIROZ"=>"HOSPITAL DR. FERNANDO QUIROZ",
+		"HOSPITAL DR. VALENTIN GOMEZ FARIAS"=>"HOSPITAL DR. VALENTIN GOMEZ FARIAS",
+		"HOSPITAL FRANCISCO GALINDO CHAVEZ"=>"HOSPITAL FRANCISCO GALINDO CHAVEZ",
+		"HOSPITAL GENERAL 1 DE OCTUBRE"=>"HOSPITAL GENERAL 1 DE OCTUBRE",
+		"HOSPITAL GENERAL DE SAN LUIS POTOSI"=>"HOSPITAL GENERAL DE SAN LUIS POTOSI",
+		"HOSPITAL GENERAL I.S.S.S.T.E ACAPULCO"=>"HOSPITAL GENERAL I.S.S.S.T.E ACAPULCO",
+		"HOSPITAL GENERAL I.S.S.S.T.E. VERACRUZ"=>"HOSPITAL GENERAL I.S.S.S.T.E. VERACRUZ",
+		"HOSPITAL GENERAL IGNACIO ZARAGOZA"=>"HOSPITAL GENERAL IGNACIO ZARAGOZA",
+		"HOSPITAL GENERAL REGIONAL LIC. ADOLFO LOPEZ MATEOS"=>"HOSPITAL GENERAL REGIONAL LIC. ADOLFO LOPEZ MATEOS",
+		"HOSPITAL ISSSTECALI"=>"HOSPITAL ISSSTECALI",
+		"HOSPITAL JURISDICCIONAL VASCO DE QUIROGA"=>"HOSPITAL JURISDICCIONAL VASCO DE QUIROGA",
+		"HOSPITAL REGIONAL 20 DE NOVIEMBRE"=>"HOSPITAL REGIONAL 20 DE NOVIEMBRE",
+		"HOSPITAL REGIONAL ISSSTE LEÓN"=>"HOSPITAL REGIONAL ISSSTE LEÓN",
+		"HOSPITAL REGIONAL MERIDA"=>"HOSPITAL REGIONAL MERIDA",
+		"INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DE BAJA CALIFORNIA"=>"INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DE BAJA CALIFORNIA",
+		"INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DEL ESTADO DE BAJA CALIFORNIA"=>"INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DEL ESTADO DE BAJA CALIFORNIA",
+		"INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DEL ESTADO DE BAJA CALIFORNIA/ ISSSTECALI BC"=>"INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL GOBIERNO Y MUNICIPIOS DEL ESTADO DE BAJA CALIFORNIA/ ISSSTECALI BC",
+		"INSTITUTO DEL FONDO NACIONAL DE LA VIVIENDA PARA LOS TRABAJADORES"=>"INSTITUTO DEL FONDO NACIONAL DE LA VIVIENDA PARA LOS TRABAJADORES",
+		"ISSSTE DURANGO"=>"ISSSTE DURANGO",
+		"JEFATURA DE LOS SERVICIOS DE INVESTIGACION"=>"JEFATURA DE LOS SERVICIOS DE INVESTIGACION",
+		"SECRETARÍA GENERAL DEL ISSSTE"=>"SECRETARÍA GENERAL DEL ISSSTE",
+		"SUPERISSSTE"=>"SUPERISSSTE",
+		"UNIDAD DE MEDICINA FAMILIAR DE ZIHUATANEJO"=>"UNIDAD DE MEDICINA FAMILIAR DE ZIHUATANEJO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="INSTITUTO MEXICANO DE PSIQUIATRIA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DIVISION DE INVESTIGACION EN NEUROCIENCIAS"=>"DIVISION DE INVESTIGACION EN NEUROCIENCIAS",
+		"SERVICIOS CLINICOS"=>"SERVICIOS CLINICOS",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="INSTITUTO MEXICANO DEL PETROLEO"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"COMPETENCIA DE CIENCIAS BASICAS"=>"COMPETENCIA DE CIENCIAS BASICAS",
+		"COMPETENCIA DE CONTROL E INSTRUMENTACION"=>"COMPETENCIA DE CONTROL E INSTRUMENTACION",
+		"COORDINACION DE INVESTIGACION Y DESARROLLO"=>"COORDINACION DE INVESTIGACION Y DESARROLLO",
+		"COORDINACION DE TRATAMIENTO DE CRUDO MAYA"=>"COORDINACION DE TRATAMIENTO DE CRUDO MAYA",
+		"COORDINACION DEL PROGRAMA DE BIOTECNOLOGIA DEL PETROLEO"=>"COORDINACION DEL PROGRAMA DE BIOTECNOLOGIA DEL PETROLEO",
+		"DELEGACION REGIONAL NORTE (POZA RICA, VER.)"=>"DELEGACION REGIONAL NORTE (POZA RICA, VER.)",
+		"DIRECCION EJECUTIVA DE CAPACITACION"=>"DIRECCION EJECUTIVA DE CAPACITACION",
+		"DIRECCION EJECUTIVA DE COMPETENCIAS"=>"DIRECCION EJECUTIVA DE COMPETENCIAS",
+		"DIRECCION EJECUTIVA DE EXPLORACION Y PRODUCCION"=>"DIRECCION EJECUTIVA DE EXPLORACION Y PRODUCCION",
+		"DIRECCION EJECUTIVA DE INGENIERIA DE PROCESO"=>"DIRECCION EJECUTIVA DE INGENIERIA DE PROCESO",
+		"DIRECCION EJECUTIVA DE INGENIERIA DE PRODUCCION"=>"DIRECCION EJECUTIVA DE INGENIERIA DE PRODUCCION",
+		"DIRECCION EJECUTIVA DE INVESTIGACION Y POSGRADO"=>"DIRECCION EJECUTIVA DE INVESTIGACION Y POSGRADO",
+		"DIRECCION EJECUTIVA DE INVESTIGACION Y POSGRADO"=>"DIRECCION EJECUTIVA DE INVESTIGACION Y POSGRADO",
+		"DIRECCION EJECUTIVA DE INVESTIGACION"=>"DIRECCION EJECUTIVA DE INVESTIGACION",
+		"DIRECCION EJECUTIVA DE PLANEACION Y DESARROLLO"=>"DIRECCION EJECUTIVA DE PLANEACION Y DESARROLLO",
+		"DIRECCION EJECUTIVA DE PROCESO Y MEDIO AMBIENTE"=>"DIRECCION EJECUTIVA DE PROCESO Y MEDIO AMBIENTE",
+		"DIRECCION EJECUTIVA TECNICA"=>"DIRECCION EJECUTIVA TECNICA",
+		"DIRECCION GENERAL"=>"DIRECCION GENERAL",
+		"DIRECCION REGIONAL ZONA CENTRO (VERACRUZ)"=>"DIRECCION REGIONAL ZONA CENTRO (VERACRUZ)",
+		"DIRECCION REGIONAL ZONA CENTRO"=>"DIRECCION REGIONAL ZONA CENTRO",
+		"DIRECCION REGIONAL ZONA MARINA ( CD. DEL CARMEN, CAMP. )"=>"DIRECCION REGIONAL ZONA MARINA ( CD. DEL CARMEN, CAMP. )",
+		"DIRECCION REGIONAL ZONA SUR ( VILLAHERMOSA, TAB. )"=>"DIRECCION REGIONAL ZONA SUR ( VILLAHERMOSA, TAB. )",
+		"PROGRAMA DE INGENIERIA MOLECULAR"=>"PROGRAMA DE INGENIERIA MOLECULAR",
+		"PROGRAMAS DE INVESTIGACION"=>"PROGRAMAS DE INVESTIGACION",
+		"PROGRAMAS DE INVESTIGACION"=>"PROGRAMAS DE INVESTIGACION", 
+		"SUBDIR. DE TECNOLOGIA AMBIENTAL, ENERGIA Y DESARR. DE PROD."=>"SUBDIR. DE TECNOLOGIA AMBIENTAL, ENERGIA Y DESARR. DE PROD.",
+		"SUBDIRECCION DE DESARROLLO TECN. EN EXPLORACION Y PRODUCCION"=>"SUBDIRECCION DE DESARROLLO TECN. EN EXPLORACION Y PRODUCCION",
+		"SUBDIRECCION DE INVESTIGACION BASICA DE PROCESOS"=>"SUBDIRECCION DE INVESTIGACION BASICA DE PROCESOS",
+		"SUBDIRECCION DE INVESTIGACION Y TECNOLOGIA"=>"SUBDIRECCION DE INVESTIGACION Y TECNOLOGIA",
+		"SUBDIRECCION DE PROYECTOS ESTRATEGICOS"=>"SUBDIRECCION DE PROYECTOS ESTRATEGICOS",
+		"SUBDIRECCION DE TECNOLOGIA AMBIENTAL, ENERGIA"=>"SUBDIRECCION DE TECNOLOGIA AMBIENTAL, ENERGIA",
+		"SUBDIRECCION DE TRANSFORMACION INDUSTRIA"=>"SUBDIRECCION DE TRANSFORMACION INDUSTRIA",
+		"SUBDIRECCION DE TRANSFORMACION INDUSTRIAL"=>"SUBDIRECCION DE TRANSFORMACION INDUSTRIAL",
+		"SUBDIRECCION GENERAL DE CAPACITACION Y DESARROLLO"=>"SUBDIRECCION GENERAL DE CAPACITACION Y DESARROLLO",
+		"SUBDIRECCION GENERAL DE INVESTIGACION APLICADA"=>"SUBDIRECCION GENERAL DE INVESTIGACION APLICADA",
+		"SUBDIRECCION GENERAL DE TECNOLOGIA DE EXPLORACION"=>"SUBDIRECCION GENERAL DE TECNOLOGIA DE EXPLORACION",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO MEXICANO DEL SEGURO SOCIAL"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"BIBLIOTECA CENTRAL DEL CENTRO MEDICO NACIONAL"=>"BIBLIOTECA CENTRAL DEL CENTRO MEDICO NACIONAL",
+		"CENTRO COMUNITARIO DE SALUD MENTAL, IMSS, JALISCO"=>"CENTRO COMUNITARIO DE SALUD MENTAL, IMSS, JALISCO",
+		"CENTRO DE INVESTIGACION BIOMEDICA DE MICHOACAN"=>"CENTRO DE INVESTIGACION BIOMEDICA DE MICHOACAN",
+		"CENTRO DE INVESTIGACION BIOMEDICA DE OCCIDENTE"=>"CENTRO DE INVESTIGACION BIOMEDICA DE OCCIDENTE",
+		"CENTRO DE INVESTIGACION BIOMEDICA DE ORIENTE"=>"CENTRO DE INVESTIGACION BIOMEDICA DE ORIENTE",
+		"CENTRO DE INVESTIGACION BIOMEDICA DEL D.F."=>"CENTRO DE INVESTIGACION BIOMEDICA DEL D.F.",
+		"CENTRO DE INVESTIGACION BIOMEDICA DEL NORESTE"=>"CENTRO DE INVESTIGACION BIOMEDICA DEL NORESTE",
+		"CENTRO DE INVESTIGACION BIOMEDICA DEL SUR"=>"CENTRO DE INVESTIGACION BIOMEDICA DEL SUR",
+		"CENTRO MEDICO LA RAZA"=>"CENTRO MEDICO LA RAZA",
+		"CENTRO MEDICO NACIONAL ADOLFO RUIZ CORTINES"=>"CENTRO MEDICO NACIONAL ADOLFO RUIZ CORTINES",
+		"CENTRO MEDICO NACIONAL DE OCCIDENTE"=>"CENTRO MEDICO NACIONAL DE OCCIDENTE",
+		"CENTRO MEDICO NACIONAL LIC. IGNACIO GARCIA TELLEZ"=>"CENTRO MEDICO NACIONAL LIC. IGNACIO GARCIA TELLEZ",
+		"CENTRO MEDICO NACIONAL SIGLO XXI"=>"CENTRO MEDICO NACIONAL SIGLO XXI",
+		"CLINICA HOSPITAL NO. 1 (HIDALGO)"=>"CLINICA HOSPITAL NO. 1 (HIDALGO)",
+		"COORDINACION DE INVESTIGACION EN SALUD"=>"COORDINACION DE INVESTIGACION EN SALUD",
+		"COORDINACION DE INVESTIGACION MEDICA"=>"COORDINACION DE INVESTIGACION MEDICA",
+		"COORDINACION DELEGACIONAL DE SALUD COMUNITARIA"=>"COORDINACION DELEGACIONAL DE SALUD COMUNITARIA",
+		"DELEGACION ESTATAL DE GUANAJUATO"=>"DELEGACION ESTATAL DE GUANAJUATO",
+		"DELEGACION ESTATAL EN COAHUILA"=>"DELEGACION ESTATAL EN COAHUILA",
+		"DELEGACION ESTATAL EN TABASCO"=>"DELEGACION ESTATAL EN TABASCO",
+		"DELEGACION ESTATAL I.M.S.S. COLIMA"=>"DELEGACION ESTATAL I.M.S.S. COLIMA",
+		"DELEGACION JALISCO"=>"DELEGACION JALISCO",
+		"DELEGACION MORELOS"=>"DELEGACION MORELOS",
+		"DELEGACION REGIONAL HIDALGO"=>"DELEGACION REGIONAL HIDALGO",
+		"DELEGACION VERACRUZ NORTE"=>"DELEGACION VERACRUZ NORTE",
+		"DIRECCION DE PRESTACIONES MEDICAS."=>"DIRECCION DE PRESTACIONES MEDICAS.",
+		"HOSPITAL DE CARDIOLOGIA DR. LUIS MENDEZ (DELEGACION NUM. 5)"=>"HOSPITAL DE CARDIOLOGIA DR. LUIS MENDEZ (DELEGACION NUM. 5)",
+		"HOSPITAL DE ESPECIALIDADES C.M.N. (DELEGACION NUM. 2)"=>"HOSPITAL DE ESPECIALIDADES C.M.N. (DELEGACION NUM. 2)",
+		"HOSPITAL DE ESPECIALIDADES C.M.R. (DELEGACION NO. 2)"=>"HOSPITAL DE ESPECIALIDADES C.M.R. (DELEGACION NO. 2)",
+		"HOSPITAL DE ESPECIALIDADES NO. 21"=>"HOSPITAL DE ESPECIALIDADES NO. 21",
+		"HOSPITAL DE ESPECIALIDADES NO. 25"=>"HOSPITAL DE ESPECIALIDADES NO. 25",
+		"HOSPITAL DE ESPECIALIDADES, CMN"=>"HOSPITAL DE ESPECIALIDADES, CMN",
+		"HOSPITAL DE ESPECILIDADES DE GUADALAJARA"=>"HOSPITAL DE ESPECILIDADES DE GUADALAJARA",
+		"HOSPITAL DE GINECO-OBSTETRICIA 1"=>"HOSPITAL DE GINECO-OBSTETRICIA 1",
+		"HOSPITAL DE GINECO-OBSTETRICIA 3 (DELEGACION NUM. 3)"=>"HOSPITAL DE GINECO-OBSTETRICIA 3 (DELEGACION NUM. 3)",
+		"HOSPITAL DE GINECO-OBSTETRICIA NO. 2 (DELEGACION NO. 5)"=>"HOSPITAL DE GINECO-OBSTETRICIA NO. 2 (DELEGACION NO. 5)",
+		"HOSPITAL DE GINECO-OBSTETRICIA NO. 3-A (DELEGACION NO. 3)"=>"HOSPITAL DE GINECO-OBSTETRICIA NO. 3-A (DELEGACION NO. 3)",
+		"HOSPITAL DE GINECO-OBSTETRICIA NUM. 4 (DELEGACION NUM. 6)"=>"HOSPITAL DE GINECO-OBSTETRICIA NUM. 4 (DELEGACION NUM. 6)",
+		"HOSPITAL DE GINECO-PEDIATRIA (CENTRO MEDICO DE OCCIDENTE)"=>"HOSPITAL DE GINECO-PEDIATRIA (CENTRO MEDICO DE OCCIDENTE)",
+		"HOSPITAL DE INFECTOLOGIA C.M.R. (DELEGACION NUM. 2)"=>"HOSPITAL DE INFECTOLOGIA C.M.R. (DELEGACION NUM. 2)",
+		"HOSPITAL DE ONCOLOGIA C.M.N. (DELEGACION NUM. 5)"=>"HOSPITAL DE ONCOLOGIA C.M.N. (DELEGACION NUM. 5)",
+		"HOSPITAL DE PEDIATRIA C.M.N. (DELEGACION NUM. 5)"=>"HOSPITAL DE PEDIATRIA C.M.N. (DELEGACION NUM. 5)",
+		"HOSPITAL DE TRAUMATOLOGIA MAGDALENA DE LAS SALINAS"=>"HOSPITAL DE TRAUMATOLOGIA MAGDALENA DE LAS SALINAS",
+		"HOSPITAL GENERAL DE ZONA 1-A"=>"HOSPITAL GENERAL DE ZONA 1-A",
+		"HOSPITAL GENERAL DE ZONA 76 ESTADO DE MEXICO"=>"HOSPITAL GENERAL DE ZONA 76 ESTADO DE MEXICO",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 CHIHUAHUA"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 CHIHUAHUA",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 DURANGO"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 DURANGO",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 MORELIA"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR 1 MORELIA",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 1"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 1",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 15"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 15",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 24"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 24",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 29 (DELEGACION NO. 2)"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 29 (DELEGACION NO. 2)",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 36"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 36",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 4"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 4",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 6"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 6",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 8 (DELEGACION NO.6)"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NO. 8 (DELEGACION NO.6)",
+		"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NUM. 68 (DELEGACION NUM. 3)"=>"HOSPITAL GENERAL DE ZONA CON MEDICINA FAMILIAR NUM. 68 (DELEGACION NUM. 3)",
+		"HOSPITAL GENERAL DE ZONA II NO. 1"=>"HOSPITAL GENERAL DE ZONA II NO. 1",
+		"HOSPITAL GENERAL DE ZONA NO. 10"=>"HOSPITAL GENERAL DE ZONA NO. 10",
+		"HOSPITAL GENERAL DE ZONA NO. 12"=>"HOSPITAL GENERAL DE ZONA NO. 12",
+		"HOSPITAL GENERAL DE ZONA NO. 16"=>"HOSPITAL GENERAL DE ZONA NO. 16",
+		"HOSPITAL GENERAL DE ZONA NO. 2"=>"HOSPITAL GENERAL DE ZONA NO. 2",
+		"HOSPITAL GENERAL DE ZONA NO. 2-A (DELEGACION NO. 4)"=>"HOSPITAL GENERAL DE ZONA NO. 2-A (DELEGACION NO. 4)",
+		"HOSPITAL GENERAL DE ZONA NO. 25 (DELEGACION NO. 4)"=>"HOSPITAL GENERAL DE ZONA NO. 25 (DELEGACION NO. 4)",
+		"HOSPITAL GENERAL DE ZONA NO. 27 (DELEGACION NO. 2)"=>"HOSPITAL GENERAL DE ZONA NO. 27 (DELEGACION NO. 2)",
+		"HOSPITAL GENERAL DE ZONA NO. 35"=>"HOSPITAL GENERAL DE ZONA NO. 35",
+		"HOSPITAL GENERAL DE ZONA NO. 45"=>"HOSPITAL GENERAL DE ZONA NO. 45",
+		"HOSPITAL GENERAL DE ZONA NO. 46"=>"HOSPITAL GENERAL DE ZONA NO. 46",
+		"HOSPITAL GENERAL DE ZONA NO. 57 LA QUEBRADA"=>"HOSPITAL GENERAL DE ZONA NO. 57 LA QUEBRADA",
+		"HOSPITAL GENERAL DE ZONA NO. 58 (DELEGACION NO. 1)"=>"HOSPITAL GENERAL DE ZONA NO. 58 (DELEGACION NO. 1)",
+		"HOSPITAL GENERAL DE ZONA NO. 89"=>"HOSPITAL GENERAL DE ZONA NO. 89",
+		"HOSPITAL GENERAL DE ZONA NUM. 1-A (DELEGACION NUM. 5)"=>"HOSPITAL GENERAL DE ZONA NUM. 1-A (DELEGACION NUM. 5)",
+		"HOSPITAL GENERAL DE ZONA NUM. 30"=>"HOSPITAL GENERAL DE ZONA NUM. 30",
+		"HOSPITAL GENERAL DEL C.M.N. (DELEGACION 5)"=>"HOSPITAL GENERAL DEL C.M.N. (DELEGACION 5)",
+		"HOSPITAL GENERAL DEL CENTRO MEDICO LA RAZA (DELEGACION NUM. 2)"=>"HOSPITAL GENERAL DEL CENTRO MEDICO LA RAZA (DELEGACION NUM. 2)",
+		"HOSPITAL GENERAL REGIONAL 1 GABRIEL MANCERA"=>"HOSPITAL GENERAL REGIONAL 1 GABRIEL MANCERA",
+		"HOSPITAL GENERAL REGIONAL DE ORIZABA"=>"HOSPITAL GENERAL REGIONAL DE ORIZABA",
+		"HOSPITAL GENERAL REGIONAL NO 20"=>"HOSPITAL GENERAL REGIONAL NO 20",
+		"HOSPITAL REGIONAL DE ESPECIALIDADES NO. 23"=>"HOSPITAL REGIONAL DE ESPECIALIDADES NO. 23",
+		"HOSPITAL REGIONAL NO. 34 DE MONTERREY"=>"HOSPITAL REGIONAL NO. 34 DE MONTERREY",
+		"HOSPITAL REGIONAL NUMERO 25"=>"HOSPITAL REGIONAL NUMERO 25",
+		"JEFATURA DE CONTROL DE CALIDAD"=>"JEFATURA DE CONTROL DE CALIDAD",
+		"JEFATURA DE SERVICIOS DE INVESTIGACION MEDICA C.M.N."=>"JEFATURA DE SERVICIOS DE INVESTIGACION MEDICA C.M.N.",
+		"JEFATURA DE SERVICIOS DE PLANIFICACION FAMILIAR"=>"JEFATURA DE SERVICIOS DE PLANIFICACION FAMILIAR",
+		"JEFATURA DE SERVICIOS DE SALUD EN EL TRABAJO C.M.N., (DELEGACION NUM. 5)"=>"JEFATURA DE SERVICIOS DE SALUD EN EL TRABAJO C.M.N., (DELEGACION NUM. 5)",
+		"JEFATURA REGIONAL DE SERVICIOS MEDICOS"=>"JEFATURA REGIONAL DE SERVICIOS MEDICOS",
+		"SUBDIRECCION GENERAL MEDICA"=>"SUBDIRECCION GENERAL MEDICA",
+		"UNIDAD DE INV. EN EPIDEMIOLOGIA Y EN SERVICIOS DE SALUD, MOR."=>"UNIDAD DE INV. EN EPIDEMIOLOGIA Y EN SERVICIOS DE SALUD, MOR.",
+		"UNIDAD DE INVESTIGACION BIOMEDICA DE OCCIDENTE"=>"UNIDAD DE INVESTIGACION BIOMEDICA DE OCCIDENTE",
+		"UNIDAD DE INVESTIGACION BIOMEDICA DEL NOROESTE"=>"UNIDAD DE INVESTIGACION BIOMEDICA DEL NOROESTE",
+		"UNIDAD DE INVESTIGACION CLINICA EN ENFERMEDADES DEL APARATO DIGESTIVO"=>"UNIDAD DE INVESTIGACION CLINICA EN ENFERMEDADES DEL APARATO DIGESTIVO",
+		"UNIDAD DE INVESTIGACION CLINICA EN ENFERMEDADES INFECCIOSAS Y PARASITARIAS"=>"UNIDAD DE INVESTIGACION CLINICA EN ENFERMEDADES INFECCIOSAS Y PARASITARIAS",
+		"UNIDAD DE INVESTIGACION EN ENFERMEDADES NEFROLOGICAS"=>"UNIDAD DE INVESTIGACION EN ENFERMEDADES NEFROLOGICAS",
+		"UNIDAD DE INVESTIGACION EN MEDICINA TRADICIONAL Y DESARROLLO DE MEDICAMENTOS"=>"UNIDAD DE INVESTIGACION EN MEDICINA TRADICIONAL Y DESARROLLO DE MEDICAMENTOS",
+		"UNIDAD DE INVESTIGACION EPIDEMIOLOGICA Y SERVICIOS DE SALUD DE ADOLESCENTES"=>"UNIDAD DE INVESTIGACION EPIDEMIOLOGICA Y SERVICIOS DE SALUD DE ADOLESCENTES",
+		"UNIDAD DE MEDICINA FAMILIAR NO. 25"=>"UNIDAD DE MEDICINA FAMILIAR NO. 25",
+		"UNIDAD DE MEDICINA FAMILIAR NO. 60 (DELEGACION NO. 1)"=>"UNIDAD DE MEDICINA FAMILIAR NO. 60 (DELEGACION NO. 1)",
+		"UNIDAD DE MEDICINA FAMILIAR NO. 61 CON HOSPITALIZACION"=>"UNIDAD DE MEDICINA FAMILIAR NO. 61 CON HOSPITALIZACION",
+		"UNIDAD DE MEDICINA FAMILIAR NO. 7"=>"UNIDAD DE MEDICINA FAMILIAR NO. 7",
+		"UNIDAD DURANGO"=>"UNIDAD DURANGO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="INSTITUTO NACIONAL DE ADMINISTRACION PUBLICA AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    										"CENTRO DE ESTUDIOS DE ADMINISTRACION ESTATAL Y MUNICIPAL"=>"CENTRO DE ESTUDIOS DE ADMINISTRACION ESTATAL Y MUNICIPAL",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE ANTROPOLOGIA E HISTORIA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"CENTROS INAH"=>"CENTROS INAH",
+		"COORDINACION NACIONAL DE DIFUSION"=>"COORDINACION NACIONAL DE DIFUSION",
+		"COORDINACION NACIONAL DE MUSEOS Y EXPOSICIONES"=>"COORDINACION NACIONAL DE MUSEOS Y EXPOSICIONES",
+		"DELEGACIÓN CAMPECHE"=>"DELEGACIÓN CAMPECHE",
+		"ESCUELA DE ANTROPOLOGÍA E HISTORIA DEL NORTE DE MEXICO"=>"ESCUELA DE ANTROPOLOGÍA E HISTORIA DEL NORTE DE MEXICO",
+		"ESCUELA DE ANTROPOLOGÍA E HISTORIA DEL NORTE DE MÉXICO"=>"ESCUELA DE ANTROPOLOGÍA E HISTORIA DEL NORTE DE MÉXICO",
+		"ESCUELA NACIONAL DE ANTROPOLOGIA E HISTORIA"=>"ESCUELA NACIONAL DE ANTROPOLOGIA E HISTORIA",
+		"ESCUELA NACIONAL DE CONSERVACION RESTAURACION Y MUSEOGRAFIA"=>"ESCUELA NACIONAL DE CONSERVACION RESTAURACION Y MUSEOGRAFIA",
+		"MUSEO DE EL CARMEN"=>"MUSEO DE EL CARMEN",
+		"MUSEO NACIONAL DE HISTORIA"=>"MUSEO NACIONAL DE HISTORIA",
+		"SECRETARIA ADMINISTRATIVA"=>"SECRETARIA ADMINISTRATIVA",
+		"SECRETARIA TECNICA"=>"SECRETARIA TECNICA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE BELLAS ARTES Y LITERATURA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"ACADEMIA DE LA DANZA MEXICANA"=>"ACADEMIA DE LA DANZA MEXICANA",
+		"CENTRO NACIONAL DE INVESTIGACION TEATRAL RODOLFO USIGLI"=>"CENTRO NACIONAL DE INVESTIGACION TEATRAL RODOLFO USIGLI",
+		"CENTRO NACIONAL DE INVESTIGACION Y DOCUMENTACION DE LA DANZA"=>"CENTRO NACIONAL DE INVESTIGACION Y DOCUMENTACION DE LA DANZA",
+		"CENTRO NACIONAL DE INVESTIGACION, DOCUMENTACION E INFORMACION DE ARTES PLASTICAS"=>"CENTRO NACIONAL DE INVESTIGACION, DOCUMENTACION E INFORMACION DE ARTES PLASTICAS",
+		"CENTRO NACIONAL DE INVESTIGACIÓN, DOCUMENTACIÓN E INFORMACIÓN TEATRAL RODOLFO USIGLI"=>"CENTRO NACIONAL DE INVESTIGACIÓN, DOCUMENTACIÓN E INFORMACIÓN TEATRAL RODOLFO USIGLI",
+		"CENTRO NAL. DE INVES. DOCUMENTACION E INFORMACION MUSICAL"=>"CENTRO NAL. DE INVES. DOCUMENTACION E INFORMACION MUSICAL",
+		"CONSERVATORIO NACIONAL DE MÚSICA"=>"CONSERVATORIO NACIONAL DE MÚSICA",
+		"COORDINACION NACIONAL DE MUSICA Y OPERA"=>"COORDINACION NACIONAL DE MUSICA Y OPERA",
+		"COORDINACIÓN NACIONAL DE LITERATURA"=>"COORDINACIÓN NACIONAL DE LITERATURA",
+		"DEPARTAMENTO DE INGENIERIA EN SISTEMAS COMPUTACIONALES"=>"DEPARTAMENTO DE INGENIERIA EN SISTEMAS COMPUTACIONALES",
+		"ESCUELA DE DISEÑO"=>"ESCUELA DE DISEÑO",
+		"ESCUELA NACIONAL DE PINTURA ESCULTURA Y GRABADO LA ESMERALDA"=>"ESCUELA NACIONAL DE PINTURA ESCULTURA Y GRABADO LA ESMERALDA",
+		"ESCUELA SUPERIOR DE MÚSICA"=>"ESCUELA SUPERIOR DE MÚSICA",
+		"INSTITUTO MEXICANO DEL ROCK EN ESPAÑOL"=>"INSTITUTO MEXICANO DEL ROCK EN ESPAÑOL",
+		"INSTITUTO MEXICANO DEL ROCK PLUS PLUS"=>"INSTITUTO MEXICANO DEL ROCK PLUS PLUS",
+		"MUSEO DE ARTE MODERNO"=>"MUSEO DE ARTE MODERNO",
+		"MUSEO NACIONAL DE ARTE"=>"MUSEO NACIONAL DE ARTE",
+		"SECRETARIA DE EDUCACION Y CULTURA"=>"SECRETARIA DE EDUCACION Y CULTURA",
+		"SUBDIRECCION GENERAL DE EDUCACION E INVESTIGACION ARTISTICA"=>"SUBDIRECCION GENERAL DE EDUCACION E INVESTIGACION ARTISTICA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE CANCEROLOGIA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"DIVISION DE INVESTIGACION BASICA"=>"DIVISION DE INVESTIGACION BASICA",
+		"DIVISION DE INVESTIGACION CLINICA"=>"DIVISION DE INVESTIGACION CLINICA",
+		"DIVISION MEDICA"=>"DIVISION MEDICA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+
+			if ($model->organization=="INSTITUTO NACIONAL DE CARDIOLOGIA IGNACIO CHAVEZ"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DEPARTAMENTO DE BIOQUIMICA"=>"DEPARTAMENTO DE BIOQUIMICA",
+		"DEPARTAMENTO DE CULTIVO DE TEJIDOS"=>"DEPARTAMENTO DE CULTIVO DE TEJIDOS",
+		"DEPARTAMENTO DE FISIOLOGIA"=>"DEPARTAMENTO DE FISIOLOGIA",
+		"DEPARTAMENTO DE NEFROLOGIA"=>"DEPARTAMENTO DE NEFROLOGIA",
+		"DIVISION DE ASISTENCIA"=>"DIVISION DE ASISTENCIA",
+		"DIVISION DE CIENCIAS BASICAS"=>"DIVISION DE CIENCIAS BASICAS",
+		"DIVISION DE INVESTIGACION CLINICA"=>"DIVISION DE INVESTIGACION CLINICA",
+		"DIVISION DE MEDICINA EXPERIMENTAL"=>"DIVISION DE MEDICINA EXPERIMENTAL",
+		"SUBDIRECCION DE ASISTENCIA"=>"SUBDIRECCION DE ASISTENCIA",
+		"SUBDIRECCION DE INVESTIGACION BASICA Y DESARROLLO TECNOLOGICO"=>"SUBDIRECCION DE INVESTIGACION BASICA Y DESARROLLO TECNOLOGICO",
+		"SUBDIRECCION DE INVESTIGACION CLINICA"=>"SUBDIRECCION DE INVESTIGACION CLINICA",
+		"SUBDIRECCIÓN ESPECIALIDADES MÉDICO QUIRURGICAS"=>"SUBDIRECCIÓN ESPECIALIDADES MÉDICO QUIRURGICAS",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="INSTITUTO NACIONAL DE CIENCIAS MEDICAS Y NUTRICION SALVADOR ZUBIRAN"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DEPARTAMENTO DE BIOLOGIA DE LA REPRODUCCION"=>"DEPARTAMENTO DE BIOLOGIA DE LA REPRODUCCION",
+		"DEPARTAMENTO DE FISIOLOGIA DE LA NUTRICION"=>"DEPARTAMENTO DE FISIOLOGIA DE LA NUTRICION",
+		"DEPARTAMENTO DE GASTROENTEROLOGIA"=>"DEPARTAMENTO DE GASTROENTEROLOGIA",
+		"DEPARTAMENTO DE INMUNOLOGIA REUMATOLOGIA"=>"DEPARTAMENTO DE INMUNOLOGIA REUMATOLOGIA",
+		"DEPARTAMENTO DE NEFROLOGIA Y METABOLISMO MINERAL"=>"DEPARTAMENTO DE NEFROLOGIA Y METABOLISMO MINERAL",
+		"DEPARTAMENTO DE PATOLOGIA"=>"DEPARTAMENTO DE PATOLOGIA",
+		"DIRECCIÓN DE NUTRICIÓN"=>"DIRECCIÓN DE NUTRICIÓN",
+		"DIVISION DE CIRUGIA"=>"DIVISION DE CIRUGIA",
+		"DIVISION DE CONSULTA EXTERNA"=>"DIVISION DE CONSULTA EXTERNA",
+		"DIVISION DE ENSEÑANZA"=>"DIVISION DE ENSEÑANZA",
+		"DIVISION DE INVESTIGACION BASICA"=>"DIVISION DE INVESTIGACION BASICA",
+		"DIVISION DE INVESTIGACION EPIDEMIOLOGICA"=>"DIVISION DE INVESTIGACION EPIDEMIOLOGICA",
+		"DIVISION DE MEDICINA"=>"DIVISION DE MEDICINA",
+		"DIVISION DE NUTRICION DE LA COMUNIDAD"=>"DIVISION DE NUTRICION DE LA COMUNIDAD",
+		"DIVISION DE NUTRICION EXPERIMENTAL DE CIENCIA DE LOS ALIMENTOS"=>"DIVISION DE NUTRICION EXPERIMENTAL DE CIENCIA DE LOS ALIMENTOS",
+		"SUBDIRECCION GENERAL DE INVESTIGACION"=>"SUBDIRECCION GENERAL DE INVESTIGACION",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE DIAGNOSTICO Y REFERENCIA EPIDEMIOLOGICOS"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    "DEPARTAMENTO DE BIOLOGIA MOLECULAR"=>"DEPARTAMENTO DE BIOLOGIA MOLECULAR",
+		"DEPARTAMENTO DE INMUNOGENETICA"=>"DEPARTAMENTO DE INMUNOGENETICA",
+		"DEPARTAMENTO DE PARASITOLOGIA"=>"DEPARTAMENTO DE PARASITOLOGIA",
+		"DEPARTAMENTO DE SERVICIOS Y APOYO"=>"DEPARTAMENTO DE SERVICIOS Y APOYO",
+		"DEPARTAMENTO DE INVESTIGACIONES INMUNOLOGICAS"=>"DEPARTAMENTO DE INVESTIGACIONES INMUNOLOGICAS",
+		"INSTITUTO DE DIAGNÓSTICO Y REFERENCIA EPIDEMIOLÓGICOS"=>"INSTITUTO DE DIAGNÓSTICO Y REFERENCIA EPIDEMIOLÓGICOS",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE ENFERMEDADES RESPIRATORIAS"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DIRECCION DE INVESTIGACION"=>"DIRECCION DE INVESTIGACION",
+		"DIRECCION MEDICA"=>"DIRECCION MEDICA",
+		"SUBDIRECCION DE INVESTIGACION"=>"SUBDIRECCION DE INVESTIGACION",
+		"SUBDIRECCION MEDICA"=>"SUBDIRECCION MEDICA",
+		"SUBDIRECCIÓN DE INVESTIGACIÓN BIOMÉDICA"=>"SUBDIRECCIÓN DE INVESTIGACIÓN BIOMÉDICA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE INVESTIGACIONES NUCLEARES"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    		"COORDINACION DE ASUNTOS INTERNACIONALES"=>"COORDINACION DE ASUNTOS INTERNACIONALES",
+		"COORDINACION DE PROMOCION Y DIVULGACION CIENTIFICA"=>"COORDINACION DE PROMOCION Y DIVULGACION CIENTIFICA",
+		"GERENCIA DE APLICACIONES NUCLEARES EN LA SALUD"=>"GERENCIA DE APLICACIONES NUCLEARES EN LA SALUD",
+		"GERENCIA DE ASUNTOS JURIDICOS"=>"GERENCIA DE ASUNTOS JURIDICOS",
+		"GERENCIA DE CIENCIA DE MATERIALES"=>"GERENCIA DE CIENCIA DE MATERIALES",
+		"GERENCIA DE CIENCIAS AMBIENTALES"=>"GERENCIA DE CIENCIAS AMBIENTALES",
+		"GERENCIA DE CIENCIAS APLICADAS"=>"GERENCIA DE CIENCIAS APLICADAS",
+		"GERENCIA DE CIENCIAS BASICAS"=>"GERENCIA DE CIENCIAS BASICAS",
+		"GERENCIA DE COMERCIALIZACION"=>"GERENCIA DE COMERCIALIZACION",
+		"GERENCIA DE GARANTIA DE CALIDAD"=>"GERENCIA DE GARANTIA DE CALIDAD",
+		"GERENCIA DE INFORMATICA"=>"GERENCIA DE INFORMATICA",
+		"GERENCIA DE INGENIERIA"=>"GERENCIA DE INGENIERIA",
+		"GERENCIA DE SEGURIDAD RADIOLOGICA"=>"GERENCIA DE SEGURIDAD RADIOLOGICA",
+		"GERENCIA DE TECNOLOGIA NUCLEAR"=>"GERENCIA DE TECNOLOGIA NUCLEAR",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+
+			if ($model->organization=="INSTITUTO NACIONAL DE NEUROLOGIA Y NEUROCIRUGIA MANUEL VELASCO SUAREZ"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DIRECCIÓN DE INVESTIGACIÓN"=>"DIRECCIÓN DE INVESTIGACIÓN",
+		"DIVISION DE INVESTIGACION"=>"DIVISION DE INVESTIGACION",
+		"DIVISION DE NEUROCIRUGIA"=>"DIVISION DE NEUROCIRUGIA",
+		"DIVISION DE NEUROLOGIA"=>"DIVISION DE NEUROLOGIA",
+		"SUBDIRECCION DE SERVICIOS AUXILIARES DE DIAGNOSTICO Y TRATAMIENTO"=>"SUBDIRECCION DE SERVICIOS AUXILIARES DE DIAGNOSTICO Y TRATAMIENTO",
+		"SUBDIRECCION GENERAL DE INVESTIGACION"=>"SUBDIRECCION GENERAL DE INVESTIGACION",
+		"SUBDIRECCION MEDICA"=>"SUBDIRECCION MEDICA",
+		"UNIDAD DE INVESTIGACION DEL SISTEMA NERVIOSO"=>"UNIDAD DE INVESTIGACION DEL SISTEMA NERVIOSO",
+		"UNIDAD DE INVESTIGACION SOCIOMEDICA"=>"UNIDAD DE INVESTIGACION SOCIOMEDICA",
+		"UNIDAD DE INVESTIGACIONES CEREBRALES"=>"UNIDAD DE INVESTIGACIONES CEREBRALES",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE PEDIATRIA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DIVISION DE INVESTIGACION MEDICA"=>"DIVISION DE INVESTIGACION MEDICA",
+		"SUBDIRECCION DE MEDICINA EXPERIMENTAL"=>"SUBDIRECCION DE MEDICINA EXPERIMENTAL",
+		"UNIDAD DE INVESTIGACION EN SALUD INFANTIL"=>"UNIDAD DE INVESTIGACION EN SALUD INFANTIL",
+		"UNIDAD DE INVESTIGACION"=>"UNIDAD DE INVESTIGACION",
+		"UNIDAD DE SERVICIO"=>"UNIDAD DE SERVICIO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE PERINATOLOGIA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"SUBDIRECCION DE ENSENANZA DE EDUCACION PROFESIONAL"=>"SUBDIRECCION DE ENSENANZA DE EDUCACION PROFESIONAL",
+		"SUBDIRECCION DE INVESTIGACION"=>"SUBDIRECCION DE INVESTIGACION",
+		"SUBDIRECCION MEDICA"=>"SUBDIRECCION MEDICA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE PSIQUIATRIA RAMON DE LA FUENTE MUNIZ"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DIRECCIÓN DE INVESTIGACIÓN EN NEUROCIENCIAS"=>"DIRECCIÓN DE INVESTIGACIÓN EN NEUROCIENCIAS",
+		"DIVISION DE INVESTIGACION EN NEUROCIENCIAS"=>"DIVISION DE INVESTIGACION EN NEUROCIENCIAS",
+		"DIVISION DE INVESTIGACIONES BIOMEDICAS"=>"DIVISION DE INVESTIGACIONES BIOMEDICAS",
+		"DIVISION DE INVESTIGACIONES CLINICAS"=>"DIVISION DE INVESTIGACIONES CLINICAS",
+		"DIVISION DE INVESTIGACIONES EPIDEMIOLOGICAS Y SOCIALES"=>"DIVISION DE INVESTIGACIONES EPIDEMIOLOGICAS Y SOCIALES",
+		"DIVISION DE SERVICIOS CLINICOS"=>"DIVISION DE SERVICIOS CLINICOS",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL DE SALUD PUBLICA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"CENTRO DE ESTUDIOS DE ADMINISTRACION ESTATAL Y MUNICIPAL"=>"CENTRO DE ESTUDIOS DE ADMINISTRACION ESTATAL Y MUNICIPAL",
+		"CENTRO DE INVESTIGACION EN SALUD POBLACIONAL"=>"CENTRO DE INVESTIGACION EN SALUD POBLACIONAL",
+		"CENTRO DE INVESTIGACION Y NUTRICION EN SALUD"=>"CENTRO DE INVESTIGACION Y NUTRICION EN SALUD",
+		"CENTRO DE INVESTIGACIONES EN SISTEMAS DE SALUD"=>"CENTRO DE INVESTIGACIONES EN SISTEMAS DE SALUD",
+		"CENTRO DE INVESTIGACIONES SOBRE ENFERMEDADES INFECCIOSAS"=>"CENTRO DE INVESTIGACIONES SOBRE ENFERMEDADES INFECCIOSAS",
+		"CENTRO DE INVESTIGACIÓN EN EVALUACIÓN Y ENCUESTAS"=>"CENTRO DE INVESTIGACIÓN EN EVALUACIÓN Y ENCUESTAS",
+		"DIRECCION DE ADMINISTRACION Y FINANZAS"=>"DIRECCION DE ADMINISTRACION Y FINANZAS",
+		"DIRECCION DE EVALUACION DE SISTEMAS Y ECONOMIA DE LA SALUD"=>"DIRECCION DE EVALUACION DE SISTEMAS Y ECONOMIA DE LA SALUD",
+		"DIRECCION DE GERENCIA Y LIDERAZGO"=>"DIRECCION DE GERENCIA Y LIDERAZGO",
+		"DIRECCION DE INFORMATICA"=>"DIRECCION DE INFORMATICA",
+		"DIRECCION GENERAL"=>"DIRECCION GENERAL",
+		"ESCUELA DE SALUD PUBLICA DE MEXICO"=>"ESCUELA DE SALUD PUBLICA DE MEXICO",
+		"INSTITUTO NACIONAL DE SALUD PUBLICA"=>"INSTITUTO NACIONAL DE SALUD PUBLICA",
+		"MINISTERE DE LA SANTE PUBLIQUE ET DE LA POPULATION"=>"MINISTERE DE LA SANTE PUBLIQUE ET DE LA POPULATION",
+		"SECRETARIA ACADEMICA"=>"SECRETARIA ACADEMICA",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO NACIONAL INDIGENISTA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DIRECCION ADJUNTA"=>"DIRECCION ADJUNTA",
+		"EL TIEMPO QUE RESTA, A.C"=>"EL TIEMPO QUE RESTA, A.C",
+		"SUBDIRECCION DE INVESTIGACION"=>"SUBDIRECCION DE INVESTIGACION",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			if ($model->organization=="INSTITUTO POTOSINO DE INVESTIGACION CIENTIFICA Y TECNOLOGICA AC"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"DIVISION DE BIOLOGIA MOLECULAR"=>"DIVISION DE BIOLOGIA MOLECULAR",
+		"DIVISION DE INGENIERIA AMBIENTAL Y MANEJO DE RECURSOS NATURALES"=>"DIVISION DE INGENIERIA AMBIENTAL Y MANEJO DE RECURSOS NATURALES",
+		"DIVISION DE MATEMATICAS APLICADAS Y SISTEMA"=>"DIVISION DE MATEMATICAS APLICADAS Y SISTEMA",
+		"DIVISION DE MATEMÁTICAS APLICADAS"=>"DIVISION DE MATEMÁTICAS APLICADAS",
+		"DIVISION DE MATERIALES AVANZADOS PARA LA TECNOLOGIA MODERNA"=>"DIVISION DE MATERIALES AVANZADOS PARA LA TECNOLOGIA MODERNA",
+		"DIVISION GEOCIENCIAS APLICADAS"=>"DIVISION GEOCIENCIAS APLICADAS",
+		"DIVISIÓN DE CIENCIAS AMBIENTALES"=>"DIVISIÓN DE CIENCIAS AMBIENTALES",
+		"DIVISIÓN DE MATERIALES AVANZADOS"=>"DIVISIÓN DE MATERIALES AVANZADOS",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="PARTIDO REVOLUCIONARIO INSTITUCIONAL"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"COMITE DIRECTIVO ESTATAL DEL PRI JALISCO"=>"COMITE DIRECTIVO ESTATAL DEL PRI JALISCO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="PETROLEOS MEXICANOS"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"COMPAÑIA MEXICANA DE EXPLORACIONES, S.A. DE C.V."=>"COMPAÑIA MEXICANA DE EXPLORACIONES, S.A. DE C.V.",
+		"DIRECCION CORPORATIVA DE ADMINISTRACION"=>"DIRECCION CORPORATIVA DE ADMINISTRACION",
+		"DIRECCION CORPORATIVA DE FINANZAS"=>"DIRECCION CORPORATIVA DE FINANZAS",
+		"DIRECCION CORPORATIVA DE INGENIERIA Y DESARROLLO DE PROYECTOS"=>"DIRECCION CORPORATIVA DE INGENIERIA Y DESARROLLO DE PROYECTOS",
+		"DIRECCION CORPORATIVA DE OPERACIONES"=>"DIRECCION CORPORATIVA DE OPERACIONES",
+		"DIRECCIÓN CORPORATIVA DE TECNOLOGÍA DE INFORMACIÓN Y PROCESOS DE NEGOCIO"=>"DIRECCIÓN CORPORATIVA DE TECNOLOGÍA DE INFORMACIÓN Y PROCESOS DE NEGOCIO",
+		"PEMEX EXPLORACION Y PRODUCCION"=>"PEMEX EXPLORACION Y PRODUCCION",
+		"PEMEX GAS Y PETROQUIMICA BASICA"=>"PEMEX GAS Y PETROQUIMICA BASICA",
+		"PEMEX PETROQUIMICA"=>"PEMEX PETROQUIMICA",
+		"PEMEX REFINACION"=>"PEMEX REFINACION",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="SECRETARIA DE EDUCACION PUBLICA DEL ESTADO DE HIDALGO"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"CENTRO ESTATAL DE LENGUAS Y CULTURAS INDIGENAS DEL ESTADO DE HIDALGO"=>"CENTRO ESTATAL DE LENGUAS Y CULTURAS INDIGENAS DEL ESTADO DE HIDALGO",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+			
+			if ($model->organization=="SISTEMA NACIONAL PARA EL DESARROLLO INTEGRAL PARA LA FAMILIA"){
+			    echo $form->dropDownList($model,'second_level',array(
+			    	"SISTEMA EN TAMAULIPAS"=>"SISTEMA EN TAMAULIPAS",
+		"DIRECCION DE REHABILITACION Y ASISTENCIA SOCIAL"=>"DIRECCION DE REHABILITACION Y ASISTENCIA SOCIAL",
+		"UNIDAD DE ASISTENCIA E INTEGRACIÓN SOCIAL"=>"UNIDAD DE ASISTENCIA E INTEGRACIÓN SOCIAL",
+		"SECRETARÍA PARTICULAR DEL DESPACHO DEL TITULAR"=>"SECRETARÍA PARTICULAR DEL DESPACHO DEL TITULAR",
+		"DIRECCIÓN GENERAL DE ASUNTOS INTERNACIONALES"=>"DIRECCIÓN GENERAL DE ASUNTOS INTERNACIONALES",
+		"DIF PUEBLA"=>"DIF PUEBLA",
+		"CENTRO DE REHABILITACIÓN E INCLUSIÓN SOCIAL DEL ESTADO DE VERACRUZ (CRIS/CREEVER)"=>"CENTRO DE REHABILITACIÓN E INCLUSIÓN SOCIAL DEL ESTADO DE VERACRUZ (CRIS/CREEVER)",),
+			   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+			}
+	  /*Instituciones del sector gobierno de las entidades federativas*/
+
+		  		if ($model->organization=="CENTRO DE INVESTIGACIONES DE QUINTANA ROO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    										"CENTRO INTERDISCIPLINARIO DE INVESTIGACION EDUCATIVA"=>"CENTRO INTERDISCIPLINARIO DE INVESTIGACION EDUCATIVA",
+		    										"DIRECCION DE ESTUDIOS DEL CARIBE"=>"DIRECCION DE ESTUDIOS DEL CARIBE",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="CENTRO DE INVESTIGACION Y DESARROLLO DE LOS RECURSOS NATURALES DE SONORA AC"){
+		    echo $form->dropDownList($model,'second_level',array(
+					"DEPARTAMENTO DE INGENIERIA ELECTRONICA"=>"DEPARTAMENTO DE INGENIERIA ELECTRONICA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="CENTRO DE INVESTIGACION Y DESARROLLO DEL ESTADO DE MICHOACAN"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    										"DIRECCION GENERAL"=>"DIRECCION GENERAL",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="EL COLEGIO DE JALISCO AC"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    										"AREA DE INVESTIGACION"=>"AREA DE INVESTIGACION",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="EL COLEGIO MEXIQUENSE AC"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"CENTRO DE ESTUDIOS DE DESARROLLO SOCIAL"=>"CENTRO DE ESTUDIOS DE DESARROLLO SOCIAL",
+	"CENTRO DE ESTUDIOS HISTORICOS"=>"CENTRO DE ESTUDIOS HISTORICOS",
+	"CENTRO DE ESTUDIOS SOCIALES"=>"CENTRO DE ESTUDIOS SOCIALES",
+	"CENTRO DE ESTUDIOS SOCIOESPACIALES Y POLITICAS PUBLICAS"=>"CENTRO DE ESTUDIOS SOCIOESPACIALES Y POLITICAS PUBLICAS",
+	"COORDINACION ACADEMICA"=>"COORDINACION ACADEMICA",
+	"PRESIDENCIA"=>"PRESIDENCIA",
+	"PROGRAMA DE ESTUDIOS URBANOS Y AMBIENTALES"=>"PROGRAMA DE ESTUDIOS URBANOS Y AMBIENTALES",
+	"PROGRAMA INTERDISCIPLINARIO DE ESTUDIOS"=>"PROGRAMA INTERDISCIPLINARIO DE ESTUDIOS",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="EL COLEGIO DE SONORA OPD"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"CENTRO DE ESTUDIOS SOCIALES"=>"CENTRO DE ESTUDIOS SOCIALES",
+	"COORDINACION DE INVESTIGACION"=>"COORDINACION DE INVESTIGACION",
+	"DIRECCION GENERAL ACADEMICA"=>"DIRECCION GENERAL ACADEMICA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="HOSPITAL CIVIL DE GUADALAJARA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "HOSPITAL CIVIL DE GUADALAJARA DR JUAN I MENCHACA"=>"HOSPITAL CIVIL DE GUADALAJARA DR JUAN I MENCHACA",
+	"HOSPITAL CIVIL DE GUADALAJARA FRAY ANTONIO ALCALDE"=>"HOSPITAL CIVIL DE GUADALAJARA FRAY ANTONIO ALCALDE",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="GOBIERNO DEL ESTADO DE AGUASCALIENTES"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"ARCHIVO HISTORICO DEL ESTADO"=>"ARCHIVO HISTORICO DEL ESTADO",
+	"CENTENARIO HOSPITAL DE MIGUEL HIDALGO"=>"CENTENARIO HOSPITAL DE MIGUEL HIDALGO",
+	"CENTRO DE INVESTIGACIONES Y ESTUDIOS MULTIDISCIPLINARIOS DE AGUASCALIENTES, A.C"=>"CENTRO DE INVESTIGACIONES Y ESTUDIOS MULTIDISCIPLINARIOS DE AGUASCALIENTES, A.C",
+	"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE AGUASCALIENTES"=>"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE AGUASCALIENTES",
+	"HOSPITAL DE LA MUJER"=>"HOSPITAL DE LA MUJER",
+	"HOSPITAL GENERAL TERCER MILENIO"=>"HOSPITAL GENERAL TERCER MILENIO",
+	"INSTITUTO CULTURAL DE AGUASCALIENTES"=>"INSTITUTO CULTURAL DE AGUASCALIENTES",
+	"INSTITUTO DE EDUCACIÓN DE AGUASCALIENTES"=>"INSTITUTO DE EDUCACIÓN DE AGUASCALIENTES",
+	"INSTITUTO DE SERVICIOS DE SALUD DEL ESTADO DE AGUASCALIENTES"=>"INSTITUTO DE SERVICIOS DE SALUD DEL ESTADO DE AGUASCALIENTES",
+	"MUNICIPIO DE AGUASCALIENTES"=>"MUNICIPIO DE AGUASCALIENTES",
+	"PROCURADURIA GENERAL DE JUSTICIA DE AGUASCALIENTES"=>"PROCURADURIA GENERAL DE JUSTICIA DE AGUASCALIENTES",
+	"SECRETARIA DE OBRAS PUBLICAS"=>"SECRETARIA DE OBRAS PUBLICAS",
+	"SECRETARIA DEL MEDIO AMBIENTE DEL GOBIERNO ESTADO DE AGUASCALIENTES"=>"SECRETARIA DEL MEDIO AMBIENTE DEL GOBIERNO ESTADO DE AGUASCALIENTES",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE COLIMA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"ARCHIVO HISTORICO DEL MUNICIPIO DE COLIMA"=>"ARCHIVO HISTORICO DEL MUNICIPIO DE COLIMA",
+	"CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE COLIMA"=>"CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE COLIMA",
+	"LABORATORIO ESTATAL DE SALUD PUBLICA DE COLIMA"=>"LABORATORIO ESTATAL DE SALUD PUBLICA DE COLIMA",
+	"SERVICIOS DE SALUD DEL ESTADO DE COLIMA"=>"SERVICIOS DE SALUD DEL ESTADO DE COLIMA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE GUANAJUATO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE GUANAJUATO"=>"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE GUANAJUATO",
+	"COMISIÓN ESTATAL DEL DEPORTE Y ATENCIÓN A LA JUVENTUD"=>"COMISIÓN ESTATAL DEL DEPORTE Y ATENCIÓN A LA JUVENTUD",
+	"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE GUANAJUATO"=>"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE GUANAJUATO",
+	"GOBIERNO MUNICIPAL DE GUANAJUATO"=>"GOBIERNO MUNICIPAL DE GUANAJUATO",
+	"INSTITUTO ESTATAL DE CAPACITACIÓN"=>"INSTITUTO ESTATAL DE CAPACITACIÓN",
+	"MUNICIPIO DE LEON"=>"MUNICIPIO DE LEON",
+	"PARQUE AGRO TECNOLÓGICO XONOTLI, S.A. DE C.V."=>"PARQUE AGRO TECNOLÓGICO XONOTLI, S.A. DE C.V.",
+	"SECRETARIA DE DESARROLLO AGROPECUARIO"=>"SECRETARIA DE DESARROLLO AGROPECUARIO",
+	"SECRETARIA DE SALUD"=>"SECRETARIA DE SALUD",
+	"SECRETARÍA DE GOBIERNO DEL ESTADO DE GUANAJUATO"=>"SECRETARÍA DE GOBIERNO DEL ESTADO DE GUANAJUATO",
+	"SECUNDARIA OFICIAL LIC. TIMOTEO LOZANO"=>"SECUNDARIA OFICIAL LIC. TIMOTEO LOZANO",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE GUANAJUATO"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE GUANAJUATO",
+	"SISTEMA AVANZADO DE BACHILLERATO Y EDUCACIÓN SUPERIOR EN EL ESTADO DE GUANAJUATO"=>"SISTEMA AVANZADO DE BACHILLERATO Y EDUCACIÓN SUPERIOR EN EL ESTADO DE GUANAJUATO",
+	"TRIBUNAL DE LO CONTENCIOSO ADMINISTRATIVO DEL ESTADO DE GUANAJUATO"=>"TRIBUNAL DE LO CONTENCIOSO ADMINISTRATIVO DEL ESTADO DE GUANAJUATO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE JALISCO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"CONGRESO DEL ESTADO DE JALISCO"=>"CONGRESO DEL ESTADO DE JALISCO",
+	"CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE JALISCO"=>"CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE JALISCO",
+	"DIRECCIÓN GENERAL DE EDUCACIÓN NORMAL"=>"DIRECCIÓN GENERAL DE EDUCACIÓN NORMAL",
+	"HOSPITAL CIVIL DE GUADALAJARA"=>"HOSPITAL CIVIL DE GUADALAJARA",
+	"HOSPITAL GENERAL DE OCCIDENTE"=>"HOSPITAL GENERAL DE OCCIDENTE",
+	"INSTITUTO DE FORMACION PARA EL TRABAJO DEL ESTADO DE JALISCO"=>"INSTITUTO DE FORMACION PARA EL TRABAJO DEL ESTADO DE JALISCO",
+	"INSTITUTO DE INFORMACIÓN ESTADÍSTICA Y GEOGRÁFICA DEL ESTADO DE JALISCO"=>"INSTITUTO DE INFORMACIÓN ESTADÍSTICA Y GEOGRÁFICA DEL ESTADO DE JALISCO",
+	"INSTITUTO DE INFORMACIÓN TERRITORIAL DEL ESTADO DE JALISCO"=>"INSTITUTO DE INFORMACIÓN TERRITORIAL DEL ESTADO DE JALISCO",
+	"INSTITUTO TECNOLOGICO SUPERIOR"=>"INSTITUTO TECNOLOGICO SUPERIOR",
+	"MUNICIPIO DE CHAPALA, JALISCO"=>"MUNICIPIO DE CHAPALA, JALISCO",
+	"MUNICIPIO DE LA BARCA"=>"MUNICIPIO DE LA BARCA",
+	"MUNICIPIO DE PUERTO VALLARTA"=>"MUNICIPIO DE PUERTO VALLARTA",
+	"MUNICIPIO DE TLAJOMULCO DE ZÚÑIGA"=>"MUNICIPIO DE TLAJOMULCO DE ZÚÑIGA",
+	"MUNICIPIO DE ZAPOPAN JALISCO"=>"MUNICIPIO DE ZAPOPAN JALISCO",
+	"ORGANISMO PUBLICO DESCENTRALIZADO HOSPITAL CIVIL DE GUADALAJARA"=>"ORGANISMO PUBLICO DESCENTRALIZADO HOSPITAL CIVIL DE GUADALAJARA",
+	"SECRETARIA DE DESARROLLO RURAL"=>"SECRETARIA DE DESARROLLO RURAL",
+	"SECRETARIA DE EDUCACION"=>"SECRETARIA DE EDUCACION",
+	"SECRETARIA DE PROMOCION ECONOMICA DE JALISCO"=>"SECRETARIA DE PROMOCION ECONOMICA DE JALISCO",
+	"SECRETARIA DE SALUD Y BIENESTAR SOCIAL"=>"SECRETARIA DE SALUD Y BIENESTAR SOCIAL",
+	"SECRETARIA GENERAL DE GOBIERNO"=>"SECRETARIA GENERAL DE GOBIERNO",
+	"SECRETARÍA DE CULTURA"=>"SECRETARÍA DE CULTURA",
+	"SECRETARÍA DE MEDIO AMBIENTE PARA EL DESARROLLO SUSTENTABLE DEL GOBIERNO DEL ESTADO DE JALISCO"=>"SECRETARÍA DE MEDIO AMBIENTE PARA EL DESARROLLO SUSTENTABLE DEL GOBIERNO DEL ESTADO DE JALISCO",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE JALISCO"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE JALISCO",
+	"SERVICIOS Y TRANSPORTES OPD"=>"SERVICIOS Y TRANSPORTES OPD",
+	"SISTEMA ESTATAL DE INFORMACIÓN JALISCO"=>"SISTEMA ESTATAL DE INFORMACIÓN JALISCO",
+	"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA, JALISCO"=>"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA, JALISCO",
+	"TRIBUNAL ELECTORAL DEL PODER JUDICIAL DEL ESTADO DE JALISCO"=>"TRIBUNAL ELECTORAL DEL PODER JUDICIAL DEL ESTADO DE JALISCO",
+	"TROMPO MÁGICO, MUSEO INTERACTIVO DEL NIÑO"=>"TROMPO MÁGICO, MUSEO INTERACTIVO DEL NIÑO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE MORELOS"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"CENTRO DE INVESTIGACION Y DOCENCIA EN HUMANIDADES"=>"CENTRO DE INVESTIGACION Y DOCENCIA EN HUMANIDADES",
+	"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE MORELOS"=>"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE MORELOS",
+	"HOSPITAL DEL NIÑO MORELENSE"=>"HOSPITAL DEL NIÑO MORELENSE",
+	"HOSPITAL GENERAL DE CUERNAVACA DR. JOSE G. PARRES"=>"HOSPITAL GENERAL DE CUERNAVACA DR. JOSE G. PARRES",
+	"INCUBADORA DE EMPRESAS DE INNOVACION TECNOLOGICA Y ADMINISTRATIVA"=>"INCUBADORA DE EMPRESAS DE INNOVACION TECNOLOGICA Y ADMINISTRATIVA",
+	"SECRETARÍA DE INNOVACIÓN, CIENCIA Y TECNOLOGÍA"=>"SECRETARÍA DE INNOVACIÓN, CIENCIA Y TECNOLOGÍA",
+	"SERVICIOS DE SALUD DE MORELOS"=>"SERVICIOS DE SALUD DE MORELOS",
+	"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA MORELOS"=>"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA MORELOS",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE QUERETARO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "COMITE ADMINISTRADOR DEL PROGRAMA DE CONSTRUCCION DE ESCUELAS DEL ESTADO DE QUERETARO"=>"COMITE ADMINISTRADOR DEL PROGRAMA DE CONSTRUCCION DE ESCUELAS DEL ESTADO DE QUERETARO",
+	"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE QUERETARO"=>"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE QUERETARO",
+	"ESCUELA NORMAL SUPERIOR DE QUERETARO"=>"ESCUELA NORMAL SUPERIOR DE QUERETARO",
+	"SECRETARIA DE DESARROLLO SUSTENTABLE"=>"SECRETARIA DE DESARROLLO SUSTENTABLE",
+	"SECRETARIA DE DESARROLLO URBANO Y OBRAS PUBLICAS"=>"SECRETARIA DE DESARROLLO URBANO Y OBRAS PUBLICAS",
+	"SECRETARIA DE EDUCACIÓN"=>"SECRETARIA DE EDUCACIÓN",
+	"SECRETARÍA DE TURISMO"=>"SECRETARÍA DE TURISMO",
+	"SERVICIOS DE SALUD DEL ESTADO DE QUERETARO SESEQ."=>"SERVICIOS DE SALUD DEL ESTADO DE QUERETARO SESEQ.",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE YUCATAN"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"ARCHIVO GENERAL DEL ESTADO DE YUCATAN"=>"ARCHIVO GENERAL DEL ESTADO DE YUCATAN",
+	"CASA DE LAS ARTESANIAS DEL ESTADO DE YUCATÁN"=>"CASA DE LAS ARTESANIAS DEL ESTADO DE YUCATÁN",
+	"CENTRO DE EVALUACIÓN EDUCATIVA DEL ESTADO DE YUCATÁN"=>"CENTRO DE EVALUACIÓN EDUCATIVA DEL ESTADO DE YUCATÁN",
+	"COMITE ESTATAL PARA EL FOMENTO Y PROTECCION PECUARIA DEL ESTADO DE YUCATAN SCP"=>"COMITE ESTATAL PARA EL FOMENTO Y PROTECCION PECUARIA DEL ESTADO DE YUCATAN SCP",
+	"CONSEJO DE CIENCIA, INNOVACIÓN Y TECNOLOGÍA DEL ESTADO DE YUCATÁN"=>"CONSEJO DE CIENCIA, INNOVACIÓN Y TECNOLOGÍA DEL ESTADO DE YUCATÁN",
+	"DESPACHO DEL GOBERNADOR"=>"DESPACHO DEL GOBERNADOR",
+	"DIRECCION DE EDUCACION MEDIA SUPERIOR Y SUPERIOR"=>"DIRECCION DE EDUCACION MEDIA SUPERIOR Y SUPERIOR",
+	"INSTITUTO DE CULTURA DE YUCATAN"=>"INSTITUTO DE CULTURA DE YUCATAN",
+	"INSTITUTO PARA EL DESARROLLO DE LA CULTURA MAYA DEL ESTADO DE YUCATÁN"=>"INSTITUTO PARA EL DESARROLLO DE LA CULTURA MAYA DEL ESTADO DE YUCATÁN",
+	"INSTITUTO PARA EL DESARROLLO Y CERTIFICACIÓN DE LA INFRAESTRUCTURA FÍSICA EDUCATIVA DE YUCATÁN"=>"INSTITUTO PARA EL DESARROLLO Y CERTIFICACIÓN DE LA INFRAESTRUCTURA FÍSICA EDUCATIVA DE YUCATÁN",
+	"SECRETARIA DE DESARROLLO URBANO Y MEDIO AMBIENTE DEL ESTADO DE YUCATAN"=>"SECRETARIA DE DESARROLLO URBANO Y MEDIO AMBIENTE DEL ESTADO DE YUCATAN",
+	"SECRETARIA DE EDUCACION DEL ESTADO DE YUCATAN"=>"SECRETARIA DE EDUCACION DEL ESTADO DE YUCATAN",
+	"SECRETARIA DE EDUCACION DEL GOBIERNO"=>"SECRETARIA DE EDUCACION DEL GOBIERNO",
+	"SECRETARIA DE SALUD"=>"SECRETARIA DE SALUD",
+	"SERVICIOS DE SALUD DE YUCATAN"=>"SERVICIOS DE SALUD DE YUCATAN",
+	"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA EN YUCATAN"=>"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA EN YUCATAN",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL DISTRITO FEDERAL"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "ASAMBLEA LEGISLATIVA DEL DISTRITO FEDERAL"=>"ASAMBLEA LEGISLATIVA DEL DISTRITO FEDERAL",
+	"COMISION DE DERECHOS HUMANOS DEL DISTRITO FEDERAL"=>"COMISION DE DERECHOS HUMANOS DEL DISTRITO FEDERAL",
+	"CONSEJO DE LA JUDICATURA DEL DISTRITO FEDERAL"=>"CONSEJO DE LA JUDICATURA DEL DISTRITO FEDERAL",
+	"HOSPITAL GENERAL DE URGENCIAS DR. RUBEN LEÑERO"=>"HOSPITAL GENERAL DE URGENCIAS DR. RUBEN LEÑERO",
+	"HOSPITAL GENERAL XOCO"=>"HOSPITAL GENERAL XOCO",
+	"INSTITUTO DE CIENCIA Y TECNOLOGIA DEL DISTRITO FEDERAL"=>"INSTITUTO DE CIENCIA Y TECNOLOGIA DEL DISTRITO FEDERAL",
+	"INSTITUTO DE CULTURA DE LA CIUDAD DE MEXICO"=>"INSTITUTO DE CULTURA DE LA CIUDAD DE MEXICO",
+	"INSTITUTO DE LAS MUJERES DEL DISTRITO FEDERAL"=>"INSTITUTO DE LAS MUJERES DEL DISTRITO FEDERAL",
+	"INSTITUTO DE VERIFICACION ADMINISTRATIVA DEL DISTRITO FEDERAL"=>"INSTITUTO DE VERIFICACION ADMINISTRATIVA DEL DISTRITO FEDERAL",
+	"INSTITUTO ELECTORAL DEL DISTRITO FEDERAL"=>"INSTITUTO ELECTORAL DEL DISTRITO FEDERAL",
+	"INSTITUTO PARA LA ATENCIÓN Y PREVENCIÓN DE LAS ADICCIONES EN LA CIUDAD DE MÉXICO"=>"INSTITUTO PARA LA ATENCIÓN Y PREVENCIÓN DE LAS ADICCIONES EN LA CIUDAD DE MÉXICO",
+	"PATRONATO DE APOYO A LA INVESTIGACION Y EXPERIMENTACION PECUARIA EN MEXICO, A.C."=>"PATRONATO DE APOYO A LA INVESTIGACION Y EXPERIMENTACION PECUARIA EN MEXICO, A.C.",
+	"PROCURADURIA SOCIAL DEL DISTRITO FEDERAL"=>"PROCURADURIA SOCIAL DEL DISTRITO FEDERAL",
+	"PROCURADURÍA AMBIENTAL Y DEL ORDENAMIENTO TERRITORIAL DEL DISTRITO FEDERAL"=>"PROCURADURÍA AMBIENTAL Y DEL ORDENAMIENTO TERRITORIAL DEL DISTRITO FEDERAL",
+	"PROCURADURÍA GENERAL DE JUSTICIA DEL DISTRITO FEDERAL"=>"PROCURADURÍA GENERAL DE JUSTICIA DEL DISTRITO FEDERAL",
+	"SECRETARIA DE CULTURA"=>"SECRETARIA DE CULTURA",
+	"SECRETARIA DE DESARROLLO URBANO Y VIVIENDA"=>"SECRETARIA DE DESARROLLO URBANO Y VIVIENDA",
+	"SECRETARIA DE FINANZAS DEL GOBIERNO DEL DISTRITO FEDERAL"=>"SECRETARIA DE FINANZAS DEL GOBIERNO DEL DISTRITO FEDERAL",
+	"SECRETARIA DE GOBIERNO"=>"SECRETARIA DE GOBIERNO",
+	"SECRETARIA DE MEDIO AMBIENTE"=>"SECRETARIA DE MEDIO AMBIENTE",
+	"SECRETARIA DE SALUD DEL DISTRITO FEDERAL"=>"SECRETARIA DE SALUD DEL DISTRITO FEDERAL",
+	"SECRETARIA DE SEGURIDAD PUBLICA DEL DISTRITO FEDERAL"=>"SECRETARIA DE SEGURIDAD PUBLICA DEL DISTRITO FEDERAL",
+	"SECRETARÍA DE CIENCIA, TECNOLOGÍA E INNOVACIÓN DEL DISTRITO FEDERAL"=>"SECRETARÍA DE CIENCIA, TECNOLOGÍA E INNOVACIÓN DEL DISTRITO FEDERAL",
+	"SECRETARÍA DE EDUCACIÓN"=>"SECRETARÍA DE EDUCACIÓN",
+	"SERVICIOS DE SALUD PUBLICA DEL DISTRITO FEDERAL"=>"SERVICIOS DE SALUD PUBLICA DEL DISTRITO FEDERAL",
+	"SISTEMA DE AGUAS DE LA CIUDAD MEXICO"=>"SISTEMA DE AGUAS DE LA CIUDAD MEXICO",
+	"SISTEMA DE TRANSPORTE COLECTIVO"=>"SISTEMA DE TRANSPORTE COLECTIVO",
+	"UNIVERSIDAD DE LA CIUDAD DE MEXICO"=>"UNIVERSIDAD DE LA CIUDAD DE MEXICO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE CHIAPAS"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "CENTRO ESTATAL DE PREVENCIÓN SOCIAL DE LA VIOLENCIA Y PARTICIPACIÓN CIUDADANA"=>"CENTRO ESTATAL DE PREVENCIÓN SOCIAL DE LA VIOLENCIA Y PARTICIPACIÓN CIUDADANA",
+	"COLEGIO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS DEL ESTADO DE CHIAPAS"=>"COLEGIO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS DEL ESTADO DE CHIAPAS",
+	"CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE CHIAPAS"=>"CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE CHIAPAS",
+	"CONTRALORÍA GENERAL DE GOBIERNO"=>"CONTRALORÍA GENERAL DE GOBIERNO",
+	"ENTRO ESTATAL DE PREVENCIÓN SOCIAL DE LA VIOLENCIA Y PARTICIPACIÓN CIUDADANA"=>"ENTRO ESTATAL DE PREVENCIÓN SOCIAL DE LA VIOLENCIA Y PARTICIPACIÓN CIUDADANA",
+	"INSTITUTO DE PROTECCION CIVIL PARA EL MANEJO INTEGRAL DE RIESGOS DE DESASTRES DEL ESTADO DE CHIAPAS"=>"INSTITUTO DE PROTECCION CIVIL PARA EL MANEJO INTEGRAL DE RIESGOS DE DESASTRES DEL ESTADO DE CHIAPAS",
+	"INSTITUTO DE RECONVERSION PRODUCTIVA Y BIOENERGETICOS"=>"INSTITUTO DE RECONVERSION PRODUCTIVA Y BIOENERGETICOS",
+	"INSTITUTO DE SALUD"=>"INSTITUTO DE SALUD",
+	"INSTITUTO DEL CAFÉ DE CHIAPAS"=>"INSTITUTO DEL CAFÉ DE CHIAPAS",
+	"MUNICIPIO DE TAPACHULA CHIAPAS"=>"MUNICIPIO DE TAPACHULA CHIAPAS",
+	"MUNICIPIO DE TUXTLA GUTIÉRREZ"=>"MUNICIPIO DE TUXTLA GUTIÉRREZ",
+	"PODER JUDICIAL DEL ESTADO DE CHIAPAS"=>"PODER JUDICIAL DEL ESTADO DE CHIAPAS",
+	"SECRETARIA DE EDUCACION"=>"SECRETARIA DE EDUCACION",
+	"SECRETARIA DE HACIENDA"=>"SECRETARIA DE HACIENDA",
+	"SECRETARIA DE MEDIO AMBIENTE, VIVIENDA E HISTORIA NATURAL"=>"SECRETARIA DE MEDIO AMBIENTE, VIVIENDA E HISTORIA NATURAL",
+	"SECRETARIA DE SALUD"=>"SECRETARIA DE SALUD",
+	"SECRETARIA DE SEGURIDAD PUBLICA DEL ESTADO DE CHIAPAS"=>"SECRETARIA DE SEGURIDAD PUBLICA DEL ESTADO DE CHIAPAS",
+	"SECRETARIA DEL CAMPO"=>"SECRETARIA DEL CAMPO",
+	"SECRETARÍA DE ADMINISTRACIÓN"=>"SECRETARÍA DE ADMINISTRACIÓN",
+	"SECRETARÍA DE TRANSPORTES"=>"SECRETARÍA DE TRANSPORTES",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE CHIAPAS"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE CHIAPAS",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE MEXICO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "COLEGIO DE EDUCACIÓN PROFESIONAL TÉCNICA DEL ESTADO DE MÉXICO (CONALEP ESTADO DE MÉXICO)"=>"COLEGIO DE EDUCACIÓN PROFESIONAL TÉCNICA DEL ESTADO DE MÉXICO (CONALEP ESTADO DE MÉXICO)",
+	"CONSEJO MEXIQUENSE DE CIENCIA Y TECNOLOGIA"=>"CONSEJO MEXIQUENSE DE CIENCIA Y TECNOLOGIA",
+	"HOSPITAL PARA EL NILO"=>"HOSPITAL PARA EL NILO",
+	"INSTITUTO DE SALUD DEL ESTADO DE MEXICO"=>"INSTITUTO DE SALUD DEL ESTADO DE MEXICO",
+	"INSTITUTO DE SALUD DEL ESTADO DE MÉXICO"=>"INSTITUTO DE SALUD DEL ESTADO DE MÉXICO",
+	"INSTITUTO DE SEGURIDAD SOCIAL DEL ESTADO DE MEXICO Y MUNICIPIOS"=>"INSTITUTO DE SEGURIDAD SOCIAL DEL ESTADO DE MEXICO Y MUNICIPIOS",
+	"INSTITUTO ESTATAL PARA EL DESARROLLO DE LA SEGURIDAD EN EL TRABAJO"=>"INSTITUTO ESTATAL PARA EL DESARROLLO DE LA SEGURIDAD EN EL TRABAJO",
+	"INSTITUTO MATERNO INFANTIL DEL ESTADO DE MEXICO"=>"INSTITUTO MATERNO INFANTIL DEL ESTADO DE MEXICO",
+	"INSTITUTO MEXIQUENSE DE LA PIROTECNIA"=>"INSTITUTO MEXIQUENSE DE LA PIROTECNIA",
+	"INSTITUTO SUPERIOR DE CIENCIAS DE LA EDUCACION DEL ESTADO DE MEXICO"=>"INSTITUTO SUPERIOR DE CIENCIAS DE LA EDUCACION DEL ESTADO DE MEXICO",
+	"MUNICIPIO DE METEPEC"=>"MUNICIPIO DE METEPEC",
+	"MUNICIPIO DE TEMASCALCINGO"=>"MUNICIPIO DE TEMASCALCINGO",
+	"MUNICIPIO DE TOLUCA"=>"MUNICIPIO DE TOLUCA",
+	"PODER JUDICIAL"=>"PODER JUDICIAL",
+	"SECRETARIA DE DESARROLLO AGROPECUARIO"=>"SECRETARIA DE DESARROLLO AGROPECUARIO",
+	"SECRETARIA DE EDUCACION, CULTURA Y BIENESTAR SOCIAL"=>"SECRETARIA DE EDUCACION, CULTURA Y BIENESTAR SOCIAL",
+	"SECRETARIA DE FINANZAS"=>"SECRETARIA DE FINANZAS",
+	"SECRETARÍA DE SALUD"=>"SECRETARÍA DE SALUD",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE MEXICO"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE MEXICO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE VERACRUZ"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"CONSEJO DEL SISTEMA VERACRUZANO DEL AGUA"=>"CONSEJO DEL SISTEMA VERACRUZANO DEL AGUA",
+	"CONSEJO VERACRUZANO DE INVESTIGACIÓN CIENTÍFICA Y DESARROLLO TECNOLÓGICO"=>"CONSEJO VERACRUZANO DE INVESTIGACIÓN CIENTÍFICA Y DESARROLLO TECNOLÓGICO",
+	"INSTITUTO SUPERIOR DE MUSICA DEL ESTADO DE VERACRUZ-LLAVE"=>"INSTITUTO SUPERIOR DE MUSICA DEL ESTADO DE VERACRUZ-LLAVE",
+	"MUNICIPIO DE XALAPA"=>"MUNICIPIO DE XALAPA",
+	"SECRETARIA DE COMUNICACIONES"=>"SECRETARIA DE COMUNICACIONES",
+	"SECRETARIA DE EDUCACION DEL ESTADO DE VERACRUZ"=>"SECRETARIA DE EDUCACION DEL ESTADO DE VERACRUZ",
+	"SECRETARIA DE EDUCACION Y CULTURA"=>"SECRETARIA DE EDUCACION Y CULTURA",
+	"SECRETARÍA DE FINANZAS Y PLANEACIÓN"=>"SECRETARÍA DE FINANZAS Y PLANEACIÓN",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE VERACRUZ"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE VERACRUZ",
+	"SERVICIOS DE SALUD DE VERACRUZ"=>"SERVICIOS DE SALUD DE VERACRUZ",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE QUINTANA ROO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"COMISION DE AGUA POTABLE Y ALCANTARILLADO DEL ESTADO DE QUINTANA ROO"=>"COMISION DE AGUA POTABLE Y ALCANTARILLADO DEL ESTADO DE QUINTANA ROO",
+	"CONSEJO ESTATAL DE POBLACION DE QUINTANA ROO"=>"CONSEJO ESTATAL DE POBLACION DE QUINTANA ROO",
+	"CONSEJO QUINTANARROENSE DE CIENCIA Y TECNOLOGIA"=>"CONSEJO QUINTANARROENSE DE CIENCIA Y TECNOLOGIA",
+	"INSTITUTO QUINTANARROENSE DE LA MUJER"=>"INSTITUTO QUINTANARROENSE DE LA MUJER",
+	"MUNICIPIO DE BENITO JUAREZ"=>"MUNICIPIO DE BENITO JUAREZ",
+	"SECRETARIA DE DESARROLLO AGROPECUARIO RURAL E INDIGENA"=>"SECRETARIA DE DESARROLLO AGROPECUARIO RURAL E INDIGENA",
+	"SECRETARIA DE DESARROLLO ECONÓMICO"=>"SECRETARIA DE DESARROLLO ECONÓMICO",
+	"SECRETARIA DE FINANZAS Y PLANEACION"=>"SECRETARIA DE FINANZAS Y PLANEACION",
+	"SECRETARÍA DE CULTURA"=>"SECRETARÍA DE CULTURA",
+	"SECRETARÍA DE DESARROLLO URBANO Y MEDIO AMBIENTE"=>"SECRETARÍA DE DESARROLLO URBANO Y MEDIO AMBIENTE",
+	"SERVICIOS EDUCATIVOS DE QUINTANA ROO"=>"SERVICIOS EDUCATIVOS DE QUINTANA ROO",
+	"SERVICIOS ESTATALES DE SALUD QUINTANA ROO"=>"SERVICIOS ESTATALES DE SALUD QUINTANA ROO",
+	"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE BENITO JUÁREZ, QUINTANA ROO."=>"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE BENITO JUÁREZ, QUINTANA ROO.",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="GOBIERNO DEL ESTADO DE BAJA CALIFORNIA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE BAJA CALIFORNIA"=>"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE BAJA CALIFORNIA",
+	"COMISION ESTATAL DE ENERGIA DE BAJA CALIFORNIA"=>"COMISION ESTATAL DE ENERGIA DE BAJA CALIFORNIA",
+	"COMISIÓN ESTATAL DE SERVICIOS PÚBLICOS DE TIJUANA"=>"COMISIÓN ESTATAL DE SERVICIOS PÚBLICOS DE TIJUANA",
+	"CONSEJO ESTATAL DE CIENCIA E INNOVACIÓN TECNOLÓGICA"=>"CONSEJO ESTATAL DE CIENCIA E INNOVACIÓN TECNOLÓGICA",
+	"DIRECCION DE CONTROL Y EVALUACION GUBERNAMENTAL"=>"DIRECCION DE CONTROL Y EVALUACION GUBERNAMENTAL",
+	"GOBIERNO MUNICIPAL ENSENADA"=>"GOBIERNO MUNICIPAL ENSENADA",
+	"INSTITUTO DE SERVICIOS DE SALUD PUBLICA DEL ESTADO DE BC"=>"INSTITUTO DE SERVICIOS DE SALUD PUBLICA DEL ESTADO DE BC",
+	"INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION DE ENSENADA"=>"INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION DE ENSENADA",
+	"INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION URBANA DEL MUNICIPIO DE MEXICALI"=>"INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION URBANA DEL MUNICIPIO DE MEXICALI",
+	"MUNICIPIO DE TIJUANA"=>"MUNICIPIO DE TIJUANA",
+	"SECRETARIA DE DESARROLLO ECONÓMICO"=>"SECRETARIA DE DESARROLLO ECONÓMICO",
+	"SECRETARIA DE EDUCACION Y BIENESTAR SOCIAL CONSEJO BAJACALIFORNIANO"=>"SECRETARIA DE EDUCACION Y BIENESTAR SOCIAL CONSEJO BAJACALIFORNIANO",
+	"SECRETARIA DE INFRAESTRUCTURA Y DESARROLLO URBANO"=>"SECRETARIA DE INFRAESTRUCTURA Y DESARROLLO URBANO",
+	"SECRETARIA DE SEGURIDAD PUBLICA DEL ESTADO DE BAJA CALIFORNIA"=>"SECRETARIA DE SEGURIDAD PUBLICA DEL ESTADO DE BAJA CALIFORNIA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE BAJA CALIFORNIA SUR"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"CONSEJO SUDCALIFORNIANO DE CIENCIA Y TECNOLOGIA"=>"CONSEJO SUDCALIFORNIANO DE CIENCIA Y TECNOLOGIA",
+	"FONDO SOCIAL PARA EL DESARROLLO DE BAJA CALIFORNIA SUR"=>"FONDO SOCIAL PARA EL DESARROLLO DE BAJA CALIFORNIA SUR",
+	"MUNICIPIO DE LA PAZ"=>"MUNICIPIO DE LA PAZ",
+	"MUNICIPIO DE LOS CABOS"=>"MUNICIPIO DE LOS CABOS",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA SUR"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE BAJA CALIFORNIA SUR",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE CAMPECHE"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE CAMPECHE"=>"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE CAMPECHE",
+	"CONSEJO ESTATAL DE INVESTIGACION CIENTIFICA Y DESARROLLO TECNOLOGICO DE CAMPECHE"=>"CONSEJO ESTATAL DE INVESTIGACION CIENTIFICA Y DESARROLLO TECNOLOGICO DE CAMPECHE",
+	"FUNDACION PABLO GARCIA"=>"FUNDACION PABLO GARCIA",
+	"MUNICIPIO DEL CARMEN CAM"=>"MUNICIPIO DEL CARMEN CAM",
+	"SECRETARIA DE CULTURA DE CAMPECHE"=>"SECRETARIA DE CULTURA DE CAMPECHE",
+	"SECRETARIA DE FOMENTO INDUSTRIAL Y COMERCIAL"=>"SECRETARIA DE FOMENTO INDUSTRIAL Y COMERCIAL",
+	"SECRETARIA DE MEDIO AMBIENTE Y APROVECHAMIENTO SUSTENTABLE"=>"SECRETARIA DE MEDIO AMBIENTE Y APROVECHAMIENTO SUSTENTABLE",
+	"SECRETARIA DE SALUD"=>"SECRETARIA DE SALUD",
+	"TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE CAMPECHE"=>"TRIBUNAL SUPERIOR DE JUSTICIA DEL ESTADO DE CAMPECHE",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE COAHUILA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE COAHUILA"=>"CONSEJO ESTATAL DE CIENCIA Y TECNOLOGIA DE COAHUILA",
+	"MUNICIPIO DE SALTILLO COAH."=>"MUNICIPIO DE SALTILLO COAH.",
+	"SECRETARIA DE EDUCACION Y CULTURA"=>"SECRETARIA DE EDUCACION Y CULTURA",
+	"SECRETARIA DE FINANZAS DEL GOBIERNO DEL ESTADO"=>"SECRETARIA DE FINANZAS DEL GOBIERNO DEL ESTADO",
+	"SECRETARIA DE MEDIO AMBIENTE DE COAHUILA"=>"SECRETARIA DE MEDIO AMBIENTE DE COAHUILA",
+	"SECRETARIA DE OBRAS PUBLICAS Y TRANSPORTE DEL ESTADO DE COAHUILA"=>"SECRETARIA DE OBRAS PUBLICAS Y TRANSPORTE DEL ESTADO DE COAHUILA",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE COAHUILA"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE COAHUILA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE CHIHUAHUA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "BENEMERITA CENTENARIA ESCUELA NORMAL DEL ESTADO PROFESOR LUIS URIAS BELDERRAIN"=>"BENEMERITA CENTENARIA ESCUELA NORMAL DEL ESTADO PROFESOR LUIS URIAS BELDERRAIN",
+	"COMISION ESTATAL DE VIVIENDA, SUELO E INFRAESTRUCTURA DEL ESTADO DE CHIHUAHUA"=>"COMISION ESTATAL DE VIVIENDA, SUELO E INFRAESTRUCTURA DEL ESTADO DE CHIHUAHUA",
+	"CONSEJO ESTATAL DE CIENCIA, TECNOLOGIA E INNOVACION DE CHIHUAHUA"=>"CONSEJO ESTATAL DE CIENCIA, TECNOLOGIA E INNOVACION DE CHIHUAHUA",
+	"FISCALIA GENERAL DEL ESTADO DE CHIHUAHUA"=>"FISCALIA GENERAL DEL ESTADO DE CHIHUAHUA",
+	"H. CONGRESO DEL ESTADO DE CHIHUAHUA"=>"H. CONGRESO DEL ESTADO DE CHIHUAHUA",
+	"HOSPITAL GENERAL DE CHIHUAHUA"=>"HOSPITAL GENERAL DE CHIHUAHUA",
+	"INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION"=>"INSTITUTO MUNICIPAL DE INVESTIGACION Y PLANEACION",
+	"INSTITUTO MUNICIPAL DE PLANEACION"=>"INSTITUTO MUNICIPAL DE PLANEACION",
+	"MUNICIPIO DE CHIHUAHUA"=>"MUNICIPIO DE CHIHUAHUA",
+	"MUNICIPIO DE DELICIAS"=>"MUNICIPIO DE DELICIAS",
+	"PATRONATO PARA EL APOYO A LA INVESTIGACION Y FOMENTO AGRICOLA DEL DISTRITO DE DESARROLLO RURAL 013, A.C."=>"PATRONATO PARA EL APOYO A LA INVESTIGACION Y FOMENTO AGRICOLA DEL DISTRITO DE DESARROLLO RURAL 013, A.C.",
+	"PROMOTORA DE LA INDUSTRIA CHIHUAHUENSE"=>"PROMOTORA DE LA INDUSTRIA CHIHUAHUENSE",
+	"SECRETARIA DE ECONOMIA"=>"SECRETARIA DE ECONOMIA",
+	"SECRETARIA DE PLANEACIÓN Y EVALUACIÓN"=>"SECRETARIA DE PLANEACIÓN Y EVALUACIÓN",
+	"SECRETARIA DE SALUD"=>"SECRETARIA DE SALUD",
+	"SECRETARÍA DE EDUCACIÓN, CULTURA Y DEPORTE"=>"SECRETARÍA DE EDUCACIÓN, CULTURA Y DEPORTE",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE CHIHUAHUA"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE CHIHUAHUA",
+	"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DE CHIHUAHUA"=>"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DE CHIHUAHUA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE DURANGO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "AYUNTAMIENTO DEL MUNICIPIO DE DURANGO"=>"AYUNTAMIENTO DEL MUNICIPIO DE DURANGO",
+	"BEBELECHE, MUSEO INTERACTIVO DE DURANGO"=>"BEBELECHE, MUSEO INTERACTIVO DE DURANGO",
+	"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE DURANGO"=>"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE DURANGO",
+	"GOBIERNO DEL ESTADO DE DURANGO / SECRETARIA DE DESARROLLO ECONOMICO"=>"GOBIERNO DEL ESTADO DE DURANGO / SECRETARIA DE DESARROLLO ECONOMICO",
+	"MUNICIPIO DE GOMEZ PALACIO"=>"MUNICIPIO DE GOMEZ PALACIO",
+	"SECRETARÍA DE EDUCACIÓN DEL ESTADO DE DURANGO"=>"SECRETARÍA DE EDUCACIÓN DEL ESTADO DE DURANGO",
+	"SERVICIOS DE SALUD DE DURANGO"=>"SERVICIOS DE SALUD DE DURANGO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE GUERRERO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "AUDITORIA GENERAL DE ESTADO"=>"AUDITORIA GENERAL DE ESTADO",
+	"CONSEJO DE CIENCIA, TECNOLOGIA E INNOVACIÓN DEL ESTADO DE GUERRERO"=>"CONSEJO DE CIENCIA, TECNOLOGIA E INNOVACIÓN DEL ESTADO DE GUERRERO",
+	"EL HOSPITAL DE LA MADRE Y EL NIÑO GUERRENSE"=>"EL HOSPITAL DE LA MADRE Y EL NIÑO GUERRENSE",
+	"LA AVISPA MUSEO INTERACTIVO ESTABLECIMIENTO PÚBLICO DE BIENESTAR SOCIAL"=>"LA AVISPA MUSEO INTERACTIVO ESTABLECIMIENTO PÚBLICO DE BIENESTAR SOCIAL",
+	"PROCURADURIA DE PROTECCION ECOLOGICA"=>"PROCURADURIA DE PROTECCION ECOLOGICA",
+	"SECRETARIA DE AGRICULTURA Y RECURSOS HIDRAULICOS"=>"SECRETARIA DE AGRICULTURA Y RECURSOS HIDRAULICOS",
+	"SECRETARIA DE EDUCACION GUERRERO"=>"SECRETARIA DE EDUCACION GUERRERO",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE GUERRERO"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE GUERRERO",
+	"SERVICIOS ESTATALES DE SALUD DE GUERRERO"=>"SERVICIOS ESTATALES DE SALUD DE GUERRERO",
+	"SERVICIOS PARA EL DESARROLLO SOCIAL, A.C."=>"SERVICIOS PARA EL DESARROLLO SOCIAL, A.C.",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE HIDALGO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "COMISION DE DERECHOS HUMANOS DEL ESTADO DE HIDALGO"=>"COMISION DE DERECHOS HUMANOS DEL ESTADO DE HIDALGO",
+	"CONSEJERÍA JURÍDICA DEL GOBERNADOR DEL ESTADO DE HIDALGO"=>"CONSEJERÍA JURÍDICA DEL GOBERNADOR DEL ESTADO DE HIDALGO",
+	"CONSEJO DE CIENCIA, TECNOLOGÍA E INNOVACIÓN DE HIDALGO"=>"CONSEJO DE CIENCIA, TECNOLOGÍA E INNOVACIÓN DE HIDALGO",
+	"CONSEJO ESTATAL PARA LA CULTURA Y LAS ARTES"=>"CONSEJO ESTATAL PARA LA CULTURA Y LAS ARTES",
+	"CONSEJO RECTOR DE PACHUCA CIUDAD DEL CONOCIMIENTO Y LA CULTURA"=>"CONSEJO RECTOR DE PACHUCA CIUDAD DEL CONOCIMIENTO Y LA CULTURA",
+	"DIRECCIÓN DE DEFENSORIA DE OFICIO"=>"DIRECCIÓN DE DEFENSORIA DE OFICIO",
+	"INSTITUTO DE ESTUDIOS LEGISLATIVOS DEL CONGRESO DEL ESTADO LIBRE Y SOBERANO DE HIDALGO"=>"INSTITUTO DE ESTUDIOS LEGISLATIVOS DEL CONGRESO DEL ESTADO LIBRE Y SOBERANO DE HIDALGO",
+	"INSTITUTO DE PROFESIONALIZACIÓN E INVESTIGACIONES JURÍDICAS DEL PODER JUDICIAL DEL ESTADO DE HIDALGO"=>"INSTITUTO DE PROFESIONALIZACIÓN E INVESTIGACIONES JURÍDICAS DEL PODER JUDICIAL DEL ESTADO DE HIDALGO",
+	"INSTITUTO HIDALGUENSE DE COMPETITIVIDAD EMPRESARIAL"=>"INSTITUTO HIDALGUENSE DE COMPETITIVIDAD EMPRESARIAL",
+	"INSTITUTO MUNICIPAL DE INVESTIGACIÓN Y PLANEACIÓN"=>"INSTITUTO MUNICIPAL DE INVESTIGACIÓN Y PLANEACIÓN",
+	"MUSEO INTERACTIVO PARA LA NIÑEZ Y LA JUVENTUD HIDALGUENSE EL REHILETE"=>"MUSEO INTERACTIVO PARA LA NIÑEZ Y LA JUVENTUD HIDALGUENSE EL REHILETE",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE HIDALGO"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE HIDALGO",
+	"SERVICIOS DE SALUD DE HIDALGO"=>"SERVICIOS DE SALUD DE HIDALGO",
+	"SERVICIOS DE SALUD DE HIDALGO"=>"SERVICIOS DE SALUD DE HIDALGO",
+	"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL ESTADO DE HIDALGO"=>"SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL ESTADO DE HIDALGO",
+	"TRIBUNAL ELECTORAL DEL ESTADO DE HIDALGO"=>"TRIBUNAL ELECTORAL DEL ESTADO DE HIDALGO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE MICHOACAN"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "AGENCIA ESTATAL DE ATRACCIÓN DE INVERSIONES Y PROYECTOS ESTRATÉGICOS DEL ESTADO DE MICHOACÁN DE OCAMPO"=>"AGENCIA ESTATAL DE ATRACCIÓN DE INVERSIONES Y PROYECTOS ESTRATÉGICOS DEL ESTADO DE MICHOACÁN DE OCAMPO",
+	"CENTRO ESTATAL PARA EL DESARROLLO MUNICIPAL"=>"CENTRO ESTATAL PARA EL DESARROLLO MUNICIPAL",
+	"COMISIÓN ESTATAL DEL AGUA Y GESTIÓN DE CUENCAS"=>"COMISIÓN ESTATAL DEL AGUA Y GESTIÓN DE CUENCAS",
+	"COMISIÓN FORESTAL DEL ESTADO"=>"COMISIÓN FORESTAL DEL ESTADO",
+	"CONGRESO DEL ESTADO DE MICHOACÁN DE OCAMPO"=>"CONGRESO DEL ESTADO DE MICHOACÁN DE OCAMPO",
+	"CONSEJO ESTATAL DE CIENCIA, TECNOLOGÍA E INNOVACIÓN"=>"CONSEJO ESTATAL DE CIENCIA, TECNOLOGÍA E INNOVACIÓN",
+	"FIDEICOMISO FONDO ESTATAL DE CIENCIA Y TECNOLOGIA"=>"FIDEICOMISO FONDO ESTATAL DE CIENCIA Y TECNOLOGIA",
+	"H. AYUNTAMIENTO CONSTITUCIONAL DE IXTLAN"=>"H. AYUNTAMIENTO CONSTITUCIONAL DE IXTLAN",
+	"INSTITUTO PARA LA TRANSPARENCIA Y ACCESO A LA INFORMACION PUBLICA DEL ESTADO DE MICHOACAN"=>"INSTITUTO PARA LA TRANSPARENCIA Y ACCESO A LA INFORMACION PUBLICA DEL ESTADO DE MICHOACAN",
+	"PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE MICHOACAN"=>"PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE MICHOACAN",
+	"SECRETARIA DE DESARROLLO SOCIAL"=>"SECRETARIA DE DESARROLLO SOCIAL",
+	"SECRETARIA DE EDUCACIÓN DEL ESTADO"=>"SECRETARIA DE EDUCACIÓN DEL ESTADO",
+	"SECRETARIA DE LA MUJER"=>"SECRETARIA DE LA MUJER",
+	"SECRETARIA DE PLANEACION Y DESARROLLO ESTATAL"=>"SECRETARIA DE PLANEACION Y DESARROLLO ESTATAL",
+	"SECRETARIA DE TURISMO"=>"SECRETARIA DE TURISMO",
+	"SECRETARÍA DE DESARROLLO ECONÓMICO DEL ESTADO DE MICHOACÁN"=>"SECRETARÍA DE DESARROLLO ECONÓMICO DEL ESTADO DE MICHOACÁN",
+	"SECRETARÍA DE GOBIERNO"=>"SECRETARÍA DE GOBIERNO",
+	"SECRETARÍA DE POLÍTICA SOCIAL"=>"SECRETARÍA DE POLÍTICA SOCIAL",
+	"SECRETARÍA PARTICULAR DEL C. GOBERNADOR"=>"SECRETARÍA PARTICULAR DEL C. GOBERNADOR",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE MICHOACAN"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE MICHOACAN",
+	"SERVICIOS DE SALUD DE MICHOACAN"=>"SERVICIOS DE SALUD DE MICHOACAN",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE NAYARIT"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE NAYARIT"=>"CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE NAYARIT",
+	"PROCURADURIA GENERAL DE JUSTICIA"=>"PROCURADURIA GENERAL DE JUSTICIA",
+	"SECRETARIA DE DESARROLLO ECONOMICO"=>"SECRETARIA DE DESARROLLO ECONOMICO",
+	"SECRETARIA DE EDUCACION PUBLICA"=>"SECRETARIA DE EDUCACION PUBLICA",
+	"SECRETARIA DE FINANZAS"=>"SECRETARIA DE FINANZAS",
+	"SECRETARIA DE LA CONTRALORIA GENERAL"=>"SECRETARIA DE LA CONTRALORIA GENERAL",
+	"SECRETARIA DE PLANEACION"=>"SECRETARIA DE PLANEACION",
+	"SECRETARIA DE TURISMO"=>"SECRETARIA DE TURISMO",
+	"SECRETARIA GENERAL DE GOBIERNO"=>"SECRETARIA GENERAL DE GOBIERNO",
+	"SECRETARÍA DE OBRAS PÚBLICAS DEL ESTADO DE NAYARIT"=>"SECRETARÍA DE OBRAS PÚBLICAS DEL ESTADO DE NAYARIT"),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE NUEVO LEON"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "ARCHIVO GENERAL DEL ESTADO DE NUEVO LEON"=>"ARCHIVO GENERAL DEL ESTADO DE NUEVO LEON",
+	"CENTRO DE INVESTIGACIONES HISTORICAS Y CULTURALES MUSEO AMPARO, A.C."=>"CENTRO DE INVESTIGACIONES HISTORICAS Y CULTURALES MUSEO AMPARO, A.C.",
+	"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE NUEVO LEON"=>"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE NUEVO LEON",
+	"CONGRESO DEL ESTADO DE NUEVO LEÓN"=>"CONGRESO DEL ESTADO DE NUEVO LEÓN",
+	"COORDINACIÓN DE CIENCIA Y TECNOLOGÍA DE NUEVO LEÓN"=>"COORDINACIÓN DE CIENCIA Y TECNOLOGÍA DE NUEVO LEÓN",
+	"ESCUELA DE LICENCIATURA EN CIENCIAS DE LA EDUCACION"=>"ESCUELA DE LICENCIATURA EN CIENCIAS DE LA EDUCACION",
+	"INSTITUTO DE DEFENSORÍA PÚBLICA DE NUEVO LEÓN"=>"INSTITUTO DE DEFENSORÍA PÚBLICA DE NUEVO LEÓN",
+	"INSTITUTO DE INNOVACION Y TRANSFERENCIA DE TECNOLOGIA DE NUEVO LEON"=>"INSTITUTO DE INNOVACION Y TRANSFERENCIA DE TECNOLOGIA DE NUEVO LEON",
+	"INSTITUTO DE INVESTIGACION, INNOVACIÓN Y ESTUDIOS DE POSGRADO PARA LA EDUCACIÓN DEL ESTADO DE NUEVO LEÓN"=>"INSTITUTO DE INVESTIGACION, INNOVACIÓN Y ESTUDIOS DE POSGRADO PARA LA EDUCACIÓN DEL ESTADO DE NUEVO LEÓN",
+	"INSTITUTO DEL AGUA DEL ESTADO DE NUEVO LEÓN, O.P.D."=>"INSTITUTO DEL AGUA DEL ESTADO DE NUEVO LEÓN, O.P.D.",
+	"MUNICIPIO DE LA CIUDAD DE MONTERREY"=>"MUNICIPIO DE LA CIUDAD DE MONTERREY",
+	"MUNICIPIO DE LINARES NUEVO LEON"=>"MUNICIPIO DE LINARES NUEVO LEON",
+	"MUNICIPIO GUADALUPE NUEVO LEON"=>"MUNICIPIO GUADALUPE NUEVO LEON",
+	"MUNICIPIO SAN NICOLAS DE LOS GARZA"=>"MUNICIPIO SAN NICOLAS DE LOS GARZA",
+	"PODER JUDICIAL DEL ESTADO DE NUEVO LEON"=>"PODER JUDICIAL DEL ESTADO DE NUEVO LEON",
+	"SECRETARÍA DE EDUCACIÓN DEL ESTADO DE NUEVO LEÓN"=>"SECRETARÍA DE EDUCACIÓN DEL ESTADO DE NUEVO LEÓN",
+	"SECRETARÍA GENERAL DE GOBIERNO"=>"SECRETARÍA GENERAL DE GOBIERNO",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE NUEVO LEON"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE NUEVO LEON",
+	"SERVICIOS DE SALUD DE NUEVO LEON"=>"SERVICIOS DE SALUD DE NUEVO LEON",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="COMEGOBIERNO DEL ESTADO DE OAXACASA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		   "CENTRO DE DISEÑO DE OAXACA"=>"CENTRO DE DISEÑO DE OAXACA",
+	"COMISION ESTATAL DE ARBITRAJE MEDICO DE OAXACA"=>"COMISION ESTATAL DE ARBITRAJE MEDICO DE OAXACA",
+	"CONSEJO ESTATAL PARA LA PREVENCIÓN Y CONTROL DEL SIDA (COESIDA) OAXACA"=>"CONSEJO ESTATAL PARA LA PREVENCIÓN Y CONTROL DEL SIDA (COESIDA) OAXACA",
+	"CONSEJO OAXAQUEÑO DE CIENCIA Y TECNOLOGIA"=>"CONSEJO OAXAQUEÑO DE CIENCIA Y TECNOLOGIA",
+	"COORDINACIÓN DE TECNOLOGÍAS DE LA INFORMACIÓN"=>"COORDINACIÓN DE TECNOLOGÍAS DE LA INFORMACIÓN",
+	"COORDINACIÓN GENERAL DE EDUCACIÓN MEDIA SUPERIOR, SUPERIOR, CIENCIA Y TECNOLOGÍA"=>"COORDINACIÓN GENERAL DE EDUCACIÓN MEDIA SUPERIOR, SUPERIOR, CIENCIA Y TECNOLOGÍA",
+	"INSTITUTO DE LA JUVENTUD OAXAQUEÑA"=>"INSTITUTO DE LA JUVENTUD OAXAQUEÑA",
+	"INSTITUTO DE LA MUJER OAXAQUEÑA"=>"INSTITUTO DE LA MUJER OAXAQUEÑA",
+	"INSTITUTO DEL PATRIMONIO CULTURAL DEL ESTADO DE OAXACA"=>"INSTITUTO DEL PATRIMONIO CULTURAL DEL ESTADO DE OAXACA",
+	"INSTITUTO ESTATAL DE EDUCACION PUBLICA DE OAXACA"=>"INSTITUTO ESTATAL DE EDUCACION PUBLICA DE OAXACA",
+	"JARDIN ETNOBOTÁNICO DEL CENTRO CULTURAL SANTO DOMINGO"=>"JARDIN ETNOBOTÁNICO DEL CENTRO CULTURAL SANTO DOMINGO",
+	"MUNICIPIO DE OAXACA DE JUAREZ"=>"MUNICIPIO DE OAXACA DE JUAREZ",
+	"SECRETARIA DE SALUD"=>"SECRETARIA DE SALUD",
+	"SECRETARÍA DE ADMINISTRACIÓN"=>"SECRETARÍA DE ADMINISTRACIÓN",
+	"SECRETARÍA DE ECONOMÍA"=>"SECRETARÍA DE ECONOMÍA",
+	"SECRETARÍA DE FINANZAS"=>"SECRETARÍA DE FINANZAS",
+	"SERVICIOS DE SALUD DE OAXACA"=>"SERVICIOS DE SALUD DE OAXACA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE PUEBLA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "COLEGIO DE EDUCACIÓN PROFESIONAL TÉCNICA DEL ESTADO DE PUEBLA"=>"COLEGIO DE EDUCACIÓN PROFESIONAL TÉCNICA DEL ESTADO DE PUEBLA",
+	"CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE PUEBLA"=>"CONSEJO DE CIENCIA Y TECNOLOGÍA DEL ESTADO DE PUEBLA",
+	"CONSEJO ESTATAL DE POBLACION DEL ESTADO DE PUEBLA"=>"CONSEJO ESTATAL DE POBLACION DEL ESTADO DE PUEBLA",
+	"MUNICIPIO DE SAN PEDRO CH"=>"MUNICIPIO DE SAN PEDRO CH",
+	"SECRETARIA DE DESARROLLO RURAL GOBIERNO DEL ESTADO DE PUEBLA"=>"SECRETARIA DE DESARROLLO RURAL GOBIERNO DEL ESTADO DE PUEBLA",
+	"SECRETARÍA DE COMPETITIVIDAD, TRABAJO Y DESARROLLO ECONÓMICO"=>"SECRETARÍA DE COMPETITIVIDAD, TRABAJO Y DESARROLLO ECONÓMICO",
+	"SECRETARÍA DE DESARROLLO ECONÓMICO"=>"SECRETARÍA DE DESARROLLO ECONÓMICO",
+	"SECRETARÍA DE INFRAESTRUCTURA"=>"SECRETARÍA DE INFRAESTRUCTURA",
+	"SECRETARÍA DEL MEDIO AMBIENTE Y RECURSOS NATURALES DEL ESTADO DE PUEBLA"=>"SECRETARÍA DEL MEDIO AMBIENTE Y RECURSOS NATURALES DEL ESTADO DE PUEBLA",
+	"SERVICIOS DE SALUD DEL ESTADO PUEBLA"=>"SERVICIOS DE SALUD DEL ESTADO PUEBLA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE SAN LUIS POTOSI"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "CENTRO POTOSINO DE TECNOLOGIA EDUCATIVA"=>"CENTRO POTOSINO DE TECNOLOGIA EDUCATIVA",
+	"CONSEJO ESTATAL DE POBLACION DE SAN LUIS POTOSI"=>"CONSEJO ESTATAL DE POBLACION DE SAN LUIS POTOSI",
+	"CONSEJO POTOSINO DE CIENCIA Y TECNOLOGIA"=>"CONSEJO POTOSINO DE CIENCIA Y TECNOLOGIA",
+	"HOSPITAL CENTRAL IGNACIO MORONES PRIETO"=>"HOSPITAL CENTRAL IGNACIO MORONES PRIETO",
+	"PROMOTORA DEL ESTADO DE SAN LUIS POTOSÍ"=>"PROMOTORA DEL ESTADO DE SAN LUIS POTOSÍ",
+	"SECRETARIA DE DESARROLLO AGROPECUARIO Y RECURSOS HIDRAULICOS DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI"=>"SECRETARIA DE DESARROLLO AGROPECUARIO Y RECURSOS HIDRAULICOS DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI",
+	"SECRETARIA DE ECOLOGIA Y GESTION AMBIENTAL DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI"=>"SECRETARIA DE ECOLOGIA Y GESTION AMBIENTAL DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI",
+	"SECRETARIA DE EDUCACION DEL GOBIERNO DEL ESTADO"=>"SECRETARIA DE EDUCACION DEL GOBIERNO DEL ESTADO",
+	"SECRETARIA DE TURISMO DEL ESTADO DE SAN LUIS POTOSI"=>"SECRETARIA DE TURISMO DEL ESTADO DE SAN LUIS POTOSI",
+	"SECRETARÍA DE DESARROLLO ECONÓMICO DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI"=>"SECRETARÍA DE DESARROLLO ECONÓMICO DEL GOBIERNO DEL ESTADO DE SAN LUIS POTOSI",
+	"SERVICIOS DE SALUD DE SAN LUIS POTOSI"=>"SERVICIOS DE SALUD DE SAN LUIS POTOSI",
+	"SISTEMA MUNICIPAL PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE MATEHUALA"=>"SISTEMA MUNICIPAL PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE MATEHUALA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE SINALOA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "CENTRO DE CIENCIAS DE SINALOA"=>"CENTRO DE CIENCIAS DE SINALOA",
+	"CENTRO ESTATAL DE INVESTIGACIÓN Y DESARROLLO EDUCATIVO DE SINALOA"=>"CENTRO ESTATAL DE INVESTIGACIÓN Y DESARROLLO EDUCATIVO DE SINALOA",
+	"COMISION ESTATAL DE ENERGIA DE SINALOA"=>"COMISION ESTATAL DE ENERGIA DE SINALOA",
+	"CONSEJO DE CIENCIA Y TECNOLOGIA DE SINALOA"=>"CONSEJO DE CIENCIA Y TECNOLOGIA DE SINALOA",
+	"CONSEJO PARA EL DESARROLLO ECONOMICO DE SINALOA"=>"CONSEJO PARA EL DESARROLLO ECONOMICO DE SINALOA",
+	"COORDINACIÓN GENERAL DE DESARROLLO TECNOLÓGICO"=>"COORDINACIÓN GENERAL DE DESARROLLO TECNOLÓGICO",
+	"EL COLEGIO DE SINALOA"=>"EL COLEGIO DE SINALOA",
+	"EL COLEGIO DE SINALOA, A.C."=>"EL COLEGIO DE SINALOA, A.C.",
+	"HOSPITAL CIVIL DE CULIACAN"=>"HOSPITAL CIVIL DE CULIACAN",
+	"HOSPITAL GENERAL DE ESCUINAPA"=>"HOSPITAL GENERAL DE ESCUINAPA",
+	"HOSPITAL GENERAL DE GUASAVE"=>"HOSPITAL GENERAL DE GUASAVE",
+	"HOSPITAL GENERAL DE LOS MOCHIS"=>"HOSPITAL GENERAL DE LOS MOCHIS",
+	"HOSPITAL GENERAL DE MAZATLAN DR. MARTINIANO CARBAJAL"=>"HOSPITAL GENERAL DE MAZATLAN DR. MARTINIANO CARBAJAL",
+	"HOSPITAL PEDIATRICO DE SINALOA DR. RIGOBERTO AGUILAR PICO"=>"HOSPITAL PEDIATRICO DE SINALOA DR. RIGOBERTO AGUILAR PICO",
+	"HOSPITAL PEDIATRICO DE SINALOA"=>"HOSPITAL PEDIATRICO DE SINALOA",
+	"INSTITUTO DE APOYO A LA INVESTIGACIÓN E INNOVACIÓN"=>"INSTITUTO DE APOYO A LA INVESTIGACIÓN E INNOVACIÓN",
+	"MUNICIPIO DE AHOME"=>"MUNICIPIO DE AHOME",
+	"MUNICIPIO DE CULIACÁN"=>"MUNICIPIO DE CULIACÁN",
+	"MUNICIPIO DE EL ROSARIO"=>"MUNICIPIO DE EL ROSARIO",
+	"MUNICIPIO DE ESCUINAPA DE HIDALGO"=>"MUNICIPIO DE ESCUINAPA DE HIDALGO",
+	"MUNICIPIO DE MAZATLAN"=>"MUNICIPIO DE MAZATLAN",
+	"SECRETARIA DE AGRICULTURA, GANADERIA Y PESCA"=>"SECRETARIA DE AGRICULTURA, GANADERIA Y PESCA",
+	"SECRETARIA DE AGRICULTURA, GANADERIA, DESARROLLO RURAL, PESCA Y ALIMENTACION"=>"SECRETARIA DE AGRICULTURA, GANADERIA, DESARROLLO RURAL, PESCA Y ALIMENTACION",
+	"SECRETARIA DE DESARROLLO ECONOMICO"=>"SECRETARIA DE DESARROLLO ECONOMICO",
+	"SECRETARÍA DE INNOVACIÓN GUBERNAMENTAL"=>"SECRETARÍA DE INNOVACIÓN GUBERNAMENTAL",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE SINALOA"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE SINALOA",
+	"SERVICIOS DE SALUD DE SINALOA"=>"SERVICIOS DE SALUD DE SINALOA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE TABASCO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE TABASCO"=>"CONSEJO DE CIENCIA Y TECNOLOGIA DEL ESTADO DE TABASCO",
+	"HOSPITAL DEL NIÑO DR. RODOLFO NIETO PADRON"=>"HOSPITAL DEL NIÑO DR. RODOLFO NIETO PADRON",
+	"HOSPITAL REGIONAL DE ALTA ESPECIALIDAD DR. JUAN GRAHAM CASASÚS"=>"HOSPITAL REGIONAL DE ALTA ESPECIALIDAD DR. JUAN GRAHAM CASASÚS",
+	"INSTITUTO ESTATAL DE LAS MUJERES"=>"INSTITUTO ESTATAL DE LAS MUJERES",
+	"MUSEO INTERACTIVO PAPAGAYO"=>"MUSEO INTERACTIVO PAPAGAYO",
+	"PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE TABASCO"=>"PROCURADURIA GENERAL DE JUSTICIA DEL ESTADO DE TABASCO",
+	"SECRETARIA DE DESARROLLO AGROPECUARIO, FORESTAL Y PESCA DEL ESTADO DE TABASCO"=>"SECRETARIA DE DESARROLLO AGROPECUARIO, FORESTAL Y PESCA DEL ESTADO DE TABASCO",
+	"SECRETARIA DE EDUCACIÓN DEL ESTADO DE TABASCO"=>"SECRETARIA DE EDUCACIÓN DEL ESTADO DE TABASCO",
+	"SECRETARIA DE SALUD DEL ESTADO DE TABASCO"=>"SECRETARIA DE SALUD DEL ESTADO DE TABASCO",
+	"SECRETARIA DE TURISMO DEL ESTADO DE TABASCO"=>"SECRETARIA DE TURISMO DEL ESTADO DE TABASCO",
+	"SECRETARÍA DE ADMINISTRACIÓN"=>"SECRETARÍA DE ADMINISTRACIÓN",
+	"SECRETARÍA DE ENERGÍA, RECURSOS NATURALES Y PROTECCIÓN AMBIENTAL"=>"SECRETARÍA DE ENERGÍA, RECURSOS NATURALES Y PROTECCIÓN AMBIENTAL"),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE TAMAULIPAS"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE TAMAULIPAS"=>"COLEGIO DE EDUCACION PROFESIONAL TECNICA DEL ESTADO DE TAMAULIPAS",
+	"COMISION MUNICIPAL DE AGUA POTABLE Y ALCANTARILLADO DEL MUNICIPIO DE REYNOSA TAMAULIPAS"=>"COMISION MUNICIPAL DE AGUA POTABLE Y ALCANTARILLADO DEL MUNICIPIO DE REYNOSA TAMAULIPAS",
+	"COMISIÓN ESTATAL PARA LA CONSERVACIÓN Y APROVECHAMIENTO ECONÓMICO DE LA VIDA SILVESTRE EN TAMAULIPAS"=>"COMISIÓN ESTATAL PARA LA CONSERVACIÓN Y APROVECHAMIENTO ECONÓMICO DE LA VIDA SILVESTRE EN TAMAULIPAS",
+	"CONSEJO TAMAULIPECO DE CIENCIA Y TECNOLOGIA"=>"CONSEJO TAMAULIPECO DE CIENCIA Y TECNOLOGIA",
+	"DIRECCIÓN DE FORMACIÓN Y SUPERACION PROFESIONAL DE LOS DOCENTES"=>"DIRECCIÓN DE FORMACIÓN Y SUPERACION PROFESIONAL DE LOS DOCENTES",
+	"INSTITUTO TAMAULIPECO PARA LA CULTURA Y LAS ARTES"=>"INSTITUTO TAMAULIPECO PARA LA CULTURA Y LAS ARTES",
+	"MUNICIPIO DE CD. MADERO, TAMAULIPAS"=>"MUNICIPIO DE CD. MADERO, TAMAULIPAS",
+	"SECRETARIA DE EDUCACION, CULTURA Y DEPORTE"=>"SECRETARIA DE EDUCACION, CULTURA Y DEPORTE",
+	"SECRETARÍA DE EDUCACIÓN DEL ESTADO DE TAMAULIPAS"=>"SECRETARÍA DE EDUCACIÓN DEL ESTADO DE TAMAULIPAS",
+	"SECRETARÍA DE SALUD"=>"SECRETARÍA DE SALUD",
+	"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE TAMAULIPAS"=>"SERVICIOS COORDINADOS DE SALUD PUBLICA EN EL ESTADO DE TAMAULIPAS",
+	"SERVICIOS DE SALUD DE TAMAULIPAS"=>"SERVICIOS DE SALUD DE TAMAULIPAS",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE TLAXCALA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		  "COMISIÓN DE ACCESO A LA INFORMACIÓN PÚBLICA Y PROTECCIÓN DE DATOS PERSONALES DEL ESTADO DE TLAXCALA"=>"COMISIÓN DE ACCESO A LA INFORMACIÓN PÚBLICA Y PROTECCIÓN DE DATOS PERSONALES DEL ESTADO DE TLAXCALA",
+	"CONTRALORIA DEL EJECUTIVO"=>"CONTRALORIA DEL EJECUTIVO",
+	"FIDEICOMISO COLEGIO DE HISTORIA DE TLAXCALA"=>"FIDEICOMISO COLEGIO DE HISTORIA DE TLAXCALA",
+	"SECRETARIA DE SALUD DEL ESTADO"=>"SECRETARIA DE SALUD DEL ESTADO",
+	"SECRETARÍA DE TURISMO Y DESARROLLO ECONÓMICO"=>"SECRETARÍA DE TURISMO Y DESARROLLO ECONÓMICO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="GOBIERNO DEL ESTADO DE ZACATECAS"){
+		    echo $form->dropDownList($model,'second_level',array(
+		   "CONSEJO ZACATECANO DE CIENCIA, TECNOLOGÍA E INNOVACIÓN"=>"CONSEJO ZACATECANO DE CIENCIA, TECNOLOGÍA E INNOVACIÓN",
+	"SECRETARIA DE DESARROLLO ECONOMICO"=>"SECRETARIA DE DESARROLLO ECONOMICO",
+	"SECRETARIA DE EDUCACION Y CULTURA"=>"SECRETARIA DE EDUCACION Y CULTURA",
+	"SERVICIOS DE SALUD DE ZACATECAS"=>"SERVICIOS DE SALUD DE ZACATECAS",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="SECRETARIA DE DESARROLLO SOCIAL DEL DISTRITO FEDERAL"){
+		    echo $form->dropDownList($model,'second_level',array(
+		"DIRECCION GENERAL DE EQUIDAD Y DESARROLLO SOCIAL"=>"DIRECCION GENERAL DE EQUIDAD Y DESARROLLO SOCIAL",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="CONGRESO DEL ESTADO DE GUERRERO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    										"AUDITORIA GENERAL DE ESTADO"=>"AUDITORIA GENERAL DE ESTADO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="COMISION ESTATAL DE DERECHOS HUMANOS DE JALISCO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"TERCERA VISITADURIA GENERAL"=>"TERCERA VISITADURIA GENERAL",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="PODER JUDICIAL DEL ESTADO DE SONORA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "SUPREMO TRIBUNAL DE JUSTICIA"=>"SUPREMO TRIBUNAL DE JUSTICIA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="INSTITUTO DE SERVICIOS DE SALUD PUBLICA DEL ESTADO DE BAJA CALIFORNIA"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "HOSPITAL GENERAL DE MEXICALI"=>"HOSPITAL GENERAL DE MEXICALI",
+	"HOSPITAL GENERAL DE TIJUANA"=>"HOSPITAL GENERAL DE TIJUANA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="H CONGRESO DEL ESTADO LIBRE Y SOBERANO DE TABASCO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"DIRECCION DE ESTUDIOS LEGISLATIVOS"=>"DIRECCION DE ESTUDIOS LEGISLATIVOS",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="SECRETARIA DE DESARROLLO URBANO VIVIENDA Y OBRAS PUBLICAS"){
+		    echo $form->dropDownList($model,'second_level',array(
+		   "SECRETARIA DE DESARROLLO URBANO Y OBRAS PUBLICAS"=>"SECRETARIA DE DESARROLLO URBANO Y OBRAS PUBLICAS",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		
+		if ($model->organization=="CENTRO ONCOLOGICO ESTATAL ISSEMYM"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "CENTRO ONCOLOGICO ESTATAL ISSEMYM"=>"CENTRO ONCOLOGICO ESTATAL ISSEMYM",
+	"CENTRO ONCOLOGICO ESTATAL ISSEMYM"=>"CENTRO ONCOLOGICO ESTATAL ISSEMYM"),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="SERVICIOS DE SALUD DE VERACRUZ"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"CENTRO DE ESPECIALIDADES MEDICAS DEL ESTADO DE VERACRUZ DR. RAFAEL LUCIO"=>"CENTRO DE ESPECIALIDADES MEDICAS DEL ESTADO DE VERACRUZ DR. RAFAEL LUCIO",
+	"HOSPITAL GENERAL DE MISANTLA"=>"HOSPITAL GENERAL DE MISANTLA",
+	"HOSPITAL GENERAL TARIMOYA DR. HORACIO DÍAZ CHÁZARO"=>"HOSPITAL GENERAL TARIMOYA DR. HORACIO DÍAZ CHÁZARO",
+	"HOSPITAL REGIONAL DE ALTA ESPECIALIDAD DE VERACRUZ VIRGILIO URIBE"=>"HOSPITAL REGIONAL DE ALTA ESPECIALIDAD DE VERACRUZ VIRGILIO URIBE",
+	"HOSPITAL REGIONAL DE RIO BLANCO"=>"HOSPITAL REGIONAL DE RIO BLANCO",
+	"HOSPITAL REGIONAL DE ROZA RICA"=>"HOSPITAL REGIONAL DE ROZA RICA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="CONSEJO ESTATAL PARA LAS CULTURAS Y LAS ARTES DE CHIAPAS"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "CENTRO DE INVESTIGACIONES SOBRE EL PATRIMONIO CULTURAL"=>"CENTRO DE INVESTIGACIONES SOBRE EL PATRIMONIO CULTURAL",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="MINISTERIO DE SALUD Y MEDIA AMBIENTE DE LA PROVINCIA DE SANTA FE"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"PROGRAMA PROVINCIAL DE ENFERMEDADES DE TRANSMISIÓN SEXUAL Y SIDA"=>"PROGRAMA PROVINCIAL DE ENFERMEDADES DE TRANSMISIÓN SEXUAL Y SIDA",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="CONGRESO DEL ESTADO DE HIDALGO"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    "ORGANO DE FISCALIZACIÓN DEL ESTADO DE HIDALGO"=>"ORGANO DE FISCALIZACIÓN DEL ESTADO DE HIDALGO",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+		if ($model->organization=="SECRETARIA DE EDUCACION EN EL ESTADO DE MICHOACAN"){
+		    echo $form->dropDownList($model,'second_level',array(
+		    	"SUBSECRETARIA DE EDUCACION MEDIA SUPERIOR Y SUPERIOR"=>"SUBSECRETARIA DE EDUCACION MEDIA SUPERIOR Y SUPERIOR",),
+		   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		}
+
+
+		/*Instituciones del sector de educacion superior publicas*/
+						if ($model->organization=="BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA"=>"BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA",
+					"CENTRO DE INFORMACION DE MEDICAMENTOS"=>"CENTRO DE INFORMACION DE MEDICAMENTOS",
+					"CENTRO DE INVESTIGACIONES EN DISPOSITIVOS SEMI"=>"CENTRO DE INVESTIGACIONES EN DISPOSITIVOS SEMI",
+					"CENTRO DE INVESTIGACIONES MICROBIOLOGICAS"=>"CENTRO DE INVESTIGACIONES MICROBIOLOGICAS",
+					"CENTRO DE TECNOLOGIA EDUCATIVA CTE"=>"CENTRO DE TECNOLOGIA EDUCATIVA CTE",
+					"CENTRO UNIVERSITARIO DE VINCULACION"=>"CENTRO UNIVERSITARIO DE VINCULACION",
+					"CENTRO UNIVERSITARIO PARA LA PREVENCION DE DESASTRES REGIONALES CUPREDER"=>"CENTRO UNIVERSITARIO PARA LA PREVENCION DE DESASTRES REGIONALES CUPREDER",
+					"CIENCIAS DE LA ELECTRONICA"=>"CIENCIAS DE LA ELECTRONICA",
+					"COORDINACION DE INTERCAMBIO ACADEMICO Y RELACIONES INTERNACIONALES"=>"COORDINACION DE INTERCAMBIO ACADEMICO Y RELACIONES INTERNACIONALES",
+					"DIRECCION GENERAL DE ESTUDIOS DE POSGRADO"=>"DIRECCION GENERAL DE ESTUDIOS DE POSGRADO",
+					"EDUCACION A DISTANCIA"=>"EDUCACION A DISTANCIA",
+					"ESCUELA DE ADMINISTRACION DE EMPRESAS"=>"ESCUELA DE ADMINISTRACION DE EMPRESAS",
+					"ESCUELA DE ARTES PLASTICAS Y AUDIOVISUALES"=>"ESCUELA DE ARTES PLASTICAS Y AUDIOVISUALES",
+					"ESCUELA DE ARTES"=>"ESCUELA DE ARTES",
+					"ESCUELA DE BIOLOGIA"=>"ESCUELA DE BIOLOGIA",
+					"ESCUELA DE CIENCIAS DE LA ELECTRONICA"=>"ESCUELA DE CIENCIAS DE LA ELECTRONICA",
+					"ESCUELA DE INGENIERIA QUIMICA"=>"ESCUELA DE INGENIERIA QUIMICA",
+					"ESCUELA DE MEDICINA"=>"ESCUELA DE MEDICINA",
+					"ESCUELA DE ODONTOLOGIA"=>"ESCUELA DE ODONTOLOGIA",
+					"ESCUELA DE VETERINARIA Y ZOOTECNIA"=>"ESCUELA DE VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE ADMINISTRACION"=>"FACULTAD DE ADMINISTRACION",
+					"FACULTAD DE ARQUITECTURA Y ORDENAMIENTO DEL TERRITORIO"=>"FACULTAD DE ARQUITECTURA Y ORDENAMIENTO DEL TERRITORIO",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE CIENCIAS DE LA COMPUTACION"=>"FACULTAD DE CIENCIAS DE LA COMPUTACION",
+					"FACULTAD DE CIENCIAS DE LA COMUNICACIÓN"=>"FACULTAD DE CIENCIAS DE LA COMUNICACIÓN",
+					"FACULTAD DE CIENCIAS DE LA ELECTRONICA"=>"FACULTAD DE CIENCIAS DE LA ELECTRONICA",
+					"FACULTAD DE CIENCIAS FISICO MATEMATICAS"=>"FACULTAD DE CIENCIAS FISICO MATEMATICAS",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CONTADURIA"=>"FACULTAD DE CONTADURIA",
+					"FACULTAD DE CULTURA FISICA"=>"FACULTAD DE CULTURA FISICA",
+					"FACULTAD DE DERECHO Y CIENCIAS SOCIALES"=>"FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE ESTOMATOLOGIA"=>"FACULTAD DE ESTOMATOLOGIA",
+					"FACULTAD DE FILOSOFIA Y LETRAS"=>"FACULTAD DE FILOSOFIA Y LETRAS",
+					"FACULTAD DE INGENIERIA QUIMICA"=>"FACULTAD DE INGENIERIA QUIMICA",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE LENGUAS"=>"FACULTAD DE LENGUAS",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"HERBARIO Y JARDIN BOTANICO DE LA BUAP"=>"HERBARIO Y JARDIN BOTANICO DE LA BUAP",
+					"HOSPITAL UNIVERSITARIO DE PUEBLA"=>"HOSPITAL UNIVERSITARIO DE PUEBLA",
+					"INSTITUTO DE CIENCIAS AMBIENTALES"=>"INSTITUTO DE CIENCIAS AMBIENTALES",
+					"INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES ALFONSO VÉLEZ PLIEGO ICSYH"=>"INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES ALFONSO VÉLEZ PLIEGO ICSYH",
+					"INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES"=>"INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"INSTITUTO DE CIENCIAS"=>"INSTITUTO DE CIENCIAS",
+					"INSTITUTO DE FISICA LUIS RIVERA TERRAZAS"=>"INSTITUTO DE FISICA LUIS RIVERA TERRAZAS",
+					"INSTITUTO DE FISIOLOGIA"=>"INSTITUTO DE FISIOLOGIA",
+					"INSTITUTO EN CIENCIAS DE GOBIERNO Y DESARROLLO ESTRATÉGICO"=>"INSTITUTO EN CIENCIAS DE GOBIERNO Y DESARROLLO ESTRATÉGICO",
+					"MAESTRIA EN DIAGNOSTICO Y REHABILITACION NEUROPSICOLOGICA"=>"MAESTRIA EN DIAGNOSTICO Y REHABILITACION NEUROPSICOLOGICA",
+					"OFICINA DE LA ABOGADA GENERAL"=>"OFICINA DE LA ABOGADA GENERAL",
+					"PREPARATORIA ALFONSO CALDERON MORENO"=>"PREPARATORIA ALFONSO CALDERON MORENO",
+					"PREPARATORIA EMILIANO ZAPATA"=>"PREPARATORIA EMILIANO ZAPATA",
+					"PREPARATORIA ENRIQUE CABRERA BARROSO URBANA"=>"PREPARATORIA ENRIQUE CABRERA BARROSO URBANA",
+					"RECTORIA"=>"RECTORIA",
+					"RED DE ESTUDIOS DE LA ECONOMIA MUNDIAL REDEM"=>"RED DE ESTUDIOS DE LA ECONOMIA MUNDIAL REDEM",
+					"UNIDAD ACADEMICA DE INGENIERIA AGROHIDRAULICA"=>"UNIDAD ACADEMICA DE INGENIERIA AGROHIDRAULICA",
+					"VICERRECTORIA DE INVESTIGACION Y ESTUDIOS DE POSGRADO"=>"VICERRECTORIA DE INVESTIGACION Y ESTUDIOS DE POSGRADO",
+					"VICERRECTORIA DE PRESUPUESTO Y PLANEACION"=>"VICERRECTORIA DE PRESUPUESTO Y PLANEACION",
+					"VICERRECTORÍA DE DOCENCIA"=>"VICERRECTORÍA DE DOCENCIA",
+					"VICERRECTORÍA DE EXTENSIÓN Y DIFUSIÓN DE LA CULTURA"=>"VICERRECTORÍA DE EXTENSIÓN Y DIFUSIÓN DE LA CULTURA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="CENTRO DE ENSENANZA TECNICA INDUSTRIAL"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "SUBDIRECCION DE INVESTIGACION Y DESARROL"=>"SUBDIRECCION DE INVESTIGACION Y DESARROL",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="CENTRO DE ENSENANZA TECNICA Y SUPERIOR UNIVERSIDAD"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "ESCUELA DE INGENIERIA"=>"ESCUELA DE INGENIERIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="DIRECCION GENERAL DE EDUCACION EN CIENCIA Y TECNOLOGIA DEL MAR"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE ESTUDIOS TECNOLOGICOS DEL MAR"=>"CENTRO DE ESTUDIOS TECNOLOGICOS DEL MAR",
+					"CENTRO DE ESTUDIOS TECNOLOGICOS DEL MAR NO. 8"=>"CENTRO DE ESTUDIOS TECNOLOGICOS DEL MAR NO. 8",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="ESCUELA NACIONAL DE BIBLIOTECONOMIA Y ARCHIVONOMIA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						   "SECRETARIA DE EDUCACION PUBLICA DIRECCION GENERAL DE EDUCACION SUPERIOR"=>"SECRETARIA DE EDUCACION PUBLICA DIRECCION GENERAL DE EDUCACION SUPERIOR",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="ESCUELA NORMAL SUPERIOR DEL ESTADO DE COAHUILA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						  "DIVISION DE ESTUDIOS DE POSGRADO"=>"DIVISION DE ESTUDIOS DE POSGRADO",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO POLITECNICO NACIONAL"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE DESARROLLO DE PRODUCTOS BIOTICOS"=>"CENTRO DE DESARROLLO DE PRODUCTOS BIOTICOS",
+					"CENTRO DE DIFUSIÓN DE CIENCIA Y TECNOLOGÍA"=>"CENTRO DE DIFUSIÓN DE CIENCIA Y TECNOLOGÍA",
+					"CENTRO DE EDUCACION CONTINUA"=>"CENTRO DE EDUCACION CONTINUA",
+					"CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS-CECYT"=>"CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS-CECYT",
+					"CENTRO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS NO 1"=>"CENTRO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS NO 1",
+					"CENTRO DE INCUBACION DE EMPRESAS DE BASE TECNOLOGICA DEL INSTITUTO POLITECNICO NACIONAL"=>"CENTRO DE INCUBACION DE EMPRESAS DE BASE TECNOLOGICA DEL INSTITUTO POLITECNICO NACIONAL",
+					"CENTRO DE LENGUAS EXTRANJERAS (UNIDAD CULHUACAN)"=>"CENTRO DE LENGUAS EXTRANJERAS (UNIDAD CULHUACAN)",
+					"CENTRO DE LENGUAS EXTRANJERAS (UNIDAD ZACATENCO)"=>"CENTRO DE LENGUAS EXTRANJERAS (UNIDAD ZACATENCO)",
+					"CENTRO DE NANOCIENCIAS Y MICRO Y NANOTECNOLOGIAS"=>"CENTRO DE NANOCIENCIAS Y MICRO Y NANOTECNOLOGIAS",
+					"CENTRO MEXICANO PARA LA PRODUCCION MAS LIMPIA, SEP/IPN"=>"CENTRO MEXICANO PARA LA PRODUCCION MAS LIMPIA, SEP/IPN",
+					"CENTRO MULTIDISCIPLINARIO DE COMPETITIVIDAD INTERNACIONAL"=>"CENTRO MULTIDISCIPLINARIO DE COMPETITIVIDAD INTERNACIONAL",
+					"CENTRO NACIONAL DE CALCULO"=>"CENTRO NACIONAL DE CALCULO",
+					"CENTRO NACIONAL DE INFORMACION Y DOCUMENTACION TECNOLOGICA"=>"CENTRO NACIONAL DE INFORMACION Y DOCUMENTACION TECNOLOGICA",
+					"CENTROS DE INVESTIGACION CIENTIFICA Y TECNOLOGICA"=>"CENTROS DE INVESTIGACION CIENTIFICA Y TECNOLOGICA",
+					"CENTROS Y UNIDADES DE APOYO A LA INNOVACION EDUCATIVA"=>"CENTROS Y UNIDADES DE APOYO A LA INNOVACION EDUCATIVA",
+					"CENTROS Y UNIDADES DE APOYO PARA EL FOMENTO Y DESARROLLO EMPRESARIAL"=>"CENTROS Y UNIDADES DE APOYO PARA EL FOMENTO Y DESARROLLO EMPRESARIAL",
+					"DEFENSORIA DE LOS DERECHOS POLITECNICOS"=>"DEFENSORIA DE LOS DERECHOS POLITECNICOS",
+					"DIRECCION DE GRADUADOS E INVESTIGACION"=>"DIRECCION DE GRADUADOS E INVESTIGACION",
+					"ESCUELA SUPERIOR DE ECONOMIA"=>"ESCUELA SUPERIOR DE ECONOMIA",
+					"PATRONATO DE OBRAS E INSTALACIONES"=>"PATRONATO DE OBRAS E INSTALACIONES",
+					"PLANETARIO LUIS ENRIQUE ERRO"=>"PLANETARIO LUIS ENRIQUE ERRO",
+					"PROYECTO DE ESTUDIOS SOCIALES, TECNOLOGICOS Y CIENTIFICOS"=>"PROYECTO DE ESTUDIOS SOCIALES, TECNOLOGICOS Y CIENTIFICOS",
+					"PROYECTO INTERDISCIPLINARIO DEL MEDIO AMBIENTE Y DESARROLLO INTEGRAL"=>"PROYECTO INTERDISCIPLINARIO DEL MEDIO AMBIENTE Y DESARROLLO INTEGRAL",
+					"SECRETARIA ACADEMICA"=>"SECRETARIA ACADEMICA",
+					"SECRETARIA DE EXTENSION E INTEGRACION SOCIAL"=>"SECRETARIA DE EXTENSION E INTEGRACION SOCIAL",
+					"SECRETARIA DE INVESTIGACION Y POSGRADO"=>"SECRETARIA DE INVESTIGACION Y POSGRADO",
+					"SECRETARIA DE SERVICIOS EDUCATIVOS"=>"SECRETARIA DE SERVICIOS EDUCATIVOS",
+					"SECRETARIA TECNICA"=>"SECRETARIA TECNICA",
+					"UNIDADES ACADEMICAS DE NIVEL SUPERIOR"=>"UNIDADES ACADEMICAS DE NIVEL SUPERIOR",
+					"UNIVERSIDAD ESTATAL DE OSUN"=>"UNIVERSIDAD ESTATAL DE OSUN",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO AGROPECUARIO 26"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS"=>"CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO AGROPECUARIO DE OAXACA NO 23"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"CENTRO DE INVESTIGACION"=>"CENTRO DE INVESTIGACION",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO AGROPECUARIO NO 1O DE TORREON"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS"=>"CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO AGROPECUARIO NO 2O DE AGUASCALIENTES"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS"=>"CENTRO DE INVESTIGACION Y GRADUADOS AGROPECUARIOS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO DE SONORA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "ÁREA DE INGENIERÍA Y TECNOLOGÍA"=>"ÁREA DE INGENIERÍA Y TECNOLOGÍA",
+					"DEPARTAMENTO DE CIENCIAS ADMINISTRATIVAS"=>"DEPARTAMENTO DE CIENCIAS ADMINISTRATIVAS",
+					"DEPARTAMENTO DE CONTADURIA Y FINANZAS"=>"DEPARTAMENTO DE CONTADURIA Y FINANZAS",
+					"DEPARTAMENTO DE EXTENSIÓN DE LA CULTURA"=>"DEPARTAMENTO DE EXTENSIÓN DE LA CULTURA",
+					"DEPARTAMENTO DE HUMANIDADES"=>"DEPARTAMENTO DE HUMANIDADES",
+					"DEPARTAMENTO DE INGENIERIA ELECTRICA Y ELECTRONICA"=>"DEPARTAMENTO DE INGENIERIA ELECTRICA Y ELECTRONICA",
+					"DEPARTAMENTO DE INGENIERIA ESTRUCTURAL E HIDRAULICA"=>"DEPARTAMENTO DE INGENIERIA ESTRUCTURAL E HIDRAULICA",
+					"DEPARTAMENTO DE INGENIERIA INDUSTRIAL"=>"DEPARTAMENTO DE INGENIERIA INDUSTRIAL",
+					"DEPARTAMENTO DE MATEMATICA Y FISICA"=>"DEPARTAMENTO DE MATEMATICA Y FISICA",
+					"DEPARTAMENTO DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"DEPARTAMENTO DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"DEPARTAMENTO DE PSICOLOGIA"=>"DEPARTAMENTO DE PSICOLOGIA",
+					"DEPARTAMENTO DE QUIMICA E INGENIERIA QUIMICA"=>"DEPARTAMENTO DE QUIMICA E INGENIERIA QUIMICA",
+					"DEPARTAMENTO SOCIOCULTURAL"=>"DEPARTAMENTO SOCIOCULTURAL",
+					"DIRECCION DE FOMENTO A LA INVESTIGACION"=>"DIRECCION DE FOMENTO A LA INVESTIGACION",
+					"DIRECCION DE INVESTIGACION Y ESTUDIOS DE POSTGRADO"=>"DIRECCION DE INVESTIGACION Y ESTUDIOS DE POSTGRADO",
+					"DIVISION DE CIENCIAS SOCIALES"=>"DIVISION DE CIENCIAS SOCIALES",
+					"DIVISION DE INGENIERIAS Y CIENCIAS BIOLOGICAS"=>"DIVISION DE INGENIERIAS Y CIENCIAS BIOLOGICAS",
+					"DIVISION DE RECURSOS NATURALES"=>"DIVISION DE RECURSOS NATURALES",
+					"INSTITUTO TECNOLÓGICO DE SONORA"=>"INSTITUTO TECNOLÓGICO DE SONORA",
+					"UNIDAD GUAYMAS"=>"UNIDAD GUAYMAS",
+					"UNIDAD NAVOJOA"=>"UNIDAD NAVOJOA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO DEL MAR"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"DIRECCION GENERAL EN CIENCIA Y TECNOLOGIA"=>"DIRECCION GENERAL EN CIENCIA Y TECNOLOGIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO DEL MAR NO 2 MAZATLAN"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN EXTENSION LA CRUZ DE HUANACAXTLE"=>"INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN EXTENSION LA CRUZ DE HUANACAXTLE",
+					"INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN EXTENSION TEACAPAN"=>"INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN EXTENSION TEACAPAN",
+					"INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN. EXTENSION JOCOTEPEC"=>"INSTITUTO TECNOLOGICO DEL MAR EN MAZATLAN. EXTENSION JOCOTEPEC",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO SUPERIOR DE LIBRES"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"DEPERTAMENTO DE VINCULACION"=>"DEPERTAMENTO DE VINCULACION",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="INSTITUTO TECNOLOGICO SUPERIOR DEL ORIENTE DEL ESTADO DE HIDALGO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"DIVISION DE INGENIERIA DE INDUSTRIAS ALIMENTARIAS"=>"DIVISION DE INGENIERIA DE INDUSTRIAS ALIMENTARIAS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="LABORATORIO NACIONAL DE INFORMATICA AVANZADA AC"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"LANIA, A.C."=>"LANIA, A.C.",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="TECNOLOGICO DE ESTUDIOS SUPERIORES DE ECATEPEC"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"DIRECCION ACADEMICA"=>"DIRECCION ACADEMICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="TECNOLOGICO NACIONAL DE MEXICO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO INTERDISCIPLINARIO DE INVESTIGACIÓN Y DOCENCIA EN EDUCACIÓN TÉCNICA"=>"CENTRO INTERDISCIPLINARIO DE INVESTIGACIÓN Y DOCENCIA EN EDUCACIÓN TÉCNICA",
+					"CENTRO NACIONAL DE INVESTIGACIÓN Y DESARROLLO TECNOLÓGICO"=>"CENTRO NACIONAL DE INVESTIGACIÓN Y DESARROLLO TECNOLÓGICO",
+					"CENTRO REGIONAL DE OPTIMIZACIÓN Y DESARROLLO DE EQUIPO DE CHIHUAHUA"=>"CENTRO REGIONAL DE OPTIMIZACIÓN Y DESARROLLO DE EQUIPO DE CHIHUAHUA",
+					"DEPARTAMENTO DE CIENCIAS COMPUTACIONALES"=>"DEPARTAMENTO DE CIENCIAS COMPUTACIONALES",
+					"INSTITUTO TECNOLOGICO DE BAHIA DE BANDERAS"=>"INSTITUTO TECNOLOGICO DE BAHIA DE BANDERAS",
+					"INSTITUTO TECNOLOGICO DE CD. VALLES"=>"INSTITUTO TECNOLOGICO DE CD. VALLES",
+					"INSTITUTO TECNOLOGICO DE CERRO AZUL"=>"INSTITUTO TECNOLOGICO DE CERRO AZUL",
+					"INSTITUTO TECNOLOGICO DE CHIHUAHUA II"=>"INSTITUTO TECNOLOGICO DE CHIHUAHUA II",
+					"INSTITUTO TECNOLOGICO DE CIUDAD GUZMAN"=>"INSTITUTO TECNOLOGICO DE CIUDAD GUZMAN",
+					"INSTITUTO TECNOLOGICO DE COLIMA"=>"INSTITUTO TECNOLOGICO DE COLIMA",
+					"INSTITUTO TECNOLOGICO DE COMITANCILLO"=>"INSTITUTO TECNOLOGICO DE COMITANCILLO",
+					"INSTITUTO TECNOLOGICO DE CUAUTLA"=>"INSTITUTO TECNOLOGICO DE CUAUTLA",
+					"INSTITUTO TECNOLOGICO DE DELICIAS"=>"INSTITUTO TECNOLOGICO DE DELICIAS",
+					"INSTITUTO TECNOLOGICO DE ENSENADA"=>"INSTITUTO TECNOLOGICO DE ENSENADA",
+					"INSTITUTO TECNOLOGICO DE HUATABAMPO"=>"INSTITUTO TECNOLOGICO DE HUATABAMPO",
+					"INSTITUTO TECNOLOGICO DE IGUALA"=>"INSTITUTO TECNOLOGICO DE IGUALA",
+					"INSTITUTO TECNOLOGICO DE JIQUILPAN"=>"INSTITUTO TECNOLOGICO DE JIQUILPAN",
+					"INSTITUTO TECNOLOGICO DE LA PIEDAD"=>"INSTITUTO TECNOLOGICO DE LA PIEDAD",
+					"INSTITUTO TECNOLOGICO DE LAZARO CARDENAS"=>"INSTITUTO TECNOLOGICO DE LAZARO CARDENAS",
+					"INSTITUTO TECNOLOGICO DE LOS MOCHIS"=>"INSTITUTO TECNOLOGICO DE LOS MOCHIS",
+					"INSTITUTO TECNOLOGICO DE MATAMOROS"=>"INSTITUTO TECNOLOGICO DE MATAMOROS",
+					"INSTITUTO TECNOLOGICO DE MATEHUALA"=>"INSTITUTO TECNOLOGICO DE MATEHUALA",
+					"INSTITUTO TECNOLOGICO DE MINATITLAN"=>"INSTITUTO TECNOLOGICO DE MINATITLAN",
+					"INSTITUTO TECNOLOGICO DE NOGALES"=>"INSTITUTO TECNOLOGICO DE NOGALES",
+					"INSTITUTO TECNOLOGICO DE NUEVO LAREDO"=>"INSTITUTO TECNOLOGICO DE NUEVO LAREDO",
+					"INSTITUTO TECNOLOGICO DE OCOTLAN"=>"INSTITUTO TECNOLOGICO DE OCOTLAN",
+					"INSTITUTO TECNOLOGICO DE PIEDRAS NEGRAS"=>"INSTITUTO TECNOLOGICO DE PIEDRAS NEGRAS",
+					"INSTITUTO TECNOLOGICO DE PINOTEPA NACIONAL"=>"INSTITUTO TECNOLOGICO DE PINOTEPA NACIONAL",
+					"INSTITUTO TECNOLOGICO DE REYNOSA"=>"INSTITUTO TECNOLOGICO DE REYNOSA",
+					"INSTITUTO TECNOLOGICO DE SAN JUAN DEL RIO"=>"INSTITUTO TECNOLOGICO DE SAN JUAN DEL RIO",
+					"INSTITUTO TECNOLOGICO DE SAN LUIS POTOSI"=>"INSTITUTO TECNOLOGICO DE SAN LUIS POTOSI",
+					"INSTITUTO TECNOLOGICO DE TLAXIACO"=>"INSTITUTO TECNOLOGICO DE TLAXIACO",
+					"INSTITUTO TECNOLOGICO DE URSULO GALVAN"=>"INSTITUTO TECNOLOGICO DE URSULO GALVAN",
+					"INSTITUTO TECNOLOGICO DE VALLE DEL YAQUI"=>"INSTITUTO TECNOLOGICO DE VALLE DEL YAQUI",
+					"INSTITUTO TECNOLOGICO DE ZACATECAS"=>"INSTITUTO TECNOLOGICO DE ZACATECAS",
+					"INSTITUTO TECNOLOGICO DE ZITACUARO"=>"INSTITUTO TECNOLOGICO DE ZITACUARO",
+					"INSTITUTO TECNOLOGICO DEL ISTMO"=>"INSTITUTO TECNOLOGICO DEL ISTMO",
+					"INSTITUTO TECNOLÓGICO DE ACAPULCO"=>"INSTITUTO TECNOLÓGICO DE ACAPULCO",
+					"INSTITUTO TECNOLÓGICO DE AGUA PRIETA"=>"INSTITUTO TECNOLÓGICO DE AGUA PRIETA",
+					"INSTITUTO TECNOLÓGICO DE AGUASCALIENTES"=>"INSTITUTO TECNOLÓGICO DE AGUASCALIENTES",
+					"INSTITUTO TECNOLÓGICO DE ALTAMIRA"=>"INSTITUTO TECNOLÓGICO DE ALTAMIRA",
+					"INSTITUTO TECNOLÓGICO DE APIZACO"=>"INSTITUTO TECNOLÓGICO DE APIZACO",
+					"INSTITUTO TECNOLÓGICO DE BOCA DE RÍO"=>"INSTITUTO TECNOLÓGICO DE BOCA DE RÍO",
+					"INSTITUTO TECNOLÓGICO DE CAMPECHE"=>"INSTITUTO TECNOLÓGICO DE CAMPECHE",
+					"INSTITUTO TECNOLÓGICO DE CANCÚN"=>"INSTITUTO TECNOLÓGICO DE CANCÚN",
+					"INSTITUTO TECNOLÓGICO DE CELAYA"=>"INSTITUTO TECNOLÓGICO DE CELAYA",
+					"INSTITUTO TECNOLÓGICO DE CHETUMAL"=>"INSTITUTO TECNOLÓGICO DE CHETUMAL",
+					"INSTITUTO TECNOLÓGICO DE CHIHUAHUA"=>"INSTITUTO TECNOLÓGICO DE CHIHUAHUA",
+					"INSTITUTO TECNOLÓGICO DE CHILPANCINGO"=>"INSTITUTO TECNOLÓGICO DE CHILPANCINGO",
+					"INSTITUTO TECNOLÓGICO DE CHINÁ"=>"INSTITUTO TECNOLÓGICO DE CHINÁ",
+					"INSTITUTO TECNOLÓGICO DE CIUDAD JIMÉNEZ"=>"INSTITUTO TECNOLÓGICO DE CIUDAD JIMÉNEZ",
+					"INSTITUTO TECNOLÓGICO DE CIUDAD JUÁREZ"=>"INSTITUTO TECNOLÓGICO DE CIUDAD JUÁREZ",
+					"INSTITUTO TECNOLÓGICO DE CIUDAD MADERO"=>"INSTITUTO TECNOLÓGICO DE CIUDAD MADERO",
+					"INSTITUTO TECNOLÓGICO DE CIUDAD VICTORIA"=>"INSTITUTO TECNOLÓGICO DE CIUDAD VICTORIA",
+					"INSTITUTO TECNOLÓGICO DE COMITÁN"=>"INSTITUTO TECNOLÓGICO DE COMITÁN",
+					"INSTITUTO TECNOLÓGICO DE CONKAL"=>"INSTITUTO TECNOLÓGICO DE CONKAL",
+					"INSTITUTO TECNOLÓGICO DE COSTA GRANDE"=>"INSTITUTO TECNOLÓGICO DE COSTA GRANDE",
+					"INSTITUTO TECNOLÓGICO DE CULIACÁN"=>"INSTITUTO TECNOLÓGICO DE CULIACÁN",
+					"INSTITUTO TECNOLÓGICO DE DURANGO"=>"INSTITUTO TECNOLÓGICO DE DURANGO",
+					"INSTITUTO TECNOLÓGICO DE EL LLANO AGUASCALIENTES"=>"INSTITUTO TECNOLÓGICO DE EL LLANO AGUASCALIENTES",
+					"INSTITUTO TECNOLÓGICO DE EL SALTO"=>"INSTITUTO TECNOLÓGICO DE EL SALTO",
+					"INSTITUTO TECNOLÓGICO DE GUAYMAS"=>"INSTITUTO TECNOLÓGICO DE GUAYMAS",
+					"INSTITUTO TECNOLÓGICO DE HERMOSILLO"=>"INSTITUTO TECNOLÓGICO DE HERMOSILLO",
+					"INSTITUTO TECNOLÓGICO DE LA CUENCA DEL PAPALOAPAN"=>"INSTITUTO TECNOLÓGICO DE LA CUENCA DEL PAPALOAPAN",
+					"INSTITUTO TECNOLÓGICO DE LA LAGUNA"=>"INSTITUTO TECNOLÓGICO DE LA LAGUNA",
+					"INSTITUTO TECNOLÓGICO DE LA PAZ"=>"INSTITUTO TECNOLÓGICO DE LA PAZ",
+					"INSTITUTO TECNOLÓGICO DE LA ZONA MAYA"=>"INSTITUTO TECNOLÓGICO DE LA ZONA MAYA",
+					"INSTITUTO TECNOLÓGICO DE LEÓN"=>"INSTITUTO TECNOLÓGICO DE LEÓN",
+					"INSTITUTO TECNOLÓGICO DE LINARES"=>"INSTITUTO TECNOLÓGICO DE LINARES",
+					"INSTITUTO TECNOLÓGICO DE MAZATLÁN"=>"INSTITUTO TECNOLÓGICO DE MAZATLÁN",
+					"INSTITUTO TECNOLÓGICO DE MEXICALI"=>"INSTITUTO TECNOLÓGICO DE MEXICALI",
+					"INSTITUTO TECNOLÓGICO DE MORELIA"=>"INSTITUTO TECNOLÓGICO DE MORELIA",
+					"INSTITUTO TECNOLÓGICO DE MÉRIDA"=>"INSTITUTO TECNOLÓGICO DE MÉRIDA",
+					"INSTITUTO TECNOLÓGICO DE NUEVO LEÓN"=>"INSTITUTO TECNOLÓGICO DE NUEVO LEÓN",
+					"INSTITUTO TECNOLÓGICO DE OAXACA"=>"INSTITUTO TECNOLÓGICO DE OAXACA",
+					"INSTITUTO TECNOLÓGICO DE ORIZABA"=>"INSTITUTO TECNOLÓGICO DE ORIZABA",
+					"INSTITUTO TECNOLÓGICO DE PACHUCA"=>"INSTITUTO TECNOLÓGICO DE PACHUCA",
+					"INSTITUTO TECNOLÓGICO DE PARRAL"=>"INSTITUTO TECNOLÓGICO DE PARRAL",
+					"INSTITUTO TECNOLÓGICO DE PUEBLA"=>"INSTITUTO TECNOLÓGICO DE PUEBLA",
+					"INSTITUTO TECNOLÓGICO DE QUERÉTARO"=>"INSTITUTO TECNOLÓGICO DE QUERÉTARO",
+					"INSTITUTO TECNOLÓGICO DE ROQUE"=>"INSTITUTO TECNOLÓGICO DE ROQUE",
+					"INSTITUTO TECNOLÓGICO DE SALTILLO"=>"INSTITUTO TECNOLÓGICO DE SALTILLO",
+					"INSTITUTO TECNOLÓGICO DE TAPACHULA"=>"INSTITUTO TECNOLÓGICO DE TAPACHULA",
+					"INSTITUTO TECNOLÓGICO DE TECOMATLÁN"=>"INSTITUTO TECNOLÓGICO DE TECOMATLÁN",
+					"INSTITUTO TECNOLÓGICO DE TEHUACÁN"=>"INSTITUTO TECNOLÓGICO DE TEHUACÁN",
+					"INSTITUTO TECNOLÓGICO DE TEPIC"=>"INSTITUTO TECNOLÓGICO DE TEPIC",
+					"INSTITUTO TECNOLÓGICO DE TIJUANA"=>"INSTITUTO TECNOLÓGICO DE TIJUANA",
+					"INSTITUTO TECNOLÓGICO DE TIZIMÍN"=>"INSTITUTO TECNOLÓGICO DE TIZIMÍN",
+					"INSTITUTO TECNOLÓGICO DE TLAJOMULCO"=>"INSTITUTO TECNOLÓGICO DE TLAJOMULCO",
+					"INSTITUTO TECNOLÓGICO DE TLALNEPANTLA"=>"INSTITUTO TECNOLÓGICO DE TLALNEPANTLA",
+					"INSTITUTO TECNOLÓGICO DE TOLUCA"=>"INSTITUTO TECNOLÓGICO DE TOLUCA",
+					"INSTITUTO TECNOLÓGICO DE TORREÓN"=>"INSTITUTO TECNOLÓGICO DE TORREÓN",
+					"INSTITUTO TECNOLÓGICO DE TUXTEPEC"=>"INSTITUTO TECNOLÓGICO DE TUXTEPEC",
+					"INSTITUTO TECNOLÓGICO DE VERACRUZ"=>"INSTITUTO TECNOLÓGICO DE VERACRUZ",
+					"INSTITUTO TECNOLÓGICO DE VILLAHERMOSA"=>"INSTITUTO TECNOLÓGICO DE VILLAHERMOSA",
+					"INSTITUTO TECNOLÓGICO DE ZACATEPEC"=>"INSTITUTO TECNOLÓGICO DE ZACATEPEC",
+					"INSTITUTO TECNOLÓGICO DEL VALLE DE MORELIA"=>"INSTITUTO TECNOLÓGICO DEL VALLE DE MORELIA",
+					"INSTITUTO TECNOLÓGICO DEL VALLE DEL GUADIANA"=>"INSTITUTO TECNOLÓGICO DEL VALLE DEL GUADIANA",
+					"INSTITUTO TECNOLÓGICO TUXTLA GUTIÉRREZ"=>"INSTITUTO TECNOLÓGICO TUXTLA GUTIÉRREZ",
+					"SUBDIRECCION ACADEMICA"=>"SUBDIRECCION ACADEMICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA AGRARIA ANTONIO NARRO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "COORDINACION DE AGRONOMIA"=>"COORDINACION DE AGRONOMIA",
+					"INSTITUTO MEXICANO DEL MAIZ"=>"INSTITUTO MEXICANO DEL MAIZ",
+					"PROGRAMA DE GRADUADOS"=>"PROGRAMA DE GRADUADOS",
+					"SUBDIRECCION DE ASUNTOS DE POSTGRADO"=>"SUBDIRECCION DE ASUNTOS DE POSTGRADO",
+					"UNIDAD LAGUNA"=>"UNIDAD LAGUNA",
+					"UNIDAD SALTILLO"=>"UNIDAD SALTILLO",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA BENITO JUAREZ DE OAXACA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "BIBLIOTECA FRAY FRANCISCO DE BURGOA"=>"BIBLIOTECA FRAY FRANCISCO DE BURGOA",
+					"CENTRO DE SOCIOLOGIA"=>"CENTRO DE SOCIOLOGIA",
+					"ESCUELA DE ARQUITECTURA"=>"ESCUELA DE ARQUITECTURA",
+					"ESCUELA DE CIENCIAS QUIMICAS"=>"ESCUELA DE CIENCIAS QUIMICAS",
+					"ESCUELA DE DERECHO Y CIENCIAS SOCIALES"=>"ESCUELA DE DERECHO Y CIENCIAS SOCIALES",
+					"ESCUELA DE ECONOMIA"=>"ESCUELA DE ECONOMIA",
+					"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE CIENCIAS QUÍMICAS"=>"FACULTAD DE CIENCIAS QUÍMICAS",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN"=>"FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN",
+					"FACULTAD DE MEDICINA Y CIRUGIA"=>"FACULTAD DE MEDICINA Y CIRUGIA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"INSTITUTO DE CIENCIAS DE LA EDICACION"=>"INSTITUTO DE CIENCIAS DE LA EDICACION",
+					"INSTITUTO DE INVESTIGACIONES EN HUMANIDADES"=>"INSTITUTO DE INVESTIGACIONES EN HUMANIDADES",
+					"INSTITUTO DE INVESTIGACIONES SOCIOLOGICAS"=>"INSTITUTO DE INVESTIGACIONES SOCIOLOGICAS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA CHAPINGO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						   "CENTRO DE AGROFORESTARIA PARA EL DESARROLLO SOSTENIBLE"=>"CENTRO DE AGROFORESTARIA PARA EL DESARROLLO SOSTENIBLE",
+					"CENTRO DE INVESTIGACIONES ECONOMICAS, SOCIALES Y TECNOLOGICAS DE LA AGROINDUSTRIA Y DE LA AGRICULTURA MUNDIAL"=>"CENTRO DE INVESTIGACIONES ECONOMICAS, SOCIALES Y TECNOLOGICAS DE LA AGROINDUSTRIA Y DE LA AGRICULTURA MUNDIAL",
+					"CENTRO NACIONAL DE RESCATE Y MEJORAMIENTO DE MAICES CRIOLLOS(CENREMMAC)"=>"CENTRO NACIONAL DE RESCATE Y MEJORAMIENTO DE MAICES CRIOLLOS(CENREMMAC)",
+					"CENTRO REGIONAL UNIVERSITARIO ANAHUAC (CRUAN), UBICADO EN CHAPINGO, ESTADO DE MEXICO"=>"CENTRO REGIONAL UNIVERSITARIO ANAHUAC (CRUAN), UBICADO EN CHAPINGO, ESTADO DE MEXICO",
+					"CENTRO REGIONAL UNIVERSITARIO CENTRO NORTE (CRUCEN), UBICADO EN EL ORITO, ZACATECAS"=>"CENTRO REGIONAL UNIVERSITARIO CENTRO NORTE (CRUCEN), UBICADO EN EL ORITO, ZACATECAS",
+					"CENTRO REGIONAL UNIVERSITARIO CENTRO OCCIDENTE. UNID. EN MORELIA, MICHOACAN"=>"CENTRO REGIONAL UNIVERSITARIO CENTRO OCCIDENTE. UNID. EN MORELIA, MICHOACAN",
+					"CENTRO REGIONAL UNIVERSITARIO DE LA PENINSULA DE YUCATAN"=>"CENTRO REGIONAL UNIVERSITARIO DE LA PENINSULA DE YUCATAN",
+					"CENTRO REGIONAL UNIVERSITARIO DE MORELIA"=>"CENTRO REGIONAL UNIVERSITARIO DE MORELIA",
+					"CENTRO REGIONAL UNIVERSITARIO DE SAN CRISTOBAL DE LAS CASAS (CHIAPAS)"=>"CENTRO REGIONAL UNIVERSITARIO DE SAN CRISTOBAL DE LAS CASAS (CHIAPAS)",
+					"CENTRO REGIONAL UNIVERSITARIO NOROESTE. UNIDAD CD. OBREGON, SONORA"=>"CENTRO REGIONAL UNIVERSITARIO NOROESTE. UNIDAD CD. OBREGON, SONORA",
+					"CENTRO REGIONAL UNIVERSITARIO OCCIDENTE. UNIDAD GUADAJALARA, JALISCO"=>"CENTRO REGIONAL UNIVERSITARIO OCCIDENTE. UNIDAD GUADAJALARA, JALISCO",
+					"CENTRO REGIONAL UNIVERSITARIO ORIENTE. UNIDAD HUATUSCO, VERACRUZ."=>"CENTRO REGIONAL UNIVERSITARIO ORIENTE. UNIDAD HUATUSCO, VERACRUZ.",
+					"CENTRO REGIONAL UNIVERSITARIO SUR (CRUS), UNIDAD OAXACA, OAXACA."=>"CENTRO REGIONAL UNIVERSITARIO SUR (CRUS), UNIDAD OAXACA, OAXACA.",
+					"CENTRO REGIONAL UNIVERSITARIO SURESTE. UNIDAD PUYACATENGO, TEAPA, TABASCO."=>"CENTRO REGIONAL UNIVERSITARIO SURESTE. UNIDAD PUYACATENGO, TEAPA,TABASCO.",
+					"COORDINACION DE ESTUDIOS DE POSTGRADO"=>"COORDINACION DE ESTUDIOS DE POSTGRADO",
+					"DEPARTAMENTO DE BOSQUES"=>"DEPARTAMENTO DE BOSQUES",
+					"DEPARTAMENTO DE CIENCIAS FORESTALES"=>"DEPARTAMENTO DE CIENCIAS FORESTALES",
+					"DEPARTAMENTO DE ECONOMIA AGRICOLA"=>"DEPARTAMENTO DE ECONOMIA AGRICOLA",
+					"DEPARTAMENTO DE FITOTECNIA"=>"DEPARTAMENTO DE FITOTECNIA",
+					"DEPARTAMENTO DE INDUSTRIAS AGRICOLAS"=>"DEPARTAMENTO DE INDUSTRIAS AGRICOLAS",
+					"DEPARTAMENTO DE INGENIERIA AGROINDUSTRIAL"=>"DEPARTAMENTO DE INGENIERIA AGROINDUSTRIAL",
+					"DEPARTAMENTO DE INGENIERIA DE MECANICA AGRICOLA"=>"DEPARTAMENTO DE INGENIERIA DE MECANICA AGRICOLA",
+					"DEPARTAMENTO DE IRRIGACION"=>"DEPARTAMENTO DE IRRIGACION",
+					"DEPARTAMENTO DE MANEJO DE RECURSOS FORESTALES"=>"DEPARTAMENTO DE MANEJO DE RECURSOS FORESTALES",
+					"DEPARTAMENTO DE PARASITOLOGIA AGRICOLA"=>"DEPARTAMENTO DE PARASITOLOGIA AGRICOLA",
+					"DEPARTAMENTO DE SOCIOLOGIA RURAL"=>"DEPARTAMENTO DE SOCIOLOGIA RURAL",
+					"DEPARTAMENTO DE SUELOS"=>"DEPARTAMENTO DE SUELOS",
+					"DEPARTAMENTO DE ZOOTECNIA"=>"DEPARTAMENTO DE ZOOTECNIA",
+					"DIRECCION DE CENTROS REGIONALES"=>"DIRECCION DE CENTROS REGIONALES",
+					"DIRECCION GENERAL ACADEMICA"=>"DIRECCION GENERAL ACADEMICA",
+					"DIRECCION GENERAL DE INVESTIGACION Y POSGRADO"=>"DIRECCION GENERAL DE INVESTIGACION Y POSGRADO",
+					"DIVISION DE CIENCIAS ECONOMICAS ADMINISTRATIVAS"=>"DIVISION DE CIENCIAS ECONOMICAS ADMINISTRATIVAS",
+					"PREPARATORIA AGRICOLA"=>"PREPARATORIA AGRICOLA",
+					"SUBDIRECCION DE INVESTIG"=>"SUBDIRECCION DE INVESTIG",
+					"SUBDIRECCION GENERAL DE INVESTIGACION Y SERVICIO"=>"SUBDIRECCION GENERAL DE INVESTIGACION Y SERVICIO",
+					"UNIDAD REGIONAL UNIVERSITARIA DE ZONAS ARIDAS"=>"UNIDAD REGIONAL UNIVERSITARIA DE ZONAS ARIDAS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE AGUASCALIENTES"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE CIENCIAS AGROPECUARIAS"=>"CENTRO DE CIENCIAS AGROPECUARIAS",
+					"CENTRO DE CIENCIAS AGROPECUARIAS"=>"CENTRO DE CIENCIAS AGROPECUARIAS",
+					"CENTRO DE CIENCIAS BASICAS"=>"CENTRO DE CIENCIAS BASICAS",
+					"CENTRO DE CIENCIAS BIOMEDICAS"=>"CENTRO DE CIENCIAS BIOMEDICAS",
+					"CENTRO DE CIENCIAS DE LA SALUD"=>"CENTRO DE CIENCIAS DE LA SALUD",
+					"CENTRO DE CIENCIAS DEL DISEÑO Y DE LA CONSTRUCCIÓN"=>"CENTRO DE CIENCIAS DEL DISEÑO Y DE LA CONSTRUCCIÓN",
+					"CENTRO DE CIENCIAS ECONOMICAS ADMINISTRATIVAS"=>"CENTRO DE CIENCIAS ECONOMICAS ADMINISTRATIVAS",
+					"CENTRO DE CIENCIAS SOCIALES Y HUMANIDADES"=>"CENTRO DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"CENTRO TECNOLOGICO"=>"CENTRO TECNOLOGICO",
+					"DIRECCION GENERAL DE ASUNTOS ACADEMICOS"=>"DIRECCION GENERAL DE ASUNTOS ACADEMICOS",
+					"EL CENTRO DE ARTES Y CULTURA"=>"EL CENTRO DE ARTES Y CULTURA",
+					"UNIVERSIDAD AUTONOMA DE AGUASCALIENTES"=>"UNIVERSIDAD AUTONOMA DE AGUASCALIENTES",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "AREA INTERDISCIPLINARIA DE CIENCIAS AGROPECUARIAS"=>"AREA INTERDISCIPLINARIA DE CIENCIAS AGROPECUARIAS",
+					"AREA INTERDISCIPLINARIA DE CIENCIAS SOCIALES"=>"AREA INTERDISCIPLINARIA DE CIENCIAS SOCIALES",
+					"CENTRO DE IDIOMAS MEXICALI"=>"CENTRO DE IDIOMAS MEXICALI",
+					"CENTRO DE INVESTIGACIONES HISTORICAS"=>"CENTRO DE INVESTIGACIONES HISTORICAS",
+					"DIRECCION DE ASUNTOS ACADEMICOS"=>"DIRECCION DE ASUNTOS ACADEMICOS",
+					"DIRECCION GENERAL DE ORGANIZACION PROGRAMACION Y PRESUPUESTO"=>"DIRECCION GENERAL DE ORGANIZACION PROGRAMACION Y PRESUPUESTO",
+					"ESCUELA DE CIENCIAS POLITICAS"=>"ESCUELA DE CIENCIAS POLITICAS",
+					"ESCUELA DE CIENCIAS SOCIALES"=>"ESCUELA DE CIENCIAS SOCIALES",
+					"ESCUELA DE CONTABILIDAD"=>"ESCUELA DE CONTABILIDAD",
+					"ESCUELA DE ENFERMERIA"=>"ESCUELA DE ENFERMERIA",
+					"ESCUELA DE ENOLOGIA Y GASTRONOMIA"=>"ESCUELA DE ENOLOGIA Y GASTRONOMIA",
+					"ESCUELA DE INGENIERIA"=>"ESCUELA DE INGENIERIA",
+					"ESCUELA DE INGENIERÍA Y NEGOCIOS GUADALUPE VICTORIA"=>"ESCUELA DE INGENIERÍA Y NEGOCIOS GUADALUPE VICTORIA",
+					"ESCUELA DE ODONTOLOGIA"=>"ESCUELA DE ODONTOLOGIA",
+					"ESCUELA DE PEDAGOGIA"=>"ESCUELA DE PEDAGOGIA",
+					"ESCUELA DE TURISMO"=>"ESCUELA DE TURISMO",
+					"ESCUELA DE VETERINARIA"=>"ESCUELA DE VETERINARIA",
+					"ESCUELA SUPERIOR DE CIENCIAS AGRICOLAS"=>"ESCUELA SUPERIOR DE CIENCIAS AGRICOLAS",
+					"ESCUELA TECNICA, AGRICOLA Y GANADERA"=>"ESCUELA TECNICA, AGRICOLA Y GANADERA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE CIENCIAS ADMINISTRATIVAS Y SOCIALES"=>"FACULTAD DE CIENCIAS ADMINISTRATIVAS Y SOCIALES",
+					"FACULTAD DE CIENCIAS ADMINISTRATIVAS"=>"FACULTAD DE CIENCIAS ADMINISTRATIVAS",
+					"FACULTAD DE CIENCIAS ADMINSTRATIVAS"=>"FACULTAD DE CIENCIAS ADMINSTRATIVAS",
+					"FACULTAD DE CIENCIAS AGRICOLAS"=>"FACULTAD DE CIENCIAS AGRICOLAS",
+					"FACULTAD DE CIENCIAS HUMANAS"=>"FACULTAD DE CIENCIAS HUMANAS",
+					"FACULTAD DE CIENCIAS MARINAS"=>"FACULTAD DE CIENCIAS MARINAS",
+					"FACULTAD DE CIENCIAS QUIMICAS E INGENIERIA"=>"FACULTAD DE CIENCIAS QUIMICAS E INGENIERIA",
+					"FACULTAD DE CIENCIAS SOCIALES Y POLITICAS"=>"FACULTAD DE CIENCIAS SOCIALES Y POLITICAS",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE DEPORTES"=>"FACULTAD DE DEPORTES",
+					"FACULTAD DE DERECHO CAMPUS TIJUANA"=>"FACULTAD DE DERECHO CAMPUS TIJUANA",
+					"FACULTAD DE DERECHO MEXICALI"=>"FACULTAD DE DERECHO MEXICALI",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA Y RELACIONES INTERNATIONALES"=>"FACULTAD DE ECONOMIA Y RELACIONES INTERNATIONALES",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE HUMANIDADES Y CIENCIAS SOCIALES"=>"FACULTAD DE HUMANIDADES Y CIENCIAS SOCIALES",
+					"FACULTAD DE IDIOMAS"=>"FACULTAD DE IDIOMAS",
+					"FACULTAD DE INGENIERIA Y NEGOCIOS SAN QUINTIN"=>"FACULTAD DE INGENIERIA Y NEGOCIOS SAN QUINTIN",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE INGENIERIA, ARQUITECTURA Y DISEÑO"=>"FACULTAD DE INGENIERIA, ARQUITECTURA Y DISEÑO",
+					"FACULTAD DE MEDICINA Y PSICOLOGIA - TIJUANA"=>"FACULTAD DE MEDICINA Y PSICOLOGIA - TIJUANA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE MEDICINA-MEXICALI"=>"FACULTAD DE MEDICINA-MEXICALI",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"INSTITUTO DE CIENCIAS AGRICOLAS"=>"INSTITUTO DE CIENCIAS AGRICOLAS",
+					"INSTITUTO DE GEOGRAFIA E HISTORIA"=>"INSTITUTO DE GEOGRAFIA E HISTORIA",
+					"INSTITUTO DE INGENIERIA"=>"INSTITUTO DE INGENIERIA",
+					"INSTITUTO DE INVESTIGACION Y DESARROLLO EDUCATIVO"=>"INSTITUTO DE INVESTIGACION Y DESARROLLO EDUCATIVO",
+					"INSTITUTO DE INVESTIGACIONES EN AGRICULTURA Y GANADERIA"=>"INSTITUTO DE INVESTIGACIONES EN AGRICULTURA Y GANADERIA",
+					"INSTITUTO DE INVESTIGACIONES EN CIENCIAS VETERINARIAS"=>"INSTITUTO DE INVESTIGACIONES EN CIENCIAS VETERINARIAS",
+					"INSTITUTO DE INVESTIGACIONES HISTORICAS"=>"INSTITUTO DE INVESTIGACIONES HISTORICAS",
+					"INSTITUTO DE INVESTIGACIONES OCEANOLOGICAS"=>"INSTITUTO DE INVESTIGACIONES OCEANOLOGICAS",
+					"INSTITUTO DE INVESTIGACIONES SOCIALES (MEXICALI)"=>"INSTITUTO DE INVESTIGACIONES SOCIALES (MEXICALI)",
+					"INSTITUTO DE INVESTIGACIONES SOCIALES"=>"INSTITUTO DE INVESTIGACIONES SOCIALES",
+					"UNIDAD MEXICALI"=>"UNIDAD MEXICALI",
+					"UNIDAD UNIVERSITARIA DE CIENCIAS DE LA EDUCACION"=>"UNIDAD UNIVERSITARIA DE CIENCIAS DE LA EDUCACION",
+					"UNIDAD UNIVERSITARIA TECATE"=>"UNIDAD UNIVERSITARIA TECATE",
+					"UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA MEXICALI"=>"UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA MEXICALI",
+					"UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA ZONA COSTA (TIJUANA)"=>"UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA ZONA COSTA (TIJUANA)",
+					"UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA ZONA ENSENADA (ENSENADA)"=>"UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA ZONA ENSENADA (ENSENADA)",
+					"UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA, UNIDAD VALLE DE LAS PALMAS"=>"UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA, UNIDAD VALLE DE LAS PALMAS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE BAJA CALIFORNIA SUR"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "AREA INTERDISCIPLINARIA DE CIENCIAS AGROPECUARIAS"=>"AREA INTERDISCIPLINARIA DE CIENCIAS AGROPECUARIAS",
+					"AREA INTERDISCIPLINARIA DE CIENCIAS DEL MAR"=>"AREA INTERDISCIPLINARIA DE CIENCIAS DEL MAR",
+					"AREA INTERDISCIPLINARIA DE CIENCIAS SOCIALES Y HUMANIDADES"=>"AREA INTERDISCIPLINARIA DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"CENTRO INTERDISCIPLINARIO DE INVESTIGACION"=>"CENTRO INTERDISCIPLINARIO DE INVESTIGACION",
+					"DEPARTAMENTO DE BIOLOGIA MARINA"=>"DEPARTAMENTO DE BIOLOGIA MARINA",
+					"DEPARTAMENTO DE COMERCIO EXTERIOR"=>"DEPARTAMENTO DE COMERCIO EXTERIOR",
+					"DEPARTAMENTO DE DERECHO"=>"DEPARTAMENTO DE DERECHO",
+					"DEPARTAMENTO DE ECONOMIA"=>"DEPARTAMENTO DE ECONOMIA",
+					"DEPARTAMENTO DE FILOSOFIA"=>"DEPARTAMENTO DE FILOSOFIA",
+					"DEPARTAMENTO DE GEOLOGIA"=>"DEPARTAMENTO DE GEOLOGIA",
+					"DEPARTAMENTO DE HISTORIA"=>"DEPARTAMENTO DE HISTORIA",
+					"DEPARTAMENTO DE INGENIERIA EN PESQUERIAS"=>"DEPARTAMENTO DE INGENIERIA EN PESQUERIAS",
+					"DEPARTAMENTO DE LETRAS"=>"DEPARTAMENTO DE LETRAS",
+					"DEPARTAMENTO DE SISTEMAS COMPUTACIONALES"=>"DEPARTAMENTO DE SISTEMAS COMPUTACIONALES",
+					"DIRECCION GENERAL DE APOYO ACADEMICO"=>"DIRECCION GENERAL DE APOYO ACADEMICO",
+					"UNIVERSIDAD AUTONOMA BAJA CALIFORNIA SUR"=>"UNIVERSIDAD AUTONOMA BAJA CALIFORNIA SUR",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE CAMPECHE"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CADETRAA PROGRAMA REGIONAL DE CAPACITACION Y DESARROLLO TECNOLOGICO EN REFRIGERACION Y ACONDICIONAMIENTO DE AIRE"=>"CADETRAA PROGRAMA REGIONAL DE CAPACITACION Y DESARROLLO TECNOLOGICO EN REFRIGERACION Y ACONDICIONAMIENTO DE AIRE",
+					"CENTRO DE ECOLOGIA, PESQUERIAS Y OCEANOGRAFIA DEL GOLFO DE MEXICO"=>"CENTRO DE ECOLOGIA, PESQUERIAS Y OCEANOGRAFIA DEL GOLFO DE MEXICO",
+					"CENTRO DE ESPAÑOL Y MAYA"=>"CENTRO DE ESPAÑOL Y MAYA",
+					"CENTRO DE ESTUDIOS DE DESARROLLO SUSTENTABLE Y DE APROVECHAMIENTO DE LA VIDA SILVESTRE"=>"CENTRO DE ESTUDIOS DE DESARROLLO SUSTENTABLE Y DE APROVECHAMIENTO DE LA VIDA SILVESTRE",
+					"CENTRO DE INVESTIGACIONES EN ENFERMEDADES TROPICALES"=>"CENTRO DE INVESTIGACIONES EN ENFERMEDADES TROPICALES",
+					"CENTRO DE INVESTIGACIONES HISTORICAS Y SOCIALES"=>"CENTRO DE INVESTIGACIONES HISTORICAS Y SOCIALES",
+					"CENTRO DE INVESTIGACIONES JURIDICAS"=>"CENTRO DE INVESTIGACIONES JURIDICAS",
+					"DIRECCION ESTUDIO DE POSGRADO E INVESTIGACION"=>"DIRECCION ESTUDIO DE POSGRADO E INVESTIGACION",
+					"ESCUELA PREPARATORIA LIC ERMILO SANDOVAL CAMPOS"=>"ESCUELA PREPARATORIA LIC ERMILO SANDOVAL CAMPOS",
+					"ESCUELA SUPERIOR DE ENFERMERIA"=>"ESCUELA SUPERIOR DE ENFERMERIA",
+					"FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS"=>"FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS",
+					"FACULTAD DE CIENCIAS SOCIALES"=>"FACULTAD DE CIENCIAS SOCIALES",
+					"FACULTAD DE CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE HUMANIDADES"=>"FACULTAD DE HUMANIDADES",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"PROGRAMA DE CORROSION DEL GOLFO DE MEXICO"=>"PROGRAMA DE CORROSION DEL GOLFO DE MEXICO",
+					"PROGRAMA DE ECOLOGIA, PESQUERIAS Y OCEANOGRAFIA DEL...EPOMEX"=>"PROGRAMA DE ECOLOGIA, PESQUERIAS Y OCEANOGRAFIA DEL...EPOMEX",
+					"UNIVERSIDAD VIRTUAL ITESM SEDE EXTERNA CAMPECHE"=>"UNIVERSIDAD VIRTUAL ITESM SEDE EXTERNA CAMPECHE",
+					"YUM KAAX PROGRAMA DE DIVULGACION ECOLOGICA"=>"YUM KAAX PROGRAMA DE DIVULGACION ECOLOGICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE CHIAPAS"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "AGENCIA UNIVERSITARIA DE DESARROLLO CACAO-CHOCOLATE"=>"AGENCIA UNIVERSITARIA DE DESARROLLO CACAO-CHOCOLATE",
+					"CAMPUS I AREA DE CIENCIAS FISICO MATEMATICAS"=>"CAMPUS I AREA DE CIENCIAS FISICO MATEMATICAS",
+					"CAMPUS I FACULTAD DE INGENIERIA CIVIL"=>"CAMPUS I FACULTAD DE INGENIERIA CIVIL",
+					"CAMPUS II AREA DE CIENCIAS BIOMEDICAS"=>"CAMPUS II AREA DE CIENCIAS BIOMEDICAS",
+					"CAMPUS III AREA DE CIENCIAS SOCIALES"=>"CAMPUS III AREA DE CIENCIAS SOCIALES",
+					"CAMPUS III CENTRO DE ESTUDIOS INDIGENAS"=>"CAMPUS III CENTRO DE ESTUDIOS INDIGENAS",
+					"CAMPUS III ESCUELA DE DERECHO"=>"CAMPUS III ESCUELA DE DERECHO",
+					"CAMPUS III FACULTAD DE CIENCIAS SOCIALES"=>"CAMPUS III FACULTAD DE CIENCIAS SOCIALES",
+					"CAMPUS IV AREA DE CIENCIAS DE LA ADMINISTRACION"=>"CAMPUS IV AREA DE CIENCIAS DE LA ADMINISTRACION",
+					"CAMPUS IV ESCUELA DE CIENCIAS AGRICOLAS"=>"CAMPUS IV ESCUELA DE CIENCIAS AGRICOLAS",
+					"CAMPUS IV ESCUELA DE CIENCIAS QUIMICAS"=>"CAMPUS IV ESCUELA DE CIENCIAS QUIMICAS",
+					"CAMPUS V AREA DE CIENCIAS AGRONOMICAS"=>"CAMPUS V AREA DE CIENCIAS AGRONOMICAS",
+					"CAMPUS VI AREA DE HUMANIDADES"=>"CAMPUS VI AREA DE HUMANIDADES",
+					"CENTRO DE ESTUDIOS EN FÍSICA Y MATEMÁTICAS BÁSICAS Y APLICADAS"=>"CENTRO DE ESTUDIOS EN FÍSICA Y MATEMÁTICAS BÁSICAS Y APLICADAS",
+					"CENTRO DE ESTUDIOS PARA EL DESARROLLO MIUNICIPAL Y POLITICAS PUBLICAS"=>"CENTRO DE ESTUDIOS PARA EL DESARROLLO MIUNICIPAL Y POLITICAS PUBLICAS",
+					"CENTRO DE ESTUDIOS PARA LA CONSTRUCCIÓN DE CIUDADANÍA Y LA SEGURIDAD"=>"CENTRO DE ESTUDIOS PARA LA CONSTRUCCIÓN DE CIUDADANÍA Y LA SEGURIDAD",
+					"CENTRO DE ESTUDIOS UNIVERSITARIOS"=>"CENTRO DE ESTUDIOS UNIVERSITARIOS",
+					"CENTRO DE INVESTIGACIONES JURIDICAS"=>"CENTRO DE INVESTIGACIONES JURIDICAS",
+					"CENTRO MESOAMERICANO DE ESTUDIOS EN SALUD PUBLICA Y DESASTRES"=>"CENTRO MESOAMERICANO DE ESTUDIOS EN SALUD PUBLICA Y DESASTRES",
+					"DES CIENCIAS AGROPECUARIAS"=>"DES CIENCIAS AGROPECUARIAS",
+					"DES: RED DE CENTROS UNIVERSITARIOS"=>"DES: RED DE CENTROS UNIVERSITARIOS",
+					"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE CIENCIAS AGRICOLAS"=>"FACULTAD DE CIENCIAS AGRICOLAS",
+					"FACULTAD DE CIENCIAS AGRONOMICAS"=>"FACULTAD DE CIENCIAS AGRONOMICAS",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS SOCIALES"=>"FACULTAD DE CIENCIAS SOCIALES",
+					"FACULTAD DE CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE HUMANIDADES"=>"FACULTAD DE HUMANIDADES",
+					"FACULTAD DE INGENIERIA CIVIL"=>"FACULTAD DE INGENIERIA CIVIL",
+					"FACULTAD DE LENGUAS CAMPUS TUXTLA"=>"FACULTAD DE LENGUAS CAMPUS TUXTLA",
+					"FACULTAD DE MEDICINA HUMANA"=>"FACULTAD DE MEDICINA HUMANA",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"INSTITUTO DE ESTUDIOS INDIGENAS"=>"INSTITUTO DE ESTUDIOS INDIGENAS",
+					"MESOAMERICAN CENTRE FOR THEORETICAL PHYSICS"=>"MESOAMERICAN CENTRE FOR THEORETICAL PHYSICS",
+					"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD COMITAN"=>"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD COMITAN",
+					"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD HUEHUETAN"=>"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD HUEHUETAN",
+					"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD PICHUCALCO"=>"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD PICHUCALCO",
+					"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD SAN CRISTOBAL"=>"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD SAN CRISTOBAL",
+					"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD TAPACHULA"=>"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD TAPACHULA",
+					"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD TONALA"=>"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD TONALA",
+					"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD VILLA FLORES"=>"UNIVERSIDAD AUTONOMA DE CHIAPAS UNIDAD VILLA FLORES",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE CHIHUAHUA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO REGIONAL DE ADIESTRAMIENTO Y EDUCACION CONTINUA (CD. CAMARGO)"=>"CENTRO REGIONAL DE ADIESTRAMIENTO Y EDUCACION CONTINUA (CD. CAMARGO)",
+					"CIESTAAM-UACH"=>"CIESTAAM-UACH",
+					"ESCUELA DE ODONTOLOGIA"=>"ESCUELA DE ODONTOLOGIA",
+					"FACULTAD DE ARTES"=>"FACULTAD DE ARTES",
+					"FACULTAD DE CIENCIAS AGRICOLAS Y FORESTALES"=>"FACULTAD DE CIENCIAS AGRICOLAS Y FORESTALES",
+					"FACULTAD DE CIENCIAS AGROTECNOLOGICAS"=>"FACULTAD DE CIENCIAS AGROTECNOLOGICAS",
+					"FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES UNIDAD CHIHUAHUA"=>"FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES UNIDAD CHIHUAHUA",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE EDUCACION FISICA Y CIENCIAS DEL DEPORTE"=>"FACULTAD DE EDUCACION FISICA Y CIENCIAS DEL DEPORTE",
+					"FACULTAD DE ENFERMERIA Y NUTRIOLOGIA:"=>"FACULTAD DE ENFERMERIA Y NUTRIOLOGIA:",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE FILOSOFIA Y LETRAS"=>"FACULTAD DE FILOSOFIA Y LETRAS",
+					"FACULTAD DE FRUTICULTURA"=>"FACULTAD DE FRUTICULTURA",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE ZOOTECNIA"=>"FACULTAD DE ZOOTECNIA",
+					"HOSPITAL CENTRAL UNIVERSITARIO:"=>"HOSPITAL CENTRAL UNIVERSITARIO:",
+					"MUSEO REGIONAL UNIVERSITARIO QUINTA GAMEROS:"=>"MUSEO REGIONAL UNIVERSITARIO QUINTA GAMEROS:",
+					"UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD CIUDAD JUAREZ"=>"UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD CIUDAD JUAREZ",
+					"UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD DELICIAS"=>"UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD DELICIAS",
+					"UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD HIDALGO DEL PARRAL"=>"UNIVERSIDAD AUTONOMA DE CHIHUAHUA UNIDAD HIDALGO DEL PARRAL",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE CIUDAD JUAREZ"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE ESTUDIOS BIOLOGICOS"=>"CENTRO DE ESTUDIOS BIOLOGICOS",
+					"DIRECCION GENERAL DE INVESTIGACION Y POSGRADO"=>"DIRECCION GENERAL DE INVESTIGACION Y POSGRADO",
+					"INSTITUTO DE ARQUITECTURA, DISEÑO Y ARTE"=>"INSTITUTO DE ARQUITECTURA, DISEÑO Y ARTE",
+					"INSTITUTO DE CIENCIAS BIOMEDICAS"=>"INSTITUTO DE CIENCIAS BIOMEDICAS",
+					"INSTITUTO DE CIENCIAS SOCIALES Y ADMINISTRACION"=>"INSTITUTO DE CIENCIAS SOCIALES Y ADMINISTRACION",
+					"INSTITUTO DE INGENIERIA Y TECNOLOGIA"=>"INSTITUTO DE INGENIERIA Y TECNOLOGIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE COAHUILA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE INVESTIGACION EN MATEMATICAS APLICADAS"=>"CENTRO DE INVESTIGACION EN MATEMATICAS APLICADAS",
+					"CENTRO DE INVESTIGACIONES SOCIOECONOMICAS"=>"CENTRO DE INVESTIGACIONES SOCIOECONOMICAS",
+					"ESCUELA DE ADMINISTRACION"=>"ESCUELA DE ADMINISTRACION",
+					"ESCUELA DE CONTADURIA Y ADMINISTRACION"=>"ESCUELA DE CONTADURIA Y ADMINISTRACION",
+					"ESCUELA DE INGENIERIA MECANICA Y ELECTRICA"=>"ESCUELA DE INGENIERIA MECANICA Y ELECTRICA",
+					"ESCUELA DE MATEMATICAS"=>"ESCUELA DE MATEMATICAS",
+					"ESCUELA DE METALURGIA"=>"ESCUELA DE METALURGIA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE CIENCIA, EDUCACIÓN Y HUMANIDADES"=>"FACULTAD DE CIENCIA, EDUCACIÓN Y HUMANIDADES",
+					"FACULTAD DE CIENCIAS FISICO MATEMATICAS"=>"FACULTAD DE CIENCIAS FISICO MATEMATICAS",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE ECONOMÍA UNIDAD SALTILLO"=>"FACULTAD DE ECONOMÍA UNIDAD SALTILLO",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"UNIDAD SALTILLO"=>"UNIDAD SALTILLO",
+					"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE CIUDAD ACUÑA"=>"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE CIUDAD ACUÑA",
+					"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE MONCLOVA"=>"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE MONCLOVA",
+					"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE NUEVA ROSITA"=>"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE NUEVA ROSITA",
+					"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE PIEDRAS NEGRAS"=>"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE PIEDRAS NEGRAS",
+					"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE SAN PEDRO"=>"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD NORTE SAN PEDRO",
+					"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD TORREON"=>"UNIVERSIDAD AUTONOMA DE COAHUILA UNIDAD TORREON",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE GUERRERO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE INVESTIGACION Y POSGRADOS EN ESTUDIOS SOCIOTERRITORIALES"=>"CENTRO DE INVESTIGACION Y POSGRADOS EN ESTUDIOS SOCIOTERRITORIALES",
+					"CENTRO DE INVESTIGACIONES MICROBIOLOGICAS"=>"CENTRO DE INVESTIGACIONES MICROBIOLOGICAS",
+					"CENTRO DE INVESTIGACIÓN DE ENFERMEDADES TROPICALES"=>"CENTRO DE INVESTIGACIÓN DE ENFERMEDADES TROPICALES",
+					"CENTRO DE LENGUAS EXTRANJERAS"=>"CENTRO DE LENGUAS EXTRANJERAS",
+					"COORDINACION DE LA INVESTIGACION CIENTIFICA"=>"COORDINACION DE LA INVESTIGACION CIENTIFICA",
+					"COORDINACION GENERAL DEL POSGRADO EN DERECHO"=>"COORDINACION GENERAL DEL POSGRADO EN DERECHO",
+					"ESCUELA DE CIENCIAS QUIMICAS Y BIOLOGICA"=>"ESCUELA DE CIENCIAS QUIMICAS Y BIOLOGICA",
+					"ESCUELA DE ECOLOGIA MARINA"=>"ESCUELA DE ECOLOGIA MARINA",
+					"ESCUELA DE FISICA Y MATEMATICAS"=>"ESCUELA DE FISICA Y MATEMATICAS",
+					"ESCUELA NORMAL SUPERIOR"=>"ESCUELA NORMAL SUPERIOR",
+					"ESCUELA REGIONAL DE CIENCIAS DE LA TIERRA (TAXCO)"=>"ESCUELA REGIONAL DE CIENCIAS DE LA TIERRA (TAXCO)",
+					"ESCUELA SUPERIOR DE ARQUITECTURA Y URBANISMO"=>"ESCUELA SUPERIOR DE ARQUITECTURA Y URBANISMO",
+					"ESCUELA SUPERIOR DE CIENCIAS DE LA COMUNICACION"=>"ESCUELA SUPERIOR DE CIENCIAS DE LA COMUNICACION",
+					"ESCUELA SUPERIOR DE CIENCIAS ECONOMICAS"=>"ESCUELA SUPERIOR DE CIENCIAS ECONOMICAS",
+					"ESCUELA SUPERIOR DE ENFERMERIA NO. 1"=>"ESCUELA SUPERIOR DE ENFERMERIA NO. 1",
+					"ESCUELA SUPERIOR DE ENFERMERIA NO. 4 (TAXCO)"=>"ESCUELA SUPERIOR DE ENFERMERIA NO. 4 (TAXCO)",
+					"ESCUELA SUPERIOR DE MEDICINA, VETERINARIA Y ZOOTECNIA (CD. ALTAMIRANO)"=>"ESCUELA SUPERIOR DE MEDICINA, VETERINARIA Y ZOOTECNIA (CD. ALTAMIRANO)",
+					"FACULTAD DE CIENCIAS DE LA EDUCACION"=>"FACULTAD DE CIENCIAS DE LA EDUCACION",
+					"FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS"=>"FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS",
+					"FACULTAD DE DERECHO Y CIENCIAS SOCIALES"=>"FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+					"FACULTAD DE FILOSOFIA Y LETRAS"=>"FACULTAD DE FILOSOFIA Y LETRAS",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE MATEMATICAS"=>"FACULTAD DE MATEMATICAS",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"INSTITUTO INTERNACIONAL DE ESTUDIOS POLITICOS AVANZ IGNACIO MANUEL ALTAMIRANO"=>"INSTITUTO INTERNACIONAL DE ESTUDIOS POLITICOS AVANZ IGNACIO MANUEL ALTAMIRANO",
+					"PREPARATORIA GREGORIO BELLO CARRANZA N. 25"=>"PREPARATORIA GREGORIO BELLO CARRANZA N. 25",
+					"UNIDAD ACADEMICA DE ENFERMERIA NO.4"=>"UNIDAD ACADEMICA DE ENFERMERIA NO.4",
+					"UNIDAD ACADEMICA DE TURISMO"=>"UNIDAD ACADEMICA DE TURISMO",
+					"UNIDAD DE CIENCIAS DE DESARROLLO REGIONAL"=>"UNIDAD DE CIENCIAS DE DESARROLLO REGIONAL",
+					"UNIDAD DE ESTUDIOS DE POSGRADO E INVESTIGACION"=>"UNIDAD DE ESTUDIOS DE POSGRADO E INVESTIGACION",
+					"UNIDAD DE INVESTIGACION ESPECIALIZADA EN MICROBIOLOGIA"=>"UNIDAD DE INVESTIGACION ESPECIALIZADA EN MICROBIOLOGIA",
+					"UNIVERSIDAD AUTONOMA DE GUERRERO UNIDAD ACAPULCO"=>"UNIVERSIDAD AUTONOMA DE GUERRERO UNIDAD ACAPULCO",
+					"UNIVERSIDAD AUTONOMA DE GUERRERO UNIDAD IGUALA"=>"UNIVERSIDAD AUTONOMA DE GUERRERO UNIDAD IGUALA",
+					"UNIVERSIDAD AUTÓNOMA DE GUERRERO/FACULTAD DE MATEMÁTICA/MAESTRÍA EN ESTADÍSTICA APLICADA"=>"UNIVERSIDAD AUTÓNOMA DE GUERRERO/FACULTAD DE MATEMÁTICA/MAESTRÍA EN ESTADÍSTICA APLICADA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE HIDALGO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"ESCUELA SUPERIOR DE APAN"=>"ESCUELA SUPERIOR DE APAN",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE LA CIUDAD DE MEXICO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "DEL VALLE UNIVERSIDAD AUTÓNOMA DE LA CIUDAD DE MÉXICO"=>"DEL VALLE UNIVERSIDAD AUTÓNOMA DE LA CIUDAD DE MÉXICO",
+					"PLANTEL CASA LIBERTAD IZTAPALAPA"=>"PLANTEL CASA LIBERTAD IZTAPALAPA",
+					"PLANTEL CUAUTEPEC"=>"PLANTEL CUAUTEPEC",
+					"POSGRADO EN HUMANIDADES Y CIENCIAS SOCIALES"=>"POSGRADO EN HUMANIDADES Y CIENCIAS SOCIALES",
+					"SAN LORENZO TEZONCO"=>"SAN LORENZO TEZONCO",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE NAYARIT"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "ACUACULTURA INTEGRAL, S.A. DE C.V."=>"ACUACULTURA INTEGRAL, S.A. DE C.V.",
+					"AREA DE CIENCIAS BIOLÓGICO AGROPECUARIAS Y PESQUERAS"=>"AREA DE CIENCIAS BIOLÓGICO AGROPECUARIAS Y PESQUERAS",
+					"AREA DE CIENCIAS SOCIALES Y HUMANIDADES"=>"AREA DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"ASOCIACIÓN NAYARITA DE PRODUCTORES DE OSTIÓN, A.C."=>"ASOCIACIÓN NAYARITA DE PRODUCTORES DE OSTIÓN, A.C.",
+					"CENTRO UNIVERSITARIO DE IDIOMAS"=>"CENTRO UNIVERSITARIO DE IDIOMAS",
+					"COORDINACION DE INVESTIGACION CIENTIFICA"=>"COORDINACION DE INVESTIGACION CIENTIFICA",
+					"DIRECCION DE EDUCACION SUPERIOR E INVESTIGACION CIENTIFICA"=>"DIRECCION DE EDUCACION SUPERIOR E INVESTIGACION CIENTIFICA",
+					"ESCUELA DE COMERCIO Y ADMINISTRACION"=>"ESCUELA DE COMERCIO Y ADMINISTRACION",
+					"ESCUELA DE INGENIERIA PESQUERA"=>"ESCUELA DE INGENIERIA PESQUERA",
+					"ESCUELA DE MEDICINA HUMANA"=>"ESCUELA DE MEDICINA HUMANA",
+					"ESCUELA SUPERIOR DE INGENIERIA QUIMICA INDUSTRIAL"=>"ESCUELA SUPERIOR DE INGENIERIA QUIMICA INDUSTRIAL",
+					"ESCUELA SUPERIOR DE TURISMO FACULTAD DE AGRICULTURA"=>"ESCUELA SUPERIOR DE TURISMO FACULTAD DE AGRICULTURA",
+					"FACULTAD DE AGRICULTURA"=>"FACULTAD DE AGRICULTURA",
+					"FACULTAD DE CIENCIAS DE LA EDUCACION"=>"FACULTAD DE CIENCIAS DE LA EDUCACION",
+					"FACULTAD DE CIENCIAS E INGENIERIAS"=>"FACULTAD DE CIENCIAS E INGENIERIAS",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE INGENIERIA PESQUERA"=>"FACULTAD DE INGENIERIA PESQUERA",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"FACULTAD DE TURISMO"=>"FACULTAD DE TURISMO",
+					"SERVICIOS INTEGRALES DE PESCA Y ACUICULTURA, S.A. DE"=>"SERVICIOS INTEGRALES DE PESCA Y ACUICULTURA, S.A. DE",
+					"UNIDAD ACADEMICA DE CONTADURIA Y ADMINISTRACION"=>"UNIDAD ACADEMICA DE CONTADURIA Y ADMINISTRACION",
+					"UNIDAD ACADEMICA DE DERECHO"=>"UNIDAD ACADEMICA DE DERECHO",
+					"UNIDAD ACADEMICA DE TURISMO"=>"UNIDAD ACADEMICA DE TURISMO",
+					"UNIDAD ACADÉMICA DE MEDICINA"=>"UNIDAD ACADÉMICA DE MEDICINA",
+					"UNIDAD ACADÉMICA DE ODONTOLOGÍA"=>"UNIDAD ACADÉMICA DE ODONTOLOGÍA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE NUEVO LEON"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE ESTUDIOS Y CERTIFICACIÓN DE LENGUAS EXTRANJERAS"=>"CENTRO DE ESTUDIOS Y CERTIFICACIÓN DE LENGUAS EXTRANJERAS",
+					"CENTRO DE INCUBACION DE EMPRESAS Y TRANSFERENCIA DE TECNOLOGÍA UANL"=>"CENTRO DE INCUBACION DE EMPRESAS Y TRANSFERENCIA DE TECNOLOGÍA UANL",
+					"CENTRO DE INVESTIGACIÓN Y DESARROLLO EN EDUCACION BILINGÜE"=>"CENTRO DE INVESTIGACIÓN Y DESARROLLO EN EDUCACION BILINGÜE",
+					"CLÍNICA UNIVERSITARIA 21 DE ENERO"=>"CLÍNICA UNIVERSITARIA 21 DE ENERO",
+					"COLEGIO DE GRADUADOS"=>"COLEGIO DE GRADUADOS",
+					"DIRECCION GENERAL DE INVESTIGACION CIENTIFICA"=>"DIRECCION GENERAL DE INVESTIGACION CIENTIFICA",
+					"ESC. IND. Y PREPA TECNICA PABLO LIVAS"=>"ESC. IND. Y PREPA TECNICA PABLO LIVAS",
+					"ESCUELA INDUSTRIAL Y PREPARATORIA TÉCNICA ÁLVARO OBREGÓN"=>"ESCUELA INDUSTRIAL Y PREPARATORIA TÉCNICA ÁLVARO OBREGÓN",
+					"ESCUELA Y PREPARATORIA TECNICA MEDICA"=>"ESCUELA Y PREPARATORIA TECNICA MEDICA",
+					"FACULTAD DE AGRONOMIA"=>"FACULTAD DE AGRONOMIA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE ARTES ESCENICAS"=>"FACULTAD DE ARTES ESCENICAS",
+					"FACULTAD DE ARTES VISUALES"=>"FACULTAD DE ARTES VISUALES",
+					"FACULTAD DE CIENCIAS BIOLOGICAS"=>"FACULTAD DE CIENCIAS BIOLOGICAS",
+					"FACULTAD DE CIENCIAS DE LA COMUNICACION"=>"FACULTAD DE CIENCIAS DE LA COMUNICACION",
+					"FACULTAD DE CIENCIAS DE LA TIERRA"=>"FACULTAD DE CIENCIAS DE LA TIERRA",
+					"FACULTAD DE CIENCIAS FISICO MATEMATICAS"=>"FACULTAD DE CIENCIAS FISICO MATEMATICAS",
+					"FACULTAD DE CIENCIAS FISICO-MATEMATICAS"=>"FACULTAD DE CIENCIAS FISICO-MATEMATICAS",
+					"FACULTAD DE CIENCIAS FORESTALES"=>"FACULTAD DE CIENCIAS FORESTALES",
+					"FACULTAD DE CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA"=>"FACULTAD DE CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE CONTADURIA PUBLICA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA PUBLICA Y ADMINISTRACION",
+					"FACULTAD DE DERECHO Y CRIMINOLOGIA"=>"FACULTAD DE DERECHO Y CRIMINOLOGIA",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE FILOSOFIA Y LETRAS"=>"FACULTAD DE FILOSOFIA Y LETRAS",
+					"FACULTAD DE INGENIERIA CIVIL"=>"FACULTAD DE INGENIERIA CIVIL",
+					"FACULTAD DE INGENIERIA MECANICA Y ELECTRICA"=>"FACULTAD DE INGENIERIA MECANICA Y ELECTRICA",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE MUSICA"=>"FACULTAD DE MUSICA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"FACULTAD DE ORGANIZACION DEPORTIVA"=>"FACULTAD DE ORGANIZACION DEPORTIVA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"FACULTAD DE SALUD PUBLICA"=>"FACULTAD DE SALUD PUBLICA",
+					"FACULTAD DE TRABAJO SOCIAL"=>"FACULTAD DE TRABAJO SOCIAL",
+					"HOSPITAL UNIVERSITARIO"=>"HOSPITAL UNIVERSITARIO",
+					"INSTITUTO DE DEFENSORÍA PÚBLICA DE NUEVO LEÓN"=>"INSTITUTO DE DEFENSORÍA PÚBLICA DE NUEVO LEÓN",
+					"INSTITUTO DE INVESTIGACIONES SOCIALES"=>"INSTITUTO DE INVESTIGACIONES SOCIALES",
+					"PREPARATORIA # 16"=>"PREPARATORIA # 16",
+					"PREPARATORIA # 22"=>"PREPARATORIA # 22",
+					"PREPARATORIA 1"=>"PREPARATORIA 1",
+					"PREPARATORIA 15 UNIDAD FLORIDA"=>"PREPARATORIA 15 UNIDAD FLORIDA",
+					"PREPARATORIA 20"=>"PREPARATORIA 20",
+					"PREPARATORIA 7"=>"PREPARATORIA 7",
+					"PREPARATORIA NO. 17"=>"PREPARATORIA NO. 17",
+					"RECTORIA"=>"RECTORIA",
+					"UNIVERSIDAD AUTONOMA DE NUEVO LEON UNIDAD LINARES"=>"UNIVERSIDAD AUTONOMA DE NUEVO LEON UNIDAD LINARES",
+					"UNIVERSIDAD AUTONOMA DE NUEVO LEON UNIDAD MARIN"=>"UNIVERSIDAD AUTONOMA DE NUEVO LEON UNIDAD MARIN",
+					"UNIVERSIDAD AUTONOMA DE NUEVO LEON"=>"UNIVERSIDAD AUTONOMA DE NUEVO LEON",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE QUERETARO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE ESTUDIOS ACADEMICOS SOBRE CONTAMINACION AMBIENTAL"=>"CENTRO DE ESTUDIOS ACADEMICOS SOBRE CONTAMINACION AMBIENTAL",
+					"CENTRO DE ESTUDIOS LINGUISTICOS Y LITERARIOS"=>"CENTRO DE ESTUDIOS LINGUISTICOS Y LITERARIOS",
+					"DIRECCION DE ESTUDIOS DE POSGRADO"=>"DIRECCION DE ESTUDIOS DE POSGRADO",
+					"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE BELLAS ARTES"=>"FACULTAD DE BELLAS ARTES",
+					"FACULTAD DE CIENCIAS NATURALES"=>"FACULTAD DE CIENCIAS NATURALES",
+					"FACULTAD DE CIENCIAS POLITICAS Y SOCIALES"=>"FACULTAD DE CIENCIAS POLITICAS Y SOCIALES",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE FILOSOFIA"=>"FACULTAD DE FILOSOFIA",
+					"FACULTAD DE INFORMATICA"=>"FACULTAD DE INFORMATICA",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE LENGUAS Y LETRAS"=>"FACULTAD DE LENGUAS Y LETRAS",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"FACULTAD DE QUIMICA"=>"FACULTAD DE QUIMICA",
+					"FACULTAD DE QUÍMICA MATERIALES"=>"FACULTAD DE QUÍMICA MATERIALES",
+					"RADIO UNIVERSIDAD"=>"RADIO UNIVERSIDAD",
+					"UNIVERSIDAD AUTONOMA DE QUERETARO CAMPUS SAN JUAN DEL RIO"=>"UNIVERSIDAD AUTONOMA DE QUERETARO CAMPUS SAN JUAN DEL RIO",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE BIOCIENCIAS"=>"CENTRO DE BIOCIENCIAS",
+					"COORDINACION ACADÉMICA REGIÓN ALTIPLANO"=>"COORDINACION ACADÉMICA REGIÓN ALTIPLANO",
+					"COORDINACION DE CIENCIAS DE LA COMUNICACION"=>"COORDINACION DE CIENCIAS DE LA COMUNICACION",
+					"COORDINACION DE CIENCIAS SOCIALES Y HUMANIDADES"=>"COORDINACION DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"COORDINACIÓN ACADÉMICA REGIÓN HUASTECA SUR"=>"COORDINACIÓN ACADÉMICA REGIÓN HUASTECA SUR",
+					"ESCUELA DE BIBLIOTECOLOGIA E INFORMACION"=>"ESCUELA DE BIBLIOTECOLOGIA E INFORMACION",
+					"ESCUELA DE CIENCIAS DE LA COMUNICACION"=>"ESCUELA DE CIENCIAS DE LA COMUNICACION",
+					"ESCUELA DE CIENCIAS SOCIALES Y HUMANIDADES"=>"ESCUELA DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"ESCUELA DE CIENCIAS SOCIALES Y HUMANIDADES"=>"ESCUELA DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"ESCUELA DE PSICOLOGIA"=>"ESCUELA DE PSICOLOGIA",
+					"FACULTAD DE AGRONOMIA"=>"FACULTAD DE AGRONOMIA",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES"=>"FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES"=>"FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE ESTOMATOLOGIA"=>"FACULTAD DE ESTOMATOLOGIA",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"FACULTAD DEL HABITAT"=>"FACULTAD DEL HABITAT",
+					"INSTITUTO DE FISICA"=>"INSTITUTO DE FISICA",
+					"INSTITUTO DE GEOLOGIA"=>"INSTITUTO DE GEOLOGIA",
+					"INSTITUTO DE INVESTIGACION EN COMUNICACION OPTICA"=>"INSTITUTO DE INVESTIGACION EN COMUNICACION OPTICA",
+					"INSTITUTO DE INVESTIGACIONES DE ZONAS DESERTICAS"=>"INSTITUTO DE INVESTIGACIONES DE ZONAS DESERTICAS",
+					"INSTITUTO DE INVESTIGACIONES HUMANISTICAS"=>"INSTITUTO DE INVESTIGACIONES HUMANISTICAS",
+					"INSTITUTO DE INVESTIGACIÓN EN COMUNICACIÓN ÓPTICA"=>"INSTITUTO DE INVESTIGACIÓN EN COMUNICACIÓN ÓPTICA",
+					"INSTITUTO DE METALURGIA"=>"INSTITUTO DE METALURGIA",
+					"LABORATORIO NACIONAL-CIACYT (COORDINACION PARA LA INNOVACION Y LA APLICACION DE LA CIENCIA Y TECNOLOGIA)"=>"LABORATORIO NACIONAL-CIACYT (COORDINACION PARA LA INNOVACION Y LA APLICACION DE LA CIENCIA Y TECNOLOGIA)",
+					"SECRETARÍA DE INVESTIGACIÓN Y POSGRADO"=>"SECRETARÍA DE INVESTIGACIÓN Y POSGRADO",
+					"UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD SOLEDAD DE DIAZ GUTIERREZ"=>"UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD SOLEDAD DE DIAZ GUTIERREZ",
+					"UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD ZONA HUASTECA-CIUDAD VALLES"=>"UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD ZONA HUASTECA-CIUDAD VALLES",
+					"UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD ZONA MEDIA RIOVERDE"=>"UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI UNIDAD ZONA MEDIA RIOVERDE",
+					"UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI"=>"UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI",
+					"UNIVERSIDAD AUTÓNOMA DE SAN LUIS POTOSÍ, FACULTAD DE ESTOMATOLOGÍA"=>"UNIVERSIDAD AUTÓNOMA DE SAN LUIS POTOSÍ, FACULTAD DE ESTOMATOLOGÍA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE SINALOA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CAMPUS CULIACAN"=>"CAMPUS CULIACAN",
+					"CENTRO DE COMPUTO UNIVERSITARIO"=>"CENTRO DE COMPUTO UNIVERSITARIO",
+					"CENTRO DE ESTUDIO DE IDIOMAS"=>"CENTRO DE ESTUDIO DE IDIOMAS",
+					"CENTRO DE INSTRUMENTOS"=>"CENTRO DE INSTRUMENTOS",
+					"CENTRO DE INVESTIGACION Y DOCENCIA EN CIENCIAS DE LA SALUD"=>"CENTRO DE INVESTIGACION Y DOCENCIA EN CIENCIAS DE LA SALUD",
+					"CENTRO DE INVESTIGACION Y SERVICIOS EDUCATIVOS"=>"CENTRO DE INVESTIGACION Y SERVICIOS EDUCATIVOS",
+					"COMITE DE INVESTIGACION BIOMEDICA ESTUDIANTIL (CIBEUAS)"=>"COMITE DE INVESTIGACION BIOMEDICA ESTUDIANTIL (CIBEUAS)",
+					"COORDINACION GENERAL DE INVESTIGACION Y POSTGRADO"=>"COORDINACION GENERAL DE INVESTIGACION Y POSTGRADO",
+					"ESCUELA DE ADMINISTRACION AGROPECUARIA Y DESARROLLO RURAL"=>"ESCUELA DE ADMINISTRACION AGROPECUARIA Y DESARROLLO RURAL",
+					"ESCUELA DE ARQUITECTURA"=>"ESCUELA DE ARQUITECTURA",
+					"ESCUELA DE BIOLOGIA"=>"ESCUELA DE BIOLOGIA",
+					"ESCUELA DE CIENCIAS DE LA TIERRA"=>"ESCUELA DE CIENCIAS DE LA TIERRA",
+					"ESCUELA DE CIENCIAS DEL MAR"=>"ESCUELA DE CIENCIAS DEL MAR",
+					"ESCUELA DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS"=>"ESCUELA DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS",
+					"ESCUELA DE CIENCIAS FISICO-MATEMATICAS"=>"ESCUELA DE CIENCIAS FISICO-MATEMATICAS",
+					"ESCUELA DE CIENCIAS QUIMICO-BIOLOGICAS"=>"ESCUELA DE CIENCIAS QUIMICO-BIOLOGICAS",
+					"ESCUELA DE CONTABILIDAD Y ADMINISTRACION"=>"ESCUELA DE CONTABILIDAD Y ADMINISTRACION",
+					"ESCUELA DE DERECHO GUASAVE"=>"ESCUELA DE DERECHO GUASAVE",
+					"ESCUELA DE DERECHO Y CIENCIAS SOCIALES"=>"ESCUELA DE DERECHO Y CIENCIAS SOCIALES",
+					"ESCUELA DE ECONOMIA"=>"ESCUELA DE ECONOMIA",
+					"ESCUELA DE ESTUDIOS INTERNACIONALES Y POLITICAS"=>"ESCUELA DE ESTUDIOS INTERNACIONALES Y POLITICAS",
+					"ESCUELA DE FILOSOFIA Y LETRAS"=>"ESCUELA DE FILOSOFIA Y LETRAS",
+					"ESCUELA DE HISTORIA"=>"ESCUELA DE HISTORIA",
+					"ESCUELA DE INFORMATICA"=>"ESCUELA DE INFORMATICA",
+					"ESCUELA DE INGENIERIA DE MAZATLAN"=>"ESCUELA DE INGENIERIA DE MAZATLAN",
+					"ESCUELA DE INGENIERIA"=>"ESCUELA DE INGENIERIA",
+					"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"ESCUELA DE MEDICINA"=>"ESCUELA DE MEDICINA",
+					"ESCUELA DE ODONTOLOGIA"=>"ESCUELA DE ODONTOLOGIA",
+					"ESCUELA DE PSICOLOGIA"=>"ESCUELA DE PSICOLOGIA",
+					"ESCUELA DE TRABAJO SOCIAL"=>"ESCUELA DE TRABAJO SOCIAL",
+					"ESCUELA SUPERIOR DE AGRICULTURA DEL VALLE"=>"ESCUELA SUPERIOR DE AGRICULTURA DEL VALLE",
+					"ESCUELA SUPERIOR DE AGRICULTURA"=>"ESCUELA SUPERIOR DE AGRICULTURA",
+					"ESCUELA SUPERIOR DE EDUCACION FISICA"=>"ESCUELA SUPERIOR DE EDUCACION FISICA",
+					"ESCUELA SUPERIOR DE ENFERMERÍA"=>"ESCUELA SUPERIOR DE ENFERMERÍA",
+					"FACULTAD DE AGRICULTURA"=>"FACULTAD DE AGRICULTURA",
+					"FACULTAD DE AGRONOMIA"=>"FACULTAD DE AGRONOMIA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE CIENCIAS DE LA EDUCACIÓN"=>"FACULTAD DE CIENCIAS DE LA EDUCACIÓN",
+					"FACULTAD DE CIENCIAS DEL MAR"=>"FACULTAD DE CIENCIAS DEL MAR",
+					"FACULTAD DE CIENCIAS ECONÓMICAS Y SOCIALES"=>"FACULTAD DE CIENCIAS ECONÓMICAS Y SOCIALES",
+					"FACULTAD DE CIENCIAS FISICO-MATEMATICAS"=>"FACULTAD DE CIENCIAS FISICO-MATEMATICAS",
+					"FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS"=>"FACULTAD DE CIENCIAS QUIMICO BIOLOGICAS",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE HISTORIA"=>"FACULTAD DE HISTORIA",
+					"FACULTAD DE INGENIERIA MOCHIS"=>"FACULTAD DE INGENIERIA MOCHIS",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"INSTITUTO DE INVESTIGACIONES ECONOMICAS Y SOCIALES"=>"INSTITUTO DE INVESTIGACIONES ECONOMICAS Y SOCIALES",
+					"PROGRAMA UNIVERSITARIO DE PROTECCION Y MEJORAMIENTO AL AMBIENTE"=>"PROGRAMA UNIVERSITARIO DE PROTECCION Y MEJORAMIENTO AL AMBIENTE",
+					"UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD GUAMUCHIL"=>"UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD GUAMUCHIL",
+					"UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD LOS MOCHIS"=>"UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD LOS MOCHIS",
+					"UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD MAZATLAN"=>"UNIVERSIDAD AUTONOMA DE SINALOA UNIDAD MAZATLAN",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE TAMAULIPAS"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE EXCELENCIA"=>"CENTRO DE EXCELENCIA",
+					"CENTRO DE INVESTIGACION SOCIAL"=>"CENTRO DE INVESTIGACION SOCIAL",
+					"CENTRO DE LENGUAS Y LINGÜÍSTICA APLICADA"=>"CENTRO DE LENGUAS Y LINGÜÍSTICA APLICADA",
+					"DEPARTAMENTO DE ANALISIS DE ALIMENTOS"=>"DEPARTAMENTO DE ANALISIS DE ALIMENTOS",
+					"DIRECCION DE INVESTIGACION CIENTIFICA"=>"DIRECCION DE INVESTIGACION CIENTIFICA",
+					"DIRECCION GENERAL DE INNOVACION TECNOLOGICA"=>"DIRECCION GENERAL DE INNOVACION TECNOLOGICA",
+					"FACULTAD DE AGRONOMIA"=>"FACULTAD DE AGRONOMIA",
+					"FACULTAD DE ARQUITECTURA, DISEÑO Y URBANISMO"=>"FACULTAD DE ARQUITECTURA, DISEÑO Y URBANISMO",
+					"FACULTAD DE CIENCIAS DE LA EDUCACION"=>"FACULTAD DE CIENCIAS DE LA EDUCACION",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE COMERCIO Y ADMINISTRACION (TAMPICO)"=>"FACULTAD DE COMERCIO Y ADMINISTRACION (TAMPICO)",
+					"FACULTAD DE COMERCIO, ADMINISTRACION Y CIENCIAS SOCIALES (NUEVO LAREDO)"=>"FACULTAD DE COMERCIO, ADMINISTRACION Y CIENCIAS SOCIALES (NUEVO LAREDO)",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ENFERMERIA (VICTORIA)"=>"FACULTAD DE ENFERMERIA (VICTORIA)",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE INGENIERIA Y CIENCIAS"=>"FACULTAD DE INGENIERIA Y CIENCIAS",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE MEDICINA DR. ALBERTO ROMO CABALLERO"=>"FACULTAD DE MEDICINA DR. ALBERTO ROMO CABALLERO",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"INSTITUTO DE ECOLOGIA Y ALIMENTOS"=>"INSTITUTO DE ECOLOGIA Y ALIMENTOS",
+					"INSTITUTO DE INVESTIGACIONES HISTORICAS"=>"INSTITUTO DE INVESTIGACIONES HISTORICAS",
+					"UNIDAD ACADEMICA DE CIENCIAS DE LA SALUD Y TECNOLOGIA (MATAMOROS)"=>"UNIDAD ACADEMICA DE CIENCIAS DE LA SALUD Y TECNOLOGIA (MATAMOROS)",
+					"UNIDAD ACADEMICA DE CIENCIAS JURIDICAS Y SOCIALES"=>"UNIDAD ACADEMICA DE CIENCIAS JURIDICAS Y SOCIALES",
+					"UNIDAD ACADEMICA DE TRABAJO SOCIAL Y CIENCIAS PARA EL DESARROLLO HUMANO"=>"UNIDAD ACADEMICA DE TRABAJO SOCIAL Y CIENCIAS PARA EL DESARROLLO HUMANO",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA LIC. FRANCISCO HERNANDEZ GARCIA"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA LIC. FRANCISCO HERNANDEZ GARCIA",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA DE AGRONOMIA Y CIENCIAS"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA DE AGRONOMIA Y CIENCIAS",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA DE CIENCIAS, EDUCACION Y HUMANIDADES"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA DE CIENCIAS, EDUCACION Y HUMANIDADES",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA DE COMERCIO Y ADMINISTRACION VICTORIA"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA DE COMERCIO Y ADMINISTRACION VICTORIA",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA DE TRABAJO SOCIAL Y CIENCIAS PARA EL DESARROLLO HUMANO"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA DE TRABAJO SOCIAL Y CIENCIAS PARA EL DESARROLLO HUMANO",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA MANTE-CENTRO"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA MANTE-CENTRO",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA MATAMOROS (UAT)"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA MATAMOROS (UAT)",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA REYNOSA AZTLAN"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA REYNOSA AZTLAN",
+					"UNIDAD ACADEMICA MULTIDISCIPLINARIA REYNOSA-RODHE"=>"UNIDAD ACADEMICA MULTIDISCIPLINARIA REYNOSA-RODHE",
+					"UNIVERSIDAD AUTONOMA DE TAMAULIPAS CENTRO UNIVERSITARIO TAMPICO-CIUDAD MADERO"=>"UNIVERSIDAD AUTONOMA DE TAMAULIPAS CENTRO UNIVERSITARIO TAMPICO-CIUDAD MADERO",
+					"UNIVERSIDAD AUTONOMA DE TAMAULIPAS H. MATAMOROS:"=>"UNIVERSIDAD AUTONOMA DE TAMAULIPAS H. MATAMOROS:",
+					"UNIVERSIDAD AUTONOMA DE TAMAULIPAS MANTE"=>"UNIVERSIDAD AUTONOMA DE TAMAULIPAS MANTE",
+					"UNIVERSIDAD AUTONOMA DE TAMAULIPAS NUEVO LAREDO"=>"UNIVERSIDAD AUTONOMA DE TAMAULIPAS NUEVO LAREDO",
+					"UNIVERSIDAD AUTONOMA DE TAMAULIPAS REYNOSA"=>"UNIVERSIDAD AUTONOMA DE TAMAULIPAS REYNOSA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE TLAXCALA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE INVESTIGACION ACUICOLA"=>"CENTRO DE INVESTIGACION ACUICOLA",
+					"CENTRO DE INVESTIGACION EN CIENCIAS BIOLOGICAS"=>"CENTRO DE INVESTIGACION EN CIENCIAS BIOLOGICAS",
+					"CENTRO DE INVESTIGACION EN GENETICA Y AMBIENTE"=>"CENTRO DE INVESTIGACION EN GENETICA Y AMBIENTE",
+					"CENTRO DE INVESTIGACION EN GINECOLOGIA Y OBSTETRICIA Y FECUNDACION ARTIFICIAL ANIMAL"=>"CENTRO DE INVESTIGACION EN GINECOLOGIA Y OBSTETRICIA Y FECUNDACION ARTIFICIAL ANIMAL",
+					"CENTRO DE INVESTIGACION EN REPRODUCCION ANIMAL"=>"CENTRO DE INVESTIGACION EN REPRODUCCION ANIMAL",
+					"CENTRO DE INVESTIGACION INTERDISCIPLINARIA SOBRE DESARROLLO REGIONAL"=>"CENTRO DE INVESTIGACION INTERDISCIPLINARIA SOBRE DESARROLLO REGIONAL",
+					"CENTRO DE INVESTIGACIONES FISIOLOGICAS"=>"CENTRO DE INVESTIGACIONES FISIOLOGICAS",
+					"CENTRO TLAXCALA DE BIOLOGIA DE LA CONDUCTA"=>"CENTRO TLAXCALA DE BIOLOGIA DE LA CONDUCTA",
+					"COORDINACION NACIONAL DE RECURSOS HUMANOS"=>"COORDINACION NACIONAL DE RECURSOS HUMANOS",
+					"DEPARTAMENTO DE AGROBIOLOGIA"=>"DEPARTAMENTO DE AGROBIOLOGIA",
+					"DEPARTAMENTO DE CIENCIAS DE LA EDUCACION"=>"DEPARTAMENTO DE CIENCIAS DE LA EDUCACION",
+					"DEPARTAMENTO DE CIENCIAS DE LA SALUD"=>"DEPARTAMENTO DE CIENCIAS DE LA SALUD",
+					"DEPARTAMENTO DE CIENCIAS ECONOMICO ADMINISTRATIVAS"=>"DEPARTAMENTO DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+					"DEPARTAMENTO DE CIENCIAS"=>"DEPARTAMENTO DE CIENCIAS",
+					"DEPARTAMENTO DE DERECHO Y CIENCIAS POLITICAS"=>"DEPARTAMENTO DE DERECHO Y CIENCIAS POLITICAS",
+					"DEPARTAMENTO DE EDUCACION ESPECIALIZADA"=>"DEPARTAMENTO DE EDUCACION ESPECIALIZADA",
+					"DEPARTAMENTO DE ENFERMERIA Y OBSTETRICIA"=>"DEPARTAMENTO DE ENFERMERIA Y OBSTETRICIA",
+					"DEPARTAMENTO DE FILOSOFIA Y LETRAS"=>"DEPARTAMENTO DE FILOSOFIA Y LETRAS",
+					"DEPARTAMENTO DE INGENIERIA Y TECNOLOGIA"=>"DEPARTAMENTO DE INGENIERIA Y TECNOLOGIA",
+					"DEPARTAMENTO DE ODONTOLOGIA"=>"DEPARTAMENTO DE ODONTOLOGIA",
+					"DEPARTAMENTO DE SOCIOLOGIA Y TRABAJO SOCIAL"=>"DEPARTAMENTO DE SOCIOLOGIA Y TRABAJO SOCIAL",
+					"ESCUELA DE BIOLOGIA AGROPECUARIA"=>"ESCUELA DE BIOLOGIA AGROPECUARIA",
+					"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"ESCUELA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES"=>"FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"INSTITUTO DE ESTUDIOS ECONOMICOS DE AMERICA LATINA"=>"INSTITUTO DE ESTUDIOS ECONOMICOS DE AMERICA LATINA",
+					"INSTITUTO NACIONAL DE ANTROPOLOGÍA Y PENSAMIENTO LATINOAMERICANO"=>"INSTITUTO NACIONAL DE ANTROPOLOGÍA Y PENSAMIENTO LATINOAMERICANO",
+					"LABORATORIO DE SANIDAD VEGETAL"=>"LABORATORIO DE SANIDAD VEGETAL",
+					"UNIVERSIDAD AUTONOMA DE TLAXCALA UNIDAD APIZACO"=>"UNIVERSIDAD AUTONOMA DE TLAXCALA UNIDAD APIZACO",
+					"UNIVERSIDAD AUTONOMA DE TLAXCALA UNIDAD IXTACUIXTLA"=>"UNIVERSIDAD AUTONOMA DE TLAXCALA UNIDAD IXTACUIXTLA",
+					"UNIVERSIDAD AUTONOMA DE TLAXCALA/ FACULTAD DE CIENCIAS BÁSICAS, INGENIERÍA Y TECNOLOGÍA"=>"UNIVERSIDAD AUTONOMA DE TLAXCALA/ FACULTAD DE CIENCIAS BÁSICAS, INGENIERÍA Y TECNOLOGÍA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE YUCATAN"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE INVESTIGACIONES REGIONALES DOCTOR HIDEYO MOGUCHI, UNIDAD BIOMEDICA"=>"CENTRO DE INVESTIGACIONES REGIONALES DOCTOR HIDEYO MOGUCHI, UNIDAD BIOMEDICA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE CIENCIAS ANTROPOLOGICAS"=>"FACULTAD DE CIENCIAS ANTROPOLOGICAS",
+					"FACULTAD DE CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE EDUCACION"=>"FACULTAD DE EDUCACION",
+					"FACULTAD DE ENFERMERIA. UNIVERSIDAD AUTÓNOMA DE YUCATAN"=>"FACULTAD DE ENFERMERIA. UNIVERSIDAD AUTÓNOMA DE YUCATAN",
+					"FACULTAD DE ENFERMERÍA"=>"FACULTAD DE ENFERMERÍA",
+					"FACULTAD DE INGENIERIA QUIMICA"=>"FACULTAD DE INGENIERIA QUIMICA",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE MATEMATICAS"=>"FACULTAD DE MATEMATICAS",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"FACULTAD DE ODONTOLOGIA. UNIVERSIDAD AUTÓNOMA DE YUCATAN"=>"FACULTAD DE ODONTOLOGIA. UNIVERSIDAD AUTÓNOMA DE YUCATAN",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"FACULTAD DE QUIMICA"=>"FACULTAD DE QUIMICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DE ZACATECAS FRANCISCO GARCIA SALINAS"){
+						    echo $form->dropDownList($model,'second_level',array(
+						   "AREA ACADEMICA DE CIENCIAS SOCIALES Y ADMINISTRATIVAS"=>"AREA ACADEMICA DE CIENCIAS SOCIALES Y ADMINISTRATIVAS",
+					"AREA ACADEMICA DE EDUCACION Y HUMANIDADES"=>"AREA ACADEMICA DE EDUCACION Y HUMANIDADES",
+					"AREA ACADEMICA DE INGENIERIA Y TECNOLOGIA"=>"AREA ACADEMICA DE INGENIERIA Y TECNOLOGIA",
+					"CENTRO DE BIOLOGIA EXPERIMENTAL"=>"CENTRO DE BIOLOGIA EXPERIMENTAL",
+					"CENTRO DE CIENCIAS QUIMICAS"=>"CENTRO DE CIENCIAS QUIMICAS",
+					"CENTRO DE CONTABILIDAD Y ADMINISTRACION"=>"CENTRO DE CONTABILIDAD Y ADMINISTRACION",
+					"CENTRO DE DOCENCIA SUPERIOR"=>"CENTRO DE DOCENCIA SUPERIOR",
+					"CENTRO DE DOCTORADO EN ESTUDIOS DEL DESARROLLO"=>"CENTRO DE DOCTORADO EN ESTUDIOS DEL DESARROLLO",
+					"CENTRO DE ESTUDIOS MULTIDISCIPLINARIOS"=>"CENTRO DE ESTUDIOS MULTIDISCIPLINARIOS",
+					"CENTRO DE ESTUDIOS PROSPECTIVOS"=>"CENTRO DE ESTUDIOS PROSPECTIVOS",
+					"CENTRO DE INVESTIGACIONES HISTORICAS"=>"CENTRO DE INVESTIGACIONES HISTORICAS",
+					"CENTRO DE INVESTIGACIONES JURIDICAS"=>"CENTRO DE INVESTIGACIONES JURIDICAS",
+					"CENTRO REGIONAL DE ESTUDIOS NUCLEARES"=>"CENTRO REGIONAL DE ESTUDIOS NUCLEARES",
+					"CENTRO UNIVERSITARIO DE INVESTIGACION"=>"CENTRO UNIVERSITARIO DE INVESTIGACION",
+					"DIRECCION DE ESTUDIOS DE POSGRADO"=>"DIRECCION DE ESTUDIOS DE POSGRADO",
+					"DIRECCION GENERAL DE INVESTIGACION Y POSGRADO"=>"DIRECCION GENERAL DE INVESTIGACION Y POSGRADO",
+					"ESCUELA DE AGRONOMIA"=>"ESCUELA DE AGRONOMIA",
+					"ESCUELA DE FISICA"=>"ESCUELA DE FISICA",
+					"ESCUELA DE INGENIERIA"=>"ESCUELA DE INGENIERIA",
+					"ESCUELA DE MEDICINA"=>"ESCUELA DE MEDICINA",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS SOCIALES"=>"FACULTAD DE CIENCIAS SOCIALES",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE FISICA"=>"FACULTAD DE FISICA",
+					"FACULTAD DE MEDICINA HUMANA"=>"FACULTAD DE MEDICINA HUMANA",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"INSTITUTO DE CIENCIAS BASICAS"=>"INSTITUTO DE CIENCIAS BASICAS",
+					"INSTITUTO DE INVESTIGACIONES ODONTOLOGICAS"=>"INSTITUTO DE INVESTIGACIONES ODONTOLOGICAS",
+					"RECTORIA"=>"RECTORIA",
+					"UNIDAD ACADEMICA DE BIOLOGIA EXPERIMENTAL"=>"UNIDAD ACADEMICA DE BIOLOGIA EXPERIMENTAL",
+					"UNIDAD ACADEMICA DE CONTADURIA"=>"UNIDAD ACADEMICA DE CONTADURIA",
+					"UNIDAD ACADEMICA DE ESTUDIOS DE LAS HUMANIDADES"=>"UNIDAD ACADEMICA DE ESTUDIOS DE LAS HUMANIDADES",
+					"UNIDAD ACADEMICA DE ESTUDIOS NUCLEARES"=>"UNIDAD ACADEMICA DE ESTUDIOS NUCLEARES",
+					"UNIDAD ACADEMICA DE INGENIERÍA ELÉCTRICA"=>"UNIDAD ACADEMICA DE INGENIERÍA ELÉCTRICA",
+					"UNIDAD ACADÉMICA DE AGRONOMÍA"=>"UNIDAD ACADÉMICA DE AGRONOMÍA",
+					"UNIDAD ACADÉMICA DE MATEMÁTICAS"=>"UNIDAD ACADÉMICA DE MATEMÁTICAS",
+					"UNIDAD ACADÉMICA DE MÚSICA"=>"UNIDAD ACADÉMICA DE MÚSICA",
+					"UNIDAD ACADÉMICA DE PSICOLOGÍA"=>"UNIDAD ACADÉMICA DE PSICOLOGÍA",
+					"UNIDAD ACADÉMICA PREPARATORIA"=>"UNIDAD ACADÉMICA PREPARATORIA",
+					"UNIDAD DE POSGRADO EN CIENCIA POLITICA"=>"UNIDAD DE POSGRADO EN CIENCIA POLITICA",
+					"UNIDIDAD ACADEMICA DE ODONTOLOGIA"=>"UNIDIDAD ACADEMICA DE ODONTOLOGIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DEL CARMEN"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "FACULTAD DE CIENCIAS DE LA INFORMACION"=>"FACULTAD DE CIENCIAS DE LA INFORMACION",
+					"FACULTAD DE CIENCIAS DE LA SALUD"=>"FACULTAD DE CIENCIAS DE LA SALUD",
+					"FACULTAD DE CIENCIAS ECONOMICO ADMINISTRATIVAS"=>"FACULTAD DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+					"FACULTAD DE CIENCIAS EDUCATIVAS"=>"FACULTAD DE CIENCIAS EDUCATIVAS",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE PESCA"=>"FACULTAD DE PESCA",
+					"FACULTAD DE QUIMICA"=>"FACULTAD DE QUIMICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DEL ESTADO DE HIDALGO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "AREA ACADEMICA DE CIENCIAS DE LA COMUNICACION"=>"AREA ACADEMICA DE CIENCIAS DE LA COMUNICACION",
+					"AREA ACADEMICA DE MATEMATICAS APLICADAS"=>"AREA ACADEMICA DE MATEMATICAS APLICADAS",
+					"AREA ACADEMICA DE MUSICA"=>"AREA ACADEMICA DE MUSICA",
+					"CENTRO DE DIDACTICA"=>"CENTRO DE DIDACTICA",
+					"CENTRO DE ESTUDIOS SOBRE LA UNIVERSIDAD"=>"CENTRO DE ESTUDIOS SOBRE LA UNIVERSIDAD",
+					"CENTRO DE INVESTIGACION EN CIENCIA Y TECNICAS EN ALIMENTOS"=>"CENTRO DE INVESTIGACION EN CIENCIA Y TECNICAS EN ALIMENTOS",
+					"CENTRO DE INVESTIGACION EN CIENCIAS Y MATERIALES"=>"CENTRO DE INVESTIGACION EN CIENCIAS Y MATERIALES",
+					"CENTRO DE INVESTIGACIONES BIOLOGICAS"=>"CENTRO DE INVESTIGACIONES BIOLOGICAS",
+					"CENTRO DE INVESTIGACIONES EN MATERIALES Y METALURGIA"=>"CENTRO DE INVESTIGACIONES EN MATERIALES Y METALURGIA",
+					"CENTRO DE INVESTIGACIONES NEFROLOGICAS"=>"CENTRO DE INVESTIGACIONES NEFROLOGICAS",
+					"CENTRO DE INVESTIGACIONES QUÍMICAS"=>"CENTRO DE INVESTIGACIONES QUÍMICAS",
+					"CENTRO DE INVESTIGACIONES SOBRE EL ESTADO DE HIDALGO"=>"CENTRO DE INVESTIGACIONES SOBRE EL ESTADO DE HIDALGO",
+					"CENTRO DE INVESTIGACIÓN AVANZADA EN INGENIERÍA INDUSTRIAL"=>"CENTRO DE INVESTIGACIÓN AVANZADA EN INGENIERÍA INDUSTRIAL",
+					"CENTRO DE INVESTIGACIÓN EN BIOLOGÍA DE LA REPRODUCCIÓN"=>"CENTRO DE INVESTIGACIÓN EN BIOLOGÍA DE LA REPRODUCCIÓN",
+					"CENTRO DE INVESTIGACIÓN EN CIENCIA Y TECNOLOGÍA DE ALIMENTOS"=>"CENTRO DE INVESTIGACIÓN EN CIENCIA Y TECNOLOGÍA DE ALIMENTOS",
+					"CENTRO DE INVESTIGACIÓN EN CIENCIAS ECONÓMICO ADMINISTRATIVAS"=>"CENTRO DE INVESTIGACIÓN EN CIENCIAS ECONÓMICO ADMINISTRATIVAS",
+					"CENTRO DE INVESTIGACIÓN EN CIENCIAS Y DESARROLLO DE LA EDUCACIÓN"=>"CENTRO DE INVESTIGACIÓN EN CIENCIAS Y DESARROLLO DE LA EDUCACIÓN",
+					"CENTRO DE INVESTIGACIÓN EN TECNOLOGÍAS DE INFORMACIÓN Y SISTEMAS"=>"CENTRO DE INVESTIGACIÓN EN TECNOLOGÍAS DE INFORMACIÓN Y SISTEMAS",
+					"COORDINACION DE LA DIVISION DE DOCENCIA"=>"COORDINACION DE LA DIVISION DE DOCENCIA",
+					"DIRECCIÓN DE TELECOMUNICACIONES"=>"DIRECCIÓN DE TELECOMUNICACIONES",
+					"DIRECCIÓN DE VINCULACIÓN CON EL SECTOR SOCIAL Y PRODUCTIVO"=>"DIRECCIÓN DE VINCULACIÓN CON EL SECTOR SOCIAL Y PRODUCTIVO",
+					"DIVISION DE INVESTIGACION CIENTIFICA Y TECNOLOGICA"=>"DIVISION DE INVESTIGACION CIENTIFICA Y TECNOLOGICA",
+					"ESCUELA DE MEDICINA"=>"ESCUELA DE MEDICINA",
+					"ESCUELA SUPERIOR DE APAN"=>"ESCUELA SUPERIOR DE APAN",
+					"ESCUELA SUPERIOR DE TEPEJI DEL RIO"=>"ESCUELA SUPERIOR DE TEPEJI DEL RIO",
+					"ESCUELA SUPERIOR DE TEPEJI"=>"ESCUELA SUPERIOR DE TEPEJI",
+					"ESCUELA SUPERIOR DE TIZAYUCA"=>"ESCUELA SUPERIOR DE TIZAYUCA",
+					"INSTITUTO DE ARTE"=>"INSTITUTO DE ARTE",
+					"INSTITUTO DE CIENCIAS AGROPECUARIAS"=>"INSTITUTO DE CIENCIAS AGROPECUARIAS",
+					"INSTITUTO DE CIENCIAS BASICAS E INGENIERIA"=>"INSTITUTO DE CIENCIAS BASICAS E INGENIERIA",
+					"INSTITUTO DE CIENCIAS BIOLOGICAS"=>"INSTITUTO DE CIENCIAS BIOLOGICAS",
+					"INSTITUTO DE CIENCIAS DE LA SALUD"=>"INSTITUTO DE CIENCIAS DE LA SALUD",
+					"INSTITUTO DE CIENCIAS ECONOMICO ADMINISTRATIVAS"=>"INSTITUTO DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+					"INSTITUTO DE CIENCIAS EXACTAS"=>"INSTITUTO DE CIENCIAS EXACTAS",
+					"INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES"=>"INSTITUTO DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"INSTITUTO DE INVESTIGACIONES EN CIENCIAS DE LA TIERRA"=>"INSTITUTO DE INVESTIGACIONES EN CIENCIAS DE LA TIERRA",
+					"INSTITUTO DE INVESTIGACIONES EN CIENCIAS"=>"INSTITUTO DE INVESTIGACIONES EN CIENCIAS",
+					"PLANTEL DISTRITO FEDERAL"=>"PLANTEL DISTRITO FEDERAL",
+					"PREPARATORIA INCORPORADA UAEH SALVADOR ALLENDE"=>"PREPARATORIA INCORPORADA UAEH SALVADOR ALLENDE",
+					"PRODUCTORA UNIVERSITARIA DE LÁCTEOS (PROUNILAC)"=>"PRODUCTORA UNIVERSITARIA DE LÁCTEOS (PROUNILAC)",
+					"SUBNODO REGIONAL DE MATEMATICAS"=>"SUBNODO REGIONAL DE MATEMATICAS",
+					"SUBNODO REGISTRO MATEMATICAS EDUCATIVAS"=>"SUBNODO REGISTRO MATEMATICAS EDUCATIVAS",
+					"ÁREA ACADEMICA DE CIENCIAS POLÍTICAS Y ADMINISTRACIÓN PÚBLICA"=>"ÁREA ACADEMICA DE CIENCIAS POLÍTICAS Y ADMINISTRACIÓN PÚBLICA",
+					"ÁREA ACADÉMICA DE CIENCIAS DE LA TIERRA Y MATERIALES"=>"ÁREA ACADÉMICA DE CIENCIAS DE LA TIERRA Y MATERIALES",
+					"ÁREA ACADÉMICA DE COMUNICACIÓN"=>"ÁREA ACADÉMICA DE COMUNICACIÓN",
+					"ÁREA ACADÉMICA DE ENFERMERÍA"=>"ÁREA ACADÉMICA DE ENFERMERÍA",
+					"ÁREA ACADÉMICA DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"ÁREA ACADÉMICA DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"ÁREA ACADÉMICA DE ODONTOLOGÍA"=>"ÁREA ACADÉMICA DE ODONTOLOGÍA",
+					"ÁREA ACADÉMICA DE PSICOLOGÍA"=>"ÁREA ACADÉMICA DE PSICOLOGÍA",
+					"ÁREA ACADÉMICA DE TRABAJO SOCIAL"=>"ÁREA ACADÉMICA DE TRABAJO SOCIAL",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						   "CENTRO DE ACTIVIDADES CULTURALES"=>"CENTRO DE ACTIVIDADES CULTURALES",
+					"CENTRO DE ENSEÑANZA DE LENGUAS"=>"CENTRO DE ENSEÑANZA DE LENGUAS",
+					"CENTRO DE ESTUDIOS E INVESTIGACION EN DESARROLLO SUSTENTABLE"=>"CENTRO DE ESTUDIOS E INVESTIGACION EN DESARROLLO SUSTENTABLE",
+					"CENTRO DE INNOVACION, DESARROLLO E INVESTIGACION EDUCATIVA C.I.D.I.E."=>"CENTRO DE INNOVACION, DESARROLLO E INVESTIGACION EDUCATIVA C.I.D.I.E.",
+					"CENTRO DE INVESTIGACION EN CIENCIAS BASICAS"=>"CENTRO DE INVESTIGACION EN CIENCIAS BASICAS",
+					"CENTRO DE INVESTIGACION EN CIENCIAS HUMANISTICA"=>"CENTRO DE INVESTIGACION EN CIENCIAS HUMANISTICA",
+					"CENTRO DE INVESTIGACION EN CIENCIAS SOCIALES Y HUMANIDADES"=>"CENTRO DE INVESTIGACION EN CIENCIAS SOCIALES Y HUMANIDADES",
+					"CENTRO DE INVESTIGACION EN INGENIERIA ESTRUCTURAL"=>"CENTRO DE INVESTIGACION EN INGENIERIA ESTRUCTURAL",
+					"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS DE LA POBLACION"=>"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS DE LA POBLACION",
+					"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN CIENCIAS DE LA SALUD"=>"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN CIENCIAS DE LA SALUD",
+					"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA C."=>"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN CIENCIAS POLITICAS Y ADMINISTRACION PUBLICA C.",
+					"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN FITOMEJORAMIENTO"=>"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN FITOMEJORAMIENTO",
+					"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN ODONTOLOGIA"=>"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN ODONTOLOGIA",
+					"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN PLANEACION TERRITORIAL"=>"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN PLANEACION TERRITORIAL",
+					"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN SALUD ANIMAL"=>"CENTRO DE INVESTIGACION Y ESTUDIOS AVANZADOS EN SALUD ANIMAL",
+					"CENTRO INTERNACIONAL DE LENGUA Y CULTURA"=>"CENTRO INTERNACIONAL DE LENGUA Y CULTURA",
+					"CENTRO UNIVERSITARIO DE DESARROLLO PROFESIONAL Y ACADEMICO"=>"CENTRO UNIVERSITARIO DE DESARROLLO PROFESIONAL Y ACADEMICO",
+					"CENTRO UNIVERSITARIO UAEM ATLACOMULCO"=>"CENTRO UNIVERSITARIO UAEM ATLACOMULCO",
+					"CENTRO UNIVERSITARIO UAEM ECATEPEC"=>"CENTRO UNIVERSITARIO UAEM ECATEPEC",
+					"CENTRO UNIVERSITARIO UAEM TEMASCALTEPEC"=>"CENTRO UNIVERSITARIO UAEM TEMASCALTEPEC",
+					"CENTRO UNIVERSITARIO UAEM TENANCINGO"=>"CENTRO UNIVERSITARIO UAEM TENANCINGO",
+					"CENTRO UNIVERSITARIO UAEM TEXCOCO"=>"CENTRO UNIVERSITARIO UAEM TEXCOCO",
+					"CENTRO UNIVERSITARIO UAEM VALLE DE CHALCO"=>"CENTRO UNIVERSITARIO UAEM VALLE DE CHALCO",
+					"CENTRO UNIVERSITARIO UAEM VALLE DE MEXICO"=>"CENTRO UNIVERSITARIO UAEM VALLE DE MEXICO",
+					"CENTRO UNIVERSITARIO UAEM VALLE DE TEOTIHUACAN"=>"CENTRO UNIVERSITARIO UAEM VALLE DE TEOTIHUACAN",
+					"CENTRO UNIVERSITARIO UAEM ZUMPANGO"=>"CENTRO UNIVERSITARIO UAEM ZUMPANGO",
+					"CENTRO UNVERSITARIO UAEM AMECAMECA"=>"CENTRO UNVERSITARIO UAEM AMECAMECA",
+					"COORDINACION DE INVESTIGACION CIENTIFICA"=>"COORDINACION DE INVESTIGACION CIENTIFICA",
+					"ESCUELA DE LENGUAS"=>"ESCUELA DE LENGUAS",
+					"ESCUELA PREPARATORIA TEXCOCO"=>"ESCUELA PREPARATORIA TEXCOCO",
+					"FACULTAD DE AGRONOMIA"=>"FACULTAD DE AGRONOMIA",
+					"FACULTAD DE ANTROPOLOGIA"=>"FACULTAD DE ANTROPOLOGIA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE ARTES"=>"FACULTAD DE ARTES",
+					"FACULTAD DE CIENCIAS AGRICOLAS"=>"FACULTAD DE CIENCIAS AGRICOLAS",
+					"FACULTAD DE CIENCIAS DE LA CONDUCTA"=>"FACULTAD DE CIENCIAS DE LA CONDUCTA",
+					"FACULTAD DE CIENCIAS FISICAS"=>"FACULTAD DE CIENCIAS FISICAS",
+					"FACULTAD DE CIENCIAS POLITICAS Y SOCIALES"=>"FACULTAD DE CIENCIAS POLITICAS Y SOCIALES",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE ENFERMERIA Y OBSTETRICIA"=>"FACULTAD DE ENFERMERIA Y OBSTETRICIA",
+					"FACULTAD DE GEOGRAFIA"=>"FACULTAD DE GEOGRAFIA",
+					"FACULTAD DE HUMANIDADES"=>"FACULTAD DE HUMANIDADES",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE LENGUAS"=>"FACULTAD DE LENGUAS",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"FACULTAD DE PLANEACION URBANA Y REGIONAL"=>"FACULTAD DE PLANEACION URBANA Y REGIONAL",
+					"FACULTAD DE QUIMICA"=>"FACULTAD DE QUIMICA",
+					"FACULTAD DE TURISMO Y GASTRONOMIA"=>"FACULTAD DE TURISMO Y GASTRONOMIA",
+					"INSTITUTO DE INVESTIGACION EN CIENCIAS MEDICAS"=>"INSTITUTO DE INVESTIGACION EN CIENCIAS MEDICAS",
+					"INSTITUTO EN CIENCIAS AGROPECUARIAS Y RURALES"=>"INSTITUTO EN CIENCIAS AGROPECUARIAS Y RURALES",
+					"INSTITUTO EN ESTUDIOS SOBRE LA UNIVERSIDAD"=>"INSTITUTO EN ESTUDIOS SOBRE LA UNIVERSIDAD",
+					"UNIDAD ACADEMICA PROFESIONAL CUAUTITLÁN IZCALLI"=>"UNIDAD ACADEMICA PROFESIONAL CUAUTITLÁN IZCALLI",
+					"UNIDAD ACADEMICA PROFESIONAL NEZAHUALCOYOTL"=>"UNIDAD ACADEMICA PROFESIONAL NEZAHUALCOYOTL",
+					"UNIDAD ACADEMICA PROFESIONAL TIANGUISTENCO"=>"UNIDAD ACADEMICA PROFESIONAL TIANGUISTENCO",
+					"UNIDAD ACADÉMICA PROFESIONAL HUEHUETOCA"=>"UNIDAD ACADÉMICA PROFESIONAL HUEHUETOCA",
+					"UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO"=>"UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA DEL ESTADO DE MORELOS"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE INVESTIGACION TRANSDISCIPLINAR EN PSICOLOGÍA , CITPSI"=>"CENTRO DE INVESTIGACION TRANSDISCIPLINAR EN PSICOLOGÍA , CITPSI",
+					"CENTRO DE INVESTIGACIONES BIOLOGICAS"=>"CENTRO DE INVESTIGACIONES BIOLOGICAS",
+					"CENTRO DE INVESTIGACIONES DE CIENCIAS QUIMICAS"=>"CENTRO DE INVESTIGACIONES DE CIENCIAS QUIMICAS",
+					"CENTRO DE INVESTIGACIONES EN INGENIERIA Y CIENCIAS APLICADAS"=>"CENTRO DE INVESTIGACIONES EN INGENIERIA Y CIENCIAS APLICADAS",
+					"CENTRO DE INVESTIGACIÓN DE DINÁMICA CELULAR"=>"CENTRO DE INVESTIGACIÓN DE DINÁMICA CELULAR",
+					"CENTRO DE INVESTIGACIÓN EN BIODIVERSIDAD Y CONSERVACIÓN"=>"CENTRO DE INVESTIGACIÓN EN BIODIVERSIDAD Y CONSERVACIÓN",
+					"CENTRO DE INVESTIGACIÓN EN BIOTECNOLOGIA"=>"CENTRO DE INVESTIGACIÓN EN BIOTECNOLOGIA",
+					"CENTRO DE INVESTIGACIÓN EN CIENCIAS"=>"CENTRO DE INVESTIGACIÓN EN CIENCIAS",
+					"CENTRO DE INVESTIGACIÓN TRANSDISCIPLINAR EN PSICOLOGÍA"=>"CENTRO DE INVESTIGACIÓN TRANSDISCIPLINAR EN PSICOLOGÍA",
+					"COORDINACION DE INVESTIGACION"=>"COORDINACION DE INVESTIGACION",
+					"ESCUELA DE ARQUITECTURA"=>"ESCUELA DE ARQUITECTURA",
+					"ESCUELA DE ESTUDIOS SUPERIORES DE JOJUTLA"=>"ESCUELA DE ESTUDIOS SUPERIORES DE JOJUTLA",
+					"ESCUELA DE ESTUDIOS SUPERIORES DE JONACATEPEC"=>"ESCUELA DE ESTUDIOS SUPERIORES DE JONACATEPEC",
+					"ESCUELA DE ESTUDIOS SUPERIORES DE XALOSTOC"=>"ESCUELA DE ESTUDIOS SUPERIORES DE XALOSTOC",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE ARTES"=>"FACULTAD DE ARTES",
+					"FACULTAD DE CIENCIAS AGROPECUARIAS"=>"FACULTAD DE CIENCIAS AGROPECUARIAS",
+					"FACULTAD DE CIENCIAS BIOLOGICAS"=>"FACULTAD DE CIENCIAS BIOLOGICAS",
+					"FACULTAD DE CIENCIAS QUIMICAS E INDUSTRIALES"=>"FACULTAD DE CIENCIAS QUIMICAS E INDUSTRIALES",
+					"FACULTAD DE CIENCIAS QUÍMICAS E INGENIERIA"=>"FACULTAD DE CIENCIAS QUÍMICAS E INGENIERIA",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE COMUNICACION HUMANA"=>"FACULTAD DE COMUNICACION HUMANA",
+					"FACULTAD DE CONTADURIA, ADMINISTRACION E INFORMATICA"=>"FACULTAD DE CONTADURIA, ADMINISTRACION E INFORMATICA",
+					"FACULTAD DE DERECHO Y CIENCIAS SOCIALES"=>"FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+					"FACULTAD DE DISEÑO"=>"FACULTAD DE DISEÑO",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE ESTUDIOS SOCIALES"=>"FACULTAD DE ESTUDIOS SOCIALES",
+					"FACULTAD DE ESTUDIOS SUPERIORES DE CUAUTLA"=>"FACULTAD DE ESTUDIOS SUPERIORES DE CUAUTLA",
+					"FACULTAD DE FARMACIA"=>"FACULTAD DE FARMACIA",
+					"FACULTAD DE HUMANIDADES"=>"FACULTAD DE HUMANIDADES",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"INSTITUTO DE CIENCIAS DE LA EDUCACION"=>"INSTITUTO DE CIENCIAS DE LA EDUCACION",
+					"INSTITUTO PROFESIONAL DE LA REGION ORIENTE"=>"INSTITUTO PROFESIONAL DE LA REGION ORIENTE",
+					"INSTITUTO PROFESIONAL DE LA REGION SUR"=>"INSTITUTO PROFESIONAL DE LA REGION SUR",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA INDIGENA DE MEXICO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"UNIDAD MOCHICAHUI"=>"UNIDAD MOCHICAHUI",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD AUTONOMA METROPOLITANA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "UNIDAD AZCAPOTZALCO"=>"UNIDAD AZCAPOTZALCO",
+					"UNIDAD XOCHIMILCO"=>"UNIDAD XOCHIMILCO",
+					"RECTORIA GENERAL"=>"RECTORIA GENERAL",
+					"UNIDAD CUAJIMALPA"=>"UNIDAD CUAJIMALPA",
+					"UNIDAD IZTAPALAPA"=>"UNIDAD IZTAPALAPA",
+					"UNIDAD LERMA"=>"UNIDAD LERMA",
+					"UNIDAD CUAJIMALPA"=>"UNIDAD CUAJIMALPA",
+					"LALICS RED LATINOAMERICANA PARA EL ESTUDIO DE LA ECONOMÍA DEL APRENDIZAJE, LA INNOVACIÓN Y LA CREACIÓN DE SISTEMAS DE CAPACIDADES"=>"LALICS RED LATINOAMERICANA PARA EL ESTUDIO DE LA ECONOMÍA DEL APRENDIZAJE, LA INNOVACIÓN Y LA CREACIÓN DE SISTEMAS DE CAPACIDADES",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE CANTABRIA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"UNIVERSIDAD DE CANTABRIA"=>"UNIVERSIDAD DE CANTABRIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE CIENCIAS Y ARTES DE CHIAPAS"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE ESTUDIOS SUPERIORES DE MEXICO Y CENTROAMERICA"=>"CENTRO DE ESTUDIOS SUPERIORES DE MEXICO Y CENTROAMERICA",
+					"ESCUELA DE BIOLOGIA"=>"ESCUELA DE BIOLOGIA",
+					"ESCUELA DE MUSICA"=>"ESCUELA DE MUSICA",
+					"ESCUELA DE NUTRICION"=>"ESCUELA DE NUTRICION",
+					"ESCUELA DE ODONTOLOGIA"=>"ESCUELA DE ODONTOLOGIA",
+					"ESCUELA DE PSICOLOGIA"=>"ESCUELA DE PSICOLOGIA",
+					"ESCUELA DE TOPOGRAFIA"=>"ESCUELA DE TOPOGRAFIA",
+					"FACULTAD DE ARTES"=>"FACULTAD DE ARTES",
+					"FACULTAD DE HUMANIDADES"=>"FACULTAD DE HUMANIDADES",
+					"INSTITUTO DE CIENCIAS BIOLÓGICAS"=>"INSTITUTO DE CIENCIAS BIOLÓGICAS",
+					"INSTITUTO DE CIENCIAS BÁSICAS Y APLICADAS"=>"INSTITUTO DE CIENCIAS BÁSICAS Y APLICADAS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE COLIMA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE INVESTIGACIONES OCEANOLOGICAS"=>"CENTRO DE INVESTIGACIONES OCEANOLOGICAS",
+					"CENTRO UNIVERSITARIO DE ESTUDIOS E INV. DE VULCANOLOGIA"=>"CENTRO UNIVERSITARIO DE ESTUDIOS E INV. DE VULCANOLOGIA",
+					"CENTRO UNIVERSITARIO DE ESTUDIOS E INVESTIGACION SOBRE LA CUENCA DEL PACIFICO"=>"CENTRO UNIVERSITARIO DE ESTUDIOS E INVESTIGACION SOBRE LA CUENCA DEL PACIFICO",
+					"CENTRO UNIVERSITARIO DE GESTION AMBIENTAL"=>"CENTRO UNIVERSITARIO DE GESTION AMBIENTAL",
+					"CENTRO UNIVERSITARIO DE INVEST. EN CIENCIAS DEL AMBIENTE"=>"CENTRO UNIVERSITARIO DE INVEST. EN CIENCIAS DEL AMBIENTE",
+					"CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS BASICAS"=>"CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS BASICAS",
+					"CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS BIOMEDICAS"=>"CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS BIOMEDICAS",
+					"CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS DE LA TIERRA"=>"CENTRO UNIVERSITARIO DE INVESTIGACION EN CIENCIAS DE LA TIERRA",
+					"CENTRO UNIVERSITARIO DE INVESTIGACION Y DESARROLLO AGROPECUARIO"=>"CENTRO UNIVERSITARIO DE INVESTIGACION Y DESARROLLO AGROPECUARIO",
+					"CENTRO UNIVERSITARIO DE INVESTIGACIONES PARA EL DESARROLLO SUSTENTABLE"=>"CENTRO UNIVERSITARIO DE INVESTIGACIONES PARA EL DESARROLLO SUSTENTABLE",
+					"CENTRO UNIVERSITARIO DE INVESTIGACIONES SOCIALES"=>"CENTRO UNIVERSITARIO DE INVESTIGACIONES SOCIALES",
+					"CENTRO UNIVERSITARIO DE INVESTIGACIONES"=>"CENTRO UNIVERSITARIO DE INVESTIGACIONES",
+					"COORDINACION DE INVESTIGACION CIENTIFICA"=>"COORDINACION DE INVESTIGACION CIENTIFICA",
+					"COORDINACION GENERAL DE VINCULACION"=>"COORDINACION GENERAL DE VINCULACION",
+					"DELEGACION REGIONAL NO. 1 MANZANILLO"=>"DELEGACION REGIONAL NO. 1 MANZANILLO",
+					"DELEGACION REGIONAL NO. 2 TECOMAN"=>"DELEGACION REGIONAL NO. 2 TECOMAN",
+					"DELEGACION REGIONAL NO. 3 COLIMA"=>"DELEGACION REGIONAL NO. 3 COLIMA",
+					"DELEGACION REGIONAL NO. 4 COQUIMATLAN"=>"DELEGACION REGIONAL NO. 4 COQUIMATLAN",
+					"ESCUELA DE MERCADOTECNIA"=>"ESCUELA DE MERCADOTECNIA",
+					"ESCUELA SUPERIOR DE CIENCIAS QUIMICAS"=>"ESCUELA SUPERIOR DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS BASICAS"=>"FACULTAD DE CIENCIAS BASICAS",
+					"FACULTAD DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS"=>"FACULTAD DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS",
+					"FACULTAD DE CIENCIAS POLITICAS Y SOCIALES"=>"FACULTAD DE CIENCIAS POLITICAS Y SOCIALES",
+					"FACULTAD DE CONTABILIDAD Y ADMINISTRACION"=>"FACULTAD DE CONTABILIDAD Y ADMINISTRACION",
+					"FACULTAD DE INGENIERIA CIVIL"=>"FACULTAD DE INGENIERIA CIVIL",
+					"FACULTAD DE INGENIERIA ELECTROMECANICA"=>"FACULTAD DE INGENIERIA ELECTROMECANICA",
+					"FACULTAD DE INGENIERIA MECANICA Y ELECTRICA"=>"FACULTAD DE INGENIERIA MECANICA Y ELECTRICA",
+					"FACULTAD DE LETRAS Y COMUNICACION"=>"FACULTAD DE LETRAS Y COMUNICACION",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"FACULTAD DE QUIMICA"=>"FACULTAD DE QUIMICA",
+					"FACULTAD DE TURISMO"=>"FACULTAD DE TURISMO",
+					"INSTITUTO UNIVERSITARIO DE INVESTIGACIONES JURÍDICAS"=>"INSTITUTO UNIVERSITARIO DE INVESTIGACIONES JURÍDICAS",
+					"UNIDAD REGIONAL 5 VILLA DE ALVAREZ"=>"UNIDAD REGIONAL 5 VILLA DE ALVAREZ",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE GUADALAJARA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE ESTUDIOS DEL PACIFICO"=>"CENTRO DE ESTUDIOS DEL PACIFICO",
+					"CENTRO DE ESTUDIOS E INVESTIGACION EN COMPORTAMIENTO"=>"CENTRO DE ESTUDIOS E INVESTIGACION EN COMPORTAMIENTO",
+					"CENTRO DE ESTUDIOS E INVESTIGACIONES EN PSICOLOGIA"=>"CENTRO DE ESTUDIOS E INVESTIGACIONES EN PSICOLOGIA",
+					"CENTRO DE ESTUDIOS ESTRATEGICOS PARA EL DESARROLLO"=>"CENTRO DE ESTUDIOS ESTRATEGICOS PARA EL DESARROLLO",
+					"CENTRO DE ESTUDIOS PARA EXTRANJEROS"=>"CENTRO DE ESTUDIOS PARA EXTRANJEROS",
+					"CENTRO DE INVESTIGACIONES EDUCATIVAS"=>"CENTRO DE INVESTIGACIONES EDUCATIVAS",
+					"CENTRO DE INVESTIGACIONES JURIDICAS"=>"CENTRO DE INVESTIGACIONES JURIDICAS",
+					"CENTRO DE INVESTIGACIONES SOBRE LOS MOVIMIENTOS SOCIALES"=>"CENTRO DE INVESTIGACIONES SOBRE LOS MOVIMIENTOS SOCIALES",
+					"CENTRO UNIVERSITARIO DE ARTE, ARQUITECTURA Y DISEÑO"=>"CENTRO UNIVERSITARIO DE ARTE, ARQUITECTURA Y DISEÑO",
+					"CENTRO UNIVERSITARIO DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS"=>"CENTRO UNIVERSITARIO DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS",
+					"CENTRO UNIVERSITARIO DE CIENCIAS DE LA SALUD"=>"CENTRO UNIVERSITARIO DE CIENCIAS DE LA SALUD",
+					"CENTRO UNIVERSITARIO DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS"=>"CENTRO UNIVERSITARIO DE CIENCIAS ECONOMICAS Y ADMINISTRATIVAS",
+					"CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS E INGENIERIA"=>"CENTRO UNIVERSITARIO DE CIENCIAS EXACTAS E INGENIERIA",
+					"CENTRO UNIVERSITARIO DE CIENCIAS SOCIALES Y HUMANIDADES."=>"CENTRO UNIVERSITARIO DE CIENCIAS SOCIALES Y HUMANIDADES.",
+					"CENTRO UNIVERSITARIO DE LA CIENEGA"=>"CENTRO UNIVERSITARIO DE LA CIENEGA",
+					"CENTRO UNIVERSITARIO DE LA COSTA SUR"=>"CENTRO UNIVERSITARIO DE LA COSTA SUR",
+					"CENTRO UNIVERSITARIO DE LA COSTA SUR"=>"CENTRO UNIVERSITARIO DE LA COSTA SUR",
+					"CENTRO UNIVERSITARIO DE LA COSTA"=>"CENTRO UNIVERSITARIO DE LA COSTA",
+					"CENTRO UNIVERSITARIO DE LA COSTA."=>"CENTRO UNIVERSITARIO DE LA COSTA.",
+					"CENTRO UNIVERSITARIO DE LOS ALTOS"=>"CENTRO UNIVERSITARIO DE LOS ALTOS",
+					"CENTRO UNIVERSITARIO DE LOS LAGOS"=>"CENTRO UNIVERSITARIO DE LOS LAGOS",
+					"CENTRO UNIVERSITARIO DE LOS VALLES"=>"CENTRO UNIVERSITARIO DE LOS VALLES",
+					"CENTRO UNIVERSITARIO DE TONALA"=>"CENTRO UNIVERSITARIO DE TONALA",
+					"CENTRO UNIVERSITARIO DEL NORTE"=>"CENTRO UNIVERSITARIO DEL NORTE",
+					"CENTRO UNIVERSITARIO DEL SUR."=>"CENTRO UNIVERSITARIO DEL SUR.",
+					"CENTRO VOCACIONAL DE ACTIVIDADES PARA EL DESARROLLO DE LA COMUNIDAD"=>"CENTRO VOCACIONAL DE ACTIVIDADES PARA EL DESARROLLO DE LA COMUNIDAD",
+					"COORDINACION DE COOPERACION ACADEMICA UDG"=>"COORDINACION DE COOPERACION ACADEMICA UDG",
+					"COORDINACION DE EDUCACION CONTINUA, ABIERTA Y A DISTANCIA"=>"COORDINACION DE EDUCACION CONTINUA, ABIERTA Y A DISTANCIA",
+					"COORDINACION DE VINCULACION Y TRANSFERENCIA TECNOLOGICA"=>"COORDINACION DE VINCULACION Y TRANSFERENCIA TECNOLOGICA",
+					"COORDINACION GENERAL DE SISTEMAS PARA LA INOVACION DEL APRENDIZAJE"=>"COORDINACION GENERAL DE SISTEMAS PARA LA INOVACION DEL APRENDIZAJE",
+					"COORDINACIÓN GENERAL DE SERVICIOS A UNIVERSITARIOS"=>"COORDINACIÓN GENERAL DE SERVICIOS A UNIVERSITARIOS",
+					"DEPARTAMENTO DE GEOGRAFIA"=>"DEPARTAMENTO DE GEOGRAFIA",
+					"DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA"=>"DOCTORADO INTERINSTITUCIONAL EN PSICOLOGÍA",
+					"EL COLEGIO DE JALISCO"=>"EL COLEGIO DE JALISCO",
+					"ESCUELA DE GRADUADOS"=>"ESCUELA DE GRADUADOS",
+					"ESCUELA PREPARATORIA # 2"=>"ESCUELA PREPARATORIA # 2",
+					"ESCUELA PREPARATORIA DE JALISCO"=>"ESCUELA PREPARATORIA DE JALISCO",
+					"ESCUELA PREPARATORIA DE TONALA NORTE"=>"ESCUELA PREPARATORIA DE TONALA NORTE",
+					"ESCUELA PREPARATORIA REGIONAL DE ATOTONILCO"=>"ESCUELA PREPARATORIA REGIONAL DE ATOTONILCO",
+					"ESCUELA PREPARATORIA REGIONAL DE EL SALTO"=>"ESCUELA PREPARATORIA REGIONAL DE EL SALTO",
+					"FACULTAD DE AGRONOMIA"=>"FACULTAD DE AGRONOMIA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE CIENCIAS BIOLOGICAS"=>"FACULTAD DE CIENCIAS BIOLOGICAS",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE FILOSOFIA Y LETRAS"=>"FACULTAD DE FILOSOFIA Y LETRAS",
+					"FACULTAD DE GEOGRAFIA"=>"FACULTAD DE GEOGRAFIA",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE MEDICINA, VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA, VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"INSTITUTO DE BOTANICA"=>"INSTITUTO DE BOTANICA",
+					"INSTITUTO DE ESTUDIOS SOCIALES"=>"INSTITUTO DE ESTUDIOS SOCIALES",
+					"INSTITUTO DE INVESTIGACIONES JURIDICAS"=>"INSTITUTO DE INVESTIGACIONES JURIDICAS",
+					"INSTITUTO DE PATOLOGIA INFECCIOSA Y EXPERIMENTAL"=>"INSTITUTO DE PATOLOGIA INFECCIOSA Y EXPERIMENTAL",
+					"INSTITUTO EN MADERA CELULOSA Y PAPEL ING. KARL A. GRELLMANN"=>"INSTITUTO EN MADERA CELULOSA Y PAPEL ING. KARL A. GRELLMANN",
+					"INSTITUTO MANANTLAN DE ECOLOGIA Y CONSERVACION"=>"INSTITUTO MANANTLAN DE ECOLOGIA Y CONSERVACION",
+					"INSTITUTO REGIONAL DE INVESTIGACION EN SALUD PUBLICA"=>"INSTITUTO REGIONAL DE INVESTIGACION EN SALUD PUBLICA",
+					"LABORATORIO NATURAL LAS JOYAS DE LA SIERRA"=>"LABORATORIO NATURAL LAS JOYAS DE LA SIERRA",
+					"PREPARATORIA # 7"=>"PREPARATORIA # 7",
+					"PREPARATORIA 4"=>"PREPARATORIA 4",
+					"PROGRAMA UNIVERSITARIO DE LENGUAS EXTRANJERAS"=>"PROGRAMA UNIVERSITARIO DE LENGUAS EXTRANJERAS",
+					"SIISTEMA DE EDUCACION MEDIA SUPERIOR"=>"SIISTEMA DE EDUCACION MEDIA SUPERIOR",
+					"SISTEMA DE UNIVERSIDAD VIRTUAL"=>"SISTEMA DE UNIVERSIDAD VIRTUAL",
+					"UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG"=>"UNIDAD DE SISTEMAS Y PROCEDIMIENTOS UDG",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE GUANAJUATO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CAMPUS CELAYA - SALVATIERRA"=>"CAMPUS CELAYA - SALVATIERRA",
+					"CAMPUS GUANAJUATO"=>"CAMPUS GUANAJUATO",
+					"CAMPUS IRAPUATO - SALAMANCA"=>"CAMPUS IRAPUATO - SALAMANCA",
+					"CAMPUS LEÓN"=>"CAMPUS LEÓN",
+					"CENTRO DE INVESTIGACIONES EN QUIMICA INORGANICA"=>"CENTRO DE INVESTIGACIONES EN QUIMICA INORGANICA",
+					"COLEGIO DEL NIVEL MEDIO SUPERIOR"=>"COLEGIO DEL NIVEL MEDIO SUPERIOR",
+					"CONTRALORIA INTERNA"=>"CONTRALORIA INTERNA",
+					"DEPARTAMENTO DE INVESTIGACIONES DE LA FACULTAD DE RELACIONES INDUSTRIALES"=>"DEPARTAMENTO DE INVESTIGACIONES DE LA FACULTAD DE RELACIONES INDUSTRIALES",
+					"DIRECCION DE ASUNTOS JURIDICOS"=>"DIRECCION DE ASUNTOS JURIDICOS",
+					"DIRECCION DE ENLACE Y COMUNICACIÓN UNIVERSITARIA"=>"DIRECCION DE ENLACE Y COMUNICACIÓN UNIVERSITARIA",
+					"DIRECCION DE INVESTIGACION"=>"DIRECCION DE INVESTIGACION",
+					"DIRECCION DE PLANEACION"=>"DIRECCION DE PLANEACION",
+					"ESCUELA DE INGENIERIA TOPOGRAFICA E HIDRAULICA"=>"ESCUELA DE INGENIERIA TOPOGRAFICA E HIDRAULICA",
+					"IGLU-CENTRO MEXICO"=>"IGLU-CENTRO MEXICO",
+					"INSTITUTO DE INVESTIGACION SOBRE EL TRABAJO"=>"INSTITUTO DE INVESTIGACION SOBRE EL TRABAJO",
+					"INSTITUTO DE INVESTIGACIONES BIOMEDICAS"=>"INSTITUTO DE INVESTIGACIONES BIOMEDICAS",
+					"INSTITUTO DE INVESTIGACIONES CIENTIFICAS"=>"INSTITUTO DE INVESTIGACIONES CIENTIFICAS",
+					"INSTITUTO DE INVESTIGACIONES MEDICAS"=>"INSTITUTO DE INVESTIGACIONES MEDICAS",
+					"OBSERVATORIO DE LA LUZ"=>"OBSERVATORIO DE LA LUZ",
+					"OUI-IGLU"=>"OUI-IGLU",
+					"PROCURADURIA UNIVERSITARIA DE LOS DERECHOS ACADEMICOS"=>"PROCURADURIA UNIVERSITARIA DE LOS DERECHOS ACADEMICOS",
+					"SECRETARIA GENERAL"=>"SECRETARIA GENERAL",
+					"UNIDAD DE ACCESO A LA INFORMACION PUBLICA"=>"UNIDAD DE ACCESO A LA INFORMACION PUBLICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE LA REPUBLICA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						   "FACULTAD DE MEDICINA - HOSPTAL DE CLÍNICAS DR. MANUEL QUINTELA"=>"FACULTAD DE MEDICINA - HOSPTAL DE CLÍNICAS DR. MANUEL QUINTELA",
+					"FACULTAD DE MEDICINA - INSTITUTO DE HIGIENE"=>"FACULTAD DE MEDICINA - INSTITUTO DE HIGIENE",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE OCCIDENTE"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CAMPUS CULIACAN"=>"CAMPUS CULIACAN",
+					"CAMPUS EL FUERTE"=>"CAMPUS EL FUERTE",
+					"CAMPUS GUASAVE"=>"CAMPUS GUASAVE",
+					"CAMPUS LOS MOCHIS"=>"CAMPUS LOS MOCHIS",
+					"CAMPUS MAZATLAN"=>"CAMPUS MAZATLAN",
+					"DEPARTAMENTO DE INGENIERÍA Y TECNOLOGIA"=>"DEPARTAMENTO DE INGENIERÍA Y TECNOLOGIA",
+					"UNIDAD GUAMUCHIL"=>"UNIDAD GUAMUCHIL",
+					"UNIDAD GUASAVE"=>"UNIDAD GUASAVE",
+					"UNIDAD LOS MOCHIS"=>"UNIDAD LOS MOCHIS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE QUINTANA ROO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "DIRECCION DE INVESTIGACION Y POSGRADO"=>"DIRECCION DE INVESTIGACION Y POSGRADO",
+					"DIVISION DE CIENCIAS E INGENIERIAS"=>"DIVISION DE CIENCIAS E INGENIERIAS",
+					"DIVISION DE CIENCIAS POLITICAS Y HUMANIDADES"=>"DIVISION DE CIENCIAS POLITICAS Y HUMANIDADES",
+					"DIVISION DE CIENCIAS SOCIALES Y ECONOMICO ADMINISTRATIVAS"=>"DIVISION DE CIENCIAS SOCIALES Y ECONOMICO ADMINISTRATIVAS",
+					"DIVISION DE DESARROLLO SUSTENTABLE"=>"DIVISION DE DESARROLLO SUSTENTABLE",
+					"SECRETARIA GENERAL"=>"SECRETARIA GENERAL",
+					"UNIDAD COZUMEL"=>"UNIDAD COZUMEL",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DE SONORA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "UNIDAD REGIONAL CENTRO (HERMOSILLO)"=>"UNIDAD REGIONAL CENTRO (HERMOSILLO)",
+					"UNIDAD REGIONAL NORTE (CAMPUS CABORCA)"=>"UNIDAD REGIONAL NORTE (CAMPUS CABORCA)",
+					"UNIDAD REGIONAL NORTE (SANTA ANA)"=>"UNIDAD REGIONAL NORTE (SANTA ANA)",
+					"UNIDAD REGIONAL SUR (CAMPUS NAVOJOA)"=>"UNIDAD REGIONAL SUR (CAMPUS NAVOJOA)",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DEL CARIBE"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "DEPARTAMENTO DE TURISMO SUSTENTABLE, HOTELERIA Y GASTRONOMIA"=>"DEPARTAMENTO DE TURISMO SUSTENTABLE, HOTELERIA Y GASTRONOMIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DEL DESARROLLO DEL ESTADO DE PUEBLA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"CORDINACION DE FISICO-MATEMATICAS"=>"CORDINACION DE FISICO-MATEMATICAS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DEL MAR"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CAMPUS HUATULCO"=>"CAMPUS HUATULCO",
+					"CAMPUS PUERTO ANGEL"=>"CAMPUS PUERTO ANGEL",
+					"CAMPUS PUERTO ESCONDIDO"=>"CAMPUS PUERTO ESCONDIDO",
+					"INSTITUTO DE ECOLOGIA"=>"INSTITUTO DE ECOLOGIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DEL PAPALOAPAN"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CAMPUS LOMA BONITA"=>"CAMPUS LOMA BONITA",
+					"CAMPUS TUXTEPEC"=>"CAMPUS TUXTEPEC",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD DEL VALLE"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "FACULTAD DE SALUD"=>"FACULTAD DE SALUD",
+					"FACULTAD DE HUMANIDADES"=>"FACULTAD DE HUMANIDADES",
+					"SEDE BUGA"=>"SEDE BUGA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD ESTATAL DE SONORA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "UNIDAD ACADEMICA BENITO JUAREZ"=>"UNIDAD ACADEMICA BENITO JUAREZ",
+					"UNIDAD ACADEMICA MAGDALENA"=>"UNIDAD ACADEMICA MAGDALENA",
+					"UNIDAD HERMOSILLO"=>"UNIDAD HERMOSILLO",
+					"UNIDAD NOVOJOA"=>"UNIDAD NOVOJOA",
+					"UNIDAD SAN LUIS RIO COLORADO"=>"UNIDAD SAN LUIS RIO COLORADO",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "DIVISION ACADEMICA DE CIENCIAS BASICAS"=>"DIVISION ACADEMICA DE CIENCIAS BASICAS",
+					"DIVISION ACADEMICA DE CIENCIAS BIOLOGICAS"=>"DIVISION ACADEMICA DE CIENCIAS BIOLOGICAS",
+					"DIVISION ACADEMICA DE CIENCIAS DE LA SALUD"=>"DIVISION ACADEMICA DE CIENCIAS DE LA SALUD",
+					"DIVISION ACADEMICA DE CIENCIAS ECONOMICO ADMINISTRATIVAS"=>"DIVISION ACADEMICA DE CIENCIAS ECONOMICO ADMINISTRATIVAS",
+					"DIVISION ACADEMICA DE CIENCIAS SOCIALES Y HUMANIDADES"=>"DIVISION ACADEMICA DE CIENCIAS SOCIALES Y HUMANIDADES",
+					"DIVISION ACADEMICA DE EDUCACION Y ARTES"=>"DIVISION ACADEMICA DE EDUCACION Y ARTES",
+					"INSTITUTO DE INGENIERIA"=>"INSTITUTO DE INGENIERIA",
+					"UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO DIVISION ACADEMICA CIENCIAS AGROPECUARIAS"=>"UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO DIVISION ACADEMICA CIENCIAS AGROPECUARIAS",
+					"UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD CHONTALPA"=>"UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD CHONTALPA",
+					"UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD DE LOS RIOS"=>"UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD DE LOS RIOS",
+					"UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD SIERRA"=>"UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO UNIDAD SIERRA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD JUAREZ DEL ESTADO DE DURANGO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "ESCUELA DE ENFERMERIA"=>"ESCUELA DE ENFERMERIA",
+					"ESCUELA DE LENGUAS"=>"ESCUELA DE LENGUAS",
+					"ESCUELA DE MATEMATICAS-UJED"=>"ESCUELA DE MATEMATICAS-UJED",
+					"ESCUELA DE MEDICINA"=>"ESCUELA DE MEDICINA",
+					"ESCUELA DE ODONTOLOGIA"=>"ESCUELA DE ODONTOLOGIA",
+					"ESCUELA DE PINTURA, ESCULTURA Y ARTESANIAS"=>"ESCUELA DE PINTURA, ESCULTURA Y ARTESANIAS",
+					"ESCUELA DE PSICOLOGIA"=>"ESCUELA DE PSICOLOGIA",
+					"ESCUELA DE TRABAJO SOCIAL"=>"ESCUELA DE TRABAJO SOCIAL",
+					"ESCUELA SUPERIOR DE MUSICA"=>"ESCUELA SUPERIOR DE MUSICA",
+					"FACULTAD DE CIENCIAS BIOLOGICAS"=>"FACULTAD DE CIENCIAS BIOLOGICAS",
+					"FACULTAD DE CIENCIAS FORESTALES"=>"FACULTAD DE CIENCIAS FORESTALES",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS QUIMICAS"=>"FACULTAD DE CIENCIAS QUIMICAS",
+					"FACULTAD DE CIENCIAS QUÍMICAS GÓMEZ PALACIO"=>"FACULTAD DE CIENCIAS QUÍMICAS GÓMEZ PALACIO",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA, CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE ECONOMIA, CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE INGENIERIA CIVIL"=>"FACULTAD DE INGENIERIA CIVIL",
+					"FACULTAD DE MATEMATICAS"=>"FACULTAD DE MATEMATICAS",
+					"FACULTAD DE MEDICINA HUMANA"=>"FACULTAD DE MEDICINA HUMANA",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE MEDICINA Y NUTRICION"=>"FACULTAD DE MEDICINA Y NUTRICION",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD SUPERIOR DE AGRICULTURA Y ZOOTECNIA"=>"FACULTAD SUPERIOR DE AGRICULTURA Y ZOOTECNIA",
+					"INSTITUTO DE CIENCIAS SOCIALES"=>"INSTITUTO DE CIENCIAS SOCIALES",
+					"INSTITUTO DE INVESTIGACION CIENTIFICA"=>"INSTITUTO DE INVESTIGACION CIENTIFICA",
+					"INSTITUTO DE INVESTIGACIONES HISTORICAS"=>"INSTITUTO DE INVESTIGACIONES HISTORICAS",
+					"INSTITUTO DE INVESTIGACIONES JURIDICAS"=>"INSTITUTO DE INVESTIGACIONES JURIDICAS",
+					"INSTITUTO DE SILVILCULTURA E INDUSTRIA DE LA MADERA"=>"INSTITUTO DE SILVILCULTURA E INDUSTRIA DE LA MADERA",
+					"UNIVERSIDAD JUAREZ DEL ESTADO DE DURANGO,GOMEZ PALACIO, DGO."=>"UNIVERSIDAD JUAREZ DEL ESTADO DE DURANGO,GOMEZ PALACIO, DGO.",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD LATINOAMERICANA SC"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CAMPUS CUERNAVACA (CIENCIAS DE LA SALUD)"=>"CAMPUS CUERNAVACA (CIENCIAS DE LA SALUD)",
+					"ESCUELA DE COMUNICACION Y RELACIONES PUBLICAS"=>"ESCUELA DE COMUNICACION Y RELACIONES PUBLICAS",
+					"ESCUELA DE CONTADURIA Y ADMINISTRACION"=>"ESCUELA DE CONTADURIA Y ADMINISTRACION",
+					"ESCUELA DE ODONTOLOGIA"=>"ESCUELA DE ODONTOLOGIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD MICHOACANA DE SAN NICOLAS DE HIDALGO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						   "CENTRO DE DIDÁCTICA Y COMUNICACIÓN EDUCATIVA"=>"CENTRO DE DIDÁCTICA Y COMUNICACIÓN EDUCATIVA",
+					"CENTRO DE ESTUDIOS DE LA CULTURA NICOLAITA"=>"CENTRO DE ESTUDIOS DE LA CULTURA NICOLAITA",
+					"CENTRO DE INVESTIGACION Y ESTUDIO DE LA CULTURA PUREPECHA"=>"CENTRO DE INVESTIGACION Y ESTUDIO DE LA CULTURA PUREPECHA",
+					"CENTRO MULTIDISCIPLINARIO DE ESTUDIOS EN BIOTECNOLOGIA"=>"CENTRO MULTIDISCIPLINARIO DE ESTUDIOS EN BIOTECNOLOGIA",
+					"COORDINACION DE LA INVESTIGACION CIENTIFICA"=>"COORDINACION DE LA INVESTIGACION CIENTIFICA",
+					"COORDINACION GENERAL DE ESTUDIOS DE POSGRADO"=>"COORDINACION GENERAL DE ESTUDIOS DE POSGRADO",
+					"DEPARTAMENTO DE IDIOMAS"=>"DEPARTAMENTO DE IDIOMAS",
+					"ESCUELA DE ADMINISTRACION DE EMPRESAS AGROPECUARIAS"=>"ESCUELA DE ADMINISTRACION DE EMPRESAS AGROPECUARIAS",
+					"ESCUELA DE AGROBIOLOGIA"=>"ESCUELA DE AGROBIOLOGIA",
+					"ESCUELA DE CIENCIAS AGROPECUARIAS"=>"ESCUELA DE CIENCIAS AGROPECUARIAS",
+					"ESCUELA DE CIENCIAS FISICO-MATEMATICAS"=>"ESCUELA DE CIENCIAS FISICO-MATEMATICAS",
+					"ESCUELA DE ECONOMIA"=>"ESCUELA DE ECONOMIA",
+					"ESCUELA DE ENFERMERIA"=>"ESCUELA DE ENFERMERIA",
+					"ESCUELA DE HISTORIA"=>"ESCUELA DE HISTORIA",
+					"ESCUELA DE INGENIERIA CIVIL"=>"ESCUELA DE INGENIERIA CIVIL",
+					"ESCUELA DE INGENIERIA CIVIL"=>"ESCUELA DE INGENIERIA CIVIL",
+					"ESCUELA DE LENGUA Y LITERATURAS HISPANICAS"=>"ESCUELA DE LENGUA Y LITERATURAS HISPANICAS",
+					"ESCUELA DE QUIMICO FARMACOBIOLOGIA"=>"ESCUELA DE QUIMICO FARMACOBIOLOGIA",
+					"ESCUELA POPULAR DE BELLAS ARTES"=>"ESCUELA POPULAR DE BELLAS ARTES",
+					"FACULTAD DE AGROBIOLOGIA PRESIDENTE JUAREZ"=>"FACULTAD DE AGROBIOLOGIA PRESIDENTE JUAREZ",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE BIOLOGIA"=>"FACULTAD DE BIOLOGIA",
+					"FACULTAD DE CIENCIAS FÍSICO MATEMÁTICAS"=>"FACULTAD DE CIENCIAS FÍSICO MATEMÁTICAS",
+					"FACULTAD DE CIENCIAS MEDICAS Y BIOLOGICAS DR. IGNACIO CHAVEZ"=>"FACULTAD DE CIENCIAS MEDICAS Y BIOLOGICAS DR. IGNACIO CHAVEZ",
+					"FACULTAD DE CONTABILIDAD Y ADMINISTRACION"=>"FACULTAD DE CONTABILIDAD Y ADMINISTRACION",
+					"FACULTAD DE CONTADURIA Y CIENCIAS ADMINISTRATIVAS"=>"FACULTAD DE CONTADURIA Y CIENCIAS ADMINISTRATIVAS",
+					"FACULTAD DE DERECHO Y CIENCIAS SOCIALES"=>"FACULTAD DE DERECHO Y CIENCIAS SOCIALES",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE FILOSOFIA"=>"FACULTAD DE FILOSOFIA",
+					"FACULTAD DE INGENIERIA CIVIL"=>"FACULTAD DE INGENIERIA CIVIL",
+					"FACULTAD DE INGENIERIA ELECTRICA"=>"FACULTAD DE INGENIERIA ELECTRICA",
+					"FACULTAD DE INGENIERIA EN TECNOLOGIA DE LA MADERA"=>"FACULTAD DE INGENIERIA EN TECNOLOGIA DE LA MADERA",
+					"FACULTAD DE INGENIERIA MECANICA"=>"FACULTAD DE INGENIERIA MECANICA",
+					"FACULTAD DE INGENIERIA QUIMICA"=>"FACULTAD DE INGENIERIA QUIMICA",
+					"FACULTAD DE INGENIERIA"=>"FACULTAD DE INGENIERIA",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA."=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA.",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"INSTITUTO DE FISICA Y MATEMATICAS"=>"INSTITUTO DE FISICA Y MATEMATICAS",
+					"INSTITUTO DE INVESTIGACIONES AGROPECUARIAS Y FORESTALES"=>"INSTITUTO DE INVESTIGACIONES AGROPECUARIAS Y FORESTALES",
+					"INSTITUTO DE INVESTIGACIONES ECONOMICAS Y EMPRESARIALES"=>"INSTITUTO DE INVESTIGACIONES ECONOMICAS Y EMPRESARIALES",
+					"INSTITUTO DE INVESTIGACIONES FILOSÓFICAS"=>"INSTITUTO DE INVESTIGACIONES FILOSÓFICAS",
+					"INSTITUTO DE INVESTIGACIONES HISTORICAS"=>"INSTITUTO DE INVESTIGACIONES HISTORICAS",
+					"INSTITUTO DE INVESTIGACIONES METALURGICAS"=>"INSTITUTO DE INVESTIGACIONES METALURGICAS",
+					"INSTITUTO DE INVESTIGACIONES QUIMICO-BIOLOGICAS"=>"INSTITUTO DE INVESTIGACIONES QUIMICO-BIOLOGICAS",
+					"INSTITUTO DE INVESTIGACIONES SOBRE LOS RECURSOS NATURALES"=>"INSTITUTO DE INVESTIGACIONES SOBRE LOS RECURSOS NATURALES",
+					"LABORATORIO DE ORNITOLOGIA, MAESTRIA EN MANEJO Y CONSERVACION DE RECURSOS NATURALES"=>"LABORATORIO DE ORNITOLOGIA, MAESTRIA EN MANEJO Y CONSERVACION DE RECURSOS NATURALES",
+					"SECRETARIA ACADEMICA"=>"SECRETARIA ACADEMICA",
+					"SECRETARIA GENERAL"=>"SECRETARIA GENERAL",
+					"SECRETARÍA ADMINISTRATIVA"=>"SECRETARÍA ADMINISTRATIVA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CAMPUS MORELOS"=>"CAMPUS MORELOS",
+					"CENTRO DE INVESTIGACIONES EN ENERGÍA"=>"CENTRO DE INVESTIGACIONES EN ENERGÍA",
+					"CENTRO UNIVERSITARIO DE COMUNICACION DE LA CIENCIA"=>"CENTRO UNIVERSITARIO DE COMUNICACION DE LA CIENCIA",
+					"CENTRO UNIVERSITARIO DE ESTUDIOS CINEMATOGRAFICOS"=>"CENTRO UNIVERSITARIO DE ESTUDIOS CINEMATOGRAFICOS",
+					"CENTRO UNIVERSITARIO DE TEATRO"=>"CENTRO UNIVERSITARIO DE TEATRO",
+					"COLEGIO DE CIENCIAS Y HUMANIDADES"=>"COLEGIO DE CIENCIAS Y HUMANIDADES",
+					"COORDINACION DE HUMANIDADES"=>"COORDINACION DE HUMANIDADES",
+					"COORDINACION DE INNOVACION Y DESARROLLO"=>"COORDINACION DE INNOVACION Y DESARROLLO",
+					"COORDINACION DE INVESTIGACION CIENTIFICA"=>"COORDINACION DE INVESTIGACION CIENTIFICA",
+					"COORDINACION DE PLANEACION"=>"COORDINACION DE PLANEACION",
+					"COORDINACION DEL CONSEJO ACADEMICO DEL AREA DE LAS HUMANI..."=>"COORDINACION DEL CONSEJO ACADEMICO DEL AREA DE LAS HUMANI...",
+					"DIRECCION DE INTERCAMBIO ACADEMICO"=>"DIRECCION DE INTERCAMBIO ACADEMICO",
+					"DIRECCION DE LITERATURA"=>"DIRECCION DE LITERATURA",
+					"DIRECCION DE PLATAFORMAS OCEANOGRAFICAS"=>"DIRECCION DE PLATAFORMAS OCEANOGRAFICAS",
+					"DIRECCION DE TEATRO Y DANZA"=>"DIRECCION DE TEATRO Y DANZA",
+					"DIRECCION GENERAL DE ACTIVIDADES CINEMATOGRAFICAS"=>"DIRECCION GENERAL DE ACTIVIDADES CINEMATOGRAFICAS",
+					"DIRECCION GENERAL DE ACTIVIDADES MUSICALES"=>"DIRECCION GENERAL DE ACTIVIDADES MUSICALES",
+					"DIRECCION GENERAL DE ARTES PLASTICAS (ANTES CENTRO DE INVESTIGACION Y SERVICIOS MUSEOLOGICOS)"=>"DIRECCION GENERAL DE ARTES PLASTICAS (ANTES CENTRO DE INVESTIGACION Y SERVICIOS MUSEOLOGICOS)",
+					"DIRECCION GENERAL DE ASUNTOS DEL PERSONAL ACADEMICO"=>"DIRECCION GENERAL DE ASUNTOS DEL PERSONAL ACADEMICO",
+					"DIRECCION GENERAL DE DIFUSIÓN CULTURAL / CENTRO CULTURAL TLATELOLCO"=>"DIRECCION GENERAL DE DIFUSIÓN CULTURAL / CENTRO CULTURAL TLATELOLCO",
+					"DIRECCION GENERAL DE ESTUDIOS DE POSGRADO"=>"DIRECCION GENERAL DE ESTUDIOS DE POSGRADO",
+					"DIRECCION GENERAL DE INFORMACION Y RELACIONES"=>"DIRECCION GENERAL DE INFORMACION Y RELACIONES",
+					"DIRECCION GENERAL DE ORIENTACION Y SERVICIOS EDUCATIVOS"=>"DIRECCION GENERAL DE ORIENTACION Y SERVICIOS EDUCATIVOS",
+					"DIRECCION GENERAL DE PROYECTOS ACADEMICOS"=>"DIRECCION GENERAL DE PROYECTOS ACADEMICOS",
+					"DIRECCION GENERAL DE SERVICIOS DE COMPUTO ACADEMICO"=>"DIRECCION GENERAL DE SERVICIOS DE COMPUTO ACADEMICO",
+					"DIRECCION GENERAL DE SERVICIOS DE VINCULACION TECNOLOGICA"=>"DIRECCION GENERAL DE SERVICIOS DE VINCULACION TECNOLOGICA",
+					"DIRECCION GENERAL DE SERVICIOS GENERALES"=>"DIRECCION GENERAL DE SERVICIOS GENERALES",
+					"DIRECCION GENERAL DE SERVICIOS MEDICOS"=>"DIRECCION GENERAL DE SERVICIOS MEDICOS",
+					"DIRECCION GENERAL DE TELEVISION UNIVERSITARIA"=>"DIRECCION GENERAL DE TELEVISION UNIVERSITARIA",
+					"DIRECCIÓN GENERAL DE COOPERACIÓN E INTERNACIONALIZACIÓN"=>"DIRECCIÓN GENERAL DE COOPERACIÓN E INTERNACIONALIZACIÓN",
+					"DIRECCIÓN GENERAL DE EVALUACIÓN EDUCATIVA"=>"DIRECCIÓN GENERAL DE EVALUACIÓN EDUCATIVA",
+					"DIRECCIÓN GENERAL DE OBRAS Y CONSERVACIÓN"=>"DIRECCIÓN GENERAL DE OBRAS Y CONSERVACIÓN",
+					"ESCUELA NACIONAL DE ESTUDIOS SUPERIORES UNIDAD MORELIA"=>"ESCUELA NACIONAL DE ESTUDIOS SUPERIORES UNIDAD MORELIA",
+					"ESCUELA NACIONAL DE MUSICA"=>"ESCUELA NACIONAL DE MUSICA",
+					"ESCUELA NACIONAL DE TRABAJO SOCIAL"=>"ESCUELA NACIONAL DE TRABAJO SOCIAL",
+					"ESCUELA NACIONAL PREPARATORIA 3"=>"ESCUELA NACIONAL PREPARATORIA 3",
+					"ESCUELA NACIONAL PREPARATORIA 7"=>"ESCUELA NACIONAL PREPARATORIA 7",
+					"ESCUELA NACIONAL PREPARATORIA PLANTEL 2"=>"ESCUELA NACIONAL PREPARATORIA PLANTEL 2",
+					"ESCUELA NACIONAL PREPARATORIA PLANTEL 4"=>"ESCUELA NACIONAL PREPARATORIA PLANTEL 4",
+					"ESCUELA NACIONAL PREPARATORIA PLANTEL 6"=>"ESCUELA NACIONAL PREPARATORIA PLANTEL 6",
+					"ESCUELA NACIONAL PREPARATORIA, PLANTEL 5"=>"ESCUELA NACIONAL PREPARATORIA, PLANTEL 5",
+					"ESCUELA NACIONAL PREPARATORIA, PLANTEL 9"=>"ESCUELA NACIONAL PREPARATORIA, PLANTEL 9",
+					"ESCUELA NACIONAL PREPARATORIA. PLANTEL 1"=>"ESCUELA NACIONAL PREPARATORIA. PLANTEL 1",
+					"ESCUELA NACIONAL PREPARATORIA. PLANTEL 8"=>"ESCUELA NACIONAL PREPARATORIA. PLANTEL 8",
+					"ESCUELA PERMANENTE DE EXTENSION EN SAN ANTONIO (EPESA)"=>"ESCUELA PERMANENTE DE EXTENSION EN SAN ANTONIO (EPESA)",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES"=>"FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE ESTUDIOS SUPERIORES ARAGÓN"=>"FACULTAD DE ESTUDIOS SUPERIORES ARAGÓN",
+					"FACULTAD DE ESTUDIOS SUPERIORES CUATITLAN IZCALLI"=>"FACULTAD DE ESTUDIOS SUPERIORES CUATITLAN IZCALLI",
+					"FACULTAD DE ESTUDIOS SUPERIORES IZTACALA"=>"FACULTAD DE ESTUDIOS SUPERIORES IZTACALA",
+					"FACULTAD DE ESTUDIOS SUPERIORES ZARAGOZA"=>"FACULTAD DE ESTUDIOS SUPERIORES ZARAGOZA",
+					"FACULTAD DE INGENIERÍA"=>"FACULTAD DE INGENIERÍA",
+					"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE QUÍMICA"=>"FACULTAD DE QUÍMICA",
+					"FACULTAD DE ODONTOLOGIA Y POSGRADO"=>"FACULTAD DE ODONTOLOGIA Y POSGRADO",
+					"FCA UNAM"=>"FCA UNAM",
+					"INSTITUTO DE BIOLOGÍA"=>"INSTITUTO DE BIOLOGÍA",
+					"OFICINA DEL ABOGADO GENERAL"=>"OFICINA DEL ABOGADO GENERAL",
+					"PRUEBA"=>"PRUEBA",
+					"RADIO UNAM"=>"RADIO UNAM",
+					"RECTORIA"=>"RECTORIA",
+					"SECRETARIA DE DESARROLLO INSTITUCIONAL"=>"SECRETARIA DE DESARROLLO INSTITUCIONAL",
+					"SECRETARIA GENERA"=>"SECRETARIA GENERA",
+					"ULTAD DE CONTADURIA Y ADMINISTRACION"=>"ULTAD DE CONTADURIA Y ADMINISTRACION",
+					"UNIDAD ACADEMICA DE LOS CICLOS PROFESIONAL Y DE POSGRADO CCH"=>"UNIDAD ACADEMICA DE LOS CICLOS PROFESIONAL Y DE POSGRADO CCH",
+					"UNIDAD DE POSGRADO"=>"UNIDAD DE POSGRADO",
+					"UNIVERSIDAD DON VASCO A.C."=>"UNIVERSIDAD DON VASCO A.C.",
+					"UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO"=>"UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO",
+					"UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO, FACULTAD DE ODONTOLOGIA Y POSGRADO"=>"UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO, FACULTAD DE ODONTOLOGIA Y POSGRADO",
+					"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO, FACULTAD DE ODONTOLOGÍA, POSGRADO ODONTOPEDIATRIA"=>"UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO, FACULTAD DE ODONTOLOGÍA, POSGRADO ODONTOPEDIATRIA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD NACIONAL DE COLOMBIA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "SEDE ARAUCA"=>"SEDE ARAUCA",
+					"SEDE BOGOTA"=>"SEDE BOGOTA",
+					"SEDE LETICIA"=>"SEDE LETICIA",
+					"SEDE MANIZALES"=>"SEDE MANIZALES",
+					"SEDE MEDELLIN"=>"SEDE MEDELLIN",
+					"SEDE PALMIRA"=>"SEDE PALMIRA",
+					"SEDE SAN ANDRES"=>"SEDE SAN ANDRES",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD PEDAGOGICA NACIONAL"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "AREA DE DOCENCIA"=>"AREA DE DOCENCIA",
+					"AREA DE INVESTIGACION"=>"AREA DE INVESTIGACION",
+					"CENTRO DE LENGUAS EXTRANJERAS"=>"CENTRO DE LENGUAS EXTRANJERAS",
+					"DEPARTAMENTO DE POSGRADO EN EDUCACION"=>"DEPARTAMENTO DE POSGRADO EN EDUCACION",
+					"PROGRAMA DE IMPULSO Y DESARROLLO DE LA EDUCACION DE ADULTOS"=>"PROGRAMA DE IMPULSO Y DESARROLLO DE LA EDUCACION DE ADULTOS",
+					"UNIDAD 011 AGUASCALIENTES"=>"UNIDAD 011 AGUASCALIENTES",
+					"UNIDAD 112 CELAYA"=>"UNIDAD 112 CELAYA",
+					"UNIDAD 113 LEON GUANAJUATO"=>"UNIDAD 113 LEON GUANAJUATO",
+					"UNIDAD 12-C IGUALA"=>"UNIDAD 12-C IGUALA",
+					"UNIDAD 12A"=>"UNIDAD 12A",
+					"UNIDAD 12B"=>"UNIDAD 12B",
+					"UNIDAD 141 GUADALAJARA"=>"UNIDAD 141 GUADALAJARA",
+					"UNIDAD 142, TLAQUEPAQUE"=>"UNIDAD 142, TLAQUEPAQUE",
+					"UNIDAD 143, AUTLAN"=>"UNIDAD 143, AUTLAN",
+					"UNIDAD 144 - CIUDAD GUZMAN"=>"UNIDAD 144 - CIUDAD GUZMAN",
+					"UNIDAD 145, ZAPOPAN"=>"UNIDAD 145, ZAPOPAN",
+					"UNIDAD 153 ECATEPEC"=>"UNIDAD 153 ECATEPEC",
+					"UNIDAD 161 MORELIA DE LA UNIVERSIDAD PEDAGOGICA NACIONAL"=>"UNIDAD 161 MORELIA DE LA UNIVERSIDAD PEDAGOGICA NACIONAL",
+					"UNIDAD 251 DE LA UNIVERSIDAD PEDAGOGICA NACIONAL"=>"UNIDAD 251 DE LA UNIVERSIDAD PEDAGOGICA NACIONAL",
+					"UNIDAD AJUSCO"=>"UNIDAD AJUSCO",
+					"UNIDAD CHIHUAHUA"=>"UNIDAD CHIHUAHUA",
+					"UNIDAD COLIMA NO. 061"=>"UNIDAD COLIMA NO. 061",
+					"UNIDAD HIDALGO"=>"UNIDAD HIDALGO",
+					"UNIDAD MONCLOVA"=>"UNIDAD MONCLOVA",
+					"UNIDAD MORELOS"=>"UNIDAD MORELOS",
+					"UNIDAD NUEVO LEON"=>"UNIDAD NUEVO LEON",
+					"UNIDAD OAXACA"=>"UNIDAD OAXACA",
+					"UNIDAD PUEBLA"=>"UNIDAD PUEBLA",
+					"UNIDAD REGIONAL JALAPA"=>"UNIDAD REGIONAL JALAPA",
+					"UNIDAD TORREON"=>"UNIDAD TORREON",
+					"UNIDAD UPN 162 ZAMORA"=>"UNIDAD UPN 162 ZAMORA",
+					"UNIDAD UPN NO. 94 CENTRO"=>"UNIDAD UPN NO. 94 CENTRO",
+					"UNIDAD UPN NO. 95 AZCAPOTZALCO"=>"UNIDAD UPN NO. 95 AZCAPOTZALCO",
+					"UNIDAD UPN NO. 96 NORTE"=>"UNIDAD UPN NO. 96 NORTE",
+					"UNIDAD UPN NO. 97 SUR"=>"UNIDAD UPN NO. 97 SUR",
+					"UNIDAD UPN NO. 98 ORIENTE"=>"UNIDAD UPN NO. 98 ORIENTE",
+					"UNIDAD UPN NO. 99 PONIENTE"=>"UNIDAD UPN NO. 99 PONIENTE",
+					"UNIDAD ZACATECAS"=>"UNIDAD ZACATECAS",
+					"UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 122 ACAPULCO"=>"UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 122 ACAPULCO",
+					"UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 123"=>"UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 123",
+					"UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 163 URUAPAN, MICHOACAN"=>"UNIVERSIDAD PEDAGOGICA NACIONAL UNIDAD 163 URUAPAN, MICHOACAN",
+					"UNIVERSIDAD PEDAGOGICA NACIONAL, UNIDAD 02B, TIJUANA"=>"UNIVERSIDAD PEDAGOGICA NACIONAL, UNIDAD 02B, TIJUANA",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 021 DE MEXICALI"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 021 DE MEXICALI",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 111 GUANAJUATO"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 111 GUANAJUATO",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 181"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 181",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 212 TEZIUTLÁN"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 212 TEZIUTLÁN",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 241"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL UNIDAD 241",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 011 AGUASCALIENTES"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 011 AGUASCALIENTES",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 141A, GUADALAJARA"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 141A, GUADALAJARA",
+					"UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 32A ZACATECAS"=>"UNIVERSIDAD PEDAGÓGICA NACIONAL, UNIDAD 32A ZACATECAS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD POLITECNICA DE ALTAMIRA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "INGENIERIA EN ENERGIA"=>"INGENIERIA EN ENERGIA",
+					"INGENIERIA EN TECNOLOGIAS DE LA INFORMACIÓN"=>"INGENIERIA EN TECNOLOGIAS DE LA INFORMACIÓN",
+					"INGENIERIA INDUSTRIAL"=>"INGENIERIA INDUSTRIAL",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD POLITECNICA DE PACHUCA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "BIOTECNOLOGIA"=>"BIOTECNOLOGIA",
+					"DEPARTAMENTO DE MECATRONICA"=>"DEPARTAMENTO DE MECATRONICA",
+					"DEPARTAMENTO DE TELEMÁTICA"=>"DEPARTAMENTO DE TELEMÁTICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD POLITECNICA DE PUEBLA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"PROGRAMA ACADEMICO DE INGENIERIA Y ELECTRONICA"=>"PROGRAMA ACADEMICO DE INGENIERIA Y ELECTRONICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD POLITECNICA DE SAN LUIS POTOSI"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "ACADEMIA DE MATEMATICAS"=>"ACADEMIA DE MATEMATICAS",
+					"COORDINACION DEL SEMINARIO DE INVESTIGACION"=>"COORDINACION DEL SEMINARIO DE INVESTIGACION",
+					"DIVISIÓN DE NUEVAS TECNOLOGÍAS DE LA INFORMACIÓN"=>"DIVISIÓN DE NUEVAS TECNOLOGÍAS DE LA INFORMACIÓN",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD TECNOLOGICA DE LA MIXTECA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    					"CENTRO DE FISICA Y MATEMATICAS"=>"CENTRO DE FISICA Y MATEMATICAS",
+					"DIVISION DE ESTUDIOS DE POSGRADO"=>"DIVISION DE ESTUDIOS DE POSGRADO",
+					"INSTITUTO DE AGROINDUSTRIAS"=>"INSTITUTO DE AGROINDUSTRIAS",
+					"INSTITUTO DE ELECTRONICA Y COMPUTACION"=>"INSTITUTO DE ELECTRONICA Y COMPUTACION",
+					"INSTITUTO DE INGENIERIA EN DISEÑO"=>"INSTITUTO DE INGENIERIA EN DISEÑO",
+					"INSTITUTO DE INGENIERIA INDUSTRIAL"=>"INSTITUTO DE INGENIERIA INDUSTRIAL",
+					"VICE-RECTORIA ACADEMICA"=>"VICE-RECTORIA ACADEMICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD TECNOLOGICA DE MORELIA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"AREA ACADEMICA"=>"AREA ACADEMICA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD TECNOLOGICA EMILIANO ZAPATA DEL ESTADO DE MORELOS"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "ABOGADO GENERAL"=>"ABOGADO GENERAL",
+					"DIRECCION DE VINCULACION"=>"DIRECCION DE VINCULACION",
+					"DIRECCIÓN DE ADMINISTRACIÓN Y FINANZAS"=>"DIRECCIÓN DE ADMINISTRACIÓN Y FINANZAS",
+					"DIRECCIÓN DE CARRERA DE MANTENIMIENTO INDUSTRIAL"=>"DIRECCIÓN DE CARRERA DE MANTENIMIENTO INDUSTRIAL",
+					"DIRECCIÓN DE CARRERA DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN"=>"DIRECCIÓN DE CARRERA DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN",
+					"DIRECCIÓN DE LAS CARRERAS DE COMERCIALIZACIÓN Y ADMINISTRACIÓN"=>"DIRECCIÓN DE LAS CARRERAS DE COMERCIALIZACIÓN Y ADMINISTRACIÓN",
+					"DIRECCIÓN DE PROYECTOS ESTRATÉGICOS"=>"DIRECCIÓN DE PROYECTOS ESTRATÉGICOS",
+					"RECTORÍA"=>"RECTORÍA",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSIDAD VERACRUZANA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    "CENTRO DE ATENCION INTEGRAL PARA LA SALUD DEL ESTUDIANTE UNIVERSITARIO"=>"CENTRO DE ATENCION INTEGRAL PARA LA SALUD DEL ESTUDIANTE UNIVERSITARIO",
+					"CENTRO DE CIENCIAS DE LA TIERRA"=>"CENTRO DE CIENCIAS DE LA TIERRA",
+					"CENTRO DE ECOLOGIA Y PESQUERIAS"=>"CENTRO DE ECOLOGIA Y PESQUERIAS",
+					"CENTRO DE ESTUDIOS DE LA CULTURA Y LA COMUNICACION"=>"CENTRO DE ESTUDIOS DE LA CULTURA Y LA COMUNICACION",
+					"CENTRO DE ESTUDIOS E INVESTIGACIONES EN CONOCIMIENTO Y APRENDIZAJE HUMANO"=>"CENTRO DE ESTUDIOS E INVESTIGACIONES EN CONOCIMIENTO Y APRENDIZAJE HUMANO",
+					"CENTRO DE ESTUDIOS HISTORICOS"=>"CENTRO DE ESTUDIOS HISTORICOS",
+					"CENTRO DE ESTUDIOS PSICOLOGICOS"=>"CENTRO DE ESTUDIOS PSICOLOGICOS",
+					"CENTRO DE ESTUDIOS SOBRE DERECHO GLOBALIZACION Y SEGURIDAD"=>"CENTRO DE ESTUDIOS SOBRE DERECHO GLOBALIZACION Y SEGURIDAD",
+					"CENTRO DE ESTUDIOS Y SERVICIOS EN SALUD"=>"CENTRO DE ESTUDIOS Y SERVICIOS EN SALUD",
+					"CENTRO DE GENETICA FORESTAL"=>"CENTRO DE GENETICA FORESTAL",
+					"CENTRO DE IDIOMAS"=>"CENTRO DE IDIOMAS",
+					"CENTRO DE INICIACION MUSICAL"=>"CENTRO DE INICIACION MUSICAL",
+					"CENTRO DE INVESTIGACION EN DOCUMENTACION SOBRE LA UNIVERSIDAD"=>"CENTRO DE INVESTIGACION EN DOCUMENTACION SOBRE LA UNIVERSIDAD",
+					"CENTRO DE INVESTIGACIONES BIOLOGICAS"=>"CENTRO DE INVESTIGACIONES BIOLOGICAS",
+					"CENTRO DE INVESTIGACIONES BIOMÉDICAS"=>"CENTRO DE INVESTIGACIONES BIOMÉDICAS",
+					"CENTRO DE INVESTIGACIONES CEREBRALES"=>"CENTRO DE INVESTIGACIONES CEREBRALES",
+					"CENTRO DE INVESTIGACIONES TROPICALES"=>"CENTRO DE INVESTIGACIONES TROPICALES",
+					"CENTRO PARA ESTUDIANTES EXTRANJEROS"=>"CENTRO PARA ESTUDIANTES EXTRANJEROS",
+					"DIRECCION GENERAL DE APOYO AL DESARROLLO ACADEMICO"=>"DIRECCION GENERAL DE APOYO AL DESARROLLO ACADEMICO",
+					"DIRECCION GENERAL DE INVESTIGACIONES"=>"DIRECCION GENERAL DE INVESTIGACIONES",
+					"DIRECCION GENERAL DE LA UNIDAD DE ESTUDIOS DE POSGRADO"=>"DIRECCION GENERAL DE LA UNIDAD DE ESTUDIOS DE POSGRADO",
+					"DIRECCION GENERAL DEL AREA ACADEMICA DE ARTES"=>"DIRECCION GENERAL DEL AREA ACADEMICA DE ARTES",
+					"DIRECCIÓN GENERAL DEL SISTEMA DE ENSEÑANZA ABIERTA"=>"DIRECCIÓN GENERAL DEL SISTEMA DE ENSEÑANZA ABIERTA",
+					"DOCTOR ARQUITECTO URBANISTA"=>"DOCTOR ARQUITECTO URBANISTA",
+					"ESCUELA DE LETRAS"=>"ESCUELA DE LETRAS",
+					"FACULTAD DE ANTROPOLOGIA"=>"FACULTAD DE ANTROPOLOGIA",
+					"FACULTAD DE ARQUITECTURA"=>"FACULTAD DE ARQUITECTURA",
+					"FACULTAD DE ARTES PLASTICAS"=>"FACULTAD DE ARTES PLASTICAS",
+					"FACULTAD DE BIOANALISIS"=>"FACULTAD DE BIOANALISIS",
+					"FACULTAD DE BIOLOGIA"=>"FACULTAD DE BIOLOGIA",
+					"FACULTAD DE CIENCIAS ADMINISTRATIVAS Y SOCIALES"=>"FACULTAD DE CIENCIAS ADMINISTRATIVAS Y SOCIALES",
+					"FACULTAD DE CIENCIAS AGRICOLAS"=>"FACULTAD DE CIENCIAS AGRICOLAS",
+					"FACULTAD DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS"=>"FACULTAD DE CIENCIAS BIOLOGICAS Y AGROPECUARIAS",
+					"FACULTAD DE CIENCIAS Y TECNICAS DE LA COMUNICACION"=>"FACULTAD DE CIENCIAS Y TECNICAS DE LA COMUNICACION",
+					"FACULTAD DE CIENCIAS"=>"FACULTAD DE CIENCIAS",
+					"FACULTAD DE CONTADURIA Y ADMINISTRACION"=>"FACULTAD DE CONTADURIA Y ADMINISTRACION",
+					"FACULTAD DE DANZA"=>"FACULTAD DE DANZA",
+					"FACULTAD DE DERECHO"=>"FACULTAD DE DERECHO",
+					"FACULTAD DE ECONOMIA"=>"FACULTAD DE ECONOMIA",
+					"FACULTAD DE ENFERMERIA"=>"FACULTAD DE ENFERMERIA",
+					"FACULTAD DE ESTADISTICA E INFORMATICA"=>"FACULTAD DE ESTADISTICA E INFORMATICA",
+					"FACULTAD DE FILOSOFIA"=>"FACULTAD DE FILOSOFIA",
+					"FACULTAD DE FISICA E INTELIGENCIA ARTIFICIAL"=>"FACULTAD DE FISICA E INTELIGENCIA ARTIFICIAL",
+					"FACULTAD DE HISTORIA"=>"FACULTAD DE HISTORIA",
+					"FACULTAD DE IDIOMAS"=>"FACULTAD DE IDIOMAS",
+					"FACULTAD DE INGENIERIA CIVIL"=>"FACULTAD DE INGENIERIA CIVIL",
+					"FACULTAD DE INGENIERIA MECANICA ELECTRICA"=>"FACULTAD DE INGENIERIA MECANICA ELECTRICA",
+					"FACULTAD DE INGENIERIA QUIMICA Y AMBIENTAL"=>"FACULTAD DE INGENIERIA QUIMICA Y AMBIENTAL",
+					"FACULTAD DE INGENIERÍA QUÍMICA"=>"FACULTAD DE INGENIERÍA QUÍMICA",
+					"FACULTAD DE INSTRUMENTACION ELECTRONICA"=>"FACULTAD DE INSTRUMENTACION ELECTRONICA",
+					"FACULTAD DE LETRAS ESPAÑOLAS"=>"FACULTAD DE LETRAS ESPAÑOLAS",
+					"FACULTAD DE MATEMATICAS"=>"FACULTAD DE MATEMATICAS",
+					"FACULTAD DE MEDICINA"=>"FACULTAD DE MEDICINA",
+					"FACULTAD DE MEDICINA, VETERINARIA Y ZOOTECNIA"=>"FACULTAD DE MEDICINA, VETERINARIA Y ZOOTECNIA",
+					"FACULTAD DE MUSICA"=>"FACULTAD DE MUSICA",
+					"FACULTAD DE NUTRICION"=>"FACULTAD DE NUTRICION",
+					"FACULTAD DE ODONTOLOGIA"=>"FACULTAD DE ODONTOLOGIA",
+					"FACULTAD DE PEDAGOGIA"=>"FACULTAD DE PEDAGOGIA",
+					"FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+					"FACULTAD DE QUIMICA"=>"FACULTAD DE QUIMICA",
+					"FACULTAD DE QUÍMICA FARMACEÚTICA BIOLOGICA"=>"FACULTAD DE QUÍMICA FARMACEÚTICA BIOLOGICA",
+					"FACULTAD DE SOCIOLOGIA"=>"FACULTAD DE SOCIOLOGIA",
+					"FACULTAD DE TEATRO"=>"FACULTAD DE TEATRO",
+					"HOSPITAL ESCUELA DE GINECOLOGIA Y OBSTETRICIA"=>"HOSPITAL ESCUELA DE GINECOLOGIA Y OBSTETRICIA",
+					"INST. DE INVESTIGACIONES Y EST. SUPERIORES DE LAS CIENCIAS"=>"INST. DE INVESTIGACIONES Y EST. SUPERIORES DE LAS CIENCIAS",
+					"INSTITUTO DE ANTROPOLOGIA"=>"INSTITUTO DE ANTROPOLOGIA",
+					"INSTITUTO DE ARTES PLASTICAS"=>"INSTITUTO DE ARTES PLASTICAS",
+					"INSTITUTO DE BIOTECNOLOGÍA Y ECOLOGÍA APLICADA"=>"INSTITUTO DE BIOTECNOLOGÍA Y ECOLOGÍA APLICADA",
+					"INSTITUTO DE CIENCIAS BASICAS"=>"INSTITUTO DE CIENCIAS BASICAS",
+					"INSTITUTO DE CIENCIAS DE LA SALUD"=>"INSTITUTO DE CIENCIAS DE LA SALUD",
+					"INSTITUTO DE CONTADURIA PUBLICA"=>"INSTITUTO DE CONTADURIA PUBLICA",
+					"INSTITUTO DE FILOSOFIA"=>"INSTITUTO DE FILOSOFIA",
+					"INSTITUTO DE GENETICA FORESTAL"=>"INSTITUTO DE GENETICA FORESTAL",
+					"INSTITUTO DE INVESTIGACION EN PSICOLOGIA Y EDUCACION"=>"INSTITUTO DE INVESTIGACION EN PSICOLOGIA Y EDUCACION",
+					"INSTITUTO DE INVESTIGACIONES BIOLOGICAS"=>"INSTITUTO DE INVESTIGACIONES BIOLOGICAS",
+					"INSTITUTO DE INVESTIGACIONES EN EDUCACION"=>"INSTITUTO DE INVESTIGACIONES EN EDUCACION",
+					"INSTITUTO DE INVESTIGACIONES HISTORICO-SOCIALES"=>"INSTITUTO DE INVESTIGACIONES HISTORICO-SOCIALES",
+					"INSTITUTO DE INVESTIGACIONES JURIDICAS"=>"INSTITUTO DE INVESTIGACIONES JURIDICAS",
+					"INSTITUTO DE INVESTIGACIONES LINGÜISTICO-LITERARIAS"=>"INSTITUTO DE INVESTIGACIONES LINGÜISTICO-LITERARIAS",
+					"INSTITUTO DE INVESTIGACIONES PSICOLOGICAS"=>"INSTITUTO DE INVESTIGACIONES PSICOLOGICAS",
+					"INSTITUTO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES DE CIENCIAS ADMINISTRATIVAS"=>"INSTITUTO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES DE CIENCIAS ADMINISTRATIVAS",
+					"INSTITUTO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES ECONOMICOS"=>"INSTITUTO DE INVESTIGACIONES Y ESTUDIOS SUPERIORES ECONOMICOS",
+					"INSTITUTO DE NEUROETOLOGIA"=>"INSTITUTO DE NEUROETOLOGIA",
+					"INSTITUTO DE PSICOLOGIA Y EDUCACION"=>"INSTITUTO DE PSICOLOGIA Y EDUCACION",
+					"INSTITUTO DE SALUD PUBLICA"=>"INSTITUTO DE SALUD PUBLICA",
+					"INSTITUTO VERACRUZANO DE INVESTIGACIONES EN LA EDUCACION DE LA SALUD"=>"INSTITUTO VERACRUZANO DE INVESTIGACIONES EN LA EDUCACION DE LA SALUD",
+					"LABORATORIO DE ALTA TECNOLOGIA DE XALAPA SC"=>"LABORATORIO DE ALTA TECNOLOGIA DE XALAPA SC",
+					"MUSEO DE ANTROPOLOGIA"=>"MUSEO DE ANTROPOLOGIA",
+					"SERVICIOS DE APOYO EN RESOLUCIÓN ANALÍTICA"=>"SERVICIOS DE APOYO EN RESOLUCIÓN ANALÍTICA",
+					"SISTEMA DE ENSEÑANZA ABIERTA"=>"SISTEMA DE ENSEÑANZA ABIERTA",
+					"UNIDAD DE INVESTIGACION DE ECOLOGÍA DE PESQUERÍAS"=>"UNIDAD DE INVESTIGACION DE ECOLOGÍA DE PESQUERÍAS",
+					"UNIVERSIDAD VERACRUNA INTERCULTURAL"=>"UNIVERSIDAD VERACRUNA INTERCULTURAL",
+					"UNIVERSIDAD VERACRUZANA INTERCULTURAL"=>"UNIVERSIDAD VERACRUZANA INTERCULTURAL",
+					"UNIVERSIDAD VERACRUZANA REGION COATZACOALCOS-MINATITLAN"=>"UNIVERSIDAD VERACRUZANA REGION COATZACOALCOS-MINATITLAN",
+					"UNIVERSIDAD VERACRUZANA REGION CORDOBA-ORIZABA"=>"UNIVERSIDAD VERACRUZANA REGION CORDOBA-ORIZABA",
+					"UNIVERSIDAD VERACRUZANA REGION POZA RICA-TUXPAN"=>"UNIVERSIDAD VERACRUZANA REGION POZA RICA-TUXPAN",
+					"UNIVERSIDAD VERACRUZANA REGION VERACRUZ"=>"UNIVERSIDAD VERACRUZANA REGION VERACRUZ",
+					"UNIVERSIDAD VERACRUZANA REGION XALAPA"=>"UNIVERSIDAD VERACRUZANA REGION XALAPA",
+					"ZONA XALAPA-FACULTAD DE FISICA"=>"ZONA XALAPA-FACULTAD DE FISICA",
+					"ZONA XALAPA-INSTITUTO DE INVESTIGACIONES PSICOLOGICAS"=>"ZONA XALAPA-INSTITUTO DE INVESTIGACIONES PSICOLOGICAS",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						if ($model->organization=="UNIVERSITA IUAV DI VENEZIA"){
+						    echo $form->dropDownList($model,'second_level',array(
+						    										"DIPARTIMENTO DI PIANIFICAZIONE"=>"DIPARTIMENTO DI PIANIFICAZIONE",),
+						   	array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+						}
+						/*  Instituciones del sector privado de empesa productivas (adiat), Instituciones / organizaciones no lucrativas , Instituciones / organizaciones extrajeras, no expesifico*/
+						    if($model->organization == "CENTRO DE ESTUDIOS CONSTITUCIONALES MEXICOCENTROAMERICA"){
+		    echo $form->dropDownList($model,'second_level',array(""=>""),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "CENTRO NACIONAL DE EDUCACION NORMAL"){
+		    echo $form->dropDownList($model,'second_level',array(""=>""),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INDEPENDIENTE"){
+		    echo $form->dropDownList($model,'second_level',array(""=>""),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INSTITUTO HIDROFISICO MARINO"){
+		    echo $form->dropDownList($model,'second_level',array(""=>""),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "NO ESPECIFICADO"){
+		    echo $form->dropDownList($model,'second_level',array(""=>""),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "SALVADOR OROZCO LOPEZ"){
+		    echo $form->dropDownList($model,'second_level',array(""=>""),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "ACADEMIA DE CIENCIA DE RUSIA"){
+		    echo $form->dropDownList($model,'second_level',array("INSTITUTO DE CRISTALOGRAFIA"=>"INSTITUTO DE CRISTALOGRAFIA",
+		    "INSTITUTO DE ESPECTROSCOPIA"=>"INSTITUTO DE ESPECTROSCOPIA",
+		    "INSTITUTO DE PROBLEMAS EN MECANICA"=>"INSTITUTO DE PROBLEMAS EN MECANICA",
+		    "INSTIUTO DE ARQUEOLOGIA DE LA ACADEMIA DE CIENCIAS EN RUSIA"=>"INSTIUTO DE ARQUEOLOGIA DE LA ACADEMIA DE CIENCIAS EN RUSIA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "ACADEMICA NACIONAL DE CIENCIAS DE UCRANIA"){
+		    echo $form->dropDownList($model,'second_level',array("INSTITUTO DE FISICA DE MATERIA CONDENSADA"=>"INSTITUTO DE FISICA DE MATERIA CONDENSADA",
+		    "INSTITUTO DE TECNICAS EN MECANICA"=>"INSTITUTO DE TECNICAS EN MECANICA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "ARIZONA STATE UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("BUREAU OF APPLIED RESEARCH IN ANTHROPOLOGY"=>"BUREAU OF APPLIED RESEARCH IN ANTHROPOLOGY",
+		    "COLLEGE OF HEALTH SOLUTIONS"=>"COLLEGE OF HEALTH SOLUTIONS",
+		    "DEPARTAMENTO DE BIOQUIMICA"=>"DEPARTAMENTO DE BIOQUIMICA",
+		    "DEPARTAMENTO DE QUÍMICA Y BIOQUÍMICA"=>"DEPARTAMENTO DE QUÍMICA Y BIOQUÍMICA",
+		    "SCHOOL OF LIFE SCIENCES"=>"SCHOOL OF LIFE SCIENCES"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "BLACKETT LABORATORY IMPERIAL COLLEGE LONDON"){
+		    echo $form->dropDownList($model,'second_level',array("BLACKETT LABORATORY"=>"BLACKETT LABORATORY"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "CENTRE NATIONAL DE LA RECHERCHE SCIENTIFIQUE"){
+		    echo $form->dropDownList($model,'second_level',array("LABORATOIRE D'OCÉANOLOGIE ET DE GEOSCIENCES"=>"LABORATOIRE D'OCÉANOLOGIE ET DE GEOSCIENCES",
+		    "LABORATOIRE DE PHYSIQUE DES SOLIDES"=>"LABORATOIRE DE PHYSIQUE DES SOLIDES",
+		    "LABORATOIRE DE PHYSIQUE ET MÉCANIQUE DES MILIEUX HÉTÉROGÈNES"=>"LABORATOIRE DE PHYSIQUE ET MÉCANIQUE DES MILIEUX HÉTÉROGÈNES",
+		    "LABORATOIRE PLASMA ET CONVERSION D¿ENERGIE UMR5213"=>"LABORATOIRE PLASMA ET CONVERSION D¿ENERGIE UMR5213"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "COLLEGE DE FRANCE"){
+		    echo $form->dropDownList($model,'second_level',array("ECOLE DES HAUTES ETUDES EN SCIENCES SOCIALES"=>"ECOLE DES HAUTES ETUDES EN SCIENCES SOCIALES",
+		    "ECOLE PRACTIQUE DES HAUTES ETUDES"=>"ECOLE PRACTIQUE DES HAUTES ETUDES"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "COLUMBIA UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("COLUMBIA LAW SCHOOL"=>"COLUMBIA LAW SCHOOL",
+		    "DEPARTMENT OF ASTRONOMY"=>"DEPARTMENT OF ASTRONOMY",
+		    "GRADUATE SCHOOL OF ARCHITECTURA, PLANNING AND PRESERVATION"=>"GRADUATE SCHOOL OF ARCHITECTURA, PLANNING AND PRESERVATION",
+		    "GRADUATE SCHOOL OF ARCHITECTURE, PLANNING AND PRESERV"=>"GRADUATE SCHOOL OF ARCHITECTURE, PLANNING AND PRESERV",
+		    "GRADUATE SCHOOL OF ARTS AND SCIENCES"=>"GRADUATE SCHOOL OF ARTS AND SCIENCES",
+		    "INSTITUTE FOR RESEARCH OF ORAL HISTORY"=>"INSTITUTE FOR RESEARCH OF ORAL HISTORY",
+		    "INSTITUTE FOR THE STUDY OF HUMAN RIGHTS"=>"INSTITUTE FOR THE STUDY OF HUMAN RIGHTS",
+		    "INSTITUTE OF LATIN AMERICAN STUDIES"=>"INSTITUTE OF LATIN AMERICAN STUDIES",
+		    "LAMONT-DOHERTY EARTH OBSERVATORY"=>"LAMONT-DOHERTY EARTH OBSERVATORY",
+		    "SCHOOL OF INTERNATIONAL AND PUBLIC AFFAIRS"=>"SCHOOL OF INTERNATIONAL AND PUBLIC AFFAIRS",
+		    "TEACHERS COLLEGE COLUMBIA UNIVERSITY"=>"TEACHERS COLLEGE COLUMBIA UNIVERSITY"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICASCSIC"){
+		    echo $form->dropDownList($model,'second_level',array("CENTRO DE ACÚSTICA APLICADA Y EVALUACIÓN NO DESTRUCTIVA"=>"CENTRO DE ACÚSTICA APLICADA Y EVALUACIÓN NO DESTRUCTIVA",
+		    "CENTRO DE EDAFOLOGIA Y BIOLOGIA APLICADA DEL SEGURA"=>"CENTRO DE EDAFOLOGIA Y BIOLOGIA APLICADA DEL SEGURA",
+		    "CENTRO DE HUMANIDADES"=>"CENTRO DE HUMANIDADES",
+		    "CENTRO NACIONAL DE BIOTECNOLOGIA"=>"CENTRO NACIONAL DE BIOTECNOLOGIA",
+		    "INSTITUT DE CIENCIES DEL MAR"=>"INSTITUT DE CIENCIES DEL MAR",
+		    "INSTITUT DE CIÈNCIES DE L'ESPAI"=>"INSTITUT DE CIÈNCIES DE L'ESPAI",
+		    "INSTITUTO DE AGROQUIMICA Y TECNOLOGIA DE ALIMENTOS"=>"INSTITUTO DE AGROQUIMICA Y TECNOLOGIA DE ALIMENTOS",
+		    "INSTITUTO DE AUTOMÁTICA INDUSTRIAL"=>"INSTITUTO DE AUTOMÁTICA INDUSTRIAL",
+		    "INSTITUTO DE CATALISIS Y PETROLEOQUIMICA"=>"INSTITUTO DE CATALISIS Y PETROLEOQUIMICA",
+		    "INSTITUTO DE CERAMICA Y VIDRIO"=>"INSTITUTO DE CERAMICA Y VIDRIO",
+		    "INSTITUTO DE CIENCIA DE MATERIALES DE MADRID"=>"INSTITUTO DE CIENCIA DE MATERIALES DE MADRID",
+		    "INSTITUTO DE CIENCIA Y TECNOLOGÍA DE ALIMENTOS Y NUTRICIÓN (ICTAN)"=>"INSTITUTO DE CIENCIA Y TECNOLOGÍA DE ALIMENTOS Y NUTRICIÓN (ICTAN)",
+		    "INSTITUTO DE CIENCIAS DE MATERIALES DE BARCELONA"=>"INSTITUTO DE CIENCIAS DE MATERIALES DE BARCELONA",
+		    "INSTITUTO DE DIAGNÓSTICO AMBIENTAL Y ESTUDIOS DEL AGUA"=>"INSTITUTO DE DIAGNÓSTICO AMBIENTAL Y ESTUDIOS DEL AGUA",
+		    "INSTITUTO DE ESTRUCTURA DE LA MATERIA"=>"INSTITUTO DE ESTRUCTURA DE LA MATERIA",
+		    "INSTITUTO DE FISICA APLICADA"=>"INSTITUTO DE FISICA APLICADA",
+		    "INSTITUTO DE INVESTIGACIONES MARINAS CSIC"=>"INSTITUTO DE INVESTIGACIONES MARINAS CSIC",
+		    "INSTITUTO DE MICROELECTRONICA DE BARCELONA"=>"INSTITUTO DE MICROELECTRONICA DE BARCELONA",
+		    "INSTITUTO DE MICROELECTRONICA DE MADRID"=>"INSTITUTO DE MICROELECTRONICA DE MADRID",
+		    "INSTITUTO DE OPTICA DAZA DE VALDES"=>"INSTITUTO DE OPTICA DAZA DE VALDES",
+		    "INSTITUTO DE PARASITOLOGIA LOPEZ NEYRA"=>"INSTITUTO DE PARASITOLOGIA LOPEZ NEYRA",
+		    "INSTITUTO DEL FRIO"=>"INSTITUTO DEL FRIO",
+		    "INSTITUTO EDUARDO TORROJA"=>"INSTITUTO EDUARDO TORROJA",
+		    "INSTITUTO NACIONAL DEL CARBON-INCAR"=>"INSTITUTO NACIONAL DEL CARBON-INCAR"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "CORNELL UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("BOYCE THOMSON INSTITUTE FOR PLANT RESEARCH",
+		    "COLLEGE OF AGRICULTURE AND LIFE SCIENCES",
+		    "COLLEGE OF VETERINARY MEDICINE",
+		    "CORNELL INSTITUTE OF PUBLIC AFFAIRS",
+		    "GENEVA CAMPUS",
+		    "LATINAMERICAN STUDIES PROGRAM",
+		    "WARD CENTER FOR NUCLEAR STUDIES"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "FACULTAD LATINOAMERICANA DE CIENCIAS SOCIALES SEDE MEXICO"){
+		    echo $form->dropDownList($model,'second_level',array("MAESTRIA EN POBLACION"=>"MAESTRIA EN POBLACION",
+		    "SEDE ACADEMICA BRASIL"=>"SEDE ACADEMICA BRASIL",
+		    "SEDE ACADEMICA CHILE"=>"SEDE ACADEMICA CHILE",
+		    "SEDE ACADEMICA COSTA RICA"=>"SEDE ACADEMICA COSTA RICA",
+		    "SEDE ACADEMICA DE ARGENTINA"=>"SEDE ACADEMICA DE ARGENTINA",
+		    "SEDE ACADEMICA DE CUBA"=>"SEDE ACADEMICA DE CUBA",
+		    "SEDE ACADEMICA DE MEXICO"=>"SEDE ACADEMICA DE MEXICO",
+		    "SEDE ACADEMICA ECUADOR"=>"SEDE ACADEMICA ECUADOR",
+		    "SEDE ACADEMICA EL SALVADOR"=>"SEDE ACADEMICA EL SALVADOR",
+		    "SEDE ACADEMICA GUATEMALA"=>"SEDE ACADEMICA GUATEMALA",
+		    "SEDE ACADEMICA REPUBLICA DOMINICANA"=>"SEDE ACADEMICA REPUBLICA DOMINICANA",
+		    "SEDE ACADEMICA URUGUAY"=>"SEDE ACADEMICA URUGUAY"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "FLORIDA STATE UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("DEPARTMENT OF MATHEMATICS"=>"DEPARTMENT OF MATHEMATICS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "GEORGETOWN UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("DEPARTMENT OF DEMOGRAPHY"=>"DEPARTMENT OF DEMOGRAPHY",
+		    "DEPARTMENT OF PHILOSOPHY"=>"DEPARTMENT OF PHILOSOPHY",
+		    "GEORGETOWN UNIVERSITY LAW CENTER"=>"GEORGETOWN UNIVERSITY LAW CENTER"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "HARVARD UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("CLÍNICA JOSLIN"=>"CLÍNICA JOSLIN",
+		    "FACULTY OF ARTS AND SCIENCES"=>"FACULTY OF ARTS AND SCIENCES",
+		    "GRADUATE SCHOOL OF ARTS AND SCIENCES"=>"GRADUATE SCHOOL OF ARTS AND SCIENCES",
+		    "HARVARD BUSINESS SCHOOL"=>"HARVARD BUSINESS SCHOOL",
+		    "HARVARD COLLEGE"=>"HARVARD COLLEGE",
+		    "HARVARD LAW SCHOOL"=>"HARVARD LAW SCHOOL",
+		    "HARVARD MEDICAL SCHOOL"=>"HARVARD MEDICAL SCHOOL",
+		    "HARVARD SCHOOL OF PUBLIC HEALTH"=>"HARVARD SCHOOL OF PUBLIC HEALTH",
+		    "HARVARD UNIVERSITY GEORGE F. BAKER FOUNDATION"=>"HARVARD UNIVERSITY GEORGE F. BAKER FOUNDATION",
+		    "HARVARD UNIVERSITY GRADUATE SCHOOL OF DESIGN"=>"HARVARD UNIVERSITY GRADUATE SCHOOL OF DESIGN",
+		    "HARVARD UNIVERSITY THE GRADUATE SCHOOL OF ARTS AND SCIENCES"=>"HARVARD UNIVERSITY THE GRADUATE SCHOOL OF ARTS AND SCIENCES",
+		    "INSTITUTE FOR THEORETICAL ATOMIC AND MOLECULAR PHYSICS"=>"INSTITUTE FOR THEORETICAL ATOMIC AND MOLECULAR PHYSICS",
+		    "JOHN F.KENNEDY SCHOOL OF GOVERMENT HARVARD UNIVERSITY"=>"JOHN F.KENNEDY SCHOOL OF GOVERMENT HARVARD UNIVERSITY",
+		    "LAMONT-DOHERTY EARTH OBSERVATORY"=>"LAMONT-DOHERTY EARTH OBSERVATORY",
+		    "MUSEUM OF COMPARATIVE ZOOLOGY"=>"MUSEUM OF COMPARATIVE ZOOLOGY",
+		    "SMITHSONIAN CENTER FOR ASTROPHYSICS"=>"SMITHSONIAN CENTER FOR ASTROPHYSICS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "HUMBOLDT UNIVERSITAT ZU BERLIN"){
+		    echo $form->dropDownList($model,'second_level',array("INSTITUT FÜR SOZIALWISSENSCHAFTEN"=>"INSTITUT FÜR SOZIALWISSENSCHAFTEN",
+		    "MATHEMATISCH-NATURWISSENSCHAFTLICHE FAKULTÄT II/INSTITUT FÜR MATHEMATIK"=>"MATHEMATISCH-NATURWISSENSCHAFTLICHE FAKULTÄT II/INSTITUT FÜR MATHEMATIK"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INDIANA UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("PURDUE UNIVERSITY AT INDIANAPOLIS"=>"PURDUE UNIVERSITY AT INDIANAPOLIS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INSTITUT NATIONAL POLYTECHNIQUE DE GRENOBLE"){
+		    echo $form->dropDownList($model,'second_level',array("ECOLE NATIONALE SUPERIEURE D AGRONOMIE ET DES INDUSTRIES ALIMENTAIRES-ENSAIA"=>"ECOLE NATIONALE SUPERIEURE D AGRONOMIE ET DES INDUSTRIES ALIMENTAIRES-ENSAIA",
+		    "ECOLE NATIONALE SUPERIEURE D ELECTROCHIMIE ET DE ELECTROMETALLURGIE DE GRENOBLE"=>"ECOLE NATIONALE SUPERIEURE D ELECTROCHIMIE ET DE ELECTROMETALLURGIE DE GRENOBLE",
+		    "ECOLE NATIONALE SUPERIEURE D ELECTRONIQUE ET DE RADIO ELECTRICITE DE GRENOBLE"=>"ECOLE NATIONALE SUPERIEURE D ELECTRONIQUE ET DE RADIO ELECTRICITE DE GRENOBLE",
+		    "ECOLE NATIONALE SUPERIEURE D INFORMATIQUE ET DE MATEMATIQUES APLIQUEES DE GRENOBLE"=>"ECOLE NATIONALE SUPERIEURE D INFORMATIQUE ET DE MATEMATIQUES APLIQUEES DE GRENOBLE",
+		    "ÉCOLE NATIONALE SUPÉRIEURE D'INGÉNIEURS ELECTRICIENS DE GRENOBLE"=>"ÉCOLE NATIONALE SUPÉRIEURE D'INGÉNIEURS ELECTRICIENS DE GRENOBLE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INSTITUT NATIONAL POLYTECHNIQUE DE TOULOUSE"){
+		    echo $form->dropDownList($model,'second_level',array("ECOLE NATIONALE SUPERIEURE AGRONOMIQUE DE TOULOUSE"=>"ECOLE NATIONALE SUPERIEURE AGRONOMIQUE DE TOULOUSE",
+		    "ECOLE NATIONALE SUPERIEURE DES INGENIEURS EN ARTS CHIMIQUES ET TECHNOLOGIQUES"=>"ECOLE NATIONALE SUPERIEURE DES INGENIEURS EN ARTS CHIMIQUES ET TECHNOLOGIQUES",
+		    "ECOLE NATIONALE SUPÉRIEURE D¿ELECTROTECHNIQUE, D¿ELECTRONIQUE, D¿INFORMATIQUE, D¿HYDRAULIQUE ET DES TÉLÉCOMMUNICATIONS"=>"ECOLE NATIONALE SUPÉRIEURE D¿ELECTROTECHNIQUE, D¿ELECTRONIQUE, D¿INFORMATIQUE, D¿HYDRAULIQUE ET DES TÉLÉCOMMUNICATIONS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INSTITUTO CHARLES SADRON CNRS"){
+		    echo $form->dropDownList($model,'second_level',array("LABORATOIRE DE CRISTALLOGRAPHIE"=>"LABORATOIRE DE CRISTALLOGRAPHIE",
+		    "LENA-(NEUROSCIENCES COGNITIVES ET IMAGERIE CEREBRALE)CNRS UPR 640 HOPITAL DE LA SALPETRIERE"=>"LENA-(NEUROSCIENCES COGNITIVES ET IMAGERIE CEREBRALE)CNRS UPR 640 HOPITAL DE LA SALPETRIERE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INSTITUTO DE ACUSTICA CSIC DE MADRID"){
+		    echo $form->dropDownList($model,'second_level',array("CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICAS"=>"CONSEJO SUPERIOR DE INVESTIGACIONES CIENTIFICAS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "KANSAS STATE UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("MEDICAL CENTER"=>"MEDICAL CENTER",
+		    "NATURAL HISTORY MUSEUM"=>"NATURAL HISTORY MUSEUM"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "LAASCNRS"){
+		    echo $form->dropDownList($model,'second_level',array("LABORATOIRE DETUDES DES PROPRIETES ELECTRONIQUES DES SOLIDES"=>"LABORATOIRE DETUDES DES PROPRIETES ELECTRONIQUES DES SOLIDES"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "LIMBURGS UNIVERSITAIR CENTRUM"){
+		    echo $form->dropDownList($model,'second_level',array("FACULTEIT WETENSCHAPPEN"=>"FACULTEIT WETENSCHAPPEN"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "LOUISIANA STATE UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("LOUISIANA STATE UNIVERSITY SYSTEM"=>"LOUISIANA STATE UNIVERSITY SYSTEM"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "MASSACHUSETTS GENERAL HOSPITAL"){
+		    echo $form->dropDownList($model,'second_level',array("MGH-INSTITUTE OF HEALTH PROFESSIONS"=>"MGH-INSTITUTE OF HEALTH PROFESSIONS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "MASSACHUSETTS INSTITUTE OF TECHNOLOGY"){
+		    echo $form->dropDownList($model,'second_level',array("INSTITUTE FOR MEDICAL ENGINEERING AND SCIENCE"=>"INSTITUTE FOR MEDICAL ENGINEERING AND SCIENCE",
+		    "SLOAN MANAGEMENT SCHOOL"=>"SLOAN MANAGEMENT SCHOOL",
+		    "THE ABDUL LATIF JAMEEL POVERTY ACTION LAB"=>"THE ABDUL LATIF JAMEEL POVERTY ACTION LAB",
+		    "WOODS HOLE OCEANOGRAPHIC INSTITUTION"=>"WOODS HOLE OCEANOGRAPHIC INSTITUTION"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "NEW MEXICO STATE UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("ASTRONOMY DEPARTMENT"=>"ASTRONOMY DEPARTMENT",
+		    "DEPARTAMENTO DE CIENCIAS BIOLOGICAS"=>"DEPARTAMENTO DE CIENCIAS BIOLOGICAS",
+		    "DEPARTMENT GEOLOGICAL SCIENCES"=>"DEPARTMENT GEOLOGICAL SCIENCES",
+		    "ECONOMIC DEPARTAMENT"=>"ECONOMIC DEPARTAMENT"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "NEW YORK UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("CENTER FOR GENOMICS AND SYSTEMS BIOLOGY"=>"CENTER FOR GENOMICS AND SYSTEMS BIOLOGY",
+		    "CENTER FOR NEURAL SCIENCE"=>"CENTER FOR NEURAL SCIENCE",
+		    "COURANT INSTITUTE OF MATHEMATICAL SCIENCES"=>"COURANT INSTITUTE OF MATHEMATICAL SCIENCES",
+		    "DEPARTMENT OF CHEMISTRY"=>"DEPARTMENT OF CHEMISTRY",
+		    "HEALTH SCIENCE CENTER AT BROOKLYN"=>"HEALTH SCIENCE CENTER AT BROOKLYN",
+		    "INSTITUTE OF RECONSTRUCTIVE PLASTIC SURGERY"=>"INSTITUTE OF RECONSTRUCTIVE PLASTIC SURGERY",
+		    "MOUNT SINAI SCHOOL OF MEDICINE"=>"MOUNT SINAI SCHOOL OF MEDICINE",
+		    "NEW YORK UNIVERSITY-LEONARD N. STERN SCHOOL OF BUSINESS"=>"NEW YORK UNIVERSITY-LEONARD N. STERN SCHOOL OF BUSINESS",
+		    "SCHACK INSTITUTE OF REAL ESTATE"=>"SCHACK INSTITUTE OF REAL ESTATE",
+		    "SCHOOL OF LAW"=>"SCHOOL OF LAW"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "OAK RIDGE NATIONAL LABORATORY"){
+		    echo $form->dropDownList($model,'second_level',array("COMPUTER SCIENCE AND MATHEMATICAL DIVISION"=>"COMPUTER SCIENCE AND MATHEMATICAL DIVISION"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "ORGANIZACION DE LAS NACIONES UNIDAS"){
+		    echo $form->dropDownList($model,'second_level',array("COMISION ECONOMICA PARA AMERICA LATINA"=>"COMISION ECONOMICA PARA AMERICA LATINA",
+		    "FONDO DE LAS NACIONES UNIDAS PARA LA INFANCIA"=>"FONDO DE LAS NACIONES UNIDAS PARA LA INFANCIA",
+		    "ORGANIZACION DE LAS NACIONES UNIDAS PARA LA AGRICULTURA Y LA ALIMENTACION"=>"ORGANIZACION DE LAS NACIONES UNIDAS PARA LA AGRICULTURA Y LA ALIMENTACION",
+		    "ORGANIZACION DE LAS NACIONES UNIDAS PARA LA CIENCIA=> LA EDUCACION Y LA CULTURA"=>"ORGANIZACION DE LAS NACIONES UNIDAS PARA LA CIENCIA=> LA EDUCACION Y LA CULTURA",
+		    "ORGANIZACION DEL TRATADO PARA LA PROHIBICION COMPLETA DE ENSAYOS NUCLEARES"=>"ORGANIZACION DEL TRATADO PARA LA PROHIBICION COMPLETA DE ENSAYOS NUCLEARES",
+		    "ORGANIZACION MUNDIAL DE LA SALUD"=>"ORGANIZACION MUNDIAL DE LA SALUD",
+		    "ORGANIZACION PANAMERICANA DE LA SALUD"=>"ORGANIZACION PANAMERICANA DE LA SALUD",
+		    "PROGRAMA DE LAS NACIONES UNIDAS SOBRE EL MEDIO AMBIENTE"=>"PROGRAMA DE LAS NACIONES UNIDAS SOBRE EL MEDIO AMBIENTE",
+		    "TRIBUNAL PENAL INTERNACIONAL PARA LA EX YUGOSLAVIA"=>"TRIBUNAL PENAL INTERNACIONAL PARA LA EX YUGOSLAVIA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "ORGANIZACION DE LOS ESTADOS AMERICANOS"){
+		    echo $form->dropDownList($model,'second_level',array("INSTITUTO PANEMERICANO DE GEOGRAFÍA E HISTORIA"=>"INSTITUTO PANEMERICANO DE GEOGRAFÍA E HISTORIA",
+		    "MUSEO DE ARTE DE LAS AMERICAS"=>"MUSEO DE ARTE DE LAS AMERICAS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "STANFORD UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("CENTER FOR LATIN AMERICAN STUDIES"=>"CENTER FOR LATIN AMERICAN STUDIES",
+		    "DEPARTAMENTO DE CIENCIAS BIOLOGICAS"=>"DEPARTAMENTO DE CIENCIAS BIOLOGICAS",
+		    "ENVIRONMENTAL EARTH SYSTEM SCIENCE"=>"ENVIRONMENTAL EARTH SYSTEM SCIENCE",
+		    "INSTITUTE FOR INTERNATIONAL STUDIES"=>"INSTITUTE FOR INTERNATIONAL STUDIES",
+		    "SCHOOL OF MEDICINE"=>"SCHOOL OF MEDICINE",
+		    "STANFORD SYNCHROTRON RADIATION LIGHTSOURCE"=>"STANFORD SYNCHROTRON RADIATION LIGHTSOURCE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "THE UNIVERSITY OF WARWICK"){
+		    echo $form->dropDownList($model,'second_level',array("CENTRO DE ESTUDIOS EN RELACIONES ETNICAS"=>"CENTRO DE ESTUDIOS EN RELACIONES ETNICAS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "UNIDAD DE INVESTIGACION MEDICA EN ENFERMEDADES INFECCIOSAS Y PARASITARIAS"){
+		    echo $form->dropDownList($model,'second_level',array("HOSPITAL DE PEDIATRIA CMN SIGLO XXI"=>"HOSPITAL DE PEDIATRIA CMN SIGLO XXI"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "UNIVERSIDAD AUTONOMA DE MADRID"){
+		    echo $form->dropDownList($model,'second_level',array("FACULTAD DE CIENCIAS ECONOMICAS Y EMPRESARIALES"=>"FACULTAD DE CIENCIAS ECONOMICAS Y EMPRESARIALES"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "UNIVERSIDAD DE CALIFORNIA SAN DIEGO"){
+		    echo $form->dropDownList($model,'second_level',array("AMES, BIOENGINEERING"=>"AMES, BIOENGINEERING",
+		    "BIOCIRCUITS INSTITUTE"=>"BIOCIRCUITS INSTITUTE",
+		    "CENTRO DE ESTUDIOS MEXICO ESTADOS UNIDOS"=>"CENTRO DE ESTUDIOS MEXICO ESTADOS UNIDOS",
+		    "DEPARTAMENTO DE INGENIERÍA MECÁNICA Y AEROESPACIAL"=>"DEPARTAMENTO DE INGENIERÍA MECÁNICA Y AEROESPACIAL",
+		    "INSTITUTE FOR NONLINEAR SCIENCE"=>"INSTITUTE FOR NONLINEAR SCIENCE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSIDAD DE ILLINOIS"){
+		    echo $form->dropDownList($model,'second_level',array("ASTRONOMY DEPARTMENT"=>"ASTRONOMY DEPARTMENT",
+		    "UNIVERSIDAD DE ILLINOIS URBANA CHAMPAIGN"=>"UNIVERSIDAD DE ILLINOIS URBANA CHAMPAIGN"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSIDAD DE LA HABANA CUBA"){
+		    echo $form->dropDownList($model,'second_level',array("CENTRO DE BIOMATERIALES"=>"CENTRO DE BIOMATERIALES",
+		    "CENTRO DE INVESTIGACIONES MARINAS"=>"CENTRO DE INVESTIGACIONES MARINAS",
+		    "FACULTAD DE BIOLOGÍA"=>"FACULTAD DE BIOLOGÍA",
+		    "FACULTAD DE CIENCIAS Y TECNLOGIA NUCLEARES"=>"FACULTAD DE CIENCIAS Y TECNLOGIA NUCLEARES",
+		    "FACULTAD DE COMUNICACIÓN"=>"FACULTAD DE COMUNICACIÓN",
+		    "FACULTAD DE FARMACIA Y ALIMENTOS"=>"FACULTAD DE FARMACIA Y ALIMENTOS",
+		    "FACULTAD DE FILOSOFÍA"=>"FACULTAD DE FILOSOFÍA",
+		    "FACULTAD DE FISICA"=>"FACULTAD DE FISICA",
+		    "FACULTAD DE GEOGRAFÍA"=>"FACULTAD DE GEOGRAFÍA",
+		    "FACULTAD DE MATEMÁTICA Y COMPUTACIÓN"=>"FACULTAD DE MATEMÁTICA Y COMPUTACIÓN",
+		    "FACULTAD DE PSICOLOGIA"=>"FACULTAD DE PSICOLOGIA",
+		    "FACULTAD DE QUÍMICA"=>"FACULTAD DE QUÍMICA",
+		    "FACULTAD DE SOCIOLOGÍA"=>"FACULTAD DE SOCIOLOGÍA",
+		    "INSTITUTO DE MATERIALES Y REACTIVOS"=>"INSTITUTO DE MATERIALES Y REACTIVOS",
+		    "UNIVERSIDAD DE LA HABANA/FACULTAD DE MATEMÁTICA/DEPARTAMENTO MATEMÁTICA APLICADA"=>"UNIVERSIDAD DE LA HABANA/FACULTAD DE MATEMÁTICA/DEPARTAMENTO MATEMÁTICA APLICADA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "UNIVERSIDAD DE LEIDEN"){
+		    echo $form->dropDownList($model,'second_level',array("CAMPUS LA HAYA"=>"CAMPUS LA HAYA",
+		    "SOCIAL AN BEHAVIOURAL SCIENCES"=>"SOCIAL AN BEHAVIOURAL SCIENCES"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSIDAD DE PENNSYLVANIA"){
+		    echo $form->dropDownList($model,'second_level',array("COLLEGE OF MEDICINE"=>"COLLEGE OF MEDICINE",
+		    "SCHOOL LAW"=>"SCHOOL LAW",
+		    "WHARTON SCHOOL"=>"WHARTON SCHOOL"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSIDAD DE TEXAS EN DALLAS"){
+		    echo $form->dropDownList($model,'second_level',array("DEPARTMENT OF MOLECULAR AND CELL BIOLOGY"=>"DEPARTMENT OF MOLECULAR AND CELL BIOLOGY"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSIDAD DE TOHOKU JAPON"){
+		    echo $form->dropDownList($model,'second_level',array("INSTITUTO DE INVESTIGACION DE MATERIALES"=>"INSTITUTO DE INVESTIGACION DE MATERIALES",
+		    "INSTITUTO DE PROCESAMIENTO DE MATERIALES AVANZADOS"=>"INSTITUTO DE PROCESAMIENTO DE MATERIALES AVANZADOS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSIDAD NACIONAL DE EDUCACION A DISTANCIA"){
+		    echo $form->dropDownList($model,'second_level',array("FACULTAD DE CIENCIAS POLITICAS Y SOCIOLOGIA"=>"FACULTAD DE CIENCIAS POLITICAS Y SOCIOLOGIA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITAT AUTONOMA DE BARCELONA"){
+		    echo $form->dropDownList($model,'second_level',array("DEPARTAMENT DE SOCIOLOGIA"=>"DEPARTAMENT DE SOCIOLOGIA",
+		    "DEPARTAMENTO DE BIOLOGIA ANIMAL"=>"DEPARTAMENTO DE BIOLOGIA ANIMAL",
+		    "ESCOLA MASSANA"=>"ESCOLA MASSANA",
+		    "HOSPITAL DE LA SANTA CREU I SANT PAU"=>"HOSPITAL DE LA SANTA CREU I SANT PAU"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITE DE BOURGOGNE"){
+		    echo $form->dropDownList($model,'second_level',array("CENTRE GASTON BACHELARD"=>"CENTRE GASTON BACHELARD",
+		    "INSTITUT SUPÉRIEUR DE L'AUTOMOBILE ET DES TRANSPORTS"=>"INSTITUT SUPÉRIEUR DE L'AUTOMOBILE ET DES TRANSPORTS",
+		    "LOBAROTOIRE GEVREY DE MATHEMATIQUE PHYSIQUE"=>"LOBAROTOIRE GEVREY DE MATHEMATIQUE PHYSIQUE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF ARKANSAS"){
+		    echo $form->dropDownList($model,'second_level',array("UNIVERSITY OF ARKANSAS FAYETEVILLE"=>"UNIVERSITY OF ARKANSAS FAYETEVILLE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF CALIFORNIA AT SANTA BARBARA"){
+		    echo $form->dropDownList($model,'second_level',array("COLLEGE OF LETTERS & SCIENCE"=>"COLLEGE OF LETTERS & SCIENCE",
+		    "MATERIAL RESEARCH LABORATORY"=>"MATERIAL RESEARCH LABORATORY"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF CAMBRIDGE"){
+		    echo $form->dropDownList($model,'second_level',array("BP INSTITUTE FOR MULTIPHASE FLOW"=>"BP INSTITUTE FOR MULTIPHASE FLOW",
+		    "CAMBRIDGE INSTITUTE FOR MEDICAL RESEARCH"=>"CAMBRIDGE INSTITUTE FOR MEDICAL RESEARCH",
+		    "CHURCHILL COLLEGE-CAMBRIDGE"=>"CHURCHILL COLLEGE-CAMBRIDGE",
+		    "CLARE COLLEGE-CAMBRIDGE"=>"CLARE COLLEGE-CAMBRIDGE",
+		    "CLARE HALL COLLEGE-CAMBRIDGE"=>"CLARE HALL COLLEGE-CAMBRIDGE",
+		    "CORPUS CHRISTI COLLEGE-CAMBRIDGE"=>"CORPUS CHRISTI COLLEGE-CAMBRIDGE",
+		    "DARWIN COLLEGE-CAMBRIDGE"=>"DARWIN COLLEGE-CAMBRIDGE",
+		    "DEPARTAMENTO DE FARMACOLOGIA"=>"DEPARTAMENTO DE FARMACOLOGIA",
+		    "DEPARTAMENTO DE INGENIERIA"=>"DEPARTAMENTO DE INGENIERIA",
+		    "DOWNING COLLEGE-CAMBRIDGE"=>"DOWNING COLLEGE-CAMBRIDGE",
+		    "EMMANUEL COLLEGE-CAMBRIDGE"=>"EMMANUEL COLLEGE-CAMBRIDGE",
+		    "FITZWILLIAM COLLEGE-CAMBRIDGE"=>"FITZWILLIAM COLLEGE-CAMBRIDGE",
+		    "GIRTON COLLEGE-CAMBRIDGE"=>"GIRTON COLLEGE-CAMBRIDGE",
+		    "GONVILLE CAIUS COLLEGE"=>"GONVILLE CAIUS COLLEGE",
+		    "HUGHES HALL-CAMBRIDGE"=>"HUGHES HALL-CAMBRIDGE",
+		    "INSTITUTE OF METABOLIC SCIENCE"=>"INSTITUTE OF METABOLIC SCIENCE",
+		    "JESUS COLLEGE-CAMBRIDGE"=>"JESUS COLLEGE-CAMBRIDGE",
+		    "KINGS COLLEGE-CAMBRIDGE"=>"KINGS COLLEGE-CAMBRIDGE",
+		    "LUCY CAVENDISH COLLEGE-CAMBRIDGE"=>"LUCY CAVENDISH COLLEGE-CAMBRIDGE",
+		    "NEW HALL-CAMBRIDGE"=>"NEW HALL-CAMBRIDGE",
+		    "PEMBROKE COLLEGE- CAMBRIDGE"=>"PEMBROKE COLLEGE- CAMBRIDGE",
+		    "PETERHOUSE-CAMBRIDGE"=>"PETERHOUSE-CAMBRIDGE",
+		    "QUEENS COLLEGE- CAMBRIDGE"=>"QUEENS COLLEGE- CAMBRIDGE",
+		    "ROBINSON COLLEGE-CAMBRIDGE"=>"ROBINSON COLLEGE-CAMBRIDGE",
+		    "SELWYN COLLEGE-CAMBRIGE"=>"SELWYN COLLEGE-CAMBRIGE",
+		    "SIDNEY SUSSEX COLLEGE"=>"SIDNEY SUSSEX COLLEGE",
+		    "ST. CATERINE S COLLEGE-CAMBRIDGE"=>"ST. CATERINE S COLLEGE-CAMBRIDGE",
+		    "ST. EDMUNDS COLLEGE-CAMBRIDGE"=>"ST. EDMUNDS COLLEGE-CAMBRIDGE",
+		    "ST. JOHN S COLLEGE-CAMBRIDGE"=>"ST. JOHN S COLLEGE-CAMBRIDGE",
+		    "TRINITY HALL-CAMBRIDGE"=>"TRINITY HALL-CAMBRIDGE",
+		    "WOLFSON COLLEGE-CAMBRIDGE"=>"WOLFSON COLLEGE-CAMBRIDGE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF CHICAGO"){
+		    echo $form->dropDownList($model,'second_level',array("DIVISION OF THE SOCIAL SCIENCES"=>"DIVISION OF THE SOCIAL SCIENCES",
+		    "HARRIS GRADUATE SCHOOL OF PUBLIC POLICY STUDIES"=>"HARRIS GRADUATE SCHOOL OF PUBLIC POLICY STUDIES",
+		    "INSTITUTE FOR MOLECULAR ENGINEERING"=>"INSTITUTE FOR MOLECULAR ENGINEERING",
+		    "THE COLLEGE"=>"THE COLLEGE",
+		    "THE IRVING B. HARRIS SCHOOL OF PUBLIC POLICY STUDIES"=>"THE IRVING B. HARRIS SCHOOL OF PUBLIC POLICY STUDIES",
+		    "THE LAW SCHOOL"=>"THE LAW SCHOOL"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF COLORADO"){
+		    echo $form->dropDownList($model,'second_level',array("UNIVERSITY OF COLORADO AT BOULDER"=>"UNIVERSITY OF COLORADO AT BOULDER",
+		    "UNIVERSITY OF COLORADO AT COLORADO SPRINGS"=>"UNIVERSITY OF COLORADO AT COLORADO SPRINGS",
+		    "UNIVERSTIY OF COLORADO AT DENVER"=>"UNIVERSTIY OF COLORADO AT DENVER"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF GEORGIA"){
+		    echo $form->dropDownList($model,'second_level',array("CENTER FOR REMOTE SENSING AND MAPPING SCIENCE"=>"CENTER FOR REMOTE SENSING AND MAPPING SCIENCE",
+		    "COMPLEX CARBOHYDRATE RESEARCH CENTER"=>"COMPLEX CARBOHYDRATE RESEARCH CENTER"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF TORONTO"){
+		    echo $form->dropDownList($model,'second_level',array("SUNNYBROOK, HEALT SCIENCES CENTRE"=>"SUNNYBROOK, HEALT SCIENCES CENTRE",
+		    "UNIVERSITY OF ST. MICHAEL¿S COLLEGE"=>"UNIVERSITY OF ST. MICHAEL¿S COLLEGE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF WASHINGTON"){
+		    echo $form->dropDownList($model,'second_level',array("DEPARTMENT OF BIOENGINEERING"=>"DEPARTMENT OF BIOENGINEERING",
+		    "INTERNATIONAL STUDIES"=>"INTERNATIONAL STUDIES",
+		    "WASHINGTON UNIVERSITY SCHOOL OF MEDICINE"=>"WASHINGTON UNIVERSITY SCHOOL OF MEDICINE"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "UNIVERSITY OF WISCONSINMADISON"){
+		    echo $form->dropDownList($model,'second_level',array("COLLEGE OF AGRICULTURAL AND LIFE SCIENCES",
+		                                  "COLLEGE OF LETTER AND SCIENCE",
+		                                  "COOPERATIVE INSTITUTE OF METEOROLOGICAL SATELLITE STUDIES"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "YALE UNIVERSITY"){
+		    echo $form->dropDownList($model,'second_level',array("SCHOOL OF ORGANIZATION AND MANAGMENT"=>"SCHOOL OF ORGANIZATION AND MANAGMENT",
+		    "YALE SCHOOL OF FORESTRY & ENVIRONMENTAL STUDIES"=>"YALE SCHOOL OF FORESTRY & ENVIRONMENTAL STUDIES"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "CAMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACION"){
+		    echo $form->dropDownList($model,'second_level',array("CAMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACION DELEGACION LOS MOCHIS"=>"CAMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACION DELEGACION LOS MOCHIS",
+		    "CÁMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACIÓN DE TORREÓN"=>"CÁMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACIÓN DE TORREÓN",
+		    "CÁMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACIÓN DELEGACIÓN YUCATÁN"=>"CÁMARA NACIONAL DE LA INDUSTRIA DE TRANSFORMACIÓN DELEGACIÓN YUCATÁN"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "CENTRO DE ESTUDIOS EDUCATIVOS AC"){
+		    echo $form->dropDownList($model,'second_level',array("DIRECCION ACADEMICA"=>"DIRECCION ACADEMICA",
+		    "INSTITUTO GASTRONOMICO L¿ ÉCOLE DU CHEF"=>"INSTITUTO GASTRONOMICO L¿ ÉCOLE DU CHEF",),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "CENTRO MEXICANO PARA LA FILANTROPIA"){
+		    echo $form->dropDownList($model,'second_level',array("COORDINACION DE DIALOGO CON EL EQUIPO DE TRANSICION"=>"COORDINACION DE DIALOGO CON EL EQUIPO DE TRANSICION"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		     if($model->organization == "CENTRO REGIONAL DE INVESTIGACION PESQUERA SEMARNAP"){
+		    echo $form->dropDownList($model,'second_level',array("CENTRO REGIONAL DE INVESTIGACION PESQUERA-MANZANILLO, COLIMA"=>"CENTRO REGIONAL DE INVESTIGACION PESQUERA-MANZANILLO, COLIMA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "FIDEICOMISO FONDO PARA LA BIODIVERSIDAD"){
+		    echo $form->dropDownList($model,'second_level',array("COMISION INTERSECRETARIAL"=>"COMISION INTERSECRETARIAL"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "FUNDACION EDUARDO SELER PARA LA INVESTIGACION ARQUEOLOGICA Y ETNOHISTORICA AC"){
+		    echo $form->dropDownList($model,'second_level',array("ESCUELA DE EDUCACION SUPERIOR EN CIENCIAS HISTORICAS Y ANTROPOLOGICAS"=>"ESCUELA DE EDUCACION SUPERIOR EN CIENCIAS HISTORICAS Y ANTROPOLOGICAS"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "FUNDACION JAVIER BARROS SIERRA A C"){
+		    echo $form->dropDownList($model,'second_level',array("CENTRO DE INVESTIGACION SISMICA"=>"CENTRO DE INVESTIGACION SISMICA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "FUNDACION MEXICANA PARA LA INVESTIGACION AGROPECUARIA Y FORESTAL AC"){
+		    echo $form->dropDownList($model,'second_level',array("CAMPO EXPERIMENTAL BAJIO"=>"CAMPO EXPERIMENTAL BAJIO",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL CENTRO (GUANAJUATO)"=>"CENTRO DE INVESTIGACION REGIONAL DEL CENTRO (GUANAJUATO)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL CENTRO (MEXICO)"=>"CENTRO DE INVESTIGACION REGIONAL DEL CENTRO (MEXICO)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL GOLFO CENTRO (TABASCO)"=>"CENTRO DE INVESTIGACION REGIONAL DEL GOLFO CENTRO (TABASCO)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL GOLFO CENTRO (VERACRUZ)"=>"CENTRO DE INVESTIGACION REGIONAL DEL GOLFO CENTRO (VERACRUZ)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL NORESTE (NUEVO LEON)"=>"CENTRO DE INVESTIGACION REGIONAL DEL NORESTE (NUEVO LEON)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL NORESTE (TAMAULIPAS)"=>"CENTRO DE INVESTIGACION REGIONAL DEL NORESTE (TAMAULIPAS)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL NOROESTE (SINALOA)"=>"CENTRO DE INVESTIGACION REGIONAL DEL NOROESTE (SINALOA)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL NORTE CENTRO (CHIHUAHUA)"=>"CENTRO DE INVESTIGACION REGIONAL DEL NORTE CENTRO (CHIHUAHUA)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL PACIFICO CENTRO (JALISCO)"=>"CENTRO DE INVESTIGACION REGIONAL DEL PACIFICO CENTRO (JALISCO)",
+		    "CENTRO DE INVESTIGACION REGIONAL DEL PACIFICO CENTRO (NAYARIT)"=>"CENTRO DE INVESTIGACION REGIONAL DEL PACIFICO CENTRO (NAYARIT)",
+		    "CENTRO NACIONAL DE INVESTIGACION EN FISIOLOGIA Y MEJORAMIENTO ANIMAL"=>"CENTRO NACIONAL DE INVESTIGACION EN FISIOLOGIA Y MEJORAMIENTO ANIMAL",
+		    "CENTRO NACIONAL DE INVESTIGACION EN MICROBIOLOGIA VETERINARIA"=>"CENTRO NACIONAL DE INVESTIGACION EN MICROBIOLOGIA VETERINARIA",
+		    "CENTRO NACIONAL DE INVESTIGACION EN PARASITOLOGIA VETERINARIA"=>"CENTRO NACIONAL DE INVESTIGACION EN PARASITOLOGIA VETERINARIA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "FUNDACION MEXICANA PARA LA SALUD AC"){
+		    echo $form->dropDownList($model,'second_level',array("PROYECTO ECONOMIA Y SALUD"=>"PROYECTO ECONOMIA Y SALUD"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES AC"){
+		    echo $form->dropDownList($model,'second_level',array("SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES - CAMPUS MONTERREY"=>"SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES - CAMPUS MONTERREY",
+		    "SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES CAMPUS CIUDAD DE MEXICO"=>"SOCIEDAD PANAMERICANA DE ESTUDIOS EMPRESARIALES CAMPUS CIUDAD DE MEXICO"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "CMM SA DE CV"){
+		    echo $form->dropDownList($model,'second_level',array("CENTRO MEDICO METROPOLITANO DEL SURESTE S.A. DE C.V."=>"CENTRO MEDICO METROPOLITANO DEL SURESTE S.A. DE C.V."),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "CONSTRUCTORA SILMEL SA DE CV"){
+		    echo $form->dropDownList($model,'second_level',array("INGENIERIA PROMOTORA DE DESARROLLO S.A. DE C.V."=>"INGENIERIA PROMOTORA DE DESARROLLO S.A. DE C.V."),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "CYDSA CORPORATIVO S A DE C V"){
+		    echo $form->dropDownList($model,'second_level',array("DIVISION QUIMICA"=>"DIVISION QUIMICA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "GRUPO ALFA"){
+		    echo $form->dropDownList($model,'second_level',array("NEMAC"=>"NEMAC",
+		    "PLANETARIO ALFA"=>"PLANETARIO ALFA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "GRUPO CINEMEX"){
+		    echo $form->dropDownList($model,'second_level',array("SERVIUNO, S.A. DE C.V."=>"SERVIUNO, S.A. DE C.V."),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "GRUPO ROCHE SYNTEX DE MEXICO SA DE CV"){
+		    echo $form->dropDownList($model,'second_level',array("DIVISION DE INVESTIGACION"=>"DIVISION DE INVESTIGACION"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "GRUPO TELEVISA"){
+		    echo $form->dropDownList($model,'second_level',array("FUNDACION CULTURAL TELEVISA A. C."=>"FUNDACION CULTURAL TELEVISA A. C.",
+		    "OPERBES SA DE CV"=>"OPERBES SA DE CV"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "HOTEL NIKKO MEXICO"){
+		    echo $form->dropDownList($model,'second_level',array("ASESORÍA TURÍSTICA Y AMBIENTAL"=>"ASESORÍA TURÍSTICA Y AMBIENTAL",
+		    "CENOTE DORADO S.C. DE R.L. DE C.V."=>"CENOTE DORADO S.C. DE R.L. DE C.V.",
+		    "CENTRE EUROPEEN DE REALITE VIRTUELLE"=>"CENTRE EUROPEEN DE REALITE VIRTUELLE",
+		    "EMPRESAS ECOLOGICAS EL ROCIO SA DE CV"=>"EMPRESAS ECOLOGICAS EL ROCIO SA DE CV",
+		    "GRUPO ALIANZA MEXICANA POR LA SOBREDOTACION SC"=>"GRUPO ALIANZA MEXICANA POR LA SOBREDOTACION SC",
+		    "MAQUILADORA AGRICOLA DE NAYARIT S.A DE C.V"=>"MAQUILADORA AGRICOLA DE NAYARIT S.A DE C.V",
+		    "NATURALIS BIODIVERSITY CENTER"=>"NATURALIS BIODIVERSITY CENTER",
+		    "NEW ENGLAND COMPLEX SYSTEMS INSTITUTE"=>"NEW ENGLAND COMPLEX SYSTEMS INSTITUTE",
+		    "PES PROSPECTIVA S.C."=>"PES PROSPECTIVA S.C.",
+		    "SOLUCIONES ANALITICAS Y PRACTICAS DE PROCESOS SA DE CV"=>"SOLUCIONES ANALITICAS Y PRACTICAS DE PROCESOS SA DE CV",
+		    "UNIVERSITATEA DE VEST VASILE GOLDIS ARAD"=>"UNIVERSITATEA DE VEST VASILE GOLDIS ARAD"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "HYLSAMEX SA DE CV"){
+		    echo $form->dropDownList($model,'second_level',array("ACEREX"=>"ACEREX",
+		    "GALVACER"=>"GALVACER",
+		    "HYL TECNOLOGIA DE HYLSAMEX"=>"HYL TECNOLOGIA DE HYLSAMEX",
+		    "HYLSA, DIVISION ACEROS PLANOS"=>"HYLSA, DIVISION ACEROS PLANOS",
+		    "HYLSA, DIVISION ALAMBRÓN Y VARILLA"=>"HYLSA, DIVISION ALAMBRÓN Y VARILLA",
+		    "PLANTA MONTERREY"=>"PLANTA MONTERREY"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INDUSTRIAS NEGROMEX SA DE CV"){
+		    echo $form->dropDownList($model,'second_level',array("DIVISION DE INVESTIGACION Y DESARROLLO"=>"DIVISION DE INVESTIGACION Y DESARROLLO"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "INGENIERIA Y SINTESIS S A DE CV"){
+		    echo $form->dropDownList($model,'second_level',array("INGENIERÍA PROMOTORA DE DESARROLLO S.A. DE C.V."=>"INGENIERÍA PROMOTORA DE DESARROLLO S.A. DE C.V."),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "LABORATORIOS CLINICOS DE PUEBLA SA DE CV"){
+		    echo $form->dropDownList($model,'second_level',array("DEPARTAMENTO DE ENSEÑANZA E INVESTIGACION"=>"DEPARTAMENTO DE ENSEÑANZA E INVESTIGACION",
+		    "DEPARTAMENTO DE HEMATOLOGIA"=>"DEPARTAMENTO DE HEMATOLOGIA",
+		    "DEPARTAMENTO DE INMUNOLOGIA"=>"DEPARTAMENTO DE INMUNOLOGIA",
+		    "PROGRAMA DE ESPECIALIDAD EN PATOLOGIA CLINICA"=>"PROGRAMA DE ESPECIALIDAD EN PATOLOGIA CLINICA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "MEDICA SUR S A B DE CV"){
+		    echo $form->dropDownList($model,'second_level',array("MEDICA SUR"=>"MEDICA SUR"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+		    if($model->organization == "SATELITES MEXICANOS"){
+		    echo $form->dropDownList($model,'second_level',array("ENLACES INTEGRA"=>"ENLACES INTEGRA"),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
+		    }
+
     echo '</span>';
     echo $form->error($model,'second_level');
     echo '</div>';

@@ -1,3 +1,4 @@
+
 <?php
 
 // uncomment the following to define a path alias
@@ -51,13 +52,13 @@ return array(
    'params'=>require(dirname(__FILE__).'/params.php'),
 
 	'components'=>array(
-		'session' => array(
+		 'session' => array(
 	   	  'autoStart'=>false,
-	      'class' => 'CDbHttpSession',
-	      'timeout' => $sessionTimeout,
+	       'class' => 'CDbHttpSession',
+	       'timeout' => $sessionTimeout,
 
 
-	   ),
+	    ),
 
 	 	'authManager'=>array(
 				'class'=>'CDbAuthManager',
@@ -67,11 +68,11 @@ return array(
 				),
 
 			),
-		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>false,
-			'authTimeout'=>300,
-		),
+		 'user'=>array(
+		 	// enable cookie-based authentication
+		 	'allowAutoLogin'=>false,
+		 	'authTimeout'=>300,
+		 ),
 
 		'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',
