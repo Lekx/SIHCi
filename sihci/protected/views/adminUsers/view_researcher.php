@@ -6,37 +6,41 @@
         </div>
 
  <h3>Datos del representante:</h3>
-
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data' => $model,
 	'attributes' => array(
 
-		array(	"name"=>'Email',
-				"value"=>$model['email']),
 		array(	"name"=>'Nombre(s)',
 				"value"=>$model['names']),
+
 		array(	"name"=>'Apellido paterno',
 				"value"=>$model['last_name1']),
+
 		array(	"name"=>'Apellido materno',
 				"value"=>$model['last_name2']),
+
 		array(	"name"=>'Estado civil',
 				"value"=>$model['marital_status']),
+
 		array(	"name"=>'Sexo',
 				"value"=>$model['genre']),
+
 		array(	"name"=>'Fecha de nacimiento',
 				"value"=>$model['birth_date']),
-		array(	"name"=>'Email',
-				"value"=>$model['state_of_birth']),
-		array(	"name"=>'Curp/Pasaporte',
+
+		array(	"name"=>'Curp/pasaporte',
 				"value"=>$model['curp_passport']),
-		array(	"name"=>'Foto',
-				"value"=>$model['photo_url']),
+
+		array(	"name"=>'Foto','type'=>'raw',
+    "value"=>(array_key_exists('photo_url', $model) ? "<a href='".Yii::app()->request->baseUrl.$model['photo_url']."' target='_blank'><img src='".Yii::app()->request->baseUrl.$model['photo_url']."' style='width:75px;height:auto;'></a>" : "")),
+
+
 		array(	"name"=>'RFC',
 				"value"=>$model['person_rfc']),
 		array(	"name"=>'Pais',
 				"value"=>$model['country']),
 		//Table adreesess
-		array(	"name"=>'Codigo Postal',
+		array(	"name"=>'Codigo postal',
 				"value"=>$model['zip_code']),
 		array(	"name"=>'Estado',
 				"value"=>$model['state']),
@@ -54,14 +58,13 @@
 				"value"=>$model['internal_number']),
 		array(	"name"=>'Número externo',
 				"value"=>$model['external_number']),
+
 		//Table Docs_identity
-		array(	"name"=>'Tipo',
-				"value"=>$model['type']),
 		array(	"name"=>'Descripción',
 				"value"=>$model['description']),
-		array(	"name"=>'Tipo de identificacion',
-				"value"=>$model['doc_id']),
-		array(	"name"=>'Documento Principal?',
+		array(	"name"=>'Tipo de identificacion','type'=>'raw',
+    "value"=>(array_key_exists('doc_id', $model) ? "<a href='".Yii::app()->request->baseUrl.$model['doc_id']."' target='_blank'><img src='".Yii::app()->request->baseUrl.$model['doc_id']."' style='width:75px;height:auto;'></a>" : "")),
+		array(	"name"=>'Documento principal',
 				"value"=>$model['is_Primary']),
 		//table phones
 		array(	"name"=>'Tipo',
@@ -72,17 +75,12 @@
 				"value"=>$model['local_area_code']),
 		array(	"name"=>'Extensión',
 				"value"=>$model['extension']),
-		array(	"name"=>'Principal?',
+		array(	"name"=>'Principal',
 				"value"=>$model['is_primary']),
-		//Table Emails
-		array(	"name"=>'Email',
-				"value"=>$model['email']),
-		array(	"name"=>'Tipo',
-				"value"=>$model['type']),
 		//table Curriculum
 		array(	"name"=>'Ciudad de nacimiento',
 				"value"=>$model['native_country']),
-		array(	"name"=>'Lenguaa materna',
+		array(	"name"=>'Lengua materna',
 				"value"=>$model['native_language']),
 		array(	"name"=>'Estado',
 				"value"=>$model['status']),
@@ -117,7 +115,7 @@
 				"value"=>$model['country']),
 		array(	"name"=>'Grado',
 				"value"=>$model['grade']),
-		array(	"name"=>'Numero de cedula',
+		array(	"name"=>'Número de cedula',
 				"value"=>$model['writ_number']),
 		array(	"name"=>'Titulo',
 				"value"=>$model['title']),
@@ -135,7 +133,7 @@
 				"value"=>$model['area']),
 		array(	"name"=>'Diciplina',
 				"value"=>$model['discipline']),
-		array(	"name"=>'SubDiciplina',
+		array(	"name"=>'Subdiciplina',
 				"value"=>$model['subdiscipline']),
 
 

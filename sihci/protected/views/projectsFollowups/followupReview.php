@@ -21,7 +21,7 @@ $fileTypes = array( "4"=>"Documento de revisión","6"=>"el dictamen de aprobaci�
 //for($evaluationStep = 1; $evaluationStep <= 6; $evaluationStep++)  {
 
 
- 	echo "<hr> <br><br><font color='red'>".$followupRules[$evaluationStep]['type']."</font> <b>Paso: ".$evaluationStep."</b> Rol: ".$followupRules[$evaluationStep]['userType']." Acciones: ".$followupRules[$evaluationStep]['actions'][0].", ".(isset($followupRules[$evaluationStep]['actions'][1]) ? $followupRules[$evaluationStep]['actions'][1] : "").", ".(isset($followupRules[$evaluationStep]['actions'][2]) ? $followupRules[$evaluationStep]['actions'][2] : "")."<br>";
+ 	//echo "<hr> <br><br><font color='red'>".$followupRules[$evaluationStep]['type']."</font> <b>Paso: ".$evaluationStep."</b> Rol: ".$followupRules[$evaluationStep]['userType']." Acciones: ".$followupRules[$evaluationStep]['actions'][0].", ".(isset($followupRules[$evaluationStep]['actions'][1]) ? $followupRules[$evaluationStep]['actions'][1] : "").", ".(isset($followupRules[$evaluationStep]['actions'][2]) ? $followupRules[$evaluationStep]['actions'][2] : "")."<br>";
  //	$userRol =$followupRules[$evaluationStep]['userType'];
 
 
@@ -34,18 +34,13 @@ $fileTypes = array( "4"=>"Documento de revisión","6"=>"el dictamen de aprobaci�
 					));
 				echo "</div>";
 
-		} 
+		}
 
 
 		//convocar comites
  		if($followupRules[$evaluationStep]["userType"] ==  $userRol && $evaluationStep == 2){
 
-				echo "<div class='row' style='margin-left: 25px !important'>";
-					echo CHtml::htmlButton('No aprobar',array(
-						'onclick'=>'javascript: send("","projectsFollowups/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
-						'class'=>'savebuttonp',
-					));		
-				echo "</div>";
+				echo "<div class='row' style='margin-left: 30px !important'>";
 
 
 							$conexion = Yii::app()->db;
@@ -53,16 +48,21 @@ $fileTypes = array( "4"=>"Documento de revisión","6"=>"el dictamen de aprobaci�
 			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." AND id_fucom = ".$_GET['id']."
 			AND id_project = ".$modelProject->id." AND  type = 'mandatoryFW' AND step_number = ".($evaluationStep-1))->queryAll()[0];
 			if(isset($checkForConvoke["total"]) && $checkForConvoke["total"] > 0){
-				echo "<div class='row' style='margin-left: 30px !important'>";
 				echo " ".CHtml::htmlButton('Aprobar',array(
 					'onclick'=>'javascript: send("","projectsFollowups/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',accept");',
-					'class'=>'savebuttonp','id'=>'acceptEvaButton',
+					'class'=>'savebutton','id'=>'acceptEvaButton',
 				));
+
+				echo CHtml::htmlButton('No aprobar',array(
+					'onclick'=>'javascript: send("","projectsFollowups/sendReview", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'", "'.$redirectUrl.'", "'.$evaluationStep.',reject");',
+					'class'=>'savepro',
+				));
+
 				echo "</div>";
 			}else{
-				echo "<b>Para poder aprobar el Seguimiento es necesario que primero indique el lugar, fecha y hora para la reunión con los comités.</b>";
+				echo "<div class='row'><div class='row' style='width: 450px; text-align: justify;'><h4><strong>Para poder aprobar el Seguimiento es necesario que primero indique el lugar, fecha y hora para la reunión con los comités.</strong></h4></div></div>";
 			}
-				
+
 		}
 
 			//aprobacion por comites
@@ -73,37 +73,40 @@ $fileTypes = array( "4"=>"Documento de revisión","6"=>"el dictamen de aprobaci�
 
 
 			$commStatus = ProjectsCommittee::model()->findByAttributes(array("id_project"=>$modelProject->id,"id_user_reviewer"=>$userId));
-			var_dump($commStatus);
+		//	var_dump($commStatus);
 			if(is_object($commStatus)){
 				$commStatus = $commStatus->status;
+
+					echo "<div class='row' style='margin-left: 30px !important'>";
 				if($commStatus!="pendienteFW")
 					echo "<br>Usted ya ha <b>".substr($commStatus,0,-2)."</b> este proyecto, puede cambiar su calificación en cualquier momento de la evaluación por parte del comité.<br><br>Tome en cuenta que para que el proyecto pueda continuar con la evaluación, la calificación de todos los miembros del comité asignado deben ser las misma.<br>";
-				
-				if($commStatus == "aprobadoFW" || $commStatus == "pendienteFW"){
-					echo "<div class='row' style='margin-left: 25px !important'>";
-						echo CHtml::htmlButton('No aprobar',array(
-							'onclick'=>'javascript: send("","projectsFollowups/sendReviewCommittee", "'.$modelProject->id.'", "'.$redirectUrl.'", "'.$evaluationStep.',reject,'.(isset($_GET['id']) ? $_GET['id'] : 0).'");',
-							'class'=>'savebuttonp',
-						));		
-					echo "</div>";
-				}
+
+
+
 
 				if($commStatus == "rechazadoFW" || $commStatus == "pendienteFW"){
-					echo "<div class='row' style='margin-left: 30px !important'>";
 					echo " ".CHtml::htmlButton('Aprobar',array(
 						'onclick'=>'javascript: send("","projectsFollowups/sendReviewCommittee", "'.$modelProject->id.'", "'.$redirectUrl.'", "'.$evaluationStep.',accept,'.(isset($_GET['id']) ? $_GET['id'] : 0).'");',
-						'class'=>'savebuttonp','id'=>'acceptEvaButton',
+						'class'=>'savebutton','id'=>'acceptEvaButton',
 					));
-					echo "</div>";
+
 				}
+				if($commStatus == "aprobadoFW" || $commStatus == "pendienteFW"){
+
+						echo CHtml::htmlButton('No aprobar',array(
+							'onclick'=>'javascript: send("","projectsFollowups/sendReviewCommittee", "'.$modelProject->id.'", "'.$redirectUrl.'", "'.$evaluationStep.',reject,'.(isset($_GET['id']) ? $_GET['id'] : 0).'");',
+							'class'=>'savepro',
+						));
+				}
+					echo "</div>";
 			}
 		}
 
 			// REGLAS PARA LOS QUE SON OBLIGADOS A SUBIR ARCHIVO ANTES DE APROBAR
-		if($followupRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 4 || $evaluationStep == 6 )){ 
+		if($followupRules[$evaluationStep]["userType"] == $userRol && ($evaluationStep == 4 || $evaluationStep == 6 )){
 			$conexion = Yii::app()->db;
 			$checkForDoc = $conexion->createCommand("
-			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId." 
+			SELECT COUNT(id) AS total FROM projects_followups WHERE id_user = ".$userId."
 			AND id_project = ".$modelProject->id." AND  type = 'mandatoryFW' AND step_number = ".($evaluationStep-1)." AND url_doc IS NOT NULL")->queryAll()[0];
 
 			if(isset($checkForDoc["total"]) && $checkForDoc["total"] > 0){

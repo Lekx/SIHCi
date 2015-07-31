@@ -1,161 +1,188 @@
 /* projects */
 .paggersection
 {
+    width: 50%;
+    height: 30px;
 
-  width: 50%;
-  height: 30px;
-  text-align: center;
+    text-align: center;
 }
-.paggersection li ,.paggersection ul
+.paggersection li,
+.paggersection ul
 {
-  display: inline-block;
-  margin-left: 10px;
-  margin-right: 10px;
-  cursor: pointer;
-  font-size: 17px;
+    font-size: 17px;
+
+    display: inline-block;
+
+    margin-right: 10px;
+    margin-left: 10px;
+
+    cursor: pointer;
 }
 .paggersection li.active
 {
-  color: #00B9C0;
+    color: #00b9c0;
 }
 .projects2,
 .projects3,
 .projects4,
 .projects5
 {
-  display: none;
+    display: none;
 }
 .sections p
 {
-  width: 450px;
-  text-align: justify;
+    width: 450px;
+
+    text-align: justify;
 }
 .commets p
 {
-  width: 450px;
-  text-align: justify;
-  margin-left: 15px;
+    width: 450px;
+    margin-left: 15px;
+
+    text-align: justify;
 }
 .commets hr
 {
-  color: #00B9C0;
+    color: #00b9c0;
 }
 small
 {
-    color: #00B9C0;
+    color: #00b9c0;
 }
 .projectsbut
 {
-  margin-left: 10px !important;
+    margin-left: 10px !important;
 }
 .projecttitle
 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 90%;
-  text-align: justify;
+    width: 90%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    text-align: justify;
 }
 
 /* Follow ups */
 .createFollowup
 {
-  background-image: url("../img/Iconsvg/Proyectos/seguimiento-nuevo.svg");
-  background-repeat: no-repeat;
-  width: 60px;
-  height: 60px;
-  margin-left: 10px;
-  margin-right: 10px;
-  display:inline-block;
-	text-indent:-9999px;
-  vertical-align: top;
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    vertical-align: top;
+    text-indent: -9999px;
+
+    background-image: url('../img/Iconsvg/Proyectos/seguimiento-nuevo.svg');
+    background-repeat: no-repeat;
 }
 .Followups
 {
-  background-image: url("../img/Iconsvg/Proyectos/seguimiento-comentario.svg");
-  background-repeat: no-repeat;
-  width: 60px;
-  height: 60px;
-  margin-left: 10px;
-  margin-right: 10px;
-  display:inline-block;
-	text-indent:-9999px;
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    text-indent: -9999px;
+
+    background-image: url('../img/Iconsvg/Proyectos/seguimiento-comentario.svg');
+    background-repeat: no-repeat;
 }
 .nocomets
 {
-  background-image: url("../img/Iconsvg/Proyectos/seguimiento.svg");
-  background-repeat: no-repeat;
-  width: 60px;
-  height: 60px;
-  margin-left: 10px;
-  margin-right: 10px;
-  display:inline-block;
-	text-indent:-9999px;
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    text-indent: -9999px;
+
+    background-image: url('../img/Iconsvg/Proyectos/seguimiento.svg');
+    background-repeat: no-repeat;
 }
 #owl-demo
 {
-  display: inline-block !important;
-  width: 40%;
-  vertical-align: top;
-  margin-left: 10px;
+    display: inline-block !important;
+
+    width: 75%;
+    margin-left: 10px;
+
+    vertical-align: top;
 }
-.customNavigation{
-  padding: 10px;
-  width: 60px;
-  height: 60px;
-  display: inline-block;
+.owl-item
+{
+    margin: auto;
+}
+.customNavigation
+{
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+    padding: 10px;
 }
 .customNavigation  a
 {
-  margin-left: auto;
-  margin-right: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 .followuph5
 {
-  color: #0A324F !important;
-  font-weight: bold;
+    font-weight: bold;
+
+    color: #0a324f !important;
 }
 #is_sponsored
 {
-  background-color: transparent !important;
-  border: none !important;
+    border: none !important;
+    background-color: transparent !important;
 }
 table
 {
-  border-color: none !important;
-  border: none !important;
+    border: none !important;
+    border-color: none !important;
 }
 #followup
 {
-  width: 850px;
-  margin-bottom: 25px;
-  margin-top: 10px;
-  text-align: justify;
-}
-#followup h4{
-  color: #00B9C0;
+    width: 850px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 
+    text-align: justify;
+}
+#followup h4
+{
+    color: #00b9c0;
 }
 #comments
 {
-  width: 450px;
-  text-align: justify;
-  margin-left: 20px;
+    width: 450px;
+    margin-left: 20px;
+
+    text-align: justify;
 }
 #myModalLabel
 {
-  margin: 0;
+    margin: 0;
 }
 .modal-body
 {
-  padding: 10px !important;
+    padding: 10px !important;
 }
 .modal-body h3
 {
-  margin: 0 !important;
+    margin: 0 !important;
 }
 .modal
 {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
 }

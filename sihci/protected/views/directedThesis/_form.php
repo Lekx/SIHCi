@@ -5,6 +5,8 @@
 ?>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/protected/views/directedThesis/js/script.js"></script>
 
+
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -82,7 +84,7 @@
    <span class="plain-select">
       <?php echo $form->dropDownList($model,'sector',
             array(
-                 'Centros privados de investigación'=>'Centros privados de investigación',
+               'Centros privados de investigación'=>'Centros privados de investigación',
                'Centros públicos de investigación'=>'Centros públicos de investigación',
                'Consultoras'=>'Consultoras',
                'Gobierno federal descentralizado'=>'Gobierno federal descentralizado',
@@ -96,9 +98,8 @@
                'Instituciones del sector privado de empresas productivas (adiat)'=>'Instituciones del sector privado de empresas productivas (adiat)',
                'Instituciones / organizaciones no lucrativas'=>'Instituciones / organizaciones no lucrativas',
                'Instituciones / organizaciones extranjeras'=>'Instituciones / organizaciones extranjeras',
-               'No especificado'=>'No especificado',
-            ),
-          array('prompt'=>'Sector','title'=>'Sector','id'=>'sector', 'onchange'=>'changeSector()')
+               'No especificado'=>'No especificado'
+            ),array('prompt'=>'Seleccionar sector','title'=>'Sector','id'=>'sector', 'onchange'=>'changeSector()')
           );
     ?>
     </span>
@@ -107,27 +108,32 @@
   <?php
   if(!$model->isNewRecord){
 
-    echo '<div class="row" id="getSelectOrganization" >';
+    echo '<div class="row" id="selectOrganization" >';
     echo '<span class="plain-select">';
-    echo $form->dropDownList($model,'organization',array($model->organization => $model->organization),array('prompt'=>'Seleccionar organización','options'=>array($model->organization=>array('selected'=>true))));
+    echo $form->dropDownList($model,'organization',array($model->organization => $model->organization),array('prompt'=>'Seleccionar organización','onclick'=>'changeSector()','options'=>array($model->organization=>array('selected'=>true))));
     echo '</span>';
+    echo $form->error($model,'organization');
     echo '</div>';
 
-    echo '<div class="row"id="getSelectSecondLevel">';
-    echo '<span class="plain-select">';
-    echo $form->dropDownList($model,'second_level',array($model->second_level => $model->second_level),array('prompt'=>'Seleccionar segundo nivel','options'=>array($model->second_level=>array('selected'=>true))));
-    echo '</span>';
 
+    echo '<div class="row"id="selectSecondLevel">';
+    echo '<span class="plain-select">';
+    echo $form->dropDownList($model,'second_level',array($model->second_level => $model->second_level),array('prompt'=>'Seleccionar segundo nivel','onchange'=>'changeSecondLevel()','options'=>array($model->second_level=>array('selected'=>true))));
+    echo '</span>';
+    echo $form->error($model,'second_level');
     echo '</div>';
   }
   else{
-  echo '<div class="row"id="selectOrganization">
+    echo '<div class="row"id="selectOrganization">';
+    echo '<span class="plain-select">';
+    echo $form->dropDownList($model,'organization',array($model->organization),array('prompt'=>'Seleccionar organización'));
+    echo '</span>';
+    echo $form->error($model,'organization');
+    echo '</div>';
 
-  </div>
+    echo '<div class="row"id="selectSecondLevel">';
 
-  <div class="row"id="selectSecondLevel">
-
-  </div>';
+    echo '</div>';
 
   }
 ?>
@@ -166,11 +172,53 @@
    <?php
   if(!$model->isNewRecord){
 
+    
     echo '<div class="row" id="comboDiscipline" >';
     echo '<span class="plain-select">';
-    echo $form->dropDownList($model,'discipline',array($model->discipline => $model->discipline),array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    if($model->area == "ANTROPOLOGIA"){
+    echo $form->dropDownList($model,'discipline',array("ANTROPOLOGIA CULTURAL"=>"ANTROPOLOGIA CULTURAL","ANTROPOLOGIA ESTRUCTURAL"=>"ANTROPOLOGIA ESTRUCTURAL",
+   "ANTROPOLOGIA SOCIAL"=>"ANTROPOLOGIA SOCIAL","ETNOGRAFIA Y ETNOLOGIA"=>"ETNOGRAFIA Y ETNOLOGIA",
+   "OTRAS ESPECIALIDADES EN MATERIA DE ANTROPOLOGIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE ANTROPOLOGIA"),
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    }
+    if($model->area == "ARTES Y LETRAS"){
+    echo $form->dropDownList($model,'discipline',array("ARQUITECTURA"=>"ARQUITECTURA",
+    "TEORIA, ANALISIS Y CRITICA DE LAS BELLAS ARTES"=>"TEORIA, ANALISIS Y CRITICA DE LAS BELLAS ARTES",
+    "TEORIA, ANALISIS Y CRITICA LITERARIOS"=>"TEORIA, ANALISIS Y CRITICA LITERARIOS",
+    "OTRAS ESPECIALIDADES EN MATERIA DE ARTES Y LETRAS"=>"OTRAS ESPECIALIDADES EN MATERIA DE ARTES Y LETRAS"),
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    }
+    if($model->area == "ASTRONOMIA Y ASTROFISICA"){
+    echo $form->dropDownList($model,'discipline',array("ASTRONOMIA OPTICA"=>"ASTRONOMIA OPTICA",
+    "COSMOLOGIA Y COSMOGONIA"=>"COSMOLOGIA Y COSMOGONIA",
+    "ESPACIOS Y MATERIA INTERPLANETARIOS"=>"ESPACIOS Y MATERIA INTERPLANETARIOS",
+    "PLANETOLOGIA"=>"PLANETOLOGIA",
+    "RADIOASTRONOMIA"=>"RADIOASTRONOMIA",
+    "SISTEMA SOLAR"=>"SISTEMA SOLAR",
+    "OTRAS ESPECIALIDADES EN MATERIA DE ASTRONOMIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE ASTRONOMIA"),
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    }
+    if($model->area == "CIENCIAS AGRONOMICAS Y VETERINARIAS"){
+    echo $form->dropDownList($model,'discipline',array("AGRONOMIA"=>"AGRONOMIA",
+    "CIENCIAS VETERINARIAS"=>"CIENCIAS VETERINARIAS",
+    "CIENCIAS VETERINARIAS"=>"CIENCIAS VETERINARIAS",
+    "FITOPATOLOGIA"=>"FITOPATOLOGIA",
+    "HIGIENE VETERINARIA Y SALUD PUBLICA"=>"HIGIENE VETERINARIA Y SALUD PUBLICA",
+    "HORTICULTURA"=>"HORTICULTURA",
+    "INGENIERIA RURAL"=>"INGENIERIA RURAL",
+    "PECES Y ANIMALES SALVAJES"=>"PECES Y ANIMALES SALVAJES",
+    "QUIMICA AGRONOMICA"=>"QUIMICA AGRONOMICA",
+    "SILVICULTURA"=>"SILVICULTURA",
+    "OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS AGRONOMICAS Y VETERINARIAS"=>"OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS AGRONOMICAS Y VETERINARIAS"),
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    }
+    if($model->area == "CIENCIAS DE LA OCUPACION"){
+    echo $form->dropDownList($model,'discipline',array("TERAPIA OCUPACIONAL"=>"TERAPIA OCUPACIONAL"),
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    }
     echo '</span>';
     echo '</div>';
+  
 
     echo '<div class="row"id="comboSubdiscipline">';
     echo '<span class="plain-select">';

@@ -19,14 +19,17 @@ class SearchBarController extends Controller
 
 		$result = "";
 
-		if(empty($results))
+		if ($result == "" || $result ==" ") {
+			echo"escriba palabra para buscar";
+		}
+	 if(empty($results))
 			$result.= "No se encontraron resultados para su búsqueda:<b> \"".$keyword."\"</b>";
 		else
 			$result.=  "El resultado de la búsqueda para <b>\"".$keyword."\"</b> fue:";
-			
+
 		foreach($results as $index => $subarray)
 			$result.= "<a href=".Yii::app()->baseUrl."/index.php"."/".$index." style='text-decoration:none;'><div class='resultbars' style='padding:10px;cursor:pointer;'> <h5>".$subarray["title"]."</h5>".$subarray["desc"]."</div></a>";
-		
+
 		return $result;
 	}
 
@@ -43,7 +46,7 @@ class SearchBarController extends Controller
 $this->render('searchResults',array(
 			'results'=>$results,'keyword'=>$keyword
 		));
-		
+
 	}
 
 
@@ -145,7 +148,7 @@ $this->render('searchResults',array(
         "Centro de Investigación Clínica",
         "NULL",
         "OPD HCG",
-        "LINEAS DE INVESTIGACIÓN", 
+        "LINEAS DE INVESTIGACIÓN",
         "Especialidad",
         "Anestesiología",
         "Nuevos fármacos anestésicos",
@@ -241,7 +244,7 @@ $this->render('searchResults',array(
         "NULL",
         "Centro de Investigación Clínica",
         "proyectos",
-        "patrocinio", 
+        "patrocinio",
         "protocolos",
       ),
 
@@ -251,7 +254,7 @@ $this->render('searchResults',array(
         "desc"=>"Lista de protocolos patrocinados por la industria Farmacéutica",
         "NULL",
         "Centro de Investigación Clínica",
-        "patrocinio", 
+        "patrocinio",
         "protocolos",
       ),
 
@@ -261,7 +264,7 @@ $this->render('searchResults',array(
         "desc"=>"Fondo para el Fomento de la Investigación Científica y Tecnológica del Hospital Civil de Guadalajara",
         "NULL",
         "finehc",
-        "Fondo", 
+        "Fondo",
         "Científica",
       ),
 "informationOfGeneralSubdirectionOfEducationAndInvestigation" => array(
@@ -269,7 +272,7 @@ $this->render('searchResults',array(
         "desc"=>"El Organismo Público Descentralizado Hospital Civil de Guadalajara es el hospital- escuela de la Universidad de Guadalajara que forma el mayor número de médicos especialistas en México, un promedio de 220 especialistas por año.",
         "NULL",
         "Misión Institucional",
-        "Visión de futuro", 
+        "Visión de futuro",
         "Valores y principios que caracterizan nuestra institución",
         "Universalidad",
         "Calidad",
@@ -297,7 +300,7 @@ $this->render('searchResults',array(
         "desc"=>"El 31 de marzo 1997 se aprueba la Ley de Creación d e OPD Hospital Civil de Guadalajara donde se define su conformación, facultades, atribuciones. Es un Or ganismo Público Descentralizado de la administració n pública estatal, con personalidad jurídica y patrim onio propios; conformado por dos Unidades Hospitala rias: Antiguo Hospital Civil de Guadalajara “Fray Antonio Alcalde”, Nuevo Hospital Civil de Guadalajara “Dr. Juan I. Menchaca.”",
         "NULL",
         "Los ejes temáticos para el desarrollo de la investi gación",
-        "Regulación de los Procesos de la Investigación", 
+        "Regulación de los Procesos de la Investigación",
         "Gestión de Recursos para la Investigación",
         "Generación de Conocimiento Científico",
         "Aplicación de Conocimiento Científico para la In novación",
@@ -309,9 +312,9 @@ $this->render('searchResults',array(
         "NULL",
         "Programas de generación de conocimiento",
         "TRC BÁSICO EN LÍNEA",
-        "TRC BÁSICO, EN LÍNEA Y PRESENCIAL", 
-        "TRC AVANZADO, EN LÍNEA PRESENCIAL",  
-        "TRC AVANZADO, EN LÍNEA Y SEMIPRESENCIAL", 
+        "TRC BÁSICO, EN LÍNEA Y PRESENCIAL",
+        "TRC AVANZADO, EN LÍNEA PRESENCIAL",
+        "TRC AVANZADO, EN LÍNEA Y SEMIPRESENCIAL",
       ),
 
 
@@ -321,17 +324,17 @@ $this->render('searchResults',array(
         "NULL",
         "Programas de generación de conocimiento",
         "Especialidad",
-        "Línea de investigación", 
-        "TRC AVANZADO, EN LÍNEA PRESENCIAL",  
-        "TRC AVANZADO, EN LÍNEA Y SEMIPRESENCIAL", 
+        "Línea de investigación",
+        "TRC AVANZADO, EN LÍNEA PRESENCIAL",
+        "TRC AVANZADO, EN LÍNEA Y SEMIPRESENCIAL",
       ),
-      
+
       "displayInformation" => array(
         "title"=>"Programas de cooperación internacional en investigación",
         "desc"=>"Existen Convenios firmados con 19 Universidades: (C EMIC Centro de Educación Médica e Investigaciones Clínicas “Norberto Quirno” CIMEQ Ce ntro de Investigaciones Médico Quirúrgicas, Facultad de Ciencias Médicas de la Universidad de S an Carlos de Guatemala, Hospital Vall d’Hebron- Universidad, Autónoma de Barcelona, IOGI Instituto de Otología García Ibáñez, del Barcelona Centre Medic, Junta de Beneficencia de Guayaquil",
         "NULL",
         "universidades",
-        "convenios", 
+        "convenios",
       ),
 
    "ProDIME" => array(
@@ -339,8 +342,8 @@ $this->render('searchResults',array(
     "desc"=>"El OPD Hospital Civil de Guadalajara cuenta con un programa de difusión de los resultad os útiles de las investigaciones locales para su aplicación en medic ina con el cual se rigen todos sus integrantes.",
     "NULL",
     "OBJETIVO",
-    "AUDIENCIA", 
-    "FORMATO DE LA ENTREVISTA", 
+    "AUDIENCIA",
+    "FORMATO DE LA ENTREVISTA",
     "CONTENIDO DE LA FICHA TÉCNICA INFORMATIVA",
     "CARACTERÍSTICAS DE UN MENSAJE PRINCIPAL",
     "ESTILO DE REDACCIÓN DE LA FICHA TÉCNICA INFORMATIVA",
@@ -355,7 +358,7 @@ $this->render('searchResults',array(
     "Subdirector de Enseñanza e Investigación, HCG JIM",
     "Jefe de Investigación, SEI HCG FAA",
     "Jefe de Investigación, SEI HCG JIM",
-   ), 
+   ),
 
 
    "DisplayProINVENHCi" => array(
@@ -363,8 +366,8 @@ $this->render('searchResults',array(
     "desc"=>"La comunidad científica de México produce anualment e alrededor de 10 mil artículos en revistas especializadas; el Organismo Público Descentralizad o Hospital Civil de Guadalajara (OPD HCG) se encuen tra entre las primeras 10 instituciones de salud por el número de publicaciones científicas (Foro Consulti vo Científico y Tecnológico AC, 2009)",
     "NULL",
     "OBJETIVO DEL proINVENCHCi",
-    "DEFINICIONES", 
-    "INVENTAR", 
+    "DEFINICIONES",
+    "INVENTAR",
     "INNOVAR",
     "INVENCIONES PROTEGIBLES",
     "PATENTE DE INVENCIÓN",
@@ -381,8 +384,8 @@ $this->render('searchResults',array(
     "desc"=>"Lista de Programas",
     "NULL",
     "Medicina Interna (PNPC)",
-    "Pediatría Médica (PNPC)", 
-    "Radiología e Imagen", 
+    "Pediatría Médica (PNPC)",
+    "Radiología e Imagen",
     "PNPC Padrón Nacional de Posgrados de Calidad",
     "SUBESPECIAliDADES",
     "Hospital Civil Fray Antonio Alcalde",
@@ -447,27 +450,26 @@ $this->render('searchResults',array(
 ),
 
    "editUnit" => array(
-    "title"=>"Programas de cooperación internacional en investigación",
-    "desc"=>"Presentación 
+    "title"=>"Unidad editorial.",
+    "desc"=>"Presentación
 Unidad Editorial, es una figura orgánica pertenecie nte al OPD Hospital Civil de Guadalajara.",
     "NULL",
     "Programas de cooperación internacional en investigación",
     "unidad",
-       
+		"editorial",
+
 ),
 
-
-
-   "scientificMagazines" => array(
-    "title"=>"Revistas Cientificas",
-    "desc"=>"Publicaciones científicas
-El principal vehículo de comunicación de la ciencia es el artículo científico original; es una obra de arte intelectual: el conocimiento científico nuevo que se origina a p artir del análisis e interpretación de los datos de una investigación en ciencias de la salud debe divulgar se.",
-    "NULL",
-    "Revistas Cientificas",
-       "Publicaciones científicas",
-       "Hipócrates Revista Médica",
-       "Archivos en Pediatría",
-       "Tracto Genital Inferior",
+"scientificMagazines" => array(
+	"title"=>"Revistas Cientificas",
+	"desc"=>"Publicaciones científicas
+	El principal vehículo de comunicación de la ciencia es el artículo científico original; es una obra de arte intelectual: el conocimiento científico nuevo que se origina a p artir del análisis e interpretación de los datos de una investigación en ciencias de la salud debe divulgar se.",
+	"NULL",
+	"Revistas Cientificas",
+		 "Publicaciones científicas",
+		 "Hipócrates Revista Médica",
+		 "Archivos en Pediatría",
+		 "Tracto Genital Inferior",
 
 ),
 
@@ -477,30 +479,48 @@ El principal vehículo de comunicación de la ciencia es el artículo científic
     "NULL",
     "Extensión y Vinculación",
     "Vinculacion Con Universidad Institutos Y Hospitales",
-    "",
+),
+
+"hospitalUnitJimEthicsCommittee" => array(
+ "title"=>"Comités",
+ "desc"=>"Comités",
+ "NULL",
+ "comites",
+ "El OPD Hospital Civil de Guadalajara cuenta con comités científicos",
+
+),
+
+"cveHc" => array(
+ "title"=>"CVE-HC",
+ "desc"=>"CVE-HC",
+ "NULL",
+ "CVE-HC",
+ "cve-hc",
+ "Línea de Investigación",
+
 )
+
+
 );
 	}
-
 
 	function search($value, $array)
 	{
 		$resultado = array();
-	    
+
 	    foreach($array as $index => $subarray)
 			foreach($subarray as $subindex => $subvalue){
 				if($subindex != "desc"){
+
 				    	if(strpos(strtolower($subvalue), strtolower($value)) !== false){
 				    		$resultado[$index] = array("title"=>$array[$index]["title"], "desc"=>$array[$index]["desc"]);
-				    	//  echo"<pre>";
-				    	//print_r($subvalue);
-				    	//echo"</pre>";
+
 				    		}
 
 			    	}
 			    }
 
-	    
+
 
 		return $resultado;
 	}
