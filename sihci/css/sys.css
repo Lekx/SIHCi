@@ -29,6 +29,7 @@ body
     color: white;
     border: 0;
     background: #fff;
+
 }
 input,
 select
@@ -80,7 +81,7 @@ select
 }
 .headerconteinerF
 {
-    z-index: 999 !important;
+    z-index: 99 !important;
 
     width: 12%;
     height: 170px;
@@ -466,6 +467,7 @@ input[type='radio']
 }
 
 .cvforms input[type='text'],
+.cvforms input[type='email'],
 .cvforms input[type='password'],
 .cvforms input[type='file']
 {
