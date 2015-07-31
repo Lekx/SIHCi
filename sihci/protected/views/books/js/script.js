@@ -186,7 +186,7 @@ if(areaValue =="SOCIOLOGIA"){
 
 
     var newDiscipline ="<span class='plain-select'><select id='Books_discipline' title='Disciplina.' name='Books[discipline]' onchange='changeDiscipline()'>";
-    newDiscipline+="<option>Seleccionar Disciplina</option>";
+    newDiscipline+="<option value=''>Seleccionar Disciplina</option>";
     for (var item in areaValue) {
         newDiscipline +="<option>"+areaValue[ item ]+"</option>";
     }
@@ -211,10 +211,10 @@ if(areaValue =="SOCIOLOGIA"){
   function changeDiscipline(){
   var disciplineValue = $("#Books_discipline option:selected").val();
 
-    if(disciplineValue =="Seleccionar Disciplina"){
+    /*if(disciplineValue =="Seleccionar Disciplina"){
       var seleccionarDisciplina ="";
       disciplineValue = aplicacionesDeLaLogica;
-    }
+    }*/
 
     if(disciplineValue =="LOGICA DEDUCTIVA"){
       var logicaDeductiva = ["ALGEBRA DE BOOLE", 
@@ -3789,7 +3789,7 @@ if(areaValue =="SOCIOLOGIA"){
      disciplineValue = otrasEspecialidadesSociologia;
   }
     var newSubdiscipline ="<span class='plain-select'><select id='Books_subdiscipline' title='Subdisciplina.' name='Books[subdiscipline]'>";
-    newSubdiscipline+="<option>Seleccionar Subdisciplina</option>";
+    newSubdiscipline+="<option value=''>Seleccionar Subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
     }
@@ -4000,7 +4000,7 @@ function changeGetArea(){
 
 
       var newDiscipline ="<span class='plain-select'><select id='getComboDiscipline' name='getDiscipline[]' onchange='changeGetDiscipline()'>";
-      newDiscipline+="<option>Seleccionar disciplina</option>";
+      newDiscipline+="<option value=''>Seleccionar disciplina</option>";
       for (var item in areaValue) {
           newDiscipline +="<option>"+areaValue[ item ]+"</option>";
       }
@@ -4012,10 +4012,10 @@ function changeGetArea(){
 function changeGetDiscipline(){
   var disciplineValue = $("#getComboDiscipline option:selected").val();
 
-    if(disciplineValue =="Seleccionar disciplina"){
+    /*if(disciplineValue =="Seleccionar disciplina"){
       var seleccionarDisciplina ="";
       disciplineValue = aplicacionesDeLaLogica;
-    }
+    }*/
 
     if(disciplineValue =="LOGICA DEDUCTIVA"){
       var logicaDeductiva = ["ALGEBRA DE BOOLE",
@@ -7590,7 +7590,7 @@ function changeGetDiscipline(){
      disciplineValue = otrasEspecialidadesSociologia;
   }
     var newSubdiscipline ="<span class='plain-select'><select id='getSubdiscipline' name='getSubdiscipline[]'>";
-    newSubdiscipline+="<option>Seleccionar subdisciplina</option>";
+    newSubdiscipline+="<option value=''>Seleccionar subdisciplina</option>";
     for (var item in disciplineValue) {
         newSubdiscipline +="<option>"+disciplineValue[ item ]+"</option>";
     }

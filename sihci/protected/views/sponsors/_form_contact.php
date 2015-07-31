@@ -17,6 +17,7 @@ $('.fType').on('change', function(e) {
 
 		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[] onKeypress = "return validateEmail (event)" ><input type="hidden" class="removable dFieldT" name="values2[]" ><input type="email" name="values3[]" class="removable dFieldE" placeholder="Correo Electronico"  onKeypress = "return numericAndLettersOnly(event)" onsubmit = "validateEmail()" onKeypress = "return validateEmail(event)">');
 
+
 	}else if(option == 'CELULAR'){
 
 		$(this).parent().append('<input type="hidden" class="removable dFieldT" name="values1[]" onKeypress = "return numericOnly(event) maxlength = "4"><input type="text" class="hidden dFieldT" name="values2[]" onKeypress = "return numericOnly(event)" maxlength = 3 ><input type="text" name="values3[]" class="removable dFieldC" placeholder="Celular" onKeypress = "return numericOnly(event)" maxlength = "12">');

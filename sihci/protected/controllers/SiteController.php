@@ -20,10 +20,6 @@ class SiteController extends Controller {
 		);
 	}*/
 
- 	public function actionSessionTimeout()
-    {
-        $this->render('sessionTimeout');
-    }
 
 	/**
 	 * This is the default 'index' action that is invoked
@@ -228,4 +224,5 @@ class SiteController extends Controller {
 
 		$this->render('changePassword', array('model' => $user, 'key' => $key));
 	}
+
 }

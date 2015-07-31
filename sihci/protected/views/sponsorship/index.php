@@ -1,10 +1,5 @@
 <?php
-/* @var $this SponsorshipController */
-/* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Sponsorships',
-);
 
 $this->menu=array(
 	array('label'=>'Create Sponsorship', 'url'=>array('create')),

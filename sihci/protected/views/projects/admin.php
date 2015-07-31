@@ -1,4 +1,6 @@
 <?php
+
+if($checkAuth){
 /* @var $this ProjectsController */
 /* @var $model Projects */
 
@@ -113,4 +115,17 @@ $this->widget('zii.widgets.grid.CGridView', array(
 					),
 		),'htmlOptions'=>array('style' => 'width: 50px;')
 	),),
-)); ?>
+));
+
+}else{
+
+	?>
+<div class="cvtitle">
+            <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">
+            <h1>Evaluación Curricular</h1>
+            <hr>
+        </div><br><br>
+<h3>Por favor llene primero su curriculum vitae único para poder gestionar proyectos.</h3>
+<?php
+}
+ ?>

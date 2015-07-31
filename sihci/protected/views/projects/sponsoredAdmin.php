@@ -70,7 +70,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 			),
 				array(
 			'name'=>'status',
-			'header'=>'Título del proyecto',
+			'header'=>'Estatus del proyecto',
 			'value'=>'strtolower($data->status)',
 			),
 			array(

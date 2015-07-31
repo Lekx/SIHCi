@@ -45,8 +45,8 @@ $this->menu = array(
 	<hr>
 
 	<div class="row buttons">
-			  <?php echo CHtml::htmlButton('Enviar',array(
-                'onclick'=>'send("account-form", "account/updateEmail", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","site/index","")',
+			  <?php echo CHtml::htmlButton('Guardar',array(
+                'onclick'=>'send("account-form", "account/updateEmail", "'.(isset($_GET['id']) ? $_GET['id'] : 0).'","'.(Yii::app()->user->admin == 0 ? "site/index" : "account/infoAccount").'","")',
                 'class'=>'savebutton',
             ));
     ?>

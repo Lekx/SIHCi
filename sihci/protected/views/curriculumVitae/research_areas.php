@@ -2,9 +2,7 @@
 /* @var $this ResearchAreasController */
 /* @var $model ResearchAreas */
 
-$this->breadcrumbs=array(
-	'Líneas de investigación'=>array('research_areas'),
-);
+
 $controller="";
 $editUser = "";
 if(isset($_GET["ide"]))

@@ -14,8 +14,9 @@ if(!$model->isNewRecord){
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'sponsorship-form',
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'enableAjaxValidation'=>true,
-	'htmlOptions'=>array('enctype' => 'multipart/form-data'),
+	'enableClientValidation'=>true,
 )); ?>
 
 	<?php //echo $form->errorSummary($model); ?>
@@ -69,7 +70,7 @@ if(!$model->isNewRecord){
 	</div>
 
 	<div class="row">
-		<?php echo $form->fileField($model,'doc_project',array('size'=>60,'maxlength'=>150,'title'=>$model->getAttributeLabel('doc_project'))); ?>
+		<?php echo $form->fileField($model,'doc_project',array('size'=>60,'maxlength'=>150,'title'=>'lacaca')); ?>
 		<?php echo $form->error($model,'doc_project'); ?>
 	</div>
 

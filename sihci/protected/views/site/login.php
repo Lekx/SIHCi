@@ -18,7 +18,7 @@ if(strpos(Yii::app()->request->url,'site/login'))
 					<div class="inputlog">
 						<div class="inner-addon right-addon">
 							<i class="glyphicon glyphicon-envelope"></i>
-							<?php echo $form->textField($model,'username', array('placeholder'=>"Correo electronico..",'title'=>'Favor de ingresar su correo de registro')); ?>
+							<?php echo $form->textField($model,'username', array('placeholder'=>"Correo electronico.",'title'=>'Favor de ingresar su correo de registro')); ?>
 
 						</div>
 					</div>
@@ -28,13 +28,13 @@ if(strpos(Yii::app()->request->url,'site/login'))
 					<div class="inputlog">
 						<div class="inner-addon right-addon">
 							<i class="glyphicon glyphicon-lock"></i>
-							<?php echo $form->passwordField($model,'password', array('placeholder'=>"Contraseña..",'title'=>'Favor de ingresar su contraseña.')); ?>
+							<?php echo $form->passwordField($model,'password', array('placeholder'=>"Contraseña.",'title'=>'Favor de ingresar su contraseña.')); ?>
 						</div>
 					</div>
 				</div>
 
 				<!-- <div class="row">
-		<a href="<?php echo Yii::app()->createUrl('/site/recoverypassword');?>">¿Olvidó su Contraseña?</a>
+		<a href="<?php //echo Yii::app()->createUrl('/site/recoverypassword');?>">¿Olvidó su Contraseña?</a>
 		</div> -->
 
 				<?php echo CHtml::ajaxButton ("Ingresar a mi Cuenta", CController::createUrl('site/login'), array(

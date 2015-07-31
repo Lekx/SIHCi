@@ -87,9 +87,12 @@ function capitalise(string) {
 }
 
  function checkAuths(formid){
+  var realForm = formid;
   var formid = capitalise(formid.split("-")[0]);
   if(formid == "Articles")
     formid = "ArtGuidesAuthor";
+  else if(realForm == "books-chapters-form")
+    formid = "BooksChaptersAuthors";
   else
     formid = formid+"Authors";
 

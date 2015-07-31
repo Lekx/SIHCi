@@ -600,15 +600,19 @@ class AdminUsersController extends Controller {
 		}
 	}
 
-	public function actionDoubleSession($id){
+	public function actionDoubleSession($id,$type=""){
 
 		if((int)$id == 0){
 			Yii::app()->user->setState('id',Yii::app()->user->admin);
 			Yii::app()->user->setState('admin',0);
+
+			Yii::app()->user->setState('sessionType',"");
 			$this->redirect(array('adminUsers/adminUsers'));
+
 		}else{
 			Yii::app()->user->setState('admin',Yii::app()->user->id);
 			Yii::app()->user->setState('id',(int)$id);
+			Yii::app()->user->setState('sessionType',$type);
 			$this->redirect(array('account/infoAccount'));
 		}
 	}

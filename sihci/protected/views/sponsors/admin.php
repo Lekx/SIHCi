@@ -2,10 +2,6 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 
-$this->breadcrumbs=array(
-	'Sponsors'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
 	array('label'=>'List Sponsors', 'url'=>array('index')),

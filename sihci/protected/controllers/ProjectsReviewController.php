@@ -32,7 +32,7 @@ class ProjectsReviewController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','sendReviewCommittee','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review','sendReview','setRegNumber','assignCommittees','setFolioNumber'),
+				'actions'=>array('create','update','admin','sendReviewCommittee','sponsoredAdmin','acceptSponsorship','rejectSponsorship','review','sendReview','setRegNumber','assignCommittees','setFolioNumber','agreement'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -135,28 +135,28 @@ class ProjectsReviewController extends Controller
 
 		$pFollowups = $conection->createCommand("SELECT pf.id AS pif, pf.status, pf.type, pf.step_number, pf.creation_date, p.id, p.status, p.is_sponsored, p.title FROM projects_followups AS pf JOIN projects AS p ON p.id = pf.id_project ".$pfcondition." AND pf.type = 'followup' AND p.status = 'ACEPTADO'")->queryAll();
 
-		$pendingProjects ="<div class='projectRow'> Projectos pendientes por aprobar:</div>";
+		$pendingProjects ="<div class='projectRow'>Projectos pendientes por aprobar:</div>";
 
 		foreach($pProjects AS $key => $value){
 			if($value["is_sponsored"] == 1)
 			{
-				$spon = "<img src=".Yii::app()->request->baseUrl . '/img/Acciones/patrocinio.svg'.">";
+				$spon = "<img class='sponsorTag' title='Proyecto no patrocinado' src=".Yii::app()->request->baseUrl . '/img/Acciones/patrocinio.svg'.">";
 			}
 			else {
-					$spon = "<img src=".Yii::app()->request->baseUrl . '/img/Acciones/patrocinio2.svg'.">";
+					$spon = "<img class='sponsorTag' title='Proyecto no patrocinado' src=".Yii::app()->request->baseUrl . '/img/Acciones/patrocinio2.svg'.">";
 
 			}
 			$element ="";
-			$element .= '<div class="projectRow" style=" padding: 5px; width:97%;border:0px solid #00B9C0; margin:5px;font-size:.9em;">';
+			$element .= '<div class="projectRow" style=" padding: 5px; width:97%;border:0px solid #00B9C0; margin:5px;font-size:.8em;">';
 			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
-			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #00B9C0;font-size:.9em;">'.$spon.' - '.$value["creation_date"].'</div>';
+			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #BAD5D6;font-size:.8em;padding-bottom:10px;color:#7A8B9F;">'.$spon.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.substr($value["creation_date"],0,-9).'</div>';
 			$element .= '</div>';
 			$pendingProjects .= CHtml::link($element,array('projectsReview/review','id'=>$value["id"]));
 
 		}
 
 
-		$pendingProjects .="<br><hr><div class='projectRow'> Seguimientos pendientes a aprobar:</div>";
+		$pendingProjects .="<br><div class='projectRow'>Seguimientos pendientes por aprobar:</div>";
 
 		foreach($pFollowups AS $key => $value){
 			if($value["is_sponsored"] == 1)
@@ -168,9 +168,9 @@ class ProjectsReviewController extends Controller
 
 			}
 			$element ="";
-			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.80em;">';
+			$element .= '<div class="projectRow" style="width:97%;border:0px solid black; margin:5px;font-size:.8em;">';
 			$element .= '<div class = "projectTitle" >'.$value["title"].'</div>';
-			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #00B9C0;font-size:.9em;">'.$spon.' - '.$value["creation_date"].'</div>';
+			$element .= '<div class = "projectDetails" style="border-bottom:1px solid #BAD5D6;font-size:.8em;padding-bottom:10px;">'.$spon.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.substr($value["creation_date"],0,-9).'</div>';
 			$element .= '</div>';
 			$pendingProjects .= CHtml::link($element,array('projectsFollowups/followupReview','id'=>$value["pif"]));
 
@@ -462,6 +462,8 @@ class ProjectsReviewController extends Controller
 				if(($actualStep == 12 && $modelProject->is_sponsored == 1) || ($actualStep == 13 && $modelProject->is_sponsored == 0)) // added and, may be removed
 					$subMessage = 'El proyecto ha sido dictaminado satisfactoriamente. Ahora el investigador puede crear seguimientos para este proyecto.';
 
+
+				sendMail($followup->step_number,$projectId);	
 	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>$subMessage));
 
 		}else{
@@ -566,7 +568,26 @@ public function actionSetFolioNumber()
 		Yii::app()->end();
 	}
 
+	function sendMail($stepNumber, $idProject){
 
+		$project = Projects::model()->findByAttributes(array('id'=>$idProject));
+
+		if($stepNumber == 0) // modified from $this->loadModel($projectId)->is_sponsored
+			$rules = $this->noSponsoredRules;
+		else
+			$rules = $this->sponsoredRules;
+
+		$userType = $rules[$stepNumber+1]["userType"];
+		$message = $rules[$stepNumber+1]["message"];
+
+		$rol = Roles::model()->findByAttributes(array('alias'=>$userType));
+		$user = Users::model()->findByAttributes(array('id_roles'=>$rol->id));
+
+		$subject = "Evaluación de proyectos";
+		$title="El proyecto ".$project->title." necesita de su revisión";
+		$urlImg = "proyectos";
+		Yii::app()->runController('mail/sendMail/to/'.$user->email.'/subject/'.$subject.'/title/'.$title.'/content/'.$message.'/urlImg/'.$urlImg.'/urltitle/'.$urltitle.'/key/'.$key);
+	}
 
 
 

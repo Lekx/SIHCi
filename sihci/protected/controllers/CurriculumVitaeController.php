@@ -54,10 +54,11 @@ class CurriculumVitaeController extends Controller
 			$details = "Subsección Datos Personales. Registro Número ".$model->id;
 			$action = "Modificación";
 
+		
 		if($curriculum == null){
 			$curriculum = new Curriculum;
 			$addresses = new Addresses;
-
+			// echo "string";
 			$addresses->country = "null";
 			$addresses->zip_code = 0;
 			$addresses->state = "null";
@@ -66,17 +67,17 @@ class CurriculumVitaeController extends Controller
 			$addresses->town = "null";
 			$addresses->colony = "null";
 			$addresses->street = "null";
-			$addresses->external_number = "null";
-			$addresses->internal_number = "null";
+			$addresses->external_number = "nu";
+			$addresses->internal_number = "";
+			
 			if($addresses->save()){
 				$details = "Subsección Dirección Actual";
 				$action = "Creación";
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 			}
-
 			$curriculum->id_user= $iduser;
 			$curriculum->id_actual_address= $addresses->id;
-			$curriculum->native_country = "-1";
+			$curriculum->native_country = "null";
 			$curriculum->SNI = -1;
 			$curriculum->save();
 		}
