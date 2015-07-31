@@ -60,14 +60,14 @@
 
 	<?php echo $content; ?>
 
+	<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+	    'links'=>$this->breadcrumbs,
+	)); ?><
 
 
- 
 
 
 </div><!-- page -->
 
 </body>
 </html>
-
-	

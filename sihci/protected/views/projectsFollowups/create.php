@@ -2,10 +2,6 @@
 /* @var $this ProjectsFollowupsController */
 /* @var $model ProjectsFollowups */
 
-$this->breadcrumbs=array(
-	'Projects Followups'=>array('index'),
-	'Create',
-);
 
 $this->menu=array(
 	array('label'=>'Gestionar', 'url'=>array('admin')),

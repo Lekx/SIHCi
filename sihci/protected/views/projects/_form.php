@@ -605,7 +605,7 @@ function sendera(){
 		echo " ".Chtml::button('Guardar en borrador',array("id"=>"draft","onClick"=>"save('draft')",'class'=>'savebutton'));
 		//echo " ".Chtml::button('Cancelar',array("id"=>"x","onClick"=>"accionCancelar()",'class'=>'cancelb'));
 		echo CHtml::link('Cancelar',array('projects/admin'),array('confirm'=>'Si cancela todo los datos escritos se borraran. ¿Está seguro de que desea cancelar?'));
-		echo " ".Chtml::button('Guardar y enviar',array("id"=>"send","onClick"=>"",'style'=>'display:none;','class'=>'savepro'));
+		echo " ".Chtml::button('Enviar',array("id"=>"send","onClick"=>"",'style'=>'display:none;','class'=>'savepro'));
 		echo " ".Chtml::button('>',array("id"=>"next","onClick"=>"changeSection(1);","style"=>"float:right;",'class'=>'Rarrow glyphicon-chevron-right'));
 		echo " ".Chtml::button('<',array("id"=>"back","onClick"=>"changeSection(-1);","style"=>"display:none;float:right;",'class'=>'Larrow'));
 

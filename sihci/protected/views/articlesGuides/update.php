@@ -2,12 +2,6 @@
 /* @var $this ArticlesGuidesController */
 /* @var $model ArticlesGuides */
 
-$this->breadcrumbs=array(
-	'Articles Guides'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
 
 $this->menu=array(
 	//knowledgeApplication

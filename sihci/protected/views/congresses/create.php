@@ -2,10 +2,7 @@
 /* @var $this CongressesController */
 /* @var $model Congresses */
 
-$this->breadcrumbs=array(
-	'Congresses'=>array('index'),
-	'Create',
-);
+
 $this->menu=array(
 	//knowledgeApplication
 	array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),

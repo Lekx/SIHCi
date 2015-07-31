@@ -2,11 +2,6 @@
 /* @var $this CopyrightsController */
 /* @var $model Copyrights */
 
-$this->breadcrumbs=array(
-	'Copyrights'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

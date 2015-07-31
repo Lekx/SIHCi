@@ -9,10 +9,6 @@
 /* @var $this AdminSystemLogController */
 /* @var $model SystemLog */
 
-$this->breadcrumbs=array(
-	'Gestionar'=>array('index'),
-	$model->id,
-);
 
 $this->menu=array(
 	array('label'=>'Modificar Registro', 'url'=>array('update', 'id'=>$model->id)),

@@ -2,10 +2,6 @@
 /* @var $this KnowledgeApplicationController */
 /* @var $model KnowledgeApplication */
 
-$this->breadcrumbs=array(
-	'Knowledge Applications'=>array('index'),
-	$model->id,
-);
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

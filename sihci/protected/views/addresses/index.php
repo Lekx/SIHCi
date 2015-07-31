@@ -2,9 +2,7 @@
 /* @var $this AddressesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Addresses',
-);
+
 
 $this->menu=array(
 	array('label'=>'Create Addresses', 'url'=>array('create')),

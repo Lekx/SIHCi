@@ -2,10 +2,7 @@
 /* @var $this PatentController */
 /* @var $model Patent */
 
-$this->breadcrumbs=array(
-	'Patents'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

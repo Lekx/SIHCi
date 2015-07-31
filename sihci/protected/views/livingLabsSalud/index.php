@@ -2,10 +2,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
+/*
 $this->pageTitle=Yii::app()->name . ' - Living-labs';
 $this->breadcrumbs=array(
 'Centro de Investigación Clínica / Living-labs',
-);
+);*/
 ?>
 <section class="informativa">
     <section class="column-center">

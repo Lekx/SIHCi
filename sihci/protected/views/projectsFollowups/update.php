@@ -2,11 +2,7 @@
 /* @var $this ProjectsFollowupsController */
 /* @var $model ProjectsFollowups */
 
-$this->breadcrumbs=array(
-	'Projects Followups'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
+
 
 $this->menu=array(
 	array('label'=>'List ProjectsFollowups', 'url'=>array('index')),

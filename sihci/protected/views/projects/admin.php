@@ -4,6 +4,10 @@ if($checkAuth){
 /* @var $this ProjectsController */
 /* @var $model Projects */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae089f6f7322ab820cdf70fe395bafa378ac5502
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),

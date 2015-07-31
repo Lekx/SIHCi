@@ -1,11 +1,11 @@
 <!-- OP08-Desplegar Unidad Hospitalaria JIM: Subdirección de enseñanza e investigación -->
 <?php
 /* @var $this SiteController */
-/* @var $error array */
+/* @var $error array 
 $this->pageTitle=Yii::app()->name . ' -JIM Subdireccion de Enseñanza e Investigación';
 $this->breadcrumbs=array(
 'JIM Subdireccion de Enseñanza e Investigación',
-);
+);*/
 ?>
 <section class="informativa">
 

@@ -1,11 +1,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
-
+/*
 $this->pageTitle=Yii::app()->name . ' -Resultado de busqueda de'. $keyword ;
 $this->breadcrumbs=array(
 	'Resultado de busquedad'. $keyword,
-	);
+);*/
 	?>
 
 
@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 		</section>
 
 		<section class="column-center">
-			<?php 
+			<?php
 			if(empty($results))
 				echo "<h2>No se encontraron resultados para su busqueda:<br>\"".$keyword."\"</h2><hr>";
 			else

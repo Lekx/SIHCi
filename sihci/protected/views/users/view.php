@@ -2,10 +2,7 @@
 /* @var $this UsersController */
 /* @var $model Users */
 
-$this->breadcrumbs=array(
-	'Users'=>array('index'),
-	$model->id,
-);
+
 
 $this->menu=array(
 	array('label'=>'List Users', 'url'=>array('index')),

@@ -2,10 +2,6 @@
 /* @var $this PersonsController */
 /* @var $model Persons */
 
-$this->breadcrumbs=array(
-	'Persons'=>array('index'),
-	$model->id,
-);
 
 $this->menu=array(
 	array('label'=>'List Persons', 'url'=>array('index')),
@@ -47,6 +43,6 @@ $this->menu=array(
 			),
 		'person_rfc',
 
-		
+
 	),
 )); ?>

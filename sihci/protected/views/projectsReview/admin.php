@@ -19,7 +19,10 @@
 /* @var $model Projects */
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae089f6f7322ab820cdf70fe395bafa378ac5502
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){

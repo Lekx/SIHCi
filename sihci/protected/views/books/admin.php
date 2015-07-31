@@ -3,10 +3,7 @@
 /* @var $model Books */
 	//LI05-Listar registros
 
-$this->breadcrumbs=array(
-	'Books'=>array('index'),
-	'Manage',
-);
+
 $this->menu=array(
 	//knowledgeApplication
 array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),

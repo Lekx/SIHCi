@@ -1,11 +1,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
-
+/*
 $this->pageTitle=Yii::app()->name . ' - Normatividad de Investigaciòn';
 $this->breadcrumbs=array(
 	'OPD / Normatividad de Investigaciòn',
-);
+);*/
 ?>
 
 <section class="informativa">

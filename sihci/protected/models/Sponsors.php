@@ -47,7 +47,8 @@ class Sponsors extends CActiveRecord
 			array('id_user, id_address, employeess_number', 'numerical', 'integerOnly'=>true),
 			array('sponsor_name', 'length', 'max'=>50),
 			array('type', 'length', 'max'=>150),
-			array('website, sector, class, branch, main_activity, legal_structure', 'length', 'max'=>100),
+			array('class', 'length', 'max'=>200),
+			array('website, sector, branch, main_activity, legal_structure', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_user, id_address, sponsor_name, type, website, sector, class, branch, main_activity, legal_structure, employeess_number', 'safe', 'on'=>'search'),

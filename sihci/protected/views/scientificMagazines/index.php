@@ -1,11 +1,11 @@
 <!-- RC01-Desplegar Revistas Cientificas -->
 <?php
 /* @var $this SiteController */
-/* @var $error array */
+/* @var $error array
 $this->pageTitle=Yii::app()->name . ' - Revistas Cientificas';
 $this->breadcrumbs=array(
 'Revistas Cientificas',
-);
+);*/
 ?>
 <section class="informativa">
     <section class="column-center">

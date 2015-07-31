@@ -2,11 +2,7 @@
 /* @var $this AddressesController */
 /* @var $model Addresses */
 
-$this->breadcrumbs=array(
-	'Addresses'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
+
 
 $this->menu=array(
 	array('label'=>'List Addresses', 'url'=>array('index')),

@@ -1,12 +1,12 @@
 <!-- OP07-Desplegar Transparencia -->
 <?php
 /* @var $this SiteController */
-/* @var $error array */
+/* @var $error array
 
 $this->pageTitle=Yii::app()->name . ' -Transparencia';
 $this->breadcrumbs=array(
 	'OPD / Transparencia',
-);
+);*/
 ?>
 
 <section class="informativa">

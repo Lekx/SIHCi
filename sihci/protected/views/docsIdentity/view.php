@@ -2,10 +2,6 @@
 /* @var $this DocsIdentityController */
 /* @var $model DocsIdentity */
 
-$this->breadcrumbs=array(
-	'Docs Identities'=>array('index'),
-	$model->id,
-);
 
 $this->menu=array(
 	array('label'=>'List DocsIdentity', 'url'=>array('index')),
