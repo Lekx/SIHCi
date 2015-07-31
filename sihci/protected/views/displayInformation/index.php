@@ -2,11 +2,11 @@
 <!-- ProINVENHCi -->
 <?php
 /* @var $this SiteController */
-/* @var $error array */
+/* @var $error array 
 $this->pageTitle=Yii::app()->name . ' - Programas de cooperación internacional en investigación';
 $this->breadcrumbs=array(
 'Programas de cooperación internacional en investigación',
-);
+); */
 ?>
 <section class="informativa">
     <section class="column-center">

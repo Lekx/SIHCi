@@ -2,11 +2,6 @@
 /* @var $this AddressesController */
 /* @var $model Addresses */
 
-$this->breadcrumbs=array(
-	'Addresses'=>array('index'),
-	'Manage',
-);
-
 $this->menu=array(
 	array('label'=>'List Addresses', 'url'=>array('index')),
 	array('label'=>'Create Addresses', 'url'=>array('create')),

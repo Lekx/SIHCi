@@ -2,11 +2,7 @@
 /* @var $this PostdegreeGraduatesController */
 /* @var $model PostdegreeGraduates */
 
-$this->breadcrumbs=array(
-	'Graduados de posgrado'=>array('admin'),
-	$model->id=>array('view','id'=>$model->id),
-	'Actualizar',
-);
+
 
 
 $this->menu=array(

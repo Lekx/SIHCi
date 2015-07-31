@@ -1,10 +1,7 @@
 <?php
 /* @var $this PatentController */
 /* @var $model Patent */
-$this->breadcrumbs=array(
-	'Patents'=>array('index'),
-	'Manage',
-);
+
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),

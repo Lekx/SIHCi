@@ -1,12 +1,4 @@
-<!-- PG04-Desplegar-Lineas-Generacion-De-Conocimiento-Cientifico -->
-<?php
-/* @var $this SiteController */
-/* @var $error array */
-$this->pageTitle=Yii::app()->name . ' - Lineas de Generación de Conocimiento Cientifico';
-$this->breadcrumbs=array(
-'Programas de generación de conocimiento /  Lineas de Generación de Conocimiento Cientifico',
-);
-?>
+
 <section class="informativa">
     <section class="column-center">
         <div class="titleinfo">

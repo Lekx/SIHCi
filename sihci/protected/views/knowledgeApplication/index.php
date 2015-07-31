@@ -2,9 +2,6 @@
 /* @var $this KnowledgeApplicationController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Knowledge Applications',
-);
 
 $this->menu=array(
 	array('label'=>'Crear', 'url'=>array('create')),

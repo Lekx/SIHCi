@@ -1,12 +1,11 @@
 <!-- >CE01-Desplegar Lineas de Investigación -->
-<?php
+<?/*php
 /* @var $this SiteController */
-/* @var $error array */
+/* @var $error array 
 $this->pageTitle=Yii::app()->name . ' - Centro de investigación clínica y medicina translacional';
 $this->breadcrumbs=array(
 'Centro de investigación clínica y medicina translacional',
-);
-?>
+); */?>
 <section class="informativa">
     <section class="column-center">
         <div class="titleinfo">

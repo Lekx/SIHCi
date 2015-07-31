@@ -2,11 +2,7 @@
 /* @var $this BooksChaptersController */
 /* @var $model BooksChapters */
 
-$this->breadcrumbs=array(
-	'Books Chapters'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
+
 
 
 

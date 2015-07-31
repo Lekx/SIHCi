@@ -1,9 +1,9 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
-
+/*
 $this->pageTitle=Yii::app()->name . ' - Error';
-
+*/
 ?>
 <div class="error403">
 <?php if ($code = 403){

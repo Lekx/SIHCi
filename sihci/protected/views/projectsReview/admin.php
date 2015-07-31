@@ -19,10 +19,10 @@
 /* @var $model Projects */
 
 
-$this->breadcrumbs=array(
-	'Proyectos'=>array('admin'),
-	'Gestión',
-);
+<<<<<<< HEAD
+
+=======
+>>>>>>> ae089f6f7322ab820cdf70fe395bafa378ac5502
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){

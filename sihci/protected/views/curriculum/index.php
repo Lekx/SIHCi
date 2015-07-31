@@ -2,9 +2,6 @@
 /* @var $this CurriculumController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Curriculums',
-);
 
 $this->menu=array(
 	array('label'=>'Create Curriculum', 'url'=>array('create')),

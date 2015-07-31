@@ -2,10 +2,7 @@
 /* @var $this JobsController */
 /* @var $model Jobs */
 
-$this->breadcrumbs=array(
-	'Datos Laborales'=>array('index'),
-	'Crear',
-);
+
 
 $this->menu=array(
 	array('label'=>'List Jobs', 'url'=>array('index')),

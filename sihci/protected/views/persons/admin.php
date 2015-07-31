@@ -2,10 +2,6 @@
 /* @var $this PersonsController */
 /* @var $model Persons */
 
-$this->breadcrumbs=array(
-	'Persons'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
 	array('label'=>'List Persons', 'url'=>array('index')),
@@ -59,7 +55,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'country',
 		'state_of_birth',
 		'curp_passport',
-		
+
 		'person_rfc',
 		*/
 		array(

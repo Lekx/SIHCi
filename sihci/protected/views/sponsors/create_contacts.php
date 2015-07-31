@@ -2,7 +2,10 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> ae089f6f7322ab820cdf70fe395bafa378ac5502
 
 $controller="";
 

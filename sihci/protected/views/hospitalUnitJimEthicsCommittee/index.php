@@ -4,11 +4,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
-
+/*
 $this->pageTitle = Yii::app()->name . ' -Comités';
 $this->breadcrumbs = array(
 	'OPD / Comités',
-);
+);*/
 ?>
 
 <section class="informativa">

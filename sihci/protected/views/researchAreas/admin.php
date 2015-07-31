@@ -2,10 +2,6 @@
 /* @var $this ResearchAreasController */
 /* @var $model ResearchAreas */
 
-$this->breadcrumbs=array(
-	'Research Areases'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
 	array('label'=>'List ResearchAreas', 'url'=>array('index')),

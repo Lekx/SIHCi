@@ -6,6 +6,7 @@
 // 	'Directed Thesises'=>array('index'),
 // 	'Manage',
 // );
+
 $this->menu=array(
 	//knowledgeApplication
 array('label'=>'Aplicacion de conocimiento ', 'url'=>array('knowledgeApplication/admin'),'itemOptions'=>array('class' => 'menuitem 3')),

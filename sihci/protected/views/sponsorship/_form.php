@@ -41,12 +41,12 @@ if(!$model->isNewRecord){
 		<?php echo $form->error($model,'id_user_researcher'); ?>
 			</div>
 			<div class="row">
-				<?php echo $form->textArea($model,'project_name',array('size'=>45,'maxlength'=>45,'placeholder'=>'Nombre del proyecto','title'=>'Nombre del proyecto')); ?>
+				<?php echo $form->textArea($model,'project_name',array('size'=>60,'maxlength'=>250,'placeholder'=>'Nombre del proyecto','title'=>'Nombre del proyecto')); ?>
 				<?php echo $form->error($model,'project_name'); ?>
 			</div>
 
 			<div class="row">
-				<?php echo $form->textArea($model,'description',array('size'=>60,'maxlength'=>150,'placeholder'=>'Descripción','title'=>'Descripción')); ?>
+				<?php echo $form->textArea($model,'description',array('size'=>60,'maxlength'=>250,'placeholder'=>'Descripción','title'=>'Descripción')); ?>
 				<?php echo $form->error($model,'description'); ?>
 			</div>
 

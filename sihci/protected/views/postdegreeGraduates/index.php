@@ -2,9 +2,7 @@
 /* @var $this PostdegreeGraduatesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Postdegree Graduates',
-);
+
 
 $this->menu=array(
 	array('label'=>'Create PostdegreeGraduates', 'url'=>array('create')),

@@ -2,9 +2,7 @@
 /* @var $this ResearchAreasController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Research Areases',
-);
+
 
 $this->menu=array(
 	array('label'=>'Create ResearchAreas', 'url'=>array('create')),

@@ -2,10 +2,7 @@
 /* @var $this PhonesController */
 /* @var $model Phones */
 
-$this->breadcrumbs=array(
-	'Datos de Contacto'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
 	array('label'=>'List Phones', 'url'=>array('index')),

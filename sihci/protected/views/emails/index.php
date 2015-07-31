@@ -2,9 +2,6 @@
 /* @var $this EmailsController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Emails',
-);
 
 $this->menu=array(
 	array('label'=>'Create Emails', 'url'=>array('create')),

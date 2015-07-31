@@ -2,10 +2,7 @@
 /* @var $this FilesManagerController */
 /* @var $model FilesManager */
 
-$this->breadcrumbs=array(
-	'Files Managers'=>array('index'),
-	$model->id,
-);
+
 
 $this->menu=array(
 

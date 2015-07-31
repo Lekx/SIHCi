@@ -1,10 +1,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
+/*
 $this->pageTitle=Yii::app()->name . ' - Redacción Científica';
 $this->breadcrumbs=array(
 'Programas de generación de conocimiento / Redacción Científica',
-);
+);*/
 ?>
 <!-- PG01-Desplegar Redacción Científica -->
 <section class="informativa">

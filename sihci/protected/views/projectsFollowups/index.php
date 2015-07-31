@@ -2,9 +2,7 @@
 /* @var $this ProjectsFollowupsController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Projects Followups',
-);
+
 
 $this->menu=array(
 	array('label'=>'Create ProjectsFollowups', 'url'=>array('create')),

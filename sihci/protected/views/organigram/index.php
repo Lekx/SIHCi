@@ -4,11 +4,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
-
+/*
 $this->pageTitle = Yii::app()->name . ' - Organigrama';
 $this->breadcrumbs = array(
 	'OPD / Organigrama',
-);
+);*/
 ?>
 
 <section class="informativa">
@@ -26,7 +26,7 @@ $this->breadcrumbs = array(
 <br><br>
 <!--
 		<p>
-		Titular 
+		Titular
 		M.S.P. Víctor Manuel Ramírez Anguiano
 		Subdirector General de Enseñanza e Investigación</p>
 
@@ -55,5 +55,3 @@ $this->breadcrumbs = array(
 		<?php Yii::app()->runController('filesManager/DisplayFiles/section/'.Yii::app()->controller->id); ?>
 	</section>
 </section>
-
-

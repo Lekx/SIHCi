@@ -2,10 +2,6 @@
 /* @var $this LanguagesController */
 /* @var $model Languages */
 
-$this->breadcrumbs=array(
-	'Languages'=>array('index'),
-	'Create',
-);
 
 $this->menu=array(
 	//knowledgeApplication

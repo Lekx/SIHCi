@@ -4,11 +4,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
-
+/*
 $this->pageTitle=Yii::app()->name . ' -Plano de Ubicación.';
 $this->breadcrumbs=array(
 	'ODP / Plano de Ubicación.',
-);
+);*/
 ?>
 <section class="informativa">
 

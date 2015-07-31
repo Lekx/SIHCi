@@ -2,9 +2,6 @@
 /* @var $this PressNotesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Press Notes',
-);
 
 $this->menu=array(
 	array('label'=>'Create PressNotes', 'url'=>array('create')),
