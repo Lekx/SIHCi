@@ -3,9 +3,7 @@
 /* @var $error array */
 
 $this->pageTitle=Yii::app()->name . ' - Error';
-$this->breadcrumbs=array(
-	'Error',
-);
+
 ?>
 <div class="error403">
 <?php if ($code = 403){
@@ -19,6 +17,6 @@ $this->breadcrumbs=array(
 </div>
 
 
-<div class="error">
+<div class="error" style="color:white;">
 <?php echo CHtml::encode($message); ?>
 </div>
