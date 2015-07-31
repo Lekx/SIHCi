@@ -2,11 +2,6 @@
 /* @var $this AdminSpecialtyAreasController */
 /* @var $model AdminSpecialtyAreas */
 
-$this->breadcrumbs=array(
-	'Admin Specialty Areases'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 

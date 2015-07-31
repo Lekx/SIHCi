@@ -2,11 +2,7 @@
 /* @var $this ProjectsController */
 /* @var $model Projects */
 
-$this->breadcrumbs=array(
-	'Projects'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
+$
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),
@@ -17,7 +13,7 @@ $this->menu=array(
 
 
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	
+
 	);
 
 ?>

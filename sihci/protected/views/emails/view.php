@@ -2,11 +2,6 @@
 /* @var $this EmailsController */
 /* @var $model Emails */
 
-$this->breadcrumbs=array(
-	'Emails'=>array('index'),
-	$model->id,
-);
-
 $this->menu=array(
 	array('label'=>'List Emails', 'url'=>array('index')),
 	array('label'=>'Create Emails', 'url'=>array('create')),

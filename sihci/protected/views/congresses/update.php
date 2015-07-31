@@ -2,11 +2,6 @@
 /* @var $this CongressesController */
 /* @var $model Congresses */
 
-$this->breadcrumbs=array(
-	'Congresses'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 	//knowledgeApplication

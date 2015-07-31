@@ -1,8 +1,5 @@
-<?php 
-$this->breadcrumbs=array(
-	'Projects'=>array('index'),
-	'Create',
-);
+<?php
+
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
@@ -14,8 +11,8 @@ $this->menu=array(
 
 
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	
-	); 
+
+	);
 ?>
 
 <div class="cvtitle">

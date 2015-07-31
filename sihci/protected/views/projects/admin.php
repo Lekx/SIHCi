@@ -4,10 +4,6 @@ if($checkAuth){
 /* @var $this ProjectsController */
 /* @var $model Projects */
 
-$this->breadcrumbs=array(
-	'Proyectos'=>array('admin'),
-	'Gestión',
-);
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

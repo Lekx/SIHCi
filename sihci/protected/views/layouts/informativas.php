@@ -1,6 +1,7 @@
 <?php /* @var $this Controller */?>
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="en">
@@ -23,6 +24,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css">
+
         <?php Yii::app()->clientScript->registerCoreScript('jquery');?>
         <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
         <?php

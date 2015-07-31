@@ -2,10 +2,7 @@
 /* @var $this RolesController */
 /* @var $model Roles */
 
-$this->breadcrumbs=array(
-	'Roles'=>array('index'),
-	'Manage',
-);
+
 
 $this->menu=array(
 	array('label'=>'List Roles', 'url'=>array('index')),

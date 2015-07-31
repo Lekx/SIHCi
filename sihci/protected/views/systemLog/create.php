@@ -2,10 +2,7 @@
 /* @var $this SystemLogController */
 /* @var $model SystemLog */
 
-$this->breadcrumbs=array(
-	'System Logs'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
 	array('label'=>'List SystemLog', 'url'=>array('index')),

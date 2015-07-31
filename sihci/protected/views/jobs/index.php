@@ -2,9 +2,7 @@
 /* @var $this JobsController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Jobs',
-);
+
 
 $this->menu=array(
 	array('label'=>'Create Jobs', 'url'=>array('create')),

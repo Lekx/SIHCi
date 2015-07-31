@@ -2,9 +2,7 @@
 /* @var $this DocsIdentityController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Docs Identities',
-);
+
 
 $this->menu=array(
 	array('label'=>'Create DocsIdentity', 'url'=>array('create')),

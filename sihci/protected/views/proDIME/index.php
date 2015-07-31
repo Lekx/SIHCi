@@ -1,11 +1,11 @@
 <!-- >CE04-ProDIME -->
 <?php
 /* @var $this SiteController */
-/* @var $error array */
+/* @var $error array
 $this->pageTitle=Yii::app()->name . ' - proDIME';
 $this->breadcrumbs=array(
 'proDIME',
-);
+);*/
 ?>
 <section class="informativa">
     <section class="column-center">

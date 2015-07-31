@@ -2,10 +2,6 @@
 /* @var $this BooksController */
 /* @var $model Books */
 	//LI04-Desplegar datos
-$this->breadcrumbs=array(
-	'Books'=>array('index'),
-	$model->id,
-);
 
 $this->menu=array(
 	//knowledgeApplication

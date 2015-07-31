@@ -2,10 +2,7 @@
 /* @var $this AdminSpecialtyAreasController */
 /* @var $model AdminSpecialtyAreas */
 //AE04-Listar datos
-$this->breadcrumbs=array(
-	'Admin Specialty Areases'=>array('index'),
-	$model->id,
-);
+
 
 $this->menu=array(
 

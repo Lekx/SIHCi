@@ -3,11 +3,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
-
+/*
 $this->pageTitle=Yii::app()->name . ' - Vinculacion Con Universidad Institutos Y Hospitales';
 $this->breadcrumbs=array(
 	'Vinculacion Con Universidad Institutos Y Hospitales',
-);
+);*/
 ?>
 <section class="informativa">
 

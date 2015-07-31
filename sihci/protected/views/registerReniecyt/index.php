@@ -2,10 +2,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
+/*
 $this->pageTitle=Yii::app()->name . ' - Registro RENIECYT';
 $this->breadcrumbs=array(
 'OPD / Registro RENIECYT',
-);
+);*/
 ?>
 <section class="informativa">
     <section class="column-center">

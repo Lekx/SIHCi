@@ -2,9 +2,7 @@
 /* @var $this CopyrightsController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Copyrights',
-);
+
 
 $this->menu=array(
 	array('label'=>'Create Copyrights', 'url'=>array('create')),

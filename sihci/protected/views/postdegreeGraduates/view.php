@@ -2,10 +2,6 @@
 /* @var $this PostdegreeGraduatesController */
 /* @var $model PostdegreeGraduates */
 
-$this->breadcrumbs=array(
-	'Postdegree Graduates'=>array('index'),
-	$model->id,
-);
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),

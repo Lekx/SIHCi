@@ -2,9 +2,6 @@
 /* @var $this GradesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Grades',
-);
 
 $this->menu=array(
 	array('label'=>'Create Grades', 'url'=>array('create')),

@@ -2,10 +2,6 @@
 /* @var $this SystemLogController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'System Logs',
-);
-
 $this->menu=array(
 	array('label'=>'Create SystemLog', 'url'=>array('create')),
 	array('label'=>'Manage SystemLog', 'url'=>array('admin')),

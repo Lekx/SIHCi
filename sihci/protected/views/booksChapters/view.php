@@ -2,10 +2,7 @@
 /* @var $this BooksChaptersController */
 /* @var $model BooksChapters */
 
-$this->breadcrumbs=array(
-	'Books Chapters'=>array('index'),
-	$model->id,
-);
+
 
 
 $this->menu=array(

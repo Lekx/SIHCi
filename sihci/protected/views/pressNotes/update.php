@@ -2,11 +2,6 @@
 /* @var $this PressNotesController */
 /* @var $model PressNotes */
 
-$this->breadcrumbs=array(
-	'Press Notes'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

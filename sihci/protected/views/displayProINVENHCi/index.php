@@ -1,11 +1,11 @@
 <!-- ProINVENHCi -->
 <?php
 /* @var $this SiteController */
-/* @var $error array */
+/* @var $error array
 $this->pageTitle=Yii::app()->name . ' - ProINVENHCi';
 $this->breadcrumbs=array(
 'ProINVENHCi',
-);
+);*/
 ?>
 <section class="informativa">
 

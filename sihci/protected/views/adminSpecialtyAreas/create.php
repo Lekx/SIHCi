@@ -4,10 +4,7 @@
 /* @var $model AdminSpecialtyAreas */
 
 
-$this->breadcrumbs=array(
-	'Admin Specialty Areases'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
 

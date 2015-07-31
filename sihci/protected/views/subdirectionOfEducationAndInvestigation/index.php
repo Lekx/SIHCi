@@ -2,10 +2,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
+/*
 $this->pageTitle=Yii::app()->name . ' -FAA: Subdirección de enseñanza e investigación';
 $this->breadcrumbs=array(
 'ODP / FAA: Subdirección de enseñanza e investigación.',
-);
+);*/
 ?>
 <section class="informativa">
     <section class="column-left">

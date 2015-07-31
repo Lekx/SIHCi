@@ -2,9 +2,6 @@
 /* @var $this FilesManagerController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Files Managers',
-);
 $this->menu=array(
 
     array('label'=>'Manejador de Archivos ', 'url'=>array('FilesManager/admin'),'itemOptions'=>array('class' => 'menuitem 1 now')),

@@ -2,11 +2,6 @@
 /* @var $this SponsorsController */
 /* @var $model Sponsors */
 
-$this->breadcrumbs=array(
-	'Sponsors'=>array('index'),
-	'Create',
-);
-
 $controller="";
 
 if(is_null(Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))))

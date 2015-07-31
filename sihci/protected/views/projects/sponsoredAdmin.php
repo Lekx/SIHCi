@@ -2,10 +2,6 @@
 /* @var $this SponsorshipController */
 /* @var $model Sponsorship */
 
-$this->breadcrumbs=array(
-	'Proyectos'=>array('sponsoredAdmin'),
-	'Gestión',
-);
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

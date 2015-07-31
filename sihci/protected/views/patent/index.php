@@ -2,9 +2,7 @@
 /* @var $this PatentController */
 /* @var $dataProvider CActiveDataProvider */
 //include ("logoutTime.php");
-$this->breadcrumbs=array(
-	'Patents',
-);
+
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),
 	//array('label'=>'Evaluación CV', 'url'=>array('EvaluateCV/index')),

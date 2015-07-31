@@ -2,10 +2,11 @@
 <?php
 /* @var $this SiteController */
 /* @var $error array */
+/*
 $this->pageTitle=Yii::app()->name . ' - Programas PNCP ';
 $this->breadcrumbs=array(
 'Programa de formación de recursos humanos en investigación / Programas PNCP ',
-);
+);*/
 ?>
 <section class="informativa">
     <section class="column-center">

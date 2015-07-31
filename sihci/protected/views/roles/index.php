@@ -2,9 +2,6 @@
 /* @var $this RolesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Roles',
-);
 
 $this->menu=array(
 	array('label'=>'Create Roles', 'url'=>array('create')),

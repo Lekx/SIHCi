@@ -2,10 +2,7 @@
 /* @var $this ArticlesGuidesController */
 /* @var $model ArticlesGuides */
 
-$this->breadcrumbs=array(
-	'Articles Guides'=>array('index'),
-	'Create',
-);
+
 
 $this->menu=array(
 	//knowledgeApplication

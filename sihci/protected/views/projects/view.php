@@ -2,10 +2,7 @@
 /* @var $this ProjectsController */
 /* @var $model Projects */
 
-$this->breadcrumbs=array(
-	'Projects'=>array('index'),
-	$model->title,
-);
+
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

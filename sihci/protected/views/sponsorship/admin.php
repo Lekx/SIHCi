@@ -1,4 +1,4 @@
-	<div class="cvtitle">
+<div class="cvtitle">
         <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/ProgramasDesarrolloTecnologico.png" alt="">
         <h1>Proyectos</h1>
         <hr>
@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Crear', 'url'=>array('sponsorship/create'),'itemOptions'=>array('class' => 'sub')),
 	array('label'=>'Gestionar', 'url'=>array('sponsorship/admin'),'itemOptions'=>array('class' => 'sub')),
 	//array('label'=>'View BooksChapters', 'url'=>array('view', 'id'=>$model->id)),
-	
+
 	);
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -65,7 +65,7 @@ $('.search-form form').submit(function(){
 			'class'=>'CButtonColumn',
 		),
 	),
-)); 
+));
 }else{
 ?>
 
