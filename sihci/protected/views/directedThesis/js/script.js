@@ -1,4 +1,4 @@
-
+ 
  function changeArea(){
 
     var areaValue = $("#area option:selected").val();
@@ -3813,6 +3813,7 @@ if(areaValue =="SOCIOLOGIA"){
 }
 
 /* Comienza update de combo box area*/
+
 
 function changeGetArea(){
   var areaValue = $("#getArea").val();
@@ -11110,6 +11111,7 @@ function changeSector()
 }
 
  function changeSecondLevel(){
+  alert('ok');
   var organizationValue = $("#DirectedThesis_organization option:selected").val();
 
     /*if(organizationValue =="Seleccionar Organización"){
