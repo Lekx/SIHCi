@@ -118,7 +118,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 ));
 
 }else{
-	
+
 	?>
 <div class="cvtitle">
             <img id=""src="<?php echo Yii::app()->request->baseUrl; ?>/img/icons/IconCirculo/DireccionGeneral.png" alt="">

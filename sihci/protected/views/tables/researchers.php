@@ -8,6 +8,7 @@ $(document).ready(function(){
 		$table.bind('repaginate', function() {
 				$table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
 		});
+
 		$table.trigger('repaginate');
 		var numRows = $table.find('tbody tr').length;
 		var numPages = Math.ceil(numRows / numPerPage);
@@ -37,14 +38,14 @@ $this->breadcrumbs=array(
 );
 $this->menu=array(
 	array('label'=>'Graficas', 'url'=>array('Charts/index')),
-	array('label'=>'Cantidad de investigadores', 'url'=>array('researchers')),
-	array('label'=>'Proyectos de investigación', 'url'=>array('projects')),
-	array('label'=>'Libros', 'url'=>array('books')),
+	array('label'=>'Artículos y guías', 'url'=>array('articlesGuides')),
+	array('label'=>'Cantidad de investigadores', 'url'=>array('researchers'),'itemOptions'=>array('class' => 'menuitem now')),
 	array('label'=>'Capítulos de libros', 'url'=>array('chapters')),
+	array('label'=>'Libros', 'url'=>array('books')),
+	array('label'=>'Proyectos de investigación', 'url'=>array('projects')),
+	array('label'=>'Registro de propiedad intelectual: Derechos de autor', 'url'=>array('copyrights')),
 	array('label'=>'Registro de propiedad intelectual: Patentes', 'url'=>array('patents')),
 	array('label'=>'Registro de propiedad intelectual: Software', 'url'=>array('software')),
-	array('label'=>'Registro de propiedad intelectual: Derechos de autor', 'url'=>array('copyrights')),
-	array('label'=>'Artículos y guías', 'url'=>array('articlesGuides')),
 );
 
 ?>
@@ -73,97 +74,140 @@ function change(){
 		$('tbody > tr').show();
 		totalVisibles = parseInt($('tbody >tr').length);
 	  $('#totalToShow').html(totalVisibles);
+
+	  $('.pager').remove();
+	  $('table.items').each(function() {
+		var currentPage = 0;
+		var numPerPage = 10;
+		var $table = $(this);
+		$table.bind('repaginate', function() {
+				$table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+		});
+
+		$table.trigger('repaginate');
+		var numRows = $table.find('tbody tr').length;
+		var numPages = Math.ceil(numRows / numPerPage);
+		var $pager = $('<div class="pager"></div>');
+		for (var page = 0; page < numPages; page++) {
+				$('<span class="page-number"></span>').text(page + 1).bind('click', {
+						newPage: page
+				}, function(event) {
+						currentPage = event.data['newPage'];
+						$table.trigger('repaginate');
+						$(this).addClass('active').siblings().removeClass('active');
+				}).appendTo($pager).addClass('clickable');
+		}
+		$pager.insertAfter($table).find('span.page-number:first').addClass('active');
+	});
+
 	}else if(valueResearchers == 'total' && valueHospital == 'total' && valueResearchersSNI == 'total'){
 		$('tbody > tr:not(:contains('+valueYear+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueYear+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if(valueResearchers == 'total' && valueYear == 'total' && valueResearchersSNI == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if(valueHospital == 'total' && valueYear == 'total' && valueResearchers == 'total'){
 		$('tbody > tr:not(:contains('+valueResearchersSNI+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchersSNI+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if(valueHospital == 'total' && valueYear == 'total' && valueResearchersSNI == 'total'){
 		$('tbody > tr:not(:contains('+valueResearchers+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchers+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if( valueResearchers == 'total' && valueResearchersSNI == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if( valueHospital == 'total' && valueResearchersSNI == 'total'){
 		$('tbody > tr:not(:contains('+valueResearchers+'):contains('+valueYear+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchers+'):contains('+valueYear+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if( valueYear == 'total' && valueResearchersSNI == 'total'){
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueResearchers+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'):contains('+valueResearchers+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if (valueResearchers == 'total' && valueHospital == 'total') {
 		$('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueYear+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueYear+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if (valueResearchers == 'total' && valueYear == 'total') {
 		$('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueHospital+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueHospital+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if (valueYear == 'total' && valueHospital == 'total') {
 		$('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueResearchers+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueResearchers+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if (valueResearchers == 'total') {
 		$('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueYear+'):contains('+valueHospital+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueYear+'):contains('+valueHospital+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if (valueResearchersSNI == 'total') {
 		$('tbody > tr:not(:contains('+valueResearchers+'):contains('+valueYear+'):contains('+valueHospital+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchers+'):contains('+valueYear+'):contains('+valueHospital+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if (valueHospital == 'total') {
 		$('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueYear+'):contains('+valueResearchers+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueYear+'):contains('+valueResearchers+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else if (valueYear == 'total') {
 		$('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueResearchers+'):contains('+valueHospital+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueResearchersSNI+'):contains('+valueResearchers+'):contains('+valueHospital+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
 	}else{
 		$('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueResearchers+'):contains('+valueResearchersSNI+'))').hide();
 		totalInvisible = parseInt($('tbody > tr:not(:contains('+valueHospital+'):contains('+valueYear+'):contains('+valueResearchers+'):contains('+valueResearchersSNI+'))').length);
 		total = parseInt($('#total').html());
 		totalToShow = total - totalInvisible;
 		$('#totalToShow').html(totalToShow);
+		$('.pager').remove();
   }
+
+
 }//function
  function search(){
  	valueSearch = $("#search").val();
@@ -227,7 +271,7 @@ function change(){
 </div>
 
 <?php
-echo "Total de investigadores: <div id='total' style='display: none'>".$total."</div> <div class='totalTables' id='totalToShow'>".$total."</div>";
+echo "Total: <div id='total' style='display: none'>".$total."</div> <div class='totalTables' id='totalToShow'>".$total."</div>";
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'curriculum-grid',
 	'dataProvider'=>$researchersIncome,

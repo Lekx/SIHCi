@@ -68,10 +68,7 @@
 					'2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
 					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
 					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
-					'2015'=>'2015','2016'=>'2016','2017'=>'2017','2018'=>'2018',
-          '2019'=>'2019','2020'=>'2020','2021'=>'2021','2022'=>'2022',
-          '2023'=>'2023','2024'=>'2024','2025'=>'2025','2026'=>'2026',
-          '2027'=>'2027','2028'=>'2028','2029'=>'2029','2030'=>'2030'),array('title'=>'Año de publicación'));
+					'2015'=>'2015'),array('title'=>'Año de publicación'));
 		?>
 		</span>
 		<?php echo $form->error($model,'publishing_year'); ?>
@@ -88,8 +85,9 @@
         ),
         array('prompt'=>'Seleccionar tipo de articulo','title'=>'Tipo de articulo'));
     ?>
-		<?php echo $form->error($model,'article_type'); ?>
+		
     </span>
+    <?php echo $form->error($model,'article_type'); ?>
 	</div>
 
 	<div class="row">
@@ -167,22 +165,25 @@
         echo '<span class="plain-select">';
         echo $form->dropDownList($model,'discipline',array($model->discipline => $model->discipline),array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
         echo '</span>';
+        echo $form->error($model,'discipline');
         echo '</div>';
 
         echo '<div class="row"id="comboSubdiscipline">';
         echo '<span class="plain-select">';
         echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline => $model->subdiscipline),array('prompt'=>'Seleccionar subdisciplina','options'=>array($model->subdiscipline=>array('selected'=>true))));
         echo '</span>';
-
+        echo $form->error($model,'subdiscipline');
         echo '</div>';
 
       }
       else
       {
-        echo '<div class="row"id="comboDiscipline">
-              </div>
-              <div class="row"id="comboSubdiscipline">
-              </div>';
+        echo '<div class="row"id="comboDiscipline">';
+
+        echo '</div>';
+        echo '<div class="row"id="comboSubdiscipline">';
+       
+        echo '</div>';
       }
   ?>
   <div class="row">      

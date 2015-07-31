@@ -68,10 +68,7 @@
 					'2003'=>'2003','2004'=>'2004','2005'=>'2005','2006'=>'2006',
 					'2007'=>'2007','2008'=>'2008','2009'=>'2009','2010'=>'2010',
 					'2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014',
-					'2015'=>'2015','2016'=>'2016','2017'=>'2017','2018'=>'2018',
-					'2019'=>'2019','2020'=>'2020','2021'=>'2021','2022'=>'2022',
-					'2023'=>'2023','2024'=>'2024','2025'=>'2025','2026'=>'2026',
-					'2027'=>'2027','2028'=>'2028','2029'=>'2029','2030'=>'2030'),array('title'=>'Año de publicación'));
+					'2015'=>'2015'),array('title'=>'Año de publicación'));
 
 		?>
 </span>
@@ -238,26 +235,37 @@
                                                           </span>
         <?php echo $form->error($model,'area'); ?>
   </div>
-  <?php
-      
-      if(!$model->isNewRecord)
-      {
+   <?php
+  if(!$model->isNewRecord){
 
-        echo '<div class="row"id="comboDiscipline">';
-        echo $form->dropDownList($model,'discipline',array($model->discipline));
-        echo '</div>';
-        echo '<div class="row"id="comboSubdiscipline">';
-        echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline));
-        echo '</div>';
+    echo '<div class="row" id="comboDiscipline" >';
+    echo '<span class="plain-select">';
+    echo $form->dropDownList($model,'discipline',array($model->discipline => $model->discipline),array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    echo '</span>';
+    echo $form->error($model,'discipline');
+    echo '</div>';
 
-      }
-      else
-      {
-        echo '<div class="row"id="comboDiscipline">';
-        echo '</div>';
-        echo '<div class="row"id="comboSubdiscipline">';
-        echo '</div>';
-      }
+    echo '<div class="row"id="comboSubdiscipline">';
+    echo '<span class="plain-select">';
+    echo $form->dropDownList($model,'subdiscipline',array($model->subdiscipline => $model->subdiscipline),array('prompt'=>'Seleccionar subdisciplina','options'=>array($model->subdiscipline=>array('selected'=>true))));
+    echo '</span>';
+    echo $form->error($model,'subdiscipline');
+    echo '</div>';
+
+  }
+  else{
+
+    echo '<div class="row" id="comboDiscipline" >';
+    echo '<span class="plain-select">';
+    echo $form->dropDownList($model,'discipline',array($model->discipline),array('prompt'=>'Seleccionar disciplina'));
+    echo '</span>';
+    echo $form->error($model,'discipline');
+    echo '</div>';
+
+    echo '<div class="row"id="comboSubdiscipline">';
+
+    echo '</div>';
+  }
   ?>
 
   <div class="row">      

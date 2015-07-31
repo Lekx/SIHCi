@@ -81,7 +81,6 @@ class SponsorshipController extends Controller
 
 					if($model->save()){
 
-
 /*
 			if(is_object($model->url_doc)){
 	            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$model->id;
@@ -96,6 +95,10 @@ class SponsorshipController extends Controller
 
 
 
+						$section = "Patrocinios de proyectos";
+						$details = "Título del proyecto patrocinado: ".$model->title;
+						$action = "Creación";
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
 						echo CJSON::encode(array('status'=>'success'));
 						Yii::app()->end();
@@ -130,6 +133,11 @@ class SponsorshipController extends Controller
 				$model->attributes=$_POST['Sponsorship'];
 			if($model->validate()){
 				if($model->save()){
+					$section = "Patrocinios de proyectos";
+					$details = "Título del proyecto patrocinado: ".$model->project_name;
+					$action = "Modificación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					
 					echo CJSON::encode(array('status'=>'success'));
 					Yii::app()->end();
 				}
@@ -153,8 +161,12 @@ class SponsorshipController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
-
+		$model=Sponsorship::model()->findByPk($id);
+				$section = "Patrocinio de proyectos."; //manda parametros al controlador AdminSystemLog
+				$details = "Número de patrocinio: ".$model->id.". Nombre: ".$model->project_name.".";
+				$action = "Eliminación";
+				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete();
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
