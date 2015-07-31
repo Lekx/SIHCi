@@ -2,9 +2,6 @@
 /* @var $this DocsIdentityController */
 /* @var $model DocsIdentity */
 
-$this->breadcrumbs=array(
-	'Documentos oficiales'=>array('index'),
-);
 $controller="";
 $editUser = "";
 if(isset($_GET["ide"]))

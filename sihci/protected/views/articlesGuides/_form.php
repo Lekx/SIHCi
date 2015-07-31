@@ -3903,13 +3903,13 @@
     <?php 
       if(!$model->isNewRecord)
       {
-        echo $form->FileField($model,'url_document',array('maxlength'=>100,'title'=>'archivo del articulo o guía')); 
+        echo $form->FileField($model,'url_document',array('maxlength'=>100,'title'=>'archivo del articulo o guía. Máximo 2MB')); 
         echo "<a href='".Yii::app()->request->baseUrl."/".$model->url_document."' target='_blank'><img src='".Yii::app()->request->baseUrl."/img/Acciones/desplegar.png'></a>";
         echo $form->error($model,'url_document');
       }
       else
       {
-          echo $form->fileField($model,'url_document',array('size'=>60,'maxlength'=>100,'title'=>'archivo del articulo o guía'));
+          echo $form->fileField($model,'url_document',array('maxlength'=>100,'title'=>'archivo del articulo o guía. Máximo 2MB'));
           echo $form->error($model,'url_document');
       }
     ?>

@@ -74,32 +74,32 @@ class SponsorshipController extends Controller
 			$model->id_user_sponsorer = Yii::app()->user->id;
 			$model->status = "PENDIENTE";
 
-			/*$id_sponsorship = Sponsorship::model()->findByAttributes(array("id_user" => Yii::app()->user->id))->id;
-			$DocExist = SponsorsDocs::model()->findAllByAttributes(array('id_sponsor' => $id_sponsor));
-			$modelProjectsDocs = array();
-			if ($DocExist != null) {
-				foreach ($DocExist as $key => $value) {
-					$modelProjectsDocs[$value->file_name] = array($value->id, $value->path);
-				}
-			}*/
+			//$id_sponsorship = Sponsorship::model()->findByAttributes(array("id_user_" => Yii::app()->user->id))->id;
 
-			//$modelProjectsDocs = new ProjectsDocs;
 
 			if($model->validate()){
+
 					if($model->save()){
-						/*
-						$id_user = Yii::app()->user->id;
-						$model_id = $model->id;
-						$path = YiiBase::getPathOfAlias("webroot") . "/users/" . $id_user . "/sponsorship/" . $model_id; ;
-						if (!file_exists($path)) {
-								mkdir($path, 0777, true);
-						}
-						$modelProjectsDocs->file_name = "Contrato con investigador";
-						$model->path = CUploadedFile::getInstanceByName('Doc1');*/
+
+/*
+			if(is_object($model->url_doc)){
+	            	$path = YiiBase::getPathOfAlias("webroot").'/users/'.Yii::app()->user->id.'/projects/'.$model->id;
+
+	                if(!is_dir($path))
+	                	mkdir($path, 0777, true);
+
+	            	$url_doc = $path.'/'.date('Y-m-d_H-i').'Archivo.'.$modelfollowup->url_doc->getExtensionName();
+					$modelfollowup->url_doc->saveAs($url_doc);
+				    $modelfollowup->url_doc = $url_doc;
+	            }*/
+
+
+
 						$section = "Patrocinios de proyectos";
 						$details = "Título del proyecto patrocinado: ".$model->title;
 						$action = "Creación";
 						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+
 						echo CJSON::encode(array('status'=>'success'));
 						Yii::app()->end();
 					}

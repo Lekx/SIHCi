@@ -2,9 +2,7 @@
 /* @var $this JobsController */
 /* @var $model Jobs */
 
-$this->breadcrumbs=array(
-	'Datos laborales'=>array('jobs'),
-);
+
 $controller="";
 $editUser = "";
 if(isset($_GET["ide"]))

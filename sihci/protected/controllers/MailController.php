@@ -25,7 +25,7 @@ class MailController extends Controller
 	 	);
 	 }
 
-	public function actionSendMail($to,$subject,$title,$content,$urlImg,$urltitle,$key)
+	public function actionSendMail($to,$subject,$title,$content,$urlImg,$urltitle = 0,$key = 0)
 	{
 
 		$headers = 'MIME-Version: 1.0' . "\r\n";
@@ -45,7 +45,7 @@ class MailController extends Controller
 				'.$content.'
 				</div>
 				<div class="link">
-				<img src="http://sgei.hcg.gob.mx/sihci/sihci/img/correos/'.$urlImg.'" alt="" style=""/><a href="http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.$key.'" style="text-decoration: none;display: inline-block;margin-left: 20px;margin-bottom: 20px"><h5>'.$urltitle'</h5></a>
+				<img src="http://sgei.hcg.gob.mx/sihci/sihci/img/correos/'.$urlImg.'" alt="" style=""/><a href="http://sgei.hcg.gob.mx/sihci/sihci/index.php/account/activateAccount?key='.($key == 0 ? "" : $key).'" style="text-decoration: none;display: inline-block;margin-left: 20px;margin-bottom: 20px"><h5>'.($urltitle == 0 ? "" : $urltitle)'</h5></a>
 				</div>
 				<div class="footer" style="font-size: 15px;padding-top: 10px;padding-bottom: 10px;border-top: 1px solid #00B9C0;text-align: center;margin-top: 10px">
 				Todos los derechos reservados. Copyright © 2015 SIHCi

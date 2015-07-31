@@ -2,9 +2,6 @@
 /* @var $this GradesController */
 /* @var $model Grades */
 
-$this->breadcrumbs=array(
-	'Formación académica'=>array('grades'),
-);
 $controller="";
 $editUser = "";
 if(isset($_GET["ide"]))

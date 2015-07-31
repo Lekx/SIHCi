@@ -16,7 +16,7 @@
 				<hr>
 			</div>
 			<div id="recoveryinfo">
-				Enviaremos un correo electronico, donde podrás cambiar tu contraseña.
+				Enviaremos un correo electrónico donde podrás cambiar tu contraseña.
 			</div>
 			<div class="inputlog">
 				<div class="inner-addon right-addon">

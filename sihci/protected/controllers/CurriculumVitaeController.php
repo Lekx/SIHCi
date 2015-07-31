@@ -753,6 +753,7 @@ class CurriculumVitaeController extends Controller
 				$action = "Eliminación";
 				Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		$model->delete();
+
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('phones'));
 	}

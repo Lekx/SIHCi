@@ -88,7 +88,6 @@ class SponsorsController extends Controller {
 			}
 
 			if($modelAddresses->validate() && $modelPersons->validate() && $model->validate()){
-			//if ($modelAddresses->validate()) {
 
 				if ($modelAddresses->save()) {
 					$model->id_user = $iduser;
@@ -354,7 +353,7 @@ class SponsorsController extends Controller {
 							Yii::app()->end();
 							}
 					}else{
-						echo CJSON::encode(array('status'=>'success'));
+						echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'No se pudo guardar su registro'));
 						Yii::app()->end();
 					}
 				} else {
@@ -366,6 +365,10 @@ class SponsorsController extends Controller {
 								Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 								echo CJSON::encode(array('status'=>'success'));
 									Yii::app()->end();
+							}else{
+								echo CJSON::encode(array('status'=>'failure','message'=>'Ocurrió un error.','subMessage'=>'No se pudo guardar su registro'));
+								Yii::app()->end();
+
 							}
 						}
 					}
@@ -573,17 +576,21 @@ $this->render('create_docs', array(
 
 	public function actionDeleteContacts($id) {
 		$model = SponsorsContacts::model()->findByPk($id);
+		//var_dump($model);
 			$section = "Empresas."; //manda parametros al controlador AdminSystemLog
 			$details = "Subsección: Datos de Contactos. Registro Número: ".$model->id." Nombre: ".$model->fullname;
 			$action = "Eliminación";
 			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		$model->delete();
+			$model->delete();
+/*
+		if($model->delete())
+		echo "success";
+		else
+		echo "failure";*/
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if (!isset($_GET['ajax'])) {
-			$this->redirect(array('create_contacts'));
-		}
-
+		//if(!isset($_GET['ajax']))
+			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('contacts'));
 	}
 
 	public function actionDeleteContact($id) {
@@ -594,18 +601,8 @@ $this->render('create_docs', array(
 			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 		$model->delete();
 
-		$this->redirect(array('create_contact'));
-		Yii::app()->end();
-
-
-	//	echo CJSON::encode(array('status'=>'success'));
-		//			Yii::app()->end();
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-	/*	if (!isset($_GET['ajax'])) {
-			$this->redirect(array('create_contact'));
-			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}*/
-
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('contact'));
 	}
 	/**
 	 * Lists all models.
