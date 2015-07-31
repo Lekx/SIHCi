@@ -15,6 +15,59 @@
 
 	   		});
 		});
+
+		function lettersOnly(e) {
+		  key = e.keyCode || e.which;
+		  tecla = String.fromCharCode(key).toLowerCase();
+		  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz.";
+		  especiales = "8-9-37-38-46-164";
+
+		  tecla_especial = false
+		  for (var i in especiales) {
+		    if (key == especiales[i]) {
+		      tecla_especial = true;
+		      break;
+		    }
+		  }
+
+		  if (letras.indexOf(tecla) == -1 && !tecla_especial)
+		    return false;
+		}
+		function numericOnly(e) {
+		  key = e.keyCode || e.which;
+		  tecla = String.fromCharCode(key).toLowerCase();
+		  numbers = " 1234567890";
+		  especiales = "8-9-37-38-46-164";
+
+		  tecla_especial = false
+		  for (var i in especiales) {
+		    if (key == especiales[i]) {
+		      tecla_especial = true;
+		      break;
+		    }
+		  }
+
+		  if (numbers.indexOf(tecla) == -1 && !tecla_especial)
+		    return false;
+		}
+
+		function lettersAndNumbersOnly(e) {
+		  key = e.keyCode || e.which;
+		  tecla = String.fromCharCode(key).toLowerCase();
+		  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz1234567890.";
+		  especiales = "8-9-37-38-46-164";
+
+		  tecla_especial = false
+		  for (var i in especiales) {
+		    if (key == especiales[i]) {
+		      tecla_especial = true;
+		      break;
+		    }
+		  }
+
+		  if (letras.indexOf(tecla) == -1 && !tecla_especial)
+		    return false;
+		}
 </script>
 
 
@@ -58,55 +111,55 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'zip_code'); ?>
-		<?php echo $form->textField($model,'zip_code',array('placeholder'=>'Código Postal','class' => 'lettersOnly')); ?>
+		<?php echo $form->textField($model,'zip_code',array('placeholder'=>'Código Postal','onKeypress' => 'return numericOnly(event)')); ?>
 		<?php echo $form->error($model,'zip_code'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'state'); ?>
-		<?php echo $form->textField($model,'state',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Estado','class' => 'lettersOnly')); ?>
+		<?php echo $form->textField($model,'state',array('size'=>20,'maxlength'=>20, 'placeholder'=>'Estado','onKeypress' => 'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'state'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'delegation'); ?>
-		<?php echo $form->textField($model,'delegation',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Delegación','class' => 'lettersOnly')); ?>
+		<?php echo $form->textField($model,'delegation',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Delegación','onKeypress' => 'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'delegation'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'city'); ?>
-		<?php echo $form->textField($model,'city',array('size'=>50,'maxlength'=>50, 'placeholder'=>'Ciudad','class' => 'lettersOnly')); ?>
+		<?php echo $form->textField($model,'city',array('size'=>50,'maxlength'=>50, 'placeholder'=>'Ciudad','onKeypress' => 'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'city'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'town'); ?>
-		<?php echo $form->textField($model,'town',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Municipio','class' => 'lettersOnly')); ?>
+		<?php echo $form->textField($model,'town',array('size'=>30,'maxlength'=>30, 'placeholder'=>'Municipio','onKeypress' => 'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'town'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'colony'); ?>
-		<?php echo $form->textField($model,'colony',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Colonia','class' => 'lettersOnly')); ?>
+		<?php echo $form->textField($model,'colony',array('size'=>45,'maxlength'=>45, 'placeholder'=>'Colonia','onKeypress' => 'return lettersOnly(event)')); ?>
 		<?php echo $form->error($model,'colony'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'street'); ?>
-		<?php echo $form->textField($model,'street',array('size'=>50,'maxlength'=>50, 'placeholder'=>'Calle','class' => 'lettersOnly')); ?>
+		<?php echo $form->textField($model,'street',array('size'=>50,'maxlength'=>50, 'placeholder'=>'Calle','onKeypress' => 'return lettersAndNumbersOnly(event)')); ?>
 		<?php echo $form->error($model,'street'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'external_number'); ?>
-		<?php echo $form->textField($model,'external_number',array('size'=>8,'maxlength'=>8, 'placeholder'=>'Número Externo','class' => 'numericOnly')); ?>
+		<?php echo $form->textField($model,'external_number',array('size'=>8,'maxlength'=>8, 'placeholder'=>'Número Externo','onKeypress' => 'return lettersAndNumbersOnly(event)')); ?>
 		<?php echo $form->error($model,'external_number'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'internal_number'); ?>
-		<?php echo $form->textField($model,'internal_number',array('size'=>8,'maxlength'=>8, 'placeholder'=>'Número Interno','class' => 'numericOnly')); ?>
+		<?php echo $form->textField($model,'internal_number',array('size'=>8,'maxlength'=>8, 'placeholder'=>'Número Interno','onKeypress' => 'return lettersAndNumbersOnly(event)')); ?>
 		<?php echo $form->error($model,'internal_number'); ?>
 	</div>
 

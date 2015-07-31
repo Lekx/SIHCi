@@ -18,7 +18,7 @@ $(document).ready(function(){
 function lettersOnly(e) {
   key = e.keyCode || e.which;
   tecla = String.fromCharCode(key).toLowerCase();
-  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz.";
   especiales = "8-9-37-38-46-164";
 
   tecla_especial = false
@@ -53,7 +53,7 @@ function numericOnly(e) {
 function lettersAndNumbersOnly(e) {
   key = e.keyCode || e.which;
   tecla = String.fromCharCode(key).toLowerCase();
-  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz1234567890";
+  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz1234567890.";
   especiales = "8-9-37-38-46-164";
 
   tecla_especial = false
