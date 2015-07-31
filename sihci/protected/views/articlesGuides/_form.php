@@ -166,14 +166,14 @@
     echo $form->dropDownList($model,'discipline',array("ANTROPOLOGIA CULTURAL"=>"ANTROPOLOGIA CULTURAL","ANTROPOLOGIA ESTRUCTURAL"=>"ANTROPOLOGIA ESTRUCTURAL",
    "ANTROPOLOGIA SOCIAL"=>"ANTROPOLOGIA SOCIAL","ETNOGRAFIA Y ETNOLOGIA"=>"ETNOGRAFIA Y ETNOLOGIA",
    "OTRAS ESPECIALIDADES EN MATERIA DE ANTROPOLOGIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE ANTROPOLOGIA"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "ARTES Y LETRAS"){
     echo $form->dropDownList($model,'discipline',array("ARQUITECTURA"=>"ARQUITECTURA",
     "TEORIA, ANALISIS Y CRITICA DE LAS BELLAS ARTES"=>"TEORIA, ANALISIS Y CRITICA DE LAS BELLAS ARTES",
     "TEORIA, ANALISIS Y CRITICA LITERARIOS"=>"TEORIA, ANALISIS Y CRITICA LITERARIOS",
     "OTRAS ESPECIALIDADES EN MATERIA DE ARTES Y LETRAS"=>"OTRAS ESPECIALIDADES EN MATERIA DE ARTES Y LETRAS"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "ASTRONOMIA Y ASTROFISICA"){
     echo $form->dropDownList($model,'discipline',array("ASTRONOMIA OPTICA"=>"ASTRONOMIA OPTICA",
@@ -183,7 +183,7 @@
     "RADIOASTRONOMIA"=>"RADIOASTRONOMIA",
     "SISTEMA SOLAR"=>"SISTEMA SOLAR",
     "OTRAS ESPECIALIDADES EN MATERIA DE ASTRONOMIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE ASTRONOMIA"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "CIENCIAS AGRONOMICAS Y VETERINARIAS"){
     echo $form->dropDownList($model,'discipline',array("AGRONOMIA"=>"AGRONOMIA",
@@ -197,11 +197,11 @@
     "QUIMICA AGRONOMICA"=>"QUIMICA AGRONOMICA",
     "SILVICULTURA"=>"SILVICULTURA",
     "OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS AGRONOMICAS Y VETERINARIAS"=>"OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS AGRONOMICAS Y VETERINARIAS"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "CIENCIAS DE LA OCUPACION"){
     echo $form->dropDownList($model,'discipline',array("TERAPIA OCUPACIONAL"=>"TERAPIA OCUPACIONAL"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "CIENCIAS DE LA TECNOLOGIA"){
     echo $form->dropDownList($model,'discipline',array("ANALISIS DE LAS OPERACIONES TECNOLOGICAS"=>"ANALISIS DE LAS OPERACIONES TECNOLOGICAS",
@@ -238,7 +238,7 @@
     "TECNOLOGIA DEL PETROLEO Y DEL CARBON"=>"TECNOLOGIA DEL PETROLEO Y DEL CARBON",
     "TECNOLOGIA DE LOS SISTEMAS DE TRANSPORTE"=>"TECNOLOGIA DE LOS SISTEMAS DE TRANSPORTE",
     "OTRAS ESPECIALIDADES EN MATERIA DE TECNOLOGIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE TECNOLOGIA"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "CIENCIAS DE LA TIERRA Y DEL COSMOS"){
     echo $form->dropDownList($model,'discipline',array("CIENCIAS ATMOSFERICAS"=>"CIENCIAS ATMOSFERICAS",
@@ -254,12 +254,12 @@
     "CIENCIAS DEL SUELO"=>"CIENCIAS DEL SUELO",
     "CIENCIAS DEL COSMOS"=>"CIENCIAS DEL COSMOS",
     "OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS DE LA TIERRA DEL COSMOS Y DEL MEDIO AMBIENTE"=>"OTRAS ESPECIALIDADES EN MATERIA DE CIENCIAS DE LA TIERRA DEL COSMOS Y DEL MEDIO AMBIENTE",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
      if($model->area == "CIENCIAS DE LA SALUD"){
     echo $form->dropDownList($model,'discipline',array("ENFERMERÍA"=>"ENFERMERÍA",
     "INVESTIGACIÓN EN SALUD"=>"INVESTIGACIÓN EN SALUD","SALUD PÚBLICA"=>"SALUD PÚBLICA"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
      if($model->area == "CIENCIAS DE LA VIDA"){
     echo $form->dropDownList($model,'discipline',array("ANTROPOLOGIA FISICA"=>"ANTROPOLOGIA FISICA",
@@ -285,7 +285,7 @@
     "SIMBIOSIS"=>"SIMBIOSIS",
     "VIROLOGIA"=>"VIROLOGIA",
     "OTRAS ESPECIALIDADES EN MATERIA DE BIOLOGIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE BIOLOGIA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "CIENCIAS ECONOMICAS"){
     echo $form->dropDownList($model,'discipline',array("ACTIVIDADES ECONOMICAS"=>"ACTIVIDADES ECONOMICAS",
@@ -302,14 +302,14 @@
     "SISTEMAS ECONOMICOS"=>"SISTEMAS ECONOMICOS",
     "TEORIA ECONOMICA"=>"TEORIA ECONOMICA",
     "ECONOMIA GENERAL"=>"ECONOMIA GENERAL",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "CIENCIAS JURIDICAS Y DERECHO"){
     echo $form->dropDownList($model,'discipline',array("DERECHO CANONICO"=>"DERECHO CANONICO",
     "DERECHO INTERNACIONAL","DERECHO Y LEGISLACION NACIONALES"=>"DERECHO INTERNACIONAL","DERECHO Y LEGISLACION NACIONALES",
     "ORGANIZACION PENAL","OTRAS ESPECIALIDADES EN MATERIA JURIDICA"=>"ORGANIZACION PENAL","OTRAS ESPECIALIDADES EN MATERIA JURIDICA",
     "TEORIAS Y METODOS JURIDICOS GENERALES"=>"TEORIAS Y METODOS JURIDICOS GENERALES"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "CIENCIAS POLITICAS"){
     echo $form->dropDownList($model,'discipline',array("ADMINISTRACION PUBLICA"=>"ADMINISTRACION PUBLICA",
@@ -325,7 +325,7 @@
     "SOCIOLOGIA DE LA POLITICA"=>"SOCIOLOGIA DE LA POLITICA",
     "SISTEMAS POLITICOS"=>"SISTEMAS POLITICOS",
     "VIDA POLITICA"=>"VIDA POLITICA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
      if($model->area == "DEMOGRAFIA"){
     echo $form->dropDownList($model,'discipline',array("CARACTERISTICAS DE LAS POBLACIONES"=>"CARACTERISTICAS DE LAS POBLACIONES",
@@ -336,7 +336,7 @@
     "EVOLUCION DEMOGRAFICA"=>"EVOLUCION DEMOGRAFICA",
     "MORTALIDAD"=>"MORTALIDAD",
     "OTRAS ESPECIALIDADES EN MATERIA DE DEMOGRAFIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE DEMOGRAFIA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
       if($model->area == "ETICA"){
     echo $form->dropDownList($model,'discipline',array("ETICA CLASICA"=>"ETICA CLASICA",
@@ -344,7 +344,7 @@
     "ETICA DE GRUPO"=>"ETICA DE GRUPO",
     "ETICA PROSPECTIVA"=>"ETICA PROSPECTIVA",
     "OTRAS ESPECIALIDADES EN MATERIA DE ETICA"=>"OTRAS ESPECIALIDADES EN MATERIA DE ETICA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
      if($model->area == "FILOSOFIA"){
     echo $form->dropDownList($model,'discipline',array("ANTROPOLOGIA FILOSOFICA"=>"ANTROPOLOGIA FILOSOFICA",
@@ -356,7 +356,7 @@
     "FILOSOFIA SOCIAL"=>"FILOSOFIA SOCIAL",
     "OTRAS ESPECIALIDADES EN MATERIA DE FILOSOFIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE FILOSOFIA",
     "SISTEMAS FILOSOFICOS"=>"SISTEMAS FILOSOFICOS"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
      if($model->area == "FISICA"){
     echo $form->dropDownList($model,'discipline',array("ACUSTICA"=>"ACUSTICA",
@@ -375,7 +375,7 @@
     "OTRAS ESPECIALIDADES EN MATERIA DE FISICA"=>"OTRAS ESPECIALIDADES EN MATERIA DE FISICA",
     "TERMODINAMICA"=>"TERMODINAMICA",
     "UNIDADES Y CONSTANTES FISICAS"=>"UNIDADES Y CONSTANTES FISICAS",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
      if($model->area == "GEOGRAFIA"){
     echo $form->dropDownList($model,'discipline',array("GEOGRAFIA ECONOMICA"=>"GEOGRAFIA ECONOMICA",
@@ -383,7 +383,7 @@
     "GEOGRAFIA HUMANA"=>"GEOGRAFIA HUMANA",
     "GEOGRAFIA REGIONAL"=>"GEOGRAFIA REGIONAL",
     "OTRAS ESPECIALIDADES EN MATERIA DE GEOGRAFIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE GEOGRAFIA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "HISTORIA"){
     echo $form->dropDownList($model,'discipline',array("BIOGRAFIA"=>"BIOGRAFIA",
@@ -393,7 +393,7 @@
     "HISTORIA DE LAS EPOCAS"=>"HISTORIA DE LAS EPOCAS",
     "HISTORIA ESPECIALIZADA"=>"HISTORIA ESPECIALIZADA",
     "OTRAS ESPECIALIDADES EN MATERIA DE HISTORIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE HISTORIA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "LINGÜISTICA"){
     echo $form->dropDownList($model,'discipline',array("GEOGRAFIA LINGÜISTICA"=>"GEOGRAFIA LINGÜISTICA",
@@ -403,7 +403,7 @@
     "LINGÜISTICA SINCRONICA"=>"LINGÜISTICA SINCRONICA",
     "POLITICAS DEL LENGUAJE"=>"POLITICAS DEL LENGUAJE",
     "OTRAS ESPECIALIDADES EN MATERIA DE LINGÜÍSTICA"=>"OTRAS ESPECIALIDADES EN MATERIA DE LINGÜÍSTICA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "LOGICA"){
     echo $form->dropDownList($model,'discipline',array("APLICACIONES DE LA LOGICA"=>"APLICACIONES DE LA LOGICA",
@@ -412,7 +412,7 @@
     "LOGICA INDUCTIVA"=>"LOGICA INDUCTIVA",
     "METODOLOGIA"=>"METODOLOGIA",
     "OTRAS ESPECIALIDADES EN MATERIA DE LOGICA"=>"OTRAS ESPECIALIDADES EN MATERIA DE LOGICA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "MATEMATICAS"){
     echo $form->dropDownList($model,'discipline',array("ALGEBRA"=>"ALGEBRA",
@@ -429,7 +429,7 @@
     "SISTEMAS"=>"SISTEMAS",
     "OTRAS ESPECIALIDADES EN MATERIA DE MATEMATICAS"=>"OTRAS ESPECIALIDADES EN MATERIA DE MATEMATICAS",
     "TOPOLOGIA"=>"TOPOLOGIA"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "MEDICINA Y PATOLOGIA HUMANA"){
     echo $form->dropDownList($model,'discipline',array("ADMINISTRACION DE HOSPITALES Y DE LA ATENCION MEDICA"=>"ADMINISTRACION DE HOSPITALES Y DE LA ATENCION MEDICA",
@@ -454,14 +454,14 @@
     "PSIQUIATRIA"=>"PSIQUIATRIA",
     "SANIDAD PUBLICA"=>"SANIDAD PUBLICA",
     "TOXICOLOGIA"=>"TOXICOLOGIA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
        if($model->area == "PEDAGOGIA"){
     echo $form->dropDownList($model,'discipline',array("FORMACION Y EMPLEO DE LOS EDUCADORES"=>"FORMACION Y EMPLEO DE LOS EDUCADORES",
     "ORGANIZACION Y PLANIFICACION PEDAGOGICAS"=>"ORGANIZACION Y PLANIFICACION PEDAGOGICAS",
     "OTRAS ESPECIALIDADES EN MATERIA DE PEDAGOGIA"=>"OTRAS ESPECIALIDADES EN MATERIA DE PEDAGOGIA",
     "TEORIAS Y METODOS PEDAGOGICOS GENERALES"=>"TEORIAS Y METODOS PEDAGOGICOS GENERALES"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "PSICOLOGIA"){
     echo $form->dropDownList($model,'discipline',array("ESTUDIO DE LA PERSONALIDAD","ESTUDIO PSICOLOGICO DE FENOMENOS SOCIALES",
@@ -470,7 +470,7 @@
    "PSICOFARMACOLOGIA","PSICOLOGIA PATOLOGICA","PSICOLOGIA DE LA EDUCACION",
    "PSICOLOGIA DEL NIÑO Y DEL ADOLESCENTE","PSICOLOGIA EXPERIMENTAL","PSICOLOGIA GENERAL",
    "PSICOLOGIA GERIATRICA","PSICOLOGIA SOCIAL","PSICOLOGIA DEL TRABAJO Y DEL PERSONAL"),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "PROSPECTIVA"){
     echo $form->dropDownList($model,'discipline',array("ANALISIS DE RIESGOS"=>"ANALISIS DE RIESGOS",
@@ -486,7 +486,7 @@
     "OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA"=>"OTRAS ESPECIALIDADES EN MATERIA PROSPECTIVA",
     "PLANEACION Y DISEÑO DE ESTRATEGIAS"=>"PLANEACION Y DISEÑO DE ESTRATEGIAS",
     "TENDENCIAS DEMOGRAFICAS Y POBLACIONALES"=>"TENDENCIAS DEMOGRAFICAS Y POBLACIONALES",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     if($model->area == "QUIMICA"){
     echo $form->dropDownList($model,'discipline',array("BIOQUIMICA"=>"BIOQUIMICA",
@@ -498,7 +498,7 @@
     "QUIMICA INORGANICA"=>"QUIMICA INORGANICA",
     "QUIMICA NUCLEAR"=>"QUIMICA NUCLEAR",
     "QUIMICA ORGANICA"=>"QUIMICA ORGANICA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
      if($model->area == "SOCIOLOGIA"){
     echo $form->dropDownList($model,'discipline',array("CAMBIO Y DESARROLLO SOCIAL"=>"CAMBIO Y DESARROLLO SOCIAL",
@@ -516,7 +516,7 @@
     "SOCIOLOGIA MATEMATICA Y ESTADISTICA"=>"SOCIOLOGIA MATEMATICA Y ESTADISTICA",
     "SOCIOLOGIA DE ACTIVIDADES PARTICULARES"=>"SOCIOLOGIA DE ACTIVIDADES PARTICULARES",
     "SOCIOLOGIA DE LA IMPLANTACION HUMANA"=>"SOCIOLOGIA DE LA IMPLANTACION HUMANA",),
-    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true))));
+    array('prompt'=>'Seleccionar disciplina','options'=>array($model->discipline=>array('selected'=>true)),'onchange'=>'changeDiscipline()'));
     }
     echo '</span>';
     echo $form->error($model,'discipline');
