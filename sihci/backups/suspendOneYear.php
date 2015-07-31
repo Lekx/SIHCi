@@ -7,7 +7,12 @@
 
 
 		foreach ($results as $key => $value){
-					Users::model()->updateByPk($value['id_user'], array("status"=>"suspendido"));
+					$user = Users::model()->updateByPk($value['id_user'], array("status"=>"suspendido"));
+					$section = "Cuenta 1 año sin uso";
+					$details = "Email del usuario: ".$user->email;
+					$action = "Desactivación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					
 		}
 ?>			
 

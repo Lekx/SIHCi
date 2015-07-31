@@ -18,6 +18,7 @@ $(document).ready(function() {
 					'title') + '</button>');
 		var filetype = $(this).attr('title')
 		button.on('click', function(e) {
+			$('.errorMessage').hide();
 			e.preventDefault();
 			$('.deleteval').remove();
 			//var id = $(this).attr('id'), name = $(this).attr('name');

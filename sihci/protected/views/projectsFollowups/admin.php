@@ -35,7 +35,7 @@ $project = Projects::model()->findByAttributes(array('id'=>$idProject));
 
 
 <div class="projecttitle">
-<h4><?php echo $idProject." ".$project->title; ?></h4>
+<h4><?php echo $project->title; ?></h4>
 </div>
 
 
@@ -64,11 +64,15 @@ echo CHtml::link('Link Text', "#",array('class'=> 'createFollowup','onClick'=>'t
  						  )
  						);
 			 */
+if(count($followups) > 0){
+
 
 		echo "	<div class='customNavigation'>
 	  <a class='btn prev'><i class='fa fa-arrow-left'></i></a> </div>";
 		echo "<div id='owl-demo' class=''>";
+
 		foreach ($followups as $key => $value) {
+			echo "<div style='font-size:.8em;text-align:center;'>";
 			echo CHtml::ajaxLink(
 						  "".date("d/m/Y", strtotime($followups[$key]->creation_date))." ",
 						  Yii::app()->createUrl( 'projectsFollowups/followupToShow' ),
@@ -105,6 +109,8 @@ echo CHtml::link('Link Text', "#",array('class'=> 'createFollowup','onClick'=>'t
 								'class'=> 'item Followups '.$key,
 								)
 						);
+						echo   date("d/m/Y", strtotime($followups[$key]->creation_date));
+						echo "</div>";
 
 		}
 		echo "</div>";
@@ -113,7 +119,9 @@ echo CHtml::link('Link Text', "#",array('class'=> 'createFollowup','onClick'=>'t
 		echo "<div id='owl-demo' class=''>";
 		echo "<div id='follow'></div>";
 		echo "<div id='followup'></div>";
+	}
 		?>
+
 
 
 		<?php

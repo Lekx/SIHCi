@@ -193,6 +193,11 @@ class ProjectsController extends Controller
 					$followup->step_number = 0;
 
 					if($followup->save()){
+						$section = "Proyectos";
+					$details = "Título del proyecto: ".$model->title;
+					$action = "Creación enviado para su evaluación";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					
 						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
 						Yii::app()->end();
 					}else{
@@ -200,6 +205,11 @@ class ProjectsController extends Controller
 						Yii::app()->end();
 					}
 				}else{
+					$section = "Proyectos";
+					$details = "Título del proyecto: ".$model->title;
+					$action = "Creación en borrador";
+					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+					
 						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
 						Yii::app()->end();
 				}
@@ -320,6 +330,11 @@ class ProjectsController extends Controller
 					if($followup->save()){
 						
 						$conexion->createCommand("UPDATE projects_committee SET status = 'pendiente' WHERE id_project = ".$id)->execute();
+						$section = "Proyectos";
+						$details = "Título del proyecto: ".$model->title;
+						$action = "Modificación";
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+						
 						echo CJSON::encode(array('status'=>'success','message'=>'Registro realizado con éxito','subMessage'=>'Su proyecto ha sido enviado para su evaluación.'));
 						Yii::app()->end();
 					}else{
@@ -327,6 +342,11 @@ class ProjectsController extends Controller
 						Yii::app()->end();
 					}
 				}else{
+						$section = "Proyectos";
+						$details = "Título del proyecto: ".$model->title;
+						$action = "Modificación en borrador";
+						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+
 						echo CJSON::encode(array('status'=>'success','message'=>'Proyecto guardado con éxito','subMessage'=>'Su proyecto ha sido guardado como borrador y puede editarlo en cualquier momento.'));
 						Yii::app()->end();
 				}
@@ -354,8 +374,12 @@ class ProjectsController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
-
+		$model=Projects::model()->findByPk($id);
+			$section = "Proyectos."; //manda parametros al controlador AdminSystemLog
+			$details = "Número de proyecto: ".$model->id.". Nombre: ".$model->title.".";
+			$action = "Eliminación";
+			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+		$model->delete()
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -425,10 +449,17 @@ class ProjectsController extends Controller
 			if($project->validate() && $sponsoredProj->validate())
 				if($project->save()){
 					$sponsoredProj->id_project = $project->id;
-					if($sponsoredProj->save())
+					if($sponsoredProj->save()){
 						if(Sponsorship::model()->updateByPk($id,array("status"=>"ACEPTADO")))
-							if(!isset($_GET['ajax']))
+							$section = "Proyectos";
+							$details = "El proyecto: ".$sponsoredProj->project_name." ha sido aceptado.";
+							$action = "Status";
+							Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+
+							if(!isset($_GET['ajax'])){
 								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('sponsoredAdmin'));
+							}
+					}
 
 				}
 		}
@@ -439,6 +470,10 @@ class ProjectsController extends Controller
 	public function actionRejectSponsorship($id)
 	{
 		Sponsorship::model()->updateByPk($id,array("status"=>"RECHAZADO"));
+		$section = "Patrocinio del proyectos";
+		$details = "Título del proyecto: ".$model->project_name." ha sido rechazado.";
+		$action = "Status";
+		Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

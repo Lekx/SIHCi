@@ -120,7 +120,7 @@
                         "icon"=>"PCV-HC",
                         "cuentaicon"=>"Pcuenta",
                         "controller"=>"curriculumVitae/personalData",
-                        "MenuEmpresa"=>"CVU-HC",
+                        "MenuEmpresa"=>"CVE-HC",
                         "proyectos"=>"Proyectos",
                         "Evaluacion"=>"Evaluación Curricular",
                         "proyectosUrl"=>(Yii::app()->user->Rol->alias != 'USUARIO' ? "projectsReview" : "projects")."/admin",
@@ -133,7 +133,7 @@
                     "icon"=>"PCV-HC",
                     "cuentaicon"=>"Pcuenta",
                     "controller"=>"curriculumVitae/personalData",
-                    "MenuEmpresa"=>"CVU-HC",
+                    "MenuEmpresa"=>"CVE-HC",
                     "proyectos"=>"Proyectos",
                     "Evaluacion"=>"Evaluación Curricular",
                     "proyectosUrl"=>"projects/admin",
@@ -488,7 +488,7 @@
                 <div class="backcontainer">
                     <div class="maincontainer">
                         <div class="successh2">
-                            <h2>Registro con éxito</h2>
+                            <h3>Registro con éxito</h3>
                             <hr>
                             <div class="remainder">
                                 <span>El registro a sido realizado con éxito.</span>
