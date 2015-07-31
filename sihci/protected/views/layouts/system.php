@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
         <!--[if lt IE 8]>
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
+        <link rel="stylesheet" type="text/css" href="<?php //echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
         <![endif]-->
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap-3.0.0/css/bootstrap.min.css" media="screen, projection">
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
@@ -94,8 +94,14 @@
         <div>
             <?php
                 if(isset(Yii::app()->user->admin) && (int)Yii::app()->user->admin != 0 ){
-                    echo "<div class='dobless'> <p>Sesion doble iniciada</p> ";
-                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0,'class'=>'doblebutt')));
+                  $person = Persons::model()->findByAttributes(array("id_user"=>Yii::app()->user->id));
+                //  echo "sesiontype ".Yii::app()->user->sessionType;
+                  if(Yii::app()->user->sessionType != "modify")
+                    echo "<div class='dobless'> <p>Sesión doble iniciada como:<br>".$person->names." ".$person->last_name1." ".$person->last_name2."</p> ";
+                  else
+                    echo "<div class='dobless' style='background-color:orangered;' > <p>Modifcando datos de: <br>".$person->names." ".$person->last_name1." ".$person->last_name2."</p> ";
+                    
+                    echo CHtml::button('Salir', array('submit' => array('/adminUsers/doubleSession', 'id'=>0,),'class'=>'doblebutt'));
                     echo "</div>";
                 }
             ?>

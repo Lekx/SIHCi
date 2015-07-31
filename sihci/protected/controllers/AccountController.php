@@ -148,8 +148,10 @@ function checkEmailNull($email2, $email22){
 					$details = "Subsección: Cambio Email.";
 					$action = "Modificación";
 					Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
+          
           echo CJSON::encode(array('status'=>'success'));
-          Yii::app()->user->logout();
+          if(Yii::app()->user->admin == 0 )//lastday add
+          	Yii::app()->user->logout();
           Yii::app()->end();
         }
       }else{
