@@ -462,13 +462,8 @@ class ProjectsReviewController extends Controller
 				if(($actualStep == 12 && $modelProject->is_sponsored == 1) || ($actualStep == 13 && $modelProject->is_sponsored == 0)) // added and, may be removed
 					$subMessage = 'El proyecto ha sido dictaminado satisfactoriamente. Ahora el investigador puede crear seguimientos para este proyecto.';
 
-<<<<<<< HEAD
 
-					Yii::app()->runController('mail/sendMail/to/'.Users::model()->findByPk(Yii::app()->user->id)->email.'/subject/'.$subject.'/title/'.$title.'/content/'.$content.'/urlImg/'.$urlImg.'/urltitle/'.$urltitle.'/key/'.$key);
-
-=======
 				sendMail($followup->step_number,$projectId);	
->>>>>>> 19e66e45608d659a99ca050f690d9ff153f0a906
 	 			echo CJSON::encode(array('status'=>'success','message'=>'Acción realizada con éxito','subMessage'=>$subMessage));
 
 		}else{

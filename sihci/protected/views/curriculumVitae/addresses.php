@@ -2,9 +2,7 @@
 /* @var $this AddressesController */
 /* @var $model Addresses */
 
-$this->breadcrumbs=array(
-	'Dirección actual'=>array('addresses'),
-);
+
 $controller="";
 $editUser = "";
 if(isset($_GET["ide"]))

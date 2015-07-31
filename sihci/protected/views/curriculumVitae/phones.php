@@ -2,9 +2,6 @@
 /* @var $this PhonesController */
 /* @var $model Phones */
 
-$this->breadcrumbs=array(
-	'Datos de contacto'=>array('phones'),
-);
 $controller="";
 $editUser = "";
 if(isset($_GET["ide"]))

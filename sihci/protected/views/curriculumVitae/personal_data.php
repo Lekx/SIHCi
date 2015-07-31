@@ -2,9 +2,6 @@
 /* @var $this PersonsController */
 /* @var $model Persons */
 
-$this->breadcrumbs=array(
-	'Datos personales'=>array('personal_data'),
-);
 $controller="";
 $editUser = "";
 if(isset($_GET["ide"]))
