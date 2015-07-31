@@ -195,7 +195,7 @@
       }
       else
       {
-          echo $form->fileField($model,'url_document',array('size'=>60,'maxlength'=>100,'title'=>'archivo del articulo o guía'));
+          echo $form->fileField($model,'url_document',array('maxlength'=>100,'title'=>'archivo del articulo o guía. Máximo 2MB'));
           echo $form->error($model,'url_document');
       }
     ?>

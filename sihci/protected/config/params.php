@@ -1,5 +1,5 @@
 <?php
 	return array(
-		'session_timeout'=>$sessionTimeout,
-	);
+		'sessionTimeoutSeconds'=>$sessionTimeout,
+	   );
 ?>

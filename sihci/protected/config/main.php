@@ -56,6 +56,7 @@ return array(
 	      'class' => 'CDbHttpSession',
 	      'timeout' => $sessionTimeout,
 
+
 	   ),
 
 	 	'authManager'=>array(
@@ -64,10 +65,12 @@ return array(
 				'session'=> array(
 					'timeout'=> 1,
 				),
+
 			),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>false,
+			'authTimeout'=>300,
 		),
 
 		'bootstrap' => array(
