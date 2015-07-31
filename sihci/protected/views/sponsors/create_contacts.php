@@ -3,6 +3,7 @@
 /* @var $model Sponsors */
 
 
+
 $controller="";
 
 if(is_null(Sponsors::model()->findByAttributes(array("id_user" => Yii::app()->user->id))))

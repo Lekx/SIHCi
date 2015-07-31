@@ -24,7 +24,7 @@ $('.fType').on('change', function(e) {
 
 	}else{
 
-		$(this).parent().append('<input type="text" class="removable dFieldT" name="values1[]" placeholder="Lada 1" onKeypress = "return numericOnly(event)maxlength = "2"><input type="text" class="removable dFieldT" name="values2[]" placeholder="Lada 2" onKeypress = "return numericOnly(event)" maxlength = "3"><input type="text" class="removable dFieldT" name="values3[]" placeholder="Telefono" onKeypress = "return numericOnly(event)" maxlength = "12">');
+		$(this).parent().append('<input type="text" class="removable dFieldT" name="values1[]" placeholder="Lada 1" onKeypress = "return numericOnly(event)" maxlength = "2"><input type="text" class="removable dFieldT" name="values2[]" placeholder="Lada 2" onKeypress = "return numericOnly(event)" maxlength = "3"><input type="text" class="removable dFieldT" name="values3[]" placeholder="Telefono" onKeypress = "return numericOnly(event)" maxlength = "12">');
 
 	}
 
