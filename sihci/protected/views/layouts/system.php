@@ -90,6 +90,48 @@
         </script>
     </head>
     <body>
+      <?php
+$user=Yii::app()->user;
+if(!$user->getIsGuest())
+{
+   $time= ($user->getState(CWebUser::AUTH_TIMEOUT_VAR) - time()-10)*1000;//converting to millisecs
+   Yii::app()->clientScript->registerSCript('timeoutAlert','
+     setTimeout(function()
+    {
+          var n=10;
+            setInterval(function()
+            {
+                  if(n>0)$("#timeout").addClass("flash-error").text("Your session will expire in "+n+" seconds");
+                  
+                  if(n==0) {
+                        $("#timeout").text("Your session has expired!");
+                      $(".errordivsession").show();
+
+                        clearInterval();
+                             }
+                --n;    
+                },1000) 
+        }, 
+                
+        '.$time.')
+',CClientScript::POS_END);
+}
+?>
+           <div class="errordivsession" style="display:none;">
+                <div class="backcontainer">
+                    <div class="maincontainer">
+                        <div class="errorh2 errorsessionh2">
+                            <h2>¡Sesión Expirada!</h2>
+                            <hr>
+                            <div class="remainder">
+                                <span>Su sesión ha expirado, por favor vuelva a iniciar sesión.</span>
+                            </div>
+                            <?php echo CHtml::link('<h3>Volver al sitio</h3>',array('site/index'),array('class'=>'errorbut','style'=>'text-align:center;')); ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <div>
             <?php

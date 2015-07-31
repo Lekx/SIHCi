@@ -12,9 +12,15 @@
 
 	<title>SIHCi</title>
 	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>favicon.ico">
+
+ 	<?php if (!Yii::app()->user->isGuest) {?>
+            <meta http-equiv="refresh" content="<?php echo Yii::app()->params['session_timeout'];?>;"/>
+    <?php }?>
+
 </head>
 
 <body>
+
 
 <?php Yii::app()->bootstrap->register(); ?>
 

@@ -27,7 +27,6 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		$user=Users::model()->find("LOWER(email)=?",array(strtolower($this->username)));
-
 		if($user==null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if(sha1(md5(sha1($this->password)))!==$user->password)
@@ -40,8 +39,7 @@ class UserIdentity extends CUserIdentity
 			$this->setState('type', $user->type);
 			$this->setState('admin',0);
 			$this->setState('sessionType',"");
-			//Yii::app()->user->setState('userSessionTimeout', time()+Yii::app()->params['timeout'] );
-			
+
 			$this->errorCode=self::ERROR_NONE;
 			
 		}
