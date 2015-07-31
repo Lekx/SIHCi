@@ -1,8 +1,4 @@
 <?php 
-$this->breadcrumbs=array(
-	'Projects'=>array('index'),
-	'Create',
-);
 
 $this->menu=array(
 	//array('label'=>'List BooksChapters', 'url'=>array('indeºx')),

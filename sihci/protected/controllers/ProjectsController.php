@@ -379,7 +379,7 @@ class ProjectsController extends Controller
 			$details = "Número de proyecto: ".$model->id.". Nombre: ".$model->title.".";
 			$action = "Eliminación";
 			Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
-		$model->delete()
+		$model->delete();
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -439,18 +439,19 @@ class ProjectsController extends Controller
 			 $project->is_sponsored = 1;
 			 $project->registration_number = "-1";
 
-			 $sponsoredProj = new SponsoredProjects;
+			 $sponsoredProj = Sponsorship::model()->findByPk($id);
 
 
-				$sponsoredProj->id_project = 1;
-			 $sponsoredProj->id_sponsorship = $id;
+				//$sponsoredProj->id_project = 1;
+			// $sponsoredProj->id_sponsorship = $id;
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if($project->validate() && $sponsoredProj->validate())
 				if($project->save()){
-					$sponsoredProj->id_project = $project->id;
+					//$sponsoredProj->id_project = $project->id;
 					if($sponsoredProj->save()){
-						if(Sponsorship::model()->updateByPk($id,array("status"=>"ACEPTADO")))
+						if(Sponsorship::model()->updateByPk($id,array("status"=>"ACEPTADO"))){
+							
 							$section = "Proyectos";
 							$details = "El proyecto: ".$sponsoredProj->project_name." ha sido aceptado.";
 							$action = "Status";
@@ -459,6 +460,7 @@ class ProjectsController extends Controller
 							if(!isset($_GET['ajax'])){
 								$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('sponsoredAdmin'));
 							}
+						}
 					}
 
 				}
@@ -470,6 +472,8 @@ class ProjectsController extends Controller
 	public function actionRejectSponsorship($id)
 	{
 		Sponsorship::model()->updateByPk($id,array("status"=>"RECHAZADO"));
+
+		$model = Sponsorship::model()->findByPk($id);
 		$section = "Patrocinio del proyectos";
 		$details = "Título del proyecto: ".$model->project_name." ha sido rechazado.";
 		$action = "Status";

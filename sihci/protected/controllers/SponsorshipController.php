@@ -75,6 +75,22 @@ class SponsorshipController extends Controller
 			$model->status = "PENDIENTE";
 
 			//$id_sponsorship = Sponsorship::model()->findByAttributes(array("id_user_" => Yii::app()->user->id))->id;
+$model->doc_commitment ="xxx";
+$model->doc_auth_cofepris ="xxx";
+$model->doc_project ="xxx";
+$model->doc_brochure ="xxx";
+$model->doc_consent ="xxx";
+$model->doc_amendment ="xxx";
+$model->doc_bank_payment ="xxx";
+$model->doc_edu_guides ="xxx";
+$model->doc_project_dev_guides ="xxx";
+$model->doc_recruitment ="xxx";
+$model->doc_conclusion_criteria ="xxx";
+$model->doc_confidentiality ="xxx";
+
+$model->doc_interests_conflict ="xxx";
+$model->doc_patient_payment ="xxx";
+$model->doc_participants ="xxx";
 
 
 			if($model->validate()){
@@ -96,7 +112,7 @@ class SponsorshipController extends Controller
 
 
 						$section = "Patrocinios de proyectos";
-						$details = "Título del proyecto patrocinado: ".$model->title;
+						$details = "Título del proyecto patrocinado: ".$model->project_name;
 						$action = "Creación";
 						Yii::app()->runController('adminSystemLog/saveLog/section/'.$section.'/details/'.$details.'/action/'.$action);
 
